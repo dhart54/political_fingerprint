@@ -225,9 +225,18 @@ def validate_repository() -> dict[str, Any]:
     )
     _require(
         m12b_state["milestone"] == "m12b_environment_energy_source_readiness_v1"
+        and m12b_state["milestone_state"]
+        in {
+            "complete_pending_independent_review",
+            "completed_independent_review_accepted",
+        }
         and m12b_state["authority_effect"] == "source_readiness_only"
         and m12b_state["approved_universe_count"] == 63
-        and m12b_state["interpretation_state"] == "not_started"
+        and m12b_state["interpretation_state"]
+        in {
+            "not_started",
+            "candidate_stage_active_non_authorizing",
+        }
         and all(
             value is False for value in m12b_state["downstream_authorizations"].values()
         )

@@ -30,7 +30,12 @@ ALLOWED_POSITION_EFFECTS = {
     "non_directional_present",
     "non_directional_not_voting",
 }
-DESCRIPTIVE_OFFICIAL_TITLE_PREFIXES = ("To ", "Making ", "Directing ")
+DESCRIPTIVE_OFFICIAL_TITLE_PREFIXES = (
+    "To ",
+    "Making ",
+    "Directing ",
+    "Providing ",
+)
 STRUCTURAL_CLAIM_LOCATORS = {
     "top-level-division-header",
     "top-level-title-header",
@@ -354,6 +359,11 @@ def _measure_meaning(
             f"The House choice was whether to {action_verb} {label}, which would direct "
             f"{title[10:]}"
         )
+    elif title.startswith("Providing "):
+        meaning = (
+            f"The House choice was whether to {action_verb} {label}, which would provide "
+            f"{title[10:]}"
+        )
     else:
         meaning = (
             f"The House choice was whether to {action_verb} {label}, an operative measure "
@@ -440,7 +450,9 @@ def _source_bindings(record: dict[str, Any]) -> list[dict[str, Any]]:
     return bindings
 
 
-def _build_evidence_map(record: dict[str, Any]) -> dict[str, Any]:
+def _build_evidence_map(
+    record: dict[str, Any], *, candidate_namespace: str
+) -> dict[str, Any]:
     action_id = record["action_id"]
     subject = {
         "action_id": action_id,
@@ -450,14 +462,20 @@ def _build_evidence_map(record: dict[str, Any]) -> dict[str, Any]:
         "source_bindings": _source_bindings(record),
     }
     return {
-        "evidence_map_id": f"action-interpretation-evidence-map:{action_id}:m11c:v1",
+        "evidence_map_id": (
+            f"action-interpretation-evidence-map:{action_id}:{candidate_namespace}:v1"
+        ),
         **subject,
         "evidence_map_subject_sha256": sha256_json(subject),
     }
 
 
 def _build_candidate(
-    record: dict[str, Any], *, evidence_map: dict[str, Any], repository_root: Path
+    record: dict[str, Any],
+    *,
+    evidence_map: dict[str, Any],
+    repository_root: Path,
+    candidate_namespace: str,
 ) -> dict[str, Any]:
     action_id = record["action_id"]
     identity = record["exact_action_identity"]
@@ -497,7 +515,9 @@ def _build_candidate(
 
     subject = {
         "action_id": action_id,
-        "candidate_id": f"action-interpretation-candidate:{action_id}:m11c:v1",
+        "candidate_id": (
+            f"action-interpretation-candidate:{action_id}:{candidate_namespace}:v1"
+        ),
         "exact_action_identity": identity,
         "house_action_stage": record["house_action_stage"],
         "mechanism_class": record["mechanism_class"],
@@ -574,7 +594,18 @@ def build_candidate_artifact(
     artifact_id: str,
     post_merge_base: str,
     upstream_bindings: dict[str, Any],
+    candidate_namespace: str = "m11c",
+    source_readiness_merge_base_field: str = "post_m11b_merge_base",
 ) -> dict[str, Any]:
+    _require(
+        bool(re.fullmatch(r"[a-z][a-z0-9_]*", candidate_namespace)),
+        "invalid candidate namespace",
+    )
+    _require(
+        source_readiness_merge_base_field
+        in {"post_m11b_merge_base", "post_source_readiness_merge_base"},
+        "invalid source-readiness merge-base field",
+    )
     validate_readiness_artifact(readiness_artifact, repository_root=repository_root)
     records = readiness_artifact["subject"]["action_readiness"]
     evidence_maps: list[dict[str, Any]] = []
@@ -583,11 +614,14 @@ def build_candidate_artifact(
 
     for record in sorted(records, key=lambda item: item["action_id"]):
         if record["readiness_state"] == READY_STATE:
-            evidence_map = _build_evidence_map(record)
+            evidence_map = _build_evidence_map(
+                record, candidate_namespace=candidate_namespace
+            )
             candidate = _build_candidate(
                 record,
                 evidence_map=evidence_map,
                 repository_root=repository_root,
+                candidate_namespace=candidate_namespace,
             )
             evidence_maps.append(evidence_map)
             candidates.append(candidate)
@@ -650,7 +684,7 @@ def build_candidate_artifact(
         ),
     }
     subject = {
-        "post_m11b_merge_base": post_merge_base,
+        source_readiness_merge_base_field: post_merge_base,
         "upstream_bindings": deepcopy(upstream_bindings),
         "member_id": readiness_artifact["subject"]["member_id"],
         "legislator_id": readiness_artifact["subject"]["legislator_id"],
@@ -802,10 +836,32 @@ def validate_candidate_artifact(
         meaning = candidate["proposed_exact_action_meaning"].casefold()
         leaked = [term for term in FORBIDDEN_MEANING_TERMS if term in meaning]
         _require(not leaked, f"forbidden semantic input in meaning: {action_id}")
+        if candidate["coverage_assessment"] == "package_level_bounded_summary":
+            _require(
+                not re.search(
+                    r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b",
+                    meaning,
+                ),
+                f"component-level member attribution prohibited: {action_id}",
+            )
+        operative_ids = record["source_roles"]["operative_content_interpretation_input"]
+        meaning_components = [
+            component
+            for component in candidate["claim_components"]
+            if component["component_id"] == f"{action_id}:meaning"
+        ]
+        _require(
+            len(operative_ids) == 1
+            and len(meaning_components) == 1
+            and meaning_components[0]["source_id"] == operative_ids[0]
+            and meaning_components[0]["wording"]
+            == candidate["proposed_exact_action_meaning"]
+            and meaning_components[0]["locator"]
+            == candidate["official_title_or_purpose"]["locator"],
+            f"meaning claim uses non-exact source or locator: {action_id}",
+        )
         if record["mechanism_class"] != "amendment":
-            operative_id = record["source_roles"][
-                "operative_content_interpretation_input"
-            ][0]
+            operative_id = operative_ids[0]
             operative = next(
                 source
                 for source in record["sources"]

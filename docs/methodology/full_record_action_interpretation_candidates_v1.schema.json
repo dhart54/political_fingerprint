@@ -98,7 +98,7 @@
       ],
       "properties": {
         "evidence_map_id": {"type": "string", "minLength": 1},
-        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
         "exact_action_identity": {"type": "string", "minLength": 1},
         "house_action_stage": {"type": "string", "minLength": 1},
         "source_packet_sha256": {"$ref": "#/definitions/sha256"},
@@ -172,7 +172,7 @@
         "candidate_content_subject_sha256"
       ],
       "properties": {
-        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
         "candidate_id": {"type": "string", "minLength": 1},
         "exact_action_identity": {"type": "string", "minLength": 1},
         "house_action_stage": {"type": "string", "minLength": 1},
@@ -244,7 +244,7 @@
         "source_packet_sha256"
       ],
       "properties": {
-        "action_id": {"type": "string", "pattern": "^house:119:[12]:[0-9]+$"},
+        "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
         "readiness_state": {"type": "string", "minLength": 1},
         "disposition": {
           "enum": [
@@ -260,8 +260,11 @@
     "subject": {
       "type": "object",
       "additionalProperties": false,
+      "oneOf": [
+        {"required": ["post_source_readiness_merge_base"]},
+        {"required": ["post_m11b_merge_base"]}
+      ],
       "required": [
-        "post_m11b_merge_base",
         "upstream_bindings",
         "member_id",
         "legislator_id",
@@ -279,37 +282,35 @@
       ],
       "properties": {
         "post_m11b_merge_base": {"$ref": "#/definitions/gitSha"},
+        "post_source_readiness_merge_base": {"$ref": "#/definitions/gitSha"},
         "upstream_bindings": {"type": "object"},
-        "member_id": {"const": "F000477"},
-        "legislator_id": {"const": "leg_valerie_p_foushee"},
-        "issue_id": {"const": "NATIONAL_SECURITY_FOREIGN"},
-        "congress": {"const": 119},
+        "member_id": {"type": "string", "minLength": 1},
+        "legislator_id": {"type": "string", "minLength": 1},
+        "issue_id": {"type": "string", "minLength": 1},
+        "congress": {"type": "integer", "minimum": 1},
         "official_cutoff": {
           "type": "object",
           "additionalProperties": false,
           "required": ["end_date", "latest_action_id"],
           "properties": {
-            "end_date": {"const": "2026-07-23"},
-            "latest_action_id": {"const": "house:119:2:283"}
+            "end_date": {"type": "string", "format": "date"},
+            "latest_action_id": {
+              "type": "string",
+              "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"
+            }
           }
         },
         "action_ids": {"$ref": "#/definitions/stringArray"},
         "accounting": {
           "type": "array",
-          "minItems": 82,
-          "maxItems": 82,
           "items": {"$ref": "#/definitions/accounting"}
         },
         "evidence_maps": {
           "type": "array",
-          "minItems": 81,
-          "maxItems": 81,
           "items": {"$ref": "#/definitions/evidenceMap"}
         },
         "candidates": {
           "type": "array",
-          "minItems": 81,
-          "maxItems": 81,
           "items": {"$ref": "#/definitions/candidate"}
         },
         "aggregate": {
@@ -328,12 +329,12 @@
             "position_effect_counts"
           ],
           "properties": {
-            "approved_universe_count": {"const": 82},
-            "interpretation_eligible_count": {"const": 81},
-            "candidate_count": {"const": 81},
-            "source_blocked_count": {"const": 1},
-            "evidence_source_binding_count": {"const": 211},
-            "unique_evidence_source_count": {"const": 211},
+            "approved_universe_count": {"type": "integer", "minimum": 0},
+            "interpretation_eligible_count": {"type": "integer", "minimum": 0},
+            "candidate_count": {"type": "integer", "minimum": 0},
+            "source_blocked_count": {"type": "integer", "minimum": 0},
+            "evidence_source_binding_count": {"type": "integer", "minimum": 0},
+            "unique_evidence_source_count": {"type": "integer", "minimum": 0},
             "candidate_status_counts": {"type": "object"},
             "coverage_assessment_counts": {"type": "object"},
             "member_action_counts": {"type": "object"},
@@ -342,7 +343,11 @@
         },
         "blocked_action_ids": {
           "type": "array",
-          "const": ["house:119:2:278"]
+          "items": {
+            "type": "string",
+            "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"
+          },
+          "uniqueItems": true
         },
         "review_state": {
           "const": "candidate_package_pending_human_action_meaning_review"

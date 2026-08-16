@@ -17,19 +17,23 @@ The machine-readable authority is
   Security & Foreign Policy. The completed M11N chain performed its bounded
   production write, National Security is not receipts-only for `scope=119` or
   `scope=all`, and both active artifacts remain live-verified.
-- M12A is the active scaling milestone. It started from exact main
-  `44d966a7b3c36494b4965db6d4b00d6ba6d6a332` and proposes Environment &
-  Energy as the next full-record domain through House roll 283 on July 23,
-  2026. Its 153 high-recall candidates resolve to 62 directional and one
-  non-directional proposed substantive action, 64 procedural/context actions,
-  one expressive action, zero exact-action-ineligible actions, and 25
-  fail-closed unresolved boundaries. Independent ChatGPT governance accepted
-  the exact 63-action membership candidate at PR #149 head
-  `3d031790a072ed0194720931aef0c587ecf0d8b6`. The detached authority
-  receipt records membership-only approval; all 25 unresolved actions remain
-  outside the approved universe, including 16 missing exact child bindings
-  (14 amendments and two division-retention actions). No source-readiness or
-  downstream semantic work is authorized.
+- M12A established the accepted 63-action Environment & Energy universe through
+  House roll 283 on July 23, 2026. Its detached authority receipt remains a
+  membership-only boundary, and all 25 unresolved actions remain outside the
+  approved universe, including 16 missing exact child bindings (14 amendments
+  and two division-retention actions).
+- M12B is independently accepted at PR #150 head
+  `2973fc234de292ed6e61cadca966fcc2f586ca4f` and merged to main as
+  `7d4754aed87296796a1ead277a8dab242ab26027`. Its source-readiness-only
+  artifact records all 63 authorized actions as ready and zero blocked. It does
+  not itself accept any action meaning.
+- M12C is the active Environment & Energy action-interpretation-candidate
+  milestone. It proposes one detached, non-authorizing exact-action meaning for
+  each of the 63 ready actions and routes all of them to independent semantic
+  review. `house:119:2:136` remains Not Voting and non-directional. Two broad
+  packages retain explicit whole-package limits. The decision template is empty;
+  action-meaning acceptance and every later semantic, wording, publication,
+  deployment, persistence, and production authority remain false.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a

@@ -35,11 +35,9 @@
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
         },
-        "decision_count": {"const": 81},
+        "decision_count": {"type": "integer", "minimum": 0},
         "decisions": {
           "type": "array",
-          "minItems": 81,
-          "maxItems": 81,
           "items": {
             "type": "object",
             "additionalProperties": false,
