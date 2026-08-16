@@ -206,11 +206,66 @@ def merge_schemas(values: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def schema(value: dict[str, Any], schema_id: str) -> dict[str, Any]:
-    return {
+    result = {
         "$schema": "http://json-schema.org/draft-07/schema#",
         "$id": schema_id,
         **inferred_schema(value),
     }
+
+    def exactly_one_alias(node: dict[str, Any], legacy: str, generic: str) -> None:
+        properties = node.get("properties", {})
+        required = node.get("required", [])
+        if legacy not in properties:
+            return
+        properties[generic] = deepcopy(properties[legacy])
+        if legacy in required:
+            required.remove(legacy)
+        node.setdefault("allOf", []).append(
+            {"oneOf": [{"required": [legacy]}, {"required": [generic]}]}
+        )
+
+    def generalize(node: object) -> None:
+        if not isinstance(node, dict):
+            return
+        properties = node.get("properties")
+        if isinstance(properties, dict):
+            if {"accepted_head", "accepted_pr", "post_merge_main"}.issubset(properties):
+                properties.setdefault("reviewed_base", {"type": "string"})
+            accounting = properties.get("accepted_episode_disposition_accounting")
+            if isinstance(accounting, dict):
+                accounting.setdefault("properties", {})[
+                    "unused_non_directional_evidence_episode_count"
+                ] = {"type": "integer"}
+            for legacy, generic in (
+                (
+                    "m11h_authority_binding",
+                    "accepted_behavioral_semantic_ir_authority_binding",
+                ),
+                (
+                    "m11h_implementation_binding",
+                    "accepted_behavioral_semantic_ir_implementation_binding",
+                ),
+                (
+                    "m11h_parity_binding",
+                    "accepted_behavioral_semantic_ir_parity_binding",
+                ),
+                ("m11i_parity_binding", "synthesis_candidate_parity_binding"),
+                (
+                    "m11h_record_id",
+                    "accepted_behavioral_semantic_ir_record_id",
+                ),
+                (
+                    "m11h_record_subject_sha256",
+                    "accepted_behavioral_semantic_ir_record_subject_sha256",
+                ),
+            ):
+                exactly_one_alias(node, legacy, generic)
+        for child in node.values():
+            if isinstance(child, dict):
+                generalize(child)
+
+    generalize(result)
+    return result
 
 
 def preflight() -> tuple[
@@ -616,7 +671,7 @@ Behavioral Semantic IR content, not that direction field alone.
 """
 
 
-def build(*, check: bool = False) -> dict[str, Any]:
+def build(*, check: bool = False, schemas_only: bool = False) -> dict[str, Any]:
     package, template, m11h_authority, m11h_implementation = preflight()
     authority = build_authority(package, template)
     implementation = build_implementation(
@@ -670,6 +725,12 @@ def build(*, check: bool = False) -> dict[str, Any]:
         IMPLEMENTATION_SCHEMA_PATH: serialized(implementation_schema),
         PARITY_SCHEMA_PATH: serialized(parity_schema),
     }
+    if schemas_only:
+        outputs = {
+            AUTHORITY_SCHEMA_PATH: serialized(authority_schema),
+            IMPLEMENTATION_SCHEMA_PATH: serialized(implementation_schema),
+            PARITY_SCHEMA_PATH: serialized(parity_schema),
+        }
     for path, content in outputs.items():
         write_or_check(path, content, check=check)
     Draft7Validator(authority_schema).validate(authority)
@@ -692,5 +753,12 @@ def build(*, check: bool = False) -> dict[str, Any]:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--schemas-only", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(build(check=args.check), indent=2, sort_keys=True))
+    print(
+        json.dumps(
+            build(check=args.check, schemas_only=args.schemas_only),
+            indent=2,
+            sort_keys=True,
+        )
+    )

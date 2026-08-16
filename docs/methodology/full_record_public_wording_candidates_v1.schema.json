@@ -19,14 +19,37 @@
       "required": [
         "artifact_id", "member_bioguide_id", "member_slug", "issue_id",
         "congress", "chamber", "base_binding", "source_authority_boundary",
-        "presentation_contract", "blocked_action_boundary",
-        "m11h_authority_binding", "m11h_implementation_binding",
-        "m11j_authority_binding", "m11j_implementation_binding",
+        "presentation_contract",
         "wording_definitions", "wording_items", "wording_item_accounting",
         "complete_behavioral_synthesis_role_accounting", "blocked_actions",
         "source_accounting", "candidate_state", "accepted",
         "canonical_public_copy", "authorizing", "production_selectable",
         "downstream_authorizations"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {"required": ["blocked_action_boundary"]},
+            {"required": ["blocked_action_boundaries"]}
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11h_authority_binding", "m11h_implementation_binding",
+                "m11j_authority_binding", "m11j_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "behavioral_semantic_ir_authority_binding",
+                "behavioral_semantic_ir_implementation_binding",
+                "synthesis_authority_binding", "synthesis_implementation_binding"
+              ]
+            }
+          ]
+        }
       ],
       "properties": {
         "artifact_id": {"type": "string"},
@@ -39,10 +62,15 @@
         "source_authority_boundary": {"type": "string"},
         "presentation_contract": {"type": "string"},
         "blocked_action_boundary": {"type": "object"},
+        "blocked_action_boundaries": {"type": "array", "items": {"type": "object"}},
         "m11h_authority_binding": {"$ref": "#/definitions/identity_binding"},
         "m11h_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
         "m11j_authority_binding": {"$ref": "#/definitions/identity_binding"},
         "m11j_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
+        "behavioral_semantic_ir_authority_binding": {"$ref": "#/definitions/identity_binding"},
+        "behavioral_semantic_ir_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
+        "synthesis_authority_binding": {"$ref": "#/definitions/identity_binding"},
+        "synthesis_implementation_binding": {"$ref": "#/definitions/implementation_binding"},
         "wording_definitions": {"type": "array", "minItems": 1, "items": {"type": "object"}},
         "wording_items": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/wording_item"}},
         "wording_item_accounting": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},

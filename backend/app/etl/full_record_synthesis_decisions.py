@@ -18,6 +18,7 @@ DOWNSTREAM_AUTHORIZATIONS = {
     "deployment": False,
 }
 ALLOWED_DECISIONS = {"accept_candidate_as_written", "accept_with_bounded_revision"}
+REVIEWER_AUTHORITY = "full_record_synthesis_review_authority_v1"
 
 
 class SynthesisDecisionError(ValueError):
@@ -187,6 +188,12 @@ def validate_authority(
     subject = authority["subject"]
     if any(subject["downstream_authorizations"].values()):
         raise SynthesisDecisionError("downstream authority leakage")
+    authority_decision = subject.get("authority_decision")
+    if authority_decision is not None and not (
+        authority_decision["reviewer_id"].strip()
+        and authority_decision["reviewer_authority"] == REVIEWER_AUTHORITY
+    ):
+        raise SynthesisDecisionError("reviewer identity or authority differs")
     if not (
         subject["candidate_binding"]["artifact_id"] == package["artifact_id"]
         and subject["candidate_binding"]["candidate_subject_sha256"]
@@ -196,11 +203,11 @@ def validate_authority(
         and subject["decision_template_binding"]["decision_template_subject_sha256"]
         == decision_template["decision_template_subject_sha256"]
     ):
-        raise SynthesisDecisionError("M11I binding differs")
+        raise SynthesisDecisionError("synthesis candidate binding differs")
     candidates = _candidates(package)
     by_id = {row["synthesis_candidate_id"]: row for row in candidates}
     if len(by_id) != len(candidates):
-        raise SynthesisDecisionError("duplicate M11I candidate")
+        raise SynthesisDecisionError("duplicate synthesis candidate")
     decisions = subject["synthesis_decisions"]
     if len(decisions) != len(by_id) or {
         row["synthesis_candidate_id"] for row in decisions
@@ -244,6 +251,11 @@ def validate_authority(
         != package["subject"]["complete_proposition_accounting"]
     ):
         raise SynthesisDecisionError("complete proposition-role accounting differs")
+    if (
+        subject["accepted_episode_disposition_accounting"]
+        != package["subject"]["episode_disposition_accounting"]
+    ):
+        raise SynthesisDecisionError("complete episode-disposition accounting differs")
     return expected_counts
 
 
@@ -253,8 +265,10 @@ def validate_implementation(
     authority: dict[str, Any],
     package: dict[str, Any],
     decision_template: dict[str, Any],
-    m11h_authority: dict[str, Any],
-    m11h_implementation: dict[str, Any],
+    m11h_authority: dict[str, Any] | None = None,
+    m11h_implementation: dict[str, Any] | None = None,
+    accepted_behavioral_semantic_ir_authority: dict[str, Any] | None = None,
+    accepted_behavioral_semantic_ir_implementation: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     decision_counts = validate_authority(
         authority, package=package, decision_template=decision_template
@@ -271,29 +285,68 @@ def validate_implementation(
         == authority["authority_subject_sha256"]
     ):
         raise SynthesisDecisionError("implementation authority binding differs")
-    verify_seal(m11h_authority, "authority_subject_sha256", "M11H authority")
+    if (m11h_authority is None) == (accepted_behavioral_semantic_ir_authority is None):
+        raise SynthesisDecisionError(
+            "provide exactly one accepted Behavioral Semantic IR authority"
+        )
+    if (m11h_implementation is None) == (
+        accepted_behavioral_semantic_ir_implementation is None
+    ):
+        raise SynthesisDecisionError(
+            "provide exactly one accepted Behavioral Semantic IR implementation"
+        )
+    behavioral_authority = accepted_behavioral_semantic_ir_authority or m11h_authority
+    behavioral_implementation = (
+        accepted_behavioral_semantic_ir_implementation or m11h_implementation
+    )
+    assert behavioral_authority is not None
+    assert behavioral_implementation is not None
+
+    def binding(container: dict[str, Any], generic: str, legacy: str) -> dict[str, Any]:
+        present = [name for name in (generic, legacy) if name in container]
+        if len(present) != 1:
+            raise SynthesisDecisionError(f"provide exactly one {generic} binding")
+        return container[present[0]]
+
     verify_seal(
-        m11h_implementation, "implementation_subject_sha256", "M11H implementation"
+        behavioral_authority,
+        "authority_subject_sha256",
+        "Behavioral Semantic IR authority",
+    )
+    verify_seal(
+        behavioral_implementation,
+        "implementation_subject_sha256",
+        "Behavioral Semantic IR implementation",
+    )
+    behavioral_authority_binding = binding(
+        subject,
+        "accepted_behavioral_semantic_ir_authority_binding",
+        "m11h_authority_binding",
+    )
+    behavioral_implementation_binding = binding(
+        subject,
+        "accepted_behavioral_semantic_ir_implementation_binding",
+        "m11h_implementation_binding",
     )
     if not (
-        subject["m11h_authority_binding"]["artifact_id"]
-        == m11h_authority["artifact_id"]
-        and subject["m11h_authority_binding"]["authority_subject_sha256"]
-        == m11h_authority["authority_subject_sha256"]
-        and subject["m11h_implementation_binding"]["artifact_id"]
-        == m11h_implementation["artifact_id"]
-        and subject["m11h_implementation_binding"]["implementation_subject_sha256"]
-        == m11h_implementation["implementation_subject_sha256"]
+        behavioral_authority_binding["artifact_id"]
+        == behavioral_authority["artifact_id"]
+        and behavioral_authority_binding["authority_subject_sha256"]
+        == behavioral_authority["authority_subject_sha256"]
+        and behavioral_implementation_binding["artifact_id"]
+        == behavioral_implementation["artifact_id"]
+        and behavioral_implementation_binding["implementation_subject_sha256"]
+        == behavioral_implementation["implementation_subject_sha256"]
     ):
-        raise SynthesisDecisionError("accepted M11H binding differs")
+        raise SynthesisDecisionError("accepted Behavioral Semantic IR binding differs")
     source_records = {
         row["proposition_id"]: row
-        for row in m11h_implementation["subject"]["implementation_records"]
+        for row in behavioral_implementation["subject"]["implementation_records"]
     }
     if len(source_records) != len(
-        m11h_implementation["subject"]["implementation_records"]
+        behavioral_implementation["subject"]["implementation_records"]
     ):
-        raise SynthesisDecisionError("duplicate M11H proposition")
+        raise SynthesisDecisionError("duplicate Behavioral Semantic IR proposition")
     candidates = {row["synthesis_candidate_id"]: row for row in _candidates(package)}
     decisions = {
         row["synthesis_candidate_id"]: row
@@ -337,6 +390,9 @@ def validate_implementation(
         ):
             raise SynthesisDecisionError("implemented synthesis differs from decision")
         _validate_direction_guard(record)
+        observed_lineage = record["behavioral_proposition_lineage"]
+        if len(observed_lineage) != len(original["input_bindings"]):
+            raise SynthesisDecisionError("behavioral proposition lineage differs")
         expected_lineage = []
         for binding in original["input_bindings"]:
             source = source_records.get(binding["proposition_id"])
@@ -347,7 +403,9 @@ def validate_implementation(
                 and source["accepted_candidate_content_sha256"]
                 == binding["accepted_candidate_content_sha256"]
             ):
-                raise SynthesisDecisionError("M11H input proposition binding differs")
+                raise SynthesisDecisionError(
+                    "Behavioral Semantic IR input proposition binding differs"
+                )
             source_content = source["accepted_candidate_content"]
             if not (
                 source_content["direction"] == binding["source_direction"]
@@ -360,13 +418,36 @@ def validate_implementation(
                 and source_content["evidence_action_ids"]
                 == binding["evidence_action_ids"]
             ):
-                raise SynthesisDecisionError("M11H semantic input differs")
+                raise SynthesisDecisionError("Behavioral Semantic IR input differs")
+            lineage_row = observed_lineage[len(expected_lineage)]
+            generic_record_id = "accepted_behavioral_semantic_ir_record_id"
+            legacy_record_id = "m11h_record_id"
+            generic_subject_id = "accepted_behavioral_semantic_ir_record_subject_sha256"
+            legacy_subject_id = "m11h_record_subject_sha256"
+            if (generic_record_id in lineage_row) == (
+                legacy_record_id in lineage_row
+            ) or (generic_subject_id in lineage_row) == (
+                legacy_subject_id in lineage_row
+            ):
+                raise SynthesisDecisionError(
+                    "behavioral proposition lineage binding vocabulary differs"
+                )
+            record_id_field = (
+                generic_record_id
+                if generic_record_id in lineage_row
+                else legacy_record_id
+            )
+            record_subject_field = (
+                generic_subject_id
+                if generic_subject_id in lineage_row
+                else legacy_subject_id
+            )
             expected_lineage.append(
                 {
                     "proposition_id": binding["proposition_id"],
                     "relationship_role": binding["relationship_role"],
-                    "m11h_record_id": source["record_id"],
-                    "m11h_record_subject_sha256": source["record_subject_sha256"],
+                    record_id_field: source["record_id"],
+                    record_subject_field: source["record_subject_sha256"],
                     "accepted_candidate_content_sha256": source[
                         "accepted_candidate_content_sha256"
                     ],
@@ -375,7 +456,7 @@ def validate_implementation(
                 }
             )
             observed_inputs.add(binding["proposition_id"])
-        if record["behavioral_proposition_lineage"] != expected_lineage:
+        if observed_lineage != expected_lineage:
             raise SynthesisDecisionError("behavioral proposition lineage differs")
         evidence = original["underlying_evidence"]
         if not (
@@ -400,6 +481,13 @@ def validate_implementation(
         raise SynthesisDecisionError("standalone proposition entered synthesis")
     if subject["accepted_proposition_role_accounting"] != accounting:
         raise SynthesisDecisionError("implementation proposition accounting differs")
+    if (
+        subject["accepted_episode_disposition_accounting"]
+        != package["subject"]["episode_disposition_accounting"]
+    ):
+        raise SynthesisDecisionError(
+            "implementation episode-disposition accounting differs"
+        )
     expected_overlap = package["subject"]["candidate_overlap_accounting"]
     if subject["candidate_overlap_accounting"] != expected_overlap:
         raise SynthesisDecisionError("candidate overlap accounting differs")

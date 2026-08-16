@@ -32,7 +32,121 @@
     },
     "subject": {
       "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11h_authority_binding"
+              ]
+            },
+            {
+              "required": [
+                "accepted_behavioral_semantic_ir_authority_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11h_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "accepted_behavioral_semantic_ir_implementation_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11h_parity_binding"
+              ]
+            },
+            {
+              "required": [
+                "accepted_behavioral_semantic_ir_parity_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11i_parity_binding"
+              ]
+            },
+            {
+              "required": [
+                "synthesis_candidate_parity_binding"
+              ]
+            }
+          ]
+        }
+      ],
       "properties": {
+        "accepted_behavioral_semantic_ir_authority_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "authority_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "authority_subject_sha256",
+            "file_sha256"
+          ],
+          "type": "object"
+        },
+        "accepted_behavioral_semantic_ir_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "accepted_behavioral_semantic_ir_parity_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_sha256",
+            "parity_subject_sha256"
+          ],
+          "type": "object"
+        },
         "accepted_episode_disposition_accounting": {
           "additionalProperties": false,
           "properties": {
@@ -55,6 +169,9 @@
               "type": "integer"
             },
             "trajectory_evidence_episode_count": {
+              "type": "integer"
+            },
+            "unused_non_directional_evidence_episode_count": {
               "type": "integer"
             }
           },
@@ -175,6 +292,9 @@
               "type": "string"
             },
             "post_merge_main": {
+              "type": "string"
+            },
+            "reviewed_base": {
               "type": "string"
             }
           },
@@ -326,7 +446,43 @@
               "behavioral_proposition_lineage": {
                 "items": {
                   "additionalProperties": false,
+                  "allOf": [
+                    {
+                      "oneOf": [
+                        {
+                          "required": [
+                            "m11h_record_id"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "accepted_behavioral_semantic_ir_record_id"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "oneOf": [
+                        {
+                          "required": [
+                            "m11h_record_subject_sha256"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "accepted_behavioral_semantic_ir_record_subject_sha256"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
                   "properties": {
+                    "accepted_behavioral_semantic_ir_record_id": {
+                      "type": "string"
+                    },
+                    "accepted_behavioral_semantic_ir_record_subject_sha256": {
+                      "type": "string"
+                    },
                     "accepted_candidate_content_sha256": {
                       "type": "string"
                     },
@@ -359,8 +515,6 @@
                     "accepted_candidate_content_sha256",
                     "evidence_action_ids",
                     "evidence_episode_ids",
-                    "m11h_record_id",
-                    "m11h_record_subject_sha256",
                     "proposition_id",
                     "relationship_role"
                   ],
@@ -1417,6 +1571,26 @@
             "member_name"
           ],
           "type": "object"
+        },
+        "synthesis_candidate_parity_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "parity_subject_sha256"
+          ],
+          "type": "object"
         }
       },
       "required": [
@@ -1430,10 +1604,6 @@
         "downstream_authorizations",
         "final_accounting",
         "implementation_records",
-        "m11h_authority_binding",
-        "m11h_implementation_binding",
-        "m11h_parity_binding",
-        "m11i_parity_binding",
         "subject"
       ],
       "type": "object"

@@ -52,12 +52,19 @@ The machine-readable authority is
   all three accepted repeated patterns exactly as written: 13 primary evidence
   episodes, zero primary overlap, zero trajectories, zero notable choices, and
   the complete 63-episode ledger (25 contrast-only, 24 no-safe, and one unused
-  non-directional episode). M12I is the active detached synthesis-candidate
-  stage. It proposes one bounded `uniform_direction` candidate from the exact
-  three accepted proposition records, with 13 deduplicated episode/action lineage
-  records and no intentionally standalone proposition. Its human decision
-  template remains empty; synthesis acceptance and every wording, publication,
-  deployment, persistence, database, and production authority remain false.
+  non-directional episode).
+- M12I was independently accepted at exact PR #154 head
+  `95a7c59cd1876c7934fea9547008e2b8e86e8be0` and merged as
+  `ea6b93cd51110dd2e8da71448ce2a5b14f864ba3`. M12J now canonically implements
+  its sole `uniform_direction` synthesis exactly as written, preserving all
+  three accepted proposition bindings, 13 deduplicated episode/action lineage
+  records, and the complete 63-episode ledger. M12K is the active detached
+  public-wording stage with exactly five candidates: one overview, one synthesis
+  item, and three repeated patterns. All direction displays are omitted so the
+  wording itself makes clear that the object of opposition is congressional
+  overturning. The wording decision template remains empty; canonical public
+  copy, site integration, publication, deployment, persistence, database, and
+  production authority remain false.
 - Frontend Pass A implements a finder-first, URL-backed representative journey
   on `/`: compact overview, truthful Congress scope, responsive issue discovery,
   conditional reviewed analysis, conditional reviewed policy episodes, and a

@@ -1,0 +1,149 @@
+{
+  "accepted": true,
+  "artifact_id": "human-synthesis-authority:f000477:environment_energy:119:v1",
+  "artifact_role": "immutable_human_full_record_synthesis_authority",
+  "authority_subject_sha256": "060386625bebf6095bd91e20c7a63578b170cd94ced89a0d58996adbf606a187",
+  "authorizing": true,
+  "canonical_internal_synthesis_authority": true,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_synthesis_authority_v1",
+  "subject": {
+    "accepted_behavioral_semantic_ir_authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:environment_energy:119:v1",
+      "authority_subject_sha256": "31b26aa0a671a3ffb5226a26862df3bca10de3aee93a795d92cfc3abe26be276",
+      "file_sha256": "eb6388827648aaa6ee6cabda3e45cf0c93f35116a6f97e9540263dec7ae7c4af"
+    },
+    "accepted_behavioral_semantic_ir_implementation_binding": {
+      "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:environment_energy:119:v1",
+      "file_sha256": "ae403e7334f02f4135e857d4663efa79a75540648184a444572138f1812da491",
+      "implementation_subject_sha256": "8621aecaafc8352c31b16284ed6acde9d0d290f3e345af41ec6e231d774c9c32"
+    },
+    "accepted_behavioral_semantic_ir_parity_binding": {
+      "file_sha256": "0b03010e8038c7cce45cdc97b39e725329d807279a0ebf2bc50956aa4b5f431a",
+      "parity_subject_sha256": "ef8fbbb4b7a15a03518f140a47e9d57d7a2690b19e5d4a60ce24ed350325da04"
+    },
+    "accepted_episode_disposition_accounting": {
+      "accepted_episode_count": 63,
+      "contrast_only_episode_count": 25,
+      "no_safe_proposition_episode_count": 24,
+      "notable_choice_evidence_episode_count": 0,
+      "primary_overlap_count": 0,
+      "repeated_pattern_evidence_episode_count": 13,
+      "trajectory_evidence_episode_count": 0,
+      "unused_non_directional_evidence_episode_count": 1
+    },
+    "accepted_proposition_role_accounting": [
+      {
+        "accepted_candidate_content_sha256": "8bb710be3f47f99e62467277771097f3a1b2833def3a3fa1d5856a9eb89eb988",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-congressional-disapproval-uniform-opposition"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-blm-land-decision-disapproval-opposition:m12h:v1",
+        "implementation_record_subject_sha256": "d29721d8e96160da9ee373712f20fd64f61e949c5ce870910e64f7427854fd0a",
+        "proposition_id": "pattern-blm-land-decision-disapproval-opposition",
+        "reason": "Primary independently accepted repeated-pattern input to the bounded congressional-disapproval uniform-direction candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "d2ea2a050f0278539be728072317f876cc73a4dcbe24c697a3b6812a2c36f745",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-congressional-disapproval-uniform-opposition"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-california-vehicle-emissions-waiver-disapproval-opposition:m12h:v1",
+        "implementation_record_subject_sha256": "203cd05721e5b6e9b7a6e77db5db9da26fd6b4e9fdd55450d41d2646cc6614c4",
+        "proposition_id": "pattern-california-vehicle-emissions-waiver-disapproval-opposition",
+        "reason": "Primary independently accepted repeated-pattern input to the bounded congressional-disapproval uniform-direction candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      },
+      {
+        "accepted_candidate_content_sha256": "6201431c6129aeba6c0afc20ff3a9cd3ae8a6e721225112fff0a756b2db137ab",
+        "accounting_role": "primary_input",
+        "candidate_relationships": [
+          {
+            "relationship_role": "primary_support",
+            "synthesis_candidate_id": "synthesis-congressional-disapproval-uniform-opposition"
+          }
+        ],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-doe-appliance-efficiency-rule-disapproval-opposition:m12h:v1",
+        "implementation_record_subject_sha256": "b3933af2fc08a0c390bd3c393a79bcc72d1787dd5504c1eed0a92075fe77bf83",
+        "proposition_id": "pattern-doe-appliance-efficiency-rule-disapproval-opposition",
+        "reason": "Primary independently accepted repeated-pattern input to the bounded congressional-disapproval uniform-direction candidate.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      }
+    ],
+    "authority_decision": {
+      "decision": "approved_all_synthesis_candidates_as_written",
+      "decision_timestamp": "2026-08-16T03:40:00Z",
+      "reviewer_authority": "full_record_synthesis_review_authority_v1",
+      "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+    },
+    "authority_effect": "canonical_internal_synthesis_only",
+    "candidate_binding": {
+      "accepted_head": "95a7c59cd1876c7934fea9547008e2b8e86e8be0",
+      "accepted_pr": 154,
+      "artifact_id": "synthesis-candidates:f000477:environment_energy:119:v1",
+      "candidate_subject_sha256": "df5d7209f7cc08b80e6164a5952fa08549e0dc9b6b4627db8d6fe2a7fc7cddae",
+      "file_sha256": "d6518f33bffacc4b2953e967098979d39cb5bb19e1b995a5376831e8cd69e378",
+      "post_merge_main": "ea6b93cd51110dd2e8da71448ce2a5b14f864ba3",
+      "reviewed_base": "d3bc0fddad701e0621c87857ed80288c23a867aa"
+    },
+    "decision_accounting": {
+      "accept_candidate_as_written": 1,
+      "accept_with_bounded_revision": 0,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "decision_template_binding": {
+      "artifact_id": "human-synthesis-decision-template:f000477:environment_energy:119:v1",
+      "decision_template_subject_sha256": "b3f8f69f5cdb357b4f84c29af423162138c5128328a0d9cfe0898edb8ef66f1f",
+      "file_sha256": "1e8eaff4d410d11942fc6bd1b57aed05957e720b4d2b7b9dc74f68f17fb0114c"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "production_writes": false,
+      "public_wording": false,
+      "publication": false
+    },
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "ENVIRONMENT_ENERGY",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee"
+    },
+    "synthesis_candidate_parity_binding": {
+      "artifact_id": "synthesis-candidate-parity:f000477:environment_energy:119:v1",
+      "file_sha256": "f93435edb5fa347310a089366993ae57a51c86daf3ec344a56a9b9fa7cb38b8f",
+      "parity_subject_sha256": "f9fd4cf93d403d600fa1c55921275be25ca713e30f6d260c4a704c5d9998dc21"
+    },
+    "synthesis_decisions": [
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "6003329cc772d412ce4dbb031f3e299d48bd9e1cc443802b3063f3bf3dfe4fd2",
+        "decision_timestamp": "2026-08-16T03:40:00Z",
+        "original_candidate_content_sha256": "de65c7406f47998135bef0fee4583013d37298f1a06a78951ccf316054c43c2e",
+        "original_candidate_subject_sha256": "926be507316008fb60fe6eb42650ff5bcc412b55a8e6bdefafcfc717256a46e2",
+        "reviewer_authority": "full_record_synthesis_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread",
+        "synthesis_candidate_id": "synthesis-congressional-disapproval-uniform-opposition"
+      }
+    ]
+  }
+}

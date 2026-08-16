@@ -205,6 +205,7 @@ def compile_public_wording_candidate_package(
     synthesis_implementation: dict[str, Any],
     wording_definitions: list[dict[str, Any]],
     subject: dict[str, Any],
+    legacy_binding_names: bool = True,
 ) -> dict[str, Any]:
     """Compile deterministic wording candidates from accepted internal semantics."""
 
@@ -249,11 +250,30 @@ def compile_public_wording_candidate_package(
                 "behavioral semantic role changed on wording surface",
             )
 
-    package = {
-        "schema_version": "full_record_public_wording_candidates_v1",
-        "artifact_id": subject["artifact_id"],
-        "subject": {
-            **deepcopy(subject),
+    legacy_blocked_boundary = "blocked_action_boundary" in subject
+    generic_blocked_boundaries = "blocked_action_boundaries" in subject
+    _require(
+        legacy_blocked_boundary != generic_blocked_boundaries,
+        "provide exactly one blocked-action boundary vocabulary",
+    )
+    boundary_rows = (
+        [subject["blocked_action_boundary"]]
+        if legacy_blocked_boundary
+        else subject["blocked_action_boundaries"]
+    )
+    _require(
+        len(boundary_rows)
+        == len(behavioral_implementation["subject"]["blocked_actions"])
+        and len({row["action_id"] for row in boundary_rows}) == len(boundary_rows)
+        and {row["action_id"] for row in boundary_rows}
+        == {
+            row["action_id"]
+            for row in behavioral_implementation["subject"]["blocked_actions"]
+        },
+        "blocked-action public boundary differs from accepted semantics",
+    )
+    semantic_bindings = (
+        {
             "m11h_authority_binding": {
                 "artifact_id": behavioral_authority["artifact_id"],
                 "authority_subject_sha256": behavioral_authority[
@@ -278,6 +298,42 @@ def compile_public_wording_candidate_package(
                     "implementation_subject_sha256"
                 ],
             },
+        }
+        if legacy_binding_names
+        else {
+            "behavioral_semantic_ir_authority_binding": {
+                "artifact_id": behavioral_authority["artifact_id"],
+                "authority_subject_sha256": behavioral_authority[
+                    "authority_subject_sha256"
+                ],
+            },
+            "behavioral_semantic_ir_implementation_binding": {
+                "artifact_id": behavioral_implementation["artifact_id"],
+                "implementation_subject_sha256": behavioral_implementation[
+                    "implementation_subject_sha256"
+                ],
+            },
+            "synthesis_authority_binding": {
+                "artifact_id": synthesis_authority["artifact_id"],
+                "authority_subject_sha256": synthesis_authority[
+                    "authority_subject_sha256"
+                ],
+            },
+            "synthesis_implementation_binding": {
+                "artifact_id": synthesis_implementation["artifact_id"],
+                "implementation_subject_sha256": synthesis_implementation[
+                    "implementation_subject_sha256"
+                ],
+            },
+        }
+    )
+
+    package = {
+        "schema_version": "full_record_public_wording_candidates_v1",
+        "artifact_id": subject["artifact_id"],
+        "subject": {
+            **deepcopy(subject),
+            **semantic_bindings,
             "wording_definitions": deepcopy(wording_definitions),
             "wording_items": items,
             "wording_item_accounting": dict(Counter(row["surface"] for row in items)),
@@ -336,6 +392,10 @@ def validate_public_wording_candidate_package(
         "m11h_implementation_binding",
         "m11j_authority_binding",
         "m11j_implementation_binding",
+        "behavioral_semantic_ir_authority_binding",
+        "behavioral_semantic_ir_implementation_binding",
+        "synthesis_authority_binding",
+        "synthesis_implementation_binding",
         "wording_definitions",
         "wording_items",
         "wording_item_accounting",
@@ -352,6 +412,25 @@ def validate_public_wording_candidate_package(
     rebuilt_subject = {
         key: deepcopy(value) for key, value in subject.items() if key not in excluded
     }
+    legacy_binding_names = "m11h_authority_binding" in subject
+    generic_binding_names = "behavioral_semantic_ir_authority_binding" in subject
+    _require(
+        legacy_binding_names != generic_binding_names
+        and (
+            {
+                "m11h_implementation_binding",
+                "m11j_authority_binding",
+                "m11j_implementation_binding",
+            }.issubset(subject)
+            if legacy_binding_names
+            else {
+                "behavioral_semantic_ir_implementation_binding",
+                "synthesis_authority_binding",
+                "synthesis_implementation_binding",
+            }.issubset(subject)
+        ),
+        "provide exactly one public-wording semantic binding vocabulary",
+    )
     expected = compile_public_wording_candidate_package(
         behavioral_authority=behavioral_authority,
         behavioral_implementation=behavioral_implementation,
@@ -359,6 +438,7 @@ def validate_public_wording_candidate_package(
         synthesis_implementation=synthesis_implementation,
         wording_definitions=subject["wording_definitions"],
         subject=rebuilt_subject,
+        legacy_binding_names=legacy_binding_names,
     )
     _require(package == expected, "public wording deterministic rebuild differs")
     return {
