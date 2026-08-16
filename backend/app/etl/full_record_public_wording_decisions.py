@@ -24,6 +24,18 @@ ALLOWED_TOP_LEVEL_COPY_FIELDS = {
     "evidence_count_label",
     "compression_notes",
 }
+GENERIC_UPSTREAM_BINDINGS = (
+    "behavioral_semantic_ir_authority_binding",
+    "behavioral_semantic_ir_implementation_binding",
+    "synthesis_authority_binding",
+    "synthesis_implementation_binding",
+)
+LEGACY_UPSTREAM_BINDINGS = (
+    "m11h_authority_binding",
+    "m11h_implementation_binding",
+    "m11j_authority_binding",
+    "m11j_implementation_binding",
+)
 
 
 class PublicWordingDecisionError(ValueError):
@@ -57,6 +69,64 @@ def _require(condition: bool, message: str) -> None:
 
 def _items(package: dict[str, Any]) -> list[dict[str, Any]]:
     return package["subject"]["wording_items"]
+
+
+def upstream_binding_names(subject: dict[str, Any]) -> tuple[str, ...]:
+    """Select the milestone-neutral contract, with explicit frozen-M11 fallback."""
+
+    if all(name in subject for name in GENERIC_UPSTREAM_BINDINGS):
+        _require(
+            not any(name in subject for name in LEGACY_UPSTREAM_BINDINGS),
+            "mixed generic and legacy public-wording bindings",
+        )
+        return GENERIC_UPSTREAM_BINDINGS
+    _require(
+        all(name in subject for name in LEGACY_UPSTREAM_BINDINGS)
+        and not any(name in subject for name in GENERIC_UPSTREAM_BINDINGS),
+        "public-wording upstream binding contract differs",
+    )
+    return LEGACY_UPSTREAM_BINDINGS
+
+
+def blocked_action_boundaries(subject: dict[str, Any]) -> list[dict[str, Any]]:
+    """Return zero-or-more boundaries while preserving frozen singular M11 input."""
+
+    if "blocked_action_boundaries" in subject:
+        _require(
+            "blocked_action_boundary" not in subject,
+            "mixed singular and plural blocked-action boundaries",
+        )
+        boundaries = subject["blocked_action_boundaries"]
+        _require(
+            isinstance(boundaries, list), "blocked-action boundaries must be a list"
+        )
+        return boundaries
+    _require(
+        "blocked_action_boundary" in subject,
+        "blocked-action boundary accounting is absent",
+    )
+    return [subject["blocked_action_boundary"]]
+
+
+def require_blocked_action_parity(
+    actual_subject: dict[str, Any], package_subject: dict[str, Any]
+) -> None:
+    actual = blocked_action_boundaries(actual_subject)
+    expected = blocked_action_boundaries(package_subject)
+    _require(actual == expected, "blocked-action boundaries differ")
+
+    def action_id(row: dict[str, Any]) -> object:
+        return row.get("canonical_action_id", row.get("action_id"))
+
+    blocked_ids = [action_id(row) for row in actual_subject["blocked_actions"]]
+    boundary_ids = [action_id(row) for row in actual]
+    _require(
+        all(value is not None for value in (*blocked_ids, *boundary_ids))
+        and len(blocked_ids) == len(set(blocked_ids))
+        and len(boundary_ids) == len(set(boundary_ids))
+        and set(blocked_ids) == set(boundary_ids),
+        "blocked actions and blocked-action boundaries do not reconcile",
+    )
 
 
 def _allowed_path(original: dict[str, Any], path: list[object]) -> bool:
@@ -193,12 +263,11 @@ def validate_authority(
         == parity["parity_subject_sha256"],
         "public wording candidate binding differs",
     )
-    for binding in (
-        "m11h_authority_binding",
-        "m11h_implementation_binding",
-        "m11j_authority_binding",
-        "m11j_implementation_binding",
-    ):
+    bindings = upstream_binding_names(package["subject"])
+    _require(
+        upstream_binding_names(subject) == bindings, "authority binding style differs"
+    )
+    for binding in bindings:
         expected = package["subject"][binding]
         actual = subject[binding]
         _require(
@@ -259,11 +328,10 @@ def validate_authority(
         subject["complete_source_accounting"] == package["subject"]["source_accounting"]
         and subject["complete_synthesis_role_accounting"]
         == package["subject"]["complete_behavioral_synthesis_role_accounting"]
-        and subject["blocked_actions"] == package["subject"]["blocked_actions"]
-        and subject["blocked_action_boundary"]
-        == package["subject"]["blocked_action_boundary"],
+        and subject["blocked_actions"] == package["subject"]["blocked_actions"],
         "complete source or blocked-action accounting differs",
     )
+    require_blocked_action_parity(subject, package["subject"])
     return expected
 
 
@@ -300,13 +368,12 @@ def validate_implementation(
         == authority["authority_subject_sha256"],
         "implementation authority binding differs",
     )
-    for binding in (
-        "candidate_binding",
-        "m11h_authority_binding",
-        "m11h_implementation_binding",
-        "m11j_authority_binding",
-        "m11j_implementation_binding",
-    ):
+    bindings = upstream_binding_names(authority["subject"])
+    _require(
+        upstream_binding_names(subject) == bindings,
+        "implementation binding style differs",
+    )
+    for binding in ("candidate_binding", *bindings):
         _require(
             subject[binding] == authority["subject"][binding],
             f"implementation {binding} differs",
@@ -364,11 +431,10 @@ def validate_implementation(
         subject["complete_source_accounting"] == package["subject"]["source_accounting"]
         and subject["complete_synthesis_role_accounting"]
         == package["subject"]["complete_behavioral_synthesis_role_accounting"]
-        and subject["blocked_actions"] == package["subject"]["blocked_actions"]
-        and subject["blocked_action_boundary"]
-        == package["subject"]["blocked_action_boundary"],
+        and subject["blocked_actions"] == package["subject"]["blocked_actions"],
         "implementation source or blocked-action accounting differs",
     )
+    require_blocked_action_parity(subject, package["subject"])
     final = {
         "canonical_reviewed_wording_count": len(records),
         "surface_accounting": expected_surfaces,

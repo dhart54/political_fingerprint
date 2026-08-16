@@ -8,12 +8,22 @@ from app.api.precomputed import (
     get_position_evidence_response,
     get_position_response,
 )
-from app.api.editorial_presentations import M11M_CANDIDATE_PATH, _load_publication_rows
+from app.api.editorial_presentations import (
+    M11M_CANDIDATE_PATH,
+    M12M_CANDIDATE_PATH,
+    _load_publication_rows,
+)
 from app.editorial_presentations.integration_candidate import (
     M11M_PREVIEW_TOKEN,
     load_site_integration_candidate,
     merge_site_integration_preview_evidence,
     merge_site_integration_preview_positions,
+)
+from app.editorial_presentations.environment_integration_candidate import (
+    M12M_PREVIEW_TOKEN,
+    load_environment_site_integration_candidate,
+    merge_environment_preview_evidence,
+    merge_environment_preview_positions,
 )
 from app.editorial_presentations.receipt_projection import (
     attach_governed_receipt_projections,
@@ -38,6 +48,18 @@ def _m11m_preview(candidate: str | None) -> dict[str, object] | None:
         return None
     try:
         return load_site_integration_candidate(M11M_CANDIDATE_PATH)
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
+
+
+def _m12m_preview(candidate: str | None) -> dict[str, object] | None:
+    if not (
+        candidate == M12M_PREVIEW_TOKEN
+        and os.getenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW") == "1"
+    ):
+        return None
+    try:
+        return load_environment_site_integration_candidate(M12M_CANDIDATE_PATH)
     except (OSError, KeyError, TypeError, ValueError):
         return None
 
@@ -79,12 +101,30 @@ def _has_governed_presentation_candidate(
 def get_legislator_positions(
     legislator_id: str,
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
-    candidate: str | None = Query(default=None, pattern="^m11m-national-security$"),
+    candidate: str | None = Query(
+        default=None, pattern="^(m11m-national-security|m12m-environment-energy)$"
+    ),
 ) -> dict[str, object]:
     response = get_position_response(legislator_id=legislator_id, scope=scope)
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
+    environment_preview = _m12m_preview(candidate)
+    if (
+        environment_preview is not None
+        and profile is not None
+        and str(profile["bioguide_id"]) == "F000477"
+        and scope in {"119", "all"}
+    ):
+        raw_evidence = get_position_evidence_response(
+            legislator_id=legislator_id, domain="ENVIRONMENT_ENERGY", scope=scope
+        ) or {"domain": "ENVIRONMENT_ENERGY", "evidence": []}
+        governed = merge_environment_preview_evidence(
+            raw_evidence, environment_preview, domain="ENVIRONMENT_ENERGY", scope=scope
+        )
+        return merge_environment_preview_positions(
+            response, governed_evidence=governed["evidence"]
+        )
     preview = _m11m_preview(candidate)
     if preview is None and profile is not None:
         preview = _active_m11m_publication(
@@ -120,7 +160,9 @@ def get_legislator_position_evidence(
     legislator_id: str,
     domain: str,
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
-    candidate: str | None = Query(default=None, pattern="^m11m-national-security$"),
+    candidate: str | None = Query(
+        default=None, pattern="^(m11m-national-security|m12m-environment-energy)$"
+    ),
 ) -> dict[str, object]:
     normalized_scope = scope if isinstance(scope, str) else "all"
     response = get_position_evidence_response(
@@ -171,6 +213,7 @@ def get_legislator_position_evidence(
                 presentation,
                 governed_evidence=governed_rows,
             )
+    environment_preview = _m12m_preview(candidate)
     preview = _m11m_preview(candidate) or active_site_candidate
     if (
         preview is not None
@@ -180,6 +223,17 @@ def get_legislator_position_evidence(
         response = merge_site_integration_preview_evidence(
             response,
             preview,
+            domain=normalized_domain,
+            scope=normalized_scope,
+        )
+    if (
+        environment_preview is not None
+        and profile is not None
+        and str(profile["bioguide_id"]) == "F000477"
+    ):
+        response = merge_environment_preview_evidence(
+            response,
+            environment_preview,
             domain=normalized_domain,
             scope=normalized_scope,
         )

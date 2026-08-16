@@ -510,6 +510,59 @@ def merge_site_integration_preview_evidence(
     return {**copy.deepcopy(base_response), "evidence": [*accepted, *retained]}
 
 
+def governed_position_summary(
+    governed_evidence: list[dict[str, Any]], *, domain: str
+) -> dict[str, Any]:
+    """Partition raw actions and governed exact-choice effects without dropping others."""
+
+    rows = [row for row in governed_evidence if row.get("issue_domain") == domain]
+    yea_count = sum(str(row.get("position", "")).lower() == "yea" for row in rows)
+    nay_count = sum(str(row.get("position", "")).lower() == "nay" for row in rows)
+    total_votes = len(rows)
+    other_count = total_votes - yea_count - nay_count
+    recorded_votes = yea_count + nay_count
+
+    interpreted = [row for row in rows if row.get("governed_receipt_projection")]
+    effects = [
+        row["governed_receipt_projection"]["exact_choice_position_effect"]
+        for row in interpreted
+    ]
+    interpreted_support_count = effects.count("supports_exact_choice")
+    interpreted_oppose_count = effects.count("opposes_exact_choice")
+    interpreted_other_count = (
+        len(effects) - interpreted_support_count - interpreted_oppose_count
+    )
+    interpreted_total = (
+        interpreted_support_count + interpreted_oppose_count + interpreted_other_count
+    )
+
+    _require(
+        total_votes == yea_count + nay_count + other_count
+        and recorded_votes == yea_count + nay_count,
+        f"{domain}: governed raw-action accounting does not reconcile",
+    )
+    _require(
+        interpreted_total
+        == interpreted_support_count
+        + interpreted_oppose_count
+        + interpreted_other_count
+        == len(interpreted),
+        f"{domain}: governed exact-choice accounting does not reconcile",
+    )
+    return {
+        "domain": domain,
+        "yea_count": yea_count,
+        "nay_count": nay_count,
+        "other_count": other_count,
+        "total_votes": total_votes,
+        "recorded_votes": recorded_votes,
+        "interpreted_support_count": interpreted_support_count,
+        "interpreted_oppose_count": interpreted_oppose_count,
+        "interpreted_other_count": interpreted_other_count,
+        "interpreted_total": interpreted_total,
+    }
+
+
 def merge_site_integration_preview_positions(
     base_response: dict[str, Any],
     *,
@@ -518,35 +571,9 @@ def merge_site_integration_preview_positions(
     """Recompute the one preview issue summary from visible governed receipts."""
 
     result = copy.deepcopy(base_response)
-    rows = [
-        row
-        for row in governed_evidence
-        if row.get("issue_domain") == "NATIONAL_SECURITY_FOREIGN"
-    ]
-    yea = sum(str(row.get("position", "")).lower() == "yea" for row in rows)
-    nay = sum(str(row.get("position", "")).lower() == "nay" for row in rows)
-    other = len(rows) - yea - nay
-    accepted = [row for row in rows if row.get("governed_receipt_projection")]
-    summary = {
-        "domain": "NATIONAL_SECURITY_FOREIGN",
-        "yea_count": yea,
-        "nay_count": nay,
-        "other_count": other,
-        "total_votes": len(rows),
-        "recorded_votes": len(rows),
-        "interpreted_support_count": sum(
-            row["governed_receipt_projection"]["exact_choice_position_effect"]
-            == "supports_exact_choice"
-            for row in accepted
-        ),
-        "interpreted_oppose_count": sum(
-            row["governed_receipt_projection"]["exact_choice_position_effect"]
-            == "opposes_exact_choice"
-            for row in accepted
-        ),
-        "interpreted_other_count": 0,
-        "interpreted_total": len(accepted),
-    }
+    summary = governed_position_summary(
+        governed_evidence, domain="NATIONAL_SECURITY_FOREIGN"
+    )
     existing = [
         row
         for row in result.get("positions", [])

@@ -11,7 +11,17 @@
     "implementation_subject_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "subject": {
       "type": "object",
-      "required": ["authority_binding", "candidate_binding", "m11h_authority_binding", "m11h_implementation_binding", "m11j_authority_binding", "m11j_implementation_binding", "implementation_records", "complete_source_accounting", "complete_synthesis_role_accounting", "blocked_actions", "blocked_action_boundary", "final_accounting", "canonical_reviewed_wording_present", "public", "production_selectable", "downstream_authorizations"],
+      "required": ["authority_binding", "candidate_binding", "implementation_records", "complete_source_accounting", "complete_synthesis_role_accounting", "blocked_actions", "final_accounting", "canonical_reviewed_wording_present", "public", "production_selectable", "downstream_authorizations"],
+      "allOf": [
+        {"oneOf": [
+          {"required": ["behavioral_semantic_ir_authority_binding", "behavioral_semantic_ir_implementation_binding", "synthesis_authority_binding", "synthesis_implementation_binding"]},
+          {"required": ["m11h_authority_binding", "m11h_implementation_binding", "m11j_authority_binding", "m11j_implementation_binding"]}
+        ]},
+        {"oneOf": [
+          {"required": ["blocked_action_boundaries"]},
+          {"required": ["blocked_action_boundary"]}
+        ]}
+      ],
       "properties": {
         "implementation_records": {"type": "array", "minItems": 1},
         "canonical_reviewed_wording_present": {"const": true},
