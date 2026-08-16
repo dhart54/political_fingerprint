@@ -29,10 +29,7 @@
         "congress",
         "chamber",
         "base_binding",
-        "accepted_m11h_file_bindings",
         "source_authority_boundary",
-        "m11h_authority_binding",
-        "m11h_implementation_binding",
         "candidate_definitions",
         "synthesis_candidates",
         "complete_proposition_accounting",
@@ -49,6 +46,26 @@
         "authorizing",
         "downstream_authorizations"
       ],
+      "allOf": [
+        {
+          "oneOf": [
+            {"required": ["accepted_m11h_file_bindings"]},
+            {"required": ["accepted_behavioral_semantic_ir_file_bindings"]}
+          ]
+        },
+        {
+          "oneOf": [
+            {"required": ["m11h_authority_binding"]},
+            {"required": ["accepted_behavioral_semantic_ir_authority_binding"]}
+          ]
+        },
+        {
+          "oneOf": [
+            {"required": ["m11h_implementation_binding"]},
+            {"required": ["accepted_behavioral_semantic_ir_implementation_binding"]}
+          ]
+        }
+      ],
       "properties": {
         "artifact_id": {"type": "string", "minLength": 1},
         "member_bioguide_id": {"type": "string", "minLength": 1},
@@ -58,13 +75,16 @@
         "chamber": {"enum": ["House", "Senate"]},
         "base_binding": {"type": "object"},
         "accepted_m11h_file_bindings": {"type": "object"},
+        "accepted_behavioral_semantic_ir_file_bindings": {"type": "object"},
         "source_authority_boundary": {"type": "string", "minLength": 1},
         "m11h_authority_binding": {"$ref": "#/$defs/artifactSubjectBinding"},
+        "accepted_behavioral_semantic_ir_authority_binding": {"$ref": "#/$defs/artifactSubjectBinding"},
         "m11h_implementation_binding": {"$ref": "#/$defs/artifactImplementationBinding"},
-        "candidate_definitions": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "accepted_behavioral_semantic_ir_implementation_binding": {"$ref": "#/$defs/artifactImplementationBinding"},
+        "candidate_definitions": {"type": "array", "minItems": 0, "items": {"type": "object"}},
         "synthesis_candidates": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "items": {"$ref": "#/$defs/synthesisCandidate"}
         },
         "complete_proposition_accounting": {
@@ -78,7 +98,7 @@
         },
         "candidate_overlap_accounting": {"type": "array", "items": {"type": "object"}},
         "source_behavioral_proposition_count": {"type": "integer", "minimum": 1},
-        "synthesis_candidate_count": {"type": "integer", "minimum": 1},
+        "synthesis_candidate_count": {"type": "integer", "minimum": 0},
         "accepted_episode_disposition_ledger": {"type": "array", "minItems": 1},
         "episode_disposition_accounting": {"type": "object"},
         "blocked_actions": {"type": "array"},

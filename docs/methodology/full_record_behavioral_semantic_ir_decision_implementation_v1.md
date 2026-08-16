@@ -17,10 +17,20 @@ inside the preserved evidence object. Each evidence episode binds to its accepte
 policy-episode implementation record, and each action is independently checked
 through that episode against its accepted action-interpretation record.
 
-The complete episode-disposition ledger is authoritative. Episodes retained only
-as contrasts or assigned no safe higher-level proposition cannot be promoted by a
-later layer without a new governed semantic review. Primary evidence episodes have
-exactly one accepted owner.
+The complete episode-disposition ledger is authoritative. It separately accounts
+for primary evidence, contrast-only evidence, no-safe-proposition evidence, and
+unused non-directional evidence, and it must reconcile exactly to every accepted
+episode. Episodes retained only as contrasts, assigned no safe higher-level
+proposition, or retained as unused non-directional evidence cannot be promoted by
+a later layer without a new governed semantic review. Primary evidence episodes
+have exactly one accepted owner.
+
+New packages use milestone-neutral action-interpretation, policy-episode, and
+candidate-parity bindings. The schemas and validators retain an explicit legacy
+M11D/M11F/M11G vocabulary for byte-identical historical artifacts, but a governed
+record must use exactly one vocabulary for each binding. Episode evidence maps
+are content-validated against the accepted candidate and upstream implementation;
+schemas do not hard-code historical episode IDs.
 
 Behavioral Semantic IR acceptance does not authorize synthesis, public wording,
 publication, persistence, database writes, production effects, or deployment.

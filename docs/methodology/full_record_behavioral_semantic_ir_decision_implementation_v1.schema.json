@@ -32,6 +32,64 @@
     },
     "subject": {
       "additionalProperties": false,
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11d_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "action_interpretation_implementation_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11f_authority_binding"
+              ]
+            },
+            {
+              "required": [
+                "policy_episode_authority_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11f_implementation_binding"
+              ]
+            },
+            {
+              "required": [
+                "policy_episode_implementation_binding"
+              ]
+            }
+          ]
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "m11g_parity_binding"
+              ]
+            },
+            {
+              "required": [
+                "behavioral_semantic_ir_candidate_parity_binding"
+              ]
+            }
+          ]
+        }
+      ],
       "properties": {
         "accepted_episode_disposition_accounting": {
           "additionalProperties": false,
@@ -55,6 +113,9 @@
               "type": "integer"
             },
             "trajectory_evidence_episode_count": {
+              "type": "integer"
+            },
+            "unused_non_directional_evidence_episode_count": {
               "type": "integer"
             }
           },
@@ -103,6 +164,26 @@
           },
           "type": "array"
         },
+        "action_interpretation_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
         "authority_binding": {
           "additionalProperties": false,
           "properties": {
@@ -116,6 +197,26 @@
           "required": [
             "artifact_id",
             "authority_subject_sha256"
+          ],
+          "type": "object"
+        },
+        "behavioral_semantic_ir_candidate_parity_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "parity_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "parity_subject_sha256"
           ],
           "type": "object"
         },
@@ -257,6 +358,9 @@
             },
             "trajectory_count": {
               "type": "integer"
+            },
+            "unused_non_directional_evidence_episode_count": {
+              "type": "integer"
             }
           },
           "required": [
@@ -302,256 +406,12 @@
                     "type": "string"
                   },
                   "episode_semantic_evidence": {
-                    "anyOf": [
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hr-9238-2-221": {
-                            "type": "string"
-                          },
-                          "single-119-s-4465-2-155": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hr-9238-2-221",
-                          "single-119-s-4465-2-155"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hconres-38-2-85": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-40-2-114": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-75-2-170": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-86-2-199": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-89-2-282": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hconres-38-2-85",
-                          "single-119-hconres-40-2-114",
-                          "single-119-hconres-75-2-170",
-                          "single-119-hconres-86-2-199",
-                          "single-119-hconres-89-2-282"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hconres-108-2-232": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-84-2-201": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hconres-108-2-232",
-                          "single-119-hconres-84-2-201"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hconres-64-1-346": {
-                            "type": "string"
-                          },
-                          "single-119-hconres-68-2-48": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hconres-64-1-346",
-                          "single-119-hconres-68-2-48"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hr-1608-1-286": {
-                            "type": "string"
-                          },
-                          "single-119-hr-3106-2-234": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hr-1608-1-286",
-                          "single-119-hr-3106-2-234"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-252-2-264": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-57-1-209": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-93-1-255": {
-                            "type": "string"
-                          },
-                          "single-119-hr-2913-2-207": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-252-2-264",
-                          "single-119-hamdt-57-1-209",
-                          "single-119-hamdt-93-1-255",
-                          "single-119-hr-2913-2-207"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-236-2-244": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-56-1-208": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-236-2-244",
-                          "single-119-hamdt-56-1-208"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-254-2-266": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-256-2-268": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-86-1-246": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-88-1-248": {
-                            "type": "string"
-                          },
-                          "single-119-hamdt-89-1-249": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-254-2-266",
-                          "single-119-hamdt-256-2-268",
-                          "single-119-hamdt-86-1-246",
-                          "single-119-hamdt-88-1-248",
-                          "single-119-hamdt-89-1-249"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hr-3944-1-182": {
-                            "type": "string"
-                          },
-                          "single-119-hr-8469-2-175": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hr-3944-1-182",
-                          "single-119-hr-8469-2-175"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-235-2-243": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-235-2-243"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-99-1-244": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-99-1-244"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hr-23-1-7": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hr-23-1-7"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hamdt-95-1-257": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hamdt-95-1-257"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-hr-1689-2-120": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-hr-1689-2-120"
-                        ],
-                        "type": "object"
-                      },
-                      {
-                        "additionalProperties": false,
-                        "properties": {
-                          "single-119-s-1071-1-320": {
-                            "type": "string"
-                          }
-                        },
-                        "required": [
-                          "single-119-s-1071-1-320"
-                        ],
-                        "type": "object"
-                      }
-                    ]
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "properties": {},
+                    "required": [],
+                    "type": "object"
                   },
                   "evidence_action_ids": {
                     "items": {
@@ -732,7 +592,6 @@
                   "relevant_contrasts",
                   "semantic_role",
                   "source_relationship_binding",
-                  "source_relationship_id",
                   "trajectory_change"
                 ],
                 "type": "object"
@@ -962,6 +821,46 @@
           ],
           "type": "object"
         },
+        "policy_episode_authority_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "authority_subject_sha256": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "authority_subject_sha256",
+            "file_sha256"
+          ],
+          "type": "object"
+        },
+        "policy_episode_implementation_binding": {
+          "additionalProperties": false,
+          "properties": {
+            "artifact_id": {
+              "type": "string"
+            },
+            "file_sha256": {
+              "type": "string"
+            },
+            "implementation_subject_sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "artifact_id",
+            "file_sha256",
+            "implementation_subject_sha256"
+          ],
+          "type": "object"
+        },
         "subject": {
           "additionalProperties": false,
           "properties": {
@@ -1026,10 +925,6 @@
         "downstream_authorizations",
         "final_accounting",
         "implementation_records",
-        "m11d_implementation_binding",
-        "m11f_authority_binding",
-        "m11f_implementation_binding",
-        "m11g_parity_binding",
         "subject",
         "synthesis_state"
       ],

@@ -17,5 +17,13 @@ The package accounts for every accepted behavioral proposition, including those
 intentionally left standalone. Candidate overlap is explicit and cannot imply
 independent findings when evidence is shared.
 
+A fail-closed package may contain zero synthesis candidates only when every
+accepted Behavioral Semantic IR proposition is explicitly accounted as
+intentionally standalone. Every nonzero candidate still requires at least two
+accepted proposition inputs with complete typed relationships. New packages use
+milestone-neutral accepted Behavioral Semantic IR authority and implementation
+bindings; the legacy M11H field vocabulary remains valid only as an explicit
+backward-compatibility path for byte-identical historical M11I artifacts.
+
 Candidate compilation does not accept synthesis or authorize public wording,
 publication, persistence, database or production writes, or deployment.

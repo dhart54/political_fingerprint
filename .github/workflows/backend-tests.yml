@@ -57,7 +57,9 @@ jobs:
           python scripts/validate_m11g_national_security_behavioral_semantic_ir_candidates.py
           python scripts/validate_m12g_environment_energy_behavioral_semantic_ir_candidates.py
           python scripts/validate_m11h_national_security_semantic_ir_acceptance.py
+          python scripts/validate_m12h_environment_energy_semantic_ir_acceptance.py
           python scripts/validate_m11i_national_security_synthesis_candidates.py
+          python scripts/validate_m12i_environment_energy_synthesis_candidates.py
           python scripts/validate_m11j_national_security_synthesis_acceptance.py
           python scripts/validate_m11k_national_security_public_wording_candidates.py
           python backend/scripts/build_m11l_national_security_public_wording_acceptance.py --check
@@ -85,6 +87,8 @@ jobs:
           backend/tests/test_m12e_environment_energy_policy_episode_candidates.py
           backend/tests/test_m12f_environment_energy_policy_episode_acceptance.py
           backend/tests/test_m12g_environment_energy_behavioral_semantic_ir_candidates.py
+          backend/tests/test_m12h_environment_energy_semantic_ir_acceptance.py
+          backend/tests/test_m12i_environment_energy_synthesis_candidates.py
           backend/tests/test_full_record_action_interpretation.py
           backend/tests/test_full_record_action_interpretation_decisions.py
           backend/tests/test_full_record_policy_episode_candidates.py

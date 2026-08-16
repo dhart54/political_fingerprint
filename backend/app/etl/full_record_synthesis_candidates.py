@@ -71,11 +71,13 @@ def _accepted_records(
     authority: dict[str, Any], implementation: dict[str, Any]
 ) -> dict[str, dict[str, Any]]:
     try:
-        verify_seal(authority, "authority_subject_sha256", "M11H authority")
+        verify_seal(
+            authority, "authority_subject_sha256", "Behavioral Semantic IR authority"
+        )
         verify_seal(
             implementation,
             "implementation_subject_sha256",
-            "M11H implementation",
+            "Behavioral Semantic IR implementation",
         )
     except BehavioralSemanticIRDecisionError as error:
         raise SynthesisCandidateError(str(error)) from error
@@ -83,19 +85,19 @@ def _accepted_records(
         authority.get("accepted") is True
         and authority.get("canonical_internal_behavioral_semantic_ir_authority")
         is True,
-        "M11H authority is not accepted canonical internal authority",
+        "Behavioral Semantic IR authority is not accepted canonical internal authority",
     )
     _require(
         implementation.get("canonical_internal_behavioral_semantic_ir") is True
         and implementation.get("accepted_human_decisions_implemented") is True,
-        "M11H implementation is not canonical internal accepted input",
+        "Behavioral Semantic IR implementation is not canonical internal accepted input",
     )
     binding = implementation["subject"]["authority_binding"]
     _require(
         binding["artifact_id"] == authority["artifact_id"]
         and binding["authority_subject_sha256"]
         == authority["authority_subject_sha256"],
-        "M11H implementation authority binding differs",
+        "Behavioral Semantic IR implementation authority binding differs",
     )
     records = {
         row["proposition_id"]: row
@@ -131,7 +133,7 @@ def _accepted_records(
             verify_seal(
                 record,
                 "record_subject_sha256",
-                f"M11H proposition {proposition_id}",
+                f"Behavioral Semantic IR proposition {proposition_id}",
             )
         except BehavioralSemanticIRDecisionError as error:
             raise SynthesisCandidateError(str(error)) from error
@@ -140,7 +142,7 @@ def _accepted_records(
             verify_seal(
                 decision,
                 "decision_subject_sha256",
-                f"M11H decision {proposition_id}",
+                f"Behavioral Semantic IR decision {proposition_id}",
             )
         except BehavioralSemanticIRDecisionError as error:
             raise SynthesisCandidateError(str(error)) from error
@@ -209,7 +211,10 @@ def _input_binding(row: dict[str, Any], record: dict[str, Any]) -> dict[str, Any
 
 
 def _compile_candidate(
-    definition: dict[str, Any], records: dict[str, dict[str, Any]]
+    definition: dict[str, Any],
+    records: dict[str, dict[str, Any]],
+    *,
+    legacy_binding_names: bool,
 ) -> dict[str, Any]:
     candidate_id = definition["synthesis_candidate_id"]
     _require(
@@ -353,7 +358,11 @@ def _compile_candidate(
             "unique_action_ids": all_action_ids,
             "unique_action_count": len(all_action_ids),
             "behavioral_proposition_input_count": len(bindings),
-            "independent_evidence_unit": "accepted_m11h_underlying_episode",
+            "independent_evidence_unit": (
+                "accepted_m11h_underlying_episode"
+                if legacy_binding_names
+                else "accepted_behavioral_semantic_ir_underlying_episode"
+            ),
             "pattern_nodes_and_episodes_are_not_additive": True,
         },
         "candidate_state": "proposed_pending_human_synthesis_review",
@@ -374,7 +383,7 @@ def _compile_accounting(
     by_id = {row["proposition_id"]: row for row in rows}
     _require(
         len(by_id) == len(rows) and set(by_id) == set(records),
-        "complete accepted M11H proposition accounting differs",
+        "complete accepted Behavioral Semantic IR proposition accounting differs",
     )
     candidate_roles = {
         proposition_id: [
@@ -466,6 +475,7 @@ def compile_synthesis_candidate_package(
     candidate_definitions: list[dict[str, Any]],
     proposition_accounting: list[dict[str, Any]],
     subject: dict[str, Any],
+    legacy_binding_names: bool = True,
 ) -> dict[str, Any]:
     """Compile only candidate synthesis from accepted Behavioral Semantic IR."""
 
@@ -476,7 +486,12 @@ def compile_synthesis_candidate_package(
         "duplicate synthesis candidate identity",
     )
     candidates = [
-        _compile_candidate(definition, records) for definition in candidate_definitions
+        _compile_candidate(
+            definition,
+            records,
+            legacy_binding_names=legacy_binding_names,
+        )
+        for definition in candidate_definitions
     ]
     accounting = _compile_accounting(
         proposition_accounting,
@@ -486,12 +501,8 @@ def compile_synthesis_candidate_package(
     role_counts = dict(
         sorted(Counter(row["accounting_role"] for row in accounting).items())
     )
-    package = {
-        "schema_version": "full_record_synthesis_candidates_v1",
-        "artifact_id": subject["artifact_id"],
-        "artifact_role": "detached_non_authorizing_synthesis_candidate_package",
-        "subject": {
-            **deepcopy(subject),
+    semantic_bindings = (
+        {
             "m11h_authority_binding": {
                 "artifact_id": authority["artifact_id"],
                 "authority_subject_sha256": authority["authority_subject_sha256"],
@@ -502,6 +513,28 @@ def compile_synthesis_candidate_package(
                     "implementation_subject_sha256"
                 ],
             },
+        }
+        if legacy_binding_names
+        else {
+            "accepted_behavioral_semantic_ir_authority_binding": {
+                "artifact_id": authority["artifact_id"],
+                "authority_subject_sha256": authority["authority_subject_sha256"],
+            },
+            "accepted_behavioral_semantic_ir_implementation_binding": {
+                "artifact_id": implementation["artifact_id"],
+                "implementation_subject_sha256": implementation[
+                    "implementation_subject_sha256"
+                ],
+            },
+        }
+    )
+    package = {
+        "schema_version": "full_record_synthesis_candidates_v1",
+        "artifact_id": subject["artifact_id"],
+        "artifact_role": "detached_non_authorizing_synthesis_candidate_package",
+        "subject": {
+            **deepcopy(subject),
+            **semantic_bindings,
             "candidate_definitions": deepcopy(candidate_definitions),
             "synthesis_candidates": candidates,
             "complete_proposition_accounting": accounting,
@@ -551,6 +584,19 @@ def validate_synthesis_candidate_package(
         and package["production_selectable"] is False,
         "synthesis candidate crossed downstream authority boundary",
     )
+    legacy_binding_names = "m11h_authority_binding" in subject
+    generic_binding_names = (
+        "accepted_behavioral_semantic_ir_authority_binding" in subject
+    )
+    _require(
+        legacy_binding_names != generic_binding_names
+        and (
+            "m11h_implementation_binding" in subject
+            if legacy_binding_names
+            else "accepted_behavioral_semantic_ir_implementation_binding" in subject
+        ),
+        "provide exactly one Behavioral Semantic IR binding vocabulary",
+    )
     rebuilt_subject = {
         key: deepcopy(value)
         for key, value in subject.items()
@@ -558,6 +604,8 @@ def validate_synthesis_candidate_package(
         not in {
             "m11h_authority_binding",
             "m11h_implementation_binding",
+            "accepted_behavioral_semantic_ir_authority_binding",
+            "accepted_behavioral_semantic_ir_implementation_binding",
             "candidate_definitions",
             "synthesis_candidates",
             "complete_proposition_accounting",
@@ -588,6 +636,7 @@ def validate_synthesis_candidate_package(
             for row in subject["complete_proposition_accounting"]
         ],
         subject=rebuilt_subject,
+        legacy_binding_names=legacy_binding_names,
     )
     _require(package == expected, "synthesis candidate deterministic rebuild differs")
     return {

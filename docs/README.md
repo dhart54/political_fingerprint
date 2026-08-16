@@ -34,9 +34,9 @@ The templates in `docs/workflows/MILESTONE_TEMPLATE.md` and `docs/plans/TEMPLATE
 
 Substantial work must identify exactly one active plan under `docs/plans/`. The active plan is the plan for the current branch and milestone, not the newest file by timestamp.
 
-Active plan: [M12F/G Environment & Energy Episode Acceptance and Semantic IR Candidates V1](plans/m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
+Active plan: [M12H/I Environment & Energy Semantic IR Acceptance and Synthesis Candidates V1](plans/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md)
 
-Current review packet: [M12F/G Environment & Energy Review Packet](review_packets/m12fg_environment_energy_episode_acceptance_semantic_ir_v1.md)
+Current review packet: [M12H/I Environment & Energy Review Packet](review_packets/m12hi_environment_energy_semantic_ir_acceptance_synthesis_v1.md)
 
 The compact [plan status index](plans/README.md) lists retained unresolved plans, archived plans, and planning rules. Archived execution records are historical evidence, not active instructions.
 
@@ -80,11 +80,12 @@ Committed generated artifacts are required when builders or tests drift-check th
 
 Generated does not mean disposable. Regeneration must remain deterministic, and publication status must not change through regeneration.
 
-The Environment & Energy chain has reached M12F canonical internal episode
-membership and M12G detached behavioral Semantic IR candidates. All 63 accepted
-actions remain in 63 singleton episodes; three bounded repeated patterns are
-pending independent substantive review. Behavioral Semantic IR acceptance and
-all later authorities remain inactive.
+The Environment & Energy chain has reached M12H canonical internal Behavioral
+Semantic IR: three independently accepted repeated patterns retain 13 primary
+episodes and the complete 63-episode disposition ledger. M12I proposes one
+detached, non-authorizing congressional-disapproval `uniform_direction`
+synthesis candidate using only those three propositions as semantic inputs.
+Synthesis acceptance and every later authority remain inactive.
 
 ## Local-only caches and output
 

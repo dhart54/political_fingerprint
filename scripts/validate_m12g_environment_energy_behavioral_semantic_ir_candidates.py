@@ -264,8 +264,16 @@ def validate() -> dict[str, Any]:
 
     state = load(ROOT / "docs/editorial/current_state_index.json")
     m12g = state["active_m12g_behavioral_semantic_ir_candidate_milestone"]
+    accepted_downstream = (
+        m12g["milestone_state"] == "completed_independently_accepted_merged"
+    )
+    downstream = m12g["downstream_authorizations"]
     require(
-        m12g["milestone_state"] == "complete_pending_independent_substantive_review"
+        m12g["milestone_state"]
+        in {
+            "complete_pending_independent_substantive_review",
+            "completed_independently_accepted_merged",
+        }
         and m12g["accepted_episode_count"] == 63
         and m12g["proposed_repeated_pattern_count"] == 3
         and m12g["proposed_trajectory_count"] == 0
@@ -279,8 +287,18 @@ def validate() -> dict[str, Any]:
         and m12g["candidate_identity"]["candidate_subject_sha256"]
         == graph_artifact["candidate_subject_sha256"]
         and m12g["decision_template_identity"]["all_decisions_empty"] is True
-        and m12g["semantic_ir_acceptance_state"] == "not_started_not_authorized"
-        and not any(m12g["downstream_authorizations"].values()),
+        and m12g["semantic_ir_acceptance_state"]
+        == (
+            "canonical_internal_by_m12h"
+            if accepted_downstream
+            else "not_started_not_authorized"
+        )
+        and downstream["semantic_ir_acceptance"] is accepted_downstream
+        and not any(
+            value
+            for key, value in downstream.items()
+            if key != "semantic_ir_acceptance"
+        ),
         "M12G current-state boundary differs",
     )
 

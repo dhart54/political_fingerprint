@@ -116,3 +116,13 @@ The human decision template is empty. M12G is detached, noncanonical,
 nonpublic, and nonauthorizing. M12H, synthesis, public wording, site integration,
 publication, persistence, database writes, production, and deployment remain
 unauthorized.
+
+## Independent review closeout
+
+Reviewer `chatgpt:political_fingerprint_authority_thread`, acting under
+`full_record_behavioral_semantic_ir_review_authority_v1`, approved all three
+candidates exactly as written at `2026-08-16T02:58:00Z`. PR #153 was accepted at
+exact head `ab35caf3fb8ff80961da990b742bd42f7c4e56ba` and merged as
+`d3bc0fddad701e0621c87857ed80288c23a867aa`. The checkpoint-only downstream
+statements above are retained as historical M12G state; M12H may now implement
+that exact accepted content without revising it.
