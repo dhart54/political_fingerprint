@@ -15,10 +15,14 @@
       },
       "decision": null,
       "decision_recorded_at_utc": null,
-      "deployed_runtime_commit": null,
       "fresh_preflight_state_fingerprint_sha256": null,
       "fresh_preflight_subject_sha256": null,
-      "live_health_proof_subject_sha256": null,
+      "ratification_observed_deployed_commit": null,
+      "ratification_observed_health_commit": null,
+      "ratification_runtime_evidence_binding": {
+        "captured_at_utc": null,
+        "runtime_health_proof_subject_sha256": null
+      },
       "reviewed_runtime_commit": null,
       "reviewer": null
     },
@@ -35,16 +39,16 @@
       },
       "activation_write_set_binding": {
         "artifact_id": "publication-activation-write-set:f000477:environment_energy:119:v1",
-        "write_set_subject_sha256": "536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6"
+        "write_set_subject_sha256": "ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f"
       },
       "candidate_preflight_binding": {
-        "preflight_subject_sha256": "e0995a17e15e813bd9336dcf68336969291ac53e490b90d0bc55a2ed60e68a46",
+        "preflight_subject_sha256": "858f348beaf78e77a1b5e87cd286b56559038602fce81195795b8e669224e6f5",
         "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
       },
       "candidate_preparation_authority_binding": {
         "artifact_id": "production-eligibility-publication-authority:f000477:environment_energy:119:v1",
-        "authority_file_sha256": "344840c1f7177c3be7ffb85a81c0c0d13d60a4209d5100e1c13c9c3e6c0f8222",
-        "authority_subject_sha256": "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68"
+        "authority_file_sha256": "dfa6d2d6766b7a6bd1ed7183b0bae95124964b6b5a1e17d7c46b1cf43907e2bc",
+        "authority_subject_sha256": "d3fda11480c9ce2bbc72db26130ac16b464280e42f27f9a2c03193b2e58b4fa6"
       },
       "congress": 119,
       "exact_bounded_rollback": {
@@ -99,11 +103,11 @@
         "presentation_artifact_version": 1,
         "presentation_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1"
       },
-      "reviewed_runtime_manifest_sha256": "8a19f368b9b9215ff82c1621d86b28878a4062434c05c97e500b6bf4fde1491a"
+      "reviewed_runtime_manifest_sha256": "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1"
     },
     "product_owner": "dhart54",
-    "ratification_boundary": "This unsealed template cannot authorize selection or mutation. A fresh live-runtime health proof and production preflight must be filled and the exact sealed authority mechanically ratified before apply.",
+    "ratification_boundary": "This unsealed template cannot authorize selection or mutation. Human authority binds stable reviewed/deployed/health runtime identity and historical ratification evidence. Every later production operation must independently capture a digest-valid runtime proof no more than 1,800 seconds old that matches that stable identity.",
     "required_reviewer_authority": "publication_activation_review_authority_v1"
   },
-  "template_subject_sha256": "8661ddf0ad0e61c82ea5df183e35d3fe402e32ab9f14557b6dddf66c9c5d5073"
+  "template_subject_sha256": "650dbb2b7fbfb29085e0230f734817d1e9f664558cc23591867f205b3a934ae2"
 }

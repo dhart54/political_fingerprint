@@ -26,6 +26,9 @@ from scripts.foushee_environment_energy_publication_preparation import (
     reviewed_runtime_manifest,
     validate_production_execution_runtime,
 )
+from scripts.validate_m12n_publication_activation_ratification_candidate import (
+    validate_candidate,
+)
 
 
 def _load(path):
@@ -112,6 +115,35 @@ def _synthetic_authority(*, commit: str, manifest_sha256: str) -> dict:
         "subject": subject,
         "activation_authority_subject_sha256": semantic_hash(subject),
     }
+
+
+def test_m12n_ratification_candidate_is_exact_and_non_authorizing() -> None:
+    candidate = validate_candidate()
+    subject = candidate["prospective_authority_subject"]
+    assert candidate["immutable"] is True
+    assert candidate["accepted"] is False
+    assert candidate["sealed"] is False
+    assert "decision_recorded_at_utc" not in subject
+    assert subject["candidate_prepared_at_utc"] == "2026-08-17T00:57:58Z"
+    assert "health_proof_subject_sha256" not in subject["runtime_binding"]
+    assert (
+        subject["ratification_runtime_evidence_binding"][
+            "runtime_health_proof_subject_sha256"
+        ]
+        == "22f9dfd2e1a42e1c9d4c1ffc3bf1f7799911036e7b6c0c78a20a2e65e42d7516"
+    )
+
+
+def test_m12n_ratification_candidate_cannot_satisfy_live_selector_authority() -> None:
+    candidate = validate_candidate()
+    write_set = _load(WRITE_SET_PATH)
+    with pytest.raises(ValueError, match="binding differs"):
+        validate_environment_positive_activation_authority(
+            candidate,
+            candidate=load_environment_site_integration_candidate(M12M_PATH),
+            candidate_authority=_load(AUTHORITY_PATH),
+            metadata=write_set["publication_registry"]["publication_metadata"],
+        )
 
 
 def test_old_ratification_proof_does_not_expire_stable_authority() -> None:

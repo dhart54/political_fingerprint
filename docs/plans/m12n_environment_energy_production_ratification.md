@@ -49,8 +49,8 @@
 
 - [x] Discovery
 - [x] Runtime correction implementation
-- [ ] Runtime correction validation/merge/deployment
-- [ ] Fresh evidence and candidate regeneration
+- [x] Runtime correction validation/merge/deployment
+- [x] Fresh evidence and candidate regeneration
 - [ ] Follow-on validation/PR readiness
 
 ## Discoveries
@@ -64,6 +64,11 @@
 - Independent review rejected that prospective subject because stable authority content-bound the volatile health-proof digest while execution independently required proof freshness within 1,800 seconds. The digest is not ratified and will not be reused.
 - The prospective contract now uses a four-field stable runtime identity (`reviewed_runtime_manifest_sha256`, `reviewed_commit`, `deployed_commit`, `health_commit`), a separate historical `ratification_runtime_evidence_binding`, and a newly captured digest-valid execution proof with a maximum 1,800-second age.
 - The rejected production evidence/candidate was removed from PR158's effective diff; the governed pre-correction preparation remains reproducible through an explicit frozen runtime-manifest replay path.
+- Corrected PR158 head `77e7be0e06946e852520803e48e06fd1531ddc5f` merged as `b23a26cde2143bd646f0300fed18bd0c97a71a2b`; `/health` reports that exact corrected main.
+- Post-deployment runtime manifest is `a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1`; ratification-time proof is `22f9dfd2e1a42e1c9d4c1ffc3bf1f7799911036e7b6c0c78a20a2e65e42d7516`.
+- Fresh read-only preflight is `858f348beaf78e77a1b5e87cd286b56559038602fce81195795b8e669224e6f5`; counts remain `5 / 149 / 161 / 2`, fingerprint remains `b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb`, and Environment remains absent/receipts-only.
+- Regenerated preparation authority is `d3fda11480c9ce2bbc72db26130ac16b464280e42f27f9a2c03193b2e58b4fa6`; finalized write set is `ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f`.
+- New V2 candidate prepared at `2026-08-17T00:57:58Z` has prospective stable subject `a0bf52b86d0078a947008b464f147023d8739f3665e36ea41b2213d95a8d8b5e`; it contains no decision-recorded timestamp and remains accepted=false/sealed=false.
 
 ## Decisions And Rationale
 
@@ -87,6 +92,9 @@
 - Deterministic historical M12N preparation replay, Ruff lint/format, compileall, and `git diff --check`: passed.
 - Frozen M11N governed artifacts and accepted M12L/M12M artifacts: no Git diff.
 - Corrected exact-head hosted checks: pending.
+- Corrected PR158 exact-head hosted checks passed: amendment 15s, publication activation PostgreSQL 1m27s, receipt repair PostgreSQL 27s, full-record benchmark 2m27s, Vercel, and Vercel Preview Comments.
+- The post-merge Render workflow deployed exact main successfully; its smoke assertion retained the known historical Justice `artifact_id` mismatch while `/health` and all endpoint fetches succeeded.
+- Fresh V2 candidate deterministic validator and focused M12N/M11N suite: 46 passed before final follow-on packaging; follow-on hosted checks pending.
 
 ## Production Writes
 
