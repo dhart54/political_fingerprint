@@ -168,7 +168,15 @@ def _synthetic_activation_authority(write_set: dict) -> dict:
             "reviewed_commit": write_set["preflight_binding"]["deployed_commit"],
             "deployed_commit": write_set["preflight_binding"]["deployed_commit"],
             "health_commit": write_set["preflight_binding"]["deployed_commit"],
-            "health_proof_subject_sha256": "a" * 64,
+        },
+        "ratification_runtime_evidence_binding": {
+            "runtime_health_proof_subject_sha256": "a" * 64,
+            "captured_at_utc": "2026-08-14T11:59:00Z",
+            "reviewed_runtime_manifest_sha256": metadata["reviewed_runtime_binding"][
+                "reviewed_runtime_manifest_sha256"
+            ],
+            "deployed_commit": write_set["preflight_binding"]["deployed_commit"],
+            "health_commit": write_set["preflight_binding"]["deployed_commit"],
         },
         "production_target_identity_sha256": metadata[
             "production_target_identity_sha256"

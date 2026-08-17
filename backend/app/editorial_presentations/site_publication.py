@@ -6,6 +6,7 @@ import copy
 import hmac
 import json
 import re
+from datetime import datetime, timezone
 from typing import Any, Iterable
 
 from .compiler import canonical_digest
@@ -50,6 +51,97 @@ POSITIVE_AUTHORIZATIONS = {
 }
 SHA40 = re.compile(r"[0-9a-f]{40}")
 SHA256 = re.compile(r"[0-9a-f]{64}")
+
+
+def validate_stable_ratified_runtime_binding(
+    runtime: Any,
+    *,
+    expected_runtime_manifest_sha256: str,
+) -> None:
+    """Validate stable human-reviewed runtime identity, excluding proof freshness."""
+
+    if (
+        not isinstance(runtime, dict)
+        or set(runtime)
+        != {
+            "reviewed_runtime_manifest_sha256",
+            "reviewed_commit",
+            "deployed_commit",
+            "health_commit",
+        }
+        or runtime.get("reviewed_runtime_manifest_sha256")
+        != expected_runtime_manifest_sha256
+        or not SHA256.fullmatch(expected_runtime_manifest_sha256)
+        or runtime.get("reviewed_commit") != runtime.get("deployed_commit")
+        or runtime.get("deployed_commit") != runtime.get("health_commit")
+        or not SHA40.fullmatch(runtime.get("deployed_commit", ""))
+    ):
+        raise ValueError("stable ratified runtime identity differs")
+
+
+def validate_ratification_runtime_evidence_binding(
+    evidence: Any,
+    *,
+    stable_runtime: dict[str, Any],
+) -> None:
+    """Validate historical ratification evidence without imposing execution freshness."""
+
+    if not isinstance(evidence, dict):
+        raise ValueError("ratification runtime evidence binding differs")
+    try:
+        captured = datetime.fromisoformat(
+            evidence["captured_at_utc"].replace("Z", "+00:00")
+        )
+        if captured.tzinfo is None:
+            raise ValueError
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("ratification runtime evidence timestamp is invalid") from exc
+    if (
+        not SHA256.fullmatch(evidence.get("runtime_health_proof_subject_sha256", ""))
+        or evidence.get("reviewed_runtime_manifest_sha256")
+        != stable_runtime["reviewed_runtime_manifest_sha256"]
+        or evidence.get("deployed_commit") != stable_runtime["deployed_commit"]
+        or evidence.get("health_commit") != stable_runtime["health_commit"]
+    ):
+        raise ValueError("ratification runtime evidence binding differs")
+
+
+def validate_fresh_execution_runtime_proof(
+    proof: Any,
+    *,
+    stable_runtime: dict[str, Any],
+    max_age_seconds: int = 1800,
+    now: datetime | None = None,
+) -> None:
+    """Bind a newly fresh proof to stable authority without reusing its old digest."""
+
+    if not isinstance(proof, dict):
+        raise ValueError("fresh execution runtime proof is required")
+    body = copy.deepcopy(proof)
+    claimed = body.pop("runtime_health_proof_subject_sha256", None)
+    if claimed != canonical_digest(body):
+        raise ValueError("execution runtime proof digest mismatch")
+    try:
+        captured = datetime.fromisoformat(
+            proof["captured_at_utc"].replace("Z", "+00:00")
+        )
+        if captured.tzinfo is None:
+            raise ValueError
+        captured = captured.astimezone(timezone.utc)
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("execution runtime proof timestamp is invalid") from exc
+    current = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    age_seconds = (current - captured).total_seconds()
+    if age_seconds < 0 or age_seconds > max_age_seconds:
+        raise ValueError("execution runtime proof is not fresh")
+    if (
+        proof.get("reviewed_runtime_manifest_sha256")
+        != stable_runtime.get("reviewed_runtime_manifest_sha256")
+        or proof.get("deployed_commit") != stable_runtime.get("deployed_commit")
+        or proof.get("health_commit") != stable_runtime.get("health_commit")
+        or proof.get("deployed_commit") != proof.get("health_commit")
+    ):
+        raise ValueError("execution runtime proof differs from ratified runtime")
 
 
 def _object(value: Any) -> dict[str, Any] | None:
@@ -280,6 +372,27 @@ def validate_environment_positive_activation_authority(
         raise ValueError("synthetic activation authority cannot publish")
     runtime = subject.get("runtime_binding") if isinstance(subject, dict) else None
     expected_runtime = _object(metadata.get("reviewed_runtime_binding")) or {}
+    if isinstance(subject, dict):
+        try:
+            decision_recorded = datetime.fromisoformat(
+                subject["decision_recorded_at_utc"].replace("Z", "+00:00")
+            )
+            if decision_recorded.tzinfo is None:
+                raise ValueError
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                "Environment activation decision timestamp is invalid"
+            ) from exc
+        validate_stable_ratified_runtime_binding(
+            runtime,
+            expected_runtime_manifest_sha256=expected_runtime.get(
+                "reviewed_runtime_manifest_sha256", ""
+            ),
+        )
+        validate_ratification_runtime_evidence_binding(
+            subject.get("ratification_runtime_evidence_binding"),
+            stable_runtime=runtime,
+        )
     if (
         authority.get("schema_version") != ACTIVATION_AUTHORITY_SCHEMA_VERSION
         or authority.get("artifact_id") != ENVIRONMENT_ACTIVATION_AUTHORITY_ID
@@ -290,6 +403,12 @@ def validate_environment_positive_activation_authority(
         or authority.get("activation_authority_subject_sha256")
         != canonical_digest(subject)
         or subject.get("decision") != "approve_exact_publication_activation"
+        or not isinstance(subject.get("decision_recorded_at_utc"), str)
+        or not subject["decision_recorded_at_utc"].strip()
+        or subject.get("reviewer_authority") != ACTIVATION_REVIEWER_AUTHORITY
+        or not isinstance(subject.get("reviewer"), str)
+        or not subject["reviewer"].strip()
+        or subject.get("product_owner") != "dhart54"
         or subject.get("member_bioguide_id") != MEMBER_ID
         or subject.get("issue_id") != "ENVIRONMENT_ENERGY"
         or subject.get("congress") != CONGRESS
@@ -315,13 +434,6 @@ def validate_environment_positive_activation_authority(
         != metadata.get("active_artifact_sha256")
         or subject.get("preflight_binding") != metadata.get("preflight_binding")
         or subject.get("rollback_binding") != metadata.get("rollback_binding")
-        or not isinstance(runtime, dict)
-        or runtime.get("reviewed_runtime_manifest_sha256")
-        != expected_runtime.get("reviewed_runtime_manifest_sha256")
-        or runtime.get("reviewed_commit") != runtime.get("deployed_commit")
-        or runtime.get("deployed_commit") != runtime.get("health_commit")
-        or not SHA40.fullmatch(runtime.get("deployed_commit", ""))
-        or not SHA256.fullmatch(runtime.get("health_proof_subject_sha256", ""))
         or subject.get("production_target_identity_sha256")
         != metadata.get("production_target_identity_sha256")
         or subject.get("authorizations") != POSITIVE_AUTHORIZATIONS
