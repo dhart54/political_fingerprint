@@ -34,7 +34,9 @@ def test_m12n_governed_package_is_deterministic_and_non_authorizing() -> None:
     authority = result["authority"]
     write_set = result["write_set"]
     template = _load(ACTIVATION_TEMPLATE_PATH)
-    validate_preflight(_load(PREFLIGHT_PATH), require_current_runtime=True)
+    # The governed preparation remains replayable after runtime evolution; only a
+    # newly captured ratification/execution proof may claim current-runtime status.
+    validate_preflight(_load(PREFLIGHT_PATH), require_current_runtime=False)
     validate_write_set(write_set, authority=authority)
     validate_environment_candidate_preparation_authority(
         authority,

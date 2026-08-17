@@ -24,10 +24,13 @@ from scripts.foushee_justice_publication_activation import (
     _apply as apply_justice_compact,
 )
 from scripts.foushee_environment_energy_publication_preparation import (
+    AUTHORITY_PATH,
     ISSUE_ID,
     POST_M12M_MAIN,
+    WRITE_SET_PATH,
     _apply,
     _counts,
+    _load,
     _registry_rows,
     _rollback,
     _selector_state,
@@ -165,7 +168,15 @@ def _synthetic_activation_authority(write_set: dict) -> dict:
             "reviewed_commit": write_set["preflight_binding"]["deployed_commit"],
             "deployed_commit": write_set["preflight_binding"]["deployed_commit"],
             "health_commit": write_set["preflight_binding"]["deployed_commit"],
-            "health_proof_subject_sha256": "a" * 64,
+        },
+        "ratification_runtime_evidence_binding": {
+            "runtime_health_proof_subject_sha256": "a" * 64,
+            "captured_at_utc": "2026-08-14T11:59:00Z",
+            "reviewed_runtime_manifest_sha256": metadata["reviewed_runtime_binding"][
+                "reviewed_runtime_manifest_sha256"
+            ],
+            "deployed_commit": write_set["preflight_binding"]["deployed_commit"],
+            "health_commit": write_set["preflight_binding"]["deployed_commit"],
         },
         "production_target_identity_sha256": metadata[
             "production_target_identity_sha256"
@@ -188,6 +199,8 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
     assert DATABASE_URL is not None
     with _connect(DATABASE_URL, autocommit=False) as conn:
         _prepare_current_justice_state(conn)
+        governed_authority = _load(AUTHORITY_PATH)
+        governed_write_set = _load(WRITE_SET_PATH)
         preflight = capture_preflight(
             conn,
             deployed_commit=POST_M12M_MAIN,
@@ -195,11 +208,99 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
         )
         authority = build_authority(preflight)
         write_set = build_write_set(preflight, authority)
+        assert governed_authority["authority_subject_sha256"] == (
+            "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68"
+        )
+        assert governed_write_set["write_set_subject_sha256"] == (
+            "536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6"
+        )
+        for key in (
+            "accepted_site_integration_binding",
+            "artifacts",
+            "relationships",
+            "expected_counts",
+            "write_caps",
+            "public_smoke_contract",
+            "activation_authorized",
+            "production_write_authorized",
+        ):
+            assert write_set[key] == governed_write_set[key]
+        assert {
+            key: write_set["publication_registry"][key]
+            for key in (
+                "member_bioguide_id",
+                "issue_id",
+                "presentation_natural_key",
+                "presentation_artifact_version",
+                "publicly_active",
+            )
+        } == {
+            key: governed_write_set["publication_registry"][key]
+            for key in (
+                "member_bioguide_id",
+                "issue_id",
+                "presentation_natural_key",
+                "presentation_artifact_version",
+                "publicly_active",
+            )
+        }
+        for key in (
+            "delete_registry_primary_key",
+            "delete_relationship_count",
+            "delete_artifact_natural_keys",
+            "delete_batch_key",
+            "restore_counts",
+        ):
+            assert write_set["rollback"][key] == governed_write_set["rollback"][key]
+        for issue_key in (
+            "justice_registry_row_unchanged",
+            "national_security_registry_row_unchanged",
+        ):
+            assert (
+                write_set["rollback"][issue_key]["content_sha256"]
+                == (governed_write_set["rollback"][issue_key]["content_sha256"])
+            )
+            assert (
+                write_set["rollback"][issue_key]["natural_key"]
+                == (governed_write_set["rollback"][issue_key]["natural_key"])
+            )
         activation_authority = _synthetic_activation_authority(write_set)
         before_counts = _counts(conn)
         before_fingerprint = _state_fingerprint(conn)
         before_registry = _registry_rows(conn)
         before_selector = _selector_state(conn)
+        assert before_counts == write_set["expected_counts"]["before"]
+        assert (
+            before_fingerprint
+            == write_set["preflight_binding"]["state_fingerprint_sha256"]
+        )
+
+        with pytest.raises(ValueError, match="synthetic activation authority"):
+            with conn.transaction(force_rollback=True):
+                _apply(
+                    conn,
+                    write_set,
+                    authority,
+                    activation_authority,
+                    allow_test_authority=False,
+                )
+
+        wrong_binding = copy.deepcopy(activation_authority)
+        wrong_binding["subject"]["activation_write_set_binding"][
+            "write_set_subject_sha256"
+        ] = "f" * 64
+        wrong_binding["activation_authority_subject_sha256"] = semantic_hash(
+            wrong_binding["subject"]
+        )
+        with pytest.raises(ValueError, match="binding differs"):
+            with conn.transaction(force_rollback=True):
+                _apply(
+                    conn,
+                    write_set,
+                    authority,
+                    wrong_binding,
+                    allow_test_authority=True,
+                )
 
         drifted = copy.deepcopy(write_set)
         drifted["preflight_binding"]["state_fingerprint_sha256"] = "0" * 64
@@ -231,6 +332,12 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
         assert first["already_applied"] is False
         assert first["postcheck"]["counts"] == write_set["expected_counts"]["after"]
         assert len(first["artifact_ids"]) == 3
+        active_selector = _selector_state(conn, allow_test_activation_authority=True)[
+            "scopes"
+        ]
+        assert active_selector["119"][ISSUE_ID]["tier"] == "reviewed_conclusion"
+        assert active_selector["all"][ISSUE_ID]["tier"] == "reviewed_conclusion"
+        assert active_selector["118"][ISSUE_ID]["tier"] == "receipts_only"
 
         with conn.transaction():
             second = _apply(

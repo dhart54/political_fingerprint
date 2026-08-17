@@ -43,6 +43,7 @@ from app.editorial_presentations.site_publication import (  # noqa: E402
     ENVIRONMENT_FILE_SHA256 as M12M_FILE_SHA256,
     ENVIRONMENT_SUBJECT_SHA256 as M12M_SUBJECT_SHA256,
     POSITIVE_AUTHORIZATIONS,
+    validate_fresh_execution_runtime_proof,
     validate_environment_positive_activation_authority as validate_positive_activation_authority,
     validate_environment_candidate_preparation_authority as validate_publication_authority,
 )
@@ -138,6 +139,49 @@ FROZEN_M12N_REVIEWED_RUNTIME_MANIFEST = {
     ],
     "reviewed_runtime_manifest_sha256": (
         "1c7762cb06730de22b37c79b8df8f09cd97ddfec8320e521fc95cbeb049c41a8"
+    ),
+}
+FROZEN_PRE_CORRECTION_M12N_REVIEWED_RUNTIME_MANIFEST = {
+    "schema_version": "m12n_reviewed_runtime_manifest_v1",
+    "files": [
+        {
+            "path": "backend/app/api/positions.py",
+            "file_sha256": (
+                "22a94d9df76da7883ad86302a24739011f092cee17fc52a9d91eed31688a497a"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/selector.py",
+            "file_sha256": (
+                "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/site_publication.py",
+            "file_sha256": (
+                "b9df6c01ab6b8de8a70f48abebccbfefec5400d62b5c0cb6d8448c0ef7158b8f"
+            ),
+        },
+        {
+            "path": (
+                "backend/app/editorial_presentations/"
+                "environment_integration_candidate.py"
+            ),
+            "file_sha256": (
+                "655805f5588bab44a5e932fc8a06d97c040adc983d4c6a9dd9c1cdc4b9d3b5fb"
+            ),
+        },
+        {
+            "path": (
+                "backend/scripts/foushee_environment_energy_publication_preparation.py"
+            ),
+            "file_sha256": (
+                "62bfcac6d6641540bfac736e93f3ef8724419d82d57e13df5b7c838f99c7c268"
+            ),
+        },
+    ],
+    "reviewed_runtime_manifest_sha256": (
+        "8a19f368b9b9215ff82c1621d86b28878a4062434c05c97e500b6bf4fde1491a"
     ),
 }
 PRODUCTION_TARGET_IDENTITY_SHA256 = semantic_hash(EXPECTED_PRODUCTION_TARGET)
@@ -245,6 +289,13 @@ def reviewed_runtime_manifest_for_preflight(
         return current
     if recorded == frozen["reviewed_runtime_manifest_sha256"]:
         return copy.deepcopy(frozen)
+    if (
+        recorded
+        == FROZEN_PRE_CORRECTION_M12N_REVIEWED_RUNTIME_MANIFEST[
+            "reviewed_runtime_manifest_sha256"
+        ]
+    ):
+        return copy.deepcopy(FROZEN_PRE_CORRECTION_M12N_REVIEWED_RUNTIME_MANIFEST)
     if recorded != current["reviewed_runtime_manifest_sha256"]:
         raise StoreSafetyError("preflight runtime manifest is not reproducible")
     return current
@@ -304,6 +355,24 @@ def validate_runtime_health_proof(
         age = datetime.now(timezone.utc) - captured.astimezone(timezone.utc)
         if age.total_seconds() < 0 or age.total_seconds() > 1800:
             raise StoreSafetyError("runtime health proof is not fresh")
+
+
+def validate_production_execution_runtime(
+    activation_authority: dict[str, Any],
+    runtime_proof: dict[str, Any] | None,
+) -> None:
+    """Require a new proof for the exact stable runtime humanly ratified."""
+
+    if runtime_proof is None:
+        raise StoreSafetyError("production operation requires fresh execution proof")
+    validate_runtime_health_proof(runtime_proof, require_current_runtime=True)
+    try:
+        validate_fresh_execution_runtime_proof(
+            runtime_proof,
+            stable_runtime=activation_authority["subject"]["runtime_binding"],
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        raise StoreSafetyError(str(exc)) from exc
 
 
 def target_identity_sha256(info: dict[str, Any]) -> str:
@@ -1027,6 +1096,52 @@ def build_activation_decision_template(
 
     validate_write_set(write_set, authority=authority)
     metadata = write_set["publication_registry"]["publication_metadata"]
+    legacy_template = (
+        metadata["reviewed_runtime_binding"]["reviewed_runtime_manifest_sha256"]
+        == FROZEN_PRE_CORRECTION_M12N_REVIEWED_RUNTIME_MANIFEST[
+            "reviewed_runtime_manifest_sha256"
+        ]
+    )
+    if legacy_template:
+        runtime_completion = {
+            "decision": None,
+            "reviewer": None,
+            "decision_recorded_at_utc": None,
+            "fresh_preflight_subject_sha256": None,
+            "fresh_preflight_state_fingerprint_sha256": None,
+            "reviewed_runtime_commit": None,
+            "deployed_runtime_commit": None,
+            "live_health_proof_subject_sha256": None,
+            "authorizations": {key: None for key in POSITIVE_AUTHORIZATIONS},
+        }
+        ratification_boundary = (
+            "This unsealed template cannot authorize selection or mutation. A fresh "
+            "live-runtime health proof and production preflight must be filled and "
+            "the exact sealed authority mechanically ratified before apply."
+        )
+    else:
+        runtime_completion = {
+            "decision": None,
+            "reviewer": None,
+            "decision_recorded_at_utc": None,
+            "fresh_preflight_subject_sha256": None,
+            "fresh_preflight_state_fingerprint_sha256": None,
+            "reviewed_runtime_commit": None,
+            "ratification_observed_deployed_commit": None,
+            "ratification_observed_health_commit": None,
+            "ratification_runtime_evidence_binding": {
+                "runtime_health_proof_subject_sha256": None,
+                "captured_at_utc": None,
+            },
+            "authorizations": {key: None for key in POSITIVE_AUTHORIZATIONS},
+        }
+        ratification_boundary = (
+            "This unsealed template cannot authorize selection or mutation. Human "
+            "authority binds stable reviewed/deployed/health runtime identity and "
+            "historical ratification evidence. Every later production operation "
+            "must independently capture a digest-valid runtime proof no more than "
+            "1,800 seconds old that matches that stable identity."
+        )
     subject = {
         "decision_options": [
             "approve_exact_publication_activation",
@@ -1057,22 +1172,8 @@ def build_activation_decision_template(
             "production_target_identity_sha256": (PRODUCTION_TARGET_IDENTITY_SHA256),
             "exact_bounded_rollback": write_set["rollback"],
         },
-        "completion_required_after_live_runtime_deployment": {
-            "decision": None,
-            "reviewer": None,
-            "decision_recorded_at_utc": None,
-            "fresh_preflight_subject_sha256": None,
-            "fresh_preflight_state_fingerprint_sha256": None,
-            "reviewed_runtime_commit": None,
-            "deployed_runtime_commit": None,
-            "live_health_proof_subject_sha256": None,
-            "authorizations": {key: None for key in POSITIVE_AUTHORIZATIONS},
-        },
-        "ratification_boundary": (
-            "This unsealed template cannot authorize selection or mutation. A fresh "
-            "live-runtime health proof and production preflight must be filled and "
-            "the exact sealed authority mechanically ratified before apply."
-        ),
+        "completion_required_after_live_runtime_deployment": runtime_completion,
+        "ratification_boundary": ratification_boundary,
     }
     template = {
         "schema_version": "m12n_publication_activation_decision_template_v1",
@@ -1853,6 +1954,12 @@ def main(argv: list[str] | None = None) -> int:
             raise StoreSafetyError(
                 "production preflight requires a fresh live runtime health proof"
             )
+        if args.target == "production":
+            validate_runtime_health_proof(
+                runtime_proof,
+                require_fresh=True,
+                require_current_runtime=True,
+            )
         deployed_commit = (
             runtime_proof["deployed_commit"]
             if runtime_proof is not None
@@ -1899,21 +2006,13 @@ def main(argv: list[str] | None = None) -> int:
         if not args.runtime_proof_path.exists():
             raise StoreSafetyError("production operation requires live runtime proof")
         runtime_proof = _load(args.runtime_proof_path)
-        validate_runtime_health_proof(
-            runtime_proof,
-            require_fresh=True,
-            require_current_runtime=True,
-        )
-        authority_runtime = activation_authority["subject"]["runtime_binding"]
+        validate_production_execution_runtime(activation_authority, runtime_proof)
         if (
             write_set["preflight_binding"].get("runtime_health_proof_binding") is None
             or write_set["preflight_binding"].get("production_target_identity_sha256")
             != target_identity_sha256(db_target)
             or activation_authority["subject"]["production_target_identity_sha256"]
             != target_identity_sha256(db_target)
-            or authority_runtime["deployed_commit"] != runtime_proof["deployed_commit"]
-            or authority_runtime["health_proof_subject_sha256"]
-            != runtime_proof["runtime_health_proof_subject_sha256"]
         ):
             raise StoreSafetyError(
                 "production operation lacks fresh runtime/preflight/target binding"
