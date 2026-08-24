@@ -873,6 +873,123 @@
       "deployment": false
     }
   },
+  "active_m13h_behavioral_semantic_ir_decision_milestone": {
+    "milestone": "m13h_education_workforce_semantic_ir_acceptance_v1",
+    "plan": "docs/plans/m13hi_education_workforce_semantic_ir_acceptance_synthesis_v1.md",
+    "review_packet": "docs/review_packets/m13hi_education_workforce_semantic_ir_acceptance_synthesis_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "accepted_m13g_pr": 167,
+    "accepted_m13g_head": "bf436c7687deaf200a33d42637cb42b495140242",
+    "post_m13g_merge_main": "38a1e6faa4d766104009129ee699f8ad323bd078",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "reviewer_id": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_behavioral_semantic_ir_review_authority_v1",
+    "review_decision": "approved_all_behavioral_semantic_ir_candidates_as_written",
+    "reviewed_at_utc": "2026-08-24T21:04:00Z",
+    "decision_accounting": {"accept_candidate_as_written": 2},
+    "accepted_repeated_pattern_count": 1,
+    "accepted_trajectory_count": 0,
+    "accepted_notable_choice_count": 1,
+    "primary_evidence_episode_count": 3,
+    "accepted_episode_count": 16,
+    "contrast_only_episode_count": 1,
+    "no_safe_higher_level_proposition_episode_count": 11,
+    "unused_non_directional_evidence_episode_count": 1,
+    "primary_overlap_count": 0,
+    "authority_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_education_workforce_119_v1/human_behavioral_semantic_ir_authority.json",
+      "id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+      "sha256": "2a441ae485cc534677858bad82914781e94068e7d34ccd0ac95da4e4b5c55887",
+      "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c"
+    },
+    "implementation_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_education_workforce_119_v1/behavioral_semantic_ir_decision_implementation.json",
+      "id": "behavioral-semantic-ir-decision-implementation:f000477:education_workforce:119:v1",
+      "sha256": "30329ed2ca0b6d8f32b30d573858ebbc653c38f2280a6432410b8a5e491424a9",
+      "implementation_subject_sha256": "e9bdf0b1b365aa48f19b20d4f5c871bb5ad1f3aa47f2eaa035dea62be725f6c3"
+    },
+    "parity_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_education_workforce_119_v1/implementation_parity_manifest.json",
+      "sha256": "ac39a8ce1a4254eef41098df22540a06cdbfe1e28ed14a2f1473c7e6ca517acd",
+      "parity_subject_sha256": "c40134c79de66e75c23e8698835dfec9f7cb8dd626dbab1b50a0bd387345bdf5"
+    },
+    "synthesis_acceptance": false,
+    "public": false,
+    "publication_state": "inactive_unchanged",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13i_synthesis_candidate_milestone": {
+    "milestone": "m13i_education_workforce_synthesis_candidates_v1",
+    "plan": "docs/plans/m13hi_education_workforce_semantic_ir_acceptance_synthesis_v1.md",
+    "review_packet": "docs/review_packets/m13hi_education_workforce_semantic_ir_acceptance_synthesis_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "post_m13g_merge_main": "38a1e6faa4d766104009129ee699f8ad323bd078",
+    "milestone_state": "draft_review_frontier_open",
+    "authority_effect": "detached_non_authorizing_no_safe_synthesis_state_only",
+    "source_behavioral_proposition_count": 2,
+    "synthesis_candidate_count": 0,
+    "candidate_ids": [],
+    "intentionally_standalone_proposition_ids": [
+      "pattern-education-relationship-triggered-funding-restriction-opposition",
+      "notable-hr1048-amendment-support-final-passage-opposition"
+    ],
+    "package_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_education_workforce_119_v1/synthesis_candidate_package.json",
+      "id": "synthesis-candidates:f000477:education_workforce:119:v1",
+      "sha256": "09f18212828e9dcbb31f75c1d80acfdee849519fb314fbd1cd64a426aebdefd3",
+      "synthesis_candidate_package_subject_sha256": "4c2d5270f4795b26ceca287f654a2e8973c022dfbcb983326f19a77c90a1406e"
+    },
+    "decision_template_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_education_workforce_119_v1/human_synthesis_decision_template.json",
+      "sha256": "867194246dce032fa73274224e5433d3222bce93245f68b3311fbc8354850d82",
+      "decision_template_subject_sha256": "29970336bc866f215b0592bc54cfef37c59c23776f870468d5f5328af21d63f7",
+      "all_decisions_empty": true
+    },
+    "dossier_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_education_workforce_119_v1/human_review_dossier.md",
+      "sha256": "30610ff927512f1fdc810c2de05fc182b7c79ad4f21a5c46e2b5a177bfb7346b"
+    },
+    "parity_identity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_candidates/f000477_education_workforce_119_v1/parity_manifest.json",
+      "sha256": "170feeca382335c87ce41d3591978a02c6365380fbdaefcfed6d0c396024c7c3",
+      "parity_subject_sha256": "83f8c44f7b85021e4af90e40f42eb5e856a4cbab22500be787b6b399ab0f771f"
+    },
+    "synthesis_acceptance": false,
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive_unchanged",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "synthesis_acceptance": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
   "active_m12c_action_interpretation_milestone": {
     "milestone": "m12c_environment_energy_action_interpretation_v1",
     "plan": "docs/plans/m12c_environment_energy_action_interpretation_v1.md",

@@ -46,6 +46,30 @@ ALLOWED_FULL_RECORD_REVIEW_CHANGE = (
     "docs/editorial/full_record_reviews/"
     "f000477_education_workforce_119_full_issue_universe_authority_receipt_v1.json"
 )
+ALLOWED_EDUCATION_WORKFORCE_PREFIXES = (
+    "docs/editorial/full_record_reviews/source_readiness/"
+    "f000477_education_workforce_119_",
+    "docs/editorial/full_record_reviews/source_readiness/evidence/"
+    "f000477_education_119_v1/",
+    "docs/editorial/full_record_reviews/source_readiness/evidence/"
+    "f000477_education_119_v2/",
+    "docs/editorial/full_record_reviews/source_readiness/corrections/"
+    "f000477_education_workforce_119_",
+    "docs/editorial/full_record_reviews/interpretation_candidates/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/interpretation_decisions/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/policy_episode_candidates/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/policy_episode_implementations/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/semantic_ir_candidates/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/semantic_ir_implementations/"
+    "f000477_education_workforce_119_v1/",
+    "docs/editorial/full_record_reviews/synthesis_candidates/"
+    "f000477_education_workforce_119_v1/",
+)
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -294,7 +318,11 @@ def main() -> int:
     )
     require(review_diff.returncode == 0, "full-record review diff inspection failed")
     require(
-        set(review_diff.stdout.splitlines()) <= {ALLOWED_FULL_RECORD_REVIEW_CHANGE},
+        all(
+            path == ALLOWED_FULL_RECORD_REVIEW_CHANGE
+            or path.startswith(ALLOWED_EDUCATION_WORKFORCE_PREFIXES)
+            for path in review_diff.stdout.splitlines()
+        ),
         "accepted full-record review artifact regression detected",
     )
     print(

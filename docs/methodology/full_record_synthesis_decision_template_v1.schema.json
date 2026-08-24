@@ -30,7 +30,7 @@
     "decision_state": {"const": "empty_pending_human_substantive_synthesis_review"},
     "candidate_decisions": {
       "type": "array",
-      "minItems": 1,
+      "minItems": 0,
       "items": {
         "type": "object",
         "required": ["synthesis_candidate_id", "candidate_subject_sha256", "decision", "bounded_revision", "reviewer_notes"],

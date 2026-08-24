@@ -1,0 +1,399 @@
+{
+  "accepted_human_decisions_implemented": true,
+  "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:education_workforce:119:v1",
+  "artifact_role": "deterministic_human_behavioral_semantic_ir_decision_implementation",
+  "canonical_internal_behavioral_semantic_ir": true,
+  "implementation_subject_sha256": "e9bdf0b1b365aa48f19b20d4f5c871bb5ad1f3aa47f2eaa035dea62be725f6c3",
+  "mechanical_review_state": "validated_by_independent_repository_validator",
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_behavioral_semantic_ir_decision_implementation_v1",
+  "subject": {
+    "accepted_episode_disposition_accounting": {
+      "accepted_episode_count": 16,
+      "contrast_only_episode_count": 1,
+      "no_safe_proposition_episode_count": 11,
+      "notable_choice_evidence_episode_count": 1,
+      "primary_overlap_count": 0,
+      "repeated_pattern_evidence_episode_count": 2,
+      "trajectory_evidence_episode_count": 0,
+      "unused_non_directional_evidence_episode_count": 1
+    },
+    "accepted_episode_disposition_ledger": [
+      {
+        "disposition": "supports_proposed_notable_choice",
+        "episode_id": "hr-1048-amendment-and-final-passage",
+        "primary_proposition_id": "notable-hr1048-amendment-support-final-passage-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded notable-choice proposition."
+      },
+      {
+        "disposition": "unused_non_directional_evidence",
+        "episode_id": "single-119-hr-1005-1-312",
+        "primary_proposition_id": null,
+        "reason": "Not Voting is resolved but non-directional and cannot support a directional behavioral proposition."
+      },
+      {
+        "disposition": "retained_as_limit_or_contrast",
+        "episode_id": "single-119-hr-1049-1-314",
+        "primary_proposition_id": null,
+        "reason": "Retained as contrast evidence for foreign-influence-parent-awareness-different-mechanism; shared topic, agency, statute, mechanism, or direction does not establish one bounded behavioral proposition."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hr-1069-1-313",
+        "primary_proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-pattern proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-1156-1-68",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-1642-1-146",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2262-2-19",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2550-1-332",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2616-2-184",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-2988-2-31",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-5408-2-216",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-6359-2-47",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-6472-2-82",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-hr-7892-2-217",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      },
+      {
+        "disposition": "supports_proposed_repeated_pattern",
+        "episode_id": "single-119-hr-881-1-120",
+        "primary_proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+        "reason": "Accepted episode meaning and direction independently support the bounded repeated-pattern proposition."
+      },
+      {
+        "disposition": "no_safe_higher_level_behavioral_proposition",
+        "episode_id": "single-119-s-356-1-315",
+        "primary_proposition_id": null,
+        "reason": "No recurring bounded choice, structured direction change, or independently selective notable-choice basis was established."
+      }
+    ],
+    "action_interpretation_implementation_binding": {
+      "artifact_id": "action-interpretation-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "074a3bd396a55f6c31b2f7acfacb63455e4b56e1cb2da522b7fa53c62523d656",
+      "implementation_subject_sha256": "d66bc98e456a0d3bdfca1326a6766681a98080c53dc781f6cd65a863f133a863"
+    },
+    "authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c"
+    },
+    "behavioral_semantic_ir_candidate_parity_binding": {
+      "artifact_id": "behavioral-semantic-ir-candidate-parity:f000477:education_workforce:119:v1",
+      "file_sha256": "e14425d467feab2eb7bab5e85b1393fbad270aacac64c15e94252c3c68cd2a71",
+      "parity_subject_sha256": "efcd31ae040ad88317afd5add6ded4e9e01e5b14c08745f3429a74d1db8092bb"
+    },
+    "blocked_actions": [],
+    "candidate_binding": {
+      "accepted_head": "bf436c7687deaf200a33d42637cb42b495140242",
+      "accepted_pr": 167,
+      "artifact_id": "behavioral-semantic-ir-candidates:f000477:education_workforce:119:v1",
+      "candidate_subject_sha256": "99411e738842f0eb15b73c21d600735fc485a56e6248c669a632fcc62c23812c",
+      "file_sha256": "ab5d26c92740ce9e28003ad5bfa38a2bf26277edfd5dcee0db76126cee520373",
+      "post_merge_main": "38a1e6faa4d766104009129ee699f8ad323bd078"
+    },
+    "canonical_internal_semantic_state": "human_authority_implemented_and_validated",
+    "decision_template_binding": {
+      "artifact_id": "behavioral-semantic-ir-human-decision-template:f000477:education_workforce:119:v1",
+      "decision_template_subject_sha256": "aa620483b803bc26a0bfe360b6a1648e3165dd1c4238c43763df63be700312f4",
+      "file_sha256": "401938203b27ea8dfac9f796fcc8f6dd052cdd57284a5fe7556d10e81e977648"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "public_wording": false,
+      "publication": false,
+      "synthesis": false
+    },
+    "final_accounting": {
+      "accepted_episode_count": 16,
+      "accepted_proposition_count": 2,
+      "blocked_action_count": 0,
+      "contrast_only_episode_count": 1,
+      "no_safe_proposition_episode_count": 11,
+      "notable_choice_count": 1,
+      "primary_evidence_episode_count": 3,
+      "primary_overlap_count": 0,
+      "repeated_pattern_count": 1,
+      "trajectory_count": 0,
+      "unused_non_directional_evidence_episode_count": 1
+    },
+    "implementation_records": [
+      {
+        "accepted_candidate_content": {
+          "authorizing": false,
+          "candidate_state": "proposed_not_accepted",
+          "canonical": false,
+          "competing_interpretations": [
+            "Keep the two episodes separate because their funding streams, covered institutions, and triggering relationships differ."
+          ],
+          "conclusion_relevance": "primary",
+          "direction": "opposition",
+          "episode_semantic_evidence": {
+            "single-119-hr-1069-1-313": "Whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+            "single-119-hr-881-1-120": "Whether to pass H.R. 881, which would establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes."
+          },
+          "evidence_action_ids": [
+            "house:119:1:120",
+            "house:119:1:313"
+          ],
+          "evidence_episode_ids": [
+            "single-119-hr-881-1-120",
+            "single-119-hr-1069-1-313"
+          ],
+          "material_limitations": [
+            "The proposals govern different federal funding streams and different education sectors.",
+            "H.R. 881 concerns Confucius Institute relationships at institutions of higher education; H.R. 1069 concerns direct or indirect Chinese-government support for elementary and secondary schools.",
+            "The pattern is limited to the two accepted funding-restriction choices and does not establish a general position on China, foreign influence, disclosure, education funding, or school governance."
+          ],
+          "overlap_relationships": [],
+          "proposition": "Across two separate proposals, Foushee opposed conditioning or withholding federal funding from educational institutions based on specified institutional relationships or support: Confucius Institute relationships in H.R. 881 and Chinese-government support in H.R. 1069.",
+          "proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+          "proposition_type": "repeated_pattern",
+          "rationale": "H.R. 881 would impose Department of Homeland Security funding restrictions on higher-education institutions with Confucius Institute relationships, while H.R. 1069 would prohibit federal education funds for elementary and secondary schools receiving Chinese-government support. Both are distinct federal-funding restriction choices triggered by the specified institutional relationship or support, and both accepted episode directions are opposition.",
+          "relevant_contrasts": [
+            {
+              "episode_ids": [
+                "single-119-hr-1049-1-314"
+              ],
+              "reason": "H.R. 1049 uses a parent-awareness purpose rather than the bounded federal-funding restriction mechanism shared by H.R. 881 and H.R. 1069."
+            },
+            {
+              "episode_ids": [
+                "single-119-hr-1005-1-312"
+              ],
+              "reason": "H.R. 1005 concerns school foreign-source disclosure and is non-directional because Foushee was recorded Not Voting."
+            },
+            {
+              "episode_ids": [
+                "hr-1048-amendment-and-final-passage"
+              ],
+              "reason": "The H.R. 1048 episode concerns a Section 117 amendment and a distinct whole-package passage choice, not the same funding-restriction mechanism, and its accepted direction is mixed."
+            }
+          ],
+          "semantic_role": "behavioral",
+          "source_relationship_binding": {
+            "inherited_authority": false,
+            "relationship_subject_sha256": null,
+            "use": "independently_derived_from_accepted_m13f_episode_meanings_and_directions"
+          },
+          "trajectory_change": null
+        },
+        "accepted_candidate_content_sha256": "23975bd28313ea9bfa060e2e28de23450c3c12d0c7b8769e84d5ab0f8f52946d",
+        "authority_artifact_id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+        "authority_decision_subject_sha256": "370d8706e8abedbda444d3101c4c27416b57a8fc21aee47fe5451b5655e728da",
+        "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c",
+        "canonical_internal_behavioral_semantic_ir": true,
+        "downstream_authorizations": {
+          "database_writes": false,
+          "deployment": false,
+          "production_persistence": false,
+          "public_wording": false,
+          "publication": false,
+          "synthesis": false
+        },
+        "evidence_lineage": [
+          {
+            "accepted_action_lineage": [
+              {
+                "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:120:m13d:v1",
+                "accepted_interpretation_record_subject_sha256": "3c47689265848980bb2fb92614e08cfe437404f4fcb8fe465ee79c81bf255bfb",
+                "action_id": "house:119:1:120"
+              }
+            ],
+            "episode_id": "single-119-hr-881-1-120",
+            "episode_record_id": "policy-episode-decision-implementation:single-119-hr-881-1-120:m13f:v1",
+            "episode_record_subject_sha256": "8ad905023752314ea392247e729732fd121c190abeefb8e8b1313e49ad179c99",
+            "member_direction": "opposes_policy_proposition"
+          },
+          {
+            "accepted_action_lineage": [
+              {
+                "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:313:m13d:v1",
+                "accepted_interpretation_record_subject_sha256": "85e6f28fcf0e09e1c5ce0fad6227697a6d931a5566a39546cb57e24aec407850",
+                "action_id": "house:119:1:313"
+              }
+            ],
+            "episode_id": "single-119-hr-1069-1-313",
+            "episode_record_id": "policy-episode-decision-implementation:single-119-hr-1069-1-313:m13f:v1",
+            "episode_record_subject_sha256": "bb9ad20bec2d9e66dd5682e0b079b328956b4049fc14c312cf9e04971abf48ac",
+            "member_direction": "opposes_policy_proposition"
+          }
+        ],
+        "implementation_state": "implemented_human_accepted_as_written",
+        "production_selectable": false,
+        "proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+        "public": false,
+        "record_id": "behavioral-semantic-ir-decision-implementation:pattern-education-relationship-triggered-funding-restriction-opposition:m13h:v1",
+        "record_subject_sha256": "2fbc13181692b20214a9daa98db336232719b5f099af50842d568a1f07ea886a",
+        "schema_version": "full_record_behavioral_semantic_ir_decision_implementation_record_v1",
+        "synthesis_authorized": false
+      },
+      {
+        "accepted_candidate_content": {
+          "authorizing": false,
+          "candidate_state": "proposed_not_accepted",
+          "canonical": false,
+          "competing_interpretations": [
+            "Retain the episode only in no-safe-aggregation accounting because its two choices should not be elevated beyond the accepted episode record."
+          ],
+          "conclusion_relevance": "primary",
+          "direction": "mixed",
+          "episode_semantic_evidence": {
+            "hr-1048-amendment-and-final-passage": "Whether to adopt H.Amdt. 12's changes to H.R. 1048's Section 117 foreign-gift reporting provisions and whether to pass the distinct whole H.R. 1048 package."
+          },
+          "evidence_action_ids": [
+            "house:119:1:79",
+            "house:119:1:83"
+          ],
+          "evidence_episode_ids": [
+            "hr-1048-amendment-and-final-passage"
+          ],
+          "material_limitations": [
+            "H.Amdt. 12 is a narrower Section 117 amendment choice; final passage is an indivisible whole-package choice.",
+            "Opposition to final passage cannot be attributed to any individual H.R. 1048 component, including the accepted amendment.",
+            "The mixed episode does not establish motive or a single overall position on foreign influence, higher education, China, or Section 117 policy.",
+            "This is a notable mixed episode, not a trajectory candidate: the accepted episode is one primary semantic unit and M13G does not split it into synthetic episodes."
+          ],
+          "overlap_relationships": [],
+          "proposition": "Within the H.R. 1048 legislative episode, Foushee supported H.Amdt. 12's Section 117 reporting changes and later opposed final passage of the distinct whole H.R. 1048 package.",
+          "proposition_id": "notable-hr1048-amendment-support-final-passage-opposition",
+          "proposition_type": "notable_choice",
+          "rationale": "This is the only accepted multi-action episode and preserves two different exact choices with opposite accepted effects on the same legislative date. Its bounded mixed structure is independently notable without converting it into one general foreign-influence or higher-education position.",
+          "relevant_contrasts": [
+            {
+              "episode_ids": [
+                "single-119-hr-881-1-120",
+                "single-119-hr-1005-1-312",
+                "single-119-hr-1049-1-314",
+                "single-119-hr-1069-1-313"
+              ],
+              "reason": "These are separate foreign-influence-related education choices with different mechanisms and cannot resolve or generalize the mixed H.R. 1048 episode."
+            }
+          ],
+          "semantic_role": "behavioral",
+          "source_relationship_binding": {
+            "inherited_authority": false,
+            "relationship_subject_sha256": null,
+            "use": "independently_derived_from_accepted_m13f_episode_meanings_and_directions"
+          },
+          "trajectory_change": null
+        },
+        "accepted_candidate_content_sha256": "764455c5def25f4c6a9faf1b29cf12793fdde602c8d1c1719dde882ccb971065",
+        "authority_artifact_id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+        "authority_decision_subject_sha256": "1577ae71bfce5652dff39129e7bcedbe3d3cca24f551e7eacd9ee869c686982b",
+        "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c",
+        "canonical_internal_behavioral_semantic_ir": true,
+        "downstream_authorizations": {
+          "database_writes": false,
+          "deployment": false,
+          "production_persistence": false,
+          "public_wording": false,
+          "publication": false,
+          "synthesis": false
+        },
+        "evidence_lineage": [
+          {
+            "accepted_action_lineage": [
+              {
+                "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:79:m13d:v1",
+                "accepted_interpretation_record_subject_sha256": "776eaf6d8b638d7f1e3324d32a5320f0276f84bd989e070fd3a287b10b2768ba",
+                "action_id": "house:119:1:79"
+              },
+              {
+                "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:83:m13d:v1",
+                "accepted_interpretation_record_subject_sha256": "f1bdbfb0367e7c6bba4b1db9ff210a31ff7217add94b4ff17373a074553825fb",
+                "action_id": "house:119:1:83"
+              }
+            ],
+            "episode_id": "hr-1048-amendment-and-final-passage",
+            "episode_record_id": "policy-episode-decision-implementation:hr-1048-amendment-and-final-passage:m13f:v1",
+            "episode_record_subject_sha256": "88c8f7c0055d17f3677cca5c4aa9b00942d2260050629a3d3ac22b3dd48bac69",
+            "member_direction": "mixed_on_episode_choices"
+          }
+        ],
+        "implementation_state": "implemented_human_accepted_as_written",
+        "production_selectable": false,
+        "proposition_id": "notable-hr1048-amendment-support-final-passage-opposition",
+        "public": false,
+        "record_id": "behavioral-semantic-ir-decision-implementation:notable-hr1048-amendment-support-final-passage-opposition:m13h:v1",
+        "record_subject_sha256": "1add628c528d744658953ad5337a511610ab51e77581d08e89dca5ab617e498e",
+        "schema_version": "full_record_behavioral_semantic_ir_decision_implementation_record_v1",
+        "synthesis_authorized": false
+      }
+    ],
+    "policy_episode_authority_binding": {
+      "artifact_id": "human-policy-episode-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "6381c88b1ee7e7e085e0ac9779616b58b93a5037ed3b19b5af7c56adb113b8a1",
+      "file_sha256": "dd84f769e2a2c7d547972d126f4aa5c5d272bd37a5308fbd2324a9926f91a299"
+    },
+    "policy_episode_implementation_binding": {
+      "artifact_id": "policy-episode-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "74212c3a768d33bb223bba81fbe92471d2ac698a10538e46d46c7683b3586f6e",
+      "implementation_subject_sha256": "1b11d068af95815952dee6877d8b97e5998539bfc56ddd0820e9b4b061688f3b"
+    },
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee",
+      "official_cutoff": {
+        "end_date": "2026-07-23",
+        "latest_action_id": "house:119:2:283"
+      }
+    },
+    "synthesis_state": "absent_not_authorized"
+  },
+  "synthesis_authorized": false
+}
