@@ -35,6 +35,14 @@ package continues to reproduce byte-for-byte.
 Party, sponsor, cosponsor, ideology, expected behavior, episode plans, desired
 synthesis, and public wording are forbidden meaning inputs.
 
+A milestone may supply a deterministic exact-action meaning refinement when an
+accepted operative source supports more mechanism detail than an official title
+alone conveys. The refinement must remain bound to that action's one accepted
+operative source and cannot change readiness, action identity, member action, or
+position-effect mechanics. An accepted, content-verified Congressional Record
+PDF uses the `operative-floor-text-pages` locator; its declared page/content
+contract must pass before the candidate can validate.
+
 ## Exact-action rules
 
 - An amendment candidate may use only its exact amendment purpose or
