@@ -1,0 +1,146 @@
+{
+    "actions": [
+        {
+            "actionDate": "2025-12-15",
+            "sourceSystem": {
+                "name": "Senate"
+            },
+            "text": "Received in the Senate.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "H38310",
+            "actionDate": "2025-12-11",
+            "actionTime": "16:44:10",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Motion to reconsider laid on the table Agreed to without objection.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H37100",
+            "actionDate": "2025-12-11",
+            "actionTime": "16:44:08",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-12-11T21:44:08Z",
+                    "rollNumber": 332,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll332.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "On passage Passed by the Yeas and Nays: 231 - 195 (Roll no. 332). (text: CR H5795)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "8000",
+            "actionDate": "2025-12-11",
+            "actionTime": "16:44:08",
+            "recordedVotes": [
+                {
+                    "chamber": "House",
+                    "congress": 119,
+                    "date": "2025-12-11T21:44:08Z",
+                    "rollNumber": 332,
+                    "sessionNumber": 1,
+                    "url": "https://clerk.house.gov/evs/2025/roll332.xml"
+                }
+            ],
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 231 - 195 (Roll no. 332). (text: CR H5795)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H35000",
+            "actionDate": "2025-12-11",
+            "actionTime": "15:59:29",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "The previous question was ordered pursuant to the rule.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H8D000",
+            "actionDate": "2025-12-11",
+            "actionTime": "15:04:26",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "DEBATE - The House proceeded with one hour of debate on H.R. 2550.",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H30000",
+            "actionDate": "2025-12-11",
+            "actionTime": "15:03:50",
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Considered under the provisions of rule H. Res. 432. (consideration: CR H5795-5802)",
+            "type": "Floor"
+        },
+        {
+            "actionCode": "H11100",
+            "actionDate": "2025-04-01",
+            "committees": [
+                {
+                    "name": "Oversight and Government Reform Committee",
+                    "systemCode": "hsgo00",
+                    "url": "https://api.congress.gov/v3/committee/house/hsgo00?format=json"
+                }
+            ],
+            "sourceSystem": {
+                "code": 2,
+                "name": "House floor actions"
+            },
+            "text": "Referred to the House Committee on Oversight and Government Reform.",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "Intro-H",
+            "actionDate": "2025-04-01",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        },
+        {
+            "actionCode": "1000",
+            "actionDate": "2025-04-01",
+            "sourceSystem": {
+                "code": 9,
+                "name": "Library of Congress"
+            },
+            "text": "Introduced in House",
+            "type": "IntroReferral"
+        }
+    ],
+    "pagination": {
+        "count": 10
+    },
+    "request": {
+        "billNumber": "2550",
+        "billType": "hr",
+        "billUrl": "https://api.congress.gov/v3/bill/119/hr/2550?format=json",
+        "congress": "119",
+        "contentType": "application/json",
+        "format": "json"
+    }
+}
