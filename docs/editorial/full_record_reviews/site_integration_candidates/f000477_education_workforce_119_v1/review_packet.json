@@ -1,0 +1,127 @@
+{
+  "accounting": {
+    "accepted_episodes": 16,
+    "accepted_interpreted_actions": 17,
+    "blocked_actions": 0,
+    "semantic_lineage_unique_actions": 4,
+    "semantic_lineage_unique_episodes": 3,
+    "wording_items": 3
+  },
+  "artifact_id": "site-integration-review-packet:f000477:education_workforce:119:v1",
+  "base_sha": "b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396",
+  "candidate_binding": {
+    "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+    "candidate_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+    "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31"
+  },
+  "controls": {
+    "authorizing": false,
+    "database_writes": false,
+    "deployment": false,
+    "preview_requires_server_opt_in": true,
+    "production_persistence": false,
+    "production_selectable": false,
+    "production_writes": false,
+    "public": false,
+    "publication_active": false,
+    "publication_eligibility": false
+  },
+  "mapping_rows": [
+    {
+      "direction_displayed": false,
+      "direction_label": null,
+      "evidence_count_label": "2 findings · 4 House votes",
+      "public_supporting_action_count": 4,
+      "public_supporting_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313",
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "semantic_lineage_action_count": 4,
+      "semantic_lineage_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313",
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "semantic_lineage_episode_count": 3,
+      "semantic_lineage_episode_ids": [
+        "hr-1048-amendment-and-final-passage",
+        "single-119-hr-1069-1-313",
+        "single-119-hr-881-1-120"
+      ],
+      "surface": "issue_overview",
+      "title": "Education & Workforce",
+      "wording_item_id": "wording:issue-overview:education-workforce:119",
+      "wording_item_subject_sha256": "e66035ae8ffe9cfe66d9e2166a76102dddbfa6f3f307f9a52a74ab1e79a111de"
+    },
+    {
+      "direction_displayed": false,
+      "direction_label": null,
+      "evidence_count_label": "2 proposals · 2 separate education sectors",
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313"
+      ],
+      "semantic_lineage_episode_count": 2,
+      "semantic_lineage_episode_ids": [
+        "single-119-hr-1069-1-313",
+        "single-119-hr-881-1-120"
+      ],
+      "surface": "repeated_pattern",
+      "title": "Funding restrictions tied to institutional relationships or support",
+      "wording_item_id": "wording:pattern:education-relationship-funding-restrictions",
+      "wording_item_subject_sha256": "850becb2b389b3584966d0c0e1d6f5f3c252b971d3fa476b273aa8a67f21a5ea"
+    },
+    {
+      "direction_displayed": true,
+      "direction_label": "Mixed",
+      "evidence_count_label": "1 legislative episode · 2 distinct choices",
+      "public_supporting_action_count": 2,
+      "public_supporting_action_ids": [
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "semantic_lineage_action_count": 2,
+      "semantic_lineage_action_ids": [
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "semantic_lineage_episode_count": 1,
+      "semantic_lineage_episode_ids": [
+        "hr-1048-amendment-and-final-passage"
+      ],
+      "surface": "notable_choice",
+      "title": "H.R. 1048 amendment and final passage",
+      "wording_item_id": "wording:notable:hr1048-amendment-final-passage",
+      "wording_item_subject_sha256": "9a5dd2ddbf54b0295b1df89b0197790f89f898bc41e36112aa2f50a726675ca2"
+    }
+  ],
+  "schema_version": "m13m_site_integration_review_packet_v1",
+  "scope_behavior": {
+    "118": "receipts_only_fail_closed",
+    "119": "candidate_available_with_explicit_server_preview_opt_in",
+    "all": "candidate_available_with_explicit_119th_congress_boundary",
+    "other": "request_validation_failure"
+  },
+  "screenshot_manifest": {
+    "artifact_id": "site-integration-screenshot-manifest:f000477:education_workforce:119:v1",
+    "capture_count": 5,
+    "file_sha256": "56370231a13e1961432d745df5077fa1194b7e1e2cc690bc99d5332bd39b00f6"
+  },
+  "semantic_proofs": {
+    "exact_accepted_wording_projection": true,
+    "excluded_material_cannot_enter_findings": true,
+    "mixed_direction_only_on_hr1048_notable": true,
+    "no_synthesis_surface": true,
+    "raw_vote_direction_inference": false,
+    "semantic_lineage_and_public_projection_separate": true
+  }
+}

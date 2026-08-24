@@ -1094,6 +1094,9 @@
     "accepted_m13k_pr": 169,
     "accepted_m13k_head": "c50ebce3dc66cd8345fd205f91b0af378f058cd4",
     "accepted_m13k_base": "b69dae58112adbf90db31c4037ddfaffe1a09551",
+    "final_pr_head": "f05013f68608a0ecc8aa9e598f8ba8c18f35fffc",
+    "merge_commit": "b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396",
+    "exact_post_m13l_main": "b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396",
     "review_decision": "approved_all_public_wording_candidates_as_written",
     "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
     "reviewer_authority": "full_record_public_wording_review_authority_v1",
@@ -1128,6 +1131,46 @@
       "subject_sha256": "af112cf7037bc1550c42e25ccf3d64a3d4b1284dbc1f54fe21a9705ebc2ef6ba"
     },
     "canonical_reviewed_wording": true,
+    "public": false,
+    "production_selectable": false,
+    "downstream_authorizations": {
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13m_site_integration_candidate_milestone": {
+    "milestone": "m13m_education_workforce_site_integration_candidate_v1",
+    "milestone_state": "draft_review_frontier",
+    "exact_post_m13l_main": "b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396",
+    "preview_token": "m13m-education-workforce",
+    "candidate": {
+      "artifact": "docs/editorial/full_record_reviews/site_integration_candidates/f000477_education_workforce_119_v1/site_integration_candidate.json",
+      "id": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+      "subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+    },
+    "surface_accounting": {
+      "issue_overview": 1,
+      "repeated_pattern": 1,
+      "notable_choice": 1,
+      "synthesis": 0,
+      "trajectory": 0
+    },
+    "record_accounting": {
+      "accepted_interpreted_actions": 17,
+      "accepted_episodes": 16,
+      "semantic_lineage_unique_actions": 4,
+      "semantic_lineage_unique_episodes": 3,
+      "blocked_actions": 0
+    },
+    "direction_display": {
+      "mixed_only_on_hr1048_notable": true,
+      "overview_directionless": true,
+      "repeated_pattern_directionless": true
+    },
     "public": false,
     "production_selectable": false,
     "downstream_authorizations": {

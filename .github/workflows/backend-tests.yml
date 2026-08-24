@@ -94,6 +94,8 @@ jobs:
           python backend/scripts/build_m11m_national_security_site_integration.py --check
           python scripts/validate_m12l_environment_energy_public_wording_acceptance.py
           python backend/scripts/build_m12m_environment_energy_site_integration.py --check
+          python backend/scripts/build_m13m_education_workforce_site_integration.py --check
+          python scripts/validate_m13m_education_workforce_site_integration.py
           python backend/scripts/foushee_national_security_publication_activation.py build --check
           python scripts/validate_m12n_publication_activation_ratification_candidate.py
           python scripts/build_m12n_environment_energy_ratification_candidate_v3.py
@@ -145,6 +147,7 @@ jobs:
           backend/tests/test_m11m_national_security_site_integration.py
           backend/tests/test_m12l_environment_energy_public_wording_acceptance.py
           backend/tests/test_m12m_environment_energy_site_integration.py
+          backend/tests/test_m13m_education_workforce_site_integration.py
           backend/tests/test_m11n_national_security_publication_activation.py
           backend/tests/test_m12n_environment_energy_ratification_candidate_v3.py
           backend/tests/test_m12n_environment_energy_activation_v3.py

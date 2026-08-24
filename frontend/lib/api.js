@@ -117,7 +117,11 @@ export async function fetchEditorialPresentations({ legislatorId, scope = "all" 
 
 function addEditorialPreviewCandidate(searchParams) {
   const candidate = process.env.NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW;
-  if (["m11m-national-security", "m12m-environment-energy"].includes(candidate)) {
+  if ([
+    "m11m-national-security",
+    "m12m-environment-energy",
+    "m13m-education-workforce",
+  ].includes(candidate)) {
     searchParams.set("candidate", candidate);
   }
 }

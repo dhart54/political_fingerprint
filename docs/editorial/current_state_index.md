@@ -73,6 +73,15 @@ The machine-readable authority is
   synthesis surfaces. The canonical reviewed wording remains internal-only;
   publication, persistence, production selection, database/production writes,
   and deployment remain unauthorized.
+- M13M opens a detached, server-opt-in Education & Workforce preview from exact
+  post-M13L main `b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396`. It projects exactly
+  one overview, one repeated pattern, one notable choice, and no synthesis or
+  trajectory. Only the H.R. 1048 notable displays `Mixed`; the overview and
+  funding-restriction pattern remain directionless. All 17 accepted actions and
+  16 episodes remain available as governed receipts, while the findings use four
+  unique lineage actions across three episodes. Publication, activation,
+  persistence, production/database writes, deployment, and M13N remain
+  unauthorized.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
