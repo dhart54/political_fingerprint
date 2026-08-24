@@ -39,16 +39,16 @@
       },
       "activation_write_set_binding": {
         "artifact_id": "publication-activation-write-set:f000477:environment_energy:119:v1",
-        "write_set_subject_sha256": "ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f"
+        "write_set_subject_sha256": "6e5fa61da3cc7a0e2357d1ecd9c7f3e2be741010d9e451722fd0d7b21645f356"
       },
       "candidate_preflight_binding": {
-        "preflight_subject_sha256": "858f348beaf78e77a1b5e87cd286b56559038602fce81195795b8e669224e6f5",
+        "preflight_subject_sha256": "1d08ee4da136b5307623a3f81972ec621218728082fa53cf994840ef649676c0",
         "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
       },
       "candidate_preparation_authority_binding": {
         "artifact_id": "production-eligibility-publication-authority:f000477:environment_energy:119:v1",
-        "authority_file_sha256": "dfa6d2d6766b7a6bd1ed7183b0bae95124964b6b5a1e17d7c46b1cf43907e2bc",
-        "authority_subject_sha256": "d3fda11480c9ce2bbc72db26130ac16b464280e42f27f9a2c03193b2e58b4fa6"
+        "authority_file_sha256": "4e817c08cf7e25a895ee497a859912c357c036fe179a23706c0b9bb098749dcb",
+        "authority_subject_sha256": "a83cab70c6e5830123f4ecdaaf874dd35ab92555aeb0e02c21111187029d7624"
       },
       "congress": 119,
       "exact_bounded_rollback": {
@@ -103,11 +103,11 @@
         "presentation_artifact_version": 1,
         "presentation_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1"
       },
-      "reviewed_runtime_manifest_sha256": "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1"
+      "reviewed_runtime_manifest_sha256": "a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a"
     },
     "product_owner": "dhart54",
     "ratification_boundary": "This unsealed template cannot authorize selection or mutation. Human authority binds stable reviewed/deployed/health runtime identity and historical ratification evidence. Every later production operation must independently capture a digest-valid runtime proof no more than 1,800 seconds old that matches that stable identity.",
     "required_reviewer_authority": "publication_activation_review_authority_v1"
   },
-  "template_subject_sha256": "650dbb2b7fbfb29085e0230f734817d1e9f664558cc23591867f205b3a934ae2"
+  "template_subject_sha256": "ea801cf8e4cdcd3e49eaa60636cae3834ad8089c74ae9f380cdf36b3848fb016"
 }

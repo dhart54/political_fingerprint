@@ -1,0 +1,87 @@
+{
+  "artifact_id": "publication-activation-ratification-review-packet:f000477:environment_energy:119:v3",
+  "immutable": true,
+  "review_packet_subject_sha256": "d8c8dad934334dc20bb7d93c73a8e947892051ece44d5b261858e2eec07dc1b3",
+  "schema_version": "m12n_publication_activation_ratification_review_packet_v3",
+  "subject": {
+    "active_http_regression_required": true,
+    "authorizing": false,
+    "candidate_binding": {
+      "artifact_id": "publication-activation-ratification-candidate:f000477:environment_energy:119:v3",
+      "candidate_file_sha256": "5ead0d70159314a1fbd101f60d89d141a319e44d9ae818a7bde29e8a1a94939a",
+      "prospective_authority_subject_sha256": "ce14b7d8a5bc18bae87bf006e7cffe5fb4df233f590b20d7b54e42a44659f6d0"
+    },
+    "existing_publication_identities": {
+      "justice": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+        "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+        "publicly_active": true,
+        "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+      },
+      "national_security": {
+        "artifact_id": 227,
+        "artifact_version": 1,
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477",
+        "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+        "publicly_active": true,
+        "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+      }
+    },
+    "fresh_production_preflight": {
+      "counts": {
+        "artifacts": 149,
+        "batches": 5,
+        "publication_registry": 2,
+        "relationships": 161
+      },
+      "environment_registry_absent": true,
+      "file_sha256": "08a7dfd6dc91e8c1a117c4f94bed55b1d749355bd337a9f3158c72ce102a9a86",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_environment_energy_119_v1/current_production_preflight.json",
+      "preflight_subject_sha256": "1d08ee4da136b5307623a3f81972ec621218728082fa53cf994840ef649676c0",
+      "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
+    },
+    "fresh_runtime_evidence": {
+      "file_sha256": "ad020e8c61fcd3d872975fb996d270d81b849a5ed77aef9ad4f4821b834c0b12",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_environment_energy_119_v1/runtime_health_proof.json",
+      "runtime_health_proof_subject_sha256": "7e0a0ba87c2aab77655d8565eac8f835a562b467aea4cfc82de52fa26696f522"
+    },
+    "historical_failed_authority_boundary": {
+      "artifact_id": "publication-activation-authority:f000477:environment_energy:119:v1",
+      "authority_subject_sha256": "0adb87796e6e0d008586a03ddc075179837b3f18bc5f52f52c7e9ed9cce50e36",
+      "current_runtime_manifest_sha256": "a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a",
+      "failed_runtime_manifest_sha256": "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1",
+      "reusable_for_v3_execution": false
+    },
+    "prospective_write_envelope": {
+      "activation_time_deletes": 0,
+      "artifact_inserts": 3,
+      "batch_inserts": 1,
+      "justice_rows_touched": 0,
+      "national_security_rows_touched": 0,
+      "prospective_counts": {
+        "artifacts": 152,
+        "batches": 6,
+        "publication_registry": 3,
+        "relationships": 163
+      },
+      "registry_inserts": 1,
+      "registry_updates": 0,
+      "relationship_inserts": 2
+    },
+    "repaired_runtime": {
+      "deployed_commit": "c480dfabc2fcbd65bf5b22037200af509adb7b5b",
+      "health_commit": "c480dfabc2fcbd65bf5b22037200af509adb7b5b",
+      "reviewed_commit": "c480dfabc2fcbd65bf5b22037200af509adb7b5b",
+      "reviewed_runtime_manifest_sha256": "a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a"
+    },
+    "review_question": "Does the already-approved Environment publication receive activation authority on this exact repaired runtime and unchanged production state?"
+  }
+}

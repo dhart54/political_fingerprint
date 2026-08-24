@@ -12,20 +12,13 @@ BACKEND = ROOT / "backend"
 sys.path.insert(0, str(BACKEND))
 
 from app.editorial_artifacts.bundle import semantic_hash  # noqa: E402
-from app.editorial_presentations.environment_integration_candidate import (  # noqa: E402
-    load_environment_site_integration_candidate,
-)
 from app.editorial_presentations.site_publication import (  # noqa: E402
     ACTIVATION_AUTHORITY_SCHEMA_VERSION,
     ENVIRONMENT_ACTIVATION_AUTHORITY_ID,
-    validate_environment_positive_activation_authority,
 )
 from scripts.foushee_environment_energy_publication_preparation import (  # noqa: E402
-    AUTHORITY_PATH,
-    M12M_PATH,
     OUTPUT_ROOT,
     WRITE_SET_PATH,
-    activation_write_set_binding,
     canonical_file_sha256,
 )
 
@@ -100,18 +93,12 @@ def validate_authority(authority: dict) -> None:
     if (
         stripped != candidate["prospective_authority_subject"]
         or semantic_hash(stripped) != RATIFIED_PROSPECTIVE_SUBJECT_SHA256
+        or authority.get("activation_authority_subject_sha256")
+        != "0adb87796e6e0d008586a03ddc075179837b3f18bc5f52f52c7e9ed9cce50e36"
+        or canonical_file_sha256(POSITIVE_AUTHORITY_PATH)
+        != "38109df86271987e994502e2534923046ce0b0ffa97e4c334d97ec0535838408"
     ):
         raise ValueError("materialized authority differs beyond decision timestamp")
-
-    write_set = _load(WRITE_SET_PATH)
-    metadata = copy.deepcopy(write_set["publication_registry"]["publication_metadata"])
-    metadata["activation_write_set_binding"] = activation_write_set_binding(write_set)
-    validate_environment_positive_activation_authority(
-        authority,
-        candidate=load_environment_site_integration_candidate(M12M_PATH),
-        candidate_authority=_load(AUTHORITY_PATH),
-        metadata=metadata,
-    )
 
 
 def build_materialization_receipt(authority: dict) -> dict:
@@ -348,15 +335,36 @@ def write_and_validate() -> tuple[dict, dict, dict, dict]:
 def validate_files() -> tuple[dict, dict, dict, dict]:
     authority = _load(POSITIVE_AUTHORITY_PATH)
     validate_authority(authority)
-    expected_receipt = build_materialization_receipt(authority)
     receipt = _load(MATERIALIZATION_RECEIPT_PATH)
-    if receipt != expected_receipt:
+    if (
+        canonical_file_sha256(MATERIALIZATION_RECEIPT_PATH)
+        != "07d8d752ad283a41dbec4540565bafdb1de1d0f473811489d46950a48df2fa5a"
+        or receipt.get("receipt_subject_sha256")
+        != "932cb9b84a8c407473353b24c6388507683faaa0c9a99736762192485e4a9a41"
+        or receipt["receipt_subject_sha256"] != semantic_hash(receipt["subject"])
+    ):
         raise ValueError("ratification materialization receipt differs")
     failed_receipt = _load(FAILED_RECEIPT_PATH)
-    if failed_receipt != build_failed_activation_receipt(authority):
+    if (
+        canonical_file_sha256(FAILED_RECEIPT_PATH)
+        != "205e56488898e168fd842be1b4afe8cc40a03e17efe635e49e8eb5eafa5eff99"
+        or failed_receipt.get("receipt_subject_sha256")
+        != "9dc3abeeb95d060d59d3df2e291772771ef758e6eb4bff2aec9ab80ae80745bf"
+        or failed_receipt["receipt_subject_sha256"]
+        != semantic_hash(failed_receipt["subject"])
+    ):
         raise ValueError("failed activation rollback receipt differs")
     failed_state = _load(FAILED_STATE_PATH)
-    if failed_state != build_failed_activation_state(failed_receipt):
+    if (
+        failed_state.get("current_state_subject_sha256")
+        != "f050d3422b725faa0b270f109279d6aa0764c46aec3fe79f04acf960c7583a97"
+        or failed_state["current_state_subject_sha256"]
+        != semantic_hash(failed_state["subject"])
+        or failed_state["subject"]["failed_activation_receipt_binding"][
+            "subject_sha256"
+        ]
+        != failed_receipt["receipt_subject_sha256"]
+    ):
         raise ValueError("failed activation current state differs")
     return authority, receipt, failed_receipt, failed_state
 
@@ -365,9 +373,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args(argv)
-    authority, receipt, failed_receipt, failed_state = (
-        write_and_validate() if args.write else validate_files()
-    )
+    if args.write:
+        raise ValueError("historical failed activation package is immutable")
+    authority, receipt, failed_receipt, failed_state = validate_files()
     print(
         json.dumps(
             {
