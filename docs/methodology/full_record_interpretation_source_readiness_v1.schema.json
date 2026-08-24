@@ -137,8 +137,10 @@
         "source_id": {"type": "string", "minLength": 1},
         "source_type": {
           "enum": [
+            "congressional_record",
             "congress_gov_amendment_index",
             "congress_gov_bill_actions",
+            "congress_gov_bill_summary",
             "congress_gov_bill_text",
             "house_clerk_roll_call",
             "house_rules_committee_report"
@@ -150,9 +152,11 @@
             "exact_amendment_purpose",
             "exact_house_action_record",
             "member_action_record",
+            "operative_floor_text",
             "operative_measure_text",
             "operative_resolution_text",
             "pre_floor_house_rules_report_context",
+            "supplemental_program_context",
             "stage_compatible_senate_origin_text"
           ]
         },
@@ -173,7 +177,8 @@
       "properties": {
         "member_action_evidence": {"$ref": "#/definitions/sourceIdList"},
         "exact_action_identity_and_stage_evidence": {"$ref": "#/definitions/sourceIdList"},
-        "operative_content_interpretation_input": {"$ref": "#/definitions/sourceIdList"}
+        "operative_content_interpretation_input": {"$ref": "#/definitions/sourceIdList"},
+        "material_limitation_context_evidence": {"$ref": "#/definitions/sourceIdList"}
       }
     },
     "sourceIdList": {

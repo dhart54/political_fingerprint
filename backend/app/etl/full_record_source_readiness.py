@@ -4,6 +4,7 @@ import hashlib
 import json
 from collections import Counter
 from pathlib import Path
+import os
 from typing import Any, Iterable
 from urllib.parse import urlparse
 from xml.etree import ElementTree
@@ -29,8 +30,10 @@ BLOCKER_PRECEDENCE = (
     "blocked_insufficient_context",
 )
 ALLOWED_SOURCE_TYPES = {
+    "congressional_record",
     "congress_gov_amendment_index",
     "congress_gov_bill_actions",
+    "congress_gov_bill_summary",
     "congress_gov_bill_text",
     "house_clerk_roll_call",
     "house_rules_committee_report",
@@ -39,9 +42,11 @@ ALLOWED_CONTENT_CLASSES = {
     "exact_amendment_purpose",
     "exact_house_action_record",
     "member_action_record",
+    "operative_floor_text",
     "operative_measure_text",
     "operative_resolution_text",
     "pre_floor_house_rules_report_context",
+    "supplemental_program_context",
     "stage_compatible_senate_origin_text",
 }
 ALLOWED_HOSTS = {
@@ -97,11 +102,17 @@ def sha256_json(value: Any) -> str:
 
 
 def sha256_file(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return hashlib.sha256(_filesystem_path(path).read_bytes()).hexdigest()
 
 
 def canonical_file_sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+
+def _filesystem_path(path: Path) -> Path:
+    if os.name == "nt" and not str(path).startswith("\\\\?\\"):
+        return Path("\\\\?\\" + str(path.resolve()))
+    return path
 
 
 def write_json(path: Path, value: dict[str, Any]) -> None:
@@ -146,7 +157,7 @@ def _resolve_governed_path(relative: str, *, repository_root: Path) -> Path:
     ).resolve()
     if governed not in path.parents:
         raise SourceReadinessError("raw provenance path is outside governed root")
-    return path
+    return _filesystem_path(path)
 
 
 def _source_integrity(
@@ -154,8 +165,10 @@ def _source_integrity(
 ) -> tuple[bool, bool]:
     host = (urlparse(source["source_url"]).hostname or "").casefold()
     allowed_classes_by_source_type = {
+        "congressional_record": {"operative_floor_text"},
         "congress_gov_amendment_index": {"exact_amendment_purpose"},
         "congress_gov_bill_actions": {"exact_house_action_record"},
+        "congress_gov_bill_summary": {"supplemental_program_context"},
         "congress_gov_bill_text": {
             "operative_measure_text",
             "operative_resolution_text",
@@ -191,6 +204,14 @@ def _xml_has_operative_body(path: Path) -> bool:
         root.find(tag) is not None
         for tag in ("legis-body", "resolution-body", "engrossed-amendment-body")
     )
+
+
+def _pdf_has_content(path: Path) -> bool:
+    try:
+        content = path.read_bytes()
+    except OSError:
+        return False
+    return len(content) > 1_000 and content.startswith(b"%PDF")
 
 
 def _derive_criteria(
@@ -277,19 +298,29 @@ def _derive_criteria(
             )
         else:
             accepted_classes = {
+                "operative_floor_text",
                 "operative_measure_text",
                 "operative_resolution_text",
                 "stage_compatible_senate_origin_text",
             }
             content_ok = content_class in accepted_classes
-            content_ok = (
-                content_ok
-                and source["source_type"] == "congress_gov_bill_text"
-                and raw_path.suffix.lower() == ".xml"
-                and _xml_has_operative_body(raw_path)
-            )
+            if content_class == "operative_floor_text":
+                content_ok = (
+                    content_ok
+                    and source["source_type"] == "congressional_record"
+                    and raw_path.suffix.lower() == ".pdf"
+                    and _pdf_has_content(raw_path)
+                )
+            else:
+                content_ok = (
+                    content_ok
+                    and source["source_type"] == "congress_gov_bill_text"
+                    and raw_path.suffix.lower() == ".xml"
+                    and _xml_has_operative_body(raw_path)
+                )
             operative_context_sufficient = operative_context_sufficient and content_ok
             allowed_versions = {
+                "operative_floor_text": {"official_house_record_H677-H693"},
                 "operative_measure_text": {"eh", "cdh"},
                 "operative_resolution_text": {"eh", "ih"},
                 "stage_compatible_senate_origin_text": {"es", "eah"},

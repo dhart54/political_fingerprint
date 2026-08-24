@@ -203,6 +203,38 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
         self.assertTrue(operative["source_url"].endswith("eh.xml"))
         self.assertEqual(self._state(record), "ready_for_action_interpretation")
 
+    def test_official_congressional_record_floor_text_is_ready(self) -> None:
+        record = self._ready_record()
+        raw = self._raw("floor-record.pdf", b"%PDF-1.7\n" + b"x" * 2_000)
+        projection = self._projection(source_id="operative")
+        projection["source_url"] = (
+            "https://www.congress.gov/119/crec/2026/01/13/floor-record.pdf"
+        )
+        projection["text_version"] = "official_house_record_H677-H693"
+        record["sources"][1] = self._source(
+            source_id="operative",
+            source_type="congressional_record",
+            content_class="operative_floor_text",
+            raw=raw,
+            projection=projection,
+        )
+        self.assertEqual(self._state(record), "ready_for_action_interpretation")
+
+    def test_supplemental_summary_cannot_replace_operative_text(self) -> None:
+        record = self._ready_record()
+        raw = self._raw("summary.json", b'{"summaries": []}')
+        projection = self._projection(source_id="operative")
+        projection["source_url"] = "https://api.congress.gov/v3/bill/119/hr/1/summaries"
+        projection["text_version"] = "official_crs_summary_v1"
+        record["sources"][1] = self._source(
+            source_id="operative",
+            source_type="congress_gov_bill_summary",
+            content_class="supplemental_program_context",
+            raw=raw,
+            projection=projection,
+        )
+        self.assertEqual(self._state(record), "blocked_stage_mismatch")
+
     def test_pre_floor_rules_report_alone_cannot_satisfy_final_passage(self) -> None:
         self.assertEqual(
             self._state(self._rules_report_record()), "blocked_stage_mismatch"

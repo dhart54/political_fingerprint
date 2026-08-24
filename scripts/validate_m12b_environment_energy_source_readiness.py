@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
 
 from backend.app.etl.full_record_source_readiness import (  # noqa: E402
     SourceReadinessError,
+    _filesystem_path,
     canonical_file_sha256,
     load_json,
     validate_artifact,
@@ -217,7 +218,7 @@ def validate_repository() -> dict[str, Any]:
 
     current = load_json(CURRENT_STATE_PATH)
     m11b_state = current["completed_m11b_source_readiness_milestone"]
-    m12b_state = current["active_source_readiness_milestone"]
+    m12b_state = current["completed_m12b_source_readiness_milestone"]
     _require(
         m11b_state["milestone"] == "m11b_national_security_source_readiness_v1"
         and m11b_state["accepted_head"] == "fcc988b867a49086d7545832f9575130aef0f8ea",
@@ -261,7 +262,7 @@ def validate_repository() -> dict[str, Any]:
     )
 
     raw_paths = {
-        ROOT / source["raw_provenance"]["governed_local_path"]
+        _filesystem_path(ROOT / source["raw_provenance"]["governed_local_path"])
         for record in records
         for source in record["sources"]
     }

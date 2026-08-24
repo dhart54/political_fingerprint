@@ -4,6 +4,7 @@ import json
 import re
 import sys
 from pathlib import Path
+import os
 from typing import Any
 from urllib.parse import urlparse
 from xml.etree import ElementTree
@@ -98,12 +99,17 @@ def _raw_path(source: dict[str, Any]) -> Path:
         ROOT / "docs/editorial/full_record_reviews/source_readiness/evidence"
     ).resolve()
     _require(governed in path.parents, "raw source outside governed evidence")
-    _require(path.is_file(), f"raw source missing: {relative.as_posix()}")
+    filesystem_path = (
+        Path("\\\\?\\" + str(path))
+        if os.name == "nt" and not str(path).startswith("\\\\?\\")
+        else path
+    )
+    _require(filesystem_path.is_file(), f"raw source missing: {relative.as_posix()}")
     _require(
-        sha256_file(path) == source["raw_provenance"]["sha256"],
+        sha256_file(filesystem_path) == source["raw_provenance"]["sha256"],
         f"raw source digest mismatch: {source['source_id']}",
     )
-    return path
+    return filesystem_path
 
 
 def _governed_clerk_rows(

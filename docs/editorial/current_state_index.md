@@ -25,6 +25,13 @@ The machine-readable authority is
   accepted action set. Economy & Taxes remains held on six unresolved exact
   child-action bindings. The authority approves membership only; it does not
   authorize interpretation or any later semantic or publication stage.
+- M13B is the active non-authorizing Education & Workforce source-readiness
+  candidate. All 17 accepted actions have role-bound official evidence for the
+  Clerk member action, exact action identity and stage, and operative content;
+  17 are ready and zero are blocked. The packet preserves the H.Amdt. 12 exact
+  amendment boundary, the H.R. 1642 Commerce/CTE boundary, the S. 356 mixed
+  federal-land/county/school/road context, and roll 312 as Not Voting. No action
+  interpretation or downstream authority is created.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
