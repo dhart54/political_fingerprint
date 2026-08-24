@@ -1,0 +1,119 @@
+# Milestone Plan: M12N Environment & Energy Production Ratification V3
+
+## Intent
+
+- Immediate task: deploy the independently accepted active-publication repair, bind fresh read-only production evidence to that exact runtime and unchanged inactive database state, and create a detached V3 activation-ratification candidate.
+- Larger-goal alignment: preserve the separation between accepted publication content, runtime deployment, ratification review, and any later production activation.
+
+## Outcome
+
+- Operational result: one draft V3 review PR contains fresh runtime/preflight evidence, regenerated runtime-dependent preparation objects, disposable active-HTTP proof, and an immutable unaccepted/unsealed candidate. Environment remains inactive.
+
+## Scope And Boundaries
+
+- In scope: guarded PR160 merge, exact repaired-runtime deployment verification, read-only production verification, fresh runtime/preflight capture, deterministic preparation regeneration, disposable PostgreSQL proof, V3 candidate/review packet, validation, and a draft PR.
+- Out of scope: sealed positive authority, production dry-run/apply/rollback, Environment registry insertion, activation, deployment configuration or secrets, semantic/public wording changes, and protected ZIPs.
+- Files/systems likely touched: this plan and governed M12N runtime/preflight/preparation/V3 candidate evidence only.
+
+## Decision Envelope
+
+- Codex may execute the accepted merge/deployment and read-only production verification, and may regenerate deterministic non-authorizing artifacts.
+- New authority sealing, production writes, activation, rollback, V3 PR merge, configuration, and secrets remain unauthorized.
+
+## Definition Of Done
+
+- [x] PR160 exact accepted head merged and live `/health` equals post-merge main.
+- [x] Production remains exactly 5/149/161/2 with accepted fingerprint and Environment absent/receipts-only.
+- [x] Fresh proof and preflight bind repaired manifest and exact deployed main.
+- [x] Regenerated 1/3/2/1 prospective graph preserves accepted M12M bytes and existing issue identities.
+- [x] Disposable FastAPI activation/idempotency/rollback proof passes on the exact PR head.
+- [x] V3 candidate is immutable, accepted=false, sealed=false, and no usable authority exists.
+- [x] Exact-head hosted checks pass and final reconciliation is complete.
+
+## Baseline
+
+- Branch/base commit: `codex/m12n-environment-energy-production-ratification-v3` from `c480dfabc2fcbd65bf5b22037200af509adb7b5b`.
+- Production/deployment state: `/health` reports exact repaired main; Environment database state requires fresh read-only verification.
+- Repaired runtime manifest: `a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a`.
+- Tracked working tree: clean before this plan.
+- Known unrelated artifacts: historical Windows temporary-directory/EOL limitations and protected user-owned ZIPs remain untouched.
+
+## Implementation Sequence
+
+1. Capture fresh live runtime proof for exact repaired main.
+2. Run read-only production preflight and stop on any count, fingerprint, issue identity, or Environment-absence drift.
+3. Regenerate only runtime/preflight-dependent preparation objects and construct a distinct V3 candidate/review packet.
+4. Reprove the finalized prospective graph and HTTP behavior in disposable PostgreSQL.
+5. Validate, commit, open one draft PR, obtain exact-head hosted checks, and stop.
+
+## Progress Checklist
+
+- [x] Accepted repair merge and deployment
+- [x] Fresh production evidence
+- [x] Deterministic regeneration and V3 candidate
+- [x] Disposable and regression validation
+- [x] Documentation and draft PR readiness
+
+## Discoveries
+
+- PR160 merged as `c480dfabc2fcbd65bf5b22037200af509adb7b5b`; production `/health` already reports that exact commit.
+- The fresh read-only preflight reproduced `5/149/161/2`, fingerprint `b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb`, Environment absence, and unchanged Justice/National Security identities.
+- The existing V2 candidate and failed-attempt authority must validate intrinsically as immutable history after the current runtime-dependent preparation objects advance; they must not be rebuilt from V3 preparation inputs.
+- Local release validation requires normal filesystem access for temporary fixtures on this Windows sandbox; the same release gate passed outside that restriction.
+
+## Decisions And Rationale
+
+- Preserve the failed `a22bee...` runtime and sealed V2 authority as immutable failed-attempt history; do not freeze the unaccepted intermediate `425b263...` runtime.
+- Use a distinct V3 candidate rather than mutating V2.
+
+## Deviations Or Corrections
+
+- The first hosted disposable-PostgreSQL run stopped before activation because its governed preparation test still asserted the prior runtime-dependent authority/write-set subjects. Updated only those two expected identities to the freshly governed V3 preparation subjects; no behavior or write envelope changed.
+
+## Validation Results
+
+- Deterministic V3 builder/validator: passed.
+- M12N preparation builder check: passed.
+- Historical V2 candidate/authority/receipt validation: passed with governed bytes unchanged.
+- Focused M12M/M12N/M11M/M11N/active-dispatch tests: 81 passed.
+- Ruff and formatting checks: passed.
+- Python compilation: passed; inaccessible sandbox-created temporary leftovers were skipped without tracked-file impact.
+- Editorial release tier: passed, 7 checks, when run outside the Windows temporary-directory sandbox restriction.
+- Exact-head hosted checks passed: Vercel, Vercel Preview Comments, amendment-evidence-contracts, foushee-full-record-benchmark, publication-activation-postgres, and receipt-evidence-repair-postgres.
+- Hosted disposable PostgreSQL/FastAPI proof passed after the stale expected preparation identities were corrected; it exercised activation, live 119/all/118 presentation/evidence behavior, exact supporting sets, idempotency, drift rejection, and rollback without production effects.
+
+## Production Writes
+
+- Performed: no.
+- Scope: read-only production health and database preflight only.
+- Expected effects: none.
+- Actual effects: production remained exactly `5/149/161/2`; Environment remained absent and receipts-only; Justice and National Security remained unchanged.
+
+## Rollback Paths
+
+- No production write occurs in this milestone, so no rollback is invoked. The governed historical Environment rollback remains unchanged.
+
+## Blockers
+
+- None currently. Any production fingerprint, deployment identity, or existing publication identity drift is a hard stop.
+
+## Final Reconciliation
+
+- Definition of done satisfied: yes.
+- The candidate-stage boundary above was subsequently superseded by the exact V3 ratification recorded at `2026-08-24T01:31:00Z`.
+
+## Ratified Activation Closeout
+
+- [x] Distinct V3 positive authority materialized with timestamp-only parity to prospective subject `ce14b7d8a5bc18bae87bf006e7cffe5fb4df233f590b20d7b54e42a44659f6d0`.
+- [x] Fresh execution proof retained deployed/health commit `c480dfabc2fcbd65bf5b22037200af509adb7b5b` and runtime manifest `a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a`.
+- [x] Fresh pre-write guard reproduced `5/149/161/2`, fingerprint `b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb`, target `e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7`, and unchanged Justice/National Security identities.
+- [x] Forced-rollback dry-run produced the exact hypothetical `6/152/163/3` graph.
+- [x] Production apply inserted batch `20`, artifacts `239/240/241`, two relationships, and the single Environment registry row.
+- [x] Second governed apply returned `already_applied=true` with zero additional mutation.
+- [x] Live presentations, positions, and Environment evidence passed at 119/all/118, including H.R. 6387's non-directional status and exclusion from all support sets.
+- [x] Justice and National Security remained unchanged.
+- [x] All postchecks succeeded; the authorized rollback was not executed.
+
+Final state: Environment & Energy is production-active. Closeout artifacts are
+governed under the V3 activation directory; PR #161 merge and post-deployment
+smoke remain the only outstanding steps.

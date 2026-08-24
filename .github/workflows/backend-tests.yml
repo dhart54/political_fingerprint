@@ -72,6 +72,9 @@ jobs:
           python backend/scripts/build_m12m_environment_energy_site_integration.py --check
           python backend/scripts/foushee_national_security_publication_activation.py build --check
           python scripts/validate_m12n_publication_activation_ratification_candidate.py
+          python scripts/build_m12n_environment_energy_ratification_candidate_v3.py
+          python scripts/materialize_m12n_environment_energy_activation_authority_v3.py
+          python scripts/finalize_m12n_environment_energy_activation_v3.py
           python scripts/validate_m11n_publication_activation_ratification_candidate.py
           python scripts/validate_foushee_justice_semantic_ir_m5r1.py
           python scripts/verify_foushee_justice_launch_review_m6.py
@@ -110,6 +113,8 @@ jobs:
           backend/tests/test_m12l_environment_energy_public_wording_acceptance.py
           backend/tests/test_m12m_environment_energy_site_integration.py
           backend/tests/test_m11n_national_security_publication_activation.py
+          backend/tests/test_m12n_environment_energy_ratification_candidate_v3.py
+          backend/tests/test_m12n_environment_energy_activation_v3.py
           backend/tests/test_full_issue_universe_authority.py
           backend/tests/test_full_issue_interpretation_source_readiness.py
           backend/tests/test_action_interpretation_decision_implementation_v1.py

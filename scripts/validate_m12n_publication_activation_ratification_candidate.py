@@ -26,7 +26,6 @@ from scripts.foushee_environment_energy_publication_preparation import (  # noqa
     OUTPUT_ROOT,
     PREFLIGHT_PATH,
     RUNTIME_PROOF_PATH,
-    WRITE_SET_ID,
     WRITE_SET_PATH,
     activation_write_set_binding,
     canonical_file_sha256,
@@ -44,6 +43,15 @@ RATIFICATION_CANDIDATE_ID = (
     "publication-activation-ratification-candidate:f000477:environment_energy:119:v2"
 )
 REVIEWER_IDENTITY = "chatgpt:political_fingerprint_authority_thread"
+HISTORICAL_CANDIDATE_FILE_SHA256 = (
+    "fd3894248f3120e2cccf53b240b75dbdb05ab42e30315540199a07c7b5434757"
+)
+HISTORICAL_DOSSIER_FILE_SHA256 = (
+    "28991723768e768b099467434916b4b08a80df7c11284fa681812e79cfeff429"
+)
+HISTORICAL_PROSPECTIVE_SUBJECT_SHA256 = (
+    "a0bf52b86d0078a947008b464f147023d8739f3665e36ea41b2213d95a8d8b5e"
+)
 
 
 def _load(path: Path) -> dict:
@@ -213,13 +221,18 @@ bounded rollback contract remain mandatory.
 
 def validate_candidate() -> dict:
     candidate = _load(CANDIDATE_PATH)
-    expected = build_candidate()
-    if candidate != expected:
-        raise ValueError("M12N ratification candidate differs deterministically")
-    if not RATIFICATION_DOSSIER_PATH.exists() or RATIFICATION_DOSSIER_PATH.read_text(
-        encoding="utf-8"
-    ) != build_dossier(candidate):
-        raise ValueError("M12N ratification review dossier differs deterministically")
+    if (
+        canonical_file_sha256(CANDIDATE_PATH) != HISTORICAL_CANDIDATE_FILE_SHA256
+        or canonical_file_sha256(RATIFICATION_DOSSIER_PATH)
+        != HISTORICAL_DOSSIER_FILE_SHA256
+        or candidate.get("artifact_id") != RATIFICATION_CANDIDATE_ID
+        or candidate.get("immutable") is not True
+        or candidate.get("accepted") is not False
+        or candidate.get("sealed") is not False
+        or candidate.get("prospective_authority_subject_sha256")
+        != HISTORICAL_PROSPECTIVE_SUBJECT_SHA256
+    ):
+        raise ValueError("historical M12N V2 ratification package identity differs")
     subject = candidate["prospective_authority_subject"]
     try:
         prepared = datetime.fromisoformat(
@@ -236,23 +249,16 @@ def validate_candidate() -> dict:
     ):
         raise ValueError("M12N candidate authority/provenance boundary differs")
 
-    preflight = _load(PREFLIGHT_PATH)
-    runtime_proof = _load(RUNTIME_PROOF_PATH)
-    write_set = _load(WRITE_SET_PATH)
     if (
-        runtime_proof["deployed_commit"] != POST_CORRECTED_RUNTIME_MAIN
-        or runtime_proof["health_commit"] != POST_CORRECTED_RUNTIME_MAIN
-        or preflight["deployed_commit"] != POST_CORRECTED_RUNTIME_MAIN
-        or preflight["environment_registry_rows"] != []
-        or preflight["m12n_target_rows"] != []
-        or preflight["counts"] != write_set["expected_counts"]["before"]
-        or any(
-            preflight["selector_pre_activation"]["scopes"][scope][ISSUE_ID]["tier"]
-            != "receipts_only"
-            for scope in ("119", "all", "118")
-        )
+        subject["runtime_binding"]["reviewed_runtime_manifest_sha256"]
+        != "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1"
+        or subject["runtime_binding"]["reviewed_commit"] != POST_CORRECTED_RUNTIME_MAIN
+        or subject["runtime_binding"]["deployed_commit"] != POST_CORRECTED_RUNTIME_MAIN
+        or subject["runtime_binding"]["health_commit"] != POST_CORRECTED_RUNTIME_MAIN
+        or subject["preflight_binding"]["state_fingerprint_sha256"]
+        != "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
     ):
-        raise ValueError("M12N pre-activation production boundary differs")
+        raise ValueError("historical M12N V2 runtime or production boundary differs")
     return candidate
 
 
@@ -261,15 +267,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--write", action="store_true")
     args = parser.parse_args(argv)
     if args.write:
-        candidate = build_candidate()
-        CANDIDATE_PATH.write_text(_json_text(candidate), encoding="utf-8", newline="\n")
-        RATIFICATION_DOSSIER_PATH.write_text(
-            build_dossier(candidate), encoding="utf-8", newline="\n"
-        )
+        raise ValueError("historical M12N V2 ratification package is immutable")
     candidate = validate_candidate()
-    preflight = _load(PREFLIGHT_PATH)
-    runtime_proof = _load(RUNTIME_PROOF_PATH)
-    write_set = _load(WRITE_SET_PATH)
+    subject = candidate["prospective_authority_subject"]
     print(
         json.dumps(
             {
@@ -281,13 +281,19 @@ def main(argv: list[str] | None = None) -> int:
                     "prospective_authority_subject_sha256"
                 ],
                 "post_corrected_runtime_main": POST_CORRECTED_RUNTIME_MAIN,
-                "runtime_health_proof_subject_sha256": runtime_proof[
-                    "runtime_health_proof_subject_sha256"
+                "runtime_health_proof_subject_sha256": subject[
+                    "ratification_runtime_evidence_binding"
+                ]["runtime_health_proof_subject_sha256"],
+                "preflight_subject_sha256": subject["preflight_binding"][
+                    "preflight_subject_sha256"
                 ],
-                "preflight_subject_sha256": preflight["preflight_subject_sha256"],
-                "state_fingerprint_sha256": preflight["state_fingerprint_sha256"],
-                "write_set_id": WRITE_SET_ID,
-                "write_set_subject_sha256": write_set["write_set_subject_sha256"],
+                "state_fingerprint_sha256": subject["preflight_binding"][
+                    "state_fingerprint_sha256"
+                ],
+                "write_set_id": subject["activation_write_set_binding"]["artifact_id"],
+                "write_set_subject_sha256": subject["activation_write_set_binding"][
+                    "write_set_subject_sha256"
+                ],
             },
             indent=2,
             sort_keys=True,
