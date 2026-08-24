@@ -54,7 +54,7 @@
 - [x] At most one selected domain has complete proposed-universe accounting and
   deterministic validation artifacts.
 - [x] All downstream authorizations remain false.
-- [ ] Branch, commit, PR, tests, and hosted signals are recorded before the
+- [x] Branch, commit, PR, tests, and hosted signals are recorded before the
   independent ChatGPT universe-selection stop.
 
 ## Execution Result
@@ -71,6 +71,17 @@
 - The milestone is stopped at
   `pending_independent_chatgpt_universe_selection_review`; no downstream stage
   was begun or authorized.
+
+## Review Handoff
+
+- Branch: `codex/m13a-next-domain-selection`.
+- Draft PR: `https://github.com/dhart54/political_fingerprint/pull/162`.
+- Local validation: M13A deterministic rebuild and validator passed; legacy
+  M12A selection and universe-authority validators passed; 40 focused
+  cross-issue/authority unit tests passed; 51 publication-regression tests
+  passed; Ruff and Python compilation passed; staged diff and protected-artifact
+  checks passed.
+- Hosted signals are reported from the final PR head at the review stop.
 
 ## Production And Rollback
 
