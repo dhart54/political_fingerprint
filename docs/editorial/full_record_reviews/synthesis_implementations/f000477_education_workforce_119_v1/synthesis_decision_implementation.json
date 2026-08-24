@@ -1,0 +1,112 @@
+{
+  "accepted_human_decisions_implemented": true,
+  "artifact_id": "synthesis-decision-implementation:f000477:education_workforce:119:v1",
+  "artifact_role": "deterministic_human_synthesis_decision_implementation",
+  "canonical_internal_synthesis": true,
+  "implementation_subject_sha256": "5472c1bb20a598ed973b475dbcae9a6ea6a1ce98b891f9b09ba07491d97a72ed",
+  "mechanical_review_state": "validated_accepted_absence_by_independent_repository_validator",
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_synthesis_decision_implementation_v1",
+  "subject": {
+    "accepted_behavioral_semantic_ir_authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c",
+      "file_sha256": "2a441ae485cc534677858bad82914781e94068e7d34ccd0ac95da4e4b5c55887"
+    },
+    "accepted_behavioral_semantic_ir_implementation_binding": {
+      "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "30329ed2ca0b6d8f32b30d573858ebbc653c38f2280a6432410b8a5e491424a9",
+      "implementation_subject_sha256": "e9bdf0b1b365aa48f19b20d4f5c871bb5ad1f3aa47f2eaa035dea62be725f6c3"
+    },
+    "accepted_behavioral_semantic_ir_parity_binding": {
+      "file_sha256": "ac39a8ce1a4254eef41098df22540a06cdbfe1e28ed14a2f1473c7e6ca517acd",
+      "parity_subject_sha256": "c40134c79de66e75c23e8698835dfec9f7cb8dd626dbab1b50a0bd387345bdf5"
+    },
+    "accepted_episode_disposition_accounting": {
+      "accepted_episode_count": 16,
+      "contrast_only_episode_count": 1,
+      "no_safe_proposition_episode_count": 11,
+      "notable_choice_evidence_episode_count": 1,
+      "primary_overlap_count": 0,
+      "repeated_pattern_evidence_episode_count": 2,
+      "trajectory_evidence_episode_count": 0,
+      "unused_non_directional_evidence_episode_count": 1
+    },
+    "accepted_proposition_role_accounting": [
+      {
+        "accepted_candidate_content_sha256": "764455c5def25f4c6a9faf1b29cf12793fdde602c8d1c1719dde882ccb971065",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-hr1048-amendment-support-final-passage-opposition:m13h:v1",
+        "implementation_record_subject_sha256": "1add628c528d744658953ad5337a511610ab51e77581d08e89dca5ab617e498e",
+        "proposition_id": "notable-hr1048-amendment-support-final-passage-opposition",
+        "reason": "No safe cross-proposition synthesis survives: the funding-restriction pattern is narrowly directional, while the H.R. 1048 notable is mixed, mechanistically distinct, and cannot become directional support.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "23975bd28313ea9bfa060e2e28de23450c3c12d0c7b8769e84d5ab0f8f52946d",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-education-relationship-triggered-funding-restriction-opposition:m13h:v1",
+        "implementation_record_subject_sha256": "2fbc13181692b20214a9daa98db336232719b5f099af50842d568a1f07ea886a",
+        "proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+        "reason": "No safe cross-proposition synthesis survives: the funding-restriction pattern is narrowly directional, while the H.R. 1048 notable is mixed, mechanistically distinct, and cannot become directional support.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      }
+    ],
+    "authority_binding": {
+      "artifact_id": "human-synthesis-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "0946cc0343a4f639f0801cfbf467c352612cbae0f8d4d3d9498668f5aed178aa"
+    },
+    "candidate_binding": {
+      "accepted_head": "bbdb50e790ce8e8f8f9c242c8b763c9b1503701e",
+      "accepted_pr": 168,
+      "artifact_id": "synthesis-candidates:f000477:education_workforce:119:v1",
+      "candidate_subject_sha256": "4c2d5270f4795b26ceca287f654a2e8973c022dfbcb983326f19a77c90a1406e",
+      "file_sha256": "09f18212828e9dcbb31f75c1d80acfdee849519fb314fbd1cd64a426aebdefd3",
+      "post_merge_main": "b69dae58112adbf90db31c4037ddfaffe1a09551",
+      "reviewed_base": "38a1e6faa4d766104009129ee699f8ad323bd078"
+    },
+    "candidate_overlap_accounting": [],
+    "canonical_internal_synthesis_state": "human_accepted_no_safe_synthesis",
+    "decision_template_binding": {
+      "artifact_id": "human-synthesis-decision-template:f000477:education_workforce:119:v1",
+      "decision_template_subject_sha256": "29970336bc866f215b0592bc54cfef37c59c23776f870468d5f5328af21d63f7",
+      "file_sha256": "867194246dce032fa73274224e5433d3222bce93245f68b3311fbc8354850d82"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "production_writes": false,
+      "public_wording": false,
+      "publication": false
+    },
+    "final_accounting": {
+      "candidate_action_reference_count": 0,
+      "candidate_episode_reference_count": 0,
+      "canonical_internal_synthesis_count": 0,
+      "cross_candidate_action_overlap_count": 0,
+      "cross_candidate_episode_overlap_count": 0,
+      "standalone_proposition_count": 2,
+      "unique_behavioral_proposition_input_count": 0
+    },
+    "implementation_records": [],
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee"
+    },
+    "synthesis_candidate_parity_binding": {
+      "artifact_id": "synthesis-candidate-parity:f000477:education_workforce:119:v1",
+      "file_sha256": "170feeca382335c87ce41d3591978a02c6365380fbdaefcfed6d0c396024c7c3",
+      "parity_subject_sha256": "83f8c44f7b85021e4af90e40f42eb5e856a4cbab22500be787b6b399ab0f771f"
+    }
+  }
+}

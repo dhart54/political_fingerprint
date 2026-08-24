@@ -18,6 +18,7 @@ DOWNSTREAM_AUTHORIZATIONS = {
     "deployment": False,
 }
 ALLOWED_DECISIONS = {"accept_candidate_as_written", "accept_with_bounded_revision"}
+NO_SAFE_PACKAGE_DECISION = "approved_no_safe_synthesis_state"
 REVIEWER_AUTHORITY = "full_record_synthesis_review_authority_v1"
 
 
@@ -213,6 +214,30 @@ def validate_authority(
         row["synthesis_candidate_id"] for row in decisions
     } != set(by_id):
         raise SynthesisDecisionError("synthesis decision set differs")
+    no_safe_package_accepted = (
+        authority_decision is not None
+        and authority_decision["decision"] == NO_SAFE_PACKAGE_DECISION
+    )
+    standalone_accounting = package["subject"]["complete_proposition_accounting"]
+    if not candidates:
+        if not (
+            no_safe_package_accepted
+            and decisions == []
+            and decision_template["candidate_decisions"] == []
+            and standalone_accounting
+            and all(
+                row["accounting_role"] == "intentionally_standalone_no_safe_synthesis"
+                and row["candidate_relationships"] == []
+                for row in standalone_accounting
+            )
+        ):
+            raise SynthesisDecisionError(
+                "zero-candidate package lacks accepted no-safe-synthesis authority"
+            )
+    elif no_safe_package_accepted:
+        raise SynthesisDecisionError(
+            "no-safe-synthesis package decision cannot accept synthesis candidates"
+        )
     for decision in decisions:
         verify_seal(
             decision,
@@ -357,6 +382,24 @@ def validate_implementation(
         row["synthesis_candidate_id"] for row in records
     } != set(candidates):
         raise SynthesisDecisionError("implementation candidate set differs")
+    no_safe_package_accepted = (
+        authority["subject"]["authority_decision"]["decision"]
+        == NO_SAFE_PACKAGE_DECISION
+    )
+    if no_safe_package_accepted and not (
+        records == []
+        and subject["canonical_internal_synthesis_state"]
+        == "human_accepted_no_safe_synthesis"
+    ):
+        raise SynthesisDecisionError(
+            "accepted no-safe-synthesis implementation state differs"
+        )
+    if (
+        not no_safe_package_accepted
+        and subject["canonical_internal_synthesis_state"]
+        == "human_accepted_no_safe_synthesis"
+    ):
+        raise SynthesisDecisionError("no-safe-synthesis implementation lacks authority")
     observed_episodes: list[str] = []
     observed_actions: list[str] = []
     observed_inputs: set[str] = set()

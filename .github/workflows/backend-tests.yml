@@ -59,6 +59,16 @@ jobs:
           python scripts/validate_m13f_education_workforce_policy_episode_acceptance.py
           python backend/scripts/build_m13g_education_workforce_behavioral_semantic_ir_candidates.py --check
           python scripts/validate_m13g_education_workforce_behavioral_semantic_ir_candidates.py
+          python backend/scripts/build_m13h_education_workforce_semantic_ir_acceptance.py --check
+          python scripts/validate_m13h_education_workforce_semantic_ir_acceptance.py
+          python backend/scripts/build_m13i_education_workforce_synthesis_candidates.py --check
+          python scripts/validate_m13i_education_workforce_synthesis_candidates.py
+          python backend/scripts/build_m13j_education_workforce_synthesis_acceptance.py --check
+          python scripts/validate_m13j_education_workforce_synthesis_acceptance.py
+          python backend/scripts/build_m13k_education_workforce_public_wording_candidates.py --check
+          python scripts/validate_m13k_education_workforce_public_wording_candidates.py
+          python backend/scripts/build_m13l_education_workforce_public_wording_acceptance.py --check
+          python scripts/validate_m13l_education_workforce_public_wording_acceptance.py
           python scripts/validate_m12c_environment_energy_action_interpretation.py
           python scripts/validate_m11d_national_security_action_meaning_acceptance.py
           python scripts/validate_m12d_environment_energy_action_meaning_acceptance.py
@@ -103,6 +113,13 @@ jobs:
           backend/tests/test_full_record_source_readiness.py
           backend/tests/test_m13b_roll19_source_readiness_correction.py
           backend/tests/test_m13c_education_workforce_action_interpretation.py
+          backend/tests/test_m13f_education_workforce_policy_episode_acceptance.py
+          backend/tests/test_m13g_education_workforce_behavioral_semantic_ir_candidates.py
+          backend/tests/test_m13h_education_workforce_semantic_ir_acceptance.py
+          backend/tests/test_m13i_education_workforce_synthesis_candidates.py
+          backend/tests/test_m13j_education_workforce_synthesis_acceptance.py
+          backend/tests/test_m13k_education_workforce_public_wording_candidates.py
+          backend/tests/test_m13l_education_workforce_public_wording_acceptance.py
           backend/tests/test_m11a_universe_authority.py
           backend/tests/test_m12a_universe_authority.py
           backend/tests/test_m12b_environment_energy_source_readiness.py

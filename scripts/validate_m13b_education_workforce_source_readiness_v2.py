@@ -304,6 +304,12 @@ def validate_repository() -> dict[str, Any]:
         "f000477_education_workforce_119_v1/",
         "docs/editorial/full_record_reviews/synthesis_candidates/"
         "f000477_education_workforce_119_v1/",
+        "docs/editorial/full_record_reviews/synthesis_implementations/"
+        "f000477_education_workforce_119_v1/",
+        "docs/editorial/full_record_reviews/public_wording_candidates/"
+        "f000477_education_workforce_119_v1/",
+        "docs/editorial/full_record_reviews/public_wording_implementations/"
+        "f000477_education_workforce_119_v1/",
     )
     require(
         all(path.startswith(allowed) for path in review_diff.stdout.splitlines()),

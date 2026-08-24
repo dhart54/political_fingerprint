@@ -1,0 +1,39 @@
+{
+  "artifact_id": "synthesis-implementation-parity:f000477:education_workforce:119:v1",
+  "authority_binding": {
+    "artifact_id": "human-synthesis-authority:f000477:education_workforce:119:v1",
+    "authority_subject_sha256": "0946cc0343a4f639f0801cfbf467c352612cbae0f8d4d3d9498668f5aed178aa",
+    "file_sha256": "a048de2bbfca7cec6568177e01bbe8a00aab2fe66ec6fd919c563707794b9ce9"
+  },
+  "decision_accounting": {
+    "accept_candidate_as_written": 0,
+    "accept_with_bounded_revision": 0,
+    "rejected": 0,
+    "unresolved": 0
+  },
+  "downstream_authorizations": {
+    "database_writes": false,
+    "deployment": false,
+    "production_persistence": false,
+    "production_writes": false,
+    "public_wording": false,
+    "publication": false
+  },
+  "final_accounting": {
+    "candidate_action_reference_count": 0,
+    "candidate_episode_reference_count": 0,
+    "canonical_internal_synthesis_count": 0,
+    "cross_candidate_action_overlap_count": 0,
+    "cross_candidate_episode_overlap_count": 0,
+    "standalone_proposition_count": 2,
+    "unique_behavioral_proposition_input_count": 0
+  },
+  "implementation_binding": {
+    "artifact_id": "synthesis-decision-implementation:f000477:education_workforce:119:v1",
+    "file_sha256": "bf4189d585ff279fc295a2378468c686f5c23d1165fe1d1231cdc80f3c00f8be",
+    "implementation_subject_sha256": "5472c1bb20a598ed973b475dbcae9a6ea6a1ce98b891f9b09ba07491d97a72ed"
+  },
+  "parity_subject_sha256": "d88a281a275b44f6935876967856ae81c93b817fad889c2722fa4a0528312734",
+  "schema_version": "full_record_synthesis_implementation_parity_v1",
+  "upstream_candidate_subject_sha256": "4c2d5270f4795b26ceca287f654a2e8973c022dfbcb983326f19a77c90a1406e"
+}
