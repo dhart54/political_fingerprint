@@ -41,6 +41,10 @@ def _base_evidence(domain: str, scope: str) -> dict:
     return {"domain": domain, "evidence": rows}
 
 
+def _publication_db_unavailable():
+    raise RuntimeError("publication DB unavailable")
+
+
 def test_active_candidate_dispatch_is_identity_aware_and_fail_closed() -> None:
     national_security = _load(M11M_CANDIDATE_PATH)
     environment = _load(M12M_CANDIDATE_PATH)
@@ -127,6 +131,137 @@ def test_simultaneously_active_candidates_enrich_independently(monkeypatch) -> N
         evidence["NATIONAL_SECURITY_FOREIGN"],
         domain="NATIONAL_SECURITY_FOREIGN",
     )
+
+
+@pytest.mark.parametrize("scope", ["119", "all"])
+@pytest.mark.parametrize(
+    ("preview_token", "preview_issue", "expected_summary"),
+    [
+        (
+            "m11m-national-security",
+            "NATIONAL_SECURITY_FOREIGN",
+            {
+                "domain": "NATIONAL_SECURITY_FOREIGN",
+                "yea_count": 39,
+                "nay_count": 43,
+                "other_count": 0,
+                "total_votes": 82,
+                "recorded_votes": 82,
+                "interpreted_support_count": 39,
+                "interpreted_oppose_count": 42,
+                "interpreted_other_count": 0,
+                "interpreted_total": 81,
+            },
+        ),
+        (
+            "m12m-environment-energy",
+            "ENVIRONMENT_ENERGY",
+            {
+                "domain": "ENVIRONMENT_ENERGY",
+                "yea_count": 15,
+                "nay_count": 47,
+                "other_count": 1,
+                "total_votes": 63,
+                "recorded_votes": 62,
+                "interpreted_support_count": 15,
+                "interpreted_oppose_count": 47,
+                "interpreted_other_count": 1,
+                "interpreted_total": 63,
+            },
+        ),
+    ],
+)
+def test_explicit_preview_survives_publication_database_failure(
+    monkeypatch,
+    scope: str,
+    preview_token: str,
+    preview_issue: str,
+    expected_summary: dict,
+) -> None:
+    candidates = {
+        "NATIONAL_SECURITY_FOREIGN": _load(M11M_CANDIDATE_PATH),
+        "ENVIRONMENT_ENERGY": _load(M12M_CANDIDATE_PATH),
+    }
+    base_rows = [
+        {"domain": "JUSTICE_PUBLIC_SAFETY", "total_votes": 10},
+        {"domain": "NATIONAL_SECURITY_FOREIGN", "total_votes": 20},
+        {"domain": "ENVIRONMENT_ENERGY", "total_votes": 30},
+    ]
+    monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "1")
+    monkeypatch.setattr(
+        "app.api.positions.get_legislator_profile",
+        lambda **_kwargs: {"bioguide_id": "F000477"},
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_position_response",
+        lambda **kwargs: {
+            "legislator_id": kwargs["legislator_id"],
+            "scope": kwargs["scope"],
+            "positions": copy.deepcopy(base_rows),
+        },
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_position_evidence_response",
+        lambda **kwargs: {
+            "domain": kwargs["domain"],
+            "evidence": copy.deepcopy(
+                candidates[kwargs["domain"]]["subject"]["preview_data"]["evidence_119"]
+            ),
+        },
+    )
+    monkeypatch.setattr(
+        "app.api.positions._load_publication_rows",
+        _publication_db_unavailable,
+    )
+
+    response = TestClient(app).get(
+        "/legislators/leg_valerie_p_foushee/positions",
+        params={"scope": scope, "candidate": preview_token},
+    )
+    assert response.status_code == 200
+    rows = {row["domain"]: row for row in response.json()["positions"]}
+    assert rows[preview_issue] == expected_summary
+    assert rows["JUSTICE_PUBLIC_SAFETY"] == base_rows[0]
+    unrequested_issue = (
+        "ENVIRONMENT_ENERGY"
+        if preview_issue == "NATIONAL_SECURITY_FOREIGN"
+        else "NATIONAL_SECURITY_FOREIGN"
+    )
+    assert rows[unrequested_issue] == next(
+        row for row in base_rows if row["domain"] == unrequested_issue
+    )
+
+
+def test_publication_database_failure_without_preview_returns_base_positions(
+    monkeypatch,
+) -> None:
+    base_response = {
+        "legislator_id": "leg_valerie_p_foushee",
+        "scope": "119",
+        "positions": [{"domain": "JUSTICE_PUBLIC_SAFETY", "total_votes": 10}],
+    }
+    monkeypatch.setattr(
+        "app.api.positions.get_legislator_profile",
+        lambda **_kwargs: {"bioguide_id": "F000477"},
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_position_response",
+        lambda **_kwargs: copy.deepcopy(base_response),
+    )
+    monkeypatch.setattr(
+        "app.api.positions.get_position_evidence_response",
+        lambda **_kwargs: pytest.fail("inactive candidates must not request evidence"),
+    )
+    monkeypatch.setattr(
+        "app.api.positions._load_publication_rows",
+        _publication_db_unavailable,
+    )
+
+    response = TestClient(app).get(
+        "/legislators/leg_valerie_p_foushee/positions", params={"scope": "119"}
+    )
+    assert response.status_code == 200
+    assert response.json() == base_response
 
 
 @pytest.mark.parametrize(

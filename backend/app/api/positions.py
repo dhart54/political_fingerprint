@@ -156,20 +156,22 @@ def get_legislator_positions(
     if profile is None or str(profile["bioguide_id"]) != "F000477":
         return response
 
-    try:
-        publication_rows = _load_publication_rows()
-    except Exception:  # pragma: no cover - database availability stays fail-closed
-        return response
     previews = {
         "NATIONAL_SECURITY_FOREIGN": _m11m_preview(candidate),
         "ENVIRONMENT_ENERGY": _m12m_preview(candidate),
     }
+    try:
+        publication_rows = _load_publication_rows()
+    except Exception:  # pragma: no cover - active discovery stays fail-closed
+        publication_rows = None
     for issue_id in ("NATIONAL_SECURITY_FOREIGN", "ENVIRONMENT_ENERGY"):
-        site_candidate = previews[issue_id] or _active_site_integration_publication(
-            member_bioguide_id=str(profile["bioguide_id"]),
-            issue_id=issue_id,
-            publication_rows=publication_rows,
-        )
+        site_candidate = previews[issue_id]
+        if site_candidate is None and publication_rows is not None:
+            site_candidate = _active_site_integration_publication(
+                member_bioguide_id=str(profile["bioguide_id"]),
+                issue_id=issue_id,
+                publication_rows=publication_rows,
+            )
         if site_candidate is None or scope not in {"119", "all"}:
             continue
         raw_evidence = get_position_evidence_response(
