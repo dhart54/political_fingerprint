@@ -243,7 +243,9 @@ def validate() -> dict[str, Any]:
         and current["decision_template"]["sha256"] == EXPECTED[DECISION_TEMPLATE_PATH]
         and current["dossier"]["sha256"] == EXPECTED[DOSSIER_PATH]
         and current["parity"]["sha256"] == EXPECTED[PARITY_PATH]
-        and current["canonical_public_copy"] is False
+        and current["accepted"] is True
+        and current["canonical_public_copy"] is True
+        and current["reviewed_head"] == "c50ebce3dc66cd8345fd205f91b0af378f058cd4"
         and current["production_selectable"] is False
         and not any(current["downstream_authorizations"].values()),
         "M13K current-state identity or authority boundary differs",

@@ -1,0 +1,141 @@
+{
+  "accepted": true,
+  "artifact_id": "human-public-wording-authority:f000477:education_workforce:119:v1",
+  "authority_subject_sha256": "772a67080c81cc1c2abe4f90f0450ec3848a21fcac848e9dab48524bfbcb6fbb",
+  "canonical_reviewed_wording_authority": true,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_public_wording_authority_v1",
+  "subject": {
+    "approved_at_utc": "2026-08-24T23:21:00Z",
+    "authority_effect": "canonical_reviewed_wording_internal_only",
+    "base_binding": {
+      "accepted_m13k_base": "b69dae58112adbf90db31c4037ddfaffe1a09551",
+      "accepted_m13k_head": "c50ebce3dc66cd8345fd205f91b0af378f058cd4",
+      "accepted_m13k_pr": 169
+    },
+    "behavioral_semantic_ir_authority_binding": {
+      "artifact_id": "human-behavioral-semantic-ir-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "83e9cf85898d35e8f952db6e514e1495f5398e0bdc80a65824ab2777c8cac20c",
+      "file_sha256": "2a441ae485cc534677858bad82914781e94068e7d34ccd0ac95da4e4b5c55887"
+    },
+    "behavioral_semantic_ir_implementation_binding": {
+      "artifact_id": "behavioral-semantic-ir-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "30329ed2ca0b6d8f32b30d573858ebbc653c38f2280a6432410b8a5e491424a9",
+      "implementation_subject_sha256": "e9bdf0b1b365aa48f19b20d4f5c871bb5ad1f3aa47f2eaa035dea62be725f6c3"
+    },
+    "blocked_action_boundaries": [],
+    "blocked_actions": [],
+    "candidate_binding": {
+      "artifact_id": "public-wording-candidates:f000477:education_workforce:119:v1",
+      "file_sha256": "7423eef404ed3358aaa4b10e3d6d47b398dd81538215ec13dbeb6e9b5eaa6474",
+      "package_subject_sha256": "4bd6f429cc8e4ee4e4657ac39627bc65adef8faeb2581d44c2e85803c0b19e4b"
+    },
+    "chamber": "House",
+    "complete_source_accounting": {
+      "behavioral_primary_wording_count": 2,
+      "behavioral_proposition_count": 2,
+      "synthesis_primary_wording_count": 0,
+      "synthesis_record_count": 0
+    },
+    "complete_synthesis_role_accounting": [
+      {
+        "accepted_candidate_content_sha256": "764455c5def25f4c6a9faf1b29cf12793fdde602c8d1c1719dde882ccb971065",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:notable-hr1048-amendment-support-final-passage-opposition:m13h:v1",
+        "implementation_record_subject_sha256": "1add628c528d744658953ad5337a511610ab51e77581d08e89dca5ab617e498e",
+        "proposition_id": "notable-hr1048-amendment-support-final-passage-opposition",
+        "reason": "No safe cross-proposition synthesis survives: the funding-restriction pattern is narrowly directional, while the H.R. 1048 notable is mixed, mechanistically distinct, and cannot become directional support.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "notable_choice"
+      },
+      {
+        "accepted_candidate_content_sha256": "23975bd28313ea9bfa060e2e28de23450c3c12d0c7b8769e84d5ab0f8f52946d",
+        "accounting_role": "intentionally_standalone_no_safe_synthesis",
+        "candidate_relationships": [],
+        "implementation_record_id": "behavioral-semantic-ir-decision-implementation:pattern-education-relationship-triggered-funding-restriction-opposition:m13h:v1",
+        "implementation_record_subject_sha256": "2fbc13181692b20214a9daa98db336232719b5f099af50842d568a1f07ea886a",
+        "proposition_id": "pattern-education-relationship-triggered-funding-restriction-opposition",
+        "reason": "No safe cross-proposition synthesis survives: the funding-restriction pattern is narrowly directional, while the H.R. 1048 notable is mixed, mechanistically distinct, and cannot become directional support.",
+        "source_conclusion_relevance": "primary",
+        "source_proposition_type": "repeated_pattern"
+      }
+    ],
+    "congress": 119,
+    "decision_accounting": {
+      "accept_candidate_as_written": 3,
+      "accept_with_bounded_revision": 0,
+      "rejected": 0,
+      "unresolved": 0
+    },
+    "decision_template_binding": {
+      "artifact_id": "human-public-wording-decision-template:f000477:education_workforce:119:v1",
+      "decision_template_subject_sha256": "a43a1c836c2597e8571f5862f3b1730cfd6cebdf4eb102178e1f41d11b21c6fd",
+      "file_sha256": "86f09bc92e080d5d08a769a403aa3e1d485d4aaa2e7db675a8ee803dfac28ee6"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "production_writes": false,
+      "publication": false
+    },
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477",
+    "member_slug": "leg_valerie_p_foushee",
+    "parity_binding": {
+      "artifact_id": "public-wording-candidate-parity:f000477:education_workforce:119:v1",
+      "file_sha256": "5c5c6b2942bcd539a9f36f83500a4504ec2c60583591d6fb4af04686c993277b",
+      "parity_subject_sha256": "0bfb02290043cd0d8dd2f34627ca520ffc31aa2261fa81b16f31af2206cc6065"
+    },
+    "reviewer": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_public_wording_review_authority_v1",
+    "synthesis_authority_binding": {
+      "artifact_id": "human-synthesis-authority:f000477:education_workforce:119:v1",
+      "authority_subject_sha256": "0946cc0343a4f639f0801cfbf467c352612cbae0f8d4d3d9498668f5aed178aa",
+      "file_sha256": "a048de2bbfca7cec6568177e01bbe8a00aab2fe66ec6fd919c563707794b9ce9"
+    },
+    "synthesis_implementation_binding": {
+      "artifact_id": "synthesis-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "bf4189d585ff279fc295a2378468c686f5c23d1165fe1d1231cdc80f3c00f8be",
+      "implementation_subject_sha256": "5472c1bb20a598ed973b475dbcae9a6ea6a1ce98b891f9b09ba07491d97a72ed"
+    },
+    "wording_decisions": [
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "3df864b152e90af68018e10a4d6e2ebc06068e74f7adec2fb5bae439f77df8a5",
+        "original_wording_item_content_sha256": "ec89bbdfe0811315a50c14450ee36416fbb815d99b4c41484bcf0bf76b583be2",
+        "original_wording_item_subject_sha256": "e66035ae8ffe9cfe66d9e2166a76102dddbfa6f3f307f9a52a74ab1e79a111de",
+        "reviewed_at_utc": "2026-08-24T23:21:00Z",
+        "reviewer": "chatgpt:political_fingerprint_authority_thread",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:issue-overview:education-workforce:119"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "5f46962b2a73c1b5273e692e8e1ecf3a44e1bb6b4d53cd8d356082585b3e4873",
+        "original_wording_item_content_sha256": "6618110b0dc80b3395d302173585774bbf58788210f839353c65a691f631ee69",
+        "original_wording_item_subject_sha256": "850becb2b389b3584966d0c0e1d6f5f3c252b971d3fa476b273aa8a67f21a5ea",
+        "reviewed_at_utc": "2026-08-24T23:21:00Z",
+        "reviewer": "chatgpt:political_fingerprint_authority_thread",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:pattern:education-relationship-funding-restrictions"
+      },
+      {
+        "bounded_revision": null,
+        "decision": "accept_candidate_as_written",
+        "decision_subject_sha256": "2b1bd11d635b2c9e557800885622d4af2f71fc2a5dc0a2266b6bfde0497d5b16",
+        "original_wording_item_content_sha256": "4ab6a5d0b43553759ced79bccdf65aec53cc3dd51ea87fabf136b27792191c72",
+        "original_wording_item_subject_sha256": "9a5dd2ddbf54b0295b1df89b0197790f89f898bc41e36112aa2f50a726675ca2",
+        "reviewed_at_utc": "2026-08-24T23:21:00Z",
+        "reviewer": "chatgpt:political_fingerprint_authority_thread",
+        "reviewer_authority": "full_record_public_wording_review_authority_v1",
+        "wording_item_id": "wording:notable:hr1048-amendment-final-passage"
+      }
+    ]
+  }
+}

@@ -61,13 +61,18 @@ The machine-readable authority is
   implementation record. The funding-restriction pattern and mixed H.R. 1048
   notable remain intentionally standalone, and all 16 episode dispositions are
   preserved.
-- M13K opens three detached, non-authorizing wording candidates: one overview
+- M13K opened three detached, non-authorizing wording candidates: one overview
   that explicitly keeps the two findings separate, one bounded H.R. 881/H.R.
   1069 funding-restriction pattern, and one mixed H.R. 1048 notable choice. No
   synthesis card exists; H.R. 1005 remains non-directional and supplies no
-  directional wording evidence. Human wording review is pending. Site
-  integration, publication, persistence, production/database writes, and
-  deployment remain unauthorized.
+  directional wording evidence. It was independently accepted as written at
+  exact PR #169 head
+  `c50ebce3dc66cd8345fd205f91b0af378f058cd4`. M13L mechanically records all
+  three decisions as `accept_candidate_as_written` and preserves one overview,
+  one directionless repeated pattern, one mixed notable choice, and zero
+  synthesis surfaces. The canonical reviewed wording remains internal-only;
+  publication, persistence, production selection, database/production writes,
+  and deployment remain unauthorized.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
