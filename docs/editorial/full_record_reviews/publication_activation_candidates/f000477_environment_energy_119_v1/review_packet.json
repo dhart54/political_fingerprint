@@ -8,9 +8,9 @@
   "activation_authority_template": {
     "accepted": false,
     "artifact_id": "human-publication-activation-decision-template:f000477:environment_energy:119:v1",
-    "file_sha256": "f938b3871bb8a953d3595df7db28823a2e111bdda2d224be828cde437322b5a8",
+    "file_sha256": "ea22c71627499caf0bf2bb3a9635affbc1cd780a927417af850dab4140889212",
     "sealed": false,
-    "template_subject_sha256": "8661ddf0ad0e61c82ea5df183e35d3fe402e32ab9f14557b6dddf66c9c5d5073"
+    "template_subject_sha256": "650dbb2b7fbfb29085e0230f734817d1e9f664558cc23591867f205b3a934ae2"
   },
   "authorization_boundary": {
     "deployment": false,
@@ -22,18 +22,18 @@
   },
   "candidate_preparation_authority": {
     "artifact_id": "production-eligibility-publication-authority:f000477:environment_energy:119:v1",
-    "authority_subject_sha256": "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68",
-    "file_sha256": "344840c1f7177c3be7ffb85a81c0c0d13d60a4209d5100e1c13c9c3e6c0f8222"
+    "authority_subject_sha256": "d3fda11480c9ce2bbc72db26130ac16b464280e42f27f9a2c03193b2e58b4fa6",
+    "file_sha256": "dfa6d2d6766b7a6bd1ed7183b0bae95124964b6b5a1e17d7c46b1cf43907e2bc"
   },
   "current_production_state": {
-    "captured_at_utc": "2026-08-16T22:47:05.151280+00:00",
+    "captured_at_utc": "2026-08-17T00:57:24.905942+00:00",
     "counts": {
       "artifacts": 149,
       "batches": 5,
       "publication_registry": 2,
       "relationships": 161
     },
-    "deployed_commit": "0f34962526a693625f7b15a96baec95121c2f6c9",
+    "deployed_commit": "b23a26cde2143bd646f0300fed18bd0c97a71a2b",
     "selector_pre_activation": {
       "scopes": {
         "118": {
@@ -131,7 +131,7 @@
     "rows_touched": 0
   },
   "required_review": "independent_chatgpt_mechanical_review",
-  "review_packet_subject_sha256": "08b0027bae1850845aacc2b467277574b93e9b209d901ca78aab5c284797b616",
+  "review_packet_subject_sha256": "e07fad891419f067ba0fdd656a72eb1fd711a7cd05b9bed31ef4d675f93eec97",
   "rollback": {
     "delete_artifact_natural_keys": [
       "site-integration-candidate:f000477:environment_energy:119:v1",
@@ -181,7 +181,7 @@
   },
   "write_set": {
     "artifact_id": "publication-activation-write-set:f000477:environment_energy:119:v1",
-    "file_sha256": "299fccc72112dbef27f8834b55dd44e0f4335896a473dff004b3157e83ee02fd",
-    "write_set_subject_sha256": "536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6"
+    "file_sha256": "55b2cef16ce02b13436e3b744356d64b0dcc8f07e9f7218e9ecf2ca219385443",
+    "write_set_subject_sha256": "ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f"
   }
 }

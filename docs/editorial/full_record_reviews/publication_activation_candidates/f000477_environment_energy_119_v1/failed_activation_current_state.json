@@ -1,0 +1,24 @@
+{
+  "artifact_id": "failed-activation-current-state:f000477:environment_energy:119:v1",
+  "current_state_subject_sha256": "f050d3422b725faa0b270f109279d6aa0764c46aec3fe79f04acf960c7583a97",
+  "immutable": true,
+  "schema_version": "m12n_failed_activation_current_state_v1",
+  "subject": {
+    "activation_attempted": true,
+    "activation_survived_postcheck": false,
+    "blocking_runtime_defect": "active_environment_receipt_evidence_dispatch",
+    "environment_publication_active": false,
+    "environment_selector_state": {
+      "118": "receipts_only",
+      "119": "receipts_only",
+      "all": "receipts_only"
+    },
+    "failed_activation_receipt_binding": {
+      "file_sha256": "205e56488898e168fd842be1b4afe8cc40a03e17efe635e49e8eb5eafa5eff99",
+      "receipt_id": "failed-activation-rollback-receipt:f000477:environment_energy:119:v1",
+      "subject_sha256": "9dc3abeeb95d060d59d3df2e291772771ef758e6eb4bff2aec9ab80ae80745bf"
+    },
+    "rollback_completed": true,
+    "sealed_authority_reuse": "prohibited_after_runtime_repair"
+  }
+}

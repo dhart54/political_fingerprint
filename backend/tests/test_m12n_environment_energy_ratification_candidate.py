@@ -26,6 +26,16 @@ from scripts.foushee_environment_energy_publication_preparation import (
     reviewed_runtime_manifest,
     validate_production_execution_runtime,
 )
+from scripts.validate_m12n_publication_activation_ratification_candidate import (
+    validate_candidate,
+)
+from scripts.materialize_m12n_environment_energy_activation_authority import (
+    DECISION_RECORDED_AT_UTC,
+    RATIFIED_PROSPECTIVE_SUBJECT_SHA256,
+    build_authority,
+    validate_files,
+    validate_authority,
+)
 
 
 def _load(path):
@@ -111,6 +121,85 @@ def _synthetic_authority(*, commit: str, manifest_sha256: str) -> dict:
         "test_only_synthetic": True,
         "subject": subject,
         "activation_authority_subject_sha256": semantic_hash(subject),
+    }
+
+
+def test_m12n_ratification_candidate_is_exact_and_non_authorizing() -> None:
+    candidate = validate_candidate()
+    subject = candidate["prospective_authority_subject"]
+    assert candidate["immutable"] is True
+    assert candidate["accepted"] is False
+    assert candidate["sealed"] is False
+    assert "decision_recorded_at_utc" not in subject
+    assert subject["candidate_prepared_at_utc"] == "2026-08-17T00:57:58Z"
+    assert "health_proof_subject_sha256" not in subject["runtime_binding"]
+    assert (
+        subject["ratification_runtime_evidence_binding"][
+            "runtime_health_proof_subject_sha256"
+        ]
+        == "22f9dfd2e1a42e1c9d4c1ffc3bf1f7799911036e7b6c0c78a20a2e65e42d7516"
+    )
+
+
+def test_m12n_ratification_candidate_cannot_satisfy_live_selector_authority() -> None:
+    candidate = validate_candidate()
+    write_set = _load(WRITE_SET_PATH)
+    with pytest.raises(ValueError, match="binding differs"):
+        validate_environment_positive_activation_authority(
+            candidate,
+            candidate=load_environment_site_integration_candidate(M12M_PATH),
+            candidate_authority=_load(AUTHORITY_PATH),
+            metadata=write_set["publication_registry"]["publication_metadata"],
+        )
+
+
+def test_materialized_authority_adds_only_ratified_decision_timestamp() -> None:
+    candidate = validate_candidate()
+    authority = build_authority()
+    stripped = copy.deepcopy(authority["subject"])
+    assert stripped.pop("decision_recorded_at_utc") == DECISION_RECORDED_AT_UTC
+    assert stripped == candidate["prospective_authority_subject"]
+    assert semantic_hash(stripped) == RATIFIED_PROSPECTIVE_SUBJECT_SHA256
+    assert authority["accepted"] is True
+    assert authority["sealed"] is True
+    assert authority["immutable"] is True
+    validate_authority(authority)
+
+
+def test_failed_activation_and_rollback_remain_governed_history() -> None:
+    _, _, receipt, state = validate_files()
+    assert receipt["immutable"] is True
+    assert receipt["subject"]["attempt"]["initial_apply"]["batch_id"] == 18
+    assert receipt["subject"]["attempt"]["initial_apply"]["artifact_ids"] == [
+        233,
+        234,
+        235,
+    ]
+    assert receipt["subject"]["live_postcheck"]["http_status_by_scope"] == {
+        "119": 500,
+        "all": 500,
+        "118": 500,
+    }
+    assert (
+        receipt["subject"]["live_postcheck"]["production_activation_survived_postcheck"]
+        is False
+    )
+    assert receipt["subject"]["rollback"]["completed"] is True
+    assert state["subject"] == {
+        "activation_attempted": True,
+        "activation_survived_postcheck": False,
+        "rollback_completed": True,
+        "environment_publication_active": False,
+        "environment_selector_state": {
+            "119": "receipts_only",
+            "all": "receipts_only",
+            "118": "receipts_only",
+        },
+        "blocking_runtime_defect": "active_environment_receipt_evidence_dispatch",
+        "failed_activation_receipt_binding": state["subject"][
+            "failed_activation_receipt_binding"
+        ],
+        "sealed_authority_reuse": "prohibited_after_runtime_repair",
     }
 
 

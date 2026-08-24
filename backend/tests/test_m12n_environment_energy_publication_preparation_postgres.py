@@ -209,10 +209,10 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback() -> None:
         authority = build_authority(preflight)
         write_set = build_write_set(preflight, authority)
         assert governed_authority["authority_subject_sha256"] == (
-            "7b35b732d715387325e203f0c2177ab82e0b745b7ad2792f395ee3258c75be68"
+            "d3fda11480c9ce2bbc72db26130ac16b464280e42f27f9a2c03193b2e58b4fa6"
         )
         assert governed_write_set["write_set_subject_sha256"] == (
-            "536de170f48f7405e7358be4c53b341e4b3e995d60d3f2dc9e186e21af4411c6"
+            "ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f"
         )
         for key in (
             "accepted_site_integration_binding",
