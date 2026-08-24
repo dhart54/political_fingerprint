@@ -63,10 +63,11 @@
 - The other 16 candidate records are exact-parity locked to reviewed head
   `4c5e922e9c3da93b3f8ab80e2606ae714821df61`.
 
-## Review stop
+## Independent review disposition
 
-Review all 17 exact-action meanings, exact-choice effects, limitations, and
-bindings. Do not fill the decision template in this milestone. Do not accept
-action meaning, create or accept episodes, begin Semantic IR or synthesis,
-author public wording, integrate the site, publish, deploy, persist, or merge
-M13C.
+All 17 exact-action meanings and exact-choice effects were accepted as written
+at exact PR #165 head `ee8291a10a953b2d4ddfc7c36610b2058f194c84` under
+`full_record_action_interpretation_review_authority_v1`. PR #165 merged unchanged
+as `02cb6bb281c4b3e673f7764fa09226b3933f0598`. This acceptance does not authorize
+episode acceptance, Semantic IR, synthesis, public wording, site integration,
+publication, persistence, production, or deployment.

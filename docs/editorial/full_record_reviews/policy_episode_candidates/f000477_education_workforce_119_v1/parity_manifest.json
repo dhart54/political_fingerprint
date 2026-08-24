@@ -1,0 +1,36 @@
+{
+  "accepted": false,
+  "artifact_id": "policy-episode-candidate-parity:f000477:education_workforce:119:v1",
+  "authorizing": false,
+  "candidate": true,
+  "candidate_batch": {
+    "artifact_id": "policy-episode-candidates:f000477:education_workforce:119:v1",
+    "episode_candidate_subject_sha256": "ea4bca6c4fa1bdef8381952aa4415b6e88292ec228e6950e5099c1a77c566398"
+  },
+  "canonical": false,
+  "generated_last": true,
+  "parity_state": "pass",
+  "parity_subject_sha256": "a4409dc54e572941349323b6d9070d62197c6bdc739e945c604bde738f48e315",
+  "public": false,
+  "referenced_artifacts": [
+    {
+      "episode_candidate_subject_sha256": "ea4bca6c4fa1bdef8381952aa4415b6e88292ec228e6950e5099c1a77c566398",
+      "final_file_sha256": "e66476bc01fe770bf9a79cdbcd9aca6461ecaf2958ab3fa04b9a0a2038c61b58",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_education_workforce_119_v1/policy_episode_candidate_batch.json"
+    },
+    {
+      "decision_template_subject_sha256": "a3fea9ac957614bd113718f23249f496ef3ae0fb5d153e23b2f418d946015ee5",
+      "final_file_sha256": "f3f4ce0a521be16f456b3ee82cd064744c3deec14fb19bf3860ee1281e04e6fa",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_education_workforce_119_v1/human_episode_decision_template.json"
+    },
+    {
+      "final_file_sha256": "53135933c6ec6cab91b8aa16f2e3b2194c0fb632b27927755dfcf93c45969410",
+      "path": "docs/editorial/full_record_reviews/policy_episode_candidates/f000477_education_workforce_119_v1/human_review_dossier.md"
+    },
+    {
+      "final_file_sha256": "a893c2961fdfdae85dcd3f51866136558bc524d838a1500f84c84472d4cc35be",
+      "path": "docs/methodology/full_record_policy_episode_candidate_batch_generic_v1.schema.json"
+    }
+  ],
+  "schema_version": "full_record_policy_episode_candidate_parity_v1"
+}

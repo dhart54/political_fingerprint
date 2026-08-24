@@ -33,10 +33,18 @@ The machine-readable authority is
   readiness because its claimed H677-H693 coverage exceeded the governed
   H676-H677 file. PR #164 merged at exact post-M13B-v2 main
   `9c675413b2b238bbc61d9daa1245636f6f5b161f`; the prior fail-closed M13C stop is
-  resolved. M13C now contains 17 detached action-interpretation candidates, 16
-  directional exact-choice effects, and one non-directional Not Voting action,
-  pending independent semantic review. No action meaning or downstream authority
-  is accepted by candidate generation.
+  resolved.
+- M13C was independently accepted at exact PR #165 head
+  `ee8291a10a953b2d4ddfc7c36610b2058f194c84` and merged as
+  `02cb6bb281c4b3e673f7764fa09226b3933f0598`. M13D deterministically implements
+  all 17 meanings and exact-choice effects without revision: 6 support, 10
+  opposition, and one non-directional Not Voting action.
+- M13E proposes 16 detached policy episodes covering all 17 accepted actions:
+  15 singletons and one two-choice H.Amdt. 12/H.R. 1048 legislative event. The
+  multi-action candidate preserves the narrower amendment and whole-package
+  passage boundaries and is pending independent semantic review. Episode
+  acceptance, Semantic IR, synthesis, public wording, publication, persistence,
+  and production authority remain false.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
