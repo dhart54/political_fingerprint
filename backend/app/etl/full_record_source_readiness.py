@@ -5,7 +5,9 @@ import json
 from collections import Counter
 from pathlib import Path
 import os
+import re
 from typing import Any, Iterable
+import unicodedata
 from urllib.parse import urlparse
 from xml.etree import ElementTree
 
@@ -206,12 +208,71 @@ def _xml_has_operative_body(path: Path) -> bool:
     )
 
 
-def _pdf_has_content(path: Path) -> bool:
-    try:
-        content = path.read_bytes()
-    except OSError:
+def _normalized_pdf_text(value: str) -> str:
+    normalized = unicodedata.normalize("NFKC", value).translate(
+        str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
+    )
+    normalized = re.sub(r"(?<=\w)-\s+(?=\w)", "", normalized)
+    return " ".join(normalized.split()).casefold()
+
+
+def verify_operative_floor_text_pdf(
+    source: dict[str, Any], *, repository_root: Path
+) -> bool:
+    verification = source.get("content_verification")
+    if not isinstance(verification, dict):
         return False
-    return len(content) > 1_000 and content.startswith(b"%PDF")
+    if (
+        verification.get("schema_version")
+        != "operative_floor_text_content_verification_v1"
+        or verification.get("extraction_engine") != "pypdf"
+        or verification.get("document_identity")
+        != source["neutral_projection"].get("text_version")
+    ):
+        return False
+    try:
+        from pypdf import PdfReader
+    except ModuleNotFoundError:
+        return False
+
+    raw_path = _resolve_governed_path(
+        source["raw_provenance"]["governed_local_path"],
+        repository_root=repository_root,
+    )
+    try:
+        reader = PdfReader(raw_path)
+    except Exception:  # pypdf raises several parse-specific exceptions.
+        return False
+    if len(reader.pages) != verification.get("document_page_count"):
+        return False
+
+    page_checks = verification.get("page_checks")
+    if not isinstance(page_checks, list) or not page_checks:
+        return False
+    seen_pages: set[int] = set()
+    for page_check in page_checks:
+        page_number = page_check.get("pdf_page_number")
+        anchors = page_check.get("required_anchors")
+        label = page_check.get("record_page_label")
+        if (
+            not isinstance(page_number, int)
+            or page_number < 1
+            or page_number > len(reader.pages)
+            or page_number in seen_pages
+            or not isinstance(label, str)
+            or not isinstance(anchors, list)
+            or not anchors
+        ):
+            return False
+        seen_pages.add(page_number)
+        extracted = _normalized_pdf_text(
+            reader.pages[page_number - 1].extract_text() or ""
+        )
+        if _normalized_pdf_text(label) not in extracted or any(
+            _normalized_pdf_text(anchor) not in extracted for anchor in anchors
+        ):
+            return False
+    return True
 
 
 def _derive_criteria(
@@ -309,7 +370,9 @@ def _derive_criteria(
                     content_ok
                     and source["source_type"] == "congressional_record"
                     and raw_path.suffix.lower() == ".pdf"
-                    and _pdf_has_content(raw_path)
+                    and verify_operative_floor_text_pdf(
+                        source, repository_root=repository_root
+                    )
                 )
             else:
                 content_ok = (
@@ -320,15 +383,21 @@ def _derive_criteria(
                 )
             operative_context_sufficient = operative_context_sufficient and content_ok
             allowed_versions = {
-                "operative_floor_text": {"official_house_record_H677-H693"},
                 "operative_measure_text": {"eh", "cdh"},
                 "operative_resolution_text": {"eh", "ih"},
                 "stage_compatible_senate_origin_text": {"es", "eah"},
             }
+            if content_class == "operative_floor_text":
+                verification = source.get("content_verification") or {}
+                version_ok = projection.get("text_version") == verification.get(
+                    "document_identity"
+                )
+            else:
+                version_ok = projection.get("text_version") in allowed_versions.get(
+                    content_class, set()
+                )
             operative_text_version_stage_compatible = (
-                operative_text_version_stage_compatible
-                and projection.get("text_version")
-                in allowed_versions.get(content_class, set())
+                operative_text_version_stage_compatible and version_ok
             )
 
     return {

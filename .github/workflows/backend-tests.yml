@@ -25,6 +25,8 @@ jobs:
       UNIVERSE_DISCOVERY_DISPOSABLE_DATABASE_URL: postgresql://invalid
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -45,6 +47,8 @@ jobs:
           python scripts/validate_m12a_next_full_record_issue_selection.py
           python scripts/validate_m12a_universe_authority.py
           python scripts/validate_m12b_environment_energy_source_readiness.py
+          python backend/scripts/build_m13b_education_workforce_source_readiness_v2.py --check
+          python scripts/validate_m13b_education_workforce_source_readiness_v2.py
           python scripts/validate_m12c_environment_energy_action_interpretation.py
           python scripts/validate_m11d_national_security_action_meaning_acceptance.py
           python scripts/validate_m12d_environment_energy_action_meaning_acceptance.py
@@ -87,6 +91,7 @@ jobs:
         run: >-
           python -m pytest -q
           backend/tests/test_full_record_source_readiness.py
+          backend/tests/test_m13b_roll19_source_readiness_correction.py
           backend/tests/test_m11a_universe_authority.py
           backend/tests/test_m12a_universe_authority.py
           backend/tests/test_m12b_environment_energy_source_readiness.py

@@ -1,0 +1,154 @@
+{
+  "correction_subject_sha256": "d9a896caba1b62d9fed3d4beb44fb850e43f9f0886145a264c4ba3f55756c6d3",
+  "immutable_correction_record": true,
+  "receipt_id": "source-readiness-correction:f000477:education_workforce:119:m13b-v1-to-v2",
+  "schema_version": "source_readiness_correction_receipt_v1",
+  "subject": {
+    "action_interpretation_authorized": false,
+    "authority_effect": "source_readiness_correction_only",
+    "corrected_m13b_v2": {
+      "artifact_id": "interpretation-source-readiness:f000477:education_workforce:119:v2",
+      "artifact_path": "docs/editorial/full_record_reviews/source_readiness/f000477_education_workforce_119_interpretation_source_readiness_v2.json",
+      "artifact_sha256": "36cff9b3b5f3a7ad21579373c4437aad5c9c18aaf8d2f0874721695685899aa0",
+      "blocked_count": 0,
+      "ready_count": 17,
+      "source_readiness_subject_sha256": "aeecda1d7e883a6c03ac43c85e355812dffed1e74751e2bf1e4f8a0afb325ab0"
+    },
+    "corrected_operational_source": {
+      "content_verification": {
+        "document_identity": "official_house_section_H663-H719_relevant_H677-H681_H692-H693",
+        "document_page_count": 57,
+        "document_page_labels": {
+          "first": "H663",
+          "last": "H719"
+        },
+        "extraction_engine": "pypdf",
+        "page_checks": [
+          {
+            "evidence_role": "document_boundary_start",
+            "pdf_page_number": 1,
+            "record_page_label": "H663",
+            "required_anchors": [
+              "CONGRESSIONAL RECORD"
+            ]
+          },
+          {
+            "evidence_role": "exact_stage_adoption_and_operative_text_start",
+            "pdf_page_number": 15,
+            "record_page_label": "H677",
+            "required_anchors": [
+              "H.R. 2262",
+              "Pursuant to House Resolution 988",
+              "the amendment in the nature of a substitute recommended by the Committee on Education and Workforce",
+              "modified by the amendment printed in part B of House Report 119–440",
+              "is adopted and the bill, as amended, is considered read",
+              "The text of the bill, as amended, is as follows",
+              "SEC. 2. TREATMENT OF ATTENDANCE OR PARTICIPATION IN CERTAIN ACTIVITIES"
+            ]
+          },
+          {
+            "evidence_role": "operative_text_completion",
+            "pdf_page_number": 16,
+            "record_page_label": "H678",
+            "required_anchors": [
+              "outside of the employee's regular working hours",
+              "such attendance or participation is voluntary",
+              "the employee does not perform any work for the employer",
+              "bona fide apprenticeship program",
+              "hours worked on or after the date of enactment of this Act"
+            ]
+          },
+          {
+            "evidence_role": "final_passage_resumption",
+            "pdf_page_number": 30,
+            "record_page_label": "H692",
+            "required_anchors": [
+              "Proceedings will resume on questions previously postponed",
+              "Passage of H.R. 2262, if ordered",
+              "the unfinished business is the vote on the motion to recommit on the bill (H.R. 2262)",
+              "[Roll No. 18]"
+            ]
+          },
+          {
+            "evidence_role": "roll19_final_passage_disposition",
+            "pdf_page_number": 31,
+            "record_page_label": "H693",
+            "required_anchors": [
+              "The question is on the passage of the bill",
+              "[Roll No. 19]",
+              "yeas 209, nays 215, not voting 7",
+              "So the bill was not passed"
+            ]
+          },
+          {
+            "evidence_role": "document_boundary_end",
+            "pdf_page_number": 57,
+            "record_page_label": "H719",
+            "required_anchors": [
+              "CONGRESSIONAL RECORD — HOUSE"
+            ]
+          }
+        ],
+        "relevant_record_ranges": [
+          "H677-H681",
+          "H692-H693"
+        ],
+        "schema_version": "operative_floor_text_content_verification_v1"
+      },
+      "document_coverage": "H663-H719",
+      "raw_pdf_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+      "relevant_record_ranges": [
+        "H677-H681",
+        "H692-H693"
+      ],
+      "source_id": "congressional-record:2026-01-13:house-section:H663-H719:hr2262",
+      "source_url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf"
+    },
+    "defect": {
+      "action_interpretation_judgment": false,
+      "actual_coverage": "H676-H677",
+      "claimed_coverage": "H677-H693",
+      "defect_class": "source_readiness_evidence_defect",
+      "defective_action_id": "house:119:2:19",
+      "defective_raw_pdf_sha256": "a5c9f2fc9c16096d99f4939f691b8a509c9bdc62e58204eb853178f612161409",
+      "defective_source_id": "congressional-record:2026-01-13:house:H677-H693:hr2262",
+      "discovery_stage": "m13c_fail_closed_source_inspection",
+      "stop_reason": "house:119:2:19_operational_congressional_record_source_incomplete",
+      "universe_membership_defect": false
+    },
+    "historical_m13b_v1": {
+      "artifact_id": "interpretation-source-readiness:f000477:education_workforce:119:v1",
+      "artifact_path": "docs/editorial/full_record_reviews/source_readiness/f000477_education_workforce_119_interpretation_source_readiness_v1.json",
+      "artifact_sha256": "70157fa2f9d55683837d5a7e3ff92249cbf74d89def7a759e5eef4459474b198",
+      "m13b_v1_current_interpretation_readiness": "superseded_due_to_incomplete_roll19_operational_source",
+      "source_readiness_subject_sha256": "7f526f1ce37d9f2ec1acd5e092d04e091b8ad5340c56aff57d478f69e45533c7"
+    },
+    "unchanged_m13a_authority": {
+      "accepted_action_count": 17,
+      "action_set_sha256": "83b7b129eaa32d114c72782c70cb06dac55f7cd01c8681c8dc2ae2dca986cf5b",
+      "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d"
+    },
+    "unchanged_source_packet_parity": {
+      "excluded_corrected_action_id": "house:119:2:19",
+      "source_packet_sha256_by_action": {
+        "house:119:1:120": "f885e3d561ccca748adf18c16d8a4fb0719ad1877fecda101bc0506586717ebe",
+        "house:119:1:146": "9cfbfc917b28bf7be35ae5bbbd3ec0afba9abce4536db18b8923991e04041eb1",
+        "house:119:1:312": "e7d5ed7c5d5f1809fe3c03ae724a00714cd1236e9c4a47b74095887d15e255cf",
+        "house:119:1:313": "073089ce794afecc8ac1121b30bd8f04758a780267c2105e69ebf2c743abb648",
+        "house:119:1:314": "159e1cf1b98947ee5db360bf24aa4cbf8c98458e5bd45f3ac2bfcac2aacfd605",
+        "house:119:1:315": "eee1a54fdcc5fe4976a5c8d19eaec60a4552a6975f04c3ce943c508d01a3df2c",
+        "house:119:1:332": "af429df203b0cc666655b083b3667089f45437ac01cb3b058fa9300c2892cfe8",
+        "house:119:1:68": "a23c3a8f72c69ab02382f7030543bc166c3760dd8cc670771c7d217d4e892068",
+        "house:119:1:79": "e0cd9837c0bbc7cfc506f99a4fb0cc2587c787eff99b822bb97db073fbc6b75e",
+        "house:119:1:83": "685992cd57786e30e0d8b3f3674c2146c4ab946de0d66460bd6cbde2a0cd2e2c",
+        "house:119:2:184": "cf56d039730867d274b2e0f1db34a6e92d000a8b9877f4e93b5c791f132ece80",
+        "house:119:2:216": "315616c841822da9bc661923092a552545300c4ea7792babc1e7af4b892cb737",
+        "house:119:2:217": "477acdeb24dfa0f4d6ab7f24def9cc85ff81c509d69154f9dcdcefd9d31752cd",
+        "house:119:2:31": "b1053f92cad3d99bc2edc0eaab7c6dccaf47c5d60ef61d7fa2a5c567abf25653",
+        "house:119:2:47": "d3b78333a1ee27cbbbb91fc8e36754062db1e023310dec57595b836fbc4966c2",
+        "house:119:2:82": "d6192a3dbaba97d8f1982a524fb5fd835b5e1940a6497c4618ce4f3bd12954e4"
+      },
+      "unchanged_action_count": 16
+    }
+  }
+}

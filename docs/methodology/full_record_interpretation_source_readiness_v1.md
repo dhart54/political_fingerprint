@@ -74,6 +74,13 @@ support/opposition, episode, proposition, synthesis, public-language, and other
 semantic fields. Raw official records may contain such source-native metadata;
 that raw provenance is not itself an interpretation input projection.
 
+An `operative_floor_text` PDF additionally carries bounded deterministic
+content-verification metadata. The evaluator extracts the declared physical
+pages from the governed raw PDF with `pypdf`, normalizes only typography,
+line-wrap hyphenation, and whitespace, and requires every declared record-page
+label and anchor. A PDF header, filename, or byte-size threshold cannot
+establish document coverage or operative-content readiness.
+
 ## Closed readiness states
 
 Each approved action receives exactly one state:

@@ -120,6 +120,66 @@
         "raw_provenance_sha256": {"$ref": "#/definitions/sha256"}
       }
     },
+    "operativeFloorTextPageCheck": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pdf_page_number",
+        "record_page_label",
+        "evidence_role",
+        "required_anchors"
+      ],
+      "properties": {
+        "pdf_page_number": {"type": "integer", "minimum": 1},
+        "record_page_label": {"type": "string", "pattern": "^[HS][1-9][0-9]*$"},
+        "evidence_role": {"type": "string", "minLength": 1},
+        "required_anchors": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "operativeFloorTextVerification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "extraction_engine",
+        "document_identity",
+        "document_page_count",
+        "document_page_labels",
+        "relevant_record_ranges",
+        "page_checks"
+      ],
+      "properties": {
+        "schema_version": {"const": "operative_floor_text_content_verification_v1"},
+        "extraction_engine": {"const": "pypdf"},
+        "document_identity": {"type": "string", "minLength": 1},
+        "document_page_count": {"type": "integer", "minimum": 1},
+        "document_page_labels": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["first", "last"],
+          "properties": {
+            "first": {"type": "string", "pattern": "^[HS][1-9][0-9]*$"},
+            "last": {"type": "string", "pattern": "^[HS][1-9][0-9]*$"}
+          }
+        },
+        "relevant_record_ranges": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^[HS][1-9][0-9]*-[HS][1-9][0-9]*$"}
+        },
+        "page_checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/definitions/operativeFloorTextPageCheck"}
+        }
+      }
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,
@@ -162,6 +222,7 @@
         },
         "source_url": {"type": "string", "pattern": "^https://"},
         "raw_provenance": {"$ref": "#/definitions/rawProvenance"},
+        "content_verification": {"$ref": "#/definitions/operativeFloorTextVerification"},
         "neutral_projection": {"$ref": "#/definitions/projection"},
         "neutral_projection_sha256": {"$ref": "#/definitions/sha256"}
       }
