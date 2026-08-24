@@ -46,13 +46,19 @@ The machine-readable authority is
   two-choice H.Amdt. 12/H.R. 1048 episode. That mixed episode preserves support
   for the narrower amendment, opposition to the distinct whole package, and the
   component-attribution limitation.
-- M13G proposes one repeated pattern across the distinct H.R. 881 and H.R. 1069
-  federal-funding restriction choices and one notable mixed H.R. 1048 episode.
-  It proposes no trajectory. H.R. 1049 is contrast evidence, H.R. 1005 remains
-  non-directional Not Voting, and eleven episodes have no safe higher-level
-  aggregation. The complete candidate package is pending independent semantic
-  review; Semantic IR acceptance, synthesis, public wording, publication,
-  persistence, and production authority remain false.
+- M13G was independently accepted at exact PR #167 head
+  `bf436c7687deaf200a33d42637cb42b495140242` and merged as
+  `38a1e6faa4d766104009129ee699f8ad323bd078`. M13H canonically implements
+  the bounded H.R. 881/H.R. 1069 funding-restriction opposition pattern and the
+  mixed H.R. 1048 notable choice exactly as reviewed. H.R. 1049 remains
+  contrast-only, H.R. 1005 remains non-directional Not Voting, eleven episodes
+  remain no-safe, and there are no trajectories or primary overlaps.
+- M13I records an explicit zero-candidate no-safe-synthesis state. The accepted
+  pattern and mixed notable are both intentionally standalone because they do
+  not share a synthesis-level direction or mechanism; the mixed H.R. 1048
+  record cannot become directional evidence. This state is pending independent
+  review. Synthesis acceptance, public wording, publication, persistence, and
+  production authority remain false.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
