@@ -26,9 +26,9 @@
 - [x] Production remains exactly 5/149/161/2 with accepted fingerprint and Environment absent/receipts-only.
 - [x] Fresh proof and preflight bind repaired manifest and exact deployed main.
 - [x] Regenerated 1/3/2/1 prospective graph preserves accepted M12M bytes and existing issue identities.
-- [ ] Disposable FastAPI activation/idempotency/rollback proof passes on the exact PR head.
+- [x] Disposable FastAPI activation/idempotency/rollback proof passes on the exact PR head.
 - [x] V3 candidate is immutable, accepted=false, sealed=false, and no usable authority exists.
-- [ ] Exact-head hosted checks pass and final reconciliation is complete.
+- [x] Exact-head hosted checks pass and final reconciliation is complete.
 
 ## Baseline
 
@@ -51,8 +51,8 @@
 - [x] Accepted repair merge and deployment
 - [x] Fresh production evidence
 - [x] Deterministic regeneration and V3 candidate
-- [ ] Disposable and regression validation
-- [ ] Documentation and draft PR readiness
+- [x] Disposable and regression validation
+- [x] Documentation and draft PR readiness
 
 ## Discoveries
 
@@ -79,7 +79,8 @@
 - Ruff and formatting checks: passed.
 - Python compilation: passed; inaccessible sandbox-created temporary leftovers were skipped without tracked-file impact.
 - Editorial release tier: passed, 7 checks, when run outside the Windows temporary-directory sandbox restriction.
-- Exact-head hosted PostgreSQL/HTTP and broad repository checks: pending draft PR.
+- Exact-head hosted checks passed: Vercel, Vercel Preview Comments, amendment-evidence-contracts, foushee-full-record-benchmark, publication-activation-postgres, and receipt-evidence-repair-postgres.
+- Hosted disposable PostgreSQL/FastAPI proof passed after the stale expected preparation identities were corrected; it exercised activation, live 119/all/118 presentation/evidence behavior, exact supporting sets, idempotency, drift rejection, and rollback without production effects.
 
 ## Production Writes
 
@@ -98,6 +99,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending.
+- Definition of done satisfied: yes.
 - Remaining limitations: V3 remains non-authorizing and requires independent ratification review.
 - Recommended next step: independent review only; no activation.
