@@ -105,13 +105,15 @@ EXPECTED_PROJECT_STATE = {
     "active_full_record_publications": [
         "JUSTICE_PUBLIC_SAFETY",
         "NATIONAL_SECURITY_FOREIGN",
+        "ENVIRONMENT_ENERGY",
     ],
-    "active_publication_count": 2,
+    "active_publication_count": 3,
     "national_security_full_record_state": "production_active_live_verified",
     "national_security_downstream_chain_complete": True,
     "national_security_production_database_write_completed": True,
     "national_security_receipts_only": False,
     "justice_full_record_state": "production_active_live_verified",
+    "environment_energy_full_record_state": "production_active_live_verified",
 }
 EXPECTED_JUSTICE_STATE = {
     "f000477_justice_119_action_interpretation_state": (

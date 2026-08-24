@@ -228,7 +228,7 @@ class M12AUniverseAuthorityTests(unittest.TestCase):
     def test_justice_and_national_security_state_must_remain_unchanged(self) -> None:
         self.assert_rejected(
             lambda values: values["current_state"]["current_project_state"].__setitem__(
-                "active_publication_count", 3
+            "active_publication_count", 4
             )
         )
         self.assert_rejected(

@@ -12,11 +12,18 @@ The machine-readable authority is
   generated historical evidence remain in place as noncanonical evidence. A
   119-file whole-tree manifest locks those roots to the cutover base.
 - Acquisition capability and tests remain intact.
-- Current production state as of August 16, 2026 has exactly two active
-  F000477 full-record publications: Justice & Public Safety and National
-  Security & Foreign Policy. The completed M11N chain performed its bounded
-  production write, National Security is not receipts-only for `scope=119` or
-  `scope=all`, and both active artifacts remain live-verified.
+- Current production state as of August 23, 2026 has exactly three active
+  F000477 full-record publications: Justice & Public Safety, National Security
+  & Foreign Policy, and Environment & Energy. The completed M12N V3 activation
+  added only Environment; Justice and National Security remained unchanged.
+  All three are reviewed conclusions for `scope=119` and `scope=all`, while
+  `scope=118` remains receipts-only.
+- M13A is the pending next-domain universe-selection review candidate. It
+  freshly re-evaluates all five non-active domains through House roll 283 and
+  proposes the closed 17-action Education & Workforce universe. Economy &
+  Taxes improved from 61 to six unresolved boundary actions but remains held
+  from selection because those exact child-action bindings are unavailable.
+  No interpretation or downstream work is authorized.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the

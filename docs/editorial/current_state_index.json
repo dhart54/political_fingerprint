@@ -4,18 +4,20 @@
   "owning_pipeline_for_new_work": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
   "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
   "current_project_state": {
-    "as_of": "2026-08-16",
+    "as_of": "2026-08-23",
     "active_full_record_publications": [
       "JUSTICE_PUBLIC_SAFETY",
-      "NATIONAL_SECURITY_FOREIGN"
+      "NATIONAL_SECURITY_FOREIGN",
+      "ENVIRONMENT_ENERGY"
     ],
-    "active_publication_count": 2,
+    "active_publication_count": 3,
     "national_security_full_record_state": "production_active_live_verified",
     "national_security_downstream_chain_complete": true,
     "national_security_production_database_write_completed": true,
     "national_security_receipts_only": false,
     "justice_full_record_state": "production_active_live_verified",
-    "active_selection_milestone": "m12a_next_full_record_issue_selection_v1",
+    "environment_energy_full_record_state": "production_active_live_verified",
+    "active_selection_milestone": "m13a_next_full_record_issue_selection_v1",
     "active_source_readiness_milestone": "m12b_environment_energy_source_readiness_v1",
     "active_action_interpretation_candidate_milestone": "m12c_environment_energy_action_interpretation_v1",
     "active_action_interpretation_decision_milestone": "m12d_environment_energy_action_meaning_acceptance_v1",
@@ -46,6 +48,7 @@
     "full_record_issue_interpretation_validator": "scripts/validate_full_record_issue_interpretation.py",
     "cross_issue_full_record_expansion_schema": "docs/methodology/cross_issue_full_record_expansion_v2.schema.json",
     "m12a_next_full_record_issue_selection_validator": "scripts/validate_m12a_next_full_record_issue_selection.py",
+    "m13a_next_full_record_issue_selection_validator": "scripts/validate_m13a_next_full_record_issue_selection.py",
     "full_issue_universe_discovery_schema": "docs/methodology/full_issue_universe_discovery_v1.schema.json",
     "full_issue_universe_discovery_validator": "scripts/validate_full_issue_universe_discovery.py",
     "full_issue_universe_authority_receipt_schema": "docs/methodology/full_issue_universe_authority_receipt_v1.schema.json",
@@ -194,6 +197,45 @@
     "frontend_pass_a_state_contract": "implemented_closed_public_catalog",
     "frontend_pass_a_public_label": "Full issue interpretation available",
     "frontend_pass_a_catalog_authority": "descriptive_non_authorizing"
+  },
+  "active_universe_selection_milestone": {
+    "milestone": "m13a_next_full_record_issue_selection_v1",
+    "plan": "docs/plans/m13a_next_full_record_issue_selection_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "milestone_state": "pending_independent_chatgpt_universe_selection_review",
+    "selected_domain": "EDUCATION_WORKFORCE",
+    "official_cutoff": "2026-07-23",
+    "latest_official_roll": 283,
+    "complete_member_action_count": 638,
+    "proposed_action_count": 17,
+    "unresolved_boundary_count": 0,
+    "selection_sha256": "e877adf1cd5a1bff08c08ecb4ee1ee6acc1bbdff6d93899171e13480f6473f5a",
+    "proposal_sha256": "9802afc93b06196ec3329a40dade7b5d0b111bd663141d53417d7442d8572169",
+    "source_inventory_sha256": "66070d29ebe29e6ef3c17dc67c888b522d7043b36e5fd694d0093b4ce5be6fe7",
+    "complete_official_action_inventory_sha256": "a21331a187b37d019e05df4e6be480aab22a9a0f213ce9e49f17556d2537c135",
+    "authority_status": "pending_independent_universe_selection_review",
+    "downstream_authorizations": {
+      "action_interpretation": false,
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false
+    },
+    "selection_artifact": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/domain_selection.json",
+    "universe_proposal": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/selected_domain_universe_proposal.json",
+    "source_inventory": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/source_inventory.json",
+    "complete_inventory": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/complete_official_action_inventory.json",
+    "review_packet": "docs/review_packets/m13a_next_full_record_issue_selection_v1.md",
+    "validator": "scripts/validate_m13a_next_full_record_issue_selection.py"
   },
   "active_scaling_milestone": {
     "milestone": "m12a_next_full_record_issue_selection_v1",
@@ -1877,7 +1919,14 @@
       "all": "reviewed_conclusion",
       "118": "receipts_only"
     },
-    "f000477_national_security_scope_all_boundary": "reviewed_119_record"
+    "f000477_national_security_scope_all_boundary": "reviewed_119_record",
+    "f000477_environment_energy_119_publication_state": "human_approved_production_active_live_verified",
+    "f000477_environment_energy_effective_tiers": {
+      "119": "reviewed_conclusion",
+      "all": "reviewed_conclusion",
+      "118": "receipts_only"
+    },
+    "f000477_environment_energy_scope_all_boundary": "reviewed_119_record"
   },
   "historical_pre_activation_persistence_state": {
     "historical_as_of": "before_2026-07-29_activation",
@@ -1889,19 +1938,19 @@
     "state_changed_by_cutover": false
   },
   "production_publication_state": {
-    "activated_at": "2026-08-15T03:07:07.426473+00:00",
-    "activation_batch_id": 16,
+    "activated_at": "2026-08-24T01:37:40.815760+00:00",
+    "activation_batch_id": 20,
     "activation_artifact_ids": {
-      "presentation": 227,
-      "source_manifest": 228,
-      "validation_result": 229
+      "presentation": 239,
+      "source_manifest": 240,
+      "validation_result": 241
     },
     "activation_rows_inserted": 7,
     "counts": {
-      "batches": 5,
-      "artifacts": 149,
-      "relationships": 161,
-      "publication_registry": 2
+      "batches": 6,
+      "artifacts": 152,
+      "relationships": 163,
+      "publication_registry": 3
     },
     "active_publication": {
       "member_bioguide_id": "F000477",
@@ -1921,22 +1970,28 @@
         "issue_id": "NATIONAL_SECURITY_FOREIGN",
         "artifact_natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
         "artifact_content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c"
+      },
+      {
+        "member_bioguide_id": "F000477",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "artifact_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+        "artifact_content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53"
       }
     ],
     "latest_read_only_verification": {
-      "verification": "m11n_exact_postcheck_and_live_api_browser_smoke",
-      "verified_at": "2026-08-15T03:13:19.0142362Z",
-      "active_publication_count": 2,
-      "artifact_ids": [221, 227],
-      "runtime_commit_sha": "5d5f65e2e3f40e5b95d1a5cc38e60f40f073ec38"
+      "verification": "m12n_v3_activation_postcheck_and_live_api_smoke",
+      "verified_at": "2026-08-24T01:37:40.815760Z",
+      "active_publication_count": 3,
+      "artifact_ids": [221, 227, 239],
+      "runtime_commit_sha": "c480dfabc2fcbd65bf5b22037200af509adb7b5b"
     },
-    "public_smoke_completed_at": "2026-08-15T03:13:19.0142362Z",
+    "public_smoke_completed_at": "2026-08-24T01:37:40.815760Z",
     "rollback_status": "not_triggered_exact_bounded_rollback_ready",
-    "successful_activation_receipt": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_national_security_foreign_119_v1/production_activation_receipt.json"
+    "successful_activation_receipt": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_environment_energy_119_v3/successful_production_activation_receipt.json"
   },
   "publication_and_persistence_state": {
-    "public_selection_count": 2,
-    "active_publication_count": 2,
+    "public_selection_count": 3,
+    "active_publication_count": 3,
     "persistence_proposal_default": false,
     "publication_authorized_by_pipeline": false,
     "production_write_authorized_by_pipeline": false,

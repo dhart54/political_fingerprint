@@ -54,6 +54,59 @@ def summary(text: str) -> dict:
 
 
 class CrossIssueExpansionTests(unittest.TestCase):
+    def tearDown(self) -> None:
+        MODULE.ACTION_SPECIFIC_BOUNDARY_DECISIONS.clear()
+        MODULE.RESOLVE_EXACT_AMENDMENT_NONMATCH = False
+
+    def test_explicit_action_specific_boundary_decision_overrides_keyword_hit(
+        self,
+    ) -> None:
+        MODULE.ACTION_SPECIFIC_BOUNDARY_DECISIONS[("EDUCATION_WORKFORCE", "bill_119_hr_100")] = False
+        record = MODULE.build_candidate_record(
+            "EDUCATION_WORKFORCE",
+            action(
+                question="On Passage",
+                description="Cancer Education Program",
+                roll=250,
+            ),
+            {**METADATA, "title": "Cancer Program", "policy_area": "Health"},
+            None,
+            None,
+            summary("The health program includes public education about cancer screening."),
+        )
+        self.assertEqual(record["disposition"], "exact_action_ineligible")
+        self.assertFalse(record["cross_domain_boundary_evidence"]["supports_target_domain"])
+
+    def test_exact_amendment_evidence_can_resolve_production_signal_out_of_scope(
+        self,
+    ) -> None:
+        MODULE.RESOLVE_EXACT_AMENDMENT_NONMATCH = True
+        record = MODULE.build_candidate_record(
+            "ECONOMY_TAXES",
+            action(
+                question="On Agreeing to the Amendment",
+                description="Carter Amendment En Bloc No. 2",
+                roll=180,
+            ),
+            {
+                **METADATA,
+                "title": "Military Construction and Veterans Affairs Appropriations Act",
+                "policy_area": "Economics and Public Finance",
+            },
+            {"primary_domain": "ECONOMY_TAXES", "score_breakdown": {}},
+            {
+                "identity": "119:hamdt:211",
+                "description": "Requires a report on PFAS remediation.",
+                "purpose": "Environmental remediation reporting.",
+                "latest_action": "On agreeing to the amendment Agreed to by recorded vote: Roll no. 180.",
+                "url": "https://api.congress.gov/v3/amendment/119/hamdt/211",
+                "sha256": "f" * 64,
+                "source_id": "congress-amendment-index:bill_119_hr_3944",
+            },
+        )
+        self.assertEqual(record["disposition"], "exact_action_ineligible")
+        self.assertIsNone(record["unresolved_reason"])
+
     def test_defense_title_does_not_override_immigration_policy_area(self) -> None:
         metadata = {
             **METADATA,
