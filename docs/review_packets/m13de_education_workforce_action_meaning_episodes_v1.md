@@ -1,5 +1,9 @@
 # M13D/E Education & Workforce Review Packet
 
+Status: independently accepted as written at PR #166 head
+`9ec140b7b2c8eec46eb799ba958dbccd46bddea1`; merged as
+`641910bb0c8bb633a76fe95ef113d396d8db881b`.
+
 ## Review target
 
 M13D is a mechanical implementation of the independently accepted M13C

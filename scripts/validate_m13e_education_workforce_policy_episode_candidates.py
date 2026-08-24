@@ -209,8 +209,12 @@ def validate_repository() -> dict[str, Any]:
     state = load(ROOT / "docs/editorial/current_state_index.json")
     m13e = state["active_m13e_policy_episode_candidate_milestone"]
     require(
-        m13e["milestone_state"]
-        == "candidate_complete_pending_independent_semantic_review"
+        m13e["milestone_state"] == "completed_independent_semantic_review_merged"
+        and m13e["reviewed_pr"] == 166
+        and m13e["reviewed_head"] == "9ec140b7b2c8eec46eb799ba958dbccd46bddea1"
+        and m13e["post_merge_main"] == "641910bb0c8bb633a76fe95ef113d396d8db881b"
+        and m13e["review_decision"]
+        == "approved_all_policy_episode_candidates_as_written"
         and m13e["accepted_action_count"] == 17
         and m13e["episode_count"] == 16
         and m13e["single_action_episode_count"] == 15
@@ -220,6 +224,10 @@ def validate_repository() -> dict[str, Any]:
         and m13e["candidate"]["sha256"] == EXPECTED_BATCH_FILE_SHA256
         and m13e["candidate"]["episode_candidate_subject_sha256"]
         == EXPECTED_BATCH_SUBJECT_SHA256
+        and m13e["decision_template"]["sha256"] == EXPECTED_DECISION_FILE_SHA256
+        and m13e["decision_template"]["all_decisions_empty"] is True
+        and m13e["episode_acceptance_state"]
+        == "accepted_as_written_implemented_by_m13f"
         and all(value is False for value in m13e["downstream_authorizations"].values()),
         "M13E current-state boundary differs",
     )

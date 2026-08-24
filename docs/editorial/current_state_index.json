@@ -690,8 +690,15 @@
       "congress": 119,
       "issue_id": "EDUCATION_WORKFORCE"
     },
-    "milestone_state": "candidate_complete_pending_independent_semantic_review",
-    "authority_effect": "detached_non_authorizing_human_review_candidate_only",
+    "milestone_state": "completed_independent_semantic_review_merged",
+    "authority_effect": "accepted_exact_input_to_m13f_authority",
+    "reviewed_pr": 166,
+    "reviewed_head": "9ec140b7b2c8eec46eb799ba958dbccd46bddea1",
+    "post_merge_main": "641910bb0c8bb633a76fe95ef113d396d8db881b",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+    "review_decision": "approved_all_policy_episode_candidates_as_written",
+    "review_decision_timestamp": "2026-08-24T20:05:56Z",
     "accepted_action_count": 17,
     "episode_count": 16,
     "single_action_episode_count": 15,
@@ -728,7 +735,7 @@
       "sha256": "4a18c1eb42c81cda11d8d8ac9e365fad8a15f353ef54ec36219182287360040b",
       "parity_subject_sha256": "a4409dc54e572941349323b6d9070d62197c6bdc739e945c604bde738f48e315"
     },
-    "episode_acceptance_state": "not_started_not_authorized",
+    "episode_acceptance_state": "accepted_as_written_implemented_by_m13f",
     "semantic_ir_state": "absent_unauthorized",
     "synthesis_state": "absent_unauthorized",
     "public_wording_state": "absent_unauthorized",
@@ -738,6 +745,126 @@
     "downstream_authorizations": {
       "episode_acceptance": false,
       "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13f_policy_episode_decision_milestone": {
+    "milestone": "m13f_education_workforce_policy_episode_acceptance_v1",
+    "plan": "docs/plans/m13fg_education_workforce_episode_acceptance_semantic_ir_v1.md",
+    "review_packet": "docs/review_packets/m13fg_education_workforce_episode_acceptance_semantic_ir_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "post_m13e_merge_main": "641910bb0c8bb633a76fe95ef113d396d8db881b",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "decision_accounting": {
+      "accept_candidate_as_written": 16
+    },
+    "accepted_action_count": 17,
+    "accepted_episode_count": 16,
+    "single_action_episode_count": 15,
+    "multi_action_episode_count": 1,
+    "cross_measure_episode_count": 1,
+    "ambiguous_or_unassigned_action_count": 0,
+    "blocked_action_count": 0,
+    "non_directional_action_ids": ["house:119:1:312"],
+    "mixed_episode_ids": ["hr-1048-amendment-and-final-passage"],
+    "authority": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_education_workforce_119_v1/human_policy_episode_authority.json",
+      "id": "human-policy-episode-authority:f000477:education_workforce:119:v1",
+      "sha256": "dd84f769e2a2c7d547972d126f4aa5c5d272bd37a5308fbd2324a9926f91a299",
+      "authority_subject_sha256": "6381c88b1ee7e7e085e0ac9779616b58b93a5037ed3b19b5af7c56adb113b8a1"
+    },
+    "implementation": {
+      "artifact": "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_education_workforce_119_v1/episode_decision_implementation_bundle.json",
+      "id": "policy-episode-decision-implementation:f000477:education_workforce:119:v1",
+      "sha256": "74212c3a768d33bb223bba81fbe92471d2ac698a10538e46d46c7683b3586f6e",
+      "implementation_subject_sha256": "1b11d068af95815952dee6877d8b97e5998539bfc56ddd0820e9b4b061688f3b"
+    },
+    "canonical_internal_policy_episode_membership": true,
+    "canonical_semantic_ir_acceptance": false,
+    "public": false,
+    "publication_authorized": false,
+    "production_selectable": false,
+    "production_writes": false,
+    "downstream_authorizations": {
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13g_behavioral_semantic_ir_candidate_milestone": {
+    "milestone": "m13g_education_workforce_behavioral_semantic_ir_candidates_v1",
+    "plan": "docs/plans/m13fg_education_workforce_episode_acceptance_semantic_ir_v1.md",
+    "review_packet": "docs/review_packets/m13fg_education_workforce_episode_acceptance_semantic_ir_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "post_m13e_merge_main": "641910bb0c8bb633a76fe95ef113d396d8db881b",
+    "milestone_state": "complete_pending_independent_substantive_review",
+    "authority_effect": "detached_non_authorizing_behavioral_semantic_ir_candidates_only",
+    "accepted_episode_count": 16,
+    "proposed_repeated_pattern_count": 1,
+    "proposed_trajectory_count": 0,
+    "proposed_notable_choice_count": 1,
+    "proposition_episode_count": 3,
+    "limit_or_contrast_episode_count": 1,
+    "no_safe_higher_level_proposition_episode_count": 11,
+    "unused_non_directional_episode_count": 1,
+    "overlapping_primary_owner_count": 0,
+    "blocked_action_ids": [],
+    "non_directional_episode_ids": ["single-119-hr-1005-1-312"],
+    "candidate_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_education_workforce_119_v1/behavioral_semantic_ir_candidate_graph.json",
+      "id": "behavioral-semantic-ir-candidates:f000477:education_workforce:119:v1",
+      "sha256": "ab5d26c92740ce9e28003ad5bfa38a2bf26277edfd5dcee0db76126cee520373",
+      "candidate_subject_sha256": "99411e738842f0eb15b73c21d600735fc485a56e6248c669a632fcc62c23812c",
+      "accepted": false,
+      "canonical": false,
+      "authorizing": false
+    },
+    "decision_template_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_education_workforce_119_v1/human_behavioral_semantic_ir_decision_template.json",
+      "sha256": "401938203b27ea8dfac9f796fcc8f6dd052cdd57284a5fe7556d10e81e977648",
+      "decision_template_subject_sha256": "aa620483b803bc26a0bfe360b6a1648e3165dd1c4238c43763df63be700312f4",
+      "all_decisions_empty": true
+    },
+    "dossier_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_education_workforce_119_v1/human_review_dossier.md",
+      "sha256": "ea04f022d638e201c16cecfeac12fe63bb4b1da4719103bb0bea92df1e84792b"
+    },
+    "parity_identity": {
+      "artifact": "docs/editorial/full_record_reviews/semantic_ir_candidates/f000477_education_workforce_119_v1/parity_manifest.json",
+      "sha256": "e14425d467feab2eb7bab5e85b1393fbad270aacac64c15e94252c3c68cd2a71",
+      "parity_subject_sha256": "efcd31ae040ad88317afd5add6ded4e9e01e5b14c08745f3429a74d1db8092bb"
+    },
+    "semantic_ir_acceptance_state": "not_started_not_authorized",
+    "synthesis_state": "absent_not_authorized",
+    "public_wording_state": "absent_not_authorized",
+    "publication_state": "inactive_unchanged",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "semantic_ir_acceptance": false,
       "synthesis": false,
       "public_wording": false,
       "publication": false,

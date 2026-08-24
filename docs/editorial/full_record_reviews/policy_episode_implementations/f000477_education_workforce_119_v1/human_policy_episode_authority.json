@@ -1,0 +1,254 @@
+{
+  "accepted": true,
+  "artifact_id": "human-policy-episode-authority:f000477:education_workforce:119:v1",
+  "artifact_role": "immutable_human_policy_episode_authority",
+  "authority_subject_sha256": "6381c88b1ee7e7e085e0ac9779616b58b93a5037ed3b19b5af7c56adb113b8a1",
+  "authorizing": true,
+  "canonical_internal_episode_authority": true,
+  "canonical_semantic_acceptance": false,
+  "immutable": true,
+  "production_selectable": false,
+  "public": false,
+  "schema_version": "full_record_policy_episode_authority_v1",
+  "subject": {
+    "authority_decision": {
+      "decision": "approved_all_policy_episode_candidates_as_written",
+      "decision_timestamp": "2026-08-24T20:05:56Z",
+      "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+      "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+    },
+    "authority_effect": "canonical_internal_policy_episode_membership_only",
+    "blocked_actions": [],
+    "candidate_binding": {
+      "accepted_head": "9ec140b7b2c8eec46eb799ba958dbccd46bddea1",
+      "accepted_pr": 166,
+      "artifact_id": "policy-episode-candidates:f000477:education_workforce:119:v1",
+      "episode_candidate_subject_sha256": "ea4bca6c4fa1bdef8381952aa4415b6e88292ec228e6950e5099c1a77c566398",
+      "file_sha256": "e66476bc01fe770bf9a79cdbcd9aca6461ecaf2958ab3fa04b9a0a2038c61b58",
+      "post_merge_main": "641910bb0c8bb633a76fe95ef113d396d8db881b"
+    },
+    "decision_accounting": {
+      "accept_candidate_as_written": 16
+    },
+    "decision_template_binding": {
+      "artifact_id": "policy-episode-human-decisions:f000477:education_workforce:119:v1",
+      "decision_template_subject_sha256": "a3fea9ac957614bd113718f23249f496ef3ae0fb5d153e23b2f418d946015ee5",
+      "file_sha256": "f3f4ce0a521be16f456b3ee82cd064744c3deec14fb19bf3860ee1281e04e6fa"
+    },
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "production_persistence": false,
+      "public_wording": false,
+      "publication": false,
+      "semantic_ir": false,
+      "synthesis": false
+    },
+    "episode_decisions": [
+      {
+        "candidate_episode_subject_sha256": "cebadbd47e9a0eeb8b7c084aa5a2100e6306f4b97378325e5cb31605f4bcf59b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "e11738036b9fa1ca4431bf90997384040e143ef67dcd91e4c0e725e9a82c9ed1",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-7892-2-217",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "28fe199e485272567d5776695c4682295711a3491eae4f13afde99e14816f454",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "e138487ad0c258ee723503c53dfcfbc8c8b5852f5b4535669fe941e16527d234",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-5408-2-216",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "08a92ced8a86228151aef5aa71f2ac0c50f38f256fc9298d6fd91c6690fe91e7",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "b6c3c1dffd5b3d6ddc4febc2ca8e7ae6e919d4d50dde447fa9c8b08eb847b819",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-2616-2-184",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "3a523699610dada5b2eb254834e6a744393d9539c5f33560295a26cb21dd891b",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "d443454eafc3c5855c5592a4e4dcae7fb70c25fe3e663bc48b538bffd71297cc",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-6472-2-82",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "0214560e666949c39f750447430df5817f66b6a29de06a0de3c123d5a04204b6",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "1e8d8a077a12bb8f43af362fcb1d280f47ae4cd0803e34d37eca6ffa1f7c95d0",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-6359-2-47",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "2e50bb1da5ad0e3374707fb195bb3dd2fa605ba90badae57897cb93146c739b5",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "f9017e7db35676f1467b5ae731c5ddad6bbfdb6c66b5c7a54a617159ad168612",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-2988-2-31",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "6f515adc07caf183f12769cbe73ed0681b0ceddb075d6659916c45aa64a2df60",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "0cf5a736a11d42ac237760d13b6b78c9e0a9816e34ce3eec70ac862d8cdb821a",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-2262-2-19",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "04dadc37459788f867a49c14dba273765721fad4e8cbd8c772eb8b720280c435",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "ddacf77c3e1c69f06f89c59e86a92680b01f738ae2c8425553ffa423967f797d",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-2550-1-332",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "de83ea7c58d75f160c675d67869daea147d267f4654420ff8fc8fcdd63df56f9",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "5b484fb27a813cba1395001d1c061d86d9aa7e79a1eda6bb6fc2e00c6f7ee80f",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-s-356-1-315",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "eaa84c092c6e61c82db107ce3945b7bf29560f7b6e5413b387f280430d77a3ca",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "db50abd4988e8404d7e26588de8e8c80d93d15bd299701e4bd20c968e5fc5316",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-1069-1-313",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "877a3730a34fac36ea4de88b82207f1c307435517f7c484233227b10fca88298",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "ea1b749c3fa863b29f71ee45e7afe8063482bae02f4fa7f5051e50bff93853c0",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-1049-1-314",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "f69d53bf356a8ffc621e42435e2fed74c5e317945d2c4b0de4ebe4adc2f805f4",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "3b3ba38075f252f9911f3cd0e1b96ed5bbcdf9f1569b6ecbefc6d46e2da28ad0",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-1005-1-312",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "23dcfbef98c55bbbf50acfebc0972e8742eb05b249374c4deae8ff3b0bf8f21d",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "cab8ede3c391f0fae6ac919b5879cce1f2ef0fb66947271c9d94741cad1c683d",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-1642-1-146",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "20b5f80cba856e11bb740963ebd4d4ddd0a57c3dba0e327657095e4ed4ed66ce",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "9fc0c0662b12183884b04c85e6900e1e729a9850cd8ad032072ce6e752914bc0",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-881-1-120",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "902ac85f7a094627f134364ad01f4a3ad4e8c56935695bd93654cd3f0659f7d6",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts the H.Amdt. 12 and H.R. 1048 mixed episode exactly as written, preserving both distinct choices and the whole-package/component attribution limitation.",
+        "decision_subject_sha256": "37ad8096b9ad875be50ec623f3a851ba3af266283c8516d135605b863ef56f93",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "hr-1048-amendment-and-final-passage",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      },
+      {
+        "candidate_episode_subject_sha256": "ccc93ce2033ef3ab3955e209975e3e6ec0370b0dd159f0cab625fb7c995ca717",
+        "decision": "accept_candidate_as_written",
+        "decision_rationale": "Independent semantic review accepts this bounded singleton policy episode exactly as written.",
+        "decision_subject_sha256": "0ee5be3be4cd1f6983f789387aa3937b6fb148a8755b32c32bf341b36415ee08",
+        "decision_timestamp": "2026-08-24T20:05:56Z",
+        "episode_id": "single-119-hr-1156-1-68",
+        "replacement_episode_ids": [],
+        "reviewer_authority": "full_record_policy_episode_review_authority_v1",
+        "reviewer_id": "chatgpt:political_fingerprint_authority_thread"
+      }
+    ],
+    "interpretation_implementation_binding": {
+      "artifact_id": "action-interpretation-decision-implementation:f000477:education_workforce:119:v1",
+      "file_sha256": "074a3bd396a55f6c31b2f7acfacb63455e4b56e1cb2da522b7fa53c62523d656",
+      "implementation_subject_sha256": "d66bc98e456a0d3bdfca1326a6766681a98080c53dc781f6cd65a863f133a863"
+    },
+    "resulting_episode_accounting": {
+      "accepted_action_count": 17,
+      "accepted_episode_count": 16,
+      "ambiguous_or_unassigned_action_count": 0,
+      "cross_measure_episode_count": 1,
+      "multi_action_episode_count": 1,
+      "replacement_singleton_episode_count": 0,
+      "single_action_episode_count": 15
+    },
+    "semantic_ir_state": "absent_not_authorized",
+    "subject": {
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "legislator_id": "leg_valerie_p_foushee",
+      "member_id": "F000477",
+      "member_name": "Valerie Foushee",
+      "official_cutoff": {
+        "end_date": "2026-07-23",
+        "latest_action_id": "house:119:2:283"
+      }
+    },
+    "synthesis_state": "absent_not_authorized"
+  }
+}

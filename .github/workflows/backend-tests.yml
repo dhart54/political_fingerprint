@@ -55,6 +55,10 @@ jobs:
           python scripts/validate_m13d_education_workforce_action_meaning_acceptance.py
           python backend/scripts/build_m13e_education_workforce_policy_episode_candidates.py --check
           python scripts/validate_m13e_education_workforce_policy_episode_candidates.py
+          python backend/scripts/build_m13f_education_workforce_policy_episode_acceptance.py --check
+          python scripts/validate_m13f_education_workforce_policy_episode_acceptance.py
+          python backend/scripts/build_m13g_education_workforce_behavioral_semantic_ir_candidates.py --check
+          python scripts/validate_m13g_education_workforce_behavioral_semantic_ir_candidates.py
           python scripts/validate_m12c_environment_energy_action_interpretation.py
           python scripts/validate_m11d_national_security_action_meaning_acceptance.py
           python scripts/validate_m12d_environment_energy_action_meaning_acceptance.py

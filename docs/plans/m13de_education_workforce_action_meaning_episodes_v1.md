@@ -49,5 +49,7 @@ workforce context, or K-12 school setting.
 
 ## Stop condition
 
-Stop at the draft M13D/M13E PR. Do not accept M13E candidates or begin M13F or
-any later semantic or publication stage.
+This stopping point was satisfied at draft PR #166. M13E was subsequently
+accepted as written by the authorized independent review and merged at exact
+head `9ec140b7b2c8eec46eb799ba958dbccd46bddea1`; M13F and later work are governed
+by their own milestone plan.
