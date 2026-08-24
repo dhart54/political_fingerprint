@@ -82,6 +82,16 @@
           }
         },
         "complete_house_action_set": {"$ref": "#/$defs/actionSetBinding"},
+        "complete_official_inventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["artifact_path", "inventory_sha256", "file_sha256"],
+          "properties": {
+            "artifact_path": {"type": "string", "minLength": 1},
+            "inventory_sha256": {"$ref": "#/$defs/sha256"},
+            "file_sha256": {"$ref": "#/$defs/sha256"}
+          }
+        },
         "selection": {
           "type": "object",
           "additionalProperties": false,
@@ -98,6 +108,7 @@
           "properties": {
             "artifact_path": {"type": "string", "minLength": 1},
             "file_sha256": {"$ref": "#/$defs/sha256"},
+            "proposal_sha256": {"$ref": "#/$defs/sha256"},
             "universe_subject_sha256": {"$ref": "#/$defs/sha256"}
           }
         },
@@ -138,17 +149,22 @@
             "head_sha": {"type": "string", "pattern": "^[a-f0-9]{40}$"}
           }
         },
+        "accepted_boundary_constraints": {"type": "object"},
+        "held_domain_boundaries": {"type": "object"},
         "downstream_authorizations": {
           "type": "object",
           "additionalProperties": false,
           "required": ["action_interpretation", "episode_acceptance", "semantic_ir", "synthesis", "public_wording", "publication", "production_persistence"],
           "properties": {
+            "source_readiness": {"const": false},
             "action_interpretation": {"const": false},
             "episode_acceptance": {"const": false},
             "semantic_ir": {"const": false},
             "synthesis": {"const": false},
             "public_wording": {"const": false},
+            "site_integration": {"const": false},
             "publication": {"const": false},
+            "deployment": {"const": false},
             "production_persistence": {"const": false}
           }
         }

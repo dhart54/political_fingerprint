@@ -16,7 +16,7 @@
       ],
       "properties": {
         "schema_version": {"const": "cross_issue_domain_selection_v3"},
-        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "milestone": {"enum": ["m12a_next_full_record_issue_selection_v1", "m13a_next_full_record_issue_selection_v1"]},
         "selection_id": {"type": "string"},
         "starting_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
         "excluded_domains": {"type": "array", "uniqueItems": true},
@@ -47,7 +47,7 @@
       ],
       "properties": {
         "schema_version": {"const": "cross_issue_universe_proposal_v2"},
-        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "milestone": {"enum": ["m12a_next_full_record_issue_selection_v1", "m13a_next_full_record_issue_selection_v1"]},
         "proposal_id": {"type": "string"},
         "proposal_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "accounting": {"$ref": "#/$defs/domainAccounting"},
@@ -67,7 +67,7 @@
       ],
       "properties": {
         "schema_version": {"const": "cross_issue_source_inventory_v2"},
-        "milestone": {"const": "m12a_next_full_record_issue_selection_v1"},
+        "milestone": {"enum": ["m12a_next_full_record_issue_selection_v1", "m13a_next_full_record_issue_selection_v1"]},
         "inventory_id": {"type": "string"},
         "complete_official_action_count": {"type": "integer", "minimum": 1},
         "complete_official_action_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

@@ -153,6 +153,8 @@ EXPRESSIVE_PREFIX = re.compile(
 )
 RULE_PREFIX = re.compile(r"(?i)^providing for (consideration|disposition)\b")
 AMENDMENT_ROLL = re.compile(r"(?i)\broll no\.\s*(\d+)\b")
+ACTION_SPECIFIC_BOUNDARY_DECISIONS: dict[tuple[str, str], bool] = {}
+RESOLVE_EXACT_AMENDMENT_NONMATCH = False
 
 
 def canonical_json(value: Any) -> str:
@@ -517,6 +519,11 @@ def build_candidate_record(
         elif metadata:
             indicators = boundary_summary_indicators(domain_id, summary)
             supports_target = bool(indicators)
+            explicit_boundary_decision = ACTION_SPECIFIC_BOUNDARY_DECISIONS.get(
+                (domain_id, action["bill_ref"])
+            )
+            if summary is not None and explicit_boundary_decision is not None:
+                supports_target = explicit_boundary_decision
             summary_source = (
                 None
                 if summary is None
@@ -549,11 +556,11 @@ def build_candidate_record(
                 "source": summary_source,
                 "matched_target_indicators": indicators,
                 "rationale": (
-                    f"The official Congress.gov summary materially establishes a {DISPLAY_NAMES[domain_id]} component."
+                    f"The governed action-specific review of the official Congress.gov summary materially establishes a {DISPLAY_NAMES[domain_id]} component."
                     if supports_target
                     else "No action-specific official summary was acquired for this non-selected-domain boundary."
                     if summary is None
-                    else f"The official Congress.gov summary does not materially establish a {DISPLAY_NAMES[domain_id]} component."
+                    else f"The governed action-specific review of the official Congress.gov summary does not materially establish a {DISPLAY_NAMES[domain_id]} component."
                 ),
             }
 
@@ -583,6 +590,16 @@ def build_candidate_record(
             else "proposed_in_scope_substantive"
         )
         rationale = "Official exact-amendment evidence independently supports proposed domain membership."
+    elif (
+        is_exact_amendment
+        and exact_source is not None
+        and RESOLVE_EXACT_AMENDMENT_NONMATCH
+    ):
+        disposition = "exact_action_ineligible"
+        rationale = (
+            "Official exact-amendment evidence does not establish target-domain "
+            "membership."
+        )
     elif not child_action_requires_binding and issue_boundary_status in {
         "direct_target_policy_area",
         "retained_cross_domain_action_specific_official_evidence",

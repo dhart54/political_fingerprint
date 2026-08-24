@@ -578,7 +578,7 @@ def test_current_state_records_active_publication_and_exact_scope_boundary() -> 
         "118": "receipts_only",
     }
     assert frontend["f000477_justice_scope_all_boundary"] == "reviewed_119_record"
-    assert state["publication_and_persistence_state"]["public_selection_count"] == 2
+    assert state["publication_and_persistence_state"]["public_selection_count"] == 3
     assert state["production_publication_state"]["activation_rows_inserted"] == 7
     assert state["production_publication_state"]["rollback_status"] == (
         "not_triggered_exact_bounded_rollback_ready"
