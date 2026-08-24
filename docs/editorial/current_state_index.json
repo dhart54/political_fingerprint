@@ -18,8 +18,8 @@
     "justice_full_record_state": "production_active_live_verified",
     "environment_energy_full_record_state": "production_active_live_verified",
     "active_selection_milestone": "m13a_next_full_record_issue_selection_v1",
-    "active_source_readiness_milestone": "m13b_education_workforce_source_readiness_v1",
-    "active_action_interpretation_candidate_milestone": "m12c_environment_energy_action_interpretation_v1",
+    "active_source_readiness_milestone": "m13b_education_workforce_source_readiness_v2_correction",
+    "active_action_interpretation_candidate_milestone": "m13c_education_workforce_action_interpretation_v1",
     "active_action_interpretation_decision_milestone": "m12d_environment_energy_action_meaning_acceptance_v1",
     "active_policy_episode_candidate_milestone": "m12e_environment_energy_policy_episode_candidates_v1",
     "active_policy_episode_decision_milestone": "m12f_environment_energy_policy_episode_acceptance_v1",
@@ -501,8 +501,12 @@
     },
     "post_m13a_merge_base": "3aa546346aaf612ba24ee77765ca6b791f8490fe",
     "post_m13b_v1_merge_base": "e49d416b3549d87763e375079f742f7013c1c988",
-    "milestone_state": "complete_pending_independent_review",
-    "authority_effect": "source_readiness_only",
+    "milestone_state": "completed_independent_review_accepted_merged",
+    "authority_effect": "accepted_current_source_readiness_input_to_m13c",
+    "accepted_pr": 164,
+    "accepted_head": "885b625333413b5e880808fda41937e9ff22abca",
+    "reviewed_base": "e49d416b3549d87763e375079f742f7013c1c988",
+    "post_merge_main": "9c675413b2b238bbc61d9daa1245636f6f5b161f",
     "authority_receipt": "universe-authority:f000477:education_workforce:119:v1",
     "approved_universe_count": 17,
     "approved_action_set_sha256": "83b7b129eaa32d114c72782c70cb06dac55f7cd01c8681c8dc2ae2dca986cf5b",
@@ -527,8 +531,9 @@
       "status": "superseded_due_to_incomplete_roll19_operational_source"
     },
     "correction_receipt": "docs/editorial/full_record_reviews/source_readiness/corrections/f000477_education_workforce_119_m13b_v1_supersession_v2.json",
-    "m13c_stop_reason": "house:119:2:19_operational_congressional_record_source_incomplete",
-    "interpretation_state": "not_started_after_fail_closed_m13c_stop",
+    "historical_m13c_stop_reason": "house:119:2:19_operational_congressional_record_source_incomplete",
+    "m13c_stop_resolution": "resolved_by_accepted_m13b_v2_complete_roll19_source",
+    "interpretation_state": "m13c_candidate_review_in_progress_non_authorizing",
     "policy_episode_state": "not_accepted",
     "semantic_ir_state": "absent",
     "synthesis_state": "absent",
@@ -546,6 +551,64 @@
       "publication": false,
       "deployment": false,
       "production_persistence": false
+    }
+  },
+  "active_m13c_action_interpretation_milestone": {
+    "milestone": "m13c_education_workforce_action_interpretation_v1",
+    "plan": "docs/plans/m13c_education_workforce_action_interpretation_v1.md",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "post_m13b_v2_main": "9c675413b2b238bbc61d9daa1245636f6f5b161f",
+    "milestone_state": "candidate_complete_pending_independent_semantic_review",
+    "authority_effect": "detached_non_authorizing_human_review_candidate_only",
+    "approved_universe_count": 17,
+    "interpretation_eligible_count": 17,
+    "candidate_count": 17,
+    "source_blocked_action_ids": [],
+    "non_directional_action_ids": ["house:119:1:312"],
+    "candidate_status_counts": {
+      "proposed": 4,
+      "proposed_with_material_limitation": 13
+    },
+    "coverage_assessment_counts": {
+      "bounded_official_purpose_summary": 15,
+      "package_level_bounded_summary": 2
+    },
+    "evidence_source_binding_count": 51,
+    "candidate_identity": {
+      "artifact": "docs/editorial/full_record_reviews/interpretation_candidates/f000477_education_workforce_119_v1/candidate_batch.json",
+      "id": "action-interpretation-candidates:f000477:education_workforce:119:v1",
+      "sha256": "bc8d253644ebbd55e4bfdbf5fff270931c2d94790bf18618dc288df5eda386e2",
+      "interpretation_subject_sha256": "6c0d503bee4bc0b70ecad18396fd8764b4f21e4e4d22e88c965ba2e4301f98bf",
+      "accepted": false,
+      "authorizing": false
+    },
+    "action_meaning_state": "pending_independent_semantic_review",
+    "policy_episode_state": "not_started_unauthorized",
+    "semantic_ir_state": "absent_unauthorized",
+    "synthesis_state": "absent_unauthorized",
+    "public_wording_state": "absent_unauthorized",
+    "site_integration_state": "absent_unauthorized",
+    "publication_state": "inactive_unchanged",
+    "production_persistence": "not_authorized",
+    "production_writes": false,
+    "downstream_authorizations": {
+      "action_meaning_acceptance": false,
+      "policy_episode_construction": false,
+      "policy_episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "site_integration": false,
+      "publication": false,
+      "production_persistence": false,
+      "deployment": false
     }
   },
   "active_m12c_action_interpretation_milestone": {

@@ -11,6 +11,7 @@ from backend.app.etl.full_record_source_readiness import (
     sha256_file,
     sha256_json,
     validate_artifact as validate_readiness_artifact,
+    verify_operative_floor_text_pdf,
 )
 
 
@@ -476,6 +477,7 @@ def _build_candidate(
     evidence_map: dict[str, Any],
     repository_root: Path,
     candidate_namespace: str,
+    meaning_override: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     action_id = record["action_id"]
     identity = record["exact_action_identity"]
@@ -484,7 +486,30 @@ def _build_candidate(
     sources = {source["source_id"]: source for source in record["sources"]}
     operative = sources[operative_ids[0]]
 
-    if record["mechanism_class"] == "amendment":
+    if meaning_override is not None:
+        allowed_override_keys = {
+            "coverage_assessment",
+            "limitations",
+            "meaning",
+            "official_wording",
+            "uncertainty_reasons",
+            "locator",
+        }
+        _require(
+            set(meaning_override) == allowed_override_keys,
+            f"meaning override shape: {action_id}",
+        )
+        meaning = str(meaning_override["meaning"]).strip()
+        official = str(meaning_override["official_wording"]).strip()
+        coverage = str(meaning_override["coverage_assessment"])
+        limitations = list(meaning_override["limitations"])
+        uncertainty = list(meaning_override["uncertainty_reasons"])
+        locator = str(meaning_override["locator"])
+        structural_claims = []
+        _require(
+            bool(meaning) and bool(official), f"empty meaning override: {action_id}"
+        )
+    elif record["mechanism_class"] == "amendment":
         meaning, official, coverage, limitations, uncertainty = _amendment_meaning(
             identity=identity, source=operative
         )
@@ -596,6 +621,7 @@ def build_candidate_artifact(
     upstream_bindings: dict[str, Any],
     candidate_namespace: str = "m11c",
     source_readiness_merge_base_field: str = "post_m11b_merge_base",
+    meaning_overrides: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     _require(
         bool(re.fullmatch(r"[a-z][a-z0-9_]*", candidate_namespace)),
@@ -608,6 +634,16 @@ def build_candidate_artifact(
     )
     validate_readiness_artifact(readiness_artifact, repository_root=repository_root)
     records = readiness_artifact["subject"]["action_readiness"]
+    meaning_overrides = meaning_overrides or {}
+    _require(
+        set(meaning_overrides)
+        <= {
+            item["action_id"]
+            for item in records
+            if item["readiness_state"] == READY_STATE
+        },
+        "meaning override references action outside ready set",
+    )
     evidence_maps: list[dict[str, Any]] = []
     candidates: list[dict[str, Any]] = []
     accounting: list[dict[str, Any]] = []
@@ -622,6 +658,7 @@ def build_candidate_artifact(
                 evidence_map=evidence_map,
                 repository_root=repository_root,
                 candidate_namespace=candidate_namespace,
+                meaning_override=meaning_overrides.get(record["action_id"]),
             )
             evidence_maps.append(evidence_map)
             candidates.append(candidate)
@@ -844,6 +881,15 @@ def validate_candidate_artifact(
                 ),
                 f"component-level member attribution prohibited: {action_id}",
             )
+        else:
+            _require(
+                not re.search(
+                    r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b"
+                    r"|\bfoushee\b",
+                    meaning,
+                ),
+                f"member attribution prohibited in neutral meaning: {action_id}",
+            )
         operative_ids = record["source_roles"]["operative_content_interpretation_input"]
         meaning_components = [
             component
@@ -871,59 +917,77 @@ def validate_candidate_artifact(
                 operative["raw_provenance"]["governed_local_path"],
                 repository_root=repository_root,
             )
-            xml_summary = _xml_summary(operative_path)
             official = candidate["official_title_or_purpose"]
             structural_claims = [
                 component
                 for component in candidate["claim_components"]
                 if component["locator"] in STRUCTURAL_CLAIM_LOCATORS
             ]
-            _require(
-                official["wording"] == xml_summary["official_title"]
-                and official["source_id"] == operative_id,
-                f"operative title/source mismatch: {action_id}",
-            )
-            if xml_summary["descriptive_official_title"]:
+            if operative["content_class"] == "operative_floor_text":
                 _require(
-                    official["locator"] == "official-title" and not structural_claims,
-                    f"descriptive title handling mismatch: {action_id}",
+                    verify_operative_floor_text_pdf(
+                        operative, repository_root=repository_root
+                    )
+                    and official["wording"]
+                    == operative["neutral_projection"]["official_action_description"]
+                    and official["source_id"] == operative_id
+                    and official["locator"] == "operative-floor-text-pages"
+                    and not structural_claims,
+                    f"operative floor-text handling mismatch: {action_id}",
                 )
             else:
-                structure = xml_summary["top_level_structure"]
                 _require(
-                    structure is not None,
-                    f"short-title-only meaning lacks safe structure: {action_id}",
+                    operative_path.suffix.casefold() == ".xml",
+                    f"unsupported operative source format: {action_id}",
                 )
-                expected_claims = _structural_claim_components(
-                    action_id=action_id,
-                    source_id=operative_id,
-                    structure=structure,
-                )
+                xml_summary = _xml_summary(operative_path)
                 _require(
-                    official["locator"] == "structured_operative_summary"
-                    and candidate["confidence"] != "high"
-                    and candidate["coverage_assessment"]
-                    == "package_level_bounded_summary",
-                    f"short-title-only meaning treated as complete: {action_id}",
+                    official["wording"] == xml_summary["official_title"]
+                    and official["source_id"] == operative_id,
+                    f"operative title/source mismatch: {action_id}",
                 )
-                _require(
-                    structural_claims == expected_claims,
-                    f"structured operative components mismatch: {action_id}",
-                )
-                _require(
-                    all(
-                        component["wording"].casefold() in meaning
-                        for component in expected_claims
-                    ),
-                    f"structured operative component absent from meaning: {action_id}",
-                )
-                _require(
-                    not re.search(
-                        r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b",
-                        meaning,
-                    ),
-                    f"component-level member attribution prohibited: {action_id}",
-                )
+                if xml_summary["descriptive_official_title"]:
+                    _require(
+                        official["locator"] == "official-title"
+                        and not structural_claims,
+                        f"descriptive title handling mismatch: {action_id}",
+                    )
+                else:
+                    structure = xml_summary["top_level_structure"]
+                    _require(
+                        structure is not None,
+                        f"short-title-only meaning lacks safe structure: {action_id}",
+                    )
+                    expected_claims = _structural_claim_components(
+                        action_id=action_id,
+                        source_id=operative_id,
+                        structure=structure,
+                    )
+                    _require(
+                        official["locator"] == "structured_operative_summary"
+                        and candidate["confidence"] != "high"
+                        and candidate["coverage_assessment"]
+                        == "package_level_bounded_summary",
+                        f"short-title-only meaning treated as complete: {action_id}",
+                    )
+                    _require(
+                        structural_claims == expected_claims,
+                        f"structured operative components mismatch: {action_id}",
+                    )
+                    _require(
+                        all(
+                            component["wording"].casefold() in meaning
+                            for component in expected_claims
+                        ),
+                        f"structured operative component absent from meaning: {action_id}",
+                    )
+                    _require(
+                        not re.search(
+                            r"\b(?:the )?member (?:supported|opposed|endorsed|rejected)\b",
+                            meaning,
+                        ),
+                        f"component-level member attribution prohibited: {action_id}",
+                    )
         evidence_map = evidence_by_id[candidate["evidence_map_id"]]
         evidence_subject = {
             key: value

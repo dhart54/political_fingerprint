@@ -49,6 +49,8 @@ jobs:
           python scripts/validate_m12b_environment_energy_source_readiness.py
           python backend/scripts/build_m13b_education_workforce_source_readiness_v2.py --check
           python scripts/validate_m13b_education_workforce_source_readiness_v2.py
+          python backend/scripts/build_m13c_education_workforce_action_interpretation.py --check
+          python scripts/validate_m13c_education_workforce_action_interpretation.py
           python scripts/validate_m12c_environment_energy_action_interpretation.py
           python scripts/validate_m11d_national_security_action_meaning_acceptance.py
           python scripts/validate_m12d_environment_energy_action_meaning_acceptance.py
@@ -92,6 +94,7 @@ jobs:
           python -m pytest -q
           backend/tests/test_full_record_source_readiness.py
           backend/tests/test_m13b_roll19_source_readiness_correction.py
+          backend/tests/test_m13c_education_workforce_action_interpretation.py
           backend/tests/test_m11a_universe_authority.py
           backend/tests/test_m12a_universe_authority.py
           backend/tests/test_m12b_environment_energy_source_readiness.py

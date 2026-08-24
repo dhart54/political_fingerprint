@@ -255,8 +255,14 @@ def validate_repository() -> dict[str, Any]:
         and current["historical_m13b_v1"]["id"] == V1_ID
         and current["historical_m13b_v1"]["status"]
         == "superseded_due_to_incomplete_roll19_operational_source"
-        and current["m13c_stop_reason"]
+        and current["milestone_state"] == "completed_independent_review_accepted_merged"
+        and current["accepted_pr"] == 164
+        and current["accepted_head"] == "885b625333413b5e880808fda41937e9ff22abca"
+        and current["post_merge_main"] == "9c675413b2b238bbc61d9daa1245636f6f5b161f"
+        and current["historical_m13c_stop_reason"]
         == "house:119:2:19_operational_congressional_record_source_incomplete"
+        and current["m13c_stop_resolution"]
+        == "resolved_by_accepted_m13b_v2_complete_roll19_source"
         and all(
             value is False for value in current["downstream_authorizations"].values()
         ),
@@ -284,6 +290,8 @@ def validate_repository() -> dict[str, Any]:
         "f000477_education_workforce_119_m13b_v1_supersession_v2.json",
         "docs/editorial/full_record_reviews/source_readiness/evidence/"
         "f000477_education_119_v2/",
+        "docs/editorial/full_record_reviews/interpretation_candidates/"
+        "f000477_education_workforce_119_v1/",
     )
     require(
         all(path.startswith(allowed) for path in review_diff.stdout.splitlines()),
