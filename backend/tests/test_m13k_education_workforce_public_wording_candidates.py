@@ -67,6 +67,24 @@ def test_overview_keeps_findings_separate() -> None:
     assert overview["direction_display"] is None
 
 
+def test_pattern_title_preserves_relationships_or_support_scope() -> None:
+    package, *_ = inputs()
+    pattern = next(
+        row
+        for row in package["subject"]["wording_items"]
+        if row["surface"] == "repeated_pattern"
+    )
+    assert pattern["public_title"].endswith("relationships or support")
+
+
+def test_public_evidence_labels_do_not_expose_acceptance_status() -> None:
+    package, *_ = inputs()
+    assert all(
+        "accepted" not in row["evidence_count_label"].lower()
+        for row in package["subject"]["wording_items"]
+    )
+
+
 def test_mixed_notable_does_not_become_directional_pattern() -> None:
     package, *_ = inputs()
     notable = next(
@@ -79,6 +97,10 @@ def test_mixed_notable_does_not_become_directional_pattern() -> None:
     assert (
         "does not show opposition to the accepted amendment"
         in notable["secondary_clarification"]
+    )
+    assert (
+        notable["wording_item_subject_sha256"]
+        == "9a5dd2ddbf54b0295b1df89b0197790f89f898bc41e36112aa2f50a726675ca2"
     )
 
 

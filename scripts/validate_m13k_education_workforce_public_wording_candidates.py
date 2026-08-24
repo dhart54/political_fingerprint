@@ -35,16 +35,19 @@ from scripts.m13k_public_wording_candidate_data import NOTABLE_ID, PATTERN_ID  #
 from scripts.validate_public_wording_candidate_package_v1 import validate_paths  # noqa: E402
 
 EXPECTED = {
-    PACKAGE_PATH: "084ba053f23a925ec92e8b621366817232dcb5a5083e944c490d5813d99f59ec",
-    DECISION_TEMPLATE_PATH: "87acea0f0f0ad83d956b5d7d9336575c670655e82f9a9c6534f4eba7452a890c",
-    DOSSIER_PATH: "b9875087cfe768ddcabc7afddffb54d8a9deecbfdd7cfeae7e9c8110fdd77694",
-    PARITY_PATH: "132389abd74a061985f2c25cf22a77e8298736a2f9da2ca7873b8da5564a6b3b",
+    PACKAGE_PATH: "7423eef404ed3358aaa4b10e3d6d47b398dd81538215ec13dbeb6e9b5eaa6474",
+    DECISION_TEMPLATE_PATH: "86f09bc92e080d5d08a769a403aa3e1d485d4aaa2e7db675a8ee803dfac28ee6",
+    DOSSIER_PATH: "3d7c0ce987107d6bc9ac0b9a03c2fb07a5217cb7a1498a822f45cc71115a919d",
+    PARITY_PATH: "5c5c6b2942bcd539a9f36f83500a4504ec2c60583591d6fb4af04686c993277b",
 }
 EXPECTED_SUBJECTS = {
-    "package": "1d6980cdc8c822de7e158b917eb6bc4f15d08f2ac31731cadcecb2d6f83f4a4c",
-    "decision": "8b6e9d98222a84c43d4d1f62fe3371379455b7653b0909d8f2d46e5b86d271de",
-    "parity": "463acc2dbf88f4b0e49353ddb20b4161218d4eefa0fca588006aac68d1bc12f8",
+    "package": "4bd6f429cc8e4ee4e4657ac39627bc65adef8faeb2581d44c2e85803c0b19e4b",
+    "decision": "a43a1c836c2597e8571f5862f3b1730cfd6cebdf4eb102178e1f41d11b21c6fd",
+    "parity": "0bfb02290043cd0d8dd2f34627ca520ffc31aa2261fa81b16f31af2206cc6065",
 }
+UNCHANGED_NOTABLE_ITEM_SUBJECT_SHA256 = (
+    "9a5dd2ddbf54b0295b1df89b0197790f89f898bc41e36112aa2f50a726675ca2"
+)
 HISTORICAL_ROOTS = {
     ROOT
     / "docs/editorial/full_record_reviews/public_wording_candidates/f000477_national_security_foreign_119_v1": {
@@ -146,6 +149,19 @@ def validate() -> dict[str, Any]:
     require(
         notable["direction_display"] == {"label": "Mixed", "symbol": "±"},
         "mixed display differs",
+    )
+    pattern = next(row for row in items if row["surface"] == "repeated_pattern")
+    require(
+        pattern["public_title"].endswith("relationships or support"),
+        "pattern title narrows the accepted relationships-or-support scope",
+    )
+    require(
+        all("accepted" not in row["evidence_count_label"].lower() for row in items),
+        "public evidence label exposes internal acceptance vocabulary",
+    )
+    require(
+        notable["wording_item_subject_sha256"] == UNCHANGED_NOTABLE_ITEM_SUBJECT_SHA256,
+        "accepted H.R. 1048 wording item changed",
     )
     require(
         all(

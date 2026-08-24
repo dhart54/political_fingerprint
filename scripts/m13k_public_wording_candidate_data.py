@@ -29,7 +29,7 @@ SPECS = [
         "public_title": "Education & Workforce",
         "primary_sentence": "In the reviewed Education & Workforce record, Foushee opposed two specific federal-funding restrictions tied to institutional relationships or support. Separately, on H.R. 1048, she supported a Section 117 reporting amendment and later opposed final passage of the distinct whole package.",
         "secondary_clarification": "These are separate findings, not one overall position on education, China, or foreign-influence policy.",
-        "evidence_count_label": "2 accepted findings · 3 episodes · 4 actions",
+        "evidence_count_label": "2 findings · 4 House votes",
         "direction_display": None,
         "retained_by_source_index": {
             (
@@ -81,7 +81,7 @@ SPECS = [
         "wording_item_id": "wording:pattern:education-relationship-funding-restrictions",
         "surface": "repeated_pattern",
         "semantic_sources": [{"source_kind": "behavioral", "source_id": PATTERN_ID}],
-        "public_title": "Funding restrictions tied to institutional relationships",
+        "public_title": "Funding restrictions tied to institutional relationships or support",
         "primary_sentence": "Across two separate proposals, Foushee opposed federal-funding restrictions tied to specified relationships or support: Confucius Institute relationships at higher-education institutions in H.R. 881 and direct or indirect Chinese-government support for elementary and secondary schools in H.R. 1069.",
         "secondary_clarification": "The proposals involved different education sectors, federal funding streams, and triggering relationships or support.",
         "evidence_count_label": "2 proposals · 2 separate education sectors",

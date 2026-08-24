@@ -8,7 +8,7 @@ These three detached candidates are non-authorizing. Proposed public copy is sho
 
 **Clarification:** These are separate findings, not one overall position on education, China, or foreign-influence policy.
 
-**Evidence label:** 2 accepted findings · 3 episodes · 4 actions
+**Evidence label:** 2 findings · 4 House votes
 
 **Direction display:** omitted; the sentence states the object of opposition
 
@@ -44,7 +44,7 @@ These three detached candidates are non-authorizing. Proposed public copy is sho
 
 **Semantic guard:** `{"direction_metadata_alone_establishes_public_meaning": false, "explicit_behavior_elements": ["two bounded funding-restriction choices", "one separate mixed H.R. 1048 episode", "no synthesis or overall issue direction"], "raw_yea_nay_maps_to_direction": false, "statement_basis": "accepted_semantic_proposition_content"}`
 
-## Funding restrictions tied to institutional relationships (`repeated_pattern`)
+## Funding restrictions tied to institutional relationships or support (`repeated_pattern`)
 
 ### Across two separate proposals, Foushee opposed federal-funding restrictions tied to specified relationships or support: Confucius Institute relationships at higher-education institutions in H.R. 881 and direct or indirect Chinese-government support for elementary and secondary schools in H.R. 1069.
 
