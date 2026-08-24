@@ -52,10 +52,12 @@ write, or protected user-owned ZIP access.
   manifest generated.
 - [x] Mutation-based adversarial tests enforce the focused semantic boundaries.
 - [x] Local semantic and cross-domain compatibility validation passes.
-- [ ] One draft PR and all exact-head hosted checks pass before stopping for
+- [x] One draft PR and all exact-head hosted checks pass before stopping for
   independent semantic review.
 
 ## Stop boundary
 
-Stop at one draft M13C PR after exact-head hosted CI. Do not merge M13C or begin
-any later editorial or operational stage.
+Independent review accepted all 17 candidates at exact PR #165 head
+`ee8291a10a953b2d4ddfc7c36610b2058f194c84`. PR #165 merged unchanged as
+`02cb6bb281c4b3e673f7764fa09226b3933f0598`. Later work remains governed by its
+own milestone authority.

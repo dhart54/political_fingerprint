@@ -1,0 +1,43 @@
+{
+  "accepted_candidate_binding": {
+    "accepted_head": "ee8291a10a953b2d4ddfc7c36610b2058f194c84",
+    "accepted_pr": 165,
+    "artifact_id": "action-interpretation-candidates:f000477:education_workforce:119:v1",
+    "file_sha256": "bc8d253644ebbd55e4bfdbf5fff270931c2d94790bf18618dc288df5eda386e2",
+    "interpretation_subject_sha256": "6c0d503bee4bc0b70ecad18396fd8764b4f21e4e4d22e88c965ba2e4301f98bf",
+    "post_merge_main": "02cb6bb281c4b3e673f7764fa09226b3933f0598"
+  },
+  "artifact_id": "action-interpretation-decision-implementation-parity:f000477:education_workforce:119:v1",
+  "decision_count": 17,
+  "downstream_authorizations": {
+    "deployment": false,
+    "policy_episode_acceptance": false,
+    "policy_episode_construction": false,
+    "production_persistence": false,
+    "public_wording": false,
+    "publication": false,
+    "semantic_ir": false,
+    "synthesis": false
+  },
+  "generated_artifacts": [
+    {
+      "content_subject_sha256": "5aea0708566b16d86df38297da5b4cc850d921ddcbda25254351cba96351ec77",
+      "file_sha256": "1009d66a9eae2fa360d1c1138981c5a900d28627f0fc95a1fa53de892dd6c6ca",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_education_workforce_119_v1/human_action_meaning_authority.json"
+    },
+    {
+      "content_subject_sha256": "d66bc98e456a0d3bdfca1326a6766681a98080c53dc781f6cd65a863f133a863",
+      "file_sha256": "074a3bd396a55f6c31b2f7acfacb63455e4b56e1cb2da522b7fa53c62523d656",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_education_workforce_119_v1/decision_implementation_bundle.json"
+    },
+    {
+      "file_sha256": "0156507a33944438937ec8b31fbdb970ddbe96cf3f108cea33434de76e15d255",
+      "path": "docs/editorial/full_record_reviews/interpretation_decisions/f000477_education_workforce_119_v1/decision_implementation_dossier.md"
+    }
+  ],
+  "generated_last": true,
+  "parity_state": "pass",
+  "parity_subject_sha256": "6ae556ae7e578248407f3a232ec4d599e4544537670ab3ce4445ffe5e81b2f75",
+  "schema_version": "full_record_action_interpretation_implementation_parity_v1",
+  "source_blocked_count": 0
+}
