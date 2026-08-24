@@ -29,6 +29,13 @@ from scripts.foushee_environment_energy_publication_preparation import (
 from scripts.validate_m12n_publication_activation_ratification_candidate import (
     validate_candidate,
 )
+from scripts.materialize_m12n_environment_energy_activation_authority import (
+    DECISION_RECORDED_AT_UTC,
+    RATIFIED_PROSPECTIVE_SUBJECT_SHA256,
+    build_authority,
+    validate_files,
+    validate_authority,
+)
 
 
 def _load(path):
@@ -144,6 +151,56 @@ def test_m12n_ratification_candidate_cannot_satisfy_live_selector_authority() ->
             candidate_authority=_load(AUTHORITY_PATH),
             metadata=write_set["publication_registry"]["publication_metadata"],
         )
+
+
+def test_materialized_authority_adds_only_ratified_decision_timestamp() -> None:
+    candidate = validate_candidate()
+    authority = build_authority()
+    stripped = copy.deepcopy(authority["subject"])
+    assert stripped.pop("decision_recorded_at_utc") == DECISION_RECORDED_AT_UTC
+    assert stripped == candidate["prospective_authority_subject"]
+    assert semantic_hash(stripped) == RATIFIED_PROSPECTIVE_SUBJECT_SHA256
+    assert authority["accepted"] is True
+    assert authority["sealed"] is True
+    assert authority["immutable"] is True
+    validate_authority(authority)
+
+
+def test_failed_activation_and_rollback_remain_governed_history() -> None:
+    _, _, receipt, state = validate_files()
+    assert receipt["immutable"] is True
+    assert receipt["subject"]["attempt"]["initial_apply"]["batch_id"] == 18
+    assert receipt["subject"]["attempt"]["initial_apply"]["artifact_ids"] == [
+        233,
+        234,
+        235,
+    ]
+    assert receipt["subject"]["live_postcheck"]["http_status_by_scope"] == {
+        "119": 500,
+        "all": 500,
+        "118": 500,
+    }
+    assert (
+        receipt["subject"]["live_postcheck"]["production_activation_survived_postcheck"]
+        is False
+    )
+    assert receipt["subject"]["rollback"]["completed"] is True
+    assert state["subject"] == {
+        "activation_attempted": True,
+        "activation_survived_postcheck": False,
+        "rollback_completed": True,
+        "environment_publication_active": False,
+        "environment_selector_state": {
+            "119": "receipts_only",
+            "all": "receipts_only",
+            "118": "receipts_only",
+        },
+        "blocking_runtime_defect": "active_environment_receipt_evidence_dispatch",
+        "failed_activation_receipt_binding": state["subject"][
+            "failed_activation_receipt_binding"
+        ],
+        "sealed_authority_reuse": "prohibited_after_runtime_repair",
+    }
 
 
 def test_old_ratification_proof_does_not_expire_stable_authority() -> None:

@@ -38,7 +38,6 @@ from scripts.foushee_environment_energy_publication_preparation import (  # noqa
 
 CANDIDATE_PATH = OUTPUT_ROOT / "positive_activation_ratification_candidate.json"
 RATIFICATION_DOSSIER_PATH = OUTPUT_ROOT / "positive_activation_ratification_review.md"
-POSITIVE_AUTHORITY_PATH = OUTPUT_ROOT / "positive_activation_authority.json"
 POST_CORRECTED_RUNTIME_MAIN = "b23a26cde2143bd646f0300fed18bd0c97a71a2b"
 CANDIDATE_PREPARED_AT_UTC = "2026-08-17T00:57:58Z"
 RATIFICATION_CANDIDATE_ID = (
@@ -232,7 +231,6 @@ def validate_candidate() -> dict:
         "decision_recorded_at_utc" in subject
         or "health_proof_subject_sha256" in subject["runtime_binding"]
         or candidate["prospective_authority_subject_sha256"] != semantic_hash(subject)
-        or POSITIVE_AUTHORITY_PATH.exists()
     ):
         raise ValueError("M12N candidate authority/provenance boundary differs")
 

@@ -98,20 +98,31 @@
 
 ## Production Writes
 
-- Performed: no.
-- Scope: read-only production health and database preflight only.
-- Expected effects: none.
-- Actual effects: none; `/health` deployment and production preflight were read-only.
+- Performed: one exact ratified Environment activation attempt followed by the
+  pre-authorized exact Environment-only rollback.
+- Activation inserted batch `18`, artifacts `233`, `234`, and `235`, two
+  relationships, and one Environment registry row. Counts reached
+  `6 / 152 / 163 / 3`; the governed second apply was idempotent.
+- Live presentation selection succeeded, but the Environment receipt-evidence
+  endpoint returned HTTP 500 for `119`, `all`, and `118`.
+- The rollback deleted only the inserted Environment graph and registry row.
+  Counts returned to `5 / 149 / 161 / 2` and fingerprint
+  `b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb`.
 
 ## Rollback Paths
 
-- The prospective Environment-only rollback contract will be regenerated and proven solely in disposable PostgreSQL; no production rollback is authorized.
+- The ratified Environment-only rollback executed successfully after the live
+  receipt-evidence failure. Justice and National Security remained unchanged.
 
 ## Blockers
 
-- None at discovery. Production database mutation remains intentionally unauthorized.
+- `active_environment_receipt_evidence_dispatch`: the generic active candidate
+  was routed through the National-Security-specific evidence merge helper.
 
 ## Final Reconciliation
 
-- Definition of done satisfied: not yet; execution is in progress.
-- Required stopping point: a new post-deployment candidate is present only as accepted=false/sealed=false on a follow-on draft PR, with Environment still inactive.
+- The V2 ratification attempt is closed as failed governed history. The sealed
+  authority remains immutable but becomes non-reusable after runtime repair.
+- Environment & Energy is inactive and receipts-only. The next milestone is a
+  separately reviewed runtime-dispatch repair, followed by new runtime evidence
+  and a new V3 candidate.

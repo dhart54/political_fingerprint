@@ -1,0 +1,184 @@
+{
+  "immutable": true,
+  "receipt_id": "failed-activation-rollback-receipt:f000477:environment_energy:119:v1",
+  "receipt_subject_sha256": "9dc3abeeb95d060d59d3df2e291772771ef758e6eb4bff2aec9ab80ae80745bf",
+  "schema_version": "m12n_failed_activation_rollback_receipt_v1",
+  "subject": {
+    "activation_authority": {
+      "artifact_id": "publication-activation-authority:f000477:environment_energy:119:v1",
+      "file_sha256": "38109df86271987e994502e2534923046ce0b0ffa97e4c334d97ec0535838408",
+      "subject_sha256": "0adb87796e6e0d008586a03ddc075179837b3f18bc5f52f52c7e9ed9cce50e36"
+    },
+    "attempt": {
+      "dry_run": {
+        "forced_rollback": true,
+        "hypothetical_counts": {
+          "artifacts": 152,
+          "batches": 6,
+          "publication_registry": 3,
+          "relationships": 163
+        },
+        "successful": true
+      },
+      "idempotent_second_apply": {
+        "additional_mutations": 0,
+        "already_applied": true,
+        "successful": true
+      },
+      "initial_apply": {
+        "artifact_ids": [
+          233,
+          234,
+          235
+        ],
+        "artifact_natural_keys": [
+          "site-integration-candidate:f000477:environment_energy:119:v1",
+          "site-integration-candidate:f000477:environment_energy:119:v1:publication-source-manifest",
+          "site-integration-candidate:f000477:environment_energy:119:v1:publication-validation"
+        ],
+        "batch_id": 18,
+        "post_write_counts": {
+          "artifacts": 152,
+          "batches": 6,
+          "publication_registry": 3,
+          "relationships": 163
+        },
+        "registry_insert": {
+          "issue_id": "ENVIRONMENT_ENERGY",
+          "member_bioguide_id": "F000477",
+          "presentation_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1"
+        },
+        "relationships": [
+          {
+            "child_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1:publication-validation",
+            "metadata": {
+              "activation_bundle_id": "foushee_environment_energy_119_publication_activation_v1"
+            },
+            "ordinal": 0,
+            "parent_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+            "relationship_type": "has_validation"
+          },
+          {
+            "child_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1:publication-source-manifest",
+            "metadata": {
+              "activation_bundle_id": "foushee_environment_energy_119_publication_activation_v1"
+            },
+            "ordinal": 0,
+            "parent_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+            "relationship_type": "uses_source_manifest"
+          }
+        ],
+        "successful": true
+      }
+    },
+    "execution_runtime_evidence": {
+      "captured_at_utc": "2026-08-23T23:54:04.729399+00:00",
+      "deployed_commit": "b23a26cde2143bd646f0300fed18bd0c97a71a2b",
+      "file_sha256": "84a9a6a5bd2bea2208f3fbec59b627ad2be9da81f6d639fef2f06a22db744131",
+      "health_commit": "b23a26cde2143bd646f0300fed18bd0c97a71a2b",
+      "reviewed_runtime_manifest_sha256": "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1",
+      "subject_sha256": "1c7eb0c4e74583ca6a08aa570235c152bd7b5e41089c29d26a05de37a642820d"
+    },
+    "live_postcheck": {
+      "classification": "live_receipt_evidence_failure",
+      "direction_displays_present": false,
+      "failed_endpoint": "/positions/ENVIRONMENT_ENERGY/evidence",
+      "http_status_by_scope": {
+        "118": 500,
+        "119": 500,
+        "all": 500
+      },
+      "presentation_api_successful": true,
+      "presentation_surfaces": [
+        {
+          "supporting_action_count": 13,
+          "title": "Environment & Energy"
+        },
+        {
+          "supporting_action_count": 13,
+          "title": "Congressional efforts to overturn agency decisions"
+        },
+        {
+          "supporting_action_count": 2,
+          "title": "California vehicle-emissions waivers"
+        },
+        {
+          "supporting_action_count": 4,
+          "title": "Appliance and commercial-equipment rules"
+        },
+        {
+          "supporting_action_count": 7,
+          "title": "Bureau of Land Management decisions"
+        }
+      ],
+      "production_activation_survived_postcheck": false
+    },
+    "pre_write_state": {
+      "captured_at_utc": "2026-08-23T23:54:24.351892+00:00",
+      "counts": {
+        "artifacts": 149,
+        "batches": 5,
+        "publication_registry": 2,
+        "relationships": 161
+      },
+      "environment_registry_rows": [],
+      "preflight_file_sha256": "be674f884877916c94cc3ef273b8f0ed8776bfeaade497c382a21b3d5c74f132",
+      "preflight_subject_sha256": "17d4303fba33bfa50d6480080390eec3687493623c447e55b37e8c8e9f64202b",
+      "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+      "state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb"
+    },
+    "production_write_set": {
+      "artifact_id": "publication-activation-write-set:f000477:environment_energy:119:v1",
+      "file_sha256": "55b2cef16ce02b13436e3b744356d64b0dcc8f07e9f7218e9ecf2ca219385443",
+      "subject_sha256": "ab7cef360fd9323ae22ffe418d7475ad54ea247a301e16fd29b795877550033f"
+    },
+    "ratification": {
+      "candidate_artifact_id": "publication-activation-ratification-candidate:f000477:environment_energy:119:v2",
+      "candidate_file_sha256": "fd3894248f3120e2cccf53b240b75dbdb05ab42e30315540199a07c7b5434757",
+      "decision_recorded_at_utc": "2026-08-17T01:12:42Z",
+      "prospective_subject_sha256": "a0bf52b86d0078a947008b464f147023d8739f3665e36ea41b2213d95a8d8b5e"
+    },
+    "rollback": {
+      "completed": true,
+      "decision": "execute_authorized_exact_environment_rollback",
+      "deleted": {
+        "artifacts": 3,
+        "batches": 1,
+        "publication_registry": 1,
+        "relationships": 2
+      },
+      "environment_registry_absent": true,
+      "final_environment_state": "inactive_receipts_only",
+      "justice_registry_row_unchanged": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+        "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+        "publicly_active": true,
+        "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+      },
+      "national_security_registry_row_unchanged": {
+        "artifact_id": 227,
+        "artifact_version": 1,
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477",
+        "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+        "publicly_active": true,
+        "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+      },
+      "restored_counts": {
+        "artifacts": 149,
+        "batches": 5,
+        "publication_registry": 2,
+        "relationships": 161
+      },
+      "restored_state_fingerprint_sha256": "b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb",
+      "scope": "environment_owned_batch_graph_and_registry_row_only"
+    }
+  }
+}
