@@ -14,12 +14,14 @@ from app.api.editorial_presentations import (
     _load_publication_rows,
 )
 from app.editorial_presentations.integration_candidate import (
+    M11M_ARTIFACT_ID,
     M11M_PREVIEW_TOKEN,
     load_site_integration_candidate,
     merge_site_integration_preview_evidence,
     merge_site_integration_preview_positions,
 )
 from app.editorial_presentations.environment_integration_candidate import (
+    M12M_ARTIFACT_ID,
     M12M_PREVIEW_TOKEN,
     load_environment_site_integration_candidate,
     merge_environment_preview_evidence,
@@ -64,16 +66,58 @@ def _m12m_preview(candidate: str | None) -> dict[str, object] | None:
         return None
 
 
-def _active_m11m_publication(
-    *, member_bioguide_id: str, issue_id: str
+def _active_site_integration_publication(
+    *,
+    member_bioguide_id: str,
+    issue_id: str,
+    publication_rows: list[dict[str, object]] | None = None,
 ) -> dict[str, object] | None:
     try:
-        rows = _load_publication_rows()
+        rows = (
+            _load_publication_rows() if publication_rows is None else publication_rows
+        )
     except Exception:  # pragma: no cover - database availability stays fail-closed
         return None
     return active_site_integration_candidate(
         rows, member_bioguide_id=member_bioguide_id, issue_id=issue_id
     )
+
+
+def _merge_site_integration_evidence(
+    base_response: dict[str, object],
+    candidate: dict[str, object],
+    *,
+    domain: str,
+    scope: str,
+) -> dict[str, object]:
+    artifact_id = candidate.get("artifact_id")
+    if artifact_id == M11M_ARTIFACT_ID:
+        return merge_site_integration_preview_evidence(
+            base_response, candidate, domain=domain, scope=scope
+        )
+    if artifact_id == M12M_ARTIFACT_ID:
+        return merge_environment_preview_evidence(
+            base_response, candidate, domain=domain, scope=scope
+        )
+    raise ValueError("unknown active site-integration candidate identity")
+
+
+def _merge_site_integration_positions(
+    base_response: dict[str, object],
+    candidate: dict[str, object],
+    *,
+    governed_evidence: list[dict[str, object]],
+) -> dict[str, object]:
+    artifact_id = candidate.get("artifact_id")
+    if artifact_id == M11M_ARTIFACT_ID:
+        return merge_site_integration_preview_positions(
+            base_response, governed_evidence=governed_evidence
+        )
+    if artifact_id == M12M_ARTIFACT_ID:
+        return merge_environment_preview_positions(
+            base_response, governed_evidence=governed_evidence
+        )
+    raise ValueError("unknown active site-integration candidate identity")
 
 
 def _has_governed_presentation_candidate(
@@ -109,47 +153,41 @@ def get_legislator_positions(
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
-    environment_preview = _m12m_preview(candidate)
-    if (
-        environment_preview is not None
-        and profile is not None
-        and str(profile["bioguide_id"]) == "F000477"
-        and scope in {"119", "all"}
-    ):
-        raw_evidence = get_position_evidence_response(
-            legislator_id=legislator_id, domain="ENVIRONMENT_ENERGY", scope=scope
-        ) or {"domain": "ENVIRONMENT_ENERGY", "evidence": []}
-        governed = merge_environment_preview_evidence(
-            raw_evidence, environment_preview, domain="ENVIRONMENT_ENERGY", scope=scope
-        )
-        return merge_environment_preview_positions(
-            response, governed_evidence=governed["evidence"]
-        )
-    preview = _m11m_preview(candidate)
-    if preview is None and profile is not None:
-        preview = _active_m11m_publication(
-            member_bioguide_id=str(profile["bioguide_id"]),
-            issue_id="NATIONAL_SECURITY_FOREIGN",
-        )
-    if (
-        preview is not None
-        and profile is not None
-        and str(profile["bioguide_id"]) == "F000477"
-        and scope in {"119", "all"}
-    ):
+    if profile is None or str(profile["bioguide_id"]) != "F000477":
+        return response
+
+    previews = {
+        "NATIONAL_SECURITY_FOREIGN": _m11m_preview(candidate),
+        "ENVIRONMENT_ENERGY": _m12m_preview(candidate),
+    }
+    try:
+        publication_rows = _load_publication_rows()
+    except Exception:  # pragma: no cover - active discovery stays fail-closed
+        publication_rows = None
+    for issue_id in ("NATIONAL_SECURITY_FOREIGN", "ENVIRONMENT_ENERGY"):
+        site_candidate = previews[issue_id]
+        if site_candidate is None and publication_rows is not None:
+            site_candidate = _active_site_integration_publication(
+                member_bioguide_id=str(profile["bioguide_id"]),
+                issue_id=issue_id,
+                publication_rows=publication_rows,
+            )
+        if site_candidate is None or scope not in {"119", "all"}:
+            continue
         raw_evidence = get_position_evidence_response(
             legislator_id=legislator_id,
-            domain="NATIONAL_SECURITY_FOREIGN",
+            domain=issue_id,
             scope=scope,
-        ) or {"domain": "NATIONAL_SECURITY_FOREIGN", "evidence": []}
-        governed = merge_site_integration_preview_evidence(
+        ) or {"domain": issue_id, "evidence": []}
+        governed = _merge_site_integration_evidence(
             raw_evidence,
-            preview,
-            domain="NATIONAL_SECURITY_FOREIGN",
+            site_candidate,
+            domain=issue_id,
             scope=scope,
         )
-        return merge_site_integration_preview_positions(
+        response = _merge_site_integration_positions(
             response,
+            site_candidate,
             governed_evidence=governed["evidence"],
         )
     return response
@@ -175,7 +213,7 @@ def get_legislator_position_evidence(
     profile = get_legislator_profile(legislator_id=legislator_id)
     normalized_domain = domain.strip().upper()
     active_site_candidate = (
-        _active_m11m_publication(
+        _active_site_integration_publication(
             member_bioguide_id=str(profile["bioguide_id"]),
             issue_id=normalized_domain,
         )
@@ -213,27 +251,24 @@ def get_legislator_position_evidence(
                 presentation,
                 governed_evidence=governed_rows,
             )
-    environment_preview = _m12m_preview(candidate)
-    preview = _m11m_preview(candidate) or active_site_candidate
+    preview = next(
+        (
+            item
+            for item in (_m11m_preview(candidate), _m12m_preview(candidate))
+            if item is not None
+            and item.get("subject", {}).get("issue_id") == normalized_domain
+        ),
+        None,
+    )
+    site_candidate = preview or active_site_candidate
     if (
-        preview is not None
+        site_candidate is not None
         and profile is not None
         and str(profile["bioguide_id"]) == "F000477"
     ):
-        response = merge_site_integration_preview_evidence(
+        response = _merge_site_integration_evidence(
             response,
-            preview,
-            domain=normalized_domain,
-            scope=normalized_scope,
-        )
-    if (
-        environment_preview is not None
-        and profile is not None
-        and str(profile["bioguide_id"]) == "F000477"
-    ):
-        response = merge_environment_preview_evidence(
-            response,
-            environment_preview,
+            site_candidate,
             domain=normalized_domain,
             scope=normalized_scope,
         )

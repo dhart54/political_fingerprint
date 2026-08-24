@@ -31,6 +31,7 @@ from scripts.validate_m12n_publication_activation_ratification_candidate import 
 )
 from scripts.materialize_m12n_environment_energy_activation_authority import (
     DECISION_RECORDED_AT_UTC,
+    POSITIVE_AUTHORITY_PATH,
     RATIFIED_PROSPECTIVE_SUBJECT_SHA256,
     build_authority,
     validate_files,
@@ -219,6 +220,26 @@ def test_old_ratification_proof_does_not_expire_stable_authority() -> None:
         metadata=metadata,
         allow_test_authority=True,
     )
+
+
+def test_failed_attempt_authority_cannot_bind_repaired_runtime() -> None:
+    authority = _load(POSITIVE_AUTHORITY_PATH)
+    current_manifest = reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    failed_attempt_manifest = authority["subject"]["runtime_binding"][
+        "reviewed_runtime_manifest_sha256"
+    ]
+    assert failed_attempt_manifest == (
+        "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1"
+    )
+    assert current_manifest != failed_attempt_manifest
+
+    repaired_runtime_proof = _runtime_proof(
+        captured_at=datetime.now(timezone.utc),
+        commit=authority["subject"]["runtime_binding"]["deployed_commit"],
+        manifest_sha256=current_manifest,
+    )
+    with pytest.raises(StoreSafetyError, match="runtime"):
+        validate_production_execution_runtime(authority, repaired_runtime_proof)
 
 
 def test_production_execution_requires_new_fresh_proof() -> None:
