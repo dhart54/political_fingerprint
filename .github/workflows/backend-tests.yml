@@ -25,6 +25,8 @@ jobs:
       UNIVERSE_DISCOVERY_DISPOSABLE_DATABASE_URL: postgresql://invalid
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
