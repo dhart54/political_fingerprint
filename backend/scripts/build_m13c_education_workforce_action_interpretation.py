@@ -174,12 +174,16 @@ MEANING_OVERRIDES = {
         "meaning": (
             "The House choice was whether to pass H.R. 2262 as the modified "
             "committee substitute adopted under House Resolution 988. Section 2 "
-            "would change Fair Labor Standards Act hours-worked treatment by "
-            "excluding employer-offered or facilitated education or training time "
-            "when it occurs outside regular working hours, participation is voluntary "
-            "and declining cannot trigger adverse action, and no work is performed; "
-            "it also addresses related instruction under a bona fide apprenticeship "
-            "program and applies to hours worked on or after enactment."
+            "would amend the Fair Labor Standards Act to provide that time spent "
+            "attending or participating in an education or training program or "
+            "similar activity may be excluded from hours worked, regardless of "
+            "whether the program or activity is offered or facilitated by the "
+            "employer, when it occurs outside regular working hours, participation "
+            "is voluntary and declining cannot trigger adverse action, and the "
+            "employee performs no work during it; it also permits exclusion, in "
+            "accordance with the referenced regulation, of related supplemental "
+            "instruction under a bona fide apprenticeship program, and applies to "
+            "hours worked on or after enactment."
         ),
         "official_wording": (
             "Official GovInfo House-section record contains the modified committee "

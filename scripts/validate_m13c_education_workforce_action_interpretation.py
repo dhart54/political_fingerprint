@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -44,20 +45,21 @@ from scripts.validate_m13b_education_workforce_source_readiness_v2 import (  # n
 
 
 CURRENT_STATE_PATH = ROOT / "docs/editorial/current_state_index.json"
+REVIEWED_HEAD = "4c5e922e9c3da93b3f8ab80e2606ae714821df61"
 EXPECTED_ARTIFACT_SHA256 = (
-    "9a1030518fb922ee4bc2317e0fa5b1dd491b6c9d6a3212d5e488b7c7dd7e5d55"
+    "bc8d253644ebbd55e4bfdbf5fff270931c2d94790bf18618dc288df5eda386e2"
 )
 EXPECTED_SUBJECT_SHA256 = (
-    "a2dd7b4fa8ba8de9178ecb307a41977e83af2a42d1a364784f598adc2c7dec97"
+    "6c0d503bee4bc0b70ecad18396fd8764b4f21e4e4d22e88c965ba2e4301f98bf"
 )
 EXPECTED_DECISION_SHA256 = (
-    "3144785d663390c9993139e2679bbb5c2f35f9d64c82fb04b5ea629b04ef3543"
+    "2fc6cd06c6b273f75e5fe8c8dd67133a28b9db670ded558f4eda54019fe4621d"
 )
 EXPECTED_DOSSIER_SHA256 = (
-    "3669e76d4c94136b1227ff1f99daef8836464db270ad27994c327bb93852dff6"
+    "8d71a31d8ddd64369d8e32e4a1da43c41e48fdfbe8c743b3c5d26d01b9dd6f2c"
 )
 EXPECTED_PARITY_SUBJECT_SHA256 = (
-    "b9d82d2f80a7f979096b9e002da36cc486692aba09a03e48c44f2d724d846d04"
+    "74d2457e91c5832e8012aae00a19263644c06e63201859450de6cbebe0e3ccfc"
 )
 ROLL19_SOURCE_ID = "congressional-record:2026-01-13:house-section:H663-H719:hr2262"
 ROLL19_SOURCE_SHA256 = (
@@ -86,6 +88,48 @@ def validate_schema(value: dict[str, Any], path: Path, *, label: str) -> None:
 def contains_all(value: str, fragments: tuple[str, ...]) -> bool:
     normalized = value.casefold()
     return all(fragment.casefold() in normalized for fragment in fragments)
+
+
+def validate_reviewed_head_candidate_parity(artifact: dict[str, Any]) -> int:
+    artifact_relative_path = ARTIFACT_PATH.relative_to(ROOT).as_posix()
+    result = subprocess.run(
+        ["git", "show", f"{REVIEWED_HEAD}:{artifact_relative_path}"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    reviewed = json.loads(result.stdout)
+    current_by_id = {
+        item["action_id"]: item for item in artifact["subject"]["candidates"]
+    }
+    reviewed_by_id = {
+        item["action_id"]: item for item in reviewed["subject"]["candidates"]
+    }
+    roll19_id = "house:119:2:19"
+    unchanged_ids = sorted(set(current_by_id) - {roll19_id})
+    require(
+        set(current_by_id) == set(reviewed_by_id)
+        and len(unchanged_ids) == 16
+        and all(
+            current_by_id[action_id] == reviewed_by_id[action_id]
+            for action_id in unchanged_ids
+        ),
+        f"accepted candidate parity differs from reviewed head {REVIEWED_HEAD}",
+    )
+
+    current_roll19 = json.loads(json.dumps(current_by_id[roll19_id]))
+    reviewed_roll19 = json.loads(json.dumps(reviewed_by_id[roll19_id]))
+    for candidate in (current_roll19, reviewed_roll19):
+        candidate.pop("candidate_content_subject_sha256")
+        candidate["proposed_exact_action_meaning"] = "<corrected-meaning>"
+        candidate["claim_components"][0]["wording"] = "<corrected-meaning>"
+    require(
+        current_roll19 == reviewed_roll19,
+        "roll 19 correction changed identity, source, member effect, coverage, or another protected field",
+    )
+    return len(unchanged_ids)
 
 
 def validate_semantic_boundaries(
@@ -160,12 +204,25 @@ def validate_semantic_boundaries(
             roll19["proposed_exact_action_meaning"],
             (
                 "modified committee substitute",
+                "education or training program or similar activity",
+                "may be excluded",
+                "regardless of whether",
+                "offered or facilitated by the employer",
                 "outside regular working hours",
                 "participation is voluntary",
-                "no work is performed",
+                "adverse action",
+                "performs no work",
+                "related supplemental instruction",
                 "bona fide apprenticeship",
                 "on or after enactment",
             ),
+        )
+        and not any(
+            fragment in roll19["proposed_exact_action_meaning"].casefold()
+            for fragment in (
+                "is excluded from hours worked",
+                "excluding employer-offered",
+            )
         ),
         "roll 19 used defective, earlier-version, or incomplete meaning evidence",
     )
@@ -219,6 +276,9 @@ def validate_repository() -> dict[str, Any]:
     evidence_by_action = {item["action_id"]: item for item in subject["evidence_maps"]}
     aggregate = subject["aggregate"]
     validate_semantic_boundaries(artifact, readiness)
+    unchanged_reviewed_candidate_count = validate_reviewed_head_candidate_parity(
+        artifact
+    )
 
     require(
         artifact["artifact_id"]
@@ -366,13 +426,25 @@ def validate_repository() -> dict[str, Any]:
             (
                 "modified committee substitute",
                 "house resolution 988",
+                "education or training program or similar activity",
+                "may be excluded",
+                "regardless of whether",
+                "offered or facilitated by the employer",
                 "outside regular working hours",
                 "participation is voluntary",
                 "adverse action",
-                "no work is performed",
+                "performs no work",
+                "related supplemental instruction",
                 "bona fide apprenticeship",
                 "on or after enactment",
             ),
+        )
+        and not any(
+            fragment in roll19["proposed_exact_action_meaning"].casefold()
+            for fragment in (
+                "is excluded from hours worked",
+                "excluding employer-offered",
+            )
         ),
         "corrected roll 19 exact floor-text treatment differs",
     )
@@ -508,6 +580,11 @@ def validate_repository() -> dict[str, Any]:
         "non_directional_count": 1,
         "evidence_source_binding_count": aggregate["evidence_source_binding_count"],
         "roll19_source_sha256": ROLL19_SOURCE_SHA256,
+        "roll19_candidate_content_subject_sha256": roll19[
+            "candidate_content_subject_sha256"
+        ],
+        "reviewed_head": REVIEWED_HEAD,
+        "unchanged_reviewed_candidate_count": unchanged_reviewed_candidate_count,
         "aggregate": aggregate,
     }
 

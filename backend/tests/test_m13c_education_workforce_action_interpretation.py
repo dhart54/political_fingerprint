@@ -74,6 +74,20 @@ class M13CEducationWorkforceActionInterpretationTests(unittest.TestCase):
         self._resign_artifact(artifact)
         return artifact
 
+    def _replace_meaning(self, action_id: str, old: str, new: str) -> dict:
+        artifact = deepcopy(self.artifact)
+        candidate = self._candidate(artifact, action_id)
+        self.assertIn(old, candidate["proposed_exact_action_meaning"])
+        candidate["proposed_exact_action_meaning"] = candidate[
+            "proposed_exact_action_meaning"
+        ].replace(old, new)
+        candidate["claim_components"][0]["wording"] = candidate[
+            "proposed_exact_action_meaning"
+        ]
+        self._resign_candidate(candidate)
+        self._resign_artifact(artifact)
+        return artifact
+
     def test_repository_artifact_is_exact_17_of_17_and_deterministic(self) -> None:
         self._validate(self.artifact)
         subject = self.artifact["subject"]
@@ -198,6 +212,36 @@ class M13CEducationWorkforceActionInterpretationTests(unittest.TestCase):
                 readiness_artifact=self.readiness,
                 repository_root=ROOT,
             )
+
+    def test_roll19_cannot_narrow_away_similar_activity(self) -> None:
+        artifact = self._replace_meaning("house:119:2:19", " or similar activity", "")
+        with self.assertRaisesRegex(ActionInterpretationError, "roll 19"):
+            validate_semantic_boundaries(artifact, self.readiness)
+
+    def test_roll19_cannot_be_narrowed_to_employer_only_programs(self) -> None:
+        artifact = self._replace_meaning(
+            "house:119:2:19",
+            "regardless of whether the program or activity is offered or facilitated by the employer",
+            "when the program or activity is offered or facilitated by the employer",
+        )
+        with self.assertRaisesRegex(ActionInterpretationError, "roll 19"):
+            validate_semantic_boundaries(artifact, self.readiness)
+
+    def test_roll19_cannot_make_exclusion_categorical(self) -> None:
+        for categorical_wording in ("is excluded", "excluding"):
+            with self.subTest(categorical_wording=categorical_wording):
+                artifact = self._replace_meaning(
+                    "house:119:2:19", "may be excluded", categorical_wording
+                )
+                with self.assertRaisesRegex(ActionInterpretationError, "roll 19"):
+                    validate_semantic_boundaries(artifact, self.readiness)
+
+    def test_roll19_cannot_lose_previously_guarded_boundary(self) -> None:
+        artifact = self._replace_meaning(
+            "house:119:2:19", "outside regular working hours", "outside work"
+        )
+        with self.assertRaisesRegex(ActionInterpretationError, "roll 19"):
+            validate_semantic_boundaries(artifact, self.readiness)
 
 
 if __name__ == "__main__":

@@ -7,9 +7,9 @@
 - Candidate artifact:
   `action-interpretation-candidates:f000477:education_workforce:119:v1`.
 - Artifact SHA-256:
-  `9a1030518fb922ee4bc2317e0fa5b1dd491b6c9d6a3212d5e488b7c7dd7e5d55`.
+  `bc8d253644ebbd55e4bfdbf5fff270931c2d94790bf18618dc288df5eda386e2`.
 - Interpretation-subject SHA-256:
-  `a2dd7b4fa8ba8de9178ecb307a41977e83af2a42d1a364784f598adc2c7dec97`.
+  `6c0d503bee4bc0b70ecad18396fd8764b4f21e4e4d22e88c965ba2e4301f98bf`.
 - Full evidence-linked ledger:
   `docs/editorial/full_record_reviews/interpretation_candidates/f000477_education_workforce_119_v1/human_review_dossier.md`.
 - Empty, non-authorizing decision template:
@@ -56,8 +56,12 @@
 - Roll 312 retains Clerk `not_voting` and
   `non_directional_not_voting`.
 - Roll 19 describes the modified committee substitute actually considered and
-  its precise FLSA conditions from H677-H678, with the delayed passage vote bound
-  on H692-H693. Floor advocacy is excluded from neutral meaning.
+  its precise FLSA scope and permissive exclusion conditions from H677-H678,
+  including similar activities regardless of whether the employer offered or
+  facilitated them, with the delayed passage vote bound on H692-H693. Floor
+  advocacy is excluded from neutral meaning.
+- The other 16 candidate records are exact-parity locked to reviewed head
+  `4c5e922e9c3da93b3f8ab80e2606ae714821df61`.
 
 ## Review stop
 
