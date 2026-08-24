@@ -1,0 +1,2490 @@
+{
+  "artifact_id": "interpretation-source-readiness:f000477:education_workforce:119:v2",
+  "artifact_role": "non_authorizing_source_readiness_only",
+  "authorizations": {
+    "action_interpretation": false,
+    "episode_authority": false,
+    "production_persistence": false,
+    "public_wording": false,
+    "publication": false,
+    "semantic_ir": false,
+    "synthesis": false
+  },
+  "input_bindings": {
+    "authority_receipt": {
+      "artifact_id": "universe-authority:f000477:education_workforce:119:v1",
+      "artifact_path": "docs/editorial/full_record_reviews/f000477_education_workforce_119_full_issue_universe_authority_receipt_v1.json",
+      "sha256": "491b6de2314788f1566f8366f95a66b2375ec6d1271790a18387ba33cad70ea3"
+    },
+    "selection": {
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/domain_selection.json",
+      "sha256": "e877adf1cd5a1bff08c08ecb4ee1ee6acc1bbdff6d93899171e13480f6473f5a"
+    },
+    "source_inventory": {
+      "artifact_id": "source-inventory:F000477:EDUCATION_WORKFORCE:119:m13a:v1",
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/source_inventory.json",
+      "inventory_sha256": "66070d29ebe29e6ef3c17dc67c888b522d7043b36e5fd694d0093b4ce5be6fe7",
+      "sha256": "9157183097ce1bb578b2ea09729e151f89f3ccc1f882da452df439cf8268672d"
+    },
+    "universe_proposal": {
+      "artifact_id": "full-universe-proposal:f000477:education_workforce:119:m13a:v1",
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/selected_domain_universe_proposal.json",
+      "sha256": "178918ec04b28600d5ab246cdc96956bbd06d22e46621da618df50361e9366c9",
+      "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d"
+    }
+  },
+  "input_contract": {
+    "allowlisted_input_classes": [
+      "approved_full_issue_universe_authority_receipt",
+      "approved_universe_proposal",
+      "approved_universe_source_inventory",
+      "governed_official_raw_provenance",
+      "closed_neutral_source_projections",
+      "source_readiness_methodology"
+    ],
+    "excluded_input_classes": [
+      "action_interpretations",
+      "party_or_sponsor_context",
+      "support_or_opposition_meaning",
+      "policy_episodes",
+      "semantic_ir",
+      "synthesis",
+      "public_wording",
+      "publication_or_persistence_state_changes"
+    ]
+  },
+  "schema_version": "full_record_interpretation_source_readiness_v1",
+  "source_readiness_subject_sha256": "aeecda1d7e883a6c03ac43c85e355812dffed1e74751e2bf1e4f8a0afb325ab0",
+  "subject": {
+    "action_ids": [
+      "house:119:1:120",
+      "house:119:1:146",
+      "house:119:1:312",
+      "house:119:1:313",
+      "house:119:1:314",
+      "house:119:1:315",
+      "house:119:1:332",
+      "house:119:1:68",
+      "house:119:1:79",
+      "house:119:1:83",
+      "house:119:2:184",
+      "house:119:2:19",
+      "house:119:2:216",
+      "house:119:2:217",
+      "house:119:2:31",
+      "house:119:2:47",
+      "house:119:2:82"
+    ],
+    "action_readiness": [
+      {
+        "action_id": "house:119:1:120",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:881",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-05-07",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 120,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "f885e3d561ccca748adf18c16d8a4fb0719ad1877fecda101bc0506586717ebe",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:120",
+            "congress-text:119:hr:881:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:120"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:881:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-05-07",
+              "action_id": "house:119:1:120",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:881",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "98ab18fe473ad24ae77aa32fde747f6e0bbb498e11ec97c5955714197f73c1db",
+              "roll_number": 120,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:120",
+              "source_url": "https://clerk.house.gov/evs/2025/roll120.xml",
+              "text_version": "2025-05-07"
+            },
+            "neutral_projection_sha256": "1ea5cd7e1f6c154a01bc5d0676821c2ece760681da9fc00a92b69671454fa8cb",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/98ab18fe473ad24ae77aa32fde747f6e0bbb498e11ec97c5955714197f73c1db.xml",
+              "sha256": "98ab18fe473ad24ae77aa32fde747f6e0bbb498e11ec97c5955714197f73c1db"
+            },
+            "source_id": "clerk:house:119:1:120",
+            "source_subject": "house:119:1:120",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll120.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-05-07",
+              "action_id": "house:119:1:120",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:881",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 266 - 153 (Roll no. 120). (text of amendment in the nature of a substitute: CR H1891)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "8042969285063fd29128c4202f00d0a012016ba08ba0fd3bd815d1aa83de2ebd",
+              "roll_number": 120,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:120",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/881/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "54b401240e9275cf6200b3858f068032632588a347ea688d4f07f7f98d8209b6",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/8042969285063fd29128c4202f00d0a012016ba08ba0fd3bd815d1aa83de2ebd.json",
+              "sha256": "8042969285063fd29128c4202f00d0a012016ba08ba0fd3bd815d1aa83de2ebd"
+            },
+            "source_id": "congress-actions:house:119:1:120",
+            "source_subject": "119:hr:881",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/881/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-05-07",
+              "action_id": "house:119:1:120",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:881",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 266 - 153 (Roll no. 120). (text of amendment in the nature of a substitute: CR H1891)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "d4dec3e1f4d21d237eb24e72238ff00a09c78d882464e3ccd75815f210ab8210",
+              "roll_number": 120,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:881:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "bfbd4359cd2bb320d9590fcfe8e71f6cba7cec1d515acef8606e869633f75e09",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/d4dec3e1f4d21d237eb24e72238ff00a09c78d882464e3ccd75815f210ab8210.xml",
+              "sha256": "d4dec3e1f4d21d237eb24e72238ff00a09c78d882464e3ccd75815f210ab8210"
+            },
+            "source_id": "congress-text:119:hr:881:eh",
+            "source_subject": "119:hr:881",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:146",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1642",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [
+          "Commerce remains the official primary policy area. The packet preserves the Small Business Act mechanism and the material career-and-technical-education, workforce-hiring, and career-opportunity component; it does not classify H.R. 1642 as exclusively or primarily education policy."
+        ],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-06-03",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 146,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "9cfbfc917b28bf7be35ae5bbbd3ec0afba9abce4536db18b8923991e04041eb1",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:146",
+            "congress-text:119:hr:1642:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:146"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1642:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-06-03",
+              "action_id": "house:119:1:146",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1642",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "On Motion to Suspend the Rules and Pass",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "96aa73de1e02bb8910d3cefc325db20290fd6cd8ed64e376c2832254abd7ef0c",
+              "roll_number": 146,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:146",
+              "source_url": "https://clerk.house.gov/evs/2025/roll146.xml",
+              "text_version": "2025-06-03"
+            },
+            "neutral_projection_sha256": "33063ec8a800cd0195c22301f021eb5486f7731b6bca0f745fb022d4af9232a6",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/96aa73de1e02bb8910d3cefc325db20290fd6cd8ed64e376c2832254abd7ef0c.xml",
+              "sha256": "96aa73de1e02bb8910d3cefc325db20290fd6cd8ed64e376c2832254abd7ef0c"
+            },
+            "source_id": "clerk:house:119:1:146",
+            "source_subject": "house:119:1:146",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll146.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-06-03",
+              "action_id": "house:119:1:146",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1642",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Passed/agreed to in House: On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 396 - 5 (Roll no. 146). (text: CR H2392)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "24b1a35473d5b48b33806b24f1b82f1dfddb0fdacdfa8ff3f5bad8e69a673819",
+              "roll_number": 146,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:146",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1642/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "1d8fe471905d968c8e3990a4d198d506f24c7679ce599f40b814c4be8d195710",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/24b1a35473d5b48b33806b24f1b82f1dfddb0fdacdfa8ff3f5bad8e69a673819.json",
+              "sha256": "24b1a35473d5b48b33806b24f1b82f1dfddb0fdacdfa8ff3f5bad8e69a673819"
+            },
+            "source_id": "congress-actions:house:119:1:146",
+            "source_subject": "119:hr:1642",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1642/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-06-03",
+              "action_id": "house:119:1:146",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1642",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 396 - 5 (Roll no. 146). (text: CR H2392)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "92469a7630484cf285025a3a1994d7d1d00f6c5139a7c0e9a21f9865b8d249ce",
+              "roll_number": 146,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1642:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "ff40ebe34f3377b6160f16ba5663048923e569adea9aec76852656f8261058bb",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/92469a7630484cf285025a3a1994d7d1d00f6c5139a7c0e9a21f9865b8d249ce.xml",
+              "sha256": "92469a7630484cf285025a3a1994d7d1d00f6c5139a7c0e9a21f9865b8d249ce"
+            },
+            "source_id": "congress-text:119:hr:1642:eh",
+            "source_subject": "119:hr:1642",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:312",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1005",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [
+          "The Clerk records Not Voting. Source readiness preserves the exact action and absence status, but later position effect must remain non-directional and cannot infer support or opposition."
+        ],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-12-03",
+        "official_member_action": "not_voting",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 312,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "e7d5ed7c5d5f1809fe3c03ae724a00714cd1236e9c4a47b74095887d15e255cf",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:312",
+            "congress-text:119:hr:1005:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:312"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1005:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-03",
+              "action_id": "house:119:1:312",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1005",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "not_voting",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
+              "roll_number": 312,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:312",
+              "source_url": "https://clerk.house.gov/evs/2025/roll312.xml",
+              "text_version": "2025-12-03"
+            },
+            "neutral_projection_sha256": "ed699b8f5565b9b24f47a6eb9233b2e9f5535a807d6fc29136730de5e83259d5",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e.xml",
+              "sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e"
+            },
+            "source_id": "clerk:house:119:1:312",
+            "source_subject": "house:119:1:312",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll312.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-03",
+              "action_id": "house:119:1:312",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1005",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "not_voting",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 242 - 176 (Roll no. 312). (text of amendment in the nature of a substitute: CR H5005-5006)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "118116b6e041d5461ad63646a41f5c6253b9d6502c1e5861c4a6e16075d2b334",
+              "roll_number": 312,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:312",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1005/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "7d3d8c618f771175b96ca6f1574f552dbfebca4c7156bb0ce4f2cffa22bb8fd8",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/118116b6e041d5461ad63646a41f5c6253b9d6502c1e5861c4a6e16075d2b334.json",
+              "sha256": "118116b6e041d5461ad63646a41f5c6253b9d6502c1e5861c4a6e16075d2b334"
+            },
+            "source_id": "congress-actions:house:119:1:312",
+            "source_subject": "119:hr:1005",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1005/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-12-03",
+              "action_id": "house:119:1:312",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1005",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "not_voting",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 242 - 176 (Roll no. 312). (text of amendment in the nature of a substitute: CR H5005-5006)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "6417bc087a47d507270517bf44be9ec4711851f3275e52e83893376e1dd5d319",
+              "roll_number": 312,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1005:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "9082235e67a7f8b6aebb6f66aed09ea88afc965b9f32c07596d2631fc3676ad6",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/6417bc087a47d507270517bf44be9ec4711851f3275e52e83893376e1dd5d319.xml",
+              "sha256": "6417bc087a47d507270517bf44be9ec4711851f3275e52e83893376e1dd5d319"
+            },
+            "source_id": "congress-text:119:hr:1005:eh",
+            "source_subject": "119:hr:1005",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:313",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1069",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-12-04",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 313,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "073089ce794afecc8ac1121b30bd8f04758a780267c2105e69ebf2c743abb648",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:313",
+            "congress-text:119:hr:1069:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:313"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1069:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:313",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1069",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
+              "roll_number": 313,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:313",
+              "source_url": "https://clerk.house.gov/evs/2025/roll313.xml",
+              "text_version": "2025-12-04"
+            },
+            "neutral_projection_sha256": "a2a5d68980d983dad157ba48f6a777e86f43b5de806802ac5a0d3388673fd209",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4.xml",
+              "sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4"
+            },
+            "source_id": "clerk:house:119:1:313",
+            "source_subject": "house:119:1:313",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll313.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:313",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1069",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 247 - 164 (Roll no. 313). (text: CR H5032)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "5eacbc091e4d8dc0b73b11e9b3661ec19edd097a8fb310cafcb14a89e9c686a2",
+              "roll_number": 313,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:313",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1069/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "4b7335bf82c11aae914c4f13ab726e792f0c2abce302bb84459fe51abba474c6",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/5eacbc091e4d8dc0b73b11e9b3661ec19edd097a8fb310cafcb14a89e9c686a2.json",
+              "sha256": "5eacbc091e4d8dc0b73b11e9b3661ec19edd097a8fb310cafcb14a89e9c686a2"
+            },
+            "source_id": "congress-actions:house:119:1:313",
+            "source_subject": "119:hr:1069",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1069/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:313",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1069",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 247 - 164 (Roll no. 313). (text: CR H5032)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff",
+              "roll_number": 313,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1069:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "dcf38558286e22d90c33dd5691e907709204917ac34a3cc7bcc7dbc3d1d9f395",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff.xml",
+              "sha256": "124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff"
+            },
+            "source_id": "congress-text:119:hr:1069:eh",
+            "source_subject": "119:hr:1069",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:314",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1049",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-12-04",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 314,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "159e1cf1b98947ee5db360bf24aa4cbf8c98458e5bd45f3ac2bfcac2aacfd605",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:314",
+            "congress-text:119:hr:1049:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:314"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1049:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:314",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1049",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
+              "roll_number": 314,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:314",
+              "source_url": "https://clerk.house.gov/evs/2025/roll314.xml",
+              "text_version": "2025-12-04"
+            },
+            "neutral_projection_sha256": "5d9506bf3ce2f2a1503c290eb04eff6e224f3ad786df9d9674fa075b645b0295",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536.xml",
+              "sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536"
+            },
+            "source_id": "clerk:house:119:1:314",
+            "source_subject": "house:119:1:314",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll314.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:314",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1049",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 247 - 166 (Roll no. 314). (text: CR 12/3/2025 H5008)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7eb5e1cbb34139c3bf0d20739bbf8d3073f172c6f09315d4f9c3ea4751928b30",
+              "roll_number": 314,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:314",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1049/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "241a833136c9bb9ff0ce070a54ddb292b35991024e08c216ffef21623af8a058",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7eb5e1cbb34139c3bf0d20739bbf8d3073f172c6f09315d4f9c3ea4751928b30.json",
+              "sha256": "7eb5e1cbb34139c3bf0d20739bbf8d3073f172c6f09315d4f9c3ea4751928b30"
+            },
+            "source_id": "congress-actions:house:119:1:314",
+            "source_subject": "119:hr:1049",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1049/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-12-04",
+              "action_id": "house:119:1:314",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1049",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 247 - 166 (Roll no. 314). (text: CR 12/3/2025 H5008)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "ca399a8aee0c92aff8a06455fd5834af2f70a53dedea95c27e1cfa334f3a7722",
+              "roll_number": 314,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1049:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "1725dadce86c8d5d963a412d8a7baedf0b6e1c4821b8f8ecb6e68ea4bf79bcdb",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/ca399a8aee0c92aff8a06455fd5834af2f70a53dedea95c27e1cfa334f3a7722.xml",
+              "sha256": "ca399a8aee0c92aff8a06455fd5834af2f70a53dedea95c27e1cfa334f3a7722"
+            },
+            "source_id": "congress-text:119:hr:1049:eh",
+            "source_subject": "119:hr:1049",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:315",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:s:356",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [
+          "Public Lands and Natural Resources remains the official primary policy area. The packet preserves the exact Secure Rural Schools extension within a federal-land and county-payment program, including school, road, community, and resource-project context; it cannot establish a general education-funding position."
+        ],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-12-09",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 315,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "eee1a54fdcc5fe4976a5c8d19eaec60a4552a6975f04c3ce943c508d01a3df2c",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:315",
+            "congress-text:119:s:356:es"
+          ],
+          "material_limitation_context_evidence": [
+            "congress-summary:119:s:356:public-law-v49"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:315"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:s:356:es"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-09",
+              "action_id": "house:119:1:315",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:s:356",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "On Motion to Suspend the Rules and Pass",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
+              "roll_number": 315,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:315",
+              "source_url": "https://clerk.house.gov/evs/2025/roll315.xml",
+              "text_version": "2025-12-09"
+            },
+            "neutral_projection_sha256": "fd6fccde576ff6544fde4e984757c58f64ba666edf00a64d0ce38e896f24146a",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736.xml",
+              "sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736"
+            },
+            "source_id": "clerk:house:119:1:315",
+            "source_subject": "house:119:1:315",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll315.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-09",
+              "action_id": "house:119:1:315",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:s:356",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Passed/agreed to in House: On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 399 - 5 (Roll no. 315). (text: CR H5066-5067)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "ad6014c00f5eb2ed230cd8876cdeb2348ac7865055362ab23136a55f9e550d8b",
+              "roll_number": 315,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:315",
+              "source_url": "https://api.congress.gov/v3/bill/119/s/356/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "ae6684a4787524626dd5a1fa754a56165e51ef70210d2a49032abd9a636b089e",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/ad6014c00f5eb2ed230cd8876cdeb2348ac7865055362ab23136a55f9e550d8b.json",
+              "sha256": "ad6014c00f5eb2ed230cd8876cdeb2348ac7865055362ab23136a55f9e550d8b"
+            },
+            "source_id": "congress-actions:house:119:1:315",
+            "source_subject": "119:s:356",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/s/356/actions"
+          },
+          {
+            "content_class": "stage_compatible_senate_origin_text",
+            "neutral_projection": {
+              "action_date": "2025-12-09",
+              "action_id": "house:119:1:315",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:s:356",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Engrossed in Senate; Passed/agreed to in House: On motion to suspend the rules and pass the bill Agreed to by the Yeas and Nays: (2/3 required): 399 - 5 (Roll no. 315). (text: CR H5066-5067)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "620dd2cbfaf6ed558e09e07087a4d49032edf7d8fc40f1681750ab810c8ddeeb",
+              "roll_number": 315,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:s:356:es",
+              "source_url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml",
+              "text_version": "es"
+            },
+            "neutral_projection_sha256": "e658ad1e28032653a06e509a06e825c0661248a2064c5b708f30c89bade0f6ef",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/620dd2cbfaf6ed558e09e07087a4d49032edf7d8fc40f1681750ab810c8ddeeb.xml",
+              "sha256": "620dd2cbfaf6ed558e09e07087a4d49032edf7d8fc40f1681750ab810c8ddeeb"
+            },
+            "source_id": "congress-text:119:s:356:es",
+            "source_subject": "119:s:356",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+          },
+          {
+            "content_class": "supplemental_program_context",
+            "neutral_projection": {
+              "action_date": "2025-12-09",
+              "action_id": "house:119:1:315",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:s:356",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Public Law",
+              "official_description": "<p><strong>Secure Rural Schools Reauthorization Act of 2025</strong></p><p>This act extends and modifies the Secure Rural Schools (SRS) program, under which states and counties containing certain federal land&nbsp;may receive payments from the Forest&nbsp;Service or the Bureau of Land Management (BLM) for schools, roads, and certain other municipal services.</p><p>The act modifies the SRS program, including by</p><ul><li>extending payments made to states and counties containing federal land through FY2026,</li><li>providing lapsed payments&nbsp;for FY2024 and FY2025,</li><li>extending&nbsp;the authority of counties to initiate projects using such funds through FY2028, and</li><li>extending the authority to initiate projects proposed by resource advisory committees through FY2028.</li></ul>",
+              "official_purpose": null,
+              "raw_provenance_sha256": "c6211be1fca0ac709e2c66bfeb2402185c6078802c7a2b1dd290c91af8453e36",
+              "roll_number": 315,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-summary:119:s:356:public-law-v49",
+              "source_url": "https://api.congress.gov/v3/bill/119/s/356/summaries",
+              "text_version": "official_crs_public_law_summary_v49"
+            },
+            "neutral_projection_sha256": "b7f2267c519349362d9bddc03861d9566b372363a12a5331dc252be47dc73d8b",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/c6211be1fca0ac709e2c66bfeb2402185c6078802c7a2b1dd290c91af8453e36.json",
+              "sha256": "c6211be1fca0ac709e2c66bfeb2402185c6078802c7a2b1dd290c91af8453e36"
+            },
+            "source_id": "congress-summary:119:s:356:public-law-v49",
+            "source_subject": "119:s:356",
+            "source_type": "congress_gov_bill_summary",
+            "source_url": "https://api.congress.gov/v3/bill/119/s/356/summaries"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:332",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:2550",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-12-11",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 332,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "af429df203b0cc666655b083b3667089f45437ac01cb3b058fa9300c2892cfe8",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:332",
+            "congress-text:119:hr:2550:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:332"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:2550:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-11",
+              "action_id": "house:119:1:332",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2550",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
+              "roll_number": 332,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:332",
+              "source_url": "https://clerk.house.gov/evs/2025/roll332.xml",
+              "text_version": "2025-12-11"
+            },
+            "neutral_projection_sha256": "f933941ab339cdc1b1aacafec5429a00e652dba254ab6ffff1f71a6577368cd4",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c.xml",
+              "sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c"
+            },
+            "source_id": "clerk:house:119:1:332",
+            "source_subject": "house:119:1:332",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll332.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-12-11",
+              "action_id": "house:119:1:332",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2550",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 231 - 195 (Roll no. 332). (text: CR H5795)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7264a54f2410a9cf9bb5c599fad8182a04aa7298786d365f2e9ddc4a46cf5b3c",
+              "roll_number": 332,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:332",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/2550/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "65ed0e7ba7eaef9c29488e4220f33e088dcc315922ee01ed87ed09524eb5cb97",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7264a54f2410a9cf9bb5c599fad8182a04aa7298786d365f2e9ddc4a46cf5b3c.json",
+              "sha256": "7264a54f2410a9cf9bb5c599fad8182a04aa7298786d365f2e9ddc4a46cf5b3c"
+            },
+            "source_id": "congress-actions:house:119:1:332",
+            "source_subject": "119:hr:2550",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/2550/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-12-11",
+              "action_id": "house:119:1:332",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2550",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 231 - 195 (Roll no. 332). (text: CR H5795)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b9fc201ee48f6b1a008e974163fe92c5d801670196b848bc91263309d7780dd5",
+              "roll_number": 332,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:2550:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "4da619216ea6eb244f358958e31ee4ea9693f7e7b3063d2fa96304596a57a35c",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b9fc201ee48f6b1a008e974163fe92c5d801670196b848bc91263309d7780dd5.xml",
+              "sha256": "b9fc201ee48f6b1a008e974163fe92c5d801670196b848bc91263309d7780dd5"
+            },
+            "source_id": "congress-text:119:hr:2550:eh",
+            "source_subject": "119:hr:2550",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:68",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1156",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-03-11",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 68,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "a23c3a8f72c69ab02382f7030543bc166c3760dd8cc670771c7d217d4e892068",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:68",
+            "congress-text:119:hr:1156:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:68"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1156:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-03-11",
+              "action_id": "house:119:1:68",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1156",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c",
+              "roll_number": 68,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:68",
+              "source_url": "https://clerk.house.gov/evs/2025/roll068.xml",
+              "text_version": "2025-03-11"
+            },
+            "neutral_projection_sha256": "f6ba3fcfd138bec0f3cd08cfb01b85e16ece26abbed0734e91f4461ab422e538",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c.xml",
+              "sha256": "bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c"
+            },
+            "source_id": "clerk:house:119:1:68",
+            "source_subject": "house:119:1:68",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll068.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-03-11",
+              "action_id": "house:119:1:68",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1156",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 295 - 127 (Roll no. 68). (text of amendment in the nature of a substitute: CR H1093-1094)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "dcc1121986821b4aa95bc966eb876702b7eba032b7ead11eb3a1bbb0ec8b09e3",
+              "roll_number": 68,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:68",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1156/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "a261cbbe17c72a51ad9c9354f3b26f892bf4e61633431a44253515d80fb41d0c",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/dcc1121986821b4aa95bc966eb876702b7eba032b7ead11eb3a1bbb0ec8b09e3.json",
+              "sha256": "dcc1121986821b4aa95bc966eb876702b7eba032b7ead11eb3a1bbb0ec8b09e3"
+            },
+            "source_id": "congress-actions:house:119:1:68",
+            "source_subject": "119:hr:1156",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1156/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-03-11",
+              "action_id": "house:119:1:68",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1156",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 295 - 127 (Roll no. 68). (text of amendment in the nature of a substitute: CR H1093-1094)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160",
+              "roll_number": 68,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1156:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "307a7f18b3ae47573f38c7d511b4b3d5e528fda4f2ecddb3b86c4e9e454c77ec",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160.xml",
+              "sha256": "b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160"
+            },
+            "source_id": "congress-text:119:hr:1156:eh",
+            "source_subject": "119:hr:1156",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:79",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hamdt:12",
+        "house_action_stage": "amendment",
+        "material_limitations": [
+          "Exact Congress.gov H.Amdt. 12 identity, recorded-roll binding, and amendment purpose are required; parent H.R. 1048 evidence alone is insufficient.",
+          "H.R. 1048 passage at roll 83 is a separate accepted action; no episode semantics are established by this packet."
+        ],
+        "mechanism_class": "amendment",
+        "official_action_date": "2025-03-27",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 79,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "e0cd9837c0bbc7cfc506f99a4fb0cc2587c787eff99b822bb97db073fbc6b75e",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-amendment:119:hamdt:12"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:79"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-amendment:119:hamdt:12"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-03-27",
+              "action_id": "house:119:1:79",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hamdt:12",
+              "house_action_stage": "amendment",
+              "member_action": "yea",
+              "official_action_description": "On Agreeing to the Amendment",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
+              "roll_number": 79,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:79",
+              "source_url": "https://clerk.house.gov/evs/2025/roll079.xml",
+              "text_version": "2025-03-27"
+            },
+            "neutral_projection_sha256": "bcfdceb9e1971f55c5388f2c535cd0da57de33321eb1064fa940f0dbfd7a7bb9",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea.xml",
+              "sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea"
+            },
+            "source_id": "clerk:house:119:1:79",
+            "source_subject": "house:119:1:79",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll079.xml"
+          },
+          {
+            "content_class": "exact_amendment_purpose",
+            "neutral_projection": {
+              "action_date": "2025-03-27",
+              "action_id": "house:119:1:79",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hamdt:12",
+              "house_action_stage": "amendment",
+              "member_action": "yea",
+              "official_action_description": "On agreeing to the Scott (VA) amendment (A003) Failed by recorded vote: 199 - 214 (Roll no. 79).",
+              "official_description": "An amendment numbered 3 printed in House Report 119-38 to amend Section 117 to streamline foreign gift and contract reporting, aligns reporting with other federal research security compliance requirements, establishes sanctions for noncompliance and requires the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.",
+              "official_purpose": "Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.",
+              "raw_provenance_sha256": "24b90090af4eeeb39a01bc5fdc0a2457ecafaceb59d48b467a959467b1f7a850",
+              "roll_number": 79,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-amendment:119:hamdt:12",
+              "source_url": "https://api.congress.gov/v3/amendment/119/hamdt/12?format=json",
+              "text_version": "official_amendment_purpose_or_description_v3"
+            },
+            "neutral_projection_sha256": "c01e054048a70c3f80837ef116f93cd1fc930916e36988352ebb03a90ef949db",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/24b90090af4eeeb39a01bc5fdc0a2457ecafaceb59d48b467a959467b1f7a850.json",
+              "sha256": "24b90090af4eeeb39a01bc5fdc0a2457ecafaceb59d48b467a959467b1f7a850"
+            },
+            "source_id": "congress-amendment:119:hamdt:12",
+            "source_subject": "119:hamdt:12",
+            "source_type": "congress_gov_amendment_index",
+            "source_url": "https://api.congress.gov/v3/amendment/119/hamdt/12?format=json"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:1:83",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:1048",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2025-03-27",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 83,
+        "session": 1,
+        "source_conflict": false,
+        "source_packet_sha256": "685992cd57786e30e0d8b3f3674c2146c4ab946de0d66460bd6cbde2a0cd2e2c",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:1:83",
+            "congress-text:119:hr:1048:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:1:83"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:1048:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2025-03-27",
+              "action_id": "house:119:1:83",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1048",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+              "roll_number": 83,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:1:83",
+              "source_url": "https://clerk.house.gov/evs/2025/roll083.xml",
+              "text_version": "2025-03-27"
+            },
+            "neutral_projection_sha256": "7c0ce496d9a64853ba8cca1568caa07c5a977721b2bcdce88b551dd88bfaae43",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a.xml",
+              "sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a"
+            },
+            "source_id": "clerk:house:119:1:83",
+            "source_subject": "house:119:1:83",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2025/roll083.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2025-03-27",
+              "action_id": "house:119:1:83",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1048",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 241 - 169 (Roll no. 83).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "697c8d3f0f768cb790750867a14b4d29755d7595c4e2f0f0b0982827f0e39d88",
+              "roll_number": 83,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:1:83",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/1048/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "a11c274e76cebd19bac82d333f7ac57867259db4347b9d16f87d0b7531e6b251",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/697c8d3f0f768cb790750867a14b4d29755d7595c4e2f0f0b0982827f0e39d88.json",
+              "sha256": "697c8d3f0f768cb790750867a14b4d29755d7595c4e2f0f0b0982827f0e39d88"
+            },
+            "source_id": "congress-actions:house:119:1:83",
+            "source_subject": "119:hr:1048",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/1048/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2025-03-27",
+              "action_id": "house:119:1:83",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:1048",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 241 - 169 (Roll no. 83).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b9e510321a69c69b86f5e888b46770b6a675ddbdc68c52533d7e356a446e5358",
+              "roll_number": 83,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:1048:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "54f5c1c661cfdc7d207989d38838562ee57175e036dd1e3c4db2e0f5cdc9ea3b",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b9e510321a69c69b86f5e888b46770b6a675ddbdc68c52533d7e356a446e5358.xml",
+              "sha256": "b9e510321a69c69b86f5e888b46770b6a675ddbdc68c52533d7e356a446e5358"
+            },
+            "source_id": "congress-text:119:hr:1048:eh",
+            "source_subject": "119:hr:1048",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:184",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:2616",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-05-20",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 184,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "cf56d039730867d274b2e0f1db34a6e92d000a8b9877f4e93b5c791f132ece80",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:184",
+            "congress-text:119:hr:2616:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:184"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:2616:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-05-20",
+              "action_id": "house:119:2:184",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2616",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b0ae836692bfc3b093b9cba3a8971d96fffb08d3fd0e40eb17a4e11dfb0fcfe2",
+              "roll_number": 184,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:184",
+              "source_url": "https://clerk.house.gov/evs/2026/roll184.xml",
+              "text_version": "2026-05-20"
+            },
+            "neutral_projection_sha256": "45aa13fd5a4b68c27edfde342cff82ff659f35a647b277fcf66cf79851b644d0",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b0ae836692bfc3b093b9cba3a8971d96fffb08d3fd0e40eb17a4e11dfb0fcfe2.xml",
+              "sha256": "b0ae836692bfc3b093b9cba3a8971d96fffb08d3fd0e40eb17a4e11dfb0fcfe2"
+            },
+            "source_id": "clerk:house:119:2:184",
+            "source_subject": "house:119:2:184",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll184.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-05-20",
+              "action_id": "house:119:2:184",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2616",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by recorded vote: 217 - 198 (Roll no. 184). (text of amendment in the nature of a substitute: CR H3652)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "30a7bf14b5f2ba933fc59103d6e7d670d9b1890c97a98d26839f1c4ca01abde4",
+              "roll_number": 184,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:184",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/2616/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "4122f00bd3ff981c10f6b3562e25a4bbd0c820848913e7c63aa276a87986772c",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/30a7bf14b5f2ba933fc59103d6e7d670d9b1890c97a98d26839f1c4ca01abde4.json",
+              "sha256": "30a7bf14b5f2ba933fc59103d6e7d670d9b1890c97a98d26839f1c4ca01abde4"
+            },
+            "source_id": "congress-actions:house:119:2:184",
+            "source_subject": "119:hr:2616",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/2616/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-05-20",
+              "action_id": "house:119:2:184",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2616",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by recorded vote: 217 - 198 (Roll no. 184). (text of amendment in the nature of a substitute: CR H3652)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "33a0f2450f7a7e38b9350c7431b4399321bfc17f292cc7932fa14c67003333e6",
+              "roll_number": 184,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:2616:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "eac005e54698233588959b1d397f5b3f7c462cdf228128016368b51efe50b926",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/33a0f2450f7a7e38b9350c7431b4399321bfc17f292cc7932fa14c67003333e6.xml",
+              "sha256": "33a0f2450f7a7e38b9350c7431b4399321bfc17f292cc7932fa14c67003333e6"
+            },
+            "source_id": "congress-text:119:hr:2616:eh",
+            "source_subject": "119:hr:2616",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:19",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:2262",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [
+          "Congress.gov exposes no House-engrossed bill text for the failed passage. The complete official GovInfo House-section Congressional Record is the operative-content source because it records adoption of the modified committee substitute, prints the complete amended H.R. 2262 operative text on H677-H678, and links delayed roll 19 on H692-H693."
+        ],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-01-13",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 19,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "690f5082f0d858db5eec817ea70bfc9ee50b9eab1575cd10fbffb15f3c8746d8",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:19",
+            "congressional-record:2026-01-13:house-section:H663-H719:hr2262"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:19"
+          ],
+          "operative_content_interpretation_input": [
+            "congressional-record:2026-01-13:house-section:H663-H719:hr2262"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-13",
+              "action_id": "house:119:2:19",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2262",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
+              "roll_number": 19,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:19",
+              "source_url": "https://clerk.house.gov/evs/2026/roll019.xml",
+              "text_version": "2026-01-13"
+            },
+            "neutral_projection_sha256": "6ba0e23b93dae0e5f7a260674429193653bdc277d789983cf188dfe5b852eb38",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f.xml",
+              "sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f"
+            },
+            "source_id": "clerk:house:119:2:19",
+            "source_subject": "house:119:2:19",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll019.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-13",
+              "action_id": "house:119:2:19",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2262",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Failed of passage/not agreed to in House On passage Failed by the Yeas and Nays: 209 - 215 (Roll no. 19).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7987ac3778996ff2e86375fc3de4dca1e38391cd585bb8a35e76263ac04d1ac6",
+              "roll_number": 19,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:19",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/2262/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "cb1569e80278b550f85b3c4a01f53a9831b070c48265008c8e1212db4611ace0",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7987ac3778996ff2e86375fc3de4dca1e38391cd585bb8a35e76263ac04d1ac6.json",
+              "sha256": "7987ac3778996ff2e86375fc3de4dca1e38391cd585bb8a35e76263ac04d1ac6"
+            },
+            "source_id": "congress-actions:house:119:2:19",
+            "source_subject": "119:hr:2262",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/2262/actions"
+          },
+          {
+            "content_class": "operative_floor_text",
+            "content_verification": {
+              "document_identity": "official_house_section_H663-H719_relevant_H677-H681_H692-H693",
+              "document_page_count": 57,
+              "document_page_labels": {
+                "first": "H663",
+                "last": "H719"
+              },
+              "extraction_engine": "pypdf",
+              "page_checks": [
+                {
+                  "evidence_role": "document_boundary_start",
+                  "pdf_page_number": 1,
+                  "record_page_label": "H663",
+                  "required_anchors": [
+                    "CONGRESSIONAL RECORD"
+                  ]
+                },
+                {
+                  "evidence_role": "exact_stage_adoption_and_operative_text_start",
+                  "pdf_page_number": 15,
+                  "record_page_label": "H677",
+                  "required_anchors": [
+                    "H.R. 2262",
+                    "Pursuant to House Resolution 988",
+                    "the amendment in the nature of a substitute recommended by the Committee on Education and Workforce",
+                    "modified by the amendment printed in part B of House Report 119–440",
+                    "is adopted and the bill, as amended, is considered read",
+                    "The text of the bill, as amended, is as follows",
+                    "SEC. 2. TREATMENT OF ATTENDANCE OR PARTICIPATION IN CERTAIN ACTIVITIES"
+                  ]
+                },
+                {
+                  "evidence_role": "operative_text_completion",
+                  "pdf_page_number": 16,
+                  "record_page_label": "H678",
+                  "required_anchors": [
+                    "outside of the employee's regular working hours",
+                    "such attendance or participation is voluntary",
+                    "the employee does not perform any work for the employer",
+                    "bona fide apprenticeship program",
+                    "hours worked on or after the date of enactment of this Act"
+                  ]
+                },
+                {
+                  "evidence_role": "final_passage_resumption",
+                  "pdf_page_number": 30,
+                  "record_page_label": "H692",
+                  "required_anchors": [
+                    "Proceedings will resume on questions previously postponed",
+                    "Passage of H.R. 2262, if ordered",
+                    "the unfinished business is the vote on the motion to recommit on the bill (H.R. 2262)",
+                    "[Roll No. 18]"
+                  ]
+                },
+                {
+                  "evidence_role": "roll19_final_passage_disposition",
+                  "pdf_page_number": 31,
+                  "record_page_label": "H693",
+                  "required_anchors": [
+                    "The question is on the passage of the bill",
+                    "[Roll No. 19]",
+                    "yeas 209, nays 215, not voting 7",
+                    "So the bill was not passed"
+                  ]
+                },
+                {
+                  "evidence_role": "document_boundary_end",
+                  "pdf_page_number": 57,
+                  "record_page_label": "H719",
+                  "required_anchors": [
+                    "CONGRESSIONAL RECORD — HOUSE"
+                  ]
+                }
+              ],
+              "relevant_record_ranges": [
+                "H677-H681",
+                "H692-H693"
+              ],
+              "schema_version": "operative_floor_text_content_verification_v1"
+            },
+            "neutral_projection": {
+              "action_date": "2026-01-13",
+              "action_id": "house:119:2:19",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2262",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Official GovInfo House-section record contains the modified committee substitute considered for H.R. 2262 at H677-H678, surrounding floor consideration at H678-H681, and delayed roll 19 at H692-H693.",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+              "roll_number": 19,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congressional-record:2026-01-13:house-section:H663-H719:hr2262",
+              "source_url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf",
+              "text_version": "official_house_section_H663-H719_relevant_H677-H681_H692-H693"
+            },
+            "neutral_projection_sha256": "139a0e1a9d7f8ee8f643b6fbc4de3cc2321059329618603d1db64c28a3039103",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v2/d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b.pdf",
+              "sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b"
+            },
+            "source_id": "congressional-record:2026-01-13:house-section:H663-H719:hr2262",
+            "source_subject": "119:hr:2262",
+            "source_type": "congressional_record",
+            "source_url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:216",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:5408",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-06-09",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 216,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "315616c841822da9bc661923092a552545300c4ea7792babc1e7af4b892cb737",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:216",
+            "congress-text:119:hr:5408:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:216"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:5408:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-06-09",
+              "action_id": "house:119:2:216",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:5408",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25",
+              "roll_number": 216,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:216",
+              "source_url": "https://clerk.house.gov/evs/2026/roll216.xml",
+              "text_version": "2026-06-09"
+            },
+            "neutral_projection_sha256": "3ece7a1af945a95125b2a67b6019a895f263fa7dc03da5756d29e2ed238f43fa",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25.xml",
+              "sha256": "cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25"
+            },
+            "source_id": "clerk:house:119:2:216",
+            "source_subject": "house:119:2:216",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll216.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-06-09",
+              "action_id": "house:119:2:216",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:5408",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 230 - 193 (Roll no. 216).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "537af415130b6516d6ae973b751461d16e071dd761c0d7ed47b92d1ae902f485",
+              "roll_number": 216,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:216",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/5408/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "48bf031e5fca488975d7bd25fdf7d3f1d3912cf4f25ede9e94cb18a60600c32c",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/537af415130b6516d6ae973b751461d16e071dd761c0d7ed47b92d1ae902f485.json",
+              "sha256": "537af415130b6516d6ae973b751461d16e071dd761c0d7ed47b92d1ae902f485"
+            },
+            "source_id": "congress-actions:house:119:2:216",
+            "source_subject": "119:hr:5408",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/5408/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-06-09",
+              "action_id": "house:119:2:216",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:5408",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 230 - 193 (Roll no. 216).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3",
+              "roll_number": 216,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:5408:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "cf2ec75270c69f12aba96c15103bc87d9783cc06a3d61a2db4c9226cf4d779d4",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3.xml",
+              "sha256": "c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3"
+            },
+            "source_id": "congress-text:119:hr:5408:eh",
+            "source_subject": "119:hr:5408",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:217",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:7892",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-06-10",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 217,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "477acdeb24dfa0f4d6ab7f24def9cc85ff81c509d69154f9dcdcefd9d31752cd",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:217",
+            "congress-text:119:hr:7892:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:217"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:7892:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-06-10",
+              "action_id": "house:119:2:217",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:7892",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "0c55522d8e62644af722c5297192ca15fe46d0743c9094905fef34be75a953d1",
+              "roll_number": 217,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:217",
+              "source_url": "https://clerk.house.gov/evs/2026/roll217.xml",
+              "text_version": "2026-06-10"
+            },
+            "neutral_projection_sha256": "14b7bc0b431d3fd18cd85d389149915506cd7e3cd4a3b0d3dbdfe233e0e7a4a8",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/0c55522d8e62644af722c5297192ca15fe46d0743c9094905fef34be75a953d1.xml",
+              "sha256": "0c55522d8e62644af722c5297192ca15fe46d0743c9094905fef34be75a953d1"
+            },
+            "source_id": "clerk:house:119:2:217",
+            "source_subject": "house:119:2:217",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll217.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-06-10",
+              "action_id": "house:119:2:217",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:7892",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 249 - 172 (Roll no. 217).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7a9e6e905cee4ebc22aab964c56cd8555a1cd0e0d58b4f53a870d95f0093f491",
+              "roll_number": 217,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:217",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/7892/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "cbee9e6abc66f6fa57fe911bafc87b406912bcda38488718f5361fc7ae6cab30",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7a9e6e905cee4ebc22aab964c56cd8555a1cd0e0d58b4f53a870d95f0093f491.json",
+              "sha256": "7a9e6e905cee4ebc22aab964c56cd8555a1cd0e0d58b4f53a870d95f0093f491"
+            },
+            "source_id": "congress-actions:house:119:2:217",
+            "source_subject": "119:hr:7892",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/7892/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-06-10",
+              "action_id": "house:119:2:217",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:7892",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 249 - 172 (Roll no. 217).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "505459262bad62b473d2b37c1b1dd1620122c0570d0f1a55c6abc567209e6b3a",
+              "roll_number": 217,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:7892:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "bb593aa180c1733ca52298fe4486c4ded362d37812071cde92b77dd959eea803",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/505459262bad62b473d2b37c1b1dd1620122c0570d0f1a55c6abc567209e6b3a.xml",
+              "sha256": "505459262bad62b473d2b37c1b1dd1620122c0570d0f1a55c6abc567209e6b3a"
+            },
+            "source_id": "congress-text:119:hr:7892:eh",
+            "source_subject": "119:hr:7892",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:31",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:2988",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-01-15",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 31,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "b1053f92cad3d99bc2edc0eaab7c6dccaf47c5d60ef61d7fa2a5c567abf25653",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:31",
+            "congress-text:119:hr:2988:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:31"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:2988:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-15",
+              "action_id": "house:119:2:31",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2988",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
+              "roll_number": 31,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:31",
+              "source_url": "https://clerk.house.gov/evs/2026/roll031.xml",
+              "text_version": "2026-01-15"
+            },
+            "neutral_projection_sha256": "a59e48c41c6d5055c6d4472affe8937cd7e02fe50e1f95ad6baa0f7caf9013e1",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d.xml",
+              "sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d"
+            },
+            "source_id": "clerk:house:119:2:31",
+            "source_subject": "house:119:2:31",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll031.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-15",
+              "action_id": "house:119:2:31",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2988",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 213 - 205 (Roll no. 31).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "e888a536923292adee1c50a8b78c97a29a234cfa29a9fed2411c5fa9b9cd079b",
+              "roll_number": 31,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:31",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/2988/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "3d87f066dacfbb651d3f85fad94ec0e31da06f03a7b83882c71a887faff87690",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/e888a536923292adee1c50a8b78c97a29a234cfa29a9fed2411c5fa9b9cd079b.json",
+              "sha256": "e888a536923292adee1c50a8b78c97a29a234cfa29a9fed2411c5fa9b9cd079b"
+            },
+            "source_id": "congress-actions:house:119:2:31",
+            "source_subject": "119:hr:2988",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/2988/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-01-15",
+              "action_id": "house:119:2:31",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:2988",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 213 - 205 (Roll no. 31).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b3ec8672e31a10c35954b1efdf1ff7980f1d7c4cccb328202d09baa8d387728c",
+              "roll_number": 31,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:2988:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "887d8e19a94e16b73c24c6c5330ae5f8abbf84dc73adc9512cc01b2efdec5ccf",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b3ec8672e31a10c35954b1efdf1ff7980f1d7c4cccb328202d09baa8d387728c.xml",
+              "sha256": "b3ec8672e31a10c35954b1efdf1ff7980f1d7c4cccb328202d09baa8d387728c"
+            },
+            "source_id": "congress-text:119:hr:2988:eh",
+            "source_subject": "119:hr:2988",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:47",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:6359",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-01-22",
+        "official_member_action": "nay",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 47,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "d3b78333a1ee27cbbbb91fc8e36754062db1e023310dec57595b836fbc4966c2",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:47",
+            "congress-text:119:hr:6359:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:47"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:6359:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-22",
+              "action_id": "house:119:2:47",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6359",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "On Passage",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
+              "roll_number": 47,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:47",
+              "source_url": "https://clerk.house.gov/evs/2026/roll047.xml",
+              "text_version": "2026-01-22"
+            },
+            "neutral_projection_sha256": "e6189567a5928d0e493fb69bb31ea16a87e9a48828c7938fb2c4f3cc1a559b6e",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b.xml",
+              "sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b"
+            },
+            "source_id": "clerk:house:119:2:47",
+            "source_subject": "house:119:2:47",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll047.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-01-22",
+              "action_id": "house:119:2:47",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6359",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Passed/agreed to in House: On passage Passed by the Yeas and Nays: 217 - 211 (Roll no. 47). (text of amendment in the nature of a substitute: CR H1325)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "df9fb68c9e7182e0913786f8ef421658bb25cff066baa3e522c415be21e563b9",
+              "roll_number": 47,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:47",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/6359/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "32ccf6b8f5b25b587c2b2dabe4fed536b2dabd4ddad5ff453914786936fbb993",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/df9fb68c9e7182e0913786f8ef421658bb25cff066baa3e522c415be21e563b9.json",
+              "sha256": "df9fb68c9e7182e0913786f8ef421658bb25cff066baa3e522c415be21e563b9"
+            },
+            "source_id": "congress-actions:house:119:2:47",
+            "source_subject": "119:hr:6359",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/6359/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-01-22",
+              "action_id": "house:119:2:47",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6359",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "nay",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On passage Passed by the Yeas and Nays: 217 - 211 (Roll no. 47). (text of amendment in the nature of a substitute: CR H1325)",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "c8f0fd76e18cf6ae3e8b0ff59f745bc44688ed9ea5d8e6d1ec89d0d4913655df",
+              "roll_number": 47,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:6359:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "6ea6ff1c1fa30fe14fb3e86e08f5d24e01af774b96130e7adc527384d60e479f",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/c8f0fd76e18cf6ae3e8b0ff59f745bc44688ed9ea5d8e6d1ec89d0d4913655df.xml",
+              "sha256": "c8f0fd76e18cf6ae3e8b0ff59f745bc44688ed9ea5d8e6d1ec89d0d4913655df"
+            },
+            "source_id": "congress-text:119:hr:6359:eh",
+            "source_subject": "119:hr:6359",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+          }
+        ]
+      },
+      {
+        "action_id": "house:119:2:82",
+        "approved_universe_member": true,
+        "blocker_codes": [],
+        "congress": 119,
+        "exact_action_identity": "119:hr:6472",
+        "house_action_stage": "final_passage_or_suspension_passage",
+        "material_limitations": [],
+        "mechanism_class": "whole_measure",
+        "official_action_date": "2026-03-04",
+        "official_member_action": "yea",
+        "readiness_criteria": {
+          "all_role_bindings_resolve": true,
+          "approved_universe_member": true,
+          "exact_action_identity": true,
+          "house_stage_compatible": true,
+          "member_action_exact": true,
+          "neutral_projection_closed": true,
+          "no_source_conflict": true,
+          "official_source_types_and_hosts": true,
+          "operative_content_present": true,
+          "operative_context_sufficient": true,
+          "operative_text_version_stage_compatible": true,
+          "raw_and_projection_digests_valid": true
+        },
+        "readiness_state": "ready_for_action_interpretation",
+        "roll_number": 82,
+        "session": 2,
+        "source_conflict": false,
+        "source_packet_sha256": "d6192a3dbaba97d8f1982a524fb5fd835b5e1940a6497c4618ce4f3bd12954e4",
+        "source_roles": {
+          "exact_action_identity_and_stage_evidence": [
+            "congress-actions:house:119:2:82",
+            "congress-text:119:hr:6472:eh"
+          ],
+          "member_action_evidence": [
+            "clerk:house:119:2:82"
+          ],
+          "operative_content_interpretation_input": [
+            "congress-text:119:hr:6472:eh"
+          ]
+        },
+        "sources": [
+          {
+            "content_class": "member_action_record",
+            "neutral_projection": {
+              "action_date": "2026-03-04",
+              "action_id": "house:119:2:82",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6472",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "On Motion to Suspend the Rules and Pass, as Amended",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "b5d0f3b2d908effd9bb99d704ac7673586e9513b2012ee7f475539f56ddf7234",
+              "roll_number": 82,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "clerk:house:119:2:82",
+              "source_url": "https://clerk.house.gov/evs/2026/roll082.xml",
+              "text_version": "2026-03-04"
+            },
+            "neutral_projection_sha256": "af47bb4cc02afb6aa3cac2b480d0272c9973199c3fb8a57ddfe490a0618bdb61",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/b5d0f3b2d908effd9bb99d704ac7673586e9513b2012ee7f475539f56ddf7234.xml",
+              "sha256": "b5d0f3b2d908effd9bb99d704ac7673586e9513b2012ee7f475539f56ddf7234"
+            },
+            "source_id": "clerk:house:119:2:82",
+            "source_subject": "house:119:2:82",
+            "source_type": "house_clerk_roll_call",
+            "source_url": "https://clerk.house.gov/evs/2026/roll082.xml"
+          },
+          {
+            "content_class": "exact_house_action_record",
+            "neutral_projection": {
+              "action_date": "2026-03-04",
+              "action_id": "house:119:2:82",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6472",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Passed/agreed to in House: On motion to suspend the rules and pass the bill, as amended Agreed to by the Yeas and Nays: (2/3 required): 351 - 72 (Roll no. 82).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "4989c3a71b4cf3885b035f3f2e91333ae2d80653b91b4ca672892895030e33c7",
+              "roll_number": 82,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-actions:house:119:2:82",
+              "source_url": "https://api.congress.gov/v3/bill/119/hr/6472/actions",
+              "text_version": "official_house_action_list_v3"
+            },
+            "neutral_projection_sha256": "b4c74434f0b7ce66003c61777b7dce714eacef31fd115ffd70d90031023d4311",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/4989c3a71b4cf3885b035f3f2e91333ae2d80653b91b4ca672892895030e33c7.json",
+              "sha256": "4989c3a71b4cf3885b035f3f2e91333ae2d80653b91b4ca672892895030e33c7"
+            },
+            "source_id": "congress-actions:house:119:2:82",
+            "source_subject": "119:hr:6472",
+            "source_type": "congress_gov_bill_actions",
+            "source_url": "https://api.congress.gov/v3/bill/119/hr/6472/actions"
+          },
+          {
+            "content_class": "operative_measure_text",
+            "neutral_projection": {
+              "action_date": "2026-03-04",
+              "action_id": "house:119:2:82",
+              "chamber": "house",
+              "congress": 119,
+              "exact_action_identity": "119:hr:6472",
+              "house_action_stage": "final_passage_or_suspension_passage",
+              "member_action": "yea",
+              "official_action_description": "Engrossed in House; Passed/agreed to in House: On motion to suspend the rules and pass the bill, as amended Agreed to by the Yeas and Nays: (2/3 required): 351 - 72 (Roll no. 82).",
+              "official_description": null,
+              "official_purpose": null,
+              "raw_provenance_sha256": "009e485ab2f6b9f869738f3c630b62842f68ee31ffa7704d5da691ff92f6dc48",
+              "roll_number": 82,
+              "schema_version": "neutral_interpretation_source_projection_v1",
+              "source_id": "congress-text:119:hr:6472:eh",
+              "source_url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml",
+              "text_version": "eh"
+            },
+            "neutral_projection_sha256": "6bbe4a59d2f466962fe6ef336f413b63212a344842d3acb70be142b013e6a497",
+            "raw_provenance": {
+              "governed_local_path": "docs/editorial/full_record_reviews/source_readiness/evidence/f000477_education_119_v1/009e485ab2f6b9f869738f3c630b62842f68ee31ffa7704d5da691ff92f6dc48.xml",
+              "sha256": "009e485ab2f6b9f869738f3c630b62842f68ee31ffa7704d5da691ff92f6dc48"
+            },
+            "source_id": "congress-text:119:hr:6472:eh",
+            "source_subject": "119:hr:6472",
+            "source_type": "congress_gov_bill_text",
+            "source_url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+          }
+        ]
+      }
+    ],
+    "action_set_sha256": "83b7b129eaa32d114c72782c70cb06dac55f7cd01c8681c8dc2ae2dca986cf5b",
+    "aggregate": {
+      "blocked_count": 0,
+      "counts_by_readiness_state": {
+        "ready_for_action_interpretation": 17
+      },
+      "ready_count": 17,
+      "total_action_count": 17
+    },
+    "chamber": "house",
+    "congress": 119,
+    "criteria_version": "full_record_interpretation_source_readiness_criteria_v1",
+    "issue_id": "EDUCATION_WORKFORCE",
+    "legislator_id": "leg_valerie_p_foushee",
+    "member_id": "F000477",
+    "member_name": "Valerie Foushee",
+    "official_cutoff": {
+      "end_date": "2026-07-23",
+      "latest_action_id": "house:119:2:283"
+    },
+    "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d"
+  }
+}

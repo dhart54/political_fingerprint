@@ -203,7 +203,7 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
         self.assertTrue(operative["source_url"].endswith("eh.xml"))
         self.assertEqual(self._state(record), "ready_for_action_interpretation")
 
-    def test_official_congressional_record_floor_text_is_ready(self) -> None:
+    def test_pdf_header_and_large_byte_count_cannot_establish_floor_text(self) -> None:
         record = self._ready_record()
         raw = self._raw("floor-record.pdf", b"%PDF-1.7\n" + b"x" * 2_000)
         projection = self._projection(source_id="operative")
@@ -218,7 +218,7 @@ class FullRecordSourceReadinessTests(unittest.TestCase):
             raw=raw,
             projection=projection,
         )
-        self.assertEqual(self._state(record), "ready_for_action_interpretation")
+        self.assertNotEqual(self._state(record), "ready_for_action_interpretation")
 
     def test_supplemental_summary_cannot_replace_operative_text(self) -> None:
         record = self._ready_record()
