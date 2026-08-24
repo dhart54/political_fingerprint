@@ -280,7 +280,7 @@ def validate_repository() -> dict[str, Any]:
         )
 
     current = load_json(CURRENT_STATE_PATH)
-    m12b_state = current["active_source_readiness_milestone"]
+    m12b_state = current["completed_m12b_source_readiness_milestone"]
     m12c_state = current["active_m12c_action_interpretation_milestone"]
     _require(
         m12b_state["milestone_state"] == "completed_independent_review_accepted"
