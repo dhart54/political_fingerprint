@@ -209,7 +209,7 @@
       "congress": 119,
       "issue_id": "EDUCATION_WORKFORCE"
     },
-    "milestone_state": "pending_independent_chatgpt_universe_selection_review",
+    "milestone_state": "completed_independent_review_approved",
     "selected_domain": "EDUCATION_WORKFORCE",
     "official_cutoff": "2026-07-23",
     "latest_official_roll": 283,
@@ -220,7 +220,8 @@
     "proposal_sha256": "9802afc93b06196ec3329a40dade7b5d0b111bd663141d53417d7442d8572169",
     "source_inventory_sha256": "66070d29ebe29e6ef3c17dc67c888b522d7043b36e5fd694d0093b4ce5be6fe7",
     "complete_official_action_inventory_sha256": "a21331a187b37d019e05df4e6be480aab22a9a0f213ce9e49f17556d2537c135",
-    "authority_status": "pending_independent_universe_selection_review",
+    "authority_status": "approved_content_bound",
+    "independent_governance_universe_boundary_approval": "approved",
     "downstream_authorizations": {
       "action_interpretation": false,
       "episode_acceptance": false,
@@ -235,7 +236,22 @@
     "source_inventory": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/source_inventory.json",
     "complete_inventory": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/complete_official_action_inventory.json",
     "review_packet": "docs/review_packets/m13a_next_full_record_issue_selection_v1.md",
-    "validator": "scripts/validate_m13a_next_full_record_issue_selection.py"
+    "authority_closeout_review_packet": "docs/review_packets/m13a_education_workforce_universe_authority_closeout_v1.md",
+    "validator": "scripts/validate_m13a_next_full_record_issue_selection.py",
+    "universe_authority_validator": "scripts/validate_m13a_universe_authority.py",
+    "universe_authority_receipt": "docs/editorial/full_record_reviews/f000477_education_workforce_119_full_issue_universe_authority_receipt_v1.json",
+    "universe_authority_receipt_identity": {
+      "id": "universe-authority:f000477:education_workforce:119:v1",
+      "sha256": "491b6de2314788f1566f8366f95a66b2375ec6d1271790a18387ba33cad70ea3",
+      "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d",
+      "approved_action_set_sha256": "83b7b129eaa32d114c72782c70cb06dac55f7cd01c8681c8dc2ae2dca986cf5b",
+      "reviewer_id": "chatgpt:political_fingerprint_authority_thread",
+      "reviewer_authority": "full_issue_universe_review_authority_v1",
+      "decision": "approved_complete_issue_universe",
+      "decision_timestamp": "2026-08-24T02:26:23Z",
+      "accepted_pr": 162,
+      "accepted_head": "45e3c572f1824d2e3b06292ba75c67dd6e46cfc0"
+    }
   },
   "active_scaling_milestone": {
     "milestone": "m12a_next_full_record_issue_selection_v1",

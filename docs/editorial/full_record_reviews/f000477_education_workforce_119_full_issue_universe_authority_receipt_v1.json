@@ -1,0 +1,212 @@
+{
+  "schema_version": "full_issue_universe_authority_receipt_v1",
+  "receipt_id": "universe-authority:f000477:education_workforce:119:v1",
+  "manifest_id": "full-universe-proposal:f000477:education_workforce:119:m13a:v1",
+  "manifest_sha256": "178918ec04b28600d5ab246cdc96956bbd06d22e46621da618df50361e9366c9",
+  "member_id": "F000477",
+  "issue_id": "EDUCATION_WORKFORCE",
+  "review_scope": "full_defined_issue_record",
+  "boundary": {
+    "sessions": [
+      1,
+      2
+    ],
+    "start_date": "2025-01-03",
+    "end_date": "2026-07-23",
+    "as_of_date": "2026-08-24",
+    "chambers": [
+      "house"
+    ],
+    "service_boundary": "Valerie Foushee (F000477) is represented as the serving NC-04 House member throughout the included 119th-Congress action dates; the governed official record covers House actions through July 23, 2026."
+  },
+  "boundary_sha256": "a26c9de28df4efd0c17e2f153a076b75481e5ccef2f60b7b076a700b1e440c0b",
+  "action_set_sha256": "83b7b129eaa32d114c72782c70cb06dac55f7cd01c8681c8dc2ae2dca986cf5b",
+  "action_count": 17,
+  "source_manifest_identities": [
+    "source-inventory:F000477:EDUCATION_WORKFORCE:119:m13a:v1"
+  ],
+  "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d",
+  "reviewer": {
+    "reviewer_id": "chatgpt:political_fingerprint_authority_thread",
+    "authority": "full_issue_universe_review_authority_v1"
+  },
+  "decision_timestamp": "2026-08-24T02:26:23Z",
+  "decision": "approved_complete_issue_universe",
+  "approval_binding": {
+    "authority_effect": "universe_membership_only",
+    "subject": {
+      "member_name": "Valerie Foushee",
+      "member_id": "F000477",
+      "legislator_id": "leg_valerie_p_foushee",
+      "chamber": "house",
+      "congress": 119,
+      "issue_id": "EDUCATION_WORKFORCE"
+    },
+    "selected_domain": "EDUCATION_WORKFORCE",
+    "official_cutoff": {
+      "end_date": "2026-07-23",
+      "latest_action_id": "house:119:2:283"
+    },
+    "complete_house_action_set": {
+      "artifact_id": "house-action-set:F000477:119:through-house:119:2:283:v1",
+      "action_count": 638,
+      "action_set_sha256": "a4d228a74004de61f78827ef85bd5a59cb4f5c3dddf9b55e9e3e154a44cd7fde"
+    },
+    "complete_official_inventory": {
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/complete_official_action_inventory.json",
+      "inventory_sha256": "a21331a187b37d019e05df4e6be480aab22a9a0f213ce9e49f17556d2537c135",
+      "file_sha256": "a111dd389e5fe49caeee9f54169d4ff265b97c3298701ff92d5e8ca3dde7680f"
+    },
+    "selection": {
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/domain_selection.json",
+      "sha256": "e877adf1cd5a1bff08c08ecb4ee1ee6acc1bbdff6d93899171e13480f6473f5a"
+    },
+    "universe_proposal": {
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/selected_domain_universe_proposal.json",
+      "file_sha256": "178918ec04b28600d5ab246cdc96956bbd06d22e46621da618df50361e9366c9",
+      "proposal_sha256": "9802afc93b06196ec3329a40dade7b5d0b111bd663141d53417d7442d8572169",
+      "universe_subject_sha256": "edc381362beb1e5700748ffe75fc12c31ae14f090887940197a50bf416aaac6d"
+    },
+    "approved_action_ids": [
+      "house:119:1:120",
+      "house:119:1:146",
+      "house:119:1:312",
+      "house:119:1:313",
+      "house:119:1:314",
+      "house:119:1:315",
+      "house:119:1:332",
+      "house:119:1:68",
+      "house:119:1:79",
+      "house:119:1:83",
+      "house:119:2:184",
+      "house:119:2:19",
+      "house:119:2:216",
+      "house:119:2:217",
+      "house:119:2:31",
+      "house:119:2:47",
+      "house:119:2:82"
+    ],
+    "exclusion_categories": {
+      "procedural_context": {
+        "artifact_id": "action-set:f000477:education_workforce:119:procedural_context:v1",
+        "action_count": 26,
+        "action_set_sha256": "a60cec34a0930acc82ec1d4fd9ca122f986ee243976537084e2868ae9a87d7ba",
+        "action_ids": [
+          "house:119:1:117",
+          "house:119:1:118",
+          "house:119:1:276",
+          "house:119:1:308",
+          "house:119:1:309",
+          "house:119:1:321",
+          "house:119:1:331",
+          "house:119:1:75",
+          "house:119:1:76",
+          "house:119:2:140",
+          "house:119:2:141",
+          "house:119:2:16",
+          "house:119:2:17",
+          "house:119:2:18",
+          "house:119:2:183",
+          "house:119:2:187",
+          "house:119:2:194",
+          "house:119:2:195",
+          "house:119:2:20",
+          "house:119:2:21",
+          "house:119:2:212",
+          "house:119:2:215",
+          "house:119:2:30",
+          "house:119:2:34",
+          "house:119:2:35",
+          "house:119:2:46"
+        ]
+      },
+      "expressive_nonbinding_context": {
+        "artifact_id": "action-set:f000477:education_workforce:119:expressive_nonbinding_context:v1",
+        "action_count": 0,
+        "action_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "action_ids": []
+      },
+      "exact_action_ineligible": {
+        "artifact_id": "action-set:f000477:education_workforce:119:exact_action_ineligible:v1",
+        "action_count": 7,
+        "action_set_sha256": "9df329628c675bf3e197c90f3b595f8dcdec2840628b9209244bc7085060037c",
+        "action_ids": [
+          "house:119:1:80",
+          "house:119:1:81",
+          "house:119:1:82",
+          "house:119:2:188",
+          "house:119:2:209",
+          "house:119:2:250",
+          "house:119:2:29"
+        ]
+      },
+      "boundary_review_required": {
+        "artifact_id": "action-set:f000477:education_workforce:119:boundary_review_required:v1",
+        "action_count": 0,
+        "action_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "action_ids": []
+      }
+    },
+    "accepted_boundary_constraints": {
+      "house:119:1:79": {
+        "constraint": "exact_amendment_identity_and_purpose_required",
+        "parent_measure_inference_sufficient": false,
+        "separate_same_parent_action": "house:119:1:83",
+        "episode_semantics_approved": false
+      },
+      "house:119:1:146": {
+        "primary_policy_area": "Commerce",
+        "membership_basis": "career and technical education students and graduates, workforce hiring, and career opportunities",
+        "exclusive_or_primary_education_classification": false
+      },
+      "house:119:1:315": {
+        "primary_policy_area": "Public Lands and Natural Resources",
+        "membership_basis": "Secure Rural Schools payments materially fund schools within a broader county and federal-land program",
+        "required_context": [
+          "county_payment_and_federal_land_program",
+          "school_funding_component",
+          "roads_community_and_resource_project_context",
+          "exact_extension_choice"
+        ],
+        "general_education_funding_position_authorized": false
+      }
+    },
+    "held_domain_boundaries": {
+      "ECONOMY_TAXES": {
+        "selection_ready": false,
+        "reason": "missing_exact_child_action_binding",
+        "action_ids": [
+          "house:119:1:100",
+          "house:119:1:190",
+          "house:119:1:285",
+          "house:119:2:5",
+          "house:119:2:6",
+          "house:119:2:53"
+        ],
+        "action_set_sha256": "5a1888650a083cbc9097fbc5141f7ab836c5384d6239e539690f38b246d4b7b6"
+      }
+    },
+    "source_inventory": {
+      "artifact_id": "source-inventory:F000477:EDUCATION_WORKFORCE:119:m13a:v1",
+      "artifact_path": "docs/editorial/cross_issue_full_record_expansion_m13a_v1/source_inventory.json",
+      "file_sha256": "9157183097ce1bb578b2ea09729e151f89f3ccc1f882da452df439cf8268672d",
+      "inventory_sha256": "66070d29ebe29e6ef3c17dc67c888b522d7043b36e5fd694d0093b4ce5be6fe7"
+    },
+    "accepted_pull_request": {
+      "number": 162,
+      "head_sha": "45e3c572f1824d2e3b06292ba75c67dd6e46cfc0"
+    },
+    "downstream_authorizations": {
+      "source_readiness": false,
+      "action_interpretation": false,
+      "episode_acceptance": false,
+      "semantic_ir": false,
+      "synthesis": false,
+      "public_wording": false,
+      "site_integration": false,
+      "publication": false,
+      "deployment": false,
+      "production_persistence": false
+    }
+  }
+}

@@ -41,7 +41,10 @@ EXPECTED = {
 PROTECTED_PATHS = (
     "docs/editorial/cross_issue_full_record_expansion_v1",
     "docs/editorial/cross_issue_full_record_expansion_m12a_v1",
-    "docs/editorial/full_record_reviews",
+)
+ALLOWED_FULL_RECORD_REVIEW_CHANGE = (
+    "docs/editorial/full_record_reviews/"
+    "f000477_education_workforce_119_full_issue_universe_authority_receipt_v1.json"
 )
 
 
@@ -274,6 +277,25 @@ def main() -> int:
     )
     require(
         result.returncode == 0, "accepted active-domain artifact regression detected"
+    )
+    review_diff = subprocess.run(
+        [
+            "git",
+            "diff",
+            "--name-only",
+            BASE,
+            "--",
+            "docs/editorial/full_record_reviews",
+        ],
+        cwd=ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    require(review_diff.returncode == 0, "full-record review diff inspection failed")
+    require(
+        set(review_diff.stdout.splitlines()) <= {ALLOWED_FULL_RECORD_REVIEW_CHANGE},
+        "accepted full-record review artifact regression detected",
     )
     print(
         json.dumps(

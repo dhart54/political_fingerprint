@@ -18,12 +18,13 @@ The machine-readable authority is
   added only Environment; Justice and National Security remained unchanged.
   All three are reviewed conclusions for `scope=119` and `scope=all`, while
   `scope=118` remains receipts-only.
-- M13A is the pending next-domain universe-selection review candidate. It
-  freshly re-evaluates all five non-active domains through House roll 283 and
-  proposes the closed 17-action Education & Workforce universe. Economy &
-  Taxes improved from 61 to six unresolved boundary actions but remains held
-  from selection because those exact child-action bindings are unavailable.
-  No interpretation or downstream work is authorized.
+- M13A established the independently accepted 17-action Education & Workforce
+  universe through House roll 283. Detached authority receipt
+  `universe-authority:f000477:education_workforce:119:v1` binds the exact
+  reviewed PR #162 head, proposal, complete inventory, source inventory, and
+  accepted action set. Economy & Taxes remains held on six unresolved exact
+  child-action bindings. The authority approves membership only; it does not
+  authorize interpretation or any later semantic or publication stage.
 - M12A established the accepted 63-action Environment & Energy universe through
   House roll 283 on July 23, 2026. Its detached authority receipt remains a
   membership-only boundary, and all 25 unresolved actions remain outside the
