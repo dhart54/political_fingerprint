@@ -62,8 +62,10 @@ def build_candidate() -> dict:
     write_set = _load(WRITE_SET_PATH)
     preflight = _load(PREFLIGHT_PATH)
     runtime_proof = _load(RUNTIME_PROOF_PATH)
-    validate_preflight(preflight, require_current_runtime=True)
-    validate_runtime_health_proof(runtime_proof, require_current_runtime=True)
+    # V2 is immutable governed history. Its frozen runtime remains reproducible,
+    # while production execution separately requires a fresh current-runtime proof.
+    validate_preflight(preflight)
+    validate_runtime_health_proof(runtime_proof)
     validate_write_set(write_set, authority=authority)
 
     metadata = write_set["publication_registry"]["publication_metadata"]

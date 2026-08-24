@@ -589,14 +589,20 @@ def eligible_site_integration_candidate(
 
 
 def active_site_integration_candidate(
-    rows: Iterable[dict[str, Any]], *, member_bioguide_id: str, issue_id: str
+    rows: Iterable[dict[str, Any]],
+    *,
+    member_bioguide_id: str,
+    issue_id: str,
+    allow_test_authority: bool = False,
 ) -> dict[str, Any] | None:
     matches = [
         candidate
         for row in rows
         if (
             candidate := eligible_site_integration_candidate(
-                row, member_bioguide_id=member_bioguide_id
+                row,
+                member_bioguide_id=member_bioguide_id,
+                allow_test_authority=allow_test_authority,
             )
         )
         is not None
