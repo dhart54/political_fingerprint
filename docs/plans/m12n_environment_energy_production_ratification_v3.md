@@ -68,7 +68,7 @@
 
 ## Deviations Or Corrections
 
-- None.
+- The first hosted disposable-PostgreSQL run stopped before activation because its governed preparation test still asserted the prior runtime-dependent authority/write-set subjects. Updated only those two expected identities to the freshly governed V3 preparation subjects; no behavior or write envelope changed.
 
 ## Validation Results
 
