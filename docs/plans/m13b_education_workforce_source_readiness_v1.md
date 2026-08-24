@@ -38,7 +38,7 @@ deployment, or production work.
 - [x] Every action has a deterministic action-by-action source-role inventory.
 - [x] Ready or blocked state is derived fail-closed for every action.
 - [x] Required stress cases retain their source and boundary limitations.
-- [ ] Deterministic regeneration, regressions, final diff, draft PR, and hosted
+- [x] Deterministic regeneration, regressions, final diff, draft PR, and hosted
   checks pass before the independent ChatGPT review stop.
 
 ## Result
@@ -51,3 +51,4 @@ deployment, or production work.
   `7f526f1ce37d9f2ec1acd5e092d04e091b8ad5340c56aff57d478f69e45533c7`.
 - Artifact SHA:
   `70157fa2f9d55683837d5a7e3ff92249cbf74d89def7a759e5eef4459474b198`.
+- Independent-review handoff: draft PR #163; no merge is authorized.
