@@ -139,7 +139,10 @@ def validate() -> dict[str, Any]:
         and set(state["intentionally_standalone_proposition_ids"])
         == set(PROPOSITION_IDS)
         and state["package_identity"]["sha256"] == EXPECTED_HASHES[PACKAGE_PATH]
-        and state["synthesis_acceptance"] is False
+        and state["synthesis_acceptance"] is True
+        and state["reviewed_pr"] == 168
+        and state["reviewed_head"] == "bbdb50e790ce8e8f8f9c242c8b763c9b1503701e"
+        and state["review_decision"] == "approved_no_safe_synthesis_state"
         and not any(state["downstream_authorizations"].values()),
         "M13I current-state identity or authority boundary differs",
     )

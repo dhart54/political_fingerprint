@@ -946,8 +946,15 @@
       "issue_id": "EDUCATION_WORKFORCE"
     },
     "post_m13g_merge_main": "38a1e6faa4d766104009129ee699f8ad323bd078",
-    "milestone_state": "draft_review_frontier_open",
-    "authority_effect": "detached_non_authorizing_no_safe_synthesis_state_only",
+    "milestone_state": "completed_independent_review_merged",
+    "authority_effect": "accepted_no_safe_synthesis_state_materialized_by_m13j",
+    "reviewed_pr": 168,
+    "reviewed_head": "bbdb50e790ce8e8f8f9c242c8b763c9b1503701e",
+    "review_decision": "approved_no_safe_synthesis_state",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_synthesis_review_authority_v1",
+    "review_decision_timestamp": "2026-08-24T21:35:00Z",
+    "post_merge_main": "b69dae58112adbf90db31c4037ddfaffe1a09551",
     "source_behavioral_proposition_count": 2,
     "synthesis_candidate_count": 0,
     "candidate_ids": [],
@@ -976,13 +983,97 @@
       "sha256": "170feeca382335c87ce41d3591978a02c6365380fbdaefcfed6d0c396024c7c3",
       "parity_subject_sha256": "83f8c44f7b85021e4af90e40f42eb5e856a4cbab22500be787b6b399ab0f771f"
     },
-    "synthesis_acceptance": false,
-    "public_wording_state": "absent_not_authorized",
+    "synthesis_acceptance": true,
+    "public_wording_state": "draft_candidates_opened_by_m13k",
     "publication_state": "inactive_unchanged",
     "production_writes": false,
     "downstream_authorizations": {
       "synthesis_acceptance": false,
       "public_wording": false,
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13j_synthesis_decision_milestone": {
+    "milestone": "m13j_education_workforce_no_safe_synthesis_acceptance_v1",
+    "plan": "docs/plans/m13jk_education_workforce_synthesis_acceptance_public_wording_v1.md",
+    "post_m13i_merge_main": "b69dae58112adbf90db31c4037ddfaffe1a09551",
+    "milestone_state": "completed_mechanical_acceptance_validated",
+    "review_decision": "approved_no_safe_synthesis_state",
+    "reviewer_identity": "chatgpt:political_fingerprint_authority_thread",
+    "reviewer_authority": "full_record_synthesis_review_authority_v1",
+    "review_decision_timestamp": "2026-08-24T21:35:00Z",
+    "canonical_internal_synthesis_state": "human_accepted_no_safe_synthesis",
+    "synthesis_record_count": 0,
+    "standalone_proposition_count": 2,
+    "accepted_episode_count": 16,
+    "authority": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_education_workforce_119_v1/human_synthesis_authority.json",
+      "id": "human-synthesis-authority:f000477:education_workforce:119:v1",
+      "sha256": "a048de2bbfca7cec6568177e01bbe8a00aab2fe66ec6fd919c563707794b9ce9",
+      "authority_subject_sha256": "0946cc0343a4f639f0801cfbf467c352612cbae0f8d4d3d9498668f5aed178aa"
+    },
+    "implementation": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_education_workforce_119_v1/synthesis_decision_implementation.json",
+      "id": "synthesis-decision-implementation:f000477:education_workforce:119:v1",
+      "sha256": "bf4189d585ff279fc295a2378468c686f5c23d1165fe1d1231cdc80f3c00f8be",
+      "implementation_subject_sha256": "5472c1bb20a598ed973b475dbcae9a6ea6a1ce98b891f9b09ba07491d97a72ed"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/synthesis_implementations/f000477_education_workforce_119_v1/implementation_parity_manifest.json",
+      "sha256": "8f30034672515c6ada5f3d9f82782e218d4932f66631ffeb18b27e69aabf258b",
+      "parity_subject_sha256": "d88a281a275b44f6935876967856ae81c93b817fad889c2722fa4a0528312734"
+    },
+    "public": false,
+    "production_selectable": false,
+    "downstream_authorizations": {
+      "publication": false,
+      "production_persistence": false,
+      "database_writes": false,
+      "production_writes": false,
+      "deployment": false
+    }
+  },
+  "active_m13k_public_wording_candidate_milestone": {
+    "milestone": "m13k_education_workforce_public_wording_candidates_v1",
+    "plan": "docs/plans/m13jk_education_workforce_synthesis_acceptance_public_wording_v1.md",
+    "review_packet": "docs/review_packets/m13jk_education_workforce_synthesis_acceptance_public_wording_v1.md",
+    "post_m13j_main": "b69dae58112adbf90db31c4037ddfaffe1a09551",
+    "milestone_state": "draft_review_frontier_open",
+    "wording_item_count": 3,
+    "surface_accounting": {
+      "issue_overview": 1,
+      "repeated_pattern": 1,
+      "notable_choice": 1,
+      "synthesis": 0
+    },
+    "package": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_education_workforce_119_v1/public_wording_candidate_package.json",
+      "id": "public-wording-candidates:f000477:education_workforce:119:v1",
+      "sha256": "084ba053f23a925ec92e8b621366817232dcb5a5083e944c490d5813d99f59ec",
+      "subject_sha256": "1d6980cdc8c822de7e158b917eb6bc4f15d08f2ac31731cadcecb2d6f83f4a4c"
+    },
+    "decision_template": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_education_workforce_119_v1/human_public_wording_decision_template.json",
+      "sha256": "87acea0f0f0ad83d956b5d7d9336575c670655e82f9a9c6534f4eba7452a890c",
+      "subject_sha256": "8b6e9d98222a84c43d4d1f62fe3371379455b7653b0909d8f2d46e5b86d271de"
+    },
+    "dossier": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_education_workforce_119_v1/human_review_dossier.md",
+      "sha256": "b9875087cfe768ddcabc7afddffb54d8a9deecbfdd7cfeae7e9c8110fdd77694"
+    },
+    "parity": {
+      "artifact": "docs/editorial/full_record_reviews/public_wording_candidates/f000477_education_workforce_119_v1/parity_manifest.json",
+      "sha256": "132389abd74a061985f2c25cf22a77e8298736a2f9da2ca7873b8da5564a6b3b",
+      "subject_sha256": "463acc2dbf88f4b0e49353ddb20b4161218d4eefa0fca588006aac68d1bc12f8"
+    },
+    "accepted": false,
+    "canonical_public_copy": false,
+    "production_selectable": false,
+    "downstream_authorizations": {
       "publication": false,
       "production_persistence": false,
       "database_writes": false,
