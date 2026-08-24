@@ -100,5 +100,20 @@
 ## Final Reconciliation
 
 - Definition of done satisfied: yes.
-- Remaining limitations: V3 remains non-authorizing and requires independent ratification review.
-- Recommended next step: independent review only; no activation.
+- The candidate-stage boundary above was subsequently superseded by the exact V3 ratification recorded at `2026-08-24T01:31:00Z`.
+
+## Ratified Activation Closeout
+
+- [x] Distinct V3 positive authority materialized with timestamp-only parity to prospective subject `ce14b7d8a5bc18bae87bf006e7cffe5fb4df233f590b20d7b54e42a44659f6d0`.
+- [x] Fresh execution proof retained deployed/health commit `c480dfabc2fcbd65bf5b22037200af509adb7b5b` and runtime manifest `a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a`.
+- [x] Fresh pre-write guard reproduced `5/149/161/2`, fingerprint `b22908fb081fa3dcefbb2e7326b0619b9f95fecc1bbebc76e783628dceddb0eb`, target `e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7`, and unchanged Justice/National Security identities.
+- [x] Forced-rollback dry-run produced the exact hypothetical `6/152/163/3` graph.
+- [x] Production apply inserted batch `20`, artifacts `239/240/241`, two relationships, and the single Environment registry row.
+- [x] Second governed apply returned `already_applied=true` with zero additional mutation.
+- [x] Live presentations, positions, and Environment evidence passed at 119/all/118, including H.R. 6387's non-directional status and exclusion from all support sets.
+- [x] Justice and National Security remained unchanged.
+- [x] All postchecks succeeded; the authorized rollback was not executed.
+
+Final state: Environment & Energy is production-active. Closeout artifacts are
+governed under the V3 activation directory; PR #161 merge and post-deployment
+smoke remain the only outstanding steps.

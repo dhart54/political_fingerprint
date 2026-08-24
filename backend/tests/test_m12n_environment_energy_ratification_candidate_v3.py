@@ -23,7 +23,6 @@ from scripts.materialize_m12n_environment_energy_activation_authority import (
 )
 from scripts.build_m12n_environment_energy_ratification_candidate_v3 import (
     FAILED_RUNTIME_MANIFEST,
-    OUTPUT_ROOT,
     POST_REPAIR_MAIN,
     REPAIRED_RUNTIME_MANIFEST,
     REVIEW_PACKET_PATH,
@@ -60,7 +59,6 @@ def test_v3_candidate_is_exact_and_non_authorizing() -> None:
         "current_runtime_manifest_sha256": REPAIRED_RUNTIME_MANIFEST,
         "reusable_for_v3_execution": False,
     }
-    assert not (OUTPUT_ROOT / "positive_activation_authority.json").exists()
 
 
 def test_v3_preserves_exact_presentation_and_bounded_write_envelope() -> None:

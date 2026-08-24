@@ -1,0 +1,39 @@
+{
+  "artifact_id": "activation-current-state:f000477:environment_energy:119:v3",
+  "current_state_subject_sha256": "8c08f9d63cc4af04a99df713d109a7f7ce77b2cc1c0581357fa5e8025aba54a5",
+  "immutable": true,
+  "schema_version": "m12n_activation_current_state_v3",
+  "subject": {
+    "activation_survived_postcheck": true,
+    "environment_publication_active": true,
+    "environment_selector_state": {
+      "118": "receipts_only",
+      "119": "reviewed_conclusion",
+      "all": "reviewed_conclusion"
+    },
+    "justice_preserved": true,
+    "national_security_preserved": true,
+    "production_counts": {
+      "artifacts": 152,
+      "batches": 6,
+      "publication_registry": 3,
+      "relationships": 163
+    },
+    "production_graph": {
+      "artifact_ids": [
+        239,
+        240,
+        241
+      ],
+      "batch_id": 20,
+      "registry_row_count": 1,
+      "relationship_count": 2
+    },
+    "rollback_executed": false,
+    "successful_activation_receipt_binding": {
+      "file_sha256": "c60b4245e083eba2458281947bf7f8ec8d7afd7a1ebd3b18c535c33e3d1f1602",
+      "receipt_id": "successful-production-activation-receipt:f000477:environment_energy:119:v3",
+      "subject_sha256": "3cecf265fd8e7b8e3265ad0d3804094fa4c2c2d3ea4508a8b1919c8f329e24f9"
+    }
+  }
+}

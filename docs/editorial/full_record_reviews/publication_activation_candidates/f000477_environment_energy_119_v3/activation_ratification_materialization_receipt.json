@@ -1,0 +1,36 @@
+{
+  "immutable": true,
+  "receipt_id": "activation-ratification-materialization-receipt:f000477:environment_energy:119:v3",
+  "receipt_subject_sha256": "abdef9450390b25111fc8f323046a44700b0438a0ba2f3a766d8d85cd3337958",
+  "schema_version": "m12n_activation_ratification_materialization_receipt_v3",
+  "subject": {
+    "materialized_authority": {
+      "accepted": true,
+      "artifact_id": "publication-activation-authority:f000477:environment_energy:119:v1",
+      "file_sha256": "dd59c886e84aad5e8d656a5b4ab0e59286ab14832d02d20cf3cdc82dfacfc19f",
+      "immutable": true,
+      "sealed": true,
+      "subject_sha256": "f2f53c3e94d9f6a41a46cea637581d17e04e642288d920f8389c9d535c475878"
+    },
+    "ratification": {
+      "decision": "approve_exact_publication_activation",
+      "decision_recorded_at_utc": "2026-08-24T01:31:00Z",
+      "reviewer": "chatgpt:political_fingerprint_authority_thread",
+      "reviewer_authority": "publication_activation_review_authority_v1"
+    },
+    "ratified_candidate": {
+      "artifact_id": "publication-activation-ratification-candidate:f000477:environment_energy:119:v3",
+      "file_sha256": "5ead0d70159314a1fbd101f60d89d141a319e44d9ae818a7bde29e8a1a94939a",
+      "prospective_authority_subject_sha256": "ce14b7d8a5bc18bae87bf006e7cffe5fb4df233f590b20d7b54e42a44659f6d0",
+      "pull_request": 161,
+      "reviewed_base": "c480dfabc2fcbd65bf5b22037200af509adb7b5b",
+      "reviewed_head": "ad5eeb97bd4ea62304d6a1471c7cc34935fdf05e"
+    },
+    "timestamp_only_parity": {
+      "removed_field": "decision_recorded_at_utc",
+      "removed_value": "2026-08-24T01:31:00Z",
+      "reproduces_ratified_prospective_subject": true,
+      "stripped_subject_sha256": "ce14b7d8a5bc18bae87bf006e7cffe5fb4df233f590b20d7b54e42a44659f6d0"
+    }
+  }
+}
