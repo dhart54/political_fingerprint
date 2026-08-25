@@ -11,6 +11,7 @@ from app.api.precomputed import (
 from app.api.editorial_presentations import (
     M11M_CANDIDATE_PATH,
     M12M_CANDIDATE_PATH,
+    M13M_CANDIDATE_PATH,
     _load_publication_rows,
 )
 from app.editorial_presentations.integration_candidate import (
@@ -26,6 +27,13 @@ from app.editorial_presentations.environment_integration_candidate import (
     load_environment_site_integration_candidate,
     merge_environment_preview_evidence,
     merge_environment_preview_positions,
+)
+from app.editorial_presentations.education_workforce_integration_candidate import (
+    M13M_ARTIFACT_ID,
+    M13M_PREVIEW_TOKEN,
+    load_education_workforce_site_integration_candidate,
+    merge_education_workforce_preview_evidence,
+    merge_education_workforce_preview_positions,
 )
 from app.editorial_presentations.receipt_projection import (
     attach_governed_receipt_projections,
@@ -66,6 +74,18 @@ def _m12m_preview(candidate: str | None) -> dict[str, object] | None:
         return None
 
 
+def _m13m_preview(candidate: str | None) -> dict[str, object] | None:
+    if not (
+        candidate == M13M_PREVIEW_TOKEN
+        and os.getenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW") == "1"
+    ):
+        return None
+    try:
+        return load_education_workforce_site_integration_candidate(M13M_CANDIDATE_PATH)
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
+
+
 def _active_site_integration_publication(
     *,
     member_bioguide_id: str,
@@ -99,6 +119,10 @@ def _merge_site_integration_evidence(
         return merge_environment_preview_evidence(
             base_response, candidate, domain=domain, scope=scope
         )
+    if artifact_id == M13M_ARTIFACT_ID:
+        return merge_education_workforce_preview_evidence(
+            base_response, candidate, domain=domain, scope=scope
+        )
     raise ValueError("unknown active site-integration candidate identity")
 
 
@@ -115,6 +139,10 @@ def _merge_site_integration_positions(
         )
     if artifact_id == M12M_ARTIFACT_ID:
         return merge_environment_preview_positions(
+            base_response, governed_evidence=governed_evidence
+        )
+    if artifact_id == M13M_ARTIFACT_ID:
+        return merge_education_workforce_preview_positions(
             base_response, governed_evidence=governed_evidence
         )
     raise ValueError("unknown active site-integration candidate identity")
@@ -146,7 +174,8 @@ def get_legislator_positions(
     legislator_id: str,
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
     candidate: str | None = Query(
-        default=None, pattern="^(m11m-national-security|m12m-environment-energy)$"
+        default=None,
+        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
     ),
 ) -> dict[str, object]:
     response = get_position_response(legislator_id=legislator_id, scope=scope)
@@ -159,12 +188,17 @@ def get_legislator_positions(
     previews = {
         "NATIONAL_SECURITY_FOREIGN": _m11m_preview(candidate),
         "ENVIRONMENT_ENERGY": _m12m_preview(candidate),
+        "EDUCATION_WORKFORCE": _m13m_preview(candidate),
     }
     try:
         publication_rows = _load_publication_rows()
     except Exception:  # pragma: no cover - active discovery stays fail-closed
         publication_rows = None
-    for issue_id in ("NATIONAL_SECURITY_FOREIGN", "ENVIRONMENT_ENERGY"):
+    for issue_id in (
+        "NATIONAL_SECURITY_FOREIGN",
+        "ENVIRONMENT_ENERGY",
+        "EDUCATION_WORKFORCE",
+    ):
         site_candidate = previews[issue_id]
         if site_candidate is None and publication_rows is not None:
             site_candidate = _active_site_integration_publication(
@@ -199,7 +233,8 @@ def get_legislator_position_evidence(
     domain: str,
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
     candidate: str | None = Query(
-        default=None, pattern="^(m11m-national-security|m12m-environment-energy)$"
+        default=None,
+        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
     ),
 ) -> dict[str, object]:
     normalized_scope = scope if isinstance(scope, str) else "all"
@@ -254,7 +289,11 @@ def get_legislator_position_evidence(
     preview = next(
         (
             item
-            for item in (_m11m_preview(candidate), _m12m_preview(candidate))
+            for item in (
+                _m11m_preview(candidate),
+                _m12m_preview(candidate),
+                _m13m_preview(candidate),
+            )
             if item is not None
             and item.get("subject", {}).get("issue_id") == normalized_domain
         ),

@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import json
+from datetime import datetime, timezone
 
 import pytest
 
+from app.editorial_artifacts.bundle import semantic_hash
 from app.editorial_presentations.environment_integration_candidate import (
     load_environment_site_integration_candidate,
 )
@@ -16,6 +18,7 @@ from scripts.foushee_environment_energy_publication_preparation import (
     M12M_PATH,
     RUNTIME_PROOF_PATH,
     WRITE_SET_PATH,
+    reviewed_runtime_manifest,
     validate_production_execution_runtime,
 )
 from scripts.materialize_m12n_environment_energy_activation_authority import (
@@ -28,10 +31,27 @@ from scripts.build_m12n_environment_energy_ratification_candidate_v3 import (
     REVIEW_PACKET_PATH,
     validate_candidate,
 )
+from scripts.materialize_m12n_environment_energy_activation_authority_v3 import (
+    POSITIVE_AUTHORITY_PATH as V3_POSITIVE_AUTHORITY_PATH,
+)
 
 
 def _load(path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _fresh_runtime_proof(*, commit: str, manifest_sha256: str) -> dict:
+    body = {
+        "schema_version": "m12n_live_runtime_health_proof_v1",
+        "captured_at_utc": datetime.now(timezone.utc).isoformat(),
+        "health_endpoint": "https://example.invalid/health",
+        "deployed_commit": commit,
+        "health_commit": commit,
+        "reviewed_runtime_manifest_sha256": manifest_sha256,
+        "health_payload_sha256": "9" * 64,
+    }
+    body["runtime_health_proof_subject_sha256"] = semantic_hash(body)
+    return body
 
 
 def test_v3_candidate_is_exact_and_non_authorizing() -> None:
@@ -121,6 +141,23 @@ def test_failed_authority_cannot_execute_on_v3_runtime() -> None:
         validate_production_execution_runtime(
             _load(POSITIVE_AUTHORITY_PATH), _load(RUNTIME_PROOF_PATH)
         )
+
+
+def test_frozen_v3_authority_cannot_execute_on_changed_current_runtime() -> None:
+    authority = _load(V3_POSITIVE_AUTHORITY_PATH)
+    accepted_manifest = authority["subject"]["runtime_binding"][
+        "reviewed_runtime_manifest_sha256"
+    ]
+    current_manifest = reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    assert accepted_manifest == REPAIRED_RUNTIME_MANIFEST
+    assert current_manifest != accepted_manifest
+
+    proof = _fresh_runtime_proof(
+        commit=authority["subject"]["runtime_binding"]["deployed_commit"],
+        manifest_sha256=current_manifest,
+    )
+    with pytest.raises(StoreSafetyError, match="runtime"):
+        validate_production_execution_runtime(authority, proof)
 
 
 def test_v3_review_packet_is_non_authorizing() -> None:
