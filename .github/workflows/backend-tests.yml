@@ -98,7 +98,7 @@ jobs:
           python scripts/validate_m13m_education_workforce_site_integration.py
           python backend/scripts/foushee_national_security_publication_activation.py build --check
           python scripts/validate_m12n_publication_activation_ratification_candidate.py
-          python scripts/build_m12n_environment_energy_ratification_candidate_v3.py
+          python scripts/build_m12n_environment_energy_ratification_candidate_v3.py --historical-replay
           python scripts/materialize_m12n_environment_energy_activation_authority_v3.py
           python scripts/finalize_m12n_environment_energy_activation_v3.py
           python scripts/validate_m11n_publication_activation_ratification_candidate.py

@@ -125,3 +125,101 @@ def test_m13m_api_requires_server_opt_in_and_exact_token(monkeypatch) -> None:
             client.get(path, params={"scope": "119", "candidate": "wrong"}).status_code
             == 422
         )
+
+
+def test_m13m_preview_off_keeps_public_presentations_exact(monkeypatch) -> None:
+    monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "0")
+    public_result = {
+        "legislator_id": "leg_valerie_p_foushee",
+        "scope": "119",
+        "presentations": [
+            {"issue_id": "JUSTICE_PUBLIC_SAFETY", "tier": "reviewed_conclusion"},
+            {"issue_id": "NATIONAL_SECURITY_FOREIGN", "tier": "reviewed_conclusion"},
+            {"issue_id": "ENVIRONMENT_ENERGY", "tier": "reviewed_conclusion"},
+            {"issue_id": "EDUCATION_WORKFORCE", "tier": "receipts_only"},
+        ],
+    }
+    with (
+        patch(
+            "app.api.editorial_presentations.get_legislator_profile",
+            return_value={"bioguide_id": "F000477"},
+        ),
+        patch(
+            "app.api.editorial_presentations._load_publication_rows",
+            return_value=[
+                {"issue_id": "JUSTICE_PUBLIC_SAFETY"},
+                {"issue_id": "NATIONAL_SECURITY_FOREIGN"},
+                {"issue_id": "ENVIRONMENT_ENERGY"},
+            ],
+        ),
+        patch(
+            "app.api.editorial_presentations.select_public_presentations",
+            return_value=public_result,
+        ),
+        patch(
+            "app.api.editorial_presentations."
+            "load_education_workforce_site_integration_candidate",
+            side_effect=AssertionError("preview candidate must remain unreachable"),
+        ),
+    ):
+        response = TestClient(app).get(
+            "/legislators/leg_valerie_p_foushee/editorial-presentations",
+            params={"scope": "119", "candidate": "m13m-education-workforce"},
+        )
+    assert response.status_code == 200
+    assert response.json() == public_result
+    assert education(response.json())["tier"] == "receipts_only"
+
+
+def test_m13m_preview_off_keeps_positions_and_evidence_exact(monkeypatch) -> None:
+    monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "0")
+    base_positions = {
+        "legislator_id": "leg_valerie_p_foushee",
+        "scope": "119",
+        "positions": [
+            {"issue_id": "JUSTICE_PUBLIC_SAFETY", "marker": "unchanged-justice"},
+            {
+                "issue_id": "NATIONAL_SECURITY_FOREIGN",
+                "marker": "unchanged-national-security",
+            },
+            {"issue_id": "ENVIRONMENT_ENERGY", "marker": "unchanged-environment"},
+        ],
+    }
+    base_evidence = {
+        "domain": "EDUCATION_WORKFORCE",
+        "scope": "119",
+        "evidence": [{"canonical_action_id": "ordinary-unreviewed-row"}],
+    }
+    candidate_params = {"scope": "119", "candidate": "m13m-education-workforce"}
+    with (
+        patch("app.api.positions.get_position_response", return_value=base_positions),
+        patch(
+            "app.api.positions.get_position_evidence_response",
+            return_value=base_evidence,
+        ),
+        patch(
+            "app.api.positions.get_legislator_profile",
+            return_value={"bioguide_id": "F000477"},
+        ),
+        patch("app.api.positions._load_publication_rows", return_value=[]),
+        patch(
+            "app.api.positions._has_governed_presentation_candidate",
+            return_value=False,
+        ),
+        patch(
+            "app.api.positions.load_education_workforce_site_integration_candidate",
+            side_effect=AssertionError("preview candidate must remain unreachable"),
+        ),
+    ):
+        client = TestClient(app)
+        positions = client.get(
+            "/legislators/leg_valerie_p_foushee/positions", params=candidate_params
+        )
+        evidence_response = client.get(
+            "/legislators/leg_valerie_p_foushee/positions/EDUCATION_WORKFORCE/evidence",
+            params=candidate_params,
+        )
+    assert positions.status_code == 200
+    assert positions.json() == base_positions
+    assert evidence_response.status_code == 200
+    assert evidence_response.json() == base_evidence

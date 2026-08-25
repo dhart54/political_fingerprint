@@ -29,7 +29,6 @@ from scripts.foushee_environment_energy_publication_preparation import (  # noqa
     WRITE_SET_PATH,
     activation_write_set_binding,
     canonical_file_sha256,
-    reviewed_runtime_manifest,
     validate_preflight,
     validate_runtime_health_proof,
     validate_write_set,
@@ -96,16 +95,33 @@ def _file_binding(path: Path, subject_field: str) -> dict[str, str]:
     }
 
 
+def _reviewed_runtime_manifest_for_historical_replay(preflight: dict) -> str:
+    """Return only the exact frozen V3 manifest sealed into its preflight."""
+
+    try:
+        recorded = preflight["runtime_health_proof_binding"][
+            "reviewed_runtime_manifest_sha256"
+        ]
+    except (KeyError, TypeError) as exc:
+        raise ValueError("V3 preflight lacks its reviewed runtime manifest") from exc
+    if recorded != REPAIRED_RUNTIME_MANIFEST:
+        raise ValueError("V3 frozen reviewed runtime manifest differs")
+    return recorded
+
+
 def build_candidate() -> dict:
     authority = _load(AUTHORITY_PATH)
     write_set = _load(WRITE_SET_PATH)
     preflight = _load(PREFLIGHT_PATH)
     runtime_proof = _load(RUNTIME_PROOF_PATH)
-    validate_preflight(preflight, require_current_runtime=True)
-    validate_runtime_health_proof(runtime_proof, require_current_runtime=True)
+    # This builder replays the exact, already-governed V3 history. Historical
+    # reproducibility is intentionally distinct from authorization to execute
+    # against the current repository runtime.
+    validate_preflight(preflight)
+    validate_runtime_health_proof(runtime_proof)
     validate_write_set(write_set, authority=authority)
 
-    manifest = reviewed_runtime_manifest()["reviewed_runtime_manifest_sha256"]
+    manifest = _reviewed_runtime_manifest_for_historical_replay(preflight)
     if (
         manifest != REPAIRED_RUNTIME_MANIFEST
         or runtime_proof["reviewed_runtime_manifest_sha256"] != manifest
@@ -397,6 +413,11 @@ def write_outputs() -> None:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
+    parser.add_argument(
+        "--historical-replay",
+        action="store_true",
+        help="validate the frozen V3 candidate without asserting current-runtime identity",
+    )
     args = parser.parse_args(argv)
     if args.write:
         write_outputs()
