@@ -26,8 +26,8 @@
 - [x] Unknown identities fail closed and no longer fall through to National Security.
 - [x] No-row baseline keeps Education receipts-only while Justice, National Security, and Environment remain unchanged.
 - [x] A synthetic exact future row projects 119/all as reviewed conclusions and 118 as receipts-only without wording changes.
-- [ ] M11N/M12N/M13M compatibility, runtime drift guards, semantic pipeline, formatting/lint/compile, PostgreSQL suites, and hosted CI pass.
-- [ ] Draft PR is open and unmerged; no production mutation or activation artifact exists.
+- [x] M11N/M12N/M13M compatibility, runtime drift guards, semantic pipeline, formatting/lint/compile, PostgreSQL suites, and hosted CI pass.
+- [x] Draft PR is open and unmerged; no production mutation or activation artifact exists.
 
 ## Baseline
 
@@ -50,7 +50,7 @@
 - [x] Runtime implementation
 - [x] Focused/adversarial tests
 - [x] Compatibility and release validation
-- [ ] Draft PR and hosted CI
+- [x] Draft PR and hosted CI
 
 ## Discoveries
 
@@ -73,6 +73,7 @@
 - Relevant local PostgreSQL suites: 2 skipped because no disposable database URLs are configured; hosted service-container jobs remain required.
 - Live read-only surface check: Justice, National Security, and Environment are `reviewed_conclusion`; Education is `receipts_only`. No production mutation was performed.
 - Two pre-existing `test_api_editorial_presentations.py` cases fail locally before publication selection because the local profile lookup returns 404 without the CI database fixture; the touched publication modules are not on those failing paths. Hosted CI is the authoritative environment for those cases.
+- Draft PR #171 exact-head hosted checks passed: Vercel, Vercel Preview Comments, amendment-evidence-contracts, foushee-full-record-benchmark, publication-activation-postgres, and receipt-evidence-repair-postgres.
 
 ## Production Writes
 
@@ -89,5 +90,5 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending.
+- Definition of done satisfied: yes. Runtime capability exists only in the draft PR; Education remains inactive and M13N activation preparation remains stopped.
 - Next step after acceptance: merge/deploy this runtime in a separately governed action, then restart M13N from that post-convergence main.
