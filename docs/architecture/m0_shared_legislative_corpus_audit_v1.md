@@ -6,7 +6,7 @@ This is a deterministic, offline, non-authorizing architecture audit. It does no
 
 `TARGET_PATH_PROVEN_REFACTOR_REQUIRED`
 
-Repository head: `d9e4d27b66253b20e1871d2e038f999fd212f565`. Expected baseline `74b054bfb8f138b8b6a31289f48995ceefcb0240` is an ancestor; the intervening Publication Activation Governance V2 change was inspected as a presentation-boundary fact and not reopened.
+Audited source baseline: `d9e4d27b66253b20e1871d2e038f999fd212f565`. Every governed input digest was verified against that exact main commit; feature-branch HEAD is intentionally excluded from semantic artifact identity.
 
 ## Current architecture finding
 
@@ -24,7 +24,7 @@ The canonical Editorial Semantic IR compiler already separates `shared_semantics
 | member exact-choice effect | member_specific | replace with projection |
 | policy episode identity and grouping | mixed | split |
 | member episode direction | member_specific | replace with projection |
-| policy families, mechanisms, and traits | shared | retain shared owner |
+| policy families and traits | shared | retain shared owner |
 | member coverage | member_specific | retain member-specific owner |
 | behavioral propositions | member_specific | retain member-specific owner |
 | synthesis/conclusion planning | member_specific | retain member-specific owner |
@@ -33,7 +33,11 @@ The canonical Editorial Semantic IR compiler already separates `shared_semantics
 
 ## Duplication and scale evidence
 
-The pilot contains 37 unique exact actions. The cached Clerk records contain 16001 resolved member-action projections across 449 members, a measured semantic-reuse multiplier of 432.459459. A shared corpus would avoid 15964 duplicate action-meaning authoring instances relative to naive per-member interpretation. No time or cost estimate is inferred.
+The pilot contains 37 unique exact actions. The cached Clerk records contain 16001 resolved member-action projections across 449 members, or 432.459459 structural member-action projections per shared action. Under an explicitly counterfactual per-member-authoring model, 15964 additional meaning instances could be duplicated. These are structural projection counts, not observed time, productivity, cost, or labor savings.
+
+## Migration review accounting
+
+New or changed shared meanings: 0; migration-parity shared meanings: 37. Novel shared issue relationships: 0; parity-only episode/action, policy-family/episode, policy-trait/action, and trait relationships: 35, 13, 19, and 1, respectively.
 
 ## Two-member proof
 
@@ -41,13 +45,15 @@ Member A is `F000477` (D); member B is `G000576` (R). The deterministic selector
 
 The canonical pipeline compiled both members in one run with one unchanged shared-semantics object. Proposition counts were `{"F000477": 24, "G000576": 24}` and synthesis counts were `{"F000477": 1, "G000576": 0}`. Hard assertion failures: 0.
 
+The real-corpus Present/Not Voting assertion is `not_applicable_no_pilot_example` with 0 pilot examples; the deterministic status-mapping test remains separate. Current accepted canonical conflicts: 0; any such conflict forces an incomplete verdict.
+
 ## Evidence-supported refactor boundary
 
-- Split member-scoped universe discovery so exact-action eligibility is shared and member coverage is projected.
-- Split operative-source readiness from member-action evidence readiness.
-- Split accepted exact-action meaning from official member status and deterministic choice effect.
-- Split shared episode identity/grouping from member episode direction.
-- Retain the canonical compiler and downstream review/presentation separation.
+- A — Shared Action Core: exact-action identity, accepted meaning, action/outcome, limitations, and governed operative-source identity. The legacy accepted projection has no mechanism field, so mechanism is explicitly unavailable rather than inferred from policy traits.
+- B — Shared Issue Mapping: domain eligibility, episodes, policy families, and separately typed policy traits.
+- C — Member Action Projection: official member status, service/evidence state, deterministic choice effect, and member-action Clerk source usage.
+- D — Member Analytical Result: compiled coverage, propositions, synthesis, and conclusion planning.
+- E — Reviewed Presentation: reviewed wording, presentation compilation/selection, and publication governance.
 
 ## Data gaps
 
@@ -66,8 +72,8 @@ None blocking. All 37 governed Clerk rolls and the accepted frozen compiler inpu
 | Synthesis/conclusion planning | retain as member-specific owner | consumes compiled member propositions |
 | Public wording | retain as member-specific reviewed owner | downstream wording cannot create meaning |
 | Public presentation/rendering | retain as separately reviewed owner | independent compiler, selector, and publication gates |
-| Legacy member-scoped reusable-meaning identities | retire after migration | member namespace changes reusable object identities |
+| Legacy member-scoped reusable-meaning identities | stop using for new work after migration | preserve all historical accepted artifacts and provenance; do not delete, rewrite, or invalidate them |
 
 Smallest coherent next sequence: (1) shared-corpus boundary/refactor; (2) interpretability completeness and review; (3) two-member end-to-end staging qualification; (4) later cross-member rollout. M0 does not authorize or implement any of those milestones.
 
-Proof subject SHA-256: `a7c10d8922b59b9f65c40ddc90668b00bccdadbe4c398018cd5a446b5cdd56e7`.
+Proof subject SHA-256: `095af59ee82cadaacb70e1ad98b1d1375d518b5f993f9616dd1e5d95af3eaee4`.

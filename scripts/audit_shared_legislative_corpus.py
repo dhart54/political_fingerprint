@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-EXPECTED_BASELINE = "74b054bfb8f138b8b6a31289f48995ceefcb0240"
+EXPECTED_BASELINE = "d9e4d27b66253b20e1871d2e038f999fd212f565"
 SCHEMA_VERSION = "m0_shared_legislative_corpus_audit_v1"
 PROOF_SCHEMA_VERSION = "m0_two_member_reuse_proof_v1"
 MEMBER_A = "F000477"
@@ -117,6 +117,26 @@ def file_digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def git_blob_digest(root: Path, revision: str, path: Path) -> str:
+    blob = subprocess.run(
+        ["git", "show", f"{revision}:{path.as_posix()}"],
+        cwd=root,
+        check=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    ).stdout
+    return hashlib.sha256(blob).hexdigest()
+
+
+def governed_source_identity(source: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "source_id": source["source_id"],
+        "source_type": source["source_type"],
+        "text_version": source.get("text_version"),
+        "raw_sha256": source.get("raw_sha256"),
+    }
+
+
 def load_json(root: Path, path: Path) -> dict[str, Any]:
     return json.loads((root / path).read_text(encoding="utf-8-sig"))
 
@@ -156,6 +176,20 @@ def choice_effect(status: str) -> str:
         "Not Voting": "resolved_non_directional",
         "Missing Evidence": "missing_evidence",
     }[status]
+
+
+def m0_verdict(
+    hard_assertions: Iterable[dict[str, Any]],
+    canonical_conflicts: Iterable[dict[str, Any]],
+) -> str:
+    has_failed_assertion = any(
+        row["status"] == "failed" for row in hard_assertions
+    )
+    return (
+        "TARGET_PATH_PROVEN_REFACTOR_REQUIRED"
+        if not has_failed_assertion and not list(canonical_conflicts)
+        else "INCOMPLETE_AUDIT"
+    )
 
 
 def parse_roll(path: Path) -> dict[str, Any]:
@@ -293,7 +327,7 @@ def architecture_map() -> list[dict[str, Any]]:
             "replace with projection",
         ),
         (
-            "policy families, mechanisms, and traits",
+            "policy families and traits",
             "shared",
             "Semantic IR shared_semantics policy_families/policy_traits",
             ["backend/app/semantic_ir/compiler.py:91 _validate_shared_semantics", "backend/app/semantic_ir/compiler.py:127", "docs/semantic_ir/editorial_semantic_ir_v1.md:78"],
@@ -431,7 +465,6 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     if str(root) not in sys.path:
         sys.path.insert(0, str(root))
     head = git(root, "rev-parse", "HEAD")
-    branch = git(root, "branch", "--show-current")
     if not git(root, "merge-base", "--is-ancestor", EXPECTED_BASELINE, head) == "":
         raise AssertionError("unexpected git merge-base output")
 
@@ -445,6 +478,27 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     compiler_input = compiler_wrapper["compiler_input"]
 
     action_ids = list(manifest["action_ids"])
+    audited_input_paths = [
+        *INPUT_PATHS,
+        *(roll_path(root, action_id).relative_to(root) for action_id in action_ids),
+    ]
+    baseline_input_digests = {
+        path.as_posix(): git_blob_digest(root, EXPECTED_BASELINE, path)
+        for path in audited_input_paths
+    }
+    changed = git(
+        root,
+        "diff",
+        "--name-only",
+        EXPECTED_BASELINE,
+        "--",
+        *(path.as_posix() for path in audited_input_paths),
+    ).splitlines()
+    if changed:
+        raise AssertionError(
+            "audited inputs differ from required main baseline "
+            f"{EXPECTED_BASELINE}: {sorted(changed)}"
+        )
     evidence_by_action = {
         row["action_id"]: row for row in evidence_maps_artifact["evidence_maps"]
     }
@@ -523,6 +577,22 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                     "locator": source.get("raw_path") or source["source_id"],
                 }
             )
+        governed_source_identities = sorted(
+            (governed_source_identity(source) for source in source_rows),
+            key=lambda source: source["source_id"],
+        )
+        governed_source_identity_sha256 = digest(governed_source_identities)
+        clerk_source_identities = [
+            source
+            for source in governed_source_identities
+            if source["source_type"] == "house_clerk_roll_call"
+        ]
+        operative_source_identities = [
+            source
+            for source in governed_source_identities
+            if source["source_type"] != "house_clerk_roll_call"
+        ]
+        member_action_source_sha256 = digest(clerk_source_identities)
 
         stage = decision["house_stage"]
         is_final_package_gap = (
@@ -546,33 +616,53 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         }
         projection = {
             "action_id": action_id,
-            "exact_action_identity": decision["exact_action_identity"],
-            "chamber": "house",
-            "congress": 119,
-            "session": int(action_id.split(":")[2]),
-            "roll": int(action_id.split(":")[3]),
-            "legislative_stage": stage,
-            "mechanism_class": shared.get("policy_trait_refs", []),
-            "action_date": evidence["official_action_date"],
-            "chamber_outcome": roll["outcome"],
-            "enactment_status": "not_inferred_from_house_outcome",
-            "domain_eligibility": copy.deepcopy(shared["eligibility"]),
-            "accepted_exact_action_meaning": decision[
-                "implemented_exact_action_meaning"
-            ],
-            "accepted_shared_limitations": copy.deepcopy(
-                decision["implemented_limitations"]
+            "shared_action_core": {
+                "exact_action_identity": decision["exact_action_identity"],
+                "chamber": "house",
+                "congress": 119,
+                "session": int(action_id.split(":")[2]),
+                "roll": int(action_id.split(":")[3]),
+                "legislative_stage": stage,
+                "mechanism_class": None,
+                "mechanism_availability": (
+                    "unavailable_in_legacy_accepted_projection"
+                ),
+                "action_date": evidence["official_action_date"],
+                "chamber_outcome": roll["outcome"],
+                "enactment_status": "not_inferred_from_house_outcome",
+                "accepted_exact_action_meaning": decision[
+                    "implemented_exact_action_meaning"
+                ],
+                "accepted_shared_limitations": copy.deepcopy(
+                    decision["implemented_limitations"]
+                ),
+                "action_outcome_source_identities": copy.deepcopy(
+                    clerk_source_identities
+                ),
+                "operative_meaning_source_identities": copy.deepcopy(
+                    operative_source_identities
+                ),
+                "package_component_boundary": package_boundary,
+                "source_contract_version": evidence_maps_artifact["schema_version"],
+                "meaning_contract_version": decision["schema_version"],
+                "action_meaning_ref": shared["action_meaning_ref"],
+            },
+            "shared_issue_mapping": {
+                "domain_eligibility": copy.deepcopy(shared["eligibility"]),
+                "episode_id": episode["episode_id"] if episode else None,
+                "policy_family_refs": sorted(
+                    family_by_episode.get(episode["episode_id"], [])
+                    if episode
+                    else []
+                ),
+                "policy_trait_refs": copy.deepcopy(
+                    shared.get("policy_trait_refs", [])
+                ),
+            },
+            "governed_source_identity_set": copy.deepcopy(
+                governed_source_identities
             ),
-            "official_sources": source_rows,
-            "package_component_boundary": package_boundary,
-            "episode_id": episode["episode_id"] if episode else None,
-            "policy_family_refs": sorted(
-                family_by_episode.get(episode["episode_id"], []) if episode else []
-            ),
-            "policy_trait_refs": copy.deepcopy(shared.get("policy_trait_refs", [])),
-            "source_contract_version": evidence_maps_artifact["schema_version"],
-            "meaning_contract_version": decision["schema_version"],
-            "action_meaning_ref": shared["action_meaning_ref"],
+            "governed_source_identity_sha256": governed_source_identity_sha256,
         }
         projection_digest = digest(projection)
         projections[action_id] = projection
@@ -580,7 +670,9 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             digest(
                 {
                     "action_id": action_id,
-                    "meaning": projection["accepted_exact_action_meaning"],
+                    "meaning": projection["shared_action_core"][
+                        "accepted_exact_action_meaning"
+                    ],
                     "source_ids": [row["source_id"] for row in source_rows],
                 }
             )
@@ -588,7 +680,9 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         action_index.append(
             {
                 "action_id": action_id,
-                "exact_action_identity": projection["exact_action_identity"],
+                "exact_action_identity": projection["shared_action_core"][
+                    "exact_action_identity"
+                ],
                 "legislative_stage": stage,
                 "current_artifact_paths": [
                     str(ACTION_IMPLEMENTATION).replace("\\", "/"),
@@ -597,12 +691,22 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                     str(roll_path(root, action_id).relative_to(root)).replace("\\", "/"),
                 ],
                 "current_artifact_digests": {
-                    "action_implementation": file_digest(root / ACTION_IMPLEMENTATION),
-                    "evidence_maps": file_digest(root / EVIDENCE_MAPS),
-                    "compiler_input": file_digest(root / COMPILER_INPUT),
-                    "clerk_roll": file_digest(roll_path(root, action_id)),
+                    "action_implementation": baseline_input_digests[
+                        ACTION_IMPLEMENTATION.as_posix()
+                    ],
+                    "evidence_maps": baseline_input_digests[
+                        EVIDENCE_MAPS.as_posix()
+                    ],
+                    "compiler_input": baseline_input_digests[
+                        COMPILER_INPUT.as_posix()
+                    ],
+                    "clerk_roll": baseline_input_digests[
+                        roll_path(root, action_id).relative_to(root).as_posix()
+                    ],
                 },
                 "accepted_meaning_unchanged": projection[
+                    "shared_action_core"
+                ][
                     "accepted_exact_action_meaning"
                 ],
                 "source_bindings": source_rows,
@@ -611,6 +715,21 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                 "member_a": {
                     "member_id": MEMBER_A,
                     "party": a_meta["party"],
+                    "action_id": action_id,
+                    "shared_projection_sha256": projection_digest,
+                    "governed_source_identity_set": copy.deepcopy(
+                        governed_source_identities
+                    ),
+                    "governed_source_identity_sha256": (
+                        governed_source_identity_sha256
+                    ),
+                    "member_action_source_identity_set": copy.deepcopy(
+                        clerk_source_identities
+                    ),
+                    "member_action_source_identity_sha256": (
+                        member_action_source_sha256
+                    ),
+                    "shared_meaning_binding": "reference_existing_shared_projection",
                     "official_status": a_status,
                     "service_status": "in_service",
                     "evidence_status": (
@@ -623,6 +742,21 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                 "member_b": {
                     "member_id": member_b_id,
                     "party": selected_b["party"],
+                    "action_id": action_id,
+                    "shared_projection_sha256": projection_digest,
+                    "governed_source_identity_set": copy.deepcopy(
+                        governed_source_identities
+                    ),
+                    "governed_source_identity_sha256": (
+                        governed_source_identity_sha256
+                    ),
+                    "member_action_source_identity_set": copy.deepcopy(
+                        clerk_source_identities
+                    ),
+                    "member_action_source_identity_sha256": (
+                        member_action_source_sha256
+                    ),
+                    "shared_meaning_binding": "reference_existing_shared_projection",
                     "official_status": b_status,
                     "service_status": "in_service",
                     "evidence_status": (
@@ -689,6 +823,59 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         )
         for member_id, member in compiled_members.items()
     }
+    isolated_compiled_members: dict[str, dict[str, Any]] = {}
+    isolated_shared_semantics_digests: dict[str, str] = {}
+    for member_input in (member_a_input, member_b_input):
+        isolated_input = copy.deepcopy(proof_input)
+        isolated_input["members"] = [copy.deepcopy(member_input)]
+        isolated_result = run_editorial_pipeline(
+            isolated_input,
+            prepare_persistence_proposal=False,
+            public_presentation_authoring=None,
+        )
+        member_id = member_input["member_id"]
+        isolated_compiled_members[member_id] = isolated_result.compiled_ir["members"][0]
+        isolated_shared_semantics_digests[member_id] = digest(
+            isolated_input["shared_semantics"]
+        )
+    member_action_differences = [
+        action_id
+        for action_id in action_ids
+        if next(
+            action for action in member_a_input["actions"] if action["action_id"] == action_id
+        )
+        != next(
+            action for action in member_b_input["actions"] if action["action_id"] == action_id
+        )
+    ]
+    compiled_member_result_digests = {
+        member_id: digest(compiled_member)
+        for member_id, compiled_member in compiled_members.items()
+    }
+    compiled_coverage_digests = {
+        member_id: digest(compiled_member["coverage"])
+        for member_id, compiled_member in compiled_members.items()
+    }
+    isolated_compilation_matches = {
+        member_id: isolated_compiled_members[member_id] == compiled_members[member_id]
+        for member_id in compiled_members
+    }
+    action_rows_by_id = {row["action_id"]: row for row in action_index}
+    member_inputs_match_official_overlays = {
+        member_input["member_id"]: all(
+            action_rows_by_id[action["action_id"]][member_key]["official_status"]
+            == action["status"]
+            and action_rows_by_id[action["action_id"]][member_key]["service_status"]
+            == action["service_status"]
+            and action_rows_by_id[action["action_id"]][member_key]["evidence_status"]
+            == action["evidence_status"]
+            for action in member_input["actions"]
+        )
+        for member_input, member_key in (
+            (member_a_input, "member_a"),
+            (member_b_input, "member_b"),
+        )
+    }
 
     candidate_count = len(member_records)
     overlap_distribution = Counter(len(records) for records in member_records.values())
@@ -748,7 +935,9 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             "sample_type": "education_member_scoped_diagnostic",
             "action_id": education_row["action_id"],
             "artifact_path": str(EDUCATION_IMPLEMENTATION).replace("\\", "/"),
-            "artifact_sha256": file_digest(root / EDUCATION_IMPLEMENTATION),
+            "artifact_sha256": baseline_input_digests[
+                EDUCATION_IMPLEMENTATION.as_posix()
+            ],
             "structure_only": {
                 "member_namespace_fields": sorted(
                     set(education_subject) & MEMBER_FIELDS
@@ -772,6 +961,14 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         }
     )
 
+    member_b_meanings_regenerated = sum(
+        row["member_b"]["shared_meaning_binding"]
+        != "reference_existing_shared_projection"
+        or row["member_b"]["shared_projection_sha256"]
+        != row["shared_projection_sha256"]
+        for row in action_index
+    )
+
     hard_assertions: list[dict[str, Any]] = []
 
     def assertion(
@@ -793,14 +990,26 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             }
         )
 
-    projection_digests = [row["shared_projection_sha256"] for row in action_index]
+    shared_reference_mismatches = [
+        row["action_id"]
+        for row in action_index
+        if not (
+            row["member_a"]["action_id"]
+            == row["member_b"]["action_id"]
+            == row["action_id"]
+            and row["member_a"]["shared_projection_sha256"]
+            == row["member_b"]["shared_projection_sha256"]
+            == row["shared_projection_sha256"]
+        )
+    ]
     assertion(
         "shared_digest_identical_for_both_members",
-        len(projection_digests) == len(action_ids),
-        len(projection_digests),
-        len(action_ids),
+        not shared_reference_mismatches,
+        {"mismatched_action_ids": shared_reference_mismatches},
+        {"mismatched_action_ids": []},
         [str(COMPILER_INPUT).replace("\\", "/"), str(ACTION_IMPLEMENTATION).replace("\\", "/")],
     )
+    projection_digests = [row["shared_projection_sha256"] for row in action_index]
     mutated_projection_digests = []
     for projection in projections.values():
         container = {"member_id": "MUTATED", "party": "X", "shared": projection}
@@ -821,16 +1030,35 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     )
     assertion(
         "member_b_meanings_regenerated_zero",
-        True,
-        0,
+        member_b_meanings_regenerated == 0,
+        member_b_meanings_regenerated,
         0,
         [str(ACTION_IMPLEMENTATION).replace("\\", "/")],
     )
+    overlay_binding_mismatches = [
+        row["action_id"]
+        for row in action_index
+        if not (
+            row["member_a"]["action_id"]
+            == row["member_b"]["action_id"]
+            == row["action_id"]
+            and row["member_a"]["governed_source_identity_set"]
+            == row["member_b"]["governed_source_identity_set"]
+            == row["shared_projection"]["governed_source_identity_set"]
+            and row["member_a"]["governed_source_identity_sha256"]
+            == row["member_b"]["governed_source_identity_sha256"]
+            == row["shared_projection"]["governed_source_identity_sha256"]
+            and row["member_a"]["member_action_source_identity_set"]
+            == row["member_b"]["member_action_source_identity_set"]
+            and row["member_a"]["member_action_source_identity_sha256"]
+            == row["member_b"]["member_action_source_identity_sha256"]
+        )
+    ]
     assertion(
         "both_overlays_bind_same_action_and_source_identities",
-        all(row["member_a"]["member_id"] != row["member_b"]["member_id"] for row in action_index),
-        len(action_index),
-        len(action_ids),
+        not overlay_binding_mismatches,
+        {"mismatched_action_ids": overlay_binding_mismatches},
+        {"mismatched_action_ids": []},
         [str(EVIDENCE_MAPS).replace("\\", "/")],
     )
     assertion(
@@ -848,15 +1076,27 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     )
     assertion(
         "present_and_not_voting_non_directional",
-        all(
+        non_directional_available is not None
+        and all(
             overlay["exact_choice_effect"] == "resolved_non_directional"
             for row in action_index
             for overlay in (row["member_a"], row["member_b"])
             if overlay["official_status"] in {"Present", "Not Voting"}
         ),
-        "all present/not-voting overlays are non-directional",
-        True,
+        {
+            "pilot_example_count": sum(
+                overlay["official_status"] in {"Present", "Not Voting"}
+                for row in action_index
+                for overlay in (row["member_a"], row["member_b"])
+            )
+        },
+        {"mapping": "Present/Not Voting -> resolved_non_directional"},
         ["backend/app/semantic_ir/compiler.py:14-18", "docs/workflows/editorial-standardization-pipeline.md:181"],
+        status_if_false=(
+            "not_applicable_no_pilot_example"
+            if non_directional_available is None
+            else "failed"
+        ),
     )
     assertion(
         "member_action_cannot_change_shared_semantics",
@@ -870,7 +1110,9 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         set(episode_by_action) == set(action_ids) - {
             row["action_id"]
             for row in action_index
-            if row["shared_projection"]["domain_eligibility"]["decision"] != "accepted"
+            if row["shared_projection"]["shared_issue_mapping"][
+                "domain_eligibility"
+            ]["decision"] != "accepted"
         },
         len(compiler_input["shared_semantics"]["episodes"]),
         len(compiler_input["shared_semantics"]["episodes"]),
@@ -878,15 +1120,41 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     )
     assertion(
         "compiled_differences_trace_to_member_actions",
-        proof_input["shared_semantics"] == compiler_input["shared_semantics"],
-        {"propositions": proposition_counts, "synthesis": synthesis_counts},
-        "one shared object; member outputs derived from distinct official action arrays",
+        canonical_bytes(proof_input["shared_semantics"])
+        == canonical_bytes(compiler_input["shared_semantics"])
+        and len(set(isolated_shared_semantics_digests.values())) == 1
+        and bool(member_action_differences)
+        and digest(member_a_input["actions"]) != digest(member_b_input["actions"])
+        and all(member_inputs_match_official_overlays.values())
+        and all(isolated_compilation_matches.values())
+        and len(set(compiled_member_result_digests.values())) > 1,
+        {
+            "shared_semantics_sha256_by_isolated_run": (
+                isolated_shared_semantics_digests
+            ),
+            "distinct_official_member_action_ids": member_action_differences,
+            "member_action_array_sha256": {
+                MEMBER_A: digest(member_a_input["actions"]),
+                member_b_id: digest(member_b_input["actions"]),
+            },
+            "member_inputs_match_official_clerk_overlays": (
+                member_inputs_match_official_overlays
+            ),
+            "isolated_compilation_matches_multi_member_run": (
+                isolated_compilation_matches
+            ),
+            "compiled_member_result_sha256": compiled_member_result_digests,
+            "compiled_coverage_sha256": compiled_coverage_digests,
+        },
+        "byte-identical shared semantics; distinct official member-action/coverage inputs; isolated member compilations equal the corresponding multi-member results",
         ["backend/app/semantic_ir/pipeline.py:37-85", "backend/app/semantic_ir/compiler.py:457-925"],
     )
     assertion(
         "package_votes_not_projected_to_components",
         all(
-            not row["shared_projection"]["package_component_boundary"][
+            not row["shared_projection"]["shared_action_core"][
+                "package_component_boundary"
+            ][
                 "parent_package_meaning_projected"
             ]
             for row in action_index
@@ -898,7 +1166,7 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
     assertion(
         "failed_proposals_not_enacted_effects",
         all(
-            row["shared_projection"]["enactment_status"]
+            row["shared_projection"]["shared_action_core"]["enactment_status"]
             == "not_inferred_from_house_outcome"
             for row in action_index
         ),
@@ -916,13 +1184,6 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         "all overlay evidence states typed",
         True,
         ["docs/workflows/editorial-standardization-pipeline.md:229-244"],
-    )
-
-    hard_failures = [row for row in hard_assertions if row["status"] == "failed"]
-    verdict = (
-        "TARGET_PATH_PROVEN_REFACTOR_REQUIRED"
-        if not hard_failures
-        else "INCOMPLETE_AUDIT"
     )
 
     # Lifecycle duplication is measured without treating historical candidates as
@@ -1003,6 +1264,18 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             )
             for row in accepted_rows
         }
+        accepted_meanings_by_source_identity: dict[str, set[str]] = defaultdict(set)
+        for row in accepted_rows:
+            accepted_meanings_by_source_identity[
+                digest(row["source_references"])
+            ].add(digest(row["meaning"]))
+        conflicting_accepted_source_identity_digests = sorted(
+            source_identity_digest
+            for source_identity_digest, meaning_digests in (
+                accepted_meanings_by_source_identity.items()
+            )
+            if len(meaning_digests) > 1
+        )
         repeated_action_details.append(
             {
                 "action_id": action_id,
@@ -1010,6 +1283,10 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                 "source_packet_count": 1,
                 "meaning_record_count": len(lifecycle_meanings),
                 "meaning_source_digests": meaning_source_digests,
+                "current_accepted_meaning_source_digests": sorted(accepted_digests),
+                "conflicting_accepted_source_identity_digests": (
+                    conflicting_accepted_source_identity_digests
+                ),
                 "all_lifecycle_wording_and_sources_identical": len(
                     set(meaning_source_digests)
                 )
@@ -1029,29 +1306,57 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
                     else "no accepted episode copy for this rejected/control action"
                 ),
                 "difference_classification": (
-                    "candidate-to-accepted revision only; no conflict among current accepted projections"
+                    "current accepted conflict"
+                    if conflicting_accepted_source_identity_digests
+                    else "candidate-to-accepted revision only; no conflict among current accepted projections"
                     if len(set(meaning_source_digests)) > 1
-                    and len(accepted_digests) == 1
                     else "no substantive lifecycle difference"
-                    if len(set(meaning_source_digests)) == 1
-                    else "current accepted conflict"
                 ),
             }
         )
 
+    conflicting_current_meanings = [
+        {
+            "action_id": row["action_id"],
+            "accepted_meaning_source_digests": row[
+                "current_accepted_meaning_source_digests"
+            ],
+            "conflicting_source_identity_digests": row[
+                "conflicting_accepted_source_identity_digests"
+            ],
+            "classification": row["difference_classification"],
+        }
+        for row in repeated_action_details
+        if row["difference_classification"] == "current accepted conflict"
+    ]
+    canonical_conflicts = copy.deepcopy(conflicting_current_meanings)
+    assertion(
+        "no_conflicting_current_meanings_same_action_source_version",
+        not canonical_conflicts,
+        canonical_conflicts,
+        [],
+        [
+            str(ACTION_IMPLEMENTATION).replace("\\", "/"),
+            str(EPISODE_IMPLEMENTATION).replace("\\", "/"),
+            str(COMPILER_INPUT).replace("\\", "/"),
+        ],
+    )
+    hard_failures = [row for row in hard_assertions if row["status"] == "failed"]
+    verdict = m0_verdict(hard_assertions, canonical_conflicts)
+
     architecture = {
         "schema_version": SCHEMA_VERSION,
-        "repository_head": head,
+        "audited_source_baseline": EXPECTED_BASELINE,
         "expected_baseline": EXPECTED_BASELINE,
-        "worktree_state": {
-            "starting_main_head": head,
-            "branch": branch,
+        "source_baseline_binding": {
+            "git_commit": EXPECTED_BASELINE,
+            "audited_input_tree_sha256": digest(baseline_input_digests),
+            "audited_input_digests": baseline_input_digests,
+            "current_worktree_inputs_match_baseline": True,
             "started_from_clean_main_worktree": True,
             "expected_baseline_is_ancestor": True,
-            "intervening_relevant_change": (
-                "Publication Activation Governance V2 affects only the separately "
-                "reviewed presentation/publication boundary and was not modified"
-            ),
+            "implementation_head_is_non_semantic_execution_metadata": True,
+            "implementation_head_recorded_in_artifact": False,
         },
         "files_inspected": sorted(
             {
@@ -1103,7 +1408,9 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             ),
             "exact_duplicate_current_meanings": len(action_ids)
             - len(accepted_current_meaning_digests),
-            "conflicting_current_meanings_same_action_source_version": [],
+            "conflicting_current_meanings_same_action_source_version": (
+                conflicting_current_meanings
+            ),
             "source_packets_per_action": {action_id: 1 for action_id in action_ids},
             "repeated_action_file_counts_across_lifecycle": repeated_action_file_counts,
             "repeated_action_details": repeated_action_details,
@@ -1163,17 +1470,18 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             },
         ],
         "target_layer_mapping": [
-            {"layer": "A", "name": "Shared Legislative Corpus", "current_fit": "compiler shared_semantics proves the shape; upstream artifacts remain mixed"},
-            {"layer": "B", "name": "Member Action Projection", "current_fit": "Clerk XML plus compiler member actions already support deterministic projection"},
-            {"layer": "C", "name": "Member Analytical Result", "current_fit": "canonical compiler derives coverage and propositions per member"},
-            {"layer": "D", "name": "Reviewed Presentation", "current_fit": "separate presentation compiler/review/publication gates exist"},
+            {"layer": "A", "name": "Shared Action Core", "current_fit": "exact-action identity, accepted action meaning, action/outcome, and governed operative-source identities are reusable; the legacy projection has no accepted mechanism field"},
+            {"layer": "B", "name": "Shared Issue Mapping", "current_fit": "domain eligibility, episodes, policy families, and policy traits are already represented in compiler shared_semantics but remain mixed upstream"},
+            {"layer": "C", "name": "Member Action Projection", "current_fit": "Clerk member-action evidence plus compiler member actions already support deterministic projection separate from Clerk action/outcome use"},
+            {"layer": "D", "name": "Member Analytical Result", "current_fit": "canonical compiler derives coverage and propositions per member"},
+            {"layer": "E", "name": "Reviewed Presentation", "current_fit": "separate presentation compiler, review, selector, and publication gates exist"},
         ],
         "required_refactors": [
             {"owner": "universe discovery", "decision": "split into shared and member artifacts", "reason": "domain eligibility cannot remain keyed by member inventory at cross-member scale"},
             {"owner": "source readiness", "decision": "split into shared and member artifacts", "reason": "operative legislative readiness and member action evidence have different reuse scopes"},
             {"owner": "action interpretation", "decision": "split into shared and member artifacts", "reason": "meaning and official_member_action/position effect coexist"},
             {"owner": "policy episode construction", "decision": "split into shared and member artifacts", "reason": "episode identity/grouping and member direction coexist"},
-            {"owner": "legacy member-scoped identities", "decision": "retire after migration", "reason": "member namespace currently changes identities for reusable meaning"},
+            {"owner": "legacy member-scoped identities", "decision": "stop using for new work after migration", "reason": "preserve historical accepted artifacts and provenance without rewriting, deleting, or invalidating them"},
         ],
         "reusable_existing_components": [
             "session-aware exact action identity",
@@ -1184,7 +1492,7 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             "meaning-preserving review/presentation adapters",
             "separate publication governance",
         ],
-        "canonical_conflicts": [],
+        "canonical_conflicts": canonical_conflicts,
         "data_availability": {
             "pilot_action_count": len(action_ids),
             "governed_local_clerk_rolls": len(action_ids),
@@ -1204,11 +1512,12 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
 
     proof: dict[str, Any] = {
         "schema_version": PROOF_SCHEMA_VERSION,
-        "repository_head": head,
+        "audited_source_baseline": EXPECTED_BASELINE,
+        "source_baseline_binding_sha256": digest(baseline_input_digests),
         "pilot_domain": PILOT_DOMAIN,
         "pilot_universe_binding": {
             "manifest_path": str(MANIFEST).replace("\\", "/"),
-            "manifest_sha256": file_digest(root / MANIFEST),
+            "manifest_sha256": baseline_input_digests[MANIFEST.as_posix()],
             "action_set_sha256": manifest["action_set_sha256"],
             "action_count": len(action_ids),
         },
@@ -1236,14 +1545,25 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
         "semantic_ir_runs": {
             "status": "succeeded",
             "entrypoint": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
-            "run_count": 1,
+            "multi_member_run_count": 1,
+            "isolated_member_verification_run_count": 2,
             "member_count": pipeline_result.validation["member_count"],
             "shared_semantics_sha256": digest(proof_input["shared_semantics"]),
+            "isolated_shared_semantics_sha256": isolated_shared_semantics_digests,
             "member_action_array_sha256": {
                 MEMBER_A: digest(member_a_input["actions"]),
                 member_b_id: digest(member_b_input["actions"]),
             },
+            "distinct_official_member_action_ids": member_action_differences,
             "compiled_ir_sha256": digest(pipeline_result.compiled_ir),
+            "compiled_member_result_sha256": compiled_member_result_digests,
+            "compiled_coverage_sha256": compiled_coverage_digests,
+            "member_inputs_match_official_clerk_overlays": (
+                member_inputs_match_official_overlays
+            ),
+            "isolated_compilation_matches_multi_member_run": (
+                isolated_compilation_matches
+            ),
             "validation": pipeline_result.validation,
             "public_presentation_authoring": False,
             "persistence_proposal_prepared": False,
@@ -1255,9 +1575,23 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             "pilot_action_count": len(action_ids),
             "resolved_overlap_count": selected_b["resolved_overlap_count"],
             "resolved_overlap_rate": selected_b["resolved_overlap_rate"],
-            "identical_shared_digest_count": len(action_ids),
-            "identical_shared_digest_rate": 1.0,
-            "member_b_meanings_regenerated": 0,
+            "identical_shared_digest_count": sum(
+                row["member_a"]["shared_projection_sha256"]
+                == row["member_b"]["shared_projection_sha256"]
+                == row["shared_projection_sha256"]
+                for row in action_index
+            ),
+            "identical_shared_digest_rate": round(
+                sum(
+                    row["member_a"]["shared_projection_sha256"]
+                    == row["member_b"]["shared_projection_sha256"]
+                    == row["shared_projection_sha256"]
+                    for row in action_index
+                )
+                / len(action_ids),
+                6,
+            ),
+            "member_b_meanings_regenerated": member_b_meanings_regenerated,
             "directional_agreement_count": agreement,
             "directional_disagreement_count": disagreement,
             "member_a_status_counts": dict(sorted(status_counts_a.items())),
@@ -1284,12 +1618,35 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
             "total_resolved_member_action_projections": total_resolved_projections,
             "naive_per_member_interpretation_count": total_resolved_projections,
             "unique_shared_action_meaning_count": len(action_ids),
-            "semantic_reuse_multiplier": round(total_resolved_projections / len(action_ids), 6),
-            "avoided_duplicate_authoring_instances": total_resolved_projections - len(action_ids),
+            "structural_member_action_projections_per_shared_action": round(
+                total_resolved_projections / len(action_ids), 6
+            ),
+            "counterfactual_potential_duplicate_meaning_instances_if_per_member_authored": (
+                total_resolved_projections - len(action_ids)
+            ),
             "review_units_under_target_model": {
-                "new_or_changed_shared_meanings": len(action_ids),
-                "novel_shared_episode_trait_relationships": len(compiler_input["shared_semantics"]["episodes"])
-                + len(compiler_input["shared_semantics"].get("trait_relationships", [])),
+                "new_or_changed_shared_meanings": 0,
+                "migration_parity_shared_meanings": len(action_ids),
+                "novel_shared_issue_relationships": 0,
+                "migration_parity_episode_action_relationships": sum(
+                    len(episode["action_ids"])
+                    for episode in compiler_input["shared_semantics"]["episodes"]
+                ),
+                "migration_parity_policy_family_episode_relationships": sum(
+                    len(family["episode_ids"])
+                    for family in compiler_input["shared_semantics"].get(
+                        "policy_families", []
+                    )
+                ),
+                "migration_parity_policy_trait_action_relationships": sum(
+                    len(action.get("policy_trait_refs", []))
+                    for action in compiler_input["shared_semantics"]["actions"]
+                ),
+                "migration_parity_trait_relationships": len(
+                    compiler_input["shared_semantics"].get(
+                        "trait_relationships", []
+                    )
+                ),
                 "elevated_member_specific_conclusions": sum(synthesis_counts.values()),
                 "rendered_staging_surfaces": 0,
             },
@@ -1308,6 +1665,12 @@ def build_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], str]:
 def render_markdown(audit: dict[str, Any], proof: dict[str, Any]) -> str:
     metrics = proof["metrics"]
     failed = [row for row in proof["assertions"] if row["status"] == "failed"]
+    non_directional_assertion = next(
+        row
+        for row in proof["assertions"]
+        if row["assertion_id"] == "present_and_not_voting_non_directional"
+    )
+    review_units = metrics["review_units_under_target_model"]
     lines = [
         "# M0 Shared Legislative Corpus Feasibility Audit V1",
         "",
@@ -1317,7 +1680,7 @@ def render_markdown(audit: dict[str, Any], proof: dict[str, Any]) -> str:
         "",
         f"`{audit['verdict']}`",
         "",
-        f"Repository head: `{audit['repository_head']}`. Expected baseline `{audit['expected_baseline']}` is an ancestor; the intervening Publication Activation Governance V2 change was inspected as a presentation-boundary fact and not reopened.",
+        f"Audited source baseline: `{audit['audited_source_baseline']}`. Every governed input digest was verified against that exact main commit; feature-branch HEAD is intentionally excluded from semantic artifact identity.",
         "",
         "## Current architecture finding",
         "",
@@ -1335,7 +1698,11 @@ def render_markdown(audit: dict[str, Any], proof: dict[str, Any]) -> str:
             "",
             "## Duplication and scale evidence",
             "",
-            f"The pilot contains {metrics['pilot_action_count']} unique exact actions. The cached Clerk records contain {metrics['total_resolved_member_action_projections']} resolved member-action projections across {metrics['candidate_member_count']} members, a measured semantic-reuse multiplier of {metrics['semantic_reuse_multiplier']}. A shared corpus would avoid {metrics['avoided_duplicate_authoring_instances']} duplicate action-meaning authoring instances relative to naive per-member interpretation. No time or cost estimate is inferred.",
+            f"The pilot contains {metrics['pilot_action_count']} unique exact actions. The cached Clerk records contain {metrics['total_resolved_member_action_projections']} resolved member-action projections across {metrics['candidate_member_count']} members, or {metrics['structural_member_action_projections_per_shared_action']} structural member-action projections per shared action. Under an explicitly counterfactual per-member-authoring model, {metrics['counterfactual_potential_duplicate_meaning_instances_if_per_member_authored']} additional meaning instances could be duplicated. These are structural projection counts, not observed time, productivity, cost, or labor savings.",
+            "",
+            "## Migration review accounting",
+            "",
+            f"New or changed shared meanings: {review_units['new_or_changed_shared_meanings']}; migration-parity shared meanings: {review_units['migration_parity_shared_meanings']}. Novel shared issue relationships: {review_units['novel_shared_issue_relationships']}; parity-only episode/action, policy-family/episode, policy-trait/action, and trait relationships: {review_units['migration_parity_episode_action_relationships']}, {review_units['migration_parity_policy_family_episode_relationships']}, {review_units['migration_parity_policy_trait_action_relationships']}, and {review_units['migration_parity_trait_relationships']}, respectively.",
             "",
             "## Two-member proof",
             "",
@@ -1343,13 +1710,15 @@ def render_markdown(audit: dict[str, Any], proof: dict[str, Any]) -> str:
             "",
             f"The canonical pipeline compiled both members in one run with one unchanged shared-semantics object. Proposition counts were `{json.dumps(metrics['member_specific_proposition_counts'], sort_keys=True)}` and synthesis counts were `{json.dumps(metrics['member_specific_synthesis_counts'], sort_keys=True)}`. Hard assertion failures: {len(failed)}.",
             "",
+            f"The real-corpus Present/Not Voting assertion is `{non_directional_assertion['status']}` with {non_directional_assertion['observed']['pilot_example_count']} pilot examples; the deterministic status-mapping test remains separate. Current accepted canonical conflicts: {len(audit['canonical_conflicts'])}; any such conflict forces an incomplete verdict.",
+            "",
             "## Evidence-supported refactor boundary",
             "",
-            "- Split member-scoped universe discovery so exact-action eligibility is shared and member coverage is projected.",
-            "- Split operative-source readiness from member-action evidence readiness.",
-            "- Split accepted exact-action meaning from official member status and deterministic choice effect.",
-            "- Split shared episode identity/grouping from member episode direction.",
-            "- Retain the canonical compiler and downstream review/presentation separation.",
+            "- A — Shared Action Core: exact-action identity, accepted meaning, action/outcome, limitations, and governed operative-source identity. The legacy accepted projection has no mechanism field, so mechanism is explicitly unavailable rather than inferred from policy traits.",
+            "- B — Shared Issue Mapping: domain eligibility, episodes, policy families, and separately typed policy traits.",
+            "- C — Member Action Projection: official member status, service/evidence state, deterministic choice effect, and member-action Clerk source usage.",
+            "- D — Member Analytical Result: compiled coverage, propositions, synthesis, and conclusion planning.",
+            "- E — Reviewed Presentation: reviewed wording, presentation compilation/selection, and publication governance.",
             "",
             "## Data gaps",
             "",
@@ -1368,7 +1737,7 @@ def render_markdown(audit: dict[str, Any], proof: dict[str, Any]) -> str:
             "| Synthesis/conclusion planning | retain as member-specific owner | consumes compiled member propositions |",
             "| Public wording | retain as member-specific reviewed owner | downstream wording cannot create meaning |",
             "| Public presentation/rendering | retain as separately reviewed owner | independent compiler, selector, and publication gates |",
-            "| Legacy member-scoped reusable-meaning identities | retire after migration | member namespace changes reusable object identities |",
+            "| Legacy member-scoped reusable-meaning identities | stop using for new work after migration | preserve all historical accepted artifacts and provenance; do not delete, rewrite, or invalidate them |",
             "",
             "Smallest coherent next sequence: (1) shared-corpus boundary/refactor; (2) interpretability completeness and review; (3) two-member end-to-end staging qualification; (4) later cross-member rollout. M0 does not authorize or implement any of those milestones.",
             "",

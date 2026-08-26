@@ -1,13 +1,64 @@
 {
   "schema_version": "m0_shared_legislative_corpus_audit_v1",
-  "repository_head": "d9e4d27b66253b20e1871d2e038f999fd212f565",
-  "expected_baseline": "74b054bfb8f138b8b6a31289f48995ceefcb0240",
-  "worktree_state": {
-    "starting_main_head": "d9e4d27b66253b20e1871d2e038f999fd212f565",
-    "branch": "codex/m0-shared-legislative-corpus-audit",
+  "audited_source_baseline": "d9e4d27b66253b20e1871d2e038f999fd212f565",
+  "expected_baseline": "d9e4d27b66253b20e1871d2e038f999fd212f565",
+  "source_baseline_binding": {
+    "git_commit": "d9e4d27b66253b20e1871d2e038f999fd212f565",
+    "audited_input_tree_sha256": "eade395fb702dac331a61bde8a29160b4bcac903ac53dcb3dbfc052766da79fb",
+    "audited_input_digests": {
+      "docs/editorial/full_record_reviews/proposals/f000477_justice_public_safety_119_full_issue_universe_manifest_v2.json": "17cc2d30c51dadc0e1d6afe3eb927fb8a3f798b909d6558abb116108c46cd88c",
+      "docs/editorial/full_record_reviews/interpretation_candidates/f000477_justice_public_safety_119_v4/evidence_maps.json": "ae115acdd84f49eb7be5ec3de4cd9bc02d1d2cd8f9559e70d1c3ae6e21c9a9c7",
+      "docs/editorial/full_record_reviews/interpretation_candidates/f000477_justice_public_safety_119_v4/candidate_batch.json": "14122edbab70256d367f74cb3952e84aefc824cf68d3c401b5cd21a3bbb92d14",
+      "docs/editorial/full_record_reviews/interpretation_decisions/f000477_justice_public_safety_119_v1/decision_implementation_bundle.json": "a1cafe5718772521542f98b797d6e95280ae3092a0e0cdfa355c0e17f3fe5d39",
+      "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_justice_public_safety_119_v1/episode_implementation_bundle.json": "b54690dcb3b2648bb2a23c6a3cdb3d2d5f66731c5958c4b80ee0940e1688953e",
+      "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiler_input.json": "c5ab8e48404bb163da08f85449b20fe132d423294c2235c7be697bb34ed1f53a",
+      "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiled_semantic_ir.json": "6a385770ce670e19329e56dfde13c48ae4b581bd740eac7dd7a54bed692abc14",
+      "docs/editorial/full_record_reviews/source_readiness/f000477_justice_public_safety_119_interpretation_source_readiness_v1.json": "62a33bcbb1c4eecc267f33be1740c7ee4db59e617a150b6d837c1aa30930bd91",
+      "docs/editorial/full_record_reviews/source_readiness/f000477_justice_public_safety_119_official_source_manifest_v1.json": "fb0ba5059b88549c14247bb81d7bc59cb833617b147c5322055982b5d745084b",
+      "docs/editorial/full_record_reviews/interpretation_decisions/f000477_education_workforce_119_v1/decision_implementation_bundle.json": "074a3bd396a55f6c31b2f7acfacb63455e4b56e1cb2da522b7fa53c62523d656",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_006.xml": "ceec8fe544e4d991bf9a00085e4d399a0895d0a1e63fa737f8cc19f973628834",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_023.xml": "6d1534595e51c0e337312ac921109d8c58ae5f170a533beca888cc4d56fe1e3d",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_027.xml": "dc5ad14ef8d34f4c14a55498bf7aaff96c4d8c1aedc23a9ca350a9068e8407ee",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_032.xml": "e6910c2d1d08e02e2a286f11d04494ea5ab769573b97c8b5da57a1b4491c873a",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_033.xml": "f775b7ad0dbf7a28cc89fa5510a58d67777420ba362b26818fc58081716c79ad",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_042.xml": "fa2dcce87111a7f8237f397ecb91b030e6a0e51fde9deceb9d36de9d80af02f0",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_068.xml": "bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_098.xml": "a4e3f08085dbbd1f973a6ad850e5b16ee27ddd5705103c60abbf5fa62b313ee5",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_128.xml": "a9f4222a0f1cf25f52c5dc16d2bb4e9cfb05681deb5a50eebcffe3f1c70ad48b",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_130.xml": "53ad0db19a9715025dd17d6cf7c6d8a58713775cabcbbbb00b2b1deafacfb19f",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_131.xml": "cc8dc582ce2dec7aa6091589c1e7155016a5374f6b94baefdd5743e81b2d2a71",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_162.xml": "578ffaef672d30526197a901c36b6fdda495e465fbb7e7186ea4d95cbb566aea",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_166.xml": "4e6771ad6d1d24f1452326b604a4be923e25f1b86bfab19fc623c9e15a1e1d54",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_270.xml": "66534bd5c2ce9e332babba2a593677bfe50473c4b34f8e5535fde16b5d0d81a4",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_271.xml": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_274.xml": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_275.xml": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_286.xml": "290af7d1c2565ab5affdcca008b91d9971753906ab9cb56682398c7d77256bf7",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_289.xml": "c053d5280ea8d5ad67cb6d13c0b6d5b0951c41c2a2e1afd0b82a61e9c6126ee2",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_298.xml": "a9ae200372594e6f9c228a951f34fe662ba9a25cb321a27b56e8b584ef9cd7e9",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_299.xml": "cd1a3f5cb92b4c4dfd10b9e12502088bbea5d1d495e79da3ea8445dff800a83a",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_340.xml": "48496b02546ef4001ee9a78869b0650f6c7141a5ec8f33e9adea59f79325cce5",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_1_351.xml": "1eb17ba0064304be6972f7d1672596e3df8d42a1489a1d75ac05de9cbdd0a17a",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_155.xml": "5c5763bb89f86d92a86dbb09c6ce916d40f14db699bf5f180b68f06be3b3a8c9",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_157.xml": "fa0a091516aac88bb2c57cb56d858870212609fff2de5a3635db130c72b1ac3a",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_169.xml": "13b543082316c4c0162f19126773ae967fa8c515f028b5acdf6df0fd599d3f4c",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_171.xml": "66bfbeae84fe3156fa76eb785c79c718b743f4191f027469fdc1685717376fc3",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_218.xml": "1fb21ce4a4b46c86777924ccc5e8228b0b24d413321a20a8b96c2a72a80c2e5e",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_221.xml": "8169dafbd550e5926300a5370f51c1b744640e3b8563c5eb5d1525e9dbb56277",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_227.xml": "ca3748fac2dafceecb690e61ca4d09345872ac26296ffb214438e012c127669b",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_234.xml": "31be3c2f95e9869c95230e3d51c54c4477fb28cc0e86409442a3485f901d287e",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_240.xml": "0947b0014b41aa36e21bea99d91deeca220b7349e5ba7f3381e4098d7bb1ced9",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_259.xml": "ab51ade3ec96483c519c9640e5c936cbf292dd5e1d4235f80419a7604f3e89e2",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_265.xml": "baceb48520bd60338c3163fefa738baa5d0749da25c20375e1a1048a07dd02e9",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_273.xml": "6549ec1f36b0897cafdb4e67e6d860403f1d2f1514816654e9a31dd1d59eda21",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_275.xml": "ad07cb974f5d2b14f3ccb22866392107a27d8a84eaafd4b3bbc65092674c5968",
+      "docs/editorial/full_record_reviews/source_readiness/evidence/roll119_2_278.xml": "dad4d3b2a853d794e8d760a02c5cc04b8d5e6b19db019ed2cc12cb3a797d175a"
+    },
+    "current_worktree_inputs_match_baseline": true,
     "started_from_clean_main_worktree": true,
     "expected_baseline_is_ancestor": true,
-    "intervening_relevant_change": "Publication Activation Governance V2 affects only the separately reviewed presentation/publication boundary and was not modified"
+    "implementation_head_is_non_semantic_execution_metadata": true,
+    "implementation_head_recorded_in_artifact": false
   },
   "files_inspected": [
     "AGENTS.md",
@@ -323,7 +374,7 @@
     },
     {
       "stage_number": 11,
-      "stage": "policy families, mechanisms, and traits",
+      "stage": "policy families and traits",
       "designation": "shared",
       "current_artifact_type": "Semantic IR shared_semantics policy_families/policy_traits",
       "owning_code_paths": [
@@ -564,6 +615,10 @@
           "99e39942abb650f62f42e6f9e262a2e6d26765680cd3a9d3c8cb62f48ec39161",
           "99e39942abb650f62f42e6f9e262a2e6d26765680cd3a9d3c8cb62f48ec39161"
         ],
+        "current_accepted_meaning_source_digests": [
+          "99e39942abb650f62f42e6f9e262a2e6d26765680cd3a9d3c8cb62f48ec39161"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -586,6 +641,10 @@
           "20685e35cecfe643ea28d485adce3226d8ce5b42ab4a5fcb2baf6754f2ff712c",
           "20685e35cecfe643ea28d485adce3226d8ce5b42ab4a5fcb2baf6754f2ff712c"
         ],
+        "current_accepted_meaning_source_digests": [
+          "20685e35cecfe643ea28d485adce3226d8ce5b42ab4a5fcb2baf6754f2ff712c"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -608,6 +667,10 @@
           "96eab3fa52ef9677ec16f40def27de3d0434c0d8c5559bca339a673d90f99f9b",
           "96eab3fa52ef9677ec16f40def27de3d0434c0d8c5559bca339a673d90f99f9b"
         ],
+        "current_accepted_meaning_source_digests": [
+          "96eab3fa52ef9677ec16f40def27de3d0434c0d8c5559bca339a673d90f99f9b"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": false,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -630,6 +693,10 @@
           "9961a5b0e06f4cd9931e2aa93641137e02b5d6199e39c6acbf53add10d1659e3",
           "9961a5b0e06f4cd9931e2aa93641137e02b5d6199e39c6acbf53add10d1659e3"
         ],
+        "current_accepted_meaning_source_digests": [
+          "9961a5b0e06f4cd9931e2aa93641137e02b5d6199e39c6acbf53add10d1659e3"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -652,6 +719,10 @@
           "8398f9f79855293e6afcddd4c87474059871e04993d008a51172a0a193f9e929",
           "8398f9f79855293e6afcddd4c87474059871e04993d008a51172a0a193f9e929"
         ],
+        "current_accepted_meaning_source_digests": [
+          "8398f9f79855293e6afcddd4c87474059871e04993d008a51172a0a193f9e929"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -674,6 +745,10 @@
           "5bf3db6d35a049303225d96f7a2051463e7075cd6350a422eb71df95e74f0f7b",
           "5bf3db6d35a049303225d96f7a2051463e7075cd6350a422eb71df95e74f0f7b"
         ],
+        "current_accepted_meaning_source_digests": [
+          "5bf3db6d35a049303225d96f7a2051463e7075cd6350a422eb71df95e74f0f7b"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -696,6 +771,10 @@
           "6337cd6158bbd5c9f40fe07efd3686ac155673234b579d27f14ef9cd60a65ca2",
           "6337cd6158bbd5c9f40fe07efd3686ac155673234b579d27f14ef9cd60a65ca2"
         ],
+        "current_accepted_meaning_source_digests": [
+          "6337cd6158bbd5c9f40fe07efd3686ac155673234b579d27f14ef9cd60a65ca2"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -718,6 +797,10 @@
           "0eee66e6155dd5aa789c7c63bd81e8a5d55fce06f8a8dffe0ca4d2050a83179e",
           "0eee66e6155dd5aa789c7c63bd81e8a5d55fce06f8a8dffe0ca4d2050a83179e"
         ],
+        "current_accepted_meaning_source_digests": [
+          "0eee66e6155dd5aa789c7c63bd81e8a5d55fce06f8a8dffe0ca4d2050a83179e"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -740,6 +823,10 @@
           "9ddc35a134ea9b387be2a56d3e129fd455236feb02bad2da4d00c475868969de",
           "9ddc35a134ea9b387be2a56d3e129fd455236feb02bad2da4d00c475868969de"
         ],
+        "current_accepted_meaning_source_digests": [
+          "9ddc35a134ea9b387be2a56d3e129fd455236feb02bad2da4d00c475868969de"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -762,6 +849,10 @@
           "91f380e56f217610a5f02a6ddc882d40331bbe4f69a2858a781f10d27f4c005b",
           "91f380e56f217610a5f02a6ddc882d40331bbe4f69a2858a781f10d27f4c005b"
         ],
+        "current_accepted_meaning_source_digests": [
+          "91f380e56f217610a5f02a6ddc882d40331bbe4f69a2858a781f10d27f4c005b"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -784,6 +875,10 @@
           "7e6a91ba66fa19e224e9d78449ecdbdcfe27f72f4989e5f67f58a78af0ccde6c",
           "7e6a91ba66fa19e224e9d78449ecdbdcfe27f72f4989e5f67f58a78af0ccde6c"
         ],
+        "current_accepted_meaning_source_digests": [
+          "7e6a91ba66fa19e224e9d78449ecdbdcfe27f72f4989e5f67f58a78af0ccde6c"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -806,6 +901,10 @@
           "49b816736587ff17ccd934358c193fe851c520db9ab796079489a0862cd928b4",
           "49b816736587ff17ccd934358c193fe851c520db9ab796079489a0862cd928b4"
         ],
+        "current_accepted_meaning_source_digests": [
+          "49b816736587ff17ccd934358c193fe851c520db9ab796079489a0862cd928b4"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -828,6 +927,10 @@
           "1d6ed81f1201edc5933a38c7d5efe7137d5214fd2331bcf90514c59503f9a115",
           "1d6ed81f1201edc5933a38c7d5efe7137d5214fd2331bcf90514c59503f9a115"
         ],
+        "current_accepted_meaning_source_digests": [
+          "1d6ed81f1201edc5933a38c7d5efe7137d5214fd2331bcf90514c59503f9a115"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -850,6 +953,10 @@
           "e8269f9f83dcab5ab29b1d2fa5789d0fe8a0a1e7d288dd840d1b9b1981c3cf6b",
           "e8269f9f83dcab5ab29b1d2fa5789d0fe8a0a1e7d288dd840d1b9b1981c3cf6b"
         ],
+        "current_accepted_meaning_source_digests": [
+          "e8269f9f83dcab5ab29b1d2fa5789d0fe8a0a1e7d288dd840d1b9b1981c3cf6b"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -872,6 +979,10 @@
           "8d48982f40f3e7d838b8e19270c9fc98e921b76452d320a2d40894992337533f",
           "8d48982f40f3e7d838b8e19270c9fc98e921b76452d320a2d40894992337533f"
         ],
+        "current_accepted_meaning_source_digests": [
+          "8d48982f40f3e7d838b8e19270c9fc98e921b76452d320a2d40894992337533f"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -894,6 +1005,10 @@
           "fc32e6d87225dbda3f2950d2cf172103cbc8bc01e4f710b6722e8d1393a74395",
           "fc32e6d87225dbda3f2950d2cf172103cbc8bc01e4f710b6722e8d1393a74395"
         ],
+        "current_accepted_meaning_source_digests": [
+          "fc32e6d87225dbda3f2950d2cf172103cbc8bc01e4f710b6722e8d1393a74395"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -916,6 +1031,10 @@
           "17e8a26986f52def8b5730c34354c2d9dcc4dad43a87a9ba0a9d624d838db945",
           "17e8a26986f52def8b5730c34354c2d9dcc4dad43a87a9ba0a9d624d838db945"
         ],
+        "current_accepted_meaning_source_digests": [
+          "17e8a26986f52def8b5730c34354c2d9dcc4dad43a87a9ba0a9d624d838db945"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -938,6 +1057,10 @@
           "f9953b0b8e905e0bd4715010ce49a0101d5c8827c2084b1e2b777807f833c893",
           "f9953b0b8e905e0bd4715010ce49a0101d5c8827c2084b1e2b777807f833c893"
         ],
+        "current_accepted_meaning_source_digests": [
+          "f9953b0b8e905e0bd4715010ce49a0101d5c8827c2084b1e2b777807f833c893"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -960,6 +1083,10 @@
           "390fca56de29c02e4a0f11aa3cf5022cd559654564a6e913f97219b42ad2422b",
           "390fca56de29c02e4a0f11aa3cf5022cd559654564a6e913f97219b42ad2422b"
         ],
+        "current_accepted_meaning_source_digests": [
+          "390fca56de29c02e4a0f11aa3cf5022cd559654564a6e913f97219b42ad2422b"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -982,6 +1109,10 @@
           "e55be0c2ef63ca4bcb6a955b771cb7c147e93cd464f7c5bd8bcae1f3eda94288",
           "e55be0c2ef63ca4bcb6a955b771cb7c147e93cd464f7c5bd8bcae1f3eda94288"
         ],
+        "current_accepted_meaning_source_digests": [
+          "e55be0c2ef63ca4bcb6a955b771cb7c147e93cd464f7c5bd8bcae1f3eda94288"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1004,6 +1135,10 @@
           "abcf5aa0bad804d3af439029885309f2a59bde3128cb3f58d750216a97668a64",
           "abcf5aa0bad804d3af439029885309f2a59bde3128cb3f58d750216a97668a64"
         ],
+        "current_accepted_meaning_source_digests": [
+          "abcf5aa0bad804d3af439029885309f2a59bde3128cb3f58d750216a97668a64"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1026,6 +1161,10 @@
           "0801a27fd5179e5c68b1afef10ad5a53a54bf2e762a206f424bac303eb9514c4",
           "0801a27fd5179e5c68b1afef10ad5a53a54bf2e762a206f424bac303eb9514c4"
         ],
+        "current_accepted_meaning_source_digests": [
+          "0801a27fd5179e5c68b1afef10ad5a53a54bf2e762a206f424bac303eb9514c4"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1048,6 +1187,10 @@
           "219bcb6141142e5875f994ec12da808bdbd82b7bd70d561ce050bd574ec0e87c",
           "219bcb6141142e5875f994ec12da808bdbd82b7bd70d561ce050bd574ec0e87c"
         ],
+        "current_accepted_meaning_source_digests": [
+          "219bcb6141142e5875f994ec12da808bdbd82b7bd70d561ce050bd574ec0e87c"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1069,6 +1212,10 @@
           "92b7140bec550e41f58a5fd973c592ac5b131f7ad3eeadb0c161dd46fc878986",
           "92b7140bec550e41f58a5fd973c592ac5b131f7ad3eeadb0c161dd46fc878986"
         ],
+        "current_accepted_meaning_source_digests": [
+          "92b7140bec550e41f58a5fd973c592ac5b131f7ad3eeadb0c161dd46fc878986"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1091,6 +1238,10 @@
           "63b60bfd8335411848d3d6be0a85a6c43f302d871b660ece75bbdab7b8d74db7",
           "63b60bfd8335411848d3d6be0a85a6c43f302d871b660ece75bbdab7b8d74db7"
         ],
+        "current_accepted_meaning_source_digests": [
+          "63b60bfd8335411848d3d6be0a85a6c43f302d871b660ece75bbdab7b8d74db7"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": false,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1113,6 +1264,10 @@
           "ab2067948401ee42cafc8ce54d4b045bf9fb4836b77ad446ab07457078bb4323",
           "ab2067948401ee42cafc8ce54d4b045bf9fb4836b77ad446ab07457078bb4323"
         ],
+        "current_accepted_meaning_source_digests": [
+          "ab2067948401ee42cafc8ce54d4b045bf9fb4836b77ad446ab07457078bb4323"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1135,6 +1290,10 @@
           "fd53800428866aa20a245cb9c6956db7aa28f4c1492549fc159589827018e916",
           "fd53800428866aa20a245cb9c6956db7aa28f4c1492549fc159589827018e916"
         ],
+        "current_accepted_meaning_source_digests": [
+          "fd53800428866aa20a245cb9c6956db7aa28f4c1492549fc159589827018e916"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1157,6 +1316,10 @@
           "0080872a78382ea03db2b8f7acb892f0ec5994023527d4c96c377f5933df692d",
           "0080872a78382ea03db2b8f7acb892f0ec5994023527d4c96c377f5933df692d"
         ],
+        "current_accepted_meaning_source_digests": [
+          "0080872a78382ea03db2b8f7acb892f0ec5994023527d4c96c377f5933df692d"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1179,6 +1342,10 @@
           "ca2ea3246ed5770513d6a9f4c5c25fbe5de6dfb1b0cf70b46ddc0e7f77b78aca",
           "ca2ea3246ed5770513d6a9f4c5c25fbe5de6dfb1b0cf70b46ddc0e7f77b78aca"
         ],
+        "current_accepted_meaning_source_digests": [
+          "ca2ea3246ed5770513d6a9f4c5c25fbe5de6dfb1b0cf70b46ddc0e7f77b78aca"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1201,6 +1368,10 @@
           "c12802ce1330a277796d2a06515d11292571ba4d4585a1a07984482d7b70d956",
           "c12802ce1330a277796d2a06515d11292571ba4d4585a1a07984482d7b70d956"
         ],
+        "current_accepted_meaning_source_digests": [
+          "c12802ce1330a277796d2a06515d11292571ba4d4585a1a07984482d7b70d956"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1223,6 +1394,10 @@
           "495e34b70d14a36ee63ce8715720fda336a5c37056287e69edbad3ad4b94595f",
           "495e34b70d14a36ee63ce8715720fda336a5c37056287e69edbad3ad4b94595f"
         ],
+        "current_accepted_meaning_source_digests": [
+          "495e34b70d14a36ee63ce8715720fda336a5c37056287e69edbad3ad4b94595f"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1245,6 +1420,10 @@
           "3e3542f7d46696f2a2a9dce340ea18a68416f244a1bc15deacbeb260711958b9",
           "3e3542f7d46696f2a2a9dce340ea18a68416f244a1bc15deacbeb260711958b9"
         ],
+        "current_accepted_meaning_source_digests": [
+          "3e3542f7d46696f2a2a9dce340ea18a68416f244a1bc15deacbeb260711958b9"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1267,6 +1446,10 @@
           "52b74242bf57d09246f9d140029e6ffe56feb950a8f5607977f2babde58b742d",
           "52b74242bf57d09246f9d140029e6ffe56feb950a8f5607977f2babde58b742d"
         ],
+        "current_accepted_meaning_source_digests": [
+          "52b74242bf57d09246f9d140029e6ffe56feb950a8f5607977f2babde58b742d"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1289,6 +1472,10 @@
           "d33a35e93fbd87de3e8b3f97e3bbd1bacaf47851467242304194d9721b001335",
           "d33a35e93fbd87de3e8b3f97e3bbd1bacaf47851467242304194d9721b001335"
         ],
+        "current_accepted_meaning_source_digests": [
+          "d33a35e93fbd87de3e8b3f97e3bbd1bacaf47851467242304194d9721b001335"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1311,6 +1498,10 @@
           "1b4984f98d0504e791daa223c243dfe63a537a030c04c11f11cc1dd8fd136183",
           "1b4984f98d0504e791daa223c243dfe63a537a030c04c11f11cc1dd8fd136183"
         ],
+        "current_accepted_meaning_source_digests": [
+          "1b4984f98d0504e791daa223c243dfe63a537a030c04c11f11cc1dd8fd136183"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1333,6 +1524,10 @@
           "ea3732c1f18ebea152422b7333e89105ce90a53c6269584e763978c7eb89914d",
           "ea3732c1f18ebea152422b7333e89105ce90a53c6269584e763978c7eb89914d"
         ],
+        "current_accepted_meaning_source_digests": [
+          "ea3732c1f18ebea152422b7333e89105ce90a53c6269584e763978c7eb89914d"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1354,6 +1549,10 @@
           "71cabc5aa3d933a1bd55cafceed7000eed27532bf10d71d1a7ae4630bb2d5784",
           "71cabc5aa3d933a1bd55cafceed7000eed27532bf10d71d1a7ae4630bb2d5784"
         ],
+        "current_accepted_meaning_source_digests": [
+          "71cabc5aa3d933a1bd55cafceed7000eed27532bf10d71d1a7ae4630bb2d5784"
+        ],
+        "conflicting_accepted_source_identity_digests": [],
         "all_lifecycle_wording_and_sources_identical": true,
         "current_accepted_wording_and_sources_identical": true,
         "member_namespace_identity_effect": "bundle and lineage identities are member-scoped; exact action record IDs themselves are action-scoped",
@@ -1431,23 +1630,28 @@
   "target_layer_mapping": [
     {
       "layer": "A",
-      "name": "Shared Legislative Corpus",
-      "current_fit": "compiler shared_semantics proves the shape; upstream artifacts remain mixed"
+      "name": "Shared Action Core",
+      "current_fit": "exact-action identity, accepted action meaning, action/outcome, and governed operative-source identities are reusable; the legacy projection has no accepted mechanism field"
     },
     {
       "layer": "B",
-      "name": "Member Action Projection",
-      "current_fit": "Clerk XML plus compiler member actions already support deterministic projection"
+      "name": "Shared Issue Mapping",
+      "current_fit": "domain eligibility, episodes, policy families, and policy traits are already represented in compiler shared_semantics but remain mixed upstream"
     },
     {
       "layer": "C",
+      "name": "Member Action Projection",
+      "current_fit": "Clerk member-action evidence plus compiler member actions already support deterministic projection separate from Clerk action/outcome use"
+    },
+    {
+      "layer": "D",
       "name": "Member Analytical Result",
       "current_fit": "canonical compiler derives coverage and propositions per member"
     },
     {
-      "layer": "D",
+      "layer": "E",
       "name": "Reviewed Presentation",
-      "current_fit": "separate presentation compiler/review/publication gates exist"
+      "current_fit": "separate presentation compiler, review, selector, and publication gates exist"
     }
   ],
   "required_refactors": [
@@ -1473,8 +1677,8 @@
     },
     {
       "owner": "legacy member-scoped identities",
-      "decision": "retire after migration",
-      "reason": "member namespace currently changes identities for reusable meaning"
+      "decision": "stop using for new work after migration",
+      "reason": "preserve historical accepted artifacts and provenance without rewriting, deleting, or invalidating them"
     }
   ],
   "reusable_existing_components": [
