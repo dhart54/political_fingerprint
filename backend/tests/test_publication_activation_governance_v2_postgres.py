@@ -132,7 +132,7 @@ def test_v2_execution_gate_uses_fresh_transaction_read_only_database_state() -> 
                         """SELECT COUNT(*) FROM editorial_publication_registry
                        WHERE member_bioguide_id = %s AND issue_id = %s""",
                         ("F000477", "SYNTHETIC_CONTRACT_TEST"),
-                    ).fetchone()[0]
+                    ).fetchone()["count"]
                     == 0
                 )
                 assert (
@@ -143,7 +143,7 @@ def test_v2_execution_gate_uses_fresh_transaction_read_only_database_state() -> 
                             "test-site-integration-candidate:"
                             "f000477:synthetic_contract:119:v1",
                         ),
-                    ).fetchone()[0]
+                    ).fetchone()["count"]
                     == 0
                 )
                 conn.execute(
