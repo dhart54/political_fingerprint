@@ -222,6 +222,7 @@ jobs:
       M12N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m12n_preparation
       M13NR_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m13nr_preparation
       M13N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m13n_candidate
+      PUBLICATION_GOVERNANCE_V2_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_publication_governance_v2
       PGPASSWORD: postgres
     steps:
       - uses: actions/checkout@v4
@@ -293,6 +294,17 @@ jobs:
             --seed-foushee-activation-baseline
           pytest -q \
             backend/tests/test_m13n_education_workforce_ratification_candidate_postgres.py \
+            -rs
+
+      - name: Prove V2 stable authority with fresh read-only execution evidence
+        run: |
+          createdb -h 127.0.0.1 -U postgres pf_publication_governance_v2
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --database-url-env PUBLICATION_GOVERNANCE_V2_DATABASE_URL \
+            --seed-foushee-activation-baseline
+          pytest -q \
+            backend/tests/test_publication_activation_governance_v2.py \
+            backend/tests/test_publication_activation_governance_v2_postgres.py \
             -rs
 
       - name: Build fresh disposable backup evidence
