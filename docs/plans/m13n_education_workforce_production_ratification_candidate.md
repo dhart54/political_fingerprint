@@ -71,3 +71,17 @@
 ## Stop Point
 
 After the draft M13N PR and exact-head CI, stop for independent ChatGPT activation review. Do not materialize or seal a positive activation authority.
+
+## Successful Activation Closeout
+
+- Re-ratified PR head: `f5b762d748e1f87dc4c5c5da58acaaf6f1c40878`.
+- Positive authority was mechanically materialized without a synthetic marker.
+- Fresh execution runtime proof matched exact deployed main and the reviewed six-file manifest.
+- Final transaction-read-only drift check retained `6 / 152 / 163 / 3` and baseline fingerprint `7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860`.
+- Production apply inserted batch `21`, artifacts `242 / 243 / 244`, two relationships, and one Education registry row.
+- Final counts are `7 / 155 / 165 / 4`; the exact second apply was idempotent with zero additional mutation.
+- Live Education tiers are `reviewed_conclusion` for `119` and `all`, and `receipts_only` for `118`.
+- Live positions are `6 / 10 / 1`; governed evidence is 17 unique actions across 16 episodes; H.R.1005 remains non-directional Not Voting with zero analytical memberships.
+- Justice, National Security, and Environment registry identities and public tiers remained unchanged.
+- All required postchecks passed, so rollback was not executed.
+- Successful closeout evidence is committed only after deterministic validation; PR merge remains gated on exact-head hosted CI.

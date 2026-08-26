@@ -505,11 +505,12 @@ def validate_outputs() -> dict:
     completion = template["subject"][
         "completion_required_after_exact_runtime_deployment"
     ]
-    forbidden = (
+    closeout = (
         OUTPUT_ROOT / "positive_activation_authority.json",
         OUTPUT_ROOT / "production_activation_receipt.json",
         OUTPUT_ROOT / "current_state.json",
     )
+    closeout_presence = [path.exists() for path in closeout]
     if (
         candidate["accepted"] is not False
         or candidate["sealed"] is not False
@@ -522,9 +523,22 @@ def validate_outputs() -> dict:
             if key != "authorizations"
         )
         or any(value is not None for value in completion["authorizations"].values())
-        or any(path.exists() for path in forbidden)
+        or (any(closeout_presence) and not all(closeout_presence))
     ):
         raise ValueError("M13N authorization boundary differs")
+    if all(closeout_presence):
+        activation = _load(closeout[0])
+        receipt = _load(closeout[1])
+        current = _load(closeout[2])
+        if (
+            activation.get("accepted") is not True
+            or activation.get("sealed") is not True
+            or activation.get("test_only_synthetic") is not None
+            or receipt.get("schema_version")
+            != "m13n_successful_production_activation_receipt_v1"
+            or current.get("schema_version") != "m13n_current_publication_state_v1"
+        ):
+            raise ValueError("M13N successful closeout boundary differs")
     datetime.fromisoformat(PREPARATION_DECISION_RECORDED_AT_UTC.replace("Z", "+00:00"))
     return {
         "authority_subject_sha256": preparation["authority"][

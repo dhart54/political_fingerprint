@@ -216,15 +216,19 @@ def test_production_execution_is_impossible_without_future_exact_authority() -> 
         )
 
 
-def test_m13n_package_contains_no_authorizing_or_mutation_artifacts() -> None:
+def test_m13n_package_contains_only_complete_governed_closeout_artifacts() -> None:
     output = (
         ROOT / "docs/editorial/full_record_reviews/publication_activation_candidates/"
         "f000477_education_workforce_119_v1"
     )
     assert output.exists()
-    forbidden = {
-        "positive_activation_authority.json",
+    forbidden_historical_name = {
         "activation_receipt.json",
+    }
+    required_closeout = {
+        "positive_activation_authority.json",
+        "production_activation_receipt.json",
         "current_state.json",
     }
-    assert not any((output / name).exists() for name in forbidden)
+    assert not any((output / name).exists() for name in forbidden_historical_name)
+    assert all((output / name).exists() for name in required_closeout)
