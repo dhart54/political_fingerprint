@@ -16,18 +16,18 @@ no usable positive activation authority and performs no production write.
 ## Non-activating preparation
 
 - Reviewer: `dhart54`
-- Decision timestamp: `2026-08-26T00:47:09.030374Z`
-- Preparation authority subject: `1514bfa03aba12c2a8c97361274beeef55389e13e54627733fd341bd88262dd1`
-- Write set subject: `8f7ef8a7a851e3e049baffe17e7aa1a10d9a404ce279c5518873b5a5a2fbe1d1`
+- Decision timestamp: `2026-08-26T01:38:13.268576Z`
+- Preparation authority subject: `95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde`
+- Write set subject: `10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3`
 - Rollback subject: `9667a7d2f960ea456ed4a91b203a60f0d5b44a210ef87a5678d5cc85afa49236`
-- Empty activation template: `3bcd1a0125c16b8a842e1c43aba1983e03e79a5c88219931e64a18677bec48aa`
+- Empty activation template: `9590dc4b9d5807bb4db4c9660a708301eb3d412b2a0386bd6e32d11c6b223f83`
 - Writes if later authorized: `1 batch / 3 artifacts / 2 relationships / 1 registry insert`
 - Prospective counts: `7 / 155 / 165 / 4`
 
 ## Detached activation candidate
 
 - Candidate: `publication-activation-ratification-candidate:f000477:education_workforce:119:v1`
-- Prospective authority subject: `32bbc2319560debf631d4752fe64ca694266839657740ed2b047877e2870ea88`
+- Prospective authority subject: `261d37a2b716f8e601f22b41dcf10147072a4c32a3c5b98111e4b0f488460a1a`
 - Candidate accepted: `false`
 - Candidate sealed: `false`
 - Human activation decision timestamp: absent
