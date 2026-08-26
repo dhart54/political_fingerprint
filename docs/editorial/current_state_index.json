@@ -3,6 +3,16 @@
   "source_baseline_commit": "44d966a7b3c36494b4965db6d4b00d6ba6d6a332",
   "owning_pipeline_for_new_work": "backend.app.semantic_ir.pipeline.run_editorial_pipeline",
   "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
+  "future_authoring_boundary": {
+    "schema": "docs/semantic_ir/shared_legislative_corpus_v1.schema.json",
+    "shared_action_core": "docs/editorial/shared_corpora/justice_public_safety_119_v1/shared_action_core.json",
+    "shared_issue_mapping": "docs/editorial/shared_corpora/justice_public_safety_119_v1/shared_issue_mapping.json",
+    "member_action_projection_root": "docs/editorial/shared_corpora/justice_public_safety_119_v1/member_projections",
+    "adapter": "backend/app/semantic_ir/shared_corpus.py",
+    "semantic_compiler_retained": "backend/app/semantic_ir/compiler.py",
+    "legacy_member_scoped_artifacts": "historical_provenance_unchanged",
+    "new_member_meaning_generation": "forbidden_when_shared_exact_action_source_version_exists"
+  },
   "current_project_state": {
     "as_of": "2026-08-23",
     "active_full_record_publications": [

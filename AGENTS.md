@@ -65,6 +65,15 @@ The canonical output is the typed behavioral proposition graph, synthesis
 propositions, evidence-state boundaries, action accounting, and conclusion plan.
 Exact prose is a replaceable presentation result.
 
+For new editorial work, the upstream authoring boundary is Shared Legislative
+Corpus V1 (`docs/semantic_ir/shared_legislative_corpus_v1.schema.json`): Shared
+Action Core owns member-neutral exact-action truth, Shared Issue Mapping owns
+member-neutral Political Fingerprint taxonomy relationships, and Member Action
+Projection is the first member-specific legislative layer. The narrow adapter in
+`backend/app/semantic_ir/shared_corpus.py` feeds these contracts into the existing
+Editorial Semantic IR compiler. A second member must reference the existing
+shared action meaning and digest rather than generate another meaning.
+
 Later stages may select, relate, omit, or render established semantic objects.
 They may not reinterpret earlier-stage meaning.
 

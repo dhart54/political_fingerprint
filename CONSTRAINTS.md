@@ -482,4 +482,28 @@ Chamber mismatch must be treated as a data-integrity error, not a frontend copy 
 
 ---
 
+# Section 23 - Shared Legislative Corpus Boundary
+
+For new editorial work, exact House action meaning and governed source identity
+MUST be authored once in Shared Action Core. Member identity, party, action,
+service state, and evidence state MUST NOT enter that contract or its digest.
+
+Political Fingerprint issue eligibility, episodes, policy families, policy
+traits, and accepted trait relationships MUST be stored in Shared Issue Mapping,
+which may reference Shared Action Core IDs but MUST NOT copy or re-author action
+meaning. Domain membership MUST NOT be encoded in Shared Action Core identity.
+
+Member Action Projection is the first member-specific legislative layer. It may
+store only member/context metadata, official action, service/evidence state,
+source binding, and the deterministic exact-choice effect. It MUST NOT override
+shared meaning. Yea supports the exact choice, Nay opposes it, Present and Not
+Voting are non-directional, and missing evidence remains explicit.
+
+Historical accepted member-scoped artifacts remain immutable provenance. The
+Shared Legislative Corpus adapter MUST feed the existing Editorial Semantic IR
+compiler and MUST NOT create parallel proposition, synthesis, presentation, or
+publication logic.
+
+---
+
 # End of CONSTRAINTS.md

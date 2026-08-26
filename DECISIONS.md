@@ -229,4 +229,30 @@ Rationale:
 
 ---
 
+## 2026-08-26 — Shared Legislative Corpus Boundary V1
+
+Decision:
+
+- Future editorial authoring uses five layers: Shared Action Core, Shared Issue
+  Mapping, Member Action Projection, the existing Editorial Semantic IR member
+  analytical result, and the existing reviewed presentation/publication stack.
+- One exact House action/governed-source version has one member-neutral meaning
+  identity. Party and member identity cannot alter that meaning, action stage,
+  chamber outcome, package/amendment boundary, or issue organization.
+- Political Fingerprint taxonomy is separate from intrinsic action truth, and
+  member uniqueness begins with official action projection and downstream
+  analytical aggregation.
+- The existing Semantic IR compiler is retained behind a deterministic adapter.
+- Existing accepted member-scoped artifacts remain historical provenance and
+  are not rewritten by storage migration.
+
+Rationale:
+
+- M0 proved 37 Justice actions could be reused across Foushee and Grothman with
+  zero regenerated meanings and distinct member results. M14A makes that
+  audit-only architecture a typed, fail-closed authoring contract without
+  changing accepted semantics, production, publication, or presentation.
+
+---
+
 ## End of DECISIONS.md

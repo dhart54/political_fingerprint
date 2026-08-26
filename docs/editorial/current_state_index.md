@@ -5,6 +5,12 @@ The machine-readable authority is
 
 - Editorial Semantic IR V1 is the only executable editorial semantic
   architecture.
+- Shared Legislative Corpus V1 is authoritative for new upstream editorial
+  authoring. Shared Action Core and Shared Issue Mapping are member-neutral;
+  Member Action Projection is the first member-specific layer; a deterministic
+  adapter retains the existing Semantic IR compiler. The 37-action Justice pilot
+  proves Foushee/Grothman reuse with zero regenerated meanings. Legacy accepted
+  artifacts remain unchanged historical provenance.
 - Accepted references remain 12 development and four held-out cases.
 - The pre-IR builders, milestone generators, old frontend adapters, registries,
   review fixtures, and rich renderer are deleted and cannot be replayed.
