@@ -216,19 +216,14 @@ def test_production_execution_is_impossible_without_future_exact_authority() -> 
         )
 
 
-def test_no_m13n_production_derived_artifacts_exist() -> None:
+def test_m13n_package_contains_no_authorizing_or_mutation_artifacts() -> None:
     output = (
         ROOT / "docs/editorial/full_record_reviews/publication_activation_candidates/"
         "f000477_education_workforce_119_v1"
     )
-    assert not output.exists()
+    assert output.exists()
     forbidden = {
-        "current_production_preflight.json",
-        "runtime_health_proof.json",
-        "production_eligibility_publication_authority.json",
         "positive_activation_authority.json",
-        "expected_production_write_set.json",
-        "rollback_contract.json",
         "activation_receipt.json",
         "current_state.json",
     }

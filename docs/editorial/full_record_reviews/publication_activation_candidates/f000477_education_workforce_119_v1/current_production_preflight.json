@@ -1,0 +1,92 @@
+{
+  "baseline_registry_rows": {
+    "ENVIRONMENT_ENERGY": {
+      "artifact_id": 239,
+      "artifact_version": 1,
+      "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+      "issue_id": "ENVIRONMENT_ENERGY",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+      "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+      "publicly_active": true,
+      "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+    },
+    "JUSTICE_PUBLIC_SAFETY": {
+      "artifact_id": 221,
+      "artifact_version": 1,
+      "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "member_bioguide_id": "F000477",
+      "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+      "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+      "publicly_active": true,
+      "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+    },
+    "NATIONAL_SECURITY_FOREIGN": {
+      "artifact_id": 227,
+      "artifact_version": 1,
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+      "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+      "publicly_active": true,
+      "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+    }
+  },
+  "captured_at_utc": "2026-08-26T00:46:40.745199+00:00",
+  "counts": {
+    "artifacts": 152,
+    "batches": 6,
+    "publication_registry": 3,
+    "relationships": 163
+  },
+  "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+  "education_registry_rows": [],
+  "m13n_target_rows": [],
+  "preflight_subject_sha256": "ffd285eb447ce4abb2f48a2b7fdc0c80a7320aee912a7fc883779aa8e9c7c085",
+  "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+  "runtime_health_proof_binding": {
+    "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+    "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+    "runtime_health_proof_subject_sha256": "4bde3cc7ea19ae29a142148c14f926ab76fb8406edac21930e6a745fe82c2690"
+  },
+  "schema_version": "m13n_current_production_preflight_v1",
+  "selector_pre_activation": {
+    "scopes": {
+      "118": {
+        "ECONOMY_TAXES": "receipts_only",
+        "EDUCATION_WORKFORCE": "receipts_only",
+        "ENVIRONMENT_ENERGY": "receipts_only",
+        "HEALTH_SOCIAL": "receipts_only",
+        "IMMIGRATION_BORDER": "receipts_only",
+        "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+        "JUSTICE_PUBLIC_SAFETY": "receipts_only",
+        "NATIONAL_SECURITY_FOREIGN": "receipts_only"
+      },
+      "119": {
+        "ECONOMY_TAXES": "receipts_only",
+        "EDUCATION_WORKFORCE": "receipts_only",
+        "ENVIRONMENT_ENERGY": "reviewed_conclusion",
+        "HEALTH_SOCIAL": "receipts_only",
+        "IMMIGRATION_BORDER": "receipts_only",
+        "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+        "JUSTICE_PUBLIC_SAFETY": "reviewed_conclusion",
+        "NATIONAL_SECURITY_FOREIGN": "reviewed_conclusion"
+      },
+      "all": {
+        "ECONOMY_TAXES": "receipts_only",
+        "EDUCATION_WORKFORCE": "receipts_only",
+        "ENVIRONMENT_ENERGY": "reviewed_conclusion",
+        "HEALTH_SOCIAL": "receipts_only",
+        "IMMIGRATION_BORDER": "receipts_only",
+        "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+        "JUSTICE_PUBLIC_SAFETY": "reviewed_conclusion",
+        "NATIONAL_SECURITY_FOREIGN": "reviewed_conclusion"
+      }
+    },
+    "selector_rows": 3
+  },
+  "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860",
+  "transaction_read_only": true
+}
