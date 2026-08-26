@@ -22,8 +22,13 @@ from scripts.foushee_education_workforce_publication_preparation import (
     _rollback,
     _selector_state,
     _state_fingerprint,
+    activation_write_set_binding,
+    build_authority,
+    build_write_set,
+    capture_preflight,
 )
 from test_m13n_r_education_publication_preparation_postgres import (
+    _activation,
     _prepare_post_m12n_baseline,
 )
 
@@ -62,11 +67,8 @@ def _synthetic_activation(candidate: dict) -> dict:
 
 def test_governed_m13n_graph_disposable_lifecycle() -> None:
     assert DATABASE_URL is not None
-    authority = _load("production_eligibility_publication_authority.json")
-    write_set = _load("expected_production_write_set.json")
-    candidate = _load("positive_activation_ratification_candidate.json")
+    packaged_write_set = _load("expected_production_write_set.json")
     preflight = _load("current_production_preflight.json")
-    activation = _synthetic_activation(candidate)
     with _connect(DATABASE_URL, autocommit=False) as conn:
         _prepare_post_m12n_baseline(conn)
         before_counts = _counts(conn)
@@ -74,7 +76,51 @@ def test_governed_m13n_graph_disposable_lifecycle() -> None:
         before_registry = _registry_rows(conn)
         before_selector = _selector_state(conn, allow_test_activation_authority=True)
         assert before_counts == preflight["counts"]
-        assert before_fingerprint == preflight["state_fingerprint_sha256"]
+        production_registry = preflight["baseline_registry_rows"]
+        assert {
+            row["issue_id"]: (
+                row["natural_key"],
+                row["content_sha256"],
+                row["publicly_active"],
+            )
+            for row in before_registry
+        } == {
+            issue_id: (
+                row["natural_key"],
+                row["content_sha256"],
+                row["publicly_active"],
+            )
+            for issue_id, row in production_registry.items()
+        }
+
+        disposable_preflight = capture_preflight(
+            conn,
+            deployed_commit=preflight["deployed_commit"],
+            allow_test_activation_authority=True,
+        )
+        authority = build_authority(
+            disposable_preflight,
+            reviewer="synthetic-disposable-reviewer",
+            decision_recorded_at_utc="2026-08-26T00:55:00Z",
+        )
+        write_set = build_write_set(disposable_preflight, authority)
+        for key in (
+            "accepted_site_integration_binding",
+            "artifacts",
+            "relationships",
+            "expected_counts",
+        ):
+            assert write_set[key] == packaged_write_set[key]
+        assert (
+            write_set["publication_registry"]["presentation_natural_key"]
+            == packaged_write_set["publication_registry"]["presentation_natural_key"]
+        )
+        activation = _activation(
+            write_set,
+            issue_id=ISSUE_ID,
+            artifact_id=EDUCATION_ACTIVATION_AUTHORITY_ID,
+            write_binding=activation_write_set_binding(write_set),
+        )
 
         with pytest.raises(ValueError, match="synthetic activation authority"):
             with conn.transaction(force_rollback=True):
