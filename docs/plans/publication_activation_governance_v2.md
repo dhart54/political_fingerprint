@@ -66,6 +66,7 @@
 ## Deviations Or Corrections
 
 - The isolated worktree path was shortened from `.w/publication-activation-governance-v2` to `.w/v2` solely to satisfy Windows long-path validation; branch and repository bytes were preserved.
+- The first hosted V2 PostgreSQL run reached the new step but its read-only-mode assertion used tuple indexing against the repository's dictionary-row connection. The assertion was corrected to read the named `transaction_read_only` field; no contract or safety check was weakened.
 
 ## Validation Results
 

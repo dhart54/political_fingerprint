@@ -115,7 +115,12 @@ def test_v2_execution_gate_uses_fresh_transaction_read_only_database_state() -> 
         with pytest.raises(ReadOnlySqlTransaction):
             with conn.transaction():
                 conn.execute("SET TRANSACTION READ ONLY")
-                assert conn.execute("SHOW transaction_read_only").fetchone()[0] == "on"
+                assert (
+                    conn.execute("SHOW transaction_read_only").fetchone()[
+                        "transaction_read_only"
+                    ]
+                    == "on"
+                )
                 observed_counts = _counts(conn)
                 observed_fingerprint = _state_fingerprint(conn)
                 observed_registry = _registry_rows(conn)
