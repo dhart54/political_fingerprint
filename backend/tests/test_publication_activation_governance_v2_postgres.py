@@ -137,7 +137,7 @@ def test_v2_execution_gate_uses_fresh_transaction_read_only_database_state() -> 
                 )
                 assert (
                     conn.execute(
-                        """SELECT COUNT(*) FROM editorial_artifacts
+                        """SELECT COUNT(*) FROM editorial_artifact_versions
                        WHERE natural_key = %s""",
                         (
                             "test-site-integration-candidate:"
