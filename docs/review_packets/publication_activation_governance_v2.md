@@ -111,6 +111,11 @@ for `118`. No fifth row exists and no production write was performed.
   milestone. They were not modified or absorbed.
 - Local Docker/PostgreSQL is unavailable; the exact real-database V2 proof is a
   mandatory hosted step in the draft PR.
+- Hosted implementation-head run `32924329185` at
+  `c9f3612b7699c76ced3e0a953a825429d4358684` passed all four backend jobs. The
+  publication-activation job completed the V2 transaction-read-only proof, the
+  unchanged historical activation chain, backup/real-Uvicorn evidence, and
+  owned-resource cleanup; the full-record benchmark also passed.
 
 ## Stop Boundary
 

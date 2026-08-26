@@ -25,9 +25,9 @@
 - [x] Stable V2 authority and write-set identities exclude volatile runtime/preflight evidence identity and timestamps.
 - [x] Fresh equivalent evidence validates mechanically under existing authority; stale or materially drifted evidence fails closed.
 - [x] Historical M11N/M12N/M13N artifacts and behavior remain exact; four-domain selector behavior and production isolation remain unchanged.
-- [ ] Tests/build/validation recorded, including requested release, benchmark, formatting, compile, catalog/diff, PostgreSQL, and hosted-CI gates where available. Hosted PostgreSQL/CI pending.
+- [x] Tests/build/validation recorded, including requested release, benchmark, formatting, compile, catalog/diff, PostgreSQL, and hosted-CI gates.
 - [x] Concise governance documentation and PR review question are present.
-- [ ] Final reconciliation completed; draft PR remains unmerged and undeployed.
+- [x] Final reconciliation completed; draft PR remains unmerged and undeployed.
 
 ## Baseline
 
@@ -46,9 +46,9 @@
 
 - [x] Discovery
 - [x] Implementation
-- [ ] Validation
+- [x] Validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -67,6 +67,8 @@
 
 - The isolated worktree path was shortened from `.w/publication-activation-governance-v2` to `.w/v2` solely to satisfy Windows long-path validation; branch and repository bytes were preserved.
 - The first hosted V2 PostgreSQL run reached the new step but its read-only-mode assertion used tuple indexing against the repository's dictionary-row connection. The assertion was corrected to read the named `transaction_read_only` field; no contract or safety check was weakened.
+- The next hosted run exposed the same dictionary-row mismatch in two count assertions; both were corrected to use the named `count` field.
+- The following hosted run reached the negative candidate-write assertion and exposed a fixture-only table-name typo (`editorial_artifacts` instead of the canonical `editorial_artifact_versions`). Correcting that reference allowed the unchanged V2 gate and full lifecycle to pass.
 
 ## Validation Results
 
@@ -77,7 +79,7 @@
 - Governed release tier: passed all 7 checks.
 - Public review-state catalog, Python compile, changed-file Ruff/format, and diff checks: passed.
 - Read-only production: `7 / 155 / 165 / 4`, four exact active domains, 119/all reviewed-conclusion isolation, 118 receipts-only, fingerprint `090477315f73df6cadda662f2aa24ef4a30ed0b2e74669bb3e7d5cf73680e01e`.
-- Hosted PostgreSQL and exact-head CI: pending draft PR.
+- Hosted implementation-head CI run `32924329185` at `c9f3612b7699c76ced3e0a953a825429d4358684`: passed all four backend jobs, including the mandatory V2 transaction-read-only PostgreSQL proof, historical activation lifecycle, owned-resource cleanup, and full-record benchmark. Vercel and preview-comment checks also passed.
 
 ## Production Writes
 
@@ -96,6 +98,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: pending.
-- Remaining limitations: pending.
+- Definition of done satisfied: yes; the reusable future-only V2 boundary, adversarial coverage, historical compatibility, production isolation, and exact hosted proof are complete.
+- Remaining limitations: local Docker/PostgreSQL remained unavailable, so the real-database proof was established in mandatory hosted CI; the unrelated repository-wide Ruff/format baseline remains non-clean and was not absorbed.
 - Recommended next step: independent ChatGPT governance review of the draft PR; do not merge, deploy, or begin M14 in this milestone.
