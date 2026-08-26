@@ -41,6 +41,19 @@ ENVIRONMENT_AUTHORITY_ID = (
 ENVIRONMENT_ACTIVATION_AUTHORITY_ID = (
     "publication-activation-authority:f000477:environment_energy:119:v1"
 )
+EDUCATION_ARTIFACT_ID = "site-integration-candidate:f000477:education_workforce:119:v1"
+EDUCATION_FILE_SHA256 = (
+    "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31"
+)
+EDUCATION_SUBJECT_SHA256 = (
+    "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+)
+EDUCATION_AUTHORITY_ID = (
+    "production-eligibility-publication-authority:f000477:education_workforce:119:v1"
+)
+EDUCATION_ACTIVATION_AUTHORITY_ID = (
+    "publication-activation-authority:f000477:education_workforce:119:v1"
+)
 
 POSITIVE_AUTHORIZATIONS = {
     "production_database_write": True,
@@ -260,6 +273,63 @@ def validate_environment_candidate_preparation_authority(
         raise ValueError("Environment candidate-preparation authority differs")
 
 
+def validate_education_candidate_preparation_authority(
+    authority: dict[str, Any], *, candidate: dict[str, Any]
+) -> None:
+    """Validate non-activating preparation authority for accepted Education copy."""
+
+    from .education_workforce_integration_candidate import (
+        validate_education_workforce_site_integration_candidate,
+    )
+
+    validate_education_workforce_site_integration_candidate(candidate)
+    subject = authority.get("subject")
+    binding = (
+        subject.get("accepted_site_integration_binding")
+        if isinstance(subject, dict)
+        else None
+    )
+    authorizations = (
+        subject.get("authorizations") if isinstance(subject, dict) else None
+    )
+    if (
+        authority.get("schema_version") != CANDIDATE_AUTHORITY_SCHEMA_VERSION
+        or authority.get("artifact_id") != EDUCATION_AUTHORITY_ID
+        or authority.get("test_only_synthetic") is True
+        or authority.get("immutable") is not True
+        or authority.get("accepted") is not True
+        or not isinstance(subject, dict)
+        or authority.get("authority_subject_sha256") != canonical_digest(subject)
+        or binding
+        != {
+            "artifact_id": EDUCATION_ARTIFACT_ID,
+            "subject_sha256": EDUCATION_SUBJECT_SHA256,
+            "file_sha256": EDUCATION_FILE_SHA256,
+            "content_sha256": canonical_digest(candidate),
+        }
+        or subject.get("member_bioguide_id") != MEMBER_ID
+        or subject.get("issue_id") != "EDUCATION_WORKFORCE"
+        or subject.get("congress") != CONGRESS
+        or subject.get("decision")
+        != "approve_production_eligibility_and_publication_preparation_candidate"
+        or not isinstance(authorizations, dict)
+        or authorizations.get("record_production_eligibility") is not True
+        or authorizations.get("build_publication_activation_candidate") is not True
+        or any(
+            authorizations.get(key) is not False
+            for key in (
+                "production_database_write",
+                "publication_registry_mutation",
+                "publication_activation",
+                "production_persistence",
+                "deployment",
+                "live_activation",
+            )
+        )
+    ):
+        raise ValueError("Education candidate-preparation authority differs")
+
+
 def validate_preparation_authority(
     authority: dict[str, Any], *, candidate: dict[str, Any]
 ) -> None:
@@ -269,8 +339,14 @@ def validate_preparation_authority(
         validate_environment_candidate_preparation_authority(
             authority, candidate=candidate
         )
-    else:
+    elif candidate.get("artifact_id") == EDUCATION_ARTIFACT_ID:
+        validate_education_candidate_preparation_authority(
+            authority, candidate=candidate
+        )
+    elif candidate.get("artifact_id") == M11M_ARTIFACT_ID:
         validate_candidate_preparation_authority(authority, candidate=candidate)
+    else:
+        raise ValueError("unknown site-integration candidate identity")
 
 
 def validate_positive_activation_authority(
@@ -441,6 +517,94 @@ def validate_environment_positive_activation_authority(
         raise ValueError("Environment positive activation authority binding differs")
 
 
+def validate_education_positive_activation_authority(
+    authority: dict[str, Any],
+    *,
+    candidate: dict[str, Any],
+    candidate_authority: dict[str, Any],
+    metadata: dict[str, Any],
+    allow_test_authority: bool = False,
+) -> None:
+    """Validate the distinct future Education activation authority."""
+
+    validate_education_candidate_preparation_authority(
+        candidate_authority, candidate=candidate
+    )
+    subject = authority.get("subject")
+    synthetic = authority.get("test_only_synthetic") is True
+    if synthetic and not allow_test_authority:
+        raise ValueError("synthetic activation authority cannot publish")
+    runtime = subject.get("runtime_binding") if isinstance(subject, dict) else None
+    expected_runtime = _object(metadata.get("reviewed_runtime_binding")) or {}
+    if isinstance(subject, dict):
+        try:
+            decision_recorded = datetime.fromisoformat(
+                subject["decision_recorded_at_utc"].replace("Z", "+00:00")
+            )
+            if decision_recorded.tzinfo is None:
+                raise ValueError
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(
+                "Education activation decision timestamp is invalid"
+            ) from exc
+        validate_stable_ratified_runtime_binding(
+            runtime,
+            expected_runtime_manifest_sha256=expected_runtime.get(
+                "reviewed_runtime_manifest_sha256", ""
+            ),
+        )
+        validate_ratification_runtime_evidence_binding(
+            subject.get("ratification_runtime_evidence_binding"),
+            stable_runtime=runtime,
+        )
+    if (
+        authority.get("schema_version") != ACTIVATION_AUTHORITY_SCHEMA_VERSION
+        or authority.get("artifact_id") != EDUCATION_ACTIVATION_AUTHORITY_ID
+        or authority.get("immutable") is not True
+        or authority.get("sealed") is not True
+        or authority.get("accepted") is not True
+        or not isinstance(subject, dict)
+        or authority.get("activation_authority_subject_sha256")
+        != canonical_digest(subject)
+        or subject.get("decision") != "approve_exact_publication_activation"
+        or not isinstance(subject.get("decision_recorded_at_utc"), str)
+        or not subject["decision_recorded_at_utc"].strip()
+        or subject.get("reviewer_authority") != ACTIVATION_REVIEWER_AUTHORITY
+        or not isinstance(subject.get("reviewer"), str)
+        or not subject["reviewer"].strip()
+        or subject.get("product_owner") != "dhart54"
+        or subject.get("member_bioguide_id") != MEMBER_ID
+        or subject.get("issue_id") != "EDUCATION_WORKFORCE"
+        or subject.get("congress") != CONGRESS
+        or subject.get("accepted_site_integration_binding")
+        != {
+            "artifact_id": EDUCATION_ARTIFACT_ID,
+            "subject_sha256": EDUCATION_SUBJECT_SHA256,
+            "file_sha256": EDUCATION_FILE_SHA256,
+            "content_sha256": canonical_digest(candidate),
+        }
+        or subject.get("candidate_preparation_authority_binding")
+        != metadata.get("candidate_preparation_authority_binding")
+        or subject.get("activation_write_set_binding")
+        != metadata.get("activation_write_set_binding")
+        or subject.get("publication_registry_target")
+        != {
+            "member_bioguide_id": MEMBER_ID,
+            "issue_id": "EDUCATION_WORKFORCE",
+            "presentation_natural_key": EDUCATION_ARTIFACT_ID,
+            "presentation_artifact_version": 1,
+        }
+        or subject.get("presentation_content_sha256")
+        != metadata.get("active_artifact_sha256")
+        or subject.get("preflight_binding") != metadata.get("preflight_binding")
+        or subject.get("rollback_binding") != metadata.get("rollback_binding")
+        or subject.get("production_target_identity_sha256")
+        != metadata.get("production_target_identity_sha256")
+        or subject.get("authorizations") != POSITIVE_AUTHORIZATIONS
+    ):
+        raise ValueError("Education positive activation authority binding differs")
+
+
 def _eligible_national_security_candidate(
     row: dict[str, Any],
     *,
@@ -566,6 +730,78 @@ def _eligible_environment_candidate(
     return payload
 
 
+def _eligible_education_candidate(
+    row: dict[str, Any],
+    *,
+    member_bioguide_id: str,
+    allow_test_authority: bool = False,
+) -> dict[str, Any] | None:
+    from .education_workforce_integration_candidate import (
+        M13M_SCHEMA_VERSION,
+        validate_education_workforce_site_integration_candidate,
+    )
+
+    payload = _object(row.get("payload_jsonb", row.get("payload")))
+    metadata = _object(row.get("publication_metadata_jsonb"))
+    if (
+        payload is None
+        or metadata is None
+        or payload.get("artifact_id") != EDUCATION_ARTIFACT_ID
+    ):
+        return None
+    try:
+        validate_education_workforce_site_integration_candidate(payload)
+        preparation = _object(
+            metadata.get("production_eligibility_publication_authority")
+        )
+        activation = _object(metadata.get("publication_activation_authority"))
+        if preparation is None or activation is None:
+            return None
+        validate_education_candidate_preparation_authority(
+            preparation, candidate=payload
+        )
+        validate_education_positive_activation_authority(
+            activation,
+            candidate=payload,
+            candidate_authority=preparation,
+            metadata=metadata,
+            allow_test_authority=allow_test_authority,
+        )
+    except (KeyError, TypeError, ValueError):
+        return None
+    subject = payload["subject"]
+    content_sha256 = canonical_digest(payload)
+    if (
+        row.get("member_bioguide_id") != member_bioguide_id
+        or subject["member_bioguide_id"] != member_bioguide_id
+        or subject.get("congress") != CONGRESS
+        or row.get("issue_id") != "EDUCATION_WORKFORCE"
+        or row.get("publicly_active") is not True
+        or row.get("deactivated_at") is not None
+        or row.get("editorial_status") != "human_approved"
+        or row.get("benchmark_status") != "gold_benchmark"
+        or row.get("production_eligible") is not True
+        or row.get("natural_key") != EDUCATION_ARTIFACT_ID
+        or row.get("schema_version") != M13M_SCHEMA_VERSION
+        or row.get("artifact_version") != 1
+        or not isinstance(row.get("content_sha256"), str)
+        or not hmac.compare_digest(row["content_sha256"], content_sha256)
+        or metadata.get("presentation_natural_key") != EDUCATION_ARTIFACT_ID
+        or metadata.get("presentation_artifact_version") != 1
+        or metadata.get("accepted_site_integration_subject_sha256")
+        != EDUCATION_SUBJECT_SHA256
+        or metadata.get("accepted_site_integration_file_sha256")
+        != EDUCATION_FILE_SHA256
+        or metadata.get("active_artifact_sha256") != content_sha256
+        or metadata.get("authority_subject_sha256")
+        != preparation["authority_subject_sha256"]
+        or metadata.get("activation_authority_subject_sha256")
+        != activation["activation_authority_subject_sha256"]
+    ):
+        return None
+    return payload
+
+
 def eligible_site_integration_candidate(
     row: dict[str, Any],
     *,
@@ -581,11 +817,19 @@ def eligible_site_integration_candidate(
             member_bioguide_id=member_bioguide_id,
             allow_test_authority=allow_test_authority,
         )
-    return _eligible_national_security_candidate(
-        row,
-        member_bioguide_id=member_bioguide_id,
-        allow_test_authority=allow_test_authority,
-    )
+    if payload.get("artifact_id") == EDUCATION_ARTIFACT_ID:
+        return _eligible_education_candidate(
+            row,
+            member_bioguide_id=member_bioguide_id,
+            allow_test_authority=allow_test_authority,
+        )
+    if payload.get("artifact_id") == M11M_ARTIFACT_ID:
+        return _eligible_national_security_candidate(
+            row,
+            member_bioguide_id=member_bioguide_id,
+            allow_test_authority=allow_test_authority,
+        )
+    return None
 
 
 def active_site_integration_candidate(
@@ -632,7 +876,19 @@ def select_site_integration_public(
             scope=scope,
         )
         issue_id = "ENVIRONMENT_ENERGY"
-    else:
+    elif candidate.get("artifact_id") == EDUCATION_ARTIFACT_ID:
+        from .education_workforce_integration_candidate import (
+            select_education_workforce_site_integration_preview,
+        )
+
+        projected = select_education_workforce_site_integration_preview(
+            candidate,
+            legislator_id=legislator_id,
+            member_bioguide_id=member_bioguide_id,
+            scope=scope,
+        )
+        issue_id = "EDUCATION_WORKFORCE"
+    elif candidate.get("artifact_id") == M11M_ARTIFACT_ID:
         from .integration_candidate import select_site_integration_preview
 
         projected = select_site_integration_preview(
@@ -642,6 +898,8 @@ def select_site_integration_public(
             scope=scope,
         )
         issue_id = ISSUE_ID
+    else:
+        raise ValueError("unknown site-integration candidate identity")
     result = copy.deepcopy(projected)
     for presentation in result["presentations"]:
         if (

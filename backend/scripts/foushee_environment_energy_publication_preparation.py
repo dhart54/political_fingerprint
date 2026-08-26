@@ -227,6 +227,49 @@ FROZEN_FAILED_ACTIVATION_REVIEWED_RUNTIME_MANIFEST = {
         "a22bee788697eb84da900be5ec9a0aef0c6949c59a6a9c2d7f697cdf369036c1"
     ),
 }
+FROZEN_SUCCESSFUL_M12N_V3_REVIEWED_RUNTIME_MANIFEST = {
+    "schema_version": "m12n_reviewed_runtime_manifest_v1",
+    "files": [
+        {
+            "path": "backend/app/api/positions.py",
+            "file_sha256": (
+                "abe96f7d8a403f7a9c7d5769e707611f5af072d34e253613ab5f1a0a20a0f80d"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/selector.py",
+            "file_sha256": (
+                "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20"
+            ),
+        },
+        {
+            "path": "backend/app/editorial_presentations/site_publication.py",
+            "file_sha256": (
+                "4f956b94b9ba39ed0f440bbd2cde9d3ad11b4fafcc950b1a2db0b0b98b4f4020"
+            ),
+        },
+        {
+            "path": (
+                "backend/app/editorial_presentations/"
+                "environment_integration_candidate.py"
+            ),
+            "file_sha256": (
+                "655805f5588bab44a5e932fc8a06d97c040adc983d4c6a9dd9c1cdc4b9d3b5fb"
+            ),
+        },
+        {
+            "path": (
+                "backend/scripts/foushee_environment_energy_publication_preparation.py"
+            ),
+            "file_sha256": (
+                "04235712a37244f983ca0d666891e69eecdce3276dc5a46240b4d37f1b4640af"
+            ),
+        },
+    ],
+    "reviewed_runtime_manifest_sha256": (
+        "a831d472f27a1785ebdcc609c174fc2e19da7213245adde3d12720736158ba8a"
+    ),
+}
 PRODUCTION_TARGET_IDENTITY_SHA256 = semantic_hash(EXPECTED_PRODUCTION_TARGET)
 
 EXPECTED_M12L = {
@@ -346,6 +389,13 @@ def reviewed_runtime_manifest_for_preflight(
         ]
     ):
         return copy.deepcopy(FROZEN_FAILED_ACTIVATION_REVIEWED_RUNTIME_MANIFEST)
+    if (
+        recorded
+        == FROZEN_SUCCESSFUL_M12N_V3_REVIEWED_RUNTIME_MANIFEST[
+            "reviewed_runtime_manifest_sha256"
+        ]
+    ):
+        return copy.deepcopy(FROZEN_SUCCESSFUL_M12N_V3_REVIEWED_RUNTIME_MANIFEST)
     if recorded != current["reviewed_runtime_manifest_sha256"]:
         raise StoreSafetyError("preflight runtime manifest is not reproducible")
     return current
