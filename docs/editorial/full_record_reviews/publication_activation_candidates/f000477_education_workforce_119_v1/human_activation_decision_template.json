@@ -1,0 +1,65 @@
+{
+  "accepted": false,
+  "artifact_id": "human-publication-activation-decision-template:f000477:education_workforce:119:v1",
+  "schema_version": "human_publication_activation_decision_template_v1",
+  "sealed": false,
+  "subject": {
+    "boundary": "Unsealed or incomplete forms cannot authorize database mutation or publication. Ratification must bind this exact deployed runtime.",
+    "candidate_preparation_authority_binding": {
+      "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+      "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+      "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde"
+    },
+    "candidate_write_set_binding": {
+      "artifact_id": "publication-activation-write-set:f000477:education_workforce:119:v1",
+      "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+    },
+    "completion_required_after_exact_runtime_deployment": {
+      "authorizations": {
+        "deploy_exact_reviewed_runtime": null,
+        "exact_bounded_rollback": null,
+        "production_database_write": null,
+        "publication_activation": null,
+        "publication_registry_mutation": null
+      },
+      "decision": null,
+      "decision_recorded_at_utc": null,
+      "fresh_preflight_state_fingerprint_sha256": null,
+      "fresh_preflight_subject_sha256": null,
+      "production_target_identity_sha256": null,
+      "reviewer": null,
+      "runtime_health_proof_subject_sha256": null
+    },
+    "reviewed_runtime_binding": {
+      "files": [
+        {
+          "file_sha256": "23403e09d469b5845a8a13b432a9e1603c3dbf192dbce319b2a0838d01e8e143",
+          "path": "backend/app/api/positions.py"
+        },
+        {
+          "file_sha256": "ff54a90ce56bd00721b2b0a8bcd3b80a121cfe11872c3d5ef9d79865a3768ef1",
+          "path": "backend/app/api/editorial_presentations.py"
+        },
+        {
+          "file_sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20",
+          "path": "backend/app/editorial_presentations/selector.py"
+        },
+        {
+          "file_sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37",
+          "path": "backend/app/editorial_presentations/site_publication.py"
+        },
+        {
+          "file_sha256": "14a2637c03da7585180650f065f4c61637dee26b571fc24447edcf7fdc09fbdc",
+          "path": "backend/app/editorial_presentations/education_workforce_integration_candidate.py"
+        },
+        {
+          "file_sha256": "4b11b1252c933c9d1719388e808e8dc7845e44633cbfa0ac5b643a14bf311a62",
+          "path": "backend/scripts/foushee_education_workforce_publication_preparation.py"
+        }
+      ],
+      "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+      "schema_version": "m13n_reviewed_runtime_manifest_v1"
+    }
+  },
+  "template_subject_sha256": "9590dc4b9d5807bb4db4c9660a708301eb3d412b2a0386bd6e32d11c6b223f83"
+}

@@ -1,0 +1,142 @@
+{
+  "artifact_id": "successful-production-activation-receipt:f000477:education_workforce:119:v1",
+  "immutable": true,
+  "receipt_subject_sha256": "b0869711a29d3cec5e78863aae0a421ace09f7c08f78de2facc50a1ca5a4725c",
+  "schema_version": "m13n_successful_production_activation_receipt_v1",
+  "subject": {
+    "activation_authority": {
+      "file_sha256": "7e42d43a9c8ab8bfa71d9ae295dbcc2fcd8a6a066235d83eafeba74a9c997787",
+      "subject_sha256": "3a901faf83365e7baf416045ed7ae3a9bea4225c77a1e97ab73fe8b3ba72d791"
+    },
+    "execution_runtime_proof": {
+      "file_sha256": "9798d68c86629b0395e69fb6dfcc517bbd0a2eba09e6f82b7d58006bb76acd44",
+      "subject_sha256": "a6fb51b72d7c9f4d598f4c7b8e4e8c6802bde77d7d99ab3c804fd9498d6f074d"
+    },
+    "existing_domain_isolation": {
+      "baseline_fingerprint_unchanged": true,
+      "registry_rows": {
+        "ENVIRONMENT_ENERGY": {
+          "artifact_id": 239,
+          "artifact_version": 1,
+          "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+          "issue_id": "ENVIRONMENT_ENERGY",
+          "member_bioguide_id": "F000477",
+          "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+          "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+          "publicly_active": true,
+          "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+        },
+        "JUSTICE_PUBLIC_SAFETY": {
+          "artifact_id": 221,
+          "artifact_version": 1,
+          "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "member_bioguide_id": "F000477",
+          "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+          "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+          "publicly_active": true,
+          "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "artifact_id": 227,
+          "artifact_version": 1,
+          "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+          "issue_id": "NATIONAL_SECURITY_FOREIGN",
+          "member_bioguide_id": "F000477",
+          "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+          "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+          "publicly_active": true,
+          "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+        }
+      },
+      "tiers_118": "receipts_only",
+      "tiers_119_and_all": "reviewed_conclusion"
+    },
+    "final_counts": {
+      "artifacts": 155,
+      "batches": 7,
+      "publication_registry": 4,
+      "relationships": 165
+    },
+    "hr1005_proof": {
+      "canonical_action_id": "house:119:1:312",
+      "directional_analytical_memberships": 0,
+      "exact_choice_position_effect": "non_directional_not_voting",
+      "member_action": "Not_Voting"
+    },
+    "idempotent_second_apply": {
+      "additional_artifacts": 0,
+      "additional_batches": 0,
+      "additional_registry_mutations": 0,
+      "additional_relationships": 0,
+      "already_applied": true
+    },
+    "issue_id": "EDUCATION_WORKFORCE",
+    "live_education_presentation": {
+      "notable": {
+        "direction": "mixed",
+        "direction_label": "Mixed",
+        "direction_symbol": "±",
+        "title": "H.R. 1048 amendment and final passage"
+      },
+      "notable_choice_count": 1,
+      "overview_count": 1,
+      "overview_direction": null,
+      "pattern_direction": null,
+      "repeated_pattern_count": 1,
+      "synthesis_count": 0,
+      "tiers": {
+        "118": "receipts_only",
+        "119": "reviewed_conclusion",
+        "all": "reviewed_conclusion"
+      },
+      "trajectory_count": 0
+    },
+    "live_evidence": {
+      "all_scope_governed_119_actions": 17,
+      "all_scope_unique_119_actions": 17,
+      "scope_118_governed_119_actions": 0,
+      "scope_119_episodes": 16,
+      "scope_119_governed_actions": 17,
+      "scope_119_unique_actions": 17
+    },
+    "live_positions": {
+      "interpreted_oppose_count": 10,
+      "interpreted_other_count": 1,
+      "interpreted_support_count": 6,
+      "interpreted_total": 17,
+      "nay_count": 10,
+      "other_count": 1,
+      "recorded_votes": 16,
+      "total_votes": 17,
+      "yea_count": 6
+    },
+    "materialization_receipt": {
+      "file_sha256": "988f89bdba2d02ef4e0ffb19029bf2acaa6d68fbb3ad0842c8bbad9b2b285a24",
+      "subject_sha256": "9c396506b046622af8d486fd3e21eb4f50a371322c8d34c96509a64848091c57"
+    },
+    "member_bioguide_id": "F000477",
+    "production_apply": {
+      "already_applied": false,
+      "artifact_ids": {
+        "presentation": 242,
+        "source_manifest": 243,
+        "validation": 244
+      },
+      "artifact_inserts": 3,
+      "batch_id": 21,
+      "batch_inserts": 1,
+      "deletes": 0,
+      "registry_inserts": 1,
+      "registry_updates": 0,
+      "relationship_inserts": 2
+    },
+    "ratified_base": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+    "ratified_head": "f5b762d748e1f87dc4c5c5da58acaaf6f1c40878",
+    "ratified_pr": 172,
+    "rollback": {
+      "contract_subject_sha256": "9667a7d2f960ea456ed4a91b203a60f0d5b44a210ef87a5678d5cc85afa49236",
+      "executed": false
+    }
+  }
+}

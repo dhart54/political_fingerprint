@@ -1,0 +1,68 @@
+{
+  "artifact_id": "publication-activation-ratification-review-packet:f000477:education_workforce:119:v1",
+  "immutable": true,
+  "review_packet_subject_sha256": "e5871871ab45abe7fcc1c16170aa813d5507d1a1a55dd2d3b1764ce3a7839471",
+  "schema_version": "m13n_publication_activation_ratification_review_packet_v1",
+  "subject": {
+    "authorizing": false,
+    "candidate_binding": {
+      "artifact_id": "publication-activation-ratification-candidate:f000477:education_workforce:119:v1",
+      "candidate_file_sha256": "655beaba23fd9c0af93ef5908c0c3040ad6f756e354c9f763e7595c2e039a315",
+      "prospective_authority_subject_sha256": "261d37a2b716f8e601f22b41dcf10147072a4c32a3c5b98111e4b0f488460a1a"
+    },
+    "counts": {
+      "after": {
+        "artifacts": 155,
+        "batches": 7,
+        "publication_registry": 4,
+        "relationships": 165
+      },
+      "before": {
+        "artifacts": 152,
+        "batches": 6,
+        "publication_registry": 3,
+        "relationships": 163
+      }
+    },
+    "empty_activation_template_binding": {
+      "file_sha256": "cd19828c396e09314bd732b4639aa6ea7f4b7d13e9a6a700cbac1c8ee7cc91ad",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_education_workforce_119_v1/human_activation_decision_template.json",
+      "template_subject_sha256": "9590dc4b9d5807bb4db4c9660a708301eb3d412b2a0386bd6e32d11c6b223f83"
+    },
+    "post_m13nr_main": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+    "preparation_authority_binding": {
+      "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde",
+      "file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_education_workforce_119_v1/production_eligibility_publication_authority.json"
+    },
+    "preparation_decision": {
+      "activating": false,
+      "decision_recorded_at_utc": "2026-08-26T01:38:13.268576Z",
+      "reviewer": "dhart54"
+    },
+    "production_preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+    "production_state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860",
+    "review_question": "Does this exact non-authorizing Education candidate safely qualify for later positive activation-authority materialization?",
+    "rollback_binding": {
+      "file_sha256": "5e06f3f3306ace0d4dc9c6ad479171558cb706656ecc1ffac38185b363207e57",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_education_workforce_119_v1/rollback_contract.json",
+      "rollback_subject_sha256": "9667a7d2f960ea456ed4a91b203a60f0d5b44a210ef87a5678d5cc85afa49236"
+    },
+    "runtime_health_proof_subject_sha256": "2a2309a13c14ad92bd04335e4f5909e612f9737da15fcc6b27d08ca02bead3b8",
+    "runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+    "write_envelope": {
+      "artifact_inserts": 3,
+      "batch_inserts": 1,
+      "deletes_during_activation": 0,
+      "existing_registry_rows_touched": 0,
+      "registry_inserts": 1,
+      "registry_updates": 0,
+      "relationship_inserts": 2
+    },
+    "write_set_binding": {
+      "file_sha256": "5274c128f3b068ce771e2d1006ccdb6881cf9b9bab49540361ab0e37b2e1fe2d",
+      "path": "docs/editorial/full_record_reviews/publication_activation_candidates/f000477_education_workforce_119_v1/expected_production_write_set.json",
+      "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+    }
+  }
+}

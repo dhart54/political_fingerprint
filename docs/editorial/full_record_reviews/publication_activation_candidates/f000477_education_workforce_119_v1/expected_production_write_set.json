@@ -1,0 +1,1746 @@
+{
+  "accepted_site_integration_binding": {
+    "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+    "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+    "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+    "subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+  },
+  "activation_authorized": false,
+  "artifact_id": "publication-activation-write-set:f000477:education_workforce:119:v1",
+  "artifacts": [
+    {
+      "artifact_type": "issue_public_presentation",
+      "artifact_version": 1,
+      "benchmark_status": "gold_benchmark",
+      "canonical_action_id": null,
+      "chamber": "house",
+      "congress": 119,
+      "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+      "editorial_status": "human_approved",
+      "episode_id": null,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "payload": {
+        "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+        "candidate_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+        "schema_version": "editorial_site_integration_candidate_v1",
+        "subject": {
+          "accepted_base_sha": "b2aa9c3d933b1b31dfafa02a9c6c1daa29dba396",
+          "accepted_wording_authority_binding": {
+            "artifact_id": "human-public-wording-authority:f000477:education_workforce:119:v1",
+            "file_sha256": "6ed581a482008132a5854f7bdde6bddae5fc103f069cb7eaa8cc785817fb6ebb",
+            "subject_sha256": "772a67080c81cc1c2abe4f90f0450ec3848a21fcac848e9dab48524bfbcb6fbb"
+          },
+          "accepted_wording_implementation_binding": {
+            "artifact_id": "reviewed-wording-decision-implementation:f000477:education_workforce:119:v1",
+            "file_sha256": "785b071651b0dff64dbebde1a809bce293b85cb1f73b7cf90898402f59883f33",
+            "subject_sha256": "76f84c4af0ae397781b2682f0470ec0f6da8d1c295f57ce1fa5a7ec32a838743"
+          },
+          "accepted_wording_parity_binding": {
+            "artifact_id": "public-wording-implementation-parity:f000477:education_workforce:119:v1",
+            "file_sha256": "06fc318328c03cff23ec8d6450b2f5e6e0b5bae35d54a789d48aff7daed4a364",
+            "subject_sha256": "af112cf7037bc1550c42e25ccf3d64a3d4b1284dbc1f54fe21a9705ebc2ef6ba"
+          },
+          "congress": 119,
+          "controls": {
+            "authorizing": false,
+            "database_writes": false,
+            "deployment": false,
+            "preview_requires_server_opt_in": true,
+            "production_persistence": false,
+            "production_selectable": false,
+            "production_writes": false,
+            "public": false,
+            "publication_active": false,
+            "publication_eligibility": false
+          },
+          "issue_id": "EDUCATION_WORKFORCE",
+          "member_bioguide_id": "F000477",
+          "member_slug": "leg_valerie_p_foushee",
+          "presentation": {
+            "conclusion": null,
+            "coverage_text": "2 findings · 4 House votes",
+            "evidence_metadata": {
+              "accepted_episode_count": 16,
+              "accepted_interpreted_action_count": 17,
+              "approved_universe_action_count": 17,
+              "blocked_action_ids": [],
+              "display_action_ids": [
+                "house:119:1:120",
+                "house:119:1:313",
+                "house:119:1:79",
+                "house:119:1:83"
+              ]
+            },
+            "exact_action_receipts": [],
+            "issue_id": "EDUCATION_WORKFORCE",
+            "limitations": [],
+            "noncounting_controls": [],
+            "notable_choices": [
+              {
+                "action_ids": [
+                  "house:119:1:79",
+                  "house:119:1:83"
+                ],
+                "direction": "mixed",
+                "direction_label": "Mixed",
+                "direction_symbol": "±",
+                "episode_ids": [
+                  "hr-1048-amendment-and-final-passage"
+                ],
+                "evidence_count_label": "1 legislative episode · 2 distinct choices",
+                "limitations": [
+                  "H.Amdt. 12 was a narrower Section 117 amendment; final passage concerned the distinct whole package.",
+                  "The final-passage vote does not show opposition to the accepted amendment or any other individual part of the package.",
+                  "The episode does not establish one overall position on foreign influence, higher education, China, or Section 117 policy.",
+                  "This is one mixed legislative episode, not a change over time."
+                ],
+                "mapping": {
+                  "public_support_projection": {
+                    "excluded_contextual_action_ids": [],
+                    "excluded_contextual_episode_ids": [],
+                    "strategy": "complete_semantic_lineage"
+                  },
+                  "raw_yea_nay_maps_to_direction": false,
+                  "relationship_roles": [],
+                  "semantic_binding_count": 1,
+                  "statement_basis": "accepted_semantic_proposition_content",
+                  "wording_item_subject_sha256": "9a5dd2ddbf54b0295b1df89b0197790f89f898bc41e36112aa2f50a726675ca2"
+                },
+                "primary_sentence": "Foushee supported H.Amdt. 12's changes to Section 117 foreign-gift reporting and later opposed final passage of the distinct whole H.R. 1048 package.",
+                "public_supporting_action_ids": [
+                  "house:119:1:79",
+                  "house:119:1:83"
+                ],
+                "public_supporting_episode_ids": [
+                  "hr-1048-amendment-and-final-passage"
+                ],
+                "secondary_clarification": "The final-passage vote does not show opposition to the accepted amendment or any other individual part of the package.",
+                "semantic_lineage_action_ids": [
+                  "house:119:1:79",
+                  "house:119:1:83"
+                ],
+                "semantic_lineage_directions": [
+                  "mixed"
+                ],
+                "semantic_lineage_episode_ids": [
+                  "hr-1048-amendment-and-final-passage"
+                ],
+                "semantic_source_ids": [
+                  "notable-hr1048-amendment-support-final-passage-opposition"
+                ],
+                "show_direction": true,
+                "surface": "notable_choice",
+                "title": "H.R. 1048 amendment and final passage",
+                "wording_item_id": "wording:notable:hr1048-amendment-final-passage"
+              }
+            ],
+            "overview": {
+              "action_ids": [
+                "house:119:1:120",
+                "house:119:1:313",
+                "house:119:1:79",
+                "house:119:1:83"
+              ],
+              "direction": null,
+              "direction_label": null,
+              "direction_symbol": null,
+              "episode_ids": [
+                "hr-1048-amendment-and-final-passage",
+                "single-119-hr-1069-1-313",
+                "single-119-hr-881-1-120"
+              ],
+              "evidence_count_label": "2 findings · 4 House votes",
+              "limitations": [
+                "The two proposals involved different federal funding streams and education sectors.",
+                "The restrictions used different triggers: a Confucius Institute relationship for higher education and Chinese-government support for elementary and secondary schools.",
+                "These are separate findings, not one overall position on education, China, or foreign-influence policy.",
+                "H.Amdt. 12 was a narrower amendment; final passage concerned the distinct whole package.",
+                "The final-passage choice does not identify a position on any individual H.R. 1048 component.",
+                "These are separate findings, not one overall position on education, China, or foreign-influence policy.",
+                "The H.R. 1048 finding is a mixed episode, not a change over time."
+              ],
+              "mapping": {
+                "public_support_projection": {
+                  "excluded_contextual_action_ids": [],
+                  "excluded_contextual_episode_ids": [],
+                  "strategy": "complete_semantic_lineage"
+                },
+                "raw_yea_nay_maps_to_direction": false,
+                "relationship_roles": [],
+                "semantic_binding_count": 2,
+                "statement_basis": "accepted_semantic_proposition_content",
+                "wording_item_subject_sha256": "e66035ae8ffe9cfe66d9e2166a76102dddbfa6f3f307f9a52a74ab1e79a111de"
+              },
+              "primary_sentence": "In the reviewed Education & Workforce record, Foushee opposed two specific federal-funding restrictions tied to institutional relationships or support. Separately, on H.R. 1048, she supported a Section 117 reporting amendment and later opposed final passage of the distinct whole package.",
+              "public_supporting_action_ids": [
+                "house:119:1:120",
+                "house:119:1:313",
+                "house:119:1:79",
+                "house:119:1:83"
+              ],
+              "public_supporting_episode_ids": [
+                "hr-1048-amendment-and-final-passage",
+                "single-119-hr-1069-1-313",
+                "single-119-hr-881-1-120"
+              ],
+              "secondary_clarification": "These are separate findings, not one overall position on education, China, or foreign-influence policy.",
+              "semantic_lineage_action_ids": [
+                "house:119:1:120",
+                "house:119:1:313",
+                "house:119:1:79",
+                "house:119:1:83"
+              ],
+              "semantic_lineage_directions": [
+                "mixed",
+                "opposition"
+              ],
+              "semantic_lineage_episode_ids": [
+                "hr-1048-amendment-and-final-passage",
+                "single-119-hr-1069-1-313",
+                "single-119-hr-881-1-120"
+              ],
+              "semantic_source_ids": [
+                "notable-hr1048-amendment-support-final-passage-opposition",
+                "pattern-education-relationship-triggered-funding-restriction-opposition"
+              ],
+              "show_direction": false,
+              "surface": "issue_overview",
+              "title": "Education & Workforce",
+              "wording_item_id": "wording:issue-overview:education-workforce:119"
+            },
+            "policy_episodes": [],
+            "policy_trajectories": [],
+            "provenance": {
+              "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+              "artifact_version": 1,
+              "reviewed_wording_sha256": "76f84c4af0ae397781b2682f0470ec0f6da8d1c295f57ce1fa5a7ec32a838743"
+            },
+            "public_status_label": "Issue summary candidate",
+            "repeated_patterns": [
+              {
+                "action_ids": [
+                  "house:119:1:120",
+                  "house:119:1:313"
+                ],
+                "direction": null,
+                "direction_label": null,
+                "direction_symbol": null,
+                "episode_ids": [
+                  "single-119-hr-1069-1-313",
+                  "single-119-hr-881-1-120"
+                ],
+                "evidence_count_label": "2 proposals · 2 separate education sectors",
+                "limitations": [
+                  "The proposals involved different education sectors and federal funding streams.",
+                  "The copy names the different sectors and triggering relationship or support for each proposal.",
+                  "The finding is limited to these two proposals and does not establish a general position on China, foreign influence, disclosure, education funding, or school governance."
+                ],
+                "mapping": {
+                  "public_support_projection": {
+                    "excluded_contextual_action_ids": [],
+                    "excluded_contextual_episode_ids": [],
+                    "strategy": "complete_semantic_lineage"
+                  },
+                  "raw_yea_nay_maps_to_direction": false,
+                  "relationship_roles": [],
+                  "semantic_binding_count": 1,
+                  "statement_basis": "accepted_semantic_proposition_content",
+                  "wording_item_subject_sha256": "850becb2b389b3584966d0c0e1d6f5f3c252b971d3fa476b273aa8a67f21a5ea"
+                },
+                "primary_sentence": "Across two separate proposals, Foushee opposed federal-funding restrictions tied to specified relationships or support: Confucius Institute relationships at higher-education institutions in H.R. 881 and direct or indirect Chinese-government support for elementary and secondary schools in H.R. 1069.",
+                "public_supporting_action_ids": [
+                  "house:119:1:120",
+                  "house:119:1:313"
+                ],
+                "public_supporting_episode_ids": [
+                  "single-119-hr-1069-1-313",
+                  "single-119-hr-881-1-120"
+                ],
+                "secondary_clarification": "The proposals involved different education sectors, federal funding streams, and triggering relationships or support.",
+                "semantic_lineage_action_ids": [
+                  "house:119:1:120",
+                  "house:119:1:313"
+                ],
+                "semantic_lineage_directions": [
+                  "opposition"
+                ],
+                "semantic_lineage_episode_ids": [
+                  "single-119-hr-1069-1-313",
+                  "single-119-hr-881-1-120"
+                ],
+                "semantic_source_ids": [
+                  "pattern-education-relationship-triggered-funding-restriction-opposition"
+                ],
+                "show_direction": false,
+                "surface": "repeated_pattern",
+                "title": "Funding restrictions tied to institutional relationships or support",
+                "wording_item_id": "wording:pattern:education-relationship-funding-restrictions"
+              }
+            ],
+            "requested_scope": "119",
+            "review_state": {
+              "candidate_preview": true,
+              "complete_episode_count": 16,
+              "congress_scope": [
+                119
+              ],
+              "full_issue_synthesis_eligible": false,
+              "procedural_context_actions": 0,
+              "public_claim_class": "bounded_separate_findings",
+              "review_scope": "full_defined_issue_record",
+              "scope_bounded_teaser": {
+                "text": "In the reviewed Education & Workforce record, Foushee opposed two specific federal-funding restrictions tied to institutional relationships or support. Separately, on H.R. 1048, she supported a Section 117 reporting amendment and later opposed final passage of the distinct whole package."
+              },
+              "semantic_tier": "reviewed_conclusion",
+              "total_recorded_actions": 17
+            },
+            "reviewed_action_ids": [],
+            "reviewed_scope": "119",
+            "scope_boundary": "This issue summary covers Valerie Foushee's reviewed 119th-Congress Education & Workforce record. The two findings remain separate and do not establish an overall position on education, China, foreign influence, education restrictions, or funding conditions. It does not infer motive, ideology, character, future behavior, or voting advice.",
+            "syntheses": [],
+            "teaser": "In the reviewed Education & Workforce record, Foushee opposed two specific federal-funding restrictions tied to institutional relationships or support. Separately, on H.R. 1048, she supported a Section 117 reporting amendment and later opposed final passage of the distinct whole package.",
+            "tier": "reviewed_conclusion",
+            "tier_badge": "Full issue review"
+          },
+          "preview_data": {
+            "action_ids_119": [
+              "house:119:1:120",
+              "house:119:1:146",
+              "house:119:1:312",
+              "house:119:1:313",
+              "house:119:1:314",
+              "house:119:1:315",
+              "house:119:1:332",
+              "house:119:1:68",
+              "house:119:1:79",
+              "house:119:1:83",
+              "house:119:2:184",
+              "house:119:2:19",
+              "house:119:2:216",
+              "house:119:2:217",
+              "house:119:2:31",
+              "house:119:2:47",
+              "house:119:2:82"
+            ],
+            "evidence_119": [
+              {
+                "canonical_action_id": "house:119:2:217",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the Higher Education Act of 1965 to require to the Secretary of Education to use an identity fraud detection system to review each FAFSA to determine whether the FAFSA presents a reasonable suspicion of identity fraud.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/7892/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:217",
+                  "caveats": [],
+                  "episode_id": "single-119-hr-7892-2-217",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 7892, which would amend the Higher Education Act of 1965 to require the Secretary of Education to use an identity-fraud detection system to review each FAFSA for a reasonable suspicion of identity fraud.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 7892, which would amend the Higher Education Act of 1965 to require the Secretary of Education to use an identity-fraud detection system to review each FAFSA for a reasonable suspicion of identity fraud.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll217.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 7892, which would amend the Higher Education Act of 1965 to require the Secretary of Education to use an identity-fraud detection system to review each FAFSA for a reasonable suspicion of identity fraud.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 7892, which would amend the Higher Education Act of 1965 to require the Secretary of Education to use an identity-fraud detection system to review each FAFSA for a reasonable suspicion of identity fraud.",
+                "roll_call_id": "house:119:2:217",
+                "rollcall_number": 217,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/7892/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll217.xml",
+                "uncertainty_note": "",
+                "vote_date": "2026-06-10",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:216",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To accelerate workplace time-to-contract under the National Labor Relations Act.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/5408/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:216",
+                  "caveats": [],
+                  "episode_id": "single-119-hr-5408-2-216",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll216.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
+                "position": "yea",
+                "question": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
+                "roll_call_id": "house:119:2:216",
+                "rollcall_number": 216,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/5408/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll216.xml",
+                "uncertainty_note": "",
+                "vote_date": "2026-06-09",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:184",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/2616/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:184",
+                  "caveats": [],
+                  "episode_id": "single-119-hr-2616-2-184",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 2616, which would require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 2616, which would require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll184.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 2616, which would require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 2616, which would require public elementary and middle schools that receive funds under the Elementary and Secondary Education Act of 1965 to obtain parental consent before changing a minor's gender markers, pronouns, or preferred name on any school form or sex-based accommodations, including locker rooms or bathrooms.",
+                "roll_call_id": "house:119:2:184",
+                "rollcall_number": 184,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/2616/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll184.xml",
+                "uncertainty_note": "",
+                "vote_date": "2026-05-20",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:82",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/6472/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:82",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-6472-2-82",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 6472, which would amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes.",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to pass H.R. 6472, which would amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll082.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 6472, which would amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes.",
+                "position": "yea",
+                "question": "The House choice was whether to pass H.R. 6472, which would amend the Higher Education Act of 1965 to provide for in-state tuition rates for certain residents of Guam, the Commonwealth of the Northern Mariana Islands, American Samoa, and the United States Virgin Islands, and for other purposes.",
+                "roll_call_id": "house:119:2:82",
+                "rollcall_number": 82,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/6472/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll082.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2026-03-04",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:47",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/6359/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:47",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-6359-2-47",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 6359, which would require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 6359, which would require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll047.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 6359, which would require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 6359, which would require institutions of higher education to disseminate information on the rights of, and accommodations and resources for, pregnant students, and for other purposes.",
+                "roll_call_id": "house:119:2:47",
+                "rollcall_number": 47,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/6359/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll047.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2026-01-22",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:31",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/2988/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:31",
+                  "caveats": [
+                    "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+                  ],
+                  "episode_id": "single-119-hr-2988-2-31",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 2988, which would amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 2988, which would amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll031.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 2988, which would amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 2988, which would amend the Employee Retirement Income Security Act of 1974 to specify requirements concerning the consideration of pecuniary and non-pecuniary factors, and for other purposes.",
+                "roll_call_id": "house:119:2:31",
+                "rollcall_number": 31,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/2988/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll031.xml",
+                "uncertainty_note": "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+                "vote_date": "2026-01-15",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:2:19",
+                "chamber": "house",
+                "congress": 119,
+                "description": "Official GovInfo House-section record contains the modified committee substitute considered for H.R. 2262 at H677-H678, surrounding floor consideration at H678-H681, and delayed roll 19 at H692-H693.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/2262/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:2:19",
+                  "caveats": [
+                    "Source-native floor advocacy and support or opposition claims do not supply this neutral action meaning.",
+                    "Congress.gov exposes no House-engrossed bill text for the failed passage. The complete official GovInfo House-section Congressional Record is the operative-content source because it records adoption of the modified committee substitute, prints the complete amended H.R. 2262 operative text on H677-H678, and links delayed roll 19 on H692-H693."
+                  ],
+                  "episode_id": "single-119-hr-2262-2-19",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 2262 as the modified committee substitute adopted under House Resolution 988. Section 2 would amend the Fair Labor Standards Act to provide that time spent attending or participating in an education or training program or similar activity may be excluded from hours worked, regardless of whether the program or activity is offered or facilitated by the employer, when it occurs outside regular working hours, participation is voluntary and declining cannot trigger adverse action, and the employee performs no work during it; it also permits exclusion, in accordance with the referenced regulation, of related supplemental instruction under a bona fide apprenticeship program, and applies to hours worked on or after enactment.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 2262 as the modified committee substitute adopted under House Resolution 988. Section 2 would amend the Fair Labor Standards Act to provide that time spent attending or participating in an education or training program or similar activity may be excluded from hours worked, regardless of whether the program or activity is offered or facilitated by the employer, when it occurs outside regular working hours, participation is voluntary and declining cannot trigger adverse action, and the employee performs no work during it; it also permits exclusion, in accordance with the referenced regulation, of related supplemental instruction under a bona fide apprenticeship program, and applies to hours worked on or after enactment.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2026/roll019.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 2262 as the modified committee substitute adopted under House Resolution 988. Section 2 would amend the Fair Labor Standards Act to provide that time spent attending or participating in an education or training program or similar activity may be excluded from hours worked, regardless of whether the program or activity is offered or facilitated by the employer, when it occurs outside regular working hours, participation is voluntary and declining cannot trigger adverse action, and the employee performs no work during it; it also permits exclusion, in accordance with the referenced regulation, of related supplemental instruction under a bona fide apprenticeship program, and applies to hours worked on or after enactment.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 2262 as the modified committee substitute adopted under House Resolution 988. Section 2 would amend the Fair Labor Standards Act to provide that time spent attending or participating in an education or training program or similar activity may be excluded from hours worked, regardless of whether the program or activity is offered or facilitated by the employer, when it occurs outside regular working hours, participation is voluntary and declining cannot trigger adverse action, and the employee performs no work during it; it also permits exclusion, in accordance with the referenced regulation, of related supplemental instruction under a bona fide apprenticeship program, and applies to hours worked on or after enactment.",
+                "roll_call_id": "house:119:2:19",
+                "rollcall_number": 19,
+                "session": 2,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/2262/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2026/roll019.xml",
+                "uncertainty_note": "Source-native floor advocacy and support or opposition claims do not supply this neutral action meaning. Congress.gov exposes no House-engrossed bill text for the failed passage. The complete official GovInfo House-section Congressional Record is the operative-content source because it records adoption of the modified committee substitute, prints the complete amended H.R. 2262 operative text on H677-H678, and links delayed roll 19 on H692-H693.",
+                "vote_date": "2026-01-13",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:332",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/2550/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:332",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-2550-1-332",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 2550, which would nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to pass H.R. 2550, which would nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll332.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 2550, which would nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+                "position": "yea",
+                "question": "The House choice was whether to pass H.R. 2550, which would nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.",
+                "roll_call_id": "house:119:1:332",
+                "rollcall_number": 332,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/2550/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll332.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2025-12-11",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:315",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To extend the Secure Rural Schools and Community Self-Determination Act of 2000.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/s/356/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/s/356/summaries"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:315",
+                  "caveats": [
+                    "The accepted supplemental official summary supplies program context that payments may support schools, roads, and other municipal services; it does not replace the operative S. 356 text as the meaning source.",
+                    "Public Lands and Natural Resources remains the official primary policy area. The packet preserves the exact Secure Rural Schools extension within a federal-land and county-payment program, including school, road, community, and resource-project context; it cannot establish a general education-funding position."
+                  ],
+                  "episode_id": "single-119-s-356-1-315",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass S. 356, which would extend and modify Secure Rural Schools payments for states and counties containing Federal land through fiscal year 2026, address fiscal year 2024 and 2025 payments, and extend county special-project and resource-advisory-committee authorities.",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to pass S. 356, which would extend and modify Secure Rural Schools payments for states and counties containing Federal land through fiscal year 2026, address fiscal year 2024 and 2025 payments, and extend county special-project and resource-advisory-committee authorities.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll315.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass S. 356, which would extend and modify Secure Rural Schools payments for states and counties containing Federal land through fiscal year 2026, address fiscal year 2024 and 2025 payments, and extend county special-project and resource-advisory-committee authorities.",
+                "position": "yea",
+                "question": "The House choice was whether to pass S. 356, which would extend and modify Secure Rural Schools payments for states and counties containing Federal land through fiscal year 2026, address fiscal year 2024 and 2025 payments, and extend county special-project and resource-advisory-committee authorities.",
+                "roll_call_id": "house:119:1:315",
+                "rollcall_number": 315,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/s/356/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/s/356/summaries"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll315.xml",
+                "uncertainty_note": "The accepted supplemental official summary supplies program context that payments may support schools, roads, and other municipal services; it does not replace the operative S. 356 text as the meaning source. Public Lands and Natural Resources remains the official primary policy area. The packet preserves the exact Secure Rural Schools extension within a federal-land and county-payment program, including school, road, community, and resource-project context; it cannot establish a general education-funding position.",
+                "vote_date": "2025-12-09",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:314",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To ensure that parents are aware of foreign influence in their child’s public school, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1049/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:314",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-1049-1-314",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1049, which would ensure that parents are aware of foreign influence in their child’s public school, and for other purposes.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 1049, which would ensure that parents are aware of foreign influence in their child’s public school, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll314.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1049, which would ensure that parents are aware of foreign influence in their child’s public school, and for other purposes.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 1049, which would ensure that parents are aware of foreign influence in their child’s public school, and for other purposes.",
+                "roll_call_id": "house:119:1:314",
+                "rollcall_number": 314,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1049/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll314.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2025-12-04",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:313",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1069/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:313",
+                  "caveats": [],
+                  "episode_id": "single-119-hr-1069-1-313",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll313.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
+                "roll_call_id": "house:119:1:313",
+                "rollcall_number": 313,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1069/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll313.xml",
+                "uncertainty_note": "",
+                "vote_date": "2025-12-04",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:312",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1005/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:312",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                    "The Clerk records Not Voting. Source readiness preserves the exact action and absence status, but later position effect must remain non-directional and cannot infer support or opposition."
+                  ],
+                  "episode_id": "single-119-hr-1005-1-312",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1005, which would require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+                  "exact_choice_position_effect": "non_directional_not_voting",
+                  "member_action": "Not_Voting",
+                  "policy_question": "The House choice was whether to pass H.R. 1005, which would require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll312.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1005, which would require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+                "position": "not_voting",
+                "question": "The House choice was whether to pass H.R. 1005, which would require public elementary and secondary schools to disclose certain funds received from, or contracts with, a foreign source, and for other purposes.",
+                "roll_call_id": "house:119:1:312",
+                "rollcall_number": 312,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1005/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll312.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision. The Clerk records Not Voting. Source readiness preserves the exact action and absence status, but later position effect must remain non-directional and cannot infer support or opposition.",
+                "vote_date": "2025-12-03",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:146",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the Small Business Act to include requirements relating to graduates of career and technical education programs for small business development centers and women’s business centers, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1642/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:146",
+                  "caveats": [
+                    "This exact Small Business Act mechanism does not establish general support for education, career and technical education, workforce spending, or small-business policy.",
+                    "Commerce remains the official primary policy area. The packet preserves the Small Business Act mechanism and the material career-and-technical-education, workforce-hiring, and career-opportunity component; it does not classify H.R. 1642 as exclusively or primarily education policy."
+                  ],
+                  "episode_id": "single-119-hr-1642-1-146",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1642, which would amend the Small Business Act to require small business development centers and women's business centers to inform small businesses about hiring career-and-technical-education graduates and using those programs for hiring needs, inform students and graduates about center resources for starting or expanding a small business, and, as appropriate, connect businesses with those programs to identify career opportunities.",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to pass H.R. 1642, which would amend the Small Business Act to require small business development centers and women's business centers to inform small businesses about hiring career-and-technical-education graduates and using those programs for hiring needs, inform students and graduates about center resources for starting or expanding a small business, and, as appropriate, connect businesses with those programs to identify career opportunities.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll146.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1642, which would amend the Small Business Act to require small business development centers and women's business centers to inform small businesses about hiring career-and-technical-education graduates and using those programs for hiring needs, inform students and graduates about center resources for starting or expanding a small business, and, as appropriate, connect businesses with those programs to identify career opportunities.",
+                "position": "yea",
+                "question": "The House choice was whether to pass H.R. 1642, which would amend the Small Business Act to require small business development centers and women's business centers to inform small businesses about hiring career-and-technical-education graduates and using those programs for hiring needs, inform students and graduates about center resources for starting or expanding a small business, and, as appropriate, connect businesses with those programs to identify career opportunities.",
+                "roll_call_id": "house:119:1:146",
+                "rollcall_number": 146,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1642/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll146.xml",
+                "uncertainty_note": "This exact Small Business Act mechanism does not establish general support for education, career and technical education, workforce spending, or small-business policy. Commerce remains the official primary policy area. The packet preserves the Small Business Act mechanism and the material career-and-technical-education, workforce-hiring, and career-opportunity component; it does not classify H.R. 1642 as exclusively or primarily education policy.",
+                "vote_date": "2025-06-03",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:120",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/881/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:120",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-881-1-120",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 881, which would establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 881, which would establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll120.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 881, which would establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 881, which would establish Department of Homeland Security funding restrictions on institutions of higher education that have a relationship with Confucius Institutes, and for other purposes.",
+                "roll_call_id": "house:119:1:120",
+                "rollcall_number": 120,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/881/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll120.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2025-05-07",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:83",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the Higher Education Act of 1965 to strengthen disclosure requirements relating to foreign gifts and con- tracts, to prohibit contracts between institutions of high- er education and certain foreign entities and countries of concern, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1048/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:83",
+                  "caveats": [
+                    "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+                  ],
+                  "episode_id": "hr-1048-amendment-and-final-passage",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1048, which would amend the Higher Education Act of 1965 to strengthen disclosures of foreign gifts and contracts and prohibit contracts between institutions of higher education and certain foreign entities and countries of concern.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 1048, which would amend the Higher Education Act of 1965 to strengthen disclosures of foreign gifts and contracts and prohibit contracts between institutions of higher education and certain foreign entities and countries of concern.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll083.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1048, which would amend the Higher Education Act of 1965 to strengthen disclosures of foreign gifts and contracts and prohibit contracts between institutions of higher education and certain foreign entities and countries of concern.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 1048, which would amend the Higher Education Act of 1965 to strengthen disclosures of foreign gifts and contracts and prohibit contracts between institutions of higher education and certain foreign entities and countries of concern.",
+                "roll_call_id": "house:119:1:83",
+                "rollcall_number": 83,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1048/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll083.xml",
+                "uncertainty_note": "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+                "vote_date": "2025-03-27",
+                "vote_type": "final_passage_or_suspension_passage"
+              },
+              {
+                "canonical_action_id": "house:119:1:79",
+                "chamber": "house",
+                "congress": 119,
+                "description": "Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/amendment/119/hamdt/12?format=json"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:79",
+                  "caveats": [
+                    "Exact Congress.gov H.Amdt. 12 identity, recorded-roll binding, and amendment purpose are required; parent H.R. 1048 evidence alone is insufficient.",
+                    "H.R. 1048 passage at roll 83 is a separate accepted action; no episode semantics are established by this packet."
+                  ],
+                  "episode_id": "hr-1048-amendment-and-final-passage",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to adopt H.Amdt. 12. The official exact-amendment description states: “Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.”",
+                  "exact_choice_position_effect": "supports_exact_choice",
+                  "member_action": "Yea",
+                  "policy_question": "The House choice was whether to adopt H.Amdt. 12. The official exact-amendment description states: “Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.”",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll079.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to adopt H.Amdt. 12. The official exact-amendment description states: “Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.”",
+                "position": "yea",
+                "question": "The House choice was whether to adopt H.Amdt. 12. The official exact-amendment description states: “Amendment sought to amend section 117 to streamline foreign gift and contract reporting, align reporting with other federal research security compliance requirements, establish sanctions for noncompliance and require the Secretary of Education to conduct negotiated rulemaking to receive stakeholder feedback.”",
+                "roll_call_id": "house:119:1:79",
+                "rollcall_number": 79,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/amendment/119/hamdt/12?format=json"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll079.xml",
+                "uncertainty_note": "Exact Congress.gov H.Amdt. 12 identity, recorded-roll binding, and amendment purpose are required; parent H.R. 1048 evidence alone is insufficient. H.R. 1048 passage at roll 83 is a separate accepted action; no episode semantics are established by this packet.",
+                "vote_date": "2025-03-27",
+                "vote_type": "amendment"
+              },
+              {
+                "canonical_action_id": "house:119:1:68",
+                "chamber": "house",
+                "congress": 119,
+                "description": "To amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes.",
+                "governed_receipt_control": null,
+                "governed_receipt_projection": {
+                  "action_meaning_sources": [
+                    {
+                      "label": "Official measure source",
+                      "url": "https://api.congress.gov/v3/bill/119/hr/1156/actions"
+                    },
+                    {
+                      "label": "Official measure source",
+                      "url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+                    }
+                  ],
+                  "canonical_action_id": "house:119:1:68",
+                  "caveats": [
+                    "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision."
+                  ],
+                  "episode_id": "single-119-hr-1156-1-68",
+                  "episode_relationship": "This action is independently expandable in the reviewed record.",
+                  "exact_action_meaning": "The House choice was whether to pass H.R. 1156, which would amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes.",
+                  "exact_choice_position_effect": "opposes_exact_choice",
+                  "member_action": "Nay",
+                  "policy_question": "The House choice was whether to pass H.R. 1156, which would amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes.",
+                  "vote_sources": [
+                    {
+                      "label": "Official House vote",
+                      "url": "https://clerk.house.gov/evs/2025/roll068.xml"
+                    }
+                  ]
+                },
+                "interpretation_status": "interpreted",
+                "issue_domain": "EDUCATION_WORKFORCE",
+                "plain_english_summary": "The House choice was whether to pass H.R. 1156, which would amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes.",
+                "position": "nay",
+                "question": "The House choice was whether to pass H.R. 1156, which would amend the CARES Act to extend the statute of limitations for fraud under certain unemployment programs, and for other purposes.",
+                "roll_call_id": "house:119:1:68",
+                "rollcall_number": 68,
+                "session": 1,
+                "source_basis": [
+                  {
+                    "label": "Official measure source",
+                    "url": "https://api.congress.gov/v3/bill/119/hr/1156/actions"
+                  },
+                  {
+                    "label": "Official measure source",
+                    "url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+                  }
+                ],
+                "source_url": "https://clerk.house.gov/evs/2025/roll068.xml",
+                "uncertainty_note": "The official purpose includes ‘and for other purposes’; this candidate states the bounded official purpose and does not imply that it exhaustively enumerates every provision.",
+                "vote_date": "2025-03-11",
+                "vote_type": "final_passage_or_suspension_passage"
+              }
+            ]
+          },
+          "semantic_lineage": {
+            "unique_action_ids": [
+              "house:119:1:120",
+              "house:119:1:313",
+              "house:119:1:79",
+              "house:119:1:83"
+            ],
+            "unique_episode_ids": [
+              "hr-1048-amendment-and-final-passage",
+              "single-119-hr-1069-1-313",
+              "single-119-hr-881-1-120"
+            ]
+          },
+          "surface_accounting": {
+            "issue_overview": 1,
+            "notable_choice": 1,
+            "repeated_pattern": 1,
+            "synthesis": 0,
+            "trajectory": 0
+          }
+        }
+      },
+      "policy_family_id": null,
+      "production_eligible": true,
+      "review_route": "human_exception",
+      "schema_version": "editorial_site_integration_candidate_v1",
+      "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+      "source_manifest_sha256": "24e3dc371f3df19f2f1a24ac45d3bdda890737b2475804bcc0467576c3333377"
+    },
+    {
+      "artifact_type": "source_manifest",
+      "artifact_version": 1,
+      "benchmark_status": "gold_benchmark",
+      "canonical_action_id": null,
+      "chamber": "house",
+      "congress": 119,
+      "content_sha256": "52cb21987b39139fb4e62b8274e3535482aca7251a0a44a77970f04855ae668e",
+      "editorial_status": "human_approved",
+      "episode_id": null,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+      "payload": {
+        "accepted_site_integration_file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+        "accepted_site_integration_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1",
+        "complete_required_sources": true,
+        "schema_version": "editorial_publication_source_manifest_v1",
+        "source_files": [
+          {
+            "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+            "path": "docs/editorial/full_record_reviews/site_integration_candidates/f000477_education_workforce_119_v1/site_integration_candidate.json"
+          },
+          {
+            "file_sha256": "6ed581a482008132a5854f7bdde6bddae5fc103f069cb7eaa8cc785817fb6ebb",
+            "path": "docs/editorial/full_record_reviews/public_wording_implementations/f000477_education_workforce_119_v1/human_public_wording_authority.json"
+          },
+          {
+            "file_sha256": "785b071651b0dff64dbebde1a809bce293b85cb1f73b7cf90898402f59883f33",
+            "path": "docs/editorial/full_record_reviews/public_wording_implementations/f000477_education_workforce_119_v1/reviewed_wording_decision_implementation.json"
+          },
+          {
+            "file_sha256": "06fc318328c03cff23ec8d6450b2f5e6e0b5bae35d54a789d48aff7daed4a364",
+            "path": "docs/editorial/full_record_reviews/public_wording_implementations/f000477_education_workforce_119_v1/implementation_parity_manifest.json"
+          }
+        ]
+      },
+      "policy_family_id": null,
+      "production_eligible": true,
+      "review_route": "human_exception",
+      "schema_version": "editorial_publication_source_manifest_v1",
+      "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+      "source_manifest_sha256": "24e3dc371f3df19f2f1a24ac45d3bdda890737b2475804bcc0467576c3333377"
+    },
+    {
+      "artifact_type": "standardization_validation_result",
+      "artifact_version": 1,
+      "benchmark_status": "gold_benchmark",
+      "canonical_action_id": null,
+      "chamber": "house",
+      "congress": 119,
+      "content_sha256": "446df07f190a78e39cf3dbff2d06555d28779fbe7806f3f4fb66eacfd26d3b03",
+      "editorial_status": "human_approved",
+      "episode_id": null,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation",
+      "payload": {
+        "accepted_episode_count": 16,
+        "accepted_interpreted_actions": 17,
+        "accepted_public_wording_items": 3,
+        "accepted_site_integration_file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+        "accepted_site_integration_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1",
+        "approved_universe_actions": 17,
+        "blocking_findings": 0,
+        "current": true,
+        "production_activation_authorized": false,
+        "schema_version": "editorial_publication_validation_v1",
+        "semantic_tier": "reviewed_conclusion",
+        "successful": true,
+        "unused_non_directional_actions": [
+          "house:119:1:312"
+        ]
+      },
+      "policy_family_id": null,
+      "production_eligible": true,
+      "review_route": "human_exception",
+      "schema_version": "editorial_publication_validation_v1",
+      "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+      "source_manifest_sha256": "24e3dc371f3df19f2f1a24ac45d3bdda890737b2475804bcc0467576c3333377"
+    }
+  ],
+  "authority_binding": {
+    "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+    "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+    "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde"
+  },
+  "bundle_id": "foushee_education_workforce_119_publication_activation_v1",
+  "deterministic_batch_key": "foushee_education_workforce_119_publication_activation_v1-1a01725d",
+  "expected_counts": {
+    "after": {
+      "artifacts": 155,
+      "batches": 7,
+      "publication_registry": 4,
+      "relationships": 165
+    },
+    "before": {
+      "artifacts": 152,
+      "batches": 6,
+      "publication_registry": 3,
+      "relationships": 163
+    }
+  },
+  "finalization_required": {
+    "fresh_live_runtime_health_proof": true,
+    "fresh_production_preflight": true,
+    "sealed_positive_activation_authority": true
+  },
+  "preflight_binding": {
+    "counts": {
+      "artifacts": 152,
+      "batches": 6,
+      "publication_registry": 3,
+      "relationships": 163
+    },
+    "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+    "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+    "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+    "runtime_health_proof_binding": {
+      "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+      "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+      "runtime_health_proof_subject_sha256": "2a2309a13c14ad92bd04335e4f5909e612f9737da15fcc6b27d08ca02bead3b8"
+    },
+    "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+  },
+  "production_write_authorized": false,
+  "public_smoke_contract": {
+    "EDUCATION_WORKFORCE": {
+      "118": "receipts_only",
+      "119": "reviewed_conclusion",
+      "all": "reviewed_conclusion_with_reviewed_119_boundary"
+    },
+    "ENVIRONMENT_ENERGY": {
+      "118": "receipts_only_unchanged",
+      "119": "reviewed_conclusion_unchanged",
+      "all": "reviewed_conclusion_unchanged"
+    },
+    "JUSTICE_PUBLIC_SAFETY": {
+      "118": "receipts_only_unchanged",
+      "119": "reviewed_conclusion_unchanged",
+      "all": "reviewed_conclusion_unchanged"
+    },
+    "NATIONAL_SECURITY_FOREIGN": {
+      "118": "receipts_only_unchanged",
+      "119": "reviewed_conclusion_unchanged",
+      "all": "reviewed_conclusion_unchanged"
+    }
+  },
+  "publication_registry": {
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477",
+    "presentation_artifact_version": 1,
+    "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+    "publication_metadata": {
+      "accepted_site_integration_file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+      "accepted_site_integration_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+      "activation_authority_contract": {
+        "artifact_id": "publication-activation-authority:f000477:education_workforce:119:v1",
+        "required_authorizations": {
+          "deploy_exact_reviewed_runtime": true,
+          "exact_bounded_rollback": true,
+          "production_database_write": true,
+          "publication_activation": true,
+          "publication_registry_mutation": true
+        },
+        "reviewer_authority": "publication_activation_review_authority_v1",
+        "schema_version": "site_integration_publication_activation_authority_v1"
+      },
+      "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1",
+      "activation_write_set_binding": {
+        "artifact_id": "publication-activation-write-set:f000477:education_workforce:119:v1",
+        "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+      },
+      "active_artifact_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+      "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+      "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde",
+      "candidate_preparation_authority_binding": {
+        "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+        "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+        "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde"
+      },
+      "preflight_binding": {
+        "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+        "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+      },
+      "presentation_artifact_version": 1,
+      "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "production_eligibility_publication_authority": {
+        "accepted": true,
+        "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+        "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde",
+        "immutable": true,
+        "schema_version": "site_integration_production_eligibility_publication_authority_v1",
+        "subject": {
+          "accepted_site_integration_binding": {
+            "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+            "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+            "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+            "subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+          },
+          "authorizations": {
+            "build_expected_production_write_set": true,
+            "build_publication_activation_candidate": true,
+            "deployment": false,
+            "live_activation": false,
+            "perform_fresh_read_only_production_preflight": true,
+            "prepare_rollback_and_disposable_proof": true,
+            "production_database_write": false,
+            "production_persistence": false,
+            "publication_activation": false,
+            "publication_registry_mutation": false,
+            "record_production_eligibility": true
+          },
+          "congress": 119,
+          "current_production_preflight_binding": {
+            "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+            "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+            "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+          },
+          "decision": "approve_production_eligibility_and_publication_preparation_candidate",
+          "decision_recorded_at_utc": "2026-08-26T01:38:13.268576Z",
+          "downstream_boundary": "A distinct sealed positive activation authority, stable runtime proof, fresh execution proof, exact target, and unchanged preflight are required.",
+          "issue_id": "EDUCATION_WORKFORCE",
+          "member_bioguide_id": "F000477",
+          "member_slug": "leg_valerie_p_foushee",
+          "reviewer": "dhart54",
+          "reviewer_authority": "publication_candidate_preparation_authority_v1",
+          "storage_gate_decision": {
+            "benchmark_status": "gold_benchmark",
+            "editorial_status": "human_approved",
+            "production_eligible": true
+          }
+        }
+      },
+      "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+      "relationship_metadata": {
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1"
+      },
+      "reviewed_runtime_binding": {
+        "files": [
+          {
+            "file_sha256": "23403e09d469b5845a8a13b432a9e1603c3dbf192dbce319b2a0838d01e8e143",
+            "path": "backend/app/api/positions.py"
+          },
+          {
+            "file_sha256": "ff54a90ce56bd00721b2b0a8bcd3b80a121cfe11872c3d5ef9d79865a3768ef1",
+            "path": "backend/app/api/editorial_presentations.py"
+          },
+          {
+            "file_sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20",
+            "path": "backend/app/editorial_presentations/selector.py"
+          },
+          {
+            "file_sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37",
+            "path": "backend/app/editorial_presentations/site_publication.py"
+          },
+          {
+            "file_sha256": "14a2637c03da7585180650f065f4c61637dee26b571fc24447edcf7fdc09fbdc",
+            "path": "backend/app/editorial_presentations/education_workforce_integration_candidate.py"
+          },
+          {
+            "file_sha256": "4b11b1252c933c9d1719388e808e8dc7845e44633cbfa0ac5b643a14bf311a62",
+            "path": "backend/scripts/foushee_education_workforce_publication_preparation.py"
+          }
+        ],
+        "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+        "schema_version": "m13n_reviewed_runtime_manifest_v1"
+      },
+      "rollback_binding": {
+        "baseline_registry_rows_unchanged": {
+          "ENVIRONMENT_ENERGY": {
+            "artifact_id": 239,
+            "artifact_version": 1,
+            "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+            "issue_id": "ENVIRONMENT_ENERGY",
+            "member_bioguide_id": "F000477",
+            "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+            "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+            "publicly_active": true,
+            "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+          },
+          "JUSTICE_PUBLIC_SAFETY": {
+            "artifact_id": 221,
+            "artifact_version": 1,
+            "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+            "issue_id": "JUSTICE_PUBLIC_SAFETY",
+            "member_bioguide_id": "F000477",
+            "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+            "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+            "publicly_active": true,
+            "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+          },
+          "NATIONAL_SECURITY_FOREIGN": {
+            "artifact_id": 227,
+            "artifact_version": 1,
+            "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+            "issue_id": "NATIONAL_SECURITY_FOREIGN",
+            "member_bioguide_id": "F000477",
+            "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+            "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+            "publicly_active": true,
+            "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+          }
+        },
+        "delete_artifact_natural_keys": [
+          "site-integration-candidate:f000477:education_workforce:119:v1",
+          "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+          "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+        ],
+        "delete_batch_key": "foushee_education_workforce_119_publication_activation_v1-1a01725d",
+        "delete_registry_primary_key": {
+          "issue_id": "EDUCATION_WORKFORCE",
+          "member_bioguide_id": "F000477"
+        },
+        "delete_relationship_count": 2,
+        "restore_counts": {
+          "artifacts": 152,
+          "batches": 6,
+          "publication_registry": 3,
+          "relationships": 163
+        },
+        "restore_state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+      },
+      "source_manifest_artifact_version": 1,
+      "source_manifest_content_sha256": "52cb21987b39139fb4e62b8274e3535482aca7251a0a44a77970f04855ae668e",
+      "source_manifest_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+      "validation_artifact_version": 1,
+      "validation_content_sha256": "446df07f190a78e39cf3dbff2d06555d28779fbe7806f3f4fb66eacfd26d3b03",
+      "validation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+    },
+    "publicly_active": true
+  },
+  "relationships": [
+    {
+      "child_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation",
+      "metadata": {
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1"
+      },
+      "ordinal": 0,
+      "parent_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "relationship_type": "has_validation"
+    },
+    {
+      "child_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+      "metadata": {
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1"
+      },
+      "ordinal": 0,
+      "parent_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "relationship_type": "uses_source_manifest"
+    }
+  ],
+  "rollback": {
+    "baseline_registry_rows_unchanged": {
+      "ENVIRONMENT_ENERGY": {
+        "artifact_id": 239,
+        "artifact_version": 1,
+        "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "member_bioguide_id": "F000477",
+        "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+        "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+        "publicly_active": true,
+        "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+      },
+      "JUSTICE_PUBLIC_SAFETY": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+        "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+        "publicly_active": true,
+        "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+      },
+      "NATIONAL_SECURITY_FOREIGN": {
+        "artifact_id": 227,
+        "artifact_version": 1,
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477",
+        "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+        "publicly_active": true,
+        "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+      }
+    },
+    "delete_artifact_natural_keys": [
+      "site-integration-candidate:f000477:education_workforce:119:v1",
+      "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+      "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+    ],
+    "delete_batch_key": "foushee_education_workforce_119_publication_activation_v1-1a01725d",
+    "delete_registry_primary_key": {
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477"
+    },
+    "delete_relationship_count": 2,
+    "restore_counts": {
+      "artifacts": 152,
+      "batches": 6,
+      "publication_registry": 3,
+      "relationships": 163
+    },
+    "restore_state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+  },
+  "schema_version": "site_integration_publication_activation_write_set_v1",
+  "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+  "write_caps": {
+    "artifact_inserts": 3,
+    "batch_inserts": 1,
+    "deletes_during_activation": 0,
+    "existing_registry_rows_touched": 0,
+    "registry_inserts": 1,
+    "registry_updates": 0,
+    "relationship_inserts": 2
+  },
+  "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+}
