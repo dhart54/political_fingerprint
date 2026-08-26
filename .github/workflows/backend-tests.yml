@@ -149,6 +149,7 @@ jobs:
           backend/tests/test_m12m_environment_energy_site_integration.py
           backend/tests/test_m13m_education_workforce_site_integration.py
           backend/tests/test_m13n_r_education_publication_runtime.py
+          backend/tests/test_m13n_r_education_publication_preparation.py
           backend/tests/test_m11n_national_security_publication_activation.py
           backend/tests/test_m12n_environment_energy_ratification_candidate_v3.py
           backend/tests/test_m12n_environment_energy_activation_v3.py
@@ -217,6 +218,7 @@ jobs:
       EDITORIAL_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_activation
       M11N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m11n_activation
       M12N_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m12n_preparation
+      M13NR_DISPOSABLE_DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/pf_m13nr_preparation
       PGPASSWORD: postgres
     steps:
       - uses: actions/checkout@v4
@@ -268,6 +270,16 @@ jobs:
             --seed-foushee-activation-baseline
           pytest -q \
             backend/tests/test_m12n_environment_energy_publication_preparation_postgres.py \
+            -rs
+
+      - name: Prove M13N-R Education lifecycle, idempotency, drift, and rollback
+        run: |
+          createdb -h 127.0.0.1 -U postgres pf_m13nr_preparation
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --database-url-env M13NR_DISPOSABLE_DATABASE_URL \
+            --seed-foushee-activation-baseline
+          pytest -q \
+            backend/tests/test_m13n_r_education_publication_preparation_postgres.py \
             -rs
 
       - name: Build fresh disposable backup evidence

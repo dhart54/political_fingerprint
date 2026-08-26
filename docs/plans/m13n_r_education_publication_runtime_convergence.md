@@ -11,7 +11,7 @@
 
 ## Scope And Boundaries
 
-- In scope: Education constants, preparation/activation authority validation, explicit three-domain dispatch, public projection, focused adversarial tests, runtime-source-path documentation, validation, and draft PR.
+- In scope: Education constants, preparation/activation authority validation, explicit three-domain dispatch, public projection, the final production-sensitive Education preparation/execution runtime, disposable lifecycle proof, focused adversarial tests, runtime-source convergence, validation, and draft PR.
 - Out of scope: production preflight, runtime-health proof artifact, preparation or activation authority artifacts, write set, rollback evidence, registry mutation, production writes, activation, merge, and post-PR deployment.
 - Accepted M13M content and wording remain byte-identical.
 
@@ -28,6 +28,8 @@
 - [x] A synthetic exact future row projects 119/all as reviewed conclusions and 118 as receipts-only without wording changes.
 - [x] M11N/M12N/M13M compatibility, runtime drift guards, semantic pipeline, formatting/lint/compile, PostgreSQL suites, and hosted CI pass.
 - [x] Draft PR is open and unmerged; no production mutation or activation artifact exists.
+- [x] Every declared M13N runtime-source path exists, and M13N can begin after deployment without modifying runtime-source code.
+- [x] Disposable lifecycle proves the bounded graph, one apply, exact idempotency, state/runtime/target refusal, and exact rollback.
 
 ## Baseline
 
@@ -40,9 +42,9 @@
 
 1. Complete explicit fail-closed publication dispatch and exact Education authority contracts.
 2. Add focused inactive, future-valid-row, mutation, unknown-identity, and compatibility tests.
-3. Document the future M13N production-sensitive source paths.
-4. Run focused and release-level validation, inspect the diff, commit, and open a draft PR.
-5. Wait for exact-head hosted CI and stop for independent runtime/governance review.
+3. Add the complete Education preparation/execution runtime and disposable lifecycle tests.
+4. Document and assert the complete six-file M13N production-sensitive source set.
+5. Run focused and release-level validation, inspect the diff, update the draft PR, and wait for exact-head hosted CI.
 
 ## Progress Checklist
 
@@ -51,17 +53,22 @@
 - [x] Focused/adversarial tests
 - [x] Compatibility and release validation
 - [x] Draft PR and hosted CI
+- [x] Bounded review correction: complete production-sensitive runtime
+- [x] Runtime-source existence/convergence regression
+- [ ] Corrected exact-head hosted CI
 
 ## Discoveries
 
 - The prior dispatch explicitly recognized Environment but treated every other identity as National Security; this accidental fallthrough must be removed.
 - The accepted M13M selector already supplies the required Education 119/all/118 projection, so no presentation or wording change is needed.
 - Evolving `site_publication.py` exposed a missing frozen-successful-runtime entry in the M12N preparation replay. Adding the exact accepted `a831d472...` manifest restored governed V3 replay without changing current execution-runtime strictness.
+- Review found that naming a future nonexistent preparation script would force M13N to change the ratified runtime before evidence capture. The final Education preparation/execution script therefore belongs in M13N-R.
 
 ## Decisions And Rationale
 
 - Use explicit branches for the three accepted identities and fail closed for everything else; a dynamic registry would exceed this milestone.
 - Reuse the hardened M12N V3 stable-runtime and historical-evidence validators for Education positive authority.
+- Keep the runtime set explicit at six existing files. M13N evidence and governance outputs may be added later, but any change to these six paths requires a new merge/deploy/evidence cycle.
 
 ## Validation Results
 
@@ -74,6 +81,9 @@
 - Live read-only surface check: Justice, National Security, and Environment are `reviewed_conclusion`; Education is `receipts_only`. No production mutation was performed.
 - Two pre-existing `test_api_editorial_presentations.py` cases fail locally before publication selection because the local profile lookup returns 404 without the CI database fixture; the touched publication modules are not on those failing paths. Hosted CI is the authoritative environment for those cases.
 - Draft PR #171 exact-head hosted checks passed: Vercel, Vercel Preview Comments, amendment-evidence-contracts, foushee-full-record-benchmark, publication-activation-postgres, and receipt-evidence-repair-postgres.
+- Bounded-correction plus M11N/M12N/M13M compatibility suite: 97 passed locally; the one new PostgreSQL lifecycle test skipped because no local PostgreSQL service is installed.
+- Corrected governed editorial release pipeline: 7 checks passed.
+- Corrected disposable PostgreSQL lifecycle: pending hosted service-container execution; no local PostgreSQL tools are installed.
 
 ## Production Writes
 
@@ -90,5 +100,5 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: yes. Runtime capability exists only in the draft PR; Education remains inactive and M13N activation preparation remains stopped.
+- Definition of done pending corrected exact-head hosted CI. Runtime capability and final preparation/execution code exist only in the draft PR; Education remains inactive and M13N activation preparation remains stopped.
 - Next step after acceptance: merge/deploy this runtime in a separately governed action, then restart M13N from that post-convergence main.

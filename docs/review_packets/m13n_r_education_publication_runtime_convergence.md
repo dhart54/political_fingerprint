@@ -4,9 +4,10 @@
 
 This code-only milestone makes the already accepted M13M artifact recognizable by
 the publication runtime after a future exact preparation authority, sealed
-activation authority, and active registry row exist. It creates none of those
-objects and performs no production read, write, preflight, activation, or runtime
-proof.
+activation authority, and active registry row exist. It also includes the final
+production-sensitive Education preparation/execution code that M13N will use.
+It creates none of those governed objects and performs no production read, write,
+preflight, activation, or runtime-proof capture.
 
 Accepted content remains:
 
@@ -28,7 +29,7 @@ remain `receipts_only`. A test-only exact future row proves `reviewed_conclusion
 at `119` and `all`, with the existing 119th-Congress analytical boundary at
 `all`, while `118` stays `receipts_only`.
 
-## Proposed future M13N runtime source manifest
+## Complete future M13N runtime source manifest
 
 The future ratification must hash the smallest complete production-sensitive set:
 
@@ -37,14 +38,47 @@ The future ratification must hash the smallest complete production-sensitive set
 3. `backend/app/editorial_presentations/selector.py` — multi-domain public selector.
 4. `backend/app/editorial_presentations/site_publication.py` — authority, eligibility, and fail-closed dispatch.
 5. `backend/app/editorial_presentations/education_workforce_integration_candidate.py` — accepted Education validation and projection.
-6. `backend/scripts/foushee_education_workforce_publication_preparation.py` — future bounded preparation/execution path, once truthfully created in M13N.
+6. `backend/scripts/foushee_education_workforce_publication_preparation.py` — bounded preparation, exact lifecycle, rollback, and fail-closed production execution entry point.
 
-The sixth path intentionally does not exist in M13N-R. M13N must add and hash its
-final reviewed bytes before capturing health/preflight evidence. Historical M12N
-manifests remain frozen and are not replaced by this proposed current-runtime set.
+All six paths exist in this PR. `reviewed_runtime_manifest()` hashes their exact
+bytes, and a regression asserts both existence and exact set membership. After
+the exact M13N-R merge commit is deployed, M13N can capture runtime health and a
+transaction-read-only production preflight without changing any file above.
+
+If M13N discovers that any production-sensitive path must change, it must stop as
+`production_runtime_not_converged`, merge and deploy the corrected runtime, and
+capture fresh evidence against that new exact commit. Governed evidence JSON/MD,
+authority forms, tests that do not alter runtime behavior, and later governance
+tooling outside this set do not change the ratified runtime manifest.
+
+Historical M12N manifests remain frozen and are not compared with current
+runtime during historical replay. Fresh production execution still requires the
+current exact manifest.
+
+## Preparation and execution boundary
+
+The Education runtime can construct and validate the exact M13M three-artifact,
+two-relationship, one-registry-row graph; capture a read-only baseline; construct
+the non-activating preparation authority and empty human decision template; bind
+rollback; apply idempotently to disposable PostgreSQL; refuse state/runtime/target
+drift; and restore the exact baseline.
+
+Production execution remains impossible without all of the following:
+
+- exact non-synthetic Education preparation authority;
+- sealed accepted positive Education activation authority;
+- exact activation write-set binding;
+- exact approved production target identity;
+- fresh preflight and unchanged state fingerprint;
+- stable ratified runtime manifest and commit identity;
+- separate fresh execution-runtime proof matching that stable runtime; and
+- explicit apply or rollback confirmation.
+
+No Education production-preflight, runtime-proof, authority, write-set, rollback,
+receipt, or current-state artifact exists in this PR.
 
 ## Review frontier
 
-Does this production-inactive runtime change safely establish Education
-publication capability without weakening existing-domain authority, fresh
-execution-runtime drift protection, or the activation boundary?
+Is PR #171 now a complete production-sensitive runtime such that, once its exact
+merge commit is deployed, M13N can capture truthful production/runtime evidence
+without changing ratified runtime code?
