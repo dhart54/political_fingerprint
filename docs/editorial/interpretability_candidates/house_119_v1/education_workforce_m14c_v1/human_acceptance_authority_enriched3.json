@@ -1,0 +1,54 @@
+{
+  "artifact_id": "human-action-interpretability-authority:house:119:m14c:accepted3:v1",
+  "artifact_role": "immutable_human_candidate_acceptance_authority",
+  "authority_subject_sha256": "b5358db38be0b5a092a2a477b64325ff595b25fcefd51d3c5058366f8a218775",
+  "immutable": true,
+  "schema_version": "m14c_human_candidate_acceptance_authority_v1",
+  "subject": {
+    "accepted_records": [
+      {
+        "action_id": "house:119:1:79",
+        "candidate_id": "action-interpretability-candidate:house:119:1:79:m14c:v1",
+        "candidate_record_sha256": "9aa373ed2d557122f3ca1274999db11f6b1778d62132afb0bca006dc14f900a1",
+        "decision": "accept_as_written"
+      },
+      {
+        "action_id": "house:119:1:332",
+        "candidate_id": "action-interpretability-candidate:house:119:1:332:m14c:v1",
+        "candidate_record_sha256": "2e39442f7934eb5d253b415b1d82ce8b454ae6bbd1f9cb1df80d965b00a7b94b",
+        "decision": "accept_as_written"
+      },
+      {
+        "action_id": "house:119:2:184",
+        "candidate_id": "action-interpretability-candidate:house:119:2:184:m14c:v1",
+        "candidate_record_sha256": "42917aaa1431986c1c377271d0fe9c3c87bcb55daa92da92b5ed1c8193c38fdd",
+        "decision": "accept_as_written"
+      }
+    ],
+    "additive": true,
+    "authorizations": {
+      "deployment": false,
+      "later_canonical_semantic_promotion_of_exact_accepted_records": true,
+      "member_action_projection_modification": false,
+      "production_persistence": false,
+      "promotion_during_m14c": false,
+      "public_wording": false,
+      "publication": false,
+      "semantic_ir_regeneration": false,
+      "shared_action_core_modification": false,
+      "shared_issue_mapping_modification": false,
+      "synthesis": false
+    },
+    "baseline_commit": "f666b4a4c2c0c11c04e49d50cef9cc04ab7aaf83",
+    "candidate_path": "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/action_interpretability_candidates.json",
+    "candidate_set_sha256": "9c2e919074e03df83a2f864be2dcca34dbaefded290c132fd028de74eb719608",
+    "existing_14_record_authority": {
+      "path": "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/human_acceptance_authority.json",
+      "preserved_unchanged": true,
+      "sha256": "b516359bc1c8c8a64252ecf436027169c0e98aaab61897537568dd6e777280b1"
+    },
+    "human_decision_source": "user_supplied_M14C_final_human_acceptance_closure_PR177",
+    "replaces_existing_authority": false,
+    "reviewed_m14c_head": "ad56f8cd2fa363d9f548475f1dd113af30d97fe6"
+  }
+}

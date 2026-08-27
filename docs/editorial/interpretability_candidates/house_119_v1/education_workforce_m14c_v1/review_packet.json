@@ -1,5 +1,10 @@
 {
+  "acceptance_storage": "additive_authorities_only_candidate_records_unchanged",
   "baseline_commit": "f666b4a4c2c0c11c04e49d50cef9cc04ab7aaf83",
+  "enriched3_human_acceptance_authority": {
+    "path": "docs/editorial/interpretability_candidates/house_119_v1/education_workforce_m14c_v1/human_acceptance_authority_enriched3.json",
+    "sha256": "616e74ff6cf39c2d56ebd76e45716a0f3ed427a1774309879b12934d8d3f6a5e"
+  },
   "governed_sources": [
     {
       "action_id": "house:119:1:79",
@@ -144,7 +149,7 @@
     }
   ],
   "human_acceptance_authority_sha256": "b516359bc1c8c8a64252ecf436027169c0e98aaab61897537568dd6e777280b1",
-  "new_candidate_acceptance": false,
+  "new_candidate_acceptance": true,
   "new_candidates": [
     {
       "accepted": false,
@@ -1048,19 +1053,23 @@
     "Is the explanation concrete, neutral, and useful without forecasting behavior?"
   ],
   "schema_version": "m14c_source_hold_review_packet_v1",
-  "status": "three_detached_candidates_pending_independent_semantic_product_review",
+  "status": "independent_semantic_product_review_complete_17_human_approved",
   "summary": {
+    "automatic_acceptance_count": 0,
     "candidate_count": 17,
     "candidate_set_digest": "9c2e919074e03df83a2f864be2dcca34dbaefded290c132fd028de74eb719608",
     "candidate_state_counts": {
       "candidate_complete_for_semantic_review": 17
     },
+    "canonical_promotion": false,
     "human_accepted_unchanged_count": 14,
+    "human_approved_count": 17,
     "legacy_assessment_counts": {
       "revision_would_be_required": 13,
       "sufficient_unchanged": 4
     },
-    "newly_accepted_count": 0,
-    "remaining_source_hold_ids": []
+    "newly_accepted_count": 3,
+    "remaining_source_hold_ids": [],
+    "unaccepted_count": 0
   }
 }

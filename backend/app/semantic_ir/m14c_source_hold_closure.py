@@ -25,6 +25,15 @@ ACCEPTED_IDS = (
     "house:119:2:47", "house:119:2:82",
 )
 HOLD_IDS = ("house:119:1:79", "house:119:1:332", "house:119:2:184")
+REVIEWED_HEAD = "ad56f8cd2fa363d9f548475f1dd113af30d97fe6"
+REVIEWED_SET_DIGEST = "9c2e919074e03df83a2f864be2dcca34dbaefded290c132fd028de74eb719608"
+ORIGINAL_AUTHORITY_SHA256 = "b516359bc1c8c8a64252ecf436027169c0e98aaab61897537568dd6e777280b1"
+ENRICHED_AUTHORITY_FILE = "human_acceptance_authority_enriched3.json"
+REVIEWED_RECORD_DIGESTS = {
+    "house:119:1:79": "9aa373ed2d557122f3ca1274999db11f6b1778d62132afb0bca006dc14f900a1",
+    "house:119:1:332": "2e39442f7934eb5d253b415b1d82ce8b454ae6bbd1f9cb1df80d965b00a7b94b",
+    "house:119:2:184": "42917aaa1431986c1c377271d0fe9c3c87bcb55daa92da92b5ed1c8193c38fdd",
+}
 AM = "govinfo:CREC-2025-03-25-pt1-PgH1241:amendment-3"
 EO51 = "govinfo:FR-2025-04-03:2025-05836:EO14251"
 EO68 = "govinfo:FR-2025-01-30:2025-02090:EO14168"
@@ -197,6 +206,48 @@ def source_overlay(root: Path, catalog: dict[str, Any]) -> dict[str, Any]:
             "subject": subject, "source_readiness_subject_sha256": digest(subject)}
 
 
+def expected_enriched_authority() -> dict[str, Any]:
+    """Encode the supplied human decision, never infer acceptance from tests."""
+    subject = {
+        "baseline_commit": BASE, "reviewed_m14c_head": REVIEWED_HEAD,
+        "candidate_set_sha256": REVIEWED_SET_DIGEST,
+        "candidate_path": f"{OUTPUT}/action_interpretability_candidates.json",
+        "human_decision_source": "user_supplied_M14C_final_human_acceptance_closure_PR177",
+        "accepted_records": [
+            {"action_id": action_id,
+             "candidate_id": f"action-interpretability-candidate:{action_id}:m14c:v1",
+             "candidate_record_sha256": sha, "decision": "accept_as_written"}
+            for action_id, sha in REVIEWED_RECORD_DIGESTS.items()
+        ],
+        "existing_14_record_authority": {
+            "path": f"{OUTPUT}/human_acceptance_authority.json",
+            "sha256": ORIGINAL_AUTHORITY_SHA256, "preserved_unchanged": True,
+        },
+        "additive": True, "replaces_existing_authority": False,
+        "authorizations": {
+            "later_canonical_semantic_promotion_of_exact_accepted_records": True,
+            "promotion_during_m14c": False, "shared_action_core_modification": False,
+            "shared_issue_mapping_modification": False, "member_action_projection_modification": False,
+            "semantic_ir_regeneration": False, "synthesis": False, "public_wording": False,
+            "publication": False, "production_persistence": False, "deployment": False,
+        },
+    }
+    return {"schema_version": "m14c_human_candidate_acceptance_authority_v1",
+            "artifact_id": "human-action-interpretability-authority:house:119:m14c:accepted3:v1",
+            "artifact_role": "immutable_human_candidate_acceptance_authority", "immutable": True,
+            "subject": subject, "authority_subject_sha256": digest(subject)}
+
+
+def validate_human_acceptance(root: Path, artifact: dict[str, Any], authority: dict[str, Any]) -> None:
+    require(authority == expected_enriched_authority(), "immutable enriched3 human authority differs")
+    raw = (root / OUTPUT / "human_acceptance_authority.json").read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == ORIGINAL_AUTHORITY_SHA256, "original14 authority bytes changed")
+    require(digest(artifact["candidates"]) == REVIEWED_SET_DIGEST, "reviewed17 candidate records changed")
+    current = {r["action_id"]: r for r in artifact["candidates"]}
+    for action_id, sha in REVIEWED_RECORD_DIGESTS.items():
+        require(digest(current[action_id]) == sha, f"reviewed enriched record changed: {action_id}")
+
+
 def validate_scope(root: Path) -> None:
     allowed = {".github/workflows/backend-tests.yml",
                "backend/app/semantic_ir/m14c_source_hold_closure.py",
@@ -205,6 +256,13 @@ def validate_scope(root: Path) -> None:
     changed = subprocess.check_output(["git", "diff", "--name-only", BASE], cwd=root, text=True).splitlines()
     forbidden = [name for name in changed if name not in allowed and not name.startswith(OUTPUT + "/")]
     require(not forbidden, f"protected baseline artifact changed: {forbidden}")
+    closure_allowed = {
+        "backend/app/semantic_ir/m14c_source_hold_closure.py",
+        "backend/tests/test_m14c_source_hold_closure.py", "scripts/build_m14c_source_hold_closure.py",
+        *(f"{OUTPUT}/{name}" for name in (ENRICHED_AUTHORITY_FILE, "review_packet.json", "build_manifest.json", ".gitattributes")),
+    }
+    changed = subprocess.check_output(["git", "diff", "--name-only", REVIEWED_HEAD], cwd=root, text=True).splitlines()
+    require(set(changed) <= closure_allowed, "acceptance closure changed protected reviewed files")
 
 
 def validate_closure(root: Path, artifact: dict[str, Any], authority: dict[str, Any],
@@ -245,5 +303,8 @@ def validate_closure(root: Path, artifact: dict[str, Any], authority: dict[str, 
         expected_new = {s["source_id"] for s in catalog["sources"] if s["action_id"] == action_id}
         require(expected_new <= {m["source_id"] for m in candidate["claim_source_mappings"]}, "new source not claim-bound")
     result = validate_candidate_set(root, artifact)
-    return result | {"human_accepted_unchanged_count": 14, "newly_accepted_count": 0,
+    validate_human_acceptance(root, artifact, load_json(root / OUTPUT / ENRICHED_AUTHORITY_FILE))
+    return result | {"human_accepted_unchanged_count": 14, "newly_accepted_count": 3,
+                     "human_approved_count": 17, "unaccepted_count": 0,
+                     "automatic_acceptance_count": 0, "canonical_promotion": False,
                      "remaining_source_hold_ids": [r["action_id"] for r in artifact["candidates"] if r["candidate_state"] != "candidate_complete_for_semantic_review"]}

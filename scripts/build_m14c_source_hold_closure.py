@@ -17,10 +17,12 @@ from backend.app.semantic_ir.action_interpretability import digest, file_sha256,
 from backend.app.semantic_ir.m14c_source_hold_closure import (
     BASE, OUTPUT, HOLD_IDS, ACCEPTED_IDS, baseline, expected_authority,
     require, source_catalog, source_overlay, validate_closure, validate_scope,
+    ENRICHED_AUTHORITY_FILE, expected_enriched_authority, validate_human_acceptance,
 )
 
 DEST = ROOT / OUTPUT
 AUTHORITY = DEST / "human_acceptance_authority.json"
+ENRICHED_AUTHORITY = DEST / ENRICHED_AUTHORITY_FILE
 CANDIDATES = DEST / "action_interpretability_candidates.json"
 
 
@@ -96,11 +98,14 @@ def build_outputs() -> tuple[dict, dict[Path, bytes]]:
     summary = {k: v for k, v in result.items() if k != "qualification_by_action"}
     review = {
         "schema_version": "m14c_source_hold_review_packet_v1",
-        "status": "three_detached_candidates_pending_independent_semantic_product_review",
+        "status": "independent_semantic_product_review_complete_17_human_approved",
         "baseline_commit": BASE,
         "human_acceptance_authority_sha256": file_sha256(AUTHORITY),
         "previously_accepted_unchanged_ids": list(ACCEPTED_IDS),
-        "new_candidate_acceptance": False,
+        "new_candidate_acceptance": True,
+        "enriched3_human_acceptance_authority": {"path": f"{OUTPUT}/{ENRICHED_AUTHORITY_FILE}",
+                                                 "sha256": file_sha256(ENRICHED_AUTHORITY)},
+        "acceptance_storage": "additive_authorities_only_candidate_records_unchanged",
         "review_questions": [
             "Does every material first-order provision and exception appear or have an explicit ancillary boundary?",
             "Does each claim follow from its exact operative or incorporated source, without importing parent meaning or source rhetoric?",
@@ -117,6 +122,8 @@ def build_outputs() -> tuple[dict, dict[Path, bytes]]:
     subject = summary | {
         "baseline_commit": BASE,
         "authority_file_sha256": file_sha256(AUTHORITY),
+        "enriched3_authority_file_sha256": file_sha256(ENRICHED_AUTHORITY),
+        "existing14_authority_preserved": True, "enriched3_authority_additive": True,
         "candidate_file_sha256": file_sha256(CANDIDATES),
         "candidate_record_digests": [{"action_id": r["action_id"], "sha256": digest(r)} for r in artifact["candidates"]],
         "generated_file_sha256": {p.name: hashlib.sha256(data).hexdigest() for p, data in outputs.items()},
@@ -135,12 +142,19 @@ def main() -> None:
     mode.add_argument("--initialize", action="store_true", help="one-time creation of authority and frozen detached candidates")
     mode.add_argument("--freeze-candidates", action="store_true", help="explicit proposal revision; never rewrites authority")
     mode.add_argument("--check", action="store_true", help="offline, no-write reproduction from frozen candidates")
+    mode.add_argument("--record-human-acceptance", action="store_true", help="one-time materialization of the supplied exact3 human decision")
     parser.add_argument("--check-scope", action="store_true", help="milestone-only diff guard against the exact baseline")
     args = parser.parse_args()
+    if args.record_human_acceptance:
+        require(not ENRICHED_AUTHORITY.exists(), "refusing to overwrite immutable enriched3 authority")
+        accepted = expected_enriched_authority()
+        validate_human_acceptance(ROOT, load_json(CANDIDATES), accepted)
+        ENRICHED_AUTHORITY.write_bytes(json_bytes(accepted))
     if args.initialize:
         require(not AUTHORITY.exists() and not CANDIDATES.exists(), "refusing to overwrite immutable authority or existing frozen candidates")
         AUTHORITY.write_bytes(json_bytes(expected_authority(ROOT)))
     if args.initialize or args.freeze_candidates:
+        require(not ENRICHED_AUTHORITY.exists(), "human-accepted candidate records cannot be regenerated")
         require(load_json(AUTHORITY) == expected_authority(ROOT), "immutable authority must remain unchanged")
         catalog = source_catalog(ROOT)
         overlay = source_overlay(ROOT, catalog)
@@ -151,7 +165,7 @@ def main() -> None:
     for path, content in outputs.items():
         if args.check:
             require(path.exists() and path.read_bytes().replace(b"\r\n", b"\n") == content, f"generated artifact differs: {path.name}")
-        else:
+        elif not path.exists() or path.read_bytes().replace(b"\r\n", b"\n") != content:
             path.write_bytes(content)
     if args.check_scope:
         validate_scope(ROOT)

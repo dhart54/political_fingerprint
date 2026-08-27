@@ -17,6 +17,8 @@ from backend.app.semantic_ir.m14c_source_hold_closure import (
     ACCEPTED_IDS, AM, BASE, BASE_DIGEST, EO51, EO68, HOLD_IDS, OUTPUT,
     ClosureError, baseline, expected_authority, source_catalog,
     validate_closure, validate_scope,
+    ENRICHED_AUTHORITY_FILE, ORIGINAL_AUTHORITY_SHA256, REVIEWED_RECORD_DIGESTS,
+    REVIEWED_SET_DIGEST, expected_enriched_authority, validate_human_acceptance,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -53,11 +55,15 @@ class M14CSourceHoldClosureTests(unittest.TestCase):
         artifact = copy.deepcopy(self.artifact)
         return artifact, next(r for r in artifact["candidates"] if r["action_id"] == action_id)
 
-    def test_real_v1_closure_has_seventeen_complete_and_no_new_acceptance(self):
+    def test_real_v1_closure_has_seventeen_human_approved_without_promotion(self):
         result = self.validate()
         self.assertEqual(result["candidate_state_counts"], {"candidate_complete_for_semantic_review": 17})
         self.assertEqual(result["human_accepted_unchanged_count"], 14)
-        self.assertEqual(result["newly_accepted_count"], 0)
+        self.assertEqual(result["newly_accepted_count"], 3)
+        self.assertEqual(result["human_approved_count"], 17)
+        self.assertEqual(result["unaccepted_count"], 0)
+        self.assertEqual(result["automatic_acceptance_count"], 0)
+        self.assertFalse(result["canonical_promotion"])
         self.assertEqual(result["remaining_source_hold_ids"], [])
 
     def test_only_three_candidate_records_change(self):
@@ -218,6 +224,76 @@ class M14CSourceHoldClosureTests(unittest.TestCase):
         self.assertNotEqual(run.returncode, 0)
         self.assertIn("refusing to overwrite immutable authority", run.stderr)
         self.assertEqual(before, {p: p.read_bytes() for p in paths})
+
+    def test_all_seventeen_record_digests_match_the_human_reviewed_inputs(self):
+        expected = {r["action_id"]: digest(r) for r in self.base["candidates"] if r["action_id"] in ACCEPTED_IDS}
+        expected.update(REVIEWED_RECORD_DIGESTS)
+        self.assertEqual({r["action_id"]: digest(r) for r in self.artifact["candidates"]}, expected)
+        self.assertEqual(digest(self.artifact["candidates"]), REVIEWED_SET_DIGEST)
+        self.assertEqual(hashlib.sha256((DEST / "human_acceptance_authority.json").read_bytes()).hexdigest(),
+                         ORIGINAL_AUTHORITY_SHA256)
+
+    def test_enriched_authority_is_exact_additive_and_promotion_bounded(self):
+        authority = load_json(DEST / ENRICHED_AUTHORITY_FILE)
+        self.assertEqual(authority, expected_enriched_authority())
+        self.assertTrue(authority["immutable"])
+        self.assertTrue(authority["subject"]["additive"])
+        self.assertFalse(authority["subject"]["replaces_existing_authority"])
+        self.assertEqual({r["action_id"] for r in authority["subject"]["accepted_records"]}, set(HOLD_IDS))
+        self.assertEqual([k for k, v in authority["subject"]["authorizations"].items() if v],
+                         ["later_canonical_semantic_promotion_of_exact_accepted_records"])
+
+    def test_enriched_authority_rejects_rehashed_identity_record_and_permission_changes(self):
+        authority = expected_enriched_authority()
+        mutations = ["baseline_commit", "reviewed_m14c_head", "candidate_set_sha256", "accepted_records"]
+        mutations.extend(authority["subject"]["authorizations"])
+        for field in mutations:
+            with self.subTest(field=field):
+                changed = copy.deepcopy(authority)
+                if field in changed["subject"]["authorizations"]:
+                    changed["subject"]["authorizations"][field] = not changed["subject"]["authorizations"][field]
+                elif field == "accepted_records":
+                    changed["subject"][field][0]["candidate_record_sha256"] = "0" * 64
+                else:
+                    changed["subject"][field] = "0" * 64
+                changed["authority_subject_sha256"] = digest(changed["subject"])
+                with self.assertRaisesRegex(ClosureError, "immutable enriched3"):
+                    validate_human_acceptance(ROOT, self.artifact, changed)
+
+    def test_newly_human_accepted_records_also_reject_semantic_or_metadata_edits(self):
+        for action_id in HOLD_IDS:
+            for field in ("policy_choice", "candidate_id"):
+                changed, candidate = self.changed_candidate(action_id)
+                candidate[field] += " changed"
+                with self.subTest(action_id=action_id, field=field):
+                    with self.assertRaisesRegex(ClosureError, "reviewed17 candidate records changed"):
+                        validate_human_acceptance(ROOT, changed, expected_enriched_authority())
+
+    def test_acceptance_cannot_be_rewritten_or_accepted_candidates_refrozen(self):
+        paths = list(DEST.glob("*.json"))
+        before = {p: p.read_bytes() for p in paths}
+        for option, error in (("--record-human-acceptance", "refusing to overwrite immutable enriched3"),
+                              ("--freeze-candidates", "human-accepted candidate records cannot be regenerated")):
+            run = subprocess.run([sys.executable, str(BUILDER), option], cwd=ROOT, capture_output=True, text=True)
+            self.assertNotEqual(run.returncode, 0)
+            self.assertIn(error, run.stderr)
+            self.assertEqual(before, {p: p.read_bytes() for p in paths})
+
+    def test_original_authority_byte_change_fails_even_if_json_meaning_is_unchanged(self):
+        original = Path.read_bytes
+        target = DEST / "human_acceptance_authority.json"
+        def read(path):
+            raw = original(path)
+            return raw + b"\n" if path == target else raw
+        with mock.patch.object(Path, "read_bytes", read):
+            with self.assertRaisesRegex(ClosureError, "original14 authority bytes changed"):
+                validate_human_acceptance(ROOT, self.artifact, expected_enriched_authority())
+
+    def test_acceptance_scope_rejects_reviewed_candidate_or_authority_file_changes(self):
+        for name in ("action_interpretability_candidates.json", "human_acceptance_authority.json", "source_overlay.json"):
+            with mock.patch("subprocess.check_output", return_value=f"{OUTPUT}/{name}\n"):
+                with self.assertRaisesRegex(ClosureError, "acceptance closure changed protected reviewed files"):
+                    validate_scope(ROOT)
 
 
 if __name__ == "__main__":
