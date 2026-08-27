@@ -42,6 +42,11 @@ jobs:
           python scripts/build_shared_justice_corpus_m14a.py --check
           python -m pytest -q backend/tests/test_shared_legislative_corpus.py
 
+      - name: Validate M14B action interpretability contract
+        run: |
+          python scripts/build_m14b_action_interpretability.py --check
+          python -m pytest -q backend/tests/test_action_interpretability_v1.py
+
       - name: Validate governed M1-M7 chain and layered benchmark
         run: |
           python scripts/validate_full_issue_universe_authority.py

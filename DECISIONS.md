@@ -276,4 +276,33 @@ Rationale:
 
 ---
 
+## 2026-08-26 — Action Interpretability Candidate Authority V1
+
+Decision:
+
+- Narrow the LLM-role language in the 2026-02-28 Summary Generation and
+  2026-06-05 Vote Interpretation and Evidence Readiness Guardrails entries only
+  for detached Shared Action Core interpretability candidates. Those historical
+  entries remain unchanged.
+- An LLM may propose, explain, and challenge typed, source-mapped,
+  member-neutral action meaning from governed exact-action evidence.
+- Deterministic code validates structure, identity, source binding, mechanical
+  invariants, and reproducibility; neither the LLM nor code may silently accept
+  a novel semantic interpretation.
+- Member eligibility, domain eligibility, official member action, party meaning,
+  evidence tier, counting, alignment, moral judgment, recommendation,
+  publication, and production authority remain outside this permission.
+- Accepted semantics still require the explicit review/authority path. M14B
+  candidates remain non-authorizing and do not modify accepted Education or
+  Justice meaning, public wording, publication registries, or production.
+
+Rationale:
+
+- Concrete neutral explanation requires substantive source-grounded candidate
+  drafting, while acceptance and downstream authority remain separate. See
+  `docs/methodology/action_interpretability_candidate_authority_v1.md` and
+  `docs/semantic_ir/action_interpretability_v1.md`.
+
+---
+
 ## End of DECISIONS.md
