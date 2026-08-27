@@ -25,8 +25,8 @@ PATTERNS = [
     {
         "key": "continuity_of_collective_bargaining",
         "actions": ["house:119:1:332", "house:119:2:216"],
-        "summary": "Foushee supported two different measures that would preserve collective-bargaining arrangements or obligations while also changing how those systems operate.",
-        "bounded_choice": "Maintain collective-bargaining relationships and existing negotiated arrangements or employment terms against specified interruptions in coverage or bargaining.",
+        "summary": "Across two different labor systems, Foushee supported keeping collective bargaining in force during potential disruptions. She voted to restore bargaining coverage and preserve existing agreements for specified federal workers, and separately voted to require continued bargaining and unchanged employment terms while newly represented workers pursued a first contract.",
+        "bounded_choice": "Keep bargaining in force across distinct disruptions: H.R.2550 restores statutory bargaining coverage affected by EO14251 and preserves specified existing federal union agreements; H.R.5408 maintains employment terms and bargaining duties while an agreement is pending and adds first-contract bargaining, mediation and arbitration requirements. These are distinct statutory mechanisms, not identical contract protections.",
         "support": [
             "H.R.2550 would nullify the named order's exclusions from federal and Foreign Service labor-management coverage, prohibit implementation spending, and preserve covered March 26, 2025 union agreements through their stated terms. Foushee voted Yea.",
             "H.R.5408 would maintain wages, hours and employment terms pending agreement and continue the employer's bargaining duty absent election-based decertification; it also adds first-contract bargaining, mediation and binding-arbitration deadlines. Foushee voted Yea.",

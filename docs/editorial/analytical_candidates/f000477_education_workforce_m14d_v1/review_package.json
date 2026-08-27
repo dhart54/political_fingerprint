@@ -1,6 +1,14 @@
 {
-  "acceptance_authority": null,
+  "acceptance_authority": {
+    "artifact_id": "human-behavioral-candidate-authority:f000477:education_workforce:m14d:v1",
+    "authority_subject_sha256": "d1b3f4cb27e3cd29649f10092134df8ddf13a072f0a927de1152a714c33bfe40",
+    "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/human_behavioral_candidate_authority.json"
+  },
   "accepted": false,
+  "accepted_findings": {
+    "findings_subject_sha256": "adac15fae23db9ff094cbeb9c0c425401f5afb31d7024229f86ceff6e6b9f2da",
+    "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
+  },
   "approved_action_meanings": [
     {
       "accepted_candidate_record_sha256": "1658e5bbc32bf7440e85af64b38be1aed9764e94da1371114102eaed31307bba",
@@ -2001,7 +2009,7 @@
       "episode_id": "single-119-hr-2550-1-332",
       "interpretability_state": "human_approved_action_meanings",
       "primary_proposition_id": "m14d:continuity_of_collective_bargaining",
-      "reason": "Tests whether the newly concrete meanings support a useful relationship between preserving existing bargaining coverage and maintaining bargaining obligations. Independent review must decide whether the sector and remedy differences leave enough shared substance."
+      "reason": "Human review accepted the bounded bargaining relationship after preserving the different labor systems, workers, statutes, remedies and legal tools, H.R.5408's additional first-contract requirements, and the limits of whole-measure votes."
     },
     {
       "action_ids": [
@@ -2031,7 +2039,7 @@
       "episode_id": "single-119-hr-5408-2-216",
       "interpretability_state": "human_approved_action_meanings",
       "primary_proposition_id": "m14d:continuity_of_collective_bargaining",
-      "reason": "Tests whether the newly concrete meanings support a useful relationship between preserving existing bargaining coverage and maintaining bargaining obligations. Independent review must decide whether the sector and remedy differences leave enough shared substance."
+      "reason": "Human review accepted the bounded bargaining relationship after preserving the different labor systems, workers, statutes, remedies and legal tools, H.R.5408's additional first-contract requirements, and the limits of whole-measure votes."
     },
     {
       "action_ids": [
@@ -2421,7 +2429,7 @@
       "proposition_id": "m14d:continuity_of_collective_bargaining",
       "proposition_type": "repeated_pattern",
       "semantic_role": "behavioral",
-      "summary": "Foushee supported two different measures that would preserve collective-bargaining arrangements or obligations while also changing how those systems operate."
+      "summary": "Across two different labor systems, Foushee supported keeping collective bargaining in force during potential disruptions. She voted to restore bargaining coverage and preserve existing agreements for specified federal workers, and separately voted to require continued bargaining and unchanged employment terms while newly represented workers pursued a first contract."
     },
     {
       "analytical_value": "The newly supported substitute meaning makes the within-episode contrast substantively legible without treating every directional action as independently notable.",
@@ -2474,7 +2482,7 @@
         "H.R.5408 also mandates a first-contract timetable and binding arbitration. H.R.2550 does not. Support for either whole measure cannot be assigned exclusively to its continuity provisions.",
         "EO14251's agency subdivisions, exceptions and delegated powers remain bounded by the approved action limitations. This is not a claim about all federal employees, actual litigation outcomes, or a general pro-labor position."
       ],
-      "shared_bounded_choice": "Maintain collective-bargaining relationships and existing negotiated arrangements or employment terms against specified interruptions in coverage or bargaining."
+      "shared_bounded_choice": "Keep bargaining in force across distinct disruptions: H.R.2550 restores statutory bargaining coverage affected by EO14251 and preserves specified existing federal union agreements; H.R.5408 maintains employment terms and bargaining duties while an agreement is pending and adds first-contract bargaining, mediation and arbitration requirements. These are distinct statutory mechanisms, not identical contract protections."
     },
     "m14d:covered_china_linked_funding_exclusions": {
       "episode_support": {
@@ -2504,13 +2512,15 @@
     "REVISE",
     "OMIT"
   ],
-  "review_package_sha256": "827ae73a8722e3561e20940b622db6af54cf9c134866e7158af73434e498c126",
+  "review_package_sha256": "1761148916903ce35c066b9c869d8c88b5b62acd0eaba47f6f89acd7d7bee40d",
   "review_questions": [
     "Is each proposed relationship explanatory beyond the listed votes?",
     "Do stated material differences require revising or omitting the bargaining-continuity candidate?",
     "Does each statement stay within the approved meanings and exact whole-package choices?",
     "Are the non-elevated episode dispositions justified without implying evidence failure?"
   ],
+  "review_questions_status": "Historical review prompts, resolved by the bound user-supplied decisions; this review packet remains non-authorizing.",
+  "review_status": "human_decisions_complete_internal_findings_only",
   "schema_version": "m14d_analytical_review_package_v1",
   "scope": "17 approved actions in 16 accepted episodes; analytical candidates only, no issue-wide conclusion or public wording",
   "search_review": [

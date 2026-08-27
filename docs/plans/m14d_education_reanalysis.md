@@ -90,3 +90,45 @@ No production writes. Rollback is reversion of this isolated branch's artifacts;
 no historical or production rollback needed. No implementation blocker remains.
 Stop after draft PR and hosted check reporting for independent ChatGPT
 ACCEPT / REVISE / OMIT review; do not begin M14E.
+
+## Human decision closure — reviewed head 5bfe565
+
+The user has now accepted funding exclusions and H.R.1048 as written, and accepted
+the bargaining relationship after an exact summary revision. This supersedes the
+earlier pending-review stopping point, not the downstream restrictions.
+
+Scope: change only bargaining summary/bounded-choice framing and its two ledger
+reasons; preserve other proposition records, evidence and limitations. Record an
+immutable, explicitly supplied human authority and one internal accepted-findings
+artifact. Candidate graph records retain their detached provenance flags; external
+authority records the acceptance without rewriting those records. No synthesis,
+Main Takeaway, public wording, frontend, publication, persistence, database writes,
+deployment, merge, or M14E is authorized.
+
+Expected closure diff: roughly 8–9 files, two new JSON artifacts, focused semantic
+tests plus exact-head CI. Sequence: bounded revision; reviewed-head delta guard;
+write-once authority; accepted wrapper and review linkage; mutation/reproduction
+tests; diff inspection; update existing draft PR and stop before merge.
+
+- [x] Apply exact revision and acceptance artifacts.
+- [x] Verify reviewed-head invariants, all prior milestone checks and closure tests.
+- [ ] Update PR #178 and report final head/CI without merging.
+
+No production writes; rollback is reverting this closure commit. No blockers.
+
+Closure validation: 93 focused tests (17 M14D), 26 core Semantic IR tests, all
+M14A/M14B/M14C/M14D no-write builders, reference validator and diff checks pass.
+The exact reviewed graph changes only at the supplied bargaining summary and
+two ledger reasons. Compiler input additionally changes its bounded-choice text.
+Underlying evidence, limitations, the other two propositions, 16 dispositions,
+eight receipt-only episodes, Not Voting, V1/V2 and all M13 artifacts are unchanged.
+Four added tests cover exact deltas, seals/ledger/denials, rejected mutations and
+write-once authority behavior. No historical schema or compiler was changed.
+
+Authority subject digest:
+`d1b3f4cb27e3cd29649f10092134df8ddf13a072f0a927de1152a714c33bfe40`.
+Accepted-findings subject digest:
+`adac15fae23db9ff094cbeb9c0c425401f5afb31d7024229f86ceff6e6b9f2da`.
+
+PR remains draft. The final commit's hosted CI result and completed PR description
+update will be reported in the task/PR, without another semantic or authority edit.

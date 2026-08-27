@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts import build_m14d_education_reanalysis as m  # noqa: E402
+from scripts import m14d_human_decision_closure as closure  # noqa: E402
 from backend.app.semantic_ir.compiler import (  # noqa: E402
     SemanticCompilerInputError, compile_behavioral_candidate_ir,
 )
@@ -195,7 +196,7 @@ class M14DEducationReanalysisTests(unittest.TestCase):
         self.assertEqual(graph["proposition_graph"]["propositions"], [])
         self.assertEqual(graph["synthesis_propositions"], [])
         self.assertFalse(any(graph["downstream_authorizations"].values()))
-        self.assertIsNone(self.review["acceptance_authority"])
+        self.assertEqual(self.review["acceptance_authority"]["path"], closure.AUTHORITY_PATH)
         self.assertFalse(self.review["accepted"])
         self.assertFalse(self.review["authorizing"])
         self.assertFalse(self.review["production_selectable"])
@@ -239,6 +240,86 @@ class M14DEducationReanalysisTests(unittest.TestCase):
                         m.validate_scope()
         with patch.object(m, "git", side_effect=["scripts/build_m14d_education_reanalysis.py", f"{m.OUT}/review_package.json", ""]):
             m.validate_scope()
+
+    def test_human_closure_exact_reviewed_delta_and_frozen_core(self):
+        before = closure.validate_revision(ROOT, self.payload, self.graph)
+        old = {p["proposition_id"]: p for p in before["proposition_graph"]["propositions"]}
+        for row in self.graph["proposition_graph"]["propositions"]:
+            expected = copy.deepcopy(old[row["proposition_id"]])
+            if row["proposition_id"] == closure.BARGAINING:
+                expected["summary"] = closure.SUMMARY
+                self.assertEqual(row["evidence_action_ids"], ["house:119:1:332", "house:119:2:216"])
+                self.assertEqual(row["direction"], "support")
+            self.assertEqual(row, expected)
+        for path in (m.V1, m.V2, m.ACCEPTED, m.EPISODES):
+            self.assertFalse(m.git("diff", closure.REVIEWED, "--", path))
+        self.assertFalse(any(p["proposition_type"] == "trajectory" for p in self.graph["proposition_graph"]["propositions"]))
+        self.assertEqual(self.graph["synthesis_propositions"], [])
+        reasons = [r["reason"] for r in self.graph["episode_accounting"] if r["primary_proposition_id"] == closure.BARGAINING]
+        self.assertEqual(reasons, [closure.ACCOUNTING_REASON] * 2)
+
+    def test_human_authority_exact_graph_records_ledger_and_accepted_wrapper(self):
+        authority = m.load(closure.AUTHORITY_PATH)
+        findings = json.loads(self.outputs[closure.FINDINGS_PATH])
+        closure.validate_authority(ROOT, authority, self.payload, self.graph)
+        self.assertEqual(authority["authority_subject_sha256"], m.digest(authority["subject"]))
+        self.assertEqual(authority["subject"]["final_candidate_graph"]["content_sha256"], m.digest(self.graph))
+        self.assertEqual(authority["subject"]["final_candidate_graph"]["file_lf_sha256"], hashlib.sha256(m.json_bytes(self.graph)).hexdigest())
+        self.assertEqual(authority["subject"]["pr_number"], 178)
+        self.assertEqual(authority["subject"]["reviewed_pre_decision_head"], closure.REVIEWED)
+        decisions = authority["subject"]["decisions"]
+        self.assertEqual(len(decisions), 3)
+        for decision, row in zip(decisions, self.graph["proposition_graph"]["propositions"], strict=True):
+            self.assertEqual(decision["accepted_record_sha256"], m.digest(row))
+            self.assertEqual(decision["decision"], "accepted_after_exact_bounded_revision" if row["proposition_id"] == closure.BARGAINING else "accepted_as_written")
+        ledger = self.graph["episode_accounting"]
+        self.assertEqual(authority["subject"]["accepted_episode_disposition_ledger"], ledger)
+        self.assertEqual(len(ledger), 16)
+        self.assertEqual(sum(r["disposition"] == "receipt_only_no_elevation" for r in ledger), 8)
+        self.assertEqual(findings["subject"]["accepted_proposition_records"], self.graph["proposition_graph"]["propositions"])
+        self.assertEqual(findings["subject"]["accepted_episode_disposition_ledger"], ledger)
+        self.assertEqual(findings["findings_subject_sha256"], m.digest(findings["subject"]))
+        self.assertEqual(findings["subject"]["human_authority"], self.review["acceptance_authority"])
+        self.assertTrue(findings["internal_analytical_authority"])
+        for subject in (authority["subject"], findings["subject"]):
+            self.assertEqual(subject["downstream_authorizations"], closure.DENIED)
+            self.assertFalse(any(subject["downstream_authorizations"].values()))
+
+    def test_unapproved_changes_cannot_be_resealed_into_acceptance(self):
+        for mutation in ("summary", "limitations", "direction", "evidence", "unchanged_record", "ledger", "relationship", "authorization"):
+            with self.subTest(mutation=mutation):
+                payload, graph = copy.deepcopy(self.payload), copy.deepcopy(self.graph)
+                authority = m.load(closure.AUTHORITY_PATH)
+                labor = next(r for r in graph["proposition_graph"]["propositions"] if r["proposition_id"] == closure.BARGAINING)
+                if mutation == "summary":
+                    labor["summary"] += " Unapproved wording."
+                elif mutation == "limitations":
+                    labor["material_limitations"].pop()
+                elif mutation == "direction":
+                    labor["direction"] = "opposition"
+                elif mutation == "evidence":
+                    labor["evidence_action_ids"].pop()
+                elif mutation == "unchanged_record":
+                    graph["proposition_graph"]["propositions"][0]["summary"] += " Changed."
+                elif mutation == "ledger":
+                    graph["episode_accounting"][0]["reason"] = "Changed"
+                elif mutation == "relationship":
+                    payload["relationship_evidence_by_proposition"][closure.BARGAINING]["shared_bounded_choice"] = "Identical protections"
+                else:
+                    authority["subject"]["downstream_authorizations"]["publication"] = True
+                authority["subject"]["final_candidate_graph"]["content_sha256"] = m.digest(graph)
+                authority["authority_subject_sha256"] = m.digest(authority["subject"])
+                with self.assertRaises(ValueError):
+                    closure.validate_authority(ROOT, authority, payload, graph)
+
+    def test_human_authority_is_write_once_and_closure_scope_is_bounded(self):
+        original = (ROOT / closure.AUTHORITY_PATH).read_bytes()
+        with self.assertRaises(FileExistsError):
+            closure.record_authority(ROOT, m.load(closure.AUTHORITY_PATH))
+        self.assertEqual((ROOT / closure.AUTHORITY_PATH).read_bytes(), original)
+        with patch.object(closure.subprocess, "check_output", side_effect=[f"{m.V2}/shared_action_core.json\n", ""]):
+            with self.assertRaisesRegex(ValueError, "protected paths"):
+                closure.validate_closure_scope(ROOT)
 
 
 if __name__ == "__main__":

@@ -28,6 +28,7 @@ from backend.app.semantic_ir.compiler import (  # noqa: E402
 )
 from backend.app.semantic_ir.m14c_source_hold_closure import validate_closure  # noqa: E402
 from scripts.m14d_education_candidate_data import NOTABLE, PATTERNS, REMAINDER, SEARCH_REVIEW  # noqa: E402
+from scripts import m14d_human_decision_closure as closure  # noqa: E402
 
 BASE = "582f785074d9380f2949571627f1afdc72466b44"
 V1 = "docs/editorial/shared_corpora/house_119_v1"
@@ -41,6 +42,7 @@ ALLOWED_FILES = {
     ".github/workflows/backend-tests.yml",
     "scripts/build_m14d_education_reanalysis.py",
     "scripts/m14d_education_candidate_data.py",
+    "scripts/m14d_human_decision_closure.py",
     "backend/tests/test_m14d_education_reanalysis.py",
     "docs/plans/m14d_education_reanalysis.md",
 }
@@ -300,6 +302,8 @@ def analytical_input(candidates: list[dict], episodes: list[dict]) -> dict:
         if eid in owners:
             owner, disposition = owners[eid]
             reason = next(p["analytical_value"] for p in proposals if p["proposition_id"] == owner)
+            if owner == closure.BARGAINING:
+                reason = closure.ACCOUNTING_REASON
         else:
             require(len(e["primary_action_ids"]) == 1, "missing explicit multi-action disposition")
             owner = None
@@ -328,7 +332,7 @@ def validate_analytical(payload: dict, graph: dict) -> None:
     require(len(graph["episode_accounting"]) == 16, "incomplete episode accounting")
 
 
-def build_outputs() -> dict[str, bytes]:
+def build_outputs(*, record_human_decisions: bool = False) -> dict[str, bytes]:
     accepted = load(f"{ACCEPTED}/action_interpretability_candidates.json")
     authorities = [load(f"{ACCEPTED}/{name}") for name in ("human_acceptance_authority.json", "human_acceptance_authority_enriched3.json")]
     overlay = load(f"{ACCEPTED}/source_overlay.json")
@@ -340,6 +344,12 @@ def build_outputs() -> dict[str, bytes]:
     payload = analytical_input(candidates, episodes)
     graph = compile_behavioral_candidate_ir(payload)
     validate_analytical(payload, graph)
+    expected_authority = closure.expected_authority(ROOT, payload, graph)
+    if record_human_decisions:
+        closure.record_authority(ROOT, expected_authority)
+    authority = load(closure.AUTHORITY_PATH)
+    closure.validate_authority(ROOT, authority, payload, graph)
+    findings = closure.accepted_findings(authority, payload, graph)
     # Historical output is accessed only after new candidate compilation.
     comparison = historical_comparison(graph)
     projected_meanings = [{k: copy.deepcopy(c[k]) for k in (
@@ -352,7 +362,11 @@ def build_outputs() -> dict[str, bytes]:
     review = {
         "schema_version": "m14d_analytical_review_package_v1", "artifact_role": "detached_non_authorizing_behavioral_review",
         "accepted": False, "authorizing": False, "public": False, "production_selectable": False,
-        "review_decisions_available": ["ACCEPT", "REVISE", "OMIT"], "acceptance_authority": None,
+        "review_decisions_available": ["ACCEPT", "REVISE", "OMIT"],
+        "acceptance_authority": findings["subject"]["human_authority"],
+        "review_status": "human_decisions_complete_internal_findings_only",
+        "accepted_findings": {"path": closure.FINDINGS_PATH, "findings_subject_sha256": findings["findings_subject_sha256"]},
+        "review_questions_status": "Historical review prompts, resolved by the bound user-supplied decisions; this review packet remains non-authorizing.",
         "scope": "17 approved actions in 16 accepted episodes; analytical candidates only, no issue-wide conclusion or public wording",
         "semantic_inputs": {"candidates": file_binding(f"{ACCEPTED}/action_interpretability_candidates.json"),
                             "promotion_manifest_sha256": manifest["manifest_sha256"],
@@ -383,7 +397,8 @@ def build_outputs() -> dict[str, bytes]:
             f"{V2}/promotion_manifest.json": json_bytes(manifest),
             f"{OUT}/compiler_input.json": json_bytes(payload),
             f"{OUT}/behavioral_candidate_graph.json": json_bytes(graph),
-            f"{OUT}/review_package.json": json_bytes(seal(review, "review_package_sha256"))}
+            f"{OUT}/review_package.json": json_bytes(seal(review, "review_package_sha256")),
+            closure.FINDINGS_PATH: json_bytes(findings)}
 
 
 def historical_comparison(graph: dict) -> dict:
@@ -422,10 +437,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="offline no-write exact reproduction")
     parser.add_argument("--check-scope", action="store_true", help="reject any change outside M14D")
+    parser.add_argument("--record-human-decisions", action="store_true", help="one-time materialization of the supplied PR178 human decisions; refuses overwrite")
     args = parser.parse_args()
+    require(not (args.check and args.record_human_decisions), "check mode cannot record authority")
     if args.check_scope:
         validate_scope()
-    outputs = build_outputs()
+        closure.validate_closure_scope(ROOT)
+    outputs = build_outputs(record_human_decisions=args.record_human_decisions)
     for name, content in outputs.items():
         path = ROOT / name
         if args.check:
