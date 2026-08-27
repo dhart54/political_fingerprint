@@ -83,8 +83,9 @@ authoritative upstream split:
    action meaning.
 3. Member Action Projection binds a member's official status,
    service/evidence state, and member-action source to the shared action and
-   mapping digests. Exact-choice effect is deterministic and cannot override
-   shared meaning.
+   action digest. It contains no issue-mapping digest. Exact-choice effect is
+   deterministic and cannot override shared meaning. The adapter receives issue
+   mapping separately and selects/reconciles its mapped action set there.
 
 `backend/app/semantic_ir/shared_corpus.py` is the narrow adapter into the
 existing compiler input. This is an upstream authoring refactor, not a second

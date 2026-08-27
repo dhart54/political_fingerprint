@@ -255,4 +255,25 @@ Rationale:
 
 ---
 
+## 2026-08-26 — Shared Legislative Corpus Boundary V1 integrity correction
+
+Decision:
+
+- Shared Action Core and reusable Member Action Projection artifacts use a
+  chamber/Congress namespace; Political Fingerprint domains do not enter their
+  artifact identities or storage paths.
+- Member Action Projection binds only Shared Action Core action identities,
+  digests, and governed member-action evidence. Shared Issue Mapping is a
+  separate adapter input and cannot force projection regeneration.
+- Shared source roles resolve to the exact action's governed identities, and a
+  member-action source must match the core's governed action/outcome identity.
+
+Rationale:
+
+- These corrections enforce the five-layer boundary accepted for M14A without
+  changing any of the 37 migrated Justice meanings or the retained Semantic IR
+  compiler.
+
+---
+
 ## End of DECISIONS.md

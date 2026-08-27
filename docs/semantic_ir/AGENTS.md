@@ -22,7 +22,10 @@ held-out evaluation artifacts. These instructions apply to all files under
   `shared_legislative_corpus_v1.schema.json` and
   `backend/app/semantic_ir/shared_corpus.py`. Shared Action Core and Shared Issue
   Mapping are member-neutral; Member Action Projection is the first
-  member-specific layer. Do not generate a second meaning for another member.
+  member-specific layer. Shared Action Core and Member Action Projection use
+  issue-neutral chamber/Congress storage and identity. Member projections bind
+  the core, never an issue-mapping digest; the adapter supplies issue mapping as
+  a separate input. Do not generate a second meaning for another member.
 - Legacy member-scoped accepted artifacts are historical provenance. Do not
   rewrite them to adopt the shared boundary.
 

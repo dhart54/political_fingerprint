@@ -25,7 +25,8 @@ from backend.app.semantic_ir.shared_corpus import (  # noqa: E402
 )
 
 
-PILOT = ROOT / "docs/editorial/shared_corpora/justice_public_safety_119_v1"
+CORPUS = ROOT / "docs/editorial/shared_corpora/house_119_v1"
+ISSUE = CORPUS / "issue_mappings/justice_public_safety_v1"
 LEGACY_INPUT = (
     ROOT
     / "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiler_input.json"
@@ -43,18 +44,18 @@ def load(path: Path) -> dict:
 class SharedLegislativeCorpusTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        cls.core = load(PILOT / "shared_action_core.json")
-        cls.mapping = load(PILOT / "shared_issue_mapping.json")
-        cls.foushee = load(PILOT / "member_projections/f000477.json")
-        cls.grothman = load(PILOT / "member_projections/g000576.json")
+        cls.core = load(CORPUS / "shared_action_core.json")
+        cls.mapping = load(ISSUE / "shared_issue_mapping.json")
+        cls.foushee = load(CORPUS / "member_projections/f000477.json")
+        cls.grothman = load(CORPUS / "member_projections/g000576.json")
         cls.legacy_input = load(LEGACY_INPUT)["compiler_input"]
         cls.legacy_output = load(LEGACY_OUTPUT)["compiled_ir"]
 
     def test_contracts_and_two_member_compiler_proof(self) -> None:
         validate_shared_action_core(ROOT, self.core)
         validate_shared_issue_mapping(ROOT, self.mapping, self.core)
-        validate_member_projection(ROOT, self.foushee, self.core, self.mapping)
-        validate_member_projection(ROOT, self.grothman, self.core, self.mapping)
+        validate_member_projection(ROOT, self.foushee, self.core)
+        validate_member_projection(ROOT, self.grothman, self.core)
         self.assertEqual(len(self.core["actions"]), 37)
         payload = adapt_to_semantic_ir_input(
             ROOT, self.core, self.mapping, [self.foushee, self.grothman]
@@ -92,6 +93,13 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
         with self.assertRaises(SharedCorpusValidationError):
             validate_shared_action_core(ROOT, changed)
 
+    def test_shared_action_core_identity_is_issue_neutral(self) -> None:
+        self.assertEqual(self.core["artifact_id"], "shared-action-core:house:119:v1")
+        changed = copy.deepcopy(self.core)
+        changed["artifact_id"] = "shared-action-core:justice-public-safety:119:v1"
+        with self.assertRaises(SharedCorpusValidationError):
+            validate_shared_action_core(ROOT, changed)
+
     def test_member_and_party_fields_in_shared_mapping_fail(self) -> None:
         changed = copy.deepcopy(self.mapping)
         changed["action_mappings"][0]["member_id"] = "F000477"
@@ -124,17 +132,53 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
         changed = copy.deepcopy(self.foushee)
         changed["actions"][0]["action_meaning_override"] = "member prose"
         with self.assertRaises(SharedCorpusValidationError):
-            validate_member_projection(ROOT, changed, self.core, self.mapping)
+            validate_member_projection(ROOT, changed, self.core)
 
     def test_wrong_action_or_source_digest_fails(self) -> None:
         changed = copy.deepcopy(self.foushee)
         changed["actions"][0]["action_core_sha256"] = "0" * 64
         with self.assertRaisesRegex(SharedCorpusValidationError, "wrong action digest"):
-            validate_member_projection(ROOT, changed, self.core, self.mapping)
+            validate_member_projection(ROOT, changed, self.core)
         changed = copy.deepcopy(self.foushee)
         changed["actions"][0]["member_action_source_identity_sha256"] = "0" * 64
         with self.assertRaisesRegex(SharedCorpusValidationError, "wrong source digest"):
-            validate_member_projection(ROOT, changed, self.core, self.mapping)
+            validate_member_projection(ROOT, changed, self.core)
+
+    def test_internally_consistent_wrong_member_source_identity_fails(self) -> None:
+        changed = copy.deepcopy(self.foushee)
+        wrong_source = copy.deepcopy(
+            self.core["actions"][1]["action_outcome_source_identities"]
+        )
+        changed["actions"][0]["member_action_source_identities"] = wrong_source
+        changed["actions"][0]["member_action_source_identity_sha256"] = digest(
+            wrong_source
+        )
+        changed["projection_sha256"] = sealed_digest(changed, "projection_sha256")
+        with self.assertRaisesRegex(
+            SharedCorpusValidationError, "does not match governed exact-action source"
+        ):
+            validate_member_projection(ROOT, changed, self.core)
+
+    def test_core_source_roles_and_semantic_ids_must_be_governed(self) -> None:
+        changed = copy.deepcopy(self.core)
+        changed["actions"][0]["operative_meaning_source_identities"] = copy.deepcopy(
+            changed["actions"][1]["operative_meaning_source_identities"]
+        )
+        changed["actions"][0]["action_core_sha256"] = sealed_digest(
+            changed["actions"][0], "action_core_sha256"
+        )
+        changed["corpus_sha256"] = digest(changed["actions"])
+        with self.assertRaisesRegex(SharedCorpusValidationError, "not governed"):
+            validate_shared_action_core(ROOT, changed)
+
+        changed = copy.deepcopy(self.core)
+        changed["actions"][0]["semantic_ir_source_ids"] = ["wrong-source"]
+        changed["actions"][0]["action_core_sha256"] = sealed_digest(
+            changed["actions"][0], "action_core_sha256"
+        )
+        changed["corpus_sha256"] = digest(changed["actions"])
+        with self.assertRaisesRegex(SharedCorpusValidationError, "does not resolve"):
+            validate_shared_action_core(ROOT, changed)
 
     def test_ungoverned_package_component_projection_fails(self) -> None:
         changed = copy.deepcopy(self.foushee)
@@ -148,7 +192,56 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
         with self.assertRaisesRegex(
             SharedCorpusValidationError, "ungoverned package component"
         ):
-            validate_member_projection(ROOT, changed, self.core, self.mapping)
+            validate_member_projection(ROOT, changed, self.core)
+
+    def test_member_projection_is_reusable_with_separate_issue_mapping(self) -> None:
+        projection = copy.deepcopy(self.foushee)
+        alternate_mapping = copy.deepcopy(self.mapping)
+        alternate_mapping["artifact_id"] = "shared-issue-mapping:reuse-proof:119:v1"
+        alternate_mapping["domain_id"] = "REUSE_PROOF"
+        singleton_episode = next(
+            episode
+            for episode in alternate_mapping["episodes"]
+            if len(episode["action_ids"]) == 1
+        )
+        selected_action_id = singleton_episode["action_ids"][0]
+        alternate_mapping["action_mappings"] = [
+            row
+            for row in alternate_mapping["action_mappings"]
+            if row["action_id"] == selected_action_id
+        ]
+        alternate_mapping["episodes"] = [singleton_episode]
+        alternate_mapping["mapping_sha256"] = sealed_digest(
+            alternate_mapping, "mapping_sha256"
+        )
+        before = projection["projection_sha256"]
+        validate_member_projection(ROOT, projection, self.core)
+        payload = adapt_to_semantic_ir_input(
+            ROOT, self.core, alternate_mapping, [projection]
+        )
+        self.assertEqual(before, projection["projection_sha256"])
+        self.assertEqual(
+            [row["action_id"] for row in payload["members"][0]["actions"]],
+            [selected_action_id],
+        )
+        self.assertEqual(
+            payload["shared_semantics"]["actions"][0]["eligibility"]["domain"],
+            "REUSE_PROOF",
+        )
+
+        incomplete_projection = copy.deepcopy(projection)
+        incomplete_projection["actions"] = [
+            row
+            for row in incomplete_projection["actions"]
+            if row["action_id"] != selected_action_id
+        ]
+        incomplete_projection["projection_sha256"] = sealed_digest(
+            incomplete_projection, "projection_sha256"
+        )
+        with self.assertRaisesRegex(SharedCorpusValidationError, "lacks mapped actions"):
+            adapt_to_semantic_ir_input(
+                ROOT, self.core, alternate_mapping, [incomplete_projection]
+            )
 
     def test_non_directional_contract_and_party_invariance(self) -> None:
         from backend.app.semantic_ir.shared_corpus import choice_effect
@@ -169,12 +262,7 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
             changed["action_mappings"][0], "mapping_sha256"
         )
         changed["mapping_sha256"] = sealed_digest(changed, "mapping_sha256")
-        projection = copy.deepcopy(self.foushee)
-        projection["actions"][0]["shared_issue_mapping_sha256"] = changed[
-            "action_mappings"
-        ][0]["mapping_sha256"]
-        projection["projection_sha256"] = sealed_digest(projection, "projection_sha256")
-        payload = adapt_to_semantic_ir_input(ROOT, self.core, changed, [projection])
+        payload = adapt_to_semantic_ir_input(ROOT, self.core, changed, [self.foushee])
         with self.assertRaisesRegex(
             SharedCorpusValidationError, "accepted Foushee compiler input"
         ):

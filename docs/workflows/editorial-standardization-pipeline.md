@@ -22,10 +22,12 @@ semantics.
 New full-record authoring begins with the typed Shared Legislative Corpus V1
 boundary:
 
-- Shared Action Core: exact-action legislative truth and governed sources;
+- Shared Action Core: issue-neutral chamber/Congress exact-action legislative
+  truth and governed sources;
 - Shared Issue Mapping: reusable issue eligibility and episode/family/trait
   relationships;
-- Member Action Projection: the first member-specific layer;
+- Member Action Projection: the first member-specific layer, bound to Shared
+  Action Core but independent of issue mappings;
 - `backend.app.semantic_ir.shared_corpus.adapt_to_semantic_ir_input`: the only
   adapter from those contracts into the existing compiler input.
 

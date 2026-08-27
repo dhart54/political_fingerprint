@@ -5,9 +5,10 @@
   "only_executable_editorial_semantic_architecture": "editorial_semantic_ir_v1",
   "future_authoring_boundary": {
     "schema": "docs/semantic_ir/shared_legislative_corpus_v1.schema.json",
-    "shared_action_core": "docs/editorial/shared_corpora/justice_public_safety_119_v1/shared_action_core.json",
-    "shared_issue_mapping": "docs/editorial/shared_corpora/justice_public_safety_119_v1/shared_issue_mapping.json",
-    "member_action_projection_root": "docs/editorial/shared_corpora/justice_public_safety_119_v1/member_projections",
+    "shared_action_core": "docs/editorial/shared_corpora/house_119_v1/shared_action_core.json",
+    "shared_issue_mapping": "docs/editorial/shared_corpora/house_119_v1/issue_mappings/justice_public_safety_v1/shared_issue_mapping.json",
+    "member_action_projection_root": "docs/editorial/shared_corpora/house_119_v1/member_projections",
+    "member_projection_issue_mapping_binding": "none_adapter_receives_mapping_separately",
     "adapter": "backend/app/semantic_ir/shared_corpus.py",
     "semantic_compiler_retained": "backend/app/semantic_ir/compiler.py",
     "legacy_member_scoped_artifacts": "historical_provenance_unchanged",

@@ -62,6 +62,11 @@ def sealed_digest(record: dict[str, Any], field: str) -> str:
     return digest(subject)
 
 
+def _identity_set(identities: list[dict[str, Any]]) -> set[bytes]:
+    """Compare governed source identities by their complete typed identity."""
+    return {canonical_bytes(identity) for identity in identities}
+
+
 def _walk_keys(value: object) -> set[str]:
     if isinstance(value, dict):
         return set(value) | set().union(
@@ -125,6 +130,44 @@ def validate_shared_action_core(root: Path, artifact: dict[str, Any]) -> None:
         if action["governed_source_identity_sha256"] != source_digest:
             raise SharedCorpusValidationError(
                 f"shared source digest differs: {action['action_id']}"
+            )
+        governed_sources = _identity_set(action["governed_source_identities"])
+        outcome_sources = _identity_set(action["action_outcome_source_identities"])
+        operative_sources = _identity_set(
+            action["operative_meaning_source_identities"]
+        )
+        if not outcome_sources <= governed_sources:
+            raise SharedCorpusValidationError(
+                f"action-outcome source is not governed for exact action: {action['action_id']}"
+            )
+        if not operative_sources <= governed_sources:
+            raise SharedCorpusValidationError(
+                f"operative-meaning source is not governed for exact action: {action['action_id']}"
+            )
+        if (
+            outcome_sources & operative_sources
+            or outcome_sources | operative_sources != governed_sources
+        ):
+            raise SharedCorpusValidationError(
+                f"governed sources are not partitioned by exact-action role: {action['action_id']}"
+            )
+        expected_clerk_id = (
+            f"clerk:{action['congress']}:{action['session']}:{action['roll']}"
+        )
+        if not any(
+            source["source_id"] == expected_clerk_id
+            and source["source_type"] == "house_clerk_roll_call"
+            for source in action["action_outcome_source_identities"]
+        ):
+            raise SharedCorpusValidationError(
+                f"action-outcome source does not identify exact House action: {action['action_id']}"
+            )
+        governed_source_ids = {
+            source["source_id"] for source in action["governed_source_identities"]
+        }
+        if not set(action["semantic_ir_source_ids"]) <= governed_source_ids:
+            raise SharedCorpusValidationError(
+                f"Semantic IR source does not resolve to governed identity: {action['action_id']}"
             )
         key = (action["exact_action_identity"], source_digest)
         meaning_digest = digest(action["accepted_exact_action_meaning"])
@@ -200,7 +243,7 @@ def validate_shared_issue_mapping(
 
 
 def validate_member_projection(
-    root: Path, artifact: dict[str, Any], core: dict[str, Any], mapping: dict[str, Any]
+    root: Path, artifact: dict[str, Any], core: dict[str, Any]
 ) -> None:
     _validate_schema(root, artifact, "memberActionProjectionArtifact")
     forbidden = _walk_keys(artifact) & MEANING_FIELDS
@@ -209,19 +252,14 @@ def validate_member_projection(
             f"Member Action Projection attempts to author meaning: {sorted(forbidden)}"
         )
     core_by_id = {row["action_id"]: row for row in core["actions"]}
-    mapping_by_id = {row["action_id"]: row for row in mapping["action_mappings"]}
     projected_ids = [row["action_id"] for row in artifact["actions"]]
     if len(projected_ids) != len(set(projected_ids)):
         raise SharedCorpusValidationError(
             "Member Action Projection action identities must be unique"
         )
-    if set(projected_ids) != set(mapping_by_id):
-        raise SharedCorpusValidationError(
-            "Member Action Projection must explicitly cover every mapped action"
-        )
     for action in artifact["actions"]:
         action_id = action["action_id"]
-        if action_id not in core_by_id or action_id not in mapping_by_id:
+        if action_id not in core_by_id:
             raise SharedCorpusValidationError(
                 f"member projection references unknown action: {action_id}"
             )
@@ -229,18 +267,17 @@ def validate_member_projection(
             raise SharedCorpusValidationError(
                 f"member projection references wrong action digest: {action_id}"
             )
-        if (
-            action["shared_issue_mapping_sha256"]
-            != mapping_by_id[action_id]["mapping_sha256"]
-        ):
-            raise SharedCorpusValidationError(
-                f"member projection references wrong issue mapping digest: {action_id}"
-            )
         if action["member_action_source_identity_sha256"] != digest(
             action["member_action_source_identities"]
         ):
             raise SharedCorpusValidationError(
                 f"member projection references wrong source digest: {action_id}"
+            )
+        if _identity_set(action["member_action_source_identities"]) != _identity_set(
+            core_by_id[action_id]["action_outcome_source_identities"]
+        ):
+            raise SharedCorpusValidationError(
+                f"member projection source does not match governed exact-action source: {action_id}"
             )
         if action["exact_choice_effect"] != choice_effect(action["official_status"]):
             raise SharedCorpusValidationError(
@@ -271,8 +308,18 @@ def adapt_to_semantic_ir_input(
     validate_shared_action_core(root, core)
     validate_shared_issue_mapping(root, mapping, core)
     for projection in member_projections:
-        validate_member_projection(root, projection, core, mapping)
+        validate_member_projection(root, projection, core)
     core_by_id = {row["action_id"]: row for row in core["actions"]}
+    mapped_action_ids = [row["action_id"] for row in mapping["action_mappings"]]
+    projection_actions: dict[str, dict[str, dict[str, Any]]] = {}
+    for projection in member_projections:
+        by_id = {row["action_id"]: row for row in projection["actions"]}
+        missing = sorted(set(mapped_action_ids) - set(by_id))
+        if missing:
+            raise SharedCorpusValidationError(
+                f"Member Action Projection lacks mapped actions: {missing}"
+            )
+        projection_actions[projection["member_id"]] = by_id
     shared_actions = []
     for row in mapping["action_mappings"]:
         action = core_by_id[row["action_id"]]
@@ -306,7 +353,8 @@ def adapt_to_semantic_ir_input(
                         "service_status": row["service_status"],
                         "status": row["official_status"],
                     }
-                    for row in projection["actions"]
+                    for action_id in mapped_action_ids
+                    for row in [projection_actions[projection["member_id"]][action_id]]
                 ],
             }
             for projection in member_projections

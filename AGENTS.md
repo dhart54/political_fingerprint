@@ -69,7 +69,10 @@ For new editorial work, the upstream authoring boundary is Shared Legislative
 Corpus V1 (`docs/semantic_ir/shared_legislative_corpus_v1.schema.json`): Shared
 Action Core owns member-neutral exact-action truth, Shared Issue Mapping owns
 member-neutral Political Fingerprint taxonomy relationships, and Member Action
-Projection is the first member-specific legislative layer. The narrow adapter in
+Projection is the first member-specific legislative layer. Shared Action Core
+identity/storage and Member Action Projection identity/storage are issue-neutral;
+member projections bind only Shared Action Core and governed member-action
+sources. The narrow adapter in
 `backend/app/semantic_ir/shared_corpus.py` feeds these contracts into the existing
 Editorial Semantic IR compiler. A second member must reference the existing
 shared action meaning and digest rather than generate another meaning.

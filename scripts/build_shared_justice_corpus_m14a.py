@@ -38,13 +38,14 @@ LEGACY_OUTPUT = (
     ROOT
     / "docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiled_semantic_ir.json"
 )
-OUTPUT = ROOT / "docs/editorial/shared_corpora/justice_public_safety_119_v1"
-CORE_PATH = OUTPUT / "shared_action_core.json"
-MAPPING_PATH = OUTPUT / "shared_issue_mapping.json"
-FOUSHEE_PATH = OUTPUT / "member_projections/f000477.json"
-GROTHMAN_PATH = OUTPUT / "member_projections/g000576.json"
-PROOF_PATH = OUTPUT / "m14a_parity_proof.json"
-REPORT_PATH = OUTPUT / "implementation_report.md"
+CORPUS_OUTPUT = ROOT / "docs/editorial/shared_corpora/house_119_v1"
+ISSUE_OUTPUT = CORPUS_OUTPUT / "issue_mappings/justice_public_safety_v1"
+CORE_PATH = CORPUS_OUTPUT / "shared_action_core.json"
+MAPPING_PATH = ISSUE_OUTPUT / "shared_issue_mapping.json"
+FOUSHEE_PATH = CORPUS_OUTPUT / "member_projections/f000477.json"
+GROTHMAN_PATH = CORPUS_OUTPUT / "member_projections/g000576.json"
+PROOF_PATH = ISSUE_OUTPUT / "m14a_parity_proof.json"
+REPORT_PATH = ISSUE_OUTPUT / "implementation_report.md"
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -219,9 +220,6 @@ def build() -> tuple[
                 {
                     "action_id": action_id,
                     "action_core_sha256": actions[-1]["action_core_sha256"],
-                    "shared_issue_mapping_sha256": action_mappings[-1][
-                        "mapping_sha256"
-                    ],
                     "official_status": overlay["official_status"],
                     "service_status": overlay["service_status"],
                     "evidence_status": overlay["evidence_status"],
@@ -232,7 +230,7 @@ def build() -> tuple[
             )
     core_artifact = {
         "schema_version": "shared_action_core_v1",
-        "artifact_id": "shared-action-core:justice-public-safety:119:v1",
+        "artifact_id": "shared-action-core:house:119:v1",
         "identity_unit": "exact House legislative action and governed source version",
         "authoritative_for_new_editorial_work": True,
         "historical_inputs_rewritten": False,
@@ -266,7 +264,7 @@ def build() -> tuple[
         meta = member_meta[member_id]
         projection = {
             "schema_version": "member_action_projection_v1",
-            "artifact_id": f"member-action-projection:{member_id.lower()}:justice-public-safety:119:v1",
+            "artifact_id": f"member-action-projection:{member_id.lower()}:house:119:v1",
             "member_id": member_id,
             "party": meta["party"],
             "context_metadata": {
@@ -280,13 +278,26 @@ def build() -> tuple[
     validate_shared_action_core(ROOT, core_artifact)
     validate_shared_issue_mapping(ROOT, mapping_artifact, core_artifact)
     for projection in projections:
-        validate_member_projection(ROOT, projection, core_artifact, mapping_artifact)
+        validate_member_projection(ROOT, projection, core_artifact)
     foushee_input = adapt_to_semantic_ir_input(
         ROOT, core_artifact, mapping_artifact, [projections[0]]
     )
     two_input = adapt_to_semantic_ir_input(
         ROOT, core_artifact, mapping_artifact, projections
     )
+    alternate_mapping = copy.deepcopy(mapping_artifact)
+    alternate_mapping["artifact_id"] = "shared-issue-mapping:reuse-proof:119:v1"
+    alternate_mapping["domain_id"] = "REUSE_PROOF"
+    alternate_mapping = sealed(alternate_mapping, "mapping_sha256")
+    projection_digests_before = [
+        projection["projection_sha256"] for projection in projections
+    ]
+    alternate_input = adapt_to_semantic_ir_input(
+        ROOT, core_artifact, alternate_mapping, projections
+    )
+    projection_digests_after = [
+        projection["projection_sha256"] for projection in projections
+    ]
     foushee_result = run_editorial_pipeline(
         copy.deepcopy(foushee_input),
         prepare_persistence_proposal=False,
@@ -361,6 +372,14 @@ def build() -> tuple[
             )
         ),
         "member_b_regenerated_meaning_count": 0,
+        "member_projection_issue_mapping_independence": {
+            "same_projection_reused_with_separate_mapping_input": all(
+                len(member["actions"]) == len(alternate_mapping["action_mappings"])
+                for member in alternate_input["members"]
+            ),
+            "projection_digests_unchanged": projection_digests_before
+            == projection_digests_after,
+        },
         "member_projections_reconcile_to_official_clerk": clerk_reconciliation,
         "relationship_parity_counts": {
             "episode_action": sum(
@@ -412,6 +431,12 @@ def build() -> tuple[
         proof["foushee_compiled_output_parity"],
         proof["member_overlap_count"] == 37,
         proof["shared_digest_parity_count"] == 37,
+        proof["member_projection_issue_mapping_independence"][
+            "same_projection_reused_with_separate_mapping_input"
+        ],
+        proof["member_projection_issue_mapping_independence"][
+            "projection_digests_unchanged"
+        ],
         all(clerk_reconciliation.values()),
         historical["byte_identical"],
     ]
@@ -435,6 +460,7 @@ def build() -> tuple[
             f"- Official Clerk reconciliation: `{json.dumps(proof['member_projections_reconcile_to_official_clerk'], sort_keys=True)}`",
             f"- Episode/family/trait relationship counts: `{json.dumps(proof['relationship_parity_counts'], sort_keys=True)}`",
             f"- Member B regenerated meanings: `{proof['member_b_regenerated_meaning_count']}`",
+            f"- Member projections reusable across separate issue-mapping inputs: `{proof['member_projection_issue_mapping_independence']['same_projection_reused_with_separate_mapping_input']}` with unchanged projection digests `{proof['member_projection_issue_mapping_independence']['projection_digests_unchanged']}`",
             f"- Proposition counts: `{json.dumps(proof['proposition_counts'], sort_keys=True)}`",
             f"- Synthesis counts: `{json.dumps(proof['synthesis_counts'], sort_keys=True)}`",
             f"- Historical protected files byte-identical: `{historical['byte_identical']}` across `{historical['protected_file_count']}` files",

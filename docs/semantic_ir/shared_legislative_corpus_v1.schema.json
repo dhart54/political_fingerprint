@@ -50,7 +50,7 @@
       "type": "object", "additionalProperties": false,
       "required": ["schema_version", "artifact_id", "identity_unit", "authoritative_for_new_editorial_work", "historical_inputs_rewritten", "actions", "corpus_sha256"],
       "properties": {
-        "schema_version": {"const": "shared_action_core_v1"}, "artifact_id": {"type": "string"},
+        "schema_version": {"const": "shared_action_core_v1"}, "artifact_id": {"type": "string", "pattern": "^shared-action-core:house:[0-9]+:v[0-9]+$"},
         "identity_unit": {"const": "exact House legislative action and governed source version"},
         "authoritative_for_new_editorial_work": {"const": true}, "historical_inputs_rewritten": {"const": false},
         "actions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sharedAction"}},
@@ -116,9 +116,9 @@
     },
     "memberAction": {
       "type": "object", "additionalProperties": false,
-      "required": ["action_id", "action_core_sha256", "shared_issue_mapping_sha256", "official_status", "service_status", "evidence_status", "exact_choice_effect", "member_action_source_identities", "member_action_source_identity_sha256"],
+      "required": ["action_id", "action_core_sha256", "official_status", "service_status", "evidence_status", "exact_choice_effect", "member_action_source_identities", "member_action_source_identity_sha256"],
       "properties": {
-        "action_id": {"type": "string"}, "action_core_sha256": {"$ref": "#/$defs/sha256"}, "shared_issue_mapping_sha256": {"$ref": "#/$defs/sha256"},
+        "action_id": {"type": "string"}, "action_core_sha256": {"$ref": "#/$defs/sha256"},
         "official_status": {"enum": ["Yea", "Nay", "Present", "Not Voting", "Missing Evidence"]},
         "service_status": {"type": "string"}, "evidence_status": {"type": "string"},
         "exact_choice_effect": {"enum": ["supports_exact_choice", "opposes_exact_choice", "resolved_non_directional", "missing_evidence"]},
@@ -130,7 +130,7 @@
       "type": "object", "additionalProperties": false,
       "required": ["schema_version", "artifact_id", "member_id", "party", "context_metadata", "authoritative_legislative_meaning", "actions", "projection_sha256"],
       "properties": {
-        "schema_version": {"const": "member_action_projection_v1"}, "artifact_id": {"type": "string"}, "member_id": {"type": "string"}, "party": {"type": "string"},
+        "schema_version": {"const": "member_action_projection_v1"}, "artifact_id": {"type": "string", "pattern": "^member-action-projection:[a-z0-9]+:house:[0-9]+:v[0-9]+$"}, "member_id": {"type": "string"}, "party": {"type": "string"},
         "context_metadata": {"type": "object"}, "authoritative_legislative_meaning": {"const": false},
         "actions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/memberAction"}},
         "projection_sha256": {"$ref": "#/$defs/sha256"}
