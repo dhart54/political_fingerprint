@@ -229,4 +229,51 @@ Rationale:
 
 ---
 
+## 2026-08-26 — Shared Legislative Corpus Boundary V1
+
+Decision:
+
+- Future editorial authoring uses five layers: Shared Action Core, Shared Issue
+  Mapping, Member Action Projection, the existing Editorial Semantic IR member
+  analytical result, and the existing reviewed presentation/publication stack.
+- One exact House action/governed-source version has one member-neutral meaning
+  identity. Party and member identity cannot alter that meaning, action stage,
+  chamber outcome, package/amendment boundary, or issue organization.
+- Political Fingerprint taxonomy is separate from intrinsic action truth, and
+  member uniqueness begins with official action projection and downstream
+  analytical aggregation.
+- The existing Semantic IR compiler is retained behind a deterministic adapter.
+- Existing accepted member-scoped artifacts remain historical provenance and
+  are not rewritten by storage migration.
+
+Rationale:
+
+- M0 proved 37 Justice actions could be reused across Foushee and Grothman with
+  zero regenerated meanings and distinct member results. M14A makes that
+  audit-only architecture a typed, fail-closed authoring contract without
+  changing accepted semantics, production, publication, or presentation.
+
+---
+
+## 2026-08-26 — Shared Legislative Corpus Boundary V1 integrity correction
+
+Decision:
+
+- Shared Action Core and reusable Member Action Projection artifacts use a
+  chamber/Congress namespace; Political Fingerprint domains do not enter their
+  artifact identities or storage paths.
+- Member Action Projection binds only Shared Action Core action identities,
+  digests, and governed member-action evidence. Shared Issue Mapping is a
+  separate adapter input and cannot force projection regeneration.
+- Shared source roles resolve to the exact action's governed identities, and a
+  member-action source must match the core's governed action/outcome identity.
+
+Rationale:
+
+- These corrections enforce the five-layer boundary accepted for M14A without
+  changing any of the 37 migrated Justice meanings or the retained Semantic IR
+  compiler.
+
+---
+
 ## End of DECISIONS.md

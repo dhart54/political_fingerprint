@@ -19,6 +19,23 @@ semantics.
 
 ## Canonical semantic boundary
 
+New full-record authoring begins with the typed Shared Legislative Corpus V1
+boundary:
+
+- Shared Action Core: issue-neutral chamber/Congress exact-action legislative
+  truth and governed sources;
+- Shared Issue Mapping: reusable issue eligibility and episode/family/trait
+  relationships;
+- Member Action Projection: the first member-specific layer, bound to Shared
+  Action Core but independent of issue mappings;
+- `backend.app.semantic_ir.shared_corpus.adapt_to_semantic_ir_input`: the only
+  adapter from those contracts into the existing compiler input.
+
+Create/review shared action meaning once. Adding a member creates only a member
+projection; it must not regenerate meaning or copy member-specific prose into a
+shared record. Existing accepted member-scoped artifacts remain historical and
+must not be rewritten for migration.
+
 Editorial Semantic IR V1 is the contract between shared evidence and later
 presentation:
 

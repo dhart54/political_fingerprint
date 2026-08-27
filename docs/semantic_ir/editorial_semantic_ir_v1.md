@@ -71,6 +71,27 @@ explicit without forcing them into a public section.
 
 ## Shared, member, and composition layers
 
+For newly commissioned full-record work, Shared Legislative Corpus V1 is the
+authoritative upstream split:
+
+1. Shared Action Core records exact House action identity, stage, date, chamber
+   outcome, accepted meaning/limitations, governed source identities and bytes
+   digests, and package/amendment boundaries. It contains no member or issue
+   taxonomy fields and never infers enactment from a House outcome.
+2. Shared Issue Mapping relates shared action IDs to one or more issue contexts,
+   episodes, families, traits, and accepted trait relationships without copying
+   action meaning.
+3. Member Action Projection binds a member's official status,
+   service/evidence state, and member-action source to the shared action and
+   action digest. It contains no issue-mapping digest. Exact-choice effect is
+   deterministic and cannot override shared meaning. The adapter receives issue
+   mapping separately and selects/reconciles its mapped action set there.
+
+`backend/app/semantic_ir/shared_corpus.py` is the narrow adapter into the
+existing compiler input. This is an upstream authoring refactor, not a second
+Semantic IR compiler. Historical accepted member-scoped inputs remain immutable
+provenance.
+
 Shared legislative semantics contain canonical actions, exact-action domain
 eligibility, claim/source references, action meaning, legislative stage,
 structural metadata, episodes, policy families, policy traits, trait
