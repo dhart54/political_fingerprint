@@ -17,6 +17,32 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  m14d-exact-head:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install M14D offline validation dependencies
+        run: python -m pip install jsonschema pytest
+
+      - name: Validate M14D promotion, detached candidates, and frozen baseline
+        run: |
+          git rev-parse HEAD
+          python scripts/build_m14d_education_reanalysis.py --check
+          python -m pytest -q backend/tests/test_m14d_education_reanalysis.py
+
+      # The milestone diff allowlist is not a permanent ban on future work.
+      - name: Prove exact M14D milestone scope
+        if: github.head_ref == 'codex/m14d-education-reanalysis'
+        run: python scripts/build_m14d_education_reanalysis.py --check --check-scope
+
   foushee-full-record-benchmark:
     runs-on: ubuntu-latest
     env:
