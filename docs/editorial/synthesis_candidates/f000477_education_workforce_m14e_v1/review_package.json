@@ -1,0 +1,307 @@
+{
+  "accepted": false,
+  "accepted_synthesis_count": 0,
+  "accounting_counts": {
+    "accepted_source_findings": 3,
+    "all_source_finding_actions": 6,
+    "all_source_finding_episodes": 5,
+    "candidate_actions": 4,
+    "candidate_episodes": 3,
+    "inherited_ledger_actions": 17,
+    "inherited_ledger_episodes": 16,
+    "primary_synthesis_findings": 2,
+    "standalone_findings": 1
+  },
+  "artifact_role": "detached_non_authorizing_independent_review",
+  "authorizing": false,
+  "baseline_main_sha": "79995a5a4d8840e2e3783905327ba02c6d40cffa",
+  "candidate_package": {
+    "package_sha256": "647b0b8049055e1368b1baf33a7d8d79d24c46a27f57dcc1b541636d3e2b1938",
+    "path": "docs/editorial/synthesis_candidates/f000477_education_workforce_m14e_v1/synthesis_candidate_package.json"
+  },
+  "decision_requested": "Independent ChatGPT/product review: retain, revise, or omit this single hypothesis. No acceptance is recorded here.",
+  "downstream_authorizations": {
+    "database_writes": false,
+    "deployment": false,
+    "frontend_changes": false,
+    "main_takeaway": false,
+    "merge": false,
+    "production_persistence": false,
+    "public_wording": false,
+    "publication": false,
+    "synthesis_acceptance": false
+  },
+  "exact_candidate": {
+    "accepted": false,
+    "authorizing": false,
+    "candidate_sha256": "e1f897237de6934c96f034205b4e2fdf6b73afafbe6081507c5d3861180bdc4d",
+    "candidate_state": "proposed_not_accepted",
+    "competing_interpretation": "These may be bill-specific judgments rather than evidence of a durable regulatory preference beyond the reviewed actions. The measures differ in covered institutions, relationships, funds, waiver routes, and legal tools; the final H.R.1048 package contains several provisions, and its Nay cannot identify which one was rejected.",
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "frontend_changes": false,
+      "main_takeaway": false,
+      "merge": false,
+      "production_persistence": false,
+      "public_wording": false,
+      "publication": false,
+      "synthesis_acceptance": false
+    },
+    "evidence_action_ids": [
+      "house:119:1:120",
+      "house:119:1:313",
+      "house:119:1:79",
+      "house:119:1:83"
+    ],
+    "evidence_counts": {
+      "accepted_findings": 2,
+      "actions": 4,
+      "episodes": 3
+    },
+    "evidence_episode_ids": [
+      "hr-1048-amendment-and-final-passage",
+      "single-119-hr-1069-1-313",
+      "single-119-hr-881-1-120"
+    ],
+    "independent_semantic_review_required": true,
+    "inherited_episode_semantic_evidence": {
+      "m14d:covered_china_linked_funding_exclusions": {
+        "single-119-hr-1069-1-313": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+        "single-119-hr-881-1-120": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met."
+      },
+      "m14d:hr1048_substitute_and_package": {
+        "hr-1048-amendment-and-final-passage": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.\nColleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance."
+      }
+    },
+    "inherited_material_limitations": {
+      "m14d:covered_china_linked_funding_exclusions": [
+        "H.R.881 covers higher education and DHS funding; H.R.1069 covers K–12 schools and its defined federal education programs. Neither means all federal funding.",
+        "The covered entities and relationships differ. H.R.881's renewable national-security waiver is not H.R.1069's qualifying pre-existing-contract waiver; H.R.1069's prohibition begins one year after enactment.",
+        "The relationship concerns these funding exclusions, not opposition to foreign-money disclosure generally. H.R.1048 contains mixed member choices and remains a separate whole-episode notable-choice proposal; H.R.1005 is Not Voting."
+      ],
+      "m14d:hr1048_substitute_and_package": [
+        "The substitute would replace the printed text with its own thresholds, public reports, exclusions, fines and negotiated-rulemaking duties. Its reporting requirements are not inferred from the parent bill.",
+        "The final package includes institution and individual disclosures, specified contract prohibitions with waivers, investment reports and enforcement. The Nay vote applies to the whole package; it does not establish opposition to any one component.",
+        "The amendment failed in the House and the final package passed the House. Neither outcome establishes enactment. These same-day choices are one episode, not a cross-episode trajectory or a change of position over time.",
+        "The paired votes distinguish support for this disclosure substitute from opposition to this final package; they do not establish why Foushee made either choice or a preferred universal disclosure regime."
+      ]
+    },
+    "material_limiter_finding_ids": [
+      "m14d:hr1048_substitute_and_package"
+    ],
+    "production_selectable": false,
+    "prohibited_inferences": [
+      "A general preference for disclosure over enforcement.",
+      "General opposition to funding conditions.",
+      "General support for or opposition to foreign-influence regulation.",
+      "A general position on China.",
+      "Opposition to any particular component of final H.R.1048.",
+      "Motive, ideology, character, corruption, partisan rationale, or a voting recommendation.",
+      "A durable regulatory preference beyond the reviewed actions.",
+      "Treating the substitute as merely soft disclosure without fines, compliance, exclusions, or rulemaking."
+    ],
+    "proposition_id": "m14e:education_foreign_influence_mechanism_contrast",
+    "proposition_type": "mechanism_divide",
+    "public": false,
+    "relationship_evidence": {
+      "basis": "contrasting_policy_mechanisms",
+      "claim_scope": "observed_reviewed_actions_only",
+      "contrast": "The proposed relationship compares two specified funding-eligibility exclusions with a specific reporting/compliance substitute. It is grounded in the accepted policy mechanisms and contrasting choices, not just their foreign-influence topic. The substitute includes thresholds, enforcement through fines or compliance plans, exclusions, and negotiated rulemaking; it is not enforcement-free. The later Nay on the distinct whole package limits the comparison and cannot identify rejection of any component or establish a durable preference.",
+      "mechanisms_by_finding": {
+        "m14d:covered_china_linked_funding_exclusions": {
+          "mechanism": "funding_eligibility_restriction",
+          "source_quote": "Foushee opposed two proposals making education institutions ineligible for specified federal funds because of covered China-linked relationships, each with a waiver route."
+        },
+        "m14d:hr1048_substitute_and_package": {
+          "mechanism": "reporting_and_compliance",
+          "source_quote": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.\nColleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance."
+        }
+      }
+    },
+    "semantic_role": "synthesis",
+    "source_finding_ids": [
+      "m14d:covered_china_linked_funding_exclusions",
+      "m14d:hr1048_substitute_and_package"
+    ],
+    "source_lineage": [
+      {
+        "accepted_record_sha256": "7678c0488a809f2d5af2ba747d0139bcbeba3db5a16551dc499783218289f763",
+        "action_ids": [
+          "house:119:1:120",
+          "house:119:1:313"
+        ],
+        "episode_ids": [
+          "single-119-hr-881-1-120",
+          "single-119-hr-1069-1-313"
+        ],
+        "source_finding_id": "m14d:covered_china_linked_funding_exclusions"
+      },
+      {
+        "accepted_record_sha256": "e55f99546129972b0b38fea50d295f0d69cde50cb6dc5eaf7264314801b94bf8",
+        "action_ids": [
+          "house:119:1:79",
+          "house:119:1:83"
+        ],
+        "episode_ids": [
+          "hr-1048-amendment-and-final-passage"
+        ],
+        "source_finding_id": "m14d:hr1048_substitute_and_package"
+      }
+    ],
+    "summary": "Within the reviewed education foreign-influence record, Foushee opposed two proposals that would make educational institutions ineligible for specified federal funds because of China-linked relationships, while supporting an H.R. 1048 substitute that would impose detailed foreign-gift and contract reporting and compliance rules. Her later opposition to the distinct final H.R. 1048 package does not identify which broader provision she rejected and prevents treating these votes as a general position on foreign-influence regulation."
+  },
+  "hr1048_final_passage_boundary": [
+    "The substitute would replace the printed text with its own thresholds, public reports, exclusions, fines and negotiated-rulemaking duties. Its reporting requirements are not inferred from the parent bill.",
+    "The final package includes institution and individual disclosures, specified contract prohibitions with waivers, investment reports and enforcement. The Nay vote applies to the whole package; it does not establish opposition to any one component.",
+    "The amendment failed in the House and the final package passed the House. Neither outcome establishes enactment. These same-day choices are one episode, not a cross-episode trajectory or a change of position over time.",
+    "The paired votes distinguish support for this disclosure substitute from opposition to this final package; they do not establish why Foushee made either choice or a preferred universal disclosure regime."
+  ],
+  "inherited_episode_dispositions": {
+    "non_directional_receipt": 1,
+    "receipt_only_no_elevation": 8,
+    "retained_as_useful_contrast": 2,
+    "supports_proposed_notable_choice": 1,
+    "supports_proposed_repeated_pattern": 4
+  },
+  "inherited_ledger_sha256": "225911b2e0fba8fe65ad320b71c511d23d075def6c2e1c7b27a7b574a2385336",
+  "production_selectable": false,
+  "public": false,
+  "review_package_sha256": "4d5a1c540567d0d7d47392da191af63c2fc9f555ae61086797d7e414c2ded603",
+  "review_questions": [
+    "Does this specific mechanism contrast add explanatory value beyond the two accepted findings?",
+    "Is the substitute's enforcement/compliance substance preserved rather than portrayed as merely softer disclosure?",
+    "Does the whole-package Nay remain a material limiter without assigning opposition to any component?",
+    "Are bill-specific judgments a sufficient competing interpretation to revise or omit this hypothesis?",
+    "Are the seven input limitations intact, with bargaining intentionally standalone and no inflated finding count?"
+  ],
+  "schema_version": "m14e_synthesis_review_package_v1",
+  "source_bindings": {
+    "authority_document_sha256": "dfc225a0bdf9cec24ce651acf644fd334a49ff357775937bc9cf4e96b14055c3",
+    "authority_path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/human_behavioral_candidate_authority.json",
+    "authority_subject_sha256": "456d9f6f9577e8604480cdb40a08cb1f92e443ab3e02ff33cb2ecd193ca16638",
+    "findings_document_sha256": "94cf74ee03af627183ef01c6a2838fff76f6f8d17a15eb13d08c66249a98a441",
+    "findings_path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json",
+    "findings_subject_sha256": "795027fdcf49a4956b99804be9d44ec7bd233877e4bc76caa4121f7b61df169d"
+  },
+  "source_finding_accounting": [
+    {
+      "accepted_record_sha256": "7678c0488a809f2d5af2ba747d0139bcbeba3db5a16551dc499783218289f763",
+      "candidate_ids": [
+        "m14e:education_foreign_influence_mechanism_contrast"
+      ],
+      "disposition": "primary_synthesis_input",
+      "material_limiter": false,
+      "reason": "Primary input to the proposed mechanism contrast; its full accepted record and limitations remain intact.",
+      "source_finding_id": "m14d:covered_china_linked_funding_exclusions"
+    },
+    {
+      "accepted_record_sha256": "b7ea50fa6272cc864bb7ad0a25c84b60bf0e88f8b2ce3fb7a4244b3aa31b7aa2",
+      "candidate_ids": [],
+      "disposition": "intentionally_standalone_no_safe_synthesis",
+      "material_limiter": false,
+      "reason": "The accepted collective-bargaining pattern relates continuity of bargaining across two labor systems. It does not compare education funding eligibility with foreign-gift reporting and compliance. Shared education/workforce context supplies no safe mechanism relationship, so both labor episodes remain intentionally standalone.",
+      "source_finding_id": "m14d:continuity_of_collective_bargaining"
+    },
+    {
+      "accepted_record_sha256": "e55f99546129972b0b38fea50d295f0d69cde50cb6dc5eaf7264314801b94bf8",
+      "candidate_ids": [
+        "m14e:education_foreign_influence_mechanism_contrast"
+      ],
+      "disposition": "primary_synthesis_input",
+      "material_limiter": true,
+      "reason": "Primary input to the proposed mechanism contrast; its full accepted record and limitations remain intact.",
+      "source_finding_id": "m14d:hr1048_substitute_and_package"
+    }
+  ],
+  "standalone_finding": {
+    "finding": {
+      "analytical_value": "Identifies a bounded cross-system relationship: Foushee supported keeping collective bargaining in force through two different kinds of disruption—restoring bargaining coverage and preserving existing federal union agreements in one system, and requiring continued bargaining and unchanged employment terms during first-contract negotiations in another—while preserving the different workers, statutes, remedies, and whole-measure limits.",
+      "authorizing": false,
+      "candidate_state": "proposed_not_accepted",
+      "canonical": false,
+      "direction": "support",
+      "episode_semantic_evidence": {
+        "single-119-hr-2550-1-332": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+        "single-119-hr-5408-2-216": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it."
+      },
+      "evidence_action_ids": [
+        "house:119:1:332",
+        "house:119:2:216"
+      ],
+      "evidence_episode_ids": [
+        "single-119-hr-2550-1-332",
+        "single-119-hr-5408-2-216"
+      ],
+      "material_limitations": [
+        "H.R.2550 concerns specified federal and Foreign Service bodies and an executive order; H.R.5408 amends the NLRA system. Their workers, statutory regimes and legal tools are different.",
+        "Keeping existing federal union agreements effective through their terms differs from maintaining employment terms pending agreement and continuing a bargaining duty. The proposed shared relationship is continuity of bargaining, not identical contract protection.",
+        "H.R.5408 also mandates a first-contract timetable and binding arbitration. H.R.2550 does not. Support for either whole measure cannot be assigned exclusively to its continuity provisions.",
+        "EO14251's agency subdivisions, exceptions and delegated powers remain bounded by the approved action limitations. This is not a claim about all federal employees, actual litigation outcomes, or a general pro-labor position."
+      ],
+      "proposition_id": "m14d:continuity_of_collective_bargaining",
+      "proposition_type": "repeated_pattern",
+      "semantic_role": "behavioral",
+      "summary": "Across two different labor systems, Foushee supported keeping collective bargaining in force during potential disruptions. She voted to restore bargaining coverage and preserve existing agreements for specified federal workers, and separately voted to require continued bargaining and unchanged employment terms while newly represented workers pursued a first contract."
+    },
+    "reason": "The accepted collective-bargaining pattern relates continuity of bargaining across two labor systems. It does not compare education funding eligibility with foreign-gift reporting and compliance. Shared education/workforce context supplies no safe mechanism relationship, so both labor episodes remain intentionally standalone."
+  },
+  "two_accepted_input_findings": [
+    {
+      "analytical_value": "Identifies a shared eligibility mechanism across college and K–12 measures while separating it from reporting, contract prohibitions and different waiver conditions.",
+      "authorizing": false,
+      "candidate_state": "proposed_not_accepted",
+      "canonical": false,
+      "direction": "opposition",
+      "episode_semantic_evidence": {
+        "single-119-hr-1069-1-313": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+        "single-119-hr-881-1-120": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met."
+      },
+      "evidence_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313"
+      ],
+      "evidence_episode_ids": [
+        "single-119-hr-881-1-120",
+        "single-119-hr-1069-1-313"
+      ],
+      "material_limitations": [
+        "H.R.881 covers higher education and DHS funding; H.R.1069 covers K–12 schools and its defined federal education programs. Neither means all federal funding.",
+        "The covered entities and relationships differ. H.R.881's renewable national-security waiver is not H.R.1069's qualifying pre-existing-contract waiver; H.R.1069's prohibition begins one year after enactment.",
+        "The relationship concerns these funding exclusions, not opposition to foreign-money disclosure generally. H.R.1048 contains mixed member choices and remains a separate whole-episode notable-choice proposal; H.R.1005 is Not Voting."
+      ],
+      "proposition_id": "m14d:covered_china_linked_funding_exclusions",
+      "proposition_type": "repeated_pattern",
+      "semantic_role": "behavioral",
+      "summary": "Foushee opposed two proposals making education institutions ineligible for specified federal funds because of covered China-linked relationships, each with a waiver route."
+    },
+    {
+      "analytical_value": "The newly supported substitute meaning makes the within-episode contrast substantively legible without treating every directional action as independently notable.",
+      "authorizing": false,
+      "candidate_state": "proposed_not_accepted",
+      "canonical": false,
+      "direction": "mixed",
+      "episode_semantic_evidence": {
+        "hr-1048-amendment-and-final-passage": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.\nColleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance."
+      },
+      "evidence_action_ids": [
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "evidence_episode_ids": [
+        "hr-1048-amendment-and-final-passage"
+      ],
+      "material_limitations": [
+        "The substitute would replace the printed text with its own thresholds, public reports, exclusions, fines and negotiated-rulemaking duties. Its reporting requirements are not inferred from the parent bill.",
+        "The final package includes institution and individual disclosures, specified contract prohibitions with waivers, investment reports and enforcement. The Nay vote applies to the whole package; it does not establish opposition to any one component.",
+        "The amendment failed in the House and the final package passed the House. Neither outcome establishes enactment. These same-day choices are one episode, not a cross-episode trajectory or a change of position over time.",
+        "The paired votes distinguish support for this disclosure substitute from opposition to this final package; they do not establish why Foushee made either choice or a preferred universal disclosure regime."
+      ],
+      "proposition_id": "m14d:hr1048_substitute_and_package",
+      "proposition_type": "notable_choice",
+      "semantic_role": "behavioral",
+      "summary": "Within one H.R.1048 episode, Foushee supported the substitute's threshold-based foreign-gift reporting, exceptions and negotiated rules, then opposed the final package of reporting, contract restrictions and enforcement."
+    }
+  ],
+  "zero_candidate_outcome": "Mechanically valid: omit the candidate and account for all three accepted findings as intentionally standalone; no forced synthesis."
+}
