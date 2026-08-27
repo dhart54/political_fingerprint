@@ -188,6 +188,18 @@ def render_review_packet(artifact: dict[str, Any], result: dict[str, Any]) -> by
         "",
         "For each action: Can the policy change be explained from the candidate alone? Does it state an actual mechanism? Would it work identically for any representative? Is every substantive claim grounded? Is caveat-heavy wording hiding an important action? Should the action be held for better evidence?",
         "",
+        "Has every material first-order operative provision and every material exception or waiver that changes a reader's understanding been accounted for, or explicitly bounded as ancillary with a reason? This requires independent semantic/product judgment; mechanical qualification does not decide completeness.",
+        "",
+        "## Independent review decisions and correction scope — 2026-08-27",
+        "",
+        "The user-provided independent review of commit `5a47bd29fb130115ac60af411929bdd09ba059d8` accepted Action Interpretability Contract V1, not candidate semantics. Its architecture, schema, and deterministic validator are preserved. The corrected calibration below awaits independent re-review.",
+        "",
+        "- `REVISE_BEFORE_HUMAN_REVIEW`: `house:119:1:313` (qualifying pre-enactment-contract waiver added) and `house:119:2:216` (employment-term maintenance and continuing bargaining duty added alongside the timetable). Corrections are proposed here; they are not independently cleared by this build.",
+        "- `HOLD_FOR_SOURCE_VERIFICATION` / `source_enrichment_required`: `house:119:1:332`. Request the official March 27, 2025 Executive Order as governed evidence before explaining which workplaces or agencies it excluded. Only the bill-supported nullification, funding bar, and preservation of existing agreements remain stated.",
+        "- Existing source holds retained: `house:119:1:79`, `house:119:2:184`.",
+        "- `PASS_TO_HUMAN_REVIEW` from the supplied independent review: `house:119:1:120`, `house:119:1:146`, `house:119:1:312`, `house:119:1:314`, `house:119:1:315`, `house:119:1:68`, `house:119:1:83`, `house:119:2:19`, `house:119:2:217`, `house:119:2:31`, `house:119:2:47`, `house:119:2:82`. Candidate semantics are unchanged for these 12 actions; diagnostic labels are corrected where directed.",
+        "- Legacy diagnostics are independent-review judgments, not new deterministic semantic-quality rules: 4 sufficient unchanged, 10 would require revision, 3 require source enrichment. Sufficient unchanged: `house:119:1:146`, `house:119:1:315`, `house:119:2:19`, `house:119:2:82`.",
+        "",
     ]
     for candidate in artifact["candidates"]:
         boundary = candidate["exact_action_boundary"]

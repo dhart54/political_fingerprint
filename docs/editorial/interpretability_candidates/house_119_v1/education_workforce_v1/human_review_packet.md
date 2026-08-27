@@ -3,14 +3,26 @@
 Status: detached, source-mapped candidates for independent semantic/product review. Nothing here accepts, promotes, publishes, or persists a meaning.
 
 - Starting main: `9b56358184e828e641ce2538cc9ed8788972b566`
-- Candidate-set digest: `077479fd00602fbf13ce64809e675162a0857ccd0a043fce598611a0b0d62bbe`
-- Candidate states: `{"candidate_complete_for_semantic_review": 15, "source_enrichment_required": 2}`
-- Legacy assessments: `{"revision_would_be_required": 6, "source_enrichment_required": 2, "sufficient_unchanged": 9}`
+- Candidate-set digest: `7446ba60c7995e877026e26a6b18837550ccde52ba323c56c9b59decb914f4bd`
+- Candidate states: `{"candidate_complete_for_semantic_review": 14, "source_enrichment_required": 3}`
+- Legacy assessments: `{"revision_would_be_required": 10, "source_enrichment_required": 3, "sufficient_unchanged": 4}`
 - Shared Action Core exact-identity matches: 1 (`house:119:1:68`); the remaining 16 retain governed legacy lineage and are not promoted.
 
 ## Independent review questions
 
 For each action: Can the policy change be explained from the candidate alone? Does it state an actual mechanism? Would it work identically for any representative? Is every substantive claim grounded? Is caveat-heavy wording hiding an important action? Should the action be held for better evidence?
+
+Has every material first-order operative provision and every material exception or waiver that changes a reader's understanding been accounted for, or explicitly bounded as ancillary with a reason? This requires independent semantic/product judgment; mechanical qualification does not decide completeness.
+
+## Independent review decisions and correction scope — 2026-08-27
+
+The user-provided independent review of commit `5a47bd29fb130115ac60af411929bdd09ba059d8` accepted Action Interpretability Contract V1, not candidate semantics. Its architecture, schema, and deterministic validator are preserved. The corrected calibration below awaits independent re-review.
+
+- `REVISE_BEFORE_HUMAN_REVIEW`: `house:119:1:313` (qualifying pre-enactment-contract waiver added) and `house:119:2:216` (employment-term maintenance and continuing bargaining duty added alongside the timetable). Corrections are proposed here; they are not independently cleared by this build.
+- `HOLD_FOR_SOURCE_VERIFICATION` / `source_enrichment_required`: `house:119:1:332`. Request the official March 27, 2025 Executive Order as governed evidence before explaining which workplaces or agencies it excluded. Only the bill-supported nullification, funding bar, and preservation of existing agreements remain stated.
+- Existing source holds retained: `house:119:1:79`, `house:119:2:184`.
+- `PASS_TO_HUMAN_REVIEW` from the supplied independent review: `house:119:1:120`, `house:119:1:146`, `house:119:1:312`, `house:119:1:314`, `house:119:1:315`, `house:119:1:68`, `house:119:1:83`, `house:119:2:19`, `house:119:2:217`, `house:119:2:31`, `house:119:2:47`, `house:119:2:82`. Candidate semantics are unchanged for these 12 actions; diagnostic labels are corrected where directed.
+- Legacy diagnostics are independent-review judgments, not new deterministic semantic-quality rules: 4 sufficient unchanged, 10 would require revision, 3 require source enrichment. Sufficient unchanged: `house:119:1:146`, `house:119:1:315`, `house:119:2:19`, `house:119:2:82`.
 
 ## house:119:1:120 — `119:hr:881`
 
@@ -94,27 +106,28 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 1. **Exact action and stage:** `final_passage_or_suspension_passage` on `2025-12-04`; proposal effect is separate from `passed_house_247_164` and enactment is `not_inferred_from_house_action`.
 2. **Current accepted meaning:** The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.
-3. **Proposed policy_choice:** Whether to bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed institutional, material, personnel, or financial support.
-4. **Proposed mechanism:** `funding prohibition` — A prohibition on funds under covered federal education programs, effective one year after enactment.
+3. **Proposed policy_choice:** Whether to generally bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed partnerships or resources, with a waiver for qualifying pre-enactment contracts through contract termination.
+4. **Proposed mechanism:** `funding prohibition with pre-existing-contract waiver` — A prohibition on funds under covered federal education programs, effective one year after enactment, with discretionary Secretary of Education waivers for qualifying pre-enactment contracts until those contracts terminate.
 5. **Proposed affected_entities:** elementary schools, secondary schools, federal education programs, Chinese-government-backed cultural or language institutes, Chinese-government-supported persons and entities
-6. **Proposed direct_effect:** The proposal would prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government.
-7. **Proposed plain_language_meaning:** K–12 schools would lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government.
-8. **Limitations / omitted downstream claims:** The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship. Downstream predictions: omitted.
+6. **Proposed direct_effect:** The proposal would generally prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government. The Secretary could waive the prohibition for a qualifying pre-enactment contract from the prohibition's effective date through contract termination.
+7. **Proposed plain_language_meaning:** K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.
+8. **Limitations / omitted downstream claims:** The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship. The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality. Downstream predictions: omitted.
 9. **Source receipts / locators:**
 
    - governed `clerk:house:119:1:313` (`house_clerk_roll_call`, `member_action_record`); raw `3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4`; projection `a2a5d68980d983dad157ba48f6a777e86f43b5de806802ac5a0d3388673fd209`
    - governed `congress-actions:house:119:1:313` (`congress_gov_bill_actions`, `exact_house_action_record`); raw `5eacbc091e4d8dc0b73b11e9b3661ec19edd097a8fb310cafcb14a89e9c686a2`; projection `4b7335bf82c11aae914c4f13ab726e792f0c2abce302bb84459fe51abba474c6`
    - governed `congress-text:119:hr:1069:eh` (`congress_gov_bill_text`, `operative_measure_text`); raw `124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff`; projection `dcf38558286e22d90c33dd5691e907709204917ac34a3cc7bcc7dbc3d1d9f395`
-   - `policy_choice` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
-   - `mechanism` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
-   - `affected_entities` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
-   - `direct_effect` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
-   - `plain_language_meaning` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
-   - `limitations` → `congress-text:119:hr:1069:eh` at `section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `policy_choice` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `mechanism` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `affected_entities` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `direct_effect` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `plain_language_meaning` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `limitations` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
+   - `limitations` → `congress-text:119:hr:1069:eh` at `section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF`
 
 10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
 - **Candidate state:** `candidate_complete_for_semantic_review`
-- **Legacy comparison:** `sufficient_unchanged`
+- **Legacy comparison:** `revision_would_be_required`
 
 ## house:119:1:314 — `119:hr:1049`
 
@@ -173,12 +186,12 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 1. **Exact action and stage:** `final_passage_or_suspension_passage` on `2025-12-11`; proposal effect is separate from `passed_house_231_195` and enactment is `not_inferred_from_house_action`.
 2. **Current accepted meaning:** The House choice was whether to pass H.R. 2550, which would nullify the Executive Order relating to Exclusions from Federal Labor-Management Relations Programs, and for other purposes.
-3. **Proposed policy_choice:** Whether to nullify the March 27, 2025 executive order excluding specified federal agencies or subdivisions from federal labor-management relations programs and preserve covered collective-bargaining agreements already in effect.
+3. **Proposed policy_choice:** Whether to nullify the executive order issued on March 27, 2025 and named in the bill, prohibit funds to implement it, and preserve covered collective-bargaining agreements already in effect.
 4. **Proposed mechanism:** `executive-order nullification and agreement preservation` — A statutory declaration that the executive order has no force or effect, a funding prohibition on carrying it out, and continued effect for covered agreements.
 5. **Proposed affected_entities:** executive branch federal agencies, federal employees, labor organizations representing federal employees, existing federal collective-bargaining agreements
 6. **Proposed direct_effect:** The proposal would nullify the named executive order, prohibit federal funds from being used to implement it, and require collective-bargaining agreements in effect on March 26, 2025 to remain effective through their stated terms.
-7. **Proposed plain_language_meaning:** The March 2025 order removing specified federal workplaces from labor-management relations programs would be cancelled, implementation funding would be barred, and already-existing covered union agreements would remain in force for their stated terms.
-8. **Limitations / omitted downstream claims:** The candidate describes the specified executive order and agreements covered by the bill, not federal labor policy generally. Downstream predictions: omitted.
+7. **Proposed plain_language_meaning:** The March 27, 2025 executive order named in the bill would be cancelled and federal funding to implement it would be barred. Covered union agreements in effect on March 26, 2025 would remain in force through their stated terms.
+8. **Limitations / omitted downstream claims:** Source verification is required: request the official March 27, 2025 Executive Order titled Exclusions from Federal Labor-Management Relations Programs as governed evidence, with source identity, digest, and locators for its operative exclusions. The governed bill text establishes nullification, the funding bar, and agreement preservation, but does not establish which workplaces or agencies the order excluded; that underlying detail is withheld pending governed evidence. Downstream predictions: omitted.
 9. **Source receipts / locators:**
 
    - governed `clerk:house:119:1:332` (`house_clerk_roll_call`, `member_action_record`); raw `89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c`; projection `f933941ab339cdc1b1aacafec5429a00e652dba254ab6ffff1f71a6577368cd4`
@@ -191,9 +204,9 @@ For each action: Can the policy change be explained from the candidate alone? Do
    - `plain_language_meaning` → `congress-text:119:hr:2550:eh` at `sections 2-3, XML ids HD9482AE3321245538430DB78AAECF758 and HAE68534AF56A4EC3B9DEE4F6E44FFB5C`
    - `limitations` → `congress-text:119:hr:2550:eh` at `sections 2-3, XML ids HD9482AE3321245538430DB78AAECF758 and HAE68534AF56A4EC3B9DEE4F6E44FFB5C`
 
-10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
-- **Candidate state:** `candidate_complete_for_semantic_review`
-- **Legacy comparison:** `sufficient_unchanged`
+10. **Mechanical qualification:** `hold`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
+- **Candidate state:** `source_enrichment_required`
+- **Legacy comparison:** `source_enrichment_required`
 
 ## house:119:1:68 — `119:hr:1156`
 
@@ -219,7 +232,7 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
 - **Candidate state:** `candidate_complete_for_semantic_review`
-- **Legacy comparison:** `sufficient_unchanged`
+- **Legacy comparison:** `revision_would_be_required`
 
 ## house:119:1:79 — `119:hamdt:12`
 
@@ -330,23 +343,24 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 1. **Exact action and stage:** `final_passage_or_suspension_passage` on `2026-06-09`; proposal effect is separate from `passed_house_230_193` and enactment is `not_inferred_from_house_action`.
 2. **Current accepted meaning:** The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.
-3. **Proposed policy_choice:** Whether to impose deadlines and mediation/arbitration steps for an employer and a newly recognized or certified employee representative negotiating their first collective-bargaining agreement.
-4. **Proposed mechanism:** `bargaining deadline, mediation, and binding arbitration` — National Labor Relations Act duties requiring bargaining to begin within 10 days, allowing mediation after 90 days without agreement, and requiring referral to a three-person arbitration panel after 30 more days without agreement.
-5. **Proposed affected_entities:** employers, newly recognized or certified unions and other employee representatives, represented employees, Federal Mediation and Conciliation Service, three-person arbitration panels
-6. **Proposed direct_effect:** The proposal would require the parties to begin first-contract bargaining within 10 days of a written request unless they agree to more time; after 90 days without agreement either party could request federal mediation, and after 30 days of unsuccessful mediation the dispute would go to a panel whose decision would bind the parties for two years unless they agreed to amend it.
-7. **Proposed plain_language_meaning:** Employers and newly certified or recognized employee representatives would face a timetable for first-contract talks: start within 10 days, allow mediation after 90 days without a deal, and move to binding arbitration after 30 additional days without agreement, subject to agreed extensions.
-8. **Limitations / omitted downstream claims:** The deadlines govern initial collective-bargaining agreements and allow the parties to agree to longer periods; the candidate does not predict whether bargaining would end sooner or what contract terms would result. Downstream predictions: omitted.
+3. **Proposed policy_choice:** Whether to require maintaining current wages, hours, and employment terms pending agreement, continue an employer's bargaining duty unless the employee representative is decertified, and impose a first-contract bargaining, mediation, and binding-arbitration timetable.
+4. **Proposed mechanism:** `employment-term maintenance, continuing bargaining duty, deadlines, and binding arbitration` — National Labor Relations Act amendments requiring current wages, hours, and employment terms to be maintained pending agreement and continuing an employer's bargaining duty absent decertification following an election. First-contract bargaining must begin within 10 days, mediation may be requested after 90 days without agreement, and unresolved disputes go to a three-person arbitration panel 30 days after the mediation request, subject to agreed extensions.
+5. **Proposed affected_entities:** employers, unions and other employee representatives, including newly recognized or certified representatives, represented employees, Federal Mediation and Conciliation Service, three-person arbitration panels
+6. **Proposed direct_effect:** The proposal would require maintaining current wages, hours, and terms and conditions of employment pending agreement and continuing an employer's bargaining duty unless the representative is decertified following an election. For first contracts, the parties must begin bargaining within 10 days of a written request; after 90 days of bargaining without agreement either party could request federal mediation, and after 30 days from that request without agreement the dispute would go to arbitration. The parties may agree to longer periods, and the panel's award would bind them for two years unless amended by their written consent.
+7. **Proposed plain_language_meaning:** Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.
+8. **Limitations / omitted downstream claims:** The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result. Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis. Downstream predictions: omitted.
 9. **Source receipts / locators:**
 
    - governed `clerk:house:119:2:216` (`house_clerk_roll_call`, `member_action_record`); raw `cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25`; projection `3ece7a1af945a95125b2a67b6019a895f263fa7dc03da5756d29e2ed238f43fa`
    - governed `congress-actions:house:119:2:216` (`congress_gov_bill_actions`, `exact_house_action_record`); raw `537af415130b6516d6ae973b751461d16e071dd761c0d7ed47b92d1ae902f485`; projection `48bf031e5fca488975d7bd25fdf7d3f1d3912cf4f25ede9e94cb18a60600c32c`
    - governed `congress-text:119:hr:5408:eh` (`congress_gov_bill_text`, `operative_measure_text`); raw `c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3`; projection `cf2ec75270c69f12aba96c15103bc87d9783cc06a3d61a2db4c9226cf4d779d4`
-   - `policy_choice` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
-   - `mechanism` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
-   - `affected_entities` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
-   - `direct_effect` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
-   - `plain_language_meaning` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
-   - `limitations` → `congress-text:119:hr:5408:eh` at `section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF`
+   - `policy_choice` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `mechanism` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `affected_entities` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `direct_effect` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `plain_language_meaning` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `limitations` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
+   - `limitations` → `congress-text:119:hr:5408:eh` at `section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50`
 
 10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
 - **Candidate state:** `candidate_complete_for_semantic_review`
@@ -376,7 +390,7 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
 - **Candidate state:** `candidate_complete_for_semantic_review`
-- **Legacy comparison:** `sufficient_unchanged`
+- **Legacy comparison:** `revision_would_be_required`
 
 ## house:119:2:31 — `119:hr:2988`
 
@@ -428,7 +442,7 @@ For each action: Can the policy change be explained from the candidate alone? Do
 
 10. **Mechanical qualification:** `pass`; affected_entities_present_when_supported=pass, direct_effect_is_concrete=pass, downstream_claims_supported_or_omitted=pass, exact_action_boundary_preserved=pass, exact_identity_and_source_binding=pass, mechanism_present_when_supported=pass, non_authorizing_state_preserved=pass, proposal_outcome_enactment_separated=pass, shared_meaning_is_member_neutral=pass, substantive_source_mappings=pass.
 - **Candidate state:** `candidate_complete_for_semantic_review`
-- **Legacy comparison:** `sufficient_unchanged`
+- **Legacy comparison:** `revision_would_be_required`
 
 ## house:119:2:82 — `119:hr:6472`
 

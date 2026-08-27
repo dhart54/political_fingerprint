@@ -391,57 +391,64 @@
       "candidate_state": "candidate_complete_for_semantic_review",
       "claim_source_mappings": [
         {
-          "claim": "Whether to bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed institutional, material, personnel, or financial support.",
+          "claim": "Whether to generally bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed partnerships or resources, with a waiver for qualifying pre-enactment contracts through contract termination.",
           "field": "policy_choice",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:policy_choice",
           "source_id": "congress-text:119:hr:1069:eh"
         },
         {
-          "claim": "A prohibition on funds under covered federal education programs, effective one year after enactment.",
+          "claim": "A prohibition on funds under covered federal education programs, effective one year after enactment, with discretionary Secretary of Education waivers for qualifying pre-enactment contracts until those contracts terminate.",
           "field": "mechanism",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:mechanism",
           "source_id": "congress-text:119:hr:1069:eh"
         },
         {
           "claim": "elementary schools; secondary schools; federal education programs; Chinese-government-backed cultural or language institutes; Chinese-government-supported persons and entities",
           "field": "affected_entities",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:affected_entities",
           "source_id": "congress-text:119:hr:1069:eh"
         },
         {
-          "claim": "The proposal would prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government.",
+          "claim": "The proposal would generally prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government. The Secretary could waive the prohibition for a qualifying pre-enactment contract from the prohibition's effective date through contract termination.",
           "field": "direct_effect",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:direct_effect",
           "source_id": "congress-text:119:hr:1069:eh"
         },
         {
-          "claim": "K–12 schools would lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government.",
+          "claim": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
           "field": "plain_language_meaning",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:plain_language_meaning",
           "source_id": "congress-text:119:hr:1069:eh"
         },
         {
           "claim": "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship.",
           "field": "limitations",
-          "locator": "section 2, XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
           "mapping_id": "claim-map:house:119:1:313:m14b:limitation:1",
+          "source_id": "congress-text:119:hr:1069:eh"
+        },
+        {
+          "claim": "The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality.",
+          "field": "limitations",
+          "locator": "section 2(a)-(c): prohibition, effective date, and qualifying-contract waiver; XML id H6C1C76CBDDE14D59ADF4ABE1B2458AAF",
+          "mapping_id": "claim-map:house:119:1:313:m14b:limitation:2",
           "source_id": "congress-text:119:hr:1069:eh"
         }
       ],
       "current_accepted_legacy_meaning": "The House choice was whether to pass H.R. 1069, which would prohibit the availability of Federal education funds for elementary and secondary schools that receive direct or indirect support from the Government of the People’s Republic of China.",
-      "direct_effect": "The proposal would prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government.",
+      "direct_effect": "The proposal would generally prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government. The Secretary could waive the prohibition for a qualifying pre-enactment contract from the prohibition's effective date through contract termination.",
       "downstream_effects": [],
       "exact_action_boundary": {
         "boundary_type": "whole_measure",
         "enactment_status": "not_inferred_from_house_action",
         "house_action_outcome": "passed_house_247_164",
         "parent_package_meaning_projected": false,
-        "proposal_effect": "The proposal would prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government.",
+        "proposal_effect": "The proposal would generally prohibit covered federal education funds for a school that partners with a Chinese-government-funded cultural or language institute, operates a supported learning center, or receives specified teaching materials, personnel, funds, or other resources from someone acting for that government. The Secretary could waive the prohibition for a qualifying pre-enactment contract from the prohibition's effective date through contract termination.",
         "ungoverned_component_projection": false
       },
       "exact_action_identity": "119:hr:1069",
@@ -469,17 +476,18 @@
           "source_type": "congress_gov_bill_text"
         }
       ],
-      "legacy_interpretability_assessment": "sufficient_unchanged",
+      "legacy_interpretability_assessment": "revision_would_be_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
-        "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship."
+        "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship.",
+        "The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality."
       ],
       "mechanism": {
-        "description": "A prohibition on funds under covered federal education programs, effective one year after enactment.",
-        "type": "funding prohibition"
+        "description": "A prohibition on funds under covered federal education programs, effective one year after enactment, with discretionary Secretary of Education waivers for qualifying pre-enactment contracts until those contracts terminate.",
+        "type": "funding prohibition with pre-existing-contract waiver"
       },
-      "plain_language_meaning": "K–12 schools would lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government.",
-      "policy_choice": "Whether to bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed institutional, material, personnel, or financial support.",
+      "plain_language_meaning": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+      "policy_choice": "Whether to generally bar federal education-program funds from elementary and secondary schools receiving specified Chinese-government-backed partnerships or resources, with a waiver for qualifying pre-enactment contracts through contract termination.",
       "production_selectable": false,
       "public": false,
       "qualification": {
@@ -765,10 +773,10 @@
       ],
       "authorizing": false,
       "candidate_id": "action-interpretability-candidate:house:119:1:332:m14b:v1",
-      "candidate_state": "candidate_complete_for_semantic_review",
+      "candidate_state": "source_enrichment_required",
       "claim_source_mappings": [
         {
-          "claim": "Whether to nullify the March 27, 2025 executive order excluding specified federal agencies or subdivisions from federal labor-management relations programs and preserve covered collective-bargaining agreements already in effect.",
+          "claim": "Whether to nullify the executive order issued on March 27, 2025 and named in the bill, prohibit funds to implement it, and preserve covered collective-bargaining agreements already in effect.",
           "field": "policy_choice",
           "locator": "sections 2-3, XML ids HD9482AE3321245538430DB78AAECF758 and HAE68534AF56A4EC3B9DEE4F6E44FFB5C",
           "mapping_id": "claim-map:house:119:1:332:m14b:policy_choice",
@@ -796,14 +804,14 @@
           "source_id": "congress-text:119:hr:2550:eh"
         },
         {
-          "claim": "The March 2025 order removing specified federal workplaces from labor-management relations programs would be cancelled, implementation funding would be barred, and already-existing covered union agreements would remain in force for their stated terms.",
+          "claim": "The March 27, 2025 executive order named in the bill would be cancelled and federal funding to implement it would be barred. Covered union agreements in effect on March 26, 2025 would remain in force through their stated terms.",
           "field": "plain_language_meaning",
           "locator": "sections 2-3, XML ids HD9482AE3321245538430DB78AAECF758 and HAE68534AF56A4EC3B9DEE4F6E44FFB5C",
           "mapping_id": "claim-map:house:119:1:332:m14b:plain_language_meaning",
           "source_id": "congress-text:119:hr:2550:eh"
         },
         {
-          "claim": "The candidate describes the specified executive order and agreements covered by the bill, not federal labor policy generally.",
+          "claim": "Source verification is required: request the official March 27, 2025 Executive Order titled Exclusions from Federal Labor-Management Relations Programs as governed evidence, with source identity, digest, and locators for its operative exclusions. The governed bill text establishes nullification, the funding bar, and agreement preservation, but does not establish which workplaces or agencies the order excluded; that underlying detail is withheld pending governed evidence.",
           "field": "limitations",
           "locator": "sections 2-3, XML ids HD9482AE3321245538430DB78AAECF758 and HAE68534AF56A4EC3B9DEE4F6E44FFB5C",
           "mapping_id": "claim-map:house:119:1:332:m14b:limitation:1",
@@ -846,17 +854,17 @@
           "source_type": "congress_gov_bill_text"
         }
       ],
-      "legacy_interpretability_assessment": "sufficient_unchanged",
+      "legacy_interpretability_assessment": "source_enrichment_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
-        "The candidate describes the specified executive order and agreements covered by the bill, not federal labor policy generally."
+        "Source verification is required: request the official March 27, 2025 Executive Order titled Exclusions from Federal Labor-Management Relations Programs as governed evidence, with source identity, digest, and locators for its operative exclusions. The governed bill text establishes nullification, the funding bar, and agreement preservation, but does not establish which workplaces or agencies the order excluded; that underlying detail is withheld pending governed evidence."
       ],
       "mechanism": {
         "description": "A statutory declaration that the executive order has no force or effect, a funding prohibition on carrying it out, and continued effect for covered agreements.",
         "type": "executive-order nullification and agreement preservation"
       },
-      "plain_language_meaning": "The March 2025 order removing specified federal workplaces from labor-management relations programs would be cancelled, implementation funding would be barred, and already-existing covered union agreements would remain in force for their stated terms.",
-      "policy_choice": "Whether to nullify the March 27, 2025 executive order excluding specified federal agencies or subdivisions from federal labor-management relations programs and preserve covered collective-bargaining agreements already in effect.",
+      "plain_language_meaning": "The March 27, 2025 executive order named in the bill would be cancelled and federal funding to implement it would be barred. Covered union agreements in effect on March 26, 2025 would remain in force through their stated terms.",
+      "policy_choice": "Whether to nullify the executive order issued on March 27, 2025 and named in the bill, prohibit funds to implement it, and preserve covered collective-bargaining agreements already in effect.",
       "production_selectable": false,
       "public": false,
       "qualification": {
@@ -872,7 +880,7 @@
           "shared_meaning_is_member_neutral": true,
           "substantive_source_mappings": true
         },
-        "result": "pass"
+        "result": "hold"
       },
       "shared_action_core_reference": null
     },
@@ -968,7 +976,7 @@
           "source_type": "congress_gov_bill_text"
         }
       ],
-      "legacy_interpretability_assessment": "sufficient_unchanged",
+      "legacy_interpretability_assessment": "revision_would_be_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
         "The extension applies only to the statutes and pandemic unemployment programs listed in the bill and does not revive a case whose limitations period had already expired before enactment."
@@ -1507,7 +1515,7 @@
       "action_id": "house:119:2:216",
       "affected_entities": [
         "employers",
-        "newly recognized or certified unions and other employee representatives",
+        "unions and other employee representatives, including newly recognized or certified representatives",
         "represented employees",
         "Federal Mediation and Conciliation Service",
         "three-person arbitration panels"
@@ -1517,57 +1525,64 @@
       "candidate_state": "candidate_complete_for_semantic_review",
       "claim_source_mappings": [
         {
-          "claim": "Whether to impose deadlines and mediation/arbitration steps for an employer and a newly recognized or certified employee representative negotiating their first collective-bargaining agreement.",
+          "claim": "Whether to require maintaining current wages, hours, and employment terms pending agreement, continue an employer's bargaining duty unless the employee representative is decertified, and impose a first-contract bargaining, mediation, and binding-arbitration timetable.",
           "field": "policy_choice",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:policy_choice",
           "source_id": "congress-text:119:hr:5408:eh"
         },
         {
-          "claim": "National Labor Relations Act duties requiring bargaining to begin within 10 days, allowing mediation after 90 days without agreement, and requiring referral to a three-person arbitration panel after 30 more days without agreement.",
+          "claim": "National Labor Relations Act amendments requiring current wages, hours, and employment terms to be maintained pending agreement and continuing an employer's bargaining duty absent decertification following an election. First-contract bargaining must begin within 10 days, mediation may be requested after 90 days without agreement, and unresolved disputes go to a three-person arbitration panel 30 days after the mediation request, subject to agreed extensions.",
           "field": "mechanism",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:mechanism",
           "source_id": "congress-text:119:hr:5408:eh"
         },
         {
-          "claim": "employers; newly recognized or certified unions and other employee representatives; represented employees; Federal Mediation and Conciliation Service; three-person arbitration panels",
+          "claim": "employers; unions and other employee representatives, including newly recognized or certified representatives; represented employees; Federal Mediation and Conciliation Service; three-person arbitration panels",
           "field": "affected_entities",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:affected_entities",
           "source_id": "congress-text:119:hr:5408:eh"
         },
         {
-          "claim": "The proposal would require the parties to begin first-contract bargaining within 10 days of a written request unless they agree to more time; after 90 days without agreement either party could request federal mediation, and after 30 days of unsuccessful mediation the dispute would go to a panel whose decision would bind the parties for two years unless they agreed to amend it.",
+          "claim": "The proposal would require maintaining current wages, hours, and terms and conditions of employment pending agreement and continuing an employer's bargaining duty unless the representative is decertified following an election. For first contracts, the parties must begin bargaining within 10 days of a written request; after 90 days of bargaining without agreement either party could request federal mediation, and after 30 days from that request without agreement the dispute would go to arbitration. The parties may agree to longer periods, and the panel's award would bind them for two years unless amended by their written consent.",
           "field": "direct_effect",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:direct_effect",
           "source_id": "congress-text:119:hr:5408:eh"
         },
         {
-          "claim": "Employers and newly certified or recognized employee representatives would face a timetable for first-contract talks: start within 10 days, allow mediation after 90 days without a deal, and move to binding arbitration after 30 additional days without agreement, subject to agreed extensions.",
+          "claim": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
           "field": "plain_language_meaning",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:plain_language_meaning",
           "source_id": "congress-text:119:hr:5408:eh"
         },
         {
-          "claim": "The deadlines govern initial collective-bargaining agreements and allow the parties to agree to longer periods; the candidate does not predict whether bargaining would end sooner or what contract terms would result.",
+          "claim": "The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result.",
           "field": "limitations",
-          "locator": "section 3, proposed NLRA section 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
           "mapping_id": "claim-map:house:119:2:216:m14b:limitation:1",
+          "source_id": "congress-text:119:hr:5408:eh"
+        },
+        {
+          "claim": "Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis.",
+          "field": "limitations",
+          "locator": "section 3(1)(C)-(D) and (K), proposed NLRA sections 8(d)(1) and 8(d)(3), XML id HEDEFCE7BF6DD47D0AEC64B61FF47F8FF; ancillary reporting in section 4, XML id HF1A5274BD1D247FE9B8166CB448EDA50",
+          "mapping_id": "claim-map:house:119:2:216:m14b:limitation:2",
           "source_id": "congress-text:119:hr:5408:eh"
         }
       ],
       "current_accepted_legacy_meaning": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
-      "direct_effect": "The proposal would require the parties to begin first-contract bargaining within 10 days of a written request unless they agree to more time; after 90 days without agreement either party could request federal mediation, and after 30 days of unsuccessful mediation the dispute would go to a panel whose decision would bind the parties for two years unless they agreed to amend it.",
+      "direct_effect": "The proposal would require maintaining current wages, hours, and terms and conditions of employment pending agreement and continuing an employer's bargaining duty unless the representative is decertified following an election. For first contracts, the parties must begin bargaining within 10 days of a written request; after 90 days of bargaining without agreement either party could request federal mediation, and after 30 days from that request without agreement the dispute would go to arbitration. The parties may agree to longer periods, and the panel's award would bind them for two years unless amended by their written consent.",
       "downstream_effects": [],
       "exact_action_boundary": {
         "boundary_type": "whole_measure",
         "enactment_status": "not_inferred_from_house_action",
         "house_action_outcome": "passed_house_230_193",
         "parent_package_meaning_projected": false,
-        "proposal_effect": "The proposal would require the parties to begin first-contract bargaining within 10 days of a written request unless they agree to more time; after 90 days without agreement either party could request federal mediation, and after 30 days of unsuccessful mediation the dispute would go to a panel whose decision would bind the parties for two years unless they agreed to amend it.",
+        "proposal_effect": "The proposal would require maintaining current wages, hours, and terms and conditions of employment pending agreement and continuing an employer's bargaining duty unless the representative is decertified following an election. For first contracts, the parties must begin bargaining within 10 days of a written request; after 90 days of bargaining without agreement either party could request federal mediation, and after 30 days from that request without agreement the dispute would go to arbitration. The parties may agree to longer periods, and the panel's award would bind them for two years unless amended by their written consent.",
         "ungoverned_component_projection": false
       },
       "exact_action_identity": "119:hr:5408",
@@ -1598,14 +1613,15 @@
       "legacy_interpretability_assessment": "revision_would_be_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
-        "The deadlines govern initial collective-bargaining agreements and allow the parties to agree to longer periods; the candidate does not predict whether bargaining would end sooner or what contract terms would result."
+        "The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result.",
+        "Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis."
       ],
       "mechanism": {
-        "description": "National Labor Relations Act duties requiring bargaining to begin within 10 days, allowing mediation after 90 days without agreement, and requiring referral to a three-person arbitration panel after 30 more days without agreement.",
-        "type": "bargaining deadline, mediation, and binding arbitration"
+        "description": "National Labor Relations Act amendments requiring current wages, hours, and employment terms to be maintained pending agreement and continuing an employer's bargaining duty absent decertification following an election. First-contract bargaining must begin within 10 days, mediation may be requested after 90 days without agreement, and unresolved disputes go to a three-person arbitration panel 30 days after the mediation request, subject to agreed extensions.",
+        "type": "employment-term maintenance, continuing bargaining duty, deadlines, and binding arbitration"
       },
-      "plain_language_meaning": "Employers and newly certified or recognized employee representatives would face a timetable for first-contract talks: start within 10 days, allow mediation after 90 days without a deal, and move to binding arbitration after 30 additional days without agreement, subject to agreed extensions.",
-      "policy_choice": "Whether to impose deadlines and mediation/arbitration steps for an employer and a newly recognized or certified employee representative negotiating their first collective-bargaining agreement.",
+      "plain_language_meaning": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+      "policy_choice": "Whether to require maintaining current wages, hours, and employment terms pending agreement, continue an employer's bargaining duty unless the employee representative is decertified, and impose a first-contract bargaining, mediation, and binding-arbitration timetable.",
       "production_selectable": false,
       "public": false,
       "qualification": {
@@ -1718,7 +1734,7 @@
           "source_type": "congress_gov_bill_text"
         }
       ],
-      "legacy_interpretability_assessment": "sufficient_unchanged",
+      "legacy_interpretability_assessment": "revision_would_be_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
         "A reasonable-suspicion flag triggers verification and notice; the proposal does not itself establish that the applicant committed fraud."
@@ -1964,7 +1980,7 @@
           "source_type": "congress_gov_bill_text"
         }
       ],
-      "legacy_interpretability_assessment": "sufficient_unchanged",
+      "legacy_interpretability_assessment": "revision_would_be_required",
       "legislative_stage": "final_passage_or_suspension_passage",
       "limitations": [
         "The bill states that it does not authorize the Secretary to require additional information or create additional rights beyond those listed."

@@ -39,3 +39,16 @@ These states are intentionally small and non-authorizing. A grammatical or sourc
 The validator checks exact identity and source binding, field-level source mappings, mechanism and affected-entity presence, concrete direct effect, member neutrality, proposal/outcome/enactment separation, amendment/package boundaries, supported-or-omitted downstream claims, duplicate identities, historical artifact parity, and non-authorizing state.
 
 These checks catch mechanical failure classes. They do not establish natural-language quality or semantic truth; independent semantic/product review remains required.
+
+## Independent semantic/product review
+
+For every exact action, the independent reviewer must check whether every material
+first-order operative provision and every material exception or waiver that
+changes a reader's understanding has been accounted for in the candidate, or
+explicitly bounded as ancillary with a reason. A concrete explanation of one
+provision does not establish completeness for the whole action. Source gaps must
+remain explicit holds, not unsupported explanations inferred from a title.
+
+This is a semantic/product review question, not a deterministic completeness
+rule. The existing schema and validator remain unchanged; their mechanical pass
+does not resolve materiality or confer candidate acceptance.

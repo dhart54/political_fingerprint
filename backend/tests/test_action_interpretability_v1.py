@@ -40,8 +40,21 @@ class ActionInterpretabilityV1Tests(unittest.TestCase):
     def test_real_candidate_set_validates_and_accounts_for_all_actions(self) -> None:
         result = validate_candidate_set(ROOT, self.artifact)
         self.assertEqual(result["candidate_count"], 17)
-        self.assertEqual(result["candidate_state_counts"], {"candidate_complete_for_semantic_review": 15, "source_enrichment_required": 2})
-        self.assertEqual(result["legacy_assessment_counts"], {"revision_would_be_required": 6, "source_enrichment_required": 2, "sufficient_unchanged": 9})
+        self.assertEqual(result["candidate_state_counts"], {"candidate_complete_for_semantic_review": 14, "source_enrichment_required": 3})
+        self.assertEqual(result["legacy_assessment_counts"], {"revision_would_be_required": 10, "source_enrichment_required": 3, "sufficient_unchanged": 4})
+
+    def test_supplied_independent_review_diagnostic_and_hold_sets(self) -> None:
+        # Preserve supplied review decisions, not a heuristic for semantic quality.
+        candidates = self.artifact["candidates"]
+        sufficient = {row["action_id"] for row in candidates if row["legacy_interpretability_assessment"] == "sufficient_unchanged"}
+        held = {row["action_id"] for row in candidates if row["candidate_state"] == "source_enrichment_required"}
+        self.assertEqual(sufficient, {"house:119:1:146", "house:119:1:315", "house:119:2:19", "house:119:2:82"})
+        self.assertEqual(held, {"house:119:1:79", "house:119:1:332", "house:119:2:184"})
+        for row in candidates:
+            if row["action_id"] in held:
+                self.assertEqual(row["legacy_interpretability_assessment"], "source_enrichment_required")
+            elif row["action_id"] not in sufficient:
+                self.assertEqual(row["legacy_interpretability_assessment"], "revision_would_be_required")
 
     def test_member_id_or_party_in_shared_semantics_fails(self) -> None:
         for text in ("F000477 would face this choice.", "The Democratic Party would face this choice."):
@@ -157,7 +170,7 @@ class ActionInterpretabilityV1Tests(unittest.TestCase):
         row = next(item for item in readiness["subject"]["action_readiness"] if item["action_id"] == candidate["action_id"])
         candidate["qualification"] = qualify_candidate(candidate, row)
         result = validate_candidate_set(ROOT, changed)
-        self.assertEqual(result["candidate_state_counts"]["source_enrichment_required"], 3)
+        self.assertEqual(result["candidate_state_counts"]["source_enrichment_required"], 4)
 
     def test_hold_cannot_bypass_binding_neutrality_or_source_mappings(self) -> None:
         for failure in ("binding", "neutrality", "mapping", "boundary"):

@@ -1,5 +1,47 @@
 # Milestone Plan: M14B Action Interpretability Contract V1
 
+## Independent review correction pass — 2026-08-27
+
+- Authority: the user accepted the contract architecture and held PR #176 only
+  for detached calibration corrections. No candidate semantics are accepted or
+  promoted; no public, production, or next-milestone work is authorized.
+- Starting correction head: `5a47bd29fb130115ac60af411929bdd09ba059d8`.
+- Scope: add the H.R. 1069 qualifying-contract waiver; account for H.R. 5408's
+  employment-term maintenance and continuing bargaining duties; hold H.R. 2550
+  pending the official March 27, 2025 Executive Order as governed evidence and
+  remove its unsupported workplace/agency characterization. Retain the two
+  existing holds and preserve the other 12 candidates' semantic content.
+- Independent-review guidance must cover all material first-order provisions and
+  material exceptions/waivers, or explicitly bound ancillary omissions. This is
+  not a new deterministic semantic-completeness rule. Preserve the schema and
+  validator byte-for-byte.
+- Expected correction outcome: 14 mechanically complete candidates (including
+  the two revisions awaiting re-review), 3 source-enrichment holds; legacy
+  diagnostics 4 sufficient unchanged / 10 revision / 3 enrichment. The four
+  unchanged IDs are `house:119:1:146`, `house:119:1:315`, `house:119:2:19`, and
+  `house:119:2:82`.
+- Validation: frozen builder `--check`, focused M14B tests, changed-action
+  source/claim inspection, unchanged-candidate comparison, protected historical
+  and Shared Action Core parity, unchanged schema/validator, diff review, and
+  exact-head GitHub CI. Final CI evidence is attached to the PR and handoff.
+- Local result: builder freeze/check and 19 focused tests passed. All 17
+  action/source/core/legacy bindings are unchanged; the 12 passed candidates and
+  two original holds preserve all content except directed diagnostic labels.
+  Full historical-review and Shared Corpus directory diffs, schema/validator
+  parity, and `git diff --check` pass.
+- Frozen corrected candidate-set digest:
+  `7446ba60c7995e877026e26a6b18837550ccde52ba323c56c9b59decb914f4bd`.
+- Corrected review-packet digest:
+  `40d1bf53734855b14034216922f821aa0e24524bb939a1c506d2c7a0a10070b3`.
+- Push/CI boundary: PR #176's existing Vercel integration automatically deployed
+  previews on the prior pushes. No repository-local skip setting is present.
+  Resolve permission for that existing automation or disable previews before
+  pushing under the current no-deployment instruction. No deployment-setting
+  changes are included in this correction pass.
+- Stop: independent re-review; do not accept or promote corrected candidates.
+- The original execution record below is historical; its counts and digests are
+  superseded by this correction pass and the regenerated detached manifest.
+
 ## Intent
 
 - Immediate task: define and exercise a typed, source-mapped, non-authorizing interpretability contract for all 17 governed Education & Workforce exact actions.
