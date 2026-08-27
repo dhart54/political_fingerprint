@@ -37,6 +37,11 @@ jobs:
           python -m pip install -r backend/requirements.txt
           python -m pip install httpx==0.28.1
 
+      - name: Validate M14A shared corpus boundary
+        run: |
+          python scripts/build_shared_justice_corpus_m14a.py --check
+          python -m pytest -q backend/tests/test_shared_legislative_corpus.py
+
       - name: Validate governed M1-M7 chain and layered benchmark
         run: |
           python scripts/validate_full_issue_universe_authority.py
