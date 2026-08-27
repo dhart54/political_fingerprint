@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politicalfingerprint.example/schemas/action_interpretability_v1.schema.json",
+  "title": "Political Fingerprint Action Interpretability Candidate Set V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact_id", "authority_state", "authorizing", "accepted", "public", "production_selectable", "historical_artifacts_rewritten", "input_bindings", "protected_historical_artifacts", "candidates"],
+  "properties": {
+    "schema_version": {"const": "action_interpretability_candidate_set_v1"},
+    "artifact_id": {"type": "string", "minLength": 1},
+    "authority_state": {"const": "detached_non_authorizing_candidate"},
+    "authorizing": {"const": false},
+    "accepted": {"const": false},
+    "public": {"const": false},
+    "production_selectable": {"const": false},
+    "historical_artifacts_rewritten": {"const": false},
+    "input_bindings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["starting_main", "source_readiness", "legacy_decision_implementation"],
+      "properties": {
+        "starting_main": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_readiness": {"$ref": "#/definitions/inputBinding"},
+        "legacy_decision_implementation": {"$ref": "#/definitions/inputBinding"}
+      }
+    },
+    "protected_historical_artifacts": {"type": "array", "minItems": 4, "items": {"$ref": "#/definitions/fileBinding"}},
+    "candidates": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/candidate"}}
+  },
+  "definitions": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fileBinding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/definitions/sha256"}}
+    },
+    "inputBinding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "artifact_id", "subject_sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/definitions/sha256"},
+        "artifact_id": {"type": "string", "minLength": 1},
+        "subject_sha256": {"$ref": "#/definitions/sha256"}
+      }
+    },
+    "sourceMapping": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mapping_id", "field", "claim", "source_id", "locator"],
+      "properties": {
+        "mapping_id": {"type": "string", "minLength": 1},
+        "field": {"enum": ["policy_choice", "mechanism", "affected_entities", "direct_effect", "plain_language_meaning", "limitations", "downstream_effects"]},
+        "claim": {"type": "string", "minLength": 1},
+        "source_id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1}
+      }
+    },
+    "candidate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "action_id", "exact_action_identity", "legislative_stage", "action_date", "governed_source_packet_sha256", "governed_sources", "shared_action_core_reference", "current_accepted_legacy_meaning", "policy_choice", "mechanism", "affected_entities", "direct_effect", "plain_language_meaning", "limitations", "downstream_effects", "claim_source_mappings", "exact_action_boundary", "candidate_state", "legacy_interpretability_assessment", "qualification", "authorizing", "accepted", "public", "production_selectable"],
+      "properties": {
+        "candidate_id": {"type": "string", "minLength": 1},
+        "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
+        "exact_action_identity": {"type": "string", "minLength": 1},
+        "legislative_stage": {"type": "string", "minLength": 1},
+        "action_date": {"type": "string", "format": "date"},
+        "governed_source_packet_sha256": {"$ref": "#/definitions/sha256"},
+        "governed_sources": {
+          "type": "array", "minItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["source_id", "source_type", "content_class", "raw_sha256", "neutral_projection_sha256"],
+            "properties": {
+              "source_id": {"type": "string", "minLength": 1},
+              "source_type": {"type": "string", "minLength": 1},
+              "content_class": {"type": "string", "minLength": 1},
+              "raw_sha256": {"$ref": "#/definitions/sha256"},
+              "neutral_projection_sha256": {"$ref": "#/definitions/sha256"}
+            }
+          }
+        },
+        "shared_action_core_reference": {"oneOf": [{"type": "null"}, {"type": "object", "additionalProperties": false, "required": ["action_core_sha256", "governed_source_identity_sha256"], "properties": {"action_core_sha256": {"$ref": "#/definitions/sha256"}, "governed_source_identity_sha256": {"$ref": "#/definitions/sha256"}}}]},
+        "current_accepted_legacy_meaning": {"type": "string", "minLength": 1},
+        "policy_choice": {"type": "string", "minLength": 1},
+        "mechanism": {"type": "object", "additionalProperties": false, "required": ["type", "description"], "properties": {"type": {"type": "string"}, "description": {"type": "string"}}},
+        "affected_entities": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "direct_effect": {"type": "string"},
+        "plain_language_meaning": {"type": "string"},
+        "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "downstream_effects": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["claim", "source_mapping_ids"],
+            "properties": {
+              "claim": {"type": "string", "minLength": 1},
+              "source_mapping_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+            }
+          }
+        },
+        "claim_source_mappings": {"type": "array", "items": {"$ref": "#/definitions/sourceMapping"}},
+        "exact_action_boundary": {"type": "object", "additionalProperties": false, "required": ["boundary_type", "proposal_effect", "house_action_outcome", "enactment_status", "parent_package_meaning_projected", "ungoverned_component_projection"], "properties": {"boundary_type": {"enum": ["whole_measure", "amendment"]}, "proposal_effect": {"type": "string"}, "house_action_outcome": {"type": "string", "minLength": 1}, "enactment_status": {"const": "not_inferred_from_house_action"}, "parent_package_meaning_projected": {"const": false}, "ungoverned_component_projection": {"const": false}}},
+        "candidate_state": {"enum": ["candidate_complete_for_semantic_review", "source_enrichment_required", "insufficient_for_useful_interpretation"]},
+        "legacy_interpretability_assessment": {"enum": ["sufficient_unchanged", "revision_would_be_required", "source_enrichment_required"]},
+        "qualification": {"type": "object", "additionalProperties": false, "required": ["result", "checks"], "properties": {"result": {"enum": ["pass", "hold", "fail"]}, "checks": {"type": "object", "additionalProperties": {"type": "boolean"}, "minProperties": 10, "maxProperties": 10}}},
+        "authorizing": {"const": false}, "accepted": {"const": false}, "public": {"const": false}, "production_selectable": {"const": false}
+      }
+    }
+  }
+}
