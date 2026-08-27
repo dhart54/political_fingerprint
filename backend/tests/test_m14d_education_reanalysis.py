@@ -248,6 +248,7 @@ class M14DEducationReanalysisTests(unittest.TestCase):
             expected = copy.deepcopy(old[row["proposition_id"]])
             if row["proposition_id"] == closure.BARGAINING:
                 expected["summary"] = closure.SUMMARY
+                expected["analytical_value"] = closure.ANALYTICAL_VALUE
                 self.assertEqual(row["evidence_action_ids"], ["house:119:1:332", "house:119:2:216"])
                 self.assertEqual(row["direction"], "support")
             self.assertEqual(row, expected)
@@ -257,6 +258,19 @@ class M14DEducationReanalysisTests(unittest.TestCase):
         self.assertEqual(self.graph["synthesis_propositions"], [])
         reasons = [r["reason"] for r in self.graph["episode_accounting"] if r["primary_proposition_id"] == closure.BARGAINING]
         self.assertEqual(reasons, [closure.ACCOUNTING_REASON] * 2)
+
+    def test_final_accepted_bargaining_analytical_value(self):
+        findings = json.loads(self.outputs[closure.FINDINGS_PATH])
+        labor = next(r for r in findings["subject"]["accepted_proposition_records"]
+                     if r["proposition_id"] == closure.BARGAINING)
+        self.assertEqual(labor["analytical_value"], "Identifies a bounded cross-system relationship: Foushee supported keeping collective bargaining in force through two different kinds of disruption—restoring bargaining coverage and preserving existing federal union agreements in one system, and requiring continued bargaining and unchanged employment terms during first-contract negotiations in another—while preserving the different workers, statutes, remedies, and whole-measure limits.")
+        self.assertNotIn("Independent review must decide", labor["analytical_value"])
+        prior = closure.reviewed_json(ROOT, closure.FINDINGS_PATH, closure.CORRECTION_REVIEWED)
+        expected = copy.deepcopy(prior["subject"]["accepted_proposition_records"])
+        next(r for r in expected if r["proposition_id"] == closure.BARGAINING)["analytical_value"] = labor["analytical_value"]
+        self.assertEqual(findings["subject"]["accepted_proposition_records"], expected)
+        self.assertEqual(findings["subject"]["accepted_episode_disposition_ledger"], prior["subject"]["accepted_episode_disposition_ledger"])
+        self.assertEqual(findings["subject"]["relationship_evidence_by_proposition"], prior["subject"]["relationship_evidence_by_proposition"])
 
     def test_human_authority_exact_graph_records_ledger_and_accepted_wrapper(self):
         authority = m.load(closure.AUTHORITY_PATH)
@@ -286,13 +300,15 @@ class M14DEducationReanalysisTests(unittest.TestCase):
             self.assertFalse(any(subject["downstream_authorizations"].values()))
 
     def test_unapproved_changes_cannot_be_resealed_into_acceptance(self):
-        for mutation in ("summary", "limitations", "direction", "evidence", "unchanged_record", "ledger", "relationship", "authorization"):
+        for mutation in ("summary", "analytical_value", "limitations", "direction", "evidence", "unchanged_record", "ledger", "relationship", "authorization"):
             with self.subTest(mutation=mutation):
                 payload, graph = copy.deepcopy(self.payload), copy.deepcopy(self.graph)
                 authority = m.load(closure.AUTHORITY_PATH)
                 labor = next(r for r in graph["proposition_graph"]["propositions"] if r["proposition_id"] == closure.BARGAINING)
                 if mutation == "summary":
                     labor["summary"] += " Unapproved wording."
+                elif mutation == "analytical_value":
+                    labor["analytical_value"] = "Independent review must decide."
                 elif mutation == "limitations":
                     labor["material_limitations"].pop()
                 elif mutation == "direction":

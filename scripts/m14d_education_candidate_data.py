@@ -37,7 +37,7 @@ PATTERNS = [
             "H.R.5408 also mandates a first-contract timetable and binding arbitration. H.R.2550 does not. Support for either whole measure cannot be assigned exclusively to its continuity provisions.",
             "EO14251's agency subdivisions, exceptions and delegated powers remain bounded by the approved action limitations. This is not a claim about all federal employees, actual litigation outcomes, or a general pro-labor position.",
         ],
-        "value": "Tests whether the newly concrete meanings support a useful relationship between preserving existing bargaining coverage and maintaining bargaining obligations. Independent review must decide whether the sector and remedy differences leave enough shared substance.",
+        "value": "Identifies a bounded cross-system relationship: Foushee supported keeping collective bargaining in force through two different kinds of disruption—restoring bargaining coverage and preserving existing federal union agreements in one system, and requiring continued bargaining and unchanged employment terms during first-contract negotiations in another—while preserving the different workers, statutes, remedies, and whole-measure limits.",
     },
 ]
 

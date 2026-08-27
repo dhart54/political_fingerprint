@@ -11,10 +11,12 @@ from backend.app.semantic_ir.shared_corpus import digest
 
 BASE = "582f785074d9380f2949571627f1afdc72466b44"
 REVIEWED = "5bfe5656c5024be648362de68100c02634eed5ee"
+CORRECTION_REVIEWED = "9fd689b76c8ae06bc5806ad69c93a0078330b38e"
 OUT = "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1"
 AUTHORITY_PATH = f"{OUT}/human_behavioral_candidate_authority.json"
 FINDINGS_PATH = f"{OUT}/accepted_behavioral_findings.json"
 BARGAINING = "m14d:continuity_of_collective_bargaining"
+ANALYTICAL_VALUE = "Identifies a bounded cross-system relationship: Foushee supported keeping collective bargaining in force through two different kinds of disruption—restoring bargaining coverage and preserving existing federal union agreements in one system, and requiring continued bargaining and unchanged employment terms during first-contract negotiations in another—while preserving the different workers, statutes, remedies, and whole-measure limits."
 SUMMARY = "Across two different labor systems, Foushee supported keeping collective bargaining in force during potential disruptions. She voted to restore bargaining coverage and preserve existing agreements for specified federal workers, and separately voted to require continued bargaining and unchanged employment terms while newly represented workers pursued a first contract."
 BOUNDED_CHOICE = "Keep bargaining in force across distinct disruptions: H.R.2550 restores statutory bargaining coverage affected by EO14251 and preserves specified existing federal union agreements; H.R.5408 maintains employment terms and bargaining duties while an agreement is pending and adds first-contract bargaining, mediation and arbitration requirements. These are distinct statutory mechanisms, not identical contract protections."
 ACCOUNTING_REASON = "Human review accepted the bounded bargaining relationship after preserving the different labor systems, workers, statutes, remedies and legal tools, H.R.5408's additional first-contract requirements, and the limits of whole-measure votes."
@@ -34,8 +36,8 @@ def json_bytes(value: object) -> bytes:
     return (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode("utf-8")
 
 
-def reviewed_json(root: Path, name: str) -> dict:
-    return json.loads(subprocess.check_output(["git", "show", f"{REVIEWED}:{name}"], cwd=root))
+def reviewed_json(root: Path, name: str, revision: str = REVIEWED) -> dict:
+    return json.loads(subprocess.check_output(["git", "show", f"{revision}:{name}"], cwd=root))
 
 
 def validate_closure_scope(root: Path) -> None:
@@ -59,6 +61,7 @@ def validate_revision(root: Path, payload: dict, graph: dict) -> dict:
         for row in rows:
             if row["proposition_id"] == BARGAINING:
                 row["summary"] = SUMMARY
+                row["analytical_value"] = ANALYTICAL_VALUE
     expected_input["relationship_evidence_by_proposition"][BARGAINING]["shared_bounded_choice"] = BOUNDED_CHOICE
     for artifact in (expected_graph, expected_input):
         for row in artifact["episode_accounting"]:
@@ -66,6 +69,17 @@ def validate_revision(root: Path, payload: dict, graph: dict) -> dict:
                 row["reason"] = ACCOUNTING_REASON
     require(graph == expected_graph, "candidate graph differs from exact human-approved revision")
     require(payload == expected_input, "compiler input differs from exact human-approved revision")
+    for name, actual in (
+        ("behavioral_candidate_graph.json", graph),
+        ("compiler_input.json", payload),
+    ):
+        # The final correction authorizes exactly one field, not another semantic revision.
+        prior = reviewed_json(root, f"{OUT}/{name}", CORRECTION_REVIEWED)
+        prior_rows = prior["proposition_graph"]["propositions"] if "proposition_graph" in prior else prior["proposition_candidates"]
+        for row in prior_rows:
+            if row["proposition_id"] == BARGAINING:
+                row["analytical_value"] = ANALYTICAL_VALUE
+        require(actual == prior, f"{name} differs from analytical-value-only correction")
     return before
 
 
@@ -84,6 +98,9 @@ def expected_authority(root: Path, payload: dict, graph: dict) -> dict:
                        "reviewed_record_sha256": digest(old[r["proposition_id"]]),
                        "accepted_record_sha256": digest(r)} for r in graph["proposition_graph"]["propositions"]],
         "approved_revision": {"proposition_id": BARGAINING, "summary": SUMMARY,
+                              "analytical_value": ANALYTICAL_VALUE,
+                              "correction_reviewed_head": CORRECTION_REVIEWED,
+                              "prior_authority_subject_sha256": reviewed_json(root, AUTHORITY_PATH, CORRECTION_REVIEWED)["authority_subject_sha256"],
                               "shared_bounded_choice": BOUNDED_CHOICE, "supporting_accounting_reason": ACCOUNTING_REASON},
         "accepted_episode_disposition_ledger": copy.deepcopy(graph["episode_accounting"]),
         "episode_disposition_ledger_sha256": digest(graph["episode_accounting"]),
