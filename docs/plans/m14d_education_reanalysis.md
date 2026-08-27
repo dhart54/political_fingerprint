@@ -38,7 +38,9 @@ CI may take longer. No release, browser, or production validation is needed.
 - [x] Detached analytical candidates and full accounting.
 - [x] Focused checks, mutation tests, diff and behavior inspection.
 - [x] Draft PR packaging and exact-head CI configuration.
-- [ ] Hosted draft PR and exact-head result (reported in the task/PR).
+- [x] Hosted draft PR [#178](https://github.com/dhart54/political_fingerprint/pull/178)
+  opened; exact-head CI is pending at this documentation commit and its final
+  result is reported in the task/PR.
 
 ## Decisions and discoveries
 
