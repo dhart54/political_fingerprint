@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 from backend.app.semantic_ir import accepted_findings_synthesis as s
 from scripts import build_m14e_education_synthesis as m
+from scripts import build_m14e_synthesis_acceptance as closure
 
 
 class AcceptedFindingsSynthesisTests(unittest.TestCase):
@@ -36,7 +37,10 @@ class AcceptedFindingsSynthesisTests(unittest.TestCase):
 
     def test_exact_reproduction_and_two_review_files(self):
         self.assertEqual(set(self.outputs), {f"{m.OUT}/synthesis_candidate_package.json", f"{m.OUT}/review_package.json"})
-        self.assertEqual({p.name for p in (m.ROOT / m.OUT).iterdir()}, {"synthesis_candidate_package.json", "review_package.json"})
+        self.assertEqual({p.name for p in (m.ROOT / m.OUT).iterdir()}, {
+            "synthesis_candidate_package.json", "review_package.json",
+            "human_synthesis_authority.json", "accepted_internal_synthesis.json",
+        })
         for name, content in self.outputs.items():
             self.assertEqual((m.ROOT / name).read_bytes().replace(b"\r\n", b"\n"), content)
         s.validate_detached_synthesis(self.package, self.findings, self.authority, m.BINDING, [self.proposal], self.standalone)
@@ -253,6 +257,153 @@ class AcceptedFindingsSynthesisTests(unittest.TestCase):
         with patch.object(m.subprocess, "check_output", side_effect=[f"{m.SOURCE}/accepted_behavioral_findings.json\n", ""]):
             with self.assertRaisesRegex(s.DetachedSynthesisError, "scope violation"):
                 m.validate_scope()
+
+
+class M14ESynthesisAcceptanceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.package = closure.load_reviewed_package()
+        cls.candidate = cls.package["subject"]["synthesis_candidates"][0]
+        cls.outputs = closure.build_outputs()
+        cls.authority = json.loads(cls.outputs[closure.AUTHORITY_PATH])
+        cls.accepted = json.loads(cls.outputs[closure.ACCEPTED_PATH])
+
+    def test_exact_reviewed_package_candidate_and_separate_acceptance(self):
+        reviewed = subprocess.check_output(["git", "show", f"{closure.REVIEWED}:{closure.PACKAGE_PATH}"], cwd=m.ROOT)
+        self.assertEqual((m.ROOT / closure.PACKAGE_PATH).read_bytes().replace(b"\r\n", b"\n"), reviewed)
+        before = json.loads(reviewed)["subject"]["synthesis_candidates"][0]
+        self.assertEqual(self.accepted["subject"]["accepted_synthesis_records"], [before])
+        self.assertEqual(self.candidate["summary"].encode("utf-8"), before["summary"].encode("utf-8"))
+        self.assertEqual(self.candidate["candidate_sha256"], "e1f897237de6934c96f034205b4e2fdf6b73afafbe6081507c5d3861180bdc4d")
+        self.assertEqual(self.candidate["candidate_state"], "proposed_not_accepted")
+        self.assertIs(self.candidate["accepted"], False)
+        self.assertIs(self.candidate["authorizing"], False)
+        self.assertIs(self.accepted["accepted"], True)
+        self.assertIs(self.accepted["canonical_internal_synthesis"], True)
+        self.assertEqual(self.accepted["subject"]["accepted_synthesis_count"], 1)
+        self.assertEqual(len(self.accepted["subject"]["accepted_synthesis_records"]), 1)
+
+    def test_human_authority_exact_source_package_and_record_bindings(self):
+        authority = self.authority["subject"]
+        self.assertEqual(authority["pr_number"], 179)
+        self.assertEqual(authority["baseline_main_sha"], "79995a5a4d8840e2e3783905327ba02c6d40cffa")
+        self.assertEqual(authority["reviewed_candidate_head"], "0fe441871909b425248ec2e7e9100236bd9b62b2")
+        self.assertEqual(authority["decision"], "accept_as_written")
+        self.assertEqual(authority["decision_source"], "user_supplied_M14E_human_product_review_PR179")
+        self.assertEqual(authority["candidate_id"], m.CANDIDATE)
+        self.assertEqual(authority["candidate_sha256"], closure.CANDIDATE_SHA)
+        self.assertEqual(authority["reviewed_package"]["document_sha256"], m.digest(self.package))
+        self.assertEqual(authority["reviewed_package"]["package_sha256"], self.package["package_sha256"])
+        self.assertEqual(authority["m14d_accepted_source_binding"]["findings_subject_sha256"], "795027fdcf49a4956b99804be9d44ec7bd233877e4bc76caa4121f7b61df169d")
+        self.assertEqual(authority["m14d_accepted_source_binding"]["authority_subject_sha256"], "456d9f6f9577e8604480cdb40a08cb1f92e443ab3e02ff33cb2ecd193ca16638")
+        actual = {r["source_finding_id"]: r["accepted_record_sha256"] for r in authority["source_finding_record_digests"]}
+        self.assertEqual(actual, {r["proposition_id"]: m.digest(r) for r in self.package["subject"]["accepted_source_findings"]})
+        self.assertEqual(self.authority["authority_subject_sha256"], m.digest(authority))
+        self.assertEqual(self.accepted["subject"]["human_synthesis_authority"]["authority_subject_sha256"], self.authority["authority_subject_sha256"])
+
+    def test_accepted_lineage_accounting_ledger_and_all_seven_limits(self):
+        accepted, source = self.accepted["subject"], self.package["subject"]
+        self.assertEqual([r["proposition_id"] for r in accepted["accepted_input_findings"]], [m.FUNDING, m.HR1048])
+        self.assertEqual(accepted["source_lineage"], self.candidate["source_lineage"])
+        self.assertEqual(accepted["evidence_counts"], {"accepted_findings": 2, "episodes": 3, "actions": 4})
+        self.assertEqual(accepted["source_finding_accounting"], source["source_finding_accounting"])
+        self.assertEqual(len(accepted["source_finding_accounting"]), 3)
+        standalone = accepted["intentionally_standalone_finding"]
+        self.assertEqual(standalone["finding"]["proposition_id"], m.BARGAINING)
+        self.assertEqual(standalone["accounting"]["disposition"], "intentionally_standalone_no_safe_synthesis")
+        self.assertEqual(standalone["accounting"]["candidate_ids"], [])
+        ledger = accepted["inherited_episode_disposition_ledger"]
+        self.assertEqual(ledger, source["inherited_episode_disposition_ledger"])
+        self.assertEqual(len(ledger), 16)
+        self.assertEqual(len({a for row in ledger for a in row["action_ids"]}), 17)
+        self.assertEqual(sum(r["disposition"] == "receipt_only_no_elevation" for r in ledger), 8)
+        not_voting = next(r for r in ledger if "house:119:1:312" in r["action_ids"])
+        self.assertEqual(not_voting["disposition"], "non_directional_receipt")
+        self.assertIn("Not Voting", not_voting["reason"])
+        self.assertEqual(self.authority["subject"]["inherited_ledger"]["sha256"], m.digest(ledger))
+        self.assertEqual(accepted["inherited_material_limitations"], self.candidate["inherited_material_limitations"])
+        self.assertEqual(sum(map(len, accepted["inherited_material_limitations"].values())), 7)
+        self.assertEqual(accepted["hr1048_final_passage_limitation"], self.candidate["inherited_material_limitations"][m.HR1048][1])
+        self.assertIn("does not establish opposition to any one component", accepted["hr1048_final_passage_limitation"])
+        for key in ("competing_interpretation", "prohibited_inferences"):
+            self.assertEqual(accepted[key], self.candidate[key])
+        self.assertEqual(self.candidate["material_limiter_finding_ids"], [m.HR1048])
+
+    def test_internal_only_effect_no_downstream_authority_and_exact_reproduction(self):
+        for name, content in self.outputs.items():
+            self.assertEqual((m.ROOT / name).read_bytes().replace(b"\r\n", b"\n"), content)
+        closure.validate_artifacts(self.package, self.authority, self.accepted)
+        for obj in (self.authority["subject"], self.accepted["subject"]):
+            self.assertEqual(obj["authority_effect"], "canonical_internal_synthesis_only")
+            self.assertEqual(obj["substantive_boundary"], closure.BOUNDARY)
+            self.assertEqual(obj["downstream_authorizations"], closure.DENIED)
+            self.assertTrue(all(v is False for v in obj["downstream_authorizations"].values()))
+        self.assertIs(self.accepted["public"], False)
+        self.assertIs(self.accepted["production_selectable"], False)
+        self.assertEqual(self.accepted["accepted_internal_synthesis_subject_sha256"], m.digest(self.accepted["subject"]))
+
+    def test_tampered_reviewed_package_cannot_be_accepted_even_if_resealed(self):
+        for mutation in ("text", "finding", "ledger", "limitation", "binding", "candidate_sha", "permissions"):
+            package = deepcopy(self.package)
+            subject, candidate = package["subject"], package["subject"]["synthesis_candidates"][0]
+            if mutation == "text":
+                candidate["summary"] = "Foushee generally prefers disclosure over enforcement."
+            elif mutation == "finding":
+                subject["accepted_source_findings"][0]["summary"] += " Changed"
+            elif mutation == "ledger":
+                subject["inherited_episode_disposition_ledger"].pop()
+            elif mutation == "limitation":
+                candidate["inherited_material_limitations"][m.HR1048].pop(1)
+            elif mutation == "binding":
+                subject["accepted_source_binding"]["authority_subject_sha256"] = "0" * 64
+            elif mutation == "permissions":
+                candidate["downstream_authorizations"]["publication"] = True
+            candidate["candidate_sha256"] = ("0" * 64 if mutation == "candidate_sha" else
+                m.digest({k: v for k, v in candidate.items() if k != "candidate_sha256"}))
+            package["package_sha256"] = m.digest({k: v for k, v in package.items() if k != "package_sha256"})
+            with self.subTest(mutation=mutation), self.assertRaisesRegex(s.DetachedSynthesisError, "package pin"):
+                closure.expected_authority(package)
+
+    def test_resealed_authority_or_accepted_artifact_tampering_fails_closed(self):
+        for mutation in ("authority", "binding", "text", "finding", "ledger", "limitation", "standalone", "candidate_sha", "count", "permissions"):
+            authority, accepted = deepcopy(self.authority), deepcopy(self.accepted)
+            subject = accepted["subject"]
+            if mutation == "authority":
+                authority["subject"]["downstream_authorizations"]["main_takeaway"] = True
+            elif mutation == "binding":
+                subject["human_synthesis_authority"]["authority_subject_sha256"] = "0" * 64
+            elif mutation == "text":
+                subject["accepted_synthesis_records"][0]["summary"] += " Changed"
+            elif mutation == "finding":
+                subject["accepted_input_findings"][0]["direction"] = "support"
+            elif mutation == "ledger":
+                subject["inherited_episode_disposition_ledger"].pop()
+            elif mutation == "limitation":
+                subject["inherited_material_limitations"][m.HR1048].pop(1)
+            elif mutation == "standalone":
+                subject["intentionally_standalone_finding"]["accounting"]["candidate_ids"] = [m.CANDIDATE]
+            elif mutation == "candidate_sha":
+                subject["candidate_sha256"] = "0" * 64
+            elif mutation == "count":
+                subject["accepted_synthesis_records"].append(deepcopy(self.candidate))
+                subject["accepted_synthesis_count"] = 2
+            else:
+                subject["downstream_authorizations"]["publication"] = True
+            authority["authority_subject_sha256"] = m.digest(authority["subject"])
+            accepted["accepted_internal_synthesis_subject_sha256"] = m.digest(subject)
+            with self.subTest(mutation=mutation), self.assertRaises(s.DetachedSynthesisError):
+                closure.validate_artifacts(self.package, authority, accepted)
+
+    def test_authority_write_once_and_closure_scope_protects_reviewed_evidence(self):
+        original = (m.ROOT / closure.AUTHORITY_PATH).read_bytes()
+        with self.assertRaises(FileExistsError):
+            closure.record_authority(self.package)
+        self.assertEqual((m.ROOT / closure.AUTHORITY_PATH).read_bytes(), original)
+        for path in (closure.PACKAGE_PATH, m.BINDING.findings_path, m.BINDING.authority_path,
+                     "backend/app/semantic_ir/accepted_findings_synthesis.py", "frontend/app/page.tsx"):
+            with self.subTest(path=path), patch.object(closure.subprocess, "check_output", side_effect=[path + "\n", ""]):
+                with self.assertRaisesRegex(s.DetachedSynthesisError, "acceptance scope violation"):
+                    closure.validate_scope()
 
 
 if __name__ == "__main__":

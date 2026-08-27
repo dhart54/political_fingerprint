@@ -46,7 +46,8 @@ outcome. This advances source-grounded interpretation without public conclusions
 - [x] Exact input bindings, full accounting, zero-candidate behavior, inherited
   limits, mixed-episode ambiguity, and downstream denials validated.
 - [x] M14A/B/C/D unchanged and passing; final diff reviewed.
-- [ ] Draft PR opened and exact-head CI verified.
+- [x] Draft PR #179 opened and exact-head CI verified on reviewed head
+  `0fe441871909b425248ec2e7e9100236bd9b62b2` (run `33116488221`, six jobs passed).
 
 ## Validation results
 
@@ -72,6 +73,39 @@ can be left unmerged; reverting its scoped additions removes this candidate path
 
 ## Final reconciliation
 
-Local implementation and review are complete; draft PR/hosted CI remain pending.
-Independent review may accept, revise, or omit
-the candidate in a separately authorized milestone; this milestone accepts none.
+Candidate-stage implementation, draft PR and hosted CI completed. Its detached
+review package remains historical evidence of zero accepted synthesis at that stage.
+
+## Human acceptance closure (current scope)
+
+The user accepted the exact reviewed candidate as written, for canonical internal
+synthesis only. Baseline and candidate SHA remain unchanged. Add one small
+deterministic recorder, immutable human authority and accepted internal synthesis
+artifact. Extend existing tests and exact-head CI; keep PR #179 draft and stop
+before merge. Seven closure files expected, including these documentation and
+validation changes; no candidate, review, M14D, V2, historical or public files change.
+
+The original candidate flags remain false. The additive authority, not a rewrite
+of candidate provenance, confers this one acceptance. Source accounting remains
+three findings (two inputs / one standalone), candidate lineage three episodes /
+four actions, and the full ledger sixteen episodes / seventeen actions. All seven
+input limitations, the mixed final-passage boundary, competing interpretation,
+and prohibited inferences remain exact. No Main Takeaway or downstream authority.
+
+- [x] Reviewed package bytes and exact digest verified.
+- [x] Two additive artifacts generated; authority recorder refuses overwrite.
+- [x] Focused mutation/regression tests, existing M14A–M14E checks and final diff.
+- [ ] Commit, update draft PR with exact bindings, and verify exact-head CI.
+
+Closure local validation: 116 focused tests (22 M14E), 26 core Semantic IR tests,
+reference validation and all M14A–M14E no-write checks passed. Reviewed candidate
+and review package plus M14D source documents remain byte-exact under the Git LF
+convention. All seven limitations survive. Seven-file closure diff reviewed.
+
+Human authority subject:
+`a7e9e599100d4128b2a4414bd21a415d1663eb79d81d92397ddf056795668c82`.
+Accepted internal synthesis subject:
+`efbd6105b9320cc8f16e203f16f2da37cd1f6acaf6eb6e7cd153f0c860d2a1ef`.
+The final head and hosted CI closure are recorded on PR #179 and in the task
+report. No production writes, rollback requirement, scope expansion, new
+editorial decision, or blocker. Acceptance is confined to the exact user decision.

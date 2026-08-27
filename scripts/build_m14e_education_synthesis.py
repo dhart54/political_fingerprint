@@ -42,6 +42,8 @@ ALLOWED_PATHS = {
     "docs/plans/m14e_education_synthesis_review.md",
     ".github/workflows/backend-tests.yml",
     f"{OUT}/synthesis_candidate_package.json", f"{OUT}/review_package.json",
+    "scripts/build_m14e_synthesis_acceptance.py",
+    f"{OUT}/human_synthesis_authority.json", f"{OUT}/accepted_internal_synthesis.json",
 }
 
 
