@@ -52,7 +52,7 @@
 - [x] Implementation
 - [x] Local validation
 - [x] Documentation
-- [ ] Commit/PR readiness
+- [x] Commit/PR readiness
 
 ## Discoveries
 
@@ -74,11 +74,12 @@
 - Initial rendered audit found that the draft bound each action's source-packet digest and field locators but did not enumerate every governed source identity/raw/projection digest inside each candidate. The contract and candidates were corrected before the final byte freeze.
 - The hold-state schema was corrected to permit absent unsupported semantic fields without filler while complete candidates remain fail-closed.
 - Source-by-source review removed an unsupported public-database detail from H.R. 1005, removed member-status language from shared limitations, and translated H.R. 2988's financial terminology. Candidate bytes were explicitly refrozen after those corrections.
+- Final validator review closed a hold-state bypass: holds may omit unsupported explanatory fields, but cannot bypass source mapping, exact identity, neutrality, or action-boundary safeguards. Negative tests recompute qualification so cached-result mismatch cannot mask the intended failure. Frozen candidate and report bytes remain unchanged.
 
 ## Validation Results
 
 - M14B builder `--check`: passed after final freeze; 17 actions, 15 complete candidates, 2 source-enrichment holds.
-- Focused M14B tests: 16 passed, including the 12 required failure classes, source-mapping claim identity, hold representation, and no-write reproducibility.
+- Focused M14B tests: 18 passed, including the 12 required failure classes, source-mapping claim identity, hold invariants, complete-field requirements, and no-write reproducibility.
 - M14A builder `--check`: passed with 37 unchanged actions; M14A tests: 15 passed.
 - Canonical Semantic IR validator: passed; canonical unittest suite: 26 passed. The isolated worktree initially lacked `ajv`; the same test passed using the existing workspace's read-only Node module path, without changing dependencies.
 - Education M13B-v2 source-readiness, M13C action-candidate, and M13D historical-acceptance validators: passed.
@@ -87,7 +88,8 @@
 - Candidate-set digest: `077479fd00602fbf13ce64809e675162a0857ccd0a043fce598611a0b0d62bbe`.
 - Frozen candidate-file digest: `4944a8e2cd3217974e6af3f3b0c4c6a4fdc77e488f13ccb8e32f1ce68259d6ff`.
 - Review-packet digest: `770da67da00210b1a5a5490f46d9a79b0b2998d78e9fc6033e0e89059658db52`.
-- Exact-head GitHub CI: pending draft PR.
+- Draft PR: https://github.com/dhart54/political_fingerprint/pull/176 (draft, independent review only).
+- Exact-head GitHub CI: required on the final pushed head; the final handoff and PR checks record its result without creating a self-invalidating commit-SHA cycle.
 
 ## Production Writes
 
@@ -106,6 +108,6 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied: local implementation and validation complete; draft PR and exact-head CI pending.
+- Definition of done satisfied: implementation, local validation, frozen review artifacts, protected parity, and draft PR complete. Exact-head CI remains a final handoff gate; no acceptance is requested before it passes.
 - Remaining limitations: independent semantic/product review remains required; two source-enrichment holds remain non-authorizing.
 - Recommended next step: stop after draft-PR/CI evidence for independent review; do not begin acceptance or remediation.

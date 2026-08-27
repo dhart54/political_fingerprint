@@ -29,6 +29,11 @@ class ActionInterpretabilityV1Tests(unittest.TestCase):
         return copy.deepcopy(self.artifact)
 
     def assert_invalid(self, artifact: dict, root: Path = ROOT) -> None:
+        # Do not let stale cached qualification be the reason a negative case fails.
+        readiness = load_json(ROOT / self.artifact["input_bindings"]["source_readiness"]["path"])
+        by_id = {row["action_id"]: row for row in readiness["subject"]["action_readiness"]}
+        for candidate in artifact["candidates"]:
+            candidate["qualification"] = qualify_candidate(candidate, by_id[candidate["action_id"]])
         with self.assertRaises(ActionInterpretabilityValidationError):
             validate_candidate_set(root, artifact)
 
@@ -65,6 +70,15 @@ class ActionInterpretabilityV1Tests(unittest.TestCase):
             if row["field"] == "direct_effect"
         )
         mapping["claim"] = "A different claim."
+        self.assert_invalid(changed)
+
+    def test_complete_candidate_cannot_omit_plain_language_meaning(self) -> None:
+        changed = self.changed()
+        candidate = changed["candidates"][0]
+        candidate["plain_language_meaning"] = ""
+        candidate["claim_source_mappings"] = [
+            row for row in candidate["claim_source_mappings"] if row["field"] != "plain_language_meaning"
+        ]
         self.assert_invalid(changed)
 
     def test_wrong_exact_action_source_digest_binding_fails(self) -> None:
@@ -134,15 +148,34 @@ class ActionInterpretabilityV1Tests(unittest.TestCase):
         candidate["mechanism"] = {"type": "", "description": ""}
         candidate["affected_entities"] = []
         candidate["direct_effect"] = ""
+        candidate["exact_action_boundary"]["proposal_effect"] = ""
         candidate["plain_language_meaning"] = ""
         candidate["claim_source_mappings"] = [
-            row for row in candidate["claim_source_mappings"] if row["field"] == "policy_choice"
+            row for row in candidate["claim_source_mappings"] if row["field"] in {"policy_choice", "limitations"}
         ]
         readiness = load_json(ROOT / changed["input_bindings"]["source_readiness"]["path"])
         row = next(item for item in readiness["subject"]["action_readiness"] if item["action_id"] == candidate["action_id"])
         candidate["qualification"] = qualify_candidate(candidate, row)
         result = validate_candidate_set(ROOT, changed)
         self.assertEqual(result["candidate_state_counts"]["source_enrichment_required"], 3)
+
+    def test_hold_cannot_bypass_binding_neutrality_or_source_mappings(self) -> None:
+        for failure in ("binding", "neutrality", "mapping", "boundary"):
+            with self.subTest(failure=failure):
+                changed = self.changed()
+                candidate = next(row for row in changed["candidates"] if row["action_id"] == "house:119:1:79")
+                if failure == "binding":
+                    candidate["governed_source_packet_sha256"] = "0" * 64
+                elif failure == "neutrality":
+                    candidate["policy_choice"] = "The Democratic Party would require reporting."
+                    for mapping in candidate["claim_source_mappings"]:
+                        if mapping["field"] == "policy_choice":
+                            mapping["claim"] = candidate["policy_choice"]
+                elif failure == "mapping":
+                    candidate["claim_source_mappings"] = []
+                else:
+                    candidate["exact_action_boundary"]["boundary_type"] = "whole_measure"
+                self.assert_invalid(changed)
 
     def test_builder_check_does_not_regenerate_frozen_candidate_bytes(self) -> None:
         before = hashlib.sha256(CANDIDATE_PATH.read_bytes()).hexdigest()

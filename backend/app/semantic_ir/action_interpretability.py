@@ -151,7 +151,7 @@ def qualify_candidate(candidate: dict[str, Any], readiness: dict[str, Any]) -> d
             and mapping["source_id"] in operative_ids
             for mapping in candidate["claim_source_mappings"]
         )
-        for field, claim in expected_claims.items()
+        for field, claim in expected_claims.items() if claim
     )
     limitations_mapped = all(
         any(
@@ -187,6 +187,9 @@ def qualify_candidate(candidate: dict[str, Any], readiness: dict[str, Any]) -> d
         boundary["parent_package_meaning_projected"] is False
         and boundary["ungoverned_component_projection"] is False
         and boundary["proposal_effect"] == candidate["direct_effect"]
+        and boundary["boundary_type"] == (
+            "amendment" if readiness["house_action_stage"] == "amendment" else "whole_measure"
+        )
         and (
             readiness["house_action_stage"] != "amendment"
             or bool(operative_ids & mapped_ids)
@@ -212,7 +215,8 @@ def qualify_candidate(candidate: dict[str, Any], readiness: dict[str, Any]) -> d
             and mapped_ids <= source_ids
         ),
         "substantive_source_mappings": (
-            SUBSTANTIVE_FIELDS <= mapped_fields
+            {field for field, claim in expected_claims.items() if claim} <= mapped_fields
+            and (candidate["candidate_state"] != COMPLETE or all(expected_claims.values()))
             and substantive_mappings_valid
             and limitations_mapped
             and len(mapping_ids) == len(candidate["claim_source_mappings"])
@@ -240,7 +244,17 @@ def qualify_candidate(candidate: dict[str, Any], readiness: dict[str, Any]) -> d
     if candidate["candidate_state"] == COMPLETE:
         result = "pass" if all(checks.values()) else "fail"
     else:
-        result = "hold" if candidate["candidate_state"] in HOLD_STATES else "fail"
+        # Evidence holds may lack explanatory content, never identity, grounding,
+        # neutrality, exact-action boundaries, or non-authorizing safeguards.
+        hold_optional_checks = {
+            "mechanism_present_when_supported",
+            "affected_entities_present_when_supported",
+            "direct_effect_is_concrete",
+        }
+        invariant_checks_pass = all(
+            passed for name, passed in checks.items() if name not in hold_optional_checks
+        )
+        result = "hold" if candidate["candidate_state"] in HOLD_STATES and invariant_checks_pass else "fail"
     return {"result": result, "checks": checks}
 
 
