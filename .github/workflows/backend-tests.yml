@@ -17,6 +17,32 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  m14f-exact-head:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install M14F offline validation dependencies
+        run: python -m pip install jsonschema pytest
+
+      - name: Validate detached M14F wording and prominence review
+        run: |
+          git rev-parse HEAD
+          python scripts/build_m14f_education_public_wording.py --check
+          python -m pytest -q backend/tests/test_accepted_findings_public_wording.py
+
+      # The milestone allowlist applies only to this exact candidate branch.
+      - name: Prove exact M14F milestone scope
+        if: github.head_ref == 'codex/m14f-education-public-wording'
+        run: python scripts/build_m14f_education_public_wording.py --check --check-scope
+
   m14e-exact-head:
     runs-on: ubuntu-latest
     steps:
