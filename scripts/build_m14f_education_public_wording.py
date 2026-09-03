@@ -60,6 +60,9 @@ ALLOWED_PATHS = {
     "docs/plans/m14f_education_public_wording_review.md",
     ".github/workflows/backend-tests.yml",
     f"{OUT}/public_wording_candidate_package.json", f"{OUT}/review_package.json",
+    f"{OUT}/human_public_wording_prominence_authority.json",
+    f"{OUT}/accepted_public_copy.json",
+    "scripts/build_m14f_public_wording_acceptance.py",
 }
 
 

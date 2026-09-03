@@ -87,5 +87,28 @@ standalone bargaining finding and leaving A/B unresolved.
 - [x] Nineteen focused M14F tests and exact regeneration pass after revision.
 - [x] Inherited M14A-M14E builders and tests, 120-test focused suite, 26 core
   Semantic IR tests, and semantic-reference validation pass.
-- [ ] Review the revision diff, update draft
-  PR #180, and verify CI on the new exact head.
+- [x] Revision diff reviewed, draft PR #180 updated, and hosted CI passed at
+  `f8997db8f0a5612795d22b0747d7f63721f901cd`.
+
+## Human wording and prominence acceptance closure
+
+The user accepted all four exact reviewed wording items as written and selected
+Option A, using `m14f:issue_overview:education_workforce` as the canonical
+internal Main Takeaway. This additive closure preserves both reviewed M14F
+packages byte-for-byte and retains the original candidate flags inside the
+accepted artifact.
+
+Create one immutable user-decision authority and one accepted canonical internal
+public-copy artifact. They bind all four reviewed item digests, all eighteen
+limitation treatments, the accepted M14D/M14E subject seals, and the exact
+behavioral, Main Takeaway, and full-record lineage. The accepted effect does not
+delegate frontend, site integration, publication, persistence, database,
+production-write, deployment, merge, or other operational authority.
+
+- [x] Exact reviewed candidate and review packages pinned and left unchanged.
+- [x] Additive authority recorder and accepted-public-copy artifact generated.
+- [x] Twenty-nine M14F tests, 130-test focused M14A-M14F suite, 26 core
+  Semantic IR tests, semantic-reference validation, and all M14A-M14F no-write
+  builders pass.
+- [x] Final seven-file closure diff reviewed and draft PR update prepared.
+- [ ] Hosted exact-head CI passes at the closure head.

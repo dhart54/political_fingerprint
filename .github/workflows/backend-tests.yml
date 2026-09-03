@@ -36,12 +36,15 @@ jobs:
         run: |
           git rev-parse HEAD
           python scripts/build_m14f_education_public_wording.py --check
+          python scripts/build_m14f_public_wording_acceptance.py --check
           python -m pytest -q backend/tests/test_accepted_findings_public_wording.py
 
       # The milestone allowlist applies only to this exact candidate branch.
       - name: Prove exact M14F milestone scope
         if: github.head_ref == 'codex/m14f-education-public-wording'
-        run: python scripts/build_m14f_education_public_wording.py --check --check-scope
+        run: |
+          python scripts/build_m14f_education_public_wording.py --check --check-scope
+          python scripts/build_m14f_public_wording_acceptance.py --check --check-scope
 
   m14e-exact-head:
     runs-on: ubuntu-latest

@@ -12,6 +12,7 @@ from unittest.mock import patch
 from backend.app.semantic_ir import accepted_findings_public_wording as w
 from backend.app.semantic_ir.shared_corpus import digest
 from scripts import build_m14f_education_public_wording as m
+from scripts import build_m14f_public_wording_acceptance as closure
 
 
 class AcceptedFindingsPublicWordingTests(unittest.TestCase):
@@ -43,7 +44,8 @@ class AcceptedFindingsPublicWordingTests(unittest.TestCase):
         self.assertEqual(set(self.outputs), {
             f"{m.OUT}/public_wording_candidate_package.json", f"{m.OUT}/review_package.json"})
         self.assertEqual({p.name for p in (m.ROOT / m.OUT).iterdir()}, {
-            "public_wording_candidate_package.json", "review_package.json"})
+            "public_wording_candidate_package.json", "review_package.json",
+            "human_public_wording_prominence_authority.json", "accepted_public_copy.json"})
         for name, content in self.outputs.items():
             self.assertEqual((m.ROOT / name).read_bytes().replace(b"\r\n", b"\n"), content)
         w.validate_public_wording(
@@ -341,6 +343,193 @@ class AcceptedFindingsPublicWordingTests(unittest.TestCase):
                           side_effect=[f"{m.M14D}/accepted_behavioral_findings.json\n", ""]):
             with self.assertRaisesRegex(w.PublicWordingReviewError, "scope violation"):
                 m.validate_scope()
+
+
+class M14FPublicWordingAcceptanceTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.candidate, cls.review = closure.load_reviewed_artifacts()
+        cls.outputs = closure.build_outputs()
+        cls.authority = json.loads(cls.outputs[closure.AUTHORITY_PATH])
+        cls.accepted = json.loads(cls.outputs[closure.ACCEPTED_PATH])
+
+    def test_reviewed_candidate_and_review_packages_remain_byte_exact(self):
+        for path in (closure.CANDIDATE_PATH, closure.REVIEW_PATH):
+            reviewed = subprocess.check_output(
+                ["git", "show", f"{closure.REVIEWED}:{path}"], cwd=m.ROOT)
+            self.assertEqual((m.ROOT / path).read_bytes(), reviewed)
+        self.assertEqual(digest(self.candidate), closure.CANDIDATE_DOCUMENT_SHA)
+        self.assertEqual(self.candidate["package_sha256"], closure.CANDIDATE_PACKAGE_SHA)
+        self.assertEqual(digest(self.review), closure.REVIEW_DOCUMENT_SHA)
+        self.assertEqual(self.review["review_package_sha256"], closure.REVIEW_PACKAGE_SHA)
+
+    def test_four_exact_accept_as_written_decisions_and_authority_bindings(self):
+        subject = self.authority["subject"]
+        self.assertEqual(subject["pr_number"], 180)
+        self.assertEqual(subject["baseline_main_sha"], m.BASE)
+        self.assertEqual(subject["reviewed_candidate_head"], closure.REVIEWED)
+        self.assertEqual(subject["decision_source"],
+                         "user_supplied_M14F_human_product_review_PR180")
+        self.assertEqual(subject["decision_accounting"], {
+            "accept_wording_as_written": 4, "revised": 0, "rejected": 0})
+        self.assertEqual({row["wording_item_id"]: row["reviewed_wording_item_sha256"]
+                          for row in subject["wording_decisions"]}, closure.ITEM_SHAS)
+        self.assertTrue(all(row["decision"] == "accept_wording_as_written"
+                            for row in subject["wording_decisions"]))
+        self.assertEqual(subject["upstream_accepted_subjects"], closure.UPSTREAM_SUBJECTS)
+        self.assertEqual(subject["accepted_semantic_source_binding"],
+                         self.candidate["subject"]["accepted_source_binding"])
+        self.assertEqual(self.authority["authority_subject_sha256"], digest(subject))
+
+    def test_option_a_is_the_single_accepted_main_takeaway(self):
+        authority = self.authority["subject"]["prominence_decision"]
+        accepted = self.accepted["subject"]
+        self.assertEqual(authority["option"], "A")
+        self.assertEqual(authority["decision"], "accept_main_takeaway")
+        self.assertEqual(authority["wording_item_id"], m.OVERVIEW)
+        self.assertEqual(accepted["selected_main_takeaway_count"], 1)
+        self.assertEqual(accepted["selected_main_takeaway_wording_item_id"], m.OVERVIEW)
+        self.assertEqual(accepted["prominence_decision"], authority)
+        self.assertEqual(authority["record_context"], m.prominence_review()["record_context"])
+        self.assertEqual(authority["standalone_finding_preserved"], m.BARGAINING)
+
+    def test_accepted_artifact_copies_all_four_reviewed_records_unchanged(self):
+        source_items = self.candidate["subject"]["wording_items"]
+        subject = self.accepted["subject"]
+        self.assertIs(self.accepted["accepted"], True)
+        self.assertIs(self.accepted["canonical_public_copy"], True)
+        self.assertIs(self.accepted["public"], False)
+        self.assertIs(self.accepted["production_selectable"], False)
+        self.assertEqual(subject["accepted_wording_count"], 4)
+        self.assertEqual(subject["accepted_wording_records"], source_items)
+        self.assertEqual(subject["wording_item_digests"], closure.ITEM_SHAS)
+        self.assertTrue(all(item["candidate_state"] == "proposed_not_accepted"
+                            and item["accepted"] is False and item["authorizing"] is False
+                            for item in subject["accepted_wording_records"]))
+        self.assertIn("downstream delegation",
+                      subject["copied_candidate_downstream_flag_interpretation"])
+        self.assertIn("do not negate the explicit human wording and prominence decisions",
+                      subject["copied_candidate_downstream_flag_interpretation"])
+        self.assertEqual(subject["human_public_wording_prominence_authority"]
+                         ["authority_subject_sha256"], self.authority["authority_subject_sha256"])
+        self.assertEqual(self.accepted["accepted_public_copy_subject_sha256"], digest(subject))
+
+    def test_exact_sources_lineage_and_all_eighteen_limitations_survive(self):
+        subject = self.accepted["subject"]
+        items = self.candidate["subject"]["wording_items"]
+        self.assertEqual(subject["semantic_sources_by_wording_item"], [
+            {"wording_item_id": item["wording_item_id"],
+             "semantic_source_id": item["semantic_source_id"],
+             "semantic_source": item["semantic_source"]} for item in items])
+        self.assertEqual(subject["source_lineage_by_wording_item"], [
+            {"wording_item_id": item["wording_item_id"],
+             "derived_lineage": item["derived_lineage"]} for item in items])
+        self.assertEqual(subject["limitation_treatments_by_wording_item"],
+                         closure.limitation_rows(self.candidate))
+        treatments = [row for item in subject["limitation_treatments_by_wording_item"]
+                      for row in item["limitation_treatments"]]
+        self.assertEqual(len(treatments), 18)
+        retained = [row for row in treatments if row["treatment"] == "retained_public_copy"]
+        compressed = [row for row in treatments if row["treatment"] == "compressed_or_omitted"]
+        self.assertEqual((len(retained), len(compressed)), (7, 11))
+        self.assertTrue(all(row["public_copy"] and row["reason"] is None for row in retained))
+        self.assertTrue(all(row["public_copy"] is None and row["reason"] for row in compressed))
+
+    def test_behavioral_mixed_episode_and_not_voting_accounting_remain_exact(self):
+        subject = self.accepted["subject"]
+        self.assertEqual(subject["lineage_accounting"], {
+            "behavioral_findings": 3, "behavioral_episodes": 5, "behavioral_actions": 6,
+            "overview_source_findings": 2, "overview_episodes": 3, "overview_actions": 4,
+            "full_issue_episodes": 16, "full_issue_actions": 17})
+        self.assertEqual(subject["standalone_behavioral_finding"], {
+            "source_finding_id": m.BARGAINING, "wording_item_id": m.BARGAINING_ITEM,
+            "disposition": "independent_behavioral_finding_outside_main_takeaway"})
+        self.assertEqual(subject["hr1048_mixed_episode"]["episodes"], 1)
+        self.assertEqual(subject["hr1048_mixed_episode"]["actions"], 2)
+        receipt = subject["excluded_non_directional_receipts"][0]
+        self.assertIn("house:119:1:312", receipt["action_ids"])
+        self.assertIn("Not Voting", receipt["reason"])
+
+    def test_acceptance_effect_does_not_delegate_operational_authority(self):
+        for subject in (self.authority["subject"], self.accepted["subject"]):
+            self.assertEqual(subject["authority_effect"],
+                             "canonical_internal_public_copy_and_main_takeaway_selection_only")
+            self.assertEqual(subject["substantive_boundary"], closure.BOUNDARY)
+            self.assertEqual(subject["downstream_operational_authorizations"],
+                             closure.DOWNSTREAM_DENIED)
+            self.assertTrue(all(value is False for value in
+                                subject["downstream_operational_authorizations"].values()))
+            self.assertNotIn("public_wording_acceptance",
+                             subject["downstream_operational_authorizations"])
+            self.assertNotIn("main_takeaway_prominence_acceptance",
+                             subject["downstream_operational_authorizations"])
+
+    def test_mutated_reviewed_candidate_cannot_be_accepted_even_if_resealed(self):
+        for mutation in ("sha", "text", "limitation", "semantic", "lineage"):
+            candidate = deepcopy(self.candidate)
+            item = candidate["subject"]["wording_items"][0]
+            if mutation == "sha":
+                item["wording_item_sha256"] = "0" * 64
+            elif mutation == "text":
+                item["primary_sentence"] += " Changed."
+            elif mutation == "limitation":
+                item["limitation_treatments"].pop()
+            elif mutation == "semantic":
+                item["semantic_source"]["accepted_record_sha256"] = "0" * 64
+            else:
+                item["derived_lineage"]["action_ids"].pop()
+            item["wording_item_sha256"] = ("0" * 64 if mutation == "sha" else digest(
+                {key: value for key, value in item.items() if key != "wording_item_sha256"}))
+            candidate["package_sha256"] = digest(
+                {key: value for key, value in candidate.items() if key != "package_sha256"})
+            with self.subTest(mutation=mutation), self.assertRaises(w.PublicWordingReviewError):
+                closure.expected_authority(candidate, self.review)
+
+    def test_resealed_authority_or_accepted_tampering_fails_closed(self):
+        for mutation in ("decision", "option", "second_main_takeaway", "text", "limitation",
+                         "semantic", "lineage", "operational_authority"):
+            authority, accepted = deepcopy(self.authority), deepcopy(self.accepted)
+            accepted_subject = accepted["subject"]
+            if mutation == "decision":
+                authority["subject"]["wording_decisions"][0]["decision"] = "revise"
+            elif mutation == "option":
+                authority["subject"]["prominence_decision"]["option"] = "B"
+            elif mutation == "second_main_takeaway":
+                accepted_subject["selected_main_takeaway_count"] = 2
+            elif mutation == "text":
+                accepted_subject["accepted_wording_records"][0]["primary_sentence"] += " Changed."
+            elif mutation == "limitation":
+                accepted_subject["limitation_treatments_by_wording_item"][0][
+                    "limitation_treatments"].pop()
+            elif mutation == "semantic":
+                accepted_subject["semantic_sources_by_wording_item"][0][
+                    "semantic_source_id"] = m.BARGAINING
+            elif mutation == "lineage":
+                accepted_subject["source_lineage_by_wording_item"][0][
+                    "derived_lineage"]["action_ids"].pop()
+            else:
+                accepted_subject["downstream_operational_authorizations"]["publication"] = True
+            authority["authority_subject_sha256"] = digest(authority["subject"])
+            accepted["accepted_public_copy_subject_sha256"] = digest(accepted_subject)
+            with self.subTest(mutation=mutation), self.assertRaises(w.PublicWordingReviewError):
+                closure.validate_artifacts(self.candidate, self.review, authority, accepted)
+
+    def test_exact_reproduction_write_once_and_closure_scope(self):
+        for name, content in self.outputs.items():
+            self.assertEqual((m.ROOT / name).read_bytes(), content)
+        closure.validate_artifacts(self.candidate, self.review, self.authority, self.accepted)
+        original = (m.ROOT / closure.AUTHORITY_PATH).read_bytes()
+        with self.assertRaises(FileExistsError):
+            closure.record_authority(self.candidate, self.review)
+        self.assertEqual((m.ROOT / closure.AUTHORITY_PATH).read_bytes(), original)
+        protected = (closure.CANDIDATE_PATH, closure.REVIEW_PATH, m.BINDING.findings_path,
+                     m.BINDING.synthesis_path, "frontend/app/page.tsx")
+        for path in protected:
+            with self.subTest(path=path), patch.object(
+                    closure.subprocess, "check_output", side_effect=[path + "\n", ""]):
+                with self.assertRaisesRegex(w.PublicWordingReviewError,
+                                            "acceptance scope violation"):
+                    closure.validate_scope()
 
 
 if __name__ == "__main__":
