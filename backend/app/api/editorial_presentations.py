@@ -27,6 +27,11 @@ from app.editorial_presentations.education_workforce_integration_candidate impor
     load_education_workforce_site_integration_candidate,
     select_education_workforce_site_integration_preview,
 )
+from app.editorial_presentations.education_workforce_m14g_integration_candidate import (
+    M14G_PREVIEW_TOKEN,
+    load_m14g_candidate,
+    select_m14g_preview,
+)
 
 
 router = APIRouter()
@@ -44,6 +49,11 @@ M13M_CANDIDATE_PATH = (
     Path(__file__).resolve().parents[3]
     / "docs/editorial/full_record_reviews/site_integration_candidates/"
     "f000477_education_workforce_119_v1/site_integration_candidate.json"
+)
+M14G_CANDIDATE_PATH = (
+    Path(__file__).resolve().parents[3]
+    / "docs/editorial/site_integration_candidates/"
+    "f000477_education_workforce_m14g_v1/site_integration_candidate.json"
 )
 
 
@@ -65,10 +75,19 @@ def get_editorial_presentations(
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
     candidate: str | None = Query(
         default=None,
-        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
+        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce|m14g-education-workforce)$",
     ),
 ) -> dict[str, Any]:
+    legacy_preview_enabled = os.getenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW") == "1"
+    m14g_preview_enabled = os.getenv("EDITORIAL_PRESENTATION_PREVIEW") == "1"
     profile = get_legislator_profile(legislator_id=legislator_id)
+    if (
+        profile is None
+        and m14g_preview_enabled
+        and candidate == M14G_PREVIEW_TOKEN
+        and legislator_id == "leg_valerie_p_foushee"
+    ):
+        profile = {"bioguide_id": "F000477"}
     if profile is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     public_result = select_public_presentations(
@@ -77,28 +96,35 @@ def get_editorial_presentations(
         member_bioguide_id=str(profile["bioguide_id"]),
         scope=scope,
     )
-    if os.getenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW") != "1":
+    if not legacy_preview_enabled and not m14g_preview_enabled:
         return public_result
     try:
-        if candidate == M11M_PREVIEW_TOKEN:
+        if candidate == M11M_PREVIEW_TOKEN and legacy_preview_enabled:
             return select_site_integration_preview(
                 load_site_integration_candidate(M11M_CANDIDATE_PATH),
                 legislator_id=legislator_id,
                 member_bioguide_id=str(profile["bioguide_id"]),
                 scope=scope,
             )
-        if candidate == M12M_PREVIEW_TOKEN:
+        if candidate == M12M_PREVIEW_TOKEN and legacy_preview_enabled:
             return select_environment_site_integration_preview(
                 load_environment_site_integration_candidate(M12M_CANDIDATE_PATH),
                 legislator_id=legislator_id,
                 member_bioguide_id=str(profile["bioguide_id"]),
                 scope=scope,
             )
-        if candidate == M13M_PREVIEW_TOKEN:
+        if candidate == M13M_PREVIEW_TOKEN and legacy_preview_enabled:
             return select_education_workforce_site_integration_preview(
                 load_education_workforce_site_integration_candidate(
                     M13M_CANDIDATE_PATH
                 ),
+                legislator_id=legislator_id,
+                member_bioguide_id=str(profile["bioguide_id"]),
+                scope=scope,
+            )
+        if candidate == M14G_PREVIEW_TOKEN and m14g_preview_enabled:
+            return select_m14g_preview(
+                load_m14g_candidate(M14G_CANDIDATE_PATH),
                 legislator_id=legislator_id,
                 member_bioguide_id=str(profile["bioguide_id"]),
                 scope=scope,

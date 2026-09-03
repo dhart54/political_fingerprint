@@ -12,7 +12,15 @@ from app.api.editorial_presentations import (
     M11M_CANDIDATE_PATH,
     M12M_CANDIDATE_PATH,
     M13M_CANDIDATE_PATH,
+    M14G_CANDIDATE_PATH,
     _load_publication_rows,
+)
+from app.editorial_presentations.education_workforce_m14g_integration_candidate import (
+    M14G_ARTIFACT_ID,
+    M14G_PREVIEW_TOKEN,
+    load_m14g_candidate,
+    merge_m14g_preview_evidence,
+    merge_m14g_preview_positions,
 )
 from app.editorial_presentations.integration_candidate import (
     M11M_ARTIFACT_ID,
@@ -86,6 +94,18 @@ def _m13m_preview(candidate: str | None) -> dict[str, object] | None:
         return None
 
 
+def _m14g_preview(candidate: str | None) -> dict[str, object] | None:
+    if not (
+        candidate == M14G_PREVIEW_TOKEN
+        and os.getenv("EDITORIAL_PRESENTATION_PREVIEW") == "1"
+    ):
+        return None
+    try:
+        return load_m14g_candidate(M14G_CANDIDATE_PATH)
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
+
+
 def _active_site_integration_publication(
     *,
     member_bioguide_id: str,
@@ -123,6 +143,10 @@ def _merge_site_integration_evidence(
         return merge_education_workforce_preview_evidence(
             base_response, candidate, domain=domain, scope=scope
         )
+    if artifact_id == M14G_ARTIFACT_ID:
+        return merge_m14g_preview_evidence(
+            base_response, candidate, domain=domain, scope=scope
+        )
     raise ValueError("unknown active site-integration candidate identity")
 
 
@@ -143,6 +167,10 @@ def _merge_site_integration_positions(
         )
     if artifact_id == M13M_ARTIFACT_ID:
         return merge_education_workforce_preview_positions(
+            base_response, governed_evidence=governed_evidence
+        )
+    if artifact_id == M14G_ARTIFACT_ID:
+        return merge_m14g_preview_positions(
             base_response, governed_evidence=governed_evidence
         )
     raise ValueError("unknown active site-integration candidate identity")
@@ -175,20 +203,30 @@ def get_legislator_positions(
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
     candidate: str | None = Query(
         default=None,
-        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
+        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce|m14g-education-workforce)$",
     ),
 ) -> dict[str, object]:
+    m14g_preview = _m14g_preview(candidate)
     response = get_position_response(legislator_id=legislator_id, scope=scope)
+    if (
+        response is None
+        and m14g_preview is not None
+        and legislator_id == "leg_valerie_p_foushee"
+        and scope in {"119", "all"}
+    ):
+        response = {"legislator_id": legislator_id, "scope": scope, "positions": []}
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
+    if profile is None and m14g_preview is not None and legislator_id == "leg_valerie_p_foushee":
+        profile = {"bioguide_id": "F000477"}
     if profile is None or str(profile["bioguide_id"]) != "F000477":
         return response
 
     previews = {
         "NATIONAL_SECURITY_FOREIGN": _m11m_preview(candidate),
         "ENVIRONMENT_ENERGY": _m12m_preview(candidate),
-        "EDUCATION_WORKFORCE": _m13m_preview(candidate),
+        "EDUCATION_WORKFORCE": m14g_preview or _m13m_preview(candidate),
     }
     try:
         publication_rows = _load_publication_rows()
@@ -234,19 +272,35 @@ def get_legislator_position_evidence(
     scope: str = Query(default="all", pattern="^(all|119|118)$"),
     candidate: str | None = Query(
         default=None,
-        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce)$",
+        pattern="^(m11m-national-security|m12m-environment-energy|m13m-education-workforce|m14g-education-workforce)$",
     ),
 ) -> dict[str, object]:
     normalized_scope = scope if isinstance(scope, str) else "all"
+    normalized_domain = domain.strip().upper()
+    m14g_preview = _m14g_preview(candidate)
     response = get_position_evidence_response(
         legislator_id=legislator_id,
         domain=domain,
         scope=normalized_scope,
     )
+    if (
+        response is None
+        and m14g_preview is not None
+        and legislator_id == "leg_valerie_p_foushee"
+        and normalized_domain == "EDUCATION_WORKFORCE"
+        and normalized_scope in {"119", "all"}
+    ):
+        response = {
+            "legislator_id": legislator_id,
+            "domain": normalized_domain,
+            "scope": normalized_scope,
+            "evidence": [],
+        }
     if response is None:
         raise HTTPException(status_code=404, detail="Evidence not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
-    normalized_domain = domain.strip().upper()
+    if profile is None and m14g_preview is not None and legislator_id == "leg_valerie_p_foushee":
+        profile = {"bioguide_id": "F000477"}
     active_site_candidate = (
         _active_site_integration_publication(
             member_bioguide_id=str(profile["bioguide_id"]),
@@ -293,6 +347,7 @@ def get_legislator_position_evidence(
                 _m11m_preview(candidate),
                 _m12m_preview(candidate),
                 _m13m_preview(candidate),
+                m14g_preview,
             )
             if item is not None
             and item.get("subject", {}).get("issue_id") == normalized_domain

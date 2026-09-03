@@ -1,0 +1,2064 @@
+{
+  "accepted": false,
+  "artifact_id": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+  "authorizing": false,
+  "candidate_subject_sha256": "0757ef9443c1134ca7f12aecf07cc74b6e4e2d37bc646eb2e7ddc8d7ef654de5",
+  "database_writes": false,
+  "deployment": false,
+  "production_selectable": false,
+  "production_writes": false,
+  "public": false,
+  "publication_active": false,
+  "publication_eligible": false,
+  "schema_version": "m14g_site_integration_candidate_v1",
+  "subject": {
+    "accepted_wording_item_sha256s": {
+      "m14f:issue_overview:education_workforce": "57c3ac7a93b136e6057ffee961f6e3a0611d004b5e2fd7a0aeaa6a53002aeae1",
+      "m14f:notable:hr1048_substitute_final": "87caf258fdae8fadc4420402094f0ff763aee85acb2249296dc0a23d8865dc73",
+      "m14f:pattern:china_linked_education_funding": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120",
+      "m14f:pattern:collective_bargaining_continuity": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf"
+    },
+    "baseline_main_sha": "50777a5fd1ce84763e6a294db25578639aa5dce7",
+    "congress": 119,
+    "controls": {
+      "accepted": false,
+      "authorizing": false,
+      "database_writes": false,
+      "deployment": false,
+      "preview_requires_explicit_candidate": true,
+      "preview_requires_server_opt_in": true,
+      "production_selectable": false,
+      "production_writes": false,
+      "public": false,
+      "publication_active": false,
+      "publication_eligible": false
+    },
+    "input_bindings": {
+      "m14d_accepted_ledger": {
+        "file_sha256": "ed6a69db5d1372730b1eeb885efcf0eb2e14f0f2259395d5641cad848d3c33cf",
+        "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json",
+        "subject_sha256": "795027fdcf49a4956b99804be9d44ec7bd233877e4bc76caa4121f7b61df169d"
+      },
+      "m14d_human_authority": {
+        "file_sha256": "4f5d15742c9413c006b19cefd8e727a8f9aaf7593e5f8011c3330a9f9bc743f4",
+        "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/human_behavioral_candidate_authority.json",
+        "subject_sha256": "456d9f6f9577e8604480cdb40a08cb1f92e443ab3e02ff33cb2ecd193ca16638"
+      },
+      "m14f_accepted_public_copy": {
+        "file_sha256": "f8fd154573b3485925c5411281816acec00aad0ebe5b5035630c20099aec094f",
+        "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json",
+        "subject_sha256": "4fed310450608f1465f2617721e7665670d855f70cbcd50471aa46fc7cac0810"
+      },
+      "m14f_human_authority": {
+        "file_sha256": "aa72f4013bc9fb8242fad3f288d4d150d153ecbf8f51b403c485c8df1ad694fb",
+        "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/human_public_wording_prominence_authority.json",
+        "subject_sha256": "9b1962e1d33dd144a609cd9cbcb5114f81c51a8ce4195bc24112ba9fb10d0cfb"
+      },
+      "v2_member_projection": {
+        "file_sha256": "b953741949bee513d915ccba22086e78029daac2f3de6e23a4183fd18da4bb50",
+        "path": "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json",
+        "subject_sha256": "d1ad8f68ca8a419427ce23e6b0c870c02a450de0ae3309df33db691c78e46892"
+      },
+      "v2_promotion_manifest": {
+        "file_sha256": "ac1711994b99cdf5572f384c5f9eda023b085574a7ff4e68540988a784bcaa9b",
+        "path": "docs/editorial/shared_corpora/house_119_v2/promotion_manifest.json",
+        "subject_sha256": "0ec2ffd7e5ee3f86c7386f61b7af5c0682cdbe66fb5d18283ebbfce6139d2298"
+      },
+      "v2_shared_action_core": {
+        "file_sha256": "5eb4ce6a7226918f1f43d76a06e92dce46088d79a5643aa0773c2eb1bcf81a93",
+        "path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+        "subject_sha256": "fc7b376cd3e0b485e0ac28c15ba7a5111a1e41c4855a3cbb99354b4ac04d0aa2"
+      }
+    },
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477",
+    "member_slug": "leg_valerie_p_foushee",
+    "presentation": {
+      "conclusion": null,
+      "coverage_text": "2 linked findings · 4 House votes",
+      "evidence_metadata": {
+        "accepted_episode_count": 16,
+        "accepted_interpreted_action_count": 17,
+        "approved_universe_action_count": 17,
+        "blocked_action_ids": [],
+        "display_action_ids": [
+          "house:119:1:120",
+          "house:119:1:313",
+          "house:119:1:332",
+          "house:119:1:79",
+          "house:119:1:83",
+          "house:119:2:216"
+        ]
+      },
+      "exact_action_receipts": [
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:217",
+          "caveats": [
+            "A reasonable-suspicion flag triggers verification and notice; the proposal does not itself establish that the applicant committed fraud."
+          ],
+          "episode_id": "single-119-hr-7892-2-217",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll217.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:216",
+          "caveats": [
+            "The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result.",
+            "Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis."
+          ],
+          "episode_id": "single-119-hr-5408-2-216",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll216.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+            }
+          ],
+          "canonical_action_id": "house:119:2:184",
+          "caveats": [
+            "The parental-consent clause is limited to minors in elementary or middle grades and the listed school-form changes or sex-based accommodations. The separate use-of-funds prohibition applies to ESEA funds and is not confined by that clause's definition of a covered student.",
+            "EO14168 section 2 defines sex as an unchangeable male/female biological classification and defines gender identity separately; subsection (f) supplies the incorporated gender-ideology definition. That definition also describes requiring institutions to recognize identification as a different sex as establishing that sex. This explanation attributes those classifications to the legal text, without adopting the order's evaluative descriptions or treating its rhetoric as established fact.",
+            "The bill prohibits teaching or advancing concepts related to the incorporated definition. It does not enumerate particular lessons, books or classroom scenarios; the candidate does not invent such applications. Incorporating this definition does not import all other Executive Order directives, and this whole-package choice is not projected onto separate component votes."
+          ],
+          "episode_id": "single-119-hr-2616-2-184",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll184.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:82",
+          "caveats": [
+            "Eligibility is limited to the territorial residents and U.S. nationals defined by the bill and to public institutions receiving assistance under the Higher Education Act."
+          ],
+          "episode_id": "single-119-hr-6472-2-82",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll082.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:47",
+          "caveats": [
+            "The bill states that it does not authorize the Secretary to require additional information or create additional rights beyond those listed."
+          ],
+          "episode_id": "single-119-hr-6359-2-47",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll047.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:31",
+          "caveats": [
+            "The investment rule allows documented nonfinancial tie-breakers when financial factors cannot distinguish alternatives, subject to the bill's conditions. This is an indivisible whole-package choice across four divisions; the candidate does not attribute the House action to any single component."
+          ],
+          "episode_id": "single-119-hr-2988-2-31",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll031.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.govinfo.gov/app/details/2026-01-13"
+            }
+          ],
+          "canonical_action_id": "house:119:2:19",
+          "caveats": [
+            "The governed source is the official House-section Congressional Record at H677-H678 because no House-engrossed text exists for the failed passage; floor advocacy is not used as semantic evidence."
+          ],
+          "episode_id": "single-119-hr-2262-2-19",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll019.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+            }
+          ],
+          "canonical_action_id": "house:119:1:332",
+          "caveats": [
+            "Title 5 exclusions cover State, Defense, Treasury except the Bureau of Engraving and Printing, Veterans Affairs, Justice, Energy except FERC, EPA, USAID, NRC, NSF, USITC, FCC, and GSA. They also cover listed HHS, DHS, Interior and Agriculture units, Commerce's International Trade Administration, and specified information-resource-management offices across executive departments, SSA and OPM. The exact subdivisions are retained in the structured source excerpts, not generalized to all employees of every listed department.",
+            "The order retains Chapter 71 coverage for immediate local employing offices of police officers, security guards and firefighters, except the Bureau of Prisons, and for specified Marshals Service subdivisions. Defense and VA secretaries could restore coverage to subdivisions through certified orders submitted for Federal Register publication within 15 days. Transportation received a separate, non-redelegable power to exclude subdivisions, including FAA, or suspend provisions for certain overseas activities after published determinations; the order does not itself exclude every Transportation employee.",
+            "Foreign Service exclusions cover State subdivisions under the named senior offices plus embassies, consulates, diplomatic missions and consular offices, and USAID overseas missions/field offices and specified administrator/deputy-administrator subdivisions. The complete lists are in EO14251 section 3's structured excerpts.",
+            "The order's directions about non-agency business and pending grievances, arbitral-award exceptions and unfair-labor-practice proceedings apply to affected employees upon termination of their agreements. Its 30-day agency-review report is ancillary to this action explanation. This candidate addresses what the bill would undo in this named order, not current agency execution, litigation outcomes, other orders, or a claim that all earlier labor exclusions disappear."
+          ],
+          "episode_id": "single-119-hr-2550-1-332",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll332.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:315",
+          "caveats": [
+            "The measure extends a federal-land and county-payment program; it is not a general education-funding program."
+          ],
+          "episode_id": "single-119-s-356-1-315",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll315.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:314",
+          "caveats": [
+            "The disclosure rights cover the foreign sources and materials defined by the bill and remain subject to copyright law."
+          ],
+          "episode_id": "single-119-hr-1049-1-314",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll314.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:313",
+          "caveats": [
+            "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship.",
+            "The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality."
+          ],
+          "episode_id": "single-119-hr-1069-1-313",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll313.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:312",
+          "caveats": [
+            "The $10,000 trigger is measured in the aggregate for funds from, or contracts with, a foreign source as specified by the bill."
+          ],
+          "episode_id": "single-119-hr-1005-1-312",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+          "exact_choice_position_effect": "resolved_non_directional",
+          "member_action": "Not Voting",
+          "policy_question": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll312.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:146",
+          "caveats": [
+            "The measure changes Small Business Act program duties; it does not create a general education or workforce-spending program."
+          ],
+          "episode_id": "single-119-hr-1642-1-146",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll146.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:120",
+          "caveats": [
+            "The proposal concerns Department of Homeland Security funds, not all federal education funding, and defines the covered relationships and entities in the bill."
+          ],
+          "episode_id": "single-119-hr-881-1-120",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll120.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:83",
+          "caveats": [
+            "This was a vote on the whole package. The candidate does not attribute the House action to any one component or to H.Amdt. 12."
+          ],
+          "episode_id": "hr-1048-amendment-and-final-passage",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll083.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.govinfo.gov/app/details/CREC-2025-03-25-pt1-PgH1241"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://uscode.house.gov/"
+            }
+          ],
+          "canonical_action_id": "house:119:1:79",
+          "caveats": [
+            "This is the printed substitute amendment, not the parent bill's meaning. It replaces page 1, line 1 through page 60, line 6; adoption at the amendment stage would not itself enact the substitute.",
+            "Reports identify amounts, source/country and purpose or intended use. Institutions must retain agreement copies until the latest of four years after agreement, termination, or applicable state retention requirements; produce them for audits or investigations; and translate contracts as applicable. Restricted or conditional gifts also require amounts, dates, conditions, and specified source-country information.",
+            "A state or other federal report can replace the disclosure report only if it contains all required information for the same or an equivalent period; state assurances may be required. Institutions must be able to revise past reports to correct errors.",
+            "For a knowing or willful disclosure or agreement-copy/translation violation, the Secretary may impose $250 to 50% of the gift or contract amount; three consecutive years permit an additional fine of $100,000 to the gift or contract amount. Knowing or willful foreign-ownership-report violations can incur up to 25% of Higher Education Act funding excluding Title IV student aid, with an additional fine subject to the same 25% cap for three consecutive years of violations. Administrative errors lasting three consecutive years can incur $250 to 50% of the gift or contract amount; two consecutive years without the required gift/contract report can trigger a compliance plan. These are the printed statutory bounds, not a prediction of penalties imposed.",
+            "Excluded transactions include student-attendance payments or scholarships from a natural person acting individually, not for another person or entity except the student, without another contract beyond the institution-student attendance agreement; specified intellectual-property licensing or technical assistance not identified as a national-security risk; and funds solely for clinical trials. A U.S.-located institution's purchases of property or services from a foreign source are outside the contract definition. Gifts and contracts through an institution's supporting entities are included. Restricted or conditional gifts/contracts include terms concerning faculty employment, academic or research units/programs, student selection/admission, or aid restricted by the listed country, religion, sex, ethnic-origin or political-opinion categories.",
+            "The amendment also incorporates HEA487(e)(2)(B)(ii) gift exceptions: loan/default-prevention/financial-literacy materials and programs; qualifying professional-training food, refreshments and materials; comparable student-employee loan benefits; institution-controlled, non-promotional loan counseling; specified lender/servicer/guarantor philanthropy or contributions without a loan-related advantage; and state-administered education aid. These categories retain the conditions in the incorporated statute, governed here in its 2024 U.S. Code edition.",
+            "Institutions must designate a compliance officer, and the Department must maintain an internal, conflict-free contact for compliance assistance and database improvements. Data sharing with outside persons, including political appointees and personnel detailed from other agencies, is limited to expressly authorized or public information. Database user-group composition and meeting mechanics are ancillary to the explanation, not absent from the governed evidence.",
+            "Negotiated rules must align with other agencies' reporting under the CHIPS Act, the Research and Development, Competition, and Innovation Act, and OSTP guidance including the specified NSPM-33 implementation guidance. Alignment is a rulemaking duty, not an assertion that all reporting regimes become identical. The substitute links Section 117's effective date to the regulations and separately specifies a database deadline relative to the first July 31 after enactment; this candidate does not invent a resolution of that timing interaction."
+          ],
+          "episode_id": "hr-1048-amendment-and-final-passage",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll079.xml"
+            }
+          ]
+        },
+        {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:68",
+          "caveats": [
+            "The extension applies only to the statutes and pandemic unemployment programs listed in the bill and does not revive a case whose limitations period had already expired before enactment."
+          ],
+          "episode_id": "single-119-hr-1156-1-68",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll068.xml"
+            }
+          ]
+        }
+      ],
+      "issue_id": "EDUCATION_WORKFORCE",
+      "limitations": [
+        {
+          "body": "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed.",
+          "heading": "Final H.R. 1048 vote"
+        }
+      ],
+      "noncounting_controls": [],
+      "notable_choices": [
+        {
+          "action_ids": [
+            "house:119:1:79",
+            "house:119:1:83"
+          ],
+          "direction": "mixed",
+          "direction_label": "Mixed",
+          "direction_symbol": "±",
+          "episode_ids": [
+            "hr-1048-amendment-and-final-passage"
+          ],
+          "evidence_count_label": "1 legislative episode · 2 House votes",
+          "limitations": [
+            "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed."
+          ],
+          "mapping": {
+            "raw_yea_nay_maps_to_direction": false,
+            "statement_basis": "accepted_m14f_public_copy",
+            "wording_item_subject_sha256": "87caf258fdae8fadc4420402094f0ff763aee85acb2249296dc0a23d8865dc73"
+          },
+          "primary_sentence": "Foushee supported a proposed replacement version of H.R. 1048 that would set foreign-gift and contract reporting thresholds for colleges, make reports publicly searchable, allow some equivalent reporting and specified exclusions, and impose fines or compliance plans for some violations. She then opposed the broader final H.R. 1048 package, which also included contract restrictions and other reporting and enforcement provisions. The final vote does not identify which part she opposed.",
+          "public_supporting_action_ids": [
+            "house:119:1:79",
+            "house:119:1:83"
+          ],
+          "public_supporting_episode_ids": [
+            "hr-1048-amendment-and-final-passage"
+          ],
+          "public_title": "Supported a reporting-focused replacement, opposed the final H.R. 1048 package",
+          "secondary_clarification": "",
+          "semantic_lineage_action_ids": [
+            "house:119:1:79",
+            "house:119:1:83"
+          ],
+          "semantic_lineage_episode_ids": [
+            "hr-1048-amendment-and-final-passage"
+          ],
+          "semantic_source_ids": [
+            "m14d:hr1048_substitute_and_package"
+          ],
+          "show_direction": true,
+          "surface": "notable_choice",
+          "title": "Supported a reporting-focused replacement, opposed the final H.R. 1048 package",
+          "wording_item_id": "m14f:notable:hr1048_substitute_final"
+        }
+      ],
+      "overview": {
+        "action_ids": [
+          "house:119:1:120",
+          "house:119:1:313",
+          "house:119:1:79",
+          "house:119:1:83"
+        ],
+        "direction": null,
+        "direction_label": null,
+        "direction_symbol": null,
+        "episode_ids": [
+          "hr-1048-amendment-and-final-passage",
+          "single-119-hr-1069-1-313",
+          "single-119-hr-881-1-120"
+        ],
+        "evidence_count_label": "2 linked findings · 4 House votes",
+        "limitations": [],
+        "mapping": {
+          "raw_yea_nay_maps_to_direction": false,
+          "statement_basis": "accepted_m14f_public_copy",
+          "wording_item_subject_sha256": "57c3ac7a93b136e6057ffee961f6e3a0611d004b5e2fd7a0aeaa6a53002aeae1"
+        },
+        "primary_sentence": "On foreign influence in education, Foushee opposed two bills that would cut off specified federal funding to schools or colleges over certain China-linked ties or Chinese-government-backed support. She also supported a proposed replacement version of H.R. 1048 that would require detailed foreign-gift and contract reporting, public disclosure, and penalties for some violations. She later opposed the broader final H.R. 1048 package, so that vote does not show which part of the final bill she rejected.",
+        "public_supporting_action_ids": [
+          "house:119:1:120",
+          "house:119:1:313",
+          "house:119:1:79",
+          "house:119:1:83"
+        ],
+        "public_supporting_episode_ids": [
+          "hr-1048-amendment-and-final-passage",
+          "single-119-hr-1069-1-313",
+          "single-119-hr-881-1-120"
+        ],
+        "public_title": "Education & Workforce",
+        "secondary_clarification": "",
+        "semantic_lineage_action_ids": [
+          "house:119:1:120",
+          "house:119:1:313",
+          "house:119:1:79",
+          "house:119:1:83"
+        ],
+        "semantic_lineage_episode_ids": [
+          "hr-1048-amendment-and-final-passage",
+          "single-119-hr-1069-1-313",
+          "single-119-hr-881-1-120"
+        ],
+        "semantic_source_ids": [
+          "m14e:education_foreign_influence_mechanism_contrast"
+        ],
+        "show_direction": false,
+        "surface": "issue_overview",
+        "title": "Education & Workforce",
+        "wording_item_id": "m14f:issue_overview:education_workforce"
+      },
+      "policy_episodes": [],
+      "policy_trajectories": [],
+      "provenance": {
+        "artifact_id": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+        "artifact_version": 1,
+        "reviewed_wording_sha256": "4fed310450608f1465f2617721e7665670d855f70cbcd50471aa46fc7cac0810"
+      },
+      "public_status_label": "Detached review preview",
+      "repeated_patterns": [
+        {
+          "action_ids": [
+            "house:119:1:120",
+            "house:119:1:313"
+          ],
+          "direction": null,
+          "direction_label": null,
+          "direction_symbol": null,
+          "episode_ids": [
+            "single-119-hr-881-1-120",
+            "single-119-hr-1069-1-313"
+          ],
+          "evidence_count_label": "2 bills · 2 House votes",
+          "limitations": [
+            "H.R. 881 concerned Department of Homeland Security funding for colleges, while H.R. 1069 concerned covered federal education funds for K–12 schools. Neither covered all federal funding.",
+            "The bills covered different China-linked relationships and used different waiver rules; H.R. 1069's funding restriction would begin one year after enactment."
+          ],
+          "mapping": {
+            "raw_yea_nay_maps_to_direction": false,
+            "statement_basis": "accepted_m14f_public_copy",
+            "wording_item_subject_sha256": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120"
+          },
+          "primary_sentence": "Foushee opposed H.R. 881, which would generally make colleges with specified ties to named China-linked programs or entities ineligible for Department of Homeland Security funding, and H.R. 1069, which would generally withhold covered federal education funds from K–12 schools with specified Chinese-government-backed partnerships or resources. Both bills included waiver routes, but they covered different sectors, funding streams, and conditions.",
+          "public_supporting_action_ids": [
+            "house:119:1:120",
+            "house:119:1:313"
+          ],
+          "public_supporting_episode_ids": [
+            "single-119-hr-881-1-120",
+            "single-119-hr-1069-1-313"
+          ],
+          "public_title": "Opposed two China-linked education funding restrictions",
+          "secondary_clarification": "",
+          "semantic_lineage_action_ids": [
+            "house:119:1:120",
+            "house:119:1:313"
+          ],
+          "semantic_lineage_episode_ids": [
+            "single-119-hr-881-1-120",
+            "single-119-hr-1069-1-313"
+          ],
+          "semantic_source_ids": [
+            "m14d:covered_china_linked_funding_exclusions"
+          ],
+          "show_direction": false,
+          "surface": "repeated_pattern",
+          "title": "Opposed two China-linked education funding restrictions",
+          "wording_item_id": "m14f:pattern:china_linked_education_funding"
+        },
+        {
+          "action_ids": [
+            "house:119:1:332",
+            "house:119:2:216"
+          ],
+          "direction": null,
+          "direction_label": null,
+          "direction_symbol": null,
+          "episode_ids": [
+            "single-119-hr-2550-1-332",
+            "single-119-hr-5408-2-216"
+          ],
+          "evidence_count_label": "2 bills · 2 House votes",
+          "limitations": [
+            "H.R. 2550 concerned federal and Foreign Service labor-management rules, while H.R. 5408 concerned private-sector collective bargaining under federal labor law.",
+            "Preserving existing federal union agreements is different from maintaining employment terms and a duty to bargain during first-contract negotiations.",
+            "H.R. 5408 also required mediation and binding arbitration; support for either whole bill does not show which individual provision drove Foushee's vote."
+          ],
+          "mapping": {
+            "raw_yea_nay_maps_to_direction": false,
+            "statement_basis": "accepted_m14f_public_copy",
+            "wording_item_subject_sha256": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf"
+          },
+          "primary_sentence": "Foushee supported H.R. 2550, which would reverse a 2025 executive order that excluded specified federal agencies and units from federal or Foreign Service labor-management rules and preserve covered union agreements already in effect. She also supported H.R. 5408, which would require continued bargaining and unchanged employment terms while workers' representatives and employers negotiated a first contract, with mediation and binding arbitration if talks remained unresolved.",
+          "public_supporting_action_ids": [
+            "house:119:1:332",
+            "house:119:2:216"
+          ],
+          "public_supporting_episode_ids": [
+            "single-119-hr-2550-1-332",
+            "single-119-hr-5408-2-216"
+          ],
+          "public_title": "Supported keeping collective bargaining in force",
+          "secondary_clarification": "",
+          "semantic_lineage_action_ids": [
+            "house:119:1:332",
+            "house:119:2:216"
+          ],
+          "semantic_lineage_episode_ids": [
+            "single-119-hr-2550-1-332",
+            "single-119-hr-5408-2-216"
+          ],
+          "semantic_source_ids": [
+            "m14d:continuity_of_collective_bargaining"
+          ],
+          "show_direction": false,
+          "surface": "repeated_pattern",
+          "title": "Supported keeping collective bargaining in force",
+          "wording_item_id": "m14f:pattern:collective_bargaining_continuity"
+        }
+      ],
+      "requested_scope": "119",
+      "review_state": {
+        "candidate_preview": true,
+        "complete_episode_count": 16,
+        "congress_scope": [
+          119
+        ],
+        "full_issue_synthesis_eligible": false,
+        "review_scope": "full_defined_issue_record",
+        "semantic_tier": "reviewed_conclusion",
+        "total_recorded_actions": 17
+      },
+      "reviewed_action_ids": [
+        "house:119:1:120",
+        "house:119:1:146",
+        "house:119:1:312",
+        "house:119:1:313",
+        "house:119:1:314",
+        "house:119:1:315",
+        "house:119:1:332",
+        "house:119:1:68",
+        "house:119:1:79",
+        "house:119:1:83",
+        "house:119:2:184",
+        "house:119:2:19",
+        "house:119:2:216",
+        "house:119:2:217",
+        "house:119:2:31",
+        "house:119:2:47",
+        "house:119:2:82"
+      ],
+      "reviewed_scope": "119",
+      "scope_boundary": "This preview covers Valerie Foushee's reviewed 119th-Congress Education & Workforce record.",
+      "syntheses": [],
+      "teaser": "On foreign influence in education, Foushee opposed two bills that would cut off specified federal funding to schools or colleges over certain China-linked ties or Chinese-government-backed support. She also supported a proposed replacement version of H.R. 1048 that would require detailed foreign-gift and contract reporting, public disclosure, and penalties for some violations. She later opposed the broader final H.R. 1048 package, so that vote does not show which part of the final bill she rejected.",
+      "tier": "reviewed_conclusion",
+      "tier_badge": "Full issue review"
+    },
+    "preview_isolation": {
+      "frontend_environment": "NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW=m14g-education-workforce",
+      "server_environment": "EDITORIAL_PRESENTATION_PREVIEW=1",
+      "supported_scopes": [
+        "119",
+        "all"
+      ]
+    },
+    "preview_token": "m14g-education-workforce",
+    "receipt_projections": [
+      {
+        "action_core_sha256": "3c46663904ee01ec8a982077dc4f4971277b8bf9471a255e253dbab97376726e",
+        "canonical_action_id": "house:119:2:217",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 7892",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:217",
+          "caveats": [
+            "A reasonable-suspicion flag triggers verification and notice; the proposal does not itself establish that the applicant committed fraud."
+          ],
+          "episode_id": "single-119-hr-7892-2-217",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll217.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "3c46663904ee01ec8a982077dc4f4971277b8bf9471a255e253dbab97376726e",
+        "plain_english_summary": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+        "position": "nay",
+        "question": "Every FAFSA filed from October 1, 2026 would be screened for indicators of identity fraud. If an application were flagged, a college could not release federal aid until it completed an approved identity check and notified the Department.",
+        "roll_call_id": "house:119:2:217",
+        "rollcall_number": 217,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr7892/BILLS-119hr7892eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "505459262bad62b473d2b37c1b1dd1620122c0570d0f1a55c6abc567209e6b3a",
+              "raw_sha256": "505459262bad62b473d2b37c1b1dd1620122c0570d0f1a55c6abc567209e6b3a",
+              "source_id": "congress-text:119:hr:7892:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "0c55522d8e62644af722c5297192ca15fe46d0743c9094905fef34be75a953d1",
+              "raw_sha256": "0c55522d8e62644af722c5297192ca15fe46d0743c9094905fef34be75a953d1",
+              "source_id": "clerk:119:2:217",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-06-10"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll217.xml",
+        "uncertainty_note": "A reasonable-suspicion flag triggers verification and notice; the proposal does not itself establish that the applicant committed fraud.",
+        "vote_date": "2026-06-10",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "9c66f5f3af195b3d92de5917271e7bb542060f1ee4204a12c8690da0dd6792ca",
+        "canonical_action_id": "house:119:2:216",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 5408",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:216",
+          "caveats": [
+            "The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result.",
+            "Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis."
+          ],
+          "episode_id": "single-119-hr-5408-2-216",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll216.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "9c66f5f3af195b3d92de5917271e7bb542060f1ee4204a12c8690da0dd6792ca",
+        "plain_english_summary": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+        "position": "yea",
+        "question": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+        "roll_call_id": "house:119:2:216",
+        "rollcall_number": 216,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr5408/BILLS-119hr5408eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3",
+              "raw_sha256": "c8c9cb47c7dc6e009ec87b4b1af05b3f4df16984761c47095b5c5b6a4dd859b3",
+              "source_id": "congress-text:119:hr:5408:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25",
+              "raw_sha256": "cc297fa4ef3b86cf4ca0b28ed321379ee1e7d8b7b335078e411fb19ffcb75a25",
+              "source_id": "clerk:119:2:216",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-06-09"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll216.xml",
+        "uncertainty_note": "The timetable applies to initial collective-bargaining agreements; the employment-term maintenance and continuing bargaining duties are separate amendments to the general bargaining provision. The candidate does not predict when agreement would be reached or what terms would result. Section 4's GAO report on the time from recognition or certification to a first contract is treated as ancillary and non-material to this action explanation; it is omitted from the operative synthesis.",
+        "vote_date": "2026-06-09",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "dd84565ab1360dfb93458db23a5293a9009d272c5b0ce8a1c3d7dc24daf033fb",
+        "canonical_action_id": "house:119:2:184",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 2616",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+            }
+          ],
+          "canonical_action_id": "house:119:2:184",
+          "caveats": [
+            "The parental-consent clause is limited to minors in elementary or middle grades and the listed school-form changes or sex-based accommodations. The separate use-of-funds prohibition applies to ESEA funds and is not confined by that clause's definition of a covered student.",
+            "EO14168 section 2 defines sex as an unchangeable male/female biological classification and defines gender identity separately; subsection (f) supplies the incorporated gender-ideology definition. That definition also describes requiring institutions to recognize identification as a different sex as establishing that sex. This explanation attributes those classifications to the legal text, without adopting the order's evaluative descriptions or treating its rhetoric as established fact.",
+            "The bill prohibits teaching or advancing concepts related to the incorporated definition. It does not enumerate particular lessons, books or classroom scenarios; the candidate does not invent such applications. Incorporating this definition does not import all other Executive Order directives, and this whole-package choice is not projected onto separate component votes."
+          ],
+          "episode_id": "single-119-hr-2616-2-184",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll184.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "dd84565ab1360dfb93458db23a5293a9009d272c5b0ce8a1c3d7dc24daf033fb",
+        "plain_english_summary": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+        "position": "nay",
+        "question": "Public schools receiving ESEA funds would need parental consent for specified school-form or bathroom/locker-room changes involving minors in elementary or middle grades. A separate rule would bar ESEA-funded teaching or advancement of concepts covered by EO14168's definition of gender ideology, including identity replacing sex as a category, identifying as a gender different from one's sex, a spectrum of genders separate from sex, and being born in the wrong-sexed body. These are the Executive Order's incorporated categories, not Political Fingerprint's judgments about gender.",
+        "roll_call_id": "house:119:2:184",
+        "rollcall_number": 184,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr2616/BILLS-119hr2616eh.xml"
+          },
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "33a0f2450f7a7e38b9350c7431b4399321bfc17f292cc7932fa14c67003333e6",
+              "raw_sha256": "33a0f2450f7a7e38b9350c7431b4399321bfc17f292cc7932fa14c67003333e6",
+              "source_id": "congress-text:119:hr:2616:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            },
+            {
+              "governed_bytes_sha256": "dff6c48ef10fd7c7587c04dcc97f6e3c674c99229e6e33f6574c62495b10e03c",
+              "raw_sha256": "dff6c48ef10fd7c7587c04dcc97f6e3c674c99229e6e33f6574c62495b10e03c",
+              "source_id": "govinfo:FR-2025-01-30:2025-02090:EO14168",
+              "source_type": "federal_register_executive_order",
+              "text_version": null
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "b0ae836692bfc3b093b9cba3a8971d96fffb08d3fd0e40eb17a4e11dfb0fcfe2",
+              "raw_sha256": "b0ae836692bfc3b093b9cba3a8971d96fffb08d3fd0e40eb17a4e11dfb0fcfe2",
+              "source_id": "clerk:119:2:184",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-05-20"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll184.xml",
+        "uncertainty_note": "The parental-consent clause is limited to minors in elementary or middle grades and the listed school-form changes or sex-based accommodations. The separate use-of-funds prohibition applies to ESEA funds and is not confined by that clause's definition of a covered student. EO14168 section 2 defines sex as an unchangeable male/female biological classification and defines gender identity separately; subsection (f) supplies the incorporated gender-ideology definition. That definition also describes requiring institutions to recognize identification as a different sex as establishing that sex. This explanation attributes those classifications to the legal text, without adopting the order's evaluative descriptions or treating its rhetoric as established fact. The bill prohibits teaching or advancing concepts related to the incorporated definition. It does not enumerate particular lessons, books or classroom scenarios; the candidate does not invent such applications. Incorporating this definition does not import all other Executive Order directives, and this whole-package choice is not projected onto separate component votes.",
+        "vote_date": "2026-05-20",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "c99efa7803a54ed0f1ffcfc0a5ed92cec77faf26bad274c5edd0cb957c4f8c76",
+        "canonical_action_id": "house:119:2:82",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 6472",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:82",
+          "caveats": [
+            "Eligibility is limited to the territorial residents and U.S. nationals defined by the bill and to public institutions receiving assistance under the Higher Education Act."
+          ],
+          "episode_id": "single-119-hr-6472-2-82",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll082.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "c99efa7803a54ed0f1ffcfc0a5ed92cec77faf26bad274c5edd0cb957c4f8c76",
+        "plain_english_summary": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+        "position": "yea",
+        "question": "Qualifying U.S. nationals from Guam, the Northern Mariana Islands, American Samoa, and the U.S. Virgin Islands would receive in-state tuition and fee rates at covered public colleges.",
+        "roll_call_id": "house:119:2:82",
+        "rollcall_number": 82,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr6472/BILLS-119hr6472eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "009e485ab2f6b9f869738f3c630b62842f68ee31ffa7704d5da691ff92f6dc48",
+              "raw_sha256": "009e485ab2f6b9f869738f3c630b62842f68ee31ffa7704d5da691ff92f6dc48",
+              "source_id": "congress-text:119:hr:6472:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "b5d0f3b2d908effd9bb99d704ac7673586e9513b2012ee7f475539f56ddf7234",
+              "raw_sha256": "b5d0f3b2d908effd9bb99d704ac7673586e9513b2012ee7f475539f56ddf7234",
+              "source_id": "clerk:119:2:82",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-03-04"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll082.xml",
+        "uncertainty_note": "Eligibility is limited to the territorial residents and U.S. nationals defined by the bill and to public institutions receiving assistance under the Higher Education Act.",
+        "vote_date": "2026-03-04",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "0585b0ee6954c5d144defc4cbb795d0adbb1e6a997e71a946cd9c30d767ac3f9",
+        "canonical_action_id": "house:119:2:47",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 6359",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:47",
+          "caveats": [
+            "The bill states that it does not authorize the Secretary to require additional information or create additional rights beyond those listed."
+          ],
+          "episode_id": "single-119-hr-6359-2-47",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll047.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "0585b0ee6954c5d144defc4cbb795d0adbb1e6a997e71a946cd9c30d767ac3f9",
+        "plain_english_summary": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+        "position": "nay",
+        "question": "Colleges in federal student-aid programs would have to tell prospective and enrolled students where pregnant students carrying a pregnancy to term can find specified resources and accommodations and how to file certain discrimination complaints.",
+        "roll_call_id": "house:119:2:47",
+        "rollcall_number": 47,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr6359/BILLS-119hr6359eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "c8f0fd76e18cf6ae3e8b0ff59f745bc44688ed9ea5d8e6d1ec89d0d4913655df",
+              "raw_sha256": "c8f0fd76e18cf6ae3e8b0ff59f745bc44688ed9ea5d8e6d1ec89d0d4913655df",
+              "source_id": "congress-text:119:hr:6359:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
+              "raw_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
+              "source_id": "clerk:119:2:47",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-01-22"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll047.xml",
+        "uncertainty_note": "The bill states that it does not authorize the Secretary to require additional information or create additional rights beyond those listed.",
+        "vote_date": "2026-01-22",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "acc618f130f00d1854d48c7f2431931d9866d3988f3756479555747ee320971f",
+        "canonical_action_id": "house:119:2:31",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 2988",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:2:31",
+          "caveats": [
+            "The investment rule allows documented nonfinancial tie-breakers when financial factors cannot distinguish alternatives, subject to the bill's conditions. This is an indivisible whole-package choice across four divisions; the candidate does not attribute the House action to any single component."
+          ],
+          "episode_id": "single-119-hr-2988-2-31",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll031.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "acc618f130f00d1854d48c7f2431931d9866d3988f3756479555747ee320971f",
+        "plain_english_summary": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+        "position": "nay",
+        "question": "Private retirement-plan managers would generally have to base investments and shareholder-rights decisions on financial interests, while following new provider-selection rules. Participants using investments outside the plan's designated options would receive required notices, and GAO would compare returns from those arrangements with other plan options.",
+        "roll_call_id": "house:119:2:31",
+        "rollcall_number": 31,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr2988/BILLS-119hr2988eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "b3ec8672e31a10c35954b1efdf1ff7980f1d7c4cccb328202d09baa8d387728c",
+              "raw_sha256": "b3ec8672e31a10c35954b1efdf1ff7980f1d7c4cccb328202d09baa8d387728c",
+              "source_id": "congress-text:119:hr:2988:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
+              "raw_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
+              "source_id": "clerk:119:2:31",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-01-15"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll031.xml",
+        "uncertainty_note": "The investment rule allows documented nonfinancial tie-breakers when financial factors cannot distinguish alternatives, subject to the bill's conditions. This is an indivisible whole-package choice across four divisions; the candidate does not attribute the House action to any single component.",
+        "vote_date": "2026-01-15",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "c3817d1a04fd68695d6d51ab2d7972e03a8cd83b0f9db9681fce400f50d4a824",
+        "canonical_action_id": "house:119:2:19",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 2262",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.govinfo.gov/app/details/2026-01-13"
+            }
+          ],
+          "canonical_action_id": "house:119:2:19",
+          "caveats": [
+            "The governed source is the official House-section Congressional Record at H677-H678 because no House-engrossed text exists for the failed passage; floor advocacy is not used as semantic evidence."
+          ],
+          "episode_id": "single-119-hr-2262-2-19",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2026/roll019.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "c3817d1a04fd68695d6d51ab2d7972e03a8cd83b0f9db9681fce400f50d4a824",
+        "plain_english_summary": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+        "position": "nay",
+        "question": "Specified voluntary training outside regular work hours would not have to count as paid working time when the bill's conditions were met. Qualifying supplemental classroom instruction connected to a bona fide apprenticeship could also be excluded.",
+        "roll_call_id": "house:119:2:19",
+        "rollcall_number": 19,
+        "session": 2,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.govinfo.gov/app/details/2026-01-13"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+              "raw_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+              "source_id": "congressional-record:2026-01-13:house-section:H663-H719:hr2262",
+              "source_type": "congressional_record",
+              "text_version": "official_house_section_H663-H719_relevant_H677-H681_H692-H693"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
+              "raw_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
+              "source_id": "clerk:119:2:19",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2026-01-13"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2026/roll019.xml",
+        "uncertainty_note": "The governed source is the official House-section Congressional Record at H677-H678 because no House-engrossed text exists for the failed passage; floor advocacy is not used as semantic evidence.",
+        "vote_date": "2026-01-13",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "adcbb76aa9856892f8107a6fd2eb3edac6aeec7fe7824adb85b787e53fae0f6d",
+        "canonical_action_id": "house:119:1:332",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 2550",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+            }
+          ],
+          "canonical_action_id": "house:119:1:332",
+          "caveats": [
+            "Title 5 exclusions cover State, Defense, Treasury except the Bureau of Engraving and Printing, Veterans Affairs, Justice, Energy except FERC, EPA, USAID, NRC, NSF, USITC, FCC, and GSA. They also cover listed HHS, DHS, Interior and Agriculture units, Commerce's International Trade Administration, and specified information-resource-management offices across executive departments, SSA and OPM. The exact subdivisions are retained in the structured source excerpts, not generalized to all employees of every listed department.",
+            "The order retains Chapter 71 coverage for immediate local employing offices of police officers, security guards and firefighters, except the Bureau of Prisons, and for specified Marshals Service subdivisions. Defense and VA secretaries could restore coverage to subdivisions through certified orders submitted for Federal Register publication within 15 days. Transportation received a separate, non-redelegable power to exclude subdivisions, including FAA, or suspend provisions for certain overseas activities after published determinations; the order does not itself exclude every Transportation employee.",
+            "Foreign Service exclusions cover State subdivisions under the named senior offices plus embassies, consulates, diplomatic missions and consular offices, and USAID overseas missions/field offices and specified administrator/deputy-administrator subdivisions. The complete lists are in EO14251 section 3's structured excerpts.",
+            "The order's directions about non-agency business and pending grievances, arbitral-award exceptions and unfair-labor-practice proceedings apply to affected employees upon termination of their agreements. Its 30-day agency-review report is ancillary to this action explanation. This candidate addresses what the bill would undo in this named order, not current agency execution, litigation outcomes, other orders, or a claim that all earlier labor exclusions disappear."
+          ],
+          "episode_id": "single-119-hr-2550-1-332",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll332.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "adcbb76aa9856892f8107a6fd2eb3edac6aeec7fe7824adb85b787e53fae0f6d",
+        "plain_english_summary": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+        "position": "yea",
+        "question": "The bill would cancel the order excluding major federal departments and specified other agencies or units from statutory labor-management coverage, including collective-bargaining arrangements, and excluding specified State Department and USAID units from the Foreign Service system. It would bar spending to implement that order and separately preserve covered union agreements already in effect on March 26, 2025 until their stated end dates.",
+        "roll_call_id": "house:119:1:332",
+        "rollcall_number": 332,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr2550/BILLS-119hr2550eh.xml"
+          },
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.federalregister.gov/presidential-documents/executive-orders"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "b9fc201ee48f6b1a008e974163fe92c5d801670196b848bc91263309d7780dd5",
+              "raw_sha256": "b9fc201ee48f6b1a008e974163fe92c5d801670196b848bc91263309d7780dd5",
+              "source_id": "congress-text:119:hr:2550:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            },
+            {
+              "governed_bytes_sha256": "4852df435166d6164bbc331d8218cc9ceeb9f3ecede99b987f4b671278254528",
+              "raw_sha256": "4852df435166d6164bbc331d8218cc9ceeb9f3ecede99b987f4b671278254528",
+              "source_id": "govinfo:FR-2025-04-03:2025-05836:EO14251",
+              "source_type": "federal_register_executive_order",
+              "text_version": null
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
+              "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
+              "source_id": "clerk:119:1:332",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-12-11"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll332.xml",
+        "uncertainty_note": "Title 5 exclusions cover State, Defense, Treasury except the Bureau of Engraving and Printing, Veterans Affairs, Justice, Energy except FERC, EPA, USAID, NRC, NSF, USITC, FCC, and GSA. They also cover listed HHS, DHS, Interior and Agriculture units, Commerce's International Trade Administration, and specified information-resource-management offices across executive departments, SSA and OPM. The exact subdivisions are retained in the structured source excerpts, not generalized to all employees of every listed department. The order retains Chapter 71 coverage for immediate local employing offices of police officers, security guards and firefighters, except the Bureau of Prisons, and for specified Marshals Service subdivisions. Defense and VA secretaries could restore coverage to subdivisions through certified orders submitted for Federal Register publication within 15 days. Transportation received a separate, non-redelegable power to exclude subdivisions, including FAA, or suspend provisions for certain overseas activities after published determinations; the order does not itself exclude every Transportation employee. Foreign Service exclusions cover State subdivisions under the named senior offices plus embassies, consulates, diplomatic missions and consular offices, and USAID overseas missions/field offices and specified administrator/deputy-administrator subdivisions. The complete lists are in EO14251 section 3's structured excerpts. The order's directions about non-agency business and pending grievances, arbitral-award exceptions and unfair-labor-practice proceedings apply to affected employees upon termination of their agreements. Its 30-day agency-review report is ancillary to this action explanation. This candidate addresses what the bill would undo in this named order, not current agency execution, litigation outcomes, other orders, or a claim that all earlier labor exclusions disappear.",
+        "vote_date": "2025-12-11",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "71602f45af5f9daadd3738a9b5d8bb429b2843dffe38ae5c7874b58b8bb57a56",
+        "canonical_action_id": "house:119:1:315",
+        "chamber": "house",
+        "congress": 119,
+        "description": "S. 356",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:315",
+          "caveats": [
+            "The measure extends a federal-land and county-payment program; it is not a general education-funding program."
+          ],
+          "episode_id": "single-119-s-356-1-315",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll315.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "71602f45af5f9daadd3738a9b5d8bb429b2843dffe38ae5c7874b58b8bb57a56",
+        "plain_english_summary": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+        "position": "yea",
+        "question": "The federal-land county-payment program would continue through fiscal year 2026, with rules reconciling earlier payments and continuing related local project and advisory-committee authorities.",
+        "roll_call_id": "house:119:1:315",
+        "rollcall_number": 315,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/s356/BILLS-119s356es.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "620dd2cbfaf6ed558e09e07087a4d49032edf7d8fc40f1681750ab810c8ddeeb",
+              "raw_sha256": "620dd2cbfaf6ed558e09e07087a4d49032edf7d8fc40f1681750ab810c8ddeeb",
+              "source_id": "congress-text:119:s:356:es",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "es"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
+              "raw_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
+              "source_id": "clerk:119:1:315",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-12-09"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll315.xml",
+        "uncertainty_note": "The measure extends a federal-land and county-payment program; it is not a general education-funding program.",
+        "vote_date": "2025-12-09",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "60b70cf45e6ed9a6b80366f649f7a212f6437cb5ffeb13a36d3d0e58b5f7515d",
+        "canonical_action_id": "house:119:1:314",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1049",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:314",
+          "caveats": [
+            "The disclosure rights cover the foreign sources and materials defined by the bill and remain subject to copyright law."
+          ],
+          "episode_id": "single-119-hr-1049-1-314",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll314.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "60b70cf45e6ed9a6b80366f649f7a212f6437cb5ffeb13a36d3d0e58b5f7515d",
+        "plain_english_summary": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+        "position": "nay",
+        "question": "Schools receiving federal K–12 funds would have to give parents a defined way to inspect materials and obtain information about specified foreign funding and agreements, with 30-day response deadlines and annual public notice.",
+        "roll_call_id": "house:119:1:314",
+        "rollcall_number": 314,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1049/BILLS-119hr1049eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "ca399a8aee0c92aff8a06455fd5834af2f70a53dedea95c27e1cfa334f3a7722",
+              "raw_sha256": "ca399a8aee0c92aff8a06455fd5834af2f70a53dedea95c27e1cfa334f3a7722",
+              "source_id": "congress-text:119:hr:1049:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
+              "raw_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
+              "source_id": "clerk:119:1:314",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-12-04"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll314.xml",
+        "uncertainty_note": "The disclosure rights cover the foreign sources and materials defined by the bill and remain subject to copyright law.",
+        "vote_date": "2025-12-04",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "bee3871547703299e238e2578f57a41fbb09b63557d12d387e21213b1f9087ac",
+        "canonical_action_id": "house:119:1:313",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1069",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:313",
+          "caveats": [
+            "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship.",
+            "The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality."
+          ],
+          "episode_id": "single-119-hr-1069-1-313",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll313.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "bee3871547703299e238e2578f57a41fbb09b63557d12d387e21213b1f9087ac",
+        "plain_english_summary": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+        "position": "nay",
+        "question": "K–12 schools would generally lose access to covered federal education funds if they maintain specified partnerships or receive specified resources backed directly or indirectly by the Chinese government. Schools with qualifying pre-existing contracts could receive a waiver lasting until the contract ends.",
+        "roll_call_id": "house:119:1:313",
+        "rollcall_number": 313,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1069/BILLS-119hr1069eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff",
+              "raw_sha256": "124481b9ff01baa7d3726e721eea5b4b9b85855471c96902ad2f491ac047beff",
+              "source_id": "congress-text:119:hr:1069:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
+              "raw_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
+              "source_id": "clerk:119:1:313",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-12-04"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll313.xml",
+        "uncertainty_note": "The restriction applies to the bill's defined federal education programs and covered forms of support, not every school resource or foreign relationship. The waiver is discretionary, not automatic: a covered contract must take effect before enactment and continue beyond the prohibition's effective date. The school must timely submit the complete unredacted contract, an English translation if needed, and a statement demonstrating benefit to its mission and students and promotion of U.S. security, stability, and economic vitality.",
+        "vote_date": "2025-12-04",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "8941a70a4243eda760daa1e580d145f889e17485ab861bf307491d27f375bebb",
+        "canonical_action_id": "house:119:1:312",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1005",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:312",
+          "caveats": [
+            "The $10,000 trigger is measured in the aggregate for funds from, or contracts with, a foreign source as specified by the bill."
+          ],
+          "episode_id": "single-119-hr-1005-1-312",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+          "exact_choice_position_effect": "resolved_non_directional",
+          "member_action": "Not Voting",
+          "policy_question": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll312.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "8941a70a4243eda760daa1e580d145f889e17485ab861bf307491d27f375bebb",
+        "plain_english_summary": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+        "position": "not_voting",
+        "question": "Public K–12 schools receiving federal education assistance would have to report foreign funding and contracts above an aggregate $10,000 threshold to the Department of Education within 30 days, including the source and relevant terms.",
+        "roll_call_id": "house:119:1:312",
+        "rollcall_number": 312,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1005/BILLS-119hr1005eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "6417bc087a47d507270517bf44be9ec4711851f3275e52e83893376e1dd5d319",
+              "raw_sha256": "6417bc087a47d507270517bf44be9ec4711851f3275e52e83893376e1dd5d319",
+              "source_id": "congress-text:119:hr:1005:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
+              "raw_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
+              "source_id": "clerk:119:1:312",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-12-03"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll312.xml",
+        "uncertainty_note": "The $10,000 trigger is measured in the aggregate for funds from, or contracts with, a foreign source as specified by the bill.",
+        "vote_date": "2025-12-03",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "c750d0d4c8c360f46f7558a5c2a91e7d816e6d9e856a6f6287e91b5f6948cae3",
+        "canonical_action_id": "house:119:1:146",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1642",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:146",
+          "caveats": [
+            "The measure changes Small Business Act program duties; it does not create a general education or workforce-spending program."
+          ],
+          "episode_id": "single-119-hr-1642-1-146",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll146.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "c750d0d4c8c360f46f7558a5c2a91e7d816e6d9e856a6f6287e91b5f6948cae3",
+        "plain_english_summary": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+        "position": "yea",
+        "question": "Federal small-business assistance centers would add outreach linking employers with career-and-technical-education graduates and informing those students and graduates about help starting or growing a small business.",
+        "roll_call_id": "house:119:1:146",
+        "rollcall_number": 146,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1642/BILLS-119hr1642eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "92469a7630484cf285025a3a1994d7d1d00f6c5139a7c0e9a21f9865b8d249ce",
+              "raw_sha256": "92469a7630484cf285025a3a1994d7d1d00f6c5139a7c0e9a21f9865b8d249ce",
+              "source_id": "congress-text:119:hr:1642:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "96aa73de1e02bb8910d3cefc325db20290fd6cd8ed64e376c2832254abd7ef0c",
+              "raw_sha256": "96aa73de1e02bb8910d3cefc325db20290fd6cd8ed64e376c2832254abd7ef0c",
+              "source_id": "clerk:119:1:146",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-06-03"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll146.xml",
+        "uncertainty_note": "The measure changes Small Business Act program duties; it does not create a general education or workforce-spending program.",
+        "vote_date": "2025-06-03",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "138bc12168a1f5a923759a14d47e7efd4ac856ac97c90bd3ecc3f0f7058ffdf8",
+        "canonical_action_id": "house:119:1:120",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 881",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:120",
+          "caveats": [
+            "The proposal concerns Department of Homeland Security funds, not all federal education funding, and defines the covered relationships and entities in the bill."
+          ],
+          "episode_id": "single-119-hr-881-1-120",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll120.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "138bc12168a1f5a923759a14d47e7efd4ac856ac97c90bd3ecc3f0f7058ffdf8",
+        "plain_english_summary": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+        "position": "nay",
+        "question": "Colleges and universities with specified financial or contractual ties to named China-linked programs or entities would generally lose eligibility for Department of Homeland Security funding. A time-limited waiver would be available when the stated safeguards and national-security conditions are met.",
+        "roll_call_id": "house:119:1:120",
+        "rollcall_number": 120,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr881/BILLS-119hr881eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "d4dec3e1f4d21d237eb24e72238ff00a09c78d882464e3ccd75815f210ab8210",
+              "raw_sha256": "d4dec3e1f4d21d237eb24e72238ff00a09c78d882464e3ccd75815f210ab8210",
+              "source_id": "congress-text:119:hr:881:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "98ab18fe473ad24ae77aa32fde747f6e0bbb498e11ec97c5955714197f73c1db",
+              "raw_sha256": "98ab18fe473ad24ae77aa32fde747f6e0bbb498e11ec97c5955714197f73c1db",
+              "source_id": "clerk:119:1:120",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-05-07"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll120.xml",
+        "uncertainty_note": "The proposal concerns Department of Homeland Security funds, not all federal education funding, and defines the covered relationships and entities in the bill.",
+        "vote_date": "2025-05-07",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "81eced17a2f65d7aabede8850396254d2a8802a24ad48bbf47b6d01e6834b9ac",
+        "canonical_action_id": "house:119:1:83",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1048",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:83",
+          "caveats": [
+            "This was a vote on the whole package. The candidate does not attribute the House action to any one component or to H.Amdt. 12."
+          ],
+          "episode_id": "hr-1048-amendment-and-final-passage",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll083.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "81eced17a2f65d7aabede8850396254d2a8802a24ad48bbf47b6d01e6834b9ac",
+        "plain_english_summary": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+        "position": "nay",
+        "question": "Colleges and universities would face expanded reporting and compliance rules for specified foreign money, contracts, individual ties, and investments. The package would also bar specified contracts unless a waiver applied and create enforcement procedures for noncompliance.",
+        "roll_call_id": "house:119:1:83",
+        "rollcall_number": 83,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1048/BILLS-119hr1048eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "b9e510321a69c69b86f5e888b46770b6a675ddbdc68c52533d7e356a446e5358",
+              "raw_sha256": "b9e510321a69c69b86f5e888b46770b6a675ddbdc68c52533d7e356a446e5358",
+              "source_id": "congress-text:119:hr:1048:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+              "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+              "source_id": "clerk:119:1:83",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-03-27"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll083.xml",
+        "uncertainty_note": "This was a vote on the whole package. The candidate does not attribute the House action to any one component or to H.Amdt. 12.",
+        "vote_date": "2025-03-27",
+        "vote_type": "final_passage_or_suspension_passage"
+      },
+      {
+        "action_core_sha256": "86d79297ac70fce779af68db30a849aa282334362e9ccb2fad1ed3f12cd8d37c",
+        "canonical_action_id": "house:119:1:79",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.Amdt. 12 to H.R. 1048",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.govinfo.gov/app/details/CREC-2025-03-25-pt1-PgH1241"
+            },
+            {
+              "label": "Official action meaning source",
+              "url": "https://uscode.house.gov/"
+            }
+          ],
+          "canonical_action_id": "house:119:1:79",
+          "caveats": [
+            "This is the printed substitute amendment, not the parent bill's meaning. It replaces page 1, line 1 through page 60, line 6; adoption at the amendment stage would not itself enact the substitute.",
+            "Reports identify amounts, source/country and purpose or intended use. Institutions must retain agreement copies until the latest of four years after agreement, termination, or applicable state retention requirements; produce them for audits or investigations; and translate contracts as applicable. Restricted or conditional gifts also require amounts, dates, conditions, and specified source-country information.",
+            "A state or other federal report can replace the disclosure report only if it contains all required information for the same or an equivalent period; state assurances may be required. Institutions must be able to revise past reports to correct errors.",
+            "For a knowing or willful disclosure or agreement-copy/translation violation, the Secretary may impose $250 to 50% of the gift or contract amount; three consecutive years permit an additional fine of $100,000 to the gift or contract amount. Knowing or willful foreign-ownership-report violations can incur up to 25% of Higher Education Act funding excluding Title IV student aid, with an additional fine subject to the same 25% cap for three consecutive years of violations. Administrative errors lasting three consecutive years can incur $250 to 50% of the gift or contract amount; two consecutive years without the required gift/contract report can trigger a compliance plan. These are the printed statutory bounds, not a prediction of penalties imposed.",
+            "Excluded transactions include student-attendance payments or scholarships from a natural person acting individually, not for another person or entity except the student, without another contract beyond the institution-student attendance agreement; specified intellectual-property licensing or technical assistance not identified as a national-security risk; and funds solely for clinical trials. A U.S.-located institution's purchases of property or services from a foreign source are outside the contract definition. Gifts and contracts through an institution's supporting entities are included. Restricted or conditional gifts/contracts include terms concerning faculty employment, academic or research units/programs, student selection/admission, or aid restricted by the listed country, religion, sex, ethnic-origin or political-opinion categories.",
+            "The amendment also incorporates HEA487(e)(2)(B)(ii) gift exceptions: loan/default-prevention/financial-literacy materials and programs; qualifying professional-training food, refreshments and materials; comparable student-employee loan benefits; institution-controlled, non-promotional loan counseling; specified lender/servicer/guarantor philanthropy or contributions without a loan-related advantage; and state-administered education aid. These categories retain the conditions in the incorporated statute, governed here in its 2024 U.S. Code edition.",
+            "Institutions must designate a compliance officer, and the Department must maintain an internal, conflict-free contact for compliance assistance and database improvements. Data sharing with outside persons, including political appointees and personnel detailed from other agencies, is limited to expressly authorized or public information. Database user-group composition and meeting mechanics are ancillary to the explanation, not absent from the governed evidence.",
+            "Negotiated rules must align with other agencies' reporting under the CHIPS Act, the Research and Development, Competition, and Innovation Act, and OSTP guidance including the specified NSPM-33 implementation guidance. Alignment is a rulemaking duty, not an assertion that all reporting regimes become identical. The substitute links Section 117's effective date to the regulations and separately specifies a database deadline relative to the first July 31 after enactment; this candidate does not invent a resolution of that timing interaction."
+          ],
+          "episode_id": "hr-1048-amendment-and-final-passage",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+          "exact_choice_position_effect": "supports_exact_choice",
+          "member_action": "Yea",
+          "policy_question": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll079.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "86d79297ac70fce779af68db30a849aa282334362e9ccb2fad1ed3f12cd8d37c",
+        "plain_english_summary": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+        "position": "yea",
+        "question": "This substitute would require colleges to report foreign gifts and contracts at $100,000 in one year or $250,000 over three years from the same source, while requiring broader disclosures from institutions substantially owned or controlled by foreign sources and for restricted gifts. Reports would become publicly searchable, equivalent state or federal reports could substitute, and specified noncompliance could bring fines or a compliance plan. The proposal includes payment and transaction exclusions and requires negotiated rules to coordinate reporting with other federal research-security requirements before the rewritten disclosure section takes effect.",
+        "roll_call_id": "house:119:1:79",
+        "rollcall_number": 79,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.govinfo.gov/app/details/CREC-2025-03-25-pt1-PgH1241"
+          },
+          {
+            "label": "Official action meaning source",
+            "url": "https://uscode.house.gov/"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "eaafafb53de434c894f475a864a1cd951118a32f2f98e1e487109f7ef71f5b32",
+              "raw_sha256": "eaafafb53de434c894f475a864a1cd951118a32f2f98e1e487109f7ef71f5b32",
+              "source_id": "govinfo:CREC-2025-03-25-pt1-PgH1241:amendment-3",
+              "source_type": "congressional_record",
+              "text_version": null
+            },
+            {
+              "governed_bytes_sha256": "cdd8d42fff6c79e9693c43bc7f8b0c564b593938802d19b09012c267400d6b7f",
+              "raw_sha256": "cdd8d42fff6c79e9693c43bc7f8b0c564b593938802d19b09012c267400d6b7f",
+              "source_id": "govinfo:USCODE-2024-title20:sec1094:e2Bii",
+              "source_type": "united_states_code",
+              "text_version": null
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
+              "raw_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
+              "source_id": "clerk:119:1:79",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-03-27"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll079.xml",
+        "uncertainty_note": "This is the printed substitute amendment, not the parent bill's meaning. It replaces page 1, line 1 through page 60, line 6; adoption at the amendment stage would not itself enact the substitute. Reports identify amounts, source/country and purpose or intended use. Institutions must retain agreement copies until the latest of four years after agreement, termination, or applicable state retention requirements; produce them for audits or investigations; and translate contracts as applicable. Restricted or conditional gifts also require amounts, dates, conditions, and specified source-country information. A state or other federal report can replace the disclosure report only if it contains all required information for the same or an equivalent period; state assurances may be required. Institutions must be able to revise past reports to correct errors. For a knowing or willful disclosure or agreement-copy/translation violation, the Secretary may impose $250 to 50% of the gift or contract amount; three consecutive years permit an additional fine of $100,000 to the gift or contract amount. Knowing or willful foreign-ownership-report violations can incur up to 25% of Higher Education Act funding excluding Title IV student aid, with an additional fine subject to the same 25% cap for three consecutive years of violations. Administrative errors lasting three consecutive years can incur $250 to 50% of the gift or contract amount; two consecutive years without the required gift/contract report can trigger a compliance plan. These are the printed statutory bounds, not a prediction of penalties imposed. Excluded transactions include student-attendance payments or scholarships from a natural person acting individually, not for another person or entity except the student, without another contract beyond the institution-student attendance agreement; specified intellectual-property licensing or technical assistance not identified as a national-security risk; and funds solely for clinical trials. A U.S.-located institution's purchases of property or services from a foreign source are outside the contract definition. Gifts and contracts through an institution's supporting entities are included. Restricted or conditional gifts/contracts include terms concerning faculty employment, academic or research units/programs, student selection/admission, or aid restricted by the listed country, religion, sex, ethnic-origin or political-opinion categories. The amendment also incorporates HEA487(e)(2)(B)(ii) gift exceptions: loan/default-prevention/financial-literacy materials and programs; qualifying professional-training food, refreshments and materials; comparable student-employee loan benefits; institution-controlled, non-promotional loan counseling; specified lender/servicer/guarantor philanthropy or contributions without a loan-related advantage; and state-administered education aid. These categories retain the conditions in the incorporated statute, governed here in its 2024 U.S. Code edition. Institutions must designate a compliance officer, and the Department must maintain an internal, conflict-free contact for compliance assistance and database improvements. Data sharing with outside persons, including political appointees and personnel detailed from other agencies, is limited to expressly authorized or public information. Database user-group composition and meeting mechanics are ancillary to the explanation, not absent from the governed evidence. Negotiated rules must align with other agencies' reporting under the CHIPS Act, the Research and Development, Competition, and Innovation Act, and OSTP guidance including the specified NSPM-33 implementation guidance. Alignment is a rulemaking duty, not an assertion that all reporting regimes become identical. The substitute links Section 117's effective date to the regulations and separately specifies a database deadline relative to the first July 31 after enactment; this candidate does not invent a resolution of that timing interaction.",
+        "vote_date": "2025-03-27",
+        "vote_type": "amendment"
+      },
+      {
+        "action_core_sha256": "c87b59d169631a2ee5be6bfdd9b3fc80f8ec13cd608e792f48f3f20bd795c6fe",
+        "canonical_action_id": "house:119:1:68",
+        "chamber": "house",
+        "congress": 119,
+        "description": "H.R. 1156",
+        "governed_receipt_control": null,
+        "governed_receipt_projection": {
+          "action_meaning_sources": [
+            {
+              "label": "Official action meaning source",
+              "url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+            }
+          ],
+          "canonical_action_id": "house:119:1:68",
+          "caveats": [
+            "The extension applies only to the statutes and pandemic unemployment programs listed in the bill and does not revive a case whose limitations period had already expired before enactment."
+          ],
+          "episode_id": "single-119-hr-1156-1-68",
+          "episode_relationship": "This action is independently expandable in the reviewed record.",
+          "exact_action_meaning": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+          "exact_choice_position_effect": "opposes_exact_choice",
+          "member_action": "Nay",
+          "policy_question": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+          "vote_sources": [
+            {
+              "label": "Official House vote",
+              "url": "https://clerk.house.gov/evs/2025/roll068.xml"
+            }
+          ]
+        },
+        "interpretation_status": "interpreted",
+        "issue_domain": "EDUCATION_WORKFORCE",
+        "member_projection_action_core_sha256": "c87b59d169631a2ee5be6bfdd9b3fc80f8ec13cd608e792f48f3f20bd795c6fe",
+        "plain_english_summary": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+        "position": "nay",
+        "question": "Authorities would have up to ten years to bring the specified fraud cases tied to named pandemic unemployment programs, and the bill would cancel $5 million in unused funding.",
+        "roll_call_id": "house:119:1:68",
+        "rollcall_number": 68,
+        "session": 1,
+        "source_basis": [
+          {
+            "label": "Official action meaning source",
+            "url": "https://www.congress.gov/119/bills/hr1156/BILLS-119hr1156eh.xml"
+          }
+        ],
+        "source_identity_bindings": {
+          "governed_action_meaning": [
+            {
+              "governed_bytes_sha256": "b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160",
+              "raw_sha256": "b3586b2581d6200006e6f25121b486a1f1d34dddb5192be7ae4a3c6a9492c160",
+              "source_id": "congress-text:119:hr:1156:eh",
+              "source_type": "congress_gov_bill_text",
+              "text_version": "eh"
+            }
+          ],
+          "official_member_action": [
+            {
+              "governed_bytes_sha256": "bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c",
+              "raw_sha256": "bfce0d8333299f2814a248f64144a96e4da12d77690b81c68cd8632dd06a9a3c",
+              "source_id": "clerk:119:1:68",
+              "source_type": "house_clerk_roll_call",
+              "text_version": "2025-03-11"
+            }
+          ]
+        },
+        "source_url": "https://clerk.house.gov/evs/2025/roll068.xml",
+        "uncertainty_note": "The extension applies only to the statutes and pandemic unemployment programs listed in the bill and does not revive a case whose limitations period had already expired before enactment.",
+        "vote_date": "2025-03-11",
+        "vote_type": "final_passage_or_suspension_passage"
+      }
+    ]
+  }
+}

@@ -121,6 +121,7 @@ function addEditorialPreviewCandidate(searchParams) {
     "m11m-national-security",
     "m12m-environment-energy",
     "m13m-education-workforce",
+    "m14g-education-workforce",
   ].includes(candidate)) {
     searchParams.set("candidate", candidate);
   }
