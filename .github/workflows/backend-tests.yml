@@ -17,6 +17,36 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  m14e-exact-head:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install M14E offline validation dependencies
+        run: python -m pip install jsonschema pytest
+
+      - name: Validate detached M14E synthesis and frozen accepted inputs
+        run: |
+          git rev-parse HEAD
+          python scripts/build_m14e_education_synthesis.py --check
+          python -m pytest -q backend/tests/test_accepted_findings_synthesis.py
+
+      - name: Validate exact user-approved M14E internal synthesis acceptance
+        run: python scripts/build_m14e_synthesis_acceptance.py --check
+
+      - name: Prove exact M14E milestone scope
+        if: github.head_ref == 'codex/m14e-education-synthesis-review'
+        run: |
+          python scripts/build_m14e_education_synthesis.py --check --check-scope
+          python scripts/build_m14e_synthesis_acceptance.py --check --check-scope
+
   m14d-exact-head:
     runs-on: ubuntu-latest
     steps:
