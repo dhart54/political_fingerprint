@@ -66,3 +66,26 @@ mixed H.R.1048 episode/two actions, and H.R.1005 excluded as Not Voting.
 
 No production write or rollback applies. Leaving the draft branch unmerged is
 the rollback for this detached candidate milestone.
+
+## Independent pre-human revision
+
+Independent review requested revision before human review while leaving M14D
+and M14E semantics fixed. The overview and H.R.1048 wording now explain the
+replacement proposal without relying on “substitute,” and the bargaining item
+states what the 2025 executive order excluded. The China-linked funding primary
+wording is byte-identical to the first reviewed M14F head.
+
+The limitation contract now requires `public_copy` on every treatment:
+reader-facing safe text for retained limitations and `null` for compressed or
+omitted limitations. All seven specified retained strings and eleven compressed
+reasons are present across the same eighteen source limitations. Prominence
+review now compares the full record (16 episodes / 17 actions), accepted
+behavioral layer (3 findings / 5 episodes / 6 actions), and synthesis (2
+findings / 3 finding-supporting episodes / 4 finding actions), while naming the
+standalone bargaining finding and leaving A/B unresolved.
+
+- [x] Nineteen focused M14F tests and exact regeneration pass after revision.
+- [x] Inherited M14A-M14E builders and tests, 120-test focused suite, 26 core
+  Semantic IR tests, and semantic-reference validation pass.
+- [ ] Review the revision diff, update draft
+  PR #180, and verify CI on the new exact head.

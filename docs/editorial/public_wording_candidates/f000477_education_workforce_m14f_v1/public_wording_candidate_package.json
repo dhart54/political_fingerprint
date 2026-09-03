@@ -2,7 +2,7 @@
   "accepted": false,
   "artifact_role": "detached_non_authorizing_public_wording_and_prominence_review",
   "authorizing": false,
-  "package_sha256": "67fa5d8d573484cca172475a54ecd028b6bab996563b0d3d3d5c4ed037bd37d9",
+  "package_sha256": "235359361aced51a43cdd956dbaccaf8aab9ac4e1f2d07e028b331e906b483f1",
   "production_selectable": false,
   "public": false,
   "schema_version": "m14f_public_wording_candidate_v1",
@@ -60,16 +60,34 @@
       "decision_state": "pending_independent_human_product_review",
       "main_takeaway_alternative": "omit_main_takeaway_and_retain_all_three_findings",
       "option_a_main_takeaway": [
-        "The synthesis adds a mechanism contrast beyond either source finding alone: opposition to two specified funding-eligibility restrictions alongside support for one detailed reporting/compliance substitute, bounded by the later whole-package Nay.",
+        "The synthesis adds a mechanism contrast beyond either source finding alone: opposition to two specified funding-eligibility restrictions alongside support for one detailed reporting/compliance replacement proposal, bounded by the later whole-package Nay.",
         "It may merit prominence because it is the only human-accepted cross-finding relationship in the reviewed Education & Workforce record.",
-        "Three episodes and four actions may be too narrow to headline a record containing sixteen episodes and seventeen actions.",
-        "The explicit opening scope, On foreign influence in education, limits the claim to this policy slice rather than presenting it as the issue record's dominant behavior."
+        "The three-of-sixteen full-record episode fraction is not by itself the right prominence denominator because many reviewed episodes were intentionally not elevated into behavioral findings; the synthesis connects two of three accepted findings, three of five finding-supporting episodes, and four of six finding actions.",
+        "The explicit opening scope, On foreign influence in education, limits the claim to this policy slice, but the proposed headline still excludes the important standalone collective-bargaining finding and could overweight one policy slice."
       ],
       "option_b_no_main_takeaway": [
-        "All three behavioral findings remain independently understandable, so the evidence layer loses no accepted semantic information.",
+        "All three behavioral findings, including the standalone collective-bargaining pattern, remain independently understandable, so the evidence layer loses no accepted semantic information.",
         "The page becomes less interpretively ambitious but avoids overweighting a three-episode foreign-influence slice of the broader record."
       ],
-      "proposed_prominence_note": "This synthesis is proposed as the Main Takeaway because it is the only accepted cross-finding relationship in the reviewed Education & Workforce record. Human review must still decide whether a three-episode foreign-influence synthesis is representative and useful enough to headline the broader issue page.",
+      "proposed_prominence_note": "This synthesis is proposed as the Main Takeaway because it is the only accepted cross-finding relationship and connects two of the three accepted behavioral findings, spanning three of the five episodes that support accepted findings. Human review must still decide whether this explicitly scoped foreign-influence relationship is useful enough to headline the broader Education & Workforce page.",
+      "record_context": {
+        "accepted_behavioral_layer": {
+          "actions": 6,
+          "episodes": 5,
+          "findings": 3
+        },
+        "full_issue_record": {
+          "actions": 17,
+          "episodes": 16
+        },
+        "important_standalone_finding_outside_synthesis": "m14d:continuity_of_collective_bargaining",
+        "only_accepted_cross_finding_relationship": true,
+        "proposed_synthesis": {
+          "accepted_findings": 2,
+          "finding_actions": 4,
+          "finding_supporting_episodes": 3
+        }
+      },
       "semantic_validity": "accepted_internal_synthesis_not_reopened"
     },
     "selected_issue_experience_version": "v1.1",
@@ -132,48 +150,55 @@
         "limitation_treatments": [
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:covered_china_linked_funding_exclusions:0",
+            "public_copy": null,
             "reason": "The primary sentence uses concrete institutions, mechanisms, and bounded actions; the narrower source detail remains available in the finding and its receipts.",
             "text": "H.R.881 covers higher education and DHS funding; H.R.1069 covers K–12 schools and its defined federal education programs. Neither means all federal funding.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:covered_china_linked_funding_exclusions:1",
+            "public_copy": null,
             "reason": "Implementation-level procedural detail is not necessary to preserve this public meaning; the wording retains the governing mechanism and does not claim enactment.",
             "text": "The covered entities and relationships differ. H.R.881's renewable national-security waiver is not H.R.1069's qualifying pre-existing-contract waiver; H.R.1069's prohibition begins one year after enactment.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:covered_china_linked_funding_exclusions:2",
+            "public_copy": null,
             "reason": "The wording names only the accepted directional evidence; H.R.1005 remains separately accounted as Not Voting and supplies no finding evidence.",
             "text": "The relationship concerns these funding exclusions, not opposition to foreign-money disclosure generally. H.R.1048 contains mixed member choices and remains a separate whole-episode notable-choice proposal; H.R.1005 is Not Voting.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:hr1048_substitute_and_package:0",
+            "public_copy": null,
             "reason": "Implementation-level procedural detail is not necessary to preserve this public meaning; the wording retains the governing mechanism and does not claim enactment.",
             "text": "The substitute would replace the printed text with its own thresholds, public reports, exclusions, fines and negotiated-rulemaking duties. Its reporting requirements are not inferred from the parent bill.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:hr1048_substitute_and_package:1",
+            "public_copy": "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed.",
             "reason": null,
             "text": "The final package includes institution and individual disclosures, specified contract prohibitions with waivers, investment reports and enforcement. The Nay vote applies to the whole package; it does not establish opposition to any one component.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:hr1048_substitute_and_package:2",
+            "public_copy": null,
             "reason": "Implementation-level procedural detail is not necessary to preserve this public meaning; the wording retains the governing mechanism and does not claim enactment.",
             "text": "The amendment failed in the House and the final package passed the House. Neither outcome establishes enactment. These same-day choices are one episode, not a cross-episode trajectory or a change of position over time.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14e:education_foreign_influence_mechanism_contrast:inherited:m14d:hr1048_substitute_and_package:3",
+            "public_copy": null,
             "reason": "The primary sentence stays within the named reviewed actions and makes no motive, ideological, universal-regime, or broader policy-preference inference.",
             "text": "The paired votes distinguish support for this disclosure substitute from opposition to this final package; they do not establish why Foushee made either choice or a preferred universal disclosure regime.",
             "treatment": "compressed_or_omitted"
           }
         ],
-        "primary_sentence": "On foreign influence in education, Foushee opposed two bills that would cut off specified federal funding to schools or colleges over certain China-linked ties or Chinese-government-backed support. She also supported an H.R. 1048 substitute requiring detailed foreign-gift and contract reporting, public disclosure, and penalties for some violations. She later opposed the broader final H.R. 1048 package, so that vote does not show which part of the final bill she rejected.",
+        "primary_sentence": "On foreign influence in education, Foushee opposed two bills that would cut off specified federal funding to schools or colleges over certain China-linked ties or Chinese-government-backed support. She also supported a proposed replacement version of H.R. 1048 that would require detailed foreign-gift and contract reporting, public disclosure, and penalties for some violations. She later opposed the broader final H.R. 1048 package, so that vote does not show which part of the final bill she rejected.",
         "production_selectable": false,
         "public": false,
         "public_title": "Education & Workforce",
@@ -185,7 +210,7 @@
         "semantic_source_id": "m14e:education_foreign_influence_mechanism_contrast",
         "surface": "issue_overview",
         "wording_item_id": "m14f:issue_overview:education_workforce",
-        "wording_item_sha256": "cae322484713df1d6da2730c60ac5ab419576a2b9e19da8d16b8867b6d916079"
+        "wording_item_sha256": "57c3ac7a93b136e6057ffee961f6e3a0611d004b5e2fd7a0aeaa6a53002aeae1"
       },
       {
         "accepted": false,
@@ -221,18 +246,21 @@
         "limitation_treatments": [
           {
             "limitation_id": "m14d:covered_china_linked_funding_exclusions:material_limitations:0",
+            "public_copy": "H.R. 881 concerned Department of Homeland Security funding for colleges, while H.R. 1069 concerned covered federal education funds for K–12 schools. Neither covered all federal funding.",
             "reason": null,
             "text": "H.R.881 covers higher education and DHS funding; H.R.1069 covers K–12 schools and its defined federal education programs. Neither means all federal funding.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:covered_china_linked_funding_exclusions:material_limitations:1",
+            "public_copy": "The bills covered different China-linked relationships and used different waiver rules; H.R. 1069's funding restriction would begin one year after enactment.",
             "reason": null,
             "text": "The covered entities and relationships differ. H.R.881's renewable national-security waiver is not H.R.1069's qualifying pre-existing-contract waiver; H.R.1069's prohibition begins one year after enactment.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:covered_china_linked_funding_exclusions:material_limitations:2",
+            "public_copy": null,
             "reason": "The wording names only the accepted directional evidence; H.R.1005 remains separately accounted as Not Voting and supplies no finding evidence.",
             "text": "The relationship concerns these funding exclusions, not opposition to foreign-money disclosure generally. H.R.1048 contains mixed member choices and remains a separate whole-episode notable-choice proposal; H.R.1005 is Not Voting.",
             "treatment": "compressed_or_omitted"
@@ -250,7 +278,7 @@
         "semantic_source_id": "m14d:covered_china_linked_funding_exclusions",
         "surface": "repeated_pattern",
         "wording_item_id": "m14f:pattern:china_linked_education_funding",
-        "wording_item_sha256": "723d7f9363071e9a72a5809e2e68b7179845309c92135c8926634b4efa66c7a3"
+        "wording_item_sha256": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120"
       },
       {
         "accepted": false,
@@ -286,30 +314,34 @@
         "limitation_treatments": [
           {
             "limitation_id": "m14d:continuity_of_collective_bargaining:material_limitations:0",
+            "public_copy": "H.R. 2550 concerned federal and Foreign Service labor-management rules, while H.R. 5408 concerned private-sector collective bargaining under federal labor law.",
             "reason": null,
             "text": "H.R.2550 concerns specified federal and Foreign Service bodies and an executive order; H.R.5408 amends the NLRA system. Their workers, statutory regimes and legal tools are different.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:continuity_of_collective_bargaining:material_limitations:1",
+            "public_copy": "Preserving existing federal union agreements is different from maintaining employment terms and a duty to bargain during first-contract negotiations.",
             "reason": null,
             "text": "Keeping existing federal union agreements effective through their terms differs from maintaining employment terms pending agreement and continuing a bargaining duty. The proposed shared relationship is continuity of bargaining, not identical contract protection.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:continuity_of_collective_bargaining:material_limitations:2",
+            "public_copy": "H.R. 5408 also required mediation and binding arbitration; support for either whole bill does not show which individual provision drove Foushee's vote.",
             "reason": null,
             "text": "H.R.5408 also mandates a first-contract timetable and binding arbitration. H.R.2550 does not. Support for either whole measure cannot be assigned exclusively to its continuity provisions.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:continuity_of_collective_bargaining:material_limitations:3",
+            "public_copy": null,
             "reason": "The primary sentence stays within the named reviewed actions and makes no motive, ideological, universal-regime, or broader policy-preference inference.",
             "text": "EO14251's agency subdivisions, exceptions and delegated powers remain bounded by the approved action limitations. This is not a claim about all federal employees, actual litigation outcomes, or a general pro-labor position.",
             "treatment": "compressed_or_omitted"
           }
         ],
-        "primary_sentence": "Foushee supported H.R. 2550, which would restore bargaining coverage and preserve existing union agreements for specified federal workers affected by an executive order. She also supported H.R. 5408, which would require continued bargaining and unchanged employment terms while newly represented workers pursued a first contract, with mediation and binding arbitration if talks remained unresolved.",
+        "primary_sentence": "Foushee supported H.R. 2550, which would reverse a 2025 executive order that excluded specified federal agencies and units from federal or Foreign Service labor-management rules and preserve covered union agreements already in effect. She also supported H.R. 5408, which would require continued bargaining and unchanged employment terms while workers' representatives and employers negotiated a first contract, with mediation and binding arbitration if talks remained unresolved.",
         "production_selectable": false,
         "public": false,
         "public_title": "Supported keeping collective bargaining in force",
@@ -321,7 +353,7 @@
         "semantic_source_id": "m14d:continuity_of_collective_bargaining",
         "surface": "repeated_pattern",
         "wording_item_id": "m14f:pattern:collective_bargaining_continuity",
-        "wording_item_sha256": "588f93eae1390cc1dcb29386c1b22a453be217e6480917e9297384f07914339a"
+        "wording_item_sha256": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf"
       },
       {
         "accepted": false,
@@ -359,33 +391,37 @@
         "limitation_treatments": [
           {
             "limitation_id": "m14d:hr1048_substitute_and_package:material_limitations:0",
+            "public_copy": null,
             "reason": "Implementation-level procedural detail is not necessary to preserve this public meaning; the wording retains the governing mechanism and does not claim enactment.",
             "text": "The substitute would replace the printed text with its own thresholds, public reports, exclusions, fines and negotiated-rulemaking duties. Its reporting requirements are not inferred from the parent bill.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14d:hr1048_substitute_and_package:material_limitations:1",
+            "public_copy": "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed.",
             "reason": null,
             "text": "The final package includes institution and individual disclosures, specified contract prohibitions with waivers, investment reports and enforcement. The Nay vote applies to the whole package; it does not establish opposition to any one component.",
             "treatment": "retained_public_copy"
           },
           {
             "limitation_id": "m14d:hr1048_substitute_and_package:material_limitations:2",
+            "public_copy": null,
             "reason": "Implementation-level procedural detail is not necessary to preserve this public meaning; the wording retains the governing mechanism and does not claim enactment.",
             "text": "The amendment failed in the House and the final package passed the House. Neither outcome establishes enactment. These same-day choices are one episode, not a cross-episode trajectory or a change of position over time.",
             "treatment": "compressed_or_omitted"
           },
           {
             "limitation_id": "m14d:hr1048_substitute_and_package:material_limitations:3",
+            "public_copy": null,
             "reason": "The primary sentence stays within the named reviewed actions and makes no motive, ideological, universal-regime, or broader policy-preference inference.",
             "text": "The paired votes distinguish support for this disclosure substitute from opposition to this final package; they do not establish why Foushee made either choice or a preferred universal disclosure regime.",
             "treatment": "compressed_or_omitted"
           }
         ],
-        "primary_sentence": "Foushee supported a substitute that would set foreign-gift and contract reporting thresholds for colleges, make reports publicly searchable, allow some equivalent reporting and specified exclusions, and impose fines or compliance plans for some violations. She then opposed the broader final H.R. 1048 package, which also included contract restrictions and other reporting and enforcement provisions. The final vote does not identify which part she opposed.",
+        "primary_sentence": "Foushee supported a proposed replacement version of H.R. 1048 that would set foreign-gift and contract reporting thresholds for colleges, make reports publicly searchable, allow some equivalent reporting and specified exclusions, and impose fines or compliance plans for some violations. She then opposed the broader final H.R. 1048 package, which also included contract restrictions and other reporting and enforcement provisions. The final vote does not identify which part she opposed.",
         "production_selectable": false,
         "public": false,
-        "public_title": "Supported a reporting substitute, opposed the final H.R. 1048 package",
+        "public_title": "Supported a reporting-focused replacement, opposed the final H.R. 1048 package",
         "semantic_source": {
           "accepted_record_sha256": "e55f99546129972b0b38fea50d295f0d69cde50cb6dc5eaf7264314801b94bf8",
           "source_id": "m14d:hr1048_substitute_and_package",
@@ -394,7 +430,7 @@
         "semantic_source_id": "m14d:hr1048_substitute_and_package",
         "surface": "notable_choice",
         "wording_item_id": "m14f:notable:hr1048_substitute_final",
-        "wording_item_sha256": "d684547546582993d377b7138e261f156a08b732d6b13f16ad1ed51a95c25a44"
+        "wording_item_sha256": "87caf258fdae8fadc4420402094f0ff763aee85acb2249296dc0a23d8865dc73"
       }
     ]
   }

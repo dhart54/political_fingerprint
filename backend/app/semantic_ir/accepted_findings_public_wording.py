@@ -182,7 +182,8 @@ def compile_public_wording(findings: dict, behavioral_authority: dict, accepted_
         require(isinstance(treatments, list) and len(treatments) == len(source_limits),
                 "every source limitation requires exactly one treatment")
         for treatment in treatments:
-            keys(treatment, {"limitation_id", "treatment", "reason"}, "limitation treatment")
+            keys(treatment, {"limitation_id", "treatment", "public_copy", "reason"},
+                 "limitation treatment")
         indexed = {r["limitation_id"]: r for r in treatments}
         require(len(indexed) == len(treatments) and set(indexed) == {r["limitation_id"] for r in source_limits},
                 "limitation treatment coverage differs")
@@ -191,8 +192,11 @@ def compile_public_wording(findings: dict, behavioral_authority: dict, accepted_
             treatment = indexed[source_limit["limitation_id"]]
             require(treatment["treatment"] in TREATMENTS, "unsupported limitation treatment")
             if treatment["treatment"] == "retained_public_copy":
+                safe_public_text(treatment["public_copy"], "retained limitation public copy")
                 require(treatment["reason"] is None, "retained limitation cannot carry omission reason")
             else:
+                require(treatment["public_copy"] is None,
+                        "compressed limitation cannot carry public copy")
                 require(isinstance(treatment["reason"], str) and len(treatment["reason"].strip()) >= 30
                         and "too complicated" not in treatment["reason"].lower(),
                         "compressed limitation needs a concrete reason")
@@ -208,7 +212,8 @@ def compile_public_wording(findings: dict, behavioral_authority: dict, accepted_
         items.append(item | {"wording_item_sha256": digest(item)})
     require(behavioral_used == set(records), "every behavioral finding needs exactly one primary wording item")
     require(len(synthesis_used) <= 1, "at most one Main Takeaway candidate is supported")
-    keys(prominence_review, {"semantic_validity", "decision_state", "option_a_main_takeaway",
+    keys(prominence_review, {"semantic_validity", "decision_state", "record_context",
+                             "option_a_main_takeaway",
                              "option_b_no_main_takeaway", "proposed_prominence_note",
                              "main_takeaway_alternative"}, "prominence review")
     require(prominence_review["semantic_validity"] == "accepted_internal_synthesis_not_reopened"
@@ -216,6 +221,26 @@ def compile_public_wording(findings: dict, behavioral_authority: dict, accepted_
             "semantic validity and public prominence must remain separate")
     require(prominence_review["main_takeaway_alternative"] == "omit_main_takeaway_and_retain_all_three_findings",
             "zero-Main-Takeaway alternative missing")
+    standalone = accepted_synthesis["subject"]["intentionally_standalone_finding"]["finding"]
+    expected_context = {
+        "full_issue_record": {"episodes": len(findings["subject"]["accepted_episode_disposition_ledger"]),
+                              "actions": sum(len(row["action_ids"]) for row in
+                                             findings["subject"]["accepted_episode_disposition_ledger"])},
+        "accepted_behavioral_layer": {
+            "findings": len(records),
+            "episodes": sum(len(record["evidence_episode_ids"]) for record in records.values()),
+            "actions": sum(len(record["evidence_action_ids"]) for record in records.values()),
+        },
+        "proposed_synthesis": {
+            "accepted_findings": synthesis["evidence_counts"]["accepted_findings"],
+            "finding_supporting_episodes": synthesis["evidence_counts"]["episodes"],
+            "finding_actions": synthesis["evidence_counts"]["actions"],
+        },
+        "only_accepted_cross_finding_relationship": True,
+        "important_standalone_finding_outside_synthesis": standalone["proposition_id"],
+    }
+    require(prominence_review["record_context"] == expected_context,
+            "prominence record context differs from accepted lineage")
     safe_public_text(prominence_review["proposed_prominence_note"], "prominence note")
     for option in (prominence_review["option_a_main_takeaway"], prominence_review["option_b_no_main_takeaway"]):
         require(isinstance(option, list) and option and all(isinstance(v, str) and v.strip() for v in option),

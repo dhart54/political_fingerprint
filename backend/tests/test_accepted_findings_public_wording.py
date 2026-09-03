@@ -91,7 +91,7 @@ class AcceptedFindingsPublicWordingTests(unittest.TestCase):
                                 "2 bills · 2 House votes", None,
                                 self.definitions[2]["primary_sentence"], m.BARGAINING),
             m.HR1048_ITEM: ("notable_choice",
-                            "Supported a reporting substitute, opposed the final H.R. 1048 package",
+                            "Supported a reporting-focused replacement, opposed the final H.R. 1048 package",
                             "1 legislative episode · 2 House votes",
                             {"label": "Mixed", "symbol": "±"},
                             self.definitions[3]["primary_sentence"], m.HR1048),
@@ -156,6 +156,51 @@ class AcceptedFindingsPublicWordingTests(unittest.TestCase):
                             if row["treatment"] == "compressed_or_omitted"))
         self.assertTrue(all(row["reason"] is None for row in treatments
                             if row["treatment"] == "retained_public_copy"))
+        self.assertTrue(all(row["public_copy"] is None for row in treatments
+                            if row["treatment"] == "compressed_or_omitted"))
+        retained = [row["public_copy"] for row in treatments
+                    if row["treatment"] == "retained_public_copy"]
+        self.assertEqual(retained, [
+            m.PUBLIC_HR1048_WHOLE_PACKAGE,
+            m.PUBLIC_FUNDING_SECTORS, m.PUBLIC_FUNDING_TRIGGERS,
+            m.PUBLIC_BARGAINING_SYSTEMS, m.PUBLIC_BARGAINING_MECHANISMS,
+            m.PUBLIC_BARGAINING_WHOLE_BILLS, m.PUBLIC_HR1048_WHOLE_PACKAGE,
+        ])
+
+    def test_retained_and_compressed_public_copy_contract_fails_closed(self):
+        cases = (("retained null", None), ("retained empty", ""),
+                 ("retained unsafe", "This was a good policy."))
+        for label, public_copy in cases:
+            definitions = deepcopy(self.definitions)
+            definitions[0]["limitation_treatments"][4]["public_copy"] = public_copy
+            with self.subTest(case=label), self.assertRaises(w.PublicWordingReviewError):
+                self.compile(definitions=definitions)
+        definitions = deepcopy(self.definitions)
+        definitions[0]["limitation_treatments"][0]["public_copy"] = "Reader-facing text."
+        with self.assertRaisesRegex(w.PublicWordingReviewError,
+                                    "compressed limitation cannot carry public copy"):
+            self.compile(definitions=definitions)
+        compiled = self.compile()
+        self.assertEqual(compiled["subject"]["wording_items"][0]
+                         ["limitation_treatments"][4]["public_copy"],
+                         m.PUBLIC_HR1048_WHOLE_PACKAGE)
+
+    def test_revised_public_wording_removes_jargon_and_explains_executive_order(self):
+        items = {item["wording_item_id"]: item
+                 for item in self.package["subject"]["wording_items"]}
+        for item_id in (m.OVERVIEW, m.HR1048_ITEM):
+            sentence = items[item_id]["primary_sentence"]
+            self.assertIn("proposed replacement version of H.R. 1048", sentence)
+            self.assertNotIn("substitute", sentence.lower())
+        bargaining = items[m.BARGAINING_ITEM]["primary_sentence"]
+        self.assertIn("2025 executive order that excluded specified federal agencies and units", bargaining)
+        self.assertNotIn("workers affected by an executive order", bargaining)
+        reviewed = json.loads(subprocess.check_output([
+            "git", "show", f"bdaa049e09659ae90365d74037099db521e1d1cd:{m.OUT}/public_wording_candidate_package.json"],
+            cwd=m.ROOT))
+        prior_funding = next(item for item in reviewed["subject"]["wording_items"]
+                             if item["wording_item_id"] == m.FUNDING_ITEM)
+        self.assertEqual(items[m.FUNDING_ITEM]["primary_sentence"], prior_funding["primary_sentence"])
 
     def test_raw_ids_unknown_sources_and_topic_similarity_cannot_bypass_semantics(self):
         for field in ("action_ids", "episode_ids", "raw_votes", "source_lineage"):
@@ -196,8 +241,22 @@ class AcceptedFindingsPublicWordingTests(unittest.TestCase):
         self.assertEqual(prominence["proposed_prominence_note"], m.PROMINENCE_NOTE)
         self.assertEqual(prominence["main_takeaway_alternative"],
                          "omit_main_takeaway_and_retain_all_three_findings")
+        self.assertEqual(prominence["record_context"], {
+            "full_issue_record": {"episodes": 16, "actions": 17},
+            "accepted_behavioral_layer": {"findings": 3, "episodes": 5, "actions": 6},
+            "proposed_synthesis": {"accepted_findings": 2,
+                                   "finding_supporting_episodes": 3, "finding_actions": 4},
+            "only_accepted_cross_finding_relationship": True,
+            "important_standalone_finding_outside_synthesis": m.BARGAINING,
+        })
         self.assertEqual(len(prominence["option_a_main_takeaway"]), 4)
         self.assertEqual(len(prominence["option_b_no_main_takeaway"]), 2)
+        self.assertIn("not by itself the right prominence denominator",
+                      prominence["option_a_main_takeaway"][2])
+        self.assertIn("standalone collective-bargaining finding",
+                      prominence["option_a_main_takeaway"][3])
+        self.assertIn("All three behavioral findings", prominence["option_b_no_main_takeaway"][0])
+        self.assertNotIn("selected_option", prominence)
 
     def test_candidate_and_all_downstream_permissions_remain_false(self):
         for artifact in (self.package, self.review):
