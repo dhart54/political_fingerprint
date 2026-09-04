@@ -2,7 +2,7 @@
   "artifact_id": "site-integration-review-package:f000477:education_workforce:m14g:v1",
   "candidate_binding": {
     "artifact_id": "site-integration-candidate:f000477:education_workforce:m14g:v1",
-    "candidate_subject_sha256": "0757ef9443c1134ca7f12aecf07cc74b6e4e2d37bc646eb2e7ddc8d7ef654de5"
+    "candidate_subject_sha256": "e21676534897d5e746f0a9d0eaaaec444e9efaa628fefcc2285d7d483fe577ab"
   },
   "downstream_denials": {
     "accepted": false,
@@ -41,9 +41,10 @@
   "preview_contract": {
     "frontend_environment": "NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW=m14g-education-workforce",
     "routes": [
-      "/legislators/{legislator_id}/editorial-presentations",
-      "/legislators/{legislator_id}/positions",
-      "/legislators/{legislator_id}/positions/{domain}/evidence"
+      "/preview/m14g/legislators/{legislator_id}/profile",
+      "/preview/m14g/legislators/{legislator_id}/editorial-presentations",
+      "/preview/m14g/legislators/{legislator_id}/positions",
+      "/preview/m14g/legislators/{legislator_id}/positions/{domain}/evidence"
     ],
     "server_environment": "EDITORIAL_PRESENTATION_PREVIEW=1",
     "token": "m14g-education-workforce"
@@ -124,52 +125,52 @@
   "schema_version": "m14g_site_integration_review_package_v1",
   "screenshot_inventory": [
     {
-      "file_sha256": "93e47c314176ee94c54bb90e23121a4c7f0afc57fef8f47fd0011a015dbf6a73",
+      "file_sha256": "4f27c94201fcc20030a21f1cd6b3d28fb8bcb0050c014fd659639642013bbbd9",
       "open_expanded_state": "overview and repeated patterns",
       "preview_candidate": "m14g-education-workforce",
       "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_overview.png",
       "requested_scope": "119",
       "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
-      "source_commit": "50777a5fd1ce84763e6a294db25578639aa5dce7",
+      "source_commit": "8608df27add62943417dd2a16a7f875f7e4fe5d5",
       "viewport": {
         "height": 1600,
         "width": 1440
       }
     },
     {
-      "file_sha256": "099f5ceeac742cabfbcc2ecce1ebe9742c3646a062ac3bfb2bed4d6dd6330fba",
+      "file_sha256": "ca6a2fd70691ced8d07734e38ecdee41d98b8c1933bc954729d2b75e028dc7fc",
       "open_expanded_state": "Other notable choices expanded; H.R. 1048 boundaries expanded",
       "preview_candidate": "m14g-education-workforce",
       "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_notable_expanded.png",
       "requested_scope": "119",
       "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
-      "source_commit": "50777a5fd1ce84763e6a294db25578639aa5dce7",
+      "source_commit": "8608df27add62943417dd2a16a7f875f7e4fe5d5",
       "viewport": {
         "height": 1600,
         "width": 1440
       }
     },
     {
-      "file_sha256": "46fdb06053786724475fb0837b55d4cf7a0c3aa902e000efe2ba16ff584003e7",
+      "file_sha256": "c1e48e05d797ca80660563d1bbcefc51b9c003abfe0a3f55e79f841670ae2d11",
       "open_expanded_state": "collective-bargaining supporting votes; H.R. 5408 receipt expanded",
       "preview_candidate": "m14g-education-workforce",
       "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_hr5408_receipt.png",
       "requested_scope": "119",
       "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
-      "source_commit": "50777a5fd1ce84763e6a294db25578639aa5dce7",
+      "source_commit": "8608df27add62943417dd2a16a7f875f7e4fe5d5",
       "viewport": {
         "height": 1600,
         "width": 1440
       }
     },
     {
-      "file_sha256": "406497d061c49c4dff7fde40e6e20f743ca416a7a0da5fb2c328bd684626de49",
+      "file_sha256": "f6e77d14fe71b759dbe50bb569e333be9dc8bb9add6d1db5113ec59e35054011",
       "open_expanded_state": "mobile overview and beginning of patterns",
       "preview_candidate": "m14g-education-workforce",
       "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/mobile_overview.png",
       "requested_scope": "119",
       "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
-      "source_commit": "50777a5fd1ce84763e6a294db25578639aa5dce7",
+      "source_commit": "8608df27add62943417dd2a16a7f875f7e4fe5d5",
       "viewport": {
         "height": 844,
         "width": 390
