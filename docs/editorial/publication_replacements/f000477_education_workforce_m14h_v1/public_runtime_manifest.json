@@ -1,0 +1,67 @@
+{
+  "production_observation": {
+    "backend_compatible": true,
+    "backend_health_commit": "ac922506fe9fd61120d3638060cc18398b461df2",
+    "deployment_required_before_activation": true,
+    "frontend_compatible_proven": false,
+    "frontend_exact_deployment_identity": null
+  },
+  "schema_version": "m14h_reviewed_public_runtime_manifest_v1",
+  "subject": {
+    "files": [
+      {
+        "file_sha256": "368b1acfbc85cee1d09d0c4033d298839f87e6a0dc3c86e47ef63418367fb164",
+        "path": "backend/app/main.py"
+      },
+      {
+        "file_sha256": "ff54a90ce56bd00721b2b0a8bcd3b80a121cfe11872c3d5ef9d79865a3768ef1",
+        "path": "backend/app/api/editorial_presentations.py"
+      },
+      {
+        "file_sha256": "23403e09d469b5845a8a13b432a9e1603c3dbf192dbce319b2a0838d01e8e143",
+        "path": "backend/app/api/positions.py"
+      },
+      {
+        "file_sha256": "5a5de96d1ad53218f407bf3db911a961aeb2ddc9bfc88e96cb0f0c18a5740e58",
+        "path": "backend/app/editorial_artifacts/repository.py"
+      },
+      {
+        "file_sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20",
+        "path": "backend/app/editorial_presentations/selector.py"
+      },
+      {
+        "file_sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37",
+        "path": "backend/app/editorial_presentations/site_publication.py"
+      },
+      {
+        "file_sha256": "73f9eed5aea986032142d02e1d763c3e3ede6ac106342a24d22e3ed9d63c881f",
+        "path": "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py"
+      },
+      {
+        "file_sha256": "9f22c73c100b8f4fdaae406da7e101817cd7ec9fda9c4f63240b9fa9925de1bf",
+        "path": "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py"
+      },
+      {
+        "file_sha256": "c6d51caf795f694a56204d3da91d95fc341b6bfe59dbcb67964c15069899a95f",
+        "path": "frontend/components/IssueDetail.js"
+      },
+      {
+        "file_sha256": "e5d83953bbe01a36b3600fc35b6e5ada193c096d24e65f74ee2fb2a0d7874852",
+        "path": "frontend/components/ReviewedAnalysisSection.js"
+      },
+      {
+        "file_sha256": "82eeaba2e724c59d6429807ea7981255704a17edcb501c33aa76c87988a3afde",
+        "path": "frontend/components/ActionReceipt.js"
+      },
+      {
+        "file_sha256": "551920d750e2affe64e2224c1d4910763cf1bf40845f5f8516296ac6197e2dc5",
+        "path": "frontend/lib/selectedIssueExperience.mjs"
+      },
+      {
+        "file_sha256": "bff8382b023472f706064e8d20fd35ec55fe25b05825d1d36313282d091a74a7",
+        "path": "frontend/lib/publicReceipt.mjs"
+      }
+    ]
+  },
+  "subject_sha256": "48b606eda5f77cfb55d41ae266bd3e0f87a418a0fa38c5aa2c5d404942d59d2b"
+}

@@ -17,6 +17,80 @@ on:
       - ".github/workflows/backend-tests.yml"
 
 jobs:
+  m14h-exact-head:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      M14H_DISPOSABLE_DATABASE_URL: >-
+        postgresql://postgres:postgres@127.0.0.1:5432/pf_m14h
+      PGPASSWORD: postgres
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install M14H validation dependencies
+        run: python -m pip install -r backend/requirements.txt httpx
+
+      - name: Prove exact M14H package and unchanged V2/migration contracts
+        run: |
+          git rev-parse HEAD
+          python -m pytest -q \
+            backend/tests/test_m14h_education_publication_replacement.py \
+            backend/tests/test_publication_activation_governance_v2.py \
+            backend/tests/test_m11n_national_security_publication_activation.py \
+            backend/tests/test_m12n_environment_energy_publication_preparation.py \
+            backend/tests/test_m13n_r_education_publication_preparation.py \
+            backend/tests/test_m13n_education_workforce_ratification_candidate.py
+
+      - name: Prove disposable M14H apply, idempotency, faults, rollback, and public selector
+        run: |
+          createdb -h 127.0.0.1 -U postgres pf_m14h
+          python backend/scripts/prepare_editorial_artifact_disposable.py \
+            --database-url-env M14H_DISPOSABLE_DATABASE_URL \
+            --seed-foushee-activation-baseline
+          python -m pytest -q \
+            backend/tests/test_m14h_education_publication_replacement_postgres.py \
+            -rs
+
+      - name: Run accepted M14G and public-receipt regressions
+        run: |
+          python backend/scripts/build_m14g_education_workforce_site_integration.py --check
+          python scripts/build_m14g_site_integration_acceptance.py --check --check-scope
+          python -m pytest -q \
+            backend/tests/test_m14g_education_workforce_site_integration.py \
+            backend/tests/test_m14g_site_integration_acceptance.py
+          cd frontend
+          node --test \
+            lib/m14gEducationWorkforce.test.mjs \
+            lib/publicReceipt.test.mjs \
+            lib/selectedIssueExperience.test.mjs
+
+      - name: Run release-tier editorial, frontend, and persistence validation
+        run: >-
+          python scripts/run_editorial_pipeline.py validate --tier release
+          --include-frontend --include-persistence
+
   m14g-exact-head:
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,42 @@
+{
+  "accepted": false,
+  "artifact_id": "publication-replacement-activation-authority:f000477:education_workforce:m14h:v1",
+  "immutable": true,
+  "prospective_activation_subject_sha256": "a7446fa4deb310003e2dcbec2c9ac3968acd0a4ad2c89f22126921d9bf8a0b19",
+  "schema_version": "site_integration_publication_replacement_activation_authority_v2",
+  "sealed": false,
+  "subject": {
+    "accepted_site_integration_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0",
+    "authorizations": {
+      "exact_bounded_rollback": true,
+      "execute_only_under_fresh_matching_evidence": true,
+      "production_database_write": true,
+      "publication_registry_mutation": true,
+      "publication_replacement": true
+    },
+    "congress": 119,
+    "decision": "approve_exact_publication_replacement_v2",
+    "decision_recorded_at_utc": null,
+    "exact_write_set_subject_sha256": "84ba31cb357ebbd0916377c983d9dee4755b691ff61a76eb46b2234ad9f32648",
+    "execution_code_manifest_subject_sha256": "cc4d197604a3303db75ec681a2402603b7510750f0befd8ae4bed044f5dba182",
+    "expected_postconditions_sha256": "0bc1f49cc81e1fba688212292ce7a912e38672b15f0f8def876e793feabbd060",
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477",
+    "preparation_authority_subject_sha256": "b871264bc4cd7db3df4ea69c57cab6a66ab1b5dfdaf1187b989c9c5bce3efdfb",
+    "prior_registry_identity_sha256": "b6e5afa8752b5049f9985780dd20af1f4e697bd924d058d5bd2cd8e15e2d4a5e",
+    "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+    "public_runtime_manifest_subject_sha256": "48b606eda5f77cfb55d41ae266bd3e0f87a418a0fa38c5aa2c5d404942d59d2b",
+    "replacement_registry_target": {
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477"
+    },
+    "reviewer": null,
+    "reviewer_authority": "publication_replacement_review_authority_v2",
+    "rollback_contract_subject_sha256": "8acdb9a8dddc537593eb45c117948b420843143d4138d8935fd591a2e42cc4e2",
+    "semantic_human_authority_lineage": [
+      "7042fd16cc707ffc2bef57d7eff4925d01ffe551cf3d09e0aabc05e52b51e35e",
+      "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b"
+    ],
+    "stable_production_baseline_sha256": "bf78def3472521651edc82f9b5eef774105aa1b0d5424d44bbd516e848513dc2"
+  }
+}
