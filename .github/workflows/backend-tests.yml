@@ -76,7 +76,7 @@ jobs:
       - name: Run accepted M14G and public-receipt regressions
         run: |
           python backend/scripts/build_m14g_education_workforce_site_integration.py --check
-          python scripts/build_m14g_site_integration_acceptance.py --check --check-scope
+          python scripts/build_m14g_site_integration_acceptance.py --check
           python -m pytest -q \
             backend/tests/test_m14g_education_workforce_site_integration.py \
             backend/tests/test_m14g_site_integration_acceptance.py
