@@ -50,6 +50,7 @@ test("real M14G backend and frontend render exact hierarchy and receipt meaning"
     { hasText: "Bill or amendment text" },
   )).toHaveCount(0);
   const hr5408 = page.locator('[data-canonical-action-id="house:119:2:216"]');
+  await hr5408.getByRole("button", { name: /Expand H\.R\. 5408/ }).click();
   await expect(hr5408).toContainText("Current wages, hours, and employment terms would have to be maintained");
   await expect(hr5408).toContainText("arbitration award would bind the parties for two years");
   await expect(hr5408).not.toContainText("accelerate workplace time-to-contract");
