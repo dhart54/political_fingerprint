@@ -1,0 +1,177 @@
+{
+  "accepted": true,
+  "accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b",
+  "artifact_id": "accepted-site-integration:f000477:education_workforce:m14g:v1",
+  "artifact_role": "human_accepted_canonical_internal_site_integration",
+  "canonical_internal_site_integration": true,
+  "database_writes": false,
+  "deployment": false,
+  "live_activation": false,
+  "merge": false,
+  "production_persistence": false,
+  "production_selectable": false,
+  "production_writes": false,
+  "public": false,
+  "public_activation": false,
+  "publication": false,
+  "publication_eligibility": false,
+  "publication_preparation": false,
+  "schema_version": "m14g_accepted_site_integration_v1",
+  "subject": {
+    "authority_effect": "canonical_internal_site_integration_candidate_only",
+    "downstream_authorizations": {
+      "database_writes": false,
+      "deployment": false,
+      "live_activation": false,
+      "merge": false,
+      "production_persistence": false,
+      "production_selectable": false,
+      "production_writes": false,
+      "public_activation": false,
+      "publication": false,
+      "publication_eligibility": false,
+      "publication_preparation": false
+    },
+    "human_site_integration_authority": {
+      "artifact_id": "human-site-integration-authority:f000477:education_workforce:m14g:v1",
+      "authority_subject_sha256": "7042fd16cc707ffc2bef57d7eff4925d01ffe551cf3d09e0aabc05e52b51e35e",
+      "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/human_site_integration_authority.json"
+    },
+    "presentation_accounting": {
+      "directionless_repeated_patterns": 2,
+      "findings": 3,
+      "hr1048_direction_label": "Mixed",
+      "main_takeaway_actions": 4,
+      "main_takeaway_episodes": 3,
+      "main_takeaway_linked_findings": 2,
+      "notable_choices": 1,
+      "overviews": 1,
+      "rendered_retained_limitation_instances": 7,
+      "repeated_patterns": 2,
+      "syntheses": 0,
+      "trajectories": 0
+    },
+    "receipt_accounting": {
+      "finding_supporting_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313",
+        "house:119:1:332",
+        "house:119:1:79",
+        "house:119:1:83",
+        "house:119:2:216"
+      ],
+      "finding_supporting_actions": 6,
+      "main_takeaway_action_ids": [
+        "house:119:1:120",
+        "house:119:1:313",
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "reviewed_actions": 17,
+      "reviewed_episodes": 16
+    },
+    "receipt_state_bindings": {
+      "hr1005": {
+        "canonical_action_id": "house:119:1:312",
+        "exact_choice_effect": "resolved_non_directional",
+        "official_status": "Not Voting",
+        "supports_finding": false
+      },
+      "hr1048": {
+        "action_ids": [
+          "house:119:1:79",
+          "house:119:1:83"
+        ],
+        "episode_id": "hr-1048-amendment-and-final-passage"
+      },
+      "hr5408_exact_action_meaning": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it."
+    },
+    "reviewed_candidate": {
+      "artifact_id": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+      "candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0",
+      "complete_file_sha256": "7022fff0cbd8e54acab095401c2810b93359c3a55d8a5a03eba86e4e6d14d2c6",
+      "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/site_integration_candidate.json"
+    },
+    "reviewed_review_package": {
+      "artifact_id": "site-integration-review-package:f000477:education_workforce:m14g:v1",
+      "complete_file_sha256": "35376319e9a556c82a217da7d70b9b128236325f084b1d630aaa1030d07acb4e",
+      "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/review_package.json"
+    },
+    "reviewed_screenshot_manifest": {
+      "artifact_id": "screenshot-manifest:f000477:education_workforce:m14g:v1",
+      "capture_head": "b90824b5fd14d719c47545fca650fad2933a1ebb",
+      "complete_file_sha256": "cd8fdec5048cade1f731d14746c9008e86181f52afbc62acf7530c37ded44208",
+      "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshot_manifest.json"
+    },
+    "screenshot_bindings": [
+      {
+        "file_sha256": "93e47c314176ee94c54bb90e23121a4c7f0afc57fef8f47fd0011a015dbf6a73",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_overview.png"
+      },
+      {
+        "file_sha256": "099f5ceeac742cabfbcc2ecce1ebe9742c3646a062ac3bfb2bed4d6dd6330fba",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_notable_expanded.png"
+      },
+      {
+        "file_sha256": "2dc10d3a7edaed6df15e1eabd29bce922df072cf4b29b2b985d9b4851b212c09",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_hr5408_receipt.png"
+      },
+      {
+        "file_sha256": "9f3694c956ea4881b54ca27bec7943fdcbc008b8953d5519242077d48b5a73e3",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/mobile_overview.png"
+      }
+    ],
+    "source_label_contract": {
+      "absent_public_label_behavior": "use_prior_url_derived_label",
+      "accepted_sources": [
+        {
+          "canonical_action_id": "house:119:1:332",
+          "public_label": "Executive order",
+          "source_id": "govinfo:FR-2025-04-03:2025-05836:EO14251",
+          "source_type": "federal_register_executive_order",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm"
+        },
+        {
+          "canonical_action_id": "house:119:2:184",
+          "public_label": "Executive order",
+          "source_id": "govinfo:FR-2025-01-30:2025-02090:EO14168",
+          "source_type": "federal_register_executive_order",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm"
+        },
+        {
+          "canonical_action_id": "house:119:1:79",
+          "public_label": "U.S. Code",
+          "source_id": "govinfo:USCODE-2024-title20:sec1094:e2Bii",
+          "source_type": "united_states_code",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm"
+        }
+      ],
+      "allowed_action_source_labels": [
+        "Bill or amendment text",
+        "Congressional Record",
+        "Executive order",
+        "U.S. Code",
+        "Official cost estimate",
+        "Official report",
+        "Official law text"
+      ],
+      "arbitrary_public_label_behavior": "reject_by_ignoring_and_use_url_derived_label"
+    },
+    "substantive_boundary": "Acceptance is limited to the exact reviewed site-integration presentation. It does not convert the scoped Main Takeaway into an issue-wide ideological characterization.",
+    "upstream_accepted_subjects": {
+      "m14d_accepted_findings_subject_sha256": "795027fdcf49a4956b99804be9d44ec7bd233877e4bc76caa4121f7b61df169d",
+      "m14d_human_authority_subject_sha256": "456d9f6f9577e8604480cdb40a08cb1f92e443ab3e02ff33cb2ecd193ca16638",
+      "m14f_accepted_public_copy_subject_sha256": "4fed310450608f1465f2617721e7665670d855f70cbcd50471aa46fc7cac0810",
+      "m14f_human_authority_subject_sha256": "9b1962e1d33dd144a609cd9cbcb5114f81c51a8ce4195bc24112ba9fb10d0cfb",
+      "v2_member_projection_subject_sha256": "d1ad8f68ca8a419427ce23e6b0c870c02a450de0ae3309df33db691c78e46892",
+      "v2_promotion_manifest_subject_sha256": "0ec2ffd7e5ee3f86c7386f61b7af5c0682cdbe66fb5d18283ebbfce6139d2298",
+      "v2_shared_action_core_subject_sha256": "fc7b376cd3e0b485e0ac28c15ba7a5111a1e41c4855a3cbb99354b4ac04d0aa2"
+    },
+    "wording_item_sha256s": {
+      "m14f:issue_overview:education_workforce": "57c3ac7a93b136e6057ffee961f6e3a0611d004b5e2fd7a0aeaa6a53002aeae1",
+      "m14f:notable:hr1048_substitute_final": "87caf258fdae8fadc4420402094f0ff763aee85acb2249296dc0a23d8865dc73",
+      "m14f:pattern:china_linked_education_funding": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120",
+      "m14f:pattern:collective_bargaining_continuity": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf"
+    }
+  }
+}

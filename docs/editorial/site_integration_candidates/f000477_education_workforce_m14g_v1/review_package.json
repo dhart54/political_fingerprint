@@ -1,0 +1,186 @@
+{
+  "artifact_id": "site-integration-review-package:f000477:education_workforce:m14g:v1",
+  "candidate_binding": {
+    "artifact_id": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+    "candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0"
+  },
+  "downstream_denials": {
+    "accepted": false,
+    "authorizing": false,
+    "database_writes": false,
+    "deployment": false,
+    "merge": false,
+    "production_selectable": false,
+    "production_writes": false,
+    "public": false,
+    "publication_active": false,
+    "publication_eligible": false
+  },
+  "hr1005_non_directional_proof": {
+    "canonical_action_id": "house:119:1:312",
+    "exact_choice_effect": "resolved_non_directional",
+    "official_status": "Not Voting",
+    "supports_finding": false
+  },
+  "hr1048_one_episode_proof": {
+    "action_ids": [
+      "house:119:1:79",
+      "house:119:1:83"
+    ],
+    "episode_id": "hr-1048-amendment-and-final-passage"
+  },
+  "hr5408_governed_receipt": {
+    "canonical_action_id": "house:119:2:216",
+    "exact_action_meaning": "Current wages, hours, and employment terms would have to be maintained while an agreement is pending, and employers would have to keep bargaining unless an election removes the employee representative's certification. First-contract talks would start within 10 days of a written request, allow mediation after 90 days without agreement, and move to arbitration after 30 days from the mediation request, subject to agreed extensions. The arbitration award would bind the parties for two years unless both agreed in writing to amend it.",
+    "old_m13m_semantic_regression": {
+      "equals_v2_accepted_exact_action_meaning": true,
+      "old_sentence": "The House choice was whether to pass H.R. 5408, which would accelerate workplace time-to-contract under the National Labor Relations Act.",
+      "old_sentence_absent": true
+    }
+  },
+  "preview_contract": {
+    "frontend_environment": "NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW=m14g-education-workforce",
+    "routes": [
+      "/preview/m14g/legislators/{legislator_id}/profile",
+      "/preview/m14g/legislators/{legislator_id}/editorial-presentations",
+      "/preview/m14g/legislators/{legislator_id}/positions",
+      "/preview/m14g/legislators/{legislator_id}/positions/{domain}/evidence"
+    ],
+    "server_environment": "EDITORIAL_PRESENTATION_PREVIEW=1",
+    "token": "m14g-education-workforce"
+  },
+  "receipt_accounting": {
+    "actions": 17,
+    "episodes": 16,
+    "finding_supporting_action_ids": [
+      "house:119:1:120",
+      "house:119:1:313",
+      "house:119:1:332",
+      "house:119:1:79",
+      "house:119:1:83",
+      "house:119:2:216"
+    ],
+    "main_takeaway_action_ids": [
+      "house:119:1:120",
+      "house:119:1:313",
+      "house:119:1:79",
+      "house:119:1:83"
+    ]
+  },
+  "rendered_hierarchy": {
+    "counts": {
+      "findings": 3,
+      "notable_choices": 1,
+      "overviews": 1,
+      "repeated_patterns": 2,
+      "syntheses": 0,
+      "trajectories": 0
+    },
+    "main_takeaway": {
+      "evidence_count_label": "2 linked findings · 4 House votes",
+      "primary_sentence": "On foreign influence in education, Foushee opposed two bills that would cut off specified federal funding to schools or colleges over certain China-linked ties or Chinese-government-backed support. She also supported a proposed replacement version of H.R. 1048 that would require detailed foreign-gift and contract reporting, public disclosure, and penalties for some violations. She later opposed the broader final H.R. 1048 package, so that vote does not show which part of the final bill she rejected.",
+      "public_title": "Education & Workforce",
+      "wording_item_id": "m14f:issue_overview:education_workforce"
+    },
+    "notable_choice": {
+      "direction_label": "Mixed",
+      "evidence_count_label": "1 legislative episode · 2 House votes",
+      "primary_sentence": "Foushee supported a proposed replacement version of H.R. 1048 that would set foreign-gift and contract reporting thresholds for colleges, make reports publicly searchable, allow some equivalent reporting and specified exclusions, and impose fines or compliance plans for some violations. She then opposed the broader final H.R. 1048 package, which also included contract restrictions and other reporting and enforcement provisions. The final vote does not identify which part she opposed.",
+      "public_title": "Supported a reporting-focused replacement, opposed the final H.R. 1048 package",
+      "wording_item_id": "m14f:notable:hr1048_substitute_final"
+    },
+    "repeated_patterns": [
+      {
+        "evidence_count_label": "2 bills · 2 House votes",
+        "primary_sentence": "Foushee opposed H.R. 881, which would generally make colleges with specified ties to named China-linked programs or entities ineligible for Department of Homeland Security funding, and H.R. 1069, which would generally withhold covered federal education funds from K–12 schools with specified Chinese-government-backed partnerships or resources. Both bills included waiver routes, but they covered different sectors, funding streams, and conditions.",
+        "public_title": "Opposed two China-linked education funding restrictions",
+        "wording_item_id": "m14f:pattern:china_linked_education_funding"
+      },
+      {
+        "evidence_count_label": "2 bills · 2 House votes",
+        "primary_sentence": "Foushee supported H.R. 2550, which would reverse a 2025 executive order that excluded specified federal agencies and units from federal or Foreign Service labor-management rules and preserve covered union agreements already in effect. She also supported H.R. 5408, which would require continued bargaining and unchanged employment terms while workers' representatives and employers negotiated a first contract, with mediation and binding arbitration if talks remained unresolved.",
+        "public_title": "Supported keeping collective bargaining in force",
+        "wording_item_id": "m14f:pattern:collective_bargaining_continuity"
+      }
+    ]
+  },
+  "rendered_limitations_by_surface": {
+    "china_linked_pattern": [
+      "H.R. 881 concerned Department of Homeland Security funding for colleges, while H.R. 1069 concerned covered federal education funds for K–12 schools. Neither covered all federal funding.",
+      "The bills covered different China-linked relationships and used different waiver rules; H.R. 1069's funding restriction would begin one year after enactment."
+    ],
+    "collective_bargaining_pattern": [
+      "H.R. 2550 concerned federal and Foreign Service labor-management rules, while H.R. 5408 concerned private-sector collective bargaining under federal labor law.",
+      "Preserving existing federal union agreements is different from maintaining employment terms and a duty to bargain during first-contract negotiations.",
+      "H.R. 5408 also required mediation and binding arbitration; support for either whole bill does not show which individual provision drove Foushee's vote."
+    ],
+    "hr1048_notable_choice": [
+      "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed."
+    ],
+    "overview_top_level": [
+      "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed."
+    ],
+    "treatment_instance_count": 7
+  },
+  "schema_version": "m14g_site_integration_review_package_v1",
+  "screenshot_inventory": [
+    {
+      "file_sha256": "93e47c314176ee94c54bb90e23121a4c7f0afc57fef8f47fd0011a015dbf6a73",
+      "open_expanded_state": "overview and repeated patterns",
+      "preview_candidate": "m14g-education-workforce",
+      "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_overview.png",
+      "requested_scope": "119",
+      "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
+      "source_commit": "b90824b5fd14d719c47545fca650fad2933a1ebb",
+      "viewport": {
+        "height": 1600,
+        "width": 1440
+      }
+    },
+    {
+      "file_sha256": "099f5ceeac742cabfbcc2ecce1ebe9742c3646a062ac3bfb2bed4d6dd6330fba",
+      "open_expanded_state": "Other notable choices expanded; H.R. 1048 boundaries expanded",
+      "preview_candidate": "m14g-education-workforce",
+      "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_notable_expanded.png",
+      "requested_scope": "119",
+      "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
+      "source_commit": "b90824b5fd14d719c47545fca650fad2933a1ebb",
+      "viewport": {
+        "height": 1600,
+        "width": 1440
+      }
+    },
+    {
+      "file_sha256": "2dc10d3a7edaed6df15e1eabd29bce922df072cf4b29b2b985d9b4851b212c09",
+      "open_expanded_state": "collective-bargaining supporting votes; H.R. 5408 receipt expanded",
+      "preview_candidate": "m14g-education-workforce",
+      "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_hr5408_receipt.png",
+      "requested_scope": "119",
+      "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
+      "source_commit": "b90824b5fd14d719c47545fca650fad2933a1ebb",
+      "viewport": {
+        "height": 1600,
+        "width": 1440
+      }
+    },
+    {
+      "file_sha256": "9f3694c956ea4881b54ca27bec7943fdcbc008b8953d5519242077d48b5a73e3",
+      "open_expanded_state": "mobile overview and beginning of patterns",
+      "preview_candidate": "m14g-education-workforce",
+      "repo_path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/mobile_overview.png",
+      "requested_scope": "119",
+      "route": "/?representative=leg_valerie_p_foushee&issue=EDUCATION_WORKFORCE&scope=119",
+      "source_commit": "b90824b5fd14d719c47545fca650fad2933a1ebb",
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    }
+  ],
+  "wording_item_sha256s": {
+    "m14f:issue_overview:education_workforce": "57c3ac7a93b136e6057ffee961f6e3a0611d004b5e2fd7a0aeaa6a53002aeae1",
+    "m14f:notable:hr1048_substitute_final": "87caf258fdae8fadc4420402094f0ff763aee85acb2249296dc0a23d8865dc73",
+    "m14f:pattern:china_linked_education_funding": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120",
+    "m14f:pattern:collective_bargaining_continuity": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf"
+  }
+}

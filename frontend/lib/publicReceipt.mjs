@@ -2,6 +2,15 @@ const RAW_REVIEW_PROCESS_DISCLOSURE = /\b(?:about this interpretation|human[- ]r
 const STRUCTURALLY_INTERNAL = /(?:^|[\\/])(?:backend|docs|frontend|scripts)[\\/]|\.json\b|\b(?:candidate_content_)?sha-?256\b|\b(?:interpretation|content)[_ -]digest\b|\b[a-f0-9]{40,}\b|\b(?:implementation[_ -]?id|[a-z0-9-]+-implementation|acceptance[_ -](?:receipt|ref)|delegated[_ -]acceptance|launch[_ -]ratification|ratification[_ -](?:receipt|ref)|semantic[_ -]ir[_ -]acceptance)\b/i;
 const GENERIC_EPISODE_PROCESS = /^this action is one independently expandable part of the related policy episode\.?$/i;
 const GENERIC_RECEIPT_CAVEAT = /^(?:this (?:candidate|receipt|interpretation) does not establish|the (?:candidate|receipt|interpretation) does not establish|this receipt remains bounded to the reviewed|the reviewed interpretation remains a candidate)\b/i;
+const ALLOWED_ACTION_SOURCE_LABELS = new Set([
+  "Bill or amendment text",
+  "Congressional Record",
+  "Executive order",
+  "U.S. Code",
+  "Official cost estimate",
+  "Official report",
+  "Official law text",
+]);
 
 export function buildPublicReceipt(row = {}) {
   const projection = row.governed_receipt_projection || null;
@@ -116,9 +125,18 @@ function normalizeSource(source, kind) {
     return null;
   }
   return {
-    label: kind === "vote" ? "Official vote" : actionSourceLabel(url),
+    label: kind === "vote" ? "Official vote" : publicActionSourceLabel(source, url),
     url,
   };
+}
+
+function publicActionSourceLabel(source, url) {
+  const supplied = typeof source === "object" && source !== null
+    ? source.public_label
+    : null;
+  return ALLOWED_ACTION_SOURCE_LABELS.has(supplied)
+    ? supplied
+    : actionSourceLabel(url);
 }
 
 function actionSourceLabel(url) {

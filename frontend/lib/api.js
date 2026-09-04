@@ -1,5 +1,6 @@
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+const M14G_PREVIEW_TOKEN = "m14g-education-workforce";
 
 export async function fetchHealth() {
   const response = await fetch(`${API_BASE_URL}/health`, {
@@ -76,7 +77,7 @@ export async function fetchDrift({ legislatorId }) {
 export async function fetchPositions({ legislatorId, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
   addEditorialPreviewCandidate(searchParams);
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions?${searchParams.toString()}`, {
+  const response = await fetch(`${API_BASE_URL}${editorialApiPath(`/legislators/${legislatorId}/positions`)}?${searchParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -90,7 +91,7 @@ export async function fetchPositions({ legislatorId, scope = "all" }) {
 export async function fetchPositionEvidence({ legislatorId, domain, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
   addEditorialPreviewCandidate(searchParams);
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/positions/${domain}/evidence?${searchParams.toString()}`, {
+  const response = await fetch(`${API_BASE_URL}${editorialApiPath(`/legislators/${legislatorId}/positions/${domain}/evidence`)}?${searchParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -104,7 +105,7 @@ export async function fetchPositionEvidence({ legislatorId, domain, scope = "all
 export async function fetchEditorialPresentations({ legislatorId, scope = "all" }) {
   const searchParams = new URLSearchParams({ scope });
   addEditorialPreviewCandidate(searchParams);
-  const response = await fetch(`${API_BASE_URL}/legislators/${legislatorId}/editorial-presentations?${searchParams.toString()}`, {
+  const response = await fetch(`${API_BASE_URL}${editorialApiPath(`/legislators/${legislatorId}/editorial-presentations`)}?${searchParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -121,9 +122,16 @@ function addEditorialPreviewCandidate(searchParams) {
     "m11m-national-security",
     "m12m-environment-energy",
     "m13m-education-workforce",
+    "m14g-education-workforce",
   ].includes(candidate)) {
     searchParams.set("candidate", candidate);
   }
+}
+
+function editorialApiPath(path) {
+  return process.env.NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW === M14G_PREVIEW_TOKEN
+    ? `/preview/m14g${path}`
+    : path;
 }
 
 export async function fetchAlignment({ legislatorId, preferences, scope = "all" }) {
@@ -235,8 +243,13 @@ export async function fetchLegislatorSearch({ query = "" } = {}) {
 }
 
 export async function fetchLegislatorProfile({ legislatorId }) {
+  const searchParams = new URLSearchParams();
+  if (process.env.NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW === M14G_PREVIEW_TOKEN) {
+    searchParams.set("candidate", M14G_PREVIEW_TOKEN);
+  }
+  const suffix = searchParams.toString() ? `?${searchParams.toString()}` : "";
   const response = await fetch(
-    `${API_BASE_URL}/legislators/${encodeURIComponent(legislatorId)}/profile`,
+    `${API_BASE_URL}${editorialApiPath(`/legislators/${encodeURIComponent(legislatorId)}/profile`)}${suffix}`,
     { cache: "no-store" },
   );
 
