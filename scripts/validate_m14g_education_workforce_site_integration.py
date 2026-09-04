@@ -27,6 +27,7 @@ ALLOWED_PREFIXES = (
     "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py",
     "backend/scripts/build_m14g_education_workforce_site_integration.py",
     "backend/tests/test_m14g_education_workforce_site_integration.py",
+    "backend/tests/test_m14g_site_integration_acceptance.py",
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/",
     "docs/plans/m14g_education_detached_site_integration.md",
     "frontend/lib/api.js",
@@ -34,8 +35,10 @@ ALLOWED_PREFIXES = (
     "frontend/lib/publicReceipt.mjs",
     "frontend/tests/m14g-education-workforce-integration.spec.mjs",
     "scripts/validate_m14g_education_workforce_site_integration.py",
+    "scripts/build_m14g_site_integration_acceptance.py",
 )
 BASE = "50777a5fd1ce84763e6a294db25578639aa5dce7"
+REVIEWED_HEAD = "cfe9e54fa618d92e82dd0a262359e9fa5631b207"
 POST_CAPTURE_FILES = {
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/review_package.json",
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshot_manifest.json",
@@ -43,6 +46,14 @@ POST_CAPTURE_FILES = {
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_notable_expanded.png",
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/desktop_hr5408_receipt.png",
     "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/screenshots/mobile_overview.png",
+}
+ACCEPTANCE_CLOSURE_FILES = {
+    ".github/workflows/backend-tests.yml",
+    "backend/tests/test_m14g_site_integration_acceptance.py",
+    "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/accepted_site_integration.json",
+    "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/human_site_integration_authority.json",
+    "scripts/build_m14g_site_integration_acceptance.py",
+    "scripts/validate_m14g_education_workforce_site_integration.py",
 }
 
 
@@ -64,12 +75,16 @@ def main() -> None:
         raise SystemExit("M14G capture head is not an exact commit")
     git("cat-file", "-e", f"{capture_head}^{{commit}}")
     if subprocess.run(
-        ["git", "merge-base", "--is-ancestor", capture_head, "HEAD"], cwd=ROOT
+        ["git", "merge-base", "--is-ancestor", capture_head, REVIEWED_HEAD], cwd=ROOT
     ).returncode:
-        raise SystemExit("M14G capture head is not an ancestor of the final head")
+        raise SystemExit("M14G capture head is not an ancestor of the reviewed head")
+    if subprocess.run(
+        ["git", "merge-base", "--is-ancestor", REVIEWED_HEAD, "HEAD"], cwd=ROOT
+    ).returncode:
+        raise SystemExit("M14G reviewed head is not an ancestor of the closure head")
     if any(row.get("source_commit") != capture_head for row in manifest["captures"]):
         raise SystemExit("M14G screenshot source commits differ from the capture head")
-    post_capture = set(git("diff", "--name-only", capture_head, "HEAD").splitlines())
+    post_capture = set(git("diff", "--name-only", capture_head, REVIEWED_HEAD).splitlines())
     unexpected_post_capture = post_capture - POST_CAPTURE_FILES
     if unexpected_post_capture:
         raise SystemExit(
@@ -81,6 +96,11 @@ def main() -> None:
     }
     if not required_bindings.issubset(post_capture):
         raise SystemExit("M14G final screenshot bindings were not sealed after capture")
+    closure_changes = set(git("diff", "--name-only", REVIEWED_HEAD, "HEAD").splitlines())
+    if closure_changes - ACCEPTANCE_CLOSURE_FILES:
+        raise SystemExit(
+            f"M14G acceptance closure file set differs: {sorted(closure_changes - ACCEPTANCE_CLOSURE_FILES)}"
+        )
     candidate = json.loads((OUTPUT / "site_integration_candidate.json").read_text(encoding="utf-8"))
     if len(candidate["subject"]["receipt_projections"]) != 17:
         raise SystemExit("M14G receipt accounting differs")
