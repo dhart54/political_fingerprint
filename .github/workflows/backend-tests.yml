@@ -89,9 +89,11 @@ jobs:
             lib/selectedIssueExperience.test.mjs
 
       - name: Run release-tier editorial, frontend, and persistence validation
-        run: >-
-          python scripts/run_editorial_pipeline.py validate --tier release
-          --include-frontend --include-persistence
+        run: |
+          # The accepted Phase B receipt pins this protected input's CRLF bytes.
+          python -c "from pathlib import Path; p=Path('docs/semantic_ir/held_out_inputs/held_out_cases.json'); p.write_bytes(p.read_text(encoding='utf-8').replace(chr(13) + chr(10), chr(10)).replace(chr(10), chr(13) + chr(10)).encode('utf-8'))"
+          python scripts/run_editorial_pipeline.py validate --tier release \
+            --include-frontend --include-persistence
 
   m14g-exact-head:
     runs-on: ubuntu-latest
