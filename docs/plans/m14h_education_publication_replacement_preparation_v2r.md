@@ -70,10 +70,11 @@
 ## Deviations Or Corrections
 
 - Direct edits initially considered for historical selector modules were removed after their exact-runtime regression contracts surfaced; equivalent M14H support is additive and those files are excluded from the change.
+- Independent review held PR #182 for one bounded correction pass. The pass separates accepted-site and reviewed-candidate identities, exhaustively validates the stable positive authority, binds deployment of exact reviewed runtime bytes, requires independently reconstructed backend/frontend deployment submanifests, removes preview-only public metadata, and makes the M14G scope guard milestone-local.
 
 ## Validation Results
 
-- M14H focused tests: 12 passed; Ruff: passed.
+- Corrected M14H focused tests: 36 passed; Ruff: passed.
 - Fresh disposable PostgreSQL lifecycle proof: 1 passed, including exact 1/3/2/0/1 apply, four injected rollback points, idempotent second apply, exact explicit rollback, isolation, and 118/119/all selector behavior.
 - Accepted M14G/public-receipt frontend tests: 22 passed.
 - Historical V2 and M11-M13 focused suites: 126 passed; eight local errors are the same Windows sandbox temporary-directory access limitation reproduced at the exact baseline, not product failures.
@@ -97,7 +98,7 @@
 
 ## Final Reconciliation
 
-- Definition of done satisfied except for draft PR creation and its exact-head CI result.
+- Definition of done satisfied locally; corrected exact-head and complete hosted workflow results are pending.
 - The review package remains an unsealed, unaccepted candidate and grants no production, activation, deployment, merge, or publication authority.
-- Remaining limitation: a later fresh runtime proof must establish the deployed backend/frontend identity before any separately authorized production replacement.
+- Remaining limitation: a later fresh runtime proof must reconstruct both reviewed backend and frontend submanifests from their exact deployed Git identities before any separately authorized production replacement.
 - Recommended next step: independent review followed only by the exact production-replacement authorization decision.

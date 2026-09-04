@@ -2305,7 +2305,7 @@
       }
     ],
     "execution_code_manifest_binding": {
-      "subject_sha256": "cc4d197604a3303db75ec681a2402603b7510750f0befd8ae4bed044f5dba182"
+      "subject_sha256": "5072485a47f9a70fc7e2d18f54f5828216c5290aa750f6736d0bc978bbd28f26"
     },
     "expected_postconditions": {
       "counts": {
@@ -2337,7 +2337,9 @@
     "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
     "production_write_authorized": false,
     "public_runtime_manifest_binding": {
-      "subject_sha256": "48b606eda5f77cfb55d41ae266bd3e0f87a418a0fa38c5aa2c5d404942d59d2b"
+      "backend_submanifest_sha256": "dad0c13b90bf1e79f01cd1d07b6806374065c2a1e0ed9be185e9d549fab21744",
+      "frontend_submanifest_sha256": "e41dd79fe81d0ce0aebe03720f3081614e0a19c13923b851e8ce7d953e5b1125",
+      "subject_sha256": "0b4a9351aaaebf02b3f374809129f3b727e486e5e5e0114559f4861595eb873d"
     },
     "publication_registry_update": {
       "activated_at": "activation_execution_timestamp",
@@ -2673,7 +2675,7 @@
       },
       "publication_metadata_jsonb": {
         "active_artifact_sha256": "76d06a43beb51c164a199c576c3d0aa539b6c05da2f8e4eff8fe54845547e4ec",
-        "execution_code_manifest_subject_sha256": "cc4d197604a3303db75ec681a2402603b7510750f0befd8ae4bed044f5dba182",
+        "execution_code_manifest_subject_sha256": "5072485a47f9a70fc7e2d18f54f5828216c5290aa750f6736d0bc978bbd28f26",
         "m14g_accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b",
         "m14g_human_site_integration_authority_subject_sha256": "7042fd16cc707ffc2bef57d7eff4925d01ffe551cf3d09e0aabc05e52b51e35e",
         "m14g_reviewed_candidate_complete_file_sha256": "7022fff0cbd8e54acab095401c2810b93359c3a55d8a5a03eba86e4e6d14d2c6",
@@ -2685,14 +2687,14 @@
         "relationship_metadata": {
           "replacement_bundle_id": "foushee_education_workforce_m14h_replacement_v1-ac922506"
         },
-        "reviewed_public_runtime_manifest_subject_sha256": "48b606eda5f77cfb55d41ae266bd3e0f87a418a0fa38c5aa2c5d404942d59d2b",
+        "reviewed_public_runtime_manifest_subject_sha256": "0b4a9351aaaebf02b3f374809129f3b727e486e5e5e0114559f4861595eb873d",
         "rollback_contract_subject_sha256": "8acdb9a8dddc537593eb45c117948b420843143d4138d8935fd591a2e42cc4e2",
         "source_manifest_artifact_version": 1,
         "source_manifest_content_sha256": "af4fbdc800fa5eaae71f5d08b3f3e2ae6e6fd8bc91524298a3cc411f21736f1c",
         "source_manifest_natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-source-manifest",
         "stable_prior_registry_identity_sha256": "b6e5afa8752b5049f9985780dd20af1f4e697bd924d058d5bd2cd8e15e2d4a5e",
         "superseded_presentation_artifact_id": 242,
-        "v2r_write_set_subject_sha256": "84ba31cb357ebbd0916377c983d9dee4755b691ff61a76eb46b2234ad9f32648",
+        "v2r_write_set_subject_sha256": "40b5e10fbb39a47953480aaa06d6a7618cc57832a4aa0d7f3902cb48a4b1b6ca",
         "validation_artifact_version": 1,
         "validation_content_sha256": "81357113ec54f475c55af7b78e6a1785b04cae082f2e67bac5bb09ac86aa9870",
         "validation_natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-validation"
@@ -4509,5 +4511,5 @@
       "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-validation"
     ]
   },
-  "write_set_subject_sha256": "84ba31cb357ebbd0916377c983d9dee4755b691ff61a76eb46b2234ad9f32648"
+  "write_set_subject_sha256": "40b5e10fbb39a47953480aaa06d6a7618cc57832a4aa0d7f3902cb48a4b1b6ca"
 }

@@ -130,7 +130,7 @@ jobs:
         run: |
           git rev-parse HEAD
           python backend/scripts/build_m14g_education_workforce_site_integration.py --check
-          python scripts/build_m14g_site_integration_acceptance.py --check --check-scope
+          python scripts/build_m14g_site_integration_acceptance.py --check
           python -m pytest -q backend/tests/test_m14g_education_workforce_site_integration.py
           python -m pytest -q backend/tests/test_m14g_site_integration_acceptance.py
           python -m pytest -q backend/tests/test_m13n_education_workforce_ratification_candidate.py
@@ -138,6 +138,10 @@ jobs:
           node --test lib/m14gEducationWorkforce.test.mjs
           cd ..
           python scripts/validate_m14g_education_workforce_site_integration.py
+
+      - name: Enforce milestone-local M14G closure scope
+        if: github.head_ref == 'codex/m14g-education-detached-preview'
+        run: python scripts/build_m14g_site_integration_acceptance.py --check-scope
 
       - name: Run required M14A-M14F regressions
         run: |

@@ -12,6 +12,7 @@ import copy
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -87,7 +88,7 @@ SOURCE_PATHS = (
     ROOT / "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json",
     ROOT / "docs/editorial/shared_corpora/house_119_v2/promotion_manifest.json",
 )
-RUNTIME_PATHS = (
+BACKEND_RUNTIME_PATHS = (
     ROOT / "backend/app/main.py",
     ROOT / "backend/app/api/editorial_presentations.py",
     ROOT / "backend/app/api/positions.py",
@@ -96,6 +97,8 @@ RUNTIME_PATHS = (
     ROOT / "backend/app/editorial_presentations/site_publication.py",
     ROOT / "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py",
     ROOT / "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py",
+)
+FRONTEND_RUNTIME_PATHS = (
     ROOT / "frontend/components/IssueDetail.js",
     ROOT / "frontend/components/ReviewedAnalysisSection.js",
     ROOT / "frontend/components/ActionReceipt.js",
@@ -313,13 +316,28 @@ def _manifest(paths: tuple[Path, ...], schema: str) -> dict[str, Any]:
     return {"schema_version": schema, "subject": subject, "subject_sha256": semantic_hash(subject)}
 
 
+def _runtime_submanifest(paths: tuple[Path, ...]) -> dict[str, Any]:
+    files = [_binding(path) for path in paths]
+    return {"files": files, "submanifest_sha256": semantic_hash({"files": files})}
+
+
 def public_runtime_manifest(*, backend_health_commit: str | None) -> dict[str, Any]:
-    manifest = _manifest(RUNTIME_PATHS, "m14h_reviewed_public_runtime_manifest_v1")
+    subject = {
+        "backend": _runtime_submanifest(BACKEND_RUNTIME_PATHS),
+        "frontend": _runtime_submanifest(FRONTEND_RUNTIME_PATHS),
+    }
+    manifest = {
+        "schema_version": "m14h_reviewed_public_runtime_manifest_v2r",
+        "subject": subject,
+        "subject_sha256": semantic_hash(subject),
+    }
     manifest["production_observation"] = {
         "backend_health_commit": backend_health_commit,
-        "backend_compatible": backend_health_commit == BASE_SHA,
+        "backend_compatible": False,
+        "backend_deployment_required": True,
         "frontend_exact_deployment_identity": None,
         "frontend_compatible_proven": False,
+        "frontend_deployment_required": True,
         "deployment_required_before_activation": True,
     }
     return manifest
@@ -544,7 +562,15 @@ def build_write_set(
             "execution_code_manifest_binding": {
                 "subject_sha256": execution["subject_sha256"]
             },
-            "public_runtime_manifest_binding": {"subject_sha256": runtime["subject_sha256"]},
+            "public_runtime_manifest_binding": {
+                "subject_sha256": runtime["subject_sha256"],
+                "backend_submanifest_sha256": runtime["subject"]["backend"][
+                    "submanifest_sha256"
+                ],
+                "frontend_submanifest_sha256": runtime["subject"]["frontend"][
+                    "submanifest_sha256"
+                ],
+            },
             "expected_postconditions": {
                 "counts": expected_counts,
                 "registry_rows": baseline["counts"]["publication_registry"],
@@ -576,7 +602,9 @@ def activation_candidate(
         "member_bioguide_id": MEMBER_ID,
         "issue_id": ISSUE_ID,
         "congress": CONGRESS,
-        "accepted_site_integration_subject_sha256": EXPECTED_CANDIDATE_SUBJECT,
+        "accepted_site_integration_subject_sha256": EXPECTED_ACCEPTED_SUBJECT,
+        "reviewed_candidate_subject_sha256": EXPECTED_CANDIDATE_SUBJECT,
+        "reviewed_candidate_complete_file_sha256": EXPECTED_CANDIDATE_FILE,
         "semantic_human_authority_lineage": [
             EXPECTED_SITE_AUTHORITY_SUBJECT, EXPECTED_ACCEPTED_SUBJECT
         ],
@@ -920,23 +948,67 @@ def rollback_replacement(
     return {"status": "ROLLED_BACK", "counts": _counts(conn), "selector": selector}
 
 
-def capture_runtime(base_url: str, runtime_manifest: dict[str, Any]) -> dict[str, Any]:
+def _git_submanifest(commit: str, paths: tuple[Path, ...]) -> dict[str, Any]:
+    if not SHA40.fullmatch(commit):
+        raise StoreSafetyError("deployed source identity is not an exact Git commit")
+    resolved = subprocess.run(
+        ["git", "rev-parse", "--verify", f"{commit}^{{commit}}"],
+        cwd=ROOT, check=True, capture_output=True, text=True,
+    ).stdout.strip()
+    if resolved != commit:
+        raise StoreSafetyError("deployed source identity does not resolve exactly")
+    files = []
+    for path in paths:
+        relative = path.relative_to(ROOT).as_posix()
+        content = subprocess.run(
+            ["git", "show", f"{commit}:{relative}"],
+            cwd=ROOT, check=True, capture_output=True,
+        ).stdout
+        files.append({
+            "path": relative,
+            "file_sha256": hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest(),
+        })
+    return {"files": files, "submanifest_sha256": semantic_hash({"files": files})}
+
+
+def capture_runtime(
+    base_url: str, runtime_manifest: dict[str, Any], *,
+    frontend_deployed_commit: str, frontend_deployment_source_identity: str,
+) -> dict[str, Any]:
     endpoint = urljoin(base_url.rstrip("/") + "/", "health")
     with urlopen(endpoint, timeout=30) as response:  # noqa: S310
         health = json.load(response)
     commit = health.get("commit_sha")
     if not isinstance(commit, str) or not SHA40.fullmatch(commit):
         raise StoreSafetyError("health endpoint lacks exact commit SHA")
+    if (
+        not isinstance(frontend_deployment_source_identity, str)
+        or not frontend_deployment_source_identity.strip()
+    ):
+        raise StoreSafetyError("trusted frontend deployment source identity is required")
+    backend = _git_submanifest(commit, BACKEND_RUNTIME_PATHS)
+    frontend = _git_submanifest(frontend_deployed_commit, FRONTEND_RUNTIME_PATHS)
+    reviewed_backend = runtime_manifest["subject"]["backend"]
+    reviewed_frontend = runtime_manifest["subject"]["frontend"]
+    if backend != reviewed_backend or frontend != reviewed_frontend:
+        raise StoreSafetyError("deployed runtime bytes differ from reviewed manifest")
     body = {
         "schema_version": RUNTIME_EVIDENCE_SCHEMA_V2,
         "captured_at_utc": datetime.now(timezone.utc).isoformat(),
         "healthy": health.get("status") == "ok",
-        "deployed_commit": commit,
-        "health_commit": commit,
-        "current_runtime_manifest_sha256": runtime_manifest["subject_sha256"],
-        "deployment_required_before_activation": runtime_manifest[
-            "production_observation"
-        ]["deployment_required_before_activation"],
+        "backend_deployment": {
+            "deployed_commit_sha": commit,
+            "health_commit_sha": commit,
+            "verification_method": "immutable_git_object_read",
+            **backend,
+        },
+        "frontend_deployment": {
+            "deployed_commit_sha": frontend_deployed_commit,
+            "deployment_source_identity": frontend_deployment_source_identity,
+            "verification_method": "immutable_git_object_read",
+            **frontend,
+        },
+        "deployment_required_before_activation": False,
     }
     body["runtime_health_proof_subject_sha256"] = semantic_hash(body)
     return body
@@ -953,7 +1025,9 @@ def _write_package(package: dict[str, dict[str, Any]]) -> None:
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=("capture-preflight", "prepare", "apply", "rollback"))
+    parser.add_argument(
+        "mode", choices=("capture-preflight", "capture-runtime", "prepare", "apply", "rollback")
+    )
     parser.add_argument("--database-url")
     parser.add_argument("--target", choices=("production", "disposable"))
     parser.add_argument("--preflight-path", type=Path)
@@ -962,6 +1036,11 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--activation-authority-path", type=Path)
     parser.add_argument("--backend-health-commit")
     parser.add_argument("--runtime-evidence-path", type=Path)
+    parser.add_argument("--runtime-manifest-path", type=Path)
+    parser.add_argument("--backend-base-url")
+    parser.add_argument("--frontend-deployed-commit")
+    parser.add_argument("--frontend-deployment-source-identity")
+    parser.add_argument("--runtime-evidence-output", type=Path)
     parser.add_argument("--confirm-production-replacement", action="store_true")
     parser.add_argument("--confirm-production-rollback", action="store_true")
     return parser
@@ -992,6 +1071,25 @@ def main(argv: list[str] | None = None) -> int:
             _load(args.preflight_path), backend_health_commit=args.backend_health_commit
         )
         _write_package(package)
+        return 0
+    if args.mode == "capture-runtime":
+        if not all((
+            args.backend_base_url, args.frontend_deployed_commit,
+            args.frontend_deployment_source_identity, args.runtime_manifest_path,
+        )):
+            raise StoreSafetyError("runtime capture requires exact backend/frontend deployment identities")
+        evidence = capture_runtime(
+            args.backend_base_url,
+            _load(args.runtime_manifest_path),
+            frontend_deployed_commit=args.frontend_deployed_commit,
+            frontend_deployment_source_identity=args.frontend_deployment_source_identity,
+        )
+        rendered = json.dumps(evidence, sort_keys=True, indent=2) + "\n"
+        if args.runtime_evidence_output:
+            args.runtime_evidence_output.parent.mkdir(parents=True, exist_ok=True)
+            args.runtime_evidence_output.write_text(rendered, encoding="utf-8")
+        else:
+            print(rendered, end="")
         return 0
     if not all((args.database_url, args.target, args.write_set_path, args.activation_authority_path)):
         raise StoreSafetyError("execution requires database, target, write set, and authority")

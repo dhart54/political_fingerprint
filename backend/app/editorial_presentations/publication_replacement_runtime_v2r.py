@@ -27,8 +27,24 @@ from .publication_replacement_governance_v2 import (
     TARGET,
 )
 
-M14G_SUBJECT_SHA256 = (
+M14G_CANDIDATE_SUBJECT_SHA256 = (
     "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0"
+)
+M14G_ACCEPTED_SITE_INTEGRATION_SUBJECT_SHA256 = (
+    "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b"
+)
+M14G_CANDIDATE_COMPLETE_FILE_SHA256 = (
+    "7022fff0cbd8e54acab095401c2810b93359c3a55d8a5a03eba86e4e6d14d2c6"
+)
+M14G_HUMAN_SITE_INTEGRATION_AUTHORITY_SHA256 = (
+    "7042fd16cc707ffc2bef57d7eff4925d01ffe551cf3d09e0aabc05e52b51e35e"
+)
+PUBLIC_SCOPE_BOUNDARY = (
+    "This interpretation covers Valerie Foushee's reviewed 119th-Congress "
+    "Education & Workforce record."
+)
+BOUNDED_ANALYSIS_BOUNDARY = (
+    "The analytical summary remains bounded to the 119th-Congress record."
 )
 _INSTALLED = False
 _ORIGINAL_ELIGIBLE = site_publication.eligible_site_integration_candidate
@@ -65,7 +81,16 @@ def eligible_m14g_replacement(
         or subject.get("decision") != "approve_exact_publication_replacement_v2"
         or subject.get("reviewer_authority") != REVIEWER_AUTHORITY_V2R
         or subject.get("replacement_registry_target") != TARGET
-        or subject.get("accepted_site_integration_subject_sha256") != M14G_SUBJECT_SHA256
+        or subject.get("accepted_site_integration_subject_sha256")
+        != M14G_ACCEPTED_SITE_INTEGRATION_SUBJECT_SHA256
+        or subject.get("reviewed_candidate_subject_sha256")
+        != M14G_CANDIDATE_SUBJECT_SHA256
+        or subject.get("reviewed_candidate_complete_file_sha256")
+        != M14G_CANDIDATE_COMPLETE_FILE_SHA256
+        or subject.get("semantic_human_authority_lineage") != [
+            M14G_HUMAN_SITE_INTEGRATION_AUTHORITY_SHA256,
+            M14G_ACCEPTED_SITE_INTEGRATION_SUBJECT_SHA256,
+        ]
         or subject.get("authorizations") != POSITIVE_AUTHORIZATIONS_V2R
         or subject.get("exact_write_set_subject_sha256")
         != metadata.get("v2r_write_set_subject_sha256")
@@ -87,7 +112,12 @@ def eligible_m14g_replacement(
         or not hmac.compare_digest(row["content_sha256"], content_sha256)
         or metadata.get("presentation_natural_key") != M14G_ARTIFACT_ID
         or metadata.get("presentation_artifact_version") != 1
-        or metadata.get("m14g_reviewed_candidate_subject_sha256") != M14G_SUBJECT_SHA256
+        or metadata.get("m14g_accepted_site_integration_subject_sha256")
+        != M14G_ACCEPTED_SITE_INTEGRATION_SUBJECT_SHA256
+        or metadata.get("m14g_reviewed_candidate_subject_sha256")
+        != M14G_CANDIDATE_SUBJECT_SHA256
+        or metadata.get("m14g_reviewed_candidate_complete_file_sha256")
+        != M14G_CANDIDATE_COMPLETE_FILE_SHA256
         or metadata.get("active_artifact_sha256") != content_sha256
     ):
         return None
@@ -131,6 +161,9 @@ def select_site_integration_public_v2r(
         if presentation["issue_id"] == "EDUCATION_WORKFORCE" and presentation["tier"] != "receipts_only":
             presentation["public_status_label"] = "Full issue interpretation available"
             presentation.get("review_state", {}).pop("candidate_preview", None)
+            presentation["scope_boundary"] = PUBLIC_SCOPE_BOUNDARY
+            if scope == "all":
+                presentation["scope_boundary"] += f" {BOUNDED_ANALYSIS_BOUNDARY}"
     return result
 
 
