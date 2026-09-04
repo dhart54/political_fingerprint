@@ -44,6 +44,7 @@ test("real M14G backend and frontend render exact hierarchy and receipt meaning"
   await expect(hr5408).toContainText("arbitration award would bind the parties for two years");
   await expect(hr5408).not.toContainText("accelerate workplace time-to-contract");
   if (output) {
+    await hr5408.scrollIntoViewIfNeeded();
     await page.screenshot({ path: `${output}/desktop_hr5408_receipt.png` });
   }
 });
