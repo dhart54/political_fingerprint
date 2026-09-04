@@ -41,6 +41,7 @@ jobs:
           git rev-parse HEAD
           python backend/scripts/build_m14g_education_workforce_site_integration.py --check
           python -m pytest -q backend/tests/test_m14g_education_workforce_site_integration.py
+          python -m pytest -q backend/tests/test_m13n_education_workforce_ratification_candidate.py
           cd frontend
           node --test lib/m14gEducationWorkforce.test.mjs
           cd ..

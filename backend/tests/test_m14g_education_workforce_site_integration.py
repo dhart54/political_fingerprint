@@ -4,8 +4,6 @@ import copy
 import json
 from pathlib import Path
 import subprocess
-from unittest.mock import patch
-
 import pytest
 from fastapi.testclient import TestClient
 
@@ -202,46 +200,49 @@ def test_m14g_selection_and_evidence_fail_closed_by_member_issue_and_scope() -> 
 
 
 def test_m14g_api_requires_new_server_opt_in_and_explicit_token(monkeypatch) -> None:
-    path = "/legislators/leg_valerie_p_foushee/editorial-presentations"
+    path = "/preview/m14g/legislators/leg_valerie_p_foushee/editorial-presentations"
     params = {"scope": "119", "candidate": "m14g-education-workforce"}
-    with (
-        patch("app.api.editorial_presentations.get_legislator_profile", return_value={"bioguide_id": "F000477"}),
-        patch("app.api.editorial_presentations._load_publication_rows", return_value=[]),
-    ):
-        client = TestClient(app)
-        monkeypatch.delenv("EDITORIAL_PRESENTATION_PREVIEW", raising=False)
-        monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "1")
-        assert education(client.get(path, params=params).json())["tier"] == "receipts_only"
-        monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "1")
-        assert education(client.get(path, params={"scope": "119"}).json())["tier"] == "receipts_only"
-        assert education(client.get(path, params=params).json())["tier"] == "reviewed_conclusion"
-        assert client.get(path, params={"scope": "119", "candidate": "wrong"}).status_code == 422
+    client = TestClient(app)
+    monkeypatch.delenv("EDITORIAL_PRESENTATION_PREVIEW", raising=False)
+    monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "1")
+    assert client.get(path, params=params).status_code == 404
+    monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "1")
+    assert client.get(path, params={"scope": "119"}).status_code == 404
+    assert education(client.get(path, params=params).json())["tier"] == "reviewed_conclusion"
+    assert client.get(path, params={"scope": "119", "candidate": "wrong"}).status_code == 404
 
 
 def test_m14g_preview_off_preserves_public_api_exactly(monkeypatch) -> None:
-    public = {"marker": "unchanged", "presentations": [{"issue_id": "EDUCATION_WORKFORCE", "tier": "receipts_only"}]}
-    monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "0")
-    with (
-        patch("app.api.editorial_presentations.get_legislator_profile", return_value={"bioguide_id": "F000477"}),
-        patch("app.api.editorial_presentations._load_publication_rows", return_value=[]),
-        patch("app.api.editorial_presentations.select_public_presentations", return_value=public),
-        patch("app.api.editorial_presentations.load_m14g_candidate", side_effect=AssertionError("preview must be unreachable")),
+    for relative in (
+        "backend/app/api/positions.py",
+        "backend/app/api/editorial_presentations.py",
+        "backend/app/api/search.py",
     ):
-        response = TestClient(app).get(
-            "/legislators/leg_valerie_p_foushee/editorial-presentations",
-            params={"scope": "119", "candidate": "m14g-education-workforce"},
-        )
-    assert response.status_code == 200
-    assert response.json() == public
+        baseline = subprocess.run(
+            ["git", "rev-parse", f"{BASELINE_MAIN_SHA}:{relative}"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        working = subprocess.run(
+            ["git", "hash-object", relative],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        assert working == baseline
 
 
 def test_m14g_preview_profile_is_gated_and_exact(monkeypatch) -> None:
-    with patch("app.api.search.get_legislator_profile", return_value=None):
-        client = TestClient(app)
-        monkeypatch.delenv("EDITORIAL_PRESENTATION_PREVIEW", raising=False)
-        assert client.get("/legislators/leg_valerie_p_foushee/profile").status_code == 404
-        monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "1")
-        response = client.get("/legislators/leg_valerie_p_foushee/profile")
+    client = TestClient(app)
+    params = {"candidate": "m14g-education-workforce"}
+    path = "/preview/m14g/legislators/leg_valerie_p_foushee/profile"
+    monkeypatch.delenv("EDITORIAL_PRESENTATION_PREVIEW", raising=False)
+    assert client.get(path, params=params).status_code == 404
+    monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "1")
+    response = client.get(path, params=params)
     assert response.status_code == 200
     assert response.json() == {
         "id": "leg_valerie_p_foushee",
@@ -257,21 +258,14 @@ def test_m14g_preview_profile_is_gated_and_exact(monkeypatch) -> None:
 def test_m14g_positions_and_evidence_use_detached_rows_without_database(monkeypatch) -> None:
     monkeypatch.setenv("EDITORIAL_PRESENTATION_PREVIEW", "1")
     params = {"scope": "119", "candidate": "m14g-education-workforce"}
-    with (
-        patch("app.api.positions.get_position_response", return_value=None),
-        patch("app.api.positions.get_position_evidence_response", return_value=None),
-        patch("app.api.positions.get_legislator_profile", return_value=None),
-        patch("app.api.positions._load_publication_rows", return_value=[]),
-        patch("app.api.positions._has_governed_presentation_candidate", return_value=False),
-    ):
-        client = TestClient(app)
-        positions = client.get(
-            "/legislators/leg_valerie_p_foushee/positions", params=params
-        )
-        evidence = client.get(
-            "/legislators/leg_valerie_p_foushee/positions/EDUCATION_WORKFORCE/evidence",
-            params=params,
-        )
+    client = TestClient(app)
+    positions = client.get(
+        "/preview/m14g/legislators/leg_valerie_p_foushee/positions", params=params
+    )
+    evidence = client.get(
+        "/preview/m14g/legislators/leg_valerie_p_foushee/positions/EDUCATION_WORKFORCE/evidence",
+        params=params,
+    )
     assert positions.status_code == 200
     education_position = next(
         row for row in positions.json()["positions"] if row["domain"] == "EDUCATION_WORKFORCE"
@@ -283,6 +277,30 @@ def test_m14g_positions_and_evidence_use_detached_rows_without_database(monkeypa
     hr5408 = next(row for row in rows if row["canonical_action_id"] == "house:119:2:216")
     assert hr5408["governed_receipt_projection"]["exact_action_meaning"].startswith(
         "Current wages, hours, and employment terms would have to be maintained"
+    )
+
+
+def test_m14g_receipt_sources_use_exact_governed_locators_and_labels() -> None:
+    serialized = json.dumps(candidate(), ensure_ascii=False)
+    assert "https://www.federalregister.gov/presidential-documents/executive-orders" not in serialized
+    assert "https://uscode.house.gov/" not in serialized
+    expected = {
+        "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm": "Executive order",
+        "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm": "Executive order",
+        "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm": "U.S. Code",
+    }
+    links = [
+        link
+        for row in candidate()["subject"]["receipt_projections"]
+        for link in row["governed_receipt_projection"]["action_meaning_sources"]
+    ]
+    by_url = {link["url"]: link["label"] for link in links}
+    for url, label in expected.items():
+        assert by_url[url] == label
+    assert all(
+        link["label"] != "Bill or amendment text"
+        for link in links
+        if link["url"] in expected
     )
 
 
@@ -339,12 +357,14 @@ def test_m14g_has_no_downstream_authority() -> None:
     ))
 
 
-def test_frontend_allowlist_adds_only_the_explicit_m14g_token() -> None:
+def test_frontend_routes_only_explicit_m14g_token_to_detached_surface() -> None:
     source = (ROOT / "frontend/lib/api.js").read_text(encoding="utf-8")
     for token in (
         "m11m-national-security",
         "m12m-environment-energy",
         "m13m-education-workforce",
-        "m14g-education-workforce",
     ):
         assert source.count(f'"{token}"') == 1
+    assert source.count('"m14g-education-workforce"') == 2
+    assert 'const M14G_PREVIEW_TOKEN = "m14g-education-workforce"' in source
+    assert "`/preview/m14g${path}`" in source

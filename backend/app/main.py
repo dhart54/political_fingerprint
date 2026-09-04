@@ -12,6 +12,7 @@ from app.api.editorial_presentations import router as editorial_presentations_ro
 from app.api.fingerprint import router as fingerprint_router
 from app.api.internal_record_across import router as internal_record_across_router
 from app.api.lookup import router as lookup_router
+from app.api.m14g_preview import router as m14g_preview_router
 from app.api.metadata import router as metadata_router
 from app.api.positions import router as positions_router
 from app.api.search import router as search_router
@@ -62,6 +63,7 @@ app.include_router(search_router)
 app.include_router(compare_router)
 app.include_router(contact_router)
 app.include_router(internal_record_across_router)
+app.include_router(m14g_preview_router)
 
 
 @app.get("/health")

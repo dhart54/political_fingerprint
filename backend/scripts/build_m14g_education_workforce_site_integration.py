@@ -13,7 +13,6 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
 from backend.app.editorial_presentations.education_workforce_m14g_integration_candidate import (  # noqa: E402
-    BASELINE_MAIN_SHA,
     M14G_PREVIEW_TOKEN,
     OLD_HR5408_MEANING,
     compile_m14g_candidate,
@@ -109,7 +108,7 @@ def _binding(name: str, payload: dict[str, Any]) -> dict[str, str]:
     }
 
 
-def screenshot_manifest() -> dict[str, Any]:
+def screenshot_manifest(capture_head: str) -> dict[str, Any]:
     screenshot_root = OUTPUT / "screenshots"
     captures = []
     for definition in SCREENSHOTS:
@@ -125,18 +124,20 @@ def screenshot_manifest() -> dict[str, Any]:
                 "preview_candidate": M14G_PREVIEW_TOKEN,
                 "open_expanded_state": definition["state"],
                 "file_sha256": sha256(path) if path.exists() else None,
-                "source_commit": BASELINE_MAIN_SHA,
+                "source_commit": capture_head,
             }
         )
     return {
         "schema_version": "m14g_screenshot_manifest_v1",
         "artifact_id": "screenshot-manifest:f000477:education_workforce:m14g:v1",
-        "source_head_at_capture": BASELINE_MAIN_SHA,
+        "source_head_at_capture": capture_head,
         "captures": captures,
     }
 
 
-def build(*, check: bool = False) -> dict[str, Any]:
+def build(
+    *, check: bool = False, candidate_only: bool = False, capture_head: str | None = None
+) -> dict[str, Any]:
     payloads = {name: load(path) for name, path in INPUTS.items()}
     bindings = {name: _binding(name, payload) for name, payload in payloads.items()}
     candidate = compile_m14g_candidate(
@@ -157,7 +158,14 @@ def build(*, check: bool = False) -> dict[str, Any]:
     hr1005 = next(
         row for row in receipts if row["canonical_action_id"] == "house:119:1:312"
     )["governed_receipt_projection"]
-    manifest = screenshot_manifest()
+    write_or_check(OUTPUT / "site_integration_candidate.json", json_text(candidate), check=check)
+    if candidate_only:
+        return {"candidate": candidate}
+    if capture_head is None:
+        if not check:
+            raise ValueError("--capture-head is required when sealing screenshot evidence")
+        capture_head = load(OUTPUT / "screenshot_manifest.json")["source_head_at_capture"]
+    manifest = screenshot_manifest(capture_head)
     records = payloads["m14f_accepted_public_copy"]["subject"]["accepted_wording_records"]
     review = {
         "schema_version": "m14g_site_integration_review_package_v1",
@@ -239,9 +247,10 @@ def build(*, check: bool = False) -> dict[str, Any]:
             "server_environment": "EDITORIAL_PRESENTATION_PREVIEW=1",
             "frontend_environment": f"NEXT_PUBLIC_EDITORIAL_PRESENTATION_PREVIEW={M14G_PREVIEW_TOKEN}",
             "routes": [
-                "/legislators/{legislator_id}/editorial-presentations",
-                "/legislators/{legislator_id}/positions",
-                "/legislators/{legislator_id}/positions/{domain}/evidence",
+                "/preview/m14g/legislators/{legislator_id}/profile",
+                "/preview/m14g/legislators/{legislator_id}/editorial-presentations",
+                "/preview/m14g/legislators/{legislator_id}/positions",
+                "/preview/m14g/legislators/{legislator_id}/positions/{domain}/evidence",
             ],
         },
         "screenshot_inventory": manifest["captures"],
@@ -258,7 +267,6 @@ def build(*, check: bool = False) -> dict[str, Any]:
             "merge": False,
         },
     }
-    write_or_check(OUTPUT / "site_integration_candidate.json", json_text(candidate), check=check)
     write_or_check(OUTPUT / "review_package.json", json_text(review), check=check)
     write_or_check(OUTPUT / "screenshot_manifest.json", json_text(manifest), check=check)
     return {"candidate": candidate, "review_package": review, "manifest": manifest}
@@ -267,14 +275,20 @@ def build(*, check: bool = False) -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--candidate-only", action="store_true")
+    parser.add_argument("--capture-head")
     args = parser.parse_args()
-    result = build(check=args.check)
+    result = build(
+        check=args.check,
+        candidate_only=args.candidate_only,
+        capture_head=args.capture_head,
+    )
     print(
         json.dumps(
             {
                 "candidate_subject_sha256": result["candidate"]["candidate_subject_sha256"],
                 "receipt_count": len(result["candidate"]["subject"]["receipt_projections"]),
-                "screenshot_count": len(result["manifest"]["captures"]),
+                "screenshot_count": len(result.get("manifest", {}).get("captures", [])),
             },
             sort_keys=True,
         )

@@ -123,11 +123,34 @@ def _source_url(identity: dict[str, Any], *, action_date: str) -> str | None:
     if source_type == "congressional_record":
         package = source_id.split(":", 2)[1]
         return f"https://www.govinfo.gov/app/details/{package}"
-    if source_type == "federal_register_executive_order":
-        return "https://www.federalregister.gov/presidential-documents/executive-orders"
-    if source_type == "united_states_code":
-        return "https://uscode.house.gov/"
+    governed_locators = {
+        "govinfo:FR-2025-04-03:2025-05836:EO14251": (
+            "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm"
+        ),
+        "govinfo:FR-2025-01-30:2025-02090:EO14168": (
+            "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm"
+        ),
+        "govinfo:USCODE-2024-title20:sec1094:e2Bii": (
+            "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/"
+            "USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm"
+        ),
+    }
+    if source_type in {
+        "federal_register_executive_order",
+        "united_states_code",
+    }:
+        return governed_locators.get(source_id)
     return None
+
+
+def _source_label(identity: dict[str, Any], *, fallback: str) -> str:
+    return {
+        "house_clerk_roll_call": "Official House vote",
+        "congress_gov_bill_text": "Bill or amendment text",
+        "congressional_record": "Congressional Record",
+        "federal_register_executive_order": "Executive order",
+        "united_states_code": "U.S. Code",
+    }.get(identity["source_type"], fallback)
 
 
 def _source_links(
@@ -137,7 +160,7 @@ def _source_links(
     for identity in identities:
         url = _source_url(identity, action_date=action_date)
         if url:
-            links.append({"label": label, "url": url})
+            links.append({"label": _source_label(identity, fallback=label), "url": url})
     return links
 
 
