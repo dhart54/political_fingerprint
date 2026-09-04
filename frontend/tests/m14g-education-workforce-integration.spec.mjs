@@ -39,6 +39,16 @@ test("real M14G backend and frontend render exact hierarchy and receipt meaning"
 
   const bargaining = analysis.locator("article").filter({ hasText: "Supported keeping collective bargaining in force" });
   await bargaining.getByRole("button", { name: /View supporting votes/ }).click();
+  const hr2550 = page.locator('[data-canonical-action-id="house:119:1:332"]');
+  await hr2550.getByRole("button", { name: /Expand H\.R\. 2550/ }).click();
+  const eo14251 = hr2550.locator(
+    'a[href="https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm"]',
+  );
+  await expect(eo14251).toHaveText("Executive order");
+  await expect(hr2550.locator(
+    'a[href="https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm"]',
+    { hasText: "Bill or amendment text" },
+  )).toHaveCount(0);
   const hr5408 = page.locator('[data-canonical-action-id="house:119:2:216"]');
   await expect(hr5408).toContainText("Current wages, hours, and employment terms would have to be maintained");
   await expect(hr5408).toContainText("arbitration award would bind the parties for two years");

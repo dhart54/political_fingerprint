@@ -160,7 +160,10 @@ def _source_links(
     for identity in identities:
         url = _source_url(identity, action_date=action_date)
         if url:
-            links.append({"label": _source_label(identity, fallback=label), "url": url})
+            source_label = _source_label(identity, fallback=label)
+            links.append(
+                {"label": source_label, "url": url, "public_label": source_label}
+            )
     return links
 
 

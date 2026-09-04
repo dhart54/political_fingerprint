@@ -33,6 +33,9 @@ M14F_PATH = (
     "f000477_education_workforce_m14f_v1/accepted_public_copy.json"
 )
 CORE_PATH = ROOT / "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json"
+MEMBER_PROJECTION_PATH = (
+    ROOT / "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json"
+)
 LEDGER_PATH = (
     ROOT
     / "docs/editorial/analytical_candidates/"
@@ -131,10 +134,14 @@ def test_m14g_renders_only_seven_retained_public_limitation_instances() -> None:
 def test_m14g_uses_exact_m14d_ledger_and_v2_receipt_semantics() -> None:
     data = candidate()
     core = json.loads(CORE_PATH.read_text(encoding="utf-8"))
+    member_projection = json.loads(MEMBER_PROJECTION_PATH.read_text(encoding="utf-8"))
     ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))["subject"][
         "accepted_episode_disposition_ledger"
     ]
     core_by_id = {row["action_id"]: row for row in core["actions"]}
+    projection_by_id = {
+        row["action_id"]: row for row in member_projection["actions"]
+    }
     receipts = data["subject"]["receipt_projections"]
     ledger_ids = {action_id for episode in ledger for action_id in episode["action_ids"]}
     assert len(receipts) == 17
@@ -150,6 +157,18 @@ def test_m14g_uses_exact_m14d_ledger_and_v2_receipt_semantics() -> None:
         )
         assert row["governed_receipt_projection"]["caveats"] == (
             core_by_id[action_id]["accepted_shared_limitations"]
+        )
+        assert row["governed_receipt_projection"]["member_action"] == (
+            projection_by_id[action_id]["official_status"]
+        )
+        assert row["governed_receipt_projection"]["exact_choice_position_effect"] == (
+            projection_by_id[action_id]["exact_choice_effect"]
+        )
+        assert row["source_identity_bindings"]["governed_action_meaning"] == (
+            core_by_id[action_id]["operative_meaning_source_identities"]
+        )
+        assert row["source_identity_bindings"]["official_member_action"] == (
+            projection_by_id[action_id]["member_action_source_identities"]
         )
 
 
@@ -297,6 +316,7 @@ def test_m14g_receipt_sources_use_exact_governed_locators_and_labels() -> None:
     by_url = {link["url"]: link["label"] for link in links}
     for url, label in expected.items():
         assert by_url[url] == label
+        assert next(link for link in links if link["url"] == url)["public_label"] == label
     assert all(
         link["label"] != "Bill or amendment text"
         for link in links

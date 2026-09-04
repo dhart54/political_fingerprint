@@ -31,6 +31,7 @@ ALLOWED_PREFIXES = (
     "docs/plans/m14g_education_detached_site_integration.md",
     "frontend/lib/api.js",
     "frontend/lib/m14gEducationWorkforce.test.mjs",
+    "frontend/lib/publicReceipt.mjs",
     "frontend/tests/m14g-education-workforce-integration.spec.mjs",
     "scripts/validate_m14g_education_workforce_site_integration.py",
 )
