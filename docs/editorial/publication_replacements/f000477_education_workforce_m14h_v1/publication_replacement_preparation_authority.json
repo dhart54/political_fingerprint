@@ -1,0 +1,33 @@
+{
+  "accepted": true,
+  "artifact_id": "publication-replacement-preparation-authority:f000477:education_workforce:m14h:v1",
+  "authority_subject_sha256": "b871264bc4cd7db3df4ea69c57cab6a66ab1b5dfdaf1187b989c9c5bce3efdfb",
+  "immutable": true,
+  "schema_version": "site_integration_publication_replacement_preparation_authority_v1",
+  "subject": {
+    "accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b",
+    "authority_effect": "prepare_exact_m14g_publication_replacement_only",
+    "authorizations": {
+      "deployment": false,
+      "disposable_postgresql_execution_proof": true,
+      "live_activation": false,
+      "production_database_write": false,
+      "production_persistence": false,
+      "prospective_activation_authority_candidate": true,
+      "public_activation": false,
+      "publication_activation": false,
+      "publication_registry_mutation": false,
+      "read_only_production_discovery": true,
+      "record_production_eligibility": true,
+      "replacement_write_set_construction": true,
+      "rollback_preparation": true,
+      "stable_baseline_construction": true
+    },
+    "decision": "approve_exact_publication_replacement_preparation",
+    "decision_source": "user_supplied_continue_after_m14g_close",
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477",
+    "reviewed_candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0",
+    "stable_production_baseline_sha256": "bf78def3472521651edc82f9b5eef774105aa1b0d5424d44bbd516e848513dc2"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "review_package_subject_sha256": "8193dabf7416758a6cc32fd589347791fbacf892e76d507d99249f0b9047ca64",
+  "schema_version": "m14h_publication_replacement_review_package_v1",
+  "subject": {
+    "accepted_m14g": {
+      "accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b",
+      "human_site_integration_authority_subject_sha256": "7042fd16cc707ffc2bef57d7eff4925d01ffe551cf3d09e0aabc05e52b51e35e",
+      "reviewed_candidate_complete_file_sha256": "7022fff0cbd8e54acab095401c2810b93359c3a55d8a5a03eba86e4e6d14d2c6",
+      "reviewed_candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0"
+    },
+    "disposable_proof": {
+      "apply": {
+        "artifact_inserts": 3,
+        "batch_inserts": 1,
+        "deletes": 0,
+        "other_updates": 0,
+        "registry_inserts": 0,
+        "registry_updates": 1,
+        "relationship_inserts": 2
+      },
+      "explicit_rollback_restores_exact_baseline": true,
+      "fault_injection": [
+        "after_batch",
+        "after_artifacts",
+        "after_relationships",
+        "after_registry_update"
+      ],
+      "faults_restore_exact_baseline": true,
+      "idempotent_second_apply": {
+        "status": "ALREADY_APPLIED",
+        "writes": 0
+      },
+      "other_domains_unchanged": true,
+      "selector": {
+        "118": "receipts_only",
+        "119": "reviewed_conclusion",
+        "all": "reviewed_conclusion_with_119th_congress_boundary"
+      },
+      "status": "passed"
+    },
+    "downstream_denials": {
+      "deployment": false,
+      "disposable_postgresql_execution_proof": true,
+      "live_activation": false,
+      "production_database_write": false,
+      "production_persistence": false,
+      "prospective_activation_authority_candidate": true,
+      "public_activation": false,
+      "publication_activation": false,
+      "publication_registry_mutation": false,
+      "read_only_production_discovery": true,
+      "record_production_eligibility": true,
+      "replacement_write_set_construction": true,
+      "rollback_preparation": true,
+      "stable_baseline_construction": true
+    },
+    "mutation_envelope": {
+      "deletes_during_activation": 0,
+      "insert_artifacts": 3,
+      "insert_batches": 1,
+      "insert_registry_rows": 0,
+      "insert_relationships": 2,
+      "other_updates": 0,
+      "unauthorized_table_writes": 0,
+      "update_registry_rows": 1
+    },
+    "old_to_new": {
+      "new_natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+      "old_artifact_id": 242,
+      "old_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1"
+    },
+    "preparation_authority_subject_sha256": "b871264bc4cd7db3df4ea69c57cab6a66ab1b5dfdaf1187b989c9c5bce3efdfb",
+    "prior_education_registry_identity": {
+      "activated_at": "2026-08-26 01:50:38.557112+00:00",
+      "artifact_id": 242,
+      "artifact_version": 1,
+      "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+      "deactivated_at": null,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477",
+      "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "publication_metadata_sha256": "a7d48ed1f07870e72751056dce0e5400b23b1abaefffa711ec082aa1351842bd",
+      "publicly_active": true,
+      "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1"
+    },
+    "production_baseline": {
+      "counts": {
+        "artifacts": 155,
+        "batches": 7,
+        "publication_registry": 4,
+        "relationships": 165
+      },
+      "state_fingerprint_sha256": "090477315f73df6cadda662f2aa24ef4a30ed0b2e74669bb3e7d5cf73680e01e"
+    },
+    "prospective_activation_subject_sha256": "584d44731f7261918d3e8edf52bbeffcd617a9db01e27b1525164e77d87849b7",
+    "replacement_write_set_subject_sha256": "40b5e10fbb39a47953480aaa06d6a7618cc57832a4aa0d7f3902cb48a4b1b6ca",
+    "runtime_readiness": {
+      "backend_compatible": false,
+      "backend_deployment_required": true,
+      "backend_health_commit": "ac922506fe9fd61120d3638060cc18398b461df2",
+      "deployment_required_before_activation": true,
+      "frontend_compatible_proven": false,
+      "frontend_deployment_required": true,
+      "frontend_exact_deployment_identity": null
+    }
+  }
+}

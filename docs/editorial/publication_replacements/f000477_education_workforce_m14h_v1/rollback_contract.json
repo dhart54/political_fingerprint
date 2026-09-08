@@ -1,0 +1,440 @@
+{
+  "artifact_id": "publication-replacement-rollback:f000477:education_workforce:m14h:v1",
+  "immutable": true,
+  "rollback_contract_subject_sha256": "8acdb9a8dddc537593eb45c117948b420843143d4138d8935fd591a2e42cc4e2",
+  "schema_version": "publication_replacement_rollback_contract_v1",
+  "subject": {
+    "delete_artifact_natural_keys": [
+      "site-integration-candidate:f000477:education_workforce:m14g:v1",
+      "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-source-manifest",
+      "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-validation"
+    ],
+    "delete_batches": 1,
+    "delete_relationships": 2,
+    "expected_new_presentation_natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1",
+    "owned_batch_key": "foushee_education_workforce_m14h_replacement_v1-ac922506",
+    "prior_artifact_must_remain_immutable": true,
+    "registry_primary_key": {
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477"
+    },
+    "restore_counts": {
+      "artifacts": 155,
+      "batches": 7,
+      "publication_registry": 4,
+      "relationships": 165
+    },
+    "restore_prior_registry_row": {
+      "activated_at": "2026-08-26 01:50:38.557112+00:00",
+      "artifact_id": 242,
+      "artifact_version": 1,
+      "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+      "deactivated_at": null,
+      "issue_id": "EDUCATION_WORKFORCE",
+      "member_bioguide_id": "F000477",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+      "publication_metadata_jsonb": {
+        "accepted_site_integration_file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+        "accepted_site_integration_subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d",
+        "activation_authority_contract": {
+          "artifact_id": "publication-activation-authority:f000477:education_workforce:119:v1",
+          "required_authorizations": {
+            "deploy_exact_reviewed_runtime": true,
+            "exact_bounded_rollback": true,
+            "production_database_write": true,
+            "publication_activation": true,
+            "publication_registry_mutation": true
+          },
+          "reviewer_authority": "publication_activation_review_authority_v1",
+          "schema_version": "site_integration_publication_activation_authority_v1"
+        },
+        "activation_authority_subject_sha256": "3a901faf83365e7baf416045ed7ae3a9bea4225c77a1e97ab73fe8b3ba72d791",
+        "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1",
+        "activation_write_set_binding": {
+          "artifact_id": "publication-activation-write-set:f000477:education_workforce:119:v1",
+          "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+        },
+        "active_artifact_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+        "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+        "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde",
+        "candidate_preparation_authority_binding": {
+          "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+          "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+          "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde"
+        },
+        "preflight_binding": {
+          "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+          "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+        },
+        "presentation_artifact_version": 1,
+        "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+        "production_eligibility_publication_authority": {
+          "accepted": true,
+          "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+          "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde",
+          "immutable": true,
+          "schema_version": "site_integration_production_eligibility_publication_authority_v1",
+          "subject": {
+            "accepted_site_integration_binding": {
+              "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+              "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+              "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+              "subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+            },
+            "authorizations": {
+              "build_expected_production_write_set": true,
+              "build_publication_activation_candidate": true,
+              "deployment": false,
+              "live_activation": false,
+              "perform_fresh_read_only_production_preflight": true,
+              "prepare_rollback_and_disposable_proof": true,
+              "production_database_write": false,
+              "production_persistence": false,
+              "publication_activation": false,
+              "publication_registry_mutation": false,
+              "record_production_eligibility": true
+            },
+            "congress": 119,
+            "current_production_preflight_binding": {
+              "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+              "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+            },
+            "decision": "approve_production_eligibility_and_publication_preparation_candidate",
+            "decision_recorded_at_utc": "2026-08-26T01:38:13.268576Z",
+            "downstream_boundary": "A distinct sealed positive activation authority, stable runtime proof, fresh execution proof, exact target, and unchanged preflight are required.",
+            "issue_id": "EDUCATION_WORKFORCE",
+            "member_bioguide_id": "F000477",
+            "member_slug": "leg_valerie_p_foushee",
+            "reviewer": "dhart54",
+            "reviewer_authority": "publication_candidate_preparation_authority_v1",
+            "storage_gate_decision": {
+              "benchmark_status": "gold_benchmark",
+              "editorial_status": "human_approved",
+              "production_eligible": true
+            }
+          }
+        },
+        "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+        "publication_activation_authority": {
+          "accepted": true,
+          "activation_authority_subject_sha256": "3a901faf83365e7baf416045ed7ae3a9bea4225c77a1e97ab73fe8b3ba72d791",
+          "artifact_id": "publication-activation-authority:f000477:education_workforce:119:v1",
+          "immutable": true,
+          "schema_version": "site_integration_publication_activation_authority_v1",
+          "sealed": true,
+          "subject": {
+            "accepted_site_integration_binding": {
+              "artifact_id": "site-integration-candidate:f000477:education_workforce:119:v1",
+              "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+              "file_sha256": "34f470355e82010a4b5f8180143ba99566e50320643141a2c35b35af89658f31",
+              "subject_sha256": "edfac59e705245e4a4a5ae7e2a7d009a6ad184036b6b872ca031b22ef48dca2d"
+            },
+            "activation_write_set_binding": {
+              "artifact_id": "publication-activation-write-set:f000477:education_workforce:119:v1",
+              "write_set_subject_sha256": "10de5dc0a7266870601df4d36cd2ef388f63923d9189dbd927c9a43be936ecf3"
+            },
+            "authorizations": {
+              "deploy_exact_reviewed_runtime": true,
+              "exact_bounded_rollback": true,
+              "production_database_write": true,
+              "publication_activation": true,
+              "publication_registry_mutation": true
+            },
+            "candidate_preparation_authority_binding": {
+              "artifact_id": "production-eligibility-publication-authority:f000477:education_workforce:119:v1",
+              "authority_file_sha256": "a8e9853ff6d9376bef3e0fe06a21f883e58cd6a37050b6212bc5722f8275c448",
+              "authority_subject_sha256": "95bdfa9f7bb094757f83c6766c1941a362d16e2729bab45ee7ec0006d3244dde"
+            },
+            "congress": 119,
+            "decision": "approve_exact_publication_activation",
+            "decision_recorded_at_utc": "2026-08-26T01:48:58.997491Z",
+            "expected_live_postconditions": {
+              "counts": {
+                "artifacts": 155,
+                "batches": 7,
+                "publication_registry": 4,
+                "relationships": 165
+              },
+              "education_118_tier": "receipts_only",
+              "education_119_tier": "reviewed_conclusion",
+              "education_all_tier": "reviewed_conclusion",
+              "existing_three_domains_unchanged": true
+            },
+            "issue_id": "EDUCATION_WORKFORCE",
+            "member_bioguide_id": "F000477",
+            "preflight_binding": {
+              "preflight_subject_sha256": "06457121bcc9ef6017272e9989930abf4c786b941026ab0af971c2b36fddce88",
+              "state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+            },
+            "presentation_content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+            "product_owner": "dhart54",
+            "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+            "publication_registry_target": {
+              "issue_id": "EDUCATION_WORKFORCE",
+              "member_bioguide_id": "F000477",
+              "presentation_artifact_version": 1,
+              "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1"
+            },
+            "ratification_runtime_evidence_binding": {
+              "captured_at_utc": "2026-08-26T01:22:59.215461+00:00",
+              "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "health_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+              "runtime_health_proof_subject_sha256": "2a2309a13c14ad92bd04335e4f5909e612f9737da15fcc6b27d08ca02bead3b8"
+            },
+            "reviewer": "chatgpt:political_fingerprint_authority_thread",
+            "reviewer_authority": "publication_activation_review_authority_v1",
+            "rollback_binding": {
+              "baseline_registry_rows_unchanged": {
+                "ENVIRONMENT_ENERGY": {
+                  "artifact_id": 239,
+                  "artifact_version": 1,
+                  "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+                  "issue_id": "ENVIRONMENT_ENERGY",
+                  "member_bioguide_id": "F000477",
+                  "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+                  "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+                  "publicly_active": true,
+                  "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+                },
+                "JUSTICE_PUBLIC_SAFETY": {
+                  "artifact_id": 221,
+                  "artifact_version": 1,
+                  "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+                  "issue_id": "JUSTICE_PUBLIC_SAFETY",
+                  "member_bioguide_id": "F000477",
+                  "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+                  "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+                  "publicly_active": true,
+                  "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+                },
+                "NATIONAL_SECURITY_FOREIGN": {
+                  "artifact_id": 227,
+                  "artifact_version": 1,
+                  "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+                  "issue_id": "NATIONAL_SECURITY_FOREIGN",
+                  "member_bioguide_id": "F000477",
+                  "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+                  "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+                  "publicly_active": true,
+                  "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+                }
+              },
+              "delete_artifact_natural_keys": [
+                "site-integration-candidate:f000477:education_workforce:119:v1",
+                "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+                "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+              ],
+              "delete_batch_key": "foushee_education_workforce_119_publication_activation_v1-1a01725d",
+              "delete_registry_primary_key": {
+                "issue_id": "EDUCATION_WORKFORCE",
+                "member_bioguide_id": "F000477"
+              },
+              "delete_relationship_count": 2,
+              "restore_counts": {
+                "artifacts": 152,
+                "batches": 6,
+                "publication_registry": 3,
+                "relationships": 163
+              },
+              "restore_state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+            },
+            "runtime_binding": {
+              "deployed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "health_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "reviewed_commit": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1",
+              "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904"
+            }
+          }
+        },
+        "relationship_metadata": {
+          "activation_bundle_id": "foushee_education_workforce_119_publication_activation_v1"
+        },
+        "reviewed_runtime_binding": {
+          "files": [
+            {
+              "file_sha256": "23403e09d469b5845a8a13b432a9e1603c3dbf192dbce319b2a0838d01e8e143",
+              "path": "backend/app/api/positions.py"
+            },
+            {
+              "file_sha256": "ff54a90ce56bd00721b2b0a8bcd3b80a121cfe11872c3d5ef9d79865a3768ef1",
+              "path": "backend/app/api/editorial_presentations.py"
+            },
+            {
+              "file_sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20",
+              "path": "backend/app/editorial_presentations/selector.py"
+            },
+            {
+              "file_sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37",
+              "path": "backend/app/editorial_presentations/site_publication.py"
+            },
+            {
+              "file_sha256": "14a2637c03da7585180650f065f4c61637dee26b571fc24447edcf7fdc09fbdc",
+              "path": "backend/app/editorial_presentations/education_workforce_integration_candidate.py"
+            },
+            {
+              "file_sha256": "4b11b1252c933c9d1719388e808e8dc7845e44633cbfa0ac5b643a14bf311a62",
+              "path": "backend/scripts/foushee_education_workforce_publication_preparation.py"
+            }
+          ],
+          "reviewed_runtime_manifest_sha256": "ad95d769f3d860431cfc7418b2bd4fd076f6ba991eff00c65031bf1fffe0e904",
+          "schema_version": "m13n_reviewed_runtime_manifest_v1"
+        },
+        "rollback_binding": {
+          "baseline_registry_rows_unchanged": {
+            "ENVIRONMENT_ENERGY": {
+              "artifact_id": 239,
+              "artifact_version": 1,
+              "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+              "issue_id": "ENVIRONMENT_ENERGY",
+              "member_bioguide_id": "F000477",
+              "natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+              "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+              "publicly_active": true,
+              "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+            },
+            "JUSTICE_PUBLIC_SAFETY": {
+              "artifact_id": 221,
+              "artifact_version": 1,
+              "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+              "issue_id": "JUSTICE_PUBLIC_SAFETY",
+              "member_bioguide_id": "F000477",
+              "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+              "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+              "publicly_active": true,
+              "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+            },
+            "NATIONAL_SECURITY_FOREIGN": {
+              "artifact_id": 227,
+              "artifact_version": 1,
+              "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+              "issue_id": "NATIONAL_SECURITY_FOREIGN",
+              "member_bioguide_id": "F000477",
+              "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+              "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+              "publicly_active": true,
+              "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+            }
+          },
+          "delete_artifact_natural_keys": [
+            "site-integration-candidate:f000477:education_workforce:119:v1",
+            "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+            "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+          ],
+          "delete_batch_key": "foushee_education_workforce_119_publication_activation_v1-1a01725d",
+          "delete_registry_primary_key": {
+            "issue_id": "EDUCATION_WORKFORCE",
+            "member_bioguide_id": "F000477"
+          },
+          "delete_relationship_count": 2,
+          "restore_counts": {
+            "artifacts": 152,
+            "batches": 6,
+            "publication_registry": 3,
+            "relationships": 163
+          },
+          "restore_state_fingerprint_sha256": "7fd41a05d8fcc033b8b1522e54a5ecda12ce9782c040e723d04613f30d30a860"
+        },
+        "source_manifest_artifact_version": 1,
+        "source_manifest_content_sha256": "52cb21987b39139fb4e62b8274e3535482aca7251a0a44a77970f04855ae668e",
+        "source_manifest_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-source-manifest",
+        "validation_artifact_version": 1,
+        "validation_content_sha256": "446df07f190a78e39cf3dbff2d06555d28779fbe7806f3f4fb66eacfd26d3b03",
+        "validation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1:publication-validation"
+      },
+      "publicly_active": true,
+      "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1"
+    },
+    "restore_registry_identities": [
+      {
+        "activated_at": "2026-08-26 01:50:38.557112+00:00",
+        "artifact_id": 242,
+        "artifact_version": 1,
+        "content_sha256": "ea482f71f1bce872574fd91abd76869423f0ba2fd4dddc78eb24e77806f5294c",
+        "deactivated_at": null,
+        "issue_id": "EDUCATION_WORKFORCE",
+        "member_bioguide_id": "F000477",
+        "presentation_natural_key": "site-integration-candidate:f000477:education_workforce:119:v1",
+        "publication_metadata_sha256": "a7d48ed1f07870e72751056dce0e5400b23b1abaefffa711ec082aa1351842bd",
+        "publicly_active": true,
+        "source_commit_sha": "1a01725dbd3311bfa8dcdea31009466f2c51c6a1"
+      },
+      {
+        "activated_at": "2026-08-24 01:37:40.301834+00:00",
+        "artifact_id": 239,
+        "artifact_version": 1,
+        "content_sha256": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+        "deactivated_at": null,
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "member_bioguide_id": "F000477",
+        "presentation_natural_key": "site-integration-candidate:f000477:environment_energy:119:v1",
+        "publication_metadata_sha256": "cbd2c7b4b8aae00e4a8beed0922162f25c2f49027328bccc92e2c57835669a64",
+        "publicly_active": true,
+        "source_commit_sha": "0f34962526a693625f7b15a96baec95121c2f6c9"
+      },
+      {
+        "activated_at": "2026-08-05 00:09:40.489320+00:00",
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "deactivated_at": null,
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "member_bioguide_id": "F000477",
+        "presentation_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+        "publication_metadata_sha256": "cd756dd33694cf7e5d561fceef15e8d3c2679c98f50f6dbcc382ac3074325373",
+        "publicly_active": true,
+        "source_commit_sha": "140f713f80ba650862dd321d6752cd4e5100b54d"
+      },
+      {
+        "activated_at": "2026-08-15 03:07:07.426473+00:00",
+        "artifact_id": 227,
+        "artifact_version": 1,
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "deactivated_at": null,
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "member_bioguide_id": "F000477",
+        "presentation_natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1",
+        "publication_metadata_sha256": "401a2767c9779aaa30a6be0bf013e0a63087496a314dacadf04e12b9aac78bf0",
+        "publicly_active": true,
+        "source_commit_sha": "b12a0939b4452fb9dcc9ae150d8159ec0a18b6bd"
+      }
+    ],
+    "restore_selector_state": {
+      "scopes": {
+        "118": {
+          "ECONOMY_TAXES": "receipts_only",
+          "EDUCATION_WORKFORCE": "receipts_only",
+          "ENVIRONMENT_ENERGY": "receipts_only",
+          "HEALTH_SOCIAL": "receipts_only",
+          "IMMIGRATION_BORDER": "receipts_only",
+          "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+          "JUSTICE_PUBLIC_SAFETY": "receipts_only",
+          "NATIONAL_SECURITY_FOREIGN": "receipts_only"
+        },
+        "119": {
+          "ECONOMY_TAXES": "receipts_only",
+          "EDUCATION_WORKFORCE": "reviewed_conclusion",
+          "ENVIRONMENT_ENERGY": "reviewed_conclusion",
+          "HEALTH_SOCIAL": "receipts_only",
+          "IMMIGRATION_BORDER": "receipts_only",
+          "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+          "JUSTICE_PUBLIC_SAFETY": "reviewed_conclusion",
+          "NATIONAL_SECURITY_FOREIGN": "reviewed_conclusion"
+        },
+        "all": {
+          "ECONOMY_TAXES": "receipts_only",
+          "EDUCATION_WORKFORCE": "reviewed_conclusion",
+          "ENVIRONMENT_ENERGY": "reviewed_conclusion",
+          "HEALTH_SOCIAL": "receipts_only",
+          "IMMIGRATION_BORDER": "receipts_only",
+          "INFRASTRUCTURE_TECH_TRANSPORT": "receipts_only",
+          "JUSTICE_PUBLIC_SAFETY": "reviewed_conclusion",
+          "NATIONAL_SECURITY_FOREIGN": "reviewed_conclusion"
+        }
+      },
+      "selector_rows": 4
+    },
+    "restore_state_fingerprint_sha256": "090477315f73df6cadda662f2aa24ef4a30ed0b2e74669bb3e7d5cf73680e01e"
+  }
+}

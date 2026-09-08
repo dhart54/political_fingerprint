@@ -17,6 +17,12 @@ from app.api.metadata import router as metadata_router
 from app.api.positions import router as positions_router
 from app.api.search import router as search_router
 from app.api.summary import router as summary_router
+from app.editorial_presentations.publication_replacement_runtime_v2r import (
+    install_publication_replacement_runtime_v2r,
+)
+
+
+install_publication_replacement_runtime_v2r()
 
 
 DEFAULT_CORS_ORIGINS = (
