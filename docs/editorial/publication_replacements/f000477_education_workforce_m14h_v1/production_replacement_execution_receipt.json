@@ -1,0 +1,55 @@
+{
+  "immutable": true,
+  "receipt_subject_sha256": "4013ae075f2542373c4e46797846e8699096a5f591e9e0318556ac4ec3e10145",
+  "schema_version": "m14h_production_replacement_execution_receipt_v1",
+  "subject": {
+    "backend_production_deployment": {
+      "commit_sha": "1a0c6dcdf2d367506d69817a86070934d169bb0b",
+      "identity": "render-production:political-fingerprint.onrender.com"
+    },
+    "completed_at_utc": "2026-09-08T20:34:15.279647Z",
+    "frontend_production_deployment": {
+      "identity": "vercel-production-deployment:6336444142:political-fingerprint-ij87dsijk-dhart54s-projects.vercel.app",
+      "source_commit_sha": "1a0c6dcdf2d367506d69817a86070934d169bb0b"
+    },
+    "human_decision_receipt": {
+      "artifact_id": "human-replacement-activation-decision:f000477:education_workforce:m14h:v1",
+      "subject_sha256": "80f3e9d4aa8ce09b577b50af4773913aa1cff12b51a241f97d3c492a9c387f25"
+    },
+    "live_production_smoke": {
+      "education_scope_tiers": {
+        "118": "receipts_only",
+        "119": "reviewed_conclusion",
+        "all": "reviewed_conclusion"
+      },
+      "other_publication_registry_identities_unchanged": true,
+      "prior_education_artifact_unchanged": true,
+      "status": "PASS"
+    },
+    "merged_main_sha": "1a0c6dcdf2d367506d69817a86070934d169bb0b",
+    "mutation_counts": {
+      "deletes_during_activation": 0,
+      "insert_artifacts": 3,
+      "insert_batches": 1,
+      "insert_registry_rows": 0,
+      "insert_relationships": 2,
+      "other_updates": 0,
+      "unauthorized_table_writes": 0,
+      "update_registry_rows": 1
+    },
+    "new_education_artifact_id": 245,
+    "post_activation_counts": {
+      "artifacts": 158,
+      "batches": 8,
+      "publication_registry": 4,
+      "relationships": 167
+    },
+    "post_activation_state_fingerprint_sha256": "844dd850a10aa778284495595a9d9b518166e693181f9bd3dc22730155d653b0",
+    "prior_education_artifact_id": 242,
+    "production_preflight_subject_sha256": "b3bb23e4d025f2cd1c9a271ede9b7600ab5366d2a9c76562a74bb0a7b9e3f84d",
+    "rollback_performed": false,
+    "runtime_evidence_subject_sha256": "99e2f2ea96948184b87584c3e6bfe08477243145a815ad8741a87630566f1d67",
+    "sealed_activation_authority_subject_sha256": "17054b116767c8be399ce1622b43113f770b938a98e6ae3a1d5e034cb1186b05",
+    "stable_write_set_subject_sha256": "40b5e10fbb39a47953480aaa06d6a7618cc57832a4aa0d7f3902cb48a4b1b6ca"
+  }
+}
