@@ -402,6 +402,7 @@ def test_active_publication_projects_complete_positions_and_blocked_control(
 ) -> None:
     candidate = _load(M11M_PATH)
     evidence = candidate["subject"]["preview_data"]["evidence_119"]
+    monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", lambda **kw: evidence)
     write_set = _load(WRITE_SET_PATH)
     row = _row(write_set, activation_authority=_activation_authority(write_set))
     monkeypatch.setattr("app.api.positions._load_publication_rows", lambda: [row])
@@ -414,7 +415,7 @@ def test_active_publication_projects_complete_positions_and_blocked_control(
         lambda **_kwargs: {
             "legislator_id": "leg_valerie_p_foushee",
             "scope": "119",
-            "positions": [],
+            "positions": [{"domain": "NATIONAL_SECURITY_FOREIGN"}],
         },
     )
     monkeypatch.setattr(

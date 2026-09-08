@@ -3,39 +3,19 @@
 from __future__ import annotations
 
 import copy
-from datetime import date
 from typing import Any
 
-
-class GovernedReceiptProjectionError(ValueError):
-    """Raised when governed receipt meaning cannot be safely bound to evidence."""
+from .reviewed_record import (
+    GovernedReceiptProjectionError,
+    index_actions,
+    overlay_reviewed_actions,
+    union_database_actions,
+)
 
 
 def _require(condition: bool, message: str) -> None:
     if not condition:
         raise GovernedReceiptProjectionError(message)
-
-
-def _canonical_action_id(row: dict[str, Any]) -> str:
-    supplied = row.get("canonical_action_id")
-    if isinstance(supplied, str) and supplied.count(":") == 3:
-        return supplied
-    chamber = str(row.get("chamber") or "").strip().lower()
-    congress = int(row.get("congress") or 0)
-    roll_call = int(row.get("rollcall_number") or 0)
-    vote_date = date.fromisoformat(str(row.get("vote_date") or "")[:10])
-    congress_start_year = 1789 + ((congress - 1) * 2)
-    session = vote_date.year - congress_start_year + 1
-    if (
-        chamber not in {"house", "senate"}
-        or congress <= 0
-        or roll_call <= 0
-        or session not in {1, 2}
-    ):
-        raise GovernedReceiptProjectionError(
-            "raw evidence cannot be bound to a canonical action identity"
-        )
-    return f"{chamber}:{congress}:{session}:{roll_call}"
 
 
 def _normalized_member_action(value: object) -> str:
@@ -91,30 +71,9 @@ def attach_governed_receipt_projections(
     )
     result = copy.deepcopy(evidence_response)
     if governed_evidence is not None:
-        governed_congresses = {
-            int(value)
-            for receipt in receipts
-            for value in receipt["congress_scope"]
-        }
-        result["evidence"] = [
-            row
-            for row in result.get("evidence", [])
-            if int(row.get("congress") or 0) not in governed_congresses
-        ] + copy.deepcopy(governed_evidence)
-        result["evidence"].sort(
-            key=lambda row: (
-                str(row.get("vote_date") or ""),
-                int(row.get("rollcall_number") or 0),
-            )
-        )
-    rows_by_action: dict[str, dict[str, Any]] = {}
-    for row in result.get("evidence", []):
-        action_id = _canonical_action_id(row)
-        _require(
-            action_id not in rows_by_action,
-            f"{action_id}: raw evidence repeats a canonical action",
-        )
-        rows_by_action[action_id] = row
+        result["evidence"] = union_database_actions(result.get("evidence", []), governed_evidence)
+    raw_response = copy.deepcopy(result)
+    rows_by_action = index_actions(result.get("evidence", []))
 
     for action_id in reviewed_action_ids:
         _require(
@@ -160,6 +119,8 @@ def attach_governed_receipt_projections(
             "detail": control.get("detail"),
             "published_artifact_identity": presentation["provenance"]["artifact_id"],
         }
+    reviewed_rows = [rows_by_action[action_id] for action_id in reviewed_action_ids]
+    result = overlay_reviewed_actions(raw_response, reviewed_rows, domain=presentation["issue_id"])
     result["governed_receipt_projection"] = {
         "published_artifact_identity": presentation["provenance"]["artifact_id"],
         "review_receipt_id": presentation["provenance"]["review_receipt_id"],

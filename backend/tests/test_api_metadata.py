@@ -1,3 +1,6 @@
+import pytest
+
+pytestmark = pytest.mark.usefixtures("fixture_mode")
 from app.api.metadata import get_metadata_coverage
 from app.main import app
 

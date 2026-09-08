@@ -9,6 +9,7 @@ import pytest
 
 from app.editorial_artifacts.bundle import semantic_hash
 from app.editorial_presentations.integration_candidate import governed_position_summary
+from app.editorial_presentations.reviewed_record import overlay_reviewed_actions
 from app.editorial_presentations.site_publication import (
     ACTIVATION_AUTHORITY_SCHEMA_VERSION,
     EDUCATION_ACTIVATION_AUTHORITY_ID,
@@ -199,12 +200,16 @@ def test_governed_m13n_graph_disposable_lifecycle() -> None:
             len({row["governed_receipt_projection"]["episode_id"] for row in evidence})
             == 16
         )
-        assert governed_position_summary(evidence, domain=ISSUE_ID) == {
+        overlaid = overlay_reviewed_actions({"evidence": evidence}, evidence, domain=ISSUE_ID)
+        assert governed_position_summary(overlaid["evidence"], domain=ISSUE_ID) == {
             "domain": ISSUE_ID,
             "yea_count": 6,
             "nay_count": 10,
             "other_count": 1,
             "total_votes": 17,
+            "available_action_count": 17,
+            "reviewed_action_count": 17,
+            "not_yet_reviewed_action_count": 0,
             "recorded_votes": 16,
             "interpreted_support_count": 6,
             "interpreted_oppose_count": 10,

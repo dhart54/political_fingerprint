@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from app.api.public_data import PublicDataUnavailable, fixture_fallback_enabled
 from app.api.name_search import filter_name_matches
 from app.db import get_connection
 from app.etl.classify import run_classification
@@ -157,10 +158,27 @@ class PositionResponseRow:
     interpreted_total: int
 
 
+def _read_public_database(reader, *args, **kwargs):
+    """Only the public dispatch may turn an unavailable DB into explicit demo mode."""
+    try:
+        return reader(*args, **kwargs)
+    except PublicDataUnavailable:
+        if fixture_fallback_enabled():
+            return None
+        raise
+
+
+def _mark_fixture(payload: dict[str, object] | None) -> dict[str, object] | None:
+    return {**payload, "data_source": "fixtures"} if payload is not None else None
+
+
 def has_legislator(*, legislator_id: str) -> bool:
-    legislator = _get_db_legislator_by_external_id(legislator_id)
+    legislator = _read_public_database(_get_db_legislator_by_external_id, legislator_id)
     if legislator is not None:
         return True
+    if not fixture_fallback_enabled():
+        return False
+
     return any(
         _serialize_legislator(fixture_legislator)["id"] == legislator_id
         for fixture_legislator in FALLBACK_FIXTURE_DATA.legislators
@@ -168,9 +186,12 @@ def has_legislator(*, legislator_id: str) -> bool:
 
 
 def get_legislator_profile(*, legislator_id: str) -> dict[str, object] | None:
-    legislator = _get_db_legislator_by_external_id(legislator_id)
+    legislator = _read_public_database(_get_db_legislator_by_external_id, legislator_id)
     if legislator is not None:
         return _serialize_legislator(legislator)
+
+    if not fixture_fallback_enabled():
+        return None
 
     fixture_legislator = next(
         (
@@ -182,11 +203,11 @@ def get_legislator_profile(*, legislator_id: str) -> dict[str, object] | None:
     )
     if fixture_legislator is None:
         return None
-    return _serialize_legislator(fixture_legislator)
+    return _mark_fixture(_serialize_legislator(fixture_legislator))
 
 
 def get_legislator_contact_response(*, legislator_id: str) -> dict[str, object] | None:
-    database_contact = _get_db_legislator_contact(legislator_id=legislator_id)
+    database_contact = _read_public_database(_get_db_legislator_contact, legislator_id=legislator_id)
     if database_contact is not None:
         return _serialize_legislator_contact(
             legislator_id=legislator_id,
@@ -222,12 +243,15 @@ def get_legislator_contact_response(*, legislator_id: str) -> dict[str, object] 
 
 
 def search_legislators(*, query: str = "") -> list[dict[str, object]]:
-    database_results = _search_db_legislators(query=query)
+    database_results = _read_public_database(_search_db_legislators, query=query)
     if database_results is not None:
         return database_results
 
+    if not fixture_fallback_enabled():
+        return []
+
     candidates = [
-        _serialize_legislator(legislator)
+        _mark_fixture(_serialize_legislator(legislator))
         for legislator in FALLBACK_FIXTURE_DATA.legislators
     ]
     ordered = sorted(
@@ -240,12 +264,15 @@ def search_legislators(*, query: str = "") -> list[dict[str, object]]:
     return filter_name_matches(ordered, query=query)
 
 
-def get_coverage_metadata() -> dict[str, object]:
-    db_metadata = _get_db_coverage_metadata()
+def get_coverage_metadata() -> dict[str, object] | None:
+    db_metadata = _read_public_database(_get_db_coverage_metadata)
     if db_metadata is not None:
         return db_metadata
 
-    return _get_fallback_coverage_metadata()
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_coverage_metadata())
 
 
 def get_fingerprint_response(
@@ -255,7 +282,8 @@ def get_fingerprint_response(
     scope: str = DEFAULT_PROFILE_SCOPE,
 ) -> dict[str, object] | None:
     normalized_scope = _normalize_profile_scope(scope)
-    db_response = _get_db_fingerprint_response(
+    db_response = _read_public_database(
+        _get_db_fingerprint_response,
         legislator_id=legislator_id,
         comparison_party=comparison_party,
         scope=normalized_scope,
@@ -263,18 +291,25 @@ def get_fingerprint_response(
     if db_response is not None:
         return db_response
 
-    return _get_fallback_fingerprint_response(
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_fingerprint_response(
         legislator_id=legislator_id,
         comparison_party=comparison_party,
-    )
+        scope=normalized_scope,
+    ))
 
 
 def get_drift_response(*, legislator_id: str) -> dict[str, object] | None:
-    db_response = _get_db_drift_response(legislator_id=legislator_id)
+    db_response = _read_public_database(_get_db_drift_response, legislator_id=legislator_id)
     if db_response is not None:
         return db_response
 
-    return _get_fallback_drift_response(legislator_id=legislator_id)
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_drift_response(legislator_id=legislator_id))
 
 
 def get_position_response(
@@ -283,11 +318,14 @@ def get_position_response(
     scope: str = DEFAULT_PROFILE_SCOPE,
 ) -> dict[str, object] | None:
     normalized_scope = _normalize_profile_scope(scope)
-    db_response = _get_db_position_response(legislator_id=legislator_id, scope=normalized_scope)
+    db_response = _read_public_database(_get_db_position_response, legislator_id=legislator_id, scope=normalized_scope)
     if db_response is not None:
         return db_response
 
-    return _get_fallback_position_response(legislator_id=legislator_id)
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_position_response(legislator_id=legislator_id, scope=normalized_scope))
 
 
 def get_position_evidence_response(
@@ -301,7 +339,8 @@ def get_position_evidence_response(
         return None
 
     normalized_scope = _normalize_profile_scope(scope)
-    db_response = _get_db_position_evidence_response(
+    db_response = _read_public_database(
+        _get_db_position_evidence_response,
         legislator_id=legislator_id,
         domain=normalized_domain,
         scope=normalized_scope,
@@ -309,10 +348,14 @@ def get_position_evidence_response(
     if db_response is not None:
         return db_response
 
-    return _get_fallback_position_evidence_response(
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_position_evidence_response(
         legislator_id=legislator_id,
         domain=normalized_domain,
-    )
+        scope=normalized_scope,
+    ))
 
 
 def get_governed_position_evidence_rows(
@@ -352,7 +395,8 @@ def get_alignment_response(
             "alignment": [],
         } if has_legislator(legislator_id=legislator_id) else None
 
-    db_response = _get_db_alignment_response(
+    db_response = _read_public_database(
+        _get_db_alignment_response,
         legislator_id=legislator_id,
         preferences=normalized_preferences,
         scope=normalized_scope,
@@ -360,23 +404,30 @@ def get_alignment_response(
     if db_response is not None:
         return db_response
 
-    return _get_fallback_alignment_response(
+    if not fixture_fallback_enabled():
+        return None
+
+    return _mark_fixture(_get_fallback_alignment_response(
         legislator_id=legislator_id,
         preferences=normalized_preferences,
-    )
+        scope=normalized_scope,
+    ))
 
 
 def get_summary_response(*, legislator_id: str) -> dict[str, object] | None:
-    db_response = _get_db_summary_response(legislator_id=legislator_id)
+    db_response = _read_public_database(_get_db_summary_response, legislator_id=legislator_id)
     if db_response is not None:
         return db_response
     return None
 
 
 def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
-    db_response = _get_db_zip_lookup_response(zip_code=zip_code)
+    db_response = _read_public_database(_get_db_zip_lookup_response, zip_code=zip_code)
     if db_response is not None:
         return db_response
+
+    if not fixture_fallback_enabled():
+        return None
 
     zip_mappings = _get_fallback_zip_mappings(zip_code=zip_code)
     zip_record = zip_mappings[0] if zip_mappings else None
@@ -428,9 +479,12 @@ def get_zip_lookup_response(*, zip_code: str) -> dict[str, object] | None:
 
 
 def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
-    db_response = _get_db_zip_race_response(zip_code=zip_code)
+    db_response = _read_public_database(_get_db_zip_race_response, zip_code=zip_code)
     if db_response is not None:
         return db_response
+
+    if not fixture_fallback_enabled():
+        return None
 
     zip_record = next((row for row in FALLBACK_FIXTURE_DATA.zip_district_map if row["zip"] == zip_code), None)
     if zip_record is None:
@@ -462,11 +516,11 @@ def get_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
 
 
 def get_candidate_evidence_response(*, candidate_id: str) -> dict[str, object] | None:
-    rows = _get_db_candidate_evidence_rows(candidate_id=candidate_id)
+    rows = _read_public_database(_get_db_candidate_evidence_rows, candidate_id=candidate_id)
     if rows is None:
         return None
 
-    candidate_row = _get_db_race_candidate(candidate_id=candidate_id)
+    candidate_row = _read_public_database(_get_db_race_candidate, candidate_id=candidate_id)
     if candidate_row is None:
         return None
 
@@ -478,12 +532,15 @@ def get_candidate_evidence_response(*, candidate_id: str) -> dict[str, object] |
 
 
 def get_supported_zip_responses(*, limit: int = 12) -> dict[str, object]:
-    db_rows = _get_db_supported_zip_rows(limit=limit)
+    db_rows = _read_public_database(_get_db_supported_zip_rows, limit=limit)
     if db_rows is not None:
         return {
             "data_source": "database",
             "zips": [_serialize_zip_row(row) for row in db_rows],
         }
+
+    if not fixture_fallback_enabled():
+        return {"data_source": "database", "zips": []}
 
     return {
         "data_source": "fixtures",
@@ -882,7 +939,7 @@ def _get_db_position_evidence_response(*, legislator_id: str, domain: str, scope
             scope=normalized_scope,
             coverage_row=_get_db_scope_coverage(scope=normalized_scope),
         ),
-        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
+        "evidence": [_serialize_evidence_row({**row, "issue_domain": domain}) for row in evidence_rows],
     }
 
 
@@ -1018,40 +1075,34 @@ def _get_db_zip_race_response(*, zip_code: str) -> dict[str, object] | None:
     }
 
 
-def _get_fallback_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL") -> dict[str, object] | None:
-    fingerprint_rows = [
-        row
-        for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
-        if row.legislator_id == legislator_id
-    ]
-    if not fingerprint_rows:
+def _get_fallback_fingerprint_response(*, legislator_id: str, comparison_party: str = "ALL", scope: str = DEFAULT_PROFILE_SCOPE) -> dict[str, object] | None:
+    import statistics
+
+    positions = _get_fallback_position_response(legislator_id=legislator_id, scope=scope)
+    if positions is None:
         return None
-
     chamber = _infer_fallback_legislator_chamber(legislator_id)
-    median_map = {
-        median_record.domain: median_record
-        for median_record in FALLBACK_PRECOMPUTED_DATA.chamber_medians
-        if median_record.chamber == chamber and median_record.party == comparison_party
-    }
-
-    first_row = fingerprint_rows[0]
-    return {
-        "legislator_id": legislator_id,
-        "window_start": first_row.window_start.isoformat(),
-        "window_end": first_row.window_end.isoformat(),
-        "classification_version": first_row.classification_version,
+    peers = [
+        _get_fallback_position_response(legislator_id=_serialize_legislator(row)["id"], scope=scope)
+        for row in FALLBACK_FIXTURE_DATA.legislators
+        if row["chamber"] == chamber and (comparison_party == "ALL" or row["party"] == comparison_party)
+    ]
+    total = sum(row["total_votes"] for row in positions["positions"])
+    rows = []
+    for row in positions["positions"]:
+        shares = [
+            next(item["total_votes"] for item in peer["positions"] if item["domain"] == row["domain"]) / peer_total
+            for peer in peers if peer is not None
+            if (peer_total := sum(item["total_votes"] for item in peer["positions"]))
+        ]
+        rows.append(FingerprintResponseRow(
+            domain=row["domain"], vote_count=row["total_votes"], total_votes=total,
+            vote_share=row["total_votes"] / total if total else 0.0,
+            median_share=statistics.median(shares) if shares else 0.0,
+        ).__dict__)
+    return {key: value for key, value in positions.items() if key != "positions"} | {
+        "fingerprint": rows, "comparison_party": comparison_party,
         "last_updated": f"{FIXTURE_AS_OF_DATE.isoformat()}T00:00:00+00:00",
-        "comparison_party": comparison_party,
-        "fingerprint": [
-            FingerprintResponseRow(
-                domain=row.domain,
-                vote_count=row.vote_count,
-                total_votes=row.total_votes,
-                vote_share=row.vote_share,
-                median_share=median_map[row.domain].median_share if row.domain in median_map else 0.0,
-            ).__dict__
-            for row in fingerprint_rows
-        ],
     }
 
 
@@ -1080,7 +1131,7 @@ def _get_fallback_drift_response(*, legislator_id: str) -> dict[str, object] | N
     }
 
 
-def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] | None:
+def _get_fallback_position_response(*, legislator_id: str, scope: str = DEFAULT_PROFILE_SCOPE) -> dict[str, object] | None:
     fingerprint_rows = [
         row
         for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
@@ -1125,6 +1176,8 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
         classified = classification_result.get(vote["roll_call_id"])
         if classified is None or not classified.is_eligible or classified.primary_domain is None:
             continue
+        if int(roll_calls_by_id[vote["roll_call_id"]]["congress"]) not in PROFILE_SCOPES[scope]["congresses"]:
+            continue
         vote_date = str(roll_calls_by_id[vote["roll_call_id"]]["vote_date"])
         if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
             continue
@@ -1146,6 +1199,8 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
 
     return {
         "legislator_id": legislator_id,
+        "scope": scope,
+        "scope_metadata": _build_scope_payload(scope=scope, coverage_row=None),
         "window_start": first_row.window_start.isoformat(),
         "window_end": first_row.window_end.isoformat(),
         "classification_version": first_row.classification_version,
@@ -1181,7 +1236,7 @@ def _get_fallback_position_response(*, legislator_id: str) -> dict[str, object] 
     }
 
 
-def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str) -> dict[str, object] | None:
+def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str, scope: str = DEFAULT_PROFILE_SCOPE) -> dict[str, object] | None:
     fingerprint_rows = [
         row
         for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
@@ -1228,6 +1283,8 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
         ):
             continue
         roll_call = roll_calls_by_id[vote["roll_call_id"]]
+        if int(roll_call["congress"]) not in PROFILE_SCOPES[scope]["congresses"]:
+            continue
         vote_date = str(roll_call["vote_date"])
         if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
             continue
@@ -1240,6 +1297,7 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
                 "vote_date": vote_date,
                 "chamber": str(roll_call["chamber"]),
                 "congress": int(roll_call["congress"]),
+                "session": roll_call.get("session"),
                 "rollcall_number": int(roll_call["rollcall_number"]),
                 "position": str(vote["position"]),
                 "question": str(roll_call["question"]),
@@ -1284,15 +1342,17 @@ def _get_fallback_position_evidence_response(*, legislator_id: str, domain: str)
     evidence_rows.sort(key=lambda row: (str(row["vote_date"]), int(row["rollcall_number"])))
     return {
         "legislator_id": legislator_id,
+        "scope": scope,
+        "scope_metadata": _build_scope_payload(scope=scope, coverage_row=None),
         "domain": domain,
         "window_start": first_row.window_start.isoformat(),
         "window_end": first_row.window_end.isoformat(),
         "classification_version": first_row.classification_version,
-        "evidence": [_serialize_evidence_row(row) for row in evidence_rows],
+        "evidence": [_serialize_evidence_row({**row, "issue_domain": domain}) for row in evidence_rows],
     }
 
 
-def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[str, str]) -> dict[str, object] | None:
+def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[str, str], scope: str = DEFAULT_PROFILE_SCOPE) -> dict[str, object] | None:
     fingerprint_rows = [
         row
         for row in FALLBACK_PRECOMPUTED_DATA.fingerprint_records
@@ -1330,6 +1390,8 @@ def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[st
         ):
             continue
         roll_call = roll_calls_by_id[vote["roll_call_id"]]
+        if int(roll_call["congress"]) not in PROFILE_SCOPES[scope]["congresses"]:
+            continue
         vote_date = str(roll_call["vote_date"])
         if not (first_row.window_start.isoformat() <= vote_date <= first_row.window_end.isoformat()):
             continue
@@ -1354,6 +1416,8 @@ def _get_fallback_alignment_response(*, legislator_id: str, preferences: dict[st
         window_start=first_row.window_start.isoformat(),
         window_end=first_row.window_end.isoformat(),
         classification_version=first_row.classification_version,
+        scope=scope,
+        scope_metadata=_build_scope_payload(scope=scope),
     )
 
 
@@ -1738,6 +1802,7 @@ def _get_db_position_evidence_rows(
             rc.vote_date,
             rc.chamber,
             rc.congress,
+            rc.session,
             rc.rollcall_number,
             vc.position,
             rc.question,
@@ -1821,6 +1886,7 @@ def _get_db_scoped_position_evidence_rows(
             rc.vote_date,
             rc.chamber,
             rc.congress,
+            rc.session,
             rc.rollcall_number,
             vc.position,
             rc.question,
@@ -2396,19 +2462,16 @@ def _comparison_statement(*, status: str, recent_pattern: str) -> str:
 def _query_all_dicts(query: str, params: tuple[Any, ...] = ()) -> list[dict[str, Any]] | None:
     try:
         connection = get_connection()
+        try:
+            cursor = connection.cursor()
+            cursor.execute(query, params)
+            rows = cursor.fetchall()
+            columns = [description[0] for description in cursor.description or []]
+            return [dict(zip(columns, row)) for row in rows]
+        finally:
+            connection.close()
     except Exception:
-        return None
-
-    try:
-        cursor = connection.cursor()
-        cursor.execute(query, params)
-        rows = cursor.fetchall()
-        columns = [description[0] for description in cursor.description or []]
-        return [dict(zip(columns, row)) for row in rows]
-    except Exception:
-        return None
-    finally:
-        connection.close()
+        raise PublicDataUnavailable() from None
 
 
 def _query_one_dict(query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] | None:
@@ -2420,6 +2483,8 @@ def _query_one_dict(query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] 
 
 def _serialize_evidence_row(row: dict[str, Any]) -> dict[str, object]:
     serialized = {
+        "issue_domain": row.get("issue_domain"),
+        "session": row.get("session"),
         "roll_call_id": str(row["roll_call_id"]),
         "vote_date": str(row["vote_date"]),
         "chamber": str(row["chamber"]),
@@ -2785,6 +2850,7 @@ def _build_alignment_payload(
     window_end: str,
     classification_version: str,
     scope: str = CURRENT_PROFILE_SCOPE,
+    scope_metadata: dict[str, object] | None = None,
 ) -> dict[str, object]:
     rows_by_domain = {
         domain: [
@@ -2801,7 +2867,7 @@ def _build_alignment_payload(
         "window_end": window_end,
         "classification_version": classification_version,
         "scope": _normalize_profile_scope(scope),
-        "scope_metadata": _build_scope_payload(
+        "scope_metadata": scope_metadata if scope_metadata is not None else _build_scope_payload(
             scope=_normalize_profile_scope(scope),
             coverage_row=_get_db_scope_coverage(scope=_normalize_profile_scope(scope)),
         ),

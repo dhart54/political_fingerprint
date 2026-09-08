@@ -20,6 +20,7 @@ class SummaryRecord:
     summary_text: str
     generation_method: str
     created_at: str
+    data_source: str = "database"
 
 FORBIDDEN_SUMMARY_TERMS = (
     "corrupt",
@@ -47,6 +48,17 @@ def get_or_create_summary(*, legislator_id: str) -> SummaryRecord | None:
 
     summary_text = build_fallback_summary(fingerprint=fingerprint, drift=drift)
     validate_summary_text(summary_text)
+    if fingerprint.get("data_source") == "fixtures" or drift.get("data_source") == "fixtures":
+        # Demo evidence must never become a persisted production summary.
+        return SummaryRecord(
+            legislator_id=legislator_id,
+            window_end=str(fingerprint["window_end"]),
+            classification_version=str(fingerprint["classification_version"]),
+            summary_text=summary_text,
+            generation_method="deterministic_fallback",
+            created_at=datetime.now(timezone.utc).isoformat(),
+            data_source="fixtures",
+        )
     record = persist_summary_record(
         legislator_id=legislator_id,
         window_end=str(fingerprint["window_end"]),

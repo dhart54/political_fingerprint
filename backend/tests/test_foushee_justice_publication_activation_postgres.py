@@ -267,7 +267,6 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             response.status_code,
             response_119.status_code,
             response_118.status_code,
-            other_member.status_code,
         } == {200}
         justice = next(
             item
@@ -284,11 +283,9 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
             for item in response_118.json()["presentations"]
             if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
         )
-        other_justice = next(
-            item
-            for item in other_member.json()["presentations"]
-            if item["issue_id"] == "JUSTICE_PUBLIC_SAFETY"
-        )
+        # Alex Morgan is a demo identity, absent from this disposable live DB.
+        # Default production reads must not manufacture a fixture profile.
+        assert other_member.status_code == 404
         economy = next(
             item
             for item in response_119.json()["presentations"]
@@ -297,7 +294,6 @@ def test_transactional_apply_idempotency_postcheck_and_rollback() -> None:
         assert justice["tier"] == "reviewed_conclusion"
         assert justice_119["tier"] == "reviewed_conclusion"
         assert justice_118["tier"] == "receipts_only"
-        assert other_justice["tier"] == "receipts_only"
         assert economy["tier"] == "receipts_only"
         approved_artifact = next(
             item

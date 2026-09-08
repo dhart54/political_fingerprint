@@ -62,6 +62,7 @@ def _build_comparison_side(*, legislator_id: str, comparison_party: str) -> dict
             "window_end": summary.window_end,
             "classification_version": summary.classification_version,
             "summary_text": summary.summary_text,
+            "data_source": summary.data_source,
             "generation_method": summary.generation_method,
             "created_at": summary.created_at,
         },

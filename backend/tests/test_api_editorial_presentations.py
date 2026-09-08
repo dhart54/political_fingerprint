@@ -11,6 +11,8 @@ from uuid import UUID
 from unittest.mock import patch
 
 import pytest
+
+pytestmark = pytest.mark.usefixtures("fixture_mode")
 from fastapi.testclient import TestClient
 
 from app.editorial_presentations.compiler import (
@@ -452,7 +454,8 @@ def test_raw_vote_reordering_and_yea_nay_fields_cannot_change_conclusion() -> No
     assert mutated["presentations"][6] == baseline["presentations"][6]
 
 
-def test_api_uses_read_only_selector_payload() -> None:
+def test_api_uses_read_only_selector_payload(monkeypatch) -> None:
+    monkeypatch.setattr("app.api.editorial_presentations.get_legislator_profile", lambda **kw: {"bioguide_id": "F000477"})
     with patch(
         "app.api.editorial_presentations._load_publication_rows",
         return_value=[_row(_approved_artifact())],
@@ -632,7 +635,8 @@ def test_repository_rejects_invalid_cursor_metadata(description: object) -> None
         )
 
 
-def test_operational_database_failure_is_not_recast_as_receipts_only() -> None:
+def test_operational_database_failure_is_not_recast_as_receipts_only(monkeypatch) -> None:
+    monkeypatch.setattr("app.api.editorial_presentations.get_legislator_profile", lambda **kw: {"bioguide_id": "F000477"})
     with patch(
         "app.api.editorial_presentations._load_publication_rows",
         side_effect=RuntimeError("database unavailable"),

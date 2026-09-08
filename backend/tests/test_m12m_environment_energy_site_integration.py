@@ -144,7 +144,7 @@ def test_m12m_positions_and_evidence_use_all_63_governed_rows(monkeypatch) -> No
         lambda **_kwargs: {
             "legislator_id": "leg_valerie_p_foushee",
             "scope": "119",
-            "positions": [],
+            "positions": [{"domain": "ENVIRONMENT_ENERGY"}],
         },
     )
     monkeypatch.setattr(
@@ -156,6 +156,7 @@ def test_m12m_positions_and_evidence_use_all_63_governed_rows(monkeypatch) -> No
         lambda **_kwargs: {"bioguide_id": "F000477"},
     )
     monkeypatch.setattr("app.api.positions._load_publication_rows", lambda: [])
+    monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", lambda **kw: evidence)
     client = TestClient(app)
     params = {"scope": "119", "candidate": "m12m-environment-energy"}
     positions = client.get(
@@ -172,6 +173,11 @@ def test_m12m_positions_and_evidence_use_all_63_governed_rows(monkeypatch) -> No
         "nay_count": 47,
         "other_count": 1,
         "total_votes": 63,
+        "available_action_count": 63,
+        "reviewed_action_count": 63,
+        "not_yet_reviewed_action_count": 0,
+        "yea_share": 15 / 62,
+        "nay_share": 47 / 62,
         "recorded_votes": 62,
         "interpreted_support_count": 15,
         "interpreted_oppose_count": 47,
@@ -226,6 +232,9 @@ def test_governed_position_summary_retains_resolved_non_directional_effect() -> 
         "nay_count": 0,
         "other_count": 1,
         "total_votes": 2,
+        "available_action_count": 2,
+        "reviewed_action_count": 0,
+        "not_yet_reviewed_action_count": 0,
         "recorded_votes": 1,
         "interpreted_support_count": 1,
         "interpreted_oppose_count": 0,

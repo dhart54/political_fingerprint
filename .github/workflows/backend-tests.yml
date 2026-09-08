@@ -81,12 +81,17 @@ jobs:
           python scripts/build_m14g_site_integration_acceptance.py --check
           python -m pytest -q \
             backend/tests/test_m14g_education_workforce_site_integration.py \
-            backend/tests/test_m14g_site_integration_acceptance.py
+            backend/tests/test_m14g_site_integration_acceptance.py \
+            backend/tests/test_public_record_integrity.py \
+            backend/tests/test_governed_receipt_projection.py
           cd frontend
           node --test \
             lib/m14gEducationWorkforce.test.mjs \
             lib/publicReceipt.test.mjs \
-            lib/selectedIssueExperience.test.mjs
+            lib/selectedIssueExperience.test.mjs \
+            lib/frontendPassA.test.mjs
+          npx playwright install --with-deps chromium
+          npx playwright test tests/public-record-integrity.spec.mjs
 
       - name: Run release-tier editorial, frontend, and persistence validation
         run: |

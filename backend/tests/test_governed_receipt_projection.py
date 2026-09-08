@@ -18,6 +18,7 @@ from app.editorial_presentations.review_state_catalog import (
 from app.editorial_presentations.selector import select_public_presentations
 from app.api.positions import get_legislator_position_evidence
 from app.api import precomputed
+from app.api.public_data import PublicDataUnavailable
 from backend.tests.test_api_editorial_presentations import (
     _approved_artifact,
     _row,
@@ -59,6 +60,7 @@ def _raw_row(receipt: dict, *, status: str = "ambiguous") -> dict:
         "vote_date": f"{start_year + int(session) - 1}-02-06",
         "chamber": "house",
         "congress": int(congress),
+        "session": int(session),
         "rollcall_number": int(roll_call),
         "position": receipt["member_action"].lower().replace(" ", "_"),
         "interpretation_status": status,
@@ -288,7 +290,7 @@ def test_receipts_only_member_does_not_query_publication_state(
     assert response is raw_response
 
 
-def test_exact_governed_rows_replace_only_governed_congress_and_keep_controls() -> None:
+def test_exact_governed_rows_preserve_unreviewed_actions_and_keep_controls() -> None:
     presentation = _presentation()
     control_action = "house:119:1:999"
     presentation["reviewed_action_ids"].append(control_action)
@@ -317,6 +319,8 @@ def test_exact_governed_rows_replace_only_governed_congress_and_keep_controls() 
         **governed_rows[0],
         "canonical_action_id": "house:118:2:32",
         "congress": 118,
+        "session": 2,
+        "rollcall_number": 32,
         "vote_date": "2024-02-06",
     }
     stale_119 = {**governed_rows[0], "rollcall_number": 888}
@@ -335,7 +339,7 @@ def test_exact_governed_rows_replace_only_governed_congress_and_keep_controls() 
         for row in response["evidence"]
     }
     assert "house:118:2:32" in identities
-    assert all(row["rollcall_number"] != 888 for row in response["evidence"])
+    assert any(row["rollcall_number"] == 888 for row in response["evidence"])
     control = next(
         row for row in response["evidence"]
         if row.get("canonical_action_id") == control_action
@@ -372,7 +376,7 @@ def test_exact_governed_query_failure_stays_fail_closed(
         lambda **_kwargs: None,
     )
 
-    with pytest.raises(RuntimeError, match="governed raw evidence query failed"):
+    with pytest.raises(PublicDataUnavailable):
         get_legislator_position_evidence(
             "leg_valerie_p_foushee",
             "JUSTICE_PUBLIC_SAFETY",
@@ -439,6 +443,7 @@ def test_full_record_projects_35_receipts_and_keeps_two_controls_noncounting() -
                 "vote_date": f"{2024 + int(session)}-01-01",
                 "chamber": chamber,
                 "congress": int(congress),
+        "session": int(session),
                 "rollcall_number": int(rollcall),
                 "position": (
                     receipt["member_action"].lower().replace(" ", "_")

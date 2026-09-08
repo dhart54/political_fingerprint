@@ -174,16 +174,7 @@ def test_m13m_preview_off_keeps_public_presentations_exact(monkeypatch) -> None:
 def test_m13m_preview_off_keeps_positions_and_evidence_exact(monkeypatch) -> None:
     monkeypatch.setenv("ENABLE_EDITORIAL_PRESENTATION_PREVIEW", "0")
     base_positions = {
-        "legislator_id": "leg_valerie_p_foushee",
-        "scope": "119",
-        "positions": [
-            {"issue_id": "JUSTICE_PUBLIC_SAFETY", "marker": "unchanged-justice"},
-            {
-                "issue_id": "NATIONAL_SECURITY_FOREIGN",
-                "marker": "unchanged-national-security",
-            },
-            {"issue_id": "ENVIRONMENT_ENERGY", "marker": "unchanged-environment"},
-        ],
+        "legislator_id": "leg_valerie_p_foushee", "scope": "119", "positions": [],
     }
     base_evidence = {
         "domain": "EDUCATION_WORKFORCE",

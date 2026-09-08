@@ -20,6 +20,7 @@ from app.editorial_presentations.integration_candidate import (
     load_site_integration_candidate,
     merge_site_integration_preview_evidence,
     merge_site_integration_preview_positions,
+    governed_position_summary,
 )
 from app.editorial_presentations.environment_integration_candidate import (
     M12M_ARTIFACT_ID,
@@ -35,6 +36,8 @@ from app.editorial_presentations.education_workforce_integration_candidate impor
     merge_education_workforce_preview_evidence,
     merge_education_workforce_preview_positions,
 )
+from app.editorial_presentations.reviewed_record import index_actions, union_database_actions, GovernedReceiptProjectionError
+from app.api.public_data import PublicDataUnavailable
 from app.editorial_presentations.receipt_projection import (
     attach_governed_receipt_projections,
 )
@@ -92,12 +95,7 @@ def _active_site_integration_publication(
     issue_id: str,
     publication_rows: list[dict[str, object]] | None = None,
 ) -> dict[str, object] | None:
-    try:
-        rows = (
-            _load_publication_rows() if publication_rows is None else publication_rows
-        )
-    except Exception:  # pragma: no cover - database availability stays fail-closed
-        return None
+    rows = _load_publication_rows() if publication_rows is None else publication_rows
     return active_site_integration_candidate(
         rows, member_bioguide_id=member_bioguide_id, issue_id=issue_id
     )
@@ -185,45 +183,22 @@ def get_legislator_positions(
     if profile is None or str(profile["bioguide_id"]) != "F000477":
         return response
 
-    previews = {
-        "NATIONAL_SECURITY_FOREIGN": _m11m_preview(candidate),
-        "ENVIRONMENT_ENERGY": _m12m_preview(candidate),
-        "EDUCATION_WORKFORCE": _m13m_preview(candidate),
-    }
-    try:
-        publication_rows = _load_publication_rows()
-    except Exception:  # pragma: no cover - active discovery stays fail-closed
-        publication_rows = None
-    for issue_id in (
-        "NATIONAL_SECURITY_FOREIGN",
-        "ENVIRONMENT_ENERGY",
-        "EDUCATION_WORKFORCE",
-    ):
-        site_candidate = previews[issue_id]
-        if site_candidate is None and publication_rows is not None:
-            site_candidate = _active_site_integration_publication(
-                member_bioguide_id=str(profile["bioguide_id"]),
-                issue_id=issue_id,
-                publication_rows=publication_rows,
-            )
-        if site_candidate is None or scope not in {"119", "all"}:
+    publication_rows = _load_publication_rows()
+    for row in response["positions"]:
+        issue_id = row["domain"]
+        if issue_id not in {"JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY_FOREIGN", "ENVIRONMENT_ENERGY", "EDUCATION_WORKFORCE"}:
             continue
-        raw_evidence = get_position_evidence_response(
-            legislator_id=legislator_id,
-            domain=issue_id,
-            scope=scope,
-        ) or {"domain": issue_id, "evidence": []}
-        governed = _merge_site_integration_evidence(
-            raw_evidence,
-            site_candidate,
-            domain=issue_id,
-            scope=scope,
+        evidence = _compose_position_evidence(
+            legislator_id, issue_id, scope, candidate, profile, publication_rows,
         )
-        response = _merge_site_integration_positions(
-            response,
-            site_candidate,
-            governed_evidence=governed["evidence"],
-        )
+        summary = governed_position_summary(evidence["evidence"], domain=issue_id)
+        if issue_id == "JUSTICE_PUBLIC_SAFETY" or scope == "118":
+            # These paths have no established site exact-choice effect accounting.
+            summary = {key: value for key, value in summary.items() if not key.startswith("interpreted_")}
+        row.update(summary)
+        recorded = summary["recorded_votes"]
+        row["yea_share"] = summary["yea_count"] / recorded if recorded else 0.0
+        row["nay_share"] = summary["nay_count"] / recorded if recorded else 0.0
     return response
 
 
@@ -238,6 +213,21 @@ def get_legislator_position_evidence(
     ),
 ) -> dict[str, object]:
     normalized_scope = scope if isinstance(scope, str) else "all"
+    profile = get_legislator_profile(legislator_id=legislator_id)
+    return _compose_position_evidence(
+        legislator_id, domain, normalized_scope, candidate, profile,
+        _load_publication_rows() if profile and str(profile["bioguide_id"]) == "F000477" else [],
+    )
+
+
+def _compose_position_evidence(
+    legislator_id: str,
+    domain: str,
+    normalized_scope: str,
+    candidate: str | None,
+    profile: dict[str, object] | None,
+    publication_rows: list[dict[str, object]],
+) -> dict[str, object]:
     response = get_position_evidence_response(
         legislator_id=legislator_id,
         domain=domain,
@@ -245,23 +235,23 @@ def get_legislator_position_evidence(
     )
     if response is None:
         raise HTTPException(status_code=404, detail="Evidence not found")
-    profile = get_legislator_profile(legislator_id=legislator_id)
     normalized_domain = domain.strip().upper()
     active_site_candidate = (
         _active_site_integration_publication(
             member_bioguide_id=str(profile["bioguide_id"]),
             issue_id=normalized_domain,
+            publication_rows=publication_rows,
         )
         if profile is not None
         else None
     )
-    if profile is not None and _has_governed_presentation_candidate(
+    if active_site_candidate is None and profile is not None and _has_governed_presentation_candidate(
         member_bioguide_id=str(profile["bioguide_id"]),
         issue_id=normalized_domain,
         scope=normalized_scope,
     ):
         presentation_payload = select_public_presentations(
-            _load_publication_rows(),
+            publication_rows,
             legislator_id=legislator_id,
             member_bioguide_id=str(profile["bioguide_id"]),
             scope=normalized_scope,
@@ -280,7 +270,7 @@ def get_legislator_position_evidence(
                 canonical_action_ids=presentation["reviewed_action_ids"],
             )
             if governed_rows is None:
-                raise RuntimeError("governed raw evidence query failed")
+                raise PublicDataUnavailable()
             response = attach_governed_receipt_projections(
                 response,
                 presentation,
@@ -305,6 +295,18 @@ def get_legislator_position_evidence(
         and profile is not None
         and str(profile["bioguide_id"]) == "F000477"
     ):
+        if normalized_scope in {"119", "all"}:
+            subject = site_candidate["subject"]
+            reviewed = subject.get("receipt_projections") or subject["preview_data"]["evidence_119"]
+            governed_rows = get_governed_position_evidence_rows(
+                legislator_id=legislator_id,
+                canonical_action_ids=[row["canonical_action_id"] for row in reviewed],
+            )
+            if governed_rows is None:
+                raise PublicDataUnavailable()
+            response["evidence"] = union_database_actions(response["evidence"], governed_rows)
+            if not {row["canonical_action_id"] for row in reviewed}.issubset(index_actions(response["evidence"])):
+                raise GovernedReceiptProjectionError("governed reviewed action is missing from the database ledger")
         response = _merge_site_integration_evidence(
             response,
             site_candidate,

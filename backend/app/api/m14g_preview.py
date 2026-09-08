@@ -113,7 +113,8 @@ def get_m14g_evidence(
         "legislator_id": legislator_id,
         "domain": normalized_domain,
         "scope": scope,
-        "evidence": [],
+        "data_source": "reviewed_candidate_preview",
+        "evidence": data["subject"]["receipt_projections"] if normalized_domain == "EDUCATION_WORKFORCE" and scope in {"119", "all"} else [],
     }
     return merge_m14g_preview_evidence(
         base, data, domain=normalized_domain, scope=scope

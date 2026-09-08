@@ -425,6 +425,17 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback(monkeypatch) -> N
         monkeypatch.setattr(
             "app.api.positions.get_position_evidence_response", base_evidence
         )
+        # Registry state is PostgreSQL-backed; supply both raw-record read lanes.
+        def governed_rows(**kwargs):
+            return copy.deepcopy(next(
+                candidate["subject"]["preview_data"]["evidence_119"]
+                for candidate in candidates.values()
+                if {row["canonical_action_id"] for row in candidate["subject"]["preview_data"]["evidence_119"]}
+                == set(kwargs["canonical_action_ids"])
+            ))
+
+        monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", governed_rows)
+
 
         client = TestClient(app)
         environment_presentation = None
@@ -494,14 +505,19 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback(monkeypatch) -> N
         )
         assert positions.status_code == 200
         position_rows = {row["domain"]: row for row in positions.json()["positions"]}
-        assert position_rows["JUSTICE_PUBLIC_SAFETY"]["total_votes"] == 10
+        assert position_rows["JUSTICE_PUBLIC_SAFETY"]["total_votes"] == 1
         assert position_rows[ISSUE_ID] == {
             "domain": ISSUE_ID,
             "yea_count": 15,
-            "nay_count": 47,
+            "nay_count": 48,
             "other_count": 1,
-            "total_votes": 63,
-            "recorded_votes": 62,
+            "total_votes": 64,
+            "available_action_count": 64,
+            "reviewed_action_count": 63,
+            "not_yet_reviewed_action_count": 1,
+            "yea_share": 15 / 63,
+            "nay_share": 48 / 63,
+            "recorded_votes": 63,
             "interpreted_support_count": 15,
             "interpreted_oppose_count": 47,
             "interpreted_other_count": 1,
@@ -510,10 +526,15 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback(monkeypatch) -> N
         assert position_rows["NATIONAL_SECURITY_FOREIGN"] == {
             "domain": "NATIONAL_SECURITY_FOREIGN",
             "yea_count": 39,
-            "nay_count": 43,
+            "nay_count": 44,
             "other_count": 0,
-            "total_votes": 82,
-            "recorded_votes": 82,
+            "total_votes": 83,
+            "available_action_count": 83,
+            "reviewed_action_count": 82,
+            "not_yet_reviewed_action_count": 1,
+            "yea_share": 39 / 83,
+            "nay_share": 44 / 83,
+            "recorded_votes": 83,
             "interpreted_support_count": 39,
             "interpreted_oppose_count": 42,
             "interpreted_other_count": 0,
@@ -521,8 +542,8 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback(monkeypatch) -> N
         }
 
         for scope, expected_count, expected_119 in (
-            ("119", 63, 63),
-            ("all", 64, 63),
+            ("119", 64, 64),
+            ("all", 65, 64),
             ("118", 1, 0),
         ):
             evidence_response = client.get(
@@ -541,9 +562,10 @@ def test_m12n_apply_idempotency_drift_guard_and_exact_rollback(monkeypatch) -> N
                 == expected_119
             )
             if governed_119:
-                assert all(
-                    row.get("governed_receipt_projection") for row in governed_119
-                )
+                assert sum(
+                    bool(row.get("governed_receipt_projection")) for row in governed_119
+                ) == 63
+                assert next(row for row in governed_119 if row["canonical_action_id"] == "house:119:1:999")["interpretation_review_state"] == "not_yet_in_reviewed_interpretation"
                 hr_6387 = next(
                     row
                     for row in governed_119

@@ -42,6 +42,7 @@ def test_search_legislators_prefers_database_results(monkeypatch) -> None:
 
 
 def test_get_fingerprint_response_uses_database_rows(monkeypatch) -> None:
+    monkeypatch.setattr("app.api.precomputed._get_db_scope_coverage", lambda **kw: None)
     monkeypatch.setattr(
         "app.api.precomputed._get_db_legislator_by_external_id",
         lambda legislator_id: {
@@ -155,6 +156,7 @@ def test_get_summary_response_uses_database_rows(monkeypatch) -> None:
 
 
 def test_get_alignment_response_returns_insufficient_when_db_interpretations_unavailable(monkeypatch) -> None:
+    monkeypatch.setattr("app.api.precomputed._get_db_scope_coverage", lambda **kw: None)
     monkeypatch.setattr(
         "app.api.precomputed._get_db_legislator_by_external_id",
         lambda legislator_id: {"id": 11},
@@ -263,6 +265,7 @@ def test_get_zip_lookup_response_uses_database_rows(monkeypatch) -> None:
 
 
 def test_get_zip_lookup_response_exposes_fixture_source_and_local_split_zip(monkeypatch) -> None:
+    monkeypatch.setenv("ENABLE_FIXTURE_FALLBACK", "1")
     monkeypatch.setattr("app.api.precomputed._get_db_zip_lookup_response", lambda *, zip_code: None)
     monkeypatch.setattr(
         "app.api.precomputed.FALLBACK_FIXTURE_DATA",

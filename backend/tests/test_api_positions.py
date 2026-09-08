@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.usefixtures("fixture_mode")
 from fastapi import HTTPException
 
 from app.api.alignment import AlignmentRequest, get_legislator_alignment
@@ -331,7 +333,8 @@ def test_candidate_voting_summary_uses_precomputed_rows(monkeypatch) -> None:
     }
 
 
-def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summary() -> None:
+def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summary(monkeypatch) -> None:
+    monkeypatch.setattr(precomputed, "_get_db_candidate_evidence_rows", lambda **kw: [])
     candidate = precomputed._serialize_race_candidate(
         {
             "candidate_id": 1,
@@ -355,7 +358,8 @@ def test_candidate_serialization_leaves_unlinked_candidates_without_voting_summa
     assert candidate["candidate_evidence_summary"]["issue_domains"] == []
 
 
-def test_candidate_serialization_does_not_add_rank_or_winner_fields() -> None:
+def test_candidate_serialization_does_not_add_rank_or_winner_fields(monkeypatch) -> None:
+    monkeypatch.setattr(precomputed, "_get_db_candidate_evidence_rows", lambda **kw: [])
     candidate = precomputed._serialize_race_candidate(
         {
             "candidate_id": 1,
@@ -525,7 +529,8 @@ def test_legislator_contact_endpoint_rejects_unknown_legislator() -> None:
     assert exc_info.value.status_code == 404
 
 
-def test_contact_lookup_does_not_change_alignment_evidence_or_candidate_tiers() -> None:
+def test_contact_lookup_does_not_change_alignment_evidence_or_candidate_tiers(monkeypatch) -> None:
+    monkeypatch.setattr(precomputed, "_get_db_candidate_evidence_rows", lambda **kw: [])
     alignment_before = get_legislator_alignment(
         "leg_alex_morgan",
         AlignmentRequest(preferences={"EDUCATION_WORKFORCE": "support_more_action"}),

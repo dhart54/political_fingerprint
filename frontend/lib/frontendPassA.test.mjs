@@ -335,8 +335,18 @@ test("reviewed-analysis rendering uses supplied finding direction", () => {
   assert.match(modelSource, /formatDirection\(item\.direction\)/);
   assert.match(modelSource, /value === "support"/);
   assert.match(modelSource, /value === "opposition"/);
-  assert.match(componentSource, /pattern\.direction === "mixed"/);
+  assert.match(componentSource, /<SemanticIcon kind=\{item\.direction\}/);
   for (const forbidden of ["yea_count", "nay_count", "member_party", "keywords"]) {
     assert.equal(source.includes(forbidden), false, forbidden);
   }
+});
+
+
+test("unreviewed rows without canonical identity cannot join findings by date", () => {
+  const row = {
+    chamber: "house", congress: 119, rollcall_number: 32, vote_date: "2025-02-06",
+    roll_call_id: "database-123", interpretation_review_state: "not_yet_in_reviewed_interpretation",
+  };
+  assert.equal(canonicalActionId(row), "raw:database-123");
+  assert.notEqual(actionReceiptId(row), "action-receipt-house-119-1-32");
 });

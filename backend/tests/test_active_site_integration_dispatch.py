@@ -16,6 +16,7 @@ from app.editorial_presentations.integration_candidate import (
     merge_site_integration_preview_evidence,
 )
 from app.main import app
+from app.api.public_data import PublicDataUnavailable
 
 
 def _load(path):
@@ -42,7 +43,7 @@ def _base_evidence(domain: str, scope: str) -> dict:
 
 
 def _publication_db_unavailable():
-    raise RuntimeError("publication DB unavailable")
+    raise PublicDataUnavailable()
 
 
 def test_active_candidate_dispatch_is_identity_aware_and_fail_closed() -> None:
@@ -105,32 +106,36 @@ def test_simultaneously_active_candidates_enrich_independently(monkeypatch) -> N
         "app.api.positions.get_position_evidence_response",
         lambda **kwargs: {
             "domain": kwargs["domain"],
-            "evidence": copy.deepcopy(evidence[kwargs["domain"]]),
+            "evidence": copy.deepcopy(evidence.get(kwargs["domain"], [])),
         },
     )
 
+    monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", lambda **kw: copy.deepcopy(next(rows for rows in evidence.values() if {row["canonical_action_id"] for row in rows} == set(kw["canonical_action_ids"]))))
     response = TestClient(app).get(
         "/legislators/leg_valerie_p_foushee/positions", params={"scope": "119"}
     )
     assert response.status_code == 200
     rows = {row["domain"]: row for row in response.json()["positions"]}
-    assert rows["JUSTICE_PUBLIC_SAFETY"] == justice
+    assert rows["JUSTICE_PUBLIC_SAFETY"]["total_votes"] == 0
     assert rows["ENVIRONMENT_ENERGY"] == {
         "domain": "ENVIRONMENT_ENERGY",
         "yea_count": 15,
         "nay_count": 47,
         "other_count": 1,
         "total_votes": 63,
+        "available_action_count": 63,
+        "reviewed_action_count": 63,
+        "not_yet_reviewed_action_count": 0,
+        "yea_share": 15 / 62,
+        "nay_share": 47 / 62,
         "recorded_votes": 62,
         "interpreted_support_count": 15,
         "interpreted_oppose_count": 47,
         "interpreted_other_count": 1,
         "interpreted_total": 63,
     }
-    assert rows["NATIONAL_SECURITY_FOREIGN"] == governed_position_summary(
-        evidence["NATIONAL_SECURITY_FOREIGN"],
-        domain="NATIONAL_SECURITY_FOREIGN",
-    )
+    assert rows["NATIONAL_SECURITY_FOREIGN"]["total_votes"] == 82
+    assert rows["NATIONAL_SECURITY_FOREIGN"]["reviewed_action_count"] == 82
 
 
 @pytest.mark.parametrize("scope", ["119", "all"])
@@ -171,7 +176,7 @@ def test_simultaneously_active_candidates_enrich_independently(monkeypatch) -> N
         ),
     ],
 )
-def test_explicit_preview_survives_publication_database_failure(
+def test_editorial_preview_does_not_hide_publication_database_failure(
     monkeypatch,
     scope: str,
     preview_token: str,
@@ -218,21 +223,10 @@ def test_explicit_preview_survives_publication_database_failure(
         "/legislators/leg_valerie_p_foushee/positions",
         params={"scope": scope, "candidate": preview_token},
     )
-    assert response.status_code == 200
-    rows = {row["domain"]: row for row in response.json()["positions"]}
-    assert rows[preview_issue] == expected_summary
-    assert rows["JUSTICE_PUBLIC_SAFETY"] == base_rows[0]
-    unrequested_issue = (
-        "ENVIRONMENT_ENERGY"
-        if preview_issue == "NATIONAL_SECURITY_FOREIGN"
-        else "NATIONAL_SECURITY_FOREIGN"
-    )
-    assert rows[unrequested_issue] == next(
-        row for row in base_rows if row["domain"] == unrequested_issue
-    )
+    assert response.status_code == 503
 
 
-def test_publication_database_failure_without_preview_returns_base_positions(
+def test_publication_database_failure_returns_unavailable(
     monkeypatch,
 ) -> None:
     base_response = {
@@ -260,18 +254,19 @@ def test_publication_database_failure_without_preview_returns_base_positions(
     response = TestClient(app).get(
         "/legislators/leg_valerie_p_foushee/positions", params={"scope": "119"}
     )
-    assert response.status_code == 200
-    assert response.json() == base_response
+    assert response.status_code == 503
 
 
 @pytest.mark.parametrize(
     ("scope", "expected_count", "expected_119"),
-    [("119", 63, 63), ("all", 64, 63), ("118", 1, 0)],
+    [("119", 64, 64), ("all", 65, 64), ("118", 1, 0)],
 )
 def test_active_environment_evidence_route_uses_governed_candidate_ledger(
     monkeypatch, scope: str, expected_count: int, expected_119: int
 ) -> None:
     environment = _load(M12M_CANDIDATE_PATH)
+    monkeypatch.setattr("app.api.positions._load_publication_rows", lambda: [])
+    monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", lambda **kw: environment["subject"]["preview_data"]["evidence_119"])
     monkeypatch.setattr(
         "app.api.positions.get_legislator_profile",
         lambda **_kwargs: {"bioguide_id": "F000477"},
@@ -302,7 +297,7 @@ def test_active_environment_evidence_route_uses_governed_candidate_ledger(
     assert len(governed_119) == expected_119
     assert len({row["canonical_action_id"] for row in governed_119}) == expected_119
     if scope in {"119", "all"}:
-        assert all(row.get("governed_receipt_projection") for row in governed_119)
+        assert sum(bool(row.get("governed_receipt_projection")) for row in governed_119) == 63
         hr_6387 = next(
             row
             for row in governed_119

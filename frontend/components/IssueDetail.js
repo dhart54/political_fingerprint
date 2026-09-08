@@ -109,6 +109,11 @@ export default function IssueDetail({
             />
           </dl>
         ) : null}
+        {state.status === "ready" && selectedIssue.interpretation && selectedIssue.evidence.notYetReviewedCount > 0 ? (
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-stone-600">
+            {selectedIssue.evidence.notYetReviewedCount} additional recorded {selectedIssue.evidence.notYetReviewedCount === 1 ? "action is" : "actions are"} available below and not yet included in the reviewed interpretation.
+          </p>
+        ) : null}
       </header>
 
       <ReviewedAnalysisSection
