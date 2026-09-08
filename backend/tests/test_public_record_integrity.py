@@ -243,3 +243,22 @@ def test_other_public_reads_fail_closed_without_positive_opt_in(monkeypatch, rea
     monkeypatch.setattr(precomputed, "get_connection", lambda: (_ for _ in ()).throw(RuntimeError("offline")))
     with pytest.raises(PublicDataUnavailable):
         read()
+
+
+@pytest.mark.parametrize("status", [200, 404, 503])
+def test_real_http_smoke_distinguishes_absent_demo_from_unavailable(monkeypatch, status):
+    from urllib.error import HTTPError
+    from scripts import foushee_justice_publication_activation as activation
+    from scripts.editorial_artifact_store import StoreSafetyError
+
+    def response(*args):
+        if status != 200:
+            raise HTTPError("http://disposable", status, "test", {}, None)
+        return {"presentations": []}
+
+    monkeypatch.setattr(activation, "_get_public_presentations", response)
+    if status == 404:
+        activation._assert_demo_member_absent("http://disposable")
+    else:
+        with pytest.raises(StoreSafetyError):
+            activation._assert_demo_member_absent("http://disposable")

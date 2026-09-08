@@ -82,3 +82,9 @@ one draft PR is open with hosted CI results reported.
   absent from the classifier's domain ledger. Union those database records by
   exact identity, validating overlapping member actions, before overlaying.
 - No production operations performed. Draft PR and hosted CI remain the stopping gate.
+
+- Later PostgreSQL stages exposed one more exact-dictionary assertion without the
+  new accounting fields. Its candidate summary now uses the exact overlay. The
+  owned real-HTTP smoke also expected the absent demo member; its read-only probe
+  now requires 404 and rejects both fabricated 200 responses and unavailable 503.
+  No activation, rollback, authorization, or publication-write contracts changed.

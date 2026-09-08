@@ -11,6 +11,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 BACKEND = Path(__file__).resolve().parents[1]
@@ -1532,6 +1533,17 @@ def _issue(payload: dict[str, Any], issue_id: str) -> dict[str, Any]:
         ) from exc
 
 
+def _assert_demo_member_absent(base_url: str) -> None:
+    """A fixture-only member must remain absent from the live database API."""
+    try:
+        _get_public_presentations(base_url, "leg_alex_morgan", "119")
+    except HTTPError as exc:
+        if exc.code == 404:
+            return
+        raise StoreSafetyError("cross-member probe is unavailable") from None
+    raise StoreSafetyError("fixture-only member appeared in the live public API")
+
+
 def _api_receipts_only_smoke(base_url: str) -> dict[str, Any]:
     tiers: dict[str, str] = {}
     for scope in ("119", "all", "118"):
@@ -1544,10 +1556,9 @@ def _api_receipts_only_smoke(base_url: str) -> dict[str, Any]:
     foushee = _get_public_presentations(
         base_url, "leg_valerie_p_foushee", "119"
     )
-    other_member = _get_public_presentations(base_url, "leg_alex_morgan", "119")
+    _assert_demo_member_absent(base_url)
     if (
         _issue(foushee, "ECONOMY_TAXES")["tier"] != "receipts_only"
-        or _issue(other_member, ISSUE_ID)["tier"] != "receipts_only"
     ):
         raise StoreSafetyError("inactive public API isolation contract failed")
     return {
@@ -1669,9 +1680,7 @@ def _api_smoke(base_url: str) -> dict[str, Any]:
         "ECONOMY_TAXES",
     )["tier"] != "receipts_only":
         raise StoreSafetyError("cross-issue isolation failed")
-    other_member = _get_public_presentations(base, "leg_alex_morgan", "119")
-    if _issue(other_member, ISSUE_ID)["tier"] != "receipts_only":
-        raise StoreSafetyError("cross-member isolation failed")
+    _assert_demo_member_absent(base)
     with urlopen(
         (
             f"{base}/legislators/leg_valerie_p_foushee/positions/"
