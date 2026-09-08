@@ -68,7 +68,14 @@ one draft PR is open with hosted CI results reported.
   an absent demo member to appear as live data. Relative imports support both
   package entry points; the disposable DB test now requires 404 for that member.
   Local candidate check and affected overlay tests passed after correction.
-- Final reconciliation: hosted CI rerun pending.
+- Eight of nine hosted jobs passed on the second head, including M14H release
+  validation, the new browser test, and the full-record benchmark. The remaining
+  M12N PostgreSQL test supplied only one raw query lane and still expected the
+  synthetic current action to disappear. Its raw-query setup and accounting now
+  preserve that action; publication, idempotency and rollback assertions remain.
+- Local implementation and draft-PR milestones are complete. The final hosted
+  result is recorded in PR #183's checks and completion report; stop after the
+  corrected head passes, without merge or deployment.
 - Production-write envelope: none. Rollback: revert this code change before any
   separately authorized release; no persistence changes require reversal.
 - Discoveries: reviewed identity queries intentionally include database actions
