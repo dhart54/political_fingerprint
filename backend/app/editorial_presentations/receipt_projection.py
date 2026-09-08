@@ -5,7 +5,7 @@ from __future__ import annotations
 import copy
 from typing import Any
 
-from app.editorial_presentations.reviewed_record import (
+from .reviewed_record import (
     GovernedReceiptProjectionError,
     index_actions,
     overlay_reviewed_actions,

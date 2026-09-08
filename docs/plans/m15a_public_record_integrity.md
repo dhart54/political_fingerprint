@@ -63,7 +63,12 @@ one draft PR is open with hosted CI results reported.
   unchanged. No general CI cleanup or new milestone job was added.
 - Historical M13N tests now compare the six-file manifest against the captured
   deployment's Git objects; current production activation gates remain unchanged.
-- Final reconciliation: pending final targeted results, draft PR and hosted CI.
+- Draft PR #183 opened from the exact baseline. Initial hosted CI exposed an
+  import alias mismatch in standalone validators and a PostgreSQL test expecting
+  an absent demo member to appear as live data. Relative imports support both
+  package entry points; the disposable DB test now requires 404 for that member.
+  Local candidate check and affected overlay tests passed after correction.
+- Final reconciliation: hosted CI rerun pending.
 - Production-write envelope: none. Rollback: revert this code change before any
   separately authorized release; no persistence changes require reversal.
 - Discoveries: reviewed identity queries intentionally include database actions

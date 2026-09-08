@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import copy
 
-from app.editorial_presentations.reviewed_record import overlay_reviewed_actions
+from .reviewed_record import overlay_reviewed_actions
 import json
 import re
 from pathlib import Path

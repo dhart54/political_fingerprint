@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import copy
 
-from app.editorial_presentations.reviewed_record import overlay_reviewed_actions, review_accounting
+from .reviewed_record import overlay_reviewed_actions, review_accounting
 import hashlib
 import json
 import re
