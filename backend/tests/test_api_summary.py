@@ -1,4 +1,6 @@
 import pytest
+
+pytestmark = pytest.mark.usefixtures("fixture_mode")
 from fastapi import HTTPException
 
 from app.api.summary import get_legislator_summary

@@ -17,6 +17,7 @@ def get_legislator_summary(legislator_id: str) -> dict[str, object]:
         "window_end": summary.window_end,
         "classification_version": summary.classification_version,
         "summary_text": summary.summary_text,
+        "data_source": summary.data_source,
         "generation_method": summary.generation_method,
         "created_at": summary.created_at,
     }

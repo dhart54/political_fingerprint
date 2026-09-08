@@ -59,6 +59,11 @@ export default function ActionReceipt({
             {action.actionType ? ` · ${action.actionType}` : ""}
           </span>
           {action.status ? <ActionStatus label={action.status} /> : null}
+          {row.interpretation_review_state === "not_yet_in_reviewed_interpretation" ? (
+            <span className="mt-1 block text-sm leading-5 text-stone-600">
+              Not yet included in the reviewed interpretation
+            </span>
+          ) : null}
         </span>
         <span className={`vote-pill vote-${normalize(row.position)} col-start-2 row-start-2 sm:col-start-3 sm:row-start-1`}>
           {position}

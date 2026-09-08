@@ -2,6 +2,11 @@ from __future__ import annotations
 
 import copy
 import json
+import hashlib
+import subprocess
+
+import pytest
+import scripts.foushee_education_workforce_publication_preparation as preparation
 from pathlib import Path
 
 from app.editorial_artifacts.bundle import semantic_hash
@@ -39,7 +44,20 @@ def _load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def test_m13n_package_is_exact_deterministic_and_non_authorizing() -> None:
+@pytest.fixture
+def historical_runtime_bytes(monkeypatch):
+    """Replay the frozen M13N package against its deployed Git objects, not future runtime."""
+    commit = _load(RUNTIME_PROOF_PATH)["deployed_commit"]
+
+    def digest(path):
+        relative = path.relative_to(ROOT).as_posix()
+        content = subprocess.check_output(["git", "show", f"{commit}:{relative}"], cwd=ROOT)
+        return hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest()
+
+    monkeypatch.setattr(preparation, "canonical_file_sha256", digest)
+
+
+def test_m13n_package_is_exact_deterministic_and_non_authorizing(historical_runtime_bytes) -> None:
     result = validate_outputs()
     preflight = _load(PREFLIGHT_PATH)
     authority = _load(AUTHORITY_PATH)
@@ -104,7 +122,7 @@ def test_m13n_package_is_exact_deterministic_and_non_authorizing() -> None:
     )
 
 
-def test_six_file_runtime_manifest_remains_byte_exact() -> None:
+def test_six_file_runtime_manifest_matches_captured_deployment(historical_runtime_bytes) -> None:
     manifest = _load(RUNTIME_MANIFEST_PATH)
     assert manifest == reviewed_runtime_manifest()
     assert all(path.is_file() for path in RUNTIME_SOURCE_PATHS)

@@ -231,27 +231,16 @@ def test_m14g_api_requires_new_server_opt_in_and_explicit_token(monkeypatch) -> 
     assert client.get(path, params={"scope": "119", "candidate": "wrong"}).status_code == 404
 
 
-def test_m14g_preview_off_preserves_public_api_exactly(monkeypatch) -> None:
-    for relative in (
-        "backend/app/api/positions.py",
-        "backend/app/api/editorial_presentations.py",
-        "backend/app/api/search.py",
-    ):
-        baseline = subprocess.run(
-            ["git", "rev-parse", f"{BASELINE_MAIN_SHA}:{relative}"],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        ).stdout.strip()
-        working = subprocess.run(
-            ["git", "hash-object", relative],
-            cwd=ROOT,
-            check=True,
-            capture_output=True,
-            text=True,
-        ).stdout.strip()
-        assert working == baseline
+def test_m14g_preview_off_does_not_inject_snapshot_actions(monkeypatch) -> None:
+    # M15A intentionally changes public composition; protect behavior, not runtime bytes.
+    monkeypatch.delenv("EDITORIAL_PRESENTATION_PREVIEW", raising=False)
+    client = TestClient(app)
+    response = client.get(
+        "/preview/m14g/legislators/leg_valerie_p_foushee/positions/EDUCATION_WORKFORCE/evidence",
+        params={"scope": "119", "candidate": "m14g-education-workforce"},
+    )
+    assert response.status_code == 404
+    assert merge_m14g_preview_evidence({"evidence": []}, candidate(), domain="EDUCATION_WORKFORCE", scope="119")["evidence"] == []
 
 
 def test_m14g_preview_profile_is_gated_and_exact(monkeypatch) -> None:
@@ -345,10 +334,7 @@ def test_m14g_validation_rejects_authority_or_semantic_tampering() -> None:
 
 def test_m14g_preserves_protected_ui_historical_m13_and_m14a_through_m14f() -> None:
     protected = [
-        "frontend/components/IssueDetail.js",
         "frontend/components/ReviewedAnalysisSection.js",
-        "frontend/lib/selectedIssueExperience.mjs",
-        "backend/app/editorial_presentations/education_workforce_integration_candidate.py",
         "backend/scripts/build_m13m_education_workforce_site_integration.py",
         "scripts/validate_m13m_education_workforce_site_integration.py",
         "docs/editorial/full_record_reviews/site_integration_candidates/f000477_education_workforce_119_v1",

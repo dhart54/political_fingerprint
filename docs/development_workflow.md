@@ -13,6 +13,7 @@ Backend focused tests:
 ```powershell
 cd backend
 $env:DATABASE_URL='postgresql://invalid'
+$env:ENABLE_FIXTURE_FALLBACK='1'
 pytest --basetemp=..\.local\pytest_basetemp tests\test_api_alignment.py tests\test_api_compare.py
 ```
 
@@ -21,6 +22,7 @@ Backend full tests:
 ```powershell
 cd backend
 $env:DATABASE_URL='postgresql://invalid'
+$env:ENABLE_FIXTURE_FALLBACK='1'
 pytest --basetemp=..\.local\pytest_basetemp
 ```
 
@@ -106,3 +108,10 @@ Restart the frontend:
 cd frontend
 npm run dev
 ```
+
+Public fixture fallback is disabled unless `ENABLE_FIXTURE_FALLBACK=1`. Keep it
+unset (or `0`) in production. An unavailable database returns a sanitized HTTP 503;
+a successful query with no matching entity remains a 404 where applicable.
+Explicit demo fallback responses carry `data_source: fixtures` and preserve the
+requested 118/119/all Congress scope. Fixture-backed API tests opt in with the
+`fixture_mode` pytest fixture; production-failure tests explicitly remove the flag.

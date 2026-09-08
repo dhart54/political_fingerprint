@@ -7,6 +7,8 @@ shape. It does not infer wording, direction, grouping, or publication state.
 from __future__ import annotations
 
 import copy
+
+from app.editorial_presentations.reviewed_record import overlay_reviewed_actions, review_accounting
 import hashlib
 import json
 import re
@@ -489,7 +491,7 @@ def merge_site_integration_preview_evidence(
     domain: str,
     scope: str,
 ) -> dict[str, Any]:
-    """Replace only 119th-Congress preview rows with governed M11M receipts."""
+    """Overlay exact reviewed actions without replacing the current ledger."""
 
     validate_site_integration_candidate(candidate)
     if domain.strip().upper() != "NATIONAL_SECURITY_FOREIGN" or scope not in {
@@ -498,16 +500,7 @@ def merge_site_integration_preview_evidence(
     }:
         return copy.deepcopy(base_response)
     accepted = copy.deepcopy(candidate["subject"]["preview_data"]["evidence_119"])
-    retained = (
-        [
-            copy.deepcopy(row)
-            for row in base_response.get("evidence", [])
-            if int(row.get("congress", 0) or 0) != 119
-        ]
-        if scope == "all"
-        else []
-    )
-    return {**copy.deepcopy(base_response), "evidence": [*accepted, *retained]}
+    return overlay_reviewed_actions(base_response, accepted, domain=domain.strip().upper())
 
 
 def governed_position_summary(
@@ -524,7 +517,7 @@ def governed_position_summary(
 
     interpreted = [row for row in rows if row.get("governed_receipt_projection")]
     effects = [
-        row["governed_receipt_projection"]["exact_choice_position_effect"]
+        row["governed_receipt_projection"].get("exact_choice_position_effect")
         for row in interpreted
     ]
     interpreted_support_count = effects.count("supports_exact_choice")
@@ -555,6 +548,7 @@ def governed_position_summary(
         "nay_count": nay_count,
         "other_count": other_count,
         "total_votes": total_votes,
+        **review_accounting(rows),
         "recorded_votes": recorded_votes,
         "interpreted_support_count": interpreted_support_count,
         "interpreted_oppose_count": interpreted_oppose_count,

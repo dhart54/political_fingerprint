@@ -2,6 +2,8 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 import pytest
+
+pytestmark = pytest.mark.usefixtures("fixture_mode")
 from fastapi import HTTPException
 
 from app.api.name_search import name_tokens_match, normalize_name_tokens
@@ -23,6 +25,7 @@ def test_route_ready_profile_lookup_returns_public_identity_fields() -> None:
     ):
         assert legislator_profile("leg_jordan_lee") == {
             "id": "leg_jordan_lee",
+            "data_source": "fixtures",
             "bioguide_id": "S000001",
             "name_display": "Jordan Lee",
             "chamber": "senate",
@@ -55,6 +58,7 @@ def test_search_legislators_filters_case_insensitively_by_name() -> None:
     assert payload["count"] == 1
     assert payload["results"][0] == {
         "id": "leg_jordan_lee",
+        "data_source": "fixtures",
         "bioguide_id": "S000001",
         "name_display": "Jordan Lee",
         "chamber": "senate",
@@ -131,5 +135,5 @@ def test_database_and_fallback_name_search_share_token_contract() -> None:
         SimpleNamespace(legislators=[row]),
     ):
         fallback_payload = search_for_legislators(q="Valerie Foushee")
-    assert database_payload["results"] == fallback_payload["results"]
+    assert database_payload["results"] == [{key: value for key, value in row.items() if key != "data_source"} for row in fallback_payload["results"]]
     assert database_payload["count"] == 1

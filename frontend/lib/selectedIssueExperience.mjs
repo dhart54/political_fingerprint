@@ -23,6 +23,7 @@ export function buildSelectedIssueModel({ presentation, rows = [], scope = "all"
   return {
     evidence: {
       count: rows.length,
+      notYetReviewedCount: rows.filter((row) => row?.interpretation_review_state === "not_yet_in_reviewed_interpretation").length,
       label: scopeLabel(scope),
       countText: `${rows.length} recorded ${rows.length === 1 ? "action" : "actions"} currently visible`,
     },

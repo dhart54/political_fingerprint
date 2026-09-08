@@ -214,6 +214,11 @@ export function resolveExactActionRequest(rows = [], requestedIds = []) {
 }
 
 export function canonicalActionId(row) {
+  if (row?.interpretation_review_state === "not_yet_in_reviewed_interpretation"
+      && !row?.canonical_action_id) {
+    // A raw database identity stays navigable without joining reviewed findings by date.
+    return `raw:${row?.roll_call_id || ""}`;
+  }
   const supplied = [row?.canonical_action_id, row?.roll_call_id].find(
     (value) => typeof value === "string" && /^[a-z]+:\d+:\d+:\d+$/.test(value),
   );

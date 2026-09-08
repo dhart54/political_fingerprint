@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import copy
+
+from app.editorial_presentations.reviewed_record import overlay_reviewed_actions
 import json
 import re
 from pathlib import Path
@@ -570,16 +572,7 @@ def merge_m14g_preview_evidence(
     if domain.strip().upper() != "EDUCATION_WORKFORCE" or scope not in {"119", "all"}:
         return copy.deepcopy(base_response)
     accepted = copy.deepcopy(candidate["subject"]["receipt_projections"])
-    retained = (
-        [
-            copy.deepcopy(row)
-            for row in base_response.get("evidence", [])
-            if int(row.get("congress", 0) or 0) != 119
-        ]
-        if scope == "all"
-        else []
-    )
-    return {**copy.deepcopy(base_response), "evidence": [*accepted, *retained]}
+    return overlay_reviewed_actions(base_response, accepted, domain=domain.strip().upper())
 
 
 def merge_m14g_preview_positions(

@@ -284,7 +284,7 @@ def test_exact_future_row_enables_governed_positions_and_evidence_only() -> None
         education["interpreted_other_count"],
     ) == (6, 10, 1)
     merged = _merge_site_integration_evidence(
-        {"domain": ISSUE_ID, "evidence": []},
+        {"domain": ISSUE_ID, "evidence": copy.deepcopy(evidence)},
         candidate,
         domain=ISSUE_ID,
         scope="119",

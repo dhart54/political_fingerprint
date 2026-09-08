@@ -249,7 +249,7 @@ def test_preview_positions_and_evidence_close_the_82_action_record(monkeypatch) 
         lambda **_kwargs: {
             "legislator_id": "leg_valerie_p_foushee",
             "scope": "119",
-            "positions": [],
+            "positions": [{"domain": "NATIONAL_SECURITY_FOREIGN"}],
         },
     )
     monkeypatch.setattr(
@@ -265,6 +265,7 @@ def test_preview_positions_and_evidence_close_the_82_action_record(monkeypatch) 
         lambda **_kwargs: {"bioguide_id": "F000477"},
     )
     monkeypatch.setattr("app.api.positions._load_publication_rows", lambda: [])
+    monkeypatch.setattr("app.api.positions.get_governed_position_evidence_rows", lambda **kw: evidence_119)
     client = TestClient(app)
     params = {"scope": "119", "candidate": "m11m-national-security"}
     positions = client.get(
@@ -282,6 +283,11 @@ def test_preview_positions_and_evidence_close_the_82_action_record(monkeypatch) 
         "nay_count": 43,
         "other_count": 0,
         "total_votes": 82,
+        "available_action_count": 82,
+        "reviewed_action_count": 82,
+        "not_yet_reviewed_action_count": 0,
+        "yea_share": 39 / 82,
+        "nay_share": 43 / 82,
         "recorded_votes": 82,
         "interpreted_support_count": 39,
         "interpreted_oppose_count": 42,

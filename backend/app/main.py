@@ -2,6 +2,8 @@ import os
 import re
 
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from app.editorial_presentations.reviewed_record import GovernedReceiptProjectionError
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.alignment import router as alignment_router
@@ -48,6 +50,12 @@ def get_deployed_commit_sha() -> str:
 
 
 app = FastAPI(title="Political Fingerprint API")
+
+
+@app.exception_handler(GovernedReceiptProjectionError)
+async def governed_record_unavailable(request, exc):
+    return JSONResponse(status_code=503, content={"detail": "Public record data is unavailable right now."})
+
 
 app.add_middleware(
     CORSMiddleware,

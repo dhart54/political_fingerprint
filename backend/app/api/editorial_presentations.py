@@ -8,6 +8,7 @@ from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query
 
+from app.api.public_data import PublicDataUnavailable, fixture_fallback_enabled
 from app.api.precomputed import get_legislator_profile
 from app.db import get_connection
 from app.editorial_artifacts.repository import EditorialArtifactRepository
@@ -50,13 +51,19 @@ M13M_CANDIDATE_PATH = (
 def _load_publication_rows() -> list[dict[str, Any]]:
     """Read through the established selector; avoid a connection when unconfigured."""
 
-    if not os.getenv("DATABASE_URL"):
+    if not os.getenv("DATABASE_URL") and fixture_fallback_enabled():
         return []
-    connection = get_connection()
     try:
-        return EditorialArtifactRepository(connection).publication_selector()
-    finally:
-        connection.close()
+        connection = get_connection()
+        try:
+            return EditorialArtifactRepository(connection).publication_selector()
+        finally:
+            connection.close()
+    except Exception:
+        if fixture_fallback_enabled():
+            return []
+        raise PublicDataUnavailable() from None
+
 
 
 @router.get("/legislators/{legislator_id}/editorial-presentations")
