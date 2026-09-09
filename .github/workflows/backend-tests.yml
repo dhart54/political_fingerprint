@@ -649,3 +649,15 @@ jobs:
           pytest -q
           backend/tests/test_foushee_justice_receipt_evidence_repair_postgres.py
           -rs
+
+      - name: Prove source-verified M15A.2 core repair and public invariants
+        env:
+          M15A2_DISPOSABLE_DATABASE_URL: >-
+            postgresql://postgres:postgres@127.0.0.1:5432/pf_m15a2_repair
+        run: |
+          python -m pip install httpx==0.28.1
+          createdb -h 127.0.0.1 -U postgres pf_m15a2_repair
+          python -m pytest -q \
+            backend/tests/test_m15a2_core_repair.py \
+            backend/tests/test_m15a2_core_repair_postgres.py \
+            -rs
