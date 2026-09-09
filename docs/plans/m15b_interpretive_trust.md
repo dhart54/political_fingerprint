@@ -62,6 +62,12 @@ Progress:
   Earlier job blocks remain intact. A prior lexical browser assertion was replaced
   with preservation of the exact substantive caveat, retaining metadata checks.
 
-Final checkpoint: inspect the scoped diff, one draft PR and hosted CI. No merge,
+Hosted CI exposed two frozen benchmark builders still entering the new authoring
+gate. Their orchestration now uses four pinned full-record input digests; original
+parity checks remain intact. Replay correction validation: 43 focused/shared-corpus
+and M5R1 tests plus 5 M5 tests passed; both independent M5 validators passed.
+Draft PR #185 is open; the same PR receives this scoped correction.
+
+Final checkpoint: inspect the scoped diff and final hosted CI. No merge,
 deployment, production writes, M15A repair checks or historical artifact changes.
 Rollback is reverting this unmerged branch; there are no production effects.

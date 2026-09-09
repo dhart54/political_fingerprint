@@ -115,3 +115,17 @@ def test_receipt_overlay_projects_complete_treatments_and_rejects_conflict():
     receipt['public_caveats']=[]
     with pytest.raises(GovernedReceiptProjectionError,match='conflict'):
         overlay_reviewed_actions({'evidence':[raw]},[reviewed],domain='TEST')
+
+
+def test_historical_full_record_replay_cannot_accept_new_authoring():
+    import json
+    from pathlib import Path
+    from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input, run_editorial_pipeline
+    source=Path(__file__).resolve().parents[2]/'docs/editorial/full_record_reviews/semantic_ir_implementations/f000477_justice_public_safety_119_v2/frozen_final_compiler_input.json'
+    payload=json.loads(source.read_text(encoding='utf-8'))['compiler_input']
+    assert replay_frozen_full_record_input(payload).validation['member_count']==1
+    with pytest.raises(SemanticCompilerInputError,match='separately trusted substantive comparison'):
+        run_editorial_pipeline(payload)
+    payload['shared_semantics']['episodes'][0]['episode_id'] += '-changed'
+    with pytest.raises(SemanticCompilerInputError,match='exact frozen full-record input'):
+        replay_frozen_full_record_input(payload)

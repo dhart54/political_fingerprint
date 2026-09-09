@@ -154,3 +154,16 @@ def replay_accepted_reference(
         trusted_action_source_contract=trusted_action_source_contract,
         historical_reference=True,
     )
+
+
+def replay_frozen_full_record_input(compiler_input, **kwargs):
+    """Reproduce only pinned M5/M5R1 and M14A regression inputs, not new authoring."""
+    from .compiler import SemanticCompilerInputError
+    if semantic_digest(compiler_input) not in {
+        '1516175b032c55f725187c33b0f6c6929cbad1b9422a501009878fe389ac4f1f',  # M5 initial
+        '54e06f031ffc6788b5b1dbcd42dce6da4ca5dd608f3b187eb076ce023eb156c6',  # M5 final
+        'bd8eef676c61781ceb0d6e00afa19b7d987612444805e95167f56313c5ffdfb6',  # M5R1 / M14A Foushee
+        '90b39f67efaf0a2557734439205568e1dae10d4482f4d3ab50440f3c67789263',  # M14A two members
+    }:
+        raise SemanticCompilerInputError('historical replay requires an exact frozen full-record input')
+    return _run_editorial_pipeline(compiler_input, historical_reference=True, **kwargs)

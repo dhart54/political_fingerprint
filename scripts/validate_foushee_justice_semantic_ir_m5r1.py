@@ -17,7 +17,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from backend.app.semantic_ir.compiler import compile_semantic_ir  # noqa: E402
-from backend.app.semantic_ir.pipeline import run_editorial_pipeline  # noqa: E402
+from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input  # noqa: E402
 from backend.app.semantic_ir.validation import validate_compiled_ir  # noqa: E402
 from scripts.build_foushee_justice_semantic_ir_m5r1 import (  # noqa: E402
     BLOCKED_ACTIONS,
@@ -208,7 +208,7 @@ def validate_reconstruction(
     compiled = compile_semantic_ir(copy.deepcopy(compiler_input))
     require(compiled == graph["compiled_ir"], "manual or stale compiled output")
     require(
-        run_editorial_pipeline(copy.deepcopy(compiler_input)).compiled_ir == compiled,
+        replay_frozen_full_record_input(copy.deepcopy(compiler_input)).compiled_ir == compiled,
         "canonical pipeline output differs",
     )
     validate_compiled_ir(compiled)

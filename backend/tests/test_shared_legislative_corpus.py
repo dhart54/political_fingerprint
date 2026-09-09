@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backend.app.semantic_ir.pipeline import run_editorial_pipeline  # noqa: E402
+from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input  # noqa: E402
 from backend.app.semantic_ir.shared_corpus import (  # noqa: E402
     SharedCorpusValidationError,
     adapt_to_semantic_ir_input,
@@ -60,7 +60,7 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
         payload = adapt_to_semantic_ir_input(
             ROOT, self.core, self.mapping, [self.foushee, self.grothman]
         )
-        result = run_editorial_pipeline(
+        result = replay_frozen_full_record_input(
             payload,
             prepare_persistence_proposal=False,
             public_presentation_authoring=None,
@@ -78,7 +78,7 @@ class SharedLegislativeCorpusTests(unittest.TestCase):
         validate_migration_parity(
             payload, self.legacy_input, "accepted Foushee compiler input"
         )
-        result = run_editorial_pipeline(
+        result = replay_frozen_full_record_input(
             payload,
             prepare_persistence_proposal=False,
             public_presentation_authoring=None,

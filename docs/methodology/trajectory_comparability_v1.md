@@ -55,6 +55,9 @@ input and member observations. Non-trajectory propositions are unaffected.
 Frozen M11G replay is explicitly named and accepts only one pinned complete input
 digest. Historical accepted-reference replay accepts only content-pinned frozen cases;
 neither replay is forward trajectory eligibility, acceptance or publication.
+The frozen M5/M5R1 and M14A regression builders likewise use an explicitly named
+replay API that accepts only their four complete compiler-input digests. Changed
+inputs cannot use that API; their original parity checks remain intact.
 Existing V1 package schema remains compatible with frozen artifacts and declares
 the new binding shape. The forward compiler supplies the mandatory semantic gate.
 

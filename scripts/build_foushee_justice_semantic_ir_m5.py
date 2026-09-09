@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backend.app.semantic_ir.pipeline import run_editorial_pipeline  # noqa: E402
+from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input  # noqa: E402
 
 
 DECISION_ROOT = (
@@ -746,8 +746,8 @@ def build(check: bool) -> dict[str, Any]:
         bundle, action_bundle, initial_families, initial_traits
     )
     final_input = compiler_input(bundle, action_bundle, final_families, final_traits)
-    initial_result = run_editorial_pipeline(initial_input)
-    final_result = run_editorial_pipeline(final_input)
+    initial_result = replay_frozen_full_record_input(initial_input)
+    final_result = replay_frozen_full_record_input(final_input)
     if (
         initial_result.persistence_proposal is not None
         or final_result.persistence_proposal is not None
@@ -963,7 +963,7 @@ def build(check: bool) -> dict[str, Any]:
             "schema_version": "semantic_ir_independent_implementation_verification_v1",
             "artifact_id": "semantic-ir-independent-verification:f000477:justice_public_safety:119:v1",
             "reconstructed_graph_content_subject_sha256": graph_envelope(
-                run_editorial_pipeline(copy.deepcopy(final_input)).compiled_ir,
+                replay_frozen_full_record_input(copy.deepcopy(final_input)).compiled_ir,
                 "frozen_candidate_pending_delegated_authority_review",
             )["content_subject_sha256"],
             "expected_graph_content_subject_sha256": final_graph[
