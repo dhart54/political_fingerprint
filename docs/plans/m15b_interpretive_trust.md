@@ -66,7 +66,12 @@ Hosted CI exposed two frozen benchmark builders still entering the new authoring
 gate. Their orchestration now uses four pinned full-record input digests; original
 parity checks remain intact. Replay correction validation: 43 focused/shared-corpus
 and M5R1 tests plus 5 M5 tests passed; both independent M5 validators passed.
-Draft PR #185 is open; the same PR receives this scoped correction.
+The standalone M11G validator also uses pinned replay for its positive historical
+parity check; negative cases continue through the forward compiler. It passed.
+The complete hosted integration-test selection ran locally: 631 passed; 8 failed
+because long-path governed evidence files are absent in this Windows checkout.
+Hosted Linux source validation is the decisive check for that environment gap.
+Draft PR #185 is open; the same PR receives these scoped corrections.
 
 Final checkpoint: inspect the scoped diff and final hosted CI. No merge,
 deployment, production writes, M15A repair checks or historical artifact changes.

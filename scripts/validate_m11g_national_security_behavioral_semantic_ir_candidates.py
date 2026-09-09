@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT))
 from backend.app.semantic_ir.compiler import (  # noqa: E402
     SemanticCompilerInputError,
     compile_behavioral_candidate_ir,
+    replay_m11g_historical_candidate,
 )
 from backend.scripts.build_m11g_national_security_behavioral_semantic_ir_candidates import (  # noqa: E402
     DECISION_PATH,
@@ -121,7 +122,7 @@ def validate() -> dict[str, object]:
     Draft7Validator(graph_schema).validate(graph_artifact)
     graph = graph_artifact["compiled_candidate_ir"]
     require(
-        compile_behavioral_candidate_ir(compiler_input) == graph,
+        replay_m11g_historical_candidate(compiler_input) == graph,
         "independent compilation differs",
     )
     require(
