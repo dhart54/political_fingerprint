@@ -1,0 +1,313 @@
+{
+  "actual_insert_counts": {
+    "bills": 6,
+    "deletes": 0,
+    "editorial_artifacts": 0,
+    "publication_registry": 0,
+    "roll_calls": 31,
+    "updates": 0,
+    "vote_classifications": 0,
+    "vote_contexts": 31,
+    "vote_interpretations": 0,
+    "votes_cast": 31
+  },
+  "execution_timestamp_utc": "2026-09-09T01:09:25.484184+00:00",
+  "human_authorization": "approved",
+  "inserted_row_ids": {
+    "bills": [
+      1494,
+      1495,
+      1496,
+      1497,
+      1498,
+      1499
+    ],
+    "roll_calls": [
+      3114,
+      3115,
+      3116,
+      3117,
+      3118,
+      3119,
+      3120,
+      3121,
+      3122,
+      3123,
+      3124,
+      3125,
+      3126,
+      3127,
+      3128,
+      3129,
+      3130,
+      3131,
+      3132,
+      3133,
+      3134,
+      3135,
+      3136,
+      3137,
+      3138,
+      3139,
+      3140,
+      3141,
+      3142,
+      3143,
+      3144
+    ],
+    "vote_contexts": [
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3114
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3115
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3116
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3117
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3118
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3119
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3120
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3121
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3122
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3123
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3124
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3125
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3126
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3127
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3128
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3129
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3130
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3131
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3132
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3133
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3134
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3135
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3136
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3137
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3138
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3139
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3140
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3141
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3142
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3143
+      },
+      {
+        "legislator_id": 239,
+        "roll_call_id": 3144
+      }
+    ],
+    "votes_cast": [
+      859533,
+      859534,
+      859535,
+      859536,
+      859537,
+      859538,
+      859539,
+      859540,
+      859541,
+      859542,
+      859543,
+      859544,
+      859545,
+      859546,
+      859547,
+      859548,
+      859549,
+      859550,
+      859551,
+      859552,
+      859553,
+      859554,
+      859555,
+      859556,
+      859557,
+      859558,
+      859559,
+      859560,
+      859561,
+      859562,
+      859563
+    ]
+  },
+  "merge_main_sha": "fd989ae7f9b00bcb8a8a3056b6977e95aae4dd88",
+  "ownership_receipt_sha256": "57992995092a342f7abe3a1c8427e18084a45d80fa2e376582e1e9896ae414d6",
+  "post_state_verification": "PASS: exact source facts and committed ownership; unchanged protected collisions and editorial state; read-only ALREADY_APPLIED",
+  "production_preflight": "READY",
+  "protected_collision_count": 26,
+  "public_smoke": {
+    "accepted_presentations_unchanged": true,
+    "candidate_preview_present": false,
+    "database_payloads_match": true,
+    "fixture_provenance_present": false,
+    "result": "PASS",
+    "results": {
+      "119": {
+        "EDUCATION_WORKFORCE": {
+          "accounting": {
+            "available_action_count": 25,
+            "not_yet_reviewed_action_count": 8,
+            "reviewed_action_count": 17
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "ENVIRONMENT_ENERGY": {
+          "accounting": {
+            "available_action_count": 74,
+            "not_yet_reviewed_action_count": 11,
+            "reviewed_action_count": 63
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "JUSTICE_PUBLIC_SAFETY": {
+          "accounting": {
+            "available_action_count": 51,
+            "not_yet_reviewed_action_count": 14,
+            "reviewed_action_count": 37
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "accounting": {
+            "available_action_count": 93,
+            "not_yet_reviewed_action_count": 11,
+            "reviewed_action_count": 82
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        }
+      },
+      "all": {
+        "EDUCATION_WORKFORCE": {
+          "accounting": {
+            "available_action_count": 52,
+            "not_yet_reviewed_action_count": 35,
+            "reviewed_action_count": 17
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "ENVIRONMENT_ENERGY": {
+          "accounting": {
+            "available_action_count": 108,
+            "not_yet_reviewed_action_count": 45,
+            "reviewed_action_count": 63
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "JUSTICE_PUBLIC_SAFETY": {
+          "accounting": {
+            "available_action_count": 103,
+            "not_yet_reviewed_action_count": 66,
+            "reviewed_action_count": 37
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        },
+        "NATIONAL_SECURITY_FOREIGN": {
+          "accounting": {
+            "available_action_count": 263,
+            "not_yet_reviewed_action_count": 181,
+            "reviewed_action_count": 82
+          },
+          "discovery_equals_detail": true,
+          "http_status": 200
+        }
+      }
+    }
+  },
+  "repair_bundle_sha256": "84fa8cad47643c794f774adbc40e8a977aa816cd780630ac9a6ebb490c14c850",
+  "reviewed_pr_head": "779fd121c3cd5a6c9c525db1ac366da500609c4c",
+  "rollback_performed": false,
+  "source_archive_sha256": "82ec1102f430b26d8b89bd83d753ecafa3878fb0ed4dd2d9e873bb4d29ff2ea1",
+  "source_manifest_sha256": "7e19a1ad8e2b9dbeb6dc442ed5bac1a4e81c0244193d0f84bf5d62bd03aa0d27"
+}
