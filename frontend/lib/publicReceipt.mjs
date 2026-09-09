@@ -1,3 +1,8 @@
+// Temporary exact legacy compatibility until this mixed limitation's authored copy is accepted.
+// Explicit governed treatment remains authoritative and bypasses this pending-review set.
+const LEGACY_PENDING_LIMITATION_REVIEW = new Set([
+  "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
+]);
 // Only complete, unmistakably process-only legacy statements. No token classifier.
 const PURE_PROCESS = /^(?:About this interpretation: )?Human-reviewed on \d{4}-\d{2}-\d{2}\.?$/i;
 const PURE_PROCESS_COPY = new Set(["Review candidate accepted in the launch ratification milestone."]);
@@ -93,7 +98,8 @@ export function publicSources(values, kind = "action") {
 }
 
 function isVoterRelevantLimitation(value) {
-  return !STRUCTURALLY_INTERNAL.test(value)
+  return !LEGACY_PENDING_LIMITATION_REVIEW.has(value)
+    && !STRUCTURALLY_INTERNAL.test(value)
     && !PURE_PROCESS.test(value)
     && !PURE_PROCESS_COPY.has(value);
 }

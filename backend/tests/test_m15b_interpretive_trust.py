@@ -129,3 +129,30 @@ def test_historical_full_record_replay_cannot_accept_new_authoring():
     payload['shared_semantics']['episodes'][0]['episode_id'] += '-changed'
     with pytest.raises(SemanticCompilerInputError,match='exact frozen full-record input'):
         replay_frozen_full_record_input(payload)
+
+
+def test_ns_candidate_recomputes_support_union_instead_of_subtracting_removed_actions():
+    from scripts.build_m15b_review import build, ns_removal_candidate, TARGET, inputs, NS
+    review = build()['before_after_public_review.json']['national_security']
+    before = review['before']
+    _, rows = inputs()
+    ids = {'house:119:1:182', 'house:119:2:175'}
+    expected_receipts = [r for r in rows[NS] if r.get('canonical_action_id') in ids]
+    assert len(expected_receipts) == 2
+    assert review['ledger_preservation']['retained_receipts'] == expected_receipts
+    after = ns_removal_candidate(before)
+    assert after['coverage_text'] == after['overview']['evidence_count_label'] == '14 findings · 30 votes'
+    for field in ('exact_action_receipts', 'policy_episodes', 'reviewed_action_ids', 'repeated_patterns', 'notable_choices', 'syntheses', 'limitations'):
+        assert after[field] == before[field]
+    assert TARGET not in after['overview']['semantic_source_ids']
+    # A surviving independent finding may also cite a former trajectory action.
+    # In that case it must stay in support accounting rather than be subtracted.
+    changed = copy.deepcopy(before)
+    trajectory = changed['policy_trajectories'][0]
+    finding = changed['notable_choices'][0]
+    finding['action_ids'].append(trajectory['action_ids'][0])
+    finding['episode_ids'].append(trajectory['episode_ids'][0])
+    result = ns_removal_candidate(changed)
+    assert trajectory['action_ids'][0] in result['evidence_metadata']['display_action_ids']
+    assert trajectory['episode_ids'][0] in result['overview']['public_supporting_episode_ids']
+    assert result['coverage_text'] == result['overview']['evidence_count_label'] == '14 findings · 31 votes'

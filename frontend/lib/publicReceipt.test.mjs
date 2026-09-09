@@ -165,3 +165,12 @@ test("mixed evidence caveats survive while structural internals remain hidden", 
   });
   assert.deepEqual(receipt.limitations, ["The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text."]);
 });
+
+
+test("pending Justice legacy suppression is exact and explicit treatment remains authoritative", () => {
+  const source = "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.";
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {caveats: [source]}}).limitations, []);
+  const different = "This candidate is limited by incomplete reviewed evidence and cannot support a synthesis conclusion.";
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {caveats: [different]}}).limitations, [different]);
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {public_caveats: [source]}}).limitations, [source]);
+});

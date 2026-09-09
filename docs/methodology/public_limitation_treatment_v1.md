@@ -28,9 +28,14 @@ blocklist to hide new governance phrases; give actual affected text an explicit
 upstream treatment instead. Structural defense remains for explicit public copy.
 
 The bounded live inventory found 35 occurrences of one Justice limitation, hidden
-by the old generic-candidate prefix. It limits motive, ideology, broad issue
-positions and synthesis inference. The noun “candidate” does not report process
-state. All 35 proposed treatments are PUBLIC with exact unchanged source copy.
-No active mixed-copy rewrite or internal-only treatment was needed. The complete
-affected set and old/new render output are in the M15B review directory. This is
-pending independent review; no historical artifact or publication is rewritten.
+by the old generic-candidate prefix. Independent review classifies it as MIXED:
+substantive inference boundaries coexist with internal terms “candidate” and
+“synthesis conclusion”. One additive proposed mapping covers all occurrences:
+“This action alone does not establish motive, ideology, or a broader position on
+this issue.” Semantic/public acceptance remains pending.
+
+Until explicit approval, a temporary exact legacy pending-review set suppresses
+only that known source sentence, preserving active Justice behavior. It is not a
+semantic classifier. Other mixed caveats remain conservatively preserved, and
+explicit governed treatment bypasses this set. Remove this compatibility entry
+when accepted treatment replaces it. Historical artifacts remain immutable.

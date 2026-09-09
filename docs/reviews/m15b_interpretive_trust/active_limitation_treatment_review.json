@@ -1,13 +1,164 @@
 {
   "accepted": false,
+  "active_runtime_unchanged": true,
   "affected_occurrences": 35,
-  "authored_public_copy_changes": [],
+  "authored_public_copy_changes": [
+    {
+      "mapping_id": "justice-limitation-public-copy-v1",
+      "occurrences": [
+        {
+          "canonical_action_id": "house:119:1:128",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:130",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:131",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:162",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:166",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:23",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:27",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:270",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:271",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:274",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:275",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:286",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:289",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:298",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:299",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:32",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:33",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:340",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:351",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:42",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:6",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:68",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:1:98",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:157",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:169",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:171",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:218",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:221",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:227",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:234",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:240",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:259",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:265",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:273",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        },
+        {
+          "canonical_action_id": "house:119:2:275",
+          "domain": "JUSTICE_PUBLIC_SAFETY"
+        }
+      ],
+      "proposed_public_copy": "This action alone does not establish motive, ideology, or a broader position on this issue.",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "semantic_public_acceptance": "pending",
+      "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+    }
+  ],
   "authorizing": false,
   "baseline_main_sha": "5a1593d67d5ccb952acf7234cebffa5a7d1d53fc",
   "breakdown": {
     "INTERNAL": 0,
-    "MIXED": 0,
-    "PUBLIC": 35
+    "MIXED": 35,
+    "PUBLIC": 0
   },
   "distinct_source_texts": 1,
   "entries": [
@@ -15,10 +166,10 @@
       "canonical_action_id": "house:119:1:128",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "5d9a9e3826e65545a2a6b845052b844fe7043eb66ee0742a3f57efd30d33dfc1",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -26,10 +177,10 @@
       "canonical_action_id": "house:119:1:130",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "44080f613960cd47a1120499dd44ee6e7382457defa753abfcef2359408d3c27",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -37,10 +188,10 @@
       "canonical_action_id": "house:119:1:131",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "5d8821dc90242a28f0cfd54774615cff555e97ac8ad77d2bbc3cb3290eb17b25",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -48,10 +199,10 @@
       "canonical_action_id": "house:119:1:162",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "acce2e9910028bda651556eaedb054b0f8090e57da25e5cd292e2fd65db2cc87",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -59,10 +210,10 @@
       "canonical_action_id": "house:119:1:166",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "866c3ffd36dbfcd9b5324e5e1f7572ed3addb43523234cc6ecbc582521eb1448",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -70,10 +221,10 @@
       "canonical_action_id": "house:119:1:23",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "3d90be2cfef06a8e154ee76605c23e7b799ae011a3b0b75eaae331c44c79a870",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -81,10 +232,10 @@
       "canonical_action_id": "house:119:1:27",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "e3eee893eb4975f036131a7370e0fb84a085856cb72c7aa4541083152fa302e1",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -92,10 +243,10 @@
       "canonical_action_id": "house:119:1:270",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "c4230c23e09edeb161babfb98181ec3b76688ddc08280019a06a8e96cc51b5d1",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -103,10 +254,10 @@
       "canonical_action_id": "house:119:1:271",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "ab30b94f7b0a692b5dd272eb656f9347dfd2431db9a084aaf50f31e15f92a244",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -114,10 +265,10 @@
       "canonical_action_id": "house:119:1:274",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "cbf5f9d82f8954a3d3e616e3b373314b979e9718f542115fda95a6905c7df624",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -125,10 +276,10 @@
       "canonical_action_id": "house:119:1:275",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "b2bd03dcfec7a57df4dfafbf2d9a178512c720470167df125adea34c51ffbd98",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -136,10 +287,10 @@
       "canonical_action_id": "house:119:1:286",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "a7da5f9b217d5be7d5ee43013297441460095e62263186ffe3365cd649d00934",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -147,10 +298,10 @@
       "canonical_action_id": "house:119:1:289",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "52305eb0d5f80c820ad80388dc1a883bbfeb3ecdfd7f574820f3b3ce4329f880",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -158,10 +309,10 @@
       "canonical_action_id": "house:119:1:298",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "8930ee9d9e36c6746dd3a365053d909ed8e66b3327f9d2360ec8923f019e7749",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -169,10 +320,10 @@
       "canonical_action_id": "house:119:1:299",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "f6921ad820df819ef6c05a0d0c4c132e86e17983b84a8f5c93cacfa8844253d2",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -180,10 +331,10 @@
       "canonical_action_id": "house:119:1:32",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "95cb22ac5260aed65d0fa5bafb1ecefc1f023e745bcc5d695184ee8732331cf0",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -191,10 +342,10 @@
       "canonical_action_id": "house:119:1:33",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "439cfcb8295946c3769cbdc956cb48cbe481ebbbb7a41bf7dec03974494850c1",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -202,10 +353,10 @@
       "canonical_action_id": "house:119:1:340",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "e674de20fc38d72cd74e80555bb1d4d2fa7f7581645e0b562881a46b734b99f0",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -213,10 +364,10 @@
       "canonical_action_id": "house:119:1:351",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "dc9537d3d8a7e960cb358a01fa2ca91f418eb22dc5887eb1711fa3af4c2df8a0",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -224,10 +375,10 @@
       "canonical_action_id": "house:119:1:42",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "a122553df0d70725625653c31d9947d7876cdb51f107aba95f7518e1dc760e96",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -235,10 +386,10 @@
       "canonical_action_id": "house:119:1:6",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "818c97933bbca6f70e295428bea018d8ed50905631db574eab2ed4be354e4de8",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -246,10 +397,10 @@
       "canonical_action_id": "house:119:1:68",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "82d8cb5c5b99176c680e565ee48b73cafd0948f3ece46fe94bbe5d8b6eebe44f",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -257,10 +408,10 @@
       "canonical_action_id": "house:119:1:98",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "82660610765998e51b5913a2b59e1fbd4ebc48c0297d201eee77c5dd11c72465",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -268,10 +419,10 @@
       "canonical_action_id": "house:119:2:157",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "c0a41e4604b5dd729ccd941b5f0515b23f9477e24afdf4d7c1ef531a141cc428",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -279,10 +430,10 @@
       "canonical_action_id": "house:119:2:169",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "605883ab86e0beb6681fd3e3506c94b73994808376d885981d9573aefb699b35",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -290,10 +441,10 @@
       "canonical_action_id": "house:119:2:171",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "b37cab264962881e767c672ca350143cbfdf6175a715dad8b04b8a00552d87a5",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -301,10 +452,10 @@
       "canonical_action_id": "house:119:2:218",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "6b1a5ebf98699ea3f792ff854e05c28d4362cd7b61cab51754f02b5cb3006ae7",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -312,10 +463,10 @@
       "canonical_action_id": "house:119:2:221",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "51229ac3c717013fe0b12f3a7651ac70686fbf93d6eadcf06c8f3738c1198d08",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -323,10 +474,10 @@
       "canonical_action_id": "house:119:2:227",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "6e90bb309cb84d157547f882efe2f72cdef2f02cfd60b2beba15f4548dc5da9d",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -334,10 +485,10 @@
       "canonical_action_id": "house:119:2:234",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "d365746460a9397fb90afdce359fac982e518124f7ac438a90dd8fd807f7c4bb",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -345,10 +496,10 @@
       "canonical_action_id": "house:119:2:240",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "1ce78c2e4085f69034bfb07666832e5d3c894a5abab6e2f596e74b1420b092c6",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -356,10 +507,10 @@
       "canonical_action_id": "house:119:2:259",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "5e413e04c141db9d855bfc81559668bcc7fe8fb69054e0afddf90cbe895fd43f",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -367,10 +518,10 @@
       "canonical_action_id": "house:119:2:265",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "8224400ae68d27e69a1e846c238ae9fb8d1d1eae302c7adeb3c4f132290d0c13",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -378,10 +529,10 @@
       "canonical_action_id": "house:119:2:273",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "4be06fd99c23c0786823d463ed31868a7796dc0bc97cd2094a6a973b92e4ec05",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     },
@@ -389,16 +540,16 @@
       "canonical_action_id": "house:119:2:275",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "old_frontend_disposition": "SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT",
-      "proposed_treatment": "PUBLIC",
-      "public_copy": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.",
-      "reason": "This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.",
-      "semantic_rewrite": false,
+      "proposed_mapping_id": "justice-limitation-public-copy-v1",
+      "proposed_treatment": "MIXED_REQUIRES_PUBLIC_COPY",
+      "reason": "Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.",
+      "semantic_public_acceptance": "pending",
       "source_projection_sha256": "cfc2d6d317f257f11621d6c3df803debfd66ee779bcbb028b0562f205d6eba16",
       "source_text": "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
     }
   ],
   "human_semantic_acceptance": "pending independent review",
-  "note": "The 35 PUBLIC entries retain exact accepted wording. All are visible for independent review. No real mixed caveat was in the suppressed active set; the incomplete-amendment-text example is a synthetic contract regression, not a new Foushee assertion.",
+  "note": "Historical source wording is immutable. One additive authored public-copy candidate covers all 35 occurrences and is unaccepted. Exact legacy suppression preserves active behavior pending explicit approval; structured treatment remains authoritative.",
   "production_selectable": false,
   "production_writes_performed": false,
   "publication_authorized": false

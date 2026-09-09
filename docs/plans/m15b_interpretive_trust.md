@@ -41,9 +41,9 @@ Progress:
 - Read-only public inventory matched repository sources. Two trajectories found:
   National Security FAIL; Justice NEEDS_HUMAN_SEMANTIC_REVIEW. No Environment or
   M14 Education trajectory. Only NS has a removal candidate.
-- The 35 hidden Justice caveats are substantive, not process-status assertions;
-  retain their exact source text. Breakdown PUBLIC 35 / INTERNAL 0 / MIXED 0.
-  No new real-member wording is authored. Synthetic mixed-copy tests remain tests.
+- Independent review corrected the 35 Justice caveats to MIXED. One authored
+  public-copy candidate binds all occurrences; approval remains pending. Exact
+  legacy suppression preserves active output. No historical wording is changed.
 - Two-state limitation contract and receipt overlay implemented. Explicit public
   copy is authoritative; legacy handling preserves substantive text and blocks
   only complete known process boilerplate and structural internals.
@@ -76,3 +76,14 @@ Draft PR #185 is open; the same PR receives these scoped corrections.
 Final checkpoint: inspect the scoped diff and final hosted CI. No merge,
 deployment, production writes, M15A repair checks or historical artifact changes.
 Rollback is reverting this unmerged branch; there are no production effects.
+
+Bounded correction after independent review of fb344874ceef533b7f7ae787ad92ccdddd797ff8:
+- Preserve comparability and two-state governed treatment architecture.
+- Replace verbatim-PUBLIC inventory with one pending MIXED public-copy mapping.
+- Preserve active Justice suppression through one exact transitional legacy entry;
+  detached tests prove proposed authored copy without activation.
+- Compute NS labels, action/episode support and semantic linkage from surviving
+  findings. Test independent reuse of a removed trajectory action to prevent
+  hard-coded subtraction. Preserve receipts, episodes and unrelated findings.
+- Validate focused M15B/M14/M15A/publication regressions and hosted CI; push only
+  to draft PR #185. No semantic acceptance, merge, deployment or production writes.

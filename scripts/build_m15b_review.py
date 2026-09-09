@@ -16,6 +16,7 @@ OUT = ROOT / 'docs/reviews/m15b_interpretive_trust'
 REVIEWS = ROOT / 'docs/editorial/full_record_reviews'
 NS = 'NATIONAL_SECURITY_FOREIGN'
 TARGET = 'trajectory-milcon-va-appropriations-direction-change'
+PUBLIC_COPY = 'This action alone does not establish motive, ideology, or a broader position on this issue.'
 LIMIT = 'This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.'
 
 
@@ -58,6 +59,28 @@ console.log(JSON.stringify(result));"""
         input=json.dumps({'old':old_source,'current':(ROOT/'frontend/lib/publicReceipt.mjs').as_uri(),'rows':rows}).encode()))
 
 
+def ns_removal_candidate(before):
+    after = copy.deepcopy(before)
+    after['policy_trajectories'] = [f for f in after['policy_trajectories'] if TARGET not in f['semantic_source_ids']]
+    ordinary = [f for key in ('repeated_patterns', 'notable_choices', 'policy_trajectories') for f in after[key]]
+    surviving = ordinary + after['syntheses']
+    actions = sorted({a for f in ordinary for a in f['action_ids']})
+    episodes = sorted({e for f in ordinary for e in f['episode_ids']})
+    overview = after['overview']
+    overview['semantic_source_ids'] = sorted({s for f in surviving for s in f['semantic_source_ids']})
+    overview['mapping']['semantic_binding_count'] = len(overview['semantic_source_ids'])
+    for key in ('action_ids', 'semantic_lineage_action_ids', 'public_supporting_action_ids'):
+        overview[key] = actions.copy()
+    for key in ('episode_ids', 'semantic_lineage_episode_ids', 'public_supporting_episode_ids'):
+        overview[key] = episodes.copy()
+    label = f"{len(ordinary)} findings · {len(actions)} votes"
+    overview['evidence_count_label'] = label
+    after['coverage_text'] = label
+    after['evidence_metadata']['display_action_ids'] = actions.copy()
+    overview['secondary_clarification'] = overview['secondary_clarification'].replace(', annual appropriations', '')
+    return after
+
+
 def build():
     paths,rows=inputs()
     candidate=load(paths[NS])
@@ -95,16 +118,8 @@ def build():
              episode_content_sha256=justice_episode['content_subject_sha256'],
              result='NEEDS_HUMAN_SEMANTIC_REVIEW',
              reason='The accepted object is one mixed legislative episode, with an amendment and two whole frameworks. It explicitly disclaims a change in motive/philosophy. No separately accepted common decision comparison is bound; whether it should retain the trajectory type needs semantic review. No Justice remediation is applied or proposed here.')]
-    after=copy.deepcopy(before);after['policy_trajectories']=[]
-    overview=after['overview'];overview['semantic_source_ids'].remove(TARGET)
-    overview['mapping']['semantic_binding_count']-=1
-    for key in ('action_ids','semantic_lineage_action_ids','public_supporting_action_ids'):
-        overview[key]=[a for a in overview[key] if a not in item['action_ids']]
-    for key in ('episode_ids','semantic_lineage_episode_ids','public_supporting_episode_ids'):
-        overview[key]=[e for e in overview[key] if e not in item['episode_ids']]
-    overview['evidence_count_label']='14 findings · 30 votes'
-    overview['secondary_clarification']=overview['secondary_clarification'].replace(', annual appropriations','')
-    after['evidence_metadata']['display_action_ids']=[a for a in after['evidence_metadata']['display_action_ids'] if a not in item['action_ids']]
+    after=ns_removal_candidate(before)
+    overview=after['overview']
     assert before['exact_action_receipts']==after['exact_action_receipts']
     assert before['reviewed_action_ids']==after['reviewed_action_ids']
     for field in ('syntheses','repeated_patterns','notable_choices','limitations','policy_episodes'):
@@ -116,9 +131,9 @@ def build():
             assert source==LIMIT, 'New suppressed caveat requires bounded review, not automatic classification'
             affected.append(dict(domain=r['domain'],canonical_action_id=r['canonical_action_id'],
                 source_text=source,old_frontend_disposition='SUPPRESSED_BY_GENERIC_RECEIPT_CAVEAT',
-                proposed_treatment='PUBLIC',public_copy=source,
-                reason='This sentence limits permissible inference from the vote. It reports no review status, date, workflow event or artifact identity. The noun candidate does not make that substantive limit process-only.',
-                semantic_rewrite=False,source_projection_sha256=digest(next(row['governed_receipt_projection'] for row in rows[r['domain']] if row['canonical_action_id']==r['canonical_action_id']))))
+                proposed_treatment='MIXED_REQUIRES_PUBLIC_COPY',proposed_mapping_id='justice-limitation-public-copy-v1',
+                reason='Substantive inference boundaries are mixed with internal editorial terms candidate and synthesis conclusion. Authored public wording requires explicit acceptance.',
+                semantic_public_acceptance='pending',source_projection_sha256=digest(next(row['governed_receipt_projection'] for row in rows[r['domain']] if row['canonical_action_id']==r['canonical_action_id']))))
     assert len(affected)==35
     common=dict(baseline_main_sha=BASE,accepted=False,authorizing=False,production_selectable=False,
                 publication_authorized=False,human_semantic_acceptance='pending independent review',
@@ -136,11 +151,23 @@ def build():
               'publication_replacement_required_after_acceptance':True}},
       'active_limitation_treatment_review.json':{**common,'affected_occurrences':len(affected),
           'distinct_source_texts':len({r['source_text'] for r in affected}),
-          'breakdown':{'PUBLIC':35,'INTERNAL':0,'MIXED':0},'entries':affected,
-          'authored_public_copy_changes':[],
-          'note':'The 35 PUBLIC entries retain exact accepted wording. All are visible for independent review. No real mixed caveat was in the suppressed active set; the incomplete-amendment-text example is a synthetic contract regression, not a new Foushee assertion.'},
+          'breakdown':{'PUBLIC':0,'INTERNAL':0,'MIXED':35},'entries':affected,
+          'authored_public_copy_changes':[{'mapping_id':'justice-limitation-public-copy-v1',
+              'source_text':LIMIT,'proposed_treatment':'MIXED_REQUIRES_PUBLIC_COPY',
+              'proposed_public_copy':PUBLIC_COPY,'semantic_public_acceptance':'pending',
+              'occurrences':[{'domain':r['domain'],'canonical_action_id':r['canonical_action_id']} for r in affected]}],
+          'active_runtime_unchanged':True,
+          'note':'Historical source wording is immutable. One additive authored public-copy candidate covers all 35 occurrences and is unaccepted. Exact legacy suppression preserves active behavior pending explicit approval; structured treatment remains authoritative.'},
       'before_after_public_review.json':{**common,'national_security':{'before':before,'after_candidate':after,
-          'delta':{'policy_trajectories':[1,0],'ordinary_findings':[15,14],'finding_supporting_actions':[32,30],
+          'ledger_preservation':{'unchanged':True,
+              'note':'Selected presentation and evidence ledger are separate surfaces. Candidate changes only the presentation; these original governed receipt rows remain in the ledger.',
+              'retained_receipts':[copy.deepcopy(r) for r in rows[NS] if r.get('canonical_action_id') in item['action_ids']],
+              'retained_episode_ids':[e['episode_id'] for e in evidence],
+              'evidence_ledger_sha256':digest(rows[NS])},
+          'delta':{'policy_trajectories':[len(p['policy_trajectories']) for p in (before,after)],
+              'ordinary_findings':[sum(len(p[k]) for k in ('repeated_patterns','notable_choices','policy_trajectories')) for p in (before,after)],
+              'finding_supporting_actions':[len(p['evidence_metadata']['display_action_ids']) for p in (before,after)],
+              'coverage_labels_reconciled':after['coverage_text']==overview['evidence_count_label'],
               'receipts_preserved':True,'underlying_action_meanings_preserved':True,'overview_primary_sentence_unchanged':True,
               'overview_secondary_before':before['overview']['secondary_clarification'],
               'overview_secondary_after':overview['secondary_clarification'],
@@ -174,7 +201,7 @@ def main():
             assert path.read_text(encoding='utf-8')==text, name+' is stale'
         else:
             path.write_text(text,encoding='utf-8')
-    print('M15B review package: 2 trajectories; NS removal pending; 35 PUBLIC unchanged caveats; 0 INTERNAL; 0 MIXED.')
+    print('M15B review package: 2 trajectories; NS removal pending; 0 PUBLIC; 0 INTERNAL; 35 MIXED; one pending public-copy candidate; active output unchanged.')
 
 
 if __name__=='__main__':main()

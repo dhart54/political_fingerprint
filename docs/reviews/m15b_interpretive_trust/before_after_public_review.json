@@ -6,7 +6,7 @@
   "national_security": {
     "after_candidate": {
       "conclusion": null,
-      "coverage_text": "15 findings · 32 votes",
+      "coverage_text": "14 findings · 30 votes",
       "evidence_metadata": {
         "accepted_interpreted_action_count": 81,
         "approved_universe_action_count": 82,
@@ -2912,6 +2912,7 @@
       "tier_badge": "Full issue review"
     },
     "delta": {
+      "coverage_labels_reconciled": true,
       "finding_supporting_actions": [
         32,
         30
@@ -2935,6 +2936,131 @@
         "The votes do not identify which provisions explain the different directions."
       ],
       "underlying_action_meanings_preserved": true
+    },
+    "ledger_preservation": {
+      "evidence_ledger_sha256": "0710fe4c7df96faa59a49078f0a158ed04dd678cd7fea0d315d8efeec5722887",
+      "note": "Selected presentation and evidence ledger are separate surfaces. Candidate changes only the presentation; these original governed receipt rows remain in the ledger.",
+      "retained_episode_ids": [
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175"
+      ],
+      "retained_receipts": [
+        {
+          "canonical_action_id": "house:119:2:175",
+          "chamber": "house",
+          "congress": 119,
+          "description": "Making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+          "governed_receipt_control": null,
+          "governed_receipt_projection": {
+            "action_meaning_sources": [
+              {
+                "label": "Official measure source",
+                "url": "https://api.congress.gov/v3/bill/119/hr/8469/actions"
+              },
+              {
+                "label": "Official measure source",
+                "url": "https://www.congress.gov/119/bills/hr8469/BILLS-119hr8469eh.xml"
+              }
+            ],
+            "canonical_action_id": "house:119:2:175",
+            "caveats": [
+              "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+            ],
+            "episode_id": "single-119-hr-8469-2-175",
+            "episode_relationship": "This action is independently expandable in the reviewed record.",
+            "exact_action_meaning": "The House choice was whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+            "exact_choice_position_effect": "supports_exact_choice",
+            "member_action": "Yea",
+            "policy_question": "The House choice was whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+            "vote_sources": [
+              {
+                "label": "Official House vote",
+                "url": "https://clerk.house.gov/evs/2026/roll175.xml"
+              }
+            ]
+          },
+          "interpretation_status": "interpreted",
+          "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+          "plain_english_summary": "The House choice was whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+          "position": "yea",
+          "question": "The House choice was whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+          "roll_call_id": "house:119:2:175",
+          "rollcall_number": 175,
+          "session": 2,
+          "source_basis": [
+            {
+              "label": "Official measure source",
+              "url": "https://api.congress.gov/v3/bill/119/hr/8469/actions"
+            },
+            {
+              "label": "Official measure source",
+              "url": "https://www.congress.gov/119/bills/hr8469/BILLS-119hr8469eh.xml"
+            }
+          ],
+          "source_url": "https://clerk.house.gov/evs/2026/roll175.xml",
+          "uncertainty_note": "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+          "vote_date": "2026-05-15",
+          "vote_type": "final_passage_or_suspension_passage"
+        },
+        {
+          "canonical_action_id": "house:119:1:182",
+          "chamber": "house",
+          "congress": 119,
+          "description": "Making appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+          "governed_receipt_control": null,
+          "governed_receipt_projection": {
+            "action_meaning_sources": [
+              {
+                "label": "Official measure source",
+                "url": "https://api.congress.gov/v3/bill/119/hr/3944/actions"
+              },
+              {
+                "label": "Official measure source",
+                "url": "https://www.congress.gov/119/bills/hr3944/BILLS-119hr3944eh.xml"
+              }
+            ],
+            "canonical_action_id": "house:119:1:182",
+            "caveats": [
+              "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+            ],
+            "episode_id": "single-119-hr-3944-1-182",
+            "episode_relationship": "This action is independently expandable in the reviewed record.",
+            "exact_action_meaning": "The House choice was whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+            "exact_choice_position_effect": "opposes_exact_choice",
+            "member_action": "Nay",
+            "policy_question": "The House choice was whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+            "vote_sources": [
+              {
+                "label": "Official House vote",
+                "url": "https://clerk.house.gov/evs/2025/roll182.xml"
+              }
+            ]
+          },
+          "interpretation_status": "interpreted",
+          "issue_domain": "NATIONAL_SECURITY_FOREIGN",
+          "plain_english_summary": "The House choice was whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+          "position": "nay",
+          "question": "The House choice was whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+          "roll_call_id": "house:119:1:182",
+          "rollcall_number": 182,
+          "session": 1,
+          "source_basis": [
+            {
+              "label": "Official measure source",
+              "url": "https://api.congress.gov/v3/bill/119/hr/3944/actions"
+            },
+            {
+              "label": "Official measure source",
+              "url": "https://www.congress.gov/119/bills/hr3944/BILLS-119hr3944eh.xml"
+            }
+          ],
+          "source_url": "https://clerk.house.gov/evs/2025/roll182.xml",
+          "uncertainty_note": "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+          "vote_date": "2025-06-25",
+          "vote_type": "final_passage_or_suspension_passage"
+        }
+      ],
+      "unchanged": true
     }
   },
   "production_selectable": false,
@@ -4982,8 +5108,7 @@
       "canonical_action_id": "house:119:1:128",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Section 3(c) inserts ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B); its exact legal effect remains unresolved because the governed packet does not include sufficient surrounding statutory context.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Section 3(c) inserts ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B); its exact legal effect remains unresolved because the governed packet does not include sufficient surrounding statutory context."
       ],
       "old_public": [
         "Section 3(c) inserts ‘any magazine and’ into 18 U.S.C. 926B(e)(2) and 926C(e)(1)(B); its exact legal effect remains unresolved because the governed packet does not include sufficient surrounding statutory context."
@@ -5001,8 +5126,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "A purchase must occur within six months after retirement of the firearm and the officer must be in good standing.",
-        "The firearm is sold at salvage value and specified machineguns are excluded.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The firearm is sold at salvage value and specified machineguns are excluded."
       ],
       "old_public": [
         "A purchase must occur within six months after retirement of the firearm and the officer must be in good standing.",
@@ -5020,9 +5144,7 @@
     {
       "canonical_action_id": "house:119:1:131",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5035,8 +5157,7 @@
       "canonical_action_id": "house:119:1:162",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law."
       ],
       "old_public": [
         "Repeal the 2022 subtitle that changed limitations rules for disciplinary claims and revive the prior law."
@@ -5054,8 +5175,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
-        "The class definition excludes substances specifically exempted or listed in another schedule.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The class definition excludes substances specifically exempted or listed in another schedule."
       ],
       "old_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
@@ -5074,8 +5194,7 @@
       "canonical_action_id": "house:119:1:23",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
       ],
       "old_public": [
         "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
@@ -5093,8 +5212,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "Civil statutory damages include three times the cost of the abortion or attempted abortion.",
-        "The woman on whom the abortion was performed may not be prosecuted under the new offense.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The woman on whom the abortion was performed may not be prosecuted under the new offense."
       ],
       "old_public": [
         "Civil statutory damages include three times the cost of the abortion or attempted abortion.",
@@ -5113,8 +5231,7 @@
       "canonical_action_id": "house:119:1:270",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The public website may not disclose a juvenile's personally identifiable information.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The public website may not disclose a juvenile's personally identifiable information."
       ],
       "old_public": [
         "The public website may not disclose a juvenile's personally identifiable information."
@@ -5131,8 +5248,7 @@
       "canonical_action_id": "house:119:1:271",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The changes apply to offenses committed on or after enactment.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The changes apply to offenses committed on or after enactment."
       ],
       "old_public": [
         "The changes apply to offenses committed on or after enactment."
@@ -5149,8 +5265,7 @@
       "canonical_action_id": "house:119:1:274",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The changes apply to appointments made on or after enactment.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The changes apply to appointments made on or after enactment."
       ],
       "old_public": [
         "The changes apply to appointments made on or after enactment."
@@ -5167,8 +5282,7 @@
       "canonical_action_id": "house:119:1:275",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
       ],
       "old_public": [
         "Pursuit remains limited when it poses unacceptable third-party harm, would be futile, or another means would be more effective or expeditious."
@@ -5184,9 +5298,7 @@
     {
       "canonical_action_id": "house:119:1:286",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5199,8 +5311,7 @@
       "canonical_action_id": "house:119:1:289",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Permit tailored withholding or redaction for victim privacy, child sexual-abuse material, temporary active-investigation needs, graphic images, and properly classified information.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Permit tailored withholding or redaction for victim privacy, child sexual-abuse material, temporary active-investigation needs, graphic images, and properly classified information."
       ],
       "old_public": [
         "Permit tailored withholding or redaction for victim privacy, child sexual-abuse material, temporary active-investigation needs, graphic images, and properly classified information."
@@ -5217,8 +5328,7 @@
       "canonical_action_id": "house:119:1:298",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The changes apply to people charged on or after 30 days following enactment.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The changes apply to people charged on or after 30 days following enactment."
       ],
       "old_public": [
         "The changes apply to people charged on or after 30 days following enactment."
@@ -5235,8 +5345,7 @@
       "canonical_action_id": "house:119:1:299",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Retain subtitles S and A of title I rather than repealing the entire 2022 Act.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
       ],
       "old_public": [
         "Retain subtitles S and A of title I rather than repealing the entire 2022 Act."
@@ -5254,8 +5363,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
-        "The class definition excludes substances specifically exempted or listed in another schedule.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The class definition excludes substances specifically exempted or listed in another schedule."
       ],
       "old_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
@@ -5275,8 +5383,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
-        "The class definition excludes substances specifically exempted or listed in another schedule.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The class definition excludes substances specifically exempted or listed in another schedule."
       ],
       "old_public": [
         "The amendment addressed when the parent bill would take effect; it did not itself replace the parent bill's scheduling framework.",
@@ -5296,8 +5403,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "Officials may bypass specified Paperwork Reduction Act or Administrative Procedure Act steps when they determine compliance would impede immediate implementation.",
-        "The placement rules apply to pending and future release and custody determinations.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The placement rules apply to pending and future release and custody determinations."
       ],
       "old_public": [
         "Officials may bypass specified Paperwork Reduction Act or Administrative Procedure Act steps when they determine compliance would impede immediate implementation.",
@@ -5319,8 +5425,7 @@
         "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception.",
         "Set fines and maximum 10-year imprisonment for the covered offenses.",
         "Specified medical, intersex-condition, prior-injury, imminent-physical-health, and precocious-puberty exceptions remain.",
-        "The minor who undergoes a covered procedure may not be prosecuted under the section.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The minor who undergoes a covered procedure may not be prosecuted under the section."
       ],
       "old_public": [
         "Mental, behavioral, or emotional distress or disorder alone does not satisfy the minor-health exception.",
@@ -5342,9 +5447,7 @@
     {
       "canonical_action_id": "house:119:1:42",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5357,8 +5460,7 @@
       "canonical_action_id": "house:119:1:6",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
       ],
       "old_public": [
         "State enforcement standing uses a claimed-harm threshold that includes financial harm over $100."
@@ -5375,8 +5477,7 @@
       "canonical_action_id": "house:119:1:68",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The extension does not revive an action whose prior limitations period expired before enactment.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The extension does not revive an action whose prior limitations period expired before enactment."
       ],
       "old_public": [
         "The extension does not revive an action whose prior limitations period expired before enactment."
@@ -5393,8 +5494,7 @@
       "canonical_action_id": "house:119:1:98",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The three-judge panel may grant relief otherwise barred after considering justice, nonparty harm, and separation of powers.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The three-judge panel may grant relief otherwise barred after considering justice, nonparty harm, and separation of powers."
       ],
       "old_public": [
         "The three-judge panel may grant relief otherwise barred after considering justice, nonparty harm, and separation of powers."
@@ -5411,8 +5511,7 @@
       "canonical_action_id": "house:119:2:157",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The coordination center must be established within 90 days, reported on within one year, and wound down after seven years; related grant-program evaluation, reporting, and guidance deadlines remain governed implementation details.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The coordination center must be established within 90 days, reported on within one year, and wound down after seven years; related grant-program evaluation, reporting, and guidance deadlines remain governed implementation details."
       ],
       "old_public": [
         "The coordination center must be established within 90 days, reported on within one year, and wound down after seven years; related grant-program evaluation, reporting, and guidance deadlines remain governed implementation details."
@@ -5428,9 +5527,7 @@
     {
       "canonical_action_id": "house:119:2:169",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5443,8 +5540,7 @@
       "canonical_action_id": "house:119:2:171",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "The Attorney General defines the covered public-safety or public-order offenses, with violent, sexual, disorder, property-destruction, and flight examples.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The Attorney General defines the covered public-safety or public-order offenses, with violent, sexual, disorder, property-destruction, and flight examples."
       ],
       "old_public": [
         "The Attorney General defines the covered public-safety or public-order offenses, with violent, sexual, disorder, property-destruction, and flight examples."
@@ -5464,8 +5560,7 @@
         "Covered funds include specified Federal awards of at least $50,000.",
         "Legislative-recommendation thresholds include supplemental measures over $100 billion and new programs over $100 million in one fiscal year.",
         "The Fiscal Service data-analysis function excludes investigative and law-enforcement functions and is bounded by applicable privacy and security law.",
-        "The new Inspector General office is authorized $10,000,000 annually beginning in fiscal year 2035.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The new Inspector General office is authorized $10,000,000 annually beginning in fiscal year 2035."
       ],
       "old_public": [
         "Covered funds include specified Federal awards of at least $50,000.",
@@ -5488,8 +5583,7 @@
       "canonical_action_id": "house:119:2:221",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Take effect on the earlier of enactment or June 11, 2026.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Take effect on the earlier of enactment or June 11, 2026."
       ],
       "old_public": [
         "Take effect on the earlier of enactment or June 11, 2026."
@@ -5507,8 +5601,7 @@
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
         "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation.",
-        "Permit an ordinary 15-business-day redemption delay, a possible additional 10-business-day internal extension, and further extension by a competent government authority.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Permit an ordinary 15-business-day redemption delay, a possible additional 10-business-day internal extension, and further extension by a competent government authority."
       ],
       "old_public": [
         "Notice to a trusted contact is not required when the firm reasonably believes that contact is involved in exploitation.",
@@ -5526,9 +5619,7 @@
     {
       "canonical_action_id": "house:119:2:234",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5544,8 +5635,7 @@
         "A violating network or entity has 30 days to cure after notice before the Attorney General may seek an injunction.",
         "The Attorney General must establish the complaint process within 90 days after enactment.",
         "The bill creates no private right of action.",
-        "The preemption rule preserves compliance with laws on disputes, fraud, illegal or suspicious activity, data breaches, and cyber risks.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "The preemption rule preserves compliance with laws on disputes, fraud, illegal or suspicious activity, data breaches, and cyber risks."
       ],
       "old_public": [
         "A violating network or entity has 30 days to cure after notice before the Attorney General may seek an injunction.",
@@ -5568,8 +5658,7 @@
       "canonical_action_id": "house:119:2:259",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Preserve specified federal environmental, pipeline-safety, occupational-safety, property, criminal, and operational authorities.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Preserve specified federal environmental, pipeline-safety, occupational-safety, property, criminal, and operational authorities."
       ],
       "old_public": [
         "Preserve specified federal environmental, pipeline-safety, occupational-safety, property, criminal, and operational authorities."
@@ -5586,8 +5675,7 @@
       "canonical_action_id": "house:119:2:265",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Commander permission remains required, and the rule does not limit broader Defense authority to permit additional people.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Commander permission remains required, and the rule does not limit broader Defense authority to permit additional people."
       ],
       "old_public": [
         "Commander permission remains required, and the rule does not limit broader Defense authority to permit additional people."
@@ -5603,9 +5691,7 @@
     {
       "canonical_action_id": "house:119:2:273",
       "domain": "JUSTICE_PUBLIC_SAFETY",
-      "new_public": [
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
-      ],
+      "new_public": [],
       "old_public": [],
       "old_suppressed": [
         "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
@@ -5618,8 +5704,7 @@
       "canonical_action_id": "house:119:2:275",
       "domain": "JUSTICE_PUBLIC_SAFETY",
       "new_public": [
-        "Preserve other speed-enforcement methods and cameras primarily used for security, access control, force protection, or criminal investigation.",
-        "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion."
+        "Preserve other speed-enforcement methods and cameras primarily used for security, access control, force protection, or criminal investigation."
       ],
       "old_public": [
         "Preserve other speed-enforcement methods and cameras primarily used for security, access control, force protection, or criminal investigation."

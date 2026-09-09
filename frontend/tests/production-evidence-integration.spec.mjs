@@ -310,10 +310,11 @@ test("expanded receipts use voter-facing organization and remain metadata-clean"
   ]) {
     await expect(roll275).not.toContainText(oldLabel);
   }
-  await expect(roll275).toContainText(
+  await expect(roll275).not.toContainText(
     substantiveCaveat,
   );
 
+  await expect(roll275).not.toContainText(/candidate|synthesis conclusion/i);
   const publicText = await page.locator("body").textContent();
   for (const forbidden of [
     "acceptance_receipt",
