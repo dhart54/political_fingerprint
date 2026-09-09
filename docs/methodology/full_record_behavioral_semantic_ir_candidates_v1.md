@@ -17,7 +17,8 @@ compiler architecture; it does not replace accepted Semantic IR V1.
   differences, and an explicit rejection of topic, agency, statute, CRA
   mechanism, vote direction, party, sponsor, or ideology as sufficient bases.
   A trajectory
-  additionally requires a structured substantive change record; chronology alone
+  additionally requires the affirmative, separately reviewed comparison binding
+  in `trajectory_comparability_v1.md` and a structured substantive change record; chronology alone
   is insufficient. A direction-change record binds the ordered evidence episode
   IDs, accepted dates, accepted before/after episode directions, change type, and
   a nonempty bounded change description. Dates must be strictly chronological,

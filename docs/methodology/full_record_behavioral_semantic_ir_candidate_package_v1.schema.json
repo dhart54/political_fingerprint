@@ -18,6 +18,16 @@
     "schema_version",
     "synthesis_included"
   ],
+  "definitions": {
+    "comparison_binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["comparison_id", "content_sha256"],
+      "properties": {
+        "comparison_id": {"type": "string", "minLength": 1},
+        "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
   "properties": {
     "schema_version": {"const": "full_record_behavioral_semantic_ir_candidate_package_v1"},
     "artifact_id": {"type": "string", "minLength": 1},
@@ -60,6 +70,7 @@
                   "conclusion_relevance": {"enum": ["primary", "limiting", "excluded"]},
                   "evidence_action_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
                   "evidence_episode_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                  "comparison_binding": {"$ref": "#/definitions/comparison_binding"},
                   "trajectory_change": {
                     "oneOf": [
                       {"type": "null"},

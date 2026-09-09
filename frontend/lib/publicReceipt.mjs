@@ -1,7 +1,8 @@
-const RAW_REVIEW_PROCESS_DISCLOSURE = /\b(?:about this interpretation|human[- ]reviewed|review(?:ed| status)? on|editorial process|provenance references?)\b/i;
+// Only complete, unmistakably process-only legacy statements. No token classifier.
+const PURE_PROCESS = /^(?:About this interpretation: )?Human-reviewed on \d{4}-\d{2}-\d{2}\.?$/i;
+const PURE_PROCESS_COPY = new Set(["Review candidate accepted in the launch ratification milestone."]);
 const STRUCTURALLY_INTERNAL = /(?:^|[\\/])(?:backend|docs|frontend|scripts)[\\/]|\.json\b|\b(?:candidate_content_)?sha-?256\b|\b(?:interpretation|content)[_ -]digest\b|\b[a-f0-9]{40,}\b|\b(?:implementation[_ -]?id|[a-z0-9-]+-implementation|acceptance[_ -](?:receipt|ref)|delegated[_ -]acceptance|launch[_ -]ratification|ratification[_ -](?:receipt|ref)|semantic[_ -]ir[_ -]acceptance)\b/i;
 const GENERIC_EPISODE_PROCESS = /^this action is one independently expandable part of the related policy episode\.?$/i;
-const GENERIC_RECEIPT_CAVEAT = /^(?:this (?:candidate|receipt|interpretation) does not establish|the (?:candidate|receipt|interpretation) does not establish|this receipt remains bounded to the reviewed|the reviewed interpretation remains a candidate)\b/i;
 const ALLOWED_ACTION_SOURCE_LABELS = new Set([
   "Bill or amendment text",
   "Congressional Record",
@@ -36,6 +37,7 @@ export function buildPublicReceipt(row = {}) {
     limitations: publicLimitations(
       projection?.caveats,
       row.uncertainty_note,
+      projection || {},
     ),
     voteSources: publicSources(
       projection?.vote_sources || (row.source_url ? [row.source_url] : []),
@@ -48,7 +50,26 @@ export function buildPublicReceipt(row = {}) {
   };
 }
 
-export function publicLimitations(values, fallback = "") {
+export function publicLimitations(values, fallback = "", governed = {}) {
+  if (Object.hasOwn(governed, "public_caveats")) {
+    if (!Array.isArray(governed.public_caveats) || governed.public_caveats.some((x) => typeof x !== "string")) {
+      throw new TypeError("public_caveats must be an explicit string list");
+    }
+    return governed.public_caveats.map((x) => x.trim()).filter(Boolean).filter((x) => !STRUCTURALLY_INTERNAL.test(x));
+  }
+  if (Object.hasOwn(governed, "limitation_treatments")) {
+    if (!Array.isArray(governed.limitation_treatments)) throw new TypeError("limitation treatments must be a list");
+    const copy = governed.limitation_treatments.flatMap((entry) => {
+      if (!entry || typeof entry.source_text !== "string" || !entry.source_text.trim()
+          || !["public", "internal"].includes(entry.treatment)
+          || typeof entry.public_copy !== "string"
+          || (entry.treatment === "public" ? !entry.public_copy.trim() : entry.public_copy !== "")) {
+        throw new TypeError("invalid governed limitation treatment");
+      }
+      return entry.treatment === "public" ? [entry.public_copy] : [];
+    });
+    return publicLimitations([], "", { public_caveats: copy });
+  }
   const supplied = Array.isArray(values) && values.length ? values : [fallback];
   return supplied
     .filter((value) => typeof value === "string")
@@ -73,8 +94,8 @@ export function publicSources(values, kind = "action") {
 
 function isVoterRelevantLimitation(value) {
   return !STRUCTURALLY_INTERNAL.test(value)
-    && !GENERIC_RECEIPT_CAVEAT.test(value)
-    && !RAW_REVIEW_PROCESS_DISCLOSURE.test(value);
+    && !PURE_PROCESS.test(value)
+    && !PURE_PROCESS_COPY.has(value);
 }
 
 function publicEpisodeRelationship(value) {
