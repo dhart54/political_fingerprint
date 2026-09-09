@@ -274,6 +274,16 @@ test("pagination reaches all 89 unique actions without group omissions", async (
 });
 
 test("expanded receipts use voter-facing organization and remain metadata-clean", async ({ page }) => {
+  // The older M6 fixture predates this active source caveat. Exercise its exact
+  // current wording without rewriting the accepted fixture.
+  const substantiveCaveat = "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.";
+  await installPassARoutes(page, {
+    justiceEvidenceOverride: (scope) => evidenceForScope(scope).map((row) => row.canonical_action_id === "house:119:2:275"
+      ? { ...row, governed_receipt_projection: { ...row.governed_receipt_projection,
+        caveats: [...row.governed_receipt_projection.caveats, substantiveCaveat] } }
+      : row),
+    justicePresentationOverride: fixture.presentation,
+  });
   await page.goto(`${selectedPath}&scope=119`);
   const roll275 = page.locator('[data-canonical-action-id="house:119:2:275"]');
   await expect(roll275.getByRole("button")).not.toContainText("Chamber result");
@@ -300,8 +310,11 @@ test("expanded receipts use voter-facing organization and remain metadata-clean"
   ]) {
     await expect(roll275).not.toContainText(oldLabel);
   }
-  await expect(roll275).not.toContainText(/candidate|does not establish motive/i);
+  await expect(roll275).not.toContainText(
+    substantiveCaveat,
+  );
 
+  await expect(roll275).not.toContainText(/candidate|synthesis conclusion/i);
   const publicText = await page.locator("body").textContent();
   for (const forbidden of [
     "acceptance_receipt",

@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backend.app.semantic_ir.pipeline import run_editorial_pipeline  # noqa: E402
+from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input  # noqa: E402
 from scripts import build_foushee_justice_semantic_ir_m5 as m5  # noqa: E402
 
 
@@ -434,7 +434,7 @@ def build(check: bool = False) -> dict[str, Any]:
         raise ValueError("reviewed M5 V1 identities differ")
 
     compiler_input = corrected_compiler_input()
-    pipeline_result = run_editorial_pipeline(copy.deepcopy(compiler_input))
+    pipeline_result = replay_frozen_full_record_input(copy.deepcopy(compiler_input))
     if pipeline_result.persistence_proposal is not None:
         raise ValueError("detached pipeline unexpectedly prepared persistence")
     graph = graph_envelope(pipeline_result.compiled_ir)
@@ -742,7 +742,7 @@ def build(check: bool = False) -> dict[str, Any]:
             "schema_version": "semantic_ir_m5r1_independent_verification_v1",
             "artifact_id": "semantic-ir-independent-verification:f000477:justice_public_safety:119:v2",
             "reconstructed_graph_content_subject_sha256": graph_envelope(
-                run_editorial_pipeline(copy.deepcopy(compiler_input)).compiled_ir
+                replay_frozen_full_record_input(copy.deepcopy(compiler_input)).compiled_ir
             )["content_subject_sha256"],
             "expected_graph_content_subject_sha256": graph["content_subject_sha256"],
             "checks": {

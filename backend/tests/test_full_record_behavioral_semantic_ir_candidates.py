@@ -7,6 +7,7 @@ import unittest
 from backend.app.semantic_ir.compiler import (
     SemanticCompilerInputError,
     compile_behavioral_candidate_ir,
+    replay_m11g_historical_candidate,
 )
 from backend.scripts.build_m11g_national_security_behavioral_semantic_ir_candidates import (
     build,
@@ -35,7 +36,7 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
         self.assertFalse(any(graph["downstream_authorizations"].values()))
 
     def test_episode_lineage_is_primary(self) -> None:
-        graph = compile_behavioral_candidate_ir(copy.deepcopy(self.compiler_input))
+        graph = replay_m11g_historical_candidate(copy.deepcopy(self.compiler_input))
         episodes = {row["episode_id"]: row for row in self.compiler_input["episodes"]}
         for proposition in graph["proposition_graph"]["propositions"]:
             expected = sorted(
@@ -134,10 +135,9 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
             ],
         }
 
-    def test_valid_structured_direction_change_trajectory(self) -> None:
-        graph = compile_behavioral_candidate_ir(self._generic_input())
-        proposition = graph["proposition_graph"]["propositions"][0]
-        self.assertEqual(proposition["direction"], "mixed")
+    def test_direction_change_without_comparability_is_rejected(self) -> None:
+        with self.assertRaisesRegex(SemanticCompilerInputError, "comparison binding"):
+            compile_behavioral_candidate_ir(self._generic_input())
 
     def test_trajectory_rejects_reversed_chronology(self) -> None:
         changed = self._generic_input()
@@ -272,7 +272,7 @@ class BehavioralSemanticIrCandidateTests(unittest.TestCase):
             compile_behavioral_candidate_ir(changed)
 
     def test_blocked_action_is_unavailable(self) -> None:
-        graph = compile_behavioral_candidate_ir(copy.deepcopy(self.compiler_input))
+        graph = replay_m11g_historical_candidate(copy.deepcopy(self.compiler_input))
         self.assertFalse(
             any(
                 "house:119:2:278" in proposition["evidence_action_ids"]

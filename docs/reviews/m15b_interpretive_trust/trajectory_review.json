@@ -1,0 +1,189 @@
+{
+  "accepted": false,
+  "authorizing": false,
+  "baseline_main_sha": "5a1593d67d5ccb952acf7234cebffa5a7d1d53fc",
+  "contract_summary": {
+    "authoring_boundary": "comparison_binding points to separately trusted semantic evidence; author prose, same family, topic, vote direction, or components cannot establish eligibility.",
+    "enforcement": [
+      "compile_behavioral_candidate_ir",
+      "run_editorial_pipeline"
+    ],
+    "history": "Exact frozen M11G input replay and explicit accepted-reference replay preserve history; neither grants new trajectory eligibility.",
+    "rule": "Strict chronology plus independently accepted substantive comparability, exact episode/action evidence, behavioral dimension and comparison limits."
+  },
+  "domains_without_trajectories": [
+    "ENVIRONMENT_ENERGY",
+    "EDUCATION_WORKFORCE"
+  ],
+  "existing_trajectory_scan": [
+    {
+      "accepted_evidence": [
+        {
+          "actions": [
+            {
+              "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+              "accepted_exact_choice_position_effect": "opposes_exact_choice",
+              "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:1:182:m11d:v1",
+              "accepted_interpretation_record_subject_sha256": "955a02baa4ab7c3a4e8bdbb3bf1518634af3d279bb0bb033209ebb96f9b03a77",
+              "accepted_limitations": [
+                "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+              ],
+              "action_id": "house:119:1:182",
+              "action_role": "measure_choice",
+              "exact_action_identity": "119:hr:3944",
+              "official_action_date": "2025-06-25",
+              "source_references": [
+                "clerk:house:119:1:182",
+                "congress-actions:house:119:1:182",
+                "congress-text:119:hr:3944:eh"
+              ]
+            }
+          ],
+          "episode_id": "single-119-hr-3944-1-182",
+          "material_limitations": [
+            "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+            "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+          ],
+          "material_policy_differences": "Any topically related action uses a different measure, mechanism, target, package, or proposition unless separately reviewed.",
+          "policy_proposition": "Whether to pass H.R. 3944, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2026, and for other purposes.",
+          "record_subject_sha256": "9d0ed764e11f9bbe13c78ef804c1f241c20febcb4c93d5762bf2ac824198edf5"
+        },
+        {
+          "actions": [
+            {
+              "accepted_exact_action_meaning": "The House choice was whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+              "accepted_exact_choice_position_effect": "supports_exact_choice",
+              "accepted_interpretation_record_id": "action-interpretation-decision-implementation:house:119:2:175:m11d:v1",
+              "accepted_interpretation_record_subject_sha256": "36a0b4ce9063300645464596994cd235c158abcd8e7ca776f96c5c0dd6042805",
+              "accepted_limitations": [
+                "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package."
+              ],
+              "action_id": "house:119:2:175",
+              "action_role": "measure_choice",
+              "exact_action_identity": "119:hr:8469",
+              "official_action_date": "2026-05-15",
+              "source_references": [
+                "clerk:house:119:2:175",
+                "congress-actions:house:119:2:175",
+                "congress-text:119:hr:8469:eh"
+              ]
+            }
+          ],
+          "episode_id": "single-119-hr-8469-2-175",
+          "material_limitations": [
+            "This is a whole-package choice spanning multiple provisions. The candidate does not attribute the member's action to any individual component of the package.",
+            "This candidate establishes only episode organization and a direction derived from accepted exact-choice effects; it does not establish motive, ideology, a broader pattern, or synthesis."
+          ],
+          "material_policy_differences": "Any topically related action uses a different measure, mechanism, target, package, or proposition unless separately reviewed.",
+          "policy_proposition": "Whether to pass H.R. 8469, which would make appropriations for military construction, the Department of Veterans Affairs, and related agencies for the fiscal year ending September 30, 2027, and for other purposes.",
+          "record_subject_sha256": "c9f4270d224370ba3469bf629a8415ac049d791bbec31b6e84128d1a2809d0d5"
+        }
+      ],
+      "current_public_wording": "Opposed the FY2026 package and supported the FY2027 package.",
+      "domain": "NATIONAL_SECURITY_FOREIGN",
+      "evidence_actions": [
+        "house:119:1:182",
+        "house:119:2:175"
+      ],
+      "evidence_episodes": [
+        "single-119-hr-3944-1-182",
+        "single-119-hr-8469-2-175"
+      ],
+      "proposed_comparability_basis": null,
+      "proposition_id": "trajectory-milcon-va-appropriations-direction-change",
+      "reason": "Accepted meanings establish distinct whole-package choices. Accepted differences explicitly require separate review; no common operative choice or whole-package equivalence is established.",
+      "result": "FAIL_NEW_COMPARABILITY_CONTRACT"
+    },
+    {
+      "accepted_action_meanings": [
+        {
+          "action_id": "house:119:1:32",
+          "action_role": "amendment",
+          "implementation_record_content_subject_sha256": "9149bf04b80cd7930d235a72d0dcfef47c2bf7128395172fdd52876d789af325",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:32:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to amend H.R. 27 so its classwide fentanyl scheduling and related amendments would take effect only after the Health and Human Services Secretary and Attorney General jointly certified in the Federal Register that the Act would reduce overdose deaths.",
+          "implemented_exact_choice_position_effect": "supports_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-02-06",
+          "official_member_action": "yea",
+          "source_references": [
+            "clerk:119:1:32",
+            "record_hamdt5"
+          ]
+        },
+        {
+          "action_id": "house:119:1:33",
+          "action_role": "initial_passage",
+          "implementation_record_content_subject_sha256": "0b9f0ac2d888e24abb3d2e9df1f2ee418e10ae16c419607a81eb0e8187742e92",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:33:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass H.R. 27, placing fentanyl-related substances in schedule I as a class, applying specified trafficking penalties, and establishing registration pathways and procedures for research involving schedule I substances.",
+          "implemented_exact_choice_position_effect": "opposes_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-02-06",
+          "official_member_action": "nay",
+          "source_references": [
+            "clerk:119:1:33",
+            "congress_text:119:hr:27:eh"
+          ]
+        },
+        {
+          "action_id": "house:119:1:166",
+          "action_role": "later_version",
+          "implementation_record_content_subject_sha256": "318dcd449fd5035dd7fe21cb48813cc96e2f37045bb5112f4c1d49239c062b07",
+          "implementation_record_id": "action-interpretation-decision-implementation:house:119:1:166:v1",
+          "implemented_exact_action_meaning": "The House choice was whether to pass S. 331, permanently placing fentanyl-related substances in schedule I as a class and applying specified trafficking penalties. The bill also would establish alternative and expedited research-registration procedures, technical corrections, and implementing rules.",
+          "implemented_exact_choice_position_effect": "supports_exact_choice",
+          "interpretation_status": "internally_implemented",
+          "official_action_date": "2025-06-12",
+          "official_member_action": "yea",
+          "source_references": [
+            "clerk:119:1:166",
+            "congress_text:119:s:331:enr"
+          ]
+        }
+      ],
+      "current_public_wording": "Within one legislative episode, Foushee supported a certification amendment, opposed the earlier House bill, and supported a later related framework with permanent scheduling and research provisions. These three actions count as one episode and do not establish three independent positions or a change in motive or philosophy.",
+      "domain": "JUSTICE_PUBLIC_SAFETY",
+      "episode_content_sha256": "560b393de98bf0a0c6ec8888e587bf15d2c62e2b2cfb6b025629c9a6ec42a4bf",
+      "evidence_actions": [
+        "house:119:1:166",
+        "house:119:1:32",
+        "house:119:1:33"
+      ],
+      "evidence_episodes": [
+        "halt-fentanyl-legislative-path"
+      ],
+      "proposed_comparability_basis": null,
+      "proposition_id": "prop:53cda8d886a88f12",
+      "reason": "The accepted object is one mixed legislative episode, with an amendment and two whole frameworks. It explicitly disclaims a change in motive/philosophy. No separately accepted common decision comparison is bound; whether it should retain the trajectory type needs semantic review. No Justice remediation is applied or proposed here.",
+      "result": "NEEDS_HUMAN_SEMANTIC_REVIEW"
+    }
+  ],
+  "human_semantic_acceptance": "pending independent review",
+  "national_security_remediation_candidate": {
+    "independent_findings_changed": false,
+    "preserved_action_ids": [
+      "house:119:1:182",
+      "house:119:2:175"
+    ],
+    "preserved_episode_ids": [
+      "single-119-hr-3944-1-182",
+      "single-119-hr-8469-2-175"
+    ],
+    "proposed_operation": "remove from policy_trajectories without replacement",
+    "proposition_id": "trajectory-milcon-va-appropriations-direction-change",
+    "publication_replacement_required_after_acceptance": true
+  },
+  "production_selectable": false,
+  "production_writes_performed": false,
+  "publication_authorized": false,
+  "source_bindings": {
+    "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_justice_public_safety_119_v1/episode_implementation_bundle.json": "c75a42690f3c5527b8d6af96b2a64db407aa1c9a630f30e96d9b9ba3d4177b38",
+    "docs/editorial/full_record_reviews/policy_episode_implementations/f000477_national_security_foreign_119_v1/episode_decision_implementation_bundle.json": "541500610dd66e0b98167411afc6c9292ed23fd26e0285a89a6839fa8808d99e",
+    "docs/editorial/full_record_reviews/publication_preparations/f000477_justice_public_safety_119_v1/approved_public_presentation_projection.json": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+    "docs/editorial/full_record_reviews/publication_preparations/f000477_justice_public_safety_119_v1/public_review_state_projection.json": "eb3238d3ec639613ab072d2df52ce41311f200af63f63353fc89dfb8185bef7e",
+    "docs/editorial/full_record_reviews/site_integration_candidates/f000477_environment_energy_119_v1/site_integration_candidate.json": "7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53",
+    "docs/editorial/full_record_reviews/site_integration_candidates/f000477_national_security_foreign_119_v1/site_integration_candidate.json": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+    "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/site_integration_candidate.json": "76d06a43beb51c164a199c576c3d0aa539b6c05da2f8e4eff8fe54845547e4ec"
+  }
+}

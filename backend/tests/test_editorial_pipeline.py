@@ -41,7 +41,7 @@ def _cases() -> dict[str, dict]:
 class EditorialPipelineV1Tests(unittest.TestCase):
     def test_pipeline_invokes_pure_compiler_exactly_once(self) -> None:
         payload = project_compiler_input(
-            _cases()["semir-dev-01-economy-funding-stages"]
+            _cases()["semir-dev-08-environment-separate-family-episodes"]
         )
         with patch(
             "backend.app.semantic_ir.pipeline.compile_semantic_ir",

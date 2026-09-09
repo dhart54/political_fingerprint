@@ -3,6 +3,39 @@ import test from "node:test";
 
 import { buildPublicReceipt } from "./publicReceipt.mjs";
 
+test("explicit governed public copy is authoritative regardless of process words", () => {
+  for (const publicCopy of ["Official amendment text is incomplete.", "The reviewed candidate exception is absent from the available text."]) {
+    const projection = {
+      caveats: ["The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text."],
+      limitation_treatments: [{ source_text: "The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text.", treatment: "public", public_copy: publicCopy }],
+    };
+    assert.deepEqual(buildPublicReceipt({ governed_receipt_projection: projection }).limitations, [publicCopy]);
+  }
+});
+
+test("explicit internal and empty public lists never fall back to legacy copy", () => {
+  const row = { uncertainty_note: "Legacy caveat", governed_receipt_projection: {
+    caveats: ["Human-reviewed on 2026-08-04."],
+    limitation_treatments: [{ source_text: "Human-reviewed on 2026-08-04.", treatment: "internal", public_copy: "" }],
+  } };
+  assert.deepEqual(buildPublicReceipt(row).limitations, []);
+  row.governed_receipt_projection.public_caveats = [];
+  assert.deepEqual(buildPublicReceipt(row).limitations, []);
+});
+
+test("legacy limitations preserve substantive meaning and suppress only complete boilerplate", () => {
+  const caveats = ["The final vote does not identify which provision the member opposed.",
+    "The reviewed record does not establish which candidate restriction the member preferred.",
+    "Human-reviewed on 2026-08-04; official amendment text is incomplete."];
+  assert.deepEqual(buildPublicReceipt({ governed_receipt_projection: { caveats } }).limitations, caveats);
+});
+
+test("even explicit public copy cannot leak structural provenance", () => {
+  const public_caveats = ["See docs/semantic_ir/candidate.json and implementation_id M10R1.",
+    "a".repeat(64), "acceptance_receipt abc", "A substantive limit remains."];
+  assert.deepEqual(buildPublicReceipt({ governed_receipt_projection: { public_caveats } }).limitations, ["A substantive limit remains."]);
+});
+
 test("public receipt projection exposes voter content and excludes governance metadata", () => {
   const receipt = buildPublicReceipt({
     position: "nay",
@@ -50,6 +83,7 @@ test("public receipt projection exposes voter content and excludes governance me
     episodeRelationship: "This amendment was one step in the bill's legislative path.",
     limitations: [
       "The exception applies only to the listed institutions.",
+      "This receipt remains bounded to the reviewed benchmark sample.",
     ],
     voteSources: [{
       label: "Official vote",
@@ -120,7 +154,7 @@ test("generic episode process copy is omitted while substantive relationships re
   }).episodeRelationship, "This amendment preceded final passage of the same defense authorization bill.");
 });
 
-test("receipt caveats omit generic candidate language and structural internals", () => {
+test("mixed evidence caveats survive while structural internals remain hidden", () => {
   const receipt = buildPublicReceipt({
     governed_receipt_projection: {
       caveats: [
@@ -129,5 +163,14 @@ test("receipt caveats omit generic candidate language and structural internals",
       ],
     },
   });
-  assert.deepEqual(receipt.limitations, []);
+  assert.deepEqual(receipt.limitations, ["The reviewed interpretation remains a candidate because implementation depends on incomplete official amendment text."]);
+});
+
+
+test("pending Justice legacy suppression is exact and explicit treatment remains authoritative", () => {
+  const source = "This candidate does not establish motive, ideology, a broad issue position, or a synthesis conclusion.";
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {caveats: [source]}}).limitations, []);
+  const different = "This candidate is limited by incomplete reviewed evidence and cannot support a synthesis conclusion.";
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {caveats: [different]}}).limitations, [different]);
+  assert.deepEqual(buildPublicReceipt({governed_receipt_projection: {public_caveats: [source]}}).limitations, [source]);
 });

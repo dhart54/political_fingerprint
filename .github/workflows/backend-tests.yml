@@ -112,6 +112,14 @@ jobs:
           python scripts/run_editorial_pipeline.py validate --tier release \
             --include-frontend --include-persistence
 
+      - name: Validate M15B comparison semantics and governed limitation rendering
+        run: |
+          python scripts/build_m15b_review.py --check
+          python -m pytest -q backend/tests/test_m15b_interpretive_trust.py
+          cd frontend
+          node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs
+          npx playwright test tests/production-evidence-integration.spec.mjs --grep "expanded receipts"
+
   m14g-exact-head:
     runs-on: ubuntu-latest
     steps:

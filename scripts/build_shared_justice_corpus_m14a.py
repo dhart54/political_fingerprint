@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from backend.app.semantic_ir.pipeline import run_editorial_pipeline  # noqa: E402
+from backend.app.semantic_ir.pipeline import replay_frozen_full_record_input  # noqa: E402
 from backend.app.semantic_ir.shared_corpus import (  # noqa: E402
     adapt_to_semantic_ir_input,
     choice_effect,
@@ -298,12 +298,12 @@ def build() -> tuple[
     projection_digests_after = [
         projection["projection_sha256"] for projection in projections
     ]
-    foushee_result = run_editorial_pipeline(
+    foushee_result = replay_frozen_full_record_input(
         copy.deepcopy(foushee_input),
         prepare_persistence_proposal=False,
         public_presentation_authoring=None,
     ).compiled_ir
-    two_result = run_editorial_pipeline(
+    two_result = replay_frozen_full_record_input(
         copy.deepcopy(two_input),
         prepare_persistence_proposal=False,
         public_presentation_authoring=None,

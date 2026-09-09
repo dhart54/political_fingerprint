@@ -233,6 +233,7 @@ def validate_implementation(
     accepted_episode_authority: dict[str, Any] | None = None,
     accepted_episode_implementation: dict[str, Any] | None = None,
     accepted_action_interpretation_implementation: dict[str, Any] | None = None,
+    trusted_comparisons: dict[str, Any] | None = None,
 ) -> dict[str, int]:
     validate_authority(authority, candidate=candidate)
     verify_seal(
@@ -397,6 +398,17 @@ def validate_implementation(
                 "policy-episode action membership differs"
             )
         episode_action_owners.update(action_ids)
+    # Historical acceptance is immutable, but cannot grandfather a revised or new
+    # trajectory. Only the complete frozen M11G candidate receives replay treatment.
+    historical = digest({k:v for k,v in candidate.items() if k != 'candidate_subject_sha256'}) == '6e9a690c3df001c94a8760e06481348589f0db31093ea9a42b841d37c58c0602'
+    if not historical:
+        from ..semantic_ir.trajectory_comparability import validate_comparison, TrajectoryComparabilityError
+        for proposition in candidate_props:
+            if proposition['proposition_type'] == 'trajectory':
+                try:
+                    validate_comparison(proposition, episode_records, trusted_comparisons or {})
+                except TrajectoryComparabilityError as exc:
+                    raise BehavioralSemanticIRDecisionError(str(exc)) from exc
     if any(count != 1 for count in episode_action_owners.values()):
         raise BehavioralSemanticIRDecisionError(
             "policy-episode action assigned more than once"

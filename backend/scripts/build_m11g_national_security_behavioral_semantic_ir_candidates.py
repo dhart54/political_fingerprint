@@ -13,7 +13,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
-from backend.app.semantic_ir.compiler import compile_behavioral_candidate_ir  # noqa: E402
+from backend.app.semantic_ir.compiler import replay_m11g_historical_candidate  # noqa: E402
 from scripts.m11g_behavioral_semantic_ir_candidate_data import (  # noqa: E402
     CORRECTED_PROPOSITIONS,
 )
@@ -498,7 +498,7 @@ def dossier(graph: dict[str, Any], relationships: list[dict[str, Any]]) -> str:
 def build(check: bool = False) -> dict[str, Any]:
     implementation = preflight()
     compiler_input, relationships = build_input(implementation)
-    compiled = compile_behavioral_candidate_ir(compiler_input)
+    compiled = replay_m11g_historical_candidate(compiler_input)
     episode_evidence_ledger = [
         {
             "episode_id": episode["episode_id"],

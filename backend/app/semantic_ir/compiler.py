@@ -963,7 +963,20 @@ EPISODE_DIRECTION = {
 }
 
 
-def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
+def compile_behavioral_candidate_ir(payload: dict[str, Any], *, trusted_comparisons=None) -> dict[str, Any]:
+    return _compile_behavioral_candidate_ir(payload, trusted_comparisons=trusted_comparisons or {})
+
+
+def replay_m11g_historical_candidate(payload: dict[str, Any]) -> dict[str, Any]:
+    """Replay only the exact frozen input; never confer forward eligibility."""
+    from .trajectory_comparability import digest
+    if digest(payload) != "79e1cfbaef5822ce41cf95baec112679940ace582201f14ea596b5e4ccd14d2d":
+        raise SemanticCompilerInputError("historical M11G replay input differs")
+    return _compile_behavioral_candidate_ir(payload, historical_replay=True)
+
+
+def _compile_behavioral_candidate_ir(payload: dict[str, Any], *, trusted_comparisons=None,
+                                    historical_replay=False) -> dict[str, Any]:
     """Compile explicit, episode-first behavioral candidates without synthesis.
 
     This opt-in path is for pre-acceptance review packages.  It deliberately does
@@ -1167,6 +1180,12 @@ def compile_behavioral_candidate_ir(payload: dict[str, Any]) -> dict[str, Any]:
                 raise SemanticCompilerInputError(
                     "trajectory requires bounded substantive-change evidence"
                 )
+            if not historical_replay:
+                from .trajectory_comparability import validate_comparison, TrajectoryComparabilityError
+                try:
+                    validate_comparison(candidate, episodes, trusted_comparisons or {})
+                except TrajectoryComparabilityError as exc:
+                    raise SemanticCompilerInputError(str(exc)) from exc
         elif trajectory_change is not None:
             raise SemanticCompilerInputError(
                 "non-trajectory candidate cannot carry trajectory change evidence"

@@ -93,5 +93,15 @@ def overlay_reviewed_actions(response: dict[str, Any], reviewed_rows: list[dict[
         row.update(copy.deepcopy({key: value for key, value in projection.items() if key not in _RAW_FIELDS and key != "interpretation_review_state"}))
         row["canonical_action_id"] = identity
         row["raw_evidence"] = raw_evidence
+        receipt = row.get("governed_receipt_projection")
+        if receipt is not None and "limitation_treatments" in receipt:
+            from .limitation_treatment import public_caveats
+            try:
+                public_copy = public_caveats(receipt["limitation_treatments"], source_caveats=receipt.get("caveats", []))
+                if "public_caveats" in receipt and receipt["public_caveats"] != public_copy:
+                    raise ValueError("public caveats conflict with governed treatments")
+                receipt["public_caveats"] = public_copy
+            except ValueError as exc:
+                raise GovernedReceiptProjectionError(str(exc)) from exc
     result["review_accounting"] = review_accounting(rows)
     return result
