@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 
 import pytest
 
+from unittest.mock import Mock, MagicMock
+
 from app.editorial_presentations.compiler import canonical_digest as digest
 from app.editorial_presentations.publication_replacement_governance_v2 import (
     PROJECTION_SCHEMA_V2R, REPLACEMENT_AUTHORITY_SCHEMA_V2, REVIEWER_AUTHORITY_V2R,
@@ -10,6 +12,72 @@ from app.editorial_presentations.publication_replacement_governance_v2 import (
     PublicationReplacementGovernanceError, validate_execution,
 )
 from app.editorial_presentations.publication_replacement_store_v2r import prepare_write_set, publication_metadata
+
+
+@pytest.mark.parametrize('operation,flag,message', [
+    ('apply', None, 'explicit production replacement confirmation required'),
+    ('rollback', None, 'explicit production rollback confirmation required'),
+    ('apply', '--confirm-production-rollback', 'explicit production replacement confirmation required'),
+    ('rollback', '--confirm-production-replacement', 'explicit production rollback confirmation required'),
+])
+def test_operator_requires_operation_specific_production_confirmation(monkeypatch, capsys, operation, flag, message):
+    from scripts import publication_replacement_v2r as operator
+    connect, replace = Mock(), Mock()
+    monkeypatch.setattr(operator, '_connect', connect)
+    monkeypatch.setattr(operator, 'replace_publication', replace)
+    monkeypatch.delenv('V2R_OPERATOR_TEST_URL', raising=False)
+    args = [operation, '--target', 'production', '--database-url-env', 'V2R_OPERATOR_TEST_URL',
+            '--write-set', 'unused.json', '--authority', 'unused.json', '--runtime-evidence', 'unused.json',
+            '--production-preflight', 'unused.json', '--report-path', 'unused-report.json']
+    with pytest.raises(SystemExit) as error:
+        operator.main(args + ([flag] if flag else []))
+    assert error.value.code == 2
+    assert message in capsys.readouterr().err
+    connect.assert_not_called()
+    replace.assert_not_called()
+
+
+@pytest.mark.parametrize('target,operation,flag', [
+    ('production', 'preflight', None),
+    ('disposable', 'apply', None),
+    ('production', 'apply', '--confirm-production-replacement'),
+    ('production', 'rollback', '--confirm-production-rollback'),
+])
+def test_operator_confirmation_preserves_governed_dispatch(monkeypatch, tmp_path, target, operation, flag):
+    import json
+    from scripts import publication_replacement_v2r as operator
+    inputs = {name: {'input': name} for name in ('write-set', 'authority', 'runtime-evidence', 'production-preflight')}
+    args = [operation, '--target', target, '--database-url-env', 'V2R_OPERATOR_TEST_URL',
+            '--report-path', str(tmp_path/'report.json')]
+    for name, payload in inputs.items():
+        path = tmp_path/(name+'.json')
+        path.write_text(json.dumps(payload), encoding='utf-8')
+        # A production preflight does not need an authority or execution evidence.
+        if name == 'write-set' or operation != 'preflight':
+            args.extend(['--'+name, str(path)])
+    connection = MagicMock()
+    connect = Mock(return_value=connection)
+    conn = connection.__enter__.return_value
+    identity = Mock(return_value='f'*64)
+    replace = Mock(return_value={'status': 'GOVERNED_PATH_REACHED'})
+    preflight = Mock(return_value={'transaction_read_only': True})
+    monkeypatch.setenv('V2R_OPERATOR_TEST_URL', 'mock-only-not-a-database')
+    monkeypatch.setattr(operator, '_connect', connect)
+    monkeypatch.setattr(operator, 'target_identity', identity)
+    monkeypatch.setattr(operator, 'replace_publication', replace)
+    monkeypatch.setattr(operator, 'capture_preflight', preflight)
+    assert operator.main(args + ([flag] if flag else [])) == 0
+    identity.assert_called_once_with('mock-only-not-a-database', target)
+    connect.assert_called_once_with('mock-only-not-a-database', autocommit=False)
+    if operation == 'preflight':
+        conn.execute.assert_called_once_with('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        preflight.assert_called_once_with(conn, inputs['write-set'], production_target_identity_sha256='f'*64)
+        replace.assert_not_called()
+    else:
+        replace.assert_called_once_with(conn, inputs['write-set'], inputs['authority'],
+            runtime_evidence=inputs['runtime-evidence'], production_preflight=inputs['production-preflight'],
+            production_target_identity_sha256='f'*64, rollback=operation == 'rollback')
+        preflight.assert_not_called()
 
 
 def runtime():

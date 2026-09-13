@@ -21,7 +21,14 @@ def main(argv=None):
     parser.add_argument('--runtime-evidence', type=Path)
     parser.add_argument('--production-preflight', type=Path)
     parser.add_argument('--report-path', type=Path, required=True)
+    parser.add_argument('--confirm-production-replacement', action='store_true')
+    parser.add_argument('--confirm-production-rollback', action='store_true')
     args = parser.parse_args(argv)
+    if args.target == 'production':
+        if args.operation == 'apply' and not args.confirm_production_replacement:
+            parser.error('explicit production replacement confirmation required')
+        if args.operation == 'rollback' and not args.confirm_production_rollback:
+            parser.error('explicit production rollback confirmation required')
     if args.operation != 'preflight' and args.authority is None:
         parser.error('apply/rollback require the exact separately reviewed authority')
     if args.operation == 'apply' and (args.runtime_evidence is None or args.production_preflight is None):
