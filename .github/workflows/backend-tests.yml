@@ -120,6 +120,13 @@ jobs:
           node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs
           npx playwright test tests/production-evidence-integration.spec.mjs --grep "expanded receipts"
 
+      - name: Prove reusable V2R exact-key replacement and offline M15B readiness
+        run: |
+          python scripts/prepare_m15b_replacement_artifacts.py --check
+          python -m pytest -q \
+            backend/tests/test_reusable_publication_replacement_v2r.py \
+            backend/tests/test_reusable_publication_replacement_v2r_postgres.py -rs
+
   m14g-exact-head:
     runs-on: ubuntu-latest
     steps:

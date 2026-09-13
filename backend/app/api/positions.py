@@ -180,7 +180,7 @@ def get_legislator_positions(
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
-    if profile is None or str(profile["bioguide_id"]) != "F000477":
+    if profile is None or not any(entry["member_id"] == str(profile["bioguide_id"]) for entry in public_review_state_entries()):
         return response
 
     publication_rows = _load_publication_rows()
@@ -216,7 +216,9 @@ def get_legislator_position_evidence(
     profile = get_legislator_profile(legislator_id=legislator_id)
     return _compose_position_evidence(
         legislator_id, domain, normalized_scope, candidate, profile,
-        _load_publication_rows() if profile and str(profile["bioguide_id"]) == "F000477" else [],
+        _load_publication_rows() if profile and any(
+            entry["member_id"] == str(profile["bioguide_id"]) for entry in public_review_state_entries()
+        ) else [],
     )
 
 
@@ -293,7 +295,7 @@ def _compose_position_evidence(
     if (
         site_candidate is not None
         and profile is not None
-        and str(profile["bioguide_id"]) == "F000477"
+        and str(profile["bioguide_id"]) == site_candidate["subject"]["member_bioguide_id"]
     ):
         if normalized_scope in {"119", "all"}:
             subject = site_candidate["subject"]

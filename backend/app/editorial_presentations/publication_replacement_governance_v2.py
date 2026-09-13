@@ -62,6 +62,156 @@ POSITIVE_AUTHORIZATIONS_V2R = {
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 
+# The existing issue_public_presentation artifact type carries a reviewed public
+# projection. This is a transport contract, not a new semantic compiler/type tree.
+PROJECTION_SCHEMA_V2R = "editorial_site_integration_publication_v2r"
+SUPPORTED_REPLACEMENT_ISSUES = {
+    "NATIONAL_SECURITY_FOREIGN", "JUSTICE_PUBLIC_SAFETY",
+    "ENVIRONMENT_ENERGY", "EDUCATION_WORKFORCE",
+}
+PERSISTED_CAPS = {**EXACT_CAPS, "insert_batches": 0, "insert_artifacts": 0,
+                  "insert_relationships": 0}
+
+
+def validate_projection(payload: dict[str, Any]) -> None:
+    if set(payload) != {"schema_version", "artifact_id", "subject"} or payload.get("schema_version") != PROJECTION_SCHEMA_V2R:
+        _fail("replacement projection envelope differs")
+    s = payload["subject"]
+    if set(s) != {"member_bioguide_id", "member_slug", "issue_id", "congress", "presentations", "receipt_projections"}:
+        _fail("replacement projection fields differ")
+    if (not s["member_bioguide_id"] or not s["member_slug"] or s["issue_id"] not in SUPPORTED_REPLACEMENT_ISSUES
+            or not isinstance(s["congress"], int) or s["congress"] < 1
+            or set(s["presentations"]) != {str(s["congress"]), "all"}):
+        _fail("replacement projection identity/scope differs")
+    for scope, presentation in s["presentations"].items():
+        if (presentation.get("issue_id") != s["issue_id"] or presentation.get("requested_scope") != scope
+                or presentation.get("tier") not in {"reviewed_conclusion", "reviewed_pattern", "reviewed_receipts"}
+                or presentation.get("review_state", {}).get("candidate_preview")
+                or not isinstance(presentation.get("limitations"), list)):
+            _fail("replacement public projection is not eligible")
+    from .reviewed_record import canonical_action_id
+    from .limitation_treatment import public_caveats
+    ids = []
+    for row in s["receipt_projections"]:
+        action = canonical_action_id(row)
+        receipt = row.get("governed_receipt_projection")
+        if row.get("position") not in {"yea", "nay", "present", "not_voting"}:
+            _fail("replacement receipt lacks resolved member action")
+        if (action and receipt is None and row.get("governed_receipt_control", {}).get("status") == "noncounting_control"
+                and row["governed_receipt_control"].get("boundary_type") and row["governed_receipt_control"].get("detail")):
+            ids.append(action)
+            continue
+        if not action or not isinstance(receipt, dict) or not receipt.get("exact_action_meaning"):
+            _fail("replacement receipt lacks exact meaning/identity")
+        if (receipt.get("canonical_action_id") != action
+                or str(receipt.get("member_action", "")).lower().replace(" ", "_") != row["position"]):
+            _fail("replacement receipt conflicts with bound action")
+        ids.append(action)
+        if "limitation_treatments" in receipt:
+            projected = public_caveats(receipt["limitation_treatments"], source_caveats=receipt.get("caveats"))
+            if "public_caveats" in receipt and receipt["public_caveats"] != projected:
+                _fail("replacement public caveats conflict")
+    if not ids or len(ids) != len(set(ids)):
+        _fail("replacement receipt coverage is empty/duplicated")
+
+
+def artifact_identity(artifact: dict[str, Any]) -> dict[str, Any]:
+    return {k: artifact[k] for k in ("artifact_id", "natural_key", "artifact_version", "content_sha256")}
+
+
+def validate_persisted_write_set(write_set: dict[str, Any]) -> None:
+    if (set(write_set) != {"schema_version", "artifact_id", "immutable", "subject", "write_set_subject_sha256"}
+            or write_set["schema_version"] != REPLACEMENT_WRITE_SET_SCHEMA_V2 or write_set["immutable"] is not True):
+        _fail("V2R write-set envelope differs")
+    s = write_set["subject"]
+    if set(s) != {"replacement_mode", "registry_key", "expected_old", "proposed_new", "replacement_authority_binding",
+                   "production_target_identity_sha256", "stable_production_baseline", "publication_registry_update",
+                   "mutation_caps", "rollback_target", "public_runtime_manifest_binding"}:
+        _fail("persisted replacement write-set fields differ")
+    key = s["registry_key"]
+    if (set(key) != {"member_bioguide_id", "issue_id"} or not key["member_bioguide_id"]
+            or key["issue_id"] not in SUPPORTED_REPLACEMENT_ISSUES):
+        _fail("explicit replacement registry key required")
+    for identity in (s["expected_old"], s["proposed_new"]):
+        if (set(identity) != {"artifact_id", "natural_key", "artifact_version", "content_sha256"}
+                or not isinstance(identity["artifact_id"], int) or identity["artifact_id"] <= 0
+                or not identity["natural_key"] or not isinstance(identity["artifact_version"], int) or identity["artifact_version"] < 1):
+            _fail("exact persisted artifact identity required")
+        _digest(identity["content_sha256"], "artifact content")
+    if s["expected_old"]["artifact_id"] == s["proposed_new"]["artifact_id"] or s["rollback_target"] != s["expected_old"]:
+        _fail("replacement/rollback identities differ")
+    binding = s["replacement_authority_binding"]
+    if set(binding) != {"artifact_id", "subject_sha256"} or not binding["artifact_id"]:
+        _fail("semantic authority identity required")
+    _digest(binding["subject_sha256"], "semantic authority")
+    _digest(s["production_target_identity_sha256"], "production target")
+    prior = s["stable_production_baseline"]["prior_registry_row"]
+    if s["stable_production_baseline"] != {
+        "prior_registry_row": prior, "expected_old": s["expected_old"], "proposed_new": s["proposed_new"],
+        "production_target_identity_sha256": s["production_target_identity_sha256"],
+    }:
+        _fail("stable baseline differs from bound replacement")
+    if (any(prior.get(k) != v for k, v in key.items()) or prior.get("artifact_id") != s["expected_old"]["artifact_id"]
+            or prior.get("publicly_active") is not True or prior.get("deactivated_at") is not None):
+        _fail("exact prior registry identity differs")
+    u = s["publication_registry_update"]
+    if (set(u) != {"primary_key", "prior_row", "require_rowcount", "insert_allowed", "delete_allowed", "publication_metadata_jsonb"}
+            or u["primary_key"] != key or u["prior_row"] != prior or u["require_rowcount"] != 1
+            or u["insert_allowed"] is not False or u["delete_allowed"] is not False or s["mutation_caps"] != PERSISTED_CAPS):
+        _fail("one exact registry UPDATE required")
+    metadata = u["publication_metadata_jsonb"]
+    if set(metadata) != {"presentation_natural_key", "presentation_artifact_version", "active_artifact_sha256",
+            "source_manifest_natural_key", "source_manifest_artifact_version", "source_manifest_content_sha256",
+            "validation_natural_key", "validation_artifact_version", "validation_content_sha256",
+            "relationship_metadata", "v2r_write_set_subject_sha256"}:
+        _fail("replacement metadata graph fields differ")
+    for prefix in ("validation", "source_manifest"):
+        if (not isinstance(metadata[f"{prefix}_natural_key"], str) or not metadata[f"{prefix}_natural_key"]
+                or type(metadata[f"{prefix}_artifact_version"]) is not int or metadata[f"{prefix}_artifact_version"] < 1):
+            _fail("exact provenance identity required")
+    if not isinstance(metadata["relationship_metadata"], dict) or not metadata["relationship_metadata"]:
+        _fail("exact relationship metadata required")
+    new = s["proposed_new"]
+    if (metadata.get("presentation_natural_key") != new["natural_key"]
+            or metadata.get("presentation_artifact_version") != new["artifact_version"]
+            or metadata.get("active_artifact_sha256") != new["content_sha256"]):
+        _fail("proposed registry artifact differs")
+    for field in ("source_manifest_content_sha256", "validation_content_sha256"):
+        _digest(metadata.get(field), field)
+    for field in ("backend_submanifest_sha256", "frontend_submanifest_sha256"):
+        _digest(s["public_runtime_manifest_binding"].get(field), field)
+    if (metadata.get("v2r_write_set_subject_sha256") != write_set["write_set_subject_sha256"]
+            or write_set["write_set_subject_sha256"] != replacement_write_set_subject_sha256(write_set)):
+        _fail("V2R write-set subject digest mismatch")
+
+
+def validate_persisted_authority(authority, *, write_set, candidate):
+    validate_persisted_write_set(write_set)
+    validate_projection(candidate)
+    s = write_set["subject"]
+    subject = authority.get("subject", {})
+    keys = {"schema_version", "artifact_id", "immutable", "sealed", "accepted", "subject", "activation_authority_subject_sha256"}
+    if (set(authority) not in (keys, keys | {"test_only_synthetic"})
+            or ("test_only_synthetic" in authority and authority["test_only_synthetic"] is not True)
+            or authority.get("schema_version") != REPLACEMENT_AUTHORITY_SCHEMA_V2 or authority.get("sealed") is not True
+            or authority.get("accepted") is not True or authority.get("immutable") is not True
+            or not authority.get("artifact_id") or not subject.get("reviewer")):
+        _fail("sealed human replacement authority required")
+    _utc(subject.get("decision_recorded_at_utc"), "decision timestamp")
+    expected = {
+        "decision": "approve_exact_publication_replacement_v2", "reviewer": subject.get("reviewer"),
+        "reviewer_authority": REVIEWER_AUTHORITY_V2R, "decision_recorded_at_utc": subject.get("decision_recorded_at_utc"),
+        "registry_key": s["registry_key"], "expected_old": s["expected_old"], "proposed_new": s["proposed_new"],
+        "semantic_authority_binding": s["replacement_authority_binding"], "rollback_target": s["rollback_target"],
+        "production_target_identity_sha256": s["production_target_identity_sha256"],
+        "exact_write_set_subject_sha256": write_set["write_set_subject_sha256"], "authorizations": POSITIVE_AUTHORIZATIONS_V2R,
+    }
+    if (subject != expected or authority.get("activation_authority_subject_sha256") != canonical_digest(subject)
+            or canonical_digest(candidate) != s["proposed_new"]["content_sha256"]
+            or candidate["artifact_id"] != s["proposed_new"]["natural_key"]
+            or any(candidate["subject"].get(k) != v for k, v in s["registry_key"].items())):
+        _fail("authority binds a different replacement")
+
 
 class PublicationReplacementGovernanceError(ValueError):
     pass
@@ -109,6 +259,8 @@ def replacement_write_set_subject_sha256(write_set: dict[str, Any]) -> str:
 
 
 def validate_write_set(write_set: dict[str, Any]) -> None:
+    if write_set.get("subject", {}).get("replacement_mode") == "persisted_artifact":
+        return validate_persisted_write_set(write_set)
     if (
         set(write_set) != {
             "schema_version", "artifact_id", "immutable", "subject",
@@ -232,6 +384,8 @@ def validate_positive_authority(
     authority: dict[str, Any], *, write_set: dict[str, Any], candidate: dict[str, Any]
 ) -> None:
     validate_write_set(write_set)
+    if write_set["subject"].get("replacement_mode") == "persisted_artifact":
+        return validate_persisted_authority(authority, write_set=write_set, candidate=candidate)
     presentation = next(
         item
         for item in write_set["subject"]["artifacts"]
