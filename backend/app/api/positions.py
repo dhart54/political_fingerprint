@@ -180,16 +180,10 @@ def get_legislator_positions(
     if response is None:
         raise HTTPException(status_code=404, detail="Legislator not found")
     profile = get_legislator_profile(legislator_id=legislator_id)
-    if profile is None:
+    if profile is None or not any(entry["member_id"] == str(profile["bioguide_id"]) for entry in public_review_state_entries()):
         return response
 
     publication_rows = _load_publication_rows()
-    member_id = str(profile["bioguide_id"])
-    if member_id != "F000477" and not any(
-        _active_site_integration_publication(member_bioguide_id=member_id, issue_id=row["domain"], publication_rows=publication_rows)
-        for row in response["positions"]
-    ):
-        return response
     for row in response["positions"]:
         issue_id = row["domain"]
         if issue_id not in {"JUSTICE_PUBLIC_SAFETY", "NATIONAL_SECURITY_FOREIGN", "ENVIRONMENT_ENERGY", "EDUCATION_WORKFORCE"}:
@@ -222,7 +216,9 @@ def get_legislator_position_evidence(
     profile = get_legislator_profile(legislator_id=legislator_id)
     return _compose_position_evidence(
         legislator_id, domain, normalized_scope, candidate, profile,
-        _load_publication_rows() if profile else [],
+        _load_publication_rows() if profile and any(
+            entry["member_id"] == str(profile["bioguide_id"]) for entry in public_review_state_entries()
+        ) else [],
     )
 
 
