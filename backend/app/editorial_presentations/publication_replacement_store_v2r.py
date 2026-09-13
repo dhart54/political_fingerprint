@@ -91,10 +91,11 @@ def validate_eligible_graph(conn, artifact, metadata, *, lock=False):
                 or child["content_sha256"] != canonical_digest(child["payload_jsonb"])):
             _fail("replacement provenance identity differs")
         payload = child["payload_jsonb"]
-        if prefix == "validation" and (payload.get("status") != "PASS" or payload.get("blockers") != []
+        if prefix == "validation" and (payload.get("successful") is not True or payload.get("current") is not True
+                or payload.get("blocking_findings") != 0
                 or payload.get("presentation_content_sha256") != artifact["content_sha256"]):
             _fail("replacement validation failed or blocks publication")
-        if prefix == "source_manifest" and (not payload.get("source_artifacts")
+        if prefix == "source_manifest" and (not payload.get("source_artifacts") or payload.get("complete_required_sources") is not True
                 or payload.get("presentation_content_sha256") != artifact["content_sha256"]
                 or artifact["source_manifest_sha256"] != child["content_sha256"]):
             _fail("replacement source manifest differs")

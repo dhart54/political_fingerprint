@@ -103,12 +103,12 @@ def build():
             'member_bioguide_id':'F000477','member_slug':'leg_valerie_p_foushee','issue_id':issue,'congress':119,
             'presentations':projections[issue],'receipt_projections':receipts[issue]}}
         validate_projection(payload)
-        source = {'schema_version':'editorial_publication_source_manifest_v1',
+        source = {'schema_version':'editorial_publication_source_manifest_v1','complete_required_sources':True,
             'source_artifacts':[{'artifact_id':prior['artifact_id'],'natural_key':prior['presentation_natural_key'],
                 'artifact_version':prior['artifact_version'],'content_sha256':prior['content_sha256']}],
             'semantic_authority_binding':{'artifact_id':authority['artifact_id'],'subject_sha256':authority['subject_sha256']},
             'presentation_content_sha256':digest(payload)}
-        validation = {'schema_version':'editorial_publication_validation_v1','status':'PASS','blockers':[],
+        validation = {'schema_version':'editorial_publication_validation_v1','successful':True,'current':True,'blocking_findings':0,
                       'presentation_content_sha256':digest(payload)}
         products[issue]={'registry_key':{'member_bioguide_id':'F000477','issue_id':issue},
             'expected_old':{'artifact_id':prior['artifact_id'],'natural_key':prior['presentation_natural_key'],

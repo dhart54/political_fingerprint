@@ -60,9 +60,9 @@ def stage_synthetic(conn, issue, presentation):
     for p in payload['subject']['presentations'].values():
         p['teaser']='Synthetic replacement display.'
     content=digest(payload)
-    source={'schema_version':'editorial_publication_source_manifest_v1','source_artifacts':[artifact_identity(old)],
+    source={'schema_version':'editorial_publication_source_manifest_v1','complete_required_sources':True,'source_artifacts':[artifact_identity(old)],
             'presentation_content_sha256':content}
-    validation={'schema_version':'editorial_publication_validation_v1','status':'PASS','blockers':[],
+    validation={'schema_version':'editorial_publication_validation_v1','successful':True,'current':True,'blocking_findings':0,
                 'presentation_content_sha256':content}
     batch=conn.execute("""INSERT INTO editorial_artifact_batches
         (deterministic_batch_key,source_commit_sha,manifest_sha256,status,artifact_count,relationship_count,applied_at)
@@ -121,16 +121,16 @@ def test_four_domain_sequential_exact_replacements_and_owned_lifecycle(monkeypat
             other=next(item for item in operations if item[0]['subject']['registry_key']!=ws['subject']['registry_key'])
             with pytest.raises(PublicationReplacementGovernanceError):
                 replace_publication(conn,other[0],authority,**kwargs)
-            # Pointer drift and revoked eligibility fail before any registry write.
+            # Pointer and provenance drift fail before any registry write.
             with conn.transaction(force_rollback=True):
                 conn.execute('UPDATE editorial_publication_registry SET artifact_id=%s WHERE member_bioguide_id=%s AND issue_id=%s',
                     (ws['subject']['proposed_new']['artifact_id'],'F000477',ws['subject']['registry_key']['issue_id']))
                 with pytest.raises(PublicationReplacementGovernanceError):
                     replace_publication(conn,ws,authority,**kwargs)
             with conn.transaction(force_rollback=True):
-                conn.execute('UPDATE editorial_artifact_versions SET production_eligible=FALSE WHERE artifact_id=%s',
+                conn.execute("UPDATE editorial_artifact_relationships SET metadata_jsonb='{}'::jsonb WHERE parent_artifact_id=%s",
                     (ws['subject']['proposed_new']['artifact_id'],))
-                with pytest.raises(PublicationReplacementGovernanceError,match='eligible'):
+                with pytest.raises(PublicationReplacementGovernanceError,match='provenance'):
                     replace_publication(conn,ws,authority,**kwargs)
             with pytest.raises(RuntimeError,match='injected'):
                 with conn.transaction():
@@ -167,5 +167,11 @@ def test_four_domain_sequential_exact_replacements_and_owned_lifecycle(monkeypat
         assert protected_state(conn)==staged_protected
         assert before=={scope:public(conn,scope) for scope in before}
         for _,_,_,batch in operations:
+            # Fixture cleanup uses the existing exact-batch rollback guard only
+            # after proving activation/rollback left every artifact unchanged.
+            key=conn.execute('SELECT deterministic_batch_key FROM editorial_artifact_batches WHERE batch_id=%s',(batch,)).fetchone()['deterministic_batch_key']
+            conn.execute("SELECT set_config('app.editorial_artifact_rollback_batch',%s,TRUE)",(key,))
+            conn.execute('DELETE FROM editorial_artifact_relationships WHERE parent_artifact_id IN (SELECT artifact_id FROM editorial_artifact_versions WHERE batch_id=%s)',(batch,))
+            conn.execute('DELETE FROM editorial_artifact_versions WHERE batch_id=%s',(batch,))
             conn.execute('DELETE FROM editorial_artifact_batches WHERE batch_id=%s',(batch,))
         rollback_m14h(conn,m14ws,m14authority,allow_test_authority=True)

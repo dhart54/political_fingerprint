@@ -24,9 +24,10 @@
         ],
         "source_manifest": {
           "artifact_version": 1,
-          "content_sha256": "c5bd83ba72a02ac5864d22435ee5f1657bc1b0e186bface1433a07249352b6d1",
+          "content_sha256": "4d3c4de78d18368e09d7a1c43bc5c54c299a3b65768980661bc58ee28ba16211",
           "natural_key": "public-issue-presentation:f000477:justice_public_safety:m15b:v1:source",
           "payload": {
+            "complete_required_sources": true,
             "presentation_content_sha256": "01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b",
             "schema_version": "editorial_publication_source_manifest_v1",
             "semantic_authority_binding": {
@@ -45,13 +46,14 @@
         },
         "validation": {
           "artifact_version": 1,
-          "content_sha256": "8b5ce78f440484e458ae0c823a030c4d439050a973aafbf879094d2067eb45ca",
+          "content_sha256": "347dfc5584110d985465346a7f9c857c19ae2261fa70e5bd12cc2be89ea296d1",
           "natural_key": "public-issue-presentation:f000477:justice_public_safety:m15b:v1:validation",
           "payload": {
-            "blockers": [],
+            "blocking_findings": 0,
+            "current": true,
             "presentation_content_sha256": "01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b",
             "schema_version": "editorial_publication_validation_v1",
-            "status": "PASS"
+            "successful": true
           }
         }
       },
@@ -8594,9 +8596,10 @@
         ],
         "source_manifest": {
           "artifact_version": 1,
-          "content_sha256": "fd10eeafee252d53aa9010de5137c4b270f80c835e68bb448e17ac2dc4fd03c1",
+          "content_sha256": "a51395756dbc9f5d69aa9469dca256e0ec459267c9d1052917f336782a1e679f",
           "natural_key": "public-issue-presentation:f000477:national_security_foreign:m15b:v1:source",
           "payload": {
+            "complete_required_sources": true,
             "presentation_content_sha256": "c675731a2602829f2c1d325673c50099cb3ef458d2ae0bf07b10237019858f29",
             "schema_version": "editorial_publication_source_manifest_v1",
             "semantic_authority_binding": {
@@ -8615,13 +8618,14 @@
         },
         "validation": {
           "artifact_version": 1,
-          "content_sha256": "ca0720a773215725d17d4aa3b13940ffcc2918772172b863fd0b396e5c2fd046",
+          "content_sha256": "87d07597c24f78ebf7f3a964fbee847e9672451dcc5ee3250f469b3cad1b244d",
           "natural_key": "public-issue-presentation:f000477:national_security_foreign:m15b:v1:validation",
           "payload": {
-            "blockers": [],
+            "blocking_findings": 0,
+            "current": true,
             "presentation_content_sha256": "c675731a2602829f2c1d325673c50099cb3ef458d2ae0bf07b10237019858f29",
             "schema_version": "editorial_publication_validation_v1",
-            "status": "PASS"
+            "successful": true
           }
         }
       },
