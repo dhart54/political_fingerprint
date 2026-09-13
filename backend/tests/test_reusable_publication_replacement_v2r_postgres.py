@@ -19,7 +19,7 @@ from scripts.editorial_artifact_store import _connect
 from scripts.foushee_education_workforce_m14h_replacement import (
     apply_replacement as apply_m14h, rollback_replacement as rollback_m14h,
 )
-from test_m14h_education_publication_replacement_postgres import _prepare_old_education, _package
+from test_m14h_education_publication_replacement_postgres import _package
 from test_reusable_publication_replacement_v2r import sample
 
 DATABASE_URL=os.getenv('M14H_DISPOSABLE_DATABASE_URL')
@@ -91,7 +91,10 @@ def stage_synthetic(conn, issue, presentation):
 def test_four_domain_sequential_exact_replacements_and_owned_lifecycle(monkeypatch):
     runtime_adapter.install_publication_replacement_runtime_v2r()
     with _connect(DATABASE_URL,autocommit=False) as conn:
-        _prepare_old_education(conn)
+        # The existing M14H lane has already prepared and rolled back to its
+        # four-domain baseline. Do not rerun insert-only historical seed stages.
+        assert {r['row']['issue_id'] for r in all_registry(conn)} == {
+            'NATIONAL_SECURITY_FOREIGN','JUSTICE_PUBLIC_SAFETY','ENVIRONMENT_ENERGY','EDUCATION_WORKFORCE'}
         _,_,m14ws,m14authority=_package(conn)
         apply_m14h(conn,m14ws,m14authority,allow_test_authority=True)
         before={scope:public(conn,scope) for scope in ('119','all')}

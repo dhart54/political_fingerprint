@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from .compiler import canonical_digest
 from .publication_replacement_governance_v2 import (
     PERSISTED_CAPS, REPLACEMENT_PREFLIGHT_SCHEMA_V2, artifact_identity,
-    validate_positive_authority, validate_execution, _fail,
+    validate_positive_authority, validate_execution, validate_projection, _fail,
     REPLACEMENT_WRITE_SET_SCHEMA_V2, replacement_write_set_subject_sha256, validate_write_set,
 )
 
@@ -65,8 +65,11 @@ def bound_artifact(conn, identity, key, *, lock=False):
 
 
 def validate_eligible_graph(conn, artifact, metadata, *, lock=False):
+    validate_projection(artifact["payload_jsonb"])
     if (artifact["artifact_type"] != "issue_public_presentation" or artifact["editorial_status"] != "human_approved"
-            or artifact["benchmark_status"] != "gold_benchmark" or artifact["production_eligible"] is not True):
+            or artifact["benchmark_status"] != "gold_benchmark" or artifact["production_eligible"] is not True
+            or artifact["schema_version"] != artifact["payload_jsonb"]["schema_version"]
+            or artifact["congress"] != artifact["payload_jsonb"]["subject"]["congress"]):
         _fail("replacement artifact is not publication eligible")
     for role, kind, prefix in (("has_validation", "standardization_validation_result", "validation"),
                                ("uses_source_manifest", "source_manifest", "source_manifest")):
@@ -131,6 +134,8 @@ def capture_preflight(conn, write_set, *, production_target_identity_sha256, req
         "expected_old": artifact_identity(old), "proposed_new": artifact_identity(new),
         "production_target_identity_sha256": production_target_identity_sha256,
     }
+    if baseline != s["stable_production_baseline"]:
+        _fail("prior registry or persisted graph drifted")
     evidence = {**baseline, "schema_version": REPLACEMENT_PREFLIGHT_SCHEMA_V2,
                 "captured_at_utc": datetime.now(timezone.utc).isoformat(), "transaction_read_only": read_only}
     evidence["preflight_subject_sha256"] = canonical_digest(evidence)
