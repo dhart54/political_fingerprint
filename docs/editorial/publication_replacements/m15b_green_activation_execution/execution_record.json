@@ -1,0 +1,157 @@
+{
+  "PR190_draft_unmerged": true,
+  "activation_execution_head": "9fc3561c39b971504b5fc54a4e25b8b1698e1ae7",
+  "actual_production_mutations": {
+    "all_17_sequences": "unchanged",
+    "all_other_27_public_tables": "byte-canonical table fingerprints unchanged",
+    "artifacts_248_through_253": "exact and unchanged; eligible provenance graphs verified",
+    "editorial_publication_registry": {
+      "deletes": 0,
+      "inserts": 0,
+      "keys": [
+        {
+          "issue_id": "NATIONAL_SECURITY_FOREIGN",
+          "member_bioguide_id": "F000477"
+        },
+        {
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "member_bioguide_id": "F000477"
+        }
+      ],
+      "updates": 2
+    },
+    "schema": "unchanged"
+  },
+  "anomalies": [
+    {
+      "detail": "Initial technical evidence refresh timed out at Render health before any write; one identical read-only retry succeeded.",
+      "kind": "resolved_runtime_read_timeout"
+    },
+    {
+      "detail": "First audit used legislators.name instead of name_display; the read-only helper was corrected and complete pre-activation audit passed.",
+      "kind": "resolved_local_audit_column_error"
+    },
+    {
+      "detail": "Local filename operator.py shadowed Python standard library operator. Imports failed before loading the V2R operator or opening a database connection. Renaming the local launcher allowed the single NS apply.",
+      "kind": "resolved_local_launcher_import_error"
+    },
+    {
+      "detail": "Initial local mocked test run passed35 with4 Windows temp-directory setup errors. Fresh local basetemp and disabled cache resolved this; all39 tests passed without production access.",
+      "kind": "resolved_local_test_temporary_directory_permissions"
+    }
+  ],
+  "applied_in_order": [
+    {
+      "authority_subject_sha256": "1db6d83549f7fd62e7aeb7ab3507e3a6b0e9d483fd1103acfa38991b8ff2d018",
+      "exact_owned_rollback_available": true,
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "new_artifact_id": 248,
+      "old_artifact_id": 227,
+      "postcheck_phase": "after-ns",
+      "preflight_subject_sha256": "f78efbfd2cb5dadc4f4fc9bff03b0222c50e411eda8dcb0eeba618be63920b5d",
+      "production_confirmation_flag": "--confirm-production-replacement",
+      "receipt": {
+        "mutation_counts": {
+          "deletes_during_activation": 0,
+          "insert_artifacts": 0,
+          "insert_batches": 0,
+          "insert_registry_rows": 0,
+          "insert_relationships": 0,
+          "other_updates": 0,
+          "unauthorized_table_writes": 0,
+          "update_registry_rows": 1
+        },
+        "status": "APPLIED"
+      },
+      "receipt_sha256": "3739733d08a9a27f88637b93a9f34b087c07c650faa476466837d52dc717041a",
+      "rollback_target": {
+        "artifact_id": 227,
+        "artifact_version": 1,
+        "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+        "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1"
+      },
+      "write_set_subject_sha256": "703a9c49ab12f64ec05480225b1d79dd28c74f18bae7f0d7f5425c80a4d4e768"
+    },
+    {
+      "authority_subject_sha256": "6e3bdf133c0a8da7cd555bfee5f268899714433138e25df3e362f8b6619bda82",
+      "exact_owned_rollback_available": true,
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "new_artifact_id": 251,
+      "old_artifact_id": 221,
+      "postcheck_phase": "after-justice",
+      "preflight_subject_sha256": "eb9d6c83ea53295dd6661d183a97e0385deaa0d5fd04c705a81d1b51ed87d853",
+      "production_confirmation_flag": "--confirm-production-replacement",
+      "receipt": {
+        "mutation_counts": {
+          "deletes_during_activation": 0,
+          "insert_artifacts": 0,
+          "insert_batches": 0,
+          "insert_registry_rows": 0,
+          "insert_relationships": 0,
+          "other_updates": 0,
+          "unauthorized_table_writes": 0,
+          "update_registry_rows": 1
+        },
+        "status": "APPLIED"
+      },
+      "receipt_sha256": "3739733d08a9a27f88637b93a9f34b087c07c650faa476466837d52dc717041a",
+      "rollback_target": {
+        "artifact_id": 221,
+        "artifact_version": 1,
+        "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+        "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"
+      },
+      "write_set_subject_sha256": "73362a184e333b6db031b6d9fe1924641d021c1f155e0d2f3092e706ffe28d31"
+    }
+  ],
+  "blue_accessed_or_modified": false,
+  "deployed_backend_frontend_source": "f790163f90b8a71fae2bee3206f73953364f1e72",
+  "final_database_bytes": 231779475,
+  "final_roots": {
+    "EDUCATION_WORKFORCE": 245,
+    "ENVIRONMENT_ENERGY": 239,
+    "JUSTICE_PUBLIC_SAFETY": 251,
+    "NATIONAL_SECURITY_FOREIGN": 248
+  },
+  "full_public_validation": {
+    "direct_equals_live_each_phase": true,
+    "exact_expected_after_state": true,
+    "families": [
+      "positions",
+      "editorial-presentations",
+      "fingerprint",
+      "eight-domain evidence"
+    ],
+    "members": [
+      "leg_valerie_p_foushee",
+      "leg_thomas_massie",
+      "leg_angela_d_alsobrooks"
+    ],
+    "responses_per_phase": 99,
+    "result": "PASS",
+    "reviewed_and_unreviewed_ledger_and_discovery_detail_reconciled": true,
+    "scopes": [
+      "118",
+      "119",
+      "all"
+    ]
+  },
+  "green_project": "yalpfkaxkxebwolhorha",
+  "local_validation": {
+    "existing_mocked_V2R_and_M15B_regressions": {
+      "failed": 0,
+      "passed": 39,
+      "skipped": 0
+    }
+  },
+  "merge_or_deployment_performed": false,
+  "persistence_execution_head": "b1820d2b598eb2b5767e84040f6a8d6c0ef22d36",
+  "preactivation_evidence_head": "9fc3561c39b971504b5fc54a4e25b8b1698e1ae7",
+  "production_repeat_applies": 0,
+  "production_rollbacks": 0,
+  "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+  "recorded_at_utc": "2026-09-15T16:27:12.968410+00:00",
+  "runtime_evidence_sha256": "990804ae178c8ff33e0c64dc8252a34c7a03bb0a8d006221f020161f152a5375",
+  "schema_version": "m15b_green_production_activation_execution_evidence_v1",
+  "subject_sha256": "a7e64852f81684e52c21aed3bcd524807114d789f3806125613f440ea8176408"
+}

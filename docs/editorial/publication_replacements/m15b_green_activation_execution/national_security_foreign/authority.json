@@ -1,0 +1,50 @@
+{
+  "accepted": true,
+  "activation_authority_subject_sha256": "1db6d83549f7fd62e7aeb7ab3507e3a6b0e9d483fd1103acfa38991b8ff2d018",
+  "artifact_id": "publication-replacement-activation-authority:f000477:national_security_foreign:m15b:v1",
+  "immutable": true,
+  "schema_version": "site_integration_publication_replacement_activation_authority_v2",
+  "sealed": true,
+  "subject": {
+    "authorizations": {
+      "deploy_exact_reviewed_runtime": true,
+      "exact_bounded_rollback": true,
+      "execute_only_under_fresh_matching_evidence": true,
+      "production_database_write": true,
+      "publication_registry_mutation": true,
+      "publication_replacement": true
+    },
+    "decision": "approve_exact_publication_replacement_v2",
+    "decision_recorded_at_utc": "2026-09-15T16:11:34.120119+00:00",
+    "exact_write_set_subject_sha256": "703a9c49ab12f64ec05480225b1d79dd28c74f18bae7f0d7f5425c80a4d4e768",
+    "expected_old": {
+      "artifact_id": 227,
+      "artifact_version": 1,
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1"
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "proposed_new": {
+      "artifact_id": 248,
+      "artifact_version": 1,
+      "content_sha256": "c675731a2602829f2c1d325673c50099cb3ef458d2ae0bf07b10237019858f29",
+      "natural_key": "public-issue-presentation:f000477:national_security_foreign:m15b:v1"
+    },
+    "registry_key": {
+      "issue_id": "NATIONAL_SECURITY_FOREIGN",
+      "member_bioguide_id": "F000477"
+    },
+    "reviewer": "dhart54",
+    "reviewer_authority": "publication_replacement_review_authority_v2",
+    "rollback_target": {
+      "artifact_id": 227,
+      "artifact_version": 1,
+      "content_sha256": "05661086601991075f04195090a41e0febaad7f8e6acda53f0cab838f97e860c",
+      "natural_key": "site-integration-candidate:f000477:national_security_foreign:119:v1"
+    },
+    "semantic_authority_binding": {
+      "artifact_id": "human-semantic-authority:m15b:approved:v1",
+      "subject_sha256": "3e2a5a40b6abbea937a8003a27ce5aac1d113375422f2290fed549f77376de5b"
+    }
+  }
+}

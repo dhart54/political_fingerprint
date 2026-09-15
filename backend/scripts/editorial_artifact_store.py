@@ -303,8 +303,13 @@ def inspect(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int]) -> dict[str, Any]:
+def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int], *,
+                  batch_key: str | None = None, source_commit: str | None = None) -> dict[str, Any]:
     from psycopg.types.json import Jsonb
+
+    # Historical wrappers bind these module values at call time.
+    batch_key = BATCH_KEY if batch_key is None else batch_key
+    source_commit = STARTING_COMMIT if source_commit is None else source_commit
 
     batch = conn.execute(
         """INSERT INTO editorial_artifact_batches
@@ -314,8 +319,8 @@ def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int]) -
            ON CONFLICT (deterministic_batch_key) DO NOTHING
            RETURNING batch_id""",
         (
-            BATCH_KEY,
-            STARTING_COMMIT,
+            batch_key,
+            source_commit,
             bundle["manifest_sha256"],
             bundle["expected_counts"]["artifacts"],
             bundle["expected_counts"]["relationships"],
@@ -324,10 +329,10 @@ def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int]) -
     if batch is None:
         existing = conn.execute(
             "SELECT * FROM editorial_artifact_batches WHERE deterministic_batch_key = %s",
-            (BATCH_KEY,),
+            (batch_key,),
         ).fetchone()
         expected = (
-            STARTING_COMMIT,
+            source_commit,
             bundle["manifest_sha256"],
             bundle["expected_counts"]["artifacts"],
             bundle["expected_counts"]["relationships"],
@@ -365,8 +370,8 @@ def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int]) -
                 content_sha256, source_manifest_sha256, source_commit_sha, batch_id,
                 member_bioguide_id, issue_id, congress, chamber, canonical_roll_call_id,
                 canonical_action_id, episode_id, policy_family_id, editorial_status,
-                benchmark_status, production_eligible, review_route)
-               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                benchmark_status, production_eligible, review_route, supersedes_artifact_id)
+               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                RETURNING artifact_id""",
             (
                 item["artifact_type"], item["natural_key"], item["schema_version"],
@@ -375,7 +380,7 @@ def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int]) -
                 item["member_bioguide_id"], item["issue_id"], item["congress"], item["chamber"],
                 roll_ids.get(item["canonical_action_id"]), item["canonical_action_id"],
                 item["episode_id"], item["policy_family_id"], item["editorial_status"],
-                item["benchmark_status"], item["production_eligible"], item["review_route"],
+                item["benchmark_status"], item["production_eligible"], item["review_route"], item.get("supersedes_artifact_id"),
             ),
         ).fetchone()
         ids[item["natural_key"]] = int(row["artifact_id"])
@@ -588,11 +593,12 @@ def postcheck(
     return result
 
 
-def rollback_batch(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
+def rollback_batch(conn: Any, bundle: dict[str, Any], *, batch_key: str | None = None) -> dict[str, Any]:
+    batch_key = BATCH_KEY if batch_key is None else batch_key
     batch = conn.execute(
         """SELECT batch_id, manifest_sha256 FROM editorial_artifact_batches
            WHERE deterministic_batch_key = %s FOR UPDATE""",
-        (BATCH_KEY,),
+        (batch_key,),
     ).fetchone()
     if not batch or batch["manifest_sha256"] != bundle["manifest_sha256"]:
         raise StoreSafetyError("exact reviewed rollback batch is absent or hash-mismatched")
@@ -621,7 +627,7 @@ def rollback_batch(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
         "relationships": bundle["expected_counts"]["relationships"],
     }:
         raise StoreSafetyError("rollback count precheck failed")
-    conn.execute("SELECT set_config('app.editorial_artifact_rollback_batch', %s, TRUE)", (BATCH_KEY,))
+    conn.execute("SELECT set_config('app.editorial_artifact_rollback_batch', %s, TRUE)", (batch_key,))
     conn.execute(
         """DELETE FROM editorial_artifact_relationships
            WHERE parent_artifact_id IN (SELECT artifact_id FROM editorial_artifact_versions WHERE batch_id = %s)

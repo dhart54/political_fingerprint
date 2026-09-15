@@ -1,0 +1,284 @@
+{
+  "captured_at_utc": "2026-09-15T16:23:28.973705+00:00",
+  "expected_old": {
+    "artifact_id": 221,
+    "artifact_version": 1,
+    "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+    "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"
+  },
+  "preflight_subject_sha256": "eb9d6c83ea53295dd6661d183a97e0385deaa0d5fd04c705a81d1b51ed87d853",
+  "prior_registry_row": {
+    "activated_at": "2026-08-05 00:09:40.489320+00:00",
+    "artifact_id": 221,
+    "deactivated_at": null,
+    "issue_id": "JUSTICE_PUBLIC_SAFETY",
+    "member_bioguide_id": "F000477",
+    "publication_metadata_jsonb": {
+      "activation_bundle_id": "foushee_justice_public_safety_119_full_record_activation_v1",
+      "active_artifact_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "approval_receipt": {
+        "approved_mapping_ids": [
+          "mapping:conclusion:body",
+          "mapping:conclusion:headline",
+          "mapping:coverage:full-record",
+          "mapping:limitation:roll-128-unresolved-text-limit:body",
+          "mapping:limitation:roll-128-unresolved-text-limit:heading",
+          "mapping:limitation:roll-155-source-identity-block:body",
+          "mapping:limitation:roll-155-source-identity-block:heading",
+          "mapping:limitation:roll-278-no-safe-interpretation-block:body",
+          "mapping:limitation:roll-278-no-safe-interpretation-block:heading",
+          "mapping:pattern:prop:354da734fec2fcf6:body",
+          "mapping:pattern:prop:354da734fec2fcf6:heading",
+          "mapping:pattern:prop:d7e189366b477118:body",
+          "mapping:pattern:prop:d7e189366b477118:heading",
+          "mapping:pattern:prop:e75e7aebbd7b2d29:body",
+          "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+          "mapping:pattern:prop:e76b98cf92ef34cb:body",
+          "mapping:pattern:prop:e76b98cf92ef34cb:heading",
+          "mapping:scope:119",
+          "mapping:teaser:mechanism-contrast",
+          "mapping:trajectory:halt:body",
+          "mapping:trajectory:halt:heading"
+        ],
+        "approved_statement_ids": [
+          "statement:conclusion:body",
+          "statement:conclusion:headline",
+          "statement:coverage:full-record",
+          "statement:limitation:roll-128-unresolved-text-limit:body",
+          "statement:limitation:roll-128-unresolved-text-limit:heading",
+          "statement:limitation:roll-155-source-identity-block:body",
+          "statement:limitation:roll-155-source-identity-block:heading",
+          "statement:limitation:roll-278-no-safe-interpretation-block:body",
+          "statement:limitation:roll-278-no-safe-interpretation-block:heading",
+          "statement:pattern:prop:354da734fec2fcf6:body",
+          "statement:pattern:prop:354da734fec2fcf6:heading",
+          "statement:pattern:prop:d7e189366b477118:body",
+          "statement:pattern:prop:d7e189366b477118:heading",
+          "statement:pattern:prop:e75e7aebbd7b2d29:body",
+          "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+          "statement:pattern:prop:e76b98cf92ef34cb:body",
+          "statement:pattern:prop:e76b98cf92ef34cb:heading",
+          "statement:scope:119",
+          "statement:teaser:mechanism-contrast",
+          "statement:trajectory:halt:body",
+          "statement:trajectory:halt:heading"
+        ],
+        "binding": {
+          "action_source_contract_id": "foushee_justice_public_safety_119_full_record_m6_v1",
+          "action_source_contract_sha256": "c76c459e2a2e7ef5035426cbdad106faf5b5df4c0262fda27baf02e3bf2c5dd8",
+          "approval_subject_sha256": "e54332f8f041c29bb4a77da6a07d54ac47565e9bbe51447b588f7c5e86e555c9",
+          "approved_scope": "119",
+          "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+          "artifact_version": 1,
+          "compiled_ir_sha256": "becb730af6c9ca6a08ecf6afb885503df99131530b4dc852a8e3e5817aab8fb3",
+          "congress": 119,
+          "evidence_provenance_sha256": "4e04e4f9db6e5b029b35be203c0a39f5e6186028df6dfdad5ba65ce8b49f12f2",
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "limitation_ids": [
+            "mechanism-divide-held",
+            "roll-128-unresolved-insertion",
+            "roll-155-source-conflict",
+            "roll-278-no-safe-package"
+          ],
+          "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+          "mapping_ids": [
+            "mapping:conclusion:body",
+            "mapping:conclusion:headline",
+            "mapping:coverage:full-record",
+            "mapping:limitation:roll-128-unresolved-text-limit:body",
+            "mapping:limitation:roll-128-unresolved-text-limit:heading",
+            "mapping:limitation:roll-155-source-identity-block:body",
+            "mapping:limitation:roll-155-source-identity-block:heading",
+            "mapping:limitation:roll-278-no-safe-interpretation-block:body",
+            "mapping:limitation:roll-278-no-safe-interpretation-block:heading",
+            "mapping:pattern:prop:354da734fec2fcf6:body",
+            "mapping:pattern:prop:354da734fec2fcf6:heading",
+            "mapping:pattern:prop:d7e189366b477118:body",
+            "mapping:pattern:prop:d7e189366b477118:heading",
+            "mapping:pattern:prop:e75e7aebbd7b2d29:body",
+            "mapping:pattern:prop:e75e7aebbd7b2d29:heading",
+            "mapping:pattern:prop:e76b98cf92ef34cb:body",
+            "mapping:pattern:prop:e76b98cf92ef34cb:heading",
+            "mapping:scope:119",
+            "mapping:teaser:mechanism-contrast",
+            "mapping:trajectory:halt:body",
+            "mapping:trajectory:halt:heading"
+          ],
+          "mapping_set_sha256": "f627d073ab621c10a0a02666e7626ee96aeaacc1a09f07adf68222f639b49d59",
+          "member_id": "F000477",
+          "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+          "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7",
+          "schema_version": "editorial_public_issue_presentation_v1",
+          "statement_ids": [
+            "statement:conclusion:body",
+            "statement:conclusion:headline",
+            "statement:coverage:full-record",
+            "statement:limitation:roll-128-unresolved-text-limit:body",
+            "statement:limitation:roll-128-unresolved-text-limit:heading",
+            "statement:limitation:roll-155-source-identity-block:body",
+            "statement:limitation:roll-155-source-identity-block:heading",
+            "statement:limitation:roll-278-no-safe-interpretation-block:body",
+            "statement:limitation:roll-278-no-safe-interpretation-block:heading",
+            "statement:pattern:prop:354da734fec2fcf6:body",
+            "statement:pattern:prop:354da734fec2fcf6:heading",
+            "statement:pattern:prop:d7e189366b477118:body",
+            "statement:pattern:prop:d7e189366b477118:heading",
+            "statement:pattern:prop:e75e7aebbd7b2d29:body",
+            "statement:pattern:prop:e75e7aebbd7b2d29:heading",
+            "statement:pattern:prop:e76b98cf92ef34cb:body",
+            "statement:pattern:prop:e76b98cf92ef34cb:heading",
+            "statement:scope:119",
+            "statement:teaser:mechanism-contrast",
+            "statement:trajectory:halt:body",
+            "statement:trajectory:halt:heading"
+          ]
+        },
+        "decision_timestamp": "2026-08-04T10:22:00-04:00",
+        "decisions": {
+          "editorial_wording": "approved",
+          "gold_benchmark_promotion": "approved",
+          "production_eligibility": "approved"
+        },
+        "limitations_acknowledged": [
+          {
+            "acknowledged": true,
+            "limitation_id": "mechanism-divide-held",
+            "text": "The mechanism divide is one bounded contrast, not a complete explanation of the record, and remains held for launch review."
+          },
+          {
+            "acknowledged": true,
+            "limitation_id": "roll-128-unresolved-insertion",
+            "text": "The reviewed record supports the concealed-carry expansion meaning, but the exact legal effect of the separate \u2018any magazine and\u2019 insertion remains unresolved."
+          },
+          {
+            "acknowledged": true,
+            "limitation_id": "roll-155-source-conflict",
+            "text": "A preserved 110th/119th-Congress source-identity conflict keeps roll 155 out of behavioral propositions and prevents it from adding substantive weight to the FISA relationship."
+          },
+          {
+            "acknowledged": true,
+            "limitation_id": "roll-278-no-safe-package",
+            "text": "The available official material does not establish the complete final House-passed package after amendments, so this action receives no public analytical meaning."
+          }
+        ],
+        "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+        "publication_activation": {
+          "active": false,
+          "decision_scope": "out_of_scope"
+        },
+        "receipt_id": "approval-receipt:f000477-full-record-justice-119-m10r1",
+        "reviewer": {
+          "authority": "editorial_publication_review_authority_v1",
+          "reviewer_id": "reviewer:dhart54"
+        },
+        "schema_version": "editorial_public_issue_approval_receipt_v1",
+        "status": "approved"
+      },
+      "approval_subject_sha256": "e54332f8f041c29bb4a77da6a07d54ac47565e9bbe51447b588f7c5e86e555c9",
+      "presentation_artifact_version": 1,
+      "presentation_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+      "relationship_metadata": {
+        "activation_bundle_id": "foushee_justice_public_safety_119_full_record_activation_v1"
+      },
+      "semantic_review_exception_resolution": {
+        "approval_bindings": [
+          {
+            "artifact_id": "delegated-semantic-ir-acceptance:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "fe434b3c3bcb0d6235003d144ad25c4e207d0dc104ec42fec1ec8e75d3514db9",
+            "decision": "approved",
+            "final_file_sha256": "23d27f84ce196380b6d02ca2d1a2e679847e7a0855c00d60b6df1542d499b405",
+            "role": "semantic_ir_acceptance"
+          },
+          {
+            "artifact_id": "full-record-semantic-validation:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "f7f36ce0194f508c4aad54032b3f94991535477a3f26c9e51ddf54cc4fc4b7a4",
+            "decision": "approved",
+            "final_file_sha256": "86747bc3777c0b514c1d1089afa8274a66792e780b9b5d93823e1f98d937b1a2",
+            "role": "semantic_validation"
+          },
+          {
+            "artifact_id": "launch-ratification:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+            "decision": "approved",
+            "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+            "role": "user_ratification"
+          },
+          {
+            "artifact_id": "user-launch-ratification-receipt:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "67e7737091af7c35b06a36d2855df72085b875656b21ab77ae9caba41a9a9c80",
+            "decision": "approved",
+            "final_file_sha256": "40754c51f1832afbeaaccb9624dc7c505a2882b13e6b8f6095cc14fba1f8aef4",
+            "role": "risk_treatments"
+          },
+          {
+            "artifact_id": "full-record-synthesis-approval-projection:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "22faba18c447ba9ebd5045b74666c09cb0d030f36187e727732c68d561f0721e",
+            "decision": "approved",
+            "final_file_sha256": "eb5f6aa7775f8765c1319d80849dfeedbb41c85f8e30f30a21a53819a0f615d8",
+            "role": "full_record_synthesis_approval"
+          },
+          {
+            "artifact_id": "production-eligibility-approval:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "947e9e370a16a7823fb4a7ab3f6371949cf8bea9dfd5dbbc7a15b59c9727c451",
+            "decision": "approved",
+            "final_file_sha256": "432123d7e27a3505e0e8039594a8b15fa260a60205ff56b52c78bfddca9c3ca9",
+            "role": "production_eligibility"
+          },
+          {
+            "artifact_id": "semantic-routing-correction-authorization:f000477:justice_public_safety:119:v1",
+            "content_subject_sha256": "199367a4d214ab1cb30ba63a06100040c15df8ce7f1cbf8f48f84bed1a7d517f",
+            "decision": "approved",
+            "final_file_sha256": "059a3bb4008909009aaef0e365ac8d94b8b53fd35bd37455bcba7312c3d6ae7a",
+            "role": "semantic_routing_correction_authorization"
+          }
+        ],
+        "binding": {
+          "action_accounting_sha256": "5558e769a0f76cb2e70b88cd9e510fb1740c04504dfdf163d4b1e6ebb1b491ad",
+          "artifact_id": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1",
+          "artifact_version": 1,
+          "compiled_ir_sha256": "becb730af6c9ca6a08ecf6afb885503df99131530b4dc852a8e3e5817aab8fb3",
+          "congress": 119,
+          "issue_id": "JUSTICE_PUBLIC_SAFETY",
+          "limitations_sha256": "e65b01bed2dce6ead9e3eee45093bc609690c75c1c8e6ac6b1c654f081292a34",
+          "mapping_set_sha256": "f627d073ab621c10a0a02666e7626ee96aeaacc1a09f07adf68222f639b49d59",
+          "member_id": "F000477",
+          "presentation_content_sha256": "63c0b6a59a18e36b018bca6bad5690795555d66f623c31e4847c3b1666f10e55",
+          "review_route": "human_exception_required",
+          "reviewed_wording_sha256": "58722f5f61ea0b2eb3b41b3cbf58009971c6fcfd184e189117715e2955627fc7"
+        },
+        "decision_timestamp": "2026-08-04T13:32:00-04:00",
+        "receipt_id": "semantic-review-exception-resolution:f000477:justice_public_safety:119:v1",
+        "resolution": {
+          "accepted_substantive_blocker_count": 0,
+          "all_triggers_accounted": true,
+          "compiled_ir_unchanged": true,
+          "resulting_semantic_tier": "reviewed_conclusion",
+          "wording_and_mappings_unchanged": true
+        },
+        "reviewer": {
+          "authority": "delegated_product_methodology_editorial_authority_v1",
+          "reviewer_id": "reviewer:political-fingerprint-authority-thread"
+        },
+        "routing_trigger_ledger_sha256": "85edc5af4d3b31e791bfd23aba80a32cf11d9f176a236f243a6101b950aaa932",
+        "schema_version": "semantic_review_exception_resolution_v1",
+        "status": "approved"
+      },
+      "source_manifest_artifact_version": 1,
+      "source_manifest_content_sha256": "03face2e772e391fa65ca82bec333e84c0da0b5ed469cbaa907ab3c8cce9e9f1",
+      "source_manifest_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1:publication-source-manifest",
+      "validation_artifact_version": 1,
+      "validation_content_sha256": "5e03b0de67505b66a48d37a99762adcfe24d5907c51759e10700b4afec372894",
+      "validation_natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1:publication-validation"
+    },
+    "publicly_active": true
+  },
+  "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+  "proposed_new": {
+    "artifact_id": 251,
+    "artifact_version": 1,
+    "content_sha256": "01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b",
+    "natural_key": "public-issue-presentation:f000477:justice_public_safety:m15b:v1"
+  },
+  "schema_version": "publication_replacement_production_preflight_evidence_v2",
+  "transaction_read_only": true
+}

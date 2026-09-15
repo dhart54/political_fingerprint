@@ -8,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from app.editorial_presentations.publication_replacement_store_v2r import capture_preflight, replace_publication
 from scripts.editorial_artifact_store import _connect
-from scripts.foushee_education_workforce_m14h_replacement import target_identity
+from scripts.green_production_target import target_identity
 
 
 def main(argv=None):
