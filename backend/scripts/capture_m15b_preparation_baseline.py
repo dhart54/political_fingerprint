@@ -37,7 +37,12 @@ def capture(conn, identity):
     tables={}
     tables['legislators']=rows("SELECT * FROM legislators WHERE bioguide_id='F000477'")
     member=tables['legislators'][0]['id']
-    tables['roll_calls']=rows('SELECT * FROM roll_calls WHERE id IN (SELECT roll_call_id FROM votes_cast WHERE legislator_id=%s) ORDER BY id',(member,))
+    # Scope headers include the database-wide eligible roll count. Include those
+    # source rows too, without acquiring another member's votes or interpretation.
+    tables['roll_calls']=rows('''SELECT * FROM roll_calls WHERE
+        id IN (SELECT roll_call_id FROM votes_cast WHERE legislator_id=%s)
+        OR (congress IN (118,119) AND id IN (SELECT roll_call_id FROM vote_classifications WHERE is_eligible=TRUE))
+        ORDER BY id''',(member,))
     roll_ids=[r['id'] for r in tables['roll_calls']]
     for table in ('votes_cast','vote_contexts'):
         tables[table]=rows(f'SELECT * FROM {table} WHERE legislator_id=%s AND roll_call_id=ANY(%s) ORDER BY roll_call_id',(member,roll_ids))

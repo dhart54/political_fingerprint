@@ -15,6 +15,17 @@ from app.editorial_presentations.publication_replacement_governance_v2 import Pu
 from test_reusable_publication_replacement_v2r import runtime,seal
 
 
+def same_public(actual,expected,path='public'):
+    """Keep exact full comparison failures readable without dumping all receipts."""
+    if actual==expected: return
+    if isinstance(actual,dict) and isinstance(expected,dict) and actual.keys()==expected.keys():
+        for key in actual: same_public(actual[key],expected[key],path+'/'+str(key))
+    elif isinstance(actual,list) and isinstance(expected,list) and len(actual)==len(expected):
+        for index,(a,b) in enumerate(zip(actual,expected)): same_public(a,b,path+'/'+str(index))
+    else:
+        raise AssertionError('Exact public mismatch at '+path+': '+repr(actual)[:180]+' != '+repr(expected)[:180])
+
+
 def test_historical_store_defaults_remain_bound_at_call_time(monkeypatch):
     from unittest.mock import MagicMock
     from scripts import editorial_artifact_store as store
@@ -85,7 +96,7 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
     package=prep.load(prep.OUT/'persistence_package.json')
     with _connect(dsn,autocommit=False) as conn:
         initial=snapshot(conn);before=public(conn)
-        assert before==json.loads(gzip.decompress((prep.OUT/'public_before.json.gz').read_bytes()))
+        same_public(before,json.loads(gzip.decompress((prep.OUT/'public_before.json.gz').read_bytes())))
         original_rows={i:registry_row(conn,b['registry_key']) for i,b in package['replacements'].items()}
         unrelated=select_public_presentations(EditorialArtifactRepository(conn).publication_selector(),member_bioguide_id='UNRELATED',legislator_id='unrelated',scope='119')
         operations=[]
@@ -146,7 +157,7 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
         for scope in before:
             selected={p['issue_id']:p for p in after[scope]['presentations']['presentations']}
             for issue,bundle in package['replacements'].items():
-                assert selected[issue]==bundle['artifacts'][0]['payload']['subject']['presentations'][scope]
+                same_public(selected[issue],bundle['artifacts'][0]['payload']['subject']['presentations'][scope],scope+'/'+issue)
             for issue,detail in before[scope]['details'].items():
                 observed=after[scope]['details'][issue]
                 assert observed['review_accounting']==detail['review_accounting']

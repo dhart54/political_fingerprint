@@ -17,7 +17,7 @@ All paths below are relative to
 - `persistence_package.json`: exact two independent bundles, all artifact payloads,
   natural keys, versions, hashes, supersedes IDs, relationships and mutation caps.
 - `production_baseline.json`: READ ONLY capture at
-  `2026-09-15T01:00:14.250546+00:00`, exact prior registry rows and old identities,
+  `2026-09-15T01:15:05.420184+00:00`, exact prior registry rows and old identities,
   target fingerprint, absent proposed artifacts and snapshot hashes.
 - `disposable_baseline.json.gz`: bounded current public database facts and required
   immutable provenance, for the existing disposable snapshot replay harness.
@@ -27,7 +27,7 @@ All paths below are relative to
   with current ledger accounting. The new presentations are exact accepted data.
 
 Package digest:
-`3d3653990f3d1d7a0514e19ca99a04ca932706fc3493370480d0a763c9f36c42`.
+`ab89f46ed8886bb971a8236b36b9f7bda02d824a1a2a470df10bf62847aa6359`.
 Accepted source preparation remains unchanged at
 `../m15b_preparation/approved_semantics_preparation.json`.
 
@@ -85,7 +85,7 @@ Set `$ProductionEnvFile` to the existing protected backend environment file and
 DSN nor credentials belong in Git, shell output, tests or the review packet.
 
 ```powershell
-$PackageHash = '3d3653990f3d1d7a0514e19ca99a04ca932706fc3493370480d0a763c9f36c42'
+$PackageHash = 'ab89f46ed8886bb971a8236b36b9f7bda02d824a1a2a470df10bf62847aa6359'
 python backend/scripts/m15b_persistence_preparation.py check
 
 # Execute these steps separately for NATIONAL_SECURITY_FOREIGN, then JUSTICE_PUBLIC_SAFETY.
