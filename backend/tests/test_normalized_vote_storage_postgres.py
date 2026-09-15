@@ -22,6 +22,7 @@ from scripts.foushee_m15a2_core_repair import public_reads_in_transaction
 BACKEND=Path(__file__).resolve().parents[1]
 FIXTURE=BACKEND/'tests/fixtures/normalized_vote_storage_baseline.jsonl.gz'
 MIGRATION=BACKEND/'migrations/staged/normalize_vote_storage.sql'
+SEQUENCES=json.loads((BACKEND/'tests/fixtures/normalized_vote_storage_sequences.json').read_text(encoding='utf-8'))
 DSN=os.getenv('NORMALIZED_STORAGE_DISPOSABLE_DATABASE_URL')
 pytestmark=pytest.mark.skipif(not DSN,reason='dedicated loopback PostgreSQL required')
 
@@ -58,7 +59,13 @@ def reset_database(conn,tables):
                 for values in table['rows']:
                     if name=='vote_contexts':values=[*values,*[shared[values[0]][f] for f in norm.SHARED]]
                     writer.write_row([Jsonb(v) if c in json_cols and v is not None else v for c,v in zip(columns,values)])
+    for name,value in SEQUENCES['sequences'].items():
+        conn.execute('SELECT setval(%s,%s,%s)',('public.'+name,value['last_value'],value['is_called']))
     conn.execute('ANALYZE')
+
+
+def sequence_state(conn):
+    return {name:conn.execute(sql.SQL('SELECT last_value,is_called FROM public.{}').format(sql.Identifier(name))).fetchone() for name in SEQUENCES['sequences']}
 
 
 def digest_tables(conn,tables):
@@ -118,7 +125,7 @@ def benchmark(conn,member):
 
 
 def storage(conn):
-    return conn.execute("SELECT pg_database_size(current_database()) database_bytes,pg_total_relation_size('vote_context_members') member_bytes,pg_total_relation_size('roll_calls') roll_bytes").fetchone()
+    return conn.execute("SELECT pg_database_size(current_database()) database_bytes,pg_total_relation_size('vote_context_members') member_bytes,pg_relation_size('vote_context_members') member_heap,pg_indexes_size('vote_context_members') member_indexes,pg_total_relation_size('roll_calls') roll_bytes,pg_relation_size('roll_calls') roll_heap,pg_indexes_size('roll_calls') roll_indexes").fetchone()
 
 
 def test_actual_full_population_parity_and_scale(monkeypatch):
@@ -147,6 +154,7 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
         api_before=public_outputs(conn,names)
         performance_before=benchmark(conn,member)
         print('BASELINE_PARITY_CAPTURED',len(api_before),flush=True)
+        shared_bytes=conn.execute(sql.SQL('SELECT {} FROM vote_contexts').format(sql.SQL(',').join(sql.SQL('sum(coalesce(pg_column_size({}),0)) AS {}').format(sql.Identifier(f),sql.Identifier(f)) for f in norm.SHARED))).fetchone()
         legacy_size=conn.execute("SELECT pg_database_size(current_database()) database_bytes,pg_total_relation_size('vote_contexts') context_bytes,pg_total_relation_size('roll_calls') roll_bytes").fetchone()
         from scripts.normalize_vote_storage import apply_disposable
         assert apply_disposable(conn)['status']=='NORMALIZED'
@@ -154,6 +162,7 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
         conn.execute('ANALYZE')
         after=digest_tables(conn,tables)
         assert before==after, 'complete original table/column parity'
+        assert sequence_state(conn)==SEQUENCES['sequences']
         assert public_outputs(conn,names)==api_before, 'complete API JSON parity'
         physical=storage(conn)
         assert physical['database_bytes']<400000000
@@ -225,8 +234,9 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
             restored.execute("SET timezone='UTC'")
             restored.execute('ANALYZE')
             assert digest_tables(restored,tables)==after
+            assert sequence_state(restored)==SEQUENCES['sequences']
             assert public_outputs(restored,names)==api_before
             restored_size=storage(restored)
             assert restored_size['database_bytes']<400000000
-        report={'restore':restored_size,'source':metadata,'original_table_hashes':before,'table_count':len(before),'members':names,'complete_api_outputs':len(api_before),'api_sha256':hashlib.sha256(json.dumps(api_before,sort_keys=True).encode()).hexdigest(),'legacy':legacy_size,'normalized':physical,'projected_source_bytes':projected_source_bytes,'before_queries':performance_before,'after_queries':performance_after,'production_writes':False}
+        report={'postgresql_version':conn.execute("SELECT current_setting('server_version') version").fetchone()['version'],'shared_field_datum_bytes':shared_bytes,'sequences_preserved':len(SEQUENCES['sequences']),'restore':restored_size,'source':metadata,'original_table_hashes':before,'table_count':len(before),'members':names,'complete_api_outputs':len(api_before),'api_sha256':hashlib.sha256(json.dumps(api_before,sort_keys=True).encode()).hexdigest(),'legacy':legacy_size,'normalized':physical,'projected_source_bytes':projected_source_bytes,'before_queries':performance_before,'after_queries':performance_after,'production_writes':False}
         print('NORMALIZED_STORAGE_PROOF '+json.dumps(report,default=str,sort_keys=True),flush=True)

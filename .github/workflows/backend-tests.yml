@@ -630,7 +630,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16
+        image: postgres:17
         env:
           POSTGRES_PASSWORD: postgres
         ports:
@@ -684,5 +684,14 @@ jobs:
         run: |
           git checkout --detach "${{ github.event.pull_request.head.sha || github.sha }}"
           git rev-parse HEAD
+          base="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if ! git diff --name-only "$base" HEAD | grep -Eq '^(backend/(app/etl/|migrations/|scripts/(capture_vote_storage_baseline|normalize_vote_storage)[.]py|tests/(fixtures/normalized_vote_storage|test_normalized_vote_storage))|docs/review_packets/normalized_vote_storage|[.]github/workflows/backend-tests[.]yml)'; then
+            echo "No normalization producer/schema/proof changes; full population replay not needed."
+            exit 0
+          fi
+          sudo apt-get update -qq
+          sudo apt-get install -y postgresql-client-17
+          export PATH="/usr/lib/postgresql/17/bin:$PATH"
+          pg_dump --version
           createdb -h 127.0.0.1 -U postgres pf_normalized_storage
           python -m pytest -q -s backend/tests/test_normalized_vote_storage.py backend/tests/test_normalized_vote_storage_postgres.py -rs
