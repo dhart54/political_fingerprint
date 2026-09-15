@@ -16,6 +16,7 @@ from app.etl.senate_xml_adapter import (
     _resolve_source_file,
 )
 from app.etl.vote_context import build_vote_contexts
+from app.etl import normalized_vote_storage as normalized_contexts
 
 
 SUPPORTED_PARENT_BILL_TYPES = {
@@ -1347,6 +1348,10 @@ def _insert_vote_contexts(
     roll_call_id_map: dict[tuple[int, int], int],
     legislator_id_map: dict[str, int],
 ) -> int:
+    if normalized_contexts.enabled():
+        return normalized_contexts.write_contexts(cursor, normalized_contexts.mapped_contexts(
+            contexts, roll_keys_by_internal_id, bioguide_by_internal_legislator_id,
+            roll_call_id_map, legislator_id_map))
     inserted = 0
     for row in contexts:
         roll_key = roll_keys_by_internal_id[str(row["roll_call_id"])]
