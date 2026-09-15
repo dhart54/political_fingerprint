@@ -7,6 +7,7 @@ the new content-addressed M14G identity.
 
 from __future__ import annotations
 
+import copy
 import hmac
 from typing import Any, Iterable
 
@@ -133,7 +134,9 @@ def eligible_site_integration_candidate_v2r(
         member_bioguide_id=member_bioguide_id,
         allow_test_authority=allow_test_authority,
     )
-    return historical or eligible_m14g_replacement(
+    return historical or eligible_persisted_replacement(
+        row, member_bioguide_id=member_bioguide_id, allow_test_authority=allow_test_authority
+    ) or eligible_m14g_replacement(
         row,
         member_bioguide_id=member_bioguide_id,
         allow_test_authority=allow_test_authority,
@@ -144,6 +147,17 @@ def select_site_integration_public_v2r(
     candidate: dict[str, Any], *, legislator_id: str,
     member_bioguide_id: str, scope: str,
 ) -> dict[str, Any]:
+    from .publication_replacement_governance_v2 import PROJECTION_SCHEMA_V2R
+    if candidate.get("schema_version") == PROJECTION_SCHEMA_V2R:
+        from .selector import SUPPORTED_ISSUES, _fallback
+        subject = candidate["subject"]
+        selected = {issue: _fallback(issue, scope) for issue in SUPPORTED_ISSUES}
+        if (subject["member_bioguide_id"] == member_bioguide_id and subject["member_slug"] == legislator_id
+                and scope in subject["presentations"]):
+            selected[subject["issue_id"]] = copy.deepcopy(subject["presentations"][scope])
+        return {"schema_version": "editorial_public_presentations_api_v1", "legislator_id": legislator_id,
+                "member_bioguide_id": member_bioguide_id, "scope": scope,
+                "presentations": [selected[issue] for issue in SUPPORTED_ISSUES]}
     if candidate.get("artifact_id") != M14G_ARTIFACT_ID:
         return _ORIGINAL_SELECT(
             candidate,
@@ -182,6 +196,13 @@ def install_publication_replacement_runtime_v2r() -> None:
     original_positions = positions._merge_site_integration_positions
 
     def merge_evidence(base_response, candidate, *, domain, scope):
+        from .publication_replacement_governance_v2 import PROJECTION_SCHEMA_V2R
+        if candidate.get("schema_version") == PROJECTION_SCHEMA_V2R:
+            from .reviewed_record import overlay_reviewed_actions
+            subject = candidate["subject"]
+            if domain == subject["issue_id"] and scope in subject["presentations"]:
+                return overlay_reviewed_actions(base_response, subject["receipt_projections"], domain=domain)
+            return copy.deepcopy(base_response)
         if candidate.get("artifact_id") == M14G_ARTIFACT_ID:
             return merge_m14g_preview_evidence(
                 base_response, candidate, domain=domain, scope=scope
@@ -189,6 +210,14 @@ def install_publication_replacement_runtime_v2r() -> None:
         return original_evidence(base_response, candidate, domain=domain, scope=scope)
 
     def merge_positions(base_response, candidate, *, governed_evidence):
+        from .publication_replacement_governance_v2 import PROJECTION_SCHEMA_V2R
+        if candidate.get("schema_version") == PROJECTION_SCHEMA_V2R:
+            from .integration_candidate import governed_position_summary
+            result = copy.deepcopy(base_response)
+            domain = candidate["subject"]["issue_id"]
+            result["positions"] = [r for r in result.get("positions", []) if r.get("domain") != domain] + [
+                governed_position_summary(governed_evidence, domain=domain)]
+            return result
         if candidate.get("artifact_id") == M14G_ARTIFACT_ID:
             return merge_m14g_preview_positions(
                 base_response, governed_evidence=governed_evidence
@@ -207,3 +236,31 @@ def select_public_presentations_v2r(
 ) -> dict[str, Any]:
     install_publication_replacement_runtime_v2r()
     return selector.select_public_presentations(rows, **kwargs)
+
+
+def eligible_persisted_replacement(row, *, member_bioguide_id, allow_test_authority=False):
+    from .publication_replacement_governance_v2 import validate_positive_authority, PROJECTION_SCHEMA_V2R
+    from .publication_replacement_store_v2r import publication_metadata
+    payload = _object(row.get("payload_jsonb", row.get("payload")))
+    metadata = _object(row.get("publication_metadata_jsonb"))
+    if payload is None or payload.get("schema_version") != PROJECTION_SCHEMA_V2R or metadata is None:
+        return None
+    try:
+        write_set = metadata['publication_replacement_write_set']
+        authority = metadata['publication_replacement_activation_authority']
+        validate_positive_authority(authority, write_set=write_set, candidate=payload)
+        new = write_set['subject']['proposed_new']
+        key = write_set['subject']['registry_key']
+        if (authority.get('test_only_synthetic') and not allow_test_authority
+                or key['member_bioguide_id'] != member_bioguide_id
+                or any(row.get(k) != v for k,v in key.items())
+                or any(row.get(k) != v for k,v in new.items())
+                or metadata != publication_metadata(write_set, authority)
+                or row.get('schema_version') != PROJECTION_SCHEMA_V2R
+                or row.get('publicly_active') is not True or row.get('deactivated_at') is not None
+                or row.get('editorial_status') != 'human_approved' or row.get('benchmark_status') != 'gold_benchmark'
+                or row.get('production_eligible') is not True):
+            return None
+    except (KeyError, TypeError, ValueError):
+        return None
+    return payload
