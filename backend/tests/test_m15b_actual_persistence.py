@@ -156,6 +156,8 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
         after=public(conn)
         for scope in before:
             selected={p['issue_id']:p for p in after[scope]['presentations']['presentations']}
+            for old in before[scope]['presentations']['presentations']:
+                if old['issue_id'] not in package['replacements']: same_public(selected[old['issue_id']],old)
             for issue,bundle in package['replacements'].items():
                 same_public(selected[issue],bundle['artifacts'][0]['payload']['subject']['presentations'][scope],scope+'/'+issue)
             for issue,detail in before[scope]['details'].items():
@@ -163,6 +165,14 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
                 assert observed['review_accounting']==detail['review_accounting']
                 raw=lambda p:[(r['canonical_action_id'],r['position']) for r in p['evidence']]
                 assert raw(observed)==raw(detail)
+                for old,new in zip(detail['evidence'],observed['evidence']):
+                    same_public(new.get('governed_receipt_control'),old.get('governed_receipt_control'))
+                    old_receipt=copy.deepcopy(old.get('governed_receipt_projection'))
+                    new_receipt=copy.deepcopy(new.get('governed_receipt_projection'))
+                    if issue=='JUSTICE_PUBLIC_SAFETY' and old_receipt:
+                        for field in ('limitation_treatments','public_caveats'):
+                            old_receipt.pop(field,None);new_receipt.pop(field,None)
+                    same_public(new_receipt,old_receipt,scope+'/'+issue+'/'+old['canonical_action_id'])
                 unreviewed=lambda p:[r for r in p['evidence'] if r['interpretation_review_state']=='not_yet_in_reviewed_interpretation']
                 assert unreviewed(observed)==unreviewed(detail)
                 summary=next(r for r in after[scope]['discovery']['positions'] if r['domain']==issue)

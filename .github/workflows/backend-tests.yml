@@ -648,6 +648,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - uses: actions/setup-python@v5
         with:
@@ -682,5 +683,6 @@ jobs:
           M15A2_DISPOSABLE_DATABASE_URL: >-
             postgresql://postgres:postgres@127.0.0.1:5432/pf_m15a2_repair
         run: |
+          git rev-parse HEAD
           python backend/scripts/m15b_persistence_preparation.py check
           python -m pytest -q -s backend/tests/test_m15b_actual_persistence.py -rs

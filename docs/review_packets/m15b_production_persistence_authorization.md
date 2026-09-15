@@ -5,6 +5,13 @@ accepted head `e223bbf676c1762337c03bc3af0e78801c14f698`. Its reviewed base and
 all checks matched. Normal code-only merge integrations were allowed; no manual
 deployment, production persistence, activation, migration or rollback occurred.
 
+Merge integration observation: backend health reports merged main
+`5843bab9b1bed3e5db57976bae3b05466f2cbafe`. Automatic Render smoke run
+`34915230953` failed with HTTP 404; its legacy `leg_alex_morgan` comparison-member
+route independently returns 404. This comparison-route/smoke follow-up does not
+prevent immutable persistence and is not proof of fresh activation runtime
+evidence. No smoke weakening or manual deployment is bundled.
+
 This preparation branch is `codex/m15b-production-preparation`. Its exact final
 head and hosted run are recorded in the draft PR, avoiding a self-referential
 commit hash inside committed files. Authorization must name that reviewed head.
@@ -58,6 +65,9 @@ four current registry roots pass the existing eligible-provenance query, and non
 of the six proposed artifact identities exist in production at capture time.
 This capture is evidence, not a perpetual preflight: the operator rechecks the
 exact current row, old digest and provenance before each persistence transaction.
+Both proposed persistence preflight commands were also exercised against production
+in READ ONLY mode: exact schema, current eligible old graph and absent proposed
+owned state passed. No credentials were exported to tests or recorded here.
 
 NS loses only the unsupported trajectory; the accepted surviving result is 14
 findings and 30 unique supporting actions. Underlying receipts/meanings/episodes
@@ -158,6 +168,13 @@ package through existing persistence, reusable V2R and real selector/evidence
 paths. Test-only authorities remain marked synthetic; the test only opts in at
 existing selector seams. No production credential is loaded by tests.
 
-Local focused package/operator/historical tests passed; database proof is pending
-hosted execution (a local skip is not a pass). Final exact-head hosted results and
-disposition are recorded in the draft PR. No optional cleanup is bundled.
+Local focused package/operator/historical tests: 62 passed. The actual PostgreSQL
+lifecycle passed on `afdc8c02cb9034c515157c2d8b570c9a060fed0c` in hosted run
+`34916596571`, including exact full captured public-output replay. All nine hosted
+jobs passed: historical V2/M14H, M15B, receipt, frontend/rendered and release checks.
+The final commit additionally makes unchanged receipt/control comparisons explicit
+and checks out the exact PR head in the reused PostgreSQL lane. The draft PR binds
+its final head, final rerun and readiness disposition; a skipped proof is never a
+pass. No production persistence blocker is identified, subject to that final green
+validation. Expected activation prerequisites above remain unavailable. The smoke
+comparison-route follow-up is not bundled as cleanup.
