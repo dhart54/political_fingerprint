@@ -689,6 +689,11 @@ jobs:
             echo "No normalization producer/schema/proof changes; full population replay not needed."
             exit 0
           fi
+          # Official PGDG source supplies the production-major client on Ubuntu.
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl --fail --silent --show-error --max-time 60 -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          . /etc/os-release
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
           sudo apt-get update -qq
           sudo apt-get install -y postgresql-client-17
           export PATH="/usr/lib/postgresql/17/bin:$PATH"
