@@ -630,7 +630,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:17
+        image: postgres:16
         env:
           POSTGRES_PASSWORD: postgres
         ports:
@@ -680,7 +680,7 @@ jobs:
       - name: Prove normalized storage at actual production cardinality
         env:
           NORMALIZED_STORAGE_DISPOSABLE_DATABASE_URL: >-
-            postgresql://postgres:postgres@127.0.0.1:5432/pf_normalized_storage
+            postgresql://postgres:postgres@127.0.0.1:55432/pf_normalized_storage
         run: |
           git checkout --detach "${{ github.event.pull_request.head.sha || github.sha }}"
           git rev-parse HEAD
@@ -693,5 +693,12 @@ jobs:
           sudo apt-get install -y postgresql-client-17
           export PATH="/usr/lib/postgresql/17/bin:$PATH"
           pg_dump --version
-          createdb -h 127.0.0.1 -U postgres pf_normalized_storage
+          container="$(docker run --detach --rm --publish 127.0.0.1:55432:5432 --env POSTGRES_PASSWORD=postgres postgres:17)"
+          trap 'docker stop "$container" >/dev/null' EXIT
+          for attempt in $(seq 1 30); do
+            if docker exec "$container" pg_isready -U postgres; then break; fi
+            sleep 1
+          done
+          docker exec "$container" pg_isready -U postgres
+          createdb -h 127.0.0.1 -p 55432 -U postgres pf_normalized_storage
           python -m pytest -q -s backend/tests/test_normalized_vote_storage.py backend/tests/test_normalized_vote_storage_postgres.py -rs

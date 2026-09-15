@@ -1,6 +1,6 @@
 # Legislative vote storage normalization â€” migration review
 
-Status: implementation and hosted proof in progress. This is not production execution authority.
+Status: independent migration review package. Exact-head CI results and the final disposition are recorded in draft PR #188. This is not production execution authority.
 
 ## Diagnosis and exact field classification
 The current ETL computes one context per roll, then copies shared values into each member row. Current/historical Congress refresh, Senate fact/amendment import and fixture seeding are the active producers. They all use `build_vote_contexts`; that deterministic semantic calculation is unchanged.
@@ -39,7 +39,7 @@ RLS remains enabled on canonical rolls and is enabled on member rows. Anonymous/
 - Fingerprint computation, classifiers, summaries and drift calculations are unchanged. Original data columns are compared exactly, including timestamps.
 
 ## Storage and performance proof
-Baseline production: 653,929,619 bytes; contexts 510,492,672 bytes; roll_calls 1,056,768 bytes. Existing context indexes total 50,413,568 bytes. The pre-implementation conservative estimate is around 327 MB total (roughly 130 MB member heap + 51 MB index allowance + under 2 MB owner context + existing other data). The optimistic all-ten-field model is approximately 285 MB. These remain estimates until hosted measurements below are filled.
+Baseline production: 653,929,619 bytes; contexts 510,492,672 bytes; roll_calls 1,056,768 bytes. Existing context indexes total 50,413,568 bytes. The pre-implementation conservative estimate is around 327 MB total (roughly 130 MB member heap + 51 MB index allowance + under 2 MB owner context + existing other data). The optimistic all-ten-field model is approximately 285 MB. The measured results below supersede these pre-implementation estimates.
 
 The 7,465,932-byte public-only snapshot (SHA256 5c3bbf50327d3a531cec21518b9165b68f8d05a7866a20e3c3d421260a916f7d) preserves all 28 public tables. Its representation stores shared contexts once only after proving exact equality in the same read-only transaction. It is not a reduced member sample. It includes 158 editorial artifacts, eight batches, 167 relationships and all four publication rows. A supplemental read-only capture at 2026-09-15 02:20:34 UTC preserves all 17 sequence last_value/is_called pairs, including intentional gaps (artifact sequence 247 with active Education artifact 245). Sequence state is checked after normalization and fresh restore. Sequence reads are not MVCC snapshots; final cutover requires a fresh capture under the write freeze.
 
@@ -55,7 +55,7 @@ A single full-population proof is justified for this migration; no permanent add
 | Roll lookup | .122 | .129 |
 | Batch analysis | 6.150 | 8.365 |
 
-Five warmed EXPLAIN ANALYZE executions per path; median reported. History/batch gain a hash join against the 2,298-row roll relation; evidence/roll lookup retain indexed member/roll access. No index was added in response to speculative performance fears. Physical savings are measured in a disposable PostgreSQL 16 database; final green PostgreSQL version and managed-service behavior must also pass pre-cutover validation. The final expanded head, on PostgreSQL 17 to match production’s major version, additionally covers explicit 118, active producer adapters, compatibility CRUD, migration ambiguity rollback and a fresh normalized dump/restore; results pending.
+Five warmed EXPLAIN ANALYZE executions per path; median reported. History/batch gain a hash join against the 2,298-row roll relation; evidence/roll lookup retain indexed member/roll access. No index was added in response to speculative performance fears. Physical savings are measured in a disposable PostgreSQL 16 database; final green PostgreSQL version and managed-service behavior must also pass pre-cutover validation. The final expanded head, on PostgreSQL 17 to match production’s major version, additionally covers explicit 118, active producer adapters, compatibility CRUD, migration ambiguity rollback and a fresh normalized dump/restore; current-head results are recorded in PR #188.
 
 The broader local regression run produced **113 passes and 13 historical cache-dependent failures**. Local broad historical ingestion tests requiring ignored Senate XML caches cannot run in a clean checkout: missing backend/data_sources/senate_xml/members.xml, before changed code is exercised. No production source fetch or fixture substitution was used to hide the baseline limitation.
 
@@ -94,10 +94,13 @@ Creating green, exporting protected service state, loading/migrating a productio
 - Supabase size/quota accounting: https://supabase.com/docs/guides/platform/database-size
 
 ## Unresolved gates
-Hosted proof and final review are pending. A second Free-project slot, target version/region, actual destination managed-schema overhead, protected credentials, operational write freeze, final live capture, green restore validation and cutover authorization remain execution prerequisites. No claim of current production migration readiness is made until implementation proof completes.
+Independent review and final production-target validation remain required. A second Free-project slot, target version/region, actual destination managed-schema overhead, protected credentials, operational write freeze, final live capture, green restore validation and cutover authorization remain execution prerequisites. The review disposition requires green current-head implementation proofs; it never grants production execution authority.
 
 ## Growth budget
 Using the source votes_cast allocation plus measured narrow-member and roll storage gives roughly 265 bytes per additional member-vote/context pair at similar packing/cardinality. The conservative 245.35 MB estimate leaves room for approximately 0.96 million additional such pairs before 500 MB, or approximately 0.58 million before a 400 MB operating threshold, excluding growth elsewhere. This is a planning estimate, not an indefinite free-tier guarantee. Review capacity at 350 MB and prepare the next capacity decision before 400 MB; no history is pruned automatically.
 
 ## Expanded proof on 986fe113fb347004c8d0f0ee00d3a3f665130900
 All nine jobs passed in run 34920627839. All 28 original table streams and 525 complete API outputs (15 representatives, 118/119/all) match after normalization and after fresh normalized dump/restore. New ingestion through all active adapters, exact re-ingestion, shared-drift rejection, compatibility CRUD and transactional rollback pass. Normalized size 238,346,767 bytes; fresh restore 230,121,999 bytes; conservative production projection 245,337,235 bytes. First and expanded proofs both covered all three scopes. Final head adds captured sequence-state preservation, per-field/index/heap accounting, PostgreSQL 17 validation, and change-gating of this full-population CI step.
+
+## Final validation gate
+The final proof uses an owned PostgreSQL 17 container within the appended change-gated CI step. Existing historical PostgreSQL 16 job definitions remain intact. The final proof includes all 17 captured sequence states, detailed shared-field/heap/index accounting, complete original-column parity for all 28 public tables, 525 full API outputs across 15 representatives and all three supported scopes, normalized active-producer insertion/idempotency, compatibility CRUD, ambiguity/drift rejection, rollback and a fresh compact restore. Exact run/head and measured results are attached to PR #188 to avoid embedding a self-referential commit identity in this file.
