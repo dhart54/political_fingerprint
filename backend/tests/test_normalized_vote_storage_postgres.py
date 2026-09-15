@@ -27,9 +27,9 @@ DSN=os.getenv('NORMALIZED_STORAGE_DISPOSABLE_DATABASE_URL')
 pytestmark=pytest.mark.skipif(not DSN,reason='dedicated loopback PostgreSQL required')
 
 
-def load_fixture():
+def load_fixture(path=FIXTURE):
     tables={}
-    with gzip.open(FIXTURE,'rt',encoding='utf-8') as stream:
+    with gzip.open(path,'rt',encoding='utf-8') as stream:
         metadata=json.loads(next(stream))['metadata']
         for line in stream:
             header=json.loads(line);rows=[]
@@ -69,6 +69,8 @@ def sequence_state(conn):
 
 
 def digest_tables(conn,tables):
+    from scripts.capture_green_source import primary_order
+    conn.execute("SET extra_float_digits=3")
     result={}
     for name,table in tables.items():
         if name=='shared_context_snapshot':continue
@@ -76,7 +78,8 @@ def digest_tables(conn,tables):
         if name=='vote_contexts':columns=[*columns,*norm.SHARED]
         # Compare every original column, including original timestamps. Added
         # normalized physical columns on roll_calls are not old logical fields.
-        query=sql.SQL('COPY (SELECT {} FROM public.{} ORDER BY 1,2) TO STDOUT').format(sql.SQL(',').join(map(sql.Identifier,columns)),sql.Identifier(name))
+        owner='vote_context_members' if name=='vote_contexts' and conn.execute("SELECT relkind FROM pg_class WHERE oid='public.vote_contexts'::regclass").fetchone()['relkind']=='v' else name
+        query=sql.SQL('COPY (SELECT {} FROM public.{} ORDER BY {}) TO STDOUT').format(sql.SQL(',').join(map(sql.Identifier,columns)),sql.Identifier(name),primary_order(conn,owner))
         digest=hashlib.sha256()
         with conn.cursor().copy(query) as reader:
             for chunk in reader:digest.update(chunk)
@@ -85,6 +88,8 @@ def digest_tables(conn,tables):
 
 
 def public_outputs(conn,member_names):
+    # Both managed blue and green use this actual backend session default.
+    conn.execute("SET extra_float_digits=0")
     from app.api import positions,editorial_presentations,precomputed
     from app.classification.classifier import ISSUE_DOMAINS
     outputs={}
@@ -129,16 +134,27 @@ def storage(conn):
 
 
 def test_actual_full_population_parity_and_scale(monkeypatch):
+    run_full_population_proof(monkeypatch)
+
+
+def run_full_population_proof(monkeypatch, *, fixture=FIXTURE,
+                              fixture_sha='5c3bbf50327d3a531cec21518b9165b68f8d05a7866a20e3c3d421260a916f7d',
+                              dsn=DSN, sequences=SEQUENCES, source_restored=False):
+    # Reuse the exact accepted proof on a freshly captured, digest-bound source.
+    DSN = dsn
+    FIXTURE = fixture
+    SEQUENCES = sequences
     target=urlsplit(DSN)
     assert target.hostname in ('127.0.0.1','localhost') and target.path=='/pf_normalized_storage'
-    assert hashlib.sha256(FIXTURE.read_bytes()).hexdigest()=='5c3bbf50327d3a531cec21518b9165b68f8d05a7866a20e3c3d421260a916f7d'
+    assert hashlib.sha256(FIXTURE.read_bytes()).hexdigest()==fixture_sha
     monkeypatch.setenv('ENABLE_FIXTURE_FALLBACK','0')
-    metadata,tables=load_fixture()
+    metadata,tables=load_fixture(FIXTURE)
     assert len(tables['votes_cast']['rows'])==len(tables['vote_contexts']['rows'])==814963
     assert len(tables['shared_context_snapshot']['rows'])==2298 and metadata['shared_conflicts']==0
     with psycopg.connect(DSN,autocommit=True,row_factory=dict_row) as conn:
         conn.execute("SET timezone='UTC'")
-        reset_database(conn,tables)
+        if not source_restored:
+            reset_database(conn,tables)
         print('BASELINE_RESTORED',flush=True)
         before=digest_tables(conn,tables)
         # A conflicting source value must abort before schema/data conversion.
@@ -240,3 +256,4 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
             assert restored_size['database_bytes']<400000000
         report={'postgresql_version':conn.execute("SELECT current_setting('server_version') version").fetchone()['version'],'shared_field_datum_bytes':shared_bytes,'sequences_preserved':len(SEQUENCES['sequences']),'restore':restored_size,'source':metadata,'original_table_hashes':before,'table_count':len(before),'members':names,'complete_api_outputs':len(api_before),'api_sha256':hashlib.sha256(json.dumps(api_before,sort_keys=True).encode()).hexdigest(),'legacy':legacy_size,'normalized':physical,'projected_source_bytes':projected_source_bytes,'before_queries':performance_before,'after_queries':performance_after,'production_writes':False}
         print('NORMALIZED_STORAGE_PROOF '+json.dumps(report,default=str,sort_keys=True),flush=True)
+        return report
