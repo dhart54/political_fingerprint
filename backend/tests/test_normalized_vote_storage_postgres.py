@@ -5,6 +5,8 @@ import hashlib
 import json
 import os
 import statistics
+import subprocess
+import tempfile
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -79,18 +81,24 @@ def public_outputs(conn,member_names):
     from app.api import positions,editorial_presentations,precomputed
     from app.classification.classifier import ISSUE_DOMAINS
     outputs={}
+    from fastapi import HTTPException
+    def invoke(function,*args,**kwargs):
+        try:return {'status':200,'body':function(*args,**kwargs)}
+        except HTTPException as error:
+            assert error.status_code<500, 'baseline/service failure must not masquerade as parity'
+            return {'status':error.status_code,'body':{'detail':error.detail},'headers':error.headers}
     with public_reads_in_transaction(conn):
         for name in member_names:
             external=precomputed._to_external_legislator_id(name)
             for scope in ('119','118','all'):
                 prefix=external+':'+scope
-                outputs[prefix+':positions']=positions.get_legislator_positions(external,scope,None)
-                outputs[prefix+':editorial']=editorial_presentations.get_editorial_presentations(external,scope,None)
-                outputs[prefix+':fingerprint']=precomputed.get_fingerprint_response(legislator_id=external,comparison_party='ALL',scope=scope)
+                outputs[prefix+':positions']=invoke(positions.get_legislator_positions,external,scope,None)
+                outputs[prefix+':editorial']=invoke(editorial_presentations.get_editorial_presentations,external,scope,None)
+                outputs[prefix+':fingerprint']=invoke(precomputed.get_fingerprint_response,legislator_id=external,comparison_party='ALL',scope=scope)
                 for domain in ISSUE_DOMAINS:
-                    outputs[prefix+':'+domain]=positions.get_legislator_position_evidence(external,domain,scope,None)
-            outputs[external+':summary']=precomputed.get_summary_response(legislator_id=external)
-            outputs[external+':drift']=precomputed.get_drift_response(legislator_id=external)
+                    outputs[prefix+':'+domain]=invoke(positions.get_legislator_position_evidence,external,domain,scope,None)
+            outputs[external+':summary']=invoke(precomputed.get_summary_response,legislator_id=external)
+            outputs[external+':drift']=invoke(precomputed.get_drift_response,legislator_id=external)
     # JSON-normalize types only. No fields (including timestamps) are removed.
     return json.loads(json.dumps(outputs,default=str,sort_keys=True))
 
@@ -126,6 +134,14 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
         reset_database(conn,tables)
         print('BASELINE_RESTORED',flush=True)
         before=digest_tables(conn,tables)
+        # A conflicting source value must abort before schema/data conversion.
+        conn.execute('BEGIN')
+        conn.execute("UPDATE vote_contexts SET party_vote_totals=party_vote_totals || '{\"normalization_conflict\":true}'::jsonb WHERE (roll_call_id,legislator_id)=(SELECT roll_call_id,min(legislator_id) FROM vote_contexts GROUP BY roll_call_id HAVING count(*)>1 ORDER BY roll_call_id LIMIT 1)")
+        with pytest.raises(psycopg.errors.RaiseException,match='roll-level context ambiguity'):
+            conn.execute(MIGRATION.read_text(encoding='utf-8'))
+        conn.rollback()
+        assert conn.execute("SELECT relkind FROM pg_class WHERE oid='vote_contexts'::regclass").fetchone()['relkind']=='r'
+        assert digest_tables(conn,tables)==before
         names=[r['name_display'] for r in conn.execute("SELECT name_display FROM legislators WHERE bioguide_id IN (SELECT DISTINCT member_bioguide_id FROM editorial_artifact_versions WHERE member_bioguide_id IS NOT NULL) OR id IN (SELECT min(id) FROM legislators GROUP BY chamber,party) ORDER BY name_display")]
         member=conn.execute("SELECT id FROM legislators WHERE bioguide_id='F000477'").fetchone()['id']
         api_before=public_outputs(conn,names)
@@ -141,7 +157,12 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
         assert public_outputs(conn,names)==api_before, 'complete API JSON parity'
         physical=storage(conn)
         assert physical['database_bytes']<400000000
+        # Preserve the source's other relation allocation conservatively instead
+        # of attributing compacted votes_cast indexes to context normalization.
+        projected_source_bytes=metadata['database_bytes']-510492672-1056768+physical['member_bytes']+physical['roll_bytes']
+        assert projected_source_bytes<400000000
         assert conn.execute('SELECT count(*) n FROM vote_context_members').fetchone()['n']==814963
+        assert conn.execute('SELECT count(*) n FROM votes_cast v LEFT JOIN roll_calls r ON r.id=v.roll_call_id LEFT JOIN legislators l ON l.id=v.legislator_id WHERE r.id IS NULL OR l.id IS NULL').fetchone()['n']==0
         assert conn.execute('SELECT count(*) n FROM roll_calls WHERE context_context_version IS NOT NULL').fetchone()['n']==2298
         assert not conn.execute("SELECT column_name FROM information_schema.columns WHERE table_name='vote_context_members' AND column_name=ANY(%s)",(list(norm.SHARED),)).fetchall()
         assert conn.execute('SELECT count(*) n FROM vote_context_members m LEFT JOIN roll_calls r ON r.id=m.roll_call_id WHERE r.context_context_version IS NULL').fetchone()['n']==0
@@ -159,10 +180,53 @@ def test_actual_full_population_parity_and_scale(monkeypatch):
             bad=copy.deepcopy(sample[:1]);bad[0][field]={'drift':True} if field=='party_vote_totals' else [{'drift':True}]
             with pytest.raises(ValueError,match='shared context drift'):
                 with conn.transaction(),conn.cursor() as cursor:norm.write_contexts(cursor,bad)
+        # New ingestion, repeated ingestion, compatibility CRUD and transaction
+        # failure all exercise real normalized storage, not only the no-op path.
+        with conn.transaction(force_rollback=True):
+            raw=dict(conn.execute('SELECT * FROM roll_calls WHERE id=%s',(sample[0]['roll_call_id'],)).fetchone())
+            raw={k:v for k,v in raw.items() if not k.startswith('context_')}
+            raw['id']=-188;raw['rollcall_number']=999999
+            with conn.cursor() as cursor:
+                cursor.execute(sql.SQL('INSERT INTO roll_calls ({}) VALUES ({})').format(sql.SQL(',').join(map(sql.Identifier,raw)),sql.SQL(',').join(sql.Placeholder() for _ in raw)),tuple(raw.values()))
+                incoming=conn.execute('SELECT * FROM vote_contexts WHERE roll_call_id=%s ORDER BY legislator_id LIMIT 3',(sample[0]['roll_call_id'],)).fetchall()
+                incoming=[dict(row,roll_call_id=-188) for row in incoming]
+                from app.etl import current_congress_refresh,senate_fact_import,senate_amendment_facts,seed
+                roll_keys={'-188':'new'}
+                bioguides={str(row['legislator_id']):str(row['legislator_id']) for row in incoming}
+                member_ids={str(row['legislator_id']):row['legislator_id'] for row in incoming}
+                args=(cursor,incoming,roll_keys,bioguides,{'new':-188},member_ids)
+                assert current_congress_refresh._insert_vote_contexts(*args)==len(incoming)
+                for producer in (current_congress_refresh,senate_fact_import,senate_amendment_facts):
+                    assert producer._insert_vote_contexts(*args)==0
+                seed._write_rows(cursor,insert_statement='',copy_statement='COPY vote_contexts (',rows=[tuple(row[k] for k in norm.LOGICAL) for row in incoming])
+                assert conn.execute('SELECT count(*) n FROM roll_calls WHERE id=-188 AND context_context_version IS NOT NULL').fetchone()['n']==1
+                actual=conn.execute('SELECT * FROM vote_contexts WHERE roll_call_id=-188 ORDER BY legislator_id').fetchall()
+                for expected,got in zip(incoming,actual):
+                    assert {k:got[k] for k in norm.LOGICAL}=={k:expected[k] for k in norm.LOGICAL}
+                # Legacy one-row operators compose through the same governed view.
+                conn.execute('DELETE FROM vote_contexts WHERE roll_call_id=-188 AND legislator_id=%s',(incoming[0]['legislator_id'],))
+                row=incoming[0]
+                cursor.execute(sql.SQL('INSERT INTO vote_contexts ({}) VALUES ({})').format(sql.SQL(',').join(map(sql.Identifier,norm.LOGICAL)),sql.SQL(',').join(sql.Placeholder() for _ in norm.LOGICAL)),tuple(Jsonb(row[k]) if k in ('party_vote_totals','context_source_list') else row[k] for k in norm.LOGICAL))
+        assert digest_tables(conn,tables)==after, 'rollback restores complete original state'
         performance_after=benchmark(conn,member)
         # Absolute and relative bounds prevent tiny millisecond noise failing a
         # sound join while rejecting a major practical regression.
         for name in performance_before:
             assert performance_after[name]['median_ms']<=max(50,performance_before[name]['median_ms']*3), name
-        report={'source':metadata,'original_table_hashes':before,'table_count':len(before),'members':names,'complete_api_outputs':len(api_before),'api_sha256':hashlib.sha256(json.dumps(api_before,sort_keys=True).encode()).hexdigest(),'legacy':legacy_size,'normalized':physical,'before_queries':performance_before,'after_queries':performance_after,'production_writes':False}
+        # A fresh restore proves the proposed compact green end-state, including
+        # functions/views/constraints, rather than assuming dump portability.
+        restore_dsn=DSN.rsplit('/',1)[0]+'/pf_normalized_restore'
+        subprocess.run(['createdb','--maintenance-db='+DSN,'pf_normalized_restore'],check=True,capture_output=True,timeout=30)
+        with tempfile.TemporaryDirectory(prefix='normalized-storage-restore-') as directory:
+            dump=Path(directory)/'normalized.dump'
+            subprocess.run(['pg_dump','--dbname='+DSN,'--format=custom','--file='+str(dump)],check=True,capture_output=True,timeout=180)
+            subprocess.run(['pg_restore','--dbname='+restore_dsn,'--clean','--if-exists','--no-owner',str(dump)],check=True,capture_output=True,timeout=180)
+        with psycopg.connect(restore_dsn,autocommit=True,row_factory=dict_row) as restored:
+            restored.execute("SET timezone='UTC'")
+            restored.execute('ANALYZE')
+            assert digest_tables(restored,tables)==after
+            assert public_outputs(restored,names)==api_before
+            restored_size=storage(restored)
+            assert restored_size['database_bytes']<400000000
+        report={'restore':restored_size,'source':metadata,'original_table_hashes':before,'table_count':len(before),'members':names,'complete_api_outputs':len(api_before),'api_sha256':hashlib.sha256(json.dumps(api_before,sort_keys=True).encode()).hexdigest(),'legacy':legacy_size,'normalized':physical,'projected_source_bytes':projected_source_bytes,'before_queries':performance_before,'after_queries':performance_after,'production_writes':False}
         print('NORMALIZED_STORAGE_PROOF '+json.dumps(report,default=str,sort_keys=True),flush=True)

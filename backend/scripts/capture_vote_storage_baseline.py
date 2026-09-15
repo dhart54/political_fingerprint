@@ -41,6 +41,8 @@ def main():
         # Columnar records avoid repeated field names and duplicated shared JSON.
         # No auth, vault, settings, credentials, or private service state is exported.
         tables = conn.execute("SELECT tablename FROM pg_tables WHERE schemaname='public' ORDER BY tablename").fetchall()
+        allowed={'bills','candidate_evidence','chamber_medians','drift_scores','editorial_artifact_batches','editorial_artifact_relationships','editorial_artifact_versions','editorial_publication_registry','fingerprints','house_member_metadata_snapshot_artifacts','house_member_metadata_snapshots','house_member_service_evidence','house_member_service_evidence_artifacts','house_seat_status_evidence','house_seat_status_evidence_artifacts','legislator_contacts','legislators','race_candidates','roll_calls','senate_amendment_references','summaries','upcoming_races','vote_classifications','vote_contexts','vote_interpretations','votes_cast','zip_district_map','zip_district_mappings'}
+        if {t['tablename'] for t in tables}!=allowed:raise ValueError('unexpected public schema; review export scope')
         counts = {}
         with gzip.open(args.output, "wt", encoding="utf-8") as out:
             out.write(json.dumps({"metadata":metadata}, default=str) + "\n")
@@ -55,6 +57,7 @@ def main():
                     cur.execute(sql.SQL('SELECT {} FROM public.{} ORDER BY 1,2').format(sql.SQL(',').join(map(sql.Identifier,columns)),sql.Identifier(name)))
                     for row in cur:
                         out.write(json.dumps([row[c] for c in columns],default=str,separators=(',',':'))+'\n');count+=1
+                        if count>2000000:raise ValueError('bounded table export cap exceeded')
                 counts[name]=count
                 out.write('null\n')
             columns=['roll_call_id',*SHARED]
