@@ -15,6 +15,16 @@ from app.editorial_presentations.publication_replacement_governance_v2 import Pu
 from test_reusable_publication_replacement_v2r import runtime,seal
 
 
+def test_historical_store_defaults_remain_bound_at_call_time(monkeypatch):
+    from unittest.mock import MagicMock
+    from scripts import editorial_artifact_store as store
+    monkeypatch.setattr(store,'BATCH_KEY','historical-wrapper-bound-batch')
+    monkeypatch.setattr(store,'STARTING_COMMIT','b'*40)
+    conn=MagicMock();conn.execute.return_value.fetchone.return_value={'batch_id':1}
+    store.insert_bundle(conn,{'manifest_sha256':'a'*64,'expected_counts':{'artifacts':0,'relationships':0},'artifacts':[],'relationships':[]},{})
+    assert conn.execute.call_args.args[1][:2]==('historical-wrapper-bound-batch','b'*40)
+
+
 def test_actual_package_is_exact_additive_and_unresolved():
     package=prep.load(prep.OUT/'persistence_package.json');prep.validate_package(package)
     approved=prep.load(prep.APPROVED)
@@ -26,6 +36,9 @@ def test_actual_package_is_exact_additive_and_unresolved():
         assert bundle['manifest_sha256']==digest({k:v for k,v in bundle.items() if k!='manifest_sha256'})
     assert package['production_persistence_authorized'] is False
     assert package['production_activation_authorized'] is False
+    assert prep.public_review(package)==prep.load(prep.OUT/'public_before_after.json')
+    fixture=json.loads(gzip.decompress((prep.OUT/'disposable_baseline.json.gz').read_bytes()))
+    assert digest(fixture)==prep.load(prep.OUT/'production_baseline.json')['fixture_sha256']
 
 
 def snapshot(conn, registry=True):
@@ -104,6 +117,8 @@ def test_actual_persistence_publication_and_owned_recovery(monkeypatch):
             pre=snapshot(conn)
             wrong=copy.deepcopy(authority);wrong['subject']['proposed_new']['artifact_id']+=1
             with pytest.raises(PublicationReplacementGovernanceError): replace_publication(conn,ws,wrong,**kw)
+            wrong_id=copy.deepcopy(ws);wrong_id['subject']['proposed_new']['artifact_id']=ws['subject']['expected_old']['artifact_id']
+            with pytest.raises(PublicationReplacementGovernanceError): replace_publication(conn,wrong_id,authority,**kw)
             assert snapshot(conn)==pre
             with pytest.raises(RuntimeError,match='injected'):
                 with conn.transaction(): replace_publication(conn,ws,authority,**kw,fault_after_update=True)

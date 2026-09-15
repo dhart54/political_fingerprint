@@ -1,6 +1,7 @@
 """Exact M15B package and thin use of the existing immutable artifact store."""
 import argparse
 import copy
+import gzip
 import json
 import os
 import subprocess
@@ -70,6 +71,16 @@ def validate_package(package):
     require(package==build(),'package differs from exact reviewed preparation')
 
 
+def public_review(package):
+    before=json.loads(gzip.decompress((OUT/'public_before.json.gz').read_bytes()))
+    require(digest(before)==load(OUT/'production_baseline.json')['public_before_sha256'],'captured public output drift')
+    return {'package_sha256':package['package_sha256'],'scopes':{
+        scope:{issue:{'before':next(p for p in state['presentations']['presentations'] if p['issue_id']==issue),
+            'after':bundle['artifacts'][0]['payload']['subject']['presentations'][scope],
+            'current_ledger_accounting':state['details'][issue]['review_accounting']}
+            for issue,bundle in package['replacements'].items()} for scope,state in before.items()}}
+
+
 def owned_state(conn,bundle):
     """ABSENT or complete exact immutable ownership; partial states fail closed."""
     batch=conn.execute('SELECT * FROM editorial_artifact_batches WHERE deterministic_batch_key=%s',(bundle['deterministic_batch_key'],)).fetchone()
@@ -101,6 +112,7 @@ def owned_state(conn,bundle):
 
 
 def preflight(conn,bundle):
+    store.live_schema_contract(conn)
     bound_artifact(conn,bundle['expected_old'],bundle['registry_key'])
     require(registry_row(conn,bundle['registry_key'])==bundle['prior_registry_row'],'current registry drift; no retargeting')
     from app.editorial_artifacts.repository import EditorialArtifactRepository
@@ -149,9 +161,11 @@ def main():
     parser.add_argument('--report-path',type=Path)
     args=parser.parse_args();path=OUT/'persistence_package.json'
     if args.mode in ('build','check'):
-        text=json.dumps(build(),sort_keys=True,ensure_ascii=False,indent=2)+'\n'
-        if args.mode=='build': path.write_text(text,encoding='utf-8')
-        else: require(path.read_text(encoding='utf-8')==text,'package drift')
+        package=build()
+        for dest,body in [(path,package),(OUT/'public_before_after.json',public_review(package))]:
+            text=json.dumps(body,sort_keys=True,ensure_ascii=False,indent=2)+'\n'
+            if args.mode=='build': dest.write_text(text,encoding='utf-8')
+            else: require(dest.read_text(encoding='utf-8')==text,'package/review drift')
         print('Exact actual M15B package verified');return
     require(args.issue and args.target and args.report_path,'explicit issue/target/report required')
     if args.target=='production':

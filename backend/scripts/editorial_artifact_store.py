@@ -304,8 +304,12 @@ def inspect(conn: Any, bundle: dict[str, Any]) -> dict[str, Any]:
 
 
 def insert_bundle(conn: Any, bundle: dict[str, Any], roll_ids: dict[str, int], *,
-                  batch_key: str = BATCH_KEY, source_commit: str = STARTING_COMMIT) -> dict[str, Any]:
+                  batch_key: str | None = None, source_commit: str | None = None) -> dict[str, Any]:
     from psycopg.types.json import Jsonb
+
+    # Historical wrappers bind these module values at call time.
+    batch_key = BATCH_KEY if batch_key is None else batch_key
+    source_commit = STARTING_COMMIT if source_commit is None else source_commit
 
     batch = conn.execute(
         """INSERT INTO editorial_artifact_batches
@@ -589,7 +593,8 @@ def postcheck(
     return result
 
 
-def rollback_batch(conn: Any, bundle: dict[str, Any], *, batch_key: str = BATCH_KEY) -> dict[str, Any]:
+def rollback_batch(conn: Any, bundle: dict[str, Any], *, batch_key: str | None = None) -> dict[str, Any]:
+    batch_key = BATCH_KEY if batch_key is None else batch_key
     batch = conn.execute(
         """SELECT batch_id, manifest_sha256 FROM editorial_artifact_batches
            WHERE deterministic_batch_key = %s FOR UPDATE""",
