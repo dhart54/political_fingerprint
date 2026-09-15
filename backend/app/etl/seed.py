@@ -7,6 +7,7 @@ from app.etl.compute import run_compute
 from app.etl.ingest import IngestResult, run_ingest
 from app.etl.interpret import run_interpretation
 from app.etl.vote_context import build_vote_contexts
+from app.etl import normalized_vote_storage as normalized_contexts
 from app.summaries.cache import build_fallback_summary
 
 
@@ -717,7 +718,7 @@ def _build_summary_drift_payload(*, legislator_id: str, drift_rows: list[object]
 
 
 def _delete_statements() -> list[str]:
-    return [
+    statements = [
         """
         TRUNCATE TABLE
             summaries,
@@ -736,7 +737,12 @@ def _delete_statements() -> list[str]:
         """.strip(),
     ]
 
+    if normalized_contexts.enabled():
+        statements = [statement.replace("vote_contexts,", "vote_context_members,") for statement in statements]
+    return statements
 
+
+# The seed path already truncates roll_calls, which owns shared context.
 def _sequence_statements(bundle: SeedBundle) -> list[str]:
     return [
         _set_sequence_statement("legislators", len(bundle.legislators)),
@@ -772,6 +778,9 @@ def _write_rows(
     rows: list[tuple[object, ...]],
 ) -> None:
     if not rows:
+        return
+    if normalized_contexts.enabled() and "COPY vote_contexts (" in copy_statement:
+        normalized_contexts.write_contexts(cursor, [dict(zip(normalized_contexts.LOGICAL, row)) for row in rows])
         return
     if hasattr(cursor, "copy"):
         with cursor.copy(copy_statement) as copy:

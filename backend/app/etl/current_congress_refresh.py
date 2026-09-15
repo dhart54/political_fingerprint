@@ -23,6 +23,7 @@ from app.etl.interpret import interpret_roll_call
 from app.etl.senate_xml_adapter import SENATE_XML_SAMPLE_DIR, load_senate_xml_bundle
 from app.etl.types import FixtureBundle
 from app.etl.vote_context import build_vote_contexts
+from app.etl import normalized_vote_storage as normalized_contexts
 from app.metrics.drift import compute_drift
 from app.metrics.fingerprint import build_eligible_vote, compute_fingerprint
 from app.summaries.cache import build_fallback_summary
@@ -818,6 +819,10 @@ def _insert_votes_cast(cursor, votes, roll_keys_by_internal_id, bioguide_by_inte
 
 
 def _insert_vote_contexts(cursor, contexts, roll_keys_by_internal_id, bioguide_by_internal_legislator_id, roll_call_id_map, legislator_id_map) -> int:
+    if normalized_contexts.enabled():
+        return normalized_contexts.write_contexts(cursor, normalized_contexts.mapped_contexts(
+            contexts, roll_keys_by_internal_id, bioguide_by_internal_legislator_id,
+            roll_call_id_map, legislator_id_map))
     rows = [
         (
             roll_call_id_map[roll_keys_by_internal_id[str(row["roll_call_id"])]],

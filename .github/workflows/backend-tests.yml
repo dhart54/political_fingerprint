@@ -676,3 +676,13 @@ jobs:
             backend/tests/test_m15a2_core_repair.py \
             backend/tests/test_m15a2_core_repair_postgres.py \
             -rs
+
+      - name: Prove normalized storage at actual production cardinality
+        env:
+          NORMALIZED_STORAGE_DISPOSABLE_DATABASE_URL: >-
+            postgresql://postgres:postgres@127.0.0.1:5432/pf_normalized_storage
+        run: |
+          git checkout --detach "${{ github.event.pull_request.head.sha || github.sha }}"
+          git rev-parse HEAD
+          createdb -h 127.0.0.1 -U postgres pf_normalized_storage
+          python -m pytest -q -s backend/tests/test_normalized_vote_storage.py backend/tests/test_normalized_vote_storage_postgres.py -rs
