@@ -1,0 +1,664 @@
+{
+  "after-justice": {
+    "audit_sha256": "611fd4cd084831cea8efe2a4263354ec1eada0ba771217d03699cec4ced72b33",
+    "captured_at_utc": "2026-09-15T14:56:52.401380+00:00",
+    "database_bytes": 231722131,
+    "health": {
+      "commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+      "status": "ok"
+    },
+    "live_responses": 21,
+    "live_sha256": "a290d49d177bf36b279a8ea139d4625f1ec10ee7ffa84b81335d88f373f4a297",
+    "owned": {
+      "JUSTICE_PUBLIC_SAFETY": {
+        "artifact_ids": {
+          "public-issue-presentation:f000477:justice_public_safety:m15b:v1": 251,
+          "public-issue-presentation:f000477:justice_public_safety:m15b:v1:source": 252,
+          "public-issue-presentation:f000477:justice_public_safety:m15b:v1:validation": 253
+        },
+        "batch_id": 24
+      },
+      "NATIONAL_SECURITY_FOREIGN": {
+        "artifact_ids": {
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1": 248,
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1:source": 249,
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1:validation": 250
+        },
+        "batch_id": 23
+      }
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "public_sha256": "e43f2e5f50838d81053ca7c03fa291bfce8c7f53db12af0f1ed548559b73ea3c",
+    "registry_roots": {
+      "EDUCATION_WORKFORCE": 245,
+      "ENVIRONMENT_ENERGY": 239,
+      "JUSTICE_PUBLIC_SAFETY": 221,
+      "NATIONAL_SECURITY_FOREIGN": 227
+    },
+    "schema_sha256": "d72c38214545cd1ab6db8b75ff217058c7096440cb9df862b6006f33d5cdfc04",
+    "sequences": {
+      "bills_id_seq": {
+        "is_called": true,
+        "last_value": 1499
+      },
+      "candidate_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 15
+      },
+      "chamber_medians_id_seq": {
+        "is_called": true,
+        "last_value": 528
+      },
+      "drift_scores_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "editorial_artifact_batches_batch_id_seq": {
+        "is_called": true,
+        "last_value": 24
+      },
+      "editorial_artifact_versions_artifact_id_seq": {
+        "is_called": true,
+        "last_value": 253
+      },
+      "fingerprints_id_seq": {
+        "is_called": true,
+        "last_value": 52624
+      },
+      "house_member_metadata_snapshot_artifacts_id_seq": {
+        "is_called": true,
+        "last_value": 486
+      },
+      "house_member_service_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 437
+      },
+      "house_seat_status_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 441
+      },
+      "legislators_id_seq": {
+        "is_called": true,
+        "last_value": 649
+      },
+      "race_candidates_id_seq": {
+        "is_called": true,
+        "last_value": 11919
+      },
+      "roll_calls_id_seq": {
+        "is_called": true,
+        "last_value": 3144
+      },
+      "summaries_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "upcoming_races_id_seq": {
+        "is_called": true,
+        "last_value": 1512
+      },
+      "votes_cast_id_seq": {
+        "is_called": true,
+        "last_value": 859563
+      },
+      "zip_district_mappings_id_seq": {
+        "is_called": false,
+        "last_value": 1
+      }
+    },
+    "table_fingerprints": {
+      "bills": {
+        "n": 977,
+        "sha256": "f489658b4718a2be4eb751cbc79cf54a43226eef2c2452e0884e1c3a0e91017c"
+      },
+      "candidate_evidence": {
+        "n": 6,
+        "sha256": "ebeb180cd380ddc22937c4a36d3ba255be0aa780121b8b4738cda45ffdb2b630"
+      },
+      "chamber_medians": {
+        "n": 144,
+        "sha256": "cfb18822590c5748a13d089562ac6464d72e47910eac85c0a478e60969909278"
+      },
+      "drift_scores": {
+        "n": 1737,
+        "sha256": "f9a16ce30b47070f860f9f8d9b1d6efabdf947cf7d9caac1adb5831a42c5c687"
+      },
+      "editorial_artifact_batches": {
+        "n": 10,
+        "sha256": "43b3b5c7700f425f032dd21178b7bc078f3e4ebe7ef1d79b4312ea84521f0c3c"
+      },
+      "editorial_artifact_relationships": {
+        "n": 171,
+        "sha256": "3e0d217ccacf5c72f08af5fb598d8bc94ff2ab77a86917599ed242d06eb33081"
+      },
+      "editorial_artifact_versions": {
+        "n": 164,
+        "sha256": "57e36935b4e53a79ef96be7d63e55c48bc2def69966bec3d5a57730e433b93a1"
+      },
+      "editorial_publication_registry": {
+        "n": 4,
+        "sha256": "8e199c25e9c767f2f26cd546170f1cbca49d9f5a8f95fda9ca02b6d9ffb15d4b"
+      },
+      "fingerprints": {
+        "n": 13896,
+        "sha256": "df56a0ea79812c77157398a6233afa84d2d9a7e2a22a3b4acad48449e5d6a3fe"
+      },
+      "house_member_metadata_snapshot_artifacts": {
+        "n": 486,
+        "sha256": "519c496efd5f25516d38d415a22c7c029e9a6ee288381e0b0f64405b8113ab6a"
+      },
+      "house_member_metadata_snapshots": {
+        "n": 1,
+        "sha256": "8cc64df72e7a1802c50b6a1d3e0aeae802f01b025e37cdf4728522a9ab8f0394"
+      },
+      "house_member_service_evidence": {
+        "n": 437,
+        "sha256": "1f4230f1bbf2707c72ee744b8a9e3c8bd37cb99aca5cf74da37ee1c83a0120ec"
+      },
+      "house_member_service_evidence_artifacts": {
+        "n": 874,
+        "sha256": "8c05324a786aa2639f9544fc1628a02a0e06fb97f676fc5ec6d991029a51cc2e"
+      },
+      "house_seat_status_evidence": {
+        "n": 441,
+        "sha256": "16228af00dc38cfa3000602476c55837543bef66dd51b2e156cc5307315e43fa"
+      },
+      "house_seat_status_evidence_artifacts": {
+        "n": 882,
+        "sha256": "0138e41a35e72217d0bbe6cdef6d7f4d50468f775ff31ec133022e97469f2a93"
+      },
+      "legislator_contacts": {
+        "n": 3,
+        "sha256": "d71d4b5c8816393eaa90a9f343e1b01ed0b18ce3884495510b69c61cb905d62c"
+      },
+      "legislators": {
+        "n": 637,
+        "sha256": "92562a8e2157d536108d7c75866970ee4328fc6424fdd26c800f855f1cf9c1ff"
+      },
+      "race_candidates": {
+        "n": 3973,
+        "sha256": "be2bcf06e6a3b172b7b91d44bff8c31b3f4c8703bc4e32676f7c3a54aa772307"
+      },
+      "roll_calls": {
+        "n": 2298,
+        "sha256": "c6c6ca4c6d20791b31c1aa566cbb48da54eaaef4713a1a783b10c20dec1bd8a2"
+      },
+      "senate_amendment_references": {
+        "n": 112,
+        "sha256": "ee531d0d31beec822528e38c58c12b12b3eacab6b23a6030916e8b4e5985c79f"
+      },
+      "summaries": {
+        "n": 1737,
+        "sha256": "118b7fcd8e2402990ec356218db8eb4869b03425a4a5903c424aa7dc39a17c6a"
+      },
+      "upcoming_races": {
+        "n": 504,
+        "sha256": "57e0ef70463243960ad3aafd17a9d0202069961ac0acfd778188fc3b0bf7c3a0"
+      },
+      "vote_classifications": {
+        "n": 2110,
+        "sha256": "8a993182776856ae0c4a39a4dc4cd8df13043ed11c9a073768cb152df4e9a0a5"
+      },
+      "vote_context_members": {
+        "n": 814963,
+        "sha256": "ba5ee107458826eb0ff0c5faf9e11a0f3a43c08fc7b463c0163983e99dcf00e4"
+      },
+      "vote_interpretations": {
+        "n": 1758,
+        "sha256": "db6f617b6d2737ac396d78f733913f1f3d4d53ed7ae51cba2face1c7b170ae28"
+      },
+      "votes_cast": {
+        "n": 814963,
+        "sha256": "9b81a2cb7922184c2874740d2c18e5da72e85b4b5f2fcfdef9ed6333b1f99ec4"
+      },
+      "zip_district_map": {
+        "n": 4,
+        "sha256": "cd13d33c96edd7cb4e4bb82df00e6efe10a9806fb7949003c03ac81a04af92b6"
+      },
+      "zip_district_mappings": {
+        "n": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "transaction_read_only": true,
+    "verified_combined_mutation_counts": {
+      "artifacts": 6,
+      "batches": 2,
+      "other_writes": 0,
+      "registry_updates": 0,
+      "relationships": 4
+    }
+  },
+  "after-ns": {
+    "audit_sha256": "1efa6f49409f55e61e9091ee4d8c0232ef0127257ebb8932445f4862aeff050f",
+    "captured_at_utc": "2026-09-15T14:53:57.042725+00:00",
+    "database_bytes": 231574675,
+    "health": {
+      "commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+      "status": "ok"
+    },
+    "live_responses": 21,
+    "live_sha256": "a290d49d177bf36b279a8ea139d4625f1ec10ee7ffa84b81335d88f373f4a297",
+    "owned": {
+      "JUSTICE_PUBLIC_SAFETY": null,
+      "NATIONAL_SECURITY_FOREIGN": {
+        "artifact_ids": {
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1": 248,
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1:source": 249,
+          "public-issue-presentation:f000477:national_security_foreign:m15b:v1:validation": 250
+        },
+        "batch_id": 23
+      }
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "public_sha256": "e43f2e5f50838d81053ca7c03fa291bfce8c7f53db12af0f1ed548559b73ea3c",
+    "registry_roots": {
+      "EDUCATION_WORKFORCE": 245,
+      "ENVIRONMENT_ENERGY": 239,
+      "JUSTICE_PUBLIC_SAFETY": 221,
+      "NATIONAL_SECURITY_FOREIGN": 227
+    },
+    "schema_sha256": "d72c38214545cd1ab6db8b75ff217058c7096440cb9df862b6006f33d5cdfc04",
+    "sequences": {
+      "bills_id_seq": {
+        "is_called": true,
+        "last_value": 1499
+      },
+      "candidate_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 15
+      },
+      "chamber_medians_id_seq": {
+        "is_called": true,
+        "last_value": 528
+      },
+      "drift_scores_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "editorial_artifact_batches_batch_id_seq": {
+        "is_called": true,
+        "last_value": 23
+      },
+      "editorial_artifact_versions_artifact_id_seq": {
+        "is_called": true,
+        "last_value": 250
+      },
+      "fingerprints_id_seq": {
+        "is_called": true,
+        "last_value": 52624
+      },
+      "house_member_metadata_snapshot_artifacts_id_seq": {
+        "is_called": true,
+        "last_value": 486
+      },
+      "house_member_service_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 437
+      },
+      "house_seat_status_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 441
+      },
+      "legislators_id_seq": {
+        "is_called": true,
+        "last_value": 649
+      },
+      "race_candidates_id_seq": {
+        "is_called": true,
+        "last_value": 11919
+      },
+      "roll_calls_id_seq": {
+        "is_called": true,
+        "last_value": 3144
+      },
+      "summaries_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "upcoming_races_id_seq": {
+        "is_called": true,
+        "last_value": 1512
+      },
+      "votes_cast_id_seq": {
+        "is_called": true,
+        "last_value": 859563
+      },
+      "zip_district_mappings_id_seq": {
+        "is_called": false,
+        "last_value": 1
+      }
+    },
+    "table_fingerprints": {
+      "bills": {
+        "n": 977,
+        "sha256": "f489658b4718a2be4eb751cbc79cf54a43226eef2c2452e0884e1c3a0e91017c"
+      },
+      "candidate_evidence": {
+        "n": 6,
+        "sha256": "ebeb180cd380ddc22937c4a36d3ba255be0aa780121b8b4738cda45ffdb2b630"
+      },
+      "chamber_medians": {
+        "n": 144,
+        "sha256": "cfb18822590c5748a13d089562ac6464d72e47910eac85c0a478e60969909278"
+      },
+      "drift_scores": {
+        "n": 1737,
+        "sha256": "f9a16ce30b47070f860f9f8d9b1d6efabdf947cf7d9caac1adb5831a42c5c687"
+      },
+      "editorial_artifact_batches": {
+        "n": 9,
+        "sha256": "ebd0a107a431b3351a22f2be323de7fdb892e3f5583a5ab59e067477939d37ee"
+      },
+      "editorial_artifact_relationships": {
+        "n": 169,
+        "sha256": "0380f02aeb9a957c22b40861b0c764564a975929d669ace3cea467236db7f009"
+      },
+      "editorial_artifact_versions": {
+        "n": 161,
+        "sha256": "e7918c86f9e4013f9400b5443441910b0eb7a68820e3f382bdbb219b2f15adc6"
+      },
+      "editorial_publication_registry": {
+        "n": 4,
+        "sha256": "8e199c25e9c767f2f26cd546170f1cbca49d9f5a8f95fda9ca02b6d9ffb15d4b"
+      },
+      "fingerprints": {
+        "n": 13896,
+        "sha256": "df56a0ea79812c77157398a6233afa84d2d9a7e2a22a3b4acad48449e5d6a3fe"
+      },
+      "house_member_metadata_snapshot_artifacts": {
+        "n": 486,
+        "sha256": "519c496efd5f25516d38d415a22c7c029e9a6ee288381e0b0f64405b8113ab6a"
+      },
+      "house_member_metadata_snapshots": {
+        "n": 1,
+        "sha256": "8cc64df72e7a1802c50b6a1d3e0aeae802f01b025e37cdf4728522a9ab8f0394"
+      },
+      "house_member_service_evidence": {
+        "n": 437,
+        "sha256": "1f4230f1bbf2707c72ee744b8a9e3c8bd37cb99aca5cf74da37ee1c83a0120ec"
+      },
+      "house_member_service_evidence_artifacts": {
+        "n": 874,
+        "sha256": "8c05324a786aa2639f9544fc1628a02a0e06fb97f676fc5ec6d991029a51cc2e"
+      },
+      "house_seat_status_evidence": {
+        "n": 441,
+        "sha256": "16228af00dc38cfa3000602476c55837543bef66dd51b2e156cc5307315e43fa"
+      },
+      "house_seat_status_evidence_artifacts": {
+        "n": 882,
+        "sha256": "0138e41a35e72217d0bbe6cdef6d7f4d50468f775ff31ec133022e97469f2a93"
+      },
+      "legislator_contacts": {
+        "n": 3,
+        "sha256": "d71d4b5c8816393eaa90a9f343e1b01ed0b18ce3884495510b69c61cb905d62c"
+      },
+      "legislators": {
+        "n": 637,
+        "sha256": "92562a8e2157d536108d7c75866970ee4328fc6424fdd26c800f855f1cf9c1ff"
+      },
+      "race_candidates": {
+        "n": 3973,
+        "sha256": "be2bcf06e6a3b172b7b91d44bff8c31b3f4c8703bc4e32676f7c3a54aa772307"
+      },
+      "roll_calls": {
+        "n": 2298,
+        "sha256": "c6c6ca4c6d20791b31c1aa566cbb48da54eaaef4713a1a783b10c20dec1bd8a2"
+      },
+      "senate_amendment_references": {
+        "n": 112,
+        "sha256": "ee531d0d31beec822528e38c58c12b12b3eacab6b23a6030916e8b4e5985c79f"
+      },
+      "summaries": {
+        "n": 1737,
+        "sha256": "118b7fcd8e2402990ec356218db8eb4869b03425a4a5903c424aa7dc39a17c6a"
+      },
+      "upcoming_races": {
+        "n": 504,
+        "sha256": "57e0ef70463243960ad3aafd17a9d0202069961ac0acfd778188fc3b0bf7c3a0"
+      },
+      "vote_classifications": {
+        "n": 2110,
+        "sha256": "8a993182776856ae0c4a39a4dc4cd8df13043ed11c9a073768cb152df4e9a0a5"
+      },
+      "vote_context_members": {
+        "n": 814963,
+        "sha256": "ba5ee107458826eb0ff0c5faf9e11a0f3a43c08fc7b463c0163983e99dcf00e4"
+      },
+      "vote_interpretations": {
+        "n": 1758,
+        "sha256": "db6f617b6d2737ac396d78f733913f1f3d4d53ed7ae51cba2face1c7b170ae28"
+      },
+      "votes_cast": {
+        "n": 814963,
+        "sha256": "9b81a2cb7922184c2874740d2c18e5da72e85b4b5f2fcfdef9ed6333b1f99ec4"
+      },
+      "zip_district_map": {
+        "n": 4,
+        "sha256": "cd13d33c96edd7cb4e4bb82df00e6efe10a9806fb7949003c03ac81a04af92b6"
+      },
+      "zip_district_mappings": {
+        "n": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "transaction_read_only": true,
+    "verified_combined_mutation_counts": {
+      "artifacts": 3,
+      "batches": 1,
+      "other_writes": 0,
+      "registry_updates": 0,
+      "relationships": 2
+    }
+  },
+  "before": {
+    "audit_sha256": "4d0f68ca407c7730655893b0aa93156037f2fdd708a58cf58e7593a9ce498224",
+    "captured_at_utc": "2026-09-15T14:49:13.165891+00:00",
+    "database_bytes": 231500947,
+    "health": {
+      "commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+      "status": "ok"
+    },
+    "live_responses": 21,
+    "live_sha256": "a290d49d177bf36b279a8ea139d4625f1ec10ee7ffa84b81335d88f373f4a297",
+    "owned": {
+      "JUSTICE_PUBLIC_SAFETY": null,
+      "NATIONAL_SECURITY_FOREIGN": null
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "public_sha256": "e43f2e5f50838d81053ca7c03fa291bfce8c7f53db12af0f1ed548559b73ea3c",
+    "registry_roots": {
+      "EDUCATION_WORKFORCE": 245,
+      "ENVIRONMENT_ENERGY": 239,
+      "JUSTICE_PUBLIC_SAFETY": 221,
+      "NATIONAL_SECURITY_FOREIGN": 227
+    },
+    "schema_sha256": "d72c38214545cd1ab6db8b75ff217058c7096440cb9df862b6006f33d5cdfc04",
+    "sequences": {
+      "bills_id_seq": {
+        "is_called": true,
+        "last_value": 1499
+      },
+      "candidate_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 15
+      },
+      "chamber_medians_id_seq": {
+        "is_called": true,
+        "last_value": 528
+      },
+      "drift_scores_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "editorial_artifact_batches_batch_id_seq": {
+        "is_called": true,
+        "last_value": 22
+      },
+      "editorial_artifact_versions_artifact_id_seq": {
+        "is_called": true,
+        "last_value": 247
+      },
+      "fingerprints_id_seq": {
+        "is_called": true,
+        "last_value": 52624
+      },
+      "house_member_metadata_snapshot_artifacts_id_seq": {
+        "is_called": true,
+        "last_value": 486
+      },
+      "house_member_service_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 437
+      },
+      "house_seat_status_evidence_id_seq": {
+        "is_called": true,
+        "last_value": 441
+      },
+      "legislators_id_seq": {
+        "is_called": true,
+        "last_value": 649
+      },
+      "race_candidates_id_seq": {
+        "is_called": true,
+        "last_value": 11919
+      },
+      "roll_calls_id_seq": {
+        "is_called": true,
+        "last_value": 3144
+      },
+      "summaries_id_seq": {
+        "is_called": true,
+        "last_value": 6578
+      },
+      "upcoming_races_id_seq": {
+        "is_called": true,
+        "last_value": 1512
+      },
+      "votes_cast_id_seq": {
+        "is_called": true,
+        "last_value": 859563
+      },
+      "zip_district_mappings_id_seq": {
+        "is_called": false,
+        "last_value": 1
+      }
+    },
+    "table_fingerprints": {
+      "bills": {
+        "n": 977,
+        "sha256": "f489658b4718a2be4eb751cbc79cf54a43226eef2c2452e0884e1c3a0e91017c"
+      },
+      "candidate_evidence": {
+        "n": 6,
+        "sha256": "ebeb180cd380ddc22937c4a36d3ba255be0aa780121b8b4738cda45ffdb2b630"
+      },
+      "chamber_medians": {
+        "n": 144,
+        "sha256": "cfb18822590c5748a13d089562ac6464d72e47910eac85c0a478e60969909278"
+      },
+      "drift_scores": {
+        "n": 1737,
+        "sha256": "f9a16ce30b47070f860f9f8d9b1d6efabdf947cf7d9caac1adb5831a42c5c687"
+      },
+      "editorial_artifact_batches": {
+        "n": 8,
+        "sha256": "306b8e650fc60902f29d4c0ee0b32298e7037a1a8b59cb6dc598d5939e1a22a9"
+      },
+      "editorial_artifact_relationships": {
+        "n": 167,
+        "sha256": "da5a59c1617e6062ff6c938312ae36e2fd2841a7ad47058bcdfc3e9d3f342d6d"
+      },
+      "editorial_artifact_versions": {
+        "n": 158,
+        "sha256": "a27506eff12a323c4641f0323667dda1243d7f1b2999f000e5af842909c2ec43"
+      },
+      "editorial_publication_registry": {
+        "n": 4,
+        "sha256": "8e199c25e9c767f2f26cd546170f1cbca49d9f5a8f95fda9ca02b6d9ffb15d4b"
+      },
+      "fingerprints": {
+        "n": 13896,
+        "sha256": "df56a0ea79812c77157398a6233afa84d2d9a7e2a22a3b4acad48449e5d6a3fe"
+      },
+      "house_member_metadata_snapshot_artifacts": {
+        "n": 486,
+        "sha256": "519c496efd5f25516d38d415a22c7c029e9a6ee288381e0b0f64405b8113ab6a"
+      },
+      "house_member_metadata_snapshots": {
+        "n": 1,
+        "sha256": "8cc64df72e7a1802c50b6a1d3e0aeae802f01b025e37cdf4728522a9ab8f0394"
+      },
+      "house_member_service_evidence": {
+        "n": 437,
+        "sha256": "1f4230f1bbf2707c72ee744b8a9e3c8bd37cb99aca5cf74da37ee1c83a0120ec"
+      },
+      "house_member_service_evidence_artifacts": {
+        "n": 874,
+        "sha256": "8c05324a786aa2639f9544fc1628a02a0e06fb97f676fc5ec6d991029a51cc2e"
+      },
+      "house_seat_status_evidence": {
+        "n": 441,
+        "sha256": "16228af00dc38cfa3000602476c55837543bef66dd51b2e156cc5307315e43fa"
+      },
+      "house_seat_status_evidence_artifacts": {
+        "n": 882,
+        "sha256": "0138e41a35e72217d0bbe6cdef6d7f4d50468f775ff31ec133022e97469f2a93"
+      },
+      "legislator_contacts": {
+        "n": 3,
+        "sha256": "d71d4b5c8816393eaa90a9f343e1b01ed0b18ce3884495510b69c61cb905d62c"
+      },
+      "legislators": {
+        "n": 637,
+        "sha256": "92562a8e2157d536108d7c75866970ee4328fc6424fdd26c800f855f1cf9c1ff"
+      },
+      "race_candidates": {
+        "n": 3973,
+        "sha256": "be2bcf06e6a3b172b7b91d44bff8c31b3f4c8703bc4e32676f7c3a54aa772307"
+      },
+      "roll_calls": {
+        "n": 2298,
+        "sha256": "c6c6ca4c6d20791b31c1aa566cbb48da54eaaef4713a1a783b10c20dec1bd8a2"
+      },
+      "senate_amendment_references": {
+        "n": 112,
+        "sha256": "ee531d0d31beec822528e38c58c12b12b3eacab6b23a6030916e8b4e5985c79f"
+      },
+      "summaries": {
+        "n": 1737,
+        "sha256": "118b7fcd8e2402990ec356218db8eb4869b03425a4a5903c424aa7dc39a17c6a"
+      },
+      "upcoming_races": {
+        "n": 504,
+        "sha256": "57e0ef70463243960ad3aafd17a9d0202069961ac0acfd778188fc3b0bf7c3a0"
+      },
+      "vote_classifications": {
+        "n": 2110,
+        "sha256": "8a993182776856ae0c4a39a4dc4cd8df13043ed11c9a073768cb152df4e9a0a5"
+      },
+      "vote_context_members": {
+        "n": 814963,
+        "sha256": "ba5ee107458826eb0ff0c5faf9e11a0f3a43c08fc7b463c0163983e99dcf00e4"
+      },
+      "vote_interpretations": {
+        "n": 1758,
+        "sha256": "db6f617b6d2737ac396d78f733913f1f3d4d53ed7ae51cba2face1c7b170ae28"
+      },
+      "votes_cast": {
+        "n": 814963,
+        "sha256": "9b81a2cb7922184c2874740d2c18e5da72e85b4b5f2fcfdef9ed6333b1f99ec4"
+      },
+      "zip_district_map": {
+        "n": 4,
+        "sha256": "cd13d33c96edd7cb4e4bb82df00e6efe10a9806fb7949003c03ac81a04af92b6"
+      },
+      "zip_district_mappings": {
+        "n": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "transaction_read_only": true
+  }
+}

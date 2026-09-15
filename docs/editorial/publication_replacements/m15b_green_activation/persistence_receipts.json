@@ -1,0 +1,79 @@
+{
+  "activation_authorized": false,
+  "combined_mutation_counts": {
+    "artifacts": 6,
+    "batches": 2,
+    "other_writes": 0,
+    "registry_updates": 0,
+    "relationships": 4
+  },
+  "database_bytes": 231722131,
+  "persistence_execution_head": "b1820d2b598eb2b5767e84040f6a8d6c0ef22d36",
+  "preflights": {
+    "justice-fresh-preflight": {
+      "code_head": "b1820d2b598eb2b5767e84040f6a8d6c0ef22d36",
+      "database_bytes": 231574675,
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "package_sha256": "55f81e763c085c4128de30863ec7d77c7f5bfb51695bbe739c4709cb3d80e362",
+      "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+      "state": null,
+      "transaction_read_only": true,
+      "writes": 0
+    },
+    "justice-initial-preflight": {
+      "code_head": "b1820d2b598eb2b5767e84040f6a8d6c0ef22d36",
+      "database_bytes": 231500947,
+      "issue": "JUSTICE_PUBLIC_SAFETY",
+      "package_sha256": "55f81e763c085c4128de30863ec7d77c7f5bfb51695bbe739c4709cb3d80e362",
+      "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+      "state": null,
+      "transaction_read_only": true,
+      "writes": 0
+    },
+    "ns-preflight": {
+      "code_head": "b1820d2b598eb2b5767e84040f6a8d6c0ef22d36",
+      "database_bytes": 231500947,
+      "issue": "NATIONAL_SECURITY_FOREIGN",
+      "package_sha256": "55f81e763c085c4128de30863ec7d77c7f5bfb51695bbe739c4709cb3d80e362",
+      "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+      "state": null,
+      "transaction_read_only": true,
+      "writes": 0
+    }
+  },
+  "production_package_sha256": "55f81e763c085c4128de30863ec7d77c7f5bfb51695bbe739c4709cb3d80e362",
+  "receipts": {
+    "JUSTICE_PUBLIC_SAFETY": {
+      "artifact_ids": {
+        "public-issue-presentation:f000477:justice_public_safety:m15b:v1": 251,
+        "public-issue-presentation:f000477:justice_public_safety:m15b:v1:source": 252,
+        "public-issue-presentation:f000477:justice_public_safety:m15b:v1:validation": 253
+      },
+      "batch_id": 24,
+      "status": "PERSISTED",
+      "writes": {
+        "artifacts": 3,
+        "batches": 1,
+        "other_writes": 0,
+        "registry_updates": 0,
+        "relationships": 2
+      }
+    },
+    "NATIONAL_SECURITY_FOREIGN": {
+      "artifact_ids": {
+        "public-issue-presentation:f000477:national_security_foreign:m15b:v1": 248,
+        "public-issue-presentation:f000477:national_security_foreign:m15b:v1:source": 249,
+        "public-issue-presentation:f000477:national_security_foreign:m15b:v1:validation": 250
+      },
+      "batch_id": 23,
+      "status": "PERSISTED",
+      "writes": {
+        "artifacts": 3,
+        "batches": 1,
+        "other_writes": 0,
+        "registry_updates": 0,
+        "relationships": 2
+      }
+    }
+  }
+}

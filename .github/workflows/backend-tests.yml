@@ -724,4 +724,4 @@ jobs:
           docker exec "$container" pg_isready -U postgres
           createdb -h 127.0.0.1 -p 55434 -U postgres pf_m15b_green
           python backend/scripts/m15b_persistence_preparation.py check
-          python -m pytest -q -s backend/tests/test_green_production_target.py backend/tests/test_m15b_actual_persistence.py -rs
+          python -m pytest -q -s backend/tests/test_green_production_target.py backend/tests/test_m15b_actual_persistence.py backend/tests/test_m15b_production_id_activation.py -rs
