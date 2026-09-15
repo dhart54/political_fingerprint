@@ -707,3 +707,21 @@ jobs:
           docker exec "$container" pg_isready -U postgres
           createdb -h 127.0.0.1 -p 55432 -U postgres pf_normalized_storage
           python -m pytest -q -s backend/tests/test_normalized_vote_storage.py backend/tests/test_normalized_vote_storage_postgres.py backend/tests/test_green_vote_storage.py -rs
+
+      - name: Prove actual green M15B persistence and owned V2R lifecycle
+        env:
+          M15B_GREEN_DISPOSABLE_DATABASE_URL: >-
+            postgresql://postgres:postgres@127.0.0.1:55434/pf_m15b_green
+        run: |
+          git checkout --detach "${{ github.event.pull_request.head.sha || github.sha }}"
+          git rev-parse HEAD
+          container="$(docker run --detach --rm --publish 127.0.0.1:55434:5432 --env POSTGRES_PASSWORD=postgres postgres:17)"
+          trap 'docker stop "$container" >/dev/null' EXIT
+          for attempt in $(seq 1 30); do
+            if docker exec "$container" pg_isready -U postgres; then break; fi
+            sleep 1
+          done
+          docker exec "$container" pg_isready -U postgres
+          createdb -h 127.0.0.1 -p 55434 -U postgres pf_m15b_green
+          python backend/scripts/m15b_persistence_preparation.py check
+          python -m pytest -q -s backend/tests/test_green_production_target.py backend/tests/test_m15b_actual_persistence.py -rs
