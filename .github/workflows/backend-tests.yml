@@ -676,3 +676,11 @@ jobs:
             backend/tests/test_m15a2_core_repair.py \
             backend/tests/test_m15a2_core_repair_postgres.py \
             -rs
+
+      - name: Prove actual M15B immutable persistence and governed replacement lifecycle
+        env:
+          M15A2_DISPOSABLE_DATABASE_URL: >-
+            postgresql://postgres:postgres@127.0.0.1:5432/pf_m15a2_repair
+        run: |
+          python backend/scripts/m15b_persistence_preparation.py check
+          python -m pytest -q -s backend/tests/test_m15b_actual_persistence.py -rs
