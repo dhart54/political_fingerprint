@@ -45,6 +45,9 @@ Progress:
   belong to draft PR #187 and must pass before the final readiness disposition.
 - Merge-triggered backend health serves merged main. Its legacy Alex Morgan smoke
   route returns 404; recorded as a smoke follow-up, not folded into this milestone.
+- Exact-head checkout is confined to the new appended proof step so the protected
+  historical workflow block remains byte-for-byte intact. Both historical block
+  regression suites pass locally (51 tests); final CI reruns the full head.
 
 Persistence authorization blockers after final green validation: none identified.
 Later activation gates remain unresolved: production IDs, fresh deployed-runtime
