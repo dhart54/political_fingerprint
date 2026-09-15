@@ -1,0 +1,75 @@
+{
+  "backend_deployment": {
+    "deployed_commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+    "files": [
+      {
+        "file_sha256": "09bdb9c0970d1cbb719119cc15e4b0df9cb9861521a58fc559c4787f25b52aba",
+        "path": "backend/app/main.py"
+      },
+      {
+        "file_sha256": "69ebd6d2523eb5995e46082e1729102dd1d7308af49b001c9304b8a76ec4e628",
+        "path": "backend/app/api/editorial_presentations.py"
+      },
+      {
+        "file_sha256": "747c40267aeaf41d23b267c284f0d1cb554313ff3e4dd82c4d6c0d5a897cf701",
+        "path": "backend/app/api/positions.py"
+      },
+      {
+        "file_sha256": "5a5de96d1ad53218f407bf3db911a961aeb2ddc9bfc88e96cb0f0c18a5740e58",
+        "path": "backend/app/editorial_artifacts/repository.py"
+      },
+      {
+        "file_sha256": "bdc58c3e79c96844ae2f7c5fd18a846349503286cb406a5717aace7010f12d20",
+        "path": "backend/app/editorial_presentations/selector.py"
+      },
+      {
+        "file_sha256": "4d9a03963a9a99a4324e94f862c5d1699f32168d5fb896f9b86cadd8023c8e37",
+        "path": "backend/app/editorial_presentations/site_publication.py"
+      },
+      {
+        "file_sha256": "2842ffa7b81001c73f21276afa607a53c05b9f84d3c0a5b88e88509b4a5a4fbd",
+        "path": "backend/app/editorial_presentations/education_workforce_m14g_integration_candidate.py"
+      },
+      {
+        "file_sha256": "563b651c8a349c1f742337a33f078f813c8f3058f03187dafc10f80aa90d3439",
+        "path": "backend/app/editorial_presentations/publication_replacement_runtime_v2r.py"
+      }
+    ],
+    "health_commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+    "submanifest_sha256": "938a8c26f4a11937ea53eb28c9ef6dce8de94dd368c2b6d4804d31172609cfc9",
+    "verification_method": "immutable_git_object_read"
+  },
+  "captured_at_utc": "2026-09-15T16:09:48.518879+00:00",
+  "deployment_required_before_activation": false,
+  "frontend_deployment": {
+    "deployed_commit_sha": "f790163f90b8a71fae2bee3206f73953364f1e72",
+    "deployment_source_identity": "github:dhart54/political_fingerprint:deployment:6460016105:https://political-fingerprint-dp5svtqpz-dhart54s-projects.vercel.app",
+    "files": [
+      {
+        "file_sha256": "77cd24646e53b5fe9beda23d0ce7930e5e4a0c4b82ff54e31d2430abc093deac",
+        "path": "frontend/components/IssueDetail.js"
+      },
+      {
+        "file_sha256": "e5d83953bbe01a36b3600fc35b6e5ada193c096d24e65f74ee2fb2a0d7874852",
+        "path": "frontend/components/ReviewedAnalysisSection.js"
+      },
+      {
+        "file_sha256": "f166f4ffa9dffb8f3b43c18350bbff156a3a8869cd76a950d2bfefdebcb11b29",
+        "path": "frontend/components/ActionReceipt.js"
+      },
+      {
+        "file_sha256": "38564e46e1a3ef614cca444960f5cbb451bb928fcd33d1f81361236441610a2e",
+        "path": "frontend/lib/selectedIssueExperience.mjs"
+      },
+      {
+        "file_sha256": "1e14ce81b0294e3604f1734f0755055b48df91e3f689edefa7dd940c2a511ea0",
+        "path": "frontend/lib/publicReceipt.mjs"
+      }
+    ],
+    "submanifest_sha256": "810788a06bda2af6aacc6ccdb7de86f858f24ed438a74e6aa7dd7be1cb58f181",
+    "verification_method": "immutable_git_object_read"
+  },
+  "healthy": true,
+  "runtime_health_proof_subject_sha256": "990804ae178c8ff33e0c64dc8252a34c7a03bb0a8d006221f020161f152a5375",
+  "schema_version": "publication_replacement_runtime_execution_evidence_v2r"
+}

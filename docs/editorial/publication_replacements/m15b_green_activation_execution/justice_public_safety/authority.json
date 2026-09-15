@@ -1,0 +1,50 @@
+{
+  "accepted": true,
+  "activation_authority_subject_sha256": "6e3bdf133c0a8da7cd555bfee5f268899714433138e25df3e362f8b6619bda82",
+  "artifact_id": "publication-replacement-activation-authority:f000477:justice_public_safety:m15b:v1",
+  "immutable": true,
+  "schema_version": "site_integration_publication_replacement_activation_authority_v2",
+  "sealed": true,
+  "subject": {
+    "authorizations": {
+      "deploy_exact_reviewed_runtime": true,
+      "exact_bounded_rollback": true,
+      "execute_only_under_fresh_matching_evidence": true,
+      "production_database_write": true,
+      "publication_registry_mutation": true,
+      "publication_replacement": true
+    },
+    "decision": "approve_exact_publication_replacement_v2",
+    "decision_recorded_at_utc": "2026-09-15T16:11:34.120119+00:00",
+    "exact_write_set_subject_sha256": "73362a184e333b6db031b6d9fe1924641d021c1f155e0d2f3092e706ffe28d31",
+    "expected_old": {
+      "artifact_id": 221,
+      "artifact_version": 1,
+      "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"
+    },
+    "production_target_identity_sha256": "0bdeba5d97ecc77e9117d15f50d952f534a6e6dd9c66950d98d96bcad72523ea",
+    "proposed_new": {
+      "artifact_id": 251,
+      "artifact_version": 1,
+      "content_sha256": "01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b",
+      "natural_key": "public-issue-presentation:f000477:justice_public_safety:m15b:v1"
+    },
+    "registry_key": {
+      "issue_id": "JUSTICE_PUBLIC_SAFETY",
+      "member_bioguide_id": "F000477"
+    },
+    "reviewer": "dhart54",
+    "reviewer_authority": "publication_replacement_review_authority_v2",
+    "rollback_target": {
+      "artifact_id": 221,
+      "artifact_version": 1,
+      "content_sha256": "1c088fc4a98e8442263899faffd7e203967cf60c387944884e4ce755d6ba7943",
+      "natural_key": "public-issue-presentation-candidate:f000477:justice_public_safety:119:v1"
+    },
+    "semantic_authority_binding": {
+      "artifact_id": "human-semantic-authority:m15b:approved:v1",
+      "subject_sha256": "3e2a5a40b6abbea937a8003a27ce5aac1d113375422f2290fed549f77376de5b"
+    }
+  }
+}
