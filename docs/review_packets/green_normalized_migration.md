@@ -1,6 +1,6 @@
 # Isolated normalized green build and cutover review
 
-Status: build/validation in progress; not cutover authority.
+Status: managed-green validation passed; final exact-head CI/retry results are recorded on the draft PR. Not cutover authority.
 
 ## Bound identities
 - Accepted normalization head: 3de786cc1e536d90eeb2b38f36c87b9b9cb447ca.
@@ -29,7 +29,7 @@ Only public application objects are loaded. Supabase-managed roles/passwords/sch
 
 ## Validation
 Fresh local PG17 proof passed: all28 original logical table streams, all17 sequences, 525 complete API outputs across15 members and118/119/all, all active adapters, insertion/repeat, shared drift, compatibility CRUD, migration ambiguity rollback, exact rollback and fresh dump/restore. Fresh compact restore:229,919,891 bytes. API digest:18ef4e9d0258757d39db93b3ad0581088a55b7798c0ea6611115cdb415d266ab. Full original float precision is also verified against the actual native source dump.
-Focused operator/normalization tests:12 passed. Actual managed-green and exact-head CI results will be attached to the draft PR and final report.
+Focused operator/normalization tests:12 passed. Actual managed-green and exact-head CI results are attached to the draft PR and final report.
 
 ## Exact later cutover sequence — DO NOT EXECUTE NOW
 1. Confirm manual operators remain paused and repeat full blue source/sequence/schema identity and green package/parity checks. Stop on any delta. Confirm independent acceptance of actual-green proof and resolve the previously disclosed automatic-deploy exception.
@@ -52,4 +52,13 @@ M15B remains paused. After a future accepted cutover it needs new target identit
 References: https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore and https://www.postgresql.org/docs/17/app-pgrestore.html.
 
 ## Actual green load and final recheck binding
-Initial atomic application load succeeded:232,156,307 bytes; all28 logical streams and17 sequences exact. Managed API/role/ETL proof pending. Final verification manifest ae88c92bc33352046527e25caf4638fd7ab68e510bd8975e18a0011bc5a02eea retains identical source/package/SQL identities and adds native-restored source-schema binding530b43ca6da9863237c827188d67f75844abf214b6df5c20cd54c944803710c7. Original load manifest retained; no data/package regenerated. Focused guards plus historical checks34 passed. Deployed Vercel bundle app/page-90ba53cd2230a3c3.js embeds https://political-fingerprint.onrender.com; no frontend configuration change is needed.
+Initial atomic application load succeeded:232,156,307 bytes; all28 logical streams and17 sequences exact. Managed API/role/ETL proof passed. Final verification manifest ae88c92bc33352046527e25caf4638fd7ab68e510bd8975e18a0011bc5a02eea retains identical source/package/SQL identities and adds native-restored source-schema binding530b43ca6da9863237c827188d67f75844abf214b6df5c20cd54c944803710c7. Original load manifest retained; no data/package regenerated. Focused guards plus historical checks34 passed. Deployed Vercel bundle app/page-90ba53cd2230a3c3.js embeds https://political-fingerprint.onrender.com; no frontend configuration change is needed.
+
+## Managed Supabase result
+Actual green PostgreSQL17.6 proof passed. Database231,500,947 bytes (initial load232,156,307; normal managed maintenance/packing accounts for the small physical difference). Member relation100,302,848 bytes, roll relation2,113,536 bytes. All28 logical table streams,17 sequences, complete editorial content/provenance and registry rows match after rollback-only writes. All525 complete API outputs match, digest18ef4e9d0258757d39db93b3ad0581088a55b7798c0ea6611115cdb415d266ab.
+
+Actual managed postgres connection has rolsuper=false and rolbypassrls=true, matching the existing backend connection class rather than the local superuser. Every protected table/view/sequence denies anon/authenticated privileges, and actual SET ROLE SELECT on vote_contexts fails for both. security_invoker=true is verified. All active ETL adapters, repeated equal ingestion, shared drift rejection, compatibility insert/update/delete and exact rollback passed; zero durable synthetic records and original sequence values retained. Data API is disabled in project settings; unauthenticated REST access returns401. No service-state population or realtime-published table was introduced.
+
+Managed-green median query times: history7.345ms, issue evidence0.619ms, fingerprint2.887ms, roll lookup0.222ms, batch17.432ms. All pass the accepted practical bound; hardware differs from the local clone, so these are not presented as isolated normalization overhead.
+
+Source schema digest is independently restored from the fresh native dump and rechecked against blue. Final completed-state retry must report writes=0. Exact-head hosted results and final disposition are recorded in PR189 without embedding a self-referential commit hash here.

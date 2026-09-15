@@ -18,7 +18,7 @@ Accepted PR188 head 3de786cc1e536d90eeb2b38f36c87b9b9cb447ca merged at 638eac771
 - [x] Fresh frozen source capture and hashes
 - [x] Target-bound executor and focused safety tests
 - [x] Full local PostgreSQL17 proof
-- [ ] Actual green parity, security and size proof
+- [x] Actual green parity, security and size proof
 - [ ] Review packet, cutover/rollback procedure, draft PR
 
 ## Discoveries and deviations
@@ -37,3 +37,5 @@ Await green readiness and protected connection credential. Complete hosted write
 Writer inventory: Render workspace has one project/environment and one Python web service, no worker/cron service. Build pip install; no pre-deploy command; start uvicorn only. Repository has no scheduled workflow or application scheduler; alignment POST computes a response without persistence. No matching Windows scheduled tasks. Supabase cron absent and service data empty in read-only inventory. No autonomous writer identified; manual ETL/editorial operators remain paused throughout this task. No database write was used to freeze blue.
 
 Green initial load succeeded:232,156,307 bytes,28 logical streams and17 sequences exact. Managed API/role/ETL proof in progress.34 local guard/historical tests passed. Source-schema binding strengthened for final recheck/retry; original execution manifest retained.
+
+Managed-green proof passed:231,500,947 bytes;28 logical streams and17 sequences exact after rollback-only ETL;525 complete API outputs match native fresh-source baseline (runtime defaults preserved). postgres rolsuper=false matches backend connection class; anon/authenticated direct access denied; security-invoker view and original RLS retained. No durable synthetic rows. Final schema-bound no-write retry and exact-head CI pending.
