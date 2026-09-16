@@ -20,6 +20,7 @@ export default defineConfig({
       ...process.env,
       ENABLE_ZIP_LOOKUP_STATE_FIXTURE: "1",
       ENABLE_M6_REVIEW_FIXTURE: "1",
+      ENABLE_RECORD_CARD_REVIEW: "1",
     },
     reuseExistingServer: !process.env.CI && !useProductionBuild,
     timeout: 120_000,

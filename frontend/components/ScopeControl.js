@@ -2,7 +2,13 @@ import { scopeLabel } from "../lib/frontendPassA.mjs";
 
 const OPTIONS = ["all", "119", "118"];
 
-export default function ScopeControl({ onChange, scope }) {
+export default function ScopeControl({ onChange, scope, compact = false }) {
+  if (compact) return <section className="flex flex-wrap items-center gap-3 py-4">
+    <label htmlFor="compact-scope" className="text-sm font-semibold text-stone-700">Recorded votes</label>
+    <select id="compact-scope" className="min-h-11 max-w-full rounded-lg border border-stone-300 bg-white px-3 text-sm text-stone-900" value={scope} onChange={(event) => onChange(event.target.value)}>
+      {OPTIONS.map((value) => <option value={value} key={value}>{scopeLabel(value)}</option>)}
+    </select>
+  </section>;
   return (
     <section className="py-5" aria-labelledby="scope-control-heading">
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">

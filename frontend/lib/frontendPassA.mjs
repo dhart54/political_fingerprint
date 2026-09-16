@@ -34,6 +34,11 @@ export function parsePassARouteState(search = "") {
     legislatorId: normalizeLegislatorId(params.get("representative")),
     issue,
     scope,
+    ...(params.get("finding") ? {
+      findingId: params.get("finding"),
+      findingSource: params.get("source"),
+      findingView: params.get("view") === "receipts" ? "receipts" : "finding",
+    } : {}),
   };
 }
 
@@ -42,6 +47,8 @@ export function buildPassAUrl(
   { legislatorId = null, issue = null, scope = "all" },
 ) {
   const url = new URL(currentUrl, "http://localhost");
+  for (const key of ["finding", "source", "view"]) url.searchParams.delete(key);
+  if (["#finding-detail", "#vote-record", "#record-at-a-glance"].includes(url.hash)) url.hash = "";
   if (legislatorId) {
     url.searchParams.set("representative", legislatorId);
   } else {
