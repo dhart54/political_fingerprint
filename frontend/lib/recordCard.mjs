@@ -50,6 +50,8 @@ export async function projectRecordCard({ candidate, payload, legislatorId, memb
     const p = byDomain.get(source.issue_id);
     if (!p) return { ...empty("incomplete"), reviewedDomains };
     if (p.requested_scope !== scope || p.reviewed_scope !== "119" || canonicalJson(p.review_state.congress_scope) !== "[119]" || await contentHash(p) !== source.presentation_sha256[scope]) return empty("source_mismatch");
+    const coverage = source.evidence_coverage?.[scope];
+    if (!coverage || coverage.source_field !== "scope_boundary" || coverage.source_text !== p.scope_boundary || await contentHash(p.scope_boundary) !== coverage.source_sha256) return empty("source_mismatch");
   }
   if (reviewed.length !== candidate.sources.length) return empty("source_mismatch");
   const entries = [];
@@ -61,7 +63,7 @@ export async function projectRecordCard({ candidate, payload, legislatorId, memb
     entries.push({ ...selection, source, sourceFinding: item, sourcePresentationHash: source.presentation_sha256[scope], reviewedScope: "119th Congress" });
   }
   // Manifest order is explicit; never sort by vote/episode counts or political direction.
-  return { status: "ready", entries, reviewedDomains, scope, generationTime: candidate.generated_at, evidenceCutoff: candidate.evidence_cutoff };
+  return { status: "ready", entries, reviewedDomains, scope, generationTime: candidate.generated_at, evidenceCoverage: candidate.sources.map((source) => ({ issue_id: source.issue_id, ...source.evidence_coverage[scope] })) };
 }
 
 export function resolveCardFinding(model, issue, findingId, sourceHash) {

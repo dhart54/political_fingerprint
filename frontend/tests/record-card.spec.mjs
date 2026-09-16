@@ -10,15 +10,15 @@ test("complete candidate, lazy ledgers, specific finding, receipts, history, ref
   const requests = [];
   page.on("request", (request) => { if (request.url().includes("resource=evidence")) requests.push(request.url()); });
   await page.goto(landing);
-  await expect(page.getByTestId("record-card-entry")).toHaveCount(6);
+  await expect(page.getByTestId("record-card-entry")).toHaveCount(candidate.entries.length);
   expect(requests).toHaveLength(0);
-  const entry = page.getByRole("link", { name: /Explore finding: College foreign-gift/ });
+  const entry = page.getByRole("link", { name: /Compare the proposals: College foreign-gift/ });
   await entry.focus(); await page.keyboard.press("Enter");
   await expect(page.getByTestId("card-finding-detail")).toContainText("The final vote does not identify which part she opposed.");
   await expect(page.locator("#finding-detail-heading")).toBeFocused();
   await expect(page).toHaveURL(/finding=m14f/);
   expect(requests.every((r) => r.includes("domain=EDUCATION_WORKFORCE"))).toBe(true);
-  await page.getByRole("link", { name: "View 2 supporting votes" }).click();
+  await page.getByRole("link", { name: /^See 2 House votes:/ }).click();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(2);
   await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
   for (const id of ["house:119:1:79", "house:119:1:83"]) await expect(page.locator(`[data-canonical-action-id="${id}"]`)).toBeVisible();
@@ -36,8 +36,8 @@ test("complete candidate, lazy ledgers, specific finding, receipts, history, ref
   await expect(page.getByText(/8 additional recorded actions/)).toBeVisible();
   await page.goBack();
   await page.getByRole("link", { name: "Return to record at a glance" }).click();
-  await expect(page.locator(`#${candidate.entries[4].id}`)).toBeFocused();
-  await expect(page.locator(`#${candidate.entries[4].id}`)).toBeInViewport();
+  await expect(page.locator(`#${candidate.entries.find((e) => e.finding_id === "m14f:notable:hr1048_substitute_final").id}`)).toBeFocused();
+  await expect(page.locator(`#${candidate.entries.find((e) => e.finding_id === "m14f:notable:hr1048_substitute_final").id}`)).toBeInViewport();
   await expect(page).not.toHaveURL(/issue=/);
 });
 
@@ -55,7 +55,7 @@ test("every selected finding resolves the whole exact support set", async ({ pag
   for (const entry of candidate.entries) {
     await page.goto(landing);
     await page.locator(`#${entry.id}`).click();
-    await page.getByRole("link", { name: `View ${entry.action_ids.length} supporting votes` }).click();
+    await page.getByRole("link", { name: `See ${entry.action_ids.length} House votes: ${entry.headline}` }).click();
     await expect(page.locator("[data-canonical-action-id]")).toHaveCount(entry.action_ids.length);
     const ids = await page.locator("[data-canonical-action-id]").evaluateAll((els) => els.map((el) => el.dataset.canonicalActionId).sort());
     expect(ids).toEqual([...entry.action_ids].sort());
@@ -110,7 +110,7 @@ test("delayed old requests cannot populate a new scope or representative", async
   await expect(page.getByTestId("record-card-entry")).toHaveCount(0);
   await page.unrouteAll();
   await page.goto(landing);
-  await expect(page.getByTestId("record-card-entry")).toHaveCount(6);
+  await expect(page.getByTestId("record-card-entry")).toHaveCount(candidate.entries.length);
   await page.getByRole("button", { name: "Switch representative" }).click();
   await page.getByRole("button", { name: "Thomas Massie", exact: true }).click();
   await expect(page.getByTestId("record-card-entry")).toHaveCount(0);
@@ -132,8 +132,12 @@ test("all scope is bounded, mobile first finding is actionable and layouts do no
   for (const [name, width, height] of [["desktop", 1440, 900], ["mobile", 390, 844], ["narrow", 360, 800]]) {
     await page.setViewportSize({ width, height });
     await page.goto(landing.replace("scope=119", "scope=all"));
-    await expect(page.getByTestId("record-card-entry")).toHaveCount(6);
+    await expect(page.getByTestId("record-card-entry")).toHaveCount(candidate.entries.length);
     await expect(page.getByTestId("record-card")).toContainText("119th Congress · Recorded-vote scope: All available Congresses");
+    await expect(page.getByText("Selected findings · Reviewed coverage in 4 of 8 issues.")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Mixed choices", exact: true })).toBeVisible();
+    for (const entry of candidate.entries) await expect(page.locator(`#${entry.id}`)).toHaveAccessibleName(`${entry.link_label}: ${entry.headline}`);
+    await expect(page.getByTestId("record-card")).not.toContainText("supporting House votes");
     const first = page.getByTestId("record-card-entry").first();
     const link = await first.getByRole("link").boundingBox();
     expect(link.y + link.height).toBeLessThan(height);
@@ -141,6 +145,13 @@ test("all scope is bounded, mobile first finding is actionable and layouts do no
     if (output) {
       await page.screenshot({ path: path.join(output, `${name}-landing.png`) });
       await page.screenshot({ path: path.join(output, `${name}-complete-journey.png`), fullPage: true });
+    }
+    await page.getByText("Coverage and review details", { exact: true }).click();
+    await expect(page.getByTestId("record-card")).toContainText("National Security & Foreign Policy: through July 23, 2026.");
+    await expect(page.getByText("a precise cutoff is not specified in the bound review scope.", { exact: false })).toHaveCount(3);
+    if (output) {
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
+      await page.screenshot({ path: path.join(output, `${name}-coverage-details.png`), fullPage: true });
     }
   }
 });
@@ -151,10 +162,10 @@ test("review packet captures finding, paired receipts, complete record, sparse a
   fs.mkdirSync(output, { recursive: true });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(landing);
-  await page.locator(`#${candidate.entries[4].id}`).click();
+  await page.locator(`#${candidate.entries.find((e) => e.finding_id === "m14f:notable:hr1048_substitute_final").id}`).click();
   await expect(page.locator("#finding-detail-heading")).toBeFocused();
   await page.screenshot({ path: path.join(output, "mobile-specific-finding.png") });
-  await page.getByRole("link", { name: "View 2 supporting votes" }).click();
+  await page.getByRole("link", { name: /^See 2 House votes:/ }).click();
   await expect(page.locator("[data-canonical-action-id]")).toHaveCount(2);
   await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
   await page.screenshot({ path: path.join(output, "mobile-supporting-receipts.png") });

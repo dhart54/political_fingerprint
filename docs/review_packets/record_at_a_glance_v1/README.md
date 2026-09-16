@@ -18,51 +18,60 @@ Open [Foushee, 119th Congress](http://127.0.0.1:3110/review/record-card?represen
 
 The route and its API return 404 without the server flag. Vercel is explicitly excluded even if the flag is set. The normal `/` route never receives the candidate. No production API or database connection is used by the review journey. The review member picker is deliberately limited to these two identities; their evidence is replayed from their own recorded public responses. All eight issue paths remain accessible. The existing production ZIP/name finder is covered by unchanged regression tests.
 
-## Actual proposed wording
+## Revised candidate and before/after copy
 
-**Record at a glance**
+This bounded revision continues draft PR #191 from reviewed head `783662d1254be23cde8f08993d43d8719679d5d8`. The same six findings remain after reconsidering all 28 available items; six is an outcome, not a target or a section quota.
 
-Selected findings from the reviewed voting record.
+The heading now immediately says **Selected findings - Reviewed coverage in 4 of 8 issues.** The recorded-vote scope remains distinct from the findings' 119th-Congress scope. The third section is **Mixed choices**. Links say **See the votes** or **Compare the proposals**, with the specific finding in every accessible name. Detail receipt links say **See N House votes**.
 
-Findings below: **119th Congress** · Recorded-vote scope: **119th Congress** (or **All available Congresses**, when selected).
+[Complete before/after wording](wording_changes.md) compares every headline, explanation and evidence label with the exact reviewed head. These are proposed source-bound wording changes, not automatically accepted public copy.
 
-| Section | Headline | Explanation | Issue / evidence context |
+| Section | Headline | Proposed explanation | Evidence |
 |---|---|---|---|
-| Supported | A terrorism-response exercise and threat assessment | A cold-weather response exercise and an assessment of vehicular-terrorism threats. | Justice & Public Safety · 2 supporting House votes |
-| Supported | Removing U.S. forces from specified hostilities | Nine country-specific War Powers resolutions covered hostilities involving Iran, Lebanon and Venezuela; their wording and timing differed. | National Security & Foreign Policy · 9 votes · 9 country-specific resolutions |
-| Opposed | Overturning two California vehicle-emissions waivers | The resolutions targeted separate EPA waiver decisions; these votes do not show support for every part of the underlying rules. | Environment & Energy · 2 resolutions · 2 separate decisions |
-| Opposed | Replacing or repealing specific D.C. public-safety rules | The reviewed proposals concerned youth cases, police bargaining and pursuits, pretrial detention, and policing reforms. | Justice & Public Safety · 6 supporting House votes |
-| Different choices, kept together | College foreign-gift reporting: replacement supported, final package opposed | The replacement set reporting, disclosure and compliance rules; the broader final H.R. 1048 package also restricted contracts, and the final vote does not identify which part she opposed. | Education & Workforce · 1 legislative episode · 2 House votes |
-| Different choices, kept together | Security assistance differed by country and proposal | Foushee opposed proposals to restrict aid to Ukraine and Jordan, supported a measure authorizing support for Ukraine, opposed removing Taiwan security-cooperation funding, and supported an amendment barring funds in the bill from being used for Israel and reducing the Foreign Military Financing account by $3.3 billion. | National Security & Foreign Policy · 8 votes across 8 country-specific choices |
+| Supported | Two terrorism-preparedness requirements | One required a cold-weather response exercise; the other required an assessment of vehicular-terrorism threats. | Based on 2 House votes |
+| Supported | Removing U.S. forces from specified hostilities | Nine country-specific War Powers resolutions covered hostilities involving Iran, Lebanon and Venezuela; their wording and timing differed. | Based on 9 House votes |
+| Opposed | Overturning two California vehicle-emissions waivers | The EPA waivers let California apply its own vehicle-emissions standards: the Omnibus Low NOX regulation and Advanced Clean Cars II. The resolutions would overturn those permissions; these votes do not show support for every part of either rule. | Based on 2 House votes |
+| Opposed | Replacing or repealing specific D.C. public-safety rules | The reviewed proposals concerned youth cases, police bargaining and pursuits, pretrial detention, and policing reforms. | Based on 6 House votes |
+| Mixed choices | College foreign-gift reporting: replacement supported, final package opposed | She supported an amendment to replace the bill's text with reporting thresholds, searchable disclosures, some exclusions, and fines or compliance plans. She then opposed the broader final H.R. 1048 package, which also restricted contracts. The final vote does not identify which part she opposed. | Based on 2 House votes · 1 legislative episode |
+| Mixed choices | Security assistance differed by country and proposal | Ukraine: Opposed three aid restrictions with different scopes; supported a measure authorizing support for Ukraine. That whole measure also covered other purposes, so the vote does not isolate every provision.<br><br>Jordan: Opposed two proposals to cut or restrict assistance, affecting different accounts through different mechanisms.<br><br>Taiwan: Opposed removing funding for the Taiwan Security Cooperation Initiative.<br><br>Israel: Supported an amendment barring funds in the bill from being used for Israel. The same amendment reduced the Foreign Military Financing account by $3.3 billion.<br><br>The Israel and Taiwan amendments are individual choices, not recurring country patterns. These choices do not establish one uniform position on assistance across countries. | Based on 8 House votes |
 
-Every entry links to **Finding & supporting votes →**. The assistance sentence is unchanged accepted wording; its length preserves the country/account distinctions. Other headlines and shortened sentences are explicitly authored candidates, not runtime truncation of published prose.
+The assistance contrast is one entry with parallel country paragraphs. All four countries and directions remain. Ukraine retains differing restriction scopes and the whole-measure limitation; Jordan retains different accounts/mechanisms. Israel's bill-specific prohibition and the account-wide $3.3 billion Foreign Military Financing reduction are separate sentences. The single-amendment limits and lack of a uniform cross-country position remain visible. The shorter preparedness heading names the category once; its explanation distinguishes exercise from assessment. No text size was reduced.
 
-Footer: **Reviewed findings available in 4 of 8 issues: Education & Workforce; Environment & Energy; Justice & Public Safety; National Security & Foreign Policy.**
+## Education direction trace and selection reconsideration
 
-**A selection of specific choices, not a complete statement of priorities. Explore all issues →**
+[education_direction_review.json](education_direction_review.json) binds both exact published wording objects to their accepted M14D semantic records, accepted M14F wording, and M14G human display authority by identity, complete action set and hashes:
 
-Coverage details explain that no precise review cutoff is supplied. Snapshot capture and card generation timestamps are separately recorded; neither is presented as the evidence cutoff. Selecting `all` never broadens the reviewed findings beyond the 119th Congress.
+| Published finding | Exact accepted semantic reference | Typed meaning | Card representation |
+|---|---|---|---|
+| `m14f:pattern:china_linked_education_funding` | `m14d:covered_china_linked_funding_exclusions` | opposition | Deliberately directionless presentation; no override |
+| `m14f:pattern:collective_bargaining_continuity` | `m14d:continuity_of_collective_bargaining` | support | Deliberately directionless presentation; no override |
 
-## Sources, inventory and omissions
+The absence is not an unavailable analytical meaning. M14F's existing compiler (`backend/app/semantic_ir/accepted_findings_public_wording.py`, behavioral direction display contract) explicitly requires `direction_display=null` for non-mixed behavioral findings. M14G maps that value to `direction=null` and `show_direction=false`, validates both patterns remain directionless, and its human `accept_as_rendered` authority explicitly records `directionless_repeated_patterns: 2`. This is evidence of a deliberate presentation restriction, not an accidental dropped field. Placing either under Supported/Opposed would override that restriction; this revision does not do so. Their exact typed semantics are visible to reviewers in the inventory, without parsing prose, titles or raw votes or modifying immutable payloads.
 
-[candidate.json](candidate.json) binds every selection to the exact finding/proposition/wording ID, full finding hash, complete action list, supplied episode IDs, limitations and per-scope presentation hash. The [readable inventory](inventory.md) shows inclusions and omissions side by side. [inventory.json](inventory.json) retains **all 28 available presentation findings**, including overlapping syntheses and component findings, original accepted text, explicit receipt-to-episode bindings, scope and qualifications, with inclusion/omission reasons. These are 28 presentation items, not 28 independent corroborating observations.
+That leaves an honest representation limitation for these two items in the existing directional card. The funding pattern is distinct from the selected reporting episode and necessary context for any broader foreign-influence claim. Bargaining is an independent finding. Neither is rejected as weak evidence or mislabeled as overlapping H.R.1048. The card makes no domain-wide claim, and both remain accessible in the full issue view.
 
-| Current published root | Issue | Active content SHA256 |
+Every item was reconsidered using the same established considerations: exact policy object, distinct information and actual action overlap, necessary contextual pairing and qualifications, faithful representation, and reading cost. The [item-specific inventory](inventory.md) distinguishes **actual overlap**, **necessary contextual pairing**, **representation limitation**, and **limited space**. Distinct appliance, BLM, firearm, fraud, HALT and National Security omissions each explain what they would add and the particular space tradeoff. No ranking model, fixed entry count, direction quota or issue quota is introduced. The selected findings do not become an overall political verdict.
+
+## Sources and temporal coverage
+
+[candidate.json](candidate.json) retains exact published finding hashes, full action lists, supplied episode identities and per-scope presentation hashes. Its `wording_source_bindings` explicitly map the California explanation to the two existing governed receipt projections (H.J.Res.89 and H.J.Res.88: waivers of preemption for Omnibus Low NOX and Advanced Clean Cars II). The prose explains those permissions; it does not infer support for the underlying rules. Assistance qualification bindings resolve to the four accepted country components, all contained in the selected eight-action finding.
+
+[inventory.json](inventory.json) retains all 28 presentation items, including overlapping syntheses/components, full accepted wording, scope, limitations and explicit episode bindings. They are not 28 independent corroborating observations. The six entries use 29 distinct actions; there is no public evidence score. Shared preparedness actions appear once, and all country assistance choices remain together.
+
+| Issue | Current published root | Precise cutoff in bound review scope |
 |---|---|---|
-| 245 | Education & Workforce | `76d06a43beb51c164a199c576c3d0aa539b6c05da2f8e4eff8fe54845547e4ec` |
-| 239 | Environment & Energy | `7389aa33deca20cfa51293beab2b7602b39cb40258f1bca4a9cacf06aa818b53` |
-| 251 | Justice & Public Safety | `01f237396226557347cb6a216ad4ae8ea6b20d04fabe084ec3f5cc9732e5545b` |
-| 248 | National Security & Foreign Policy | `c675731a2602829f2c1d325673c50099cb3ef458d2ae0bf07b10237019858f29` |
+| Education & Workforce | 245 | Unspecified |
+| Environment & Energy | 239 | Unspecified |
+| Justice & Public Safety | 251 | Unspecified: source refers to a review cutoff without giving its date |
+| National Security & Foreign Policy | 248 | **July 23, 2026**, explicit in `scope_boundary` |
 
-Input: the committed `m15b_green_activation_execution/after-justice-live.json.gz`, byte-verified against its existing manifest. The paired production audit identifies the four active roots. Legacy IDs inside the public payload's `provenance` remain lineage; they are not substituted for current publication identities. The superseded National Security trajectory is absent. No historical presentation generator is restored or rerun.
+Known and unspecified cutoffs are carried in explicit per-issue, per-requested-scope metadata. The `119` and `all` boundaries have separate source text/hash bindings because `all` adds a 119th-Congress limitation. The detailed scope list below the card preserves all four states. No common cutoff is invented. Snapshot capture, card generation, ledger windows and maximum vote dates are not evidence-coverage dates.
 
-Selection order is the existing domain order within Supported, Opposed, and the conditional mixed/contrast section. There is no scoring or ranking function. The six entries use 29 distinct supporting actions. That is audit accounting only, not a public evidence score. The preparedness actions shared by Justice and National Security appear once; the War Powers component patterns and broader environmental synthesis are not double-counted.
-
-The selected set omits Education's bargaining and China-linked funding patterns; Environment's appliance/BLM choices; Justice's firearm and fraud-enforcement patterns and mixed HALT episode; and additional National Security choices including FISA, defense-package, military/DoD, AUMF, ICC and Haiti measures. These matter to a comprehensive issue interpretation, which this card does not claim to provide. All remain accessible in the full issue views. Education's two ordinary pattern fields have no typed direction; the candidate does not parse their prose to assign a section. The complete assistance contrast preserves Israel, Ukraine, Jordan and Taiwan together, so the War Powers selection does not imply a uniform stance on foreign involvement. The selected education pair is not split into two independent positions. No omission changes the exact selected policy objects; product review should assess whether this bounded selection creates an unwanted overall impression despite that framing.
+The source remains the verified `m15b_green_activation_execution/after-justice-live.json.gz` and its paired audit. All four active root content hashes are unchanged in the candidate. Inner legacy provenance remains lineage; no superseded National Security trajectory or historical generator is restored. Published payloads are immutable and unchanged.
 
 ## Complete journey and rendered evidence
 
-[Desktop landing](screenshots/desktop-landing.png) · [Desktop full journey](screenshots/desktop-complete-journey.png) · [Mobile landing](screenshots/mobile-landing.png) · [Mobile full journey](screenshots/mobile-complete-journey.png) · [Narrow mobile](screenshots/narrow-landing.png).
+[Desktop landing](screenshots/desktop-landing.png) · [Desktop full journey](screenshots/desktop-complete-journey.png) · [Mobile landing](screenshots/mobile-landing.png) · [Mobile full journey](screenshots/mobile-complete-journey.png) · [Narrow mobile](screenshots/narrow-landing.png) and [complete narrow journey](screenshots/narrow-complete-journey.png). [Expanded desktop coverage](screenshots/desktop-coverage-details.png) and [expanded mobile coverage](screenshots/mobile-coverage-details.png) show the known versus unspecified cutoffs.
 
 [Specific finding](screenshots/mobile-specific-finding.png) → [supporting receipts](screenshots/mobile-supporting-receipts.png) → [complete issue record](screenshots/desktop-complete-record.png).
 
@@ -84,7 +93,10 @@ These are implementation and rendered checks, not measured engagement or human u
 
 ## Verification and safety
 
-- `node --test lib/*.test.mjs` from `frontend`: **163 passed**.
+Revision validation includes exact Education lineage and restriction checks, waiver/country context mappings, per-scope cutoff bindings and mismatch rejection. An initial narrow-mobile check found the first link at the 800px screen edge; eight pixels of spacing above the sections were removed on mobile, preserving text sizes and all qualifications. The existing navigation, full-record, history, focus, member/scope, source, mixed-finding and failure tests remain.
+
+
+- `node --test lib/*.test.mjs` from `frontend`: **166 passed**.
 - Focused API, public presentation, governed receipt, public record integrity and M15B semantic regressions: **150 passed**.
 - Production build: **passed**; eight existing hook-dependency lint warnings outside touched components remain.
 - Production-mode browser suite: **47 passed**, one pre-existing optional Pass A screenshot test skipped because its separate screenshot variable was not requested. Candidate screenshot coverage runs explicitly.
@@ -102,8 +114,8 @@ $env:RECORD_CARD_SCREENSHOT_DIR = '../docs/review_packets/record_at_a_glance_v1/
 npx playwright test tests/record-card.spec.mjs --workers=1
 ```
 
-The generator reads only exact named committed inputs. It never writes source artifacts, registries or databases. Candidate JSON and the JSON/Markdown inventory are the only generated text outputs. The browser receives only requested snapshot API responses; it makes no eager evidence-ledger requests on representative landing.
+The generator reads only exact named committed inputs. It never writes source artifacts, registries or databases. The generated text outputs are candidate JSON, the JSON/Markdown inventory and the Education direction trace; all are review-packet artifacts. The browser receives only requested snapshot API responses; it makes no eager evidence-ledger requests on representative landing.
 
 Before push, repository workflows and GitHub deployments were inspected read-only: Render's deploy hook is main-only, and Vercel follows main for production. This branch adds the same narrowly scoped Vercel Git deployment suppression already used for PR190. No hosted preview or live setting change is needed. The public selector, backend code, published source snapshots and publication contracts are unchanged. Original working-tree edits and protected archives remain untouched.
 
-No unresolved implementation/product decision blocks this candidate. The explicit selection and shortened wording still need the requested product review before any separate publication authorization.
+No unresolved implementation/product decision blocks this candidate. The selection, wording and the documented Education representation limitation remain for the requested product review; no public-copy acceptance or operational authority is implied.

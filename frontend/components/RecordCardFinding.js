@@ -19,7 +19,7 @@ export default function RecordCardFinding({ entry, legislatorId, scope, receipts
     {finding.limitations?.length ? <ul className="mt-4 max-w-4xl list-disc space-y-2 pl-5 text-sm leading-6 text-stone-600">{finding.limitations.map((limit) => <li key={limit}>{limit}</li>)}</ul> : null}
     <p className="mt-3 text-sm text-stone-600">{entry.evidence_label}</p>
     <div className="mt-4 flex flex-wrap gap-4">
-      {!receiptsVisible ? <a className="primary-button inline-flex items-center" href={link({ issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, view: "receipts", hash: "vote-record" })} onClick={followRecordLink}>View {entry.action_ids.length} supporting votes</a> : null}
+      {!receiptsVisible ? <a className="primary-button inline-flex items-center" href={link({ issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, view: "receipts", hash: "vote-record" })} onClick={followRecordLink} aria-label={`See ${entry.action_ids.length} House votes: ${entry.headline}`}>See {entry.action_ids.length} House votes</a> : null}
       <a className="secondary-button inline-flex items-center" href={link({ issue: entry.issue_id, hash: "vote-record" })} onClick={followRecordLink}>Complete issue record / all votes</a>
     </div>
   </section>;

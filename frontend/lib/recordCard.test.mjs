@@ -63,16 +63,87 @@ test("mixed choices and whole-package qualifications stay together", async () =>
   assert.equal(assistance.section, "mixed");
   assert.equal(assistance.action_ids.length, 8);
   for (const country of ["Ukraine", "Jordan", "Taiwan", "Israel"]) assert.ok(assistance.explanation.includes(country));
-  assert.equal(assistance.explanation, assistance.sourceFinding.primary_sentence);
+  assert.equal(assistance.explanation, assistance.explanation_lines.join("\n\n"));
+  assert.equal(assistance.explanation_lines.length, 5);
+  assert.match(assistance.explanation_lines[0], /whole measure also covered other purposes/);
+  assert.match(assistance.explanation_lines[1], /different accounts through different mechanisms/);
+  assert.match(assistance.explanation_lines[3], /funds in the bill from being used for Israel\. The same amendment reduced the Foreign Military Financing account by \$3\.3 billion/);
 });
 
 test("all-scope coverage stays 119th-Congress bounded and has no invented cutoff", async () => {
   const model = await projectRecordCard({ ...args, scope: "all", payload: snapshot[`${candidate.legislator_id}:all:editorial`].body });
   assert.equal(model.status, "ready");
   assert.equal(model.scope, "all");
-  assert.equal(model.evidenceCutoff, null);
+  assert.equal(model.evidenceCoverage.find((c) => c.issue_id === "NATIONAL_SECURITY_FOREIGN").cutoff, "2026-07-23");
+  assert.deepEqual(model.evidenceCoverage.filter((c) => c.cutoff === null).map((c) => c.issue_id), ["EDUCATION_WORKFORCE", "ENVIRONMENT_ENERGY", "JUSTICE_PUBLIC_SAFETY"]);
+  for (const coverage of model.evidenceCoverage) {
+    const source = snapshot[`${candidate.legislator_id}:all:editorial`].body.presentations.find((p) => p.issue_id === coverage.issue_id);
+    assert.equal(coverage.source_field, "scope_boundary");
+    assert.equal(coverage.source_text, source.scope_boundary);
+    assert.equal(coverage.source_sha256, await contentHash(source.scope_boundary));
+    if (coverage.cutoff) assert.ok(coverage.source_text.includes(`through ${coverage.cutoff_label}.`));
+    else assert.equal(coverage.status, "unspecified_in_bound_review_scope");
+    assert.notEqual(coverage.cutoff, candidate.generated_at);
+    assert.notEqual(coverage.cutoff, candidate.snapshot_captured_at);
+  }
   assert.equal(model.reviewedDomains.length, 4);
   assert.ok(model.entries.every((e) => e.reviewedScope === "119th Congress"));
+});
+
+test("coverage source mismatches fail closed rather than supplying a shared cutoff", async () => {
+  const wrong = structuredClone(candidate);
+  wrong.sources[0].evidence_coverage["119"].source_text = wrong.sources[3].evidence_coverage["119"].source_text;
+  assert.equal((await projectRecordCard({ ...args, candidate: wrong })).status, "source_mismatch");
+});
+
+test("Education's exact accepted typed semantics do not override its deliberate display restriction", async () => {
+  const traces = JSON.parse(fs.readFileSync(path.join(root, "docs/review_packets/record_at_a_glance_v1/education_direction_review.json")));
+  assert.deepEqual(traces.map((t) => t.typed_semantic_direction), ["opposition", "support"]);
+  for (const trace of traces) {
+    const docs = {};
+    for (const ref of trace.references) {
+      docs[ref.role] = JSON.parse(fs.readFileSync(path.join(root, ref.path)));
+      assert.equal(await contentHash(docs[ref.role]), ref.document_sha256);
+    }
+    assert.equal(docs.semantics.findings_subject_sha256, "795027fdcf49a4956b99804be9d44ec7bd233877e4bc76caa4121f7b61df169d");
+    const semantic = docs.semantics.subject.accepted_proposition_records.find((r) => r.proposition_id === trace.semantic_source_id);
+    const wording = docs.wording.subject.accepted_wording_records.find((r) => r.wording_item_id === trace.finding_id);
+    const finding = payload.presentations.find((p) => p.issue_id === "EDUCATION_WORKFORCE").repeated_patterns.find((r) => r.wording_item_id === trace.finding_id);
+    assert.equal(await contentHash(semantic), trace.semantic_record_sha256);
+    assert.equal(await contentHash(wording), trace.accepted_wording_sha256);
+    assert.equal(await contentHash(finding), trace.finding_sha256);
+    assert.deepEqual(finding.semantic_source_ids, [trace.semantic_source_id]);
+    assert.deepEqual(semantic.evidence_action_ids, finding.action_ids);
+    assert.equal(semantic.direction, trace.typed_semantic_direction);
+    assert.equal(wording.direction_display, null);
+    assert.equal(docs.display.subject.presentation_accounting.directionless_repeated_patterns, 2);
+    assert.equal(finding.show_direction, false);
+    assert.equal(trace.candidate_direction_projection, null);
+    const override = structuredClone(candidate);
+    override.entries[0] = { ...override.entries[0], issue_id: "EDUCATION_WORKFORCE", field: "repeated_patterns", finding_id: trace.finding_id, finding_sha256: trace.finding_sha256, action_ids: trace.action_ids, section: trace.typed_semantic_direction };
+    assert.equal((await projectRecordCard({ ...args, candidate: override })).status, "source_mismatch");
+  }
+});
+
+test("new wording context resolves exact existing receipts and complete country component findings", async () => {
+  for (const binding of candidate.wording_source_bindings) {
+    const source = binding.source_resource
+      ? snapshot[binding.source_resource].body.evidence.find((r) => r.canonical_action_id === binding.action_id).governed_receipt_projection
+      : payload.presentations.find((p) => p.issue_id === binding.issue_id)[binding.source_finding_id.includes(":pattern:") ? "repeated_patterns" : "notable_choices"].find((r) => r.wording_item_id === binding.source_finding_id);
+    assert.equal(await contentHash(source), binding.source_sha256);
+    assert.deepEqual(binding.source, source);
+    const entry = candidate.entries.find((e) => e.finding_id === binding.finding_id);
+    for (const action of binding.action_id ? [binding.action_id] : source.action_ids) assert.ok(entry.action_ids.includes(action));
+  }
+  const waiver = candidate.entries.find((e) => e.finding_id === "wording:pattern:california-emissions-waivers");
+  assert.match(waiver.explanation, /let California apply its own vehicle-emissions standards/);
+  assert.match(waiver.explanation, /Omnibus Low NOX regulation and Advanced Clean Cars II/);
+  assert.match(waiver.explanation, /do not show support for every part/);
+  for (const entry of candidate.entries) {
+    assert.match(entry.evidence_label, new RegExp(`^Based on ${entry.action_ids.length} House votes`));
+    assert.notEqual(entry.headline, entry.explanation);
+    assert.ok(["See the votes", "Compare the proposals"].includes(entry.link_label));
+  }
 });
 
 test("selection does not inflate evidence through overlapping findings or infer episodes", async () => {
