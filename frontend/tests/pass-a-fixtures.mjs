@@ -1,3 +1,13 @@
+import { DOMAIN_ORDER } from "../lib/issueEvidenceCoverage.mjs";
+
+// Match the live endpoint's complete eight-domain envelope, even when a test
+// exercises only one issue. The other domains have no invented summaries.
+export function completePresentationSet(presentation, scope) {
+  return DOMAIN_ORDER.map((issue_id) => issue_id === presentation.issue_id
+    ? { ...presentation, requested_scope: scope }
+    : { issue_id, requested_scope: scope, tier: "receipts_only", tier_badge: "Vote receipts", teaser: "", review_state: null });
+}
+
 export const foushee = {
   id: "leg_valerie_p_foushee",
   bioguide_id: "F000477",
@@ -402,7 +412,7 @@ export async function installPassARoutes(page, {
           legislator_id: foushee.id,
           member_bioguide_id: foushee.bioguide_id,
           scope,
-          presentations: [scopedPresentation],
+          presentations: completePresentationSet(scopedPresentation, scope),
         },
       });
       return;

@@ -8,6 +8,7 @@ import RepresentativeFinder from "../components/RepresentativeFinder";
 import RepresentativeHeader from "../components/RepresentativeHeader";
 import ScopeControl from "../components/ScopeControl";
 import { fetchLegislatorProfile } from "../lib/api";
+import recordCardContent from "../lib/recordCardContent.json";
 import {
   buildPassAUrl,
   parsePassARouteState,
@@ -30,10 +31,12 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
     error: null,
   });
   const [finderOpen, setFinderOpen] = useState(false);
+  const [routePath, setRoutePath] = useState("/");
 
   useEffect(() => {
     function syncFromLocation(navigation = "history") {
       setRoute(parsePassARouteState(window.location.search));
+      setRoutePath(window.location.pathname);
       setRouteNavigation(navigation);
       setFinderOpen(false);
       setRouteReady(true);
@@ -120,6 +123,8 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
   }
 
   const legislator = legislatorState.legislator?.id === route.legislatorId ? legislatorState.legislator : null;
+  const cardContent = reviewCandidate || recordCardContent;
+  const compactOpening = Boolean(reviewCandidate);
 
   return (
     <main className="min-h-screen bg-[#f7f3e9] text-stone-900">
@@ -128,8 +133,8 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
         selectedIssue={route.issue}
       />
 
-      {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">Review candidate · selection and wording pending · recorded snapshot, no live data</p> : null}
-      <div className={`mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10 ${reviewCandidate ? "py-3 sm:py-5" : "py-8 lg:py-10"}`}>
+      {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">Local release review · recorded snapshot, no live data</p> : null}
+      <div className={`mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10 ${compactOpening ? "py-3 sm:py-5" : "py-8 lg:py-10"}`}>
         {!routeReady || legislatorState.status === "loading" ? (
           <p className="py-20 text-center text-base text-stone-700" role="status">
             Loading representative journey…
@@ -165,7 +170,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
         {legislator ? (
           <>
             <RepresentativeHeader
-              compact={Boolean(reviewCandidate)}
+              compact={compactOpening}
               legislator={legislator}
               onSwitch={() => setFinderOpen(true)}
               scope={route.scope}
@@ -180,14 +185,16 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
               </div>
             ) : null}
             <ScopeControl
-              compact={Boolean(reviewCandidate)}
+              compact={compactOpening}
               onChange={(scope) => navigate({ scope })}
               scope={route.scope}
             />
             <RepresentativeExperience
               key={`${legislator.id}:${route.scope}`}
               dataClient={dataClient}
-              recordCardCandidate={reviewCandidate}
+              recordCardCandidate={cardContent}
+              routePath={routePath}
+              reviewMode={Boolean(reviewCandidate)}
               findingRoute={route}
               directIssueLanding={routeNavigation === "initial" && Boolean(route.issue)}
               legislator={legislator}

@@ -13,7 +13,7 @@ const STATES = {
   not_selected: "Reviewed issue findings are available below; a selection for this overview has not been prepared.",
 };
 
-export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate }) {
+export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate, routePath = "/", reviewMode = false }) {
   if (model.status !== "ready") return (
     <section className="border-y border-stone-300 py-5" aria-label="Reviewed findings status">
       <p role="status" className="text-base leading-7 text-stone-700">{STATES[model.status] || STATES.incomplete}</p>
@@ -36,9 +36,9 @@ export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate
                   <article className="min-w-0 border-b border-stone-200 py-4 last:border-b-0" key={entry.id} data-testid="record-card-entry">
                     <p className="text-xs font-semibold leading-5 text-teal-900">{formatDomainLabel(entry.issue_id)}</p>
                     <h4 className="mt-1 font-serif text-xl font-semibold leading-7 text-stone-950">{entry.headline}</h4>
-                    {entry.explanation_lines ? <div className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{entry.explanation_lines.map((line) => <p key={line}>{line}</p>)}</div> : entry.explanation ? <p className="mt-2 text-sm leading-6 text-stone-700">{entry.explanation}</p> : null}
+                    {entry.explanation ? <p className="mt-2 text-sm leading-6 text-stone-700">{entry.explanation}</p> : null}
                     <p className="mt-2 text-xs leading-5 text-stone-600">{entry.evidence_label}</p>
-                    <a className="inline-flex min-h-11 items-center text-sm font-semibold text-teal-900 underline decoration-teal-800/40 underline-offset-4" href={recordCardUrl("/review/record-card", { legislatorId, scope, issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, hash: "finding-detail" })} onClick={(event) => onNavigate(event, entry)} aria-label={`${entry.link_label}: ${entry.headline}`} id={entry.id}>{entry.link_label} →</a>
+                    <a className="inline-flex min-h-11 items-center text-sm font-semibold text-teal-900 underline decoration-teal-800/40 underline-offset-4" href={recordCardUrl(routePath, { legislatorId, scope, issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, hash: "finding-detail" })} onClick={(event) => onNavigate(event, entry)} aria-label={`${entry.link_label}: ${entry.headline}`} id={entry.id}>{entry.link_label} →</a>
                   </article>
                 ))}
               </div>
@@ -52,7 +52,7 @@ export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate
         <details><summary className="min-h-11 cursor-pointer py-2 font-semibold text-stone-700">Coverage and review details</summary>
           <p>Findings cover their stated 119th-Congress reviewed records, even when all available Congresses are selected.</p>
           <ul className="mt-2 space-y-1">{model.evidenceCoverage.map((coverage) => <li key={coverage.issue_id}><strong>{formatDomainLabel(coverage.issue_id)}:</strong> {coverage.cutoff_label ? `through ${coverage.cutoff_label}.` : "a precise cutoff is not specified in the bound review scope."}</li>)}</ul>
-          <p className="mt-2">This selection and shorter wording are candidates for product review. Card generated {model.generationTime}; this is not an evidence cutoff.</p>
+          {reviewMode ? <p className="mt-2">Local snapshot replay for release review. Card generated {model.generationTime}; this is not an evidence cutoff.</p> : null}
         </details>
       </div>
     </section>

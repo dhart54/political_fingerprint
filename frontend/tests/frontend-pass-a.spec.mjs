@@ -7,6 +7,7 @@ import {
   foushee,
   installPassARoutes,
   justicePresentation,
+  completePresentationSet,
 } from "./pass-a-fixtures.mjs";
 
 test.beforeEach(async ({ page }, testInfo) => {
@@ -177,7 +178,7 @@ test("zero-match exact-action request keeps the complete ledger and announces th
         legislator_id: foushee.id,
         member_bioguide_id: foushee.bioguide_id,
         scope: "all",
-        presentations: [stale],
+        presentations: completePresentationSet(stale, "all"),
       },
     });
   });

@@ -7,12 +7,36 @@ import test from "node:test";
 import { contentHash, projectRecordCard, resolveCardFinding, recordCardUrl, suppliedDirection } from "./recordCard.mjs";
 import { recordCardReviewEnabled } from "./recordCardReviewServer.mjs";
 import { parsePassARouteState, buildPassAUrl } from "./frontendPassA.mjs";
+import { issuePresentationStatus } from "./editorialPresentation.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const candidate = JSON.parse(fs.readFileSync(path.join(root, "docs/review_packets/record_at_a_glance_v1/candidate.json")));
 const snapshot = JSON.parse(gunzipSync(fs.readFileSync(path.join(root, candidate.source_snapshot))));
 const payload = snapshot["leg_valerie_p_foushee:119:editorial"].body;
 const args = { candidate, payload, legislatorId: candidate.legislator_id, memberBioguideId: candidate.member_bioguide_id, scope: "119" };
+
+test("release content preserves the product-reviewed five entries and complete assistance detail", async () => {
+  // Exact approved PR191 content at 56a35e860783466f6079cba47f6338e2e6a09dab.
+  assert.equal(await contentHash(candidate.entries.slice(0, 5)), "8f2f9b1891fd3016174d25291410e885f7bc4fee9a5e184d30fe7861368420d1");
+  assert.equal(await contentHash(candidate.entries[5].detail_paragraphs), "e3e4f963ce57ebfbeac714d4904af724711d65c2e2751959a1683fd82bfcc3b0");
+  const runtime = JSON.parse(fs.readFileSync(path.join(root, "frontend/lib/recordCardContent.json")));
+  assert.equal((await projectRecordCard({ ...args, candidate: runtime })).status, "ready");
+  assert.deepEqual(runtime.entries, candidate.entries.map(({ rationale, material_limitations, ...entry }) => entry));
+  assert.ok(!JSON.stringify(runtime).includes("source_snapshot"));
+  assert.ok(!JSON.stringify(runtime).includes("governed_receipt_projection"));
+});
+
+test("API presentation validity is independent from stale card validity and retains genuine failures", async () => {
+  const current = structuredClone(payload);
+  current.presentations.find((p) => p.review_state).provenance.test_revision = "changed";
+  assert.equal(issuePresentationStatus(current, args, "119"), "ready");
+  assert.equal((await projectRecordCard({ ...args, payload: current })).status, "source_mismatch");
+  assert.equal(issuePresentationStatus(current, { ...args, memberBioguideId: "WRONG" }, "119"), "identity_mismatch");
+  assert.equal(issuePresentationStatus(current, args, "118"), "identity_mismatch");
+  current.presentations.pop();
+  assert.equal(issuePresentationStatus(current, args, "119"), "incomplete");
+  assert.equal(issuePresentationStatus(null, args, "119"), "incomplete");
+});
 
 test("exact current publication roots and complete accepted selection remain stable", async () => {
   assert.deepEqual(candidate.sources.map((s) => s.published_artifact_id), [245, 239, 251, 248]);
@@ -62,12 +86,12 @@ test("mixed choices and whole-package qualifications stay together", async () =>
   const assistance = entries.find((e) => e.finding_id === "wording:synthesis:security-assistance");
   assert.equal(assistance.section, "mixed");
   assert.equal(assistance.action_ids.length, 8);
-  for (const country of ["Ukraine", "Jordan", "Taiwan", "Israel"]) assert.ok(assistance.explanation.includes(country));
-  assert.equal(assistance.explanation, assistance.explanation_lines.join("\n\n"));
-  assert.equal(assistance.explanation_lines.length, 5);
-  assert.match(assistance.explanation_lines[0], /whole measure also covered other purposes/);
-  assert.match(assistance.explanation_lines[1], /different accounts through different mechanisms/);
-  assert.match(assistance.explanation_lines[3], /funds in the bill from being used for Israel\. The same amendment reduced the Foreign Military Financing account by \$3\.3 billion/);
+  for (const country of ["Ukraine", "Jordan", "Taiwan", "Israel"]) assert.ok(assistance.detail_paragraphs.join(" ").includes(country));
+  assert.equal(assistance.explanation, "The reviewed choices cover Ukraine, Jordan, Taiwan and Israel; they do not establish one uniform position on assistance.");
+  assert.equal(assistance.detail_paragraphs.length, 5);
+  assert.match(assistance.detail_paragraphs[0], /whole measure also covered other purposes/);
+  assert.match(assistance.detail_paragraphs[1], /different accounts through different mechanisms/);
+  assert.match(assistance.detail_paragraphs[3], /funds in the bill from being used for Israel\. The same amendment reduced the Foreign Military Financing account by \$3\.3 billion/);
 });
 
 test("all-scope coverage stays 119th-Congress bounded and has no invented cutoff", async () => {

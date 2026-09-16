@@ -15,6 +15,7 @@ import { hasAvailableIssueEvidence } from "../lib/basicEvidencePresentation.mjs"
 import {
   getEditorialPresentation,
   indexEditorialPresentations,
+  issuePresentationStatus,
   presentationIdentityMatches,
 } from "../lib/editorialPresentation.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
@@ -34,6 +35,8 @@ export default function RepresentativeExperience({
   dataClient = {},
   recordCardCandidate = null,
   findingRoute = {},
+  routePath = "/",
+  reviewMode = false,
 }) {
   const [mode, setMode] = useState("recommended");
   const initialLandingHandled = useRef(false);
@@ -70,11 +73,8 @@ export default function RepresentativeExperience({
               }).catch(() => { presentationStatus = "error"; return null; }),
             ]);
         if (!Array.isArray(positions?.positions) || (positions.legislator_id && positions.legislator_id !== legislator.id) || (positions.scope && positions.scope !== scope)) throw new Error("Position identity or shape mismatch");
-        if (presentationStatus === "ready" && !Array.isArray(presentations?.presentations)) presentationStatus = "incomplete";
-        if (presentations && !presentationIdentityMatches(presentations, { legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id })) presentationStatus = "identity_mismatch";
-        if (presentations?.scope && presentations.scope !== scope) presentationStatus = "identity_mismatch";
+        if (presentationStatus === "ready") presentationStatus = issuePresentationStatus(presentations, { legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id }, scope);
         const card = recordCardCandidate ? await projectRecordCard({ candidate: recordCardCandidate, payload: presentations, legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id, scope, requestStatus: presentationStatus }) : null;
-        if (card && ["incomplete", "identity_mismatch", "source_mismatch"].includes(card.status)) presentationStatus = card.status;
         if (active) {
           setState({
             status: "ready",
@@ -232,7 +232,7 @@ export default function RepresentativeExperience({
 
   return (
     <>
-      {recordCardCandidate ? <RecordAtAGlance model={state.card || { status: "loading" }} legislatorId={legislator.id} scope={scope} onNavigate={navigateFinding} /> : null}
+      {recordCardCandidate ? <RecordAtAGlance model={state.card || { status: "loading" }} legislatorId={legislator.id} scope={scope} onNavigate={navigateFinding} routePath={routePath} reviewMode={reviewMode} /> : null}
       <section className="scroll-mt-24 border-t border-stone-200 py-8" id="issues">
         <p className="eyebrow">Issue discovery</p>
         <h2 className="mt-2 font-serif text-4xl leading-tight text-stone-950">
@@ -256,7 +256,7 @@ export default function RepresentativeExperience({
           <>
           {state.presentationStatus !== "ready" ? <p className="mt-5 text-sm leading-6 text-stone-700" role="status">Issue summaries could not be verified. Recorded vote evidence remains available.</p> : null}
           <IssueOverviewGrid
-            compact={Boolean(recordCardCandidate)}
+            compact={state.card?.status === "ready"}
             presentationStatus={state.presentationStatus}
             mode={mode}
             onSelect={selectIssue}
@@ -274,6 +274,7 @@ export default function RepresentativeExperience({
           cardFinding={cardFinding}
           cardFindingRequested={Boolean(recordCardCandidate && findingRoute.findingId)}
           cardFindingView={findingRoute.findingView}
+          routePath={routePath}
           presentationStatus={state.presentationStatus}
           fixtureEvidence={fixtureData?.evidenceByDomain?.[selectedIssue] || null}
           issue={selectedIssue}

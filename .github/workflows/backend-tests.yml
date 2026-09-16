@@ -120,6 +120,13 @@ jobs:
           node --test lib/m15bTrust.test.mjs lib/publicReceipt.test.mjs
           npx playwright test tests/production-evidence-integration.spec.mjs --grep "expanded receipts"
 
+      - name: Verify Record at a Glance source bindings and both frontend routes
+        run: |
+          node scripts/build_record_card_review.mjs --check
+          cd frontend
+          node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs
+          PLAYWRIGHT_PRODUCTION_BUILD=1 npx playwright test tests/record-card.spec.mjs tests/record-card-release.spec.mjs
+
       - name: Prove reusable V2R exact-key replacement and offline M15B readiness
         run: |
           python scripts/prepare_m15b_replacement_artifacts.py --check

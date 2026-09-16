@@ -1,6 +1,6 @@
-# Proposed wording changes
+# Earlier product-review wording comparison
 
-Before: reviewed PR #191 head `783662d1254be23cde8f08993d43d8719679d5d8`. After: the candidate in this revision. These changes remain proposed product copy, not accepted public wording.
+Before: reviewed PR #191 head `783662d1254be23cde8f08993d43d8719679d5d8`. After: head `56a35e860783466f6079cba47f6338e2e6a09dab`, accepted by the user's subsequent product review. This historical comparison preserves the earlier wording record. See [the release candidate](release_candidate.md#bounded-wording-change) for the only new wording change: the specified short assistance explanation and relocation of its unchanged full detail. Product acceptance does not authorize deployment or publication.
 
 ## Two terrorism-preparedness requirements
 

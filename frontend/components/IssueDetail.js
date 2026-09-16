@@ -25,6 +25,7 @@ export default function IssueDetail({
   cardFindingRequested = false,
   cardFindingView = null,
   presentationStatus = "ready",
+  routePath = "/",
 }) {
   const [state, setState] = useState({
     status: "loading",
@@ -143,14 +144,14 @@ export default function IssueDetail({
         ) : null}
       </header>
 
-      {cardFinding ? <RecordCardFinding entry={cardFinding} legislatorId={legislatorId} scope={scope} receiptsVisible={cardFindingView === "receipts"} /> : null}
+      {cardFinding ? <RecordCardFinding entry={cardFinding} legislatorId={legislatorId} scope={scope} receiptsVisible={cardFindingView === "receipts"} routePath={routePath} /> : null}
       {cardFindingRequested && !cardFinding ? <p className="py-5 text-base leading-7 text-stone-700" role="status">This finding link does not match the available reviewed source. Browse the complete issue record below.</p> : null}
-      {!cardFindingRequested ? <ReviewedAnalysisSection
+      {!cardFinding ? <ReviewedAnalysisSection
         onSeeActions={showExactActions}
         presentation={presentation}
         rows={state.rows}
       /> : null}
-      {!cardFindingRequested ? <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} /> : null}
+      {!cardFinding ? <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} /> : null}
 
       {state.status === "loading" ? (
         <p className="border-t border-stone-200 py-10 text-base text-stone-700" role="status">
