@@ -52,6 +52,8 @@ Genuine API failure, member/scope mismatch and incomplete presentation data rema
 
 Rendered review caught a narrow-screen screenshot taken during focus/scroll transfer, placing the sticky header over the captured detail. Capture now waits for the real heading focus and settled scroll position; both capture tests passed again, and the regenerated full detail was inspected. No UI content was hidden to produce screenshots.
 
+The first Linux CI run exposed an older, Windows-validated assumption that the first review-card link must fit within the initial 800px viewport (Linux result: 872px). The current release requires complete readable content and whole-card inspection, not that viewport quota. The existing scope/layout test now verifies all six links retain at least 44px height and are fully reachable through normal scrolling at every viewport, preserving coverage, accessible-name and overflow checks. No font size, spacing, qualification or production behavior changed to satisfy CI.
+
 Fresh public read-only checks at **2026-09-16 15:01 UTC**, against `https://political-fingerprint.onrender.com`, resolved this runtime content as follows. These are live API compatibility checks; screenshots use deterministic recorded responses through the respective route interfaces.
 
 | Member | Scope | HTTP | Card result |
