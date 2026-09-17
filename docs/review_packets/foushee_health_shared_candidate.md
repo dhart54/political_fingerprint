@@ -1,141 +1,146 @@
 # Foushee Health & Social Policy — resumed shared candidate
 
-**Partial candidate: 71 more membership dispositions resolved.** The three named
-priorities are resolved as candidates. Nine new shared meanings bring the total
-to 27 exact actions, 22 Foushee findings and 20 bounded Massie proof findings.
-There are still 418 unreviewed discovery identities; no complete Health coverage,
-accepted meaning or public availability is claimed.
+**Partial candidate: 73 more membership screenings resolved.** Fourteen new shared
+interpretations bring the total to 41 exact actions, 36 Foushee findings and 34
+bounded Massie proof findings. The fixed discovery set still has 345 unreviewed
+identities. This is neither complete Health coverage nor accepted/public content.
 
 ## Resume delta and review entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, resumed from
-`edc567b33a57052ba7b5dd11408139472e30c1f4`. Base verified unchanged at
-`2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Exact pushed head and hosted CI results
-are recorded in the PR discussion. No new PR or architecture was introduced.
+`938c32d2f45a20deed552bfbb0f44703740be818`. Actual local and remote heads matched
+that checkpoint; no later in-scope work was overwritten. Reviewed base remains
+`2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. The exact pushed head and hosted CI
+results are recorded in the existing PR discussion.
 
 - [Living plan and unchanged eight-domain matrix](../plans/foushee_next_domain_shared_interpretation.md)
-- [27 shared interpretations / 104 passage maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [261 governed source captures](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [116 reusable member-neutral membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
-- [676-row accounting and resumption queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
+- [41 shared interpretations / 136 passage maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [422 governed source captures](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [189 reusable member-neutral membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [676-row accounting and exact remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Both members’ compact/detail findings](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Deterministic reuse/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
 | Candidate disposition | Before this resume | After |
 |---|---:|---:|
-| interpreted_substantive_directional |18|27|
-| procedural_context |146|167|
-| expressive_nonbinding_context |2|3|
-| exact_action_ineligible |21|61|
-| source_unresolved |489|418|
+| interpreted_substantive_directional |27|41|
+| procedural_context |167|174|
+| expressive_nonbinding_context |3|8|
+| exact_action_ineligible |61|108|
+| source_unresolved (unreviewed membership) |418|345|
 | Total fixed discovery |676|676|
 
-The cutoff remains September 16, 2026: 362 session-1 and 314 session-2 House119
-identities. No dates, hard actions or contrary votes were removed to close the
-queue. The remaining418 are work not performed, not asserted Health votes or
-unavailable evidence. All new classifications remain proposed.
+Discovery remains 362 session-1 and 314 session-2 House119 identities through
+September 16, 2026. No contrary choices, dates or difficult actions were removed.
+The remaining queue is unfinished work, not 345 presumed Health votes or claims
+that required evidence is unavailable. Every new disposition remains proposed.
 
-## Exact priority decisions
+## New shared interpretations
 
-**2026-53, H.R.7148 concurrence — proposed inclusion.** The Senate text replaces
-EH page1132 line9 through the section554 heading on page1235: the full-year
-Homeland Security division, not the retained Medicaid/Medicare titles. The replaced
-division includes Coast Guard retired-personnel/dependent medical care and the
-emergency food-and-shelter appropriation. Public Law119-37 divisionA supplies the
-incorporated rates/conditions and earlier-appropriation termination rules; the
-amendment moves its maximum date to February13,2026 and addresses the lapse period.
-The $123.5-million shelter figure belongs to the replaced House text, not to a new
-temporary appropriation amount. Exact PDF page captures establish both ends of the
-replacement and the retained, renumbered Senate-data provision. The two Nay/Nay
-choices remain separate observations in one H.R.7148 episode.
-
-**2026-308, H.R.5334 concurrence — proposed inclusion.** The Senate edits strike
-only House section1 and insert sanctions plus a DivisionB heading; House section2’s
-early-childhood educator deduction survives. New section114 expressly exempts
-medicine, medical devices, humanitarian assistance and related transactions from
-TitleI measures, with distinct conditions for Ukraine arrangements and medical
-isotope imports. This supplies a proposed medical-supply mechanism, not a new
-domestic benefit. Retained tax relief, broader sanctions, waivers, sunsets and the
-one-motion/whole-amendment limit remain in the shared detail. Neither member’s Nay
-is paraphrased as opposition to medicines or humanitarian assistance.
-
-**2026-313, H.R.9497 amended suspension — proposed exclusion.** The official posted
-359-page text names H.R.9497 and expressly identifies the amended suspension
-motion, matching the Clerk question. Review covered all five operative titles and
-section-level mechanisms. Navigation/flood/water-supply projects, environmental
-restoration, cost shares and dam safety do not themselves establish the declared
-care/insurance/social-service mechanism. Sediment-remediation health conditions,
-algal-bloom provisions and municipal water/wastewater funding were reviewed rather
-than treating the water-resources title as sufficient. Failed EH/Record URLs
-returned navigation HTML and were rejected; the candidate binding uses the posted
-motion text, not those responses. The exclusion denies no environmental health
-consequences and creates no Health finding.
-
-## Additional shared interpretations and screening
-
-| Exact action | New source-bound mechanism and limits |
+| Exact action | Source-bound mechanism and material limit |
 |---|---|
-| 2025-25, H.R.471 EH | Forest package includes firefighter-family travel reimbursement, case management, counselors and benefits guidance; existing death-benefit authorities preserved |
-| 2025-27, H.R.21 EH | Same-gestational-age care standard and hospital transfer after live birth following abortion, reporting/enforcement, maternal prosecution exemption and civil remedies; no broad abortion conclusion |
-| 2025-32, H.R.27 amendment | Failed joint HHS/Attorney General overdose-death certification gate, bound by Report119-2 and the February6 floor Record; no predicted reduction asserted |
-| 2025-33, H.R.27 EH | Scheduling exceptions, conditional medical-research registration, penalties and immediate applicability; failed certification condition absent |
-| 2025-51, H.R.695 EH | Medal of Honor pension formula plus extension of existing Medicaid nursing-facility pension limits; $90 cap and protected recipient/Medicaid conditions preserved |
-| 2025-68, H.R.1156 EH | Ten-year specified unemployment-fraud enforcement window, expired-case exception and $5-million administration/access/integrity funding rescission; not a medical-account or per-claimant cut |
-| 2025-70, H.R.1968 EH | Full funding package with Health extensions, Medicaid DSH timing, Medicare Improvement Fund and 2032 sequestration timing; account-specific availability and whole-package limits preserved |
+| 2025-79, Scott H.R.1048 substitute | Clinical-trial-only foreign payments excepted from the substitute’s university disclosure rules; whole failed substitute, not a stand-alone trial vote or exemption from medical safety law |
+| 2025-89, H.R.586 | VA/CDC cholangiocarcinoma study and tracking, with the separate one-month extension of existing Medicaid nursing-facility pension limits; no causation or service-connection presumption |
+| 2025-90, H.R.1039 | Independent VA notice assessment and lawful recommendations, completed within one year after implementation begins, plus the same pension-limit extension |
+| 2025-99, H.R.1228 | Moves the existing Office of Survivors Assistance into the Secretary’s office; incorporated duties/benefit-resource role retained, no new benefit amount |
+| 2025-104, S.146 | Intimate-image offenses with explicit good-faith medical exceptions and court-ordered victim-care restitution, plus separate platform duties; restitution is not guaranteed collection and the criminal exception is not silently extended to the platform rule |
+| 2025-115, H.R.530 | Defined military fixed-wing aircrew cancer study and the one-month pension-limit extension; available-data and service/occupation boundaries retained |
+| 2025-116, H.R.36 | Georgia sanctions with explicit medicine/device/humanitarian transaction exceptions; wider reports, conditional cooperation and sunset retained, with two source cross-reference irregularities expressly qualified rather than repaired |
+| 2025-119, H.R.1503 | Forced-organ-harvesting sanctions and conditional organ-sale passport restrictions; existing paired-donation/expense exceptions, medical trade, waivers and whole-package limit retained |
+| 2025-131, H.R.2240 | Reports on officer attacks and mental-health resources/use/screening needs; no mandatory screening, new treatment program or adopted preamble causality |
+| 2025-133, H.R.1286 | VA claim-form assessment, two-year implementation period after work begins, and the same pension-limit extension; distinct from H.R.1039’s notices and one-year period |
+| 2025-136, H.R.1223 | Research-fleet communications plan expressly considers telemedicine and mental-health/counseling/crisis support, as appropriate; upgrades are permissive and care/funding is not guaranteed |
+| 2025-166, S.331 | Separate fentanyl scheduling/research-registration/penalty package with its own ES text and House question; reuse of H.R.27 research does not absorb its failed study-condition amendment |
+| 2025-168, H.R.4 EH | Separate $500-million/$400-million unobligated Global Health Programs paragraph rescissions within a larger foreign-assistance/broadcasting package; not per-patient cuts or the later Senate/final version |
+| 2025-172, H.R.1998 | Piracy sanctions with medicine/device/humanitarian transactions, goods-import and other exceptions plus waiver conditions; no finding of anyone’s guilt or new domestic health benefit |
 
-The H.R.27 pair is actual Yea/Nay for Foushee and Nay/Nay for Massie. These are
-different questions, not a trajectory. Together with H.R.7148, they bring the total
-to five paired episodes; the existing H.R.2483, H.R.1 and H.R.5371 pairs are retained.
-Twenty-seven inputs form22 episodes. Both members gain seven findings; Massie’s
-Not Voting records on H.R.5348 and H.R.4541 remain non-proposition accounting.
-No recurring pattern or issue-wide synthesis was forced.
+All 27 earlier interpretation objects and all 261 prior governed source objects
+are unchanged. Forty-one inputs form 36 episodes, retaining all five ordered
+pairs. Both members gain 14 findings. Massie’s two existing Not Voting records
+remain non-proposition accounting. No pattern, trajectory or issue-wide synthesis
+was invented; no member-specific legislative meaning was authored.
 
-Additional screening covered the January–March passage/suspension group through
-2025 roll71 and the House-resolution group through roll149. Forty new exclusions
-are item-specific operative decisions: immigration consequences, business credit,
-rail/utility management, emissions/appliance rules, land title, forest disease,
-procurement and border reporting are distinguished from direct Health mechanisms.
-H.R.471 was included despite its forest title; H.R.375 was excluded after verifying
-the tree-disease mechanism. H.R.804’s incorporated disaster loans concern property
-and economic injury, while H.R.1156 changes a specified social-insurance delivery
-account. Cross-domain criteria remain visible for eventual substantive review.
+## Exact membership decisions and source reuse
 
-Twenty-one additional procedures include House consideration/rule votes and the
-budget-process resolution. H.Con.Res.14’s recommended functional levels and
-reconciliation instructions are not treated as enacted Medicaid cuts or individual
-benefit changes. Separate H.Res.436 consideration votes retain separate identities.
-The failed H.Res.282 uses the reported text, not a nonexistent engrossed version.
-H.Res.352 adds one expressive control; institutional censure remains separately
-excluded from Health. Underlying bill meanings are not borrowed for rule votes.
+The recorded next groups, rolls72–74 and77–83, were confirmed unprocessed before
+research. H.Res.242 was reused with Report119-38, Rules Committee Print119-1 and
+the March27 Record to bind each H.R.1048 amendment. Only Scott’s failed substitute
+supplies the explicit clinical-trial exception. Self’s reporting threshold,
+Tlaib’s two country/entity changes and final passage are independently proposed
+exclusions; the failed exception is not inherited by the final bill.
 
-## Manual intervention, reuse and validation
+Forty-seven new exclusions distinguish operative care/service mechanisms from
+energy/environmental effects, consumer-product safety, university disclosures,
+business credit, securities access, law-enforcement labor rules, immigration
+enforcement, election administration and other mechanisms. H.R.1442’s sodium
+nitrite ban was checked against the incorporated consumer-product definition:
+the preserved drug/device exclusions do not create a new medical program.
+H.R.1263’s account of past/global-health cooperation was distinguished from
+H.R.1223’s explicit remote-care planning requirement.
 
-This resume added9 manually researched shared meanings and their two choice
-strings,9 explicit shared compacts,33 passage maps and143 governed captures.
-There are now137 Clerk sources and124 operative/rule/guidance/statutory captures.
-All118 prior source objects are byte-for-byte identical as governed JSON objects.
-Shared membership records increased48→116:68 new records and the three open
-priority records resolved. Earlier authoring is preserved except the now-stale
-H.R.7148 concurrence limitation, which is reconciled with the new paired input.
+H.R.2096’s incorporation was checked against D.C. Law24-345, including all of
+subtitle M: discipline timing/tolling, termination-hearing publication and
+penalty review, not just the bill’s heading. Its repeal does not reach the
+separate use-of-force/medical-assistance provisions. H.R.884’s incorporated
+local-voting law was also checked. D.C. site downloads returned HTTP403; the
+same Council’s public XML repository supplied hashed official law sources.
+No protected archive or paid service was used.
 
-Research, operative classification, episode assignment, text extraction and source
-selection remain manual candidate-authoring interventions. Source/version analysis
-is stored once;54 real member observations are mechanically applied to the shared
-core. There are zero member-specific meaning branches, member-authored legislative
-explanations, generated-output repairs, acceptance receipts or production writes.
-The paired-observation contract and explicit compact architecture are unchanged.
+Seven new procedural controls include the Senate-amended budget resolution,
+H.Res.489/499/530 and three distinct H.Res.566 questions. H.Res.499’s incorporated
+H.Res.492 engrossment corrections are captured, including Health references.
+The Foxx rule amendment is bound to the July2 Record and is not confused with
+the nearby substantive McGovern proposal. Five new expressive resolutions stay
+non-counting; references to injuries or canceled VA appointments in preambles
+do not create operative Health programs or establish their causal claims.
 
-**114 focused tests and all7 canonical semantic checks pass.** Added checks cover
-the resolved priority source chains, real mixed/same-direction H.R.27 pair, retained
-pension/Medicare offsets and honest unfinished queue. Deterministic checked-in
-output/proof/appendix replay, party/member guards, source/cutoff mutations, failed
-and non-directional states, public/persistence rejection and frozen corpora pass.
-The first local broad run lacked the existing AJV module path; supplying the
-already-installed root dependency path resolved it without changing dependencies.
-No frontend runtime changed, so a new browser/build loop is not claimed or needed.
-Hosted exact-head CI results are recorded in the same PR discussion after push.
+Existing pension statute, H.R.27, H.Res.242 and other captured rules were reused.
+The four new veterans study/notices/forms packages preserve the $90 conditional
+pension limit and December31,2031 endpoint, distinct from H.R.695’s later endpoint.
+H.R.4 uses enacted Public Law119-4 and the two complete Global Health Programs
+paragraphs in Public Law118-47, rather than an assumed single Health account.
+Official pages/versions are source-bound once and reused across both members.
+
+## Manual intervention and implementation
+
+This resume adds 14 manually researched shared meanings, their two choice strings
+and 14 explicit shared compacts; 32 additional interpretation passage maps; 73
+membership records; and 161 captures (75 Clerk, 86 other). Total sources are 212
+Clerk and 210 text/rule/report/statute/guidance captures. Some new captures support
+the next unreviewed H.R.3944 group, not new membership claims. Public Law118-47 is
+captured as bounded incorporated account excerpts with the original raw-file hash.
+
+Source acquisition, extraction, exact-version analysis, proposed membership,
+episode assignments and wording are manual candidate work. Eighty-two official
+member observations are then projected mechanically. There are zero
+member-authored meaning branches, generated-output repairs, acceptance receipts
+or production writes.
+
+A concrete preparation defect surfaced with House passage of Senate-origin
+S.146: the offline command assumed every measure was H.R. It now permits an
+explicit `bill_type: s` alongside the existing H.R. default, while still requiring
+exact Clerk measure/type/number and House-question matches. Unknown types or
+wrong/missing Senate typing fail closed. The paired-observation, shared-compact,
+compiler/schema, publication and public-runtime designs are unchanged.
+
+## Validation
+
+**119 focused tests and all 7 canonical semantic checks pass.** The focused suite
+includes 32 candidate tests. Five added checks cover explicit Senate-origin
+binding/drift, Scott’s exact substitute versus independently excluded questions,
+veterans deadlines/offsets, separate H.R.27/S.331 episodes, and rescission/rule
+source boundaries. Replay of checked-in output, proof and appendix, source/member/
+party/cutoff guards, non-directional states, candidate rejection at public and
+persistence boundaries, and existing shared corpus contracts remain green.
+
+The semantic command initially hit Windows sandbox temporary-directory
+permissions; its permitted normal-temp rerun passed all seven checks. No test
+or guard was weakened. Existing installed AJV dependencies were reused through
+the process-local NODE_PATH. No dependency, production environment or registry
+was changed. No frontend runtime changed, so no new rendered/browser loop is
+claimed. Exact-head existing CI is checked after push and recorded in PR194.
 
 ```powershell
 python scripts/prepare_shared_domain_candidate.py --input docs/editorial/shared_candidates/house_119_health_20260916 --member F000477 --member M001184 --output docs/editorial/shared_candidates/house_119_health_20260916/generated --review-packet docs/review_packets/foushee_health_shared_candidate.md
@@ -143,36 +148,46 @@ python -m pytest -q -p no:cacheprovider backend/tests/test_shared_domain_candida
 python scripts/run_editorial_pipeline.py validate --tier semantic
 ```
 
-## Precise remaining work and checkpoint
+## Remaining work and exact checkpoint
 
-The remaining418 identities all need substantive membership screening. No reviewed
-exact-effect binding, authoritative conflict or unavailable-required-evidence flag
-remains open. This does not mean every future source can be resolved; it means the
-current queue is not mislabeled as a human-dependent evidence blocker.
+**345 identities remain unreviewed.** No reviewed case has a current unresolved
+exact-effect, conflicting-source or unavailable-required-evidence flag. H.R.36’s
+internal references are explicitly limited in its candidate; they do not prevent
+the separately clear medical-exception interpretation. Future source problems
+must still be recorded separately from unfinished work.
 
-Resume with 2025 rolls72–74 (H.R.359/1326/1534), then77–83: two regulatory
-disapprovals and four H.R.1048 amendments plus final passage. H.Res.242 is already
-captured; acquire its accompanying report and exact child texts rather than
-borrowing final-passage meaning. Per-row next actions and all remaining identities
-are preserved in `universe_proposal.json`. Continue source/version groups and apply
-both real members only after shared eligibility and meanings are proposed.
+Resume with **2025 rolls180 and182, H.R.3944**. The official EH text, H.Res.530 RH,
+Report119-167, June25 Record pages29–32 and Rules Print119-5 pages1–3,5,9,12,30–33
+are already captured. The en-bloc source identifies amendments1,14,15,19,25,28,32.
+Finish all page/line effects and distinguish the medical-services transfer from
+the military transfer and net-zero entries. Finish the full passage/rider and
+incorporated-authority review, retaining appropriations timing, conditional
+funding and cancellation/replacement distinctions. Preliminary navigation is
+not represented as a completed membership decision for either action.
 
-Stopping reason: practical context/execution limit after sustained research across
-the priorities and subsequent batches, with the remainder preserved for resumption.
-No specific new human product decision is required to continue available research.
-Substantive approval remains necessary before acceptance/publication and is not
-being used as a substitute for finishing the queue. The terminal marker is
-`CHECKPOINT`, never successful completion of Health coverage.
+Then continue rolls191–193 (H.R.1709, H.R.1770, S.1596) and the H.Res.580/bill
+group. Review H.Res.590’s exact procedural and incorporated H.R.4 Senate-version
+effects when reached; do not project the earlier EH rescissions into that vote.
+All 345 identities and executable first-group steps remain in the universe JSON.
+The two H.R.3944 rows explicitly identify already-captured sources to avoid
+repeating research after a fresh context.
+
+Stop reason: **this sustained run’s practical execution/context limit**, after
+73 completed screenings across four internal groups and preparation of the next
+large amendment/package group. This is a resumable research checkpoint, not an
+approval gate or completed Health coverage. No new human product decision is
+required to continue available work. Substantive review remains required before
+acceptance/publication. The terminal marker uses CHECKPOINT.
 
 Existing Vercel branch-disable and main-only Render safeguards are unchanged.
-No merge, deploy, publication, production-data write, migration, registry/environment
-change, blue operation, paid access or protected-archive access occurred. PR191
-remains released, PR193 paused and issue192 open.
+No merge, deployment, publication, production-data write, migration, registry or
+environment change, blue operation, paid access or protected-archive access
+occurred. PR191 remains released, PR193 paused and issue192 open.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-27 explicitly listed candidate inputs through September16,2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+41 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -335,6 +350,225 @@ The Clerk recorded the House result as 'Passed' on 2025-06-04. This does not est
 Evidence: house:119:1:150, house:119:1:151; finding `prop:8b01a5fcb76ca6bb`.
 
 Sources: [clerk:119:1:150](https://clerk.house.gov/evs/2025/roll150.xml); [govinfo:hrpt130](https://www.govinfo.gov/content/pkg/CRPT-119hrpt130/html/CRPT-119hrpt130.htm); [cms:smd24003](https://www.medicaid.gov/federal-policy-guidance/downloads/smd24003.pdf); [clerk:119:1:151](https://clerk.house.gov/evs/2025/roll151.xml); [govinfo:hr2483eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2483eh/html/BILLS-119hr2483eh.htm).
+
+### Intimate-image offenses with medical exceptions and victim restitution
+
+**Compact:** Foushee supported suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package. The bill created specified offenses involving nonconsensual intimate images, exempted reasonable, good-faith medical disclosures from those offenses, and required victim restitution that includes medical and psychological care costs. It also required covered platforms to remove images after valid requests. One vote covered the whole bill; it did not guarantee payment or exempt medical material from every platform-removal rule.
+
+**Detail:**
+
+**house:119:1:104**
+
+Foushee supported suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package.
+
+S.146 adds criminal prohibitions for specified publication of authentic nonconsensual intimate images and digital forgeries, with distinct adult/minor elements, penalties, threat provisions and other exceptions. For both publication offenses, reasonable, good-faith disclosures for medical education, diagnosis, treatment or legitimate medical/scientific purposes are expressly excepted. The new subsection (h)(8) requires restitution for offenses under paragraphs (2) and (3) in the same manner as 18 U.S.C.2264. That incorporated statute includes physical, psychiatric and psychological medical care, therapy, rehabilitation, necessary transport, temporary housing and child care, lost income and other specified losses, as determined by the court; an order is mandatory despite the defendant’s economic circumstances or compensation from another source. Separately, covered platforms must establish a notice/removal process within one year and remove images within 48 hours after a valid request, with reasonable efforts concerning known identical copies, liability protections and FTC enforcement. Proposed Health membership rests on the explicit medical-disclosure exception and victim-care restitution, not on assuming all online-safety measures are Health votes.
+
+The Clerk recorded the House result as 'Passed' on 2025-04-28. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The medical exceptions attach to the specified criminal publication offenses. They are not silently extended to the separate platform-removal process or other laws. A mandatory restitution order is not proof of collection or new federal insurance coverage.
+- The vote covers criminal liability, exceptions, restitution and platform duties together. Opposition cannot be paraphrased as support for abuse, and no causal reduction in harm is asserted.
+
+Evidence: house:119:1:104; finding `prop:2cff1a0d9cf2ecd6`.
+
+Sources: [clerk:119:1:104](https://clerk.house.gov/evs/2025/roll104.xml); [govinfo:s146es](https://www.govinfo.gov/content/pkg/BILLS-119s146es/html/BILLS-119s146es.htm); [govinfo:18usc2264-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110A-sec2264.htm).
+
+### Military aircrew cancer study with extended nursing-facility pension limits
+
+**Compact:** Foushee supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package. The bill required VA to seek a National Academies study of cancer among specified former active-duty fixed-wing aircrew. It also extended existing Medicaid nursing-facility pension limits through December 31, 2031. The study would examine evidence; this vote did not establish an exposure caused cancer or grant new benefits.
+
+**Detail:**
+
+**house:119:1:115**
+
+Foushee supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package.
+
+Amended H.R.530 requires VA to seek a National Academies agreement within 30 days for a study of cancer prevalence and mortality among individuals who served on active duty in the Army, Navy, Air Force or Marine Corps as fixed-wing aircrew. The agreement must be finalized within 60 days after negotiations begin, with a report and recurring briefings if that deadline is missed. The study identifies occupational exposures, reviews associations with listed and other appropriate cancers, estimates prevalence/mortality to the extent possible using available data, and reports at completion. Section 3 separately extends the existing Medicaid nursing-facility pension limits in 38 U.S.C.5503(d)(7) from November 30 to December 31, 2031. The incorporated $90 monthly limit, specified dependent/recipient conditions, State-home exception, Medicaid-payment protection and excess-payment recovery qualification remain intact.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-05. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Covered aircrew are defined by the named services, active-duty service and fixed-wing roles; the text does not extend this study to every military occupation. No cancer causation or new service-connection presumption is inferred.
+- The one-month pension-limit extension is bundled with the study and is not the longer H.R.695 proposal. The agreement deadline runs from negotiations; no fixed study-completion date is supplied.
+
+Evidence: house:119:1:115; finding `prop:eafa7bcbff9faad8`.
+
+Sources: [clerk:119:1:115](https://clerk.house.gov/evs/2025/roll115.xml); [govinfo:hr530eh](https://www.govinfo.gov/content/pkg/BILLS-119hr530eh/html/BILLS-119hr530eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
+### Georgia sanctions with medicine, device and humanitarian exceptions
+
+**Compact:** Foushee supported suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package. The bill provided sanctions concerning specified conduct in Georgia while excluding transactions for medicines, medical devices and humanitarian assistance from those sanctions. It also required reports and proposed conditional cooperation. This was a whole-bill choice, not a vote on medical supplies alone; no new domestic health benefit was created.
+
+**Detail:**
+
+**house:119:1:116**
+
+Foushee supported suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package.
+
+H.R.36 requires specified determinations, reports and visa sanctions and authorizes property-blocking sanctions concerning defined conduct affecting Georgia; it also sets waiver, termination and reporting conditions. Section 6(i)(2)(C)(i) expressly excludes conduct or facilitation of transactions for agricultural commodities, food, medicine, medical devices, humanitarian assistance or humanitarian purposes from sanctions under that section. Medicine/device definitions reference the Federal Food, Drug, and Cosmetic Act. The package includes a bilateral strategy, intelligence reporting, conditional cooperation provisions using should rather than a new mandatory assistance appropriation, and a five-year sunset in section 8. Proposed Health membership rests on the explicit medical-transaction boundary. Source assertions about governments or democratic conditions are not adopted as independent findings.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-05. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The medical exception governs this section’s sanctions, not all restrictions under other law. Neither member choice establishes a position on every Georgian policy or on medicines generally.
+- The captured EH text contains internal-reference irregularities: section 6(h)(2) calls section 7 the sunset while the actual sunset is section 8; section 6(i)(2)(C)(ii) refers to activities in paragraph (1), which contains definitions. This candidate does not silently repair or extend those clauses; the separately explicit medical transaction exception in clause (i) is the membership basis.
+
+Evidence: house:119:1:116; finding `prop:3657b46370498990`.
+
+Sources: [clerk:119:1:116](https://clerk.house.gov/evs/2025/roll116.xml); [govinfo:hr36eh](https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm).
+
+### Organ-trafficking sanctions and passport restrictions with medical-trade exceptions
+
+**Compact:** Foushee supported suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package. The bill required sanctions for people determined to facilitate forced organ harvesting or organ-removal trafficking and allowed passport restrictions for specified organ-sale convictions. Medicine and vital humanitarian transactions were excepted from its sanctions. The vote covered this full package, without identifying any person as guilty or changing ordinary transplant eligibility.
+
+**Detail:**
+
+**house:119:1:119**
+
+Foushee supported suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package.
+
+H.R.1503 defines forced organ harvesting and organ-removal trafficking through coercion, deception, abuse or specified related means. It authorizes denial or revocation of passports for persons convicted under 42 U.S.C.274e who remain imprisoned or on parole or other supervised release and used a passport or crossed an international border in the offense. The incorporated provision prohibits covered valuable-consideration transfers for transplantation, excepts human organ paired donation and excludes specified reasonable procurement/donor expenses from valuable consideration. The bill requires foreign-country reporting and, within 180 days, a list of persons determined to fund, sponsor or facilitate the defined conduct, followed by property and entry sanctions. Section 6(c) excludes goods importation from property sanctions, preserves specified international admission obligations, and excepts medicine, food, vital humanitarian assistance and related financial/transport transactions; it also permits case-specific national-security waivers of up to 180 days with advance certification. These medical-transplant and medical-trade mechanisms support proposed Health membership within a wider foreign-policy package.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-07. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The passport authority depends on the specified conviction, continuing sentence/supervision and cross-border nexus; it is not a ban on all organ donation or all travel for treatment. Existing paired-donation and expense exceptions are not repealed.
+- No individual guilt, prevalence of forced harvesting, country-specific allegation or effectiveness of sanctions is established by this House vote. Medical exceptions are specific to the bill’s sanctions.
+
+Evidence: house:119:1:119; finding `prop:8737f6e2148f0e3e`.
+
+Sources: [clerk:119:1:119](https://clerk.house.gov/evs/2025/roll119.xml); [govinfo:hr1503eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1503eh/html/BILLS-119hr1503eh.htm); [govinfo:42usc274e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partH-sec274e.htm).
+
+### Reports on officer attacks and mental-health resources
+
+**Compact:** Foushee supported House passage of H.R.2240’s attack-data and mental-health reporting requirements. The bill required reports on attacks against law-enforcement officers and on their mental-health needs, available programs and use of those resources. It asked for analysis and recommendations, including on screening; it did not fund new treatment or require officers to undergo screening.
+
+**Detail:**
+
+**house:119:1:131**
+
+Foushee supported House passage of H.R.2240’s attack-data and mental-health reporting requirements.
+
+H.R.2240 requires the Attorney General, with the specified FBI and National Institute of Justice officials and stakeholder consultation, to submit three reports within 270 days. Sections 3 and 4 address violent attacks, training, protective equipment, crime/non-crime data and possible responses. Section 5 separately examines mental-health and stress responses, available resources especially peer-to-peer programs, utilization, screening availability or need and possible legislative tools to assess and improve officer mental health. Proposed Health membership rests on that explicit care-resource assessment, not the title, preamble statistics or a claim that the bill creates services.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-15. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- This is mandatory research/reporting about mental-health resources, not mandatory clinical screening, a treatment expansion or an appropriation. Preamble causal and statistical assertions are not adopted as findings.
+- The recorded vote covers all three reports together; it does not identify agreement with every finding, recommendation or policing policy.
+
+Evidence: house:119:1:131; finding `prop:ea91ad568f7db7ea`.
+
+Sources: [clerk:119:1:131](https://clerk.house.gov/evs/2025/roll131.xml); [govinfo:hr2240eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2240eh/html/BILLS-119hr2240eh.htm).
+
+### Clearer VA claim forms with extended nursing-facility pension limits
+
+**Compact:** Foushee supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package. The bill required VA to seek an independent assessment of claim forms and implement recommendations consistent with existing law. It also extended Medicaid nursing-facility pension limits through December 31, 2031. One vote covered both; form changes had a two-year implementation window after work began.
+
+**Detail:**
+
+**house:119:1:133**
+
+Foushee supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package.
+
+Amended H.R.1286 directs VA within 30 days to seek an agreement with a federally funded research and development center for a stakeholder-informed assessment of claim forms’ clarity and organization. Within 90 days after receiving the assessment, VA must provide it to Congress and implement recommendations consistent with governing law, completing that implementation within two years after commencement. Section 3 separately extends 38 U.S.C.5503(d)(7) from November 30 to December 31, 2031. The existing $90 pension limit during covered Medicaid nursing-facility care retains its specified recipient/dependent conditions, State-home exception, Medicaid-payment protection and limited recovery of excess payments. This Medicaid-related extension supports proposed Health membership, with the form-administration requirements retained as package context.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-19. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Forms in H.R.1286 and notices in H.R.1039 are separate proposals, not stages of one bill. The two-year implementation period here differs from H.R.1039’s one-year period.
+- The one-month pension-limit extension is conditional and is not a newly imposed cap on every veteran’s pension. No larger entitlement or successful claim outcome is promised.
+
+Evidence: house:119:1:133; finding `prop:e43bb9f579c4be9c`.
+
+Sources: [clerk:119:1:133](https://clerk.house.gov/evs/2025/roll133.xml); [govinfo:hr1286eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1286eh/html/BILLS-119hr1286eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
+### Research-fleet network planning that includes remote medical care
+
+**Compact:** Foushee supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure. The bill required a cybersecurity and communications plan for the U.S. Academic Research Fleet, considering network needs for telemedicine, mental-health care and crisis support. It permitted upgrades consistent with the plan. It did not guarantee new treatment, a funding amount or network improvements on every vessel.
+
+**Detail:**
+
+**house:119:1:136**
+
+Foushee supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure.
+
+H.R.1223 requires NSF, consulting other federal vessel owners and university/laboratory operators, to submit an 18-month cybersecurity and telecommunications plan covering needs, costs, implementation timing, shared solutions and a spending plan. Section 2(c)(1)(B) expressly directs consideration, as appropriate, of network access for deployed personnel’s telemedicine including mental-health care, counseling, crisis-provider interviews and other remote care/services. Other required considerations cover science, operations, education, security and data. Section 2(d) permits coordinated support for upgrades consistent with the plan and requires a progress report two years after plan submission. The direct remote-care capability requirement supports proposed Health membership within the larger fleet communications measure; unspecified scientific research alone does not.
+
+The Clerk recorded the House result as 'Passed' on 2025-05-20. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The care-related requirement is a planning consideration as appropriate, alongside scientific and operational needs. Upgrade support is permissive, with no new appropriation amount or guaranteed clinical service in the text.
+
+Evidence: house:119:1:136; finding `prop:5873b6ccd3efffe6`.
+
+Sources: [clerk:119:1:136](https://clerk.house.gov/evs/2025/roll136.xml); [govinfo:hr1223eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1223eh/html/BILLS-119hr1223eh.htm).
+
+### Fentanyl-related scheduling and research-registration changes in S.331
+
+**Compact:** Foushee supported House passage of S.331’s fentanyl-related scheduling, research and penalties package. The bill placed a defined class of fentanyl-related substances in Schedule I and changed registration rules for controlled-substance research. It combined those research provisions with penalties and other drug-law changes. This separate S.331 vote did not include the failed H.R.27 amendment requiring a prior overdose-impact study.
+
+**Detail:**
+
+**house:119:1:166**
+
+Foushee supported House passage of S.331’s fentanyl-related scheduling, research and penalties package.
+
+S.331 adds a structurally defined fentanyl-related class to Schedule I, excepting substances otherwise controlled by Attorney General action or expressly listed in another schedule. It creates expedited research procedures for investigational drugs and research conducted or funded by HHS, Defense or VA: currently registered Schedule I/II researchers may begin after 30-day notice; for other researchers the Attorney General must register the applicant or serve an order to show cause within 45 days of a complete notice. Quantity and state-authorization requirements remain. Other provisions permit qualified institutional colleagues and related sites to use one registration with specified notices and controls, remove some mandatory repeat inspections while retaining inspection authority, allow continued research on a newly Schedule I substance during a timely registration application, and permit small-quantity research manufacture without a separate manufacturing registration, excluding growing marijuana. Import/export requirements remain. The bill also requires transparency, a one-year DOJ Inspector General report to Congress, technical dispensing corrections and rulemaking within six months; it adds fentanyl-related substances to specified penalty provisions and makes amendments apply from enactment. Proposed Health membership rests on the explicit medical/scientific research mechanisms within the whole scheduling and penalties package. Comparison with the captured H.R.27 EH text supports reuse of that research, but S.331 is a distinct bill/action with its own ES source and technical wording/citation corrections, not another stage silently merged into the H.R.27 pair.
+
+The Clerk recorded the House result as 'Passed' on 2025-06-12. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The defined class and its exceptions do not make every use of fentanyl Schedule I. Research procedures remain conditional; research authorization is not approval of a treatment or a predicted overdose outcome.
+- The failed H.R.27 overdose-study amendment remains separately accounted for in its existing episode. This S.331 action is not a vote to adopt that amendment. No enacted-law result is inferred from House passage.
+
+Evidence: house:119:1:166; finding `prop:d4f025319ef35719`.
+
+Sources: [clerk:119:1:166](https://clerk.house.gov/evs/2025/roll166.xml); [govinfo:s331es](https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm); [govinfo:hres489eh](https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm); [govinfo:hr27eh](https://www.govinfo.gov/content/pkg/BILLS-119hr27eh/html/BILLS-119hr27eh.htm).
+
+### Rescissions including two Global Health Programs balances
+
+**Compact:** Foushee opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions. The House package would permanently rescind $500 million and $400 million from separate Global Health Programs balances, alongside other foreign-assistance and public-broadcasting funding. These were cuts to unobligated budget authority, not specified per-patient benefits. One vote covered the full rescissions package.
+
+**Detail:**
+
+**house:119:1:168**
+
+Foushee opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions.
+
+H.R.4 section 2(b)(5) permanently rescinds $500 million of unobligated balances in the first Global Health Programs paragraph continued by Public Law 119-4; paragraph (6) separately rescinds $400 million in its second paragraph. Public Law 119-4 section 1101(a)(11) continues division F of Public Law 118-47 with its specified exceptions and conditions. The first incorporated Global Health Programs paragraph funds USAID-apportioned maternal/child health, infectious-disease prevention/treatment/research, crisis preparedness and other named global-health activities, subject to its reproductive-health and other restrictions; the second funds State-apportioned HIV/AIDS prevention, treatment, control and research and contains Global Fund provisions. These paragraph-level rescissions do not assign the entire reduction to a particular disease, country, provider or recipient. The bill also rescinds $800 million from Migration and Refugee Assistance, $496 million from International Disaster Assistance, and specified unobligated balances from international-organization, peacekeeping, development, economic, regional and other accounts; it rescinds the specified FY2026 and FY2027 Corporation for Public Broadcasting amounts. Rescissions would take effect upon enactment. This House-passage candidate is limited to the EH package, not any later Senate revision, self-executing rule or final law.
+
+The Clerk recorded the House result as 'Passed' on 2025-06-12. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Unobligated budget authority is not an already-obligated payment, a per-patient amount, or proof of a particular service loss. The two Global Health Programs paragraphs remain distinct; no unsupported disease- or country-specific allocation of the rescission is inferred.
+- The first paragraph’s conditions and the second paragraph’s HIV/AIDS/Global Fund provisions are incorporated context, not separately repealed by this vote. The wider foreign-assistance and broadcasting package remains part of both choice meanings. A vote on this House version does not establish the content or effect of a later law.
+
+Evidence: house:119:1:168; finding `prop:1e96721ba8324bdb`.
+
+Sources: [clerk:119:1:168](https://clerk.house.gov/evs/2025/roll168.xml); [govinfo:hr4eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm); [govinfo:pl119-4](https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm); [govinfo:pl118-47](https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm).
+
+### Piracy sanctions with medical-supply and humanitarian exceptions
+
+**Compact:** Foushee supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package. The bill required sanctions concerning foreign persons determined to engage knowingly in piracy, while excepting medicine, medical devices and humanitarian transactions. One vote covered the sanctions, exceptions and waiver provisions together; it did not establish any person’s guilt or create new health coverage.
+
+**Detail:**
+
+**house:119:1:172**
+
+Foushee supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package.
+
+Amended H.R.1998 requires sanctions for foreign persons the President determines knowingly engage in piracy, authorizes property blocking and provides entry restrictions and visa revocation with specified official knowledge standards. Section 4(c)(2) bars these sanctions on transactions or facilitation involving sales of agricultural commodities, food, medicine or medical devices, humanitarian assistance, related financial transactions and transport of necessary goods/services. Other exceptions preserve international admission obligations and authorized U.S. intelligence, law-enforcement and national-security activities; sanctions authority excludes importation of goods. The President may waive sanctions with certification to the named committees at least 15 days before effectiveness that the waiver is crucial to U.S. national-security interests. Implementation, penalties and qualified handling of classified information also remain part of the package. Proposed Health membership rests on the express medical-transaction boundary, not the title or unverified preamble accounts of attacks.
+
+The Clerk recorded the House result as 'Passed' on 2025-06-23. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The medical/humanitarian exception applies to this bill’s sanctions; it does not repeal every restriction under other law or guarantee deliveries. The action is not a separate vote on medicines alone.
+- No guilt, prevalence or causal account of piracy, or effectiveness of sanctions, is established by this vote. The source’s grammatical irregularity in section 4(b)(1) is not silently used to expand the stated property-blocking authority.
+
+Evidence: house:119:1:172; finding `prop:ed0e0c7e7c732192`.
+
+Sources: [clerk:119:1:172](https://clerk.house.gov/evs/2025/roll172.xml); [govinfo:hr1998eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm).
 
 ### Forest-management package with firefighter-family casualty assistance
 
@@ -509,6 +743,93 @@ The Clerk recorded the House result as 'Passed' on 2025-03-11. This does not est
 Evidence: house:119:1:70; finding `prop:735f031e8edbb264`.
 
 Sources: [clerk:119:1:70](https://clerk.house.gov/evs/2025/roll070.xml); [govinfo:hr1968eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm); [govinfo:2usc901a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap20-subchapI-sec901a.htm).
+
+### Foreign-funding disclosure substitute with a clinical-trial payment exception
+
+**Compact:** Foushee supported Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception. The failed substitute would exempt foreign payments solely for clinical trials from its university disclosure rules. It also rewrote reporting thresholds, sanctions and safeguards across the bill. This was one vote on the whole substitute, not a separate vote on clinical research or final passage.
+
+**Detail:**
+
+**house:119:1:79**
+
+Foushee supported Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception.
+
+Scott amendment No. 3, printed in House Report 119-38, replaces Rules Committee Print 119-1 from page 1 line 1 through page 60 line 6. Its proposed Higher Education Act section 117(j)(1)(C) excludes foreign payments solely for conducting one or more clinical trials from the gifts/contracts covered by that section. A clinical trial is defined as prospective assignment of human subjects to interventions evaluating health-related biomedical or behavioral outcomes. The replacement otherwise requires annual foreign-gift/contract reporting at $100,000 within a calendar year or $250,000 over three years; adds ownership disclosures, a public database, specified privacy/access protections, compliance officers and sanctions; and directs negotiated rulemaking, with the replacement taking effect when those regulations take effect. The exact medical-research-payment exception supports proposed Health membership within this broader education disclosure substitute. The March 27 Record and Clerk roll 79 bind this amendment to its failed vote; its exception is not imported into the separately passed bill.
+
+The Clerk recorded the House result as 'Failed' on 2025-03-27. This does not establish enactment.
+
+- This is one vote on the complete substitute amendment, not a separate vote on its clinical-trial exception. Neither choice establishes agreement or disagreement with every component; no motive, enacted-law result or health outcome is inferred.
+- The exception is to this substitute’s foreign-funding disclosure section, not an exemption from clinical-trial safety rules, sanctions or all other laws. It neither supplies research funding nor proves a health outcome.
+- The failed substitute and later final passage are different questions. The other recorded amendments and final bill are independently screened in membership accounting; their broader university disclosure mechanisms do not inherit this failed clinical-trial exception.
+
+Evidence: house:119:1:79; finding `prop:88129ffbb9252d10`.
+
+Sources: [clerk:119:1:79](https://clerk.house.gov/evs/2025/roll079.xml); [govinfo:hrpt38](https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm); [govinfo:hres242eh](https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm); [house-rules:rcp119-1](https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf); [congressional-record:2025-03-27](https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf).
+
+### Veterans’ bile-duct cancer study with extended nursing-facility pension limits
+
+**Compact:** Foushee supported suspending the rules and passing amended H.R.586’s study and pension-limit package. The bill required a study and continued tracking of bile-duct cancer among veterans who served in the Vietnam theater. It also extended existing Medicaid nursing-facility pension limits by one month, through December 31, 2031. One amended-passage vote covered both; it did not establish a cancer cause or new benefit eligibility.
+
+**Detail:**
+
+**house:119:1:89**
+
+Foushee supported suspending the rules and passing amended H.R.586’s study and pension-limit package.
+
+Amended H.R.586 directs VA, consulting CDC, to start within 120 days an epidemiological study of cholangiocarcinoma among veterans who served in the Vietnam theater during the Vietnam era, using the named VA and national cancer registries. It compares incidence with U.S. residents and reports demographic breakdowns, recommendations and continued tracking; the initial report is due within one year after study completion. Section 3 separately extends 38 U.S.C.5503(d)(7) from November 30 to December 31, 2031. The existing subsection limits covered Medicaid nursing-facility pensions to $90 monthly after the admission month for a veteran with neither spouse nor child, with corresponding specified survivor/child rules, a State-home exception, Medicaid-payment protection and limited recovery of excess payments. The study and actual Medicaid-related extension independently support proposed Health membership; the bill does not establish that liver flukes caused any individual veteran’s cancer.
+
+The Clerk recorded the House result as 'Passed' on 2025-04-07. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The study is not a new presumption of service connection, a treatment entitlement or proof of causation. The bill specifies when to begin the study and when to report after completion, not a guaranteed study-completion date.
+- The one-month extension retains an existing conditional pension limit; it does not newly create the $90 cap, cut all veterans’ pensions or adopt the different end date in H.R.695.
+
+Evidence: house:119:1:89; finding `prop:f36b21fbfc4d5eac`.
+
+Sources: [clerk:119:1:89](https://clerk.house.gov/evs/2025/roll089.xml); [govinfo:hr586eh](https://www.govinfo.gov/content/pkg/BILLS-119hr586eh/html/BILLS-119hr586eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
+### Clearer VA claim notices with extended nursing-facility pension limits
+
+**Compact:** Foushee supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package. The bill required VA to seek an independent assessment of claim notices and implement legally compliant recommendations to make them clearer. It also extended existing Medicaid nursing-facility pension limits through December 31, 2031. These were combined in one vote; the bill did not increase benefit amounts.
+
+**Detail:**
+
+**house:119:1:90**
+
+Foushee supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package.
+
+Amended H.R.1039 directs VA within 30 days to seek an agreement with a federally funded research and development center to assess claim notices, consulting specified veteran and survivor stakeholders. The assessment addresses clarity, organization, concision and feasible paper/cost reductions. Within 90 days after receiving it, VA must send it to Congress and implement recommendations consistent with governing law, completing implementation within one year after commencement. Section 3 extends the existing 38 U.S.C.5503(d)(7) Medicaid nursing-facility pension limits from November 30 to December 31, 2031. The incorporated $90 rule applies only to specified dependent circumstances and nursing-facility coverage; it retains the State-home exception, Medicaid-payment protection and excess-payment recovery qualification. Health membership rests on this explicit Medicaid-related pension mechanism, with the notice-administration measure preserved as package context.
+
+The Clerk recorded the House result as 'Passed' on 2025-04-07. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The instruction is to seek an assessment agreement; subsequent implementation deadlines run from receipt and commencement, not a promise that every notice changes immediately. Recommendations must comply with existing law.
+- The pension-limit extension is one month under this bill and preserves the incorporated conditions; it is not the longer H.R.695 proposal or a universal pension reduction.
+
+Evidence: house:119:1:90; finding `prop:6afea6c1711dfbc4`.
+
+Sources: [clerk:119:1:90](https://clerk.house.gov/evs/2025/roll090.xml); [govinfo:hr1039eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1039eh/html/BILLS-119hr1039eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
+### Moving the veterans’ survivors assistance office into the Secretary’s office
+
+**Compact:** Foushee supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary. The bill placed VA’s existing Office of Survivors Assistance within the Office of the Secretary. That office serves as a resource on benefits and services for survivors and dependents. This organizational change did not create new benefits or increase their amounts.
+
+**Detail:**
+
+**house:119:1:99**
+
+Foushee supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary.
+
+H.R.1228 changes only the location language in 38 U.S.C.321(a), from an office in the Department to one in the Office of the Secretary. The incorporated statute establishes the office as a benefits-and-services resource for survivors and dependents of deceased veterans and Armed Forces members, with advisory duties, stakeholder guidance, appropriate resources and annual reporting. Proposed Health/Social membership rests on the placement of this explicitly defined survivor-service resource, rather than the bill’s title or a presumed benefit expansion. Its existing functions remain; no new eligibility, entitlement or appropriation amount is supplied.
+
+The Clerk recorded the House result as 'Passed' on 2025-04-09. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The exact effect is an organizational placement change. The bill does not establish that benefits will become larger, faster or easier to receive; existing statutory duties are context, not newly created services.
+
+Evidence: house:119:1:99; finding `prop:7145d16f7edcfc59`.
+
+Sources: [clerk:119:1:99](https://clerk.house.gov/evs/2025/roll099.xml); [govinfo:hr1228eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1228eh/html/BILLS-119hr1228eh.htm); [govinfo:38usc321-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap3-sec321.htm).
 
 ### Extending rural health grants and requiring attention to underserved rural residents
 
@@ -731,4 +1052,18 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:51 | supported suspending the rules and passing amended H.R. 695 as a whole | opposed suspending the rules and passing amended H.R. 695 as a whole | [govinfo:hr695eh](https://www.govinfo.gov/content/pkg/BILLS-119hr695eh/html/BILLS-119hr695eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
 | house:119:1:68 | supported House passage of H.R. 1156’s enforcement-period and funding-rescission package | opposed House passage of H.R. 1156’s enforcement-period and funding-rescission package | [govinfo:hr1156eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1156eh/html/BILLS-119hr1156eh.htm); [govinfo:pl117-2](https://www.govinfo.gov/content/pkg/PLAW-117publ2/html/PLAW-117publ2.htm) |
 | house:119:1:70 | supported House passage of H.R. 1968’s full funding and extensions package | opposed House passage of H.R. 1968’s full funding and extensions package | [govinfo:hr1968eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm); [govinfo:2usc901a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap20-subchapI-sec901a.htm) |
+| house:119:1:79 | supported Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception | opposed Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception | [govinfo:hrpt38](https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm); [govinfo:hres242eh](https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm); [house-rules:rcp119-1](https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf); [congressional-record:2025-03-27](https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf) |
+| house:119:1:89 | supported suspending the rules and passing amended H.R.586’s study and pension-limit package | opposed suspending the rules and passing amended H.R.586’s study and pension-limit package | [govinfo:hr586eh](https://www.govinfo.gov/content/pkg/BILLS-119hr586eh/html/BILLS-119hr586eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:90 | supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package | opposed suspending the rules and passing amended H.R.1039’s notice and pension-limit package | [govinfo:hr1039eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1039eh/html/BILLS-119hr1039eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:99 | supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary | opposed suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary | [govinfo:hr1228eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1228eh/html/BILLS-119hr1228eh.htm); [govinfo:38usc321-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap3-sec321.htm) |
+| house:119:1:104 | supported suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package | opposed suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package | [govinfo:s146es](https://www.govinfo.gov/content/pkg/BILLS-119s146es/html/BILLS-119s146es.htm); [govinfo:18usc2264-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110A-sec2264.htm) |
+| house:119:1:115 | supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package | opposed suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package | [govinfo:hr530eh](https://www.govinfo.gov/content/pkg/BILLS-119hr530eh/html/BILLS-119hr530eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:116 | supported suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package | opposed suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package | [govinfo:hr36eh](https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm) |
+| house:119:1:119 | supported suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package | opposed suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package | [govinfo:hr1503eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1503eh/html/BILLS-119hr1503eh.htm); [govinfo:42usc274e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partH-sec274e.htm) |
+| house:119:1:131 | supported House passage of H.R.2240’s attack-data and mental-health reporting requirements | opposed House passage of H.R.2240’s attack-data and mental-health reporting requirements | [govinfo:hr2240eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2240eh/html/BILLS-119hr2240eh.htm) |
+| house:119:1:133 | supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package | opposed suspending the rules and passing amended H.R.1286’s forms and pension-limit package | [govinfo:hr1286eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1286eh/html/BILLS-119hr1286eh.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:136 | supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure | opposed suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure | [govinfo:hr1223eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1223eh/html/BILLS-119hr1223eh.htm) |
+| house:119:1:166 | supported House passage of S.331’s fentanyl-related scheduling, research and penalties package | opposed House passage of S.331’s fentanyl-related scheduling, research and penalties package | [govinfo:s331es](https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm); [govinfo:hres489eh](https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm); [govinfo:hr27eh](https://www.govinfo.gov/content/pkg/BILLS-119hr27eh/html/BILLS-119hr27eh.htm) |
+| house:119:1:172 | supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package | opposed suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package | [govinfo:hr1998eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm) |
+| house:119:1:168 | supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | [govinfo:hr4eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm); [govinfo:pl119-4](https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm); [govinfo:pl118-47](https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm) |
 <!-- GENERATED CANDIDATE END -->

@@ -104,7 +104,8 @@ def prepare(authoring, capture, member_ids):
         meta = clerk["metadata"]
         if (int(meta["congress"]), int(meta["session"][0]), int(meta["rollcall-num"])) != (int(congress), int(session), int(roll)):
             raise ValueError("Clerk source does not match exact action")
-        if meta["legis-num"] != f"H R {proposed['bill_number']}":
+        measure_prefix = {"hr": "H R", "s": "S"}.get(proposed.get("bill_type", "hr"))
+        if measure_prefix is None or meta["legis-num"] != f"{measure_prefix} {proposed['bill_number']}":
             raise ValueError("Clerk measure and proposed text differ")
         question = meta["vote-question"]
         valid_stage = {

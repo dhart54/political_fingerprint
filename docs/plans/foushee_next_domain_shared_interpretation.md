@@ -8,7 +8,7 @@ the existing shared-corpus adapter and canonical editorial pipeline. This is
 candidate preparation, not accepted or published additional domain coverage.
 
 Reviewed base: `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Resumed PR194 at
-`edc567b33a57052ba7b5dd11408139472e30c1f4`; no later branch work was overwritten. Separate branch `codex/foushee-shared-next-domain`. PR193 remains draft
+`938c32d2f45a20deed552bfbb0f44703740be818`; no later branch work was overwritten. Separate branch `codex/foushee-shared-next-domain`. PR193 remains draft
 and untouched; issue192 remains open. PR191 and all four publications are frozen.
 Interpretation principles and owning contracts read before authoring.
 
@@ -64,59 +64,53 @@ If membership/source gates remain unresolved, deliver a precise partial candidat
 
 ## Continuation outcome and stopping point
 
-The current request resumes Health research, preserving the paired-action and
-explicit compact implementation. No compiler, schema, adapter or public-runtime
-change was needed. This continuation touches14 candidate-data/test/document files;
-generated fan-out reflects source captures, shared maps and two member projections.
+Resumed the actual `938c32d` local/remote head in the existing worktree and kept
+the reviewed base. All 261 prior governed source objects and all 27 prior shared
+interpretation objects are unchanged. The recorded 2025 rolls72–74 and77–83 were
+confirmed unprocessed and completed first, then subsequent coherent source groups.
 
-- [x] Verify `edc567b` head and existing base; preserve all118 prior governed sources.
-- [x] Resolve2026-53 using EAS, incorporated Public Law119-37 and exact EH pages.
-  Proposed Health eligibility comes from changed medical/shelter funding, not
-  retained parent Medicaid text; pair House passage and concurrence separately.
-- [x] Resolve2026-308 using retained H.R.5334 EH plus Senate edits/medical exceptions
-  and adopted motion rule; retain whole-amendment, supply and waiver limitations.
-- [x] Review H.R.9497’s posted359-page suspension text and motion binding; record
-  proposed exclusion by operative mechanism, not title or keywords.
-- [x] Continue January–March exact passage/suspension groups through2025 roll71,
-  then House-resolution source groups through roll149. Record71 resolved rows:
-  9 new included,40 excluded,21 procedural and1 expressive control.
-- [x] Reconcile676 identities:27 interpreted candidates,167 procedural controls,
-  3 expressive controls,61 proposed exclusions and418 unreviewed screenings.
-- [x] Store116 shared membership records,104 interpretation passage maps and261
-  captures. Mechanically apply54 official observations for the two real members.
-- [x] Generate22 Foushee and20 Massie findings in22 episodes, including5 pairs.
-  Preserve two Massie Not Voting records and no forced pattern/synthesis.
-- [x] Review compact/detail behavior and qualifications, including actual Foushee
-  Yea/Nay versus Massie Nay/Nay on H.R.27, and incorporated funding/pension limits.
-- [x] Local114 focused tests and all7 canonical semantic checks pass; checked-in
-  output/proof/appendix replay and source/member/cutoff guards pass.
-- [ ] Finish418 remaining membership screenings and establish wider episode
-  completeness. Source gaps encountered later must remain distinct from unfinished
-  work; current unavailable/conflicting-evidence flags are all false.
-- [ ] Obtain substantive review before acceptance/publication. Candidate
-  preparation remains authorized; no new human decision is needed to resume it.
+- [x] Resolve 73 more membership screenings: 14 proposed inclusions, 47 exclusions,
+  7 procedural controls and 5 expressive controls. The fixed 676 identities now
+  comprise 41 interpreted, 174 procedural, 8 expressive, 108 excluded and 345
+  unreviewed. No unavailable/conflicting-evidence flag is currently asserted.
+- [x] Reuse H.Res.242 with exact report, print pages and Record to isolate Scott’s
+  clinical-trial exception from other H.R.1048 amendments and final passage.
+- [x] Add shared veterans study/notice/forms/office interpretations, medical
+  exceptions and restitution, officer mental-health reporting, remote-care
+  planning, separate S.331 research/scheduling and H.R.4 account rescissions.
+- [x] Preserve 5 pairs, 36 candidate episodes and two Massie Not Voting records.
+  Generate 36 Foushee and 34 bounded Massie findings from 82 official observations;
+  no forced pattern, synthesis or member-specific meaning branch.
+- [x] Store 189 shared membership records, 136 interpretation maps and 422 source
+  captures. Manual delta: 14 shared meanings/compacts, 32 maps, 73 membership
+  records and 161 captures. Source fan-out includes prepared H.R.3944 sources.
+- [x] Correct the concrete offline H.R.-only assumption with explicit Senate-origin
+  bill typing and exact Clerk checks; no paired/compact design or public-runtime
+  change. This continuation touches 15 implementation/test/data/document files.
+- [x] Inspect compact/detail findings, complete source/member accounting and diff.
+  Run 119 focused tests and all 7 canonical semantic checks. Exact pushed-head
+  hosted CI results belong in the same PR discussion after push.
+- [ ] Finish 345 remaining membership reviews and establish broader episode
+  completeness; source capture alone confers no Health membership.
+- [ ] Substantive review before acceptance/publication; no new human decision is
+  required merely to continue authorized research.
 
-Nine new meanings: H.R.7148 concurrence, H.R.5334 concurrence, H.R.471 firefighter
-family assistance within the forest package, H.R.21 care/enforcement, H.R.27’s
-failed certification amendment and whole passage, H.R.695 pension/Medicaid limits,
-H.R.1156 unemployment-enforcement funding and H.R.1968 funding/Health extensions.
-Earlier meanings remain intact except the obsolete H.R.7148 unresolved-concurrence
-limitation. Both choice strings and all qualifications remain shared candidates.
+Next: 2025 rolls180/182, H.R.3944 en-bloc No.2 and final passage. Captured EH,
+H.Res.530 RH, Report119-167, June25 Record pages29–32 and RCP119-5 page bindings
+are committed. Finish every amendment effect, then full passage/riders and
+incorporated authorities; preserve medical/military transfers, net-zero entries,
+funding timing and cancellation/replacement qualifications. Both identities remain
+unreviewed, with explicit source-preparation notes and executable next actions.
+Then rolls191–193 (H.R.1709/1770/S.1596), H.Res.580 and its bills; retain H.Res.590
+and its incorporated later H.R.4 version for a separate exact-action review.
 
-Next executable source work:2025 rolls72–74 (H.R.359,1326,1534), then77–83
-(disapprovals and the H.R.1048 four-amendment/final-passage family). The H.Res.242
-rule is captured; use its accompanying report to bind exact amendments separately.
-The machine-readable universe retains every unresolved identity and next actions
-for this first group. The consolidated packet records precise research delta,
-source reuse, manual interventions and actual generated Foushee findings.
-
-Practical checkpoint under sections6–7 and the shutdown protocol: sustained
-research has reached this run’s practical context/execution limit. This is not
-complete Health coverage, a fabricated source impossibility, or a request for
-permission to perform the remaining available research. Same draft PR194; pushed
-exact head and existing hosted CI results are recorded in its discussion. Create
-the uncommitted CHECKPOINT marker only after final validation and git operations,
-as the final filesystem action.
+Practical checkpoint under the existing protocol: sustained execution/context
+limit after four internal groups, not a new approval gate, inaccessible evidence
+claim or completed Health domain. Same draft PR194; no new milestone/PR. The
+consolidated packet holds the material delta and generated findings. Preserve the
+entire queue and prepared sources on resume. Create the uncommitted CHECKPOINT
+marker after all validation, commit/push and PR operations, as the final filesystem
+action. STATUS=CHECKPOINT does not mean Health is complete.
 
 ## Boundaries, rollback and reconciliation
 

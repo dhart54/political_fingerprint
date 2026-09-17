@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "a9f69c54ec5d2e474a85f0ab71cdd2dc6184025f9eeb436cc1b81ca4604e9a05",
+    "scripts/prepare_shared_domain_candidate.py": "0ccb2a1198ac743899e020feae28341e703529726142289c5e8719bd3075ee2a",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "23a049874f3c715a1665a0b8a3a58262556fe2be5ea28c994384e152da842852",
-  "source_capture_sha256": "ed2015a8f10d64d4df90d35ee93ba51b4153ae367d906c25037876e8b3b44e9d",
-  "core_sha256": "98ff8fad819bc208aaad1d8dc10d562127c7383005e7bc012a7442c1e19a5592",
-  "compiled_sha256": "ea201a978786a2247c9f510dae8b6bf77e013ab91c7432877554e20072e6c6e8",
-  "readable_sha256": "864f31e0de3a64e9db41f88731a5931d192fc0ade1b82e9ef669205d7826e497",
+  "input_sha256": "188e8a7f9451a4d1111a2f7a521902937abd5903d9a060e7bed13b2a22884b66",
+  "source_capture_sha256": "a0acecbe32e81f60718858114d608125acd6f4c7f0f8bd2742fdc5aac28b689d",
+  "core_sha256": "d84f2ac1f2e80421944298b5caec10ea4d733d021ca2a04c37182777ba61c831",
+  "compiled_sha256": "e046b0b022378d84890fd92f6f828a618cb8ef33ebadbd054ee7eb8eff9a0687",
+  "readable_sha256": "acf98f4cf0f70deb7c6f91280d115e1e406a4b35bc73bd4136b254d8a29c0292",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -553,6 +553,286 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed House passage of H.R. 1968’s full funding and extensions package",
           "source_id": "clerk:119:1:70"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:79",
+      "shared_sha256": "8ae43dfc842a3ae92c6291c49763e0563ba0a91c6df075c9365bdcb4d4e3b329",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception",
+          "source_id": "clerk:119:1:79"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception",
+          "source_id": "clerk:119:1:79"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:89",
+      "shared_sha256": "ab342513d9d7fbc52c3cff765956eecb633755c16a067e9af1eab93d0e0c892d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.586’s study and pension-limit package",
+          "source_id": "clerk:119:1:89"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.586’s study and pension-limit package",
+          "source_id": "clerk:119:1:89"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:90",
+      "shared_sha256": "7a9b928b8893425b7c8512cecd7ffcf54a8d7b3e428ec4324fb2d487b42bd096",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package",
+          "source_id": "clerk:119:1:90"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package",
+          "source_id": "clerk:119:1:90"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:99",
+      "shared_sha256": "9a2bb1a504d3a34a122081712a2f0b448d3df164cd0a17f0d38d2fe2bbcc326f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary",
+          "source_id": "clerk:119:1:99"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary",
+          "source_id": "clerk:119:1:99"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:104",
+      "shared_sha256": "63e684092f4d7571c3247950a34ac3c91ef556dd10c703b32b115e233a48532a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package",
+          "source_id": "clerk:119:1:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package",
+          "source_id": "clerk:119:1:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:115",
+      "shared_sha256": "db600a989d7ba5f9c02fc408d269a30bfbbacedb1028e9d29085929fa4229b38",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package",
+          "source_id": "clerk:119:1:115"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package",
+          "source_id": "clerk:119:1:115"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "shared_sha256": "33d49b9d6153d8f5a6931eb7cfa46aa84ce44d2134ffbafa4b4824744a3ac3a5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package",
+          "source_id": "clerk:119:1:116"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package",
+          "source_id": "clerk:119:1:116"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:119",
+      "shared_sha256": "88b8c09e3d59d26e38e6f62f0617e801149871e139d54b61ed342defe836bc40",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package",
+          "source_id": "clerk:119:1:119"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package",
+          "source_id": "clerk:119:1:119"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:131",
+      "shared_sha256": "340e6782f23748a6c8a9f160ffcdf9f49ee87c61f59fe40c8b8f327de925e075",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.2240’s attack-data and mental-health reporting requirements",
+          "source_id": "clerk:119:1:131"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.2240’s attack-data and mental-health reporting requirements",
+          "source_id": "clerk:119:1:131"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:133",
+      "shared_sha256": "a323660f2aa380fcfa647ae9e65c28ddb356f1e51ab070184054864e554fae94",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package",
+          "source_id": "clerk:119:1:133"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package",
+          "source_id": "clerk:119:1:133"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:136",
+      "shared_sha256": "a48c8798d5ded935ec4210af5d2576b1802838687f25a205c5c42275dc012cc8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure",
+          "source_id": "clerk:119:1:136"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure",
+          "source_id": "clerk:119:1:136"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:166",
+      "shared_sha256": "511c2bfe36562c2880e5e31901e25fc676145697343a3f855ed3afd1ca3b6067",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of S.331’s fentanyl-related scheduling, research and penalties package",
+          "source_id": "clerk:119:1:166"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of S.331’s fentanyl-related scheduling, research and penalties package",
+          "source_id": "clerk:119:1:166"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:172",
+      "shared_sha256": "cc7e2b5877ebbacc8b49cceb0aa52d3ad053a4c3a92747288e4baf5e7a6f6113",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package",
+          "source_id": "clerk:119:1:172"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package",
+          "source_id": "clerk:119:1:172"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:168",
+      "shared_sha256": "bb68d98e28f0269b9c46dcab07f81829e19a0daf5326151bad1522cfd87bfc51",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions",
+          "source_id": "clerk:119:1:168"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions",
+          "source_id": "clerk:119:1:168"
         }
       ]
     }
