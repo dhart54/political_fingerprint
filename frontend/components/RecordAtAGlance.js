@@ -2,7 +2,7 @@ import { formatDomainLabel } from "../lib/issueDomains";
 import { recordCardUrl, SECTION_ORDER } from "../lib/recordCard.mjs";
 import { scopeLabel } from "../lib/frontendPassA.mjs";
 
-const LABELS = { support: "Supported", opposition: "Opposed", mixed: "Mixed choices" };
+const LABELS = { support: "Supported", opposition: "Opposed", mixed: "Mixed choices", neutral: "Reviewed choices" };
 const STATES = {
   loading: "Loading reviewed findings…",
   error: "Reviewed findings are unavailable right now. You can still explore the issue records below.",
@@ -11,6 +11,7 @@ const STATES = {
   source_mismatch: "The reviewed source has changed. This selection needs a fresh review; issue records remain available below.",
   empty: "No reviewed findings are available for this representative and scope. Start with an issue’s vote record below.",
   not_selected: "Reviewed issue findings are available below; a selection for this overview has not been prepared.",
+  representation_unavailable: "Reviewed findings are available below, but their complete qualifications or relationships need a supported overview form.",
 };
 
 export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate, routePath = "/", reviewMode = false }) {
@@ -24,19 +25,19 @@ export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate
     <section className="scroll-mt-24 rounded-2xl border border-stone-300 bg-white/70 px-5 py-5 sm:px-7 sm:py-6" id="record-at-a-glance" aria-labelledby="record-card-heading" data-testid="record-card">
       <h2 className="font-serif text-3xl leading-tight text-stone-950 sm:text-4xl" id="record-card-heading" tabIndex={-1}>Record at a glance</h2>
       <p className="mt-2 text-base leading-6 text-stone-700">Selected findings · Reviewed coverage in {model.reviewedDomains.length} of 8 issues.</p>
-      <p className="mt-2 text-sm leading-6 text-stone-600">Findings below: <strong className="font-semibold text-stone-800">119th Congress</strong> · Recorded-vote scope: {scopeLabel(scope)}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-600">Findings below: <strong className="font-semibold text-stone-800">{model.reviewedScopes?.map((s) => `${s}th Congress`).join("; ") || "119th Congress"}</strong> · Recorded-vote scope: {scopeLabel(scope)}</p>
       <div className="mt-3 grid gap-x-8 gap-y-5 sm:mt-5 md:grid-cols-2">
-        {SECTION_ORDER.map((section) => {
+        {(model.policyVersion ? [...SECTION_ORDER, "neutral"] : SECTION_ORDER).map((section) => {
           const entries = model.entries.filter((e) => e.section === section);
           return entries.length ? (
-            <div key={section} className={section === "mixed" ? "md:col-span-2" : ""}>
+            <div key={section} className={["mixed", "neutral"].includes(section) ? "md:col-span-2" : ""}>
               <h3 className="border-b border-stone-300 pb-2 text-sm font-bold uppercase tracking-widest text-stone-800">{LABELS[section]}</h3>
-              <div className={section === "mixed" ? "grid gap-x-8 md:grid-cols-2" : ""}>
+              <div className={["mixed", "neutral"].includes(section) ? "grid gap-x-8 md:grid-cols-2" : ""}>
                 {entries.map((entry) => (
                   <article className="min-w-0 border-b border-stone-200 py-4 last:border-b-0" key={entry.id} data-testid="record-card-entry">
                     <p className="text-xs font-semibold leading-5 text-teal-900">{formatDomainLabel(entry.issue_id)}</p>
                     <h4 className="mt-1 font-serif text-xl font-semibold leading-7 text-stone-950">{entry.headline}</h4>
-                    {entry.explanation ? <p className="mt-2 text-sm leading-6 text-stone-700">{entry.explanation}</p> : null}
+                    {entry.explanation_paragraphs ? <div className="mt-2 space-y-2 text-sm leading-6 text-stone-700">{entry.explanation_paragraphs.map((text) => <p key={text}>{text}</p>)}</div> : entry.explanation ? <p className="mt-2 text-sm leading-6 text-stone-700">{entry.explanation}</p> : null}
                     <p className="mt-2 text-xs leading-5 text-stone-600">{entry.evidence_label}</p>
                     <a className="inline-flex min-h-11 items-center text-sm font-semibold text-teal-900 underline decoration-teal-800/40 underline-offset-4" href={recordCardUrl(routePath, { legislatorId, scope, issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, hash: "finding-detail" })} onClick={(event) => onNavigate(event, entry)} aria-label={`${entry.link_label}: ${entry.headline}`} id={entry.id}>{entry.link_label} →</a>
                   </article>
@@ -50,9 +51,10 @@ export default function RecordAtAGlance({ model, legislatorId, scope, onNavigate
         <p>Reviewed findings available in {model.reviewedDomains.length} of 8 issues: {model.reviewedDomains.map(formatDomainLabel).join("; ")}.</p>
         <p className="mt-1">A selection of specific choices, not a complete statement of priorities. <a className="inline-flex min-h-11 items-center font-semibold text-teal-900 underline underline-offset-4" href="#issues">Explore all issues →</a></p>
         <details><summary className="min-h-11 cursor-pointer py-2 font-semibold text-stone-700">Coverage and review details</summary>
-          <p>Findings cover their stated 119th-Congress reviewed records, even when all available Congresses are selected.</p>
+          <p>{model.policyVersion ? "Findings cover only the reviewed scopes stated below, even when all available Congresses are selected." : "Findings cover their stated 119th-Congress reviewed records, even when all available Congresses are selected."}</p>
           <ul className="mt-2 space-y-1">{model.evidenceCoverage.map((coverage) => <li key={coverage.issue_id}><strong>{formatDomainLabel(coverage.issue_id)}:</strong> {coverage.cutoff_label ? `through ${coverage.cutoff_label}.` : "a precise cutoff is not specified in the bound review scope."}</li>)}</ul>
-          {reviewMode ? <p className="mt-2">Local snapshot replay for release review. Card generated {model.generationTime}; this is not an evidence cutoff.</p> : null}
+          {model.policyVersion ? <ul className="mt-2 space-y-2">{model.evidenceCoverage.map((coverage) => <li key={coverage.issue_id}><strong>{formatDomainLabel(coverage.issue_id)}:</strong> {coverage.source_text}{coverage.issue_limitations?.length ? <ul className="list-disc pl-5">{coverage.issue_limitations.map((limit, index) => <li key={index}>{typeof limit === "string" ? limit : `${limit.heading}: ${limit.body}`}</li>)}</ul> : null}</li>)}</ul> : null}
+          {reviewMode ? <p className="mt-2">{model.policyVersion ? "Candidate shared presentation rules; not approved for public adoption." : `Local snapshot replay for release review. Card generated ${model.generationTime}; this is not an evidence cutoff.`}</p> : null}
         </details>
       </div>
     </section>

@@ -1,0 +1,735 @@
+{
+  "status": "implementation_candidate_reuse_proof_blocked",
+  "policy": {
+    "version": "shared-record-card-candidate-v1",
+    "wordBudget": 500,
+    "shortExplanationWords": 55
+  },
+  "policy_module_sha256": "45f151d54ada136d9f2173d2a970a0c790f646322acfada56d6ca3be95a835d0",
+  "policy_document_sha256": "ba513f5014861b140f6803e868c393278a7c63ef70511ee00418b50a4eb8778b",
+  "input_authority": "Actual archived publication-gated responses from the authorized M15B activation; candidate card rules confer no additional approval.",
+  "snapshots": {
+    "before-live.json.gz": "eff82c00d9adcf81b5647529bbc4867d1e8a45734170075b97a34e3cf088ef9a",
+    "after-ns-live.json.gz": "6e0851c53e11db72f9aca87ee1cc8611b4e45883a1a17e598f76e6b61128bbc0",
+    "after-justice-live.json.gz": "a06fe2853a0fd1bdf9db04878ce8c73c6921229ef464b6627272b5e68b686530",
+    "decision_source.json": "d6ea393425a79e7630c39cfa555a179ddeaf56304faa5af7de71eb8465b09bcd",
+    "execution_record.json": "bbfbd7ab14018b0210a525c4f173439aabb9fe1d5013ef2ae39a75893a9270a7"
+  },
+  "reference": {
+    "status": "ready",
+    "substantive_output_sha256": "5e4cad9aedfa18d48c5eabc9c2a13b3a52c027f264f05b4585ffa7935117b60b",
+    "source_fingerprint": "b0d95cd096c5bf07895dff389e31ec734b5b93dcef8ebdb06ac1b0ff99f5aa57",
+    "selected": [
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:pattern:china_linked_education_funding",
+        "actions": [
+          "house:119:1:120",
+          "house:119:1:313"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "finding_id": "wording:synthesis:congressional-disapproval",
+        "actions": [
+          "house:119:1:112",
+          "house:119:1:114",
+          "house:119:1:224",
+          "house:119:1:225",
+          "house:119:1:226",
+          "house:119:1:294",
+          "house:119:1:295",
+          "house:119:1:296",
+          "house:119:1:53",
+          "house:119:1:59",
+          "house:119:1:77",
+          "house:119:1:78",
+          "house:119:2:38"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:354da734fec2fcf6",
+        "actions": [
+          "house:119:1:162",
+          "house:119:1:270",
+          "house:119:1:271",
+          "house:119:1:275",
+          "house:119:1:298",
+          "house:119:1:299"
+        ],
+        "section": "opposition"
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:synthesis:security-assistance",
+        "actions": [
+          "house:119:1:208",
+          "house:119:1:209",
+          "house:119:1:255",
+          "house:119:1:257",
+          "house:119:2:207",
+          "house:119:2:243",
+          "house:119:2:244",
+          "house:119:2:264"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:pattern:collective_bargaining_continuity",
+        "actions": [
+          "house:119:1:332",
+          "house:119:2:216"
+        ],
+        "section": "neutral"
+      }
+    ],
+    "opening_words": 495,
+    "exceptions": [
+      {
+        "id": "finding_form:synthesis-war-powers-cross-target-uniform-direction",
+        "rule": "finding_form",
+        "semantic_source": "synthesis-war-powers-cross-target-uniform-direction",
+        "reason": "Contextual actions were excluded from the public projection; a complete compact form is unavailable."
+      }
+    ],
+    "omissions": [
+      {
+        "finding_id": "wording:synthesis:war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "representation_limitation",
+        "exception_id": "finding_form:synthesis-war-powers-cross-target-uniform-direction",
+        "reason": "Contextual actions were excluded from the public projection; a complete compact form is unavailable."
+      },
+      {
+        "finding_id": "wording:pattern:blm-land-decisions",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:california-emissions-waivers",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:doe-appliance-equipment-rules",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:iran-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:jordan-assistance",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:lebanon-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:ukraine-assistance",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:venezuela-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:aumf-repeal",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:israel-fmf-reduction",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:taiwan-funding",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:d7e189366b477118",
+        "category": "limited_space",
+        "words": 24,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:fisa-title-vii",
+        "category": "limited_space",
+        "words": 26,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:notable:hr1048_substitute_final",
+        "category": "limited_space",
+        "words": 36,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:e75e7aebbd7b2d29",
+        "category": "limited_space",
+        "words": 29,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:military-dod-sex-gender",
+        "category": "limited_space",
+        "words": 61,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:e76b98cf92ef34cb",
+        "category": "limited_space",
+        "words": 30,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:terrorism-preparedness",
+        "category": "limited_space",
+        "words": 41,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:53cda8d886a88f12",
+        "category": "limited_space",
+        "words": 55,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:fy2026-ndaa",
+        "category": "limited_space",
+        "words": 34,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:haiti-tps",
+        "category": "limited_space",
+        "words": 30,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:icc-sanctions",
+        "category": "limited_space",
+        "words": 45,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      }
+    ],
+    "evidence_coverage": [
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This interpretation covers Valerie Foushee's reviewed 119th-Congress Education & Workforce record.",
+        "source_sha256": "4c719274b57f2106d7ad61910fd7932d812bf2d099c4533dd9a6a3e37e7b77cc",
+        "issue_limitations": [
+          {
+            "body": "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed.",
+            "heading": "Final H.R. 1048 vote"
+          }
+        ]
+      },
+      {
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This issue summary covers Valerie Foushee's reviewed 119th-Congress Environment & Energy record. It does not infer motive, ideology, character, future behavior, or voting advice.",
+        "source_sha256": "621c8ade12e6517a20b3fa8ee136e4741be0be33ed161dcd5c21b0792d315b93",
+        "issue_limitations": []
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This candidate describes Valerie P. Foushee’s full defined Justice & Public Safety record for the 119th Congress through the review cutoff; it does not infer motive, ideology, character, future behavior, or voting advice.",
+        "source_sha256": "0e6caadf6ff20b4d9942fb955924a4ac88c6aace11eebd4b26b444948f307a31",
+        "issue_limitations": [
+          {
+            "action_ids": [
+              "house:119:1:128"
+            ],
+            "body": "The reviewed record supports the concealed-carry expansion meaning, but the exact legal effect of the separate ‘any magazine and’ insertion remains unresolved.",
+            "boundary_id": "roll-128-unresolved-text-limit",
+            "heading": "Roll 128: resolved scope only"
+          },
+          {
+            "action_ids": [
+              "house:119:2:155"
+            ],
+            "body": "A preserved 110th/119th-Congress source-identity conflict keeps roll 155 out of behavioral propositions and prevents it from adding substantive weight to the FISA relationship.",
+            "boundary_id": "roll-155-source-identity-block",
+            "heading": "Roll 155: source identity conflict"
+          },
+          {
+            "action_ids": [
+              "house:119:2:278"
+            ],
+            "body": "The available official material does not establish the complete final House-passed package after amendments, so this action receives no public analytical meaning.",
+            "boundary_id": "roll-278-no-safe-interpretation-block",
+            "heading": "Roll 278: no safe final-package meaning"
+          }
+        ]
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "reviewed_scope": "119",
+        "cutoff": "2026-07-23",
+        "cutoff_label": "2026-07-23",
+        "status": "specified",
+        "source_field": "scope_boundary",
+        "source_text": "This issue summary covers Valerie Foushee's 119th-Congress House record through July 23, 2026. It does not infer motive, ideology, character, future behavior, or voting advice.",
+        "source_sha256": "e20f95904269a7b9876afef271cf43e26ee25c99edc859576d118774d640ea0a",
+        "issue_limitations": []
+      }
+    ]
+  },
+  "held_aside": {
+    "status": "ready",
+    "substantive_output_sha256": "6d2d281cc56968597a4a730fbc1933825a8d00ec6a923e83d4a9095c2ec0de66",
+    "source_fingerprint": "b41a7559503a6c23651fc6fec02412edea8d8607bc4533c8beaa8ca813b8e0e6",
+    "selected": [
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:pattern:china_linked_education_funding",
+        "actions": [
+          "house:119:1:120",
+          "house:119:1:313"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "finding_id": "wording:synthesis:congressional-disapproval",
+        "actions": [
+          "house:119:1:112",
+          "house:119:1:114",
+          "house:119:1:224",
+          "house:119:1:225",
+          "house:119:1:226",
+          "house:119:1:294",
+          "house:119:1:295",
+          "house:119:1:296",
+          "house:119:1:53",
+          "house:119:1:59",
+          "house:119:1:77",
+          "house:119:1:78",
+          "house:119:2:38"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:354da734fec2fcf6",
+        "actions": [
+          "house:119:1:162",
+          "house:119:1:270",
+          "house:119:1:271",
+          "house:119:1:275",
+          "house:119:1:298",
+          "house:119:1:299"
+        ],
+        "section": "opposition"
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:synthesis:security-assistance",
+        "actions": [
+          "house:119:1:208",
+          "house:119:1:209",
+          "house:119:1:255",
+          "house:119:1:257",
+          "house:119:2:207",
+          "house:119:2:243",
+          "house:119:2:244",
+          "house:119:2:264"
+        ],
+        "section": "neutral"
+      },
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:pattern:collective_bargaining_continuity",
+        "actions": [
+          "house:119:1:332",
+          "house:119:2:216"
+        ],
+        "section": "neutral"
+      }
+    ],
+    "opening_words": 495,
+    "exceptions": [
+      {
+        "id": "finding_form:synthesis-war-powers-cross-target-uniform-direction",
+        "rule": "finding_form",
+        "semantic_source": "synthesis-war-powers-cross-target-uniform-direction",
+        "reason": "Contextual actions were excluded from the public projection; a complete compact form is unavailable."
+      }
+    ],
+    "omissions": [
+      {
+        "finding_id": "wording:synthesis:war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "representation_limitation",
+        "exception_id": "finding_form:synthesis-war-powers-cross-target-uniform-direction",
+        "reason": "Contextual actions were excluded from the public projection; a complete compact form is unavailable."
+      },
+      {
+        "finding_id": "wording:pattern:blm-land-decisions",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:california-emissions-waivers",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:doe-appliance-equipment-rules",
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:iran-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:jordan-assistance",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:lebanon-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:ukraine-assistance",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:pattern:venezuela-war-powers",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:aumf-repeal",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:israel-fmf-reduction",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "finding_id": "wording:notable:taiwan-funding",
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "category": "necessary_contextual_pairing",
+        "reason": "Retained only with its typed parent relationship; never separated into an independent directional entry."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:d7e189366b477118",
+        "category": "limited_space",
+        "words": 24,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:fisa-title-vii",
+        "category": "limited_space",
+        "words": 26,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "finding_id": "m14f:notable:hr1048_substitute_final",
+        "category": "limited_space",
+        "words": 36,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:e75e7aebbd7b2d29",
+        "category": "limited_space",
+        "words": 29,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:military-dod-sex-gender",
+        "category": "limited_space",
+        "words": 61,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:e76b98cf92ef34cb",
+        "category": "limited_space",
+        "words": 30,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:pattern:terrorism-preparedness",
+        "category": "limited_space",
+        "words": 41,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "finding_id": "prop:53cda8d886a88f12",
+        "category": "limited_space",
+        "words": 55,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:fy2026-ndaa",
+        "category": "limited_space",
+        "words": 34,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:haiti-tps",
+        "category": "limited_space",
+        "words": 30,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "finding_id": "wording:notable:icc-sanctions",
+        "category": "limited_space",
+        "words": 45,
+        "remaining_words": 5,
+        "reason": "The complete qualified unit does not fit the remaining opening-card budget."
+      }
+    ],
+    "evidence_coverage": [
+      {
+        "issue_id": "EDUCATION_WORKFORCE",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This interpretation covers Valerie Foushee's reviewed 119th-Congress Education & Workforce record. The analytical summary remains bounded to the 119th-Congress record.",
+        "source_sha256": "5293f08a171bd0be025d65e85417ff1c6753436bd51ddbe8345386c788175a02",
+        "issue_limitations": [
+          {
+            "body": "The final H.R. 1048 vote applied to the whole package and does not show which provision Foushee opposed.",
+            "heading": "Final H.R. 1048 vote"
+          }
+        ]
+      },
+      {
+        "issue_id": "ENVIRONMENT_ENERGY",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This issue summary covers Valerie Foushee's reviewed 119th-Congress Environment & Energy record. It does not infer motive, ideology, character, future behavior, or voting advice. The analytical summary remains bounded to the 119th-Congress record.",
+        "source_sha256": "34e83529e5b508c9907cda2d77e4aed37966fc94443de95ce2d68ff5d8d5ea70",
+        "issue_limitations": []
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "reviewed_scope": "119",
+        "cutoff": null,
+        "cutoff_label": null,
+        "status": "unspecified_in_bound_review_scope",
+        "source_field": "scope_boundary",
+        "source_text": "This candidate describes Valerie P. Foushee’s full defined Justice & Public Safety record for the 119th Congress through the review cutoff; it does not infer motive, ideology, character, future behavior, or voting advice. The conclusion remains bounded to the reviewed 119th-Congress record.",
+        "source_sha256": "2f7cc6e263c3e07feff96d440c8bdf93198435d3f2f6f973bd5dc0603723ab46",
+        "issue_limitations": [
+          {
+            "action_ids": [
+              "house:119:1:128"
+            ],
+            "body": "The reviewed record supports the concealed-carry expansion meaning, but the exact legal effect of the separate ‘any magazine and’ insertion remains unresolved.",
+            "boundary_id": "roll-128-unresolved-text-limit",
+            "heading": "Roll 128: resolved scope only"
+          },
+          {
+            "action_ids": [
+              "house:119:2:155"
+            ],
+            "body": "A preserved 110th/119th-Congress source-identity conflict keeps roll 155 out of behavioral propositions and prevents it from adding substantive weight to the FISA relationship.",
+            "boundary_id": "roll-155-source-identity-block",
+            "heading": "Roll 155: source identity conflict"
+          },
+          {
+            "action_ids": [
+              "house:119:2:278"
+            ],
+            "body": "The available official material does not establish the complete final House-passed package after amendments, so this action receives no public analytical meaning.",
+            "boundary_id": "roll-278-no-safe-interpretation-block",
+            "heading": "Roll 278: no safe final-package meaning"
+          }
+        ]
+      },
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "reviewed_scope": "119",
+        "cutoff": "2026-07-23",
+        "cutoff_label": "2026-07-23",
+        "status": "specified",
+        "source_field": "scope_boundary",
+        "source_text": "This issue summary covers Valerie Foushee's 119th-Congress House record through July 23, 2026. It does not infer motive, ideology, character, future behavior, or voting advice. The analytical summary remains bounded to the 119th-Congress record.",
+        "source_sha256": "5b1e3e88a91eb52d31c7e71f9e0bb0db645d4035b2742aa57303312582ee73be",
+        "issue_limitations": []
+      }
+    ]
+  },
+  "update_replay": {
+    "from": "before-live",
+    "to": "after-justice-live",
+    "changes": [
+      {
+        "issue_id": "NATIONAL_SECURITY_FOREIGN",
+        "before_sha256": "8c198292c68a9746bc83059e955f4229d4ef46a4a8de0a96d59a1199a0572af4",
+        "after_sha256": "4efd82dad8ce77dd267d152e57634e1a41a4a1fdaa1ca466511539438351bc04",
+        "before_findings": 17,
+        "after_findings": 16,
+        "removed_finding_ids": [
+          "wording:trajectory:milcon-va"
+        ],
+        "added_finding_ids": []
+      },
+      {
+        "issue_id": "JUSTICE_PUBLIC_SAFETY",
+        "before_sha256": "2b2452e07d24a527a1d9e73176af45236d67e9d5a75d3d0fbec076eeeea06414",
+        "after_sha256": "7155449152db916eb4f81b859f8627dde4ef86858db775af0b1cd7f2582213e9",
+        "before_findings": 5,
+        "after_findings": 5,
+        "removed_finding_ids": [],
+        "added_finding_ids": []
+      }
+    ],
+    "changed_card_output": true,
+    "visible_selected_copy_changed": false,
+    "result": "The authorized upstream replacement removed an omitted NS trajectory and refreshed NS/Justice sources. Selection and visible selected copy remain identical; their source bindings and finding URLs refresh mechanically. This is not evidence of a historical selected-copy revision. Controlled tests separately verify revised source text propagates immediately.",
+    "unchanged_repeat_identical": true,
+    "capture_generation_time_invariant": true,
+    "interventions": {
+      "new_shared_meaning": 0,
+      "new_presentation_rules": 0,
+      "member_specific_edits": 0,
+      "manual_selections": 0,
+      "additional_upstream_approvals": 0
+    }
+  },
+  "held_aside_input": "after-ns-live / leg_valerie_p_foushee:all:editorial (intermediate authorized replacement state; explicit reviewed-119 boundary)",
+  "second_member": {
+    "completed_nonempty_card": false,
+    "public_catalog_members": [
+      "F000477"
+    ],
+    "actual_massie_public_response_status": "empty",
+    "real_upstream_member": "G000576 (Glenn Grothman)",
+    "upstream_proof": "docs/editorial/shared_corpora/house_119_v1/issue_mappings/justice_public_safety_v1/m14a_parity_proof.json",
+    "upstream_proof_sha256": "82b7c48bd49b5d7d562c62b14d09cf0ba5b274e4868ca074a02d1632a8909fce",
+    "dependency": "An IR-native reviewed finding/presentation for G000576 (or another real second member), with content-bound accepted wording/display permissions and complete source/action mappings. Existing Grothman shared-corpus propositions are detached compiler proof, not eligible reviewed public findings. No new member approval or publication was created."
+  },
+  "interventions": {
+    "implementation": "One shared policy/form proposal and implementation; zero new shared legislative meanings, member edits, or authored selection arrays. Consolidated policy review and later adoption authorization remain required.",
+    "reference": {
+      "new_shared_meaning": 0,
+      "new_presentation_rules": 0,
+      "member_specific_edits": 0,
+      "manual_selections": 0,
+      "additional_upstream_approvals": 0
+    },
+    "held_aside": {
+      "new_shared_meaning": 0,
+      "new_presentation_rules": 0,
+      "member_specific_edits": 0,
+      "manual_selections": 0,
+      "additional_upstream_approvals": 0
+    },
+    "unchanged_repeat": {
+      "new_shared_meaning": 0,
+      "new_presentation_rules": 0,
+      "member_specific_edits": 0,
+      "manual_selections": 0,
+      "additional_upstream_approvals": 0
+    },
+    "second_member": "Blocked upstream; not counted as successful reuse."
+  }
+}
