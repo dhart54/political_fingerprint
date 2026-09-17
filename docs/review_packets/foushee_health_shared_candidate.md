@@ -157,6 +157,9 @@ Final local validation passed:77 focused shared-corpus, candidate, presentation
 and pipeline tests, plus all7 canonical semantic-tier checks. The candidate tests
 also replay the proof and generated review appendix exactly. They run in the
 existing exact-head CI job; CI results are reported in the PR discussion.
+The universe proposal is validated against the existing cross-issue contract,
+with this milestone added to its allowed identifiers. The contract's required
+accounting and authority fields and both proposal/subject hashes are checked.
 The source-dependent membership and episode gates are not counted as passed.
 
 The initial local semantic command needed access to existing AJV dependencies and

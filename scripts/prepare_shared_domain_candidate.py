@@ -35,6 +35,21 @@ def validate_sources(sources):
             raise ValueError(f"governed source changed: {source['source_id']}")
 
 
+def validate_universe_proposal(universe):
+    """Use the existing universe contract without conferring boundary authority."""
+    from jsonschema import Draft202012Validator
+    schema = json.loads((ROOT / "docs/methodology/cross_issue_full_record_expansion_v2.schema.json").read_text(encoding="utf-8"))
+    Draft202012Validator(schema).validate(universe)
+    if sealed_digest(universe, "proposal_sha256") != universe["proposal_sha256"]:
+        raise ValueError("universe proposal digest differs")
+    material = {"subject": universe["subject"], "cutoff": universe["cutoff"],
+                "candidate_records": universe["candidate_dispositions"]}
+    if digest(material) != universe["universe_subject_sha256"]:
+        raise ValueError("universe subject digest differs")
+    if universe["full_record_claim"] or universe["publication_authorized"] or universe["approval_receipt"] is not None:
+        raise ValueError("candidate proposal cannot confer full-record or publication authority")
+
+
 def prepare(authoring, capture, member_ids):
     """No source acquisition, member branches, selection or output repair."""
     if authoring["review_state"] != CANDIDATE:
@@ -270,6 +285,7 @@ def main():
     args = parser.parse_args()
     authoring = json.loads((args.input / "authoring.json").read_text(encoding="utf-8"))
     capture = json.loads((args.input / "sources.json").read_text(encoding="utf-8"))
+    validate_universe_proposal(json.loads((args.input / "universe_proposal.json").read_text(encoding="utf-8")))
     core, mapping, projections, compiler_input, result = prepare(authoring, capture, args.member)
     args.output.mkdir(parents=True, exist_ok=True)
     for name, value in {

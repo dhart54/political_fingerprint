@@ -4,7 +4,7 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof, review_text
+from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof, review_text, validate_universe_proposal
 from backend.app.semantic_ir.shared_corpus import (
     adapt_to_semantic_ir_input, candidate_update_impact, choice_effect, digest,
     sealed_digest, validate_member_projection, validate_shared_action_core,
@@ -177,12 +177,13 @@ class SharedDomainCandidateTests(unittest.TestCase):
 
     def test_discovery_accounting_is_complete_but_membership_not_claimed_closed(self):
         universe = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
-        rows = universe["accounting"]["rows"]
+        validate_universe_proposal(universe)
+        rows = universe["candidate_dispositions"]
         expected = {f"house:119:{s}:{r}" for s, last in [(1, 362), (2, 314)] for r in range(1, last + 1)}
         self.assertEqual({r["action_id"] for r in rows}, expected)
         self.assertEqual(len(rows), len(expected))
         self.assertEqual(sum(universe["accounting"]["counts"].values()), len(rows))
-        self.assertEqual(universe["universe_subject_sha256"], sealed_digest(universe, "universe_subject_sha256"))
+        self.assertEqual(universe["proposal_sha256"], sealed_digest(universe, "proposal_sha256"))
         self.assertFalse(universe["full_record_claim"])
         self.assertIsNone(universe["approval_receipt"])
         self.assertEqual(sum(r["after_historical_july23_boundary"] for r in rows), 31)

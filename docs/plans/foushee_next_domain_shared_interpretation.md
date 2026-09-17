@@ -73,12 +73,15 @@ If membership/source gates remain unresolved, deliver a precise partial candidat
 - [x] Reproducible compact/detail candidates, real reuse and controlled update proof.
 - [x] Focused validation and canonical semantic tier; final rerun and exact-head CI recorded in the draft PR.
 - [ ] Close remaining operative membership and episode completeness; resolve the paired-action analytical gate.
-- [ ] Draft PR and exact-head CI (delivery status recorded in PR discussion).
+- [x] Draft PR [#194](https://github.com/dhart54/political_fingerprint/pull/194); exact-head CI delivery status is recorded in its discussion.
 
 Implemented candidate-only extension to the existing corpus contract: false
 authority, explicit candidate fields and proposed eligibility. The existing
 adapter and pipeline preserve that state; public/persistence adapters reject it.
 Accepted inputs retain identical outputs. No separate semantic engine was added.
+The existing universe-proposal contract also admits this milestone identifier;
+all required accounting, per-action disposition and authority fields are present.
+Proposal and universe-subject digests and the existing schema are validated.
 
 Exact-source review corrected the old exclusion of roll2025-150: the amendment
 codifies CMS SMD24-003 Medicaid guidance. Its full incorporated13-page source is
