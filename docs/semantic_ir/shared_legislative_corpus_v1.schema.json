@@ -48,10 +48,12 @@
         "candidate_shared_limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
         "exact_question": {"type": "string", "minLength": 1},
         "candidate_short_description": {"type": "string", "minLength": 1},
+        "candidate_compact_description": {"type": "string", "minLength": 1},
+        "compact_source_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "choice_meanings": {"type": "object", "additionalProperties": false, "required": ["Yea", "Nay"], "properties": {"Yea": {"type": "string", "minLength": 1}, "Nay": {"type": "string", "minLength": 1}}},
         "claim_source_map": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "locator", "passage"], "properties": {"source_id": {"type": "string", "minLength": 1}, "locator": {"type": "string", "minLength": 1}, "passage": {"type": "string", "minLength": 1}}}}
       },
-      "oneOf": [{"required": ["accepted_exact_action_meaning", "accepted_shared_limitations"], "not": {"required": ["candidate_exact_action_meaning"]}}, {"required": ["candidate_exact_action_meaning", "candidate_shared_limitations", "candidate_short_description", "choice_meanings", "claim_source_map", "exact_question"], "not": {"anyOf": [{"required": ["accepted_exact_action_meaning"]}, {"required": ["accepted_shared_limitations"]}]}}]
+      "oneOf": [{"required": ["accepted_exact_action_meaning", "accepted_shared_limitations"], "not": {"required": ["candidate_exact_action_meaning"]}}, {"required": ["candidate_exact_action_meaning", "candidate_shared_limitations", "candidate_short_description", "candidate_compact_description", "compact_source_refs", "choice_meanings", "claim_source_map", "exact_question"], "not": {"anyOf": [{"required": ["accepted_exact_action_meaning"]}, {"required": ["accepted_shared_limitations"]}]}}]
     },
     "sharedActionCoreArtifact": {
       "type": "object",

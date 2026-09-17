@@ -35,7 +35,7 @@ def validate_sources(sources):
             raise ValueError(f"governed source changed: {source['source_id']}")
 
 
-def validate_universe_proposal(universe):
+def validate_universe_proposal(universe, authoring=None, capture=None, membership=None):
     """Use the existing universe contract without conferring boundary authority."""
     from jsonschema import Draft202012Validator
     schema = json.loads((ROOT / "docs/methodology/cross_issue_full_record_expansion_v2.schema.json").read_text(encoding="utf-8"))
@@ -48,6 +48,42 @@ def validate_universe_proposal(universe):
         raise ValueError("universe subject digest differs")
     if universe["full_record_claim"] or universe["publication_authorized"] or universe["approval_receipt"] is not None:
         raise ValueError("candidate proposal cannot confer full-record or publication authority")
+    rows = universe["candidate_dispositions"]
+    from collections import Counter
+    if len({r["action_id"] for r in rows}) != len(rows) or dict(Counter(r["disposition"] for r in rows)) != universe["accounting"]["counts"]:
+        raise ValueError("universe disposition accounting differs")
+    if authoring is not None:
+        authored = {a["action_id"] for a in authoring["actions"]}
+        interpreted = {r["action_id"] for r in rows if r["disposition"] == "interpreted_substantive_directional"}
+        if authored != interpreted or authored != set(universe["interpretation_action_ids"]) or authored != set(universe["proposed_action_ids"]):
+            raise ValueError("universe interpretation set differs from shared authoring")
+        if universe["interpretation_action_set_cutoff"] != authoring["interpretation_action_set_cutoff"]:
+            raise ValueError("universe interpretation cutoff differs from shared authoring")
+    if membership is not None:
+        if membership["review_state"] != CANDIDATE or membership["authoritative_for_new_editorial_work"] or not membership["member_neutral"]:
+            raise ValueError("membership review must remain a member-neutral candidate")
+        if sealed_digest(membership, "review_sha256") != membership["review_sha256"] or universe["membership_review_sha256"] != membership["review_sha256"]:
+            raise ValueError("membership review digest differs")
+        sources = {s["source_id"]: s for s in capture["sources"]}
+        validate_sources(sources)
+        by_id = {r["action_id"]: r for r in rows}
+        seen = set()
+        for record in membership["records"]:
+            aid = record["action_id"]
+            if aid in seen:
+                raise ValueError("duplicate shared membership identity")
+            seen.add(aid)
+            row = by_id[aid]
+            if row["review_progress"]["shared_review_record_sha256"] != digest(record) or row["disposition"] != record["disposition"]:
+                raise ValueError("shared membership disposition differs from universe")
+            for ref in record["sources"]:
+                source = sources[ref["source_id"]]
+                if any(source[key] != value for key, value in ref.items()):
+                    raise ValueError("membership source identity differs")
+            bound = {s["source_id"] for s in record["sources"]}
+            for claim in record.get("claim_source_map", []):
+                if claim["source_id"] not in bound or claim["passage"] not in sources[claim["source_id"]]["text"]:
+                    raise ValueError("membership claim absent from bound source")
 
 
 def prepare(authoring, capture, member_ids):
@@ -75,6 +111,8 @@ def prepare(authoring, capture, member_ids):
             "final_passage": question == "On Passage",
             "amendment": question == "On Agreeing to the Amendment",
             "suspension_and_passage": question in {"On Motion to Suspend the Rules and Pass", "On Motion to Suspend the Rules and Pass, as Amended"},
+            "concurrence": question in {"On Motion to Concur in the Senate Amendment", "On Motion to Concur in the Senate Amendments"},
+            "suspension_and_concurrence": question == "On Motion to Suspend the Rules and Concur in the Senate Amendments",
         }
         if not valid_stage.get(proposed["stage"], False):
             raise ValueError("candidate stage differs from exact Clerk question")
@@ -83,6 +121,8 @@ def prepare(authoring, capture, member_ids):
             raise ValueError("new raw action cannot extend declared interpretation cutoff")
         operative_sources = [sources[sid] for sid in [proposed["source_id"], *proposed.get("additional_source_ids", [])]]
         operative_by_id = {s["source_id"]: s for s in operative_sources}
+        if not proposed["compact_source_refs"] or not set(proposed["compact_source_refs"]) <= set(operative_by_id):
+            raise ValueError("compact meaning must reference its governed operative sources")
         for claim in proposed["claim_source_map"]:
             if claim["source_id"] not in operative_by_id or claim["passage"] not in operative_by_id[claim["source_id"]]["text"]:
                 raise ValueError(f"claim passage absent from bound source: {aid}")
@@ -96,6 +136,8 @@ def prepare(authoring, capture, member_ids):
             "mechanism": proposed["short_description"], "mechanism_availability": "candidate_source_mapped",
             "candidate_exact_action_meaning": proposed["meaning"],
             "candidate_short_description": proposed["short_description"],
+            "candidate_compact_description": proposed["compact_description"],
+            "compact_source_refs": proposed["compact_source_refs"],
             "candidate_shared_limitations": proposed["limitations"],
             "choice_meanings": proposed["choice_meanings"], "claim_source_map": proposed["claim_source_map"],
             "action_meaning_ref": f"{authoring['snapshot_id']}:{aid}:candidate-v1",
@@ -126,7 +168,8 @@ def prepare(authoring, capture, member_ids):
         episode = episodes.setdefault(eid, {"episode_id": eid, "action_ids": [], "method_boundary_types": [], "policy_family_id": None})
         episode["action_ids"].append(proposed["action_id"])
         row = {"action_id": proposed["action_id"], "eligibility": {"decision": "proposed", "parent_context_used": False},
-               "episode_id": eid, "policy_family_refs": [], "policy_trait_refs": [], "structural_metadata": {}}
+               "episode_id": eid, "policy_family_refs": [], "policy_trait_refs": [],
+               "structural_metadata": {"stage_order": int(proposed["action_id"].split(":")[-2]) * 10000 + int(proposed["action_id"].split(":")[-1])}}
         row["mapping_sha256"] = digest(row)
         mappings.append(row)
     blocked = [a for eid in authoring["blocked_episode_ids"] for a in episodes[eid]["action_ids"]]
@@ -191,12 +234,16 @@ def review_text(authoring, core, projections, result, capture):
              "All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.", ""]
     for finding in first["findings"]:
         lines.extend(["### " + finding["headline"], "", "**Compact:** " + finding["compact"], "", "**Detail:**", ""])
-        lines.extend(finding["detail"] + [""])
+        for observation in finding["action_observations"]:
+            lines.extend(["**" + observation["action_id"] + "**", ""])
+            for paragraph in observation["detail"]:
+                lines.extend([paragraph, ""])
         lines.extend("- " + limit for limit in finding["qualifications_on_both_levels"])
         lines.extend(["", "Evidence: " + ", ".join(finding["action_ids"]) + "; finding `" + finding["proposition_id"] + "`.", "",
             "Sources: " + "; ".join(f"[{sid}]({sources[sid]['url']})" for sid in finding["source_ids"]) + ".", ""])
-    lines.extend(["### Shared choices for the held episode", "", authoring["blocked_reason"], ""])
     blocked = {row["action_id"] for row in first["non_proposition_accounting"] if row["reason_code"] == "source_constraint_blocks_behavioral_proposition"}
+    if blocked:
+        lines.extend(["### Shared choices for the held episode", "", authoring["blocked_reason"], ""])
     for action in core["actions"]:
         if action["action_id"] not in blocked:
             continue
@@ -285,7 +332,9 @@ def main():
     args = parser.parse_args()
     authoring = json.loads((args.input / "authoring.json").read_text(encoding="utf-8"))
     capture = json.loads((args.input / "sources.json").read_text(encoding="utf-8"))
-    validate_universe_proposal(json.loads((args.input / "universe_proposal.json").read_text(encoding="utf-8")))
+    validate_universe_proposal(
+        json.loads((args.input / "universe_proposal.json").read_text(encoding="utf-8")), authoring, capture,
+        json.loads((args.input / "membership_review.json").read_text(encoding="utf-8")))
     core, mapping, projections, compiler_input, result = prepare(authoring, capture, args.member)
     args.output.mkdir(parents=True, exist_ok=True)
     for name, value in {

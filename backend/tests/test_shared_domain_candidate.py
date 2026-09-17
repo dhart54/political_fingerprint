@@ -132,7 +132,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
             validate_member_projection(ROOT, projections[0], changed)
         self.assertNotEqual(core["corpus_sha256"], changed["corpus_sha256"])
 
-    def test_complete_supplied_accounting_and_paired_episode_gate(self):
+    def test_complete_supplied_accounting_and_real_paired_episode(self):
         core, mapping, projections, _, result = self.products
         all_ids = {a["action_id"] for a in core["actions"]}
         for member in result.compiled_ir["members"]:
@@ -143,11 +143,42 @@ class SharedDomainCandidateTests(unittest.TestCase):
             self.assertEqual(represented | reasons, all_ids)
         pair = next(e for e in mapping["episodes"] if len(e["action_ids"]) == 2)
         self.assertEqual(pair["action_ids"], ["house:119:1:150", "house:119:1:151"])
-        open_mapping = copy.deepcopy(mapping); open_mapping["source_render_constraints"] = []
-        open_mapping["mapping_sha256"] = sealed_digest(open_mapping, "mapping_sha256")
-        inputs = adapt_to_semantic_ir_input(ROOT, core, open_mapping, projections)
+        for member, status, direction in zip(result.compiled_ir["members"], ["Yea", "Nay"], ["support", "opposition"]):
+            p = next(p for p in member["proposition_graph"]["propositions"] if any(o["action_id"] == "house:119:1:150" for o in p.get("action_observations", [])))
+            self.assertEqual(p["proposition_type"], "notable_choice")
+            self.assertEqual(p["direction"], direction)
+            self.assertEqual([o["action_id"] for o in p["action_observations"]], pair["action_ids"])
+            self.assertEqual([o["status"] for o in p["action_observations"]], [status, status])
+            self.assertEqual(len(p["evidence_episode_ids"]), 1)
+        self.assertEqual(result.review_payload["review_state"], self.author["review_state"])
+        self.assertEqual(result.presentation_payload["review_state"], self.author["review_state"])
+
+    def test_genuine_trajectory_path_still_requires_trusted_comparison(self):
+        # Synthetic request to the unchanged non-candidate trajectory path;
+        # this constructs no accepted artifact or comparison authority.
+        inputs = copy.deepcopy(self.products[3]); inputs.pop("review_state")
+        for action in inputs["shared_semantics"]["actions"]:
+            action["eligibility"]["decision"] = "accepted"
         with self.assertRaisesRegex(SemanticCompilerInputError, "new trajectory requires"):
             run_editorial_pipeline(inputs)
+
+    def test_paired_synthetic_mixed_and_missing_observations(self):
+        for statuses in [("Yea", "Nay"), ("Nay", "Yea"), ("Yea", "Not Voting"),
+                         ("Present", "Nay"), ("Yea", "Missing Evidence"), ("Present", "Not Voting")]:
+            inputs = copy.deepcopy(self.products[3]); inputs["members"] = inputs["members"][:1]
+            for action, status in zip(inputs["members"][0]["actions"][:2], statuses):
+                action["status"] = status
+                if status == "Missing Evidence": action["evidence_status"] = "missing"
+            result = run_editorial_pipeline(inputs).compiled_ir["members"][0]
+            pairs = [p for p in result["proposition_graph"]["propositions"] if any(o["action_id"] == "house:119:1:150" for o in p.get("action_observations", []))]
+            directional = [s for s in statuses if s in {"Yea", "Nay"}]
+            if not directional:
+                self.assertFalse(pairs)
+                continue
+            pair = pairs[0]
+            self.assertEqual([o["status"] for o in pair["action_observations"]], list(statuses))
+            self.assertEqual(len(pair["evidence_action_ids"]), len(directional))
+            self.assertEqual(pair["direction"], "mixed" if len(set(directional)) == 2 else {"Yea":"support","Nay":"opposition"}[directional[0]])
 
     def test_synthetic_status_and_context_controls_do_not_count(self):
         for status in ["Present", "Not Voting", "Missing Evidence"]:
@@ -162,22 +193,37 @@ class SharedDomainCandidateTests(unittest.TestCase):
         action["eligibility"]["decision"] = "context_only"
         inputs["shared_semantics"]["episodes"] = [e for e in inputs["shared_semantics"]["episodes"] if action["action_id"] not in e["action_ids"]]
         result = run_editorial_pipeline(inputs).compiled_ir
-        self.assertEqual(result["members"][0]["coverage"]["eligible_substantive_actions"], 10)
+        self.assertEqual(result["members"][0]["coverage"]["eligible_substantive_actions"], len(self.author["actions"]) - 1)
 
     def test_readable_output_preserves_package_limits_and_actual_mechanisms(self):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 9)
+        self.assertEqual(len(f["findings"]), 15)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
         self.assertIn("5 percent", by_action["house:119:2:198"]["detail"][1])
         self.assertIsNone(f["synthesis"])
 
+    def test_compact_is_shared_explicit_and_not_sentence_extraction(self):
+        author = copy.deepcopy(self.author)
+        action = author["actions"][3]
+        action["meaning"] = "H.R. is an abbreviation. A later sentence describes another package mechanism."
+        products = prepare(author, self.capture, ["F000477", "M001184"])
+        readable = readable_candidates(author, products[0], products[2], products[-1])
+        for member in readable["members"]:
+            finding = next(f for f in member["findings"] if f["action_ids"] == [action["action_id"]])
+            self.assertIn(action["compact_description"], finding["compact"])
+            self.assertNotIn("abbreviation", finding["compact"])
+            self.assertIn(action["meaning"], finding["detail"])
+            self.assertIn("cost-sharing", finding["compact"])
+            self.assertIn("abortion", finding["compact"])
+            self.assertTrue(finding["action_observations"][0]["claim_source_map"])
+
     def test_discovery_accounting_is_complete_but_membership_not_claimed_closed(self):
         universe = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
-        validate_universe_proposal(universe)
+        validate_universe_proposal(universe, self.author, self.capture, json.loads((DATA / "membership_review.json").read_text(encoding="utf-8")))
         rows = universe["candidate_dispositions"]
         expected = {f"house:119:{s}:{r}" for s, last in [(1, 362), (2, 314)] for r in range(1, last + 1)}
         self.assertEqual({r["action_id"] for r in rows}, expected)
@@ -189,13 +235,74 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual(sum(r["after_historical_july23_boundary"] for r in rows), 31)
         self.assertTrue(all(r.get("historical_raw_hash_matches", True) for r in rows))
         self.assertEqual(universe["cutoff"]["end_date"], "2026-09-16")
-        self.assertEqual(universe["interpretation_action_set_cutoff"], "2026-07-23")
+        self.assertEqual(universe["interpretation_action_set_cutoff"], "2026-09-16")
 
     def test_wrong_stage_cannot_borrow_parent_passage_meaning(self):
         author = copy.deepcopy(self.author)
         author["actions"][0]["stage"] = "final_passage"
         with self.assertRaisesRegex(ValueError, "stage differs"):
             prepare(author, self.capture, ["F000477"])
+
+    def test_compact_requires_a_bound_operative_passage(self):
+        author = copy.deepcopy(self.author)
+        author["actions"][0]["compact_source_refs"] = ["clerk:119:1:150"]
+        with self.assertRaisesRegex(ValueError, "compact meaning"):
+            prepare(author, self.capture, ["F000477"])
+
+    def test_member_service_and_evidence_controls_remain_non_counting_in_pair(self):
+        for field, value in [("service_status", "not_yet_serving"), ("service_status", "unresolved"),
+                             ("evidence_status", "missing")]:
+            inputs = copy.deepcopy(self.products[3]); inputs["members"] = inputs["members"][:1]
+            row = inputs["members"][0]["actions"][0]
+            row[field] = value
+            member = run_editorial_pipeline(inputs).compiled_ir["members"][0]
+            pair = next(p for p in member["proposition_graph"]["propositions"]
+                        if any(o["action_id"] == row["action_id"] for o in p.get("action_observations", [])))
+            self.assertIsNone(pair["action_observations"][0]["direction"])
+            self.assertEqual(pair["evidence_action_ids"], ["house:119:1:151"])
+
+    def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
+        u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
+        rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":146, "source_unresolved":489,
+            "interpreted_substantive_directional":18, "expressive_nonbinding_context":2, "exact_action_ineligible":21})
+        self.assertTrue(rows["house:119:2:53"]["review_progress"]["exact_action_binding_unresolved"])
+        self.assertFalse(rows["house:119:2:313"]["review_progress"]["substantive_review_performed"])
+        self.assertFalse(any(r["review_progress"]["required_evidence_unavailable"] for r in rows.values()))
+        self.assertFalse(any(r["review_progress"]["authoritative_source_conflict"] for r in rows.values()))
+        self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
+        self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
+
+    def test_stale_universe_cannot_replay_new_interpretations(self):
+        u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
+        author = copy.deepcopy(self.author); author["actions"].pop()
+        with self.assertRaisesRegex(ValueError, "interpretation set differs"):
+            validate_universe_proposal(u, author)
+        author = copy.deepcopy(self.author); author["interpretation_action_set_cutoff"] = "2026-07-23"
+        with self.assertRaisesRegex(ValueError, "cutoff differs"):
+            validate_universe_proposal(u, author)
+        m = json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))
+        m["records"][0]["sources"][0]["raw_sha256"] = "0" * 64
+        m["review_sha256"] = sealed_digest(m, "review_sha256")
+        u["membership_review_sha256"] = m["review_sha256"]
+        u["candidate_dispositions"][149]["review_progress"]["shared_review_record_sha256"] = digest(m["records"][0])
+        u["universe_subject_sha256"] = digest({"subject":u["subject"], "cutoff":u["cutoff"], "candidate_records":u["candidate_dispositions"]})
+        u["proposal_sha256"] = sealed_digest(u, "proposal_sha256")
+        with self.assertRaisesRegex(ValueError, "membership source identity differs"):
+            validate_universe_proposal(u, self.author, self.capture, m)
+
+    def test_new_versions_are_separate_observations_with_shared_limits(self):
+        core, _, projections, _, result = self.products
+        readable = readable_candidates(self.author, core, projections, result)
+        f = readable["members"][0]
+        pair = next(x for x in f["findings"] if "house:119:1:145" in x["action_ids"])
+        self.assertEqual(pair["action_ids"], ["house:119:1:145", "house:119:1:190"])
+        self.assertIn("$10 billion", pair["action_observations"][1]["compact"])
+        self.assertNotIn("$10 billion", pair["action_observations"][0]["compact"])
+        fraud = next(x for x in f["findings"] if x["action_ids"] == ["house:119:2:310"])
+        self.assertIn("HIPAA", " ".join(fraud["detail"]))
+        self.assertIn("congressional-record:2026-09-15", fraud["source_ids"])
+        self.assertIn("deletion", fraud["compact"])
 
 
 if __name__ == "__main__":

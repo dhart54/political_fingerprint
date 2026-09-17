@@ -166,6 +166,7 @@ def _proposition(
     episode_ids: Iterable[str],
     trait_refs: Iterable[str],
     presentation_target: str,
+    action_observations: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     base = {
         "semantic_role": semantic_role,
@@ -176,6 +177,8 @@ def _proposition(
         "mechanism_or_trait_refs": _ordered_unique(trait_refs),
         "presentation_target": presentation_target,
     }
+    if action_observations is not None:
+        base["action_observations"] = action_observations
     return {
         "proposition_id": _stable_id("prop", base),
         **base,
@@ -512,6 +515,28 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
     if not focused:
         for episode_id, episode in sorted(episodes.items()):
             evidence_ids = sorted(set(episode["action_ids"]) & directional_ids)
+            if (payload.get("review_state") == "candidate_pending_external_semantic_review"
+                    and len(episode["action_ids"]) > 1):
+                # Chronology alone is not evidence for longitudinal change.
+                if not evidence_ids:
+                    continue
+                ordered = sorted(episode["action_ids"], key=lambda aid: (
+                    actions[aid].get("structural_metadata", {}).get("stage_order", 0),
+                    tuple(int(n) for n in aid.split(":")[1:])))
+                observations = []
+                for aid in ordered:
+                    recorded = member_actions.get(aid, {"status": "Missing Evidence",
+                        "service_status": "unresolved", "evidence_status": "missing"})
+                    observations.append({"action_id": aid,
+                        "action_meaning_ref": actions[aid]["action_meaning_ref"],
+                        "status": recorded["status"], "service_status": recorded["service_status"],
+                        "evidence_status": recorded["evidence_status"],
+                        "direction": DIRECTIONAL_STATUS[recorded["status"]] if aid in evidence_ids else None})
+                behavioral.append(_proposition(semantic_role="behavioral", proposition_type="notable_choice",
+                    direction=_direction(member_actions[aid]["status"] for aid in evidence_ids),
+                    action_ids=evidence_ids, episode_ids=[episode_id], trait_refs=[],
+                    presentation_target="other_notable_choices", action_observations=observations))
+                continue
             if len(evidence_ids) < 2:
                 continue
             refs = [

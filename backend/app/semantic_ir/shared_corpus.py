@@ -38,6 +38,8 @@ MEANING_FIELDS = {
     "candidate_exact_action_meaning",
     "choice_meanings",
     "candidate_short_description",
+    "candidate_compact_description",
+    "compact_source_refs",
     "candidate_shared_limitations",
     "claim_source_map",
     "action_meaning",
@@ -132,6 +134,8 @@ def validate_shared_action_core(root: Path, artifact: dict[str, Any]) -> None:
             raise SharedCorpusValidationError("candidate meaning and corpus authority disagree")
         if candidate and not {x["source_id"] for x in action["claim_source_map"]} <= {x["source_id"] for x in action["operative_meaning_source_identities"]}:
             raise SharedCorpusValidationError("candidate claim source is not operative evidence")
+        if candidate and not set(action["compact_source_refs"]) <= {x["source_id"] for x in action["claim_source_map"]}:
+            raise SharedCorpusValidationError("compact source lacks a bound passage mapping")
         if action["action_core_sha256"] != sealed_digest(action, "action_core_sha256"):
             raise SharedCorpusValidationError(
                 f"shared action digest differs: {action['action_id']}"

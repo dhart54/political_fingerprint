@@ -7,8 +7,8 @@ then mechanically project Foushee and a bounded real comparison member through
 the existing shared-corpus adapter and canonical editorial pipeline. This is
 candidate preparation, not accepted or published additional domain coverage.
 
-Verified origin/main: `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`; no subsequent
-commits. Separate branch `codex/foushee-shared-next-domain`. PR193 remains draft
+Reviewed base: `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Resumed PR194 at
+`fd3ed28ec0c45e39df02f3caf4ba793401a83425`; no later branch work was overwritten. Separate branch `codex/foushee-shared-next-domain`. PR193 remains draft
 and untouched; issue192 remains open. PR191 and all four publications are frozen.
 Interpretation principles and owning contracts read before authoring.
 
@@ -62,47 +62,60 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Progress and discoveries
+## Continuation outcome and stopping point
 
-- [x] Main/paused work verified; isolated branch.
-- [x] Eight-domain live read and missing-domain comparison.
-- [x] Ten official Health House-passed texts acquired.
-- [x] Enumerate all676 official identities; record every disposition without claiming closed issue membership.
-- [x] Eleven shared meanings,48 passage mappings,77 governed sources and22 real member rows.
-- [x] Canonical pipeline: nine Foushee findings, seven Massie proof findings and one held two-action episode.
-- [x] Reproducible compact/detail candidates, real reuse and controlled update proof.
-- [x] Focused validation and canonical semantic tier; final rerun and exact-head CI recorded in the draft PR.
-- [ ] Close remaining operative membership and episode completeness; resolve the paired-action analytical gate.
-- [x] Draft PR [#194](https://github.com/dhart54/political_fingerprint/pull/194); exact-head CI delivery status is recorded in its discussion.
+The current request authorizes the candidate paired-action extension and continued
+shared Health research. One owner implemented this in the same PR. Changes remain
+semantic/domain scope: compiler, existing typed contracts, shared presentation,
+focused tests, candidate inputs/outputs, this plan and the consolidated packet.
+Large generated diffs reflect source text, 676 per-row progress records, and
+repeated member projections; they do not represent a population or public rollout.
 
-Implemented candidate-only extension to the existing corpus contract: false
-authority, explicit candidate fields and proposed eligibility. The existing
-adapter and pipeline preserve that state; public/persistence adapters reject it.
-Accepted inputs retain identical outputs. No separate semantic engine was added.
-The existing universe-proposal contract also admits this milestone identifier;
-all required accounting, per-action disposition and authority fields are present.
-Proposal and universe-subject digests and the existing schema are validated.
+- [x] Verify resume head; retain original eleven meanings and source identities.
+- [x] Add candidate notable-choice episodes with ordered exact observations.
+- [x] Preserve real Yea/Yea and Nay/Nay, synthetic mixed/non-directional/missing
+  cases, one-episode accounting and unchanged actual trajectory gates.
+- [x] Replace first-sentence extraction with eighteen explicit shared compacts.
+- [x] Research all 37 priority identities to the extent recorded; resolve 34,
+  including four already procedural controls, and explicitly retain three open.
+- [x] Add seven meanings, bringing shared inputs to18 and Foushee findings to15;
+  the bounded Massie reuse proof yields13 findings, with two Not Voting records.
+- [x] Store48 member-neutral membership records, 71 interpretation passage maps,
+  118 governed source captures and36 mechanically extracted member observations.
+- [x] Reconcile all676 identities:18 interpreted candidates,146 procedures,
+  2 expressive controls,21 proposed exclusions and489 unresolved screenings.
+- [x] Local validation:111 focused tests and all7 canonical semantic checks pass;
+  deterministic checked-in output/proof/appendix replay passes.
+- [x] Prepare same draft PR; exact head and hosted CI results go in its discussion.
+- [ ] Finish487 substantive membership reviews and two exact-effect bindings.
+- [ ] Establish complete episode membership and obtain substantive review;
+  no full Health coverage, accepted eligibility or issue synthesis is claimed.
 
-Exact-source review corrected the old exclusion of roll2025-150: the amendment
-codifies CMS SMD24-003 Medicaid guidance. Its full incorporated13-page source is
-captured. Both the amendment and final H.R.2483 passage remain one episode.
+The original same-episode representation blocker is resolved for this candidate.
+H.R.2483's failed amendment remains separate from the passed whole package within
+one episode. H.R.1 and H.R.5371 also retain separate House/Senate version choices
+without treating chronology as movement. Actual trajectory comparability gates
+and frozen accepted outputs remain unchanged.
 
-Actual unresolved contract gate: the compiler emits a trajectory for multiple
-directional actions within one episode, but the forward pipeline requires an
-accepted comparison across distinct longitudinal episodes. The same-day pair
-cannot satisfy that contract. Both actions are held, with all shared meanings and
-member choices retained. A regression reproduces the gate without the hold.
-Proposed resolution for review: paired observations in an existing notable-choice
-shape, without a longitudinal assertion. This analytical change is not made here.
+Priority open work: 2026 roll53 needs the incorporated continuing-appropriation
+and replaced-page binding for H.R.7148; roll308 needs retained House text plus
+complete cross-domain review of H.R.5334's Senate edits; roll313 has a captured
+359-page water-resources text whose operative membership review remains undone.
+The other486 unresolved identities are the earlier substantive-screening queue.
+These are unfinished research, not a claim that evidence is impossible to obtain
+or a demand for a new human methodology decision. There are zero asserted source
+conflicts and zero records labeled unavailable required evidence.
 
-Discovery accounting includes519 unresolved operative membership cases,144
-procedural/quorum controls, one expressive control and one source-verified
-exclusion. The eleven supplied inputs are partial throughJuly23 inside discovery
-throughSeptember16. This is not closed Health coverage at either date. Prioritize
-exact versions of H.R.1, H.R.5371 and H.R.7148 and31 later rolls on resumption.
-The consolidated packet includes every unresolved identity and manual intervention
-by layer. The actual analytical gate requires a user decision; the remaining
-source review is unfinished work, not evidence that official sources are absent.
+Next executable step: acquire Public Law119-37 divisionA and the retained House
+version of H.R.5334, resolve those exact effects, then review H.R.9497 by operative
+title. Continue the remaining486 identities grouped by exact document/version.
+Update shared membership records and proposed authoring, reconcile the existing
+universe proposal, regenerate, and run the same checks. Do not re-research by member.
+
+This is a practical execution checkpoint under section7 of the resume request,
+not completion of Health membership. No new product permission is needed merely
+to continue that available research. Substantive review remains necessary before
+acceptance or publication, and is not treated as a substitute for unfinished work.
 
 ## Boundaries, rollback and reconciliation
 

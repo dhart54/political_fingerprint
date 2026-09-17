@@ -100,31 +100,55 @@ def build_shared_candidate_readable(core, projections, compiled, boundary):
         for proposition in member["proposition_graph"]["propositions"]:
             if proposition["semantic_role"] != "behavioral":
                 continue
-            if proposition["proposition_type"] != "notable_choice" or len(proposition["evidence_action_ids"]) != 1:
+            if proposition["proposition_type"] != "notable_choice":
                 raise ValueError("candidate presentation form needs review for this proposition shape")
-            aid = proposition["evidence_action_ids"][0]
-            action, vote = actions[aid], votes[aid]
-            status = vote["official_status"]
-            if vote["action_core_sha256"] != action["action_core_sha256"] or status not in {"Yea", "Nay"}:
-                raise ValueError("candidate finding is not bound to a directional shared choice")
-            if proposition["direction"] != {"Yea": "support", "Nay": "opposition"}[status]:
-                raise ValueError("compiled finding changes the recorded choice")
-            choice = f"{name} {action['choice_meanings'][status]}."
-            meaning = action["candidate_exact_action_meaning"]
+            observations = proposition.get("action_observations")
+            ids = [o["action_id"] for o in observations] if observations else proposition["evidence_action_ids"]
+            if not observations and len(ids) != 1:
+                raise ValueError("multi-action candidate requires ordered observations")
+            rendered = []
+            for aid in ids:
+                action, vote = actions[aid], votes[aid]
+                status = vote["official_status"]
+                if vote["action_core_sha256"] != action["action_core_sha256"]:
+                    raise ValueError("candidate finding is not bound to its shared meaning")
+                if observations:
+                    observation = next(o for o in observations if o["action_id"] == aid)
+                    if (observation["status"] != status or observation["service_status"] != vote["service_status"]
+                            or observation["evidence_status"] != vote["evidence_status"]
+                            or observation["action_meaning_ref"] != action["action_meaning_ref"]):
+                        raise ValueError("compiled observation differs from the bound member action")
+                    direction = observation["direction"]
+                else:
+                    direction = proposition["direction"]
+                if direction is not None:
+                    if direction != {"Yea": "support", "Nay": "opposition"}.get(status):
+                        raise ValueError("compiled finding changes the recorded choice")
+                    choice = f"{name} {action['choice_meanings'][status]}."
+                else:
+                    choice = f"{name}: {status}; service {vote['service_status']}; evidence {vote['evidence_status']}. No directional choice is inferred."
+                rendered.append({"action_id": aid, "status": status, "direction": direction,
+                    "shared_meaning_sha256": action["action_core_sha256"],
+                    "compact": choice + " " + action["candidate_compact_description"],
+                    "detail": [choice, action["candidate_exact_action_meaning"],
+                        f"The Clerk recorded the House result as '{action['chamber_outcome']}' on {action['action_date']}. This does not establish enactment."],
+                    "qualifications": action["candidate_shared_limitations"],
+                    "claim_source_map": action["claim_source_map"], "source_ids": action["semantic_ir_source_ids"]})
+            def unique(items):
+                return list(dict.fromkeys(items))
             findings.append({
-                "proposition_id": proposition["proposition_id"], "action_ids": [aid],
-                "episode_ids": proposition["evidence_episode_ids"], "shared_meaning_sha256": action["action_core_sha256"],
-                "headline": action["candidate_short_description"],
-                "compact": choice + " " + meaning.split(". ", 1)[0].rstrip(".") + ".",
-                "detail": [choice, meaning,
-                    f"The Clerk recorded the House result as '{action['chamber_outcome']}' on {action['action_date']}. This does not establish enactment."],
-                "qualifications_on_both_levels": action["candidate_shared_limitations"],
-                "claim_source_map": action["claim_source_map"],
-                "source_ids": action["semantic_ir_source_ids"],
+                "proposition_id": proposition["proposition_id"], "action_ids": proposition["evidence_action_ids"],
+                "episode_ids": proposition["evidence_episode_ids"],
+                "headline": "Separate choices within one legislative episode" if observations else actions[ids[0]]["candidate_short_description"],
+                "compact": " ".join(o["compact"] for o in rendered),
+                "detail": [paragraph for o in rendered for paragraph in o["detail"]],
+                "qualifications_on_both_levels": unique(limit for o in rendered for limit in o["qualifications"]),
+                "action_observations": rendered,
+                "source_ids": unique(sid for o in rendered for sid in o["source_ids"]),
             })
         output.append({"member_id": projection["member_id"], "boundary": boundary,
             "findings": findings, "non_proposition_accounting": member["action_accounting"]["non_proposition_reasons"],
             "synthesis": None,
             "synthesis_reason": "Issue membership remains incomplete and no reviewed common-policy relationship has been supplied. These exact choices do not establish an issue-wide position."})
     return {"review_state": candidate, "production_eligible": False,
-        "form_version": "shared-exact-choice-candidate-v1", "members": output}
+        "form_version": "shared-exact-choice-candidate-v2", "members": output}

@@ -25,6 +25,29 @@ def validate_compiled_ir(compiled: dict[str, Any]) -> dict[str, int]:
             raise CompiledSemanticIRError("proposition identities must be unique")
         proposition_ids = set(by_id)
         for proposition in propositions:
+            observations = proposition.get("action_observations")
+            if observations is not None:
+                if (compiled.get("review_state") != "candidate_pending_external_semantic_review"
+                        or proposition["proposition_type"] != "notable_choice"
+                        or len(proposition["evidence_episode_ids"]) != 1 or len(observations) < 2):
+                    raise CompiledSemanticIRError("ordered observations require one candidate notable-choice episode")
+                ids = [o["action_id"] for o in observations]
+                if len(ids) != len(set(ids)):
+                    raise CompiledSemanticIRError("duplicate episode observation")
+                directions = set()
+                directional = set()
+                for observation in observations:
+                    direction = observation["direction"]
+                    if direction is not None:
+                        expected_direction = {"Yea": "support", "Nay": "opposition"}.get(observation["status"])
+                        if (direction != expected_direction or observation["service_status"] != "in_service"
+                                or observation["evidence_status"] != "official_record_resolved"):
+                            raise CompiledSemanticIRError("non-directional or unresolved observation cannot count")
+                        directional.add(observation["action_id"]); directions.add(direction)
+                if directional != set(proposition["evidence_action_ids"]):
+                    raise CompiledSemanticIRError("observation evidence accounting differs")
+                if proposition["direction"] != (next(iter(directions)) if len(directions) == 1 else "mixed"):
+                    raise CompiledSemanticIRError("episode direction differs from its exact choices")
             related = set(proposition["relationships"]["supported_by"])
             related.update(proposition["relationships"]["limited_by"])
             if not related <= proposition_ids:
