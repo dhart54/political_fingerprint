@@ -65,6 +65,9 @@ jobs:
             backend/tests/test_m13n_r_education_publication_preparation.py \
             backend/tests/test_m13n_education_workforce_ratification_candidate.py
 
+      - name: Validate shared candidate preparation at exact head
+        run: python -m pytest -q backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py
+
       - name: Prove disposable M14H apply, idempotency, faults, rollback, and public selector
         run: |
           createdb -h 127.0.0.1 -U postgres pf_m14h
