@@ -6,6 +6,8 @@ import ChronologicalActionLedger from "./ChronologicalActionLedger";
 import PolicyEpisodeSection from "./PolicyEpisodeSection";
 import ReviewedAnalysisSection from "./ReviewedAnalysisSection";
 import SemanticIcon from "./SemanticIcon";
+import RecordCardFinding from "./RecordCardFinding";
+import { recordCardUrl } from "../lib/recordCard.mjs";
 import { fetchPositionEvidence } from "../lib/api";
 import { formatDomainLabel } from "../lib/issueDomains";
 import { getDomainDescription } from "../lib/issueEvidenceCoverage.mjs";
@@ -18,6 +20,12 @@ export default function IssueDetail({
   presentation,
   representativeName,
   scope,
+  fetchEvidence = fetchPositionEvidence,
+  cardFinding = null,
+  cardFindingRequested = false,
+  cardFindingView = null,
+  presentationStatus = "ready",
+  routePath = "/",
 }) {
   const [state, setState] = useState({
     status: "loading",
@@ -38,7 +46,8 @@ export default function IssueDetail({
     async function load() {
       try {
         const payload = fixtureEvidence
-          || await fetchPositionEvidence({ legislatorId, domain: issue, scope });
+          || await fetchEvidence({ legislatorId, domain: issue, scope });
+        if ((payload?.legislator_id && payload.legislator_id !== legislatorId) || (payload?.domain && payload.domain !== issue) || (payload?.scope && payload.scope !== scope) || !Array.isArray(payload?.evidence)) throw new Error("Receipt identity or shape mismatch");
         if (active) {
           setState({
             status: "ready",
@@ -60,7 +69,26 @@ export default function IssueDetail({
     return () => {
       active = false;
     };
-  }, [fixtureEvidence, issue, legislatorId, scope]);
+  }, [fetchEvidence, fixtureEvidence, issue, legislatorId, scope]);
+
+  useEffect(() => {
+    if (!cardFinding || cardFindingView === "receipts") return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById("finding-detail")?.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      document.getElementById("finding-detail-heading")?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [cardFinding, cardFindingView]);
+
+  const linkedFinding = useMemo(() => cardFinding && cardFindingView === "receipts" ? {
+    actionIds: cardFinding.action_ids,
+    label: cardFinding.sourceFinding.title || cardFinding.sourceFinding.heading,
+    evidenceCountLabel: cardFinding.evidence_label,
+    // Retain the accepted finding's own direction display contract.
+    direction: cardFinding.sourceFinding.direction,
+    showDirection: cardFinding.sourceFinding.show_direction,
+    requestedAt: `${cardFinding.finding_id}:receipts`,
+  } : null, [cardFinding, cardFindingView]);
 
   function showExactActions(actionIds, label, metadata = {}) {
     setHighlightedFinding({
@@ -78,7 +106,7 @@ export default function IssueDetail({
       data-testid="issue-detail"
       id="issue-detail"
     >
-      <header className="scroll-mt-24 py-10 sm:py-12" id="issue-summary">
+      <header className={`scroll-mt-24 ${cardFindingRequested ? "py-5" : "py-10 sm:py-12"}`} id="issue-summary">
         <p className="eyebrow">Selected issue</p>
         <h2
           className="mt-2 max-w-4xl font-serif text-4xl leading-tight text-stone-950 sm:text-5xl"
@@ -87,11 +115,11 @@ export default function IssueDetail({
         >
           {formatDomainLabel(issue)}
         </h2>
-        <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-700">
+        {!cardFindingRequested ? <p className="mt-4 max-w-4xl text-lg leading-8 text-stone-700">
           {getDomainDescription(issue)}
-        </p>
+        </p> : null}
 
-        {state.status === "ready" ? (
+        {state.status === "ready" && !cardFindingRequested ? (
           <dl className="mt-7 grid max-w-5xl gap-px overflow-hidden rounded-xl border border-stone-300 bg-stone-300 sm:grid-cols-2">
             <ScopeCell
               description={selectedIssue.evidence.countText}
@@ -105,23 +133,25 @@ export default function IssueDetail({
                 : "Vote receipts remain available"}
               icon="summary"
               label="Issue summary covers"
-              value={selectedIssue.interpretation?.congressLabel || "No issue summary for this scope"}
+              value={selectedIssue.interpretation?.congressLabel || (presentationStatus === "ready" ? "No issue summary for this scope" : "Issue summary unavailable")}
             />
           </dl>
         ) : null}
-        {state.status === "ready" && selectedIssue.interpretation && selectedIssue.evidence.notYetReviewedCount > 0 ? (
+        {state.status === "ready" && !cardFindingRequested && selectedIssue.interpretation && selectedIssue.evidence.notYetReviewedCount > 0 ? (
           <p className="mt-3 max-w-4xl text-sm leading-6 text-stone-600">
             {selectedIssue.evidence.notYetReviewedCount} additional recorded {selectedIssue.evidence.notYetReviewedCount === 1 ? "action is" : "actions are"} available below and not yet included in the reviewed interpretation.
           </p>
         ) : null}
       </header>
 
-      <ReviewedAnalysisSection
+      {cardFinding ? <RecordCardFinding entry={cardFinding} legislatorId={legislatorId} scope={scope} receiptsVisible={cardFindingView === "receipts"} routePath={routePath} /> : null}
+      {cardFindingRequested && !cardFinding ? <p className="py-5 text-base leading-7 text-stone-700" role="status">This finding link does not match the available reviewed source. Browse the complete issue record below.</p> : null}
+      {!cardFinding ? <ReviewedAnalysisSection
         onSeeActions={showExactActions}
         presentation={presentation}
         rows={state.rows}
-      />
-      <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} />
+      /> : null}
+      {!cardFinding ? <PolicyEpisodeSection episodes={presentation?.policy_episodes || []} /> : null}
 
       {state.status === "loading" ? (
         <p className="border-t border-stone-200 py-10 text-base text-stone-700" role="status">
@@ -133,9 +163,14 @@ export default function IssueDetail({
           {state.error}
         </p>
       ) : null}
-      {state.status === "ready" ? (
+      {state.status === "ready" && (!cardFinding || cardFindingView === "receipts") ? (
         <ChronologicalActionLedger
-          highlightedFinding={highlightedFinding}
+          key={linkedFinding?.requestedAt || "all"}
+          highlightedFinding={linkedFinding || highlightedFinding}
+          onClearFinding={cardFinding ? () => {
+            window.history.pushState({}, "", recordCardUrl(window.location.href, { legislatorId, scope, issue, hash: "vote-record" }));
+            window.dispatchEvent(new PopStateEvent("popstate"));
+          } : undefined}
           representativeName={representativeName}
           rows={state.rows}
         />

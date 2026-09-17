@@ -8,6 +8,7 @@ import RepresentativeFinder from "../components/RepresentativeFinder";
 import RepresentativeHeader from "../components/RepresentativeHeader";
 import ScopeControl from "../components/ScopeControl";
 import { fetchLegislatorProfile } from "../lib/api";
+import recordCardContent from "../lib/recordCardContent.json";
 import {
   buildPassAUrl,
   parsePassARouteState,
@@ -18,8 +19,9 @@ const EMPTY_ROUTE = {
   issue: null,
   scope: "all",
 };
+const DEFAULT_DATA_CLIENT = { fetchLegislatorProfile };
 
-export default function HomePage() {
+export default function HomePage({ reviewCandidate = null, reviewProfiles = null, dataClient = DEFAULT_DATA_CLIENT }) {
   const [routeReady, setRouteReady] = useState(false);
   const [route, setRoute] = useState(EMPTY_ROUTE);
   const [routeNavigation, setRouteNavigation] = useState("initial");
@@ -29,10 +31,12 @@ export default function HomePage() {
     error: null,
   });
   const [finderOpen, setFinderOpen] = useState(false);
+  const [routePath, setRoutePath] = useState("/");
 
   useEffect(() => {
     function syncFromLocation(navigation = "history") {
       setRoute(parsePassARouteState(window.location.search));
+      setRoutePath(window.location.pathname);
       setRouteNavigation(navigation);
       setFinderOpen(false);
       setRouteReady(true);
@@ -62,7 +66,7 @@ export default function HomePage() {
     ));
     async function loadProfile() {
       try {
-        const legislator = await fetchLegislatorProfile({
+        const legislator = await dataClient.fetchLegislatorProfile({
           legislatorId: route.legislatorId,
         });
         if (active) {
@@ -86,10 +90,10 @@ export default function HomePage() {
     return () => {
       active = false;
     };
-  }, [route.legislatorId, routeReady]);
+  }, [dataClient, route.legislatorId, routeReady]);
 
   function navigate(next, { replace = false } = {}) {
-    const resolved = { ...route, ...next };
+    const resolved = { ...route, ...next, findingId: null, findingSource: null, findingView: null };
     const url = buildPassAUrl(window.location.href, resolved);
     window.history[replace ? "replaceState" : "pushState"]({}, "", url);
     setRoute(resolved);
@@ -118,7 +122,9 @@ export default function HomePage() {
     });
   }
 
-  const legislator = legislatorState.legislator;
+  const legislator = legislatorState.legislator?.id === route.legislatorId ? legislatorState.legislator : null;
+  const cardContent = reviewCandidate || recordCardContent;
+  const compactOpening = Boolean(reviewCandidate);
 
   return (
     <main className="min-h-screen bg-[#f7f3e9] text-stone-900">
@@ -127,7 +133,8 @@ export default function HomePage() {
         selectedIssue={route.issue}
       />
 
-      <div className="mx-auto max-w-[90rem] px-4 py-8 sm:px-6 lg:px-10 lg:py-10">
+      {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">Local release review · recorded snapshot, no live data</p> : null}
+      <div className={`mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10 ${compactOpening ? "py-3 sm:py-5" : "py-8 lg:py-10"}`}>
         {!routeReady || legislatorState.status === "loading" ? (
           <p className="py-20 text-center text-base text-stone-700" role="status">
             Loading representative journey…
@@ -144,7 +151,7 @@ export default function HomePage() {
               Find a federal representative, choose an issue, and inspect bounded plain-language summaries alongside chronological exact vote receipts.
             </p>
             <div className="mt-9">
-              <RepresentativeFinder onSelect={selectRepresentative} />
+              {reviewProfiles ? <ReviewProfilePicker profiles={reviewProfiles} onSelect={selectRepresentative} /> : <RepresentativeFinder onSelect={selectRepresentative} />}
             </div>
           </div>
         ) : null}
@@ -155,7 +162,7 @@ export default function HomePage() {
               {legislatorState.error}
             </p>
             <div className="mt-5">
-              <RepresentativeFinder onSelect={selectRepresentative} />
+              {reviewProfiles ? <ReviewProfilePicker profiles={reviewProfiles} onSelect={selectRepresentative} /> : <RepresentativeFinder onSelect={selectRepresentative} />}
             </div>
           </div>
         ) : null}
@@ -163,24 +170,32 @@ export default function HomePage() {
         {legislator ? (
           <>
             <RepresentativeHeader
+              compact={compactOpening}
               legislator={legislator}
               onSwitch={() => setFinderOpen(true)}
               scope={route.scope}
             />
             {finderOpen ? (
               <div className="my-5" role="region" aria-label="Switch representative">
-                <RepresentativeFinder
+                {reviewProfiles ? <ReviewProfilePicker profiles={reviewProfiles} onSelect={selectRepresentative} /> : <RepresentativeFinder
                   compact
                   onCancel={() => setFinderOpen(false)}
                   onSelect={selectRepresentative}
-                />
+                />}
               </div>
             ) : null}
             <ScopeControl
+              compact={compactOpening}
               onChange={(scope) => navigate({ scope })}
               scope={route.scope}
             />
             <RepresentativeExperience
+              key={`${legislator.id}:${route.scope}`}
+              dataClient={dataClient}
+              recordCardCandidate={cardContent}
+              routePath={routePath}
+              reviewMode={Boolean(reviewCandidate)}
+              findingRoute={route}
               directIssueLanding={routeNavigation === "initial" && Boolean(route.issue)}
               legislator={legislator}
               onSelectIssue={(issue) => navigate({ issue })}
@@ -193,6 +208,10 @@ export default function HomePage() {
       </div>
     </main>
   );
+}
+
+function ReviewProfilePicker({ profiles, onSelect }) {
+  return <div className="flex flex-wrap gap-3" aria-label="Review representatives">{profiles.map((profile) => <button className="secondary-button" key={profile.id} onClick={() => onSelect(profile)} type="button">{profile.name_display}</button>)}</div>;
 }
 
 function SiteHeader({ representativeName, selectedIssue }) {

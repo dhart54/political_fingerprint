@@ -1,9 +1,21 @@
+import { DOMAIN_ORDER } from "./issueEvidenceCoverage.mjs";
+
 const PUBLIC_TIERS = new Set([
   "reviewed_conclusion",
   "developing_read",
   "non_directional_or_limited_evidence",
   "receipts_only",
 ]);
+
+// API validity is independent of any optional, content-bound card selection.
+export function issuePresentationStatus(payload, identity, scope) {
+  if (!payload || !Array.isArray(payload.presentations)) return "incomplete";
+  if (!presentationIdentityMatches(payload, identity) || payload.scope !== scope) return "identity_mismatch";
+  const indexed = indexEditorialPresentations(payload);
+  if (payload.presentations.length !== DOMAIN_ORDER.length || indexed.size !== DOMAIN_ORDER.length || DOMAIN_ORDER.some((domain) => !indexed.has(domain))) return "incomplete";
+  if (payload.presentations.some((p) => p.requested_scope !== scope)) return "identity_mismatch";
+  return "ready";
+}
 
 export function indexEditorialPresentations(payload) {
   const result = new Map();

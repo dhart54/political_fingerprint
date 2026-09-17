@@ -9,11 +9,15 @@ export default function IssueOverviewGrid({
   onSelect,
   rows,
   selectedIssue,
+  compact = false,
+  presentationStatus = "ready",
 }) {
   if (!rows.length) {
     return (
       <p className="mt-6 rounded-2xl border border-stone-200 bg-white p-5 text-base leading-7 text-stone-700">
-        {mode === "reviewed_analysis"
+        {mode === "reviewed_analysis" && presentationStatus !== "ready"
+          ? "Issue summaries are unavailable. Browse recorded votes using the other views."
+          : mode === "reviewed_analysis"
           ? "No plain-language issue summary is available in this representative and Congress scope. Vote receipts remain available under the other views."
           : "No recorded issue actions are available in this Congress scope."}
       </p>
@@ -24,7 +28,8 @@ export default function IssueOverviewGrid({
     <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {rows.map((row, index) => (
         <IssueCard
-          isRecommended={mode === "recommended" && index === 0}
+          compact={compact}
+          isRecommended={!compact && mode === "recommended" && index === 0}
           isSelected={selectedIssue === row.domain}
           key={row.domain}
           onSelect={onSelect}
@@ -35,7 +40,7 @@ export default function IssueOverviewGrid({
   );
 }
 
-function IssueCard({ isRecommended, isSelected, onSelect, row }) {
+function IssueCard({ compact, isRecommended, isSelected, onSelect, row }) {
   const composition = getRecordedActionComposition(row);
   const label = formatDomainLabel(row.domain);
   const status = row.analysisAvailable
@@ -43,7 +48,7 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
     : "Vote receipts available";
   return (
     <article
-      className={`flex min-h-[24rem] flex-col rounded-2xl border bg-white p-5 transition ${
+      className={`flex ${compact ? "" : "min-h-[24rem]"} flex-col rounded-2xl border bg-white p-5 transition ${
         isSelected
           ? "border-teal-800 ring-2 ring-teal-800/15"
           : "border-stone-200 hover:border-teal-700/50"
@@ -63,9 +68,9 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
       <h3 className="mt-4 font-serif text-2xl leading-tight text-stone-950">
         {label}
       </h3>
-      <p className="mt-3 text-base leading-7 text-stone-700">
+      {!compact ? <p className="mt-3 text-base leading-7 text-stone-700">
         {getDomainDescription(row.domain)}
-      </p>
+      </p> : null}
       <div className="mt-5 grid grid-cols-2 gap-3 border-y border-stone-200 py-4">
         <Metric label="recorded actions" value={row.totalRecordedActions} />
         <Metric
@@ -73,7 +78,7 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
           value={row.substantiveEvidenceCount}
         />
       </div>
-      <div className="mt-4" role="group" aria-label={`${label} recorded action composition`}>
+      {!compact ? <div className="mt-4" role="group" aria-label={`${label} recorded action composition`}>
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-stone-500">
           Recorded action composition
         </p>
@@ -93,8 +98,8 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
             </li>
           ))}
         </ul>
-      </div>
-      {row.analysisAvailable ? (
+      </div> : null}
+      {!compact && (row.analysisAvailable ? (
         <p className="mt-4 line-clamp-2 text-sm leading-6 text-teal-950">
           {row.presentation.review_state.scope_bounded_teaser?.text
             || row.presentation.teaser
@@ -104,7 +109,7 @@ function IssueCard({ isRecommended, isSelected, onSelect, row }) {
         <p className="mt-4 text-sm leading-6 text-stone-600">
           Open the issue to browse its chronological exact vote record.
         </p>
-      )}
+      ))}
       <button
         aria-current={isSelected ? "true" : undefined}
         aria-label={`${row.analysisAvailable ? "Explore" : "Browse vote record for"} ${label}`}

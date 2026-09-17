@@ -112,6 +112,13 @@ jobs:
           python scripts/run_editorial_pipeline.py validate --tier release \
             --include-frontend --include-persistence
 
+      - name: Verify Record at a Glance source bindings and both frontend routes
+        run: |
+          node scripts/build_record_card_review.mjs --check
+          cd frontend
+          node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs
+          PLAYWRIGHT_PRODUCTION_BUILD=1 npx playwright test tests/record-card.spec.mjs tests/record-card-release.spec.mjs
+
       - name: Validate M15B comparison semantics and governed limitation rendering
         run: |
           python scripts/build_m15b_review.py --check

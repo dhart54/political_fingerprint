@@ -6,6 +6,7 @@ import ActionReceipt from "./ActionReceipt";
 import SemanticIcon from "./SemanticIcon";
 import {
   canonicalActionId,
+  actionReceiptId,
   chronologicalActions,
   filterActions,
   filterActionsByDimensions,
@@ -33,6 +34,7 @@ export default function ChronologicalActionLedger({
   highlightedFinding,
   representativeName,
   rows = [],
+  onClearFinding,
 }) {
   const [voteFilter, setVoteFilter] = useState("all");
   const [typeFilter, setTypeFilter] = useState("all");
@@ -91,7 +93,31 @@ export default function ChronologicalActionLedger({
     });
   }, [highlightedFinding?.requestedAt, ordered, requestedHighlightedIds]);
 
+  useEffect(() => {
+    if (highlightedFinding) return;
+    function honorReceiptAnchor() {
+      const id = window.location.hash.slice(1);
+      const index = ordered.findIndex((row) => actionReceiptId(row) === id);
+      if (index < 0 && id !== "vote-record") return;
+      if (index >= 0) {
+        setVoteFilter("all"); setTypeFilter("all");
+        setVisibleCount(Math.max(INITIAL_BATCH, index + 1));
+        setExpandedId(canonicalActionId(ordered[index]));
+      }
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        const target = document.getElementById(id);
+        target?.scrollIntoView({ behavior: "auto", block: "start" });
+        if (id === "vote-record") headingRef.current?.focus({ preventScroll: true });
+        else target?.querySelector("button")?.focus({ preventScroll: true });
+      }));
+    }
+    honorReceiptAnchor();
+    window.addEventListener("hashchange", honorReceiptAnchor);
+    return () => window.removeEventListener("hashchange", honorReceiptAnchor);
+  }, [ordered, highlightedFinding]);
+
   function clearPattern() {
+    if (onClearFinding) { onClearFinding(); return; }
     setPatternActive(false);
     setActiveHighlightedIds([]);
     setVoteFilter("all");

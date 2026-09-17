@@ -5,6 +5,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import IssueDetail from "./IssueDetail";
 import IssueDiscoveryControls from "./IssueDiscoveryControls";
 import IssueOverviewGrid from "./IssueOverviewGrid";
+import RecordAtAGlance from "./RecordAtAGlance";
+import { projectRecordCard, recordCardUrl, resolveCardFinding } from "../lib/recordCard.mjs";
 import {
   fetchEditorialPresentations,
   fetchPositions,
@@ -13,6 +15,7 @@ import { hasAvailableIssueEvidence } from "../lib/basicEvidencePresentation.mjs"
 import {
   getEditorialPresentation,
   indexEditorialPresentations,
+  issuePresentationStatus,
   presentationIdentityMatches,
 } from "../lib/editorialPresentation.mjs";
 import { formatDomainLabel } from "../lib/issueDomains";
@@ -29,6 +32,11 @@ export default function RepresentativeExperience({
   onSelectIssue,
   scope,
   selectedIssue,
+  dataClient = {},
+  recordCardCandidate = null,
+  findingRoute = {},
+  routePath = "/",
+  reviewMode = false,
 }) {
   const [mode, setMode] = useState("recommended");
   const initialLandingHandled = useRef(false);
@@ -38,6 +46,8 @@ export default function RepresentativeExperience({
     positions: null,
     presentations: null,
     error: null,
+    presentationStatus: "loading",
+    card: { status: "loading", entries: [] },
   });
 
   useEffect(() => {
@@ -47,27 +57,31 @@ export default function RepresentativeExperience({
       positions: null,
       presentations: null,
       error: null,
+      presentationStatus: "loading",
+      card: { status: "loading", entries: [] },
     });
     async function load() {
       try {
+        let presentationStatus = "ready";
         const [positions, presentations] = fixtureData
           ? [fixtureData.positions, fixtureData.presentations]
           : await Promise.all([
-              fetchPositions({ legislatorId: legislator.id, scope }),
-              fetchEditorialPresentations({
+              (dataClient.fetchPositions || fetchPositions)({ legislatorId: legislator.id, scope }),
+              (dataClient.fetchEditorialPresentations || fetchEditorialPresentations)({
                 legislatorId: legislator.id,
                 scope,
-              }).catch(() => ({
-                legislator_id: legislator.id,
-                member_bioguide_id: legislator.bioguide_id,
-                presentations: [],
-              })),
+              }).catch(() => { presentationStatus = "error"; return null; }),
             ]);
+        if (!Array.isArray(positions?.positions) || (positions.legislator_id && positions.legislator_id !== legislator.id) || (positions.scope && positions.scope !== scope)) throw new Error("Position identity or shape mismatch");
+        if (presentationStatus === "ready") presentationStatus = issuePresentationStatus(presentations, { legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id }, scope);
+        const card = recordCardCandidate ? await projectRecordCard({ candidate: recordCardCandidate, payload: presentations, legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id, scope, requestStatus: presentationStatus }) : null;
         if (active) {
           setState({
             status: "ready",
             positions,
-            presentations,
+            presentations: presentationStatus === "ready" ? presentations : null,
+            presentationStatus,
+            card,
             error: null,
           });
         }
@@ -78,6 +92,8 @@ export default function RepresentativeExperience({
             positions: null,
             presentations: null,
             error: "This representative’s issue records are unavailable right now.",
+            presentationStatus: "error",
+            card: { status: "error", entries: [] },
           });
         }
       }
@@ -86,7 +102,7 @@ export default function RepresentativeExperience({
     return () => {
       active = false;
     };
-  }, [fixtureData, legislator.bioguide_id, legislator.id, scope]);
+  }, [dataClient.fetchPositions, dataClient.fetchEditorialPresentations, fixtureData, legislator.bioguide_id, legislator.id, scope, recordCardCandidate]);
 
   const presentationIndex = useMemo(
     () => presentationIdentityMatches(state.presentations, {
@@ -195,8 +211,28 @@ export default function RepresentativeExperience({
     });
   }
 
+  function navigateFinding(event, entry) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    window.history.replaceState({ ...window.history.state, returnCardEntry: entry.id }, "", window.location.href);
+    window.history.pushState({}, "", recordCardUrl(window.location.href, { legislatorId: legislator.id, scope, issue: entry.issue_id, findingId: entry.finding_id, sourceHash: entry.sourcePresentationHash, hash: "finding-detail" }));
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  }
+  const cardFinding = resolveCardFinding(state.card, selectedIssue, findingRoute.findingId, findingRoute.findingSource);
+
+  useEffect(() => {
+    if (state.card?.status !== "ready" || selectedIssue || (window.location.hash !== "#record-at-a-glance" && !window.history.state?.returnCardEntry)) return;
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(window.history.state?.returnCardEntry || "record-card-heading");
+      target?.scrollIntoView({ behavior: "auto", block: "center" });
+      target?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [selectedIssue, state.card]);
+
   return (
     <>
+      {recordCardCandidate ? <RecordAtAGlance model={state.card || { status: "loading" }} legislatorId={legislator.id} scope={scope} onNavigate={navigateFinding} routePath={routePath} reviewMode={reviewMode} /> : null}
       <section className="scroll-mt-24 border-t border-stone-200 py-8" id="issues">
         <p className="eyebrow">Issue discovery</p>
         <h2 className="mt-2 font-serif text-4xl leading-tight text-stone-950">
@@ -217,17 +253,29 @@ export default function RepresentativeExperience({
           </p>
         ) : null}
         {state.status === "ready" ? (
+          <>
+          {state.presentationStatus !== "ready" ? <p className="mt-5 text-sm leading-6 text-stone-700" role="status">Issue summaries could not be verified. Recorded vote evidence remains available.</p> : null}
           <IssueOverviewGrid
+            compact={state.card?.status === "ready"}
+            presentationStatus={state.presentationStatus}
             mode={mode}
             onSelect={selectIssue}
             rows={displayedRows}
             selectedIssue={selectedIssue}
           />
+          </>
         ) : null}
       </section>
 
       {selectedRow ? (
         <IssueDetail
+          key={`${legislator.id}:${scope}:${selectedIssue}:${findingRoute.findingId || ""}`}
+          fetchEvidence={dataClient.fetchPositionEvidence}
+          cardFinding={cardFinding}
+          cardFindingRequested={Boolean(recordCardCandidate && findingRoute.findingId)}
+          cardFindingView={findingRoute.findingView}
+          routePath={routePath}
+          presentationStatus={state.presentationStatus}
           fixtureEvidence={fixtureData?.evidenceByDomain?.[selectedIssue] || null}
           issue={selectedIssue}
           legislatorId={legislator.id}

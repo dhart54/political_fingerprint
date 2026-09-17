@@ -1,0 +1,68 @@
+[
+  {
+    "finding_id": "m14f:pattern:china_linked_education_funding",
+    "finding_sha256": "36cf72e75d977926481b1a893d6508f6231499553fdbeaae0e3a2d6bcbbef262",
+    "semantic_source_id": "m14d:covered_china_linked_funding_exclusions",
+    "typed_semantic_direction": "opposition",
+    "action_ids": [
+      "house:119:1:120",
+      "house:119:1:313"
+    ],
+    "semantic_record_sha256": "7678c0488a809f2d5af2ba747d0139bcbeba3db5a16551dc499783218289f763",
+    "accepted_wording_sha256": "c6119af107a44c62df595e66593bd3e6ce13286e7fccb4008228d6a8af7e6608",
+    "accepted_wording_subject_sha256": "45500355c675fc5330b61988fe2a5f24c3967cf7aaaff846464561198fd26120",
+    "references": [
+      {
+        "role": "semantics",
+        "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json",
+        "document_sha256": "94cf74ee03af627183ef01c6a2838fff76f6f8d17a15eb13d08c66249a98a441"
+      },
+      {
+        "role": "wording",
+        "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json",
+        "document_sha256": "ad939bf156047865575425e2956ef58b295f762c5255402614d83a693bd2acfa"
+      },
+      {
+        "role": "display",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/human_site_integration_authority.json",
+        "document_sha256": "7a55acb4fc9f224d4c27e997cbb38e4fc7117eb4d141570e66bd7793c0f074c4"
+      }
+    ],
+    "disposition": "intentional_presentation_restriction",
+    "candidate_direction_projection": null,
+    "reason": "M14F deliberately supplies no direction display for non-mixed behavioral findings; M14G's accept-as-rendered authority explicitly retains two directionless patterns. Typed meaning exists upstream, but assigning a Supported/Opposed card section would override that accepted display restriction. No such override is authorized here."
+  },
+  {
+    "finding_id": "m14f:pattern:collective_bargaining_continuity",
+    "finding_sha256": "dd10f48b491c13ee53068983bf514f4b17ef4e8c1806f5f7dafc823db0234dea",
+    "semantic_source_id": "m14d:continuity_of_collective_bargaining",
+    "typed_semantic_direction": "support",
+    "action_ids": [
+      "house:119:1:332",
+      "house:119:2:216"
+    ],
+    "semantic_record_sha256": "b7ea50fa6272cc864bb7ad0a25c84b60bf0e88f8b2ce3fb7a4244b3aa31b7aa2",
+    "accepted_wording_sha256": "d7b9ea06e14157c70039135fd5768663c18ae43b0f3cc62c5db03eb4b171d680",
+    "accepted_wording_subject_sha256": "eaec4f73c5bf2103f98ad8710a1330a98c239c163d3bc9f80ef1cfeb52a200cf",
+    "references": [
+      {
+        "role": "semantics",
+        "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json",
+        "document_sha256": "94cf74ee03af627183ef01c6a2838fff76f6f8d17a15eb13d08c66249a98a441"
+      },
+      {
+        "role": "wording",
+        "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json",
+        "document_sha256": "ad939bf156047865575425e2956ef58b295f762c5255402614d83a693bd2acfa"
+      },
+      {
+        "role": "display",
+        "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/human_site_integration_authority.json",
+        "document_sha256": "7a55acb4fc9f224d4c27e997cbb38e4fc7117eb4d141570e66bd7793c0f074c4"
+      }
+    ],
+    "disposition": "intentional_presentation_restriction",
+    "candidate_direction_projection": null,
+    "reason": "M14F deliberately supplies no direction display for non-mixed behavioral findings; M14G's accept-as-rendered authority explicitly retains two directionless patterns. Typed meaning exists upstream, but assigning a Supported/Opposed card section would override that accepted display restriction. No such override is authorized here."
+  }
+]
