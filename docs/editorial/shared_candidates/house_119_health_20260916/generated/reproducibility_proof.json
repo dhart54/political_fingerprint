@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "fd397cd62e130bdb98c1b0a7fe13a253eda09286502956ca555901d4ff3d7b23",
-  "source_capture_sha256": "868ddf89b1841e864524f62129371819db6686facb4d9d83ef59d4b9a182cb73",
-  "core_sha256": "835c79ab91d86106406dbc270043e1fdff317d9e3c2bf8dfb308252827ed18cf",
-  "compiled_sha256": "e43c58d3f879a42e632d45d3352594d14d6a8d119d8b6a857987b3f1ba0c738b",
-  "readable_sha256": "f5b0a33e38315adac3e10d18eddee13bbdd1c8e4d769598e75125d43aca7edf4",
+  "input_sha256": "23a049874f3c715a1665a0b8a3a58262556fe2be5ea28c994384e152da842852",
+  "source_capture_sha256": "ed2015a8f10d64d4df90d35ee93ba51b4153ae367d906c25037876e8b3b44e9d",
+  "core_sha256": "98ff8fad819bc208aaad1d8dc10d562127c7383005e7bc012a7442c1e19a5592",
+  "compiled_sha256": "ea201a978786a2247c9f510dae8b6bf77e013ab91c7432877554e20072e6c6e8",
+  "readable_sha256": "864f31e0de3a64e9db41f88731a5931d192fc0ade1b82e9ef669205d7826e497",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -318,7 +318,7 @@
     },
     {
       "action_id": "house:119:2:45",
-      "shared_sha256": "92fb6339b57ebb7233cd3f77b109a928e9b01ee4174b46a85771d8aae192975d",
+      "shared_sha256": "e3c6b6940c753b039c6e2106aa2091399b4d01323ce2da4fa0b188d0e6898671",
       "choices": [
         {
           "member_id": "F000477",
@@ -373,6 +373,186 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed House passage of the complete H.R.10326 information-sharing proposal",
           "source_id": "clerk:119:2:310"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:53",
+      "shared_sha256": "790826110b3c0363a102d1108b12e3f80185f3cc0830a892a18153a950080f4a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate amendments to H.R. 7148 as a whole",
+          "source_id": "clerk:119:2:53"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate amendments to H.R. 7148 as a whole",
+          "source_id": "clerk:119:2:53"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:308",
+      "shared_sha256": "ae15d5ff227609bfa784f157f85aadc06655fef88ede48409fed3cd0e5863f70",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in all Senate amendments to H.R. 5334",
+          "source_id": "clerk:119:2:308"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in all Senate amendments to H.R. 5334",
+          "source_id": "clerk:119:2:308"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:25",
+      "shared_sha256": "fc1957573293e1e332b946cf237f6ea5f2c94d92f2f61a88096123c0e9fdb8fb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 471 as a whole",
+          "source_id": "clerk:119:1:25"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 471 as a whole",
+          "source_id": "clerk:119:1:25"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:27",
+      "shared_sha256": "0fbc36086f9b8b2202b43a00c1ee245fd657ee9b9ad510c2276a35a19e2f7f81",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 21’s care and enforcement requirements as a whole",
+          "source_id": "clerk:119:1:27"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 21’s care and enforcement requirements as a whole",
+          "source_id": "clerk:119:1:27"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:32",
+      "shared_sha256": "fce7979b7582d3577c1dd83800a6499871e07024d0850536fe7d2fd6f517625f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed joint overdose-death certification condition for H.R. 27’s effective date",
+          "source_id": "clerk:119:1:32"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed joint overdose-death certification condition for H.R. 27’s effective date",
+          "source_id": "clerk:119:1:32"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:33",
+      "shared_sha256": "c756f6cc50d2e220325a09330f48dc13ee3f9964ab1c0497f29cc2937fd33afc",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 27’s scheduling, research and penalty package",
+          "source_id": "clerk:119:1:33"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 27’s scheduling, research and penalty package",
+          "source_id": "clerk:119:1:33"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:51",
+      "shared_sha256": "84ab01e95610fdb193b764bb5f82bc2a825f31fc01f6be1f80f718e5f1846aec",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R. 695 as a whole",
+          "source_id": "clerk:119:1:51"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R. 695 as a whole",
+          "source_id": "clerk:119:1:51"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:68",
+      "shared_sha256": "f8c7dbc35501a4baa686e88b1573ea7a8d232257c21cf33c3c8bd557c9c7a869",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1156’s enforcement-period and funding-rescission package",
+          "source_id": "clerk:119:1:68"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 1156’s enforcement-period and funding-rescission package",
+          "source_id": "clerk:119:1:68"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:70",
+      "shared_sha256": "dc5f3e259c48e8c049a595af74d4cf3b836feee243b625d45d977fa1a77d18b5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1968’s full funding and extensions package",
+          "source_id": "clerk:119:1:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1968’s full funding and extensions package",
+          "source_id": "clerk:119:1:70"
         }
       ]
     }
