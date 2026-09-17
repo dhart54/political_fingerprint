@@ -7,6 +7,7 @@ import IssueDiscoveryControls from "./IssueDiscoveryControls";
 import IssueOverviewGrid from "./IssueOverviewGrid";
 import RecordAtAGlance from "./RecordAtAGlance";
 import { projectRecordCard, recordCardUrl, resolveCardFinding } from "../lib/recordCard.mjs";
+import { projectSharedRecordCard } from "../lib/sharedRecordCard.mjs";
 import {
   fetchEditorialPresentations,
   fetchPositions,
@@ -74,7 +75,8 @@ export default function RepresentativeExperience({
             ]);
         if (!Array.isArray(positions?.positions) || (positions.legislator_id && positions.legislator_id !== legislator.id) || (positions.scope && positions.scope !== scope)) throw new Error("Position identity or shape mismatch");
         if (presentationStatus === "ready") presentationStatus = issuePresentationStatus(presentations, { legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id }, scope);
-        const card = recordCardCandidate ? await projectRecordCard({ candidate: recordCardCandidate, payload: presentations, legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id, scope, requestStatus: presentationStatus }) : null;
+        const cardArgs = { candidate: recordCardCandidate, payload: presentations, legislatorId: legislator.id, memberBioguideId: legislator.bioguide_id, scope, requestStatus: presentationStatus };
+        const card = recordCardCandidate?.sharedPolicy ? await projectSharedRecordCard(cardArgs) : recordCardCandidate ? await projectRecordCard(cardArgs) : null;
         if (active) {
           setState({
             status: "ready",

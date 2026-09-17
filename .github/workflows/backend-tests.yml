@@ -116,8 +116,9 @@ jobs:
         run: |
           node scripts/build_record_card_review.mjs --check
           cd frontend
-          node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs
-          PLAYWRIGHT_PRODUCTION_BUILD=1 npx playwright test tests/record-card.spec.mjs tests/record-card-release.spec.mjs
+          node --test lib/recordCard.test.mjs lib/editorialPresentation.test.mjs lib/sharedRecordCard.test.mjs
+          node ../scripts/prove_record_card_reproducibility.mjs --check
+          PLAYWRIGHT_PRODUCTION_BUILD=1 npx playwright test tests/record-card.spec.mjs tests/record-card-release.spec.mjs tests/shared-record-card.spec.mjs
 
       - name: Validate M15B comparison semantics and governed limitation rendering
         run: |

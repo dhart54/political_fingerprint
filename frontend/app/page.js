@@ -21,7 +21,7 @@ const EMPTY_ROUTE = {
 };
 const DEFAULT_DATA_CLIENT = { fetchLegislatorProfile };
 
-export default function HomePage({ reviewCandidate = null, reviewProfiles = null, dataClient = DEFAULT_DATA_CLIENT }) {
+export default function HomePage({ reviewCandidate = null, reviewProfiles = null, reviewDataSource = "snapshot", dataClient = DEFAULT_DATA_CLIENT }) {
   const [routeReady, setRouteReady] = useState(false);
   const [route, setRoute] = useState(EMPTY_ROUTE);
   const [routeNavigation, setRouteNavigation] = useState("initial");
@@ -36,7 +36,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
   useEffect(() => {
     function syncFromLocation(navigation = "history") {
       setRoute(parsePassARouteState(window.location.search));
-      setRoutePath(window.location.pathname);
+      setRoutePath(window.location.pathname + (reviewCandidate?.sharedPolicy ? `?policy=shared&data=${reviewDataSource}` : ""));
       setRouteNavigation(navigation);
       setFinderOpen(false);
       setRouteReady(true);
@@ -45,7 +45,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
     const handlePopState = () => syncFromLocation("history");
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
+  }, [reviewCandidate?.sharedPolicy, reviewDataSource]);
 
   useEffect(() => {
     let active = true;
@@ -133,7 +133,7 @@ export default function HomePage({ reviewCandidate = null, reviewProfiles = null
         selectedIssue={route.issue}
       />
 
-      {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">Local release review · recorded snapshot, no live data</p> : null}
+      {reviewCandidate ? <p className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-semibold text-amber-950">{reviewCandidate.sharedPolicy ? `Local candidate rule review · ${reviewDataSource === "live" ? "live read API, no snapshot fallback" : "recorded snapshot, no live data"}` : "Local release review · recorded snapshot, no live data"}</p> : null}
       <div className={`mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10 ${compactOpening ? "py-3 sm:py-5" : "py-8 lg:py-10"}`}>
         {!routeReady || legislatorState.status === "loading" ? (
           <p className="py-20 text-center text-base text-stone-700" role="status">
