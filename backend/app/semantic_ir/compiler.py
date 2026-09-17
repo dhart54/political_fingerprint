@@ -95,7 +95,7 @@ def _validate_shared_semantics(shared: dict[str, Any]) -> None:
     accepted_ids = {
         action_id
         for action_id, action in actions.items()
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     }
     for action_id, action in actions.items():
         if action["eligibility"].get("parent_context_used") is not False:
@@ -190,12 +190,12 @@ def _coverage(
     accepted = [
         action
         for action in shared["actions"]
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     ]
     controls = [
         action
         for action in shared["actions"]
-        if action["eligibility"]["decision"] != "accepted"
+        if action["eligibility"]["decision"] not in {"accepted", "proposed"}
     ]
     in_service = [
         action
@@ -224,7 +224,7 @@ def _coverage(
             for action_id in episode["action_ids"]
             if any(
                 action["action_id"] == action_id
-                and action["eligibility"]["decision"] == "accepted"
+                and action["eligibility"]["decision"] in {"accepted", "proposed"}
                 for action in shared["actions"]
             )
         ]
@@ -477,7 +477,7 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
     accepted_ids = {
         action_id
         for action_id, action in actions.items()
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     }
     blocked_action_ids = {
         action_id
@@ -872,7 +872,7 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
         )
 
     has_nonaccepted_actions = any(
-        action["eligibility"]["decision"] != "accepted" for action in shared["actions"]
+        action["eligibility"]["decision"] not in {"accepted", "proposed"} for action in shared["actions"]
     )
     if (
         coverage["missing_evidence_actions"]
@@ -934,9 +934,13 @@ def compile_semantic_ir(payload: dict[str, Any]) -> dict[str, Any]:
         raise SemanticCompilerInputError(
             f"compiler input missing: {', '.join(sorted(missing))}"
         )
+    candidate = payload.get("review_state") == "candidate_pending_external_semantic_review"
+    if any(a["eligibility"]["decision"] == "proposed" for a in payload["shared_semantics"]["actions"]) and not candidate:
+        raise SemanticCompilerInputError("proposed eligibility requires explicit candidate preparation")
     _validate_shared_semantics(payload["shared_semantics"])
     results = [_compile_member(payload, member) for member in payload["members"]]
     return {
+        **({"review_state": "candidate_pending_external_semantic_review"} if candidate else {}),
         "members": results,
         "source_render_constraints": copy.deepcopy(
             payload["shared_semantics"].get("source_render_constraints", [])

@@ -1,0 +1,291 @@
+{
+  "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "64c20cdec727ab3aa47fd2763bb2203d4d88b6943a9fb8765e9a59ab8a6f9ff1",
+    "backend/app/semantic_ir/shared_corpus.py": "c6fa976e60f2f905716fd896ce5b03d7701a39cf677edb5ff0f9ae043e3fec58",
+    "backend/app/semantic_ir/compiler.py": "7af9b453acc8a69cc703418c4dd411a98921ca3ab1e588387f24521db4a4c748",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "c62ce6e9ce4876307898612921bcfb6bfd6aab988dbffec7771e7a3a1a311ebd",
+    "backend/app/semantic_ir/validation.py": "7216534eeb430677d2acd86f1808cb08f3d94ccfd021ff4f29c02b3bf12d3a86",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "110dd11dec2fe8345498f1c45ea2b0d3595929e6d8d6666cbd2a7fa04359efa8"
+  },
+  "input_sha256": "4151bfe3a44487712d00dabae780fb3003b7fb1f588c7e4f7e8dfd63ce8f9925",
+  "source_capture_sha256": "dcc12e80e04e3d24f390d9ac3e7289d6ae1a9ff3843b690417eceaadc947e46a",
+  "core_sha256": "0d09385645572c6abb39ba2749ee081eb518f6f9c37311af8e2440f1370b8717",
+  "compiled_sha256": "36c94987430f640c6f8f583e6899fa1d29bc8c56b19e9595d50a128de3a067b7",
+  "readable_sha256": "76a11be6aff8f7d3ee7ab95b056bd799697f078c268d15dfd90e175ba73735ed",
+  "identical_replay": true,
+  "real_member_reuse": [
+    {
+      "action_id": "house:119:1:150",
+      "shared_sha256": "32d5b7a19edbb5faf4e111e6bc4c3f684150c0142041621e24225f2b90cc3675",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding the Pettersen Medicaid budget-neutrality codification amendment to H.R. 2483",
+          "source_id": "clerk:119:1:150"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adding the Pettersen Medicaid budget-neutrality codification amendment to H.R. 2483",
+          "source_id": "clerk:119:1:150"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:151",
+      "shared_sha256": "66e82cc7ce4a9110526b06e3d9039bba3fc5b2b79b378ff915bb6925e6be5a50",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 2483 as put to the chamber",
+          "source_id": "clerk:119:1:151"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 2483 as put to the chamber",
+          "source_id": "clerk:119:1:151"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:306",
+      "shared_sha256": "1bd6bb3e7306459f3de9a8e56a24a576133d5d1ce33128b56d5a2578ce149201",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 5348 as amended",
+          "source_id": "clerk:119:1:306"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:306"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:349",
+      "shared_sha256": "3c71910b9099434fc2e01b12c0bb36b8d7ca637dd51a6fb1328155c3274896da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6703 as put to the chamber",
+          "source_id": "clerk:119:1:349"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6703 as put to the chamber",
+          "source_id": "clerk:119:1:349"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:362",
+      "shared_sha256": "525ad237caab6293dc5f3d7f4ab8c24d27c64d199390142d189f80a9e8f7a413",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 498 as put to the chamber",
+          "source_id": "clerk:119:1:362"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 498 as put to the chamber",
+          "source_id": "clerk:119:1:362"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:37",
+      "shared_sha256": "a80aa6c7e6b3584e5c344c33d2f95a5aaf142aa4718a190f3084c53706ebcdd8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6945 as put to the chamber",
+          "source_id": "clerk:119:2:37"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 6945 as put to the chamber",
+          "source_id": "clerk:119:2:37"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:128",
+      "shared_sha256": "6b03993cf2472b8db17a8c829b38eda9f7e6298b5635ea980fb6a3cf81ad1e20",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 2493",
+          "source_id": "clerk:119:2:128"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 2493",
+          "source_id": "clerk:119:2:128"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:139",
+      "shared_sha256": "6373a464d13985c24962abcfb7d5a9b7cdf70e16222bdb3878f8fadf21725783",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 227 as amended",
+          "source_id": "clerk:119:2:139"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 227 as amended",
+          "source_id": "clerk:119:2:139"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:198",
+      "shared_sha256": "4fabedaff6774bcdea0fa99d01d73b19dbc62e9b5a64b71ca6782cb9fcc7bd5a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:250",
+      "shared_sha256": "ca91cf6d395fe7ebf0c57c20fd9597d39440aec0afdbff1fb9e46f3081a4f201",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 4541 as amended",
+          "source_id": "clerk:119:2:250"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:250"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:283",
+      "shared_sha256": "f05c5c4f271463a635287cc6a093476163ac61e2bed5c0be50fb7d4560a68dd6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 8884 as put to the chamber",
+          "source_id": "clerk:119:2:283"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 8884 as put to the chamber",
+          "source_id": "clerk:119:2:283"
+        }
+      ]
+    }
+  ],
+  "differing_real_choices_exercised": true,
+  "controlled_raw_update": {
+    "interpretation_unchanged": true,
+    "cutoff_unchanged": "2026-07-23"
+  },
+  "controlled_new_interpretation_input": {
+    "action_id": "house:119:1:362",
+    "requires_explicit_authoring_change": true,
+    "acceptance_conferred": false
+  },
+  "controlled_shared_correction": {
+    "impact": {
+      "changed_action_ids": [
+        "house:119:1:362"
+      ],
+      "affected_projections": [
+        {
+          "member_id": "F000477",
+          "action_ids": [
+            "house:119:1:362"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "action_ids": [
+            "house:119:1:362"
+          ]
+        }
+      ],
+      "affected_findings": [
+        {
+          "member_id": "F000477",
+          "proposition_ids": [
+            "prop:1ac46415c0f10187"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "proposition_ids": [
+            "prop:c7fe7d76aa0f8075"
+          ]
+        }
+      ],
+      "acceptance_conferred": false
+    },
+    "stale_projections_rejected": [
+      "F000477",
+      "M001184"
+    ],
+    "historical_core_unchanged": true
+  }
+}

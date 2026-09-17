@@ -12,7 +12,10 @@ class CompiledSemanticIRError(ValueError):
 def validate_compiled_ir(compiled: dict[str, Any]) -> dict[str, int]:
     """Validate identities, references, ownership, and action accounting."""
 
-    if set(compiled) != {"members", "source_render_constraints"}:
+    expected = {"members", "source_render_constraints"}
+    if compiled.get("review_state") == "candidate_pending_external_semantic_review":
+        expected.add("review_state")
+    if set(compiled) != expected:
         raise CompiledSemanticIRError("compiled IR has unexpected top-level fields")
     proposition_count = 0
     for member in compiled["members"]:

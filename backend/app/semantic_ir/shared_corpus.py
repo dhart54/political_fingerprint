@@ -35,6 +35,11 @@ MEMBER_FIELDS = {
 }
 MEANING_FIELDS = {
     "accepted_exact_action_meaning",
+    "candidate_exact_action_meaning",
+    "choice_meanings",
+    "candidate_short_description",
+    "candidate_shared_limitations",
+    "claim_source_map",
     "action_meaning",
     "action_meaning_override",
     "exact_action_basis",
@@ -120,8 +125,13 @@ def validate_shared_action_core(root: Path, artifact: dict[str, Any]) -> None:
         raise SharedCorpusValidationError(
             f"Shared Action Core contains member fields: {sorted(forbidden)}"
         )
+    candidate = artifact["authoritative_for_new_editorial_work"] is False
     identities: dict[tuple[str, str], str] = {}
     for action in artifact["actions"]:
+        if candidate != ("candidate_exact_action_meaning" in action):
+            raise SharedCorpusValidationError("candidate meaning and corpus authority disagree")
+        if candidate and not {x["source_id"] for x in action["claim_source_map"]} <= {x["source_id"] for x in action["operative_meaning_source_identities"]}:
+            raise SharedCorpusValidationError("candidate claim source is not operative evidence")
         if action["action_core_sha256"] != sealed_digest(action, "action_core_sha256"):
             raise SharedCorpusValidationError(
                 f"shared action digest differs: {action['action_id']}"
@@ -170,7 +180,7 @@ def validate_shared_action_core(root: Path, artifact: dict[str, Any]) -> None:
                 f"Semantic IR source does not resolve to governed identity: {action['action_id']}"
             )
         key = (action["exact_action_identity"], source_digest)
-        meaning_digest = digest(action["accepted_exact_action_meaning"])
+        meaning_digest = digest(action.get("candidate_exact_action_meaning") if candidate else action["accepted_exact_action_meaning"])
         if key in identities and identities[key] != meaning_digest:
             raise SharedCorpusValidationError(
                 "same exact action/source version has conflicting current meanings"
@@ -199,6 +209,11 @@ def validate_shared_issue_mapping(
         raise SharedCorpusValidationError(
             f"Shared Issue Mapping contains forbidden fields: {sorted(forbidden)}"
         )
+    if artifact["authoritative_for_new_editorial_work"] != core["authoritative_for_new_editorial_work"]:
+        raise SharedCorpusValidationError("issue mapping and core authority disagree")
+    candidate = core["authoritative_for_new_editorial_work"] is False
+    if candidate and any(row["eligibility"]["decision"] == "accepted" for row in artifact["action_mappings"]):
+        raise SharedCorpusValidationError("candidate mapping cannot claim accepted eligibility")
     core_ids = {row["action_id"] for row in core["actions"]}
     mapping_ids = [row["action_id"] for row in artifact["action_mappings"]]
     if len(mapping_ids) != len(set(mapping_ids)):
@@ -330,7 +345,7 @@ def adapt_to_semantic_ir_input(
                 "eligibility": {
                     "decision": row["eligibility"]["decision"],
                     "domain": mapping["domain_id"],
-                    "exact_action_basis": action["accepted_exact_action_meaning"],
+                    "exact_action_basis": action.get("candidate_exact_action_meaning", action.get("accepted_exact_action_meaning")),
                     "parent_context_used": row["eligibility"]["parent_context_used"],
                 },
                 "episode_id": row["episode_id"],
@@ -341,6 +356,7 @@ def adapt_to_semantic_ir_input(
             }
         )
     return {
+        **({"review_state": "candidate_pending_external_semantic_review"} if core["authoritative_for_new_editorial_work"] is False else {}),
         "case_scope": copy.deepcopy(mapping["semantic_ir_case_scope"]),
         "members": [
             {
@@ -372,6 +388,27 @@ def adapt_to_semantic_ir_input(
             ),
             "trait_relationships": copy.deepcopy(mapping["trait_relationships"]),
         },
+    }
+
+
+def candidate_update_impact(before_core, after_core, projections, compiled):
+    """Identify regeneration dependencies without mutating or accepting versions."""
+    before = {a["action_id"]: a["action_core_sha256"] for a in before_core["actions"]}
+    after = {a["action_id"]: a["action_core_sha256"] for a in after_core["actions"]}
+    changed = {aid for aid in before.keys() | after.keys() if before.get(aid) != after.get(aid)}
+    return {
+        "changed_action_ids": sorted(changed),
+        "affected_projections": [
+            {"member_id": p["member_id"], "action_ids": sorted(changed & {a["action_id"] for a in p["actions"]})}
+            for p in projections if changed & {a["action_id"] for a in p["actions"]}
+        ],
+        "affected_findings": [
+            {"member_id": m["member_id"], "proposition_ids": [p["proposition_id"]
+             for p in m["proposition_graph"]["propositions"] if changed & set(p["evidence_action_ids"])]}
+            for m in compiled["members"]
+            if any(changed & set(p["evidence_action_ids"]) for p in m["proposition_graph"]["propositions"])
+        ],
+        "acceptance_conferred": False,
     }
 
 
