@@ -30,6 +30,8 @@
     "house:119:1:166",
     "house:119:1:168",
     "house:119:1:172",
+    "house:119:1:180",
+    "house:119:1:182",
     "house:119:1:190",
     "house:119:1:25",
     "house:119:1:27",
@@ -71,11 +73,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 174,
-      "exact_action_ineligible": 108,
-      "interpreted_substantive_directional": 41,
+      "procedural_context": 176,
+      "exact_action_ineligible": 113,
+      "interpreted_substantive_directional": 43,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 345
+      "source_unresolved": 336
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -84,15 +86,15 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 41,
-    "directional_substantive_actions": 41,
+    "substantive_eligible_actions": 43,
+    "directional_substantive_actions": 43,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 174,
+    "procedural_context_actions": 176,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 108,
-    "unresolved_boundary_cases": 345,
-    "independent_episode_count": 36,
-    "multi_action_episode_count": 5,
+    "exact_action_ineligible_actions": 113,
+    "unresolved_boundary_cases": 336,
+    "independent_episode_count": 37,
+    "multi_action_episode_count": 6,
     "mechanism_types": [
       "amendment",
       "concurrence",
@@ -102,12 +104,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 41,
-      "substantive_actions": 41,
+      "ready_substantive_actions": 43,
+      "substantive_actions": 43,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "345 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "336 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -183,7 +185,9 @@
         "house:119:1:188",
         "house:119:1:189",
         "house:119:1:194",
+        "house:119:1:195",
         "house:119:1:197",
+        "house:119:1:198",
         "house:119:1:202",
         "house:119:1:211",
         "house:119:1:221",
@@ -373,6 +377,11 @@
         "house:119:1:174",
         "house:119:1:183",
         "house:119:1:184",
+        "house:119:1:191",
+        "house:119:1:192",
+        "house:119:1:193",
+        "house:119:1:196",
+        "house:119:1:201",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -421,6 +430,8 @@
         "house:119:1:166",
         "house:119:1:168",
         "house:119:1:172",
+        "house:119:1:180",
+        "house:119:1:182",
         "house:119:1:190",
         "house:119:1:281",
         "house:119:1:285",
@@ -450,17 +461,8 @@
         "house:119:2:289"
       ],
       "source_unresolved": [
-        "house:119:1:180",
-        "house:119:1:182",
-        "house:119:1:191",
-        "house:119:1:192",
-        "house:119:1:193",
-        "house:119:1:195",
-        "house:119:1:196",
-        "house:119:1:198",
         "house:119:1:199",
         "house:119:1:200",
-        "house:119:1:201",
         "house:119:1:203",
         "house:119:1:204",
         "house:119:1:205",
@@ -797,11 +799,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "41 proposed source-mapped inputs, not accepted eligibility. The remaining 345 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "43 proposed source-mapped inputs, not accepted eligibility. The remaining 336 are an unfinished discovery backlog, not asserted Health votes."
   },
-  "episode_completeness": "36 candidate episodes cover 41 supplied actions, including 5 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "37 candidate episodes cover 43 supplied actions, including 6 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "c04326037d01a03d0ee5623d651974a98a45a08dab4cd3f8b04e06f2d10da374",
+  "universe_subject_sha256": "7f35573d147d816deb29841939f9be144b8999450bf9a262c1ea670014ade3d4",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -11661,8 +11663,8 @@
       "date": "2025-06-25",
       "measure": "bill_119_hr_3944",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Carter en-bloc No.2 combined report amendments1,14,15,19,25,28 and32, as expressly designated in the June25 floor Record. Houchin amendment14 reduced the Veterans Benefits Administration General Operating Expenses account by $5 million and increased the Medical Services advance appropriation by $5 million; the latter becomes available October1,2026. The report describes memory care among its purposes, but the operative instruction increases the broader medical-services account without reserving the money exclusively for memory care. Arrington amendment1 reduced NATO Security Investment Program funding by $4.1 million and increased Air Force military construction by $4.1 million, including its planning-and-design limit by the same amount. The nested limit is not an additional $4.1 million transfer. Kiggans amendments15 and19 each reduced and increased the same military account by $1 million; Ogles amendment25 did the same to advance Medical Community Care; Perry amendment28 increased and reduced advance Medical Services by $1 million; Shreve amendment32 reduced and increased Army National Guard military construction by $55 million. These entries net to zero in their respective accounts. Their report purposes concern unaccompanied housing, F-35 basing, in-home care, elective stellate ganglion block therapy and a maintenance hangar. They do not themselves add those amounts to spending or create an individual treatment entitlement. The exact positive medical-services transfer establishes proposed Health membership; the military provisions remain part of the choice.",
       "source": {
         "source_id": "clerk:119:1:180",
         "url": "https://clerk.house.gov/evs/2025/roll180.xml",
@@ -11670,7 +11672,7 @@
         "governed_bytes_sha256": "a8dbad133b18ab93a861dc4e6a5ddcd4730d7277a2b251f4a424114b66cbe28f",
         "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3944:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3944",
       "member_action": "nay",
@@ -11679,9 +11681,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Carter en-bloc No.2 combined report amendments1,14,15,19,25,28 and32, as expressly designated in the June25 floor Record. Houchin amendment14 reduced the Veterans Benefits Administration General Operating Expenses account by $5 million and increased the Medical Services advance appropriation by $5 million; the latter becomes available October1,2026. The report describes memory care among its purposes, but the operative instruction increases the broader medical-services account without reserving the money exclusively for memory care. Arrington amendment1 reduced NATO Security Investment Program funding by $4.1 million and increased Air Force military construction by $4.1 million, including its planning-and-design limit by the same amount. The nested limit is not an additional $4.1 million transfer. Kiggans amendments15 and19 each reduced and increased the same military account by $1 million; Ogles amendment25 did the same to advance Medical Community Care; Perry amendment28 increased and reduced advance Medical Services by $1 million; Shreve amendment32 reduced and increased Army National Guard military construction by $55 million. These entries net to zero in their respective accounts. Their report purposes concern unaccompanied housing, F-35 basing, in-home care, elective stellate ganglion block therapy and a maintenance hangar. They do not themselves add those amounts to spending or create an individual treatment entitlement. The exact positive medical-services transfer establishes proposed Health membership; the military provisions remain part of the choice.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:180",
@@ -11691,10 +11693,10 @@
           "verification": "recaptured_official_source"
         },
         {
-          "source_id": "govinfo:hr3944eh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm",
-          "raw_sha256": "3bb75a3b9173dea14bed28b8d60a1127b23890f3dd1cfe993183d360bf11e2d2",
-          "governed_bytes_sha256": "dfbdd32827acf45f22ac7eaee1f165961550dc36a4a3c1dcb899a43b78ffa58f"
+          "source_id": "congressional-record:2025-06-25",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf",
+          "raw_sha256": "f7408fc92908be3ddc2138b091a1849cf386677eabc81ac3f05c97db4afb3710",
+          "governed_bytes_sha256": "e382828324b1dd9c723f9d1341caac6596901e2a3d48242bb700008b3c315b84"
         },
         {
           "source_id": "govinfo:hres530rh",
@@ -11713,24 +11715,30 @@
           "url": "https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf",
           "raw_sha256": "b7e738561c2da621d263483d8186ac24db8bf6ea4b174300d28c884133e24e80",
           "governed_bytes_sha256": "79822202ea2c36681b23bcebe3c6b3e8a51a969c7c5ff0f920ca8de970ef6ae3"
-        },
-        {
-          "source_id": "congressional-record:2025-06-25",
-          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf",
-          "raw_sha256": "f7408fc92908be3ddc2138b091a1849cf386677eabc81ac3f05c97db4afb3710",
-          "governed_bytes_sha256": "e382828324b1dd9c723f9d1341caac6596901e2a3d48242bb700008b3c315b84"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:180",
+        "source_ids": [
+          "clerk:119:1:180",
+          "congressional-record:2025-06-25",
+          "govinfo:hres530rh",
+          "govinfo:hrpt167",
+          "house-rules:rcp119-5"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:180",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Resume exact H.R.3944 Carter en-bloc No.2 review using captured H.Res.530 RH, Report119-167, June25 Record PDF pages29-32 and RCP119-5 pages1,2,3,5,9,12,30-33. The Record identifies amendments1,14,15,19,25,28,32. Map every page/line instruction: distinguish the $5-million VBA-to-medical-services transfer, $4.1-million NATO-to-Air-Force transfer and net-zero entries. Complete operative-versus-stated-purpose analysis before authoring; do not borrow final-passage meaning.",
-        "source_preparation": "Official sources captured and preliminary navigation performed; substantive exact-action membership review remains incomplete. No source is asserted unavailable."
-      }
+        "shared_review_record_sha256": "c69e5c7fce86a472cf875993e012d2413374c1649c559ce66253823848f85b34"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:181",
@@ -11783,8 +11791,8 @@
       "date": "2025-06-25",
       "measure": "bill_119_hr_3944",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.3944 EH combined FY2026 military construction, family housing, VA benefits and medical accounts, related agencies and general funding conditions. It included $75 million for planning and design of military child-development centers across three services, with expenditure plans, and retained construction, cemeteries, veterans housing loans, appeals, administration and Armed Forces Retirement Home funding. Its VA medical-services appropriation was $59.863 billion after the adopted $5-million transfer, available October1,2026 through September30,2027, with $2 billion available through September2028. Specified service-connected, lower-income and special-needs veterans retain priority; this is not unrestricted new eligibility. Medical Support and Compliance and Medical Facilities received $12 billion and $11.7 billion in advance funds, respectively, with specified longer-availability portions. Medical and prosthetic research received $945 million, with requirements concerning female prosthetics and toxic exposure. Toxic Exposures Fund appropriations separately included $52.676 billion available October1,2025 and $51.742 billion available October1,2026.\n\nMedical Community Care received $3 billion through September2027 while $3 billion of a previous $34-billion appropriation becoming available October1,2025 was cancelled; a separate $38.7-billion advance appropriation begins October1,2026, with $2 billion available an additional year. The cancellation and replacement are not described as either a net new $3 billion or an unqualified $3-billion cut. Section261 separately rescinded $15.889 billion of unobligated prior VHA balances, including collections, except medical/prosthetic research and specified emergency funds, with a spending plan. The $970-million BRAVE rental-assistance appropriation depended on separate authorizing legislation; it did not itself establish a funded benefit available immediately to every veteran. Electronic-health-record modernization funding included a 25-percent withholding provision with inconsistent dates in the EH text: withholding until July1,2026 and certification deadlines before July1,2027. This candidate preserves that discrepancy rather than supplying a corrected date.\n\nThe package retained conditional inter-account and VA/Defense joint-facility transfers, collection/reimbursement rules, rural Alaska and tribal/federally qualified health-center care, suicide-hotline requirements, and a bar on using these funds to increase care wait times. It permitted fertility counseling/assisted reproduction for a covered veteran or spouse and adoption reimbursement for a covered veteran, limited to a service-connected disability preventing procreation without fertility treatment. Section233 incorporated DoD benefit terms, removed specified embryo-storage duration limits, and applied the embryo-research restrictions in Public Law115-141 divisionH section508. VA’s pre-vote 2024 implementation instruction allowed unmarried covered veterans and donor gametes/embryos at no cost to VA, but retained the service-connected condition and excluded treatment of a non-spouse partner or gestational surrogate. These were existing implementation terms, not a new expansion enacted by this House vote. Adoption expenses remained subject to incorporated reimbursement limits and requirements; VA’s implementing rule explains the $2,000-per-child/$5,000-annual caps and two-year application periods. The bill specifies adoptions finalized after its enactment.\n\nOther incorporated provisions concerned marriage/family-therapist qualifications, child care during covered intensive care and travel without the old pilot’s two-year duration limit, and major-construction budget transparency. The incorporated coastwise merchant-seaman provision concerned honorary recognition and decorations, not general VA benefits. The package retained qualified breast-screening guidance for the specified period ending January1,2026, female-specific care use of identified prior funds, canine, feline and non-human-primate research certification and a September20,2026 phaseout requirement, Social Security number authentication limits and exceptions, and a rehabilitation-counselor caseload target.\n\nSection255 barred funding the September9,2022 reproductive-health rule and successor/substantially similar rules and barred abortion funding except rape, incest or a physician-certified physical danger of death; the named rule had permitted care when life or health was endangered and removed counseling exclusions. Section256 barred Act funding for surgery or hormone therapy for gender-affirming care. Section257 barred using Act funds during October1,2025–September30,2026 to implement the named February16,2023 non-VA special-mode transportation payment rule, which the Federal Circuit had already set aside in December2024; no current rate reversal is inferred. The package also barred funding the named VHA COVID-staff-vaccination program, restricted services for unlawfully present persons only when they were ineligible under VA laws, and required a judicial dangerousness finding before specified VA-incompetency-based firearms reporting. General provisions included an aircrew-cancer study, retained the named smoke-free workplace policy, barred reductions in Crisis Line/other suicide-program staffing, hours or services, and blocked enforcement of specified VA medical-marijuana recommendation/referral/form prohibitions. The latter did not legalize marijuana federally or fund its supply. All these care, benefit and restriction provisions remained part of one broader appropriations choice; no individual rider preference or actual health outcome follows from the recorded vote.",
       "source": {
         "source_id": "clerk:119:1:182",
         "url": "https://clerk.house.gov/evs/2025/roll182.xml",
@@ -11792,7 +11800,7 @@
         "governed_bytes_sha256": "448caadc445db96e41e2c4e1e6458f47d4b9a6720e3a34c4207416cfd099b858",
         "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3944:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3944",
       "member_action": "nay",
@@ -11801,9 +11809,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.3944 EH combined FY2026 military construction, family housing, VA benefits and medical accounts, related agencies and general funding conditions. It included $75 million for planning and design of military child-development centers across three services, with expenditure plans, and retained construction, cemeteries, veterans housing loans, appeals, administration and Armed Forces Retirement Home funding. Its VA medical-services appropriation was $59.863 billion after the adopted $5-million transfer, available October1,2026 through September30,2027, with $2 billion available through September2028. Specified service-connected, lower-income and special-needs veterans retain priority; this is not unrestricted new eligibility. Medical Support and Compliance and Medical Facilities received $12 billion and $11.7 billion in advance funds, respectively, with specified longer-availability portions. Medical and prosthetic research received $945 million, with requirements concerning female prosthetics and toxic exposure. Toxic Exposures Fund appropriations separately included $52.676 billion available October1,2025 and $51.742 billion available October1,2026.\n\nMedical Community Care received $3 billion through September2027 while $3 billion of a previous $34-billion appropriation becoming available October1,2025 was cancelled; a separate $38.7-billion advance appropriation begins October1,2026, with $2 billion available an additional year. The cancellation and replacement are not described as either a net new $3 billion or an unqualified $3-billion cut. Section261 separately rescinded $15.889 billion of unobligated prior VHA balances, including collections, except medical/prosthetic research and specified emergency funds, with a spending plan. The $970-million BRAVE rental-assistance appropriation depended on separate authorizing legislation; it did not itself establish a funded benefit available immediately to every veteran. Electronic-health-record modernization funding included a 25-percent withholding provision with inconsistent dates in the EH text: withholding until July1,2026 and certification deadlines before July1,2027. This candidate preserves that discrepancy rather than supplying a corrected date.\n\nThe package retained conditional inter-account and VA/Defense joint-facility transfers, collection/reimbursement rules, rural Alaska and tribal/federally qualified health-center care, suicide-hotline requirements, and a bar on using these funds to increase care wait times. It permitted fertility counseling/assisted reproduction for a covered veteran or spouse and adoption reimbursement for a covered veteran, limited to a service-connected disability preventing procreation without fertility treatment. Section233 incorporated DoD benefit terms, removed specified embryo-storage duration limits, and applied the embryo-research restrictions in Public Law115-141 divisionH section508. VA’s pre-vote 2024 implementation instruction allowed unmarried covered veterans and donor gametes/embryos at no cost to VA, but retained the service-connected condition and excluded treatment of a non-spouse partner or gestational surrogate. These were existing implementation terms, not a new expansion enacted by this House vote. Adoption expenses remained subject to incorporated reimbursement limits and requirements; VA’s implementing rule explains the $2,000-per-child/$5,000-annual caps and two-year application periods. The bill specifies adoptions finalized after its enactment.\n\nOther incorporated provisions concerned marriage/family-therapist qualifications, child care during covered intensive care and travel without the old pilot’s two-year duration limit, and major-construction budget transparency. The incorporated coastwise merchant-seaman provision concerned honorary recognition and decorations, not general VA benefits. The package retained qualified breast-screening guidance for the specified period ending January1,2026, female-specific care use of identified prior funds, canine, feline and non-human-primate research certification and a September20,2026 phaseout requirement, Social Security number authentication limits and exceptions, and a rehabilitation-counselor caseload target.\n\nSection255 barred funding the September9,2022 reproductive-health rule and successor/substantially similar rules and barred abortion funding except rape, incest or a physician-certified physical danger of death; the named rule had permitted care when life or health was endangered and removed counseling exclusions. Section256 barred Act funding for surgery or hormone therapy for gender-affirming care. Section257 barred using Act funds during October1,2025–September30,2026 to implement the named February16,2023 non-VA special-mode transportation payment rule, which the Federal Circuit had already set aside in December2024; no current rate reversal is inferred. The package also barred funding the named VHA COVID-staff-vaccination program, restricted services for unlawfully present persons only when they were ineligible under VA laws, and required a judicial dangerousness finding before specified VA-incompetency-based firearms reporting. General provisions included an aircrew-cancer study, retained the named smoke-free workplace policy, barred reductions in Crisis Line/other suicide-program staffing, hours or services, and blocked enforcement of specified VA medical-marijuana recommendation/referral/form prohibitions. The latter did not legalize marijuana federally or fund its supply. All these care, benefit and restriction provisions remained part of one broader appropriations choice; no individual rider preference or actual health outcome follows from the recorded vote.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:182",
@@ -11819,22 +11827,58 @@
           "governed_bytes_sha256": "dfbdd32827acf45f22ac7eaee1f165961550dc36a4a3c1dcb899a43b78ffa58f"
         },
         {
-          "source_id": "govinfo:hres530rh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm",
-          "raw_sha256": "b8567aed3011944df1e167b992f1ff634d10a91015524769bdd472a536ba671a",
-          "governed_bytes_sha256": "228a78014503d9f6be0c75b77db7fdd3df9a5e6c7b0f5ecdf4fcca92dd0220b8"
+          "source_id": "govinfo:pl114-223",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm",
+          "raw_sha256": "7303a1cb14b57092785a4265f7c395c833a2b856d7d965eb8dbbd92b48f0c587",
+          "governed_bytes_sha256": "3489d6379b4f80b3b4a113d86cf24d93cf45fc3e27830da98a4a152ab6e4c4bd"
         },
         {
-          "source_id": "govinfo:hrpt167",
-          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt167/html/CRPT-119hrpt167.htm",
-          "raw_sha256": "fe6f146f4cfca304a510c5d8cfbadd26ff41df2285e47b8d171a8856c382572f",
-          "governed_bytes_sha256": "a2606283ed1b9fdebfe20c09ded9f88c30adce2891347d71042356e519bb8f62"
+          "source_id": "govinfo:pl115-141",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm",
+          "raw_sha256": "12b165f1b76f830aa5e5a0e9fd3cd1d2921314830efa7f7a2af6b0e5ab58d762",
+          "governed_bytes_sha256": "eb59a13206ff223f78c667aaa947ed7ed5f8e9b5cc937e05c2121a39de56dd88"
         },
         {
-          "source_id": "house-rules:rcp119-5",
-          "url": "https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf",
-          "raw_sha256": "b7e738561c2da621d263483d8186ac24db8bf6ea4b174300d28c884133e24e80",
-          "governed_bytes_sha256": "79822202ea2c36681b23bcebe3c6b3e8a51a969c7c5ff0f920ca8de970ef6ae3"
+          "source_id": "govinfo:pl111-163",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm",
+          "raw_sha256": "63e0746156b92b20a5cce347666990c09a9ef2078caf18cb263c5f65766e2d22",
+          "governed_bytes_sha256": "043a1d2d1ccd6d1571323d1a6907988448e2b2a683a39c7759e6aa3f41d26d3c"
+        },
+        {
+          "source_id": "govinfo:pl118-42",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ42/html/PLAW-118publ42.htm",
+          "raw_sha256": "818fd40a2df73633a2f9245deda6f8fc3a54730e2161e8a707c9fa09947b3d25",
+          "governed_bytes_sha256": "97ab501ad96c30e7bc0c855d5189805185703c0aa0ebc4462916d8e4e979cfb9"
+        },
+        {
+          "source_id": "govinfo:fr2022-19239",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2022-09-09/html/2022-19239.htm",
+          "raw_sha256": "721d66596fc2833d132b79875d6660857359e8586b1b9299776fbfbee5c852c5",
+          "governed_bytes_sha256": "2ec305361d3ec2d9d394a3a3fedba94cee903024e81ebf68c74e512d4678e7f7"
+        },
+        {
+          "source_id": "govinfo:fr2023-03013",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm",
+          "raw_sha256": "0f4afc9ccd03315a2c05b8befff402cb56f3a8ca51b9ee9cc424ef34323eabb0",
+          "governed_bytes_sha256": "f5f1b93c9419ddaa74f3fbbfb3ba224be5b8251a8c64bf4641b892e4f667792f"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "89d9f3ef45323814c9ca372a83448e2309f1d1d4a2053b14d9c72579b987cc64"
+        },
+        {
+          "source_id": "govinfo:fr2019-26751",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2019-12-13/html/2019-26751.htm",
+          "raw_sha256": "b8badfe4df3057257a509f9c9ba7bc0d20be1352756f43862f32de94f1503b74",
+          "governed_bytes_sha256": "aab64b5c36493299791bab0b6ca2a30b610d90503710f8633f22288fe7220a25"
+        },
+        {
+          "source_id": "govinfo:transport-court2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCOURTS-ca13-24-01104/pdf/USCOURTS-ca13-24-01104-0.pdf",
+          "raw_sha256": "1d6c788e2580ac545af16fb72a8df002115d3b96d10a66c6f014d48902df18a3",
+          "governed_bytes_sha256": "fc117eee066657fa0cd92cf4a82baa75d28169c28a597c66410d7c6870337fbc"
         },
         {
           "source_id": "congressional-record:2025-06-25",
@@ -11843,16 +11887,35 @@
           "governed_bytes_sha256": "e382828324b1dd9c723f9d1341caac6596901e2a3d48242bb700008b3c315b84"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:182",
+        "source_ids": [
+          "clerk:119:1:182",
+          "govinfo:hr3944eh",
+          "govinfo:pl114-223",
+          "govinfo:pl115-141",
+          "govinfo:pl111-163",
+          "govinfo:pl118-42",
+          "govinfo:fr2022-19239",
+          "govinfo:fr2023-03013",
+          "govinfo:fr2024-07040",
+          "govinfo:fr2019-26751",
+          "govinfo:transport-court2024",
+          "congressional-record:2025-06-25"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:182",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Complete full H.R.3944 EH package review using captured text and rule/report/Record. TitleII account review has begun; finish all riders and incorporated authorities, funding availability, cancellation/replacement and conditions, then reconcile with distinct en-bloc roll180. Do not treat source capture as completed membership or silently collapse amendment and passage.",
-        "source_preparation": "Official sources captured and preliminary navigation performed; substantive exact-action membership review remains incomplete. No source is asserted unavailable."
-      }
+        "shared_review_record_sha256": "6730faff265f608b7e0e358126fb94884c10033a67a4497d62bdab8ef80e5e66"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:183",
@@ -12360,13 +12423,14 @@
       "date": "2025-07-14",
       "measure": "bill_119_hr_1709",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Requires a bounded report on mobile-network cybersecurity, encryption/authentication and adversarial surveillance, excluding 5G protocols/networks and qualifying vulnerability analysis. This changes communications research/reporting, not medical care, insurance or direct social-service delivery.",
       "source": {
         "source_id": "clerk:119:1:191",
         "url": "https://clerk.house.gov/evs/2025/roll191.xml",
         "raw_sha256": "da5c6d229cd6e7f9be17bd12dd11965e81294e8e1ad603d49a6872a2910fd94b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0e67896bdbab4e354e0cb54742a6b38b289b066e68704b4a1c5d7f9212fa7b91",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12377,26 +12441,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Requires a bounded report on mobile-network cybersecurity, encryption/authentication and adversarial surveillance, excluding 5G protocols/networks and qualifying vulnerability analysis. This changes communications research/reporting, not medical care, insurance or direct social-service delivery.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:191",
           "url": "https://clerk.house.gov/evs/2025/roll191.xml",
           "raw_sha256": "da5c6d229cd6e7f9be17bd12dd11965e81294e8e1ad603d49a6872a2910fd94b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0e67896bdbab4e354e0cb54742a6b38b289b066e68704b4a1c5d7f9212fa7b91",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1709eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1709eh/html/BILLS-119hr1709eh.htm",
+          "raw_sha256": "8da8b8b07a5daee9c84ff1f2db4fef76c86a52f331804330d72c40d946a95b5b",
+          "governed_bytes_sha256": "db6495975ed034f63a0b0f8d9a4375e48fbe6efc61b2e84c6c3d5212e8df6677"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:191",
+        "source_ids": [
+          "clerk:119:1:191",
+          "govinfo:hr1709eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:191",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "After H.R.3944, acquire/review exact H.R.1709 suspension text and determine operative Health membership before any full interpretation."
-      }
+        "shared_review_record_sha256": "0510dc789e5107f3a5a795775c6c513774ae8e3f5248a4b5c0961b8f0561047e"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:192",
@@ -12405,13 +12486,14 @@
       "date": "2025-07-14",
       "measure": "bill_119_hr_1770",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Requires a CPSC AI pilot using at least one specified product-safety task and public reporting, plus Commerce blockchain consumer-protection study and FTC token-market reporting. Injury-trend tracking is an optional pilot use, not clinical care or medical surveillance. The incorporated consumer-product definition excludes drugs and medical devices; reuse of that captured definition supports the same product-safety boundary as rolls103/108. No Health service or financing mechanism is established.",
       "source": {
         "source_id": "clerk:119:1:192",
         "url": "https://clerk.house.gov/evs/2025/roll192.xml",
         "raw_sha256": "d017935fad2c835a2a34769ae1fec5c5b5a08005ac1e142062137a3f71d65586",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "4ccd411b357b674cb097bab37b8119d993fed51155990dfb3a6d713b95656a85",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12422,26 +12504,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Requires a CPSC AI pilot using at least one specified product-safety task and public reporting, plus Commerce blockchain consumer-protection study and FTC token-market reporting. Injury-trend tracking is an optional pilot use, not clinical care or medical surveillance. The incorporated consumer-product definition excludes drugs and medical devices; reuse of that captured definition supports the same product-safety boundary as rolls103/108. No Health service or financing mechanism is established.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:192",
           "url": "https://clerk.house.gov/evs/2025/roll192.xml",
           "raw_sha256": "d017935fad2c835a2a34769ae1fec5c5b5a08005ac1e142062137a3f71d65586",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "4ccd411b357b674cb097bab37b8119d993fed51155990dfb3a6d713b95656a85",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1770eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1770eh/html/BILLS-119hr1770eh.htm",
+          "raw_sha256": "6c146001fa7d584572bdd8b7ed71a89552134bb10746741088922244404b4276",
+          "governed_bytes_sha256": "1f10bf0ab838db862553a522580e20121e8bfe32f375efc8db531352a4625e4e"
+        },
+        {
+          "source_id": "govinfo:15usc2052-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap47-sec2052.htm",
+          "raw_sha256": "3a602d9fa522f465bfdd42586e0c78c15e2a0b824809fe219910f3d3470dbff4",
+          "governed_bytes_sha256": "0e6dae1d880d34f4b71f3ddb592696c3c356b618ea148e6df3da18a29186ae3a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:192",
+        "source_ids": [
+          "clerk:119:1:192",
+          "govinfo:hr1770eh",
+          "govinfo:15usc2052-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:192",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review exact H.R.1770 suspension version by operative provisions; membership remains unreviewed."
-      }
+        "shared_review_record_sha256": "e8f8a2187c108a5df9ccf090bedb6b3d79c40e5ea2856247a4d61ef0a18d42d2"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:193",
@@ -12450,13 +12556,14 @@
       "date": "2025-07-14",
       "measure": "bill_119_s_1596",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Renames the Anahuac National Wildlife Refuge and directs federal references to use the new name. This is a binding naming/reference change, not medical care, victim-service funding or a Health benefit. Its findings are not adopted as independent evidence of charged conduct.",
       "source": {
         "source_id": "clerk:119:1:193",
         "url": "https://clerk.house.gov/evs/2025/roll193.xml",
         "raw_sha256": "ec534f23d0f4d93b1a383da420400030dc3efe2d74d36eb047b44b818e88f45d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0922edf662dfb6e56a037c45f873507fad4399d235d33af4de09211637e11ecf",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12467,26 +12574,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Renames the Anahuac National Wildlife Refuge and directs federal references to use the new name. This is a binding naming/reference change, not medical care, victim-service funding or a Health benefit. Its findings are not adopted as independent evidence of charged conduct.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:193",
           "url": "https://clerk.house.gov/evs/2025/roll193.xml",
           "raw_sha256": "ec534f23d0f4d93b1a383da420400030dc3efe2d74d36eb047b44b818e88f45d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0922edf662dfb6e56a037c45f873507fad4399d235d33af4de09211637e11ecf",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s1596es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1596es/html/BILLS-119s1596es.htm",
+          "raw_sha256": "6b0142995368468d0040dfa3772a9a7332d3f5c1237dba266e129fa2c5da69c8",
+          "governed_bytes_sha256": "1572892af72b65285ac916e6726e08968569cd462b0f975fb5212246fc4a0d8a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:193",
+        "source_ids": [
+          "clerk:119:1:193",
+          "govinfo:s1596es"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:193",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review exact S.1596 text for this House suspension vote; reuse explicit Senate-origin measure binding only after membership is established."
-      }
+        "shared_review_record_sha256": "fa091c821fa23ef2fe9ab743cde709b5a92f065867809e29ff8744f477d92868"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:194",
@@ -12539,13 +12663,14 @@
       "date": "2025-07-15",
       "measure": "bill_119_hres_580",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "Failed July15 rule adoption for H.R.4016, H.R.3633, H.R.1919 and S.1582. It controls debate, amendment order, waivers and recommittal, deems specified digital-asset substitutes adopted for later bill consideration and waives the same-day Rules-report requirement for H.R.4. The compared RH/EH operative clauses are identical apart from whitespace; no amended policy version is inferred. Rule adoption is retained as non-counting procedure under the existing contract, not separately projected as support/opposition to the underlying bills.",
       "source": {
         "source_id": "clerk:119:1:195",
         "url": "https://clerk.house.gov/evs/2025/roll195.xml",
         "raw_sha256": "ffc03f0e2edcffcbf9839c01a4a75fd8cd805fa442868866ce64c1415a088e3f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "450e7bff1b9e0e7228bf92426f813d94dbe1c6b1b8e5a179e5c8413ce940a34b",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12556,26 +12681,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Failed July15 rule adoption for H.R.4016, H.R.3633, H.R.1919 and S.1582. It controls debate, amendment order, waivers and recommittal, deems specified digital-asset substitutes adopted for later bill consideration and waives the same-day Rules-report requirement for H.R.4. The compared RH/EH operative clauses are identical apart from whitespace; no amended policy version is inferred. Rule adoption is retained as non-counting procedure under the existing contract, not separately projected as support/opposition to the underlying bills.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:195",
           "url": "https://clerk.house.gov/evs/2025/roll195.xml",
           "raw_sha256": "ffc03f0e2edcffcbf9839c01a4a75fd8cd805fa442868866ce64c1415a088e3f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "450e7bff1b9e0e7228bf92426f813d94dbe1c6b1b8e5a179e5c8413ce940a34b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres580rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580rh/html/BILLS-119hres580rh.htm",
+          "raw_sha256": "d6b3f34266c5f7fc41eb39537d73208912658e00943f9e2595534bbf0fbc8ced",
+          "governed_bytes_sha256": "21e04d45c9932ed728613b51566d5f01a00c57913c2286cf8a82f2425da9eb07"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:195",
+        "source_ids": [
+          "clerk:119:1:195",
+          "govinfo:hres580rh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:195",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review H.Res.580 initial exact consideration question/version; keep rule effects distinct from the four listed bills and later amended adoption roll198."
-      }
+        "shared_review_record_sha256": "559068a6542d79ebbcf0a099c7f5b632cd48b07ebb48e79e024a47c8a2f6d2e3"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:196",
@@ -12584,13 +12726,14 @@
       "date": "2025-07-15",
       "measure": "bill_119_hr_1717",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Establishes or designates an FCC communications security/reliability/interoperability advisory council, with membership, foreign-adversary trust criteria, biennial public reporting and exemption from the advisory-committee termination rule. Its operative scope is network advice, not Health-service delivery or financing.",
       "source": {
         "source_id": "clerk:119:1:196",
         "url": "https://clerk.house.gov/evs/2025/roll196.xml",
         "raw_sha256": "4d9ca7359f2ae8b6bc34c0dd1b00409f7b0a5e7464103776b49bd0806e0c35dd",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "cbd107c28efda30f6408bba995b3c64f530f8cd5b71daabc203ea3f73894effc",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12601,25 +12744,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Establishes or designates an FCC communications security/reliability/interoperability advisory council, with membership, foreign-adversary trust criteria, biennial public reporting and exemption from the advisory-committee termination rule. Its operative scope is network advice, not Health-service delivery or financing.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:196",
           "url": "https://clerk.house.gov/evs/2025/roll196.xml",
           "raw_sha256": "4d9ca7359f2ae8b6bc34c0dd1b00409f7b0a5e7464103776b49bd0806e0c35dd",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "cbd107c28efda30f6408bba995b3c64f530f8cd5b71daabc203ea3f73894effc",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1717eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1717eh/html/BILLS-119hr1717eh.htm",
+          "raw_sha256": "9dcc023bc8cf86ad90cef3471dde32710a37b49e24b2609832b4347453ee358a",
+          "governed_bytes_sha256": "b1d7903aced4765228b83a08eaa24649c0339c63cf4fe8e09047468430654c9f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:196",
+        "source_ids": [
+          "clerk:119:1:196",
+          "govinfo:hr1717eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:196",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "3d1ba9adad6ef522a334bd48088dcc2776340e9d5472c2483b44d8edc762af73"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:197",
@@ -12672,13 +12833,14 @@
       "date": "2025-07-16",
       "measure": "bill_119_hres_580",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "July16 rule adoption after reconsideration for H.R.4016, H.R.3633, H.R.1919 and S.1582. It controls debate, amendment order, waivers and recommittal, deems specified digital-asset substitutes adopted for later bill consideration and waives the same-day Rules-report requirement for H.R.4. The compared RH/EH operative clauses are identical apart from whitespace; no amended policy version is inferred. Rule adoption is retained as non-counting procedure under the existing contract, not separately projected as support/opposition to the underlying bills.",
       "source": {
         "source_id": "clerk:119:1:198",
         "url": "https://clerk.house.gov/evs/2025/roll198.xml",
         "raw_sha256": "6eb9d868d183e377a51e384a7d7d307c30216f5fe4f557b175c5256353de653e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "7ec0f15e784e9f5e539e28f4c5f47cbe4a21a1329050cc55d214216887ae80f8",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12689,26 +12851,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "July16 rule adoption after reconsideration for H.R.4016, H.R.3633, H.R.1919 and S.1582. It controls debate, amendment order, waivers and recommittal, deems specified digital-asset substitutes adopted for later bill consideration and waives the same-day Rules-report requirement for H.R.4. The compared RH/EH operative clauses are identical apart from whitespace; no amended policy version is inferred. Rule adoption is retained as non-counting procedure under the existing contract, not separately projected as support/opposition to the underlying bills.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:198",
           "url": "https://clerk.house.gov/evs/2025/roll198.xml",
           "raw_sha256": "6eb9d868d183e377a51e384a7d7d307c30216f5fe4f557b175c5256353de653e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "7ec0f15e784e9f5e539e28f4c5f47cbe4a21a1329050cc55d214216887ae80f8",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:198",
+        "source_ids": [
+          "clerk:119:1:198",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:198",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review amended H.Res.580 against its report and floor Record; preserve both rule questions and any incorporated procedural effects without borrowing underlying bill policy."
-      }
+        "shared_review_record_sha256": "1e603b58be5b2ba57423c594ef0b3c0bfd84d2520cd5d2c6968eaa797df14f40"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:199",
@@ -12723,7 +12902,8 @@
         "source_id": "clerk:119:1:199",
         "url": "https://clerk.house.gov/evs/2025/roll199.xml",
         "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12742,7 +12922,20 @@
           "source_id": "clerk:119:1:199",
           "url": "https://clerk.house.gov/evs/2025/roll199.xml",
           "raw_sha256": "2655ba450276e7378cdc481e52999fb699dd22392c13259fe87eaa8f7ac80082",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3633eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3633eh/html/BILLS-119hr3633eh.htm",
+          "raw_sha256": "d6256df1cddcd04adf0716ed875251940e287df28495a584fe58a515902b2048",
+          "governed_bytes_sha256": "059e1275905258dd98fc69d0a27357d7589e7a4a55e3055eeb62d8cce97f97d3"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
       "exact_action_source_binding": null,
@@ -12751,7 +12944,9 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Review the complete captured H.R.3633 EH digital-commodity package by operative sections and incorporated authorities. Initial navigation only; do not infer Health membership from titles, broad financial effects or the prior H.Res.580 rule. Reuse H.Res.580 RH/EH; exact substantive version is EH.",
+        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
       }
     },
     {
@@ -12767,7 +12962,8 @@
         "source_id": "clerk:119:1:200",
         "url": "https://clerk.house.gov/evs/2025/roll200.xml",
         "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12786,7 +12982,20 @@
           "source_id": "clerk:119:1:200",
           "url": "https://clerk.house.gov/evs/2025/roll200.xml",
           "raw_sha256": "131aa54723b74ed8e0dd3f923cac9d3f1ece215dbf43205709f4643c99df1f89",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s1582es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm",
+          "raw_sha256": "ed4ba8a155875f23a39628df4981b251a96e159965a1a36a930f5ca6e6805d13",
+          "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
       "exact_action_source_binding": null,
@@ -12795,7 +13004,9 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Review the complete captured S.1582 ES stablecoin package and incorporated authorities for this House passage. Initial navigation only; no substantive membership decision is recorded. Reuse H.Res.580 section8 and verify ES remains the House-passed question before authoring.",
+        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
       }
     },
     {
@@ -12805,13 +13016,14 @@
       "date": "2025-07-17",
       "measure": "bill_119_hr_1919",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Bars specified direct individual Federal Reserve accounts/products, direct or intermediated central-bank digital currency and Board study/development/use for monetary policy, with a qualified open/permissionless/private dollar-currency exception. The congressional sense clause does not turn the operative monetary prohibitions into a nonbinding measure. No Health benefit, insurance or social-service mechanism is changed.",
       "source": {
         "source_id": "clerk:119:1:201",
         "url": "https://clerk.house.gov/evs/2025/roll201.xml",
         "raw_sha256": "4d6d7468a2dd1c92b1863b69c2c812e3e440e1badb12a5de2f691a83ded74ab1",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "595a42db0f46ee14ad8a1cff02803116113b91b95a3ee8cdd25da9bbe39ba2a8",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12822,25 +13034,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Bars specified direct individual Federal Reserve accounts/products, direct or intermediated central-bank digital currency and Board study/development/use for monetary policy, with a qualified open/permissionless/private dollar-currency exception. The congressional sense clause does not turn the operative monetary prohibitions into a nonbinding measure. No Health benefit, insurance or social-service mechanism is changed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:201",
           "url": "https://clerk.house.gov/evs/2025/roll201.xml",
           "raw_sha256": "4d6d7468a2dd1c92b1863b69c2c812e3e440e1badb12a5de2f691a83ded74ab1",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "595a42db0f46ee14ad8a1cff02803116113b91b95a3ee8cdd25da9bbe39ba2a8",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1919eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1919eh/html/BILLS-119hr1919eh.htm",
+          "raw_sha256": "548cb87d7159ca7786a5f110bfed1b0b8c458a889a649aadf56ccc34358bd616",
+          "governed_bytes_sha256": "13ea7d5bb6768c1577bcbbaf2769026573b68f879dc65973b806234c7951aa4b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:201",
+        "source_ids": [
+          "clerk:119:1:201",
+          "govinfo:hr1919eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:201",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "242589ee76f8b068f18c3c6475ac2b00c7a0b7675fb6d9c1b6a6be5aeebc951c"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:202",
@@ -12899,7 +13129,8 @@
         "source_id": "clerk:119:1:203",
         "url": "https://clerk.house.gov/evs/2025/roll203.xml",
         "raw_sha256": "53a7c0a438c8ca52b5d40769553fe6837aa48622af20dbbce5d0838151860cc1",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "9c3883939d2ee4968cbedf08339ba4cd4b1d183d9c119bcb58ea325007b560b4",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -12918,7 +13149,32 @@
           "source_id": "clerk:119:1:203",
           "url": "https://clerk.house.gov/evs/2025/roll203.xml",
           "raw_sha256": "53a7c0a438c8ca52b5d40769553fe6837aa48622af20dbbce5d0838151860cc1",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "9c3883939d2ee4968cbedf08339ba4cd4b1d183d9c119bcb58ea325007b560b4",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres590eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres590eh/html/BILLS-119hres590eh.htm",
+          "raw_sha256": "3894180aa008616b807117c1ac5d80463dd457ae3ec8f14f8af4eb904510b51c",
+          "governed_bytes_sha256": "3d5dcba08107aed179979f8f33318c133cb1200cdacb68ae71d1ea7f186c9396"
+        },
+        {
+          "source_id": "govinfo:hr4eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm",
+          "raw_sha256": "4b75828108b01e4b5be8314ed8c6126df6ef3762f7f2da1f7ea25e73b2bda598",
+          "governed_bytes_sha256": "a989b460bb97d948ea21e3a8b957d0fbdf89054e610204e3678e66ffcafc4c55"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
+          "source_id": "govinfo:pl118-47",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1"
         }
       ],
       "exact_action_source_binding": null,
@@ -12928,7 +13184,8 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review exact H.Res.590 rule and any self-executing H.R.4 Senate-concurrence mechanism against Senate text. Reuse captured H.R.4 EH and appropriation accounts; do not transfer the House $500m/$400m package meaning to a different version or count procedure as a separate Health policy vote."
+        "next_action": "The captured H.Res.590 EH explicitly deems House concurrence in the Senate amendment to H.R.4. Acquire and review that exact Senate amendment and its operative account changes; reuse earlier H.R.4 EH, Public Law119-4 and Public Law118-47 account bindings without carrying the earlier $500m/$400m meaning into this distinct version. Preserve the established procedural/non-counting boundary; do not silently recast the Clerk rule-adoption question as separate passage.",
+        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
       }
     },
     {
@@ -12972,7 +13229,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13016,7 +13274,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13060,7 +13319,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13104,7 +13364,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13148,7 +13409,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13192,7 +13454,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13236,7 +13499,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -13324,7 +13588,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
       }
     },
     {
@@ -34756,11 +35021,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "41 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Shared research includes clinical-trial exceptions, veterans provisions, explicit medical sanctions boundaries, research registration and specified Health-account rescissions.",
+    "basis": "43 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Shared research includes clinical-trial exceptions, veterans benefits/care, medical sanctions boundaries, research registration, specified Health-account rescissions and distinct H.R.3944 amendment/passage effects.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "d17639813d3a0dbbe68d86da1338a6fb841222b2c7d27114779dd07b76d816d7",
+  "selection_sha256": "cb60446dae875710dc9e60d6e9c32bf93f41dd3988d4bbeb9fb9b1f49bd5c983",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -34775,6 +35040,8 @@
     "house:119:1:166",
     "house:119:1:168",
     "house:119:1:172",
+    "house:119:1:180",
+    "house:119:1:182",
     "house:119:1:190",
     "house:119:1:25",
     "house:119:1:27",
@@ -34805,17 +35072,8 @@
     "house:119:2:53"
   ],
   "unresolved_action_ids": [
-    "house:119:1:180",
-    "house:119:1:182",
-    "house:119:1:191",
-    "house:119:1:192",
-    "house:119:1:193",
-    "house:119:1:195",
-    "house:119:1:196",
-    "house:119:1:198",
     "house:119:1:199",
     "house:119:1:200",
-    "house:119:1:201",
     "house:119:1:203",
     "house:119:1:204",
     "house:119:1:205",
@@ -35205,6 +35463,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "44a902200d23e6719fc9e29e69ce2ff31d65af0ba62c3062eb017ab80e35ce98",
-  "membership_review_sha256": "10c1e03f029b5b132bcac96141eca157522891ca3b6bd52376e5584ddc83f5d7"
+  "proposal_sha256": "1d5cf13215a4559139510b023efa339e84fcb112b2465e1ef22ae87a66d9a81b",
+  "membership_review_sha256": "0738253596823530d95b33aba2b49351efb9f3edb42280c24db7c2153e7c09aa"
 }

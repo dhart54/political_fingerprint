@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "188e8a7f9451a4d1111a2f7a521902937abd5903d9a060e7bed13b2a22884b66",
-  "source_capture_sha256": "a0acecbe32e81f60718858114d608125acd6f4c7f0f8bd2742fdc5aac28b689d",
-  "core_sha256": "d84f2ac1f2e80421944298b5caec10ea4d733d021ca2a04c37182777ba61c831",
-  "compiled_sha256": "e046b0b022378d84890fd92f6f828a618cb8ef33ebadbd054ee7eb8eff9a0687",
-  "readable_sha256": "acf98f4cf0f70deb7c6f91280d115e1e406a4b35bc73bd4136b254d8a29c0292",
+  "input_sha256": "c75306f169ed95127cef880cd00168c0d959777d11f34a7be438e317fed04d10",
+  "source_capture_sha256": "e8e76188a69b9757d09d4a2413afc0b947d4eec442a990512986ab8754eacfef",
+  "core_sha256": "48ab0c2a6c97a29b80257d88ce1627a71d8479844e9ed8913f23167f58cc578f",
+  "compiled_sha256": "6559b361a4c3d96ad0ccf3c026b357b10cdcafebce33ba69c12b212536c81b9d",
+  "readable_sha256": "37a0e12d5ec55e2fb3b7214bf72d95ee65ac553ef424c5a2e04fa0a36def9c3a",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -833,6 +833,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions",
           "source_id": "clerk:119:1:168"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:180",
+      "shared_sha256": "e61dd74df518e1f4a4da4b655456b90e1a03235a05fa7a88587f22ccaa82af6b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944",
+          "source_id": "clerk:119:1:180"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the seven-part Carter en-bloc No.2 amendment to H.R.3944",
+          "source_id": "clerk:119:1:180"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:182",
+      "shared_sha256": "7ceba394aeff61d944727c277c606aeb56881882c6a220912d7f320ace0e056a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package",
+          "source_id": "clerk:119:1:182"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.3944’s full military-construction, VA funding and restrictions package",
+          "source_id": "clerk:119:1:182"
         }
       ]
     }

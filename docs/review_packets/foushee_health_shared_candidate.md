@@ -1,23 +1,23 @@
 # Foushee Health & Social Policy — resumed shared candidate
 
-**Partial candidate: 73 more membership screenings resolved.** Fourteen new shared
-interpretations bring the total to 41 exact actions, 36 Foushee findings and 34
-bounded Massie proof findings. The fixed discovery set still has 345 unreviewed
-identities. This is neither complete Health coverage nor accepted/public content.
+**Partial candidate: nine more membership screenings resolved.** Two new shared
+interpretations bring the total to 43 exact actions, 37 Foushee findings and 35
+bounded Massie proof findings. There are 336 unreviewed discovery identities.
+This is neither complete Health coverage nor accepted/public content.
 
 ## Resume delta and review entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, resumed from
-`938c32d2f45a20deed552bfbb0f44703740be818`. Actual local and remote heads matched
-that checkpoint; no later in-scope work was overwritten. Reviewed base remains
+`01aa0a35060546aa274989370952fbda716d908d`. Actual local and remote heads matched;
+no later in-scope work was overwritten. Reviewed base remains
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. The exact pushed head and hosted CI
 results are recorded in the existing PR discussion.
 
 - [Living plan and unchanged eight-domain matrix](../plans/foushee_next_domain_shared_interpretation.md)
-- [41 shared interpretations / 136 passage maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [422 governed source captures](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [189 reusable member-neutral membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [43 shared interpretations / 167 passage maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [451 governed source captures](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [198 reusable member-neutral membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row accounting and exact remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Both members’ compact/detail findings](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
@@ -25,122 +25,101 @@ results are recorded in the existing PR discussion.
 
 | Candidate disposition | Before this resume | After |
 |---|---:|---:|
-| interpreted_substantive_directional |27|41|
-| procedural_context |167|174|
-| expressive_nonbinding_context |3|8|
-| exact_action_ineligible |61|108|
-| source_unresolved (unreviewed membership) |418|345|
+| interpreted_substantive_directional |41|43|
+| procedural_context |174|176|
+| expressive_nonbinding_context |8|8|
+| exact_action_ineligible |108|113|
+| source_unresolved (unreviewed membership) |345|336|
 | Total fixed discovery |676|676|
 
 Discovery remains 362 session-1 and 314 session-2 House119 identities through
-September 16, 2026. No contrary choices, dates or difficult actions were removed.
-The remaining queue is unfinished work, not 345 presumed Health votes or claims
-that required evidence is unavailable. Every new disposition remains proposed.
+September16,2026. All 41 prior interpretation objects, 422 prior governed source
+objects and 189 prior shared membership records are unchanged. The remaining
+queue is unfinished work, not presumed Health votes or unavailable evidence.
 
-## New shared interpretations
+## New shared interpretations and source reuse
+
+The recorded next items, 2025 rolls180/182, then191–193, were confirmed
+unprocessed. Research reused H.R.3944 EH, H.Res.530 RH, Report119-167, RCP119-5
+page/line bindings and the June25 Congressional Record.
 
 | Exact action | Source-bound mechanism and material limit |
 |---|---|
-| 2025-79, Scott H.R.1048 substitute | Clinical-trial-only foreign payments excepted from the substitute’s university disclosure rules; whole failed substitute, not a stand-alone trial vote or exemption from medical safety law |
-| 2025-89, H.R.586 | VA/CDC cholangiocarcinoma study and tracking, with the separate one-month extension of existing Medicaid nursing-facility pension limits; no causation or service-connection presumption |
-| 2025-90, H.R.1039 | Independent VA notice assessment and lawful recommendations, completed within one year after implementation begins, plus the same pension-limit extension |
-| 2025-99, H.R.1228 | Moves the existing Office of Survivors Assistance into the Secretary’s office; incorporated duties/benefit-resource role retained, no new benefit amount |
-| 2025-104, S.146 | Intimate-image offenses with explicit good-faith medical exceptions and court-ordered victim-care restitution, plus separate platform duties; restitution is not guaranteed collection and the criminal exception is not silently extended to the platform rule |
-| 2025-115, H.R.530 | Defined military fixed-wing aircrew cancer study and the one-month pension-limit extension; available-data and service/occupation boundaries retained |
-| 2025-116, H.R.36 | Georgia sanctions with explicit medicine/device/humanitarian transaction exceptions; wider reports, conditional cooperation and sunset retained, with two source cross-reference irregularities expressly qualified rather than repaired |
-| 2025-119, H.R.1503 | Forced-organ-harvesting sanctions and conditional organ-sale passport restrictions; existing paired-donation/expense exceptions, medical trade, waivers and whole-package limit retained |
-| 2025-131, H.R.2240 | Reports on officer attacks and mental-health resources/use/screening needs; no mandatory screening, new treatment program or adopted preamble causality |
-| 2025-133, H.R.1286 | VA claim-form assessment, two-year implementation period after work begins, and the same pension-limit extension; distinct from H.R.1039’s notices and one-year period |
-| 2025-136, H.R.1223 | Research-fleet communications plan expressly considers telemedicine and mental-health/counseling/crisis support, as appropriate; upgrades are permissive and care/funding is not guaranteed |
-| 2025-166, S.331 | Separate fentanyl scheduling/research-registration/penalty package with its own ES text and House question; reuse of H.R.27 research does not absorb its failed study-condition amendment |
-| 2025-168, H.R.4 EH | Separate $500-million/$400-million unobligated Global Health Programs paragraph rescissions within a larger foreign-assistance/broadcasting package; not per-patient cuts or the later Senate/final version |
-| 2025-172, H.R.1998 | Piracy sanctions with medicine/device/humanitarian transactions, goods-import and other exceptions plus waiver conditions; no finding of anyone’s guilt or new domestic health benefit |
+| 2025-180, Carter H.R.3944 en-bloc No.2 | Seven expressly enumerated amendments: $5-million VBA-to-medical-services transfer with October1,2026 advance availability; separate $4.1-million NATO-to-Air-Force transfer and nested planning/design limit; five net-zero account entries. Stated memory-care, in-home-care, therapy and military purposes are not dedicated new appropriations or treatment entitlements. |
+| 2025-182, H.R.3944 EH passage | Military construction and VA care/benefits/research funding, conditional programs, replacement and advance funds, prior-balance rescission, care restrictions and exceptions. The whole-package choice includes fertility/adoption limits, abortion exceptions, limited gender-affirming-care and marijuana provisions; no individual rider preference is inferred. |
 
-All 27 earlier interpretation objects and all 261 prior governed source objects
-are unchanged. Forty-one inputs form 36 episodes, retaining all five ordered
-pairs. Both members gain 14 findings. Massie’s two existing Not Voting records
-remain non-proposition accounting. No pattern, trajectory or issue-wide synthesis
-was invented; no member-specific legislative meaning was authored.
+The two actions form a sixth ordered pair, bringing the total to 37 episodes.
+Foushee’s No/Nay and Massie’s Aye/Yea are mechanically normalized from Clerk
+records. Each member gains one finding with both complete action observations;
+the prior two Massie Not Voting records remain non-proposition accounting.
+There is no member-specific legislative meaning, pattern, trajectory or synthesis.
 
-## Exact membership decisions and source reuse
+The report’s en-bloc list has seven amendment numbers, despite one debate
+statement saying eight. Operative page/line instructions control. The $4.1-million
+planning/design increase is inside the Air Force total, not another transfer.
+Net-zero instructions are not treated as additional budget amounts or binding
+earmarks for their stated purposes. PDF pages30–31 were rendered locally to check
+the $5-million transfer’s base account and advance-funding date.
 
-The recorded next groups, rolls72–74 and77–83, were confirmed unprocessed before
-research. H.Res.242 was reused with Report119-38, Rules Committee Print119-1 and
-the March27 Record to bind each H.R.1048 amendment. Only Scott’s failed substitute
-supplies the explicit clinical-trial exception. Self’s reporting threshold,
-Tlaib’s two country/entity changes and final passage are independently proposed
-exclusions; the failed exception is not inherited by the final bill.
+The passage review preserves $3-billion community-care cancellation/replacement
+separately from the $38.7-billion advance and $15.889-billion prior VHA rescission.
+The electronic-record withholding text has July2026/July2027 date inconsistency;
+the candidate reports it without inventing a correction. Incorporated Public
+Law115-141 divisionH section508 is an embryo-research restriction, not the separate
+abortion rider. Child-care/therapist/construction authorities and honorary-only
+merchant-seaman recognition are bounded to their actual provisions.
 
-Forty-seven new exclusions distinguish operative care/service mechanisms from
-energy/environmental effects, consumer-product safety, university disclosures,
-business credit, securities access, law-enforcement labor rules, immigration
-enforcement, election administration and other mechanisms. H.R.1442’s sodium
-nitrite ban was checked against the incorporated consumer-product definition:
-the preserved drug/device exclusions do not create a new medical program.
-H.R.1263’s account of past/global-health cooperation was distinguished from
-H.R.1223’s explicit remote-care planning requirement.
+New official VA rules explain the incorporated fertility/adoption terms and the
+named reproductive-health and transportation rules. The Federal Circuit’s
+December2024 opinion had already set aside the transportation rule; the candidate
+does not portray the bill as reversing an active rate schedule. VA’s pre-vote
+2024 fertility instruction permits unmarried covered veterans and donor material
+at no cost to VA, retains service-connected eligibility and excludes non-spouse
+partners/surrogates. That context is not attributed as a new House expansion.
 
-H.R.2096’s incorporation was checked against D.C. Law24-345, including all of
-subtitle M: discipline timing/tolling, termination-hearing publication and
-penalty review, not just the bill’s heading. Its repeal does not reach the
-separate use-of-force/medical-assistance provisions. H.R.884’s incorporated
-local-voting law was also checked. D.C. site downloads returned HTTP403; the
-same Council’s public XML repository supplied hashed official law sources.
-No protected archive or paid service was used.
+## Other membership decisions and interventions
 
-Seven new procedural controls include the Senate-amended budget resolution,
-H.Res.489/499/530 and three distinct H.Res.566 questions. H.Res.499’s incorporated
-H.Res.492 engrossment corrections are captured, including Health references.
-The Foxx rule amendment is bound to the July2 Record and is not confused with
-the nearby substantive McGovern proposal. Five new expressive resolutions stay
-non-counting; references to injuries or canceled VA appointments in preambles
-do not create operative Health programs or establish their causal claims.
+Five proposed exclusions cover rolls191/192/193/196/201: mobile-network reporting,
+consumer-safety AI/blockchain/token studies, refuge renaming, an FCC advisory
+council and Federal Reserve digital-currency prohibitions. H.R.1770 reuses the
+previously captured consumer-product definition and its medical-product exclusions.
+Injury-trend tracking does not by itself create clinical care or a Health program.
+The binding refuge naming action is not mislabeled a nonbinding resolution.
 
-Existing pension statute, H.R.27, H.Res.242 and other captured rules were reused.
-The four new veterans study/notices/forms packages preserve the $90 conditional
-pension limit and December31,2031 endpoint, distinct from H.R.695’s later endpoint.
-H.R.4 uses enacted Public Law119-4 and the two complete Global Health Programs
-paragraphs in Public Law118-47, rather than an assumed single Health account.
-Official pages/versions are source-bound once and reused across both members.
+Rolls195/198 remain procedural controls. H.Res.580 RH/EH operative text is identical
+apart from whitespace; the earlier queue’s assumption of an amended adoption was
+corrected. Its deemed substitutes, amendment rules, waivers and later bill votes
+remain distinct. H.Res.590’s self-executing H.R.4 Senate concurrence is still
+unreviewed substantively and has an explicit next step; it was not silently counted.
 
-## Manual intervention and implementation
+Manual delta: two shared meanings and compacts, four choice strings, 31 passage
+maps, nine membership records and 29 captures (10 Clerk, 19 other). Totals are
+222 Clerk and 229 other sources. Several captures prepare the next group without
+asserting membership. Large public laws are stored as exact bounded excerpts with
+original raw-file hashes. Eighty-six member observations are mechanical.
 
-This resume adds 14 manually researched shared meanings, their two choice strings
-and 14 explicit shared compacts; 32 additional interpretation passage maps; 73
-membership records; and 161 captures (75 Clerk, 86 other). Total sources are 212
-Clerk and 210 text/rule/report/statute/guidance captures. Some new captures support
-the next unreviewed H.R.3944 group, not new membership claims. Public Law118-47 is
-captured as bounded incorporated account excerpts with the original raw-file hash.
-
-Source acquisition, extraction, exact-version analysis, proposed membership,
-episode assignments and wording are manual candidate work. Eighty-two official
-member observations are then projected mechanically. There are zero
-member-authored meaning branches, generated-output repairs, acceptance receipts
-or production writes.
-
-A concrete preparation defect surfaced with House passage of Senate-origin
-S.146: the offline command assumed every measure was H.R. It now permits an
-explicit `bill_type: s` alongside the existing H.R. default, while still requiring
-exact Clerk measure/type/number and House-question matches. Unknown types or
-wrong/missing Senate typing fail closed. The paired-observation, shared-compact,
-compiler/schema, publication and public-runtime designs are unchanged.
+Direct DoD-policy retrieval returned403 and an old public Senate link returned404.
+No access restriction was bypassed. Official VA Federal Register material supplied
+the applicable implementation context, including its DoD incorporations; this is
+not an unresolved required-evidence dependency. A mistyped transport-rule URL
+returned navigation and was rejected; the correct official rule was captured.
+All downloads were public and read-only. No new infrastructure or architecture.
 
 ## Validation
 
-**119 focused tests and all 7 canonical semantic checks pass.** The focused suite
-includes 32 candidate tests. Five added checks cover explicit Senate-origin
-binding/drift, Scott’s exact substitute versus independently excluded questions,
-veterans deadlines/offsets, separate H.R.27/S.331 episodes, and rescission/rule
-source boundaries. Replay of checked-in output, proof and appendix, source/member/
-party/cutoff guards, non-directional states, candidate rejection at public and
-persistence boundaries, and existing shared corpus contracts remain green.
+**121 focused tests and all 7 canonical semantic checks pass.** The focused suite
+includes 34 candidate tests, with new checks for the complete H.R.3944 pair,
+operative page-binding dependency, material qualifications, reused consumer
+definition and non-counting rule questions. Replay, accounting, member/source/
+party/cutoff guards, non-directional states and candidate publication rejection
+remain green. All earlier governed objects were compared against the resume head.
 
-The semantic command initially hit Windows sandbox temporary-directory
-permissions; its permitted normal-temp rerun passed all seven checks. No test
-or guard was weakened. Existing installed AJV dependencies were reused through
-the process-local NODE_PATH. No dependency, production environment or registry
-was changed. No frontend runtime changed, so no new rendered/browser loop is
-claimed. Exact-head existing CI is checked after push and recorded in PR194.
+An initial broad test invocation omitted process-local NODE_PATH and could not
+find installed AJV; the corrected invocation reused existing dependencies and
+passed. The semantic command used permitted normal Windows temporary directories.
+No test or guard was weakened; no dependency or production environment changed.
+No frontend runtime changed, so no new browser/build loop is claimed locally.
+Exact-head existing CI is checked after push and recorded in PR194.
 
 ```powershell
 python scripts/prepare_shared_domain_candidate.py --input docs/editorial/shared_candidates/house_119_health_20260916 --member F000477 --member M001184 --output docs/editorial/shared_candidates/house_119_health_20260916/generated --review-packet docs/review_packets/foushee_health_shared_candidate.md
@@ -150,44 +129,37 @@ python scripts/run_editorial_pipeline.py validate --tier semantic
 
 ## Remaining work and exact checkpoint
 
-**345 identities remain unreviewed.** No reviewed case has a current unresolved
-exact-effect, conflicting-source or unavailable-required-evidence flag. H.R.36’s
-internal references are explicitly limited in its candidate; they do not prevent
-the separately clear medical-exception interpretation. Future source problems
-must still be recorded separately from unfinished work.
+**336 identities remain unreviewed; no current human decision or unavailable/
+conflicting-evidence blocker is identified.** This run stops at its practical
+execution/context limit after the substantial H.R.3944 amendment/package and
+incorporated-authority research plus the independent July screenings. It is a
+resumable partial checkpoint, not a batch-approval gate or completed Health domain.
 
-Resume with **2025 rolls180 and182, H.R.3944**. The official EH text, H.Res.530 RH,
-Report119-167, June25 Record pages29–32 and Rules Print119-5 pages1–3,5,9,12,30–33
-are already captured. The en-bloc source identifies amendments1,14,15,19,25,28,32.
-Finish all page/line effects and distinguish the medical-services transfer from
-the military transfer and net-zero entries. Finish the full passage/rider and
-incorporated-authority review, retaining appropriations timing, conditional
-funding and cancellation/replacement distinctions. Preliminary navigation is
-not represented as a completed membership decision for either action.
+Resume with **2025 rolls199 and200: H.R.3633 EH and S.1582 ES**. Both complete
+texts and Clerk captures are committed, but only initial navigation occurred:
+finish full operative provisions and incorporations before membership. Reuse
+H.Res.580 RH/EH. Then **roll203, H.Res.590**: its EH explicitly deems concurrence
+in the H.R.4 Senate amendment. Acquire that amendment, compare its account changes
+against the earlier EH and already-bound appropriation laws, and retain the
+established exact-question/procedural boundary. Do not inherit the earlier
+$500-million/$400-million rescission interpretation.
 
-Then continue rolls191–193 (H.R.1709, H.R.1770, S.1596) and the H.Res.580/bill
-group. Review H.Res.590’s exact procedural and incorporated H.R.4 Senate-version
-effects when reached; do not project the earlier EH rescissions into that vote.
-All 345 identities and executable first-group steps remain in the universe JSON.
-The two H.R.3944 rows explicitly identify already-captured sources to avoid
-repeating research after a fresh context.
-
-Stop reason: **this sustained run’s practical execution/context limit**, after
-73 completed screenings across four internal groups and preparation of the next
-large amendment/package group. This is a resumable research checkpoint, not an
-approval gate or completed Health coverage. No new human product decision is
-required to continue available work. Substantive review remains required before
-acceptance/publication. The terminal marker uses CHECKPOINT.
+Next group: **rolls204–210 and212, H.R.4016**. Acquire Report119-199, exact base
+text/print and July17–18 Record; bind every amendment/en-bloc list and page/line
+effect, then complete passage accounts/riders. All 336 identities remain in the
+inventory; the first 11 have specific executable source/version instructions.
+No user input is needed to resume this available work. Candidate acceptance and
+publication still require later substantive review. Terminal marker: CHECKPOINT.
 
 Existing Vercel branch-disable and main-only Render safeguards are unchanged.
 No merge, deployment, publication, production-data write, migration, registry or
-environment change, blue operation, paid access or protected-archive access
-occurred. PR191 remains released, PR193 paused and issue192 open.
+environment change, blue operation, paid service or protected-archive access.
+PR191 remains released, PR193 paused and issue192 open.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-41 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+43 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -255,6 +227,50 @@ The Clerk recorded the House result as 'Passed' on 2025-02-06. This does not est
 Evidence: house:119:1:32, house:119:1:33; finding `prop:d7e59940a1aaf002`.
 
 Sources: [clerk:119:1:32](https://clerk.house.gov/evs/2025/roll032.xml); [govinfo:hrpt2](https://www.govinfo.gov/content/pkg/CRPT-119hrpt2/html/CRPT-119hrpt2.htm); [congressional-record:2025-02-06](https://www.govinfo.gov/content/pkg/CREC-2025-02-06/pdf/CREC-2025-02-06-house.pdf); [clerk:119:1:33](https://clerk.house.gov/evs/2025/roll033.xml); [govinfo:hr27eh](https://www.govinfo.gov/content/pkg/BILLS-119hr27eh/html/BILLS-119hr27eh.htm); [govinfo:hres93eh](https://www.govinfo.gov/content/pkg/BILLS-119hres93eh/html/BILLS-119hres93eh.htm).
+
+### Separate choices within one legislative episode
+
+**Compact:** Foushee opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944. The combined amendment moved $5 million from veterans-benefits administration to medical services available from October1,2026. It also moved military-construction funding and made several changes that netted to zero. One vote covered all seven amendments, not each stated purpose separately. Foushee opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package. The House package funded VA care, benefits, facilities and research alongside military construction, while restricting specified care and rescinding some prior VA balances. It included advance funding, conditional programs and exceptions to its restrictions. This was one vote on the whole package, not a separate choice on each provision.
+
+**Detail:**
+
+**house:119:1:180**
+
+Foushee opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944.
+
+Carter en-bloc No.2 combined report amendments1,14,15,19,25,28 and32, as expressly designated in the June25 floor Record. Houchin amendment14 reduced the Veterans Benefits Administration General Operating Expenses account by $5 million and increased the Medical Services advance appropriation by $5 million; the latter becomes available October1,2026. The report describes memory care among its purposes, but the operative instruction increases the broader medical-services account without reserving the money exclusively for memory care. Arrington amendment1 reduced NATO Security Investment Program funding by $4.1 million and increased Air Force military construction by $4.1 million, including its planning-and-design limit by the same amount. The nested limit is not an additional $4.1 million transfer. Kiggans amendments15 and19 each reduced and increased the same military account by $1 million; Ogles amendment25 did the same to advance Medical Community Care; Perry amendment28 increased and reduced advance Medical Services by $1 million; Shreve amendment32 reduced and increased Army National Guard military construction by $55 million. These entries net to zero in their respective accounts. Their report purposes concern unaccompanied housing, F-35 basing, in-home care, elective stellate ganglion block therapy and a maintenance hangar. They do not themselves add those amounts to spending or create an individual treatment entitlement. The exact positive medical-services transfer establishes proposed Health membership; the military provisions remain part of the choice.
+
+The Clerk recorded the House result as 'Agreed to' on 2025-06-25. This does not establish enactment.
+
+**house:119:1:182**
+
+Foushee opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package.
+
+H.R.3944 EH combined FY2026 military construction, family housing, VA benefits and medical accounts, related agencies and general funding conditions. It included $75 million for planning and design of military child-development centers across three services, with expenditure plans, and retained construction, cemeteries, veterans housing loans, appeals, administration and Armed Forces Retirement Home funding. Its VA medical-services appropriation was $59.863 billion after the adopted $5-million transfer, available October1,2026 through September30,2027, with $2 billion available through September2028. Specified service-connected, lower-income and special-needs veterans retain priority; this is not unrestricted new eligibility. Medical Support and Compliance and Medical Facilities received $12 billion and $11.7 billion in advance funds, respectively, with specified longer-availability portions. Medical and prosthetic research received $945 million, with requirements concerning female prosthetics and toxic exposure. Toxic Exposures Fund appropriations separately included $52.676 billion available October1,2025 and $51.742 billion available October1,2026.
+
+Medical Community Care received $3 billion through September2027 while $3 billion of a previous $34-billion appropriation becoming available October1,2025 was cancelled; a separate $38.7-billion advance appropriation begins October1,2026, with $2 billion available an additional year. The cancellation and replacement are not described as either a net new $3 billion or an unqualified $3-billion cut. Section261 separately rescinded $15.889 billion of unobligated prior VHA balances, including collections, except medical/prosthetic research and specified emergency funds, with a spending plan. The $970-million BRAVE rental-assistance appropriation depended on separate authorizing legislation; it did not itself establish a funded benefit available immediately to every veteran. Electronic-health-record modernization funding included a 25-percent withholding provision with inconsistent dates in the EH text: withholding until July1,2026 and certification deadlines before July1,2027. This candidate preserves that discrepancy rather than supplying a corrected date.
+
+The package retained conditional inter-account and VA/Defense joint-facility transfers, collection/reimbursement rules, rural Alaska and tribal/federally qualified health-center care, suicide-hotline requirements, and a bar on using these funds to increase care wait times. It permitted fertility counseling/assisted reproduction for a covered veteran or spouse and adoption reimbursement for a covered veteran, limited to a service-connected disability preventing procreation without fertility treatment. Section233 incorporated DoD benefit terms, removed specified embryo-storage duration limits, and applied the embryo-research restrictions in Public Law115-141 divisionH section508. VA’s pre-vote 2024 implementation instruction allowed unmarried covered veterans and donor gametes/embryos at no cost to VA, but retained the service-connected condition and excluded treatment of a non-spouse partner or gestational surrogate. These were existing implementation terms, not a new expansion enacted by this House vote. Adoption expenses remained subject to incorporated reimbursement limits and requirements; VA’s implementing rule explains the $2,000-per-child/$5,000-annual caps and two-year application periods. The bill specifies adoptions finalized after its enactment.
+
+Other incorporated provisions concerned marriage/family-therapist qualifications, child care during covered intensive care and travel without the old pilot’s two-year duration limit, and major-construction budget transparency. The incorporated coastwise merchant-seaman provision concerned honorary recognition and decorations, not general VA benefits. The package retained qualified breast-screening guidance for the specified period ending January1,2026, female-specific care use of identified prior funds, canine, feline and non-human-primate research certification and a September20,2026 phaseout requirement, Social Security number authentication limits and exceptions, and a rehabilitation-counselor caseload target.
+
+Section255 barred funding the September9,2022 reproductive-health rule and successor/substantially similar rules and barred abortion funding except rape, incest or a physician-certified physical danger of death; the named rule had permitted care when life or health was endangered and removed counseling exclusions. Section256 barred Act funding for surgery or hormone therapy for gender-affirming care. Section257 barred using Act funds during October1,2025–September30,2026 to implement the named February16,2023 non-VA special-mode transportation payment rule, which the Federal Circuit had already set aside in December2024; no current rate reversal is inferred. The package also barred funding the named VHA COVID-staff-vaccination program, restricted services for unlawfully present persons only when they were ineligible under VA laws, and required a judicial dangerousness finding before specified VA-incompetency-based firearms reporting. General provisions included an aircrew-cancer study, retained the named smoke-free workplace policy, barred reductions in Crisis Line/other suicide-program staffing, hours or services, and blocked enforcement of specified VA medical-marijuana recommendation/referral/form prohibitions. The latter did not legalize marijuana federally or fund its supply. All these care, benefit and restriction provisions remained part of one broader appropriations choice; no individual rider preference or actual health outcome follows from the recorded vote.
+
+The Clerk recorded the House result as 'Passed' on 2025-06-25. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- This was the adopted combined amendment, separately paired with final passage. Chronology does not establish movement in a member’s views.
+- Seven amendment numbers are expressly designated even though one debate statement calls them eight. The enumerated operative list controls the binding.
+- The medical-services increase has advance availability; it is not an immediately available FY2025 payment or a dedicated memory-care appropriation. Stated purposes of net-zero entries do not establish service delivery or treatment efficacy.
+- This whole-passage action is distinct from roll180’s seven amendments. Neither choice establishes endorsement or opposition to each care provision, military appropriation or rider.
+- Appropriations include advances, replacement funds, rescissions of unobligated balances, prior-year directions, transfer controls and contingent authority. No single net Health spending change or per-patient effect is inferred.
+- The EH electronic-record withholding/certification dates are retained as written. The already-vacated transportation rule is not portrayed as an active reimbursement schedule newly reversed by this vote.
+- The fertility/adoption authorities are conditional. The incorporated section508 is an embryo-research funding restriction, not the distinct abortion rider in section255. The pre-vote implementing authorities supply context, not a new benefit conferred by this bill.
+- The final text’s gender-affirming-care bar concerns surgery or hormone therapy. A broader definition proposed elsewhere in the report is not imported into EH. Medical-marijuana language is limited to the specified directive prohibitions.
+
+Evidence: house:119:1:180, house:119:1:182; finding `prop:254a8ee008d10f53`.
+
+Sources: [clerk:119:1:180](https://clerk.house.gov/evs/2025/roll180.xml); [congressional-record:2025-06-25](https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf); [govinfo:hres530rh](https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm); [govinfo:hrpt167](https://www.govinfo.gov/content/pkg/CRPT-119hrpt167/html/CRPT-119hrpt167.htm); [house-rules:rcp119-5](https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf); [clerk:119:1:182](https://clerk.house.gov/evs/2025/roll182.xml); [govinfo:hr3944eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm); [govinfo:pl114-223](https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm); [govinfo:pl115-141](https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm); [govinfo:pl111-163](https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm); [govinfo:pl118-42](https://www.govinfo.gov/content/pkg/PLAW-118publ42/html/PLAW-118publ42.htm); [govinfo:fr2022-19239](https://www.govinfo.gov/content/pkg/FR-2022-09-09/html/2022-19239.htm); [govinfo:fr2023-03013](https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [govinfo:fr2019-26751](https://www.govinfo.gov/content/pkg/FR-2019-12-13/html/2019-26751.htm); [govinfo:transport-court2024](https://www.govinfo.gov/content/pkg/USCOURTS-ca13-24-01104/pdf/USCOURTS-ca13-24-01104-0.pdf).
 
 ### Separate choices within one legislative episode
 
@@ -1066,4 +1082,6 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:166 | supported House passage of S.331’s fentanyl-related scheduling, research and penalties package | opposed House passage of S.331’s fentanyl-related scheduling, research and penalties package | [govinfo:s331es](https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm); [govinfo:hres489eh](https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm); [govinfo:hr27eh](https://www.govinfo.gov/content/pkg/BILLS-119hr27eh/html/BILLS-119hr27eh.htm) |
 | house:119:1:172 | supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package | opposed suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package | [govinfo:hr1998eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm) |
 | house:119:1:168 | supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | [govinfo:hr4eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm); [govinfo:pl119-4](https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm); [govinfo:pl118-47](https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm) |
+| house:119:1:180 | supported the seven-part Carter en-bloc No.2 amendment to H.R.3944 | opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944 | [congressional-record:2025-06-25](https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf); [govinfo:hres530rh](https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm); [govinfo:hrpt167](https://www.govinfo.gov/content/pkg/CRPT-119hrpt167/html/CRPT-119hrpt167.htm); [house-rules:rcp119-5](https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf) |
+| house:119:1:182 | supported House passage of H.R.3944’s full military-construction, VA funding and restrictions package | opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package | [govinfo:hr3944eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm); [govinfo:pl114-223](https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm); [govinfo:pl115-141](https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm); [govinfo:pl111-163](https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm); [govinfo:pl118-42](https://www.govinfo.gov/content/pkg/PLAW-118publ42/html/PLAW-118publ42.htm); [govinfo:fr2022-19239](https://www.govinfo.gov/content/pkg/FR-2022-09-09/html/2022-19239.htm); [govinfo:fr2023-03013](https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [govinfo:fr2019-26751](https://www.govinfo.gov/content/pkg/FR-2019-12-13/html/2019-26751.htm); [govinfo:transport-court2024](https://www.govinfo.gov/content/pkg/USCOURTS-ca13-24-01104/pdf/USCOURTS-ca13-24-01104-0.pdf); [congressional-record:2025-06-25](https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

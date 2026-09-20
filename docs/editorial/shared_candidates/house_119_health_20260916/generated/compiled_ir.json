@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 41,
+        "eligible_substantive_actions": 43,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 41,
-        "resolved_eligible_actions": 41,
-        "directional_yes_no_positions": 41,
+        "in_service_eligible_actions": 43,
+        "resolved_eligible_actions": 43,
+        "directional_yes_no_positions": 43,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 36,
+        "complete_episodes": 37,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -84,6 +84,44 @@
               {
                 "action_id": "house:119:1:33",
                 "action_meaning_ref": "house119-through-2026-09-16:house:119:1:33:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:254a8ee008d10f53",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:180",
+              "house:119:1:182"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr3944:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:1:180",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:1:180:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              },
+              {
+                "action_id": "house:119:1:182",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:1:182:candidate-v1",
                 "status": "Nay",
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
@@ -810,6 +848,7 @@
           "other_notable_choices": [
             "prop:9183d84c91f90da4",
             "prop:d7e59940a1aaf002",
+            "prop:254a8ee008d10f53",
             "prop:d56a9ec386ea2af0",
             "prop:481765d79a95c610",
             "prop:8b01a5fcb76ca6bb",
@@ -864,6 +903,8 @@
           "house:119:1:166",
           "house:119:1:168",
           "house:119:1:172",
+          "house:119:1:180",
+          "house:119:1:182",
           "house:119:1:190",
           "house:119:1:25",
           "house:119:1:27",
@@ -901,17 +942,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 41,
+        "eligible_substantive_actions": 43,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 41,
-        "resolved_eligible_actions": 41,
-        "directional_yes_no_positions": 39,
+        "in_service_eligible_actions": 43,
+        "resolved_eligible_actions": 43,
+        "directional_yes_no_positions": 41,
         "present_actions": 0,
         "not_voting_actions": 2,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 36,
+        "complete_episodes": 37,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -984,6 +1025,44 @@
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
                 "direction": "opposition"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:0463ff767d539910",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:180",
+              "house:119:1:182"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr3944:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:1:180",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:1:180:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
+              },
+              {
+                "action_id": "house:119:1:182",
+                "action_meaning_ref": "house119-through-2026-09-16:house:119:1:182:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
               }
             ],
             "conclusion_relevance": "supporting",
@@ -1668,6 +1747,7 @@
           "other_notable_choices": [
             "prop:9183d84c91f90da4",
             "prop:67cddd18b73ab407",
+            "prop:0463ff767d539910",
             "prop:d56a9ec386ea2af0",
             "prop:481765d79a95c610",
             "prop:571333029c83875e",
@@ -1731,6 +1811,8 @@
           "house:119:1:166",
           "house:119:1:168",
           "house:119:1:172",
+          "house:119:1:180",
+          "house:119:1:182",
           "house:119:1:190",
           "house:119:1:25",
           "house:119:1:27",
