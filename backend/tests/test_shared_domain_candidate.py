@@ -809,5 +809,25 @@ class SharedDomainCandidateTests(unittest.TestCase):
                 prepare(author, self.capture, ["F000477"])
 
 
+    def test_july_passage_does_not_inherit_september_engrossment_addition(self):
+        action = next(a for a in self.author["actions"] if a["action_id"] == "house:119:1:199")
+        self.assertEqual(action["source_id"], "govinfo:rcp119-6-july-version")
+        self.assertIn("not attributed to the July17 roll199", action["meaning"])
+        self.assertNotIn("Federal Reserve digital-currency package", action["compact_description"])
+        self.assertFalse(any(m["locator"].startswith("TITLE VI--") for m in action["claim_source_map"]))
+        self.assertTrue({"govinfo:hrpt119-199-partsBC", "govinfo:hres707-engrossment-instruction",
+                         "congressional-record:2025-07-17-3633-version"} <= set(action["additional_source_ids"]))
+        core, _, projections, _, result = self.products
+        members = {m["member_id"]: m for m in readable_candidates(self.author, core, projections, result)["members"]}
+        finding = next(f for f in members["F000477"]["findings"] if action["action_id"] in f["action_ids"])
+        self.assertIn("customer-property pool", finding["compact"])
+        self.assertNotIn("Federal Reserve digital-currency package", finding["compact"])
+        self.assertFalse(any(action["action_id"] in f["action_ids"] for f in members["M001184"]["findings"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == action["action_id"])["additional_source_ids"].remove("govinfo:hres707-engrossment-instruction")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -87,11 +87,11 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
 - [x] Counts43/176/8/113/336 become61/179/8/143/285 across unchanged676 identities.
-  Add236 governed sources (48 Clerk,188 other),52 membership records and300
-  interpretation claim maps. Totals687 sources,250 membership records,467 maps.
+  Add240 governed sources (48 Clerk,192 other),52 membership records and320
+  interpretation claim maps. Totals691 sources,250 membership records,487 maps.
   The285 unresolved identities comprise284 unreviewed screenings and one examined
   exact-source conflict at roll237; the latter is not relabeled unreviewed.
-- [x] Regenerate and inspect compact/detail outputs. All48 candidate tests and135 focused subsystem tests pass,
+- [x] Regenerate and inspect compact/detail outputs. All49 candidate tests and136 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
@@ -247,17 +247,28 @@ Manual additions sincee71ecc7:49 governed sources, two shared interpretations,
 36 claim maps and9 membership records. The earlier roll237 conflict remains.
 At the previous checkpoint, report tables152/171 were visually transcribed for medical isotope and
 Other Defense allocations; Rules image47 was transcribed only for the disputed
-instruction. No private/protected material. All48 candidate tests,135 focused subsystem tests and7 semantic checks pass. The prior checkpoint needed a single
+instruction. No private/protected material. All49 candidate tests,136 focused subsystem tests and7 semantic checks pass. The prior checkpoint needed a single
 schema-check rerun after omitting NODE_PATH; this run used the established
-command-local setting and all135 passed together. No environment file changed.
-e71ecc7’s9 exact-head CI checks passed; this progress commit needs its own CI.
+command-local setting and all136 passed together. No environment file changed.
+a84103c’s9 exact-head CI checks passed; this progress commit needs its own CI.
 
-Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
-were read through TitleVI, not only the shorter original contents list. Its
-sections404/406→11USC761/766→507/726 chain and101/103/109 applicability were
-traced. Section512 was compared with S.1582 and12USC1843(k). S.1582 section11's
-separate reserve-shortfall priority has its own meaning. Statutory historical
-notes identify health-plan contribution claims, not today's dollar caps.
+Exact-version correction discovered while reading the next rule, H.Res.707:
+its September16 section7 directs adding H.R.1919 to H.R.3633’s engrossment.
+The current EH therefore includes later TitleVI matter not voted on in July199.
+RCP119-6, Report119-199 PartB and July17 Record bind the July version; Sherman
+explicitly declined to offer PartC. The unchanged404/406 Health-financing chain and
+512 context were checked against the July print. Removed the anti-CBDC attribution
+from the July compact/detail and added explicit temporal source guards. No member
+choice, membership disposition or Health bankruptcy interpretation changed; the
+later instruction remains procedural context for screening268. This is a concrete
+source-version correction, not a reopening of the architecture or a human gate.
+Four added governed sources and20 net claim maps; old source captures unchanged.
+
+Prepared next sources in research72–74: Clerk261–270 and complete EH captures for
+3838/3486/3400/2721/4922 plus H.Res.707. EH3486/3400/2721 and707 were read; their
+incorporated authorities still require screening. H.R.3400 and2721 each extend
+5503(d)(7) pension limits to different dates; reuse the governed5503 analysis,
+not only their physician/headstone titles. Whole EH3838 and4922 remain unread.
 
 ## Boundaries, rollback and reconciliation
 
