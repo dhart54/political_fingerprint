@@ -52,7 +52,11 @@
     "house:119:1:25",
     "house:119:1:255",
     "house:119:1:256",
+    "house:119:1:266",
+    "house:119:1:269",
     "house:119:1:27",
+    "house:119:1:270",
+    "house:119:1:271",
     "house:119:1:281",
     "house:119:1:285",
     "house:119:1:306",
@@ -91,11 +95,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 179,
-      "exact_action_ineligible": 143,
-      "interpreted_substantive_directional": 61,
-      "expressive_nonbinding_context": 8,
-      "source_unresolved": 285
+      "procedural_context": 182,
+      "exact_action_ineligible": 146,
+      "interpreted_substantive_directional": 65,
+      "expressive_nonbinding_context": 9,
+      "source_unresolved": 274
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -104,14 +108,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 61,
-    "directional_substantive_actions": 61,
+    "substantive_eligible_actions": 65,
+    "directional_substantive_actions": 65,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 179,
-    "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 143,
-    "unresolved_boundary_cases": 285,
-    "independent_episode_count": 44,
+    "procedural_context_actions": 182,
+    "expressive_nonbinding_actions": 9,
+    "exact_action_ineligible_actions": 146,
+    "unresolved_boundary_cases": 274,
+    "independent_episode_count": 48,
     "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
@@ -122,12 +126,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 61,
-      "substantive_actions": 61,
+      "ready_substantive_actions": 65,
+      "substantive_actions": 65,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "284 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "273 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -219,10 +223,13 @@
         "house:119:1:263",
         "house:119:1:265",
         "house:119:1:267",
+        "house:119:1:268",
         "house:119:1:272",
+        "house:119:1:273",
         "house:119:1:276",
         "house:119:1:280",
         "house:119:1:283",
+        "house:119:1:284",
         "house:119:1:288",
         "house:119:1:290",
         "house:119:1:308",
@@ -433,6 +440,9 @@
         "house:119:1:258",
         "house:119:1:259",
         "house:119:1:260",
+        "house:119:1:264",
+        "house:119:1:274",
+        "house:119:1:275",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -502,6 +512,10 @@
         "house:119:1:246",
         "house:119:1:255",
         "house:119:1:256",
+        "house:119:1:266",
+        "house:119:1:269",
+        "house:119:1:270",
+        "house:119:1:271",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -526,6 +540,7 @@
         "house:119:1:159",
         "house:119:1:179",
         "house:119:1:185",
+        "house:119:1:282",
         "house:119:2:121",
         "house:119:2:289"
       ],
@@ -535,20 +550,9 @@
         "house:119:1:226",
         "house:119:1:237",
         "house:119:1:262",
-        "house:119:1:264",
-        "house:119:1:266",
-        "house:119:1:268",
-        "house:119:1:269",
-        "house:119:1:270",
-        "house:119:1:271",
-        "house:119:1:273",
-        "house:119:1:274",
-        "house:119:1:275",
         "house:119:1:277",
         "house:119:1:278",
         "house:119:1:279",
-        "house:119:1:282",
-        "house:119:1:284",
         "house:119:1:286",
         "house:119:1:287",
         "house:119:1:289",
@@ -817,11 +821,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "61 proposed source-mapped inputs, not accepted eligibility. Of285 unresolved identities,284 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "65 proposed source-mapped inputs, not accepted eligibility. Of274 unresolved identities,273 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "44 candidate episodes cover61 supplied actions, including9 multi-action episodes (six pairs, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). H.R.3838’s remaining amendments and passage remain under review. Exact actions are independently screened; related exclusions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "48 candidate episodes cover65 supplied actions, including9 multi-action episodes (six pairs, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). H.R.3838 passage remains under review. Exact actions are independently screened; related exclusions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "4a6e9658a5961376e9ff808360a3a78e7b9eee559125a985499aa705603d0782",
+  "universe_subject_sha256": "a60bf213a962550783b014f6f743feb1f7b137240ca666dbae32d00d7e797b41",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -18326,13 +18330,14 @@
       "date": "2025-09-11",
       "measure": "bill_119_hr_3486",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.3486 EH changes improper-entry and post-removal reentry criminal penalties. It raises1325(a)’s repeat-entry maximum from two to five years, adds a five-year minimum with possible life imprisonment for the specified entry misconduct followed by a conviction punishable by more than one year, and rewrites1326’s reentry framework, including its general ten-year maximum and specified ten-year minimum-to-life prior-conviction category. Preserve the consent/advance-consent exceptions, distinct misdemeanor/security/early-removal/repeated-removal categories, and redesignation rather than repeal of the collateral-attack rule. Incorporated1182(a)(3)(B),1225(c),1231(a)(4)(B) and INA titleV identify security, removal and custody predicates; they do not convert this penalty bill into a health-admissibility, clinical-treatment or social-benefit rule. The terrorism definition’s biological/chemical-agent references and potential effects of incarceration are context, not direct Health delivery or financing changes. No illness, treatment, family-benefit or deterrence outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:264",
         "url": "https://clerk.house.gov/evs/2025/roll264.xml",
         "raw_sha256": "35aaab05bc51aa61412036a94991a4dd5490a9286c8cd5e300674a49c1dbff40",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3f1bd2efc8b06709d0a82a27ec0595259134a91d930723d0377abe8a3c20c793",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -18343,25 +18348,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.3486 EH changes improper-entry and post-removal reentry criminal penalties. It raises1325(a)’s repeat-entry maximum from two to five years, adds a five-year minimum with possible life imprisonment for the specified entry misconduct followed by a conviction punishable by more than one year, and rewrites1326’s reentry framework, including its general ten-year maximum and specified ten-year minimum-to-life prior-conviction category. Preserve the consent/advance-consent exceptions, distinct misdemeanor/security/early-removal/repeated-removal categories, and redesignation rather than repeal of the collateral-attack rule. Incorporated1182(a)(3)(B),1225(c),1231(a)(4)(B) and INA titleV identify security, removal and custody predicates; they do not convert this penalty bill into a health-admissibility, clinical-treatment or social-benefit rule. The terrorism definition’s biological/chemical-agent references and potential effects of incarceration are context, not direct Health delivery or financing changes. No illness, treatment, family-benefit or deterrence outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:264",
           "url": "https://clerk.house.gov/evs/2025/roll264.xml",
           "raw_sha256": "35aaab05bc51aa61412036a94991a4dd5490a9286c8cd5e300674a49c1dbff40",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3f1bd2efc8b06709d0a82a27ec0595259134a91d930723d0377abe8a3c20c793",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3486eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3486eh/html/BILLS-119hr3486eh.htm",
+          "raw_sha256": "4f672d796f88cb157ac13d5cf81ad9a1186ca3d210151a62b9f16d2ffede3303",
+          "governed_bytes_sha256": "1e0d8adc054ea4bb92431fd578bf065802c30db9619aab99e8bcecdead015143"
+        },
+        {
+          "source_id": "govinfo:8usc1325-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+          "raw_sha256": "792459737f43cf4236baa362a31644d7d83d41d9295d9a82813e972243993170",
+          "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4"
+        },
+        {
+          "source_id": "govinfo:8usc1326-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+          "raw_sha256": "3a2d2a4b51a8c487e4e5656d18b56476cfc3ede94dd63e4627e0f39b5e4cd627",
+          "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-3486-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "9f30856b1e844ba39633bf13228b4b055db5f5b4a329894182650e49534b88e7"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-3486-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1225.htm",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "2f9149045901e06114c58627c2ee641c53275aa1b027d94af620e71679dd78ee"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-3486-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "fdc3450b633633612ceab483c83cd561a29fac7ccfdb521676dbd371c60dc62b"
+        },
+        {
+          "source_id": "govinfo:8usc-terrorist-removal-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapV.htm",
+          "raw_sha256": "233ad4f96fe973215d4eab378685af259214bb0e1742df60aa6fa6e0a56d552e",
+          "governed_bytes_sha256": "7e19725433533564388e0f67e9cf4097a73133210ccc02642aa91419fe64c151"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:264",
+        "source_ids": [
+          "clerk:119:1:264",
+          "govinfo:hr3486eh",
+          "govinfo:8usc1325-2024-operative",
+          "govinfo:8usc1326-2024-operative",
+          "govinfo:8usc1182-2024-3486-context",
+          "govinfo:8usc1225-2024-3486-context",
+          "govinfo:8usc1231-2024-3486-context",
+          "govinfo:8usc-terrorist-removal-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:264",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5562b7914f42113c3006c03956513b70387d71f2bccc0199ee12c3dfcb472751"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:265",
@@ -18414,15 +18479,16 @@
       "date": "2025-09-15",
       "measure": "bill_119_hr_3400",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R. 3400 EH authorizes the VA Secretary to assign traveling physicians for no more than one year at a time to provide care to veterans living in American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands or another United States territory or possession. Assignments may be to VA facilities or other approved facilities, and may include multiple physicians or assignment to a specific territory. This is discretionary assignment authority, not a guarantee of a physician for every territory, a permanent staffing increase or a new universal care entitlement.\n\nAssigned physicians must coordinate with non-VA providers to the extent practicable and necessary. In addition to section 7431 pay, the Secretary must provide a relocation or retention bonus substantially similar to one under 7410(a), as the Secretary considers appropriate. Section 7401 supplies health-personnel appointment authority;7431 is a pay section even though the bill refers to a physician appointed under 7401 or 7431. This description preserves that wording rather than inventing an additional appointment power. Existing 7410/7431 and referenced 5 USC 5753/5754 retain relevant pay, service-agreement, bonus-plan and waiver context. The bill supplies no fixed bonus amount or universal percentage. It changes retention-allowance wording to retention bonuses in 7410(a)(1) and 7431(e)(5)(B) and removes the specified duplicate comma.\n\nSection 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to December 31, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid. It also applies to a surviving spouse without a child and a child entitled to pension under 1542. Its nursing-facility definition excludes specified State homes receiving 1741(a) per-diem payments. The Medicaid facility payment cannot be reduced by the pension amount permitted to be paid, and excess-payment liability is limited by the willful-concealment rule. The bill extends the subsection, including those qualifications; it does not create the $90 cap, raise pensions generally or limit all veterans’ benefits to $90.\n\nThese direct medical-staffing and qualified nursing-home pension mechanisms support Health membership. The September 15, 2025 question was suspension of the rules and passage as amended, covering both provisions as one choice. No individual staffing, access, health or financial outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:266",
         "url": "https://clerk.house.gov/evs/2025/roll266.xml",
         "raw_sha256": "3a65370923598732ce0989b041c17bfdb3e57f18752428ec4e9957b5956098ba",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "fbb917b79d2b28759be158c4217793258cb948bafdbdf6ea5195229bc898f08c",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3400:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3400",
       "member_action": "yea",
@@ -18431,25 +18497,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R. 3400 EH authorizes the VA Secretary to assign traveling physicians for no more than one year at a time to provide care to veterans living in American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands or another United States territory or possession. Assignments may be to VA facilities or other approved facilities, and may include multiple physicians or assignment to a specific territory. This is discretionary assignment authority, not a guarantee of a physician for every territory, a permanent staffing increase or a new universal care entitlement.\n\nAssigned physicians must coordinate with non-VA providers to the extent practicable and necessary. In addition to section 7431 pay, the Secretary must provide a relocation or retention bonus substantially similar to one under 7410(a), as the Secretary considers appropriate. Section 7401 supplies health-personnel appointment authority;7431 is a pay section even though the bill refers to a physician appointed under 7401 or 7431. This description preserves that wording rather than inventing an additional appointment power. Existing 7410/7431 and referenced 5 USC 5753/5754 retain relevant pay, service-agreement, bonus-plan and waiver context. The bill supplies no fixed bonus amount or universal percentage. It changes retention-allowance wording to retention bonuses in 7410(a)(1) and 7431(e)(5)(B) and removes the specified duplicate comma.\n\nSection 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to December 31, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid. It also applies to a surviving spouse without a child and a child entitled to pension under 1542. Its nursing-facility definition excludes specified State homes receiving 1741(a) per-diem payments. The Medicaid facility payment cannot be reduced by the pension amount permitted to be paid, and excess-payment liability is limited by the willful-concealment rule. The bill extends the subsection, including those qualifications; it does not create the $90 cap, raise pensions generally or limit all veterans’ benefits to $90.\n\nThese direct medical-staffing and qualified nursing-home pension mechanisms support Health membership. The September 15, 2025 question was suspension of the rules and passage as amended, covering both provisions as one choice. No individual staffing, access, health or financial outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:266",
           "url": "https://clerk.house.gov/evs/2025/roll266.xml",
           "raw_sha256": "3a65370923598732ce0989b041c17bfdb3e57f18752428ec4e9957b5956098ba",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "fbb917b79d2b28759be158c4217793258cb948bafdbdf6ea5195229bc898f08c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3400eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3400eh/html/BILLS-119hr3400eh.htm",
+          "raw_sha256": "deab188538c65308f0fd969c787520a6a68b27cb6dba2afa03e2927b0c03c3ce",
+          "governed_bytes_sha256": "98ea4beb33aeb1ee9064ac0c3a88486b02dae8c25cd9b53e2c7dc99213fe14c0"
+        },
+        {
+          "source_id": "govinfo:38usc7401-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7401.htm",
+          "raw_sha256": "af390a128df8db0238d37714f7bf41bd0858939ab6778b59d58d50d22f33dc93",
+          "governed_bytes_sha256": "e6a54139d364133a66b348e5a9f041f07592717dc08a605051272d6ac0f697e6"
+        },
+        {
+          "source_id": "govinfo:38usc7410-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7410.htm",
+          "raw_sha256": "6653e743afc2102291f5348753ecbf986c39cb56c353baf2b6ce04fe732b3ed2",
+          "governed_bytes_sha256": "c30f5a3d4e6946ef915ff5807414c52780e4917acc8aa3582f1bc671ce33136c"
+        },
+        {
+          "source_id": "govinfo:38usc7431-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapIII-sec7431.htm",
+          "raw_sha256": "79f489fd293252392f5fe3b47f6d21fd6d4a8376ab3f94d026dc44de112d0a18",
+          "governed_bytes_sha256": "57e05bcdaf155f6753ec21373cdad0bfc3754b5c7faab2c6cb447e6ddaf050e9"
+        },
+        {
+          "source_id": "govinfo:5usc5753-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5753.htm",
+          "raw_sha256": "1590e243ee51546a693bc632c1bba2a28ad7aca20ea58424cbb9ee43bf28821e",
+          "governed_bytes_sha256": "b61431306be21dd55826084bebba54cc0953eba54b10a3d76813d130f336db6f"
+        },
+        {
+          "source_id": "govinfo:5usc5754-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5754.htm",
+          "raw_sha256": "b907da7d6f6debafe9de9bf63f884eedb6371fad81dcc3f07fe7d96ea4ff7929",
+          "governed_bytes_sha256": "b0e0dd5e5d1f59aa5cef8af9ae76a52608f75d0445e4bbe8478b7bb43274e58c"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:266",
+        "source_ids": [
+          "clerk:119:1:266",
+          "govinfo:hr3400eh",
+          "govinfo:38usc7401-2024-operative",
+          "govinfo:38usc7410-2024-operative",
+          "govinfo:38usc7431-2024-operative",
+          "govinfo:5usc5753-2024-operative",
+          "govinfo:5usc5754-2024-operative",
+          "govinfo:38usc5503-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:266",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c337b787c6e9fb99052bef9744805bc2cfdb3dfd67359d1fabf4e959f2e073a9"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:267",
@@ -18502,13 +18628,14 @@
       "date": "2025-09-16",
       "measure": "bill_119_hres_707",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.707 is a non-counting House rule, not a final-passage vote on its underlying measures. Sections1–6 provide closed-rule consideration for H.R.4922/5143/5140/5125/1047/3015/3062 with specified deemed substitutes, debate, point-of-order waivers and recommittal motions. Section7 separately directs adding House-passed H.R.1919 to the H.R.3633 engrossment with conforming/technical corrections; that September instruction is not retroactive July passage content. Sections8–10 extend the specified legislative/calendar-day counting exceptions in H.Res.354/313/211 to March31,2026, retaining their distinct resolution-of-inquiry and April2/February1 emergency contexts. Section11 disapplies National Emergencies Act section202 procedures for the specified July30,2025 emergency-termination joint resolution during September16,2025–March31,2026. These procedural effects are not treated as a recorded vote on each underlying policy or an independent substantive Health preference; later passage questions require their own exact-text membership review.",
       "source": {
         "source_id": "clerk:119:1:268",
         "url": "https://clerk.house.gov/evs/2025/roll268.xml",
         "raw_sha256": "2174c7966297b62f63946e6d3a00df4128e2df67a72c9f136c833c7da6df5005",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0d2ab1687b010864a0067ca6af46895a21757639a754d468125a5b883ac24fbb",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -18519,25 +18646,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.707 is a non-counting House rule, not a final-passage vote on its underlying measures. Sections1–6 provide closed-rule consideration for H.R.4922/5143/5140/5125/1047/3015/3062 with specified deemed substitutes, debate, point-of-order waivers and recommittal motions. Section7 separately directs adding House-passed H.R.1919 to the H.R.3633 engrossment with conforming/technical corrections; that September instruction is not retroactive July passage content. Sections8–10 extend the specified legislative/calendar-day counting exceptions in H.Res.354/313/211 to March31,2026, retaining their distinct resolution-of-inquiry and April2/February1 emergency contexts. Section11 disapplies National Emergencies Act section202 procedures for the specified July30,2025 emergency-termination joint resolution during September16,2025–March31,2026. These procedural effects are not treated as a recorded vote on each underlying policy or an independent substantive Health preference; later passage questions require their own exact-text membership review.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:268",
           "url": "https://clerk.house.gov/evs/2025/roll268.xml",
           "raw_sha256": "2174c7966297b62f63946e6d3a00df4128e2df67a72c9f136c833c7da6df5005",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0d2ab1687b010864a0067ca6af46895a21757639a754d468125a5b883ac24fbb",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres707eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+          "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
+        },
+        {
+          "source_id": "govinfo:hres354eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres354eh/html/BILLS-119hres354eh.htm",
+          "raw_sha256": "510a0706f495ed81b8b6a5dd23debce02d68c4be7f42abc7ea9ce84d1cb47975",
+          "governed_bytes_sha256": "f3a7e01da2e874da7c351f86ed7dd7d5965f8d4f2573555a1e621c19f2601397"
+        },
+        {
+          "source_id": "govinfo:hres313eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres313eh/html/BILLS-119hres313eh.htm",
+          "raw_sha256": "dc4324fdfb84734ed6b4f0bc975da00b21078eefe11753ebb4d3a82d60e7cc08",
+          "governed_bytes_sha256": "a84c2a541c76b390f4f35477dea31cdd904c33d2642106384b80056ac6e5fe61"
+        },
+        {
+          "source_id": "govinfo:hres211eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres211eh/html/BILLS-119hres211eh.htm",
+          "raw_sha256": "383de193f7484ce3923037da05a3557d6ca30847dd4beaffad705826ce44cae4",
+          "governed_bytes_sha256": "7ee24716b7ceeead320908421986902bee90ace67bac744d2452995a089ea737"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "raw_sha256": "f856d35995666b82ac131edb02c496ed8d02ff08f219fc74a687b9d1aab4119f",
+          "governed_bytes_sha256": "a23d05525a0c60221825834e952b73278ecebdf3f005c506a077730aefd5316b"
+        },
+        {
+          "source_id": "govinfo:hr1919eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1919eh/html/BILLS-119hr1919eh.htm",
+          "raw_sha256": "548cb87d7159ca7786a5f110bfed1b0b8c458a889a649aadf56ccc34358bd616",
+          "governed_bytes_sha256": "13ea7d5bb6768c1577bcbbaf2769026573b68f879dc65973b806234c7951aa4b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:268",
+        "source_ids": [
+          "clerk:119:1:268",
+          "govinfo:hres707eh",
+          "govinfo:hres354eh",
+          "govinfo:hres313eh",
+          "govinfo:hres211eh",
+          "govinfo:50usc1622-2024",
+          "govinfo:hr1919eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:268",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "75e501d96b779bdbd57df09b60c594f7af09a9e96953cda239fc577fe9c816f0"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:269",
@@ -18546,15 +18726,16 @@
       "date": "2025-09-16",
       "measure": "bill_119_hr_2721",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R. 2721 EH requires VA, during the seven years after enactment, to furnish an appropriate headstone, burial marker or medallion under 38 USC 2306 for an eligible veteran who died on or after December 7, 1941 and whose grave has not already received one from VA. It directs VA to disregard Public Law 101-508 section 8041(b)’s November 1, 1990 effective-date restriction and to explain the resulting eligibility on the National Cemetery Administration website. The operative provision supplies no November 1990 upper death-date boundary, despite the bill title’s historical framing. It does not authorize a second marker for every already served grave or repeal all cemetery eligibility requirements.\n\nExisting 2306 distinguishes unmarked graves, memorials where remains are unavailable, privately marked graves, medallions and other burial items. Its existing medallion provision already contains a death-date exception for specified eligible veterans; this is not portrayed as the first possible pre 1990 medallion. Sections 2402, 2411 and 6105 preserve relevant veteran/eligible-burial categories and statutory criminal/forfeiture restrictions. The new seven-year furnishing requirement does not make every deceased person eligible or replace all other burial rules. It is a benefit-delivery provision, not an expressive commemoration alone.\n\nSection 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to February 29, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid, with parallel application to a surviving spouse without a child and a child entitled to pension under 1542. Specified State homes receiving 1741(a) per-diem payments are excluded from the nursing-facility definition. The Medicaid facility payment cannot be reduced by the permitted pension, and recovery of excess payments is constrained by the willful-concealment rule. The amendment extends the existing qualified subsection, not a new universal $90 benefit cap.\n\nThe direct pension/Medicaid financing mechanism supports Health membership alongside the burial benefit. The September 16, 2025 question was suspension of the rules and passage as amended. The seven-year burial provision and February 29, 2032 pension expiration are separate durations within one package. This is not a separate recorded preference on each provision, and no actual recipient outcome or eventual enactment is inferred.",
       "source": {
         "source_id": "clerk:119:1:269",
         "url": "https://clerk.house.gov/evs/2025/roll269.xml",
         "raw_sha256": "6aeb7b3e3adf8ad15cf6a00d78fe1417fc9a089a7e436553cabff0a964deeea7",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f318c22cc894c309bdcae4d5b5aabc1632eaed9ab5bbadc52cf22ad6851d7344",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr2721:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_2721",
       "member_action": "yea",
@@ -18563,25 +18744,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R. 2721 EH requires VA, during the seven years after enactment, to furnish an appropriate headstone, burial marker or medallion under 38 USC 2306 for an eligible veteran who died on or after December 7, 1941 and whose grave has not already received one from VA. It directs VA to disregard Public Law 101-508 section 8041(b)’s November 1, 1990 effective-date restriction and to explain the resulting eligibility on the National Cemetery Administration website. The operative provision supplies no November 1990 upper death-date boundary, despite the bill title’s historical framing. It does not authorize a second marker for every already served grave or repeal all cemetery eligibility requirements.\n\nExisting 2306 distinguishes unmarked graves, memorials where remains are unavailable, privately marked graves, medallions and other burial items. Its existing medallion provision already contains a death-date exception for specified eligible veterans; this is not portrayed as the first possible pre 1990 medallion. Sections 2402, 2411 and 6105 preserve relevant veteran/eligible-burial categories and statutory criminal/forfeiture restrictions. The new seven-year furnishing requirement does not make every deceased person eligible or replace all other burial rules. It is a benefit-delivery provision, not an expressive commemoration alone.\n\nSection 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to February 29, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid, with parallel application to a surviving spouse without a child and a child entitled to pension under 1542. Specified State homes receiving 1741(a) per-diem payments are excluded from the nursing-facility definition. The Medicaid facility payment cannot be reduced by the permitted pension, and recovery of excess payments is constrained by the willful-concealment rule. The amendment extends the existing qualified subsection, not a new universal $90 benefit cap.\n\nThe direct pension/Medicaid financing mechanism supports Health membership alongside the burial benefit. The September 16, 2025 question was suspension of the rules and passage as amended. The seven-year burial provision and February 29, 2032 pension expiration are separate durations within one package. This is not a separate recorded preference on each provision, and no actual recipient outcome or eventual enactment is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:269",
           "url": "https://clerk.house.gov/evs/2025/roll269.xml",
           "raw_sha256": "6aeb7b3e3adf8ad15cf6a00d78fe1417fc9a089a7e436553cabff0a964deeea7",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f318c22cc894c309bdcae4d5b5aabc1632eaed9ab5bbadc52cf22ad6851d7344",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2721eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm",
+          "raw_sha256": "87ec2b89f89c9a8446318681d713c0d6671221d732dd5b69d9f5c45c2c0a05df",
+          "governed_bytes_sha256": "f9cb5945c5b64c78e803e0e3892341f4ed2c1883f870be531a88e703d894dc0e"
+        },
+        {
+          "source_id": "govinfo:38usc2306-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm",
+          "raw_sha256": "8d4e2a747d1fa3eec85362a152f8ea4acb6815305087faff91d401c54865bf73",
+          "governed_bytes_sha256": "760a74d8bfa30d5ba8675a21f7c1ac5c645822c1ec252d5a85b563ae5010c210"
+        },
+        {
+          "source_id": "govinfo:38usc2402-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2402.htm",
+          "raw_sha256": "db31b123b863108b83eea3bbb5c538a7e514f64b33f4b7f971aef4d5b863c40a",
+          "governed_bytes_sha256": "dfd71f3bdc6b7a597a8c821f03fad006b602fa2a7fb4e3149d3d0d7d28761483"
+        },
+        {
+          "source_id": "govinfo:38usc2411-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2411.htm",
+          "raw_sha256": "6849174e596e13a04613b329b695811db0f11543cd5db1c600dbc4cf04a982f8",
+          "governed_bytes_sha256": "34c8c594b4aef8357aa1a6eba1ef9f07ecb29f8ee7a8e9def48f4b4d216ec0a7"
+        },
+        {
+          "source_id": "govinfo:38usc6105-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap61-sec6105.htm",
+          "raw_sha256": "4e49f3941c89d74d6535b40dca8e36c255040e8e15bb4e3af301c5c43c14184d",
+          "governed_bytes_sha256": "79a7651b16257ca91821101f9efed7aa359daafb6bd4a1e4d06df25b84bf8449"
+        },
+        {
+          "source_id": "govinfo:38usc2306-1990-date",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm",
+          "raw_sha256": "8d4e2a747d1fa3eec85362a152f8ea4acb6815305087faff91d401c54865bf73",
+          "governed_bytes_sha256": "e00d0cc122236631347c3cb6501a5417d7e259707c146545c64865ac50670a1e"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:269",
+        "source_ids": [
+          "clerk:119:1:269",
+          "govinfo:hr2721eh",
+          "govinfo:38usc2306-2024-operative",
+          "govinfo:38usc2402-2024-operative",
+          "govinfo:38usc2411-2024-operative",
+          "govinfo:38usc6105-2024-operative",
+          "govinfo:38usc2306-1990-date",
+          "govinfo:38usc5503-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:269",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "97924bd6830dd9c81f56d465a3f2d8e7ccb9f55c2a8a8e7f57fc3c4cc9f7ae76"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:270",
@@ -18590,15 +18831,16 @@
       "date": "2025-09-16",
       "measure": "bill_119_hr_4922",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R. 4922 EH changes the Youth Rehabilitation Act definition of youth offender from a person 24 years of age or younger to a person under 18 at the time of the offense. The existing exclusions for specified murder, terrorism-murder and sexual-abuse offenses remain. The operative under 18 instruction controls this candidate; the long title’s phrase 18 years of age or younger does not add 18-year-olds. Section 2 also removes the required consultation with juvenile-justice organizations and justice-system-involved young adults 18 through 24 when developing the strategic plan, changes the probation community-service age phrase to 15 through 18, and removes the special authority to sentence below a mandatory minimum. The community-service phrase does not override the amended youth-offender definition.\n\nThe incorporated 24-902 requires developmentally appropriate care and other services for covered youth pending trial or convicted in District custody, authorizes relevant federal-custody services, and requires the strategic plan to address behavioral and physical health care alongside education, employment, housing, family and reentry needs. Narrowing the defined group and removing the specified consultation requirement therefore changes the scope of an explicit care/service-planning mechanism. The plan’s original September 30, 2019 deadline is not a newly imposed deadline. The bill does not delete the words behavioral and physical health care from the plan, prohibit all health care for 18-to 24-year-olds, or establish that a particular person loses treatment. This direct statutory mechanism supports candidate Health membership; predicted crime, incarceration or health outcomes do not supply the membership basis.\n\nThe broader Youth Rehabilitation Act also provides probation, sentencing factors and qualified conviction-set-aside mechanisms. Existing sentencing provisions consider clinical examination reports and protect specified medical/mental-health statements under seal. The bill does not separately repeal every general sentencing option, guarantee imprisonment in every case, or replace the meaning of treatment with a medical-only definition. Under the incorporated statute, treatment means rehabilitation guidance, while 24-902 separately and expressly includes health-care planning.\n\nSection 3 requires the D.C. Attorney General to operate a juvenile-crime statistics website with monthly updates, permanent historical access and machine-readable bulk download. Its eleven categories include arrests and demographics, petty and violent crimes, first and repeat arrests, prosecution declinations, adult trials, dispositions and sentence lengths. Juvenile is tied to the amended Youth Rehabilitation Act definition; crime and crime of violence use 23-1331. Information from juvenile case records, social records and law-enforcement files must be provided to the Attorney General for this website purpose notwithstanding the specified confidentiality subsections. Social records include examination reports, and the existing statutes distinguish case, social and police records, including health/human-services information. This is a purpose-bound disclosure requirement, not a claim that the Attorney General previously had no access or that all clinical records must become public. The website expressly must exclude any juvenile’s personally identifiable information; unrelated confidentiality provisions are not declared universally repealed.\n\nThe EH directs establishment within 180 days, but its deadline clause refers to 16-2341 while the new website section is numbered 16-2340a. This candidate preserves the printed cross-reference discrepancy without inventing a correction. The long title also mentions barring Council changes to criminal sentences, but no such Home Rule Act prohibition appears in the operative EH; it is not attributed to the passage vote. The September 16 roll 270 is one final-passage choice on the age, sentencing, planning and statistics package. No separate preference on each component, enactment, crime reduction or individual care outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:270",
         "url": "https://clerk.house.gov/evs/2025/roll270.xml",
         "raw_sha256": "66534bd5c2ce9e332babba2a593677bfe50473c4b34f8e5535fde16b5d0d81a4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f6d456ceae46d21d50c825f54b260b5096bab2335bd2fb1d547a48e731bd2377",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4922:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4922",
       "member_action": "nay",
@@ -18607,25 +18849,120 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R. 4922 EH changes the Youth Rehabilitation Act definition of youth offender from a person 24 years of age or younger to a person under 18 at the time of the offense. The existing exclusions for specified murder, terrorism-murder and sexual-abuse offenses remain. The operative under 18 instruction controls this candidate; the long title’s phrase 18 years of age or younger does not add 18-year-olds. Section 2 also removes the required consultation with juvenile-justice organizations and justice-system-involved young adults 18 through 24 when developing the strategic plan, changes the probation community-service age phrase to 15 through 18, and removes the special authority to sentence below a mandatory minimum. The community-service phrase does not override the amended youth-offender definition.\n\nThe incorporated 24-902 requires developmentally appropriate care and other services for covered youth pending trial or convicted in District custody, authorizes relevant federal-custody services, and requires the strategic plan to address behavioral and physical health care alongside education, employment, housing, family and reentry needs. Narrowing the defined group and removing the specified consultation requirement therefore changes the scope of an explicit care/service-planning mechanism. The plan’s original September 30, 2019 deadline is not a newly imposed deadline. The bill does not delete the words behavioral and physical health care from the plan, prohibit all health care for 18-to 24-year-olds, or establish that a particular person loses treatment. This direct statutory mechanism supports candidate Health membership; predicted crime, incarceration or health outcomes do not supply the membership basis.\n\nThe broader Youth Rehabilitation Act also provides probation, sentencing factors and qualified conviction-set-aside mechanisms. Existing sentencing provisions consider clinical examination reports and protect specified medical/mental-health statements under seal. The bill does not separately repeal every general sentencing option, guarantee imprisonment in every case, or replace the meaning of treatment with a medical-only definition. Under the incorporated statute, treatment means rehabilitation guidance, while 24-902 separately and expressly includes health-care planning.\n\nSection 3 requires the D.C. Attorney General to operate a juvenile-crime statistics website with monthly updates, permanent historical access and machine-readable bulk download. Its eleven categories include arrests and demographics, petty and violent crimes, first and repeat arrests, prosecution declinations, adult trials, dispositions and sentence lengths. Juvenile is tied to the amended Youth Rehabilitation Act definition; crime and crime of violence use 23-1331. Information from juvenile case records, social records and law-enforcement files must be provided to the Attorney General for this website purpose notwithstanding the specified confidentiality subsections. Social records include examination reports, and the existing statutes distinguish case, social and police records, including health/human-services information. This is a purpose-bound disclosure requirement, not a claim that the Attorney General previously had no access or that all clinical records must become public. The website expressly must exclude any juvenile’s personally identifiable information; unrelated confidentiality provisions are not declared universally repealed.\n\nThe EH directs establishment within 180 days, but its deadline clause refers to 16-2341 while the new website section is numbered 16-2340a. This candidate preserves the printed cross-reference discrepancy without inventing a correction. The long title also mentions barring Council changes to criminal sentences, but no such Home Rule Act prohibition appears in the operative EH; it is not attributed to the passage vote. The September 16 roll 270 is one final-passage choice on the age, sentencing, planning and statistics package. No separate preference on each component, enactment, crime reduction or individual care outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:270",
           "url": "https://clerk.house.gov/evs/2025/roll270.xml",
           "raw_sha256": "66534bd5c2ce9e332babba2a593677bfe50473c4b34f8e5535fde16b5d0d81a4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f6d456ceae46d21d50c825f54b260b5096bab2335bd2fb1d547a48e731bd2377",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr4922eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm",
+          "raw_sha256": "b7814730ca29e96942018e5828bafe5581af6e168852bbf143a05dce2a577467",
+          "governed_bytes_sha256": "081729d5890e26409c9d791ebe49020178e3769ef6d3444a1bced3b274f2f632"
+        },
+        {
+          "source_id": "dc-council:code-24-901-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html",
+          "raw_sha256": "dd31db353d03562cee402962ecd4b02cb7edd9951cb991758da72065abd100e1",
+          "governed_bytes_sha256": "b72fada664fca923a19cf4dd939e9bc9cae9fabbae2e9832f9ce74b0c7f26180"
+        },
+        {
+          "source_id": "dc-council:code-24-902-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html",
+          "raw_sha256": "ecc9ce30a272e4a45b94fff1ea8722bd2333904a99a7e7757c90011e6e07c73b",
+          "governed_bytes_sha256": "774cfe11e60f2894e25f8efac3376646f8979243860b4dca1431967bbc3eacfc"
+        },
+        {
+          "source_id": "dc-council:code-24-903-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html",
+          "raw_sha256": "b90decd613270733a3d8eff7dee871d3bc41005e2e1b3d3c8a5a639910d641c0",
+          "governed_bytes_sha256": "2e9907e8b9c3c296f08cc51aa5908dca50b3a57397f51cc2f98940884847efcf"
+        },
+        {
+          "source_id": "dc-council:code-24-904-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-904.html",
+          "raw_sha256": "312a3cab4cf2b126c2601a737c48175bfe3259960d3223a12d3118526f178101",
+          "governed_bytes_sha256": "d77e4599abb5041350d519dfce7dfe59747bf529c17ccd4931e46abad581129a"
+        },
+        {
+          "source_id": "dc-council:code-24-906-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-906.html",
+          "raw_sha256": "296989304f57f16b5c9e07fe84acd49c8161fe87a9092061a0eed55e18609ab4",
+          "governed_bytes_sha256": "cef658644e0476cfc00cbca093a583e81de50399d5273d819a4ebe4950eebf16"
+        },
+        {
+          "source_id": "dc-council:code-16-2331-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2331.html",
+          "raw_sha256": "0d8a6a097e7bd5bc21d9c7bbd6cedc6a6faaca998e16bb7662d4bd0d257a7710",
+          "governed_bytes_sha256": "7659e315bd3cb4696917c3041184e8d6c2efb5d671b9cf78b84c5500ffd495d4"
+        },
+        {
+          "source_id": "dc-council:code-16-2332-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2332.html",
+          "raw_sha256": "e6ccabdce60c684a19e3c425656536dc29a2ca53880a94fc4626c3164e703ed3",
+          "governed_bytes_sha256": "53cd31d29675a55a0619a662ce97d62dac2e970875ffe0a77ad883f9005fa2fe"
+        },
+        {
+          "source_id": "dc-council:code-16-2333-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2333.html",
+          "raw_sha256": "a2ba4a3d3b10f09d7230167419aa0b6afd57b4fb415287f6ba007b54b8c14c54",
+          "governed_bytes_sha256": "f2d51b5070ed4afc210957530e3b4036979d8d767076c2f3c667b2c441230620"
+        },
+        {
+          "source_id": "dc-council:code-16-2315-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html",
+          "raw_sha256": "cc0769c2a94fd6488a515384626b73e92ab930b9e6b9c660396d23fea6ae0f52",
+          "governed_bytes_sha256": "2d402cc7e87b4fc6d8390e92e260dfe6ddba49db6d86abaff2435aeba3ac9a19"
+        },
+        {
+          "source_id": "dc-council:code-23-1331-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-1331.html",
+          "raw_sha256": "386e799af3ebb1b919cf10d20ba8ad05b37a1131c07b0bf4ea5cfa8df3da45c4",
+          "governed_bytes_sha256": "b582f40ece19bb9de2ac4c472392171faffbcbd58246fcc85103dcfd2abcd6a4"
+        },
+        {
+          "source_id": "dc-council:code-11-1101-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html",
+          "raw_sha256": "f26d9c61a266d3f6a65c247c85f6929d7a729c5539c3563f4224e9e8fbb567b4",
+          "governed_bytes_sha256": "e30815b1b91e417554b2e172beafcca0174667dede87169df85dcde07d2e041a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:270",
+        "source_ids": [
+          "clerk:119:1:270",
+          "govinfo:hr4922eh",
+          "dc-council:code-24-901-20250916",
+          "dc-council:code-24-902-20250916",
+          "dc-council:code-24-903-20250916",
+          "dc-council:code-24-904-20250916",
+          "dc-council:code-24-906-20250916",
+          "dc-council:code-16-2331-20250916",
+          "dc-council:code-16-2332-20250916",
+          "dc-council:code-16-2333-20250916",
+          "dc-council:code-16-2315-20250916",
+          "dc-council:code-23-1331-20250916",
+          "dc-council:code-11-1101-20250916"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:270",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5c629d9e2e1bc65d4060c513c2c348abca4949e66b50e2ddded9bf7939056ab8"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:271",
@@ -18634,15 +18971,16 @@
       "date": "2025-09-16",
       "measure": "bill_119_hr_5140",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R. 5140 EH lowers specified D.C. thresholds for adult criminal proceedings to age 14. In 16-2301(3), it changes 16 to 14 for exclusion from the Family Court child definition when the individual faces the listed serious charges, specified lesser-included convictions or traffic charges. The related retained-jurisdiction clause for a person under 21 changes offenses committed before 16 to before 14; the separate before 18 delinquent-act language is not rewritten. In 16-2307(a), the transfer-motion threshold for conduct that would be an adult felony changes from 15 to 14, and the threshold for a child already committed as delinquent changes from 16 to 14. These changes apply to offenses committed on or after enactment.\n\nThe incorporated juvenile framework expressly supplies care mechanisms. Section 16-2320(c)(1) makes specified medical or psychiatric treatment dispositions under(a)(1) and(a)(4) available for a child found delinquent or in need of supervision, subject to the statutory conditions. Section 16-2315 permits physical/mental examinations and provides conditional competency treatment, inpatient/outpatient limits and reporting. The bill narrows which charged young people remain within this juvenile framework and broadens eligibility for transfer out of it. That change in the reach of explicit care and rehabilitation authorities supports candidate Health membership. It does not repeal those authorities for every child or prove that adult criminal proceedings provide no health care.\n\nA transfer remains a distinct process, not an automatic result for every 14-year-old or every charge. The retained 16-2307 provisions require a hearing and specified public-welfare/rehabilitation findings, consider mental condition and prior treatment, require a social-services report, and retain a competency-examination stay. The existing rebuttable transfer presumption for specified 15-to 18-year-olds is not rewritten. The existing under 18 firearm-location transfer provision is also retained, so this bill is not described as the first possible transfer route for every person below 15. Certain prosecutor-filed charges are separately excluded from the child definition without using that transfer-motion process.\n\nThe September 16, 2025 final-passage vote covers these connected age and jurisdiction changes as one choice. It is not a separate vote on each clinical service, an amendment of the Youth Rehabilitation Act definition in H.R. 4922, or a finding about later crime, incarceration, treatment availability or health outcomes. The two bills have separate statutory definitions, stages and episodes.",
       "source": {
         "source_id": "clerk:119:1:271",
         "url": "https://clerk.house.gov/evs/2025/roll271.xml",
         "raw_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "b90662c86c04e9729e2e893810a85d5a500be6f45d76408bf9f442987b532bf7",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr5140:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_5140",
       "member_action": "nay",
@@ -18651,25 +18989,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R. 5140 EH lowers specified D.C. thresholds for adult criminal proceedings to age 14. In 16-2301(3), it changes 16 to 14 for exclusion from the Family Court child definition when the individual faces the listed serious charges, specified lesser-included convictions or traffic charges. The related retained-jurisdiction clause for a person under 21 changes offenses committed before 16 to before 14; the separate before 18 delinquent-act language is not rewritten. In 16-2307(a), the transfer-motion threshold for conduct that would be an adult felony changes from 15 to 14, and the threshold for a child already committed as delinquent changes from 16 to 14. These changes apply to offenses committed on or after enactment.\n\nThe incorporated juvenile framework expressly supplies care mechanisms. Section 16-2320(c)(1) makes specified medical or psychiatric treatment dispositions under(a)(1) and(a)(4) available for a child found delinquent or in need of supervision, subject to the statutory conditions. Section 16-2315 permits physical/mental examinations and provides conditional competency treatment, inpatient/outpatient limits and reporting. The bill narrows which charged young people remain within this juvenile framework and broadens eligibility for transfer out of it. That change in the reach of explicit care and rehabilitation authorities supports candidate Health membership. It does not repeal those authorities for every child or prove that adult criminal proceedings provide no health care.\n\nA transfer remains a distinct process, not an automatic result for every 14-year-old or every charge. The retained 16-2307 provisions require a hearing and specified public-welfare/rehabilitation findings, consider mental condition and prior treatment, require a social-services report, and retain a competency-examination stay. The existing rebuttable transfer presumption for specified 15-to 18-year-olds is not rewritten. The existing under 18 firearm-location transfer provision is also retained, so this bill is not described as the first possible transfer route for every person below 15. Certain prosecutor-filed charges are separately excluded from the child definition without using that transfer-motion process.\n\nThe September 16, 2025 final-passage vote covers these connected age and jurisdiction changes as one choice. It is not a separate vote on each clinical service, an amendment of the Youth Rehabilitation Act definition in H.R. 4922, or a finding about later crime, incarceration, treatment availability or health outcomes. The two bills have separate statutory definitions, stages and episodes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:271",
           "url": "https://clerk.house.gov/evs/2025/roll271.xml",
           "raw_sha256": "ea078629f8c5917060805a0199e5c139ca02037b397c1f024606781e457a165e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "b90662c86c04e9729e2e893810a85d5a500be6f45d76408bf9f442987b532bf7",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr5140eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm",
+          "raw_sha256": "d703d5e1662a2bca00cbf0ec6bdc5bc7fb44e9e355c594eb2dd6b684cbbd3ea1",
+          "governed_bytes_sha256": "14e415f35a4ac4e5d9056704b837463cd98c55f10e6fab02076f476a7ff67781"
+        },
+        {
+          "source_id": "dc-council:code-16-2301-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html",
+          "raw_sha256": "388d3706a8f922860ec6f837bba47a38f7fff691fb860d322ff92b29178b1ecf",
+          "governed_bytes_sha256": "daf08716c70ad7c5574c88b9df4043a09da0695c678c2301715ce900e4f2fcdb"
+        },
+        {
+          "source_id": "dc-council:code-16-2307-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html",
+          "raw_sha256": "a9c38db6e2cbc3d4bd836caf0a7817201b1bdfba82898113a2c23ef75af897d7",
+          "governed_bytes_sha256": "27d26aaae060d94d536506cc7d5b7efc14e1c8203d47970b6dac96e968a73a76"
+        },
+        {
+          "source_id": "dc-council:code-16-2320-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html",
+          "raw_sha256": "34d705bf4524475ad6465d94db5b4281f07bacc70bf6b432f6cabd266e79ba2d",
+          "governed_bytes_sha256": "b689f807185145639d5f33b079ab6f63c7adb4807f4de5fd44bb708000463e54"
+        },
+        {
+          "source_id": "dc-council:code-16-2315-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html",
+          "raw_sha256": "cc0769c2a94fd6488a515384626b73e92ab930b9e6b9c660396d23fea6ae0f52",
+          "governed_bytes_sha256": "2d402cc7e87b4fc6d8390e92e260dfe6ddba49db6d86abaff2435aeba3ac9a19"
+        },
+        {
+          "source_id": "dc-council:code-11-1101-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html",
+          "raw_sha256": "f26d9c61a266d3f6a65c247c85f6929d7a729c5539c3563f4224e9e8fbb567b4",
+          "governed_bytes_sha256": "e30815b1b91e417554b2e172beafcca0174667dede87169df85dcde07d2e041a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:271",
+        "source_ids": [
+          "clerk:119:1:271",
+          "govinfo:hr5140eh",
+          "dc-council:code-16-2301-20250916",
+          "dc-council:code-16-2307-20250916",
+          "dc-council:code-16-2320-20250916",
+          "dc-council:code-16-2315-20250916",
+          "dc-council:code-11-1101-20250916"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:271",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "11b88169fe172ebb8e2b8ae94202d376011785c15259657264d0399d71f0a95e"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:272",
@@ -18722,13 +19113,14 @@
       "date": "2025-09-17",
       "measure": "bill_119_hres_722",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.722 supplies closed-rule consideration of H.R.5371 continuing appropriations and H.Res.719, with separate debate and specified recommittal/waiver provisions. It also changes H.Res.707 sections9,10,11 from March31,2026 to January31,2026 for the specified emergency-resolution procedural restrictions. Section8’s separate resolution-of-inquiry date is not changed by this instruction. These procedures do not constitute a final-passage vote on appropriations, an adoption vote on the commemorative resolution, or a substantive Health direction. The later underlying actions are separately accounted for.",
       "source": {
         "source_id": "clerk:119:1:273",
         "url": "https://clerk.house.gov/evs/2025/roll273.xml",
         "raw_sha256": "8ff9472c975532f0c562edf6c6430e31b26b50a5254b864c3d214993156c7e8d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "6c7a358639fd99b613d94d1d46949412daa55066f4d6495f37d81d924bc064b4",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -18739,25 +19131,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.722 supplies closed-rule consideration of H.R.5371 continuing appropriations and H.Res.719, with separate debate and specified recommittal/waiver provisions. It also changes H.Res.707 sections9,10,11 from March31,2026 to January31,2026 for the specified emergency-resolution procedural restrictions. Section8’s separate resolution-of-inquiry date is not changed by this instruction. These procedures do not constitute a final-passage vote on appropriations, an adoption vote on the commemorative resolution, or a substantive Health direction. The later underlying actions are separately accounted for.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:273",
           "url": "https://clerk.house.gov/evs/2025/roll273.xml",
           "raw_sha256": "8ff9472c975532f0c562edf6c6430e31b26b50a5254b864c3d214993156c7e8d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "6c7a358639fd99b613d94d1d46949412daa55066f4d6495f37d81d924bc064b4",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres722eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres722eh/html/BILLS-119hres722eh.htm",
+          "raw_sha256": "9137588a96f5b1172f5bbc375c2adae780d82ae5dfd7cbd6ec7bab1e6b1f10f4",
+          "governed_bytes_sha256": "50521ae9ef65890503614e964cb10a1dcd5524691c6b8a22f26f2adb50613298"
+        },
+        {
+          "source_id": "govinfo:hres707eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "raw_sha256": "940798bc3c1d8c2e33d0b245df971d1548e7ab7a7c3ebb62a1dc8d855a4c8544",
+          "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:273",
+        "source_ids": [
+          "clerk:119:1:273",
+          "govinfo:hres722eh",
+          "govinfo:hres707eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:273",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "f554ff5349ab6dbbd8ff173706b804279df6b1c082a7028dd91e705d47a9a133"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:274",
@@ -18766,13 +19183,14 @@
       "date": "2025-09-17",
       "measure": "bill_119_hr_5125",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.5125 terminates the Judicial Nomination Commission and transfers chief-judge designation to the President, removes the nomination-list and associated membership/qualification requirements, and removes the privileged disclosure channel to that terminated commission. Presidential appointment remains subject to Senate advice and consent; the separate Judicial Disabilities and Tenure Commission is not abolished. Section11-1528 includes confidential proceedings about a judge’s health as well as conduct, but the deleted subparagraph concerns disclosure to the nomination body for elevation/chief-judge consideration. It does not alter patient care, health insurance, disability-retirement entitlement or the medical standards for retirement. Changes apply to appointments on or after enactment. Judicial selection and its confidential personnel channel do not establish Health care or social-service delivery/financing membership merely because judges adjudicate health matters or some records concern health.",
       "source": {
         "source_id": "clerk:119:1:274",
         "url": "https://clerk.house.gov/evs/2025/roll274.xml",
         "raw_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "7038b3dcb97254b4bfc386f0d6167cd1ed5956d99d43e4c6e913164a3a99ed9a",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -18783,25 +19201,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.5125 terminates the Judicial Nomination Commission and transfers chief-judge designation to the President, removes the nomination-list and associated membership/qualification requirements, and removes the privileged disclosure channel to that terminated commission. Presidential appointment remains subject to Senate advice and consent; the separate Judicial Disabilities and Tenure Commission is not abolished. Section11-1528 includes confidential proceedings about a judge’s health as well as conduct, but the deleted subparagraph concerns disclosure to the nomination body for elevation/chief-judge consideration. It does not alter patient care, health insurance, disability-retirement entitlement or the medical standards for retirement. Changes apply to appointments on or after enactment. Judicial selection and its confidential personnel channel do not establish Health care or social-service delivery/financing membership merely because judges adjudicate health matters or some records concern health.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:274",
           "url": "https://clerk.house.gov/evs/2025/roll274.xml",
           "raw_sha256": "d720654d7585239c2aeb99197c5acfdc00d3c5f78f2f86eeb6f407117edfce09",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "7038b3dcb97254b4bfc386f0d6167cd1ed5956d99d43e4c6e913164a3a99ed9a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr5125eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5125eh/html/BILLS-119hr5125eh.htm",
+          "raw_sha256": "7fcfdfc8511520c71b6ca3762bf8b0af13f2fb8910545cd1b42fc80590a98eaf",
+          "governed_bytes_sha256": "d80795221d087e7297a9eb195b0ea151f20a31e3e2c140b06bcf39c5873ed94d"
+        },
+        {
+          "source_id": "dc-council:code-1-204.31-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.31.html",
+          "raw_sha256": "0e537870f63e4118002a01a5c5792cf1ac598f493ae8aae44cfdf97543af1e5f",
+          "governed_bytes_sha256": "de1e3b507e740419aa3e41572b8695f98d5e902f9407180102b99a6d91ce10d8"
+        },
+        {
+          "source_id": "dc-council:code-1-204.33-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.33.html",
+          "raw_sha256": "2e5de8e3b74475da5d5758a375a5bc9753bcc8775c026a3dc3ab7ea7a05a441c",
+          "governed_bytes_sha256": "02785cf4473be4ac13cbd2c96ca3b53909f76b85bff28aca9015284e2846ec8c"
+        },
+        {
+          "source_id": "dc-council:code-1-204.34-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/1-204.34.html",
+          "raw_sha256": "8c3364f835f0fd481325b6cfe12ea1eef6fa746a847ad5abaadcb968ae3c4726",
+          "governed_bytes_sha256": "f1c89e6e024c84334047a283fb6998e4521d66cbf7c4321c2f4a066a8202f979"
+        },
+        {
+          "source_id": "dc-council:code-11-1528-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1528.html",
+          "raw_sha256": "7b3da78949e0e29f8fa84a7f499b89db69a5f7508d43bb89409de84a6d126695",
+          "governed_bytes_sha256": "60ac94132374ebf0457221b6621757659645939a86c8df19910be1234da72c83"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:274",
+        "source_ids": [
+          "clerk:119:1:274",
+          "govinfo:hr5125eh",
+          "dc-council:code-1-204.31-20250916",
+          "dc-council:code-1-204.33-20250916",
+          "dc-council:code-1-204.34-20250916",
+          "dc-council:code-11-1528-20250916"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:274",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2908d017324e1609d04facc2df643165c9d428b9bba0c5a24aff712c78fcee98"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:275",
@@ -18810,13 +19274,14 @@
       "date": "2025-09-17",
       "measure": "bill_119_hr_5143",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.5143 replaces the specified District vehicle-pursuit restrictions and use-of-force classifications with permission to pursue a fleeing motor-vehicle suspect unless the officer or a supervising higher-ranking official reasonably believes pursuit entails unacceptable risk to someone other than the suspect, is futile, or another means is more effective or expeditious. It deletes the listed tactic/crime/injury definitions, retains motor-vehicle and pursuit definitions, and excludes sworn officers of the specified covered federal agencies from the law-enforcement-officer definition. The incorporated federal-agency list includes a residual category requiring the police chief and U.S. Attorney’s agreement. A DOJ report within three years evaluates public-alert technology. The prior serious-injury/death conditions and deleted serious/deadly-force classifications are real public-safety context, not a clinical-care, health-insurance or social-service delivery/financing mechanism. No injury reduction or increase is inferred. Neither the bill’s safety title nor the title of the Police/Firefighters/Medical Examiner code chapter establishes Health membership.",
       "source": {
         "source_id": "clerk:119:1:275",
         "url": "https://clerk.house.gov/evs/2025/roll275.xml",
         "raw_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "50818f356adbb3620a08d19ec721275fe7ded4ec46c0ab84f5aa38c0a84a6207",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -18827,25 +19292,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.5143 replaces the specified District vehicle-pursuit restrictions and use-of-force classifications with permission to pursue a fleeing motor-vehicle suspect unless the officer or a supervising higher-ranking official reasonably believes pursuit entails unacceptable risk to someone other than the suspect, is futile, or another means is more effective or expeditious. It deletes the listed tactic/crime/injury definitions, retains motor-vehicle and pursuit definitions, and excludes sworn officers of the specified covered federal agencies from the law-enforcement-officer definition. The incorporated federal-agency list includes a residual category requiring the police chief and U.S. Attorney’s agreement. A DOJ report within three years evaluates public-alert technology. The prior serious-injury/death conditions and deleted serious/deadly-force classifications are real public-safety context, not a clinical-care, health-insurance or social-service delivery/financing mechanism. No injury reduction or increase is inferred. Neither the bill’s safety title nor the title of the Police/Firefighters/Medical Examiner code chapter establishes Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:275",
           "url": "https://clerk.house.gov/evs/2025/roll275.xml",
           "raw_sha256": "0a94030431b84103984c55af4ea9c6229e75a288020e3169e8fa91b82949171f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "50818f356adbb3620a08d19ec721275fe7ded4ec46c0ab84f5aa38c0a84a6207",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr5143eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5143eh/html/BILLS-119hr5143eh.htm",
+          "raw_sha256": "dc453a5e50959efe97c4b26cf4f78e1481f4e69923bb3af22dd96cdd717321bf",
+          "governed_bytes_sha256": "70b84e02758310ef140c5f21c0ef4758bfd8b54b60ee49c51dad5920b2713b8a"
+        },
+        {
+          "source_id": "dc-council:code-5-365.01-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.01.html",
+          "raw_sha256": "3d512830c5a558c5a130eb7adebc80fcedf04d9d5fcb52c6119085fbf055a601",
+          "governed_bytes_sha256": "b0241c9c33af16c0f30c0a023da9837a2a4bd83da5a978f919775076052a17e2"
+        },
+        {
+          "source_id": "dc-council:code-5-365.02-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-365.02.html",
+          "raw_sha256": "f32e311b3a5b38358464117d9682c4ce9974ef9a15d42e8357eae861afd1c75b",
+          "governed_bytes_sha256": "f4a40b2f370752d9d5a5ab6d80c7e05b490fa0876269b3a3d34fc852a4cd65f7"
+        },
+        {
+          "source_id": "dc-council:code-5-133.17-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/5-133.17.html",
+          "raw_sha256": "3bf248ee692332da697bbb514f7aac975a2e8de6b4cbee63b1f479269891ecac",
+          "governed_bytes_sha256": "cf72a3bb68601b0c3352a8f8e1b8cf294edbbb263ac072fd0c3ca69559ca54a5"
+        },
+        {
+          "source_id": "dc-council:code-23-501-20250916",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-501.html",
+          "raw_sha256": "191ceb967e4931eca79e49f46058b3db10a22e94c8357fe8bdc4e7825892dabe",
+          "governed_bytes_sha256": "eb457bf7cd88b17327c4c79343e279044f44389074b490e154e6e9393fa233ff"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:275",
+        "source_ids": [
+          "clerk:119:1:275",
+          "govinfo:hr5143eh",
+          "dc-council:code-5-365.01-20250916",
+          "dc-council:code-5-365.02-20250916",
+          "dc-council:code-5-133.17-20250916",
+          "dc-council:code-23-501-20250916"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:275",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "807df79421b144a034653df7d2f2fb228c2b30764555f862403441e3c490784a"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:276",
@@ -19137,13 +19648,14 @@
       "date": "2025-09-19",
       "measure": "bill_119_hres_719",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "expressive_nonbinding_context",
+      "reason": "H.Res.719 condemns Charlie Kirk’s assassination and political violence, commends law-enforcement and emergency personnel and urges justice, expresses condolences, honors Kirk, and calls for rejection of political violence and respectful debate. Its preamble contains evaluative descriptions and attributed aspirations; these are statements of the resolution, not independently adopted factual or character conclusions. The text creates no clinical program, entitlement, appropriation or enforceable care-delivery rule. It remains non-counting expressive context; no Health direction or inference about why a member chose Yea, Nay, Present or Not Voting is generated.",
       "source": {
         "source_id": "clerk:119:1:282",
         "url": "https://clerk.house.gov/evs/2025/roll282.xml",
         "raw_sha256": "e5fb5eaf0196125a9b115907d31e9dac58863c80ce011df09c527c3fc1befdcc",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "95f97280ac2a9b3aebbf964c0fd1d282a9161bc2d9f5a7555c5b9f837682250e",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -19154,25 +19666,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "expressive_nonbinding_context",
+      "rationale": "H.Res.719 condemns Charlie Kirk’s assassination and political violence, commends law-enforcement and emergency personnel and urges justice, expresses condolences, honors Kirk, and calls for rejection of political violence and respectful debate. Its preamble contains evaluative descriptions and attributed aspirations; these are statements of the resolution, not independently adopted factual or character conclusions. The text creates no clinical program, entitlement, appropriation or enforceable care-delivery rule. It remains non-counting expressive context; no Health direction or inference about why a member chose Yea, Nay, Present or Not Voting is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:282",
           "url": "https://clerk.house.gov/evs/2025/roll282.xml",
           "raw_sha256": "e5fb5eaf0196125a9b115907d31e9dac58863c80ce011df09c527c3fc1befdcc",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "95f97280ac2a9b3aebbf964c0fd1d282a9161bc2d9f5a7555c5b9f837682250e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres719eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres719eh/html/BILLS-119hres719eh.htm",
+          "raw_sha256": "99d14cc81528e7007c9eb2bbc2417365da89eceb58d041fb00bb2e3538a2b25e",
+          "governed_bytes_sha256": "f0ff71998f1113e298073fb0decdb5320818230fa6cec96d2c0815f136f5fee4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:282",
+        "source_ids": [
+          "clerk:119:1:282",
+          "govinfo:hres719eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:282",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d1f3d57d21fe13c955f76d26a8949d7702f02bca1f653c8b16fd23d2df251e62"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:283",
@@ -19225,13 +19755,14 @@
       "date": "2025-11-12",
       "measure": "bill_119_hres_873",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.873 permits one specified motion to concur in the Senate amendment to H.R.5371, with points of order waived, the motion/amendment considered as read, one hour of equally divided debate and the previous question ordered without intervening motion. It does not itself adopt the Senate amendment. That distinct recorded concurrence is already represented at roll285; this rule remains non-counting, without borrowing the funding package’s Health meaning.",
       "source": {
         "source_id": "clerk:119:1:284",
         "url": "https://clerk.house.gov/evs/2025/roll284.xml",
         "raw_sha256": "5566d5ff3fa8179c24f92c1b449b758c646220b8fe7030d05ba96c8559b3fb25",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "6177026093dfeab8b101dcf2ec535f5e2b8bf0fd2af6aabd266fd60afc2c527a",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -19242,25 +19773,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.873 permits one specified motion to concur in the Senate amendment to H.R.5371, with points of order waived, the motion/amendment considered as read, one hour of equally divided debate and the previous question ordered without intervening motion. It does not itself adopt the Senate amendment. That distinct recorded concurrence is already represented at roll285; this rule remains non-counting, without borrowing the funding package’s Health meaning.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:284",
           "url": "https://clerk.house.gov/evs/2025/roll284.xml",
           "raw_sha256": "5566d5ff3fa8179c24f92c1b449b758c646220b8fe7030d05ba96c8559b3fb25",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "6177026093dfeab8b101dcf2ec535f5e2b8bf0fd2af6aabd266fd60afc2c527a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres873eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres873eh/html/BILLS-119hres873eh.htm",
+          "raw_sha256": "f574e9c8afc7cc18744c23ed9b5861f564ad941aaf24156e3761006521cd958a",
+          "governed_bytes_sha256": "b5a4e5992b574ee7952fe6d768462475d0e37fa32119c812e25073782f510648"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:284",
+        "source_ids": [
+          "clerk:119:1:284",
+          "govinfo:hres873eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:284",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c7a613f62c3e76d4a58425c8f845c7a9ec30a0336f19a341923e19a261ea279b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:285",
@@ -37504,11 +38053,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "61 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
+    "basis": "65 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "f546568a98e66286aeeb76fdbb961a7f3cbc3234ec20c46a0d4a9aa5cf030d9e",
+  "selection_sha256": "1d460e09505324a5c42fb5c8bb92492a2eb413841ccfb3880185157d27a6f35a",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -37545,7 +38094,11 @@
     "house:119:1:25",
     "house:119:1:255",
     "house:119:1:256",
+    "house:119:1:266",
+    "house:119:1:269",
     "house:119:1:27",
+    "house:119:1:270",
+    "house:119:1:271",
     "house:119:1:281",
     "house:119:1:285",
     "house:119:1:306",
@@ -37578,20 +38131,9 @@
     "house:119:1:226",
     "house:119:1:237",
     "house:119:1:262",
-    "house:119:1:264",
-    "house:119:1:266",
-    "house:119:1:268",
-    "house:119:1:269",
-    "house:119:1:270",
-    "house:119:1:271",
-    "house:119:1:273",
-    "house:119:1:274",
-    "house:119:1:275",
     "house:119:1:277",
     "house:119:1:278",
     "house:119:1:279",
-    "house:119:1:282",
-    "house:119:1:284",
     "house:119:1:286",
     "house:119:1:287",
     "house:119:1:289",
@@ -37861,7 +38403,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "285 unresolved identities comprise284 unreviewed screenings and one examined source conflict at2025 roll237. Continue subsequent NDAA actions from261, alongside224–226 public plan tracing. Captured material alone is not substantive review.",
+    "basis": "274 unresolved identities comprise273 unreviewed screenings and one examined source conflict at2025 roll237. Continue262 full NDAA passage and277–279 incorporated energy authorities, then286 onward, alongside224–226 public plan tracing. Captured material alone is not substantive review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -37913,6 +38455,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "ae221f57cf6ffe81e70529cebcee9c636d7de775adef4772198e7ac392a97f12",
-  "membership_review_sha256": "eab7edda44a27c39a4e216c14cbd4ef8a7e4863b3c90f9bad376391adb2caf79"
+  "proposal_sha256": "a0912f22d4692358e552445ff2432e2a00b698d3c49a1eeeec4f258576d142fb",
+  "membership_review_sha256": "cf72f48afe73aa7869729770723936a4f10a670719e6f078f43843ba41bae0c1"
 }

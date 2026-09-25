@@ -62,7 +62,7 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Active continuation — September24
+## Active continuation — September24–25
 
 Actual worktree `.w/foushee-next-domain` and remote draft PR194 both matched
 `bed93d0b507354fceaf0b52f1e7118f3fe62481a` at this continuation's start.
@@ -76,26 +76,26 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Eighteen new shared candidate meanings/compacts and thirty-six choice strings;
+- [x] Twenty-two new shared candidate meanings/compacts and forty-four choice strings;
   the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now44 Foushee /40 Massie findings,122 observations,
-  four Massie Not Voting records,44 episodes and nine multi-action episodes
+  non-directional accounting. Now48 Foushee /44 Massie findings,130 observations,
+  four Massie Not Voting records,48 episodes and nine multi-action episodes
   (six pairs, four H.R.3838 actions, four H.R.4016 actions and six supplied H.R.4553 actions).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become61/179/8/143/285 across unchanged676 identities.
-  Add240 governed sources (48 Clerk,192 other),52 membership records and320
-  interpretation claim maps. Totals691 sources,250 membership records,487 maps.
-  The285 unresolved identities comprise284 unreviewed screenings and one examined
+- [x] Counts43/176/8/113/336 become65/182/9/146/274 across unchanged676 identities.
+  Add301 governed sources (59 Clerk,242 other),63 membership records and352
+  interpretation claim maps. Totals752 sources,261 membership records,519 maps.
+  The274 unresolved identities comprise273 unreviewed screenings and one examined
   exact-source conflict at roll237; the latter is not relabeled unreviewed.
-- [x] Regenerate and inspect compact/detail outputs. All49 candidate tests and136 focused subsystem tests pass,
+- [x] Regenerate and inspect compact/detail outputs. All52 candidate tests and139 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete284 remaining screenings, resolve roll237’s documented source conflict,
+- [ ] Complete273 remaining screenings, resolve roll237’s documented source conflict,
   reconcile wider episodes and assess substantive review readiness. Independent
   cases continue; no exhausted evidence dependency or new human decision is asserted.
 
@@ -243,7 +243,7 @@ Miles City document page was unavailable. Public alternatives are not exhausted;
 North Dakota exact plan remains to acquire. Research25–40 and governed sources
 preserve H.R.4553 context. Do not redo completed EH, regional or EERE research.
 
-Manual additions sincee71ecc7:49 governed sources, two shared interpretations,
+Earlier batch additions sincee71ecc7:49 governed sources, two shared interpretations,
 36 claim maps and9 membership records. The earlier roll237 conflict remains.
 At the previous checkpoint, report tables152/171 were visually transcribed for medical isotope and
 Other Defense allocations; Rules image47 was transcribed only for the disputed
@@ -264,11 +264,76 @@ later instruction remains procedural context for screening268. This is a concret
 source-version correction, not a reopening of the architecture or a human gate.
 Four added governed sources and20 net claim maps; old source captures unchanged.
 
-Prepared next sources in research72–74: Clerk261–270 and complete EH captures for
-3838/3486/3400/2721/4922 plus H.Res.707. EH3486/3400/2721 and707 were read; their
-incorporated authorities still require screening. H.R.3400 and2721 each extend
-5503(d)(7) pension limits to different dates; reuse the governed5503 analysis,
-not only their physician/headstone titles. Whole EH3838 and4922 remain unread.
+Current continuation from pushed head `f1c42ee614cfc5a393b018dbaed677cf0d461335`:
+eleven more dispositions, comprising four shared candidates (266,269,270,271),
+three exclusions (264,274,275), three procedural controls (268,273,284) and one
+expressive control (282). No prior committed meaning, source capture or membership
+record changed. Add61 governed sources (11 Clerk,50 other),11 membership records
+and32 interpretation claim maps. The four new meanings and eight choice strings
+are shared once; both members support266/269 and oppose270/271. All remain candidates.
+
+H.R.3400/266 combines discretionary territorial VA physician assignments and
+bonuses with extension of the qualified Medicaid nursing-facility pension limit
+through December31,2032. H.R.2721/269 combines a seven-year burial-marker benefit
+with the distinct February29,2032 pension expiration. Reuse38USC5503(d); preserve
+family-status, State-home, Medicaid-payment and liability limits. Neither is a
+universal $90 cap. The burial title supplies no operative pre1990 upper death-date
+limit, and existing medallion authority already contains a death-date exception.
+
+H.R.4922/270 narrows the Youth Rehabilitation Act group to under18 at the offense;
+the incorporated care plan expressly includes behavioral and physical health care.
+Keep the original2019 planning deadline, removed young-adult consultation, other
+sentencing changes, website statistics and personally-identifiable-information
+prohibition. The long title does not supply an absent Home Rule amendment or
+change under18 to18-or-younger. Preserve the printed2341/2340a deadline cross-reference.
+H.R.5140/271 separately lowers specified adult-proceeding thresholds to14. Source
+bindings include juvenile treatment dispositions and examinations, while retaining
+transfer hearings, competency stays, existing firearm provisions and the separate
+15-to18 presumption. Neither candidate predicts loss of all care or a crime outcome.
+The Council's official public repository snapshot
+`8ed3f5ccaac32256a14f10b86418a98c93ff8c8a` precedes these votes; it is reused across
+the D.C. cases. No protected court records were accessed.
+
+H.R.3486/264 is excluded after complete EH and incorporated entry/removal/terrorist-
+removal authority review. H.R.5125/274 changes judicial nominations, including a
+confidential personnel-disclosure channel, without changing a care/benefit program.
+H.R.5143/275 changes vehicle-pursuit standards and requires an alert-technology
+report; injury-risk language does not itself establish a Health delivery mechanism.
+H.Res.707/268 accounts for all deemed substitutes, later3633 engrossment and
+emergency-resolution timing. H.Res.722/273 changes only707 sections9–11 to January31,
+not section8. H.Res.873/284 permits, but does not adopt, the separately recorded
+5371 concurrence. H.Res.719/282 is non-counting expressive context; evaluative
+preamble descriptions are not adopted as factual or character conclusions.
+
+Exact next work and prepared-source ledger:
+- 262/H.R.3838 EH in research72:2,080,487 normalized characters. Only chars0–16500
+  (header/partial table of contents) have been read. Resume at16500; no passage
+  membership disposition has been asserted. Read the operative package and
+  incorporated authorities, then reconcile earlier amendments and Coast Guard text.
+- 277/H.R.3062,278/H.R.3015,279/H.R.1047 EH in research86: complete short bills read,
+  but incorporated authorities remain to inspect. For3062, trace15USC717a/717b/717f,
+  16USC824a/824a-4/824o/796,49USC60502 and the listed permit orders; retain NEPA and
+  other-statute savings. For3015, obtain the charter in effect November19,2021 and
+  examine5USCchapter10/552b(c), including1013's exclusion. A later2025/2026 renewed
+  charter is not a substitute. For1047, examine the shared power definitions and
+  18CFR35.28(f) interconnection procedures before deciding membership. Clerk captures
+  are available but these three actions remain unreviewed in the completed-accounting sense.
+- Then286/H.R.1608,287/H.R.2659,289/H.R.4405 and the subsequent source/version groups
+  in the676-row inventory. Do not repeat completed281/285 appropriations interpretations.
+- Continue224–226 public land-plan tracing and237 formal correction/version tracing
+  independently. The latter remains the single examined conflict, not unavailable evidence.
+
+Research77–89 retains the veterans, immigration, emergency and D.C. source work;
+only read operative texts became governed sources. Manual work includes source
+acquisition/section selection, eleven membership decisions, four shared meanings
+and compact copy,32 source maps and readable spacing. No member-specific rewrite,
+new synthesis, architecture change or publication. The first focused test run found
+an old backlog count; a later new assertion incorrectly treated procedural context
+as substantive. Both assertions were corrected without changing the contract.
+All52 candidate tests,139 focused subsystem tests and7 semantic checks pass.
+The prior f1c42ee head passed all9 CI checks; this progress push gets separate
+exact-head CI. No terminal marker or new approval gate is created while work continues.
+
 
 ## Boundaries, rollback and reconciliation
 

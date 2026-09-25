@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "eff49eacfec9ae08ed58bb141ff1ee1ab57af17af5cced6dc21f63696f667b68",
-  "source_capture_sha256": "f828db6b7b04505739fbea8589aecc8e4b425aeffe4b90120bccd2b17364c377",
-  "core_sha256": "76361353514244d44528213744799bb2d2594884b4b7ff4e4e9f513a301ee194",
-  "compiled_sha256": "55f49aabae90e0d0db8429780510bf532a31b6c896818253ba1bb762942e7516",
-  "readable_sha256": "1d20a22d365e526adc8585433ae17b0736abe8951687f9b10a5d116aab418819",
+  "input_sha256": "771a07c2a8a4dd57f69c8b4746bffc1917462fcabb0024429f54cfe311f99e3f",
+  "source_capture_sha256": "72626c0283427383dd4a009c2e965ec022cb2855a68a9c5017c09b4c048b3f60",
+  "core_sha256": "200840d6a73ed9e3f1d8e44a1a6621e977aec46b7c06edc396a77666543ede60",
+  "compiled_sha256": "e70db6e0ff74f08cd4b47bc578d0fee379a7cd4c2f641f613319eee36bcc90f3",
+  "readable_sha256": "a4ef2421e712ce58a6b4e5b5840fb262d9de72dbb5f34d2a5f44afd6a3032555",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1233,6 +1233,86 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms",
           "source_id": "clerk:119:1:255"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:266",
+      "shared_sha256": "8b46d49f1e58ca0671662cf2f987e22274259bc61703c8ba6c94ef4303f3a97a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package",
+          "source_id": "clerk:119:1:266"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package",
+          "source_id": "clerk:119:1:266"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:269",
+      "shared_sha256": "508e6e64ebb53737c065245e04145ec38b21996d34aef56acfc3d15aa56a762b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package",
+          "source_id": "clerk:119:1:269"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package",
+          "source_id": "clerk:119:1:269"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:270",
+      "shared_sha256": "e91e9d0f6fde652006209e42f0f5294e66b95d5b6a542b393c3f6d36c231ddf8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements",
+          "source_id": "clerk:119:1:270"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements",
+          "source_id": "clerk:119:1:270"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:271",
+      "shared_sha256": "452c2e41c944151e1e05b9a2f209d447a53d3788d47be0f3e2259530ac4b2315",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework",
+          "source_id": "clerk:119:1:271"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework",
+          "source_id": "clerk:119:1:271"
         }
       ]
     }

@@ -1,9 +1,10 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Fifty-one more membership dispositions resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: eighteen new shared interpretations, thirty exclusions
-and three procedural controls. Now61 interpreted inputs,44 Foushee findings and40
-bounded Massie proof findings;284 discovery identities remain unreviewed; one additional examined action has a
+**Partial candidate, active research.** Sixty-two more membership dispositions resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: twenty-two new shared interpretations,
+thirty-three exclusions, six procedural controls and one expressive control.
+Now65 interpreted inputs,48 Foushee findings and44 bounded Massie proof findings;
+273 discovery identities remain unreviewed; one additional examined action has a
 printed-source conflict.
 This is neither complete Health coverage nor accepted/public content.
 
@@ -17,9 +18,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [61 shared meanings /487 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [691 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [250 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [65 shared meanings /519 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [752 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [261 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -27,11 +28,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|61|
-| procedural_context |176|179|
-| expressive_nonbinding_context |8|8|
-| exact_action_ineligible |113|143|
-| source_unresolved (unreviewed plus examined conflict) |336|285|
+| interpreted_substantive_directional |43|65|
+| procedural_context |176|182|
+| expressive_nonbinding_context |8|9|
+| exact_action_ineligible |113|146|
+| source_unresolved (unreviewed plus examined conflict) |336|274|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -154,12 +155,12 @@ workforce-training table. The memo's first pages were also inspected through its
 public reproduction, but unacquired PDF bytes are not represented as governed
 captures. No historical source was rewritten or analytical architecture changed.
 
-Manual delta from bed93d: eighteen shared meanings/compacts, thirty-six choice
-strings,320 claim maps,52 membership records and240 source captures (48 Clerk,
-192 other). Totals122 observations, four Massie non-votes,44 episodes and nine
+Manual delta from bed93d: twenty-two shared meanings/compacts, forty-four choice
+strings,352 net claim maps,63 membership records and301 source captures (59 Clerk,
+242 other). Totals130 observations, four Massie non-votes,48 episodes and nine
 multi-action episodes (six pairs, four H.R.3838, four H.R.4016 and six H.R.4553 actions).
-No synthesis added. The52 screenings comprise51 dispositions and one examined
-source conflict, not52 completed interpretations.
+No synthesis added. The63 screenings comprise62 resolved dispositions and one
+examined source conflict, not63 completed interpretations.
 
 **September energy/water amendments:** rolls227–231 are five proposed exclusions.
 Keep DRBC-rule enforcement separate from all DRBC funding under the bill. The
@@ -267,19 +268,83 @@ later instruction remains procedural context for screening268. This is a concret
 source-version correction, not a reopening of the architecture or a human gate.
 Four added governed sources and20 net claim maps; old source captures unchanged.
 
-Prepared next sources in research72–74: Clerk261–270 and complete EH captures for
-3838/3486/3400/2721/4922 plus H.Res.707. EH3486/3400/2721 and707 were read; their
-incorporated authorities still require screening. H.R.3400 and2721 each extend
-5503(d)(7) pension limits to different dates; reuse the governed5503 analysis,
-not only their physician/headstone titles. Whole EH3838 and4922 remain unread.
+Current continuation from pushed head `f1c42ee614cfc5a393b018dbaed677cf0d461335`:
+eleven more dispositions, comprising four shared candidates (266,269,270,271),
+three exclusions (264,274,275), three procedural controls (268,273,284) and one
+expressive control (282). No prior committed meaning, source capture or membership
+record changed. Add61 governed sources (11 Clerk,50 other),11 membership records
+and32 interpretation claim maps. The four new meanings and eight choice strings
+are shared once; both members support266/269 and oppose270/271. All remain candidates.
+
+H.R.3400/266 combines discretionary territorial VA physician assignments and
+bonuses with extension of the qualified Medicaid nursing-facility pension limit
+through December31,2032. H.R.2721/269 combines a seven-year burial-marker benefit
+with the distinct February29,2032 pension expiration. Reuse38USC5503(d); preserve
+family-status, State-home, Medicaid-payment and liability limits. Neither is a
+universal $90 cap. The burial title supplies no operative pre1990 upper death-date
+limit, and existing medallion authority already contains a death-date exception.
+
+H.R.4922/270 narrows the Youth Rehabilitation Act group to under18 at the offense;
+the incorporated care plan expressly includes behavioral and physical health care.
+Keep the original2019 planning deadline, removed young-adult consultation, other
+sentencing changes, website statistics and personally-identifiable-information
+prohibition. The long title does not supply an absent Home Rule amendment or
+change under18 to18-or-younger. Preserve the printed2341/2340a deadline cross-reference.
+H.R.5140/271 separately lowers specified adult-proceeding thresholds to14. Source
+bindings include juvenile treatment dispositions and examinations, while retaining
+transfer hearings, competency stays, existing firearm provisions and the separate
+15-to18 presumption. Neither candidate predicts loss of all care or a crime outcome.
+The Council's official public repository snapshot
+`8ed3f5ccaac32256a14f10b86418a98c93ff8c8a` precedes these votes; it is reused across
+the D.C. cases. No protected court records were accessed.
+
+H.R.3486/264 is excluded after complete EH and incorporated entry/removal/terrorist-
+removal authority review. H.R.5125/274 changes judicial nominations, including a
+confidential personnel-disclosure channel, without changing a care/benefit program.
+H.R.5143/275 changes vehicle-pursuit standards and requires an alert-technology
+report; injury-risk language does not itself establish a Health delivery mechanism.
+H.Res.707/268 accounts for all deemed substitutes, later3633 engrossment and
+emergency-resolution timing. H.Res.722/273 changes only707 sections9–11 to January31,
+not section8. H.Res.873/284 permits, but does not adopt, the separately recorded
+5371 concurrence. H.Res.719/282 is non-counting expressive context; evaluative
+preamble descriptions are not adopted as factual or character conclusions.
+
+Exact next work and prepared-source ledger:
+- 262/H.R.3838 EH in research72:2,080,487 normalized characters. Only chars0–16500
+  (header/partial table of contents) have been read. Resume at16500; no passage
+  membership disposition has been asserted. Read the operative package and
+  incorporated authorities, then reconcile earlier amendments and Coast Guard text.
+- 277/H.R.3062,278/H.R.3015,279/H.R.1047 EH in research86: complete short bills read,
+  but incorporated authorities remain to inspect. For3062, trace15USC717a/717b/717f,
+  16USC824a/824a-4/824o/796,49USC60502 and the listed permit orders; retain NEPA and
+  other-statute savings. For3015, obtain the charter in effect November19,2021 and
+  examine5USCchapter10/552b(c), including1013's exclusion. A later2025/2026 renewed
+  charter is not a substitute. For1047, examine the shared power definitions and
+  18CFR35.28(f) interconnection procedures before deciding membership. Clerk captures
+  are available but these three actions remain unreviewed in the completed-accounting sense.
+- Then286/H.R.1608,287/H.R.2659,289/H.R.4405 and the subsequent source/version groups
+  in the676-row inventory. Do not repeat completed281/285 appropriations interpretations.
+- Continue224–226 public land-plan tracing and237 formal correction/version tracing
+  independently. The latter remains the single examined conflict, not unavailable evidence.
+
+Research77–89 retains the veterans, immigration, emergency and D.C. source work;
+only read operative texts became governed sources. Manual work includes source
+acquisition/section selection, eleven membership decisions, four shared meanings
+and compact copy,32 source maps and readable spacing. No member-specific rewrite,
+new synthesis, architecture change or publication. The first focused test run found
+an old backlog count; a later new assertion incorrectly treated procedural context
+as substantive. Both assertions were corrected without changing the contract.
+All52 candidate tests,139 focused subsystem tests and7 semantic checks pass.
+The prior f1c42ee head passed all9 CI checks; this progress push gets separate
+exact-head CI. No terminal marker or new approval gate is created while work continues.
+
 
 ## Current validation and remaining execution
 
-All49 focused candidate tests pass, including complete six-action rendering,
-both members’ actual choices, distinct mandate/marriage funding scopes, nested
-amounts, source-removal rejection and separation of the conflicted amendment.
-All136 focused subsystem tests and7 canonical semantic checks pass with the established command-local settings.
-The previous checkpoint needed a single schema-check rerun after omitting it. The prior head passed7 canonical semantic checks. No environment/dependency file was changed. Priora84103c
+All52 focused candidate tests,139 focused subsystem tests and7 canonical semantic
+checks pass. New checks cover distinct pension dates and qualifications, the D.C.
+care/source bindings, exact statutory ages, title-versus-operative differences,
+source-removal rejection and separate procedural/expressive controls. Prior f1c42ee
 passed all9 exact-head CI checks; the new pushed commit requires its own checks.
 No frontend/runtime change or browser loop is claimed.
 
@@ -290,7 +355,7 @@ page was unavailable; public alternatives are not exhausted. North Dakota’s
 exact plan remains to acquire. Research25–40 and governed sources retain completed
 H.R.4553 EH/program work and the amendment237 conflict for targeted resumption.
 
-284 unreviewed screenings, one examined source conflict and wider episode
+273 unreviewed screenings, one examined source conflict and wider episode
 reconciliation remain. Independent safe work continues. This progress push is
 not a terminal state or approval gate; no shutdown marker is created. No new
 human decision is requested while official-source tracing remains available.
@@ -298,7 +363,7 @@ human decision is requested while official-source tracing remains available.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-61 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+65 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -1136,6 +1201,62 @@ Evidence: house:119:1:25; finding `prop:8354ac67bf3c6fdf`.
 
 Sources: [clerk:119:1:25](https://clerk.house.gov/evs/2025/roll025.xml); [govinfo:hr471eh](https://www.govinfo.gov/content/pkg/BILLS-119hr471eh/html/BILLS-119hr471eh.htm).
 
+### Territorial VA physicians and a pension-limit extension
+
+**Compact:** Foushee supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package. The bill would allow temporary VA physician assignments of up to one year at a time in U.S. territories, with care coordination and a relocation or retention bonus. It also extends the existing $90 monthly VA pension limit for specified Medicaid-covered nursing-home recipients through December 31, 2032. The vote covered both provisions; physician assignments remain discretionary.
+
+**Detail:**
+
+**house:119:1:266**
+
+Foushee supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package.
+
+H.R. 3400 EH authorizes the VA Secretary to assign traveling physicians for no more than one year at a time to provide care to veterans living in American Samoa, Guam, the Northern Mariana Islands, Puerto Rico, the United States Virgin Islands or another United States territory or possession. Assignments may be to VA facilities or other approved facilities, and may include multiple physicians or assignment to a specific territory. This is discretionary assignment authority, not a guarantee of a physician for every territory, a permanent staffing increase or a new universal care entitlement.
+
+Assigned physicians must coordinate with non-VA providers to the extent practicable and necessary. In addition to section 7431 pay, the Secretary must provide a relocation or retention bonus substantially similar to one under 7410(a), as the Secretary considers appropriate. Section 7401 supplies health-personnel appointment authority;7431 is a pay section even though the bill refers to a physician appointed under 7401 or 7431. This description preserves that wording rather than inventing an additional appointment power. Existing 7410/7431 and referenced 5 USC 5753/5754 retain relevant pay, service-agreement, bonus-plan and waiver context. The bill supplies no fixed bonus amount or universal percentage. It changes retention-allowance wording to retention bonuses in 7410(a)(1) and 7431(e)(5)(B) and removes the specified duplicate comma.
+
+Section 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to December 31, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid. It also applies to a surviving spouse without a child and a child entitled to pension under 1542. Its nursing-facility definition excludes specified State homes receiving 1741(a) per-diem payments. The Medicaid facility payment cannot be reduced by the pension amount permitted to be paid, and excess-payment liability is limited by the willful-concealment rule. The bill extends the subsection, including those qualifications; it does not create the $90 cap, raise pensions generally or limit all veterans’ benefits to $90.
+
+These direct medical-staffing and qualified nursing-home pension mechanisms support Health membership. The September 15, 2025 question was suspension of the rules and passage as amended, covering both provisions as one choice. No individual staffing, access, health or financial outcome is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2025-09-15. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The physician authority permits multiple assignments of up to one year at a time; it does not promise permanent capacity or placement in every territory. The bonus has no amount set in the bill.
+- The $90 limit is an existing pension rule for specified Medicaid nursing-facility recipients, with family-status, State-home, Medicaid-payment and liability qualifications. December 31, 2032 is this bill’s expiration date, not H.R. 2721’s date.
+
+Evidence: house:119:1:266; finding `prop:910c23c13cf20166`.
+
+Sources: [clerk:119:1:266](https://clerk.house.gov/evs/2025/roll266.xml); [govinfo:hr3400eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3400eh/html/BILLS-119hr3400eh.htm); [govinfo:38usc7401-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7401.htm); [govinfo:38usc7410-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7410.htm); [govinfo:38usc7431-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapIII-sec7431.htm); [govinfo:5usc5753-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5753.htm); [govinfo:5usc5754-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5754.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
+### Burial-marker assistance and a pension-limit extension
+
+**Compact:** Foushee supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package. The bill would provide seven years of headstone, marker or medallion assistance for eligible veterans who died on or after December 7, 1941 and whose graves had not already received one from VA. It also extends the existing $90 monthly VA pension limit for specified Medicaid-covered nursing-home recipients through February 29, 2032. One vote covered the burial benefit and pension-limit extension.
+
+**Detail:**
+
+**house:119:1:269**
+
+Foushee supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package.
+
+H.R. 2721 EH requires VA, during the seven years after enactment, to furnish an appropriate headstone, burial marker or medallion under 38 USC 2306 for an eligible veteran who died on or after December 7, 1941 and whose grave has not already received one from VA. It directs VA to disregard Public Law 101-508 section 8041(b)’s November 1, 1990 effective-date restriction and to explain the resulting eligibility on the National Cemetery Administration website. The operative provision supplies no November 1990 upper death-date boundary, despite the bill title’s historical framing. It does not authorize a second marker for every already served grave or repeal all cemetery eligibility requirements.
+
+Existing 2306 distinguishes unmarked graves, memorials where remains are unavailable, privately marked graves, medallions and other burial items. Its existing medallion provision already contains a death-date exception for specified eligible veterans; this is not portrayed as the first possible pre 1990 medallion. Sections 2402, 2411 and 6105 preserve relevant veteran/eligible-burial categories and statutory criminal/forfeiture restrictions. The new seven-year furnishing requirement does not make every deceased person eligible or replace all other burial rules. It is a benefit-delivery provision, not an expressive commemoration alone.
+
+Section 3 separately extends 38 USC 5503(d)’s expiration from November 30, 2031 to February 29, 2032. That subsection generally limits VA pension to $90 per month after the admission month for a veteran with neither spouse nor child whose nursing-facility services are covered by Medicaid, with parallel application to a surviving spouse without a child and a child entitled to pension under 1542. Specified State homes receiving 1741(a) per-diem payments are excluded from the nursing-facility definition. The Medicaid facility payment cannot be reduced by the permitted pension, and recovery of excess payments is constrained by the willful-concealment rule. The amendment extends the existing qualified subsection, not a new universal $90 benefit cap.
+
+The direct pension/Medicaid financing mechanism supports Health membership alongside the burial benefit. The September 16, 2025 question was suspension of the rules and passage as amended. The seven-year burial provision and February 29, 2032 pension expiration are separate durations within one package. This is not a separate recorded preference on each provision, and no actual recipient outcome or eventual enactment is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2025-09-16. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The seven-year burial authority preserves veteran/burial eligibility and the no-prior-VA-item condition. The title is not used to invent an operative upper death-date limit or a first-ever pre 1990 medallion entitlement.
+- The pension amendment retains existing qualifications and ends February 29, 2032; the seven-year burial period and H.R. 3400’s December 31, 2032 pension date are not substituted.
+
+Evidence: house:119:1:269; finding `prop:21f415f2c1b607a5`.
+
+Sources: [clerk:119:1:269](https://clerk.house.gov/evs/2025/roll269.xml); [govinfo:hr2721eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm); [govinfo:38usc2306-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc2402-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2402.htm); [govinfo:38usc2411-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2411.htm); [govinfo:38usc6105-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap61-sec6105.htm); [govinfo:38usc2306-1990-date](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm).
+
 ### Care, hospital-transfer and enforcement requirements after a live birth following abortion
 
 **Compact:** Foushee opposed House passage of H.R. 21’s care and enforcement requirements as a whole. The bill required specified care and hospital transfer after a live birth following an abortion or attempted abortion, with reporting duties, criminal penalties and civil remedies. The mother was exempted from prosecution under the provision. The vote addressed that legal package; it does not establish a broader position on abortion.
@@ -1157,6 +1278,65 @@ The Clerk recorded the House result as 'Passed' on 2025-01-23. This does not est
 Evidence: house:119:1:27; finding `prop:495b2c6a04a6393d`.
 
 Sources: [clerk:119:1:27](https://clerk.house.gov/evs/2025/roll027.xml); [govinfo:hr21eh](https://www.govinfo.gov/content/pkg/BILLS-119hr21eh/html/BILLS-119hr21eh.htm).
+
+### Narrowing youth-rehabilitation coverage in a D.C. sentencing and statistics bill
+
+**Compact:** Foushee opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements. The bill would narrow D.C.’s Youth Rehabilitation Act to people under 18 at the time of the offense, changing the group covered by a plan that includes behavioral and physical health care. It also removes the specified young-adult consultation requirement and below-minimum sentencing authority, and requires a juvenile-crime statistics website without personally identifiable information. One vote covered the whole package; it does not establish a loss of all care for 18-to 24-year-olds.
+
+**Detail:**
+
+**house:119:1:270**
+
+Foushee opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements.
+
+H.R. 4922 EH changes the Youth Rehabilitation Act definition of youth offender from a person 24 years of age or younger to a person under 18 at the time of the offense. The existing exclusions for specified murder, terrorism-murder and sexual-abuse offenses remain. The operative under 18 instruction controls this candidate; the long title’s phrase 18 years of age or younger does not add 18-year-olds. Section 2 also removes the required consultation with juvenile-justice organizations and justice-system-involved young adults 18 through 24 when developing the strategic plan, changes the probation community-service age phrase to 15 through 18, and removes the special authority to sentence below a mandatory minimum. The community-service phrase does not override the amended youth-offender definition.
+
+The incorporated 24-902 requires developmentally appropriate care and other services for covered youth pending trial or convicted in District custody, authorizes relevant federal-custody services, and requires the strategic plan to address behavioral and physical health care alongside education, employment, housing, family and reentry needs. Narrowing the defined group and removing the specified consultation requirement therefore changes the scope of an explicit care/service-planning mechanism. The plan’s original September 30, 2019 deadline is not a newly imposed deadline. The bill does not delete the words behavioral and physical health care from the plan, prohibit all health care for 18-to 24-year-olds, or establish that a particular person loses treatment. This direct statutory mechanism supports candidate Health membership; predicted crime, incarceration or health outcomes do not supply the membership basis.
+
+The broader Youth Rehabilitation Act also provides probation, sentencing factors and qualified conviction-set-aside mechanisms. Existing sentencing provisions consider clinical examination reports and protect specified medical/mental-health statements under seal. The bill does not separately repeal every general sentencing option, guarantee imprisonment in every case, or replace the meaning of treatment with a medical-only definition. Under the incorporated statute, treatment means rehabilitation guidance, while 24-902 separately and expressly includes health-care planning.
+
+Section 3 requires the D.C. Attorney General to operate a juvenile-crime statistics website with monthly updates, permanent historical access and machine-readable bulk download. Its eleven categories include arrests and demographics, petty and violent crimes, first and repeat arrests, prosecution declinations, adult trials, dispositions and sentence lengths. Juvenile is tied to the amended Youth Rehabilitation Act definition; crime and crime of violence use 23-1331. Information from juvenile case records, social records and law-enforcement files must be provided to the Attorney General for this website purpose notwithstanding the specified confidentiality subsections. Social records include examination reports, and the existing statutes distinguish case, social and police records, including health/human-services information. This is a purpose-bound disclosure requirement, not a claim that the Attorney General previously had no access or that all clinical records must become public. The website expressly must exclude any juvenile’s personally identifiable information; unrelated confidentiality provisions are not declared universally repealed.
+
+The EH directs establishment within 180 days, but its deadline clause refers to 16-2341 while the new website section is numbered 16-2340a. This candidate preserves the printed cross-reference discrepancy without inventing a correction. The long title also mentions barring Council changes to criminal sentences, but no such Home Rule Act prohibition appears in the operative EH; it is not attributed to the passage vote. The September 16 roll 270 is one final-passage choice on the age, sentencing, planning and statistics package. No separate preference on each component, enactment, crime reduction or individual care outcome is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2025-09-16. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Health membership rests on the explicit care/service-planning scope and related records context, not the title, a medical-only reading of rehabilitation, or predicted consequences of imprisonment.
+- The operative definition is under 18 at the time of the offense. Existing offense exclusions remain;18 years of age or younger in the title and 15 through 18 in the community-service edit do not replace that definition.
+- The website excludes personally identifiable information. The 16-2341/16-2340a cross-reference discrepancy is retained, and the long title does not establish a Home Rule Act amendment absent from the operative bill.
+
+Evidence: house:119:1:270; finding `prop:17b84466bb8dcbb2`.
+
+Sources: [clerk:119:1:270](https://clerk.house.gov/evs/2025/roll270.xml); [govinfo:hr4922eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm); [dc-council:code-24-901-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html); [dc-council:code-24-902-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html); [dc-council:code-24-903-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html); [dc-council:code-24-904-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-904.html); [dc-council:code-24-906-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-906.html); [dc-council:code-16-2331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2331.html); [dc-council:code-16-2332-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2332.html); [dc-council:code-16-2333-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2333.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-23-1331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-1331.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html).
+
+### Lowering adult-proceeding thresholds within D.C.’s juvenile-care framework
+
+**Compact:** Foushee opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework. The bill would lower specified D.C. thresholds for adult criminal proceedings to age 14, changing which young people remain within juvenile-court rules that include medical and psychiatric treatment options. It preserves the separate transfer hearing and competency safeguards; it does not require every 14-year-old to be tried as an adult or establish that all care would end. The vote covered the connected age and jurisdiction changes.
+
+**Detail:**
+
+**house:119:1:271**
+
+Foushee opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework.
+
+H.R. 5140 EH lowers specified D.C. thresholds for adult criminal proceedings to age 14. In 16-2301(3), it changes 16 to 14 for exclusion from the Family Court child definition when the individual faces the listed serious charges, specified lesser-included convictions or traffic charges. The related retained-jurisdiction clause for a person under 21 changes offenses committed before 16 to before 14; the separate before 18 delinquent-act language is not rewritten. In 16-2307(a), the transfer-motion threshold for conduct that would be an adult felony changes from 15 to 14, and the threshold for a child already committed as delinquent changes from 16 to 14. These changes apply to offenses committed on or after enactment.
+
+The incorporated juvenile framework expressly supplies care mechanisms. Section 16-2320(c)(1) makes specified medical or psychiatric treatment dispositions under(a)(1) and(a)(4) available for a child found delinquent or in need of supervision, subject to the statutory conditions. Section 16-2315 permits physical/mental examinations and provides conditional competency treatment, inpatient/outpatient limits and reporting. The bill narrows which charged young people remain within this juvenile framework and broadens eligibility for transfer out of it. That change in the reach of explicit care and rehabilitation authorities supports candidate Health membership. It does not repeal those authorities for every child or prove that adult criminal proceedings provide no health care.
+
+A transfer remains a distinct process, not an automatic result for every 14-year-old or every charge. The retained 16-2307 provisions require a hearing and specified public-welfare/rehabilitation findings, consider mental condition and prior treatment, require a social-services report, and retain a competency-examination stay. The existing rebuttable transfer presumption for specified 15-to 18-year-olds is not rewritten. The existing under 18 firearm-location transfer provision is also retained, so this bill is not described as the first possible transfer route for every person below 15. Certain prosecutor-filed charges are separately excluded from the child definition without using that transfer-motion process.
+
+The September 16, 2025 final-passage vote covers these connected age and jurisdiction changes as one choice. It is not a separate vote on each clinical service, an amendment of the Youth Rehabilitation Act definition in H.R. 4922, or a finding about later crime, incarceration, treatment availability or health outcomes. The two bills have separate statutory definitions, stages and episodes.
+
+The Clerk recorded the House result as 'Passed' on 2025-09-16. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The specified age thresholds change prospectively for offenses after enactment. Transfer motions and prosecutor-filed excluded charges retain distinct routes; existing under 18 firearms and 15-to 18 presumption provisions are not silently rewritten.
+- Care membership rests on the defined reach of explicit juvenile treatment authorities, not a prediction that adult proceedings eliminate all treatment or that every 14-year-old is transferred. This is separate from H.R. 4922’s Youth Rehabilitation Act definition.
+
+Evidence: house:119:1:271; finding `prop:ae15621a7b2a6b55`.
+
+Sources: [clerk:119:1:271](https://clerk.house.gov/evs/2025/roll271.xml); [govinfo:hr5140eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm); [dc-council:code-16-2301-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html); [dc-council:code-16-2307-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html); [dc-council:code-16-2320-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html).
 
 ### Replacing a child’s Social Security number after a card is lost or stolen in transit
 
@@ -1630,4 +1810,8 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:246 | supported the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
 | house:119:1:256 | supported removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms | opposed removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms | [govinfo:hrpt119-255-amend23](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:rcp119-8-humanitarian-taiwan](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [govinfo:budget2026-ohdaca-authorities](https://www.govinfo.gov/content/pkg/BUDGET-2026-APP/pdf/BUDGET-2026-APP.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-09-10-humanitarian](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
 | house:119:1:255 | supported the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms | opposed the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms | [govinfo:hrpt119-255-amend22](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:pl114-92-usai-1250](https://www.govinfo.gov/content/pkg/PLAW-114publ92/html/PLAW-114publ92.htm); [govinfo:pl114-328-usai-1237](https://www.govinfo.gov/content/pkg/PLAW-114publ328/html/PLAW-114publ328.htm); [govinfo:pl115-91-usai-1234](https://www.govinfo.gov/content/pkg/PLAW-115publ91/html/PLAW-115publ91.htm); [govinfo:pl115-232-usai-1246](https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm); [govinfo:pl116-92-usai-1244](https://www.govinfo.gov/content/pkg/PLAW-116publ92/html/PLAW-116publ92.htm); [govinfo:pl116-283-usai-1235](https://www.govinfo.gov/content/pkg/PLAW-116publ283/html/PLAW-116publ283.htm); [govinfo:pl117-81-usai-1232](https://www.govinfo.gov/content/pkg/PLAW-117publ81/html/PLAW-117publ81.htm); [govinfo:pl117-263-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm); [govinfo:pl118-31-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm); [govinfo:pl118-159-usai-1208](https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm); [govinfo:rcp119-8-ukraine](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [govinfo:rcp119-8-humanitarian-taiwan](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [congressional-record:2025-09-10-ukraine](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
+| house:119:1:266 | supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package | opposed the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package | [govinfo:hr3400eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3400eh/html/BILLS-119hr3400eh.htm); [govinfo:38usc7401-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7401.htm); [govinfo:38usc7410-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapI-sec7410.htm); [govinfo:38usc7431-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapIII-sec7431.htm); [govinfo:5usc5753-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5753.htm); [govinfo:5usc5754-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartD-chap57-subchapIV-sec5754.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:269 | supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package | opposed the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package | [govinfo:hr2721eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm); [govinfo:38usc2306-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc2402-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2402.htm); [govinfo:38usc2411-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2411.htm); [govinfo:38usc6105-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap61-sec6105.htm); [govinfo:38usc2306-1990-date](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
+| house:119:1:270 | supported the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | [govinfo:hr4922eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm); [dc-council:code-24-901-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html); [dc-council:code-24-902-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html); [dc-council:code-24-903-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html); [dc-council:code-24-904-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-904.html); [dc-council:code-24-906-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-906.html); [dc-council:code-16-2331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2331.html); [dc-council:code-16-2332-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2332.html); [dc-council:code-16-2333-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2333.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-23-1331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-1331.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
+| house:119:1:271 | supported the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | [govinfo:hr5140eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm); [dc-council:code-16-2301-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html); [dc-council:code-16-2307-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html); [dc-council:code-16-2320-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
 <!-- GENERATED CANDIDATE END -->

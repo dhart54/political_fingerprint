@@ -199,7 +199,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 44)
+        self.assertEqual(len(f["findings"]), 48)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":179, "source_unresolved":285,
-            "interpreted_substantive_directional":61, "expressive_nonbinding_context":8, "exact_action_ineligible":143})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":182, "source_unresolved":274,
+            "interpreted_substantive_directional":65, "expressive_nonbinding_context":9, "exact_action_ineligible":146})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 284)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 273)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -827,6 +827,78 @@ class SharedDomainCandidateTests(unittest.TestCase):
         next(a for a in author["actions"] if a["action_id"] == action["action_id"])["additional_source_ids"].remove("govinfo:hres707-engrossment-instruction")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477"])
+
+
+    def test_veterans_packages_keep_distinct_pension_dates_and_qualified_benefits(self):
+        core, _, projections, _, result = self.products
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            for roll, date in [(266, "December 31, 2032"), (269, "February 29, 2032")]:
+                aid = f"house:119:1:{roll}"
+                finding = next(f for f in member["findings"] if aid in f["action_ids"])
+                self.assertEqual(finding["action_ids"], [aid])
+                self.assertEqual(finding["action_observations"][0]["status"], "Yea")
+                self.assertIn(date, finding["compact"])
+                self.assertIn("$90 monthly VA pension limit for specified Medicaid-covered", finding["compact"])
+                detail = " ".join(finding["detail"])
+                self.assertIn("State homes", detail)
+                self.assertIn("willful-concealment", detail)
+                self.assertIn("govinfo:38usc5503-2024", finding["source_ids"])
+            physicians = next(f for f in member["findings"] if "house:119:1:266" in f["action_ids"])
+            self.assertIn("assignments remain discretionary", physicians["compact"])
+            burial = next(f for f in member["findings"] if "house:119:1:269" in f["action_ids"])
+            self.assertIn("seven years", burial["compact"])
+            self.assertIn("not portrayed as the first possible pre 1990 medallion", " ".join(burial["detail"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == "house:119:1:269")["additional_source_ids"].remove("govinfo:38usc5503-2024")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
+    def test_dc_youth_package_uses_operative_age_and_care_plan_not_title_or_predicted_harm(self):
+        aid = "house:119:1:270"
+        action = next(a for a in self.author["actions"] if a["action_id"] == aid)
+        core, _, projections, _, result = self.products
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_observations"][0]["status"], "Nay")
+            for phrase in ["under 18 at the time of the offense", "behavioral and physical health care",
+                           "without personally identifiable information", "One vote covered the whole package"]:
+                self.assertIn(phrase, finding["compact"])
+            detail = " ".join(finding["detail"])
+            self.assertIn("no such Home Rule Act prohibition appears", detail)
+            self.assertIn("16-2341 while the new website section is numbered 16-2340a", detail)
+            self.assertIn("not a newly imposed deadline", detail)
+        source = next(s for s in self.capture["sources"] if s["source_id"] == "dc-council:code-24-902-20250916")
+        self.assertIn("8ed3f5ccaac32256a14f10b86418a98c93ff8c8a", source["url"])
+        self.assertIn("behavioral and physical health care", source["text"])
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove(source["source_id"])
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
+
+    def test_dc_transfer_candidate_preserves_treatment_binding_and_separate_noncounting_controls(self):
+        aid = "house:119:1:271"
+        action = next(a for a in self.author["actions"] if a["action_id"] == aid)
+        self.assertEqual(action["episode_id"], "episode:hr5140:119")
+        self.assertIn("before 18 delinquent-act language is not rewritten", action["meaning"])
+        self.assertIn("existing under 18 firearm-location transfer provision", action["meaning"])
+        self.assertIn("16-2320(c)(1)", action["meaning"])
+        self.assertIn("offenses committed on or after enactment", action["meaning"])
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("dc-council:code-16-2320-20250916")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        for roll, disposition in [(268, "procedural_context"), (273, "procedural_context"),
+                                  (274, "exact_action_ineligible"), (275, "exact_action_ineligible"),
+                                  (282, "expressive_nonbinding_context"), (284, "procedural_context")]:
+            row = records[f"house:119:1:{roll}"]
+            self.assertEqual(row["disposition"], disposition)
+            self.assertEqual(row["substantive_review_performed"], disposition != "procedural_context")
+            self.assertTrue(row["claim_source_map"])
+            self.assertNotIn(row["action_id"], {a["action_id"] for a in self.products[0]["actions"]})
+        self.assertIn("Section8’s separate resolution-of-inquiry date is not changed", records["house:119:1:273"]["rationale"])
+        self.assertIn("does not itself adopt the Senate amendment", records["house:119:1:284"]["rationale"])
 
 
 if __name__ == "__main__":
