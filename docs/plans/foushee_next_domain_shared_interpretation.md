@@ -76,26 +76,26 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Sixteen new shared candidate meanings/compacts and thirty-two choice strings;
+- [x] Eighteen new shared candidate meanings/compacts and thirty-six choice strings;
   the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now44 Foushee /40 Massie findings,118 observations,
+  non-directional accounting. Now44 Foushee /40 Massie findings,122 observations,
   four Massie Not Voting records,44 episodes and nine multi-action episodes
-  (seven pairs, four H.R.4016 actions and six supplied H.R.4553 actions).
+  (six pairs, four H.R.3838 actions, four H.R.4016 actions and six supplied H.R.4553 actions).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become59/179/8/136/294 across unchanged676 identities.
-  Add187 governed sources (39 Clerk,148 other),43 membership records and264
-  interpretation claim maps. Totals638 sources,241 membership records,431 maps.
-  The294 unresolved identities comprise293 unreviewed screenings and one examined
+- [x] Counts43/176/8/113/336 become61/179/8/143/285 across unchanged676 identities.
+  Add236 governed sources (48 Clerk,188 other),52 membership records and300
+  interpretation claim maps. Totals687 sources,250 membership records,467 maps.
+  The285 unresolved identities comprise284 unreviewed screenings and one examined
   exact-source conflict at roll237; the latter is not relabeled unreviewed.
-- [x] Regenerate and inspect compact/detail outputs. All47 candidate tests and134 focused subsystem tests pass,
+- [x] Regenerate and inspect compact/detail outputs. All48 candidate tests and135 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete293 remaining screenings, resolve roll237’s documented source conflict,
+- [ ] Complete284 remaining screenings, resolve roll237’s documented source conflict,
   reconcile wider episodes and assess substantive review readiness. Independent
   cases continue; no exhausted evidence dependency or new human decision is asserted.
 
@@ -206,31 +206,51 @@ claims in debate); single-sex facilities with emergency/waiver exceptions; radar
 certification/study; and energy-planning/vehicle-authority repeal, including2035
 requirements. They are not treated as Health solely from adjacency or predictions.
 
-Research42–54 preserves all captures. Only read sections are governed, not the full
-1,876,315-character RCP119-8 or697,572-character Report119-255. Next252–260 report
-texts are read but incorporated authorities/base instructions remain unreviewed:
-18USC1382/50USC797, flag authority, OHDACA line010, Ukraine section1313, advertising
-certification at RCP853 and ESA/Sikes. See exact row next_action in the inventory.
-Corrected public Code URL paths after three invalid responses; rejected error pages
-never entered governed sources. No new table transcription in this batch.
+Rolls252–260 are now substantively screened: two assistance candidates and seven
+proposed exclusions. Roll256 removes the specific OHDACA authorization-table item,
+$115.317million, not the $100.793million request or a rescission of every source.
+The account’s medical/basic-needs mechanisms reuse six governed statutes from204;
+FY2026 budget appendix228–229 supplies the account binding. Civil/Civic wording is
+explicitly reconciled by the unique named account and line. Roll255 prohibits this
+bill’s Ukraine assistance, including USAI medical training and wounded-soldier care,
+within broader defense assistance. Nine enacted version sections and the separate
+foreign-contribution authority were read; no outdated proposal substitutes for law.
+The $300million statutory annual amounts and $400million FY2026 table increase are
+preserved as distinct printed provisions, not summed into a claimed medical loss.
+Foushee No/No and Massie Aye/Aye join245/246 in the same complete supplied episode.
+
+Exclusions preserve military-property penalties252; flags253; cell-cultured-meat
+Defense research/procurement254; Taiwan initiative funding257; recruitment-advertising
+certification258; ESA critical-habitat/consultation/taking exemptions259; and4-H fraud
+reporting260. Exact operative authority and qualifications were examined. A prior
+queue label calling RCP1313 Ukraine was corrected to Taiwan before authoring; no
+candidate meaning or published artifact had used it.
+
+Research55–70 preserves captures and prepared material. Only read sections are
+governed, not whole RCP119-8, Report119-255, Report119-231 or the1224-page budget.
+RCP1246/1247 tables were visually checked. OHDACA agency-PDF and Defense2025 proposal
+raw downloads returned403; neither became a fabricated capture. The public Govinfo
+budget and enacted-law chain supplied sufficient sources instead. Next substantive
+unprocessed action is262 final H.R.3838 passage;261 is an existing procedural control.
+Read the entire exact engrossed package and remaining incorporated authorities,
+reusing these amendment analyses without treating their capture as passage review.
 
 Next executable work: continue224–226 public plan-source tracing and independently
-252 onward. H.J.Res.104/106/105 EH are fully read. June26 Record PDF in
+262 onward. H.J.Res.104/106/105 EH are fully read. June26 Record PDF in
 research24 pages50–56 contains the three GAO opinions;50–51/Miles City read.
 Exact Miles City/Central Yukon legacy BLM links returned403; the redirected
 Miles City document page was unavailable. Public alternatives are not exhausted;
 North Dakota exact plan remains to acquire. Research25–40 and governed sources
 preserve H.R.4553 context. Do not redo completed EH, regional or EERE research.
 
-Manual additions since8161df6:38 governed sources, two shared interpretations,
-15 claim maps and11 membership records. The earlier roll237 conflict remains.
+Manual additions sincee71ecc7:49 governed sources, two shared interpretations,
+36 claim maps and9 membership records. The earlier roll237 conflict remains.
 At the previous checkpoint, report tables152/171 were visually transcribed for medical isotope and
 Other Defense allocations; Rules image47 was transcribed only for the disputed
-instruction. No private/protected material. All47 candidate tests,134 focused
-subsystem tests and7 semantic checks pass. The prior checkpoint needed a single
+instruction. No private/protected material. All48 candidate tests,135 focused subsystem tests and7 semantic checks pass. The prior checkpoint needed a single
 schema-check rerun after omitting NODE_PATH; this run used the established
-command-local setting and all134 passed together. No environment file changed.
-8161df6’s9 exact-head CI checks passed; this progress commit needs its own CI.
+command-local setting and all135 passed together. No environment file changed.
+e71ecc7’s9 exact-head CI checks passed; this progress commit needs its own CI.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
 were read through TitleVI, not only the shorter original contents list. Its

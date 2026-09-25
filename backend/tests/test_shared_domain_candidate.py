@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":179, "source_unresolved":294,
-            "interpreted_substantive_directional":59, "expressive_nonbinding_context":8, "exact_action_ineligible":136})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":179, "source_unresolved":285,
+            "interpreted_substantive_directional":61, "expressive_nonbinding_context":8, "exact_action_ineligible":143})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 293)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 284)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -783,6 +783,30 @@ class SharedDomainCandidateTests(unittest.TestCase):
         next(a for a in author["actions"] if a["action_id"] == ids[1])["additional_source_ids"].remove("govinfo:10usc1079-2024-operative")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477"])
+
+
+    def test_ndaa_aid_choices_keep_country_and_account_scopes_and_full_episode(self):
+        core, _, projections, _, result = self.products
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if "house:119:1:255" in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [f"house:119:1:{r}" for r in [245, 246, 255, 256]])
+            self.assertEqual([o["status"] for o in finding["action_observations"]],
+                             ["Nay"] * 4 if member["member_id"] == "F000477" else ["Yea"] * 4)
+            for boundary in ["funds made available by this bill", "not a medical-only vote",
+                             "$115.317-million authorization", "not a rescission or repeal"]:
+                self.assertIn(boundary, finding["compact"])
+            self.assertTrue({"govinfo:pl115-91-usai-1234", "govinfo:pl116-92-usai-1244",
+                             "govinfo:budget2026-ohdaca-authorities"} <= set(finding["source_ids"]))
+            self.assertNotIn("house:119:1:257", finding["action_ids"])
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        self.assertEqual(records["house:119:1:257"]["disposition"], "exact_action_ineligible")
+        self.assertIn("Taiwan, not Ukraine", records["house:119:1:257"]["rationale"])
+        for aid, sid in [("house:119:1:255", "govinfo:pl115-91-usai-1234"),
+                         ("house:119:1:256", "govinfo:budget2026-ohdaca-authorities")]:
+            author = copy.deepcopy(self.author)
+            next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove(sid)
+            with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+                prepare(author, self.capture, ["F000477"])
 
 
 if __name__ == "__main__":

@@ -50,6 +50,8 @@
     "house:119:1:245",
     "house:119:1:246",
     "house:119:1:25",
+    "house:119:1:255",
+    "house:119:1:256",
     "house:119:1:27",
     "house:119:1:281",
     "house:119:1:285",
@@ -90,10 +92,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 179,
-      "exact_action_ineligible": 136,
-      "interpreted_substantive_directional": 59,
+      "exact_action_ineligible": 143,
+      "interpreted_substantive_directional": 61,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 294
+      "source_unresolved": 285
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -102,13 +104,13 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 59,
-    "directional_substantive_actions": 59,
+    "substantive_eligible_actions": 61,
+    "directional_substantive_actions": 61,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 179,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 136,
-    "unresolved_boundary_cases": 294,
+    "exact_action_ineligible_actions": 143,
+    "unresolved_boundary_cases": 285,
     "independent_episode_count": 44,
     "multi_action_episode_count": 9,
     "mechanism_types": [
@@ -120,12 +122,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 59,
-      "substantive_actions": 59,
+      "ready_substantive_actions": 61,
+      "substantive_actions": 61,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "293 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "284 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -424,6 +426,13 @@
         "house:119:1:249",
         "house:119:1:250",
         "house:119:1:251",
+        "house:119:1:252",
+        "house:119:1:253",
+        "house:119:1:254",
+        "house:119:1:257",
+        "house:119:1:258",
+        "house:119:1:259",
+        "house:119:1:260",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -491,6 +500,8 @@
         "house:119:1:239",
         "house:119:1:245",
         "house:119:1:246",
+        "house:119:1:255",
+        "house:119:1:256",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -523,15 +534,6 @@
         "house:119:1:225",
         "house:119:1:226",
         "house:119:1:237",
-        "house:119:1:252",
-        "house:119:1:253",
-        "house:119:1:254",
-        "house:119:1:255",
-        "house:119:1:256",
-        "house:119:1:257",
-        "house:119:1:258",
-        "house:119:1:259",
-        "house:119:1:260",
         "house:119:1:262",
         "house:119:1:264",
         "house:119:1:266",
@@ -815,11 +817,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "59 proposed source-mapped inputs, not accepted eligibility. Of294 unresolved identities,293 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "61 proposed source-mapped inputs, not accepted eligibility. Of285 unresolved identities,284 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "44 candidate episodes cover59 supplied actions, including9 multi-action episodes (seven two-action episodes, four H.R.4016 actions and six H.R.4553 actions). H.R.3838 has two independently interpreted care amendments; other amendments and passage remain under review. Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "44 candidate episodes cover61 supplied actions, including9 multi-action episodes (six pairs, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). H.R.3838’s remaining amendments and passage remain under review. Exact actions are independently screened; related exclusions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "2c8233d57641fe756fdf2c1704d6af0b50e1bb9153c666cb8acf97da2f40f24e",
+  "universe_subject_sha256": "eeca37d7b35f3fff125f92011097c06ee1111e6d7f2f0a673c8c84273966e884",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17323,13 +17325,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Wilson amendment11 expands18USC1382 military/naval/Coast Guard property language, increases its maximum imprisonment from six months to two years and calls it a general-intent crime. It reorganizes50USC797’s posting rule into the existing misdemeanor subsection and adds a distinct general-intent felony for violations of specified national-defense-area real-property security regulations, with a two-year maximum and fines. Fire/accident protection, entry/removal and security regulation are property-protection mechanisms, not care coverage or social-service delivery. No medical-service or patient outcome is inferred from the broad property categories.",
       "source": {
         "source_id": "clerk:119:1:252",
         "url": "https://clerk.house.gov/evs/2025/roll252.xml",
         "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17340,26 +17343,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Wilson amendment11 expands18USC1382 military/naval/Coast Guard property language, increases its maximum imprisonment from six months to two years and calls it a general-intent crime. It reorganizes50USC797’s posting rule into the existing misdemeanor subsection and adds a distinct general-intent felony for violations of specified national-defense-area real-property security regulations, with a two-year maximum and fines. Fire/accident protection, entry/removal and security regulation are property-protection mechanisms, not care coverage or social-service delivery. No medical-service or patient outcome is inferred from the broad property categories.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:252",
           "url": "https://clerk.house.gov/evs/2025/roll252.xml",
           "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend11",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "4e4a6fb44eaee83ecdd5d29d3e8962dc2bc95ea543f7564d03573dc5ce332a0c"
+        },
+        {
+          "source_id": "govinfo:18usc1382-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+          "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+          "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+        },
+        {
+          "source_id": "govinfo:50usc797-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+          "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+          "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:252",
+        "source_ids": [
+          "clerk:119:1:252",
+          "govinfo:hrpt119-255-amend11",
+          "govinfo:18usc1382-2024",
+          "govinfo:50usc797-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:252",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "f17cc89d624bb71518274ebd9dcdb36ab4fc4f42699a265bb3f20a2653fce41b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:253",
@@ -17368,13 +17402,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mills amendment18 removes the discretionary-chain-of-command/senior-civilian-leadership category from the approved-flag definition in Public Law118-31 section1052(d)(1)(N). It does not repeal the whole flag law or its other approved categories, residential exclusion, conditional museum/historical/art displays or command good-order-and-discipline savings clause. This workplace/common/public-area display restriction is not a medical benefit or health-service rule; the subject of a flag does not establish exact-action Health membership.",
       "source": {
         "source_id": "clerk:119:1:253",
         "url": "https://clerk.house.gov/evs/2025/roll253.xml",
         "raw_sha256": "001bb2be0c28ede062f9f72851913dfaff32a3e3b092c9c1125ce6d995b87bc5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17385,26 +17420,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mills amendment18 removes the discretionary-chain-of-command/senior-civilian-leadership category from the approved-flag definition in Public Law118-31 section1052(d)(1)(N). It does not repeal the whole flag law or its other approved categories, residential exclusion, conditional museum/historical/art displays or command good-order-and-discipline savings clause. This workplace/common/public-area display restriction is not a medical benefit or health-service rule; the subject of a flag does not establish exact-action Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:253",
           "url": "https://clerk.house.gov/evs/2025/roll253.xml",
           "raw_sha256": "001bb2be0c28ede062f9f72851913dfaff32a3e3b092c9c1125ce6d995b87bc5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend18",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "40814b434275a11f0e0171f760588de9df244dc5f78757b54e69fe6864d92bb3"
+        },
+        {
+          "source_id": "govinfo:pl118-31-flags",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+          "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+          "governed_bytes_sha256": "2e67ca42872ade361939d6c7bd138ac15cb4af651a0fdd4752d33110d0d468f6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:253",
+        "source_ids": [
+          "clerk:119:1:253",
+          "govinfo:hrpt119-255-amend18",
+          "govinfo:pl118-31-flags"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:253",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "3d381942b3ee8087d75ead154e8f67d05406f96f2efd623893be06b90825cf5f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:254",
@@ -17413,13 +17472,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Davidson amendment20, offered by Greene as designee and recorded as roll254, prohibits obligation/expenditure of funds authorized by this Act or otherwise made available for FY2026 to Defense for cell-cultured-meat research, development, procurement or promotion. It is not a general civilian-market ban, a demonstrated safety finding or a mandate to serve a different food. The complete floor debate contains competing safety, nutrition and military-readiness predictions; those do not establish clinical effects. The operative mechanism restricts a food-production technology and defense procurement/research, without changing medical care, insurance or a household/social-assistance delivery program under the declared Health boundary.",
       "source": {
         "source_id": "clerk:119:1:254",
         "url": "https://clerk.house.gov/evs/2025/roll254.xml",
         "raw_sha256": "659e8295cdfb90173b6b8ae8bc80bed5f9f37a53ecd05fe837b1c6c4fb84a147",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17430,26 +17490,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Davidson amendment20, offered by Greene as designee and recorded as roll254, prohibits obligation/expenditure of funds authorized by this Act or otherwise made available for FY2026 to Defense for cell-cultured-meat research, development, procurement or promotion. It is not a general civilian-market ban, a demonstrated safety finding or a mandate to serve a different food. The complete floor debate contains competing safety, nutrition and military-readiness predictions; those do not establish clinical effects. The operative mechanism restricts a food-production technology and defense procurement/research, without changing medical care, insurance or a household/social-assistance delivery program under the declared Health boundary.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:254",
           "url": "https://clerk.house.gov/evs/2025/roll254.xml",
           "raw_sha256": "659e8295cdfb90173b6b8ae8bc80bed5f9f37a53ecd05fe837b1c6c4fb84a147",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend20",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "5fdd4d15da5c586af082e18be2bdd92b49b70ba31fcd317f5a9f3c49997fee1c"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-cultured-meat",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "1b4a3f771163e5954044ba34b8724e9e401390e23c6bcfcc1404200a8c2235a9"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:254",
+        "source_ids": [
+          "clerk:119:1:254",
+          "govinfo:hrpt119-255-amend20",
+          "congressional-record:2025-09-10-cultured-meat"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:254",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "e2b4faa0d4bf85a14086a3b5da3487e43b2236bc52cfe6c0ce01cf63c46458a9"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:255",
@@ -17458,15 +17542,16 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Greene amendment22 would prohibit use of funds made available by H.R.3838 for assistance to Ukraine. Its exact operative scope is this Act, not every appropriation, all United States assistance or all worldwide humanitarian aid. It does not insert a domestic replacement appropriation, repeal the underlying assistance statutes or isolate a medical-only amount.\n\nThe bill extends and modifies the Ukraine Security Assistance Initiative (USAI) under Public Law114-92 section1250. The enacted version chain preserves training in battlefield first aid, post-combat treatment and medical evacuation (original subsection(b)(9), later(b)(8)). Public Law115-91 added treatment of wounded Ukrainian soldiers in United States medical facilities through the Secretarial Designee Program, related transportation/lodging/meals and other appropriate nonmedical support, and education/training for Ukrainian healthcare specialists to provide continuing care and rehabilitation; later amendments renumbered that provision to(b)(16), without removing it. These direct medical-care and training mechanisms establish candidate Health membership, alongside weapons, intelligence, logistics and other defense assistance. This is not a medical-only choice, a civilian health-insurance benefit or evidence of actual treatment loss.\n\nUSAI requires State concurrence and serves the Ukrainian military/national security forces and specified government-recognized forces/groups, including government entities resisting Russian aggression, for the statutory defense purposes. Inventory/replenishment powers, required notices, the no-hostilities-authorization construction and other-law savings remain relevant. Historical certification-linked funding thresholds are explicitly fiscal-year-specific; this interpretation does not automatically carry a FY2023 percentage into FY2026. Public Law118-31 extended the authority through December31,2026 and added FY2024/2025 amounts. Separate Public Law118-159 section1208 permits qualifying foreign-government contributions with account, notice, reporting, denied-funds and other statutory restrictions; it is not transformed into funds made available by this bill.\n\nRCP119-8 section1302 would add a presidential written-national-interest determination before obligation/expenditure, applicable beginning with FY2026 amounts; add $300million in the statutory funding subsection for each of FY2026 andFY2027; and extend the authority through December31,2028. Separately, the FY2026 section4301 table records a $400million USAI increase nested within the Defense Security Cooperation Agency amount. The candidate preserves those distinct printed provisions without adding their overlapping FY2026 figures together, choosing a silently harmonized cap or treating either as a medical allocation. Section4001 makes table authorization subject to available appropriations, other law and applicable transfer/reprogramming rules. The amendment’s bill-specific prohibition can be represented without inventing one resolved aggregate dollar loss.\n\nThe House rejected this amendment on September10,2025. Floor claims about debt, peace, war and consequences supply debate context, not established outcomes or member motives. A Yea supports this whole bill-specific prohibition; a Nay opposes it without prescribing an alternative amount or endorsing every covered military or medical activity. This action remains distinct from the overseas-humanitarian authorization removal and Taiwan initiative amendment.",
       "source": {
         "source_id": "clerk:119:1:255",
         "url": "https://clerk.house.gov/evs/2025/roll255.xml",
         "raw_sha256": "acf637dc40597b42a7eeab00644d1a947c475bdb4833e66256a50991958edef8",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3838:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3838",
       "member_action": "nay",
@@ -17475,26 +17560,134 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Greene amendment22 would prohibit use of funds made available by H.R.3838 for assistance to Ukraine. Its exact operative scope is this Act, not every appropriation, all United States assistance or all worldwide humanitarian aid. It does not insert a domestic replacement appropriation, repeal the underlying assistance statutes or isolate a medical-only amount.\n\nThe bill extends and modifies the Ukraine Security Assistance Initiative (USAI) under Public Law114-92 section1250. The enacted version chain preserves training in battlefield first aid, post-combat treatment and medical evacuation (original subsection(b)(9), later(b)(8)). Public Law115-91 added treatment of wounded Ukrainian soldiers in United States medical facilities through the Secretarial Designee Program, related transportation/lodging/meals and other appropriate nonmedical support, and education/training for Ukrainian healthcare specialists to provide continuing care and rehabilitation; later amendments renumbered that provision to(b)(16), without removing it. These direct medical-care and training mechanisms establish candidate Health membership, alongside weapons, intelligence, logistics and other defense assistance. This is not a medical-only choice, a civilian health-insurance benefit or evidence of actual treatment loss.\n\nUSAI requires State concurrence and serves the Ukrainian military/national security forces and specified government-recognized forces/groups, including government entities resisting Russian aggression, for the statutory defense purposes. Inventory/replenishment powers, required notices, the no-hostilities-authorization construction and other-law savings remain relevant. Historical certification-linked funding thresholds are explicitly fiscal-year-specific; this interpretation does not automatically carry a FY2023 percentage into FY2026. Public Law118-31 extended the authority through December31,2026 and added FY2024/2025 amounts. Separate Public Law118-159 section1208 permits qualifying foreign-government contributions with account, notice, reporting, denied-funds and other statutory restrictions; it is not transformed into funds made available by this bill.\n\nRCP119-8 section1302 would add a presidential written-national-interest determination before obligation/expenditure, applicable beginning with FY2026 amounts; add $300million in the statutory funding subsection for each of FY2026 andFY2027; and extend the authority through December31,2028. Separately, the FY2026 section4301 table records a $400million USAI increase nested within the Defense Security Cooperation Agency amount. The candidate preserves those distinct printed provisions without adding their overlapping FY2026 figures together, choosing a silently harmonized cap or treating either as a medical allocation. Section4001 makes table authorization subject to available appropriations, other law and applicable transfer/reprogramming rules. The amendment’s bill-specific prohibition can be represented without inventing one resolved aggregate dollar loss.\n\nThe House rejected this amendment on September10,2025. Floor claims about debt, peace, war and consequences supply debate context, not established outcomes or member motives. A Yea supports this whole bill-specific prohibition; a Nay opposes it without prescribing an alternative amount or endorsing every covered military or medical activity. This action remains distinct from the overseas-humanitarian authorization removal and Taiwan initiative amendment.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:255",
           "url": "https://clerk.house.gov/evs/2025/roll255.xml",
           "raw_sha256": "acf637dc40597b42a7eeab00644d1a947c475bdb4833e66256a50991958edef8",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend22",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "5a0e1cf257d0ed48dcc6227571d5efb33ea9b742b0d6b5860b4094e07f3c9615"
+        },
+        {
+          "source_id": "govinfo:pl114-92-usai-1250",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ92/html/PLAW-114publ92.htm",
+          "raw_sha256": "4e07762b45026a906db77dd543b7123f04b710c18faf7c1245cef3b69c264559",
+          "governed_bytes_sha256": "24843174c1ce5c11828f33f94fbeb4ab8f1b0d069e9b581ec2b96c62f2e49a8e"
+        },
+        {
+          "source_id": "govinfo:pl114-328-usai-1237",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ328/html/PLAW-114publ328.htm",
+          "raw_sha256": "6a8aa0dcfdfc68cf87a6599d4c67d12905b10b911f09847c4a14b057b18a67fb",
+          "governed_bytes_sha256": "4fdc20eafe5ed9a385f78bb26b8367c1db303555c69f5074e97cf68ef608301e"
+        },
+        {
+          "source_id": "govinfo:pl115-91-usai-1234",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ91/html/PLAW-115publ91.htm",
+          "raw_sha256": "24f759b6fc894ba80f851919d4c27c0735583872d79dfe41ee3944272cfaf761",
+          "governed_bytes_sha256": "5a6e58a904a71ccd1b6f5f1ac085497be3b13c74aad2683b7dc6131f09e24ca3"
+        },
+        {
+          "source_id": "govinfo:pl115-232-usai-1246",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm",
+          "raw_sha256": "0c37d51e214e6f4aff18199addd892b43484c6c860bbe7c2aaabb6f3d45429a8",
+          "governed_bytes_sha256": "49eae93583c752db470781baaf7711f08ccb01c8236ecb78ed2869ec42d9ce61"
+        },
+        {
+          "source_id": "govinfo:pl116-92-usai-1244",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ92/html/PLAW-116publ92.htm",
+          "raw_sha256": "60d17de8a2e5a975d6338a7e625d53c12e3a4a3ca501ebe122631f91c3d37630",
+          "governed_bytes_sha256": "c999ee74711c2a819132afb9ddf93d1b02c84ff39edc4a538d21bed3725e324b"
+        },
+        {
+          "source_id": "govinfo:pl116-283-usai-1235",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ283/html/PLAW-116publ283.htm",
+          "raw_sha256": "499516f34b0f3f1ffb9de0b0b2c5687f24b6a9e9b35bb9d66afc553e37b20350",
+          "governed_bytes_sha256": "5220c87b10aa8266ec57522edd7777f646deee5f2c724f20b03a2bafb4d74b9e"
+        },
+        {
+          "source_id": "govinfo:pl117-81-usai-1232",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ81/html/PLAW-117publ81.htm",
+          "raw_sha256": "0cfcc938dc8fbbcef4cdfb9acada681447e41371144535b9874558d45c8d336d",
+          "governed_bytes_sha256": "5dcdc720cd8d2f0fa6a1dd7502f3f1aed89d8de94176bb7d46f7bf2b9dccae52"
+        },
+        {
+          "source_id": "govinfo:pl117-263-usai-1241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "7de6442855bb88386cddc4a2ef16f9717993183fc382b2c271de9d4d6be5b28c"
+        },
+        {
+          "source_id": "govinfo:pl118-31-usai-1241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+          "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+          "governed_bytes_sha256": "7779397fad20d62d39d9206f43a15276a56ac47fcf80344f956a092ef6dac179"
+        },
+        {
+          "source_id": "govinfo:pl118-159-usai-1208",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "76c1082fb3295145067cca1f67586f17bbec88f2a4d54adb27101bfe5b7e4b48"
+        },
+        {
+          "source_id": "govinfo:rcp119-8-ukraine",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+          "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+          "governed_bytes_sha256": "2304c03367090e9a16e93ffc8df0b2fa6618b63ba6866c46f1b696a23e77f451"
+        },
+        {
+          "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+          "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+          "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-ukraine",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "6d48505b49a038a82c92940a64cb635548465d14168c811384d2f1b49d017439"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:255",
+        "source_ids": [
+          "clerk:119:1:255",
+          "govinfo:hrpt119-255-amend22",
+          "govinfo:pl114-92-usai-1250",
+          "govinfo:pl114-328-usai-1237",
+          "govinfo:pl115-91-usai-1234",
+          "govinfo:pl115-232-usai-1246",
+          "govinfo:pl116-92-usai-1244",
+          "govinfo:pl116-283-usai-1235",
+          "govinfo:pl117-81-usai-1232",
+          "govinfo:pl117-263-usai-1241",
+          "govinfo:pl118-31-usai-1241",
+          "govinfo:pl118-159-usai-1208",
+          "govinfo:rcp119-8-ukraine",
+          "govinfo:rcp119-8-humanitarian-taiwan",
+          "congressional-record:2025-09-10-ukraine"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:255",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "3e9b97eae925de4cfc2cc83a47bdbaaae043abd521b80b171ff5121768ad1fbd"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:256",
@@ -17503,15 +17696,16 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Greene amendment23 strikes section4301 line010 and the corresponding Overseas Humanitarian, Disaster, and Civic Aid item in the H.R.3838 Rules Committee Print119-8 funding table. The exact table on page1247 specifies $115,317,000 House-authorized, in a table denominated in thousands; the separate request column is $100,793,000 and the $14,524,000 increase is already inside the House amount. The amendment calls the item Civil Aid while the table and account use Civic Aid. The named account, matching line010 and floor identification bind this instruction to OHDACA, not to other accounts’ repeated line010 numbers.\n\nSection301 authorizes FY2026 operation-and-maintenance appropriations as specified in4301. Section4001 makes obligation/expenditure of table amounts subject to available appropriations, merit/competition and other law, and preserves applicable transfer/reprogramming rules. Removing this line removes the bill’s specific $115.317-million authorization for the account. It does not itself rescind appropriated balances, repeal the programs or establish that every other funding source is unavailable. It inserts no replacement appropriation for domestic services.\n\nThe FY2026 President’s Budget account paragraph identifies the same OHDACA program family under10USC401,402,404,407,2557 and2561; its $100.793-million request is context, not the amount this amendment removes. Reuse the already examined statutory limits:401 permits medical, surgical and dental care in rural or underserved areas, related education/training and other civic assistance alongside military operations, with shared-security/readiness determinations, State approval, complementary-program requirements and restrictions on benefiting military/paramilitary recipients. Its limited incidental-cost authority is not repealed. Section402 permits conditional space-available transport of nongovernmental humanitarian supplies;404 permits foreign-disaster transportation/supplies/services/equipment with its reporting and environmental-only limitations;407 governs humanitarian demining and stockpiled-munitions support under State approval and limits on direct U.S. clearance activity. Section2557 authorizes excess nonlethal supplies and includes distinct domestic authorities that are not transformed into this overseas account. Section2561 supplies worldwide humanitarian-purpose/transport authority, notification for assistance above $5million or its extraordinary-circumstances exception, reporting and funding-availability limits.\n\nThese direct medical and basic-needs authorities support candidate Health membership for this account authorization. No medical-only share of $115.317million, particular recipient or lost service is established. This is an authorization-table amendment distinct from the earlier H.R.4016 appropriation amendment and from the adjacent bill-specific Ukraine prohibition or Taiwan initiative funding amendment. The House rejected it on September10,2025; rhetoric about disease, domestic alternatives and national strategy does not prove actual effects or motive.",
       "source": {
         "source_id": "clerk:119:1:256",
         "url": "https://clerk.house.gov/evs/2025/roll256.xml",
         "raw_sha256": "70fddf8ad8884054c9564efb4b6c2020ac8ea3e2b6821b0240cfe0d2f1853652",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3be734e824965b349c63099f3119930ac2c1fa0355572c888a66e2cd3d026733",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3838:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3838",
       "member_action": "nay",
@@ -17520,26 +17714,106 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Greene amendment23 strikes section4301 line010 and the corresponding Overseas Humanitarian, Disaster, and Civic Aid item in the H.R.3838 Rules Committee Print119-8 funding table. The exact table on page1247 specifies $115,317,000 House-authorized, in a table denominated in thousands; the separate request column is $100,793,000 and the $14,524,000 increase is already inside the House amount. The amendment calls the item Civil Aid while the table and account use Civic Aid. The named account, matching line010 and floor identification bind this instruction to OHDACA, not to other accounts’ repeated line010 numbers.\n\nSection301 authorizes FY2026 operation-and-maintenance appropriations as specified in4301. Section4001 makes obligation/expenditure of table amounts subject to available appropriations, merit/competition and other law, and preserves applicable transfer/reprogramming rules. Removing this line removes the bill’s specific $115.317-million authorization for the account. It does not itself rescind appropriated balances, repeal the programs or establish that every other funding source is unavailable. It inserts no replacement appropriation for domestic services.\n\nThe FY2026 President’s Budget account paragraph identifies the same OHDACA program family under10USC401,402,404,407,2557 and2561; its $100.793-million request is context, not the amount this amendment removes. Reuse the already examined statutory limits:401 permits medical, surgical and dental care in rural or underserved areas, related education/training and other civic assistance alongside military operations, with shared-security/readiness determinations, State approval, complementary-program requirements and restrictions on benefiting military/paramilitary recipients. Its limited incidental-cost authority is not repealed. Section402 permits conditional space-available transport of nongovernmental humanitarian supplies;404 permits foreign-disaster transportation/supplies/services/equipment with its reporting and environmental-only limitations;407 governs humanitarian demining and stockpiled-munitions support under State approval and limits on direct U.S. clearance activity. Section2557 authorizes excess nonlethal supplies and includes distinct domestic authorities that are not transformed into this overseas account. Section2561 supplies worldwide humanitarian-purpose/transport authority, notification for assistance above $5million or its extraordinary-circumstances exception, reporting and funding-availability limits.\n\nThese direct medical and basic-needs authorities support candidate Health membership for this account authorization. No medical-only share of $115.317million, particular recipient or lost service is established. This is an authorization-table amendment distinct from the earlier H.R.4016 appropriation amendment and from the adjacent bill-specific Ukraine prohibition or Taiwan initiative funding amendment. The House rejected it on September10,2025; rhetoric about disease, domestic alternatives and national strategy does not prove actual effects or motive.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:256",
           "url": "https://clerk.house.gov/evs/2025/roll256.xml",
           "raw_sha256": "70fddf8ad8884054c9564efb4b6c2020ac8ea3e2b6821b0240cfe0d2f1853652",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3be734e824965b349c63099f3119930ac2c1fa0355572c888a66e2cd3d026733",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend23",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "c998ce8d78925ede43532bcfd815438862a62eb41ae2cdb6d2de202a162ac9c0"
+        },
+        {
+          "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+          "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+          "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+        },
+        {
+          "source_id": "govinfo:budget2026-ohdaca-authorities",
+          "url": "https://www.govinfo.gov/content/pkg/BUDGET-2026-APP/pdf/BUDGET-2026-APP.pdf",
+          "raw_sha256": "ec80172b6709526c95caa2772a3ff8717cddc03afb0e770fbecfe28c211de0b6",
+          "governed_bytes_sha256": "3bd534ded7949e38a1f216d0b9c9f503438bef26158c14b2cc6d2647e2dba29e"
+        },
+        {
+          "source_id": "govinfo:10usc401-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "raw_sha256": "08340325e06a23e6b1baf535d90ad4af7f231ad37fada0922e60779ef2c1559c",
+          "governed_bytes_sha256": "3db2bfe2bbc67b3d62c5d9afa4c6fd09b8aaef9dc604287bf931eb421295c5ac"
+        },
+        {
+          "source_id": "govinfo:10usc402-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm",
+          "raw_sha256": "c8926b31c06d14cd61d316397d330ffc8b5cbae24b5e190e296dfff2ab0b78c8",
+          "governed_bytes_sha256": "c5a627df8013d8df1f422bad92f0c04c7ece9c50b9ad354bef0b562d9c9227b1"
+        },
+        {
+          "source_id": "govinfo:10usc404-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm",
+          "raw_sha256": "2f0a64a4912722f9339dcd23e94a926c4b483eaf157ce81ad06555505c15f9da",
+          "governed_bytes_sha256": "b08212fe195b6af8e5614b2638c4411450da28a687f5fee28cbace34fd0028d8"
+        },
+        {
+          "source_id": "govinfo:10usc407-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm",
+          "raw_sha256": "34432abf78d7a41e2ec77427e9fc9c7f7a0d1036f0418924b3c4c9b8a03b57c4",
+          "governed_bytes_sha256": "25b443ceb477aeaaf0fe7213485ffe6b87f4b1aacf578baaedca0aa27c98dce0"
+        },
+        {
+          "source_id": "govinfo:10usc2557-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm",
+          "raw_sha256": "c3e1d7c7d5d312ebc984b186b1adbf2b7aca441f904ec35c8c3ca17c12c0d8e8",
+          "governed_bytes_sha256": "e2d9cc7ff251acfdad8848c0dd317d75669ba4480bc33d8de881059753e32352"
+        },
+        {
+          "source_id": "govinfo:10usc2561-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm",
+          "raw_sha256": "8933cd4dba8c3c227cbc14c6f2228ead6e678efabf9c46b28d07a9d57b6ffe8e",
+          "governed_bytes_sha256": "facb94e14c1e8589db525fb06299b29e12211634340d5f93403b56dd5bb73f15"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-humanitarian",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "7a64ad2a6c108449737dd957ae550ccd5008b5acc72833c6ccad2d7b2898e8df"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:256",
+        "source_ids": [
+          "clerk:119:1:256",
+          "govinfo:hrpt119-255-amend23",
+          "govinfo:rcp119-8-humanitarian-taiwan",
+          "govinfo:budget2026-ohdaca-authorities",
+          "govinfo:10usc401-2024",
+          "govinfo:10usc402-2024",
+          "govinfo:10usc404-2024",
+          "govinfo:10usc407-2024",
+          "govinfo:10usc2557-2024",
+          "govinfo:10usc2561-2024",
+          "congressional-record:2025-09-10-humanitarian"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:256",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "506dd6bf63d74bd4ed64250f6a36e05dd8edeee8a94ef51d8695c09806a38313"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:257",
@@ -17548,13 +17822,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene amendment24 deletes RCP793 section1313, which would add up to $1billion from FY2026 Defense authorizations for the Taiwan Security Cooperation Initiative. This removes that new fiscal-year authority, not the existing FY2025 up-to$300million authority or the entire initiative, which otherwise terminates December31,2029. Public Law118-159 section1323 authorizes specified military/security and supporting civilian-government capabilities, equipment, training, inventory transfers/replenishment and notice, with State concurrence, Taiwan Relations Act consistency, Arms Export Control Act savings and no specific U.S.-hostilities authorization. The listed transportation/training capacities do not identify a medical-care or social-assistance program. Taiwan Relations Act general social/economic security, human-rights and legal-continuity provisions do not supply a new care mechanism for this exact deleted amount. Preserve Taiwan, not Ukraine, and authorization rather than appropriation.",
       "source": {
         "source_id": "clerk:119:1:257",
         "url": "https://clerk.house.gov/evs/2025/roll257.xml",
         "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17565,26 +17840,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene amendment24 deletes RCP793 section1313, which would add up to $1billion from FY2026 Defense authorizations for the Taiwan Security Cooperation Initiative. This removes that new fiscal-year authority, not the existing FY2025 up-to$300million authority or the entire initiative, which otherwise terminates December31,2029. Public Law118-159 section1323 authorizes specified military/security and supporting civilian-government capabilities, equipment, training, inventory transfers/replenishment and notice, with State concurrence, Taiwan Relations Act consistency, Arms Export Control Act savings and no specific U.S.-hostilities authorization. The listed transportation/training capacities do not identify a medical-care or social-assistance program. Taiwan Relations Act general social/economic security, human-rights and legal-continuity provisions do not supply a new care mechanism for this exact deleted amount. Preserve Taiwan, not Ukraine, and authorization rather than appropriation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:257",
           "url": "https://clerk.house.gov/evs/2025/roll257.xml",
           "raw_sha256": "8afe709c233fa585f705a72a6ad0c4866aeda9f22ad3d610feeeb2541a0fcb6b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "27749dcfc028167f7e1caf6ee01a2e40a7a072537255c7b7224f8c0208b71b83",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend24",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "e0d7c09a27937096a2ae524acfc2bbaa049591976ebbc26bd2a91c754a05088e"
+        },
+        {
+          "source_id": "govinfo:rcp119-8-humanitarian-taiwan",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+          "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+          "governed_bytes_sha256": "1c1dbcdd9cb24aaa9f4ba873722f150de1c94d4b6a8f7d8496f3bd1dc549b511"
+        },
+        {
+          "source_id": "govinfo:pl118-159-taiwan-initiative",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "5dfc821bee50e3887ca21a9a4b26e0a919cb14462259151fa546f24e5c57d3e6"
+        },
+        {
+          "source_id": "govinfo:22usc3301-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap48-sec3301.htm",
+          "raw_sha256": "91541f70c8cfa6aec96c5a331baecdefa250dccbd57d77666896961409c56e8c",
+          "governed_bytes_sha256": "ffd4c33698394afcb9ac022553afe6d9b17b2e5417d70fddde8e96f99c77b9a3"
+        },
+        {
+          "source_id": "govinfo:22usc3302-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap48-sec3302.htm",
+          "raw_sha256": "eab32df6e058cc8dedae9619da6f3a458a732996a0a474ac7d51dd07a1b6a4bf",
+          "governed_bytes_sha256": "fe7782b363c004e4a98b2fadf48fdd886906283bbf9ea23cba48454dbd600bbf"
+        },
+        {
+          "source_id": "govinfo:22usc3303-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap48-sec3303.htm",
+          "raw_sha256": "2ecdc97f81738f26bdf648cdd3b0d2512995490bb89cf0e72b2edc55dd1b3fe7",
+          "governed_bytes_sha256": "2b08b5aa09d09141947c0f0fce7160b363aef5039b3a1932144a2712c0f57e42"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:257",
+        "source_ids": [
+          "clerk:119:1:257",
+          "govinfo:hrpt119-255-amend24",
+          "govinfo:rcp119-8-humanitarian-taiwan",
+          "govinfo:pl118-159-taiwan-initiative",
+          "govinfo:22usc3301-2024-operative",
+          "govinfo:22usc3302-2024-operative",
+          "govinfo:22usc3303-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:257",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "b0563ac3cf56b6c91589c778a0c74f683585729d911c368e6e628728e7532f28"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:258",
@@ -17593,13 +17920,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "McCormick amendment25 changes the RCP853 section1541 instruction amending Public Law118-31 section1555. The base already removes the one-year sunset. The amendment retains that removal and replaces the recruitment-advertising contractor certification with prohibitions on rating/ranking news-source factual accuracy; supplying misinformation, bias, journalistic-standard or ethics ratings/opinions; and acquiring/using such services from others. The existing notification rule is not deleted. This regulates military-recruitment advertising contracts and certifications, not medical misinformation policy, patient care or health benefits. The nearby Cyber Mission Force behavioral-health section1542 is outside the exact amendment.",
       "source": {
         "source_id": "clerk:119:1:258",
         "url": "https://clerk.house.gov/evs/2025/roll258.xml",
         "raw_sha256": "9f6ddb0e5d8ee47fdd7a360910adf82f842b028f3fa0332451f9d50ec56bd72d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "e3a209504917b417e25a1fd6b7ece3072ca4608c733337da9054d7c9e11ec675",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17610,26 +17938,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "McCormick amendment25 changes the RCP853 section1541 instruction amending Public Law118-31 section1555. The base already removes the one-year sunset. The amendment retains that removal and replaces the recruitment-advertising contractor certification with prohibitions on rating/ranking news-source factual accuracy; supplying misinformation, bias, journalistic-standard or ethics ratings/opinions; and acquiring/using such services from others. The existing notification rule is not deleted. This regulates military-recruitment advertising contracts and certifications, not medical misinformation policy, patient care or health benefits. The nearby Cyber Mission Force behavioral-health section1542 is outside the exact amendment.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:258",
           "url": "https://clerk.house.gov/evs/2025/roll258.xml",
           "raw_sha256": "9f6ddb0e5d8ee47fdd7a360910adf82f842b028f3fa0332451f9d50ec56bd72d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "e3a209504917b417e25a1fd6b7ece3072ca4608c733337da9054d7c9e11ec675",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend25",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "f4057341d73f9cdf38d02e4d1044280ed4dc25ef849e1ee0ff3744413237fd21"
+        },
+        {
+          "source_id": "govinfo:pl118-31-recruiting-advertising",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+          "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+          "governed_bytes_sha256": "d193740bfa1831348ddcd1c2d6c0094d82995d3351370b136c8d6e5218948479"
+        },
+        {
+          "source_id": "govinfo:rcp119-8-recruiting-certification",
+          "url": "https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf",
+          "raw_sha256": "4b0179ea4434099da3014861ed62ae45ada88cc8862eda6fa328816362d2b132",
+          "governed_bytes_sha256": "b87de47868acbe49cf11579260409f3adb8588bbbb5d33d3619cea2b38864beb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:258",
+        "source_ids": [
+          "clerk:119:1:258",
+          "govinfo:hrpt119-255-amend25",
+          "govinfo:pl118-31-recruiting-advertising",
+          "govinfo:rcp119-8-recruiting-certification"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:258",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "bba416e2008bbda6c467393e196980624ab5b6a0707b7a6fb9527c1e829a21eb"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:259",
@@ -17638,13 +17997,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Biggs amendment29 expands the Endangered Species Act critical-habitat exclusion to all defined military and State-owned National Guard installations and other Defense-designated areas meeting its written-determination requirement, removing the existing integrated-natural-resources-plan/benefit condition. It separately removes section7(a)(2) consultation with Interior regardless of whether the area has such a plan. New section10(k) exempts the specified taking, import/export, damage/destruction and incidental injury/mortality from section9 prohibitions for broadly defined national-defense operations and personnel, including covered civilian employees/contractors; incidental injury or mortality need not occur on the designated areas. This is not repeal of the whole ESA or Sikes Act plan requirements. The incorporated Sikes Act includes an invasive-species human-health/safety clause, but the exact amendment does not create or change a clinical-care, insurance or household-assistance program. Environmental consequences alone do not establish Health membership under the declared boundary. No inferred public-health outcome or motive is adopted.",
       "source": {
         "source_id": "clerk:119:1:259",
         "url": "https://clerk.house.gov/evs/2025/roll259.xml",
         "raw_sha256": "ab8287b33366b469bc1fa0835c5e0ea6192d09d32ad7837f6ba2295961244c2a",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17655,26 +18015,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Biggs amendment29 expands the Endangered Species Act critical-habitat exclusion to all defined military and State-owned National Guard installations and other Defense-designated areas meeting its written-determination requirement, removing the existing integrated-natural-resources-plan/benefit condition. It separately removes section7(a)(2) consultation with Interior regardless of whether the area has such a plan. New section10(k) exempts the specified taking, import/export, damage/destruction and incidental injury/mortality from section9 prohibitions for broadly defined national-defense operations and personnel, including covered civilian employees/contractors; incidental injury or mortality need not occur on the designated areas. This is not repeal of the whole ESA or Sikes Act plan requirements. The incorporated Sikes Act includes an invasive-species human-health/safety clause, but the exact amendment does not create or change a clinical-care, insurance or household-assistance program. Environmental consequences alone do not establish Health membership under the declared boundary. No inferred public-health outcome or motive is adopted.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:259",
           "url": "https://clerk.house.gov/evs/2025/roll259.xml",
           "raw_sha256": "ab8287b33366b469bc1fa0835c5e0ea6192d09d32ad7837f6ba2295961244c2a",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend29",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "78daaa22fd96f081bea29de2f8310963ee12f00e248be1b54b6d3a81c185f683"
+        },
+        {
+          "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1533.htm",
+          "raw_sha256": "44dcc7a470c103b5e8dbc877a4f884298f7f3a3c394fa2faf50e401bb7c4ebae",
+          "governed_bytes_sha256": "c3bd4bd1a102e15e46a44da6544b2fc4123b4745468c50a2ed4c7a27c51ec2c3"
+        },
+        {
+          "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1536.htm",
+          "raw_sha256": "3e35e0a190dbeb32b38f0406e067ab98a7ae8c6055fef4134e5786bd7fe67667",
+          "governed_bytes_sha256": "b4f7e58c85080d35beadeff2e5f80954d152b59ba2ea020f84725aa30fc4ef9c"
+        },
+        {
+          "source_id": "govinfo:16usc1538-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1538.htm",
+          "raw_sha256": "82a4e3dbfa6c9df9eaa4f13b5e23d932dc85b7912e804f7992b0d0c4a79095fd",
+          "governed_bytes_sha256": "a3cf53638527906bb99a282b5b9112dfbf545ce8dceb7947f7426c53d87a6b47"
+        },
+        {
+          "source_id": "govinfo:16usc1539-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1539.htm",
+          "raw_sha256": "a34d795608b3cda84f76ebfa8bea426b3bd076756e15d34de0b2a99745e0fccd",
+          "governed_bytes_sha256": "f6db842310cc9430f0c7878f63221f67e5586c55d36a37910d0cb6a17efb02be"
+        },
+        {
+          "source_id": "govinfo:16usc670-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670.htm",
+          "raw_sha256": "84c7a0ee3becf49f4c75203a8c7c9f59547b014f324df598e0fc1711e3933389",
+          "governed_bytes_sha256": "2655cbdde006d36354f4f72a4a372c9a0945a23c24d99c494726a716774e6c94"
+        },
+        {
+          "source_id": "govinfo:16usc670a-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670a.htm",
+          "raw_sha256": "8c96b2271aa9273e4f5963a59e5ecd80a702f8f18758988062b3a78188414d04",
+          "governed_bytes_sha256": "be2a0d571c2c062633bb0a294bb0b502f0aa837f0c2cf83a587f6c5931baedb7"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:259",
+        "source_ids": [
+          "clerk:119:1:259",
+          "govinfo:hrpt119-255-amend29",
+          "govinfo:16usc1533-2024-ndaa-operative",
+          "govinfo:16usc1536-2024-ndaa-operative",
+          "govinfo:16usc1538-2024-ndaa-operative",
+          "govinfo:16usc1539-2024-ndaa-operative",
+          "govinfo:16usc670-2024-ndaa-operative",
+          "govinfo:16usc670a-2024-ndaa-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:259",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "4631f910f56dba1151748a50bc6edbdaf5bb231531fd2d43d05c32e5ecf9e245"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:260",
@@ -17683,13 +18102,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Rose amendment253 requires a public report within one year on the Mello fraud scheme in the4-H Military Partnership Grant program, including supervision, accounting, conflicts, missed warnings/retaliation, safeguards, recommended improvements, disciplinary actions, financial-management changes and program effects. The operative action is investigation/reporting; it does not itself restore grant funds, create a new family-service benefit or change recipient eligibility. Statutory descriptions and predicted program effects are not independently inferred as this member’s finding. The family/youth-program context is preserved but does not make this reporting-only amendment a direct Health/social-service delivery or financing decision.",
       "source": {
         "source_id": "clerk:119:1:260",
         "url": "https://clerk.house.gov/evs/2025/roll260.xml",
         "raw_sha256": "5ed827ff45ebff54516efc1d978c93b281848acb764e34bc47ec6b86cc3b0c3a",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -17700,26 +18120,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Rose amendment253 requires a public report within one year on the Mello fraud scheme in the4-H Military Partnership Grant program, including supervision, accounting, conflicts, missed warnings/retaliation, safeguards, recommended improvements, disciplinary actions, financial-management changes and program effects. The operative action is investigation/reporting; it does not itself restore grant funds, create a new family-service benefit or change recipient eligibility. Statutory descriptions and predicted program effects are not independently inferred as this member’s finding. The family/youth-program context is preserved but does not make this reporting-only amendment a direct Health/social-service delivery or financing decision.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:260",
           "url": "https://clerk.house.gov/evs/2025/roll260.xml",
           "raw_sha256": "5ed827ff45ebff54516efc1d978c93b281848acb764e34bc47ec6b86cc3b0c3a",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend253",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "a3bde1b3586d14adaf291bb4633a6067a262e50a2013b0492d4ec43536412028"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:260",
+        "source_ids": [
+          "clerk:119:1:260",
+          "govinfo:hrpt119-255-amend253"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:260",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
-      }
+        "shared_review_record_sha256": "aced453931454737435a2e2bdc1816578c49560de1ed8de59cb86ab34ae4feb5"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:261",
@@ -17806,7 +18243,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Next substantive action: H.R.3838 final passage. Acquire exact EH and September10 final-passage Record; read complete package and remaining incorporated authorities. Reuse RCP119-8/Report119-255/119-231 captures, completed245/246/255/256 meanings and244/247–254/257–260 exclusions. Whole RCP/report capture is not completed passage review. Preserve amendments separately, medical-purpose/coverage exceptions, bill-specific Ukraine prohibition versus OHDACA authorization, and country/account distinctions. 261 is already a procedural control. Continue264/266/268 and subsequent exact source/version groups, plus224–226 public plan tracing and237 printed-source correction tracing."
       }
     },
     {
@@ -37038,11 +37476,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "59 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
+    "basis": "61 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "22922c405d8b5968becaedf2d1cf5c1d723c6be44621d660e5428bed100ca140",
+  "selection_sha256": "f546568a98e66286aeeb76fdbb961a7f3cbc3234ec20c46a0d4a9aa5cf030d9e",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -37077,6 +37515,8 @@
     "house:119:1:245",
     "house:119:1:246",
     "house:119:1:25",
+    "house:119:1:255",
+    "house:119:1:256",
     "house:119:1:27",
     "house:119:1:281",
     "house:119:1:285",
@@ -37109,15 +37549,6 @@
     "house:119:1:225",
     "house:119:1:226",
     "house:119:1:237",
-    "house:119:1:252",
-    "house:119:1:253",
-    "house:119:1:254",
-    "house:119:1:255",
-    "house:119:1:256",
-    "house:119:1:257",
-    "house:119:1:258",
-    "house:119:1:259",
-    "house:119:1:260",
     "house:119:1:262",
     "house:119:1:264",
     "house:119:1:266",
@@ -37402,7 +37833,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "294 unresolved identities comprise293 unreviewed screenings and one examined source conflict at2025 roll237. Continue252 onward, alongside224–226 public plan-source tracing. Captured material alone is not substantive review.",
+    "basis": "285 unresolved identities comprise284 unreviewed screenings and one examined source conflict at2025 roll237. Continue subsequent NDAA actions from261, alongside224–226 public plan tracing. Captured material alone is not substantive review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -37454,6 +37885,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "4254522b112c5dfb388c092ba510632131a6a8dddec6020e1eac93dd2c28674e",
-  "membership_review_sha256": "7fc1eaf572899173a65d4a0d5e927800edc600b03bf8bcc7eb1da5f3e398d012"
+  "proposal_sha256": "edc647dd04b208f5b6b8b2beabc031b8b8d1efa7278d930ef9827d466881022c",
+  "membership_review_sha256": "b2b61ea7dd84a9afc293522a199c2661119c08694fa5a78cc27ae0667b2b5c8e"
 }

@@ -1,9 +1,9 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Forty-two more membership dispositions resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: sixteen new shared interpretations, twenty-three exclusions
-and three procedural controls. Now59 interpreted inputs,44 Foushee findings and40
-bounded Massie proof findings;293 discovery identities remain unreviewed; one additional examined action has a
+**Partial candidate, active research.** Fifty-one more membership dispositions resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: eighteen new shared interpretations, thirty exclusions
+and three procedural controls. Now61 interpreted inputs,44 Foushee findings and40
+bounded Massie proof findings;284 discovery identities remain unreviewed; one additional examined action has a
 printed-source conflict.
 This is neither complete Health coverage nor accepted/public content.
 
@@ -17,9 +17,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [59 shared meanings /431 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [638 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [241 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [61 shared meanings /467 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [687 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [250 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -27,11 +27,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|59|
+| interpreted_substantive_directional |43|61|
 | procedural_context |176|179|
 | expressive_nonbinding_context |8|8|
-| exact_action_ineligible |113|136|
-| source_unresolved (unreviewed plus examined conflict) |336|294|
+| exact_action_ineligible |113|143|
+| source_unresolved (unreviewed plus examined conflict) |336|285|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -154,12 +154,12 @@ workforce-training table. The memo's first pages were also inspected through its
 public reproduction, but unacquired PDF bytes are not represented as governed
 captures. No historical source was rewritten or analytical architecture changed.
 
-Manual delta from bed93d: sixteen shared meanings/compacts, thirty-two choice
-strings,264 claim maps,43 membership records and187 source captures (39 Clerk,
-148 other). Totals118 observations, four Massie non-votes,44 episodes and nine
-multi-action episodes (seven pairs, four H.R.4016 and six H.R.4553 actions).
-No synthesis added. The43 screenings comprise42 dispositions and one examined
-source conflict, not43 completed interpretations.
+Manual delta from bed93d: eighteen shared meanings/compacts, thirty-six choice
+strings,300 claim maps,52 membership records and236 source captures (48 Clerk,
+188 other). Totals122 observations, four Massie non-votes,44 episodes and nine
+multi-action episodes (six pairs, four H.R.3838, four H.R.4016 and six H.R.4553 actions).
+No synthesis added. The52 screenings comprise51 dispositions and one examined
+source conflict, not52 completed interpretations.
 
 **September energy/water amendments:** rolls227–231 are five proposed exclusions.
 Keep DRBC-rule enforcement separate from all DRBC funding under the bill. The
@@ -226,33 +226,53 @@ claims in debate); single-sex facilities with emergency/waiver exceptions; radar
 certification/study; and energy-planning/vehicle-authority repeal, including2035
 requirements. They are not treated as Health solely from adjacency or predictions.
 
-Research42–54 preserves all captures. Only read sections are governed, not the full
-1,876,315-character RCP119-8 or697,572-character Report119-255. Next252–260 report
-texts are read but incorporated authorities/base instructions remain unreviewed:
-18USC1382/50USC797, flag authority, OHDACA line010, Ukraine section1313, advertising
-certification at RCP853 and ESA/Sikes. See exact row next_action in the inventory.
-Corrected public Code URL paths after three invalid responses; rejected error pages
-never entered governed sources. No new table transcription in this batch.
+Rolls252–260 are now substantively screened: two assistance candidates and seven
+proposed exclusions. Roll256 removes the specific OHDACA authorization-table item,
+$115.317million, not the $100.793million request or a rescission of every source.
+The account’s medical/basic-needs mechanisms reuse six governed statutes from204;
+FY2026 budget appendix228–229 supplies the account binding. Civil/Civic wording is
+explicitly reconciled by the unique named account and line. Roll255 prohibits this
+bill’s Ukraine assistance, including USAI medical training and wounded-soldier care,
+within broader defense assistance. Nine enacted version sections and the separate
+foreign-contribution authority were read; no outdated proposal substitutes for law.
+The $300million statutory annual amounts and $400million FY2026 table increase are
+preserved as distinct printed provisions, not summed into a claimed medical loss.
+Foushee No/No and Massie Aye/Aye join245/246 in the same complete supplied episode.
+
+Exclusions preserve military-property penalties252; flags253; cell-cultured-meat
+Defense research/procurement254; Taiwan initiative funding257; recruitment-advertising
+certification258; ESA critical-habitat/consultation/taking exemptions259; and4-H fraud
+reporting260. Exact operative authority and qualifications were examined. A prior
+queue label calling RCP1313 Ukraine was corrected to Taiwan before authoring; no
+candidate meaning or published artifact had used it.
+
+Research55–70 preserves captures and prepared material. Only read sections are
+governed, not whole RCP119-8, Report119-255, Report119-231 or the1224-page budget.
+RCP1246/1247 tables were visually checked. OHDACA agency-PDF and Defense2025 proposal
+raw downloads returned403; neither became a fabricated capture. The public Govinfo
+budget and enacted-law chain supplied sufficient sources instead. Next substantive
+unprocessed action is262 final H.R.3838 passage;261 is an existing procedural control.
+Read the entire exact engrossed package and remaining incorporated authorities,
+reusing these amendment analyses without treating their capture as passage review.
 
 ## Current validation and remaining execution
 
-All47 focused candidate tests pass, including complete six-action rendering,
+All48 focused candidate tests pass, including complete six-action rendering,
 both members’ actual choices, distinct mandate/marriage funding scopes, nested
 amounts, source-removal rejection and separation of the conflicted amendment.
-All134 focused subsystem tests pass with the established command-local NODE_PATH.
-The previous checkpoint needed a single schema-check rerun after omitting it. All7 canonical
-semantic checks pass. No environment/dependency file was changed. Prior8161df6
+All135 focused subsystem tests and7 canonical semantic checks pass with the established command-local settings.
+The previous checkpoint needed a single schema-check rerun after omitting it. The prior head passed7 canonical semantic checks. No environment/dependency file was changed. Priore71ecc7
 passed all9 exact-head CI checks; the new pushed commit requires its own checks.
 No frontend/runtime change or browser loop is claimed.
 
-Continue224–226 public plan-source tracing and independent252 onward.
+Continue224–226 public plan-source tracing and independent262 onward.
 The CRA EH texts are read; June26 Record pages50–56 contain GAO opinions, with
 50–51/Miles City read. BLM legacy links returned403 and the redirected Miles City
 page was unavailable; public alternatives are not exhausted. North Dakota’s
 exact plan remains to acquire. Research25–40 and governed sources retain completed
 H.R.4553 EH/program work and the amendment237 conflict for targeted resumption.
 
-293 unreviewed screenings, one examined source conflict and wider episode
+284 unreviewed screenings, one examined source conflict and wider episode
 reconciliation remain. Independent safe work continues. This progress push is
 not a terminal state or approval gate; no shutdown marker is created. No new
 human decision is requested while official-source tracing remains available.
@@ -260,7 +280,7 @@ human decision is requested while official-source tracing remains available.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-59 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+61 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -331,7 +351,7 @@ Sources: [clerk:119:1:32](https://clerk.house.gov/evs/2025/roll032.xml); [govinf
 
 ### Separate choices within one legislative episode
 
-**Compact:** Foushee opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes. The amendment would bar gender-transition procedures, including surgery or medication, for minor dependent children through the Exceptional Family Member Program. It would also bar referrals and duty-station changes through that program to obtain those procedures. This adopted amendment concerns that program, not all care or TRICARE coverage. Foushee opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban. The amendment would restrict defined gender-transition medical treatment under military-care coverage and furnishing rules, with stated exceptions and existing eligibility limits. It would also remove the sterilization condition from the existing ban on gender-dysphoria interventions for children under18. Two exception clauses refer to minors; their adult reach is not assumed. This separate amendment was adopted.
+**Compact:** Foushee opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes. The amendment would bar gender-transition procedures, including surgery or medication, for minor dependent children through the Exceptional Family Member Program. It would also bar referrals and duty-station changes through that program to obtain those procedures. This adopted amendment concerns that program, not all care or TRICARE coverage. Foushee opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban. The amendment would restrict defined gender-transition medical treatment under military-care coverage and furnishing rules, with stated exceptions and existing eligibility limits. It would also remove the sterilization condition from the existing ban on gender-dysphoria interventions for children under18. Two exception clauses refer to minors; their adult reach is not assumed. This separate amendment was adopted. Foushee opposed the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms. The amendment would bar funds made available by this bill from being used for assistance to Ukraine. That assistance includes military support and authorized care for wounded Ukrainian soldiers and medical training. It was not a medical-only vote or a ban on every source of U.S. assistance; no medical allocation or actual service loss is established. The amendment failed. Foushee opposed removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms. The amendment would remove the bill’s $115.317-million authorization for overseas humanitarian, disaster and civic aid, including programs that can provide medical care and basic-needs assistance. This is an authorization, subject to appropriations—not a rescission or repeal of all aid. No medical-only share or individual service loss is established. The amendment failed.
 
 **Detail:**
 
@@ -363,6 +383,36 @@ The House agreed to this distinct amendment on September10,2025. It does not its
 
 The Clerk recorded the House result as 'Agreed to' on 2025-09-10. This does not establish enactment.
 
+**house:119:1:255**
+
+Foushee opposed the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms.
+
+Greene amendment22 would prohibit use of funds made available by H.R.3838 for assistance to Ukraine. Its exact operative scope is this Act, not every appropriation, all United States assistance or all worldwide humanitarian aid. It does not insert a domestic replacement appropriation, repeal the underlying assistance statutes or isolate a medical-only amount.
+
+The bill extends and modifies the Ukraine Security Assistance Initiative (USAI) under Public Law114-92 section1250. The enacted version chain preserves training in battlefield first aid, post-combat treatment and medical evacuation (original subsection(b)(9), later(b)(8)). Public Law115-91 added treatment of wounded Ukrainian soldiers in United States medical facilities through the Secretarial Designee Program, related transportation/lodging/meals and other appropriate nonmedical support, and education/training for Ukrainian healthcare specialists to provide continuing care and rehabilitation; later amendments renumbered that provision to(b)(16), without removing it. These direct medical-care and training mechanisms establish candidate Health membership, alongside weapons, intelligence, logistics and other defense assistance. This is not a medical-only choice, a civilian health-insurance benefit or evidence of actual treatment loss.
+
+USAI requires State concurrence and serves the Ukrainian military/national security forces and specified government-recognized forces/groups, including government entities resisting Russian aggression, for the statutory defense purposes. Inventory/replenishment powers, required notices, the no-hostilities-authorization construction and other-law savings remain relevant. Historical certification-linked funding thresholds are explicitly fiscal-year-specific; this interpretation does not automatically carry a FY2023 percentage into FY2026. Public Law118-31 extended the authority through December31,2026 and added FY2024/2025 amounts. Separate Public Law118-159 section1208 permits qualifying foreign-government contributions with account, notice, reporting, denied-funds and other statutory restrictions; it is not transformed into funds made available by this bill.
+
+RCP119-8 section1302 would add a presidential written-national-interest determination before obligation/expenditure, applicable beginning with FY2026 amounts; add $300million in the statutory funding subsection for each of FY2026 andFY2027; and extend the authority through December31,2028. Separately, the FY2026 section4301 table records a $400million USAI increase nested within the Defense Security Cooperation Agency amount. The candidate preserves those distinct printed provisions without adding their overlapping FY2026 figures together, choosing a silently harmonized cap or treating either as a medical allocation. Section4001 makes table authorization subject to available appropriations, other law and applicable transfer/reprogramming rules. The amendment’s bill-specific prohibition can be represented without inventing one resolved aggregate dollar loss.
+
+The House rejected this amendment on September10,2025. Floor claims about debt, peace, war and consequences supply debate context, not established outcomes or member motives. A Yea supports this whole bill-specific prohibition; a Nay opposes it without prescribing an alternative amount or endorsing every covered military or medical activity. This action remains distinct from the overseas-humanitarian authorization removal and Taiwan initiative amendment.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-10. This does not establish enactment.
+
+**house:119:1:256**
+
+Foushee opposed removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms.
+
+Greene amendment23 strikes section4301 line010 and the corresponding Overseas Humanitarian, Disaster, and Civic Aid item in the H.R.3838 Rules Committee Print119-8 funding table. The exact table on page1247 specifies $115,317,000 House-authorized, in a table denominated in thousands; the separate request column is $100,793,000 and the $14,524,000 increase is already inside the House amount. The amendment calls the item Civil Aid while the table and account use Civic Aid. The named account, matching line010 and floor identification bind this instruction to OHDACA, not to other accounts’ repeated line010 numbers.
+
+Section301 authorizes FY2026 operation-and-maintenance appropriations as specified in4301. Section4001 makes obligation/expenditure of table amounts subject to available appropriations, merit/competition and other law, and preserves applicable transfer/reprogramming rules. Removing this line removes the bill’s specific $115.317-million authorization for the account. It does not itself rescind appropriated balances, repeal the programs or establish that every other funding source is unavailable. It inserts no replacement appropriation for domestic services.
+
+The FY2026 President’s Budget account paragraph identifies the same OHDACA program family under10USC401,402,404,407,2557 and2561; its $100.793-million request is context, not the amount this amendment removes. Reuse the already examined statutory limits:401 permits medical, surgical and dental care in rural or underserved areas, related education/training and other civic assistance alongside military operations, with shared-security/readiness determinations, State approval, complementary-program requirements and restrictions on benefiting military/paramilitary recipients. Its limited incidental-cost authority is not repealed. Section402 permits conditional space-available transport of nongovernmental humanitarian supplies;404 permits foreign-disaster transportation/supplies/services/equipment with its reporting and environmental-only limitations;407 governs humanitarian demining and stockpiled-munitions support under State approval and limits on direct U.S. clearance activity. Section2557 authorizes excess nonlethal supplies and includes distinct domestic authorities that are not transformed into this overseas account. Section2561 supplies worldwide humanitarian-purpose/transport authority, notification for assistance above $5million or its extraordinary-circumstances exception, reporting and funding-availability limits.
+
+These direct medical and basic-needs authorities support candidate Health membership for this account authorization. No medical-only share of $115.317million, particular recipient or lost service is established. This is an authorization-table amendment distinct from the earlier H.R.4016 appropriation amendment and from the adjacent bill-specific Ukraine prohibition or Taiwan initiative funding amendment. The House rejected it on September10,2025; rhetoric about disease, domestic alternatives and national strategy does not prove actual effects or motive.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-10. This does not establish enactment.
+
 - One vote on the three linked EFMP restrictions; a Nay does not identify a preferred alternative, and a Yea does not establish a clinical, fiscal or individual-service outcome.
 - The text identifies minor dependent children without supplying a numerical age; the interpretation does not invent one or resolve undefined procedure boundaries.
 - EFMP coordinates assignment and family support; the proposed restrictions do not establish existing payment for every referenced procedure or a universal prohibition on care outside this program.
@@ -370,10 +420,18 @@ The Clerk recorded the House result as 'Agreed to' on 2025-09-10. This does not 
 - The exception text’s minor references and the1076 dependent-care cross-reference are preserved; no invented adult entitlement or universal coverage boundary resolves them.
 - The list of procedures is purpose-bound and illustrative. The treatment of unrelated medical conditions, the separate existing surgical restrictions and the no-new-entitlement rule remain.
 - The under18 deletion in1079(a)(20) is a distinct change; exceptions to new1076g are not automatically exceptions to that paragraph.
+- The exact vote concerns this failed bill-specific assistance prohibition. A Nay does not specify a preferred funding amount or endorse every covered activity; a Yea is not an enacted loss of care.
+- The restriction is bounded to funds made available by this Act; it neither repeals USAI nor proves termination of separately available funding.
+- The existing medical mechanisms support Health membership but do not make this a medical-only vote or establish a patient outcome.
+- The statutory300million annual figures and table400million FY2026 increase remain distinct; no aggregate loss or medical-only share is invented.
+- The exact vote concerns this failed authorization-table amendment. A Nay does not specify an alternative amount or endorse every account activity; a Yea does not establish an enacted funding or service loss.
+- The House-authorized115317thousand includes the14524thousand increase over the100793thousand request. Neither request nor increase is added again to the authorization.
+- Authorities explain the overseas account’s care/basic-needs mechanisms and conditions; no domestic replacement, medical-only allocation or actual outcome is inferred.
+- This table removal is distinct from the H.R.4016 appropriation amendment and the other independently screened H.R.3838 choices.
 
-Evidence: house:119:1:245, house:119:1:246; finding `prop:d1f218c91b277f47`.
+Evidence: house:119:1:245, house:119:1:246, house:119:1:255, house:119:1:256; finding `prop:11f05da13425bb26`.
 
-Sources: [clerk:119:1:245](https://clerk.house.gov/evs/2025/roll245.xml); [govinfo:hrpt119-255-amend13](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1781c-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf); [clerk:119:1:246](https://clerk.house.gov/evs/2025/roll246.xml); [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm).
+Sources: [clerk:119:1:245](https://clerk.house.gov/evs/2025/roll245.xml); [govinfo:hrpt119-255-amend13](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1781c-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf); [clerk:119:1:246](https://clerk.house.gov/evs/2025/roll246.xml); [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm); [clerk:119:1:255](https://clerk.house.gov/evs/2025/roll255.xml); [govinfo:hrpt119-255-amend22](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:pl114-92-usai-1250](https://www.govinfo.gov/content/pkg/PLAW-114publ92/html/PLAW-114publ92.htm); [govinfo:pl114-328-usai-1237](https://www.govinfo.gov/content/pkg/PLAW-114publ328/html/PLAW-114publ328.htm); [govinfo:pl115-91-usai-1234](https://www.govinfo.gov/content/pkg/PLAW-115publ91/html/PLAW-115publ91.htm); [govinfo:pl115-232-usai-1246](https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm); [govinfo:pl116-92-usai-1244](https://www.govinfo.gov/content/pkg/PLAW-116publ92/html/PLAW-116publ92.htm); [govinfo:pl116-283-usai-1235](https://www.govinfo.gov/content/pkg/PLAW-116publ283/html/PLAW-116publ283.htm); [govinfo:pl117-81-usai-1232](https://www.govinfo.gov/content/pkg/PLAW-117publ81/html/PLAW-117publ81.htm); [govinfo:pl117-263-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm); [govinfo:pl118-31-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm); [govinfo:pl118-159-usai-1208](https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm); [govinfo:rcp119-8-ukraine](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [govinfo:rcp119-8-humanitarian-taiwan](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [congressional-record:2025-09-10-ukraine](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf); [clerk:119:1:256](https://clerk.house.gov/evs/2025/roll256.xml); [govinfo:hrpt119-255-amend23](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:budget2026-ohdaca-authorities](https://www.govinfo.gov/content/pkg/BUDGET-2026-APP/pdf/BUDGET-2026-APP.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-09-10-humanitarian](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf).
 
 ### Separate choices within one legislative episode
 
@@ -1552,4 +1610,6 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:239 | supported House passage of H.R.4553’s full funding-and-policy package | opposed House passage of H.R.4553’s full funding-and-policy package | [govinfo:hr4553eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm); [govinfo:hrpt119-213-eere](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:42usc18649-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap161-subchapIII-sec18649.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [govinfo:pl117-58-4553-transfer-programs](https://www.govinfo.gov/content/pkg/PLAW-117publ58/html/PLAW-117publ58.htm); [govinfo:1usc7-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title1/html/USCODE-2024-title1-chap1-sec7.htm); [govinfo:28usc1738C-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partV-chap115-sec1738C.htm); [govinfo:5usc804-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec804.htm); [congressional-record:2025-09-04-4553-passage](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf); [govinfo:42usc6863-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm); [govinfo:42usc6865-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm) |
 | house:119:1:245 | supported the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes | opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes | [govinfo:hrpt119-255-amend13](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1781c-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
 | house:119:1:246 | supported the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
+| house:119:1:256 | supported removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms | opposed removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms | [govinfo:hrpt119-255-amend23](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:rcp119-8-humanitarian-taiwan](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [govinfo:budget2026-ohdaca-authorities](https://www.govinfo.gov/content/pkg/BUDGET-2026-APP/pdf/BUDGET-2026-APP.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-09-10-humanitarian](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
+| house:119:1:255 | supported the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms | opposed the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms | [govinfo:hrpt119-255-amend22](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:pl114-92-usai-1250](https://www.govinfo.gov/content/pkg/PLAW-114publ92/html/PLAW-114publ92.htm); [govinfo:pl114-328-usai-1237](https://www.govinfo.gov/content/pkg/PLAW-114publ328/html/PLAW-114publ328.htm); [govinfo:pl115-91-usai-1234](https://www.govinfo.gov/content/pkg/PLAW-115publ91/html/PLAW-115publ91.htm); [govinfo:pl115-232-usai-1246](https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm); [govinfo:pl116-92-usai-1244](https://www.govinfo.gov/content/pkg/PLAW-116publ92/html/PLAW-116publ92.htm); [govinfo:pl116-283-usai-1235](https://www.govinfo.gov/content/pkg/PLAW-116publ283/html/PLAW-116publ283.htm); [govinfo:pl117-81-usai-1232](https://www.govinfo.gov/content/pkg/PLAW-117publ81/html/PLAW-117publ81.htm); [govinfo:pl117-263-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm); [govinfo:pl118-31-usai-1241](https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm); [govinfo:pl118-159-usai-1208](https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm); [govinfo:rcp119-8-ukraine](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [govinfo:rcp119-8-humanitarian-taiwan](https://www.govinfo.gov/content/pkg/CPRT-119HPRT61641/pdf/CPRT-119HPRT61641.pdf); [congressional-record:2025-09-10-ukraine](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
 <!-- GENERATED CANDIDATE END -->
