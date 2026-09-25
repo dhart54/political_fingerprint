@@ -35,6 +35,7 @@
     "house:119:1:190",
     "house:119:1:199",
     "house:119:1:200",
+    "house:119:1:204",
     "house:119:1:206",
     "house:119:1:25",
     "house:119:1:27",
@@ -78,9 +79,9 @@
     "counts": {
       "procedural_context": 177,
       "exact_action_ineligible": 116,
-      "interpreted_substantive_directional": 46,
+      "interpreted_substantive_directional": 47,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 329
+      "source_unresolved": 328
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -89,15 +90,15 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 46,
-    "directional_substantive_actions": 46,
+    "substantive_eligible_actions": 47,
+    "directional_substantive_actions": 47,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 177,
     "expressive_nonbinding_actions": 8,
     "exact_action_ineligible_actions": 116,
-    "unresolved_boundary_cases": 329,
+    "unresolved_boundary_cases": 328,
     "independent_episode_count": 40,
-    "multi_action_episode_count": 6,
+    "multi_action_episode_count": 7,
     "mechanism_types": [
       "amendment",
       "concurrence",
@@ -107,12 +108,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 46,
-      "substantive_actions": 46,
+      "ready_substantive_actions": 47,
+      "substantive_actions": 47,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "329 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "328 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -442,6 +443,7 @@
         "house:119:1:190",
         "house:119:1:199",
         "house:119:1:200",
+        "house:119:1:204",
         "house:119:1:206",
         "house:119:1:281",
         "house:119:1:285",
@@ -471,7 +473,6 @@
         "house:119:2:289"
       ],
       "source_unresolved": [
-        "house:119:1:204",
         "house:119:1:209",
         "house:119:1:210",
         "house:119:1:212",
@@ -802,11 +803,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "46 proposed source-mapped inputs, not accepted eligibility. The remaining 329 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "47 proposed source-mapped inputs, not accepted eligibility. The remaining 328 are an unfinished discovery backlog, not asserted Health votes."
   },
-  "episode_completeness": "40 candidate episodes cover 46 supplied actions, including 6 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "40 candidate episodes cover 47 supplied actions, including 7 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "e71b8d287d6a9ba3c11b6443edb3272e254fc18c57650ecf64de00a96b0dd4af",
+  "universe_subject_sha256": "78f6c1d55c425292b0375e7e863eaed79d4b15e0ead44841df867c624926dc65",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -13293,15 +13294,16 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the remaining unreviewed final package.",
       "source": {
         "source_id": "clerk:119:1:204",
         "url": "https://clerk.house.gov/evs/2025/roll204.xml",
         "raw_sha256": "61849f8d7c2e6501545ca81033e6aca004f12437a8f0b6fe52a104a17d376be5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d0388e26b8e8d26b6f803928a306a379e54823f6fec0e32de004cb650152bf8e",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4016:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4016",
       "member_action": "nay",
@@ -13310,26 +13312,106 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the remaining unreviewed final package.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:204",
           "url": "https://clerk.house.gov/evs/2025/roll204.xml",
           "raw_sha256": "61849f8d7c2e6501545ca81033e6aca004f12437a8f0b6fe52a104a17d376be5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d0388e26b8e8d26b6f803928a306a379e54823f6fec0e32de004cb650152bf8e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "665ece3ae83673fca616518bcc09b0bd54236dd6bd1a3c3d242023c0d538a33c"
+        },
+        {
+          "source_id": "govinfo:10usc401-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "raw_sha256": "08340325e06a23e6b1baf535d90ad4af7f231ad37fada0922e60779ef2c1559c",
+          "governed_bytes_sha256": "3db2bfe2bbc67b3d62c5d9afa4c6fd09b8aaef9dc604287bf931eb421295c5ac"
+        },
+        {
+          "source_id": "govinfo:10usc402-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm",
+          "raw_sha256": "c8926b31c06d14cd61d316397d330ffc8b5cbae24b5e190e296dfff2ab0b78c8",
+          "governed_bytes_sha256": "c5a627df8013d8df1f422bad92f0c04c7ece9c50b9ad354bef0b562d9c9227b1"
+        },
+        {
+          "source_id": "govinfo:10usc404-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm",
+          "raw_sha256": "2f0a64a4912722f9339dcd23e94a926c4b483eaf157ce81ad06555505c15f9da",
+          "governed_bytes_sha256": "b08212fe195b6af8e5614b2638c4411450da28a687f5fee28cbace34fd0028d8"
+        },
+        {
+          "source_id": "govinfo:10usc407-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm",
+          "raw_sha256": "34432abf78d7a41e2ec77427e9fc9c7f7a0d1036f0418924b3c4c9b8a03b57c4",
+          "governed_bytes_sha256": "25b443ceb477aeaaf0fe7213485ffe6b87f4b1aacf578baaedca0aa27c98dce0"
+        },
+        {
+          "source_id": "govinfo:10usc2557-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm",
+          "raw_sha256": "c3e1d7c7d5d312ebc984b186b1adbf2b7aca441f904ec35c8c3ca17c12c0d8e8",
+          "governed_bytes_sha256": "e2d9cc7ff251acfdad8848c0dd317d75669ba4480bc33d8de881059753e32352"
+        },
+        {
+          "source_id": "govinfo:10usc2561-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm",
+          "raw_sha256": "8933cd4dba8c3c227cbc14c6f2228ead6e678efabf9c46b28d07a9d57b6ffe8e",
+          "governed_bytes_sha256": "facb94e14c1e8589db525fb06299b29e12211634340d5f93403b56dd5bb73f15"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "govinfo:hr4016rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm",
+          "raw_sha256": "26861f698ea0e315ebe1c0764dd28eca10bbbc40946141389be01065173ce60b",
+          "governed_bytes_sha256": "589e38270b5ce9121778f1d803072334505ae1dc5c6608995ecd9c2273198b0c"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:204",
+        "source_ids": [
+          "clerk:119:1:204",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "govinfo:10usc401-2024",
+          "govinfo:10usc402-2024",
+          "govinfo:10usc404-2024",
+          "govinfo:10usc407-2024",
+          "govinfo:10usc2557-2024",
+          "govinfo:10usc2561-2024",
+          "congressional-record:2025-07-17",
+          "govinfo:hr4016rh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:204",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4016 Part A amendment111 binds roll204 in Clerk/July17 Record p92; it strikes RH p24 lines8–14, the $117,988,000 OHDACA account through September30,2027. Complete instruction/base and debate pp68–69 read. Next trace all six incorporated 10USC401/402/404/407/2557/2561 authorities and qualifications before membership/meaning. Exact RH/EH/report/Record captures are now committed inputs; source acquisition is not completion."
-      }
+        "shared_review_record_sha256": "2139086f9f6a25ea51219f27ca328c32b64b78943b2743533f580b5f9dfd5cce"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:205",
@@ -13423,7 +13505,7 @@
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.",
+      "reason": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. An earlier voice-adopted en-bloc No.4 included Obernolte amendment245, which had already reduced that original minimum by $1 million and raised the separate congressionally directed medical-research minimum by $1 million. Greene amendment113 still instructed a $15-million reduction at the original line. It would remove the positive floor; it is not described as a clean change from an unchanged $15 million to exactly zero, nor as a negative appropriation or recovery of funds. The failed amendment’s proposed $15-million instruction and the earlier adopted $1-million change remain distinct. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments. The EH Health proviso retains the earlier $1-million reduction, corroborating that the rejected $15-million instruction was not incorporated.",
       "source": {
         "source_id": "clerk:119:1:206",
         "url": "https://clerk.house.gov/evs/2025/roll206.xml",
@@ -13441,7 +13523,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "proposed_exact_action_inclusion",
-      "rationale": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.",
+      "rationale": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. An earlier voice-adopted en-bloc No.4 included Obernolte amendment245, which had already reduced that original minimum by $1 million and raised the separate congressionally directed medical-research minimum by $1 million. Greene amendment113 still instructed a $15-million reduction at the original line. It would remove the positive floor; it is not described as a clean change from an unchanged $15 million to exactly zero, nor as a negative appropriation or recovery of funds. The failed amendment’s proposed $15-million instruction and the earlier adopted $1-million change remain distinct. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments. The EH Health proviso retains the earlier $1-million reduction, corroborating that the rejected $15-million instruction was not incorporated.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -13474,6 +13556,18 @@
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
           "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
           "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
+        },
+        {
+          "source_id": "congressional-record:2025-07-16",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf",
+          "raw_sha256": "0feba16337bfea3173a19d80a0ead10cb7f3a30fdcd3f0c6a3c45308168193e4",
+          "governed_bytes_sha256": "9fbd40e2234f8a30d03f3e7c8473087782182af829201b6778f29f05cf3af67f"
+        },
+        {
+          "source_id": "govinfo:hr4016eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm",
+          "raw_sha256": "9ce2b64a299854a87fec9ae8233ffb608ff1c3ec0ad6fd7a55b2227c20cf3340",
+          "governed_bytes_sha256": "6729ee41a472f97561aa455a2df895ee480d67772aba3fd424177fe9e792cfb2"
         }
       ],
       "exact_action_source_binding": {
@@ -13483,7 +13577,9 @@
           "govinfo:hrpt199",
           "govinfo:hr4016rh-page-binding",
           "congressional-record:2025-07-17",
-          "govinfo:hres580eh"
+          "govinfo:hres580eh",
+          "congressional-record:2025-07-16",
+          "govinfo:hr4016eh"
         ],
         "membership_review_ref": "membership_review.json#action_id=house:119:1:206",
         "review_state": "candidate_pending_external_semantic_review",
@@ -13495,7 +13591,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "e9a23f9b6c196c525993feeecbe26bfad34408c9ddec132046511d9c7040ccbf"
+        "shared_review_record_sha256": "43738488ba66966bf0b2fa929cbad499952058c030ecb2cb6c58737c2696ad8d"
       },
       "historical_raw_hash_matches": true
     },
@@ -13843,7 +13939,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Final-passage H.R.4016 EH now captured, not substantively reviewed. RH pages24,41–43,92–93,112–113,118 were read for discrete amendments; EH full accounts/riders/incorporated authorities and all adopted amendments still need review. Preserve interpreted roll206 minimum-versus-total distinction and excluded rolls205/207/208. Rolls204/209/210 remain unfinished. July18 calendar votes occur in the July17 legislative-day Record; the July18 PDF URL returned non-PDF content and was rejected."
+        "next_action": "Continue complete EH reading from character87000 of stored199597-character govinfo:hr4016eh (start of remaining section8016). Prefix0:87000 actually read, including personnel/operations/procurement/research accounts, Health and drug-demand programs, sections8001–8015. Health net additions +$33m; research minimum +$1m, HIV minimum -$1m from earlier adopted amendment245 (July16 Record pp40–41); do not attribute that reduction to rejected roll206. Section8011 alternative humanitarian/medical funding preserved in roll204 meaning. Continue riders, incorporations and amendment reconciliation before final meaning. Rolls209/210 also remain unfinished; all recorded amendments204–210 bind July17 legislative-day Record."
       }
     },
     {
@@ -35275,11 +35371,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "46 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Includes separately traced insolvency-priority mechanisms and the exact H.R.4016 HIV-education minimum amendment; wider H.R.4016 episode review remains unfinished.",
+    "basis": "47 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Distinct insolvency priorities and H.R.4016 humanitarian-account/HIV-minimum amendments preserve alternative bill funding and prior voice-adopted version effects; wider episode review remains unfinished.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "4f8bca5de59ec47ef5016bd72780393993149534dcaa5cc3ca7daa43f8035f16",
+  "selection_sha256": "b48c94a7e62fd42469a6e9c8519d682f11e872752169032da6b2dca3e7532fb1",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -35299,6 +35395,7 @@
     "house:119:1:190",
     "house:119:1:199",
     "house:119:1:200",
+    "house:119:1:204",
     "house:119:1:206",
     "house:119:1:25",
     "house:119:1:27",
@@ -35329,7 +35426,6 @@
     "house:119:2:53"
   ],
   "unresolved_action_ids": [
-    "house:119:1:204",
     "house:119:1:209",
     "house:119:1:210",
     "house:119:1:212",
@@ -35713,6 +35809,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "32b3175a77fe2bb46e7e5f08e7ad949274744022f8232ec9af59f2c187da0873",
-  "membership_review_sha256": "99467113540ad1befed89afbe1111c0c871b9f3fe31b2e7170356ec97b11b589"
+  "proposal_sha256": "d14acd407d5d0a876257f637d45048c5e5a057e15976cc9f2e175a1d30a84858",
+  "membership_review_sha256": "b9008ab7298f088542afa6c74ce1d9839d513814d342089ab757efd60ce3d657"
 }

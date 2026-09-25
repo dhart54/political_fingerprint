@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":177, "source_unresolved":329,
-            "interpreted_substantive_directional":46, "expressive_nonbinding_context":8, "exact_action_ineligible":116})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":177, "source_unresolved":328,
+            "interpreted_substantive_directional":47, "expressive_nonbinding_context":8, "exact_action_ineligible":116})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -274,9 +274,10 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertTrue(rows["house:119:1:180"]["review_progress"]["substantive_review_performed"])
         self.assertEqual(rows["house:119:1:180"]["disposition"], "interpreted_substantive_directional")
         self.assertTrue(rows["house:119:1:199"]["review_progress"]["substantive_review_performed"])
-        self.assertFalse(rows["house:119:1:204"]["review_progress"]["substantive_review_performed"])
-        self.assertEqual(rows["house:119:1:204"]["disposition"], "source_unresolved")
-        self.assertIn("H.R.4016", rows["house:119:1:204"]["review_progress"]["next_action"])
+        self.assertTrue(rows["house:119:1:204"]["review_progress"]["substantive_review_performed"])
+        self.assertFalse(rows["house:119:1:209"]["review_progress"]["substantive_review_performed"])
+        self.assertEqual(rows["house:119:1:209"]["disposition"], "source_unresolved")
+        self.assertIn("Ukraine", rows["house:119:1:209"]["review_progress"]["next_action"])
         self.assertFalse(any(r["review_progress"]["required_evidence_unavailable"] for r in rows.values()))
         self.assertFalse(any(r["review_progress"]["authoritative_source_conflict"] for r in rows.values()))
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
@@ -515,8 +516,14 @@ class SharedDomainCandidateTests(unittest.TestCase):
             finding = next(f for f in member["findings"] if "house:119:1:206" in f["action_ids"])
             self.assertIn("not the total Defense Health appropriation", finding["compact"])
             self.assertIn("did not expressly prohibit", finding["compact"])
+            self.assertIn("earlier adopted amendment", finding["compact"])
+            self.assertNotIn("to zero", finding["compact"])
             self.assertIn("govinfo:hr4016rh-page-binding", finding["source_ids"])
-            self.assertEqual(finding["action_ids"], ["house:119:1:206"])
+            self.assertIn("congressional-record:2025-07-16", finding["source_ids"])
+            self.assertEqual(finding["action_ids"], ["house:119:1:204", "house:119:1:206"])
+            self.assertIn("$117.988 million", finding["compact"])
+            self.assertIn("govinfo:10usc401-2024", finding["source_ids"])
+            self.assertIn("not the underlying authorities", finding["compact"])
         author = copy.deepcopy(self.author)
         action = next(a for a in author["actions"] if a["action_id"] == "house:119:1:206")
         action["additional_source_ids"].remove("govinfo:hr4016rh-page-binding")

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "235bacbb0be0bc6c81e3363ae8f6d3337f3953dfdccb857df1a629a6b65738fe",
-  "source_capture_sha256": "fec78a1e4a67d984b4faa838829352754ab0ba25367de240f0490a1f37f19ed9",
-  "core_sha256": "bf658bc27c2f909634b72a6bc9922db029ffc11684e320ed252880b9454529f8",
-  "compiled_sha256": "80f7ab64b82ac9abb4e01e04617dfdbe70fa07df83db86a0287ee63b133ba6bd",
-  "readable_sha256": "fc231fdaf424bdd3bf139d506f5691589e6641daefcf0fa7ff28aaf5ac892f67",
+  "input_sha256": "6539ed8884adcc2df6157c25bf7bbe57ebc4f420e5e8d991c786660f7912c20f",
+  "source_capture_sha256": "fea897cda6b0624b65a00d9a3c13fa1647e5d40691c05797c10d7fabc441c3e4",
+  "core_sha256": "3bd4f44b0232a88ca14090a0153e28a37755eb4d30019cda33324e9b82ab2c7f",
+  "compiled_sha256": "0cc0a2885ba304339ec3fdf0714f4a91362cdc727d50ec66301c488c8670075e",
+  "readable_sha256": "1e6ae0ed46cab27c5e866297df2c7276605b8ca65d4884982cac9ed08c20def2",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -918,21 +918,41 @@
     },
     {
       "action_id": "house:119:1:206",
-      "shared_sha256": "74a9e8dff47acc0d5121fa5503f4b9445d9b2e7d56001784066fcfd6565d791f",
+      "shared_sha256": "ea167b777654ddbf4079cabba2826a8d903ce529db5fe1c9c05d3a87c1ea87de",
       "choices": [
         {
           "member_id": "F000477",
           "status": "Nay",
           "effect": "opposes_exact_choice",
-          "selected_meaning": "opposed the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad",
+          "selected_meaning": "opposed the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million",
           "source_id": "clerk:119:1:206"
         },
         {
           "member_id": "M001184",
           "status": "Yea",
           "effect": "supports_exact_choice",
-          "selected_meaning": "supported the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad",
+          "selected_meaning": "supported the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million",
           "source_id": "clerk:119:1:206"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:204",
+      "shared_sha256": "5b1ee9b55a551ed863260cb1def1717161e6a3a12cf62c16b4dd863c078c0029",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation",
+          "source_id": "clerk:119:1:204"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation",
+          "source_id": "clerk:119:1:204"
         }
       ]
     }

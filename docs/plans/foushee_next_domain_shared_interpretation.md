@@ -76,23 +76,23 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Three new shared candidate meanings/compacts and six choice strings;
+- [x] Four new shared candidate meanings/compacts and eight choice strings;
   neither implies a health-benefit cut or isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now40 Foushee /36 Massie findings,92 observations,
-  four Massie Not Voting records,40 episodes and six preserved pairs.
+  non-directional accounting. Now40 Foushee /36 Massie findings,94 observations,
+  four Massie Not Voting records,40 episodes and seven represented pairs.
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become46/177/8/116/329 across unchanged676 identities.
-  Add22 governed sources (eight Clerk,14 other),7 membership records and26
-  interpretation claim maps. Totals473 sources,205 membership records,193 maps.
+- [x] Counts43/176/8/113/336 become47/177/8/116/328 across unchanged676 identities.
+  Add29 governed sources (eight Clerk,21 other),8 membership records and42
+  interpretation claim maps. Totals480 sources,206 membership records,209 maps.
 - [x] Regenerate and inspect compact/detail outputs. All37 candidate tests and124 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete329 remaining screenings, wider episode reconciliation and
+- [ ] Complete328 remaining screenings, wider episode reconciliation and
   evidence-based substantive review-readiness assessment. No current human
   decision, unavailable evidence or source-conflict blocker is identified.
 
@@ -102,17 +102,26 @@ total. Base page visually verified; Foushee No/Massie Aye projected mechanically
 Rolls205/207/208 are proposed exclusions with exact Taiwan/Israel/Jordan deleted
 provisions, military purposes and allocation-versus-total limits recorded.
 
-Next executable group: H.R.4016 rolls204/209/210/212. RH/EH, Report119-199,
-eight Clerk captures and July17 Record are acquired. Roll204 exact instruction,
-base account and debate pp68–69 were read; next trace all10USC401/402/404/407/
-2557/2561 authorities before membership. Roll209's bill-specific Ukraine
-prohibition/debate pp73–74 were read; confirm relevant assistance scope.
-Roll210's Lebanese Armed Forces prohibition/debate pp75–76 were read; p77
-continuation and scope remain. Neither is equated to all assistance from every
-appropriation. Final EH accounts/riders/adopted amendments/incorporations remain
-substantively unreviewed. The July18 URL is not a PDF; after-midnight Clerk votes
-are in the July17 legislative-day Record. No evidence blocker is asserted.
-Then rolls213 onward. Exact next steps are in the inventory, not a new milestone.
+Roll204 is also interpreted, sharing the episode with206. The complete
+$117.988-million OHDACA appropriation includes conditional care under10USC401;
+all six incorporated statutes are captured/read. Preserve other bill funding in
+section8011 and underlying authorities rather than asserting all aid disappears.
+Continued EH reading exposed earlier adopted amendment245's $1-million HIV-floor
+reduction. July16 Record pp40–41 binds en-bloc No.4 and its voice adoption before
+roll206. The candidate now preserves the later $15-million instruction without
+the initial exact-zero wording or an invented negative appropriation. No
+individual member observation is inferred from the voice vote.
+
+Next executable group: H.R.4016 rolls209/210/212, then213 onward. Roll209's
+bill-specific Ukraine prohibition/debate pp73–74 were read; confirm relevant
+assistance scope. Roll210's Lebanese Armed Forces prohibition/debate pp75–76 were
+read; p77 continuation and scope remain. Complete EH text was read from0:87000
+of199597 characters, through all initial account titles/sections8001–8015 and
+part of8016. Resume at87000, finish riders and incorporated authorities, then
+final meaning. Health total/RDT&E net additions +$33m; medical-research minimum
++$1m and HIV minimum -$1m are adopted effects, not rejected roll206. Further
+amendment reconciliation remains. The July18 URL is not a PDF; after-midnight
+Clerk votes are in the July17 legislative-day Record. No current evidence blocker.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
 were read through TitleVI, not only the shorter original contents list. Its
