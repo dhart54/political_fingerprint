@@ -1,9 +1,9 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Thirty-one more membership dispositions resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: fourteen new shared interpretations, fifteen exclusions
-and two procedural controls. Now57 interpreted inputs,43 Foushee findings and39
-bounded Massie proof findings;304 discovery identities remain unreviewed; one additional examined action has a
+**Partial candidate, active research.** Forty-two more membership dispositions resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: sixteen new shared interpretations, twenty-three exclusions
+and three procedural controls. Now59 interpreted inputs,44 Foushee findings and40
+bounded Massie proof findings;293 discovery identities remain unreviewed; one additional examined action has a
 printed-source conflict.
 This is neither complete Health coverage nor accepted/public content.
 
@@ -17,9 +17,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [57 shared meanings /416 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [600 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [230 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [59 shared meanings /431 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [638 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [241 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -27,11 +27,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|57|
-| procedural_context |176|178|
+| interpreted_substantive_directional |43|59|
+| procedural_context |176|179|
 | expressive_nonbinding_context |8|8|
-| exact_action_ineligible |113|128|
-| source_unresolved (unreviewed plus examined conflict) |336|305|
+| exact_action_ineligible |113|136|
+| source_unresolved (unreviewed plus examined conflict) |336|294|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -154,12 +154,12 @@ workforce-training table. The memo's first pages were also inspected through its
 public reproduction, but unacquired PDF bytes are not represented as governed
 captures. No historical source was rewritten or analytical architecture changed.
 
-Manual delta from bed93d: fourteen shared meanings/compacts, twenty-eight choice
-strings,249 claim maps,32 membership records and149 source captures (28 Clerk,
-121 other). Totals114 observations, four Massie non-votes,43 episodes and eight
-multi-action episodes (six pairs, four H.R.4016 and six H.R.4553 actions).
-No synthesis added. The32 screenings comprise31 dispositions and one examined
-source conflict, not32 completed interpretations.
+Manual delta from bed93d: sixteen shared meanings/compacts, thirty-two choice
+strings,264 claim maps,43 membership records and187 source captures (39 Clerk,
+148 other). Totals118 observations, four Massie non-votes,44 episodes and nine
+multi-action episodes (seven pairs, four H.R.4016 and six H.R.4553 actions).
+No synthesis added. The43 screenings comprise42 dispositions and one examined
+source conflict, not43 completed interpretations.
 
 **September energy/water amendments:** rolls227–231 are five proposed exclusions.
 Keep DRBC-rule enforcement separate from all DRBC funding under the bill. The
@@ -209,25 +209,50 @@ an official correction/version; its failed outcome and the independent EH do not
 resolve which printed amount governed. This is not an unreviewed screening or
 an unavailable-evidence claim. Passage239 remains independently source-bound.
 
+Rolls240/241 are exclusions after complete short EH and incorporated office-space/
+security-authority review;243 remains non-counting rule context. Roll244 repeals
+Iraq AUMFs, including the2002 assistance-planning reporting reference, without
+repealing the separate1998 Act. Its exclusion preserves that humanitarian context.
+
+Rolls245/246 are two shared care candidates in one H.R.3838 episode. EFMP treatment,
+referral and reassignment restrictions are distinct from proposed1076g and the
+1079(a)(20) deletion of the sterilization qualifier. Preserve purpose-bound treatment,
+exceptions, minor wording, dependent-care cross-reference and no-new-entitlement
+limits. No existing universal coverage, clinical result or motive is inferred.
+Foushee No/No and Massie Aye/Aye are projected mechanically;47 focused tests pass.
+Rolls247–251 are proposed exclusions with their exact qualifications: academy
+athletics; department-wide demographic forms (including contrary health-access
+claims in debate); single-sex facilities with emergency/waiver exceptions; radar
+certification/study; and energy-planning/vehicle-authority repeal, including2035
+requirements. They are not treated as Health solely from adjacency or predictions.
+
+Research42–54 preserves all captures. Only read sections are governed, not the full
+1,876,315-character RCP119-8 or697,572-character Report119-255. Next252–260 report
+texts are read but incorporated authorities/base instructions remain unreviewed:
+18USC1382/50USC797, flag authority, OHDACA line010, Ukraine section1313, advertising
+certification at RCP853 and ESA/Sikes. See exact row next_action in the inventory.
+Corrected public Code URL paths after three invalid responses; rejected error pages
+never entered governed sources. No new table transcription in this batch.
+
 ## Current validation and remaining execution
 
-All46 focused candidate tests pass, including complete six-action rendering,
+All47 focused candidate tests pass, including complete six-action rendering,
 both members’ actual choices, distinct mandate/marriage funding scopes, nested
 amounts, source-removal rejection and separation of the conflicted amendment.
-All133 focused subsystem tests pass after rerunning the one schema test whose
-first invocation omitted the established NODE_PATH setting. All7 canonical
-semantic checks pass. No environment/dependency file was changed. Prior89cdc54
+All134 focused subsystem tests pass with the established command-local NODE_PATH.
+The previous checkpoint needed a single schema-check rerun after omitting it. All7 canonical
+semantic checks pass. No environment/dependency file was changed. Prior8161df6
 passed all9 exact-head CI checks; the new pushed commit requires its own checks.
 No frontend/runtime change or browser loop is claimed.
 
-Continue224–226 public plan-source tracing and independent240/241/243 onward.
+Continue224–226 public plan-source tracing and independent252 onward.
 The CRA EH texts are read; June26 Record pages50–56 contain GAO opinions, with
 50–51/Miles City read. BLM legacy links returned403 and the redirected Miles City
 page was unavailable; public alternatives are not exhausted. North Dakota’s
 exact plan remains to acquire. Research25–40 and governed sources retain completed
 H.R.4553 EH/program work and the amendment237 conflict for targeted resumption.
 
-304 unreviewed screenings, one examined source conflict and wider episode
+293 unreviewed screenings, one examined source conflict and wider episode
 reconciliation remain. Independent safe work continues. This progress push is
 not a terminal state or approval gate; no shutdown marker is created. No new
 human decision is requested while official-source tracing remains available.
@@ -235,7 +260,7 @@ human decision is requested while official-source tracing remains available.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-57 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+59 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -303,6 +328,52 @@ The Clerk recorded the House result as 'Passed' on 2025-02-06. This does not est
 Evidence: house:119:1:32, house:119:1:33; finding `prop:d7e59940a1aaf002`.
 
 Sources: [clerk:119:1:32](https://clerk.house.gov/evs/2025/roll032.xml); [govinfo:hrpt2](https://www.govinfo.gov/content/pkg/CRPT-119hrpt2/html/CRPT-119hrpt2.htm); [congressional-record:2025-02-06](https://www.govinfo.gov/content/pkg/CREC-2025-02-06/pdf/CREC-2025-02-06-house.pdf); [clerk:119:1:33](https://clerk.house.gov/evs/2025/roll033.xml); [govinfo:hr27eh](https://www.govinfo.gov/content/pkg/BILLS-119hr27eh/html/BILLS-119hr27eh.htm); [govinfo:hres93eh](https://www.govinfo.gov/content/pkg/BILLS-119hres93eh/html/BILLS-119hres93eh.htm).
+
+### Separate choices within one legislative episode
+
+**Compact:** Foushee opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes. The amendment would bar gender-transition procedures, including surgery or medication, for minor dependent children through the Exceptional Family Member Program. It would also bar referrals and duty-station changes through that program to obtain those procedures. This adopted amendment concerns that program, not all care or TRICARE coverage. Foushee opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban. The amendment would restrict defined gender-transition medical treatment under military-care coverage and furnishing rules, with stated exceptions and existing eligibility limits. It would also remove the sterilization condition from the existing ban on gender-dysphoria interventions for children under18. Two exception clauses refer to minors; their adult reach is not assumed. This separate amendment was adopted.
+
+**Detail:**
+
+**house:119:1:245**
+
+Foushee opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes.
+
+Norman amendment13 adds three prohibitions through the Exceptional Family Member Program (EFMP): provision of gender-transition procedures, including surgery or medication, to a minor dependent child; referrals for those procedures; and approval of a duty-station change for the purpose of giving that child access to those procedures. Its EFMP definition refers to10USC1781c(d)(4)(I). It does not specify a numerical age or separately define gender-transition procedures.
+
+The incorporated statute concerns military families with medical or educational special needs. It provides assignment coordination where care/support is available, individualized service plans, information and referrals, case managers and support-program oversight. The statutory assignment protections remain subject to military needs and career considerations. This is not a claim that EFMP itself is a health insurer or that every treatment is presently furnished or paid for by EFMP. The amendment directly restricts the program’s treatment-access, referral and reassignment mechanisms; it does not rewrite all TRICARE coverage or prohibit all care outside EFMP.
+
+The House agreed to this amendment on September10,2025. This separate amendment choice is not passage of the entire NDAA or evidence that a particular child lost services. Floor speakers disputed the program’s function and the effects of the proposal; their clinical, fiscal, motive and readiness assertions are not adopted as established facts. The nearby Mace amendment14 has separate coverage language and is represented separately.
+
+The Clerk recorded the House result as 'Agreed to' on 2025-09-10. This does not establish enactment.
+
+**house:119:1:246**
+
+Foushee opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban.
+
+Mace amendment14 adds proposed10USC1076g: with specified exceptions, medical care under1076 with respect to armed-forces members and their dependents would exclude the amendment’s defined gender-related medical treatment, and the Secretary of Defense could not furnish that treatment. It also adds the prohibition to1077(b) and deletes the sterilization qualifier from1079(a)(20). That last change would prohibit medical interventions to treat gender dysphoria for children under18 under that paragraph whether or not the interventions could result in sterilization. This is broader than the existing paragraph’s sterilization-linked restriction, not the first restriction on every referenced procedure.
+
+The proposed1076g definition is purpose-bound: treatments to address a person’s perception that their gender or sex differs from the amendment’s defined female or male sex. Its non-exhaustive lists include specified surgeries, exogenous testosterone/androgens or estrogen, and puberty blockers including GnRH agonists and specified hormone/puberty-suppression drugs. It does not ban each listed procedure or hormone regardless of medical purpose. The amendment supplies its own reproductive-system definitions of female and male, treats gender as sex under its stated wording, and defines sex as biological determination; this candidate describes those proposed statutory definitions without adopting broader claims about identity or clinical evidence.
+
+The new1076g exceptions cover specified physician-tested disorders of sex development; irresolvably ambiguous sex characteristics including the listed chromosome/tissue conditions; and infection, injury, disease or disorder caused or exacerbated by the defined treatment. The first two exception clauses literally refer to such minor, although the general prohibition names members and dependents without an express minor-only limit. Preserve that drafting limitation rather than silently extending every exception to adults. The underlying1076 governs dependent care with eligibility, facility/capacity and mission limits, while the proposed text expressly names members and dependents; the interpretation does not resolve that cross-reference’s application to every category of member care. It states the proposed coverage/furnishment restriction and separate under18 contractual-care change as written, not an unqualified ban on every TRICARE service for every person.
+
+Existing1077 lists authorized dependent care and exclusions. Existing1079(a) governs contracted dependent care, includes a separate appearance-related surgery restriction with reconstruction/neoplastic exceptions and necessity requirements, and already prohibits under18 gender-dysphoria interventions that could result in sterilization. The amendment neither establishes that all newly described treatments are currently covered nor expands an individual’s existing entitlement: its rule of construction expressly preserves that limit. The1076g exceptions should not be read into the separately edited1079(a)(20) without textual support.
+
+The House agreed to this distinct amendment on September10,2025. It does not itself establish enactment, an individual loss of care, a clinical outcome or the motives asserted in floor debate. It remains separate from Norman’s EFMP treatment/referral/reassignment restrictions and from eventual whole-package passage. Opposing this amendment does not identify a preferred care policy or negate existing restrictions.
+
+The Clerk recorded the House result as 'Agreed to' on 2025-09-10. This does not establish enactment.
+
+- One vote on the three linked EFMP restrictions; a Nay does not identify a preferred alternative, and a Yea does not establish a clinical, fiscal or individual-service outcome.
+- The text identifies minor dependent children without supplying a numerical age; the interpretation does not invent one or resolve undefined procedure boundaries.
+- EFMP coordinates assignment and family support; the proposed restrictions do not establish existing payment for every referenced procedure or a universal prohibition on care outside this program.
+- This is one vote on amendment14’s linked changes, not a separate preference on each exception or a vote on the entire NDAA. No medical outcome, enacted result or motive is inferred.
+- The exception text’s minor references and the1076 dependent-care cross-reference are preserved; no invented adult entitlement or universal coverage boundary resolves them.
+- The list of procedures is purpose-bound and illustrative. The treatment of unrelated medical conditions, the separate existing surgical restrictions and the no-new-entitlement rule remain.
+- The under18 deletion in1079(a)(20) is a distinct change; exceptions to new1076g are not automatically exceptions to that paragraph.
+
+Evidence: house:119:1:245, house:119:1:246; finding `prop:d1f218c91b277f47`.
+
+Sources: [clerk:119:1:245](https://clerk.house.gov/evs/2025/roll245.xml); [govinfo:hrpt119-255-amend13](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1781c-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf); [clerk:119:1:246](https://clerk.house.gov/evs/2025/roll246.xml); [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm).
 
 ### Separate choices within one legislative episode
 
@@ -1479,4 +1550,6 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:235 | supported the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation | opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-04-regional-amendment](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf) |
 | house:119:1:236 | supported removing the bill’s EERE appropriation, including low-income home-weatherization assistance | opposed removing the bill’s EERE appropriation, including low-income home-weatherization assistance | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-eere-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:hrpt119-213-eere](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc6861-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6861.htm); [govinfo:42usc6862-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6862.htm); [govinfo:42usc6863-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm); [govinfo:42usc6864-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6864.htm); [govinfo:42usc6865-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm); [govinfo:42usc7133-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapII-sec7133.htm); [congressional-record:2025-09-04-eere-amendment](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf); [govinfo:hr4553eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm) |
 | house:119:1:239 | supported House passage of H.R.4553’s full funding-and-policy package | opposed House passage of H.R.4553’s full funding-and-policy package | [govinfo:hr4553eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm); [govinfo:hrpt119-213-eere](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:42usc18649-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap161-subchapIII-sec18649.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [govinfo:pl117-58-4553-transfer-programs](https://www.govinfo.gov/content/pkg/PLAW-117publ58/html/PLAW-117publ58.htm); [govinfo:1usc7-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title1/html/USCODE-2024-title1-chap1-sec7.htm); [govinfo:28usc1738C-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partV-chap115-sec1738C.htm); [govinfo:5usc804-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec804.htm); [congressional-record:2025-09-04-4553-passage](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf); [govinfo:42usc6863-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm); [govinfo:42usc6865-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm) |
+| house:119:1:245 | supported the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes | opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes | [govinfo:hrpt119-255-amend13](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1781c-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
+| house:119:1:246 | supported the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban | [govinfo:hrpt119-255-amend14](https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm); [govinfo:10usc1076-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:10usc1079-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm); [congressional-record:2025-09-10-ndaa-care](https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

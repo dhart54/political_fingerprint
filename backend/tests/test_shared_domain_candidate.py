@@ -199,7 +199,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 43)
+        self.assertEqual(len(f["findings"]), 44)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":178, "source_unresolved":305,
-            "interpreted_substantive_directional":57, "expressive_nonbinding_context":8, "exact_action_ineligible":128})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":179, "source_unresolved":294,
+            "interpreted_substantive_directional":59, "expressive_nonbinding_context":8, "exact_action_ineligible":136})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 304)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 293)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -757,6 +757,30 @@ class SharedDomainCandidateTests(unittest.TestCase):
             self.assertIn(amount, pending["rationale"])
         author = copy.deepcopy(self.author)
         next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("energy:fy2026-oda-health-programs")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
+
+    def test_ndaa_care_amendments_preserve_distinct_scope_and_choice_sources(self):
+        core, _, projections, _, result = self.products
+        ids = ["house:119:1:245", "house:119:1:246"]
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if ids[0] in f["action_ids"])
+            self.assertEqual(finding["action_ids"][:2], ids)
+            self.assertEqual([o["status"] for o in finding["action_observations"][:2]],
+                             ["Nay", "Nay"] if member["member_id"] == "F000477" else ["Yea", "Yea"])
+            for boundary in ["referrals and duty-station changes", "sterilization condition",
+                             "Two exception clauses refer to minors", "not all care or TRICARE coverage"]:
+                self.assertIn(boundary, finding["compact"])
+            detail = " ".join(finding["detail"])
+            for boundary in ["purpose-bound", "without an express minor-only limit",
+                             "should not be read into the separately edited", "not a claim that EFMP itself is a health insurer"]:
+                self.assertIn(boundary, detail)
+            self.assertTrue({"govinfo:hrpt119-255-amend13", "govinfo:hrpt119-255-amend14",
+                             "govinfo:10usc1781c-2024-operative", "govinfo:10usc1079-2024-operative"}
+                            <= set(finding["source_ids"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == ids[1])["additional_source_ids"].remove("govinfo:10usc1079-2024-operative")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477"])
 

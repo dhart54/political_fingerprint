@@ -347,6 +347,18 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:245",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:246",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -695,6 +707,18 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:245",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:246",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     }
@@ -1987,6 +2011,52 @@
         "structural_metadata": {
           "stage_order": 10239
         }
+      },
+      {
+        "action_id": "house:119:1:245",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:245:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "Norman amendment13 adds three prohibitions through the Exceptional Family Member Program (EFMP): provision of gender-transition procedures, including surgery or medication, to a minor dependent child; referrals for those procedures; and approval of a duty-station change for the purpose of giving that child access to those procedures. Its EFMP definition refers to10USC1781c(d)(4)(I). It does not specify a numerical age or separately define gender-transition procedures.\n\nThe incorporated statute concerns military families with medical or educational special needs. It provides assignment coordination where care/support is available, individualized service plans, information and referrals, case managers and support-program oversight. The statutory assignment protections remain subject to military needs and career considerations. This is not a claim that EFMP itself is a health insurer or that every treatment is presently furnished or paid for by EFMP. The amendment directly restricts the program’s treatment-access, referral and reassignment mechanisms; it does not rewrite all TRICARE coverage or prohibit all care outside EFMP.\n\nThe House agreed to this amendment on September10,2025. This separate amendment choice is not passage of the entire NDAA or evidence that a particular child lost services. Floor speakers disputed the program’s function and the effects of the proposal; their clinical, fiscal, motive and readiness assertions are not adopted as established facts. The nearby Mace amendment14 has separate coverage language and is represented separately.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr3838:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:245",
+          "govinfo:hrpt119-255-amend13",
+          "govinfo:10usc1781c-2024-operative",
+          "congressional-record:2025-09-10-ndaa-care"
+        ],
+        "structural_metadata": {
+          "stage_order": 10245
+        }
+      },
+      {
+        "action_id": "house:119:1:246",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:246:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "Mace amendment14 adds proposed10USC1076g: with specified exceptions, medical care under1076 with respect to armed-forces members and their dependents would exclude the amendment’s defined gender-related medical treatment, and the Secretary of Defense could not furnish that treatment. It also adds the prohibition to1077(b) and deletes the sterilization qualifier from1079(a)(20). That last change would prohibit medical interventions to treat gender dysphoria for children under18 under that paragraph whether or not the interventions could result in sterilization. This is broader than the existing paragraph’s sterilization-linked restriction, not the first restriction on every referenced procedure.\n\nThe proposed1076g definition is purpose-bound: treatments to address a person’s perception that their gender or sex differs from the amendment’s defined female or male sex. Its non-exhaustive lists include specified surgeries, exogenous testosterone/androgens or estrogen, and puberty blockers including GnRH agonists and specified hormone/puberty-suppression drugs. It does not ban each listed procedure or hormone regardless of medical purpose. The amendment supplies its own reproductive-system definitions of female and male, treats gender as sex under its stated wording, and defines sex as biological determination; this candidate describes those proposed statutory definitions without adopting broader claims about identity or clinical evidence.\n\nThe new1076g exceptions cover specified physician-tested disorders of sex development; irresolvably ambiguous sex characteristics including the listed chromosome/tissue conditions; and infection, injury, disease or disorder caused or exacerbated by the defined treatment. The first two exception clauses literally refer to such minor, although the general prohibition names members and dependents without an express minor-only limit. Preserve that drafting limitation rather than silently extending every exception to adults. The underlying1076 governs dependent care with eligibility, facility/capacity and mission limits, while the proposed text expressly names members and dependents; the interpretation does not resolve that cross-reference’s application to every category of member care. It states the proposed coverage/furnishment restriction and separate under18 contractual-care change as written, not an unqualified ban on every TRICARE service for every person.\n\nExisting1077 lists authorized dependent care and exclusions. Existing1079(a) governs contracted dependent care, includes a separate appearance-related surgery restriction with reconstruction/neoplastic exceptions and necessity requirements, and already prohibits under18 gender-dysphoria interventions that could result in sterilization. The amendment neither establishes that all newly described treatments are currently covered nor expands an individual’s existing entitlement: its rule of construction expressly preserves that limit. The1076g exceptions should not be read into the separately edited1079(a)(20) without textual support.\n\nThe House agreed to this distinct amendment on September10,2025. It does not itself establish enactment, an individual loss of care, a clinical outcome or the motives asserted in floor debate. It remains separate from Norman’s EFMP treatment/referral/reassignment restrictions and from eventual whole-package passage. Opposing this amendment does not identify a preferred care policy or negate existing restrictions.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr3838:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:246",
+          "govinfo:hrpt119-255-amend14",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:10usc1077-2024-operative",
+          "govinfo:10usc1079-2024-operative",
+          "congressional-record:2025-09-10-ndaa-care"
+        ],
+        "structural_metadata": {
+          "stage_order": 10246
+        }
       }
     ],
     "episodes": [
@@ -2344,6 +2414,15 @@
           "house:119:1:235",
           "house:119:1:236",
           "house:119:1:239"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr3838:119",
+        "action_ids": [
+          "house:119:1:245",
+          "house:119:1:246"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

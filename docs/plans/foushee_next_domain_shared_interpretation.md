@@ -76,26 +76,26 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Fourteen new shared candidate meanings/compacts and twenty-eight choice strings;
+- [x] Sixteen new shared candidate meanings/compacts and thirty-two choice strings;
   the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now43 Foushee /39 Massie findings,114 observations,
-  four Massie Not Voting records,43 episodes and eight multi-action episodes
-  (six pairs, four H.R.4016 actions and six supplied H.R.4553 actions).
+  non-directional accounting. Now44 Foushee /40 Massie findings,118 observations,
+  four Massie Not Voting records,44 episodes and nine multi-action episodes
+  (seven pairs, four H.R.4016 actions and six supplied H.R.4553 actions).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become57/178/8/128/305 across unchanged676 identities.
-  Add149 governed sources (28 Clerk,121 other),32 membership records and249
-  interpretation claim maps. Totals600 sources,230 membership records,416 maps.
-  The305 unresolved identities comprise304 unreviewed screenings and one examined
+- [x] Counts43/176/8/113/336 become59/179/8/136/294 across unchanged676 identities.
+  Add187 governed sources (39 Clerk,148 other),43 membership records and264
+  interpretation claim maps. Totals638 sources,241 membership records,431 maps.
+  The294 unresolved identities comprise293 unreviewed screenings and one examined
   exact-source conflict at roll237; the latter is not relabeled unreviewed.
-- [x] Regenerate and inspect compact/detail outputs. All46 candidate tests and133 focused subsystem tests pass,
+- [x] Regenerate and inspect compact/detail outputs. All47 candidate tests and134 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete304 remaining screenings, resolve roll237’s documented source conflict,
+- [ ] Complete293 remaining screenings, resolve roll237’s documented source conflict,
   reconcile wider episodes and assess substantive review readiness. Independent
   cases continue; no exhausted evidence dependency or new human decision is asserted.
 
@@ -189,23 +189,48 @@ $6.875million onto Fossil Energy; broader amendment arithmetic must retain them.
 Continue public correction/version tracing and independent safe research. This
 failed amendment is absent from EH and does not block passage239’s own sources.
 
+Rolls240/241 are exclusions after complete short EH and incorporated office-space/
+security-authority review;243 remains non-counting rule context. Roll244 repeals
+Iraq AUMFs, including the2002 assistance-planning reporting reference, without
+repealing the separate1998 Act. Its exclusion preserves that humanitarian context.
+
+Rolls245/246 are two shared care candidates in one H.R.3838 episode. EFMP treatment,
+referral and reassignment restrictions are distinct from proposed1076g and the
+1079(a)(20) deletion of the sterilization qualifier. Preserve purpose-bound treatment,
+exceptions, minor wording, dependent-care cross-reference and no-new-entitlement
+limits. No existing universal coverage, clinical result or motive is inferred.
+Foushee No/No and Massie Aye/Aye are projected mechanically;47 focused tests pass.
+Rolls247–251 are proposed exclusions with their exact qualifications: academy
+athletics; department-wide demographic forms (including contrary health-access
+claims in debate); single-sex facilities with emergency/waiver exceptions; radar
+certification/study; and energy-planning/vehicle-authority repeal, including2035
+requirements. They are not treated as Health solely from adjacency or predictions.
+
+Research42–54 preserves all captures. Only read sections are governed, not the full
+1,876,315-character RCP119-8 or697,572-character Report119-255. Next252–260 report
+texts are read but incorporated authorities/base instructions remain unreviewed:
+18USC1382/50USC797, flag authority, OHDACA line010, Ukraine section1313, advertising
+certification at RCP853 and ESA/Sikes. See exact row next_action in the inventory.
+Corrected public Code URL paths after three invalid responses; rejected error pages
+never entered governed sources. No new table transcription in this batch.
+
 Next executable work: continue224–226 public plan-source tracing and independently
-240/241/243 onward. H.J.Res.104/106/105 EH are fully read. June26 Record PDF in
+252 onward. H.J.Res.104/106/105 EH are fully read. June26 Record PDF in
 research24 pages50–56 contains the three GAO opinions;50–51/Miles City read.
 Exact Miles City/Central Yukon legacy BLM links returned403; the redirected
 Miles City document page was unavailable. Public alternatives are not exhausted;
 North Dakota exact plan remains to acquire. Research25–40 and governed sources
 preserve H.R.4553 context. Do not redo completed EH, regional or EERE research.
 
-Manual additions since89cdc54:31 governed sources, two shared interpretations,
-54 claim maps and three membership records (including the reviewed conflict).
-Selected report tables152/171 were visually transcribed for medical isotope and
+Manual additions since8161df6:38 governed sources, two shared interpretations,
+15 claim maps and11 membership records. The earlier roll237 conflict remains.
+At the previous checkpoint, report tables152/171 were visually transcribed for medical isotope and
 Other Defense allocations; Rules image47 was transcribed only for the disputed
-instruction. No private/protected material. All46 candidate tests,133 focused
-subsystem tests and7 semantic checks pass. The first subsystem run omitted the
-existing NODE_PATH dependency setting; its sole failing schema check passed after
-restoring that local command setting. No dependency/environment file changed.
-89cdc54’s9 exact-head CI checks passed; this progress commit needs its own CI.
+instruction. No private/protected material. All47 candidate tests,134 focused
+subsystem tests and7 semantic checks pass. The prior checkpoint needed a single
+schema-check rerun after omitting NODE_PATH; this run used the established
+command-local setting and all134 passed together. No environment file changed.
+8161df6’s9 exact-head CI checks passed; this progress commit needs its own CI.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
 were read through TitleVI, not only the shorter original contents list. Its

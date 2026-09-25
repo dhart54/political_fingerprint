@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "6351511fbf76b70d9d9cacdb558729913933b4df4dde1b06ac7ff2b049cf8024",
-  "source_capture_sha256": "d5c0f82b93ebc565dc53a0483556560a519bd9e498b0b1554d67592154396f19",
-  "core_sha256": "3a1d476bf6094eb516c7a3f7054b029333b499b2323d7f9a19d4598d96465b83",
-  "compiled_sha256": "020f06054f7ca96c3b3d0e822b49bf905e4766469d37b0113776e0044453ae8a",
-  "readable_sha256": "fbf12ec4e388ad68a850c1de8bc2d406a340db06ed996ef5560bf292feb24aef",
+  "input_sha256": "df71ccc909963a888a8483b72a4cbb1714578fb21b2434a82089b3f3bffba0a4",
+  "source_capture_sha256": "2a8c0afa170779b21254e12f52aa9efb9c2e9dc042d40f3fecc3a61e856ff201",
+  "core_sha256": "4716934c9c9e32bf9d5a700df01a0d7d174fc4d19761ea2f862894dca27ae0b7",
+  "compiled_sha256": "000f32cb6ba1e413d649777fce07539c97fb07229a21dfd6c2d8e02321bcfed5",
+  "readable_sha256": "5251b7d300002a253c666f6a44435f991f23cd9a36b682acaaba35df54a46aa0",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1153,6 +1153,46 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed House passage of H.R.4553’s full funding-and-policy package",
           "source_id": "clerk:119:1:239"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:245",
+      "shared_sha256": "0c57287c365415f34b4f994b55344bb2507fddc65f4e380e23cf4ce7a0cfbc33",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes",
+          "source_id": "clerk:119:1:245"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes",
+          "source_id": "clerk:119:1:245"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:246",
+      "shared_sha256": "4abaf27c9cc036437339fab97d8f3b561ab628d01c8c0cdd920a0929084c9184",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban",
+          "source_id": "clerk:119:1:246"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban",
+          "source_id": "clerk:119:1:246"
         }
       ]
     }

@@ -47,6 +47,8 @@
     "house:119:1:235",
     "house:119:1:236",
     "house:119:1:239",
+    "house:119:1:245",
+    "house:119:1:246",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -87,11 +89,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 178,
-      "exact_action_ineligible": 128,
-      "interpreted_substantive_directional": 57,
+      "procedural_context": 179,
+      "exact_action_ineligible": 136,
+      "interpreted_substantive_directional": 59,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 305
+      "source_unresolved": 294
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -100,15 +102,15 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 57,
-    "directional_substantive_actions": 57,
+    "substantive_eligible_actions": 59,
+    "directional_substantive_actions": 59,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 178,
+    "procedural_context_actions": 179,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 128,
-    "unresolved_boundary_cases": 305,
-    "independent_episode_count": 43,
-    "multi_action_episode_count": 8,
+    "exact_action_ineligible_actions": 136,
+    "unresolved_boundary_cases": 294,
+    "independent_episode_count": 44,
+    "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
       "concurrence",
@@ -118,12 +120,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 57,
-      "substantive_actions": 57,
+      "ready_substantive_actions": 59,
+      "substantive_actions": 59,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "304 discovery identities still need substantive membership review. One additional reviewed action,2025 roll237, has a $50,000 printed-source discrepancy. Official correction/version tracing remains open; no exhaustive source-unavailability claim is made."
+      "293 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -210,6 +212,7 @@
         "house:119:1:223",
         "house:119:1:238",
         "house:119:1:242",
+        "house:119:1:243",
         "house:119:1:261",
         "house:119:1:263",
         "house:119:1:265",
@@ -413,6 +416,14 @@
         "house:119:1:229",
         "house:119:1:230",
         "house:119:1:231",
+        "house:119:1:240",
+        "house:119:1:241",
+        "house:119:1:244",
+        "house:119:1:247",
+        "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:250",
+        "house:119:1:251",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -478,6 +489,8 @@
         "house:119:1:235",
         "house:119:1:236",
         "house:119:1:239",
+        "house:119:1:245",
+        "house:119:1:246",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -510,17 +523,6 @@
         "house:119:1:225",
         "house:119:1:226",
         "house:119:1:237",
-        "house:119:1:240",
-        "house:119:1:241",
-        "house:119:1:243",
-        "house:119:1:244",
-        "house:119:1:245",
-        "house:119:1:246",
-        "house:119:1:247",
-        "house:119:1:248",
-        "house:119:1:249",
-        "house:119:1:250",
-        "house:119:1:251",
         "house:119:1:252",
         "house:119:1:253",
         "house:119:1:254",
@@ -813,11 +815,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "57 proposed source-mapped inputs, not accepted eligibility. Of305 unresolved identities,304 remain an unfinished membership backlog and one has a recorded exact-source conflict; none is presumed a Health vote."
+    "count_basis": "59 proposed source-mapped inputs, not accepted eligibility. Of294 unresolved identities,293 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "43 candidate episodes cover57 supplied actions, including8 multi-action episodes (six pairs, four H.R.4016 actions and six H.R.4553 actions). H.R.4553 broad amendment237 is separately source-conflicted, not concealed by the independently sourced passage239. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "44 candidate episodes cover59 supplied actions, including9 multi-action episodes (seven two-action episodes, four H.R.4016 actions and six H.R.4553 actions). H.R.3838 has two independently interpreted care amendments; other amendments and passage remain under review. Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "74289ff285a5a7f328d1a82ee6f64127523d672694d0dac83f2940231e9853e1",
+  "universe_subject_sha256": "2c8233d57641fe756fdf2c1704d6af0b50e1bb9153c666cb8acf97da2f40f24e",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -16451,13 +16453,14 @@
       "date": "2025-09-08",
       "measure": "bill_119_hr_3424",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.3424 EH requires GSA collaboration with federal tenants on shared office space, collocation criteria, use of special-use space, measurable objectives and a six-month implementation briefing. Its incorporation of Public Law118-272 section2302 supplies occupancy measurement/reporting, utilization/consolidation and lease-management context with mission-space and intelligence exceptions. It changes property-management processes, not eligibility, funding or provision of clinical care, health insurance or household social assistance. Possible location in a health agency or mission-critical laboratory does not establish exact-action Health membership. The earlier utilization law is retained context, not newly enacted wholesale by this short bill.",
       "source": {
         "source_id": "clerk:119:1:240",
         "url": "https://clerk.house.gov/evs/2025/roll240.xml",
         "raw_sha256": "0297b0c76d3c14452a91daf9828943e5669c00dcc408c07bc80870b9d8223542",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "39131206ee109d98636cfc6460d864329fd7cf8b2238f75569f2e7aa35356df4",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16468,25 +16471,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.3424 EH requires GSA collaboration with federal tenants on shared office space, collocation criteria, use of special-use space, measurable objectives and a six-month implementation briefing. Its incorporation of Public Law118-272 section2302 supplies occupancy measurement/reporting, utilization/consolidation and lease-management context with mission-space and intelligence exceptions. It changes property-management processes, not eligibility, funding or provision of clinical care, health insurance or household social assistance. Possible location in a health agency or mission-critical laboratory does not establish exact-action Health membership. The earlier utilization law is retained context, not newly enacted wholesale by this short bill.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:240",
           "url": "https://clerk.house.gov/evs/2025/roll240.xml",
           "raw_sha256": "0297b0c76d3c14452a91daf9828943e5669c00dcc408c07bc80870b9d8223542",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "39131206ee109d98636cfc6460d864329fd7cf8b2238f75569f2e7aa35356df4",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3424eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3424eh/html/BILLS-119hr3424eh.htm",
+          "raw_sha256": "2e9e0ee894a1ee5512e42889d8e046e78efb51a98d2fd7b520e78215b520639a",
+          "governed_bytes_sha256": "a2aa72663d884915c0ad95729366167c3711486bd5acccec017ba85f319f06ed"
+        },
+        {
+          "source_id": "govinfo:pl118-272-office-space",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "60af20974485af95bea276977547ab57732c41bf65123ab3a74ae4525886201a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:240",
+        "source_ids": [
+          "clerk:119:1:240",
+          "govinfo:hr3424eh",
+          "govinfo:pl118-272-office-space"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:240",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5aa9429813abff550960c5f1f64a0e10a7ff1a590a39e633a60e1977ef19b27a"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:241",
@@ -16495,13 +16523,14 @@
       "date": "2025-09-08",
       "measure": "bill_119_hr_3425",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.3425 EH establishes covert-test data standards and quarterly review, corrective contractor training, updated security guidance and contract-security shift-tracking evaluation/replacement-or-repair plans with tenant communication and congressional reporting. The savings clause does not designate DHS guard-contractor employees as federal employees. Incorporated40USC1315 supplies federal-property/person protection authority; it does not turn this oversight vote into a medical-benefit or care-delivery decision. This is suspension and passage as amended of the security-oversight measure, not the direct military-family services implicated in later NDAA amendments.",
       "source": {
         "source_id": "clerk:119:1:241",
         "url": "https://clerk.house.gov/evs/2025/roll241.xml",
         "raw_sha256": "42e633e1196158bf0d35159d4add098749cfcc354cea2f4681e2145e17b63b37",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "861e257856fa7c79fdcacd9149b311fec1ad6e49da096462e1dc1dddea07c7e0",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16512,25 +16541,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.3425 EH establishes covert-test data standards and quarterly review, corrective contractor training, updated security guidance and contract-security shift-tracking evaluation/replacement-or-repair plans with tenant communication and congressional reporting. The savings clause does not designate DHS guard-contractor employees as federal employees. Incorporated40USC1315 supplies federal-property/person protection authority; it does not turn this oversight vote into a medical-benefit or care-delivery decision. This is suspension and passage as amended of the security-oversight measure, not the direct military-family services implicated in later NDAA amendments.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:241",
           "url": "https://clerk.house.gov/evs/2025/roll241.xml",
           "raw_sha256": "42e633e1196158bf0d35159d4add098749cfcc354cea2f4681e2145e17b63b37",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "861e257856fa7c79fdcacd9149b311fec1ad6e49da096462e1dc1dddea07c7e0",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3425eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3425eh/html/BILLS-119hr3425eh.htm",
+          "raw_sha256": "7c98b89464c0b5cc22e80bd83578446de5a7dd0c1d0c0cbe2fec7fe255b90ef0",
+          "governed_bytes_sha256": "23749124dca691b44a36969f31fd1984c65574c52e043428fb1f1c90011eff4f"
+        },
+        {
+          "source_id": "govinfo:40usc1315-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleI-chap13-sec1315.htm",
+          "raw_sha256": "c13d370b714ae0d2de3ea4e4f920a3ba5fea2d35bc8104b97d12d3a1b1a3b925",
+          "governed_bytes_sha256": "a431a09ba09f39ab3dbe516432a617a6309ab3395a9273cd7d01dbcdf1495b94"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:241",
+        "source_ids": [
+          "clerk:119:1:241",
+          "govinfo:hr3425eh",
+          "govinfo:40usc1315-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:241",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "36834cc608d93bd9142f77bc63774a0f10f3456ec6489aefc0b7761005dd427d"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:242",
@@ -16583,13 +16637,14 @@
       "date": "2025-09-09",
       "measure": "bill_119_hres_682",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.682 EH sets the structured H.R.3838 process, deems Rules Committee Print119-8 adopted in place of the Armed Services substitute, permits specified PartA/en-bloc amendments with debate and vote limits, and allows a motion to recommit. It separately sets closed consideration of H.R.3486, deeming its Judiciary substitute with Report119-255 PartB modifications adopted. Preserve those actual procedural effects. The exact rule vote remains non-counting procedural context under the existing standard; it is not a final-passage endorsement of all NDAA medical provisions or an inferred individual choice on any subsequent amendment. The full captured RCP is a base for later exact-action research, not a completed substantive review.",
       "source": {
         "source_id": "clerk:119:1:243",
         "url": "https://clerk.house.gov/evs/2025/roll243.xml",
         "raw_sha256": "6be4a2198816ba7e832a2de3ac776969630346f83f8469baff143b14f9ddbfb9",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "1e25d5757a4d4ca5d1ab168d95dfe24a5adbc61c8351092e5ffb0e320e08ac22",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16600,25 +16655,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.682 EH sets the structured H.R.3838 process, deems Rules Committee Print119-8 adopted in place of the Armed Services substitute, permits specified PartA/en-bloc amendments with debate and vote limits, and allows a motion to recommit. It separately sets closed consideration of H.R.3486, deeming its Judiciary substitute with Report119-255 PartB modifications adopted. Preserve those actual procedural effects. The exact rule vote remains non-counting procedural context under the existing standard; it is not a final-passage endorsement of all NDAA medical provisions or an inferred individual choice on any subsequent amendment. The full captured RCP is a base for later exact-action research, not a completed substantive review.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:243",
           "url": "https://clerk.house.gov/evs/2025/roll243.xml",
           "raw_sha256": "6be4a2198816ba7e832a2de3ac776969630346f83f8469baff143b14f9ddbfb9",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "1e25d5757a4d4ca5d1ab168d95dfe24a5adbc61c8351092e5ffb0e320e08ac22",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres682eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres682eh/html/BILLS-119hres682eh.htm",
+          "raw_sha256": "6f002d1b61a85ddb9fc63f0f28be31eb8c6bae97c5cffb9ba57f98caf9be7a59",
+          "governed_bytes_sha256": "39fb87bb3f4bdb99bbc80f0c205664406228cab1fb686411c4e92bd4ae3e40d8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-rule",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "18471bd11756b6709c8cad86c1f89cfe2813f27d0ee1cc46535d9c193d3ee325"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:243",
+        "source_ids": [
+          "clerk:119:1:243",
+          "govinfo:hres682eh",
+          "govinfo:hrpt119-255-rule"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:243",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b0121c333dbb1618ff97c517cf2f3e359ff0d0ccafef0b447ce4e501f4b45f88"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:244",
@@ -16627,13 +16707,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Meeks amendment34 repeals the1991 and2002 Iraq military-force authorizations, including their determinations, War Powers provisions and reporting duties. The2002 section4 reporting duty includes the status of planning efforts expected to be required after military action, including efforts described in section7 of the1998 Iraq Liberation Act. That retained section expresses support for post-regime humanitarian/democracy assistance and debt coordination. Repealing the force authorizations and their reporting duty does not repeal that separate1998 Act or itself change a clinical-care, insurance or household-assistance delivery/financing program. Generic humanitarian planning within war-authority reporting does not establish exact-action Health membership under the declared boundary. No inference about the health consequences of military action is made.",
       "source": {
         "source_id": "clerk:119:1:244",
         "url": "https://clerk.house.gov/evs/2025/roll244.xml",
         "raw_sha256": "46108b5f62559ed4e5e92011f377a45a09303e7abac675a13ffff38bbc28fb41",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16644,25 +16725,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Meeks amendment34 repeals the1991 and2002 Iraq military-force authorizations, including their determinations, War Powers provisions and reporting duties. The2002 section4 reporting duty includes the status of planning efforts expected to be required after military action, including efforts described in section7 of the1998 Iraq Liberation Act. That retained section expresses support for post-regime humanitarian/democracy assistance and debt coordination. Repealing the force authorizations and their reporting duty does not repeal that separate1998 Act or itself change a clinical-care, insurance or household-assistance delivery/financing program. Generic humanitarian planning within war-authority reporting does not establish exact-action Health membership under the declared boundary. No inference about the health consequences of military action is made.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:244",
           "url": "https://clerk.house.gov/evs/2025/roll244.xml",
           "raw_sha256": "46108b5f62559ed4e5e92011f377a45a09303e7abac675a13ffff38bbc28fb41",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend34",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "956ebd83d6952a0a57dbcd88ed47926821ac41e9b75a9a2e58c91b266c516566"
+        },
+        {
+          "source_id": "govinfo:50usc1541-iraq1991",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1541.htm",
+          "raw_sha256": "21a1624915be50725eb0dab0d92b22b29984b88dc2d1d890065891c2d816497d",
+          "governed_bytes_sha256": "a2b14b39003941d0fde7f11d7a12f0e37e4307c779d41af72f377a6b7a1d5c21"
+        },
+        {
+          "source_id": "govinfo:50usc1541-iraq2002",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1541.htm",
+          "raw_sha256": "21a1624915be50725eb0dab0d92b22b29984b88dc2d1d890065891c2d816497d",
+          "governed_bytes_sha256": "30fbee482148319f2fb0cd1f83206469f6d178aeb173883ee889cd543d2999ad"
+        },
+        {
+          "source_id": "govinfo:pl105-338-sections7-8",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ338/html/PLAW-105publ338.htm",
+          "raw_sha256": "48c71e610a838bb975ac4691c8bf4b4b5b4958ffafd2ddc26b87de1f8a755df4",
+          "governed_bytes_sha256": "e87b36ccc1b6538a3c1ad4f75b38aac94159b4ef00acec2ecf8813a65e6ef073"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-ndaa-care",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "a5e749689de60b97cc06a8c06295f7d0d05aa252a15ac785245e6afce9b366a6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:244",
+        "source_ids": [
+          "clerk:119:1:244",
+          "govinfo:hrpt119-255-amend34",
+          "govinfo:50usc1541-iraq1991",
+          "govinfo:50usc1541-iraq2002",
+          "govinfo:pl105-338-sections7-8",
+          "congressional-record:2025-09-10-ndaa-care"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:244",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "796b76e1bcf66f97e4fb970fa71557cb8d9d311e766300c3457003d37a1db3f6"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:245",
@@ -16671,15 +16798,16 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Norman amendment13 adds three prohibitions through the Exceptional Family Member Program (EFMP): provision of gender-transition procedures, including surgery or medication, to a minor dependent child; referrals for those procedures; and approval of a duty-station change for the purpose of giving that child access to those procedures. Its EFMP definition refers to10USC1781c(d)(4)(I). It does not specify a numerical age or separately define gender-transition procedures.\n\nThe incorporated statute concerns military families with medical or educational special needs. It provides assignment coordination where care/support is available, individualized service plans, information and referrals, case managers and support-program oversight. The statutory assignment protections remain subject to military needs and career considerations. This is not a claim that EFMP itself is a health insurer or that every treatment is presently furnished or paid for by EFMP. The amendment directly restricts the program’s treatment-access, referral and reassignment mechanisms; it does not rewrite all TRICARE coverage or prohibit all care outside EFMP.\n\nThe House agreed to this amendment on September10,2025. This separate amendment choice is not passage of the entire NDAA or evidence that a particular child lost services. Floor speakers disputed the program’s function and the effects of the proposal; their clinical, fiscal, motive and readiness assertions are not adopted as established facts. The nearby Mace amendment14 has separate coverage language and is represented separately.",
       "source": {
         "source_id": "clerk:119:1:245",
         "url": "https://clerk.house.gov/evs/2025/roll245.xml",
         "raw_sha256": "442e3654488259e8642b5e8fee67216807501b0895d44b197151a0f9d887802b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3838:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3838",
       "member_action": "nay",
@@ -16688,25 +16816,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Norman amendment13 adds three prohibitions through the Exceptional Family Member Program (EFMP): provision of gender-transition procedures, including surgery or medication, to a minor dependent child; referrals for those procedures; and approval of a duty-station change for the purpose of giving that child access to those procedures. Its EFMP definition refers to10USC1781c(d)(4)(I). It does not specify a numerical age or separately define gender-transition procedures.\n\nThe incorporated statute concerns military families with medical or educational special needs. It provides assignment coordination where care/support is available, individualized service plans, information and referrals, case managers and support-program oversight. The statutory assignment protections remain subject to military needs and career considerations. This is not a claim that EFMP itself is a health insurer or that every treatment is presently furnished or paid for by EFMP. The amendment directly restricts the program’s treatment-access, referral and reassignment mechanisms; it does not rewrite all TRICARE coverage or prohibit all care outside EFMP.\n\nThe House agreed to this amendment on September10,2025. This separate amendment choice is not passage of the entire NDAA or evidence that a particular child lost services. Floor speakers disputed the program’s function and the effects of the proposal; their clinical, fiscal, motive and readiness assertions are not adopted as established facts. The nearby Mace amendment14 has separate coverage language and is represented separately.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:245",
           "url": "https://clerk.house.gov/evs/2025/roll245.xml",
           "raw_sha256": "442e3654488259e8642b5e8fee67216807501b0895d44b197151a0f9d887802b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend13",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "b1567d025226d29f440846123b23ce82fedf725a008d3d53aa5eb447c8bf7407"
+        },
+        {
+          "source_id": "govinfo:10usc1781c-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm",
+          "raw_sha256": "19288845b93443c5f1629a560e48a131aded1ddf6198ac59e15982a2b1bb5568",
+          "governed_bytes_sha256": "90dab046dc6d5ab8972bb9d30d0de439b3ab7155995974a3c59a0b2427267f83"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-ndaa-care",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "a5e749689de60b97cc06a8c06295f7d0d05aa252a15ac785245e6afce9b366a6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:245",
+        "source_ids": [
+          "clerk:119:1:245",
+          "govinfo:hrpt119-255-amend13",
+          "govinfo:10usc1781c-2024-operative",
+          "congressional-record:2025-09-10-ndaa-care"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:245",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "94ada1b54abf5c7b80edf261dcc35a55fb90310122fab98a3f2bb72b5c4e75bf"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:246",
@@ -16715,15 +16875,16 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Mace amendment14 adds proposed10USC1076g: with specified exceptions, medical care under1076 with respect to armed-forces members and their dependents would exclude the amendment’s defined gender-related medical treatment, and the Secretary of Defense could not furnish that treatment. It also adds the prohibition to1077(b) and deletes the sterilization qualifier from1079(a)(20). That last change would prohibit medical interventions to treat gender dysphoria for children under18 under that paragraph whether or not the interventions could result in sterilization. This is broader than the existing paragraph’s sterilization-linked restriction, not the first restriction on every referenced procedure.\n\nThe proposed1076g definition is purpose-bound: treatments to address a person’s perception that their gender or sex differs from the amendment’s defined female or male sex. Its non-exhaustive lists include specified surgeries, exogenous testosterone/androgens or estrogen, and puberty blockers including GnRH agonists and specified hormone/puberty-suppression drugs. It does not ban each listed procedure or hormone regardless of medical purpose. The amendment supplies its own reproductive-system definitions of female and male, treats gender as sex under its stated wording, and defines sex as biological determination; this candidate describes those proposed statutory definitions without adopting broader claims about identity or clinical evidence.\n\nThe new1076g exceptions cover specified physician-tested disorders of sex development; irresolvably ambiguous sex characteristics including the listed chromosome/tissue conditions; and infection, injury, disease or disorder caused or exacerbated by the defined treatment. The first two exception clauses literally refer to such minor, although the general prohibition names members and dependents without an express minor-only limit. Preserve that drafting limitation rather than silently extending every exception to adults. The underlying1076 governs dependent care with eligibility, facility/capacity and mission limits, while the proposed text expressly names members and dependents; the interpretation does not resolve that cross-reference’s application to every category of member care. It states the proposed coverage/furnishment restriction and separate under18 contractual-care change as written, not an unqualified ban on every TRICARE service for every person.\n\nExisting1077 lists authorized dependent care and exclusions. Existing1079(a) governs contracted dependent care, includes a separate appearance-related surgery restriction with reconstruction/neoplastic exceptions and necessity requirements, and already prohibits under18 gender-dysphoria interventions that could result in sterilization. The amendment neither establishes that all newly described treatments are currently covered nor expands an individual’s existing entitlement: its rule of construction expressly preserves that limit. The1076g exceptions should not be read into the separately edited1079(a)(20) without textual support.\n\nThe House agreed to this distinct amendment on September10,2025. It does not itself establish enactment, an individual loss of care, a clinical outcome or the motives asserted in floor debate. It remains separate from Norman’s EFMP treatment/referral/reassignment restrictions and from eventual whole-package passage. Opposing this amendment does not identify a preferred care policy or negate existing restrictions.",
       "source": {
         "source_id": "clerk:119:1:246",
         "url": "https://clerk.house.gov/evs/2025/roll246.xml",
         "raw_sha256": "fe287f371950a64e7f4b9eb060f65a5e8855d2de35b90a86454de273fff48c37",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3838:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3838",
       "member_action": "nay",
@@ -16732,25 +16893,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Mace amendment14 adds proposed10USC1076g: with specified exceptions, medical care under1076 with respect to armed-forces members and their dependents would exclude the amendment’s defined gender-related medical treatment, and the Secretary of Defense could not furnish that treatment. It also adds the prohibition to1077(b) and deletes the sterilization qualifier from1079(a)(20). That last change would prohibit medical interventions to treat gender dysphoria for children under18 under that paragraph whether or not the interventions could result in sterilization. This is broader than the existing paragraph’s sterilization-linked restriction, not the first restriction on every referenced procedure.\n\nThe proposed1076g definition is purpose-bound: treatments to address a person’s perception that their gender or sex differs from the amendment’s defined female or male sex. Its non-exhaustive lists include specified surgeries, exogenous testosterone/androgens or estrogen, and puberty blockers including GnRH agonists and specified hormone/puberty-suppression drugs. It does not ban each listed procedure or hormone regardless of medical purpose. The amendment supplies its own reproductive-system definitions of female and male, treats gender as sex under its stated wording, and defines sex as biological determination; this candidate describes those proposed statutory definitions without adopting broader claims about identity or clinical evidence.\n\nThe new1076g exceptions cover specified physician-tested disorders of sex development; irresolvably ambiguous sex characteristics including the listed chromosome/tissue conditions; and infection, injury, disease or disorder caused or exacerbated by the defined treatment. The first two exception clauses literally refer to such minor, although the general prohibition names members and dependents without an express minor-only limit. Preserve that drafting limitation rather than silently extending every exception to adults. The underlying1076 governs dependent care with eligibility, facility/capacity and mission limits, while the proposed text expressly names members and dependents; the interpretation does not resolve that cross-reference’s application to every category of member care. It states the proposed coverage/furnishment restriction and separate under18 contractual-care change as written, not an unqualified ban on every TRICARE service for every person.\n\nExisting1077 lists authorized dependent care and exclusions. Existing1079(a) governs contracted dependent care, includes a separate appearance-related surgery restriction with reconstruction/neoplastic exceptions and necessity requirements, and already prohibits under18 gender-dysphoria interventions that could result in sterilization. The amendment neither establishes that all newly described treatments are currently covered nor expands an individual’s existing entitlement: its rule of construction expressly preserves that limit. The1076g exceptions should not be read into the separately edited1079(a)(20) without textual support.\n\nThe House agreed to this distinct amendment on September10,2025. It does not itself establish enactment, an individual loss of care, a clinical outcome or the motives asserted in floor debate. It remains separate from Norman’s EFMP treatment/referral/reassignment restrictions and from eventual whole-package passage. Opposing this amendment does not identify a preferred care policy or negate existing restrictions.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:246",
           "url": "https://clerk.house.gov/evs/2025/roll246.xml",
           "raw_sha256": "fe287f371950a64e7f4b9eb060f65a5e8855d2de35b90a86454de273fff48c37",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend14",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "c44189b6a8ba33a1dfa86639aff745976cfd3f4727e775e2331d0545d04a72ef"
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "raw_sha256": "ecb7a37f849b2568b36a9ea4da871f81aca50bdb96f23145e38cca9cfcf1f928",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3"
+        },
+        {
+          "source_id": "govinfo:10usc1077-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm",
+          "raw_sha256": "b65d1182fe7c9226c2f231c304d6e7f470d3f5c39f4739ae71e8e3a950341af3",
+          "governed_bytes_sha256": "8778803653b029eb4bbf8ede359381acc08e0c1ffafdab5c878a0f4c609a66ef"
+        },
+        {
+          "source_id": "govinfo:10usc1079-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm",
+          "raw_sha256": "23cfda2bc13333b492856ffedf20a94663278a9770bf7342c7704912a98c6022",
+          "governed_bytes_sha256": "85cfc87d5feb12abe55d8a67830f04d506323d5ff81d30af7e65e78795ae7466"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-ndaa-care",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "a5e749689de60b97cc06a8c06295f7d0d05aa252a15ac785245e6afce9b366a6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:246",
+        "source_ids": [
+          "clerk:119:1:246",
+          "govinfo:hrpt119-255-amend14",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:10usc1077-2024-operative",
+          "govinfo:10usc1079-2024-operative",
+          "congressional-record:2025-09-10-ndaa-care"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:246",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "194c8cbc8890bfc4c7767c392cde4c4245bd1c4ac729950af03f335cafdfe033"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:247",
@@ -16759,13 +16966,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace amendment15 prohibits cadets or midshipmen meeting the amendment’s male definition from academy athletic programs designated exclusively for those meeting its female definition. Incorporated10USC347(d) names the Military, Naval and Air Force academies; the amendment imports that definition, not all347 exchange-program provisions, including separate health-care authority. This exact action changes athletics participation rather than treatment, health insurance or social-service delivery/financing. Consistent with the earlier H.R.28 screening, claims about health or fairness do not supply a clinical-care mechanism.",
       "source": {
         "source_id": "clerk:119:1:247",
         "url": "https://clerk.house.gov/evs/2025/roll247.xml",
         "raw_sha256": "9a25e3757192daa377ed5eeb1155a72ba15494d06dbbba45dbd8a5688ad5a3b1",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16776,25 +16984,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace amendment15 prohibits cadets or midshipmen meeting the amendment’s male definition from academy athletic programs designated exclusively for those meeting its female definition. Incorporated10USC347(d) names the Military, Naval and Air Force academies; the amendment imports that definition, not all347 exchange-program provisions, including separate health-care authority. This exact action changes athletics participation rather than treatment, health insurance or social-service delivery/financing. Consistent with the earlier H.R.28 screening, claims about health or fairness do not supply a clinical-care mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:247",
           "url": "https://clerk.house.gov/evs/2025/roll247.xml",
           "raw_sha256": "9a25e3757192daa377ed5eeb1155a72ba15494d06dbbba45dbd8a5688ad5a3b1",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend15",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "a9d375593e306d83e0c5e48df4be46c623a96724d2935a57e2a07c8a9653b002"
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-amendment-binding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+          "governed_bytes_sha256": "8a9d8a944952d7c51295b16248bea5f08eb5157d2dc1d5f27bd039200e664526"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:247",
+        "source_ids": [
+          "clerk:119:1:247",
+          "govinfo:hrpt119-255-amend15",
+          "govinfo:10usc347-2024-amendment-binding"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:247",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7ec6643bc56a75e8be370f056cdf9b3efcacc8a133325068ab4f94e1221d541b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:248",
@@ -16803,13 +17036,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace amendment16 restricts information collected by or for the Defense Secretary through forms or surveys: no soliciting/obtaining gender-identity information, no sex/gender option other than male/female, and rejection of a different answer to a required sex/gender question. Preserve its definitions and department-wide scope; the text contains no medical-form exception. Its rejection instruction concerns the response, not an express statutory denial of a medical benefit or treatment. Floor opposition specifically warned that inconsistent records could make health services harder to access; that predicted consequence is retained as contrary context, not treated as an established care-eligibility change. This general demographic-data restriction does not itself set clinical services, insurance benefits or social-service financing under the declared Health boundary. It is not grouped with the separate, direct EFMP and1076g/1079 treatment restrictions solely because they share a sponsor or subject language.",
       "source": {
         "source_id": "clerk:119:1:248",
         "url": "https://clerk.house.gov/evs/2025/roll248.xml",
         "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16820,25 +17054,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace amendment16 restricts information collected by or for the Defense Secretary through forms or surveys: no soliciting/obtaining gender-identity information, no sex/gender option other than male/female, and rejection of a different answer to a required sex/gender question. Preserve its definitions and department-wide scope; the text contains no medical-form exception. Its rejection instruction concerns the response, not an express statutory denial of a medical benefit or treatment. Floor opposition specifically warned that inconsistent records could make health services harder to access; that predicted consequence is retained as contrary context, not treated as an established care-eligibility change. This general demographic-data restriction does not itself set clinical services, insurance benefits or social-service financing under the declared Health boundary. It is not grouped with the separate, direct EFMP and1076g/1079 treatment restrictions solely because they share a sponsor or subject language.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:248",
           "url": "https://clerk.house.gov/evs/2025/roll248.xml",
           "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend16",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "33b502ca04cef67829fc6d7a1d735c65fcb5b2095b395958b9194cb5b73c8c0a"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-forms-facilities",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "a8dbd8cf879da789e759b160ebbe16817fc23dafe6b7d585a7cf072608e3cc5d"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:248",
+        "source_ids": [
+          "clerk:119:1:248",
+          "govinfo:hrpt119-255-amend16",
+          "congressional-record:2025-09-10-forms-facilities"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:248",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8797a06c596542724a07be8d07c9ee802475a2998d0152089ad37d244ccf99d4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:249",
@@ -16847,13 +17106,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace amendment17 prohibits use/access of single-sex spaces on military installations inconsistent with its defined sex, notwithstanding other law. Restrooms, locker rooms and changing rooms are examples, not an exhaustive list. Incorporated2801(c)(4) supplies the installation definition. The express exceptions cover emergency medical personnel responding to a medical emergency and law enforcement in pursuit/investigation; Defense may grant a case-specific national-security waiver. Preserve the emergency exception without converting a general facility-access restriction into a medical-care benefit or assuming it excludes health-facility spaces. The text does not mandate a clinical examination, revise treatment coverage or establish an individual care outcome. Floor claims about safety, privacy and harms are not adopted as factual clinical effects.",
       "source": {
         "source_id": "clerk:119:1:249",
         "url": "https://clerk.house.gov/evs/2025/roll249.xml",
         "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16864,25 +17124,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace amendment17 prohibits use/access of single-sex spaces on military installations inconsistent with its defined sex, notwithstanding other law. Restrooms, locker rooms and changing rooms are examples, not an exhaustive list. Incorporated2801(c)(4) supplies the installation definition. The express exceptions cover emergency medical personnel responding to a medical emergency and law enforcement in pursuit/investigation; Defense may grant a case-specific national-security waiver. Preserve the emergency exception without converting a general facility-access restriction into a medical-care benefit or assuming it excludes health-facility spaces. The text does not mandate a clinical examination, revise treatment coverage or establish an individual care outcome. Floor claims about safety, privacy and harms are not adopted as factual clinical effects.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:249",
           "url": "https://clerk.house.gov/evs/2025/roll249.xml",
           "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend17",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "8ecc68aa35ab7e53863bd7b3c238c859a1ba319ff44ce212b4a5db1dedf7abc5"
+        },
+        {
+          "source_id": "govinfo:10usc2801-2024-amendment-binding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+          "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+          "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
+        },
+        {
+          "source_id": "congressional-record:2025-09-10-forms-facilities",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "a8dbd8cf879da789e759b160ebbe16817fc23dafe6b7d585a7cf072608e3cc5d"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:249",
+        "source_ids": [
+          "clerk:119:1:249",
+          "govinfo:hrpt119-255-amend17",
+          "govinfo:10usc2801-2024-amendment-binding",
+          "congressional-record:2025-09-10-forms-facilities"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:249",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "261ee6edf9358b52db1d317c4307acfe1634d4bf0721aebeeb96f6b2e6d156fb"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:250",
@@ -16891,13 +17183,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Smith amendment7 requires a90-day Defense certification concerning North/Mid-Atlantic offshore-wind effects on aviation radar and monitoring and a Transportation Inspector General study/audit/report on radar, air/space traffic, approval processes, sonar, Coast Guard maritime safety/lifesaving operations and the sufficiency of2016 mitigation strategies. It does not itself ban an offshore-wind project, appropriate medical or rescue-service funding, change patient eligibility or provide care. Lifesaving capability is an object of the study, not a newly established Health-service mechanism. Environmental or safety implications alone are insufficient under the declared boundary.",
       "source": {
         "source_id": "clerk:119:1:250",
         "url": "https://clerk.house.gov/evs/2025/roll250.xml",
         "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16908,25 +17201,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Smith amendment7 requires a90-day Defense certification concerning North/Mid-Atlantic offshore-wind effects on aviation radar and monitoring and a Transportation Inspector General study/audit/report on radar, air/space traffic, approval processes, sonar, Coast Guard maritime safety/lifesaving operations and the sufficiency of2016 mitigation strategies. It does not itself ban an offshore-wind project, appropriate medical or rescue-service funding, change patient eligibility or provide care. Lifesaving capability is an object of the study, not a newly established Health-service mechanism. Environmental or safety implications alone are insufficient under the declared boundary.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:250",
           "url": "https://clerk.house.gov/evs/2025/roll250.xml",
           "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend7",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "47ab64a33ad37aa1c76357a172221452934d80bdcd534113a41782ec746ad7cd"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:250",
+        "source_ids": [
+          "clerk:119:1:250",
+          "govinfo:hrpt119-255-amend7"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:250",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e751d10d203682dcfad0127ab7e26f612e2e279886df121706a6662ba371a47f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:251",
@@ -16935,13 +17246,14 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Patronis amendment9 deletes2911(e)(4) and(e)(10), the energy-master-plan considerations for alternative energy/fuels/hybrid drives and efficient/electric/hybrid vehicle fleets, and renumbers the surviving paragraphs. It repeals all2922g: not only the pre-October2035 conditional electric/hybrid procurement preference, but also the October2035 covered-nontactical-vehicle requirements, alternative-technology permission, waiver and definitions. Tactical-vehicle exclusion and cost/mission conditions belong to the repealed preference; this is not an immediate ban on purchasing electric vehicles. The operative changes govern defense energy planning/procurement, not health-care or household-assistance funding. Potential emissions or health effects are not inferred as the membership mechanism.",
       "source": {
         "source_id": "clerk:119:1:251",
         "url": "https://clerk.house.gov/evs/2025/roll251.xml",
         "raw_sha256": "39414b11212f9c62cbd619bb411e356bc720025f2e2270738c98be7a761868aa",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -16952,25 +17264,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Patronis amendment9 deletes2911(e)(4) and(e)(10), the energy-master-plan considerations for alternative energy/fuels/hybrid drives and efficient/electric/hybrid vehicle fleets, and renumbers the surviving paragraphs. It repeals all2922g: not only the pre-October2035 conditional electric/hybrid procurement preference, but also the October2035 covered-nontactical-vehicle requirements, alternative-technology permission, waiver and definitions. Tactical-vehicle exclusion and cost/mission conditions belong to the repealed preference; this is not an immediate ban on purchasing electric vehicles. The operative changes govern defense energy planning/procurement, not health-care or household-assistance funding. Potential emissions or health effects are not inferred as the membership mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:251",
           "url": "https://clerk.house.gov/evs/2025/roll251.xml",
           "raw_sha256": "39414b11212f9c62cbd619bb411e356bc720025f2e2270738c98be7a761868aa",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend9",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "915f024b3e3303374fd590211a438eb6c2fc586cda1b99c31db078997f4f46c8"
+        },
+        {
+          "source_id": "govinfo:10usc2911-2024-amendment-binding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapI-sec2911.htm",
+          "raw_sha256": "71b6851f207263b2e3a0cfc84b19e79e60ca7ea55431a182e94a9279c4697b13",
+          "governed_bytes_sha256": "727e02ec58f2bd281658ad0c13cc378f3d67e6b2cca3cca860ee513f5f3642c5"
+        },
+        {
+          "source_id": "govinfo:10usc2922g-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapII-sec2922g.htm",
+          "raw_sha256": "1b2a6f1c604cf309406a7237fe04d683277f1a45ebf7cbc8dc7161c182650a47",
+          "governed_bytes_sha256": "dcccb49fc099aea9f2fa7160beb8d003fb3065dbaf92a7800998f7f8b7dab6be"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:251",
+        "source_ids": [
+          "clerk:119:1:251",
+          "govinfo:hrpt119-255-amend9",
+          "govinfo:10usc2911-2024-amendment-binding",
+          "govinfo:10usc2922g-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:251",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4a941b9372628d878a4618bf776705f4a9629831649eeb8e9a1c985fbd086134"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:252",
@@ -17013,7 +17357,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17057,7 +17402,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17101,7 +17447,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17145,7 +17492,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17189,7 +17537,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17233,7 +17582,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17277,7 +17627,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17321,7 +17672,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -17365,7 +17717,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "244–251 completed. Reuse research45 Clerk and RCP119-8, research46 Report119-255 and research47 Sept10 Record. Exact report texts now read for Wilson11(252), Mills18(253), Davidson20 offered by Greene(254), Greene22/23/24(255–257), McCormick25(258), Biggs29(259), Rose253(260). Complete incorporated18USC1382/50USC797, PL118-31section1052(d)(1)(N), RCP4301line010/OHDACA authority, section1313/Ukraine funding and RCP853/advertising certification plus ESA/Sikes before membership. The amendment20 sponsor/designee must remain distinguished. Full RCP and report are still not fully substantively reviewed."
       }
     },
     {
@@ -36685,11 +37038,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "57 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
+    "basis": "59 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "b37f8afa6e37191c5b3a958bd3437692453445f6bf56112fcbceafa0c89dfb3e",
+  "selection_sha256": "22922c405d8b5968becaedf2d1cf5c1d723c6be44621d660e5428bed100ca140",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -36721,6 +37074,8 @@
     "house:119:1:235",
     "house:119:1:236",
     "house:119:1:239",
+    "house:119:1:245",
+    "house:119:1:246",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -36754,17 +37109,6 @@
     "house:119:1:225",
     "house:119:1:226",
     "house:119:1:237",
-    "house:119:1:240",
-    "house:119:1:241",
-    "house:119:1:243",
-    "house:119:1:244",
-    "house:119:1:245",
-    "house:119:1:246",
-    "house:119:1:247",
-    "house:119:1:248",
-    "house:119:1:249",
-    "house:119:1:250",
-    "house:119:1:251",
     "house:119:1:252",
     "house:119:1:253",
     "house:119:1:254",
@@ -37058,7 +37402,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "305 identities remain unresolved:304 unreviewed membership screenings and one substantively examined exact-source conflict at2025 roll237. Continue land-plan source tracing224–226 and independent240/241/243 onward; captured material alone is not completed review.",
+    "basis": "294 unresolved identities comprise293 unreviewed screenings and one examined source conflict at2025 roll237. Continue252 onward, alongside224–226 public plan-source tracing. Captured material alone is not substantive review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -37110,6 +37454,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "c2d6ab22b8311f57876e11180417ab4b32ed5f3c38fdf8423af172c825b2cb14",
-  "membership_review_sha256": "14d472b6a31d2b4c5bb494207ea367b8c46d0d6c6174c93994ad3b274b9845f5"
+  "proposal_sha256": "4254522b112c5dfb388c092ba510632131a6a8dddec6020e1eac93dd2c28674e",
+  "membership_review_sha256": "7fc1eaf572899173a65d4a0d5e927800edc600b03bf8bcc7eb1da5f3e398d012"
 }

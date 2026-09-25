@@ -3,7 +3,7 @@
   "artifact_id": "candidate:HEALTH_SOCIAL:house119-through-2026-09-16",
   "domain_id": "HEALTH_SOCIAL",
   "scope_boundaries": [
-    "57 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
+    "59 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -807,6 +807,34 @@
         "stage_order": 10239
       },
       "mapping_sha256": "41cee09cdf36988e975b1319b4ce828902e9e1c429fc64844af1a381ce1f98d7"
+    },
+    {
+      "action_id": "house:119:1:245",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10245
+      },
+      "mapping_sha256": "073107504c6b76767bff7f93d4260293e45b3c7e80e4d40a36b37d54f0846f70"
+    },
+    {
+      "action_id": "house:119:1:246",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr3838:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10246
+      },
+      "mapping_sha256": "42328fdf66a612abfa9d54d0359f4a56efcc4b785f3ac38a526929f3cc79830a"
     }
   ],
   "episodes": [
@@ -1167,6 +1195,15 @@
       ],
       "method_boundary_types": [],
       "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr3838:119",
+      "action_ids": [
+        "house:119:1:245",
+        "house:119:1:246"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
     }
   ],
   "policy_families": [],
@@ -1174,5 +1211,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "26f00dc0e4d6a2eb1083b4e144e33bc9b03ae034f5612f416202d08e787c4d6c"
+  "mapping_sha256": "eb3f1dc336a0c6e42ae0f230e684fe01285c71bde68ea5aed23159443c5c5963"
 }
