@@ -321,6 +321,19 @@
         },
         "evidence_action_ids": {"type": "array", "items": {"type": "string"}},
         "evidence_episode_ids": {"type": "array", "items": {"type": "string"}},
+        "action_observations": {
+          "type": "array", "minItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["action_id", "action_meaning_ref", "status", "service_status", "evidence_status", "direction"],
+            "properties": {
+              "action_id": {"type": "string"}, "action_meaning_ref": {"type": "string"},
+              "status": {"enum": ["Yea", "Nay", "Present", "Not Voting", "Missing Evidence"]},
+              "service_status": {"type": "string"}, "evidence_status": {"type": "string"},
+              "direction": {"enum": ["support", "opposition", null]}
+            }
+          }
+        },
         "mechanism_or_trait_refs": {"type": "array", "items": {"type": "string"}},
         "presentation_target": {
           "enum": [

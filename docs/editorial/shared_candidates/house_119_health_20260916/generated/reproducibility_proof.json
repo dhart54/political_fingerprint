@@ -1,0 +1,1391 @@
+{
+  "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "0ccb2a1198ac743899e020feae28341e703529726142289c5e8719bd3075ee2a",
+    "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
+    "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
+    "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
+  },
+  "input_sha256": "d46334ce6b2fbfca79ae4f379649054860e62ca882cb04565b844a5069fe4521",
+  "source_capture_sha256": "0d821e4c380e16699268c08843181db72f45d8a2f323449252c0519f33c9a36e",
+  "core_sha256": "74e826983ccebee62cbadf8e15402e74b7c5cec4310f78520f7bee6a3416f759",
+  "compiled_sha256": "6d27648035d43711ea66d6715a16f6f8dc6d5d2919026f2177aca6d46059ca57",
+  "readable_sha256": "20c2fc23b79704af63489b0dd6b5ad6b422b6707f40a87bbb19d675c046c1e72",
+  "identical_replay": true,
+  "real_member_reuse": [
+    {
+      "action_id": "house:119:1:150",
+      "shared_sha256": "e114a80aa51f23b432116b158313c39f5a50dc3e92389a2f252db39482695f49",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding the Pettersen Medicaid budget-neutrality codification amendment to H.R. 2483",
+          "source_id": "clerk:119:1:150"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adding the Pettersen Medicaid budget-neutrality codification amendment to H.R. 2483",
+          "source_id": "clerk:119:1:150"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:151",
+      "shared_sha256": "35a881daf1f37ade6301364ad93c9fa8be7ef0d5d96a94f7205b4698361167ea",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 2483 as put to the chamber",
+          "source_id": "clerk:119:1:151"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 2483 as put to the chamber",
+          "source_id": "clerk:119:1:151"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:306",
+      "shared_sha256": "c0ebc27f90a6fda973f6e55d87b322748c6a7d9acdaf6017f944d2ba3a7d7321",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 5348 as amended",
+          "source_id": "clerk:119:1:306"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:306"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:349",
+      "shared_sha256": "213057305a6ab314f40e796aac3508c3a2d653f9ef7d54cdcac8e8896cb788fd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6703 as put to the chamber",
+          "source_id": "clerk:119:1:349"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6703 as put to the chamber",
+          "source_id": "clerk:119:1:349"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:362",
+      "shared_sha256": "2fea82d39acbe8cc8975a225b391ec19a2d7ffe4f343531eb8f31100b95d694b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 498 as put to the chamber",
+          "source_id": "clerk:119:1:362"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 498 as put to the chamber",
+          "source_id": "clerk:119:1:362"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:37",
+      "shared_sha256": "87cb1003930a617ed579d25b4c147bd1737f460b83989349dca3dd16189c1c23",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 6945 as put to the chamber",
+          "source_id": "clerk:119:2:37"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 6945 as put to the chamber",
+          "source_id": "clerk:119:2:37"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:128",
+      "shared_sha256": "a37cc682c3efac862a28307e4fb8bb53c9a1af17523018d088cea1e075fe54bb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 2493",
+          "source_id": "clerk:119:2:128"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 2493",
+          "source_id": "clerk:119:2:128"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:139",
+      "shared_sha256": "51a78eb75827a111d06ad5aa754f8c02e031c1f5cf9f51483833d740ec15d589",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 227 as amended",
+          "source_id": "clerk:119:2:139"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 227 as amended",
+          "source_id": "clerk:119:2:139"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:198",
+      "shared_sha256": "ee36a3279d5424a837efe5251202b1e5c050cc2963e0b6e45ce93155103b8702",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 7726 as put to the chamber",
+          "source_id": "clerk:119:2:198"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:250",
+      "shared_sha256": "bd0d874a9136e1a52f0055d01c174d41f07c2dc864f9b9bac1aef6532e7fb6fa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R. 4541 as amended",
+          "source_id": "clerk:119:2:250"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:250"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:283",
+      "shared_sha256": "809538eec11c2a8b416e217d3c3bdef0dcddc8981a32ae5411dac3d59d5f654b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 8884 as put to the chamber",
+          "source_id": "clerk:119:2:283"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 8884 as put to the chamber",
+          "source_id": "clerk:119:2:283"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:145",
+      "shared_sha256": "0046b2f6361db75611723e627023683bb34989ac9df25b649d680d943e795faa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1 in its House-passed version",
+          "source_id": "clerk:119:1:145"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1 in its House-passed version",
+          "source_id": "clerk:119:1:145"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:190",
+      "shared_sha256": "9690369d7c4f48306acf9945a502afb815a58b7553044cbab9afb9b97622dfdf",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate substitute to H.R. 1 as a whole",
+          "source_id": "clerk:119:1:190"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate substitute to H.R. 1 as a whole",
+          "source_id": "clerk:119:1:190"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:281",
+      "shared_sha256": "18dcc65977de7c93bff22e5eafae4a182268f31674ded9205d08e53dc8c15ca2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 5371 in its House-passed version",
+          "source_id": "clerk:119:1:281"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 5371 in its House-passed version",
+          "source_id": "clerk:119:1:281"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:285",
+      "shared_sha256": "26263448dfc13790dcde4865d81f9f4ec3545af51b06ff808a7752bd33f337f9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate substitute to H.R. 5371 as a whole",
+          "source_id": "clerk:119:1:285"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate substitute to H.R. 5371 as a whole",
+          "source_id": "clerk:119:1:285"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:45",
+      "shared_sha256": "e3c6b6940c753b039c6e2106aa2091399b4d01323ce2da4fa0b188d0e6898671",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 7148 in its House-passed version",
+          "source_id": "clerk:119:2:45"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 7148 in its House-passed version",
+          "source_id": "clerk:119:2:45"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:286",
+      "shared_sha256": "4b4ea21ff70d0ece014b386d8e4266545b4dc4ed3b18d88f62c4eb81e5b8cdff",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and concurring in the Senate replacement text for H.R. 6500 as a whole",
+          "source_id": "clerk:119:2:286"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and concurring in the Senate replacement text for H.R. 6500 as a whole",
+          "source_id": "clerk:119:2:286"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:310",
+      "shared_sha256": "99e88708f265a0e798f1ce5e363de5f028fb64f75d9ab280fa8fdc9e27042ebd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of the complete H.R.10326 information-sharing proposal",
+          "source_id": "clerk:119:2:310"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of the complete H.R.10326 information-sharing proposal",
+          "source_id": "clerk:119:2:310"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:53",
+      "shared_sha256": "790826110b3c0363a102d1108b12e3f80185f3cc0830a892a18153a950080f4a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate amendments to H.R. 7148 as a whole",
+          "source_id": "clerk:119:2:53"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in the Senate amendments to H.R. 7148 as a whole",
+          "source_id": "clerk:119:2:53"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:308",
+      "shared_sha256": "ae15d5ff227609bfa784f157f85aadc06655fef88ede48409fed3cd0e5863f70",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in all Senate amendments to H.R. 5334",
+          "source_id": "clerk:119:2:308"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in all Senate amendments to H.R. 5334",
+          "source_id": "clerk:119:2:308"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:25",
+      "shared_sha256": "fc1957573293e1e332b946cf237f6ea5f2c94d92f2f61a88096123c0e9fdb8fb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 471 as a whole",
+          "source_id": "clerk:119:1:25"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 471 as a whole",
+          "source_id": "clerk:119:1:25"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:27",
+      "shared_sha256": "0fbc36086f9b8b2202b43a00c1ee245fd657ee9b9ad510c2276a35a19e2f7f81",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 21’s care and enforcement requirements as a whole",
+          "source_id": "clerk:119:1:27"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 21’s care and enforcement requirements as a whole",
+          "source_id": "clerk:119:1:27"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:32",
+      "shared_sha256": "fce7979b7582d3577c1dd83800a6499871e07024d0850536fe7d2fd6f517625f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed joint overdose-death certification condition for H.R. 27’s effective date",
+          "source_id": "clerk:119:1:32"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed joint overdose-death certification condition for H.R. 27’s effective date",
+          "source_id": "clerk:119:1:32"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:33",
+      "shared_sha256": "c756f6cc50d2e220325a09330f48dc13ee3f9964ab1c0497f29cc2937fd33afc",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 27’s scheduling, research and penalty package",
+          "source_id": "clerk:119:1:33"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 27’s scheduling, research and penalty package",
+          "source_id": "clerk:119:1:33"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:51",
+      "shared_sha256": "84ab01e95610fdb193b764bb5f82bc2a825f31fc01f6be1f80f718e5f1846aec",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R. 695 as a whole",
+          "source_id": "clerk:119:1:51"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R. 695 as a whole",
+          "source_id": "clerk:119:1:51"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:68",
+      "shared_sha256": "f8c7dbc35501a4baa686e88b1573ea7a8d232257c21cf33c3c8bd557c9c7a869",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1156’s enforcement-period and funding-rescission package",
+          "source_id": "clerk:119:1:68"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 1156’s enforcement-period and funding-rescission package",
+          "source_id": "clerk:119:1:68"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:70",
+      "shared_sha256": "dc5f3e259c48e8c049a595af74d4cf3b836feee243b625d45d977fa1a77d18b5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1968’s full funding and extensions package",
+          "source_id": "clerk:119:1:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 1968’s full funding and extensions package",
+          "source_id": "clerk:119:1:70"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:79",
+      "shared_sha256": "8ae43dfc842a3ae92c6291c49763e0563ba0a91c6df075c9365bdcb4d4e3b329",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception",
+          "source_id": "clerk:119:1:79"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed Scott’s full foreign-funding disclosure substitute, including its clinical-trial payment exception",
+          "source_id": "clerk:119:1:79"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:89",
+      "shared_sha256": "ab342513d9d7fbc52c3cff765956eecb633755c16a067e9af1eab93d0e0c892d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.586’s study and pension-limit package",
+          "source_id": "clerk:119:1:89"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.586’s study and pension-limit package",
+          "source_id": "clerk:119:1:89"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:90",
+      "shared_sha256": "7a9b928b8893425b7c8512cecd7ffcf54a8d7b3e428ec4324fb2d487b42bd096",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package",
+          "source_id": "clerk:119:1:90"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1039’s notice and pension-limit package",
+          "source_id": "clerk:119:1:90"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:99",
+      "shared_sha256": "9a2bb1a504d3a34a122081712a2f0b448d3df164cd0a17f0d38d2fe2bbcc326f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary",
+          "source_id": "clerk:119:1:99"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1228 to place the survivors assistance office within the Office of the Secretary",
+          "source_id": "clerk:119:1:99"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:104",
+      "shared_sha256": "63e684092f4d7571c3247950a34ac3c91ef556dd10c703b32b115e233a48532a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package",
+          "source_id": "clerk:119:1:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing S.146’s offenses, exceptions, restitution and platform-removal package",
+          "source_id": "clerk:119:1:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:115",
+      "shared_sha256": "db600a989d7ba5f9c02fc408d269a30bfbbacedb1028e9d29085929fa4229b38",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package",
+          "source_id": "clerk:119:1:115"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.530’s aircrew study and pension-limit package",
+          "source_id": "clerk:119:1:115"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "shared_sha256": "33d49b9d6153d8f5a6931eb7cfa46aa84ce44d2134ffbafa4b4824744a3ac3a5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package",
+          "source_id": "clerk:119:1:116"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.36’s Georgia sanctions and cooperation package",
+          "source_id": "clerk:119:1:116"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:119",
+      "shared_sha256": "88b8c09e3d59d26e38e6f62f0617e801149871e139d54b61ed342defe836bc40",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package",
+          "source_id": "clerk:119:1:119"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing H.R.1503’s organ-trafficking sanctions and passport package",
+          "source_id": "clerk:119:1:119"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:131",
+      "shared_sha256": "340e6782f23748a6c8a9f160ffcdf9f49ee87c61f59fe40c8b8f327de925e075",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.2240’s attack-data and mental-health reporting requirements",
+          "source_id": "clerk:119:1:131"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.2240’s attack-data and mental-health reporting requirements",
+          "source_id": "clerk:119:1:131"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:133",
+      "shared_sha256": "a323660f2aa380fcfa647ae9e65c28ddb356f1e51ab070184054864e554fae94",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package",
+          "source_id": "clerk:119:1:133"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1286’s forms and pension-limit package",
+          "source_id": "clerk:119:1:133"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:136",
+      "shared_sha256": "a48c8798d5ded935ec4210af5d2576b1802838687f25a205c5c42275dc012cc8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure",
+          "source_id": "clerk:119:1:136"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.1223’s research-fleet communications and remote-care planning measure",
+          "source_id": "clerk:119:1:136"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:166",
+      "shared_sha256": "511c2bfe36562c2880e5e31901e25fc676145697343a3f855ed3afd1ca3b6067",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of S.331’s fentanyl-related scheduling, research and penalties package",
+          "source_id": "clerk:119:1:166"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of S.331’s fentanyl-related scheduling, research and penalties package",
+          "source_id": "clerk:119:1:166"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:172",
+      "shared_sha256": "cc7e2b5877ebbacc8b49cceb0aa52d3ad053a4c3a92747288e4baf5e7a6f6113",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package",
+          "source_id": "clerk:119:1:172"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspending the rules and passing amended H.R.1998’s piracy sanctions and exceptions package",
+          "source_id": "clerk:119:1:172"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:168",
+      "shared_sha256": "bb68d98e28f0269b9c46dcab07f81829e19a0daf5326151bad1522cfd87bfc51",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions",
+          "source_id": "clerk:119:1:168"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions",
+          "source_id": "clerk:119:1:168"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:180",
+      "shared_sha256": "e61dd74df518e1f4a4da4b655456b90e1a03235a05fa7a88587f22ccaa82af6b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944",
+          "source_id": "clerk:119:1:180"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the seven-part Carter en-bloc No.2 amendment to H.R.3944",
+          "source_id": "clerk:119:1:180"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:182",
+      "shared_sha256": "7ceba394aeff61d944727c277c606aeb56881882c6a220912d7f320ace0e056a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package",
+          "source_id": "clerk:119:1:182"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R.3944’s full military-construction, VA funding and restrictions package",
+          "source_id": "clerk:119:1:182"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:200",
+      "shared_sha256": "53daf2f465cb84a2dc45f6461ce91adcdc12656142a114750e1bd8de11b09fac",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of S.1582’s stablecoin regulation and insolvency-priority package",
+          "source_id": "clerk:119:1:200"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:200"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:199",
+      "shared_sha256": "8688d4bdd19efd2627255ecc66de5e1d97ea05ef0da590f1157f1c7c2e4cbe8c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package",
+          "source_id": "clerk:119:1:199"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:199"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:206",
+      "shared_sha256": "ea167b777654ddbf4079cabba2826a8d903ce529db5fe1c9c05d3a87c1ea87de",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million",
+          "source_id": "clerk:119:1:206"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million",
+          "source_id": "clerk:119:1:206"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:204",
+      "shared_sha256": "008c0f647b95996ff70ebf9d23b420dadb49d56a66bf8ae63c2ed9df7c2d6cca",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation",
+          "source_id": "clerk:119:1:204"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation",
+          "source_id": "clerk:119:1:204"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:209",
+      "shared_sha256": "ec504d8c1d09ef573c68f517c9a5d240c40b568a8164b52e243283c17c5870a9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine",
+          "source_id": "clerk:119:1:209"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine",
+          "source_id": "clerk:119:1:209"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:212",
+      "shared_sha256": "89822ca6d5f9178fbf6b644b28fe3e92942d4240a4cec9aeda718343719bacaa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4016’s full Defense appropriations and policy package",
+          "source_id": "clerk:119:1:212"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4016’s full Defense appropriations and policy package",
+          "source_id": "clerk:119:1:212"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:220",
+      "shared_sha256": "335c171c56e256f0264af845062e4390928baeab68df99945284637186dd5cf5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package",
+          "source_id": "clerk:119:1:220"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package",
+          "source_id": "clerk:119:1:220"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:218",
+      "shared_sha256": "dae0b86fef6e1094373513eca989091dfcf72f905ae6a3032be24bcd575f1f21",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions",
+          "source_id": "clerk:119:1:218"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions",
+          "source_id": "clerk:119:1:218"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:232",
+      "shared_sha256": "ff67934c55a351a34d1a413a299837f91ba74247098c7945b315273c68a8a502",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:232"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:232"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:233",
+      "shared_sha256": "9b8fbb89fed91c931da0418920c86bc04c108a986e7e7bcbbcf551cd28a39672",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:233"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:233"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:234",
+      "shared_sha256": "0e61e0d0d2e12e14049b66f850806d96155bb06bb2878d7fe53a3d6094642561",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation",
+          "source_id": "clerk:119:1:234"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation",
+          "source_id": "clerk:119:1:234"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:235",
+      "shared_sha256": "c88d55ad87cae7579b88b9369732b7321b8bdfc420be26e26120237b2d665528",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation",
+          "source_id": "clerk:119:1:235"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation",
+          "source_id": "clerk:119:1:235"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:236",
+      "shared_sha256": "85bb31c25b68b59c6734635d6526d82b219bc045077ab979b7da8b8f68bc0e26",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed removing the bill’s EERE appropriation, including low-income home-weatherization assistance",
+          "source_id": "clerk:119:1:236"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported removing the bill’s EERE appropriation, including low-income home-weatherization assistance",
+          "source_id": "clerk:119:1:236"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:239",
+      "shared_sha256": "6808ec0b78b800a164148c1f783cefb1bc90907077253ba119b7deaacbf3e263",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4553’s full funding-and-policy package",
+          "source_id": "clerk:119:1:239"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4553’s full funding-and-policy package",
+          "source_id": "clerk:119:1:239"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:245",
+      "shared_sha256": "0c57287c365415f34b4f994b55344bb2507fddc65f4e380e23cf4ce7a0cfbc33",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes",
+          "source_id": "clerk:119:1:245"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the EFMP restrictions on minor-dependent gender-transition procedures, referrals and duty-station changes",
+          "source_id": "clerk:119:1:245"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:246",
+      "shared_sha256": "4abaf27c9cc036437339fab97d8f3b561ab628d01c8c0cdd920a0929084c9184",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban",
+          "source_id": "clerk:119:1:246"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the defined military-care restrictions and removal of the sterilization condition from the under18 gender-dysphoria intervention ban",
+          "source_id": "clerk:119:1:246"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:256",
+      "shared_sha256": "4bbdcbe2d48f9baf56a06d0efd2580a736211ec134f44643bab8f33d335f8705",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms",
+          "source_id": "clerk:119:1:256"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported removing the bill’s overseas humanitarian-aid authorization, including its medical and basic-needs assistance mechanisms",
+          "source_id": "clerk:119:1:256"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:255",
+      "shared_sha256": "fb2c8fbeaf24456b96426fce5869788dc47fa15009bd908698f2da7ab0d5a595",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms",
+          "source_id": "clerk:119:1:255"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the bill-specific prohibition on assistance to Ukraine, including authorized military medical-care and training mechanisms",
+          "source_id": "clerk:119:1:255"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:266",
+      "shared_sha256": "8b46d49f1e58ca0671662cf2f987e22274259bc61703c8ba6c94ef4303f3a97a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package",
+          "source_id": "clerk:119:1:266"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 3400’s traveling-physician and pension-limit package",
+          "source_id": "clerk:119:1:266"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:269",
+      "shared_sha256": "508e6e64ebb53737c065245e04145ec38b21996d34aef56acfc3d15aa56a762b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package",
+          "source_id": "clerk:119:1:269"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package",
+          "source_id": "clerk:119:1:269"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:270",
+      "shared_sha256": "e91e9d0f6fde652006209e42f0f5294e66b95d5b6a542b393c3f6d36c231ddf8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements",
+          "source_id": "clerk:119:1:270"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements",
+          "source_id": "clerk:119:1:270"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:271",
+      "shared_sha256": "452c2e41c944151e1e05b9a2f209d447a53d3788d47be0f3e2259530ac4b2315",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework",
+          "source_id": "clerk:119:1:271"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework",
+          "source_id": "clerk:119:1:271"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:298",
+      "shared_sha256": "b4879e6bb472fbe6d54b9a24975732b7f2fcb506f6069dd3301160a18993b27d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
+        }
+      ]
+    }
+  ],
+  "differing_real_choices_exercised": true,
+  "controlled_raw_update": {
+    "interpretation_unchanged": true,
+    "cutoff_unchanged": "2026-09-16"
+  },
+  "controlled_new_interpretation_input": {
+    "action_id": "house:119:1:150",
+    "requires_explicit_authoring_change": true,
+    "acceptance_conferred": false
+  },
+  "controlled_shared_correction": {
+    "impact": {
+      "changed_action_ids": [
+        "house:119:1:150"
+      ],
+      "affected_projections": [
+        {
+          "member_id": "F000477",
+          "action_ids": [
+            "house:119:1:150"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "action_ids": [
+            "house:119:1:150"
+          ]
+        }
+      ],
+      "affected_findings": [
+        {
+          "member_id": "F000477",
+          "proposition_ids": [
+            "prop:8b01a5fcb76ca6bb"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "proposition_ids": [
+            "prop:571333029c83875e"
+          ]
+        }
+      ],
+      "acceptance_conferred": false
+    },
+    "stale_projections_rejected": [
+      "F000477",
+      "M001184"
+    ],
+    "historical_core_unchanged": true
+  }
+}

@@ -95,7 +95,7 @@ def _validate_shared_semantics(shared: dict[str, Any]) -> None:
     accepted_ids = {
         action_id
         for action_id, action in actions.items()
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     }
     for action_id, action in actions.items():
         if action["eligibility"].get("parent_context_used") is not False:
@@ -166,6 +166,7 @@ def _proposition(
     episode_ids: Iterable[str],
     trait_refs: Iterable[str],
     presentation_target: str,
+    action_observations: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     base = {
         "semantic_role": semantic_role,
@@ -176,6 +177,8 @@ def _proposition(
         "mechanism_or_trait_refs": _ordered_unique(trait_refs),
         "presentation_target": presentation_target,
     }
+    if action_observations is not None:
+        base["action_observations"] = action_observations
     return {
         "proposition_id": _stable_id("prop", base),
         **base,
@@ -190,12 +193,12 @@ def _coverage(
     accepted = [
         action
         for action in shared["actions"]
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     ]
     controls = [
         action
         for action in shared["actions"]
-        if action["eligibility"]["decision"] != "accepted"
+        if action["eligibility"]["decision"] not in {"accepted", "proposed"}
     ]
     in_service = [
         action
@@ -224,7 +227,7 @@ def _coverage(
             for action_id in episode["action_ids"]
             if any(
                 action["action_id"] == action_id
-                and action["eligibility"]["decision"] == "accepted"
+                and action["eligibility"]["decision"] in {"accepted", "proposed"}
                 for action in shared["actions"]
             )
         ]
@@ -477,7 +480,7 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
     accepted_ids = {
         action_id
         for action_id, action in actions.items()
-        if action["eligibility"]["decision"] == "accepted"
+        if action["eligibility"]["decision"] in {"accepted", "proposed"}
     }
     blocked_action_ids = {
         action_id
@@ -512,6 +515,28 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
     if not focused:
         for episode_id, episode in sorted(episodes.items()):
             evidence_ids = sorted(set(episode["action_ids"]) & directional_ids)
+            if (payload.get("review_state") == "candidate_pending_external_semantic_review"
+                    and len(episode["action_ids"]) > 1):
+                # Chronology alone is not evidence for longitudinal change.
+                if not evidence_ids:
+                    continue
+                ordered = sorted(episode["action_ids"], key=lambda aid: (
+                    actions[aid].get("structural_metadata", {}).get("stage_order", 0),
+                    tuple(int(n) for n in aid.split(":")[1:])))
+                observations = []
+                for aid in ordered:
+                    recorded = member_actions.get(aid, {"status": "Missing Evidence",
+                        "service_status": "unresolved", "evidence_status": "missing"})
+                    observations.append({"action_id": aid,
+                        "action_meaning_ref": actions[aid]["action_meaning_ref"],
+                        "status": recorded["status"], "service_status": recorded["service_status"],
+                        "evidence_status": recorded["evidence_status"],
+                        "direction": DIRECTIONAL_STATUS[recorded["status"]] if aid in evidence_ids else None})
+                behavioral.append(_proposition(semantic_role="behavioral", proposition_type="notable_choice",
+                    direction=_direction(member_actions[aid]["status"] for aid in evidence_ids),
+                    action_ids=evidence_ids, episode_ids=[episode_id], trait_refs=[],
+                    presentation_target="other_notable_choices", action_observations=observations))
+                continue
             if len(evidence_ids) < 2:
                 continue
             refs = [
@@ -872,7 +897,7 @@ def _compile_member(payload: dict[str, Any], member: dict[str, Any]) -> dict[str
         )
 
     has_nonaccepted_actions = any(
-        action["eligibility"]["decision"] != "accepted" for action in shared["actions"]
+        action["eligibility"]["decision"] not in {"accepted", "proposed"} for action in shared["actions"]
     )
     if (
         coverage["missing_evidence_actions"]
@@ -934,9 +959,13 @@ def compile_semantic_ir(payload: dict[str, Any]) -> dict[str, Any]:
         raise SemanticCompilerInputError(
             f"compiler input missing: {', '.join(sorted(missing))}"
         )
+    candidate = payload.get("review_state") == "candidate_pending_external_semantic_review"
+    if any(a["eligibility"]["decision"] == "proposed" for a in payload["shared_semantics"]["actions"]) and not candidate:
+        raise SemanticCompilerInputError("proposed eligibility requires explicit candidate preparation")
     _validate_shared_semantics(payload["shared_semantics"])
     results = [_compile_member(payload, member) for member in payload["members"]]
     return {
+        **({"review_state": "candidate_pending_external_semantic_review"} if candidate else {}),
         "members": results,
         "source_render_constraints": copy.deepcopy(
             payload["shared_semantics"].get("source_render_constraints", [])
