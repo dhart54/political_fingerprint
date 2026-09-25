@@ -1,9 +1,9 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Eighteen more membership screenings resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: seven new shared interpretations, ten exclusions
-and one procedural control. Now50 interpreted inputs,41 Foushee findings and37
-bounded Massie proof findings;318 discovery identities remain unreviewed.
+**Partial candidate, active research.** Twenty more membership screenings resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: eight new shared interpretations, ten exclusions
+and two procedural controls. Now51 interpreted inputs,42 Foushee findings and38
+bounded Massie proof findings;316 discovery identities remain unreviewed.
 This is neither complete Health coverage nor accepted/public content.
 
 ## Current material delta and entry points
@@ -16,9 +16,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [50 shared meanings /259 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [510 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [216 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [51 shared meanings /302 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [541 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [218 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -26,11 +26,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|50|
-| procedural_context |176|177|
+| interpreted_substantive_directional |43|51|
+| procedural_context |176|178|
 | expressive_nonbinding_context |8|8|
 | exact_action_ineligible |113|123|
-| source_unresolved (unreviewed membership) |336|318|
+| source_unresolved (unreviewed membership) |336|316|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -133,37 +133,61 @@ recorded Yea on suspension and passage as amended. The source/stage guard caught
 and rejected a generic final-passage stage during preparation; the exact Clerk
 stage was supplied without changing the guard.
 
-Manual delta from bed93d: seven shared meanings/compacts, fourteen choice strings,
-92 claim maps,18 membership records and59 source captures (15 Clerk,44 other).
-Totals100 observations, four Massie non-votes,41 episodes and seven multi-action
+**Coast Guard and September rule:** roll218/H.R.4275 now contributes one shared
+candidate meaning and two derived findings, Foushee Yea/Massie Nay. Full EH review
+and incorporated statutes distinguish existing medical/dental rights from added
+behavioral-health/victim-support duties, the supervised pilot from permanent
+staffing, authorization from appropriation, and qualifying reserve leave from the
+already enacted October2025 change. Whole-package and conditional-care limits
+remain on both levels. The EH's2519/2520 covered-misconduct definition mismatch is
+shown explicitly, without silently repairing the source or claiming a universal
+care entitlement. The substantive nexus also rests on independent direct care,
+overdose-response and occupational-health provisions.
+
+Roll222 is procedural context after complete668/605/598RH/589IH review, preserving
+deemed-adoption versus tabling and medical-file privacy as a disclosure exception.
+No protected investigative material was accessed. The correct598 reported version
+replaced failed EH/IH lookup attempts. Direct Coast Guard memo/GAO-asset downloads
+returned403; the official GAO testimony copy on docs.house.gov supplies the bound
+workforce-training table. The memo's first pages were also inspected through its
+public reproduction, but unacquired PDF bytes are not represented as governed
+captures. No historical source was rewritten or analytical architecture changed.
+
+Manual delta from bed93d: eight shared meanings/compacts, sixteen choice strings,
+135 claim maps,20 membership records and90 source captures (17 Clerk,73 other).
+Totals102 observations, four Massie non-votes,42 episodes and seven multi-action
 episodes (six pairs and the four-action H.R.4016 episode). No synthesis added.
-From the later pushed0d78cea checkpoint: ten further screenings, three new shared
-interpretations, seven exclusions and ten fewer unreviewed identities.
+Since9d56864: two screenings, one shared interpretation, one procedural control,
+31 sources,43 claim maps and two fewer unreviewed identities.
 
 ## Current validation and remaining execution
 
-**126 focused subsystem tests and7 canonical semantic checks pass**, including
-39 candidate tests. Regeneration/replay, source-removal rejection, scope/member/
-party/cutoff guards, non-directional records and candidate publication rejection
-remain green. Added regressions retain the four distinct Defense choices,
-country-versus-recipient scope, conditional prescription access, separate sunset
-and whole-package limits. No frontend/runtime change or browser loop is claimed.
-All9 exact-head CI checks passed at0d78cea; this progress commit's exact head and
-new CI results are recorded in the existing PR discussion after push.
+All41 candidate tests pass, including Coast Guard cross-reference/conditional-care
+boundaries, source-removal rejection and complete rule incorporation without a
+Health finding. All128 focused subsystem tests and7 canonical semantic checks pass.
+The initial broader run omitted the established NODE_PATH and could not locate
+ajv; rerunning with that local dependency path passed without code changes. Previous9d56864 passed126 focused tests,7 semantic checks and all9
+exact-head CI checks; it is not treated as validation of a later commit. Current
+head and exact-head results are recorded in the same PR after push. No frontend/
+runtime change or browser loop is claimed.
 
-**Next: roll218/H.R.4275**, then222,224–226 and227 onward. The Coast Guard EH is
-captured (444258 characters), but most operative provisions and incorporations
-remain unread; its contents are not substantive completion. H.Res.672 is fully
-read but its deemed-adopted668/605 and tabled598 require complete accounting.
-H.J.Res.104/106/105 EH are fully read; their exact referenced Miles City,
-Central Yukon and North Dakota plans and GAO/Record bindings still require review.
-The inventory retains these prepared-source notes and exact next actions. Reuse
-local research19/20 captures without treating them as dispositions.
+**Next:224–226**, then227 onward. The three CRA EH texts are read. The June26
+Record PDF is captured: pages50–56 reproduce the GAO opinions; pages50–51/Miles
+City have been read. Exact Miles City and Central Yukon legacy BLM downloads
+returned403; the Miles City redirect reports its document unavailable. Continue
+tracing public official or reproduced source copies, and acquire North Dakota's
+exact plan. Do not substitute titles or asserted health consequences for operative
+review. If those paths remain unresolved, continue independent H.R.4553 cases.
+The inventory retains exact next actions and prepared-source notes. H.R.4553
+RH/EH,76-page RH PDF, September3/4 House Record and Clerk231–239 are captured
+in research25; Rules Report119-232 is fully read, but exact bill-page/amendment
+effects and incorporated authorities remain to review. The GAO training table
+used for H.R.4275 was rendered and visually verified.
 
-There is no current human decision or unavailable/conflicting-evidence blocker.
-318 screenings and wider episode reconciliation remain. Research continues;
-this pushed progress checkpoint is not a terminal state or new approval gate.
-No shutdown marker is created while the goal is actively continuing.
+316 screenings and wider episode reconciliation remain. No new human decision or
+exhausted evidence dependency is currently established. Research continues;
+this progress push is not a terminal state or new approval gate. No shutdown
+marker is created while the goal is actively continuing.
 
 Existing branch Vercel-disable/main-only Render safeguards remain unchanged.
 No merge, deployment, publication, production-data write, migration, registry or
@@ -243,7 +267,7 @@ All downloads were public and read-only. No new infrastructure or architecture.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-50 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+51 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -817,6 +841,45 @@ Evidence: house:119:1:200; finding `prop:408624e6d7eb88c5`.
 
 Sources: [clerk:119:1:200](https://clerk.house.gov/evs/2025/roll200.xml); [govinfo:s1582es](https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm).
 
+### Coast Guard package with behavioral-health, victim-care and family-leave provisions
+
+**Compact:** Foushee supported the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions. The Coast Guard package added a supervised behavioral-health pilot, more specialists, overdose-reversal access and victim-care safeguards. It also changed family leave and fishing-safety health grants. Funding authorizations were not appropriations, and care duties retained eligibility and practical limits. This was one vote on the full maritime and personnel package; the House text also contained a flagged victim-care definition cross-reference error.
+
+**Detail:**
+
+**house:119:1:218**
+
+Foushee supported the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions.
+
+H.R.4275 EH is the complete Coast Guard authorization package passed under suspension on July23,2025, not a stand-alone medical bill. Its direct care, leave, victim-support and occupational-health provisions support proposed Health membership after full operative-text review. Section101 authorizes fiscal2025–2029 funding, including a combined retired-pay/survivor/bonus and retired-personnel/dependent medical-care category. That category is not a medical-only allocation or an appropriation. Existing chapter55 medical eligibility and payment conditions remain; the bill does not promise free or unlimited care. Reorganization, acquisition, maritime safety, shipping, oil-spill response and disciplinary provisions remain part of the same choice.
+
+Section248 establishes a behavioral-health technician pilot within270 days at at least three clinics supporting high-tempo or other resiliency-risk units. Trained E-5-or-higher technicians or equivalently trained civilian specialists work under licensed behavioral-health-provider supervision, offering appropriate clinic-level assessment, services, education and referrals. The pilot terminates September30,2029; reports evaluate possible expansion rather than automatically extending it to every clinic. A separate duty requires at least five additional behavioral-health specialists within180 days, beyond the five already required by2022 section11412. At least35percent of the new group must have military-sexual-trauma care experience; the earlier law’s perinatal-care experience requirement is distinct and remains. Telemedicine may be used and support must be widely available. These are staffing/program duties, not evidence of hiring completion or clinical outcomes. Section243 permits specified direct hiring, including medical, childcare, housing and prevention personnel, on a severe-shortage or critical-hiring-need determination; its subsection(a) authority ends September30,2030 and retains the statutory congressional-recommendation and Selective Service restrictions.
+
+Section241 expands Coast Guard family-leave policy to expressly include qualifying reserve members and birth, adoption or placement for adoption or long-term foster care, with compensation under37USC206 and conditional extensions beyond a year. The referenced10USC701/704/711 policies and reserve duty/pay qualifications remain material. The2024 Code already records an October1,2025 expansion and renumbering of section711 to710a; this July2025 choice is not proof that Coast Guard reservists would otherwise never receive parental leave. Section242 changes the career-flexibility return-service ratio from two months to30days per inactive month. Existing2514(h) already preserves medical/dental and disability treatment during participation. The additions address death benefits, regulated family funeral travel and title38 partII general-benefit eligibility, and maintain behavioral-health, sexual-assault-response and legal resources for alleged sex-offense victims to the maximum extent practicable. This active-duty-treatment provision is not a finding that every participant satisfies every underlying benefit condition or receives every payment.
+
+Sections264–266 require a report on Academy behavioral-health resources, posted care/reporting information and at least two private care/telehealth rooms within two years, with practicable access consistent with good order and discipline. Section271 requires naloxone or similar overdose-reversal medicine access on all Coast Guard installations and in each operational environment within a year. One facility can serve an installation if accessible throughout operations. A Defense agreement connects Coast Guard tracking to the existing2023 naloxone/fentanyl system, with privacy protections. This creates access and tracking duties, not a measured reduction in overdoses.
+
+Section313 adds behavioral and physical health risks, including substance-use disorder and fatigue, to fishing-safety training and research grants. It authorizes $6million annually for each program in fiscal2025–2029, retaining competitive awards and the75percent federal-share ceiling; it does not appropriate those sums or establish individual treatment benefits. Section343 makes existing post-assault infection-prevention medication supplies account for voyage length and passenger/crew capacity. The underlying46USC3507 applies to covered passenger vessels with at least250-passenger capacity and overnight accommodations that embark or disembark U.S. passengers, excluding federal and state-operated vessels. Its examination, qualified medical-staff, confidential-support and disclosure rules remain. Section347 separately excludes serious circumstances such as long-term medical incapacitation from its abandoned-vessel civil-penalty rule; that exception is not a general medical entitlement.
+
+Section515 requires a victim-care policy to the maximum extent practicable: care may not be denied or unreasonably delayed, and where program eligibility, remoteness or another obstacle prevents the contacted provider from furnishing it, the alleged victim’s permission and discretion govern an in-person introduction and follow-up with appropriate providers. Provider training and the10USC930 intimate-partner definition are specified. Sections508/510 expose an internal EH cross-reference defect: the bill adds discharge-review2519 and covered-misconduct definition2520, while515(f),527(a)(1) and532(f)(2) point to2519 for that definition. This candidate preserves the express care/training requirements and flags the mismatch; it does not silently replace2519 with2520 or assert an unambiguous exhaustive eligibility definition. Other direct Health provisions independently support membership.
+
+Section517 separates the prior sexual-assault examination rule from the two-year Coast Guard-operations PTSD/TBI rule. A member sexually assaulted within the preceding five years who alleges related signs of a diagnosable mental, behavioral or emotional disorder receives an opportunity to request and receive an examination by specified qualified clinicians, including closely supervised qualified trainees. Existing safeguards require examination review before an otherwise eligible other-than-honorable administrative separation; the court-martial exclusion remains. Members notified of involuntary administrative separation must be advised of the examination right when the conditions apply. This is not an automatic diagnosis, disability award or ban on separation.
+
+The wider victim-support package includes long-term record preservation and access subject to privacy/investigation limits, special-victim investigative/prosecutorial/support capabilities, confidential harassment reporting with a clear-and-present health/safety exception, retaliation tracking and Academy safeguards for seeking medical or mental-health help. Academy medical/mental-health leave policy must be consistent with the other service academies, without a newly specified uniform leave duration. Section529 makes temporary separation requestable for specified recent sex-offense reporters; bonus-repayment exceptions remain discretionary under37USC373(b)(1). Section532 requires recurring role-specific prevention/response training, trauma-aware care and access instruction for first responders, and consideration of the November27,2023 directed-action workforce-training recommendations. GAO’s official table corroborates those recommendations for tailored in-person training, bystander intervention and a separate online sexual-assault-response module. Historical recommendation deadlines are not new bill deadlines. Reviews of other reports do not automatically adopt every recommendation. Sections602–604 require care-quality, records and facility-hazard reviews, not immediate construction, complete medical records or established improved care. Both choice meanings therefore concern passage of the whole authorization package; neither isolates agreement or disagreement with each care, disciplinary or maritime provision.
+
+The Clerk recorded the House result as 'Passed' on 2025-07-23. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The whole-package choice does not isolate a preference on each Health provision. Authorizations, required programs and reports do not establish actual spending, hiring or improved care.
+- The behavioral-health pilot ends September30,2029; additional specialists are separate from the prior2022 requirement, and prescribed qualifications and supervision remain.
+- The EH points to2519 for a covered-misconduct definition placed in2520. That source-text mismatch is flagged, not silently repaired; explicit care duties elsewhere independently establish the proposed Health nexus.
+- Care/referral duties remain qualified by practicability, program eligibility and victim permission. Examination safeguards do not guarantee a diagnosis or benefit award.
+- Family-leave changes are read against existing policies and the already enacted October1,2025 reserve-leave change; existing career-flexibility medical/dental protection is not presented as newly created.
+
+Evidence: house:119:1:218; finding `prop:a27aa308ee7a3a5b`.
+
+Sources: [clerk:119:1:218](https://clerk.house.gov/evs/2025/roll218.xml); [govinfo:hr4275eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4275eh/html/BILLS-119hr4275eh.htm); [govinfo:14usc-ch25-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap25.htm); [govinfo:14usc504-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleI-chap5-subchapI-sec504.htm); [govinfo:14usc4902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleIV-chap49-sec4902.htm); [govinfo:10usc701-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec701.htm); [govinfo:10usc704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec704.htm); [govinfo:10usc711-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec711.htm); [govinfo:37usc206-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap3-sec206.htm); [govinfo:37usc373-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap5-subchapIII-sec373.htm); [govinfo:10usc1044e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap53-sec1044e.htm); [govinfo:10usc1090-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1090.htm); [govinfo:46usc4502-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap45-sec4502.htm); [govinfo:46usc3507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap35-sec3507.htm); [govinfo:10usc1561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561.htm); [govinfo:10usc1561b-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561b.htm); [govinfo:10usc1562a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1562a.htm); [govinfo:10usc930-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap47-subchapX-sec930.htm); [govinfo:14usc1902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap19-subchapI-sec1902.htm); [govinfo:5usc3303-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3303.htm); [govinfo:5usc3328-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3328.htm); [govinfo:10usc1086-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm); [govinfo:37usc453-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap8-subchapI-sec453.htm); [govinfo:10usc-ch75II-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap75-subchapII.htm); [gao:24-107388-training](https://docs.house.gov/meetings/PW/PW07/20240306/116843/HHRG-118-PW07-Wstate-MacLeodH-20240306.PDF).
+
 ### Expanding opioid-sanctions coverage while retaining conditional prescription-access waivers
 
 **Compact:** Foushee supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package. The bill expanded who could qualify for opioid-trafficking sanctions. The existing framework retained a conditional waiver when sanctions would harm U.S. access to prescription medicines, with monitoring for illicit trafficking. This was one vote on the sanctions and oversight package, not a new treatment benefit or proof of fewer overdose deaths.
@@ -1350,4 +1413,5 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:209 | supported the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine | opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine | [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf) |
 | house:119:1:212 | supported House passage of H.R.4016’s full Defense appropriations and policy package | opposed House passage of H.R.4016’s full Defense appropriations and policy package | [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm); [govinfo:10usc2493-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm); [govinfo:pl111-84](https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm); [govinfo:pl110-417](https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm); [dod:art-2012-guidance-public-exhibit](https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [dod:reproductive-care-2022-10-20](https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care); [govinfo:hrpt162-health-page-binding](https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm) |
 | house:119:1:220 | supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | opposed the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | [govinfo:hr747eh](https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm); [govinfo:21usc-ch28-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm); [govinfo:50usc1702-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1703-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm) |
+| house:119:1:218 | supported the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions | opposed the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions | [govinfo:hr4275eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4275eh/html/BILLS-119hr4275eh.htm); [govinfo:14usc-ch25-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap25.htm); [govinfo:14usc504-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleI-chap5-subchapI-sec504.htm); [govinfo:14usc4902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleIV-chap49-sec4902.htm); [govinfo:10usc701-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec701.htm); [govinfo:10usc704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec704.htm); [govinfo:10usc711-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec711.htm); [govinfo:37usc206-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap3-sec206.htm); [govinfo:37usc373-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap5-subchapIII-sec373.htm); [govinfo:10usc1044e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap53-sec1044e.htm); [govinfo:10usc1090-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1090.htm); [govinfo:46usc4502-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap45-sec4502.htm); [govinfo:46usc3507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap35-sec3507.htm); [govinfo:10usc1561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561.htm); [govinfo:10usc1561b-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561b.htm); [govinfo:10usc1562a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1562a.htm); [govinfo:10usc930-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap47-subchapX-sec930.htm); [govinfo:14usc1902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap19-subchapI-sec1902.htm); [govinfo:5usc3303-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3303.htm); [govinfo:5usc3328-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3328.htm); [govinfo:10usc1086-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm); [govinfo:37usc453-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap8-subchapI-sec453.htm); [govinfo:10usc-ch75II-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap75-subchapII.htm); [gao:24-107388-training](https://docs.house.gov/meetings/PW/PW07/20240306/116843/HHRG-118-PW07-Wstate-MacLeodH-20240306.PDF) |
 <!-- GENERATED CANDIDATE END -->

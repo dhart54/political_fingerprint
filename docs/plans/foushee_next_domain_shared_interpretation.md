@@ -76,24 +76,24 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Seven new shared candidate meanings/compacts and fourteen choice strings;
-  neither implies a health-benefit cut or isolated rider preference. The two
+- [x] Eight new shared candidate meanings/compacts and sixteen choice strings;
+  the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now41 Foushee /37 Massie findings,100 observations,
-  four Massie Not Voting records,41 episodes and seven multi-action episodes
+  non-directional accounting. Now42 Foushee /38 Massie findings,102 observations,
+  four Massie Not Voting records,42 episodes and seven multi-action episodes
   (six pairs and the four-action H.R.4016 episode).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become50/177/8/123/318 across unchanged676 identities.
-  Add59 governed sources (15 Clerk,44 other),18 membership records and92
-  interpretation claim maps. Totals510 sources,216 membership records,259 maps.
-- [x] Regenerate and inspect compact/detail outputs. All39 candidate tests and126 focused subsystem tests pass,
+- [x] Counts43/176/8/113/336 become51/178/8/123/316 across unchanged676 identities.
+  Add90 governed sources (17 Clerk,73 other),20 membership records and135
+  interpretation claim maps. Totals541 sources,218 membership records,302 maps.
+- [x] Regenerate and inspect compact/detail outputs. All41 candidate tests and128 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete318 remaining screenings, wider episode reconciliation and
+- [ ] Complete316 remaining screenings, wider episode reconciliation and
   evidence-based substantive review-readiness assessment. No current human
   decision, unavailable evidence or source-conflict blocker is identified.
 
@@ -130,16 +130,27 @@ existing conditional prescription-access waiver and monitoring. Ten-year reports
 are not a ten-year extension of the separate sanctions sunset. Both members’
 recorded Yeas are projected; this is suspension and passage as amended.
 
-Next executable group: roll218/H.R.4275, then222,224–226 and H.R.4553 amendments
-227 onward. H.R.4275 EH444258 characters and Clerk are captured locally; its
-contents and first authorization/tail portions were inspected, but most text and
-incorporations remain unread. Read bounded chunks before full meaning. H.Res.672
-EH is fully read; capture/read deemed-adopted668/605 and tabled598 for complete
-procedural accounting. H.J.Res.104/106/105 EH are fully read, but exact Miles City,
-Central Yukon and North Dakota ROD/RMPs and GAO June25/RecordJune26 references
-remain unreviewed. Their titles cannot decide membership. The committed inventory
-holds exact next-action notes; local research19/20 captures are reusable leads.
-No unavailable-evidence or human-decision blocker is identified.
+Roll218/H.R.4275 is now a shared candidate after full444258-character EH review
+and targeted incorporated-care/leave/victim-support/benefit analysis. Preserve
+existing versus added care, conditional referrals, supervised pilot end2029,
+authorization versus appropriation, fishing-grant75percent share and the prior
+October2025 reserve-leave amendment. The EH2519/2520 definition cross-reference
+mismatch is explicit in compact and detail; no silent correction or universal
+eligibility claim. Foushee Yea and Massie Nay are mechanical whole-package choices.
+Roll222/H.Res.672 remains procedural after full review of deemed668/605 and tabled
+598RH→589IH. Medical privacy in disclosure exceptions does not make a Health vote.
+
+Next executable group:224–226, then H.R.4553 amendments227 onward. H.J.Res.104/106/
+105 EH are fully read. June26 Record PDF is captured in research24: pages50–56
+contain the three GAO opinions; pages50–51/Miles City read so far. Exact Miles City
+and Central Yukon legacy eplanning PDF links returned403; the web tool showed
+Miles City's redirected document page as unavailable. Continue public source
+tracing/new NEPA-register links or public reproductions before disposition; these
+attempts do not establish exhaustive source unavailability. North Dakota exact
+plan remains to acquire. Keep these three pending and continue independent safe
+H.R.4553 cases if retrieval remains unresolved. Sources19/21/22/23/24/25 and committed
+next-action notes preserve progress; do not repeat the Coast Guard full-text read.
+No new human decision or exhausted evidence dependency is identified.
 
 Manual interventions: selected image-only Report119-162 tables were visually
 checked and explicitly transcribed; a public court exhibit supplied historical
@@ -147,7 +158,7 @@ checked and explicitly transcribed; a public court exhibit supplied historical
 policy URLs were rejected, and the official Health.mil2022 memo was used. No
 protected annex was accessed. The stage guard caught an initial generic-passage
 label for roll220; it was corrected to the exact suspension-and-passage question
-without weakening validation. Existing0d78cea exact-head CI passed all9 checks;
+without weakening validation. Existing9d56864 exact-head CI passed all9 checks;
 this progress commit requires its own exact-head CI before reporting it current.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
