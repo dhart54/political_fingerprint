@@ -76,23 +76,24 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Four new shared candidate meanings/compacts and eight choice strings;
+- [x] Seven new shared candidate meanings/compacts and fourteen choice strings;
   neither implies a health-benefit cut or isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now40 Foushee /36 Massie findings,94 observations,
-  four Massie Not Voting records,40 episodes and seven represented pairs.
+  non-directional accounting. Now41 Foushee /37 Massie findings,100 observations,
+  four Massie Not Voting records,41 episodes and seven multi-action episodes
+  (six pairs and the four-action H.R.4016 episode).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become47/177/8/116/328 across unchanged676 identities.
-  Add29 governed sources (eight Clerk,21 other),8 membership records and42
-  interpretation claim maps. Totals480 sources,206 membership records,209 maps.
-- [x] Regenerate and inspect compact/detail outputs. All37 candidate tests and124 focused subsystem tests pass,
+- [x] Counts43/176/8/113/336 become50/177/8/123/318 across unchanged676 identities.
+  Add59 governed sources (15 Clerk,44 other),18 membership records and92
+  interpretation claim maps. Totals510 sources,216 membership records,259 maps.
+- [x] Regenerate and inspect compact/detail outputs. All39 candidate tests and126 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete328 remaining screenings, wider episode reconciliation and
+- [ ] Complete318 remaining screenings, wider episode reconciliation and
   evidence-based substantive review-readiness assessment. No current human
   decision, unavailable evidence or source-conflict blocker is identified.
 
@@ -112,16 +113,42 @@ roll206. The candidate now preserves the later $15-million instruction without
 the initial exact-zero wording or an invented negative appropriation. No
 individual member observation is inferred from the voice vote.
 
-Next executable group: H.R.4016 rolls209/210/212, then213 onward. Roll209's
-bill-specific Ukraine prohibition/debate pp73–74 were read; confirm relevant
-assistance scope. Roll210's Lebanese Armed Forces prohibition/debate pp75–76 were
-read; p77 continuation and scope remain. Complete EH text was read from0:87000
-of199597 characters, through all initial account titles/sections8001–8015 and
-part of8016. Resume at87000, finish riders and incorporated authorities, then
-final meaning. Health total/RDT&E net additions +$33m; medical-research minimum
-+$1m and HIV minimum -$1m are adopted effects, not rejected roll206. Further
-amendment reconciliation remains. The July18 URL is not a PDF; after-midnight
-Clerk votes are in the July17 legislative-day Record. No current evidence blocker.
+Rolls209/210/212 are now screened. The country-wide Ukraine prohibition reaches
+otherwise qualifying humanitarian medical assistance financed by the bill;
+Lebanese Armed Forces-specific assistance does not inherit civilian-care
+eligibility under10USC401. The complete199597-character EH, public Health tables,
+care-policy documents and incorporated authorities were reviewed before passage
+meaning. Care funding and restrictions coexist; gross account amounts, adopted
+minimum changes and unallocated general reductions remain distinct.
+
+Rolls213–217 and219 are proposed exclusions after exact operative-text review:
+ZIP Codes, SEC advocate information collection, land conveyance/permitting review,
+fish marking, multi-class stock disclosure and defense-sales channel review.
+Their item-specific reasons and retained incorporations are in membership_review.
+Roll220/H.R.747 is a candidate for expanded opioid-sanctions coverage with the
+existing conditional prescription-access waiver and monitoring. Ten-year reports
+are not a ten-year extension of the separate sanctions sunset. Both members’
+recorded Yeas are projected; this is suspension and passage as amended.
+
+Next executable group: roll218/H.R.4275, then222,224–226 and H.R.4553 amendments
+227 onward. H.R.4275 EH444258 characters and Clerk are captured locally; its
+contents and first authorization/tail portions were inspected, but most text and
+incorporations remain unread. Read bounded chunks before full meaning. H.Res.672
+EH is fully read; capture/read deemed-adopted668/605 and tabled598 for complete
+procedural accounting. H.J.Res.104/106/105 EH are fully read, but exact Miles City,
+Central Yukon and North Dakota ROD/RMPs and GAO June25/RecordJune26 references
+remain unreviewed. Their titles cannot decide membership. The committed inventory
+holds exact next-action notes; local research19/20 captures are reusable leads.
+No unavailable-evidence or human-decision blocker is identified.
+
+Manual interventions: selected image-only Report119-162 tables were visually
+checked and explicitly transcribed; a public court exhibit supplied historical
+2012 ART guidance, compared with reused2024 policy changes. Failed/redirected
+policy URLs were rejected, and the official Health.mil2022 memo was used. No
+protected annex was accessed. The stage guard caught an initial generic-passage
+label for roll220; it was corrected to the exact suspension-and-passage question
+without weakening validation. Existing0d78cea exact-head CI passed all9 checks;
+this progress commit requires its own exact-head CI before reporting it current.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
 were read through TitleVI, not only the shorter original contents list. Its

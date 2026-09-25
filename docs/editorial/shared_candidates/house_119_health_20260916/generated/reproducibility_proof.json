@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "6539ed8884adcc2df6157c25bf7bbe57ebc4f420e5e8d991c786660f7912c20f",
-  "source_capture_sha256": "fea897cda6b0624b65a00d9a3c13fa1647e5d40691c05797c10d7fabc441c3e4",
-  "core_sha256": "3bd4f44b0232a88ca14090a0153e28a37755eb4d30019cda33324e9b82ab2c7f",
-  "compiled_sha256": "0cc0a2885ba304339ec3fdf0714f4a91362cdc727d50ec66301c488c8670075e",
-  "readable_sha256": "1e6ae0ed46cab27c5e866297df2c7276605b8ca65d4884982cac9ed08c20def2",
+  "input_sha256": "ae499e10cd7d1795bf4543cdc20f99724c504f61ae18b7dfcaaa110714d0bb1f",
+  "source_capture_sha256": "4119c6c038b838e101ded2e3ef2043f7a502189cbd99109dbc77323eb75950c0",
+  "core_sha256": "23134eaad0623640a4d65f665e91cf2e42e763a8388103b3f4250ff84e63e7dd",
+  "compiled_sha256": "f4368061e48622b0574c6f306b435f325f0e2500f30ade020780a9e56d124b76",
+  "readable_sha256": "618f8317158aa1d3ec89fca9672dc5d12a466b9a224b7d06b6c0d74ac925d041",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -938,7 +938,7 @@
     },
     {
       "action_id": "house:119:1:204",
-      "shared_sha256": "5b1ee9b55a551ed863260cb1def1717161e6a3a12cf62c16b4dd863c078c0029",
+      "shared_sha256": "008c0f647b95996ff70ebf9d23b420dadb49d56a66bf8ae63c2ed9df7c2d6cca",
       "choices": [
         {
           "member_id": "F000477",
@@ -953,6 +953,66 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation",
           "source_id": "clerk:119:1:204"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:209",
+      "shared_sha256": "ec504d8c1d09ef573c68f517c9a5d240c40b568a8164b52e243283c17c5870a9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine",
+          "source_id": "clerk:119:1:209"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine",
+          "source_id": "clerk:119:1:209"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:212",
+      "shared_sha256": "89822ca6d5f9178fbf6b644b28fe3e92942d4240a4cec9aeda718343719bacaa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4016’s full Defense appropriations and policy package",
+          "source_id": "clerk:119:1:212"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4016’s full Defense appropriations and policy package",
+          "source_id": "clerk:119:1:212"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:220",
+      "shared_sha256": "335c171c56e256f0264af845062e4390928baeab68df99945284637186dd5cf5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package",
+          "source_id": "clerk:119:1:220"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package",
+          "source_id": "clerk:119:1:220"
         }
       ]
     }

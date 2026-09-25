@@ -1,9 +1,9 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Eight more membership screenings resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: four new shared interpretations, three exclusions
-and one procedural control. Now47 interpreted inputs,40 Foushee findings and36
-bounded Massie proof findings;328 discovery identities remain unreviewed.
+**Partial candidate, active research.** Eighteen more membership screenings resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: seven new shared interpretations, ten exclusions
+and one procedural control. Now50 interpreted inputs,41 Foushee findings and37
+bounded Massie proof findings;318 discovery identities remain unreviewed.
 This is neither complete Health coverage nor accepted/public content.
 
 ## Current material delta and entry points
@@ -16,9 +16,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [47 shared meanings /209 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [480 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [206 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [50 shared meanings /259 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [510 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [216 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -26,11 +26,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|47|
+| interpreted_substantive_directional |43|50|
 | procedural_context |176|177|
 | expressive_nonbinding_context |8|8|
-| exact_action_ineligible |113|116|
-| source_unresolved (unreviewed membership) |336|328|
+| exact_action_ineligible |113|123|
+| source_unresolved (unreviewed membership) |336|318|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -100,40 +100,68 @@ version context, not an invented Foushee/Massie roll. A regression preserves thi
 chronology. This correction changes current candidate wording, not accepted or
 published artifacts. The incomplete final-passage review exposed it safely.
 
-Manual delta: four shared meanings/compacts, eight choice strings,42 claim maps,
-eight membership records and29 source captures (eight Clerk,21 other). The
-H.R.3633/S.1582 records add two Foushee findings and two non-directional Massie
-observations; roll206 adds a finding for each member. Totals94 observations,
-four Massie non-votes,40 episodes and seven represented pairs. No synthesis added.
-The H.R.4016 pair is explicitly incomplete pending other exact episode actions;
-roll204 adds both members’ observations to that same finding.
+**Completed H.R.4016 episode:** roll209’s Ukraine-wide funding prohibition
+includes otherwise qualifying civilian humanitarian medical aid, subject to
+existing eligibility. Roll210’s narrower Lebanese Armed Forces restriction is
+excluded: civilian care under10USC401 cannot be imported into military assistance.
+Passage212 combines direct military care/research funding with reproductive-care,
+gender-affirming-care and COVID-19 mandate restrictions, plus protected civilian
+forensic-exam access. All199597 EH characters and public incorporated authorities
+were read. Gross Health funding is not a guaranteed executed total; general
+reductions, nested minimums and the earlier adopted HIV change remain visible.
+Public report tables differ from some narrative cancer figures; no invented final
+disease allocation resolves that difference. Image-only table entries were
+visually checked and explicitly transcribed. Historical2012 ART guidance came
+from a public court exhibit and is qualified by the reused2024 policy changes;
+the2022 reproductive-care memo is bound to an official Health.mil copy. Redirected
+or denied URLs were rejected, not accepted as evidence. No classified annex read.
+
+The same existing finding represents204/206/209/212 in order. Foushee is
+Nay/Nay/Nay/Nay; Massie is Yea/Yea/Yea/Nay. No trajectory or motive is inferred.
+
+**Next exact measures:**213–217 and219 are proposed exclusions for postal codes,
+SEC information collection, land conveyance/permitting review, fish marking,
+stock-voting disclosure and arms-sales channel review. Operative texts and
+relevant SEC/Paperwork Reduction Act and arms-sales definitions were read;
+item-specific rationales identify why general downstream consequences do not
+establish Health membership. Roll220/H.R.747 expands opioid-sanctions coverage
+under a framework retaining conditional prescription-access waivers and
+monitoring. It does not create that waiver, automatically designate the named
+Chinese officials or establish a new treatment benefit. Its ten-year reporting
+period does not amend the separate seven-year sanctions termination. Both members
+recorded Yea on suspension and passage as amended. The source/stage guard caught
+and rejected a generic final-passage stage during preparation; the exact Clerk
+stage was supplied without changing the guard.
+
+Manual delta from bed93d: seven shared meanings/compacts, fourteen choice strings,
+92 claim maps,18 membership records and59 source captures (15 Clerk,44 other).
+Totals100 observations, four Massie non-votes,41 episodes and seven multi-action
+episodes (six pairs and the four-action H.R.4016 episode). No synthesis added.
+From the later pushed0d78cea checkpoint: ten further screenings, three new shared
+interpretations, seven exclusions and ten fewer unreviewed identities.
 
 ## Current validation and remaining execution
 
-**124 focused subsystem tests and7 canonical semantic checks pass**, including
-37 candidate tests. Regeneration/replay, source-removal rejection, scope/member/
+**126 focused subsystem tests and7 canonical semantic checks pass**, including
+39 candidate tests. Regeneration/replay, source-removal rejection, scope/member/
 party/cutoff guards, non-directional records and candidate publication rejection
-remain green. New tests preserve customer-pool versus estate priorities, both
-Massie non-votes, non-counting deemed concurrence and the HIV minimum versus total
-appropriation distinction. Queue assertions now identify the actual remaining
-roll209. No guard was weakened. No frontend/runtime change or local browser loop
-is claimed. Required existing CI is checked at the exact pushed head in PR194.
+remain green. Added regressions retain the four distinct Defense choices,
+country-versus-recipient scope, conditional prescription access, separate sunset
+and whole-package limits. No frontend/runtime change or browser loop is claimed.
+All9 exact-head CI checks passed at0d78cea; this progress commit's exact head and
+new CI results are recorded in the existing PR discussion after push.
 
-**Next: H.R.4016 rolls209/210/212**, then213 onward. Roll209's bill-specific
-Ukraine prohibition and full debate are read; trace the actual assistance scope
-before membership. Roll210's Lebanese Armed Forces prohibition/debate pp75–76 are
-read; p77 continuation and scope review remain. EH passage reading has covered
-characters0:87000 of199597 (all accounts through Health/related agencies and
-sections8001–8015, then the beginning of8016). Resume at87000; full later riders
-and incorporations remain unreviewed. Health account/research allocation net
-additions are $33m, the medical-research minimum rises $1m, and the HIV minimum
-falls $1m by adopted amendment245, not rejected roll206. Still reconcile all
-adopted amendments and relevant authorities before final meaning. The July18 PDF
-URL returned non-PDF navigation and was rejected; after-midnight votes appear in
-the July17 legislative-day Record. No protected access was attempted.
+**Next: roll218/H.R.4275**, then222,224–226 and227 onward. The Coast Guard EH is
+captured (444258 characters), but most operative provisions and incorporations
+remain unread; its contents are not substantive completion. H.Res.672 is fully
+read but its deemed-adopted668/605 and tabled598 require complete accounting.
+H.J.Res.104/106/105 EH are fully read; their exact referenced Miles City,
+Central Yukon and North Dakota plans and GAO/Record bindings still require review.
+The inventory retains these prepared-source notes and exact next actions. Reuse
+local research19/20 captures without treating them as dispositions.
 
 There is no current human decision or unavailable/conflicting-evidence blocker.
-328 screenings and wider episode reconciliation remain. Research continues;
+318 screenings and wider episode reconciliation remain. Research continues;
 this pushed progress checkpoint is not a terminal state or new approval gate.
 No shutdown marker is created while the goal is actively continuing.
 
@@ -215,7 +243,7 @@ All downloads were public and read-only. No new infrastructure or architecture.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-47 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+50 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -330,7 +358,7 @@ Sources: [clerk:119:1:180](https://clerk.house.gov/evs/2025/roll180.xml); [congr
 
 ### Separate choices within one legislative episode
 
-**Compact:** Foushee opposed the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation. The amendment removed the bill’s $117.988 million overseas humanitarian, disaster and civic-aid appropriation. Its incorporated programs include conditional medical, surgical and dental care alongside disaster relief and other aid. It removed this funding provision, not the underlying authorities or every other source of humanitarian funding. Foushee opposed the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million. The amendment called for a $15 million reduction in the HIV-prevention education minimum for military-linked activities, primarily in African nations. An earlier adopted amendment had already reduced that original $15 million minimum by $1 million. The new proposal targeted the funding floor, not the total Defense Health appropriation, and did not expressly prohibit the activity.
+**Compact:** Foushee opposed the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation. The amendment removed the bill’s $117.988 million overseas humanitarian, disaster and civic-aid appropriation. Its incorporated programs include conditional medical, surgical and dental care alongside disaster relief and other aid. It removed this funding provision, not the underlying authorities or every other source of humanitarian funding. Foushee opposed the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million. The amendment called for a $15 million reduction in the HIV-prevention education minimum for military-linked activities, primarily in African nations. An earlier adopted amendment had already reduced that original $15 million minimum by $1 million. The new proposal targeted the funding floor, not the total Defense Health appropriation, and did not expressly prohibit the activity. Foushee opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine. The amendment barred assistance to Ukraine using this bill’s funds. That broad restriction also reached any otherwise qualifying humanitarian medical assistance financed by the bill; it was not limited to weapons. It did not cut the whole aid account or bar money from every other law, and no specific medical project or amount is established. Foushee opposed House passage of H.R.4016’s full Defense appropriations and policy package. The House package funded military health care and research while restricting spending on gender-affirming surgery or hormones, certain reproductive-care policies and COVID-19 mandates. It also preserved embryo-storage coverage without a duration limit for the specified seriously ill or injured service-member program and protected civilian access to existing sexual-assault forensic exams. Its medical-research and HIV-education minimums reflect adopted amendments, not the rejected later HIV proposal. This was one vote on the full defense package; it does not identify a separate preference on each care provision.
 
 **Detail:**
 
@@ -344,7 +372,7 @@ Section401 permits humanitarian/civic activities alongside authorized military o
 
 The other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.
 
-These authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the remaining unreviewed final package.
+These authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the separately represented final package.
 
 The Clerk recorded the House result as 'Failed' on 2025-07-18. This does not establish enactment.
 
@@ -358,21 +386,64 @@ The surrounding base separately supplies the broader medical/health appropriatio
 
 The Clerk recorded the House result as 'Failed' on 2025-07-18. This does not establish enactment.
 
+**house:119:1:209**
+
+Foushee opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine.
+
+Part A amendment116 in House Report119-199 adds a prohibition on using any funds made available by H.R.4016 for assistance to Ukraine. The July17 legislative-day Record prints the same instruction and binds it to roll209 after midnight. It names a country and the source of money; it does not limit the prohibition to weapons, the Ukraine Security Assistance Initiative, or a particular recipient military. The failed proposal does not reallocate the money to a domestic program or repeal all assistance authorities.
+
+The bill includes a $117.988-million Overseas Humanitarian, Disaster, and Civic Aid appropriation through September30,2027 and operation-and-maintenance humanitarian funding under section8011. Its incorporated 10 U.S.C.401 authority expressly permits conditional medical, surgical and dental care in rural or professionally underserved areas, as well as related training, veterinary care, wells and basic sanitation; 10 U.S.C.2561 addresses humanitarian purposes worldwide. Accordingly, the country-wide funding prohibition would also foreclose use of this bill’s funds for otherwise qualifying humanitarian medical assistance to Ukraine. Proposed Health membership rests on that explicit intersection of the prohibition and the incorporated care authority, not on a general claim that war affects health. Neither text establishes an existing Ukrainian medical project, a guaranteed allocation, a medical-only dollar amount, or the number of people affected.
+
+Eligibility restrictions remain material: section401 requires authorized military operations, shared-security and military-readiness determinations, State approval, nonduplication and exclusion of military or paramilitary beneficiaries. The parent bill’s existing section8101 prohibition concerning the Azov Battalion, Third Separate Assault Brigade and successors also remains separate. Opposing this broader country prohibition is not a vote for every possible recipient, program or future expenditure; supporting it is not an established position on all humanitarian aid. Both recorded-member choices are applied mechanically. Roll209 failed and is distinct from the overseas-account deletion, the HIV-education minimum instruction and the separately represented final passage.
+
+The Clerk recorded the House result as 'Failed' on 2025-07-18. This does not establish enactment.
+
+**house:119:1:212**
+
+Foushee opposed House passage of H.R.4016’s full Defense appropriations and policy package.
+
+H.R.4016 EH, passed on July18 (legislative day July17),2025, is the full FY2026 Defense appropriations package. The complete public operative text, including sections8001–8175, was read. It funds military personnel, operations, procurement, research, working capital, intelligence and other Defense programs and applies foreign-assistance, procurement, personnel, transfer and policy restrictions. Proposed Health membership follows from explicit care financing and care restrictions, not from the bill’s defense title or a broad prediction about military activity. House passage is not enactment or proof that money was spent.
+
+The Defense Health Program heading starts at $40,917,184,000 and contains net floor additions of $33 million, producing a gross heading amount of $40,950,184,000 before the package’s general reductions and execution rules. Its components are $38,766,742,000 for operation and maintenance (up to $21,023,765,000 for TRICARE contracts), $354,821,000 for procurement through September30,2028 and $1,828,621,000 for research, development, test and evaluation through September30,2027. Up to one percent of operation-and-maintenance funding may carry over through September30,2027. Within research, the EH’s medical-research minimum is $701 million and its military-linked HIV-prevention education minimum is $14 million, primarily for activities in African nations. The earlier adopted amendment245 increased the research minimum by $1 million and reduced the HIV minimum by $1 million; the failed roll206 instruction to reduce it by a further $15 million is not included. Equal increases and decreases elsewhere in the heading are not net new appropriations. Quarterly electronic-health-record reporting and GAO performance reviews remain.
+
+The public committee tables divide care funding among in-house and private-sector care, support, information systems, education, facilities, procurement and multiple research programs. Their image-only pages were visually checked. They also contain a separate $20-million HIV/AIDS program increase alongside the $15-million base global-prevention line, so neither the statutory minimum nor its reduction can be described as all HIV funding. These are pre-floor committee figures; later EH instructions control the stated final heading amounts. Some committee narrative cancer-program figures differ from the corresponding tables, so this candidate does not invent a harmonized final disease-by-disease allocation. Section8006 gives the specified explanatory-statement and classified-annex tables legal effect and regulates transfers. The classified annex was not accessed; this candidate makes no claim about its hidden project details. Sections8154,8156 and8157 impose $3 billion, $3.75 billion and $1 billion in general reductions, with specified intelligence exclusions; section8155 separately reduces titleII by $1 billion. These provisions do not assign an exact further cut to a named Health account in their text, so the gross Health figure is not a guaranteed executed total.
+
+Other direct provisions retain the overseas humanitarian account and section8011’s conditional military-linked humanitarian care, including specified Pacific patient transport/care in Hawaii. Section8038 sets military-retail tobacco price rules. Section8042 generally bars a contractor from gaining a conversion-competition advantage by omitting employee health insurance or contributing less than the referenced civilian-employee contribution; named nonprofit/tribal and depot exceptions remain. Section8047 provides a conditional $25-million Red Cross grant alongside $24 million for the USO. Sections8062–63 permit up to $11 million from each named Army, Navy and Air Force operation-and-maintenance account for their Fisher House/Suite central funds and a separate conditional $5-million construction/furnishing grant for military families facing illness or hospitalization. Incorporated10USC2493 defines the temporary housing, eligible patients/families and supporting persons, administration and fees; this is not unrestricted housing assistance. Section8082 expressly permits up to $165 million in Defense Health operation-and-maintenance transfers to the joint DoD–VA fund for the integrated Lovell center, plus additional transfers on written notification. The historical fund and combined-facility provisions explain its mechanism; their original termination text is not treated as the current bill’s funding cutoff. The drug account includes $135.567 million for drug-demand reduction within broader interdiction and military programs.
+
+Section8122 applies the named seriously or severely ill/injured active-duty service-member assisted-reproduction policy and guidance without the embryo-cryopreservation/storage time limits in partsIII(G) andIV(H), and includes storage without a duration limit in assisted reproductive technology. The publicly filed historical implementing guidance binds those old limits; the reused April2024 Federal Register document records later DoD changes to marital-status and donated-gamete restrictions. This candidate does not portray all2012 eligibility terms as unchanged in2025, promise universal IVF coverage, or claim this recurring appropriations provision was the first time the storage limit was removed.
+
+The package also bars this Act’s money for enforcing COVID-19 mask mandates, requiring COVID-19 vaccination of service members or DoD civilian employees, or making that vaccination a DoDEA-school attendance prerequisite. Section8138 bars specified gender-transition procedures, referrals and duty-station changes for minor dependents through EFMP; section8145 separately bars spending for gender-affirming surgery or hormone therapy. Section8142 blocks funds for the October20,2022 memorandum, its successors or substantially similar policy. That memorandum includes pregnancy-information privacy, provider licensing/legal support, administrative absence and travel for non-covered reproductive care, walk-in contraception and patient information. The rider is not accurately reduced to paying for abortions alone, and this account of its text does not assume every2022 policy was still operative at the vote. In the other direction, section8168 bars use of bill funds to discontinue or restrict civilian access to sexual-assault forensic examinations available as of January20,2025. Sections8129–30 restrict specified foreign laboratories and EcoHealth Alliance work; section8150 preserves the named DoD animal-research instruction rather than establishing a new clinical benefit.
+
+These funding and restriction provisions coexist in one cross-domain choice. Foushee and Massie each recorded Nay on passage; neither Nay establishes opposition to every medical appropriation or support for every alternative care policy. The separately represented failed amendments204,206 and209 remain distinct choices within the same episode. The other recorded assistance amendments remain in the membership inventory as proposed exclusions, and the recommittal remains procedural. No change of position, motive or general Health stance is inferred from the sequence.
+
+The Clerk recorded the House result as 'Passed' on 2025-07-18. This does not establish enactment.
+
 - This is a choice on the specified amendment, not passage of the entire Defense appropriations package. The exact deletion controls over broader arguments in debate.
 - The entire $117.988 million overseas account is the funding object; no medical-only dollar total or guaranteed patient outcome is established. Its explicit availability ends September30,2027.
 - Eligible care under section401 has security/readiness, State-approval, nonduplication and recipient limitations. The underlying authorities and their limited alternative-funding provisions are not repealed.
 - Other account programs and their distinct conditions remain part of the amendment context. Domestic emergency/homeless-veteran powers in section2557 are not portrayed as a dedicated use of this overseas appropriation.
-- This failed amendment and the HIV-minimum amendment are separate choices within an unfinished episode. No inference about final passage, overall aid preferences or change of position follows from their sequence.
+- This failed amendment and the HIV-minimum amendment are separate choices within an episode with separately represented final passage. No inference about final passage, overall aid preferences or change of position follows from their sequence.
 - The bill’s separate section8011 operation-and-maintenance humanitarian/civic funding provision remains; removal of the overseas account is not elimination of every bill-funded humanitarian or medical activity.
 - This is a choice on the specified amendment, not on passage of the entire Defense appropriations package. Its operative instruction controls over broader floor descriptions.
 - The $15 million is a nested minimum within Defense Health research funding, not a separate reduction in the account total. No general HIV-program prohibition, PEPFAR reduction or domestic funding transfer is inferred.
 - Primarily in African nations and the connection to U.S. military training/exercises/humanitarian activities define the covered education provision; it is not all foreign medical care.
 - The amendment failed. This recorded choice does not establish enactment or a loss of treatment. The remaining H.R.4016 episode actions require independent membership review; no complete episode or package interpretation is yet claimed.
 - An earlier adopted amendment had already reduced the original HIV minimum by $1 million. The later $15-million instruction is preserved without inventing an exact zero, negative spending, or a reversal of the earlier medical-research increase. The en-bloc voice adoption supplies version context, not an invented individual recorded vote.
+- This is a choice on a bill-specific country assistance prohibition, not passage of the entire Defense appropriations package.
+- This amendment’s prohibition covers only funds made available by this Act. It is neither a reduction of the full worldwide aid account nor a prohibition on all money under other laws.
+- The Health nexus is conditional humanitarian care within the bill’s expressly incorporated funding authority. No actual Ukraine care allocation or recipient impact is established.
+- The underlying eligibility and recipient restrictions are preserved. This is not a claim that assistance to every person in Ukraine was otherwise authorized.
+- No general country preference, motive, predicted health outcome or position on final passage follows from this one amendment choice.
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- This is the House EH package, not a final enacted appropriation. Gross account amounts, nested minimums, general reductions and actual expenditures are distinct.
+- The failed overseas-account deletion, further HIV-minimum reduction and Ukraine prohibition are not imported into the passed bill. Adopted amendment245 is separately bound as version context, not an invented member roll.
+- Care funding and care restrictions coexist. No individual provision can be assigned the member’s whole-package Yea or Nay as if separately voted.
+- The public report’s tables and prose are distinct sources; differing cancer-line figures are not silently reconciled. No classified-annex or hidden project detail is claimed.
+- The2012 guidance is historical and its later policy changes are explicitly preserved. No universal fertility benefit, actual service loss or current operational status of all2022 policies is inferred.
 
-Evidence: house:119:1:204, house:119:1:206; finding `prop:114c1fc55bc07afb`.
+Evidence: house:119:1:204, house:119:1:206, house:119:1:209, house:119:1:212; finding `prop:840ea1ddfd24f792`.
 
-Sources: [clerk:119:1:204](https://clerk.house.gov/evs/2025/roll204.xml); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm); [clerk:119:1:206](https://clerk.house.gov/evs/2025/roll206.xml); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm).
+Sources: [clerk:119:1:204](https://clerk.house.gov/evs/2025/roll204.xml); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm); [clerk:119:1:206](https://clerk.house.gov/evs/2025/roll206.xml); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm); [clerk:119:1:209](https://clerk.house.gov/evs/2025/roll209.xml); [clerk:119:1:212](https://clerk.house.gov/evs/2025/roll212.xml); [govinfo:10usc2493-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm); [govinfo:pl111-84](https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm); [govinfo:pl110-417](https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm); [dod:art-2012-guidance-public-exhibit](https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [dod:reproductive-care-2022-10-20](https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care); [govinfo:hrpt162-health-page-binding](https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf).
 
 ### Separate choices within one legislative episode
 
@@ -745,6 +816,34 @@ The Clerk recorded the House result as 'Passed' on 2025-07-17. This does not est
 Evidence: house:119:1:200; finding `prop:408624e6d7eb88c5`.
 
 Sources: [clerk:119:1:200](https://clerk.house.gov/evs/2025/roll200.xml); [govinfo:s1582es](https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm).
+
+### Expanding opioid-sanctions coverage while retaining conditional prescription-access waivers
+
+**Compact:** Foushee supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package. The bill expanded who could qualify for opioid-trafficking sanctions. The existing framework retained a conditional waiver when sanctions would harm U.S. access to prescription medicines, with monitoring for illicit trafficking. This was one vote on the sanctions and oversight package, not a new treatment benefit or proof of fewer overdose deaths.
+
+**Detail:**
+
+**house:119:1:220**
+
+Foushee supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package.
+
+H.R.747 section3 expands the Fentanyl Sanctions Act’s foreign-opioid-trafficker definition to include specified Chinese entities involved in synthetic opioids or their pharmaceutical ingredients/chemicals that fail credible prevention steps, and specified senior or political officials with significant regulatory or enforcement responsibilities who aid and abet trafficking, including intentional inaction. It requires reporting whether heads of four named Chinese agencies meet the definition; it does not automatically find those officials responsible. The incorporated21USC2302 definitions connect the amendment to the existing2311–2313 designation and sanctions framework, which requires at least five sanctions for covered entities or four for individuals and permits specified financial, property, procurement, investment and entry restrictions.
+
+The proposed Health nexus is the expanded coverage of that framework together with its directly applicable prescription-access boundary, not a title-based inference or a claimed effect on overdose deaths. Existing21USC2314(b) permits a presidential waiver if sanctions would harm U.S. persons’ access to prescription medications, requires a monitoring program to verify a recipient is not trafficking illicit opioids, and requires congressional notice of the determination and reasons within15 days. The bill leaves this conditional protection in place; it neither creates that waiver nor guarantees that it will be exercised for a particular company or patient. The framework also retains renewable180-day humanitarian waivers and other specified waiver/exception provisions. There is no finding that any particular legitimate drug supply is disrupted or protected in practice.
+
+Section3 also extends the2311 report-submission period from five to ten years after December20,2019. It does not amend the separate2334 seven-year termination provision; the reporting extension must not be described as a ten-year extension of all sanctions. Section4 requires at least annual effectiveness/stakeholder/possible-change evaluations when IEEPA powers are used for a drug-trafficking emergency declared within the preceding five years and not terminated, changes consultation/report recipients to specified congressional committees, and adds cost-benefit, alternatives and termination-criteria requirements for covered regulations. It leaves1702(b)’s conditional protection for donations including medicine intact. Section5 excludes goods importation from this Act’s sanctions authority/requirements, with technical data outside the goods definition; that is not a waiver of every restriction imposed by other laws. Section2’s statements about Chinese action remain a nonbinding sense of Congress. The Clerk binds roll220 to the motion to suspend the rules and pass as amended, which passed; this is a substantive whole-measure passage choice under suspension, not a stand-alone procedural control. No new domestic treatment, insurance entitlement or demonstrated health outcome follows from this whole-package vote.
+
+The Clerk recorded the House result as 'Passed' on 2025-09-02. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The prescription-access waiver already exists and remains conditional; broader sanctions coverage is not a newly enacted patient entitlement or a guaranteed medical-supply exemption.
+- The ten-year reporting period and separate seven-year sanctions termination provision are distinct. No ten-year extension of every sanction is asserted.
+- Agency-head reporting asks whether listed people meet the definition; it does not itself designate every named official. Source allegations and the sense of Congress are not adopted as independent facts.
+- Goods-import protection and conditional humanitarian/prescription waivers do not authorize all transactions under all other laws. No actual patient, supply or overdose effect is inferred.
+
+Evidence: house:119:1:220; finding `prop:7caab7435f0b241c`.
+
+Sources: [clerk:119:1:220](https://clerk.house.gov/evs/2025/roll220.xml); [govinfo:hr747eh](https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm); [govinfo:21usc-ch28-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm); [govinfo:50usc1702-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1703-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm).
 
 ### Forest-management package with firefighter-family casualty assistance
 
@@ -1248,4 +1347,7 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:199 | supported House passage of H.R.3633’s digital-commodity regulation and customer-property package | opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package | [govinfo:hr3633eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3633eh/html/BILLS-119hr3633eh.htm); [govinfo:11usc761-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec761.htm); [govinfo:11usc766-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec766.htm); [govinfo:11usc726-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapII-sec726.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:11usc101-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec101.htm); [govinfo:11usc103-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec103.htm); [govinfo:11usc109-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec109.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm) |
 | house:119:1:206 | supported the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million | opposed the H.R.4016 amendment reducing the military-linked HIV-prevention education funding minimum by $15 million | [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm) |
 | house:119:1:204 | supported the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation | opposed the H.R.4016 amendment removing the overseas humanitarian, disaster and civic-aid appropriation | [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm) |
+| house:119:1:209 | supported the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine | opposed the H.R.4016 amendment barring this bill’s funds for assistance to Ukraine | [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf) |
+| house:119:1:212 | supported House passage of H.R.4016’s full Defense appropriations and policy package | opposed House passage of H.R.4016’s full Defense appropriations and policy package | [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm); [govinfo:10usc2493-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm); [govinfo:pl111-84](https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm); [govinfo:pl110-417](https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm); [dod:art-2012-guidance-public-exhibit](https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [dod:reproductive-care-2022-10-20](https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care); [govinfo:hrpt162-health-page-binding](https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm) |
+| house:119:1:220 | supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | opposed the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | [govinfo:hr747eh](https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm); [govinfo:21usc-ch28-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm); [govinfo:50usc1702-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1703-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm) |
 <!-- GENERATED CANDIDATE END -->

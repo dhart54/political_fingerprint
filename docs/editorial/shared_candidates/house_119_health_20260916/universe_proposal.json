@@ -37,6 +37,9 @@
     "house:119:1:200",
     "house:119:1:204",
     "house:119:1:206",
+    "house:119:1:209",
+    "house:119:1:212",
+    "house:119:1:220",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -78,10 +81,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 177,
-      "exact_action_ineligible": 116,
-      "interpreted_substantive_directional": 47,
+      "exact_action_ineligible": 123,
+      "interpreted_substantive_directional": 50,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 328
+      "source_unresolved": 318
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -90,14 +93,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 47,
-    "directional_substantive_actions": 47,
+    "substantive_eligible_actions": 50,
+    "directional_substantive_actions": 50,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 177,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 116,
-    "unresolved_boundary_cases": 328,
-    "independent_episode_count": 40,
+    "exact_action_ineligible_actions": 123,
+    "unresolved_boundary_cases": 318,
+    "independent_episode_count": 41,
     "multi_action_episode_count": 7,
     "mechanism_types": [
       "amendment",
@@ -108,12 +111,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 47,
-      "substantive_actions": 47,
+      "ready_substantive_actions": 50,
+      "substantive_actions": 50,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "328 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "318 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -390,6 +393,13 @@
         "house:119:1:205",
         "house:119:1:207",
         "house:119:1:208",
+        "house:119:1:210",
+        "house:119:1:213",
+        "house:119:1:214",
+        "house:119:1:215",
+        "house:119:1:216",
+        "house:119:1:217",
+        "house:119:1:219",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -445,6 +455,9 @@
         "house:119:1:200",
         "house:119:1:204",
         "house:119:1:206",
+        "house:119:1:209",
+        "house:119:1:212",
+        "house:119:1:220",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -473,17 +486,7 @@
         "house:119:2:289"
       ],
       "source_unresolved": [
-        "house:119:1:209",
-        "house:119:1:210",
-        "house:119:1:212",
-        "house:119:1:213",
-        "house:119:1:214",
-        "house:119:1:215",
-        "house:119:1:216",
-        "house:119:1:217",
         "house:119:1:218",
-        "house:119:1:219",
-        "house:119:1:220",
         "house:119:1:222",
         "house:119:1:224",
         "house:119:1:225",
@@ -803,11 +806,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "47 proposed source-mapped inputs, not accepted eligibility. The remaining 328 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "50 proposed source-mapped inputs, not accepted eligibility. The remaining 318 are an unfinished discovery backlog, not asserted Health votes."
   },
-  "episode_completeness": "40 candidate episodes cover 47 supplied actions, including 7 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "41 candidate episodes cover50 supplied actions, including7 multi-action episodes (six two-action episodes and one four-action H.R.4016 episode). Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "78f6c1d55c425292b0375e7e863eaed79d4b15e0ead44841df867c624926dc65",
+  "universe_subject_sha256": "f0379579e89b4ef6df35e8b9718cb2474df3eb0398593674ee6222a766751eae",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -13295,7 +13298,7 @@
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the remaining unreviewed final package.",
+      "reason": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the separately represented final package.",
       "source": {
         "source_id": "clerk:119:1:204",
         "url": "https://clerk.house.gov/evs/2025/roll204.xml",
@@ -13313,7 +13316,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "proposed_exact_action_inclusion",
-      "rationale": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the remaining unreviewed final package.",
+      "rationale": "Part A amendment111 in House Report119-199 strikes H.R.4016 RH page24 lines8–14. Those lines are the entire Overseas Humanitarian, Disaster, and Civic Aid heading and its $117,988,000 appropriation, available through September30,2027, for the programs under 10 U.S.C.401,402,404,407,2557 and2561. The exact amendment therefore removes this whole account appropriation, rather than just a named medical earmark. The Record repeats the same instruction and binds it to roll204. Proposed Health membership follows from the removed funding for expressly incorporated medical and basic-needs assistance, not from the bill’s defense title or references to veterans in debate.\n\nSection401 permits humanitarian/civic activities alongside authorized military operations when the required shared-security and military-readiness determinations are made and the Secretary of State approves. Its definition expressly includes medical, surgical and dental care in rural or professionally underserved areas, with related education/training/technical assistance; it also includes veterinary care, rudimentary transport/public facilities, wells and basic sanitation. Activities must complement rather than duplicate other U.S. assistance and may not directly or indirectly benefit people or organizations engaged in military or paramilitary activity. Direct costs use specifically appropriated funds, but subsection(c)(4) retains a limited other-funding/incidental-cost provision. Deleting this appropriation does not repeal those authorizations or establish that all eligible care ends. The same RH bill’s section8011 separately appropriates within operation-and-maintenance funds for section401 humanitarian/civic costs and retains incidental-cost authority, so this amendment does not delete that other bill funding provision.\n\nThe other incorporated programs preserve different conditions: section402 allows space-available transport of nongovernmental humanitarian supplies, with need, usability, distribution and nonmilitary-recipient safeguards; section404 authorizes foreign disaster transportation, supplies, services and equipment with reporting and special limits for environmental-only transportation. Section407 covers humanitarian demining and stockpiled-munitions training/support with State approval and limits on direct U.S. personnel clearance activity. Section2557 concerns excess nonlethal supplies and separately contains domestic-emergency and homeless-veteran authorities; their presence in the incorporated statute does not make this overseas account an appropriation for every domestic program. Section2561 permits authorized humanitarian transport and other humanitarian purposes worldwide, with advance notice for assistance exceeding $5 million (or its extraordinary-circumstances notice exception), reporting and conditional availability. The bill’s express September30,2027 date controls this appropriation; the statute’s general until-expended language is itself subject to appropriations acts.\n\nThese authorities explain the range and limits of the removed account. They do not allocate a known share of the $117.988 million to medical care or identify a particular patient, country or project that would lose aid. No domestic replacement appropriation is inserted. The Clerk records that the amendment failed; its proposal is distinct from the separately interpreted HIV-education minimum amendment and the separately represented final package.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -13409,7 +13412,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "2139086f9f6a25ea51219f27ca328c32b64b78943b2743533f580b5f9dfd5cce"
+        "shared_review_record_sha256": "673c5090ba2e9be32286104f16009e30a06d7f5f2cc7783a79d8bea3b82c0464"
       },
       "historical_raw_hash_matches": true
     },
@@ -13770,15 +13773,16 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Part A amendment116 in House Report119-199 adds a prohibition on using any funds made available by H.R.4016 for assistance to Ukraine. The July17 legislative-day Record prints the same instruction and binds it to roll209 after midnight. It names a country and the source of money; it does not limit the prohibition to weapons, the Ukraine Security Assistance Initiative, or a particular recipient military. The failed proposal does not reallocate the money to a domestic program or repeal all assistance authorities.\n\nThe bill includes a $117.988-million Overseas Humanitarian, Disaster, and Civic Aid appropriation through September30,2027 and operation-and-maintenance humanitarian funding under section8011. Its incorporated 10 U.S.C.401 authority expressly permits conditional medical, surgical and dental care in rural or professionally underserved areas, as well as related training, veterinary care, wells and basic sanitation; 10 U.S.C.2561 addresses humanitarian purposes worldwide. Accordingly, the country-wide funding prohibition would also foreclose use of this bill’s funds for otherwise qualifying humanitarian medical assistance to Ukraine. Proposed Health membership rests on that explicit intersection of the prohibition and the incorporated care authority, not on a general claim that war affects health. Neither text establishes an existing Ukrainian medical project, a guaranteed allocation, a medical-only dollar amount, or the number of people affected.\n\nEligibility restrictions remain material: section401 requires authorized military operations, shared-security and military-readiness determinations, State approval, nonduplication and exclusion of military or paramilitary beneficiaries. The parent bill’s existing section8101 prohibition concerning the Azov Battalion, Third Separate Assault Brigade and successors also remains separate. Opposing this broader country prohibition is not a vote for every possible recipient, program or future expenditure; supporting it is not an established position on all humanitarian aid. Both recorded-member choices are applied mechanically. Roll209 failed and is distinct from the overseas-account deletion, the HIV-education minimum instruction and the separately represented final passage.",
       "source": {
         "source_id": "clerk:119:1:209",
         "url": "https://clerk.house.gov/evs/2025/roll209.xml",
         "raw_sha256": "5980551d75abdc75a2130a2b735a8aac2c062915189354e98dad9c9224a83562",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d4d4947f21de17458d9ad0356b1a2f4c5b953aed3f3afee79b10d37afa241bd4",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4016:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4016",
       "member_action": "nay",
@@ -13787,26 +13791,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Part A amendment116 in House Report119-199 adds a prohibition on using any funds made available by H.R.4016 for assistance to Ukraine. The July17 legislative-day Record prints the same instruction and binds it to roll209 after midnight. It names a country and the source of money; it does not limit the prohibition to weapons, the Ukraine Security Assistance Initiative, or a particular recipient military. The failed proposal does not reallocate the money to a domestic program or repeal all assistance authorities.\n\nThe bill includes a $117.988-million Overseas Humanitarian, Disaster, and Civic Aid appropriation through September30,2027 and operation-and-maintenance humanitarian funding under section8011. Its incorporated 10 U.S.C.401 authority expressly permits conditional medical, surgical and dental care in rural or professionally underserved areas, as well as related training, veterinary care, wells and basic sanitation; 10 U.S.C.2561 addresses humanitarian purposes worldwide. Accordingly, the country-wide funding prohibition would also foreclose use of this bill’s funds for otherwise qualifying humanitarian medical assistance to Ukraine. Proposed Health membership rests on that explicit intersection of the prohibition and the incorporated care authority, not on a general claim that war affects health. Neither text establishes an existing Ukrainian medical project, a guaranteed allocation, a medical-only dollar amount, or the number of people affected.\n\nEligibility restrictions remain material: section401 requires authorized military operations, shared-security and military-readiness determinations, State approval, nonduplication and exclusion of military or paramilitary beneficiaries. The parent bill’s existing section8101 prohibition concerning the Azov Battalion, Third Separate Assault Brigade and successors also remains separate. Opposing this broader country prohibition is not a vote for every possible recipient, program or future expenditure; supporting it is not an established position on all humanitarian aid. Both recorded-member choices are applied mechanically. Roll209 failed and is distinct from the overseas-account deletion, the HIV-education minimum instruction and the separately represented final passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:209",
           "url": "https://clerk.house.gov/evs/2025/roll209.xml",
           "raw_sha256": "5980551d75abdc75a2130a2b735a8aac2c062915189354e98dad9c9224a83562",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d4d4947f21de17458d9ad0356b1a2f4c5b953aed3f3afee79b10d37afa241bd4",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm",
+          "raw_sha256": "26861f698ea0e315ebe1c0764dd28eca10bbbc40946141389be01065173ce60b",
+          "governed_bytes_sha256": "589e38270b5ce9121778f1d803072334505ae1dc5c6608995ecd9c2273198b0c"
+        },
+        {
+          "source_id": "govinfo:10usc401-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "raw_sha256": "08340325e06a23e6b1baf535d90ad4af7f231ad37fada0922e60779ef2c1559c",
+          "governed_bytes_sha256": "3db2bfe2bbc67b3d62c5d9afa4c6fd09b8aaef9dc604287bf931eb421295c5ac"
+        },
+        {
+          "source_id": "govinfo:10usc2561-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm",
+          "raw_sha256": "8933cd4dba8c3c227cbc14c6f2228ead6e678efabf9c46b28d07a9d57b6ffe8e",
+          "governed_bytes_sha256": "facb94e14c1e8589db525fb06299b29e12211634340d5f93403b56dd5bb73f15"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:209",
+        "source_ids": [
+          "clerk:119:1:209",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh",
+          "govinfo:10usc401-2024",
+          "govinfo:10usc2561-2024",
+          "congressional-record:2025-07-17"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:209",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Part A amendment116 exact instruction and full debate Record pp73–74 read: bill-specific prohibition on assistance to Ukraine, not an account-wide dollar reduction. Bind roll209 to Record p95 and review the complete relevant RH assistance scope/incorporated authorities before membership; do not infer solely from Ukraine/title or copy military-only assumptions. Final-passage RH/EH substantive review remains unfinished."
-      }
+        "shared_review_record_sha256": "d9a7795d5a7595d6af83c1b7951511a6e838f04bfa91c2e9f0728f1ac2f7e704"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:210",
@@ -13815,13 +13864,14 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Part A amendment277 adds only a prohibition on use of this Act’s funds for assistance to the Lebanese Armed Forces. Report119-199 and the July17 Record bind that full instruction to roll210; it failed. Unlike the country-wide Ukraine amendment, this recipient-specific military restriction does not reach all Lebanese civilian humanitarian assistance. RH sections8103 and8107 and incorporated10USC333 concern training/equipment, defense services, supplies, small-scale construction and capacity for enumerated security operations, with State concurrence, human-rights and reporting conditions. They do not establish a specified medical-care, health-insurance or social-service delivery mechanism for this exact recipient restriction. Section401’s humanitarian medical-care authority expressly excludes direct or indirect assistance to military or paramilitary activity, so that civilian-care provision cannot simply be imported into this amendment. No separate Health mechanism is supported by the exact public action; general effects of conflict or political claims in debate do not supply one. This proposed exclusion is not a claim that military assistance can never have health consequences, and the measure does not prohibit all U.S. funding for Lebanon.",
       "source": {
         "source_id": "clerk:119:1:210",
         "url": "https://clerk.house.gov/evs/2025/roll210.xml",
         "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -13832,26 +13882,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Part A amendment277 adds only a prohibition on use of this Act’s funds for assistance to the Lebanese Armed Forces. Report119-199 and the July17 Record bind that full instruction to roll210; it failed. Unlike the country-wide Ukraine amendment, this recipient-specific military restriction does not reach all Lebanese civilian humanitarian assistance. RH sections8103 and8107 and incorporated10USC333 concern training/equipment, defense services, supplies, small-scale construction and capacity for enumerated security operations, with State concurrence, human-rights and reporting conditions. They do not establish a specified medical-care, health-insurance or social-service delivery mechanism for this exact recipient restriction. Section401’s humanitarian medical-care authority expressly excludes direct or indirect assistance to military or paramilitary activity, so that civilian-care provision cannot simply be imported into this amendment. No separate Health mechanism is supported by the exact public action; general effects of conflict or political claims in debate do not supply one. This proposed exclusion is not a claim that military assistance can never have health consequences, and the measure does not prohibit all U.S. funding for Lebanon.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:210",
           "url": "https://clerk.house.gov/evs/2025/roll210.xml",
           "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm",
+          "raw_sha256": "26861f698ea0e315ebe1c0764dd28eca10bbbc40946141389be01065173ce60b",
+          "governed_bytes_sha256": "589e38270b5ce9121778f1d803072334505ae1dc5c6608995ecd9c2273198b0c"
+        },
+        {
+          "source_id": "govinfo:10usc333-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapIV-sec333.htm",
+          "raw_sha256": "bde3ff89627262fce3502255b4de7f48e6be1ebdaf207015dcf2bbf4278cbd20",
+          "governed_bytes_sha256": "210643180ef93c76a1866f62e82b78a56d40bb35cde516b8d358e4876210726e"
+        },
+        {
+          "source_id": "govinfo:10usc401-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "raw_sha256": "08340325e06a23e6b1baf535d90ad4af7f231ad37fada0922e60779ef2c1559c",
+          "governed_bytes_sha256": "3db2bfe2bbc67b3d62c5d9afa4c6fd09b8aaef9dc604287bf931eb421295c5ac"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:210",
+        "source_ids": [
+          "clerk:119:1:210",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh",
+          "govinfo:10usc333-2024",
+          "govinfo:10usc401-2024",
+          "congressional-record:2025-07-17"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:210",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Part A amendment277 exact instruction and debate Record pp75–76 read; p77 continuation still to read. Bill-specific prohibition on assistance to Lebanese Armed Forces, not all Lebanese civilian aid. Bind roll210 to Record p96 and trace relevant bill assistance mechanisms before membership. Political claims in debate are not accepted evidence of motive, control or outcomes."
-      }
+        "shared_review_record_sha256": "b691e37aa8acd685d8b4276e2b1ea33d1108ccab8a942b6428a72ccf2f20df83"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:211",
@@ -13904,15 +13999,16 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.4016 EH, passed on July18 (legislative day July17),2025, is the full FY2026 Defense appropriations package. The complete public operative text, including sections8001–8175, was read. It funds military personnel, operations, procurement, research, working capital, intelligence and other Defense programs and applies foreign-assistance, procurement, personnel, transfer and policy restrictions. Proposed Health membership follows from explicit care financing and care restrictions, not from the bill’s defense title or a broad prediction about military activity. House passage is not enactment or proof that money was spent.\n\nThe Defense Health Program heading starts at $40,917,184,000 and contains net floor additions of $33 million, producing a gross heading amount of $40,950,184,000 before the package’s general reductions and execution rules. Its components are $38,766,742,000 for operation and maintenance (up to $21,023,765,000 for TRICARE contracts), $354,821,000 for procurement through September30,2028 and $1,828,621,000 for research, development, test and evaluation through September30,2027. Up to one percent of operation-and-maintenance funding may carry over through September30,2027. Within research, the EH’s medical-research minimum is $701 million and its military-linked HIV-prevention education minimum is $14 million, primarily for activities in African nations. The earlier adopted amendment245 increased the research minimum by $1 million and reduced the HIV minimum by $1 million; the failed roll206 instruction to reduce it by a further $15 million is not included. Equal increases and decreases elsewhere in the heading are not net new appropriations. Quarterly electronic-health-record reporting and GAO performance reviews remain.\n\nThe public committee tables divide care funding among in-house and private-sector care, support, information systems, education, facilities, procurement and multiple research programs. Their image-only pages were visually checked. They also contain a separate $20-million HIV/AIDS program increase alongside the $15-million base global-prevention line, so neither the statutory minimum nor its reduction can be described as all HIV funding. These are pre-floor committee figures; later EH instructions control the stated final heading amounts. Some committee narrative cancer-program figures differ from the corresponding tables, so this candidate does not invent a harmonized final disease-by-disease allocation. Section8006 gives the specified explanatory-statement and classified-annex tables legal effect and regulates transfers. The classified annex was not accessed; this candidate makes no claim about its hidden project details. Sections8154,8156 and8157 impose $3 billion, $3.75 billion and $1 billion in general reductions, with specified intelligence exclusions; section8155 separately reduces titleII by $1 billion. These provisions do not assign an exact further cut to a named Health account in their text, so the gross Health figure is not a guaranteed executed total.\n\nOther direct provisions retain the overseas humanitarian account and section8011’s conditional military-linked humanitarian care, including specified Pacific patient transport/care in Hawaii. Section8038 sets military-retail tobacco price rules. Section8042 generally bars a contractor from gaining a conversion-competition advantage by omitting employee health insurance or contributing less than the referenced civilian-employee contribution; named nonprofit/tribal and depot exceptions remain. Section8047 provides a conditional $25-million Red Cross grant alongside $24 million for the USO. Sections8062–63 permit up to $11 million from each named Army, Navy and Air Force operation-and-maintenance account for their Fisher House/Suite central funds and a separate conditional $5-million construction/furnishing grant for military families facing illness or hospitalization. Incorporated10USC2493 defines the temporary housing, eligible patients/families and supporting persons, administration and fees; this is not unrestricted housing assistance. Section8082 expressly permits up to $165 million in Defense Health operation-and-maintenance transfers to the joint DoD–VA fund for the integrated Lovell center, plus additional transfers on written notification. The historical fund and combined-facility provisions explain its mechanism; their original termination text is not treated as the current bill’s funding cutoff. The drug account includes $135.567 million for drug-demand reduction within broader interdiction and military programs.\n\nSection8122 applies the named seriously or severely ill/injured active-duty service-member assisted-reproduction policy and guidance without the embryo-cryopreservation/storage time limits in partsIII(G) andIV(H), and includes storage without a duration limit in assisted reproductive technology. The publicly filed historical implementing guidance binds those old limits; the reused April2024 Federal Register document records later DoD changes to marital-status and donated-gamete restrictions. This candidate does not portray all2012 eligibility terms as unchanged in2025, promise universal IVF coverage, or claim this recurring appropriations provision was the first time the storage limit was removed.\n\nThe package also bars this Act’s money for enforcing COVID-19 mask mandates, requiring COVID-19 vaccination of service members or DoD civilian employees, or making that vaccination a DoDEA-school attendance prerequisite. Section8138 bars specified gender-transition procedures, referrals and duty-station changes for minor dependents through EFMP; section8145 separately bars spending for gender-affirming surgery or hormone therapy. Section8142 blocks funds for the October20,2022 memorandum, its successors or substantially similar policy. That memorandum includes pregnancy-information privacy, provider licensing/legal support, administrative absence and travel for non-covered reproductive care, walk-in contraception and patient information. The rider is not accurately reduced to paying for abortions alone, and this account of its text does not assume every2022 policy was still operative at the vote. In the other direction, section8168 bars use of bill funds to discontinue or restrict civilian access to sexual-assault forensic examinations available as of January20,2025. Sections8129–30 restrict specified foreign laboratories and EcoHealth Alliance work; section8150 preserves the named DoD animal-research instruction rather than establishing a new clinical benefit.\n\nThese funding and restriction provisions coexist in one cross-domain choice. Foushee and Massie each recorded Nay on passage; neither Nay establishes opposition to every medical appropriation or support for every alternative care policy. The separately represented failed amendments204,206 and209 remain distinct choices within the same episode. The other recorded assistance amendments remain in the membership inventory as proposed exclusions, and the recommittal remains procedural. No change of position, motive or general Health stance is inferred from the sequence.",
       "source": {
         "source_id": "clerk:119:1:212",
         "url": "https://clerk.house.gov/evs/2025/roll212.xml",
         "raw_sha256": "cbb05d1542d80297df8080d6e104646225eea308e05e34d5c4f6f24cfb74709f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4016:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4016",
       "member_action": "nay",
@@ -13921,26 +14017,113 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.4016 EH, passed on July18 (legislative day July17),2025, is the full FY2026 Defense appropriations package. The complete public operative text, including sections8001–8175, was read. It funds military personnel, operations, procurement, research, working capital, intelligence and other Defense programs and applies foreign-assistance, procurement, personnel, transfer and policy restrictions. Proposed Health membership follows from explicit care financing and care restrictions, not from the bill’s defense title or a broad prediction about military activity. House passage is not enactment or proof that money was spent.\n\nThe Defense Health Program heading starts at $40,917,184,000 and contains net floor additions of $33 million, producing a gross heading amount of $40,950,184,000 before the package’s general reductions and execution rules. Its components are $38,766,742,000 for operation and maintenance (up to $21,023,765,000 for TRICARE contracts), $354,821,000 for procurement through September30,2028 and $1,828,621,000 for research, development, test and evaluation through September30,2027. Up to one percent of operation-and-maintenance funding may carry over through September30,2027. Within research, the EH’s medical-research minimum is $701 million and its military-linked HIV-prevention education minimum is $14 million, primarily for activities in African nations. The earlier adopted amendment245 increased the research minimum by $1 million and reduced the HIV minimum by $1 million; the failed roll206 instruction to reduce it by a further $15 million is not included. Equal increases and decreases elsewhere in the heading are not net new appropriations. Quarterly electronic-health-record reporting and GAO performance reviews remain.\n\nThe public committee tables divide care funding among in-house and private-sector care, support, information systems, education, facilities, procurement and multiple research programs. Their image-only pages were visually checked. They also contain a separate $20-million HIV/AIDS program increase alongside the $15-million base global-prevention line, so neither the statutory minimum nor its reduction can be described as all HIV funding. These are pre-floor committee figures; later EH instructions control the stated final heading amounts. Some committee narrative cancer-program figures differ from the corresponding tables, so this candidate does not invent a harmonized final disease-by-disease allocation. Section8006 gives the specified explanatory-statement and classified-annex tables legal effect and regulates transfers. The classified annex was not accessed; this candidate makes no claim about its hidden project details. Sections8154,8156 and8157 impose $3 billion, $3.75 billion and $1 billion in general reductions, with specified intelligence exclusions; section8155 separately reduces titleII by $1 billion. These provisions do not assign an exact further cut to a named Health account in their text, so the gross Health figure is not a guaranteed executed total.\n\nOther direct provisions retain the overseas humanitarian account and section8011’s conditional military-linked humanitarian care, including specified Pacific patient transport/care in Hawaii. Section8038 sets military-retail tobacco price rules. Section8042 generally bars a contractor from gaining a conversion-competition advantage by omitting employee health insurance or contributing less than the referenced civilian-employee contribution; named nonprofit/tribal and depot exceptions remain. Section8047 provides a conditional $25-million Red Cross grant alongside $24 million for the USO. Sections8062–63 permit up to $11 million from each named Army, Navy and Air Force operation-and-maintenance account for their Fisher House/Suite central funds and a separate conditional $5-million construction/furnishing grant for military families facing illness or hospitalization. Incorporated10USC2493 defines the temporary housing, eligible patients/families and supporting persons, administration and fees; this is not unrestricted housing assistance. Section8082 expressly permits up to $165 million in Defense Health operation-and-maintenance transfers to the joint DoD–VA fund for the integrated Lovell center, plus additional transfers on written notification. The historical fund and combined-facility provisions explain its mechanism; their original termination text is not treated as the current bill’s funding cutoff. The drug account includes $135.567 million for drug-demand reduction within broader interdiction and military programs.\n\nSection8122 applies the named seriously or severely ill/injured active-duty service-member assisted-reproduction policy and guidance without the embryo-cryopreservation/storage time limits in partsIII(G) andIV(H), and includes storage without a duration limit in assisted reproductive technology. The publicly filed historical implementing guidance binds those old limits; the reused April2024 Federal Register document records later DoD changes to marital-status and donated-gamete restrictions. This candidate does not portray all2012 eligibility terms as unchanged in2025, promise universal IVF coverage, or claim this recurring appropriations provision was the first time the storage limit was removed.\n\nThe package also bars this Act’s money for enforcing COVID-19 mask mandates, requiring COVID-19 vaccination of service members or DoD civilian employees, or making that vaccination a DoDEA-school attendance prerequisite. Section8138 bars specified gender-transition procedures, referrals and duty-station changes for minor dependents through EFMP; section8145 separately bars spending for gender-affirming surgery or hormone therapy. Section8142 blocks funds for the October20,2022 memorandum, its successors or substantially similar policy. That memorandum includes pregnancy-information privacy, provider licensing/legal support, administrative absence and travel for non-covered reproductive care, walk-in contraception and patient information. The rider is not accurately reduced to paying for abortions alone, and this account of its text does not assume every2022 policy was still operative at the vote. In the other direction, section8168 bars use of bill funds to discontinue or restrict civilian access to sexual-assault forensic examinations available as of January20,2025. Sections8129–30 restrict specified foreign laboratories and EcoHealth Alliance work; section8150 preserves the named DoD animal-research instruction rather than establishing a new clinical benefit.\n\nThese funding and restriction provisions coexist in one cross-domain choice. Foushee and Massie each recorded Nay on passage; neither Nay establishes opposition to every medical appropriation or support for every alternative care policy. The separately represented failed amendments204,206 and209 remain distinct choices within the same episode. The other recorded assistance amendments remain in the membership inventory as proposed exclusions, and the recommittal remains procedural. No change of position, motive or general Health stance is inferred from the sequence.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:212",
           "url": "https://clerk.house.gov/evs/2025/roll212.xml",
           "raw_sha256": "cbb05d1542d80297df8080d6e104646225eea308e05e34d5c4f6f24cfb74709f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "255f3ccdfbc81230dc939ee240523cd8d6b63c466d0ab453039aedbad0b61caa",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr4016eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm",
+          "raw_sha256": "9ce2b64a299854a87fec9ae8233ffb608ff1c3ec0ad6fd7a55b2227c20cf3340",
+          "governed_bytes_sha256": "6729ee41a472f97561aa455a2df895ee480d67772aba3fd424177fe9e792cfb2"
+        },
+        {
+          "source_id": "govinfo:10usc2493-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm",
+          "raw_sha256": "16ae1f1241241ada61e7ed10fb2bc7d1b2f8d09719cae0ff973e5b6463bbaaf1",
+          "governed_bytes_sha256": "f920ff9a93a8c0e944a14d8c687b344424edbaaaacca289ad95a728c87d1473d"
+        },
+        {
+          "source_id": "govinfo:pl111-84",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm",
+          "raw_sha256": "1eb8dfbf72393619e4306596f8d110af26e9a16e92b6c4abe7576a9064a1448f",
+          "governed_bytes_sha256": "926d031f8077576c77f747f6399ef0cfebe671ed741d08afb3ff07bc0bafd545"
+        },
+        {
+          "source_id": "govinfo:pl110-417",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm",
+          "raw_sha256": "a262053e9f59add8c34e750b9e2cf9007e83f06b2efbb7035a5009ec3411157d",
+          "governed_bytes_sha256": "a9ea94d3720d5ff4582c93dbc02fca7184f8f99ac8789e49d82d89f4d6c0a31c"
+        },
+        {
+          "source_id": "dod:art-2012-guidance-public-exhibit",
+          "url": "https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf",
+          "raw_sha256": "a43047d473302198bcca40ffd45aac5a6e69d2bdc810d93e2d626c5a6a630f3f",
+          "governed_bytes_sha256": "0164e3a73e3a80d3de19e319b2f875d0e20ada91dd415f97c9ce6ae5b5198199"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "89d9f3ef45323814c9ca372a83448e2309f1d1d4a2053b14d9c72579b987cc64"
+        },
+        {
+          "source_id": "dod:reproductive-care-2022-10-20",
+          "url": "https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care",
+          "raw_sha256": "9e60a24ea41a25bb4ee6ceda747df01a928fbc922faca08d58816f32c3f36ce5",
+          "governed_bytes_sha256": "8227408d3456a23ee85ac3c28dd92e35f4a87bc489f5e628a1baf8b39902806e"
+        },
+        {
+          "source_id": "govinfo:hrpt162-health-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf",
+          "raw_sha256": "b4950ecdf43a57150c741e9b18c16475ed564dbb0e147f4c6059d6c9a3267563",
+          "governed_bytes_sha256": "540dcd029410e18ee014064c1f0aeca3fceb48510da66a151a98040e7947bbaa"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "congressional-record:2025-07-16",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf",
+          "raw_sha256": "0feba16337bfea3173a19d80a0ead10cb7f3a30fdcd3f0c6a3c45308168193e4",
+          "governed_bytes_sha256": "9fbd40e2234f8a30d03f3e7c8473087782182af829201b6778f29f05cf3af67f"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:212",
+        "source_ids": [
+          "clerk:119:1:212",
+          "govinfo:hr4016eh",
+          "govinfo:10usc2493-2024",
+          "govinfo:pl111-84",
+          "govinfo:pl110-417",
+          "dod:art-2012-guidance-public-exhibit",
+          "govinfo:fr2024-07040",
+          "dod:reproductive-care-2022-10-20",
+          "govinfo:hrpt162-health-page-binding",
+          "congressional-record:2025-07-17",
+          "congressional-record:2025-07-16",
+          "govinfo:hrpt199"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:212",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue complete EH reading from character87000 of stored199597-character govinfo:hr4016eh (start of remaining section8016). Prefix0:87000 actually read, including personnel/operations/procurement/research accounts, Health and drug-demand programs, sections8001–8015. Health net additions +$33m; research minimum +$1m, HIV minimum -$1m from earlier adopted amendment245 (July16 Record pp40–41); do not attribute that reduction to rejected roll206. Section8011 alternative humanitarian/medical funding preserved in roll204 meaning. Continue riders, incorporations and amendment reconciliation before final meaning. Rolls209/210 also remain unfinished; all recorded amendments204–210 bind July17 legislative-day Record."
-      }
+        "shared_review_record_sha256": "6e2393d5c7658ca00f4e46f4476b1843e55897f98543711117b4b5446693a7d1"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:213",
@@ -13949,13 +14132,14 @@
       "date": "2025-07-21",
       "measure": "bill_119_hr_3095",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete House-passed operative text directs the Postal Service to designate unique ZIP Codes for 66 listed communities within270 days. It contains no additional program, medical-care, coverage or social-service provision. Postal addressing is the exact mechanism; names such as Heath, Texas do not establish Health membership. This is a proposed substantive exclusion, not expressive recognition and not a claim that postal access can never affect residents.",
       "source": {
         "source_id": "clerk:119:1:213",
         "url": "https://clerk.house.gov/evs/2025/roll213.xml",
         "raw_sha256": "85d1506258d81e173e8b7ecc6a0b843ea853159ed87a22421b1fc6c6676b01bb",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "8ba84407061f17df25177c116d4f308a109885171f9b87bf4a67e906b3ccb2ae",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -13966,25 +14150,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete House-passed operative text directs the Postal Service to designate unique ZIP Codes for 66 listed communities within270 days. It contains no additional program, medical-care, coverage or social-service provision. Postal addressing is the exact mechanism; names such as Heath, Texas do not establish Health membership. This is a proposed substantive exclusion, not expressive recognition and not a claim that postal access can never affect residents.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:213",
           "url": "https://clerk.house.gov/evs/2025/roll213.xml",
           "raw_sha256": "85d1506258d81e173e8b7ecc6a0b843ea853159ed87a22421b1fc6c6676b01bb",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "8ba84407061f17df25177c116d4f308a109885171f9b87bf4a67e906b3ccb2ae",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3095eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3095eh/html/BILLS-119hr3095eh.htm",
+          "raw_sha256": "5aac9bec17c39b4eb0fd237d5d6fd2c467b0e55d1307969483072620f80f8ddb",
+          "governed_bytes_sha256": "b3b667035b10bef7739ac8a022e029e245c718c8ec61f6c0e450b4ceb03d62dd"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:213",
+        "source_ids": [
+          "clerk:119:1:213",
+          "govinfo:hr3095eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:213",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "13e4a9b5c732efe6e4b836481d6d3b2413fc46382d0d1d4b1e3b9bed8db32fa6"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:214",
@@ -13993,13 +14195,14 @@
       "date": "2025-07-21",
       "measure": "bill_119_hr_3351",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Section2 exempts SEC Advocate for Small Business Capital Formation actions from the general Paperwork Reduction Act collection-of-information treatment, while expressly retaining44USC3506(c)(1), (c)(4), (i) and3507(a)(1)(A), with exceptions for OMB submission, control-number display and clearance indications. The incorporated15USC78d(j) office assists businesses/investors with securities regulation and capital formation; retained44USC provisions concern collection review, burden reduction and small-business liaison. The exact action changes that office’s information-collection process, not a health-benefit, medical-research or care-delivery mechanism. General paperwork effects on businesses do not independently establish Health membership.",
       "source": {
         "source_id": "clerk:119:1:214",
         "url": "https://clerk.house.gov/evs/2025/roll214.xml",
         "raw_sha256": "d8ca3e4e7407dc433fe4b666b3c979d5346b5bb1cd9c5a42533dd526abc4e4f5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3351cc9af182597d58dd1a75f25e875845e2e3dd1989db99ddb82a436b987e0c",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -14010,25 +14213,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Section2 exempts SEC Advocate for Small Business Capital Formation actions from the general Paperwork Reduction Act collection-of-information treatment, while expressly retaining44USC3506(c)(1), (c)(4), (i) and3507(a)(1)(A), with exceptions for OMB submission, control-number display and clearance indications. The incorporated15USC78d(j) office assists businesses/investors with securities regulation and capital formation; retained44USC provisions concern collection review, burden reduction and small-business liaison. The exact action changes that office’s information-collection process, not a health-benefit, medical-research or care-delivery mechanism. General paperwork effects on businesses do not independently establish Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:214",
           "url": "https://clerk.house.gov/evs/2025/roll214.xml",
           "raw_sha256": "d8ca3e4e7407dc433fe4b666b3c979d5346b5bb1cd9c5a42533dd526abc4e4f5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3351cc9af182597d58dd1a75f25e875845e2e3dd1989db99ddb82a436b987e0c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3351eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3351eh/html/BILLS-119hr3351eh.htm",
+          "raw_sha256": "0b1ccc48aef5d8c804f3ba13ecf3317f71173cb867090126117ea765e79fa36e",
+          "governed_bytes_sha256": "db12424ec5b8add8621770d7f5edfae705cb059a0c872ef864d16a0c23e31a29"
+        },
+        {
+          "source_id": "govinfo:15usc78d-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2B-sec78d.htm",
+          "raw_sha256": "7e728b5d56327a8c6d72db673008fb6fdd06ddeed207be849d5ccbddbf4dd576",
+          "governed_bytes_sha256": "66cad9a6e246c021e978a5ecd486a8069e9def28feef0f6af27e6fc18ef1115e"
+        },
+        {
+          "source_id": "govinfo:44usc3506-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title44/html/USCODE-2024-title44-chap35-subchapI-sec3506.htm",
+          "raw_sha256": "45f881941b8d10ef40fb6a5383840206567768a9c57786d1c2bd7452692ff539",
+          "governed_bytes_sha256": "ad00ff62bfa1074cf43a9f3a17b71d6d1e24336b99fbbfc81e32345ad553dc25"
+        },
+        {
+          "source_id": "govinfo:44usc3507-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title44/html/USCODE-2024-title44-chap35-subchapI-sec3507.htm",
+          "raw_sha256": "f1922fc0a2d79b2c9eee1fd57a1e3389813a145c4256f9c00a886c47bfc5a1ba",
+          "governed_bytes_sha256": "5628dfc9eefce85e99b5ec8c1515f55e70fb1bc46a92a240ced02ccc59b2f7dd"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:214",
+        "source_ids": [
+          "clerk:119:1:214",
+          "govinfo:hr3351eh",
+          "govinfo:15usc78d-2024",
+          "govinfo:44usc3506-2024",
+          "govinfo:44usc3507-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:214",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d1b8021f0623411b13a6c0a0b519eea3c16cb81d1c36ddf2a5952e593832ab44"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:215",
@@ -14037,13 +14279,14 @@
       "date": "2025-07-22",
       "measure": "bill_119_hr_3937",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete EH directs a fair-market-value conveyance of approximately14 acres of Chequamegon-Nicolet National Forest to Tony’s Wabeno Redi-Mix, subject to the mapped boundary, survey, appraisal, offer timing, valid existing rights, quitclaim and company-paid administrative/environmental costs. Section3 separately requires an Interior report on stone/sand/gravel permitting timelines, overlap and recommended improvements. This land conveyance and permitting-review action specifies no health service, insurance, medical-research or social-service benefit. Environmental analysis and possible economic effects are not sufficient Health membership evidence.",
       "source": {
         "source_id": "clerk:119:1:215",
         "url": "https://clerk.house.gov/evs/2025/roll215.xml",
         "raw_sha256": "188ae5065423be68be02d58b3a799d02e4d1852db121b5daf1c451f954bf097e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "2c6a5cf4f648c1461c7407a147c77c95b852b5092ea745df68a57d434fe3e940",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -14054,25 +14297,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete EH directs a fair-market-value conveyance of approximately14 acres of Chequamegon-Nicolet National Forest to Tony’s Wabeno Redi-Mix, subject to the mapped boundary, survey, appraisal, offer timing, valid existing rights, quitclaim and company-paid administrative/environmental costs. Section3 separately requires an Interior report on stone/sand/gravel permitting timelines, overlap and recommended improvements. This land conveyance and permitting-review action specifies no health service, insurance, medical-research or social-service benefit. Environmental analysis and possible economic effects are not sufficient Health membership evidence.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:215",
           "url": "https://clerk.house.gov/evs/2025/roll215.xml",
           "raw_sha256": "188ae5065423be68be02d58b3a799d02e4d1852db121b5daf1c451f954bf097e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "2c6a5cf4f648c1461c7407a147c77c95b852b5092ea745df68a57d434fe3e940",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3937eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3937eh/html/BILLS-119hr3937eh.htm",
+          "raw_sha256": "f2e7db52f8e51b347638912cb3907578e7211ba3f2f39fa3e52ae4b7d664e0a1",
+          "governed_bytes_sha256": "fc6a176b549af3dfc5f92fd9509c3e350420e3e4f4716529ea78bb2f372c3a01"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:215",
+        "source_ids": [
+          "clerk:119:1:215",
+          "govinfo:hr3937eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:215",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "aa24d3697a6f40d5f5459a23ce4dc84fd41ec2f1dad6d0ae4ea682c25f8f248b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:216",
@@ -14081,13 +14342,14 @@
       "date": "2025-07-22",
       "measure": "bill_119_hr_1917",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete EH establishes Fish and Wildlife Service mass marking of Great Lakes hatchery-produced fish, with equipment/personnel, data collection and management, and cooperation with States, Tribes and other agencies for fish stocking/restoration and fisheries management. It authorizes $2.7million annually for fiscal2026–2030 rather than appropriating it. Fish-population monitoring and the bill’s recreational/economic findings do not supply a human medical, insurance or social-service mechanism. No human-health consequence is inferred from fish conservation.",
       "source": {
         "source_id": "clerk:119:1:216",
         "url": "https://clerk.house.gov/evs/2025/roll216.xml",
         "raw_sha256": "edb2cd1cdcf5178bb2eca0d480bfe8d79d4693f70ad1f0edc3c4fb99a25ceffe",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f2c1cd9d0b44b35f3999f7a5a6143196863980d3bf9fb96a20a08f510b21d92b",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -14098,25 +14360,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete EH establishes Fish and Wildlife Service mass marking of Great Lakes hatchery-produced fish, with equipment/personnel, data collection and management, and cooperation with States, Tribes and other agencies for fish stocking/restoration and fisheries management. It authorizes $2.7million annually for fiscal2026–2030 rather than appropriating it. Fish-population monitoring and the bill’s recreational/economic findings do not supply a human medical, insurance or social-service mechanism. No human-health consequence is inferred from fish conservation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:216",
           "url": "https://clerk.house.gov/evs/2025/roll216.xml",
           "raw_sha256": "edb2cd1cdcf5178bb2eca0d480bfe8d79d4693f70ad1f0edc3c4fb99a25ceffe",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f2c1cd9d0b44b35f3999f7a5a6143196863980d3bf9fb96a20a08f510b21d92b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1917eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1917eh/html/BILLS-119hr1917eh.htm",
+          "raw_sha256": "3fcb12f9983d6d3e4f7a016862a7e67c62c90232402a2d3a0c952dc09a64a3d3",
+          "governed_bytes_sha256": "8cf8c02decb1334920fbcd52086cac5da159779537d8378cd7c2d85e3e58fb80"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:216",
+        "source_ids": [
+          "clerk:119:1:216",
+          "govinfo:hr1917eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:216",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6395f49c5592b054fbda7f8c0368c30d497871ccd7e800169a6cdfff3a08ef79"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:217",
@@ -14125,13 +14405,14 @@
       "date": "2025-07-23",
       "measure": "bill_119_hr_3357",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Section2 requires SEC rules making issuers with two or more stock classes with different voting power disclose specified directors’, nominees’, executive officers’ and greater-than5-percent beneficial holders’ shares and voting-power percentages in proxy/consent solicitations and other Commission-chosen filings. The entire operative change concerns securities ownership/voting disclosure. It contains no care, insurance, medical-research or social-service delivery mechanism; generic investor transparency is not enough to propose Health membership.",
       "source": {
         "source_id": "clerk:119:1:217",
         "url": "https://clerk.house.gov/evs/2025/roll217.xml",
         "raw_sha256": "0325cc870a4d79d219d738b2475d80df9a8298d4020850033aab76200a5f9acb",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "5bb87d32dd511701f961a9701cfc12dbfd225b931f1c971e5a669ac1d4580294",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -14142,25 +14423,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Section2 requires SEC rules making issuers with two or more stock classes with different voting power disclose specified directors’, nominees’, executive officers’ and greater-than5-percent beneficial holders’ shares and voting-power percentages in proxy/consent solicitations and other Commission-chosen filings. The entire operative change concerns securities ownership/voting disclosure. It contains no care, insurance, medical-research or social-service delivery mechanism; generic investor transparency is not enough to propose Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:217",
           "url": "https://clerk.house.gov/evs/2025/roll217.xml",
           "raw_sha256": "0325cc870a4d79d219d738b2475d80df9a8298d4020850033aab76200a5f9acb",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "5bb87d32dd511701f961a9701cfc12dbfd225b931f1c971e5a669ac1d4580294",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3357eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3357eh/html/BILLS-119hr3357eh.htm",
+          "raw_sha256": "f839b9b15857547340d5c4580ccd0a624fe43c2a112e55605fe3545a664facb7",
+          "governed_bytes_sha256": "4e4796b199f56db28e372c01fc3f80cc5b342197ff8a5d14c5394bcbc23d9a76"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:217",
+        "source_ids": [
+          "clerk:119:1:217",
+          "govinfo:hr3357eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:217",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "59645631fe1ac4a056a7a460803d1d45b3f22763df6744c20c8415b51d26a540"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:218",
@@ -14203,7 +14502,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.4275 EH and Clerk captured locally. EH444258 characters: contents and first authorization/tail portions inspected; most operative text remains unread. Read in bounded chunks and trace incorporated Health authorities before authoring. Do not treat source capture or the contents list as completed substantive review."
       }
     },
     {
@@ -14213,13 +14513,14 @@
       "date": "2025-09-02",
       "measure": "bill_119_hr_4216",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Sections3–4 require State/Defense annual review of the Foreign Military Sales-only list, considering delivery timing, workload, security and competitiveness, and a report within30 days on findings, contemplated list changes and delays. Section2’s defense-sales policy statement remains nonbinding. The incorporated Arms Export Control Act chapter2 and section38 identify government-to-government sales versus licensed commercial exports;22USC2778(a)(3) permits making a government sale a condition of export. The bill changes review/reporting of that channel choice, not itself a specified medical-care, insurance or social-service program, recipient or supply exemption. No downstream health consequence of arms sales or legislative policy assertion is adopted as a finding. The possible classified report annex was not accessed and is not needed to read this public review/report duty.",
       "source": {
         "source_id": "clerk:119:1:219",
         "url": "https://clerk.house.gov/evs/2025/roll219.xml",
         "raw_sha256": "08aac5958654815868a39aaa5c5c09383ddd105979bce37766d4499e37cfd23f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0614c8ac74dd1e38cc1063c70ea3159ecb484c97f13ef7cae980632283eb5a2f",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -14230,25 +14531,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Sections3–4 require State/Defense annual review of the Foreign Military Sales-only list, considering delivery timing, workload, security and competitiveness, and a report within30 days on findings, contemplated list changes and delays. Section2’s defense-sales policy statement remains nonbinding. The incorporated Arms Export Control Act chapter2 and section38 identify government-to-government sales versus licensed commercial exports;22USC2778(a)(3) permits making a government sale a condition of export. The bill changes review/reporting of that channel choice, not itself a specified medical-care, insurance or social-service program, recipient or supply exemption. No downstream health consequence of arms sales or legislative policy assertion is adopted as a finding. The possible classified report annex was not accessed and is not needed to read this public review/report duty.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:219",
           "url": "https://clerk.house.gov/evs/2025/roll219.xml",
           "raw_sha256": "08aac5958654815868a39aaa5c5c09383ddd105979bce37766d4499e37cfd23f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0614c8ac74dd1e38cc1063c70ea3159ecb484c97f13ef7cae980632283eb5a2f",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr4216eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4216eh/html/BILLS-119hr4216eh.htm",
+          "raw_sha256": "6779df145571b74626ef39621e99e044cb709c1135652967fb716ca86beae4bd",
+          "governed_bytes_sha256": "8ec52092909e550499493545e533dd8202bc1e894aa043af03a833960042d058"
+        },
+        {
+          "source_id": "govinfo:22usc2778-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap39-subchapIII-sec2778.htm",
+          "raw_sha256": "266e3a46ac06a9475ce4bd7951072616f321a03215dedb25245ddb955d4f5111",
+          "governed_bytes_sha256": "f13e50cbc59ea5ac3b8673f049b10045aee276883b42c236f0eb977ce74d5136"
+        },
+        {
+          "source_id": "govinfo:22usc-ch39II-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap39-subchapII.htm",
+          "raw_sha256": "1fa22610594a913ac5260b2f0d58817a30cf0815cf1f3005620379b73d62e1ae",
+          "governed_bytes_sha256": "50ae10b623dd84e6fbab613bfdecd30dcc0351c609b6350970151feb1abf36f2"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:219",
+        "source_ids": [
+          "clerk:119:1:219",
+          "govinfo:hr4216eh",
+          "govinfo:22usc2778-2024",
+          "govinfo:22usc-ch39II-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:219",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4758263e91a3bd3a7d3f53c35c85069786efdafc1a8d504375eb12e723203fdc"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:220",
@@ -14257,15 +14590,16 @@
       "date": "2025-09-02",
       "measure": "bill_119_hr_747",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.747 section3 expands the Fentanyl Sanctions Act’s foreign-opioid-trafficker definition to include specified Chinese entities involved in synthetic opioids or their pharmaceutical ingredients/chemicals that fail credible prevention steps, and specified senior or political officials with significant regulatory or enforcement responsibilities who aid and abet trafficking, including intentional inaction. It requires reporting whether heads of four named Chinese agencies meet the definition; it does not automatically find those officials responsible. The incorporated21USC2302 definitions connect the amendment to the existing2311–2313 designation and sanctions framework, which requires at least five sanctions for covered entities or four for individuals and permits specified financial, property, procurement, investment and entry restrictions.\n\nThe proposed Health nexus is the expanded coverage of that framework together with its directly applicable prescription-access boundary, not a title-based inference or a claimed effect on overdose deaths. Existing21USC2314(b) permits a presidential waiver if sanctions would harm U.S. persons’ access to prescription medications, requires a monitoring program to verify a recipient is not trafficking illicit opioids, and requires congressional notice of the determination and reasons within15 days. The bill leaves this conditional protection in place; it neither creates that waiver nor guarantees that it will be exercised for a particular company or patient. The framework also retains renewable180-day humanitarian waivers and other specified waiver/exception provisions. There is no finding that any particular legitimate drug supply is disrupted or protected in practice.\n\nSection3 also extends the2311 report-submission period from five to ten years after December20,2019. It does not amend the separate2334 seven-year termination provision; the reporting extension must not be described as a ten-year extension of all sanctions. Section4 requires at least annual effectiveness/stakeholder/possible-change evaluations when IEEPA powers are used for a drug-trafficking emergency declared within the preceding five years and not terminated, changes consultation/report recipients to specified congressional committees, and adds cost-benefit, alternatives and termination-criteria requirements for covered regulations. It leaves1702(b)’s conditional protection for donations including medicine intact. Section5 excludes goods importation from this Act’s sanctions authority/requirements, with technical data outside the goods definition; that is not a waiver of every restriction imposed by other laws. Section2’s statements about Chinese action remain a nonbinding sense of Congress. The Clerk binds roll220 to the motion to suspend the rules and pass as amended, which passed; this is a substantive whole-measure passage choice under suspension, not a stand-alone procedural control. No new domestic treatment, insurance entitlement or demonstrated health outcome follows from this whole-package vote.",
       "source": {
         "source_id": "clerk:119:1:220",
         "url": "https://clerk.house.gov/evs/2025/roll220.xml",
         "raw_sha256": "4b12a6ab6eb270d244c79d56a474917ea757ea9295375ffe21f3f616fc498939",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr747:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_747",
       "member_action": "yea",
@@ -14274,25 +14608,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.747 section3 expands the Fentanyl Sanctions Act’s foreign-opioid-trafficker definition to include specified Chinese entities involved in synthetic opioids or their pharmaceutical ingredients/chemicals that fail credible prevention steps, and specified senior or political officials with significant regulatory or enforcement responsibilities who aid and abet trafficking, including intentional inaction. It requires reporting whether heads of four named Chinese agencies meet the definition; it does not automatically find those officials responsible. The incorporated21USC2302 definitions connect the amendment to the existing2311–2313 designation and sanctions framework, which requires at least five sanctions for covered entities or four for individuals and permits specified financial, property, procurement, investment and entry restrictions.\n\nThe proposed Health nexus is the expanded coverage of that framework together with its directly applicable prescription-access boundary, not a title-based inference or a claimed effect on overdose deaths. Existing21USC2314(b) permits a presidential waiver if sanctions would harm U.S. persons’ access to prescription medications, requires a monitoring program to verify a recipient is not trafficking illicit opioids, and requires congressional notice of the determination and reasons within15 days. The bill leaves this conditional protection in place; it neither creates that waiver nor guarantees that it will be exercised for a particular company or patient. The framework also retains renewable180-day humanitarian waivers and other specified waiver/exception provisions. There is no finding that any particular legitimate drug supply is disrupted or protected in practice.\n\nSection3 also extends the2311 report-submission period from five to ten years after December20,2019. It does not amend the separate2334 seven-year termination provision; the reporting extension must not be described as a ten-year extension of all sanctions. Section4 requires at least annual effectiveness/stakeholder/possible-change evaluations when IEEPA powers are used for a drug-trafficking emergency declared within the preceding five years and not terminated, changes consultation/report recipients to specified congressional committees, and adds cost-benefit, alternatives and termination-criteria requirements for covered regulations. It leaves1702(b)’s conditional protection for donations including medicine intact. Section5 excludes goods importation from this Act’s sanctions authority/requirements, with technical data outside the goods definition; that is not a waiver of every restriction imposed by other laws. Section2’s statements about Chinese action remain a nonbinding sense of Congress. The Clerk binds roll220 to the motion to suspend the rules and pass as amended, which passed; this is a substantive whole-measure passage choice under suspension, not a stand-alone procedural control. No new domestic treatment, insurance entitlement or demonstrated health outcome follows from this whole-package vote.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:220",
           "url": "https://clerk.house.gov/evs/2025/roll220.xml",
           "raw_sha256": "4b12a6ab6eb270d244c79d56a474917ea757ea9295375ffe21f3f616fc498939",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr747eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm",
+          "raw_sha256": "1563bceb1c6c96edc610788d486d29ad8571f8deecde9aa7423ba8d89e935c48",
+          "governed_bytes_sha256": "d00a8930042d9f7e5d66c8053082264523cf7a2a7f727f660f5a6c4c3e9efeb6"
+        },
+        {
+          "source_id": "govinfo:21usc-ch28-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm",
+          "raw_sha256": "d80f4d7e531d0e73d80a4c1a23395279baa4aa477275b09b862d58e81285e6d9",
+          "governed_bytes_sha256": "5139ab21f702b0c7db15e5c931ca656d2086dfda2f3aca13c7a782814fde3d3f"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6"
+        },
+        {
+          "source_id": "govinfo:50usc1703-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm",
+          "raw_sha256": "e61b2c3230c998148268cddb2e449b68f6752d04a02c531a71f9148f11c06647",
+          "governed_bytes_sha256": "a85b7493b1ffbfd272d3d6de1fd55a67669c15b48402ba679d8a0b5f95e0c332"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "raw_sha256": "2fb228029ad3a85d7afcd5353a75d6d3a99facd9243dfe38f21b9fde06ce781e",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:220",
+        "source_ids": [
+          "clerk:119:1:220",
+          "govinfo:hr747eh",
+          "govinfo:21usc-ch28-2024",
+          "govinfo:50usc1702-2024",
+          "govinfo:50usc1703-2024",
+          "govinfo:50usc1704-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:220",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c74ba4d002b3622e6d4caa9ecbc02f7d7c22f7d6abfc442beafcd1923f0b23e4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:221",
@@ -14379,7 +14759,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.Res.672 complete EH read. Before final procedural rationale, capture/read its deemed-adopted H.Res.668 and605 and tabled H.Res.598. H.R.4553 amendment rules plus H.J.Res.104/105/106 scheduling do not themselves become substantive Health choices."
       }
     },
     {
@@ -14467,7 +14848,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.J.Res.104 EH fully read; it disapproves Miles City November20,2024 ROD/RMP amendment. Capture/read exact referenced plan and GAO June25 opinion/June26 Record S3552–3554 before membership. Do not infer Health from environmental consequences."
       }
     },
     {
@@ -14511,7 +14893,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.J.Res.106 EH fully read; it disapproves Central Yukon November12,2024 ROD/RMP. Capture/read exact referenced plan and GAO June25 opinion/June26 Record S3554–3556 before membership."
       }
     },
     {
@@ -14555,7 +14938,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.J.Res.105 EH fully read; it disapproves North Dakota January14,2025 ROD/RMP. Capture/read exact referenced plan and GAO June25 opinion/June26 Record S3556–3558 before membership."
       }
     },
     {
@@ -35371,11 +35755,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "47 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Distinct insolvency priorities and H.R.4016 humanitarian-account/HIV-minimum amendments preserve alternative bill funding and prior voice-adopted version effects; wider episode review remains unfinished.",
+    "basis": "50 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Exact incorporated legal effects and conditional medical-access limits are preserved; wider membership screening remains incomplete.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "b48c94a7e62fd42469a6e9c8519d682f11e872752169032da6b2dca3e7532fb1",
+  "selection_sha256": "e8e4ca8e3da3891b330ec63dc2e22dbb3221f024af73e2fbbdb99e9fd19c6b8a",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -35397,6 +35781,9 @@
     "house:119:1:200",
     "house:119:1:204",
     "house:119:1:206",
+    "house:119:1:209",
+    "house:119:1:212",
+    "house:119:1:220",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -35426,17 +35813,7 @@
     "house:119:2:53"
   ],
   "unresolved_action_ids": [
-    "house:119:1:209",
-    "house:119:1:210",
-    "house:119:1:212",
-    "house:119:1:213",
-    "house:119:1:214",
-    "house:119:1:215",
-    "house:119:1:216",
-    "house:119:1:217",
     "house:119:1:218",
-    "house:119:1:219",
-    "house:119:1:220",
     "house:119:1:222",
     "house:119:1:224",
     "house:119:1:225",
@@ -35809,6 +36186,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "d14acd407d5d0a876257f637d45048c5e5a057e15976cc9f2e175a1d30a84858",
-  "membership_review_sha256": "b9008ab7298f088542afa6c74ce1d9839d513814d342089ab757efd60ce3d657"
+  "proposal_sha256": "5a1a0b786062bac7cf85adc41fa110f7d8f15cbf46a645d455bdf220bbd3411f",
+  "membership_review_sha256": "5ca53c04cd3b3d8d50a477b412a8805af3e973ab79e856cb1b1c988f99c3c5b7"
 }
