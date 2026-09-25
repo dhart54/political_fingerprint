@@ -62,14 +62,114 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Active continuation — September24–25
+## Requested overnight checkpoint — September25
+
+The user requested a safe checkpoint about one hour after04:31:47Z, with a
+CHECKPOINT shutdown marker around05:31Z. This is the stop reason; it is not Health
+completion, semantic acceptance, an evidence-exhaustion claim or a new approval gate.
+Continue later from this same draft PR and preserve all work after its recorded head.
+
+Since06fe2c9dc7621d4e86e6ed9ca372cb20c7b6ecab,16 additional screenings are resolved:
+one shared interpretation (298), ten proposed exclusions (277/278/279/286/287/289/
+297/300/301/303), three procedural controls (291/293/302) and two expressive controls
+(292/305). Counts65/182/9/146/274 become66/185/11/156/258 across unchanged676 identities.
+The258 unresolved comprise257 unreviewed screenings plus the separately examined237
+printed-source conflict. No unreviewed identity is presumed Health-eligible.
+
+H.R.5214/298 changes D.C. detention and release rules whose existing23-1321(c)(1)
+includes explicit medical, psychiatric and dependency-treatment conditions. One
+shared meaning and both choice meanings project Foushee Nay and Massie Yea into
+one additional finding each:49 Foushee/45 Massie,132 observations and four Massie
+Not Voting records. The candidate preserves treatment options for eligible cases,
+secured property/surety bonds, distinct mandatory-detention categories, whole-package
+limits, prospective charging date and printed cross-reference defects. It does not
+predict loss of all care or supply a motive. Nine multi-action episodes remain intact
+among49 episodes; no paired-observation or compact-design change was made.
+
+Add104 governed sources (16 Clerk/88 other),16 membership records and13 interpretation
+claim maps: totals856/277/532. Reuse existing appropriations, H.Res.879, reported D.C.
+substitutes, FACA/Paperwork Reduction Act and other incorporated authorities. The
+November13 pre-vote Council snapshot and Rule46 supply the new shared bail analysis.
+The original2019 coal-advisory charter, not a later renewal, governs278; its date was
+visually checked. A public FBI mirror supplies the blocked CISA advisory identity.
+Invalid source responses are not governed evidence. Manual interventions were exact
+source selection, provision/version review,16 membership decisions, one shared
+interpretation/compact and readable spacing; member projection remains mechanical.
+No member-specific reinterpretation, synthesis, publication or runtime change.
+
+Controls preserve concrete boundaries:291's deemed substitutes do not pass either
+bill;293/302 referrals do not adopt sanctions;297's failed censure includes committee
+removal and investigation, not expression alone. H.R.4058/300 changes broad grant
+outreach, without denying possible underlying medical-response uses.301 repeals only
+the Senate-data section, not parent appropriations or all earlier data protections.
+303's90 days govern the instruction to prepare a refinery report, not its completion.
+305 expresses a position without changing Medicare, Medicaid or Social Security.
+
+### Exact remaining queue and prepared-source ledger
+
+The authoritative order is the676-row inventory; each prepared unresolved row now
+has a specific next_action. Research folders below are retained locally under
+`.local/next-domain`; committed notes identify versions and reading boundaries so
+captured material cannot be mistaken for completed review.
+
+- **2025 roll262:** Continue H.R.3838 EH at normalized character235000 of2080487 (research72; raw7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658). Final3500 separately read. Newly read220/221/228/229 concern responsible biotechnology, workforce, foreign animal work and gain-of-function limits;233/234 health monitoring is aircraft maintenance. RCP119-8 DivisionE already present; Report119-255 amendment30/Sept9 Record PDF208,210,224 establish DivisionF6101/6102 before passage, not the full4275 package. Read remaining package and incorporated authorities, then reconcile prior245/246/255/256 separately. Independent next prepared cases294–296/299/304; fresh307 onward. Capture is not substantive completion.
+
+- **2025 roll294:** H.J.Res.130 EH fully read (research97): disapproves Buffalo Field Office ROD/RMP amendment November20,2024. Obtain/read exact plan plus GAO September18,2025 opinion printed September29 Record S6825–S6826. No membership decision from title or environmental consequences.
+
+- **2025 roll295:** H.J.Res.131 EH fully read (research97): disapproves Coastal Plain Oil and Gas Leasing ROD December9,2024. Obtain/read exact plan plus GAO August25,2025 opinion printed September2 Record S5557–S5560. No membership decision from title or environmental consequences.
+
+- **2025 roll296:** S.J.Res.80 ES fully read (research97; Senate passed October30): disapproves National Petroleum Reserve Alaska Integrated Activity Plan ROD April25,2022. Obtain/read exact plan plus GAO July24,2025 opinion printed July28 Record S4768–S4770. Keep distinct from the2024 Coastal Plain plan.
+
+- **2025 roll299:** H.R.5107 EH and RH fully read (research97/100). Entire112220-character D.C.Law24-345 read (research99; raw36f2f12d2af5692e04e3ad91dfde80e1caa633b31c16d12cbb9310b0c81f7fd7; official Council snapshot88a738d1a240ebd405e0d5fcb9e0e66a01804b5a November13,2025). Bill restores law as if24-345 not enacted except retained TitleI subtitlesA/S. Reconcile later25-50/25-175 amendments, conditional fiscal applicability301 and ineffective Revised Criminal Code201 before whole-package meaning. Read current48-1103/48-1101/48-1103.01/7-403/7-404/5-125.03/5-107.02/5-116.33/5-351.01 in research102/105/106; only1-608.01(d) and48-901.02(4) read.131 staff/contractor/grantee personal-use paraphernalia exception is distinct from retained community-organization/personal-possession/needle-exchange/naloxone authorities. Retained101 first-aid-or-EMS;119 request-mental-health-assistance factor;103/104 trauma-expert video consultation;134 privacy/assistance safeguards. Do not claim all care/training or harm reduction is repealed. Version reconciliation remains research, not an exhausted evidence blocker.
+
+- **2025 roll304:** H.R.1949 EH fully read (research107). Repeals15USC717b(a–c), renumbers later subsections, gives FERC exclusive LNG-facility approval and deems gas import/export public interest, retaining other federal facility and Presidential/sanctions powers. Reuse governed717b operative and50USC1702; complete50USC1601,42USC6271,50USC4301 and state-sponsor definitions22USC2371/2780 plus ECRA1754(c)(1)(A). Printed50USC4318(c)(1)(A) parenthetical appears mismatched; trace without silent repair. No membership decision yet.
+
+- **2025 roll307:** Next fresh independent screening after prepared299/304: verify Clerk307 and exact H.R.4423 action/version, read full operative measure and incorporated authorities before Health membership. Then309/H.Res.916 and subsequent source/version groups in inventory; do not repeat completed301/302/303/305.
+
+- **224–226:** continue the previously recorded Miles City, Central Yukon and North
+  Dakota exact-plan/GAO tracing. Public alternatives remain unexhausted.
+- **237:** retain the $50,000 RH/report versus floor/Rules discrepancy. Do not choose
+  an amount silently. Reuse the completed68-target line map and prior adopted-amendment
+  reconciliation; obtain formal correction/exact floor-version evidence.
+
+For299, the official Council source can be reacquired at
+`https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/laws/24-345/index.html`.
+Later25-50/25-175 changes to5-116.33 require reconciliation with the bill's restoration
+language; narrower harm-reduction provisions have distinct retained authorities.
+This is unfinished analysis, not an identified human-decision dependency.
+
+Final checkpoint validation:55 candidate tests (within142 focused subsystem tests)
+and all7 canonical semantic checks pass. Deterministic regeneration, source-removal
+failure, exact treatment bindings, version-specific energy authorities and separate
+procedural/expressive accounting are covered. The first subsystem invocation omitted
+NODE_PATH and could not locate ajv; rerunning with the existing root dependency path
+passed142/142 without code or dependency changes. An earlier candidate run detected
+stale generated evidence; regeneration fixed it without changing the interpretation.
+
+Diff review confirms all752 prior governed source records,65 prior shared meanings,
+261 prior membership records and all earlier completed inventory rows are unchanged.
+All prior ordered episode action sets remain intact. The new compact/detail output
+was inspected for both members, including qualifications and exact source/action
+references. git diff --check passes. No runtime/UI change requires a browser loop.
+The pushed head and all exact-head CI outcomes will be recorded in the same PR
+discussion; prior06fe2c9 CI remains historical. Vercel branch deployment stays disabled
+and the Render workflow remains main-only. The stop is the user-requested overnight
+checkpoint, with257 unreviewed screenings plus one examined source conflict remaining.
+No specific new user decision or exhausted-evidence dependency is identified.
+
+The exact pushed-head CI and SHA belong in the existing PR discussion. The terminal marker is uncommitted and is written only
+after all filesystem work is finished. No merge/deployment/publication/production
+writes, registry/environment changes, blue operations, paid services or protected
+archives. PR191 remains released; PR193 paused; issue192 open.
+
+## Historical continuation — September24–25, through06fe2c9
 
 Actual worktree `.w/foushee-next-domain` and remote draft PR194 both matched
 `bed93d0b507354fceaf0b52f1e7118f3fe62481a` at this continuation's start.
 No reset; all 43 prior shared meanings and prior governed captures were preserved.
 The persistent user goal is active across ordinary research batches and turns.
 The old terminal marker was removed on resumption; no new marker belongs at an
-ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
+ordinary turn boundary. That progress state preceded the requested overnight checkpoint above.
 
 - [x] Confirm the actual next unprocessed group: rolls199/200/203. Prior
   H.R.3944 rolls180/182 and July191–198 research was already complete.
@@ -305,23 +405,7 @@ not section8. H.Res.873/284 permits, but does not adopt, the separately recorded
 5371 concurrence. H.Res.719/282 is non-counting expressive context; evaluative
 preamble descriptions are not adopted as factual or character conclusions.
 
-Exact next work and prepared-source ledger:
-- 262/H.R.3838 EH in research72:2,080,487 normalized characters. Only chars0–16500
-  (header/partial table of contents) have been read. Resume at16500; no passage
-  membership disposition has been asserted. Read the operative package and
-  incorporated authorities, then reconcile earlier amendments and Coast Guard text.
-- 277/H.R.3062,278/H.R.3015,279/H.R.1047 EH in research86: complete short bills read,
-  but incorporated authorities remain to inspect. For3062, trace15USC717a/717b/717f,
-  16USC824a/824a-4/824o/796,49USC60502 and the listed permit orders; retain NEPA and
-  other-statute savings. For3015, obtain the charter in effect November19,2021 and
-  examine5USCchapter10/552b(c), including1013's exclusion. A later2025/2026 renewed
-  charter is not a substitute. For1047, examine the shared power definitions and
-  18CFR35.28(f) interconnection procedures before deciding membership. Clerk captures
-  are available but these three actions remain unreviewed in the completed-accounting sense.
-- Then286/H.R.1608,287/H.R.2659,289/H.R.4405 and the subsequent source/version groups
-  in the676-row inventory. Do not repeat completed281/285 appropriations interpretations.
-- Continue224–226 public land-plan tracing and237 formal correction/version tracing
-  independently. The latter remains the single examined conflict, not unavailable evidence.
+Historical prepared-source queue superseded by the September25 checkpoint section above.
 
 Research77–89 retains the veterans, immigration, emergency and D.C. source work;
 only read operative texts became governed sources. Manual work includes source
@@ -332,8 +416,63 @@ an old backlog count; a later new assertion incorrectly treated procedural conte
 as substantive. Both assertions were corrected without changing the contract.
 All52 candidate tests,139 focused subsystem tests and7 semantic checks pass.
 The prior f1c42ee head passed all9 CI checks; this progress push gets separate
-exact-head CI. No terminal marker or new approval gate is created while work continues.
+exact-head CI. This was a progress boundary; the later user-requested terminal checkpoint supersedes it.
 
+
+Current overnight continuation from06fe2c9: the user requested a checkpoint
+in about one hour at2026-09-25T04:31:47Z; aim to finish validation/push and write the
+terminal marker around05:31Z. This is a requested shutdown checkpoint, not Health
+completion or semantic acceptance. Do not write the marker until final filesystem
+work is done. Pause the active goal at the terminal checkpoint.
+
+Three further screenings277–279 are proposed exclusions, after exact EH and
+incorporated-authority review. Counts65/182/9/149/271, with270 unreviewed and one
+examined237 conflict. No new shared meanings or findings:48 Foushee/44 Massie,
+65 interpreted inputs, nine multi-action episodes. Add47 governed sources and
+three membership records. Existing752 sources,65 meanings and261 records remain
+unchanged. The core/compiled semantic hashes are unchanged. All53 candidate tests
+pass after regeneration. The first run caught stale generated replay evidence;
+regeneration repaired it without changing semantics. Final subsystem/semantic and
+exact-head CI checks remain due at the pushed checkpoint.
+
+277 preserves NEPA timing, other-statute/gas-approval/oil-rate savings, operating
+and permit exclusions, modification rules, Canada/Mexico gas timing, electric
+export-order repeal and the different effective-date scope. Already-revoked
+11423/13337 delegations are not presented as current;13867 preserves issued permits.
+278 uses the original DOE charter filed November20,2019, verified visually onpage3.
+It is solely advisory. Review includes all operative FACA sections,552b(c), the
+coal-research authorities and ordinary committee disability-assistance provisions.
+These do not turn the coal-advisory-body action into a clinical/social-service
+program.279 binds public utility to16USC824(e), not824e, and the exact35.28(f)
+interconnection rules. Grid resilience is not an inferred patient-care outcome.
+Research92–94 preserves acquisition manifests. The invalid standalone30USC664
+response is not used: the official663 granule contains the joint663/664 repeal.
+
+Prepared NDAA262 research, still unfinished and not relabeled completed:
+- H.R.3838 EH research72 raw7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658,
+  length2,080,487 normalized characters. Contiguous reading now reaches235000
+  (start of section313 heading). Resume there; the final3500 characters were also
+  read separately. No full-passage meaning or membership disposition yet.
+- Newly read operative220 requires responsible-biotechnology policies, including
+  informed consent and irreversible/heritable treatments;221 provides biotechnology
+  workforce training;228 restricts animal work involving foreign countries of
+  concern;229 restricts gain-of-function work/assistance involving defined potential
+  pandemic pathogens, with case-specific national-interest waiver and30-day notice.
+ 233/234 Health and Usage Monitoring Systems concern aircraft maintenance, not
+  clinical care.312 requires PFAS remediation-cost assumptions/reporting. These
+  are source-reading notes, not selected final package conclusions.
+- RCP119-8 pages26/27/1264–1268 read: DivisionE CBDC text already appears in the
+  August15 print, unlike the earlier3633 late-engrossment problem.
+- Report119-255 PartA amendment30 read completely; Sept9 Record research46
+  PDF208/H4104 identifies it in enbloc1, PDF210/H4106 supplies the complete amendment,
+  PDF224/H4120 records enbloc adoption. Congress.gov actions corroborate voice-vote
+  adoption at3:21pm Sept9, before262. DivisionF consists only of6101/6102; do not
+  import the earlier4275 package.6102 combines retired pay and other benefits with
+  retired/dependent medical care in one authorization account, not medical-only
+  totals. Reuse prior14USC4902/10USC55 analysis where applicable. September10
+  authorization to correct section numbers/cross-references is technical context.
+
+That intermediate queue is superseded by the current checkpoint section; completed286–305 controls must not be repeated.
 
 ## Boundaries, rollback and reconciliation
 

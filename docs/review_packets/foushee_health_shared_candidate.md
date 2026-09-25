@@ -1,11 +1,10 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Sixty-two more membership dispositions resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: twenty-two new shared interpretations,
-thirty-three exclusions, six procedural controls and one expressive control.
-Now65 interpreted inputs,48 Foushee findings and44 bounded Massie proof findings;
-273 discovery identities remain unreviewed; one additional examined action has a
-printed-source conflict.
+**Partial candidate at a user-requested overnight checkpoint.** Since06fe2c9,
+16 additional screenings are resolved; one new shared interpretation derives one
+additional finding per member. Now66 interpreted inputs,49 Foushee findings and45
+bounded Massie proof findings.257 identities remain unreviewed; one additional
+examined action has a printed-source conflict. No current user decision is required.
 This is neither complete Health coverage nor accepted/public content.
 
 ## Current material delta and entry points
@@ -15,12 +14,12 @@ branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
 bed93d at resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
-discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
+discussion after validation; prior-head CI is not treated as current. The user-requested CHECKPOINT marker is written last and is not committed.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [65 shared meanings /519 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [752 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [261 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [66 shared meanings /532 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [856 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [277 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -28,15 +27,115 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|65|
-| procedural_context |176|182|
-| expressive_nonbinding_context |8|9|
-| exact_action_ineligible |113|146|
-| source_unresolved (unreviewed plus examined conflict) |336|274|
+| interpreted_substantive_directional |43|66|
+| procedural_context |176|185|
+| expressive_nonbinding_context |8|11|
+| exact_action_ineligible |113|156|
+| source_unresolved (unreviewed plus examined conflict) |336|258|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## Requested overnight checkpoint — September25
+
+The user requested a safe checkpoint about one hour after04:31:47Z, with a
+CHECKPOINT shutdown marker around05:31Z. This is the stop reason; it is not Health
+completion, semantic acceptance, an evidence-exhaustion claim or a new approval gate.
+Continue later from this same draft PR and preserve all work after its recorded head.
+
+Since06fe2c9dc7621d4e86e6ed9ca372cb20c7b6ecab,16 additional screenings are resolved:
+one shared interpretation (298), ten proposed exclusions (277/278/279/286/287/289/
+297/300/301/303), three procedural controls (291/293/302) and two expressive controls
+(292/305). Counts65/182/9/146/274 become66/185/11/156/258 across unchanged676 identities.
+The258 unresolved comprise257 unreviewed screenings plus the separately examined237
+printed-source conflict. No unreviewed identity is presumed Health-eligible.
+
+H.R.5214/298 changes D.C. detention and release rules whose existing23-1321(c)(1)
+includes explicit medical, psychiatric and dependency-treatment conditions. One
+shared meaning and both choice meanings project Foushee Nay and Massie Yea into
+one additional finding each:49 Foushee/45 Massie,132 observations and four Massie
+Not Voting records. The candidate preserves treatment options for eligible cases,
+secured property/surety bonds, distinct mandatory-detention categories, whole-package
+limits, prospective charging date and printed cross-reference defects. It does not
+predict loss of all care or supply a motive. Nine multi-action episodes remain intact
+among49 episodes; no paired-observation or compact-design change was made.
+
+Add104 governed sources (16 Clerk/88 other),16 membership records and13 interpretation
+claim maps: totals856/277/532. Reuse existing appropriations, H.Res.879, reported D.C.
+substitutes, FACA/Paperwork Reduction Act and other incorporated authorities. The
+November13 pre-vote Council snapshot and Rule46 supply the new shared bail analysis.
+The original2019 coal-advisory charter, not a later renewal, governs278; its date was
+visually checked. A public FBI mirror supplies the blocked CISA advisory identity.
+Invalid source responses are not governed evidence. Manual interventions were exact
+source selection, provision/version review,16 membership decisions, one shared
+interpretation/compact and readable spacing; member projection remains mechanical.
+No member-specific reinterpretation, synthesis, publication or runtime change.
+
+Controls preserve concrete boundaries:291's deemed substitutes do not pass either
+bill;293/302 referrals do not adopt sanctions;297's failed censure includes committee
+removal and investigation, not expression alone. H.R.4058/300 changes broad grant
+outreach, without denying possible underlying medical-response uses.301 repeals only
+the Senate-data section, not parent appropriations or all earlier data protections.
+303's90 days govern the instruction to prepare a refinery report, not its completion.
+305 expresses a position without changing Medicare, Medicaid or Social Security.
+
+### Exact remaining queue and prepared-source ledger
+
+The authoritative order is the676-row inventory; each prepared unresolved row now
+has a specific next_action. Research folders below are retained locally under
+`.local/next-domain`; committed notes identify versions and reading boundaries so
+captured material cannot be mistaken for completed review.
+
+- **2025 roll262:** Continue H.R.3838 EH at normalized character235000 of2080487 (research72; raw7a5d6407fda4ddbe271ce5679a4fc8e8d7a6c0392f03802b6c33eb7accfe6658). Final3500 separately read. Newly read220/221/228/229 concern responsible biotechnology, workforce, foreign animal work and gain-of-function limits;233/234 health monitoring is aircraft maintenance. RCP119-8 DivisionE already present; Report119-255 amendment30/Sept9 Record PDF208,210,224 establish DivisionF6101/6102 before passage, not the full4275 package. Read remaining package and incorporated authorities, then reconcile prior245/246/255/256 separately. Independent next prepared cases294–296/299/304; fresh307 onward. Capture is not substantive completion.
+
+- **2025 roll294:** H.J.Res.130 EH fully read (research97): disapproves Buffalo Field Office ROD/RMP amendment November20,2024. Obtain/read exact plan plus GAO September18,2025 opinion printed September29 Record S6825–S6826. No membership decision from title or environmental consequences.
+
+- **2025 roll295:** H.J.Res.131 EH fully read (research97): disapproves Coastal Plain Oil and Gas Leasing ROD December9,2024. Obtain/read exact plan plus GAO August25,2025 opinion printed September2 Record S5557–S5560. No membership decision from title or environmental consequences.
+
+- **2025 roll296:** S.J.Res.80 ES fully read (research97; Senate passed October30): disapproves National Petroleum Reserve Alaska Integrated Activity Plan ROD April25,2022. Obtain/read exact plan plus GAO July24,2025 opinion printed July28 Record S4768–S4770. Keep distinct from the2024 Coastal Plain plan.
+
+- **2025 roll299:** H.R.5107 EH and RH fully read (research97/100). Entire112220-character D.C.Law24-345 read (research99; raw36f2f12d2af5692e04e3ad91dfde80e1caa633b31c16d12cbb9310b0c81f7fd7; official Council snapshot88a738d1a240ebd405e0d5fcb9e0e66a01804b5a November13,2025). Bill restores law as if24-345 not enacted except retained TitleI subtitlesA/S. Reconcile later25-50/25-175 amendments, conditional fiscal applicability301 and ineffective Revised Criminal Code201 before whole-package meaning. Read current48-1103/48-1101/48-1103.01/7-403/7-404/5-125.03/5-107.02/5-116.33/5-351.01 in research102/105/106; only1-608.01(d) and48-901.02(4) read.131 staff/contractor/grantee personal-use paraphernalia exception is distinct from retained community-organization/personal-possession/needle-exchange/naloxone authorities. Retained101 first-aid-or-EMS;119 request-mental-health-assistance factor;103/104 trauma-expert video consultation;134 privacy/assistance safeguards. Do not claim all care/training or harm reduction is repealed. Version reconciliation remains research, not an exhausted evidence blocker.
+
+- **2025 roll304:** H.R.1949 EH fully read (research107). Repeals15USC717b(a–c), renumbers later subsections, gives FERC exclusive LNG-facility approval and deems gas import/export public interest, retaining other federal facility and Presidential/sanctions powers. Reuse governed717b operative and50USC1702; complete50USC1601,42USC6271,50USC4301 and state-sponsor definitions22USC2371/2780 plus ECRA1754(c)(1)(A). Printed50USC4318(c)(1)(A) parenthetical appears mismatched; trace without silent repair. No membership decision yet.
+
+- **2025 roll307:** Next fresh independent screening after prepared299/304: verify Clerk307 and exact H.R.4423 action/version, read full operative measure and incorporated authorities before Health membership. Then309/H.Res.916 and subsequent source/version groups in inventory; do not repeat completed301/302/303/305.
+
+- **224–226:** continue the previously recorded Miles City, Central Yukon and North
+  Dakota exact-plan/GAO tracing. Public alternatives remain unexhausted.
+- **237:** retain the $50,000 RH/report versus floor/Rules discrepancy. Do not choose
+  an amount silently. Reuse the completed68-target line map and prior adopted-amendment
+  reconciliation; obtain formal correction/exact floor-version evidence.
+
+For299, the official Council source can be reacquired at
+`https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/laws/24-345/index.html`.
+Later25-50/25-175 changes to5-116.33 require reconciliation with the bill's restoration
+language; narrower harm-reduction provisions have distinct retained authorities.
+This is unfinished analysis, not an identified human-decision dependency.
+
+Final checkpoint validation:55 candidate tests (within142 focused subsystem tests)
+and all7 canonical semantic checks pass. Deterministic regeneration, source-removal
+failure, exact treatment bindings, version-specific energy authorities and separate
+procedural/expressive accounting are covered. The first subsystem invocation omitted
+NODE_PATH and could not locate ajv; rerunning with the existing root dependency path
+passed142/142 without code or dependency changes. An earlier candidate run detected
+stale generated evidence; regeneration fixed it without changing the interpretation.
+
+Diff review confirms all752 prior governed source records,65 prior shared meanings,
+261 prior membership records and all earlier completed inventory rows are unchanged.
+All prior ordered episode action sets remain intact. The new compact/detail output
+was inspected for both members, including qualifications and exact source/action
+references. git diff --check passes. No runtime/UI change requires a browser loop.
+The pushed head and all exact-head CI outcomes will be recorded in the same PR
+discussion; prior06fe2c9 CI remains historical. Vercel branch deployment stays disabled
+and the Render workflow remains main-only. The stop is the user-requested overnight
+checkpoint, with257 unreviewed screenings plus one examined source conflict remaining.
+No specific new user decision or exhausted-evidence dependency is identified.
+
+The exact pushed-head CI and SHA belong in the existing PR discussion. The terminal marker is uncommitted and is written only
+after all filesystem work is finished. No merge/deployment/publication/production
+writes, registry/environment changes, blue operations, paid services or protected
+archives. PR191 remains released; PR193 paused; issue192 open.
 
 ## Current shared meanings and source reuse
 
@@ -309,23 +408,7 @@ not section8. H.Res.873/284 permits, but does not adopt, the separately recorded
 5371 concurrence. H.Res.719/282 is non-counting expressive context; evaluative
 preamble descriptions are not adopted as factual or character conclusions.
 
-Exact next work and prepared-source ledger:
-- 262/H.R.3838 EH in research72:2,080,487 normalized characters. Only chars0–16500
-  (header/partial table of contents) have been read. Resume at16500; no passage
-  membership disposition has been asserted. Read the operative package and
-  incorporated authorities, then reconcile earlier amendments and Coast Guard text.
-- 277/H.R.3062,278/H.R.3015,279/H.R.1047 EH in research86: complete short bills read,
-  but incorporated authorities remain to inspect. For3062, trace15USC717a/717b/717f,
-  16USC824a/824a-4/824o/796,49USC60502 and the listed permit orders; retain NEPA and
-  other-statute savings. For3015, obtain the charter in effect November19,2021 and
-  examine5USCchapter10/552b(c), including1013's exclusion. A later2025/2026 renewed
-  charter is not a substitute. For1047, examine the shared power definitions and
-  18CFR35.28(f) interconnection procedures before deciding membership. Clerk captures
-  are available but these three actions remain unreviewed in the completed-accounting sense.
-- Then286/H.R.1608,287/H.R.2659,289/H.R.4405 and the subsequent source/version groups
-  in the676-row inventory. Do not repeat completed281/285 appropriations interpretations.
-- Continue224–226 public land-plan tracing and237 formal correction/version tracing
-  independently. The latter remains the single examined conflict, not unavailable evidence.
+Historical prepared-source queue superseded by the September25 checkpoint section above.
 
 Research77–89 retains the veterans, immigration, emergency and D.C. source work;
 only read operative texts became governed sources. Manual work includes source
@@ -336,34 +419,23 @@ an old backlog count; a later new assertion incorrectly treated procedural conte
 as substantive. Both assertions were corrected without changing the contract.
 All52 candidate tests,139 focused subsystem tests and7 semantic checks pass.
 The prior f1c42ee head passed all9 CI checks; this progress push gets separate
-exact-head CI. No terminal marker or new approval gate is created while work continues.
+exact-head CI. This was a progress boundary; the later user-requested terminal checkpoint supersedes it.
 
 
 ## Current validation and remaining execution
 
-All52 focused candidate tests,139 focused subsystem tests and7 canonical semantic
-checks pass. New checks cover distinct pension dates and qualifications, the D.C.
-care/source bindings, exact statutory ages, title-versus-operative differences,
-source-removal rejection and separate procedural/expressive controls. Prior f1c42ee
-passed all9 exact-head CI checks; the new pushed commit requires its own checks.
-No frontend/runtime change or browser loop is claimed.
-
-Continue224–226 public plan-source tracing and independent262 onward.
-The CRA EH texts are read; June26 Record pages50–56 contain GAO opinions, with
-50–51/Miles City read. BLM legacy links returned403 and the redirected Miles City
-page was unavailable; public alternatives are not exhausted. North Dakota’s
-exact plan remains to acquire. Research25–40 and governed sources retain completed
-H.R.4553 EH/program work and the amendment237 conflict for targeted resumption.
-
-273 unreviewed screenings, one examined source conflict and wider episode
-reconciliation remain. Independent safe work continues. This progress push is
-not a terminal state or approval gate; no shutdown marker is created. No new
-human decision is requested while official-source tracing remains available.
+55 candidate tests,142 focused subsystem tests and all7 canonical semantic checks
+pass. Preservation/diff and generated compact/detail review pass. The initial local
+ajv path failure was resolved with the existing NODE_PATH; no dependency change.
+The exact final head and CI outcome are recorded in the existing PR discussion.
+No frontend/runtime change or browser loop is claimed.257 unreviewed screenings,
+one examined source conflict and wider episode reconciliation remain. The stop is
+the requested overnight checkpoint; no new human decision is required.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-65 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+66 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -1338,6 +1410,37 @@ Evidence: house:119:1:271; finding `prop:ae15621a7b2a6b55`.
 
 Sources: [clerk:119:1:271](https://clerk.house.gov/evs/2025/roll271.xml); [govinfo:hr5140eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm); [dc-council:code-16-2301-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html); [dc-council:code-16-2307-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html); [dc-council:code-16-2320-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html).
 
+### Changing D.C. detention and release rules that include treatment options
+
+**Compact:** Foushee opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options. The bill would require detention for specified violent or dangerous charges and change D.C. release rules that include medical, psychiatric and dependency-treatment conditions. It also requires secured bonds for a separate defined offense category; property or sureties can qualify. The treatment option itself remains for eligible cases. This was one vote on the whole detention-and-bail package, not proof that detained people would lose all care.
+
+**Detail:**
+
+**house:119:1:298**
+
+Foushee opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options.
+
+H.R. 5214 EH changes D.C. release and detention rules as a single final-passage package. Section 2 requires pretrial detention for a person charged with a crime of violence or dangerous crime as defined in 23-1331, removes those categories from the ordinary pretrial-release routes, and removes the specified post-conviction release exceptions while adding the violent/dangerous-crime scope clause. It changes the burglary and robbery entries in those definitions to first-degree, attempted first-degree, or dangerous-weapon forms. Other defined offenses remain within their existing categories; this is not a detention rule for every charged offense.
+
+Existing 23-1321(c)(1)(B)(x) expressly permits medical, psychological or psychiatric treatment, including drug/alcohol-dependency treatment if available, and a required institutional stay for that purpose as conditions of pretrial release. The bill excludes the covered violent/dangerous charges from this ordinary release framework and changes the remaining(c)(1) direction from mandatory to discretionary, removing its least-restrictive-condition standard. That alters the reach and governing standard of an explicit treatment-linked release mechanism, supporting proposed Health membership. It does not delete the treatment option itself, require treatment in every remaining case, or establish that detained people receive no care. Physical/mental condition and substance-use history remain among the text’s other release considerations.
+
+Section 3 separately permits release for the defined public-safety-or-order category only on a secured appearance bond, subject to any additional(b)/(c) requirements the judicial officer orders. The definition includes failure to appear, obstruction, flight, riot/incitement, property destruction, stalking, specified lower-degree burglary/robbery, and the printed previous-conviction clause. A secured bond can use designated property, money or solvent sureties; the title does not make cash the only permitted security. The bill removes(c)(3), which prohibited a financial condition for community safety and barred preventive detention from an appearance-based financial condition except under 1322(b). It retains review of unmet conditions and authorizes surety arrest followed by prompt marshal delivery and judicial review, with Rule 46 governing potential relief from bond liability. These are release/financial conditions, not an appropriation for clinical care.
+
+Section 2 also revises rebuttable detention presumptions for witness/law-enforcement threats and specified firearm conduct, removes the written-reasons-for-rebuttal provision, and deletes the separate murder-offense pretrial paragraph. The printed firearm references include a mismatch between section 4(a-1) and the parenthetical 22-4504(a)(1), an 1832 date for the 1932 Act, and a Firearm Control Act citation beginning at the gun-offender-registration subchapter. The surety clause prints this section 23-1322. These defects are preserved rather than silently used to broaden offense coverage; the clear treatment-framework changes do not depend on resolving them.
+
+The bill applies to individuals charged with an offense in D.C. on or after 30 days following enactment. The source comparison uses the Council’s November 13, 2025 pre-vote snapshot, including its existing December 31, 2026 sunset notes for specified 2024 amendments; this candidate does not infer an indefinite baseline or supply a new sunset. The November 19 House vote covers the entire bill, after the reported substitute was deemed adopted by H.Res. 879. It is not a separate vote on treatment, evidence of a member’s reason for voting, or a prediction of detention, costs or patient outcomes.
+
+The Clerk recorded the House result as 'Passed' on 2025-11-19. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The Health mechanism is the changed reach and governing standard of explicit treatment-linked release conditions; the bill does not repeal all treatment authority or show that detention eliminates health care. Secured bonds are not necessarily cash.
+- The exact text’s cross-reference/date defects are retained; no disputed firearm category is silently repaired or expanded. The ordinary release safeguards that remain are not described as overriding the new mandatory-detention category.
+- This final-passage choice covers the connected detention, bond, presumption and review provisions, not separate member choices on care or each offense. No later implementation or outcome is inferred.
+
+Evidence: house:119:1:298; finding `prop:de287b6e79b417ea`.
+
+Sources: [clerk:119:1:298](https://clerk.house.gov/evs/2025/roll298.xml); [govinfo:hr5214eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm); [dc-council:code-23-1321-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1321.html); [dc-council:code-23-1322-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1322.html); [dc-council:code-23-1325-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1325.html); [dc-council:code-23-1331-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1331.html); [dc-council:code-23-1324-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1324.html); [dc-council:code-22-4502-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4502.html); [dc-council:code-22-4503-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4503.html); [dc-council:code-22-4504-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4504.html); [dc-council:code-7-2508.01-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/7-2508.01.html); [olrc:criminal-rule46-2024](https://uscode.house.gov/download/annualhistoricalarchives/pdf/2024/2024usc18a.pdf); [govinfo:hres879eh](https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm); [govinfo:hr5214rh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214rh/html/BILLS-119hr5214rh.htm).
+
 ### Replacing a child’s Social Security number after a card is lost or stolen in transit
 
 **Compact:** Foushee supported suspending the rules and passing H.R. 5348 as amended. The bill would require replacement Social Security numbers for children under 14 in specified issuance cases when a parent or guardian provides evidence that a card lost or stolen in delivery compromised the number.
@@ -1814,4 +1917,5 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:269 | supported the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package | opposed the motion to suspend the rules and pass amended H.R. 2721’s burial-marker and pension-limit package | [govinfo:hr2721eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2721eh/html/BILLS-119hr2721eh.htm); [govinfo:38usc2306-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc2402-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2402.htm); [govinfo:38usc2411-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap24-sec2411.htm); [govinfo:38usc6105-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap61-sec6105.htm); [govinfo:38usc2306-1990-date](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap23-sec2306.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm) |
 | house:119:1:270 | supported the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | [govinfo:hr4922eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm); [dc-council:code-24-901-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html); [dc-council:code-24-902-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html); [dc-council:code-24-903-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html); [dc-council:code-24-904-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-904.html); [dc-council:code-24-906-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-906.html); [dc-council:code-16-2331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2331.html); [dc-council:code-16-2332-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2332.html); [dc-council:code-16-2333-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2333.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-23-1331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-1331.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
 | house:119:1:271 | supported the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | [govinfo:hr5140eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm); [dc-council:code-16-2301-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html); [dc-council:code-16-2307-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html); [dc-council:code-16-2320-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
+| house:119:1:298 | supported the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options | opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options | [govinfo:hr5214eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm); [dc-council:code-23-1321-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1321.html); [dc-council:code-23-1322-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1322.html); [dc-council:code-23-1325-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1325.html); [dc-council:code-23-1331-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1331.html); [dc-council:code-23-1324-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1324.html); [dc-council:code-22-4502-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4502.html); [dc-council:code-22-4503-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4503.html); [dc-council:code-22-4504-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4504.html); [dc-council:code-7-2508.01-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/7-2508.01.html); [olrc:criminal-rule46-2024](https://uscode.house.gov/download/annualhistoricalarchives/pdf/2024/2024usc18a.pdf); [govinfo:hres879eh](https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm); [govinfo:hr5214rh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214rh/html/BILLS-119hr5214rh.htm) |
 <!-- GENERATED CANDIDATE END -->

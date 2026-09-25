@@ -395,6 +395,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:298",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -791,6 +797,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:298",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     }
@@ -2303,6 +2315,38 @@
         "structural_metadata": {
           "stage_order": 10271
         }
+      },
+      {
+        "action_id": "house:119:1:298",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:298:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "H.R. 5214 EH changes D.C. release and detention rules as a single final-passage package. Section 2 requires pretrial detention for a person charged with a crime of violence or dangerous crime as defined in 23-1331, removes those categories from the ordinary pretrial-release routes, and removes the specified post-conviction release exceptions while adding the violent/dangerous-crime scope clause. It changes the burglary and robbery entries in those definitions to first-degree, attempted first-degree, or dangerous-weapon forms. Other defined offenses remain within their existing categories; this is not a detention rule for every charged offense.\n\nExisting 23-1321(c)(1)(B)(x) expressly permits medical, psychological or psychiatric treatment, including drug/alcohol-dependency treatment if available, and a required institutional stay for that purpose as conditions of pretrial release. The bill excludes the covered violent/dangerous charges from this ordinary release framework and changes the remaining(c)(1) direction from mandatory to discretionary, removing its least-restrictive-condition standard. That alters the reach and governing standard of an explicit treatment-linked release mechanism, supporting proposed Health membership. It does not delete the treatment option itself, require treatment in every remaining case, or establish that detained people receive no care. Physical/mental condition and substance-use history remain among the text’s other release considerations.\n\nSection 3 separately permits release for the defined public-safety-or-order category only on a secured appearance bond, subject to any additional(b)/(c) requirements the judicial officer orders. The definition includes failure to appear, obstruction, flight, riot/incitement, property destruction, stalking, specified lower-degree burglary/robbery, and the printed previous-conviction clause. A secured bond can use designated property, money or solvent sureties; the title does not make cash the only permitted security. The bill removes(c)(3), which prohibited a financial condition for community safety and barred preventive detention from an appearance-based financial condition except under 1322(b). It retains review of unmet conditions and authorizes surety arrest followed by prompt marshal delivery and judicial review, with Rule 46 governing potential relief from bond liability. These are release/financial conditions, not an appropriation for clinical care.\n\nSection 2 also revises rebuttable detention presumptions for witness/law-enforcement threats and specified firearm conduct, removes the written-reasons-for-rebuttal provision, and deletes the separate murder-offense pretrial paragraph. The printed firearm references include a mismatch between section 4(a-1) and the parenthetical 22-4504(a)(1), an 1832 date for the 1932 Act, and a Firearm Control Act citation beginning at the gun-offender-registration subchapter. The surety clause prints this section 23-1322. These defects are preserved rather than silently used to broaden offense coverage; the clear treatment-framework changes do not depend on resolving them.\n\nThe bill applies to individuals charged with an offense in D.C. on or after 30 days following enactment. The source comparison uses the Council’s November 13, 2025 pre-vote snapshot, including its existing December 31, 2026 sunset notes for specified 2024 amendments; this candidate does not infer an indefinite baseline or supply a new sunset. The November 19 House vote covers the entire bill, after the reported substitute was deemed adopted by H.Res. 879. It is not a separate vote on treatment, evidence of a member’s reason for voting, or a prediction of detention, costs or patient outcomes.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr5214:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:298",
+          "govinfo:hr5214eh",
+          "dc-council:code-23-1321-20251113-operative",
+          "dc-council:code-23-1322-20251113-operative",
+          "dc-council:code-23-1325-20251113-operative",
+          "dc-council:code-23-1331-20251113-operative",
+          "dc-council:code-23-1324-20251113-operative",
+          "dc-council:code-22-4502-20251113-operative",
+          "dc-council:code-22-4503-20251113-operative",
+          "dc-council:code-22-4504-20251113-operative",
+          "dc-council:code-7-2508.01-20251113-operative",
+          "olrc:criminal-rule46-2024",
+          "govinfo:hres879eh",
+          "govinfo:hr5214rh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10298
+        }
       }
     ],
     "episodes": [
@@ -2703,6 +2747,14 @@
         "episode_id": "episode:hr5140:119",
         "action_ids": [
           "house:119:1:271"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr5214:119",
+        "action_ids": [
+          "house:119:1:298"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "771a07c2a8a4dd57f69c8b4746bffc1917462fcabb0024429f54cfe311f99e3f",
-  "source_capture_sha256": "72626c0283427383dd4a009c2e965ec022cb2855a68a9c5017c09b4c048b3f60",
-  "core_sha256": "200840d6a73ed9e3f1d8e44a1a6621e977aec46b7c06edc396a77666543ede60",
-  "compiled_sha256": "e70db6e0ff74f08cd4b47bc578d0fee379a7cd4c2f641f613319eee36bcc90f3",
-  "readable_sha256": "a4ef2421e712ce58a6b4e5b5840fb262d9de72dbb5f34d2a5f44afd6a3032555",
+  "input_sha256": "d46334ce6b2fbfca79ae4f379649054860e62ca882cb04565b844a5069fe4521",
+  "source_capture_sha256": "0d821e4c380e16699268c08843181db72f45d8a2f323449252c0519f33c9a36e",
+  "core_sha256": "74e826983ccebee62cbadf8e15402e74b7c5cec4310f78520f7bee6a3416f759",
+  "compiled_sha256": "6d27648035d43711ea66d6715a16f6f8dc6d5d2919026f2177aca6d46059ca57",
+  "readable_sha256": "20c2fc23b79704af63489b0dd6b5ad6b422b6707f40a87bbb19d675c046c1e72",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1313,6 +1313,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework",
           "source_id": "clerk:119:1:271"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:298",
+      "shared_sha256": "b4879e6bb472fbe6d54b9a24975732b7f2fcb506f6069dd3301160a18993b27d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options",
+          "source_id": "clerk:119:1:298"
         }
       ]
     }
