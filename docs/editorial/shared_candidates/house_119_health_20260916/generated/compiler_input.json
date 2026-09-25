@@ -263,6 +263,24 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:200",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:199",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:206",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -524,6 +542,24 @@
         },
         {
           "action_id": "house:119:1:182",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:200",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Not Voting"
+        },
+        {
+          "action_id": "house:119:1:199",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Not Voting"
+        },
+        {
+          "action_id": "house:119:1:206",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -1432,6 +1468,79 @@
         "structural_metadata": {
           "stage_order": 10182
         }
+      },
+      {
+        "action_id": "house:119:1:200",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:200:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "S.1582 ES establishes a regulatory framework for payment stablecoins: permitted issuers, one-to-one eligible reserves, redemption disclosures, capital and liquidity standards, Federal/State oversight, anti-money-laundering and sanctions compliance, custody protections, limits on interest and misleading insured-status claims, qualified foreign-issuer access, studies and implementation rules. Its insurance provisions concern deposits/shares, not health coverage. The proposed Health connection instead comes from section11’s express amendment to the priority of claims in an issuer’s insolvency. Section11(a) gives stablecoin holders ratable priority against required reserves and limits that priority to claims arising from stablecoin holdings. Section11(d) adds 11 U.S.C.507(e): if required reserves cannot redeem all outstanding stablecoin claims, the remaining holder claim has first priority against the estate over other claims, including those normally prioritized under section507(a), but only to the extent compliance with the Act’s reserve requirements would have required additional reserves.\n\nThe incorporated section507(a)(5) covers allowed unsecured claims for employee-benefit-plan contributions arising from services within its specified 180-day period, subject to plan/employee and wage-payment limits. The statute’s accompanying Senate legislative notes expressly identify health-insurance plans among employee-benefit plans. Those notes explain the category; their older deadlines and dollar amounts are not substituted for the operative statute. This is a source-supported change to the relative payment position of qualifying health-plan contribution claims in this specific insolvency setting, not a change to every health-insurance policy, benefit entitlement or contribution rate. No particular issuer insolvency, unpaid contribution, lost coverage or patient outcome is asserted.\n\nThe broader insolvency provisions exclude required reserves from estate property while retaining the automatic stay, permit court-supervised ratable distributions, require the relevant regulator to participate in issuer bankruptcy proceedings and preserve applicable bank/credit-union resolution routes. Depository subsidiaries or nonbank issuers may be bankruptcy debtors. The bill also regulates custody/commingling, preserves qualified consumer protections, directs interoperability assessments and financial-market studies, and provides foreign-regime reciprocity conditions. The House rule made the Senate text available for one passage vote; this is the exact ES package, not a vote solely on health-plan claims.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:s1582:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:200",
+          "govinfo:s1582es",
+          "govinfo:11usc507-2024",
+          "govinfo:hres580eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10200
+        }
+      },
+      {
+        "action_id": "house:119:1:199",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:199:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "H.R.3633 EH creates a digital-commodity market framework: SEC rules for investment-contract offerings and disclosures, maturity certification for blockchain systems, and CFTC registration, trading, custody, segregation, capital, conduct and conflict-of-interest requirements for digital-commodity intermediaries. It preserves specified anti-fraud, sanctions and anti-money-laundering authorities, provides qualified exclusions for decentralized activities and personal self-custody, and includes implementation fees, studies and agency coordination. The proposed Health nexus is narrower than these general financial rules: sections404 and406 bring covered customer assets and transactions of digital-commodity exchanges, brokers and dealers into the commodity-broker bankruptcy framework. They treat the specified customer money/assets/property as customer property, the specified transactions as commodity contracts and those entities as futures commission merchants for 11 U.S.C.761. Assets removed from segregation through the specified customer election for blockchain services are expressly excluded from that customer-property treatment.\n\nThe incorporated 11 U.S.C.101(6) and103(d) connect that treatment to commodity-broker liquidation in chapter7; section109(d) excludes commodity brokers from ordinary chapter11 eligibility. Under section766(h), the customer-property pool is distributed ratably to customers up to their allowed net-equity claims before other claims, except the specified section507(a)(2) administrative claims attributable to administering that property. Proprietary-account customer claims wait until other customer net-equity claims have been paid in full. The other creditor claims include qualifying allowed unsecured employee-benefit contribution claims under section507(a)(5); the accompanying legislative notes expressly identify health-insurance plans within that category. The operative contribution priority retains its 180-day service-period and plan/employee/wage-payment limits. Historical notes establish the plan category, not current dollar caps.\n\nThis changes the legal treatment of covered customer property, not a known payment to a particular health plan. Section766(j) sends excess customer property and unpaid portions of customer net-equity claims into ordinary section726 distribution, whose first tier retains section507 priorities. It does not give these customers S.1582’s separate reserve-shortfall first priority against the rest of an issuer’s estate. No actual insolvency, unpaid health contribution, lost coverage or benefit reduction is inferred. The interpretation is a proposed cross-domain financing effect on qualifying health-plan contribution claims, not a claim that all digital trading is Health policy.\n\nThe entire EH package was one passage choice. Its section512 changes GENIUS Act service-provider definitions, reserve-report examination/certification and internal controls, and nonfinancial-company ownership restrictions; it adds rules preserving state-regulated commodity-backed stablecoins and personal self-custody. These provisions are not recast as a second vote adopting S.1582’s section11. TitleVI separately restricts Federal Reserve retail accounts and direct/indirect central-bank digital currency issuance, testing and monetary-policy use, with its stated open, permissionless, private-currency exception. The House rule and Clerk record bind this amended House-passed package, including TitleVI, rather than the earlier title list alone.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr3633:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:199",
+          "govinfo:hr3633eh",
+          "govinfo:11usc761-2024",
+          "govinfo:11usc766-2024",
+          "govinfo:11usc726-2024",
+          "govinfo:11usc507-2024",
+          "govinfo:11usc101-2024",
+          "govinfo:11usc103-2024",
+          "govinfo:11usc109-2024",
+          "govinfo:hres580eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10199
+        }
+      },
+      {
+        "action_id": "house:119:1:206",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:1:206:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr4016:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:206",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "congressional-record:2025-07-17",
+          "govinfo:hres580eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10206
+        }
       }
     ],
     "episodes": [
@@ -1733,6 +1842,30 @@
         "action_ids": [
           "house:119:1:180",
           "house:119:1:182"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:s1582:119",
+        "action_ids": [
+          "house:119:1:200"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr3633:119",
+        "action_ids": [
+          "house:119:1:199"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr4016:119",
+        "action_ids": [
+          "house:119:1:206"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

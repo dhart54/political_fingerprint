@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "c75306f169ed95127cef880cd00168c0d959777d11f34a7be438e317fed04d10",
-  "source_capture_sha256": "e8e76188a69b9757d09d4a2413afc0b947d4eec442a990512986ab8754eacfef",
-  "core_sha256": "48ab0c2a6c97a29b80257d88ce1627a71d8479844e9ed8913f23167f58cc578f",
-  "compiled_sha256": "6559b361a4c3d96ad0ccf3c026b357b10cdcafebce33ba69c12b212536c81b9d",
-  "readable_sha256": "37a0e12d5ec55e2fb3b7214bf72d95ee65ac553ef424c5a2e04fa0a36def9c3a",
+  "input_sha256": "235bacbb0be0bc6c81e3363ae8f6d3337f3953dfdccb857df1a629a6b65738fe",
+  "source_capture_sha256": "fec78a1e4a67d984b4faa838829352754ab0ba25367de240f0490a1f37f19ed9",
+  "core_sha256": "bf658bc27c2f909634b72a6bc9922db029ffc11684e320ed252880b9454529f8",
+  "compiled_sha256": "80f7ab64b82ac9abb4e01e04617dfdbe70fa07df83db86a0287ee63b133ba6bd",
+  "readable_sha256": "fc231fdaf424bdd3bf139d506f5691589e6641daefcf0fa7ff28aaf5ac892f67",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -873,6 +873,66 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported House passage of H.R.3944’s full military-construction, VA funding and restrictions package",
           "source_id": "clerk:119:1:182"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:200",
+      "shared_sha256": "53daf2f465cb84a2dc45f6461ce91adcdc12656142a114750e1bd8de11b09fac",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of S.1582’s stablecoin regulation and insolvency-priority package",
+          "source_id": "clerk:119:1:200"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:200"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:199",
+      "shared_sha256": "c6f596abec2a65b80f49058209e0654fd0fb0294dd10b33f8d53dcd1d2e90ebf",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package",
+          "source_id": "clerk:119:1:199"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:199"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:206",
+      "shared_sha256": "74a9e8dff47acc0d5121fa5503f4b9445d9b2e7d56001784066fcfd6565d791f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad",
+          "source_id": "clerk:119:1:206"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad",
+          "source_id": "clerk:119:1:206"
         }
       ]
     }

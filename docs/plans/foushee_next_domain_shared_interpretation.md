@@ -62,53 +62,64 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Continuation outcome and stopping point
+## Active continuation — September24
 
-Resumed actual local/remote `01aa0a35060546aa274989370952fbda716d908d` in the
-existing worktree without reset. Preserved all 41 prior meanings, 422 governed
-sources and 189 shared membership records; unrelated root-worktree changes remain
-untouched. Completed the recorded H.R.3944 pair and rolls191–193 first, then safe
-nearby cases. The full material delta and sources are in the consolidated packet.
+Actual worktree `.w/foushee-next-domain` and remote draft PR194 both matched
+`bed93d0b507354fceaf0b52f1e7118f3fe62481a` at this continuation's start.
+No reset; all 43 prior shared meanings and prior governed captures were preserved.
+The persistent user goal is active across ordinary research batches and turns.
+The old terminal marker was removed on resumption; no new marker belongs at an
+ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 
-- [x] Nine more screenings: two proposed inclusions, five exclusions, two procedural
-  controls. Counts41/174/8/108/345 become43/176/8/113/336; fixed676 identities and
-  September16,2026 cutoff unchanged. No unavailable/conflicting-source flags.
-- [x] Reuse H.R.3944 EH, H.Res.530 RH, Report119-167, RCP119-5 and June25 Record.
-  Bind seven en-bloc instructions, advance medical transfer, nested military
-  transfer and net-zero effects independently from full passage.
-- [x] Preserve passage timing, conditional programs, cancellation/replacement,
-  rescissions, exceptions, care restrictions and incorporated-authority limits.
-  Qualify the source’s EHR dates and already-vacated transportation rule.
-- [x] Preserve six pairs/37 episodes and two Massie Not Voting records. Generate
-  37 Foushee and35 bounded Massie findings from86 official observations.
-- [x] Add two shared meanings/compacts, four choice strings,31 maps,9 membership
-  records and29 sources (10 Clerk,19 other). Totals43 meanings,167 maps,
-  198 membership records and451 sources. Some sources prepare unreviewed cases.
-- [x] Correct the queued H.Res.580 amended-version assumption by comparing RH/EH
-  operative text; both rule votes remain procedural, with distinct outcomes.
-- [x] Inspect generated pair/detail, source/member accounting and scoped diff.
-  121 focused tests and7 canonical semantic checks pass. Exact pushed-head CI
-  results are recorded in PR194 after push. No new runtime/architecture changes.
-- [ ] Complete336 remaining screenings and wider episode completeness. No Health
-  membership or review readiness follows from source capture alone.
-- [ ] Substantive review before acceptance/publication; no new decision is needed
-  to continue the authorized research.
+- [x] Confirm the actual next unprocessed group: rolls199/200/203. Prior
+  H.R.3944 rolls180/182 and July191–198 research was already complete.
+- [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
+  bankruptcy incorporations before proposing Health membership. Preserve
+  reserve-shortfall estate priority versus customer-property pool priority.
+- [x] Three new shared candidate meanings/compacts and six choice strings;
+  neither implies a health-benefit cut or isolated rider preference. The two
+  financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
+  non-directional accounting. Now40 Foushee /36 Massie findings,92 observations,
+  four Massie Not Voting records,40 episodes and six preserved pairs.
+- [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
+  EH and reused appropriations. Keep the rule vote procedural/non-counting;
+  preserve named-program protections, $500-million first-paragraph rescission,
+  omitted earlier $400-million second-paragraph rescission and other exceptions.
+- [x] Counts43/176/8/113/336 become46/177/8/116/329 across unchanged676 identities.
+  Add22 governed sources (eight Clerk,14 other),7 membership records and26
+  interpretation claim maps. Totals473 sources,205 membership records,193 maps.
+- [x] Regenerate and inspect compact/detail outputs. All37 candidate tests and124 focused subsystem tests pass,
+  including source-removal rejection, both non-votes, pool-versus-estate limits
+  and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
+  progress boundary; prior bed93 CI remains historical.
+- [ ] Complete329 remaining screenings, wider episode reconciliation and
+  evidence-based substantive review-readiness assessment. No current human
+  decision, unavailable evidence or source-conflict blocker is identified.
 
-Next:2025 rolls199/200, H.R.3633 EH and S.1582 ES. Texts/Clerk captures are saved;
-only initial navigation occurred. Complete full operative/authority review before
-membership. Then roll203/H.Res.590: EH deems concurrence in the H.R.4 Senate
-amendment; acquire that version and compare exact accounts, preserving the
-procedural boundary rather than inheriting earlier EH meaning. Reuse H.Res.580
-and the captured appropriation laws. Then H.R.4016 rolls204–210/212, with exact
-report/base/floor amendment effects and independent final-passage review.
+H.R.4016 roll206 is now interpreted independently: Part A amendment113 changes
+the $15-million HIV-education minimum on RH page42 line16, not the parent account
+total. Base page visually verified; Foushee No/Massie Aye projected mechanically.
+Rolls205/207/208 are proposed exclusions with exact Taiwan/Israel/Jordan deleted
+provisions, military purposes and allocation-versus-total limits recorded.
 
-The universe JSON preserves all336 remaining identities, prepared-source notes
-and explicit instructions for the first11. Stop reason: this sustained run’s
-practical execution/context limit after complex amendment/package and incorporated
-authority research, not a new approval gate or evidence blocker. Same draft194,
-plan and packet. Complete validation/commit/push/PR recording before creating
-the uncommitted CHECKPOINT marker as the final filesystem action. It does not
-mean Health coverage is complete. No user decision is required to resume.
+Next executable group: H.R.4016 rolls204/209/210/212. RH/EH, Report119-199,
+eight Clerk captures and July17 Record are acquired. Roll204 exact instruction,
+base account and debate pp68–69 were read; next trace all10USC401/402/404/407/
+2557/2561 authorities before membership. Roll209's bill-specific Ukraine
+prohibition/debate pp73–74 were read; confirm relevant assistance scope.
+Roll210's Lebanese Armed Forces prohibition/debate pp75–76 were read; p77
+continuation and scope remain. Neither is equated to all assistance from every
+appropriation. Final EH accounts/riders/adopted amendments/incorporations remain
+substantively unreviewed. The July18 URL is not a PDF; after-midnight Clerk votes
+are in the July17 legislative-day Record. No evidence blocker is asserted.
+Then rolls213 onward. Exact next steps are in the inventory, not a new milestone.
+
+Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
+were read through TitleVI, not only the shorter original contents list. Its
+sections404/406→11USC761/766→507/726 chain and101/103/109 applicability were
+traced. Section512 was compared with S.1582 and12USC1843(k). S.1582 section11's
+separate reserve-shortfall priority has its own meaning. Statutory historical
+notes identify health-plan contribution claims, not today's dollar caps.
 
 ## Boundaries, rollback and reconciliation
 

@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 43,
+        "eligible_substantive_actions": 46,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 43,
-        "resolved_eligible_actions": 43,
-        "directional_yes_no_positions": 43,
+        "in_service_eligible_actions": 46,
+        "resolved_eligible_actions": 46,
+        "directional_yes_no_positions": 46,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 37,
+        "complete_episodes": 40,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -429,6 +429,63 @@
             ],
             "evidence_episode_ids": [
               "episode:hr1998:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:e9f3a73c051d6804",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:199"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr3633:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:408624e6d7eb88c5",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:200"
+            ],
+            "evidence_episode_ids": [
+              "episode:s1582:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:446a5d77abb97c16",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:206"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4016:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -862,6 +919,9 @@
             "prop:d4f025319ef35719",
             "prop:1e96721ba8324bdb",
             "prop:ed0e0c7e7c732192",
+            "prop:e9f3a73c051d6804",
+            "prop:408624e6d7eb88c5",
+            "prop:446a5d77abb97c16",
             "prop:8354ac67bf3c6fdf",
             "prop:495b2c6a04a6393d",
             "prop:4bae918da3122818",
@@ -906,6 +966,9 @@
           "house:119:1:180",
           "house:119:1:182",
           "house:119:1:190",
+          "house:119:1:199",
+          "house:119:1:200",
+          "house:119:1:206",
           "house:119:1:25",
           "house:119:1:27",
           "house:119:1:281",
@@ -942,17 +1005,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 43,
+        "eligible_substantive_actions": 46,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 43,
-        "resolved_eligible_actions": 43,
-        "directional_yes_no_positions": 41,
+        "in_service_eligible_actions": 46,
+        "resolved_eligible_actions": 46,
+        "directional_yes_no_positions": 42,
         "present_actions": 0,
-        "not_voting_actions": 2,
+        "not_voting_actions": 4,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 37,
+        "complete_episodes": 40,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1376,6 +1439,25 @@
             }
           },
           {
+            "proposition_id": "prop:2cbd9594aff06b40",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:206"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4016:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:7fc49dbd4ec8818a",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1761,6 +1843,7 @@
             "prop:2ea02de947a9d22e",
             "prop:b7c2153fd3ee3a41",
             "prop:14db2b07a762c07f",
+            "prop:2cbd9594aff06b40",
             "prop:7fc49dbd4ec8818a",
             "prop:1331867e574ffded",
             "prop:a1f9db4c83fe3642",
@@ -1784,9 +1867,11 @@
         },
         "coverage_boundaries": [
           {
-            "boundary_id": "coverage:43bdcce7f40e9654",
+            "boundary_id": "coverage:0b45a00a11310414",
             "boundary_type": "not_voting",
             "action_ids": [
+              "house:119:1:199",
+              "house:119:1:200",
               "house:119:1:306",
               "house:119:2:250"
             ],
@@ -1814,6 +1899,7 @@
           "house:119:1:180",
           "house:119:1:182",
           "house:119:1:190",
+          "house:119:1:206",
           "house:119:1:25",
           "house:119:1:27",
           "house:119:1:281",
@@ -1841,6 +1927,16 @@
           "house:119:2:53"
         ],
         "non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:199",
+            "reason_code": "non_directional_status",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:200",
+            "reason_code": "non_directional_status",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
           {
             "action_id": "house:119:1:306",
             "reason_code": "non_directional_status",

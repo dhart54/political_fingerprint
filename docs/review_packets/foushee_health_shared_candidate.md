@@ -1,43 +1,128 @@
-# Foushee Health & Social Policy — resumed shared candidate
+# Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate: nine more membership screenings resolved.** Two new shared
-interpretations bring the total to 43 exact actions, 37 Foushee findings and 35
-bounded Massie proof findings. There are 336 unreviewed discovery identities.
+**Partial candidate, active research.** Seven more membership screenings resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: three new shared interpretations, three exclusions
+and one procedural control. Now46 interpreted inputs,40 Foushee findings and36
+bounded Massie proof findings;329 discovery identities remain unreviewed.
 This is neither complete Health coverage nor accepted/public content.
 
-## Resume delta and review entry points
+## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
-branch `codex/foushee-shared-next-domain`, resumed from
-`01aa0a35060546aa274989370952fbda716d908d`. Actual local and remote heads matched;
-no later in-scope work was overwritten. Reviewed base remains
-`2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. The exact pushed head and hosted CI
-results are recorded in the existing PR discussion.
+branch `codex/foushee-shared-next-domain`, unchanged reviewed base
+`2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
+bed93d at resumption. Later in-scope research is preserved without reset.
+The exact pushed commit and its CI results are recorded in the existing PR
+discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
-- [Living plan and unchanged eight-domain matrix](../plans/foushee_next_domain_shared_interpretation.md)
-- [43 shared interpretations / 167 passage maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [451 governed source captures](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [198 reusable member-neutral membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
-- [676-row accounting and exact remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
+- [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
+- [46 shared meanings /193 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [473 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [205 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
+- [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
-- [Both members’ compact/detail findings](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
-- [Deterministic reuse/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
+- [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Candidate disposition | Before this resume | After |
+| Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |41|43|
-| procedural_context |174|176|
+| interpreted_substantive_directional |43|46|
+| procedural_context |176|177|
 | expressive_nonbinding_context |8|8|
-| exact_action_ineligible |108|113|
-| source_unresolved (unreviewed membership) |345|336|
-| Total fixed discovery |676|676|
+| exact_action_ineligible |113|116|
+| source_unresolved (unreviewed membership) |336|329|
+| Fixed discovery |676|676|
 
-Discovery remains 362 session-1 and 314 session-2 House119 identities through
-September16,2026. All 41 prior interpretation objects, 422 prior governed source
-objects and 189 prior shared membership records are unchanged. The remaining
-queue is unfinished work, not presumed Health votes or unavailable evidence.
+Scope remains362 session1 and314 session2 identities through September16,2026.
+No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
-## New shared interpretations and source reuse
+## Current shared meanings and source reuse
+
+- **2025 roll200, S.1582 ES:** section11's conditional reserve-shortfall claim
+  priority expressly precedes existing section507(a) priorities, including
+  qualifying unsecured employee health-plan contributions. Preserve required
+  reserves, the additional-reserves compliance limit, contribution-claim limits
+  and the broader stablecoin package. This does not establish reduced benefits,
+  an actual insolvency or the member's preference on a single priority provision.
+- **2025 roll199, H.R.3633 EH:** sections404/406 extend commodity-broker treatment
+  to covered customer property, transactions and intermediaries. Section766(h)
+  prioritizes that pool for allowed customer net-equity claims, with attributable
+  administration costs and proprietary-account ordering preserved. Section766(j)
+  sends excess property/unpaid customer claims into ordinary section726 estate
+  distribution. This is not S.1582's separate estate-wide reserve-shortfall
+  priority. Customer-elected assets removed from segregation are excluded.
+  The full trading, custody, stablecoin-amendment and anti-CBDC package remains
+  one choice, not a standalone Health vote.
+- **2025 roll203, H.Res.590:** deemed concurrence in H.R.4 EAS is fully recorded
+  but the exact rule vote stays non-counting procedural context. The Senate text
+  protects HIV/AIDS, tuberculosis, malaria, nutrition and maternal/child-health
+  funds within its $500-million first-paragraph Global Health rescission; that
+  protection excludes family-planning/reproductive-health programs. It omits
+  EH's separate $400-million second-paragraph rescission. Preserve unobligated
+  balances, food-aid administration protections and other package exceptions.
+
+Complete S.1582 ES and H.R.3633 EH were read, including the latter's operative
+TitleVI absent from its original contents list. Reuse captured House rule580,
+Clerk199/200/203, H.Res.590, H.R.4 EH and the two appropriations laws. Add official
+H.R.4 EAS and11USC101/103/109/507/726/761/766 plus12USC1843. The historical
+section507 notes identify health-insurance plans, not current deadlines or dollar
+caps. The company-ownership/financial-activity incorporation was examined without
+mistaking a financial business classification for a change in medical benefits.
+
+**H.R.4016 narrow-action batch:** roll206/Part A amendment113 removes the
+$15-million positive minimum for military-linked HIV-prevention education,
+primarily in African nations. Exact RH page42 line16 changes the nested minimum,
+not the total Defense Health appropriation, and adds no general prohibition.
+Report119-199 and Record H3440–3441/H3463 bind the instruction and roll. The base
+page was rendered and visually checked. Floor descriptions of eliminating the
+program do not enlarge the operative text. Foushee No/Massie Aye generate the
+respective opposing/supporting findings mechanically. Rolls205/207/208 are
+proposed exclusions after full deleted-provision review: Taiwan military
+assistance, Israeli missile-defense allocations and permissive Jordan armed-force
+support. None acquires Health membership from the parent bill or debate about
+medical consequences. These are deleted designations, not cuts to whole accounts.
+
+Manual delta: three shared meanings/compacts, six choice strings,26 claim maps,
+seven membership records and22 source captures (eight Clerk,14 other). The
+H.R.3633/S.1582 records add two Foushee findings and two non-directional Massie
+observations; roll206 adds a finding for each member. Totals92 observations,
+four Massie non-votes,40 episodes and six preserved pairs. No synthesis added.
+The new H.R.4016 episode is explicitly incomplete pending its other exact actions.
+
+## Current validation and remaining execution
+
+**124 focused subsystem tests and7 canonical semantic checks pass**, including
+37 candidate tests. Regeneration/replay, source-removal rejection, scope/member/
+party/cutoff guards, non-directional records and candidate publication rejection
+remain green. New tests preserve customer-pool versus estate priorities, both
+Massie non-votes, non-counting deemed concurrence and the HIV minimum versus total
+appropriation distinction. Queue assertions now identify the actual remaining
+roll204. No guard was weakened. No frontend/runtime change or local browser loop
+is claimed. Required existing CI is checked at the exact pushed head in PR194.
+
+**Next: H.R.4016 rolls204/209/210/212**, then213 onward. RH/EH, report199,
+Clerk204–210/212 and July17 Record are captured. Roll204 instruction and base
+$117,988,000 OHDACA account are read; trace10USC401/402/404/407/2557/2561 before
+meaning. Roll209's bill-specific Ukraine prohibition and full debate are read;
+trace the actual assistance scope before membership. Roll210's Lebanese Armed
+Forces prohibition/debate pp75–76 are read; p77 continuation and scope review
+remain. Final EH passage is captured but not substantively reviewed. Its full
+accounts/riders/incorporations and adopted amendments must be independently read.
+The July18 PDF URL returned non-PDF navigation and was rejected; the after-midnight
+votes are in the July17 legislative-day Record. No protected access was attempted.
+
+There is no current human decision or unavailable/conflicting-evidence blocker.
+329 screenings and wider episode reconciliation remain. Research continues;
+this pushed progress checkpoint is not a terminal state or new approval gate.
+No shutdown marker is created while the goal is actively continuing.
+
+Existing branch Vercel-disable/main-only Render safeguards remain unchanged.
+No merge, deployment, publication, production-data write, migration, registry or
+environment change, blue operation, paid service or protected-archive access.
+PR191 remains released, PR193 paused, issue192 open. All new meanings remain
+candidates for later substantive review.
+
+## Preserved prior checkpoint research — H.R.3944 and July controls
 
 The recorded next items, 2025 rolls180/182, then191–193, were confirmed
 unprocessed. Research reused H.R.3944 EH, H.Res.530 RH, Report119-167, RCP119-5
@@ -89,8 +174,8 @@ The binding refuge naming action is not mislabeled a nonbinding resolution.
 Rolls195/198 remain procedural controls. H.Res.580 RH/EH operative text is identical
 apart from whitespace; the earlier queue’s assumption of an amended adoption was
 corrected. Its deemed substitutes, amendment rules, waivers and later bill votes
-remain distinct. H.Res.590’s self-executing H.R.4 Senate concurrence is still
-unreviewed substantively and has an explicit next step; it was not silently counted.
+remain distinct. H.Res.590 was left queued at that checkpoint; the current continuation above completes
+its substantive effects while retaining non-counting rule status.
 
 Manual delta: two shared meanings and compacts, four choice strings, 31 passage
 maps, nine membership records and 29 captures (10 Clerk, 19 other). Totals are
@@ -105,61 +190,11 @@ not an unresolved required-evidence dependency. A mistyped transport-rule URL
 returned navigation and was rejected; the correct official rule was captured.
 All downloads were public and read-only. No new infrastructure or architecture.
 
-## Validation
-
-**121 focused tests and all 7 canonical semantic checks pass.** The focused suite
-includes 34 candidate tests, with new checks for the complete H.R.3944 pair,
-operative page-binding dependency, material qualifications, reused consumer
-definition and non-counting rule questions. Replay, accounting, member/source/
-party/cutoff guards, non-directional states and candidate publication rejection
-remain green. All earlier governed objects were compared against the resume head.
-
-An initial broad test invocation omitted process-local NODE_PATH and could not
-find installed AJV; the corrected invocation reused existing dependencies and
-passed. The semantic command used permitted normal Windows temporary directories.
-No test or guard was weakened; no dependency or production environment changed.
-No frontend runtime changed, so no new browser/build loop is claimed locally.
-Exact-head existing CI is checked after push and recorded in PR194.
-
-```powershell
-python scripts/prepare_shared_domain_candidate.py --input docs/editorial/shared_candidates/house_119_health_20260916 --member F000477 --member M001184 --output docs/editorial/shared_candidates/house_119_health_20260916/generated --review-packet docs/review_packets/foushee_health_shared_candidate.md
-python -m pytest -q -p no:cacheprovider backend/tests/test_shared_domain_candidate.py backend/tests/test_shared_legislative_corpus.py backend/tests/test_editorial_semantic_ir.py backend/tests/test_editorial_pipeline.py backend/tests/test_editorial_public_presentation.py
-python scripts/run_editorial_pipeline.py validate --tier semantic
-```
-
-## Remaining work and exact checkpoint
-
-**336 identities remain unreviewed; no current human decision or unavailable/
-conflicting-evidence blocker is identified.** This run stops at its practical
-execution/context limit after the substantial H.R.3944 amendment/package and
-incorporated-authority research plus the independent July screenings. It is a
-resumable partial checkpoint, not a batch-approval gate or completed Health domain.
-
-Resume with **2025 rolls199 and200: H.R.3633 EH and S.1582 ES**. Both complete
-texts and Clerk captures are committed, but only initial navigation occurred:
-finish full operative provisions and incorporations before membership. Reuse
-H.Res.580 RH/EH. Then **roll203, H.Res.590**: its EH explicitly deems concurrence
-in the H.R.4 Senate amendment. Acquire that amendment, compare its account changes
-against the earlier EH and already-bound appropriation laws, and retain the
-established exact-question/procedural boundary. Do not inherit the earlier
-$500-million/$400-million rescission interpretation.
-
-Next group: **rolls204–210 and212, H.R.4016**. Acquire Report119-199, exact base
-text/print and July17–18 Record; bind every amendment/en-bloc list and page/line
-effect, then complete passage accounts/riders. All 336 identities remain in the
-inventory; the first 11 have specific executable source/version instructions.
-No user input is needed to resume this available work. Candidate acceptance and
-publication still require later substantive review. Terminal marker: CHECKPOINT.
-
-Existing Vercel branch-disable and main-only Render safeguards are unchanged.
-No merge, deployment, publication, production-data write, migration, registry or
-environment change, blue operation, paid service or protected-archive access.
-PR191 remains released, PR193 paused and issue192 open.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-43 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+46 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -585,6 +620,89 @@ The Clerk recorded the House result as 'Passed' on 2025-06-23. This does not est
 Evidence: house:119:1:172; finding `prop:ed0e0c7e7c732192`.
 
 Sources: [clerk:119:1:172](https://clerk.house.gov/evs/2025/roll172.xml); [govinfo:hr1998eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm).
+
+### Digital-commodity regulation with customer-property priority over benefit contribution claims
+
+**Compact:** Foushee opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package. The digital-commodity package extended bankruptcy protection for covered customer property ahead of other claims, including eligible employee health-plan contributions. That priority concerns the customer-property pool, not every asset or a cut to health benefits. One vote covered the broader trading, stablecoin and Federal Reserve digital-currency package.
+
+**Detail:**
+
+**house:119:1:199**
+
+Foushee opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package.
+
+H.R.3633 EH creates a digital-commodity market framework: SEC rules for investment-contract offerings and disclosures, maturity certification for blockchain systems, and CFTC registration, trading, custody, segregation, capital, conduct and conflict-of-interest requirements for digital-commodity intermediaries. It preserves specified anti-fraud, sanctions and anti-money-laundering authorities, provides qualified exclusions for decentralized activities and personal self-custody, and includes implementation fees, studies and agency coordination. The proposed Health nexus is narrower than these general financial rules: sections404 and406 bring covered customer assets and transactions of digital-commodity exchanges, brokers and dealers into the commodity-broker bankruptcy framework. They treat the specified customer money/assets/property as customer property, the specified transactions as commodity contracts and those entities as futures commission merchants for 11 U.S.C.761. Assets removed from segregation through the specified customer election for blockchain services are expressly excluded from that customer-property treatment.
+
+The incorporated 11 U.S.C.101(6) and103(d) connect that treatment to commodity-broker liquidation in chapter7; section109(d) excludes commodity brokers from ordinary chapter11 eligibility. Under section766(h), the customer-property pool is distributed ratably to customers up to their allowed net-equity claims before other claims, except the specified section507(a)(2) administrative claims attributable to administering that property. Proprietary-account customer claims wait until other customer net-equity claims have been paid in full. The other creditor claims include qualifying allowed unsecured employee-benefit contribution claims under section507(a)(5); the accompanying legislative notes expressly identify health-insurance plans within that category. The operative contribution priority retains its 180-day service-period and plan/employee/wage-payment limits. Historical notes establish the plan category, not current dollar caps.
+
+This changes the legal treatment of covered customer property, not a known payment to a particular health plan. Section766(j) sends excess customer property and unpaid portions of customer net-equity claims into ordinary section726 distribution, whose first tier retains section507 priorities. It does not give these customers S.1582’s separate reserve-shortfall first priority against the rest of an issuer’s estate. No actual insolvency, unpaid health contribution, lost coverage or benefit reduction is inferred. The interpretation is a proposed cross-domain financing effect on qualifying health-plan contribution claims, not a claim that all digital trading is Health policy.
+
+The entire EH package was one passage choice. Its section512 changes GENIUS Act service-provider definitions, reserve-report examination/certification and internal controls, and nonfinancial-company ownership restrictions; it adds rules preserving state-regulated commodity-backed stablecoins and personal self-custody. These provisions are not recast as a second vote adopting S.1582’s section11. TitleVI separately restricts Federal Reserve retail accounts and direct/indirect central-bank digital currency issuance, testing and monetary-policy use, with its stated open, permissionless, private-currency exception. The House rule and Clerk record bind this amended House-passed package, including TitleVI, rather than the earlier title list alone.
+
+The Clerk recorded the House result as 'Passed' on 2025-07-17. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Candidate Health membership rests on the exact customer-property distribution chain and qualifying employee health-plan contribution claims, not on generic financial risk, deposit insurance, technology or a bill title. It remains proposed for substantive review.
+- The priority is limited to covered customer property and allowed net-equity claims, with attributable administration costs and proprietary-account ordering preserved. Customer-elected assets removed from segregation are excluded; excess property and unpaid customer claims follow ordinary estate distribution.
+- The existing contribution-claim limits remain material. No actual insolvency, loss of health-plan assets, reduction in coverage or changed contribution rate is established. Historical legislative notes identify plan types, not current adjusted monetary caps.
+- This is a whole-package passage vote, not a standalone choice on employee health-plan claims, stablecoin reserves or Federal Reserve digital currency. H.R.3633 customer-property treatment and S.1582 reserve-shortfall priority are distinct mechanisms.
+
+Evidence: house:119:1:199; finding `prop:e9f3a73c051d6804`.
+
+Sources: [clerk:119:1:199](https://clerk.house.gov/evs/2025/roll199.xml); [govinfo:hr3633eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3633eh/html/BILLS-119hr3633eh.htm); [govinfo:11usc761-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec761.htm); [govinfo:11usc766-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec766.htm); [govinfo:11usc726-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapII-sec726.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:11usc101-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec101.htm); [govinfo:11usc103-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec103.htm); [govinfo:11usc109-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec109.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm).
+
+### Stablecoin regulation with insolvency priority over employee-benefit contribution claims
+
+**Compact:** Foushee opposed House passage of S.1582’s stablecoin regulation and insolvency-priority package. The stablecoin package put qualifying reserve-shortfall claims ahead of other bankruptcy priorities, including eligible employee health-plan contribution claims. That order applies when an issuer cannot redeem all covered claims from required reserves; it does not itself reduce anyone’s health benefits. One vote covered the broader stablecoin regulatory package.
+
+**Detail:**
+
+**house:119:1:200**
+
+Foushee opposed House passage of S.1582’s stablecoin regulation and insolvency-priority package.
+
+S.1582 ES establishes a regulatory framework for payment stablecoins: permitted issuers, one-to-one eligible reserves, redemption disclosures, capital and liquidity standards, Federal/State oversight, anti-money-laundering and sanctions compliance, custody protections, limits on interest and misleading insured-status claims, qualified foreign-issuer access, studies and implementation rules. Its insurance provisions concern deposits/shares, not health coverage. The proposed Health connection instead comes from section11’s express amendment to the priority of claims in an issuer’s insolvency. Section11(a) gives stablecoin holders ratable priority against required reserves and limits that priority to claims arising from stablecoin holdings. Section11(d) adds 11 U.S.C.507(e): if required reserves cannot redeem all outstanding stablecoin claims, the remaining holder claim has first priority against the estate over other claims, including those normally prioritized under section507(a), but only to the extent compliance with the Act’s reserve requirements would have required additional reserves.
+
+The incorporated section507(a)(5) covers allowed unsecured claims for employee-benefit-plan contributions arising from services within its specified 180-day period, subject to plan/employee and wage-payment limits. The statute’s accompanying Senate legislative notes expressly identify health-insurance plans among employee-benefit plans. Those notes explain the category; their older deadlines and dollar amounts are not substituted for the operative statute. This is a source-supported change to the relative payment position of qualifying health-plan contribution claims in this specific insolvency setting, not a change to every health-insurance policy, benefit entitlement or contribution rate. No particular issuer insolvency, unpaid contribution, lost coverage or patient outcome is asserted.
+
+The broader insolvency provisions exclude required reserves from estate property while retaining the automatic stay, permit court-supervised ratable distributions, require the relevant regulator to participate in issuer bankruptcy proceedings and preserve applicable bank/credit-union resolution routes. Depository subsidiaries or nonbank issuers may be bankruptcy debtors. The bill also regulates custody/commingling, preserves qualified consumer protections, directs interoperability assessments and financial-market studies, and provides foreign-regime reciprocity conditions. The House rule made the Senate text available for one passage vote; this is the exact ES package, not a vote solely on health-plan claims.
+
+The Clerk recorded the House result as 'Passed' on 2025-07-17. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Proposed Health membership rests on the expressly subordinated employee-benefit contribution priority and its source-supported health-plan scope, not on the word insurance in the banking provisions or a general economic effect. This cross-domain membership rationale remains a candidate for substantive review.
+- Priority is conditional on insufficient required reserves and limited by the additional reserves compliance would have required. Only qualifying allowed unsecured contribution claims are discussed; no transfer of all employee plan assets or guaranteed loss of benefits is inferred.
+- The historical legislative notes identify the types of plans, not current adjusted monetary limits. Existing contribution-claim limits remain material; no old statutory dollar amount is presented as the current cap.
+- Support or opposition applies to the full stablecoin package. It does not isolate the member’s preference concerning employee health-plan creditors.
+
+Evidence: house:119:1:200; finding `prop:408624e6d7eb88c5`.
+
+Sources: [clerk:119:1:200](https://clerk.house.gov/evs/2025/roll200.xml); [govinfo:s1582es](https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm).
+
+### Removing the $15 million minimum for military-linked HIV prevention education abroad
+
+**Compact:** Foushee opposed the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad. The amendment reduced the $15 million minimum for HIV-prevention education linked to U.S. military training, exercises and humanitarian activities, primarily in African nations, to zero. It changed that earmarked minimum, not the total Defense Health appropriation, and did not expressly prohibit all such activities.
+
+**Detail:**
+
+**house:119:1:206**
+
+Foushee opposed the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad.
+
+Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.
+
+The surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.
+
+The Clerk recorded the House result as 'Failed' on 2025-07-18. This does not establish enactment.
+
+- This is a choice on the specified amendment, not on passage of the entire Defense appropriations package. Its operative instruction controls over broader floor descriptions.
+- The $15 million is a nested minimum within Defense Health research funding, not a separate reduction in the account total. No general HIV-program prohibition, PEPFAR reduction or domestic funding transfer is inferred.
+- Primarily in African nations and the connection to U.S. military training/exercises/humanitarian activities define the covered education provision; it is not all foreign medical care.
+- The amendment failed. This recorded choice does not establish enactment or a loss of treatment. The remaining H.R.4016 episode actions require independent membership review; no complete episode or package interpretation is yet claimed.
+
+Evidence: house:119:1:206; finding `prop:446a5d77abb97c16`.
+
+Sources: [clerk:119:1:206](https://clerk.house.gov/evs/2025/roll206.xml); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm).
 
 ### Forest-management package with firefighter-family casualty assistance
 
@@ -1084,4 +1202,7 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:168 | supported House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | opposed House passage of H.R.4’s whole rescissions package, including its two Global Health Programs balance reductions | [govinfo:hr4eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm); [govinfo:pl119-4](https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm); [govinfo:pl118-47](https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm) |
 | house:119:1:180 | supported the seven-part Carter en-bloc No.2 amendment to H.R.3944 | opposed the seven-part Carter en-bloc No.2 amendment to H.R.3944 | [congressional-record:2025-06-25](https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf); [govinfo:hres530rh](https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm); [govinfo:hrpt167](https://www.govinfo.gov/content/pkg/CRPT-119hrpt167/html/CRPT-119hrpt167.htm); [house-rules:rcp119-5](https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf) |
 | house:119:1:182 | supported House passage of H.R.3944’s full military-construction, VA funding and restrictions package | opposed House passage of H.R.3944’s full military-construction, VA funding and restrictions package | [govinfo:hr3944eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3944eh/html/BILLS-119hr3944eh.htm); [govinfo:pl114-223](https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm); [govinfo:pl115-141](https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm); [govinfo:pl111-163](https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm); [govinfo:pl118-42](https://www.govinfo.gov/content/pkg/PLAW-118publ42/html/PLAW-118publ42.htm); [govinfo:fr2022-19239](https://www.govinfo.gov/content/pkg/FR-2022-09-09/html/2022-19239.htm); [govinfo:fr2023-03013](https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [govinfo:fr2019-26751](https://www.govinfo.gov/content/pkg/FR-2019-12-13/html/2019-26751.htm); [govinfo:transport-court2024](https://www.govinfo.gov/content/pkg/USCOURTS-ca13-24-01104/pdf/USCOURTS-ca13-24-01104-0.pdf); [congressional-record:2025-06-25](https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf) |
+| house:119:1:200 | supported House passage of S.1582’s stablecoin regulation and insolvency-priority package | opposed House passage of S.1582’s stablecoin regulation and insolvency-priority package | [govinfo:s1582es](https://www.govinfo.gov/content/pkg/BILLS-119s1582es/html/BILLS-119s1582es.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm) |
+| house:119:1:199 | supported House passage of H.R.3633’s digital-commodity regulation and customer-property package | opposed House passage of H.R.3633’s digital-commodity regulation and customer-property package | [govinfo:hr3633eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3633eh/html/BILLS-119hr3633eh.htm); [govinfo:11usc761-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec761.htm); [govinfo:11usc766-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec766.htm); [govinfo:11usc726-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapII-sec726.htm); [govinfo:11usc507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm); [govinfo:11usc101-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec101.htm); [govinfo:11usc103-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec103.htm); [govinfo:11usc109-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec109.htm); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm) |
+| house:119:1:206 | supported the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad | opposed the H.R.4016 amendment removing the $15 million minimum for military-linked HIV-prevention education abroad | [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm) |
 <!-- GENERATED CANDIDATE END -->

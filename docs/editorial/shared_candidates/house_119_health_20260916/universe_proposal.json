@@ -33,6 +33,9 @@
     "house:119:1:180",
     "house:119:1:182",
     "house:119:1:190",
+    "house:119:1:199",
+    "house:119:1:200",
+    "house:119:1:206",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -73,11 +76,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 176,
-      "exact_action_ineligible": 113,
-      "interpreted_substantive_directional": 43,
+      "procedural_context": 177,
+      "exact_action_ineligible": 116,
+      "interpreted_substantive_directional": 46,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 336
+      "source_unresolved": 329
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -86,14 +89,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 43,
-    "directional_substantive_actions": 43,
+    "substantive_eligible_actions": 46,
+    "directional_substantive_actions": 46,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 176,
+    "procedural_context_actions": 177,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 113,
-    "unresolved_boundary_cases": 336,
-    "independent_episode_count": 37,
+    "exact_action_ineligible_actions": 116,
+    "unresolved_boundary_cases": 329,
+    "independent_episode_count": 40,
     "multi_action_episode_count": 6,
     "mechanism_types": [
       "amendment",
@@ -104,12 +107,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 43,
-      "substantive_actions": 43,
+      "ready_substantive_actions": 46,
+      "substantive_actions": 46,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "336 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "329 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -189,6 +192,7 @@
         "house:119:1:197",
         "house:119:1:198",
         "house:119:1:202",
+        "house:119:1:203",
         "house:119:1:211",
         "house:119:1:221",
         "house:119:1:223",
@@ -382,6 +386,9 @@
         "house:119:1:193",
         "house:119:1:196",
         "house:119:1:201",
+        "house:119:1:205",
+        "house:119:1:207",
+        "house:119:1:208",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -433,6 +440,9 @@
         "house:119:1:180",
         "house:119:1:182",
         "house:119:1:190",
+        "house:119:1:199",
+        "house:119:1:200",
+        "house:119:1:206",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -461,14 +471,7 @@
         "house:119:2:289"
       ],
       "source_unresolved": [
-        "house:119:1:199",
-        "house:119:1:200",
-        "house:119:1:203",
         "house:119:1:204",
-        "house:119:1:205",
-        "house:119:1:206",
-        "house:119:1:207",
-        "house:119:1:208",
         "house:119:1:209",
         "house:119:1:210",
         "house:119:1:212",
@@ -799,11 +802,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "43 proposed source-mapped inputs, not accepted eligibility. The remaining 336 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "46 proposed source-mapped inputs, not accepted eligibility. The remaining 329 are an unfinished discovery backlog, not asserted Health votes."
   },
-  "episode_completeness": "37 candidate episodes cover 43 supplied actions, including 6 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "40 candidate episodes cover 46 supplied actions, including 6 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "7f35573d147d816deb29841939f9be144b8999450bf9a262c1ea670014ade3d4",
+  "universe_subject_sha256": "e71b8d287d6a9ba3c11b6443edb3272e254fc18c57650ecf64de00a96b0dd4af",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -12896,8 +12899,8 @@
       "date": "2025-07-17",
       "measure": "bill_119_hr_3633",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.3633 EH creates a digital-commodity market framework: SEC rules for investment-contract offerings and disclosures, maturity certification for blockchain systems, and CFTC registration, trading, custody, segregation, capital, conduct and conflict-of-interest requirements for digital-commodity intermediaries. It preserves specified anti-fraud, sanctions and anti-money-laundering authorities, provides qualified exclusions for decentralized activities and personal self-custody, and includes implementation fees, studies and agency coordination. The proposed Health nexus is narrower than these general financial rules: sections404 and406 bring covered customer assets and transactions of digital-commodity exchanges, brokers and dealers into the commodity-broker bankruptcy framework. They treat the specified customer money/assets/property as customer property, the specified transactions as commodity contracts and those entities as futures commission merchants for 11 U.S.C.761. Assets removed from segregation through the specified customer election for blockchain services are expressly excluded from that customer-property treatment.\n\nThe incorporated 11 U.S.C.101(6) and103(d) connect that treatment to commodity-broker liquidation in chapter7; section109(d) excludes commodity brokers from ordinary chapter11 eligibility. Under section766(h), the customer-property pool is distributed ratably to customers up to their allowed net-equity claims before other claims, except the specified section507(a)(2) administrative claims attributable to administering that property. Proprietary-account customer claims wait until other customer net-equity claims have been paid in full. The other creditor claims include qualifying allowed unsecured employee-benefit contribution claims under section507(a)(5); the accompanying legislative notes expressly identify health-insurance plans within that category. The operative contribution priority retains its 180-day service-period and plan/employee/wage-payment limits. Historical notes establish the plan category, not current dollar caps.\n\nThis changes the legal treatment of covered customer property, not a known payment to a particular health plan. Section766(j) sends excess customer property and unpaid portions of customer net-equity claims into ordinary section726 distribution, whose first tier retains section507 priorities. It does not give these customers S.1582’s separate reserve-shortfall first priority against the rest of an issuer’s estate. No actual insolvency, unpaid health contribution, lost coverage or benefit reduction is inferred. The interpretation is a proposed cross-domain financing effect on qualifying health-plan contribution claims, not a claim that all digital trading is Health policy.\n\nThe entire EH package was one passage choice. Its section512 changes GENIUS Act service-provider definitions, reserve-report examination/certification and internal controls, and nonfinancial-company ownership restrictions; it adds rules preserving state-regulated commodity-backed stablecoins and personal self-custody. These provisions are not recast as a second vote adopting S.1582’s section11. TitleVI separately restricts Federal Reserve retail accounts and direct/indirect central-bank digital currency issuance, testing and monetary-policy use, with its stated open, permissionless, private-currency exception. The House rule and Clerk record bind this amended House-passed package, including TitleVI, rather than the earlier title list alone.",
       "source": {
         "source_id": "clerk:119:1:199",
         "url": "https://clerk.house.gov/evs/2025/roll199.xml",
@@ -12905,7 +12908,7 @@
         "governed_bytes_sha256": "960fc5617b9dad8b3442048ce9c1db6d06f12b4b9932b816da7b24c908c9548a",
         "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3633:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3633",
       "member_action": "nay",
@@ -12914,9 +12917,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.3633 EH creates a digital-commodity market framework: SEC rules for investment-contract offerings and disclosures, maturity certification for blockchain systems, and CFTC registration, trading, custody, segregation, capital, conduct and conflict-of-interest requirements for digital-commodity intermediaries. It preserves specified anti-fraud, sanctions and anti-money-laundering authorities, provides qualified exclusions for decentralized activities and personal self-custody, and includes implementation fees, studies and agency coordination. The proposed Health nexus is narrower than these general financial rules: sections404 and406 bring covered customer assets and transactions of digital-commodity exchanges, brokers and dealers into the commodity-broker bankruptcy framework. They treat the specified customer money/assets/property as customer property, the specified transactions as commodity contracts and those entities as futures commission merchants for 11 U.S.C.761. Assets removed from segregation through the specified customer election for blockchain services are expressly excluded from that customer-property treatment.\n\nThe incorporated 11 U.S.C.101(6) and103(d) connect that treatment to commodity-broker liquidation in chapter7; section109(d) excludes commodity brokers from ordinary chapter11 eligibility. Under section766(h), the customer-property pool is distributed ratably to customers up to their allowed net-equity claims before other claims, except the specified section507(a)(2) administrative claims attributable to administering that property. Proprietary-account customer claims wait until other customer net-equity claims have been paid in full. The other creditor claims include qualifying allowed unsecured employee-benefit contribution claims under section507(a)(5); the accompanying legislative notes expressly identify health-insurance plans within that category. The operative contribution priority retains its 180-day service-period and plan/employee/wage-payment limits. Historical notes establish the plan category, not current dollar caps.\n\nThis changes the legal treatment of covered customer property, not a known payment to a particular health plan. Section766(j) sends excess customer property and unpaid portions of customer net-equity claims into ordinary section726 distribution, whose first tier retains section507 priorities. It does not give these customers S.1582’s separate reserve-shortfall first priority against the rest of an issuer’s estate. No actual insolvency, unpaid health contribution, lost coverage or benefit reduction is inferred. The interpretation is a proposed cross-domain financing effect on qualifying health-plan contribution claims, not a claim that all digital trading is Health policy.\n\nThe entire EH package was one passage choice. Its section512 changes GENIUS Act service-provider definitions, reserve-report examination/certification and internal controls, and nonfinancial-company ownership restrictions; it adds rules preserving state-regulated commodity-backed stablecoins and personal self-custody. These provisions are not recast as a second vote adopting S.1582’s section11. TitleVI separately restricts Federal Reserve retail accounts and direct/indirect central-bank digital currency issuance, testing and monetary-policy use, with its stated open, permissionless, private-currency exception. The House rule and Clerk record bind this amended House-passed package, including TitleVI, rather than the earlier title list alone.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:199",
@@ -12932,22 +12935,81 @@
           "governed_bytes_sha256": "059e1275905258dd98fc69d0a27357d7589e7a4a55e3055eeb62d8cce97f97d3"
         },
         {
+          "source_id": "govinfo:11usc761-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec761.htm",
+          "raw_sha256": "34428e17bc5c974c26402cd451222a7f60bf69b1c45f01f45189a4263e855c24",
+          "governed_bytes_sha256": "a996f7e5ecf31fd9196b0d97d0d04e36036dfb2de1d4238c4a5a82faae17207c"
+        },
+        {
+          "source_id": "govinfo:11usc766-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapIV-sec766.htm",
+          "raw_sha256": "26292f3ddf402f2da1e4533d9b9f7c41c9c0a07502969c40b1cc4cd196ca7f96",
+          "governed_bytes_sha256": "609d736c1ac1ae00aad81b9d5da1b54ed8a27d103a368db0ab302e15b86188a4"
+        },
+        {
+          "source_id": "govinfo:11usc726-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap7-subchapII-sec726.htm",
+          "raw_sha256": "bc80dc8f98d0837de29285159e96e2579bc6d9eedb3c5ab6827b8fb141bdb73b",
+          "governed_bytes_sha256": "76280caac74f8884e8705611e3bd664faa16c16bc86137da5b873dfeb5ff72f1"
+        },
+        {
+          "source_id": "govinfo:11usc507-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm",
+          "raw_sha256": "eb5572faa130d4662757d3329a017055bc67978e8f45e9858a6ed9a68b54c299",
+          "governed_bytes_sha256": "c58769e156cf3e1a0c5d234d10eaa343875f29a2a1f15a5becc7199d77722952"
+        },
+        {
+          "source_id": "govinfo:11usc101-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec101.htm",
+          "raw_sha256": "c225c8d202295760dd1e4b117d792e05a8e9336759c87863f5a73f74ef6ccf3f",
+          "governed_bytes_sha256": "10b899c86b6f1cf3c1ce56f4e2d460afbebb7a114ec5ba33e8c1fd8f3ca7e2a4"
+        },
+        {
+          "source_id": "govinfo:11usc103-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec103.htm",
+          "raw_sha256": "1c1c85577b404025e9df926356c1c08b7a1e32d9754406dcaf28d49855fb0339",
+          "governed_bytes_sha256": "ffbaf6249ac3a4d18979cd6512354275aa77f68946ffa5c717450ee0545a0771"
+        },
+        {
+          "source_id": "govinfo:11usc109-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap1-sec109.htm",
+          "raw_sha256": "aec7c891f84c6f5f47067285c6a009402387e9f081ddc3c8f068a436e8634d3f",
+          "governed_bytes_sha256": "2aef7fe2ef68ed21f8f57f594dd4cbc51ff6302ef1ad16e07ca11eb71e9d0e52"
+        },
+        {
           "source_id": "govinfo:hres580eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
           "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
           "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:199",
+        "source_ids": [
+          "clerk:119:1:199",
+          "govinfo:hr3633eh",
+          "govinfo:11usc761-2024",
+          "govinfo:11usc766-2024",
+          "govinfo:11usc726-2024",
+          "govinfo:11usc507-2024",
+          "govinfo:11usc101-2024",
+          "govinfo:11usc103-2024",
+          "govinfo:11usc109-2024",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:199",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review the complete captured H.R.3633 EH digital-commodity package by operative sections and incorporated authorities. Initial navigation only; do not infer Health membership from titles, broad financial effects or the prior H.Res.580 rule. Reuse H.Res.580 RH/EH; exact substantive version is EH.",
-        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
-      }
+        "shared_review_record_sha256": "4daedbfcba608e7ff2f52ca22fe4b1b149a986f3956b7785b83dfba31d06007d"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:200",
@@ -12956,8 +13018,8 @@
       "date": "2025-07-17",
       "measure": "bill_119_s_1582",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "S.1582 ES establishes a regulatory framework for payment stablecoins: permitted issuers, one-to-one eligible reserves, redemption disclosures, capital and liquidity standards, Federal/State oversight, anti-money-laundering and sanctions compliance, custody protections, limits on interest and misleading insured-status claims, qualified foreign-issuer access, studies and implementation rules. Its insurance provisions concern deposits/shares, not health coverage. The proposed Health connection instead comes from section11’s express amendment to the priority of claims in an issuer’s insolvency. Section11(a) gives stablecoin holders ratable priority against required reserves and limits that priority to claims arising from stablecoin holdings. Section11(d) adds 11 U.S.C.507(e): if required reserves cannot redeem all outstanding stablecoin claims, the remaining holder claim has first priority against the estate over other claims, including those normally prioritized under section507(a), but only to the extent compliance with the Act’s reserve requirements would have required additional reserves.\n\nThe incorporated section507(a)(5) covers allowed unsecured claims for employee-benefit-plan contributions arising from services within its specified 180-day period, subject to plan/employee and wage-payment limits. The statute’s accompanying Senate legislative notes expressly identify health-insurance plans among employee-benefit plans. Those notes explain the category; their older deadlines and dollar amounts are not substituted for the operative statute. This is a source-supported change to the relative payment position of qualifying health-plan contribution claims in this specific insolvency setting, not a change to every health-insurance policy, benefit entitlement or contribution rate. No particular issuer insolvency, unpaid contribution, lost coverage or patient outcome is asserted.\n\nThe broader insolvency provisions exclude required reserves from estate property while retaining the automatic stay, permit court-supervised ratable distributions, require the relevant regulator to participate in issuer bankruptcy proceedings and preserve applicable bank/credit-union resolution routes. Depository subsidiaries or nonbank issuers may be bankruptcy debtors. The bill also regulates custody/commingling, preserves qualified consumer protections, directs interoperability assessments and financial-market studies, and provides foreign-regime reciprocity conditions. The House rule made the Senate text available for one passage vote; this is the exact ES package, not a vote solely on health-plan claims.",
       "source": {
         "source_id": "clerk:119:1:200",
         "url": "https://clerk.house.gov/evs/2025/roll200.xml",
@@ -12965,7 +13027,7 @@
         "governed_bytes_sha256": "4326f5cd8e8a62f7cb4178bd44a473df22e52e2281bcfafd5460e9eb795e925d",
         "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:s1582:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_s_1582",
       "member_action": "nay",
@@ -12974,9 +13036,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "S.1582 ES establishes a regulatory framework for payment stablecoins: permitted issuers, one-to-one eligible reserves, redemption disclosures, capital and liquidity standards, Federal/State oversight, anti-money-laundering and sanctions compliance, custody protections, limits on interest and misleading insured-status claims, qualified foreign-issuer access, studies and implementation rules. Its insurance provisions concern deposits/shares, not health coverage. The proposed Health connection instead comes from section11’s express amendment to the priority of claims in an issuer’s insolvency. Section11(a) gives stablecoin holders ratable priority against required reserves and limits that priority to claims arising from stablecoin holdings. Section11(d) adds 11 U.S.C.507(e): if required reserves cannot redeem all outstanding stablecoin claims, the remaining holder claim has first priority against the estate over other claims, including those normally prioritized under section507(a), but only to the extent compliance with the Act’s reserve requirements would have required additional reserves.\n\nThe incorporated section507(a)(5) covers allowed unsecured claims for employee-benefit-plan contributions arising from services within its specified 180-day period, subject to plan/employee and wage-payment limits. The statute’s accompanying Senate legislative notes expressly identify health-insurance plans among employee-benefit plans. Those notes explain the category; their older deadlines and dollar amounts are not substituted for the operative statute. This is a source-supported change to the relative payment position of qualifying health-plan contribution claims in this specific insolvency setting, not a change to every health-insurance policy, benefit entitlement or contribution rate. No particular issuer insolvency, unpaid contribution, lost coverage or patient outcome is asserted.\n\nThe broader insolvency provisions exclude required reserves from estate property while retaining the automatic stay, permit court-supervised ratable distributions, require the relevant regulator to participate in issuer bankruptcy proceedings and preserve applicable bank/credit-union resolution routes. Depository subsidiaries or nonbank issuers may be bankruptcy debtors. The bill also regulates custody/commingling, preserves qualified consumer protections, directs interoperability assessments and financial-market studies, and provides foreign-regime reciprocity conditions. The House rule made the Senate text available for one passage vote; this is the exact ES package, not a vote solely on health-plan claims.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:200",
@@ -12992,22 +13054,39 @@
           "governed_bytes_sha256": "d5db170c89410972f54fc5e3d82cdf1b58d370fb14946bd837781eb8c5afcccf"
         },
         {
+          "source_id": "govinfo:11usc507-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title11/html/USCODE-2024-title11-chap5-subchapI-sec507.htm",
+          "raw_sha256": "eb5572faa130d4662757d3329a017055bc67978e8f45e9858a6ed9a68b54c299",
+          "governed_bytes_sha256": "c58769e156cf3e1a0c5d234d10eaa343875f29a2a1f15a5becc7199d77722952"
+        },
+        {
           "source_id": "govinfo:hres580eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
           "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
           "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:200",
+        "source_ids": [
+          "clerk:119:1:200",
+          "govinfo:s1582es",
+          "govinfo:11usc507-2024",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:200",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Review the complete captured S.1582 ES stablecoin package and incorporated authorities for this House passage. Initial navigation only; no substantive membership decision is recorded. Reuse H.Res.580 section8 and verify ES remains the House-passed question before authoring.",
-        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
-      }
+        "shared_review_record_sha256": "68ca8b04b2e6f206aa4dd779d13bcfd9e5d4607d12cc2749838b62021569eb1f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:201",
@@ -13123,8 +13202,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hres_590",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "Adoption of H.Res.590 explicitly deems House concurrence in the H.R.4 Senate amendment. The EAS replaces the bill after the enacting clause and differs materially from the earlier EH: its first-paragraph Global Health Programs rescission remains $500 million but protects HIV/AIDS, tuberculosis, malaria, nutrition and maternal/child-health balances, with the protection expressly not applying to family-planning/reproductive-health programs; it omits the earlier separate $400-million second-paragraph rescission. It also protects specified food-aid administration within Development Assistance and International Disaster Assistance and retains broader foreign-assistance, operating and broadcasting rescissions with other exceptions. These are unobligated-balance/package effects, not per-patient benefit amounts. The first and second Health paragraphs are separately established by the incorporated appropriations. The Clerk question remains rule adoption and is retained as non-counting procedural context under the established contract; its substantive deemed-concurrence consequence is fully recorded here rather than borrowed from earlier passage or silently omitted.",
       "source": {
         "source_id": "clerk:119:1:203",
         "url": "https://clerk.house.gov/evs/2025/roll203.xml",
@@ -13141,9 +13220,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Adoption of H.Res.590 explicitly deems House concurrence in the H.R.4 Senate amendment. The EAS replaces the bill after the enacting clause and differs materially from the earlier EH: its first-paragraph Global Health Programs rescission remains $500 million but protects HIV/AIDS, tuberculosis, malaria, nutrition and maternal/child-health balances, with the protection expressly not applying to family-planning/reproductive-health programs; it omits the earlier separate $400-million second-paragraph rescission. It also protects specified food-aid administration within Development Assistance and International Disaster Assistance and retains broader foreign-assistance, operating and broadcasting rescissions with other exceptions. These are unobligated-balance/package effects, not per-patient benefit amounts. The first and second Health paragraphs are separately established by the incorporated appropriations. The Clerk question remains rule adoption and is retained as non-counting procedural context under the established contract; its substantive deemed-concurrence consequence is fully recorded here rather than borrowed from earlier passage or silently omitted.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:203",
@@ -13157,6 +13236,12 @@
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres590eh/html/BILLS-119hres590eh.htm",
           "raw_sha256": "3894180aa008616b807117c1ac5d80463dd457ae3ec8f14f8af4eb904510b51c",
           "governed_bytes_sha256": "3d5dcba08107aed179979f8f33318c133cb1200cdacb68ae71d1ea7f186c9396"
+        },
+        {
+          "source_id": "govinfo:hr4eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eas/html/BILLS-119hr4eas.htm",
+          "raw_sha256": "5215805d1aa9044eae6dbdb7703d6f7d43a987e8fe530fa59df509ae3c221929",
+          "governed_bytes_sha256": "2069f3eda1c9e4326e489e3ed94f1612e4fd54022b00a0655edc9baa132abf78"
         },
         {
           "source_id": "govinfo:hr4eh",
@@ -13177,16 +13262,29 @@
           "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:203",
+        "source_ids": [
+          "clerk:119:1:203",
+          "govinfo:hres590eh",
+          "govinfo:hr4eas",
+          "govinfo:hr4eh",
+          "govinfo:pl119-4",
+          "govinfo:pl118-47"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:203",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "The captured H.Res.590 EH explicitly deems House concurrence in the Senate amendment to H.R.4. Acquire and review that exact Senate amendment and its operative account changes; reuse earlier H.R.4 EH, Public Law119-4 and Public Law118-47 account bindings without carrying the earlier $500m/$400m meaning into this distinct version. Preserve the established procedural/non-counting boundary; do not silently recast the Clerk rule-adoption question as separate passage.",
-        "source_preparation": "Official text and Clerk source captured; substantive membership review remains incomplete. No required evidence is asserted unavailable."
-      }
+        "shared_review_record_sha256": "ac561b2d2778de469ac9d3aa8cdafff396d3cd13297ecd510f21f4b2ffb1b229"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:204",
@@ -13230,7 +13328,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
+        "next_action": "H.R.4016 Part A amendment111 binds roll204 in Clerk/July17 Record p92; it strikes RH p24 lines8–14, the $117,988,000 OHDACA account through September30,2027. Complete instruction/base and debate pp68–69 read. Next trace all six incorporated 10USC401/402/404/407/2557/2561 authorities and qualifications before membership/meaning. Exact RH/EH/report/Record captures are now committed inputs; source acquisition is not completion."
       }
     },
     {
@@ -13240,13 +13338,14 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment112 deletes section8105: the $500-million Taiwan Security Cooperation Initiative designation within Operation and Maintenance, Defense-Wide, available through September30,2027, for defense articles/services and military education/training with State concurrence and reporting. It does not cut the overall account by that amount or amend the separately located medical-care/HIV provisos. The exact deleted military-assistance designation establishes no medical-care, health-benefit or social-service mechanism under the declared Health boundary. General potential downstream health effects of military assistance and floor comparisons with domestic spending are not enough for membership.",
       "source": {
         "source_id": "clerk:119:1:205",
         "url": "https://clerk.house.gov/evs/2025/roll205.xml",
         "raw_sha256": "609b1443d127b24dbc5c60c9a029d6807bdc59711ef1dfc5121aecf867b75cd1",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "e5c57af0836d1b1c3497be6490f656ea5113413fc2ac8d18c68bdd217e2309d1",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -13257,26 +13356,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment112 deletes section8105: the $500-million Taiwan Security Cooperation Initiative designation within Operation and Maintenance, Defense-Wide, available through September30,2027, for defense articles/services and military education/training with State concurrence and reporting. It does not cut the overall account by that amount or amend the separately located medical-care/HIV provisos. The exact deleted military-assistance designation establishes no medical-care, health-benefit or social-service mechanism under the declared Health boundary. General potential downstream health effects of military assistance and floor comparisons with domestic spending are not enough for membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:205",
           "url": "https://clerk.house.gov/evs/2025/roll205.xml",
           "raw_sha256": "609b1443d127b24dbc5c60c9a029d6807bdc59711ef1dfc5121aecf867b75cd1",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "e5c57af0836d1b1c3497be6490f656ea5113413fc2ac8d18c68bdd217e2309d1",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "665ece3ae83673fca616518bcc09b0bd54236dd6bd1a3c3d242023c0d538a33c"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:205",
+        "source_ids": [
+          "clerk:119:1:205",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "congressional-record:2025-07-17",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:205",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
-      }
+        "shared_review_record_sha256": "59550e8bfc6f112e9332ee49dd22d057b3550ce2b5641f173ea8d2bc16c01061"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:206",
@@ -13285,15 +13422,16 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.",
       "source": {
         "source_id": "clerk:119:1:206",
         "url": "https://clerk.house.gov/evs/2025/roll206.xml",
         "raw_sha256": "0f8e2eca8903ce132dee7da05e6ffacc53697f2437508b98f8c06029fa38d892",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "03f1c34f4e247ab87228764975f68e7300148a0e4f7f207eb4ecea3b6a56ae01",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4016:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4016",
       "member_action": "nay",
@@ -13302,26 +13440,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Part A amendment113 in House Report119-199 inserts “(reduced by $15,000,000)” after the dollar amount on H.R.4016 RH page42 line16. The exact base is a Defense Health Program proviso: within the research, development, test and evaluation allocation, not less than $15 million must be available for HIV-prevention educational activities connected with United States military training, exercises and humanitarian-assistance activities conducted primarily in African nations. The amendment therefore removes that positive $15-million minimum. It does not amend the broader Defense Health account total, its research allocation or other account subdivisions, nor does it insert a prohibition on using otherwise available funds for the activity. It is not represented as cancelling all HIV treatment, reducing PEPFAR or transferring money to a domestic program.\n\nThe surrounding base separately supplies the broader medical/health appropriation, TRICARE availability, procurement, medical research and electronic-record reporting requirements. Those identify the account context but are not independently changed by this exact line instruction. Floor speakers described their aims as striking program funding and debated competing military-readiness and fiscal priorities. Those statements do not enlarge the operative amendment into an account-wide rescission or establish a measured patient outcome. The Record prints the same instruction and binds amendment113 to recorded roll206; the Clerk records rejection. This is a discrete proposed amendment, separate from the still-unreviewed final House package and the other assistance amendments.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:206",
           "url": "https://clerk.house.gov/evs/2025/roll206.xml",
           "raw_sha256": "0f8e2eca8903ce132dee7da05e6ffacc53697f2437508b98f8c06029fa38d892",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "03f1c34f4e247ab87228764975f68e7300148a0e4f7f207eb4ecea3b6a56ae01",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "665ece3ae83673fca616518bcc09b0bd54236dd6bd1a3c3d242023c0d538a33c"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:206",
+        "source_ids": [
+          "clerk:119:1:206",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "congressional-record:2025-07-17",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:206",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
-      }
+        "shared_review_record_sha256": "e9a23f9b6c196c525993feeecbe26bfad34408c9ddec132046511d9c7040ccbf"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:207",
@@ -13330,13 +13506,14 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment114 deletes section8067, the $500-million Israeli Cooperative Programs designation within procurement and defense-wide research: Iron Dome $60m, short-range ballistic missile defense $127m plus $40m co-production, upper-tier $100m/Arrow3 co-production, and Arrow improvement $173m. Its operative object is named missile-defense systems and their procurement/research/co-production conditions, not clinical care, health financing or social-service delivery. It deletes the earmark, not the encompassing account totals. Floor discussion of injuries, hospitals or another country’s health system does not turn this exact missile-defense instruction into Health membership.",
       "source": {
         "source_id": "clerk:119:1:207",
         "url": "https://clerk.house.gov/evs/2025/roll207.xml",
         "raw_sha256": "0109fb4b75187dff14d9b6c8a818afea333bf18775e1a1245cf3e3f670ae5792",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -13347,26 +13524,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment114 deletes section8067, the $500-million Israeli Cooperative Programs designation within procurement and defense-wide research: Iron Dome $60m, short-range ballistic missile defense $127m plus $40m co-production, upper-tier $100m/Arrow3 co-production, and Arrow improvement $173m. Its operative object is named missile-defense systems and their procurement/research/co-production conditions, not clinical care, health financing or social-service delivery. It deletes the earmark, not the encompassing account totals. Floor discussion of injuries, hospitals or another country’s health system does not turn this exact missile-defense instruction into Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:207",
           "url": "https://clerk.house.gov/evs/2025/roll207.xml",
           "raw_sha256": "0109fb4b75187dff14d9b6c8a818afea333bf18775e1a1245cf3e3f670ae5792",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "665ece3ae83673fca616518bcc09b0bd54236dd6bd1a3c3d242023c0d538a33c"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:207",
+        "source_ids": [
+          "clerk:119:1:207",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "congressional-record:2025-07-17",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:207",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
-      }
+        "shared_review_record_sha256": "2a4ab075528f519132715a8cc33ea8bd2607b82298a10a8578b6c52f86442ab0"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:208",
@@ -13375,13 +13590,14 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment115 deletes section8117’s permission to use up to $500 million from Operation and Maintenance, Defense-Wide/Defense Security Cooperation Agency to support Jordan’s armed forces. This is a specific permissive military-support allocation, not a $500-million cut to the entire account and not a bill-wide ban on Jordan assistance. It does not alter the separate section8104 reimbursement provision or the Defense Health appropriation. No exact medical-care, benefit or social-service mechanism is established by the deleted text; references to veterans’ health in debate do not supply one.",
       "source": {
         "source_id": "clerk:119:1:208",
         "url": "https://clerk.house.gov/evs/2025/roll208.xml",
         "raw_sha256": "c43b452c82249baa75c6639ab0954d41d95e88130cf7ca101c1fd7e1a39fe42a",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "35b0a69ee85dda3e51c9740b12ae9b82ef4a9471431e2cd9573a839918186d1f",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -13392,26 +13608,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment115 deletes section8117’s permission to use up to $500 million from Operation and Maintenance, Defense-Wide/Defense Security Cooperation Agency to support Jordan’s armed forces. This is a specific permissive military-support allocation, not a $500-million cut to the entire account and not a bill-wide ban on Jordan assistance. It does not alter the separate section8104 reimbursement provision or the Defense Health appropriation. No exact medical-care, benefit or social-service mechanism is established by the deleted text; references to veterans’ health in debate do not supply one.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:208",
           "url": "https://clerk.house.gov/evs/2025/roll208.xml",
           "raw_sha256": "c43b452c82249baa75c6639ab0954d41d95e88130cf7ca101c1fd7e1a39fe42a",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "35b0a69ee85dda3e51c9740b12ae9b82ef4a9471431e2cd9573a839918186d1f",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt199",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "acd40135ff6c7d56b9c5c53b152078e98f39ca6ce57bd3e1b05bd550ee6cb15b"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-page-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "665ece3ae83673fca616518bcc09b0bd54236dd6bd1a3c3d242023c0d538a33c"
+        },
+        {
+          "source_id": "congressional-record:2025-07-17",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "552b800a77543dca4b87e14c68ffdcecde52271f7374514bf3655cfcaa077414"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:208",
+        "source_ids": [
+          "clerk:119:1:208",
+          "govinfo:hrpt199",
+          "govinfo:hr4016rh-page-binding",
+          "congressional-record:2025-07-17",
+          "govinfo:hres580eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:208",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
-      }
+        "shared_review_record_sha256": "25f4aa76dc7d68a3d1a4e83f447ace2e4a0e2dc0fa913efe5a5cdbfe2ed87253"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:209",
@@ -13455,7 +13709,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
+        "next_action": "Part A amendment116 exact instruction and full debate Record pp73–74 read: bill-specific prohibition on assistance to Ukraine, not an account-wide dollar reduction. Bind roll209 to Record p95 and review the complete relevant RH assistance scope/incorporated authorities before membership; do not infer solely from Ukraine/title or copy military-only assumptions. Final-passage RH/EH substantive review remains unfinished."
       }
     },
     {
@@ -13500,7 +13754,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
+        "next_action": "Part A amendment277 exact instruction and debate Record pp75–76 read; p77 continuation still to read. Bill-specific prohibition on assistance to Lebanese Armed Forces, not all Lebanese civilian aid. Bind roll210 to Record p96 and trace relevant bill assistance mechanisms before membership. Political claims in debate are not accepted evidence of motive, control or outcomes."
       }
     },
     {
@@ -13589,7 +13843,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next H.R.4016 source/version group: acquire Report119-199, the exact base print/bill and July17–18 Record to identify each amendment or en-bloc list. Bind page/line effects before independent Health membership; then review complete EH final passage, including health accounts/riders and incorporated authorities. Reuse captured H.Res.580; do not borrow parent meaning for an amendment."
+        "next_action": "Final-passage H.R.4016 EH now captured, not substantively reviewed. RH pages24,41–43,92–93,112–113,118 were read for discrete amendments; EH full accounts/riders/incorporated authorities and all adopted amendments still need review. Preserve interpreted roll206 minimum-versus-total distinction and excluded rolls205/207/208. Rolls204/209/210 remain unfinished. July18 calendar votes occur in the July17 legislative-day Record; the July18 PDF URL returned non-PDF content and was rejected."
       }
     },
     {
@@ -35021,11 +35275,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "43 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Shared research includes clinical-trial exceptions, veterans benefits/care, medical sanctions boundaries, research registration, specified Health-account rescissions and distinct H.R.3944 amendment/passage effects.",
+    "basis": "46 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Includes separately traced insolvency-priority mechanisms and the exact H.R.4016 HIV-education minimum amendment; wider H.R.4016 episode review remains unfinished.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "cb60446dae875710dc9e60d6e9c32bf93f41dd3988d4bbeb9fb9b1f49bd5c983",
+  "selection_sha256": "4f8bca5de59ec47ef5016bd72780393993149534dcaa5cc3ca7daa43f8035f16",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -35043,6 +35297,9 @@
     "house:119:1:180",
     "house:119:1:182",
     "house:119:1:190",
+    "house:119:1:199",
+    "house:119:1:200",
+    "house:119:1:206",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -35072,14 +35329,7 @@
     "house:119:2:53"
   ],
   "unresolved_action_ids": [
-    "house:119:1:199",
-    "house:119:1:200",
-    "house:119:1:203",
     "house:119:1:204",
-    "house:119:1:205",
-    "house:119:1:206",
-    "house:119:1:207",
-    "house:119:1:208",
     "house:119:1:209",
     "house:119:1:210",
     "house:119:1:212",
@@ -35463,6 +35713,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "1d5cf13215a4559139510b023efa339e84fcb112b2465e1ef22ae87a66d9a81b",
-  "membership_review_sha256": "0738253596823530d95b33aba2b49351efb9f3edb42280c24db7c2153e7c09aa"
+  "proposal_sha256": "32b3175a77fe2bb46e7e5f08e7ad949274744022f8232ec9af59f2c187da0873",
+  "membership_review_sha256": "99467113540ad1befed89afbe1111c0c871b9f3fe31b2e7170356ec97b11b589"
 }
