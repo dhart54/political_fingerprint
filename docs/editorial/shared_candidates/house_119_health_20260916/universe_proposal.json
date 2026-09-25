@@ -41,6 +41,10 @@
     "house:119:1:212",
     "house:119:1:218",
     "house:119:1:220",
+    "house:119:1:232",
+    "house:119:1:233",
+    "house:119:1:234",
+    "house:119:1:235",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -82,10 +86,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 178,
-      "exact_action_ineligible": 123,
-      "interpreted_substantive_directional": 51,
+      "exact_action_ineligible": 128,
+      "interpreted_substantive_directional": 55,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 316
+      "source_unresolved": 307
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -94,15 +98,15 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 51,
-    "directional_substantive_actions": 51,
+    "substantive_eligible_actions": 55,
+    "directional_substantive_actions": 55,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 178,
     "expressive_nonbinding_actions": 8,
-    "exact_action_ineligible_actions": 123,
-    "unresolved_boundary_cases": 316,
-    "independent_episode_count": 42,
-    "multi_action_episode_count": 7,
+    "exact_action_ineligible_actions": 128,
+    "unresolved_boundary_cases": 307,
+    "independent_episode_count": 43,
+    "multi_action_episode_count": 8,
     "mechanism_types": [
       "amendment",
       "concurrence",
@@ -112,12 +116,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 51,
-      "substantive_actions": 51,
+      "ready_substantive_actions": 55,
+      "substantive_actions": 55,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "316 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "307 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -402,6 +406,11 @@
         "house:119:1:216",
         "house:119:1:217",
         "house:119:1:219",
+        "house:119:1:227",
+        "house:119:1:228",
+        "house:119:1:229",
+        "house:119:1:230",
+        "house:119:1:231",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -461,6 +470,10 @@
         "house:119:1:212",
         "house:119:1:218",
         "house:119:1:220",
+        "house:119:1:232",
+        "house:119:1:233",
+        "house:119:1:234",
+        "house:119:1:235",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -492,15 +505,6 @@
         "house:119:1:224",
         "house:119:1:225",
         "house:119:1:226",
-        "house:119:1:227",
-        "house:119:1:228",
-        "house:119:1:229",
-        "house:119:1:230",
-        "house:119:1:231",
-        "house:119:1:232",
-        "house:119:1:233",
-        "house:119:1:234",
-        "house:119:1:235",
         "house:119:1:236",
         "house:119:1:237",
         "house:119:1:239",
@@ -807,11 +811,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "51 proposed source-mapped inputs, not accepted eligibility. The remaining 316 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "55 proposed source-mapped inputs, not accepted eligibility. The remaining 307 are an unfinished discovery backlog, not asserted Health votes."
   },
-  "episode_completeness": "42 candidate episodes cover51 supplied actions, including7 multi-action episodes (six two-action episodes and one four-action H.R.4016 episode). Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "43 candidate episodes cover55 supplied actions, including8 multi-action episodes (six two-action episodes and two four-action episodes, H.R.4016 and the still-incomplete H.R.4553 episode). Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "d9278d39b35f1bf2cb10f32fd042f4a2b33c86207dbf1fe0ccef6bc36079ca5a",
+  "universe_subject_sha256": "2944bdaf65627c97ce8271da76a21fd201e2a7efb15478a1935b3b7581c4b075",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -15175,15 +15179,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Perry amendment23 prohibits funds made available by H.R.4553 from implementing or enforcing the DRBC final rule published April21,2021 at86FR20628. The rule prohibits high-volume hydraulic fracturing in hydrocarbon-bearing formations within the Delaware River Basin, defined by300,000 or more gallons over all well-completion stages, and also revises separate project-review classifications and fee provisions. Proposed water-export and wastewater-import sections were withdrawn from this2021 rule and cannot be imported into the amendment. Public-health protection is an explicit rule rationale, retained as contrary contextual evidence; its operative mechanism remains water-resource/pollution regulation rather than the declared direct Health-care, insurance or social-service programs. The bill-specific implementation/enforcement restriction does not repeal the compact or itself authorize unrestricted drilling under other laws. The adjacent Social Security rule printed on the final PDF page is not part of this identified DRBC action. The amendment failed; no observed health outcome or member motive is inferred.",
       "source": {
         "source_id": "clerk:119:1:227",
         "url": "https://clerk.house.gov/evs/2025/roll227.xml",
         "raw_sha256": "35a33c888efcef12dac2c06df2c49ec9b8fbbbb77fa0a3577ce3b6a471ae5457",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "84b974597356c2fc4ba2ed266031e8d6d1c01c29aac1b9cdd2c0418a0972e3d5",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15192,26 +15197,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Perry amendment23 prohibits funds made available by H.R.4553 from implementing or enforcing the DRBC final rule published April21,2021 at86FR20628. The rule prohibits high-volume hydraulic fracturing in hydrocarbon-bearing formations within the Delaware River Basin, defined by300,000 or more gallons over all well-completion stages, and also revises separate project-review classifications and fee provisions. Proposed water-export and wastewater-import sections were withdrawn from this2021 rule and cannot be imported into the amendment. Public-health protection is an explicit rule rationale, retained as contrary contextual evidence; its operative mechanism remains water-resource/pollution regulation rather than the declared direct Health-care, insurance or social-service programs. The bill-specific implementation/enforcement restriction does not repeal the compact or itself authorize unrestricted drilling under other laws. The adjacent Social Security rule printed on the final PDF page is not part of this identified DRBC action. The amendment failed; no observed health outcome or member motive is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:227",
           "url": "https://clerk.house.gov/evs/2025/roll227.xml",
           "raw_sha256": "35a33c888efcef12dac2c06df2c49ec9b8fbbbb77fa0a3577ce3b6a471ae5457",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "84b974597356c2fc4ba2ed266031e8d6d1c01c29aac1b9cdd2c0418a0972e3d5",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "federal-register:2021-07998",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2021-04-21/pdf/2021-07998.pdf",
+          "raw_sha256": "62124fc747e7aba6a6d6eaca9ec81d7ccae3820d4862e19726c6ddfcf818be39",
+          "governed_bytes_sha256": "b8931b321dfd997ecd26253ba68350199900df7ae67f17489c53060675b562af"
+        },
+        {
+          "source_id": "drbc:compact-scope",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "raw_sha256": "7b0a20ba6c0e2c7578d345baf803d1e24b28fb00ed037f2e9b528d55c62d7a71",
+          "governed_bytes_sha256": "e0cc510e63e560c8ad1a7709f7e98398c4d627b6daecbf37f51c6a2c39555386"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-drbc-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "9ed4a104d32302497c0b2c74403ff62e67530686789414f995fb2f9f144648f4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:227",
+        "source_ids": [
+          "clerk:119:1:227",
+          "govinfo:hrpt119-232",
+          "federal-register:2021-07998",
+          "drbc:compact-scope",
+          "congressional-record:2025-09-03-drbc-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:227",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "c6bf935fe2498d214da70929b0fe69437da02627931fdb052a1cb4dd7178cd72"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:228",
@@ -15220,15 +15263,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Perry amendment24 prohibits any funds made available by H.R.4553 from being used for the Delaware River Basin Commission. This is broader than amendment23’s restriction on the identified2021 rule, but it remains a prohibition on this bill’s funds, not abolition of the commission, repeal of its compact, or a ban on every other revenue source. The compact’s operative scope covers basin water supply, pollution control, flood protection, watershed management, water-related recreation, hydroelectric power and withdrawal/diversion regulation, with project review, planning and financing. Public-health purposes in water-quality and flood provisions are preserved, but these water-resource mechanisms do not establish direct Health-care, insurance or social-service delivery under the declared Health rule. Section14.10’s insurance concerns property, liability and revenue protection, not patient coverage; ordinary personnel/pension administration does not convert this agency-wide environmental funding restriction into a distinct Health program vote. The compact’s general powers, program articles, budget/auxiliary provisions and federal reservations were examined; no claim is made that unrelated bond-form or state effectuation boilerplate was separately interpreted. The amendment failed.",
       "source": {
         "source_id": "clerk:119:1:228",
         "url": "https://clerk.house.gov/evs/2025/roll228.xml",
         "raw_sha256": "63ffe49ae4fcc3c5f36228de5f68882d29df07c7d86dc03d0bad78ae2046a4f2",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "e6e0153b145045c428dab2d8a3d74a0191945a292b2c6b770dbd6a4c1e10e698",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15237,26 +15281,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Perry amendment24 prohibits any funds made available by H.R.4553 from being used for the Delaware River Basin Commission. This is broader than amendment23’s restriction on the identified2021 rule, but it remains a prohibition on this bill’s funds, not abolition of the commission, repeal of its compact, or a ban on every other revenue source. The compact’s operative scope covers basin water supply, pollution control, flood protection, watershed management, water-related recreation, hydroelectric power and withdrawal/diversion regulation, with project review, planning and financing. Public-health purposes in water-quality and flood provisions are preserved, but these water-resource mechanisms do not establish direct Health-care, insurance or social-service delivery under the declared Health rule. Section14.10’s insurance concerns property, liability and revenue protection, not patient coverage; ordinary personnel/pension administration does not convert this agency-wide environmental funding restriction into a distinct Health program vote. The compact’s general powers, program articles, budget/auxiliary provisions and federal reservations were examined; no claim is made that unrelated bond-form or state effectuation boilerplate was separately interpreted. The amendment failed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:228",
           "url": "https://clerk.house.gov/evs/2025/roll228.xml",
           "raw_sha256": "63ffe49ae4fcc3c5f36228de5f68882d29df07c7d86dc03d0bad78ae2046a4f2",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "e6e0153b145045c428dab2d8a3d74a0191945a292b2c6b770dbd6a4c1e10e698",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "drbc:compact-scope",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "raw_sha256": "7b0a20ba6c0e2c7578d345baf803d1e24b28fb00ed037f2e9b528d55c62d7a71",
+          "governed_bytes_sha256": "e0cc510e63e560c8ad1a7709f7e98398c4d627b6daecbf37f51c6a2c39555386"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-drbc-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "9ed4a104d32302497c0b2c74403ff62e67530686789414f995fb2f9f144648f4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:228",
+        "source_ids": [
+          "clerk:119:1:228",
+          "govinfo:hrpt119-232",
+          "drbc:compact-scope",
+          "congressional-record:2025-09-03-drbc-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:228",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "2babd9b3d01167d225ccb9dec9b7d3f93e16bc62bd451a122db3afd49749f6b5"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:229",
@@ -15265,15 +15340,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment25 reduces the H.R.4553 RH page33 line12 ARPA-E appropriation by $350 million and increases section512 spending reduction by the same amount. The base supplies $350 million for advanced energy research under section5012/42USC16538, including a nested program-direction limit. This removes that bill appropriation, not ARPA-E statutory authority. Its incorporated objectives and funding concern energy technology, efficiency, emissions, waste and resiliency; they do not establish a clinical-research, care, coverage or social-service mechanism. Neither the agency name nor asserted downstream health effects establish Health membership. This failed amendment is separate from later passage.",
       "source": {
         "source_id": "clerk:119:1:229",
         "url": "https://clerk.house.gov/evs/2025/roll229.xml",
         "raw_sha256": "54d8e4b72325202b0872b8e3f61901a6a26026e1cd1a02b1123bb034934af32c",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "de5de7f442eda788dfa653d0bb58ed2f936ca4046a8a23ba0dc8abb1726cad49",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15282,26 +15358,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment25 reduces the H.R.4553 RH page33 line12 ARPA-E appropriation by $350 million and increases section512 spending reduction by the same amount. The base supplies $350 million for advanced energy research under section5012/42USC16538, including a nested program-direction limit. This removes that bill appropriation, not ARPA-E statutory authority. Its incorporated objectives and funding concern energy technology, efficiency, emissions, waste and resiliency; they do not establish a clinical-research, care, coverage or social-service mechanism. Neither the agency name nor asserted downstream health effects establish Health membership. This failed amendment is separate from later passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:229",
           "url": "https://clerk.house.gov/evs/2025/roll229.xml",
           "raw_sha256": "54d8e4b72325202b0872b8e3f61901a6a26026e1cd1a02b1123bb034934af32c",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "de5de7f442eda788dfa653d0bb58ed2f936ca4046a8a23ba0dc8abb1726cad49",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:42usc16538-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXVII-sec16538.htm",
+          "raw_sha256": "329b681c3c882407eba89032f73e4e94b064feeaa364f73dd12d786e3803786e",
+          "governed_bytes_sha256": "2ce088873475c054eecde64438c98da87bafa437e754f5b16156d7e82a0377fd"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:229",
+        "source_ids": [
+          "clerk:119:1:229",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:42usc16538-2024",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:229",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "b887443581855d8af42cfcfb2d3eae46d9736f5d46cc9a12fcc5a9814a46e0de"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:230",
@@ -15310,15 +15424,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment26 reduces the H.R.4553 RH page37 line9 appropriation by $13 million and increases section512 spending reduction by the same amount. The targeted $13 million is administrative expenses for the Advanced Technology Vehicles Manufacturing Loan Program through September30,2027. Incorporated42USC17013 provides conditional vehicle/component manufacturing loans and related facilities/engineering assistance, not a Health service or benefit. The vote removes the bill’s administrative appropriation; it does not itself repeal the loan program or cancel all existing loans. Public Law119-21 section50402’s earlier repeal/rescission is preserved as separate context, not attributed to this amendment. The failed amendment’s operative object is manufacturing-loan administration, not an inferred health effect of emissions or employment.",
       "source": {
         "source_id": "clerk:119:1:230",
         "url": "https://clerk.house.gov/evs/2025/roll230.xml",
         "raw_sha256": "c549df4ec6da8db845a57720e147ed496b6f617289307829c0c52859d4d89e6a",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "55ce7ea20bfdde7f4be8e1cba6772967bbd2e3de16b844e8586eec2556402d9c",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15327,26 +15442,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment26 reduces the H.R.4553 RH page37 line9 appropriation by $13 million and increases section512 spending reduction by the same amount. The targeted $13 million is administrative expenses for the Advanced Technology Vehicles Manufacturing Loan Program through September30,2027. Incorporated42USC17013 provides conditional vehicle/component manufacturing loans and related facilities/engineering assistance, not a Health service or benefit. The vote removes the bill’s administrative appropriation; it does not itself repeal the loan program or cancel all existing loans. Public Law119-21 section50402’s earlier repeal/rescission is preserved as separate context, not attributed to this amendment. The failed amendment’s operative object is manufacturing-loan administration, not an inferred health effect of emissions or employment.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:230",
           "url": "https://clerk.house.gov/evs/2025/roll230.xml",
           "raw_sha256": "c549df4ec6da8db845a57720e147ed496b6f617289307829c0c52859d4d89e6a",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "55ce7ea20bfdde7f4be8e1cba6772967bbd2e3de16b844e8586eec2556402d9c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:42usc17013-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap152-subchapI-sec17013.htm",
+          "raw_sha256": "d6892c194489a641c64e0da84acf8318e9bb12cec036fe5b5cf0239b60a9b30e",
+          "governed_bytes_sha256": "08a2ee105a4f42cefe0f061e83ecb273f5cfdbe6145666dc3ad45ef8a1e2c79a"
+        },
+        {
+          "source_id": "govinfo:pl119-21-energy-financing",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "eb3f3264141eb873837472122a7fb9d0069237d9868910d65bce7db240d3b98f"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:230",
+        "source_ids": [
+          "clerk:119:1:230",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:42usc17013-2024",
+          "govinfo:pl119-21-energy-financing",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:230",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "c59533f6d844eb8a0e0ba50589ca1e7df2eee7927b025d5685c0a2bd182974b4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:231",
@@ -15355,15 +15515,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Amendment27 reduces the H.R.4553 RH page33 line24 Title17 loan-guarantee administrative appropriation by $35 million and increases section512 spending reduction by that amount. The base’s fee/offset provisions and separate $150-million advanced-nuclear guarantee-cost appropriation remain textually distinct; this is not a repeal of all Title17 guarantees. Earlier adopted en-bloc amendment4 added and subtracted $5 million at the same line, leaving the amount unchanged. The complete incorporated TitleXVII operative sections and intervening Public Law119-21 sections50402–50403 concern conditional energy/industrial infrastructure finance, administration, fees, repayment and oversight, not Health-care financing or services. The statutory title Public Health and Welfare and debate references to financial health do not establish Health membership. No medical-only allocation or health outcome is inferred. The amendment failed.",
       "source": {
         "source_id": "clerk:119:1:231",
         "url": "https://clerk.house.gov/evs/2025/roll231.xml",
         "raw_sha256": "6f5951ee71dfd0f50f74adb729ecb62de4d0f71f3fc319372aa5241bc01e9c44",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f04f3e2d1513421afe1173acc4f42b7725d1ee19c6e2c04075ee161b61a215b1",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15372,26 +15533,113 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Amendment27 reduces the H.R.4553 RH page33 line24 Title17 loan-guarantee administrative appropriation by $35 million and increases section512 spending reduction by that amount. The base’s fee/offset provisions and separate $150-million advanced-nuclear guarantee-cost appropriation remain textually distinct; this is not a repeal of all Title17 guarantees. Earlier adopted en-bloc amendment4 added and subtracted $5 million at the same line, leaving the amount unchanged. The complete incorporated TitleXVII operative sections and intervening Public Law119-21 sections50402–50403 concern conditional energy/industrial infrastructure finance, administration, fees, repayment and oversight, not Health-care financing or services. The statutory title Public Health and Welfare and debate references to financial health do not establish Health membership. No medical-only allocation or health outcome is inferred. The amendment failed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:231",
           "url": "https://clerk.house.gov/evs/2025/roll231.xml",
           "raw_sha256": "6f5951ee71dfd0f50f74adb729ecb62de4d0f71f3fc319372aa5241bc01e9c44",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f04f3e2d1513421afe1173acc4f42b7725d1ee19c6e2c04075ee161b61a215b1",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:42usc16511-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16511.htm",
+          "raw_sha256": "196d53e3f4c924208283c22df0594b59b8b010808219ac1ad6ad7c2119d1b472",
+          "governed_bytes_sha256": "8d005919105c43f22e6d7475bf1b1aeda9379303dc8c3cb59d22d600fa64dd0f"
+        },
+        {
+          "source_id": "govinfo:42usc16512-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16512.htm",
+          "raw_sha256": "694f45151d80eec97c27565c2a34acc7d643d30b606beae8c26bcde1c7ef2bc1",
+          "governed_bytes_sha256": "b86e8829a699bb362d96cbfc9ccd3407817913c1aaf3997a4208bfbcd97b515f"
+        },
+        {
+          "source_id": "govinfo:42usc16513-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16513.htm",
+          "raw_sha256": "fa2e0071e6c4dcafb191325e55858cdcffdd81fd3f57fc654cedded0321aaecd",
+          "governed_bytes_sha256": "adf59a24b99fcee965a43ac305bd867631cba5ae3ca1b0db4d42607cdd91c005"
+        },
+        {
+          "source_id": "govinfo:42usc16514-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16514.htm",
+          "raw_sha256": "a09d41d1ace6e12a243297dfd0e645fe49cd83f1062a22df2956e665d7a34538",
+          "governed_bytes_sha256": "11f38ef2e46bd46019215e43848d807db58ff89ac038052092695e26c6f8b101"
+        },
+        {
+          "source_id": "govinfo:42usc16515-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16515.htm",
+          "raw_sha256": "c14bb95a136994ad4c41e74a41dd5662868f56aad61344e5c0fa319f21c3cb46",
+          "governed_bytes_sha256": "a488577775724da2f24fc08aa57e11c29b4853ed0796b14b9cb318d9e9072f6d"
+        },
+        {
+          "source_id": "govinfo:42usc16516-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16516.htm",
+          "raw_sha256": "80a3a44ec7242779f6600e232be2b34a5811733bc89bd36853db9acb8589df1d",
+          "governed_bytes_sha256": "14dddd744a9cbc48ebdabd131b1782fe03f872404d94499c90a927c8a1eb419c"
+        },
+        {
+          "source_id": "govinfo:42usc16517-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16517.htm",
+          "raw_sha256": "834c62fabc67ed2327650102ac7546714c95b2bee0c1b7444da123c78a3eefe6",
+          "governed_bytes_sha256": "fc1d974c406a02e6facd04d59bc8245de79cc2e782284de911e338b35824121f"
+        },
+        {
+          "source_id": "govinfo:pl119-21-energy-financing",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "eb3f3264141eb873837472122a7fb9d0069237d9868910d65bce7db240d3b98f"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:231",
+        "source_ids": [
+          "clerk:119:1:231",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:42usc16511-2024",
+          "govinfo:42usc16512-2024",
+          "govinfo:42usc16513-2024",
+          "govinfo:42usc16514-2024",
+          "govinfo:42usc16515-2024",
+          "govinfo:42usc16516-2024",
+          "govinfo:42usc16517-2024",
+          "govinfo:pl119-21-energy-financing",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:231",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "2e5d609d308f2c05a593697cdcbc6ddac05149fe9d068c5812fe9347026b82c1"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:232",
@@ -15400,15 +15648,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Perry amendment28 in Report119-232 reduces H.R.4553 RH page62 line20 by $13,319,727 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Northern Border Regional Commission appropriation would fall from $33,319,727 to $20,000,000, retaining availability until expended and its other conditions. The Northern Border provision expressly permits administrative expenses notwithstanding40USC15751(b). These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
       "source": {
         "source_id": "clerk:119:1:232",
         "url": "https://clerk.house.gov/evs/2025/roll232.xml",
         "raw_sha256": "c05434173050cf16ba3de3db3c598fddb8bd6c62bf72f5527d5084c14799d556",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "90121f42c70d70003559b54a7f96205dfca90c55cf4fff7fd632d93b498beb4e",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15417,26 +15666,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Perry amendment28 in Report119-232 reduces H.R.4553 RH page62 line20 by $13,319,727 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Northern Border Regional Commission appropriation would fall from $33,319,727 to $20,000,000, retaining availability until expended and its other conditions. The Northern Border provision expressly permits administrative expenses notwithstanding40USC15751(b). These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:232",
           "url": "https://clerk.house.gov/evs/2025/roll232.xml",
           "raw_sha256": "c05434173050cf16ba3de3db3c598fddb8bd6c62bf72f5527d5084c14799d556",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "90121f42c70d70003559b54a7f96205dfca90c55cf4fff7fd632d93b498beb4e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:232",
+        "source_ids": [
+          "clerk:119:1:232",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:40usc-subtitleV-2024",
+          "govinfo:pl118-272-regional-commissions",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:232",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "93c033de3ab12a1baac3aaf91e1f378f6f182e4a5c11b0f576263ba693dfae5f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:233",
@@ -15445,15 +15739,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Perry amendment29 in Report119-232 reduces H.R.4553 RH page63 line9 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southwest Border Regional Commission appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
       "source": {
         "source_id": "clerk:119:1:233",
         "url": "https://clerk.house.gov/evs/2025/roll233.xml",
         "raw_sha256": "6435d8b298c492b7ee0f30a94740dec839eb3344deefdf5cd706195e68c2117e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "476929c9bf1350c98f340c823f30fe921186ba2c0e48aedc5a5e84da17585356",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15462,26 +15757,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Perry amendment29 in Report119-232 reduces H.R.4553 RH page63 line9 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southwest Border Regional Commission appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:233",
           "url": "https://clerk.house.gov/evs/2025/roll233.xml",
           "raw_sha256": "6435d8b298c492b7ee0f30a94740dec839eb3344deefdf5cd706195e68c2117e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "476929c9bf1350c98f340c823f30fe921186ba2c0e48aedc5a5e84da17585356",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:233",
+        "source_ids": [
+          "clerk:119:1:233",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:40usc-subtitleV-2024",
+          "govinfo:pl118-272-regional-commissions",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:233",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "20f63c1cac27f06878d4d818f923f13c699a936e2e501e0c3b0ca4746a0a575a"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:234",
@@ -15490,15 +15830,16 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Perry amendment30 in Report119-232 reduces H.R.4553 RH page63 line4 by $16,003,526 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southeast Crescent Regional Commission appropriation would fall from $16,253,526 to $250,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
       "source": {
         "source_id": "clerk:119:1:234",
         "url": "https://clerk.house.gov/evs/2025/roll234.xml",
         "raw_sha256": "cd1ea576de1dcef63f5f2b4cf0b86f169ead34e3443b6689a6849ff865917193",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "778cc4bc4e6911da3c981762477ad621775b6e6090f5d3ce44ccc49be707b619",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15507,26 +15848,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Perry amendment30 in Report119-232 reduces H.R.4553 RH page63 line4 by $16,003,526 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southeast Crescent Regional Commission appropriation would fall from $16,253,526 to $250,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:234",
           "url": "https://clerk.house.gov/evs/2025/roll234.xml",
           "raw_sha256": "cd1ea576de1dcef63f5f2b4cf0b86f169ead34e3443b6689a6849ff865917193",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "778cc4bc4e6911da3c981762477ad621775b6e6090f5d3ce44ccc49be707b619",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "congressional-record:2025-09-03-energy-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "06f579a248d1961ebcfedc1c03d33a39d38d4a07e4c45e44f36b4a084595a43f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:234",
+        "source_ids": [
+          "clerk:119:1:234",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:40usc-subtitleV-2024",
+          "govinfo:pl118-272-regional-commissions",
+          "congressional-record:2025-09-03-energy-amendments"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:234",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "c7a8d8a2c3941030f698fbcd72eb9f05447a3221b89a064a02ce0429af57fa49"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:235",
@@ -15535,15 +15921,16 @@
       "date": "2025-09-04",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Perry amendment31 in Report119-232 reduces H.R.4553 RH page63 line14 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Great Lakes Authority appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
       "source": {
         "source_id": "clerk:119:1:235",
         "url": "https://clerk.house.gov/evs/2025/roll235.xml",
         "raw_sha256": "62b2ef2038e8fa4b930db1627b2f2ae391d1ef069e7e87a61a763aff0504fbe7",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "ba69a7489322495e76e6e26acfa01ee3f3dcb60e6f54d51aacba74b139fe6214",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -15552,26 +15939,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Perry amendment31 in Report119-232 reduces H.R.4553 RH page63 line14 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Great Lakes Authority appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:235",
           "url": "https://clerk.house.gov/evs/2025/roll235.xml",
           "raw_sha256": "62b2ef2038e8fa4b930db1627b2f2ae391d1ef069e7e87a61a763aff0504fbe7",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "ba69a7489322495e76e6e26acfa01ee3f3dcb60e6f54d51aacba74b139fe6214",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-amendment-bindings",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "7db1aae05032b630fd9842387388b24c9f05021842369d23f7603746a0ccaf82"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-regional-amendment",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "e8119e30d9e75be290841eefa8e4bbf50ca495e0a440ba4a02d1aaf6461b7e9b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:235",
+        "source_ids": [
+          "clerk:119:1:235",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-amendment-bindings",
+          "govinfo:40usc-subtitleV-2024",
+          "govinfo:pl118-272-regional-commissions",
+          "congressional-record:2025-09-04-regional-amendment"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:235",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
-      }
+        "shared_review_record_sha256": "9728e25f51f63a7d38773873a3058a6a9a3cc2671bf8d65d657e31e34d8b4f27"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:236",
@@ -15615,7 +16047,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
+        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
       }
     },
     {
@@ -15660,7 +16092,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
+        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
       }
     },
     {
@@ -15749,7 +16181,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4553 RH/EH, RH76-page PDF, complete Rules Report119-232 and Sept3/4 House Record captured in research25; full report read, bill/Record operative review pending. Clerk227–230 reused research19 and231–239 recaptured. Bind exact report amendment and RH page/line before membership; trace incorporated accounts/authorities, including any Health limits. Text capture is not review completion. Process independently while CRA plans retrieval continues."
+        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
       }
     },
     {
@@ -35993,11 +36425,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "51 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Exact incorporated legal effects, conditional care and medical-access limits are preserved; wider membership screening remains incomplete.",
+    "basis": "55 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Incorporated health-project authority supports regional-account candidates while exact energy-loan administration amendments are separately excluded. Wider membership screening remains incomplete.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "1be71ab271b18462bd8b2839a97fce5a157f5901006ef802da9e65e1f9d5da85",
+  "selection_sha256": "abb278890734e32f1db322c0af0a4fe55e070f245a9ce6ec11390c83483f3cc1",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -36023,6 +36455,10 @@
     "house:119:1:212",
     "house:119:1:218",
     "house:119:1:220",
+    "house:119:1:232",
+    "house:119:1:233",
+    "house:119:1:234",
+    "house:119:1:235",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -36055,15 +36491,6 @@
     "house:119:1:224",
     "house:119:1:225",
     "house:119:1:226",
-    "house:119:1:227",
-    "house:119:1:228",
-    "house:119:1:229",
-    "house:119:1:230",
-    "house:119:1:231",
-    "house:119:1:232",
-    "house:119:1:233",
-    "house:119:1:234",
-    "house:119:1:235",
     "house:119:1:236",
     "house:119:1:237",
     "house:119:1:239",
@@ -36423,6 +36850,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "19a3844ae41caa1a818cbdd6456464d29cd532f09dd887bb29490424e95e8f65",
-  "membership_review_sha256": "14eb7f886ba34bd3c5738d5b0efe75d828308136205391756683b50a9048d576"
+  "proposal_sha256": "d39a5fcb340e3deb22456e62ba1bfbdd25bc42a305c58bf6b65940dbcdda4d94",
+  "membership_review_sha256": "6213ede0b127af626fd2f0edef8e12e484201868ad54030201580fdae852b117"
 }

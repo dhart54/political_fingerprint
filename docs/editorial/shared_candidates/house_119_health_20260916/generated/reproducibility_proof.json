@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "f9e9cdcc0fcb71ffc161accb434b08e3ec0a7e0b0e249e83e4b9d87a62c1a37c",
-  "source_capture_sha256": "ef77da372de38f17cfbad6383bc49752b302a3e83f69fbffd07d43487268abb7",
-  "core_sha256": "b5f12d9d4a549185cf662589a3593dc27c6de6a3e2d0de07de2ca6ec771a8af6",
-  "compiled_sha256": "ebdcb56963a22db5edfc30bd931128f534082762e331824c6671e699872b8a60",
-  "readable_sha256": "a0aa3bb15ddff8373534d0977565cadf6d40fb50e66d258986b2f73c0d916d3d",
+  "input_sha256": "55cf40eb603b3273176f3f3f31f7b9a20461df2e8bef862a920a3f52d7b260d8",
+  "source_capture_sha256": "375ae770ff3e69e77533dd1ed50afc537f4cb00a16e5434d42ffd0b52c856eaa",
+  "core_sha256": "f7e7cab809c9d09143fd4afb038bf1a814ce9240f9097d7772f319b2d8479c92",
+  "compiled_sha256": "a0c23eef4464f058336231366c5b6a70e59a379893d3a5d0337f6a35d7397a08",
+  "readable_sha256": "3d9186ec546e5e52fb46b78f504eb8b2195ef7c99184c96acb487f8c45cc4174",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1033,6 +1033,86 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions",
           "source_id": "clerk:119:1:218"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:232",
+      "shared_sha256": "ff67934c55a351a34d1a413a299837f91ba74247098c7945b315273c68a8a502",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:232"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:232"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:233",
+      "shared_sha256": "9b8fbb89fed91c931da0418920c86bc04c108a986e7e7bcbbcf551cd28a39672",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:233"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation",
+          "source_id": "clerk:119:1:233"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:234",
+      "shared_sha256": "0e61e0d0d2e12e14049b66f850806d96155bb06bb2878d7fe53a3d6094642561",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation",
+          "source_id": "clerk:119:1:234"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation",
+          "source_id": "clerk:119:1:234"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:235",
+      "shared_sha256": "c88d55ad87cae7579b88b9369732b7321b8bdfc420be26e26120237b2d665528",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation",
+          "source_id": "clerk:119:1:235"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation",
+          "source_id": "clerk:119:1:235"
         }
       ]
     }

@@ -3,7 +3,7 @@
   "artifact_id": "candidate:HEALTH_SOCIAL:house119-through-2026-09-16",
   "domain_id": "HEALTH_SOCIAL",
   "scope_boundaries": [
-    "51 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
+    "55 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -723,6 +723,62 @@
         "stage_order": 10218
       },
       "mapping_sha256": "1b24abb31eb3af2a159087edb93c31488a2f1bc2c5c873fda77aff9d1fc57617"
+    },
+    {
+      "action_id": "house:119:1:232",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10232
+      },
+      "mapping_sha256": "fc46d6990861cf15e1cbb32d7a308896e369d9fcaaec10f9b02839ba8eb0ccbc"
+    },
+    {
+      "action_id": "house:119:1:233",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10233
+      },
+      "mapping_sha256": "4361eee8fd9a84645b157cfa9f52f4fb8b8c62282705004799230b5ab7048289"
+    },
+    {
+      "action_id": "house:119:1:234",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10234
+      },
+      "mapping_sha256": "b4a8494c21db5b6c9145535562c5c716577b9dc54dc156f86d73c791598eb9aa"
+    },
+    {
+      "action_id": "house:119:1:235",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10235
+      },
+      "mapping_sha256": "60223cd4ad11f36041cfccb5608a48d19eacb9ed1d5a8903bb049f864258a600"
     }
   ],
   "episodes": [
@@ -1070,6 +1126,17 @@
       ],
       "method_boundary_types": [],
       "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr4553:119",
+      "action_ids": [
+        "house:119:1:232",
+        "house:119:1:233",
+        "house:119:1:234",
+        "house:119:1:235"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
     }
   ],
   "policy_families": [],
@@ -1077,5 +1144,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "8bef5f00c6a8b5bee2465f2bcfeb0c540c1240735c2b0a4fc2128e1b8879291e"
+  "mapping_sha256": "827d1a86f199116b83cd0233e0b04ede7e4e325fe3c824b4a8f895117089b0ce"
 }

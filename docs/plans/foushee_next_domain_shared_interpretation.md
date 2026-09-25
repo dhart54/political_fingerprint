@@ -76,24 +76,24 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Eight new shared candidate meanings/compacts and sixteen choice strings;
+- [x] Twelve new shared candidate meanings/compacts and twenty-four choice strings;
   the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now42 Foushee /38 Massie findings,102 observations,
-  four Massie Not Voting records,42 episodes and seven multi-action episodes
-  (six pairs and the four-action H.R.4016 episode).
+  non-directional accounting. Now43 Foushee /39 Massie findings,110 observations,
+  four Massie Not Voting records,43 episodes and eight multi-action episodes
+  (six pairs and the four-action H.R.4016 and still-incomplete H.R.4553 episodes).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become51/178/8/123/316 across unchanged676 identities.
-  Add90 governed sources (17 Clerk,73 other),20 membership records and135
-  interpretation claim maps. Totals541 sources,218 membership records,302 maps.
-- [x] Regenerate and inspect compact/detail outputs. All41 candidate tests and128 focused subsystem tests pass,
+- [x] Counts43/176/8/113/336 become55/178/8/128/307 across unchanged676 identities.
+  Add118 governed sources (26 Clerk,92 other),29 membership records and195
+  interpretation claim maps. Totals569 sources,227 membership records,362 maps.
+- [x] Regenerate and inspect compact/detail outputs. All44 candidate tests and131 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete316 remaining screenings, wider episode reconciliation and
+- [ ] Complete307 remaining screenings, wider episode reconciliation and
   evidence-based substantive review-readiness assessment. No current human
   decision, unavailable evidence or source-conflict blocker is identified.
 
@@ -140,7 +140,32 @@ eligibility claim. Foushee Yea and Massie Nay are mechanical whole-package choic
 Roll222/H.Res.672 remains procedural after full review of deemed668/605 and tabled
 598RH→589IH. Medical privacy in disclosure exceptions does not make a Health vote.
 
-Next executable group:224–226, then H.R.4553 amendments227 onward. H.J.Res.104/106/
+H.R.4553 rolls227–235 are now screened. Five exclusions preserve the distinct
+DRBC rule versus commission funding restrictions, ARPA-E appropriation and two
+loan-program administrative appropriations. The compact's explicit public-health
+water-protection purposes are retained, without importing environmental effects
+into the declared care/service boundary. The adjacent SSA rule on the same PDF
+page is excluded from the DRBC binding. Prior July2025 energy-law changes are
+separate from these failed September amendments.
+
+Four regional-account candidates reuse one Title40subtitleV/January2025 law read:
+Northern Border, Southwest Border, Southeast Crescent and Great Lakes. Exact
+reductions leave $20million/$2million/$250,000/$2million, respectively, and add
+the same reductions to the spending-reduction entry. Health-project authority
+supports membership, but no medical-only amount, grant award or service loss is
+inferred. Cost sharing, distressed-area/project approval and conditional program
+operation remain. Foushee No/Massie Aye on all four produce one complete finding
+per member in the existing multi-action design. No synthesis or direction rewrite.
+
+Prepared next work: complete236's two EERE lines,237's full set of reductions and
+239's complete EH/riders/incorporations. Only relevant RH pages, report amendment
+effects, scoped Record passages and regional authorities are substantively read;
+captured full EH is not completed passage review. Reuse research25–31 and governed
+sources. The local initial ATVM Code path returned an invalid page; the corrected
+official17013 source is separately captured. The acquisition helper's HTML/PDF
+text-name collision was corrected before governance; prior541 captures unchanged.
+
+Next executable group:224–226, then H.R.4553 amendments236/237 and passage239. H.J.Res.104/106/
 105 EH are fully read. June26 Record PDF is captured in research24: pages50–56
 contain the three GAO opinions; pages50–51/Miles City read so far. Exact Miles City
 and Central Yukon legacy eplanning PDF links returned403; the web tool showed
@@ -148,7 +173,7 @@ Miles City's redirected document page as unavailable. Continue public source
 tracing/new NEPA-register links or public reproductions before disposition; these
 attempts do not establish exhaustive source unavailability. North Dakota exact
 plan remains to acquire. Keep these three pending and continue independent safe
-H.R.4553 cases if retrieval remains unresolved. Sources19/21/22/23/24/25 and committed
+H.R.4553 cases if retrieval remains unresolved. Sources19/21/22/23/24/25–31 and committed
 next-action notes preserve progress; do not repeat the Coast Guard full-text read.
 No new human decision or exhausted evidence dependency is identified.
 
@@ -158,7 +183,7 @@ checked and explicitly transcribed; a public court exhibit supplied historical
 policy URLs were rejected, and the official Health.mil2022 memo was used. No
 protected annex was accessed. The stage guard caught an initial generic-passage
 label for roll220; it was corrected to the exact suspension-and-passage question
-without weakening validation. Existing9d56864 exact-head CI passed all9 checks;
+without weakening validation. Existingea62cc8 exact-head CI passed all9 checks;
 this progress commit requires its own exact-head CI before reporting it current.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters

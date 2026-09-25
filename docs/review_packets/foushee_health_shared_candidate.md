@@ -1,9 +1,9 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate, active research.** Twenty more membership screenings resolved
-since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: eight new shared interpretations, ten exclusions
-and two procedural controls. Now51 interpreted inputs,42 Foushee findings and38
-bounded Massie proof findings;316 discovery identities remain unreviewed.
+**Partial candidate, active research.** Twenty-nine more membership screenings resolved
+since `bed93d0b507354fceaf0b52f1e7118f3fe62481a`: twelve new shared interpretations, fifteen exclusions
+and two procedural controls. Now55 interpreted inputs,43 Foushee findings and39
+bounded Massie proof findings;307 discovery identities remain unreviewed.
 This is neither complete Health coverage nor accepted/public content.
 
 ## Current material delta and entry points
@@ -16,9 +16,9 @@ The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. No terminal marker is created while the persistent goal continues.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [51 shared meanings /302 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [541 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [218 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [55 shared meanings /362 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [569 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [227 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
@@ -26,11 +26,11 @@ discussion after validation; prior-head CI is not treated as current. No termina
 
 | Disposition | bed93d | Current |
 |---|---:|---:|
-| interpreted_substantive_directional |43|51|
+| interpreted_substantive_directional |43|55|
 | procedural_context |176|178|
 | expressive_nonbinding_context |8|8|
-| exact_action_ineligible |113|123|
-| source_unresolved (unreviewed membership) |336|316|
+| exact_action_ineligible |113|128|
+| source_unresolved (unreviewed membership) |336|307|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -153,41 +153,65 @@ workforce-training table. The memo's first pages were also inspected through its
 public reproduction, but unacquired PDF bytes are not represented as governed
 captures. No historical source was rewritten or analytical architecture changed.
 
-Manual delta from bed93d: eight shared meanings/compacts, sixteen choice strings,
-135 claim maps,20 membership records and90 source captures (17 Clerk,73 other).
-Totals102 observations, four Massie non-votes,42 episodes and seven multi-action
-episodes (six pairs and the four-action H.R.4016 episode). No synthesis added.
-Since9d56864: two screenings, one shared interpretation, one procedural control,
-31 sources,43 claim maps and two fewer unreviewed identities.
+Manual delta from bed93d: twelve shared meanings/compacts, twenty-four choice strings,
+195 claim maps,29 membership records and118 source captures (26 Clerk,92 other).
+Totals110 observations, four Massie non-votes,43 episodes and eight multi-action
+episodes (six pairs and two four-action episodes). No synthesis added.
+Sinceea62cc8: nine screenings, four shared interpretations, five exclusions,
+28 sources,60 claim maps and nine fewer unreviewed identities.
+
+**September energy/water amendments:** rolls227–231 are five proposed exclusions.
+Keep DRBC-rule enforcement separate from all DRBC funding under the bill. The
+complete2021 rule and relevant compact powers preserve explicit public-health
+water protection, but no direct care/service program; the adjacent SSA rule on
+the PDF's last page is not part of this action. ARPA-E's $350million appropriation
+is distinct from the $13million ATVM and $35million Title17 administrative amounts.
+The Title17 fee offsets and separate $150million guarantee-cost appropriation
+are not silently repealed. Earlier net-zero amendment4 and July4 energy-law
+changes remain separate context; floor claims do not enlarge operative effects.
+
+Rolls232–235 add four shared Health candidates through expressly incorporated
+regional health-project authority. Northern Border/Southwest Border/Southeast
+Crescent/Great Lakes reductions leave $20million/$2million/$250,000/$2million.
+Each includes a matching spending-reduction entry. These are multipurpose account
+cuts, not quantified cuts to health care. Grant eligibility, distressed areas,
+cost sharing, commission approval and conditional demonstration projects remain.
+All four failed; Foushee No and Massie Aye are projected into one finding per
+member, preserving every action. Final passage is still unreviewed.
+
+Reuse one Title40subtitleV and Public Law118-272 regional-authority analysis for
+all four. Nine exact Clerk records, Rules Report119-232, RH page bindings, scoped
+Sept3/4 Record pages and energy/DRBC authorities supply28 new governed captures.
+No member-specific meaning or new architecture. The wrong17013 Code path was
+rejected and corrected; an HTML/PDF temporary text-name collision was fixed before
+governance. Existing541 governed captures remain unchanged.
 
 ## Current validation and remaining execution
 
-All41 candidate tests pass, including Coast Guard cross-reference/conditional-care
-boundaries, source-removal rejection and complete rule incorporation without a
-Health finding. All128 focused subsystem tests and7 canonical semantic checks pass.
-The initial broader run omitted the established NODE_PATH and could not locate
-ajv; rerunning with that local dependency path passed without code changes. Previous9d56864 passed126 focused tests,7 semantic checks and all9
-exact-head CI checks; it is not treated as validation of a later commit. Current
-head and exact-head results are recorded in the same PR after push. No frontend/
-runtime change or browser loop is claimed.
+All44 focused candidate tests pass after regeneration, including regional source
+removal, exact amounts/choices, complete four-action output, funding-versus-repeal
+limits and DRBC adjacent-rule exclusion. All131 focused subsystem tests and7 canonical semantic checks pass. Prior ea62cc8 passed128 focused tests,7 semantic
+checks and all9 exact-head CI checks. The current pushed head and its own CI are
+recorded in the existing PR discussion. No frontend/runtime change or browser
+loop is claimed.
 
-**Next:224–226**, then227 onward. The three CRA EH texts are read. The June26
-Record PDF is captured: pages50–56 reproduce the GAO opinions; pages50–51/Miles
-City have been read. Exact Miles City and Central Yukon legacy BLM downloads
-returned403; the Miles City redirect reports its document unavailable. Continue
-tracing public official or reproduced source copies, and acquire North Dakota's
-exact plan. Do not substitute titles or asserted health consequences for operative
-review. If those paths remain unresolved, continue independent H.R.4553 cases.
-The inventory retains exact next actions and prepared-source notes. H.R.4553
-RH/EH,76-page RH PDF, September3/4 House Record and Clerk231–239 are captured
-in research25; Rules Report119-232 is fully read, but exact bill-page/amendment
-effects and incorporated authorities remain to review. The GAO training table
-used for H.R.4275 was rendered and visually verified.
+**Next:224–226**, with independent H.R.4553 rolls236/237/239 ready for continued
+research. The three CRA EH texts are read; June26 Record pages50–56 contain GAO
+opinions (50–51/Miles City read). Miles City and Central Yukon legacy BLM links
+returned403; the redirected Miles City document page reports unavailable.
+Continue public official/reproduced-source tracing; North Dakota's exact plan
+remains to acquire. These are not exhausted evidence paths or human blockers.
 
-316 screenings and wider episode reconciliation remain. No new human decision or
-exhausted evidence dependency is currently established. Research continues;
-this progress push is not a terminal state or new approval gate. No shutdown
-marker is created while the goal is actively continuing.
+For236 trace both EERE reductions. For237 trace each page/line, nested amount and
+prior adopted amendment. For239 complete the captured89253-character EH and all
+material riders/incorporations. Reuse captured RH/EH, Report119-232, Sept3/4 Record
+and governed regional/energy authorities. Full passage review is not complete
+merely because the sources are captured. The inventory retains exact next steps.
+
+307 screenings and wider episode reconciliation remain. Research continues; this
+push is not a terminal state or a new approval gate. No shutdown marker is created
+while the persistent goal remains actively in progress. No specific human decision
+or exhausted evidence dependency is currently established.
 
 Existing branch Vercel-disable/main-only Render safeguards remain unchanged.
 No merge, deployment, publication, production-data write, migration, registry or
@@ -267,7 +291,7 @@ All downloads were public and read-only. No new infrastructure or architecture.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-51 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+55 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -468,6 +492,54 @@ The Clerk recorded the House result as 'Passed' on 2025-07-18. This does not est
 Evidence: house:119:1:204, house:119:1:206, house:119:1:209, house:119:1:212; finding `prop:840ea1ddfd24f792`.
 
 Sources: [clerk:119:1:204](https://clerk.house.gov/evs/2025/roll204.xml); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm); [govinfo:hr4016rh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf); [govinfo:10usc401-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm); [govinfo:10usc402-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm); [govinfo:10usc404-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm); [govinfo:10usc407-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm); [govinfo:10usc2557-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm); [govinfo:10usc2561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [govinfo:hr4016rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/html/BILLS-119hr4016rh.htm); [clerk:119:1:206](https://clerk.house.gov/evs/2025/roll206.xml); [govinfo:hres580eh](https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm); [clerk:119:1:209](https://clerk.house.gov/evs/2025/roll209.xml); [clerk:119:1:212](https://clerk.house.gov/evs/2025/roll212.xml); [govinfo:10usc2493-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm); [govinfo:pl111-84](https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm); [govinfo:pl110-417](https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm); [dod:art-2012-guidance-public-exhibit](https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [dod:reproductive-care-2022-10-20](https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care); [govinfo:hrpt162-health-page-binding](https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf).
+
+### Separate choices within one legislative episode
+
+**Compact:** Foushee opposed the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation. The amendment would cut the bill’s Northern Border Regional Commission funding by $13,319,727, from $33,319,727 to $20,000,000, and add the same amount to spending reduction. The account can fund qualifying health-care, nutrition and child-care projects alongside other regional development. No health-only amount or loss of services is specified. The amendment failed; this was a separate choice from final passage. Foushee opposed the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation. The amendment would cut the bill’s Southwest Border Regional Commission funding by $2,063,381, from $4,063,381 to $2,000,000, and add the same amount to spending reduction. The account can fund qualifying health-care, nutrition and child-care projects alongside other regional development. No health-only amount or loss of services is specified. The amendment failed; this was a separate choice from final passage. Foushee opposed the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation. The amendment would cut the bill’s Southeast Crescent Regional Commission funding by $16,003,526, from $16,253,526 to $250,000, and add the same amount to spending reduction. The account can fund qualifying health-care, nutrition and child-care projects alongside other regional development. No health-only amount or loss of services is specified. The amendment failed; this was a separate choice from final passage. Foushee opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation. The amendment would cut the bill’s Great Lakes Authority funding by $2,063,381, from $4,063,381 to $2,000,000, and add the same amount to spending reduction. The account can fund qualifying health-care, nutrition and child-care projects alongside other regional development. No health-only amount or loss of services is specified. The amendment failed; this was a separate choice from final passage.
+
+**Detail:**
+
+**house:119:1:232**
+
+Foushee opposed the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation.
+
+Perry amendment28 in Report119-232 reduces H.R.4553 RH page62 line20 by $13,319,727 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Northern Border Regional Commission appropriation would fall from $33,319,727 to $20,000,000, retaining availability until expended and its other conditions. The Northern Border provision expressly permits administrative expenses notwithstanding40USC15751(b). These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-03. This does not establish enactment.
+
+**house:119:1:233**
+
+Foushee opposed the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation.
+
+Perry amendment29 in Report119-232 reduces H.R.4553 RH page63 line9 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southwest Border Regional Commission appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-03. This does not establish enactment.
+
+**house:119:1:234**
+
+Foushee opposed the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation.
+
+Perry amendment30 in Report119-232 reduces H.R.4553 RH page63 line4 by $16,003,526 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Southeast Crescent Regional Commission appropriation would fall from $16,253,526 to $250,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-03. This does not establish enactment.
+
+**house:119:1:235**
+
+Foushee opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation.
+
+Perry amendment31 in Report119-232 reduces H.R.4553 RH page63 line14 by $2,063,381 and increases the section512 spending-reduction amount on page74 line5 by the same amount. The Great Lakes Authority appropriation would fall from $4,063,381 to $2,000,000, retaining availability until expended and its other conditions. The existing40USC15751(b) administrative-expense cap does not apply where less than $10 million is made available for the fiscal year; the amendment does not separately earmark the remaining balance. These are total account changes, not an assigned reduction in a health subaccount. The account expressly funds activities authorized by40USCsubtitleV. Section15501(a)(5) includes assistance to severely economically distressed and underdeveloped areas lacking resources to improve basic health care and other public services. Section15902, added by Public Law118-272 section2248 on January4,2025, separately permits demonstration health, nutrition and child-care grants, including planning, facilities, initial equipment and operation. If a commission elects to make those grants, it must set priorities addressing addiction treatment/recovery, health-workforce shortages or chronic-condition screening/diagnosis. Eligible recipients and projects, distressed-area boundaries, grant approval and cost-sharing conditions remain; the appropriation does not guarantee a grant or patient service. General section15501 contribution limits are50percent, up to80percent in distressed counties and, under qualifying regional-project conditions,60/90percent. Section15902 preserves distinct construction/operating conditions and coordination with other federal grants. The law also finances transportation, water, broadband, workforce and other economic development. Section15501(b) reserves at least40percent of grant amounts for its specified infrastructure/energy categories, and15702(b) reserves at least50percent of appropriations for distressed counties/isolated areas; neither is a medical allocation. Other legally available sources and existing authorities are not repealed. The reported text, exact amendment and earlier en-bloc instructions establish the amount; the recorded vote rejected this amendment. No enacted cut or actual loss of care is claimed.
+
+The Clerk recorded the House result as 'Failed' on 2025-09-04. This does not establish enactment.
+
+- The Yea/Nay meaning applies to this exact account-reduction amendment, including its spending-reduction entry. It is not a separate vote on each eligible Health project or on the whole bill.
+- The exact reduction is $13,319,727 in a multipurpose account, not $13,319,727 specifically for health care. Statutory grant authority is not evidence that particular health projects had received or would lose funding.
+- This is one failed amendment on regional development funding, distinct from other commission amendments and final passage. Related choices are kept together without inferring motive, trajectory or a uniform regional-policy position.
+- The exact reduction is $2,063,381 in a multipurpose account, not $2,063,381 specifically for health care. Statutory grant authority is not evidence that particular health projects had received or would lose funding.
+- The exact reduction is $16,003,526 in a multipurpose account, not $16,003,526 specifically for health care. Statutory grant authority is not evidence that particular health projects had received or would lose funding.
+
+Evidence: house:119:1:232, house:119:1:233, house:119:1:234, house:119:1:235; finding `prop:2d52412b426a9a92`.
+
+Sources: [clerk:119:1:232](https://clerk.house.gov/evs/2025/roll232.xml); [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-03-energy-amendments](https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf); [clerk:119:1:233](https://clerk.house.gov/evs/2025/roll233.xml); [clerk:119:1:234](https://clerk.house.gov/evs/2025/roll234.xml); [clerk:119:1:235](https://clerk.house.gov/evs/2025/roll235.xml); [congressional-record:2025-09-04-regional-amendment](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf).
 
 ### Separate choices within one legislative episode
 
@@ -1414,4 +1486,8 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:212 | supported House passage of H.R.4016’s full Defense appropriations and policy package | opposed House passage of H.R.4016’s full Defense appropriations and policy package | [govinfo:hr4016eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4016eh/html/BILLS-119hr4016eh.htm); [govinfo:10usc2493-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap147-subchapIII-sec2493.htm); [govinfo:pl111-84](https://www.govinfo.gov/content/pkg/PLAW-111publ84/html/PLAW-111publ84.htm); [govinfo:pl110-417](https://www.govinfo.gov/content/pkg/PLAW-110publ417/html/PLAW-110publ417.htm); [dod:art-2012-guidance-public-exhibit](https://law.yale.edu/sites/default/files/area/clinic/document/exhibit_a_vlsc.pdf); [govinfo:fr2024-07040](https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm); [dod:reproductive-care-2022-10-20](https://health.mil/Reference-Center/Policies/2022/10/20/Ensuring-Access-to-Reproductive-Health-Care); [govinfo:hrpt162-health-page-binding](https://www.govinfo.gov/content/pkg/CRPT-119hrpt162/pdf/CRPT-119hrpt162.pdf); [congressional-record:2025-07-17](https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf); [congressional-record:2025-07-16](https://www.govinfo.gov/content/pkg/CREC-2025-07-16/pdf/CREC-2025-07-16-house.pdf); [govinfo:hrpt199](https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm) |
 | house:119:1:220 | supported the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | opposed the motion to suspend the rules and pass amended H.R.747’s sanctions-definition, reporting and emergency-authority package | [govinfo:hr747eh](https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm); [govinfo:21usc-ch28-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm); [govinfo:50usc1702-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1703-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm) |
 | house:119:1:218 | supported the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions | opposed the motion to suspend the rules and pass amended H.R.4275’s Coast Guard authorization package, including its qualified behavioral-health, victim-care, family-leave and occupational-health provisions | [govinfo:hr4275eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4275eh/html/BILLS-119hr4275eh.htm); [govinfo:14usc-ch25-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap25.htm); [govinfo:14usc504-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleI-chap5-subchapI-sec504.htm); [govinfo:14usc4902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleIV-chap49-sec4902.htm); [govinfo:10usc701-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec701.htm); [govinfo:10usc704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec704.htm); [govinfo:10usc711-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap40-sec711.htm); [govinfo:37usc206-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap3-sec206.htm); [govinfo:37usc373-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap5-subchapIII-sec373.htm); [govinfo:10usc1044e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap53-sec1044e.htm); [govinfo:10usc1090-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1090.htm); [govinfo:46usc4502-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap45-sec4502.htm); [govinfo:46usc3507-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title46/html/USCODE-2024-title46-subtitleII-partB-chap35-sec3507.htm); [govinfo:10usc1561-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561.htm); [govinfo:10usc1561b-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1561b.htm); [govinfo:10usc1562a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap80-sec1562a.htm); [govinfo:10usc930-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap47-subchapX-sec930.htm); [govinfo:14usc1902-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap19-subchapI-sec1902.htm); [govinfo:5usc3303-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3303.htm); [govinfo:5usc3328-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartB-chap33-subchapI-sec3328.htm); [govinfo:10usc1086-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm); [govinfo:37usc453-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap8-subchapI-sec453.htm); [govinfo:10usc-ch75II-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap75-subchapII.htm); [gao:24-107388-training](https://docs.house.gov/meetings/PW/PW07/20240306/116843/HHRG-118-PW07-Wstate-MacLeodH-20240306.PDF) |
+| house:119:1:232 | supported the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation | opposed the proposed $13,319,727 reduction in the bill’s Northern Border Regional Commission appropriation | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-03-energy-amendments](https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf) |
+| house:119:1:233 | supported the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation | opposed the proposed $2,063,381 reduction in the bill’s Southwest Border Regional Commission appropriation | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-03-energy-amendments](https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf) |
+| house:119:1:234 | supported the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation | opposed the proposed $16,003,526 reduction in the bill’s Southeast Crescent Regional Commission appropriation | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-03-energy-amendments](https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf) |
+| house:119:1:235 | supported the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation | opposed the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation | [govinfo:hrpt119-232](https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm); [govinfo:hr4553rh-amendment-bindings](https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [govinfo:pl118-272-regional-commissions](https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm); [congressional-record:2025-09-04-regional-amendment](https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

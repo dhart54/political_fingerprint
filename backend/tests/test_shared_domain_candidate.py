@@ -199,7 +199,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 42)
+        self.assertEqual(len(f["findings"]), 43)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":178, "source_unresolved":316,
-            "interpreted_substantive_directional":51, "expressive_nonbinding_context":8, "exact_action_ineligible":123})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":178, "source_unresolved":307,
+            "interpreted_substantive_directional":55, "expressive_nonbinding_context":8, "exact_action_ineligible":128})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -619,6 +619,59 @@ class SharedDomainCandidateTests(unittest.TestCase):
                          "govinfo:hres598rh", "govinfo:hres589ih"} <= {s["source_id"] for s in rule["sources"]})
         self.assertIn("Tabling that proposal is distinct", rule["rationale"])
         self.assertNotIn(rule["action_id"], {a["action_id"] for a in self.products[0]["actions"]})
+
+    def test_regional_account_amendments_keep_exact_amounts_and_health_eligibility_limits(self):
+        core, _, projections, _, result = self.products
+        ids = [f"house:119:1:{r}" for r in range(232, 236)]
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if ids[0] in f["action_ids"])
+            self.assertEqual(finding["action_ids"], ids)
+            self.assertEqual([o["status"] for o in finding["action_observations"]],
+                             ["Nay" if member["member_id"] == "F000477" else "Yea"] * 4)
+            for name in ["Northern Border", "Southwest Border", "Southeast Crescent", "Great Lakes"]:
+                self.assertIn(name, finding["compact"])
+            for amount in ["$13,319,727", "$2,063,381", "$16,003,526", "$250,000"]:
+                self.assertIn(amount, finding["compact"])
+            self.assertIn("No health-only amount or loss of services", finding["compact"])
+            self.assertIn("amendment failed", finding["compact"])
+            detail = " ".join(finding["detail"])
+            for boundary in ["If a commission elects", "cost-sharing conditions remain",
+                             "neither is a medical allocation", "not guarantee a grant",
+                             "notwithstanding40USC15751(b)"]:
+                self.assertIn(boundary, detail)
+            self.assertTrue({"govinfo:40usc-subtitleV-2024", "govinfo:pl118-272-regional-commissions"}
+                            <= set(finding["source_ids"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == ids[0])["additional_source_ids"].remove("govinfo:40usc-subtitleV-2024")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
+    def test_energy_amendment_exclusions_do_not_turn_administration_cuts_into_repeal(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        for roll in [229, 230, 231]:
+            row = records[f"house:119:1:{roll}"]
+            self.assertEqual(row["disposition"], "exact_action_ineligible")
+            self.assertTrue(row["substantive_review_performed"])
+            self.assertTrue(row["claim_source_map"])
+            self.assertNotIn(row["action_id"], {a["action_id"] for a in self.products[0]["actions"]})
+        self.assertIn("does not itself repeal the loan program", records["house:119:1:230"]["rationale"])
+        self.assertIn("separate $150-million", records["house:119:1:231"]["rationale"])
+        self.assertIn("leaving the amount unchanged", records["house:119:1:231"]["rationale"])
+        self.assertIn("earlier repeal/rescission", records["house:119:1:230"]["rationale"])
+
+    def test_drbc_exclusions_preserve_public_health_context_and_separate_funding_scopes(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        rule, agency = [records[f"house:119:1:{r}"] for r in [227, 228]]
+        for row in [rule, agency]:
+            self.assertEqual(row["disposition"], "exact_action_ineligible")
+            self.assertTrue(row["substantive_review_performed"])
+            self.assertIn("Public-health", row["rationale"])
+            self.assertNotIn(row["action_id"], {a["action_id"] for a in self.products[0]["actions"]})
+        self.assertIn("300,000 or more gallons", rule["rationale"])
+        self.assertIn("adjacent Social Security rule", rule["rationale"])
+        self.assertIn("bill-specific implementation/enforcement", rule["rationale"])
+        self.assertIn("not abolition of the commission", agency["rationale"])
+        self.assertIn("not patient coverage", agency["rationale"])
 
     def test_july_membership_reuses_consumer_definition_without_promoting_rule_votes(self):
         records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
