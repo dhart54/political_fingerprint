@@ -45,6 +45,8 @@
     "house:119:1:233",
     "house:119:1:234",
     "house:119:1:235",
+    "house:119:1:236",
+    "house:119:1:239",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -87,9 +89,9 @@
     "counts": {
       "procedural_context": 178,
       "exact_action_ineligible": 128,
-      "interpreted_substantive_directional": 55,
+      "interpreted_substantive_directional": 57,
       "expressive_nonbinding_context": 8,
-      "source_unresolved": 307
+      "source_unresolved": 305
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -98,13 +100,13 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 55,
-    "directional_substantive_actions": 55,
+    "substantive_eligible_actions": 57,
+    "directional_substantive_actions": 57,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 178,
     "expressive_nonbinding_actions": 8,
     "exact_action_ineligible_actions": 128,
-    "unresolved_boundary_cases": 307,
+    "unresolved_boundary_cases": 305,
     "independent_episode_count": 43,
     "multi_action_episode_count": 8,
     "mechanism_types": [
@@ -116,12 +118,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 55,
-      "substantive_actions": 55,
+      "ready_substantive_actions": 57,
+      "substantive_actions": 57,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "307 discovery identities still need substantive membership review. No unavailable required evidence or authoritative source conflict is asserted."
+      "304 discovery identities still need substantive membership review. One additional reviewed action,2025 roll237, has a $50,000 printed-source discrepancy. Official correction/version tracing remains open; no exhaustive source-unavailability claim is made."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -474,6 +476,8 @@
         "house:119:1:233",
         "house:119:1:234",
         "house:119:1:235",
+        "house:119:1:236",
+        "house:119:1:239",
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:306",
@@ -505,9 +509,7 @@
         "house:119:1:224",
         "house:119:1:225",
         "house:119:1:226",
-        "house:119:1:236",
         "house:119:1:237",
-        "house:119:1:239",
         "house:119:1:240",
         "house:119:1:241",
         "house:119:1:243",
@@ -811,11 +813,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "55 proposed source-mapped inputs, not accepted eligibility. The remaining 307 are an unfinished discovery backlog, not asserted Health votes."
+    "count_basis": "57 proposed source-mapped inputs, not accepted eligibility. Of305 unresolved identities,304 remain an unfinished membership backlog and one has a recorded exact-source conflict; none is presumed a Health vote."
   },
-  "episode_completeness": "43 candidate episodes cover55 supplied actions, including8 multi-action episodes (six two-action episodes and two four-action episodes, H.R.4016 and the still-incomplete H.R.4553 episode). Exact actions are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "43 candidate episodes cover57 supplied actions, including8 multi-action episodes (six pairs, four H.R.4016 actions and six H.R.4553 actions). H.R.4553 broad amendment237 is separately source-conflicted, not concealed by the independently sourced passage239. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "2944bdaf65627c97ce8271da76a21fd201e2a7efb15478a1935b3b7581c4b075",
+  "universe_subject_sha256": "74289ff285a5a7f328d1a82ee6f64127523d672694d0dac83f2940231e9853e1",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -16012,15 +16014,16 @@
       "date": "2025-09-04",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Roy amendment32, offered by Perry as designee, reduces the H.R.4553 RH page26 line13 EERE appropriation by $1,830,000,000 and the nested page26 line14 program-direction amount by $223,000,000. The latter is explicitly part of the former, so this is not a $2.053-billion combined cut. The bill’s new appropriation would be zero; the amendment does not repeal statutory authorities or expressly rescind other previously available funding. It adds no spending-reduction-account instruction. Earlier en-bloc amendments do not alter these two amounts, and the later EH retains both after amendment32 failed.\n\nSection301(d) incorporates the accompanying Report119-213 Bill-column allocations, subject to its reprogramming restrictions and substantial-risk waiver with notice. The image-only EERE table provides $195million for weatherization: $180million Weatherization Assistance Program, $5million technical assistance and $10million Weatherization Readiness Fund. Those amounts are inside the $1.83billion, alongside transportation, renewable-energy, industrial/building efficiency and other programs; they are not additional or exclusively clinical-care appropriations. The proposed Health and Social Policy membership rests on direct means-tested household assistance under42USC6861–6865, not predicted health effects of renewable energy. The report expressly directs delivery through states and tribes to eligible low-income households.\n\nThe weatherization authority finances improvements to eligible dwellings through state, tribal and local/public/nonprofit delivery arrangements. Its purposes include reducing residential energy costs and improving occupant health and safety, especially for vulnerable low-income households. Eligibility includes income relative to family size and specified assistance-linked alternatives, with priority and application requirements; it is not a universal homeowner grant or health-insurance benefit. Energy-audit and expenditure limits, annually adjusted average-cost caps, re-weatherization limits and tenant protections remain. This amendment removes this bill’s funding for that assistance along with the wider EERE account, not a specifically medical-only allocation. It does not establish which homes would receive or lose services.\n\nThe House rejected the amendment on September4,2025. The derived choices concern this exact account amendment, distinct from the four regional-account amendments, broader amendment33 and final passage. No enacted funding loss, motive or uniform position on energy or household assistance is inferred.",
       "source": {
         "source_id": "clerk:119:1:236",
         "url": "https://clerk.house.gov/evs/2025/roll236.xml",
         "raw_sha256": "3cf5c8813c3031d9a5111cfeea56b614a4428f581888c75765ecc49ed09d68dd",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "8d3b5ffe99fc19b8c3f4e1004f4ed55faa692b2e4360195e40e24d87d1ff5bfa",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -16029,26 +16032,113 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Roy amendment32, offered by Perry as designee, reduces the H.R.4553 RH page26 line13 EERE appropriation by $1,830,000,000 and the nested page26 line14 program-direction amount by $223,000,000. The latter is explicitly part of the former, so this is not a $2.053-billion combined cut. The bill’s new appropriation would be zero; the amendment does not repeal statutory authorities or expressly rescind other previously available funding. It adds no spending-reduction-account instruction. Earlier en-bloc amendments do not alter these two amounts, and the later EH retains both after amendment32 failed.\n\nSection301(d) incorporates the accompanying Report119-213 Bill-column allocations, subject to its reprogramming restrictions and substantial-risk waiver with notice. The image-only EERE table provides $195million for weatherization: $180million Weatherization Assistance Program, $5million technical assistance and $10million Weatherization Readiness Fund. Those amounts are inside the $1.83billion, alongside transportation, renewable-energy, industrial/building efficiency and other programs; they are not additional or exclusively clinical-care appropriations. The proposed Health and Social Policy membership rests on direct means-tested household assistance under42USC6861–6865, not predicted health effects of renewable energy. The report expressly directs delivery through states and tribes to eligible low-income households.\n\nThe weatherization authority finances improvements to eligible dwellings through state, tribal and local/public/nonprofit delivery arrangements. Its purposes include reducing residential energy costs and improving occupant health and safety, especially for vulnerable low-income households. Eligibility includes income relative to family size and specified assistance-linked alternatives, with priority and application requirements; it is not a universal homeowner grant or health-insurance benefit. Energy-audit and expenditure limits, annually adjusted average-cost caps, re-weatherization limits and tenant protections remain. This amendment removes this bill’s funding for that assistance along with the wider EERE account, not a specifically medical-only allocation. It does not establish which homes would receive or lose services.\n\nThe House rejected the amendment on September4,2025. The derived choices concern this exact account amendment, distinct from the four regional-account amendments, broader amendment33 and final passage. No enacted funding loss, motive or uniform position on energy or household assistance is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:236",
           "url": "https://clerk.house.gov/evs/2025/roll236.xml",
           "raw_sha256": "3cf5c8813c3031d9a5111cfeea56b614a4428f581888c75765ecc49ed09d68dd",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "8d3b5ffe99fc19b8c3f4e1004f4ed55faa692b2e4360195e40e24d87d1ff5bfa",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hr4553rh-eere-binding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "1da97862031d9a6b1bfc33f0e2af9480bb45a0d8dfb642fd732b8c1adcc000ca"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-eere",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "d5c1c69205f56f440071a04851655d3f35c81877da9634fccd2dec5ef86367e4"
+        },
+        {
+          "source_id": "govinfo:42usc6861-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6861.htm",
+          "raw_sha256": "c5b32737830197483d7afb5b7b34b084f65bd376ebc58d3b5811a5e4a7c45f2f",
+          "governed_bytes_sha256": "34625e27db9bb324a25cd5def8d94325b879784dcb6f9ab09981be85d1c52d32"
+        },
+        {
+          "source_id": "govinfo:42usc6862-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6862.htm",
+          "raw_sha256": "50665fc2388224ed171727ae4dc049b8cb1557a396b030fc2127cf9c3664dbba",
+          "governed_bytes_sha256": "f3a72b7d16634f8d6b9a3174b0fc72a2b73e16fee82d175f3e0725bfd4cccaea"
+        },
+        {
+          "source_id": "govinfo:42usc6863-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm",
+          "raw_sha256": "29f3a4cda73c79088625d96a6e31a200773c6fe5e546a979aa6d7e63513e093d",
+          "governed_bytes_sha256": "0d18a113ceaf59ada4cf43d234e538803fd286e78890f3293bcc28e227477277"
+        },
+        {
+          "source_id": "govinfo:42usc6864-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6864.htm",
+          "raw_sha256": "876784424ea35e2a0ef4775cf0e6b2098021002429ffe4c5209a44472f743fbf",
+          "governed_bytes_sha256": "83c12e982ca1a03406fb373a9fe50442fee6ddc7f80f7cbec67c9550d7288773"
+        },
+        {
+          "source_id": "govinfo:42usc6865-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm",
+          "raw_sha256": "07223db356b1c46746c45cb1ee93f16e326d451873322b6040bffe90dbd70078",
+          "governed_bytes_sha256": "dbe5b00a0b01ea305db9d9d18800673308d378687cfdf563bf92e1bea36bfdee"
+        },
+        {
+          "source_id": "govinfo:42usc7133-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapII-sec7133.htm",
+          "raw_sha256": "724772e264bcdcc53d8307d6051b2648a1758b75f70198c7bdd9199b5c366d13",
+          "governed_bytes_sha256": "46d6d1198707fc4250f8f232c3252ae3d5f630dc85995d3196e59f300558e1ae"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-eere-amendment",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "e1a347f3fee4113dadaacbe67d9278263ddd38534ae14c333e7351f10ae73f8c"
+        },
+        {
+          "source_id": "govinfo:hr4553eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
+          "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
+          "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:236",
+        "source_ids": [
+          "clerk:119:1:236",
+          "govinfo:hrpt119-232",
+          "govinfo:hr4553rh-eere-binding",
+          "govinfo:hrpt119-213-eere",
+          "govinfo:42usc6861-2024",
+          "govinfo:42usc6862-2024",
+          "govinfo:42usc6863-2024",
+          "govinfo:42usc6864-2024",
+          "govinfo:42usc6865-2024",
+          "govinfo:42usc7133-2024",
+          "congressional-record:2025-09-04-eere-amendment",
+          "govinfo:hr4553eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:236",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
-      }
+        "shared_review_record_sha256": "cdc4a534f174514bd2166dbbd0ab1e3649a314f06190c458e0d0df73c18d9b20"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:237",
@@ -16058,14 +16148,15 @@
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
       "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "reason": "Substantive screening identifies direct Health/social-assistance account effects, but complete exact-action meaning is withheld pending a printed-source discrepancy. All68 amendment33 RH page/line targets were mapped/read. Report119-232 page13 specifies a $1,114,784,219.49 reduction at RH40:6 (Defense Nuclear Nonproliferation); September4 Record H3838 and the committee meeting SD002 image page47 specify $1,114,734,219.49. All three were visually verified. No formal correction or established source-precedence resolution has yet been located. This is one genuine exact-source conflict, not unreviewed discovery, not an exclusion and not an assertion that all evidence is unavailable. The independently sourced failed outcome does not resolve the text difference.",
       "source": {
         "source_id": "clerk:119:1:237",
         "url": "https://clerk.house.gov/evs/2025/roll237.xml",
         "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -16075,25 +16166,64 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "rationale": "Substantive screening identifies direct Health/social-assistance account effects, but complete exact-action meaning is withheld pending a printed-source discrepancy. All68 amendment33 RH page/line targets were mapped/read. Report119-232 page13 specifies a $1,114,784,219.49 reduction at RH40:6 (Defense Nuclear Nonproliferation); September4 Record H3838 and the committee meeting SD002 image page47 specify $1,114,734,219.49. All three were visually verified. No formal correction or established source-precedence resolution has yet been located. This is one genuine exact-source conflict, not unreviewed discovery, not an exclusion and not an assertion that all evidence is unavailable. The independently sourced failed outcome does not resolve the text difference.",
+      "unresolved_reason": "Substantive screening identifies direct Health/social-assistance account effects, but complete exact-action meaning is withheld pending a printed-source discrepancy. All68 amendment33 RH page/line targets were mapped/read. Report119-232 page13 specifies a $1,114,784,219.49 reduction at RH40:6 (Defense Nuclear Nonproliferation); September4 Record H3838 and the committee meeting SD002 image page47 specify $1,114,734,219.49. All three were visually verified. No formal correction or established source-precedence resolution has yet been located. This is one genuine exact-source conflict, not unreviewed discovery, not an exclusion and not an assertion that all evidence is unavailable. The independently sourced failed outcome does not resolve the text difference.",
       "sources": [
         {
           "source_id": "clerk:119:1:237",
           "url": "https://clerk.house.gov/evs/2025/roll237.xml",
           "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "21eef20c67ffd2d60dc15a4d465d6c91ff447527564e3919d5bf45725dbf9e67"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232-amend33-conflict",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/pdf/CRPT-119hrpt232.pdf",
+          "raw_sha256": "83d3e47812f0239213a7172628f8aa56ef942bf2cdcc30f90ca1e682bdb6abf8",
+          "governed_bytes_sha256": "d0889830dc677ca7b18b44f3d04ce64eb43ec54e6afc55174eb1cbe60ab17adc"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-amend33",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "58be5e3465d4d13f9571e098972e426af2a538505ae5356712d52d1c4abc8849"
+        },
+        {
+          "source_id": "house-rules:4553-amend33-meeting-image",
+          "url": "https://docs.house.gov/meetings/RU/RU00/20250902/117805/HMTG-119-RU00-20250902-SD002.pdf",
+          "raw_sha256": "a7509ea3f125739cd5f8ef994ee4b698b06b0ee01bcd901988638d7bf15104b0",
+          "governed_bytes_sha256": "a554085310430c91658f99973ee8e723c85495172ac1e1bfcc356084748aa459"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:237",
+        "source_ids": [
+          "clerk:119:1:237",
+          "govinfo:hrpt119-232",
+          "govinfo:hrpt119-232-amend33-conflict",
+          "congressional-record:2025-09-04-amend33",
+          "house-rules:4553-amend33-meeting-image"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:237",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": false
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false,
-        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
-      }
+        "authoritative_source_conflict": true,
+        "shared_review_record_sha256": "5bad05393e592ab77f71455c0ce77c25d503acb6be8d73d7fb77e8e527f457ae",
+        "next_action": "Resolve the RH40:6 $50,000 discrepancy through an official correction or documented exact floor-text version; committee SD002 agrees with the Record but has blank cover identifiers. Do not silently choose an amount. Research35/amend33-line-map.json retains all68 targets; research25/37/40 retain the three sources and visually checked images. Review prior adopted amendments against the full line map before any arithmetic: DOE administration already reduced by $14.375million and Fossil Energy increased $6.875million; nested amounts and fee offsets are not additive; Great Lakes is untouched. Reuse completed EERE/weatherization, Science/isotope, worker-program and regional authority research from236/239. Continue independent queue240/241/243 onward meanwhile."
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:238",
@@ -16146,15 +16276,16 @@
       "date": "2025-09-04",
       "measure": "bill_119_hr_4553",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.4553 EH is the September4,2025 House-passed Energy and Water appropriations package for fiscal2026. The House passed it after the separately recorded amendments and rejected motion to recommit. Membership is proposed from express medical-program funding, means-tested household assistance, regional care-project authority and the Health/social-benefit-related riders described below. General energy, environmental or water-policy consequences alone do not establish membership. This is one final-passage choice across the entire package, not a separate vote on any component.\n\nThe bill retains $1.83billion for EERE, with $223million for program direction nested inside it. Section301(d) incorporates the accompanying Report119-213 Bill-column allocations. The weatherization component is $195million: $180million assistance, $5million technical assistance and $10million readiness. Existing low-income eligibility, state/tribal delivery, audit, expenditure and tenant-protection conditions remain as recorded in the separate amendment32 candidate. The failed amendment32 did not enter the EH. This is neither a universal household benefit nor a $2.053billion account.\n\nThe $8.4billion Science appropriation includes the report’s $170million Isotope R&D and Production allocation, with $1million for the Clinical Alpha Radionuclide Producer construction project inside it. The governing isotope authority42USC18649 covers domestic isotopes for research, medical and industrial uses where private domestic supply is unavailable or inadequate, subject to its non-interference and program conditions; it expressly excludes molybdenum-99 handled under separate authority. Neither the entire Science account nor the entire isotope program is medical-only. The earlier adopted $11million increase/decrease instruction leaves Science’s overall amount unchanged. No treatment availability or research outcome is inferred.\n\nOther Defense Activities receives $1.179950billion, including the incorporated report allocations of $232.463million for Environment, Health, Safety and Security and $198.208million for Legacy Management. DOE’s contemporaneous public FY2026 justification identifies former-worker medical screening, occupational-illness compensation-claim support, medical surveillance for affected Marshallese citizens and contract-dependent retiree health insurance/reimbursements within these broader programs. The justification establishes program functions; its requested account amounts are not substituted for the House bill or report amounts. These are not entirely care accounts, a new entitlement or an assurance that every worker qualifies. No protected or classified annex is used.\n\nThe package retains regional appropriations: Appalachian $162,535,255; Delta $25,274,232; Denali $13,815,497; Northern Border $33,319,727; Southeast Crescent $16,253,526; Southwest Border and Great Lakes $4,063,381 each. Their full accounts fund multiple activities. Appalachian authority includes conditional health, nutrition and child-care demonstrations, low/moderate-income housing assistance and drug-abuse initiatives. Denali authority includes conditional HHS-funded health demonstrations and broader development; this account is not a new HHS transfer. The Title40subtitleV commissions retain basic-health-service grants and conditional demonstration authority. Delta’s broader development authority is distinct and is not silently assigned the Title40 health provisions. Project selection, matching, distressed-area and demonstration-operation limits remain except where the bill explicitly changes them. Denali’s bill language permits specified construction shares of80percent for distressed communities and tribes and50percent for other communities, and certain non-Federal-share payments when Denali is not the primary funder. The stated administrative-limit exceptions and Delta’s notwithstanding clauses remain. The regional amendments232–235 failed; their proposed lower amounts do not appear in final passage. No region’s entire appropriation is labeled medical-only or an actual grant award.\n\nSection506 bars use of this bill’s or previous appropriations funds for specified federal actions against a person wholly or partly because that person speaks or acts on a sincerely held religious belief or moral conviction that marriage is or should be one man and one woman. Its defined actions include federal tax treatment, grants/contracts, licenses/accreditation, employment, benefits and access to federal facilities. Subsection(c) requires federal recognition of accreditation/licensure/certification when the specified belief/action was wholly or partly the basis for denial. The notwithstanding references to1USC7 and28USC1738C do not rewrite their general marriage-recognition text; no general repeal of marriage recognition or newly specified ban on medical services is claimed. Section507 separately bars funds under this Act or any other Act for implementing, administering or enforcing any COVID-19 mask or vaccine mandate. It is not limited to DOE funding and does not ban voluntary masking, vaccination or all medical spending.\n\nOther package limits remain: section505’s funding prohibition for the specified DEI/CRT functions; section509’s restriction on using this bill’s funds to finalize rules meeting5USC804(2)(A)’s economic-effect criterion; and section510’s specified communication-classification/censorship-related prohibition using this or other Act funds. Section313 transfers specified unobligated infrastructure-law program balances to nuclear demonstration projects. Its EERE component names battery recycling, clean-hydrogen manufacturing/electrolysis, building-code implementation and school energy-improvement programs; it does not name the separate infrastructure-law Weatherization Assistance appropriation. The schools authority includes qualifying indoor-air/health improvements with energy savings, but the transfer is not a stated medical-care cut or repeal of every source program. Army Corps, Reclamation, nuclear-defense, cleanup, energy and other agency funding and riders are part of the same whole bill.\n\nThe passage record does not establish enactment, actual expenditure, service gains/losses, motive or a preferred alternative. The separate broad amendment33 has an unresolved printed-source amount discrepancy and is not silently represented by this passage candidate; it failed and its reductions are absent from the EH. Candidate episode accounting continues to expose that unfinished action.",
       "source": {
         "source_id": "clerk:119:1:239",
         "url": "https://clerk.house.gov/evs/2025/roll239.xml",
         "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4553:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4553",
       "member_action": "nay",
@@ -16163,26 +16294,155 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.4553 EH is the September4,2025 House-passed Energy and Water appropriations package for fiscal2026. The House passed it after the separately recorded amendments and rejected motion to recommit. Membership is proposed from express medical-program funding, means-tested household assistance, regional care-project authority and the Health/social-benefit-related riders described below. General energy, environmental or water-policy consequences alone do not establish membership. This is one final-passage choice across the entire package, not a separate vote on any component.\n\nThe bill retains $1.83billion for EERE, with $223million for program direction nested inside it. Section301(d) incorporates the accompanying Report119-213 Bill-column allocations. The weatherization component is $195million: $180million assistance, $5million technical assistance and $10million readiness. Existing low-income eligibility, state/tribal delivery, audit, expenditure and tenant-protection conditions remain as recorded in the separate amendment32 candidate. The failed amendment32 did not enter the EH. This is neither a universal household benefit nor a $2.053billion account.\n\nThe $8.4billion Science appropriation includes the report’s $170million Isotope R&D and Production allocation, with $1million for the Clinical Alpha Radionuclide Producer construction project inside it. The governing isotope authority42USC18649 covers domestic isotopes for research, medical and industrial uses where private domestic supply is unavailable or inadequate, subject to its non-interference and program conditions; it expressly excludes molybdenum-99 handled under separate authority. Neither the entire Science account nor the entire isotope program is medical-only. The earlier adopted $11million increase/decrease instruction leaves Science’s overall amount unchanged. No treatment availability or research outcome is inferred.\n\nOther Defense Activities receives $1.179950billion, including the incorporated report allocations of $232.463million for Environment, Health, Safety and Security and $198.208million for Legacy Management. DOE’s contemporaneous public FY2026 justification identifies former-worker medical screening, occupational-illness compensation-claim support, medical surveillance for affected Marshallese citizens and contract-dependent retiree health insurance/reimbursements within these broader programs. The justification establishes program functions; its requested account amounts are not substituted for the House bill or report amounts. These are not entirely care accounts, a new entitlement or an assurance that every worker qualifies. No protected or classified annex is used.\n\nThe package retains regional appropriations: Appalachian $162,535,255; Delta $25,274,232; Denali $13,815,497; Northern Border $33,319,727; Southeast Crescent $16,253,526; Southwest Border and Great Lakes $4,063,381 each. Their full accounts fund multiple activities. Appalachian authority includes conditional health, nutrition and child-care demonstrations, low/moderate-income housing assistance and drug-abuse initiatives. Denali authority includes conditional HHS-funded health demonstrations and broader development; this account is not a new HHS transfer. The Title40subtitleV commissions retain basic-health-service grants and conditional demonstration authority. Delta’s broader development authority is distinct and is not silently assigned the Title40 health provisions. Project selection, matching, distressed-area and demonstration-operation limits remain except where the bill explicitly changes them. Denali’s bill language permits specified construction shares of80percent for distressed communities and tribes and50percent for other communities, and certain non-Federal-share payments when Denali is not the primary funder. The stated administrative-limit exceptions and Delta’s notwithstanding clauses remain. The regional amendments232–235 failed; their proposed lower amounts do not appear in final passage. No region’s entire appropriation is labeled medical-only or an actual grant award.\n\nSection506 bars use of this bill’s or previous appropriations funds for specified federal actions against a person wholly or partly because that person speaks or acts on a sincerely held religious belief or moral conviction that marriage is or should be one man and one woman. Its defined actions include federal tax treatment, grants/contracts, licenses/accreditation, employment, benefits and access to federal facilities. Subsection(c) requires federal recognition of accreditation/licensure/certification when the specified belief/action was wholly or partly the basis for denial. The notwithstanding references to1USC7 and28USC1738C do not rewrite their general marriage-recognition text; no general repeal of marriage recognition or newly specified ban on medical services is claimed. Section507 separately bars funds under this Act or any other Act for implementing, administering or enforcing any COVID-19 mask or vaccine mandate. It is not limited to DOE funding and does not ban voluntary masking, vaccination or all medical spending.\n\nOther package limits remain: section505’s funding prohibition for the specified DEI/CRT functions; section509’s restriction on using this bill’s funds to finalize rules meeting5USC804(2)(A)’s economic-effect criterion; and section510’s specified communication-classification/censorship-related prohibition using this or other Act funds. Section313 transfers specified unobligated infrastructure-law program balances to nuclear demonstration projects. Its EERE component names battery recycling, clean-hydrogen manufacturing/electrolysis, building-code implementation and school energy-improvement programs; it does not name the separate infrastructure-law Weatherization Assistance appropriation. The schools authority includes qualifying indoor-air/health improvements with energy savings, but the transfer is not a stated medical-care cut or repeal of every source program. Army Corps, Reclamation, nuclear-defense, cleanup, energy and other agency funding and riders are part of the same whole bill.\n\nThe passage record does not establish enactment, actual expenditure, service gains/losses, motive or a preferred alternative. The separate broad amendment33 has an unresolved printed-source amount discrepancy and is not silently represented by this passage candidate; it failed and its reductions are absent from the EH. Candidate episode accounting continues to expose that unfinished action.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:239",
           "url": "https://clerk.house.gov/evs/2025/roll239.xml",
           "raw_sha256": "5d0f334b7b5b1adcf4979bc7bee9276e02e21ccb7995a300e258f73e9475c03c",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "6d43a927d4ae1b04407b80480c1d0261003f5f8854d89ee96f9b09abb7cbd61b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr4553eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553eh/html/BILLS-119hr4553eh.htm",
+          "raw_sha256": "d1992d7f333b69c9066024074bcca5ee41008fe39e63830b165d8aa7dedbc204",
+          "governed_bytes_sha256": "78b1bda19b231d6ae32c5909fe942b554b16d150016ca4f5efcc3a36cb4d0e09"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-eere",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "d5c1c69205f56f440071a04851655d3f35c81877da9634fccd2dec5ef86367e4"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-passage-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "170cc3709875e43038a6446e463b51b90ce2244bf7f1735b86bf1f17c842cc44"
+        },
+        {
+          "source_id": "energy:fy2026-oda-health-programs",
+          "url": "https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf",
+          "raw_sha256": "30ae8b7cb04a42f612929be38e37b76c291740ec2ff3ddc2ddd3f57a410e9670",
+          "governed_bytes_sha256": "06e091db2c4945381cd32aa7de0bc307c2461b109ed48b8fe07e88095e016eee"
+        },
+        {
+          "source_id": "govinfo:42usc18649-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap161-subchapIII-sec18649.htm",
+          "raw_sha256": "3feeb3154ac0b40e8bea36fca2bb4c771cc5ddb1c8be29d40b24dd3ae58e26e5",
+          "governed_bytes_sha256": "fd7fff2783e1840de677ab665fac3015ca5954c1ce613c9eb01f8135f4cd9358"
+        },
+        {
+          "source_id": "govinfo:40usc-appalachian-health-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm",
+          "raw_sha256": "9df9d8accd7725411821750454574b8bfb8c979d56fe980c78baf4bf017c596f",
+          "governed_bytes_sha256": "07769d91259b06b349100294c02df7fd4448d38ff1d6e304123ca131229ac32d"
+        },
+        {
+          "source_id": "govinfo:42usc3121-denali-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm",
+          "raw_sha256": "e0a6ead09c8178607e25eed3d5313d5d13c0b75b8bc9ec6b4b7a4c825db1f202",
+          "governed_bytes_sha256": "7653675cb295592470cd1037ee84473229029971c18f439494649f4853972611"
+        },
+        {
+          "source_id": "govinfo:7usc-delta-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm",
+          "raw_sha256": "19936b6473fa72673591dedafe69fe10d97214d174ac7a853e33c1ed05b84afa",
+          "governed_bytes_sha256": "2547a9d1f0d7533aa6cb66bbf621ad940b8b18405e89eac75b8f17286a88804a"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "govinfo:pl118-272-regional-commissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "raw_sha256": "d497fe15c8bf910da10f983d69185f6fd098d18ad5672f55f453edc4991774a8",
+          "governed_bytes_sha256": "d5e6be828b760dbcc000fba3bd8962293c07189daafe28abd2cf8507c6745751"
+        },
+        {
+          "source_id": "govinfo:pl117-58-4553-transfer-programs",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ58/html/PLAW-117publ58.htm",
+          "raw_sha256": "499a9de0f18d77beb514ceb245a78e84afb8f398418d189c78c466ba72708d83",
+          "governed_bytes_sha256": "ef6ac2e341f01de12ee2f8b0b5fc03ea93648aa22c648d0dab7cfb54e0eb46ba"
+        },
+        {
+          "source_id": "govinfo:1usc7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title1/html/USCODE-2024-title1-chap1-sec7.htm",
+          "raw_sha256": "5dea9d089cb1ef96e8cd286b88f2c064028944b7c278755a7f080ff4df5339c0",
+          "governed_bytes_sha256": "66bb3a33a8237e0a464e6bf88df81215e4495b64922d31be849706f218e0a87b"
+        },
+        {
+          "source_id": "govinfo:28usc1738C-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partV-chap115-sec1738C.htm",
+          "raw_sha256": "9aa19a76676e63f3913a515ac5292dae43a140cf53139cf0058bdd688c84f6ba",
+          "governed_bytes_sha256": "41e6be7333604705b25c2b32276055f68afd7c489968274a8e8a0e661b2bcd9a"
+        },
+        {
+          "source_id": "govinfo:5usc804-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec804.htm",
+          "raw_sha256": "be39dd302c2bd2d7061fc3880218038a65a168ec0a2376d1b80ac4f0acbab3a2",
+          "governed_bytes_sha256": "452612814637640130893d2000c3e6ac7a4b720ca94c4ad7b9e8ede8d377b105"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-4553-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "4811d9e3e5e3450f46415665052f5fe22acbf0c1ff973f6baa0d282eeb324b88"
+        },
+        {
+          "source_id": "govinfo:42usc6863-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6863.htm",
+          "raw_sha256": "29f3a4cda73c79088625d96a6e31a200773c6fe5e546a979aa6d7e63513e093d",
+          "governed_bytes_sha256": "0d18a113ceaf59ada4cf43d234e538803fd286e78890f3293bcc28e227477277"
+        },
+        {
+          "source_id": "govinfo:42usc6865-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap81-subchapIII-partA-sec6865.htm",
+          "raw_sha256": "07223db356b1c46746c45cb1ee93f16e326d451873322b6040bffe90dbd70078",
+          "governed_bytes_sha256": "dbe5b00a0b01ea305db9d9d18800673308d378687cfdf563bf92e1bea36bfdee"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:239",
+        "source_ids": [
+          "clerk:119:1:239",
+          "govinfo:hr4553eh",
+          "govinfo:hrpt119-213-eere",
+          "govinfo:hrpt119-213-passage-health",
+          "energy:fy2026-oda-health-programs",
+          "govinfo:42usc18649-2024",
+          "govinfo:40usc-appalachian-health-2024",
+          "govinfo:42usc3121-denali-2024",
+          "govinfo:7usc-delta-2024",
+          "govinfo:40usc-subtitleV-2024",
+          "govinfo:pl118-272-regional-commissions",
+          "govinfo:pl117-58-4553-transfer-programs",
+          "govinfo:1usc7-2024",
+          "govinfo:28usc1738C-2024",
+          "govinfo:5usc804-2024",
+          "congressional-record:2025-09-04-4553-passage",
+          "govinfo:42usc6863-2024",
+          "govinfo:42usc6865-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:239",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue H.R.4553: RH/EH/full RH PDF, Report119-232 and Sept3/4 Record captured in research25. Amendments25–31/rolls229–235 are now screened: three exclusions and four regional-account candidates. Reuse governed Title40subtitleV and Jan4,2025 Public Law118-272 regional authorities plus energy statutes/July4 Public Law119-21 excerpts. For236 bind both EERE reductions; for237 trace every amended line including nested amounts/prior adopted amendments; for239 complete full EH and incorporated rider/program review before meaning. H.R.4553 episode remains incomplete; sources alone are not reviewed passage."
-      }
+        "shared_review_record_sha256": "5f3a13f7f18dc2fd446e9585f225b61500f308cb4a8e79a6c7a43ed964782eb4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:240",
@@ -36425,11 +36685,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "55 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Incorporated health-project authority supports regional-account candidates while exact energy-loan administration amendments are separately excluded. Wider membership screening remains incomplete.",
+    "basis": "57 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "abb278890734e32f1db322c0af0a4fe55e070f245a9ce6ec11390c83483f3cc1",
+  "selection_sha256": "b37f8afa6e37191c5b3a958bd3437692453445f6bf56112fcbceafa0c89dfb3e",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -36459,6 +36719,8 @@
     "house:119:1:233",
     "house:119:1:234",
     "house:119:1:235",
+    "house:119:1:236",
+    "house:119:1:239",
     "house:119:1:25",
     "house:119:1:27",
     "house:119:1:281",
@@ -36491,9 +36753,7 @@
     "house:119:1:224",
     "house:119:1:225",
     "house:119:1:226",
-    "house:119:1:236",
     "house:119:1:237",
-    "house:119:1:239",
     "house:119:1:240",
     "house:119:1:241",
     "house:119:1:243",
@@ -36798,7 +37058,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "All three named priority cases have candidate dispositions. The remaining418 identities are unreviewed membership work. Resume with 2025 rolls72–74,77–83; H.Res.242 is already captured for the H.R.1048 action family. No source conflict or unavailable required evidence is asserted.",
+    "basis": "305 identities remain unresolved:304 unreviewed membership screenings and one substantively examined exact-source conflict at2025 roll237. Continue land-plan source tracing224–226 and independent240/241/243 onward; captured material alone is not completed review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -36850,6 +37110,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "d39a5fcb340e3deb22456e62ba1bfbdd25bc42a305c58bf6b65940dbcdda4d94",
-  "membership_review_sha256": "6213ede0b127af626fd2f0edef8e12e484201868ad54030201580fdae852b117"
+  "proposal_sha256": "c2d6ab22b8311f57876e11180417ab4b32ed5f3c38fdf8423af172c825b2cb14",
+  "membership_review_sha256": "14d472b6a31d2b4c5bb494207ea367b8c46d0d6c6174c93994ad3b274b9845f5"
 }

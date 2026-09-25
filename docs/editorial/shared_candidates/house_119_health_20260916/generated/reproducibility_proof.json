@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "55cf40eb603b3273176f3f3f31f7b9a20461df2e8bef862a920a3f52d7b260d8",
-  "source_capture_sha256": "375ae770ff3e69e77533dd1ed50afc537f4cb00a16e5434d42ffd0b52c856eaa",
-  "core_sha256": "f7e7cab809c9d09143fd4afb038bf1a814ce9240f9097d7772f319b2d8479c92",
-  "compiled_sha256": "a0c23eef4464f058336231366c5b6a70e59a379893d3a5d0337f6a35d7397a08",
-  "readable_sha256": "3d9186ec546e5e52fb46b78f504eb8b2195ef7c99184c96acb487f8c45cc4174",
+  "input_sha256": "6351511fbf76b70d9d9cacdb558729913933b4df4dde1b06ac7ff2b049cf8024",
+  "source_capture_sha256": "d5c0f82b93ebc565dc53a0483556560a519bd9e498b0b1554d67592154396f19",
+  "core_sha256": "3a1d476bf6094eb516c7a3f7054b029333b499b2323d7f9a19d4598d96465b83",
+  "compiled_sha256": "020f06054f7ca96c3b3d0e822b49bf905e4766469d37b0113776e0044453ae8a",
+  "readable_sha256": "fbf12ec4e388ad68a850c1de8bc2d406a340db06ed996ef5560bf292feb24aef",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1113,6 +1113,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the proposed $2,063,381 reduction in the bill’s Great Lakes Authority appropriation",
           "source_id": "clerk:119:1:235"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:236",
+      "shared_sha256": "85bb31c25b68b59c6734635d6526d82b219bc045077ab979b7da8b8f68bc0e26",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed removing the bill’s EERE appropriation, including low-income home-weatherization assistance",
+          "source_id": "clerk:119:1:236"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported removing the bill’s EERE appropriation, including low-income home-weatherization assistance",
+          "source_id": "clerk:119:1:236"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:239",
+      "shared_sha256": "6808ec0b78b800a164148c1f783cefb1bc90907077253ba119b7deaacbf3e263",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4553’s full funding-and-policy package",
+          "source_id": "clerk:119:1:239"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R.4553’s full funding-and-policy package",
+          "source_id": "clerk:119:1:239"
         }
       ]
     }

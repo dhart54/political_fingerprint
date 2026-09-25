@@ -3,7 +3,7 @@
   "artifact_id": "candidate:HEALTH_SOCIAL:house119-through-2026-09-16",
   "domain_id": "HEALTH_SOCIAL",
   "scope_boundaries": [
-    "55 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
+    "57 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -779,6 +779,34 @@
         "stage_order": 10235
       },
       "mapping_sha256": "60223cd4ad11f36041cfccb5608a48d19eacb9ed1d5a8903bb049f864258a600"
+    },
+    {
+      "action_id": "house:119:1:236",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10236
+      },
+      "mapping_sha256": "c9f3cf80d3d0bbccfc789c32de8c3ce85e9e6bd7253c7b44effa32c09a4f3865"
+    },
+    {
+      "action_id": "house:119:1:239",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr4553:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10239
+      },
+      "mapping_sha256": "41cee09cdf36988e975b1319b4ce828902e9e1c429fc64844af1a381ce1f98d7"
     }
   ],
   "episodes": [
@@ -1133,7 +1161,9 @@
         "house:119:1:232",
         "house:119:1:233",
         "house:119:1:234",
-        "house:119:1:235"
+        "house:119:1:235",
+        "house:119:1:236",
+        "house:119:1:239"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -1144,5 +1174,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "827d1a86f199116b83cd0233e0b04ede7e4e325fe3c824b4a8f895117089b0ce"
+  "mapping_sha256": "26f00dc0e4d6a2eb1083b4e144e33bc9b03ae034f5612f416202d08e787c4d6c"
 }

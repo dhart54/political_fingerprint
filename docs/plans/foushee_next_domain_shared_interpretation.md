@@ -76,26 +76,28 @@ ordinary turn boundary. This is ongoing work, not a completed Health checkpoint.
 - [x] Read complete S.1582 ES and H.R.3633 EH operative texts; trace the exact
   bankruptcy incorporations before proposing Health membership. Preserve
   reserve-shortfall estate priority versus customer-property pool priority.
-- [x] Twelve new shared candidate meanings/compacts and twenty-four choice strings;
+- [x] Fourteen new shared candidate meanings/compacts and twenty-eight choice strings;
   the financial inputs imply neither a health-benefit cut nor an isolated rider preference. The two
   financial-package Foushee Nay records generate findings; their Massie Not Voting records remain
-  non-directional accounting. Now43 Foushee /39 Massie findings,110 observations,
+  non-directional accounting. Now43 Foushee /39 Massie findings,114 observations,
   four Massie Not Voting records,43 episodes and eight multi-action episodes
-  (six pairs and the four-action H.R.4016 and still-incomplete H.R.4553 episodes).
+  (six pairs, four H.R.4016 actions and six supplied H.R.4553 actions).
 - [x] H.Res.590/roll203: fully compare H.R.4 Senate amendment EAS against prior
   EH and reused appropriations. Keep the rule vote procedural/non-counting;
   preserve named-program protections, $500-million first-paragraph rescission,
   omitted earlier $400-million second-paragraph rescission and other exceptions.
-- [x] Counts43/176/8/113/336 become55/178/8/128/307 across unchanged676 identities.
-  Add118 governed sources (26 Clerk,92 other),29 membership records and195
-  interpretation claim maps. Totals569 sources,227 membership records,362 maps.
-- [x] Regenerate and inspect compact/detail outputs. All44 candidate tests and131 focused subsystem tests pass,
+- [x] Counts43/176/8/113/336 become57/178/8/128/305 across unchanged676 identities.
+  Add149 governed sources (28 Clerk,121 other),32 membership records and249
+  interpretation claim maps. Totals600 sources,230 membership records,416 maps.
+  The305 unresolved identities comprise304 unreviewed screenings and one examined
+  exact-source conflict at roll237; the latter is not relabeled unreviewed.
+- [x] Regenerate and inspect compact/detail outputs. All46 candidate tests and133 focused subsystem tests pass,
   including source-removal rejection, both non-votes, pool-versus-estate limits
   and non-counting deemed concurrence. All7 canonical semantic checks pass. Exact-head CI is checked at the pushed
   progress boundary; prior bed93 CI remains historical.
-- [ ] Complete307 remaining screenings, wider episode reconciliation and
-  evidence-based substantive review-readiness assessment. No current human
-  decision, unavailable evidence or source-conflict blocker is identified.
+- [ ] Complete304 remaining screenings, resolve roll237’s documented source conflict,
+  reconcile wider episodes and assess substantive review readiness. Independent
+  cases continue; no exhausted evidence dependency or new human decision is asserted.
 
 H.R.4016 roll206 is now interpreted independently: Part A amendment113 changes
 the $15-million HIV-education minimum on RH page42 line16, not the parent account
@@ -157,34 +159,53 @@ inferred. Cost sharing, distressed-area/project approval and conditional program
 operation remain. Foushee No/Massie Aye on all four produce one complete finding
 per member in the existing multi-action design. No synthesis or direction rewrite.
 
-Prepared next work: complete236's two EERE lines,237's full set of reductions and
-239's complete EH/riders/incorporations. Only relevant RH pages, report amendment
-effects, scoped Record passages and regional authorities are substantively read;
-captured full EH is not completed passage review. Reuse research25–31 and governed
-sources. The local initial ATVM Code path returned an invalid page; the corrected
-official17013 source is separately captured. The acquisition helper's HTML/PDF
-text-name collision was corrected before governance; prior541 captures unchanged.
+Roll236 is now a shared candidate: the $1.83billion EERE reduction includes the
+nested $223million administration amount and the incorporated $195million
+weatherization allocation. It is not a $2.053billion cut, program repeal or
+rescission of every other funding source. Report image tables138–140 were visually
+checked and selected rows explicitly transcribed;42USC6861–6869 supplied the
+household-assistance eligibility/delivery/limit analysis. Foushee No/Massie Aye.
 
-Next executable group:224–226, then H.R.4553 amendments236/237 and passage239. H.J.Res.104/106/
-105 EH are fully read. June26 Record PDF is captured in research24: pages50–56
-contain the three GAO opinions; pages50–51/Miles City read so far. Exact Miles City
-and Central Yukon legacy eplanning PDF links returned403; the web tool showed
-Miles City's redirected document page as unavailable. Continue public source
-tracing/new NEPA-register links or public reproductions before disposition; these
-attempts do not establish exhaustive source unavailability. North Dakota exact
-plan remains to acquire. Keep these three pending and continue independent safe
-H.R.4553 cases if retrieval remains unresolved. Sources19/21/22/23/24/25–31 and committed
-next-action notes preserve progress; do not repeat the Coast Guard full-text read.
-No new human decision or exhausted evidence dependency is identified.
+Roll239 is now independently interpreted after complete89253-character EH review,
+incorporated regional/weatherization/isotope authority and public agency program
+analysis. Medical-isotope work, former-worker screening, retiree health benefits,
+regional care authority and household assistance coexist with riders506/507.
+Keep the different funding scopes: marriage-related federal actions use this or
+previous appropriations; COVID mandate restrictions reach this or any other Act.
+The package does not repeal general marriage recognition or ban vaccination.
+Science/Other Defense report allocations are not the agency’s requested amounts
+or entirely medical spending. Section313’s listed EERE transfer programs do not
+include the separate infrastructure-law weatherization appropriation. Both members’
+Nays are projected; five prior amendment choices and passage remain together.
 
-Manual interventions: selected image-only Report119-162 tables were visually
-checked and explicitly transcribed; a public court exhibit supplied historical
-2012 ART guidance, compared with reused2024 policy changes. Failed/redirected
-policy URLs were rejected, and the official Health.mil2022 memo was used. No
-protected annex was accessed. The stage guard caught an initial generic-passage
-label for roll220; it was corrected to the exact suspension-and-passage question
-without weakening validation. Existingea62cc8 exact-head CI passed all9 checks;
-this progress commit requires its own exact-head CI before reporting it current.
+Roll237 is a genuinely examined source conflict, separately pending. All68 RH
+page/line instructions are mapped/read in research35/amend33-line-map.json.
+Report119-232 page13 gives $1,114,784,219.49 at RH40:6; September4 Record H3838
+and Rules meeting SD002 image page47 give $1,114,734,219.49. All three were visually
+verified. The meeting document’s blank cover identifiers prevent calling it a
+formal correction. Do not choose an amount silently or add overlapping/nested
+cuts. Earlier adopted changes total $14.375million off DOE administration and
+$6.875million onto Fossil Energy; broader amendment arithmetic must retain them.
+Continue public correction/version tracing and independent safe research. This
+failed amendment is absent from EH and does not block passage239’s own sources.
+
+Next executable work: continue224–226 public plan-source tracing and independently
+240/241/243 onward. H.J.Res.104/106/105 EH are fully read. June26 Record PDF in
+research24 pages50–56 contains the three GAO opinions;50–51/Miles City read.
+Exact Miles City/Central Yukon legacy BLM links returned403; the redirected
+Miles City document page was unavailable. Public alternatives are not exhausted;
+North Dakota exact plan remains to acquire. Research25–40 and governed sources
+preserve H.R.4553 context. Do not redo completed EH, regional or EERE research.
+
+Manual additions since89cdc54:31 governed sources, two shared interpretations,
+54 claim maps and three membership records (including the reviewed conflict).
+Selected report tables152/171 were visually transcribed for medical isotope and
+Other Defense allocations; Rules image47 was transcribed only for the disputed
+instruction. No private/protected material. All46 candidate tests,133 focused
+subsystem tests and7 semantic checks pass. The first subsystem run omitted the
+existing NODE_PATH dependency setting; its sole failing schema check passed after
+restoring that local command setting. No dependency/environment file changed.
+89cdc54’s9 exact-head CI checks passed; this progress commit needs its own CI.
 
 Do not repeat completed digital-asset research: H.R.3633 EH all255069 characters
 were read through TitleVI, not only the shorter original contents list. Its
