@@ -1,43 +1,125 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
+September27 overnight terminal checkpoint: completed work is preserved below. The earlier corrected shutdown pause remains historical. This checkpoint is triggered by the current one-night usage buffer; it does not mean Health coverage is complete.
 
-**Active partial candidate.** Five screenings completed since8271416: two
-shared interpretations, two proposed exclusions and one procedural control.
-There are82 interpreted inputs,62 Foushee /57 Massie findings,187 unfinished
-screenings and two examined dependencies. Existing45's broader-package review
-also remains unfinished. No exhausted evidence path or current human decision
-is asserted. Health remains incomplete.
+**Partial candidate at the overnight checkpoint.** Five screenings completed
+since f31eb45: four proposed exclusions and one procedural control. There are82
+interpreted inputs,62 Foushee /57 Massie findings,182 unfinished screenings and
+two examined dependencies. Existing45's broader-package review also remains
+unfinished. No exhausted evidence path or new human decision is asserted.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-8271416 at this continuation boundary. Later in-scope research is preserved without reset.
+f31eb45 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
-discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
+discussion after validation; prior-head CI is not treated as current. The overnight run stops at the recorded usage buffer; the unfinished goal is not marked complete.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
 - [82 shared meanings /835 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1298 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [347 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [1319 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [352 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (8271416) | Current local candidate |
+| Disposition | Before (f31eb45) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |80|82|
-| procedural_context |199|200|
+| interpreted_substantive_directional |82|82|
+| procedural_context |200|201|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |192|194|
-| source_unresolved (unfinished plus examined dependencies) |194|189|
+| exact_action_ineligible |194|198|
+| source_unresolved (unfinished plus examined dependencies) |189|184|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## February9–12 membership checkpoint — September27
+
+Continue from `f31eb45393c5edeb0b3428063807b9d073d00f32`; exact-head
+CI36300576449 passed all nine jobs. Five more screenings completed:2026rolls
+58/64/67/70 are proposed exclusions;60 is a failed procedural rule. Counts
+**82/200/11/194/189 → 82/201/11/198/184**. The remainder is **182 unfinished
+screenings plus two examined dependencies**, not184 presumed Health votes.
+No new shared interpretation or member finding was authored in this batch.
+The82 meanings,835 claim maps,62 Foushee /57 bounded Massie findings,
+164 observations,63 episodes and10 multi-action episodes remain unchanged.
+
+- H.R.1531 binds a conditional Taiwan-triggered policy toward six international
+  financial bodies, with national-interest waiver and five-year/termination
+  sunset. The insurance-supervisor body's name does not establish clinical or
+  health-insurance coverage. Its exact incorporated presidential notification
+  is reused; implementation and conflict-prevention outcomes are not asserted.
+- Failed H.Res.1042 preserves all proposed deemed substitutes and its emergency
+  termination-calendar provision without treating them as adopted. H.R.2189's
+  complete seven-page RCP119-18 includes both weapons classification and tax/NFA
+  effects; the Judiciary-reported text alone is insufficient.
+- The later H.R.3617 energy-resource and H.R.261 sanctuary-permitting passages
+  are bound independently through H.Res.1057. Complete operative RH/EH sections
+  match. The cable bill also deletes two conditions on special-use permits
+  generally, not only on cable permits; retained consultation, compatibility
+  and liability terms remain explicit.
+- H.R.2189 passage retains classification/access and tax mechanisms, exceptions
+  and timing. Reviewed floor material includes mental-health de-escalation
+  support and pregnancy, injury and domestic-abuse objections. Those arguments
+  are not adopted as causal findings or converted into a clinical service.
+
+Added21 governed sources (1319 total) and five shared membership records
+(352 total). Reused source/version and incorporated-law review across the failed
+rule and subsequent independent passages; no member-specific legislative meaning
+was reauthored. All82 prior meanings,1298 governed sources and347 membership
+records remain structurally unchanged. Source selection, substantive review and
+candidate membership decisions were manual; member projection and replay remain
+mechanical. No published artifact, source registry or production data changed.
+
+Prepared work is preserved without claiming completed review:
+
+1. **Resume2026rolls62/68/69, S.1383:** the full32432-character EAH has been read,
+   but the RCP119-19/report119-493/H.Res.1057 amendment chain and material NVRA,
+   HAVA, SAVE, disability and uniformed-service incorporations need completion.
+   The original veterans-advisory title does not describe the substituted text.
+   The queue records exact URLs/hashes, reading positions and the independent
+   motion-to-commit check. No new disposition was assigned from capture alone.
+2. **56, H.J.Res.142:** official Council XML was recovered from its public
+   versioned repository after native official-page/PDF403 responses. Full target
+   text and incorporated tax/care-credit effects still need review; web-readable
+   official material remains available. Preserve the later D.C. Attorney General
+   timing/outcome limitation separately from the House proposal.
+3. **57, H.R.6644:** complete captured housing text and floor material remain
+   largely unread. Disability-income and assisted-family provisions are research
+   leads, not presumed membership. Continue subsequent source/version groups
+   from the committed676-row inventory without repeating completed decisions.
+
+The2025roll237 printed-source discrepancy and2026roll44 operative-effect binding
+remain examined dependencies with further research paths, not exhausted sources
+or new human decisions. Existing2026roll45 also retains its broader-package
+completeness follow-up. All older prepared queue entries remain preserved.
+
+Validation: **82 candidate tests within131 focused candidate/corpus/IR/pipeline
+tests and all7 semantic checks passed**. New regressions preserve failed-rule
+versus passage distinctions, complete RCP tax/NFA bindings, matching operative
+versions and nonprojection of excluded/unreviewed actions. One initial assertion
+included the RH title-amendment instruction after its operative sections; it now
+compares the sections and verifies the separately amended title. A test invocation
+omitted the existing NODE_PATH and could not load AJV; the corrected invocation
+passed without installing or changing dependencies. Deterministic regeneration
+preserves core `35b37f0ff00e533585f1857680dc46d9d40d13fcafe38059103480eb9ec8db9f`
+and compiled `8f1c5ae33804161ccf466af9d99cc8f2e82b3f4c7eb01b70ec615a85eb4505f0`.
+Exact new-head CI is recorded in the same PR after push; previous-head checks
+are not substituted. Previously documented unrelated frozen-Justice audit
+trust-gate failures remain separate and unmodified.
+
+**Terminal reason:** the account reached85percent usage (15percent remaining)
+on September27, triggering the recorded early overnight checkpoint buffer.
+Finish validation/push/exact-head CI before the final filesystem action writes
+STATUS=CHECKPOINT. Health is incomplete; the goal is not successful or accepted.
+No new substantive user decision is required. Resume this exact queue when work
+and usage capacity are available. No reset credit was redeemed. No recurring
+shutdown automation was created and the PowerShell watcher was not changed.
 
 ## January22–February4 source group — September27
 
