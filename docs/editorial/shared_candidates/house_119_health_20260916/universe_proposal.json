@@ -90,7 +90,9 @@
     "house:119:2:37",
     "house:119:2:45",
     "house:119:2:5",
-    "house:119:2:53"
+    "house:119:2:53",
+    "house:119:2:6",
+    "house:119:2:7"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -106,9 +108,9 @@
     "counts": {
       "procedural_context": 194,
       "exact_action_ineligible": 182,
-      "interpreted_substantive_directional": 74,
+      "interpreted_substantive_directional": 76,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 215
+      "source_unresolved": 213
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -117,15 +119,15 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 74,
-    "directional_substantive_actions": 74,
+    "substantive_eligible_actions": 76,
+    "directional_substantive_actions": 76,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 194,
     "expressive_nonbinding_actions": 11,
     "exact_action_ineligible_actions": 182,
-    "unresolved_boundary_cases": 215,
+    "unresolved_boundary_cases": 213,
     "independent_episode_count": 57,
-    "multi_action_episode_count": 9,
+    "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
       "concurrence",
@@ -136,12 +138,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 74,
-      "substantive_actions": 74,
+      "ready_substantive_actions": 76,
+      "substantive_actions": 76,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "214 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "212 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -587,6 +589,8 @@
         "house:119:1:351",
         "house:119:1:362",
         "house:119:2:5",
+        "house:119:2:6",
+        "house:119:2:7",
         "house:119:2:11",
         "house:119:2:37",
         "house:119:2:45",
@@ -626,8 +630,6 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:6",
-        "house:119:2:7",
         "house:119:2:8",
         "house:119:2:9",
         "house:119:2:13",
@@ -831,11 +833,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "74 proposed source-mapped inputs, not accepted eligibility. Of215 unresolved identities,214 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "76 proposed source-mapped inputs, not accepted eligibility. Of213 unresolved identities,212 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "57 candidate episodes cover74 supplied actions, including9 multi-action episodes (six two-action episodes and the established four-action H.R.3838, four-action H.R.4016 and six-action H.R.4553 episodes). H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.6938 DivisionA retention is interpreted; the distinct DivisionsB/C retention and whole passage remain explicit unfinished episode work.",
+  "episode_completeness": "57 candidate episodes cover76 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "8a8fb9272af145384a5f71f83d9cf87a609667598e62f05d95c30567d8114993",
+  "universe_subject_sha256": "4c57ea60848dce57515412318a4763746d505faa2c5783ea507ceaf4f1648500",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -27046,15 +27048,16 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_6938",
       "question": "On Retaining Divisions B and C",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed Health membership follows direct care, treatment, medical-payment or environmental-health mechanisms in the exact voted scope. Complete operative divisions, final statement overrides, material incorporated authorities and final allocations reviewed. B/C retention excludes A and is not passage.",
       "source": {
         "source_id": "clerk:119:2:6",
         "url": "https://clerk.house.gov/evs/2026/roll006.xml",
         "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6938:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6938",
       "member_action": "yea",
@@ -27063,26 +27066,246 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Proposed Health membership follows direct care, treatment, medical-payment or environmental-health mechanisms in the exact voted scope. Complete operative divisions, final statement overrides, material incorporated authorities and final allocations reviewed. B/C retention excludes A and is not passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:6",
           "url": "https://clerk.house.gov/evs/2026/roll006.xml",
           "raw_sha256": "ef542fa3e1f3b7239d41fa0b02b8db34d1ed7a96283934eb1342140eb5c72752",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "ec41e1f8e37916b950cffa0debc60b42528beeb7a30ebfd10e79b26cf5dc0b6c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6938eh-divisions-b-c",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+          "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+          "governed_bytes_sha256": "7fc197d01096814a5f04a6f54cec4693881c4be2473f10c9662b5ffee056b723"
+        },
+        {
+          "source_id": "govinfo:hr6938ih-divisions-b-c",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+          "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+          "governed_bytes_sha256": "44771f2c5827363ea259b52f2863efe18f18b6a0465f612ae05eaf0fac4354e8"
+        },
+        {
+          "source_id": "govinfo:hres977eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+          "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+          "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-retention",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "9d08027010aa921ae73896edbba045d4e725b2739b064886141fe82d1c716b6a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-b-health",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "7e20234a08d7b86833d439e54fb2234ade1c6549c2d0a066458eb754ca115e42"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-c-health",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "43816d0a8e50154d1e5b239265319ae2fc0ac6fd31d3140fa36992c757443011"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-ihs-final-allocation-tables",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "eec05a0deaec88d3bd0c30bc65e838dff68692ab3fd1b28902fe9b54faaec52c"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-doe-final-allocation",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "1434f1aa82481cb28bc58ef0db54ecff9b3813ad9b55edf255e78d5e71136cab"
+        },
+        {
+          "source_id": "govinfo:pl113-76-regional-health424",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm",
+          "raw_sha256": "4e889e97514c5f197aac26681107a935f8735cd3f11734a8b78e7d905f701fe3",
+          "governed_bytes_sha256": "479ef86b9db162521fa2bdc12b4f03092ffad5fd22fc26fe9893c44acee8d572"
+        },
+        {
+          "source_id": "govinfo:pl113-235-contract-support405-406",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm",
+          "raw_sha256": "96ab7ed1d845c8e5bedf6d2db62362589365e7989c11d81d5741118aa482fa15",
+          "governed_bytes_sha256": "ef38d26434b7dee800654e4fc239934cc58bded44771168d8a54b9d631aecd2c"
+        },
+        {
+          "source_id": "govinfo:pl116-9-national-park-medical2404",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm",
+          "raw_sha256": "0afcc380925392067d11614088222c05d86c77f06746794f98cca9cc3be9282f",
+          "governed_bytes_sha256": "3d84abaaa2e95aa780bfde6cd26b87cb14106543a26ffd68331076ef59a4817d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-215-ihs-niehs-atsdr",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm",
+          "raw_sha256": "e58109112201814e5e78b6f390cce7926bef9d0ff492e62f21926ce74e67b440",
+          "governed_bytes_sha256": "08953d7943d3b4b597a4e34cbce7ee1d7d2868f001dc190fa53ff69e03ffe8ac"
+        },
+        {
+          "source_id": "govinfo:srpt119-46-ihs-niehs-atsdr",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+          "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+          "governed_bytes_sha256": "b697a9ea51e5534ab07c68997d05c045720801d53a28e338e99253bc410aed63"
+        },
+        {
+          "source_id": "govinfo:srpt119-46-regional-health-current-law",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+          "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+          "governed_bytes_sha256": "c58c78eb2a00aec63153f434ee6c8686984f8907327039341dad5777d0772c98"
+        },
+        {
+          "source_id": "govinfo:40usc-appalachian-health-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm",
+          "raw_sha256": "9df9d8accd7725411821750454574b8bfb8c979d56fe980c78baf4bf017c596f",
+          "governed_bytes_sha256": "07769d91259b06b349100294c02df7fd4448d38ff1d6e304123ca131229ac32d"
+        },
+        {
+          "source_id": "govinfo:42usc3121-denali-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm",
+          "raw_sha256": "e0a6ead09c8178607e25eed3d5313d5d13c0b75b8bc9ec6b4b7a4c825db1f202",
+          "governed_bytes_sha256": "7653675cb295592470cd1037ee84473229029971c18f439494649f4853972611"
+        },
+        {
+          "source_id": "govinfo:7usc-delta-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm",
+          "raw_sha256": "19936b6473fa72673591dedafe69fe10d97214d174ac7a853e33c1ed05b84afa",
+          "governed_bytes_sha256": "2547a9d1f0d7533aa6cb66bbf621ad940b8b18405e89eac75b8f17286a88804a"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "energy:fy2026-oda-health-programs",
+          "url": "https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf",
+          "raw_sha256": "30ae8b7cb04a42f612929be38e37b76c291740ec2ff3ddc2ddd3f57a410e9670",
+          "governed_bytes_sha256": "06e091db2c4945381cd32aa7de0bc307c2461b109ed48b8fe07e88095e016eee"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-passage-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "170cc3709875e43038a6446e463b51b90ce2244bf7f1735b86bf1f17c842cc44"
+        },
+        {
+          "source_id": "govinfo:42usc10364-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024",
+          "raw_sha256": "f18771df4034d4382e0309798f5c464e61f31741cfca6999f2e1ee4f5a2bc3d4",
+          "governed_bytes_sha256": "93a683371cc8f2270a17a9eef922e8302642ac257547ad288fc97229d686bbfc"
+        },
+        {
+          "source_id": "govinfo:42usc10363-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024",
+          "raw_sha256": "d39267aa421d3a005e183f2671a3f905d2d3b966ff658c0fa2394bca9e0f16dd",
+          "governed_bytes_sha256": "14ef618399cb6c31a0f325778d58bfbc99b9b3757797251671eedd32da2e4479"
+        },
+        {
+          "source_id": "govinfo:43usc2241-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024",
+          "raw_sha256": "e2df1eb3053b705cf2ee8ac028d07e9160f43dbbe3d8fab4c2090859130774d9",
+          "governed_bytes_sha256": "7eb63398cdf067112e5d3fed346f2f2878ffee4ff9802e7c1763ea0571dd6649"
+        },
+        {
+          "source_id": "govinfo:43usc510b-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024",
+          "raw_sha256": "e900e7787e742c2b9a8ed720c35f4226c02cbb6895de01d7b827e540265e6dc1",
+          "governed_bytes_sha256": "afac99ea6b63e999c731428d5de40c0c2922410f2d24eb80c685fe3806edf728"
+        },
+        {
+          "source_id": "govinfo:pl108-361-calfed-management",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm",
+          "raw_sha256": "a12789240f5215815ab8ef9a8b0c4358cb11ff0f0fbe9bf1de3909e0f563b531",
+          "governed_bytes_sha256": "758f248135eeefb0e611e06ee76201d9bdec166e1f808808310753d035da80ec"
+        },
+        {
+          "source_id": "govinfo:pl111-11-rio-grande9106",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "8848b18c4e51a1921ce03199537a77ebdb16304ee881c3faddfd9a8bc9a5fb30"
+        },
+        {
+          "source_id": "govinfo:pl111-11-gallup-contract",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "4644724000e694aa45093d3721471247d92c7d1b01eb05d54f8978a8c189a713"
+        },
+        {
+          "source_id": "govinfo:pl111-11-navajo-gallup-authorization",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "d6494ca46af79fa39af1ace335831ad56ec07c5bed59a3bf9b52c814ba35b697"
+        },
+        {
+          "source_id": "govinfo:pl106-554-dakota-water607",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "0f393c44dcb516d885b50189749ff6e90e6cbb8f323ac30388d95745563fe7c6"
+        },
+        {
+          "source_id": "govinfo:pl106-554-dakota-water610",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "ed37db70599e6b62c1661cf86ec89033f9cb971b49b6f182e80cd9ebf0669296"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:6",
+        "source_ids": [
+          "clerk:119:2:6",
+          "govinfo:hr6938eh-divisions-b-c",
+          "govinfo:hr6938ih-divisions-b-c",
+          "govinfo:hres977eh",
+          "congressional-record:2026-01-08-6938-retention",
+          "congressional-record:2026-01-08-6938-explanation-b-health",
+          "congressional-record:2026-01-08-6938-explanation-c-health",
+          "congressional-record:2026-01-08-6938-ihs-final-allocation-tables",
+          "congressional-record:2026-01-08-6938-doe-final-allocation",
+          "govinfo:pl113-76-regional-health424",
+          "govinfo:pl113-235-contract-support405-406",
+          "govinfo:pl116-9-national-park-medical2404",
+          "govinfo:hrpt119-215-ihs-niehs-atsdr",
+          "govinfo:srpt119-46-ihs-niehs-atsdr",
+          "govinfo:srpt119-46-regional-health-current-law",
+          "govinfo:40usc-appalachian-health-2024",
+          "govinfo:42usc3121-denali-2024",
+          "govinfo:7usc-delta-2024",
+          "govinfo:40usc-subtitleV-2024",
+          "energy:fy2026-oda-health-programs",
+          "govinfo:hrpt119-213-passage-health",
+          "govinfo:42usc10364-2024-6938-water",
+          "govinfo:42usc10363-2024-6938-water",
+          "govinfo:43usc2241-2024-6938-water",
+          "govinfo:43usc510b-2024-6938-water",
+          "govinfo:pl108-361-calfed-management",
+          "govinfo:pl111-11-rio-grande9106",
+          "govinfo:pl111-11-gallup-contract",
+          "govinfo:pl111-11-navajo-gallup-authorization",
+          "govinfo:pl106-554-dakota-water607",
+          "govinfo:pl106-554-dakota-water610"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:6",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue6938EH at character267437(startDivisionC); complete contiguous0:267437 throughDivisionB now read. Roll5DivisionA independently interpreted; B/C membership and wholepassage still unfinished. DivisionB includes DOE1.170bnOtherDefenseActivities,8.4bnScience,200mAppalachianCommission,32mDeltaAuthority,18mDenali(90percentdistressed/Tribes,50percentother construction caps; separateothergrantsnonFederalsharepermission),42mNorthernBorder andotherregionalauthorities, DOEindirectcost2024protection313 andhealth-riskwaiver301(g). Reuse4553DOEhealth-programsourceanalysis afterexact-versioncomparison. RemainingB incorporation: direct203–210 waterauthorities, material regional/DOEHealthprogramallocations and finalstatement from76; do not inferhealthfromwater/environmentalone. DivisionCruns267437:end. Entire operativeIHmatchesEH, proven by exact prefix comparison through508386characters; remaining difference is attestation. January8BookIfloorPDF69/73/74 confirms both divisions retained and orderedengrossment; passagecontinues75. Final statement is337-pageBookII(URLhouse-bk3),research191/raw39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574: DivisionA narrative1–13 read and governed; individual earmarktable14–75 not exhaustively reviewed or totalled; DivisionBstarts76. House119272/Senate11944capturedresearch192; relevantAcare/reportoverrides bound, not claimed fullreportreview. Finish B/C operative provisions, material incorporations and statement before membership; roll6coversB/Ctogether, roll7wholebill. Do not inherit allAeffects onto6. Use explicitdivision_retention stage and retained_portion for6, final_passagefor7. Source6938body509133chars/raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0."
-      }
+        "shared_review_record_sha256": "4838f3f29e885fbfb0409feb60c65254aa0461fd5189dbde2d7c5c4e7ce93267"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:7",
@@ -27091,15 +27314,16 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_6938",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed Health membership follows direct care, treatment, medical-payment or environmental-health mechanisms in the exact voted scope. Complete operative divisions, final statement overrides, material incorporated authorities and final allocations reviewed. Whole passage combines all three divisions after distinct retention votes; no isolated-program endorsement inferred.",
       "source": {
         "source_id": "clerk:119:2:7",
         "url": "https://clerk.house.gov/evs/2026/roll007.xml",
         "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6938:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6938",
       "member_action": "yea",
@@ -27108,26 +27332,365 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Proposed Health membership follows direct care, treatment, medical-payment or environmental-health mechanisms in the exact voted scope. Complete operative divisions, final statement overrides, material incorporated authorities and final allocations reviewed. Whole passage combines all three divisions after distinct retention votes; no isolated-program endorsement inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:7",
           "url": "https://clerk.house.gov/evs/2026/roll007.xml",
           "raw_sha256": "25964a5b8d8b39fed88673c69e89aa17a9f9c504369fe56ed32ef6d283016fe9",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "da79b2d622fc3f17fd4850262d4d003ea9ee57709870057abfc0bc8c31b3858c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6938ih-division-a",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+          "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+          "governed_bytes_sha256": "14801fb49e3269a67e9dd5c9c87748ea6a0a39fc8d0c26a3f49c45bc6c676521"
+        },
+        {
+          "source_id": "govinfo:hr6938eh-division-a",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+          "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+          "governed_bytes_sha256": "1085a34b729ea81e3e7ca81f4dfc8ccdcf5aa5c42abc86775e4e9ea3301ef256"
+        },
+        {
+          "source_id": "govinfo:hres977eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+          "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+          "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-retention",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "9d08027010aa921ae73896edbba045d4e725b2739b064886141fe82d1c716b6a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-a",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "580dfed83e4890592d1045fc6aa5746c5af0ea4155eaefa2f55f63ae99b5bb0a"
+        },
+        {
+          "source_id": "govinfo:34usc12291-2024-victim-services-and-conditions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm",
+          "raw_sha256": "02970b24f1558a1ef246065f288a98fc9cf09c5c86046119dadb6828159ce1a9",
+          "governed_bytes_sha256": "77b2ac25b8fe0d85f258487e4c772ac28c49d7633a10a86c3ac8b2cb39fbb2b2"
+        },
+        {
+          "source_id": "govinfo:34usc20101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm",
+          "raw_sha256": "f6cdc5e0384ec1e635dbb63d1d2709b0928f28d399d0e74f88f59147c3acec5b",
+          "governed_bytes_sha256": "f0f34cd2a705b4ef1767fb3527dac51c28f2e3881131c417218550c566d1c6d2"
+        },
+        {
+          "source_id": "govinfo:22usc2680b-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm",
+          "raw_sha256": "261328ca9f409814d2ec414fdff9fcf6f9afa3e5b377d3fe2b8d63fe3f29f19e",
+          "governed_bytes_sha256": "3fa35ec6c14a225301bc64402df765f778bd3f44cc32a9934ff1b8b6b045501e"
+        },
+        {
+          "source_id": "govinfo:pl105-119-lsc501-506",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm",
+          "raw_sha256": "0cf392e4b65df268e0920f02ca0b8149a4cdecb255029bb99df7d6bf49d70abe",
+          "governed_bytes_sha256": "e40dc081eadab392b03e0f0f8aa9542259c29fa27c27945d919cdd11101bd35e"
+        },
+        {
+          "source_id": "govinfo:pl104-134-lsc501-508",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm",
+          "raw_sha256": "0e63bbd01a66d8fc36476623ecc878a78664c4483dda487be0a964c668b16ec7",
+          "governed_bytes_sha256": "8193a3e5e4db3f9d976b2b2bbae358439a70c1e85f921f0cbc0c3234020855d8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-deinstitutionalization",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "6d994141de9712363f2aa9b5c8a3fa17657655815033c69b63e84a14da0f5d82"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-bop-naloxone",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "762b2fbf5b9ed8fcaf8b172940304ce9b617cc60d82be26cd5773e8b68748c96"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-bop-mental-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "2ef4c5c3ab1a803dff9f03a5f0588f97e2c38cfdc031c8197b99bf7de4eea439"
+        },
+        {
+          "source_id": "govinfo:srpt119-44-insomnia",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+          "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+          "governed_bytes_sha256": "b76f8684f4710903aa04130ba0aa10ef154c68d133e9dea2bf22420ad6c34b08"
+        },
+        {
+          "source_id": "govinfo:srpt119-44-continuity-of-care",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+          "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+          "governed_bytes_sha256": "03dca1b41dbcb6e30beca62d6a8eebd35c5573a0472215e5086fcaaffcc8046c"
+        },
+        {
+          "source_id": "ustr:singapore-fta-16-7-2",
+          "url": "https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf",
+          "raw_sha256": "c029b97176adfe71b49ae1ec82931275597658588db2a374aecf2eeb46084a6c",
+          "governed_bytes_sha256": "cbc5ac545a31cfca2a0912bd5bfc7425833a78918de684a4e92927e9885b3469"
+        },
+        {
+          "source_id": "ustr:australia-fta-17-9-4",
+          "url": "https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf",
+          "raw_sha256": "31fc7f5fa8f06c290e48abf24e3e517e4e826807ad60edcfada097b5be9bf955",
+          "governed_bytes_sha256": "787849d6470a8db8e967548feebe4b49aacdce517fe56a00710a6dd99a2bdae1"
+        },
+        {
+          "source_id": "ustr:morocco-fta-15-9-4",
+          "url": "https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf",
+          "raw_sha256": "8e6144ed6cdda11dd4c3e7ce7a2b06b6f8cb4f1da287612a6fbe88ed0771a100",
+          "governed_bytes_sha256": "477de7f8708719bbaa1e2fba8d890e8077db5a6900df79b755ace6212d1c926d"
+        },
+        {
+          "source_id": "govinfo:hr6938eh-divisions-b-c",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+          "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+          "governed_bytes_sha256": "7fc197d01096814a5f04a6f54cec4693881c4be2473f10c9662b5ffee056b723"
+        },
+        {
+          "source_id": "govinfo:hr6938ih-divisions-b-c",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+          "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+          "governed_bytes_sha256": "44771f2c5827363ea259b52f2863efe18f18b6a0465f612ae05eaf0fac4354e8"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-b-health",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "7e20234a08d7b86833d439e54fb2234ade1c6549c2d0a066458eb754ca115e42"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-c-health",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "43816d0a8e50154d1e5b239265319ae2fc0ac6fd31d3140fa36992c757443011"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-ihs-final-allocation-tables",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "eec05a0deaec88d3bd0c30bc65e838dff68692ab3fd1b28902fe9b54faaec52c"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-doe-final-allocation",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "1434f1aa82481cb28bc58ef0db54ecff9b3813ad9b55edf255e78d5e71136cab"
+        },
+        {
+          "source_id": "govinfo:pl113-76-regional-health424",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm",
+          "raw_sha256": "4e889e97514c5f197aac26681107a935f8735cd3f11734a8b78e7d905f701fe3",
+          "governed_bytes_sha256": "479ef86b9db162521fa2bdc12b4f03092ffad5fd22fc26fe9893c44acee8d572"
+        },
+        {
+          "source_id": "govinfo:pl113-235-contract-support405-406",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm",
+          "raw_sha256": "96ab7ed1d845c8e5bedf6d2db62362589365e7989c11d81d5741118aa482fa15",
+          "governed_bytes_sha256": "ef38d26434b7dee800654e4fc239934cc58bded44771168d8a54b9d631aecd2c"
+        },
+        {
+          "source_id": "govinfo:pl116-9-national-park-medical2404",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm",
+          "raw_sha256": "0afcc380925392067d11614088222c05d86c77f06746794f98cca9cc3be9282f",
+          "governed_bytes_sha256": "3d84abaaa2e95aa780bfde6cd26b87cb14106543a26ffd68331076ef59a4817d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-215-ihs-niehs-atsdr",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm",
+          "raw_sha256": "e58109112201814e5e78b6f390cce7926bef9d0ff492e62f21926ce74e67b440",
+          "governed_bytes_sha256": "08953d7943d3b4b597a4e34cbce7ee1d7d2868f001dc190fa53ff69e03ffe8ac"
+        },
+        {
+          "source_id": "govinfo:srpt119-46-ihs-niehs-atsdr",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+          "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+          "governed_bytes_sha256": "b697a9ea51e5534ab07c68997d05c045720801d53a28e338e99253bc410aed63"
+        },
+        {
+          "source_id": "govinfo:srpt119-46-regional-health-current-law",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm",
+          "raw_sha256": "1383b686deda451d6bf03bdc3c92a3f634d059d7a029cee081130a2b4b5c50ed",
+          "governed_bytes_sha256": "c58c78eb2a00aec63153f434ee6c8686984f8907327039341dad5777d0772c98"
+        },
+        {
+          "source_id": "govinfo:40usc-appalachian-health-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm",
+          "raw_sha256": "9df9d8accd7725411821750454574b8bfb8c979d56fe980c78baf4bf017c596f",
+          "governed_bytes_sha256": "07769d91259b06b349100294c02df7fd4448d38ff1d6e304123ca131229ac32d"
+        },
+        {
+          "source_id": "govinfo:42usc3121-denali-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm",
+          "raw_sha256": "e0a6ead09c8178607e25eed3d5313d5d13c0b75b8bc9ec6b4b7a4c825db1f202",
+          "governed_bytes_sha256": "7653675cb295592470cd1037ee84473229029971c18f439494649f4853972611"
+        },
+        {
+          "source_id": "govinfo:7usc-delta-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm",
+          "raw_sha256": "19936b6473fa72673591dedafe69fe10d97214d174ac7a853e33c1ed05b84afa",
+          "governed_bytes_sha256": "2547a9d1f0d7533aa6cb66bbf621ad940b8b18405e89eac75b8f17286a88804a"
+        },
+        {
+          "source_id": "govinfo:40usc-subtitleV-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "raw_sha256": "9e39127b7f3f7a3b69bae2d5896e0078bf2d37de03a4745aff56a461fbd75c22",
+          "governed_bytes_sha256": "f03af488e28111539deffb9736a2e0892eb66fa257add33ba5ce4f053d1e1c67"
+        },
+        {
+          "source_id": "energy:fy2026-oda-health-programs",
+          "url": "https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf",
+          "raw_sha256": "30ae8b7cb04a42f612929be38e37b76c291740ec2ff3ddc2ddd3f57a410e9670",
+          "governed_bytes_sha256": "06e091db2c4945381cd32aa7de0bc307c2461b109ed48b8fe07e88095e016eee"
+        },
+        {
+          "source_id": "govinfo:hrpt119-213-passage-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf",
+          "raw_sha256": "9e2abb5f78c3a9e9befeb93f4e4a9afc6267319c23758e9c8feb8f53b30f4ef6",
+          "governed_bytes_sha256": "170cc3709875e43038a6446e463b51b90ce2244bf7f1735b86bf1f17c842cc44"
+        },
+        {
+          "source_id": "govinfo:42usc10364-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024",
+          "raw_sha256": "f18771df4034d4382e0309798f5c464e61f31741cfca6999f2e1ee4f5a2bc3d4",
+          "governed_bytes_sha256": "93a683371cc8f2270a17a9eef922e8302642ac257547ad288fc97229d686bbfc"
+        },
+        {
+          "source_id": "govinfo:42usc10363-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024",
+          "raw_sha256": "d39267aa421d3a005e183f2671a3f905d2d3b966ff658c0fa2394bca9e0f16dd",
+          "governed_bytes_sha256": "14ef618399cb6c31a0f325778d58bfbc99b9b3757797251671eedd32da2e4479"
+        },
+        {
+          "source_id": "govinfo:43usc2241-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024",
+          "raw_sha256": "e2df1eb3053b705cf2ee8ac028d07e9160f43dbbe3d8fab4c2090859130774d9",
+          "governed_bytes_sha256": "7eb63398cdf067112e5d3fed346f2f2878ffee4ff9802e7c1763ea0571dd6649"
+        },
+        {
+          "source_id": "govinfo:43usc510b-2024-6938-water",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024",
+          "raw_sha256": "e900e7787e742c2b9a8ed720c35f4226c02cbb6895de01d7b827e540265e6dc1",
+          "governed_bytes_sha256": "afac99ea6b63e999c731428d5de40c0c2922410f2d24eb80c685fe3806edf728"
+        },
+        {
+          "source_id": "govinfo:pl108-361-calfed-management",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm",
+          "raw_sha256": "a12789240f5215815ab8ef9a8b0c4358cb11ff0f0fbe9bf1de3909e0f563b531",
+          "governed_bytes_sha256": "758f248135eeefb0e611e06ee76201d9bdec166e1f808808310753d035da80ec"
+        },
+        {
+          "source_id": "govinfo:pl111-11-rio-grande9106",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "8848b18c4e51a1921ce03199537a77ebdb16304ee881c3faddfd9a8bc9a5fb30"
+        },
+        {
+          "source_id": "govinfo:pl111-11-gallup-contract",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "4644724000e694aa45093d3721471247d92c7d1b01eb05d54f8978a8c189a713"
+        },
+        {
+          "source_id": "govinfo:pl111-11-navajo-gallup-authorization",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "d6494ca46af79fa39af1ace335831ad56ec07c5bed59a3bf9b52c814ba35b697"
+        },
+        {
+          "source_id": "govinfo:pl106-554-dakota-water607",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "0f393c44dcb516d885b50189749ff6e90e6cbb8f323ac30388d95745563fe7c6"
+        },
+        {
+          "source_id": "govinfo:pl106-554-dakota-water610",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "ed37db70599e6b62c1661cf86ec89033f9cb971b49b6f182e80cd9ebf0669296"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-passage-result",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "bc920de8f75266a3ff6d74186bd0497ec13e69467db1d122c8b9360f29a7e1c0"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:7",
+        "source_ids": [
+          "clerk:119:2:7",
+          "govinfo:hr6938ih-division-a",
+          "govinfo:hr6938eh-division-a",
+          "govinfo:hres977eh",
+          "congressional-record:2026-01-08-6938-retention",
+          "congressional-record:2026-01-08-6938-explanation-a",
+          "govinfo:34usc12291-2024-victim-services-and-conditions",
+          "govinfo:34usc20101-2024-operative",
+          "govinfo:22usc2680b-2024-operative",
+          "govinfo:pl105-119-lsc501-506",
+          "govinfo:pl104-134-lsc501-508",
+          "govinfo:hrpt119-272-deinstitutionalization",
+          "govinfo:hrpt119-272-bop-naloxone",
+          "govinfo:hrpt119-272-bop-mental-health",
+          "govinfo:srpt119-44-insomnia",
+          "govinfo:srpt119-44-continuity-of-care",
+          "ustr:singapore-fta-16-7-2",
+          "ustr:australia-fta-17-9-4",
+          "ustr:morocco-fta-15-9-4",
+          "govinfo:hr6938eh-divisions-b-c",
+          "govinfo:hr6938ih-divisions-b-c",
+          "congressional-record:2026-01-08-6938-explanation-b-health",
+          "congressional-record:2026-01-08-6938-explanation-c-health",
+          "congressional-record:2026-01-08-6938-ihs-final-allocation-tables",
+          "congressional-record:2026-01-08-6938-doe-final-allocation",
+          "govinfo:pl113-76-regional-health424",
+          "govinfo:pl113-235-contract-support405-406",
+          "govinfo:pl116-9-national-park-medical2404",
+          "govinfo:hrpt119-215-ihs-niehs-atsdr",
+          "govinfo:srpt119-46-ihs-niehs-atsdr",
+          "govinfo:srpt119-46-regional-health-current-law",
+          "govinfo:40usc-appalachian-health-2024",
+          "govinfo:42usc3121-denali-2024",
+          "govinfo:7usc-delta-2024",
+          "govinfo:40usc-subtitleV-2024",
+          "energy:fy2026-oda-health-programs",
+          "govinfo:hrpt119-213-passage-health",
+          "govinfo:42usc10364-2024-6938-water",
+          "govinfo:42usc10363-2024-6938-water",
+          "govinfo:43usc2241-2024-6938-water",
+          "govinfo:43usc510b-2024-6938-water",
+          "govinfo:pl108-361-calfed-management",
+          "govinfo:pl111-11-rio-grande9106",
+          "govinfo:pl111-11-gallup-contract",
+          "govinfo:pl111-11-navajo-gallup-authorization",
+          "govinfo:pl106-554-dakota-water607",
+          "govinfo:pl106-554-dakota-water610",
+          "congressional-record:2026-01-08-6938-passage-result"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:7",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue6938EH at character267437(startDivisionC); complete contiguous0:267437 throughDivisionB now read. Roll5DivisionA independently interpreted; B/C membership and wholepassage still unfinished. DivisionB includes DOE1.170bnOtherDefenseActivities,8.4bnScience,200mAppalachianCommission,32mDeltaAuthority,18mDenali(90percentdistressed/Tribes,50percentother construction caps; separateothergrantsnonFederalsharepermission),42mNorthernBorder andotherregionalauthorities, DOEindirectcost2024protection313 andhealth-riskwaiver301(g). Reuse4553DOEhealth-programsourceanalysis afterexact-versioncomparison. RemainingB incorporation: direct203–210 waterauthorities, material regional/DOEHealthprogramallocations and finalstatement from76; do not inferhealthfromwater/environmentalone. DivisionCruns267437:end. Entire operativeIHmatchesEH, proven by exact prefix comparison through508386characters; remaining difference is attestation. January8BookIfloorPDF69/73/74 confirms both divisions retained and orderedengrossment; passagecontinues75. Final statement is337-pageBookII(URLhouse-bk3),research191/raw39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574: DivisionA narrative1–13 read and governed; individual earmarktable14–75 not exhaustively reviewed or totalled; DivisionBstarts76. House119272/Senate11944capturedresearch192; relevantAcare/reportoverrides bound, not claimed fullreportreview. Finish B/C operative provisions, material incorporations and statement before membership; roll6coversB/Ctogether, roll7wholebill. Do not inherit allAeffects onto6. Use explicitdivision_retention stage and retained_portion for6, final_passagefor7. Source6938body509133chars/raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0."
-      }
+        "shared_review_record_sha256": "6571cced4701a930af5b30964a7e2c0f9e17c0385d1b4ab3365367e33460eb75"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:8",
@@ -41708,11 +42271,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "72 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
+    "basis": "76 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research preserves distinct retention and passage scopes, clinical-trial exceptions and exact benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "a13208ec6426d5738063146adb121c57da3b33aaa0145cab4c315983ba5abc91",
+  "selection_sha256": "b511afffeaec35e64dae94eb03cbd4f8b24c9e8ee498dc629059380a38fe2397",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -41787,7 +42350,9 @@
     "house:119:2:37",
     "house:119:2:45",
     "house:119:2:5",
-    "house:119:2:53"
+    "house:119:2:53",
+    "house:119:2:6",
+    "house:119:2:7"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -41802,8 +42367,6 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:6",
-    "house:119:2:7",
     "house:119:2:8",
     "house:119:2:9",
     "house:119:2:13",
@@ -42008,7 +42571,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "215 unresolved identities comprise214 unreviewed screenings and one examined source conflict at2025 roll237. January2026 roll5 independently retains6938DivisionA; rolls6/7 still require complete B/C and whole-package research. Continue the committed2025/2026 queue. Captures are not completed review.",
+    "basis": "213 unresolved identities comprise212 unreviewed screenings and one examined source conflict at2025 roll237. January2026 rolls5/6/7 independently bind both retention questions and whole6938passage. Continue8/9then13–15 and the committed older queue. Captures are not completed review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -42060,6 +42623,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "e20403276c420b3d999487c146bf4a211daa95b50bc6acff338ab01cd2383d41",
-  "membership_review_sha256": "f102e3d7a3cd34e4bab71a782019c76ad6d0aa0b0c01af92d30716ae1ed07f3a"
+  "proposal_sha256": "23f9b7fe47cde2ad33e39892c0a6f97a521dd94edd196419947e45ce69f5b99b",
+  "membership_review_sha256": "230f1567071861f7f96ebdfeb9fa8a8525cd74bbdbe1ebfa4ae17bec448ec7e7"
 }

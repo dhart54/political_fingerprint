@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "49b1105c907a1ec55ed3f9baa0929d00c0e895ac44c9a7057d28e6e59ff10934",
-  "source_capture_sha256": "6b1641a206bc9398d46e5b2651205686f9600f8a362c8cd9f59cb96015118781",
-  "core_sha256": "2fe9274e1b1ed88e4e2023adda7366f83e2d3ba01dabf70c60f8fea10fd79198",
-  "compiled_sha256": "6385046d149921d41dc4d679dffd156fac81f022851772800b0d30a4c8ec88db",
-  "readable_sha256": "98f15c44ede998057d3a03677be1daf36af1c377b9a35b0b67e60d4beee9e261",
+  "input_sha256": "17c962af89512d723f7a1810bc73ac1485e1b9649d64f3d866e8573be05fbd55",
+  "source_capture_sha256": "bac756bb49166a3cbc7b866f7484ed7f36767751f70a8f8849a6e6ed007937cf",
+  "core_sha256": "d642599452a0aa88d1487c588325d71de2700f4033e5875981fd03ca3c464030",
+  "compiled_sha256": "7f30d1b282b6df541c484701f69d114a6f0b6ebe55eeb9d24aa1597adfb8fadd",
+  "readable_sha256": "201bcabdf01466a295c062afa3e539b6c57c3c3ba3b91381ba9b39118a19df81",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1478,7 +1478,7 @@
     },
     {
       "action_id": "house:119:2:5",
-      "shared_sha256": "c804e625f15a1313aa4b1ffe8053b70b0ec1a0b62b9b33480b42d6f1c9279706",
+      "shared_sha256": "bb33ce15f2e605c88b047cc87ac3c7b4e8d2c351e7785a0ff60bdd41bffb5f44",
       "choices": [
         {
           "member_id": "F000477",
@@ -1493,6 +1493,46 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions",
           "source_id": "clerk:119:2:5"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:6",
+      "shared_sha256": "f8665faece8d85d0f775ee9768decc0efde01b8c538f783292a154af67b3f913",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes",
+          "source_id": "clerk:119:2:6"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes",
+          "source_id": "clerk:119:2:6"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:7",
+      "shared_sha256": "d57c94ce87f03763a066f645099a0f2e595d367768cad488b4bca5190befe0a6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions",
+          "source_id": "clerk:119:2:7"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions",
+          "source_id": "clerk:119:2:7"
         }
       ]
     }

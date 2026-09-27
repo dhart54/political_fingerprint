@@ -3,7 +3,7 @@
   "artifact_id": "candidate:HEALTH_SOCIAL:house119-through-2026-09-16",
   "domain_id": "HEALTH_SOCIAL",
   "scope_boundaries": [
-    "74 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
+    "76 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -1045,6 +1045,34 @@
         "stage_order": 20005
       },
       "mapping_sha256": "32b3474b2dbea1fe39386705c84a318eacbfb2df86fda03765fb63c350d4a6d0"
+    },
+    {
+      "action_id": "house:119:2:6",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6938:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20006
+      },
+      "mapping_sha256": "0396d66a158a25918968fc7c93c8a9b6054d1df98cc26fac5ddaa718e2a0135a"
+    },
+    {
+      "action_id": "house:119:2:7",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr6938:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20007
+      },
+      "mapping_sha256": "2b119b7aeb2acaeda9c9d2d0c25b2963ebb9bf6655475bc3c477d5a38f886ab0"
     }
   ],
   "episodes": [
@@ -1516,7 +1544,9 @@
     {
       "episode_id": "episode:hr6938:119",
       "action_ids": [
-        "house:119:2:5"
+        "house:119:2:5",
+        "house:119:2:6",
+        "house:119:2:7"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -1527,5 +1557,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "50fc60e48f703dd22251043e1bd56a2f7788275cacc36046cfce5db6f6d2444a"
+  "mapping_sha256": "60cb3d2465889c0599f75d8c92d16276f520e4483dc10964f88f4fb1a180494f"
 }

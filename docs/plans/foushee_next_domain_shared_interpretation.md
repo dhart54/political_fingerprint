@@ -2,6 +2,68 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
+## Current overnight deadline — September27 only
+
+The user resumed work and then enabled the existing PowerShell watcher, with an
+automatic shutdown in about eight hours at08:30 Eastern. Instruction received at
+2026-09-27T04:33:38Z (00:33 Eastern daylight time). Use the earlier conservative
+deadline2026-09-27T12:30:00Z; do not postpone it by interpreting "EST" as a later
+fixed-offset time. This is a one-night instruction, not a daily schedule.
+
+Continue substantive research. Begin checkpoint preparation by11:30Z and finish
+the terminal marker by12:00Z, leaving30minutes before the shutdown. Check actual
+time and account usage at research boundaries and before long validation/push
+work. At the initial check, weekly usage was59percent (41percent remaining).
+Begin an earlier checkpoint if remaining allowance reaches15percent or observed
+shared-account consumption threatens the validation/write buffer. A hard usage
+cutoff can prevent all subsequent tool calls; never promise a post-cutoff write.
+Do not consume reset credits without the user's explicit per-credit approval.
+
+At the actual terminal boundary, validate completed work, preserve the exact
+remaining queue and resumption steps, and commit/push normally if possible. Write
+`.codex-task-complete` in this worktree root as the final filesystem action;
+never commit it. Use STATUS=SUCCESS only for full goal completion with passing
+validation. Otherwise use STATUS=CHECKPOINT with the timestamp, exact HEAD,
+specific shutdown/usage or other blocker, next action and completed-work summary.
+The marker must not imply that unfinished Health coverage is complete. Preserve
+the watcher. Do not create a recurring shutdown automation.
+
+## Continuation execution rules — September27
+
+The user resumed research after discussing execution improvements. These rules
+apply to continuation of the existing goal.
+They do not alter its 676-identity scope, evidence standards, candidate status,
+completion criteria, or production restrictions. No shutdown marker is due for
+the earlier conversational pause or this active research boundary.
+
+- Use the existing per-action membership/resumption queue as the authoritative
+  progress record, reconciled with the actual Git head and later in-scope local
+  work. Record completed analysis, source identity and exact reading position,
+  remaining material dependencies, and the next executable step there. Local
+  scratch notes may support active research but must be incorporated into that
+  queue at a durable progress boundary. Do not create another tracking system
+  or reconstruct completed work from conversation summaries alone.
+- Each research batch must produce supported dispositions/interpretations or
+  specific new evidence that changes the next action. Preserve the findings and
+  remaining dependency; source acquisition or an unannotated reading cursor is
+  not completed substantive review. A batch boundary is not an approval gate.
+- Verify exact operative effects, material incorporated provisions, exceptions,
+  stage/version differences, and contrary evidence. Follow references when they
+  could change membership or a proposed meaning; do not expand into unrelated
+  legislative history. Titles, keywords, search hits, and captured documents
+  alone remain insufficient. Preserve uncertainty rather than inventing a
+  disposition to improve throughput.
+- Answer status questions once. Treat the cycle-time/process/efficiency question
+  as answered, not as a recurring research instruction. Subsequent progress
+  updates should contain new results, changed dependencies, or material blockers;
+  do not replay earlier answers on automatic continuation.
+- Measure progress by completed membership dispositions, shared interpretations,
+  derived findings, and genuinely unresolved dependencies. Distinguish research
+  time from validation time where measured; do not infer task duration from
+  commit intervals or imply unmeasured timing precision. Reuse source/version
+  analysis and mechanical member projection. Continue focused checks during
+  research and required exact-head checks at push/delivery boundaries.
+
 ## Intent and baseline
 
 Prepare one Health & Social Policy candidate from shared legislative meanings,
@@ -63,6 +125,57 @@ captures; semantic/domain validation. Source fan-out must be explained. No front
 or persistence boundary is intended to change, except existing no-deploy safeguard.
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
+
+## Completed H.R.6938 episode research — September27
+
+Continue from `c69e0e9ccf05f15079a41bacc2ef971d8c1f033c`, whose exact-head CI
+run36293468784 passed. Two further screenings are now interpreted: January2026
+roll6 retains Divisions B/C together; roll7 passes all three divisions. Counts
+74/194/11/182/215 become76/194/11/182/213. The remainder is212 unreviewed screenings
+and the separately examined2025 roll237 printed-source conflict, not213 presumed
+Health votes. Derived output remains56 Foushee findings /53 Massie proof findings;
+152 member observations span57 episodes, now including10 multi-action episodes.
+H.R.6938 preserves both retention questions and final passage as three observations.
+
+The entire509133-character EH was read; its508386-character operative body matches
+IH. Final statement/report overrides, material incorporated authorities and
+selected image-only allocations were reviewed before membership was dispositioned.
+IHS current-year resources, prior advances, next-year advances, account allocations
+and indefinite contract/lease estimates stay distinct. Final Urban Indian funding
+is95.419m; the electronic-record until-expended proviso and Alaska regional-payment
+exception are preserved. The final DOE table supplies230.463m EHSS and198.208m
+Legacy Management components within mixed-purpose ODA, not all-medical totals.
+Water sections203–210 retain their authorization, repayment and infrastructure
+purposes; they are not converted into clinical appropriations.
+
+Roll7 reuses the completed DivisionA and B/C research, while its own Clerk/floor
+question establishes whole passage. FousheeYea and MassieNay derive mechanically
+for all three actions. Only roll5's now-stale statement that6/7 were unreviewed
+changed; its substantive meaning is preserved. Other earlier meanings, membership
+records and sources are unchanged. No new architecture or semantic acceptance.
+
+Sincec69,23 governed excerpts were added (1159 total), plus two membership records
+(322 total) and98 claim maps (774 total). Manual interventions: bounded source
+selection, exact version/incorporation analysis, visually checked final IHS tables
+PDF320–326 and DOE table183, two shared candidate meanings and source-bound copy.
+Public sources only; no protected archives, paid services or source rewriting.
+The previous DOE/program-source analysis was reused rather than re-authored.
+
+All71 focused candidate tests pass, including exact division/passage scope,
+three-action episode completeness, shared member choices and funding qualifications.
+All120 focused subsystem tests and7 canonical semantic checks pass. A broader
+historical shared-corpus audit has two baseline failures at the frozen trajectory
+trust gate; all its input paths, audit/test and semantic implementation matchc69.
+Those failures do not involve Health candidates and are recorded as a follow-up,
+not repaired by weakening the gate. New exact-head CI is due on this push; prior
+CI is not substituted. Structural diff review confirms only the6938 finding
+changes for each member; the larger generated diff reflects source maps/order. This is active research, not a terminal checkpoint.
+
+Next: January2026 rolls8/9 (distinct veto overrides), then13–15, plus the older
+2025 queue. The per-action queue preserves already-read ENR/EH texts, remaining
+incorporated authorities and exact next steps. Do not repeat6938 research.
+No new user decision or exhausted evidence path is identified. Check the current
+night's shutdown and usage buffer before long validation or further research.
 
 ## Active continuation — September27
 

@@ -134,8 +134,35 @@ class SharedDomainCandidateTests(unittest.TestCase):
             self.assertNotIn("DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 TITLE I CORPS", text)
         for member in readable_candidates(self.author, core, projections, result)["members"]:
             finding = next(f for f in member["findings"] if aid in f["action_ids"])
-            self.assertEqual(finding["action_ids"], [aid])
-        self.assertFalse({"house:119:2:6", "house:119:2:7"} & {a["action_id"] for a in core["actions"]})
+            self.assertEqual(finding["action_ids"], [aid, "house:119:2:6", "house:119:2:7"])
+
+    def test_three_6938_choices_preserve_division_and_passage_boundaries(self):
+        core, _, projections, _, result = self.products
+        actions = {a["action_id"]: a for a in core["actions"]}
+        six = actions["house:119:2:6"]
+        seven = actions["house:119:2:7"]
+        self.assertEqual(six["exact_question"], "On Retaining Divisions B and C")
+        self.assertEqual(six["legislative_stage"], "division_retention")
+        self.assertEqual(six["package_component_boundary"]["governed_component_relationships"],
+                         ["Retaining Divisions B and C; distinct from whole-bill passage"])
+        self.assertEqual(seven["legislative_stage"], "final_passage")
+        b_sources = {s["source_id"] for s in six["operative_meaning_source_identities"]}
+        passage_sources = {s["source_id"] for s in seven["operative_meaning_source_identities"]}
+        self.assertNotIn("govinfo:hr6938ih-division-a", b_sources)
+        self.assertTrue({"govinfo:hr6938ih-division-a", "govinfo:hr6938eh-divisions-b-c",
+                         "congressional-record:2026-01-08-6938-passage-result"} <= passage_sources)
+        for member, expected in zip(projections, ["Yea", "Nay"]):
+            rows = {a["action_id"]: a for a in member["actions"]}
+            self.assertEqual([rows[f"house:119:2:{n}"]["official_status"] for n in [5, 6, 7]],
+                             [expected] * 3)
+        authored = {a["action_id"]: a for a in self.author["actions"]}
+        for n in [6, 7]:
+            meaning = authored[f"house:119:2:{n}"]["meaning"]
+            self.assertIn("$4.722738 billion in earlier advances", meaning)
+            self.assertIn("rather than legal caps", meaning)
+            self.assertIn("pre-May1,2006", meaning)
+            self.assertIn("$95.419 million", meaning)
+        self.assertIn("abortion-funding restriction", authored["house:119:2:7"]["meaning"])
 
     def test_division_retention_rejects_wrong_portion_or_passage_stage(self):
         for portion in [None, "Divisions B and C", "Division A and B", ["A"]]:
@@ -315,8 +342,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":215,
-            "interpreted_substantive_directional":74, "expressive_nonbinding_context":11, "exact_action_ineligible":182})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":213,
+            "interpreted_substantive_directional":76, "expressive_nonbinding_context":11, "exact_action_ineligible":182})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -334,7 +361,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 214)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 212)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
