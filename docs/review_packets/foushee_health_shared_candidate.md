@@ -2,10 +2,10 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since a82d3c7, fourteen screenings are resolved:
-two shared interpretations, ten proposed exclusions and two procedural controls.
-There are72 interpreted inputs,54 Foushee findings and51 bounded Massie proof
-findings.220 identities remain unreviewed; one additional examined action has a
+**Active partial candidate.** Since8cbb809, five screenings are resolved:
+one shared interpretation, one proposed exclusion and three procedural controls.
+There are73 interpreted inputs,55 Foushee findings and52 bounded Massie proof
+findings.215 identities remain unreviewed; one additional examined action has a
 printed-source conflict. No current user decision is required. This is neither
 complete Health coverage nor accepted/public content.
 
@@ -14,26 +14,26 @@ complete Health coverage nor accepted/public content.
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-a82d3c7 at the latest resumption. Later in-scope research is preserved without reset.
+8cbb809 at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [72 shared meanings /629 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1096 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [314 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [73 shared meanings /638 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1116 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [319 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (a82d3c7) | Current local candidate |
+| Disposition | Before (8cbb809) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |70|72|
-| procedural_context |189|191|
+| interpreted_substantive_directional |72|73|
+| procedural_context |191|194|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |171|181|
-| source_unresolved (unreviewed plus examined conflict) |235|221|
+| exact_action_ineligible |181|182|
+| source_unresolved (unreviewed plus examined conflict) |221|216|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -41,86 +41,69 @@ No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
 ## Active continuation — September27
 
-Continue from pushed head `a82d3c7399f95cea1dd6259cce9d5f306ff5a0c3`.
-Fourteen further screenings are resolved: two shared Health interpretations,
-ten proposed exclusions and two procedural controls. Counts70/189/11/171/235
-become72/191/11/181/221:220 unreviewed identities plus the examined roll237
-source conflict. Derived output is54 Foushee findings /51 bounded Massie proof
-findings,144 recorded observations and55 episodes, including the existing nine
-multi-action episodes. No new user decision or exhausted evidence path is identified.
+Continue from pushed head `8cbb80979a361300021b806cf585c7d516bd6806`, whose
+nine exact-head CI jobs all passed in run36291290531. Five further January2026
+screenings are resolved: one shared Health interpretation, one proposed exclusion
+and three procedural controls. Counts72/191/11/181/221 become73/194/11/182/216.
+There are215 unreviewed identities and the separately examined2025 roll237 source
+conflict. Derived output is55 Foushee findings /52 bounded Massie proof findings,
+146 observations and56 episodes, retaining the nine existing multi-action episodes.
+No new user decision or exhausted evidence path is identified.
 
-- **340, H.R.4371:** new child-welfare care-placement candidate. Bind the full
-  RH/EH,6USC279,8USC1232 care/suitability and retained assistance provisions,
-  refugee-child services, incorporated conviction definitions and January2025
-  custody-law amendment. Preserve sponsor restrictions, information sharing,
-  secure-placement triggers that do not always require convictions, removed
-  monthly-review and age18-transition provisions, and retained separate care,
-  home-study, follow-up and qualified counsel/advocate authorities. Preserve
-  the printed642/462 reference mismatch and bare recommittal versus separately
-  printed instructions. No individual safety or medical outcome is inferred.
-- **351, H.R.3492:** new criminal-law candidate for defined minor procedures and
-  medications. Preserve purpose/jurisdiction boundaries, the recipient's
-  protection from prosecution, specified medical exceptions, the mental-health
-  exception limit, existing FGM context and(c)/(d) drafting mismatch. Roy's made-
-  in-order amendment was not offered; separately printed recommittal instructions
-  are not the formal motion. Keep the H.R.498 Medicaid vote separate.
-- **342/347:** electricity-service and generation-adequacy exclusions preserve
-  compensation, retirement, environmental-liability and rule-finalization
-  conditions. Agency names or projected health consequences do not establish a
-  care-delivery mechanism.
-- **345/346:** distinct rejected war-powers directions concerning designated
-  terrorist organizations in the Western Hemisphere and hostilities within or
-  against Venezuela. Failed substantive proposals are not relabeled procedure.
-- **352/353/354/356:** exact NEPA amendment and passage exclusions. Bind the
-  RH page/line targets, Roy's designee role, failed amendments and the later
-  rule's deemed administrative-corrections exception. Preserve the explicit
-  human-health EIS criterion, life/property exception, review/remedy limits and
-  the renumbered July2025 opt-in fee provision; do not equate NEPA effects with
-  a medical/social-service program or assume every proposed amendment passed.
-- **358:** mining-site and reclamation-fund exclusion preserves the per-site
-  acreage limit, no new mineral rights/patents, withdrawals, patent-funding
-  exception and public-health remediation priorities. The new fees are not a
-  fresh fixed$3billion appropriation. Read2025CFR definitions and the subsequent
-  amendatory instructions; borrowed mineral/nonmineral definitions are unchanged.
-- **360:** gray-wolf rule reissuance exclusion binds all operative CFR changes,
-  the Mexican-wolf exception and reissuance-only judicial-review restriction.
-  No claim to independent review of the entire scientific assessment is made.
-- **338/344:** procedural controls retain all deemed-substitute and amendment
-  effects. Neither rule is treated as passage of the underlying bills.
+- **2026 roll11, H.R.1834:** exact November12 McGovern substitute, January8
+  adoption/passage and EH agree on extending the enhanced premium-credit formula
+  and income-ceiling exception through2028. Bind26USC36B and July2025 amendments:
+  the benchmark contribution is not an all-plan price or medical-expense cap;
+  higher income does not guarantee a positive credit; separate eligibility,
+  verification and excess-credit repayment changes are not repealed. Preserve
+  both choices, debate disagreements and no enacted-law/outcome inference.
+- **4/10:** discharge of H.Res.780 and its later adoption remain distinct
+  non-counting controls. The actual incorporated substitute is identified rather
+  than inferred from the generic title or treated as a separate passage vote.
+- **12, H.R.5184:** proposed exclusion after complete RH/EH and direct-authority
+  review. DOE recommendations replace mandatory energy-standard duties, the
+  civil-penalty subsection is removed and the specified2022 rule loses effect.
+  HUD's separate standards remain. Bind the complete operative rule and its2025
+  compliance-date amendment; do not describe the old2023date as still operative
+  or infer clinical outcomes from housing affordability/ventilation effects.
+- **3:** H.Res.977 control preserves the deemed5184substitute and distinct6938
+  DivisionA, DivisionsB/C and passage proceedings. The appropriation questions
+  themselves remain unreviewed, not silently dispositioned with the rule.
 
-Add74 governed sources and14 membership records:1096 sources /314 records /
-629 interpretation claim maps. All1022 prior governed sources,300 membership
-records and70 interpretations remain unchanged. Both new actions project
-Foushee's Nay and Massie's Yea from Clerk records. Source reading, exact-version
-reconciliation and candidate membership/meaning remain manual; member projection,
-IR compilation and replay remain mechanical. Reuse the captured December bills,
-reports, floor records and existing2252/4332/statutory and Health sources.
-GovInfo CFR HTML endpoints returned navigation content and were rejected; official
-PDFs supplied the definitions. No malformed response entered governed sources.
+Add20 governed sources and5 membership records:1116 sources /319 records /
+638 interpretation claim maps. Prior1096 sources,314 records and72 meanings are
+preserved. Foushee Yea and Massie Nay on11 are mechanically projected. Manual work
+is source/version reading, source excerpt binding, membership and one shared meaning;
+no member-specific rewriting or new design. Reuse captured July2025 law and January
+bills/Clerk records. A malformed GovInfo17071 URL returned navigation and was rejected;
+the official OLRC2024edition supplies the section. A narrow title-validation heuristic
+was corrected only after checking the OLRC edition/date and full operative text.
 
-**Exact remaining queue:** the2025 unresolved actions are224/225/226,237,262,
-294/295/296,299,307,318 and320. Eleven are unfinished research;237 is the examined
-printed-source conflict. Their detailed prepared-source notes remain attached to
-each inventory row. Do not restart those packages or repeat the completed December
-group. There are209 unreviewed2026 identities. Continue the independent January
-source/version groups, beginning3 (H.Res.977),4/10 (H.Res.780 discharge/rule),
-5/6/7 (distinct H.R.6938 division-retention/passage),8/9 (veto overrides for
-H.R.504/131), and11 (H.R.1834). Inspect exact rule-incorporated text and division
-questions before meanings; these are discovery items, not presumed Health votes.
-The earlier prepared2025 packages and public-plan tracing remain active lanes.
+**Exact queue and prepared sources:**2025 items224/225/226,237,262,294/295/296,
+299,307,318,320 retain their existing detailed notes; eleven need further research,
+237 has the recorded conflict. The204 unreviewed2026 identities begin5/6/7
+(H.R.6938 distinct retention/passage questions),8/9(veto overrides),13/14/15
+(export controls and trade extensions). Research182 captures their Clerk/bill texts.
+6938EH is509133 normalized characters, raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0,
+and has not received substantive reading. January8 House Record is captured in
+research183, but the relevant appropriation divisions/explanatory text remain to
+be read. H.Res.977 is already read and bound; do not repeat the rule screening.
+The short504/131ENR and2683/6500/6504EH texts were read; incorporated authorities,
+veto/floor/version reconciliation remain unfinished, as specified on each queue row.
+Do not mistake captured sources or partial reading for completed membership.
 
-**Validation:** all153 focused subsystem tests pass, with one schema test rerun
-successfully after restoring the established NODE_PATH to existing root dependencies.
-All7 canonical semantic checks pass. The66 candidate tests include new source-loss,
-choice-status, retained/removed-provision and exact-amendment regressions.
-Deterministic generation/replay and diff checks pass. Prior pushed a82d3c7 passed
-all nine CI jobs in run36289682202; this increment's exact-head CI is recorded
-in PR194 after push. No frontend runtime or production behavior changes.
+**Validation:**all154 focused subsystem tests and7 canonical semantic checks pass.
+The67 candidate tests include member-choice, procedural separation, retained
+eligibility/repayment limits and missing-baseline-source rejection. Deterministic
+replay and diff checks pass; direct comparison confirms all1096 prior sources,
+314 membership records and72 interpretations are unchanged. Generated readable
+Foushee/Massie choices and complete source/action bindings were inspected. Exact-head
+CI for this push is recorded in PR194; prior-head CI does not validate later changes.
 
-Work remains active. This is a progress push, not a terminal checkpoint, approval
-gate or claim of complete Health coverage. No shutdown marker is due. No merge,
-deployment, publication, production write, registry/environment change or scope
-expansion. No additional human decision is currently requested.
+Work remains active across this progress boundary. No terminal marker, new approval
+gate or completion claim. No merge, deployment, publication, production writes,
+registry/environment changes or blue operations. PR191 released; PR193 paused;
+issue192 open. Continue the queue without requiring another user prompt.
 
 ## Historical overnight checkpoint — September26
 
@@ -659,7 +642,7 @@ the requested overnight checkpoint; no new human decision is required.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-72 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+73 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2035,6 +2018,34 @@ Evidence: house:119:1:99; finding `prop:7145d16f7edcfc59`.
 
 Sources: [clerk:119:1:99](https://clerk.house.gov/evs/2025/roll099.xml); [govinfo:hr1228eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1228eh/html/BILLS-119hr1228eh.htm); [govinfo:38usc321-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap3-sec321.htm).
 
+### Extending enhanced insurance premium credits through 2028
+
+**Compact:** Foushee supported passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules. The bill would extend enhanced health-insurance premium tax credits through 2028, including the exception to the usual income ceiling. Credit amounts would still depend on qualifying premiums, income and other eligibility rules; the bill would not undo the separate eligibility and repayment changes enacted in 2025.
+
+**Detail:**
+
+**house:119:2:11**
+
+Foushee supported passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules.
+
+H.R. 1834 EH would extend two enhanced premium tax credit rules through taxable years beginning in 2028, applying the extension to taxable years beginning after December 31, 2025. The first continues the temporary, more generous contribution-percentage table used to calculate insurance premium assistance. The second continues the exception to the usual 400-percent-of-poverty income ceiling. These are direct changes to financing qualified health-insurance coverage, establishing the proposed Health membership independently of the bill’s generic title. The floor record explicitly identifies McGovern’s November 12, 2025 substitute as the text adopted under H.Res. 780; that substitute and the engrossed bill contain the same two extensions and effective date.
+
+Under the extended table, the household-income contribution percentage used in the credit calculation ranges from zero through 8.5 percent, with 8.5 percent applying at and above 400 percent of the poverty line. The credit is generally limited to the lesser of the enrolled plan’s qualifying premium and the amount by which the benchmark second-lowest-cost silver-plan premium exceeds the calculated household contribution. Extending that formula does not cap every plan’s price at 8.5 percent of income, pay every medical bill or eliminate deductibles. Removing the income ceiling does not guarantee a positive credit to every higher-income household: the premium calculation and other eligibility conditions still apply. The underlying credit would continue without this extension under its otherwise applicable rules; this is not a vote to create or repeal the entire ACA.
+
+The bill changes only the specified expiration dates. It does not reverse Public Law 119-21’s separate premium-credit changes: the repeal of the below-poverty special rule for certain lawfully present people ineligible for Medicaid because of immigration status, the specified income-based special-enrollment limitation, or removal of the cap on repayment of excess advance credits for the applicable 2026-and-later periods. It also leaves the enacted 2027 immigration-eligibility changes and 2028 verification requirements on their separate statutory schedules. Ordinary qualified-plan, coverage-month, other-coverage, filing and credit-reconciliation rules remain applicable. The source analysis therefore reads the 2024 Code together with the July 2025 amendments, rather than treating the older Code as the complete January 2026 baseline.
+
+This is the January 8 passage choice on the extension bill, separate from discharging the rule from committee and adopting that rule. A Yea supports passing this extension; a Nay opposes passing it, without establishing which alternative or eligibility condition the member prefers. Supporters emphasized premium affordability and continued coverage; opponents raised taxpayer cost, higher-income subsidies and enrollment-fraud concerns. Those arguments are recorded as debate, not adopted as verified dollar, enrollment or health-outcome estimates. The House passage vote does not itself establish enactment, individual benefit amounts or a member’s motives.
+
+The Clerk recorded the House result as 'Passed' on 2026-01-08. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The benchmark contribution percentage is not a price cap for every plan or a limit on all medical spending. The two expiration-date changes do not repeal other eligibility or excess-credit repayment rules.
+- The discharge and rule-adoption votes remain non-counting procedural context.
+
+Evidence: house:119:2:11; finding `prop:c40a38f8169d7b89`.
+
+Sources: [clerk:119:2:11](https://clerk.house.gov/evs/2026/roll011.xml); [govinfo:hr1834eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm); [govinfo:26usc36B-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm); [govinfo:pl119-21-sections71301-71305](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [govinfo:hres780eh](https://www.govinfo.gov/content/pkg/BILLS-119hres780eh/html/BILLS-119hres780eh.htm); [congressional-record:2025-11-12-1834-substitute](https://www.govinfo.gov/content/pkg/CREC-2025-11-12/pdf/CREC-2025-11-12-house.pdf); [congressional-record:2026-01-08-1834](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf).
+
 ### Extending rural health grants and requiring attention to underserved rural residents
 
 **Compact:** Foushee supported suspending the rules and passing H.R. 2493. The bill would renew rural health grant authorizations through 2030 and require attention to underserved residents and their involvement. Authorization does not itself appropriate the money.
@@ -2301,4 +2312,5 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:313 | supported House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | opposed House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | [govinfo:hr1069eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm) |
 | house:119:1:351 | supported House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | [govinfo:hr3492eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492eh/html/BILLS-119hr3492eh.htm); [govinfo:18usc116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap7-sec116.htm); [govinfo:hr3492rh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492rh/html/BILLS-119hr3492rh.htm); [govinfo:hrpt119-411-roy](https://www.govinfo.gov/content/pkg/CRPT-119hrpt411/html/CRPT-119hrpt411.htm); [congressional-record:2025-12-17-selected-choices](https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf) |
 | house:119:1:340 | supported House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | [govinfo:hr4371eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371eh/html/BILLS-119hr4371eh.htm); [govinfo:hr4371rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371rh/html/BILLS-119hr4371rh.htm); [govinfo:6usc279-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm); [govinfo:8usc1232-2024-care-placement](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1232-2024-retained-assistance](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1522-2024-child-services](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIV-sec1522.htm); [govinfo:8usc1101-2024-aggravated-felony](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-serious-offense](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:34usc20911-2024-offense-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm); [govinfo:22usc7102-2024-severe-trafficking](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap78-sec7102.htm); [govinfo:34usc12291-2024-domestic-violence](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:42usc5101-2024-capta-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap67-subchapI-sec5101.htm); [govinfo:18usc1111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1111.htm); [govinfo:18usc1112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1112.htm); [govinfo:18usc1113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1113.htm); [govinfo:8usc1226-2024-custody-baseline](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm); [govinfo:pl119-1-section2](https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm); [govinfo:18usc2252-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm); [congressional-record:2025-12-16-child-placement](https://www.govinfo.gov/content/pkg/CREC-2025-12-16/pdf/CREC-2025-12-16-house.pdf) |
+| house:119:2:11 | supported passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules | opposed passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules | [govinfo:hr1834eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm); [govinfo:26usc36B-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm); [govinfo:pl119-21-sections71301-71305](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [govinfo:hres780eh](https://www.govinfo.gov/content/pkg/BILLS-119hres780eh/html/BILLS-119hres780eh.htm); [congressional-record:2025-11-12-1834-substitute](https://www.govinfo.gov/content/pkg/CREC-2025-11-12/pdf/CREC-2025-11-12-house.pdf); [congressional-record:2026-01-08-1834](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

@@ -437,6 +437,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:11",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     },
@@ -875,6 +881,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:11",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     }
@@ -2618,6 +2630,31 @@
         "structural_metadata": {
           "stage_order": 10340
         }
+      },
+      {
+        "action_id": "house:119:2:11",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:11:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "H.R. 1834 EH would extend two enhanced premium tax credit rules through taxable years beginning in 2028, applying the extension to taxable years beginning after December 31, 2025. The first continues the temporary, more generous contribution-percentage table used to calculate insurance premium assistance. The second continues the exception to the usual 400-percent-of-poverty income ceiling. These are direct changes to financing qualified health-insurance coverage, establishing the proposed Health membership independently of the bill’s generic title. The floor record explicitly identifies McGovern’s November 12, 2025 substitute as the text adopted under H.Res. 780; that substitute and the engrossed bill contain the same two extensions and effective date.\n\nUnder the extended table, the household-income contribution percentage used in the credit calculation ranges from zero through 8.5 percent, with 8.5 percent applying at and above 400 percent of the poverty line. The credit is generally limited to the lesser of the enrolled plan’s qualifying premium and the amount by which the benchmark second-lowest-cost silver-plan premium exceeds the calculated household contribution. Extending that formula does not cap every plan’s price at 8.5 percent of income, pay every medical bill or eliminate deductibles. Removing the income ceiling does not guarantee a positive credit to every higher-income household: the premium calculation and other eligibility conditions still apply. The underlying credit would continue without this extension under its otherwise applicable rules; this is not a vote to create or repeal the entire ACA.\n\nThe bill changes only the specified expiration dates. It does not reverse Public Law 119-21’s separate premium-credit changes: the repeal of the below-poverty special rule for certain lawfully present people ineligible for Medicaid because of immigration status, the specified income-based special-enrollment limitation, or removal of the cap on repayment of excess advance credits for the applicable 2026-and-later periods. It also leaves the enacted 2027 immigration-eligibility changes and 2028 verification requirements on their separate statutory schedules. Ordinary qualified-plan, coverage-month, other-coverage, filing and credit-reconciliation rules remain applicable. The source analysis therefore reads the 2024 Code together with the July 2025 amendments, rather than treating the older Code as the complete January 2026 baseline.\n\nThis is the January 8 passage choice on the extension bill, separate from discharging the rule from committee and adopting that rule. A Yea supports passing this extension; a Nay opposes passing it, without establishing which alternative or eligibility condition the member prefers. Supporters emphasized premium affordability and continued coverage; opponents raised taxpayer cost, higher-income subsidies and enrollment-fraud concerns. Those arguments are recorded as debate, not adopted as verified dollar, enrollment or health-outcome estimates. The House passage vote does not itself establish enactment, individual benefit amounts or a member’s motives.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1834:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:11",
+          "govinfo:hr1834eh",
+          "govinfo:26usc36B-2024-operative",
+          "govinfo:pl119-21-sections71301-71305",
+          "govinfo:hres780eh",
+          "congressional-record:2025-11-12-1834-substitute",
+          "congressional-record:2026-01-08-1834"
+        ],
+        "structural_metadata": {
+          "stage_order": 20011
+        }
       }
     ],
     "episodes": [
@@ -3074,6 +3111,14 @@
         "episode_id": "episode:hr4371:119",
         "action_ids": [
           "house:119:1:340"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr1834:119",
+        "action_ids": [
+          "house:119:2:11"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

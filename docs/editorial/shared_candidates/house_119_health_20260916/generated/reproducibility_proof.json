@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "67e3597d8423931e9502d271441611cc497bdd79dd7c2bbaca38550cf64e55a7",
-  "source_capture_sha256": "ea8b9bc3d4de1276d5e6ad0785e1387c54a1a59479b0bb6b2943e27b8e70e4e5",
-  "core_sha256": "9aa59f1d253bd4f7a0e664cbd73962ee0410ce1bd74bea177c6864114ecb33a2",
-  "compiled_sha256": "ff9baf167735644116452453e63b972225856512cc04f2d7af3cd4ac2f4e1e77",
-  "readable_sha256": "25a5961031ee5190e3390f316b108d78eb06a879120bea8c9bffd3dda46c4d5a",
+  "input_sha256": "c665b59cb9554fe6972d3bedf3bcec54d2bc97c6ce7cba3c9c1bb5dfdcb5ecfa",
+  "source_capture_sha256": "6728a61ec1265485874126ecbea18f41c1f6b16c51fe9da26454b89975ba5bc7",
+  "core_sha256": "b39335c1aedb634464556d92042b8d4b55298e6837ea2264436fd2ae43cdf7b3",
+  "compiled_sha256": "7bdb4f59ec0827206b084b8d506ae7ba5728b17905318d6fa9f16358fd283bee",
+  "readable_sha256": "0995fba734406a5f25916f15c4d1d574cd3505dd5a0a90ea8a74def9af2a9075",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1453,6 +1453,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole",
           "source_id": "clerk:119:1:340"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:11",
+      "shared_sha256": "316050f00b3e62ed202cbe1bbddee28af94309844b9c89c47972a3075f447acc",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules",
+          "source_id": "clerk:119:2:11"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules",
+          "source_id": "clerk:119:2:11"
         }
       ]
     }
