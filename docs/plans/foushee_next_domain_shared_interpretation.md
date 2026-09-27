@@ -126,6 +126,63 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
+## January20–22 procedures and voting-version correction — September27
+
+Continue from `2159f4423950078c422f43f457f87f7c8413b21a`, whose exact-head
+CI36297742621 passed. Five further screenings:33/38 proposed excluded and35/40/41
+procedural. Counts78/196/11/189/202 become78/199/11/191/197. There are196 unfinished
+screenings plus examined2025roll237 source conflict.58 Foushee/55 Massie findings,
+156 observations,59 episodes and10 multi-action episodes remain; no new shared
+interpretation or finding is added in this batch.
+
+A concrete defect in the existing7148roll45 description was corrected: EH
+includes separately passed7006/7147 added by the Clerk under1014section5, whereas
+the actual roll45 voting text is IH plus Report119-462PartA. BothPartB amendments
+failed. The already highlighted Medicaid/Medicare passages match IH verbatim;
+their meanings and both recorded member choices remain. New source bindings and
+readable limits distinguish passage from later engrossment assembly and Senate
+concurrence. The paired-observation design is unchanged. Broader7148appropriation,
+rider and final-report completeness still requires substantive review before
+domain readiness; the exact queue records it rather than hiding it behind the
+interpreted-input count. This narrow repair is not exhaustive package acceptance.
+
+33 adds general SBDC AI guidance with no new authorized amounts. Existing
+health/safety compliance counseling and drug-free workplace services were read
+and retained as contrary context; generic operational advice is not a new care
+program.38 disapproves the exact PLO7917leasing withdrawal. Its explicit Tribal
+health/subsistence purpose is preserved, alongside valid-rights, later-acquired-
+lands and other-use savings; the operative mechanism remains land leasing, not
+care/insurance/social-service delivery. No mine permit, actual harm or enactment
+is inferred. The source identifies the withdrawal; no map geometry is fabricated.
+
+35 binds the exact January pregnancy-center print and6359committee substitute.
+40isFoxx's Senate-data-repeal rule amendment, not the nearby unadopted tariff
+proposal.41accounts for allPartAcorrections, made-in-orderPartBamendments, future
+engrossment and wholly substituted375E-15study council with preamble struck.
+It does not adopt displaced375immigration text or enact any parent Health bill.
+
+Add22 governed sources (1248), five membership records (338), and net3 claim maps
+(798). Only existingroll45meaning/source-stage metadata changed; the other77
+meanings and all1226 prior governed sources remain. Exact source selection,
+operative-effect review, five dispositions and that narrow repair were manual;
+member projections remain mechanical. No production or public artifact changed.
+
+Prepared32 is deliberately not excluded: officialSBA2025SOP explicitly names
+medical and nursing facilities in the special-purpose category. Its exact equity
+and eligibility conditions and September2025updates remain to finish before a
+care-financing membership decision. Source acquisition is not completed review.
+Continue32, then prepared42/43/44/47and older23/27/28/2025dependencies, using each
+queue row's hashes, reading state and next step. No human decision is currently
+required and no newly exhausted source path is asserted.
+
+Validation passes:75 candidate tests,124 focused candidate/shared-corpus/IR/
+pipeline tests and7 semantic-tier checks. The new regression preserves the45/53
+episode, exactIHscope, rejected amendments and required rule binding. Structural
+comparison confirms the other77 meanings, all1226 sources and other332 membership
+records unchanged. Generated detail and final diff inspected; diff check clean.
+Exact-head CI follows the progress push. This remains active continuation,
+not the terminal shutdown checkpoint. Existing overnight/usage buffers apply.
+
 ## January13–15 rules, training and ERISA batch — September27
 
 Continue from pushed `286cae1622e8e31b0004c43c6031b73e53ff19f2`; exact-head

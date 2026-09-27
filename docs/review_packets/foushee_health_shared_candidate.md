@@ -2,19 +2,19 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since286cae1, six more screenings yield one
-shared interpretation, two procedural controls and three proposed exclusions.
-There are78 interpreted inputs,58 Foushee findings and55 bounded Massie proof
-findings.201 membership screenings remain unfinished; one additional examined
-action has a printed-source conflict. No current user decision is required.
-Health coverage remains incomplete.
+**Active partial candidate.** Since2159f44, five more screenings yield three
+procedural controls and two proposed exclusions. One existing passage description
+now distinguishes voting text from later engrossment assembly.78 interpreted
+inputs produce58 Foushee/55 Massie findings.196 membership screenings remain
+unfinished, plus one examined source conflict and an explicit7148package-
+completeness follow-up. No user decision is currently required. Health is incomplete.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-286cae1 at this continuation boundary. Later in-scope research is preserved without reset.
+2159f44 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
@@ -27,17 +27,74 @@ discussion after validation; prior-head CI is not treated as current. The goal i
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (286cae1) | Current local candidate |
+| Disposition | Before (2159f44) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |77|78|
-| procedural_context |194|196|
+| interpreted_substantive_directional |78|78|
+| procedural_context |196|199|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |186|189|
-| source_unresolved (unfinished plus examined conflict) |208|202|
+| exact_action_ineligible |189|191|
+| source_unresolved (unfinished plus examined conflict) |202|197|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## January20–22 procedures and voting-version correction — September27
+
+Continue from `2159f4423950078c422f43f457f87f7c8413b21a`, whose exact-head
+CI36297742621 passed. Five further screenings:33/38 proposed excluded and35/40/41
+procedural. Counts78/196/11/189/202 become78/199/11/191/197. There are196 unfinished
+screenings plus examined2025roll237 source conflict.58 Foushee/55 Massie findings,
+156 observations,59 episodes and10 multi-action episodes remain; no new shared
+interpretation or finding is added in this batch.
+
+A concrete defect in the existing7148roll45 description was corrected: EH
+includes separately passed7006/7147 added by the Clerk under1014section5, whereas
+the actual roll45 voting text is IH plus Report119-462PartA. BothPartB amendments
+failed. The already highlighted Medicaid/Medicare passages match IH verbatim;
+their meanings and both recorded member choices remain. New source bindings and
+readable limits distinguish passage from later engrossment assembly and Senate
+concurrence. The paired-observation design is unchanged. Broader7148appropriation,
+rider and final-report completeness still requires substantive review before
+domain readiness; the exact queue records it rather than hiding it behind the
+interpreted-input count. This narrow repair is not exhaustive package acceptance.
+
+33 adds general SBDC AI guidance with no new authorized amounts. Existing
+health/safety compliance counseling and drug-free workplace services were read
+and retained as contrary context; generic operational advice is not a new care
+program.38 disapproves the exact PLO7917leasing withdrawal. Its explicit Tribal
+health/subsistence purpose is preserved, alongside valid-rights, later-acquired-
+lands and other-use savings; the operative mechanism remains land leasing, not
+care/insurance/social-service delivery. No mine permit, actual harm or enactment
+is inferred. The source identifies the withdrawal; no map geometry is fabricated.
+
+35 binds the exact January pregnancy-center print and6359committee substitute.
+40isFoxx's Senate-data-repeal rule amendment, not the nearby unadopted tariff
+proposal.41accounts for allPartAcorrections, made-in-orderPartBamendments, future
+engrossment and wholly substituted375E-15study council with preamble struck.
+It does not adopt displaced375immigration text or enact any parent Health bill.
+
+Add22 governed sources (1248), five membership records (338), and net3 claim maps
+(798). Only existingroll45meaning/source-stage metadata changed; the other77
+meanings and all1226 prior governed sources remain. Exact source selection,
+operative-effect review, five dispositions and that narrow repair were manual;
+member projections remain mechanical. No production or public artifact changed.
+
+Prepared32 is deliberately not excluded: officialSBA2025SOP explicitly names
+medical and nursing facilities in the special-purpose category. Its exact equity
+and eligibility conditions and September2025updates remain to finish before a
+care-financing membership decision. Source acquisition is not completed review.
+Continue32, then prepared42/43/44/47and older23/27/28/2025dependencies, using each
+queue row's hashes, reading state and next step. No human decision is currently
+required and no newly exhausted source path is asserted.
+
+Validation passes:75 candidate tests,124 focused candidate/shared-corpus/IR/
+pipeline tests and7 semantic-tier checks. The new regression preserves the45/53
+episode, exactIHscope, rejected amendments and required rule binding. Structural
+comparison confirms the other77 meanings, all1226 sources and other332 membership
+records unchanged. Generated detail and final diff inspected; diff check clean.
+Exact-head CI follows the progress push. This remains active continuation,
+not the terminal shutdown checkpoint. Existing overnight/usage buffers apply.
 
 ## January13–15 rules, training and ERISA batch — September27
 
@@ -1364,15 +1421,19 @@ Sources: [clerk:119:2:5](https://clerk.house.gov/evs/2026/roll005.xml); [govinfo
 
 ### Separate choices within one legislative episode
 
-**Compact:** Foushee opposed House passage of H.R. 7148 in its House-passed version. The House package combined broad appropriations with Health provisions, including Medicaid enrollment changes and extensions of Medicare telehealth and hospital-at-home flexibilities. The vote applied to the whole measure, not each Health provision. Foushee opposed concurrence in the Senate amendments to H.R. 7148 as a whole. The Senate amendments replaced the House Homeland Security funding division, including medical-care and emergency food-and-shelter appropriations, with temporary funding through February 13, 2026 or an earlier applicable funding event. The other House Health provisions were retained; this was one concurrence vote.
+**Compact:** Foushee opposed passage of H.R.7148 as actually before the House on January22. The passage vote combined broad appropriations with Medicaid changes and Medicare telehealth and hospital-at-home extensions. Separately passed bills were added in the later engrossment; this vote is not a second choice on those bills. Each highlighted Health provision remains part of one whole-measure choice. Foushee opposed concurrence in the Senate amendments to H.R. 7148 as a whole. The Senate amendments replaced the House Homeland Security funding division, including medical-care and emergency food-and-shelter appropriations, with temporary funding through February 13, 2026 or an earlier applicable funding event. The other House Health provisions were retained; this was one concurrence vote.
 
 **Detail:**
 
 **house:119:2:45**
 
-Foushee opposed House passage of H.R. 7148 in its House-passed version.
+Foushee opposed passage of H.R.7148 as actually before the House on January22.
 
-The House-passed H.R.7148 combined appropriations for defense, Labor/HHS/Education, transportation/housing, financial services, foreign programs and homeland security with authorizing provisions. Its Health provisions included streamlined enrollment for qualifying out-of-state Medicaid/CHIP providers; removal of specified upper-age restrictions on optional Medicaid buy-in groups for working adults with disabilities; extension of specified Medicare telehealth flexibilities through December 31, 2027; and extension of acute-hospital-care-at-home waiver authority through September 30, 2030 with further study and reporting. Additional Health titles addressed payment, coverage, human-services, public-health, FDA and pharmacy-benefit-manager policies. The highlighted provisions are not an exhaustive package description.
+The January22 roll45 passage question covers H.R.7148's introduced divisions A, B, D, E and F, as modified by Report119-462PartA under H.Res.1014. These combine defense, Labor/HHS/Education and transportation/housing appropriations with authorizing and Health extenders. Both separately offered PartB amendments were rejected; neither belongs in the passage text. The rule also directed the Clerk to assemble separately passed H.R.7006 and H.R.7147 into the later engrossment as divisions E–H, redesignating the original E/F as I/J. That later assembled text is not treated as a second roll45 choice on financial-services, foreign-program or Homeland Security appropriations.
+
+The previously highlighted Health provisions appear identically in the introduced text and the later engrossment: streamlined enrollment for qualifying out-of-state Medicaid/CHIP providers; removal of specified upper-age restrictions on optional Medicaid buy-in groups for working adults with disabilities; extension of specified Medicare telehealth flexibilities through December31,2027; and extension of acute-hospital-care-at-home waiver authority through September30,2030 with further study and reporting. The rule's adopted technical amendment changes other specified wording and explanatory-statement/assembly provisions; it does not change those bound Health passages. Additional Health titles address payment, coverage, human-services, public-health, FDA and pharmacy-benefit-manager policies. These selected mechanisms remain a bounded explanation, not an exhaustive substantive review of every appropriation, rider or incorporated report.
+
+This is one choice on the whole measure actually before the House. A Yea supports that passage; a Nay opposes it without identifying a particular provision or preferred alternative. The later concurrence is a separate choice on Senate changes to the assembled bill, including its Homeland Security division. Those changes are not retroactively attributed to roll45, nor described as a second vote on the unchanged Medicaid provisions. No enactment or clinical outcome is inferred.
 
 The Clerk recorded the House result as 'Passed' on 2026-01-22. This does not establish enactment.
 
@@ -1387,6 +1448,7 @@ The Clerk recorded the House result as 'Passed' on 2026-02-03. This does not est
 - This is one vote on the entire multi-domain measure, not a separate choice on each highlighted Health provision. Opposition does not identify a preferred alternative or opposition to every component. The explanation highlights source-bound Health mechanisms; it is not an exhaustive account of the package.
 - Provider enrollment remains limited by the statutory qualifying conditions; optional disability buy-in changes are not automatic eligibility for every older adult.
 - The later Senate concurrence is represented separately in this candidate episode. Its changed Homeland Security funding treatment is not described as a second vote to rewrite these Medicaid provisions; wider discovery membership remains incomplete.
+- Exact January22 voting text is IH plus the adopted PartA amendment. Later engrossment assembly is distinct; the broader package and final explanatory overrides remain a documented substantive-completeness follow-up before domain review readiness.
 - This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
 - Health membership is proposed from the changed funding treatment of medical care and emergency food/shelter, not from unchanged Medicaid text elsewhere in the parent measure. The $123.5 million is the replaced House appropriation, not the amount supplied by the temporary extension.
 - The February 13 date is a maximum under section 106(3), not a guarantee that every covered activity would remain funded until that date. The incorporation retains the law’s conditions and exceptions.
@@ -1394,7 +1456,7 @@ The Clerk recorded the House result as 'Passed' on 2026-02-03. This does not est
 
 Evidence: house:119:2:45, house:119:2:53; finding `prop:481765d79a95c610`.
 
-Sources: [clerk:119:2:45](https://clerk.house.gov/evs/2026/roll045.xml); [govinfo:hr7148eh](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/html/BILLS-119hr7148eh.htm); [clerk:119:2:53](https://clerk.house.gov/evs/2026/roll053.xml); [govinfo:hr7148eas](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm); [govinfo:hr7148eh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/pdf/BILLS-119hr7148eh.pdf).
+Sources: [clerk:119:2:45](https://clerk.house.gov/evs/2026/roll045.xml); [govinfo:hr7148ih-passage45-scope](https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm); [govinfo:hres1014eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm); [govinfo:hrpt119-462-operative-amendments](https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm); [congressional-record:2026-01-22-rule-and-passage](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf); [clerk:119:2:53](https://clerk.house.gov/evs/2026/roll053.xml); [govinfo:hr7148eas](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm); [govinfo:hr7148eh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/pdf/BILLS-119hr7148eh.pdf).
 
 ### Separate choices within one legislative episode
 
@@ -2633,7 +2695,7 @@ Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo
 | house:119:1:190 | supported concurrence in the Senate substitute to H.R. 1 as a whole | opposed concurrence in the Senate substitute to H.R. 1 as a whole | [govinfo:hr1eas](https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/html/BILLS-119hr1eas.htm) |
 | house:119:1:281 | supported House passage of H.R. 5371 in its House-passed version | opposed House passage of H.R. 5371 in its House-passed version | [govinfo:hr5371eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5371eh/html/BILLS-119hr5371eh.htm) |
 | house:119:1:285 | supported concurrence in the Senate substitute to H.R. 5371 as a whole | opposed concurrence in the Senate substitute to H.R. 5371 as a whole | [govinfo:hr5371eas](https://www.govinfo.gov/content/pkg/BILLS-119hr5371eas/html/BILLS-119hr5371eas.htm) |
-| house:119:2:45 | supported House passage of H.R. 7148 in its House-passed version | opposed House passage of H.R. 7148 in its House-passed version | [govinfo:hr7148eh](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/html/BILLS-119hr7148eh.htm) |
+| house:119:2:45 | supported passage of H.R.7148 as actually before the House on January22 | opposed passage of H.R.7148 as actually before the House on January22 | [govinfo:hr7148ih-passage45-scope](https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm); [govinfo:hres1014eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm); [govinfo:hrpt119-462-operative-amendments](https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm); [congressional-record:2026-01-22-rule-and-passage](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf) |
 | house:119:2:286 | supported suspending the rules and concurring in the Senate replacement text for H.R. 6500 as a whole | opposed suspending the rules and concurring in the Senate replacement text for H.R. 6500 as a whole | [govinfo:hr6500eas](https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm) |
 | house:119:2:310 | supported House passage of the complete H.R.10326 information-sharing proposal | opposed House passage of the complete H.R.10326 information-sharing proposal | [govinfo:hr10326ih](https://www.govinfo.gov/content/pkg/BILLS-119hr10326ih/html/BILLS-119hr10326ih.htm); [congressional-record:2026-09-15](https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf); [clerk:119:2:300](https://clerk.house.gov/evs/2026/roll300.xml) |
 | house:119:2:53 | supported concurrence in the Senate amendments to H.R. 7148 as a whole | opposed concurrence in the Senate amendments to H.R. 7148 as a whole | [govinfo:hr7148eas](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm); [govinfo:hr7148eh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/pdf/BILLS-119hr7148eh.pdf) |

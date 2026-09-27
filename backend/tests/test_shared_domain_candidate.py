@@ -384,8 +384,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":196, "source_unresolved":202,
-            "interpreted_substantive_directional":78, "expressive_nonbinding_context":11, "exact_action_ineligible":189})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":199, "source_unresolved":197,
+            "interpreted_substantive_directional":78, "expressive_nonbinding_context":11, "exact_action_ineligible":191})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -403,7 +403,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 201)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 196)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1369,6 +1369,23 @@ class SharedDomainCandidateTests(unittest.TestCase):
             self.assertTrue({"govinfo:hr2988eh", "govinfo:29usc1002-217-scope", "govinfo:29usc1101-217-scope"} <= set(finding["source_ids"]))
         author = copy.deepcopy(self.author)
         next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:29usc1002-217-scope")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_7148_passage_does_not_revote_later_engrossment_additions(self):
+        aid = "house:119:2:45"
+        core, _, projections, _, result = self.products
+        action = next(a for a in self.author["actions"] if a["action_id"] == aid)
+        self.assertEqual(action["source_id"], "govinfo:hr7148ih-passage45-scope")
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid, "house:119:2:53"])
+            detail = " ".join(finding["detail"])
+            for phrase in ["introduced divisions A, B, D, E and F", "Both separately offered PartB amendments were rejected",
+                           "not treated as a second roll45 choice", "later concurrence is a separate choice"]:
+                self.assertIn(phrase, detail)
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:hres1014eh")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477", "M001184"])
 
