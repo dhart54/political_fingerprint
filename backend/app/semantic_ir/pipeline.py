@@ -55,6 +55,8 @@ def _run_editorial_pipeline(compiler_input, *, prepare_persistence_proposal=Fals
         trusted_trajectory_comparisons=None, historical_reference=False):
     """Compile input exactly once, validate it, then adapt compiled meaning."""
 
+    if compiler_input.get("review_state") == "candidate_pending_external_semantic_review" and (prepare_persistence_proposal or public_presentation_authoring is not None):
+        raise ValueError("shared candidates cannot prepare public or persistence artifacts")
     input_snapshot = copy.deepcopy(compiler_input)
     compiled = compile_semantic_ir(input_snapshot)
     validation = validate_compiled_ir(compiled)
