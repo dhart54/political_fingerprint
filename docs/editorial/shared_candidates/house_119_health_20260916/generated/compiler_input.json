@@ -443,6 +443,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:5",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     },
@@ -884,6 +890,12 @@
         },
         {
           "action_id": "house:119:2:11",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:5",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
@@ -2655,6 +2667,43 @@
         "structural_metadata": {
           "stage_order": 20011
         }
+      },
+      {
+        "action_id": "house:119:2:5",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:5:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "This January 8 vote decides whether to keep Division A of H.R. 6938 in the bill, under H.Res. 977. Division A funds Commerce, Justice, science and related agencies for fiscal 2026. It is separate from the next vote on retaining Divisions B and C, and from final passage. The introduced and engrossed operative texts match; the floor record confirms that Division A was retained. Health membership rests on the division’s direct treatment, victim-service and medical-payment provisions, not on the broad appropriations title. Keeping the division does not establish support for every provision, and rejecting it does not identify which provision or alternative a member preferred.\n\nWithin a broader $2.4 billion state/local law-enforcement assistance appropriation, $403 million is specified for opioid, stimulant and substance-use activities: $86 million for drug courts, $35 million for mental-health courts and collaboration, $30 million for residential prisoner treatment, $32 million for veterans treatment courts, $35 million for prescription monitoring, and $185 million for the comprehensive substance-use program. These are component allocations, not additional amounts on top of the $403 million. The explanatory statement puts $12 million for nonprofit prevention efforts within the comprehensive program, with investigation, treatment and education priorities. The division also funds victim services and support: the $720 million violence-against-women appropriation includes a $100 million transfer from the Crime Victims Fund and $12 million for sexual-assault nurse examiners. Neither the broader law-enforcement total nor the entire victim-services appropriation is a medical-treatment-only amount. The victim-service definition includes crisis intervention, shelter, support and assistance through medical and legal systems; grant confidentiality, nondiscrimination, reporting and use restrictions remain applicable.\n\nFederal prison operations receive $8.1 billion, with authority to transfer amounts to HHS for inmate medical relief and to use health-service claims processors. At least $409.483 million is designated for First Step Act programs, including a required evaluation transfer of at least 2 percent; that program total is not all medical spending. Incorporated instructions address naloxone training and reporting and officer mental-health resources; the Senate report encourages stronger continuity of behavioral-health treatment after release. The division retains the Justice-title abortion-funding restriction, with life-endangerment, rape and incest exceptions and its court-invalidity proviso. It prohibits compelling a person to perform or facilitate an abortion while preserving the Bureau of Prisons’ escort obligation for care outside a Federal facility, subject to individual employees’ stated conscience protection. These limits cannot be omitted from a treatment-funding description.\n\nThe package contains both new fiscal-year appropriations and cancellations of earlier unobligated funds. Section 521 rescinds $36 million from earlier violence-against-women appropriations, $250 million from Office of Justice Programs balances and $25 million from COPS balances, with emergency/disaster and specified earlier project-funding exceptions. Those account-level rescissions are not identified as cuts to a particular treatment grant, and this analysis does not invent a net clinical-services total. Section 510 limits Crime Victims Fund obligations to $1.95 billion, retains excess receipts for a later fiscal year and includes specified oversight and Tribal-victim-service allocations. The $100 million transfer already included in the violence-against-women total must not be counted twice. Transfers, set-asides and reprogramming conditions constrain use of the accounts. Where the explanatory summary differs, the operative section 505 supplies the 5-percent/$500,000 triggers and 30-day notice requirement, not the summary’s 10-percent/15-day figures.\n\nOther Health-related limits and authorities remain part of this mixed division. Justice funds cannot be used to prevent the listed States, District of Columbia and territories from implementing their medical-marijuana laws; this is not Federal legalization. Commerce and Justice may use specified current and prior unobligated funds for qualifying brain-injury payments under 22 U.S.C. 2680b(i)(2), capped at $5 million and $10 million respectively, excluding the identified emergency and witness-expense funds. The underlying payment authority remains conditional and supplements other benefits. Section 516 bars using these funds to put three specified patent-protection clauses into new trade agreements; the referenced clauses concern patented-product importation or procurement, including pharmaceuticals. It does not repeal existing agreements, grant an unrestricted right to import medicines or establish a price reduction.\n\nThe $540 million Legal Services Corporation appropriation retains its incorporated restrictions, with the bill’s express exceptions and year substitutions. They include limits on abortion litigation and welfare-system reform litigation, while preserving the specified avenue for an eligible individual’s particular welfare relief. Domestic-violence victims’ financial eligibility and protected case-information rules remain distinct. The bill also changes the attorney share of grantee governing boards to 33 percent without the former bar-association appointment requirement. These are legal-assistance conditions, not a new general clinical entitlement. Separately, $22.7 million from the Vaccine Injury Compensation Trust Fund reimburses Justice litigation expenses; it is not a newly allocated pool of compensation awards to injured people.\n\nThe final explanatory statement gives the House and Senate report language weight unless superseded by that statement or the bill. It replaces the House deinstitutionalization directives with encouragement of the described actions concerning intellectual/developmental-disability institutional care. It also replaces the House breakthrough-therapy instruction with the Senate insomnia-pharmaceuticals language: coordination, scientific/medical evaluation and a status briefing, not approval or descheduling of a drug by this vote. The wider division also finances commerce, enforcement, scientific research, space and other functions. This is one candidate interpretation of the choice to retain that complete division, not separate votes on its highlighted Health provisions. The two later H.R. 6938 questions require their own membership and meaning review; no enactment, individual entitlement, medical outcome or member motive is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr6938:119",
+        "legislative_stage": "division_retention",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:5",
+          "govinfo:hr6938ih-division-a",
+          "govinfo:hr6938eh-division-a",
+          "govinfo:hres977eh",
+          "congressional-record:2026-01-08-6938-retention",
+          "congressional-record:2026-01-08-6938-explanation-a",
+          "govinfo:34usc12291-2024-victim-services-and-conditions",
+          "govinfo:34usc20101-2024-operative",
+          "govinfo:22usc2680b-2024-operative",
+          "govinfo:pl105-119-lsc501-506",
+          "govinfo:pl104-134-lsc501-508",
+          "govinfo:hrpt119-272-deinstitutionalization",
+          "govinfo:hrpt119-272-bop-naloxone",
+          "govinfo:hrpt119-272-bop-mental-health",
+          "govinfo:srpt119-44-insomnia",
+          "govinfo:srpt119-44-continuity-of-care",
+          "ustr:singapore-fta-16-7-2",
+          "ustr:australia-fta-17-9-4",
+          "ustr:morocco-fta-15-9-4"
+        ],
+        "structural_metadata": {
+          "stage_order": 20005
+        }
       }
     ],
     "episodes": [
@@ -3119,6 +3168,14 @@
         "episode_id": "episode:hr1834:119",
         "action_ids": [
           "house:119:2:11"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr6938:119",
+        "action_ids": [
+          "house:119:2:5"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

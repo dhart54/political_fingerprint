@@ -108,12 +108,20 @@ def prepare(authoring, capture, member_ids):
         if measure_prefix is None or meta["legis-num"] != f"{measure_prefix} {proposed['bill_number']}":
             raise ValueError("Clerk measure and proposed text differ")
         question = meta["vote-question"]
+        retained_portion = proposed.get("retained_portion")
+        retention_questions = {
+            "Division A": "On Retaining Division A",
+            "Divisions B and C": "On Retaining Divisions B and C",
+        }
+        if retained_portion is not None and proposed["stage"] != "division_retention":
+            raise ValueError("retained portion requires a division-retention question")
         valid_stage = {
             "final_passage": question == "On Passage",
             "amendment": question == "On Agreeing to the Amendment",
             "suspension_and_passage": question in {"On Motion to Suspend the Rules and Pass", "On Motion to Suspend the Rules and Pass, as Amended"},
             "concurrence": question in {"On Motion to Concur in the Senate Amendment", "On Motion to Concur in the Senate Amendments"},
             "suspension_and_concurrence": question == "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+            "division_retention": isinstance(retained_portion, str) and question == retention_questions.get(retained_portion),
         }
         if not valid_stage.get(proposed["stage"], False):
             raise ValueError("candidate stage differs from exact Clerk question")
@@ -147,9 +155,12 @@ def prepare(authoring, capture, member_ids):
             "operative_meaning_source_identities": [identity(s) for s in operative_sources],
             "semantic_ir_source_ids": [s["source_id"] for s in source_ids],
             "package_component_boundary": {
-                "boundary_type": "exact_amendment" if proposed["stage"] == "amendment" else "whole_measure",
+                "boundary_type": ("specified_divisions" if proposed["stage"] == "division_retention"
+                                  else "exact_amendment" if proposed["stage"] == "amendment" else "whole_measure"),
                 "parent_package_meaning_projected": False,
                 "basis": proposed["limitations"],
+                **({"governed_component_relationships": [f"Retaining {retained_portion}; distinct from whole-bill passage"]}
+                   if proposed["stage"] == "division_retention" else {}),
             },
             "source_contract_version": "shared_legislative_corpus_v1",
             "meaning_contract_version": "candidate-extension-v1",

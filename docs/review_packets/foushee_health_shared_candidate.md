@@ -2,38 +2,38 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since8cbb809, five screenings are resolved:
-one shared interpretation, one proposed exclusion and three procedural controls.
-There are73 interpreted inputs,55 Foushee findings and52 bounded Massie proof
-findings.215 identities remain unreviewed; one additional examined action has a
-printed-source conflict. No current user decision is required. This is neither
-complete Health coverage nor accepted/public content.
+**Active partial candidate.** Since6c80df6, one screening is interpreted:
+January2026 roll5, retaining H.R.6938 DivisionA. There are74 interpreted inputs,
+56 Foushee findings and53 bounded Massie proof findings.214 identities remain
+unreviewed; one additional examined action has a printed-source conflict.
+No current user decision is required. This is neither complete Health coverage
+nor accepted/public content.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-8cbb809 at the latest resumption. Later in-scope research is preserved without reset.
+6c80df6 at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [73 shared meanings /638 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1116 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [319 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [74 shared meanings /676 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1136 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [320 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (8cbb809) | Current local candidate |
+| Disposition | Before (6c80df6) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |72|73|
-| procedural_context |191|194|
+| interpreted_substantive_directional |73|74|
+| procedural_context |194|194|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |181|182|
-| source_unresolved (unreviewed plus examined conflict) |221|216|
+| exact_action_ineligible |182|182|
+| source_unresolved (unreviewed plus examined conflict) |216|215|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -41,69 +41,84 @@ No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
 ## Active continuation — September27
 
-Continue from pushed head `8cbb80979a361300021b806cf585c7d516bd6806`, whose
-nine exact-head CI jobs all passed in run36291290531. Five further January2026
-screenings are resolved: one shared Health interpretation, one proposed exclusion
-and three procedural controls. Counts72/191/11/181/221 become73/194/11/182/216.
-There are215 unreviewed identities and the separately examined2025 roll237 source
-conflict. Derived output is55 Foushee findings /52 bounded Massie proof findings,
-146 observations and56 episodes, retaining the nine existing multi-action episodes.
-No new user decision or exhausted evidence path is identified.
+Continue from pushed head `6c80df643eba03eee51848312f38ef4774ee37d4`, whose
+nine exact-head CI jobs passed in run36292185339. One further January2026
+screening is interpreted: roll5, retaining DivisionA of H.R.6938. Counts
+73/194/11/182/216 become74/194/11/182/215. Remaining work is214 unreviewed
+identities plus the separately examined2025 roll237 printed-source conflict.
+Derived output is56 Foushee findings /53 bounded Massie proof findings,
+148 observations and57 episodes. The nine existing multi-action episodes remain
+intact; this new episode explicitly retains its unfinished rolls6/7. No new human
+decision or exhausted evidence path is identified.
 
-- **2026 roll11, H.R.1834:** exact November12 McGovern substitute, January8
-  adoption/passage and EH agree on extending the enhanced premium-credit formula
-  and income-ceiling exception through2028. Bind26USC36B and July2025 amendments:
-  the benchmark contribution is not an all-plan price or medical-expense cap;
-  higher income does not guarantee a positive credit; separate eligibility,
-  verification and excess-credit repayment changes are not repealed. Preserve
-  both choices, debate disagreements and no enacted-law/outcome inference.
-- **4/10:** discharge of H.Res.780 and its later adoption remain distinct
-  non-counting controls. The actual incorporated substitute is identified rather
-  than inferred from the generic title or treated as a separate passage vote.
-- **12, H.R.5184:** proposed exclusion after complete RH/EH and direct-authority
-  review. DOE recommendations replace mandatory energy-standard duties, the
-  civil-penalty subsection is removed and the specified2022 rule loses effect.
-  HUD's separate standards remain. Bind the complete operative rule and its2025
-  compliance-date amendment; do not describe the old2023date as still operative
-  or infer clinical outcomes from housing affordability/ventilation effects.
-- **3:** H.Res.977 control preserves the deemed5184substitute and distinct6938
-  DivisionA, DivisionsB/C and passage proceedings. The appropriation questions
-  themselves remain unreviewed, not silently dispositioned with the rule.
+DivisionA contains direct substance-use treatment, victim services and medical
+payment mechanisms. The shared interpretation preserves the403million program’s
+component allocations,720million victim-services appropriation and embedded100million
+CrimeVictimsFund transfer, prison medical-relief authority, abortion-funding
+exceptions and escort/conscience provisions, earlier-balance rescissions and
+account restrictions. Broad Justice/prison totals are not medical-only totals;
+no net clinical-services cut or individual benefit is invented. The22.7million
+VaccineInjuryTrust amount reimburses DOJ case processing, not claimant awards.
 
-Add20 governed sources and5 membership records:1116 sources /319 records /
-638 interpretation claim maps. Prior1096 sources,314 records and72 meanings are
-preserved. Foushee Yea and Massie Nay on11 are mechanically projected. Manual work
-is source/version reading, source excerpt binding, membership and one shared meaning;
-no member-specific rewriting or new design. Reuse captured July2025 law and January
-bills/Clerk records. A malformed GovInfo17071 URL returned navigation and was rejected;
-the official OLRC2024edition supplies the section. A narrow title-validation heuristic
-was corrected only after checking the OLRC edition/date and full operative text.
+The complete operative introduced and engrossed texts match; the bill preface and
+DivisionA are separately bound. The January8floor questions establish retention,
+not amendment adoption or whole passage. A concrete adapter gap required a narrow
+`division_retention` stage with the exact retained portion and a
+`specified_divisions` package boundary. The Clerk question must match that portion;
+missing/wrong portions and passage relabeling fail closed. This uses the existing
+Shared Action Core fields and schema; no new publication mechanism, authority or
+paired-observation design is introduced. FousheeYea and MassieNay derive mechanically.
 
-**Exact queue and prepared sources:**2025 items224/225/226,237,262,294/295/296,
-299,307,318,320 retain their existing detailed notes; eleven need further research,
-237 has the recorded conflict. The204 unreviewed2026 identities begin5/6/7
-(H.R.6938 distinct retention/passage questions),8/9(veto overrides),13/14/15
-(export controls and trade extensions). Research182 captures their Clerk/bill texts.
-6938EH is509133 normalized characters, raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0,
-and has not received substantive reading. January8 House Record is captured in
-research183, but the relevant appropriation divisions/explanatory text remain to
-be read. H.Res.977 is already read and bound; do not repeat the rule screening.
-The short504/131ENR and2683/6500/6504EH texts were read; incorporated authorities,
-veto/floor/version reconciliation remain unfinished, as specified on each queue row.
-Do not mistake captured sources or partial reading for completed membership.
+Final report precedence is material: the explanation replaces House
+institutional-care directives with encouragement and the House breakthrough-therapy
+instruction with Senate insomnia-evaluation/briefing language. The bill’s actual
+section505 requires30-day notice and5-percent/$500,000 triggers; the explanation’s
+10-percent/15-day summary is not substituted. Legal-aid conditions, qualified
+brain-injury payment caps, medical-marijuana implementation protection and the
+three precisely referenced trade-agreement clauses remain bounded. None is a
+new unconditional entitlement, Federal marijuana legalization, drug approval or
+predicted health result.
 
-**Validation:**all154 focused subsystem tests and7 canonical semantic checks pass.
-The67 candidate tests include member-choice, procedural separation, retained
-eligibility/repayment limits and missing-baseline-source rejection. Deterministic
-replay and diff checks pass; direct comparison confirms all1096 prior sources,
-314 membership records and72 interpretations are unchanged. Generated readable
-Foushee/Massie choices and complete source/action bindings were inspected. Exact-head
-CI for this push is recorded in PR194; prior-head CI does not validate later changes.
+Add20 governed sources, one membership record and38 claim maps:1136 sources /
+320 membership records /676 interpretation maps. Direct comparison verifies all
+1116 prior sources,319 records and73 meanings are unchanged. Manual work is exact
+source/version comparison, operative/report/statute reading, source selection and
+one shared candidate interpretation. No member-specific meaning was rewritten.
+A first capture attempt stopped on a missing operative passage because a table-of-
+contents division heading matched too early; no governed file was written by that
+failed attempt. Explicit body headings corrected the extraction before generation.
 
-Work remains active across this progress boundary. No terminal marker, new approval
-gate or completion claim. No merge, deployment, publication, production writes,
-registry/environment changes or blue operations. PR191 released; PR193 paused;
-issue192 open. Continue the queue without requiring another user prompt.
+**Exact queue and prepared-source reuse:**2025 items224/225/226,237,262,
+294/295/296,299,307,318,320 retain their detailed notes. January2026 next is6938
+roll6(DivisionsB/Cretention), then7(wholepassage), followed by8/9 and13/14/15.
+Complete contiguous EH reading now reaches267437, the operative DivisionC heading.
+DivisionB is read; its material incorporations and final-statement allocations remain.
+Reuse the earlier4553DOEhealth-program work after exact-version comparison.
+Regional-commission programs also need their bound authorities; water/energy titles
+are not Health evidence by themselves.
+The full operativeIH/EH508386-character comparison agrees; only attestation follows.
+The final statement is January8BookII(URLhouse-bk3), research191,337 pages; DivisionA
+narrative1–13 is read/bound, its individual project table14–75 is not exhaustively
+reviewed or totalled. DivisionB begins76. Research192 holds House119272/Senate11944;
+only the relevant read passages are governed, not an assertion that both whole
+reports were reviewed. Research193 has the three official trade-agreement texts
+and104-134LSC baseline, with exact read portions bound. Rolls6/7 must complete
+B/C and their material incorporations before membership, without inheriting all
+DivisionA effects onto6. The committed per-item queue preserves these positions,
+source hashes and remaining tasks. Captures are not completed substantive review.
+
+**Validation:**70 focused candidate tests pass, including deterministic generated
+outputs, exact retained-portion guards, loss of the final-override source and both
+real member choices. All157 focused subsystem tests and7 canonical semantic checks pass. One Node
+schema check initially lacked NODE_PATH; it passed after pointing to the existing
+shared dependency installation, without code or dependency changes. Exact-head CI
+is recorded at the push. No frontend/runtime change or production
+operation is involved.
+
+Work remains active. This progress boundary is not a terminal checkpoint, approval
+gate or completion claim. No shutdown marker is written. No merge, deployment,
+publication, production writes, registry/environment changes or blue operations.
+PR191 remains released; PR193 paused; issue192 open.
 
 ## Historical overnight checkpoint — September26
 
@@ -642,7 +657,7 @@ the requested overnight checkpoint; no new human decision is required.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-73 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+74 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2236,6 +2251,41 @@ Evidence: house:119:2:37; finding `prop:74b7622b8169eb9e`.
 
 Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinfo:hr6945eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6945eh/html/BILLS-119hr6945eh.htm).
 
+### Keeping treatment and victim-service funding with the division’s restrictions
+
+**Compact:** Foushee supported retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions. This vote would keep the Commerce, Justice and science division in the funding bill. It includes substance-use treatment and victim services alongside prison-care rules, abortion-funding restrictions and rescissions of earlier funds. The choice covers that whole division, separately from the other divisions and final passage.
+
+**Detail:**
+
+**house:119:2:5**
+
+Foushee supported retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions.
+
+This January 8 vote decides whether to keep Division A of H.R. 6938 in the bill, under H.Res. 977. Division A funds Commerce, Justice, science and related agencies for fiscal 2026. It is separate from the next vote on retaining Divisions B and C, and from final passage. The introduced and engrossed operative texts match; the floor record confirms that Division A was retained. Health membership rests on the division’s direct treatment, victim-service and medical-payment provisions, not on the broad appropriations title. Keeping the division does not establish support for every provision, and rejecting it does not identify which provision or alternative a member preferred.
+
+Within a broader $2.4 billion state/local law-enforcement assistance appropriation, $403 million is specified for opioid, stimulant and substance-use activities: $86 million for drug courts, $35 million for mental-health courts and collaboration, $30 million for residential prisoner treatment, $32 million for veterans treatment courts, $35 million for prescription monitoring, and $185 million for the comprehensive substance-use program. These are component allocations, not additional amounts on top of the $403 million. The explanatory statement puts $12 million for nonprofit prevention efforts within the comprehensive program, with investigation, treatment and education priorities. The division also funds victim services and support: the $720 million violence-against-women appropriation includes a $100 million transfer from the Crime Victims Fund and $12 million for sexual-assault nurse examiners. Neither the broader law-enforcement total nor the entire victim-services appropriation is a medical-treatment-only amount. The victim-service definition includes crisis intervention, shelter, support and assistance through medical and legal systems; grant confidentiality, nondiscrimination, reporting and use restrictions remain applicable.
+
+Federal prison operations receive $8.1 billion, with authority to transfer amounts to HHS for inmate medical relief and to use health-service claims processors. At least $409.483 million is designated for First Step Act programs, including a required evaluation transfer of at least 2 percent; that program total is not all medical spending. Incorporated instructions address naloxone training and reporting and officer mental-health resources; the Senate report encourages stronger continuity of behavioral-health treatment after release. The division retains the Justice-title abortion-funding restriction, with life-endangerment, rape and incest exceptions and its court-invalidity proviso. It prohibits compelling a person to perform or facilitate an abortion while preserving the Bureau of Prisons’ escort obligation for care outside a Federal facility, subject to individual employees’ stated conscience protection. These limits cannot be omitted from a treatment-funding description.
+
+The package contains both new fiscal-year appropriations and cancellations of earlier unobligated funds. Section 521 rescinds $36 million from earlier violence-against-women appropriations, $250 million from Office of Justice Programs balances and $25 million from COPS balances, with emergency/disaster and specified earlier project-funding exceptions. Those account-level rescissions are not identified as cuts to a particular treatment grant, and this analysis does not invent a net clinical-services total. Section 510 limits Crime Victims Fund obligations to $1.95 billion, retains excess receipts for a later fiscal year and includes specified oversight and Tribal-victim-service allocations. The $100 million transfer already included in the violence-against-women total must not be counted twice. Transfers, set-asides and reprogramming conditions constrain use of the accounts. Where the explanatory summary differs, the operative section 505 supplies the 5-percent/$500,000 triggers and 30-day notice requirement, not the summary’s 10-percent/15-day figures.
+
+Other Health-related limits and authorities remain part of this mixed division. Justice funds cannot be used to prevent the listed States, District of Columbia and territories from implementing their medical-marijuana laws; this is not Federal legalization. Commerce and Justice may use specified current and prior unobligated funds for qualifying brain-injury payments under 22 U.S.C. 2680b(i)(2), capped at $5 million and $10 million respectively, excluding the identified emergency and witness-expense funds. The underlying payment authority remains conditional and supplements other benefits. Section 516 bars using these funds to put three specified patent-protection clauses into new trade agreements; the referenced clauses concern patented-product importation or procurement, including pharmaceuticals. It does not repeal existing agreements, grant an unrestricted right to import medicines or establish a price reduction.
+
+The $540 million Legal Services Corporation appropriation retains its incorporated restrictions, with the bill’s express exceptions and year substitutions. They include limits on abortion litigation and welfare-system reform litigation, while preserving the specified avenue for an eligible individual’s particular welfare relief. Domestic-violence victims’ financial eligibility and protected case-information rules remain distinct. The bill also changes the attorney share of grantee governing boards to 33 percent without the former bar-association appointment requirement. These are legal-assistance conditions, not a new general clinical entitlement. Separately, $22.7 million from the Vaccine Injury Compensation Trust Fund reimburses Justice litigation expenses; it is not a newly allocated pool of compensation awards to injured people.
+
+The final explanatory statement gives the House and Senate report language weight unless superseded by that statement or the bill. It replaces the House deinstitutionalization directives with encouragement of the described actions concerning intellectual/developmental-disability institutional care. It also replaces the House breakthrough-therapy instruction with the Senate insomnia-pharmaceuticals language: coordination, scientific/medical evaluation and a status briefing, not approval or descheduling of a drug by this vote. The wider division also finances commerce, enforcement, scientific research, space and other functions. This is one candidate interpretation of the choice to retain that complete division, not separate votes on its highlighted Health provisions. The two later H.R. 6938 questions require their own membership and meaning review; no enactment, individual entitlement, medical outcome or member motive is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2026-01-08. This does not establish enactment.
+
+- This is one choice to retain the whole of Division A, not a separate vote on each highlighted provision or passage of H.R. 6938. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Division A only: do not project Indian Health Service or other Divisions B/C provisions onto this vote. The later retention and passage actions remain unreviewed in this episode.
+- Amounts for broad law-enforcement and prison accounts are not medical-only amounts. Earlier-balance rescissions, transfers and grants are not interchangeable or additive.
+- Use the final statement’s overrides and the operative bill where its reprogramming provisions differ from the summary. No instruction is treated as an observed clinical outcome.
+
+Evidence: house:119:2:5; finding `prop:899289a35e9b690b`.
+
+Sources: [clerk:119:2:5](https://clerk.house.gov/evs/2026/roll005.xml); [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf).
+
 ### Both-choice source index
 
 | Action | Yea | Nay | Governed text |
@@ -2313,4 +2363,5 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:351 | supported House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | [govinfo:hr3492eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492eh/html/BILLS-119hr3492eh.htm); [govinfo:18usc116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap7-sec116.htm); [govinfo:hr3492rh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492rh/html/BILLS-119hr3492rh.htm); [govinfo:hrpt119-411-roy](https://www.govinfo.gov/content/pkg/CRPT-119hrpt411/html/CRPT-119hrpt411.htm); [congressional-record:2025-12-17-selected-choices](https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf) |
 | house:119:1:340 | supported House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | [govinfo:hr4371eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371eh/html/BILLS-119hr4371eh.htm); [govinfo:hr4371rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371rh/html/BILLS-119hr4371rh.htm); [govinfo:6usc279-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm); [govinfo:8usc1232-2024-care-placement](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1232-2024-retained-assistance](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1522-2024-child-services](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIV-sec1522.htm); [govinfo:8usc1101-2024-aggravated-felony](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-serious-offense](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:34usc20911-2024-offense-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm); [govinfo:22usc7102-2024-severe-trafficking](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap78-sec7102.htm); [govinfo:34usc12291-2024-domestic-violence](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:42usc5101-2024-capta-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap67-subchapI-sec5101.htm); [govinfo:18usc1111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1111.htm); [govinfo:18usc1112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1112.htm); [govinfo:18usc1113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1113.htm); [govinfo:8usc1226-2024-custody-baseline](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm); [govinfo:pl119-1-section2](https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm); [govinfo:18usc2252-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm); [congressional-record:2025-12-16-child-placement](https://www.govinfo.gov/content/pkg/CREC-2025-12-16/pdf/CREC-2025-12-16-house.pdf) |
 | house:119:2:11 | supported passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules | opposed passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules | [govinfo:hr1834eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm); [govinfo:26usc36B-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm); [govinfo:pl119-21-sections71301-71305](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [govinfo:hres780eh](https://www.govinfo.gov/content/pkg/BILLS-119hres780eh/html/BILLS-119hres780eh.htm); [congressional-record:2025-11-12-1834-substitute](https://www.govinfo.gov/content/pkg/CREC-2025-11-12/pdf/CREC-2025-11-12-house.pdf); [congressional-record:2026-01-08-1834](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
+| house:119:2:5 | supported retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions | opposed retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions | [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf) |
 <!-- GENERATED CANDIDATE END -->

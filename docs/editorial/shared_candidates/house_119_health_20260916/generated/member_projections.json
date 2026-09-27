@@ -1323,9 +1323,27 @@
           }
         ],
         "member_action_source_identity_sha256": "6c46bf6904e71fef0cc50ed48e091eebb2ac0dfcca2a8ff70b3ab57943f34587"
+      },
+      {
+        "action_id": "house:119:2:5",
+        "action_core_sha256": "c804e625f15a1313aa4b1ffe8053b70b0ec1a0b62b9b33480b42d6f1c9279706",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:5",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
+            "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845"
+          }
+        ],
+        "member_action_source_identity_sha256": "2077126e3fb1b0b64e4834dbd6291a4adfa4199a03a4032a400fee21c58e234f"
       }
     ],
-    "projection_sha256": "70e6f7d8b5043df9f25689dede87b01892fbc1402e11680ca99aa96c25aa1427"
+    "projection_sha256": "146057930cfbbafe32aaf57ab7776f2ac4f36f9ff75e2f55a4c9062a830b6e7b"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -2651,8 +2669,26 @@
           }
         ],
         "member_action_source_identity_sha256": "6c46bf6904e71fef0cc50ed48e091eebb2ac0dfcca2a8ff70b3ab57943f34587"
+      },
+      {
+        "action_id": "house:119:2:5",
+        "action_core_sha256": "c804e625f15a1313aa4b1ffe8053b70b0ec1a0b62b9b33480b42d6f1c9279706",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:5",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
+            "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845"
+          }
+        ],
+        "member_action_source_identity_sha256": "2077126e3fb1b0b64e4834dbd6291a4adfa4199a03a4032a400fee21c58e234f"
       }
     ],
-    "projection_sha256": "e77f674a2a6c12937e83617bff6ad8ad7a269c17c23742e102a69330fcad4aa1"
+    "projection_sha256": "21013f1aad04581e9d3f8578684379292e6c8b8dd6e1a27b502ae9fd3c36048a"
   }
 ]

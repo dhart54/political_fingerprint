@@ -66,69 +66,84 @@ If membership/source gates remain unresolved, deliver a precise partial candidat
 
 ## Active continuation — September27
 
-Continue from pushed head `8cbb80979a361300021b806cf585c7d516bd6806`, whose
-nine exact-head CI jobs all passed in run36291290531. Five further January2026
-screenings are resolved: one shared Health interpretation, one proposed exclusion
-and three procedural controls. Counts72/191/11/181/221 become73/194/11/182/216.
-There are215 unreviewed identities and the separately examined2025 roll237 source
-conflict. Derived output is55 Foushee findings /52 bounded Massie proof findings,
-146 observations and56 episodes, retaining the nine existing multi-action episodes.
-No new user decision or exhausted evidence path is identified.
+Continue from pushed head `6c80df643eba03eee51848312f38ef4774ee37d4`, whose
+nine exact-head CI jobs passed in run36292185339. One further January2026
+screening is interpreted: roll5, retaining DivisionA of H.R.6938. Counts
+73/194/11/182/216 become74/194/11/182/215. Remaining work is214 unreviewed
+identities plus the separately examined2025 roll237 printed-source conflict.
+Derived output is56 Foushee findings /53 bounded Massie proof findings,
+148 observations and57 episodes. The nine existing multi-action episodes remain
+intact; this new episode explicitly retains its unfinished rolls6/7. No new human
+decision or exhausted evidence path is identified.
 
-- **2026 roll11, H.R.1834:** exact November12 McGovern substitute, January8
-  adoption/passage and EH agree on extending the enhanced premium-credit formula
-  and income-ceiling exception through2028. Bind26USC36B and July2025 amendments:
-  the benchmark contribution is not an all-plan price or medical-expense cap;
-  higher income does not guarantee a positive credit; separate eligibility,
-  verification and excess-credit repayment changes are not repealed. Preserve
-  both choices, debate disagreements and no enacted-law/outcome inference.
-- **4/10:** discharge of H.Res.780 and its later adoption remain distinct
-  non-counting controls. The actual incorporated substitute is identified rather
-  than inferred from the generic title or treated as a separate passage vote.
-- **12, H.R.5184:** proposed exclusion after complete RH/EH and direct-authority
-  review. DOE recommendations replace mandatory energy-standard duties, the
-  civil-penalty subsection is removed and the specified2022 rule loses effect.
-  HUD's separate standards remain. Bind the complete operative rule and its2025
-  compliance-date amendment; do not describe the old2023date as still operative
-  or infer clinical outcomes from housing affordability/ventilation effects.
-- **3:** H.Res.977 control preserves the deemed5184substitute and distinct6938
-  DivisionA, DivisionsB/C and passage proceedings. The appropriation questions
-  themselves remain unreviewed, not silently dispositioned with the rule.
+DivisionA contains direct substance-use treatment, victim services and medical
+payment mechanisms. The shared interpretation preserves the403million program’s
+component allocations,720million victim-services appropriation and embedded100million
+CrimeVictimsFund transfer, prison medical-relief authority, abortion-funding
+exceptions and escort/conscience provisions, earlier-balance rescissions and
+account restrictions. Broad Justice/prison totals are not medical-only totals;
+no net clinical-services cut or individual benefit is invented. The22.7million
+VaccineInjuryTrust amount reimburses DOJ case processing, not claimant awards.
 
-Add20 governed sources and5 membership records:1116 sources /319 records /
-638 interpretation claim maps. Prior1096 sources,314 records and72 meanings are
-preserved. Foushee Yea and Massie Nay on11 are mechanically projected. Manual work
-is source/version reading, source excerpt binding, membership and one shared meaning;
-no member-specific rewriting or new design. Reuse captured July2025 law and January
-bills/Clerk records. A malformed GovInfo17071 URL returned navigation and was rejected;
-the official OLRC2024edition supplies the section. A narrow title-validation heuristic
-was corrected only after checking the OLRC edition/date and full operative text.
+The complete operative introduced and engrossed texts match; the bill preface and
+DivisionA are separately bound. The January8floor questions establish retention,
+not amendment adoption or whole passage. A concrete adapter gap required a narrow
+`division_retention` stage with the exact retained portion and a
+`specified_divisions` package boundary. The Clerk question must match that portion;
+missing/wrong portions and passage relabeling fail closed. This uses the existing
+Shared Action Core fields and schema; no new publication mechanism, authority or
+paired-observation design is introduced. FousheeYea and MassieNay derive mechanically.
 
-**Exact queue and prepared sources:**2025 items224/225/226,237,262,294/295/296,
-299,307,318,320 retain their existing detailed notes; eleven need further research,
-237 has the recorded conflict. The204 unreviewed2026 identities begin5/6/7
-(H.R.6938 distinct retention/passage questions),8/9(veto overrides),13/14/15
-(export controls and trade extensions). Research182 captures their Clerk/bill texts.
-6938EH is509133 normalized characters, raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0,
-and has not received substantive reading. January8 House Record is captured in
-research183, but the relevant appropriation divisions/explanatory text remain to
-be read. H.Res.977 is already read and bound; do not repeat the rule screening.
-The short504/131ENR and2683/6500/6504EH texts were read; incorporated authorities,
-veto/floor/version reconciliation remain unfinished, as specified on each queue row.
-Do not mistake captured sources or partial reading for completed membership.
+Final report precedence is material: the explanation replaces House
+institutional-care directives with encouragement and the House breakthrough-therapy
+instruction with Senate insomnia-evaluation/briefing language. The bill’s actual
+section505 requires30-day notice and5-percent/$500,000 triggers; the explanation’s
+10-percent/15-day summary is not substituted. Legal-aid conditions, qualified
+brain-injury payment caps, medical-marijuana implementation protection and the
+three precisely referenced trade-agreement clauses remain bounded. None is a
+new unconditional entitlement, Federal marijuana legalization, drug approval or
+predicted health result.
 
-**Validation:**all154 focused subsystem tests and7 canonical semantic checks pass.
-The67 candidate tests include member-choice, procedural separation, retained
-eligibility/repayment limits and missing-baseline-source rejection. Deterministic
-replay and diff checks pass; direct comparison confirms all1096 prior sources,
-314 membership records and72 interpretations are unchanged. Generated readable
-Foushee/Massie choices and complete source/action bindings were inspected. Exact-head
-CI for this push is recorded in PR194; prior-head CI does not validate later changes.
+Add20 governed sources, one membership record and38 claim maps:1136 sources /
+320 membership records /676 interpretation maps. Direct comparison verifies all
+1116 prior sources,319 records and73 meanings are unchanged. Manual work is exact
+source/version comparison, operative/report/statute reading, source selection and
+one shared candidate interpretation. No member-specific meaning was rewritten.
+A first capture attempt stopped on a missing operative passage because a table-of-
+contents division heading matched too early; no governed file was written by that
+failed attempt. Explicit body headings corrected the extraction before generation.
 
-Work remains active across this progress boundary. No terminal marker, new approval
-gate or completion claim. No merge, deployment, publication, production writes,
-registry/environment changes or blue operations. PR191 released; PR193 paused;
-issue192 open. Continue the queue without requiring another user prompt.
+**Exact queue and prepared-source reuse:**2025 items224/225/226,237,262,
+294/295/296,299,307,318,320 retain their detailed notes. January2026 next is6938
+roll6(DivisionsB/Cretention), then7(wholepassage), followed by8/9 and13/14/15.
+Complete contiguous EH reading now reaches267437, the operative DivisionC heading.
+DivisionB is read; its material incorporations and final-statement allocations remain.
+Reuse the earlier4553DOEhealth-program work after exact-version comparison.
+Regional-commission programs also need their bound authorities; water/energy titles
+are not Health evidence by themselves.
+The full operativeIH/EH508386-character comparison agrees; only attestation follows.
+The final statement is January8BookII(URLhouse-bk3), research191,337 pages; DivisionA
+narrative1–13 is read/bound, its individual project table14–75 is not exhaustively
+reviewed or totalled. DivisionB begins76. Research192 holds House119272/Senate11944;
+only the relevant read passages are governed, not an assertion that both whole
+reports were reviewed. Research193 has the three official trade-agreement texts
+and104-134LSC baseline, with exact read portions bound. Rolls6/7 must complete
+B/C and their material incorporations before membership, without inheriting all
+DivisionA effects onto6. The committed per-item queue preserves these positions,
+source hashes and remaining tasks. Captures are not completed substantive review.
+
+**Validation:**70 focused candidate tests pass, including deterministic generated
+outputs, exact retained-portion guards, loss of the final-override source and both
+real member choices. All157 focused subsystem tests and7 canonical semantic checks pass. One Node
+schema check initially lacked NODE_PATH; it passed after pointing to the existing
+shared dependency installation, without code or dependency changes. Exact-head CI
+is recorded at the push. No frontend/runtime change or production
+operation is involved.
+
+Work remains active. This progress boundary is not a terminal checkpoint, approval
+gate or completion claim. No shutdown marker is written. No merge, deployment,
+publication, production writes, registry/environment changes or blue operations.
+PR191 remains released; PR193 paused; issue192 open.
 
 ## Historical overnight checkpoint — September26
 

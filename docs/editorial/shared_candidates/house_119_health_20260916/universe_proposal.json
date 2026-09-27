@@ -89,6 +89,7 @@
     "house:119:2:310",
     "house:119:2:37",
     "house:119:2:45",
+    "house:119:2:5",
     "house:119:2:53"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
@@ -105,9 +106,9 @@
     "counts": {
       "procedural_context": 194,
       "exact_action_ineligible": 182,
-      "interpreted_substantive_directional": 73,
+      "interpreted_substantive_directional": 74,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 216
+      "source_unresolved": 215
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -116,30 +117,31 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 73,
-    "directional_substantive_actions": 73,
+    "substantive_eligible_actions": 74,
+    "directional_substantive_actions": 74,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 194,
     "expressive_nonbinding_actions": 11,
     "exact_action_ineligible_actions": 182,
-    "unresolved_boundary_cases": 216,
-    "independent_episode_count": 56,
+    "unresolved_boundary_cases": 215,
+    "independent_episode_count": 57,
     "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
       "concurrence",
+      "division_retention",
       "final_passage",
       "suspension_and_concurrence",
       "suspension_and_passage"
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 73,
-      "substantive_actions": 73,
+      "ready_substantive_actions": 74,
+      "substantive_actions": 74,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "215 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "214 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -584,6 +586,7 @@
         "house:119:1:349",
         "house:119:1:351",
         "house:119:1:362",
+        "house:119:2:5",
         "house:119:2:11",
         "house:119:2:37",
         "house:119:2:45",
@@ -623,7 +626,6 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:5",
         "house:119:2:6",
         "house:119:2:7",
         "house:119:2:8",
@@ -829,11 +831,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "73 proposed source-mapped inputs, not accepted eligibility. Of216 unresolved identities,215 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "74 proposed source-mapped inputs, not accepted eligibility. Of215 unresolved identities,214 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "56 candidate episodes cover73 supplied actions, including9 multi-action episodes (six two-action episodes and the established four-action H.R.3838, four-action H.R.4016 and six-action H.R.4553 episodes). H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. Exact actions are independently screened; wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "57 candidate episodes cover74 supplied actions, including9 multi-action episodes (six two-action episodes and the established four-action H.R.3838, four-action H.R.4016 and six-action H.R.4553 episodes). H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.6938 DivisionA retention is interpreted; the distinct DivisionsB/C retention and whole passage remain explicit unfinished episode work.",
   "approval_receipt": null,
-  "universe_subject_sha256": "3f4a07b2d3e51e6d814a279396800b1c3cb7578c75be5b705caa1327ad04cd90",
+  "universe_subject_sha256": "8a8fb9272af145384a5f71f83d9cf87a609667598e62f05d95c30567d8114993",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -26862,15 +26864,16 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_6938",
       "question": "On Retaining Division A",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact DivisionA retention, independently bound to the Clerk question, H.Res.977 and January8floor proceedings. Complete operative IH/EH DivisionA agrees. Direct treatment, victim-service and medical-payment mechanisms establish proposed Health membership, while funding restrictions, rescissions and final report overrides remain in the shared meaning. This does not disposition the distinct DivisionsB/C retention or final passage.",
       "source": {
         "source_id": "clerk:119:2:5",
         "url": "https://clerk.house.gov/evs/2026/roll005.xml",
         "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6938:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6938",
       "member_action": "yea",
@@ -26879,26 +26882,162 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Exact DivisionA retention, independently bound to the Clerk question, H.Res.977 and January8floor proceedings. Complete operative IH/EH DivisionA agrees. Direct treatment, victim-service and medical-payment mechanisms establish proposed Health membership, while funding restrictions, rescissions and final report overrides remain in the shared meaning. This does not disposition the distinct DivisionsB/C retention or final passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:5",
           "url": "https://clerk.house.gov/evs/2026/roll005.xml",
           "raw_sha256": "241456f0eed2349bcbaa1b47eb3fbc14cbf597914b988e9df50520d8993eb5e3",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "ffd6d14101c8758243cb68db897b3b189ed84e694b5dc10d084a3ee6de97e845",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6938ih-division-a",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm",
+          "raw_sha256": "608ea1b09e392979f172c69916afacf612ffe03b8b18038ad35a53b99d45c645",
+          "governed_bytes_sha256": "14801fb49e3269a67e9dd5c9c87748ea6a0a39fc8d0c26a3f49c45bc6c676521"
+        },
+        {
+          "source_id": "govinfo:hr6938eh-division-a",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm",
+          "raw_sha256": "12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0",
+          "governed_bytes_sha256": "1085a34b729ea81e3e7ca81f4dfc8ccdcf5aa5c42abc86775e4e9ea3301ef256"
+        },
+        {
+          "source_id": "govinfo:hres977eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm",
+          "raw_sha256": "7780f346b5f0b9c2020d2a2cc423cc35749209403b775554a0d974c4a301e1c1",
+          "governed_bytes_sha256": "5c61e60033d1ed0380c3be9dc936a0f2486e4db72cd5c04830167b2886010a06"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-retention",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "9d08027010aa921ae73896edbba045d4e725b2739b064886141fe82d1c716b6a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-6938-explanation-a",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf",
+          "raw_sha256": "39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574",
+          "governed_bytes_sha256": "580dfed83e4890592d1045fc6aa5746c5af0ea4155eaefa2f55f63ae99b5bb0a"
+        },
+        {
+          "source_id": "govinfo:34usc12291-2024-victim-services-and-conditions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm",
+          "raw_sha256": "02970b24f1558a1ef246065f288a98fc9cf09c5c86046119dadb6828159ce1a9",
+          "governed_bytes_sha256": "77b2ac25b8fe0d85f258487e4c772ac28c49d7633a10a86c3ac8b2cb39fbb2b2"
+        },
+        {
+          "source_id": "govinfo:34usc20101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm",
+          "raw_sha256": "f6cdc5e0384ec1e635dbb63d1d2709b0928f28d399d0e74f88f59147c3acec5b",
+          "governed_bytes_sha256": "f0f34cd2a705b4ef1767fb3527dac51c28f2e3881131c417218550c566d1c6d2"
+        },
+        {
+          "source_id": "govinfo:22usc2680b-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm",
+          "raw_sha256": "261328ca9f409814d2ec414fdff9fcf6f9afa3e5b377d3fe2b8d63fe3f29f19e",
+          "governed_bytes_sha256": "3fa35ec6c14a225301bc64402df765f778bd3f44cc32a9934ff1b8b6b045501e"
+        },
+        {
+          "source_id": "govinfo:pl105-119-lsc501-506",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm",
+          "raw_sha256": "0cf392e4b65df268e0920f02ca0b8149a4cdecb255029bb99df7d6bf49d70abe",
+          "governed_bytes_sha256": "e40dc081eadab392b03e0f0f8aa9542259c29fa27c27945d919cdd11101bd35e"
+        },
+        {
+          "source_id": "govinfo:pl104-134-lsc501-508",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm",
+          "raw_sha256": "0e63bbd01a66d8fc36476623ecc878a78664c4483dda487be0a964c668b16ec7",
+          "governed_bytes_sha256": "8193a3e5e4db3f9d976b2b2bbae358439a70c1e85f921f0cbc0c3234020855d8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-deinstitutionalization",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "6d994141de9712363f2aa9b5c8a3fa17657655815033c69b63e84a14da0f5d82"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-bop-naloxone",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "762b2fbf5b9ed8fcaf8b172940304ce9b617cc60d82be26cd5773e8b68748c96"
+        },
+        {
+          "source_id": "govinfo:hrpt119-272-bop-mental-health",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm",
+          "raw_sha256": "78c5f1238f1ece6a0671958ddd2a3bd0b2eedd32c1e0646e5369c778da580319",
+          "governed_bytes_sha256": "2ef4c5c3ab1a803dff9f03a5f0588f97e2c38cfdc031c8197b99bf7de4eea439"
+        },
+        {
+          "source_id": "govinfo:srpt119-44-insomnia",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+          "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+          "governed_bytes_sha256": "b76f8684f4710903aa04130ba0aa10ef154c68d133e9dea2bf22420ad6c34b08"
+        },
+        {
+          "source_id": "govinfo:srpt119-44-continuity-of-care",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm",
+          "raw_sha256": "64039cc0e6f52eb377046ac0bc5315785c31ed0d1a0cbf322cce88c9b385732f",
+          "governed_bytes_sha256": "03dca1b41dbcb6e30beca62d6a8eebd35c5573a0472215e5086fcaaffcc8046c"
+        },
+        {
+          "source_id": "ustr:singapore-fta-16-7-2",
+          "url": "https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf",
+          "raw_sha256": "c029b97176adfe71b49ae1ec82931275597658588db2a374aecf2eeb46084a6c",
+          "governed_bytes_sha256": "cbc5ac545a31cfca2a0912bd5bfc7425833a78918de684a4e92927e9885b3469"
+        },
+        {
+          "source_id": "ustr:australia-fta-17-9-4",
+          "url": "https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf",
+          "raw_sha256": "31fc7f5fa8f06c290e48abf24e3e517e4e826807ad60edcfada097b5be9bf955",
+          "governed_bytes_sha256": "787849d6470a8db8e967548feebe4b49aacdce517fe56a00710a6dd99a2bdae1"
+        },
+        {
+          "source_id": "ustr:morocco-fta-15-9-4",
+          "url": "https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf",
+          "raw_sha256": "8e6144ed6cdda11dd4c3e7ce7a2b06b6f8cb4f1da287612a6fbe88ed0771a100",
+          "governed_bytes_sha256": "477de7f8708719bbaa1e2fba8d890e8077db5a6900df79b755ace6212d1c926d"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:5",
+        "source_ids": [
+          "clerk:119:2:5",
+          "govinfo:hr6938ih-division-a",
+          "govinfo:hr6938eh-division-a",
+          "govinfo:hres977eh",
+          "congressional-record:2026-01-08-6938-retention",
+          "congressional-record:2026-01-08-6938-explanation-a",
+          "govinfo:34usc12291-2024-victim-services-and-conditions",
+          "govinfo:34usc20101-2024-operative",
+          "govinfo:22usc2680b-2024-operative",
+          "govinfo:pl105-119-lsc501-506",
+          "govinfo:pl104-134-lsc501-508",
+          "govinfo:hrpt119-272-deinstitutionalization",
+          "govinfo:hrpt119-272-bop-naloxone",
+          "govinfo:hrpt119-272-bop-mental-health",
+          "govinfo:srpt119-44-insomnia",
+          "govinfo:srpt119-44-continuity-of-care",
+          "ustr:singapore-fta-16-7-2",
+          "ustr:australia-fta-17-9-4",
+          "ustr:morocco-fta-15-9-4"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:5",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next unprocessed2026 source group. H.R.6938 EH research182 is509133 normalized characters/raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0 and remains substantively unread. H.Res.977 is read/bound. January8HouseRecord research183 is captured; find exact DivisionA-retention question and introduced text/authorized explanatory statement, then read complete division funding/riders and material incorporated authorities before membership. Preserve separateB/Cretention6 and finalpassage7."
-      }
+        "shared_review_record_sha256": "d4da9fdefd6c3053eca74d995c692a8a411551d357ac7bef8f39e12e0d81d1b5"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:6",
@@ -26942,7 +27081,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Reuse6938source group at5 but bind only the distinct DivisionsB/C-retention question. Complete both divisions and relevant general provisions before membership. CapturedEH/January8Record is not completed reading; do not inherit allDivisionAeffects."
+        "next_action": "Continue6938EH at character267437(startDivisionC); complete contiguous0:267437 throughDivisionB now read. Roll5DivisionA independently interpreted; B/C membership and wholepassage still unfinished. DivisionB includes DOE1.170bnOtherDefenseActivities,8.4bnScience,200mAppalachianCommission,32mDeltaAuthority,18mDenali(90percentdistressed/Tribes,50percentother construction caps; separateothergrantsnonFederalsharepermission),42mNorthernBorder andotherregionalauthorities, DOEindirectcost2024protection313 andhealth-riskwaiver301(g). Reuse4553DOEhealth-programsourceanalysis afterexact-versioncomparison. RemainingB incorporation: direct203–210 waterauthorities, material regional/DOEHealthprogramallocations and finalstatement from76; do not inferhealthfromwater/environmentalone. DivisionCruns267437:end. Entire operativeIHmatchesEH, proven by exact prefix comparison through508386characters; remaining difference is attestation. January8BookIfloorPDF69/73/74 confirms both divisions retained and orderedengrossment; passagecontinues75. Final statement is337-pageBookII(URLhouse-bk3),research191/raw39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574: DivisionA narrative1–13 read and governed; individual earmarktable14–75 not exhaustively reviewed or totalled; DivisionBstarts76. House119272/Senate11944capturedresearch192; relevantAcare/reportoverrides bound, not claimed fullreportreview. Finish B/C operative provisions, material incorporations and statement before membership; roll6coversB/Ctogether, roll7wholebill. Do not inherit allAeffects onto6. Use explicitdivision_retention stage and retained_portion for6, final_passagefor7. Source6938body509133chars/raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0."
       }
     },
     {
@@ -26987,7 +27126,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Whole6938passage follows separate division-retention5/6. Reconcile which portions were retained and compare exact introduced/floor/EH text; finish the complete package and material incorporation before authoring any whole-package Health meaning. Reuse but do not conflate earlier division choices."
+        "next_action": "Continue6938EH at character267437(startDivisionC); complete contiguous0:267437 throughDivisionB now read. Roll5DivisionA independently interpreted; B/C membership and wholepassage still unfinished. DivisionB includes DOE1.170bnOtherDefenseActivities,8.4bnScience,200mAppalachianCommission,32mDeltaAuthority,18mDenali(90percentdistressed/Tribes,50percentother construction caps; separateothergrantsnonFederalsharepermission),42mNorthernBorder andotherregionalauthorities, DOEindirectcost2024protection313 andhealth-riskwaiver301(g). Reuse4553DOEhealth-programsourceanalysis afterexact-versioncomparison. RemainingB incorporation: direct203–210 waterauthorities, material regional/DOEHealthprogramallocations and finalstatement from76; do not inferhealthfromwater/environmentalone. DivisionCruns267437:end. Entire operativeIHmatchesEH, proven by exact prefix comparison through508386characters; remaining difference is attestation. January8BookIfloorPDF69/73/74 confirms both divisions retained and orderedengrossment; passagecontinues75. Final statement is337-pageBookII(URLhouse-bk3),research191/raw39190640d3d93f98e86787765d1a9dca3e69e9f75ada3956ff17efc626ad0574: DivisionA narrative1–13 read and governed; individual earmarktable14–75 not exhaustively reviewed or totalled; DivisionBstarts76. House119272/Senate11944capturedresearch192; relevantAcare/reportoverrides bound, not claimed fullreportreview. Finish B/C operative provisions, material incorporations and statement before membership; roll6coversB/Ctogether, roll7wholebill. Do not inherit allAeffects onto6. Use explicitdivision_retention stage and retained_portion for6, final_passagefor7. Source6938body509133chars/raw12abaf5abf6e6214d0b090690f9348e28f6e2741d0bbcc55c08b4421cc4438e0."
       }
     },
     {
@@ -41647,6 +41786,7 @@
     "house:119:2:310",
     "house:119:2:37",
     "house:119:2:45",
+    "house:119:2:5",
     "house:119:2:53"
   ],
   "unresolved_action_ids": [
@@ -41662,7 +41802,6 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:5",
     "house:119:2:6",
     "house:119:2:7",
     "house:119:2:8",
@@ -41869,7 +42008,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "216 unresolved identities comprise215 unreviewed screenings and one examined source conflict at2025 roll237. January2026 rolls3/4/10/11/12 are complete. Continue5/6/7/8/9 and13 onward from the prepared exact-version sources, together with the earlier2025 queue. Captures are not completed review.",
+    "basis": "215 unresolved identities comprise214 unreviewed screenings and one examined source conflict at2025 roll237. January2026 roll5 independently retains6938DivisionA; rolls6/7 still require complete B/C and whole-package research. Continue the committed2025/2026 queue. Captures are not completed review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -41921,6 +42060,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "a7a34df02f23e03cc5272b6dc50bcd8ff2462961c5897b001dfe45db348e3cb5",
-  "membership_review_sha256": "0627beed323d9d2c4f7b512ce00fd0cd5d5a69ff0205fcccb0ea6629f05b3568"
+  "proposal_sha256": "e20403276c420b3d999487c146bf4a211daa95b50bc6acff338ab01cd2383d41",
+  "membership_review_sha256": "f102e3d7a3cd34e4bab71a782019c76ad6d0aa0b0c01af92d30716ae1ed07f3a"
 }

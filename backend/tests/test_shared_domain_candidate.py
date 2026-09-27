@@ -109,6 +109,57 @@ class SharedDomainCandidateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "does not contain member"):
             prepare(self.author, self.capture, ["synthetic-absent"])
 
+    def test_division_retention_keeps_exact_scope_and_member_choices(self):
+        core, mapping, projections, _, result = self.products
+        aid = "house:119:2:5"
+        action = next(a for a in core["actions"] if a["action_id"] == aid)
+        self.assertEqual(action["legislative_stage"], "division_retention")
+        self.assertEqual(action["exact_question"], "On Retaining Division A")
+        boundary = action["package_component_boundary"]
+        self.assertEqual(boundary["boundary_type"], "specified_divisions")
+        self.assertFalse(boundary["parent_package_meaning_projected"])
+        self.assertEqual(boundary["governed_component_relationships"],
+                         ["Retaining Division A; distinct from whole-bill passage"])
+        choices = [next(a for a in p["actions"] if a["action_id"] == aid) for p in projections]
+        self.assertEqual([a["official_status"] for a in choices], ["Yea", "Nay"])
+        self.assertEqual(choices[0]["action_core_sha256"], choices[1]["action_core_sha256"])
+        source_ids = {s["source_id"] for s in action["operative_meaning_source_identities"]}
+        self.assertTrue({"govinfo:hr6938ih-division-a", "govinfo:hr6938eh-division-a",
+                         "govinfo:hres977eh", "congressional-record:2026-01-08-6938-retention"} <= source_ids)
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        for version in ["ih", "eh"]:
+            text = sources[f"govinfo:hr6938{version}-division-a"]["text"]
+            self.assertIn("$403,000,000", text)
+            self.assertIn("Sec. 544.", text)
+            self.assertNotIn("DIVISION B--ENERGY AND WATER DEVELOPMENT AND RELATED AGENCIES APPROPRIATIONS ACT, 2026 TITLE I CORPS", text)
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid])
+        self.assertFalse({"house:119:2:6", "house:119:2:7"} & {a["action_id"] for a in core["actions"]})
+
+    def test_division_retention_rejects_wrong_portion_or_passage_stage(self):
+        for portion in [None, "Divisions B and C", "Division A and B", ["A"]]:
+            author = copy.deepcopy(self.author)
+            action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:5")
+            action["retained_portion"] = portion
+            with self.subTest(portion=portion), self.assertRaisesRegex(ValueError, "candidate stage differs"):
+                prepare(author, self.capture, ["F000477"])
+        author = copy.deepcopy(self.author)
+        action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:5")
+        action["stage"] = "final_passage"
+        with self.assertRaisesRegex(ValueError, "retained portion requires"):
+            prepare(author, self.capture, ["F000477"])
+        action.pop("retained_portion")
+        with self.assertRaisesRegex(ValueError, "candidate stage differs"):
+            prepare(author, self.capture, ["F000477"])
+
+    def test_retention_cannot_drop_final_report_override_source(self):
+        author = copy.deepcopy(self.author)
+        action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:5")
+        action["additional_source_ids"].remove("congressional-record:2026-01-08-6938-explanation-a")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477"])
+
     def test_raw_ledger_update_does_not_extend_interpretation(self):
         capture = copy.deepcopy(self.capture)
         source = {"source_id": "synthetic:raw-later", "text": "new uninterpreted ledger observation"}
@@ -199,7 +250,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 55)
+        self.assertEqual(len(f["findings"]), 56)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -264,8 +315,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":216,
-            "interpreted_substantive_directional":73, "expressive_nonbinding_context":11, "exact_action_ineligible":182})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":215,
+            "interpreted_substantive_directional":74, "expressive_nonbinding_context":11, "exact_action_ineligible":182})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +334,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 215)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 214)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

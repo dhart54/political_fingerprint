@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "0ccb2a1198ac743899e020feae28341e703529726142289c5e8719bd3075ee2a",
+    "scripts/prepare_shared_domain_candidate.py": "dccc8535c8232f2deba1c2b806db8fa68f901a249183e31a31e305e86676614e",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "c665b59cb9554fe6972d3bedf3bcec54d2bc97c6ce7cba3c9c1bb5dfdcb5ecfa",
-  "source_capture_sha256": "6728a61ec1265485874126ecbea18f41c1f6b16c51fe9da26454b89975ba5bc7",
-  "core_sha256": "b39335c1aedb634464556d92042b8d4b55298e6837ea2264436fd2ae43cdf7b3",
-  "compiled_sha256": "7bdb4f59ec0827206b084b8d506ae7ba5728b17905318d6fa9f16358fd283bee",
-  "readable_sha256": "0995fba734406a5f25916f15c4d1d574cd3505dd5a0a90ea8a74def9af2a9075",
+  "input_sha256": "49b1105c907a1ec55ed3f9baa0929d00c0e895ac44c9a7057d28e6e59ff10934",
+  "source_capture_sha256": "6b1641a206bc9398d46e5b2651205686f9600f8a362c8cd9f59cb96015118781",
+  "core_sha256": "2fe9274e1b1ed88e4e2023adda7366f83e2d3ba01dabf70c60f8fea10fd79198",
+  "compiled_sha256": "6385046d149921d41dc4d679dffd156fac81f022851772800b0d30a4c8ec88db",
+  "readable_sha256": "98f15c44ede998057d3a03677be1daf36af1c377b9a35b0b67e60d4beee9e261",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1473,6 +1473,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing H.R. 1834 to extend the enhanced premium-credit formula and income-ceiling exception through 2028, subject to the remaining eligibility and repayment rules",
           "source_id": "clerk:119:2:11"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:5",
+      "shared_sha256": "c804e625f15a1313aa4b1ffe8053b70b0ec1a0b62b9b33480b42d6f1c9279706",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions",
+          "source_id": "clerk:119:2:5"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions",
+          "source_id": "clerk:119:2:5"
         }
       ]
     }
