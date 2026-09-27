@@ -96,6 +96,7 @@
     "house:119:2:5",
     "house:119:2:50",
     "house:119:2:53",
+    "house:119:2:56",
     "house:119:2:6",
     "house:119:2:7",
     "house:119:2:8"
@@ -112,11 +113,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 201,
-      "exact_action_ineligible": 198,
-      "interpreted_substantive_directional": 82,
+      "procedural_context": 203,
+      "exact_action_ineligible": 199,
+      "interpreted_substantive_directional": 83,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 184
+      "source_unresolved": 180
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -125,14 +126,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 82,
-    "directional_substantive_actions": 82,
+    "substantive_eligible_actions": 83,
+    "directional_substantive_actions": 83,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 201,
+    "procedural_context_actions": 203,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 198,
-    "unresolved_boundary_cases": 184,
-    "independent_episode_count": 63,
+    "exact_action_ineligible_actions": 199,
+    "unresolved_boundary_cases": 180,
+    "independent_episode_count": 64,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -145,12 +146,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 82,
-      "substantive_actions": 82,
+      "ready_substantive_actions": 83,
+      "substantive_actions": 83,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "182 discovery identities still need substantive membership review;2025roll237/2026roll44remain examined source/effect dependencies. Existing45needs broader-package completeness."
+      "178 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -302,8 +303,10 @@
         "house:119:2:59",
         "house:119:2:60",
         "house:119:2:61",
+        "house:119:2:62",
         "house:119:2:63",
         "house:119:2:66",
+        "house:119:2:68",
         "house:119:2:73",
         "house:119:2:75",
         "house:119:2:77",
@@ -532,6 +535,7 @@
         "house:119:2:58",
         "house:119:2:64",
         "house:119:2:67",
+        "house:119:2:69",
         "house:119:2:70",
         "house:119:2:235",
         "house:119:2:284",
@@ -631,6 +635,7 @@
         "house:119:2:49",
         "house:119:2:50",
         "house:119:2:53",
+        "house:119:2:56",
         "house:119:2:128",
         "house:119:2:139",
         "house:119:2:198",
@@ -671,12 +676,8 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:56",
         "house:119:2:57",
-        "house:119:2:62",
         "house:119:2:65",
-        "house:119:2:68",
-        "house:119:2:69",
         "house:119:2:71",
         "house:119:2:72",
         "house:119:2:74",
@@ -840,11 +841,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "82 proposed source-mapped inputs,not accepted eligibility or exhaustivepackageproof.184 unresolved comprise182 unfinished screenings and two examined dependencies."
+    "count_basis": "83 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.180 unresolved comprise178 unfinished screenings and two examined dependencies."
   },
-  "episode_completeness": "63 candidate episodes cover82 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation. H.R.5763 adds one independently bound care-facility-financing episode. H.R.6359 adds one support-information episode; rejected7148driving amendment43 is separately proposed excluded. Two independent February2veterans episodes bring the total to63episodes/82inputs, with10multi-action episodes unchanged;980and3123are not merged because their pension offsets differ.",
+  "episode_completeness": "64 candidate episodes cover 83 supplied actions, including 10 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "e4358f6ad1a40f40989888e6fa1827c952970a19b1d65472cbae39abdcbe0dc0",
+  "universe_subject_sha256": "607494e60e4256bbe31c2686d41b4389c3a1cd2df1c0812cdd5cd3e06e5f460a",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -31417,15 +31418,16 @@
       "date": "2026-02-04",
       "measure": "bill_119_hjres_142",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed exact-action Health & Social Policy inclusion rests on targeted dependent-care financing and refundable child/EITC payments with public-assistance income protections, not a tax-title or affordability keyword. Fully read Act26-217 operative text, material federal credit/dependency definitions and later federal amendments; trace earlier child-credit repeal subtitles and separate emergency law. Preserve whole-law disapproval, printed dates/gap, nonrefundable care versus refundable credits, broad tax context, CFO contrary evidence and attributed later OAG legal-effect boundary. Both choices are shared before mechanical member projection.",
       "source": {
         "source_id": "clerk:119:2:56",
         "url": "https://clerk.house.gov/evs/2026/roll056.xml",
         "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hjres142:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hjres_142",
       "member_action": "nay",
@@ -31434,26 +31436,155 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Proposed exact-action Health & Social Policy inclusion rests on targeted dependent-care financing and refundable child/EITC payments with public-assistance income protections, not a tax-title or affordability keyword. Fully read Act26-217 operative text, material federal credit/dependency definitions and later federal amendments; trace earlier child-credit repeal subtitles and separate emergency law. Preserve whole-law disapproval, printed dates/gap, nonrefundable care versus refundable credits, broad tax context, CFO contrary evidence and attributed later OAG legal-effect boundary. Both choices are shared before mechanical member projection.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:56",
           "url": "https://clerk.house.gov/evs/2026/roll056.xml",
           "raw_sha256": "880fe8002612736a48412a7f79586b999e58a3054196c2726b631417e7697054",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "189a891b67f118958183d902bfb5b18bde07fbc821f320603d80ff65962ed6cd",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hjres142eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres142eh/html/BILLS-119hjres142eh.htm",
+          "raw_sha256": "01e7c3681864a785649a58b4e6fd5ae3c08af51927ad185abce789324b48c15f",
+          "governed_bytes_sha256": "d628a8546ea6359f6f29132f6d2b15a33a51735aed5ee0ccc5e83d2769fec7f1"
+        },
+        {
+          "source_id": "dc-council:act26-217-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml",
+          "raw_sha256": "4adeaceeff68f3ab27eff2edb642bae71f1845bf7525097194f52b8d355ff502",
+          "governed_bytes_sha256": "763661148cd72ecab0ae05344342503c97666f23d0771594bd7db787f8846585"
+        },
+        {
+          "source_id": "dc-council:1-206.02c-disapproval",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/1/sections/1-206.02.xml",
+          "raw_sha256": "a82b3bc7d09a91d4312fc02b62198479136ad2ddc4b0af5686135b72ed16aec8",
+          "governed_bytes_sha256": "e68c3e6f7dc7634e222d11f41c47f246de89360958eb87ccdae282a764a4c318"
+        },
+        {
+          "source_id": "dc-council:47-1806.04-permanent-care-earned",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/99/47-1806.04(Perm).xml",
+          "raw_sha256": "5d384e1360efe1a0b7143970f1b2b570d98c308b80d05819becb171de84a24fa",
+          "governed_bytes_sha256": "f2f01f14ddc263d2a63d2b4b43090429321379396e70b62353dfff49c97bde2c"
+        },
+        {
+          "source_id": "dc-council:dc26-55-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-55.xml",
+          "raw_sha256": "1bfe37cf8bef3c77f5ec5a0cdbe3e88bd718c38495ebec198b2af6a2f6a7c791",
+          "governed_bytes_sha256": "870544e86999b70fb5e8e21cc1c205f803d0e981528d9ff691eed809f5a69b52"
+        },
+        {
+          "source_id": "dc-council:dc26-146-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-146.xml",
+          "raw_sha256": "31c55f8543f7816ca99a7db6dc076128fdec08a53ca94e62ae175d23fe033a97",
+          "governed_bytes_sha256": "e4ad0fb543cd6f4af16862ecb9e26f20e1f592cea3b7c6207571ed7c2a15e59c"
+        },
+        {
+          "source_id": "dc-council:dc26-210-child-credit-repeal",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-210.xml",
+          "raw_sha256": "401aa3c768836bc6dd7c4e4cc2cd998bd96921cc48defb5487b7ad4a9838b6b3",
+          "governed_bytes_sha256": "d3d4b6eb38a8858a510b230bb7229414d821a9b406ddd07e8b58658037fc6583"
+        },
+        {
+          "source_id": "govinfo:26usc21-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartA-sec21.htm",
+          "raw_sha256": "f91d2d9f9063fea7c391748fe23647f2bf29e37fe4c74de00c129176ae5f7394",
+          "governed_bytes_sha256": "859b4548c3a9e358037d8e43401b71670e9ffb2f807ff16ad687dc0d21a88ab9"
+        },
+        {
+          "source_id": "govinfo:26usc151-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec151.htm",
+          "raw_sha256": "67f5c514483a2c3384081e407e474be2b7ba510c5f10d90b224bbc2f274f87a1",
+          "governed_bytes_sha256": "3130ce62ffbf9ff04ba1d7e848d1655dda2aa740b4908b5ffda26e26c1f0550a"
+        },
+        {
+          "source_id": "govinfo:26usc152-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec152.htm",
+          "raw_sha256": "331bb028ae1c71f709ec0350b62b28fedac0172d48733f55a7eccd171155c35b",
+          "governed_bytes_sha256": "2489f70488ee20878efd6f0b8193c8527a3f98cfad6440545f41e2fdbc1be410"
+        },
+        {
+          "source_id": "govinfo:26usc213-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partVII-sec213.htm",
+          "raw_sha256": "f39c934bbab7f0801cf0b98b028389fe664b37677bafe55355970fc61cb4ad38",
+          "governed_bytes_sha256": "526750f4510162ce7195b7ce7edef0fadf7b275982326f3ec629a56352300b3d"
+        },
+        {
+          "source_id": "govinfo:26usc63-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partI-sec63.htm",
+          "raw_sha256": "1f095b810947b437cbac8e1e2b2321a8257697a377645a837f036d69eb1e470d",
+          "governed_bytes_sha256": "99b6c1b5f2a242431641e9c862e7af03bda2e9d62c1e2d28450f3cf64d9d4604"
+        },
+        {
+          "source_id": "govinfo:26usc32a-m-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec32.htm",
+          "raw_sha256": "42e930c67ef3cfa773aeef74f283012d9c1f81551e069741ca58408541343960",
+          "governed_bytes_sha256": "1e05400e8d4994236cc38c33f8e0c3f511e0008650102268e873f10769c2a780"
+        },
+        {
+          "source_id": "govinfo:pl119-21-standard-senior-care",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "616181aa9b25b6b35ef67f2f53fddddea209855a0d2e99ec52e3d188f31889f4"
+        },
+        {
+          "source_id": "dc-council:act26-214-core",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-214.xml",
+          "raw_sha256": "74fe1741149f9131f68080d6294f5a28b35431b597b623d7c4490d7ac2f7de42",
+          "governed_bytes_sha256": "db67f3dcc10e7e76c75f68ee80e69c27366e268c0291cbf100184abee29ca6f1"
+        },
+        {
+          "source_id": "congressional-record:2026-02-04-dc-tax-contrast",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-04/pdf/CREC-2026-02-04-house.pdf",
+          "raw_sha256": "79a49bf7644ea8a5caab2dd40417c5cdc81612208084626210a2d10aa4c42150",
+          "governed_bytes_sha256": "c5e8c2da1339217f42a8832ba5dc1a59164667d68b453c5db04e29939aa5c636"
+        },
+        {
+          "source_id": "dc-oag:2026-02-24-tax-opinion-boundary",
+          "url": "https://oag.dc.gov/sites/default/files/2026-02/AG-Opinion-Decoupling-Retroactivity-and-Validity-.pdf",
+          "raw_sha256": "79bc51e95d4cc6269867acac27d6550c7c103abadcb7b2de43c379f283d02ceb",
+          "governed_bytes_sha256": "dc12b90d1e58b7407514bae5f9a63bcb76e4951bd07e33342915646807976a83"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:56",
+        "source_ids": [
+          "clerk:119:2:56",
+          "govinfo:hjres142eh",
+          "dc-council:act26-217-operative",
+          "dc-council:1-206.02c-disapproval",
+          "dc-council:47-1806.04-permanent-care-earned",
+          "dc-council:dc26-55-child-credit-repeal",
+          "dc-council:dc26-146-child-credit-repeal",
+          "dc-council:dc26-210-child-credit-repeal",
+          "govinfo:26usc21-2024-operative",
+          "govinfo:26usc151-2024-operative",
+          "govinfo:26usc152-2024-operative",
+          "govinfo:26usc213-2024-operative",
+          "govinfo:26usc63-2024-operative",
+          "govinfo:26usc32a-m-2024",
+          "govinfo:pl119-21-standard-senior-care",
+          "dc-council:act26-214-core",
+          "congressional-record:2026-02-04-dc-tax-contrast",
+          "dc-oag:2026-02-24-tax-opinion-boundary"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:56",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue exact H.J.Res.142disapproval target review. EHresearch239raw01e7c3681864a785649a58b4e6fd5ae3c08af51927ad185abce789324b48c15f and Clerk56captured; shortEHfullyread. OfficialDCLawLibrary identifies Act26-217as laterLaw26-89 and links original14-pageenrolledPDF https://lims.dccouncil.gov/downloads/LIMS/60659/Signed_Act/B26-0458-Signed_Act.pdf?Id=230015 . Webread portions of officiallibrary confirm refundable child credit with public-assistance-income exclusion,100%DCearnedcredit,care-credit/otherdeductionchanges,225-daytemporaryscope and January1,2025applicability. Fulltarget/incorporatedeffects notyetcomplete. LibraryURL403fornativefetch but webtoolandoriginalPDFpubliclyreadable; no exhausted access claim. Do not use broadOBBBAhealth provisions or assumecongressionaldisapprovalcurrenteffect: laterDCAGopinion disputes deadline/retroactivity. Bind exactproposalatHousevotedate and preserve later-outcome limits. Feb4Recordresearch232contains debate/CFOletter; notyetfullyread. Continueprepared57independently. OfficialCouncilpublicXML recovered at commit a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c, https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml . Research245dc26-89.html raw4adeaceeff68f3ab27eff2edb642bae71f1845bf7525097194f52b8d355ff502,37826normalizedcharacters. GenericGPO-onlyvalidatorlabelsfalse; manuallyverifyXMLidentity beforegoverning. FullXMLbody remainsunread,not a newdisposition. Research244laterAGopinion12pages/40832characters/raw79bc51e95d4cc6269867acac27d6550c7c103abadcb7b2de43c379f283d02ceb:onlypage1andconclusion12read;notwholelegalanalysis. DirectnativeLIMSoriginalPDFalso403,webPDFreadavailable. Keep lateropinionasoutcomelimitation,notHousevotemeaning."
-      }
+        "shared_review_record_sha256": "7419d8381e91c6e3d89c9e723348ec438ec2bb2551d9177a3477a7e1fd725aad"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:57",
@@ -31805,13 +31936,14 @@
       "date": "2026-02-11",
       "measure": "bill_119_hres_1057",
       "question": "On Agreeing to the Resolution, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "Adoption of H.Res.1057 as amended sets debate, waivers and commitment/recommittal paths and actually deems four substitutes adopted, rather than passing their bills. The S.1383 RCP119-19/report119-493 chain includes the floor section6 correction to immediate-effective wording; the complete resulting election package and material statutory boundaries were reviewed independently for69. Reuse the complete2189 weapons/tax RCP119-18 and261/3617 reported substitutes with their incorporated permitting/energy effects. The rule also waives the same-day two-thirds requirement for specified Rules reports through February13 concerning continuing2026 appropriations. It contains no failed1042 emergency-termination calendar provision and does not itself appropriate DHS funds. Deemed adoption is preserved as a real procedural effect; original veterans title, disability exceptions and broader floor healthcare arguments do not create a directional Health interpretation.",
       "source": {
         "source_id": "clerk:119:2:62",
         "url": "https://clerk.house.gov/evs/2026/roll062.xml",
         "raw_sha256": "65d196ea58389785533fe32ca5d05f364029c696adbf43899d790eaf61caa9bf",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3bed734a28c9542569338cea8c41ba01a4cf9d75e9125cc7c310a50785f9bc6c",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -31822,26 +31954,211 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Adoption of H.Res.1057 as amended sets debate, waivers and commitment/recommittal paths and actually deems four substitutes adopted, rather than passing their bills. The S.1383 RCP119-19/report119-493 chain includes the floor section6 correction to immediate-effective wording; the complete resulting election package and material statutory boundaries were reviewed independently for69. Reuse the complete2189 weapons/tax RCP119-18 and261/3617 reported substitutes with their incorporated permitting/energy effects. The rule also waives the same-day two-thirds requirement for specified Rules reports through February13 concerning continuing2026 appropriations. It contains no failed1042 emergency-termination calendar provision and does not itself appropriate DHS funds. Deemed adoption is preserved as a real procedural effect; original veterans title, disability exceptions and broader floor healthcare arguments do not create a directional Health interpretation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:62",
           "url": "https://clerk.house.gov/evs/2026/roll062.xml",
           "raw_sha256": "65d196ea58389785533fe32ca5d05f364029c696adbf43899d790eaf61caa9bf",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3bed734a28c9542569338cea8c41ba01a4cf9d75e9125cc7c310a50785f9bc6c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s1383eah",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+          "raw_sha256": "cb9baa66719200cf225009b56ce566c37f9e788535e35fcbeb3c2c18ef24eb1f",
+          "governed_bytes_sha256": "24b2790d0fec3c22eb31d6281d7ff90465654ea8d511cfa9c8d153be6f861853"
+        },
+        {
+          "source_id": "govinfo:hrpt119-493",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt493/html/CRPT-119hrpt493.htm",
+          "raw_sha256": "8b72065806d5afd7d5177d5eb2ad4a7a640e7c2f0d16c45f3da0fc49e39a38d5",
+          "governed_bytes_sha256": "eb35b8f9232978ae501a0845968893da78f04350756899246adccebc4d301c9a"
+        },
+        {
+          "source_id": "govinfo:hres1057eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1057eh/html/BILLS-119hres1057eh.htm",
+          "raw_sha256": "49e0cb06309a738219fa40734a2f98fd9ffb0591aa42b65f50bf9df47004f642",
+          "governed_bytes_sha256": "65102dca6419fb40c83faa1079ecaf820452a419dcb047643be8acbeaf8edc53"
+        },
+        {
+          "source_id": "govinfo:52usc20502-20511-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm",
+          "raw_sha256": "fe3e64aff50e191b7ff4e3c7e853083025c52c973cfdb012761f7aa94d80dc88",
+          "governed_bytes_sha256": "c4cf60927574442850f782fa77e546e1bf30445cec99f3afd01929aec0b42bdd"
+        },
+        {
+          "source_id": "govinfo:52usc20102-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap201-sec20102.htm",
+          "raw_sha256": "ec3d44e542e4ed5d215fa78d05dda9d794e733eb49829c46f33978650f1d1461",
+          "governed_bytes_sha256": "843153823c89d5c82de6874fcf6e599f7052929d69853a443a3e43dfeada9e42"
+        },
+        {
+          "source_id": "govinfo:52usc20310-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap203-sec20310.htm",
+          "raw_sha256": "6ced10b1d10ae92497362fcb194eb49076d615948f4371ed06906432fa25705e",
+          "governed_bytes_sha256": "8f606accff3e622f794adfb6f5dfda3081c534fcf279f5851cf4c034adab1fe2"
+        },
+        {
+          "source_id": "govinfo:52usc21082-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21082.htm",
+          "raw_sha256": "593c0bced51849f4f2e420882ea403bd2c9a90bcb7aa7c2e2c65c9e25dedb3a3",
+          "governed_bytes_sha256": "0b975da9257e7518e05f7e0f029ccfd2c3cdda46d281969a672ba91ad7e67960"
+        },
+        {
+          "source_id": "govinfo:52usc21083-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21083.htm",
+          "raw_sha256": "c76d859c424740800717cf8dec230740d8167c61a1752847920e420335a04e3d",
+          "governed_bytes_sha256": "9d418865e6a143ee10ab99a26ccfddcb2b3fa2ba9ee482836c0ade1f1d2dd5d9"
+        },
+        {
+          "source_id": "govinfo:52usc21111-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIV-sec21111.htm",
+          "raw_sha256": "af72b0a3701d354af7eb6952664b881d8abaaee18ce2dd2637108e0845fc1346",
+          "governed_bytes_sha256": "a4e922ddda22bb42b949c5b5198f892a219909c398a0c441de823a81ddfa0ec3"
+        },
+        {
+          "source_id": "govinfo:52usc21101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partB-sec21101.htm",
+          "raw_sha256": "8ff89c580fd30809e5ba12d657aab939d3a08ab6340584ed4a431aee7031663b",
+          "governed_bytes_sha256": "9353e63a139de5c0b1c6fcf42aeac87c69982b0c1cea3c94dcfb034dd6dfad23"
+        },
+        {
+          "source_id": "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm",
+          "raw_sha256": "27bbbf783da106a5db2206b0ff52d94abaa795d7f7d56cad6c9f8de0d5302b89",
+          "governed_bytes_sha256": "7e64add5af5cf102c191142f0fddb544f47f079a67e994e61ab80a12b944948a"
+        },
+        {
+          "source_id": "govinfo:42usc405r9-voter-verification",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+          "raw_sha256": "04105905919624c53b2c0b898b3e0ef697e7bc2c88b65c511c2c5874bd29bdbb",
+          "governed_bytes_sha256": "092dc7a5c26c5756e0963c96281b5e012020e8870bc538e9f1444961eaa6e3b1"
+        },
+        {
+          "source_id": "govinfo:8usc1101a3-alien-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cd54105b7e87d0809dfa230c3a9fea397883076c508ba1859cea00a9193fb4b6"
+        },
+        {
+          "source_id": "govinfo:8usc1229-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm",
+          "raw_sha256": "b4f48d54d2a90aeaf2081086b4bc63f762573215eb12c196fe2d61f1860d9aea",
+          "governed_bytes_sha256": "cf713773135c4ad61006f0f50f1b35725b9f4390ae3835dbe5ac0fa8e3efb08f"
+        },
+        {
+          "source_id": "house:rcp119-19-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260209/RCP_S1383_xml.pdf",
+          "raw_sha256": "81806f463383c837a289bfa5fa6159197428736a47fe3e9a9210892db2b45f21",
+          "governed_bytes_sha256": "9cc01942babc1a9c876626642b9d5722e63d0dafeb09e2b01422b61aa7a85370"
+        },
+        {
+          "source_id": "congressional-record:2026-02-11-save-rule-motion-context",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-11/pdf/CREC-2026-02-11-house.pdf",
+          "raw_sha256": "25bbc6e2bed9408d80eabf1fb13963edc3ae7ada0d50078460af8793934906cd",
+          "governed_bytes_sha256": "79ff6e92eb3c5892ab416eceb3e9a5f9784b334f764b3b77ab48db6be53a2414"
+        },
+        {
+          "source_id": "govinfo:hr261rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr261rh/html/BILLS-119hr261rh.htm",
+          "raw_sha256": "3f2b21bda46cc5f4ee66391eea7b72d92d6db1505610b269feecb85025c69496",
+          "governed_bytes_sha256": "c757622ae4ed1b3ba0af7a032d977ecb82836e49351d7809cb9e5ac64fe67cb8"
+        },
+        {
+          "source_id": "govinfo:hr3617rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3617rh/html/BILLS-119hr3617rh.htm",
+          "raw_sha256": "7b8522f00421509059176b821e090407094ca481c62df4dff348f4242ea5d874",
+          "governed_bytes_sha256": "eb8d25078bc8bdefde906765b67f32153437f8bcfc9c091eb173e484380fc8f0"
+        },
+        {
+          "source_id": "govinfo:16usc1434-cooperation",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1434.htm",
+          "raw_sha256": "5a6dca65586c39e001f285c01afd33431fae38497668b6f934fda838d8ac19fc",
+          "governed_bytes_sha256": "39ae3557618ea9cb21acb391c1bb9e0ffbf186629592ca871625da68f01a4a71"
+        },
+        {
+          "source_id": "govinfo:16usc1441-permit-terms",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1441.htm",
+          "raw_sha256": "b5a2825fd86226e71fc570e5c1ad1fcd89ad6c0abf2b88d2d8c319af9ca022c7",
+          "governed_bytes_sha256": "15f8245e2ef99975337f927d24b6c68528b3d69b79017f533a844a1fdd83ccd4"
+        },
+        {
+          "source_id": "govinfo:42usc7133-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapII-sec7133.htm",
+          "raw_sha256": "724772e264bcdcc53d8307d6051b2648a1758b75f70198c7bdd9199b5c366d13",
+          "governed_bytes_sha256": "46d6d1198707fc4250f8f232c3252ae3d5f630dc85995d3196e59f300558e1ae"
+        },
+        {
+          "source_id": "govinfo:18usc921-firearm",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap44-sec921.htm",
+          "raw_sha256": "76b45e687a08b2583aaa1639594771fc687ce36f4d49035b30afb1af0e57529d",
+          "governed_bytes_sha256": "3ec1a73c5da110e7a072e64fb75f23d30f958ef3bdc2fb2d1225e820f7ca9ae4"
+        },
+        {
+          "source_id": "govinfo:26usc5845-firearm",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleE-chap53-subchapB-partI-sec5845.htm",
+          "raw_sha256": "368c6348760c2c436f2d32d786c33f71ab84496da56915c7c7c97ad0078a75bb",
+          "governed_bytes_sha256": "a8b6fd921916b16bd7a6e85c50d2600f23cb9ba7ad20d4ec666a97fdf2d6f437"
+        },
+        {
+          "source_id": "govinfo:26usc4181-4182-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleD-chap32.htm",
+          "raw_sha256": "e7671d8e3309f49ec04a8de015680547db538cb55a5aae523eed0598ef63c582",
+          "governed_bytes_sha256": "d33d8b68916d8674d26a78f863ab3875c9039ea592800931dc67743b96284abc"
+        },
+        {
+          "source_id": "house:rcp119-18-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260209/RCP_HR2189_xml.pdf",
+          "raw_sha256": "9a55943dc01b677a9c903ed6e71979ef1aad9577ae66376476a832c485b790ee",
+          "governed_bytes_sha256": "70b5448ed77faa62089ff756c00044a43c72b9c0cb9c61209de5015b60f8be61"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:62",
+        "source_ids": [
+          "clerk:119:2:62",
+          "govinfo:s1383eah",
+          "govinfo:hrpt119-493",
+          "govinfo:hres1057eh",
+          "govinfo:52usc20502-20511-operative",
+          "govinfo:52usc20102-2024-operative",
+          "govinfo:52usc20310-2024-operative",
+          "govinfo:52usc21082-2024-operative",
+          "govinfo:52usc21083-2024-operative",
+          "govinfo:52usc21111-2024-operative",
+          "govinfo:52usc21101-2024-operative",
+          "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "govinfo:42usc405r9-voter-verification",
+          "govinfo:8usc1101a3-alien-definition",
+          "govinfo:8usc1229-2024-operative",
+          "house:rcp119-19-complete",
+          "congressional-record:2026-02-11-save-rule-motion-context",
+          "govinfo:hr261rh",
+          "govinfo:hr3617rh",
+          "govinfo:16usc1434-cooperation",
+          "govinfo:16usc1441-permit-terms",
+          "govinfo:42usc7133-2024",
+          "govinfo:18usc921-firearm",
+          "govinfo:26usc5845-firearm",
+          "govinfo:26usc4181-4182-operative",
+          "house:rcp119-18-complete"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:62",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue exact1057as-amended adoption. EHresearch245fullyread5343chars/raw49e0cb06309a738219fa40734a2f98fd9ffb0591aa42b65f50bf9df47004f642. Sections2–4reuse completeRCP119-18and261/3617RHnowgoverned; their independent64/67/70passage screenings complete. Unlikefailed1042,1057doesnotcontaintariffcalendarclause. Section1deemsS1383substituteRCP119-19modifiedbyReport119-493ANDsection6flooramendment changing effective-date language; readallbeforeclassification. Section5same-dayRulesreportwaiverthroughFeb13forcontinuingappropriations. Do notclassifyS1383fromoriginalveterans-advisorytitle. Feb11floorresearch246610629chars/raw25bbc6e2bed9408d80eabf1fb13963edc3ae7ada0d50078460af8793934906cd captured; rulepages1–2notyetfullyread. Reusefor68commit/69passage afterexactversion established. Prepared S.1383 version chain (research247/248): EAH https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm raw cb9baa66719200cf225009b56ce566c37f9e788535e35fcbeb3c2c18ef24eb1f, 32432 normalized characters, fully read. This entirely replaces the original veterans-advisory text with registration-citizenship and voting-identification provisions. Complete EAH reading is not complete incorporated-effect or exact pre-vote version review. Preserve hospital birth records as citizenship evidence, disability accommodations, public-assistance/disability registration-office duties, DHS SAVE/SSA record comparison and noncitizen-removal procedures, documentary exceptions, election-official enforcement, and separate photo-ID rules. EAH does not itself establish a new clinical service or change assistance eligibility merely by citing existing eligibility-verification machinery; verify all material incorporations before disposition. Report119-493 https://www.govinfo.gov/content/pkg/CRPT-119hrpt493/html/CRPT-119hrpt493.htm raw 8b72065806d5afd7d5177d5eb2ad4a7a640e7c2f0d16c45f3da0fc49e39a38d5,12458 characters: last4200 read, including complete adopted amendment instructions; first portion remains unread. Instructions change DHS list comparison, absent-uniformed-services and specified elderly/disabled mail-ID exceptions, delete page30 lines6-10, and change effective dates. H.Res.1057 section6 corrects the report effective-date instruction at page31 lines3-5. RCP119-19 https://docs.house.gov/billsthisweek/20260209/RCP_S1383_xml.pdf raw 81806f463383c837a289bfa5fa6159197428736a47fe3e9a9210892db2b45f21,38058 extracted characters: captured, not substantively read. Next: reconcile all RCP pages plus report amendments and1057 section6 against EAH; read NVRA20502-20511, HAVA voting-ID/enforcement,42US1320b7/PL99-603 section121(c),52US20310(1)/20102(b)(2)(B)(ii) and other material incorporated effects. Do not treat all disabled voters as categorically exempt, SSA records as sole removal grounds, or election registration as public-benefit eligibility. Preserve immediate-effective language and printed October1,2025 guidance date without silently correcting it. Then examine February11 floor exact rule and motion-to-commit form and contrary evidence; Clerk68/69 XML captured in research247 but not yet governed. No classification or meaning authored for62/68/69; continue independent safe cases if one incorporation remains unresolved."
-      }
+        "shared_review_record_sha256": "49e8b1119df30f5d0fda91c21c2f7b66076b8f910dd200aee740dcc303c2962f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:63",
@@ -32157,13 +32474,14 @@
       "date": "2026-02-11",
       "measure": "bill_119_s_1383",
       "question": "On Motion to Commit",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The Clerk-read Morelle motion sends S.1383 to the Committee on House Administration without instructions. A separate earlier insertion in the same Record page prints an instruction to strike RCPpage15line17 throughpage16line9 and the speaker describes a DHS-data objection. That proposed instruction is not in the motion actually read and voted on; do not convert this failed214-217 commitment motion into a direct vote deleting the data provision. Keep its procedural status separate from the later218-213 whole-bill passage and from the original veterans-advisory title.",
       "source": {
         "source_id": "clerk:119:2:68",
         "url": "https://clerk.house.gov/evs/2026/roll068.xml",
         "raw_sha256": "7b8ee8a7146f9503ea75fa24a20afcf604cd794cebdf94c0a579b8c9358d0a19",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "8800e9ac5dd7f06b28e49be07597d7b578bdfb855044f3385cc6a7df8c626b4d",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -32174,26 +32492,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The Clerk-read Morelle motion sends S.1383 to the Committee on House Administration without instructions. A separate earlier insertion in the same Record page prints an instruction to strike RCPpage15line17 throughpage16line9 and the speaker describes a DHS-data objection. That proposed instruction is not in the motion actually read and voted on; do not convert this failed214-217 commitment motion into a direct vote deleting the data provision. Keep its procedural status separate from the later218-213 whole-bill passage and from the original veterans-advisory title.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:68",
           "url": "https://clerk.house.gov/evs/2026/roll068.xml",
           "raw_sha256": "7b8ee8a7146f9503ea75fa24a20afcf604cd794cebdf94c0a579b8c9358d0a19",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "8800e9ac5dd7f06b28e49be07597d7b578bdfb855044f3385cc6a7df8c626b4d",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres1057eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1057eh/html/BILLS-119hres1057eh.htm",
+          "raw_sha256": "49e0cb06309a738219fa40734a2f98fd9ffb0591aa42b65f50bf9df47004f642",
+          "governed_bytes_sha256": "65102dca6419fb40c83faa1079ecaf820452a419dcb047643be8acbeaf8edc53"
+        },
+        {
+          "source_id": "congressional-record:2026-02-11-save-rule-motion-context",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-11/pdf/CREC-2026-02-11-house.pdf",
+          "raw_sha256": "25bbc6e2bed9408d80eabf1fb13963edc3ae7ada0d50078460af8793934906cd",
+          "governed_bytes_sha256": "79ff6e92eb3c5892ab416eceb3e9a5f9784b334f764b3b77ab48db6be53a2414"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:68",
+        "source_ids": [
+          "clerk:119:2:68",
+          "govinfo:hres1057eh",
+          "congressional-record:2026-02-11-save-rule-motion-context"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:68",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Reuse the detailed prepared S.1383 source/version queue on house:119:2:62. Independently read the exact February11 motion-to-commit form; do not infer instructions from a separately printed proposal. Clerk68 captured in research247; no disposition or completed exact-action review yet."
-      }
+        "shared_review_record_sha256": "396887d3917fe2cfbee58b54a270b58655d4a2725018210aec5a7cca24e4d5eb"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:69",
@@ -32202,13 +32544,14 @@
       "date": "2026-02-11",
       "measure": "bill_119_s_1383",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact S.1383 House amendment replaces the original veterans-advisory bill with the SAVE America election text. All32 RCP119-19 pages, Report119-493 amendments and H.Res.1057 section6 correction were reconciled against the fully read EAH: all operative letters/digits match after format normalization, and changed page15/25/28-32 provisions were separately read. The measure requires documentary citizenship proof for Federal registration, alternative-evidence/official-affidavit and name-discrepancy processes, voter-list comparison/removal, Federal information sharing, enforcement, and separate photo-ID voting requirements with limited alternatives. Public-assistance and disability-service offices gain voter-document duties under20506; retained law keeps registration decisions separate from assistance amounts. Hospital birth records are citizenship evidence, not a treatment service. Disability accommodation concerns presenting documents; the elderly/disabled mail-ID exception is the specific20102(b)(2)(B)(ii) alternative-ballot route for inaccessible polling places, not a blanket exception for every disability. Absent uniformed-services exceptions include qualifying spouses/dependents and are not limited to overseas service; other overseas voters are not automatically included. The revised text removes the RCP catch-all State-selected ID option, uses immediate effective dates, and retains the printed October1,2025 guidance deadline without an invented correction. SAVE and SSA references govern eligibility data used for voting, not entitlement to Medicaid, SNAP or other benefits; SSA matching information is not treated as proof of citizenship by itself or the sole voter-removal ground. Preserve the24-hour information duty, complete-list comparison, notice/proof opportunity and new investigation to decide whether to initiate immigration removal proceedings. Existing1320b-7/PL99-603 benefit-verification safeguards and noncriminal-use language are retained in the source record; do not infer automatic benefit termination, clinical-record disclosure, completed deportation or a resolved implementation interaction from the House vote. New20511 clauses remain within existing knowingly-and-willfully deprivation/defrauding language; civil and criminal enforcement are distinct. Floor supporters argue election integrity and identity verification; opponents raise access, personal-data, name-change and family-cost concerns, including healthcare affordability. Those claims and exceptions were examined without adopting motives, prevalence estimates or guaranteed effects. The exact operative package concerns elections and associated data/enforcement, not Health treatment, coverage or direct benefit eligibility. Proposed Health exclusion is consistent with the separately reviewed2025H.R.22 boundary but rests on this new version, not its title or inherited interpretation.",
       "source": {
         "source_id": "clerk:119:2:69",
         "url": "https://clerk.house.gov/evs/2026/roll069.xml",
         "raw_sha256": "f403733f36c740f91be6c4673ad210c1d97e4128d5ed40f3fc753a0d1abc021d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "c58759ffe8693c6d299bb106849c2bf78f2f16401f3c158e9ace8e5b46378636",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -32219,26 +32562,148 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact S.1383 House amendment replaces the original veterans-advisory bill with the SAVE America election text. All32 RCP119-19 pages, Report119-493 amendments and H.Res.1057 section6 correction were reconciled against the fully read EAH: all operative letters/digits match after format normalization, and changed page15/25/28-32 provisions were separately read. The measure requires documentary citizenship proof for Federal registration, alternative-evidence/official-affidavit and name-discrepancy processes, voter-list comparison/removal, Federal information sharing, enforcement, and separate photo-ID voting requirements with limited alternatives. Public-assistance and disability-service offices gain voter-document duties under20506; retained law keeps registration decisions separate from assistance amounts. Hospital birth records are citizenship evidence, not a treatment service. Disability accommodation concerns presenting documents; the elderly/disabled mail-ID exception is the specific20102(b)(2)(B)(ii) alternative-ballot route for inaccessible polling places, not a blanket exception for every disability. Absent uniformed-services exceptions include qualifying spouses/dependents and are not limited to overseas service; other overseas voters are not automatically included. The revised text removes the RCP catch-all State-selected ID option, uses immediate effective dates, and retains the printed October1,2025 guidance deadline without an invented correction. SAVE and SSA references govern eligibility data used for voting, not entitlement to Medicaid, SNAP or other benefits; SSA matching information is not treated as proof of citizenship by itself or the sole voter-removal ground. Preserve the24-hour information duty, complete-list comparison, notice/proof opportunity and new investigation to decide whether to initiate immigration removal proceedings. Existing1320b-7/PL99-603 benefit-verification safeguards and noncriminal-use language are retained in the source record; do not infer automatic benefit termination, clinical-record disclosure, completed deportation or a resolved implementation interaction from the House vote. New20511 clauses remain within existing knowingly-and-willfully deprivation/defrauding language; civil and criminal enforcement are distinct. Floor supporters argue election integrity and identity verification; opponents raise access, personal-data, name-change and family-cost concerns, including healthcare affordability. Those claims and exceptions were examined without adopting motives, prevalence estimates or guaranteed effects. The exact operative package concerns elections and associated data/enforcement, not Health treatment, coverage or direct benefit eligibility. Proposed Health exclusion is consistent with the separately reviewed2025H.R.22 boundary but rests on this new version, not its title or inherited interpretation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:69",
           "url": "https://clerk.house.gov/evs/2026/roll069.xml",
           "raw_sha256": "f403733f36c740f91be6c4673ad210c1d97e4128d5ed40f3fc753a0d1abc021d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "c58759ffe8693c6d299bb106849c2bf78f2f16401f3c158e9ace8e5b46378636",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s1383eah",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+          "raw_sha256": "cb9baa66719200cf225009b56ce566c37f9e788535e35fcbeb3c2c18ef24eb1f",
+          "governed_bytes_sha256": "24b2790d0fec3c22eb31d6281d7ff90465654ea8d511cfa9c8d153be6f861853"
+        },
+        {
+          "source_id": "govinfo:hrpt119-493",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt493/html/CRPT-119hrpt493.htm",
+          "raw_sha256": "8b72065806d5afd7d5177d5eb2ad4a7a640e7c2f0d16c45f3da0fc49e39a38d5",
+          "governed_bytes_sha256": "eb35b8f9232978ae501a0845968893da78f04350756899246adccebc4d301c9a"
+        },
+        {
+          "source_id": "govinfo:hres1057eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1057eh/html/BILLS-119hres1057eh.htm",
+          "raw_sha256": "49e0cb06309a738219fa40734a2f98fd9ffb0591aa42b65f50bf9df47004f642",
+          "governed_bytes_sha256": "65102dca6419fb40c83faa1079ecaf820452a419dcb047643be8acbeaf8edc53"
+        },
+        {
+          "source_id": "govinfo:52usc20502-20511-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm",
+          "raw_sha256": "fe3e64aff50e191b7ff4e3c7e853083025c52c973cfdb012761f7aa94d80dc88",
+          "governed_bytes_sha256": "c4cf60927574442850f782fa77e546e1bf30445cec99f3afd01929aec0b42bdd"
+        },
+        {
+          "source_id": "govinfo:52usc20102-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap201-sec20102.htm",
+          "raw_sha256": "ec3d44e542e4ed5d215fa78d05dda9d794e733eb49829c46f33978650f1d1461",
+          "governed_bytes_sha256": "843153823c89d5c82de6874fcf6e599f7052929d69853a443a3e43dfeada9e42"
+        },
+        {
+          "source_id": "govinfo:52usc20310-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap203-sec20310.htm",
+          "raw_sha256": "6ced10b1d10ae92497362fcb194eb49076d615948f4371ed06906432fa25705e",
+          "governed_bytes_sha256": "8f606accff3e622f794adfb6f5dfda3081c534fcf279f5851cf4c034adab1fe2"
+        },
+        {
+          "source_id": "govinfo:52usc21082-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21082.htm",
+          "raw_sha256": "593c0bced51849f4f2e420882ea403bd2c9a90bcb7aa7c2e2c65c9e25dedb3a3",
+          "governed_bytes_sha256": "0b975da9257e7518e05f7e0f029ccfd2c3cdda46d281969a672ba91ad7e67960"
+        },
+        {
+          "source_id": "govinfo:52usc21083-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21083.htm",
+          "raw_sha256": "c76d859c424740800717cf8dec230740d8167c61a1752847920e420335a04e3d",
+          "governed_bytes_sha256": "9d418865e6a143ee10ab99a26ccfddcb2b3fa2ba9ee482836c0ade1f1d2dd5d9"
+        },
+        {
+          "source_id": "govinfo:52usc21111-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIV-sec21111.htm",
+          "raw_sha256": "af72b0a3701d354af7eb6952664b881d8abaaee18ce2dd2637108e0845fc1346",
+          "governed_bytes_sha256": "a4e922ddda22bb42b949c5b5198f892a219909c398a0c441de823a81ddfa0ec3"
+        },
+        {
+          "source_id": "govinfo:52usc21101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partB-sec21101.htm",
+          "raw_sha256": "8ff89c580fd30809e5ba12d657aab939d3a08ab6340584ed4a431aee7031663b",
+          "governed_bytes_sha256": "9353e63a139de5c0b1c6fcf42aeac87c69982b0c1cea3c94dcfb034dd6dfad23"
+        },
+        {
+          "source_id": "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm",
+          "raw_sha256": "27bbbf783da106a5db2206b0ff52d94abaa795d7f7d56cad6c9f8de0d5302b89",
+          "governed_bytes_sha256": "7e64add5af5cf102c191142f0fddb544f47f079a67e994e61ab80a12b944948a"
+        },
+        {
+          "source_id": "govinfo:42usc405r9-voter-verification",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+          "raw_sha256": "04105905919624c53b2c0b898b3e0ef697e7bc2c88b65c511c2c5874bd29bdbb",
+          "governed_bytes_sha256": "092dc7a5c26c5756e0963c96281b5e012020e8870bc538e9f1444961eaa6e3b1"
+        },
+        {
+          "source_id": "govinfo:8usc1101a3-alien-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cd54105b7e87d0809dfa230c3a9fea397883076c508ba1859cea00a9193fb4b6"
+        },
+        {
+          "source_id": "govinfo:8usc1229-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm",
+          "raw_sha256": "b4f48d54d2a90aeaf2081086b4bc63f762573215eb12c196fe2d61f1860d9aea",
+          "governed_bytes_sha256": "cf713773135c4ad61006f0f50f1b35725b9f4390ae3835dbe5ac0fa8e3efb08f"
+        },
+        {
+          "source_id": "house:rcp119-19-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260209/RCP_S1383_xml.pdf",
+          "raw_sha256": "81806f463383c837a289bfa5fa6159197428736a47fe3e9a9210892db2b45f21",
+          "governed_bytes_sha256": "9cc01942babc1a9c876626642b9d5722e63d0dafeb09e2b01422b61aa7a85370"
+        },
+        {
+          "source_id": "congressional-record:2026-02-11-save-rule-motion-context",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-11/pdf/CREC-2026-02-11-house.pdf",
+          "raw_sha256": "25bbc6e2bed9408d80eabf1fb13963edc3ae7ada0d50078460af8793934906cd",
+          "governed_bytes_sha256": "79ff6e92eb3c5892ab416eceb3e9a5f9784b334f764b3b77ab48db6be53a2414"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:69",
+        "source_ids": [
+          "clerk:119:2:69",
+          "govinfo:s1383eah",
+          "govinfo:hrpt119-493",
+          "govinfo:hres1057eh",
+          "govinfo:52usc20502-20511-operative",
+          "govinfo:52usc20102-2024-operative",
+          "govinfo:52usc20310-2024-operative",
+          "govinfo:52usc21082-2024-operative",
+          "govinfo:52usc21083-2024-operative",
+          "govinfo:52usc21111-2024-operative",
+          "govinfo:52usc21101-2024-operative",
+          "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "govinfo:42usc405r9-voter-verification",
+          "govinfo:8usc1101a3-alien-definition",
+          "govinfo:8usc1229-2024-operative",
+          "house:rcp119-19-complete",
+          "congressional-record:2026-02-11-save-rule-motion-context"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:69",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Reuse the detailed prepared S.1383 source/version queue on house:119:2:62. Full EAH read, but RCP119-19/report119-493/1057 amendments, incorporated authorities and floor context remain to reconcile. Do not inherit Health membership from original veterans title; do not omit disability, public-assistance office, data-sharing or enforcement effects. No disposition or completed substantive review yet."
-      }
+        "shared_review_record_sha256": "a8e7c0763ba5d38d6f62bfd216c55125f4df60a2e7857991a82c73df9d5c37c5"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:70",
@@ -43911,11 +44376,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses.",
+    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "6752bffbbd986523e3a970e4a1e209b49e3aa61d0ac2084cb52b289cf078487c",
+  "selection_sha256": "afa9fd8d06d87e2401f0bfb325201b0d1fcb4e320aade2d0886507e6392eb4cd",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -43996,6 +44461,7 @@
     "house:119:2:5",
     "house:119:2:50",
     "house:119:2:53",
+    "house:119:2:56",
     "house:119:2:6",
     "house:119:2:7",
     "house:119:2:8"
@@ -44018,12 +44484,8 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:56",
     "house:119:2:57",
-    "house:119:2:62",
     "house:119:2:65",
-    "house:119:2:68",
-    "house:119:2:69",
     "house:119:2:71",
     "house:119:2:72",
     "house:119:2:74",
@@ -44188,7 +44650,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "184 unresolved identities comprise182 unfinished screenings and two examineddependencies (2025roll237/2026roll44).64,67and70passage texts are independently proposedexcluded after full-version and incorporated-effect review; reused research for failedrule60does not equate that failure with these later passages. Existing45packagecompleteness remains separate.",
+    "basis": "180 unresolved comprise178 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44).2026roll56 is a proposed whole-law Health inclusion after exact D.C./federal incorporation review;62/68 procedural and69 proposed excluded after complete SAVE America version review. Existing45 broader-package completeness remains separate.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -44240,6 +44702,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "c90b371617e6c7f4b5a3e7f830e687fdfb72cac70dfcff2a8610c1a71612b8fb",
-  "membership_review_sha256": "ceebfe26568f4eb0e643359ac8cea7713213e5df907760b10ae7e653b1e5f344"
+  "proposal_sha256": "07db138b959bcdc00ac63dde0099d79a58ba1e6e242f8bebff3a2a405f79a21e",
+  "membership_review_sha256": "4c6068d3297a6ba9d9d4ed4ffe319436c75f4fe77f05a60eca684ee1434f7a96"
 }

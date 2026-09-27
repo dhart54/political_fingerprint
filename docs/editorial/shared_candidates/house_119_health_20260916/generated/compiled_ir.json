@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 82,
+        "eligible_substantive_actions": 83,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 82,
-        "resolved_eligible_actions": 82,
-        "directional_yes_no_positions": 81,
+        "in_service_eligible_actions": 83,
+        "resolved_eligible_actions": 83,
+        "directional_yes_no_positions": 82,
         "present_actions": 0,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 63,
+        "complete_episodes": 64,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1451,6 +1451,25 @@
             }
           },
           {
+            "proposition_id": "prop:a40c9c5e0b6bf9b9",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:56"
+            ],
+            "evidence_episode_ids": [
+              "episode:hjres142:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:e456f9eacbc5aae7",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1539,6 +1558,7 @@
             "prop:4ef41344809e6c2a",
             "prop:9d617006b461c10d",
             "prop:32c536088c9104b5",
+            "prop:a40c9c5e0b6bf9b9",
             "prop:e456f9eacbc5aae7"
           ]
         },
@@ -1635,6 +1655,7 @@
           "house:119:2:5",
           "house:119:2:50",
           "house:119:2:53",
+          "house:119:2:56",
           "house:119:2:6",
           "house:119:2:7",
           "house:119:2:8"
@@ -1653,17 +1674,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 82,
+        "eligible_substantive_actions": 83,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 82,
-        "resolved_eligible_actions": 82,
-        "directional_yes_no_positions": 76,
+        "in_service_eligible_actions": 83,
+        "resolved_eligible_actions": 83,
+        "directional_yes_no_positions": 77,
         "present_actions": 0,
         "not_voting_actions": 6,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 63,
+        "complete_episodes": 64,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -3004,6 +3025,25 @@
             }
           },
           {
+            "proposition_id": "prop:5d89a712ad309313",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:56"
+            ],
+            "evidence_episode_ids": [
+              "episode:hjres142:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:e456f9eacbc5aae7",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -3087,6 +3127,7 @@
             "prop:578382bda63197df",
             "prop:6e31604093fad420",
             "prop:4d600f0a77234bc7",
+            "prop:5d89a712ad309313",
             "prop:e456f9eacbc5aae7"
           ]
         },
@@ -3183,6 +3224,7 @@
           "house:119:2:47",
           "house:119:2:5",
           "house:119:2:53",
+          "house:119:2:56",
           "house:119:2:6",
           "house:119:2:7",
           "house:119:2:8"

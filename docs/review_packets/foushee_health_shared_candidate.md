@@ -1,44 +1,112 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-September27 overnight terminal checkpoint: completed work is preserved below. The earlier corrected shutdown pause remains historical. This checkpoint is triggered by the current one-night usage buffer; it does not mean Health coverage is complete.
+Active continuation from40ecbf5568262fbcf5972eded498d4c78ffe36a5. The user resumed with a3percent-remaining usage threshold. The checkpoint below is historical; Health research is active and its exact remaining queue is preserved.
 
-**Partial candidate at the overnight checkpoint.** Five screenings completed
-since f31eb45: four proposed exclusions and one procedural control. There are82
-interpreted inputs,62 Foushee /57 Massie findings,182 unfinished screenings and
-two examined dependencies. Existing45's broader-package review also remains
-unfinished. No exhausted evidence path or new human decision is asserted.
+**Active partial candidate.** Four screenings completed since40ecbf5: one
+shared Health interpretation, two procedural controls and one proposed exclusion.
+There are83 interpreted inputs,63 Foushee /58 Massie findings,178 unfinished
+screenings and two examined dependencies. Existing45's broader-package review
+also remains. No exhausted evidence path or new human decision is asserted.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-f31eb45 at this continuation boundary. Later in-scope research is preserved without reset.
+40ecbf5 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
-discussion after validation; prior-head CI is not treated as current. The overnight run stops at the recorded usage buffer; the unfinished goal is not marked complete.
+discussion after validation; prior-head CI is not treated as current. The earlier overnight stop is historical; current research continues under the new3percent threshold.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [82 shared meanings /835 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1319 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [352 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [83 shared meanings /855 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1356 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [356 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (f31eb45) | Current local candidate |
+| Disposition | Before (40ecbf5) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |82|82|
-| procedural_context |200|201|
+| interpreted_substantive_directional |82|83|
+| procedural_context |201|203|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |194|198|
-| source_unresolved (unfinished plus examined dependencies) |189|184|
+| exact_action_ineligible |198|199|
+| source_unresolved (unfinished plus examined dependencies) |184|180|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
-## February9–12 membership checkpoint — September27
+## Active SAVE/D.C. continuation — September27
+
+Continue from `40ecbf5568262fbcf5972eded498d4c78ffe36a5`; its exact-head
+CI36301588496 passed all nine jobs. Four more screenings are complete:
+2026rolls62/68 procedural,69 proposed excluded,56 proposed Health inclusion.
+Counts **82/201/11/198/184 → 83/203/11/199/180**. The remainder is
+**178 unfinished screenings plus two examined dependencies**, not180 presumed
+Health votes. There are83 shared meanings,855 claim maps,1356 governed sources,
+356 membership records,63 Foushee /58 Massie findings,166 observations,
+64 episodes and10 multi-action episodes. No synthesis or publication authority.
+
+- The SAVE America substitute is independently bound through all32 RCP119-19
+  pages, Report119-493, H.Res.1057's floor correction and the complete EAH.
+  Operative letters/digits match after applying the amendments and normalizing
+  formatting; changed provisions were separately read. NVRA/HAVA, disability,
+  uniformed-service, SSA and SAVE/benefit-data safeguards are explicit. Public
+  assistance and hospital references serve election/document mechanisms, not a
+  new Health entitlement. No automatic benefit loss or deportation is inferred.
+- The1057 rule's deemed substitutes are real procedural effects; the failed
+  Morelle commitment motion is the Clerk-read bare motion. A separately printed
+  DHS-data deletion instruction is not silently substituted for that motion.
+- H.J.Res.142 targets the whole D.C. Act26-217. Its candidate binds care-credit
+  financing, refundable child/EITC payments and public-assistance income
+  exclusions, with the broader tax package. Preserve the nonrefundable care
+  credit, federal-versus-local multipliers, printed2025 care-credit gap,2026
+  child-age date, eligibility/residency/phaseout limits and temporary duration.
+  Earlier child-credit repeal subtitles are traced without treating entire
+  budget laws as repealed. The separately enacted emergency law is not the
+  resolution's named target.
+- Support/opposition context includes the CFO's warning about filing disruption
+  and his statement that the approved four-year financial plan would not be
+  materially affected. The later D.C. Attorney General's stated legal position
+  is attributed as an outcome limitation, not resolved or adopted as the meaning
+  of the House vote. No taxpayer-specific saving, poverty or health outcome is
+  inferred. Foushee's Nay and Massie's Yea are mechanically projected once.
+
+The candidate preparer's exact-measure guard now recognizes the Clerk's
+`H J RES` prefix with explicit `bill_type=hjres`; stage remains ordinary final
+passage. Wrong bill type and unknown type still fail closed. No new semantic
+architecture or publication path was added. Existing82 meanings are unchanged.
+
+Reuse: captured full PL119-21, February4 debate, Clerk identities and official
+Council versioned XML. The Council PDF endpoint returned403, so the public
+Council XML supplied the exact target; codification instructions/annotations
+were excluded from operative extraction, and document identity was checked.
+Generic GPO-only acquisition flags were not mistaken for invalid Council XML.
+Substantive source/claim selection and interpretations were manual; projection,
+compilation and replay remain deterministic. No production or archive access.
+
+Validation: **84 candidate tests within133 focused candidate/corpus/IR/pipeline
+tests and all7 semantic checks passed**. One initial test retained the prior
+unfinished count179; it was corrected to178 after56's supported disposition.
+Core `25aa703a8ae0aabef81daf1384df2ec643ac89fce285c36d50fe035376d17d5a`;
+compiled `020af5d1da493335439207c8c7d179505dbf0b9ccea669b06aa59fa92b51bd3a`.
+Exact new-head CI is recorded in the same PR after push; old-head success is not
+substituted. Previously documented frozen-Justice audit failures stay separate.
+
+**Next executable work:**2026roll57 H.R.6644, whose complete EH and February9
+floor material are captured but substantive review is largely unfinished.
+Finish the whole housing package and material incorporated authorities before
+membership/meaning. Disability-income, family self-sufficiency and care-related
+conditions are leads, not conclusions. Then65 H.J.Res.72 and subsequent queue
+groups. The existing per-action inventory preserves older prepared cases and
+2025roll237/2026roll44 examined dependencies;2026roll45 broader-package review
+also remains. Do not repeat completed56/62/68/69. No exhausted evidence path or
+new human decision is identified. This is active continuation toward the user's
+3percent-remaining usage threshold, not a terminal checkpoint or Health closure.
+
+## Historical February9–12 membership checkpoint — September27
 
 Continue from `f31eb45393c5edeb0b3428063807b9d073d00f32`; exact-head
 CI36300576449 passed all nine jobs. Five more screenings completed:2026rolls
@@ -1119,7 +1187,7 @@ failures remain recorded separately.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-82 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+83 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2974,6 +3042,38 @@ Evidence: house:119:2:50; finding `prop:32c536088c9104b5`.
 
 Sources: [clerk:119:2:50](https://clerk.house.gov/evs/2026/roll050.xml); [govinfo:hr3123eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm); [govinfo:38usc5121-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap51-subchapIII-sec5121.htm); [govinfo:38usc101-child-parent-pension](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap1-sec101.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf).
 
+### Disapproving a D.C. tax package with care and refundable family credits
+
+**Compact:** Foushee opposed the resolution disapproving the whole D.C. temporary tax package with its care and refundable family-credit provisions. The resolution sought to disapprove a whole D.C. tax package that changed dependent-care relief and refundable child and earned-income credits, including protections for public-assistance eligibility. It also covered broader tax-conformity choices; this vote alone does not establish that the law was repealed.
+
+**Detail:**
+
+**house:119:2:56**
+
+Foushee opposed the resolution disapproving the whole D.C. temporary tax package with its care and refundable family-credit provisions.
+
+The February 4 House vote was on passing H.J.Res. 142, which disapproves D.C. Act 26-217, the entire temporary tax-conformity and revision law enacted December 20, 2025 and transmitted December 30. The resolution invokes the Home Rule Act review mechanism. That mechanism has congressional timing and enactment conditions; a House vote alone does not nullify the District law. This is a choice on disapproval of the whole package, not a separate vote on each family credit or tax deduction.
+
+The targeted law revives and replaces the District child tax credit. For 2026 it specifies $1,000 for each qualifying child who had not reached 18 by December 31, 2025; later years use the end of the taxable year and index the amount. It reduces the credit by $50 per $1,000 or fraction of adjusted gross income over the relevant threshold, without going below zero. The initial thresholds are $55,000 for single/head-of-household/qualifying-widow(er) returns, $70,000 for the specified joint or combined returns and $35,000 for married separate returns, with later indexing. The child must be claimed on both federal and District returns, and the taxpayer must meet the full-prior-calendar-year District residency condition. Fractional-year proration is also printed; it does not erase that residency condition. Federal dependency and qualifying-child requirements remain, with section 151's zero personal-exemption amount not by itself cancelling dependency status. The local under 18 condition is retained rather than replaced by the broader federal qualifying-child age rules.
+
+The child credit is refundable when it exceeds tax liability, and its refunds are excluded from income when determining public-assistance eligibility or benefit amounts. The law repeals only the named child-credit subtitles in three earlier budget enactments, which had repealed that credit; it does not repeal those entire budget laws or their unrelated health provisions. It also raises the District earned-income credit for eligible taxpayers with qualifying children from 85 percent to 100 percent of the federal credit for full years beginning after December 31, 2024, instead of waiting until after 2028. Existing refund, payment-option, offset and public-assistance-income protections remain. This is not a 100 percent payment of wages or a new universal credit; federal eligibility and the District's existing specified extensions remain relevant.
+
+The law changes the District credit for household and dependent-care services necessary for employment from 32 percent to 24.25 percent of the federal section 21 credit for full years beginning after December 31, 2025. Section 21 covers qualifying children under 13 and specified dependents or spouses incapable of self-care, with residence, work-related-expense, earned-income, provider and identification conditions. Overnight camps are excluded and other outside-home care is conditional. The District credit remains limited to District tax otherwise due, unlike the refundable child and earned-income credits. Public Law 119-21 separately increases the federal credit's applicable percentage for 2026 with income phaseouts; reducing the District multiplier is therefore not described as a uniform change in every family's dollar credit. The target's printed amendment ends the old 32 percent clause before January 1, 2025 but starts the new clause after December 31, 2025, leaving 2025 outside those two clauses as written. This candidate preserves that wording without inventing a correction or a taxpayer-level outcome.
+
+Other provisions make this a broader tax choice. The law uses its own basic standard deductions, preserves the separate federal additional deduction for age or blindness, declines specified federal deductions for tips, overtime, personal-car interest and the new senior deduction, and reorganizes business and individual deductions. The senior deduction is not an exemption of all Social Security benefits. Medical and dental deductions under section 213 are excepted from the District's itemized-deduction phaseout, retaining the underlying uninsured-expense threshold, care definitions and no-double-counting rule for section 21 expenses. The package also covers research-cost amortization, business-interest/depreciation rules, small-business-gain and nonitemizer-charity adjustments, opportunity-zone treatment and tax administration. Its general January 1, 2025 applicability has specific exceptions, and the temporary law has a 225-day duration after taking effect. These contexts prevent presenting the vote as solely a new family benefit or solely a healthcare tax change.
+
+Supporters of disapproval argued for federal tax conformity and relief for workers, seniors and businesses. Opponents defended the District's family credits, local decision-making and tax administration. The D.C. CFO's letter inserted in the debate warned of filing-system delays and costs, but said the joint resolution would not materially affect the approved four-year financial plan; its possible fiscal-year cash shift is not treated as a proven permanent revenue loss. Predictions of poverty reduction, health outcomes, taxpayer savings or motives are not adopted. A Yea supports this whole-law disapproval; a Nay opposes it without proving endorsement of each provision of the targeted law. The House passed it 215–210. A later February 24 D.C. Attorney General opinion concluded that 2025 liabilities were not retroactively changed and that the temporary law remained effective. That attributed later legal position is retained as an outcome boundary, not resolved by this candidate or substituted for the recorded House choice; the separately enacted emergency Act 26-214 was not the named target.
+
+The Clerk recorded the House result as 'Passed' on 2026-02-04. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Preserve whole-law disapproval, federal/local credit differences, refundability and public-assistance-income exclusions; no separate component endorsement follows.
+- Keep the printed 2025 care-credit gap,2026 child-age date, eligibility/residency/phaseout conditions,225-day duration and later legal-effect qualification. No uniform taxpayer saving or loss is inferred.
+
+Evidence: house:119:2:56; finding `prop:a40c9c5e0b6bf9b9`.
+
+Sources: [clerk:119:2:56](https://clerk.house.gov/evs/2026/roll056.xml); [govinfo:hjres142eh](https://www.govinfo.gov/content/pkg/BILLS-119hjres142eh/html/BILLS-119hjres142eh.htm); [dc-council:act26-217-operative](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml); [dc-council:1-206.02c-disapproval](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/1/sections/1-206.02.xml); [dc-council:47-1806.04-permanent-care-earned](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/99/47-1806.04(Perm).xml); [dc-council:dc26-55-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-55.xml); [dc-council:dc26-146-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-146.xml); [dc-council:dc26-210-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-210.xml); [govinfo:26usc21-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartA-sec21.htm); [govinfo:26usc151-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec151.htm); [govinfo:26usc152-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec152.htm); [govinfo:26usc213-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partVII-sec213.htm); [govinfo:26usc63-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partI-sec63.htm); [govinfo:26usc32a-m-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec32.htm); [govinfo:pl119-21-standard-senior-care](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [dc-council:act26-214-core](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-214.xml); [congressional-record:2026-02-04-dc-tax-contrast](https://www.govinfo.gov/content/pkg/CREC-2026-02-04/pdf/CREC-2026-02-04-house.pdf); [dc-oag:2026-02-24-tax-opinion-boundary](https://oag.dc.gov/sites/default/files/2026-02/AG-Opinion-Decoupling-Retroactivity-and-Validity-.pdf).
+
 ### Extending the reserved-area framework, including specified Health eligibility, over a veto
 
 **Compact:** Foushee supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement. The veto-override proposal would add the mapped Osceola Camp area to a statutory framework that includes specified Federal Health and social-welfare eligibility, and require flood-protection action. Other program conditions still apply; no individual benefit is established. The House override failed.
@@ -3091,4 +3191,5 @@ Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo
 | house:119:2:47 | supported passing the bill requiring the specified pregnancy and parenting support disclosures | opposed passing the bill requiring the specified pregnancy and parenting support disclosures | [govinfo:hr6359eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm); [govinfo:hr6359rh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm); [govinfo:hres1009eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm); [govinfo:20usc1092-titleIV-information-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm); [govinfo:20usc1681-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm); [govinfo:20usc1688-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm); [govinfo:hrpt119-447-section-analysis](https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm); [congressional-record:2026-01-22-pregnant-student](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf) |
 | house:119:2:49 | supported the amended veterans rehabilitation bill with its nursing-facility pension-limit extension | opposed the amended veterans rehabilitation bill with its nursing-facility pension-limit extension | [govinfo:hr980eh](https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm); [govinfo:38usc3697A-B-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm); [govinfo:38usc3104-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm); [govinfo:38usc3105-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3105.htm); [govinfo:38usc3680A-flight](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36-subchapIII-sec3680A.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf) |
 | house:119:2:50 | supported the amended accrued-pension bill with its nursing-facility pension-limit extension | opposed the amended accrued-pension bill with its nursing-facility pension-limit extension | [govinfo:hr3123eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm); [govinfo:38usc5121-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap51-subchapIII-sec5121.htm); [govinfo:38usc101-child-parent-pension](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap1-sec101.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf) |
+| house:119:2:56 | supported the resolution disapproving the whole D.C. temporary tax package with its care and refundable family-credit provisions | opposed the resolution disapproving the whole D.C. temporary tax package with its care and refundable family-credit provisions | [govinfo:hjres142eh](https://www.govinfo.gov/content/pkg/BILLS-119hjres142eh/html/BILLS-119hjres142eh.htm); [dc-council:act26-217-operative](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-89.xml); [dc-council:1-206.02c-disapproval](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/1/sections/1-206.02.xml); [dc-council:47-1806.04-permanent-care-earned](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/code/titles/99/47-1806.04(Perm).xml); [dc-council:dc26-55-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/laws/26-55.xml); [dc-council:dc26-146-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-146.xml); [dc-council:dc26-210-child-credit-repeal](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-210.xml); [govinfo:26usc21-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartA-sec21.htm); [govinfo:26usc151-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec151.htm); [govinfo:26usc152-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partV-sec152.htm); [govinfo:26usc213-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partVII-sec213.htm); [govinfo:26usc63-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partI-sec63.htm); [govinfo:26usc32a-m-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec32.htm); [govinfo:pl119-21-standard-senior-care](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [dc-council:act26-214-core](https://raw.githubusercontent.com/DCCouncil/law-xml/a685aaa7052a4958d6e09a5f7d4a4fbbda241d8c/us/dc/council/periods/26/acts/26-214.xml); [congressional-record:2026-02-04-dc-tax-contrast](https://www.govinfo.gov/content/pkg/CREC-2026-02-04/pdf/CREC-2026-02-04-house.pdf); [dc-oag:2026-02-24-tax-opinion-boundary](https://oag.dc.gov/sites/default/files/2026-02/AG-Opinion-Decoupling-Retroactivity-and-Validity-.pdf) |
 <!-- GENERATED CANDIDATE END -->

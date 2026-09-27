@@ -1,32 +1,27 @@
 # Foushee next-domain shared interpretation
 
-September27 overnight terminal checkpoint: completed work is preserved below. The earlier corrected shutdown pause remains historical. This checkpoint is triggered by the current one-night usage buffer; it does not mean Health coverage is complete.
+Active continuation from `40ecbf5568262fbcf5972eded498d4c78ffe36a5`.
+The user explicitly resumed the goal and changed the usage stopping threshold:
+this is the only active project; continue down to **3percent remaining** before
+stopping and checkpointing. The earlier15percent buffer and expired one-night
+08:30 deadline are historical and do not stop this resumed run. The prior
+terminal marker was archived locally; no active completion marker remains.
 
-## Current overnight deadline — September27 only
+## Current usage and terminal protocol — resumed September27
 
-The user resumed work and then enabled the existing PowerShell watcher, with an
-automatic shutdown in about eight hours at08:30 Eastern. Instruction received at
-2026-09-27T04:33:38Z (00:33 Eastern daylight time). Use the earlier conservative
-deadline2026-09-27T12:30:00Z; do not postpone it by interpreting "EST" as a later
-fixed-offset time. This is a one-night instruction, not a daily schedule.
+At resumption, usage is85percent consumed (15percent remaining). Check actual
+usage at meaningful research boundaries, more often near the new97percent-used
+threshold. Keep queue notes, validation and commits current so terminal work fits
+within the remaining3percent. Do not stop at the old15percent threshold or a
+routine completed batch. No reset credit is authorized. A hard usage cutoff can
+prevent tools from writing; never promise a post-cutoff marker.
 
-Continue substantive research. Begin checkpoint preparation by11:30Z and finish
-the terminal marker by12:00Z, leaving30minutes before the shutdown. Check actual
-time and account usage at research boundaries and before long validation/push
-work. At the initial check, weekly usage was59percent (41percent remaining).
-Begin an earlier checkpoint if remaining allowance reaches15percent or observed
-shared-account consumption threatens the validation/write buffer. A hard usage
-cutoff can prevent all subsequent tool calls; never promise a post-cutoff write.
-Do not consume reset credits without the user's explicit per-credit approval.
-
-At the actual terminal boundary, validate completed work, preserve the exact
-remaining queue and resumption steps, and commit/push normally if possible. Write
-`.codex-task-complete` in this worktree root as the final filesystem action;
-never commit it. Use STATUS=SUCCESS only for full goal completion with passing
-validation. Otherwise use STATUS=CHECKPOINT with the timestamp, exact HEAD,
-specific shutdown/usage or other blocker, next action and completed-work summary.
-The marker must not imply that unfinished Health coverage is complete. Preserve
-the watcher. Do not create a recurring shutdown automation.
+At review readiness or the actual usage/other terminal boundary, preserve all
+completed research and exact remaining dependencies, validate and commit/push to
+this same draft PR, and verify exact-head checks. Write `.codex-task-complete`
+in this worktree root as the final filesystem action, never committed. SUCCESS
+requires full completion; CHECKPOINT must identify unfinished Health work and
+the precise stopping reason. Preserve the watcher; no recurring automation.
 
 ## Continuation execution rules — September27
 
@@ -126,7 +121,75 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## February9–12 membership checkpoint — September27
+## Active SAVE/D.C. continuation — September27
+
+Continue from `40ecbf5568262fbcf5972eded498d4c78ffe36a5`; its exact-head
+CI36301588496 passed all nine jobs. Four more screenings are complete:
+2026rolls62/68 procedural,69 proposed excluded,56 proposed Health inclusion.
+Counts **82/201/11/198/184 → 83/203/11/199/180**. The remainder is
+**178 unfinished screenings plus two examined dependencies**, not180 presumed
+Health votes. There are83 shared meanings,855 claim maps,1356 governed sources,
+356 membership records,63 Foushee /58 Massie findings,166 observations,
+64 episodes and10 multi-action episodes. No synthesis or publication authority.
+
+- The SAVE America substitute is independently bound through all32 RCP119-19
+  pages, Report119-493, H.Res.1057's floor correction and the complete EAH.
+  Operative letters/digits match after applying the amendments and normalizing
+  formatting; changed provisions were separately read. NVRA/HAVA, disability,
+  uniformed-service, SSA and SAVE/benefit-data safeguards are explicit. Public
+  assistance and hospital references serve election/document mechanisms, not a
+  new Health entitlement. No automatic benefit loss or deportation is inferred.
+- The1057 rule's deemed substitutes are real procedural effects; the failed
+  Morelle commitment motion is the Clerk-read bare motion. A separately printed
+  DHS-data deletion instruction is not silently substituted for that motion.
+- H.J.Res.142 targets the whole D.C. Act26-217. Its candidate binds care-credit
+  financing, refundable child/EITC payments and public-assistance income
+  exclusions, with the broader tax package. Preserve the nonrefundable care
+  credit, federal-versus-local multipliers, printed2025 care-credit gap,2026
+  child-age date, eligibility/residency/phaseout limits and temporary duration.
+  Earlier child-credit repeal subtitles are traced without treating entire
+  budget laws as repealed. The separately enacted emergency law is not the
+  resolution's named target.
+- Support/opposition context includes the CFO's warning about filing disruption
+  and his statement that the approved four-year financial plan would not be
+  materially affected. The later D.C. Attorney General's stated legal position
+  is attributed as an outcome limitation, not resolved or adopted as the meaning
+  of the House vote. No taxpayer-specific saving, poverty or health outcome is
+  inferred. Foushee's Nay and Massie's Yea are mechanically projected once.
+
+The candidate preparer's exact-measure guard now recognizes the Clerk's
+`H J RES` prefix with explicit `bill_type=hjres`; stage remains ordinary final
+passage. Wrong bill type and unknown type still fail closed. No new semantic
+architecture or publication path was added. Existing82 meanings are unchanged.
+
+Reuse: captured full PL119-21, February4 debate, Clerk identities and official
+Council versioned XML. The Council PDF endpoint returned403, so the public
+Council XML supplied the exact target; codification instructions/annotations
+were excluded from operative extraction, and document identity was checked.
+Generic GPO-only acquisition flags were not mistaken for invalid Council XML.
+Substantive source/claim selection and interpretations were manual; projection,
+compilation and replay remain deterministic. No production or archive access.
+
+Validation: **84 candidate tests within133 focused candidate/corpus/IR/pipeline
+tests and all7 semantic checks passed**. One initial test retained the prior
+unfinished count179; it was corrected to178 after56's supported disposition.
+Core `25aa703a8ae0aabef81daf1384df2ec643ac89fce285c36d50fe035376d17d5a`;
+compiled `020af5d1da493335439207c8c7d179505dbf0b9ccea669b06aa59fa92b51bd3a`.
+Exact new-head CI is recorded in the same PR after push; old-head success is not
+substituted. Previously documented frozen-Justice audit failures stay separate.
+
+**Next executable work:**2026roll57 H.R.6644, whose complete EH and February9
+floor material are captured but substantive review is largely unfinished.
+Finish the whole housing package and material incorporated authorities before
+membership/meaning. Disability-income, family self-sufficiency and care-related
+conditions are leads, not conclusions. Then65 H.J.Res.72 and subsequent queue
+groups. The existing per-action inventory preserves older prepared cases and
+2025roll237/2026roll44 examined dependencies;2026roll45 broader-package review
+also remains. Do not repeat completed56/62/68/69. No exhausted evidence path or
+new human decision is identified. This is active continuation toward the user's
+3percent-remaining usage threshold, not a terminal checkpoint or Health closure.
+
+## Historical February9–12 membership checkpoint — September27
 
 Continue from `f31eb45393c5edeb0b3428063807b9d073d00f32`; exact-head
 CI36300576449 passed all nine jobs. Five more screenings completed:2026rolls
