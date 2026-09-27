@@ -2,9 +2,9 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since1f42ed1, eight further screenings are resolved:
-two procedural controls and six proposed exclusions. There remain70 interpreted
-inputs,52 Foushee findings and49 bounded Massie proof findings.240 identities
+**Active partial candidate.** Since608c617, six further screenings are resolved:
+one procedural control and five proposed exclusions. There remain70 interpreted
+inputs,52 Foushee findings and49 bounded Massie proof findings.234 identities
 are unreviewed; one additional examined action has a printed-source conflict.
 No current user decision is required. This is neither complete Health coverage
 nor accepted/public content.
@@ -14,26 +14,26 @@ nor accepted/public content.
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-1f42ed1 at the latest resumption. Later in-scope research is preserved without reset.
+608c617 at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
 - [70 shared meanings /593 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [993 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [294 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [1022 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [300 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (1f42ed1) | Current local candidate |
+| Disposition | Before (608c617) | Current local candidate |
 |---|---:|---:|
 | interpreted_substantive_directional |70|70|
-| procedural_context |186|188|
+| procedural_context |188|189|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |160|166|
-| source_unresolved (unreviewed plus examined conflict) |249|241|
+| exact_action_ineligible |166|171|
+| source_unresolved (unreviewed plus examined conflict) |241|235|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -41,74 +41,67 @@ No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
 ## Active continuation — September27
 
-Resumed from `1f42ed1f45161753dcf7b80930d6736ed64d9489` without reset.
-Eight further screenings are resolved: procedural319/321 and proposed exclusions
-323–328. Counts70/186/11/160/249 become70/188/11/166/241:240 unreviewed screenings
-plus the separately examined237 source conflict. No new shared Health meaning is
-introduced. All70 meanings,52 Foushee findings,49 Massie proof findings,140
-observations and53 episodes (nine multi-action episodes) remain unchanged.
+Continue from pushed head `608c6171fbc9defee4cd84f413e63b66e8e81f0a`.
+Six further membership screenings are resolved: procedural331 and proposed
+exclusions330/332/334/335/336. Counts70/188/11/166/241 become
+70/189/11/171/235:234 unreviewed identities plus the examined roll237 source
+conflict. The70 shared interpretations,52 Foushee findings,49 Massie proof
+findings,140 observations and53 episodes (nine multi-action episodes) are
+unchanged. No new user decision or unavailable-evidence blocker is identified.
 
-- **319:** the Clerk-read Norcross motion refers S.1071 to Armed Services. The
-  separately reproduced proposed labor-funding instructions are preserved as
-  displayed material, not silently promoted into the actual procedural question.
-  The older burial title does not describe the substituted defense package.
-- **321:** discharge of Rules from H.Res.432, neither adoption of the rule nor
-  passage of H.R.2550. The Chair's precise question resolves a speaker's shorthand.
-- **323/324:** separate energy passage exclusions. PURPA consideration is not
-  mandatory adoption; the prior-legislature-vote exception alone carries the
-  three-year limit. DOE supply-chain recommendations do not implement themselves.
-  The printed42USC824o parenthetical is preserved alongside named FPA215(a),
-  codified at16USC824o. Workforce references do not establish a Health benefit.
-- **325:** rejected deletion of the exact section307 multi-class-share disclosure
-  from December2 RCP119-15. Cover and complete section pages63–64 are bound.
-- **326:** rejected foreign-client AML/customer-identification amendment. Waters
-  expressly acts as Garcia's designee; report/Clerk naming is not a source conflict.
-  Financial-institution insurance context is not health-coverage regulation.
-- **327:** complete rejected securities-fee title, including retirement-account
-  charges and reporting. Preserve SEC-discretionary versus direct prohibitions,
-  the specified financial actors and original drafting references; no general
-  medical-fee prohibition is inferred.
-- **328:** the complete66,005-character INVEST EH is read and separately screened.
-  Its403(b) securities exemptions retain retirement/fiduciary conditions and the
-  unchanged health/long-term-care distribution-tax exception. The SEC taskforce
-  and GAO study explicitly concern elder exploitation, cognitive decline, costs
-  to public-health programs and adult-protective-service reporting. These adjacent
-  references are retained with the existing Elder Justice Council authority;
-  the new duties concern investor protection/financial-exploitation research,
-  not altered care or social-service delivery/financing. Preserve the first-report
-  cross-reference without inventing its satisfaction. Rejected325–327 effects
-  are not imported into the final package.
+- **330:** complete H.R.3898 EH and Report119-399 PartA read. Preserve the
+  environmental/public-health connections, existing toxic-pollutant exception,
+  imminent-danger judicial-remedy qualification, pesticide exceptions, farm
+  spill-control thresholds, State-program ratification and IBWC funding limits.
+  The water-permitting changes do not establish the declared care/social-service
+  delivery or financing mechanism. A proposed amendment is not assumed adopted.
+- **331:** the rule opens H.R.2550 consideration; it does not deem passage.
+  Reuse the previously captured IH and keep discharge321 and passage332 distinct.
+- **332:** full H.R.2550 EH, March27 EO14251 and targeted labor statutes read.
+  Retain express VA/HHS/SSA workforce connections and exceptions. The proposed
+  exclusion distinguishes bargaining/agreement duration from care/service
+  delivery and preserves Title38's direct-patient-care bargaining limits.
+  No claim is made about unexamined agreement terms or every later executive order.
+- **334:** full H.R.3668 EH read; preserve the removed water-certification gate,
+  FERC's necessity finding for proposed conditions, participation restrictions,
+  deadlines/exceptions and remote-data verification. This is energy authorization,
+  not a new care/benefit mechanism.
+- **335:** exact Senate text renews the Congressional Award program retroactively
+  through2028 and changes medal specifications. Preserve youth fitness and
+  scholarships without inferring a medical or social-service program.
+- **336:** exact EH conveys the specified Forest Service parcel for public uses
+  and removes the specified deed covenant/warranty requirement. Preserve the
+  CERCLA human-health/remediation qualification; do not claim an uncontaminated
+  parcel, repeal of every cleanup duty or an unmentioned medical facility.
 
-Add39 governed sources and eight membership records:993 sources /294 records /
-593 interpretation claim maps. Prior954 sources,70 meanings,286 membership
-records and every previously completed inventory row remain unchanged. Source
-reading/version selection and membership rationales are manual; projection is
-mechanical. Reuse prior EH sources, the shared statutory capture pattern and
-existing validation. No new infrastructure, authority or member-specific meaning.
+Add29 governed sources and six shared membership records:1022 sources /300
+records /593 interpretation claim maps. Source reading, statutory boundary
+analysis and membership decisions are manual; projection remains mechanical.
+Reuse the already captured water EH, committee report, Clerk330 and prior energy
+and rule sources. Three incorrect Code-path responses were rejected as navigation
+pages and replaced with verified chapter paths; no such response is governed.
 
-**Next executable queue:**307 remains partially researched; continue318/320/330
-and subsequent groups, alongside earlier262/294–296/299 and public land-plan work.
-The inventory now preserves exact prepared-source notes for318/320/330.
-Research154 holds unread S.1071 EAH (3,491,744 characters) and H.R.3898 EH (54,257
-characters), with URLs and raw hashes in those notes; capture is not review.
-Research145 holds unread3898/3668 RH and partially read Report119-399. RCP119-15
-is bound only at its cover/section307, not claimed fully read.318 still requires
-its incorporated version work. Do not repeat completed319/321/323–328 or
-317/322/329 procedural controls.
+**Next executable queue:** prepared307 and318/320 remain open; continue338 onward
+alongside earlier262/294–296/299 and public land-plan work. H.R.3898 EH is now fully
+read and governed, not an unread capture. H.R.3668 EH is also fully read/governed.
+Report119-399 PartA is read in full; PartB1/3/5 and report head were already read.
+The separate3898/3668 RH versions and full RCP119-15 still require the rule318
+incorporation review. RCP119-16/S.1071 EAH and earlier262 package accounting remain
+unfinished. Do not repeat completed330–336 or confuse already-complete333
+H.R.3668 recommittal with H.R.2550 passage.
 
-**Validation:** all149 focused subsystem tests pass across the initial148-pass
-run and the one schema-test rerun with the existing NODE_PATH supplied; the
-initial failure was missing local AJV module resolution, not a semantic defect.
-All7 canonical semantic checks pass. Deterministic regeneration retains the
-prior core/compiled/readable outputs; source-capture proof updates as expected.
-git diff --check passes. Two new focused tests preserve referral versus displayed
-instructions and exact investment-amendment/source boundaries. Exact-head CI is
-recorded in the PR discussion after push; earlier-head CI remains historical.
+**Validation:** the prior pushed608c617 head passed all nine CI jobs in run
+36288866326; results are recorded in PR194 discussion. The new increment passes all150 focused subsystem tests and all7 canonical
+semantic checks. Deterministic replay and diff review pass; prior993 sources,294
+membership records and70 meanings remain unchanged. Exact-head CI results are
+recorded after push. Core/compiled/readable outputs remain unchanged.
+A focused regression preserves health-adjacent qualifications and the distinct
+procedural rule. No frontend or production behavior changes.
 
-Continue grouped source/version work and targeted incorporation analysis without
-recursively researching unrelated parent-law provisions. Broad checks belong at
-push boundaries. This is active progress, not a terminal checkpoint. No marker,
-merge, deployment, publication, production write or other scope change is due.
+Work remains active. Reuse source/version groups, decide membership before full
+interpretation, and reserve broad checks for push boundaries. Do not create a
+shutdown marker at this ordinary progress boundary. No merge, deployment,
+publication, production write, registry/environment change or scope expansion.
 
 ## Historical overnight checkpoint — September26
 

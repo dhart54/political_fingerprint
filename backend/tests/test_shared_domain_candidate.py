@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":188, "source_unresolved":241,
-            "interpreted_substantive_directional":70, "expressive_nonbinding_context":11, "exact_action_ineligible":166})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":189, "source_unresolved":235,
+            "interpreted_substantive_directional":70, "expressive_nonbinding_context":11, "exact_action_ineligible":171})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 240)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 234)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1103,6 +1103,29 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertIn("adult-protective-service", passage["rationale"])
         self.assertIn("health/long-term-care distribution tax exception", passage["rationale"])
         self.assertIn("govinfo:42usc1397k-2024-page", {s["source_id"] for s in passage["sources"]})
+
+    def test_water_energy_and_land_exclusions_retain_exact_health_adjacent_limits(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        action_ids = {a["action_id"] for a in self.products[0]["actions"]}
+        for roll in [330, 332, 334, 335, 336]:
+            record = records[f"house:119:1:{roll}"]
+            self.assertEqual(record["disposition"], "exact_action_ineligible")
+            self.assertTrue(record["substantive_review_performed"])
+            self.assertTrue(record["claim_source_map"])
+            self.assertNotIn(record["action_id"], action_ids)
+        self.assertIn("toxic pollutant injurious to human health", sources["govinfo:33usc1342-2024-water-boundary"]["text"])
+        self.assertIn("imminent and substantial danger to human health", sources["govinfo:hr3898eh"]["text"])
+        self.assertIn("without striking that existing exception", records["house:119:1:330"]["rationale"])
+        self.assertIn("only on the stated necessity finding", records["house:119:1:334"]["rationale"])
+        self.assertIn("covenant warranting", sources["govinfo:42usc9620-2024-operative"]["text"])
+        self.assertIn("not claim the parcel is uncontaminated", records["house:119:1:336"]["rationale"])
+        self.assertIn("Direct patient care", sources["govinfo:38usc7422-2024-operative"]["text"])
+        self.assertIn("unexamined agreement term", records["house:119:1:332"]["rationale"])
+        rule = records["house:119:1:331"]
+        self.assertEqual(rule["disposition"], "procedural_context")
+        self.assertNotIn(rule["action_id"], action_ids)
+        self.assertIn("no deemed passage", rule["rationale"])
 
 if __name__ == "__main__":
     unittest.main()

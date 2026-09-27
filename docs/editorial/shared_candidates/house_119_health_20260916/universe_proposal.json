@@ -100,11 +100,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 188,
-      "exact_action_ineligible": 166,
+      "procedural_context": 189,
+      "exact_action_ineligible": 171,
       "interpreted_substantive_directional": 70,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 241
+      "source_unresolved": 235
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -116,10 +116,10 @@
     "substantive_eligible_actions": 70,
     "directional_substantive_actions": 70,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 188,
+    "procedural_context_actions": 189,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 166,
-    "unresolved_boundary_cases": 241,
+    "exact_action_ineligible_actions": 171,
+    "unresolved_boundary_cases": 235,
     "independent_episode_count": 53,
     "multi_action_episode_count": 9,
     "mechanism_types": [
@@ -136,7 +136,7 @@
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "240 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "234 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -247,6 +247,7 @@
         "house:119:1:321",
         "house:119:1:322",
         "house:119:1:329",
+        "house:119:1:331",
         "house:119:1:333",
         "house:119:1:337",
         "house:119:1:339",
@@ -474,6 +475,11 @@
         "house:119:1:326",
         "house:119:1:327",
         "house:119:1:328",
+        "house:119:1:330",
+        "house:119:1:332",
+        "house:119:1:334",
+        "house:119:1:335",
+        "house:119:1:336",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -595,12 +601,6 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:1:330",
-        "house:119:1:331",
-        "house:119:1:332",
-        "house:119:1:334",
-        "house:119:1:335",
-        "house:119:1:336",
         "house:119:1:338",
         "house:119:1:340",
         "house:119:1:342",
@@ -826,11 +826,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "70 proposed source-mapped inputs, not accepted eligibility. Of241 unresolved identities,240 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "70 proposed source-mapped inputs, not accepted eligibility. Of235 unresolved identities,234 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
   "episode_completeness": "53 candidate episodes cover70 supplied actions, including9 multi-action episodes (six two-action episodes, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). Exact amendments, passage and concurrence remain independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "3b7185d77965204b6fe9a47afff6a4a8ff96a7a954e8ee22fb36ccefe9249fd4",
+  "universe_subject_sha256": "ff3ab2f7b685af0d36d855377ffdc48982a18aaf9396b94ea1626c69a2f61e29",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -23165,7 +23165,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.Res.936 EH remains governed; Report119-399 is captured in research145 and its rule summary plus PartB1/3/5 have been read. Those amendments now have separate completed exclusions325-327; full INVEST EH was read for completed passage328. RCP119-15 datedDec2,2025 cover and section307 pages63-64 are bound (research146); remainder of that print is not yet read. H.R.3898 RH and H.R.3668 RH are captured in research145 but unread. Continue exact incorporated substitute verification, especially RCP119-16 (official public PDF https://docs.house.gov/billsthisweek/20251208/RCP_xml%5B2%5D.pdf,3086 pages; web cover confirmsDec7,2025), before final procedural disposition.319 is a completed bare committee-referral control, not a substantive vote on displayed proposed labor instructions."
+        "next_action": "H.Res.936 EH remains governed; Report119-399 is captured in research145 and its rule summary, complete PartA and PartB1/3/5 have been read. Those amendments now have separate completed exclusions325-327; full INVEST EH was read for completed passage328. RCP119-15 datedDec2,2025 cover and section307 pages63-64 are bound (research146); remainder of that print is not yet read. H.R.3898 RH and H.R.3668 RH are captured in research145 but unread; their distinct EH versions have now been fully read/governed for completed330/334. Do not assume exact RH/EH identity. Continue exact incorporated substitute verification, especially RCP119-16 (official public PDF https://docs.house.gov/billsthisweek/20251208/RCP_xml%5B2%5D.pdf,3086 pages; web cover confirmsDec7,2025), before final procedural disposition.319 is a completed bare committee-referral control, not a substantive vote on displayed proposed labor instructions."
       }
     },
     {
@@ -24022,13 +24022,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3898",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The full54,257-character H.R.3898 EH passed December11 is independently reviewed, including its26 sections and the complete proposed PartA amendments in Report119-399. This is substantive environmental/water legislation, not a procedural vote and not a Health exclusion inferred from its title. The exact package changes combined-sewer standards review and cost/technology considerations; requires rulemaking for new or revised water-quality criteria; changes water-quality certification scope, deadlines, enforcement and specified energy-certification judicial review; creates general-permit procedures and longer permit terms; broadens the described permit-compliance shield; and changes aerial fire-suppression, agricultural-stormwater and pesticide permit requirements. The pesticide exemption preserves its listed FIFRA-violation, stormwater, manufacturing/treatment-works and vessel-discharge exceptions.\n\nIt also limits the period for EPA disposal-site prohibitions to the completed-application/permit-issuance window, revises dredge/fill nationwide permits and environmental-review requirements, changes State-program applications and judicial review, ratifies the named Michigan/New Jersey/Florida programs subject to the stated congressional-withdrawal restriction, requires mitigation/permitting/backlog work, narrows navigable-water coverage and changes farm spill-control thresholds. Further provisions encourage FAST-Act coordination, express a cooperative Chesapeake approach, identify water-recharge lands and permitting processes, establish the voluntary nitrogen/phosphorus pilot, and allow the U.S. IBWC to accept qualifying funds for wastewater, conservation and flood-control works subject to appropriations, foreign-source restrictions and the annual$5million non-Federal credit/reimbursement cap. These are not health-insurance or care-service appropriations. The final text includes water recharge but not the separately proposed brackish-groundwater/desalination section; making an amendment in order is not evidence it became law or entered the EH.\n\nMaterial public-health references are retained. Existing33USC1313(c) water standards protect public health/welfare;1314(a)(1)/(9) criteria include pollutant effects and pathogen indicators for coastal recreation. Section3 changes the method for adopting those environmental criteria, not a clinical-care or clinical-research program. Existing1342(k) expressly excepts standards for toxic pollutants injurious to human health; the EH adds scope language without striking that existing exception. New section15 limits judicial remedies but expressly allows specified permit/discharge relief for imminent and substantial danger to human health or the environment when no other equitable remedy exists. The fire-suppression heading concerns a discharge-permit exemption, not firefighter medical benefits. Section21 changes farm oil-spill certification/exemption quantities; the existing note confirms the separate single-tank and discharge-history rules and the animal-feed context. These source-grounded environmental-health connections do not establish the declared Health mechanism of care, insurance, Medicaid, Social Security or social-service delivery/financing. This proposed exclusion makes no prediction about illness, pollution, costs or safety outcomes and does not deny that environmental regulation can affect health.",
       "source": {
         "source_id": "clerk:119:1:330",
         "url": "https://clerk.house.gov/evs/2025/roll330.xml",
         "raw_sha256": "4c569f703a7b6f436d117d76b6b36f78355e4db9dc91baea833d2e0a8cc3d912",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "66939b03788aae5fe79acda5fb72009768e521df868dd15cbc84438552d3d01e",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24039,26 +24040,106 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The full54,257-character H.R.3898 EH passed December11 is independently reviewed, including its26 sections and the complete proposed PartA amendments in Report119-399. This is substantive environmental/water legislation, not a procedural vote and not a Health exclusion inferred from its title. The exact package changes combined-sewer standards review and cost/technology considerations; requires rulemaking for new or revised water-quality criteria; changes water-quality certification scope, deadlines, enforcement and specified energy-certification judicial review; creates general-permit procedures and longer permit terms; broadens the described permit-compliance shield; and changes aerial fire-suppression, agricultural-stormwater and pesticide permit requirements. The pesticide exemption preserves its listed FIFRA-violation, stormwater, manufacturing/treatment-works and vessel-discharge exceptions.\n\nIt also limits the period for EPA disposal-site prohibitions to the completed-application/permit-issuance window, revises dredge/fill nationwide permits and environmental-review requirements, changes State-program applications and judicial review, ratifies the named Michigan/New Jersey/Florida programs subject to the stated congressional-withdrawal restriction, requires mitigation/permitting/backlog work, narrows navigable-water coverage and changes farm spill-control thresholds. Further provisions encourage FAST-Act coordination, express a cooperative Chesapeake approach, identify water-recharge lands and permitting processes, establish the voluntary nitrogen/phosphorus pilot, and allow the U.S. IBWC to accept qualifying funds for wastewater, conservation and flood-control works subject to appropriations, foreign-source restrictions and the annual$5million non-Federal credit/reimbursement cap. These are not health-insurance or care-service appropriations. The final text includes water recharge but not the separately proposed brackish-groundwater/desalination section; making an amendment in order is not evidence it became law or entered the EH.\n\nMaterial public-health references are retained. Existing33USC1313(c) water standards protect public health/welfare;1314(a)(1)/(9) criteria include pollutant effects and pathogen indicators for coastal recreation. Section3 changes the method for adopting those environmental criteria, not a clinical-care or clinical-research program. Existing1342(k) expressly excepts standards for toxic pollutants injurious to human health; the EH adds scope language without striking that existing exception. New section15 limits judicial remedies but expressly allows specified permit/discharge relief for imminent and substantial danger to human health or the environment when no other equitable remedy exists. The fire-suppression heading concerns a discharge-permit exemption, not firefighter medical benefits. Section21 changes farm oil-spill certification/exemption quantities; the existing note confirms the separate single-tank and discharge-history rules and the animal-feed context. These source-grounded environmental-health connections do not establish the declared Health mechanism of care, insurance, Medicaid, Social Security or social-service delivery/financing. This proposed exclusion makes no prediction about illness, pollution, costs or safety outcomes and does not deny that environmental regulation can affect health.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:330",
           "url": "https://clerk.house.gov/evs/2025/roll330.xml",
           "raw_sha256": "4c569f703a7b6f436d117d76b6b36f78355e4db9dc91baea833d2e0a8cc3d912",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "66939b03788aae5fe79acda5fb72009768e521df868dd15cbc84438552d3d01e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3898eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3898eh/html/BILLS-119hr3898eh.htm",
+          "raw_sha256": "04a3814dc7ca81c2a744fb2eaf181a4532aa7faac3fc52b497ab97be16711b7e",
+          "governed_bytes_sha256": "dc426a72f2ff3540f51415a1dbfa2536a056e5c68dccc24d0132bb7fd8007fbd"
+        },
+        {
+          "source_id": "govinfo:hrpt119-399-parta",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt399/html/CRPT-119hrpt399.htm",
+          "raw_sha256": "d9da2c4b40b5c85bdc42f0346113e816663cf7cd6d53c5687b764dcb52153b30",
+          "governed_bytes_sha256": "cb3a3da9ca8806a10f11c5a0f9158acb971f462193995cdad77c9a07667a0605"
+        },
+        {
+          "source_id": "govinfo:33usc1313-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIII-sec1313.htm",
+          "raw_sha256": "0bd8742d4bef24fc04b617eb190836910011afaa4177b19ee2308faeb78e7066",
+          "governed_bytes_sha256": "82758bd7bfa95c8e5dbe417baa359552896ce2701a395a0d77e4dbecaf7d82ed"
+        },
+        {
+          "source_id": "govinfo:33usc1314-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIII-sec1314.htm",
+          "raw_sha256": "75580588d7bef27ebe32b585760fb33efbdacb8b17de2b1cd50317cf413ab456",
+          "governed_bytes_sha256": "b01029c485f4dfee7278dc9a7727b2a741fef326b311f14b4c63b1dcce639c38"
+        },
+        {
+          "source_id": "govinfo:33usc1341-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1341.htm",
+          "raw_sha256": "12151ee37a76c66a6252000cf53075a3f44e66a596b6e489152a5d406ff19eb7",
+          "governed_bytes_sha256": "05b17053ca5c8e6c861e4ce414e820939a84e5eb23b06912a8fb075dcb22c5a5"
+        },
+        {
+          "source_id": "govinfo:33usc1342-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1342.htm",
+          "raw_sha256": "80f485f8b65b15811a42e4b18a98d53067c1dbe16e5ce85dddc36156b4506453",
+          "governed_bytes_sha256": "685024331bcb9ee4787b047f0215da16f576404c4ca4602e1c7aec7310a8c470"
+        },
+        {
+          "source_id": "govinfo:33usc1344-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1344.htm",
+          "raw_sha256": "ead247495fcce9c4030c876cde71670bf84eb1a3908d12371508e0172f061dbc",
+          "governed_bytes_sha256": "f5fcf65042e31ff67e760caed32438534ac0b1ea9e6caa5f9c54b8d55e758e58"
+        },
+        {
+          "source_id": "govinfo:33usc1361-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapV-sec1361.htm",
+          "raw_sha256": "d27f5e2d0b1f97b1f2f8cee32aa9250957315ff794f24e8c095a35f31e24cd32",
+          "governed_bytes_sha256": "6bd6b219ffbedb767e275b9c33164bf4b89c799d989da3a9cbff9b6133101e37"
+        },
+        {
+          "source_id": "govinfo:33usc1362-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapV-sec1362.htm",
+          "raw_sha256": "36022d58683ce79dd1db0726012c8176c6abe876b1edddab6796bc5d5ad65a61",
+          "governed_bytes_sha256": "b7792d2ccdcdd746b9e6cc7dccd988dc6e1feca29315804045501dab8e58bf0f"
+        },
+        {
+          "source_id": "govinfo:42usc4332-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4332.htm",
+          "raw_sha256": "1e488727268009a42447de310b94f13380ae907ba6c2b8c87d82b4c740c1bd47",
+          "governed_bytes_sha256": "753d8c2bdaaf9a4e06c199daf35ef43a099dddead6ff38a25ee34ced85d13e9a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:330",
+        "source_ids": [
+          "clerk:119:1:330",
+          "govinfo:hr3898eh",
+          "govinfo:hrpt119-399-parta",
+          "govinfo:33usc1313-2024-water-boundary",
+          "govinfo:33usc1314-2024-water-boundary",
+          "govinfo:33usc1341-2024-water-boundary",
+          "govinfo:33usc1342-2024-water-boundary",
+          "govinfo:33usc1344-2024-water-boundary",
+          "govinfo:33usc1361-2024-water-boundary",
+          "govinfo:33usc1362-2024-water-boundary",
+          "govinfo:42usc4332-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:330",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Exact H.R.3898 EH captured in research154: https://www.govinfo.gov/content/pkg/BILLS-119hr3898eh/html/BILLS-119hr3898eh.htm ; raw_sha256=04a3814dc7ca81c2a744fb2eaf181a4532aa7faac3fc52b497ab97be16711b7e ; text54257 characters. Captured only, read from character0 next. RH40269 characters and Report119-399 captured in research145; PartA amendments and applicable incorporated water-law mechanisms still need review. Clerk330 captured in research143.329 recommittal is already complete and must not be reinterpreted as passage."
-      }
+        "shared_review_record_sha256": "7249c505892b0bc2dd19cd3a9cca1f80787e0b74bbc68d93f4acdca131bb888a"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:331",
@@ -24067,13 +24148,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hres_432",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The December11 vote adopts H.Res.432, whose complete EH is read and compared with the already-governed IH used for the preceding discharge. It orders consideration of H.R.2550 with specified waivers, one hour of debate and one recommittal motion; disapplies ruleXIX1(c) and ruleXX8; and instructs transmission to the Senate no later than one week after bill passage. It contains no deemed passage or substantive bill amendment. The separately bound H.R.2550 EH would nullify the March27 labor-exclusion executive order, prohibit funds to carry it out and preserve covered March26 collective bargaining agreements for their stated terms; agreeing to this rule is not that subsequent passage choice. Keep roll321 discharge, roll331 rule adoption and roll332 passage distinct; no Health direction is inferred from procedure.",
       "source": {
         "source_id": "clerk:119:1:331",
         "url": "https://clerk.house.gov/evs/2025/roll331.xml",
         "raw_sha256": "48eee1049476468bf95b14ef1730dd73a12934f4f512aa605aa6aa3c57fc3804",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "b7b2c986775bc0a5f757665e7de7c5ff9fd64ff2f5d8369a9d4f1b082a185e95",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24084,25 +24166,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The December11 vote adopts H.Res.432, whose complete EH is read and compared with the already-governed IH used for the preceding discharge. It orders consideration of H.R.2550 with specified waivers, one hour of debate and one recommittal motion; disapplies ruleXIX1(c) and ruleXX8; and instructs transmission to the Senate no later than one week after bill passage. It contains no deemed passage or substantive bill amendment. The separately bound H.R.2550 EH would nullify the March27 labor-exclusion executive order, prohibit funds to carry it out and preserve covered March26 collective bargaining agreements for their stated terms; agreeing to this rule is not that subsequent passage choice. Keep roll321 discharge, roll331 rule adoption and roll332 passage distinct; no Health direction is inferred from procedure.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:331",
           "url": "https://clerk.house.gov/evs/2025/roll331.xml",
           "raw_sha256": "48eee1049476468bf95b14ef1730dd73a12934f4f512aa605aa6aa3c57fc3804",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "b7b2c986775bc0a5f757665e7de7c5ff9fd64ff2f5d8369a9d4f1b082a185e95",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres432eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres432eh/html/BILLS-119hres432eh.htm",
+          "raw_sha256": "1f8925d6de1a4bf700ba6ce0baeaf4e60e3abe75df0682e78be5eb23a56f7969",
+          "governed_bytes_sha256": "b3561a577dde3438bde939d1cd6a9cdf7cb0102ba3e3f6ed05b7a6e9cc9c2d1d"
+        },
+        {
+          "source_id": "govinfo:hres432ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres432ih/html/BILLS-119hres432ih.htm",
+          "raw_sha256": "5235a785dbd861fae8fa5a1609c35aab182ad4007eae2882df704bd31ce77299",
+          "governed_bytes_sha256": "a9fc68cafc3e785bf4304570b02eeacbcec9bde008a88a1a6eff0ed6cae5fae0"
+        },
+        {
+          "source_id": "govinfo:hr2550eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2550eh/html/BILLS-119hr2550eh.htm",
+          "raw_sha256": "f6a900a52c4f2a2a599c760fef1de91a4d94c31f2c67ac0ed06812a35c821fee",
+          "governed_bytes_sha256": "d65bd10625d81816d5d43f194d0765f298ffd3a54117afee1f03ec5b7e134f7a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:331",
+        "source_ids": [
+          "clerk:119:1:331",
+          "govinfo:hres432eh",
+          "govinfo:hres432ih",
+          "govinfo:hr2550eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:331",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2503f410dba7b9581842d31b9e0700a372f0dc55fd6105dfa429ae4b2003cb29"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:332",
@@ -24111,13 +24225,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_2550",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The entire H.R.2550 EH is the December11 passage choice: nullify the executive order titled Exclusions from Federal Labor-Management Relations Programs issued March27,2025, prohibit Federal funds to carry it out, and give collective bargaining agreements in effect March26 between an executive-branch agency and an exclusive employee representative full force through their stated terms. The bound EO14251 as issued is read completely. Its exclusions expressly include VA and named HHS components (FDA, CDC, ASPR, NIAID, refugee resettlement and others), and specified information-management subdivisions including SSA, alongside many other agencies. It also includes Foreign Service exclusions, Defense/VA suspension authority, a Transportation delegation, and implementation/grievance provisions. The immediate-local police/security/firefighter exception has its Bureau-of-Prisons limitation; named agency coverage must not be silently generalized to every employee or every HHS subdivision. The bill identifies the March27 order, not every later labor-related executive order; this review neither resolves litigation nor promises universal reinstatement.\n\nThe operative mechanism is Federal workforce bargaining and agreement duration, including health/social-service agency employees, not a change to the services or statutory benefits administered by those agencies. Bound5USC7103 defines bargaining over conditions of employment, excepts matters specifically provided by Federal statute, and supplies the named national-security exclusion authority. Bound38USC7421/7422 retain the separate Title38 rules for the listed VA clinical professions: bargaining does not cover professional conduct/competence (defined to include direct patient care and clinical competence), peer review or Title38 compensation determinations, with the stated Secretary determination and judicial-review channel. The bill does not amend these provisions or specify a new clinical staffing, treatment, Medicaid, Social Security, insurance or household-assistance entitlement. Preserving an existing agreement is not evidence of a particular unexamined agreement term, service outcome or medical benefit. This proposed exclusion follows the declared delivery/financing boundary while retaining the actual health-workforce connection; it does not infer that labor rights have no consequences for care. Keep roll321 discharge,331 rule adoption and332 substantive passage distinct.",
       "source": {
         "source_id": "clerk:119:1:332",
         "url": "https://clerk.house.gov/evs/2025/roll332.xml",
         "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3f2693e031dc1943a60e85994111393ec95265e6d1a3fedb276aca106934174e",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24128,25 +24243,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The entire H.R.2550 EH is the December11 passage choice: nullify the executive order titled Exclusions from Federal Labor-Management Relations Programs issued March27,2025, prohibit Federal funds to carry it out, and give collective bargaining agreements in effect March26 between an executive-branch agency and an exclusive employee representative full force through their stated terms. The bound EO14251 as issued is read completely. Its exclusions expressly include VA and named HHS components (FDA, CDC, ASPR, NIAID, refugee resettlement and others), and specified information-management subdivisions including SSA, alongside many other agencies. It also includes Foreign Service exclusions, Defense/VA suspension authority, a Transportation delegation, and implementation/grievance provisions. The immediate-local police/security/firefighter exception has its Bureau-of-Prisons limitation; named agency coverage must not be silently generalized to every employee or every HHS subdivision. The bill identifies the March27 order, not every later labor-related executive order; this review neither resolves litigation nor promises universal reinstatement.\n\nThe operative mechanism is Federal workforce bargaining and agreement duration, including health/social-service agency employees, not a change to the services or statutory benefits administered by those agencies. Bound5USC7103 defines bargaining over conditions of employment, excepts matters specifically provided by Federal statute, and supplies the named national-security exclusion authority. Bound38USC7421/7422 retain the separate Title38 rules for the listed VA clinical professions: bargaining does not cover professional conduct/competence (defined to include direct patient care and clinical competence), peer review or Title38 compensation determinations, with the stated Secretary determination and judicial-review channel. The bill does not amend these provisions or specify a new clinical staffing, treatment, Medicaid, Social Security, insurance or household-assistance entitlement. Preserving an existing agreement is not evidence of a particular unexamined agreement term, service outcome or medical benefit. This proposed exclusion follows the declared delivery/financing boundary while retaining the actual health-workforce connection; it does not infer that labor rights have no consequences for care. Keep roll321 discharge,331 rule adoption and332 substantive passage distinct.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:332",
           "url": "https://clerk.house.gov/evs/2025/roll332.xml",
           "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3f2693e031dc1943a60e85994111393ec95265e6d1a3fedb276aca106934174e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2550eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2550eh/html/BILLS-119hr2550eh.htm",
+          "raw_sha256": "f6a900a52c4f2a2a599c760fef1de91a4d94c31f2c67ac0ed06812a35c821fee",
+          "governed_bytes_sha256": "d65bd10625d81816d5d43f194d0765f298ffd3a54117afee1f03ec5b7e134f7a"
+        },
+        {
+          "source_id": "federal-register:eo14251-20250327",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm",
+          "raw_sha256": "4852df435166d6164bbc331d8218cc9ceeb9f3ecede99b987f4b671278254528",
+          "governed_bytes_sha256": "12c4a767860052c27424cf40be708d3bc9890d93cd2d1560a95819f84c61f8cd"
+        },
+        {
+          "source_id": "govinfo:5usc7103-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartF-chap71-subchapI-sec7103.htm",
+          "raw_sha256": "8fa86e714b1023a7f13a48de1aa5fd557557c2e1e17fa06cc022bed728aefcb5",
+          "governed_bytes_sha256": "cc92fce355479b1bfc0192440f10cb4c9c7761efb1ca0cec2822687ede783235"
+        },
+        {
+          "source_id": "govinfo:38usc7421-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapII-sec7421.htm",
+          "raw_sha256": "2dc9d7466cd3365872056dbdff3beddcc64c74d7f3311be548bdbae1309dcfff",
+          "governed_bytes_sha256": "c64778dddbde43ac0af06d81ddd6d11924914f2df08607a9213395c038594ea3"
+        },
+        {
+          "source_id": "govinfo:38usc7422-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partV-chap74-subchapII-sec7422.htm",
+          "raw_sha256": "43f49b2be4130d1a06c64b7c67535ba693d2f577e7d9420d210693cd628d9d28",
+          "governed_bytes_sha256": "fff346847502653d4389fee3fe619aff483b855a288b97014d070e60d756fa76"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:332",
+        "source_ids": [
+          "clerk:119:1:332",
+          "govinfo:hr2550eh",
+          "federal-register:eo14251-20250327",
+          "govinfo:5usc7103-2024-operative",
+          "govinfo:38usc7421-2024-operative",
+          "govinfo:38usc7422-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:332",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a5fb19e3cca93b7ad3954ea36edb4445736a3c40aba79e54f4c6e7859c67fe49"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:333",
@@ -24199,13 +24360,14 @@
       "date": "2025-12-12",
       "measure": "bill_119_hr_3668",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete15,531-character H.R.3668 EH is reviewed as the December12 passage choice, separately from its recommittal. It makes FERC the sole lead agency for the specified Natural Gas Act section3 authorizations/section7 certificates, coordinates participating agencies and sets participation, review, information and reporting deadlines. Nonparticipating agencies face the stated supplemental-review exception and restrictions on submitted comments. Its water provision removes the section401 certification requirement for the covered Federal authorization, replacing that gate with State/interstate participation and proposed conditions that FERC may include only on the stated necessity finding. It is not merely a promise of faster coordination or automatic approval of every pipeline. Federal authorization deadlines are normally within90days after NEPA review unless Federal law supplies another schedule; a missed deadline triggers notice and an implementation plan. Remote-data conditional approvals require subsequent onsite verification; contractor assistance, public tracking and TSA security consultation are retained. Bound15USC717n,717b and717f identify the exact energy-authorization channel,33USC1341 the existing water-certification gate, and42USC4332 the environmental-review framework. These are energy/environmental authorization changes, including material water-quality conditions, not changes to clinical care, insurance, Medicaid, Social Security or social-service delivery/financing. No medical, price, safety or environmental outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:334",
         "url": "https://clerk.house.gov/evs/2025/roll334.xml",
         "raw_sha256": "5886a8482b18ab0dfc0b797fd370b331e81bc75b7dce0a2cb4f4e0256b7260bc",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "db3cbe4ea6aa372207d602c6739b8d7a7bfdeccc538d6258d9a15004faf0f1af",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24216,25 +24378,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete15,531-character H.R.3668 EH is reviewed as the December12 passage choice, separately from its recommittal. It makes FERC the sole lead agency for the specified Natural Gas Act section3 authorizations/section7 certificates, coordinates participating agencies and sets participation, review, information and reporting deadlines. Nonparticipating agencies face the stated supplemental-review exception and restrictions on submitted comments. Its water provision removes the section401 certification requirement for the covered Federal authorization, replacing that gate with State/interstate participation and proposed conditions that FERC may include only on the stated necessity finding. It is not merely a promise of faster coordination or automatic approval of every pipeline. Federal authorization deadlines are normally within90days after NEPA review unless Federal law supplies another schedule; a missed deadline triggers notice and an implementation plan. Remote-data conditional approvals require subsequent onsite verification; contractor assistance, public tracking and TSA security consultation are retained. Bound15USC717n,717b and717f identify the exact energy-authorization channel,33USC1341 the existing water-certification gate, and42USC4332 the environmental-review framework. These are energy/environmental authorization changes, including material water-quality conditions, not changes to clinical care, insurance, Medicaid, Social Security or social-service delivery/financing. No medical, price, safety or environmental outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:334",
           "url": "https://clerk.house.gov/evs/2025/roll334.xml",
           "raw_sha256": "5886a8482b18ab0dfc0b797fd370b331e81bc75b7dce0a2cb4f4e0256b7260bc",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "db3cbe4ea6aa372207d602c6739b8d7a7bfdeccc538d6258d9a15004faf0f1af",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3668eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3668eh/html/BILLS-119hr3668eh.htm",
+          "raw_sha256": "3cf698aad7d12ad0d584c7b17d6ada042f6a57c317794960ee7123ba23072750",
+          "governed_bytes_sha256": "a84b897eadda50034e795330830c34f4d4c941ffc798ce5904297446d6b4ea4d"
+        },
+        {
+          "source_id": "govinfo:15usc717n-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717n.htm",
+          "raw_sha256": "1807a9699b994f05471b34b334da0d58bacd9282109a97de688de670d347bb9b",
+          "governed_bytes_sha256": "27e56ad7299c39b1d34faf5f5d6f75fc0976c162f55f1a19e759ecaa2c90f4a8"
+        },
+        {
+          "source_id": "govinfo:15usc717b-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+          "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+          "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+        },
+        {
+          "source_id": "govinfo:15usc717f-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717f.htm",
+          "raw_sha256": "9705ad8ddf9e34b1b3a8958e2f9a778492e4758bfa3de4188a8bd29b60aee1a1",
+          "governed_bytes_sha256": "75acbd1f42ba710bb9168d962d3155e6ead15714f23700fdd60cd8e4eaa4dbc2"
+        },
+        {
+          "source_id": "govinfo:42usc4332-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapI-sec4332.htm",
+          "raw_sha256": "1e488727268009a42447de310b94f13380ae907ba6c2b8c87d82b4c740c1bd47",
+          "governed_bytes_sha256": "753d8c2bdaaf9a4e06c199daf35ef43a099dddead6ff38a25ee34ced85d13e9a"
+        },
+        {
+          "source_id": "govinfo:33usc1341-2024-water-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1341.htm",
+          "raw_sha256": "12151ee37a76c66a6252000cf53075a3f44e66a596b6e489152a5d406ff19eb7",
+          "governed_bytes_sha256": "05b17053ca5c8e6c861e4ce414e820939a84e5eb23b06912a8fb075dcb22c5a5"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:334",
+        "source_ids": [
+          "clerk:119:1:334",
+          "govinfo:hr3668eh",
+          "govinfo:15usc717n-2024-operative",
+          "govinfo:15usc717b-2024-operative",
+          "govinfo:15usc717f-2024-operative",
+          "govinfo:42usc4332-2024-operative",
+          "govinfo:33usc1341-2024-water-boundary"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:334",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6c069a3e5df1d1ae02809a60f0b1682a491586a0e1d445d5e8d9e08d0a484457"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:335",
@@ -24243,13 +24458,14 @@
       "date": "2025-12-15",
       "measure": "bill_119_s_284",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete Senate-passed S.284 text is the December15 suspension-and-pass choice, not merely a nonbinding commendation. It extends the Congressional Award Board termination from October1,2023 to October1,2028 with retroactive effect as of the former date and removes the prescribed medal-material formula while retaining Treasury medal production. Bound2USC802 identifies the youth achievement program, including public service, personal development and physical/expedition fitness, achievement verification, presentation and discretionary scholarships. Those existing fitness, youth and scholarship references are preserved; they do not make the reauthorization a clinical, insurance or social-service delivery/financing measure under the declared Health boundary. The bill changes program duration and medal specifications, not medical treatment or a health benefit. Suspension-plus-passage is substantive legislation, while the proposed disposition is exact-action Health ineligibility.",
       "source": {
         "source_id": "clerk:119:1:335",
         "url": "https://clerk.house.gov/evs/2025/roll335.xml",
         "raw_sha256": "c0f705b8f4a772eedd019a1c33f2d4bc8a8de263bb7559c9faa42284fe5b4461",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f497f776ef5236ad6ae3e69db6cb4c483aac96283168b45d544d450e422fcc6e",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24260,25 +24476,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete Senate-passed S.284 text is the December15 suspension-and-pass choice, not merely a nonbinding commendation. It extends the Congressional Award Board termination from October1,2023 to October1,2028 with retroactive effect as of the former date and removes the prescribed medal-material formula while retaining Treasury medal production. Bound2USC802 identifies the youth achievement program, including public service, personal development and physical/expedition fitness, achievement verification, presentation and discretionary scholarships. Those existing fitness, youth and scholarship references are preserved; they do not make the reauthorization a clinical, insurance or social-service delivery/financing measure under the declared Health boundary. The bill changes program duration and medal specifications, not medical treatment or a health benefit. Suspension-plus-passage is substantive legislation, while the proposed disposition is exact-action Health ineligibility.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:335",
           "url": "https://clerk.house.gov/evs/2025/roll335.xml",
           "raw_sha256": "c0f705b8f4a772eedd019a1c33f2d4bc8a8de263bb7559c9faa42284fe5b4461",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f497f776ef5236ad6ae3e69db6cb4c483aac96283168b45d544d450e422fcc6e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s284es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s284es/html/BILLS-119s284es.htm",
+          "raw_sha256": "2548c0c93c01a7e0d18037f17689b7c4b0488fc10a999e332aed0b8ffbbd49cd",
+          "governed_bytes_sha256": "d901552404120ddbdeb8f6a7388dafe16c6dbdd1b72964512054cffc3ed6078c"
+        },
+        {
+          "source_id": "govinfo:2usc802-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap19-subchapI-sec802.htm",
+          "raw_sha256": "f5ad21335585f92dd0da8ee3bbc43a2af1d30fd3669e33cb9557da73b33ac772",
+          "governed_bytes_sha256": "3b08c3ec3945697b6195d3f07a062b6458cfde7ff75cb73c842701f498d5978a"
+        },
+        {
+          "source_id": "govinfo:2usc808-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap19-subchapI-sec808.htm",
+          "raw_sha256": "1e443687edbfbd95ed57a7a1080780e357104c2dfff2e21b7e36883c099e6c3b",
+          "governed_bytes_sha256": "77e0245bf5bc583fbb3ced01cf89662a28b5af9b57d653627241084110d5c8d8"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:335",
+        "source_ids": [
+          "clerk:119:1:335",
+          "govinfo:s284es",
+          "govinfo:2usc802-2024-operative",
+          "govinfo:2usc808-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:335",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "64d47cd8d2204a2da8832a14c075170c3c757bc66306fffd0388d874c627db7a"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:336",
@@ -24287,13 +24535,14 @@
       "date": "2025-12-15",
       "measure": "bill_119_hr_3187",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The full H.R.3187 EH is the December15 suspension-and-pass-as-amended choice. On a County request within180days it directs a no-consideration quitclaim conveyance of the specified approximately0.81-acre Forest Service parcel and improvements at1069Fourche Avenue, Perryville, Arkansas, with survey, valid-rights and federal-interest conditions. Perry County bears conveyance, environmental and historic-preservation analysis costs. Public purposes such as education/youth development are required; inconsistent use permits discretionary reversion. Section1(e) expressly removes the Secretary’s covenant/warranty requirement notwithstanding CERCLA120(h)(3)(A). The bound statute shows the normally required deed covenant that necessary human-health/environment remediation has been taken and later necessary remediation will be conducted by the United States. This review preserves that material environmental-liability qualification; it does not claim the parcel is uncontaminated, that every cleanup duty is repealed, or that a new medical facility is authorized. The exact public-land conveyance and deed-warranty exception do not themselves establish care, insurance, Medicaid, Social Security or specified social-service delivery/financing. Generic permitted public uses do not supply an unmentioned Health program.",
       "source": {
         "source_id": "clerk:119:1:336",
         "url": "https://clerk.house.gov/evs/2025/roll336.xml",
         "raw_sha256": "795f4aef4e7179481c35c7e990c12712709fd5e64404eae956b9011cf6512e86",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "92b1dc1eeeb2623a6da89e3bd758e0610098bb5ae2ccbcd14f7e1921857ce58c",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -24304,25 +24553,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The full H.R.3187 EH is the December15 suspension-and-pass-as-amended choice. On a County request within180days it directs a no-consideration quitclaim conveyance of the specified approximately0.81-acre Forest Service parcel and improvements at1069Fourche Avenue, Perryville, Arkansas, with survey, valid-rights and federal-interest conditions. Perry County bears conveyance, environmental and historic-preservation analysis costs. Public purposes such as education/youth development are required; inconsistent use permits discretionary reversion. Section1(e) expressly removes the Secretary’s covenant/warranty requirement notwithstanding CERCLA120(h)(3)(A). The bound statute shows the normally required deed covenant that necessary human-health/environment remediation has been taken and later necessary remediation will be conducted by the United States. This review preserves that material environmental-liability qualification; it does not claim the parcel is uncontaminated, that every cleanup duty is repealed, or that a new medical facility is authorized. The exact public-land conveyance and deed-warranty exception do not themselves establish care, insurance, Medicaid, Social Security or specified social-service delivery/financing. Generic permitted public uses do not supply an unmentioned Health program.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:336",
           "url": "https://clerk.house.gov/evs/2025/roll336.xml",
           "raw_sha256": "795f4aef4e7179481c35c7e990c12712709fd5e64404eae956b9011cf6512e86",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "92b1dc1eeeb2623a6da89e3bd758e0610098bb5ae2ccbcd14f7e1921857ce58c",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3187eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3187eh/html/BILLS-119hr3187eh.htm",
+          "raw_sha256": "033d039cddcd13de0c08c3d497b68b4b4d4e519f6febf448c5968846c1a93960",
+          "governed_bytes_sha256": "b91e599ad84f6218ab75e24e52cb9e9fbfc09106b2f0739897a00a9642837af9"
+        },
+        {
+          "source_id": "govinfo:42usc9620-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap103-subchapI-sec9620.htm",
+          "raw_sha256": "c7c016d3f6a695501ae6f751c972a806cd600eeba08de9e902036fc487cfb25c",
+          "governed_bytes_sha256": "5f4fc35b389c77385fd2928d1bcf007acabcd866dc733f48dd5168f0a69020d1"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:336",
+        "source_ids": [
+          "clerk:119:1:336",
+          "govinfo:hr3187eh",
+          "govinfo:42usc9620-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:336",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7b63cadd6e08985cf75751e38b34d854a2dd286af1b466fc91297b8f43b02a39"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:337",
@@ -40330,12 +40604,6 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:1:330",
-    "house:119:1:331",
-    "house:119:1:332",
-    "house:119:1:334",
-    "house:119:1:335",
-    "house:119:1:336",
     "house:119:1:338",
     "house:119:1:340",
     "house:119:1:342",
@@ -40562,7 +40830,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "241 unresolved identities comprise 240 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared307,318/320,330 and subsequent groups.319/321/323-328 are completed controls/exclusions. Captures alone do not complete review.",
+    "basis": "235 unresolved identities comprise 234 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared307,318/320 and338 onward, alongside earlier incomplete packages.330-336 are completed; captures alone do not complete review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -40614,6 +40882,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "307e6877532267d95d96bce9e5160918be47f68d6abadb1f7154e1a62153867f",
-  "membership_review_sha256": "0c549e0a9155788657e376025232dd12d4d59d396ba03ae217376199ffb7bcfc"
+  "proposal_sha256": "d37865174877f3cb2e429c0d28676d0d3ef2d837fec104473247dd4a006d9fa1",
+  "membership_review_sha256": "6e059b2ad6ec973bc5b462cf1a9544d1e1aa16c360c33c13729f90e32ee7a5c8"
 }
