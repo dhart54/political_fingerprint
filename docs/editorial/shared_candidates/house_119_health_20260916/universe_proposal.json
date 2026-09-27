@@ -92,7 +92,8 @@
     "house:119:2:5",
     "house:119:2:53",
     "house:119:2:6",
-    "house:119:2:7"
+    "house:119:2:7",
+    "house:119:2:8"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -107,10 +108,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 194,
-      "exact_action_ineligible": 182,
-      "interpreted_substantive_directional": 76,
+      "exact_action_ineligible": 186,
+      "interpreted_substantive_directional": 77,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 213
+      "source_unresolved": 208
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -119,14 +120,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 76,
-    "directional_substantive_actions": 76,
+    "substantive_eligible_actions": 77,
+    "directional_substantive_actions": 77,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 194,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 182,
-    "unresolved_boundary_cases": 213,
-    "independent_episode_count": 57,
+    "exact_action_ineligible_actions": 186,
+    "unresolved_boundary_cases": 208,
+    "independent_episode_count": 58,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -134,16 +135,17 @@
       "division_retention",
       "final_passage",
       "suspension_and_concurrence",
-      "suspension_and_passage"
+      "suspension_and_passage",
+      "veto_override"
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 76,
-      "substantive_actions": 76,
+      "ready_substantive_actions": 77,
+      "substantive_actions": 77,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "212 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "207 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -502,7 +504,11 @@
         "house:119:1:356",
         "house:119:1:358",
         "house:119:1:360",
+        "house:119:2:9",
         "house:119:2:12",
+        "house:119:2:13",
+        "house:119:2:14",
+        "house:119:2:15",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -591,6 +597,7 @@
         "house:119:2:5",
         "house:119:2:6",
         "house:119:2:7",
+        "house:119:2:8",
         "house:119:2:11",
         "house:119:2:37",
         "house:119:2:45",
@@ -630,11 +637,6 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:8",
-        "house:119:2:9",
-        "house:119:2:13",
-        "house:119:2:14",
-        "house:119:2:15",
         "house:119:2:17",
         "house:119:2:19",
         "house:119:2:23",
@@ -833,11 +835,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "76 proposed source-mapped inputs, not accepted eligibility. Of213 unresolved identities,212 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "77 proposed source-mapped inputs, not accepted eligibility. Of208 unresolved identities,207 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "57 candidate episodes cover76 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "58 candidate episodes cover77 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary.",
   "approval_receipt": null,
-  "universe_subject_sha256": "4c57ea60848dce57515412318a4763746d505faa2c5783ea507ceaf4f1648500",
+  "universe_subject_sha256": "53a1295ac92f0221d82ca5b401f63d52cdd1668ca87f0abd65658938abad99e0",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -27699,15 +27701,16 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_504",
       "question": "Passage, Objections of the President To The Contrary Notwithstanding",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact enrolled-bill veto override. Proposed Health membership follows the expansion of defined MRA into the existing section5(c)(2)(B) Federal Health/social-welfare eligibility framework, not land/flooding keywords. Preserve all program conditions and limited reservation treatment. Map identity is exact in ENR; no independent geometry, acreage, household count or actual new beneficiary is claimed. Failed override and whole-bill limit are explicit.",
       "source": {
         "source_id": "clerk:119:2:8",
         "url": "https://clerk.house.gov/evs/2026/roll008.xml",
         "raw_sha256": "085f2f98dc036557400756f548c9d12d21527d295d650945252dc340b7909f7e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "5cb39e492f4a2d032b876c1784977c9908c8af8d08cd23135ea185c2ad2d5239",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr504:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_504",
       "member_action": "yea",
@@ -27716,26 +27719,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Exact enrolled-bill veto override. Proposed Health membership follows the expansion of defined MRA into the existing section5(c)(2)(B) Federal Health/social-welfare eligibility framework, not land/flooding keywords. Preserve all program conditions and limited reservation treatment. Map identity is exact in ENR; no independent geometry, acreage, household count or actual new beneficiary is claimed. Failed override and whole-bill limit are explicit.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:8",
           "url": "https://clerk.house.gov/evs/2026/roll008.xml",
           "raw_sha256": "085f2f98dc036557400756f548c9d12d21527d295d650945252dc340b7909f7e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "5cb39e492f4a2d032b876c1784977c9908c8af8d08cd23135ea185c2ad2d5239",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr504enr",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm",
+          "raw_sha256": "efe0299b735b31023476554d882cb7deb96761dc515b4aab1528ecf46b1fe7ee",
+          "governed_bytes_sha256": "4d062934e5fb8f4ee0f6624495348ea9f755d0f529bca41c441a421d5fd1abf5"
+        },
+        {
+          "source_id": "govinfo:pl105-313",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ313/html/PLAW-105publ313.htm",
+          "raw_sha256": "310b80e6bad2fae33f362ff80e2cc4d4b69f60065c851c4a73103d6662d19fe4",
+          "governed_bytes_sha256": "f6c1738ddf8538603e30d868b4402bf220c3c1eee2c1d23e4dd4dc7076972332"
+        },
+        {
+          "source_id": "govinfo:hrpt119-189",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt189/html/CRPT-119hrpt189-pt1.htm",
+          "raw_sha256": "01a887d274691fc8e91f63b2d01a0b7bf50decfff37a9f62b914db2535d587cc",
+          "governed_bytes_sha256": "ccd35a390700ad008f9c96d9ed84071525f4e4df0bfb56ff5877c8eef98cce6c"
+        },
+        {
+          "source_id": "congressional-record:2026-01-02-veto504-131",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf",
+          "raw_sha256": "de56ca6977fb2793c67cb6df8bcf337a4b393441934ef88fa977ea640a38907d",
+          "governed_bytes_sha256": "3c9ce7776884c26710cda7c11cb70fa2fa660769b6b38ad766f06f0b8559f05f"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-veto504-131",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "fd170159f3764fdea702b35900cf2d9f905809dde19dc4cbc4a40c85489c08f4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:8",
+        "source_ids": [
+          "clerk:119:2:8",
+          "govinfo:hr504enr",
+          "govinfo:pl105-313",
+          "govinfo:hrpt119-189",
+          "congressional-record:2026-01-02-veto504-131",
+          "congressional-record:2026-01-08-veto504-131"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:8",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.504 ENR research182 fully read: adds OsceolaCamp map160/188443July2023 to MiccosukeeReservedArea and directs consultation/flood-protection within2years. Remaining: exactPL105313 section4/8 authorities and map boundary, Presidential veto message and January8floor override. Do not equate the veto override with fresh passage or presume Tribal land status is Health membership."
-      }
+        "shared_review_record_sha256": "9db7cbaeab2dbff1acc3bb627a5bfce1d5391f0e5ea24be9b8bca56619dd12c1"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:9",
@@ -27744,13 +27792,14 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_131",
       "question": "Passage, Objections of the President To The Contrary Notwithstanding",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact veto-override question concerns enrolled H.R.131's conduit-construction repayment terms, not medical care or a Health/social-service program. It keeps the35-percent conduit-cost share, counts non-Secretary funding supplied during construction, and permits hardship-based repayment of the remaining balance for up to75years at simple interest equal to50percent of the Treasury rate, including specified excess-capacity/exchange revenues. Contracting parties retain care, operation, maintenance and replacement of the conduit; care here means infrastructure upkeep. The2009 statute supplies the earlier35-percent rule and revenue-credit provisions; the1962 text supplies the original50-year repayment and Treasury-rate baseline. The enacted construction authorization is subject to annual appropriations and excludes operating/maintenance uses. Domestic-water reliability and health concerns in debate do not turn this exact financing action into clinical care, insurance, a health-service benefit or a social-welfare eligibility change. Propose exclusion under the same infrastructure boundary used elsewhere. Both members votedYea, but direction did not determine membership. The override failed. The floor result sentence accidentally says two-thirds being in the affirmative while also saying veto sustained/bill not passed; its248–177plus1Present totals, ClerkFailed status and stated result agree on failure. Do not adopt the erroneous threshold phrase or infer passage from it.",
       "source": {
         "source_id": "clerk:119:2:9",
         "url": "https://clerk.house.gov/evs/2026/roll009.xml",
         "raw_sha256": "ed98db2b6c56f6623ffb9b42adeb406bd8aa9227cd98138e010069d5d3bdee05",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3afbf222c146b9e01d934f7f804ef52b8e63a882dbe5abd1450a6e90b2368aad",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -27761,26 +27810,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact veto-override question concerns enrolled H.R.131's conduit-construction repayment terms, not medical care or a Health/social-service program. It keeps the35-percent conduit-cost share, counts non-Secretary funding supplied during construction, and permits hardship-based repayment of the remaining balance for up to75years at simple interest equal to50percent of the Treasury rate, including specified excess-capacity/exchange revenues. Contracting parties retain care, operation, maintenance and replacement of the conduit; care here means infrastructure upkeep. The2009 statute supplies the earlier35-percent rule and revenue-credit provisions; the1962 text supplies the original50-year repayment and Treasury-rate baseline. The enacted construction authorization is subject to annual appropriations and excludes operating/maintenance uses. Domestic-water reliability and health concerns in debate do not turn this exact financing action into clinical care, insurance, a health-service benefit or a social-welfare eligibility change. Propose exclusion under the same infrastructure boundary used elsewhere. Both members votedYea, but direction did not determine membership. The override failed. The floor result sentence accidentally says two-thirds being in the affirmative while also saying veto sustained/bill not passed; its248–177plus1Present totals, ClerkFailed status and stated result agree on failure. Do not adopt the erroneous threshold phrase or infer passage from it.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:9",
           "url": "https://clerk.house.gov/evs/2026/roll009.xml",
           "raw_sha256": "ed98db2b6c56f6623ffb9b42adeb406bd8aa9227cd98138e010069d5d3bdee05",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3afbf222c146b9e01d934f7f804ef52b8e63a882dbe5abd1450a6e90b2368aad",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr131enr",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131enr/html/BILLS-119hr131enr.htm",
+          "raw_sha256": "b09256d58254eeacb311e9f5eb8a47d4d8d43af93c9e4121d600d19302e2dee5",
+          "governed_bytes_sha256": "e2f6356f0a01086d8c85706c8e3e3439d8d22e2ed4decf329cac95122edb82ea"
+        },
+        {
+          "source_id": "govinfo:43usc616",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section616&num=0&edition=2024",
+          "raw_sha256": "243dd91d90d565e9a4fff9f9cd038ee2f6654234c085dd467e59ac7097aa42b8",
+          "governed_bytes_sha256": "a9bf91375c8e36cf2a771219853179d0484ab4db193229a2fd74a6fac7416f65"
+        },
+        {
+          "source_id": "govinfo:pl87-590-original",
+          "url": "https://www.govinfo.gov/content/pkg/STATUTE-76/pdf/STATUTE-76-Pg389.pdf",
+          "raw_sha256": "c1ddb9b4e8d5003e7cc0408119d54a3727e255e8fac55de75b645a314183a465",
+          "governed_bytes_sha256": "503870d758b38c182966b5d49a1177ba28fb2e87f4b107ac94ac0cc4e119a3fb"
+        },
+        {
+          "source_id": "govinfo:pl111-11-arkansas9115",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm",
+          "raw_sha256": "7ce153b75ba42a152cad341facaec44fdaf79720c95e49491a906fc2dd38a6e4",
+          "governed_bytes_sha256": "ff6e222ca1f666f2a6a33a1f68d8256ce8e55779a002ef8dd29801cf37f6eda8"
+        },
+        {
+          "source_id": "congressional-record:2026-01-02-veto504-131",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf",
+          "raw_sha256": "de56ca6977fb2793c67cb6df8bcf337a4b393441934ef88fa977ea640a38907d",
+          "governed_bytes_sha256": "3c9ce7776884c26710cda7c11cb70fa2fa660769b6b38ad766f06f0b8559f05f"
+        },
+        {
+          "source_id": "congressional-record:2026-01-08-veto504-131",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf",
+          "raw_sha256": "39b892d39ff7ced4ce8044bddd8d0a9e3e8f17e3066342cb8c05d4454e69d147",
+          "governed_bytes_sha256": "fd170159f3764fdea702b35900cf2d9f905809dde19dc4cbc4a40c85489c08f4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:9",
+        "source_ids": [
+          "clerk:119:2:9",
+          "govinfo:hr131enr",
+          "govinfo:43usc616",
+          "govinfo:pl87-590-original",
+          "govinfo:pl111-11-arkansas9115",
+          "congressional-record:2026-01-02-veto504-131",
+          "congressional-record:2026-01-08-veto504-131"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:9",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.131 ENR research182 fully read: ArkansasValleyConduit35percent repayment basis, hardship determination, up-to75year residual repayment at50percentTreasury simple interest, specified revenues and contracting-party care/operation/maintenance. Remaining: PL87590 as amended/123Stat1320 incorporated baseline and veto/floor override. Drinking-water purpose is not automatically Health membership."
-      }
+        "shared_review_record_sha256": "892b7158fe08ef3190980e451f1160166ad92166cd0a84f640e3907c52ecc017"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:10",
@@ -28083,13 +28184,14 @@
       "date": "2026-01-12",
       "measure": "bill_119_hr_2683",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The January12 amended suspension text and EH concern control of foreign remote access to US-jurisdiction items under the Export Control Reform Act. The Secretary must determine a serious national-security or foreign-policy risk. The definition includes purposeful, knowing, reckless or negligent access but expressly does not lower criminal mens rea. The bill extends general control, licensing, enforcement, penalty, reporting and confidentiality machinery to remote access; Congress must be kept informed, without a new prior-approval requirement. Complete directly amended ECRA sections and the retained50USC1702(b) exceptions were reviewed. The latter include conditional humanitarian donations of food, clothing and medicine, as well as personal communications, information and travel. These retained general-control limits are material contrary evidence, but this exact action does not establish a medical-supply-specific licensing rule, clinical access, insurance, or Health/social-service delivery or financing. Possible medical uses of computing and references to biological-weapons risks do not supply that missing mechanism. Unlike the separately reviewedH.R.5334 medical-transaction carveouts, this proposal adds a general remote-access control category without a new medical-transaction provision. Propose exclusion under the existing direct-mechanism boundary, not a finding that export policy can never affect health. FousheeYea/MassieNay remain recorded evidence, not the reason for membership. The House passed the amended bill; no enactment is inferred.",
       "source": {
         "source_id": "clerk:119:2:13",
         "url": "https://clerk.house.gov/evs/2026/roll013.xml",
         "raw_sha256": "baa8e074ea3ebc36258923da7fe1584f9c4db5e7d19a1c49f800a201136d5173",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "988bd9497aa2c691cd18534c49c795005138b47a836cd32f10c74e6df408e8ca",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28100,26 +28202,127 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The January12 amended suspension text and EH concern control of foreign remote access to US-jurisdiction items under the Export Control Reform Act. The Secretary must determine a serious national-security or foreign-policy risk. The definition includes purposeful, knowing, reckless or negligent access but expressly does not lower criminal mens rea. The bill extends general control, licensing, enforcement, penalty, reporting and confidentiality machinery to remote access; Congress must be kept informed, without a new prior-approval requirement. Complete directly amended ECRA sections and the retained50USC1702(b) exceptions were reviewed. The latter include conditional humanitarian donations of food, clothing and medicine, as well as personal communications, information and travel. These retained general-control limits are material contrary evidence, but this exact action does not establish a medical-supply-specific licensing rule, clinical access, insurance, or Health/social-service delivery or financing. Possible medical uses of computing and references to biological-weapons risks do not supply that missing mechanism. Unlike the separately reviewedH.R.5334 medical-transaction carveouts, this proposal adds a general remote-access control category without a new medical-transaction provision. Propose exclusion under the existing direct-mechanism boundary, not a finding that export policy can never affect health. FousheeYea/MassieNay remain recorded evidence, not the reason for membership. The House passed the amended bill; no enactment is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:13",
           "url": "https://clerk.house.gov/evs/2026/roll013.xml",
           "raw_sha256": "baa8e074ea3ebc36258923da7fe1584f9c4db5e7d19a1c49f800a201136d5173",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "988bd9497aa2c691cd18534c49c795005138b47a836cd32f10c74e6df408e8ca",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2683eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2683eh/html/BILLS-119hr2683eh.htm",
+          "raw_sha256": "1c5eca67b4d0dcda1a55731afa68effb345e27d91a1ab69eb883433693fc922a",
+          "governed_bytes_sha256": "5baab89750a7ccfde24d41cab1d3b7c492f47631ca42394b2067f9545b46ddfa"
+        },
+        {
+          "source_id": "olrc:50usc4801-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4801&num=0&edition=2024",
+          "raw_sha256": "7ec3a1600ab0a3d8f12aa16ff8ca07b985a9b4d1c48c137acd43f76226172a0a",
+          "governed_bytes_sha256": "26bb259f48c477a1edab799ec56219a5b215be84c35c8a821510260074e94d13"
+        },
+        {
+          "source_id": "olrc:50usc4811-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4811&num=0&edition=2024",
+          "raw_sha256": "6a48a238892e4d7de524449117ea77994007d83be5a931046e98c253baf2eee2",
+          "governed_bytes_sha256": "eacb50335689a0bcf7c3f20b7bee3e02cc324b431b65d43adbb7bd3a45d28f4d"
+        },
+        {
+          "source_id": "olrc:50usc4812-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4812&num=0&edition=2024",
+          "raw_sha256": "810ac3e9ebff887b8cf66c7871aa6f5d1e094e091d8e34f3dae103ea3e7c6707",
+          "governed_bytes_sha256": "edc1f4fa8b86b86ee56984f53fc20f7d8edc8ad96a63504dc00aa9845d2327bb"
+        },
+        {
+          "source_id": "olrc:50usc4813-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4813&num=0&edition=2024",
+          "raw_sha256": "4cc33c30a6330b3d0fcfa289a7595510c09342d951ea10844a4a79e8c19ad427",
+          "governed_bytes_sha256": "7e9c5080fe05baef101faa2a5ea528b5b4fd609bf0dbd11bae99ee03d99e3be0"
+        },
+        {
+          "source_id": "olrc:50usc4814-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4814&num=0&edition=2024",
+          "raw_sha256": "d9c75abffbd66a3ec23962851af9c94bf0cb59071bf7d4412605a2911b1ffa7b",
+          "governed_bytes_sha256": "9d58700e3e3951c41ad336fe5b58cdf888d481a1fd81a8c5066791c845281aa8"
+        },
+        {
+          "source_id": "olrc:50usc4815-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4815&num=0&edition=2024",
+          "raw_sha256": "6a17da004a83442fbd9ea16a7603f3f6199bb8f71fed9dd1a0731edc978e6a50",
+          "governed_bytes_sha256": "a4aad570a96eb18c4683210a164d01fd0a618509cf2b89adc31a2ffce27a1dd6"
+        },
+        {
+          "source_id": "olrc:50usc4816-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4816&num=0&edition=2024",
+          "raw_sha256": "0b812b6adc32f1dbff51ad09478441137de4936b62b665ae948b3686077fe745",
+          "governed_bytes_sha256": "84fa7cdbc51b8e9f40f909ae1885df114d6fa917bd4b097c5f63acebb213dd2b"
+        },
+        {
+          "source_id": "olrc:50usc4819-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4819&num=0&edition=2024",
+          "raw_sha256": "a458c83e15220a268129a8f4711b91db904966587605e8678707f39877b43960",
+          "governed_bytes_sha256": "5a4d48574cee55cacfa6607ee86fb1c432f7c6c31a4eebfc165b08eaa3d76266"
+        },
+        {
+          "source_id": "olrc:50usc4820-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4820&num=0&edition=2024",
+          "raw_sha256": "00b0716b00a9938c55521059534406c909d9486fe3ca27ba751293b2816ea3ab",
+          "governed_bytes_sha256": "3f031bec30a79f1bde1ec80252e34d5879653cd0c1b33ff6c911fcef7b537b60"
+        },
+        {
+          "source_id": "olrc:50usc4825-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4825&num=0&edition=2024",
+          "raw_sha256": "a73502a8c8a5bb5e155b3fa935bc810670affac5fc62206108652aae87a1ab81",
+          "governed_bytes_sha256": "925719d76d04e2ba48548d6059ecaae25db9632de136393c3182794e8ab2df43"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6"
+        },
+        {
+          "source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-12/pdf/CREC-2026-01-12-house.pdf",
+          "raw_sha256": "88ede3919e5f8a3e34ab15a4ed1a51bdc8f64a73c5c170005d3dedf28eef1d9f",
+          "governed_bytes_sha256": "ed7f7a48dcda2dd382a1fe9503f0594a80f860f4325c25e86800a0f632019eba"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:13",
+        "source_ids": [
+          "clerk:119:2:13",
+          "govinfo:hr2683eh",
+          "olrc:50usc4801-2024-operative",
+          "olrc:50usc4811-2024-operative",
+          "olrc:50usc4812-2024-operative",
+          "olrc:50usc4813-2024-operative",
+          "olrc:50usc4814-2024-operative",
+          "olrc:50usc4815-2024-operative",
+          "olrc:50usc4816-2024-operative",
+          "olrc:50usc4819-2024-operative",
+          "olrc:50usc4820-2024-operative",
+          "olrc:50usc4825-2024-operative",
+          "govinfo:50usc1702-2024",
+          "congressional-record:2026-01-12-suspension2683-6500-6504"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:13",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.2683 EH research182 fully read: defined foreign remote access extends export-control provisions, with existing criminal mensrea not lowered and Congress reporting/no prior-approval requirement. Reuse governed50USC4813 baseline; complete other directly amended4811/4812/4814/4815/4816/4819/4820/4825 provisions and exceptions before membership. Bind exact January12suspension substitute; do not infer Health from cloud use."
-      }
+        "shared_review_record_sha256": "16fefee606e9d96b58bb496107ff2de201b2b42fa6a83ef244a3dbd2785306e0"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:14",
@@ -28128,13 +28331,14 @@
       "date": "2026-01-12",
       "measure": "bill_119_hr_6500",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact January12 H.R.6500 EH extends AGOA duty-free preferences and specified apparel/third-country-fabric periods throughDecember31,2028, including21to24 succeeding regional-apparel periods. Retroactivity covers qualifying entries made afterSeptember30,2025 and before enactment, with a180-day request deadline,90-day payment deadline and no interest; covered countries must have the specified Presidential designation the day before enactment. It separately extends specified customs-user-fee and merchandise-processing-fee deadlines fromSeptember30 toDecember31,2031. The amended2024 Code note to19USC3805 supplies the operative section503 fee baseline; the original2011 statute's2021 endpoint and a stale58c editorial cross-reference to2029 are not substituted for it. Full2466a/2466b/3721 and3703 country criteria, applicable fees and1514 finality rules were read. Existing country eligibility includes economic policies increasing health-care availability and protection of occupational safety/health. Those conditions continue to limit trade preferences, but this exact extension does not create patient coverage, medical services, a care-financing program or a social-service benefit. Tariff treatment, importer refunds and customs operations are the operative mechanisms. Broad economic and potential downstream health benefits do not meet the existing direct Health/social-service boundary. Propose exclusion while preserving those country conditions as contrary evidence. FousheeYea/MassieNay do not determine membership. This is the House EH, not the laterH.R.6500 Senate appropriations package.",
       "source": {
         "source_id": "clerk:119:2:14",
         "url": "https://clerk.house.gov/evs/2026/roll014.xml",
         "raw_sha256": "eeaa32aaeb56ae2838615bb43c67e84cfb082eb6cc0f64fde5ccff378ba93221",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "a793dd2997707a22d6a23e4f40f928195d8f0afcbb1f54418caeba85175c6015",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28145,26 +28349,99 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact January12 H.R.6500 EH extends AGOA duty-free preferences and specified apparel/third-country-fabric periods throughDecember31,2028, including21to24 succeeding regional-apparel periods. Retroactivity covers qualifying entries made afterSeptember30,2025 and before enactment, with a180-day request deadline,90-day payment deadline and no interest; covered countries must have the specified Presidential designation the day before enactment. It separately extends specified customs-user-fee and merchandise-processing-fee deadlines fromSeptember30 toDecember31,2031. The amended2024 Code note to19USC3805 supplies the operative section503 fee baseline; the original2011 statute's2021 endpoint and a stale58c editorial cross-reference to2029 are not substituted for it. Full2466a/2466b/3721 and3703 country criteria, applicable fees and1514 finality rules were read. Existing country eligibility includes economic policies increasing health-care availability and protection of occupational safety/health. Those conditions continue to limit trade preferences, but this exact extension does not create patient coverage, medical services, a care-financing program or a social-service benefit. Tariff treatment, importer refunds and customs operations are the operative mechanisms. Broad economic and potential downstream health benefits do not meet the existing direct Health/social-service boundary. Propose exclusion while preserving those country conditions as contrary evidence. FousheeYea/MassieNay do not determine membership. This is the House EH, not the laterH.R.6500 Senate appropriations package.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:14",
           "url": "https://clerk.house.gov/evs/2026/roll014.xml",
           "raw_sha256": "eeaa32aaeb56ae2838615bb43c67e84cfb082eb6cc0f64fde5ccff378ba93221",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "a793dd2997707a22d6a23e4f40f928195d8f0afcbb1f54418caeba85175c6015",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6500eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eh/html/BILLS-119hr6500eh.htm",
+          "raw_sha256": "0c336ce6024ff16158e5eb774416d49366ca45feb785f7c25bf3a2d4169536aa",
+          "governed_bytes_sha256": "790a9bbf75920c650cd7ca19291ff96a40b1169fee321773b8495c56a526f8cb"
+        },
+        {
+          "source_id": "olrc:19usc2466a-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section2466a&num=0&edition=2024",
+          "raw_sha256": "9904f2d2c2240b75668b87b099658b70549001cd549bacd9605bd21568f914f0",
+          "governed_bytes_sha256": "07f1be92c1336c74dd975926dee7fef2be2644aad8bb7e64b792605f4805bdf5"
+        },
+        {
+          "source_id": "olrc:19usc2466b-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section2466b&num=0&edition=2024",
+          "raw_sha256": "bc1c352fd7ec1f1c1df306c29bf1cdc806939a54439db2fc517912efd7f46958",
+          "governed_bytes_sha256": "cc818a888b53a39189195b7a40abdd92516580fddea97ef3b9303daabdc500ef"
+        },
+        {
+          "source_id": "olrc:19usc3721-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section3721&num=0&edition=2024",
+          "raw_sha256": "62a1c52948abaac760720688b2149e2510a03964c8249faae6af0b046b6a3ac0",
+          "governed_bytes_sha256": "2543417a8c9e318ecdafd9e2c868308b0cd4fde16f1d1677940492c1afc73938"
+        },
+        {
+          "source_id": "olrc:19usc3703-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section3703&num=0&edition=2024",
+          "raw_sha256": "aa5cd88ebfb4ae65d40cd9b03cab47b78fa8cd7895e44618f4667259860b8fef",
+          "governed_bytes_sha256": "8405f5a351f18099163224218d716408a4197169e2dc0021f917d1391539df09"
+        },
+        {
+          "source_id": "olrc:19usc1514-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section1514&num=0&edition=2024",
+          "raw_sha256": "0b5d80ad40f21497de9116fafdd786f0caba748d5919300d7774ac6cd68ffbab",
+          "governed_bytes_sha256": "c79c17527d9db785854b9dec8d2a9663b2c1ef39146e6d8e908f407f1bf65dfd"
+        },
+        {
+          "source_id": "olrc:19usc58c-2024-fee-provisions",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section58c&num=0&edition=2024",
+          "raw_sha256": "f008e6999da4a117e923bdf851947d7098d78e7cdf4a2dbede33c191f80ae0d1",
+          "governed_bytes_sha256": "d5b2e58244e349aa4bdd1635a2e978e5915522dc328494e0fe0362acab109f06"
+        },
+        {
+          "source_id": "olrc:19usc3805-2024-korea503",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section3805&num=0&edition=2024",
+          "raw_sha256": "307fc50287cf0ce4df35bbfa1d4218cd4aabf4834adac16c1f0b14c2a4b653c2",
+          "governed_bytes_sha256": "e899b7fba491f96da0456f010051127b5f7f0a007f649624cb3333d2a92685f7"
+        },
+        {
+          "source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-12/pdf/CREC-2026-01-12-house.pdf",
+          "raw_sha256": "88ede3919e5f8a3e34ab15a4ed1a51bdc8f64a73c5c170005d3dedf28eef1d9f",
+          "governed_bytes_sha256": "ed7f7a48dcda2dd382a1fe9503f0594a80f860f4325c25e86800a0f632019eba"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:14",
+        "source_ids": [
+          "clerk:119:2:14",
+          "govinfo:hr6500eh",
+          "olrc:19usc2466a-2024-operative",
+          "olrc:19usc2466b-2024-operative",
+          "olrc:19usc3721-2024-operative",
+          "olrc:19usc3703-2024-operative",
+          "olrc:19usc1514-2024-operative",
+          "olrc:19usc58c-2024-fee-provisions",
+          "olrc:19usc3805-2024-korea503",
+          "congressional-record:2026-01-12-suspension2683-6500-6504"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:14",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.6500 EH research182 fully read: AGOAextensions throughDec31,2028, apparel21to24periods, retroactiveentryafterSep30,2025/180dayrequest/90dayrefund/nointerest, customsfees throughDec31,2031. Reuse later captured6500EAS/64001 only after exact-version comparison; review19USC2466b/3721/3703 and directly amendedfee provisions. Existing source capture is not completed EHmembership."
-      }
+        "shared_review_record_sha256": "214dbc56d3ec0b26aad36c1d7d1698283e986facb8b50ffbe440cbe867972e2e"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:15",
@@ -28173,13 +28450,14 @@
       "date": "2026-01-12",
       "measure": "bill_119_hr_6504",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The January12 amended H.R.6504 EH extends Haiti duty-free preferences toDecember31,2028, retains the60-percent value criterion on/afterDecember20,2017, supplies a continuing1.25-percent apparel cap after the initial period, and removes the16-period endpoint for specified woven/knit preferences. It directs restoration of article eligibility lost solely through Harmonized Tariff Schedule revisions, with a report to Congress at least two business days before a proclamation takes effect. Its retroactivity begins on or afterSeptember30,2025, distinct fromH.R.6500's afterSeptember30 boundary, and retains180-day requests,90-day refunds and no interest. Complete19USC2703a was read, including country health-care-policy and occupational-safety criteria, the Labor Ombudsman and TAICNAR labor-compliance/inspection/remediation program, producer/country remedies, fraud and transshipment controls. These existing conditions are not omitted: the extension keeps tariff access subject to them. TAICNAR assists compliance with labor laws, including occupational safety/health, rather than providing clinical care, insurance or a social-service delivery/financing benefit; its old2008–2013 appropriation authorization is not renewed by this bill. Under the existing direct-mechanism boundary, propose exclusion rather than equating trade-supported jobs, poverty relief, humanitarian arguments or a medical-mission reference in debate with a Health program. No employment, health or humanitarian outcome is inferred. FousheeYea/MassieNay remain available as recorded choices but do not decide membership. The passed House version and its complete qualifications remain distinct from later package versions.",
       "source": {
         "source_id": "clerk:119:2:15",
         "url": "https://clerk.house.gov/evs/2026/roll015.xml",
         "raw_sha256": "c7e3a9adb5a7d8c7c0a584307b299e266fb9b6b9f45f4a2465065609fa0194dd",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0cf788c58ffd5c2c80b1887f3bb0d3be4c4575b99ece52d6ceeaf20bca7f8447",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28190,26 +28468,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The January12 amended H.R.6504 EH extends Haiti duty-free preferences toDecember31,2028, retains the60-percent value criterion on/afterDecember20,2017, supplies a continuing1.25-percent apparel cap after the initial period, and removes the16-period endpoint for specified woven/knit preferences. It directs restoration of article eligibility lost solely through Harmonized Tariff Schedule revisions, with a report to Congress at least two business days before a proclamation takes effect. Its retroactivity begins on or afterSeptember30,2025, distinct fromH.R.6500's afterSeptember30 boundary, and retains180-day requests,90-day refunds and no interest. Complete19USC2703a was read, including country health-care-policy and occupational-safety criteria, the Labor Ombudsman and TAICNAR labor-compliance/inspection/remediation program, producer/country remedies, fraud and transshipment controls. These existing conditions are not omitted: the extension keeps tariff access subject to them. TAICNAR assists compliance with labor laws, including occupational safety/health, rather than providing clinical care, insurance or a social-service delivery/financing benefit; its old2008–2013 appropriation authorization is not renewed by this bill. Under the existing direct-mechanism boundary, propose exclusion rather than equating trade-supported jobs, poverty relief, humanitarian arguments or a medical-mission reference in debate with a Health program. No employment, health or humanitarian outcome is inferred. FousheeYea/MassieNay remain available as recorded choices but do not decide membership. The passed House version and its complete qualifications remain distinct from later package versions.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:15",
           "url": "https://clerk.house.gov/evs/2026/roll015.xml",
           "raw_sha256": "c7e3a9adb5a7d8c7c0a584307b299e266fb9b6b9f45f4a2465065609fa0194dd",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0cf788c58ffd5c2c80b1887f3bb0d3be4c4575b99ece52d6ceeaf20bca7f8447",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6504eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6504eh/html/BILLS-119hr6504eh.htm",
+          "raw_sha256": "776ac015555250d632a2176b83360992be357f3f7f4b5236e6a61ee6270d63a6",
+          "governed_bytes_sha256": "03e32101c612cf8e0259c719cb3ebe130c8e92e9478e7942a1f259e171f64c7e"
+        },
+        {
+          "source_id": "olrc:19usc2703a-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section2703a&num=0&edition=2024",
+          "raw_sha256": "ad10d6e6b8ad6e2a964b85b4a2f4f2611a4de78b9bec9260c6532814dd2589ea",
+          "governed_bytes_sha256": "963780bf6155612d736bfeee7bc8eb60d5082d8601d96cf810026d0e1dbaa82b"
+        },
+        {
+          "source_id": "olrc:19usc1514-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title19-section1514&num=0&edition=2024",
+          "raw_sha256": "0b5d80ad40f21497de9116fafdd786f0caba748d5919300d7774ac6cd68ffbab",
+          "governed_bytes_sha256": "c79c17527d9db785854b9dec8d2a9663b2c1ef39146e6d8e908f407f1bf65dfd"
+        },
+        {
+          "source_id": "congressional-record:2026-01-12-suspension2683-6500-6504",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-12/pdf/CREC-2026-01-12-house.pdf",
+          "raw_sha256": "88ede3919e5f8a3e34ab15a4ed1a51bdc8f64a73c5c170005d3dedf28eef1d9f",
+          "governed_bytes_sha256": "ed7f7a48dcda2dd382a1fe9503f0594a80f860f4325c25e86800a0f632019eba"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:15",
+        "source_ids": [
+          "clerk:119:2:15",
+          "govinfo:hr6504eh",
+          "olrc:19usc2703a-2024-operative",
+          "olrc:19usc1514-2024-operative",
+          "congressional-record:2026-01-12-suspension2683-6500-6504"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:15",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.6504 EH research182 fully read: HaitiHELP2703aapparelvalue/caps, deadlineDec31,2028, restoration ofHTSeligibility lostthroughrevisions, Congressreport/proclamation timing and retroactivity. Retroentryon-or-afterSep30,2025 differs from6500after. Read full directly incorporated2703aconditions and exactsuspension text/floor before membership; trade benefit is not automatically a clinical/social-service mechanism."
-      }
+        "shared_review_record_sha256": "e70ef3130033538fdec88299f1e2a5ffd520dd036453e4411b4f6ab02a5941fa"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:16",
@@ -28296,7 +28612,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.Res.988 EH fully read in research208, raw735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77: sets2988/2262/2270/2312/4366 consideration, deems committee substitutes adopted and modifies2262 by Rules reportPartB; permits2988PartA amendment separately. Clerk17 recaptured. Next obtain exact accompanying report and committee versions, preserve self-executing substitute versus final passage, then disposition rule. No extra resolution adopted."
       }
     },
     {
@@ -28384,7 +28701,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.2262 failed passage (Clerk19 recaptured, raw7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f). Govinfo EH path returns PageNotFound; no EH presumed for failed passage. Use RH plusH.Res.988 Rules reportPartB modification and January13 floor text. Exact unpaid education/training activities and incorporated FLSA exemptions/conditions remain to review; no missing-evidence blocker yet."
       }
     },
     {
@@ -28560,7 +28878,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.4593 EH fully read research208, raw12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e: replaces42USC6291(31)(D) withASME A112.18.1-2024 showerhead definition, excludes safety showerheads and requires conforming rule within180days. Next read Report119-417 and exact publicly available incorporated definition/baseline. Do not infer Health from shower hygiene or safety-title words. No paid standard access authorized."
       }
     },
     {
@@ -28648,7 +28967,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.Res.992 EH fully read research208, raw584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e: Committee-of-Whole structured consideration ofH.R.7006, only separately offered Rules report amendments; not self-adopting those amendments. Allows Appropriations chair explanatory material throughJan16. Clerk25 captured. Verify exact report/record and disposition procedural rule; do not turn parent appropriation into rule Health meaning."
       }
     },
     {
@@ -42271,11 +42591,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "76 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research preserves distinct retention and passage scopes, clinical-trial exceptions and exact benefit provisions.",
+    "basis": "77 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Exact retention, veto-override and passage scopes and program-specific eligibility conditions remain distinct.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "b511afffeaec35e64dae94eb03cbd4f8b24c9e8ee498dc629059380a38fe2397",
+  "selection_sha256": "e9a411872d08236285b9beb9b88cc6b8673f589b9e0133f10b63601c93545af4",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -42352,7 +42672,8 @@
     "house:119:2:5",
     "house:119:2:53",
     "house:119:2:6",
-    "house:119:2:7"
+    "house:119:2:7",
+    "house:119:2:8"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -42367,11 +42688,6 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:8",
-    "house:119:2:9",
-    "house:119:2:13",
-    "house:119:2:14",
-    "house:119:2:15",
     "house:119:2:17",
     "house:119:2:19",
     "house:119:2:23",
@@ -42571,7 +42887,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "213 unresolved identities comprise212 unreviewed screenings and one examined source conflict at2025 roll237. January2026 rolls5/6/7 independently bind both retention questions and whole6938passage. Continue8/9then13–15 and the committed older queue. Captures are not completed review.",
+    "basis": "208 unresolved identities comprise207 unreviewed screenings and one examined source conflict at2025roll237. January12rolls13–15 are proposed excluded after complete exact EH and material incorporation review: general remote-access export controls and conditional trade preferences remain distinct from direct Health/social-service mechanisms. Continue2026roll17 then19 and subsequent queue; older prepared dependencies remain open.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -42623,6 +42939,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "23f9b7fe47cde2ad33e39892c0a6f97a521dd94edd196419947e45ce69f5b99b",
-  "membership_review_sha256": "230f1567071861f7f96ebdfeb9fa8a8525cd74bbdbe1ebfa4ae17bec448ec7e7"
+  "proposal_sha256": "8dcdfc114faf4e60d3facd1e7f32601dfe63bfc78769c3a40d624fe72287e160",
+  "membership_review_sha256": "49d11366112a760da0b65455201bf36346d1b3b3e004873fe2a96c1e0198679d"
 }

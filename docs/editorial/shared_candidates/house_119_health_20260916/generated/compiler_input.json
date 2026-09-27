@@ -461,6 +461,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:8",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     },
@@ -923,6 +929,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:8",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     }
@@ -2843,6 +2855,30 @@
         "structural_metadata": {
           "stage_order": 20007
         }
+      },
+      {
+        "action_id": "house:119:2:8",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:8:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "This January8 reconsideration vote asks whether H.R.504 should pass despite the President's veto. The enrolled bill adds the Osceola Camp portion of Everglades National Park identified by map160/188443, dated July2023, to the Miccosukee Reserved Area. It also directs the Interior Secretary, in consultation with the Tribe, to take appropriate actions within two years of enactment to protect structures in that added area from flooding. The bill does not itself specify a construction design, a new appropriation amount or a guaranteed health outcome.\n\nThe proposed Health connection is the legal effect of expanding the defined area, not the title or a general assumption that land and flooding votes are Health votes. Section5(c) of the existing Miccosukee Reserved Area Act treats the MRA as a federally recognized Indian reservation for specified purposes, including eligibility of the Tribe and its members for Federal health and social-welfare programs based on Indian status and residence on or near a reservation. Adding the identified Camp area extends that statutory framework to the added area. This does not establish that every resident newly qualifies for a particular program, that a person was previously ineligible, or that any individual receives a benefit. Program-specific eligibility and other applicable Federal law remain relevant.\n\nThe same incorporated framework provides perpetual Tribal use and development for administration, education, housing and cultural activities, with supporting commercial services; it preserves Federal jurisdiction and the Park boundary. Environmental-protection, water-quality, easement, height, gaming and aviation conditions remain, including specified emergency exceptions and waiver provisions. Federal restoration authority, conditional compensation for affected lawful structures or land use, Federal permit requirements, liability savings, water-rights protections and civil enforcement provisions remain applicable. Section8(a) expressly denies general applicability to other Tribes, parks or Federal lands. These qualifications prevent describing the bill as an unrestricted land transfer or universal benefit expansion.\n\nThe exact geographical scope is the area identified by the enrolled bill's named, numbered and dated map. This candidate does not reconstruct the map's boundary, substitute the separate NPS Cure Plan project area, state an acreage or count affected households. The House report corroborates the Camp's inclusion and flood-protection mechanism. The public NPS assessment is contextual research, not a substitute for that legislative map or authority for new eligibility claims.\n\nA Yea supports passing this entire enrolled bill over the veto; a Nay opposes doing so and does not identify a view about each component or a preferred alternative. The Clerk and floor record show that the override failed:236Yea and188Nay did not satisfy the two-thirds requirement, so this House action did not pass the bill. The President's message and floor debate establish the veto/reconsideration context; their evaluative descriptions and competing motive claims are not adopted as facts. This is a separate veto-override question, not an ordinary final-passage vote and not evidence of enactment.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr504:119",
+        "legislative_stage": "veto_override",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:8",
+          "govinfo:hr504enr",
+          "govinfo:pl105-313",
+          "govinfo:hrpt119-189",
+          "congressional-record:2026-01-02-veto504-131",
+          "congressional-record:2026-01-08-veto504-131"
+        ],
+        "structural_metadata": {
+          "stage_order": 20008
+        }
       }
     ],
     "episodes": [
@@ -3317,6 +3353,14 @@
           "house:119:2:5",
           "house:119:2:6",
           "house:119:2:7"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr504:119",
+        "action_ids": [
+          "house:119:2:8"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

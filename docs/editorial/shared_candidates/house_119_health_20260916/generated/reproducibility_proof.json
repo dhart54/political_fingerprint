@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "dccc8535c8232f2deba1c2b806db8fa68f901a249183e31a31e305e86676614e",
+    "scripts/prepare_shared_domain_candidate.py": "8f98a75c8f5eb601fab190f7567eb99a6168d41b4c9aeec151983ffba0ac9f2b",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "17c962af89512d723f7a1810bc73ac1485e1b9649d64f3d866e8573be05fbd55",
-  "source_capture_sha256": "bac756bb49166a3cbc7b866f7484ed7f36767751f70a8f8849a6e6ed007937cf",
-  "core_sha256": "d642599452a0aa88d1487c588325d71de2700f4033e5875981fd03ca3c464030",
-  "compiled_sha256": "7f30d1b282b6df541c484701f69d114a6f0b6ebe55eeb9d24aa1597adfb8fadd",
-  "readable_sha256": "201bcabdf01466a295c062afa3e539b6c57c3c3ba3b91381ba9b39118a19df81",
+  "input_sha256": "b6277207376a8eea8634e8594d5f6ad715840e5cf9e1e08498b122dc9bc13a46",
+  "source_capture_sha256": "f76cef51493390da284c3fb4d92b04dd1098fbf34efdb0ed060eb4d5733a23f3",
+  "core_sha256": "f90d0cadbc6115dce6f0b3050f4eba4a24bb918b388cf84ad2d10da9af779a26",
+  "compiled_sha256": "5d878692a7fb575f24b2640709c8b4d78a269d4fd1ad56b3d97e9b4639301d32",
+  "readable_sha256": "1489528f8079d4b4aa35288c65c836a4478aeaba6adb3efcc8a3cf2fa54b3c1a",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1533,6 +1533,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions",
           "source_id": "clerk:119:2:7"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:8",
+      "shared_sha256": "75c5c911d21ce2bc6c663013e20ab3727a19251d14b4bf3e99935121accf843c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement",
+          "source_id": "clerk:119:2:8"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement",
+          "source_id": "clerk:119:2:8"
         }
       ]
     }

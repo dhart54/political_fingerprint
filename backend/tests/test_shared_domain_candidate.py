@@ -26,6 +26,23 @@ class SharedDomainCandidateTests(unittest.TestCase):
         cls.capture = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
         cls.products = prepare(cls.author, cls.capture, ["F000477", "M001184"])
 
+    def test_remote_access_and_trade_preferences_keep_health_counterevidence_without_findings(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        authored = {a["action_id"] for a in self.products[0]["actions"]}
+        for roll in [13, 14, 15]:
+            aid = f"house:119:2:{roll}"
+            self.assertEqual(records[aid]["disposition"], "exact_action_ineligible")
+            self.assertTrue(records[aid]["substantive_review_performed"])
+            self.assertNotIn(aid, authored)
+        self.assertIn("humanitarian donations", records["house:119:2:13"]["rationale"])
+        self.assertIn("health-care availability", records["house:119:2:14"]["rationale"])
+        self.assertIn("TAICNAR", records["house:119:2:15"]["rationale"])
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        self.assertIn("September 30, 2031", sources["olrc:19usc3805-2024-korea503"]["text"])
+        self.assertIn("after September 30, 2025", sources["govinfo:hr6500eh"]["text"])
+        self.assertIn("on or after September 30, 2025", sources["govinfo:hr6504eh"]["text"])
+        self.assertIn("occupational health and safety", sources["olrc:19usc2703a-2024-operative"]["text"])
+
     def test_offline_determinism_and_checked_in_outputs(self):
         core, mapping, projections, inputs, result = self.products
         again = prepare(self.author, self.capture, ["F000477", "M001184"])
@@ -187,6 +204,31 @@ class SharedDomainCandidateTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477"])
 
+    def test_veto_override_keeps_failed_result_and_explicit_eligibility_basis(self):
+        core, _, projections, _, _ = self.products
+        action = next(a for a in core["actions"] if a["action_id"] == "house:119:2:8")
+        self.assertEqual(action["legislative_stage"], "veto_override")
+        self.assertEqual(action["exact_question"],
+                         "Passage, Objections of the President To The Contrary Notwithstanding")
+        self.assertEqual(action["chamber_outcome"], "Failed")
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        self.assertIn("the eligibility of the Tribe and its members for any Federal health",
+                      sources["govinfo:pl105-313"]["text"])
+        self.assertEqual(sources["govinfo:hr504enr"]["text_version"], "ENR")
+        self.assertEqual(sources["govinfo:pl105-313"]["source_type"], "official_statutory_text")
+        for projection in projections:
+            row = next(a for a in projection["actions"] if a["action_id"] == "house:119:2:8")
+            self.assertEqual(row["official_status"], "Yea")
+        self.assertNotIn("house:119:2:9", {a["action_id"] for a in core["actions"]})
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == "house:119:2:8")["stage"] = "final_passage"
+        with self.assertRaisesRegex(ValueError, "candidate stage differs"):
+            prepare(author, self.capture, ["F000477"])
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == "house:119:1:33")["stage"] = "veto_override"
+        with self.assertRaisesRegex(ValueError, "candidate stage differs"):
+            prepare(author, self.capture, ["F000477"])
+
     def test_raw_ledger_update_does_not_extend_interpretation(self):
         capture = copy.deepcopy(self.capture)
         source = {"source_id": "synthetic:raw-later", "text": "new uninterpreted ledger observation"}
@@ -277,7 +319,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 56)
+        self.assertEqual(len(f["findings"]), 57)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -342,8 +384,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":213,
-            "interpreted_substantive_directional":76, "expressive_nonbinding_context":11, "exact_action_ineligible":182})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":194, "source_unresolved":208,
+            "interpreted_substantive_directional":77, "expressive_nonbinding_context":11, "exact_action_ineligible":186})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -361,7 +403,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 212)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 207)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

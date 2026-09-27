@@ -126,6 +126,96 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
+## January12 remote-access and trade batch — September27
+
+Three more exact actions are dispositioned after full EH and material incorporation
+review:2026rolls13–15 are proposed exclusions. Counts77/194/11/183/211 become
+77 interpreted /194 procedural /11 expressive /186 excluded /208 unresolved.
+The unresolved set is207 unreviewed screenings plus examined2025roll237 source
+conflict. Shared meanings and derived findings remain77 and57Foushee/54Massie;
+154 member observations,58 episodes and10 multi-action episodes are preserved.
+
+H.R.2683 adds general foreign remote-access export controls, retaining criminal
+mensrea and the incorporated conditional humanitarian-donation exception.
+H.R.6500 extends AGOA preferences and customs fees; existing country healthcare
+and worker-safety criteria remain. H.R.6504 extends Haiti preferences while
+retaining country and TAICNAR labor-compliance conditions, including workplace
+health/safety. These are material contrary evidence, explicitly evaluated against
+the existing direct care/insurance/social-service delivery/financing boundary.
+No new medical-transaction-specific provision, patient benefit or care program is
+supplied by these exact bills. No indirect health, employment or humanitarian
+outcome is inferred. Exclusions remain candidates for semantic review.
+
+Reuse research182 exact EH/Clerk captures and governed50USC1702 exceptions;
+bind research204 complete operative ECRA and trade provisions, selected customs
+fee provisions, and research205 January12 floor text/questions/results. A newly
+captured2024 Code3805 note supplies amended PublicLaw112-41section503 through
+September30,2031. The original2011 text ends2021; an outdated58c cross-reference
+says2029. Neither is substituted for the actual amended note. Preserve6500's
+afterSeptember30 versus6504's on-or-afterSeptember30 retroactive-entry boundary.
+All prior meanings, sources and membership records remain intact. Add25 governed
+sources (1195 total) and3 membership records (327); interpretation claim maps
+remain782. Source selection, exact-version/cross-reference review and these three
+candidate dispositions were manual; member projection remains mechanical.
+
+Next executable group:2026roll17/H.Res.988, thenroll19/H.R.2262 and subsequent
+unreviewed rows. Confirm exact versions and incorporated/deemed provisions before
+membership;roll16(previous question) and18(recommit) remain completed controls.
+Older prepared dependency groups stay in the detailed queue; do not restart them.
+Validation:122 focused candidate/shared-corpus/IR/pipeline tests passed; the
+semantic tier passed all7 checks. Updated the two stale count assertions and
+used the existing root NODE_PATH for schema dependencies after the initial run.
+Exact-head CI remains due after push. All76 earlier shared meanings,1159 governed
+sources and322 membership records match9a4d971 byte-for-byte structurally.
+Branch Vercel deployment remains disabled. The previously recorded unrelated
+legacy audit failures are unchanged and outside this batch.
+
+## Veto-override batch — September27
+
+At pushed head `9a4d9711f7a3613110ae2ef5d86ad6f3001f0dc3`, exact-head CI
+run36295435898 passed. Local continuation dispositions two more identities:
+2026roll8 is a proposed Health inclusion; roll9 is a proposed infrastructure
+exclusion. Counts76/194/11/182/213 become77/194/11/183/211, leaving210 unreviewed
+screenings plus the examined2025roll237 conflict. Output57 Foushee/54 Massie
+findings,154 member observations,58 episodes,10 multi-action episodes.
+
+H.R.504 adds the specifically mapped Osceola Camp area to the existing MRA.
+Existing section5(c)(2)(B) explicitly addresses Federal Health/social-welfare
+program eligibility based on Indian status and reservation residence. Membership
+rests on that operative incorporation, not Tribal-land/flooding keywords.
+Program-specific conditions, Federal jurisdiction, Park/restoration protections,
+liability savings and whole-bill limits remain. No actual new beneficiary or
+benefit amount is inferred. The ENR gives map160/188443July2023; the candidate
+uses that exact reference and claims no independently reconstructed geometry,
+acreage or household count. The separate public NPS Cure Plan's project area is
+not substituted for the legislative map. The House report text was read; its
+image appendix is committee correspondence, not the legislative map.
+
+H.R.131 changes conduit repayment:35-percent cost share, non-Secretary construction
+contributions, hardship-based balance repayment up to75years at half the Treasury
+rate with simple interest, and specified revenues/O&M obligations. These remain
+water-infrastructure financing. The Code omits616–616f; its codification notice
+points to the original1962 statute and2009amendment, both read. Missing616a/616f
+web granules were not treated as unavailable substantive evidence. The floor
+sentence's erroneous two-thirds-being-affirmative phrase does not override its
+stated failed result, arithmetic or the ClerkFailed record.
+
+Both members votedYea on both questions. The candidate-only adapter now binds
+veto_override to the exact Clerk question; it rejects ordinary-passage relabeling.
+The existing core's string stage supports this distinction without schema or
+architecture changes. No prior shared meaning, membership decision or source
+changed. Add11 sources (1170), two membership records (324), eight interpretation
+maps (782). Source metadata review corrected the new local ENR and public-law
+version/type labels before commit; raw bytes and earlier governed sources were
+preserved. First focused run exposed a stale finding-count assertion, corrected
+to57. All72 candidate tests then passed; regenerate/recheck after metadata repairs.
+Subsystem/semantic and next exact-head CI remain due at the next push boundary.
+
+Next:2026rolls13–15. Their EH texts are read and the committed queue identifies
+material ECRA/AGOA/Haiti incorporations still needed. Research204 captures those
+public Code provisions but capture is not completed review. Older2025queue and
+roll237 remain unchanged. No new user decision or exhausted source path.
+
 ## Completed H.R.6938 episode research — September27
 
 Continue from `c69e0e9ccf05f15079a41bacc2ef971d8c1f033c`, whose exact-head CI

@@ -2,41 +2,87 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Sincec69, January2026 rolls6/7 complete the
-three-action H.R.6938 episode. There are76 interpreted inputs,56 Foushee findings
-and53 bounded Massie proof findings.212 identities remain unreviewed; one additional
-examined action has a printed-source conflict. No current user decision is
-required. This is neither complete Health coverage nor accepted/public content.
+**Active partial candidate.** Since9a4d971, one veto-override screening is
+interpreted and another is proposed excluded. There are77 interpreted inputs,
+57 Foushee findings and54 bounded Massie proof findings.210 identities remain
+unreviewed; one additional examined action has a printed-source conflict.
+No current user decision is required. Health coverage remains incomplete.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-c69e0e9 at the latest resumption. Later in-scope research is preserved without reset.
+9a4d971 at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [76 shared meanings /774 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1159 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [322 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [77 shared meanings /782 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1170 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [324 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (c69e0e9) | Current local candidate |
+| Disposition | Before (9a4d971) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |74|76|
+| interpreted_substantive_directional |76|77|
 | procedural_context |194|194|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |182|182|
-| source_unresolved (unreviewed plus examined conflict) |215|213|
+| exact_action_ineligible |182|183|
+| source_unresolved (unreviewed plus examined conflict) |213|211|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## Veto-override batch — September27
+
+At pushed head `9a4d9711f7a3613110ae2ef5d86ad6f3001f0dc3`, exact-head CI
+run36295435898 passed. Local continuation dispositions two more identities:
+2026roll8 is a proposed Health inclusion; roll9 is a proposed infrastructure
+exclusion. Counts76/194/11/182/213 become77/194/11/183/211, leaving210 unreviewed
+screenings plus the examined2025roll237 conflict. Output57 Foushee/54 Massie
+findings,154 member observations,58 episodes,10 multi-action episodes.
+
+H.R.504 adds the specifically mapped Osceola Camp area to the existing MRA.
+Existing section5(c)(2)(B) explicitly addresses Federal Health/social-welfare
+program eligibility based on Indian status and reservation residence. Membership
+rests on that operative incorporation, not Tribal-land/flooding keywords.
+Program-specific conditions, Federal jurisdiction, Park/restoration protections,
+liability savings and whole-bill limits remain. No actual new beneficiary or
+benefit amount is inferred. The ENR gives map160/188443July2023; the candidate
+uses that exact reference and claims no independently reconstructed geometry,
+acreage or household count. The separate public NPS Cure Plan's project area is
+not substituted for the legislative map. The House report text was read; its
+image appendix is committee correspondence, not the legislative map.
+
+H.R.131 changes conduit repayment:35-percent cost share, non-Secretary construction
+contributions, hardship-based balance repayment up to75years at half the Treasury
+rate with simple interest, and specified revenues/O&M obligations. These remain
+water-infrastructure financing. The Code omits616–616f; its codification notice
+points to the original1962 statute and2009amendment, both read. Missing616a/616f
+web granules were not treated as unavailable substantive evidence. The floor
+sentence's erroneous two-thirds-being-affirmative phrase does not override its
+stated failed result, arithmetic or the ClerkFailed record.
+
+Both members votedYea on both questions. The candidate-only adapter now binds
+veto_override to the exact Clerk question; it rejects ordinary-passage relabeling.
+The existing core's string stage supports this distinction without schema or
+architecture changes. No prior shared meaning, membership decision or source
+changed. Add11 sources (1170), two membership records (324), eight interpretation
+maps (782). Source metadata review corrected the new local ENR and public-law
+version/type labels before commit; raw bytes and earlier governed sources were
+preserved. First focused run exposed a stale finding-count assertion, corrected
+to57. All72 candidate tests then passed; regenerate/recheck after metadata repairs.
+Subsystem/semantic and next exact-head CI remain due at the next push boundary.
+
+Next:2026rolls13–15. Their EH texts are read and the committed queue identifies
+material ECRA/AGOA/Haiti incorporations still needed. Research204 captures those
+public Code provisions but capture is not completed review. Older2025queue and
+roll237 remain unchanged. No new user decision or exhausted source path.
 
 ## Completed H.R.6938 episode research — September27
 
@@ -696,19 +742,60 @@ exact-head CI. This was a progress boundary; the later user-requested terminal c
 
 ## Current validation and remaining execution
 
-71 candidate tests,120 focused subsystem tests and7 canonical semantic checks
-pass after mechanical regeneration and source/episode review. The separately
-run historical audit has two unchanged frozen-trajectory trust-gate failures,
-recorded above as a baseline follow-up. The c69 head passed CI run36293468784;
-new exact-head CI remains due on this push. No frontend/runtime change
-or browser loop is claimed.212 unreviewed screenings, one examined printed-source
-conflict and wider episode reconciliation remain. Work is active; the current
-night's deadline and usage-buffer rules are recorded in the living plan.
+The prior9a4d971 head passed exact-head CI run36295435898,120 focused subsystem
+tests and7 semantic checks. The current veto-override batch passed72 candidate
+tests before source-metadata repairs; regeneration and revalidation are due before
+its next push. The separately broadened historical audit has two unchanged
+frozen-trajectory trust-gate failures, recorded as an unrelated follow-up. No
+frontend/runtime or production change is claimed.210 unreviewed screenings and
+one examined source conflict remain. Work is active under the current night's
+shutdown/usage buffer, not a terminal checkpoint.
+
+## January12 remote-access and trade batch — September27
+
+Three more exact actions are dispositioned after full EH and material incorporation
+review:2026rolls13–15 are proposed exclusions. Counts77/194/11/183/211 become
+77 interpreted /194 procedural /11 expressive /186 excluded /208 unresolved.
+The unresolved set is207 unreviewed screenings plus examined2025roll237 source
+conflict. Shared meanings and derived findings remain77 and57Foushee/54Massie;
+154 member observations,58 episodes and10 multi-action episodes are preserved.
+
+H.R.2683 adds general foreign remote-access export controls, retaining criminal
+mensrea and the incorporated conditional humanitarian-donation exception.
+H.R.6500 extends AGOA preferences and customs fees; existing country healthcare
+and worker-safety criteria remain. H.R.6504 extends Haiti preferences while
+retaining country and TAICNAR labor-compliance conditions, including workplace
+health/safety. These are material contrary evidence, explicitly evaluated against
+the existing direct care/insurance/social-service delivery/financing boundary.
+No new medical-transaction-specific provision, patient benefit or care program is
+supplied by these exact bills. No indirect health, employment or humanitarian
+outcome is inferred. Exclusions remain candidates for semantic review.
+
+Reuse research182 exact EH/Clerk captures and governed50USC1702 exceptions;
+bind research204 complete operative ECRA and trade provisions, selected customs
+fee provisions, and research205 January12 floor text/questions/results. A newly
+captured2024 Code3805 note supplies amended PublicLaw112-41section503 through
+September30,2031. The original2011 text ends2021; an outdated58c cross-reference
+says2029. Neither is substituted for the actual amended note. Preserve6500's
+afterSeptember30 versus6504's on-or-afterSeptember30 retroactive-entry boundary.
+All prior meanings, sources and membership records remain intact. Add25 governed
+sources (1195 total) and3 membership records (327); interpretation claim maps
+remain782. Source selection, exact-version/cross-reference review and these three
+candidate dispositions were manual; member projection remains mechanical.
+
+Next executable group:2026roll17/H.Res.988, thenroll19/H.R.2262 and subsequent
+unreviewed rows. Confirm exact versions and incorporated/deemed provisions before
+membership;roll16(previous question) and18(recommit) remain completed controls.
+Older prepared dependency groups stay in the detailed queue; do not restart them.
+Validation:122 focused candidate/shared-corpus/IR/pipeline tests and all7 semantic
+checks passed. Source/meaning/membership preservation against9a4d971 and diff
+checks passed. Exact-head CI follows after push; prior unrelated legacy audit
+failures remain recorded separately.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-76 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+77 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2405,6 +2492,37 @@ Evidence: house:119:2:37; finding `prop:74b7622b8169eb9e`.
 
 Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinfo:hr6945eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6945eh/html/BILLS-119hr6945eh.htm).
 
+### Extending the reserved-area framework, including specified Health eligibility, over a veto
+
+**Compact:** Foushee supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement. The veto-override proposal would add the mapped Osceola Camp area to a statutory framework that includes specified Federal Health and social-welfare eligibility, and require flood-protection action. Other program conditions still apply; no individual benefit is established. The House override failed.
+
+**Detail:**
+
+**house:119:2:8**
+
+Foushee supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement.
+
+This January8 reconsideration vote asks whether H.R.504 should pass despite the President's veto. The enrolled bill adds the Osceola Camp portion of Everglades National Park identified by map160/188443, dated July2023, to the Miccosukee Reserved Area. It also directs the Interior Secretary, in consultation with the Tribe, to take appropriate actions within two years of enactment to protect structures in that added area from flooding. The bill does not itself specify a construction design, a new appropriation amount or a guaranteed health outcome.
+
+The proposed Health connection is the legal effect of expanding the defined area, not the title or a general assumption that land and flooding votes are Health votes. Section5(c) of the existing Miccosukee Reserved Area Act treats the MRA as a federally recognized Indian reservation for specified purposes, including eligibility of the Tribe and its members for Federal health and social-welfare programs based on Indian status and residence on or near a reservation. Adding the identified Camp area extends that statutory framework to the added area. This does not establish that every resident newly qualifies for a particular program, that a person was previously ineligible, or that any individual receives a benefit. Program-specific eligibility and other applicable Federal law remain relevant.
+
+The same incorporated framework provides perpetual Tribal use and development for administration, education, housing and cultural activities, with supporting commercial services; it preserves Federal jurisdiction and the Park boundary. Environmental-protection, water-quality, easement, height, gaming and aviation conditions remain, including specified emergency exceptions and waiver provisions. Federal restoration authority, conditional compensation for affected lawful structures or land use, Federal permit requirements, liability savings, water-rights protections and civil enforcement provisions remain applicable. Section8(a) expressly denies general applicability to other Tribes, parks or Federal lands. These qualifications prevent describing the bill as an unrestricted land transfer or universal benefit expansion.
+
+The exact geographical scope is the area identified by the enrolled bill's named, numbered and dated map. This candidate does not reconstruct the map's boundary, substitute the separate NPS Cure Plan project area, state an acreage or count affected households. The House report corroborates the Camp's inclusion and flood-protection mechanism. The public NPS assessment is contextual research, not a substitute for that legislative map or authority for new eligibility claims.
+
+A Yea supports passing this entire enrolled bill over the veto; a Nay opposes doing so and does not identify a view about each component or a preferred alternative. The Clerk and floor record show that the override failed:236Yea and188Nay did not satisfy the two-thirds requirement, so this House action did not pass the bill. The President's message and floor debate establish the veto/reconsideration context; their evaluative descriptions and competing motive claims are not adopted as facts. This is a separate veto-override question, not an ordinary final-passage vote and not evidence of enactment.
+
+The Clerk recorded the House result as 'Failed' on 2026-01-08. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Eligibility follows the existing limited statutory reservation-treatment clause; no newly eligible individual, benefit amount, acreage or patient outcome is established.
+- The enrolled bill supplies the exact map identifier. The map geometry was not independently reconstructed and the NPS assessment project boundary is not substituted for it.
+- Preserve Tribal and Park conditions, Federal jurisdiction, restoration/permit/liability savings and the whole-bill limit. The failed House override is not enactment.
+
+Evidence: house:119:2:8; finding `prop:e456f9eacbc5aae7`.
+
+Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo:hr504enr](https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm); [govinfo:pl105-313](https://www.govinfo.gov/content/pkg/PLAW-105publ313/html/PLAW-105publ313.htm); [govinfo:hrpt119-189](https://www.govinfo.gov/content/pkg/CRPT-119hrpt189/html/CRPT-119hrpt189-pt1.htm); [congressional-record:2026-01-02-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf); [congressional-record:2026-01-08-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf).
+
 ### Both-choice source index
 
 | Action | Yea | Nay | Governed text |
@@ -2485,4 +2603,5 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:2:5 | supported retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions | opposed retaining Division A of H.R. 6938, including its treatment and victim-service funding, care restrictions and earlier-balance rescissions | [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf) |
 | house:119:2:6 | supported retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes | opposed retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes | [govinfo:hr6938eh-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hr6938ih-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-b-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-explanation-c-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-ihs-final-allocation-tables](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-doe-final-allocation](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:pl113-76-regional-health424](https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm); [govinfo:pl113-235-contract-support405-406](https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm); [govinfo:pl116-9-national-park-medical2404](https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm); [govinfo:hrpt119-215-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm); [govinfo:srpt119-46-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:srpt119-46-regional-health-current-law](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc10364-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024); [govinfo:42usc10363-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024); [govinfo:43usc2241-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024); [govinfo:43usc510b-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024); [govinfo:pl108-361-calfed-management](https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm); [govinfo:pl111-11-rio-grande9106](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-gallup-contract](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-navajo-gallup-authorization](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl106-554-dakota-water607](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [govinfo:pl106-554-dakota-water610](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm) |
 | house:119:2:7 | supported House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | opposed House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf); [govinfo:hr6938eh-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hr6938ih-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [congressional-record:2026-01-08-6938-explanation-b-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-explanation-c-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-ihs-final-allocation-tables](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-doe-final-allocation](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:pl113-76-regional-health424](https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm); [govinfo:pl113-235-contract-support405-406](https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm); [govinfo:pl116-9-national-park-medical2404](https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm); [govinfo:hrpt119-215-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm); [govinfo:srpt119-46-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:srpt119-46-regional-health-current-law](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc10364-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024); [govinfo:42usc10363-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024); [govinfo:43usc2241-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024); [govinfo:43usc510b-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024); [govinfo:pl108-361-calfed-management](https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm); [govinfo:pl111-11-rio-grande9106](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-gallup-contract](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-navajo-gallup-authorization](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl106-554-dakota-water607](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [govinfo:pl106-554-dakota-water610](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [congressional-record:2026-01-08-6938-passage-result](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
+| house:119:2:8 | supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | opposed passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | [govinfo:hr504enr](https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm); [govinfo:pl105-313](https://www.govinfo.gov/content/pkg/PLAW-105publ313/html/PLAW-105publ313.htm); [govinfo:hrpt119-189](https://www.govinfo.gov/content/pkg/CRPT-119hrpt189/html/CRPT-119hrpt189-pt1.htm); [congressional-record:2026-01-02-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf); [congressional-record:2026-01-08-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

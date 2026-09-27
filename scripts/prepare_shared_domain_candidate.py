@@ -117,6 +117,7 @@ def prepare(authoring, capture, member_ids):
             raise ValueError("retained portion requires a division-retention question")
         valid_stage = {
             "final_passage": question == "On Passage",
+            "veto_override": question == "Passage, Objections of the President To The Contrary Notwithstanding",
             "amendment": question == "On Agreeing to the Amendment",
             "suspension_and_passage": question in {"On Motion to Suspend the Rules and Pass", "On Motion to Suspend the Rules and Pass, as Amended"},
             "concurrence": question in {"On Motion to Concur in the Senate Amendment", "On Motion to Concur in the Senate Amendments"},
