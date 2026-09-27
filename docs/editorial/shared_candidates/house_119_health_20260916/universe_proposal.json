@@ -92,7 +92,9 @@
     "house:119:2:37",
     "house:119:2:45",
     "house:119:2:47",
+    "house:119:2:49",
     "house:119:2:5",
+    "house:119:2:50",
     "house:119:2:53",
     "house:119:2:6",
     "house:119:2:7",
@@ -110,11 +112,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 199,
-      "exact_action_ineligible": 192,
-      "interpreted_substantive_directional": 80,
+      "procedural_context": 200,
+      "exact_action_ineligible": 194,
+      "interpreted_substantive_directional": 82,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 194
+      "source_unresolved": 189
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -123,14 +125,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 80,
-    "directional_substantive_actions": 80,
+    "substantive_eligible_actions": 82,
+    "directional_substantive_actions": 82,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 199,
+    "procedural_context_actions": 200,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 192,
-    "unresolved_boundary_cases": 194,
-    "independent_episode_count": 61,
+    "exact_action_ineligible_actions": 194,
+    "unresolved_boundary_cases": 189,
+    "independent_episode_count": 63,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -143,12 +145,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 80,
-      "substantive_actions": 80,
+      "ready_substantive_actions": 82,
+      "substantive_actions": 82,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "192 discovery identities still need substantive membership review. Two examined dependencies remain:2025roll237 printed-source discrepancy and2026roll44 section4exception versus explicit project appropriations; neither is silently treated as an exclusion. Existingroll45 has a separate broader-package completeness follow-up."
+      "187 discovery identities need substantive membership review. Two examined dependencies remain:2025roll237 source discrepancy and2026roll44 effect binding. Existingroll45 has a separate broader-package completeness follow-up."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -295,6 +297,7 @@
         "house:119:2:41",
         "house:119:2:46",
         "house:119:2:51",
+        "house:119:2:52",
         "house:119:2:54",
         "house:119:2:59",
         "house:119:2:61",
@@ -523,6 +526,8 @@
         "house:119:2:33",
         "house:119:2:38",
         "house:119:2:43",
+        "house:119:2:48",
+        "house:119:2:55",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -618,6 +623,8 @@
         "house:119:2:37",
         "house:119:2:45",
         "house:119:2:47",
+        "house:119:2:49",
+        "house:119:2:50",
         "house:119:2:53",
         "house:119:2:128",
         "house:119:2:139",
@@ -659,11 +666,6 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:48",
-        "house:119:2:49",
-        "house:119:2:50",
-        "house:119:2:52",
-        "house:119:2:55",
         "house:119:2:56",
         "house:119:2:57",
         "house:119:2:58",
@@ -838,11 +840,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "80 proposed source-mapped inputs, not accepted eligibility or exhaustive package proof.194 unresolved identities comprise192 unfinished screenings plus two examined source/effect dependencies."
+    "count_basis": "82 proposed source-mapped inputs, not accepted eligibility or exhaustive package proof.189 unresolved identities comprise187 unfinished screenings and two examined dependencies."
   },
-  "episode_completeness": "61 candidate episodes cover80 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation. H.R.5763 adds one independently bound care-facility-financing episode. H.R.6359 adds one support-information episode; rejected7148driving amendment43 is separately proposed excluded.",
+  "episode_completeness": "63 candidate episodes cover82 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation. H.R.5763 adds one independently bound care-facility-financing episode. H.R.6359 adds one support-information episode; rejected7148driving amendment43 is separately proposed excluded. Two independent February2veterans episodes bring the total to63episodes/82inputs, with10multi-action episodes unchanged;980and3123are not merged because their pension offsets differ.",
   "approval_receipt": null,
-  "universe_subject_sha256": "53ad7a3a20307612cbf19655f615485977356b0301c64425fba9892e8f30de59",
+  "universe_subject_sha256": "0c2dc6a55c248f4e91c11dd01bfbe79c0027fa365508081aad29f5d1a17697be",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -30746,13 +30748,14 @@
       "date": "2026-01-22",
       "measure": "bill_119_hconres_68",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact resolution and January22 floor text direct removal of United States Armed Forces from Venezuela unless explicitly authorized by a declaration of war or specific statutory authorization, invoking War Powers Resolution5(c). The reused complete1544operative source preserves the concurrent-resolution/hostilities framework. This is a military deployment and congressional-authorization question, not a medical, insurance or social-service delivery/financing measure. Debate about drugs, casualties or the disputed existence/purpose of deployed forces does not establish a separate Health program or prove those assertions. The resolution failed on a215–215 tie; neither an enacted withdrawal nor a general view about health or Venezuela is inferred. Proposed exclusion is based on its exact legal mechanism, independently of member direction.",
       "source": {
         "source_id": "clerk:119:2:48",
         "url": "https://clerk.house.gov/evs/2026/roll048.xml",
         "raw_sha256": "cd3b6650771d4f892ae8c4297b0b2a971f7efbc5d2b258497bd90ed53323bf93",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "5b90e5687bcbd9a58c8ce87b6f2cc4e1fc0c200dc517c0fc664b169503881cad",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -30763,25 +30766,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact resolution and January22 floor text direct removal of United States Armed Forces from Venezuela unless explicitly authorized by a declaration of war or specific statutory authorization, invoking War Powers Resolution5(c). The reused complete1544operative source preserves the concurrent-resolution/hostilities framework. This is a military deployment and congressional-authorization question, not a medical, insurance or social-service delivery/financing measure. Debate about drugs, casualties or the disputed existence/purpose of deployed forces does not establish a separate Health program or prove those assertions. The resolution failed on a215–215 tie; neither an enacted withdrawal nor a general view about health or Venezuela is inferred. Proposed exclusion is based on its exact legal mechanism, independently of member direction.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:48",
           "url": "https://clerk.house.gov/evs/2026/roll048.xml",
           "raw_sha256": "cd3b6650771d4f892ae8c4297b0b2a971f7efbc5d2b258497bd90ed53323bf93",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "5b90e5687bcbd9a58c8ce87b6f2cc4e1fc0c200dc517c0fc664b169503881cad",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hconres68ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres68ih/html/BILLS-119hconres68ih.htm",
+          "raw_sha256": "cb006999a6c01065c14b79ec9e269830c647965a989d2492eb80aa0fcd32d8f8",
+          "governed_bytes_sha256": "7f625036266ca8f5c70483f0d01661158954e4f3d5386a9d827ecac7b8119dc9"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-venezuela-text",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "6ce91f31637228903a3da41ee48fb4306796ca371b7186c2d1585bb885abd9df"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:48",
+        "source_ids": [
+          "clerk:119:2:48",
+          "govinfo:hconres68ih",
+          "govinfo:50usc1544-2024-operative",
+          "congressional-record:2026-01-22-venezuela-text"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:48",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1b41b2c3d58dc6208ced1eb906803f8760b478b6f75f6092eee42db6debc96ff"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:49",
@@ -30790,15 +30825,16 @@
       "date": "2026-02-02",
       "measure": "bill_119_hr_980",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact as-amended bill and floor provisions establish campus counseling/Chapter31administration changes and a direct extension of5503(d)Medicaid nursing-facility pension rules toJuly31,2033. Public Law119-43 establishes the operativeJanuary31baseline. Preserve discretionary flight approval, extension conditions, approve-or-deny timing, staffing concern and all pension-cap exceptions. Health membership follows the specific care-payment mechanism, not merely a veterans/title keyword. One whole-bill candidate; recordedNotVoting remains non-directional.",
       "source": {
         "source_id": "clerk:119:2:49",
         "url": "https://clerk.house.gov/evs/2026/roll049.xml",
         "raw_sha256": "9c1c53cebcf84b971f5f33846b058407121627ff4247a12f0d2f248c59755c58",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "bebbd13daa260dc6c69fb00d99cf9daf831f0386b422e957342e5f9940e26dba",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr980:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_980",
       "member_action": "yea",
@@ -30807,25 +30843,92 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Exact as-amended bill and floor provisions establish campus counseling/Chapter31administration changes and a direct extension of5503(d)Medicaid nursing-facility pension rules toJuly31,2033. Public Law119-43 establishes the operativeJanuary31baseline. Preserve discretionary flight approval, extension conditions, approve-or-deny timing, staffing concern and all pension-cap exceptions. Health membership follows the specific care-payment mechanism, not merely a veterans/title keyword. One whole-bill candidate; recordedNotVoting remains non-directional.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:49",
           "url": "https://clerk.house.gov/evs/2026/roll049.xml",
           "raw_sha256": "9c1c53cebcf84b971f5f33846b058407121627ff4247a12f0d2f248c59755c58",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "bebbd13daa260dc6c69fb00d99cf9daf831f0386b422e957342e5f9940e26dba",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr980eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm",
+          "raw_sha256": "bc1cd582c300a5a3d3112c3ce8084985cd531973210287a0397a6e4e946c8090",
+          "governed_bytes_sha256": "a4c4038d3f7ae8b9133bb8f3d4b7674b7afcaf5ccccd77ddd0595984706203a0"
+        },
+        {
+          "source_id": "govinfo:38usc3697A-B-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm",
+          "raw_sha256": "55453a90f9c2940b5412873c52eb059f49b5c35287b7a23008dbb957dc26e9d3",
+          "governed_bytes_sha256": "1e99e7c24760951cfe793d3d4fa8dcb0d07156be77044f87d0b3686ff10d31d4"
+        },
+        {
+          "source_id": "govinfo:38usc3104-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm",
+          "raw_sha256": "35141128c9be9963dcf902d7f98d7cf5a4190001eac2e303482f1fbe1ee6f02e",
+          "governed_bytes_sha256": "3abe5d9d040d15021c980a79b9505052242a206c9d4b2f8b6dd0617742ca7329"
+        },
+        {
+          "source_id": "govinfo:38usc3105-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3105.htm",
+          "raw_sha256": "f53cb4bc5c6de243c33d8b6a3fe9c448f7de1fa6e36e3c95ae7b8972571dded9",
+          "governed_bytes_sha256": "11a664aeabfc55f632c2703f125a8d2dde01b5fe67d6c05063eda080c7cb35cb"
+        },
+        {
+          "source_id": "govinfo:38usc3680A-flight",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36-subchapIII-sec3680A.htm",
+          "raw_sha256": "947aff5bd0ab2202ac7ec41da286fb88736e61435798f3adbcc7d3ede395ca80",
+          "governed_bytes_sha256": "f6703720c8082736fea352c125a551b696f2aeb76285c6b53b3f0a45eff110ad"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
+        },
+        {
+          "source_id": "govinfo:pl119-43-pension-expiry",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm",
+          "raw_sha256": "0d7b5802fd5edf2625e3d70d055912e8c3d169f17d348b6a32d2c868658dada8",
+          "governed_bytes_sha256": "ce540e649f2a8d527e897b038584742dafa2745e4d4319cd786cb8588ae92967"
+        },
+        {
+          "source_id": "congressional-record:2026-02-02-veterans",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf",
+          "raw_sha256": "e886b25449651c1cec46e73ce5b8d0faa696992803eabb0bbb880ab9107ddfd3",
+          "governed_bytes_sha256": "0ec3002bf21f12bddb8a37b0998cdc96edced1caa760c0fed4dcf7d8e05a9aeb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:49",
+        "source_ids": [
+          "clerk:119:2:49",
+          "govinfo:hr980eh",
+          "govinfo:38usc3697A-B-operative",
+          "govinfo:38usc3104-operative",
+          "govinfo:38usc3105-operative",
+          "govinfo:38usc3680A-flight",
+          "govinfo:38usc5503-2024",
+          "govinfo:pl119-43-pension-expiry",
+          "congressional-record:2026-02-02-veterans"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:49",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ccd439ca5114901294132bf0db4e5e957f9d07d0ab61463469c19f613b9207c8"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:50",
@@ -30834,15 +30937,16 @@
       "date": "2026-02-02",
       "measure": "bill_119_hr_3123",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The exact amended bill creates a bounded after-death payment route for already-awarded unpaid pension and extends5503(d)Medicaid nursing-facility pension rules toFebruary28,2033, distinct from980July31. Read5121and material101family/pension definitions, reused5503and bound119-43baseline. Preserve priority, qualifyingchildren/dependentparents,estate/escheat,one-year fallback and prospective-death scope; no assumed Health membership from the veterans title. Whole-package candidate; observedNotVoting stays non-directional.",
       "source": {
         "source_id": "clerk:119:2:50",
         "url": "https://clerk.house.gov/evs/2026/roll050.xml",
         "raw_sha256": "812a38ddf813ba406d928127db1d05d875c07843061a9f44d6225e1c05bded03",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d8c778c05ceeca85a180f5267512f511415b7b8c208c416c7e4d5a76cc9df85b",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr3123:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_3123",
       "member_action": "yea",
@@ -30851,25 +30955,78 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "The exact amended bill creates a bounded after-death payment route for already-awarded unpaid pension and extends5503(d)Medicaid nursing-facility pension rules toFebruary28,2033, distinct from980July31. Read5121and material101family/pension definitions, reused5503and bound119-43baseline. Preserve priority, qualifyingchildren/dependentparents,estate/escheat,one-year fallback and prospective-death scope; no assumed Health membership from the veterans title. Whole-package candidate; observedNotVoting stays non-directional.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:50",
           "url": "https://clerk.house.gov/evs/2026/roll050.xml",
           "raw_sha256": "812a38ddf813ba406d928127db1d05d875c07843061a9f44d6225e1c05bded03",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d8c778c05ceeca85a180f5267512f511415b7b8c208c416c7e4d5a76cc9df85b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3123eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm",
+          "raw_sha256": "36b0e5c5f684abb4b0e2cd3b4acca3db08c88434c9ae415585efc5fb5f43ac2e",
+          "governed_bytes_sha256": "cf9a5749e18b90834a4b9eb5f78787ee46c3f1c7be735825735624f659abc78a"
+        },
+        {
+          "source_id": "govinfo:38usc5121-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap51-subchapIII-sec5121.htm",
+          "raw_sha256": "302f99bf5246e9bfecc8d54480d91e670d15fb87108125e41ebc46786293f7ec",
+          "governed_bytes_sha256": "7a127580413ea495cab96ea14e81c4b35959fd1a920c88a0636917f962b419f0"
+        },
+        {
+          "source_id": "govinfo:38usc101-child-parent-pension",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap1-sec101.htm",
+          "raw_sha256": "1fc8e322ef5d96483791914d7c50746c3bde3a69f70b6fc32daaf37327660bd9",
+          "governed_bytes_sha256": "031ce372023f9d47b5920f7beddf52a879fdecc80495efe4817ee1c00a9216b6"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
+        },
+        {
+          "source_id": "govinfo:pl119-43-pension-expiry",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm",
+          "raw_sha256": "0d7b5802fd5edf2625e3d70d055912e8c3d169f17d348b6a32d2c868658dada8",
+          "governed_bytes_sha256": "ce540e649f2a8d527e897b038584742dafa2745e4d4319cd786cb8588ae92967"
+        },
+        {
+          "source_id": "congressional-record:2026-02-02-veterans",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf",
+          "raw_sha256": "e886b25449651c1cec46e73ce5b8d0faa696992803eabb0bbb880ab9107ddfd3",
+          "governed_bytes_sha256": "0ec3002bf21f12bddb8a37b0998cdc96edced1caa760c0fed4dcf7d8e05a9aeb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:50",
+        "source_ids": [
+          "clerk:119:2:50",
+          "govinfo:hr3123eh",
+          "govinfo:38usc5121-operative",
+          "govinfo:38usc101-child-parent-pension",
+          "govinfo:38usc5503-2024",
+          "govinfo:pl119-43-pension-expiry",
+          "congressional-record:2026-02-02-veterans"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:50",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "92ac8e883ed0e76002e18a8cf573175dba96e4705b39520ac75e9eb666e597e4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:51",
@@ -30922,13 +31079,14 @@
       "date": "2026-02-03",
       "measure": "bill_119_hres_1032",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The complete H.Res.1032 allows a single one-hour motion to concur in7148Senate amendments without a division demand; it does not itself concur or enact appropriations. It separately sets consideration, waivers, debate and recommittal procedures for H.J.Res.142. Section3deems the complete committee substitute to4090adopted, rather than merely scheduling it; that substitute was read and its operative text matches the laterEH. Its concrete mining reporting, priority approvals, land identification, regulatory review and mapping effects are independently proposed outside Health, with incorporated land/material/mapping authorities checked. Retain this rule and its deemed-amendment effect as procedural context, without borrowing7148Health provisions into a directional vote or treating the rule as final passage of4090or the D.C.tax measure.",
       "source": {
         "source_id": "clerk:119:2:52",
         "url": "https://clerk.house.gov/evs/2026/roll052.xml",
         "raw_sha256": "fbdfe0f3c88cc234f1d12262c2caecae06825f13c747e469e667840f747ede1e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "646ca36612ef0fab87d32df47f07f57aa856335ddc1a5b16b60f3752415f9511",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -30939,25 +31097,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The complete H.Res.1032 allows a single one-hour motion to concur in7148Senate amendments without a division demand; it does not itself concur or enact appropriations. It separately sets consideration, waivers, debate and recommittal procedures for H.J.Res.142. Section3deems the complete committee substitute to4090adopted, rather than merely scheduling it; that substitute was read and its operative text matches the laterEH. Its concrete mining reporting, priority approvals, land identification, regulatory review and mapping effects are independently proposed outside Health, with incorporated land/material/mapping authorities checked. Retain this rule and its deemed-amendment effect as procedural context, without borrowing7148Health provisions into a directional vote or treating the rule as final passage of4090or the D.C.tax measure.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:52",
           "url": "https://clerk.house.gov/evs/2026/roll052.xml",
           "raw_sha256": "fbdfe0f3c88cc234f1d12262c2caecae06825f13c747e469e667840f747ede1e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "646ca36612ef0fab87d32df47f07f57aa856335ddc1a5b16b60f3752415f9511",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres1032eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+          "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+          "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+        },
+        {
+          "source_id": "govinfo:hr4090rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090rh/html/BILLS-119hr4090rh.htm",
+          "raw_sha256": "3d0918c87d8a8447bb9048518c14b090337d1c84e6e2f0d2ef22778e96ba335a",
+          "governed_bytes_sha256": "f077ab2c59a24ec502f8eaf31aa7d65dd26d8da6e9a01b30f8b278e637ffe15b"
+        },
+        {
+          "source_id": "govinfo:hr4090eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm",
+          "raw_sha256": "375f05e834bbe45d64cae7b5dd75b318e63f6f568395cc827103eca168a106ba",
+          "governed_bytes_sha256": "3f9c126bdaf7bf2561300681bc11d34d7f9a6f57d45d946415ad2b5627f3beb6"
+        },
+        {
+          "source_id": "govinfo:43usc1702-publiclands",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap35-subchapI-sec1702.htm",
+          "raw_sha256": "2f6f47b53c17ec212002efe56b9a2ddc93f5edcbafeaa41951701ed69d329248",
+          "governed_bytes_sha256": "884913326cd0f375e3de3630a710adc648a6d63d65c1b08ed85789edc9304ecf"
+        },
+        {
+          "source_id": "govinfo:30usc22-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec22.htm",
+          "raw_sha256": "8882232e121780f30eddb758ab0d790fd77b358752e419f8d92777b658ee9c57",
+          "governed_bytes_sha256": "7ba076635df5962f897b307f11ef5243306ab17ea4a88748394898cf88418f77"
+        },
+        {
+          "source_id": "govinfo:30usc601-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap15-subchapI-sec601.htm",
+          "raw_sha256": "637b68c608c7aafaf2a4598555bc69a84ec5307ef0a8babba2be2fd84e75169d",
+          "governed_bytes_sha256": "f2d76fe2fef76a2a6839982b64f40120a7599a9daf9ad502cfb631d1895ab326"
+        },
+        {
+          "source_id": "govinfo:43usc31l-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap2-sec31l.htm",
+          "raw_sha256": "b977520c9fd5951ca2ce0a1c156125f826d1f2a0d4d2ee524fb62dc057d776e4",
+          "governed_bytes_sha256": "ce5ce4a19af50a33bc68d8bd00ea8d944eb7223b2fd5ba18d44a7e32cc4254e8"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:52",
+        "source_ids": [
+          "clerk:119:2:52",
+          "govinfo:hres1032eh",
+          "govinfo:hr4090rh",
+          "govinfo:hr4090eh",
+          "govinfo:43usc1702-publiclands",
+          "govinfo:30usc22-operative",
+          "govinfo:30usc601-operative",
+          "govinfo:43usc31l-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:52",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4fc9437206fd081526f47a8c33564d8ca673ea6e689ad25a4857fb44c7a84df7"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:53",
@@ -31087,13 +31305,14 @@
       "date": "2026-02-04",
       "measure": "bill_119_hr_4090",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete4090committee substitute and House-passed operative text match. It requires mineral-import economic reporting; priority-project identification and expedited approval; identification of federal lands and production/byproduct potential; review and suspension/revision/rescission of agency actions found unduly burdensome; state/local barrier recommendations; and geological mapping/reporting. Preserve hardrock exclusions, the federal-land/public-land definitions, the limited Materials Act category and the namedIIJA40201mapping program (codified43USC31l). Neither section6regulatory review nor section7mapping is a clinical-care, insurance, benefit or direct social-service mechanism. Floor claims about water contamination, Tribal health and occupational safety, and the medical-instrument use of minerals, are material contrary context and were considered; no predicted harm, safety guarantee, recipient motive or repeal of every environmental law is adopted. The rule-deemed substitute is the operative version. The actual recommittal motion was bare; the separately printed foreign-entity exception was not adopted into the passage text. Propose exact-action Health exclusion, not a conclusion that mining has no health consequences.",
       "source": {
         "source_id": "clerk:119:2:55",
         "url": "https://clerk.house.gov/evs/2026/roll055.xml",
         "raw_sha256": "bdbc0c6af3551403fc6386b4c256f40a4f7d54190bc7b9b89f03e6b92f93d0dc",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "757f07dba7f27ca104d8721ae976e0c47aebd1ce59946ffd171a112b49a3aaaa",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -31104,25 +31323,92 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete4090committee substitute and House-passed operative text match. It requires mineral-import economic reporting; priority-project identification and expedited approval; identification of federal lands and production/byproduct potential; review and suspension/revision/rescission of agency actions found unduly burdensome; state/local barrier recommendations; and geological mapping/reporting. Preserve hardrock exclusions, the federal-land/public-land definitions, the limited Materials Act category and the namedIIJA40201mapping program (codified43USC31l). Neither section6regulatory review nor section7mapping is a clinical-care, insurance, benefit or direct social-service mechanism. Floor claims about water contamination, Tribal health and occupational safety, and the medical-instrument use of minerals, are material contrary context and were considered; no predicted harm, safety guarantee, recipient motive or repeal of every environmental law is adopted. The rule-deemed substitute is the operative version. The actual recommittal motion was bare; the separately printed foreign-entity exception was not adopted into the passage text. Propose exact-action Health exclusion, not a conclusion that mining has no health consequences.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:55",
           "url": "https://clerk.house.gov/evs/2026/roll055.xml",
           "raw_sha256": "bdbc0c6af3551403fc6386b4c256f40a4f7d54190bc7b9b89f03e6b92f93d0dc",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "757f07dba7f27ca104d8721ae976e0c47aebd1ce59946ffd171a112b49a3aaaa",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres1032eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1032eh/html/BILLS-119hres1032eh.htm",
+          "raw_sha256": "f2d4ba8063ef74a23a086aa0025772ef9d86f3eaa4cbe5e9dba5d56f036db62e",
+          "governed_bytes_sha256": "ae550b87fd36f1129c0e5c87def690cd959dbbd5942ce3900ac40f2ac5c5a3ee"
+        },
+        {
+          "source_id": "govinfo:hr4090rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090rh/html/BILLS-119hr4090rh.htm",
+          "raw_sha256": "3d0918c87d8a8447bb9048518c14b090337d1c84e6e2f0d2ef22778e96ba335a",
+          "governed_bytes_sha256": "f077ab2c59a24ec502f8eaf31aa7d65dd26d8da6e9a01b30f8b278e637ffe15b"
+        },
+        {
+          "source_id": "govinfo:hr4090eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4090eh/html/BILLS-119hr4090eh.htm",
+          "raw_sha256": "375f05e834bbe45d64cae7b5dd75b318e63f6f568395cc827103eca168a106ba",
+          "governed_bytes_sha256": "3f9c126bdaf7bf2561300681bc11d34d7f9a6f57d45d946415ad2b5627f3beb6"
+        },
+        {
+          "source_id": "govinfo:43usc1702-publiclands",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap35-subchapI-sec1702.htm",
+          "raw_sha256": "2f6f47b53c17ec212002efe56b9a2ddc93f5edcbafeaa41951701ed69d329248",
+          "governed_bytes_sha256": "884913326cd0f375e3de3630a710adc648a6d63d65c1b08ed85789edc9304ecf"
+        },
+        {
+          "source_id": "govinfo:30usc22-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec22.htm",
+          "raw_sha256": "8882232e121780f30eddb758ab0d790fd77b358752e419f8d92777b658ee9c57",
+          "governed_bytes_sha256": "7ba076635df5962f897b307f11ef5243306ab17ea4a88748394898cf88418f77"
+        },
+        {
+          "source_id": "govinfo:30usc601-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap15-subchapI-sec601.htm",
+          "raw_sha256": "637b68c608c7aafaf2a4598555bc69a84ec5307ef0a8babba2be2fd84e75169d",
+          "governed_bytes_sha256": "f2d76fe2fef76a2a6839982b64f40120a7599a9daf9ad502cfb631d1895ab326"
+        },
+        {
+          "source_id": "govinfo:43usc31l-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap2-sec31l.htm",
+          "raw_sha256": "b977520c9fd5951ca2ce0a1c156125f826d1f2a0d4d2ee524fb62dc057d776e4",
+          "governed_bytes_sha256": "ce5ce4a19af50a33bc68d8bd00ea8d944eb7223b2fd5ba18d44a7e32cc4254e8"
+        },
+        {
+          "source_id": "congressional-record:2026-02-04-mining",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-04/pdf/CREC-2026-02-04-house.pdf",
+          "raw_sha256": "79a49bf7644ea8a5caab2dd40417c5cdc81612208084626210a2d10aa4c42150",
+          "governed_bytes_sha256": "da1cdc308547d42d2480d292b607464b08b032c8c17f777dc3b72471534115c3"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:55",
+        "source_ids": [
+          "clerk:119:2:55",
+          "govinfo:hres1032eh",
+          "govinfo:hr4090rh",
+          "govinfo:hr4090eh",
+          "govinfo:43usc1702-publiclands",
+          "govinfo:30usc22-operative",
+          "govinfo:30usc601-operative",
+          "govinfo:43usc31l-operative",
+          "congressional-record:2026-02-04-mining"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:55",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a45c40cde232366bde0ebb5322d674a73e6ad6928c365da70b10747eefaf7216"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:56",
@@ -43350,11 +43636,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "80 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Preserve distinct stages, care-facility financing conditions, pregnancy-support information scope and independent exact-action exclusions.",
+    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "dcf9131fe2a19e8c56be21aabce8801e32c8146c04f0ddc4797ff1c4c083fe4a",
+  "selection_sha256": "6752bffbbd986523e3a970e4a1e209b49e3aa61d0ac2084cb52b289cf078487c",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -43431,7 +43717,9 @@
     "house:119:2:37",
     "house:119:2:45",
     "house:119:2:47",
+    "house:119:2:49",
     "house:119:2:5",
+    "house:119:2:50",
     "house:119:2:53",
     "house:119:2:6",
     "house:119:2:7",
@@ -43455,11 +43743,6 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:48",
-    "house:119:2:49",
-    "house:119:2:50",
-    "house:119:2:52",
-    "house:119:2:55",
     "house:119:2:56",
     "house:119:2:57",
     "house:119:2:58",
@@ -43635,7 +43918,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "194 unresolved identities comprise192 unfinished screenings and two examined dependencies:2025roll237 printed-source discrepancy and2026roll44 section4/appropriation-effect binding. No exhausted unavailable-evidence path is asserted.80 proposed inputs remain candidate-only; existingroll45 still needs broader-package completeness. Continue independent safe cases.",
+    "basis": "189 unresolved identities comprise187 unfinished screenings and two examined dependencies (2025roll237 and2026roll44). Existing45broader-package completeness also remains unfinished.82candidateinputs do not establish exhaustiveHealthcoverage. Continue independent safe cases; no exhausted evidence path or human decision is asserted.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -43687,6 +43970,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "a6e13e9b4fb5623347e3c04ba0e7275d039f69d757928340978c7f6e51666d0d",
-  "membership_review_sha256": "58931026fd7e8f6d0903a2552918492fa17682c8e8ba43807960519cc709fa86"
+  "proposal_sha256": "c422397c9dfdd6c8ae36f0beffb2e92dfd9cd1fc96e75d7da4fed5869f8643a6",
+  "membership_review_sha256": "87d456fdec26feff29db909c471d7fb04c662772a3e7e19b00a719aa8d166847"
 }

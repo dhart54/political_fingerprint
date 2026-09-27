@@ -126,6 +126,63 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
+## January22–February4 source group — September27
+
+Continue from `82714161020279328ba98062b0482c04743a12a2`; exact-head
+CI36299933430 passed. Five additional membership decisions: 2026rolls49/50
+are shared interpreted candidates, 48/55 are proposed exclusions, and52 is a
+procedural control with its deemed mining substitute explicitly preserved.
+Counts **80/199/11/192/194 → 82/200/11/194/189**. The last count is **187
+unfinished screenings plus two examined dependencies**, not189 Health votes.
+The2025roll237 source discrepancy,2026roll44 operative-effect dependency and
+existing45 broader-package completeness follow-up remain open. No current
+human decision or exhausted unavailable-evidence path is asserted.
+
+H.R.980 combines campus-counselor staffing changes, discretionary non-degree
+flight training, rehabilitation contacts and30-day extension decisions with a
+six-month extension of the specified Medicaid nursing-facility pension limit.
+H.R.3123 adds a bounded route for pension awarded before death but paid afterward,
+plus a distinct one-month extension of that limit. Preserve qualified recipients,
+estate/escheat and one-year fallback, prospective deaths, and the full $90 cap
+exceptions. The new public-law binding establishes January31,2033 as the baseline;
+the2024 Code alone contains an earlier date. These remain separate episodes.
+Foushee voted Yea on both. Massie's two Not Voting statuses remain observations,
+with no support/opposition finding. Output: **62 Foushee /57 Massie findings,
+164 observations,63 episodes,10 multi-action episodes**. Both choice meanings
+are authored once and member projections remain mechanical.
+
+The Venezuela resolution is a failed withdrawal/authorization question, not a
+Health program. The complete mining substitute and passage text match; their
+land, approval, regulatory-review and mapping mechanisms are proposed excluded
+while retaining contrary public-health, water, Tribal and occupational-safety
+arguments. Medical-device uses of minerals do not by themselves confer Health
+membership. The rule's adoption of that substitute is not hidden as mere
+scheduling. Bare recommittal is kept distinct from a separately printed proposal.
+
+Added25 governed sources (1298 total), five membership records (347 total),
+and17 interpretation maps (835 total). Reused existing War Powers1544 and
+pension5503 sources; bound the public-law date change and exact2024 counseling,
+rehabilitation, accrued-payment and material family definitions. Several guessed
+section URLs returned a generic GPO page and were rejected; the counseling
+provision was recovered from the official chapter text and only the reviewed
+sections were governed. Source selection, substantive dispositions and shared
+meanings were manual. All80 prior meanings,1273 prior governed sources and342
+prior membership records remain structurally unchanged. Member data, generation
+and replay remain mechanical; no production artifact or editorial authority changed.
+
+Validation passed: **80 candidate tests within129 focused candidate/corpus/IR/
+pipeline tests; all7 semantic checks**. Added guards for matching mining versions,
+procedural versus excluded projection, distinct pension dates, source loss and
+Massie Not Voting. Deterministic regeneration, readable compact/details and diff
+checks passed. Core `35b37f0ff00e533585f1857680dc46d9d40d13fcafe38059103480eb9ec8db9f`;
+compiled `8f1c5ae33804161ccf466af9d99cc8f2e82b3f4c7eb01b70ec615a85eb4505f0`.
+Exact-head CI for the next pushed commit is checked separately.
+
+Continue independent2026roll56 (D.C.tax-disapproval exact target),57 H.R.6644,
+58 H.R.1531 and60 H.Res.1042, while retaining prepared23/27/28/42/44,45's
+package follow-up and older2025 dependencies. This is active continuation,
+not a terminal shutdown checkpoint. The one-night time/usage buffer still applies.
+
 ## January 20–22 financing and pregnancy information — September 27
 
 Continue from `328c0290a980d8a2b6cfeda66234365e290594dd`; exact-head

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "e80525167e7edea67a8fe7007bda3e9023688695cf286a1e948c95a4238513a2",
-  "source_capture_sha256": "b269864b4e04329269e4c1e1bf765deaae65d2905f097347a4bb9e45263e69a3",
-  "core_sha256": "907620bb1669b3f6e9b021cb038a8c80e367f5d38b1d524f53db843aac2845ab",
-  "compiled_sha256": "f60918fa2c1e57de9dd7230bb8fd3fd2a1937b9da60547321e66e9ace23447c2",
-  "readable_sha256": "08898b3acf7998db84b653a77c375834b1b7922a6464fefb148f4cb836ac7857",
+  "input_sha256": "ac77e416e486300a0e44e0329337bec8e7022c446dfa9ba4f5c89dc2163c1249",
+  "source_capture_sha256": "80ff8a535920df2c385db59dfb6db1b480647e60ad4b484b03bd1626fb942fd5",
+  "core_sha256": "35b37f0ff00e533585f1857680dc46d9d40d13fcafe38059103480eb9ec8db9f",
+  "compiled_sha256": "8f1c5ae33804161ccf466af9d99cc8f2e82b3f4c7eb01b70ec615a85eb4505f0",
+  "readable_sha256": "407b612b51b1c218d7887c4b6d61082068eeee93bcb358aa67db4562e1eefdc6",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1613,6 +1613,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing the bill requiring the specified pregnancy and parenting support disclosures",
           "source_id": "clerk:119:2:47"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:49",
+      "shared_sha256": "d6aa398030551c3d7ae6421b992e777055b49742ecd4668e4499dbca5dace39d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the amended veterans rehabilitation bill with its nursing-facility pension-limit extension",
+          "source_id": "clerk:119:2:49"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:49"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:50",
+      "shared_sha256": "e2bad477a0c5d5fb81a0c5f2f4a7115e3382c7855863a82d99de0720b839b30e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the amended accrued-pension bill with its nursing-facility pension-limit extension",
+          "source_id": "clerk:119:2:50"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:50"
         }
       ]
     }

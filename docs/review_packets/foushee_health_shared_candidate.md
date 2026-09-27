@@ -2,42 +2,99 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Two new shared interpretations and one exclusion
-are completed since 328c029. A fourth screened action retains an examined
-operative-effect dependency. There are 80 interpreted inputs, 60 Foushee / 57
-Massie findings, 192 unfinished screenings and two examined dependencies.
-Existing roll 45's broader-package review also remains unfinished. No exhausted
-evidence path or current human decision is asserted. Health remains incomplete.
+**Active partial candidate.** Five screenings completed since8271416: two
+shared interpretations, two proposed exclusions and one procedural control.
+There are82 interpreted inputs,62 Foushee /57 Massie findings,187 unfinished
+screenings and two examined dependencies. Existing45's broader-package review
+also remains unfinished. No exhausted evidence path or current human decision
+is asserted. Health remains incomplete.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-328c029 at this continuation boundary. Later in-scope research is preserved without reset.
+8271416 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [80 shared meanings /818 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1273 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [342 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [82 shared meanings /835 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1298 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [347 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (328c029) | Current local candidate |
+| Disposition | Before (8271416) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |78|80|
-| procedural_context |199|199|
+| interpreted_substantive_directional |80|82|
+| procedural_context |199|200|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |191|192|
-| source_unresolved (unfinished plus examined dependencies) |197|194|
+| exact_action_ineligible |192|194|
+| source_unresolved (unfinished plus examined dependencies) |194|189|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## January22–February4 source group — September27
+
+Continue from `82714161020279328ba98062b0482c04743a12a2`; exact-head
+CI36299933430 passed. Five additional membership decisions: 2026rolls49/50
+are shared interpreted candidates, 48/55 are proposed exclusions, and52 is a
+procedural control with its deemed mining substitute explicitly preserved.
+Counts **80/199/11/192/194 → 82/200/11/194/189**. The last count is **187
+unfinished screenings plus two examined dependencies**, not189 Health votes.
+The2025roll237 source discrepancy,2026roll44 operative-effect dependency and
+existing45 broader-package completeness follow-up remain open. No current
+human decision or exhausted unavailable-evidence path is asserted.
+
+H.R.980 combines campus-counselor staffing changes, discretionary non-degree
+flight training, rehabilitation contacts and30-day extension decisions with a
+six-month extension of the specified Medicaid nursing-facility pension limit.
+H.R.3123 adds a bounded route for pension awarded before death but paid afterward,
+plus a distinct one-month extension of that limit. Preserve qualified recipients,
+estate/escheat and one-year fallback, prospective deaths, and the full $90 cap
+exceptions. The new public-law binding establishes January31,2033 as the baseline;
+the2024 Code alone contains an earlier date. These remain separate episodes.
+Foushee voted Yea on both. Massie's two Not Voting statuses remain observations,
+with no support/opposition finding. Output: **62 Foushee /57 Massie findings,
+164 observations,63 episodes,10 multi-action episodes**. Both choice meanings
+are authored once and member projections remain mechanical.
+
+The Venezuela resolution is a failed withdrawal/authorization question, not a
+Health program. The complete mining substitute and passage text match; their
+land, approval, regulatory-review and mapping mechanisms are proposed excluded
+while retaining contrary public-health, water, Tribal and occupational-safety
+arguments. Medical-device uses of minerals do not by themselves confer Health
+membership. The rule's adoption of that substitute is not hidden as mere
+scheduling. Bare recommittal is kept distinct from a separately printed proposal.
+
+Added25 governed sources (1298 total), five membership records (347 total),
+and17 interpretation maps (835 total). Reused existing War Powers1544 and
+pension5503 sources; bound the public-law date change and exact2024 counseling,
+rehabilitation, accrued-payment and material family definitions. Several guessed
+section URLs returned a generic GPO page and were rejected; the counseling
+provision was recovered from the official chapter text and only the reviewed
+sections were governed. Source selection, substantive dispositions and shared
+meanings were manual. All80 prior meanings,1273 prior governed sources and342
+prior membership records remain structurally unchanged. Member data, generation
+and replay remain mechanical; no production artifact or editorial authority changed.
+
+Validation passed: **80 candidate tests within129 focused candidate/corpus/IR/
+pipeline tests; all7 semantic checks**. Added guards for matching mining versions,
+procedural versus excluded projection, distinct pension dates, source loss and
+Massie Not Voting. Deterministic regeneration, readable compact/details and diff
+checks passed. Core `35b37f0ff00e533585f1857680dc46d9d40d13fcafe38059103480eb9ec8db9f`;
+compiled `8f1c5ae33804161ccf466af9d99cc8f2e82b3f4c7eb01b70ec615a85eb4505f0`.
+Exact-head CI for the next pushed commit is checked separately.
+
+Continue independent2026roll56 (D.C.tax-disapproval exact target),57 H.R.6644,
+58 H.R.1531 and60 H.Res.1042, while retaining prepared23/27/28/42/44,45's
+package follow-up and older2025 dependencies. This is active continuation,
+not a terminal shutdown checkpoint. The one-night time/usage buffer still applies.
 
 ## January 20–22 financing and pregnancy information — September 27
 
@@ -980,7 +1037,7 @@ failures remain recorded separately.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-80 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+82 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2775,6 +2832,66 @@ Evidence: house:119:2:47; finding `prop:4ef41344809e6c2a`.
 
 Sources: [clerk:119:2:47](https://clerk.house.gov/evs/2026/roll047.xml); [govinfo:hr6359eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm); [govinfo:hr6359rh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm); [govinfo:hres1009eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm); [govinfo:20usc1092-titleIV-information-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm); [govinfo:20usc1681-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm); [govinfo:20usc1688-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm); [govinfo:hrpt119-447-section-analysis](https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm); [congressional-record:2026-01-22-pregnant-student](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf).
 
+### Changing veterans rehabilitation procedures and extending a nursing-facility pension limit
+
+**Compact:** Foushee supported the amended veterans rehabilitation bill with its nursing-facility pension-limit extension. The bill would change campus counseling and veterans rehabilitation procedures, including discretionary non-degree flight training and a 30-day extension-decision deadline. It also extends the $90 pension limit for specified Medicaid nursing-facility residents by six months; the vote covers both parts.
+
+**Detail:**
+
+**house:119:2:49**
+
+Foushee supported the amended veterans rehabilitation bill with its nursing-facility pension-limit extension.
+
+The February 2 motion would suspend the rules and pass H.R.980 as amended, covering campus counseling, veterans rehabilitation administration and a nursing-facility pension offset together. Section 2 removes the requirement that on-campus educational and vocational counseling be furnished by VA employees who provide counseling under section 3697A. The underlying duty to provide counseling at selected campuses, institutional space and access criteria, and reporting remain. The bill does not itself insert a bachelor’s-degree requirement, despite that shorthand in supporting floor remarks.
+
+For Chapter 31 rehabilitation, the bill would let VA approve a program containing non-degree flight training despite the usual section 3680A(b) restriction to higher-education courses credited toward a standard college degree. This is discretionary program approval, applicable to rehabilitation programs approved on or after August 1, 2026; it is not automatic funding for every flight course. Chapter 31 covers training and rehabilitation for service-connected disabilities, including counseling and related support; the bill does not newly authorize every service already listed in that chapter.
+
+VA would have to establish a dedicated Education Call Center number for Chapter 31 services and publish a contact name, phone and email on each regional office’s website. Requests for extensions under section 3105(c) would have to be approved or denied within 30 days. Existing extension conditions remain: necessary further rehabilitation after specified disability/occupation changes, or a serious employment handicap under the prescribed rules. A timely decision is not an automatic extension. Reports on requests, approvals and denials are due within one year after enactment and annually thereafter for five years.
+
+The same bill extends 38 U.S.C.5503(d), which caps pension at $90 per month after the month of nursing-facility admission for a veteran with neither spouse nor child whose facility services are covered by Medicaid. The subsection also applies to a surviving spouse with no child and a child entitled to pension under section 1542. Its nursing-facility definition excludes a State home receiving the specified VA per-diem payments. Medicaid facility payments cannot be reduced by the pension permitted under the subsection; excess-payment recovery retains the willful-concealment limitation. This is an extension of those specified payment rules, not a $90 limit on every veteran or a cut to every pension. The existing January 31, 2033 expiration is established by Public Law 119-43, approved December 1, 2025, updating the earlier Code date. H.R.980 would move that expiration to July 31, 2033, six months later. The care-related payment rule provides a direct Health & Social Policy mechanism independent of the education/employment title; the entire bill remains the unit of this vote.
+
+Both floor managers supported the bill, while Takano specifically questioned imposing the 30-day deadline without addressing staffing. That concern is retained alongside supporters’ access and administrative-flexibility arguments; claimed wait times, fraud, staffing gains and pilot-shortage outcomes are not adopted as established effects. A Yea supports passing this complete amended bill; a Nay opposes that motion without identifying which provision drove the choice. The House passed the motion; this vote alone does not establish enactment or that services improved.
+
+The Clerk recorded the House result as 'Passed' on 2026-02-02. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Retain discretionary approval, unchanged extension conditions and the 30-day approve-or-deny distinction; no guaranteed training, extension or health outcome.
+- The pension cap has specific Medicaid, family-status, timing and State-home limits; its extension is part of the same whole-bill choice.
+
+Evidence: house:119:2:49; finding `prop:9d617006b461c10d`.
+
+Sources: [clerk:119:2:49](https://clerk.house.gov/evs/2026/roll049.xml); [govinfo:hr980eh](https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm); [govinfo:38usc3697A-B-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm); [govinfo:38usc3104-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm); [govinfo:38usc3105-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3105.htm); [govinfo:38usc3680A-flight](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36-subchapIII-sec3680A.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf).
+
+### Changing payment of a deceased veteran’s pension and extending a nursing-facility limit
+
+**Compact:** Foushee supported the amended accrued-pension bill with its nursing-facility pension-limit extension. The bill would let qualifying relatives or an estate receive specified pension payments awarded before a veteran died but paid afterward. It also extends the $90 pension limit for specified Medicaid nursing-facility residents by one month; the whole-bill vote covers both changes.
+
+**Detail:**
+
+**house:119:2:50**
+
+Foushee supported the amended accrued-pension bill with its nursing-facility pension-limit extension.
+
+The February 2 motion would suspend the rules and pass H.R.3123 as amended. Its new pension-payment rule applies only when VA awards entitlement before a veteran dies but issues payment afterward, for pension due and unpaid at death. It does not cover every pending claim, every veterans benefit, or an award first made after death. The statutory trigger is preserved over a broader or inconsistent paraphrase in floor remarks.
+
+In those circumstances, the bill directs payment to the first living recipient in this order: the veteran’s spouse, qualifying children in equal shares, dependent parents in equal shares, then the estate unless it would escheat. If no section 5121 application is filed within one year after death, the money goes to the estate unless it would escheat. Escheat concerns an estate passing to the State; the bill does not authorize that destination. The family terms retain their legal qualifications: children are not all adult descendants, but the statutory unmarried-child category with age, schooling or incapacity and relationship requirements. The new estate route can matter where no qualifying relative receives payment.
+
+Existing section 5121 ordinarily limits payment in other cases to reimbursement of the person who bore last-sickness and burial expenses, with a one-year application rule and a bar on reimbursing political subdivisions. The bill adds an express exception for the new, bounded pension rule rather than rewriting all accrued-benefit rules. Its amendments apply to deaths on or after enactment; it does not itself order retroactive payment to the family named in its title or establish new underlying pension eligibility.
+
+The same bill extends 38 U.S.C.5503(d), which caps pension at $90 per month after the month of nursing-facility admission for a veteran with neither spouse nor child whose facility services are covered by Medicaid. The subsection also applies to a surviving spouse with no child and a child entitled to pension under section 1542. Its nursing-facility definition excludes a State home receiving the specified VA per-diem payments. Medicaid facility payments cannot be reduced by the pension permitted under the subsection; excess-payment recovery retains the willful-concealment limitation. This is an extension of those specified payment rules, not a $90 limit on every veteran or a cut to every pension. The existing January 31, 2033 expiration is established by Public Law 119-43, approved December 1, 2025, updating the earlier Code date. H.R.3123 would instead move the expiration to February 28, 2033, one month later. That care-payment rule and the bounded pension-transfer mechanism support proposed Health & Social Policy membership. They remain one whole-bill choice, distinct from H.R.980’s six-month extension.
+
+Supporters in both parties described delayed-payment hardship for surviving families. No opposing substantive argument was found in the reviewed floor debate; this absence is not represented as proof that no concern exists. Claims about a particular family, every recipient’s age or the date a benefit was awarded do not replace the operative conditions. A Yea supports passing this specific amended package; a Nay opposes it without proving opposition to veterans or indicating a preferred alternative. The House passed the motion, which does not by itself establish enactment or actual subsequent payments.
+
+The Clerk recorded the House result as 'Passed' on 2026-02-02. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Preserve award-before-death/payment-after-death, due-and-unpaid status, recipient priority, statutory family qualifications, one-year estate fallback, escheat and prospective-death limits.
+- Keep the separate one-month Medicaid nursing-facility pension-limit extension and its exceptions; this is not a payment guarantee or retroactive entitlement.
+
+Evidence: house:119:2:50; finding `prop:32c536088c9104b5`.
+
+Sources: [clerk:119:2:50](https://clerk.house.gov/evs/2026/roll050.xml); [govinfo:hr3123eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm); [govinfo:38usc5121-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap51-subchapIII-sec5121.htm); [govinfo:38usc101-child-parent-pension](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap1-sec101.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf).
+
 ### Extending the reserved-area framework, including specified Health eligibility, over a veto
 
 **Compact:** Foushee supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement. The veto-override proposal would add the mapped Osceola Camp area to a statutory framework that includes specified Federal Health and social-welfare eligibility, and require flood-protection action. Other program conditions still apply; no individual benefit is established. The House override failed.
@@ -2890,4 +3007,6 @@ Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo
 | house:119:2:31 | supported passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | [govinfo:hr2988eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm); [govinfo:29usc1002-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm); [govinfo:29usc1003-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1003.htm); [govinfo:29usc1101-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1101.htm); [govinfo:29usc1102-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1102.htm); [govinfo:29usc1103-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1103.htm); [govinfo:29usc1104-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm); [govinfo:hres988eh](https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm); [govinfo:hrpt119-440](https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm); [congressional-record:2026-01-15-erisa](https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf) |
 | house:119:2:32 | supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions | opposed passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions | [govinfo:hr5763eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm); [govinfo:15usc696-224-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm); [sba:sop50108-20250601-special-purpose](https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx); [govinfo:cfr2025-13-120910](https://www.govinfo.gov/content/pkg/CFR-2025-title13-vol1/pdf/CFR-2025-title13-vol1-part120.pdf); [sba:notice5000-872764-new-business](https://legacy.sba.gov/sites/default/files/2025-11/Procedural%20Notice%205000-872764_Revisions%20to%20SOP%2050%2010%208.pdf); [govinfo:hrpt119-406-purpose-and-minority](https://www.govinfo.gov/content/pkg/CRPT-119hrpt406/html/CRPT-119hrpt406.htm); [congressional-record:2026-01-20-5763](https://www.govinfo.gov/content/pkg/CREC-2026-01-20/pdf/CREC-2026-01-20-house.pdf) |
 | house:119:2:47 | supported passing the bill requiring the specified pregnancy and parenting support disclosures | opposed passing the bill requiring the specified pregnancy and parenting support disclosures | [govinfo:hr6359eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm); [govinfo:hr6359rh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm); [govinfo:hres1009eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm); [govinfo:20usc1092-titleIV-information-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm); [govinfo:20usc1681-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm); [govinfo:20usc1688-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm); [govinfo:hrpt119-447-section-analysis](https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm); [congressional-record:2026-01-22-pregnant-student](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf) |
+| house:119:2:49 | supported the amended veterans rehabilitation bill with its nursing-facility pension-limit extension | opposed the amended veterans rehabilitation bill with its nursing-facility pension-limit extension | [govinfo:hr980eh](https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm); [govinfo:38usc3697A-B-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm); [govinfo:38usc3104-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm); [govinfo:38usc3105-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3105.htm); [govinfo:38usc3680A-flight](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36-subchapIII-sec3680A.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf) |
+| house:119:2:50 | supported the amended accrued-pension bill with its nursing-facility pension-limit extension | opposed the amended accrued-pension bill with its nursing-facility pension-limit extension | [govinfo:hr3123eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm); [govinfo:38usc5121-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap51-subchapIII-sec5121.htm); [govinfo:38usc101-child-parent-pension](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap1-sec101.htm); [govinfo:38usc5503-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm); [govinfo:pl119-43-pension-expiry](https://www.govinfo.gov/content/pkg/PLAW-119publ43/html/PLAW-119publ43.htm); [congressional-record:2026-02-02-veterans](https://www.govinfo.gov/content/pkg/CREC-2026-02-02/pdf/CREC-2026-02-02-house.pdf) |
 <!-- GENERATED CANDIDATE END -->
