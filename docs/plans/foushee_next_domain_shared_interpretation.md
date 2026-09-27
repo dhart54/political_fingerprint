@@ -126,6 +126,64 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
+## January13–15 rules, training and ERISA batch — September27
+
+Continue from pushed `286cae1622e8e31b0004c43c6031b73e53ff19f2`; exact-head
+CI run36296769850 passed. Six more screenings are dispositioned:17/25 procedural,
+19/26/29 proposed excluded,31 proposed included. Counts77/194/11/186/208 become
+78 interpreted /196 procedural /11 expressive /189 excluded /202 unresolved.
+That is201 unfinished membership screenings plus the one examined2025roll237
+source conflict. Output58 Foushee/55 Massie findings,156 observations,59 episodes,
+10 multi-action episodes. No Health-completeness or acceptance claim.
+
+H.Res.988 binds all five committee substitutes and the self-executing2262
+apprenticeship clause; its2988 study amendment is only made in order. H.Res.992
+only makes the two7006 amendments in order. Neither rule finally passes a parent
+bill or itself supplies its Health mechanisms. Failed2262 passage retains all
+three voluntary/outside-hours/no-productive-work conditions and785.32's separate
+apprenticeship conditions. The2025CFRPDF resolves missing HTML/eCFR attempts.
+It is a general hours/compensation rule, not inferred Health delivery from worker
+examples or household-income claims. Court amendment26 preserves its two court
+caps and separate staff-funding ban. The separate Court of Federal Claims vaccine
+case-processing account does not make this different-courts amendment Health.
+
+H.R.2988 passage changes fiduciary duties applying to covered ERISA plans,
+including health/welfare plans through1002/1003/1101; it is not retirement-only
+because of its title. One shared interpretation preserves documented pecuniary
+tie-breaking, default-investment limits, provider selection, proxy exceptions and
+safe harbors, distinct effective dates and all package limits. It does not infer
+clinical eligibility, premiums, returns, a chosen provider or enactment. The
+separate GAO amendment29 only studies defined-contribution pension investments;
+it does not inherit the final package's broader Health scope. RH-to-EH comparison
+confirms only that study and its contents entry were added. Actual FousheeNay and
+MassieYea on31 derive mechanically. All77 prior meanings remain unchanged.
+
+Add31 governed sources (1226), six membership records (333),13 interpretation
+maps (795). Source/version selection, incorporation review, six candidate
+dispositions and one shared meaning/compact explanation were manual. No
+member-specific meaning rewrite, architecture change or publication occurred.
+
+Prepared queue:23 still needs an authorized public reproduction of the exact
+ASME2024definition; public preview403 is not proof of exhausted evidence. For27,
+the full amendment targets and NED statutes are read, but the retained explanatory
+organ-harvesting instruction requires precise effect analysis before disposition.
+28 remains a large unreviewed appropriations package; its preface, Judiciary,
+NED/7032/7062(a) portions and selected statement paragraphs are read, not the
+whole bill. Exact hashes, reading positions and next steps are in each committed
+per-item queue row. Completed17/19/25/26/29/31 must not be repeated. Continue next
+independent2026source groups while preserving these and older2025dependencies.
+
+Validation:74 candidate tests and123 focused candidate/shared-corpus/IR/pipeline
+tests pass; all7 semantic-tier checks pass. The new guard preserves covered-welfare
+versus pension-study scope, actual choices, qualifications and required scope
+sources. Structural comparison verifies all77 prior meanings,1195 sources and327
+membership records unchanged from286cae1. The generated member detail and final
+diff were inspected; git diff --check is clean. Exact-head CI follows the push.
+The existing legacy-audit baseline failures remain separately recorded; no gate
+is weakened.
+This is an active progress boundary, not a terminal checkpoint. The overnight
+deadline/usage reserve and final-filesystem-action marker protocol remain active.
+
 ## January12 remote-access and trade batch — September27
 
 Three more exact actions are dispositioned after full EH and material incorporation

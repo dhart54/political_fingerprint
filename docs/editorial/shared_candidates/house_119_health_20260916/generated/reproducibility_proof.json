@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "b6277207376a8eea8634e8594d5f6ad715840e5cf9e1e08498b122dc9bc13a46",
-  "source_capture_sha256": "f76cef51493390da284c3fb4d92b04dd1098fbf34efdb0ed060eb4d5733a23f3",
-  "core_sha256": "f90d0cadbc6115dce6f0b3050f4eba4a24bb918b388cf84ad2d10da9af779a26",
-  "compiled_sha256": "5d878692a7fb575f24b2640709c8b4d78a269d4fd1ad56b3d97e9b4639301d32",
-  "readable_sha256": "1489528f8079d4b4aa35288c65c836a4478aeaba6adb3efcc8a3cf2fa54b3c1a",
+  "input_sha256": "42442a797727685e102b6ae9611296d53d6d5db4d25e7aeca3568541ffb1d488",
+  "source_capture_sha256": "2a34527da561cdf8f89bf1be859a7d8112bb42e5576be54d9353ec3655280781",
+  "core_sha256": "e381ec811b2163e37fa2a3d162afa81f2d0e64263f80bea8ee5e59783a99f855",
+  "compiled_sha256": "d7cb224e098ea60e1add67502f1ffc1b84027ab52d0d0aada210b453f9865721",
+  "readable_sha256": "cb74af48dd881a569dd3ea440acf891c9d99e90e18fc9f13cec833a9c15d8c92",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1553,6 +1553,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement",
           "source_id": "clerk:119:2:8"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:31",
+      "shared_sha256": "55ca4bebe5fdcb90ed9488f5bd5afcef86eb1e5425e40a6d6738b8c1170b62b5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package",
+          "source_id": "clerk:119:2:31"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package",
+          "source_id": "clerk:119:2:31"
         }
       ]
     }

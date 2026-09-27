@@ -467,6 +467,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:31",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -932,6 +938,12 @@
         },
         {
           "action_id": "house:119:2:8",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:31",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -2879,6 +2891,35 @@
         "structural_metadata": {
           "stage_order": 20008
         }
+      },
+      {
+        "action_id": "house:119:2:31",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:31:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "The January 15 passage question covers H.R.2988's four-part ERISA package, including the separately adopted GAO-study amendment. The reported committee substitute was deemed adopted under H.Res.988; comparison with the House-passed text shows the added study and contents entry, without a different substantive substitute. This is one whole-bill choice, not separate votes on each fiduciary, investment or disclosure provision.\n\nThe proposed Health connection follows the existing statute's scope. ERISA's employee-benefit-plan definition includes welfare plans providing medical, surgical and hospital care, sickness and disability benefits, and other listed benefits; it is not limited to retirement pensions. Sections 404(a) and the new shareholder-rights subsection address covered plan fiduciaries. The new service-provider selection rule therefore also reaches covered health/welfare plans. Existing coverage and fiduciary-part exceptions remain, including governmental plans, specified church plans and other exempt arrangements; the package does not make every employer, insurer or healthcare provider an ERISA fiduciary. It changes duties governing covered benefit-plan administration and assets, not an individual's treatment eligibility, a premium amount or a guaranteed benefit payment.\n\nDivision A requires covered investment decisions to rest on pecuniary factors expected to materially affect risk or return over the relevant investment horizon, subject to a documented tie-breaking exception when such factors cannot distinguish alternatives. The documentation must explain that inability, compare the investment choices against diversification, liquidity, cash-flow and funding objectives, and explain consistency with beneficiaries' financial interests. A participant-directed pension plan may retain an option that also pursues non-pecuniary goals if the specified duties are met, but may not use the described non-pecuniary-factor option as a default investment. This is not a finding that any particular investment is prohibited, beneficial or harmful. This division applies to fiduciary actions beginning twelve months after enactment.\n\nDivision B requires selecting, monitoring and retaining plan fiduciaries, counsel, employees and service providers consistently with the existing exclusive-benefit and prudence duties and without regard to race, color, religion, sex or national origin. The text does not specify a particular provider to select or remove, or establish that a member endorsed a claimed example of discrimination. Division C sets economic-interest, cost, material-fact, recordkeeping and oversight duties for shareholder rights, including proxies; it does not require voting every proxy. Specified rights passed through to individual-account participants are excepted. It allows defined voting policies, including a safe harbor for concentrating resources on economically material proposals or refraining when the specified holding is below five percent, preserves voting on matters expected to materially affect the portfolio, and requires periodic policy review. Its effective-date clause applies to exercises of rights on or after January 1, 2026; this is the proposed statutory date, not a claim that the bill had already become law.\n\nDivision D is narrower: its new brokerage-window notice/acknowledgment condition addresses participant control in individual-account pension plans. Before each investment into, out of or within a non-designated arrangement, the participant must receive and acknowledge the specified information, including the difference in fiduciary selection/monitoring and an age-67 graph using hypothetical four, six and eight percent returns. Those percentages are illustrations, not promised returns. The notice amendment takes effect January 1, 2027. The new designated-investment definition excludes brokerage windows, self-directed brokerage accounts and similar arrangements beyond the fiduciary's designated choices. The added GAO study compares returns within defined-contribution pension plans and is due within two years of enactment. That separately recorded study amendment does not acquire Health membership merely because other portions of the final bill reach health/welfare plans.\n\nA Yea supports passing this complete package; a Nay opposes that passage without identifying which provision drove the choice or a preferred alternative. The House passed it 213–205. This record does not establish enactment, better or worse investment performance, a health outcome, motive, or a general position on all retirement or health policy.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr2988:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:31",
+          "govinfo:hr2988eh",
+          "govinfo:29usc1002-217-scope",
+          "govinfo:29usc1003-217-scope",
+          "govinfo:29usc1101-217-scope",
+          "govinfo:29usc1102-217-scope",
+          "govinfo:29usc1103-217-scope",
+          "govinfo:29usc1104-217-scope",
+          "govinfo:hres988eh",
+          "govinfo:hrpt119-440",
+          "congressional-record:2026-01-15-erisa"
+        ],
+        "structural_metadata": {
+          "stage_order": 20031
+        }
       }
     ],
     "episodes": [
@@ -3361,6 +3402,14 @@
         "episode_id": "episode:hr504:119",
         "action_ids": [
           "house:119:2:8"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr2988:119",
+        "action_ids": [
+          "house:119:2:31"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

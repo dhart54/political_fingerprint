@@ -2,18 +2,19 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since9a4d971, one veto-override screening is
-interpreted and another is proposed excluded. There are77 interpreted inputs,
-57 Foushee findings and54 bounded Massie proof findings.210 identities remain
-unreviewed; one additional examined action has a printed-source conflict.
-No current user decision is required. Health coverage remains incomplete.
+**Active partial candidate.** Since286cae1, six more screenings yield one
+shared interpretation, two procedural controls and three proposed exclusions.
+There are78 interpreted inputs,58 Foushee findings and55 bounded Massie proof
+findings.201 membership screenings remain unfinished; one additional examined
+action has a printed-source conflict. No current user decision is required.
+Health coverage remains incomplete.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-9a4d971 at the latest resumption. Later in-scope research is preserved without reset.
+286cae1 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
@@ -26,17 +27,75 @@ discussion after validation; prior-head CI is not treated as current. The goal i
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (9a4d971) | Current local candidate |
+| Disposition | Before (286cae1) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |76|77|
-| procedural_context |194|194|
+| interpreted_substantive_directional |77|78|
+| procedural_context |194|196|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |182|183|
-| source_unresolved (unreviewed plus examined conflict) |213|211|
+| exact_action_ineligible |186|189|
+| source_unresolved (unfinished plus examined conflict) |208|202|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## January13–15 rules, training and ERISA batch — September27
+
+Continue from pushed `286cae1622e8e31b0004c43c6031b73e53ff19f2`; exact-head
+CI run36296769850 passed. Six more screenings are dispositioned:17/25 procedural,
+19/26/29 proposed excluded,31 proposed included. Counts77/194/11/186/208 become
+78 interpreted /196 procedural /11 expressive /189 excluded /202 unresolved.
+That is201 unfinished membership screenings plus the one examined2025roll237
+source conflict. Output58 Foushee/55 Massie findings,156 observations,59 episodes,
+10 multi-action episodes. No Health-completeness or acceptance claim.
+
+H.Res.988 binds all five committee substitutes and the self-executing2262
+apprenticeship clause; its2988 study amendment is only made in order. H.Res.992
+only makes the two7006 amendments in order. Neither rule finally passes a parent
+bill or itself supplies its Health mechanisms. Failed2262 passage retains all
+three voluntary/outside-hours/no-productive-work conditions and785.32's separate
+apprenticeship conditions. The2025CFRPDF resolves missing HTML/eCFR attempts.
+It is a general hours/compensation rule, not inferred Health delivery from worker
+examples or household-income claims. Court amendment26 preserves its two court
+caps and separate staff-funding ban. The separate Court of Federal Claims vaccine
+case-processing account does not make this different-courts amendment Health.
+
+H.R.2988 passage changes fiduciary duties applying to covered ERISA plans,
+including health/welfare plans through1002/1003/1101; it is not retirement-only
+because of its title. One shared interpretation preserves documented pecuniary
+tie-breaking, default-investment limits, provider selection, proxy exceptions and
+safe harbors, distinct effective dates and all package limits. It does not infer
+clinical eligibility, premiums, returns, a chosen provider or enactment. The
+separate GAO amendment29 only studies defined-contribution pension investments;
+it does not inherit the final package's broader Health scope. RH-to-EH comparison
+confirms only that study and its contents entry were added. Actual FousheeNay and
+MassieYea on31 derive mechanically. All77 prior meanings remain unchanged.
+
+Add31 governed sources (1226), six membership records (333),13 interpretation
+maps (795). Source/version selection, incorporation review, six candidate
+dispositions and one shared meaning/compact explanation were manual. No
+member-specific meaning rewrite, architecture change or publication occurred.
+
+Prepared queue:23 still needs an authorized public reproduction of the exact
+ASME2024definition; public preview403 is not proof of exhausted evidence. For27,
+the full amendment targets and NED statutes are read, but the retained explanatory
+organ-harvesting instruction requires precise effect analysis before disposition.
+28 remains a large unreviewed appropriations package; its preface, Judiciary,
+NED/7032/7062(a) portions and selected statement paragraphs are read, not the
+whole bill. Exact hashes, reading positions and next steps are in each committed
+per-item queue row. Completed17/19/25/26/29/31 must not be repeated. Continue next
+independent2026source groups while preserving these and older2025dependencies.
+
+Validation:74 candidate tests and123 focused candidate/shared-corpus/IR/pipeline
+tests pass; all7 semantic-tier checks pass. The new guard preserves covered-welfare
+versus pension-study scope, actual choices, qualifications and required scope
+sources. Structural comparison verifies all77 prior meanings,1195 sources and327
+membership records unchanged from286cae1. The generated member detail and final
+diff were inspected; git diff --check is clean. Exact-head CI follows the push.
+The existing legacy-audit baseline failures remain separately recorded; no gate
+is weakened.
+This is an active progress boundary, not a terminal checkpoint. The overnight
+deadline/usage reserve and final-filesystem-action marker protocol remain active.
 
 ## Veto-override batch — September27
 
@@ -795,7 +854,7 @@ failures remain recorded separately.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-77 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+78 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2450,6 +2509,38 @@ Evidence: house:119:2:308; finding `prop:b159c206481bdd00`.
 
 Sources: [clerk:119:2:308](https://clerk.house.gov/evs/2026/roll308.xml); [govinfo:hr5334eas](https://www.govinfo.gov/content/pkg/BILLS-119hr5334eas/html/BILLS-119hr5334eas.htm); [govinfo:hr5334eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5334eh/html/BILLS-119hr5334eh.htm); [congressional-record:2026-09-15](https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf).
 
+### Changing fiduciary duties for benefit plans, including covered health plans
+
+**Compact:** Foushee opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package. The package would change investment, provider-selection and shareholder-voting duties for ERISA plans, including covered health and welfare plans. Its pension brokerage rules and study are narrower. This was one whole-bill choice; it does not establish a change in anyone's treatment, premiums or investment returns.
+
+**Detail:**
+
+**house:119:2:31**
+
+Foushee opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package.
+
+The January 15 passage question covers H.R.2988's four-part ERISA package, including the separately adopted GAO-study amendment. The reported committee substitute was deemed adopted under H.Res.988; comparison with the House-passed text shows the added study and contents entry, without a different substantive substitute. This is one whole-bill choice, not separate votes on each fiduciary, investment or disclosure provision.
+
+The proposed Health connection follows the existing statute's scope. ERISA's employee-benefit-plan definition includes welfare plans providing medical, surgical and hospital care, sickness and disability benefits, and other listed benefits; it is not limited to retirement pensions. Sections 404(a) and the new shareholder-rights subsection address covered plan fiduciaries. The new service-provider selection rule therefore also reaches covered health/welfare plans. Existing coverage and fiduciary-part exceptions remain, including governmental plans, specified church plans and other exempt arrangements; the package does not make every employer, insurer or healthcare provider an ERISA fiduciary. It changes duties governing covered benefit-plan administration and assets, not an individual's treatment eligibility, a premium amount or a guaranteed benefit payment.
+
+Division A requires covered investment decisions to rest on pecuniary factors expected to materially affect risk or return over the relevant investment horizon, subject to a documented tie-breaking exception when such factors cannot distinguish alternatives. The documentation must explain that inability, compare the investment choices against diversification, liquidity, cash-flow and funding objectives, and explain consistency with beneficiaries' financial interests. A participant-directed pension plan may retain an option that also pursues non-pecuniary goals if the specified duties are met, but may not use the described non-pecuniary-factor option as a default investment. This is not a finding that any particular investment is prohibited, beneficial or harmful. This division applies to fiduciary actions beginning twelve months after enactment.
+
+Division B requires selecting, monitoring and retaining plan fiduciaries, counsel, employees and service providers consistently with the existing exclusive-benefit and prudence duties and without regard to race, color, religion, sex or national origin. The text does not specify a particular provider to select or remove, or establish that a member endorsed a claimed example of discrimination. Division C sets economic-interest, cost, material-fact, recordkeeping and oversight duties for shareholder rights, including proxies; it does not require voting every proxy. Specified rights passed through to individual-account participants are excepted. It allows defined voting policies, including a safe harbor for concentrating resources on economically material proposals or refraining when the specified holding is below five percent, preserves voting on matters expected to materially affect the portfolio, and requires periodic policy review. Its effective-date clause applies to exercises of rights on or after January 1, 2026; this is the proposed statutory date, not a claim that the bill had already become law.
+
+Division D is narrower: its new brokerage-window notice/acknowledgment condition addresses participant control in individual-account pension plans. Before each investment into, out of or within a non-designated arrangement, the participant must receive and acknowledge the specified information, including the difference in fiduciary selection/monitoring and an age-67 graph using hypothetical four, six and eight percent returns. Those percentages are illustrations, not promised returns. The notice amendment takes effect January 1, 2027. The new designated-investment definition excludes brokerage windows, self-directed brokerage accounts and similar arrangements beyond the fiduciary's designated choices. The added GAO study compares returns within defined-contribution pension plans and is due within two years of enactment. That separately recorded study amendment does not acquire Health membership merely because other portions of the final bill reach health/welfare plans.
+
+A Yea supports passing this complete package; a Nay opposes that passage without identifying which provision drove the choice or a preferred alternative. The House passed it 213–205. This record does not establish enactment, better or worse investment performance, a health outcome, motive, or a general position on all retirement or health policy.
+
+The Clerk recorded the House result as 'Passed' on 2026-01-15. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Covered health/welfare-plan administration supplies proposed membership; the pension-only brokerage study is independently excluded. Existing coverage and asset-treatment exceptions remain.
+- Preserve documented tie-breaking, default-investment limits, pass-through rights, voting-policy safeguards and the distinct effective dates. No selected provider, benefit amount, performance effect or enacted-law result is established.
+
+Evidence: house:119:2:31; finding `prop:df414e591bd0eddd`.
+
+Sources: [clerk:119:2:31](https://clerk.house.gov/evs/2026/roll031.xml); [govinfo:hr2988eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm); [govinfo:29usc1002-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm); [govinfo:29usc1003-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1003.htm); [govinfo:29usc1101-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1101.htm); [govinfo:29usc1102-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1102.htm); [govinfo:29usc1103-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1103.htm); [govinfo:29usc1104-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm); [govinfo:hres988eh](https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm); [govinfo:hrpt119-440](https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm); [congressional-record:2026-01-15-erisa](https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf).
+
 ### Fraud-investigation information sharing across Medicaid and other state-administered programs
 
 **Compact:** Foushee opposed House passage of the complete H.R.10326 information-sharing proposal. The proposal would require states to provide requested records for federal fraud investigations in Medicaid and other specified programs, subject to privacy, security, deletion and law-enforcement-use limits. The vote covered the complete information-sharing measure.
@@ -2604,4 +2695,5 @@ Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo
 | house:119:2:6 | supported retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes | opposed retaining Divisions B and C of H.R.6938 together, including their Indian Health Service and other Health provisions, funding conditions and wider purposes | [govinfo:hr6938eh-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hr6938ih-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-b-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-explanation-c-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-ihs-final-allocation-tables](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-doe-final-allocation](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:pl113-76-regional-health424](https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm); [govinfo:pl113-235-contract-support405-406](https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm); [govinfo:pl116-9-national-park-medical2404](https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm); [govinfo:hrpt119-215-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm); [govinfo:srpt119-46-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:srpt119-46-regional-health-current-law](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc10364-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024); [govinfo:42usc10363-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024); [govinfo:43usc2241-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024); [govinfo:43usc510b-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024); [govinfo:pl108-361-calfed-management](https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm); [govinfo:pl111-11-rio-grande9106](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-gallup-contract](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-navajo-gallup-authorization](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl106-554-dakota-water607](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [govinfo:pl106-554-dakota-water610](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm) |
 | house:119:2:7 | supported House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | opposed House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf); [govinfo:hr6938eh-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hr6938ih-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [congressional-record:2026-01-08-6938-explanation-b-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-explanation-c-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-ihs-final-allocation-tables](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-doe-final-allocation](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:pl113-76-regional-health424](https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm); [govinfo:pl113-235-contract-support405-406](https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm); [govinfo:pl116-9-national-park-medical2404](https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm); [govinfo:hrpt119-215-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm); [govinfo:srpt119-46-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:srpt119-46-regional-health-current-law](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc10364-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024); [govinfo:42usc10363-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024); [govinfo:43usc2241-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024); [govinfo:43usc510b-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024); [govinfo:pl108-361-calfed-management](https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm); [govinfo:pl111-11-rio-grande9106](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-gallup-contract](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-navajo-gallup-authorization](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl106-554-dakota-water607](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [govinfo:pl106-554-dakota-water610](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [congressional-record:2026-01-08-6938-passage-result](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
 | house:119:2:8 | supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | opposed passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | [govinfo:hr504enr](https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm); [govinfo:pl105-313](https://www.govinfo.gov/content/pkg/PLAW-105publ313/html/PLAW-105publ313.htm); [govinfo:hrpt119-189](https://www.govinfo.gov/content/pkg/CRPT-119hrpt189/html/CRPT-119hrpt189-pt1.htm); [congressional-record:2026-01-02-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf); [congressional-record:2026-01-08-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
+| house:119:2:31 | supported passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | [govinfo:hr2988eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm); [govinfo:29usc1002-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm); [govinfo:29usc1003-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1003.htm); [govinfo:29usc1101-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1101.htm); [govinfo:29usc1102-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1102.htm); [govinfo:29usc1103-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1103.htm); [govinfo:29usc1104-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm); [govinfo:hres988eh](https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm); [govinfo:hrpt119-440](https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm); [congressional-record:2026-01-15-erisa](https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

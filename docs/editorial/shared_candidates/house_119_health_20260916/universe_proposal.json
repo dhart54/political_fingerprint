@@ -86,6 +86,7 @@
     "house:119:2:283",
     "house:119:2:286",
     "house:119:2:308",
+    "house:119:2:31",
     "house:119:2:310",
     "house:119:2:37",
     "house:119:2:45",
@@ -107,11 +108,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 194,
-      "exact_action_ineligible": 186,
-      "interpreted_substantive_directional": 77,
+      "procedural_context": 196,
+      "exact_action_ineligible": 189,
+      "interpreted_substantive_directional": 78,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 208
+      "source_unresolved": 202
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -120,14 +121,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 77,
-    "directional_substantive_actions": 77,
+    "substantive_eligible_actions": 78,
+    "directional_substantive_actions": 78,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 194,
+    "procedural_context_actions": 196,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 186,
-    "unresolved_boundary_cases": 208,
-    "independent_episode_count": 58,
+    "exact_action_ineligible_actions": 189,
+    "unresolved_boundary_cases": 202,
+    "independent_episode_count": 59,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -140,12 +141,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 77,
-      "substantive_actions": 77,
+      "ready_substantive_actions": 78,
+      "substantive_actions": 78,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "207 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "201 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -276,11 +277,13 @@
         "house:119:2:4",
         "house:119:2:10",
         "house:119:2:16",
+        "house:119:2:17",
         "house:119:2:18",
         "house:119:2:20",
         "house:119:2:21",
         "house:119:2:22",
         "house:119:2:24",
+        "house:119:2:25",
         "house:119:2:30",
         "house:119:2:34",
         "house:119:2:36",
@@ -509,6 +512,9 @@
         "house:119:2:13",
         "house:119:2:14",
         "house:119:2:15",
+        "house:119:2:19",
+        "house:119:2:26",
+        "house:119:2:29",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -599,6 +605,7 @@
         "house:119:2:7",
         "house:119:2:8",
         "house:119:2:11",
+        "house:119:2:31",
         "house:119:2:37",
         "house:119:2:45",
         "house:119:2:53",
@@ -637,15 +644,9 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:17",
-        "house:119:2:19",
         "house:119:2:23",
-        "house:119:2:25",
-        "house:119:2:26",
         "house:119:2:27",
         "house:119:2:28",
-        "house:119:2:29",
-        "house:119:2:31",
         "house:119:2:32",
         "house:119:2:33",
         "house:119:2:35",
@@ -835,11 +836,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "77 proposed source-mapped inputs, not accepted eligibility. Of208 unresolved identities,207 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "78 proposed source-mapped inputs, not accepted eligibility. Of202 unresolved identities,201 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "58 candidate episodes cover77 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary.",
+  "episode_completeness": "59 candidate episodes cover78 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation.",
   "approval_receipt": null,
-  "universe_subject_sha256": "53a1295ac92f0221d82ca5b401f63d52cdd1668ca87f0abd65658938abad99e0",
+  "universe_subject_sha256": "89d4bb30befce488adf7e1dab02cf8bd0832744ae5b56fc29a748555d0187e67",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -28578,13 +28579,14 @@
       "date": "2026-01-13",
       "measure": "bill_119_hres_988",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.988 establishes consideration of five bills and deems their Education and Workforce committee substitutes adopted within the pending bills. H.R.2262 is additionally modified by Report119-440PartB to preserve the785.32 apprenticeship-training treatment; H.R.2988PartA brokerage-account study is only made in order, not deemed adopted. The five substitute texts and both report amendments were read. Their subjects are ERISA investment/service-provider/proxy/disclosure duties, wage-hour training, childcare compensation exclusions, tipped-employee definition and joint-employer standards. This rule does not finally pass those bills or itself change the statutory benefit/wage rules. Its procedural self-execution and one-recommit/debate/waiver conditions remain recorded; the childcare or benefits content of a parent bill does not turn rule adoption into a counting Health vote. Do not fabricate a recorded final-passage action for a bill later handled by voice vote.",
       "source": {
         "source_id": "clerk:119:2:17",
         "url": "https://clerk.house.gov/evs/2026/roll017.xml",
         "raw_sha256": "faf522620a2bfbded3320777a1f74d26169089c476db51278214f2da8142a6e4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0e5e25682cbde4ca2d0d98220132b20b15b44d8b2015edb923f4cea66d10022b",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28595,26 +28597,92 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.988 establishes consideration of five bills and deems their Education and Workforce committee substitutes adopted within the pending bills. H.R.2262 is additionally modified by Report119-440PartB to preserve the785.32 apprenticeship-training treatment; H.R.2988PartA brokerage-account study is only made in order, not deemed adopted. The five substitute texts and both report amendments were read. Their subjects are ERISA investment/service-provider/proxy/disclosure duties, wage-hour training, childcare compensation exclusions, tipped-employee definition and joint-employer standards. This rule does not finally pass those bills or itself change the statutory benefit/wage rules. Its procedural self-execution and one-recommit/debate/waiver conditions remain recorded; the childcare or benefits content of a parent bill does not turn rule adoption into a counting Health vote. Do not fabricate a recorded final-passage action for a bill later handled by voice vote.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:17",
           "url": "https://clerk.house.gov/evs/2026/roll017.xml",
           "raw_sha256": "faf522620a2bfbded3320777a1f74d26169089c476db51278214f2da8142a6e4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0e5e25682cbde4ca2d0d98220132b20b15b44d8b2015edb923f4cea66d10022b",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres988eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+          "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+          "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+        },
+        {
+          "source_id": "govinfo:hrpt119-440",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm",
+          "raw_sha256": "22102396583da8df9f7a6a7f7c5a880ec7376e88dd5b7184179ea0797210e673",
+          "governed_bytes_sha256": "14ef8f5f611a5dd603b9e1d9efbf2aefc62566c52c6230f3ea8d528b96a76d3c"
+        },
+        {
+          "source_id": "govinfo:hr2988rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988rh/html/BILLS-119hr2988rh.htm",
+          "raw_sha256": "267bed96b026dcc2ca71febb355cfa3dc300bf8b948cd8f63df02098cb436a94",
+          "governed_bytes_sha256": "05eb3f794a7f799e7a5baedbb45597c0a4bc7f50ad84b7f872632e86870ab297"
+        },
+        {
+          "source_id": "govinfo:hr2262rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2262rh/html/BILLS-119hr2262rh.htm",
+          "raw_sha256": "fca7258e07566ea22080e19a6f075d7424ca7c7f292132a21b85d124f0d1aa70",
+          "governed_bytes_sha256": "c97297c7d2e1ca97bd43a27f7866e6b1259e014f8c8c99a570d9adacbe0cce38"
+        },
+        {
+          "source_id": "govinfo:hr2270rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2270rh/html/BILLS-119hr2270rh.htm",
+          "raw_sha256": "077f327d9fd253ca0bf38ff9b3874aa7044d9d0070af5eafce10a209ba4d2fbe",
+          "governed_bytes_sha256": "75db8d0dda1296dc0b13361dfecfce5661d7625c387673ddeb3ee09f6ffe2ab3"
+        },
+        {
+          "source_id": "govinfo:hr2312rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2312rh/html/BILLS-119hr2312rh.htm",
+          "raw_sha256": "42823571599a48e65d90c9dfd9dcf86142daf3fea0d5b69440f138d8a6654640",
+          "governed_bytes_sha256": "8e15f53abd19af3447eafe601536e8a3c33ece5d7af1b54581490deeb5c88398"
+        },
+        {
+          "source_id": "govinfo:hr4366rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4366rh/html/BILLS-119hr4366rh.htm",
+          "raw_sha256": "fc268d73c1d3a8991f78c4be8c55c8f568d2e278d56d9d493519249fd09babc7",
+          "governed_bytes_sha256": "0ca6b592f4976458a2a0f980e0c19c5874d5aa4615f33e352c0099af7b8f032a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf",
+          "raw_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+          "governed_bytes_sha256": "4e39f3edcb9cbdca54361f6c1c292928374a6b33314adab89a7764b10cc54fbe"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:17",
+        "source_ids": [
+          "clerk:119:2:17",
+          "govinfo:hres988eh",
+          "govinfo:hrpt119-440",
+          "govinfo:hr2988rh",
+          "govinfo:hr2262rh",
+          "govinfo:hr2270rh",
+          "govinfo:hr2312rh",
+          "govinfo:hr4366rh",
+          "congressional-record:2026-01-13-2262-rule-passage"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:17",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.Res.988 EH fully read in research208, raw735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77: sets2988/2262/2270/2312/4366 consideration, deems committee substitutes adopted and modifies2262 by Rules reportPartB; permits2988PartA amendment separately. Clerk17 recaptured. Next obtain exact accompanying report and committee versions, preserve self-executing substitute versus final passage, then disposition rule. No extra resolution adopted."
-      }
+        "shared_review_record_sha256": "9725d968536750af22970252c3b0579e8d9460e48ea5b05ac34ed0c7805003ff"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:18",
@@ -28667,13 +28735,14 @@
       "date": "2026-01-13",
       "measure": "bill_119_hr_2262",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The failed January13 passage question covers H.R.2262 RH plus the Report119-440PartB self-executing amendment, corroborated by the complete floor substitute. It retains the collectively bargained clothes-changing/washing exclusion and excludes specified education/training time from FLSA minimum-wage/overtime hours when outside regular hours, voluntary with no adverse action for nonattendance, and without employer work. It does not require the training to be unrelated to the current job. The separate apprenticeship clause preserves785.32 treatment: a written bona fide program meeting the specified standards, no productive/regular-duty work, and the written-agreement exception for hours worked; merely paying related-instruction time does not itself make that agreement. The2025 CFR PDF resolves the unavailable HTML-granule/eCFR attempts. Existing785.27–31 training conditions and29USC203(o)/206(a)/207(a) scope were read. These are general labor-compensation/education rules, not a clinical service, insurance, Social Security or direct social-service delivery/financing change. Potential effects on healthcare-facility workers or household income do not independently establish Health membership. Propose exclusion; do not convert either training-opportunity claims by proponents or wage-loss claims by opponents into demonstrated outcomes. The House rejected passage209–215; no EH or enacted wage change is invented.",
       "source": {
         "source_id": "clerk:119:2:19",
         "url": "https://clerk.house.gov/evs/2026/roll019.xml",
         "raw_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "8ab43937a6f42aab1016ee8928ebe29b6a5792dfdbb6938bb0c2533220f618e8",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28684,26 +28753,92 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The failed January13 passage question covers H.R.2262 RH plus the Report119-440PartB self-executing amendment, corroborated by the complete floor substitute. It retains the collectively bargained clothes-changing/washing exclusion and excludes specified education/training time from FLSA minimum-wage/overtime hours when outside regular hours, voluntary with no adverse action for nonattendance, and without employer work. It does not require the training to be unrelated to the current job. The separate apprenticeship clause preserves785.32 treatment: a written bona fide program meeting the specified standards, no productive/regular-duty work, and the written-agreement exception for hours worked; merely paying related-instruction time does not itself make that agreement. The2025 CFR PDF resolves the unavailable HTML-granule/eCFR attempts. Existing785.27–31 training conditions and29USC203(o)/206(a)/207(a) scope were read. These are general labor-compensation/education rules, not a clinical service, insurance, Social Security or direct social-service delivery/financing change. Potential effects on healthcare-facility workers or household income do not independently establish Health membership. Propose exclusion; do not convert either training-opportunity claims by proponents or wage-loss claims by opponents into demonstrated outcomes. The House rejected passage209–215; no EH or enacted wage change is invented.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:19",
           "url": "https://clerk.house.gov/evs/2026/roll019.xml",
           "raw_sha256": "7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "8ab43937a6f42aab1016ee8928ebe29b6a5792dfdbb6938bb0c2533220f618e8",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2262rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2262rh/html/BILLS-119hr2262rh.htm",
+          "raw_sha256": "fca7258e07566ea22080e19a6f075d7424ca7c7f292132a21b85d124f0d1aa70",
+          "governed_bytes_sha256": "c97297c7d2e1ca97bd43a27f7866e6b1259e014f8c8c99a570d9adacbe0cce38"
+        },
+        {
+          "source_id": "govinfo:hrpt119-440",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm",
+          "raw_sha256": "22102396583da8df9f7a6a7f7c5a880ec7376e88dd5b7184179ea0797210e673",
+          "governed_bytes_sha256": "14ef8f5f611a5dd603b9e1d9efbf2aefc62566c52c6230f3ea8d528b96a76d3c"
+        },
+        {
+          "source_id": "govinfo:hres988eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+          "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+          "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+        },
+        {
+          "source_id": "govinfo:29usc203-2024-hours-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap8-sec203.htm",
+          "raw_sha256": "c904ecf07d428b22cff31d3530c59365524470a5b991a669e06a28c63e4b1da1",
+          "governed_bytes_sha256": "84b10fe1265c3604759bdffbd89eebebcf59aebc920a59d2a64d8acc74a18013"
+        },
+        {
+          "source_id": "govinfo:29usc206-2024-hours-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap8-sec206.htm",
+          "raw_sha256": "9dbfe952c7ce43d70abb16c2966f352554187f0e6c60b5de1db01346e898afa6",
+          "governed_bytes_sha256": "29fcab2543e64b76cc179428445a8b55f3fd175c34520de7382d2b95f76c418c"
+        },
+        {
+          "source_id": "govinfo:29usc207-2024-hours-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap8-sec207.htm",
+          "raw_sha256": "777545237fdfb9306dd2c044385fe30ecafd96ec22566fef649d16fddf1281ee",
+          "governed_bytes_sha256": "886647287f0404f98423cb5b5bcd5676be7d2ee4606bef1109ba38ec2e2453ae"
+        },
+        {
+          "source_id": "govinfo:cfr785-2025-training",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title29-vol3/pdf/CFR-2025-title29-vol3-part785.pdf",
+          "raw_sha256": "d074d856425c2c1063331e1c20e5977fe566e6e25449ac0f85c75c88dc50a60e",
+          "governed_bytes_sha256": "7804f0a4d03436e841dc4eaf77519cdb617c40c02bca04a4fd7595fb56817b99"
+        },
+        {
+          "source_id": "congressional-record:2026-01-13-2262-rule-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-13/pdf/CREC-2026-01-13-house.pdf",
+          "raw_sha256": "d0dc2a327330c1e0137f8a593d82e107a75222ddebc8a9bfcbb5a62532afa80b",
+          "governed_bytes_sha256": "4e39f3edcb9cbdca54361f6c1c292928374a6b33314adab89a7764b10cc54fbe"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:19",
+        "source_ids": [
+          "clerk:119:2:19",
+          "govinfo:hr2262rh",
+          "govinfo:hrpt119-440",
+          "govinfo:hres988eh",
+          "govinfo:29usc203-2024-hours-baseline",
+          "govinfo:29usc206-2024-hours-baseline",
+          "govinfo:29usc207-2024-hours-baseline",
+          "govinfo:cfr785-2025-training",
+          "congressional-record:2026-01-13-2262-rule-passage"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:19",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.2262 failed passage (Clerk19 recaptured, raw7abfcbdb97ad4dcac73ed488046f986e090c1c469439e333ba0440d87e215b4f). Govinfo EH path returns PageNotFound; no EH presumed for failed passage. Use RH plusH.Res.988 Rules reportPartB modification and January13 floor text. Exact unpaid education/training activities and incorporated FLSA exemptions/conditions remain to review; no missing-evidence blocker yet."
-      }
+        "shared_review_record_sha256": "e3e268e3456fe1760c9afb0239d90019f9679bc0a05390084de03e617054b52b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:20",
@@ -28879,7 +29014,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4593 EH fully read research208, raw12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e: replaces42USC6291(31)(D) withASME A112.18.1-2024 showerhead definition, excludes safety showerheads and requires conforming rule within180days. Next read Report119-417 and exact publicly available incorporated definition/baseline. Do not infer Health from shower hygiene or safety-title words. No paid standard access authorized."
+        "next_action": "H.R.4593 EH fully read research208, raw12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e. Report119-417 purpose/background, section analysis,6291(31)changes and minority views read in research209. Exact bill refers toASME A112.18.1-2024, excludes safety showerheads and requires conforming regulations within180days; report narrative has an18/81 digit transposition, not followed. DOE April15,2025 final-rule research211 first4200/9072characters read; remainder and exact2024standard definition still pending. ASME publisher catalog confirms version; public Accuris preview2922436 returns403 both web and direct. No paid/protected access, unverified mirror or inferred hygienic effect used. Seek another authorized public preview/official incorporated-definition reproduction; this path is not yet exhausted. Prepared research is not completed membership."
       }
     },
     {
@@ -28933,13 +29068,14 @@
       "date": "2026-01-14",
       "measure": "bill_119_hres_992",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "H.Res.992 establishes Committee-of-the-Whole consideration of H.R.7006 with general debate, specified waivers, only the two separately offered Report119-445 amendments, and one recommit motion. The report amendments would cap specified DC federal-court obligations and prohibit named judicial staff funding, and strike the identified National Endowment for Democracy provisions. They are made in order, not adopted by this rule; their later votes and final passage remain independently screened. Section2 permits explanatory material throughJanuary16; it does not itself appropriate parent-package Health funds. No additional resolution or substantive rider is deemed adopted. Preserve this as non-counting procedural context despite the appropriation broader bill contents.",
       "source": {
         "source_id": "clerk:119:2:25",
         "url": "https://clerk.house.gov/evs/2026/roll025.xml",
         "raw_sha256": "9e9ea91f6ddbc389e870c8771f443ecd3b232a10a573e1aa01c1f9dd36816cfd",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "fefd8e619b9bf09e8e862d88ac49f5277a7a56754b34e6ea9afae9f3bf37bfa0",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28950,26 +29086,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "H.Res.992 establishes Committee-of-the-Whole consideration of H.R.7006 with general debate, specified waivers, only the two separately offered Report119-445 amendments, and one recommit motion. The report amendments would cap specified DC federal-court obligations and prohibit named judicial staff funding, and strike the identified National Endowment for Democracy provisions. They are made in order, not adopted by this rule; their later votes and final passage remain independently screened. Section2 permits explanatory material throughJanuary16; it does not itself appropriate parent-package Health funds. No additional resolution or substantive rider is deemed adopted. Preserve this as non-counting procedural context despite the appropriation broader bill contents.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:25",
           "url": "https://clerk.house.gov/evs/2026/roll025.xml",
           "raw_sha256": "9e9ea91f6ddbc389e870c8771f443ecd3b232a10a573e1aa01c1f9dd36816cfd",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "fefd8e619b9bf09e8e862d88ac49f5277a7a56754b34e6ea9afae9f3bf37bfa0",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres992eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+          "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+          "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-445",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+          "raw_sha256": "c8df027547a47d3aeb8d3ad2006155d2597775c62b4f18ed0e4f2ec79715794f",
+          "governed_bytes_sha256": "952f73f858df453ca56eb9348864b533f68d1e8d643d700a95a45ef3a3aac0e7"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-rule992",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "c24e3f336c36acab543e0e95006c3adf9b79e5668845389d8ff9aa7b17232d70"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:25",
+        "source_ids": [
+          "clerk:119:2:25",
+          "govinfo:hres992eh",
+          "govinfo:hrpt119-445",
+          "congressional-record:2026-01-14-rule992"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:25",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.Res.992 EH fully read research208, raw584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e: Committee-of-Whole structured consideration ofH.R.7006, only separately offered Rules report amendments; not self-adopting those amendments. Allows Appropriations chair explanatory material throughJan16. Clerk25 captured. Verify exact report/record and disposition procedural rule; do not turn parent appropriation into rule Health meaning."
-      }
+        "shared_review_record_sha256": "6f51782403df497f3e4f1a055b8fd65b5768b9d9950c007a06a1cca00abffc3b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:26",
@@ -28978,13 +29145,14 @@
       "date": "2026-01-14",
       "measure": "bill_119_hr_7006",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The failed Roy amendment would cap fiscal2026 obligations/expenditures for each of the DC Circuit and DC federal district courts at $46,241,924, and prohibit salary/expense funding for the staff of Judges Boasberg and Boardman. Preserve both distinct mechanisms; the second is not a cut to the judges own salaries. The division-level this-Act reference rule applies. Complete Judiciary-title review shows general court operations, defenders, jurors and security, with a separate Court of Federal Claims vaccine-injury case-processing appropriation. The amendment names the two different courts and specified staff; it does not amend that vaccine appropriation, a care program, health-plan eligibility or a direct social-service delivery mechanism. General court/staff funding and possible litigation consequences do not independently establish Health membership. Propose exclusion, without adopting either side's evaluative accusations or motives. The rejected amendment remains separate from final passage and is not inserted into that package.",
       "source": {
         "source_id": "clerk:119:2:26",
         "url": "https://clerk.house.gov/evs/2026/roll026.xml",
         "raw_sha256": "75db2e6ff5d7403aa3754cf792efbfbf833994a9b3e63f8e3dd2e959b989d958",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0231dfab7420319b55eacece206706113763801fa6124ce6878505531b2514f5",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -28995,25 +29163,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The failed Roy amendment would cap fiscal2026 obligations/expenditures for each of the DC Circuit and DC federal district courts at $46,241,924, and prohibit salary/expense funding for the staff of Judges Boasberg and Boardman. Preserve both distinct mechanisms; the second is not a cut to the judges own salaries. The division-level this-Act reference rule applies. Complete Judiciary-title review shows general court operations, defenders, jurors and security, with a separate Court of Federal Claims vaccine-injury case-processing appropriation. The amendment names the two different courts and specified staff; it does not amend that vaccine appropriation, a care program, health-plan eligibility or a direct social-service delivery mechanism. General court/staff funding and possible litigation consequences do not independently establish Health membership. Propose exclusion, without adopting either side's evaluative accusations or motives. The rejected amendment remains separate from final passage and is not inserted into that package.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:26",
           "url": "https://clerk.house.gov/evs/2026/roll026.xml",
           "raw_sha256": "75db2e6ff5d7403aa3754cf792efbfbf833994a9b3e63f8e3dd2e959b989d958",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0231dfab7420319b55eacece206706113763801fa6124ce6878505531b2514f5",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-445",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+          "raw_sha256": "c8df027547a47d3aeb8d3ad2006155d2597775c62b4f18ed0e4f2ec79715794f",
+          "governed_bytes_sha256": "952f73f858df453ca56eb9348864b533f68d1e8d643d700a95a45ef3a3aac0e7"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "b77079d96b68c41e1c61c01b8e034c1e5aacd6f9014da2cf6ec7d16a16f4d6d3"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-court-amendment",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "54352476cb7f35b551e18165231a25bfbe062eb7429006b048684f66dda09c5f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:26",
+        "source_ids": [
+          "clerk:119:2:26",
+          "govinfo:hrpt119-445",
+          "govinfo:hr7006ih-217-scope",
+          "congressional-record:2026-01-14-court-amendment"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:26",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "223a774649e8ad2c7d8cb97ff35ecbaa0e6c68223a2391e4731df91241dbf672"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:27",
@@ -29056,7 +29256,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.7006 Crane amendment: Report119-445 complete, targetIH PDF205L20–206L7 and318L11–320L21 fully read (research214, PDFrawc3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816). It strikes315m NED allocation (210.316m traditional/core and104.684m democracy),60-day apportionment and7062(a)operating-plan exemption; additionally deletes7032 democracy-program2.175bn should-language, authorities, definition, foreign-interference restrictions and activist/journalist protection. Not merely a blanketNEDban. Read22USC4411/4412 actualsubchapII operative purposes/grants (research216); prior missing-subchapter URLs returnednotfound and are not governed evidence. Jan14Record PDF77/79/80 bind offering/result; amendment failed127–291. Jan14explanatory statementPDF144 section7032 also instructs forced-organ-harvesting reporting. Next determine the precise relation of that retained explanatory instruction to deleting7032; do not silently infer its repeal or ignore medical counterevidence. Billpreface3/4 read (division-scopedAct and statementeffect). Continue independent safe cases; no unavailable evidence or human decision yet asserted."
       }
     },
     {
@@ -29100,7 +29301,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.7006 IH research214 raw1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65,576918characters; PDFrawc3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816. Readpreface1–6, completeJudiciarytitle, exactNED/7032 amendmenttargets and7062(a) operatingplan. Jan14Record research2091.315mcharacters captured, not fully read; PDF1447032/7035includesorgan-harvesting report and combat-casualty-care consultation. EH/versioncomparison, rest ofoperativebill, finalexplanation/overridebindings and materialincorporations remain. Both26/27amendmentsfailed; do not insert eitherinto finalpassage. Clerk28captured research214, floorPDF80/81result341–79. ParentclinicalorotherHealthcontent doesnot establish amendmentmembership."
       }
     },
     {
@@ -29110,13 +29312,14 @@
       "date": "2026-01-15",
       "measure": "bill_119_hr_2988",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The adopted Huizenga amendment adds only a GAO report, due within two years of enactment, comparing returns through specified brokerage/non-designated arrangements in defined-contribution pension plans against other investment options in those plans, plus a contents entry. Its references to the new1002(46) and1104(c)(7) are read with the pending parent text; the printed section2(46) label is preserved, not silently rewritten. Existing1002(34) explicitly limits the defined-contribution category to pension plans. It does not itself enact the broader parent fiduciary or service-provider rules, amend health-plan benefits or finance Health/social-service delivery. Propose exclusion independently of the broader final-passage Health membership. Statements about expected returns, ESG performance or proponents' intentions are not accepted as outcomes.",
       "source": {
         "source_id": "clerk:119:2:29",
         "url": "https://clerk.house.gov/evs/2026/roll029.xml",
         "raw_sha256": "f68c8bfe18d3a1a5b7ce2261757d77e0317cb422738f8a5d2117b038554ce1ae",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "a392157cf5009b5f2506400e4cc5bdb1b35d9f8d43c83d75a177054ca05c2de8",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -29127,25 +29330,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The adopted Huizenga amendment adds only a GAO report, due within two years of enactment, comparing returns through specified brokerage/non-designated arrangements in defined-contribution pension plans against other investment options in those plans, plus a contents entry. Its references to the new1002(46) and1104(c)(7) are read with the pending parent text; the printed section2(46) label is preserved, not silently rewritten. Existing1002(34) explicitly limits the defined-contribution category to pension plans. It does not itself enact the broader parent fiduciary or service-provider rules, amend health-plan benefits or finance Health/social-service delivery. Propose exclusion independently of the broader final-passage Health membership. Statements about expected returns, ESG performance or proponents' intentions are not accepted as outcomes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:29",
           "url": "https://clerk.house.gov/evs/2026/roll029.xml",
           "raw_sha256": "f68c8bfe18d3a1a5b7ce2261757d77e0317cb422738f8a5d2117b038554ce1ae",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "a392157cf5009b5f2506400e4cc5bdb1b35d9f8d43c83d75a177054ca05c2de8",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-440",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm",
+          "raw_sha256": "22102396583da8df9f7a6a7f7c5a880ec7376e88dd5b7184179ea0797210e673",
+          "governed_bytes_sha256": "14ef8f5f611a5dd603b9e1d9efbf2aefc62566c52c6230f3ea8d528b96a76d3c"
+        },
+        {
+          "source_id": "govinfo:hr2988eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm",
+          "raw_sha256": "2265766dd0d821c398e7423cdb9af2ba96225f14b40ced0772cc9096b0f58bdd",
+          "governed_bytes_sha256": "1eeb41e7a5282ee343d7165b09631d982fd32c90aaca5a36ebac7c63d80d18c7"
+        },
+        {
+          "source_id": "govinfo:29usc1002-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm",
+          "raw_sha256": "b3b65e80cedad65289684897508a5e744f4954a725703c43075a34e61602aa41",
+          "governed_bytes_sha256": "e97b5cf5b18b2195f85ffbb4432dc76bfba0d4e6767021076133ee00a486d63c"
+        },
+        {
+          "source_id": "congressional-record:2026-01-15-erisa",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf",
+          "raw_sha256": "8b960e6c9cabbd5f34c2cf0f7760e7a54dff197f6087e676b768841c84984bcd",
+          "governed_bytes_sha256": "b9e3fcd763426e6b9b4aae66722f56e2f3fdf60942ed7630d8cd11d486a585fd"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:29",
+        "source_ids": [
+          "clerk:119:2:29",
+          "govinfo:hrpt119-440",
+          "govinfo:hr2988eh",
+          "govinfo:29usc1002-217-scope",
+          "congressional-record:2026-01-15-erisa"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:29",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "41361fecf37c0dffcb72b2bb40e9ea5af90e85086a84424699015824d5dfc909"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:30",
@@ -29198,15 +29440,16 @@
       "date": "2026-01-15",
       "measure": "bill_119_hr_2988",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.2988 EH extends the new investment/service-provider/shareholder fiduciary rules across covered ERISA plans;1002(1)/(3),1003 and1101 establish covered health/welfare plans within that scope. This is a direct benefit-plan administration/assets mechanism, not membership inferred from retirement keywords. Preserve covered-plan exceptions, separate pension-only brokerage provisions, documented tie-breaking, proxy safeguards and whole-package limits. The separately adopted GAO amendment remains independently proposed excluded. RH-to-EH comparison confirms the study addition; no meaning is imported from a later version.",
       "source": {
         "source_id": "clerk:119:2:31",
         "url": "https://clerk.house.gov/evs/2026/roll031.xml",
         "raw_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "5d13efb897f5c603eb344b176928db2cba369708cd21695b3a3ad190826097a1",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr2988:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_2988",
       "member_action": "nay",
@@ -29215,25 +29458,106 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.2988 EH extends the new investment/service-provider/shareholder fiduciary rules across covered ERISA plans;1002(1)/(3),1003 and1101 establish covered health/welfare plans within that scope. This is a direct benefit-plan administration/assets mechanism, not membership inferred from retirement keywords. Preserve covered-plan exceptions, separate pension-only brokerage provisions, documented tie-breaking, proxy safeguards and whole-package limits. The separately adopted GAO amendment remains independently proposed excluded. RH-to-EH comparison confirms the study addition; no meaning is imported from a later version.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:31",
           "url": "https://clerk.house.gov/evs/2026/roll031.xml",
           "raw_sha256": "7de433d5a5c92dce860d55cc89fb8ae1443a50805296a2104733710f7603943d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "5d13efb897f5c603eb344b176928db2cba369708cd21695b3a3ad190826097a1",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2988eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm",
+          "raw_sha256": "2265766dd0d821c398e7423cdb9af2ba96225f14b40ced0772cc9096b0f58bdd",
+          "governed_bytes_sha256": "1eeb41e7a5282ee343d7165b09631d982fd32c90aaca5a36ebac7c63d80d18c7"
+        },
+        {
+          "source_id": "govinfo:29usc1002-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm",
+          "raw_sha256": "b3b65e80cedad65289684897508a5e744f4954a725703c43075a34e61602aa41",
+          "governed_bytes_sha256": "e97b5cf5b18b2195f85ffbb4432dc76bfba0d4e6767021076133ee00a486d63c"
+        },
+        {
+          "source_id": "govinfo:29usc1003-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1003.htm",
+          "raw_sha256": "776808f11e0f5369eed41d4dea1a80c388cf02b11bd7a91a8f0bfe90957e3c9a",
+          "governed_bytes_sha256": "9c386e4a2274af44e4142d8d5e8e18fba0937a24c157d9fd83d31bc8db857157"
+        },
+        {
+          "source_id": "govinfo:29usc1101-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1101.htm",
+          "raw_sha256": "a51f8fffa44db9b12e81076e2de251045009e387e3e7f4e04a5773982150baeb",
+          "governed_bytes_sha256": "a523598ce038bd79aa61144b34eafc54cb5198c60929f3690adb73b64d5b87d4"
+        },
+        {
+          "source_id": "govinfo:29usc1102-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1102.htm",
+          "raw_sha256": "66ff27cdb1ad860c0ce7f3f635c16708b38f9498342132d0810202d4c419f0bf",
+          "governed_bytes_sha256": "543624a28fe78309e704a673a377d191076c966bd24b237fb7160cc01ef0b9bf"
+        },
+        {
+          "source_id": "govinfo:29usc1103-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1103.htm",
+          "raw_sha256": "29cf595acd22dc92c2b3f23ad96b6f76ae18082ffc5a65ba3912f82d889de554",
+          "governed_bytes_sha256": "f27d2883e0d4300fc3a2168823ecacc11c46ea47171fc780c57bf96d4d6e3f3e"
+        },
+        {
+          "source_id": "govinfo:29usc1104-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm",
+          "raw_sha256": "4ea0c9cb66b3b585e1893080ed892715c1c15aac843ab5ad22a431b3fb07cdf5",
+          "governed_bytes_sha256": "28112f7ab66b7fa1324f4a7a00be2af318d41769a50a92e9093d70c89b36f844"
+        },
+        {
+          "source_id": "govinfo:hres988eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm",
+          "raw_sha256": "735f60154d83b554f9f09eaab1b4fa8ee6b513984a8ed11a831d57f043799d77",
+          "governed_bytes_sha256": "1a756a61822f43f09f756154e094cd663eaa955751bc7b12bb498db53177f50b"
+        },
+        {
+          "source_id": "govinfo:hrpt119-440",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm",
+          "raw_sha256": "22102396583da8df9f7a6a7f7c5a880ec7376e88dd5b7184179ea0797210e673",
+          "governed_bytes_sha256": "14ef8f5f611a5dd603b9e1d9efbf2aefc62566c52c6230f3ea8d528b96a76d3c"
+        },
+        {
+          "source_id": "congressional-record:2026-01-15-erisa",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf",
+          "raw_sha256": "8b960e6c9cabbd5f34c2cf0f7760e7a54dff197f6087e676b768841c84984bcd",
+          "governed_bytes_sha256": "b9e3fcd763426e6b9b4aae66722f56e2f3fdf60942ed7630d8cd11d486a585fd"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:31",
+        "source_ids": [
+          "clerk:119:2:31",
+          "govinfo:hr2988eh",
+          "govinfo:29usc1002-217-scope",
+          "govinfo:29usc1003-217-scope",
+          "govinfo:29usc1101-217-scope",
+          "govinfo:29usc1102-217-scope",
+          "govinfo:29usc1103-217-scope",
+          "govinfo:29usc1104-217-scope",
+          "govinfo:hres988eh",
+          "govinfo:hrpt119-440",
+          "congressional-record:2026-01-15-erisa"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:31",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "308898442f73f3499e263e3f738226acaa7be097a2224649ff48d3952f80deb4"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:32",
@@ -42591,11 +42915,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "77 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Exact retention, veto-override and passage scopes and program-specific eligibility conditions remain distinct.",
+    "basis": "78 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Preserve exact amendments, retention, veto overrides and passage, covered-benefit-plan limits and distinct pension-only actions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "e9a411872d08236285b9beb9b88cc6b8673f589b9e0133f10b63601c93545af4",
+  "selection_sha256": "cab8d14e17721a16190a5220e7ef5106578cca752a7c2d07de08a56115c43376",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -42666,6 +42990,7 @@
     "house:119:2:283",
     "house:119:2:286",
     "house:119:2:308",
+    "house:119:2:31",
     "house:119:2:310",
     "house:119:2:37",
     "house:119:2:45",
@@ -42688,15 +43013,9 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:17",
-    "house:119:2:19",
     "house:119:2:23",
-    "house:119:2:25",
-    "house:119:2:26",
     "house:119:2:27",
     "house:119:2:28",
-    "house:119:2:29",
-    "house:119:2:31",
     "house:119:2:32",
     "house:119:2:33",
     "house:119:2:35",
@@ -42887,7 +43206,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "208 unresolved identities comprise207 unreviewed screenings and one examined source conflict at2025roll237. January12rolls13–15 are proposed excluded after complete exact EH and material incorporation review: general remote-access export controls and conditional trade preferences remain distinct from direct Health/social-service mechanisms. Continue2026roll17 then19 and subsequent queue; older prepared dependencies remain open.",
+    "basis": "202 unresolved identities comprise201 unreviewed screenings and one examined2025roll237 source conflict. Court-funding26 and pension-study29 are proposed excluded; ERISA passage31 is proposed included through covered health/welfare-plan fiduciary duties. Prepared23 and27 still require exact incorporated-definition or amendment/explanatory-effect review;28 broader appropriations remains unreviewed. Continue independent safe cases and older prepared dependencies.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -42939,6 +43258,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "8dcdfc114faf4e60d3facd1e7f32601dfe63bfc78769c3a40d624fe72287e160",
-  "membership_review_sha256": "49d11366112a760da0b65455201bf36346d1b3b3e004873fe2a96c1e0198679d"
+  "proposal_sha256": "9e625950911ed898d31ef94df8cb1fa3e93df8d2f90246684785cf4a81d03af2",
+  "membership_review_sha256": "a544a1b2a2e1a2b56a3836991c1d7aa8a09116c7ea1876892f85fea5341f22f2"
 }
