@@ -199,7 +199,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 52)
+        self.assertEqual(len(f["findings"]), 54)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":189, "source_unresolved":235,
-            "interpreted_substantive_directional":70, "expressive_nonbinding_context":11, "exact_action_ineligible":171})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":191, "source_unresolved":221,
+            "interpreted_substantive_directional":72, "expressive_nonbinding_context":11, "exact_action_ineligible":181})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 234)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 220)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1126,6 +1126,82 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual(rule["disposition"], "procedural_context")
         self.assertNotIn(rule["action_id"], action_ids)
         self.assertIn("no deemed passage", rule["rationale"])
+
+    def test_minor_procedure_candidate_preserves_exceptions_and_unoffered_amendment_boundary(self):
+        aid = "house:119:1:351"
+        core, _, projections, _, result = self.products
+        for projection in projections:
+            observation = next(a for a in projection["actions"] if a["action_id"] == aid)
+            self.assertEqual(observation["official_status"], "Nay" if projection["member_id"] == "F000477" else "Yea")
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid])
+            self.assertIn("under 18", finding["compact"])
+            self.assertIn("could not be prosecuted", finding["compact"])
+            detail = " ".join(finding["detail"])
+            for phrase in ["precocious puberty", "mental, behavioral or emotional", "expressly not offered",
+                           "not the formal bare motion", "preserves that drafting mismatch", "separate H.R. 498"]:
+                self.assertIn(phrase, detail)
+            self.assertIn("govinfo:18usc116-2024-operative", finding["source_ids"])
+            self.assertIn("govinfo:hrpt119-411-roy", finding["source_ids"])
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:18usc116-2024-operative")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_child_placement_candidate_preserves_removed_and_retained_care_provisions(self):
+        aid = "house:119:1:340"
+        core, _, projections, _, result = self.products
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        for projection in projections:
+            observation = next(a for a in projection["actions"] if a["action_id"] == aid)
+            self.assertEqual(observation["official_status"], "Nay" if projection["member_id"] == "F000477" else "Yea")
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid])
+            for phrase in ["12 or older", "monthly-review", "while retaining"]:
+                self.assertIn(phrase, finding["compact"])
+            detail = " ".join(finding["detail"])
+            for phrase in ["A conviction is therefore not required", "sponsor clause’s own conviction requirement",
+                           "monthly secure-placement review", "qualified access-to-counsel", "section642(g)(2)",
+                           "formal motion was bare recommittal", "January 2025 Laken Riley Act"]:
+                self.assertIn(phrase, detail)
+            self.assertTrue({"govinfo:6usc279-2024-operative", "govinfo:8usc1232-2024-care-placement",
+                             "govinfo:pl119-1-section2"} <= set(finding["source_ids"]))
+        self.assertIn("health care", sources["govinfo:8usc1522-2024-child-services"]["text"])
+        self.assertIn("mental well-being", sources["govinfo:8usc1232-2024-care-placement"]["text"])
+        self.assertIn("other gang-related markings", sources["govinfo:hr4371eh"]["text"])
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:8usc1232-2024-care-placement")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_december_environment_choices_keep_health_limits_and_exact_procedural_effects(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        action_ids = {a["action_id"] for a in self.products[0]["actions"]}
+        for roll in [342, 345, 346, 347, 352, 353, 354, 356, 358, 360]:
+            record = records[f"house:119:1:{roll}"]
+            self.assertEqual(record["disposition"], "exact_action_ineligible")
+            self.assertTrue(record["substantive_review_performed"])
+            self.assertTrue(record["claim_source_map"])
+            self.assertNotIn(record["action_id"], action_ids)
+        self.assertIn("human health or property", records["house:119:1:354"]["rationale"])
+        self.assertIn("offered by Roy", records["house:119:1:353"]["rationale"])
+        self.assertIn("renumbered, not newly enacted", records["house:119:1:356"]["rationale"])
+        self.assertIn("without further appropriations", records["house:119:1:358"]["rationale"])
+        self.assertIn("Mexican wolf", records["house:119:1:360"]["rationale"])
+        self.assertEqual([p["pdf_page"] for p in sources["govinfo:hr4776rh-amendment-pages"]["page_extracts"]], [5, 23, 26, 29])
+        self.assertIn("public health and safety", sources["govinfo:30usc1245-2024-operative"]["text"])
+        self.assertIn("125 percent", sources["govinfo:pl119-21-section60026"]["text"])
+        self.assertIn("§42.", sources["govinfo:30usc42-2024-operative"]["text"])
+        for roll in [338, 344]:
+            record = records[f"house:119:1:{roll}"]
+            self.assertEqual(record["disposition"], "procedural_context")
+            self.assertNotIn(record["action_id"], action_ids)
+            self.assertTrue(record["claim_source_map"])
+        self.assertIn("does not itself pass any of the six", records["house:119:1:338"]["rationale"])
+        self.assertIn("Sections4–5 also deem", records["house:119:1:344"]["rationale"])
 
 if __name__ == "__main__":
     unittest.main()

@@ -66,67 +66,86 @@ If membership/source gates remain unresolved, deliver a precise partial candidat
 
 ## Active continuation — September27
 
-Continue from pushed head `608c6171fbc9defee4cd84f413e63b66e8e81f0a`.
-Six further membership screenings are resolved: procedural331 and proposed
-exclusions330/332/334/335/336. Counts70/188/11/166/241 become
-70/189/11/171/235:234 unreviewed identities plus the examined roll237 source
-conflict. The70 shared interpretations,52 Foushee findings,49 Massie proof
-findings,140 observations and53 episodes (nine multi-action episodes) are
-unchanged. No new user decision or unavailable-evidence blocker is identified.
+Continue from pushed head `a82d3c7399f95cea1dd6259cce9d5f306ff5a0c3`.
+Fourteen further screenings are resolved: two shared Health interpretations,
+ten proposed exclusions and two procedural controls. Counts70/189/11/171/235
+become72/191/11/181/221:220 unreviewed identities plus the examined roll237
+source conflict. Derived output is54 Foushee findings /51 bounded Massie proof
+findings,144 recorded observations and55 episodes, including the existing nine
+multi-action episodes. No new user decision or exhausted evidence path is identified.
 
-- **330:** complete H.R.3898 EH and Report119-399 PartA read. Preserve the
-  environmental/public-health connections, existing toxic-pollutant exception,
-  imminent-danger judicial-remedy qualification, pesticide exceptions, farm
-  spill-control thresholds, State-program ratification and IBWC funding limits.
-  The water-permitting changes do not establish the declared care/social-service
-  delivery or financing mechanism. A proposed amendment is not assumed adopted.
-- **331:** the rule opens H.R.2550 consideration; it does not deem passage.
-  Reuse the previously captured IH and keep discharge321 and passage332 distinct.
-- **332:** full H.R.2550 EH, March27 EO14251 and targeted labor statutes read.
-  Retain express VA/HHS/SSA workforce connections and exceptions. The proposed
-  exclusion distinguishes bargaining/agreement duration from care/service
-  delivery and preserves Title38's direct-patient-care bargaining limits.
-  No claim is made about unexamined agreement terms or every later executive order.
-- **334:** full H.R.3668 EH read; preserve the removed water-certification gate,
-  FERC's necessity finding for proposed conditions, participation restrictions,
-  deadlines/exceptions and remote-data verification. This is energy authorization,
-  not a new care/benefit mechanism.
-- **335:** exact Senate text renews the Congressional Award program retroactively
-  through2028 and changes medal specifications. Preserve youth fitness and
-  scholarships without inferring a medical or social-service program.
-- **336:** exact EH conveys the specified Forest Service parcel for public uses
-  and removes the specified deed covenant/warranty requirement. Preserve the
-  CERCLA human-health/remediation qualification; do not claim an uncontaminated
-  parcel, repeal of every cleanup duty or an unmentioned medical facility.
+- **340, H.R.4371:** new child-welfare care-placement candidate. Bind the full
+  RH/EH,6USC279,8USC1232 care/suitability and retained assistance provisions,
+  refugee-child services, incorporated conviction definitions and January2025
+  custody-law amendment. Preserve sponsor restrictions, information sharing,
+  secure-placement triggers that do not always require convictions, removed
+  monthly-review and age18-transition provisions, and retained separate care,
+  home-study, follow-up and qualified counsel/advocate authorities. Preserve
+  the printed642/462 reference mismatch and bare recommittal versus separately
+  printed instructions. No individual safety or medical outcome is inferred.
+- **351, H.R.3492:** new criminal-law candidate for defined minor procedures and
+  medications. Preserve purpose/jurisdiction boundaries, the recipient's
+  protection from prosecution, specified medical exceptions, the mental-health
+  exception limit, existing FGM context and(c)/(d) drafting mismatch. Roy's made-
+  in-order amendment was not offered; separately printed recommittal instructions
+  are not the formal motion. Keep the H.R.498 Medicaid vote separate.
+- **342/347:** electricity-service and generation-adequacy exclusions preserve
+  compensation, retirement, environmental-liability and rule-finalization
+  conditions. Agency names or projected health consequences do not establish a
+  care-delivery mechanism.
+- **345/346:** distinct rejected war-powers directions concerning designated
+  terrorist organizations in the Western Hemisphere and hostilities within or
+  against Venezuela. Failed substantive proposals are not relabeled procedure.
+- **352/353/354/356:** exact NEPA amendment and passage exclusions. Bind the
+  RH page/line targets, Roy's designee role, failed amendments and the later
+  rule's deemed administrative-corrections exception. Preserve the explicit
+  human-health EIS criterion, life/property exception, review/remedy limits and
+  the renumbered July2025 opt-in fee provision; do not equate NEPA effects with
+  a medical/social-service program or assume every proposed amendment passed.
+- **358:** mining-site and reclamation-fund exclusion preserves the per-site
+  acreage limit, no new mineral rights/patents, withdrawals, patent-funding
+  exception and public-health remediation priorities. The new fees are not a
+  fresh fixed$3billion appropriation. Read2025CFR definitions and the subsequent
+  amendatory instructions; borrowed mineral/nonmineral definitions are unchanged.
+- **360:** gray-wolf rule reissuance exclusion binds all operative CFR changes,
+  the Mexican-wolf exception and reissuance-only judicial-review restriction.
+  No claim to independent review of the entire scientific assessment is made.
+- **338/344:** procedural controls retain all deemed-substitute and amendment
+  effects. Neither rule is treated as passage of the underlying bills.
 
-Add29 governed sources and six shared membership records:1022 sources /300
-records /593 interpretation claim maps. Source reading, statutory boundary
-analysis and membership decisions are manual; projection remains mechanical.
-Reuse the already captured water EH, committee report, Clerk330 and prior energy
-and rule sources. Three incorrect Code-path responses were rejected as navigation
-pages and replaced with verified chapter paths; no such response is governed.
+Add74 governed sources and14 membership records:1096 sources /314 records /
+629 interpretation claim maps. All1022 prior governed sources,300 membership
+records and70 interpretations remain unchanged. Both new actions project
+Foushee's Nay and Massie's Yea from Clerk records. Source reading, exact-version
+reconciliation and candidate membership/meaning remain manual; member projection,
+IR compilation and replay remain mechanical. Reuse the captured December bills,
+reports, floor records and existing2252/4332/statutory and Health sources.
+GovInfo CFR HTML endpoints returned navigation content and were rejected; official
+PDFs supplied the definitions. No malformed response entered governed sources.
 
-**Next executable queue:** prepared307 and318/320 remain open; continue338 onward
-alongside earlier262/294–296/299 and public land-plan work. H.R.3898 EH is now fully
-read and governed, not an unread capture. H.R.3668 EH is also fully read/governed.
-Report119-399 PartA is read in full; PartB1/3/5 and report head were already read.
-The separate3898/3668 RH versions and full RCP119-15 still require the rule318
-incorporation review. RCP119-16/S.1071 EAH and earlier262 package accounting remain
-unfinished. Do not repeat completed330–336 or confuse already-complete333
-H.R.3668 recommittal with H.R.2550 passage.
+**Exact remaining queue:** the2025 unresolved actions are224/225/226,237,262,
+294/295/296,299,307,318 and320. Eleven are unfinished research;237 is the examined
+printed-source conflict. Their detailed prepared-source notes remain attached to
+each inventory row. Do not restart those packages or repeat the completed December
+group. There are209 unreviewed2026 identities. Continue the independent January
+source/version groups, beginning3 (H.Res.977),4/10 (H.Res.780 discharge/rule),
+5/6/7 (distinct H.R.6938 division-retention/passage),8/9 (veto overrides for
+H.R.504/131), and11 (H.R.1834). Inspect exact rule-incorporated text and division
+questions before meanings; these are discovery items, not presumed Health votes.
+The earlier prepared2025 packages and public-plan tracing remain active lanes.
 
-**Validation:** the prior pushed608c617 head passed all nine CI jobs in run
-36288866326; results are recorded in PR194 discussion. The new increment passes all150 focused subsystem tests and all7 canonical
-semantic checks. Deterministic replay and diff review pass; prior993 sources,294
-membership records and70 meanings remain unchanged. Exact-head CI results are
-recorded after push. Core/compiled/readable outputs remain unchanged.
-A focused regression preserves health-adjacent qualifications and the distinct
-procedural rule. No frontend or production behavior changes.
+**Validation:** all153 focused subsystem tests pass, with one schema test rerun
+successfully after restoring the established NODE_PATH to existing root dependencies.
+All7 canonical semantic checks pass. The66 candidate tests include new source-loss,
+choice-status, retained/removed-provision and exact-amendment regressions.
+Deterministic generation/replay and diff checks pass. Prior pushed a82d3c7 passed
+all nine CI jobs in run36289682202; this increment's exact-head CI is recorded
+in PR194 after push. No frontend runtime or production behavior changes.
 
-Work remains active. Reuse source/version groups, decide membership before full
-interpretation, and reserve broad checks for push boundaries. Do not create a
-shutdown marker at this ordinary progress boundary. No merge, deployment,
-publication, production write, registry/environment change or scope expansion.
+Work remains active. This is a progress push, not a terminal checkpoint, approval
+gate or claim of complete Health coverage. No shutdown marker is due. No merge,
+deployment, publication, production write, registry/environment change or scope
+expansion. No additional human decision is currently requested.
 
 ## Historical overnight checkpoint — September26
 

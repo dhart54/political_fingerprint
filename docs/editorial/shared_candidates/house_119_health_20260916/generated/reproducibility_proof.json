@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "0259856fec86a85a786090daf80fa34c148c0106bb58aa3759ce1fec4c960014",
-  "source_capture_sha256": "8f839a398e7c33c41f7eb78ff054ab7555e2e8c516e23c1b40c6e34a917bd2fc",
-  "core_sha256": "6dab4ce6b998133fceacc143417f34ea807bd100a48756283d7bdc4cf90768fe",
-  "compiled_sha256": "4c37152b038b84b4e98f362ef8320d9cd74ba43047eb91b92a758ee9746e9b43",
-  "readable_sha256": "e6ac020bf75b5df8dbdcd8c68aa8358c6e53c0c407d41c97ba63fc12e30f6e91",
+  "input_sha256": "67e3597d8423931e9502d271441611cc497bdd79dd7c2bbaca38550cf64e55a7",
+  "source_capture_sha256": "ea8b9bc3d4de1276d5e6ad0785e1387c54a1a59479b0bb6b2943e27b8e70e4e5",
+  "core_sha256": "9aa59f1d253bd4f7a0e664cbd73962ee0410ce1bd74bea177c6864114ecb33a2",
+  "compiled_sha256": "ff9baf167735644116452453e63b972225856512cc04f2d7af3cd4ac2f4e1e77",
+  "readable_sha256": "25a5961031ee5190e3390f316b108d78eb06a879120bea8c9bffd3dda46c4d5a",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1413,6 +1413,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole",
           "source_id": "clerk:119:1:313"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:351",
+      "shared_sha256": "dfdbe851412912a0e27b8c4044116769bb66605e41c4baf8f442a28cfd59d170",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole",
+          "source_id": "clerk:119:1:351"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole",
+          "source_id": "clerk:119:1:351"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:340",
+      "shared_sha256": "7e09acd8d2277812102428800b54ed1952b62b42b123c55938e9db7b165328ae",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole",
+          "source_id": "clerk:119:1:340"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole",
+          "source_id": "clerk:119:1:340"
         }
       ]
     }

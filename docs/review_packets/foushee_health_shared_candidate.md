@@ -2,38 +2,38 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since608c617, six further screenings are resolved:
-one procedural control and five proposed exclusions. There remain70 interpreted
-inputs,52 Foushee findings and49 bounded Massie proof findings.234 identities
-are unreviewed; one additional examined action has a printed-source conflict.
-No current user decision is required. This is neither complete Health coverage
-nor accepted/public content.
+**Active partial candidate.** Since a82d3c7, fourteen screenings are resolved:
+two shared interpretations, ten proposed exclusions and two procedural controls.
+There are72 interpreted inputs,54 Foushee findings and51 bounded Massie proof
+findings.220 identities remain unreviewed; one additional examined action has a
+printed-source conflict. No current user decision is required. This is neither
+complete Health coverage nor accepted/public content.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-608c617 at the latest resumption. Later in-scope research is preserved without reset.
+a82d3c7 at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [70 shared meanings /593 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1022 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [300 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [72 shared meanings /629 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1096 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [314 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (608c617) | Current local candidate |
+| Disposition | Before (a82d3c7) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |70|70|
-| procedural_context |188|189|
+| interpreted_substantive_directional |70|72|
+| procedural_context |189|191|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |166|171|
-| source_unresolved (unreviewed plus examined conflict) |241|235|
+| exact_action_ineligible |171|181|
+| source_unresolved (unreviewed plus examined conflict) |235|221|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
@@ -41,67 +41,86 @@ No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
 ## Active continuation — September27
 
-Continue from pushed head `608c6171fbc9defee4cd84f413e63b66e8e81f0a`.
-Six further membership screenings are resolved: procedural331 and proposed
-exclusions330/332/334/335/336. Counts70/188/11/166/241 become
-70/189/11/171/235:234 unreviewed identities plus the examined roll237 source
-conflict. The70 shared interpretations,52 Foushee findings,49 Massie proof
-findings,140 observations and53 episodes (nine multi-action episodes) are
-unchanged. No new user decision or unavailable-evidence blocker is identified.
+Continue from pushed head `a82d3c7399f95cea1dd6259cce9d5f306ff5a0c3`.
+Fourteen further screenings are resolved: two shared Health interpretations,
+ten proposed exclusions and two procedural controls. Counts70/189/11/171/235
+become72/191/11/181/221:220 unreviewed identities plus the examined roll237
+source conflict. Derived output is54 Foushee findings /51 bounded Massie proof
+findings,144 recorded observations and55 episodes, including the existing nine
+multi-action episodes. No new user decision or exhausted evidence path is identified.
 
-- **330:** complete H.R.3898 EH and Report119-399 PartA read. Preserve the
-  environmental/public-health connections, existing toxic-pollutant exception,
-  imminent-danger judicial-remedy qualification, pesticide exceptions, farm
-  spill-control thresholds, State-program ratification and IBWC funding limits.
-  The water-permitting changes do not establish the declared care/social-service
-  delivery or financing mechanism. A proposed amendment is not assumed adopted.
-- **331:** the rule opens H.R.2550 consideration; it does not deem passage.
-  Reuse the previously captured IH and keep discharge321 and passage332 distinct.
-- **332:** full H.R.2550 EH, March27 EO14251 and targeted labor statutes read.
-  Retain express VA/HHS/SSA workforce connections and exceptions. The proposed
-  exclusion distinguishes bargaining/agreement duration from care/service
-  delivery and preserves Title38's direct-patient-care bargaining limits.
-  No claim is made about unexamined agreement terms or every later executive order.
-- **334:** full H.R.3668 EH read; preserve the removed water-certification gate,
-  FERC's necessity finding for proposed conditions, participation restrictions,
-  deadlines/exceptions and remote-data verification. This is energy authorization,
-  not a new care/benefit mechanism.
-- **335:** exact Senate text renews the Congressional Award program retroactively
-  through2028 and changes medal specifications. Preserve youth fitness and
-  scholarships without inferring a medical or social-service program.
-- **336:** exact EH conveys the specified Forest Service parcel for public uses
-  and removes the specified deed covenant/warranty requirement. Preserve the
-  CERCLA human-health/remediation qualification; do not claim an uncontaminated
-  parcel, repeal of every cleanup duty or an unmentioned medical facility.
+- **340, H.R.4371:** new child-welfare care-placement candidate. Bind the full
+  RH/EH,6USC279,8USC1232 care/suitability and retained assistance provisions,
+  refugee-child services, incorporated conviction definitions and January2025
+  custody-law amendment. Preserve sponsor restrictions, information sharing,
+  secure-placement triggers that do not always require convictions, removed
+  monthly-review and age18-transition provisions, and retained separate care,
+  home-study, follow-up and qualified counsel/advocate authorities. Preserve
+  the printed642/462 reference mismatch and bare recommittal versus separately
+  printed instructions. No individual safety or medical outcome is inferred.
+- **351, H.R.3492:** new criminal-law candidate for defined minor procedures and
+  medications. Preserve purpose/jurisdiction boundaries, the recipient's
+  protection from prosecution, specified medical exceptions, the mental-health
+  exception limit, existing FGM context and(c)/(d) drafting mismatch. Roy's made-
+  in-order amendment was not offered; separately printed recommittal instructions
+  are not the formal motion. Keep the H.R.498 Medicaid vote separate.
+- **342/347:** electricity-service and generation-adequacy exclusions preserve
+  compensation, retirement, environmental-liability and rule-finalization
+  conditions. Agency names or projected health consequences do not establish a
+  care-delivery mechanism.
+- **345/346:** distinct rejected war-powers directions concerning designated
+  terrorist organizations in the Western Hemisphere and hostilities within or
+  against Venezuela. Failed substantive proposals are not relabeled procedure.
+- **352/353/354/356:** exact NEPA amendment and passage exclusions. Bind the
+  RH page/line targets, Roy's designee role, failed amendments and the later
+  rule's deemed administrative-corrections exception. Preserve the explicit
+  human-health EIS criterion, life/property exception, review/remedy limits and
+  the renumbered July2025 opt-in fee provision; do not equate NEPA effects with
+  a medical/social-service program or assume every proposed amendment passed.
+- **358:** mining-site and reclamation-fund exclusion preserves the per-site
+  acreage limit, no new mineral rights/patents, withdrawals, patent-funding
+  exception and public-health remediation priorities. The new fees are not a
+  fresh fixed$3billion appropriation. Read2025CFR definitions and the subsequent
+  amendatory instructions; borrowed mineral/nonmineral definitions are unchanged.
+- **360:** gray-wolf rule reissuance exclusion binds all operative CFR changes,
+  the Mexican-wolf exception and reissuance-only judicial-review restriction.
+  No claim to independent review of the entire scientific assessment is made.
+- **338/344:** procedural controls retain all deemed-substitute and amendment
+  effects. Neither rule is treated as passage of the underlying bills.
 
-Add29 governed sources and six shared membership records:1022 sources /300
-records /593 interpretation claim maps. Source reading, statutory boundary
-analysis and membership decisions are manual; projection remains mechanical.
-Reuse the already captured water EH, committee report, Clerk330 and prior energy
-and rule sources. Three incorrect Code-path responses were rejected as navigation
-pages and replaced with verified chapter paths; no such response is governed.
+Add74 governed sources and14 membership records:1096 sources /314 records /
+629 interpretation claim maps. All1022 prior governed sources,300 membership
+records and70 interpretations remain unchanged. Both new actions project
+Foushee's Nay and Massie's Yea from Clerk records. Source reading, exact-version
+reconciliation and candidate membership/meaning remain manual; member projection,
+IR compilation and replay remain mechanical. Reuse the captured December bills,
+reports, floor records and existing2252/4332/statutory and Health sources.
+GovInfo CFR HTML endpoints returned navigation content and were rejected; official
+PDFs supplied the definitions. No malformed response entered governed sources.
 
-**Next executable queue:** prepared307 and318/320 remain open; continue338 onward
-alongside earlier262/294–296/299 and public land-plan work. H.R.3898 EH is now fully
-read and governed, not an unread capture. H.R.3668 EH is also fully read/governed.
-Report119-399 PartA is read in full; PartB1/3/5 and report head were already read.
-The separate3898/3668 RH versions and full RCP119-15 still require the rule318
-incorporation review. RCP119-16/S.1071 EAH and earlier262 package accounting remain
-unfinished. Do not repeat completed330–336 or confuse already-complete333
-H.R.3668 recommittal with H.R.2550 passage.
+**Exact remaining queue:** the2025 unresolved actions are224/225/226,237,262,
+294/295/296,299,307,318 and320. Eleven are unfinished research;237 is the examined
+printed-source conflict. Their detailed prepared-source notes remain attached to
+each inventory row. Do not restart those packages or repeat the completed December
+group. There are209 unreviewed2026 identities. Continue the independent January
+source/version groups, beginning3 (H.Res.977),4/10 (H.Res.780 discharge/rule),
+5/6/7 (distinct H.R.6938 division-retention/passage),8/9 (veto overrides for
+H.R.504/131), and11 (H.R.1834). Inspect exact rule-incorporated text and division
+questions before meanings; these are discovery items, not presumed Health votes.
+The earlier prepared2025 packages and public-plan tracing remain active lanes.
 
-**Validation:** the prior pushed608c617 head passed all nine CI jobs in run
-36288866326; results are recorded in PR194 discussion. The new increment passes all150 focused subsystem tests and all7 canonical
-semantic checks. Deterministic replay and diff review pass; prior993 sources,294
-membership records and70 meanings remain unchanged. Exact-head CI results are
-recorded after push. Core/compiled/readable outputs remain unchanged.
-A focused regression preserves health-adjacent qualifications and the distinct
-procedural rule. No frontend or production behavior changes.
+**Validation:** all153 focused subsystem tests pass, with one schema test rerun
+successfully after restoring the established NODE_PATH to existing root dependencies.
+All7 canonical semantic checks pass. The66 candidate tests include new source-loss,
+choice-status, retained/removed-provision and exact-amendment regressions.
+Deterministic generation/replay and diff checks pass. Prior pushed a82d3c7 passed
+all nine CI jobs in run36289682202; this increment's exact-head CI is recorded
+in PR194 after push. No frontend runtime or production behavior changes.
 
-Work remains active. Reuse source/version groups, decide membership before full
-interpretation, and reserve broad checks for push boundaries. Do not create a
-shutdown marker at this ordinary progress boundary. No merge, deployment,
-publication, production write, registry/environment change or scope expansion.
+Work remains active. This is a progress push, not a terminal checkpoint, approval
+gate or claim of complete Health coverage. No shutdown marker is due. No merge,
+deployment, publication, production write, registry/environment change or scope
+expansion. No additional human decision is currently requested.
 
 ## Historical overnight checkpoint — September26
 
@@ -640,7 +659,7 @@ the requested overnight checkpoint; no new human decision is required.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-70 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+72 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -1758,6 +1777,37 @@ Evidence: house:119:1:315; finding `prop:337f9cbcb52e5a3e`.
 
 Sources: [clerk:119:1:315](https://clerk.house.gov/evs/2025/roll315.xml); [govinfo:s356es](https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm); [govinfo:16usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7101.htm); [govinfo:16usc7102-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7102.htm); [govinfo:16usc7111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm); [govinfo:16usc7112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7112.htm); [govinfo:16usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm); [govinfo:16usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7121.htm); [govinfo:16usc7122-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7122.htm); [govinfo:16usc7123-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7123.htm); [govinfo:16usc7124-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7124.htm); [govinfo:16usc7125-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7125.htm); [govinfo:16usc7126-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7126.htm); [govinfo:16usc7127-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7127.htm); [govinfo:16usc7128-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm); [govinfo:16usc7141-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7141.htm); [govinfo:16usc7142-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7142.htm); [govinfo:16usc7143-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7143.htm); [govinfo:16usc7144-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm); [govinfo:16usc500-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap2-subchapI-sec500.htm); [govinfo:43usc2605-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapI-sec2605.htm); [govinfo:43usc2621-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapII-sec2621.htm); [govinfo:pl119-21-section50301](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [congressional-record:2025-12-09-s356](https://www.govinfo.gov/content/pkg/CREC-2025-12-09/html/CREC-2025-12-09-pt1-PgH5066-5.htm); [skamania-ems:titleiii-20230315](https://skamaniaems.com/2023/06/08/federal-grant-funds-title-iii-allow-for-purchase-of-multi-use-all-terrain-vehicle/).
 
+### Sponsor restrictions and secure placement in unaccompanied-child care
+
+**Compact:** Foushee opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole. The bill would tighten sponsor eligibility and screening in the federal care-placement system for unaccompanied children. It would require secure placement for children 12 or older meeting specified risk conditions and remove express monthly-review and age-18 transition provisions, while retaining separate care-suitability and follow-up duties. This was one vote on the whole package.
+
+**Detail:**
+
+**house:119:1:340**
+
+Foushee opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole.
+
+H.R. 4371 EH would change the Office of Refugee Resettlement’s care-placement system for unaccompanied children in federal immigration custody. It replaces 6 U.S.C. 279(b)(2) with a cross-reference to its replacement of 8 U.S.C. 1232(c)(2), and adds sponsor-information requirements to the existing suitability process in 1232(c)(3). Health & Social Policy membership is proposed from the direct child-welfare placement, suitability and continuing-care mechanisms in those statutes, not merely the immigration topic, the HHS name or a predicted effect on crime. The existing definition covers children under 18 without lawful immigration status and without a parent or legal guardian in the United States available to provide care and physical custody. Placement includes detention and alternatives. This is one vote on the entire placement-and-screening package.
+
+Before making a placement determination, HHS would consult DHS and the Attorney General, including appropriate juvenile-justice officials, about appearances, protection from exploitation, flight risk, danger and criminal history. For children 12 or older, it must contact the relevant foreign consulate or embassy for arrest, pending-charge and conviction records and examine the child for gang-related tattoos or markings. The least-restrictive, best-interest placement default remains subject to the new exceptions, and the existing prohibition on release on the child’s own recognizance is retained in the replacement provision. Children 12 or older who meet the flight-risk or danger conditions must be in a secure facility throughout immigration proceedings and, if ordered removed, until removal. The danger language includes gang-related markings, specified serious or aggravated-felony convictions, and arrests, charges, pending proceedings or convictions connected to gang affiliation/activity. A conviction is therefore not required for every secure-placement trigger. No numerical maximum detention period is supplied, and this candidate does not claim that the text resolves every external detention limit.
+
+Sponsors must be U.S. citizens or lawful permanent residents. Placement is barred if the sponsor or a household member has a listed conviction, including defined sex offenses, trafficking, domestic violence, child abuse/neglect, homicide or attempted homicide, child sexual-abuse-material offenses, crimes within the referenced immigration-custody authority, aggravated felonies, jurisdiction-defined felonies, crimes punishable by more than a year, or another offense designated by the Attorney General in the stated sole and unreviewable discretion. The incorporated definitions have limits: for example, the sex-offense definition excludes the specified insufficiently safeguarded foreign convictions and consensual conduct; severe trafficking includes the defined forced/coerced labor and sex-trafficking circumstances. The domestic-violence definition also discusses noncriminal conduct for victim services, but this bill’s placement bar requires a crime and conviction. The custody cross-reference is read with the January 2025 Laken Riley Act amendment to 8 U.S.C. 1226(c)(1), not only the older Code baseline; this does not erase the sponsor clause’s own conviction requirement or make a household member’s immigration status itself a conviction. Before an individual placement, HHS must give DHS identifying, immigration-status and contact information and background-check results for the sponsor and every adult household resident, including the stated sex-offender-site, public-record and fingerprint-based national checks.
+
+Replacing all of 1232(c)(2) removes that paragraph’s express monthly secure-placement review and its age-18 transfer provision requiring consideration of the least restrictive setting and eligibility for detention alternatives. It also removes that paragraph’s express option for placing child-trafficking victims in the Unaccompanied Refugee Minor program when suitable family care is unavailable. Other provisions remain: 6 U.S.C. 279(b)(3) encourages use of the refugee-child foster-care system, whose incorporated 8 U.S.C. 1522(d) authority includes child-welfare, foster-care and health-care services; 1232(d)(4) separately retains its specified placement/service eligibility and conditional State reimbursement. The bill retains 1232(c)(3)’s physical and mental well-being suitability determination, specified mandatory home studies and follow-up services, and authorization for additional follow-up for mental-health or other needs. Separate legal-orientation, qualified access-to-counsel and child-advocate provisions, and ORR facility/placement oversight, are not repealed by this text. This is not a claim that all care protections disappear or that every child is guaranteed every service.
+
+The package includes severability and conditional Paperwork Reduction Act/Administrative Procedure Act implementation language when specified officials determine compliance would impede immediate implementation; it is not a waiver of all law. It takes effect on enactment and specifies pending/future release and custody determinations and release redeterminations. Its applicability clause prints section642(g)(2), while the bound Homeland Security Act child definition is section462/6 U.S.C. 279(g)(2); the mismatch is preserved without silently correcting the printed proposal or ruling on its legal effect. The floor Record verifies adoption of the reported substitute under H.Res.951 and passage on December16. Stansbury’s formal motion was bare recommittal; her separately printed proposal to remove the markings examination was not part of the passed text. Supporters argued for screening and protection from dangerous placements; opponents disputed examination practices, sponsor restrictions and prolonged custody. Those claims about motives, current practices and future harm or safety are not adopted as proven facts. The vote does not reveal which provision determined a member’s choice.
+
+The Clerk recorded the House result as 'Passed' on 2025-12-16. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The child-welfare placement mechanism establishes proposed membership; this does not reinterpret every immigration-detention bill as Health policy.
+- The text removes specified provisions while preserving separate suitability, care and service authorities; neither direction establishes an individual child outcome.
+- The section642/462 applicability-reference mismatch and the distinction between bare recommittal and separately printed instructions are retained, not silently repaired.
+
+Evidence: house:119:1:340; finding `prop:7de756514299e478`.
+
+Sources: [clerk:119:1:340](https://clerk.house.gov/evs/2025/roll340.xml); [govinfo:hr4371eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371eh/html/BILLS-119hr4371eh.htm); [govinfo:hr4371rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371rh/html/BILLS-119hr4371rh.htm); [govinfo:6usc279-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm); [govinfo:8usc1232-2024-care-placement](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1232-2024-retained-assistance](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1522-2024-child-services](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIV-sec1522.htm); [govinfo:8usc1101-2024-aggravated-felony](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-serious-offense](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:34usc20911-2024-offense-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm); [govinfo:22usc7102-2024-severe-trafficking](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap78-sec7102.htm); [govinfo:34usc12291-2024-domestic-violence](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:42usc5101-2024-capta-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap67-subchapI-sec5101.htm); [govinfo:18usc1111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1111.htm); [govinfo:18usc1112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1112.htm); [govinfo:18usc1113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1113.htm); [govinfo:8usc1226-2024-custody-baseline](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm); [govinfo:pl119-1-section2](https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm); [govinfo:18usc2252-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm); [congressional-record:2025-12-16-child-placement](https://www.govinfo.gov/content/pkg/CREC-2025-12-16/pdf/CREC-2025-12-16-house.pdf).
+
 ### Passage of a package changing health-plan arrangements, drug-benefit reporting and cost-sharing payments
 
 **Compact:** Foushee opposed House passage of H.R. 6703 as put to the chamber. The package would change association health plans, stop-loss insurance and employer reimbursement arrangements; require drug-benefit reporting; and fund ACA cost-sharing payments from 2027 with specified abortion-coverage exceptions. The vote applies to the package as a whole.
@@ -1778,6 +1828,37 @@ The Clerk recorded the House result as 'Passed' on 2025-12-17. This does not est
 Evidence: house:119:1:349; finding `prop:a1f9db4c83fe3642`.
 
 Sources: [clerk:119:1:349](https://clerk.house.gov/evs/2025/roll349.xml); [govinfo:hr6703eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6703eh/html/BILLS-119hr6703eh.htm).
+
+### Criminal penalties for specified gender-transition procedures for minors
+
+**Compact:** Foushee opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole. The bill would expand federal criminal law to cover defined gender-transition surgeries and medication provision for people under 18, with fines or up to 10 years in prison. Specified medical exceptions apply, but mental or emotional conditions do not qualify under its health-necessity exception. The person receiving the intervention could not be prosecuted under this section. This was one vote on the full criminal-law package.
+
+**Detail:**
+
+**house:119:1:351**
+
+Foushee opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole.
+
+H.R. 3492 EH would replace 18 U.S.C. 116, which already penalizes female genital mutilation of people under 18, with a broader set of federal offenses covering defined gender-transition surgeries and medication provision as well. Under the specified jurisdictional circumstances, knowingly performing or attempting the defined surgeries, or knowingly providing the defined medications, carries a fine, up to 10 years of imprisonment, or both. The ten-year maximum is also present in the existing FGM law; this bill expands the covered conduct rather than newly creating that maximum. The person receiving a covered procedure or medication cannot be arrested or prosecuted under this section. This is one passage vote on the entire criminal-law package, not the separate H.R. 498 Medicaid-funding choice.
+
+For the new procedure/medication coverage, the purpose is changing the body to correspond to a sex different from the sex classification at birth, as defined in the bill. The text enumerates genital/reproductive surgeries, mastectomy, specified throat/voice-related surgeries, feminizing or masculinizing plastic surgery, chest/gluteal implants and urethral reconstruction for that purpose. Medication provision includes administering, supplying, prescribing, dispensing, distributing or otherwise conveying drugs for that purpose, including GnRH analogues or other puberty blockers to stop/delay normal puberty, testosterone/androgens to those defined as female and estrogen to those defined as male at the specified supraphysiologic doses. It does not prohibit every use of those drugs or every listed operation regardless of purpose. The bill separately retains a definition of nonmedical female genital mutilation and offenses for facilitating, consenting to or transporting a minor for that conduct. Its statutory labels are not adopted here as clinical judgments about transgender people or medical practice.
+
+The licensed-practitioner exception covers procedures necessary to the minor’s health, but expressly excludes mental, behavioral or emotional distress and disorders from health for that exception. A separate FGM exception concerns medical procedures connected with labor or birth and the listed licensed practitioners, midwives or trainees. Further exemptions specify individuals with both ovarian and testicular tissue; the specified sex-chromosome, hormone-production or hormone-action findings established by physician testing; infection, disease, injury or disorder caused or worsened by a prior covered intervention; physician-certified imminent impairment of a major bodily function from a physical condition; and diagnosed precocious puberty when the intervention normalizes puberty. These are the text’s defined conditions, not an unrestricted medical-necessity exception or a medical conclusion about any individual.
+
+The jurisdictional circumstances include specified interstate/foreign travel, instrumentalities, payments, communications, items that traveled in commerce, federal maritime/territorial jurisdiction or territories, and conduct otherwise in or affecting interstate/foreign commerce. Roy’s proposed four-category replacement in Report119-411 was made in order but expressly not offered according to the floor Record; it is not imported into the passed bill. The printed FGM facilitation/transport subsection(c) refers to(d), while(d) says it is for(a)/(b) and repeatedly names those subsections. This candidate preserves that drafting mismatch without deciding its legal consequences or claiming that(c) is unenforceable. Nor does it infer a universal parent-liability or parent-immunity rule from the distinct FGM wording.
+
+The Record separately shows Balint’s bare recommittal motion and her previously referred proposed effective-date instructions. The displayed proposal would condition effectiveness on a Comptroller General determination concerning medical records and prosecution; it was not the formal bare motion and is not in the EH. The House passed the bill December 17 after rejecting recommittal. Floor speakers disputed clinical evidence, family decision-making, federal power and prosecution effects. Their empirical and motive claims are not treated as established medical facts. Support or opposition here concerns this exact criminal-law proposal, with its definitions and exceptions; neither direction supplies a broad position on all gender-related care or all child protection.
+
+The Clerk recorded the House result as 'Passed' on 2025-12-17. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- The defined purpose, federal jurisdiction and specified exceptions matter; this is not a ban on every use of the listed medicines or operations.
+- The text protects the person receiving the intervention from prosecution under this section and separately excludes mental, behavioral and emotional conditions from its health-necessity exception.
+- The unoffered Roy amendment and separately displayed recommittal instructions are not part of the passed bill; the subsection(c)/(d) drafting mismatch is preserved without a legal ruling.
+
+Evidence: house:119:1:351; finding `prop:bc3d47605acfb405`.
+
+Sources: [clerk:119:1:351](https://clerk.house.gov/evs/2025/roll351.xml); [govinfo:hr3492eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492eh/html/BILLS-119hr3492eh.htm); [govinfo:18usc116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap7-sec116.htm); [govinfo:hr3492rh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492rh/html/BILLS-119hr3492rh.htm); [govinfo:hrpt119-411-roy](https://www.govinfo.gov/content/pkg/CRPT-119hrpt411/html/CRPT-119hrpt411.htm); [congressional-record:2025-12-17-selected-choices](https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf).
 
 ### Restricting federal Medicaid funding for specified gender-transition care for minors
 
@@ -2218,4 +2299,6 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:314 | supported House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole | opposed House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole | [govinfo:hr1049eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm); [govinfo:42usc19221-a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm); [govinfo:10usc4872-f2-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm) |
 | house:119:1:312 | supported House passage of H.R.1005’s foreign-source disclosure and education-assistance condition as a whole | opposed House passage of H.R.1005’s foreign-source disclosure and education-assistance condition as a whole | [govinfo:hr1005eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1005eh/html/BILLS-119hr1005eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm); [govinfo:31usc7501-a5-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap75-sec7501.htm); [govinfo:20usc1011f-h-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partB-sec1011f.htm) |
 | house:119:1:313 | supported House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | opposed House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | [govinfo:hr1069eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm) |
+| house:119:1:351 | supported House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | opposed House passage of H.R. 3492’s defined procedure/medication offenses, exceptions and related FGM provisions as a whole | [govinfo:hr3492eh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492eh/html/BILLS-119hr3492eh.htm); [govinfo:18usc116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap7-sec116.htm); [govinfo:hr3492rh](https://www.govinfo.gov/content/pkg/BILLS-119hr3492rh/html/BILLS-119hr3492rh.htm); [govinfo:hrpt119-411-roy](https://www.govinfo.gov/content/pkg/CRPT-119hrpt411/html/CRPT-119hrpt411.htm); [congressional-record:2025-12-17-selected-choices](https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf) |
+| house:119:1:340 | supported House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | opposed House passage of H.R. 4371’s child-placement, sponsor-screening and secure-facility package as a whole | [govinfo:hr4371eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371eh/html/BILLS-119hr4371eh.htm); [govinfo:hr4371rh](https://www.govinfo.gov/content/pkg/BILLS-119hr4371rh/html/BILLS-119hr4371rh.htm); [govinfo:6usc279-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm); [govinfo:8usc1232-2024-care-placement](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1232-2024-retained-assistance](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm); [govinfo:8usc1522-2024-child-services](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIV-sec1522.htm); [govinfo:8usc1101-2024-aggravated-felony](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-serious-offense](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:34usc20911-2024-offense-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm); [govinfo:22usc7102-2024-severe-trafficking](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap78-sec7102.htm); [govinfo:34usc12291-2024-domestic-violence](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:42usc5101-2024-capta-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap67-subchapI-sec5101.htm); [govinfo:18usc1111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1111.htm); [govinfo:18usc1112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1112.htm); [govinfo:18usc1113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1113.htm); [govinfo:8usc1226-2024-custody-baseline](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm); [govinfo:pl119-1-section2](https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm); [govinfo:18usc2252-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm); [congressional-record:2025-12-16-child-placement](https://www.govinfo.gov/content/pkg/CREC-2025-12-16/pdf/CREC-2025-12-16-house.pdf) |
 <!-- GENERATED CANDIDATE END -->
