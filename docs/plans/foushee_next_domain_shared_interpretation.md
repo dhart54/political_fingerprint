@@ -1,35 +1,100 @@
 # Foushee next-domain shared interpretation
 
-Active continuation from `40ecbf5568262fbcf5972eded498d4c78ffe36a5`.
-The user explicitly resumed the goal and changed the usage stopping threshold:
-this is the only active project; continue down to **3percent remaining** before
-stopping and checkpointing. The earlier15percent buffer and expired one-night
-08:30 deadline are historical and do not stop this resumed run. The prior
-terminal marker was archived locally; no active completion marker remains.
+User-requested partial checkpoint after the September27 continuation.
+The latest request to save at the next suitable checkpoint supersedes the earlier
+3percent-remaining usage target. Health is not complete.
 
-## Current usage and terminal protocol — resumed September27
+## User-requested housing checkpoint — September27
 
-At resumption, usage is85percent consumed (15percent remaining). Check actual
-usage at meaningful research boundaries, more often near the new97percent-used
-threshold. Keep queue notes, validation and commits current so terminal work fits
-within the remaining3percent. Do not stop at the old15percent threshold or a
-routine completed batch. No reset credit is authorized. A hard usage cutoff can
-prevent tools from writing; never promise a post-cutoff marker.
+The user asked to bring the work to the next suitable checkpoint and save it.
+That instruction supersedes continuing down to3percent remaining for this run.
+This is a shutdown checkpoint, not completed Health coverage or semantic acceptance.
+No new user decision or exhausted evidence path is identified.
 
-At review readiness or the actual usage/other terminal boundary, preserve all
-completed research and exact remaining dependencies, validate and commit/push to
-this same draft PR, and verify exact-head checks. Write `.codex-task-complete`
-in this worktree root as the final filesystem action, never committed. SUCCESS
-requires full completion; CHECKPOINT must identify unfinished Health work and
-the precise stopping reason. Preserve the watcher; no recurring automation.
+One further exact-action screening is complete after747f994:2026roll57,
+H.R.6644 as amended, is a proposed Health inclusion. Counts
+**83/203/11/199/180 →84/203/11/199/179**. There are **177 unfinished screenings
+plus two examined dependencies**, not179 presumed Health votes. Since the resumed
+40ecbf5 boundary, five screenings are complete: two interpretations, two procedural
+controls and one proposed exclusion. The fixed discovery remains676 identities.
+
+Current output: **84 shared meanings,64 Foushee /59 Massie findings,168 recorded
+member observations,65 episodes and10 multi-action episodes**. This increment adds
+37 governed sources and49 claim maps, for1393 sources,904 maps and357 membership
+records. All83 prior meanings,1356 prior sources and356 prior membership records
+remain structurally unchanged. Projection and compilation are mechanical.
+
+The full194884-character H.R.6644 EH and its housing, environmental, family-service
+and banking effects were read. Membership rests on supported-housing disability
+income, escrow financing, counseling/referrals and assisted-housing monitoring,
+not a housing title or predicted health/price outcome. Foushee's Yea and Massie's
+Nay retain the whole-package limit. The new shared interpretation preserves:
+
+- existing August2024 HUD and IRS service-connected disability-income exclusions;
+  the bill's chapter11/15 and other-housing eligibility language is distinct from
+  adjusted-income/rent calculations and its limited future VA-property program;
+- capped escrow accounts, narrow welfare-cash conditions (not loss of medical,
+  SNAP, SSI/SSDI or Social Security benefits), opt-out/no-housing-penalty rules,
+  account timing and the separate seven-year program sunset;
+- counseling-fund solvency conditions, provider-review protections, a limited
+  eviction referral service, and resident consent/privacy for the sensor pilot;
+- HOME targeting, conditions and printed201(q) cross-reference mismatch: the
+  cited(a)(7) is not silently corrected to(a)(8), and separate good-cause tenancy
+  and maintenance protections are not claimed repealed;
+- rural loan-security thresholds rather than invented benefit caps, distinct
+  environmental-review categories, and the larger construction/banking package.
+
+Source reuse: prior captured EH, Clerk57 and February9 Record; exact2024 statutes,
+CFR editions and2024 amendments; committee printed changes and the February6 CRS
+version comparison. Reported-text Buy America exemption is not substituted for
+EH's review/guidance. The public HUD advance notice had a pending-publication
+header, so the actually published89FR65769 supplies the baseline and date. A wrong
+Title42 CARES lookup returned generic404 and was rejected;15USC9058 is bound.
+GPO-only acquisition flags were manually checked for the valid FR/IRS documents.
+No protected archive was accessed. Manual work consists of source/version review,
+membership/meaning, excerpt and claim selection; no member-specific reinterpretation.
+
+Final source inspection caught a page header truncating the welfare-definition
+excerpt before its medical/Social Security exclusions. The excerpt was extended
+through the actual next section and a regression now checks those later clauses.
+An old finding-count assertion was updated. Local validation initially omitted
+NODE_PATH and then hit the known temporary-directory sandbox permissions; the
+correct established environment and authorized test execution resolved these
+without dependency or product changes.
+
+Validation before push:135 focused candidate/corpus/IR/pipeline tests (including86
+candidate tests) and7 semantic checks passed after the final excerpt correction. Diff/accounting/prior-record preservation
+checks pass. Current core
+`96bbfb6798b2b692e0124fc140b302597df0ef334a3909d126215ef44af5d3ca`;
+compiled `a8b890cee1810e32af57f794d8498365652505dc949cab7f5223526245a5cf76`.
+747f994 exact-head CI36323448574 passed all9 jobs. The new exact pushed head and
+its own CI are recorded in this PR discussion; prior CI does not validate new work.
+Previously recorded unrelated frozen-Justice audit failures remain unchanged.
+
+**Next executable steps:**confirm actual head and retained work, then process
+2026roll65 H.J.Res.72,71 H.R.6329,72 S.2503,74 H.Res.1075,76 H.R.4626,78 H.R.4758,
+and subsequent source/version groups in the committed per-action queue. No new
+source capture or completed substantive review is asserted for those rows.
+Do not repeat completed56/57/62/68/69. Later H.R.6644roll224 is a separate version;
+reuse this baseline, then bind its exact changes independently. Older prepared
+cases retain their exact reading positions in universe_proposal.json.
+2025roll237's source discrepancy and2026roll44's operative-effect dependency
+remain examined;2026roll45's broader-package follow-up remains separate.
+Continue independent safe cases if one cannot be resolved.
+
+Commit/push this coherent candidate, verify exact-head CI, pause the goal under
+the user's checkpoint request, then write the uncommitted CHECKPOINT marker as
+the final filesystem action. No merge, deployment, publication, production writes,
+registry/environment changes, blue operations, paid services or reset-credit use.
+PR191 remains released; PR193 paused; issue192 open.
 
 ## Continuation execution rules — September27
 
 The user resumed research after discussing execution improvements. These rules
 apply to continuation of the existing goal.
 They do not alter its 676-identity scope, evidence standards, candidate status,
-completion criteria, or production restrictions. No shutdown marker is due for
-the earlier conversational pause or this active research boundary.
+completion criteria, or production restrictions. The terminal checkpoint is governed
+by the latest user request and checkpoint section above.
 
 - Use the existing per-action membership/resumption queue as the authoritative
   progress record, reconciled with the actual Git head and later in-scope local
@@ -121,7 +186,7 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Active SAVE/D.C. continuation — September27
+## Historical SAVE/D.C. continuation — September27
 
 Continue from `40ecbf5568262fbcf5972eded498d4c78ffe36a5`; its exact-head
 CI36301588496 passed all nine jobs. Four more screenings are complete:

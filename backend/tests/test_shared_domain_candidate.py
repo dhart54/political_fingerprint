@@ -345,7 +345,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 63)
+        self.assertEqual(len(f["findings"]), 64)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -410,8 +410,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":203, "source_unresolved":180,
-            "interpreted_substantive_directional":83, "expressive_nonbinding_context":11, "exact_action_ineligible":199})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":203, "source_unresolved":179,
+            "interpreted_substantive_directional":84, "expressive_nonbinding_context":11, "exact_action_ineligible":199})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -429,7 +429,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 178)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 177)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1563,6 +1563,53 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertIn("separate earlier insertion", records["house:119:2:68"]["rationale"])
         for projection in self.products[2]:
             self.assertFalse({f"house:119:2:{n}" for n in [62, 68, 69]} & {a["action_id"] for a in projection["actions"]})
+
+    def test_housing_package_keeps_existing_income_policy_and_whole_member_choices(self):
+        aid = "house:119:2:57"
+        action = next(a for a in self.author["actions"] if a["action_id"] == aid)
+        self.assertEqual(action["stage"], "suspension_and_passage")
+        required = {"hud:2024-published-vash-income", "irs:revenue-procedure2024-38-vash",
+                    "govinfo:1437a-income-definitions-2024", "govinfo:24cfr984103-welfare-2025"}
+        self.assertTrue(required <= set(action["additional_source_ids"]))
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        self.assertIn("Applicability date: August 13, 2024", sources["hud:2024-published-vash-income"]["text"])
+        self.assertNotIn("PENDING PUBLICATION", sources["hud:2024-published-vash-income"]["text"])
+        self.assertIn("included for purposes of calculating the total tenant payment", sources["hud:2024-published-vash-income"]["text"])
+        self.assertIn("on or after October 24, 2024", sources["irs:revenue-procedure2024-38-vash"]["text"])
+        for member, status in [("F000477", "Yea"), ("M001184", "Nay")]:
+            projection = next(p for p in self.products[2] if p["member_id"] == member)
+            observation = next(a for a in projection["actions"] if a["action_id"] == aid)
+            self.assertEqual(observation["official_status"], status)
+            readable = next(m for m in readable_candidates(self.author, self.products[0], self.products[2], self.products[4])["members"] if m["member_id"] == member)
+            finding = next(f for f in readable["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid])
+            self.assertTrue(required <= set(finding["source_ids"]))
+            self.assertIn("not a promised reduction in rent", " ".join(finding["detail"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("hud:2024-published-vash-income")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_housing_qualifications_are_bound_without_repairing_printed_text(self):
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        action = next(a for a in self.author["actions"] if a["action_id"] == "house:119:2:57")
+        eh = sources["govinfo:hr6644eh"]["text"]
+        for phrase in ["defined in section 215(a)(7)", "(8) Small-scale housing", "written permission from the resident"]:
+            self.assertIn(phrase.lower(), eh.lower())
+        self.assertIn("(b) Termination of tenancy", sources["govinfo:42usc12755-2024-housing"]["text"])
+        self.assertIn("(c) Maintenance and replacement", sources["govinfo:42usc12755-2024-housing"]["text"])
+        self.assertIn("promissory note", sources["govinfo:42usc1474-2024-housing"]["text"])
+        welfare = sources["govinfo:24cfr984103-welfare-2025"]["text"]
+        for exclusion in ["(viii) Amounts for health care", "(x) Supplemental Security Income", "(xi) Child-only or non-needy TANF"]:
+            self.assertIn(exclusion, welfare)
+        for phrase in ["not a doubled grant ceiling", "narrowly defined welfare cash assistance",
+                       "not for every government program", "seven years after enactment",
+                       "does not silently correct", "not a new housing-services appropriation"]:
+            self.assertIn(phrase, action["meaning"])
+        rows = {r["action_id"]: r for r in json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))["candidate_dispositions"]}
+        self.assertEqual(rows["house:119:2:57"]["disposition"], "interpreted_substantive_directional")
+        self.assertEqual(rows["house:119:2:224"]["disposition"], "source_unresolved")
+        self.assertNotIn("house:119:2:224", {a["action_id"] for a in self.products[0]["actions"]})
 
 if __name__ == "__main__":
     unittest.main()

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "2e5a98f12eb54be6ebeb15510d5920de5999f437a50f2c03c7c63203c802c6c7",
-  "source_capture_sha256": "526511a4a7baf26a6ce7e292467893f94a17150ccd6c576b74741bccb6c75550",
-  "core_sha256": "25aa703a8ae0aabef81daf1384df2ec643ac89fce285c36d50fe035376d17d5a",
-  "compiled_sha256": "020af5d1da493335439207c8c7d179505dbf0b9ccea669b06aa59fa92b51bd3a",
-  "readable_sha256": "3c78f6983ae3ef582e050e1b4b0654a4acf63745602dd473566c553be9f44db7",
+  "input_sha256": "411f8f7241cbc3a61f1123c4cf39077edc736c628c49dff6b3a5f25f0cba5e12",
+  "source_capture_sha256": "fa183763d2a1c797f67aeea8d7bf78c92cc4a04efba91b9e881127cff9037acb",
+  "core_sha256": "96bbfb6798b2b692e0124fc140b302597df0ef334a3909d126215ef44af5d3ca",
+  "compiled_sha256": "a8b890cee1810e32af57f794d8498365652505dc949cab7f5223526245a5cf76",
+  "readable_sha256": "63e28b5abee95222ea6643b58e3fdac339fb1b2a2390d477ceaf20b20e3300b7",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1673,6 +1673,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the resolution disapproving the whole D.C. temporary tax package with its care and refundable family-credit provisions",
           "source_id": "clerk:119:2:56"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:57",
+      "shared_sha256": "ec39c56ed88f69abcfbf6e1fa99a32729fd29f1f2ffd8b9f3752c1d9f0e23b80",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspension and passage of the whole H.R.6644 housing and banking package with its disability-income and assisted-family-service provisions",
+          "source_id": "clerk:119:2:57"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed suspension and passage of the whole H.R.6644 housing and banking package with its disability-income and assisted-family-service provisions",
+          "source_id": "clerk:119:2:57"
         }
       ]
     }

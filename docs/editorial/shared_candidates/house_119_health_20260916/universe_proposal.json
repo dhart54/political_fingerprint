@@ -97,6 +97,7 @@
     "house:119:2:50",
     "house:119:2:53",
     "house:119:2:56",
+    "house:119:2:57",
     "house:119:2:6",
     "house:119:2:7",
     "house:119:2:8"
@@ -115,9 +116,9 @@
     "counts": {
       "procedural_context": 203,
       "exact_action_ineligible": 199,
-      "interpreted_substantive_directional": 83,
+      "interpreted_substantive_directional": 84,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 180
+      "source_unresolved": 179
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -126,14 +127,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 83,
-    "directional_substantive_actions": 83,
+    "substantive_eligible_actions": 84,
+    "directional_substantive_actions": 84,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 203,
     "expressive_nonbinding_actions": 11,
     "exact_action_ineligible_actions": 199,
-    "unresolved_boundary_cases": 180,
-    "independent_episode_count": 64,
+    "unresolved_boundary_cases": 179,
+    "independent_episode_count": 65,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -146,12 +147,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 83,
-      "substantive_actions": 83,
+      "ready_substantive_actions": 84,
+      "substantive_actions": 84,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "178 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness."
+      "177 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -636,6 +637,7 @@
         "house:119:2:50",
         "house:119:2:53",
         "house:119:2:56",
+        "house:119:2:57",
         "house:119:2:128",
         "house:119:2:139",
         "house:119:2:198",
@@ -676,7 +678,6 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:57",
         "house:119:2:65",
         "house:119:2:71",
         "house:119:2:72",
@@ -841,11 +842,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "83 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.180 unresolved comprise178 unfinished screenings and two examined dependencies."
+    "count_basis": "84 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.179 unresolved comprise177 unfinished screenings and two examined dependencies."
   },
-  "episode_completeness": "64 candidate episodes cover 83 supplied actions, including 10 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "65 candidate episodes cover 84 supplied actions, including 10 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "607494e60e4256bbe31c2686d41b4389c3a1cd2df1c0812cdd5cd3e06e5f460a",
+  "universe_subject_sha256": "10d396c8d4bf4cb29b10aa6019900d86741c5c03e9a3fd87838f69481576badd",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -31593,15 +31594,16 @@
       "date": "2026-02-09",
       "measure": "bill_119_hr_6644",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed exact-action Health & Social Policy inclusion rests on supported-housing disability-income eligibility, assisted-family escrow financing, housing counseling/eviction referrals and assisted-housing temperature monitoring. Full six-title EH read; relevant program, regulatory and existing HUD/IRS authorities independently bound. Preserve chapter11/15 versus existing service-connected exclusions, eligibility versus rent, narrow welfare-cash definition, opt-out and sunset conditions, printed HOME cross-reference limitation, rural loan-security threshold and whole banking/housing package. No title-only eligibility or predicted health/price outcome. Later6644roll224 remains separate and unreviewed.",
       "source": {
         "source_id": "clerk:119:2:57",
         "url": "https://clerk.house.gov/evs/2026/roll057.xml",
         "raw_sha256": "8b88f025d5c22380c3a466136ec27921e4313d52eca482d8aa9b54c29f6886de",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "d928045f6ffca46a31bd9641dd1cc0452441517996361eb81eb8517e2c78effb",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6644:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6644",
       "member_action": "yea",
@@ -31610,26 +31612,288 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "Proposed exact-action Health & Social Policy inclusion rests on supported-housing disability-income eligibility, assisted-family escrow financing, housing counseling/eviction referrals and assisted-housing temperature monitoring. Full six-title EH read; relevant program, regulatory and existing HUD/IRS authorities independently bound. Preserve chapter11/15 versus existing service-connected exclusions, eligibility versus rent, narrow welfare-cash definition, opt-out and sunset conditions, printed HOME cross-reference limitation, rural loan-security threshold and whole banking/housing package. No title-only eligibility or predicted health/price outcome. Later6644roll224 remains separate and unreviewed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:57",
           "url": "https://clerk.house.gov/evs/2026/roll057.xml",
           "raw_sha256": "8b88f025d5c22380c3a466136ec27921e4313d52eca482d8aa9b54c29f6886de",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "d928045f6ffca46a31bd9641dd1cc0452441517996361eb81eb8517e2c78effb",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6644eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6644eh/html/BILLS-119hr6644eh.htm",
+          "raw_sha256": "24bf788c91da07ab2f461f808e4109b1488b20144f34f202f82594dbcb7d8949",
+          "governed_bytes_sha256": "dcb4bb0698c380c4a03766fbd84a2172ffd2d82c42805573cbfe2e732f4794ef"
+        },
+        {
+          "source_id": "govinfo:42usc12742-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "49569df2c6d19104e19b8b9bbefe94cd237926cde477692df1ce619cfb768d7d"
+        },
+        {
+          "source_id": "govinfo:42usc12744-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "0037e77d35ad10ecd0b3f73cdbb7b6ace4b9b4ffe18dbce06c167b94761035e5"
+        },
+        {
+          "source_id": "govinfo:42usc12745-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "d850813b15f1b7cc99ec181a9518984b9ffce4379328e8469ead5969e5c03840"
+        },
+        {
+          "source_id": "govinfo:42usc12753-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "678ae91050dd3df280fbb49dbda3330fcd302413714eec36dfb3051e0a24a5ee"
+        },
+        {
+          "source_id": "govinfo:42usc12755-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "ac9592e35db7869af0a593a4ee06bde3f9ae91d7a67fe7b47ca3e895ec7f8b68"
+        },
+        {
+          "source_id": "govinfo:42usc12838-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "689157d4b8a4515e3dfca837959458437461a9a8631cbe39951e47904c9a54a7"
+        },
+        {
+          "source_id": "govinfo:12704-income-definitions-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap130.htm",
+          "raw_sha256": "c2ec71f86990a401f2981172c86b577e6eca7a974b84a72da837e6aede6145a9",
+          "governed_bytes_sha256": "f2263d25d464893ec35574d23afc59e2c523866bfd84c3b1902682aa6305bce2"
+        },
+        {
+          "source_id": "govinfo:1437a-income-definitions-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8-subchapI-sec1437a.htm",
+          "raw_sha256": "caaf3bdfe80f8d07adabb3ea2cce12df9648d6bcec3736ecd1c285b03a3312ab",
+          "governed_bytes_sha256": "612aad0abf47b38c7eb160efe84e44eed16174eb8ef5b000f55a8fdac449ba55"
+        },
+        {
+          "source_id": "govinfo:1437f-inspections-vash-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8-subchapI-sec1437f.htm",
+          "raw_sha256": "42e652d061be13d697999d9d784174e33005146c158e37622c2aa1f287ef93c5",
+          "governed_bytes_sha256": "bc8b08fbcdd8d465cecf6dfefa49768c52c85fc005d121d99d4b13c0dcb27f73"
+        },
+        {
+          "source_id": "govinfo:1437u-fss-baseline-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8-subchapI-sec1437u.htm",
+          "raw_sha256": "0f0223b4f9fcda95a14a8d98fbcc7f6546bbc297508f0880a039928bc616b748",
+          "governed_bytes_sha256": "db9d7f554e4b3a82cd5a139adb8219be2fb334e169e106f8ae27018d4b44e14b"
+        },
+        {
+          "source_id": "govinfo:42usc1474-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap8A-subchapIII-sec1474.htm",
+          "raw_sha256": "7fb0b67590efa6b36cf24fc58b3f10541d61f6914571464bead321c1f9da4f25",
+          "governed_bytes_sha256": "b3149be81c6db1eb7db905d1a0c871d334e63a51598de82590bc250ac2afa675"
+        },
+        {
+          "source_id": "govinfo:38usc901-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap9-sec901.htm",
+          "raw_sha256": "fab7a3d5946d070a6b04603a8be0336ad3b65ab363af578de6237a351f016c00",
+          "governed_bytes_sha256": "8233c721ef441776a0628e2e7189b3e9970dc409291bdcacfcb817c16217c049"
+        },
+        {
+          "source_id": "govinfo:1701x-counseling-baseline-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-sec1701x.htm",
+          "raw_sha256": "510b018ca48353356d1bc920625de480ed41e62d8e60a5df6f9e7f210aea41ce",
+          "governed_bytes_sha256": "d8c4ffee5474fe4aceb0b35ca7d94a07d24206f1048bef538517a260306d1576"
+        },
+        {
+          "source_id": "govinfo:1708-mmi-soundness-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-subchapII-sec1708.htm",
+          "raw_sha256": "775f40c049163d9613312370bb018fd325afa4586d13a125e4d59d9cb4a83574",
+          "governed_bytes_sha256": "25d7035816d4612012f162869d4ee00608169775a32b7046a62f91226f848dd2"
+        },
+        {
+          "source_id": "govinfo:1711-mmi-capital-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-subchapII-sec1711.htm",
+          "raw_sha256": "bedbf3c468d9dcddd79da79bdd9c62b535391adfc985661d7aeaf53ff67d1195",
+          "governed_bytes_sha256": "d1eb04f981b8d986e6d2c3e10847c7631a2d3c40338e8e57cfb289e5d0f4f443"
+        },
+        {
+          "source_id": "govinfo:1709-mmi-counseling-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-subchapII-sec1709.htm",
+          "raw_sha256": "01f5efa53e779fd6ae9065890694f2d58f68369bea55f7e8dbf50387ca4b9fea",
+          "governed_bytes_sha256": "5ffc262d734d426ce916f0610d7bb648cd61cc3f8de9cd23c2c1c6a93265b24c"
+        },
+        {
+          "source_id": "govinfo:42usc8013-2024-housing-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap89-sec8013.htm",
+          "raw_sha256": "ee2448284a64390ff6856f151842ca8eacb14d6bf732724bdcd01924ce99b6ca",
+          "governed_bytes_sha256": "c0b070b8d862a9a8a58102a9cdb2f7a7033ca01c612e32978f5de39dbd5ff5a1"
+        },
+        {
+          "source_id": "govinfo:12usc1701q-2024-housing-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-sec1701q.htm",
+          "raw_sha256": "8d1c1f20ef9f4b04eb5ac0206ceca3552daec65998513cad78921cdaf75b379e",
+          "governed_bytes_sha256": "45f071f655a2d5ed7adc0ed97bf4666dd98d84ffff69e24c458db9265da8be16"
+        },
+        {
+          "source_id": "govinfo:15usc9058a-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap116-subchapIII-partA-sec9058.htm",
+          "raw_sha256": "36fb5bc6c18fb26c77fa8b0a1a3650a6bbaaecb534e87ed9bf0c75198b8a28e7",
+          "governed_bytes_sha256": "5685b57c388ff2a191a56ae7959abe1ce668d8f6085f267525f69c55a3d21460"
+        },
+        {
+          "source_id": "govinfo:12usc1701u-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title12/html/USCODE-2024-title12-chap13-sec1701u.htm",
+          "raw_sha256": "ba6ced981c6ffe43b56d9e29bcca1b860b586aec19af6922984f6de32bac5881",
+          "governed_bytes_sha256": "e68a9740aabf2fce38016a1d1eb03c1fa3ee828be5c128f79cf977e3e9e3a140"
+        },
+        {
+          "source_id": "govinfo:42usc5310-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap69-sec5310.htm",
+          "raw_sha256": "259569c3047004299d0e808e77ef687c0b7221c0c8e2ef7c3fbc24f56528a10b",
+          "governed_bytes_sha256": "4b702f9201f935b8416628b71818c7326a49e4b537148998eb9c3d28f8616b95"
+        },
+        {
+          "source_id": "govinfo:42usc3547-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap44-sec3547.htm",
+          "raw_sha256": "de2f7acb01edf8a011071f6cfa6ca70babe026e4607a0ec235f1561b25ca0e22",
+          "governed_bytes_sha256": "848150ceabf097281b259612a2015fc2cc96d4082767218e480439c74e722da5"
+        },
+        {
+          "source_id": "govinfo:38usc1110-1131-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap11.htm",
+          "raw_sha256": "a5cac167152f3d06c61f57816ce1de15a2803d01bf269ae8462fef8b126a2645",
+          "governed_bytes_sha256": "fd729da1e7d0d1f398975d4f8506daa9ed1755eb2cc6b632663c9be3d807c72f"
+        },
+        {
+          "source_id": "govinfo:38usc1521-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap15.htm",
+          "raw_sha256": "6dd99b5b6db514123ecdebddfc3cd604582b65cac04a9f35ba5a334d425062e2",
+          "governed_bytes_sha256": "bc7f07a7de0d33bfb0091e1a1a1f3c57adad724a8e76b73dbe3227710b0d9383"
+        },
+        {
+          "source_id": "hud:2024-published-vash-income",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-08-13/html/2024-17957.htm",
+          "raw_sha256": "f27cdc4ac44ce5b21c1ba4691548c3c14cc8a8564265832d9aa9f4ee297c2bc4",
+          "governed_bytes_sha256": "9e67aac007b7d9b219151003f01d5958dc540586f88cc345b721842982f78747"
+        },
+        {
+          "source_id": "irs:revenue-procedure2024-38-vash",
+          "url": "https://www.irs.gov/irb/2024-43_IRB",
+          "raw_sha256": "4cc1f41c6312423dbfe58d85b71bf4bc8b1ca842d81ba15ebb02336be7d49ad0",
+          "governed_bytes_sha256": "0223b3019b1ba33b231fd0b0914855e1c955450452a4f26326f2965655b75d59"
+        },
+        {
+          "source_id": "hud:2024-flood-rule-housing-sections",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-23/html/2024-06246.htm",
+          "raw_sha256": "bae831470d212226eb39f70c7e1680923cca7ce21d26f4a7d55d66a0e94184d2",
+          "governed_bytes_sha256": "f3c8c970e344c6b50e4946f15442b32364f199c59a009dfb574b3f5b9633ca7f"
+        },
+        {
+          "source_id": "govinfo:24cfr58-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title24-vol1/pdf/CFR-2024-title24-vol1-part58.pdf",
+          "raw_sha256": "c3c7efbf86e568fa628ec3dd5a7312b1abaf24462c9e3f5f68481fbc1c382390",
+          "governed_bytes_sha256": "763ae68bd26973df297eeae2a736ffab79fde3869282a1f2076a1869e3d1669d"
+        },
+        {
+          "source_id": "govinfo:24cfr50-2024-housing",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2024-title24-vol1/pdf/CFR-2024-title24-vol1-part50.pdf",
+          "raw_sha256": "9ab3eea922732d51f765627304419d92d0fa14596532f85b2ce1647b27aa7c52",
+          "governed_bytes_sha256": "4901ad79e0050ba349e784f4731c084fde0b1948577d753bfb4d95159497418d"
+        },
+        {
+          "source_id": "govinfo:24cfr58-2025-housing",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title24-vol1/pdf/CFR-2025-title24-vol1-part58.pdf",
+          "raw_sha256": "af9017825dcd47b5a232f3637cb0cedfb7b401f5ef4d578adc2c54ef84621bab",
+          "governed_bytes_sha256": "eb9f4105b793f9fbd04b43bd26a5c2027af2f756b13b4d07d283ba4d34a47f85"
+        },
+        {
+          "source_id": "govinfo:24cfr50-2025-housing",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title24-vol1/pdf/CFR-2025-title24-vol1-part50.pdf",
+          "raw_sha256": "4ea68e21e188ebee1a5a9d1e7f11554ae2752874fe8487457ee2c58b2c053b24",
+          "governed_bytes_sha256": "48a1926e3f2757b27c36ae0b1cd7ed78c0221085075e386987fd13f3deef99aa"
+        },
+        {
+          "source_id": "govinfo:24cfr984103-welfare-2025",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title24-vol4/pdf/CFR-2025-title24-vol4-sec984-103.pdf",
+          "raw_sha256": "b5d625eb719b572eeea00d01c6614cc5695b6231c14ed6d4edb60e8906309a9a",
+          "governed_bytes_sha256": "e8838a885cf250aa20089f5061020ac30e66602cba148655a16745d401e0040a"
+        },
+        {
+          "source_id": "congressional-record:2026-02-09-housing-debate",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-09/pdf/CREC-2026-02-09-house.pdf",
+          "raw_sha256": "f20e949ae27e96444ff87918c65e214c10289a13f3abb75e7bcef93328acb5ad",
+          "governed_bytes_sha256": "608fccfe3ef8a525abf3a6bc5424d092e6e48965bf361d4f15ad274780422f98"
+        },
+        {
+          "source_id": "govinfo:119457p1-housing-printed-crossref",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt457/pdf/CRPT-119hrpt457-pt1.pdf",
+          "raw_sha256": "b210285e0225b0cc2a43cb84f287147445b828e62aed6cdf03dda05350940250",
+          "governed_bytes_sha256": "17a20f01f75953c0684913aba529aa5becc4244232493ae6ccba6f619681753f"
+        },
+        {
+          "source_id": "crs:r48849-feb6-housing-version-limits",
+          "url": "https://www.congress.gov/crs_external_products/R/PDF/R48849/R48849.1.pdf",
+          "raw_sha256": "da7f18afe07e59cb03b12faabdc565f9bf9e3df92109d43e5929252bea1b9481",
+          "governed_bytes_sha256": "c36d01fb771a81db07175e890261bb5afd45b8093db002e9bfdf127ca682f62b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:57",
+        "source_ids": [
+          "clerk:119:2:57",
+          "govinfo:hr6644eh",
+          "govinfo:42usc12742-2024-housing",
+          "govinfo:42usc12744-2024-housing",
+          "govinfo:42usc12745-2024-housing",
+          "govinfo:42usc12753-2024-housing",
+          "govinfo:42usc12755-2024-housing",
+          "govinfo:42usc12838-2024-housing",
+          "govinfo:12704-income-definitions-2024",
+          "govinfo:1437a-income-definitions-2024",
+          "govinfo:1437f-inspections-vash-2024",
+          "govinfo:1437u-fss-baseline-2024",
+          "govinfo:42usc1474-2024-housing",
+          "govinfo:38usc901-2024-housing",
+          "govinfo:1701x-counseling-baseline-2024",
+          "govinfo:1708-mmi-soundness-2024",
+          "govinfo:1711-mmi-capital-2024",
+          "govinfo:1709-mmi-counseling-2024",
+          "govinfo:42usc8013-2024-housing-definitions",
+          "govinfo:12usc1701q-2024-housing-definitions",
+          "govinfo:15usc9058a-2024-housing",
+          "govinfo:12usc1701u-2024-housing",
+          "govinfo:42usc5310-2024-housing",
+          "govinfo:42usc3547-2024-housing",
+          "govinfo:38usc1110-1131-housing",
+          "govinfo:38usc1521-housing",
+          "hud:2024-published-vash-income",
+          "irs:revenue-procedure2024-38-vash",
+          "hud:2024-flood-rule-housing-sections",
+          "govinfo:24cfr58-2024-housing",
+          "govinfo:24cfr50-2024-housing",
+          "govinfo:24cfr58-2025-housing",
+          "govinfo:24cfr50-2025-housing",
+          "govinfo:24cfr984103-welfare-2025",
+          "congressional-record:2026-02-09-housing-debate",
+          "govinfo:119457p1-housing-printed-crossref",
+          "crs:r48849-feb6-housing-version-limits"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:57",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Continue H.R.6644exact as-amended passage review. Research239EH194884characters/raw24bf788c91da07ab2f461f808e4109b1488b20144f34f202f82594dbcb7d8949 and Clerk57captured. OnlyTOC and beginning101zoning-frameworkreviewread; fullbody and incorporatedprograms remainunread. TitleIV includes disability-income exclusions,assisted-familyescrow,counseling,evictionhelplineandtemperaturesensors;these are leads,notcompletedmembership. Six titles also housingdevelopment/HOME/rural/manufacturedhousing/banking. February9HouseRecordresearch240507525characters/rawf20e949ae27e96444ff87918c65e214c10289a13f3abb75e7bcef93328acb5ad contains exactas-amendedfloor/debate,notyetreadfor6644. Preservecompletepackageandamendmentversion beforemeaning; do not borrow title/broadhousingbenefits."
-      }
+        "shared_review_record_sha256": "39ee9d6b0d02d0de53096fd1c914d7d9545d207eaf7065a209ec5adfa0eb4e48"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:58",
@@ -44376,11 +44640,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries.",
+    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "afa9fd8d06d87e2401f0bfb325201b0d1fcb4e320aade2d0886507e6392eb4cd",
+  "selection_sha256": "e634b4393797fe511cf66201ff2a25d32cf60cada0485a9c052e1aa0c1bc4c2e",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -44462,6 +44726,7 @@
     "house:119:2:50",
     "house:119:2:53",
     "house:119:2:56",
+    "house:119:2:57",
     "house:119:2:6",
     "house:119:2:7",
     "house:119:2:8"
@@ -44484,7 +44749,6 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:57",
     "house:119:2:65",
     "house:119:2:71",
     "house:119:2:72",
@@ -44650,7 +44914,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "180 unresolved comprise178 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44).2026roll56 is a proposed whole-law Health inclusion after exact D.C./federal incorporation review;62/68 procedural and69 proposed excluded after complete SAVE America version review. Existing45 broader-package completeness remains separate.",
+    "basis": "179 unresolved comprise177 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44). H.R.6644roll57 proposed inclusion follows full EH and material incorporation review; laterroll224 remains independent. Existing45 broader-package completeness remains separate.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -44702,6 +44966,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "07db138b959bcdc00ac63dde0099d79a58ba1e6e242f8bebff3a2a405f79a21e",
-  "membership_review_sha256": "4c6068d3297a6ba9d9d4ed4ffe319436c75f4fe77f05a60eca684ee1434f7a96"
+  "proposal_sha256": "d9ea8d3e404118ab887d3e4969d8df47bb2bb45a583d91802816370b916fe656",
+  "membership_review_sha256": "02db43df14e31cefc2996a7fe0a2c8aa18c33106da792745f5e4754f8b3ee200"
 }
