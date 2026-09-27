@@ -1,43 +1,182 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Partial candidate at a user-requested overnight checkpoint.** Since06fe2c9,
-16 additional screenings are resolved; one new shared interpretation derives one
-additional finding per member. Now66 interpreted inputs,49 Foushee findings and45
-bounded Massie proof findings.257 identities remain unreviewed; one additional
-examined action has a printed-source conflict. No current user decision is required.
-This is neither complete Health coverage nor accepted/public content.
+**Partial candidate at the user-requested overnight checkpoint.** Since6d8716c,
+nine further screenings are resolved, including four shared interpretations.
+Now70 interpreted inputs,52 Foushee findings and49 bounded Massie proof findings.
+248 identities remain unreviewed; one additional examined action has a printed-source
+conflict. No current user decision is required. This is neither complete Health
+coverage nor accepted/public content.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-bed93d at resumption. Later in-scope research is preserved without reset.
+6d8716c at the latest resumption. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The user-requested CHECKPOINT marker is written last and is not committed.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [66 shared meanings /532 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [856 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [277 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [70 shared meanings /593 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [954 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [286 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | bed93d | Current |
+| Disposition | Before (6d8716c) | Checkpoint |
 |---|---:|---:|
-| interpreted_substantive_directional |43|66|
-| procedural_context |176|185|
-| expressive_nonbinding_context |8|11|
-| exact_action_ineligible |113|156|
-| source_unresolved (unreviewed plus examined conflict) |336|258|
+| interpreted_substantive_directional |66|70|
+| procedural_context |185|186|
+| expressive_nonbinding_context |11|11|
+| exact_action_ineligible |156|160|
+| source_unresolved (unreviewed plus examined conflict) |258|249|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
 
-## Requested overnight checkpoint — September25
+## Overnight checkpoint — September26
+
+The user requested a safe checkpoint about one hour after September27 01:14Z,
+with the shutdown marker around02:15Z (September26 10:15 p.m. Eastern). This is
+an explicit pause for the overnight shutdown, not completed Health coverage,
+semantic acceptance, evidence exhaustion or a new approval gate. Resume this
+same draft PR and worktree; preserve work after the recorded pushed head.
+
+The verified starting head was `6d8716cae6822b3ae486f15d1273589c5a11ddd3`.
+Nine further screenings are resolved: four shared interpretations (312–315),
+four proposed exclusions (304/310/311/316), and one procedural control (309).
+Counts66/185/11/156/258 become70/186/11/160/249 across the same676 identities.
+The249 unresolved comprise248 unreviewed screenings and the separately examined
+237 printed-source conflict. No unreviewed identity is presumed Health-eligible.
+
+Derived output moves49→52 Foushee findings and45→49 bounded Massie proof findings.
+There are140 recorded observations: Foushee is Not Voting on312; Massie's four
+previous Not Voting records remain. No direction or absence explanation is
+inferred from those statuses. Nine multi-action episodes remain intact among53
+episodes, including the six pairs and the3838/4016/4553 groups. No design change,
+forced pattern or issue-wide synthesis was introduced.
+
+### New shared meanings and membership decisions
+
+- **315 / S.356:** extends rural-county funding through fiscal2026 and TitleII/III
+  project deadlines through2028/2029. The narrow Health connection is eligible
+  county-paid emergency response, with a documented pre-vote Skamania EMS use.
+  County elections/allocations, the7-percent TitleIII cap for major distributions,
+  Federal-land and payment conditions, public comment, certification and broader
+  school/road/land uses remain. The historical vehicle award is not funding from
+  this bill. Separate PublicLaw119-21 long-term timber receipts stay unchanged.
+  Removing7125(g)(6) removes a pilot reporting requirement, not all oversight or
+  a Governor appointment option. Foushee Yea and Massie Nay project mechanically.
+- **312 / H.R.1005:** disclosure to the Education Secretary within30 days after
+  foreign-source funds/contracts exceed an aggregate$10,000 threshold, as a
+  condition for public schools' covered Federal assistance. No annual reset or
+  blanket foreign-funding ban is invented. Individual-service reimbursement is
+  excluded by the incorporated assistance definition. Foushee's Not Voting
+  yields accounting only; Massie's Yea yields a finding.
+- **313 / H.R.1069:** covered education-funding prohibition for specified direct
+  or indirect PRC-government support, effective after one year;90-day notice and
+  a discretionary waiver for qualifying pre-enactment contracts until termination.
+  It is not a ban on every foreign donation or every Chinese entity. Foushee Nay
+  and Massie Yea remain choices on the complete prohibition/waiver package.
+- **314 / H.R.1049:** parent information/copy rights,30-day responses and annual
+  notices as conditions on LEA/State ESEA funds. Foreign-entity definitions and
+  outlying-area exclusions are retained. Foushee Nay and Massie Yea concern the
+  whole disclosure-and-funding-condition bill.
+- **Shared school-care boundary:** GEPA/Secretary→State→LEA→school grants are
+  traced through20USC1221 and7113–7118. School mental-health services are a
+  permitted use, not the entire education budget or a mandatory mental-health
+  earmark. The under$30,000 rule, parental consent/exceptions, medical-spending
+  limits and program safeguards remain. None of the three candidates asserts a
+  named school's grant loss, automatic care interruption or new clinical benefit.
+  This explicit receiving-funds condition is not membership inferred merely from
+  disclosure subject matter, school titles or foreign-policy consequences.
+- **309 / H.Res.916:** closed consideration procedures and six deemed substitutes,
+  not passage of those bills. Full RCP119-14 datedNovember26,2025 is bound;
+  later RCP119-29 on the Rules page is not substituted. All five RH substitutes
+  were read. Athlete-care provisions remain context, not a directional care vote.
+- **304 / H.R.1949:** gas-trade/facility authorization, retaining facility and
+  Presidential powers. The printed4318/ECRA1754 mismatch is preserved alongside
+  the official4813 mapping without silent repair. **310** applies zero regulatory
+  budgeting to SBA, while other agencies are covered by reporting. **311** creates
+  a hotline, not automatic repeal of health rules. **316** changes conditional
+  wildlife-plan approval and deadlines, not medical funding or automatic final approval.
+
+Add98 governed sources, nine membership records and61 interpretation claim maps:
+954 sources /286 membership records /593 claim maps. Reuse captured exact EH/ES,
+Clerk and RH records, PublicLaw119-21, shared statutory definitions and school
+funding/consent authorities. The source pool also preserves precisely selected
+prepared Burma evidence without treating capture as completed membership review.
+Manual work consists of version selection, source reading, member-neutral
+membership decisions, four shared meanings/compacts and readable review. Member
+projection remains mechanical. No new infrastructure or editorial authority.
+
+### Exact next executable work
+
+The committed676-row inventory remains the complete queue; unresolved rows carry
+specific next_action notes. Do not repeat304/309–316 or their incorporated-source
+research. Governed source text and identities are committed in sources.json;
+full captures remain locally under `.local/next-domain`.
+
+1. **307 / H.R.4423:** EH, Clerk and full Report119-245 are bound. The measure
+   directs US voice/vote at IBRD to continue the2021 government-financing pause,
+   subject to a Treasury national-interest exception. The report distinguishes
+   third-party civilian grants. New public IDA Articles PDF9–11 establish shared
+   directors but separate institutions/funds. ICR00254 datedMarch27,2025 binds
+   an IDA Ministry-of-Health project, closureSeptember30,2024 and the2021 pause
+   preventing additional financing. Read PDF1–9 and21–25; govern1/5/6/7/24.
+   Cover visually verifies Public Disclosure Authorized. Do not call IDA lending
+   IBRD lending, a closed project a live2025 grant, or shared directors proof of
+   statutory scope. Finish institution/scope and historical/current financing
+   analysis before membership. Sources remain unexhausted; no user decision yet.
+2. **Next fresh December group:**318/H.Res.936,319–320/S.1071,321/H.Res.432,
+   323/H.R.3628,324/H.R.3638,325–328/H.R.3383 and330/H.R.3898. Confirm exact
+   adopted substitutes, amendment/commit/discharge effects and package versions.
+   H.Res.936 and both energy EH texts are fully read and governed from research138.
+   Rule318 requires RCP119-15/119-16 and the HR3898 RH substitute, plus exact
+   amendment report parts.323 needs PURPA2602/2621/2622/2634 consideration rules.
+   324 needs the critical-material/foreign-entity/electric-utility definitions;
+   trace its printed42USC824o title-number mismatch without silent repair.
+   These three captures remain unreviewed membership, not completed decisions.
+   Previously recorded317/322/329 procedural controls are not new substantive
+   findings. Titles and Clerk identities alone do not resolve the pending cases.
+3. **Prepared older cases:**262 H.R.3838 EH resumes at normalized character235000
+   of2080487; final3500 separately read. Preserve the existing RCP119-8,
+   Report119-255/Record bindings and distinct245/246/255/256 actions.294–296
+   require exact land-plan/GAO review;299 requires D.C.Law24-345 restoration
+   reconciliation with later25-50/25-175 and conditional applicability.224–226
+   retain the earlier plan/GAO research. Exact sources and boundaries remain in
+   their inventory notes and the historical detailed ledger below.237 alone has
+   the separately recorded$50,000 printed-source conflict; do not silently choose
+   a version. Continue independent safe cases while its formal correction is sought.
+
+### Checkpoint validation and safeguards
+
+Final local validation:147 focused subsystem tests (60 candidate tests) and all7
+canonical semantic checks pass. Deterministic regeneration and git diff --check
+pass. All856 prior sources,66 prior shared meanings,277 prior membership records
+and every previously completed inventory row are unchanged. Both members’ new
+readable outputs were inspected, including the explicit non-proposition accounting
+for Foushee312. Final exact-head CI is recorded in the existing PR discussion.
+The focused subsystem includes deterministic replay, source-removal failure,
+member-neutral application, actual Not Voting accounting, full source/action sets,
+paired/multi episodes, candidate-only publication guards and exact dated-print checks.
+The7 canonical semantic checks use the existing root NODE_PATH. An initial local
+run omitted that path and used a stale generated proof after source additions;
+regeneration and the existing dependency path corrected both. The semantic runner
+also needed the established unsandboxed local retry for Windows temporary-directory
+permissions. No dependency or product-rule change was made to pass validation.
+
+The exact pushed SHA and CI link belong in the PR discussion; earlier-head CI is
+historical. The uncommitted CHECKPOINT marker is the final filesystem action.
+Vercel branch deployment remains disabled and Render remains main-only. No merge,
+deployment, publication, production/application-data write, registry/environment
+change, blue operation, paid service or protected-archive access. PR191 remains
+released, PR193 paused and issue192 open. No specific new human decision is required.
+
+## Historical overnight checkpoint — September25
 
 The user requested a safe checkpoint about one hour after04:31:47Z, with a
 CHECKPOINT shutdown marker around05:31Z. This is the stop reason; it is not Health
@@ -435,7 +574,7 @@ the requested overnight checkpoint; no new human decision is required.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-66 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+70 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -1462,6 +1601,97 @@ Evidence: house:119:1:306; finding `prop:4bae918da3122818`.
 
 Sources: [clerk:119:1:306](https://clerk.house.gov/evs/2025/roll306.xml); [govinfo:hr5348eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5348eh/html/BILLS-119hr5348eh.htm).
 
+### Education-funding restrictions for schools with specified PRC-government support
+
+**Compact:** Foushee opposed House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole. The bill bars covered education funds for schools with specified direct or indirect PRC-government support after one year, with a discretionary waiver for qualifying existing contracts. Those funds can include grants supporting school mental-health services. This was one vote on the whole restriction; no specific school’s loss of care is established.
+
+**Detail:**
+
+**house:119:1:313**
+
+Foushee opposed House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole.
+
+H.R.1069 prohibits funds under applicable education programs from being made available to an elementary or secondary school with specified direct or indirect support from the Government of the People’s Republic of China. The covered circumstances are a partnership with a government-funded cultural or language institute, operation of a government-supported learning center, or other support from an individual or entity acting directly or indirectly on behalf of that government, including materials, personnel, money or other resources. This is a restriction tied to those circumstances, not a prohibition on every foreign donation or every Chinese person or organization.
+
+The prohibition begins one year after enactment. Within 90 days the Education Secretary must notify schools and provide compliance guidance. A qualifying contract must take effect before enactment, remain in effect beyond the one-year effective date and relate to a covered circumstance. A school must timely request a waiver with the full unredacted contract, an English translation if needed, and a statement demonstrating the contract’s benefit to its mission and students and promotion of US security, stability and economic vitality. The Secretary may grant a waiver from the effective date until contract termination; it is discretionary, not an automatic exemption for every existing arrangement.
+
+The proposed Health connection is the changed funding condition, not the title or an inferred effect of foreign influence on children. GEPA defines an applicable program as a program administered by the Education Secretary or Department. A concrete covered channel is the ESEA Student Support and Academic Enrichment program: the Secretary allots funds to States, States reserve at least 95 percent for local agencies, and approved local applications distribute resources to schools under the statutory priorities. Permitted activities include school-based mental-health identification, counseling referrals and qualified mental-health partnership services. The existing grants also cover many educational activities. The usual 20-percent safe-and-healthy-student allocation is not a mental-health earmark, and grants below $30,000 have a special rule. This tracing does not assume that every school receives the same grant or operates a mental-health program.
+
+The existing TitleIV safeguards remain: prior informed written parental consent for school-connected mental-health assessment or services for children under 18, subject to immediate-safety and specified unobtainable-consent exceptions; a bar on medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; and limits on program content and mandatory medication. The related-services definition includes a limited diagnostic/evaluation medical component and excludes surgically implanted devices and replacement. These conditions are not rewritten by the bill. No named school’s eligibility, compliance, grant loss or resulting patient outcome has been established, and this candidate does not claim that all Federal school funding is medical funding.
+
+The House passed this text on December4,2025. A Yea supports the complete delayed funding prohibition with its contract-waiver process; a Nay opposes that package. Neither choice separately establishes a position on mental-health care, foreign-language teaching or every relationship with China. No enactment or later enforcement outcome is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2025-12-04. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Health membership is proposed from an explicit condition on receiving covered program funds and a documented school mental-health funding channel, not from presumed effects of foreign influence or the bill’s title.
+- School mental-health activity is a permitted use within broader grants; existing consent and clinical-spending restrictions remain. No named school’s grant loss or service disruption is established.
+- Both choices concern the whole measure. They do not establish a general position on China, parental rights or mental-health services; a non-vote is not a directional choice.
+
+Evidence: house:119:1:313; finding `prop:205b1ea42dc50b4c`.
+
+Sources: [clerk:119:1:313](https://clerk.house.gov/evs/2025/roll313.xml); [govinfo:hr1069eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm).
+
+### Foreign-funding disclosure requirements tied to school grants
+
+**Compact:** Foushee opposed House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole. The bill conditions school-district education grants, including a stream that can fund school mental-health services, on parent access to specified foreign-funding information. It does not itself cut a grant amount or change which mental-health services may be funded. This was one vote on the complete disclosure-and-funding-condition bill.
+
+**Detail:**
+
+**house:119:1:314**
+
+Foushee opposed House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole.
+
+H.R.1049 adds a condition for local educational agencies to receive Elementary and Secondary Education Act funds: each school they serve must give parents specified access to information about foreign-supported materials, personnel and financial arrangements. The proposed Health connection is this explicit condition on the same local-agency funding stream that includes Student Support and Academic Enrichment grants. Under 20USC7115–7118 those grants may fund school-based mental-health services, identification, counseling referrals and qualified mental-health partnership programs. This is a funding-eligibility condition across a broad education statute, not a new mental-health appropriation, clinical treatment mandate or demonstrated reduction in services.
+
+A parent must be able to review and make free copies of covered curricular or professional-development material, consistently with copyright law, at least every four weeks and within 30 days of a written request. Within 30 days of a written request the school must disclose how many personnel are compensated in whole or part with covered foreign funds, and information about donations, written agreements and financial transactions with a foreign country or foreign entity of concern. The information includes the country or entity name and, where funds were received, their amount and terms. Each school must post an annual summary notice or widely disseminate it if it has no website. The Education Secretary must notify States annually; States must notify local agencies as their own condition of receiving ESEA funds. These are disclosure duties, not a prohibition on every foreign donation or a release of individual student medical records.
+
+The incorporated foreign-entity definition includes designated terrorist organizations, Treasury-listed blocked persons, entities connected to the governments of the four covered nations, and the specified Attorney General or Commerce determinations. The four covered nations in 10USC4872(f)(2) are North Korea, China, Russia and Iran. Its defense-procurement prohibitions are not imported. The Attorney General category concerns alleged involvement in activities for which a conviction was obtained under the listed laws; the candidate does not adjudicate any entity or treat an allegation as an independently proven fact. The bill’s foreign-country definition excludes the ESEA outlying areas.
+
+The existing grant framework remains. States allocate funds to local agencies with approved applications, using the specified prior TitleI share, with a $10,000 minimum subject to ratable reduction and permission for agency consortia. Local applications, consultation, needs assessment and annual reporting remain. The ordinary minimum 20-percent allocation to safe-and-healthy-student activities is not a mental-health earmark: multiple activities qualify, and grants below $30,000 have a special rule allowing only one of the three activity-category assurances. No particular school or provider is shown to lose funds, and no resulting service interruption is inferred.
+
+Existing care safeguards also remain. TitleIV generally requires informed written parental consent for school-connected mental-health assessment or services for children under 18, with immediate-safety and specified unobtainable-consent exceptions. It prohibits medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; it does not authorize unrestricted clinical spending. Specialized support includes the defined professional services and limited related services, whose medical component is diagnostic/evaluation and excludes surgically implanted devices and replacement. The separate limits on program content and mandatory medication remain. The December4,2025 House passage vote concerns the whole disclosure-and-funding-condition bill. A Yea supports that condition; a Nay opposes it without establishing opposition to parental information or support for undisclosed foreign influence. Neither choice alone establishes a position on mental-health services generally.
+
+The Clerk recorded the House result as 'Passed' on 2025-12-04. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Health membership is proposed from the explicit ESEA funding condition and the documented school mental-health funding channel, not from the title, foreign-policy concerns or an assumed health consequence of school materials.
+- Mental-health services are one permitted use within broader grants; existing consent, clinical-spending and program safeguards remain. No named school’s noncompliance, grant loss or patient outcome is established.
+- The vote covers the complete disclosure-and-funding-condition measure, not a separate choice on mental-health funding or a general judgment about foreign influence.
+
+Evidence: house:119:1:314; finding `prop:8f5e90a754f9a14d`.
+
+Sources: [clerk:119:1:314](https://clerk.house.gov/evs/2025/roll314.xml); [govinfo:hr1049eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm); [govinfo:42usc19221-a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm); [govinfo:10usc4872-f2-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm).
+
+### Extending rural-county funding that can support emergency medical response
+
+**Compact:** Foushee supported the whole S.356 rural-county funding reauthorization, including its extension of eligible emergency-response project authority. The bill extends a rural-county funding program through fiscal 2026 and gives counties longer to start and obligate eligible projects. Its county-project funds can support emergency medical response on Federal land, subject to allocation and spending conditions. This was one vote on a broader package covering schools, roads, emergency services and land-management projects.
+
+**Detail:**
+
+**house:119:1:315**
+
+Foushee supported the whole S.356 rural-county funding reauthorization, including its extension of eligible emergency-response project authority.
+
+S.356 extends Secure Rural Schools payments through fiscal 2026 and requires the fiscal 2024 and 2025 payments within 45 days after enactment, reduced by the specified revenue-sharing payments already received or distributed before enactment. It carries forward the counties’ fiscal 2023 payment and allocation elections for 2024 and 2025 and extends the California distribution provision through 2026. The existing payment formulas and allocation rules remain: generally 80–85 percent follows the applicable school/road or county-fund use, with the remaining balance allocated to permitted projects or returned. Counties receiving at least $350,000 may allocate at most 7 percent of the total payment to Title III; counties receiving less than $100,000 may use all funds under the ordinary payment purposes. This is a broad county-funding package, not a medical-services appropriation alone.
+
+The proposed Health connection is the extension of Title III county-project authority. It moves the project-initiation deadline from September 30, 2025 to September 30, 2028 and the deadline after which unobligated funds must be returned from September 30, 2026 to September 30, 2029. Incorporated 16 U.S.C. 7142 permits reimbursement of county-paid search-and-rescue and other emergency services performed on Federal land after approval, and directly related training/equipment. Uses require a 45-day public comment process and proposal to the relevant resource advisory committee; expenditure certification remains required. A pre-vote first-party Skamania EMS and Rescue report documents a $25,000 Title III award toward a patient-access and transport vehicle, with other costs met by its general fund. This supplies a concrete emergency-medical-response use of the authority, not a claim that every emergency service is clinical care, every county selects that use, or every use of that vehicle is federally reimbursable.
+
+Title III also permits Firewise work, community wildfire plans and specified school broadband/digital-learning access; those uses are retained. Title II land-management project initiation and obligation deadlines likewise move to 2028 and 2029. The bill extends the resource advisory committee composition waiver and appointment pilot authorities to October 1, 2026, removes the pilot-program report-to-Congress requirement and makes limited wording/date corrections. It does not remove all committee oversight, public participation or project requirements.
+
+The House considered the Senate-engrossed text under a motion to suspend the rules and pass on December 9, 2025, and agreed to it. The floor Record supplies the exact text and broader debate. Speakers’ predictions about school closures, services, employment, addiction and the reasons for timber-revenue changes are not adopted as proven outcomes or motives. Public Law 119-21 section 50301 separately directs receipts from specified long-term timber contracts to the Treasury general fund; S.356 does not repeal that provision, and the candidate does not treat all timber receipts as available county funds. The Health finding concerns the bounded emergency-response funding authority within one choice on the entire reauthorization.
+
+The Clerk recorded the House result as 'Passed' on 2025-12-09. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Health membership rests on the extended Title III emergency-response authority and a documented pre-vote medical-response use, not the bill’s school title or an inferred public-health consequence of forestry.
+- County allocations, authorized uses, Federal-land and county-payment conditions, public comment and certification constrain the funding; no individual grant, service level, patient outcome or use by every county is asserted.
+- The historical Skamania award is an example of the retained mechanism, not money awarded by this bill or a forecast of new funding for that agency. Separate long-term timber-contract receipt rules remain outside this action.
+
+Evidence: house:119:1:315; finding `prop:337f9cbcb52e5a3e`.
+
+Sources: [clerk:119:1:315](https://clerk.house.gov/evs/2025/roll315.xml); [govinfo:s356es](https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm); [govinfo:16usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7101.htm); [govinfo:16usc7102-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7102.htm); [govinfo:16usc7111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm); [govinfo:16usc7112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7112.htm); [govinfo:16usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm); [govinfo:16usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7121.htm); [govinfo:16usc7122-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7122.htm); [govinfo:16usc7123-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7123.htm); [govinfo:16usc7124-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7124.htm); [govinfo:16usc7125-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7125.htm); [govinfo:16usc7126-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7126.htm); [govinfo:16usc7127-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7127.htm); [govinfo:16usc7128-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm); [govinfo:16usc7141-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7141.htm); [govinfo:16usc7142-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7142.htm); [govinfo:16usc7143-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7143.htm); [govinfo:16usc7144-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm); [govinfo:16usc500-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap2-subchapI-sec500.htm); [govinfo:43usc2605-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapI-sec2605.htm); [govinfo:43usc2621-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapII-sec2621.htm); [govinfo:pl119-21-section50301](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [congressional-record:2025-12-09-s356](https://www.govinfo.gov/content/pkg/CREC-2025-12-09/html/CREC-2025-12-09-pt1-PgH5066-5.htm); [skamania-ems:titleiii-20230315](https://skamaniaems.com/2023/06/08/federal-grant-funds-title-iii-allow-for-purchase-of-multi-use-all-terrain-vehicle/).
+
 ### Passage of a package changing health-plan arrangements, drug-benefit reporting and cost-sharing payments
 
 **Compact:** Foushee opposed House passage of H.R. 6703 as put to the chamber. The package would change association health plans, stop-loss insurance and employer reimbursement arrangements; require drug-benefit reporting; and fund ACA cost-sharing payments from 2027 with specified abortion-coverage exceptions. The vote applies to the package as a whole.
@@ -1918,4 +2148,8 @@ Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinf
 | house:119:1:270 | supported the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | opposed the final-passage package narrowing youth-rehabilitation coverage and changing sentencing, care-planning consultation and juvenile-crime statistics requirements | [govinfo:hr4922eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4922eh/html/BILLS-119hr4922eh.htm); [dc-council:code-24-901-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-901.html); [dc-council:code-24-902-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-902.html); [dc-council:code-24-903-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-903.html); [dc-council:code-24-904-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-904.html); [dc-council:code-24-906-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/24-906.html); [dc-council:code-16-2331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2331.html); [dc-council:code-16-2332-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2332.html); [dc-council:code-16-2333-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2333.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-23-1331-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/23-1331.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
 | house:119:1:271 | supported the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | opposed the passage package lowering specified adult-proceeding thresholds and narrowing the reach of the juvenile-care framework | [govinfo:hr5140eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5140eh/html/BILLS-119hr5140eh.htm); [dc-council:code-16-2301-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2301.html); [dc-council:code-16-2307-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2307.html); [dc-council:code-16-2320-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2320.html); [dc-council:code-16-2315-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/16-2315.html); [dc-council:code-11-1101-20250916](https://raw.githubusercontent.com/DCCouncil/law-html/8ed3f5ccaac32256a14f10b86418a98c93ff8c8a/us/dc/council/code/sections/11-1101.html) |
 | house:119:1:298 | supported the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options | opposed the whole D.C. detention-and-bail package changing the reach and standard of treatment-linked release options | [govinfo:hr5214eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm); [dc-council:code-23-1321-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1321.html); [dc-council:code-23-1322-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1322.html); [dc-council:code-23-1325-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1325.html); [dc-council:code-23-1331-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1331.html); [dc-council:code-23-1324-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1324.html); [dc-council:code-22-4502-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4502.html); [dc-council:code-22-4503-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4503.html); [dc-council:code-22-4504-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/22-4504.html); [dc-council:code-7-2508.01-20251113-operative](https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/7-2508.01.html); [olrc:criminal-rule46-2024](https://uscode.house.gov/download/annualhistoricalarchives/pdf/2024/2024usc18a.pdf); [govinfo:hres879eh](https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm); [govinfo:hr5214rh](https://www.govinfo.gov/content/pkg/BILLS-119hr5214rh/html/BILLS-119hr5214rh.htm) |
+| house:119:1:315 | supported the whole S.356 rural-county funding reauthorization, including its extension of eligible emergency-response project authority | opposed the whole S.356 rural-county funding reauthorization, including its extension of eligible emergency-response project authority | [govinfo:s356es](https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm); [govinfo:16usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7101.htm); [govinfo:16usc7102-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7102.htm); [govinfo:16usc7111-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm); [govinfo:16usc7112-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7112.htm); [govinfo:16usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm); [govinfo:16usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7121.htm); [govinfo:16usc7122-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7122.htm); [govinfo:16usc7123-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7123.htm); [govinfo:16usc7124-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7124.htm); [govinfo:16usc7125-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7125.htm); [govinfo:16usc7126-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7126.htm); [govinfo:16usc7127-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7127.htm); [govinfo:16usc7128-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm); [govinfo:16usc7141-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7141.htm); [govinfo:16usc7142-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7142.htm); [govinfo:16usc7143-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7143.htm); [govinfo:16usc7144-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm); [govinfo:16usc500-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap2-subchapI-sec500.htm); [govinfo:43usc2605-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapI-sec2605.htm); [govinfo:43usc2621-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapII-sec2621.htm); [govinfo:pl119-21-section50301](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [congressional-record:2025-12-09-s356](https://www.govinfo.gov/content/pkg/CREC-2025-12-09/html/CREC-2025-12-09-pt1-PgH5066-5.htm); [skamania-ems:titleiii-20230315](https://skamaniaems.com/2023/06/08/federal-grant-funds-title-iii-allow-for-purchase-of-multi-use-all-terrain-vehicle/) |
+| house:119:1:314 | supported House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole | opposed House passage of H.R.1049’s parent-information requirements and conditions on ESEA funding as a whole | [govinfo:hr1049eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm); [govinfo:42usc19221-a-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm); [govinfo:10usc4872-f2-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm) |
+| house:119:1:312 | supported House passage of H.R.1005’s foreign-source disclosure and education-assistance condition as a whole | opposed House passage of H.R.1005’s foreign-source disclosure and education-assistance condition as a whole | [govinfo:hr1005eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1005eh/html/BILLS-119hr1005eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm); [govinfo:31usc7501-a5-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap75-sec7501.htm); [govinfo:20usc1011f-h-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partB-sec1011f.htm) |
+| house:119:1:313 | supported House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | opposed House passage of H.R.1069’s delayed education-funding prohibition and contract-waiver process as a whole | [govinfo:hr1069eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm); [govinfo:20usc1221-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm); [govinfo:20usc7113-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm); [govinfo:20usc7114-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm); [govinfo:20usc7115-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm); [govinfo:20usc7116-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm); [govinfo:20usc7118-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm); [govinfo:20usc7101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm); [govinfo:20usc7121-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm); [govinfo:20usc7906-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm); [govinfo:20usc7801-school-definitions-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm); [govinfo:20usc1401-26-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm) |
 <!-- GENERATED CANDIDATE END -->

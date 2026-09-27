@@ -62,7 +62,146 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
-## Requested overnight checkpoint — September25
+## Overnight checkpoint — September26
+
+The user requested a safe checkpoint about one hour after September27 01:14Z,
+with the shutdown marker around02:15Z (September26 10:15 p.m. Eastern). This is
+an explicit pause for the overnight shutdown, not completed Health coverage,
+semantic acceptance, evidence exhaustion or a new approval gate. Resume this
+same draft PR and worktree; preserve work after the recorded pushed head.
+
+The verified starting head was `6d8716cae6822b3ae486f15d1273589c5a11ddd3`.
+Nine further screenings are resolved: four shared interpretations (312–315),
+four proposed exclusions (304/310/311/316), and one procedural control (309).
+Counts66/185/11/156/258 become70/186/11/160/249 across the same676 identities.
+The249 unresolved comprise248 unreviewed screenings and the separately examined
+237 printed-source conflict. No unreviewed identity is presumed Health-eligible.
+
+Derived output moves49→52 Foushee findings and45→49 bounded Massie proof findings.
+There are140 recorded observations: Foushee is Not Voting on312; Massie's four
+previous Not Voting records remain. No direction or absence explanation is
+inferred from those statuses. Nine multi-action episodes remain intact among53
+episodes, including the six pairs and the3838/4016/4553 groups. No design change,
+forced pattern or issue-wide synthesis was introduced.
+
+### New shared meanings and membership decisions
+
+- **315 / S.356:** extends rural-county funding through fiscal2026 and TitleII/III
+  project deadlines through2028/2029. The narrow Health connection is eligible
+  county-paid emergency response, with a documented pre-vote Skamania EMS use.
+  County elections/allocations, the7-percent TitleIII cap for major distributions,
+  Federal-land and payment conditions, public comment, certification and broader
+  school/road/land uses remain. The historical vehicle award is not funding from
+  this bill. Separate PublicLaw119-21 long-term timber receipts stay unchanged.
+  Removing7125(g)(6) removes a pilot reporting requirement, not all oversight or
+  a Governor appointment option. Foushee Yea and Massie Nay project mechanically.
+- **312 / H.R.1005:** disclosure to the Education Secretary within30 days after
+  foreign-source funds/contracts exceed an aggregate$10,000 threshold, as a
+  condition for public schools' covered Federal assistance. No annual reset or
+  blanket foreign-funding ban is invented. Individual-service reimbursement is
+  excluded by the incorporated assistance definition. Foushee's Not Voting
+  yields accounting only; Massie's Yea yields a finding.
+- **313 / H.R.1069:** covered education-funding prohibition for specified direct
+  or indirect PRC-government support, effective after one year;90-day notice and
+  a discretionary waiver for qualifying pre-enactment contracts until termination.
+  It is not a ban on every foreign donation or every Chinese entity. Foushee Nay
+  and Massie Yea remain choices on the complete prohibition/waiver package.
+- **314 / H.R.1049:** parent information/copy rights,30-day responses and annual
+  notices as conditions on LEA/State ESEA funds. Foreign-entity definitions and
+  outlying-area exclusions are retained. Foushee Nay and Massie Yea concern the
+  whole disclosure-and-funding-condition bill.
+- **Shared school-care boundary:** GEPA/Secretary→State→LEA→school grants are
+  traced through20USC1221 and7113–7118. School mental-health services are a
+  permitted use, not the entire education budget or a mandatory mental-health
+  earmark. The under$30,000 rule, parental consent/exceptions, medical-spending
+  limits and program safeguards remain. None of the three candidates asserts a
+  named school's grant loss, automatic care interruption or new clinical benefit.
+  This explicit receiving-funds condition is not membership inferred merely from
+  disclosure subject matter, school titles or foreign-policy consequences.
+- **309 / H.Res.916:** closed consideration procedures and six deemed substitutes,
+  not passage of those bills. Full RCP119-14 datedNovember26,2025 is bound;
+  later RCP119-29 on the Rules page is not substituted. All five RH substitutes
+  were read. Athlete-care provisions remain context, not a directional care vote.
+- **304 / H.R.1949:** gas-trade/facility authorization, retaining facility and
+  Presidential powers. The printed4318/ECRA1754 mismatch is preserved alongside
+  the official4813 mapping without silent repair. **310** applies zero regulatory
+  budgeting to SBA, while other agencies are covered by reporting. **311** creates
+  a hotline, not automatic repeal of health rules. **316** changes conditional
+  wildlife-plan approval and deadlines, not medical funding or automatic final approval.
+
+Add98 governed sources, nine membership records and61 interpretation claim maps:
+954 sources /286 membership records /593 claim maps. Reuse captured exact EH/ES,
+Clerk and RH records, PublicLaw119-21, shared statutory definitions and school
+funding/consent authorities. The source pool also preserves precisely selected
+prepared Burma evidence without treating capture as completed membership review.
+Manual work consists of version selection, source reading, member-neutral
+membership decisions, four shared meanings/compacts and readable review. Member
+projection remains mechanical. No new infrastructure or editorial authority.
+
+### Exact next executable work
+
+The committed676-row inventory remains the complete queue; unresolved rows carry
+specific next_action notes. Do not repeat304/309–316 or their incorporated-source
+research. Governed source text and identities are committed in sources.json;
+full captures remain locally under `.local/next-domain`.
+
+1. **307 / H.R.4423:** EH, Clerk and full Report119-245 are bound. The measure
+   directs US voice/vote at IBRD to continue the2021 government-financing pause,
+   subject to a Treasury national-interest exception. The report distinguishes
+   third-party civilian grants. New public IDA Articles PDF9–11 establish shared
+   directors but separate institutions/funds. ICR00254 datedMarch27,2025 binds
+   an IDA Ministry-of-Health project, closureSeptember30,2024 and the2021 pause
+   preventing additional financing. Read PDF1–9 and21–25; govern1/5/6/7/24.
+   Cover visually verifies Public Disclosure Authorized. Do not call IDA lending
+   IBRD lending, a closed project a live2025 grant, or shared directors proof of
+   statutory scope. Finish institution/scope and historical/current financing
+   analysis before membership. Sources remain unexhausted; no user decision yet.
+2. **Next fresh December group:**318/H.Res.936,319–320/S.1071,321/H.Res.432,
+   323/H.R.3628,324/H.R.3638,325–328/H.R.3383 and330/H.R.3898. Confirm exact
+   adopted substitutes, amendment/commit/discharge effects and package versions.
+   H.Res.936 and both energy EH texts are fully read and governed from research138.
+   Rule318 requires RCP119-15/119-16 and the HR3898 RH substitute, plus exact
+   amendment report parts.323 needs PURPA2602/2621/2622/2634 consideration rules.
+   324 needs the critical-material/foreign-entity/electric-utility definitions;
+   trace its printed42USC824o title-number mismatch without silent repair.
+   These three captures remain unreviewed membership, not completed decisions.
+   Previously recorded317/322/329 procedural controls are not new substantive
+   findings. Titles and Clerk identities alone do not resolve the pending cases.
+3. **Prepared older cases:**262 H.R.3838 EH resumes at normalized character235000
+   of2080487; final3500 separately read. Preserve the existing RCP119-8,
+   Report119-255/Record bindings and distinct245/246/255/256 actions.294–296
+   require exact land-plan/GAO review;299 requires D.C.Law24-345 restoration
+   reconciliation with later25-50/25-175 and conditional applicability.224–226
+   retain the earlier plan/GAO research. Exact sources and boundaries remain in
+   their inventory notes and the historical detailed ledger below.237 alone has
+   the separately recorded$50,000 printed-source conflict; do not silently choose
+   a version. Continue independent safe cases while its formal correction is sought.
+
+### Checkpoint validation and safeguards
+
+Final local validation:147 focused subsystem tests (60 candidate tests) and all7
+canonical semantic checks pass. Deterministic regeneration and git diff --check
+pass. All856 prior sources,66 prior shared meanings,277 prior membership records
+and every previously completed inventory row are unchanged. Both members’ new
+readable outputs were inspected, including the explicit non-proposition accounting
+for Foushee312. Final exact-head CI is recorded in the existing PR discussion.
+The focused subsystem includes deterministic replay, source-removal failure,
+member-neutral application, actual Not Voting accounting, full source/action sets,
+paired/multi episodes, candidate-only publication guards and exact dated-print checks.
+The7 canonical semantic checks use the existing root NODE_PATH. An initial local
+run omitted that path and used a stale generated proof after source additions;
+regeneration and the existing dependency path corrected both. The semantic runner
+also needed the established unsandboxed local retry for Windows temporary-directory
+permissions. No dependency or product-rule change was made to pass validation.
+
+The exact pushed SHA and CI link belong in the PR discussion; earlier-head CI is
+historical. The uncommitted CHECKPOINT marker is the final filesystem action.
+Vercel branch deployment remains disabled and Render remains main-only. No merge,
+deployment, publication, production/application-data write, registry/environment
+change, blue operation, paid service or protected-archive access. PR191 remains
+released, PR193 paused and issue192 open. No specific new human decision is required.
+
+## Historical overnight checkpoint — September25
 
 The user requested a safe checkpoint about one hour after04:31:47Z, with a
 CHECKPOINT shutdown marker around05:31Z. This is the stop reason; it is not Health

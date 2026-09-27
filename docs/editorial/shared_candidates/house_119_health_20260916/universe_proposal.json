@@ -61,6 +61,10 @@
     "house:119:1:285",
     "house:119:1:298",
     "house:119:1:306",
+    "house:119:1:312",
+    "house:119:1:313",
+    "house:119:1:314",
+    "house:119:1:315",
     "house:119:1:32",
     "house:119:1:33",
     "house:119:1:349",
@@ -96,11 +100,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 185,
-      "exact_action_ineligible": 156,
-      "interpreted_substantive_directional": 66,
+      "procedural_context": 186,
+      "exact_action_ineligible": 160,
+      "interpreted_substantive_directional": 70,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 258
+      "source_unresolved": 249
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -109,14 +113,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 66,
-    "directional_substantive_actions": 66,
+    "substantive_eligible_actions": 70,
+    "directional_substantive_actions": 70,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 185,
+    "procedural_context_actions": 186,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 156,
-    "unresolved_boundary_cases": 258,
-    "independent_episode_count": 49,
+    "exact_action_ineligible_actions": 160,
+    "unresolved_boundary_cases": 249,
+    "independent_episode_count": 53,
     "multi_action_episode_count": 9,
     "mechanism_types": [
       "amendment",
@@ -127,12 +131,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 66,
-      "substantive_actions": 66,
+      "ready_substantive_actions": 70,
+      "substantive_actions": 70,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "257 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "248 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -237,6 +241,7 @@
         "house:119:1:293",
         "house:119:1:302",
         "house:119:1:308",
+        "house:119:1:309",
         "house:119:1:317",
         "house:119:1:322",
         "house:119:1:329",
@@ -457,6 +462,10 @@
         "house:119:1:300",
         "house:119:1:301",
         "house:119:1:303",
+        "house:119:1:304",
+        "house:119:1:310",
+        "house:119:1:311",
+        "house:119:1:316",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -534,6 +543,10 @@
         "house:119:1:285",
         "house:119:1:298",
         "house:119:1:306",
+        "house:119:1:312",
+        "house:119:1:313",
+        "house:119:1:314",
+        "house:119:1:315",
         "house:119:1:349",
         "house:119:1:362",
         "house:119:2:37",
@@ -571,16 +584,7 @@
         "house:119:1:295",
         "house:119:1:296",
         "house:119:1:299",
-        "house:119:1:304",
         "house:119:1:307",
-        "house:119:1:309",
-        "house:119:1:310",
-        "house:119:1:311",
-        "house:119:1:312",
-        "house:119:1:313",
-        "house:119:1:314",
-        "house:119:1:315",
-        "house:119:1:316",
         "house:119:1:318",
         "house:119:1:319",
         "house:119:1:320",
@@ -822,11 +826,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "66 proposed source-mapped inputs, not accepted eligibility. Of258 unresolved identities,257 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "70 proposed source-mapped inputs, not accepted eligibility. Of249 unresolved identities,248 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
-  "episode_completeness": "49 candidate episodes cover66 supplied actions, including9 multi-action episodes (six pairs, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). H.R.3838 passage remains under review. Exact actions are independently screened; related exclusions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "53 candidate episodes cover70 supplied actions, including9 multi-action episodes (six two-action episodes, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). Exact amendments, passage and concurrence remain independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "b030f89a4f153657b0642b27fd6d64e1079fef10632096f7e0cebdf4dbed4fdf",
+  "universe_subject_sha256": "dff539eaabdd030fb8538c984816e4d3d3e03474f4d4239b4a234c4146d093cb",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -21635,13 +21639,14 @@
       "date": "2025-11-20",
       "measure": "bill_119_hr_1949",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.1949 repeals Natural Gas Act3(a)–(c), reorganizes the remaining subsections and expands FERC’s exclusive facility-approval authority to natural-gas import/export facilities, including LNG terminals. It requires FERC to deem the gas importation/exportation consistent with the public interest, but retains the other federal facility-law savings, the state coastal/air/water-law savings and military-installation provisions in the remaining text. This is not automatic approval of every facility or repeal of all environmental requirements. The new savings clause retains Presidential constitutional, emergency, international-energy-allocation, wartime-trading and other sanctions authority to prohibit imports or exports. Read National Emergencies Act operative provisions, EPCA partB, relevant Trading with the Enemy Act powers and the state-sponsor definitions alongside the reused IEEPA1702 and717b captures. Existing humanitarian/sanctions exceptions and the renewable-energy information program’s possible healthcare-sector recipients are not newly created, repealed or funded by this action. The bill prints50USC4318(c)(1)(A) for ECRA1754(c)(1)(A); the official Code maps1754 to4813, while4318 concerns naturalized-citizen claims and has no such subsection. Preserve the printed defect; do not silently substitute it as enacted text or infer broader sanctions coverage. The exact change concerns gas trade/facility authorization and retained foreign-trade powers, without a changed medical-care, health-insurance or direct social-service delivery/financing mechanism. General energy-price, environmental or public-health consequences are not inferred as Health membership.",
       "source": {
         "source_id": "clerk:119:1:304",
         "url": "https://clerk.house.gov/evs/2025/roll304.xml",
         "raw_sha256": "e2a058c8c3fceb8c52c83a15e8d55d7ff754d46e6b3ec6b32168377fadf0f290",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "47aa24a51fb6bd0ad8ef99097bb0463860bc1042283505d899c7ed0a653103ae",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -21652,26 +21657,204 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.1949 repeals Natural Gas Act3(a)–(c), reorganizes the remaining subsections and expands FERC’s exclusive facility-approval authority to natural-gas import/export facilities, including LNG terminals. It requires FERC to deem the gas importation/exportation consistent with the public interest, but retains the other federal facility-law savings, the state coastal/air/water-law savings and military-installation provisions in the remaining text. This is not automatic approval of every facility or repeal of all environmental requirements. The new savings clause retains Presidential constitutional, emergency, international-energy-allocation, wartime-trading and other sanctions authority to prohibit imports or exports. Read National Emergencies Act operative provisions, EPCA partB, relevant Trading with the Enemy Act powers and the state-sponsor definitions alongside the reused IEEPA1702 and717b captures. Existing humanitarian/sanctions exceptions and the renewable-energy information program’s possible healthcare-sector recipients are not newly created, repealed or funded by this action. The bill prints50USC4318(c)(1)(A) for ECRA1754(c)(1)(A); the official Code maps1754 to4813, while4318 concerns naturalized-citizen claims and has no such subsection. Preserve the printed defect; do not silently substitute it as enacted text or infer broader sanctions coverage. The exact change concerns gas trade/facility authorization and retained foreign-trade powers, without a changed medical-care, health-insurance or direct social-service delivery/financing mechanism. General energy-price, environmental or public-health consequences are not inferred as Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:304",
           "url": "https://clerk.house.gov/evs/2025/roll304.xml",
           "raw_sha256": "e2a058c8c3fceb8c52c83a15e8d55d7ff754d46e6b3ec6b32168377fadf0f290",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "47aa24a51fb6bd0ad8ef99097bb0463860bc1042283505d899c7ed0a653103ae",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1949eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1949eh/html/BILLS-119hr1949eh.htm",
+          "raw_sha256": "d9c98db994d457f93115277221276d33840c7fc1bb2beb60d7b53e74ab292460",
+          "governed_bytes_sha256": "5253e0eafb154927dd0299bb783492fd931ef7d7aeaef50e761d987d31b313b2"
+        },
+        {
+          "source_id": "govinfo:50usc1601-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapI-sec1601.htm",
+          "raw_sha256": "f07f71467b43b186c46a5de4ca590d01532ee96d01d33d7b35696ba1174a96b5",
+          "governed_bytes_sha256": "ab79b5bbade51d6bafb465b04b8fb002c0eefc1d7d7b68094f45fe82cc6d84d5"
+        },
+        {
+          "source_id": "govinfo:50usc1621-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1621.htm",
+          "raw_sha256": "bfa4fc507779501ae8473dc7f36f8941181fd273dcfc9b8d975cdab46b337292",
+          "governed_bytes_sha256": "39515ed9d781d522127dcd0a1803189496efb595c2ba75b0d400f88e3e50748b"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "raw_sha256": "f856d35995666b82ac131edb02c496ed8d02ff08f219fc74a687b9d1aab4119f",
+          "governed_bytes_sha256": "10253600960c2528fa1104992c9bd07f91d24d808ecb01605e1c76f7f65d8b47"
+        },
+        {
+          "source_id": "govinfo:50usc1631-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapIII-sec1631.htm",
+          "raw_sha256": "e3cee7f03cec936ddd369b39074aceeab76abc39ed5515637f5fb1cb2588a9c0",
+          "governed_bytes_sha256": "c6a796b27dafd6cfb8c60bcaf6e2851a3507bccd3bd51d3d2407507243d397ba"
+        },
+        {
+          "source_id": "govinfo:50usc1641-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapIV-sec1641.htm",
+          "raw_sha256": "a778df94f4128a361fd3a0b04c43b1698ba2cf2803b11da0fce02e45ed5d6de4",
+          "governed_bytes_sha256": "d9c4993f7572cfe76224c1eb6f6c88977ca187930e7869ef3e2ca067e32515fb"
+        },
+        {
+          "source_id": "govinfo:50usc1651-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapV-sec1651.htm",
+          "raw_sha256": "db6cf957b9de8d412b0d0c5d426dde36aef3d5282765b4e928ce9c7b213c66b6",
+          "governed_bytes_sha256": "f39440210d088cf92c9d1650472c254d04f21be11960cee2d939657dc38404fc"
+        },
+        {
+          "source_id": "govinfo:50usc4301-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4301.htm",
+          "raw_sha256": "5468ffa457f8bcfb9a3d29adf3ee025364275c95cc3baf2b8909a50cd210dc0d",
+          "governed_bytes_sha256": "f83f6e6fbd863fdde4c1474a60cc47cf8a04bd9dd93423452ae8b41992651dab"
+        },
+        {
+          "source_id": "govinfo:50usc4302-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4302.htm",
+          "raw_sha256": "119e1b3a658429d34ec00b225a3e05054ba6939597828fce62dde96123221fb9",
+          "governed_bytes_sha256": "d3378e0e8de88d76942df8d44f8f854174150e8f11e7fb370bb2b7f1c72d15ba"
+        },
+        {
+          "source_id": "govinfo:50usc4303-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4303.htm",
+          "raw_sha256": "037596642522a54f09eb5b0de5da4c341deb822cfe5ea378ca0f51221fc4dc2a",
+          "governed_bytes_sha256": "c5ad76d96f8dcaa5878961d60ee17e414bdb181ba36de1e773a93308cfe47854"
+        },
+        {
+          "source_id": "govinfo:50usc4305-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4305.htm",
+          "raw_sha256": "a4e8057494b5b231635d3a1326e09bb310a4f2f335abf1b2cb45090e8eef1453",
+          "governed_bytes_sha256": "644ac2bd9f24868918cd2932e1e0573f48ef5ca44404fb2dff69b3ce59deff1c"
+        },
+        {
+          "source_id": "govinfo:50usc4318-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap53-sec4318.htm",
+          "raw_sha256": "849cb0b7dba1307aa95f4bebf5f575b039a9041c2158ee99c4abc6528016a31a",
+          "governed_bytes_sha256": "5bf7f57f66739470d6bc0409937c21dac977f3815806165b442b3dc1809a0012"
+        },
+        {
+          "source_id": "govinfo:42usc6271-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6271.htm",
+          "raw_sha256": "614469f61546816288024827dcf03b087e6ff4250a94b7d50f3cda6165004bf8",
+          "governed_bytes_sha256": "ebbb09c221135d876ac263580a35819b677463807b3eac494bd11fb185d1b460"
+        },
+        {
+          "source_id": "govinfo:42usc6272-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6272.htm",
+          "raw_sha256": "0c44de386ef951bf28ffaf29c727c153aba611b1fe3931bd04473b0ae0d18e49",
+          "governed_bytes_sha256": "d1af852e9e2fed48d973db57cc7375270f38426bf70eefc2a816b75ad27c10eb"
+        },
+        {
+          "source_id": "govinfo:42usc6273-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6273.htm",
+          "raw_sha256": "b99220987a7d139bbe0e395786e6a9eacdcbeb80ee740f8ae55ea5a412b885b0",
+          "governed_bytes_sha256": "32ad36eab5435d92f45fc04fc4ba631625fd975eea64558096bf892f698e9b77"
+        },
+        {
+          "source_id": "govinfo:42usc6274-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6274.htm",
+          "raw_sha256": "beea8f34eb7f9084bcd887cd250373392fcba5de2f1c1b07bfc668abafd12ba4",
+          "governed_bytes_sha256": "a0b3cc1c1f3d4b51da8ecd1d1bc28bb37b80b8a6c427c4e50303543a77e6de27"
+        },
+        {
+          "source_id": "govinfo:42usc6275-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6275.htm",
+          "raw_sha256": "073330c5e3d511db51f925cd98b73361e35aede08746a310056d5572b30e459f",
+          "governed_bytes_sha256": "bbb6cb79a3b42418c62bd6489cf9e68da23208d48a1079ccab100debee4b1a6d"
+        },
+        {
+          "source_id": "govinfo:42usc6276-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapII-partB-sec6276.htm",
+          "raw_sha256": "6abdef97ab158ae21495c6c988d839bf598d0d7f053d6563fd7e3e81ccaa4caf",
+          "governed_bytes_sha256": "cd348f56cf48c02d41a6cad6464a2cb118fb9d3de6b1dbf82aaf881e9acaf5fa"
+        },
+        {
+          "source_id": "govinfo:22usc2371-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapIII-partI-sec2371.htm",
+          "raw_sha256": "49638eeae99661618447bb1ddf888a67f947468fb82bbfea57b4757a14e409cb",
+          "governed_bytes_sha256": "00b626f2c68be656858b3f02bc4092db5f9c79de192bdf21360e9d6a93f90ccf"
+        },
+        {
+          "source_id": "govinfo:22usc2780-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap39-subchapIII-sec2780.htm",
+          "raw_sha256": "72778904c8ad74a7f758d3a49d5a064b9247d4d4d668afe286a50fe182c13d11",
+          "governed_bytes_sha256": "a4a4e53e2846e14a63d5daac4c6277701afb9340ba56061d53accadc7ac3268e"
+        },
+        {
+          "source_id": "govinfo:50usc4813-c-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap58-subchapI-sec4813.htm",
+          "raw_sha256": "bd83cbb9667b1e963b622e984e7941dc5dd1e4b2035393ed0c63682a8462b8b6",
+          "governed_bytes_sha256": "29c259185f037442a3d74ed521a061d5c85116fbcffb82ab07212dc8a3de6bfa"
+        },
+        {
+          "source_id": "govinfo:50usc4813-codification-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap58-subchapI-sec4813.htm",
+          "raw_sha256": "bd83cbb9667b1e963b622e984e7941dc5dd1e4b2035393ed0c63682a8462b8b6",
+          "governed_bytes_sha256": "ed0d4619f35f915aab948b68d15926140f19c2c292790556edc7159aa62a2845"
+        },
+        {
+          "source_id": "govinfo:15usc717b-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+          "raw_sha256": "ddd9fdc0d571c677ec58cfbb29634a763ecda3c14bdfaa2f3b6c48c85dad9176",
+          "governed_bytes_sha256": "b5a884b22a0edaecc644f31502e96b546a0873170bec9b7e6ef11457dd3f1825"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:304",
+        "source_ids": [
+          "clerk:119:1:304",
+          "govinfo:hr1949eh",
+          "govinfo:50usc1601-2024-operative",
+          "govinfo:50usc1621-2024-operative",
+          "govinfo:50usc1622-2024-operative",
+          "govinfo:50usc1631-2024-operative",
+          "govinfo:50usc1641-2024-operative",
+          "govinfo:50usc1651-2024-operative",
+          "govinfo:50usc4301-2024-operative",
+          "govinfo:50usc4302-2024-operative",
+          "govinfo:50usc4303-2024-operative",
+          "govinfo:50usc4305-2024-operative",
+          "govinfo:50usc4318-2024-operative",
+          "govinfo:42usc6271-2024-operative",
+          "govinfo:42usc6272-2024-operative",
+          "govinfo:42usc6273-2024-operative",
+          "govinfo:42usc6274-2024-operative",
+          "govinfo:42usc6275-2024-operative",
+          "govinfo:42usc6276-2024-operative",
+          "govinfo:22usc2371-2024-operative",
+          "govinfo:22usc2780-2024-operative",
+          "govinfo:50usc4813-c-2024",
+          "govinfo:50usc4813-codification-2024",
+          "govinfo:15usc717b-2024-operative",
+          "govinfo:50usc1702-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:304",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.1949 EH fully read (research107). Repeals15USC717b(a–c), renumbers later subsections, gives FERC exclusive LNG-facility approval and deems gas import/export public interest, retaining other federal facility and Presidential/sanctions powers. Reuse governed717b operative and50USC1702; complete50USC1601,42USC6271,50USC4301 and state-sponsor definitions22USC2371/2780 plus ECRA1754(c)(1)(A). Printed50USC4318(c)(1)(A) parenthetical appears mismatched; trace without silent repair. No membership decision yet."
-      }
+        "shared_review_record_sha256": "a871bdea0720c1b2733e85ea3ee86914b25fce7d2c6eee8d28d815550f5c151c"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:305",
@@ -21841,7 +22024,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Next fresh independent screening after prepared299/304: verify Clerk307 and exact H.R.4423 action/version, read full operative measure and incorporated authorities before Health membership. Then309/H.Res.916 and subsequent source/version groups in inventory; do not repeat completed301/302/303/305."
+        "next_action": "H.R.4423 EH, Clerk307 and full Report119-245 are governed in sources.json. It directs US voice/vote at IBRD to continue the2021 government-directed financing pause, with Treasury national-interest exception; report distinguishes continuing third-party civilian grants. Prepared governed World Bank IDA Articles PDF pages9–11 establish ex-officio IBRD/IDA directors but separate institutions/funds. Public ICR00254 (March27,2025) selectedPDF1/5/6/7/24 binds a Republic-of-Myanmar/Ministry-of-Health project, IDA credits, closureSeptember30,2024 and the2021 pause preventing additional-financing implementation. Full PDFcapturedresearch135; reviewedPDF1–9 and21–25 only, withPDF23 truncated segment subsequently recovered. Cover visually verifies Public Disclosure Authorized despite footer. Do not relabel the IDA financing as IBRD lending or a closed project as a live2025 grant. Finish exact statutory institution/scope and historical-versus-current financing analysis before membership. The shared-director fact alone does not resolve legal scope. Official2021 statement read via web but local403 not evidence capture. No exhausted-evidence or human-decision blocker asserted."
       }
     },
     {
@@ -21895,13 +22078,14 @@
       "date": "2025-12-02",
       "measure": "bill_119_hres_916",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The exact December 2 vote adopts H.Res.916, setting closed consideration procedures for six bills, with points of order waived, each substitute considered adopted/read, one hour of debate and one motion to recommit. For H.R.4312 it substitutes Rules Committee Print119-14 dated November26,2025 for the two committee substitutes; the full43-page print was read and its dated cover checked, rather than substituting the later Print119-29 now linked by Rules. That print includes athlete compensation/agent rules, qualified-institution care and mental-health duties, independent return-to-play decisions, continued aid subject to stated conditions, athletic-revenue thresholds, association governance, limited antitrust treatment, employment-status and preemption provisions, TitleIX savings language, fee restrictions and reporting. These are the text placed before the House, not medical services enacted by this rule. For H.R.1005/1049/1069 it deems the Education and Workforce substitutes adopted; those respectively impose foreign-funding disclosure, parent information rights and specified PRC-support funding conditions. H.R.1005’s old prohibition title does not replace its actual disclosure substitute. For H.R.2965/4305 it deems the Small Business substitutes adopted, concerning SBA regulatory budgeting/reporting and a small-entity burden hotline. All five RH substitutes were read in full. The rule does not itself pass any of the six bills. Its procedural choice remains non-counting Health context; the athlete-care and school-funding provisions require distinct substantive-action screening rather than assigning this procedural vote a direction on care. No eventual care outcome or enactment is inferred.",
       "source": {
         "source_id": "clerk:119:1:309",
         "url": "https://clerk.house.gov/evs/2025/roll309.xml",
         "raw_sha256": "a44e1b00c5098c7f483eec820f0ede286404025a9612a5b8227a98266713c678",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "56dfcb6a6fb49386bd923ee71effb8b36940947dc51cd540ffdbf7ae3a6789cc",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -21912,25 +22096,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The exact December 2 vote adopts H.Res.916, setting closed consideration procedures for six bills, with points of order waived, each substitute considered adopted/read, one hour of debate and one motion to recommit. For H.R.4312 it substitutes Rules Committee Print119-14 dated November26,2025 for the two committee substitutes; the full43-page print was read and its dated cover checked, rather than substituting the later Print119-29 now linked by Rules. That print includes athlete compensation/agent rules, qualified-institution care and mental-health duties, independent return-to-play decisions, continued aid subject to stated conditions, athletic-revenue thresholds, association governance, limited antitrust treatment, employment-status and preemption provisions, TitleIX savings language, fee restrictions and reporting. These are the text placed before the House, not medical services enacted by this rule. For H.R.1005/1049/1069 it deems the Education and Workforce substitutes adopted; those respectively impose foreign-funding disclosure, parent information rights and specified PRC-support funding conditions. H.R.1005’s old prohibition title does not replace its actual disclosure substitute. For H.R.2965/4305 it deems the Small Business substitutes adopted, concerning SBA regulatory budgeting/reporting and a small-entity burden hotline. All five RH substitutes were read in full. The rule does not itself pass any of the six bills. Its procedural choice remains non-counting Health context; the athlete-care and school-funding provisions require distinct substantive-action screening rather than assigning this procedural vote a direction on care. No eventual care outcome or enactment is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:309",
           "url": "https://clerk.house.gov/evs/2025/roll309.xml",
           "raw_sha256": "a44e1b00c5098c7f483eec820f0ede286404025a9612a5b8227a98266713c678",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "56dfcb6a6fb49386bd923ee71effb8b36940947dc51cd540ffdbf7ae3a6789cc",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres916eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres916eh/html/BILLS-119hres916eh.htm",
+          "raw_sha256": "40ca0b29b604f9b6508a2a54a49b820abb966af4a08f1181c2826530f06ab9e1",
+          "governed_bytes_sha256": "6df6ba4081744405127bef385780c26e21ab921f50601ba667b62f7ea736a4c6"
+        },
+        {
+          "source_id": "govinfo:hr1005rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1005rh/html/BILLS-119hr1005rh.htm",
+          "raw_sha256": "556294321a0dcda09287a7be7675971b3102e6d5f922ff598b9c4cae22905210",
+          "governed_bytes_sha256": "7e64a422630e3a6670c92183bcc6f7511a14764b155cd17ff052c6baf0173322"
+        },
+        {
+          "source_id": "govinfo:hr1049rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1049rh/html/BILLS-119hr1049rh.htm",
+          "raw_sha256": "9c475601bcceb76869a7d0ed0acb7064828a74790f0fe9d2a58053687f7a66bb",
+          "governed_bytes_sha256": "49aa226e6cb3740e9c2d119b509dfdcceaeb3c7b64dfc7c2b19a1a9af1c938cb"
+        },
+        {
+          "source_id": "govinfo:hr1069rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1069rh/html/BILLS-119hr1069rh.htm",
+          "raw_sha256": "c020dd6ed275b5f2b2129cc99cbc0792446bd5533f93584bf938e05e69976467",
+          "governed_bytes_sha256": "963097ce7e85b25351ce984f4ad4f3e400605e0549c931ec9363409ef58749c7"
+        },
+        {
+          "source_id": "govinfo:hr2965rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2965rh/html/BILLS-119hr2965rh.htm",
+          "raw_sha256": "79470711f3f920bf1e8b10303ca0d9a77eba6b077b99e103a38065e5d07091d1",
+          "governed_bytes_sha256": "b479cf067fbb7510f3962908f73da4fc0ed56c07884916d5642f4d95b6fc4e26"
+        },
+        {
+          "source_id": "govinfo:hr4305rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305rh/html/BILLS-119hr4305rh.htm",
+          "raw_sha256": "14227ab13da6f9b0d6dbecdd29fda9020720096a289d2f59e79cf5795f874b9e",
+          "governed_bytes_sha256": "59ba6fdc9ccc732ec29e3334efa487254abf2a1d8fff085dd2010cb876d91218"
+        },
+        {
+          "source_id": "rules:rcp119-14-20251126",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h4312_xml.pdf",
+          "raw_sha256": "7390bd6da461fc642755ba24262e09b4ada545ecfb0b7531d14fd89fd223465b",
+          "governed_bytes_sha256": "ae4af3a1b012a3730f029c7cda4f36a5afd4ffdab3c454f9fd4e2754054eaf44"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:309",
+        "source_ids": [
+          "clerk:119:1:309",
+          "govinfo:hres916eh",
+          "govinfo:hr1005rh",
+          "govinfo:hr1049rh",
+          "govinfo:hr1069rh",
+          "govinfo:hr2965rh",
+          "govinfo:hr4305rh",
+          "rules:rcp119-14-20251126"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:309",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "86938ad20b394a29737dafdedbeeb04fa858c56abc2e9e95db739f27d9d7d64c"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:310",
@@ -21939,13 +22183,14 @@
       "date": "2025-12-03",
       "measure": "bill_119_hr_2965",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.2965 requires the Small Business Administration’s own small-business regulatory budget to be no greater than zero in fiscal2026 and later years. Its cost definition includes new, modified and repealed rules; the operative budget requirement applies to SBA, not every Federal agency. A separate annual Office of Advocacy report covers other agencies’ rules affecting small businesses, beginning with fiscal2025, due within60 days after that fiscal year ends. The bill authorizes no additional appropriations. Read5USC551 and15USC632(a): the incorporated definitions concern agency rulemaking and independently owned, non-dominant businesses with applicable size standards; agencies may adopt appropriate alternative small-business definitions after consultation and public comment. Possible small healthcare businesses or health-related regulations are not denied, but reporting on another agency’s rules does not repeal those rules. The exact measure changes general regulatory budgeting/reporting rather than a medical-care, insurance or direct social-service delivery/financing mechanism. No resulting care-access or public-health effect is inferred.",
       "source": {
         "source_id": "clerk:119:1:310",
         "url": "https://clerk.house.gov/evs/2025/roll310.xml",
         "raw_sha256": "d53e1beb446c4df382a69a2ee3b794ed705592e86ed03a1a56234d70d2c535f0",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "1733d4cc9f50465a92bafcc860e0529ff096743e46c76f5e98559c758141434f",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -21956,25 +22201,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.2965 requires the Small Business Administration’s own small-business regulatory budget to be no greater than zero in fiscal2026 and later years. Its cost definition includes new, modified and repealed rules; the operative budget requirement applies to SBA, not every Federal agency. A separate annual Office of Advocacy report covers other agencies’ rules affecting small businesses, beginning with fiscal2025, due within60 days after that fiscal year ends. The bill authorizes no additional appropriations. Read5USC551 and15USC632(a): the incorporated definitions concern agency rulemaking and independently owned, non-dominant businesses with applicable size standards; agencies may adopt appropriate alternative small-business definitions after consultation and public comment. Possible small healthcare businesses or health-related regulations are not denied, but reporting on another agency’s rules does not repeal those rules. The exact measure changes general regulatory budgeting/reporting rather than a medical-care, insurance or direct social-service delivery/financing mechanism. No resulting care-access or public-health effect is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:310",
           "url": "https://clerk.house.gov/evs/2025/roll310.xml",
           "raw_sha256": "d53e1beb446c4df382a69a2ee3b794ed705592e86ed03a1a56234d70d2c535f0",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "1733d4cc9f50465a92bafcc860e0529ff096743e46c76f5e98559c758141434f",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr2965eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2965eh/html/BILLS-119hr2965eh.htm",
+          "raw_sha256": "2dcc250a64661f1fa98efd48c21475c409f4243d355ed36ae22e5b0ff1db9dea",
+          "governed_bytes_sha256": "60ea5fe14448cfb7e9092344d752942bede98c5ce0ff787f78dabe9dd707449c"
+        },
+        {
+          "source_id": "govinfo:5usc551-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+          "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+          "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+        },
+        {
+          "source_id": "govinfo:15usc632-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec632.htm",
+          "raw_sha256": "9848ab1e7195316a297a32303a1d2de465e14a3191d0c411577ec10beab84de3",
+          "governed_bytes_sha256": "0901fc490d3083435f0ac21caccd18e3d25b0f09a7c09d8bd89db4d28c38659f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:310",
+        "source_ids": [
+          "clerk:119:1:310",
+          "govinfo:hr2965eh",
+          "govinfo:5usc551-2024-operative",
+          "govinfo:15usc632-a-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:310",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ff5cc86cead89b115ea4e0cb9dd8230d1013b7deeb0a5158e5b80c0a95a4ee2f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:311",
@@ -21983,13 +22260,14 @@
       "date": "2025-12-03",
       "measure": "bill_119_hr_4305",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.4305 adds a hotline to the SBA Office of Advocacy’s existing complaint, counseling and policy-recommendation functions. Within180 days the Chief Counsel must establish and maintain notification methods and an accessible website for small entities to report compliance burdens from agency rules, guidance, policy statements or other activities. Within one year and annually thereafter, reports to SBA and Congress identify frequently reported burdens, affected sectors, submitting entities and geography, issuing agencies, recommendations and actions by the Chief Counsel. Incorporated5USC601 includes small businesses, independently owned non-dominant nonprofits and small governmental jurisdictions, with its defined rule scope;5USC551 supplies the agency definition. Healthcare providers could be among covered entities, but the hotline does not itself repeal or suspend a health rule, enact its recommendations, or change a care or benefit entitlement. This is general small-entity regulatory advocacy administration without an exact Health delivery/financing change under the declared boundary.",
       "source": {
         "source_id": "clerk:119:1:311",
         "url": "https://clerk.house.gov/evs/2025/roll311.xml",
         "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -22000,25 +22278,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.4305 adds a hotline to the SBA Office of Advocacy’s existing complaint, counseling and policy-recommendation functions. Within180 days the Chief Counsel must establish and maintain notification methods and an accessible website for small entities to report compliance burdens from agency rules, guidance, policy statements or other activities. Within one year and annually thereafter, reports to SBA and Congress identify frequently reported burdens, affected sectors, submitting entities and geography, issuing agencies, recommendations and actions by the Chief Counsel. Incorporated5USC601 includes small businesses, independently owned non-dominant nonprofits and small governmental jurisdictions, with its defined rule scope;5USC551 supplies the agency definition. Healthcare providers could be among covered entities, but the hotline does not itself repeal or suspend a health rule, enact its recommendations, or change a care or benefit entitlement. This is general small-entity regulatory advocacy administration without an exact Health delivery/financing change under the declared boundary.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:311",
           "url": "https://clerk.house.gov/evs/2025/roll311.xml",
           "raw_sha256": "3bbc3c5987160d60c7d77723661d7fe3655d783ee14fc9c81eb024d8eb6b1148",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "605b65af551f373301c64f5088e16b49d99d6530ca2893d7b22800e039ee5892",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr4305eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4305eh/html/BILLS-119hr4305eh.htm",
+          "raw_sha256": "1aed61acdeee4e56ee3ce28e0e0b16a487bc249377e8def2747bc73a73bb8e51",
+          "governed_bytes_sha256": "feaf9caa3615ad5fc41be2814d1645ffa298e1e58b14f364148e1ff9a2e85f9d"
+        },
+        {
+          "source_id": "govinfo:15usc634c-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec634c.htm",
+          "raw_sha256": "0b5e8e8c4e9f233c86026e8982914102a838eed183d25287a57d04f51eb41384",
+          "governed_bytes_sha256": "91c2fd70e4ecba4be0a55d4656dc20be713614d04840c680a39b9778265f5e75"
+        },
+        {
+          "source_id": "govinfo:5usc551-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec551.htm",
+          "raw_sha256": "89c053eb4d4ce537fba8f05c82d139c2ea4a75269c0e10e2e695b36b74b58c19",
+          "governed_bytes_sha256": "b18951ffc98aac9d86bf3a759c947eb2732a694f494d31168e0bd94f2bec4839"
+        },
+        {
+          "source_id": "govinfo:5usc601-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap6-sec601.htm",
+          "raw_sha256": "d2888aea952bfd037b041868657491ef49a7307b6fbd0872017f81e3581cf1e8",
+          "governed_bytes_sha256": "115c50f8fbd1073be3c5a815723a8ac4e9631895ee6760eb2dca1dd027ebf463"
+        },
+        {
+          "source_id": "govinfo:15usc632-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec632.htm",
+          "raw_sha256": "9848ab1e7195316a297a32303a1d2de465e14a3191d0c411577ec10beab84de3",
+          "governed_bytes_sha256": "0901fc490d3083435f0ac21caccd18e3d25b0f09a7c09d8bd89db4d28c38659f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:311",
+        "source_ids": [
+          "clerk:119:1:311",
+          "govinfo:hr4305eh",
+          "govinfo:15usc634c-2024-operative",
+          "govinfo:5usc551-2024-operative",
+          "govinfo:5usc601-2024-operative",
+          "govinfo:15usc632-a-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:311",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2b926852d6cce141060081831c8c99617cfb69adda5f91e2eb2cac5f64381343"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:312",
@@ -22027,15 +22351,16 @@
       "date": "2025-12-03",
       "measure": "bill_119_hr_1005",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.1005 makes disclosure a condition for a public elementary or secondary school to receive Federal financial assistance under an applicable education program. Within 30 days after receiving more than $10,000 in aggregate funds from a foreign source, or entering one or more contracts with that source worth more than $10,000 in aggregate, the school must provide a written disclosure to the Education Secretary. The disclosure identifies the source’s name and country; for funds, the amount and conditions; for contracts, the terms and conditions. The text does not specify an annual reset for the aggregate threshold. The passed text is a disclosure condition, not the foreign-funding prohibition suggested by the earlier title.\n\nThe financial-assistance definition includes grants, loans, property and specified other assistance but excludes amounts received as reimbursement for services rendered to individuals in accordance with OMB guidance. The candidate therefore does not treat every individual medical-service reimbursement as covered assistance. The incorporated foreign-source definition covers foreign governments and agencies, legal entities created solely under foreign-state laws, individuals who are not citizens or nationals of the United States or its trust territories/protectorates, and agents acting for a foreign source, including subsidiaries or affiliates; it is not limited to China.\n\nThe proposed Health connection is the changed funding condition, not the title or an inferred effect of foreign influence on children. GEPA defines an applicable program as a program administered by the Education Secretary or Department. A concrete covered channel is the ESEA Student Support and Academic Enrichment program: the Secretary allots funds to States, States reserve at least 95 percent for local agencies, and approved local applications distribute resources to schools under the statutory priorities. Permitted activities include school-based mental-health identification, counseling referrals and qualified mental-health partnership services. The existing grants also cover many educational activities. The usual 20-percent safe-and-healthy-student allocation is not a mental-health earmark, and grants below $30,000 have a special rule. This tracing does not assume that every school receives the same grant or operates a mental-health program.\n\nThe existing TitleIV safeguards remain: prior informed written parental consent for school-connected mental-health assessment or services for children under 18, subject to immediate-safety and specified unobtainable-consent exceptions; a bar on medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; and limits on program content and mandatory medication. The related-services definition includes a limited diagnostic/evaluation medical component and excludes surgically implanted devices and replacement. These conditions are not rewritten by the bill. No named school’s eligibility, compliance, grant loss or resulting patient outcome has been established, and this candidate does not claim that all Federal school funding is medical funding.\n\nThe House passed this text on December3,2025. A Yea supports the complete disclosure-and-funding-condition bill, and a Nay opposes it without demonstrating support for secrecy or opposition to school mental-health care. Recorded Not Voting statuses remain non-directional and supply no inferred reason for the non-vote.",
       "source": {
         "source_id": "clerk:119:1:312",
         "url": "https://clerk.house.gov/evs/2025/roll312.xml",
         "raw_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "ef3f471938127b7f14f892b4a7223ce556b549c7819581e0f1027e04629cb60a",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1005:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1005",
       "member_action": "not_voting",
@@ -22044,25 +22369,134 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.1005 makes disclosure a condition for a public elementary or secondary school to receive Federal financial assistance under an applicable education program. Within 30 days after receiving more than $10,000 in aggregate funds from a foreign source, or entering one or more contracts with that source worth more than $10,000 in aggregate, the school must provide a written disclosure to the Education Secretary. The disclosure identifies the source’s name and country; for funds, the amount and conditions; for contracts, the terms and conditions. The text does not specify an annual reset for the aggregate threshold. The passed text is a disclosure condition, not the foreign-funding prohibition suggested by the earlier title.\n\nThe financial-assistance definition includes grants, loans, property and specified other assistance but excludes amounts received as reimbursement for services rendered to individuals in accordance with OMB guidance. The candidate therefore does not treat every individual medical-service reimbursement as covered assistance. The incorporated foreign-source definition covers foreign governments and agencies, legal entities created solely under foreign-state laws, individuals who are not citizens or nationals of the United States or its trust territories/protectorates, and agents acting for a foreign source, including subsidiaries or affiliates; it is not limited to China.\n\nThe proposed Health connection is the changed funding condition, not the title or an inferred effect of foreign influence on children. GEPA defines an applicable program as a program administered by the Education Secretary or Department. A concrete covered channel is the ESEA Student Support and Academic Enrichment program: the Secretary allots funds to States, States reserve at least 95 percent for local agencies, and approved local applications distribute resources to schools under the statutory priorities. Permitted activities include school-based mental-health identification, counseling referrals and qualified mental-health partnership services. The existing grants also cover many educational activities. The usual 20-percent safe-and-healthy-student allocation is not a mental-health earmark, and grants below $30,000 have a special rule. This tracing does not assume that every school receives the same grant or operates a mental-health program.\n\nThe existing TitleIV safeguards remain: prior informed written parental consent for school-connected mental-health assessment or services for children under 18, subject to immediate-safety and specified unobtainable-consent exceptions; a bar on medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; and limits on program content and mandatory medication. The related-services definition includes a limited diagnostic/evaluation medical component and excludes surgically implanted devices and replacement. These conditions are not rewritten by the bill. No named school’s eligibility, compliance, grant loss or resulting patient outcome has been established, and this candidate does not claim that all Federal school funding is medical funding.\n\nThe House passed this text on December3,2025. A Yea supports the complete disclosure-and-funding-condition bill, and a Nay opposes it without demonstrating support for secrecy or opposition to school mental-health care. Recorded Not Voting statuses remain non-directional and supply no inferred reason for the non-vote.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:312",
           "url": "https://clerk.house.gov/evs/2025/roll312.xml",
           "raw_sha256": "8abdd3a7f7dc6c82b69468c3d0c1bfb0a3ee05dadd7fb5af48b29d98a209cb8e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "ef3f471938127b7f14f892b4a7223ce556b549c7819581e0f1027e04629cb60a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1005eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1005eh/html/BILLS-119hr1005eh.htm",
+          "raw_sha256": "749678c78c368ade759dc30d146e0847da811cd10b1e4cfca941000c672eca63",
+          "governed_bytes_sha256": "64dfcb92f2af21c4707679edf572d04b3e493be71a5eec780f87bcdf53fb0e2b"
+        },
+        {
+          "source_id": "govinfo:20usc1221-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm",
+          "raw_sha256": "eba1c07e456da5b9cb85926d66e2ec1f456479014e80ea78da29b3f798ab04b4",
+          "governed_bytes_sha256": "8befce9779a9bca094d25717d8a37f66bf4a9c4c256167c847f2ed3d3d695802"
+        },
+        {
+          "source_id": "govinfo:20usc7113-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm",
+          "raw_sha256": "827bbac67f8f1a9f50f03399786d1ba8ee043c72c3ed0cc9a64959cfe2835dae",
+          "governed_bytes_sha256": "065a87379d5178ee80c912a061758bb166060a030b6d72c5a79c29fa7cf57570"
+        },
+        {
+          "source_id": "govinfo:20usc7114-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm",
+          "raw_sha256": "7df52ff004c1c8aaf0878df9c9d7f372182919f079166046541fd3bed1feef31",
+          "governed_bytes_sha256": "6130fe2a55ee9130d1ffe5bdfbd83fc92c98cbf69c28da62731264a4bd02130c"
+        },
+        {
+          "source_id": "govinfo:20usc7115-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm",
+          "raw_sha256": "e386a6a1c0eec7d3d15662c19a0a098655f8a08ad69bd7865877e80954e6c2dd",
+          "governed_bytes_sha256": "4b62c701fbf95fd599e53c195a15dc3cc61c5747c33f52c83ca57c1225a4ce50"
+        },
+        {
+          "source_id": "govinfo:20usc7116-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm",
+          "raw_sha256": "8dff8a91f5bb7ef986bea0077beadc5736b70d51583c70308e4b30daf88a8b83",
+          "governed_bytes_sha256": "aab6797f6c944a764afe60af12605aff2f605ce9b7aa1286f02310d4fd1cdd2b"
+        },
+        {
+          "source_id": "govinfo:20usc7118-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm",
+          "raw_sha256": "cd9b60b70ae1356c712a2a87a2b1ee42baa410f2bdda138066d41bb2ac63a1c8",
+          "governed_bytes_sha256": "e2f5d35a3a4267230324c59b261e8ee20422fedc1cfd14b8eede016794872d16"
+        },
+        {
+          "source_id": "govinfo:20usc7101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm",
+          "raw_sha256": "6b8f05692aa02e4f9d04064c67742cbdd27921c432bed9d1366d6a2c9ca336bc",
+          "governed_bytes_sha256": "15c2665b516f12fedb398a6ad3e9196cd43fc04889699a84cf85120aeaf78f80"
+        },
+        {
+          "source_id": "govinfo:20usc7121-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm",
+          "raw_sha256": "2dac23a001e93edafc1e09d22442abb055c9f13e3e2650637f835c881effbcef",
+          "governed_bytes_sha256": "87879cea6112f690ff557a4252afa821a85b379c89d964bb2bcf3ee8f44e5211"
+        },
+        {
+          "source_id": "govinfo:20usc7906-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm",
+          "raw_sha256": "cf0ea95142af613176908a3aa81de487840ad7587197837979c066839a9fa599",
+          "governed_bytes_sha256": "38b8d21e93e071d35a3de3fd3ca679467d970325a8aa39f78849ae6266dcc3fc"
+        },
+        {
+          "source_id": "govinfo:20usc7801-school-definitions-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm",
+          "raw_sha256": "4e8ce29846d0664b195c7dd99c98626dd9486945c27271851740e11e2bc17476",
+          "governed_bytes_sha256": "8d66a3eb581747bd4959159ea8a1dac3b5cfa59605dd829b455a452f0390b42e"
+        },
+        {
+          "source_id": "govinfo:20usc1401-26-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm",
+          "raw_sha256": "7cac2683a3b8d8dc4fdb37a3697975a018cb0279b7dae9743c69fa7d1af155f4",
+          "governed_bytes_sha256": "d9fcc6d16a65778813253155c7bee0461f360147f34235cc7a94f78c7d7c5620"
+        },
+        {
+          "source_id": "govinfo:31usc7501-a5-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleV-chap75-sec7501.htm",
+          "raw_sha256": "90a337a1a7dd8c87fc8c86035d665fa10b4eca2a0ec3b8dc4aca5d1690b791ef",
+          "governed_bytes_sha256": "3a36a5b0baa91af8dc3032843e4624c4ccf75805bcb7d0d1af01a075dffadc0f"
+        },
+        {
+          "source_id": "govinfo:20usc1011f-h-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partB-sec1011f.htm",
+          "raw_sha256": "abc6f8a7a37ec393f5b5fc0b50e857047022c5ab4d1808cdc08396ce1dca4a24",
+          "governed_bytes_sha256": "950b4e90c3f55394daba32d6754d05e801122fc191025c137feda95006bf6fca"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:312",
+        "source_ids": [
+          "clerk:119:1:312",
+          "govinfo:hr1005eh",
+          "govinfo:20usc1221-2024-operative",
+          "govinfo:20usc7113-2024-operative",
+          "govinfo:20usc7114-2024-operative",
+          "govinfo:20usc7115-2024-operative",
+          "govinfo:20usc7116-2024-operative",
+          "govinfo:20usc7118-2024-operative",
+          "govinfo:20usc7101-2024-operative",
+          "govinfo:20usc7121-2024-operative",
+          "govinfo:20usc7906-2024-operative",
+          "govinfo:20usc7801-school-definitions-2024",
+          "govinfo:20usc1401-26-2024",
+          "govinfo:31usc7501-a5-2024",
+          "govinfo:20usc1011f-h-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:312",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "daf97edd155effe5e9edfe066e1ce13d09a2fd3adea5e15a66ebcab6472b09a1"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:313",
@@ -22071,15 +22505,16 @@
       "date": "2025-12-04",
       "measure": "bill_119_hr_1069",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.1069 prohibits funds under applicable education programs from being made available to an elementary or secondary school with specified direct or indirect support from the Government of the People’s Republic of China. The covered circumstances are a partnership with a government-funded cultural or language institute, operation of a government-supported learning center, or other support from an individual or entity acting directly or indirectly on behalf of that government, including materials, personnel, money or other resources. This is a restriction tied to those circumstances, not a prohibition on every foreign donation or every Chinese person or organization.\n\nThe prohibition begins one year after enactment. Within 90 days the Education Secretary must notify schools and provide compliance guidance. A qualifying contract must take effect before enactment, remain in effect beyond the one-year effective date and relate to a covered circumstance. A school must timely request a waiver with the full unredacted contract, an English translation if needed, and a statement demonstrating the contract’s benefit to its mission and students and promotion of US security, stability and economic vitality. The Secretary may grant a waiver from the effective date until contract termination; it is discretionary, not an automatic exemption for every existing arrangement.\n\nThe proposed Health connection is the changed funding condition, not the title or an inferred effect of foreign influence on children. GEPA defines an applicable program as a program administered by the Education Secretary or Department. A concrete covered channel is the ESEA Student Support and Academic Enrichment program: the Secretary allots funds to States, States reserve at least 95 percent for local agencies, and approved local applications distribute resources to schools under the statutory priorities. Permitted activities include school-based mental-health identification, counseling referrals and qualified mental-health partnership services. The existing grants also cover many educational activities. The usual 20-percent safe-and-healthy-student allocation is not a mental-health earmark, and grants below $30,000 have a special rule. This tracing does not assume that every school receives the same grant or operates a mental-health program.\n\nThe existing TitleIV safeguards remain: prior informed written parental consent for school-connected mental-health assessment or services for children under 18, subject to immediate-safety and specified unobtainable-consent exceptions; a bar on medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; and limits on program content and mandatory medication. The related-services definition includes a limited diagnostic/evaluation medical component and excludes surgically implanted devices and replacement. These conditions are not rewritten by the bill. No named school’s eligibility, compliance, grant loss or resulting patient outcome has been established, and this candidate does not claim that all Federal school funding is medical funding.\n\nThe House passed this text on December4,2025. A Yea supports the complete delayed funding prohibition with its contract-waiver process; a Nay opposes that package. Neither choice separately establishes a position on mental-health care, foreign-language teaching or every relationship with China. No enactment or later enforcement outcome is inferred.",
       "source": {
         "source_id": "clerk:119:1:313",
         "url": "https://clerk.house.gov/evs/2025/roll313.xml",
         "raw_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "3d0abb0d44d7aa36751e7fd10a5f05081c8b9129a716b265153dc9a7e756aa97",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1069:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1069",
       "member_action": "nay",
@@ -22088,25 +22523,120 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.1069 prohibits funds under applicable education programs from being made available to an elementary or secondary school with specified direct or indirect support from the Government of the People’s Republic of China. The covered circumstances are a partnership with a government-funded cultural or language institute, operation of a government-supported learning center, or other support from an individual or entity acting directly or indirectly on behalf of that government, including materials, personnel, money or other resources. This is a restriction tied to those circumstances, not a prohibition on every foreign donation or every Chinese person or organization.\n\nThe prohibition begins one year after enactment. Within 90 days the Education Secretary must notify schools and provide compliance guidance. A qualifying contract must take effect before enactment, remain in effect beyond the one-year effective date and relate to a covered circumstance. A school must timely request a waiver with the full unredacted contract, an English translation if needed, and a statement demonstrating the contract’s benefit to its mission and students and promotion of US security, stability and economic vitality. The Secretary may grant a waiver from the effective date until contract termination; it is discretionary, not an automatic exemption for every existing arrangement.\n\nThe proposed Health connection is the changed funding condition, not the title or an inferred effect of foreign influence on children. GEPA defines an applicable program as a program administered by the Education Secretary or Department. A concrete covered channel is the ESEA Student Support and Academic Enrichment program: the Secretary allots funds to States, States reserve at least 95 percent for local agencies, and approved local applications distribute resources to schools under the statutory priorities. Permitted activities include school-based mental-health identification, counseling referrals and qualified mental-health partnership services. The existing grants also cover many educational activities. The usual 20-percent safe-and-healthy-student allocation is not a mental-health earmark, and grants below $30,000 have a special rule. This tracing does not assume that every school receives the same grant or operates a mental-health program.\n\nThe existing TitleIV safeguards remain: prior informed written parental consent for school-connected mental-health assessment or services for children under 18, subject to immediate-safety and specified unobtainable-consent exceptions; a bar on medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; and limits on program content and mandatory medication. The related-services definition includes a limited diagnostic/evaluation medical component and excludes surgically implanted devices and replacement. These conditions are not rewritten by the bill. No named school’s eligibility, compliance, grant loss or resulting patient outcome has been established, and this candidate does not claim that all Federal school funding is medical funding.\n\nThe House passed this text on December4,2025. A Yea supports the complete delayed funding prohibition with its contract-waiver process; a Nay opposes that package. Neither choice separately establishes a position on mental-health care, foreign-language teaching or every relationship with China. No enactment or later enforcement outcome is inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:313",
           "url": "https://clerk.house.gov/evs/2025/roll313.xml",
           "raw_sha256": "3bbfe202acde13926576f85c125ee16b909292a4dc32a046760c4642b77095d4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "3d0abb0d44d7aa36751e7fd10a5f05081c8b9129a716b265153dc9a7e756aa97",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1069eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1069eh/html/BILLS-119hr1069eh.htm",
+          "raw_sha256": "33d943985b20a5a91d4de4964efa1a155844048dfe0c62f7222f65ae981fb47e",
+          "governed_bytes_sha256": "c9c7cf958ef7825d607431cc0a97e57e8c5e7bcc4c380225df5c38ebff609be1"
+        },
+        {
+          "source_id": "govinfo:20usc1221-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap31-sec1221.htm",
+          "raw_sha256": "eba1c07e456da5b9cb85926d66e2ec1f456479014e80ea78da29b3f798ab04b4",
+          "governed_bytes_sha256": "8befce9779a9bca094d25717d8a37f66bf4a9c4c256167c847f2ed3d3d695802"
+        },
+        {
+          "source_id": "govinfo:20usc7113-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7113.htm",
+          "raw_sha256": "827bbac67f8f1a9f50f03399786d1ba8ee043c72c3ed0cc9a64959cfe2835dae",
+          "governed_bytes_sha256": "065a87379d5178ee80c912a061758bb166060a030b6d72c5a79c29fa7cf57570"
+        },
+        {
+          "source_id": "govinfo:20usc7114-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7114.htm",
+          "raw_sha256": "7df52ff004c1c8aaf0878df9c9d7f372182919f079166046541fd3bed1feef31",
+          "governed_bytes_sha256": "6130fe2a55ee9130d1ffe5bdfbd83fc92c98cbf69c28da62731264a4bd02130c"
+        },
+        {
+          "source_id": "govinfo:20usc7115-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm",
+          "raw_sha256": "e386a6a1c0eec7d3d15662c19a0a098655f8a08ad69bd7865877e80954e6c2dd",
+          "governed_bytes_sha256": "4b62c701fbf95fd599e53c195a15dc3cc61c5747c33f52c83ca57c1225a4ce50"
+        },
+        {
+          "source_id": "govinfo:20usc7116-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm",
+          "raw_sha256": "8dff8a91f5bb7ef986bea0077beadc5736b70d51583c70308e4b30daf88a8b83",
+          "governed_bytes_sha256": "aab6797f6c944a764afe60af12605aff2f605ce9b7aa1286f02310d4fd1cdd2b"
+        },
+        {
+          "source_id": "govinfo:20usc7118-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm",
+          "raw_sha256": "cd9b60b70ae1356c712a2a87a2b1ee42baa410f2bdda138066d41bb2ac63a1c8",
+          "governed_bytes_sha256": "e2f5d35a3a4267230324c59b261e8ee20422fedc1cfd14b8eede016794872d16"
+        },
+        {
+          "source_id": "govinfo:20usc7101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm",
+          "raw_sha256": "6b8f05692aa02e4f9d04064c67742cbdd27921c432bed9d1366d6a2c9ca336bc",
+          "governed_bytes_sha256": "15c2665b516f12fedb398a6ad3e9196cd43fc04889699a84cf85120aeaf78f80"
+        },
+        {
+          "source_id": "govinfo:20usc7121-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm",
+          "raw_sha256": "2dac23a001e93edafc1e09d22442abb055c9f13e3e2650637f835c881effbcef",
+          "governed_bytes_sha256": "87879cea6112f690ff557a4252afa821a85b379c89d964bb2bcf3ee8f44e5211"
+        },
+        {
+          "source_id": "govinfo:20usc7906-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm",
+          "raw_sha256": "cf0ea95142af613176908a3aa81de487840ad7587197837979c066839a9fa599",
+          "governed_bytes_sha256": "38b8d21e93e071d35a3de3fd3ca679467d970325a8aa39f78849ae6266dcc3fc"
+        },
+        {
+          "source_id": "govinfo:20usc7801-school-definitions-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm",
+          "raw_sha256": "4e8ce29846d0664b195c7dd99c98626dd9486945c27271851740e11e2bc17476",
+          "governed_bytes_sha256": "8d66a3eb581747bd4959159ea8a1dac3b5cfa59605dd829b455a452f0390b42e"
+        },
+        {
+          "source_id": "govinfo:20usc1401-26-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm",
+          "raw_sha256": "7cac2683a3b8d8dc4fdb37a3697975a018cb0279b7dae9743c69fa7d1af155f4",
+          "governed_bytes_sha256": "d9fcc6d16a65778813253155c7bee0461f360147f34235cc7a94f78c7d7c5620"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:313",
+        "source_ids": [
+          "clerk:119:1:313",
+          "govinfo:hr1069eh",
+          "govinfo:20usc1221-2024-operative",
+          "govinfo:20usc7113-2024-operative",
+          "govinfo:20usc7114-2024-operative",
+          "govinfo:20usc7115-2024-operative",
+          "govinfo:20usc7116-2024-operative",
+          "govinfo:20usc7118-2024-operative",
+          "govinfo:20usc7101-2024-operative",
+          "govinfo:20usc7121-2024-operative",
+          "govinfo:20usc7906-2024-operative",
+          "govinfo:20usc7801-school-definitions-2024",
+          "govinfo:20usc1401-26-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:313",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "803a8c7428d57cde42071703476884ee8627b0059cd322d36ebf5701a05d6402"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:314",
@@ -22115,15 +22645,16 @@
       "date": "2025-12-04",
       "measure": "bill_119_hr_1049",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "H.R.1049 adds a condition for local educational agencies to receive Elementary and Secondary Education Act funds: each school they serve must give parents specified access to information about foreign-supported materials, personnel and financial arrangements. The proposed Health connection is this explicit condition on the same local-agency funding stream that includes Student Support and Academic Enrichment grants. Under 20USC7115–7118 those grants may fund school-based mental-health services, identification, counseling referrals and qualified mental-health partnership programs. This is a funding-eligibility condition across a broad education statute, not a new mental-health appropriation, clinical treatment mandate or demonstrated reduction in services.\n\nA parent must be able to review and make free copies of covered curricular or professional-development material, consistently with copyright law, at least every four weeks and within 30 days of a written request. Within 30 days of a written request the school must disclose how many personnel are compensated in whole or part with covered foreign funds, and information about donations, written agreements and financial transactions with a foreign country or foreign entity of concern. The information includes the country or entity name and, where funds were received, their amount and terms. Each school must post an annual summary notice or widely disseminate it if it has no website. The Education Secretary must notify States annually; States must notify local agencies as their own condition of receiving ESEA funds. These are disclosure duties, not a prohibition on every foreign donation or a release of individual student medical records.\n\nThe incorporated foreign-entity definition includes designated terrorist organizations, Treasury-listed blocked persons, entities connected to the governments of the four covered nations, and the specified Attorney General or Commerce determinations. The four covered nations in 10USC4872(f)(2) are North Korea, China, Russia and Iran. Its defense-procurement prohibitions are not imported. The Attorney General category concerns alleged involvement in activities for which a conviction was obtained under the listed laws; the candidate does not adjudicate any entity or treat an allegation as an independently proven fact. The bill’s foreign-country definition excludes the ESEA outlying areas.\n\nThe existing grant framework remains. States allocate funds to local agencies with approved applications, using the specified prior TitleI share, with a $10,000 minimum subject to ratable reduction and permission for agency consortia. Local applications, consultation, needs assessment and annual reporting remain. The ordinary minimum 20-percent allocation to safe-and-healthy-student activities is not a mental-health earmark: multiple activities qualify, and grants below $30,000 have a special rule allowing only one of the three activity-category assurances. No particular school or provider is shown to lose funds, and no resulting service interruption is inferred.\n\nExisting care safeguards also remain. TitleIV generally requires informed written parental consent for school-connected mental-health assessment or services for children under 18, with immediate-safety and specified unobtainable-consent exceptions. It prohibits medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; it does not authorize unrestricted clinical spending. Specialized support includes the defined professional services and limited related services, whose medical component is diagnostic/evaluation and excludes surgically implanted devices and replacement. The separate limits on program content and mandatory medication remain. The December4,2025 House passage vote concerns the whole disclosure-and-funding-condition bill. A Yea supports that condition; a Nay opposes it without establishing opposition to parental information or support for undisclosed foreign influence. Neither choice alone establishes a position on mental-health services generally.",
       "source": {
         "source_id": "clerk:119:1:314",
         "url": "https://clerk.house.gov/evs/2025/roll314.xml",
         "raw_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "6f106ef6d044d9590c53758c6cd168aebabe71e983b7dff56aafbe5266200592",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1049:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1049",
       "member_action": "nay",
@@ -22132,25 +22663,113 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "H.R.1049 adds a condition for local educational agencies to receive Elementary and Secondary Education Act funds: each school they serve must give parents specified access to information about foreign-supported materials, personnel and financial arrangements. The proposed Health connection is this explicit condition on the same local-agency funding stream that includes Student Support and Academic Enrichment grants. Under 20USC7115–7118 those grants may fund school-based mental-health services, identification, counseling referrals and qualified mental-health partnership programs. This is a funding-eligibility condition across a broad education statute, not a new mental-health appropriation, clinical treatment mandate or demonstrated reduction in services.\n\nA parent must be able to review and make free copies of covered curricular or professional-development material, consistently with copyright law, at least every four weeks and within 30 days of a written request. Within 30 days of a written request the school must disclose how many personnel are compensated in whole or part with covered foreign funds, and information about donations, written agreements and financial transactions with a foreign country or foreign entity of concern. The information includes the country or entity name and, where funds were received, their amount and terms. Each school must post an annual summary notice or widely disseminate it if it has no website. The Education Secretary must notify States annually; States must notify local agencies as their own condition of receiving ESEA funds. These are disclosure duties, not a prohibition on every foreign donation or a release of individual student medical records.\n\nThe incorporated foreign-entity definition includes designated terrorist organizations, Treasury-listed blocked persons, entities connected to the governments of the four covered nations, and the specified Attorney General or Commerce determinations. The four covered nations in 10USC4872(f)(2) are North Korea, China, Russia and Iran. Its defense-procurement prohibitions are not imported. The Attorney General category concerns alleged involvement in activities for which a conviction was obtained under the listed laws; the candidate does not adjudicate any entity or treat an allegation as an independently proven fact. The bill’s foreign-country definition excludes the ESEA outlying areas.\n\nThe existing grant framework remains. States allocate funds to local agencies with approved applications, using the specified prior TitleI share, with a $10,000 minimum subject to ratable reduction and permission for agency consortia. Local applications, consultation, needs assessment and annual reporting remain. The ordinary minimum 20-percent allocation to safe-and-healthy-student activities is not a mental-health earmark: multiple activities qualify, and grants below $30,000 have a special rule allowing only one of the three activity-category assurances. No particular school or provider is shown to lose funds, and no resulting service interruption is inferred.\n\nExisting care safeguards also remain. TitleIV generally requires informed written parental consent for school-connected mental-health assessment or services for children under 18, with immediate-safety and specified unobtainable-consent exceptions. It prohibits medical services, drug treatment and rehabilitation except integrated student supports, specialized instructional support services and treatment referrals; it does not authorize unrestricted clinical spending. Specialized support includes the defined professional services and limited related services, whose medical component is diagnostic/evaluation and excludes surgically implanted devices and replacement. The separate limits on program content and mandatory medication remain. The December4,2025 House passage vote concerns the whole disclosure-and-funding-condition bill. A Yea supports that condition; a Nay opposes it without establishing opposition to parental information or support for undisclosed foreign influence. Neither choice alone establishes a position on mental-health services generally.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:314",
           "url": "https://clerk.house.gov/evs/2025/roll314.xml",
           "raw_sha256": "19e7b9a6d7305b5c4cb817be8f58d7cb5134e1b356a3fc4f78d900fbc1887536",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "6f106ef6d044d9590c53758c6cd168aebabe71e983b7dff56aafbe5266200592",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1049eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1049eh/html/BILLS-119hr1049eh.htm",
+          "raw_sha256": "1b1b37228f12b7fd8bae26d5b8c2ec8c29c7e12f18141c119484f2daafeb2c83",
+          "governed_bytes_sha256": "0b03393b8e6ecbea848a8ef16021118fc823409c9d5ab5f578c91eae2b75e14b"
+        },
+        {
+          "source_id": "govinfo:20usc7115-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7115.htm",
+          "raw_sha256": "e386a6a1c0eec7d3d15662c19a0a098655f8a08ad69bd7865877e80954e6c2dd",
+          "governed_bytes_sha256": "4b62c701fbf95fd599e53c195a15dc3cc61c5747c33f52c83ca57c1225a4ce50"
+        },
+        {
+          "source_id": "govinfo:20usc7116-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7116.htm",
+          "raw_sha256": "8dff8a91f5bb7ef986bea0077beadc5736b70d51583c70308e4b30daf88a8b83",
+          "governed_bytes_sha256": "aab6797f6c944a764afe60af12605aff2f605ce9b7aa1286f02310d4fd1cdd2b"
+        },
+        {
+          "source_id": "govinfo:20usc7118-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7118.htm",
+          "raw_sha256": "cd9b60b70ae1356c712a2a87a2b1ee42baa410f2bdda138066d41bb2ac63a1c8",
+          "governed_bytes_sha256": "e2f5d35a3a4267230324c59b261e8ee20422fedc1cfd14b8eede016794872d16"
+        },
+        {
+          "source_id": "govinfo:20usc7101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-sec7101.htm",
+          "raw_sha256": "6b8f05692aa02e4f9d04064c67742cbdd27921c432bed9d1366d6a2c9ca336bc",
+          "governed_bytes_sha256": "15c2665b516f12fedb398a6ad3e9196cd43fc04889699a84cf85120aeaf78f80"
+        },
+        {
+          "source_id": "govinfo:20usc7121-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapIV-partA-subpart1-sec7121.htm",
+          "raw_sha256": "2dac23a001e93edafc1e09d22442abb055c9f13e3e2650637f835c881effbcef",
+          "governed_bytes_sha256": "87879cea6112f690ff557a4252afa821a85b379c89d964bb2bcf3ee8f44e5211"
+        },
+        {
+          "source_id": "govinfo:20usc7906-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partF-subpart2-sec7906.htm",
+          "raw_sha256": "cf0ea95142af613176908a3aa81de487840ad7587197837979c066839a9fa599",
+          "governed_bytes_sha256": "38b8d21e93e071d35a3de3fd3ca679467d970325a8aa39f78849ae6266dcc3fc"
+        },
+        {
+          "source_id": "govinfo:20usc7801-school-definitions-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap70-subchapVIII-partA-sec7801.htm",
+          "raw_sha256": "4e8ce29846d0664b195c7dd99c98626dd9486945c27271851740e11e2bc17476",
+          "governed_bytes_sha256": "8d66a3eb581747bd4959159ea8a1dac3b5cfa59605dd829b455a452f0390b42e"
+        },
+        {
+          "source_id": "govinfo:20usc1401-26-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap33-subchapI-sec1401.htm",
+          "raw_sha256": "7cac2683a3b8d8dc4fdb37a3697975a018cb0279b7dae9743c69fa7d1af155f4",
+          "governed_bytes_sha256": "d9fcc6d16a65778813253155c7bee0461f360147f34235cc7a94f78c7d7c5620"
+        },
+        {
+          "source_id": "govinfo:42usc19221-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm",
+          "raw_sha256": "9110c4c8cf8957124a98b621e563273ca97a824fe01b9dbd2f2c20ac70bbaa58",
+          "governed_bytes_sha256": "116cdadb96a2bfbbf57f6e5fdf5714612fc020fecc18a5412ee0486b20c54dc7"
+        },
+        {
+          "source_id": "govinfo:10usc4872-f2-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "raw_sha256": "2765677d90e12aa1d50f3f6375c80f8b55f3c9d46fe31983ed58625874707104",
+          "governed_bytes_sha256": "d2bbc541203d80de6e7518ae377625b8333008cbfdeeff15c6ee0432abcce411"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:314",
+        "source_ids": [
+          "clerk:119:1:314",
+          "govinfo:hr1049eh",
+          "govinfo:20usc7115-2024-operative",
+          "govinfo:20usc7116-2024-operative",
+          "govinfo:20usc7118-2024-operative",
+          "govinfo:20usc7101-2024-operative",
+          "govinfo:20usc7121-2024-operative",
+          "govinfo:20usc7906-2024-operative",
+          "govinfo:20usc7801-school-definitions-2024",
+          "govinfo:20usc1401-26-2024",
+          "govinfo:42usc19221-a-2024",
+          "govinfo:10usc4872-f2-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:314",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c9531c5fa24f2a4faf97851b8d17241f4e2c37f8ab95d5155112663246ecdcc8"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:315",
@@ -22159,15 +22778,16 @@
       "date": "2025-12-09",
       "measure": "bill_119_s_356",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "S.356 extends Secure Rural Schools payments through fiscal 2026 and requires the fiscal 2024 and 2025 payments within 45 days after enactment, reduced by the specified revenue-sharing payments already received or distributed before enactment. It carries forward the counties’ fiscal 2023 payment and allocation elections for 2024 and 2025 and extends the California distribution provision through 2026. The existing payment formulas and allocation rules remain: generally 80–85 percent follows the applicable school/road or county-fund use, with the remaining balance allocated to permitted projects or returned. Counties receiving at least $350,000 may allocate at most 7 percent of the total payment to Title III; counties receiving less than $100,000 may use all funds under the ordinary payment purposes. This is a broad county-funding package, not a medical-services appropriation alone.\n\nThe proposed Health connection is the extension of Title III county-project authority. It moves the project-initiation deadline from September 30, 2025 to September 30, 2028 and the deadline after which unobligated funds must be returned from September 30, 2026 to September 30, 2029. Incorporated 16 U.S.C. 7142 permits reimbursement of county-paid search-and-rescue and other emergency services performed on Federal land after approval, and directly related training/equipment. Uses require a 45-day public comment process and proposal to the relevant resource advisory committee; expenditure certification remains required. A pre-vote first-party Skamania EMS and Rescue report documents a $25,000 Title III award toward a patient-access and transport vehicle, with other costs met by its general fund. This supplies a concrete emergency-medical-response use of the authority, not a claim that every emergency service is clinical care, every county selects that use, or every use of that vehicle is federally reimbursable.\n\nTitle III also permits Firewise work, community wildfire plans and specified school broadband/digital-learning access; those uses are retained. Title II land-management project initiation and obligation deadlines likewise move to 2028 and 2029. The bill extends the resource advisory committee composition waiver and appointment pilot authorities to October 1, 2026, removes the pilot-program report-to-Congress requirement and makes limited wording/date corrections. It does not remove all committee oversight, public participation or project requirements.\n\nThe House considered the Senate-engrossed text under a motion to suspend the rules and pass on December 9, 2025, and agreed to it. The floor Record supplies the exact text and broader debate. Speakers’ predictions about school closures, services, employment, addiction and the reasons for timber-revenue changes are not adopted as proven outcomes or motives. Public Law 119-21 section 50301 separately directs receipts from specified long-term timber contracts to the Treasury general fund; S.356 does not repeal that provision, and the candidate does not treat all timber receipts as available county funds. The Health finding concerns the bounded emergency-response funding authority within one choice on the entire reauthorization.",
       "source": {
         "source_id": "clerk:119:1:315",
         "url": "https://clerk.house.gov/evs/2025/roll315.xml",
         "raw_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "20aa431399625b4c4183e24b9034f7260a2e8b0adc0745c83a8e53c54dbf59f2",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:s356:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_s_356",
       "member_action": "yea",
@@ -22176,25 +22796,204 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "S.356 extends Secure Rural Schools payments through fiscal 2026 and requires the fiscal 2024 and 2025 payments within 45 days after enactment, reduced by the specified revenue-sharing payments already received or distributed before enactment. It carries forward the counties’ fiscal 2023 payment and allocation elections for 2024 and 2025 and extends the California distribution provision through 2026. The existing payment formulas and allocation rules remain: generally 80–85 percent follows the applicable school/road or county-fund use, with the remaining balance allocated to permitted projects or returned. Counties receiving at least $350,000 may allocate at most 7 percent of the total payment to Title III; counties receiving less than $100,000 may use all funds under the ordinary payment purposes. This is a broad county-funding package, not a medical-services appropriation alone.\n\nThe proposed Health connection is the extension of Title III county-project authority. It moves the project-initiation deadline from September 30, 2025 to September 30, 2028 and the deadline after which unobligated funds must be returned from September 30, 2026 to September 30, 2029. Incorporated 16 U.S.C. 7142 permits reimbursement of county-paid search-and-rescue and other emergency services performed on Federal land after approval, and directly related training/equipment. Uses require a 45-day public comment process and proposal to the relevant resource advisory committee; expenditure certification remains required. A pre-vote first-party Skamania EMS and Rescue report documents a $25,000 Title III award toward a patient-access and transport vehicle, with other costs met by its general fund. This supplies a concrete emergency-medical-response use of the authority, not a claim that every emergency service is clinical care, every county selects that use, or every use of that vehicle is federally reimbursable.\n\nTitle III also permits Firewise work, community wildfire plans and specified school broadband/digital-learning access; those uses are retained. Title II land-management project initiation and obligation deadlines likewise move to 2028 and 2029. The bill extends the resource advisory committee composition waiver and appointment pilot authorities to October 1, 2026, removes the pilot-program report-to-Congress requirement and makes limited wording/date corrections. It does not remove all committee oversight, public participation or project requirements.\n\nThe House considered the Senate-engrossed text under a motion to suspend the rules and pass on December 9, 2025, and agreed to it. The floor Record supplies the exact text and broader debate. Speakers’ predictions about school closures, services, employment, addiction and the reasons for timber-revenue changes are not adopted as proven outcomes or motives. Public Law 119-21 section 50301 separately directs receipts from specified long-term timber contracts to the Treasury general fund; S.356 does not repeal that provision, and the candidate does not treat all timber receipts as available county funds. The Health finding concerns the bounded emergency-response funding authority within one choice on the entire reauthorization.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:315",
           "url": "https://clerk.house.gov/evs/2025/roll315.xml",
           "raw_sha256": "c2a9f596075011aa2040c5b47d95eb31c05364332cfa8ab3e23f810f44c7e736",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "20aa431399625b4c4183e24b9034f7260a2e8b0adc0745c83a8e53c54dbf59f2",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:s356es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s356es/html/BILLS-119s356es.htm",
+          "raw_sha256": "052bba15bded93128dc09031813072e45e1c40bf1c7d66ad7a3938f1c62391a9",
+          "governed_bytes_sha256": "2ece82b5e31561b9b596853a9a2bbaddb19838d09351939a47a98d6be82ae245"
+        },
+        {
+          "source_id": "govinfo:16usc7101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7101.htm",
+          "raw_sha256": "24e184fabecc5bf3b4bbf00bd947e8e945d3c85dfd4a5d86f647a81b07b787a1",
+          "governed_bytes_sha256": "e1c8aef1e442c764e78126be55ddbbc953bd33345f884da5941c9119bf7f14d9"
+        },
+        {
+          "source_id": "govinfo:16usc7102-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-sec7102.htm",
+          "raw_sha256": "d8b9834ece884a0ba5dcf80af7225ed3ced33041b488033ded7ec2db0f7397de",
+          "governed_bytes_sha256": "3d996ad9f8be2072d249f13454a19ddd3cbd69f3ea3ed9c39bc47ba6b490b9cf"
+        },
+        {
+          "source_id": "govinfo:16usc7111-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7111.htm",
+          "raw_sha256": "d4287772f48b40bd90bed2c1f4d8bf1244a6e12c6febac0288eb22a0475a5876",
+          "governed_bytes_sha256": "0c2fd58027426ebf27ecae8815f723ce6bb8400c727c96c0ec4802f8de4a91dd"
+        },
+        {
+          "source_id": "govinfo:16usc7112-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7112.htm",
+          "raw_sha256": "ef3dffd5223fad991bbb0972e4cae932fd6ff7ec1a5762d28ceeb98046f2db32",
+          "governed_bytes_sha256": "4e1519bcce4bb6a4e06e248466793c9b5e7d133d3da4765ae10e8cdc2a45ce63"
+        },
+        {
+          "source_id": "govinfo:16usc7113-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapI-sec7113.htm",
+          "raw_sha256": "377130852c1b2fcdb72bc8dbb261e78b08372b3f4be265bf6cdf044d49e45745",
+          "governed_bytes_sha256": "8bd6b35795c3d6a952b058708605483f3ec0bd2f4bf1e1df44d1df1a7e1f06f2"
+        },
+        {
+          "source_id": "govinfo:16usc7121-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7121.htm",
+          "raw_sha256": "6a8bd1a69302420edcb497289768e1f2f9f6b392262b71b37b6b4ed2fe83fd1a",
+          "governed_bytes_sha256": "5e5f73b9e51c39ae888e31c3f77c3f13b53b34f50f9b607b685a81d92ebcebe0"
+        },
+        {
+          "source_id": "govinfo:16usc7122-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7122.htm",
+          "raw_sha256": "e025d87dfcd4289912ebce4409af5c9fc85a5f7ab24bd61777d64ccb36eae2dd",
+          "governed_bytes_sha256": "a9267660d7e1e00e30dd01bae3b9be91e05156d842c28c84055564280e3aef1e"
+        },
+        {
+          "source_id": "govinfo:16usc7123-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7123.htm",
+          "raw_sha256": "2e41b322dace51b5ebba9354cb399259c3667044ffb42d3ff5efa7d67cc5c0c4",
+          "governed_bytes_sha256": "d26b637eb5feb1a14dc34da67fc69646e387666149c2b5dc8d0e4aac8b13e775"
+        },
+        {
+          "source_id": "govinfo:16usc7124-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7124.htm",
+          "raw_sha256": "dbb95cecdfc2b92d39753c10fcd71cde6c76dc06375abb8f3b8897014b92c581",
+          "governed_bytes_sha256": "e176c123311d0708f22f34add369aed035b4ce8d9b4a8ca7e6b1b1b9e5ff2b44"
+        },
+        {
+          "source_id": "govinfo:16usc7125-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7125.htm",
+          "raw_sha256": "8abc19cd20476e45cac6eaeee3f90488b954802b818b625a8733d5b22db61567",
+          "governed_bytes_sha256": "80c93162b837362be41dc33fa94513c4b7f03bf3125d6976158e891b384470c1"
+        },
+        {
+          "source_id": "govinfo:16usc7126-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7126.htm",
+          "raw_sha256": "437ef3be6b0147b4a2691706405ac6530425838978d754260febdcd738ea8747",
+          "governed_bytes_sha256": "a3017d8f62370880471d23e70073b38ee8706dbb2d0b770faf9616f1b32ba793"
+        },
+        {
+          "source_id": "govinfo:16usc7127-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7127.htm",
+          "raw_sha256": "516a81bc90775d96803de50a90a245ebaa9a2d201b20186361fb6fe92a10ab45",
+          "governed_bytes_sha256": "12f94145d149b58bac6d6bf0373c777ace0bb8b623279176898433161fad200c"
+        },
+        {
+          "source_id": "govinfo:16usc7128-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapII-sec7128.htm",
+          "raw_sha256": "772e7b656e21beb39a754f8a6173987c811872a019675f2eebf706607d4d97fe",
+          "governed_bytes_sha256": "8e6c382c219a5fea7a057111e5ea84e4595e9cabcee43e2e0fddb8c0fcbecce5"
+        },
+        {
+          "source_id": "govinfo:16usc7141-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7141.htm",
+          "raw_sha256": "f634ee76af65818f856e319a85070bbdcc8676c3f32f48dfc98778ea2348c4af",
+          "governed_bytes_sha256": "09a20ce7536439762569a95637bb922079156cdbbb3c508350b5714979e59735"
+        },
+        {
+          "source_id": "govinfo:16usc7142-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7142.htm",
+          "raw_sha256": "08ded1f5037e6e879b322087b48dc00c224def2b93c69de4fa2b85af0c61e8c3",
+          "governed_bytes_sha256": "28802af81aa977b0b061c3ce5073c3e5093c66019d146437adf5a739f02368c9"
+        },
+        {
+          "source_id": "govinfo:16usc7143-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7143.htm",
+          "raw_sha256": "ed20275b066b31ae39a4f3a7a486500f0a8aaf07f87860e700df38b1fe02f5a8",
+          "governed_bytes_sha256": "2354c604999e652d62a897b3d57adb0dc83ec3db7841c7054b7815a8778e2f67"
+        },
+        {
+          "source_id": "govinfo:16usc7144-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap90-subchapIII-sec7144.htm",
+          "raw_sha256": "936e598b551ec2b1485e63a9dae7e0ea68c4e91a7c517e7dd3cff2d284187252",
+          "governed_bytes_sha256": "f20183ed499996df3b8e9f0936096fe9407995af206aae1acdb3de2e4e35e3e7"
+        },
+        {
+          "source_id": "govinfo:16usc500-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap2-subchapI-sec500.htm",
+          "raw_sha256": "89a4188658eb37fe7ccbe5c7fb0aa8193bd2dc026797517180bcf2f5081c53f6",
+          "governed_bytes_sha256": "1ca793f7b49c0ea5f87871c0ff6b11e593e00d5c6a67066a14225d30fdadc724"
+        },
+        {
+          "source_id": "govinfo:43usc2605-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapI-sec2605.htm",
+          "raw_sha256": "31438bf1357332d970b231aa59d2f82d469741ac5d92cccc6bf4d41e8ccf1e03",
+          "governed_bytes_sha256": "7120392d14f823b8026b663cae915bc31b0b049ed58e1cf979a3be9150cd8642"
+        },
+        {
+          "source_id": "govinfo:43usc2621-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap44-subchapII-sec2621.htm",
+          "raw_sha256": "10f532d1e8e6515a7735be66e83cca95ff0f72406c59999a0fd5b1d1986dbe47",
+          "governed_bytes_sha256": "8ff7836f69586c5de363ddced85ccde4dfa05306d95681b3e02659e3059787df"
+        },
+        {
+          "source_id": "govinfo:pl119-21-section50301",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "c5513f3fd7fb0f187d979ce918b9c1aea9c4db8bd6a1491841e128858bc278e5"
+        },
+        {
+          "source_id": "congressional-record:2025-12-09-s356",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-09/html/CREC-2025-12-09-pt1-PgH5066-5.htm",
+          "raw_sha256": "7908cf4dc8c55f3caa67e0edc9d8258e260c6c573ba13ea4238e287df078da02",
+          "governed_bytes_sha256": "ab5d2386e53929563c27a5e10e8d35b2c36c53298ac52b4309fd7f8c5736d9b1"
+        },
+        {
+          "source_id": "skamania-ems:titleiii-20230315",
+          "url": "https://skamaniaems.com/2023/06/08/federal-grant-funds-title-iii-allow-for-purchase-of-multi-use-all-terrain-vehicle/",
+          "raw_sha256": "b36a2be122cf7d72c29d4b61220dc46887e1c57aa379447f4072114af1dee026",
+          "governed_bytes_sha256": "4e4b196aae1eba01d5fc92c36b57147540d06443f5fe520265ae7a61de63ad04"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:315",
+        "source_ids": [
+          "clerk:119:1:315",
+          "govinfo:s356es",
+          "govinfo:16usc7101-2024-operative",
+          "govinfo:16usc7102-2024-operative",
+          "govinfo:16usc7111-2024-operative",
+          "govinfo:16usc7112-2024-operative",
+          "govinfo:16usc7113-2024-operative",
+          "govinfo:16usc7121-2024-operative",
+          "govinfo:16usc7122-2024-operative",
+          "govinfo:16usc7123-2024-operative",
+          "govinfo:16usc7124-2024-operative",
+          "govinfo:16usc7125-2024-operative",
+          "govinfo:16usc7126-2024-operative",
+          "govinfo:16usc7127-2024-operative",
+          "govinfo:16usc7128-2024-operative",
+          "govinfo:16usc7141-2024-operative",
+          "govinfo:16usc7142-2024-operative",
+          "govinfo:16usc7143-2024-operative",
+          "govinfo:16usc7144-2024-operative",
+          "govinfo:16usc500-2024-operative",
+          "govinfo:43usc2605-2024-operative",
+          "govinfo:43usc2621-2024-operative",
+          "govinfo:pl119-21-section50301",
+          "congressional-record:2025-12-09-s356",
+          "skamania-ems:titleiii-20230315"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:315",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "72d8432b5610aa7b00ce1afe2dca2072a69dc911926b9051f7be297da573f672"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:316",
@@ -22203,13 +23002,14 @@
       "date": "2025-12-09",
       "measure": "bill_119_hr_1676",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R.1676 changes the approval process for State wildlife conservation and restoration programs under16USC669c(e)(3): a180-day approval deadline, conditional implementation authorization and fund set-aside on plan submission, a review process developed with States, prioritization and a status/reason report to the named congressional committees by June1 of the following year if the deadline is missed. Conditional implementation is not automatic final approval; the existing compliance finding, Federal cost-share limit and program conditions remain. The incorporated program covers wildlife conservation, wildlife-associated recreation and conservation education;669a defines wildlife as fauna, and669g(a) preserves the education restriction concerning opposition to regulated taking. The separate hunter-safety/target-range provision in669g(b) is not amended. Health of wildlife, recreation and safety do not themselves establish a human medical-care, insurance or direct social-service mechanism. This exact action concerns wildlife-plan administration and conservation funding, not Health membership.",
       "source": {
         "source_id": "clerk:119:1:316",
         "url": "https://clerk.house.gov/evs/2025/roll316.xml",
         "raw_sha256": "b3fa1c814d5783a5e48650d2e65d10739d0953d244241305fa5de90418a342ec",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "cf82c54a40c6490c44031f2da3c2bd3cd18662f4539c3015b9d5eb8f3ed46d2d",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -22220,25 +23020,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R.1676 changes the approval process for State wildlife conservation and restoration programs under16USC669c(e)(3): a180-day approval deadline, conditional implementation authorization and fund set-aside on plan submission, a review process developed with States, prioritization and a status/reason report to the named congressional committees by June1 of the following year if the deadline is missed. Conditional implementation is not automatic final approval; the existing compliance finding, Federal cost-share limit and program conditions remain. The incorporated program covers wildlife conservation, wildlife-associated recreation and conservation education;669a defines wildlife as fauna, and669g(a) preserves the education restriction concerning opposition to regulated taking. The separate hunter-safety/target-range provision in669g(b) is not amended. Health of wildlife, recreation and safety do not themselves establish a human medical-care, insurance or direct social-service mechanism. This exact action concerns wildlife-plan administration and conservation funding, not Health membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:316",
           "url": "https://clerk.house.gov/evs/2025/roll316.xml",
           "raw_sha256": "b3fa1c814d5783a5e48650d2e65d10739d0953d244241305fa5de90418a342ec",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "cf82c54a40c6490c44031f2da3c2bd3cd18662f4539c3015b9d5eb8f3ed46d2d",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr1676eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1676eh/html/BILLS-119hr1676eh.htm",
+          "raw_sha256": "08d3bae21bf0c8193d4cab4a5c22ccb17adbcf6b33d1d0cb8c26ad8c271a01ab",
+          "governed_bytes_sha256": "cca58c4cfa85df68ce18793e9b78a202f0bdb2ed4f8c5bb80b59dedfe245ee9b"
+        },
+        {
+          "source_id": "govinfo:16usc669a-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5B-sec669a.htm",
+          "raw_sha256": "4b24ace374ca1e24949684ceac6d7b56c4378ff6e3726ddbd16d8b94bd1832cc",
+          "governed_bytes_sha256": "61d2664e37069728b19ae108b250a529a747f7968cd8ecf6043ced79c2f8c281"
+        },
+        {
+          "source_id": "govinfo:16usc669c-e-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5B-sec669c.htm",
+          "raw_sha256": "2131899a8d8a8549b0b65dc1efac201c6676b1e07048a90c1cc4463331b8ddb4",
+          "governed_bytes_sha256": "1e00aa4dc75f6c468ad05937748f4e6e3ec27c362e01057301f1efb130e3f6cf"
+        },
+        {
+          "source_id": "govinfo:16usc669g-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5B-sec669g.htm",
+          "raw_sha256": "718140a0f8055cb058a5776a54a275e7535b9977fc1120a65fd0f6d8c8aa40c9",
+          "governed_bytes_sha256": "89f60d8f24856512d87a378a601f819a4a8b2eff44e602d36fb7f96ceb8e8baf"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:316",
+        "source_ids": [
+          "clerk:119:1:316",
+          "govinfo:hr1676eh",
+          "govinfo:16usc669a-2024-operative",
+          "govinfo:16usc669c-e-2024",
+          "govinfo:16usc669g-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:316",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9048d93bad3ae79d469fcbf52410bc0451b2089bacd422aefcf8dabc948d3300"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:317",
@@ -22325,7 +23164,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.Res.936 EH fully read and governed (research138). Structured HR3898 substitute from Transportation/Infrastructure RH plus Report partsA amendments; HR3383 deemed RCP119-15 plus partB; HR3638 partC; HR3628 partD; closed HR3668; S1071 deemed RCP119-16 with one motion to commit. Do not borrow the old S1071 burial title for the new package. Chairs may insert explanatory material throughDecember12. Section8 permits dispensing second-session organizational/legislative business beforeJan6,2026 and Journal approval. Obtain full incorporated prints/substitutes and exact Rules report before final procedural disposition; not passage of these bills."
       }
     },
     {
@@ -22545,7 +23385,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.3628 EH fully read/governed, research138. Adds PURPA111(d)(22) reliable-generation consideration standard:10-year planning,30-day continuous generation/fuel capability including contractual supply, emergency/severe-weather characteristics and grid support. Distinguish mandated State consideration/determination from automatic nationwide adoption. One-year hearing/consideration and two-year determination deadlines; prior comparable State action exceptions and prior/pending proceedings. GAO report withinone year. Finish16USC2602/2621/2622/2634 and exact Clerk323/sourceversion before membership; no medical-access effect inferred from grid reliability."
       }
     },
     {
@@ -22589,7 +23430,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "H.R.3638 EH fully read/governed, research138. DOE periodic supply-chain assessments and first report withinone year, later periodic reports. Retain advanced transmission/conductors, foreign-entity/AI vulnerabilities, noncitizen workforce assessment, veterans/transitioning-service-member/military-spouse workforce opportunities and recommendations; no recommendation automatically implemented. Complete30USC1606(a),42USC18741(a),16USC796 and FederalPowerAct215(a) definition. Printed42USC824o(a) appears title-number mismatch; trace16USC824o rather than silently repair. Existing DOEOrganizationAct context does not itself expand this reporting mandate into a Health intervention. VerifyClerk324; no membership disposition yet."
       }
     },
     {
@@ -39036,11 +39878,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "66 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
+    "basis": "70 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Research includes clinical-trial exceptions and exact veterans-benefit provisions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "ee2dcdc73d7e0ac61c0558b5841d8f15d282f7c8c4d1e5a10d66bfb977b41102",
+  "selection_sha256": "d198f7e63f8cbb38a1b94ddad9f1a2f1c4ccc9514c3f326d02e83a58a8e878b8",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -39086,6 +39928,10 @@
     "house:119:1:285",
     "house:119:1:298",
     "house:119:1:306",
+    "house:119:1:312",
+    "house:119:1:313",
+    "house:119:1:314",
+    "house:119:1:315",
     "house:119:1:32",
     "house:119:1:33",
     "house:119:1:349",
@@ -39119,16 +39965,7 @@
     "house:119:1:295",
     "house:119:1:296",
     "house:119:1:299",
-    "house:119:1:304",
     "house:119:1:307",
-    "house:119:1:309",
-    "house:119:1:310",
-    "house:119:1:311",
-    "house:119:1:312",
-    "house:119:1:313",
-    "house:119:1:314",
-    "house:119:1:315",
-    "house:119:1:316",
     "house:119:1:318",
     "house:119:1:319",
     "house:119:1:320",
@@ -39371,7 +40208,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "258 unresolved identities comprise257 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared262/294–296/299/304 and then307 onward using the committed next-action notes. Captured material alone is not substantive review.",
+    "basis": "249 unresolved identities comprise248 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared262/294–296/299/307 and subsequent inventory groups. Captured material alone is not substantive review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -39423,6 +40260,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "e8eaa9197b1fa50b48fe5c04c98e4cd0d1306d2a3a29df5bfb089e7d388238df",
-  "membership_review_sha256": "4ad1743199aeb135e7f770348f8d1f86ff7abd6ebafc8117a00d46aaa9f1a98e"
+  "proposal_sha256": "4ec297785ee83fd87e7733a17f84fe13c89c25755dda8cea36338004fd7aff50",
+  "membership_review_sha256": "aa3b2ed670f0f1122467f30bf0c980a7f58c205b721de31b88f49f9098542bbc"
 }
