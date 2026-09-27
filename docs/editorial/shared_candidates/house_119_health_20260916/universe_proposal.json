@@ -88,8 +88,10 @@
     "house:119:2:308",
     "house:119:2:31",
     "house:119:2:310",
+    "house:119:2:32",
     "house:119:2:37",
     "house:119:2:45",
+    "house:119:2:47",
     "house:119:2:5",
     "house:119:2:53",
     "house:119:2:6",
@@ -109,10 +111,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 199,
-      "exact_action_ineligible": 191,
-      "interpreted_substantive_directional": 78,
+      "exact_action_ineligible": 192,
+      "interpreted_substantive_directional": 80,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 197
+      "source_unresolved": 194
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -121,14 +123,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 78,
-    "directional_substantive_actions": 78,
+    "substantive_eligible_actions": 80,
+    "directional_substantive_actions": 80,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 199,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 191,
-    "unresolved_boundary_cases": 197,
-    "independent_episode_count": 59,
+    "exact_action_ineligible_actions": 192,
+    "unresolved_boundary_cases": 194,
+    "independent_episode_count": 61,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -141,12 +143,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 78,
-      "substantive_actions": 78,
+      "ready_substantive_actions": 80,
+      "substantive_actions": 80,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "196 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open. Existing7148roll45 has the corrected voting-stage boundary but broader package/report completeness still requires review before readiness."
+      "192 discovery identities still need substantive membership review. Two examined dependencies remain:2025roll237 printed-source discrepancy and2026roll44 section4exception versus explicit project appropriations; neither is silently treated as an exclusion. Existingroll45 has a separate broader-package completeness follow-up."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -520,6 +522,7 @@
         "house:119:2:29",
         "house:119:2:33",
         "house:119:2:38",
+        "house:119:2:43",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -611,8 +614,10 @@
         "house:119:2:8",
         "house:119:2:11",
         "house:119:2:31",
+        "house:119:2:32",
         "house:119:2:37",
         "house:119:2:45",
+        "house:119:2:47",
         "house:119:2:53",
         "house:119:2:128",
         "house:119:2:139",
@@ -652,11 +657,8 @@
         "house:119:2:23",
         "house:119:2:27",
         "house:119:2:28",
-        "house:119:2:32",
         "house:119:2:42",
-        "house:119:2:43",
         "house:119:2:44",
-        "house:119:2:47",
         "house:119:2:48",
         "house:119:2:49",
         "house:119:2:50",
@@ -836,11 +838,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "78 proposed source-mapped inputs, not accepted eligibility. Of197 unresolved identities,196 remain unfinished and one has an examined source conflict; none is presumed Health-eligible. An explicit existing7148package-completeness follow-up is not concealed by that count."
+    "count_basis": "80 proposed source-mapped inputs, not accepted eligibility or exhaustive package proof.194 unresolved identities comprise192 unfinished screenings plus two examined source/effect dependencies."
   },
-  "episode_completeness": "59 candidate episodes cover78 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation.",
+  "episode_completeness": "61 candidate episodes cover80 supplied actions, including10 multi-action episodes: six two-action episodes, the three-action H.R.6938 episode, four-action H.R.3838 and H.R.4016 episodes, and the six-action H.R.4553 episode. H.R.4371 care placement and H.R.3492 criminal restrictions are separate episodes. H.R.6938 separately represents DivisionA retention, DivisionsB/C retention and whole passage. Exact actions are independently screened; wider discovery/episode completeness remains unproven. H.R.504 contributes a separate enrolled-bill veto-override episode; the prior voice-vote passage is not fabricated as an extra recorded action within this676-identity boundary. H.R.2988 passage adds one episode; its pension-only study amendment is independently excluded, not a second Health observation. H.R.5763 adds one independently bound care-facility-financing episode. H.R.6359 adds one support-information episode; rejected7148driving amendment43 is separately proposed excluded.",
   "approval_receipt": null,
-  "universe_subject_sha256": "7e4f86c0070c340150874e99a03f67ba91d5a11bfe9d3f462d67539aa3f10c77",
+  "universe_subject_sha256": "53ad7a3a20307612cbf19655f615485977356b0301c64425fba9892e8f30de59",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -29566,15 +29568,16 @@
       "date": "2026-01-20",
       "measure": "bill_119_hr_5763",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The complete5763EH and floor text remove696(3)(C)(ii)/(iii) special-purpose construction equity minima and narrow(B)(ii), retaining new-business15percent/general10percent and discretion. The operative SBA2025SOP expressly classifies medical/nursing facilities as special-purpose property and retains licensed-care/credit conditions; this binds a direct care-facility financing mechanism, unlike speculative generic customer effects. The2025CFR baseline and pre-voteSeptembernotice preserve qualifications. Propose inclusion for the whole financing bill, not patient coverage, an automatic loan, a regulatory rewrite, enactment or a predicted outcome. Complete minority and floor support arguments were considered without accepting their empirical/forecast claims as proved.",
       "source": {
         "source_id": "clerk:119:2:32",
         "url": "https://clerk.house.gov/evs/2026/roll032.xml",
         "raw_sha256": "bd68eac5103682e0f1af70f5857b6b996f2fce34816bf4795a8b581ab069dc0f",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr5763:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_5763",
       "member_action": "yea",
@@ -29583,26 +29586,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "The complete5763EH and floor text remove696(3)(C)(ii)/(iii) special-purpose construction equity minima and narrow(B)(ii), retaining new-business15percent/general10percent and discretion. The operative SBA2025SOP expressly classifies medical/nursing facilities as special-purpose property and retains licensed-care/credit conditions; this binds a direct care-facility financing mechanism, unlike speculative generic customer effects. The2025CFR baseline and pre-voteSeptembernotice preserve qualifications. Propose inclusion for the whole financing bill, not patient coverage, an automatic loan, a regulatory rewrite, enactment or a predicted outcome. Complete minority and floor support arguments were considered without accepting their empirical/forecast claims as proved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:32",
           "url": "https://clerk.house.gov/evs/2026/roll032.xml",
           "raw_sha256": "bd68eac5103682e0f1af70f5857b6b996f2fce34816bf4795a8b581ab069dc0f",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr5763eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm",
+          "raw_sha256": "c928f453a07b098a5ba3557e415110ff6b32833653b9da82b49294d38ad133cd",
+          "governed_bytes_sha256": "a70466570b352573bf920e87cc8c60f19ed197e3e9204854438a9680da2c9bf3"
+        },
+        {
+          "source_id": "govinfo:15usc696-224-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm",
+          "raw_sha256": "eeed887bd77bcbf883c2829294068ce00c418f10464ff3c57d69f9fefd2d68f4",
+          "governed_bytes_sha256": "da993e852659e491075da455783fc1391af45680273903a591aa5418615f52b2"
+        },
+        {
+          "source_id": "sba:sop50108-20250601-special-purpose",
+          "url": "https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx",
+          "raw_sha256": "bf5cae038c3baeab115daee1ecd0151510426cd13d8dcbf13095fbf70fb17ac1",
+          "governed_bytes_sha256": "66ecad66f19e0b2935552bddbb5a47f9f67201d10e78d3eb82ac4a198238f37a"
+        },
+        {
+          "source_id": "govinfo:cfr2025-13-120910",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title13-vol1/pdf/CFR-2025-title13-vol1-part120.pdf",
+          "raw_sha256": "dc399b2fa64b3b4e566ab318adc276140303e3a43143c32c54b7671c54aa36c6",
+          "governed_bytes_sha256": "c8318779f0271bb6d2dc141a54662316579ec7050c548c3659b7d8a1061d9338"
+        },
+        {
+          "source_id": "sba:notice5000-872764-new-business",
+          "url": "https://legacy.sba.gov/sites/default/files/2025-11/Procedural%20Notice%205000-872764_Revisions%20to%20SOP%2050%2010%208.pdf",
+          "raw_sha256": "a91926cd1f42db5200a6ce98a6006f3586dfd0d9b3d1ee142acd0aa22b849522",
+          "governed_bytes_sha256": "7d5ca988428d5cb796400e80356e943759055df7eb5d886cf6527b79396172a8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-406-purpose-and-minority",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt406/html/CRPT-119hrpt406.htm",
+          "raw_sha256": "690784162efbff166b2f05d1af931bcf7475ef7b9a582509718aad4cba4c7397",
+          "governed_bytes_sha256": "a0d833ec6a235c7b78fdd8e4709ba8941be3435676efd84068afb149e3f8a0ed"
+        },
+        {
+          "source_id": "congressional-record:2026-01-20-5763",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-20/pdf/CREC-2026-01-20-house.pdf",
+          "raw_sha256": "6d73a9747d67cad0b5e0f66c0a009f983b15f8e2b7786704742b11ad2ada623d",
+          "governed_bytes_sha256": "2f5354b2d9ec660aa6bce94b525305313c4e43de8275d6f3280659fc19420439"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:32",
+        "source_ids": [
+          "clerk:119:2:32",
+          "govinfo:hr5763eh",
+          "govinfo:15usc696-224-operative",
+          "sba:sop50108-20250601-special-purpose",
+          "govinfo:cfr2025-13-120910",
+          "sba:notice5000-872764-new-business",
+          "govinfo:hrpt119-406-purpose-and-minority",
+          "congressional-record:2026-01-20-5763"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:32",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.5763 EH fully read research218(c928f453a07b098a5ba3557e415110ff6b32833653b9da82b49294d38ad133cd),696operative text complete research219. It deletes limited/single-purpose15percent and combined20percent equity rules, retainsnew-business15percent and general10percent, and narrows institutional50percent clause. FloorJan20PDF4/5explicitlynames surgerycenters/nursinghomes; do not treat rhetoric alone as membership. OfficialSBA SOP50 10 8, June1,2025 DOCX captured research221(bf5cae038c3baeab115daee1ecd0151510426cd13d8dcbf13095fbf70fb17ac1),1,055,434characters; its504special-purpose list directly includes hospitals/surgery/urgentcare/othermedicalfacilities and nursing/assistedliving. Those categories and surrounding contribution text partially read; complete borrower-contribution/eligiblecarefacility/credit-condition passages and September30notice5000-872764 before deciding care-financing membership. Noticecaptured(a91926cd1f42db5200a6ce98a6006f3586dfd0d9b3d1ee142acd0aa22b849522),webreadpages1–5partly; local7pagesnotfullyread. Do not substitute October2026version8.1 or postvoteMarch2026changes.2025CFRpart120PDFcaptured(dc399b2fa64b3b4e566ab318adc276140303e3a43143c32c54b7671c54aa36c6),120.910andeligiblefacilitybaselinepending. HouseReport119-406purpose/needpartiallyread, raw690784162efbff166b2f05d1af931bcf7475ef7b9a582509718aad4cba4c7397. No exclusion or full interpretation yet; a direct classified care-facility financing nexus needs this binding, unlike general client-industry speculation."
-      }
+        "shared_review_record_sha256": "3565d600b53b2d1c1803b92b4f4a97e3932991c261e72294ab683b5eff946e8f"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:33",
@@ -30250,7 +30312,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.7147 IH captured research219, rawa31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf,122516charactersnotfullyread. H.Res.1014EH and Foxxfloor amendment40 add the Senate-data notification repeal to this bill before passage. Later assemblyinto7148EHDivisionH is separate. ExactIHplusrepeal-to-EHcomparison, fulloperativeprovisions, January21/22finalexplanation and materialincorporations remain. Reuse medical/retiredpay/food-shelter analysis from7148concurrence after versioncomparison; do not assume allDHSfundsareHealth."
+        "next_action": "H.R.7147 IH captured research219, rawa31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf,122516charactersnotfullyread. H.Res.1014EH and Foxxfloor amendment40 add the Senate-data notification repeal to this bill before passage. Later assemblyinto7148EHDivisionH is separate. ExactIHplusrepeal-to-EHcomparison, fulloperativeprovisions, January21/22finalexplanation and materialincorporations remain. Reuse medical/retiredpay/food-shelter analysis from7148concurrence after versioncomparison; do not assume allDHSfundsareHealth. Research228nowcaptures pre-voteDHSstatement329417characters/cf0269fbfa22925d533b65d1b6467b39e010428666256358b3496830cc5a3a76 and finalJan22BookII563pages/2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6. These are not in the regular HousePDF; bothnewDHSstatementtexts remain substantively unread. Use publicbook2 for finaloverrides, not laterJanuary26tables."
       }
     },
     {
@@ -30260,13 +30322,14 @@
       "date": "2026-01-22",
       "measure": "bill_119_hr_7148",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The rejected Massie amendment would insert DivisionDTitleIsection195 barring funds made available by that division from implementing IIJA24220. The original7148section3 reference rule scopes this-Act to the division; it is neither a permanent statutory repeal nor a bar on every federal account. Exact24220, including its2022timing amendment, requires a practicable/objective motor-vehicle safety standard for new passenger vehicles with passive impairment or blood-alcohol detection and prevention/limitation of vehicle operation. It retains the rulemaking, two-to-three-year compliance interval, conditional extension and reporting structure. Congress's fatality-prevention findings and both floor positions were considered. The operative mechanism regulates vehicle equipment and highway safety, not clinical screening/treatment, substance-use services, insurance or care delivery; a blood-alcohol sensor and possible avoided injury do not alone establish Health membership. Propose exclusion independently of the parent appropriations package. Rejection leaves this amendment out of roll45passage; neither supporters' kill-switch/false-positive claims nor opponents' projected lives saved are adopted as proven outcomes.",
       "source": {
         "source_id": "clerk:119:2:43",
         "url": "https://clerk.house.gov/evs/2026/roll043.xml",
         "raw_sha256": "711483c97207d4f3385a4e896e701bbaa887cd9b83ea7a2a8f02cf6007842d9b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "f10fe01a3e0bc5f8f91cd31a23cde57490b527a60f7f6dc1148d3c9ac6d5c916",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -30277,26 +30340,64 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The rejected Massie amendment would insert DivisionDTitleIsection195 barring funds made available by that division from implementing IIJA24220. The original7148section3 reference rule scopes this-Act to the division; it is neither a permanent statutory repeal nor a bar on every federal account. Exact24220, including its2022timing amendment, requires a practicable/objective motor-vehicle safety standard for new passenger vehicles with passive impairment or blood-alcohol detection and prevention/limitation of vehicle operation. It retains the rulemaking, two-to-three-year compliance interval, conditional extension and reporting structure. Congress's fatality-prevention findings and both floor positions were considered. The operative mechanism regulates vehicle equipment and highway safety, not clinical screening/treatment, substance-use services, insurance or care delivery; a blood-alcohol sensor and possible avoided injury do not alone establish Health membership. Propose exclusion independently of the parent appropriations package. Rejection leaves this amendment out of roll45passage; neither supporters' kill-switch/false-positive claims nor opponents' projected lives saved are adopted as proven outcomes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:43",
           "url": "https://clerk.house.gov/evs/2026/roll043.xml",
           "raw_sha256": "711483c97207d4f3385a4e896e701bbaa887cd9b83ea7a2a8f02cf6007842d9b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "f10fe01a3e0bc5f8f91cd31a23cde57490b527a60f7f6dc1148d3c9ac6d5c916",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-462-operative-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+          "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+          "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9"
+        },
+        {
+          "source_id": "govinfo:49usc30111-24220-and-standards",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap301-subchapII-sec30111.htm",
+          "raw_sha256": "bb56951dc114d11666ec063b2d62271065c05907ad5eadf7b4eb55ece1e2fa9f",
+          "governed_bytes_sha256": "ec45c7714dc1ffdc863b2d2782306b611054ee20f4dc9da69758697fafc2cd82"
+        },
+        {
+          "source_id": "govinfo:hr7148ih-reference-scope",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm",
+          "raw_sha256": "0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1",
+          "governed_bytes_sha256": "db93338f7ef6471d7d310296924166e6b155b22b47c74e26c75105112d5007ee"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-driving-amendment",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "6f1941ab20a5e28fd71471399074ad29ad841598486f39154df7e3fe0a34fc25"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:43",
+        "source_ids": [
+          "clerk:119:2:43",
+          "govinfo:hrpt119-462-operative-amendments",
+          "govinfo:49usc30111-24220-and-standards",
+          "govinfo:hr7148ih-reference-scope",
+          "congressional-record:2026-01-22-driving-amendment"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:43",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Report119-462PartBamendment1 fullyread/bound: at end7148DivisionDTitleI insertsSec195 barring this-Act funds forIIJA24220(49USC30111note). H.Res1014onlymadeitorder, notadopted;Jan22RecordPDF157resultrejected. Need exact24220impaired-drivingtechnology and division-scopedfundingbinding before membership. Do not conflate road safety withclinicalcare or broaderpackageHealth."
-      }
+        "shared_review_record_sha256": "4598a07330623468200cb9e4a67753dabce9c7c94e0d63ca219a941e003b933d"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:44",
@@ -30306,12 +30407,13 @@
       "measure": "bill_119_hr_7148",
       "question": "On Agreeing to the Amendment",
       "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "reason": "Examined but not dispositioned: the Norman amendment is printed identically in Report119-462PartB2 and floor RecordH1298, inserting a DivisionBCommunityProjectFunding/CongressionallyDirectedSpending exception after Act on page3line1. In the January20 12:52committee print, that line is in section4 giving the explanatory statement conference-equivalent allocation/implementation effect, not section5appropriating sums. GPOIH pagination instead places Act on page3line2 in the same section4clause; neither print places the appropriation sentence at line1. The HRSA and SAMHSA accounts separately appropriate explicit project amounts and incorporate the statement table. FinalBookII table rows independently verify care projects, including Seattle behavioral-health facilities/equipment and Lurie pediatric mental-health/trauma services; descriptions are not borrowed from allegations about recipient activities. Both floor sides describe a funding-removal purpose, but that does not by itself resolve how the printed section4exception interacts with the separate statutory amounts/table incorporations. Do not silently move the insertion to section5 or report all earmarks as zeroed. The amendment failed136–291. Preserve the sources and the unresolved operative-effect dependency without writing a directional Health meaning. Public original-amendment/version and formal-correction tracing remain open; unavailable evidence or an exhausted human-review blocker is not asserted.",
       "source": {
         "source_id": "clerk:119:2:44",
         "url": "https://clerk.house.gov/evs/2026/roll044.xml",
         "raw_sha256": "59c155c30ce9586d9d672feb43d344c557e2c1ed0594d830b0dbe19e282fa2de",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "4d1c0eb39f237068b221e7ad05e82e485a739ba31b05f54c945519de6a5e8eda",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -30323,25 +30425,78 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "rationale": "Examined but not dispositioned: the Norman amendment is printed identically in Report119-462PartB2 and floor RecordH1298, inserting a DivisionBCommunityProjectFunding/CongressionallyDirectedSpending exception after Act on page3line1. In the January20 12:52committee print, that line is in section4 giving the explanatory statement conference-equivalent allocation/implementation effect, not section5appropriating sums. GPOIH pagination instead places Act on page3line2 in the same section4clause; neither print places the appropriation sentence at line1. The HRSA and SAMHSA accounts separately appropriate explicit project amounts and incorporate the statement table. FinalBookII table rows independently verify care projects, including Seattle behavioral-health facilities/equipment and Lurie pediatric mental-health/trauma services; descriptions are not borrowed from allegations about recipient activities. Both floor sides describe a funding-removal purpose, but that does not by itself resolve how the printed section4exception interacts with the separate statutory amounts/table incorporations. Do not silently move the insertion to section5 or report all earmarks as zeroed. The amendment failed136–291. Preserve the sources and the unresolved operative-effect dependency without writing a directional Health meaning. Public original-amendment/version and formal-correction tracing remain open; unavailable evidence or an exhausted human-review blocker is not asserted.",
+      "unresolved_reason": "Examined but not dispositioned: the Norman amendment is printed identically in Report119-462PartB2 and floor RecordH1298, inserting a DivisionBCommunityProjectFunding/CongressionallyDirectedSpending exception after Act on page3line1. In the January20 12:52committee print, that line is in section4 giving the explanatory statement conference-equivalent allocation/implementation effect, not section5appropriating sums. GPOIH pagination instead places Act on page3line2 in the same section4clause; neither print places the appropriation sentence at line1. The HRSA and SAMHSA accounts separately appropriate explicit project amounts and incorporate the statement table. FinalBookII table rows independently verify care projects, including Seattle behavioral-health facilities/equipment and Lurie pediatric mental-health/trauma services; descriptions are not borrowed from allegations about recipient activities. Both floor sides describe a funding-removal purpose, but that does not by itself resolve how the printed section4exception interacts with the separate statutory amounts/table incorporations. Do not silently move the insertion to section5 or report all earmarks as zeroed. The amendment failed136–291. Preserve the sources and the unresolved operative-effect dependency without writing a directional Health meaning. Public original-amendment/version and formal-correction tracing remain open; unavailable evidence or an exhausted human-review blocker is not asserted.",
       "sources": [
         {
           "source_id": "clerk:119:2:44",
           "url": "https://clerk.house.gov/evs/2026/roll044.xml",
           "raw_sha256": "59c155c30ce9586d9d672feb43d344c557e2c1ed0594d830b0dbe19e282fa2de",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "4d1c0eb39f237068b221e7ad05e82e485a739ba31b05f54c945519de6a5e8eda",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-462-operative-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+          "raw_sha256": "cef9f92f036e7f18416c7a87087c5d133b9a9f0b8af00fb254b65d4c27329ff8",
+          "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9"
+        },
+        {
+          "source_id": "house:7148-jan20-1252-preface",
+          "url": "https://docs.house.gov/meetings/RU/RU00/20260121/118889/BILLS-119pih-ConsolidatedAppropriationsAc.pdf",
+          "raw_sha256": "47db8d56258b420dc5d5ec42d3efaa1c2bef6a5cc15b88bb56d8cfbffa3f6c04",
+          "governed_bytes_sha256": "3f0615a8439ff7ffe058646586855f422b3aecb352faa58d13b055f581112d45"
+        },
+        {
+          "source_id": "govinfo:hr7148ih-preface-pages",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/pdf/BILLS-119hr7148ih.pdf",
+          "raw_sha256": "0067d2f31fbe1965dbfa2125cdb16cf33ae7aca03cfd8e6a6b1b8fd4434d7449",
+          "governed_bytes_sha256": "0a9027296c658e29deb53a0ce3221341f37d554af80e79b7865b54e3b9b34505"
+        },
+        {
+          "source_id": "govinfo:hr7148ih-explicit-care-project-appropriations",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm",
+          "raw_sha256": "0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1",
+          "governed_bytes_sha256": "3c0b25bd58564b2859bd3bec226ecb8de325ec2dffde7010baca0ce2111cbef0"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-book2-care-projects",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "71c9819f3557f5aa3ca7a3e11a9dbcd0550ae62e9fdd4fb24492968ce2a31f5d"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-norman",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "84e703adaab3ab2466e6fe557f4e4262d1a2d8a4ee64e05c67c80be3dba0162a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:44",
+        "source_ids": [
+          "clerk:119:2:44",
+          "govinfo:hrpt119-462-operative-amendments",
+          "house:7148-jan20-1252-preface",
+          "govinfo:hr7148ih-preface-pages",
+          "govinfo:hr7148ih-explicit-care-project-appropriations",
+          "congressional-record:2026-01-22-book2-care-projects",
+          "congressional-record:2026-01-22-norman"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:44",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": false
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "Report119-462PartBamendment2 fullyread/bound: IHpage3line1appropriationclause exception forCommunityProjectFunding/CongressionallyDirectedSpending specifiedDivisionB. It is not allbillprojects. Need exactIHpage3andfullDivisionB earmark mechanism/final allocationtables andHealthprojectstoestablishmembership. Jan22RecordPDF158rejects amendment. Notinsertedinto45passage. Research219Jan22fullRecord1.811mcharacterscaptured butexplanation/tablesnotfullyreviewed."
-      }
+        "shared_review_record_sha256": "e06091afadd53e0b899c89e394c5261dcb921ea4999ed679bbefc6ec2c10fa79",
+        "next_action": "Continue exactNormanH.Amdt156/source-version tracing. OriginalRules amendment submission and any formal page/line correction may resolve section4-versus-section5 placement; compare against bound January20committee print and GPOIH and Report119-462PartB2/RecordH1298. The liveRules page returned403once; publicHouse report exists and search-index page remains a lead, not exhausted access. If no correction exists, examine the limited section4effect with independent explicit appropriation/table-incorporation clauses before choosing a bounded candidate; do not substitute intended funding-removal prose for operative text. BookII capture research228 raw2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6,563pages: DivisionB238–273 includes seven CPallocations and finaltable247–273; selected257/260 visually verified. Pre-voteDivisionBstatement211pages raw99d4b391ef6b10748a4946c60422d7f26e6ceb6da46995afe78bf98aef7d8bfa, pages1/5/14/55/61/65/77/82read. Amounts95.501m/857.793m/54.311m/40.801m/13.968m/100.147m/224.377m are named CPcomponents, not whole agency totals. Wider7148roll45review remains separate. Continue independent42/48+while this dependency is open."
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:45",
@@ -30425,7 +30580,7 @@
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
         "shared_review_record_sha256": "2c35e811cbeb5c5466c51ce2f0edbe37ae9c5a3cc327d4e98f8a8db604ff08d7",
-        "next_action": "Concretevoting-stage defect corrected inresearch222: primarysource nowIHhead+identical6101/6102/6209/6210passages, withH.Res1014EH/Report119-462PartAandJan22Recordresults. IHraw0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1,1,095,743characters; onlypreface/Healthboundpassages,6001contentsandtechnicalamendmenttargets readthisbatch. BothPartBamendmentsfailed. EHlaterincludes separatelypassed7006/7147; theirscopeisnotattributedtoroll45. Stillrequired beforeHealthreviewreadiness: fulloriginal7148operativeappropriations/riders, finalexplanations/overrides andmaterialincorporations, reconciling alreadyboundedHealthmeaningandseparate53concurrence. Keepthisexisting-inputcompletenessfollowupexplicit;78interpretedinputscountisnotproofeachbroadpackageisexhaustivelyreviewed."
+        "next_action": "Concretevoting-stage defect corrected inresearch222: primarysource nowIHhead+identical6101/6102/6209/6210passages, withH.Res1014EH/Report119-462PartAandJan22Recordresults. IHraw0ca75b2f225d2679446bad81c0368b844c5545c9a3459a850f9b0c46a1811bd1,1,095,743characters; onlypreface/Healthboundpassages,6001contentsandtechnicalamendmenttargets readthisbatch. BothPartBamendmentsfailed. EHlaterincludes separatelypassed7006/7147; theirscopeisnotattributedtoroll45. Stillrequired beforeHealthreviewreadiness: fulloriginal7148operativeappropriations/riders, finalexplanations/overrides andmaterialincorporations, reconciling alreadyboundedHealthmeaningandseparate53concurrence. Keepthisexisting-inputcompletenessfollowupexplicit;78interpretedinputscountisnotproofeachbroadpackageisexhaustivelyreviewed. NewBookIIresearch228contains finalappropriationsexplanations; DivisionB238–273, frontmatter1, supplemental projecttable247–273. SelectedHRSA/SAMHSACPclauses and twofinalcare-projectrowpages nowbound for44dependency; this does not finish the whole package. The earlier queue assertion that44targets the appropriation clause was disproved by visually checked January20committee print3:1(section4); retain the unresolved distinction."
       }
     },
     {
@@ -30479,15 +30634,16 @@
       "date": "2026-01-22",
       "measure": "bill_119_hr_6359",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The exact6359RH/EH operative text matches after the1009committee-substitute rule. It adds a TitleIV-college pregnancy/parenting support-information duty, with annual emails, specified resource/accommodation/complaint content and conditional handbooks/centers. This is a direct support-information mechanism, not membership from a title or general education context. Preserve carry-to-term focus, limits on new-subsection authority and unchanged TitleIX/1688rights; no new treatment entitlement or childcare grant. Bare recommittal and separately printed alternative are not incorporated. Both floor arguments were read without adopting motive, service-quality or outcome claims.",
       "source": {
         "source_id": "clerk:119:2:47",
         "url": "https://clerk.house.gov/evs/2026/roll047.xml",
         "raw_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6359:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6359",
       "member_action": "nay",
@@ -30496,25 +30652,92 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "proposed_exact_action_inclusion",
+      "rationale": "The exact6359RH/EH operative text matches after the1009committee-substitute rule. It adds a TitleIV-college pregnancy/parenting support-information duty, with annual emails, specified resource/accommodation/complaint content and conditional handbooks/centers. This is a direct support-information mechanism, not membership from a title or general education context. Preserve carry-to-term focus, limits on new-subsection authority and unchanged TitleIX/1688rights; no new treatment entitlement or childcare grant. Bare recommittal and separately printed alternative are not incorporated. Both floor arguments were read without adopting motive, service-quality or outcome claims.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:47",
           "url": "https://clerk.house.gov/evs/2026/roll047.xml",
           "raw_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr6359eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm",
+          "raw_sha256": "056442fa0bc476d8d4c9bd3dc31c812e3e69138cf658809048b9951b938813b4",
+          "governed_bytes_sha256": "a88a06bbbba92e1686a1cc4eb1b8d821500012f33e269c9cbd5cc5cba30aa866"
+        },
+        {
+          "source_id": "govinfo:hr6359rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm",
+          "raw_sha256": "9a13d2920dbe33f05af0eef9bdeec048a0744384e6a472e58dd463406cd3365b",
+          "governed_bytes_sha256": "5b81d989d839222aaf3dfbb4111b8c7ad5a0737523bad0a59c3aa3cc3a5da4e5"
+        },
+        {
+          "source_id": "govinfo:hres1009eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm",
+          "raw_sha256": "7bc4fb997cb5062354adcdf508c57f057a82a3d3b1f18a71608d53e762a8f434",
+          "governed_bytes_sha256": "735daf15d3237af26a097ab05786020209e6007e1295cbe445b74c43a2a34967"
+        },
+        {
+          "source_id": "govinfo:20usc1092-titleIV-information-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm",
+          "raw_sha256": "b86d67158e4d0a32c50b0a455529b8981c4cc9cee652a8f4dd8b55b6f2e79f74",
+          "governed_bytes_sha256": "79aa0b599299fba778f48b0f4d7894518f53ae42556f4498ebb93e27f4929f7a"
+        },
+        {
+          "source_id": "govinfo:20usc1681-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm",
+          "raw_sha256": "6577568795c7af5523b2b48f34e09a22cd2ffbbdcd1ff3306d9806e041ebe98e",
+          "governed_bytes_sha256": "8a494405a3057508f1daf08e104e1c8a00b0c4f54acf02049cc633b38b4a3589"
+        },
+        {
+          "source_id": "govinfo:20usc1688-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm",
+          "raw_sha256": "00334cc2298a0dfc486ec06571e674540fd1917d7254dd85c9b6a8dd1d70614b",
+          "governed_bytes_sha256": "b170a0bef66198e8f44920bd439ae26ed4ffb84bbe5e9d4f4e5fae96fbd7a737"
+        },
+        {
+          "source_id": "govinfo:hrpt119-447-section-analysis",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm",
+          "raw_sha256": "1958403dfd3def68a11990f341726d948a5dbd03503df51360537282888d5b7e",
+          "governed_bytes_sha256": "3e1162d35bd8b55c9b4ce5de26cefe5d0d6ee1c8a9c09b9d1d8ff218204ed9c5"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-pregnant-student",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "573b72ebac88a9b6248ad53e40feb0acbb8eb8df1248641082f11e0357707ec7"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:47",
+        "source_ids": [
+          "clerk:119:2:47",
+          "govinfo:hr6359eh",
+          "govinfo:hr6359rh",
+          "govinfo:hres1009eh",
+          "govinfo:20usc1092-titleIV-information-scope",
+          "govinfo:20usc1681-operative",
+          "govinfo:20usc1688-operative",
+          "govinfo:hrpt119-447-section-analysis",
+          "congressional-record:2026-01-22-pregnant-student"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:47",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e97b97a9c2c3d3647bb25071317685f6becbb345f36eefed6800bccdbb89662e"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:2:48",
@@ -43127,11 +43350,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "78 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member choice direction. Preserve exact amendments, retention, veto overrides and passage, covered-benefit-plan limits and distinct pension-only actions.",
+    "basis": "80 exact-source proposed Health inputs selected by operative mechanisms and source readiness, not member direction. Preserve distinct stages, care-facility financing conditions, pregnancy-support information scope and independent exact-action exclusions.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "cab8d14e17721a16190a5220e7ef5106578cca752a7c2d07de08a56115c43376",
+  "selection_sha256": "dcf9131fe2a19e8c56be21aabce8801e32c8146c04f0ddc4797ff1c4c083fe4a",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -43204,8 +43427,10 @@
     "house:119:2:308",
     "house:119:2:31",
     "house:119:2:310",
+    "house:119:2:32",
     "house:119:2:37",
     "house:119:2:45",
+    "house:119:2:47",
     "house:119:2:5",
     "house:119:2:53",
     "house:119:2:6",
@@ -43228,11 +43453,8 @@
     "house:119:2:23",
     "house:119:2:27",
     "house:119:2:28",
-    "house:119:2:32",
     "house:119:2:42",
-    "house:119:2:43",
     "house:119:2:44",
-    "house:119:2:47",
     "house:119:2:48",
     "house:119:2:49",
     "house:119:2:50",
@@ -43413,7 +43635,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "197 unresolved identities comprise196 unfinished screenings and one examined2025roll237 conflict.33AI guidance and38land-leasing disapproval are proposed excluded;35/40/41 remain procedural. Roll45 voting-stage correction preserves existing Health membership, with broader package/report completeness still explicit.32special-purpose loan-equity requires exact SBA2025classification and amendment review; prepared23/27/28 and older dependencies remain open.",
+    "basis": "194 unresolved identities comprise192 unfinished screenings and two examined dependencies:2025roll237 printed-source discrepancy and2026roll44 section4/appropriation-effect binding. No exhausted unavailable-evidence path is asserted.80 proposed inputs remain candidate-only; existingroll45 still needs broader-package completeness. Continue independent safe cases.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -43465,6 +43687,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "fce8d3a2a4d00dac4f69f77f1c09aca79e8f50626da620863501497d9913a5a6",
-  "membership_review_sha256": "2c37e61bf1e0c062e0b66aa8da0445821eafe5ba07eb97cc2143eb3af5639f29"
+  "proposal_sha256": "a6e13e9b4fb5623347e3c04ba0e7275d039f69d757928340978c7f6e51666d0d",
+  "membership_review_sha256": "58931026fd7e8f6d0903a2552918492fa17682c8e8ba43807960519cc709fa86"
 }

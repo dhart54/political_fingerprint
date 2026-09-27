@@ -126,6 +126,75 @@ or persistence boundary is intended to change, except existing no-deploy safegua
 Done means actual findings and readable interpretations, not an inventory alone.
 If membership/source gates remain unresolved, deliver a precise partial candidate.
 
+## January 20–22 financing and pregnancy information — September 27
+
+Continue from `328c0290a980d8a2b6cfeda66234365e290594dd`; exact-head
+CI 36298449963 passed. Three new dispositions: 2026 rolls 32 and 47 become
+shared interpreted candidates; roll 43 is proposed excluded. Roll 44 receives
+an examined, unresolved operative-effect record rather than an inferred cut.
+Counts 78/199/11/191/197 become **80/199/11/192/194**. The last count comprises
+**192 unfinished screenings and two examined dependencies**: 2025 roll 237's
+printed-source discrepancy and 2026 roll 44's section 4/funding-effect binding.
+Neither is an exhausted unavailable-evidence claim. Existing roll 45's broader
+package-completeness follow-up remains additional and explicit.
+
+The two new shared meanings mechanically produce **60 Foushee / 57 Massie
+findings**, 160 observations, 61 episodes and 10 multi-action episodes. The
+prior 78 meanings and 1248 sources remain unchanged. Add 25 governed sources
+(1273), four membership records (342), and 20 interpretation claim maps (818).
+
+- **32, H.R. 5763:** the official June 2025 SBA operating procedure expressly
+  includes medical and nursing facilities in the special-purpose property
+  category. The exact bill removes the corresponding statutory equity minima;
+  it retains the new-business minimum, credit discretion and eligibility
+  conditions. The September 2025 update and complete minority/floor arguments
+  were examined. Both members voted Yea on suspension and passage. The
+  explanation distinguishes a financing condition from a loan approval,
+  regulatory rewrite, care grant or predicted outcome.
+- **43, Massie amendment:** its division-scoped funding bar targets the exact
+  IIJA impaired-driving vehicle-equipment standard, including the 2022 timing
+  amendment. Fatality-prevention context does not become clinical care or
+  substance-use treatment. The rejected amendment is independently excluded
+  and is not inserted into roll 45 passage.
+- **47, H.R. 6359:** all 2522 operative characters of the reported substitute
+  and House-passed text match. Preserve Title IV institutional scope,
+  carry-to-term/parenting focus, annual email, conditional handbooks/centers,
+  complaint routes, new-subsection authority limits and unchanged Title IX
+  abortion-neutrality text. This information duty is not a new treatment
+  entitlement. Foushee Nay / Massie Yea are mechanical projections. Bare
+  recommittal and the separately printed alternative remain distinct.
+- **44, Norman amendment:** exact page-and-line verification disproved the old
+  prepared-note assumption that it inserts into the appropriating clause. The
+  matching January 20 committee print's page 3 line 1 belongs to section 4,
+  giving the explanatory statement conference-equivalent effect. Section 5 is
+  later on that page. The GPO IH has different line wrapping but the same
+  distinction. Separate HRSA/SAMHSA clauses specify project amounts. Preserve
+  the unresolved interaction; do not move the insertion or infer that every
+  targeted amount becomes zero. Original amendment/version/correction tracing
+  remains open while independent work continues. No new human decision is
+  currently requested.
+
+The final explanations are in January 22 Congressional Record **Book II**, not
+in the regular House transcript. Capture and preserve that public source once
+for reuse by 42/44/45. Final Division B text begins on PDF page 238; the project
+table spans 247–273. Selected Seattle and Lurie rows (257/260) were visually
+checked against the table columns: actual specified behavioral-health and
+pediatric mental-health/trauma projects, not allegations about unrelated
+recipient activities. The pre-vote committee front matter was visually read.
+These selected checks do not complete the broad appropriations package.
+
+Source/version selection, exact-action decisions, two shared explanations and
+three targeted regressions were manual. Member projection and replay remain
+mechanical. An authoring-stage mismatch was caught and corrected to suspension
+and passage; a local test-file encoding mistake was corrected against the
+unchanged UTF-8 baseline. No gate was weakened and no production artifact changed.
+
+Validation passed: 78 candidate tests within 127 focused candidate/corpus/IR/pipeline tests, plus all seven semantic checks. Deterministic regeneration, readable outputs and the final diff were inspected. All 78 prior meanings, 1248 prior sources and 338 prior membership records remain structurally unchanged.
+Continue prepared 42 and independent 48 onward, while retaining 23/27/28, 44,
+45's package follow-up and older 2025 dependencies. Detailed hashes and next
+steps remain in the existing per-action queue. This is active continuation,
+not a terminal shutdown checkpoint; the one-night usage/time buffers still apply.
+
 ## January20–22 procedures and voting-version correction — September27
 
 Continue from `2159f4423950078c422f43f457f87f7c8413b21a`, whose exact-head

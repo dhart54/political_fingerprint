@@ -319,7 +319,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 58)
+        self.assertEqual(len(f["findings"]), 60)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -384,8 +384,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":199, "source_unresolved":197,
-            "interpreted_substantive_directional":78, "expressive_nonbinding_context":11, "exact_action_ineligible":191})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":199, "source_unresolved":194,
+            "interpreted_substantive_directional":80, "expressive_nonbinding_context":11, "exact_action_ineligible":192})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -403,7 +403,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 196)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 192)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1388,6 +1388,66 @@ class SharedDomainCandidateTests(unittest.TestCase):
         next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:hres1014eh")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_special_purpose_financing_requires_care_classification_and_keeps_credit_limits(self):
+        aid = "house:119:2:32"
+        core, _, projections, _, result = self.products
+        required = {"govinfo:hr5763eh", "govinfo:15usc696-224-operative",
+                    "sba:sop50108-20250601-special-purpose", "sba:notice5000-872764-new-business"}
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if aid in f["action_ids"])
+            self.assertEqual(finding["action_ids"], [aid])
+            observation = next(a for p in projections if p["member_id"] == member["member_id"] for a in p["actions"] if a["action_id"] == aid)
+            self.assertEqual(observation["official_status"], "Yea")
+            self.assertTrue(required <= set(finding["source_ids"]))
+            detail = " ".join(finding["detail"])
+            for phrase in ["hospitals, surgery centers, urgent-care centers", "at least 15 percent",
+                           "licensed and to provide healthcare", "additional borrower contribution",
+                           "not treated as enactment", "not a separate vote limited to health facilities"]:
+                self.assertIn(phrase, detail)
+        for missing in ["sba:sop50108-20250601-special-purpose", "govinfo:15usc696-224-operative"]:
+            author = copy.deepcopy(self.author)
+            next(a for a in author["actions"] if a["action_id"] == aid)["additional_source_ids"].remove(missing)
+            with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+                prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_pregnancy_information_keeps_scope_and_driving_amendment_stays_separate(self):
+        core, _, projections, _, result = self.products
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        driving = records["house:119:2:43"]
+        self.assertEqual(driving["disposition"], "exact_action_ineligible")
+        self.assertNotIn("house:119:2:43", {a["action_id"] for a in core["actions"]})
+        self.assertTrue({"govinfo:49usc30111-24220-and-standards", "govinfo:hr7148ih-reference-scope"} <= {s["source_id"] for s in driving["sources"]})
+        for member in readable_candidates(self.author, core, projections, result)["members"]:
+            finding = next(f for f in member["findings"] if "house:119:2:47" in f["action_ids"])
+            self.assertEqual(finding["action_ids"], ["house:119:2:47"])
+            observation = next(a for p in projections if p["member_id"] == member["member_id"] for a in p["actions"] if a["action_id"] == "house:119:2:47")
+            self.assertEqual(observation["official_status"], "Nay" if member["member_id"] == "F000477" else "Yea")
+            detail = " ".join(finding["detail"])
+            for phrase in ["Title IV student-aid", "bare recommittal", "at least once each academic year",
+                           "handbooks if any", "carrying to term and parenting after birth",
+                           "does not itself prohibit an institution from providing other information",
+                           "does not establish enactment"]:
+                self.assertIn(phrase, detail)
+            self.assertTrue({"govinfo:hr6359eh", "govinfo:20usc1688-operative", "govinfo:hres1009eh"} <= set(finding["source_ids"]))
+        author = copy.deepcopy(self.author)
+        next(a for a in author["actions"] if a["action_id"] == "house:119:2:47")["additional_source_ids"].remove("govinfo:20usc1688-operative")
+        with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
+            prepare(author, self.capture, ["F000477", "M001184"])
+
+    def test_project_exception_binding_stays_unresolved_without_inferred_funding_cut(self):
+        universe = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
+        row = next(r for r in universe["candidate_dispositions"] if r["action_id"] == "house:119:2:44")
+        self.assertEqual(row["disposition"], "source_unresolved")
+        self.assertTrue(row["review_progress"]["substantive_review_performed"])
+        self.assertTrue(row["review_progress"]["exact_action_binding_unresolved"])
+        self.assertFalse(row["review_progress"]["required_evidence_unavailable"])
+        self.assertNotIn(row["action_id"], {a["action_id"] for a in self.products[0]["actions"]})
+        bound = {s["source_id"] for s in row["sources"]}
+        self.assertTrue({"house:7148-jan20-1252-preface", "govinfo:hr7148ih-preface-pages",
+                         "govinfo:hr7148ih-explicit-care-project-appropriations"} <= bound)
+        for member in readable_candidates(self.author, self.products[0], self.products[2], self.products[4])["members"]:
+            self.assertFalse(any(row["action_id"] in f["action_ids"] for f in member["findings"]))
 
 if __name__ == "__main__":
     unittest.main()

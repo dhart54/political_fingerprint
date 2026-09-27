@@ -2,42 +2,111 @@
 
 Active continuation after checkpoint `1f42ed1f45161753dcf7b80930d6736ed64d9489`: the user corrected the shutdown pause. Research is resumed; the one-shot automation was deleted and the stale terminal marker was archived outside the worktree root. The checkpoint below is historical, not a current stop instruction. Continue the committed queue; completed batches and passing tests do not create approval gates.
 
-**Active partial candidate.** Since2159f44, five more screenings yield three
-procedural controls and two proposed exclusions. One existing passage description
-now distinguishes voting text from later engrossment assembly.78 interpreted
-inputs produce58 Foushee/55 Massie findings.196 membership screenings remain
-unfinished, plus one examined source conflict and an explicit7148package-
-completeness follow-up. No user decision is currently required. Health is incomplete.
+**Active partial candidate.** Two new shared interpretations and one exclusion
+are completed since 328c029. A fourth screened action retains an examined
+operative-effect dependency. There are 80 interpreted inputs, 60 Foushee / 57
+Massie findings, 192 unfinished screenings and two examined dependencies.
+Existing roll 45's broader-package review also remains unfinished. No exhausted
+evidence path or current human decision is asserted. Health remains incomplete.
 
 ## Current material delta and entry points
 
 Same draft [PR194](https://github.com/dhart54/political_fingerprint/pull/194),
 branch `codex/foushee-shared-next-domain`, unchanged reviewed base
 `2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257`. Actual local/remote head matched
-2159f44 at this continuation boundary. Later in-scope research is preserved without reset.
+328c029 at this continuation boundary. Later in-scope research is preserved without reset.
 The exact pushed commit and its CI results are recorded in the existing PR
 discussion after validation; prior-head CI is not treated as current. The goal is active; no terminal marker is due at this progress boundary.
 
 - [Living plan](../plans/foushee_next_domain_shared_interpretation.md)
-- [77 shared meanings /782 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
-- [1170 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
-- [324 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
+- [80 shared meanings /818 claim maps](../editorial/shared_candidates/house_119_health_20260916/authoring.json)
+- [1273 governed sources](../editorial/shared_candidates/house_119_health_20260916/sources.json)
+- [342 shared membership records](../editorial/shared_candidates/house_119_health_20260916/membership_review.json)
 - [676-row inventory and remaining queue](../editorial/shared_candidates/house_119_health_20260916/universe_proposal.json)
 - [Readable compact/detail candidates](../editorial/shared_candidates/house_119_health_20260916/generated/readable_candidates.json)
 - [Compiled IR](../editorial/shared_candidates/house_119_health_20260916/generated/compiled_ir.json)
 - [Replay/update proof](../editorial/shared_candidates/house_119_health_20260916/generated/reproducibility_proof.json)
 
-| Disposition | Before (2159f44) | Current local candidate |
+| Disposition | Before (328c029) | Current local candidate |
 |---|---:|---:|
-| interpreted_substantive_directional |78|78|
-| procedural_context |196|199|
+| interpreted_substantive_directional |78|80|
+| procedural_context |199|199|
 | expressive_nonbinding_context |11|11|
-| exact_action_ineligible |189|191|
-| source_unresolved (unfinished plus examined conflict) |202|197|
+| exact_action_ineligible |191|192|
+| source_unresolved (unfinished plus examined dependencies) |197|194|
 | Fixed discovery |676|676|
 
 Scope remains362 session1 and314 session2 identities through September16,2026.
 No unreviewed identity is presumed Health-eligible or relabeled unavailable.
+
+## January 20–22 financing and pregnancy information — September 27
+
+Continue from `328c0290a980d8a2b6cfeda66234365e290594dd`; exact-head
+CI 36298449963 passed. Three new dispositions: 2026 rolls 32 and 47 become
+shared interpreted candidates; roll 43 is proposed excluded. Roll 44 receives
+an examined, unresolved operative-effect record rather than an inferred cut.
+Counts 78/199/11/191/197 become **80/199/11/192/194**. The last count comprises
+**192 unfinished screenings and two examined dependencies**: 2025 roll 237's
+printed-source discrepancy and 2026 roll 44's section 4/funding-effect binding.
+Neither is an exhausted unavailable-evidence claim. Existing roll 45's broader
+package-completeness follow-up remains additional and explicit.
+
+The two new shared meanings mechanically produce **60 Foushee / 57 Massie
+findings**, 160 observations, 61 episodes and 10 multi-action episodes. The
+prior 78 meanings and 1248 sources remain unchanged. Add 25 governed sources
+(1273), four membership records (342), and 20 interpretation claim maps (818).
+
+- **32, H.R. 5763:** the official June 2025 SBA operating procedure expressly
+  includes medical and nursing facilities in the special-purpose property
+  category. The exact bill removes the corresponding statutory equity minima;
+  it retains the new-business minimum, credit discretion and eligibility
+  conditions. The September 2025 update and complete minority/floor arguments
+  were examined. Both members voted Yea on suspension and passage. The
+  explanation distinguishes a financing condition from a loan approval,
+  regulatory rewrite, care grant or predicted outcome.
+- **43, Massie amendment:** its division-scoped funding bar targets the exact
+  IIJA impaired-driving vehicle-equipment standard, including the 2022 timing
+  amendment. Fatality-prevention context does not become clinical care or
+  substance-use treatment. The rejected amendment is independently excluded
+  and is not inserted into roll 45 passage.
+- **47, H.R. 6359:** all 2522 operative characters of the reported substitute
+  and House-passed text match. Preserve Title IV institutional scope,
+  carry-to-term/parenting focus, annual email, conditional handbooks/centers,
+  complaint routes, new-subsection authority limits and unchanged Title IX
+  abortion-neutrality text. This information duty is not a new treatment
+  entitlement. Foushee Nay / Massie Yea are mechanical projections. Bare
+  recommittal and the separately printed alternative remain distinct.
+- **44, Norman amendment:** exact page-and-line verification disproved the old
+  prepared-note assumption that it inserts into the appropriating clause. The
+  matching January 20 committee print's page 3 line 1 belongs to section 4,
+  giving the explanatory statement conference-equivalent effect. Section 5 is
+  later on that page. The GPO IH has different line wrapping but the same
+  distinction. Separate HRSA/SAMHSA clauses specify project amounts. Preserve
+  the unresolved interaction; do not move the insertion or infer that every
+  targeted amount becomes zero. Original amendment/version/correction tracing
+  remains open while independent work continues. No new human decision is
+  currently requested.
+
+The final explanations are in January 22 Congressional Record **Book II**, not
+in the regular House transcript. Capture and preserve that public source once
+for reuse by 42/44/45. Final Division B text begins on PDF page 238; the project
+table spans 247–273. Selected Seattle and Lurie rows (257/260) were visually
+checked against the table columns: actual specified behavioral-health and
+pediatric mental-health/trauma projects, not allegations about unrelated
+recipient activities. The pre-vote committee front matter was visually read.
+These selected checks do not complete the broad appropriations package.
+
+Source/version selection, exact-action decisions, two shared explanations and
+three targeted regressions were manual. Member projection and replay remain
+mechanical. An authoring-stage mismatch was caught and corrected to suspension
+and passage; a local test-file encoding mistake was corrected against the
+unchanged UTF-8 baseline. No gate was weakened and no production artifact changed.
+
+Validation passed: 78 candidate tests within 127 focused candidate/corpus/IR/pipeline tests, plus all seven semantic checks. Deterministic regeneration, readable outputs and the final diff were inspected. All 78 prior meanings, 1248 prior sources and 338 prior membership records remain structurally unchanged.
+Continue prepared 42 and independent 48 onward, while retaining 23/27/28, 44,
+45's package follow-up and older 2025 dependencies. Detailed hashes and next
+steps remain in the existing per-action queue. This is active continuation,
+not a terminal shutdown checkpoint; the one-night usage/time buffers still apply.
 
 ## January20–22 procedures and voting-version correction — September27
 
@@ -911,7 +980,7 @@ failures remain recorded separately.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-78 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+80 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -2625,6 +2694,37 @@ Evidence: house:119:2:310; finding `prop:9702031e9788e89d`.
 
 Sources: [clerk:119:2:310](https://clerk.house.gov/evs/2026/roll310.xml); [govinfo:hr10326ih](https://www.govinfo.gov/content/pkg/BILLS-119hr10326ih/html/BILLS-119hr10326ih.htm); [congressional-record:2026-09-15](https://www.govinfo.gov/content/pkg/CREC-2026-09-15/pdf/CREC-2026-09-15-house.pdf); [clerk:119:2:300](https://clerk.house.gov/evs/2026/roll300.xml).
 
+### Changing equity requirements for property loans, including care facilities
+
+**Compact:** Foushee supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions. The bill would remove the extra statutory equity requirement for special-purpose property projects, a category that expressly includes eligible medical and nursing facilities. It retains the new-business minimum and other credit requirements. This was one vote on financing rules across industries, not a guarantee of a loan or improved care.
+
+**Detail:**
+
+**house:119:2:32**
+
+Foushee supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions.
+
+The January 20 motion would suspend the rules and pass H.R. 5763, changing the statutory borrower-contribution requirements for SBA 504 fixed-asset financing. The complete House-passed text matches the text offered on the floor. This is one choice on the entire bill, covering qualifying businesses across multiple industries, not a separate vote limited to health facilities.
+
+The bill deletes 15 U.S.C. 696(3)(C)(ii), which requires at least 15 percent of project cost from the borrower for construction of a limited or single-purpose building, and clause (iii), which requires at least 20 percent when that condition and the new-business condition both apply. It retains at least 15 percent for a business operating for two years or less and at least 10 percent in other circumstances, at the development company's discretion. The conforming amendment narrows the statutory requirement for at least 50 percent institutional funding to the retained new-business clause. These are minimum contributions, not a guarantee that every borrower would receive a loan with exactly 10 percent down.
+
+The proposed Health connection is specific: the SBA's June 2025 operating procedure expressly includes hospitals, surgery centers, urgent-care centers and other health/medical facilities, plus nursing homes including assisted-living facilities, in its non-exhaustive special-purpose-property list. A property must meet the limited-market design/material/layout definition; the development company must address that classification in its credit memorandum. The statutory amendment therefore changes a financing condition for eligible care-facility projects within that class. It does not make all healthcare businesses eligible. The same guidance requires nursing/assisted-living businesses to be licensed and to provide healthcare or medical services, with the lender considering the license terms; unlicensed residential facilities providing no such services are ineligible. The bill does not separately amend those eligibility rules.
+
+The existing 2025 regulation and guidance apply the special-purpose contribution category to acquisition, construction, conversion or expansion. The bill changes the statute's construction clauses; this interpretation does not treat the recorded House vote as itself rewriting every regulation or approving any project. Other eligibility, credit, repayment, collateral and contribution requirements remain. The guidance allows additional borrower contribution or collateral to address credit weaknesses. Its September 30, 2025 update retains case-specific treatment of ownership changes with unproven management and added debt, and distinguishes an expansion under identical ownership and the same six-digit industry code with co-borrowers from a new business. The bill's retained 15 percent statutory new-business requirement must not be flattened into a universal 10 percent rule.
+
+The committee majority and minority and floor supporters argued for reducing the extra equity burden, citing loan-performance comparisons. Those statements explain the proposal; the candidate does not adopt a forecast of defaults, savings, facility construction, treatment access or health outcomes. The measure neither appropriates a care grant nor changes a patient's coverage or benefit entitlement. A Yea supports passing this whole financing change; a Nay opposes its passage without identifying a preferred alternative or opposition to medical facilities themselves. House passage is not treated as enactment.
+
+The Clerk recorded the House result as 'Passed' on 2026-01-20. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Proposed membership rests on the official special-purpose care-facility classification and the exact financing condition, not on a title or the possibility that generic business clients include providers.
+- Retain the statutory 15 percent new-business minimum, case-specific credit requirements and licensed-care-facility eligibility. The whole-bill vote is not a care appropriation, loan approval, regulatory rewrite or predicted health outcome.
+- The exact motion combined suspension of the rules and passage, requiring a two-thirds majority.
+
+Evidence: house:119:2:32; finding `prop:578382bda63197df`.
+
+Sources: [clerk:119:2:32](https://clerk.house.gov/evs/2026/roll032.xml); [govinfo:hr5763eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm); [govinfo:15usc696-224-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm); [sba:sop50108-20250601-special-purpose](https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx); [govinfo:cfr2025-13-120910](https://www.govinfo.gov/content/pkg/CFR-2025-title13-vol1/pdf/CFR-2025-title13-vol1-part120.pdf); [sba:notice5000-872764-new-business](https://legacy.sba.gov/sites/default/files/2025-11/Procedural%20Notice%205000-872764_Revisions%20to%20SOP%2050%2010%208.pdf); [govinfo:hrpt119-406-purpose-and-minority](https://www.govinfo.gov/content/pkg/CRPT-119hrpt406/html/CRPT-119hrpt406.htm); [congressional-record:2026-01-20-5763](https://www.govinfo.gov/content/pkg/CREC-2026-01-20/pdf/CREC-2026-01-20-house.pdf).
+
 ### Allowing states to use TANF grants for the pregnancy centers defined in the bill
 
 **Compact:** Foushee opposed House passage of H.R. 6945 as put to the chamber. The bill would let states use TANF funds for pregnancy centers meeting its definition; it would not require states to fund them.
@@ -2644,6 +2744,36 @@ The Clerk recorded the House result as 'Passed' on 2026-01-21. This does not est
 Evidence: house:119:2:37; finding `prop:74b7622b8169eb9e`.
 
 Sources: [clerk:119:2:37](https://clerk.house.gov/evs/2026/roll037.xml); [govinfo:hr6945eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6945eh/html/BILLS-119hr6945eh.htm).
+
+### Requiring information about pregnancy and parenting support at colleges
+
+**Compact:** Foushee opposed passing the bill requiring the specified pregnancy and parenting support disclosures. The bill would require student-aid-participating colleges to share information about resources, accommodations and complaint routes for carrying a pregnancy to term and parenting after birth. It focuses on that information; it does not fund care or create a new treatment entitlement.
+
+**Detail:**
+
+**house:119:2:47**
+
+Foushee opposed passing the bill requiring the specified pregnancy and parenting support disclosures.
+
+The January 22 passage vote covers H.R. 6359's information requirements for colleges and universities participating in Higher Education Act Title IV student-aid programs. H.Res. 1009 deemed the committee substitute adopted; the committee and House-passed operative texts match. Bonamici's formal motion was bare recommittal and was rejected. The separately printed broader-information proposal was not part of this passage text.
+
+The bill would require covered institutions to disseminate information to prospective and enrolled students, including those attending or planning to attend less than full time, about rights, accommodations and resources for pregnant students and students who may become pregnant to carry a baby to term. Required content includes campus and community resources for carrying the baby to term and caring for the baby after birth, available accommodations, and how to complain to the Education Department or institution about an alleged Title IX violation linked to the student's determination to carry to term. This supplies proposed Health & Social Policy membership through a concrete pregnancy/parenting support-information mechanism; the information duty does not itself provide a medical service, create a benefit payment or fund childcare.
+
+Dissemination must include an email to every enrolled student at least once each academic year, information in student handbooks if any, at each orientation for enrolled students, at student health or counseling centers if any, and on the institution's public website. The annual-email duty covers all enrolled students; the text does not require identifying individual pregnant students for that email. The handbooks/centers qualifications are preserved rather than implying every institution must create them.
+
+The required content focuses on carrying to term and parenting after birth, not comprehensive information about every pregnancy outcome. The construction clause does not authorize the Secretary under this new subsection to require additional information or establish additional rights beyond those included. It does not itself prohibit an institution from providing other information or repeal the broader existing Title IX framework. Existing statutory coverage and exceptions remain. Title IX's separate abortion-neutrality provision neither requires nor prohibits providing or paying for abortion-related services and does not permit a penalty merely because a person sought or received services related to a legal abortion; this bill does not amend that provision. Do not turn this information vote into a finding on every abortion restriction, a newly guaranteed accommodation or a patient's treatment entitlement.
+
+Supporters argued that targeted disclosures would make existing resources easier to find; opponents argued that the carry-to-term focus omitted information needed for miscarriage, abortion and other pregnancy circumstances. Both are retained as context, without adopting claims about motives, how institutions currently behave, the medical quality of any listed resource, or predicted student/health outcomes. A Yea supports passing this specific disclosure bill; a Nay opposes its passage without identifying a preferred substitute or opposition to pregnant students themselves. The House passed the bill 217–211, with three not voting. This does not establish enactment.
+
+The Clerk recorded the House result as 'Passed' on 2026-01-22. This does not establish enactment.
+
+- This is one choice on the whole measure, not a separate vote on each highlighted Health provision. A Nay does not identify a preferred alternative or opposition to every component; a Yea does not establish endorsement of every component. No enacted-law result or predicted health outcome is inferred.
+- Preserve the carry-to-term focus, Title IV institutional scope, part-time/prospective students, annual email and conditional handbooks/health centers. This is an information requirement, not a new care service or guarantee.
+- The construction limit applies to authority under the new subsection; it does not ban all other institutional information or repeal existing Title IX. Both floor positions remain context, not motive or outcome findings.
+
+Evidence: house:119:2:47; finding `prop:4ef41344809e6c2a`.
+
+Sources: [clerk:119:2:47](https://clerk.house.gov/evs/2026/roll047.xml); [govinfo:hr6359eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm); [govinfo:hr6359rh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm); [govinfo:hres1009eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm); [govinfo:20usc1092-titleIV-information-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm); [govinfo:20usc1681-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm); [govinfo:20usc1688-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm); [govinfo:hrpt119-447-section-analysis](https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm); [congressional-record:2026-01-22-pregnant-student](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf).
 
 ### Extending the reserved-area framework, including specified Health eligibility, over a veto
 
@@ -2758,4 +2888,6 @@ Sources: [clerk:119:2:8](https://clerk.house.gov/evs/2026/roll008.xml); [govinfo
 | house:119:2:7 | supported House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | opposed House passage of all of H.R.6938, including the combined treatment, victim-service, Tribal-care and other Health provisions and their restrictions | [govinfo:hr6938ih-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [govinfo:hr6938eh-division-a](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hres977eh](https://www.govinfo.gov/content/pkg/BILLS-119hres977eh/html/BILLS-119hres977eh.htm); [congressional-record:2026-01-08-6938-retention](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf); [congressional-record:2026-01-08-6938-explanation-a](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:34usc12291-2024-victim-services-and-conditions](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm); [govinfo:34usc20101-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap201-subchapI-sec20101.htm); [govinfo:22usc2680b-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap38-sec2680b.htm); [govinfo:pl105-119-lsc501-506](https://www.govinfo.gov/content/pkg/PLAW-105publ119/html/PLAW-105publ119.htm); [govinfo:pl104-134-lsc501-508](https://www.govinfo.gov/content/pkg/PLAW-104publ134/html/PLAW-104publ134.htm); [govinfo:hrpt119-272-deinstitutionalization](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-naloxone](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:hrpt119-272-bop-mental-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt272/html/CRPT-119hrpt272.htm); [govinfo:srpt119-44-insomnia](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [govinfo:srpt119-44-continuity-of-care](https://www.govinfo.gov/content/pkg/CRPT-119srpt44/html/CRPT-119srpt44.htm); [ustr:singapore-fta-16-7-2](https://ustr.gov/archive/assets/Trade_Agreements/Bilateral/Singapore_FTA/Final_Texts/asset_upload_file708_5F4036.pdf); [ustr:australia-fta-17-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/australia/asset_upload_file469_5141.pdf); [ustr:morocco-fta-15-9-4](https://ustr.gov/sites/default/files/uploads/agreements/fta/morocco/asset_upload_file797_3849.pdf); [govinfo:hr6938eh-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938eh/html/BILLS-119hr6938eh.htm); [govinfo:hr6938ih-divisions-b-c](https://www.govinfo.gov/content/pkg/BILLS-119hr6938ih/html/BILLS-119hr6938ih.htm); [congressional-record:2026-01-08-6938-explanation-b-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-explanation-c-health](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-ihs-final-allocation-tables](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [congressional-record:2026-01-08-6938-doe-final-allocation](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house-bk3.pdf); [govinfo:pl113-76-regional-health424](https://www.govinfo.gov/content/pkg/PLAW-113publ76/html/PLAW-113publ76.htm); [govinfo:pl113-235-contract-support405-406](https://www.govinfo.gov/content/pkg/PLAW-113publ235/html/PLAW-113publ235.htm); [govinfo:pl116-9-national-park-medical2404](https://www.govinfo.gov/content/pkg/PLAW-116publ9/html/PLAW-116publ9.htm); [govinfo:hrpt119-215-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119hrpt215/html/CRPT-119hrpt215.htm); [govinfo:srpt119-46-ihs-niehs-atsdr](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:srpt119-46-regional-health-current-law](https://www.govinfo.gov/content/pkg/CRPT-119srpt46/html/CRPT-119srpt46.htm); [govinfo:40usc-appalachian-health-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleIV.htm); [govinfo:42usc3121-denali-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap38-sec3121.htm); [govinfo:7usc-delta-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapVI.htm); [govinfo:40usc-subtitleV-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm); [energy:fy2026-oda-health-programs](https://www.energy.gov/sites/default/files/2025-06/doe-fy-2026-vol-2-oda.pdf); [govinfo:hrpt119-213-passage-health](https://www.govinfo.gov/content/pkg/CRPT-119hrpt213/pdf/CRPT-119hrpt213.pdf); [govinfo:42usc10364-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10364&num=0&edition=2024); [govinfo:42usc10363-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title42-section10363&num=0&edition=2024); [govinfo:43usc2241-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section2241&num=0&edition=2024); [govinfo:43usc510b-2024-6938-water](https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title43-section510b&num=0&edition=2024); [govinfo:pl108-361-calfed-management](https://www.govinfo.gov/content/pkg/PLAW-108publ361/html/PLAW-108publ361.htm); [govinfo:pl111-11-rio-grande9106](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-gallup-contract](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl111-11-navajo-gallup-authorization](https://www.govinfo.gov/content/pkg/PLAW-111publ11/html/PLAW-111publ11.htm); [govinfo:pl106-554-dakota-water607](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [govinfo:pl106-554-dakota-water610](https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm); [congressional-record:2026-01-08-6938-passage-result](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
 | house:119:2:8 | supported passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | opposed passing H.R.504 over the veto, including its reserved-area eligibility framework and flood-protection requirement | [govinfo:hr504enr](https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm); [govinfo:pl105-313](https://www.govinfo.gov/content/pkg/PLAW-105publ313/html/PLAW-105publ313.htm); [govinfo:hrpt119-189](https://www.govinfo.gov/content/pkg/CRPT-119hrpt189/html/CRPT-119hrpt189-pt1.htm); [congressional-record:2026-01-02-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-02/pdf/CREC-2026-01-02-pt1-PgH6135-7.pdf); [congressional-record:2026-01-08-veto504-131](https://www.govinfo.gov/content/pkg/CREC-2026-01-08/pdf/CREC-2026-01-08-house.pdf) |
 | house:119:2:31 | supported passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | opposed passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package | [govinfo:hr2988eh](https://www.govinfo.gov/content/pkg/BILLS-119hr2988eh/html/BILLS-119hr2988eh.htm); [govinfo:29usc1002-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm); [govinfo:29usc1003-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1003.htm); [govinfo:29usc1101-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1101.htm); [govinfo:29usc1102-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1102.htm); [govinfo:29usc1103-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1103.htm); [govinfo:29usc1104-217-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm); [govinfo:hres988eh](https://www.govinfo.gov/content/pkg/BILLS-119hres988eh/html/BILLS-119hres988eh.htm); [govinfo:hrpt119-440](https://www.govinfo.gov/content/pkg/CRPT-119hrpt440/html/CRPT-119hrpt440.htm); [congressional-record:2026-01-15-erisa](https://www.govinfo.gov/content/pkg/CREC-2026-01-15/pdf/CREC-2026-01-15-house.pdf) |
+| house:119:2:32 | supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions | opposed passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions | [govinfo:hr5763eh](https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm); [govinfo:15usc696-224-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm); [sba:sop50108-20250601-special-purpose](https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx); [govinfo:cfr2025-13-120910](https://www.govinfo.gov/content/pkg/CFR-2025-title13-vol1/pdf/CFR-2025-title13-vol1-part120.pdf); [sba:notice5000-872764-new-business](https://legacy.sba.gov/sites/default/files/2025-11/Procedural%20Notice%205000-872764_Revisions%20to%20SOP%2050%2010%208.pdf); [govinfo:hrpt119-406-purpose-and-minority](https://www.govinfo.gov/content/pkg/CRPT-119hrpt406/html/CRPT-119hrpt406.htm); [congressional-record:2026-01-20-5763](https://www.govinfo.gov/content/pkg/CREC-2026-01-20/pdf/CREC-2026-01-20-house.pdf) |
+| house:119:2:47 | supported passing the bill requiring the specified pregnancy and parenting support disclosures | opposed passing the bill requiring the specified pregnancy and parenting support disclosures | [govinfo:hr6359eh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm); [govinfo:hr6359rh](https://www.govinfo.gov/content/pkg/BILLS-119hr6359rh/html/BILLS-119hr6359rh.htm); [govinfo:hres1009eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1009eh/html/BILLS-119hres1009eh.htm); [govinfo:20usc1092-titleIV-information-scope](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1092.htm); [govinfo:20usc1681-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1681.htm); [govinfo:20usc1688-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap38-sec1688.htm); [govinfo:hrpt119-447-section-analysis](https://www.govinfo.gov/content/pkg/CRPT-119hrpt447/html/CRPT-119hrpt447.htm); [congressional-record:2026-01-22-pregnant-student](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf) |
 <!-- GENERATED CANDIDATE END -->

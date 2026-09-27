@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "a356966361ed8e477f5ac62c80dc0646debfcececb77d7c6a7acf11d9fcb359f",
-  "source_capture_sha256": "979579d548f401be6f170462a106d7fbd40abbc70aad9674073cfa09c7443090",
-  "core_sha256": "31b4daefd1819cf7c933e226529913d5d675ed9db23e82995487c24be8297ebd",
-  "compiled_sha256": "d7cb224e098ea60e1add67502f1ffc1b84027ab52d0d0aada210b453f9865721",
-  "readable_sha256": "66b885c6bddec986c151cc8d7d86dee8b8791a5adf07a4a0320b20c1aa8679fa",
+  "input_sha256": "e80525167e7edea67a8fe7007bda3e9023688695cf286a1e948c95a4238513a2",
+  "source_capture_sha256": "b269864b4e04329269e4c1e1bf765deaae65d2905f097347a4bb9e45263e69a3",
+  "core_sha256": "907620bb1669b3f6e9b021cb038a8c80e367f5d38b1d524f53db843aac2845ab",
+  "compiled_sha256": "f60918fa2c1e57de9dd7230bb8fd3fd2a1937b9da60547321e66e9ace23447c2",
+  "readable_sha256": "08898b3acf7998db84b653a77c375834b1b7922a6464fefb148f4cb836ac7857",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1573,6 +1573,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing the whole ERISA fiduciary, service-provider, proxy and pension-brokerage package",
           "source_id": "clerk:119:2:31"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:32",
+      "shared_sha256": "535548d2ff9c0119a9a8aa3757ef4cf0b99e2ecbef15aafeb61b2f6cf3666d85",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions",
+          "source_id": "clerk:119:2:32"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole bill to remove the special-purpose statutory equity requirement while retaining other loan conditions",
+          "source_id": "clerk:119:2:32"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:47",
+      "shared_sha256": "de5b6db80192b787c1e031e25af0ef8cc3fb5193a61cedf1a3246de793fa0072",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the bill requiring the specified pregnancy and parenting support disclosures",
+          "source_id": "clerk:119:2:47"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the bill requiring the specified pregnancy and parenting support disclosures",
+          "source_id": "clerk:119:2:47"
         }
       ]
     }
