@@ -264,8 +264,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":186, "source_unresolved":249,
-            "interpreted_substantive_directional":70, "expressive_nonbinding_context":11, "exact_action_ineligible":160})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":188, "source_unresolved":241,
+            "interpreted_substantive_directional":70, "expressive_nonbinding_context":11, "exact_action_ineligible":166})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -283,7 +283,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 248)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 240)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1075,6 +1075,34 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertIn("does not itself repeal or suspend a health rule", records["house:119:1:311"]["rationale"])
         self.assertIn("not automatic final approval", records["house:119:1:316"]["rationale"])
 
+
+    def test_december_referral_controls_do_not_promote_displayed_material_to_substantive_choices(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        actions = {a["action_id"] for a in self.products[0]["actions"]}
+        for roll in [319, 321]:
+            record = records[f"house:119:1:{roll}"]
+            self.assertEqual(record["disposition"], "procedural_context")
+            self.assertNotIn(record["action_id"], actions)
+        self.assertIn("Clerk-read motion is a bare commitment", records["house:119:1:319"]["rationale"])
+        self.assertIn("neither adoption of that rule nor passage", records["house:119:1:321"]["rationale"])
+
+    def test_invest_amendments_bind_exact_print_and_designee_without_borrowing_package_membership(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        actions = {a["action_id"] for a in self.products[0]["actions"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        for roll in [325, 326, 327, 328]:
+            record = records[f"house:119:1:{roll}"]
+            self.assertEqual(record["disposition"], "exact_action_ineligible")
+            self.assertNotIn(record["action_id"], actions)
+            self.assertTrue(record["claim_source_map"])
+        print_source = sources["rules:rcp119-15-20251202-section307"]
+        self.assertEqual([p["pdf_page"] for p in print_source["page_extracts"]], [1, 63, 64])
+        self.assertIn("DECEMBER 2, 2025", print_source["page_extracts"][0]["text"])
+        self.assertIn("Garcia’s designee", records["house:119:1:326"]["rationale"])
+        passage = records["house:119:1:328"]
+        self.assertIn("adult-protective-service", passage["rationale"])
+        self.assertIn("health/long-term-care distribution tax exception", passage["rationale"])
+        self.assertIn("govinfo:42usc1397k-2024-page", {s["source_id"] for s in passage["sources"]})
 
 if __name__ == "__main__":
     unittest.main()

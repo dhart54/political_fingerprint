@@ -100,11 +100,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 186,
-      "exact_action_ineligible": 160,
+      "procedural_context": 188,
+      "exact_action_ineligible": 166,
       "interpreted_substantive_directional": 70,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 249
+      "source_unresolved": 241
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -116,10 +116,10 @@
     "substantive_eligible_actions": 70,
     "directional_substantive_actions": 70,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 186,
+    "procedural_context_actions": 188,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 160,
-    "unresolved_boundary_cases": 249,
+    "exact_action_ineligible_actions": 166,
+    "unresolved_boundary_cases": 241,
     "independent_episode_count": 53,
     "multi_action_episode_count": 9,
     "mechanism_types": [
@@ -136,7 +136,7 @@
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "248 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
+      "240 discovery identities still need substantive membership review. Roll237 separately has a recorded $50,000 printed-source discrepancy; formal correction/version tracing remains open."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -243,6 +243,8 @@
         "house:119:1:308",
         "house:119:1:309",
         "house:119:1:317",
+        "house:119:1:319",
+        "house:119:1:321",
         "house:119:1:322",
         "house:119:1:329",
         "house:119:1:333",
@@ -466,6 +468,12 @@
         "house:119:1:310",
         "house:119:1:311",
         "house:119:1:316",
+        "house:119:1:323",
+        "house:119:1:324",
+        "house:119:1:325",
+        "house:119:1:326",
+        "house:119:1:327",
+        "house:119:1:328",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -586,15 +594,7 @@
         "house:119:1:299",
         "house:119:1:307",
         "house:119:1:318",
-        "house:119:1:319",
         "house:119:1:320",
-        "house:119:1:321",
-        "house:119:1:323",
-        "house:119:1:324",
-        "house:119:1:325",
-        "house:119:1:326",
-        "house:119:1:327",
-        "house:119:1:328",
         "house:119:1:330",
         "house:119:1:331",
         "house:119:1:332",
@@ -826,11 +826,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "70 proposed source-mapped inputs, not accepted eligibility. Of249 unresolved identities,248 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
+    "count_basis": "70 proposed source-mapped inputs, not accepted eligibility. Of241 unresolved identities,240 remain unreviewed and one has an examined source conflict; none is presumed Health-eligible."
   },
   "episode_completeness": "53 candidate episodes cover70 supplied actions, including9 multi-action episodes (six two-action episodes, four H.R.3838 actions, four H.R.4016 actions and six H.R.4553 actions). Exact amendments, passage and concurrence remain independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "dff539eaabdd030fb8538c984816e4d3d3e03474f4d4239b4a234c4146d093cb",
+  "universe_subject_sha256": "3b7185d77965204b6fe9a47afff6a4a8ff96a7a954e8ee22fb36ccefe9249fd4",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -23165,7 +23165,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.Res.936 EH fully read and governed (research138). Structured HR3898 substitute from Transportation/Infrastructure RH plus Report partsA amendments; HR3383 deemed RCP119-15 plus partB; HR3638 partC; HR3628 partD; closed HR3668; S1071 deemed RCP119-16 with one motion to commit. Do not borrow the old S1071 burial title for the new package. Chairs may insert explanatory material throughDecember12. Section8 permits dispensing second-session organizational/legislative business beforeJan6,2026 and Journal approval. Obtain full incorporated prints/substitutes and exact Rules report before final procedural disposition; not passage of these bills."
+        "next_action": "H.Res.936 EH remains governed; Report119-399 is captured in research145 and its rule summary plus PartB1/3/5 have been read. Those amendments now have separate completed exclusions325-327; full INVEST EH was read for completed passage328. RCP119-15 datedDec2,2025 cover and section307 pages63-64 are bound (research146); remainder of that print is not yet read. H.R.3898 RH and H.R.3668 RH are captured in research145 but unread. Continue exact incorporated substitute verification, especially RCP119-16 (official public PDF https://docs.house.gov/billsthisweek/20251208/RCP_xml%5B2%5D.pdf,3086 pages; web cover confirmsDec7,2025), before final procedural disposition.319 is a completed bare committee-referral control, not a substantive vote on displayed proposed labor instructions."
       }
     },
     {
@@ -23175,13 +23175,14 @@
       "date": "2025-12-10",
       "measure": "bill_119_s_1071",
       "question": "On Motion to Commit",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The December10 roll319 rejected the Norcross motion to commit S.1071 to the Committee on Armed Services, separately from the subsequent passage vote. The Clerk-read motion is a bare commitment. The Record then reproduces material previously referred to by Norcross proposing instructions for an FY2026 Defense-funding restriction on implementation of Executive Order14251 and following policy/guidance; that displayed material is not the text the Clerk read as the motion being put. Preserve that distinction rather than treating the recorded procedural choice as direct adoption or rejection of a collective-bargaining funding rider. H.Res.936 had substituted the defense package; the older burial-related Clerk title does not define the pending bill’s content. No substantive Health direction or endorsement of the whole defense package is assigned to this committee-referral choice.",
       "source": {
         "source_id": "clerk:119:1:319",
         "url": "https://clerk.house.gov/evs/2025/roll319.xml",
         "raw_sha256": "253ad12b29cc53e2fe88ccdfe7a31f733c6481c2baab72150f0a06a2bd942fd9",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "0ea6b989517039eed5c0e1c30f972620e496c94356a5448c9941e9ff08283014",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23192,25 +23193,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The December10 roll319 rejected the Norcross motion to commit S.1071 to the Committee on Armed Services, separately from the subsequent passage vote. The Clerk-read motion is a bare commitment. The Record then reproduces material previously referred to by Norcross proposing instructions for an FY2026 Defense-funding restriction on implementation of Executive Order14251 and following policy/guidance; that displayed material is not the text the Clerk read as the motion being put. Preserve that distinction rather than treating the recorded procedural choice as direct adoption or rejection of a collective-bargaining funding rider. H.Res.936 had substituted the defense package; the older burial-related Clerk title does not define the pending bill’s content. No substantive Health direction or endorsement of the whole defense package is assigned to this committee-referral choice.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:319",
           "url": "https://clerk.house.gov/evs/2025/roll319.xml",
           "raw_sha256": "253ad12b29cc53e2fe88ccdfe7a31f733c6481c2baab72150f0a06a2bd942fd9",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "0ea6b989517039eed5c0e1c30f972620e496c94356a5448c9941e9ff08283014",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres936eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+          "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+          "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
+        },
+        {
+          "source_id": "congressional-record:2025-12-10-commit1071",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5518-2.pdf",
+          "raw_sha256": "c65d6c1c8c61e80a3e7c598cca611cfa37e403bfde21c7eac855d486bd800b4a",
+          "governed_bytes_sha256": "2629558f488e99f0381a1a7a47ce20c779d323257bf55b5cda8cbff0f1041b30"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:319",
+        "source_ids": [
+          "clerk:119:1:319",
+          "govinfo:hres936eh",
+          "congressional-record:2025-12-10-commit1071"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:319",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "0775578daba59d6173a1a25c21fe8427ec6f63e028dc4c9827ec2edea51e88ab"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:320",
@@ -23253,7 +23279,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Exact House amendment S.1071 EAH captured publicly in research154: https://www.govinfo.gov/content/pkg/BILLS-119s1071eah/html/BILLS-119s1071eah.htm ; raw_sha256=2d75c9445d4bae496abe7ffb9fb3bcafaed034008f9f7e8f4f7d2801029e9898 ; text3491744 characters. Captured only, substantive text not yet read. Confirm relation to RCP119-16 and proceed through complete package accounting, reusing already studied H.R.3838/H.R.4275 context but not assuming retained wording. It is the defense package, not the older burial title. Clerk320 is captured in research143; Record H5519-5520 vote sequence is already bound for319/321. Do not repeat319 as a Health interpretation."
       }
     },
     {
@@ -23263,13 +23290,14 @@
       "date": "2025-12-10",
       "measure": "bill_119_hres_432",
       "question": "On Motion to Discharge",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "The December10 roll321 discharged the Committee on Rules from further consideration of H.Res.432. The Chair states the precise resolution and committee, despite a floor speaker’s shorthand description of discharging H.R.2550. The introduced resolution would arrange consideration of H.R.2550 with points of order waived, one hour of debate and one recommittal opportunity; it also disapplies specified House-rule clauses and directs transmittal after passage. The Record separately turns to consideration of the resolution after the discharge vote. This is neither adoption of that rule nor passage of H.R.2550, and does not itself nullify the executive order or change health-worker services or benefits. It remains non-counting procedural context; labor/clinical consequences cannot be assigned from the parent bill or debate.",
       "source": {
         "source_id": "clerk:119:1:321",
         "url": "https://clerk.house.gov/evs/2025/roll321.xml",
         "raw_sha256": "3567f4c5c54022c123cd3879fd9be9512d639fe88141c336fb9d1fdae6445142",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "15179efb4e6eac2303418b1102b969de47c9e3c5c2590abd445a81cd712bde55",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23280,25 +23308,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "The December10 roll321 discharged the Committee on Rules from further consideration of H.Res.432. The Chair states the precise resolution and committee, despite a floor speaker’s shorthand description of discharging H.R.2550. The introduced resolution would arrange consideration of H.R.2550 with points of order waived, one hour of debate and one recommittal opportunity; it also disapplies specified House-rule clauses and directs transmittal after passage. The Record separately turns to consideration of the resolution after the discharge vote. This is neither adoption of that rule nor passage of H.R.2550, and does not itself nullify the executive order or change health-worker services or benefits. It remains non-counting procedural context; labor/clinical consequences cannot be assigned from the parent bill or debate.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:321",
           "url": "https://clerk.house.gov/evs/2025/roll321.xml",
           "raw_sha256": "3567f4c5c54022c123cd3879fd9be9512d639fe88141c336fb9d1fdae6445142",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "15179efb4e6eac2303418b1102b969de47c9e3c5c2590abd445a81cd712bde55",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hres432ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres432ih/html/BILLS-119hres432ih.htm",
+          "raw_sha256": "5235a785dbd861fae8fa5a1609c35aab182ad4007eae2882df704bd31ce77299",
+          "governed_bytes_sha256": "a9fc68cafc3e785bf4304570b02eeacbcec9bde008a88a1a6eff0ed6cae5fae0"
+        },
+        {
+          "source_id": "congressional-record:2025-12-10-discharge432",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5520.pdf",
+          "raw_sha256": "69c9c8e21995616d2d89685b710535fd6236b23c6516996c45f9f6f48284ed0b",
+          "governed_bytes_sha256": "972739abd246df7f9685efe6929c4980322fbb3ef3cb85badd35b7971475b3fe"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:321",
+        "source_ids": [
+          "clerk:119:1:321",
+          "govinfo:hres432ih",
+          "congressional-record:2025-12-10-discharge432"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:321",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1c1b7c237fbdd1d4b268a1f84757cd594694d5b56c0509e8a803bdc92445df4d"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:322",
@@ -23351,13 +23404,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3628",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact December11 passage choice concerns the full H.R.3628 EH, including its GAO report. It adds a PURPA standard for State-regulated utilities employing integrated resource planning: measures for reliable electric energy over ten years through continued operation of, or procurement from, generation facilities meeting continuous thirty-day operation and on-site or contracted fuel-supply criteria, emergency/severe-weather operation and frequency/voltage support. Incorporated16USC2621(a)-(c) requires consideration after public notice/hearing and a written evidence-based determination, but permits a determination against implementation and permits declining an appropriate standard with written reasons. This is not automatic nationwide adoption of the new generation standard. The new deadlines apply to each State regulatory authority for the State-regulated utilities within its ratemaking authority: commence consideration or set a hearing within one year, determine within two. Prior implemented or considered comparable State standards qualify for the specified exception; the three-year limit attaches to the alternative State-legislature vote, not to every prior proceeding. Conforming changes address noncompliance and prior/pending proceedings. The GAO report within one year evaluates prior integrated resource planning and reliability, stability and affordability; incorporated2602 definitions concern electricity customers, resource alternatives and State ratemaking jurisdiction. No operative provision changes clinical care, health coverage, a household-assistance benefit or a Health-program funding condition. Possible consequences of electric reliability for hospitals or public health do not establish exact-action Health membership. This proposed exclusion does not assert that electricity is irrelevant to health or predict the bill’s consequences.",
       "source": {
         "source_id": "clerk:119:1:323",
         "url": "https://clerk.house.gov/evs/2025/roll323.xml",
         "raw_sha256": "b6521066eefbbd248e5b547250033f520c34b3ae8cbb7eee0e471a98d46adeb0",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "9d6929cffb8b70e6f5a77ad179d707072a7a817ac1cf58d4d5618e241b5971c0",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23368,26 +23422,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact December11 passage choice concerns the full H.R.3628 EH, including its GAO report. It adds a PURPA standard for State-regulated utilities employing integrated resource planning: measures for reliable electric energy over ten years through continued operation of, or procurement from, generation facilities meeting continuous thirty-day operation and on-site or contracted fuel-supply criteria, emergency/severe-weather operation and frequency/voltage support. Incorporated16USC2621(a)-(c) requires consideration after public notice/hearing and a written evidence-based determination, but permits a determination against implementation and permits declining an appropriate standard with written reasons. This is not automatic nationwide adoption of the new generation standard. The new deadlines apply to each State regulatory authority for the State-regulated utilities within its ratemaking authority: commence consideration or set a hearing within one year, determine within two. Prior implemented or considered comparable State standards qualify for the specified exception; the three-year limit attaches to the alternative State-legislature vote, not to every prior proceeding. Conforming changes address noncompliance and prior/pending proceedings. The GAO report within one year evaluates prior integrated resource planning and reliability, stability and affordability; incorporated2602 definitions concern electricity customers, resource alternatives and State ratemaking jurisdiction. No operative provision changes clinical care, health coverage, a household-assistance benefit or a Health-program funding condition. Possible consequences of electric reliability for hospitals or public health do not establish exact-action Health membership. This proposed exclusion does not assert that electricity is irrelevant to health or predict the bill’s consequences.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:323",
           "url": "https://clerk.house.gov/evs/2025/roll323.xml",
           "raw_sha256": "b6521066eefbbd248e5b547250033f520c34b3ae8cbb7eee0e471a98d46adeb0",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "9d6929cffb8b70e6f5a77ad179d707072a7a817ac1cf58d4d5618e241b5971c0",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3628eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3628eh/html/BILLS-119hr3628eh.htm",
+          "raw_sha256": "420455f4807299aa1661ab2f2ac8ec0886ade9639602c9419ab81e3cae158048",
+          "governed_bytes_sha256": "2e3284f65f574ce10f7353ca3f089adb9fc42787a0641efc465e64cd74f47856"
+        },
+        {
+          "source_id": "govinfo:16usc2602-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-sec2602.htm",
+          "raw_sha256": "cd40ebfd8f9bd6dfce559106c847303e0a399265c14aba971e0c7ac9f4592e64",
+          "governed_bytes_sha256": "263f067d0650f6f8c1f477cbdc02fd70c4af3920e2180a0a329d37dea504c221"
+        },
+        {
+          "source_id": "govinfo:16usc2621-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapII-sec2621.htm",
+          "raw_sha256": "e2a2a81c32195fca98df2717a423270d8b1094a82e047ea9b2d5abb26395b753",
+          "governed_bytes_sha256": "162dd03b1de2790efa2eb7c0e2f4a220caab385771f68758a3d92b99b3d63b53"
+        },
+        {
+          "source_id": "govinfo:16usc2622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapII-sec2622.htm",
+          "raw_sha256": "8912ffc5812c9c592848cc94b6676a039d9c938f017b6080cd7a204557bbd78b",
+          "governed_bytes_sha256": "2a1ea4452e19b307e8adb91d428f554e512fdeb9440eba304fdf0229d28c141d"
+        },
+        {
+          "source_id": "govinfo:16usc2634-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap46-subchapIII-sec2634.htm",
+          "raw_sha256": "1d0fdfa4ba5d5de6daefba8ff9331e40e365cc9373cf04abf237417830554540",
+          "governed_bytes_sha256": "e6323963d628427f4c2d00127dfd2a2509b163053669e65b0a3c0a431522ba54"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:323",
+        "source_ids": [
+          "clerk:119:1:323",
+          "govinfo:hr3628eh",
+          "govinfo:16usc2602-2024-operative",
+          "govinfo:16usc2621-2024-operative",
+          "govinfo:16usc2622-2024-operative",
+          "govinfo:16usc2634-2024-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:323",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.3628 EH fully read/governed, research138. Adds PURPA111(d)(22) reliable-generation consideration standard:10-year planning,30-day continuous generation/fuel capability including contractual supply, emergency/severe-weather characteristics and grid support. Distinguish mandated State consideration/determination from automatic nationwide adoption. One-year hearing/consideration and two-year determination deadlines; prior comparable State action exceptions and prior/pending proceedings. GAO report withinone year. Finish16USC2602/2621/2622/2634 and exact Clerk323/sourceversion before membership; no medical-access effect inferred from grid reliability."
-      }
+        "shared_review_record_sha256": "e1bbfee03342bfc138576cc57e69baf03db2b646efbd2c27dff04d5c64041512"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:324",
@@ -23396,13 +23495,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3638",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact December11 passage choice concerns the full H.R.3638 EH, directing Energy Department periodic assessments of the electricity-generation/transmission supply chain and a first congressional report within one year, then periodic reporting. The assessment covers advanced transmission/conductors, component availability, critical-material processing, domestic policy barriers, foreign-entity supply dependence and artificial-intelligence risks, workforce challenges, noncitizens at United States generation/transmission facilities, and opportunities/barriers for veterans, transitioning servicemembers and military spouses. It identifies emerging issues and recommends responses; recommendations are not automatically implemented. The incorporated30USC1606(a) definition covers specified energy-critical materials and critical minerals;42USC18741(a) identifies foreign entities of concern through designation, blocking, government control, specified conviction-related conduct or national-security/foreign-policy determination.16USC796(22) identifies electric-energy sellers including TVA and Federal power marketing administrations. The printed parenthetical42USC824o(a) does not match the named Federal Power Act215(a), whose ERO definition is codified at16USC824o(a)(2). Both the printed citation and the exact named provision are retained; this review does not silently amend the bill. The latter defines the Commission-certified reliability organization used as a consultation stakeholder; the discrepancy does not supply a clinical-care mechanism. The DOE Organization Act reference locates these electricity assessments within existing departmental duties, without amending unrelated programs. Neither the references nor the veterans/spouses workforce-assessment item establishes a Health benefit, health-service authorization, clinical standard or Health-funding change. Grid reliability and material-security consequences are not used to infer Health eligibility. This remains a proposed exact-action exclusion, not a claim about all possible effects of the energy package.",
       "source": {
         "source_id": "clerk:119:1:324",
         "url": "https://clerk.house.gov/evs/2025/roll324.xml",
         "raw_sha256": "6d51ff0429b24f2155d1aff39ffaa6f48153de9e1b8d1fec839aa676c06988c9",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "27ce95944aa378ac030018abcba12b3946f53495cbd9d265fc87e1d2f3bda11a",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23413,26 +23513,71 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact December11 passage choice concerns the full H.R.3638 EH, directing Energy Department periodic assessments of the electricity-generation/transmission supply chain and a first congressional report within one year, then periodic reporting. The assessment covers advanced transmission/conductors, component availability, critical-material processing, domestic policy barriers, foreign-entity supply dependence and artificial-intelligence risks, workforce challenges, noncitizens at United States generation/transmission facilities, and opportunities/barriers for veterans, transitioning servicemembers and military spouses. It identifies emerging issues and recommends responses; recommendations are not automatically implemented. The incorporated30USC1606(a) definition covers specified energy-critical materials and critical minerals;42USC18741(a) identifies foreign entities of concern through designation, blocking, government control, specified conviction-related conduct or national-security/foreign-policy determination.16USC796(22) identifies electric-energy sellers including TVA and Federal power marketing administrations. The printed parenthetical42USC824o(a) does not match the named Federal Power Act215(a), whose ERO definition is codified at16USC824o(a)(2). Both the printed citation and the exact named provision are retained; this review does not silently amend the bill. The latter defines the Commission-certified reliability organization used as a consultation stakeholder; the discrepancy does not supply a clinical-care mechanism. The DOE Organization Act reference locates these electricity assessments within existing departmental duties, without amending unrelated programs. Neither the references nor the veterans/spouses workforce-assessment item establishes a Health benefit, health-service authorization, clinical standard or Health-funding change. Grid reliability and material-security consequences are not used to infer Health eligibility. This remains a proposed exact-action exclusion, not a claim about all possible effects of the energy package.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:324",
           "url": "https://clerk.house.gov/evs/2025/roll324.xml",
           "raw_sha256": "6d51ff0429b24f2155d1aff39ffaa6f48153de9e1b8d1fec839aa676c06988c9",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "27ce95944aa378ac030018abcba12b3946f53495cbd9d265fc87e1d2f3bda11a",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3638eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3638eh/html/BILLS-119hr3638eh.htm",
+          "raw_sha256": "fae0de2e5e0a936358a135000c7679c2d78c2f30d62f7716909408797a8d8c75",
+          "governed_bytes_sha256": "8a38182a5ad10c5f43cbcb6228c89fde789e6bbf6039c01723a6286e4c161abc"
+        },
+        {
+          "source_id": "govinfo:30usc1606-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap28-sec1606.htm",
+          "raw_sha256": "8bb435a8987f6c9838380a8ab73b7e38bf53347c7fe53ce9107decebd5680303",
+          "governed_bytes_sha256": "e853415492c976bd8719568c54c958c953f624797ce116b2053a5340ea68ea14"
+        },
+        {
+          "source_id": "govinfo:42usc18741-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap162-subchapII-sec18741.htm",
+          "raw_sha256": "c325b9667ffd9ec644bae38d923248bbb62dfc560ca372e66a50fe85f80b558f",
+          "governed_bytes_sha256": "2e7ae59990d1af54d84455a3b07176dbc26c17a9cdaf46784a54061a5a1a7b42"
+        },
+        {
+          "source_id": "govinfo:16usc796-22-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapI-sec796.htm",
+          "raw_sha256": "b6fc370fe3aa26a89eb5025a2f2e28b947e986b577dd5745037c8d596f9181dc",
+          "governed_bytes_sha256": "405ffc80f674abcf68f909164f3f72e92050282186885b5de23235bd1acfd6c6"
+        },
+        {
+          "source_id": "govinfo:16usc824o-a-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap12-subchapII-sec824o.htm",
+          "raw_sha256": "b1f619535594112535e3937a52e3bac02e78dd4812780d262da6f8a6f3bd29b9",
+          "governed_bytes_sha256": "2be5dd75a69ecd1f4771855636cf3ae3bb330e88b47311e8f46e98e30bf4b083"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:324",
+        "source_ids": [
+          "clerk:119:1:324",
+          "govinfo:hr3638eh",
+          "govinfo:30usc1606-a-2024",
+          "govinfo:42usc18741-a-2024",
+          "govinfo:16usc796-22-2024",
+          "govinfo:16usc824o-a-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:324",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.3638 EH fully read/governed, research138. DOE periodic supply-chain assessments and first report withinone year, later periodic reports. Retain advanced transmission/conductors, foreign-entity/AI vulnerabilities, noncitizen workforce assessment, veterans/transitioning-service-member/military-spouse workforce opportunities and recommendations; no recommendation automatically implemented. Complete30USC1606(a),42USC18741(a),16USC796 and FederalPowerAct215(a) definition. Printed42USC824o(a) appears title-number mismatch; trace16USC824o rather than silently repair. Existing DOEOrganizationAct context does not itself expand this reporting mandate into a Health intervention. VerifyClerk324; no membership disposition yet."
-      }
+        "shared_review_record_sha256": "072e5fb468e6d1026414eb1e8dc0de04a53cfa188ae31571842c7fc494f81fc0"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:325",
@@ -23441,13 +23586,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3383",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Self’s separate PartB amendment1 would strike section307 of the exact Rules Committee Print119-15 datedDecember2,2025. That section adds SEC-required disclosure of share ownership and voting-power percentages for directors, nominees, named executives and beneficial owners with at least five percent of combined director-election voting power, where the issuer has classes with differing voting rights. The entire section and dated print cover are bound, not a generic corporate-disclosure title. The amendment was rejected; it neither strikes the rest of the investment package nor alters a clinical-care, insurance, Medicaid, Social Security or social-service delivery/financing mechanism. Potential health-company issuers do not make this ownership-disclosure deletion an exact Health action. Passage remains separately unreviewed.",
       "source": {
         "source_id": "clerk:119:1:325",
         "url": "https://clerk.house.gov/evs/2025/roll325.xml",
         "raw_sha256": "fb3d6f2f520ade072206df3490d8939288b951584873492a193b48c93b161ecc",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "7c0b23c569176781ebe30508ff8846dc05b42895b8766afc865a79c1f2a7d860",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23458,25 +23604,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Self’s separate PartB amendment1 would strike section307 of the exact Rules Committee Print119-15 datedDecember2,2025. That section adds SEC-required disclosure of share ownership and voting-power percentages for directors, nominees, named executives and beneficial owners with at least five percent of combined director-election voting power, where the issuer has classes with differing voting rights. The entire section and dated print cover are bound, not a generic corporate-disclosure title. The amendment was rejected; it neither strikes the rest of the investment package nor alters a clinical-care, insurance, Medicaid, Social Security or social-service delivery/financing mechanism. Potential health-company issuers do not make this ownership-disclosure deletion an exact Health action. Passage remains separately unreviewed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:325",
           "url": "https://clerk.house.gov/evs/2025/roll325.xml",
           "raw_sha256": "fb3d6f2f520ade072206df3490d8939288b951584873492a193b48c93b161ecc",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "7c0b23c569176781ebe30508ff8846dc05b42895b8766afc865a79c1f2a7d860",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-399-partb-amend1",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt399/html/CRPT-119hrpt399.htm",
+          "raw_sha256": "d9da2c4b40b5c85bdc42f0346113e816663cf7cd6d53c5687b764dcb52153b30",
+          "governed_bytes_sha256": "c9666342fa6b5043683402f0966ed86f59401f1f566f13b31d7263805868871d"
+        },
+        {
+          "source_id": "rules:rcp119-15-20251202-section307",
+          "url": "https://rules.house.gov/sites/evo-subsites/rules.house.gov/files/documents/rcp_h3383_xml.pdf",
+          "raw_sha256": "197589fcab17b06be1c06daefdc09545c18c398f4343ec57f56e4650c16b095b",
+          "governed_bytes_sha256": "561a849b802ad8d808f583bfc70f86db9115bfb99840774ef47d0a3372c4e486"
+        },
+        {
+          "source_id": "congressional-record:2025-12-11-invest-votes",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+          "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+          "governed_bytes_sha256": "4b0d78eb388ef0d73918a4ba64d78cf9712217f84544e7359b046801afb98f4e"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:325",
+        "source_ids": [
+          "clerk:119:1:325",
+          "govinfo:hrpt119-399-partb-amend1",
+          "rules:rcp119-15-20251202-section307",
+          "congressional-record:2025-12-11-invest-votes"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:325",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4887ff6700d53a601796642400bc7bab080a4cef08664533afe5e2a8988370a0"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:326",
@@ -23485,13 +23663,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3383",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "PartB amendment3 directs Treasury rulemaking to apply financial-institution know-your-customer and anti-money-laundering requirements to each investment adviser and hedge fund with respect to foreign clients. Its hedge-fund definition binds the Investment Company Act3(c)(1)/(7) private-offering exceptions, not every investment or insurance product. The incorporated Bank Secrecy Act purpose, institution definitions, AML program controls and customer-identity/recordkeeping rules establish the financial-compliance mechanism.31USC5312 lists insurance companies among existing financial institutions; this does not turn the amendment’s added adviser/fund duties into health-insurance coverage or clinical-service regulation. The report names Garcia or her designee; the December10 floor text expressly identifies Waters as Garcia’s designee, and the December11 Clerk/Record bind roll326 to that same PartB number3. This is not an unresolved sponsor conflict. The amendment was rejected and is separate from the package. No Health delivery, financing, coverage or eligibility effect is established from possible investments in health firms or generalized effects of financial crime.",
       "source": {
         "source_id": "clerk:119:1:326",
         "url": "https://clerk.house.gov/evs/2025/roll326.xml",
         "raw_sha256": "94ba199c90ddc18ac7487b2d021df1c36f2fda9c371a32bf1fe55d16b841b746",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23502,25 +23681,99 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "PartB amendment3 directs Treasury rulemaking to apply financial-institution know-your-customer and anti-money-laundering requirements to each investment adviser and hedge fund with respect to foreign clients. Its hedge-fund definition binds the Investment Company Act3(c)(1)/(7) private-offering exceptions, not every investment or insurance product. The incorporated Bank Secrecy Act purpose, institution definitions, AML program controls and customer-identity/recordkeeping rules establish the financial-compliance mechanism.31USC5312 lists insurance companies among existing financial institutions; this does not turn the amendment’s added adviser/fund duties into health-insurance coverage or clinical-service regulation. The report names Garcia or her designee; the December10 floor text expressly identifies Waters as Garcia’s designee, and the December11 Clerk/Record bind roll326 to that same PartB number3. This is not an unresolved sponsor conflict. The amendment was rejected and is separate from the package. No Health delivery, financing, coverage or eligibility effect is established from possible investments in health firms or generalized effects of financial crime.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:326",
           "url": "https://clerk.house.gov/evs/2025/roll326.xml",
           "raw_sha256": "94ba199c90ddc18ac7487b2d021df1c36f2fda9c371a32bf1fe55d16b841b746",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-399-partb-amend3",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt399/html/CRPT-119hrpt399.htm",
+          "raw_sha256": "d9da2c4b40b5c85bdc42f0346113e816663cf7cd6d53c5687b764dcb52153b30",
+          "governed_bytes_sha256": "13e09cbf71d1ebd54466b776d6f9efd2afb40780551991c4257c9e9ea821ae7d"
+        },
+        {
+          "source_id": "congressional-record:2025-12-10-invest-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+          "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+          "governed_bytes_sha256": "4c04fb5aa8123078d4d46c46be882ab66d9f2fc001e6d75b4f08c18536bdfd7b"
+        },
+        {
+          "source_id": "congressional-record:2025-12-11-invest-votes",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+          "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+          "governed_bytes_sha256": "4b0d78eb388ef0d73918a4ba64d78cf9712217f84544e7359b046801afb98f4e"
+        },
+        {
+          "source_id": "govinfo:15usc80a3-c1-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-3.htm",
+          "raw_sha256": "ed168c11fa5cda849f854c7fc93f5ad7ed2c80a92ddc867c1e38652bb4824fe7",
+          "governed_bytes_sha256": "faa668d90bc363d19f00664b165e849ba4b285bce3fea233474fc38d06c83245"
+        },
+        {
+          "source_id": "govinfo:15usc80a3-c7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-3.htm",
+          "raw_sha256": "ed168c11fa5cda849f854c7fc93f5ad7ed2c80a92ddc867c1e38652bb4824fe7",
+          "governed_bytes_sha256": "3d5462e02b8093bdb9b65adb9629f3cb4b5c846e615258222c2258662d031d0c"
+        },
+        {
+          "source_id": "govinfo:31usc5311-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5311.htm",
+          "raw_sha256": "7ed185557dc712650f6753e7b5469a42b0305b0cfc08121002f7ebf7ebfab9e4",
+          "governed_bytes_sha256": "cebb5ee71d48186df74d5323af17e28174da7a16af0fe5c9ecc28deb0d5b9ba7"
+        },
+        {
+          "source_id": "govinfo:31usc5312-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5312.htm",
+          "raw_sha256": "e8af03b10d8851adf0571e65dd93c0824b782897d101b8d4b78cd86f789d8fff",
+          "governed_bytes_sha256": "9faa80a3cb0e0b36fa1e8e36348e62b2483e39fdfcc80928fffd3b24354886f1"
+        },
+        {
+          "source_id": "govinfo:31usc5318-h-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5318.htm",
+          "raw_sha256": "5813fe6002b6ad197266943f0d2525615aeea59412c3880768da167c4b6bfba4",
+          "governed_bytes_sha256": "1ba6efae2260a01adfca517edefa875c22ec678bbdb01a06e43386ef43aa13ec"
+        },
+        {
+          "source_id": "govinfo:31usc5318-l-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5318.htm",
+          "raw_sha256": "5813fe6002b6ad197266943f0d2525615aeea59412c3880768da167c4b6bfba4",
+          "governed_bytes_sha256": "e08ed2e46586bf45a2665e79ef412ad9ece2a28d466ca9ec3166abd38ed8bbac"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:326",
+        "source_ids": [
+          "clerk:119:1:326",
+          "govinfo:hrpt119-399-partb-amend3",
+          "congressional-record:2025-12-10-invest-amendments",
+          "congressional-record:2025-12-11-invest-votes",
+          "govinfo:15usc80a3-c1-2024",
+          "govinfo:15usc80a3-c7-2024",
+          "govinfo:31usc5311-2024-operative",
+          "govinfo:31usc5312-2024-operative",
+          "govinfo:31usc5318-h-2024",
+          "govinfo:31usc5318-l-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:326",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "520e306508243b77105f5a159955812f13f151bb062571a0eb69fbd722cf8b4b"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:327",
@@ -23529,13 +23782,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3383",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Waters’s separate PartB amendment5 adds the complete No Junk Fee title to the investment package. The full proposed title covers investment-company, broker/dealer, investment-adviser, exchange and alternative-trading-system fees: advance/plain-language disclosures, specified prohibitions and SEC rulemaking, annual aggregate and individualized reports, online comparison information and trading-venue transparency. It defines covered fees by disclosure and disproportionate-cost criteria and lists potential SEC-identified examples, including IRA termination/transfer charges and retirement-account rollover reporting. Those retirement-investment account references are preserved; they do not amend Social Security or create a clinical-care, health-insurance or social-service entitlement. The amendment does not impose a general ban on medical bills or every fee charged by every business. Adviser prohibitions use SEC authority and determinations, distinct from the direct investment-company and broker/dealer provisions; the title’s own cross-references and repeated investment-company wording in broker/adviser reporting provisions are retained without silent repair. The December10 floor introduction and December11 recorded question bind this to PartB amendment5. It was rejected. This proposed Health exclusion rests on the complete financial-market mechanism rather than the phrase junk fees or an assumption that investor savings cannot matter to health.",
       "source": {
         "source_id": "clerk:119:1:327",
         "url": "https://clerk.house.gov/evs/2025/roll327.xml",
         "raw_sha256": "61cc11b1028c815b5d4c421170d81b99dc855814f9e3f9e6b65e0d073898daa7",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "c3ea0997e857f707f095590270b128bb4ff6817702c2089ddcb05a88f3e04c0f",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23546,25 +23800,57 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Waters’s separate PartB amendment5 adds the complete No Junk Fee title to the investment package. The full proposed title covers investment-company, broker/dealer, investment-adviser, exchange and alternative-trading-system fees: advance/plain-language disclosures, specified prohibitions and SEC rulemaking, annual aggregate and individualized reports, online comparison information and trading-venue transparency. It defines covered fees by disclosure and disproportionate-cost criteria and lists potential SEC-identified examples, including IRA termination/transfer charges and retirement-account rollover reporting. Those retirement-investment account references are preserved; they do not amend Social Security or create a clinical-care, health-insurance or social-service entitlement. The amendment does not impose a general ban on medical bills or every fee charged by every business. Adviser prohibitions use SEC authority and determinations, distinct from the direct investment-company and broker/dealer provisions; the title’s own cross-references and repeated investment-company wording in broker/adviser reporting provisions are retained without silent repair. The December10 floor introduction and December11 recorded question bind this to PartB amendment5. It was rejected. This proposed Health exclusion rests on the complete financial-market mechanism rather than the phrase junk fees or an assumption that investor savings cannot matter to health.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:327",
           "url": "https://clerk.house.gov/evs/2025/roll327.xml",
           "raw_sha256": "61cc11b1028c815b5d4c421170d81b99dc855814f9e3f9e6b65e0d073898daa7",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "c3ea0997e857f707f095590270b128bb4ff6817702c2089ddcb05a88f3e04c0f",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hrpt119-399-partb-amend5",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt399/html/CRPT-119hrpt399.htm",
+          "raw_sha256": "d9da2c4b40b5c85bdc42f0346113e816663cf7cd6d53c5687b764dcb52153b30",
+          "governed_bytes_sha256": "33a68bb986d2950c35d36a7d03dc559116004149b6c7c2c940034867b95f3d8d"
+        },
+        {
+          "source_id": "congressional-record:2025-12-10-invest-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+          "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+          "governed_bytes_sha256": "4c04fb5aa8123078d4d46c46be882ab66d9f2fc001e6d75b4f08c18536bdfd7b"
+        },
+        {
+          "source_id": "congressional-record:2025-12-11-invest-votes",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+          "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+          "governed_bytes_sha256": "4b0d78eb388ef0d73918a4ba64d78cf9712217f84544e7359b046801afb98f4e"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:327",
+        "source_ids": [
+          "clerk:119:1:327",
+          "govinfo:hrpt119-399-partb-amend5",
+          "congressional-record:2025-12-10-invest-amendments",
+          "congressional-record:2025-12-11-invest-votes"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:327",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "af27ca4e53355b7505af91dca9bcd9f8815e0b7a16a5bcf7589b5d42f2c395de"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:328",
@@ -23573,13 +23859,14 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3383",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The exact December11 passage choice is the full66,005-character H.R.3383 EH INVEST package, not merely the original closed-end-fund title or the three rejected amendments. The entire EH was read. It changes capital-formation advocacy, eligible fundraising communications and safeguards, crowdfunding financial-disclosure thresholds, private-fund adviser and venture-fund thresholds, SEC small-entity review and internal offices, investor accreditation and an examination pathway, retirement-plan investment exemptions, senior-investor oversight, electronic document delivery, closed-end-fund access to private funds and securities-registration/disclosure rules. It retains section307 multi-class-share disclosure, which roll325 unsuccessfully sought to strike; rejected foreign-client AML and No Junk Fee amendments326/327 are not imported into this passage.\n\nSection202 changes securities-law treatment of qualifying403(b) custodial accounts, collective trusts and separate accounts, with specified ERISA, employer-fiduciary or governmental-plan conditions and investment-review protections. Bound15USC80a-3(c)(11),77c(a)(2),78c(a)(12) and78l(g)(2)(H) show those existing securities exemptions;26USC403(b)(1)/(7) identifies the underlying retirement arrangements. The existing403(b)(2) health/long-term-care distribution tax exception is expressly retained as context, not described as newly created, repealed or enlarged by this bill. Permitting retirement investment vehicles does not itself change that exception, Medicaid, Social Security or health coverage. Possible nonprofit health-provider employers do not convert this into a condition on clinical-program funds.\n\nSection204 creates an SEC Senior Investor Taskforce using existing funds for investors over65, with a ten-year sunset, identifying exploitation/cognitive-decline challenges and coordinating as appropriate with the Elder Justice Coordinating Council and financial/law-enforcement authorities. Its reports recommend securities-regulatory and legislative changes; those recommendations do not implement themselves. The first-report clause references section3 of the named National Senior Investor Initiative Act of2025; this review preserves that wording and does not silently replace it with section204(b) or claim that the dependency is satisfied. The separate GAO study due within two years explicitly examines financial-exploitation costs including public-benefit/public-health programs, contributing factors such as illness and isolation, adult-protective-service reporting, agency limits and gaps, and barriers to coordination. These are material adjacent social-service references, not omitted because of the finance title. Bound42USC1397k confirms the existing Council’s HHS/Justice elder-abuse coordination and recommendation role. The bill neither rewrites that Council’s governing powers nor provides new adult-protective-service delivery, care funding, health-insurance eligibility or clinical research; its new SEC and GAO duties concern investor protection and financial exploitation. This proposed exclusion follows the declared exact delivery/financing boundary, not a claim that exploitation has no health consequences.\n\nThe package also retains opt-out paper documents, failure-remediation and disclosure-timing protections in electronic delivery, and preserves specified fiduciary, valuation, liquidity and redemption obligations in the closed-end-fund provisions. The complete package and nearby standalone amendment choices remain separate. No predicted cost, fraud, care or investment outcome is asserted.",
       "source": {
         "source_id": "clerk:119:1:328",
         "url": "https://clerk.house.gov/evs/2025/roll328.xml",
         "raw_sha256": "1d92d8fec60bc02f91533da9bf3aeb6cfc3cce1a8c5267cc7c20f80d2319a1eb",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "governed_bytes_sha256": "60f5b5db3344bde753cfcc5c899bbab41a86bea8efd4ec3f8e335d2835cb8f72",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -23590,25 +23877,99 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The exact December11 passage choice is the full66,005-character H.R.3383 EH INVEST package, not merely the original closed-end-fund title or the three rejected amendments. The entire EH was read. It changes capital-formation advocacy, eligible fundraising communications and safeguards, crowdfunding financial-disclosure thresholds, private-fund adviser and venture-fund thresholds, SEC small-entity review and internal offices, investor accreditation and an examination pathway, retirement-plan investment exemptions, senior-investor oversight, electronic document delivery, closed-end-fund access to private funds and securities-registration/disclosure rules. It retains section307 multi-class-share disclosure, which roll325 unsuccessfully sought to strike; rejected foreign-client AML and No Junk Fee amendments326/327 are not imported into this passage.\n\nSection202 changes securities-law treatment of qualifying403(b) custodial accounts, collective trusts and separate accounts, with specified ERISA, employer-fiduciary or governmental-plan conditions and investment-review protections. Bound15USC80a-3(c)(11),77c(a)(2),78c(a)(12) and78l(g)(2)(H) show those existing securities exemptions;26USC403(b)(1)/(7) identifies the underlying retirement arrangements. The existing403(b)(2) health/long-term-care distribution tax exception is expressly retained as context, not described as newly created, repealed or enlarged by this bill. Permitting retirement investment vehicles does not itself change that exception, Medicaid, Social Security or health coverage. Possible nonprofit health-provider employers do not convert this into a condition on clinical-program funds.\n\nSection204 creates an SEC Senior Investor Taskforce using existing funds for investors over65, with a ten-year sunset, identifying exploitation/cognitive-decline challenges and coordinating as appropriate with the Elder Justice Coordinating Council and financial/law-enforcement authorities. Its reports recommend securities-regulatory and legislative changes; those recommendations do not implement themselves. The first-report clause references section3 of the named National Senior Investor Initiative Act of2025; this review preserves that wording and does not silently replace it with section204(b) or claim that the dependency is satisfied. The separate GAO study due within two years explicitly examines financial-exploitation costs including public-benefit/public-health programs, contributing factors such as illness and isolation, adult-protective-service reporting, agency limits and gaps, and barriers to coordination. These are material adjacent social-service references, not omitted because of the finance title. Bound42USC1397k confirms the existing Council’s HHS/Justice elder-abuse coordination and recommendation role. The bill neither rewrites that Council’s governing powers nor provides new adult-protective-service delivery, care funding, health-insurance eligibility or clinical research; its new SEC and GAO duties concern investor protection and financial exploitation. This proposed exclusion follows the declared exact delivery/financing boundary, not a claim that exploitation has no health consequences.\n\nThe package also retains opt-out paper documents, failure-remediation and disclosure-timing protections in electronic delivery, and preserves specified fiduciary, valuation, liquidity and redemption obligations in the closed-end-fund provisions. The complete package and nearby standalone amendment choices remain separate. No predicted cost, fraud, care or investment outcome is asserted.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:328",
           "url": "https://clerk.house.gov/evs/2025/roll328.xml",
           "raw_sha256": "1d92d8fec60bc02f91533da9bf3aeb6cfc3cce1a8c5267cc7c20f80d2319a1eb",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "governed_bytes_sha256": "60f5b5db3344bde753cfcc5c899bbab41a86bea8efd4ec3f8e335d2835cb8f72",
+          "verification": "recaptured_official_source"
+        },
+        {
+          "source_id": "govinfo:hr3383eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3383eh/html/BILLS-119hr3383eh.htm",
+          "raw_sha256": "78e7cd144c0044bb9f9b5fb76a19dd6b9424fddb8dfbf80b18cb52b67f4bc05c",
+          "governed_bytes_sha256": "888155ce3945770e1b39689012c7797fb826e7af63cff4e0989fce044d14881c"
+        },
+        {
+          "source_id": "govinfo:26usc403-b1b2-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapD-partI-subpartA-sec403.htm",
+          "raw_sha256": "c6ae9b0640d2a24215a4b9ff0535a3e3dd2a79866395e5f0a0ab29b22cee4abc",
+          "governed_bytes_sha256": "0023aef4d22ee1ddb1477f5875cfec2589a434491db6f0d20a9fe1ab217ca86f"
+        },
+        {
+          "source_id": "govinfo:26usc403-b7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapD-partI-subpartA-sec403.htm",
+          "raw_sha256": "c6ae9b0640d2a24215a4b9ff0535a3e3dd2a79866395e5f0a0ab29b22cee4abc",
+          "governed_bytes_sha256": "23ebaf5ca03f504697e37350f7897673bbd6c2292525b658b9fcad0524569d30"
+        },
+        {
+          "source_id": "govinfo:15usc80a3-c11-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-3.htm",
+          "raw_sha256": "ed168c11fa5cda849f854c7fc93f5ad7ed2c80a92ddc867c1e38652bb4824fe7",
+          "governed_bytes_sha256": "9490cd01fa47604491f89c8006c09b45a96a4d55ac523ef3b1d368c5b1a5126f"
+        },
+        {
+          "source_id": "govinfo:15usc77c-a2-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2A-subchapI-sec77c.htm",
+          "raw_sha256": "d89a801a02dc05b65c6b1e5df73230cd1bda23a2044ee3f50da80f121efab9b2",
+          "governed_bytes_sha256": "4ac5a3d521551e19e9f6a2880d86d6e5d52c5fbc756eab07e6d954ffe4564b0f"
+        },
+        {
+          "source_id": "govinfo:15usc78c-a12-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2B-sec78c.htm",
+          "raw_sha256": "b6730c5c897a72eb711bd564b5496918ff087209d4abaa7efb90f4e7fc61b035",
+          "governed_bytes_sha256": "b7128bf92d75ced014ede0530bf0a5c988a2b0afe1d165020e6a4f230cc610d8"
+        },
+        {
+          "source_id": "govinfo:15usc78l-g2h-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2B-sec78l.htm",
+          "raw_sha256": "de58af62314973977445f873af62ca650389a39229075ad868dea47c882ae158",
+          "governed_bytes_sha256": "d40f17cc9184257a01ec7e46b710638ad1a301f04ef4ddfb35812c6efdb13de0"
+        },
+        {
+          "source_id": "govinfo:42usc1397k-2024-page",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap7-subchapXX.pdf",
+          "raw_sha256": "a01d012b03f9b5b473ef83823ca3ef632ee144d5686d00fa7ea4a6d70681f5c4",
+          "governed_bytes_sha256": "37817a7e16b02dc5730af40211648871128adbb53973c6e4c1da8a99fa050c86"
+        },
+        {
+          "source_id": "congressional-record:2025-12-11-invest-votes",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+          "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+          "governed_bytes_sha256": "4b0d78eb388ef0d73918a4ba64d78cf9712217f84544e7359b046801afb98f4e"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:1:328",
+        "source_ids": [
+          "clerk:119:1:328",
+          "govinfo:hr3383eh",
+          "govinfo:26usc403-b1b2-2024",
+          "govinfo:26usc403-b7-2024",
+          "govinfo:15usc80a3-c11-2024",
+          "govinfo:15usc77c-a2-2024",
+          "govinfo:15usc78c-a12-2024",
+          "govinfo:15usc78l-g2h-2024",
+          "govinfo:42usc1397k-2024-page",
+          "congressional-record:2025-12-11-invest-votes"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:1:328",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
-      }
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "aead374aa8d5d3472590eda7ee6725f53ae8b1c006514f90fd13805565b45d99"
+      },
+      "historical_raw_hash_matches": true
     },
     {
       "action_id": "house:119:1:329",
@@ -23695,7 +24056,8 @@
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "next_action": "Exact H.R.3898 EH captured in research154: https://www.govinfo.gov/content/pkg/BILLS-119hr3898eh/html/BILLS-119hr3898eh.htm ; raw_sha256=04a3814dc7ca81c2a744fb2eaf181a4532aa7faac3fc52b497ab97be16711b7e ; text54257 characters. Captured only, read from character0 next. RH40269 characters and Report119-399 captured in research145; PartA amendments and applicable incorporated water-law mechanisms still need review. Clerk330 captured in research143.329 recommittal is already complete and must not be reinterpreted as passage."
       }
     },
     {
@@ -39967,15 +40329,7 @@
     "house:119:1:299",
     "house:119:1:307",
     "house:119:1:318",
-    "house:119:1:319",
     "house:119:1:320",
-    "house:119:1:321",
-    "house:119:1:323",
-    "house:119:1:324",
-    "house:119:1:325",
-    "house:119:1:326",
-    "house:119:1:327",
-    "house:119:1:328",
     "house:119:1:330",
     "house:119:1:331",
     "house:119:1:332",
@@ -40208,7 +40562,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "249 unresolved identities comprise248 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared262/294–296/299/307 and subsequent inventory groups. Captured material alone is not substantive review.",
+    "basis": "241 unresolved identities comprise 240 unreviewed screenings and one examined source conflict at2025 roll237. Continue prepared307,318/320,330 and subsequent groups.319/321/323-328 are completed controls/exclusions. Captures alone do not complete review.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -40260,6 +40614,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "4ec297785ee83fd87e7733a17f84fe13c89c25755dda8cea36338004fd7aff50",
-  "membership_review_sha256": "aa3b2ed670f0f1122467f30bf0c980a7f58c205b721de31b88f49f9098542bbc"
+  "proposal_sha256": "307e6877532267d95d96bce9e5160918be47f68d6abadb1f7154e1a62153867f",
+  "membership_review_sha256": "0c549e0a9155788657e376025232dd12d4d59d396ba03ae217376199ffb7bcfc"
 }
