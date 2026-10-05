@@ -265,6 +265,76 @@ version/outcome; no public/closure flag changed. Diff check passes. Hosted
 exact-head receipt will follow commit/push. Weekly usage6% used/94% remaining
 at23:28Eastern; authoritative deadline unchanged, still06:57:44Eastern.
 
+## Checkpoint4 — March24–27 rolls97–108
+
+Checkpoint3 exact head `6b351c56671bca17d086609599d315ed02c48262` passed hosted
+CI [run37259700953](https://github.com/dhart54/political_fingerprint/actions/runs/37259700953).
+Twelve new reviews: seven procedural controls98/99/100/103/106/107/108,
+one expressive control102, three exclusions97/101/105 and one independent
+shared HR8029 whole-package meaning104. Totals **87/209/13/215/152**;
+150 unfinished screenings plus2 examined dependencies. One new finding per
+member,67/62 total;68 episodes and174 substantive member observations.
+
+22 captures added (1507 total),393 membership records. Nineteen governed
+identities reused:18 material care/grant/custody/pay authorities from the
+independently researched7744 package and707 EH for the1131 procedural extension.
+All new bill texts and all12 Clerk observations were independently acquired.
+The initial exact-URL reuse check covered bill texts but missed an existing
+Clerk106 capture. The capture-add gate rejected replacement. Fresh106 metadata,
+member choices and totals exactly match, while raw bytes differ; both sealed
+receipts are retained under distinct identities. The old capture is unchanged;
+no semantic source conflict is asserted from unexplained raw-byte differences.
+This duplicate acquisition is counted honestly, not as acquisition avoided.
+
+HR8029's full EH was compared token-by-token against7744; the complete operative
+text from section2 through DivisionB is exactly equal. Only bill identifiers,
+short title and House passage date differ. That explicit equality supports
+reuse of existing incorporated authorities and care qualifications, not
+blind reuse based on title/similarity. Independently read the complete March26
+opposing floor arguments (about60,000characters), the exact closed1131 rule,
+and Clerk104. Passage218-206 with8 Not Voting; Foushee Nay/Massie Yea. Actual
+bare recommittal and separately inserted unoffered7481 replacement remain
+distinct. A new8029 episode preserves the second observed choice; no automatic
+cross-bill trajectory, policy relationship, acceptance or component direction.
+
+HR6422's pathogen monitoring/public warning and public-health protection are
+retained as material environmental-health connections, with geographic-grant
+and authorization conditions; no clinical/social-service mechanism or achieved
+water-quality effect is inferred. HR5103 creates actual coordination/assistance
+and recommendation duties for public-space/enforcement work, with2029sunsets;
+safety/retention language does not establish Health membership. HR7084 adds
+specified expropriation-related vessel-entry conditions and human/vessel
+emergency exceptions; existing provisional safety entry and passage rights
+remain. Those are maritime/foreign-property mechanisms, not care services.
+1128's adopted expressive funding/gratitude clauses are not appropriations;
+its13 Present observations are resolved nondirectional context.1142 really
+deems concurrence with a Print119-21 amendment; the established procedural
+contract retains that effect without projecting counting Health meaning or
+borrowing older7147/8029 policy text as that print's contents.
+
+Current readiness/count-basis descriptions were stale at85 after87's earlier
+addition. They now record87 supplied source-ready candidate actions and the
+current unresolved inventory, without changing partial state or any approval,
+eligibility/publication/closure flag. Historical benchmark narrative remains.
+No new workflow code. Exact whole-body equality avoided a second acquisition
+of18 governed authority identities; raw-source provenance and semantic review
+remain manual, not an automatic similarity classifier. Approximate group
+research/authoring elapsed **15–25minutes**; no measured token saving claimed.
+Next ordinary action: **2026roll109 HR1011**.
+Validation:145 focused tests and all7 canonical semantic checks pass. All85
+benchmark authors/core actions,1425 governed captures,363 membership reviews
+and125 individual compiled propositions are structurally preserved;30 inventory
+rows79–108 changed and646 remain identical. Seven generated JSON files and
+packet replay byte-identically. Actual readable compacts/details retain one
+new finding for each member with the same shared package/conditions and exact
+March26 outcome. New regression checks whole-body equality, distinct87/104
+episodes, source preservation, member choices, actual/unoffered recommittal
+boundary and1142 non-counting deemed effect. Diff check passes; no public,
+closure, accepted or publication flag changes.
+Core `25ebb181f1d2f5dcfb82a5da89de5c062410adadad77f4faf446ff0dc619e4d9`;
+compiled `1594dfd1951da561468b809c4ae3870e5fa746660421611584971d8533cdd7d7`.
+Exact-head CI receipt follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

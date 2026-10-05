@@ -345,7 +345,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 66)
+        self.assertEqual(len(f["findings"]), 67)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -421,8 +421,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":207, "source_unresolved":159,
-            "interpreted_substantive_directional":86, "expressive_nonbinding_context":12, "exact_action_ineligible":212})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":209, "source_unresolved":152,
+            "interpreted_substantive_directional":87, "expressive_nonbinding_context":13, "exact_action_ineligible":215})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -440,7 +440,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 157)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 150)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1697,6 +1697,38 @@ class SharedDomainCandidateTests(unittest.TestCase):
             source["governed_bytes_sha256"] = sealed_digest(source, "governed_bytes_sha256")
             with self.assertRaisesRegex(ValueError, "passage"):
                 prepare(self.author, changed, ["F000477", "M001184"])
+
+    def test_hr8029_verified_same_body_remains_separate_from_rule_and_recommittal(self):
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        def body(sid):
+            text = sources[sid]["text"]
+            return text[text.index("SEC. 2. TABLE OF CONTENTS."):text.index("Passed the House of Representatives")]
+        self.assertEqual(body("govinfo:hr7744eh"), body("govinfo:hr8029eh"))
+        self.assertNotEqual(sources["govinfo:hr7744eh"]["raw_sha256"], sources["govinfo:hr8029eh"]["raw_sha256"])
+        actions = {a["action_id"]: a for a in self.author["actions"]}
+        self.assertNotEqual(actions["house:119:2:87"]["episode_id"], actions["house:119:2:104"]["episode_id"])
+        self.assertIn("March26", actions["house:119:2:104"]["meaning"])
+        floor = sources["congressional-record:2026-03-26-hr8029"]["text"]
+        self.assertIn("Ms. DeLauro of Connecticut moves to recommit the bill H.R. 8029 to the Committee on Appropriations.", floor)
+        self.assertIn("If the House rules permitted", floor)
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        for n in [98, 99, 100, 103, 106, 107, 108]:
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], "procedural_context")
+        self.assertEqual(records["house:119:2:102"]["disposition"], "expressive_nonbinding_context")
+        self.assertIn("real deemed-concurrence effect", records["house:119:2:108"]["rationale"])
+        self.assertIn("Rules Committee Print 119-21", sources["govinfo:hres1142eh"]["text"])
+        for key in ["metadata", "member_records", "party_totals"]:
+            self.assertEqual(sources["clerk:119:2:106"][key], sources["clerk:119:2:106:continuation-recapture"][key])
+        self.assertNotEqual(sources["clerk:119:2:106"]["raw_sha256"], sources["clerk:119:2:106:continuation-recapture"]["raw_sha256"])
+        readable = readable_candidates(self.author, self.products[0], self.products[2], self.products[-1])
+        for member in readable["members"]:
+            for n in [87, 104]:
+                findings = [f for f in member["findings"] if f"house:119:2:{n}" in f["action_ids"]]
+                self.assertEqual(len(findings), 1)
+                self.assertEqual(findings[0]["action_ids"], [f"house:119:2:{n}"])
+        observations = [{a["action_id"]: a for a in p["actions"]}["house:119:2:104"] for p in self.products[2]]
+        self.assertEqual([o["official_status"] for o in observations], ["Nay", "Yea"])
+        self.assertEqual(observations[0]["action_core_sha256"], observations[1]["action_core_sha256"])
 
     def test_sol_slice_preserves_suspension_failure_and_noncounting_boundaries(self):
         records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
