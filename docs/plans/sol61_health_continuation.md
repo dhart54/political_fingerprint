@@ -1997,3 +1997,71 @@ Remaining2025rolls224/225/226/262/294/295/296/299/307/318/320. Examined237printe
 conflict/2026roll44operative dependency and45/278/28/42package-completeness
 follow-ups remain. This is progress, not closure/shutdown. Candidate/public and
 production boundaries remain unchanged; goal stored ACTIVE.
+
+Checkpoint23 is7be1ba0a3fd4def0a8eaf2235fb0f82513cea020, pushed and verified
+as draftPR196 head on the unchanged stacked base. CI37361724753 completed successfully: all nine exact-head jobs passed.
+Local checkpoint24ledger records nineteen acquired2025primary captures and three
+governed reuse leads. All eleven exact Clerk identities/member statuses checked;
+full seven short CRA/DCbill bodies and governed4423/936read.318supports procedural
+routing and307supports exact-action exclusion with actual MassieNotVoting, pending
+canonical application. Six BLMRODs/plans and DCLaw24-345 require material operative
+review; no classification from titles/search snippets. SJR80targets2022NPRAIAP,
+not the separate2024regulation.3838EH/1071EAHlarge bodies are unreviewed.936section6
+adopts RCP119-16for1071; staleVAvehicle Clerk title is not its operative meaning.
+No checkpoint24canonical state is written. Continue these eleven screenings.
+
+
+### Checkpoint24: eight older exact-action screenings
+
+Screened2025rolls224/225/226/294/295/296/307/318: six distinct BLMCRA
+resource/land-management exclusions, the4423Burma financing-direction exclusion,
+and the936consideration control. All are noncounting; the suspension passage307
+is substantive rather than a procedural control, and actual MassieNotVoting is
+retained as nondirectional.318does not pass or assign positions on NDAAcomponents;
+RCP119-16 remains the operative version lead for separately unfinished320.
+
+Read enough exact bill/rule/Clerk and primary operative plan text to retain the
+coal-only boundaries, existing leases, low-potential drainage exception, site-
+specific permits, air/food-contaminant safeguards and oil-spill health-response
+context. These environmental-health relationships are acknowledged under the
+existing direct Health boundary. CentralYukon's11,178,000-acre partial withdrawal
+revocation is a recommendation, not an automatic revocation/conveyance or repeal
+of1629g-1's qualified allotment program. Complete dated1629g-1operative(a)-(d)
+reviewed; possible allotment housing/hunting use is explicit material context.
+No new care/member meaning or ontology, environmental outcome or enactment claim.
+
+Source acquisition encountered GAOHTML/PDF403s and legacy BLMPDF redirects after
+portal migration. Published anonymous BLMdownload route recovered four exact
+plan PDFs with current filenames. MilesCity/Buffalo broken official downloads
+were supplemented by openly mirrored primary BLMrecords, explicitly marked with
+mirror capture origin/raw hashes; newspaper narrative was not used as operative
+text. Partial reviewed page extents are named in every plan capture; no full
+484/362/86/91-page or environmental-impact-study review is claimed. The optional
+PDFmodule was unavailable; existing pypdf worked without installation. An initial
+floor-page lead concerned297, not296, and was not added as296evidence. Governed
+879closed consideration supplies the exact80ESversion/control boundary.
+
+Totals112interpreted/233procedural/19expressive/307excluded/5unresolved:
+three unfinished2025rolls262/299/320 plus two examined dependencies.82episodes,
+224observations,154propositions/findings (81Foushee/73Massie) unchanged.210new
+reviews since benchmark:27shared meanings/70procedural/9expressive/104excluded.
+Twenty new captures/four governed sources reused;622new/2047total captures,
+573reviews. No complete research timing or measured model/token savings claimed.
+
+All186focused tests across five modules pass in30.426seconds; seven semantic
+gates pass. Updated queue-accounting assertions reflect completed work without
+weakening source or interpretation contracts. Eight generated/packet files replay
+byte exactly. All prior112author/core/mappings,82episodes, both112action-member
+projections,81/73compiled/readable findings,2027sources and565reviews preserved
+against7be1ba0; entire authoring/core/mapping/projection/compiled/readable products
+unchanged. Benchmark85author/core,1425sources/363reviews preserved. Inventory210
+changed/466identical to benchmark, only the eight24rows newly changed. All37
+pending and19initial24capture hashes remain exact. Actual eight dispositions,
+member statuses, bound source passages and the scoped six-file diff inspected;
+whitespace check passed. Core3e401b43b9e3652dd471bfc3edb6c64afb1f15e040fdca73390137bc21ce8c89;
+compileddeed8dab8218301f39d46507333f1bf6122531e2791077b11264162ee0a71afe.
+
+Continue262/299/320. Examined237printed conflict/2026roll44operative dependency
+and45/278/28/42package-completeness follow-ups remain. This is progress, not
+closure/shutdown. No candidate acceptance, promotion, publication, production,
+registry/configuration, merge or deployment authority. Goal remains ACTIVE.

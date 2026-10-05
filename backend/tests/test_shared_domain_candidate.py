@@ -1071,8 +1071,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":232, "source_unresolved":13,
-            "interpreted_substantive_directional":112, "expressive_nonbinding_context":19, "exact_action_ineligible":300})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":233, "source_unresolved":5,
+            "interpreted_substantive_directional":112, "expressive_nonbinding_context":19, "exact_action_ineligible":307})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -1085,12 +1085,12 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertTrue(rows["house:119:1:209"]["review_progress"]["substantive_review_performed"])
         self.assertEqual(rows["house:119:1:209"]["disposition"], "interpreted_substantive_directional")
         self.assertTrue(rows["house:119:1:218"]["review_progress"]["substantive_review_performed"])
-        self.assertFalse(rows["house:119:1:224"]["review_progress"]["substantive_review_performed"])
+        self.assertTrue(rows["house:119:1:224"]["review_progress"]["substantive_review_performed"])
         self.assertFalse(any(r["review_progress"]["required_evidence_unavailable"] for r in rows.values()))
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 11)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 3)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
