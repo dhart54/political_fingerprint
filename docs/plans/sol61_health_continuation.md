@@ -619,6 +619,68 @@ member Health findings and no accepted/publication/closure authority. Core and
 compiled semantic hashes unchanged from checkpoint8. Final scoped diff inspected;
 no runtime or production fan-out. Exact-head CI follows commit/push.
 
+## Checkpoint10 — VA exact amendment174 and whole passage175
+
+2 governed reviews:1 proposed exclusion and1 new shared meaning,independently
+authored once and projected to bothmembers'Yea. Totals92/219/18/245/102 (100
+unfinished plus2examined),70episodes/184substantive observations,69/64 findings
+and133propositions. Cumulative95newreviews (79–175 except128/139),7newmeanings,
+258newcaptures.22governed captures added,6 existing authoritativecaptures reused.
+All91 priorauthor/core objects remain unchanged; no trajectory/episode merger
+with the earlierannual3944 package.174failed80–333/22NV,FNo/MAye is narrower
+NATO→Defense-Wide construction,not VA care or Steube49 clinic restriction.
+
+Complete114,810char EH read; exactRH5/9/10 binds174,Rules64814/16 andMay15
+floor bind29/49/50/outcomes. CompleteMay14 general debate read. Material current
+IVF instruction/directive,VA adoption regulation,specialtyaccess standard,third-
+party reimbursement,contracting,hotline,toxicfund,health-sharing and transport
+rule qualify primary provisions. Prior119-37 account balances/dates,114-223
+therapist/merchant-recognition,111-163childcare,115-141embryoresearch and3104
+rehabilitation authorities reused. Report622 offices allocations/context examined.
+No title-only membership or separate component/member positions inferred.
+
+Deeperread rejected an old-marriage-only IVF inference: current2024 policy already
+includes eligible unmarried veterans and own-expense donor materials. Sixattempt/
+threecycle,consent,service-connected,lawful-spouse andno-surrogacy limits remain.
+ActualPerry29 is$1million up/down inMedicalServices,not$45million research or
+operativeuniversalSGB coverage; attributedclinical assertions are not findings.
+Report622 summaries contain stalefiscalyears and abortion/gendercare/animalban/
+partner language that cannot replace actualEH. Earlier funding exists: addedFY27
+funds and FY28advance accounts differ; specifiedmedicalrescissions remainreal.
+Within-account250allocations aren't addedagain.237printsDIVISION A supersession
+where priorVA237isDIVISION D,2026deadline: no silentrepair/postponement.8111(d)
+capturedsunset2026not amendedbyEH; no automaticextension. These precisecandidate
+qualifications route review rather than prevent a safewhole-package proposition.
+
+DoDI publicendpoint403 rejected without authentication/accessworkaround; complete
+VA17.390 supplies materialimplementation/limits without importing militaryactive-
+duty eligibility. Public primary2017VA announcement provides contemporaneous
+screening context,not a claim to capture the exactMay10 statement. Original2012
+policy-report lead lacked the actualmemo; current2024 instructionquotes/supersedes
+materialoldclauses and providesauthoritativeeffect. Irrelevant2013report notgoverned.
+No paid/protected/hiddenanswers. Source/citationlimits explicitly retained for
+externalreview; no readiness/closure/publication gate weakened.
+
+Approximategroup research/authoring25–40minutes including22captures/6reuses;
+no measuredmodeltoken or elapsedtimesaving claimed. No workflowcode expansion.
+Manualsource/context corrections occurred beforecandidatewrite,plus bounded
+inspection substring/key fixes. At01:37Eastern usage10%used/90%remaining;
+deadlineunchanged. Checkpoint9 exactb16fabe32cefe0cfaa72b062c985de2c181ba1d4
+CI37267766002passed. Next176.
+
+Validation:155 focused tests and all7 canonical semantic checks pass. Initial
+validation exposed stale finding-count and exception-type assertions; corrected
+to69 findings and exact missing-source KeyError,without weakening fail-closed
+behavior. All85 benchmark/91 prior checkpoint author/core objects preserved,
+1425/1661 captures and363/456 reviews unchanged;125 original propositions
+unchanged.95 inventory rows changed,581 identical;7 generated JSON files and
+packet regenerate byte-identically. Actual175 Foushee/Massie Yea compacts,
+complete shared detail and qualifications inspected;174 exclusion/source bindings
+and current-care authority removal covered. Candidate/public boundaries remain
+closed. Scoped14-file diff inspected; no runtime/production fan-out. Core609c5995
+and compiled28020e2f hashes recorded in generated proof. Exact-head CI follows
+commit/push; continue176 without treating this checkpoint as terminal.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

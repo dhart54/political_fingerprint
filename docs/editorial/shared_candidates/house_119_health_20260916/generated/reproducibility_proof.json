@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "bc0695c3327155bf2bda126ea40768cca92f3e7f82666ae9b5e54c63128babd6",
-  "source_capture_sha256": "02190bd617c2d45486631d868ac515b57bee54357d3b3e04c58764aeda35016e",
-  "core_sha256": "62b56a9495be068f6b9d75dfeaaf8b801223b97c6927fa78271383817b7905e7",
-  "compiled_sha256": "c91cb5e99bd8e50d5cc599fc2b6d7ddd05db26408dc1cf690b42a2e56eb7b4b6",
-  "readable_sha256": "481b0cd60e50932652a109fcd51e7383fd6623b58b9fec74662b37dc3f885066",
+  "input_sha256": "209821d60337157ec7823128df5a0575af63d5f6d9e9cb9d57cd29a5627bbf5e",
+  "source_capture_sha256": "015f0377299bc7720601140a467e8e77b13be0f8f75a9b55fd5196e18bd57a0e",
+  "core_sha256": "609c5995acb6a4fde22db7a3cec6f0c8e687539521283ee49c510e787eb03033",
+  "compiled_sha256": "28020e2f6810273d44de4677f7aa5d7751e6059987855b07d04804c3e9c2566a",
+  "readable_sha256": "52f31b38fa0c70451df12c5925f8782010fbf791d0567efb884d1a0509dbd606",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1833,6 +1833,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the whole farm package, including its qualified nutrition-assistance, rural-care and social-service provisions",
           "source_id": "clerk:119:2:154"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:175",
+      "shared_sha256": "8339c7da121390228ede43510199bc0f78c3adad5e1a539721c76b1a068ce13d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole amended military-construction/VA package, including qualified care and veteran-support funding, specified rescissions and policy restrictions",
+          "source_id": "clerk:119:2:175"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole amended military-construction/VA package, including qualified care and veteran-support funding, specified rescissions and policy restrictions",
+          "source_id": "clerk:119:2:175"
         }
       ]
     }

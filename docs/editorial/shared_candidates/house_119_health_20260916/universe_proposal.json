@@ -107,7 +107,8 @@
     "house:119:2:145",
     "house:119:2:146",
     "house:119:2:151",
-    "house:119:2:154"
+    "house:119:2:154",
+    "house:119:2:175"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -122,10 +123,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 219,
-      "exact_action_ineligible": 244,
-      "interpreted_substantive_directional": 91,
+      "exact_action_ineligible": 245,
+      "interpreted_substantive_directional": 92,
       "expressive_nonbinding_context": 18,
-      "source_unresolved": 104
+      "source_unresolved": 102
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -134,14 +135,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 91,
-    "directional_substantive_actions": 91,
+    "substantive_eligible_actions": 92,
+    "directional_substantive_actions": 92,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 219,
     "expressive_nonbinding_actions": 18,
-    "exact_action_ineligible_actions": 244,
-    "unresolved_boundary_cases": 104,
-    "independent_episode_count": 69,
+    "exact_action_ineligible_actions": 245,
+    "unresolved_boundary_cases": 102,
+    "independent_episode_count": 70,
     "multi_action_episode_count": 11,
     "mechanism_types": [
       "amendment",
@@ -154,12 +155,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 91,
-      "substantive_actions": 91,
+      "ready_substantive_actions": 92,
+      "substantive_actions": 92,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "102 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness. Next174 starts military-construction/VA8469 recorded amendments."
+      "100 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 examined dependencies and existing45broader-package follow-up remain. New175 retains precise source/citation/sunset qualifications for external semanticreview. Next176."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -606,6 +607,7 @@
         "house:119:2:170",
         "house:119:2:171",
         "house:119:2:173",
+        "house:119:2:174",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -715,6 +717,7 @@
         "house:119:2:146",
         "house:119:2:151",
         "house:119:2:154",
+        "house:119:2:175",
         "house:119:2:198",
         "house:119:2:250",
         "house:119:2:283",
@@ -760,8 +763,6 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:174",
-        "house:119:2:175",
         "house:119:2:176",
         "house:119:2:177",
         "house:119:2:178",
@@ -849,11 +850,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "91 proposed source-mapped Health inputs,not accepted eligibility or exhaustive package proof.104 unresolved comprise102 unfinished screenings and two examined dependencies. One farm episode retains three distinct amendments plus final passage. Ordinary queue screened through173."
+    "count_basis": "92 proposed source-mapped Health inputs,not acceptedeligibility or exhaustivepackage proof.102unresolved comprise100unfinished screenings and2examined dependencies. QualifiedVA wholepackage addsone independentepisode; narrow174 remainsoutsideHealth."
   },
-  "episode_completeness": "69 candidate episodes cover 91 supplied actions, including10 ordered pairs and one four-action farm sequence. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "70 candidate episodes cover 92 supplied actions, including10 orderedpairs and onefour-actionfarm sequence. Wider discovery/episode completeness remainsunproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "141b8a5d7e88ce478c54796d8a732263ed4933d78ce0b2171189d6db18cb97ff",
+  "universe_subject_sha256": "e9c7071cc06ee0943143b724b810aa106cb3d3df610a093eb7ded5a353db1a11",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -41188,13 +41189,14 @@
       "date": "2026-05-15",
       "measure": "bill_119_hr_8469",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Proposed Health exclusion from exact Steube PartB50: failed80-333/22 NotVoting; Foushee No/Massie Aye. RH page10 line3 binds$481.832million NATO Security Investment reduction and page5 line8 Defense-Wide construction increase. Exact report/floor match; no VA appropriation or clinical/coverage/household-assistance allocation is selected. Defense-Wide statutory transfer possibilities,including military familyhousing,do not establish a distinct care/benefit mechanism for this exact infrastructure transfer. Narrow50 is not49 PortCharlotte closure or29 SGB-related netzero. Attributed security/readiness claims remain claims; no adopted transfer,care consequence or parent-package inherited Health direction.",
       "source": {
         "source_id": "clerk:119:2:174",
         "url": "https://clerk.house.gov/evs/2026/roll174.xml",
-        "raw_sha256": "9cc14a9528fe86017f66c3df2b655fdca264781fab4cc26a0dcd6f3ae9d38bfa",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "bbf085a7f8077a69249e2447b5ff99a9cad4712ec08e0eba9ec9aec75bd2c693",
+        "governed_bytes_sha256": "c9d13358e4bd7a97cba5fc921732fe3b5391cc7641d3b6a690909bf1d81fb64b",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -41205,24 +41207,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Proposed Health exclusion from exact Steube PartB50: failed80-333/22 NotVoting; Foushee No/Massie Aye. RH page10 line3 binds$481.832million NATO Security Investment reduction and page5 line8 Defense-Wide construction increase. Exact report/floor match; no VA appropriation or clinical/coverage/household-assistance allocation is selected. Defense-Wide statutory transfer possibilities,including military familyhousing,do not establish a distinct care/benefit mechanism for this exact infrastructure transfer. Narrow50 is not49 PortCharlotte closure or29 SGB-related netzero. Attributed security/readiness claims remain claims; no adopted transfer,care consequence or parent-package inherited Health direction.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:174",
           "url": "https://clerk.house.gov/evs/2026/roll174.xml",
-          "raw_sha256": "9cc14a9528fe86017f66c3df2b655fdca264781fab4cc26a0dcd6f3ae9d38bfa",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "bbf085a7f8077a69249e2447b5ff99a9cad4712ec08e0eba9ec9aec75bd2c693",
+          "governed_bytes_sha256": "c9d13358e4bd7a97cba5fc921732fe3b5391cc7641d3b6a690909bf1d81fb64b"
+        },
+        {
+          "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469rh/pdf/BILLS-119hr8469rh.pdf",
+          "raw_sha256": "c36ab5a28b5e223b0847fd3f91cafd8e23389ae10f3ff74c3766171c41c28202",
+          "governed_bytes_sha256": "2f9bfcc7c6e84944af3319a620304d4158c85b625583085e54467cc6d0159a94"
+        },
+        {
+          "source_id": "govinfo:hrpt119-648-material-va-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt648/pdf/CRPT-119hrpt648.pdf",
+          "raw_sha256": "5a04c46d7a8bade2231dba8aa3307b21bd190315b38567be8fd776d4d05d5757",
+          "governed_bytes_sha256": "34b19a2d4db7ce7ccf8bef7872466093c7e00be2883798936fc134a0e6fbc0ae"
+        },
+        {
+          "source_id": "congressional-record:2026-05-15-hr8469",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-15/pdf/CREC-2026-05-15-house.pdf",
+          "raw_sha256": "2155796c7c631e19deb2e80e02316e5e96be80eb9d13d576db617768986431a5",
+          "governed_bytes_sha256": "22fef1147fd22709987441d5762a95800321b61237f41a3a516192f88d43e113"
+        },
+        {
+          "source_id": "govinfo:hres1275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+          "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+          "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:174",
+        "source_ids": [
+          "clerk:119:2:174",
+          "govinfo:hr8469rh-exact-amendment-pages",
+          "govinfo:hrpt119-648-material-va-amendments",
+          "congressional-record:2026-05-15-hr8469",
+          "govinfo:hres1275eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:174",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "560b8cde2be810dd0d416269f33e1b8cf610a1753c430a4c9078a9c10953236b"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:174",
+        "url": "https://clerk.house.gov/evs/2026/roll174.xml",
+        "raw_sha256": "9cc14a9528fe86017f66c3df2b655fdca264781fab4cc26a0dcd6f3ae9d38bfa",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -41232,15 +41277,16 @@
       "date": "2026-05-15",
       "measure": "bill_119_hr_8469",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed Health membership from exact complete HR8469 EH VA clinical/qualifiedsocial-support appropriations within mixedwhole package. Passed400-15/15NotVoting,Foushee Yea/Massie Yea. Independently authored once and mechanically projected. Additions/advance funding,prior medicalrescissions,within-account earmarks,currentIVFpolicy,clinical/eligibility/transferrestrictions,unrecorded netzeroSGB purpose,failedNATO absence,report discrepancies,unmatched237 citation and qualified named-authority capturelimits retained. No componentposition,enactment,actualcare or publicauthority.",
       "source": {
         "source_id": "clerk:119:2:175",
         "url": "https://clerk.house.gov/evs/2026/roll175.xml",
-        "raw_sha256": "54cdfd93babaa74433a5428b6b966a61c68654d553ffb604676eeecd99a0cff2",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
+        "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8469:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8469",
       "member_action": "yea",
@@ -41249,24 +41295,221 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Proposed Health membership from exact complete HR8469 EH VA clinical/qualifiedsocial-support appropriations within mixedwhole package. Passed400-15/15NotVoting,Foushee Yea/Massie Yea. Independently authored once and mechanically projected. Additions/advance funding,prior medicalrescissions,within-account earmarks,currentIVFpolicy,clinical/eligibility/transferrestrictions,unrecorded netzeroSGB purpose,failedNATO absence,report discrepancies,unmatched237 citation and qualified named-authority capturelimits retained. No componentposition,enactment,actualcare or publicauthority.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:175",
           "url": "https://clerk.house.gov/evs/2026/roll175.xml",
-          "raw_sha256": "54cdfd93babaa74433a5428b6b966a61c68654d553ffb604676eeecd99a0cff2",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "83b3498925048a9574acd008cbf0d745bd2c65d4a094316577a28cab7ab9b628",
+          "governed_bytes_sha256": "99d0efb04354dc310c08470863e37c687c0abec80552e5fda557eeda445de49b"
+        },
+        {
+          "source_id": "govinfo:hr8469eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469eh/html/BILLS-119hr8469eh.htm",
+          "raw_sha256": "73fb2b64897888645b1870855a61311e7cde1f3bf53ec1cd45af8b2447ad3dd5",
+          "governed_bytes_sha256": "312bfdd79c366c2efb3fea49a6027615050df5207804b8c1c182073dea1207b3"
+        },
+        {
+          "source_id": "govinfo:hr8469rh-exact-amendment-pages",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8469rh/pdf/BILLS-119hr8469rh.pdf",
+          "raw_sha256": "c36ab5a28b5e223b0847fd3f91cafd8e23389ae10f3ff74c3766171c41c28202",
+          "governed_bytes_sha256": "2f9bfcc7c6e84944af3319a620304d4158c85b625583085e54467cc6d0159a94"
+        },
+        {
+          "source_id": "govinfo:hrpt119-648-material-va-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt648/pdf/CRPT-119hrpt648.pdf",
+          "raw_sha256": "5a04c46d7a8bade2231dba8aa3307b21bd190315b38567be8fd776d4d05d5757",
+          "governed_bytes_sha256": "34b19a2d4db7ce7ccf8bef7872466093c7e00be2883798936fc134a0e6fbc0ae"
+        },
+        {
+          "source_id": "congressional-record:2026-05-15-hr8469",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-15/pdf/CREC-2026-05-15-house.pdf",
+          "raw_sha256": "2155796c7c631e19deb2e80e02316e5e96be80eb9d13d576db617768986431a5",
+          "governed_bytes_sha256": "22fef1147fd22709987441d5762a95800321b61237f41a3a516192f88d43e113"
+        },
+        {
+          "source_id": "congressional-record:2026-05-14-hr8469-general-debate",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/pdf/CREC-2026-05-14-house.pdf",
+          "raw_sha256": "a27a8233caad07b1a00a7b14ff7257d1c0ed8f9fa0705463f6d834bfcbc08d85",
+          "governed_bytes_sha256": "682bfddb36261d2952dd78e38a42a87e14625f0759467b68f85ff1f300f96011"
+        },
+        {
+          "source_id": "govinfo:38usc1729-2024-third-party",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap17-subchapIII-sec1729.htm",
+          "raw_sha256": "2f7ed92f1ce1be7c66e22a3702a18708435aa1b0c2d97afd816fc128f5343819",
+          "governed_bytes_sha256": "a4a7b1bd5279255596160007946fd6dd0443162d7476f8dd65a4a0f791e3b573"
+        },
+        {
+          "source_id": "govinfo:38usc8110-2024-contracting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partVI-chap81-subchapI-sec8110.htm",
+          "raw_sha256": "09d7bbb29e1c01ee3df6c77a7219f4b608d836eb83a28981310ec0bcb29e916a",
+          "governed_bytes_sha256": "add9885dc3204ddf959adc64452137f9789b283bbd38241f25393a8985b56885"
+        },
+        {
+          "source_id": "govinfo:38usc1720F-2024-suicide",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap17-subchapII-sec1720F.htm",
+          "raw_sha256": "2979659c59bba40140a59212016ddb544bd922a443527883699ac254d3408ff2",
+          "governed_bytes_sha256": "9a0e68bb88dfec3ac9bba9f80dcffa2434a7fe282babcfb79677594af77f6fba"
+        },
+        {
+          "source_id": "govinfo:38usc324-2024-toxic-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partI-chap3-sec324.htm",
+          "raw_sha256": "c040bab5625f9e80d66d272c3b91490996a7c6115c8718e45d40cf93bf60178e",
+          "governed_bytes_sha256": "2fd8b69d5c033a90dbe80ee4553fa7aaf288b11d8521c314902d75a9513a63ed"
+        },
+        {
+          "source_id": "govinfo:38usc8111-2024-sharing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partVI-chap81-subchapI-sec8111.htm",
+          "raw_sha256": "ab93cea474d4e450b4ee4208b4692f17fc253e18686482d2858239f751416156",
+          "governed_bytes_sha256": "aacaa174a2c415217600656cec614b8985decae2a93ad36e9ee78755a22d5f12"
+        },
+        {
+          "source_id": "govinfo:pl109-115-va-contracting",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-109publ115/html/PLAW-109publ115.htm",
+          "raw_sha256": "2a9b62f51a2c3741881fa0ba73560dbdc3e4130d74ee9ce4ad0114874378ea8b",
+          "governed_bytes_sha256": "9a8287e5695fd0ae2ba4c5bc42f4bbb521fff1cf9514018b9be07a057ad5e21c"
+        },
+        {
+          "source_id": "govinfo:fr2023-03013-transportation",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-02-16/html/2023-03013.htm",
+          "raw_sha256": "0f4afc9ccd03315a2c05b8befff402cb56f3a8ca51b9ee9cc424ef34323eabb0",
+          "governed_bytes_sha256": "0b633810c91d5f3d7ef54bb33e563444859ce1285b7169f00ce0c9cb3686e543"
+        },
+        {
+          "source_id": "govinfo:fr2024-07040-ivf",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-04-04/html/2024-07040.htm",
+          "raw_sha256": "1f6d17761256dee20a28a5174d31ad43c3a807f58fe42481b5480e67a6e7f0e3",
+          "governed_bytes_sha256": "8e4f27b2aa78e52497a6b824e939192e961ae8cd176ae64e41c635d69800f772"
+        },
+        {
+          "source_id": "govinfo:38cfr17-4040-2025-specialty",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title38-vol1/pdf/CFR-2025-title38-vol1-sec17-4040.pdf",
+          "raw_sha256": "8108cf68a65769b6db2624b5608ee6769018dfd89baa04dcb62bf91ce0db4bcc",
+          "governed_bytes_sha256": "275b37d26c1a6bc0f37ca44d19f99cd115185b5978c17a1459aa99a51e8b86eb"
+        },
+        {
+          "source_id": "govinfo:38cfr17-390-2025-adoption",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title38-vol1/pdf/CFR-2025-title38-vol1-sec17-390.pdf",
+          "raw_sha256": "22c5aefceb2333285a0d0015dfbaccb16b96b0b18c3c273739c9e98c0e8d2923",
+          "governed_bytes_sha256": "4fca23ba8ad556b532dc362879b9cc9f0293ce50ae0437715d714eb630995ebd"
+        },
+        {
+          "source_id": "vha:1315-2023",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=11394",
+          "raw_sha256": "4558978efaf700316235c204c2ae32ca1efc4dffbfdb2e5f1e82a30ae592daad",
+          "governed_bytes_sha256": "fd527594b82d47c0e5859cfdf42dcd8356d96df5713f41cdf7cfa24e6f756b1a"
+        },
+        {
+          "source_id": "vha:1085-01-2019",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=8424",
+          "raw_sha256": "ce233705b801ff0ac7ebb9e9f1a7bbe43c8795b4561e7e0070d2036d3f40ae25",
+          "governed_bytes_sha256": "ddf3d283d439b523fb64770c8af98ec8537b86e3c104433342ede02ee05f1cae"
+        },
+        {
+          "source_id": "vha:1334-2024-fertility-material",
+          "url": "https://www.va.gov/vhapublications/ViewPublication.asp?pub_ID=9205",
+          "raw_sha256": "0948d137951252b9a3e46ad947d81f1ee92727650887d2c56140f733bc0bff0f",
+          "governed_bytes_sha256": "170dd6956ba4a9bb873d896a11ffd56ab2d532fdab8081d19edc5127b9c49ed4"
+        },
+        {
+          "source_id": "va:breast-screening-2017-announcement",
+          "url": "https://www.va.gov/opa/pressrel/includes/viewPDF.cfm?id=2899",
+          "raw_sha256": "bfc4e20af4ebc7cf740b72c399d60c2ec1871741f3af3bddc1584b63a411dfbb",
+          "governed_bytes_sha256": "279cf95a5399a02e5ecc7f5fcc45d37293e456eeaa5b69d01c24144bfa484a28"
+        },
+        {
+          "source_id": "govinfo:hrpt119-622-material-va-context",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt622/pdf/CRPT-119hrpt622.pdf",
+          "raw_sha256": "18fd288810aebe29d3003bda713f5cbe4e6bdcd1ae50217344590ffa86f99456",
+          "governed_bytes_sha256": "d48e3709122df3dc7e64b85f97439b217a2d1364cc67f24b28792ad8b584bb2a"
+        },
+        {
+          "source_id": "govinfo:hres1275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+          "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+          "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
+        },
+        {
+          "source_id": "govinfo:pl119-37",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa"
+        },
+        {
+          "source_id": "govinfo:pl114-223",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ223/html/PLAW-114publ223.htm",
+          "raw_sha256": "7303a1cb14b57092785a4265f7c395c833a2b856d7d965eb8dbbd92b48f0c587",
+          "governed_bytes_sha256": "3489d6379b4f80b3b4a113d86cf24d93cf45fc3e27830da98a4a152ab6e4c4bd"
+        },
+        {
+          "source_id": "govinfo:pl111-163",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-111publ163/html/PLAW-111publ163.htm",
+          "raw_sha256": "63e0746156b92b20a5cce347666990c09a9ef2078caf18cb263c5f65766e2d22",
+          "governed_bytes_sha256": "043a1d2d1ccd6d1571323d1a6907988448e2b2a683a39c7759e6aa3f41d26d3c"
+        },
+        {
+          "source_id": "govinfo:pl115-141",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ141/html/PLAW-115publ141.htm",
+          "raw_sha256": "12b165f1b76f830aa5e5a0e9fd3cd1d2921314830efa7f7a2af6b0e5ab58d762",
+          "governed_bytes_sha256": "eb59a13206ff223f78c667aaa947ed7ed5f8e9b5cc937e05c2121a39de56dd88"
+        },
+        {
+          "source_id": "govinfo:38usc3104-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm",
+          "raw_sha256": "35141128c9be9963dcf902d7f98d7cf5a4190001eac2e303482f1fbe1ee6f02e",
+          "governed_bytes_sha256": "3abe5d9d040d15021c980a79b9505052242a206c9d4b2f8b6dd0617742ca7329"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:175",
+        "source_ids": [
+          "clerk:119:2:175",
+          "govinfo:hr8469eh",
+          "govinfo:hr8469rh-exact-amendment-pages",
+          "govinfo:hrpt119-648-material-va-amendments",
+          "congressional-record:2026-05-15-hr8469",
+          "congressional-record:2026-05-14-hr8469-general-debate",
+          "govinfo:38usc1729-2024-third-party",
+          "govinfo:38usc8110-2024-contracting",
+          "govinfo:38usc1720F-2024-suicide",
+          "govinfo:38usc324-2024-toxic-fund",
+          "govinfo:38usc8111-2024-sharing",
+          "govinfo:pl109-115-va-contracting",
+          "govinfo:fr2023-03013-transportation",
+          "govinfo:fr2024-07040-ivf",
+          "govinfo:38cfr17-4040-2025-specialty",
+          "govinfo:38cfr17-390-2025-adoption",
+          "vha:1315-2023",
+          "vha:1085-01-2019",
+          "vha:1334-2024-fertility-material",
+          "va:breast-screening-2017-announcement",
+          "govinfo:hrpt119-622-material-va-context",
+          "govinfo:hres1275eh",
+          "govinfo:pl119-37",
+          "govinfo:pl114-223",
+          "govinfo:pl111-163",
+          "govinfo:pl115-141",
+          "govinfo:38usc3104-operative"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:175",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d45308177014c63fbf21855e794e0ce1c47cccffe6908e16e553f2b1954cf479"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:175",
+        "url": "https://clerk.house.gov/evs/2026/roll175.xml",
+        "raw_sha256": "54cdfd93babaa74433a5428b6b966a61c68654d553ffb604676eeecd99a0cff2",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48165,11 +48408,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "91 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "92 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "f93450d8e57e34a6bbf27e463d85b4a0c1c2dc14e8ca3e8c44f24d117f0f85b2",
+  "selection_sha256": "8cef95f34f9425cb4ca898ca71404c19ebb31d14054f934ac4ea19b68d6d0787",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -48261,7 +48504,8 @@
     "house:119:2:145",
     "house:119:2:146",
     "house:119:2:151",
-    "house:119:2:154"
+    "house:119:2:154",
+    "house:119:2:175"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -48281,8 +48525,6 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:174",
-    "house:119:2:175",
     "house:119:2:176",
     "house:119:2:177",
     "house:119:2:178",
@@ -48371,7 +48613,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "104 unresolved comprise102 unfinished screenings plus examined2025roll237/2026roll44. Ordinary queue screened through173;next174. Existing45 package completeness remains separate.",
+    "basis": "102unresolved comprise100unfinished screenings plus examined2025roll237/2026roll44. Ordinaryqueue screenedthrough175;next176. Existing45 broaderpackage and175 precisequalified-authority review remain.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -48423,6 +48665,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "e7728af9d3aa31abc90a1795066a231d85d40bd0b60f771788a595c1b14fd9c8",
-  "membership_review_sha256": "e3de1e2982cb9995b8d20f1fc9c56a82221140168072e4d43fff09ca01e41291"
+  "proposal_sha256": "8ad92d7dfcde9d5ece169e5580ed8898c3aad6844427381959c0237c1f3652bc",
+  "membership_review_sha256": "647cfabef19ed3051f4ab92422e69e0dc7f0159c329775af746c0c3b01758390"
 }
