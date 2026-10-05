@@ -20,6 +20,33 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_may_controls_do_not_add_health_findings_or_rewrite_farm_passage(self):
+        records = {r['action_id']: r for r in json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))['records']}
+        for disposition, rolls in [('procedural_context', [158,159,160,161,163,168,172]),
+                                   ('expressive_nonbinding_context', [162,165,166,167]),
+                                   ('exact_action_ineligible', [155,156,157,164,169,170,171,173])]:
+            for roll in rolls:
+                self.assertEqual(records[f'house:119:2:{roll}']['disposition'], disposition)
+        for projection in self.products[2]:
+            self.assertFalse({f'house:119:2:{n}' for n in range(155,174)} & {a['action_id'] for a in projection['actions']})
+        self.assertIn('retroactively reinterpreting', records['house:119:2:161']['rationale'])
+        self.assertIn('Medicines,personal protective equipment and infant-formula scarcity', records['house:119:2:157']['rationale'])
+        self.assertIn('medical-care request is real', records['house:119:2:167']['rationale'])
+        self.assertIn('rather than prohibiting cashless bail', records['house:119:2:171']['rationale'])
+
+    def test_may_exact_sources_preserve_nondirectional_vote_and_failed_war_timing(self):
+        sources = {s['source_id']: s for s in self.capture['sources']}
+        records = {r['action_id']: r for r in json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))['records']}
+        self.assertEqual(sources['clerk:119:2:169']['member_records']['M001184']['official_label'], 'Not Voting')
+        self.assertIn('resolved nondirectional', records['house:119:2:169']['rationale'])
+        self.assertIn('30days after the specified February28 date', records['house:119:2:170']['rationale'])
+        self.assertIn('conditional coalition sharing', records['house:119:2:170']['rationale'])
+        self.assertIn('FAILED212-212', records['house:119:2:170']['rationale'])
+        self.assertIn('February 28, 2026', sources['congressional-record:2026-05-13-hconres75-exact']['text'])
+        self.assertEqual(sources['clerk:119:2:170']['metadata']['vote-result'], 'Failed')
+        self.assertIn('June 12, 2026', sources['govinfo:s4465es']['text'])
+        self.assertIn('monetary bail', sources['govinfo:hr6260eh']['text'])
+
     def test_farm_amendments_retain_separate_snap_choices_and_failed_restriction(self):
         actions = {a['action_id']: a for a in self.author['actions']}
         ids = [f'house:119:2:{n}' for n in [145, 146, 151]]
@@ -509,8 +536,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":217, "source_unresolved":118,
-            "interpreted_substantive_directional":91, "expressive_nonbinding_context":14, "exact_action_ineligible":236})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":219, "source_unresolved":104,
+            "interpreted_substantive_directional":91, "expressive_nonbinding_context":18, "exact_action_ineligible":244})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -528,7 +555,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 116)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 102)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

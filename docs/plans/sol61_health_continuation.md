@@ -580,6 +580,45 @@ production fan-out. Core62b56a9495be068f6b9d75dfeaaf8b801223b97c6927fa7827138381
 compiledc91cb5e99bd8e50d5cc599fc2b6d7ddd05db26408dc1cf690b42a2e56eb7b4b6.
 Exact-head CI receipt follows commit/push.
 
+## Checkpoint9 — May controls and membership155–173
+
+19 newly governed reviews:7 procedural,4 expressive,8 proposed exclusions;
+5 controls already had procedural inventory labels. No shared meanings or
+member findings added. Totals91/219/18/244/104 (102 unfinished plus2 examined),
+69 episodes/182 substantive observations,68/63 findings and131 propositions.
+36 captures added,2 existing authorities reused (1224 rule and1544 war powers).
+Cumulative93 reviews and236 captures since the frozen benchmark. Existing91
+authored meanings,including the four separate farm choices, remain unchanged.
+
+Complete short operative texts establish most dispositions. Material1033(f)
+definitions distinguish bail insurance crimes from Health coverage. HC75 needs
+exact May13 printed text and May14 question/result: the printed past-dated
+February28-based deadline,imminent-defense/nonhostile-force and distinct
+intelligence exceptions remain intact. It failed212–212; no removal outcome.
+1274 withdraws1224's future1346 engrossment instruction as procedural context,
+without rewriting April30 passage. Real medicine/PPE/infant-formula scarcity
+reporting,medical-care request and service-institution monitor context remain
+explicit. Overall Present and Massie's169 Not Voting remain nondirectional.
+
+Initial S4465 DHS lead was corrected to exact June12 FISA extension before
+governed interpretation. No accepted artifact or final Health conclusion changed.
+Approximate research/authoring20–30minutes; material version checking and
+source reuse included. No measured model-token or elapsed saving claimed.
+Batch acquisition and bounded queue/source helper reused without code expansion.
+Checkpoint8 exact3dbfcd8379a08cc9c22868fc6e9d77e8cba8df9c CI37266600973 passed.
+At01:23Eastern the watcher deadline remains06:57:44. Next ordinary action174
+starts military-construction/VA8469 amendments; independent exact-action binding
+precedes any use of package context.
+
+Validation:153 focused tests and all7 semantic checks pass. All85 benchmark and
+91 checkpoint8 authored/core objects preserved;1425/1625 captures and363/437
+reviews unchanged.125 original propositions unchanged;93 inventory rows changed,
+583 identical. Seven generated JSON files and packet replay byte-identically.
+Actual disposition/source samples155/157/161/167/169/170 inspected; no added
+member Health findings and no accepted/publication/closure authority. Core and
+compiled semantic hashes unchanged from checkpoint8. Final scoped diff inspected;
+no runtime or production fan-out. Exact-head CI follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

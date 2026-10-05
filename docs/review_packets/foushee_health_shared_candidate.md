@@ -1,17 +1,26 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
 **Sol 6.1 continuation from exact benchmark head f10abd6b42867d591992b368c089150e4178604b.**
-The separate continuation branch now governs 2026 rolls79–154, preserving the
-already completed128/139:31 procedural controls,4 expressive controls,33 proposed
-exclusions and6 new shared meanings. Eighteen controls already had procedural
+The separate continuation branch now governs 2026 rolls79–173, preserving the
+already completed128/139:38 procedural controls,8 expressive controls,41 proposed
+exclusions and6 new shared meanings. Twenty-three controls already had procedural
 inventory labels; their governed reviews are new. Candidate totals:
-91 interpreted /217 procedural /14 expressive /236 excluded /118 unresolved
-(116 unfinished screenings plus2 examined dependencies). All85 prior meanings
+91 interpreted /219 procedural /18 expressive /244 excluded /104 unresolved
+(102 unfinished screenings plus2 examined dependencies). All85 prior meanings
 and65 Foushee /60 Massie findings are preserved. The two DHS whole-package
 episodes and one four-action farm episode add3 findings per member (68/63).
 No acceptance, publication or production authority is created; screening remains
 active. The [continuation plan](../plans/sol61_health_continuation.md) records
-evidence, metrics, validation and next work: **roll155, S4465 DHS suspension passage**.
+evidence, metrics, validation and next work: **roll174, HR8469 VA amendments**.
+
+The May group155–173 adds19 governed reviews,36 captures and reuses2 existing
+authorities. S4465 is the June12 FISA extension, correcting an initial DHS lead.
+H.Res.1274 rescinds prospective farm/ethanol engrossment as non-counting process;
+the earlier farm passage remains unchanged. Medicines/PPE/formula reporting,
+detained individuals' medical-care requests and general court-monitor oversight
+retain their real context without adding Health direction. Massie's Not Voting
+on169 remains nondirectional. Failed HC75 retains the printed February28-based
+deadline and distinct military/intelligence exceptions, without inferred removal.
 
 The whole HR7567 passage now appends to the same farm episode: Foushee Nay,
 Massie Yea,224–200/6 Not Voting. It adds qualified SNAP administration/nutrition,
