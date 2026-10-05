@@ -421,8 +421,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":206, "source_unresolved":166,
-            "interpreted_substantive_directional":86, "expressive_nonbinding_context":12, "exact_action_ineligible":206})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":207, "source_unresolved":159,
+            "interpreted_substantive_directional":86, "expressive_nonbinding_context":12, "exact_action_ineligible":212})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -440,7 +440,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 164)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 157)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1643,9 +1643,32 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertIn("Act or other law restricting access to", sources["govinfo:25cfr150303-2025-access"]["text"])
         self.assertIn("no-force-authorization", records["house:119:2:85"]["rationale"])
         self.assertEqual(sources["clerk:119:2:85"]["metadata"]["vote-result"], "Failed")
-        self.assertEqual(rows["house:119:2:88"]["disposition"], "source_unresolved")
-        self.assertFalse(rows["house:119:2:88"]["review_progress"]["substantive_review_performed"])
         self.assertFalse(any("Page Not Found" in s.get("text", "")[:80] for s in self.capture["sources"][-20:]))
+
+    def test_march17_19_membership_keeps_nih_benefit_and_failed_suspension_boundaries(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        for n in [88, 89, 93, 94, 95, 96]:
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], "exact_action_ineligible")
+            self.assertTrue(records[f"house:119:2:{n}"]["substantive_review_performed"])
+        for n in [90, 91, 92]:
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], "procedural_context")
+        for projection in self.products[2]:
+            self.assertFalse({f"house:119:2:{n}" for n in range(88, 97)} & {a["action_id"] for a in projection["actions"]})
+        self.assertIn("human pathogens", sources["govinfo:15usc1511d-2024-marine"]["text"])
+        self.assertIn("pet food", sources["govinfo:hr4294eh"]["text"])
+        self.assertIn("National Institutes of Health may use $5,000,000", sources["govinfo:15usc638-2024-small-research"]["text"])
+        self.assertIn("commercialization", records["house:119:2:89"]["rationale"])
+        self.assertIn("not newly appropriated", records["house:119:2:89"]["rationale"])
+        for sid in ["govinfo:8usc1611-2024-benefit-definition", "govinfo:8usc1621-2024-benefit-definition"]:
+            self.assertIn("welfare, health, disability", sources[sid]["text"])
+        self.assertIn("1128(a)(2)(J)", sources["govinfo:hr1958eh"]["text"])
+        self.assertIn("without silently correcting", records["house:119:2:94"]["rationale"])
+        self.assertEqual(sources["clerk:119:2:95"]["metadata"]["vote-result"], "Failed")
+        self.assertEqual(sources["govinfo:hjres139rh"]["text_version"], "RH")
+        self.assertIn("fifth year beginning after ratification", sources["congressional-record:2026-03-18-hjres139"]["text"])
+        self.assertIn("despite a simple majority", records["house:119:2:95"]["rationale"])
+        self.assertNotIn("govinfo:hjres139eh", sources)
 
     def test_hr7744_care_package_retains_existing_conditions_and_single_shared_choice(self):
         aid = "house:119:2:87"

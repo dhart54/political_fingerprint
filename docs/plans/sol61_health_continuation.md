@@ -207,8 +207,63 @@ compiled `8becf2463daa8d91b0c1ba05733cd420ebaf541c9f6cf87b25c3e91b149c5b1b`.
 Checkpoint1 exact head `d45b5bd24bc56cada906bf11bfeed7c11409fecf` has successful
 hosted CI [run37256755739](https://github.com/dhart54/political_fingerprint/actions/runs/37256755739).
 Draft continuation [PR196](https://github.com/dhart54/political_fingerprint/pull/196)
-is stacked on the frozen benchmark branch. Checkpoint2 exact-head receipt will
-be recorded after commit/push. Next ordinary action: **2026roll88 HR4294**.
+is stacked on the frozen benchmark branch. Checkpoint2 exact head `aaf572ee9828983868d4f4916522738ac435de85` has successful
+hosted CI [run37258482392](https://github.com/dhart54/political_fingerprint/actions/runs/37258482392).
+
+## Checkpoint3 — March17–19 rolls88–96
+
+Nine governed reviews: six proposed exclusions88/89/93/94/95/96 and three
+procedural controls90/91/92. No new shared meaning or member finding. Totals
+**86/207/12/212/159**;157 unfinished screenings plus2 examined dependencies.
+22 captures added (1485 total),381 shared membership records. No existing
+baseline capture was reacquired or modified. The new1115 rule capture is shared
+across its two procedural reviews and three exact passage-version contexts.
+Complete operative EH/ES/RH texts were read; five material authorities and the
+exact Clerk-read failed-suspension proposal are governed as bounded excerpts.
+
+HR4294's covered purchasers manufacture pet/animal/aquaculture feed; the
+incorporated NOAA human-pathogen work is retained without converting an
+invasive-fish purchasing pilot into human nutrition assistance. S3971's actual
+NIH phase-flexibility and Phase0 commercialization extension are preserved,
+including existing permissive $5million STTR funding and commercial-purpose
+limits; these are not described as absent, defense-only or a new clinical
+appropriation. HR556 changes lead-ammunition/tackle rules, with its wildlife,
+State and printed CFR exceptions retained; possible exposure effects do not
+supply the declared care/service mechanism. HR1958's immigration consequences
+retain SNAP/SS-card and public-health/welfare-benefit references, admissions as
+well as convictions, relief bar and the printed1128 cross-reference discrepancy;
+no entitlement/payment change or individual legal resolution is inferred.
+
+HJRes139's exact failed suspension is substantive fiscal-constitutional
+legislation outside the proposed Health boundary, not expressive context or a
+procedural-only control. RH and full Clerk-read floor text match. Its debt-only
+spending exclusion, supermajority conditions, war exception and delayed
+ratification effect remain; neither Social Security exemption nor enacted cuts
+is invented. A missing EH endpoint's generic200 response was rejected.
+HR4638's exact EH short title differs from the Clerk BOWOW label; the passed
+modified-substitute version and existing Federal police dog/horse definition
+control, not general animal or human-health language.
+
+The proposed dispositions remained after material-authority review; no deeper
+read changed a Yea/Nay conclusion. Detail refinements prevent title-based
+false positives. Read-only queue/source helper remains unchanged. The five
+selected authority excerpts exclude irrelevant history and unneeded predicate
+expansion; this is materiality selection, not removal of counterevidence.
+Approximate batch research/authoring time **15–25minutes**; no measured token
+or throughput improvement is claimed. Next ordinary action: **2026roll97 HR6422**.
+Validation:144 focused candidate/corpus/IR/pipeline/helper tests pass and all7
+canonical semantic checks pass. The first focused run omitted the known
+NODE_PATH for existing AJV dependencies; rerunning the unchanged suite with that
+path passed. No install or test weakening. Prior85 authors/core actions,1425
+captures and363 reviews remain structurally identical to the benchmark. Only
+18 inventory rows79–96 changed;658 other rows remain unchanged. The entire
+compiled IR, readable members and shared action core are unchanged from
+checkpoint2; earlier125 compiled propositions remain preserved. All7 generated
+JSON files and packet replay byte-identically. New regression verifies material
+NIH/benefit counterevidence, non-counting membership and failed-suspension
+version/outcome; no public/closure flag changed. Diff check passes. Hosted
+exact-head receipt will follow commit/push. Weekly usage6% used/94% remaining
+at23:28Eastern; authoritative deadline unchanged, still06:57:44Eastern.
 
 ## Production, rollback, blockers and reconciliation
 

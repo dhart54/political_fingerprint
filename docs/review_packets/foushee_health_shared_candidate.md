@@ -1,19 +1,21 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
 **Sol 6.1 continuation from exact benchmark head f10abd6b42867d591992b368c089150e4178604b.**
-The separate continuation branch now governs 2026 rolls79–87: four procedural
-controls, one expressive control, three proposed exclusions and one new shared
-interpretation. Rolls79/86 had procedural inventory labels; their governed
+The separate continuation branch now governs 2026 rolls79–96: seven procedural
+controls, one expressive control, nine proposed exclusions and one new shared
+interpretation. Rolls79/86/90/92 had procedural inventory labels; their governed
 reviews are new. Candidate totals:
-86 interpreted /206 procedural /12 expressive /206 excluded /166 unresolved
-(164 unfinished screenings plus two examined dependencies). All 85 prior shared
+86 interpreted /207 procedural /12 expressive /212 excluded /159 unresolved
+(157 unfinished screenings plus two examined dependencies). All 85 prior shared
 meanings and 65 Foushee /60 Massie findings are preserved; H.R.7744 adds one
 finding for each member (66/61 total). No acceptance,
 publication or production authority is created. Health screening remains active.
 
 The [continuation plan](../plans/sol61_health_continuation.md) records evidence,
-metrics, validation, source reuse and next work. Next ordinary action: roll88,
-H.R.4294 amended suspension/passage. H.R.7744 binds the whole exact package,
+metrics, validation, source reuse and next work. Next ordinary action: roll97,
+H.R.6422 amended suspension/passage. The latest proposed exclusions retain
+NIH commercialization, incorporated health-benefit definitions and exact
+failed-suspension boundaries. H.R.7744 binds the whole exact package,
 qualified custody safeguards, existing care/benefit conditions and House-only
 outcome. Foushee Nay/Massie Yea do not establish separate component positions.
 
