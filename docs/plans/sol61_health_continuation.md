@@ -1932,3 +1932,68 @@ Examined237printed conflict/44operative dependency and45/278/28package completen
 follow-ups remain explicit. Further42source review continues from preserved local
 captures. No acceptance, promotion, publication, registry/configuration, production,
 merge or deployment authority is created. This is progress, not closure/shutdown.
+
+Checkpoint22 is1ba713d96f8c61970b8a726c930a073622245565, pushed and verified as
+draftPR196 head on the unchanged stacked base. Exact-headCI37359603658 completed
+successfully; all nine job conclusions inspected and draftbody updated with the
+receipt. FrozenPR195 remainsf10abd6b42867d591992b368c089150e4178604b.
+
+
+### Checkpoint23: January22 DHS passage
+
+Roll42 now has one shared bounded Health meaning for whole H.R.7147, projected
+mechanically for Foushee/Massie, both recorded Nay; House result220-207, four
+NotVoting. Maternal custody, pregnancy/post-delivery restraint boundaries,
+qualified Canadian prescription imports, temporary cross-jurisdiction medical
+licensure, mixed retiree/employee care, CoastGuard housing availability,
+emergency food/shelter and AFG/SAFER/qualified disaster assistance are sourcebound.
+The September30,2026licensure date retains federal-duty/credential/CoastGuard/
+assigned-PHS/contractor limits. Restraint exceptions expressly concern pregnancy,
+not an inferred extension to all post-delivery recuperation; active labor/delivery
+is absolutely protected. Food/shelter paragraph11has its own3.5percent admin cap
+and is excluded from312's listed three-to-five-year performance rule. Fire/EMS
+funds and disaster appropriations are not all clinical benefits or automatic grants.
+
+HRes1014section7is adopted before42;1016's230(b)correction follows42. Its offering,
+text and unrecorded agreement were read completely. Later7148DivisionHassembly
+and broader explanatory effect remain distinct from standalone42. Printed table/
+preliminary references are preserved, not repaired or converted into universal
+narrative enactment. Complete reviewed statutory sections, incorporated CARES
+professional scope, food/shelter/EMS authorities,2946housing and5174household
+limits are bound. BookII312/314/319/320/321 and332were read;328's complete313
+seven-category paragraph was separately read after a combined output truncated.
+Other keyword windows are discovery, not full package review. Wider package,
+episode and all-authority completeness and implementation remain unproven.
+
+Totals112interpreted/232procedural/19expressive/300excluded/13unresolved:
+eleven unfinished2025screenings plus two examined dependencies.82episodes,
+224observations and154propositions/findings:81Foushee/73Massie.202new reviews
+since benchmark comprise27shared meanings/69procedural/9expressive/97excluded.
+Eleven new captures, twelve governed sources reused;602new/2027total captures,
+565reviews. No complete end-to-end timing or measured token/model savings is
+claimed. Scoped source reuse and deterministic projection/replay continue.
+
+All186focused tests across five modules pass in30.341seconds; all seven semantic
+gates pass. The negative licensing test initially reached the compact-source
+check first; removing both references while retaining the detailed claim tests
+the intended missing-authority failure. A semantic invocation lacked NODE_PATH;
+rerun with existing dependencies passed. A local author-script construction had
+a nested-string syntax error before writing; corrected with a literal file write.
+An optional parser import was unavailable, so the standard HTML parser was used;
+no dependency installed. No gates or meaning contracts were weakened.
+
+All111prior author/core,2016sources and564reviews remain exact against1ba713d;
+all prior81episodes, projections,80/72compiled propositions and readable findings
+remain exact. All85benchmark author/core,1425sources and363reviews remain exact.
+Inventory202changed/474identical to benchmark, only42newlychanged. Eight generated/
+packet files replay byte exactly; all37pending captures remain exact. Both actual
+compact Nay/opposition findings and all eleven both-level qualifiers inspected;
+actual detail retains whole-package, restraint and post-vote correction limits.
+Final14-file scoped diff/whitespace check inspected. Core:
+3e401b43b9e3652dd471bfc3edb6c64afb1f15e040fdca73390137bc21ce8c89;
+compiled:deed8dab8218301f39d46507333f1bf6122531e2791077b11264162ee0a71afe.
+
+Remaining2025rolls224/225/226/262/294/295/296/299/307/318/320. Examined237printed
+conflict/2026roll44operative dependency and45/278/28/42package-completeness
+follow-ups remain. This is progress, not closure/shutdown. Candidate/public and
+production boundaries remain unchanged; goal stored ACTIVE.

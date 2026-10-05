@@ -127,7 +127,8 @@
     "house:119:2:264",
     "house:119:2:266",
     "house:119:2:278",
-    "house:119:2:28"
+    "house:119:2:28",
+    "house:119:2:42"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -143,9 +144,9 @@
     "counts": {
       "procedural_context": 232,
       "exact_action_ineligible": 300,
-      "interpreted_substantive_directional": 111,
+      "interpreted_substantive_directional": 112,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 14
+      "source_unresolved": 13
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -154,14 +155,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 111,
-    "directional_substantive_actions": 111,
+    "substantive_eligible_actions": 112,
+    "directional_substantive_actions": 112,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
     "exact_action_ineligible_actions": 300,
-    "unresolved_boundary_cases": 14,
-    "independent_episode_count": 81,
+    "unresolved_boundary_cases": 13,
+    "independent_episode_count": 82,
     "multi_action_episode_count": 11,
     "mechanism_types": [
       "amendment",
@@ -174,12 +175,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 111,
-      "substantive_actions": 111,
+      "ready_substantive_actions": 112,
+      "substantive_actions": 112,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "2026roll42 and eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278 and new28 whole-package completeness remain follow-ups. Whole7006 reviewed Health mechanisms support bounded membership; exhaustive28package completeness remains unproven."
+      "Eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278/28 and new42 whole-package completeness remain follow-ups. Whole7147 reviewed Health mechanisms support bounded membership; exhaustive42package completeness remains unproven."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -789,6 +790,7 @@
         "house:119:2:31",
         "house:119:2:32",
         "house:119:2:37",
+        "house:119:2:42",
         "house:119:2:45",
         "house:119:2:47",
         "house:119:2:49",
@@ -865,15 +867,14 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:42",
         "house:119:2:44"
       ]
     },
-    "count_basis": "111 source-mapped Health candidate inputs, not accepted eligibility or exhaustive package proof. 14 unresolved comprise 12 unfinished screenings plus2 examined dependencies. Whole7006passage28 is separate from failed/excluded26/27amendments. Exclusions and controls remain noncounting; wider package completeness remains unproven."
+    "count_basis": "112 source-mapped Health candidate inputs, not accepted eligibility or exhaustive package proof. 13 unresolved comprise 11 unfinished screenings plus2 examined dependencies. Whole7147passage42 remains distinct from later7148assembly, post-vote1016correction and independently assessed components. Exclusions and controls remain noncounting; wider package completeness remains unproven."
   },
-  "episode_completeness": "81 candidate episodes cover 111 supplied actions. New7006passage28 is a distinct whole-package episode; failed26/27amendments are excluded from Health counting. All prior author/core meanings and episode objects remain preserved. Exhaustive package and discovery/episode completeness remain unproven.",
+  "episode_completeness": "82 candidate episodes cover 112 supplied actions. New7147passage42 is a distinct whole-package episode; later7148assembly and1016unrecorded correction are not new component choices. All prior author/core meanings and episode objects remain preserved. Exhaustive package and discovery/episode completeness remain unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "04076647618425de98906aa89982ad18873c73f563e8c78b50ceecb7434dbeb6",
+  "universe_subject_sha256": "ddff0d003cb9c3354770efdcf4652244d18ac76b259d2f9a0b47d56da258cd27",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -30535,15 +30536,16 @@
       "date": "2026-01-22",
       "measure": "bill_119_hr_7147",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: FY2026 DHS package with qualified custody-care, medical licensing and emergency assistance provisions. Whole DHS passage preserves qualified maternal custody, restraint exceptions, temporary licensure, mixed retiree funding, food/shelter/EMS assistance and statutory limits. Adopted rule7, later1016correction and7148assembly remain distinct. Bounded reviewed mechanisms establish membership, not exhaustive package completeness, enacted delivery or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [220, 207, 0, 4]; Foushee Nay/Massie Nay.",
       "source": {
         "source_id": "clerk:119:2:42",
         "url": "https://clerk.house.gov/evs/2026/roll042.xml",
-        "raw_sha256": "4db5811f01a12a86d872944947c418e263d24eb55608f5e7d3b9923ca5ea43b5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "b6d23102628e791928a3911d1f1d9fad27807d439cda3bf03d02f15ba49d1f83",
+        "governed_bytes_sha256": "ffdd38d072637d2fe8d11885480c058e8deeea8b7af6c018885803f7622f8958",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr7147:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_7147",
       "member_action": "nay",
@@ -30552,25 +30554,193 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: FY2026 DHS package with qualified custody-care, medical licensing and emergency assistance provisions. Whole DHS passage preserves qualified maternal custody, restraint exceptions, temporary licensure, mixed retiree funding, food/shelter/EMS assistance and statutory limits. Adopted rule7, later1016correction and7148assembly remain distinct. Bounded reviewed mechanisms establish membership, not exhaustive package completeness, enacted delivery or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [220, 207, 0, 4]; Foushee Nay/Massie Nay.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:42",
           "url": "https://clerk.house.gov/evs/2026/roll042.xml",
-          "raw_sha256": "4db5811f01a12a86d872944947c418e263d24eb55608f5e7d3b9923ca5ea43b5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "b6d23102628e791928a3911d1f1d9fad27807d439cda3bf03d02f15ba49d1f83",
+          "governed_bytes_sha256": "ffdd38d072637d2fe8d11885480c058e8deeea8b7af6c018885803f7622f8958"
+        },
+        {
+          "source_id": "govinfo:hr7147ih-reviewed-care-conditions",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm",
+          "raw_sha256": "a31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf",
+          "governed_bytes_sha256": "f428a2fcbcca7a990babe2ad7ee9ad482d9296bcd85cd6cf044c368df2e5cd8a"
+        },
+        {
+          "source_id": "govinfo:hr7147ih-reviewed-care-assistance-funding",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm",
+          "raw_sha256": "a31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf",
+          "governed_bytes_sha256": "9316b7506dc4b4fa27b8814919c5a4c435bdf99508985bbbfaee13011c71fe84"
+        },
+        {
+          "source_id": "govinfo:hr7147ih-reviewed-grant-disaster-limits",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm",
+          "raw_sha256": "a31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf",
+          "governed_bytes_sha256": "2b4655d750a9a5a2d9d21599559ef92fc92dc412239e2055b90a3527c8dba075"
+        },
+        {
+          "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147eh/html/BILLS-119hr7147eh.htm",
+          "raw_sha256": "03795a47a762a4138f0dbe3b7428bdd821fb6e66365c3391c5c04559aa7cb0e8",
+          "governed_bytes_sha256": "704f959e780a2cbd474636571f5becfaff714772a93db1a9a72ffe4d082de78a"
+        },
+        {
+          "source_id": "govinfo:14usc2946-2024-housing-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title14/html/USCODE-2024-title14-subtitleII-chap29.htm",
+          "raw_sha256": "f81b4b36784e02ca71149dbb6914a3a10736b29591ca2faadd3a32a721448b86",
+          "governed_bytes_sha256": "46cf814ad23dc1eb2e8a097f14d7edacd88c7cf38a05d2b1aeedee6c9cd9139a"
+        },
+        {
+          "source_id": "govinfo:42usc5174-2024-household-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapIV-sec5174.htm",
+          "raw_sha256": "2e46a6cc752182a01fc1cb350d4bcfbeacf8184ea1ec9686ee28adb469347c93",
+          "governed_bytes_sha256": "5913ec60501db44fea8b0537c8e3ca28c6ca29cc5d8157f7dd41f0cc51118d4f"
+        },
+        {
+          "source_id": "govinfo:hres1016eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1016eh/html/BILLS-119hres1016eh.htm",
+          "raw_sha256": "3c961a4349ddd3ce55f56f68988ee16871462800874cfd7b3f8d38cd170b0409",
+          "governed_bytes_sha256": "9d16d2fea044a3f57cdcf7b429c8b931db7148de88c7b6a4cca7ca6c148aee94"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-7147-passage42",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "28b9401bd16b0082c205172dbeaaea4a86d33d7345ae04d3332170f766e76939"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "d9581deb2b882f1a6cec8ec76ba9f6f29181ddd07057321c9ebd1647020ceab9"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-7147-313-dashboard",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "0e6f29c4337ddf4031fd1276118ba23b6b2e1fb39ad3d8e0d22c04b6e86102b4"
+        },
+        {
+          "source_id": "govinfo:hres1014eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+          "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+          "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+        },
+        {
+          "source_id": "govinfo:hr7148eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/html/BILLS-119hr7148eh.htm",
+          "raw_sha256": "a1c2328120045ce3b226da21188ed1b03cbd2fde60d37aeb027cba27f46252cf",
+          "governed_bytes_sha256": "9b806e1ed13ce609149d9f31275646ad7676839ed91f4c7913703a64ae46467f"
+        },
+        {
+          "source_id": "govinfo:pl116-136-16005-health-license",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ136/html/PLAW-116publ136.htm",
+          "raw_sha256": "f8faea1a163304a7ad20c8540eb6d204e192a6e8a5901e3f38d84ab053a34d5d",
+          "governed_bytes_sha256": "3c89ae156d8f603a74858c5beabea8f0bcd85f1436acdbba7f89fc7433ef6cef"
+        },
+        {
+          "source_id": "govinfo:42usc11331-11352-2024-food-shelter",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap119-subchapIII.htm",
+          "raw_sha256": "ff8f6b45b85d3acff0f5824cb01b5b06be45bd1cb1c2b2a390eee4551412ff5b",
+          "governed_bytes_sha256": "b9b2059acb22d2557cc2e86d4f9ecc880527bd807a612db298075aaf9843664a"
+        },
+        {
+          "source_id": "govinfo:21usc802-2024-controlled",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm",
+          "raw_sha256": "1a3a364739a322c7a9ec4739b433333386c3468155e2d9579e71aa4201cd204c",
+          "governed_bytes_sha256": "040b0634c60a88673ee3e33dda5ffa3d44d1c5699ad8f0e07b88257d40f140b9"
+        },
+        {
+          "source_id": "govinfo:42usc262-2024-biological",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partF-subpart1-sec262.htm",
+          "raw_sha256": "2286f0031fac0d1a981af54dec8b955a4e56f142a52f8dfe832c9ad20a18d32b",
+          "governed_bytes_sha256": "844a85cd3883fac50d432bce560b5182946bdf3228d7190dff0395496106d03a"
+        },
+        {
+          "source_id": "cbp:2021-pregnant-postpartum-custody-public-mirror",
+          "url": "https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf",
+          "raw_sha256": "a1ce489ac6a9245c4660ff2d72b33ed6188b2cbe545cedb8d33791bf0ec93cee",
+          "governed_bytes_sha256": "3580880f2f9b5d8f0d61d3bd9ee8cb6c842faf9e814bcb3cff87eb913d28953c"
+        },
+        {
+          "source_id": "govinfo:10usc1086-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm",
+          "raw_sha256": "5a31eaddeb3d6e9a7ae7216333497edb68716ea6685c419337512b11b8ee2f81",
+          "governed_bytes_sha256": "1308fc77fb7e8ad49b28c6a9c1e0ed6360447ad0d87147a281220939336a7751"
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "raw_sha256": "ecb7a37f849b2568b36a9ea4da871f81aca50bdb96f23145e38cca9cfcf1f928",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3"
+        },
+        {
+          "source_id": "govinfo:15usc2229-2024-fire",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229.htm",
+          "raw_sha256": "d08935e9337c01ed7c60cd0141dc0017643a7e3779670a90cdf863f0f520c6c1",
+          "governed_bytes_sha256": "d6e7882b616b3eccf22e84a7c9c3f4788aaf3dbf3ebdc783f7fb08c67592eb00"
+        },
+        {
+          "source_id": "govinfo:15usc2229a-2024-staffing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229a.htm",
+          "raw_sha256": "0d5d692e306de0142a185678117dc21763bb4c73aa4419c0bc878dd344ae7c35",
+          "governed_bytes_sha256": "2d07e365bad68cdd4dfed0a78423ccd442c3993802b7c1539790cdc9fe58a924"
+        },
+        {
+          "source_id": "govinfo:42usc5122-2024-disaster-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapI-sec5122.htm",
+          "raw_sha256": "c1dbe770af2951b79d647f01a9f03f8af0701c31183d5f715d720db10953f1a0",
+          "governed_bytes_sha256": "12a8bd5f05c5c120c845c94afcfd3da108bde77368298ba285093ff214e99751"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:42",
+        "source_ids": [
+          "clerk:119:2:42",
+          "govinfo:hr7147ih-reviewed-care-conditions",
+          "govinfo:hr7147ih-reviewed-care-assistance-funding",
+          "govinfo:hr7147ih-reviewed-grant-disaster-limits",
+          "govinfo:hr7147-reviewed-version-boundaries",
+          "govinfo:14usc2946-2024-housing-operative",
+          "govinfo:42usc5174-2024-household-operative",
+          "govinfo:hres1016eh",
+          "congressional-record:2026-01-22-7147-passage42",
+          "congressional-record:2026-01-22-7147-correction-after42",
+          "congressional-record:2026-01-22-7147-313-dashboard",
+          "govinfo:hres1014eh",
+          "govinfo:hr7148eh",
+          "govinfo:pl116-136-16005-health-license",
+          "govinfo:42usc11331-11352-2024-food-shelter",
+          "govinfo:21usc802-2024-controlled",
+          "govinfo:42usc262-2024-biological",
+          "cbp:2021-pregnant-postpartum-custody-public-mirror",
+          "govinfo:10usc1086-2024",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:15usc2229-2024-fire",
+          "govinfo:15usc2229a-2024-staffing",
+          "govinfo:42usc5122-2024-disaster-definitions"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:42",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.7147 IH captured research219, rawa31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf,122516charactersnotfullyread. H.Res.1014EH and Foxxfloor amendment40 add the Senate-data notification repeal to this bill before passage. Later assemblyinto7148EHDivisionH is separate. ExactIHplusrepeal-to-EHcomparison, fulloperativeprovisions, January21/22finalexplanation and materialincorporations remain. Reuse medical/retiredpay/food-shelter analysis from7148concurrence after versioncomparison; do not assume allDHSfundsareHealth. Research228nowcaptures pre-voteDHSstatement329417characters/cf0269fbfa22925d533b65d1b6467b39e010428666256358b3496830cc5a3a76 and finalJan22BookII563pages/2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6. These are not in the regular HousePDF; bothnewDHSstatementtexts remain substantively unread. Use publicbook2 for finaloverrides, not laterJanuary26tables."
+        "shared_review_record_sha256": "fcde420e666a0d4341f102fbbe251cfd8075c8d442d9ace6b727e9e06be6cdde"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:42",
+        "url": "https://clerk.house.gov/evs/2026/roll042.xml",
+        "raw_sha256": "4db5811f01a12a86d872944947c418e263d24eb55608f5e7d3b9923ca5ea43b5",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -53342,11 +53512,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "111 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "112 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "6dc636e6fb71f5aa380af5bc0746d6d94eb69db911e35c88c70b575e7d81f583",
+  "selection_sha256": "2ed31cb07e630e2b14426886769c35359bcffa7ffe1d837713a7accfbed8ef17",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -53458,7 +53628,8 @@
     "house:119:2:264",
     "house:119:2:266",
     "house:119:2:278",
-    "house:119:2:28"
+    "house:119:2:28",
+    "house:119:2:42"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -53473,12 +53644,11 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:42",
     "house:119:2:44"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "14 unresolved comprise 12 unfinished plus two examined dependencies;2026roll42 and eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278 and new28 whole-package completeness remain follow-ups. Direct domestic/global Health, nutrition and humanitarian mechanisms support whole7006passage28 membership; this is not universal component eligibility or exhaustive package proof.",
+    "basis": "13 unresolved comprise 11 unfinished plus two examined dependencies;Eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278/28 and new42 whole-package completeness remain follow-ups. Direct custody-care, qualified medical licensing, mixed retiree/employee care and emergency-assistance mechanisms support whole7147passage42 membership; this is not universal component eligibility or exhaustive package proof.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -53530,6 +53700,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "53789c6532bbdb5016a7fc88280d32c5bc65773b8ee0b6743fa07d47bebb55cc",
-  "membership_review_sha256": "876f903236dee5f688dcccc5c17f69c383a3558d1a9a072a0cfa78a4c8c0d9e8"
+  "proposal_sha256": "e1eed5f2047bdd3909d9abd56970649f7c77c09c341582566f1c676aa8d70dca",
+  "membership_review_sha256": "7956f6fb440a3ac98ebdf692fff432ddfd343d4c6bf6d41b1832cfbe4f436334"
 }
