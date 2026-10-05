@@ -20,6 +20,45 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_january_definition_and_democracy_strikes_remain_noncounting(self):
+        membership = json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))
+        records = {r['action_id']: r for r in membership['records']}
+        sources = {s['source_id']: s for s in self.capture['sources']}
+        aids = {f'house:119:2:{n}' for n in [23, 27]}
+        for aid in aids:
+            self.assertEqual(records[aid]['disposition'], 'exact_action_ineligible')
+            self.assertTrue(records[aid]['substantive_review_performed'])
+            self.assertTrue(records[aid]['claim_source_map'])
+        self.assertIn('safety shower showerheads', sources['govinfo:hr4593eh']['text'])
+        self.assertIn('180 days', sources['govinfo:hr4593eh']['text'])
+        self.assertIn('Page 318, strike line 11', sources['govinfo:hrpt119-445']['text'])
+        self.assertIn('through line 21 on page 320', sources['govinfo:hrpt119-445']['text'])
+        self.assertIn('forced organ harvesting',
+                      sources['congressional-record:2026-01-14-7032-explanatory']['text'])
+        self.assertIn('not clinical delivery', records['house:119:2:27']['rationale'])
+        self.assertIn('not adopted passage provisions', records['house:119:2:27']['rationale'])
+        self.assertEqual(sources['clerk:119:2:27']['metadata']['vote-result'], 'Failed')
+        self.assertEqual(sources['clerk:119:2:27']['member_records']['F000477']['official_label'], 'No')
+        self.assertEqual(sources['clerk:119:2:27']['member_records']['M001184']['official_label'], 'Aye')
+        self.assertFalse(aids & {a['action_id'] for a in self.products[0]['actions']})
+        for projection in self.products[2]:
+            self.assertFalse(aids & {a['action_id'] for a in projection['actions']})
+
+    def test_democracy_exclusion_cannot_bind_an_invented_clinical_passage(self):
+        universe = json.loads((DATA / 'universe_proposal.json').read_text(encoding='utf-8'))
+        membership = json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))
+        record = next(r for r in membership['records'] if r['action_id'] == 'house:119:2:27')
+        record['claim_source_map'][0]['passage'] = 'The amendment establishes a clinical treatment entitlement.'
+        membership['review_sha256'] = sealed_digest(membership, 'review_sha256')
+        universe['membership_review_sha256'] = membership['review_sha256']
+        row = next(r for r in universe['candidate_dispositions'] if r['action_id'] == record['action_id'])
+        row['review_progress']['shared_review_record_sha256'] = digest(record)
+        universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
+            cutoff=universe['cutoff'], candidate_records=universe['candidate_dispositions']))
+        universe['proposal_sha256'] = sealed_digest(universe, 'proposal_sha256')
+        with self.assertRaisesRegex(ValueError, 'membership claim absent from bound source'):
+            validate_universe_proposal(universe, self.author, self.capture, membership)
+
     def test_ndaa_passage_keeps_component_choices_and_adopted_limits(self):
         aid = 'house:119:2:278'
         core = next(a for a in self.products[0]['actions'] if a['action_id'] == aid)
@@ -968,8 +1007,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":232, "source_unresolved":17,
-            "interpreted_substantive_directional":110, "expressive_nonbinding_context":19, "exact_action_ineligible":298})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":232, "source_unresolved":15,
+            "interpreted_substantive_directional":110, "expressive_nonbinding_context":19, "exact_action_ineligible":300})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -987,7 +1026,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 15)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 13)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

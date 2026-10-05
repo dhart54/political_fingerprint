@@ -1727,3 +1727,111 @@ Remaining:2026rolls23/27/28/42 and2025rolls224/225/226/262/294/295/296/299/307/
 318/320.2025roll237conflict and2026roll44operative dependency remain;45and278
 whole-package completeness are explicit follow-ups. The goal remains active;
 thischeckpoint is progress, not corpus closure or an intermediate shutdown.
+
+Checkpoint20is b2db942e483440f14fe3384ff97dc041f0b0bc69,pushed and verified as
+draftPR196head with the original stacked base. FrozenPR195head remains
+f10abd6b42867d591992b368c089150e4178604b. Exact-head CI37351950130completed
+successfully;allnine jobs inspected. Draftbody updated with the receipt.
+
+### Earlier2026queue: next local research
+
+Captured exact Clerk23/27/28/42metadata and selectedmember choices:23FousheeNay/
+MassieYea;27FousheeNo/MassieAye,failed Crane amendment2;28and42bothNay,passed
+separate appropriation bills. Complete4593EH(1540characters) changes the statutory
+showerhead definition to the namedASME2024standard, excludes safetyshowerheads
+and requires conforming regulations180daysafterenactment. Provisional exact-action
+exclusion lead:product-definition/energy regulation,not a printed clinical-care
+or household-benefit program;no paid/protected standard was acquired.
+
+Complete14710character Report119-445 and2306character adoptedHRes992read.
+27strikes205lines20–206line7(NED315millionallocation,210.316milliontraditional/
+104.684milliondemocracy,7062(a)exception and60dayapportionment)AND318line11–
+320line21(all7032),not merely an unqualified permanent ban on NEDfunding. The
+complete five line-numbered officialIHpages were read.7032covers2.175billion
+democracy-program allocation guidance,notwithstanding authority,beneficiary
+selection,democracy definition,foreign-government approval/disclosure restrictions
+and threatenedcivil-society/journalist protection. Complete dated22US4411/4413
+purpose/private-sector grant authorities read;wrongchapter50URL failed,correct
+chapter54/subchapterII succeeded. The failure is not evidence of absent authority.
+Actual77amendment offering and78debate throughpostponement,79recordedvote setup
+and totalsread;corruption/censorship/causal/motive assertions remain attributed,
+not civic findings. January14floor144complete explanatory statement read,including
+7032forced-organ-harvesting/human-rights reporting,press/digitalfreedom and
+prioritization;no clinicaldelivery mechanism is inferred from reporting. Its7035
+combat-casualty-care strategy paragraph is a different passage and not silently
+inside27's deleted7032range. Final27vote is failed despite earlier voice-vote
+appearance;28package does not acquire the failed strikes.
+
+7006IH/EH(576918/576664characters),7147IH/EH(122516/122678characters) and175page
+January14House record were captured. Initialheaders,keyword locators and the
+7006end-of-text boundary are discovery only;no full-body or comprehensive Health
+review is claimed. Existing governed7006IH217-scope source was located before
+fetch;its bounded10571characters do not establish complete broader bill review.
+The nine rawcaptures plus rule/report/statutes/floor/PDF remain ignored local
+research. No21canonicalclassification,authoring or generated artifact is written.
+Remaining fifteen unfinished cases stay fifteen until their actual reviews compile.
+
+### Checkpoint21: exact January23/27 exclusions
+
+Completed the two conclusive exact-action screenings before extending research
+into whole appropriations packages. Roll23 changes the showerhead definition,
+excludes safety shower showerheads and requires conforming rules within180days;
+the printed proposition is product/energy regulation, not a clinical or benefit
+program. No unacquired ASME technical content is inferred. Roll27 deletes both
+the315million NED allocation and the entire7032 democracy-program section,
+including civil-society/journalist protection. The explanatory forced-organ-
+harvesting paragraph is human-rights reporting, not clinical delivery;7035's
+combat-casualty strategy is outside the strike. Final recorded failure supersedes
+the earlier voice-vote appearance. Neither exclusion generates a Health finding
+or turns whole passage28 into positions on these components.
+
+Accounting:110interpreted/232procedural/19expressive/300excluded/15unresolved.
+The15comprise thirteen unfinished screenings and two previously examined
+dependencies. All80episodes,220observations and150propositions/readable findings
+(79Foushee/71Massie) are unchanged. Cumulative200new reviews since the frozen
+benchmark:25shared meanings/69procedural/9expressive/97exclusions. Eight new
+governed captures and two reused(rule992/report445) here;580new/2005total
+captures and563reviews. Governed reuse and early exclusion routing reduce
+repeated research without changing contracts; no new architecture or asserted
+model/token savings. Research spans resumed turns, so no reconstructed complete
+end-to-end timing is claimed; final focused182tests ran in29.606seconds.
+
+All182focused five-module tests and seven semantic checks pass. Negative coverage
+rejects an invented clinical passage even after candidate hashes are recomputed.
+Both exclusions remain absent from Shared Action Core and member projections.
+All110prior author/core,1997sources and561reviews are preserved againstb2db942;
+all prior projections, compiled propositions and readable findings remain exact.
+All85benchmark author/core,1425sources and363reviews preserved. Inventory200
+changed/476identical to benchmark; only23/27changed this increment. Eight generated/
+packet files replay byte exactly and all37pending capture hashes remain exact.
+Manual exact source references, two recorded dispositions/choices, failed-versus-
+passage boundaries and both rationales inspected. Final scoped diff/check reviewed.
+The unchanged core is121e03fc6308c65287f837d7305a24e47a7b8da12a5e724b4ec1b67fff5f305a;
+compiled03f82eff418c3b8de322148471e4186d81c82a9df271bd381cea082198d982fc.
+
+Safe local correction:4411 has Statutory Notes rather than an Editorial Notes
+heading; the first curator stopped before canonical writes. Its exact operative
+extent was then selected. A preservation helper initially used two incorrect
+generated filenames; corrected to actual member_projections/compiler_input and
+rerun successfully. No candidate gates were weakened. Six tracked files change;
+authoring, six analytical generated outputs and the review packet remain exact.
+No publication, approval, registry, runtime, frontend, production or deployment
+authority is created. This checkpoint is progress, not closure or shutdown.
+
+Remaining:2026rolls28/42 and2025rolls224/225/226/262/294/295/296/299/307/318/320.
+Examined2025roll237conflict/2026roll44operative dependency and45/278package
+completeness follow-ups remain. The goal is stored ACTIVE; the displayed stalled
+badge is not corrected or treated as a repository blocker.
+
+Further local28research read complete domestic medical/FEHB/contraception,
+CDFI/healthy-food financing, OPMadministration, GlobalHealth/IHA/refugee blocks,
+7018/7019/7027/7033/7057/7058/7059/7060/7070 and final DivisionC101. Qualified
+family-planning conditions, exceptional outbreak transfer caps, UNFPA diversion,
+PEPFAR transition reporting, disability/food-security/water-sanitization programs
+and regional/UNRWA restrictions require whole-vote boundaries.7059/7060minimums
+have a qualified10percent deviation authority; statutory should versus shall is
+preserved. The first101locator selected an earlier IRS transfer clause; final
+DivisionC101was separately located and read. Section/keyword windows are discovery,
+not proof of full package review. Regional restrictions and binding7058explanatory
+material remain to review, followed by separate7147Health mechanisms. No28/42
+authoring/classification is written; they remain unfinished for checkpoint22.

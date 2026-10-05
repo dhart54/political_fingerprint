@@ -141,10 +141,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 232,
-      "exact_action_ineligible": 298,
+      "exact_action_ineligible": 300,
       "interpreted_substantive_directional": 110,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 17
+      "source_unresolved": 15
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -158,8 +158,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
-    "exact_action_ineligible_actions": 298,
-    "unresolved_boundary_cases": 17,
+    "exact_action_ineligible_actions": 300,
+    "unresolved_boundary_cases": 15,
     "independent_episode_count": 80,
     "multi_action_episode_count": 11,
     "mechanism_types": [
@@ -178,7 +178,7 @@
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45and278whole-package completeness follow-ups. Whole278Health mechanisms screened; fifteen older actions remain unfinished. Exhaustive278package completeness is a follow-up requiring review."
+      "2026rolls28/42 and eleven2025actions remain unfinished;2025roll237/2026roll44 are examined dependencies;45and278 whole-package completeness remain follow-ups. Whole278 Health mechanisms are screened; exhaustive package completeness remains unproven."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -581,7 +581,9 @@
         "house:119:2:14",
         "house:119:2:15",
         "house:119:2:19",
+        "house:119:2:23",
         "house:119:2:26",
+        "house:119:2:27",
         "house:119:2:29",
         "house:119:2:33",
         "house:119:2:38",
@@ -861,18 +863,16 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:23",
-        "house:119:2:27",
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44"
       ]
     },
-    "count_basis": "110 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 17 unresolved comprise 15 unfinished screenings plus2 examined dependencies. 8800has three distinct amendment observations and one separate whole-passage278observation. Exclusions and controls remain noncounting; wider package completeness remains unproven."
+    "count_basis": "110 source-mapped Health candidate inputs, not accepted eligibility or exhaustive package proof. 15 unresolved comprise 13 unfinished screenings plus2 examined dependencies. 8800 has three distinct amendment observations and one separate whole-passage278 observation. Exact23/27 exclusions and all controls remain noncounting; wider package completeness remains unproven."
   },
   "episode_completeness": "80 candidate episodes cover 110 supplied actions. Three8800amendments and separate whole-passage278form one shared episode; previous authored/core meanings preserved with only the existing8800derived episode extended. Wider278package completeness remains unproven. Discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "aa0df5c7d8d6a5cd6225e6a424b81b05b2abe38e4dd82001e192ee50836c5d53",
+  "universe_subject_sha256": "7680192c25599b20873d8f6f145a8ec5ef97abe04a1ae4549cb6d7bf00bc0511",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -29011,13 +29011,14 @@
       "date": "2026-01-13",
       "measure": "bill_119_hr_4593",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Exact final passage of H.R.4593 revises the Energy Policy and Conservation Act showerhead definition to ASME A112.18.1-2024, excludes safety shower showerheads, and requires conforming Energy Department regulations within 180 days after enactment. This is a product-definition/energy-regulation proposition, not a printed clinical-care, insurance or household-benefit mechanism. Safety-shower wording does not create clinical eligibility. No technical meaning beyond the printed reference is inferred from the unacquired ASME standard, and House passage is not enactment. Excluded from Health counting and member findings. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [226, 197, 0, 8]; Foushee Nay/Massie Yea.",
       "source": {
         "source_id": "clerk:119:2:23",
         "url": "https://clerk.house.gov/evs/2026/roll023.xml",
-        "raw_sha256": "f6bfeeb73ada8f8b8c12ce9666357ccd20d3d3c910b701d8e23b8d78383e1f0c",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "229c8dc2ef42d4706e72568821eee288537a90dbbdb6280a2b00256d30fa3d18",
+        "governed_bytes_sha256": "e60b680904c7373c3aeac9d083deb437dbb967da02aa11d2dab973f6474198cb",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -29028,25 +29029,46 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Exact final passage of H.R.4593 revises the Energy Policy and Conservation Act showerhead definition to ASME A112.18.1-2024, excludes safety shower showerheads, and requires conforming Energy Department regulations within 180 days after enactment. This is a product-definition/energy-regulation proposition, not a printed clinical-care, insurance or household-benefit mechanism. Safety-shower wording does not create clinical eligibility. No technical meaning beyond the printed reference is inferred from the unacquired ASME standard, and House passage is not enactment. Excluded from Health counting and member findings. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [226, 197, 0, 8]; Foushee Nay/Massie Yea.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:23",
           "url": "https://clerk.house.gov/evs/2026/roll023.xml",
-          "raw_sha256": "f6bfeeb73ada8f8b8c12ce9666357ccd20d3d3c910b701d8e23b8d78383e1f0c",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "229c8dc2ef42d4706e72568821eee288537a90dbbdb6280a2b00256d30fa3d18",
+          "governed_bytes_sha256": "e60b680904c7373c3aeac9d083deb437dbb967da02aa11d2dab973f6474198cb"
+        },
+        {
+          "source_id": "govinfo:hr4593eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4593eh/html/BILLS-119hr4593eh.htm",
+          "raw_sha256": "12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e",
+          "governed_bytes_sha256": "29b0df908f80e4f0387cd2a6832c73089152831f0bddab0f88e1080b85f1d741"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:23",
+        "source_ids": [
+          "clerk:119:2:23",
+          "govinfo:hr4593eh"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:23",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.4593 EH fully read research208, raw12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e. Report119-417 purpose/background, section analysis,6291(31)changes and minority views read in research209. Exact bill refers toASME A112.18.1-2024, excludes safety showerheads and requires conforming regulations within180days; report narrative has an18/81 digit transposition, not followed. DOE April15,2025 final-rule research211 first4200/9072characters read; remainder and exact2024standard definition still pending. ASME publisher catalog confirms version; public Accuris preview2922436 returns403 both web and direct. No paid/protected access, unverified mirror or inferred hygienic effect used. Seek another authorized public preview/official incorporated-definition reproduction; this path is not yet exhausted. Prepared research is not completed membership."
+        "shared_review_record_sha256": "d57776cffb8740348cfb4dc8a350530bf4599b34a645dd608b6eb43f982cd7f2"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:23",
+        "url": "https://clerk.house.gov/evs/2026/roll023.xml",
+        "raw_sha256": "f6bfeeb73ada8f8b8c12ce9666357ccd20d3d3c910b701d8e23b8d78383e1f0c",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -29254,13 +29276,14 @@
       "date": "2026-01-14",
       "measure": "bill_119_hr_7006",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Exact failed Crane amendment2 to H.R.7006 strikes printed page205 line20 through page206 line7 andpage318 line11 through page320 line21. The first range removes the $315-million NED allocation, including $210.316 million traditional/customary/core-institute and $104.684 million democracy funding, the 7062(a) exception and 60-day apportionment. The second deletes all section7032: $2.175billion democracy-program guidance stated as should, notwithstanding authority, NED beneficiary selection, democracy definitions, foreign-government approval/disclosure limits, and support/protection for threatened civil-society activists and journalists. Dated NED purpose/private-sector grant authority and the7032 explanatory context establish democratic development and rights/reporting rather than a clinical-care or household-benefit program. Forced-organ-harvesting/organ-removal-trafficking human-rights reporting is acknowledged; it is not clinical delivery. Adjacent section7035 combat-casualty-care strategy is outside the deleted section7032 range. Do not replace the operative strikes with the report summary of an unqualified permanent NED funding ban or infer elimination of every democracy funding source. The final recorded vote failed despite an earlier voice-vote appearance, so these deletions were not adopted passage provisions. Exact amendment membership is separate from whole-package roll28 Health mechanisms; no component positions are inferred from passage. Excluded from Health counting and member findings. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [127, 291, 0, 18]; Foushee No/Massie Aye. Committee-of-the-Whole totals are not forced into a 435-member cap.",
       "source": {
         "source_id": "clerk:119:2:27",
         "url": "https://clerk.house.gov/evs/2026/roll027.xml",
-        "raw_sha256": "76e5442b0c2b4f4d946fdb34cb2804a31b4687fab47bc10dbea73f62f263a712",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+        "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -29271,25 +29294,88 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Exact failed Crane amendment2 to H.R.7006 strikes printed page205 line20 through page206 line7 andpage318 line11 through page320 line21. The first range removes the $315-million NED allocation, including $210.316 million traditional/customary/core-institute and $104.684 million democracy funding, the 7062(a) exception and 60-day apportionment. The second deletes all section7032: $2.175billion democracy-program guidance stated as should, notwithstanding authority, NED beneficiary selection, democracy definitions, foreign-government approval/disclosure limits, and support/protection for threatened civil-society activists and journalists. Dated NED purpose/private-sector grant authority and the7032 explanatory context establish democratic development and rights/reporting rather than a clinical-care or household-benefit program. Forced-organ-harvesting/organ-removal-trafficking human-rights reporting is acknowledged; it is not clinical delivery. Adjacent section7035 combat-casualty-care strategy is outside the deleted section7032 range. Do not replace the operative strikes with the report summary of an unqualified permanent NED funding ban or infer elimination of every democracy funding source. The final recorded vote failed despite an earlier voice-vote appearance, so these deletions were not adopted passage provisions. Exact amendment membership is separate from whole-package roll28 Health mechanisms; no component positions are inferred from passage. Excluded from Health counting and member findings. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [127, 291, 0, 18]; Foushee No/Massie Aye. Committee-of-the-Whole totals are not forced into a 435-member cap.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:27",
           "url": "https://clerk.house.gov/evs/2026/roll027.xml",
-          "raw_sha256": "76e5442b0c2b4f4d946fdb34cb2804a31b4687fab47bc10dbea73f62f263a712",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+          "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab"
+        },
+        {
+          "source_id": "govinfo:hrpt119-445",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+          "raw_sha256": "c8df027547a47d3aeb8d3ad2006155d2597775c62b4f18ed0e4f2ec79715794f",
+          "governed_bytes_sha256": "952f73f858df453ca56eb9348864b533f68d1e8d643d700a95a45ef3a3aac0e7"
+        },
+        {
+          "source_id": "govinfo:hres992eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+          "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+          "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-crane2-strike-pages",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/pdf/BILLS-119hr7006ih.pdf",
+          "raw_sha256": "c3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816",
+          "governed_bytes_sha256": "95de47a00a0a49e8e21bdacbae893d0e7f3238ead331c13ae121298230131855"
+        },
+        {
+          "source_id": "govinfo:22usc4411-2024-ned",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap54-subchapII-sec4411.htm",
+          "raw_sha256": "fa1e0d543a5d5dff4c5ab059f1607fdd07e7d5c827f660fca917f9253df92d32",
+          "governed_bytes_sha256": "0b806cb214c32ecbe4a1dc2864ff994cb301f2cf031d37b2f029eb373df02386"
+        },
+        {
+          "source_id": "govinfo:22usc4413-2024-ned",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap54-subchapII-sec4413.htm",
+          "raw_sha256": "dc5b117fcdc8011cc64ba96364699e6feade50f43b0dc66cdf2334b46064cf71",
+          "governed_bytes_sha256": "f887a4bd2f595a2c6347e1e0d887e707d14b89b9474923d47fbb1754e263a5bc"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-crane2-offering-result",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "60704acc6361e0d7ae9bd28005dee3c298b9c1904f39510f8ac080758b1d2e3b"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-7032-explanatory",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "9d204c028911807ff745b973eeeca09fbb5bd6871258a977e6261c47b62ee7f3"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:27",
+        "source_ids": [
+          "clerk:119:2:27",
+          "govinfo:hrpt119-445",
+          "govinfo:hres992eh",
+          "govinfo:hr7006ih-crane2-strike-pages",
+          "govinfo:22usc4411-2024-ned",
+          "govinfo:22usc4413-2024-ned",
+          "congressional-record:2026-01-14-crane2-offering-result",
+          "congressional-record:2026-01-14-7032-explanatory"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:27",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.7006 Crane amendment: Report119-445 complete, targetIH PDF205L20–206L7 and318L11–320L21 fully read (research214, PDFrawc3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816). It strikes315m NED allocation (210.316m traditional/core and104.684m democracy),60-day apportionment and7062(a)operating-plan exemption; additionally deletes7032 democracy-program2.175bn should-language, authorities, definition, foreign-interference restrictions and activist/journalist protection. Not merely a blanketNEDban. Read22USC4411/4412 actualsubchapII operative purposes/grants (research216); prior missing-subchapter URLs returnednotfound and are not governed evidence. Jan14Record PDF77/79/80 bind offering/result; amendment failed127–291. Jan14explanatory statementPDF144 section7032 also instructs forced-organ-harvesting reporting. Next determine the precise relation of that retained explanatory instruction to deleting7032; do not silently infer its repeal or ignore medical counterevidence. Billpreface3/4 read (division-scopedAct and statementeffect). Continue independent safe cases; no unavailable evidence or human decision yet asserted."
+        "shared_review_record_sha256": "1db0960e4ee28edc71acb3fc95df5f21c5a0936ad281813af7697f20cde428fb"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:27",
+        "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+        "raw_sha256": "76e5442b0c2b4f4d946fdb34cb2804a31b4687fab47bc10dbea73f62f263a712",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -53244,15 +53330,13 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:23",
-    "house:119:2:27",
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "17 unresolved comprise 15 unfinished plus two examined dependencies;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45and278whole-package completeness follow-ups. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus nineteen bounded NDAA amendments and whole278screened;250and277preserved. 278widerpackage completeness is not established.",
+    "basis": "2026rolls28/42 and eleven2025actions remain unfinished;2025roll237/2026roll44 are examined dependencies;45and278 whole-package completeness remain follow-ups. Exact23 showerhead-definition passage and27 failed NED/democracy strikes are screened as exclusions independently of whole7006 passage28. No new interpreted inputs or completeness authority.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -53304,6 +53388,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "2e8d4bdec0870882821352c01393379f850b47ef6233b2502261d2f8f19ba28e",
-  "membership_review_sha256": "62fa5c86c69512fbd4a849590722d49a20acdbbf567a1412de93826a4403d955"
+  "proposal_sha256": "e10a805ec6131891dd226bfe08ff8d7985be5a9666848dcea027758041317d09",
+  "membership_review_sha256": "a3e78e8d7499feb66b2b0521ada66c701581dc5cac6286c54f490bbd965f3d9c"
 }
