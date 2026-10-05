@@ -335,6 +335,71 @@ Core `25ebb181f1d2f5dcfb82a5da89de5c062410adadad77f4faf446ff0dc619e4d9`;
 compiled `1594dfd1951da561468b809c4ae3870e5fa746660421611584971d8533cdd7d7`.
 Exact-head CI receipt follows commit/push.
 
+## Checkpoint5 — April14–17 rolls109–124
+
+Checkpoint4 exact head `e1622d30797e4e9b7818836aee8755f4e9b617ff` passed hosted
+CI [run37260639496](https://github.com/dhart54/political_fingerprint/actions/runs/37260639496).
+Sixteen new governed reviews: nine procedural controls, one expressive control,
+six proposed exclusions, no new meaning/finding. Four procedural and one
+expressive identity already had inventory labels. Totals **87/214/13/221/141**:
+139 unfinished screenings and2 examined dependencies. Findings remain67/62.
+30 captures added (1537 total);409 membership reviews. Two governed identities
+reused: exact1156 EH (raw/text equality checked) and50USC1544 operative section.
+Shared1174/965 rules and selected1175 Record excerpts serve their own action
+sequences. Existing111/112/121 Clerk captures were detected before acquisition,
+but the batch still reacquired them. Observations/metadata/totals exactly match;
+raw bytes differ. Distinct recapture identities preserve every old receipt;
+this duplicate acquisition is recorded as overhead, not a source saving.
+
+HR7613's complete139,938-character aviation package was read, including FAA and
+military titles. Air-ambulance/air-medical consultation and occupational post-
+accident drug/alcohol testing remain explicit adjacent-health context, not
+patient-service, coverage or social-benefit financing. HR1011's farm/forest
+restoration advances retain differing repair/replacement caps and180-day return.
+HR6409's relief extends beyond international emissions to outside the particular
+nonattainment area, exceptional events and qualified mobile sources; underlying
+attainment duties and5-year demonstration renewal remain. HR6398 narrows EPA
+review to legislation, preserving its public-health/welfare criterion. Material
+7509a/7609 authority read did not change either proposed membership conclusion.
+HR1689's Haiti TPS duration is April20,2029; complete1254a retains eligibility,
+work/removal protection and the State/local public-assistance discretion. That
+real benefit connection is retained without an individual benefit guarantee.
+HConRes40 failed213-214 with1 Present/3 Not Voting; exact floor text binds the
+IH and preserves ally/partner imminent-defense and full1544(b) compliance,
+without borrowing the earlier resolution's different exceptions.1156 only
+expresses tax support/recognition; HSA/telehealth preamble claims do not enact
+or independently verify prior-law changes.
+
+For1175, generic EH/error articles were rejected. April17 clock votes belong to
+the April16 legislative Record. Exact Clerk-read original rule matches RH;
+Scott amendment1 would deem Print119-25 adopted but FAILED200-220/11 Not Voting.
+The original rule then FAILED197-228/6 Not Voting. Complete amendment and actual
+outcomes remain separately source-bound; no unadopted print interpretation or
+FISA-extension enactment is inferred. Rendered H2953 visually confirms the
+whole amendment, ordering sequence and exact question. All controls remain
+non-counting under established semantics, including965's actual deemed TPS
+substitute. No stronger policy direction is constructed from rule votes.
+
+Approximate research/authoring elapsed **20–30minutes**, including full aviation
+reading, three incorporated authorities and exact midnight-floor binding.
+No deeper review changed the proposed membership conclusion; qualifications
+were refined. Manual overhead: generic article rejection, legislative-date
+resolution, duplicate Clerk receipt handling and exact passage-string fixes
+before input writes. No new workflow code or measured model-token saving.
+Next ordinary action: **2026roll125 HR1681**.
+Validation:146 focused tests and all7 canonical semantic checks pass. All85
+prior meanings/core actions,1425 sources,363 reviews and125 prior compiled
+propositions preserved. Exactly46 inventory rows79–124 changed;630 remain
+identical. Seven generated JSON files and packet replay byte-identically.
+Current readable findings, shared action core and compiled IR retain identical
+semantic content to checkpoint4; no new directional finding appears. Focused
+regression verifies real adjacent-health context, failed exact amendment/rule,
+three independently preserved duplicate Clerk observations and exclusion of
+all16 actions from Health projections. Diff reviewed and clean. Current author
+boundary's stale86 input description corrected to87; no action meaning changed.
+Weekly usage7% used/93% remaining at midnight Eastern; deadline unchanged.
+Exact-head hosted CI receipt follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

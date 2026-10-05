@@ -20,6 +20,31 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_april_midmonth_controls_preserve_exact_failed_amendment_and_adjacent_health_context(self):
+        records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        for n in [109, 110, 114, 116, 118, 120]:
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], "exact_action_ineligible")
+        for n in [111, 112, 113, 115, 117, 119, 122, 123, 124]:
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], "procedural_context")
+        self.assertEqual(records["house:119:2:121"]["disposition"], "expressive_nonbinding_context")
+        for phrase in ["air-ambulance/air-medical", "drug/alcohol", "occupational"]:
+            self.assertIn(phrase.lower(), records["house:119:2:110"]["rationale"].lower())
+        self.assertIn("State/local public assistance", records["house:119:2:120"]["rationale"])
+        self.assertIn("outside the NONATTAINMENT AREA", records["house:119:2:116"]["rationale"])
+        self.assertIn("retaining proposed-legislation review", records["house:119:2:118"]["rationale"])
+        floor = sources["congressional-record:2026-04-16-hres1175"]["text"]
+        self.assertIn("Print 119–25 shall be considered as adopted.", floor)
+        self.assertIn("So the amendment was rejected.", floor)
+        self.assertIn("So the resolution was not agreed to.", floor)
+        self.assertEqual(sources["clerk:119:2:123"]["member_records"]["M001184"]["official_label"], "Nay")
+        for n in [111, 112, 121]:
+            old, new = sources[f"clerk:119:2:{n}"], sources[f"clerk:119:2:{n}:continuation-recapture"]
+            for field in ["metadata", "member_records", "party_totals"]:
+                self.assertEqual(old[field], new[field])
+        for projection in self.products[2]:
+            self.assertFalse({f"house:119:2:{n}" for n in range(109, 125)} & {a["action_id"] for a in projection["actions"]})
+
     @classmethod
     def setUpClass(cls):
         cls.author = json.loads((DATA / "authoring.json").read_text(encoding="utf-8"))
@@ -421,8 +446,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":209, "source_unresolved":152,
-            "interpreted_substantive_directional":87, "expressive_nonbinding_context":13, "exact_action_ineligible":215})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":214, "source_unresolved":141,
+            "interpreted_substantive_directional":87, "expressive_nonbinding_context":13, "exact_action_ineligible":221})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -440,7 +465,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 150)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 139)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
