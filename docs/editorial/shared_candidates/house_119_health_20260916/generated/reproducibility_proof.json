@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "d0f0fd194b35f60d5f90d698a09c8c924c9361da35e5c0a92b30c0ddc0dd890a",
-  "source_capture_sha256": "c7d00d640c62ae8b7852a6db0b300ceb93e36e64604363d8b2a41b78540ec45f",
-  "core_sha256": "f43f3afeb2871023c3598c71f94ab0152620cc1ce215fb9771a60dec381ad73e",
-  "compiled_sha256": "c07653081d0bd95209467487860be42887f9a8cbe187f2d24d5a004cab1bd264",
-  "readable_sha256": "905c9cdbb05f2b7d28a622d63506d7e53c0d78a79f380f3bc6afedfc3c457fcb",
+  "input_sha256": "47d9255eb7389693a7777226f63f951dc7d32c11e5af17e1ee59f8a07bf4b88c",
+  "source_capture_sha256": "f58cecce94b31b6dd51810ae5b28f294addacb3f76bd203ac705d584c8a218a6",
+  "core_sha256": "121e03fc6308c65287f837d7305a24e47a7b8da12a5e724b4ec1b67fff5f305a",
+  "compiled_sha256": "03f82eff418c3b8de322148471e4186d81c82a9df271bd381cea082198d982fc",
+  "readable_sha256": "9f24581fe015fbdc27700fa9cac8f7ba3754aa1e2b5e2b5155d1df585713fd56",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2193,6 +2193,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported giving EO14183 force of law, including its medical-fitness directions and conditional rescission of inconsistent transition-care guidance",
           "source_id": "clerk:119:2:266"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:278",
+      "shared_sha256": "33ad8636b3715a8e209a61619307b0004dc4be6341dfcdabcf670b9992ce188b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the amended FY 2027 defense package with its reviewed care, family-support, housing and veterans-health mechanisms",
+          "source_id": "clerk:119:2:278"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the amended FY 2027 defense package with its reviewed care, family-support, housing and veterans-health mechanisms",
+          "source_id": "clerk:119:2:278"
         }
       ]
     }

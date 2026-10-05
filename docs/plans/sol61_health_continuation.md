@@ -1591,3 +1591,139 @@ use laterEHDivisionE as a fresh component choice in278. FullEH2.98millioncharact
 and completeRCP1642pages have not been reviewed as whole packages. No completeness
 claim is made from keyword indexing. The stored goal remains active; this checkpoint
 is progress, not corpus closure or a reason to pause executable Health work.
+
+Checkpoint19 is144e1e1ea02188b79c9e17390ccf07bd0553a1d2, pushed to the continuation
+branch and verified as draftPR196's exact head and stacked base. FrozenPR195 still
+reportsf10abd6b42867d591992b368c089150e4178604b. Exact-head CI37346894823 completed
+successfully, all nine jobs. The draft body records the final receipt. The stored
+goal remains active; no intermediate completion/shutdown marker was created.
+
+### Next278whole-package research: local only
+
+Read actual July22floor PDF130/131 completely: amended bill reported with adopted
+Committee amendments, amendments agreed en gros, engrossment/third reading ordered,
+bare277recommittal rejected,278passage216-212-0-3; both membersNay. Existing rule1438
+section11 and precedent establish that later engrossment assembly of separately
+passedS1383 is distinct from a new278component choice. Full laterEH is not silently
+used as the direct voting text; RCP119-33 plus adopted amendments still need exact
+material reconciliation.
+
+The complete medical-title operative body701–713/721–746/751–796 was read from EH
+in bounded sequential streams:85outer sections, including fertility care for
+specified active-duty members/dependents with October1,2028application and IVF/cost/
+prohibition/former-member conditions; selected junior-reserve no-premium dental
+care and qualified dependent dental access; targeted41-facility service-change
+prohibition/restoration with March3,2026baseline/legal qualification; contraceptive
+supply up to365days with defined active/dependent eligibility and printed timing;
+maternity continuity; purpose-defined treatment ban709 matching agreed267 with its
+printed minor/cross-reference limits; coverage/transition notices; administration,
+staffing, financing accounts, readiness and trauma systems; clinical chaperones,
+physical-therapy referral exception and provider-payment/site identifiers;
+qualified overseas civilian coverage, cancer pilot, maternal services, clinical
+monitoring/data protections, mental-health/suicide plans, research and reports.
+Optional pilots, mandatory selected participation, actual delivery, studies,
+research authorization and appropriations remain distinct; no asserted clinical
+benefit/effectiveness or all-beneficiary entitlement follows automatically.
+
+Local discovery indexing initially treated the quoted inserted uppercaseSEC1097E
+as a separate heading and excluded its body from the outer734review stream. The
+entire734inserted notice provision was separately read and the index corrected to
+retain quoted headings within the enclosing section. No canonical278source or
+meaning was written before correction. An earlier large index listing was truncated
+and remains discovery only, not proof of complete package review. Full medical
+streams plus the correction are recorded in ignored localresearch ledger20.
+RCP material section locations are442–604, with701at442,703at444,705at452,706at464,
+721at468,751at521and next801at604. Floor-base/adopted-amendment comparison, family
+support/housing review, material current-law qualifications and wider package
+boundary work remain. FullEH2.98millioncharacters/RCP1642pages are still not whole-
+reviewed.278has not yet been authored, classified or counted as completed.
+
+Further278local review read sixteen complete family-support sections529E/556/571/
+572/573/574/579E/611/612/613/614/615/616/623/631/632(21592characters) and twelve
+complete housing sections2102/2202/2302/2811/2812/2813/2815/2816/2817/2818/2819/
+2819A(15391characters). Preserve domestic-violence victim housing/alleged-offender
+status; optional childcare grant caps/capacity/non-displacement/term; au-pair
+preemption, direct-payment consent/existing-agreement exception and printed
+numbering; basic-needs/BAH eligibility cross-references; COLA funding/grade
+conditions; milk-shipping1000cap and service circumstances; pregnancy-loss leave;
+new survivor participant/spouse/premium conditions; gratuity165000and date/COLA
+rules. Housing authorization is not expenditure; tenant/reporting/NDA/work-order/
+habitability safeguards and budget-reservation/HistoricPreservation qualifications
+remain. Printed overlapping deletion/renumbering/cap/referral wording is not
+silently repaired or presented as settled implementation.
+
+Read RCP442–448completely:701dental terms,702space/resources and703fertility's
+full eligibility,IVF/cost/prohibition/former-member/application clauses match the
+laterEH material passages. This is bounded comparison, not all-title identity.
+Further selected floor-base/adopted-amendment reconciliation, material current-law
+family/housing baselines if invoked, VAtherapeutic/funding/other Health coverage and
+safe bounded shared whole-package authoring remain executable. Localledger20records
+these findings. No canonical278classification or additional generated result has
+been written yet, and all fifteen older screenings remain unfinished alongside278.
+
+Further278local research read the complete dated2024Code37USC402b(10574characters)
+and10USC2890(18345characters) authorities. Basic-needs allowance retains200percent
+FPL,active/training/dependent/household/application conditions;611changesBAHincome
+exclusion rather than granting universal eligibility.2890retains existing housing
+rights,anti-reprisal/IG safeguards and NDA settlement/counsel/legal-advice limits.
+The initially attemptedsubchapterIV2890URL was invalid; correctedsubchapterV
+primarysource succeeded. Navigation-only fullchapter material is not curated as
+reviewed authority.
+
+VA PartA29was reviewed completely and compared with1751–1753:seniorofficial,
+coordination,research/activity reports,workforce-training plan andEO14401
+implementation report;no blanket therapeutic approval or proven outcome. Actual
+July21PDF286designates29and31within enblocNo1;288–289contains their operative
+texts;303records enblocagreement. No separate individualmember29choice is inferred.
+A material whole-package qualifier was found:adoptedPartA31,matching complete
+EH1726,terminates any pilot program authorizedunderthisAct at the earlieroftwo
+yearsafterenactmentoritsown earlierdate,notwithstandingotherlaw. Longer nominal
+medical/family pilot terms must not become unqualified effective durations;the
+rule is not silently extended to every non-pilot research activity. These are
+localresearch findings,not accepted semantics.278and fifteen older screenings
+remain unfinished;canonical counts and generated artifacts are unchanged.
+
+### Checkpoint20: whole amended NDAA passage278
+
+One shared member-neutral meaning now covers278finalpassage, joining264/266/267
+in the existing8800episode. Foushee opposes allfour;Massie supports thethree
+amendments and opposes passage. Exact RCP/adopted-amendment text, HRes1438
+section11separate S1383engrossment assembly, failed264/266versus agreed267,
+clinical eligibility and timing, childcare/basic-needs/housing safeguards,
+authorization versus appropriation and VAcoordination/reporting are sourcebound.
+The adopted general1726/PartA31two-year-or-earlier pilot limit qualifies longer
+nominal pilot terms.2813replaces dated NDAsettlement/counsel/10business-day
+exceptions;the proposed rule does not silently retain deleted paragraphs.
+Wider package completeness and every cross-reference remain unproven and routed
+as278follow-up;candidate membership is not acceptance or public readiness.
+
+110interpreted/232procedural/19expressive/298excluded/17unresolved. The17comprise
+fifteen unfinished screenings and two previously examined dependencies.80episodes,
+220member observations and150propositions/readable findings(79Foushee/71Massie).
+Cumulative198new reviews sincebenchmark:25meanings/69procedural/9expressive/
+95exclusions.18new governed captures and8prior captures reused here;572new/
+1997total captures and561reviews. Full prior109authors/core,1979sources and560
+reviews match144e1e1exactly. Only the existing8800derived proposition per member
+extends to four actions;every other prior proposition remains exact. Benchmark
+85authors/core,1425sources,363reviews and its previously documented housing
+derived extension remain preserved. Inventory198changed/478identical;37pending
+local capture hashes remain exact. Eight generated/packet files replay byte exactly.
+
+Validation:180focused five-module tests passed(final29.204seconds), allseven
+canonical semantic checks passed. Manual actual four-vote compacts, directions
+and both-level qualifications plus whole-passage detail inspected for bothmembers.
+Initial pre-write validation caught Clerkmetadata IDs in compactsource refs without
+textual passage maps;those metadata refs remain evidence dependencies but were
+removed from compact prose refs before canonical write. Initial newtest incorrectly
+used an absent exact_choice_meaning field;corrected to the real compact observation
+field. No integrity gates were weakened. Final diff/check and preservation reviewed.
+Core121e03fc6308c65287f837d7305a24e47a7b8da12a5e724b4ec1b67fff5f305a;
+compiled03f82eff418c3b8de322148471e4186d81c82a9df271bd381cea082198d982fc.
+No efficiency architecture/runtime/frontend/production changes;cached bounded
+source extraction, governed reuse and deterministic projection remain in use.
+No invented end-to-end/model/token savings is claimed.
+
+Remaining:2026rolls23/27/28/42 and2025rolls224/225/226/262/294/295/296/299/307/
+318/320.2025roll237conflict and2026roll44operative dependency remain;45and278
+whole-package completeness are explicit follow-ups. The goal remains active;
+thischeckpoint is progress, not corpus closure or an intermediate shutdown.

@@ -125,7 +125,8 @@
     "house:119:2:272",
     "house:119:2:267",
     "house:119:2:264",
-    "house:119:2:266"
+    "house:119:2:266",
+    "house:119:2:278"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -141,9 +142,9 @@
     "counts": {
       "procedural_context": 232,
       "exact_action_ineligible": 298,
-      "interpreted_substantive_directional": 109,
+      "interpreted_substantive_directional": 110,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 18
+      "source_unresolved": 17
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -152,13 +153,13 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 109,
-    "directional_substantive_actions": 109,
+    "substantive_eligible_actions": 110,
+    "directional_substantive_actions": 110,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
     "exact_action_ineligible_actions": 298,
-    "unresolved_boundary_cases": 18,
+    "unresolved_boundary_cases": 17,
     "independent_episode_count": 80,
     "multi_action_episode_count": 11,
     "mechanism_types": [
@@ -172,12 +173,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 109,
-      "substantive_actions": 109,
+      "ready_substantive_actions": 110,
+      "substantive_actions": 110,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "one unfinished NDAA whole-package278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. Nine remaining exact NDAA amendments screened; remaining family and older queue remain unfinished."
+      "earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45and278whole-package completeness follow-ups. Whole278Health mechanisms screened; fifteen older actions remain unfinished. Exhaustive278package completeness is a follow-up requiring review."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -820,6 +821,7 @@
         "house:119:2:267",
         "house:119:2:271",
         "house:119:2:272",
+        "house:119:2:278",
         "house:119:2:283",
         "house:119:2:286",
         "house:119:2:308",
@@ -863,15 +865,14 @@
         "house:119:2:27",
         "house:119:2:28",
         "house:119:2:42",
-        "house:119:2:44",
-        "house:119:2:278"
+        "house:119:2:44"
       ]
     },
-    "count_basis": "109 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 18 unresolved comprise 16 unfinished screenings plus2 examined dependencies. New264/266 and preserved267 form three distinct8800amendment observations; whole-package278 remains unfinished; exclusions and controls remain noncounting."
+    "count_basis": "110 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 17 unresolved comprise 15 unfinished screenings plus2 examined dependencies. 8800has three distinct amendment observations and one separate whole-passage278observation. Exclusions and controls remain noncounting; wider package completeness remains unproven."
   },
-  "episode_completeness": "80 candidate episodes cover 109 supplied actions. Three8800amendments form one shared episode; whole-package278 unfinished; previous authored/core meanings preserved with only the existing8800derived episode extended. Discovery/episode completeness remains unproven.",
+  "episode_completeness": "80 candidate episodes cover 110 supplied actions. Three8800amendments and separate whole-passage278form one shared episode; previous authored/core meanings preserved with only the existing8800derived episode extended. Wider278package completeness remains unproven. Discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "5ed0cfbea0d74e5aa64db17b7acee276d116c55172b147769e027d3e0b1638bb",
+  "universe_subject_sha256": "aa0df5c7d8d6a5cd6225e6a424b81b05b2abe38e4dd82001e192ee50836c5d53",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -50472,15 +50473,16 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: Amended FY2027 defense package with care coverage/restrictions, family support, housing and veterans-health provisions. Whole-package passage preserves RCP/adopted-amendment voting text, separate engrossment assembly, clinical/benefit eligibility, authorization and two-year pilot termination. Reviewed mechanisms establish bounded membership, not exhaustive package completeness or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [216, 212, 0, 3]; Foushee Nay/Massie Nay.",
       "source": {
         "source_id": "clerk:119:2:278",
         "url": "https://clerk.house.gov/evs/2026/roll278.xml",
-        "raw_sha256": "dad4d3b2a853d794e8d760a02c5cc04b8d5e6b19db019ed2cc12cb3a797d175a",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "541fa8d9340952b4674afdc74e54b5ace14bbb7b465d1250b8b898ea1407e094",
+        "governed_bytes_sha256": "0ec9bdbe6ad0d77fb06d3fa4ddfd3c28514477c49ae19e64f88b183d4f2b6d64",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8800:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8800",
       "member_action": "nay",
@@ -50489,24 +50491,214 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: Amended FY2027 defense package with care coverage/restrictions, family support, housing and veterans-health provisions. Whole-package passage preserves RCP/adopted-amendment voting text, separate engrossment assembly, clinical/benefit eligibility, authorization and two-year pilot termination. Reviewed mechanisms establish bounded membership, not exhaustive package completeness or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [216, 212, 0, 3]; Foushee Nay/Massie Nay.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:278",
           "url": "https://clerk.house.gov/evs/2026/roll278.xml",
-          "raw_sha256": "dad4d3b2a853d794e8d760a02c5cc04b8d5e6b19db019ed2cc12cb3a797d175a",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "541fa8d9340952b4674afdc74e54b5ace14bbb7b465d1250b8b898ea1407e094",
+          "governed_bytes_sha256": "0ec9bdbe6ad0d77fb06d3fa4ddfd3c28514477c49ae19e64f88b183d4f2b6d64"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-reviewed-medical",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+          "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+          "governed_bytes_sha256": "d33c1c381407774d93525de39476a12b7c8ec7089da5e7059dad4aa33549ca3b"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-reviewed-family",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+          "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+          "governed_bytes_sha256": "3313e4f4da1cd70a5ca9c8ab54e07aaa714541b4fbe00c2a9168925c7f6e50f9"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-reviewed-housing",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+          "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+          "governed_bytes_sha256": "aed2640f2dd0a9a0bb410e8ceaa94dc6651543566b733d3a0bb329a630a686a7"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-reviewed-health-authorization",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+          "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+          "governed_bytes_sha256": "5b76f87db24c90e79348ee040cca3e72a8ec2dd7aa580c6b60d25ac135fcec06"
+        },
+        {
+          "source_id": "govinfo:hr8800eh-reviewed-va-pilot-limit",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8800eh/html/BILLS-119hr8800eh.htm",
+          "raw_sha256": "3c9b36205ce1156d102cae4ce3eddab3f4f3326821a9352ff2fd2877f1a32423",
+          "governed_bytes_sha256": "632b88ec8b0f31ce771282c7e67aa70a389baa679c671324ca03409dea2e5f0e"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-family",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "3e586b78332ddde94a5c6d89e2c7ff45d2f888419364c7ed0c8f533874a07af3"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-allowances",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "9b7be5c642d140cb28877fc49c77f2859fa2a9628059e6f6925b4c8253bae3c2"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-fertility",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "d0bf68eed9336b7b8e909ee37ddc5a6b4b44433d1f3adf0bbaa94a0a70300629"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-restoration-contraception",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "3d83d2593f5d0e9aa2321501e69c158163fcc013464fead50dedc79a70738ef0"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-tenant",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "63903ac6376e6e99a29b1bf9e9db5beaf6c97afb9d8601e9b66766cda7c0fae8"
+        },
+        {
+          "source_id": "rules:rcp119-33-reviewed-health-authorization",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "08f4db210e376d9520205a2dc30e1e5ee69b84619a82b7bcf63903011db9f0e8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-29",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "3d18eae226c98b96f75df79b4e73db10accffc3ea41a9af5028b118d6c9c95bc"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-31",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "737d406f48428ebd586cbde0d8a3dab31ab1a7990e27a6f0362d79452d277f1d"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-va-pilot-adoption",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "e2147151f94a38d95fcab436f45449a4beae80ae83c2c8affabdb286f4fd9940"
+        },
+        {
+          "source_id": "congressional-record:2026-07-22-ndaa-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "79c9eac3f4b71432ff63b2866fd587cfc06ae9c8cc8a87aee9134acab243f24e"
+        },
+        {
+          "source_id": "govinfo:37usc402b-2024-basic-needs",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title37/html/USCODE-2024-title37-chap7-sec402b.htm",
+          "raw_sha256": "b11ca3e9879ad0ea80a0e57b98103584d6cfb946602f8bb112f129a3664b6d21",
+          "governed_bytes_sha256": "f384d6521579bb09893bb31ac91908c18d32df63512b7492e7b854e8ec75a15a"
+        },
+        {
+          "source_id": "govinfo:10usc2890-2024-housing-tenants",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapV-sec2890.htm",
+          "raw_sha256": "a44fe26a7361a5ff8ee32096a39b9767d33d105117a0f59442d6611cf5740ba6",
+          "governed_bytes_sha256": "27d670317ddf4e630a2064c32f7c9a73ec7ae55f6817d69fb8114c4fc15dcfa3"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-19",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "fcf8dd57e811084bb19d94b9a31c740a68d16a00a996ee2a3be5af92c7e03050"
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "raw_sha256": "ecb7a37f849b2568b36a9ea4da871f81aca50bdb96f23145e38cca9cfcf1f928",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3"
+        },
+        {
+          "source_id": "govinfo:10usc1077-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm",
+          "raw_sha256": "b65d1182fe7c9226c2f231c304d6e7f470d3f5c39f4739ae71e8e3a950341af3",
+          "governed_bytes_sha256": "8778803653b029eb4bbf8ede359381acc08e0c1ffafdab5c878a0f4c609a66ef"
+        },
+        {
+          "source_id": "govinfo:10usc1079-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm",
+          "raw_sha256": "23cfda2bc13333b492856ffedf20a94663278a9770bf7342c7704912a98c6022",
+          "governed_bytes_sha256": "85cfc87d5feb12abe55d8a67830f04d506323d5ff81d30af7e65e78795ae7466"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "4f42084ac3648298a1d59a33eaa0892b8c290e0240aaba0e082964121fdcd72f"
+        },
+        {
+          "source_id": "clerk:119:2:264",
+          "url": "https://clerk.house.gov/evs/2026/roll264.xml",
+          "raw_sha256": "55ba40cd41d63d8f64dd330a2a689ea241653034801f2f92a5c868b8280be021",
+          "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f"
+        },
+        {
+          "source_id": "clerk:119:2:266",
+          "url": "https://clerk.house.gov/evs/2026/roll266.xml",
+          "raw_sha256": "d082857c0f4fed15d4162ea1d23f4b47c6ac658c5bbb1f71ff109869f8f26565",
+          "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:278",
+        "source_ids": [
+          "clerk:119:2:278",
+          "govinfo:hr8800eh-reviewed-medical",
+          "govinfo:hr8800eh-reviewed-family",
+          "govinfo:hr8800eh-reviewed-housing",
+          "govinfo:hr8800eh-reviewed-health-authorization",
+          "govinfo:hr8800eh-reviewed-va-pilot-limit",
+          "rules:rcp119-33-reviewed-family",
+          "rules:rcp119-33-reviewed-allowances",
+          "rules:rcp119-33-reviewed-fertility",
+          "rules:rcp119-33-reviewed-restoration-contraception",
+          "rules:rcp119-33-reviewed-tenant",
+          "rules:rcp119-33-reviewed-health-authorization",
+          "govinfo:hrpt119-755-partA-29",
+          "govinfo:hrpt119-755-partA-31",
+          "congressional-record:2026-07-21-ndaa-va-pilot-adoption",
+          "congressional-record:2026-07-22-ndaa-passage",
+          "govinfo:37usc402b-2024-basic-needs",
+          "govinfo:10usc2890-2024-housing-tenants",
+          "govinfo:hres1438eh",
+          "govinfo:hrpt119-755-partA-19",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:10usc1077-2024-operative",
+          "govinfo:10usc1079-2024-operative",
+          "congressional-record:2026-07-21-ndaa-mace-care",
+          "clerk:119:2:264",
+          "clerk:119:2:266"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:278",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "3201dcc075ba8ff9291168d8a9390a3fe76c5fd7f9c7887e271136567c882d20"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:278",
+        "url": "https://clerk.house.gov/evs/2026/roll278.xml",
+        "raw_sha256": "dad4d3b2a853d794e8d760a02c5cc04b8d5e6b19db019ed2cc12cb3a797d175a",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -52922,11 +53114,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "109 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "110 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "46b5615676e80ccf8b9d29ec3629d478332987322aa16e4c93cdcbd42b87c073",
+  "selection_sha256": "916e2adea790ac0523d2163950ad9271133fa2a8020c4737a67bbebb48c3693e",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -53036,7 +53228,8 @@
     "house:119:2:272",
     "house:119:2:267",
     "house:119:2:264",
-    "house:119:2:266"
+    "house:119:2:266",
+    "house:119:2:278"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -53055,12 +53248,11 @@
     "house:119:2:27",
     "house:119:2:28",
     "house:119:2:42",
-    "house:119:2:44",
-    "house:119:2:278"
+    "house:119:2:44"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "18 unresolved comprise 16 unfinished plus two examined dependencies;one unfinished NDAA whole-package278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus nineteen bounded NDAA amendments screened;250and277preserved.",
+    "basis": "17 unresolved comprise 15 unfinished plus two examined dependencies;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45and278whole-package completeness follow-ups. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus nineteen bounded NDAA amendments and whole278screened;250and277preserved. 278widerpackage completeness is not established.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -53112,6 +53304,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "7d2a3d35badaa73a0bb628d18bdda40b4e1d1438a852f7346e561a52f7ece766",
-  "membership_review_sha256": "8ea7755cf7f51427d5d56b9d69518e19c55b7f0bc8102b340dce6c27ce1f2e09"
+  "proposal_sha256": "2e8d4bdec0870882821352c01393379f850b47ef6233b2502261d2f8f19ba28e",
+  "membership_review_sha256": "62fa5c86c69512fbd4a849590722d49a20acdbbf567a1412de93826a4403d955"
 }
