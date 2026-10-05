@@ -106,7 +106,8 @@
     "house:119:2:104",
     "house:119:2:145",
     "house:119:2:146",
-    "house:119:2:151"
+    "house:119:2:151",
+    "house:119:2:154"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -122,9 +123,9 @@
     "counts": {
       "procedural_context": 217,
       "exact_action_ineligible": 236,
-      "interpreted_substantive_directional": 90,
+      "interpreted_substantive_directional": 91,
       "expressive_nonbinding_context": 14,
-      "source_unresolved": 119
+      "source_unresolved": 118
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -133,13 +134,13 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 90,
-    "directional_substantive_actions": 90,
+    "substantive_eligible_actions": 91,
+    "directional_substantive_actions": 91,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 217,
     "expressive_nonbinding_actions": 14,
     "exact_action_ineligible_actions": 236,
-    "unresolved_boundary_cases": 119,
+    "unresolved_boundary_cases": 118,
     "independent_episode_count": 69,
     "multi_action_episode_count": 11,
     "mechanism_types": [
@@ -153,12 +154,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 90,
-      "substantive_actions": 90,
+      "ready_substantive_actions": 91,
+      "substantive_actions": 91,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "117 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness. Next154 whole farm package requires independent Health-facet research."
+      "116 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness. Next155 S4465 DHS Senate concurrence requires independent exact-version review."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -703,6 +704,7 @@
         "house:119:2:145",
         "house:119:2:146",
         "house:119:2:151",
+        "house:119:2:154",
         "house:119:2:198",
         "house:119:2:250",
         "house:119:2:283",
@@ -744,7 +746,6 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:154",
         "house:119:2:155",
         "house:119:2:156",
         "house:119:2:157",
@@ -848,11 +849,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "90 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.119 unresolved comprise117 unfinished screenings and two examined dependencies. Three exact SNAP amendments share one farm episode; full HR7567 passage154 remains unfinished."
+    "count_basis": "91 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.118 unresolved comprise116 unfinished screenings and two examined dependencies. One farm episode now includes three distinct SNAP amendments and independently researched final passage; no component-position inference."
   },
-  "episode_completeness": "69 candidate episodes cover 90 supplied actions, including10 ordered pairs and one three-amendment farm sequence. Amendments/passage independently screened; wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "69 candidate episodes cover 91 supplied actions, including10 ordered pairs and one four-action farm sequence. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "75de40ecbef46097a42d05ccc48029fa4cdfc346bc8d6272acd61a57bc36f8ba",
+  "universe_subject_sha256": "777a10f93ddc7f82e17ca3baee77037246aa287d876f41cf39a42c06a4e43c26",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -39546,15 +39547,16 @@
       "date": "2026-04-30",
       "measure": "bill_119_hr_7567",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed Health membership from independently researched exact whole HR7567 EH nutrition assistance, rural medical/telemedicine financing and defined social services. Exact Clerk/final-floor passage224-200/6 Not Voting; Foushee Nay/Massie Yea. Print119-22/PartA, adopted versus failed amendments, prospective1346 boundary, prior farm extensions/SNAP/milk laws and material program limits retained. Full package is one choice with no separate component position or enactment. Shared meaning authored once; final passage appends to the existing three-amendment farm episode without rewriting those meanings.",
       "source": {
         "source_id": "clerk:119:2:154",
         "url": "https://clerk.house.gov/evs/2026/roll154.xml",
-        "raw_sha256": "595e1b28427ffb55cb93d4ecaf4313b6b7cc9dbcb16d4568ff16f9b5d1d59af3",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "76642e459dd4f0759c68c08b018b1272cde006984922795c83cbe827cdbda1b0",
+        "governed_bytes_sha256": "a7dbc90ad2f1a15662a4ea5aec0fbb418855101dea1964f6a2554245f34fa6c6",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr7567:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_7567",
       "member_action": "nay",
@@ -39563,24 +39565,291 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Proposed Health membership from independently researched exact whole HR7567 EH nutrition assistance, rural medical/telemedicine financing and defined social services. Exact Clerk/final-floor passage224-200/6 Not Voting; Foushee Nay/Massie Yea. Print119-22/PartA, adopted versus failed amendments, prospective1346 boundary, prior farm extensions/SNAP/milk laws and material program limits retained. Full package is one choice with no separate component position or enactment. Shared meaning authored once; final passage appends to the existing three-amendment farm episode without rewriting those meanings.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:154",
           "url": "https://clerk.house.gov/evs/2026/roll154.xml",
-          "raw_sha256": "595e1b28427ffb55cb93d4ecaf4313b6b7cc9dbcb16d4568ff16f9b5d1d59af3",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "76642e459dd4f0759c68c08b018b1272cde006984922795c83cbe827cdbda1b0",
+          "governed_bytes_sha256": "a7dbc90ad2f1a15662a4ea5aec0fbb418855101dea1964f6a2554245f34fa6c6"
+        },
+        {
+          "source_id": "govinfo:hr7567eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7567eh/html/BILLS-119hr7567eh.htm",
+          "raw_sha256": "da1845f477d502c60d20a39d7114846850c80a61fbaf5355173829702df56813",
+          "governed_bytes_sha256": "67e61f67a34ee330c12fb0e053f935ed8fb2847b16248cd9dd6fdf26178bb7f4"
+        },
+        {
+          "source_id": "govinfo:7usc2016-2024-ebt",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2016.htm",
+          "raw_sha256": "9119a02c3d3f12b74c9258d55137fb5622caea176cb383468ee7483224efb911",
+          "governed_bytes_sha256": "d915d00a2672b7aab679b3e9601d28b1a89dde17592723d73e16333e45a442d5"
+        },
+        {
+          "source_id": "govinfo:7usc2018-2024-retailer-denial",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2018.htm",
+          "raw_sha256": "3e34436c42122b880b89f7a8fc8acdfe2820a643bbe7923a8b268675e6030a0b",
+          "governed_bytes_sha256": "c03ae76254b1082aad8eac9b0c73ecc7f25ef643fff26297b37542968e31399d"
+        },
+        {
+          "source_id": "govinfo:7usc2018-2024-retailer-incentives",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2018.htm",
+          "raw_sha256": "3e34436c42122b880b89f7a8fc8acdfe2820a643bbe7923a8b268675e6030a0b",
+          "governed_bytes_sha256": "113229519fabcee5acc36c1873ddc5f84c902e7575c457f19ca2f95488f5af24"
+        },
+        {
+          "source_id": "govinfo:7usc2020-2024-administration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2020.htm",
+          "raw_sha256": "c93fd50504903e8a2dbbf3b6e265e2f1fdf23b4414247f16f29d749f5de6dcda",
+          "governed_bytes_sha256": "5122272004edaa5656b5cffa1e569f2691251f5e3eac8d911215a74e03a3dda3"
+        },
+        {
+          "source_id": "govinfo:7usc1926-2024-community-facilities",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapI-sec1926.htm",
+          "raw_sha256": "3d641ec4b5ed40ae81c5dbdc6d17da18661d7c0d59070ded6d9e0a07cdc671c0",
+          "governed_bytes_sha256": "9a5a061520db08f143cff47783aab8366a6b09a35635f51ab8e302514540f507"
+        },
+        {
+          "source_id": "govinfo:7usc1922-2024-rural-credit-eligibility",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapI-sec1922.htm",
+          "raw_sha256": "0cbe449d15c5f52836ce1bffcda65c382c1b39ec6f34e488901a3e5210072a59",
+          "governed_bytes_sha256": "6b4b1005dcca5d6829cc25e614c92afea1d141d8799c70ebf502fafbfa67cebf"
+        },
+        {
+          "source_id": "govinfo:7usc1990a-2024-rural-refinancing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap50-subchapIV-sec1990a.pdf",
+          "raw_sha256": "5b26760801e2d5855e35a46801c5ece9ba2f9b603dd8d00ebda24ca2645fc0c7",
+          "governed_bytes_sha256": "effcd60b0c00cbaffcef608b5a845cb640630708807e01d29df5b0bcc2d52cc9"
+        },
+        {
+          "source_id": "govinfo:7usc1991-2024-rural-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap50-subchapIV-sec1991.pdf",
+          "raw_sha256": "ab991633f27601858ffadd42068681f53601137807f2ac379a83233bd23b06cf",
+          "governed_bytes_sha256": "0aad23fcf7194a67800f510b284daa1dda77e9c62e82349906a09fb7e9c79ef4"
+        },
+        {
+          "source_id": "govinfo:7usc7517-2024-nutrition-incentives",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap102-sec7517.pdf",
+          "raw_sha256": "9c2bb48ca6fee91bed3808473cbfee0e2f664cb5cea073aeedd9366248224263",
+          "governed_bytes_sha256": "c594d58d66bb2840ed61779ad0432db48d0ff7bf2fe579ff60091c3d7fa229d7"
+        },
+        {
+          "source_id": "govinfo:7usc6953-2024-healthy-food-financing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap98-subchapIV-sec6953.pdf",
+          "raw_sha256": "79b42ad09bea5248931351c4d37ad16044025be466703ee7dddb6f0a81a8330f",
+          "governed_bytes_sha256": "1428e5701a52f43b33c66e63cbad7fe2f657a8688b445acee7ac3a6b058696ef"
+        },
+        {
+          "source_id": "govinfo:7usc3175-2024-nutrition-education",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap64-subchapIV-sec3175.pdf",
+          "raw_sha256": "135631bb2951ce46b525ed0b1e4a81642ad626fcfc6c306820f244620dcd61ae",
+          "governed_bytes_sha256": "3c4da73b7b8142476a8bf7658ac7039522957bb1771137d889884bbcc8b75219"
+        },
+        {
+          "source_id": "govinfo:7usc3007-2024-senior-nutrition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap63-sec3007.pdf",
+          "raw_sha256": "882cb048ef561575ee0f28d5d2fe9668dcd257b47884df535f084723945aa4fd",
+          "governed_bytes_sha256": "176a51030274dc3df25730d6ebad24bb386236b4c7ce9c74fa723cc805f1639a"
+        },
+        {
+          "source_id": "govinfo:7usc1722-2024-international-food-aid",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIII-sec1722.pdf",
+          "raw_sha256": "a513fddbf3dfcccd6d0ebc5ea0247b2b7c771e9f43cee22fddcc65ca8571d2d4",
+          "governed_bytes_sha256": "6101c466c45521ecf9afe122032a45d79a4df53eabd48e56895c5104d1b55d4f"
+        },
+        {
+          "source_id": "govinfo:7usc1724-2024-minimum-food-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIII-sec1724.pdf",
+          "raw_sha256": "9ab877c1b90eb996ab16a58dc7bf6f5ca56050b7c42ba5fdf7ba3807421a8dc5",
+          "governed_bytes_sha256": "8db0c76307be9b5deac9d770dd60e8908929eb4b824b73f15d02d43c6c5e61fd"
+        },
+        {
+          "source_id": "govinfo:7usc1736o-1-2024-mcgovern-dole",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIV-sec1736o-1.pdf",
+          "raw_sha256": "0edacda7d3e598d73d686f143f483b51281b6b7fd0585bf6f9644607bbbbc5f9",
+          "governed_bytes_sha256": "c7904792a828a12dad81733da8a33be66375a3f3561628318ccf4f4a7cc8cac4"
+        },
+        {
+          "source_id": "govinfo:7usc7515-2024-emergency-food-allocation",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap102-sec7515.pdf",
+          "raw_sha256": "87312e5c3d208bdef03048a1b652fe6b18f32401a6d012b25732f336677b9dfc",
+          "governed_bytes_sha256": "4d5350b1ebb69d0c4e08b33b3a4a39062904b86e9dce33b239cc088c4e607295"
+        },
+        {
+          "source_id": "govinfo:34usc20127-2024-victim-pet-housing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/pdf/USCODE-2024-title34-subtitleII-chap201-subchapII-sec20127.pdf",
+          "raw_sha256": "d6a459277a91df07312646cdfc388eedd015aee8a6979fce3ec05cbf2a27623a",
+          "governed_bytes_sha256": "c97e375d73e2157017165011bccd4207004b2336e0fc8c13dcacdc8a4115ad10"
+        },
+        {
+          "source_id": "govinfo:7usc1736f-2024-nonemergency-food-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap41-subchapIV-sec1736f.pdf",
+          "raw_sha256": "88f0f4ddb602c501afcb3029029901b0677fc638e42d7366abc7666995ab3286",
+          "governed_bytes_sha256": "e8a655fe2fff317a76cab7dcba9fc32596874b9933f4ef9e4cedf9e1b3d55031"
+        },
+        {
+          "source_id": "govinfo:7usc2008u-2024-rural-care",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap50-subchapIV-sec2008u.htm",
+          "raw_sha256": "95d3015d819c767028273b765deb46e31d8dcf5cf1be10e42622a7323907a78e",
+          "governed_bytes_sha256": "c43c87dba06b3e93bfdbd1f9f261e175c5764d6c2baf0da22552c44e07dbe5f6"
+        },
+        {
+          "source_id": "govinfo:7usc5933-2024-disability-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap88-subchapVII-sec5933.htm",
+          "raw_sha256": "48cbec5e9453b8f2f6a22eab7f7df563d1f0ecce99e4e8b4fda7d6ab2a36f603",
+          "governed_bytes_sha256": "44bf5bc74caa6439c9bfbaa58515cf2b76c11d2cfb57cdf5cbfd2c28ea689067"
+        },
+        {
+          "source_id": "govinfo:7usc5936-2024-farm-stress",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap88-subchapVII-sec5936.htm",
+          "raw_sha256": "afe55b644d905be50585671b84eabd4b2c6b75a5f559903648f77b227141f1be",
+          "governed_bytes_sha256": "0e0b10cda8f1069c0d98ce6195f03929eba86af68022fc3a32339aa49d55083b"
+        },
+        {
+          "source_id": "govinfo:7usc2026a-2024-milk-incentives",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2026a.htm",
+          "raw_sha256": "78cbbe341e56880adafef9b5f1001d5dd7eea34ace58136e642e00b484178a90",
+          "governed_bytes_sha256": "82413454da6568bc1c9eef8f5469cddcbe101a15bf11c8557cb76fa3a62439e0"
+        },
+        {
+          "source_id": "govinfo:7usc5925-2024-research-initiatives",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap88-subchapVII-sec5925.pdf",
+          "raw_sha256": "8759aafe90a0c9d7eaf55f3027f649a7cd3ad9161708d3db3517b6dac446e1e5",
+          "governed_bytes_sha256": "d618c620ea03b240ba24e37b917646d1f70f88bb6344226e9ac4709612d2c5da"
+        },
+        {
+          "source_id": "govinfo:42usc1760-2024-school-food-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap13-sec1760.pdf",
+          "raw_sha256": "c7bfe2609ddce2ad0d1c247848324dbbca74a6d50fdcbb5b7f1c8ff08a2dcd6b",
+          "governed_bytes_sha256": "47f5e13a182aef8f38c9cba7a3aa4cd926651dec8eda2399fa70bd6e04eeff92"
+        },
+        {
+          "source_id": "govinfo:42usc1758-2024-school-milk-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/pdf/USCODE-2024-title42-chap13-sec1758.pdf",
+          "raw_sha256": "84d15a6418e53404c2fbada009f7b9f0d909bb9a370ea629482816db799ebb3a",
+          "governed_bytes_sha256": "3b9cb078206e3403dc854e91f5fb5cbaa979f82321c05c8480dbc8f65cde5ab1"
+        },
+        {
+          "source_id": "govinfo:pl119-69-school-milk",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ69/html/PLAW-119publ69.htm",
+          "raw_sha256": "156d9ef8846aad48896484ee1c29b58adb2ba8ecc6c523c9da546633a83860b6",
+          "governed_bytes_sha256": "d7fa9b6b1e51437249cf0048c7bee27b22fd0d6c0f183c3d1957e8fc90b6c23e"
+        },
+        {
+          "source_id": "govinfo:pl115-334-6101-rural-care-priorities",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ334/html/PLAW-115publ334.htm",
+          "raw_sha256": "3a813336858559841829ce466ac967f05165aac13e67434892cc9581edfc4244",
+          "governed_bytes_sha256": "42c4868d601fe25866cff775e00bd82abc9946f8f93c276e5caf64f946e55688"
+        },
+        {
+          "source_id": "govinfo:pl119-21-farm-nutrition-current-law",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "250f5952e27107203273d16f0037df3a081421236e48629f97f8303f0143ecc5"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-package-debate",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "d192ec97400a162d000333ff71a81ef850a27b0e493d4a2b8188be7dba2caf5e"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2012.htm",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "3146d1806948e4b82dcb56aaea1cf5f9be91a3023cf6f93fdbcdd11d99896950"
+        },
+        {
+          "source_id": "govinfo:hrpt119-628-partB-8",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "ddc9b36acaf9dd4fe54953fa32b0fc8e0e6e8a8b12854800c2a5135c4635dd2b"
+        },
+        {
+          "source_id": "govinfo:hrpt119-628-partB-20",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "5acdf58851fa13463c6cd0b375e82f662fb73f9d5db7f9d75219ba550504dfd5"
+        },
+        {
+          "source_id": "govinfo:pl119-37",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "6274a5ee9549780a84d8bb12590f593722b1f52c9c93a57ecb7cac1d2c9078aa"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:154",
+        "source_ids": [
+          "clerk:119:2:154",
+          "govinfo:hr7567eh",
+          "govinfo:7usc2016-2024-ebt",
+          "govinfo:7usc2018-2024-retailer-denial",
+          "govinfo:7usc2018-2024-retailer-incentives",
+          "govinfo:7usc2020-2024-administration",
+          "govinfo:7usc1926-2024-community-facilities",
+          "govinfo:7usc1922-2024-rural-credit-eligibility",
+          "govinfo:7usc1990a-2024-rural-refinancing",
+          "govinfo:7usc1991-2024-rural-definitions",
+          "govinfo:7usc7517-2024-nutrition-incentives",
+          "govinfo:7usc6953-2024-healthy-food-financing",
+          "govinfo:7usc3175-2024-nutrition-education",
+          "govinfo:7usc3007-2024-senior-nutrition",
+          "govinfo:7usc1722-2024-international-food-aid",
+          "govinfo:7usc1724-2024-minimum-food-assistance",
+          "govinfo:7usc1736o-1-2024-mcgovern-dole",
+          "govinfo:7usc7515-2024-emergency-food-allocation",
+          "govinfo:34usc20127-2024-victim-pet-housing",
+          "govinfo:7usc1736f-2024-nonemergency-food-assistance",
+          "govinfo:7usc2008u-2024-rural-care",
+          "govinfo:7usc5933-2024-disability-assistance",
+          "govinfo:7usc5936-2024-farm-stress",
+          "govinfo:7usc2026a-2024-milk-incentives",
+          "govinfo:7usc5925-2024-research-initiatives",
+          "govinfo:42usc1760-2024-school-food-rules",
+          "govinfo:42usc1758-2024-school-milk-rules",
+          "govinfo:pl119-69-school-milk",
+          "govinfo:pl115-334-6101-rural-care-priorities",
+          "govinfo:pl119-21-farm-nutrition-current-law",
+          "congressional-record:2026-04-29-farm-package-debate",
+          "govinfo:hres1224eh",
+          "congressional-record:2026-04-30-farm-exact-amendments",
+          "govinfo:7usc2012-2024-snap-definitions",
+          "govinfo:hrpt119-628-partB-8",
+          "govinfo:hrpt119-628-partB-20",
+          "govinfo:pl119-37"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:154",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "14ef9fdcb9520414a270e25dc5acdb07d6c382055fa0bc9df92d913dfb6bc32c"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:154",
+        "url": "https://clerk.house.gov/evs/2026/roll154.xml",
+        "raw_sha256": "595e1b28427ffb55cb93d4ecaf4313b6b7cc9dbcb16d4568ff16f9b5d1d59af3",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -47403,11 +47672,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "90 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "91 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "a5115a406ba4651441f5204355afb8a7eadc364da36f097604b86bb5ff9a0f0a",
+  "selection_sha256": "f93450d8e57e34a6bbf27e463d85b4a0c1c2dc14e8ca3e8c44f24d117f0f85b2",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -47498,7 +47767,8 @@
     "house:119:2:104",
     "house:119:2:145",
     "house:119:2:146",
-    "house:119:2:151"
+    "house:119:2:151",
+    "house:119:2:154"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -47518,7 +47788,6 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:154",
     "house:119:2:155",
     "house:119:2:156",
     "house:119:2:157",
@@ -47623,7 +47892,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "119 unresolved comprise117 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44). Ordinary queue screened through roll153, preserving completed128/139; next action154 is the whole farm package. Existing45 broader-package completeness remains separate.",
+    "basis": "118 unresolved comprise116 unfinished screenings plus examined2025roll237/2026roll44. Ordinary queue screened through154; next155. Existing45 package completeness remains separate.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -47675,6 +47944,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "865424fd74da4598939b71d5cb5a3209935c2b4b48b8b09c884934cd1cf8e7fb",
-  "membership_review_sha256": "bc12cdfb99bd3bbf541a53ae79f4b1fe1d63da20a41c93c38bc05dabe04abbd2"
+  "proposal_sha256": "3dae9815d3191ee6d11789ad76180e24f59e21ffda58c8d464ad336859e4fc7c",
+  "membership_review_sha256": "ef4bf0d04fc0665226963d4322f438285acdebd530759bbcfbece04638b686d4"
 }

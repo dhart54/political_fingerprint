@@ -525,6 +525,61 @@ compiled `8fcd543e2f05386710add75177c14e4466dcd18175ce618dff103c062c3b0782`.
 Next ordinary action: **2026roll154**.
 Exact-head CI receipt follows commit/push.
 
+## Checkpoint8 — whole farm package154
+
+Independently researched HR7567 EH passage appends to the existing farm episode;
+91 interpreted /217 procedural /14 expressive /236 excluded /118 unresolved
+(116 unfinished plus2 examined). One additional shared meaning,2 additional
+substantive member observations;69 episodes/182 observations, findings unchanged
+at68 Foushee/63 Massie (131 compiled propositions). Three prior SNAP amendment
+meanings remain unchanged and separately ordered before final passage. House
+passed224–200/6 Not Voting; Foushee Nay/Massie Yea. No component positions,
+preferred alternatives, enactment, funded awards or predicted outcomes inferred.
+
+31 governed captures added (Clerk, complete EH, selected material authorities,
+current laws and complete opposing general debate),6 reused. Primary959,629char
+EH retained; material clauses rather than the whole large body are claim-bound.
+2024 Code PDF selections retain source hashes/page markers; raw2018/2025 laws
+curated to relevant provisions. Official year-specific GovInfo link resolution
+recovered six failed guessed subchapter paths; generic error/House maintenance
+pages rejected. No paid/protected source or hidden/later-branch answer used.
+
+Distinct SNAP administration/contracting safeguards, incentive-versus-general
+food definition, senior/CSFP/Tribal food, dairy/Gus/food financing, guidelines,
+childcare, breakfast milk, rural clinical refinancing/telemedicine, disability,
+farm stress/victim housing and international food aid are qualified. Existing
+PL119-37 farm extension,PL119-21 SNAP rules/SNAP-Ed elimination andPL119-69 lunch
+milk options prevent false expiry/restoration/first-creation claims. Material
+read broadened initially SNAP-centered package coverage to actual rural care,
+mental-health,disability and victim services. It corrected a tentative general
+McGovern-Dole country-eligibility reading to internal cost-payment eligibility.
+No change to proposed Health membership or final whole-package direction.
+Opposing claims remain attributed; adopted Luna28 removed the three disputed
+pesticide sections. Failed soda is absent. Prospective1224/1346 conditional
+engrossment and unoffered Craig substitute remain outside this passage meaning.
+
+Approximate research/authoring **30–40minutes** for one complex package, including
+material baseline/version review. Governing selected authorities and6 source
+reuses avoid irrelevant history/recapture; no measured model-token/elapsed saving
+claimed. Mechanical acquisition was batched; all judgment remained action-specific.
+Manual corrections: three section-number references, source-excerpt delimiters,
+Python module path, list-versus-string test inspection and stale generated state.
+All corrected within scope. At01:05Eastern usage9%used/91%remaining; deadline
+unchanged. Checkpoint7 exact SHAa80e808c0eeaaa5510185872b897f6ab68524784 CI37264103006
+succeeded. No terminal marker; continue after this checkpoint at155.
+
+Validation:151 focused tests and all7 canonical semantic checks pass. All85
+benchmark and all90 checkpoint7 authors/core objects preserved, as are1425/1594
+captures and363/436 review records.125 original member propositions unchanged;
+74 inventory rows changed/602 identical. Seven generated JSON files and packet
+replay byte-identically. Actual four-choice compacts/details for both members
+inspected, including failing-source removal checks for current milk/SNAP law,
+rural refinancing and international food-aid cost eligibility. Candidate/public
+fail-closed state unchanged. Final diff reviewed;14 scoped files, no runtime or
+production fan-out. Core62b56a9495be068f6b9d75dfeaaf8b801223b97c6927fa78271383817b7905e7;
+compiledc91cb5e99bd8e50d5cc599fc2b6d7ddd05db26408dc1cf690b42a2e56eb7b4b6.
+Exact-head CI receipt follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "02270f7f3c0e48e13c0b8114e19bc8466745dac417080300eb710aacdb053fa9",
-  "source_capture_sha256": "f163d4eded8f24f82817055b591658e44e30fc94e74f3518f421c7c7dc14ec35",
-  "core_sha256": "0fce0bc1fbc167fd16d78eba8cb1412e417d8efb9a41e5e8204fce329fcd49c4",
-  "compiled_sha256": "8fcd543e2f05386710add75177c14e4466dcd18175ce618dff103c062c3b0782",
-  "readable_sha256": "431bc802d04201d6dc3175b6f892f4b010e705be9a844d2ad3d742c82054b81f",
+  "input_sha256": "bc0695c3327155bf2bda126ea40768cca92f3e7f82666ae9b5e54c63128babd6",
+  "source_capture_sha256": "fe7730b4d6326a398884a3eeecc1af9a5257282842724cc3b174c774c756263c",
+  "core_sha256": "62b56a9495be068f6b9d75dfeaaf8b801223b97c6927fa78271383817b7905e7",
+  "compiled_sha256": "c91cb5e99bd8e50d5cc599fc2b6d7ddd05db26408dc1cf690b42a2e56eb7b4b6",
+  "readable_sha256": "481b0cd60e50932652a109fcd51e7383fd6623b58b9fec74662b37dc3f885066",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1813,6 +1813,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported excluding the amendment’s defined soda purchases from SNAP after180 days",
           "source_id": "clerk:119:2:151"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:154",
+      "shared_sha256": "6bf3e1021cd6f28d5f8981556bc140eca15a906cdf21c3dc81ed69a1fa195925",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole farm package, including its qualified nutrition-assistance, rural-care and social-service provisions",
+          "source_id": "clerk:119:2:154"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole farm package, including its qualified nutrition-assistance, rural-care and social-service provisions",
+          "source_id": "clerk:119:2:154"
         }
       ]
     }

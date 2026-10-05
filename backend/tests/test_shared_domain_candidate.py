@@ -34,7 +34,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         readable = readable_candidates(self.author, self.products[0], self.products[2], self.products[4])
         for member in readable['members']:
             finding = next(f for f in member['findings'] if ids[0] in f['action_ids'])
-            self.assertEqual(finding['action_ids'], ids)
+            self.assertEqual(finding['action_ids'], ids + ['house:119:2:154'])
             self.assertIn('neither creates demonstration authority nor adopts any particular food restriction', ' '.join(finding['detail']))
             self.assertIn('failed separate restriction choice, not an adopted component', ' '.join(finding['detail']))
         for projection in self.products[2]:
@@ -509,8 +509,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":217, "source_unresolved":119,
-            "interpreted_substantive_directional":90, "expressive_nonbinding_context":14, "exact_action_ineligible":236})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":217, "source_unresolved":118,
+            "interpreted_substantive_directional":91, "expressive_nonbinding_context":14, "exact_action_ineligible":236})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -528,7 +528,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 117)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 116)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1850,6 +1850,36 @@ class SharedDomainCandidateTests(unittest.TestCase):
         next(a for a in broken["actions"] if a["action_id"] == aid)["additional_source_ids"].remove("govinfo:pl119-21-50402-energy-rescissions")
         with self.assertRaisesRegex(ValueError, "compact meaning|claim passage absent"):
             prepare(broken, self.capture, ["F000477", "M001184"])
+
+    def test_farm_passage_appends_whole_choice_without_merging_amendment_positions(self):
+        aid = "house:119:2:154"
+        action = next(a for a in self.author["actions"] if a["action_id"] == aid)
+        self.assertEqual((action["episode_id"], action["stage"]), ("episode:hr7567:119", "final_passage"))
+        rendered = readable_candidates(self.author, self.products[0], self.products[2], self.products[-1])
+        statuses = {"F000477": ["Yea", "Yea", "Nay", "Nay"], "M001184": ["Yea", "Yea", "Yea", "Yea"]}
+        for member in rendered["members"]:
+            matches = [f for f in member["findings"] if aid in f["action_ids"]]
+            self.assertEqual(len(matches), 1)
+            finding = matches[0]
+            self.assertEqual(finding["action_ids"], [f"house:119:2:{n}" for n in [145, 146, 151, 154]])
+            self.assertEqual([o["status"] for o in finding["action_observations"]], statuses[member["member_id"]])
+            passage = finding["action_observations"][-1]
+            for boundary in ["entire exact farm package", "failed soda", "does not restore SNAP-Ed", "one authorization",
+                             "AND annual TitleII funds", "prospective engrossment", "House passage is not enactment"]:
+                self.assertIn(boundary, " ".join(passage["detail"]))
+            self.assertIn("separate component positions", passage["compact"])
+        projected = [next(a for a in p["actions"] if a["action_id"] == aid) for p in self.products[2]]
+        self.assertEqual(projected[0]["action_core_sha256"], projected[1]["action_core_sha256"])
+
+    def test_farm_passage_cannot_lose_current_law_or_care_authority(self):
+        for sid in ["govinfo:pl119-69-school-milk", "govinfo:pl119-21-farm-nutrition-current-law",
+                    "govinfo:7usc1990a-2024-rural-refinancing", "govinfo:7usc1736o-1-2024-mcgovern-dole"]:
+            changed = copy.deepcopy(self.capture)
+            source = next(s for s in changed["sources"] if s["source_id"] == sid)
+            source["text"] = "Missing material incorporated authority"
+            source["governed_bytes_sha256"] = sealed_digest(source, "governed_bytes_sha256")
+            with self.assertRaisesRegex(ValueError, "passage"):
+                prepare(self.author, changed, ["F000477", "M001184"])
 
 if __name__ == "__main__":
     unittest.main()
