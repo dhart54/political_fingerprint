@@ -2065,3 +2065,58 @@ Continue262/299/320. Examined237printed conflict/2026roll44operative dependency
 and45/278/28/42package-completeness follow-ups remain. This is progress, not
 closure/shutdown. No candidate acceptance, promotion, publication, production,
 registry/configuration, merge or deployment authority. Goal remains ACTIVE.
+
+Checkpoint24 is8402017e076712338c2bce25637509b7830661e8, pushed and verified
+as draftPR196head on the unchanged stacked base. CI37364689311 ended failure: two jobs succeeded, seven cancelled before runner acquisition. Official check annotation: job was not acquired by hosted runner after multiple attempts; no test failure logs for cancelled jobs.
+Continue the three unfinished exact actions; no goal-completion/shutdown marker.
+
+
+### Checkpoint25: final three substantive screenings and original44source
+
+2025rolls262/299/320 add three shared candidate meanings, mechanically projected
+for both members.262 September3838care benefits/restrictions retain timing,
+qualified population, printed minor-exception and duplicate1074pnumber limits;
+existing245/246/255/256choices remain separate.299repeals a qualified District
+worker/contractor/grantee paraphernalia-distribution exception while independent
+community/needle-exchange routes andA/S remain. Material25-50/25-175applicability,
+technical, neck-restraint and pursuit changes prevent frozen2023/restoration
+claims.320uses936adopted RCP119-16, not the staleVAvehicle title or3838version;
+reviewed conditional specialty travel, forensic exams and medical surge support
+bounded whole-package membership.262/320exhaustive package completeness unproven.
+
+Original submitted44one-page amendment confirms the existing page3line1afterAct
+instruction. It does not relocate the insertion to section5 or resolve interaction
+with independent HRSA/SAMHSAappropriations. Blank offering-member template is not
+used for identity: Rules/floor/Clerk sources bind that separately.237$50,000conflict
+remains; bounded official correction search found no formal correction. No forced
+interpretation or acceptance. No precise research timing/model savings claimed;
+governed reuse, selected primary extents and mechanical pipeline applied. Source
+review refined299exceptions/later-law boundaries, rather than title-based exclusion.
+
+Totals115interpreted/233procedural/19expressive/307excluded/2examined unresolved.
+84episodes,230member observations,158propositions/findings (83Foushee/75Massie).
+Cumulative213new reviews:30meanings/70procedural/9expressive/104exclusions.
+Latest15new captures/eight governed reuses;637new/2062total captures,576reviews.
+All186focused tests across5modules pass (latest30.695seconds), seven semantic
+gates pass. Eight generated/packet files byte-identical replay. Prior112shared
+meanings/core/mappings and both112member projections unchanged; prior sources
+and reviews preserved except44's additional original-source clarification. All
+unaffected compiled/readable findings preserved;3838episode adds262while retaining
+all four old observations, details and qualifiers. Massie's fourYea amendment
+choices and whole-package Nay remain distinct. Inventory213changed/463identical
+to benchmark; only262/299/320and44clarification newly changed versus8402017.
+All37pending and19original24capturefile hashes exact. Actual new compact/detail/
+member observations and changed episode inspected, plus14file scoped diff and
+whitespace. Coreeb47bb907d7fc79df1519e14d8530f2d5038a02b10bbca84ea0edd0116ffb52e;
+compiledb94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c.
+
+Completion audit confirms all171original unfinished source_unresolved actions
+now have governed resolved review records. False substantive_review flags on
+reviewed procedural records do not mean unfinished policy research. However raw
+research helper still surfaces100older inventory entries without shared membership
+records:99procedural and one exclusion, plus two examined dependencies. Some lie
+in the continuation period. Reconcile their actual evidence/scope before claiming
+Health complete; no silent conversion of inventory labels into governed reviews.
+The continuation goal stays ACTIVE. All candidate/public/production boundaries
+remain intact; benchmarkPR195 and originalPR194 unchanged. This checkpoint is
+progress, not terminal delivery, shutdown or permission to enter another domain.

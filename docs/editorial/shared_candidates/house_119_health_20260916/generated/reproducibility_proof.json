@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "32780ebedcd8b059565d0bd644340766ae71398d8ecd4781b26f112fec48a9aa",
-  "source_capture_sha256": "9b623f3706ba142260c4321c6f06393852d439bdffcbbc37342178e45063b4f1",
-  "core_sha256": "3e401b43b9e3652dd471bfc3edb6c64afb1f15e040fdca73390137bc21ce8c89",
-  "compiled_sha256": "deed8dab8218301f39d46507333f1bf6122531e2791077b11264162ee0a71afe",
-  "readable_sha256": "f44356fe13f8840c1291320660804b92eddfeaea4174be86e1d8bfec7589264c",
+  "input_sha256": "5284387fca229eda0b63c15b520e91e9e441959028d66bc6d3ee5d8a33048ec0",
+  "source_capture_sha256": "b30781c999f76bb0e6aeb664227a490237c374670930b5973272d4fa4d09d426",
+  "core_sha256": "eb47bb907d7fc79df1519e14d8530f2d5038a02b10bbca84ea0edd0116ffb52e",
+  "compiled_sha256": "b94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c",
+  "readable_sha256": "011e3d5d7eb5aa5a159d2f3dac26ca35afc807abef5b860d8852fcfe77555eaf",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2253,6 +2253,66 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the FY2026 DHS package with its reviewed custody-care, medical-licensing and emergency-assistance provisions and limits",
           "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:262",
+      "shared_sha256": "aa5ad80841b1996637b6227b97f9368233fea87e7f94073776c7067cacca7716",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the September2025 House defense package with its reviewed care-access provisions and restrictions",
+          "source_id": "clerk:119:1:262"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the September2025 House defense package with its reviewed care-access provisions and restrictions",
+          "source_id": "clerk:119:1:262"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:299",
+      "shared_sha256": "5f529df09091b3164bd7eaa13eab748a37726a74203b735780bb6293e1fdbae2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the DC repeal-and-restoration bill with its qualified distribution-exception removal and preservedA/Sprovisions",
+          "source_id": "clerk:119:1:299"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the DC repeal-and-restoration bill with its qualified distribution-exception removal and preservedA/Sprovisions",
+          "source_id": "clerk:119:1:299"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:320",
+      "shared_sha256": "afc5155aed3a505d3e9512a666bcad6a364795bd334bcc331311eb7e229fd82c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the December2025 substituted defense package with its reviewed care-access and medical-surge provisions",
+          "source_id": "clerk:119:1:320"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the December2025 substituted defense package with its reviewed care-access and medical-surge provisions",
+          "source_id": "clerk:119:1:320"
         }
       ]
     }
