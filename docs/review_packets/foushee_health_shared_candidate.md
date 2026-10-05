@@ -1,20 +1,20 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
 **Sol 6.1 continuation from exact benchmark head f10abd6b42867d591992b368c089150e4178604b.**
-The separate continuation branch now governs 2026 rolls79–124: twenty-three
-procedural controls, three expressive controls, eighteen proposed exclusions and
-two new shared whole-package interpretations. Thirteen controls already had
+The separate continuation branch now governs 2026 rolls79–138: twenty-seven
+procedural controls, four expressive controls, twenty-six proposed exclusions and
+two new shared whole-package interpretations. Sixteen controls already had
 procedural inventory labels; their governed reviews are new. Candidate totals:
-87 interpreted /214 procedural /13 expressive /221 excluded /141 unresolved
-(139 unfinished screenings plus two examined dependencies). All 85 prior shared
+87 interpreted /215 procedural /14 expressive /229 excluded /131 unresolved
+(129 unfinished screenings plus two examined dependencies). All 85 prior shared
 meanings and 65 Foushee /60 Massie findings are preserved; H.R.7744 and H.R.8029
 each add one finding per member (67/62 total), with Foushee Nay/Massie Yea on
 both exact passage choices. No acceptance, publication or production authority
 is created. Health screening remains active.
 
 The [continuation plan](../plans/sol61_health_continuation.md) records evidence,
-metrics, validation, source reuse and next work. Next ordinary action: roll125,
-H.R.1681 suspension/passage. H.R.8029's complete operative body matches H.R.7744,
+metrics, validation, source reuse and next work. Next ordinary action: roll140,
+H.Res.1224 previous question; completed128/139 remain preserved. H.R.8029's complete operative body matches H.R.7744,
 verified independently against its exact EH; dates, rule, floor arguments and
 Clerk observations remain separate. Reused care/grant/custody/pay authorities
 retain all established qualifications. H.Res.1142's actual deemed-concurrence

@@ -400,6 +400,62 @@ boundary's stale86 input description corrected to87; no action meaning changed.
 Weekly usage7% used/93% remaining at midnight Eastern; deadline unchanged.
 Exact-head hosted CI receipt follows commit/push.
 
+## Checkpoint6 — April20–27 rolls125–138
+
+Checkpoint5 exact head `24abe2a8bfadb99783723e33ccd72d61d8c5a0bc` passed hosted
+CI [run37261830744](https://github.com/dhart54/political_fingerprint/actions/runs/37261830744).
+Thirteen new reviews, excluding already completed128:8 exclusions,4 procedural
+controls and1 expressive control. Three controls already had procedural labels.
+Totals **87/215/14/229/131**, with129 unfinished screenings and2 examined
+dependencies. No new meaning or member finding.26 captures added (1563 total);
+422 membership records. One governed identity reused:1174 EH for6387 rule.
+Exact-URL check occurred before acquisition; all23 requested Clerk/bill sources
+were missing, so no duplicate acquisition this batch. Three material authorities
+added: existing multiline911 configuration/applicability, exceptional-events
+public-health principles and Federal-building performance/indoor-pollutant
+criteria. Invalid623 endpoint rejected; verified correct subchapter from public
+primary Code and acquired that edition. No error page became evidence.
+
+5200/5201 require communications-outage hearings/reports/recommendations and
+existing911 enforcement review, with emergency dispatch and configurable
+notification conditions retained; they do not enact clinical services or
+recommendations. Rural1182 makes attributed care/Medicaid/telehealth claims but
+its actual resolved clause is nonbinding recognition. Foushee Not Voting on
+130–136 remains resolved nondirectional context, never opposition to rural
+care or an alternative.4690 removes fossil-reduction/adjustment requirements
+and printed standards while retaining other sustainable/indoor-health criteria;
+6387 changes exceptional-event data/attainment petitions but retains public-
+health-first, information and safeguard principles.5587 geothermal exception
+retains State permit, ownership, historic-property condition, royalties/inspection
+and Indian-land/trust exclusions.1681 is Federal communications permitting;
+S1020's hydropower extensions/reinstatement are conditional MAY powers;7959's
+tax-whistleblower awards/privacy/review/deductions do not become Health from the
+incorporated2006 law's title. No clinical, environmental, income or rescue outcome
+is inferred. Material review refined qualifications without changing membership.
+
+Approximate research/authoring elapsed **5–10minutes**. Source review is compact
+because supported exclusions/controls do not require a full Health meaning;
+no measured model-token saving claimed. Safe parallel public acquisitions and
+shared-rule reuse avoid mechanical repetition; judgment remained action-specific.
+No new workflow code. Current count-basis/selection descriptions were stale
+at82/152 and root cross-domain progress still said roll79 unresearched; these
+current metadata descriptions now reflect87/131 and the actual queue, with all
+partial/incomplete/non-authorizing flags unchanged. Historical benchmark
+narrative and every prior action object remain preserved.
+
+Validation:147 focused tests and all7 semantic checks pass. All85 old meanings/
+core actions,1425 captures,363 reviews and125 compiled propositions preserved.
+Exactly59 queue rows changed;617 remain identical, including completed128/139.
+Seven generated JSON files and packet replay byte-identically. Actual generated
+core/compiled/readable finding content remains unchanged; exclusions/controls
+have no projected direction. Regression covers retained emergency/public-health
+counterevidence, expressive Medicaid claims and Foushee nondirectional status.
+Diff reviewed and clean. A post-metadata validation invocation omitted the
+known NODE_PATH; retry with existing dependencies passed, without code/test
+changes or installation. Weekly usage8% used/92% remaining at00:09Eastern;
+shutdown deadline remains06:57:44. Next ordinary action: **2026roll140 H.Res.1224**.
+Exact-head hosted CI receipt follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no
