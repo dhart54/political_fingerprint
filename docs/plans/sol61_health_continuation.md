@@ -980,3 +980,24 @@ in the frozen inventory andis preserved without stylistic reopening. After the
 remain genuine backlog, distinct from examined237. Earlier procedural ledger
 labels are historical; do not expand into repository-wide reconciliation.
 Weekly12percentused/88remaining; deadline unchanged; no terminal marker.
+
+### Terminal checkpoint: time limit, unfinished research retained separately
+
+Normal development stopped when the wrap-up clock check showed the authoritative
+overnight deadline had passed. Candidate state remains checkpoint14 at3debb1879b2ff311dac97050b5558c2e843d760d;
+223–234 research has not been applied to canonical candidate inputs. See
+[terminal resume notes](sol61_health_continuation_resume.md) and
+[pending local capture manifest](sol61_health_continuation_pending_capture_manifest.json).
+The notes preserve exact June housing/KIDS versions, reviewed extents, outstanding
+floor/authority reads, provisional routes and next implementation/validation work.
+Raw pending captures remain in ignored local `.tmp`; a fresh checkout must reacquire
+them. The manifest does not confer governed-source or editorial approval status.
+
+Final focused validation repeated166tests successfully and all7canonical semantic
+checks passed. Candidate-headCI37279559692SUCCESS matches3debb1879b2ff311dac97050b5558c2e843d760d.
+49distinct frozen-baseline capture IDs are directly referenced by cumulative new
+authoring/reviews (deduplicated source-reference metric, not network savings).
+391newgoverned captures,141newreviews/12meanings and candidate accounting are
+unchanged. Latestweekly13percentused/87remaining; time controls the terminal state.
+This terminal documentation commit does not complete Health or change any semantic,
+public, persistence or publication state. Final marker usesCHECKPOINT/TIME_LIMIT_8_HOURS.
