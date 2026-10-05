@@ -421,8 +421,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":204, "source_unresolved":173,
-            "interpreted_substantive_directional":85, "expressive_nonbinding_context":11, "exact_action_ineligible":203})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":206, "source_unresolved":167,
+            "interpreted_substantive_directional":85, "expressive_nonbinding_context":12, "exact_action_ineligible":206})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -440,7 +440,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 171)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 165)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1621,6 +1621,31 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual(rows["house:119:2:57"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:224"]["disposition"], "source_unresolved")
         self.assertNotIn("house:119:2:224", {a["action_id"] for a in self.products[0]["actions"]})
+
+    def test_march4_5_controls_and_exclusions_keep_exact_questions_and_source_boundaries(self):
+        membership = json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))
+        records = {r["action_id"]: r for r in membership["records"]}
+        universe = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
+        rows = {r["action_id"]: r for r in universe["candidate_dispositions"]}
+        sources = {s["source_id"]: s for s in self.capture["sources"]}
+        expected = {79: "procedural_context", 80: "procedural_context", 81: "exact_action_ineligible",
+                    82: "exact_action_ineligible", 83: "procedural_context", 84: "expressive_nonbinding_context",
+                    85: "exact_action_ineligible", 86: "procedural_context"}
+        for n, disposition in expected.items():
+            self.assertEqual(records[f"house:119:2:{n}"]["disposition"], disposition)
+            self.assertTrue(rows[f"house:119:2:{n}"]["exact_action_source_binding"]["complete"])
+        for projection in self.products[2]:
+            self.assertFalse({f"house:119:2:{n}" for n in expected} & {a["action_id"] for a in projection["actions"]})
+        self.assertEqual(sources["clerk:119:2:83"]["metadata"]["vote-question"], "On Motion to Refer")
+        self.assertIn("Mr. Garbarino of New York moves to refer the resolution to the Committee on Ethics.",
+                      sources["congressional-record:2026-03-04-ethics-referral"]["text"])
+        self.assertIn("This paragraph shall not apply", sources["govinfo:s723es"]["text"])
+        self.assertIn("Act or other law restricting access to", sources["govinfo:25cfr150303-2025-access"]["text"])
+        self.assertIn("no-force-authorization", records["house:119:2:85"]["rationale"])
+        self.assertEqual(sources["clerk:119:2:85"]["metadata"]["vote-result"], "Failed")
+        self.assertEqual(rows["house:119:2:87"]["disposition"], "source_unresolved")
+        self.assertFalse(rows["house:119:2:87"]["review_progress"]["substantive_review_performed"])
+        self.assertFalse(any("Page Not Found" in s.get("text", "")[:80] for s in self.capture["sources"][-20:]))
 
     def test_sol_slice_preserves_suspension_failure_and_noncounting_boundaries(self):
         records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}

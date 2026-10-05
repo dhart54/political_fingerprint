@@ -1,19 +1,26 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
-**Controlled Sol benchmark delta from exact baseline a3cb06731ebae97a35c81e0699a9fbea31e67eaa.**
-Only2026 rolls65/71/72/74/76/78 are newly screened: four exclusions, one
-procedural rule and one shared HR4758 interpretation. Candidate totals are
-85 interpreted /204 procedural /11 expressive /203 excluded /173 unresolved;
-65 Foushee /60 Massie findings. All prior meanings and non-slice queue rows
-are preserved. No acceptance, publication, production or continuation authority.
+**Sol 6.1 continuation from exact benchmark head f10abd6b42867d591992b368c089150e4178604b.**
+The separate continuation branch now governs 2026 rolls79–86: four procedural
+controls, one expressive control and three proposed exclusions. Rolls79/86 had
+procedural inventory labels; their governed reviews are new. Candidate totals:
+85 interpreted /206 procedural /12 expressive /206 excluded /167 unresolved
+(165 unfinished screenings plus two examined dependencies). All 85 shared
+meanings and 65 Foushee /60 Massie findings are preserved. No acceptance,
+publication or production authority is created. Health screening remains active.
+
+The [continuation plan](../plans/sol61_health_continuation.md) records evidence,
+metrics, validation, source reuse and next work. Next ordinary action: roll87,
+H.R.7744 passage; the staged complete EH is not a completed package review.
 
 The [benchmark plan and evidence report](../plans/sol61_health_slice_benchmark.md)
-contains exact dispositions, version/source boundaries, both recorded member
-choices, qualifications, corrections, metrics and local validation. Its separate
-draft comparison PR supplies ending SHA and exact-head CI. Stop after roll78.
+contains the frozen six-action dispositions, version/source boundaries, both
+recorded member choices, qualifications, metrics and validation. PR195 remains
+the independent draft comparison artifact at f10abd6; it is not advanced here.
 
-The checkpoint narrative below describes the immutable baseline; it is retained
-as historical context. The generated section reflects the bounded benchmark.
+The checkpoint narrative below describes the immutable pre-benchmark baseline
+and is retained as historical context. The generated section reflects current
+candidate inputs; this batch changes no substantive findings.
 
 **User-requested partial checkpoint.** Since40ecbf5, five screenings completed:
 two shared interpretations, two procedural controls and one proposed exclusion.

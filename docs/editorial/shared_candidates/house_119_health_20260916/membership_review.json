@@ -20252,7 +20252,318 @@
       ],
       "claim_source_map_ref": "authoring.json#action_id=house:119:2:78",
       "episode_candidate_id": "episode:hr4758:119"
+    },
+    {
+      "action_id": "house:119:2:79",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Procedural non-counting previous-question vote on H.Res.1095. The adopted rule concerns consideration of HR7744, reading and point-of-order waivers, one hour of debate and one recommittal opportunity. Ordering the previous question is not passage of the appropriations package or a vote for every component. Both Clerk observations and House outcome are preserved; no Health policy direction is projected.",
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:79",
+          "url": "https://clerk.house.gov/evs/2026/roll079.xml",
+          "raw_sha256": "1d7bbe9d1afb88c3f4da551f42c5762f3a595f2f4c676fd729bff7a94b2c9ae4",
+          "governed_bytes_sha256": "b6990de253d2a0821728d461833b300322a1c95e21adfaf4f8cbabbb2ea14709"
+        },
+        {
+          "source_id": "govinfo:hres1095eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1095eh/html/BILLS-119hres1095eh.htm",
+          "raw_sha256": "0ea9caa8329284134d7fa3acc2403b7d2212f0801fc7a901ef31aafa55601aca",
+          "governed_bytes_sha256": "c872834285380f262e2d4653b7e03c8f73ce6e69bb844d7857f7ec40280fb6c4"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres1095eh",
+          "locator": "H.Res.1095 complete EH procedural text",
+          "passage": "The previous question shall be considered as ordered on the bill"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:80",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Procedural non-counting agreement to H.Res.1095, a closed rule for HR7744 with consideration/provision waivers, one hour of debate and one recommittal opportunity. The complete EH contains no deemed substitute. This exact rule vote is distinct from roll79 previous question and roll87 package passage; underlying policy support or opposition is not inferred. Clerk No/Aye labels remain recorded and mechanically normalizable.",
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:80",
+          "url": "https://clerk.house.gov/evs/2026/roll080.xml",
+          "raw_sha256": "6fb0936dd9201eb1461d2c38d40833a91e01fe49bb22270a164e77efe20f6e42",
+          "governed_bytes_sha256": "b0ca3233a3d1ee3680d6766a0a936ea4c37350b3f8dff97a4d3b2f0bfbdb6582"
+        },
+        {
+          "source_id": "govinfo:hres1095eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1095eh/html/BILLS-119hres1095eh.htm",
+          "raw_sha256": "0ea9caa8329284134d7fa3acc2403b7d2212f0801fc7a901ef31aafa55601aca",
+          "governed_bytes_sha256": "c872834285380f262e2d4653b7e03c8f73ce6e69bb844d7857f7ec40280fb6c4"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres1095eh",
+          "locator": "H.Res.1095 complete EH procedural text",
+          "passage": "The bill shall be considered as read. All points of order against provisions in the bill are waived."
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:81",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion after reading complete S723 ES and material land, title-access, right-of-way and tribal-leasing definitions. The operative mechanism sets BIA mortgage/document-review and title-report deadlines, written decisions, delay/update notices, delivery and read-only land-record access, reporting/GAO review and a realty ombudsman. It covers residential and business mortgages, land mortgages and rights-of-way generally on trust/restricted Indian land, not an income-tested housing benefit, care service or health-insurance entitlement. USDA/HUD/VA loan agencies are existing recipients/users, not a new loan guarantee or benefit amount. Preserve the tribal-approved leasing exception to approval deadlines and privacy condition in incorporated title-access authority; do not infer automatic approval, guaranteed credit, affordability or health outcomes. Suspension and passage PASSED384-40; Foushee and Massie both Yea, with no counting Health projection.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:81",
+          "url": "https://clerk.house.gov/evs/2026/roll081.xml",
+          "raw_sha256": "c1de9bc1d358e4a7b8552bbc426bf2581cd5fca0b61da3ad3d6952370d01cf87",
+          "governed_bytes_sha256": "a9f85d0cd81254fb2b498276499672649f6c3b41c063c9eb4478ea783bf6a07f"
+        },
+        {
+          "source_id": "govinfo:s723es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s723es/html/BILLS-119s723es.htm",
+          "raw_sha256": "6861abe7a2f55ea383adcd85afe18286a4cf72b60e41d6ef1dccc0adf76e6d56",
+          "governed_bytes_sha256": "51ce6eeb91f447d4c617be97e6d00cfd4ad2715f4a9e244efcd30f0778b9f6ca"
+        },
+        {
+          "source_id": "govinfo:25cfr162003-2025-land",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title25-vol1/pdf/CFR-2025-title25-vol1-part162.pdf",
+          "raw_sha256": "66b4f91eff465a57817c0594ab31bb2774fd6b6098e033138a4516585bae2ba3",
+          "governed_bytes_sha256": "a021d1fae926674aa30983edeabbafffb8f2d97de7c0bfd8826b21259d16148c"
+        },
+        {
+          "source_id": "govinfo:25cfr150303-2025-access",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title25-vol1/pdf/CFR-2025-title25-vol1-part150.pdf",
+          "raw_sha256": "f22fcac747fc021396d982319b57d5c9a675ee60de4d2f2545f155f7479cdfba",
+          "governed_bytes_sha256": "7d4d6383aafe0dfa286c4930d32a9563871669bec1a3730b3e4e6182436e7229"
+        },
+        {
+          "source_id": "govinfo:25cfr1692-2025-way",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title25-vol1/pdf/CFR-2025-title25-vol1-part169.pdf",
+          "raw_sha256": "6333b996666373a318d7ebc64a2f5f3d2c2182c68e131bc209e2727de6eb0a1a",
+          "governed_bytes_sha256": "49befc2da9aca31d3830324c4b81b0cbec6992ee868051d24123b6cb5910ed22"
+        },
+        {
+          "source_id": "govinfo:25usc415-2024-leasing",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/html/USCODE-2024-title25-chap12-sec415.htm",
+          "raw_sha256": "d80ba889bb15c8f58dad957c3aa5309f38bb0bc4feecb16bfe438e47174f51ce",
+          "governed_bytes_sha256": "b6f02c72b6605e170e6085dc2ba89414fe9bc624d2d2b295d791349ae477efdc"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:s723es",
+          "locator": "ES section4 administrative mechanism",
+          "passage": "The Director shall establish within the Division of Real Estate Services of the Bureau the position of Realty Ombudsman"
+        },
+        {
+          "source_id": "govinfo:s723es",
+          "locator": "ES section3(a)(3)(E) tribal-leasing exception",
+          "passage": "This paragraph shall not apply to a residential leasehold mortgage or business leasehold mortgage"
+        },
+        {
+          "source_id": "govinfo:25cfr150303-2025-access",
+          "locator": "2025 CFR150.303; PDF page5 disclosure condition",
+          "passage": "Act or other law restricting access to"
+        },
+        {
+          "source_id": "govinfo:25usc415-2024-leasing",
+          "locator": "25USC415(h)(1) existing leasing authority",
+          "passage": "shall not require the approval of the Secretary, if the lease is executed under the tribal regulations approved by the Secretary"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:82",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion from complete amended HR6472 EH. The operative change caps public-college tuition/fees at in-state rates for residents of four named territories who are US nationals, and adds institutional compliance to the HEA program participation agreement. This is education tuition access, with no health care, insurance, Medicaid, Social Security or social-service delivery mechanism in the exact two-section package. Territorial status and college assistance do not themselves supply Health membership; no projected downstream health effect is used. Suspension and passage as amended PASSED351-72; Foushee Yea and Massie Nay remain non-counting Health observations.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:82",
+          "url": "https://clerk.house.gov/evs/2026/roll082.xml",
+          "raw_sha256": "b0bc703e50bd8cc12e4f6eac2b511a9e8a617cf91f40bf166abb02c16f9905c1",
+          "governed_bytes_sha256": "57fe98fed4fe5b3271a164719d044d1e97d7dfd0abd969f2dfee42fdf27d50d6"
+        },
+        {
+          "source_id": "govinfo:hr6472eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6472eh/html/BILLS-119hr6472eh.htm",
+          "raw_sha256": "a45df704036c0c79cf4c1f3a1caf13df7cba6d7ba56c9add4ce2f29dcf1e9f51",
+          "governed_bytes_sha256": "d2ece247bd3be4962cfbbd6193df8d59914ae90ef3568a91ac0c682d333bfbb0"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hr6472eh",
+          "locator": "EH section135A(a) exact tuition cap",
+          "passage": "shall not charge a covered individual tuition or fees for attendance at such institution at a rate that is greater than the rate charged for residents of the State"
+        },
+        {
+          "source_id": "govinfo:hr6472eh",
+          "locator": "EH program participation condition",
+          "passage": "The institution will comply with the requirements of section 135A, as applicable."
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:83",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Procedural non-counting motion to refer H.Res.1100 to the Committee on Ethics, not adoption of the proposed preservation/public-release mandate. The Clerk-read floor motion explicitly refers the resolution to Ethics; it PASSED357-65 with1 Present. The IH and floor context identify the proposed records subject and victim/witness redactions without making the referral a substantive Health finding or inferring motive. Foushee Yea/Massie Nay describe the referral only.",
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:83",
+          "url": "https://clerk.house.gov/evs/2026/roll083.xml",
+          "raw_sha256": "657dde9214eb0265df6ee843462f34c991a06d83903cf16be03757e6833d690d",
+          "governed_bytes_sha256": "6d55fc681f43a0789ce44c1635938521db108c1042fda1f8c65b84c6e924a7b0"
+        },
+        {
+          "source_id": "govinfo:hres1100ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1100ih/html/BILLS-119hres1100ih.htm",
+          "raw_sha256": "e0b41a9666ca81d0f792597545c65d231cd3007387b0abfe0baeb9c6d621d003",
+          "governed_bytes_sha256": "feb7fcfcdf7050c57e3a4aa64a890666c3ee911c1adf7eb6b13816f247575d01"
+        },
+        {
+          "source_id": "congressional-record:2026-03-04-ethics-referral",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-04/html/CREC-2026-03-04-pt1-PgH2391.htm",
+          "raw_sha256": "6374f39adfd6deb5b8935dc8944f53558b435e52bab46b6321fe25e5982119be",
+          "governed_bytes_sha256": "8d8949134498e5771dc0bd7e85ed4d4f37075c14a0451daef6975a5d2cd0372b"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "congressional-record:2026-03-04-ethics-referral",
+          "locator": "H2391 Clerk-read exact referral motion",
+          "passage": "Mr. Garbarino of New York moves to refer the resolution to the Committee on Ethics."
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:84",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "expressive_nonbinding_context",
+      "rationale": "Expressive nonbinding control: the complete adopted H.Res.1099 EH resolves only that the House declares it is US policy that Iran continues to be the largest state sponsor of terrorism. Preambular allegations are attributed legislative statements, not independent findings adopted by this candidate. No funding, force authorization, health service or benefit is enacted by this House declaration. Suspension and agreement PASSED372-53 with2 Present; Foushee Nay/Massie Yea are non-counting context.",
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:84",
+          "url": "https://clerk.house.gov/evs/2026/roll084.xml",
+          "raw_sha256": "4dbb45cf8f2d8379e7f24e9a776793198a0d27e3ef7ba350e07025b52d3ba2b1",
+          "governed_bytes_sha256": "ebdd81986d7772161a77a5ab5d0c2273f80dd242235d380426da21a9593c1dd7"
+        },
+        {
+          "source_id": "govinfo:hres1099eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1099eh/html/BILLS-119hres1099eh.htm",
+          "raw_sha256": "ed320c7d4504889391336736182bd77dd490c4991200812d7eb70957a339b9dc",
+          "governed_bytes_sha256": "29951b61d3b4c513fd7133955ab34fa1e3805bfd602848d04a607c0796104704"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres1099eh",
+          "locator": "Complete EH sole resolved clause",
+          "passage": "Resolved, That the House of Representatives declares it is the policy of the United States that Iran continues to be the largest state sponsor of terrorism."
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:85",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion: complete H.Con.Res.38 IH and the exact floor text direct termination of US Armed Forces hostilities against Iran absent an explicit declaration of war or specific authorization. Preserve imminent-self-defense, intelligence/counterintelligence/investigation and sharing exceptions and the no-force-authorization construction. Reused governed50USC1544 supplies the cited removal framework. The operative proposition addresses military hostilities/war powers, not care/insurance or social-service delivery; casualty and price rhetoric do not establish Health membership. Agreement FAILED212-219; Foushee/Massie both Yea does not establish withdrawal, enactment or any position on an unrecorded alternative.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:85",
+          "url": "https://clerk.house.gov/evs/2026/roll085.xml",
+          "raw_sha256": "430187a91c76de11bf63e6886aab14427e03ac8a0fdb018eadac81cbcec59b40",
+          "governed_bytes_sha256": "d42451b80d45695e2b836566b1c484db3270b93eaec4fc1d79977cbe2976c24a"
+        },
+        {
+          "source_id": "govinfo:hconres38ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres38ih/html/BILLS-119hconres38ih.htm",
+          "raw_sha256": "5d06b495e16e9b76c60e461ac04b5c718838491aff3dab550469b4254a96695f",
+          "governed_bytes_sha256": "73481088126f4ba511051662feda97242df091da64ab0c15304e9a9a57fa87fb"
+        },
+        {
+          "source_id": "congressional-record:2026-03-04-iran38",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-04/html/CREC-2026-03-04-pt1-PgH2395.htm",
+          "raw_sha256": "3184062a5af5d53e60e44f0f6dbbb5d2b7d4fbb6a2cf1ec17911dcbe882f937e",
+          "governed_bytes_sha256": "cfacebdbd15338d6fdb593d7cd34c9871b028acb0c9bf7cb299681d6d0014957"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hconres38ih",
+          "locator": "IH section2(b) retained defense boundary",
+          "passage": "Nothing in this section shall be construed to prevent the United States from defending itself from imminent attack."
+        },
+        {
+          "source_id": "congressional-record:2026-03-04-iran38",
+          "locator": "H2395-H2396 exact floor section4",
+          "passage": "nothing in this concurrent resolution may be construed as authorizing the use of military force."
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:86",
+      "domain_id": "HEALTH_SOCIAL",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Procedural non-counting motion to recommit HR7744, FAILED212-217. The exact Clerk question is recommittal, distinct from later package passage; Foushee Yea/Massie Nay do not by themselves establish positions on every appropriation or a preferred substitute. No underlying Health interpretation is projected from this procedural question.",
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:86",
+          "url": "https://clerk.house.gov/evs/2026/roll086.xml",
+          "raw_sha256": "4ff0d869135eb969c35747f7f9d12ffce0cb88fb3f61cda2c1c3ddc3c567069a",
+          "governed_bytes_sha256": "5c9732375a60cdeb568ef7ea494df96993f36cdb211c57e668a8fc1aa0c7ca5b"
+        }
+      ],
+      "claim_source_map": []
     }
   ],
-  "review_sha256": "fe84b742b55c54a607a12de877056c1092167d6a050de72abebef6e330d9e43b"
+  "review_sha256": "41a9341773e533e389cf3a72a8203040930d676faeb4f9e7e8e7794d115c0675"
 }
