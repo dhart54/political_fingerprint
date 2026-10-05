@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "e552eb4eede212d09e6ab3db68f96b5121cadf5a0278f76eb19a24daf595129e",
-  "source_capture_sha256": "aad66e7dba5fd57deab272532b2d432f55dfa05805541de0f751f6dfc0913a68",
-  "core_sha256": "b576bcf76dad126cac0c72e71d5ec3e53b80cf52111db71103101b2eeb4e4555",
-  "compiled_sha256": "2a682bf5547521bca4290111a92b09c218021ce01dc889de664f3f415fe22d34",
-  "readable_sha256": "610d43159c818b6359178115d0c1bc6741f75815d690154b58d75217d8be101c",
+  "input_sha256": "3b1925e8a2a5a13ce21c5ec39cf45f48f8102c4f1261836005cd6364dac66777",
+  "source_capture_sha256": "968f4269ce01142d1e203c6a572483ab065e90b5f5651829ce668b489a2486d6",
+  "core_sha256": "a5965ea5e64b2716bf0f31ed44f36b6e282ddfabe62241a602c5c28ca8cf2d4e",
+  "compiled_sha256": "332f17b8c97b743d38c85bc58aee57d1b2638bedc171dcaf1bb3064bef0c2031",
+  "readable_sha256": "6fc3d8ff565e0883898b2ec949ce920b489466a66326e948202885291c31ee3f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2073,6 +2073,66 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing the whole FY2027 State/security,global-health/humanitarian and rule-added SAVE package with its qualified restrictions",
           "source_id": "clerk:119:2:247"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:251",
+      "shared_sha256": "b4adf05dc8ab48dbf920bd2a7a92d8884eb3e11dd6cc5d3e961792c110f4f978",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the FECA medical-provider payment-suspension authority with its conviction, rulemaking and effective-date limits",
+          "source_id": "clerk:119:2:251"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:251"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:271",
+      "shared_sha256": "7ffbc6b7f06dd95955ac057118918a946c359ffae779c3da276602880f831fc1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole banking package including its qualified affordable-housing CDFI bond-guarantee changes",
+          "source_id": "clerk:119:2:271"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole banking package including its qualified affordable-housing CDFI bond-guarantee changes",
+          "source_id": "clerk:119:2:271"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:272",
+      "shared_sha256": "79e174c548a58243758676147c25e7eea1ce9d69c5e7b77715623aa19d2d77b3",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole temporary continuing-appropriations package with its qualified medical, nutrition, IHS and TANF funding provisions",
+          "source_id": "clerk:119:2:272"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole temporary continuing-appropriations package with its qualified medical, nutrition, IHS and TANF funding provisions",
+          "source_id": "clerk:119:2:272"
         }
       ]
     }

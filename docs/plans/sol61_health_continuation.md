@@ -1191,3 +1191,173 @@ Next queue action: 251, then remaining 2026 screenings and eleven unfinished 202
 remain explicit. This is an intermediate candidate checkpoint, not completion of Health.
 Commit/push and exact-head hosted CI receipts follow. The stale blocked app-goal state
 remains a separate automatic-continuation limitation; direct daytime authority continues.
+
+### Checkpoint 17 research scope
+
+Checkpoint16 was committed/pushed as 66643d97715aaca543eb7decd61c498ddb5415db;
+draft PR196 remains stacked on the frozen benchmark branch. Exact-head CI37331966233
+was running at the initial check. Direct work continues while that result is pending.
+Subsequent exact-head check: CI37331966233 completed successfully at
+66643d97715aaca543eb7decd61c498ddb5415db; its receipt was added to the draft PR.
+
+The remaining 2026 queue is rolls251–282. Public primary captures were fetched after
+exact governed-URL/hash reuse lookup; acquisition is not a completed review. For a
+bounded next checkpoint, research the eleven non-NDAA actions251/252/253/254/270/271/
+272/279/280/281/282, then handle the twenty-one H.R.8800 amendment/recommit/passage
+actions as their separate source family. Existing2025backlog/dependencies remain.
+The new FECA provider-payment discretion and continuing-appropriations package require
+material incorporated authority; general procurement,banking,stockholding and rule
+titles do not establish membership. Read actual versions/propositions before routing.
+Expected canonical/generated/packet/test/plan fan-out stays within the semantic loop;
+no new product, publication, production or architecture authority is inferred.
+
+### User-requested goal resume: verified active
+
+The stale app-goal blocker is resolved. The installed codex-cli0.160.0 generated
+protocol exposes the supported experimental thread/goal/get and thread/goal/set
+user-control endpoints. Its usual daemon control socket was unavailable, including
+with normal socket access. A bounded standalone stdio app-server read confirmed the
+exact existing thread/objective and blocked state. The user's repeated explicit
+resume requests authorized setting only status=active through that endpoint.
+Readback and the independently exposed get_goal tool both verified active status.
+Objective, token budget, original creation time, token usage and time usage were
+preserved. No database editing, new goal, server restart, configuration change or
+completion claim was used. Earlier blocked-state notes above are historical.
+This restores automatic continuation when the current turn becomes idle; the
+Health objective remains unfinished and must not be marked complete at this checkpoint.
+
+Checkpoint17 primary captures are retained locally; no new canonical candidate state
+has yet been accepted or generated. Eleven non-NDAA actions remain the next bounded
+research group. Material leads: FECA8823permits provider-payment suspension after
+specified fraud convictions and preserves the180-day payment-effective boundary;
+18US24's referenced healthcare-program definition is broader than its printed Federal
+label. CR9770has qualified FY2026continuation/December4expiry,mandatory-payment timing,
+WICparticipation apportionment,IHSoperational-rate additions and TANFexceptions.
+Already enacted FY2027IHSadvances and existing TANFDecember31authority must remain
+distinct; do not infer new full-year funding or a repeal of later existing authority.
+Its124reference is wildland-firefighter premium-pay treatment,not refugee eligibility:
+the initial Afghan-labelled local capture alias is a rejected interpretation lead,
+and must receive a correct wildfire source identity before governing a narrowed extent.
+7008EHalso contains a voter-photo-ID section; it is not limited to stockholding.
+113EHbudget/reconciliation/enforcement treatment follows established noncounting
+budget-process precedent,not enacted benefit changes. Actual source review remains
+in progress; broad acquisition and partial/truncated windows are not full review.
+
+### Active continuation research receipt: banking incorporated authority
+
+The exposed goal tool independently reconfirmed status=active during continued
+research after the user reported the stalled badge. This is a status recovery,
+not completion or a new goal. No terminal marker is created.
+
+Checkpoint17 remains research-only. The complete remaining6955EH operative
+windows have now been read, including the previously missing supervisory window
+and TitlesIV–VIII. Section104 changes the CDFI bond-guarantee mechanism, not just
+bank formation or a report: the amended guarantee minimum is25million; replacing
+4713a(e)(2) removes the printed ten-guarantee limit while retaining a1billion
+statutory annual cap; the annual issuer fee becomes10–15basispoints; the termination
+text becomesDecember31,2028; and the relending-account formula uses outstanding
+principal. The earlier research shorthand wrongly connected the outstanding-
+principal amendment with fees: that change is to4713a(c)(2), not the fee base.
+
+Exact public2024Code4713a and its incorporated4707(b) were acquired after governed
+URL reuse lookup and read completely. Eligible community/economic-development
+purposes expressly include housing principally affordable to low-income people,
+with the stated homeownership lending limitations. That materially changes the
+initial general-banking exclusion lead:6955needs a whole-package Healthcandidate
+on the direct affordable-housing financing nexus, not on its title, a banking
+institution's possible customers, or anticipated downstream effects. No allocation
+of all guarantees to housing, new clinic entitlement, housing outcome, or individual
+component position may be inferred. Both recorded members opposed the package.
+
+The relevant existingPL119-75CDFI heading was read completely. It already keeps
+4713a in effect throughDecember31,2027 and limits FY2026guarantee commitments to
+500million, with no appropriated guarantee subsidy cost under that heading. The
+bill's1billion statutory cap is not a claim that it repeals the existing fiscal
+appropriation limit or newly doubles actual lending. The dated2024CodeSeptember2014
+sunset is not the current expiration. This qualification must be source-bound.
+The same heading also contains separate disability/healthy-food assistance amounts;
+104does not amend those amounts or equate the bond program with those grants.
+
+The remaining119-74IHSfacilities/administrative provisions were read through their
+complete heading. Existing FY2027advances and restrictions remain distinct from
+9770's additional operational rates. FloorJuly20page24 confirms the exact8823
+suspension motion and1118operative substitution. July21page47 confirms the actual
+bare6955recommit; the separately printed previously referred G-SIB instructions
+are not the motion voted. July22page130 confirms the separate bareNDAArecommit,
+and131redesignates the7008recommit and records279; the original7008motion text
+still needs its earlier page. July21pages49–50contraryCRdebate is now read:
+supporters' continuity/zero-disruption claims and opponents' missing housing/utility
+adjustment and DHS assertions remain attributed, not adopted as outcomes or motives.
+Remaining CRdebate/material qualifications,42US603(c)/618 and operative funding
+riders need the bounded review recorded above before authoring the final candidate.
+
+CFR2026and2025attempts for10.815/816 returned invalid pages; they are not governed,
+not positive evidence of a regulation's absence, and not a reason to invent a
+current FECA exclusion-policy gap. Further follow-up is needed only for a material
+claim; the bill's express conviction/rulemaking/payment-date text governs its
+proposed statutory change. The new valid4707capture and all primary captured
+bytes remain local pending correct curation and candidate validation.
+
+Deterministic queue recount:43unfinished are eleven2025actions plus thirty-two
+2026actions. The latter are twenty-eight unfinished251–282actions (four existing
+procedural controls in that range are not unresolved) AND earlier unfinished
+2026rolls23/27/28/42. Those earlier four must not be lost when the later queue
+ends. Examined unresolved dependencies remain2025roll237/2026roll44;2026roll45
+has its separately recorded package-completeness follow-up. No new canonical
+membership/authoring/source or generated state has been written in this research
+stage; checkpoint16and its successful exact-headCI remain the latest pushed state.
+
+### Checkpoint 17: eleven non-NDAA actions screened
+
+Screened2026rolls251/252/253/254/270/271/272/279/280/281/282: three shared
+Health meanings, five procedural controls and three exact-action exclusions.
+New meanings are251FECAprovider-payment discretion,271whole banking package with
+explicit affordable-housing CDFIguarantee nexus,and272whole temporary appropriations
+package. Foushee adds three directional findings;Massie adds two. His251NotVoting
+remains resolved nondirectional and supplies no support/opposition finding.
+
+Important source corrections:4713a's relending formula is distinct from its annual
+fee base;replacement of(e)(2)removes the printed ten-guarantee limit; the statutory
+1billion cap does not repeal the separate FY2026500million appropriation limit.
+Existing current law already extends CDFIauthority throughDecember2027. TANF403(c)
+is pandemic emergency assistance,not403(b)'s ordinary contingency fund;418has a
+separate childcare appropriation. CRDecember4terms do not expressly repeal existing
+December31TANFauthority or create the already enacted IHS/Medicaid FY2027advances.
+Wildfire1701is premium pay,not refugee eligibility. Qualified reproductive-care,
+research and recipient terms remain. Actual bare recommittals are distinguished
+from inserted,previously referred instructions;budget-process controls remain
+noncounting,while procurement,stock/election and war-powers exclusions follow their
+exact operative texts. No inferred component choices,motives,outcomes or enactment.
+
+Candidate totals:106interpreted,232procedural,19expressive,282excluded,37unresolved.
+The37are35unfinished plus two examined dependencies.79episodes/212observations and
+148propositions(78Foushee/70Massie findings). Cumulative178newreviews since benchmark:
+21shared meanings,69procedural,9expressive,79excluded.32newgovernedcaptures this
+checkpoint;one distinct existingPL119-37reused.497newcaptures/1922total;541reviews.
+Exact primary action identities/totals/statuses and version/claim bindings checked.
+
+174focused tests and all seven semantic checks pass. Three new regressions cover
+FECA NotVoting,independent whole-package projections,noncounting controls/material
+current-law distinctions and fail-closed removal of incorporated source bindings.
+Initial new-test fixture/field-name errors and stale unfinished count were corrected.
+Small readability refinements to only these new drafts were followed by regeneration
+and all three new regressions passing. A replay check initially compared stale
+pre-refinement generated bytes;after regeneration,all eight files replay identically.
+All103previous authored/core actions,1890sources,530reviews and143propositions remain
+identical. Benchmark authors/sources/reviews remain identical;the previously documented
+housing-derived delta is unchanged. Inventory178changed/498identical. All37earlier
+pending local captures retain exact hashes. Actual five new generated directional
+compacts,choices and qualifications were inspected,alongside the nondirectional case.
+Core a5965ea5e64b2716bf0f31ed44f36b6e282ddfabe62241a602c5c28ca8cf2d4e;
+compiled332f17b8c97b743d38c85bc58aee57d1b2638bedc171dcaf1bb3064bef0c2031.
+
+Research spans resumed sessions; no precise end-to-end duration or savings are claimed.
+Governed URL reuse,source-family capture reuse,early exclusion routing and existing
+deterministic projection/generation/preservation tools were applied;no new efficiency
+architecture or accepted/public boundary was introduced. Fourteen-file fan-out remains
+within the candidate semantic loop. No public,production,registry or acceptance changes.
+
+Next:21NDAA-related255-269/273-278actions,including the already procedural277control,
+then earlier unfinished2026rolls23/27/28/42 and eleven2025actions. Preserve examined
+2025roll237/2026roll44dependencies and2026roll45completeness follow-up. This is an
+intermediate checkpoint;goal remains active. Commit/push/exact-headCI receipts follow.
