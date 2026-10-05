@@ -1,4 +1,36 @@
-# Health continuation terminal checkpoint and resume notes
+# Health continuation status and historical overnight resume notes
+
+## Current daytime continuation status
+
+The user resumed after the overnight deadline. The historical terminal checkpoint
+and source-reading notes below describe an earlier state; they do not govern the
+current queue or authorize a shutdown marker. The stored goal is active through
+final review/PR delivery. See `sol61_health_continuation.md`, checkpoint 26, for
+the validated completion audit and measurements.
+
+The scoped Health continuation queue is screened: all 171 originally unfinished
+actions have governed resolved reviews, as do the two missing continuation-period
+receipts (2026 rolls 235/277). There are 115 interpreted candidates, 233 procedural,
+19 expressive, 307 excluded and two examined unresolved dispositions. No ordinary
+continuation action remains. The unrestricted helper's 98 unchanged older inventory
+controls are historical and outside this milestone; they have not been silently
+converted into governed shared reviews.
+
+Remaining evidence dependencies are 2025 roll 237's printed $50,000 conflict and
+2026 roll 44's operative interaction with independent project appropriations.
+Package completeness remains unproven for 2026 rolls 45/278/28/42 and 2025 rolls
+262/320. These limitations are explicit in candidate inputs and readable outputs.
+No forced interpretation, acceptance, publication or production authority follows.
+There are 30 new shared meanings, net 18/15 additional Foushee/Massie findings and
+638 added captures (2,063 total); 215 new shared reviews (578 total). Final local
+validation passes 187 focused tests, seven semantic checks and eight-file exact
+replay. Final commit and exact-head CI status are supplied by draft PR 196.
+
+Future work would require source evidence resolving those dependencies, external
+semantic review or a separately authorized coverage milestone. Do not restart
+the old queue below, reopen historical controls for style or enter another domain.
+
+## Historical overnight checkpoint
 
 Terminal reason: `TIME_LIMIT_8_HOURS`. The authoritative watcher deadline was
 2026-10-05T06:57:44.5381669-04:00. At the terminal wrap clock check the time was

@@ -33,14 +33,14 @@ may take multiple sessions. No runtime or production fan-out.
 ## Sequence and definition of done
 
 - [x] Isolated exact-base branch and contracts; bounded benchmark acceptance.
-- [ ] Screen remaining queue using governed-source reuse and material authority.
-- [ ] Author eligible meanings and explicit compacts; preserve prior objects.
-- [ ] Implement recurring deterministic efficiencies with focused regressions.
-- [ ] Regenerate; inspect actual readable projections and disposition samples.
-- [ ] At major checkpoints run candidate/corpus/IR/pipeline tests and seven checks.
-- [ ] Verify byte-identical replay, prior-object preservation and public fail-closed state.
-- [ ] Push coherent checkpoints; create/update stacked draft PR and exact-head CI.
-- [ ] Reconcile all screenings and known dependencies before claiming completion.
+- [x] Screen remaining queue using governed-source reuse and material authority.
+- [x] Author eligible meanings and explicit compacts; preserve prior objects.
+- [x] Implement recurring deterministic efficiencies with focused regressions.
+- [x] Regenerate; inspect actual readable projections and disposition samples.
+- [x] At major checkpoints run candidate/corpus/IR/pipeline tests and seven checks.
+- [x] Verify byte-identical replay, prior-object preservation and public fail-closed state.
+- [x] Push coherent checkpoints; create/update stacked draft PR and exact-head CI.
+- [x] Reconcile all screenings and known dependencies before claiming completion.
 
 ## Discoveries, decisions and validation
 
@@ -2120,3 +2120,122 @@ Health complete; no silent conversion of inventory labels into governed reviews.
 The continuation goal stays ACTIVE. All candidate/public/production boundaries
 remain intact; benchmarkPR195 and originalPR194 unchanged. This checkpoint is
 progress, not terminal delivery, shutdown or permission to enter another domain.
+
+### Checkpoint 26: final continuation audit and review checkpoint
+
+The resumed daytime goal supersedes the historical overnight deadline and
+shutdown-marker instructions. The stored goal was ACTIVE while the desktop
+badge displayed stalled; that badge did not prevent execution. No shutdown
+marker is created. The terminal overnight resume note below is historical.
+
+Audited all 171 original unfinished screenings: each now has a governed review
+and a resolved supported disposition. The final two missing continuation-period
+receipts are 2026 rolls 235 and 277. Exact complete H.R.8897 EH establishes a
+discretionary two-year TSA family airport-screening pilot, with security/vetting,
+boarding-pass and local-resource conditions; it supplies no direct Health care,
+coverage or social-assistance benefit. Exclusion is preserved. The exact floor
+record for 277 supplies Ryan's bare recommittal motion without instructions,
+its failed outcome and actual member choices; it remains noncounting procedural
+context, separate from 278 passage. No new shared Health meaning follows either.
+
+One staged Clerk capture added and three governed sources reused. The historical
+277 raw hash is retained separately because the staged official bytes differ;
+exact identity, question, outcome, totals and member choices agree with the
+independently governed floor record. Raw-byte difference alone is not treated
+as a substantive authoritative conflict.
+
+Final manual review found member names/choices in the three new checkpoint 25
+shared narratives (2025 rolls 262/299/320). Removed only those three clauses;
+all legislative effects, compacts, Yea/Nay meanings, sources, claim bindings and
+qualifiers are unchanged. Member observations remain mechanical projections.
+A focused regression verifies the separation and exact recorded choices. This
+corrects an introduced shared-authoring defect, rather than restyling historical
+work. All other prior shared authored/core objects remain exact. The three
+member projections differ only in the regenerated action-core hash. Entire
+compiled IR, every prior episode and all compiled propositions remain exact
+against checkpoint 25. Readable detail changes only propagate the removals.
+
+Final accounting across 676 discovered actions: 115 interpreted candidates,
+233 procedural controls, 19 expressive controls, 307 exclusions and two examined
+unresolved dependencies. There are 84 episodes, 230 member observations and
+158 findings/propositions (83 Foushee, 75 Massie): net 18/15 additional findings
+and 60 additional observations over the frozen benchmark. The continuation adds
+215 shared membership reviews: 30 interpretations, 71 procedural, nine expressive
+and 105 exclusions. 200 new reviews cover 2026 rolls 79–282; four earlier committed
+unfinished package actions (23/27/28/42) and eleven 2025 actions
+(224/225/226/262/294/295/296/299/307/318/320) complete the committed queue.
+The existing 2026 roll 44 review also gains its original-amendment clarification.
+Thus 216 inventory rows differ from the benchmark; 460 remain exact.
+
+All 30 new shared meanings are authored once and mechanically projected for both
+members. Total sources: 2,063, with 638 added since the benchmark; total shared
+reviews: 578. A deterministic traversal of new authoring/review objects finds
+80 distinct frozen-baseline source IDs referenced directly. This is a count of
+unique reused baseline captures, not all reuse transactions or intra-continuation
+reuse. Latest checkpoints separately record those reuse events. No benchmark
+source is overwritten.
+
+The read-only research helper reports no remaining item for session 2 starting
+at roll 79. Its unrestricted display still contains 100 entries: two examined
+dependencies and 98 unchanged historical inventory controls (76 session 1 and
+22 session 2 before roll 79) without shared membership receipts. All 98 are
+structurally identical to the starting inventory; they are outside the committed
+continuation queue. The request expressly excludes reopening completed historical
+actions for stylistic consistency. This audit establishes scoped screening,
+not retrospective governance or exhaustive discovery of the whole issue universe.
+
+Legitimate unresolved dependencies remain: 2025 roll 237's $50,000 printed-source
+conflict and 2026 roll 44's operative interaction with independent HRSA/SAMHSA
+appropriations. Bounded official correction searches and the original submitted
+44 amendment did not resolve them. Package-completeness follow-ups remain for
+2026 rolls 45/278/28/42 and 2025 rolls 262/320. Whole-package candidates do not
+assign positions on each component, prove implementation or imply enactment.
+Printed population, timing, exception and drafting qualifications remain.
+Full-issue closure, production eligibility and publication authority remain false;
+all candidates require external semantic review. No ordinary in-scope screening
+remains executable without the identified evidence/coverage dependencies.
+
+Efficiency work is separate from editorial judgment: the bounded read-only helper
+offers exact-URL governed reuse, queue summaries, compact TSV and explicit-offset
+text windows. It rejects changed governed bytes/duplicate IDs and does not assign
+dispositions. Existing deterministic generation owns projection, compilation,
+hashing, accounting and replay. Early supported noncounting routing and materiality
+gates avoid unnecessary interpretation-level research. Measured compact display
+reduction was 71.2% (11,117 to 3,201 characters for 25 rows). Initial eight-control
+research took roughly 6–8 minutes; the complex H.R.7744 package roughly 20–30
+minutes including authoring/validation. These bounded observations are not a
+whole-corpus throughput, token saving or proof of four-minute substantive work.
+No precise end-to-end/model-usage savings are claimed. Material review changed
+initial exclusion leads for H.R.6955 (direct affordable-housing financing in
+incorporated authority) and 2026 roll 266 (EO14183's qualified care reach through
+the revoked-order framework); these were research leads, not accepted conclusions.
+Later DC-law review refined 299's independent exceptions/restoration boundary.
+
+Final local validation: all 187 focused tests across candidate/corpus/IR/pipeline/
+research-helper modules pass in 30.911 seconds; all seven canonical semantic
+checks pass. Eight generated/packet files regenerate byte identically. Frozen
+85 author/core objects, 1,425 sources and all prior membership records are preserved
+except the documented original-source clarification of 44. Checkpoint 25's
+2,062 sources/576 reviews are exact, including 44. All 37 pending local captures
+and 19 original checkpoint 24 capture-file hashes remain exact. Actual new compact
+and detailed Foushee/Massie findings, amendment-versus-package aggregation,
+noncounting dispositions, source extents and final scoped diff inspected;
+whitespace check passes. A scratch audit initially queried review_state on the
+proof rather than readable artifact; corrected without product changes. No
+frontend, database, production or full-population operation is required by this
+candidate semantic change.
+
+Core: 89a17d49885d5782eaee7bdeabd8fba787cc6035fd251212a1c73baf509f77a9.
+Compiled: b94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c.
+PR 195 remains f10abd6b42867d591992b368c089150e4178604b; PR 194 remains
+a3cb06731ebae97a35c81e0699a9fbea31e67eaa. Unrelated primary-checkout work,
+historical deadline file and inaccessible pre-existing test temporary directories
+are preserved. Checkpoint 25 is pushed as 6bfbabcd7fff5e992f8e382cb492a42501e1e7aa;
+its CI 37367369627 has two successful jobs and seven queued at final local audit.
+Checkpoint 24 had two successful jobs and seven runner-acquisition cancellations;
+the preceding checkpoint 23 passed all nine jobs. Final commit/head/PR/hosted-CI
+receipt is recorded on draft PR 196 after push. Pending CI is not a claimed pass.
+
+The authorized outcome is Health continuation screened with explicit unresolved
+dependencies, ready for external review. It is not accepted editorial state or
+exhaustive Health-universe/package closure. Do not continue into another domain.

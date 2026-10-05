@@ -1094,6 +1094,18 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
+    def test_final_shared_legislative_meanings_keep_member_choices_in_projection(self):
+        for aid in ["house:119:1:262", "house:119:1:299", "house:119:1:320"]:
+            shared = next(a for a in self.author["actions"] if a["action_id"] == aid)
+            self.assertNotIn("Foushee", shared["meaning"])
+            self.assertNotIn("Massie", shared["meaning"])
+        for member in self.products[2]:
+            choices = {a["action_id"]: a["official_status"] for a in member["actions"]}
+            self.assertEqual(choices["house:119:1:262"], "Nay")
+            self.assertEqual(choices["house:119:1:320"], "Nay")
+            self.assertEqual(choices["house:119:1:299"],
+                             "Nay" if member["member_id"] == "F000477" else "Yea")
+
     def test_stale_universe_cannot_replay_new_interpretations(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         author = copy.deepcopy(self.author); author["actions"].pop()
