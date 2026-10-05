@@ -1093,3 +1093,101 @@ work span separate sessions; no precise end-to-end batch throughput is fabricate
 Next236throughremaining2026queue,then eleven unfinished2025actions.2025roll237/2026roll44
 examined dependencies and2026roll45follow-up remain. Checkpoint is candidate-only and
 requires external semantic review; push/exact-head CI receipts follow.
+
+### Daytime continuation: checkpoint 16 in progress
+
+The user explicitly resumed the full Health goal after the overnight deadline expired.
+The old deadline and shutdown receipt are historical. The terminal marker was removed;
+an intermediate checkpoint does not warrant recreating it. The app's stored goal remains
+`blocked`; available goal tools cannot reactivate it. This does not revoke direct work
+authority. Checkpoint 15 c396601fc0dbe0d70bcd7227a3c8b06da3f3606f passed hosted CI
+37325012961 at that exact head.
+
+Scope: exact 2026 rolls 236–249. Read primary Clerk identities, the four-measure rule,
+standard-time and merchant-category bills, clinic naming, actual bare recommittal motions,
+and State appropriations amendment/final-passage boundaries. Author shared meanings only
+for supported Health propositions, project both members mechanically, regenerate and
+validate a coherent candidate checkpoint. Preserve already completed 235 and 250.
+
+Expected fan-out: four canonical inputs, seven generated JSON files, review packet,
+focused regression/count updates and this plan; semantic validation only. No frontend,
+persistence, approval, publication, production or architecture changes are authorized.
+The large State package requires materially incorporated authorities and cannot be
+classified from the bill title or sponsors' claims about spending.
+
+Research distinctions already established: Jordan amendment cuts entire specified accounts
+as well as banning Act funding for Jordan; the Global Health cut is not a demonstrated
+Jordan health allocation. Bare recommittal motions remain distinct from explanatory
+instructions printed as previously referred material. SAVE America text was appended by
+an engrossment instruction; no separate July 15 member vote on its components is inferred.
+Further authoring, source curation, manual output inspection, preservation/replay, focused
+tests, seven semantic gates, commit/push/PR update and exact-head CI remain to be completed.
+
+### Checkpoint 16 local completion receipt
+
+Starting head: c396601fc0dbe0d70bcd7227a3c8b06da3f3606f. Screened all fourteen
+2026 rolls 236–249: four interpreted propositions (243/244/245/247), five procedural
+controls (236/237/239/246/249), five exclusions (238/240/241/242/248). Already completed
+235 and 250 remain identical. Cumulative continuation reviews: 167 (18 interpreted,
+64 procedural, nine expressive, 76 excluded). Candidate totals: 103 interpreted,
+230 procedural, 19 expressive, 279 excluded, 45 unresolved: 43 unfinished screenings
+and two examined dependencies. Four H.R.8595 actions share one new episode, yielding
+76 episodes, 206 observations, 75 Foushee and 68 Massie findings/143 propositions.
+
+The Israel amendment bars Act funds for the country and cuts FMF $3.3 billion, with
+a qualified designated refugee-assistance intersection; it is broader than a weapons
+cut, without an invented medical subtotal. The Jordan amendment combines a country ban
+with eight whole-account reductions totaling $2.1 billion, including $845.1 million
+Global Health Programs and $50 million ERMA. The former amount is not the parent bill's
+identically sized Jordan budget-support designation or a demonstrated Jordan medical
+allocation. The UN amendment intersects with expressly authorized UNHCR refugee aid;
+recipient scope does not automatically extend to every international organization.
+All three amendments failed. Both members supported 243; Foushee opposed 244/245 while
+Massie supported them. Both opposed the final combined State/foreign-assistance/SAVE
+package. No separate component positions, preferred alternative or motive is inferred.
+
+Whole-package qualifications include Global Fund as a subset of HIV/AIDS funds;
+family-planning ceiling rather than minimum; distinct IHA/ERMA appropriations and prior
+IDA rescission; voluntary-care and pregnancy-care exceptions; differentiated U.S./foreign
+NGO, international-organization and foreign-government award terms; U.S. speech and
+2013 policy-pledge holding; gender-rule medical exceptions; legally qualified EO duties;
+transfers/reserves rather than additional appropriations; expired Global Fund ratios;
+adopted NGO-exception deletion/renumbering and Mexico 50-percent withholding; and four
+specified Opportunity Fund accounts, rather than the floor-asserted Global Health pot.
+The rule-authorized SAVE addition uses compared House-passed S.1383 text; no July 15
+independent election or earlier Senate veterans component vote is created. Contrary
+floor assertions remain attributed without adopting predictions or misconduct claims.
+Bare recommittals are distinguished from separately printed, previously referred
+instructions. Standard-time changes, firearm merchant codes, Fulbright-minimum deletion,
+GEF contribution deletion and existing VA-clinic naming do not create Health findings.
+
+39 new governed captures, one distinct existing S.1383 capture reused: 465 new captures
+since benchmark/1,890 total and 530 membership reviews. Rejected report 747 belongs to
+another bill; failed/maintenance responses are excluded. Additional legal-text extents
+are bounded to materially incorporated provisions, not full historical laws. Existing
+captures remain identical. The large package's research was performed once and reused
+for amendment context/final-version distinctions. No new efficiency architecture or
+measured token/time saving is claimed. Research spans resumed sessions; no precise
+end-to-end duration is fabricated. Manual work covers source reading, material exceptions,
+contrary evidence, four shared meanings/claims and generated readable-output inspection;
+deterministic code owns projection, generation, accounting, hashes and preservation.
+
+171 focused tests and all seven semantic checks pass. Two new regressions verify one
+four-action episode, actual No/Aye normalization and member choices, exclusion of ten
+controls, required material authorities and rejection of an unbound fabricated claim.
+The initial new-test core/episode-field mistake and stale finding count were corrected;
+the schema check uses existing root node modules via NODE_PATH, without installation.
+All 99 previous authored/core actions, 1,851 sources, 516 reviews and all 141 previous
+propositions remain identical. Benchmark actions/sources/reviews remain identical; the
+earlier documented housing extension remains the sole historical derived-proposition
+delta. Inventory: 167 changed/509 identical. Seven generated JSON files and packet
+replay byte-identically; all 37 earlier pending local captures retain exact file hashes.
+Actual compacts, four recorded choices and qualifications for both members were read.
+Diff: fourteen intended tracked files; generated expansion is confined to the new episode
+and candidate accounting/proofs. No public, production, acceptance or registry effects.
+
+Next queue action: 251, then remaining 2026 screenings and eleven unfinished 2025 actions.
+2025 roll237 and 2026 roll44 examined dependencies and 2026 roll45 completeness follow-up
+remain explicit. This is an intermediate candidate checkpoint, not completion of Health.
+Commit/push and exact-head hosted CI receipts follow. The stale blocked app-goal state
+remains a separate automatic-continuation limitation; direct daytime authority continues.

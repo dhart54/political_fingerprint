@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "69207cbee12d70024a7e4bc28531de08021dd3be3d61510c93f7a811e5d08efa",
-  "source_capture_sha256": "ed3cd4b28c72f0fb9cd9d315009ef9dcf05542959f09f2f8f607e1e68c973493",
-  "core_sha256": "d96d3e6cb790bbd755c26e4ac3a885258d1f9f2bf6d6785a1db5b2c612a88f6c",
-  "compiled_sha256": "985546fd0d2ac69ed85eef3fe213e1c7f844b0c347ab29dd9913531c5b390e83",
-  "readable_sha256": "41de46058195962e185599f53d1d6c66a48ef7be5af1bbbf42ccf0c44426edaa",
+  "input_sha256": "e552eb4eede212d09e6ab3db68f96b5121cadf5a0278f76eb19a24daf595129e",
+  "source_capture_sha256": "aad66e7dba5fd57deab272532b2d432f55dfa05805541de0f751f6dfc0913a68",
+  "core_sha256": "b576bcf76dad126cac0c72e71d5ec3e53b80cf52111db71103101b2eeb4e4555",
+  "compiled_sha256": "2a682bf5547521bca4290111a92b09c218021ce01dc889de664f3f415fe22d34",
+  "readable_sha256": "610d43159c818b6359178115d0c1bc6741f75815d690154b58d75217d8be101c",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1993,6 +1993,86 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing the whole KIDS digital safety, privacy, crisis-resource and research package with its defined limits",
           "source_id": "clerk:119:2:228"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:243",
+      "shared_sha256": "18f8c09086f9dcabd40d1ab6fc5c9f3057ead467862e47f0e9a224b5cf8ae3da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Israel funding prohibition and $3.3-billion military-financing reduction, including its broader refugee-assistance intersection",
+          "source_id": "clerk:119:2:243"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Israel funding prohibition and $3.3-billion military-financing reduction, including its broader refugee-assistance intersection",
+          "source_id": "clerk:119:2:243"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:244",
+      "shared_sha256": "14090219a97779fc11975e69d974a50cc4a8864f2b33103c334d5a3d42c38be7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the Jordan funding prohibition and eight whole-account reductions, including global-health and emergency-refugee cuts",
+          "source_id": "clerk:119:2:244"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Jordan funding prohibition and eight whole-account reductions, including global-health and emergency-refugee cuts",
+          "source_id": "clerk:119:2:244"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:245",
+      "shared_sha256": "f4fbaff6b925dc4e00d95983eab53e6732ce2e042e55391257136e2188f98e53",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed prohibiting this Act’s funds from being made available to the United Nations, including its humanitarian-recipient intersection",
+          "source_id": "clerk:119:2:245"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported prohibiting this Act’s funds from being made available to the United Nations, including its humanitarian-recipient intersection",
+          "source_id": "clerk:119:2:245"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:247",
+      "shared_sha256": "42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2027 State/security,global-health/humanitarian and rule-added SAVE package with its qualified restrictions",
+          "source_id": "clerk:119:2:247"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2027 State/security,global-health/humanitarian and rule-added SAVE package with its qualified restrictions",
+          "source_id": "clerk:119:2:247"
         }
       ]
     }
