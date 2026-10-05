@@ -641,6 +641,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:267",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -1283,6 +1289,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:267",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     }
@@ -4222,6 +4234,31 @@
         "structural_metadata": {
           "stage_order": 20272
         }
+      },
+      {
+        "action_id": "house:119:2:267",
+        "action_meaning_ref": "house119-through-2026-09-16:house:119:2:267:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "HEALTH_SOCIAL",
+          "exact_action_basis": "Mace's Part A amendment 19 in Report 119-755 is the distinct medical-care amendment recorded as amendment 14 in roll 267. It would insert 10 U.S.C. 1076g, excluding the amendment's defined gender-related medical treatment from care under 1076 for armed-forces members and their dependents and prohibiting the Secretary of Defense from furnishing that treatment, subject to the stated exceptions. It also adds that prohibition to 1077(b) and deletes the words that could result in sterilization from 1079(a)(20). This is a direct proposed care-coverage and furnishing restriction, separate from the adjoining school-athletics amendment and later whole-package passage.\n\nThe treatment definition is purpose-bound. It includes listed surgeries, exogenous androgens or estrogen, and puberty-suppression drugs when provided for the defined purpose of addressing a person's perception that their gender or sex differs from the amendment's specified male or female categories. It does not prohibit each named medicine or surgery for every medical purpose. The amendment supplies reproductive-system definitions and treats gender as sex under its printed terms; those are described as legislative definitions rather than adopted as clinical findings or claims about identity.\n\nExceptions in proposed 1076g cover specified physician-tested disorders of sex development, irresolvably ambiguous sex characteristics including the listed chromosome or tissue conditions, and infection, injury, disease or disorder caused or exacerbated by the defined treatment. The first two clauses say such minor although the general prohibition names members and dependents without an express minor-only age limit. Preserve that wording rather than silently making the entire restriction minor-only or extending every exception to adults.\n\nThe dated 2024 Code capture of 1079(a)(20) already contains a restriction on gender-dysphoria interventions that could result in sterilization for children under 18. Deleting that qualifier would broaden that paragraph to the specified interventions for children under 18 irrespective of sterilization; it is not the first restriction on all referenced care. The exceptions added to 1076g are not automatically inserted into the separately edited 1079(a)(20). Existing 1079 also contains appearance-related surgery restrictions with reconstruction/neoplastic exceptions and medical-necessity conditions.\n\nSection 1076's captured baseline governs dependent eligibility and facility, staff and mission limits. The proposed 1076g expressly refers to members and dependents through that section; this candidate preserves the cross-reference without asserting unrestricted application to every member-care pathway. Its rule of construction creates no entitlement to care otherwise unavailable. No claim is made that all defined treatments are covered under the dated baseline or under every July 2026 policy.\n\nThe House agreed to this amendment on July 21, 2026. Competing floor assertions about medical safety, effectiveness, mental-health consequences, readiness and motive remain attributed debate. The operative definition and exceptions govern the candidate; amendment agreement does not establish enactment, implementation, an individual denial of care or a clinical outcome. A choice on this amendment does not express a separate choice on the adjacent athletics proposal or every eventual NDAA component.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr8800:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:267",
+          "govinfo:hrpt119-755-partA-19",
+          "govinfo:hres1438eh",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:10usc1077-2024-operative",
+          "govinfo:10usc1079-2024-operative",
+          "congressional-record:2026-07-21-ndaa-mace-care"
+        ],
+        "structural_metadata": {
+          "stage_order": 20267
+        }
       }
     ],
     "episodes": [
@@ -4880,6 +4917,14 @@
         "episode_id": "episode:hr9770:119",
         "action_ids": [
           "house:119:2:272"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr8800:119",
+        "action_ids": [
+          "house:119:2:267"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

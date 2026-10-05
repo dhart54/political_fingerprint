@@ -122,7 +122,8 @@
     "house:119:2:247",
     "house:119:2:251",
     "house:119:2:271",
-    "house:119:2:272"
+    "house:119:2:272",
+    "house:119:2:267"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -137,10 +138,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 232,
-      "exact_action_ineligible": 282,
-      "interpreted_substantive_directional": 106,
+      "exact_action_ineligible": 291,
+      "interpreted_substantive_directional": 107,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 37
+      "source_unresolved": 27
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -149,14 +150,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 106,
-    "directional_substantive_actions": 106,
+    "substantive_eligible_actions": 107,
+    "directional_substantive_actions": 107,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
-    "exact_action_ineligible_actions": 282,
-    "unresolved_boundary_cases": 37,
-    "independent_episode_count": 79,
+    "exact_action_ineligible_actions": 291,
+    "unresolved_boundary_cases": 27,
+    "independent_episode_count": 80,
     "multi_action_episode_count": 11,
     "mechanism_types": [
       "amendment",
@@ -169,12 +170,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 106,
-      "substantive_actions": 106,
+      "ready_substantive_actions": 107,
+      "substantive_actions": 107,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "twenty unfinished255-278NDAA actions,earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. Eleven non-NDAA251-282actions screened;next255NDAA source family."
+      "ten unfinished NDAA actions259/260/261/262/263/264/266/273/274/278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. Ten additional exact NDAA amendments screened; remaining family and older queue remain unfinished."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -671,6 +672,15 @@
         "house:119:2:242",
         "house:119:2:248",
         "house:119:2:252",
+        "house:119:2:255",
+        "house:119:2:256",
+        "house:119:2:257",
+        "house:119:2:258",
+        "house:119:2:265",
+        "house:119:2:268",
+        "house:119:2:269",
+        "house:119:2:275",
+        "house:119:2:276",
         "house:119:2:280",
         "house:119:2:282",
         "house:119:2:284",
@@ -796,6 +806,7 @@
         "house:119:2:247",
         "house:119:2:250",
         "house:119:2:251",
+        "house:119:2:267",
         "house:119:2:271",
         "house:119:2:272",
         "house:119:2:283",
@@ -842,33 +853,23 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:255",
-        "house:119:2:256",
-        "house:119:2:257",
-        "house:119:2:258",
         "house:119:2:259",
         "house:119:2:260",
         "house:119:2:261",
         "house:119:2:262",
         "house:119:2:263",
         "house:119:2:264",
-        "house:119:2:265",
         "house:119:2:266",
-        "house:119:2:267",
-        "house:119:2:268",
-        "house:119:2:269",
         "house:119:2:273",
         "house:119:2:274",
-        "house:119:2:275",
-        "house:119:2:276",
         "house:119:2:278"
       ]
     },
-    "count_basis": "106 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 37 unresolved comprise 35 unfinished screenings plus2 examined dependencies. New251/271/272form separate episodes;Massie251NotVoting is nondirectional;controls noncounting."
+    "count_basis": "107 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 27 unresolved comprise 25 unfinished screenings plus2 examined dependencies. New267 is a distinct medical-care amendment within8800; whole-package278 remains unfinished; excluded amendments and controls remain noncounting."
   },
-  "episode_completeness": "79 candidate episodes cover 106 supplied actions. NewFECA,banking andCRproposals remain separate;earlierhousing/farm/foreignaidsequences preserved. Discovery/episode completeness remains unproven.",
+  "episode_completeness": "80 candidate episodes cover 107 supplied actions. New8800medical-care amendment is separate from unfinished whole-package278; previous episodes and meanings preserved. Discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "ff2d9515bb48a79c840d77c0d3011eb611c882e29af20279014579d0a451847c",
+  "universe_subject_sha256": "39b3fecd717aae10df24e0dc4bc394c2ee8c17786fa6c1d67a13df6be4c68f29",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -48412,13 +48413,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Boebert, acting as Roy's designee, offers Part A 1 to strike RCP 119-33 section 1213. That section extends the Afghanistan War Commission final-report deadline from three to four years. It does not provide or withdraw Afghan medical/refugee benefits, Ukraine assistance or clinical services. Failed distinct reporting-deadline amendment; parent-defense care provisions do not establish exact membership. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [65, 361, 0, 10]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:255",
         "url": "https://clerk.house.gov/evs/2026/roll255.xml",
-        "raw_sha256": "3160ea5770d6ba86655609b626376d7e47d48d81576283b97495ee4a1e21e9d3",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "711b7eae9168e5af2c407ef56319a863021411c153663e42c455f6e607ebce8b",
+        "governed_bytes_sha256": "3d881b5d9adf240854cef881df2b02b635a7fe67d08a0b977549b7b4d5798111",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48429,24 +48431,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Boebert, acting as Roy's designee, offers Part A 1 to strike RCP 119-33 section 1213. That section extends the Afghanistan War Commission final-report deadline from three to four years. It does not provide or withdraw Afghan medical/refugee benefits, Ukraine assistance or clinical services. Failed distinct reporting-deadline amendment; parent-defense care provisions do not establish exact membership. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [65, 361, 0, 10]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:255",
           "url": "https://clerk.house.gov/evs/2026/roll255.xml",
-          "raw_sha256": "3160ea5770d6ba86655609b626376d7e47d48d81576283b97495ee4a1e21e9d3",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "711b7eae9168e5af2c407ef56319a863021411c153663e42c455f6e607ebce8b",
+          "governed_bytes_sha256": "3d881b5d9adf240854cef881df2b02b635a7fe67d08a0b977549b7b4d5798111"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-1",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "8c3fa485e5a078c1c8debe56377f0d710507288189b83d1e666df97180a8fba2"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:255",
+        "source_ids": [
+          "clerk:119:2:255",
+          "govinfo:hrpt119-755-partA-1",
+          "rules:rcp119-33-ndaa-struck-sections",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:255",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "377cf38b4b0cb293df511da90f95fc33ef7e015e86251760ec5ea6393fc8ebfa"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:255",
+        "url": "https://clerk.house.gov/evs/2026/roll255.xml",
+        "raw_sha256": "3160ea5770d6ba86655609b626376d7e47d48d81576283b97495ee4a1e21e9d3",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48456,13 +48501,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Boebert as Roy's designee offers Part A 2, replacing section 521 with a complete 10 U.S.C. 347 prohibition on persons from foreign countries receiving instruction at USMA, USNA or USAFA. The base section 521 instead refers to covered-country nationals. Exact service-academy instruction eligibility is not patient-care, insurance or household social-benefit eligibility. Failed distinct amendment; no inference that every foreign medical benefit is removed. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [61, 360, 0, 15]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:256",
         "url": "https://clerk.house.gov/evs/2026/roll256.xml",
-        "raw_sha256": "04520f45454eb50cdda218eee4d6988008591b3e15bab8f7a3887335bbba7fa8",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "2c4b1e9203e940c3777ebe838f708239c5cc4b4bccbe0964bb3eae64902ea10b",
+        "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48473,24 +48519,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Boebert as Roy's designee offers Part A 2, replacing section 521 with a complete 10 U.S.C. 347 prohibition on persons from foreign countries receiving instruction at USMA, USNA or USAFA. The base section 521 instead refers to covered-country nationals. Exact service-academy instruction eligibility is not patient-care, insurance or household social-benefit eligibility. Failed distinct amendment; no inference that every foreign medical benefit is removed. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [61, 360, 0, 15]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:256",
           "url": "https://clerk.house.gov/evs/2026/roll256.xml",
-          "raw_sha256": "04520f45454eb50cdda218eee4d6988008591b3e15bab8f7a3887335bbba7fa8",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "2c4b1e9203e940c3777ebe838f708239c5cc4b4bccbe0964bb3eae64902ea10b",
+          "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-2",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "4fea98df1bbfe243d2a805df2c40f4cc12fd25d48d4fc93af2e13193e64e8804"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:256",
+        "source_ids": [
+          "clerk:119:2:256",
+          "govinfo:hrpt119-755-partA-2",
+          "rules:rcp119-33-ndaa-struck-sections",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:256",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "427b0e9ea8d7dc249c50e579c288c90ca525cbf448b36d91abf5cb179bffd59b"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:256",
+        "url": "https://clerk.house.gov/evs/2026/roll256.xml",
+        "raw_sha256": "04520f45454eb50cdda218eee4d6988008591b3e15bab8f7a3887335bbba7fa8",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48500,13 +48589,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Boebert as Roy's designee offers Part A 3 to strike section 524, which would remove the five-cadet/midshipman cap on alternative service obligations for professional athletes at three academies. Exact personnel/service-obligation cap, not clinical or social-service delivery/financing. Failed amendment; does not abolish the entire alternative-obligation framework. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [65, 359, 0, 12]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:257",
         "url": "https://clerk.house.gov/evs/2026/roll257.xml",
-        "raw_sha256": "17812a862eb38c7ffcdbd37632307ac34411a351c799787f275d65dfda6fcde2",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "12d94deb836cb614716981bc728fe70071abeef06793ecc5874d68e74e03bea3",
+        "governed_bytes_sha256": "abca6fd0fe7ac6e6f86e4131b7073e556ae0126e8dd78544a4a09a29de296b33",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48517,24 +48607,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Boebert as Roy's designee offers Part A 3 to strike section 524, which would remove the five-cadet/midshipman cap on alternative service obligations for professional athletes at three academies. Exact personnel/service-obligation cap, not clinical or social-service delivery/financing. Failed amendment; does not abolish the entire alternative-obligation framework. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [65, 359, 0, 12]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:257",
           "url": "https://clerk.house.gov/evs/2026/roll257.xml",
-          "raw_sha256": "17812a862eb38c7ffcdbd37632307ac34411a351c799787f275d65dfda6fcde2",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "12d94deb836cb614716981bc728fe70071abeef06793ecc5874d68e74e03bea3",
+          "governed_bytes_sha256": "abca6fd0fe7ac6e6f86e4131b7073e556ae0126e8dd78544a4a09a29de296b33"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-3",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "21db4c651cce4183b2cb2aad77f15c66e10eede57221fbbe496bce465da35f02"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:257",
+        "source_ids": [
+          "clerk:119:2:257",
+          "govinfo:hrpt119-755-partA-3",
+          "rules:rcp119-33-ndaa-struck-sections",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:257",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2b90bacbcec6a815629ea457271dc1132e035cc2e750b0be7d24551c2fc42d6c"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:257",
+        "url": "https://clerk.house.gov/evs/2026/roll257.xml",
+        "raw_sha256": "17812a862eb38c7ffcdbd37632307ac34411a351c799787f275d65dfda6fcde2",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48544,13 +48677,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Boebert as Roy's designee offers Part A 4 to strike section 518. The optional three-year voice-based risk-assessment pilot supports targeted drug testing within the Drug Demand Reduction Program, with deterrence, security, fitness, discipline and punitive-use purposes, privacy/law conditions and a one-year assessment. Its operative purpose is personnel drug-testing enforcement, not substance-use treatment, patient care or a household benefit. Agreement to the strike does not cancel every military drug test or establish a clinical outcome. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [265, 161, 1, 9]; Foushee Aye/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:258",
         "url": "https://clerk.house.gov/evs/2026/roll258.xml",
-        "raw_sha256": "71e6bdf744252e0c63740ac1fbb994438f486028768c19b5125258710fda0c83",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "b4a3d127cef7f715d15ad086cafe2c2da5a3965e63f37b826ada5fdd94dc0272",
+        "governed_bytes_sha256": "8acedca14aa98c9b7c47a27ac8d4152f1c6e0200a3aec22c3c2779213580df71",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48561,24 +48695,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Boebert as Roy's designee offers Part A 4 to strike section 518. The optional three-year voice-based risk-assessment pilot supports targeted drug testing within the Drug Demand Reduction Program, with deterrence, security, fitness, discipline and punitive-use purposes, privacy/law conditions and a one-year assessment. Its operative purpose is personnel drug-testing enforcement, not substance-use treatment, patient care or a household benefit. Agreement to the strike does not cancel every military drug test or establish a clinical outcome. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [265, 161, 1, 9]; Foushee Aye/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:258",
           "url": "https://clerk.house.gov/evs/2026/roll258.xml",
-          "raw_sha256": "71e6bdf744252e0c63740ac1fbb994438f486028768c19b5125258710fda0c83",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "b4a3d127cef7f715d15ad086cafe2c2da5a3965e63f37b826ada5fdd94dc0272",
+          "governed_bytes_sha256": "8acedca14aa98c9b7c47a27ac8d4152f1c6e0200a3aec22c3c2779213580df71"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-4",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "e274559547db5129ac8e3e42b6e5b0e1f53963b5445d008ff01266b5812eca9f"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:258",
+        "source_ids": [
+          "clerk:119:2:258",
+          "govinfo:hrpt119-755-partA-4",
+          "rules:rcp119-33-ndaa-struck-sections",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:258",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ecc2192cdb6a346112ee0d7be4452165afc026d5a27732af3e2d2dfa077c7dc2"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:258",
+        "url": "https://clerk.house.gov/evs/2026/roll258.xml",
+        "raw_sha256": "71e6bdf744252e0c63740ac1fbb994438f486028768c19b5125258710fda0c83",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48852,13 +49029,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Crank Part A 17 adds a permission process for assigned military/civilian personnel carrying firearms at specified U.S. Defense facilities, with a designated below-general commander, objective individualized denial reasons, procedures due December 31, 2027 and repeal of the 2016 process provision. This firearm-permission rule has no operative care/coverage/social-service mechanism; predicted safety or injury effects do not supply membership. Agreed distinct amendment, not enactment or a medical-policy choice. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [215, 214, 0, 8]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:265",
         "url": "https://clerk.house.gov/evs/2026/roll265.xml",
-        "raw_sha256": "baceb48520bd60338c3163fefa738baa5d0749da25c20375e1a1048a07dd02e9",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "906f278e5dfd6d58a8b02c13bbb0b1be68761dec98c266c21c0b335354513657",
+        "governed_bytes_sha256": "a776910596377a7566a68a1b81d5006cbfb07db5cfba59555fe039332d566c3c",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48869,24 +49047,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Crank Part A 17 adds a permission process for assigned military/civilian personnel carrying firearms at specified U.S. Defense facilities, with a designated below-general commander, objective individualized denial reasons, procedures due December 31, 2027 and repeal of the 2016 process provision. This firearm-permission rule has no operative care/coverage/social-service mechanism; predicted safety or injury effects do not supply membership. Agreed distinct amendment, not enactment or a medical-policy choice. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [215, 214, 0, 8]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:265",
           "url": "https://clerk.house.gov/evs/2026/roll265.xml",
-          "raw_sha256": "baceb48520bd60338c3163fefa738baa5d0749da25c20375e1a1048a07dd02e9",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "906f278e5dfd6d58a8b02c13bbb0b1be68761dec98c266c21c0b335354513657",
+          "governed_bytes_sha256": "a776910596377a7566a68a1b81d5006cbfb07db5cfba59555fe039332d566c3c"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-17",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "48f1ddf37c10ca403fd3dfaf8a9f54e70477ab41b223533d05b8b1a473f546d4"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:265",
+        "source_ids": [
+          "clerk:119:2:265",
+          "govinfo:hrpt119-755-partA-17",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:265",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "02b5015202163a5dd43da6267890bf6ad0dbce6c6ffe5324e8c69e4d24f01e21"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:265",
+        "url": "https://clerk.house.gov/evs/2026/roll265.xml",
+        "raw_sha256": "baceb48520bd60338c3163fefa738baa5d0749da25c20375e1a1048a07dd02e9",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48940,15 +49154,16 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: a distinct amendment restricting purpose-defined TRICARE treatment coverage and furnishing, with printed exceptions, and deleting the sterilization qualifier from a separate under-18 restriction. The dated baseline, dependent-care cross-reference, existing eligibility/mission limits and no-new-entitlement construction remain explicit. Clinical conclusions, enactment, individual care loss, whole-package choices and adjacent athletics positions are not inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [219, 208, 0, 9]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:267",
         "url": "https://clerk.house.gov/evs/2026/roll267.xml",
-        "raw_sha256": "0f7d17f67c0cb4e09f3a704cb9be408024106b5a348ecf81594e59df177109af",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "f0bb5bcc20aa2e2bfebe91f6eeefdcff527d66dbfefd083dab2e4150fa16bcdf",
+        "governed_bytes_sha256": "04aa3ec0fa1d4d034fb0699826d6a359589cad847bc07456f2f1e462c0394fe8",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8800:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8800",
       "member_action": "nay",
@@ -48957,24 +49172,81 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: a distinct amendment restricting purpose-defined TRICARE treatment coverage and furnishing, with printed exceptions, and deleting the sterilization qualifier from a separate under-18 restriction. The dated baseline, dependent-care cross-reference, existing eligibility/mission limits and no-new-entitlement construction remain explicit. Clinical conclusions, enactment, individual care loss, whole-package choices and adjacent athletics positions are not inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [219, 208, 0, 9]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:267",
           "url": "https://clerk.house.gov/evs/2026/roll267.xml",
-          "raw_sha256": "0f7d17f67c0cb4e09f3a704cb9be408024106b5a348ecf81594e59df177109af",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "f0bb5bcc20aa2e2bfebe91f6eeefdcff527d66dbfefd083dab2e4150fa16bcdf",
+          "governed_bytes_sha256": "04aa3ec0fa1d4d034fb0699826d6a359589cad847bc07456f2f1e462c0394fe8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-19",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "fcf8dd57e811084bb19d94b9a31c740a68d16a00a996ee2a3be5af92c7e03050"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "raw_sha256": "ecb7a37f849b2568b36a9ea4da871f81aca50bdb96f23145e38cca9cfcf1f928",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3"
+        },
+        {
+          "source_id": "govinfo:10usc1077-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm",
+          "raw_sha256": "b65d1182fe7c9226c2f231c304d6e7f470d3f5c39f4739ae71e8e3a950341af3",
+          "governed_bytes_sha256": "8778803653b029eb4bbf8ede359381acc08e0c1ffafdab5c878a0f4c609a66ef"
+        },
+        {
+          "source_id": "govinfo:10usc1079-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm",
+          "raw_sha256": "23cfda2bc13333b492856ffedf20a94663278a9770bf7342c7704912a98c6022",
+          "governed_bytes_sha256": "85cfc87d5feb12abe55d8a67830f04d506323d5ff81d30af7e65e78795ae7466"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-mace-care",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "4f42084ac3648298a1d59a33eaa0892b8c290e0240aaba0e082964121fdcd72f"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:267",
+        "source_ids": [
+          "clerk:119:2:267",
+          "govinfo:hrpt119-755-partA-19",
+          "govinfo:hres1438eh",
+          "govinfo:10usc1076-2024-operative",
+          "govinfo:10usc1077-2024-operative",
+          "govinfo:10usc1079-2024-operative",
+          "congressional-record:2026-07-21-ndaa-mace-care"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:267",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "aa73c2b6d6792e77a007ac440a6423a9307e3478ecbc3940a81d7d2a9ea9e0c7"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:267",
+        "url": "https://clerk.house.gov/evs/2026/roll267.xml",
+        "raw_sha256": "0f7d17f67c0cb4e09f3a704cb9be408024106b5a348ecf81594e59df177109af",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48984,13 +49256,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace Part A 20 restricts male participation in female-designated DoDEA school athletic programs under its printed sex definitions. Training/practice remains possible if no female loses a roster spot, participation opportunity or accompanying benefit. Exact school-athletics rule, not a treatment, clinical-assessment or care-coverage restriction; adjoining Part A 19 cannot establish its membership. Agreed distinct amendment; no inferred clinical or safety outcome. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [221, 203, 0, 12]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:268",
         "url": "https://clerk.house.gov/evs/2026/roll268.xml",
-        "raw_sha256": "e57b2862847dc61fe6d4aaad7e937fcf95c709f4951b35700f25448899f3b828",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "95b8f94d910210d0cc7b645989eb81a0f641dfc702de0ed67f31e4cf8fc611e4",
+        "governed_bytes_sha256": "5aae6f0f2369fcaf6b83f3b9ff749cd8f88eb3f618a8cb071941aa7f32fc4667",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49001,24 +49274,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace Part A 20 restricts male participation in female-designated DoDEA school athletic programs under its printed sex definitions. Training/practice remains possible if no female loses a roster spot, participation opportunity or accompanying benefit. Exact school-athletics rule, not a treatment, clinical-assessment or care-coverage restriction; adjoining Part A 19 cannot establish its membership. Agreed distinct amendment; no inferred clinical or safety outcome. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [221, 203, 0, 12]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:268",
           "url": "https://clerk.house.gov/evs/2026/roll268.xml",
-          "raw_sha256": "e57b2862847dc61fe6d4aaad7e937fcf95c709f4951b35700f25448899f3b828",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "95b8f94d910210d0cc7b645989eb81a0f641dfc702de0ed67f31e4cf8fc611e4",
+          "governed_bytes_sha256": "5aae6f0f2369fcaf6b83f3b9ff749cd8f88eb3f618a8cb071941aa7f32fc4667"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-20",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "ba407a2052b0a918778969061fa0dd8df305b2d50f08317b94e4765c3f809675"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:268",
+        "source_ids": [
+          "clerk:119:2:268",
+          "govinfo:hrpt119-755-partA-20",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:268",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "84711ebf5ae2b51854f2ae37bb2b5836c57ea6a4bc3d0219ba18e03f0116b4ae"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:268",
+        "url": "https://clerk.house.gov/evs/2026/roll268.xml",
+        "raw_sha256": "e57b2862847dc61fe6d4aaad7e937fcf95c709f4951b35700f25448899f3b828",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49028,13 +49337,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "McDowell Part A 26 permits an education-choice financial-assistance pilot for specified dependent minors of full-time active-duty members in the United States, for private/faith/charter schools, home-school aids and other Secretary-approved education costs. It evaluates demand, feasibility, scalability and military/family readiness and ends after the 2030–2031 school year. Exact education assistance follows the established tuition-access boundary; a household payment or readiness claim alone does not create healthcare, social-insurance or social-service financing. Failed amendment; no benefit disbursement inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [214, 216, 0, 7]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:269",
         "url": "https://clerk.house.gov/evs/2026/roll269.xml",
-        "raw_sha256": "4971a1c795d4d693b17a67a395640790cbd226766c69b076ea4156514c755ff5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "3490f1e3d961fb3b2e6d4d3ceddd09ef2a25576175169919aacb8ddc2d0bb69e",
+        "governed_bytes_sha256": "0f5d05afe3f041ef1b721da0ed72f58e7d9019f0ce54e704195f00bc13c81712",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49045,24 +49355,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "McDowell Part A 26 permits an education-choice financial-assistance pilot for specified dependent minors of full-time active-duty members in the United States, for private/faith/charter schools, home-school aids and other Secretary-approved education costs. It evaluates demand, feasibility, scalability and military/family readiness and ends after the 2030–2031 school year. Exact education assistance follows the established tuition-access boundary; a household payment or readiness claim alone does not create healthcare, social-insurance or social-service financing. Failed amendment; no benefit disbursement inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [214, 216, 0, 7]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:269",
           "url": "https://clerk.house.gov/evs/2026/roll269.xml",
-          "raw_sha256": "4971a1c795d4d693b17a67a395640790cbd226766c69b076ea4156514c755ff5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "3490f1e3d961fb3b2e6d4d3ceddd09ef2a25576175169919aacb8ddc2d0bb69e",
+          "governed_bytes_sha256": "0f5d05afe3f041ef1b721da0ed72f58e7d9019f0ce54e704195f00bc13c81712"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-26",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "43101b90746f06b5b43d0c5f2280f49eac2a3010bd5c8db2981271eee9a148ea"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:269",
+        "source_ids": [
+          "clerk:119:2:269",
+          "govinfo:hrpt119-755-partA-26",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:269",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2742d5506775aaa4b7f0fa9c3f34bc809e9e41149aff2d6fa23ef0f4f34fda32"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:269",
+        "url": "https://clerk.house.gov/evs/2026/roll269.xml",
+        "raw_sha256": "4971a1c795d4d693b17a67a395640790cbd226766c69b076ea4156514c755ff5",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49445,13 +49791,14 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Harrigan Part A 44 prohibits Federal Defense purchase, installation, operation, maintenance or contracting for automated speed cameras on military installations and requires existing systems removed within 180 days. Other speed enforcement and security/access/force-protection/criminal-investigation cameras remain with the primary-purpose qualification. Traffic-enforcement mechanism, not clinical/social-benefit delivery; no predicted health outcome establishes membership. Agreed distinct amendment, not a foreign-property prohibition or implemented camera removal. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [232, 199, 0, 6]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:275",
         "url": "https://clerk.house.gov/evs/2026/roll275.xml",
-        "raw_sha256": "ad07cb974f5d2b14f3ccb22866392107a27d8a84eaafd4b3bbc65092674c5968",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "07ab443206c49fe20084c474b12b6ab2d37bdea221d0e0a356c0013b5dce2265",
+        "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49462,24 +49809,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Harrigan Part A 44 prohibits Federal Defense purchase, installation, operation, maintenance or contracting for automated speed cameras on military installations and requires existing systems removed within 180 days. Other speed enforcement and security/access/force-protection/criminal-investigation cameras remain with the primary-purpose qualification. Traffic-enforcement mechanism, not clinical/social-benefit delivery; no predicted health outcome establishes membership. Agreed distinct amendment, not a foreign-property prohibition or implemented camera removal. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [232, 199, 0, 6]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:275",
           "url": "https://clerk.house.gov/evs/2026/roll275.xml",
-          "raw_sha256": "ad07cb974f5d2b14f3ccb22866392107a27d8a84eaafd4b3bbc65092674c5968",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "07ab443206c49fe20084c474b12b6ab2d37bdea221d0e0a356c0013b5dce2265",
+          "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-44",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "dd6dbf94585ee927a23890a8abdc00a2862dcc13af97ac59e11ae831cda37b5e"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "200220eb1723bcd6c2d8082cab308527a47d1d4dbd2331223b643108589916c0"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:275",
+        "source_ids": [
+          "clerk:119:2:275",
+          "govinfo:hrpt119-755-partA-44",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-22-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:275",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ad0ba68689ddc3c349df589ee19ce565c1136750ee81c28177be203213313e6b"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:275",
+        "url": "https://clerk.house.gov/evs/2026/roll275.xml",
+        "raw_sha256": "ad07cb974f5d2b14f3ccb22866392107a27d8a84eaafd4b3bbc65092674c5968",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49489,13 +49872,14 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Grothman Part A 316 requires a 180-day report on options for reducing Defense civilian employment by 200,000, current component levels, recommendations maintaining mission/security, anticipated savings and needed legislative/administrative actions. It requests options rather than ordering 200,000 layoffs or reductions in a specified medical-service workforce. Exact workforce-planning report has no independent clinical/social-service delivery or benefit mechanism. Failed distinct amendment; no hospital closure or actual job loss inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [175, 254, 0, 7]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:276",
         "url": "https://clerk.house.gov/evs/2026/roll276.xml",
-        "raw_sha256": "79584fc97eef1c310998a44c7c62bc342f53bef5d34cf21f56a2f1f0a444784d",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "58ba211fccbfc02fee506ea4894c4b2cbf6629b0ab0e3a6e7bd0698c55c272ac",
+        "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49506,24 +49890,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Grothman Part A 316 requires a 180-day report on options for reducing Defense civilian employment by 200,000, current component levels, recommendations maintaining mission/security, anticipated savings and needed legislative/administrative actions. It requests options rather than ordering 200,000 layoffs or reductions in a specified medical-service workforce. Exact workforce-planning report has no independent clinical/social-service delivery or benefit mechanism. Failed distinct amendment; no hospital closure or actual job loss inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [175, 254, 0, 7]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:276",
           "url": "https://clerk.house.gov/evs/2026/roll276.xml",
-          "raw_sha256": "79584fc97eef1c310998a44c7c62bc342f53bef5d34cf21f56a2f1f0a444784d",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "58ba211fccbfc02fee506ea4894c4b2cbf6629b0ab0e3a6e7bd0698c55c272ac",
+          "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-316",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "4dc056886ece9ba8b97d24995144914e88160eeabd2b197f38cdf7e2ea3ed4b6"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-22-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "200220eb1723bcd6c2d8082cab308527a47d1d4dbd2331223b643108589916c0"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:276",
+        "source_ids": [
+          "clerk:119:2:276",
+          "govinfo:hrpt119-755-partA-316",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-22-ndaa-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:276",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "18df1b048c0aa52302de51eeaa7ec402e48968ac9ef4beb9831e11b2f2806289"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:276",
+        "url": "https://clerk.house.gov/evs/2026/roll276.xml",
+        "raw_sha256": "79584fc97eef1c310998a44c7c62bc342f53bef5d34cf21f56a2f1f0a444784d",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -52027,11 +52447,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "106 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "107 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "3107a93ed35ed0f48fb9ebfac4d51fb7f5a31ab862e23da316ffc3697e4d9e82",
+  "selection_sha256": "38e46b84def8d9277dc94c4049bf60bbe6e895f2fb439c2947368e4cc57ba832",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -52138,7 +52558,8 @@
     "house:119:2:247",
     "house:119:2:251",
     "house:119:2:271",
-    "house:119:2:272"
+    "house:119:2:272",
+    "house:119:2:267"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -52158,30 +52579,20 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:255",
-    "house:119:2:256",
-    "house:119:2:257",
-    "house:119:2:258",
     "house:119:2:259",
     "house:119:2:260",
     "house:119:2:261",
     "house:119:2:262",
     "house:119:2:263",
     "house:119:2:264",
-    "house:119:2:265",
     "house:119:2:266",
-    "house:119:2:267",
-    "house:119:2:268",
-    "house:119:2:269",
     "house:119:2:273",
     "house:119:2:274",
-    "house:119:2:275",
-    "house:119:2:276",
     "house:119:2:278"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "37 unresolved comprise 35 unfinished plus two examined dependencies;twenty unfinished255-278NDAA actions,earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282screened;250preserved.",
+    "basis": "27 unresolved comprise 25 unfinished plus two examined dependencies;ten unfinished NDAA actions259/260/261/262/263/264/266/273/274/278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus ten bounded NDAA amendments screened;250and277preserved.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -52233,6 +52644,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "a94036e26a4f80e509c01e6575fd8f26884dc618ad27252f7fd0696f721ef81a",
-  "membership_review_sha256": "22f47fda4d176c20c6bc540fb4f4e2d862fb04e5f20792f48e7213fdfbafabc0"
+  "proposal_sha256": "23f41bbd7fc1a47c154845b678b1538c04dba824f1fa1961b1d5f411c6f5a6dd",
+  "membership_review_sha256": "8d40cd5cb82d29cd23bfab5f320f9928cafdc866c6aafda84188b95eba80f06b"
 }

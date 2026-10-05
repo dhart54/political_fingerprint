@@ -1361,3 +1361,90 @@ Next:21NDAA-related255-269/273-278actions,including the already procedural277con
 then earlier unfinished2026rolls23/27/28/42 and eleven2025actions. Preserve examined
 2025roll237/2026roll44dependencies and2026roll45completeness follow-up. This is an
 intermediate checkpoint;goal remains active. Commit/push/exact-headCI receipts follow.
+
+### Daytime continuation and checkpoint 18 bounded scope
+
+Checkpoint 17 is 7a6b8f5c7bb424d047d881f6ea123f8872225131, pushed to the
+continuation branch. Exact-head CI 37338338431 completed successfully; draft
+PR 196 now records that receipt. The stored goal remains active. The expired
+overnight terminal instructions do not impose a daytime stopping deadline.
+
+The next bounded implementation screens ten independently resolved amendments:
+2026 rolls255/256/257/258/265/267/268/269/275/276. Expected fan-out remains the
+four candidate inputs, seven generated JSON outputs, review packet, one focused
+test file and this plan. Semantic-loop validation, exact previous/benchmark
+preservation, byte-identical replay and actual readable inspection are required.
+Nine are proposed exact-action exclusions;267 supplies one member-neutral
+medical-care amendment meaning, mechanically projected to both members.
+Remaining NDAA actions259/260/261/262/263/264/266/273/274/278 are unfinished,
+including whole-package278. Already reviewed277 remains a noncounting control.
+Earlier2026rolls23/27/28/42 and all eleven older2025actions remain in the queue.
+
+Primary Report119-755 and the public June11 RCP119-33 were acquired, identified
+and cached. The full1642-page PDF was parsed in5.35seconds after the1.18second
+acquisition/initial parse; these are narrow tool measurements, not end-to-end
+interpretation durations or measured model/token savings. Only complete material
+RCP518/521/524/1213 extents are curated here, not a full-package review. The
+recorded numbers differ from PartA numbers; exact Clerk metadata and actual
+floor offerings bind them. Boebert is Roy's designated offeror for PartA1–4,
+not an authoritative-source conflict. Complete PartA19 text and its full
+competing floor debate were read, plus dated1076/1077/1079 operative captures.
+Newer2025Code requests returned invalid pages and the preliminary Code site
+reported maintenance; failures are not governed evidence or proof of statutory
+absence. The candidate describes the proposed literal edit and dated baseline,
+without asserting exhaustive current coverage or clinical consequences.
+
+Corrected leads:1213 concerns an Afghanistan War Commission deadline, not aid;
+518 is punitive personnel drug-testing, not treatment;524 is a professional-
+athlete alternative-obligation cap;PartA17 is firearm permission;PartA44 is speed
+cameras;316 requests workforce-reduction options rather than ordering layoffs.
+The medical amendment remains separate from the DoDEA athletics amendment and
+education-assistance pilot. Its purpose-bound definition, printed minor-only
+wording in two exceptions, separate under18 deletion, baseline restrictions,
+eligibility/mission limits and no-new-entitlement provision remain material.
+Medical safety, readiness, motive and care-loss claims in debate are attributed.
+
+Research on other NDAA amendments remains local and incomplete: PartA18
+incorporates EO14183, not EO14187; the official EO was read, but membership is
+not yet determined. PartA28 chaplain text was read in full, including its mental-
+health-evaluation definition; current-law qualification and exact membership
+remain to be resolved. Ukraine and foreign-exercise mechanisms need their own
+material-authority review. Acquisition/indexing or partial reading is not screening.
+
+Checkpoint18 validation:176focused tests pass (32.087seconds for the final five-
+module run), and all seven canonical semantic checks pass. Two new regressions
+cover exact report/recorded-number binding, amendment rather than package scope,
+opposite mechanical choices, material qualifications on both presentation levels,
+struck-section source bindings, noncounting exclusions and failure when the exact
+operative source is removed. New-test exception/count assumptions were corrected:
+the existing missing-primary-source path raises an exact-source KeyError, and the
+new finding increases Foushee's count. Initial authoring supplied a string where
+the schema requires an array; in-memory validation rejected it before canonical
+writes, and it was corrected. The initial semantic command omitted the existing
+shared NODE_PATH; rerunning with that per-command environment passed without an
+installation or configuration change.
+
+All eight generated/review files replay byte-identically. All106previous authors
+and core actions,1922sources,541reviews and148propositions remain identical to
+7a6b8f5. Benchmark85authors/core,1425sources and363reviews remain identical;
+the previously documented housing-derived extension is the sole historical
+benchmark proposition delta. Universe inventory188changed/488identical. All37
+earlier pending local capture files retain their exact hashes. Actual new267
+compacts, choices and all five qualifications were read for both members:
+Foushee's No normalizes to Nay/opposition and Massie's Aye to Yea/support.
+The finding contains only267, with no268athletics or278whole-package position.
+Final diff checks pass;14owned files, with historical deadline and unrelated
+inaccessible temporary directories preserved. No runtime adapter changes.
+
+Candidate totals107interpreted/232procedural/19expressive/291excluded/27unresolved;
+27means25unfinished plus the two examined dependencies.80episodes,214member
+observations and150propositions/findings(79Foushee/71Massie). Cumulative188new
+reviews since the benchmark:22shared meanings,69procedural,9expressive and88
+exclusions.24newgoverned captures here, four prior governed sources reused;
+521new/1946totalcaptures and551reviewrecords. Core
+2fa8fec69ee454ca527e538f24647b6e6fe7615a795407cc386d053d98e85f1b;
+compiled877b65adf461f16db176ab36dac88a5b0d2fd6ad4f3e7cf1672bf3589b3c8d83.
+Cached PDF/report indexing, governed authority reuse and early operative exclusion
+routing support this bounded stage; no new efficiency architecture or measured
+end-to-end/model/token saving is claimed. This remains candidate-only and the
+goal remains active; commit/push/exact-headCI receipts follow at the next stage.

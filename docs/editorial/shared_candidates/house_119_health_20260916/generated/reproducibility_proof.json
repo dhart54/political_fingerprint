@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "3b1925e8a2a5a13ce21c5ec39cf45f48f8102c4f1261836005cd6364dac66777",
-  "source_capture_sha256": "968f4269ce01142d1e203c6a572483ab065e90b5f5651829ce668b489a2486d6",
-  "core_sha256": "a5965ea5e64b2716bf0f31ed44f36b6e282ddfabe62241a602c5c28ca8cf2d4e",
-  "compiled_sha256": "332f17b8c97b743d38c85bc58aee57d1b2638bedc171dcaf1bb3064bef0c2031",
-  "readable_sha256": "6fc3d8ff565e0883898b2ec949ce920b489466a66326e948202885291c31ee3f",
+  "input_sha256": "adff07c01f121cb14eec3e4df39e7572f7e358aad3ddc4c7491632f6c172020a",
+  "source_capture_sha256": "b1f7439dfd4a36143a4f45d7f8c8273ce6fdc4a4eea8f090a292f646fbcea945",
+  "core_sha256": "2fa8fec69ee454ca527e538f24647b6e6fe7615a795407cc386d053d98e85f1b",
+  "compiled_sha256": "877b65adf461f16db176ab36dac88a5b0d2fd6ad4f3e7cf1672bf3589b3c8d83",
+  "readable_sha256": "99302712f9e3ca90f81b9f6f4dc28334f549705781f8eb8e79620956058cfb03",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2133,6 +2133,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing the whole temporary continuing-appropriations package with its qualified medical, nutrition, IHS and TANF funding provisions",
           "source_id": "clerk:119:2:272"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:267",
+      "shared_sha256": "70fb1fee04b2a20ce561d062b4efe19aa69fc747571967e78d750ebd211e306b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the distinct amendment's purpose-defined TRICARE care-coverage and furnishing restriction with its stated exceptions, and removal of the sterilization qualifier from the separate under-18 contractual-care restriction",
+          "source_id": "clerk:119:2:267"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the distinct amendment's purpose-defined TRICARE care-coverage and furnishing restriction with its stated exceptions, and removal of the sterilization qualifier from the separate under-18 contractual-care restriction",
+          "source_id": "clerk:119:2:267"
         }
       ]
     }
