@@ -123,7 +123,9 @@
     "house:119:2:251",
     "house:119:2:271",
     "house:119:2:272",
-    "house:119:2:267"
+    "house:119:2:267",
+    "house:119:2:264",
+    "house:119:2:266"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -138,10 +140,10 @@
   "accounting": {
     "counts": {
       "procedural_context": 232,
-      "exact_action_ineligible": 291,
-      "interpreted_substantive_directional": 107,
+      "exact_action_ineligible": 298,
+      "interpreted_substantive_directional": 109,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 27
+      "source_unresolved": 18
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -150,13 +152,13 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 107,
-    "directional_substantive_actions": 107,
+    "substantive_eligible_actions": 109,
+    "directional_substantive_actions": 109,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
-    "exact_action_ineligible_actions": 291,
-    "unresolved_boundary_cases": 27,
+    "exact_action_ineligible_actions": 298,
+    "unresolved_boundary_cases": 18,
     "independent_episode_count": 80,
     "multi_action_episode_count": 11,
     "mechanism_types": [
@@ -170,12 +172,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 107,
-      "substantive_actions": 107,
+      "ready_substantive_actions": 109,
+      "substantive_actions": 109,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "ten unfinished NDAA actions259/260/261/262/263/264/266/273/274/278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. Ten additional exact NDAA amendments screened; remaining family and older queue remain unfinished."
+      "one unfinished NDAA whole-package278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. Nine remaining exact NDAA amendments screened; remaining family and older queue remain unfinished."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -676,9 +678,16 @@
         "house:119:2:256",
         "house:119:2:257",
         "house:119:2:258",
+        "house:119:2:259",
+        "house:119:2:260",
+        "house:119:2:261",
+        "house:119:2:262",
+        "house:119:2:263",
         "house:119:2:265",
         "house:119:2:268",
         "house:119:2:269",
+        "house:119:2:273",
+        "house:119:2:274",
         "house:119:2:275",
         "house:119:2:276",
         "house:119:2:280",
@@ -806,6 +815,8 @@
         "house:119:2:247",
         "house:119:2:250",
         "house:119:2:251",
+        "house:119:2:264",
+        "house:119:2:266",
         "house:119:2:267",
         "house:119:2:271",
         "house:119:2:272",
@@ -853,23 +864,14 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:259",
-        "house:119:2:260",
-        "house:119:2:261",
-        "house:119:2:262",
-        "house:119:2:263",
-        "house:119:2:264",
-        "house:119:2:266",
-        "house:119:2:273",
-        "house:119:2:274",
         "house:119:2:278"
       ]
     },
-    "count_basis": "107 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 27 unresolved comprise 25 unfinished screenings plus2 examined dependencies. New267 is a distinct medical-care amendment within8800; whole-package278 remains unfinished; excluded amendments and controls remain noncounting."
+    "count_basis": "109 source-mapped Health candidate inputs,not accepted eligibility or exhaustive package proof. 18 unresolved comprise 16 unfinished screenings plus2 examined dependencies. New264/266 and preserved267 form three distinct8800amendment observations; whole-package278 remains unfinished; exclusions and controls remain noncounting."
   },
-  "episode_completeness": "80 candidate episodes cover 107 supplied actions. New8800medical-care amendment is separate from unfinished whole-package278; previous episodes and meanings preserved. Discovery/episode completeness remains unproven.",
+  "episode_completeness": "80 candidate episodes cover 109 supplied actions. Three8800amendments form one shared episode; whole-package278 unfinished; previous authored/core meanings preserved with only the existing8800derived episode extended. Discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "39b3fecd717aae10df24e0dc4bc394c2ee8c17786fa6c1d67a13df6be4c68f29",
+  "universe_subject_sha256": "5ed0cfbea0d74e5aa64db17b7acee276d116c55172b147769e027d3e0b1638bb",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -48765,13 +48767,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Hunt Part A6 creates certification and expedited judicial protection for domestic energy operations supplying Defense fuel, with filing records, termination on material change, review/preemption and continuous-operation rules. Its State environmental preemption and Federal environmental, pipeline and occupational-health savings clause must be read with the explicit(l)(8) qualification. It does not create a clinical-care, insurance or household social-benefit mechanism; predicted environmental health effects do not establish membership. Failed distinct energy/litigation amendment; no unqualified assertion that every State requirement survives. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [208, 219, 0, 9]; Foushee No/Massie No.",
       "source": {
         "source_id": "clerk:119:2:259",
         "url": "https://clerk.house.gov/evs/2026/roll259.xml",
-        "raw_sha256": "ab51ade3ec96483c519c9640e5c936cbf292dd5e1d4235f80419a7604f3e89e2",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "3c2549f2a9d49cf201a07e58ba30f8fa37bfce4b821774e52b063ec2c41ae6ad",
+        "governed_bytes_sha256": "5a4ffe5161c0a71a88f5bcd8c7d8fd0fdb05aa997c9acb1b00ef7937a7df0302",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48782,24 +48785,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Hunt Part A6 creates certification and expedited judicial protection for domestic energy operations supplying Defense fuel, with filing records, termination on material change, review/preemption and continuous-operation rules. Its State environmental preemption and Federal environmental, pipeline and occupational-health savings clause must be read with the explicit(l)(8) qualification. It does not create a clinical-care, insurance or household social-benefit mechanism; predicted environmental health effects do not establish membership. Failed distinct energy/litigation amendment; no unqualified assertion that every State requirement survives. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [208, 219, 0, 9]; Foushee No/Massie No.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:259",
           "url": "https://clerk.house.gov/evs/2026/roll259.xml",
-          "raw_sha256": "ab51ade3ec96483c519c9640e5c936cbf292dd5e1d4235f80419a7604f3e89e2",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "3c2549f2a9d49cf201a07e58ba30f8fa37bfce4b821774e52b063ec2c41ae6ad",
+          "governed_bytes_sha256": "5a4ffe5161c0a71a88f5bcd8c7d8fd0fdb05aa997c9acb1b00ef7937a7df0302"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-6",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "179aefb1a31b31f54d2128951d1058bed268ec52a8ae84544160c18e4ec3c7b0"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:259",
+        "source_ids": [
+          "clerk:119:2:259",
+          "govinfo:hrpt119-755-partA-6",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:259",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "24fe6b2010b792435a0894c2c3c0657973812c84651088f94ac56411a0459059"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:259",
+        "url": "https://clerk.house.gov/evs/2026/roll259.xml",
+        "raw_sha256": "ab51ade3ec96483c519c9640e5c936cbf292dd5e1d4235f80419a7604f3e89e2",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48809,13 +48848,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Hunt Part A7 provides permanent SantaYnez energy easements by purchase, donation, exchange or condemnation, including State/submerged/private property, qualified national-defense acquisition, notice and judicial just compensation. Federal operator licensing and pipeline safety remain alongside specified State-authorization preemption and qualified operator reimbursement/succession. Energy acquisition/personnel property procedure is not housing-benefit or clinical/social-service delivery. Agreed distinct amendment; no claim that all Federal safety law is repealed or private owners lack compensation. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [215, 214, 0, 8]; Foushee No/Massie No.",
       "source": {
         "source_id": "clerk:119:2:260",
         "url": "https://clerk.house.gov/evs/2026/roll260.xml",
-        "raw_sha256": "968a7220bb2337e3804d8af77986f034b6be3591ee9d09bbd00ff10be0debd6b",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "46102e93ffc0673815ab51f1efb699b50f66c0cee2f6680cc28a7a28a56f3960",
+        "governed_bytes_sha256": "9120275600d6d7d48d080db262bde20a4c52357a28cbec64c30edea510023006",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48826,24 +48866,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Hunt Part A7 provides permanent SantaYnez energy easements by purchase, donation, exchange or condemnation, including State/submerged/private property, qualified national-defense acquisition, notice and judicial just compensation. Federal operator licensing and pipeline safety remain alongside specified State-authorization preemption and qualified operator reimbursement/succession. Energy acquisition/personnel property procedure is not housing-benefit or clinical/social-service delivery. Agreed distinct amendment; no claim that all Federal safety law is repealed or private owners lack compensation. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [215, 214, 0, 8]; Foushee No/Massie No.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:260",
           "url": "https://clerk.house.gov/evs/2026/roll260.xml",
-          "raw_sha256": "968a7220bb2337e3804d8af77986f034b6be3591ee9d09bbd00ff10be0debd6b",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "46102e93ffc0673815ab51f1efb699b50f66c0cee2f6680cc28a7a28a56f3960",
+          "governed_bytes_sha256": "9120275600d6d7d48d080db262bde20a4c52357a28cbec64c30edea510023006"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-7",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "0b54ab5bd66c35a0640a1c1df03c94711ab9410f4fca6825b753c79d7a519534"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:260",
+        "source_ids": [
+          "clerk:119:2:260",
+          "govinfo:hrpt119-755-partA-7",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:260",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2ab93c375a52dc1e393819aae17d8240678250c9b419b05b0fc30cdb39bd086a"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:260",
+        "url": "https://clerk.house.gov/evs/2026/roll260.xml",
+        "raw_sha256": "968a7220bb2337e3804d8af77986f034b6be3591ee9d09bbd00ff10be0debd6b",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48853,13 +48929,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Gallagher Part A8 requests a GAO study within30days on mechanisms for Federal preemption of State laws relating to refining capacity, including a California case study and a120day report. This is a refining/preemption study rather than immediate repeal of every State law, patient-care provision or social-benefit financing. Failed distinct amendment; potential downstream environmental/health effects do not supply an operative Health nexus. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [212, 216, 0, 8]; Foushee No/Massie No.",
       "source": {
         "source_id": "clerk:119:2:261",
         "url": "https://clerk.house.gov/evs/2026/roll261.xml",
-        "raw_sha256": "0de186be9b6f6d553f2db00fd82a004deb0b92d30280955e885f52793abfdb18",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "215bdf4f69a6c4185be13727d8b00a3cc6787093246bed2a4da9aabc2349d3b9",
+        "governed_bytes_sha256": "f22381f96bd9add954a2f5d95bb04149588cabbf64f652a2f3b3dfce8f8d5841",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48870,24 +48947,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Gallagher Part A8 requests a GAO study within30days on mechanisms for Federal preemption of State laws relating to refining capacity, including a California case study and a120day report. This is a refining/preemption study rather than immediate repeal of every State law, patient-care provision or social-benefit financing. Failed distinct amendment; potential downstream environmental/health effects do not supply an operative Health nexus. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [212, 216, 0, 8]; Foushee No/Massie No.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:261",
           "url": "https://clerk.house.gov/evs/2026/roll261.xml",
-          "raw_sha256": "0de186be9b6f6d553f2db00fd82a004deb0b92d30280955e885f52793abfdb18",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "215bdf4f69a6c4185be13727d8b00a3cc6787093246bed2a4da9aabc2349d3b9",
+          "governed_bytes_sha256": "f22381f96bd9add954a2f5d95bb04149588cabbf64f652a2f3b3dfce8f8d5841"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-8",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "ab2fafb293348649bdf0cebd97b4fa8a00bf5b7ab1a0a9d4f445f3837ec81169"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:261",
+        "source_ids": [
+          "clerk:119:2:261",
+          "govinfo:hrpt119-755-partA-8",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:261",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9375dfc47185a9079543808cf497ad88aadd425fe5ef741949bd4ffd36b95d04"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:261",
+        "url": "https://clerk.house.gov/evs/2026/roll261.xml",
+        "raw_sha256": "0de186be9b6f6d553f2db00fd82a004deb0b92d30280955e885f52793abfdb18",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48897,13 +49010,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Carter of Georgia Part A9 adds10US4893 restricting nonidentical State/local regulation of specified physical or mechanical scrap-metal processing of Defense articles. Its scope expressly excludes chemical treatment, stabilization, fixation or neutralization of generated waste. This is Defense recycling/environmental-regulation preemption, not clinical care, insurance or household services. Failed distinct amendment; do not substitute a prohibition on all waste regulation or inferred medical effects. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [201, 224, 0, 11]; Foushee No/Massie No.",
       "source": {
         "source_id": "clerk:119:2:262",
         "url": "https://clerk.house.gov/evs/2026/roll262.xml",
-        "raw_sha256": "5a23354f75933a6d489d8c35430196a98dcc43c2679afb6d0b2ade02949f078c",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "2b616f2a58ba8fb8f9a9921713b0fee757590d8189a746e6da09e6b74dcb39ad",
+        "governed_bytes_sha256": "874e314dd057268759789d444928a5d986af0c385b694e593f03eedd289955bf",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48914,24 +49028,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Carter of Georgia Part A9 adds10US4893 restricting nonidentical State/local regulation of specified physical or mechanical scrap-metal processing of Defense articles. Its scope expressly excludes chemical treatment, stabilization, fixation or neutralization of generated waste. This is Defense recycling/environmental-regulation preemption, not clinical care, insurance or household services. Failed distinct amendment; do not substitute a prohibition on all waste regulation or inferred medical effects. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [201, 224, 0, 11]; Foushee No/Massie No.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:262",
           "url": "https://clerk.house.gov/evs/2026/roll262.xml",
-          "raw_sha256": "5a23354f75933a6d489d8c35430196a98dcc43c2679afb6d0b2ade02949f078c",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "2b616f2a58ba8fb8f9a9921713b0fee757590d8189a746e6da09e6b74dcb39ad",
+          "governed_bytes_sha256": "874e314dd057268759789d444928a5d986af0c385b694e593f03eedd289955bf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-9",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "96b8a7cb529c16bbfc104e0768b5294a1d6e9699c092069ea1f611ce074f348f"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:262",
+        "source_ids": [
+          "clerk:119:2:262",
+          "govinfo:hrpt119-755-partA-9",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-21-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:262",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "738905acb1bd1abb817338ce4b82853188b70ebd8931a6c7873c3daa401032e5"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:262",
+        "url": "https://clerk.house.gov/evs/2026/roll262.xml",
+        "raw_sha256": "5a23354f75933a6d489d8c35430196a98dcc43c2679afb6d0b2ade02949f078c",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48941,13 +49091,14 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Crane Part A14 prohibits Defense funds authorized by this Act or otherwise made available for expenses of foreign military personnel participating in bilateral/multilateral exercises, including transportation, lodging, meals, per diem, training, administration and other participation expenses. It has no printed FY2027-only limit. A Secretary national-interest waiver requires30day advance notice specifying countries, exercises, costs and justification. The dated10US321 operational-training/exercise authority and current PL119-60 section1201(a) broadened partner/expense framework do not establish an independent patient-care or household-assistance mechanism. Failed distinct amendment; general participation expenses are not treated as clinical benefits, and no clinical loss is inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [61, 365, 0, 10]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:263",
         "url": "https://clerk.house.gov/evs/2026/roll263.xml",
-        "raw_sha256": "017c54be99bebdaefd9651021827ae2546ad388d3962f06484b89276bb9157dc",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "24e51dcc6e6b96b4784993487ef392c0433efbc820b79ac7691f3a7d85666bd5",
+        "governed_bytes_sha256": "52e5d02570d32432876e3b10a9188e889ffa1e070e62cba4bfae3e6c77a55367",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -48958,24 +49109,74 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Crane Part A14 prohibits Defense funds authorized by this Act or otherwise made available for expenses of foreign military personnel participating in bilateral/multilateral exercises, including transportation, lodging, meals, per diem, training, administration and other participation expenses. It has no printed FY2027-only limit. A Secretary national-interest waiver requires30day advance notice specifying countries, exercises, costs and justification. The dated10US321 operational-training/exercise authority and current PL119-60 section1201(a) broadened partner/expense framework do not establish an independent patient-care or household-assistance mechanism. Failed distinct amendment; general participation expenses are not treated as clinical benefits, and no clinical loss is inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [61, 365, 0, 10]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:263",
           "url": "https://clerk.house.gov/evs/2026/roll263.xml",
-          "raw_sha256": "017c54be99bebdaefd9651021827ae2546ad388d3962f06484b89276bb9157dc",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "24e51dcc6e6b96b4784993487ef392c0433efbc820b79ac7691f3a7d85666bd5",
+          "governed_bytes_sha256": "52e5d02570d32432876e3b10a9188e889ffa1e070e62cba4bfae3e6c77a55367"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-14",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "47714a2e77a004f89b23ad314d65078fbc0b0e72be4fa26d97dd409ca47ff94e"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:10usc321-2024-exercises",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapIII-sec321.htm",
+          "raw_sha256": "5db95e3517bdd0d555e48bdd008db2411cfd29e3774241319a0d1ed26570a812",
+          "governed_bytes_sha256": "fed4bcbb55a895344f96e9a5168fa6a43de69279a243bdf071c151d6cddca8cf"
+        },
+        {
+          "source_id": "govinfo:pl119-60-exercise-1201a",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ60/html/PLAW-119publ60.htm",
+          "raw_sha256": "5656a3db271313ad9c040afe148e750feb7811fa68190026be3193c23d5273ed",
+          "governed_bytes_sha256": "261deaa71b742a4589ca00b6fad8c707bcc81f1441b4181429849a09c3447fa9"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "aee9c7c78bd7e77b02560ca25d931421cb4873bba92bed84f3d80d79426ec24b"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:263",
+        "source_ids": [
+          "clerk:119:2:263",
+          "govinfo:hrpt119-755-partA-14",
+          "govinfo:hres1438eh",
+          "govinfo:10usc321-2024-exercises",
+          "govinfo:pl119-60-exercise-1201a",
+          "congressional-record:2026-07-21-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:263",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "57c8a137b3a8c926dbd8388c0b966de5853ded044bd8c505eb713b7a32c7ac4d"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:263",
+        "url": "https://clerk.house.gov/evs/2026/roll263.xml",
+        "raw_sha256": "017c54be99bebdaefd9651021827ae2546ad388d3962f06484b89276bb9157dc",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -48985,15 +49186,16 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: FY2027 Defense Ukraine-security-assistance funding prohibition with embassy-security exception. Exact amendment scope and material incorporated/current-law qualifications remain; no separate component choice, clinical outcome or enactment is inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [76, 350, 0, 10]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:264",
         "url": "https://clerk.house.gov/evs/2026/roll264.xml",
-        "raw_sha256": "cf7b904ef28c88399f974c318e04e354b35ae28b34cbaab3011ce4113b5f3644",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "55ba40cd41d63d8f64dd330a2a689ea241653034801f2f92a5c868b8280be021",
+        "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8800:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8800",
       "member_action": "nay",
@@ -49002,24 +49204,137 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: FY2027 Defense Ukraine-security-assistance funding prohibition with embassy-security exception. Exact amendment scope and material incorporated/current-law qualifications remain; no separate component choice, clinical outcome or enactment is inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [76, 350, 0, 10]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:264",
           "url": "https://clerk.house.gov/evs/2026/roll264.xml",
-          "raw_sha256": "cf7b904ef28c88399f974c318e04e354b35ae28b34cbaab3011ce4113b5f3644",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "55ba40cd41d63d8f64dd330a2a689ea241653034801f2f92a5c868b8280be021",
+          "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-15",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "44b8b024396affbd4da190c5a2f194551c5fc8e444b6126a3ab0539d1ead33e0"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:pl114-92-usai-1250",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ92/html/PLAW-114publ92.htm",
+          "raw_sha256": "4e07762b45026a906db77dd543b7123f04b710c18faf7c1245cef3b69c264559",
+          "governed_bytes_sha256": "24843174c1ce5c11828f33f94fbeb4ab8f1b0d069e9b581ec2b96c62f2e49a8e"
+        },
+        {
+          "source_id": "govinfo:pl114-328-usai-1237",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ328/html/PLAW-114publ328.htm",
+          "raw_sha256": "6a8aa0dcfdfc68cf87a6599d4c67d12905b10b911f09847c4a14b057b18a67fb",
+          "governed_bytes_sha256": "4fdc20eafe5ed9a385f78bb26b8367c1db303555c69f5074e97cf68ef608301e"
+        },
+        {
+          "source_id": "govinfo:pl115-91-usai-1234",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ91/html/PLAW-115publ91.htm",
+          "raw_sha256": "24f759b6fc894ba80f851919d4c27c0735583872d79dfe41ee3944272cfaf761",
+          "governed_bytes_sha256": "5a6e58a904a71ccd1b6f5f1ac085497be3b13c74aad2683b7dc6131f09e24ca3"
+        },
+        {
+          "source_id": "govinfo:pl115-232-usai-1246",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm",
+          "raw_sha256": "0c37d51e214e6f4aff18199addd892b43484c6c860bbe7c2aaabb6f3d45429a8",
+          "governed_bytes_sha256": "49eae93583c752db470781baaf7711f08ccb01c8236ecb78ed2869ec42d9ce61"
+        },
+        {
+          "source_id": "govinfo:pl116-92-usai-1244",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ92/html/PLAW-116publ92.htm",
+          "raw_sha256": "60d17de8a2e5a975d6338a7e625d53c12e3a4a3ca501ebe122631f91c3d37630",
+          "governed_bytes_sha256": "c999ee74711c2a819132afb9ddf93d1b02c84ff39edc4a538d21bed3725e324b"
+        },
+        {
+          "source_id": "govinfo:pl116-283-usai-1235",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ283/html/PLAW-116publ283.htm",
+          "raw_sha256": "499516f34b0f3f1ffb9de0b0b2c5687f24b6a9e9b35bb9d66afc553e37b20350",
+          "governed_bytes_sha256": "5220c87b10aa8266ec57522edd7777f646deee5f2c724f20b03a2bafb4d74b9e"
+        },
+        {
+          "source_id": "govinfo:pl117-81-usai-1232",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ81/html/PLAW-117publ81.htm",
+          "raw_sha256": "0cfcc938dc8fbbcef4cdfb9acada681447e41371144535b9874558d45c8d336d",
+          "governed_bytes_sha256": "5dcdc720cd8d2f0fa6a1dd7502f3f1aed89d8de94176bb7d46f7bf2b9dccae52"
+        },
+        {
+          "source_id": "govinfo:pl117-263-usai-1241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ263/html/PLAW-117publ263.htm",
+          "raw_sha256": "2a74f5e0c828ac5704c31936a795cc507c62c585a832f4a4117be009f6163a89",
+          "governed_bytes_sha256": "7de6442855bb88386cddc4a2ef16f9717993183fc382b2c271de9d4d6be5b28c"
+        },
+        {
+          "source_id": "govinfo:pl118-31-usai-1241",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+          "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+          "governed_bytes_sha256": "7779397fad20d62d39d9206f43a15276a56ac47fcf80344f956a092ef6dac179"
+        },
+        {
+          "source_id": "govinfo:pl118-159-usai-1208",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "76c1082fb3295145067cca1f67586f17bbec88f2a4d54adb27101bfe5b7e4b48"
+        },
+        {
+          "source_id": "govinfo:pl119-60-usai-1243",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ60/html/PLAW-119publ60.htm",
+          "raw_sha256": "5656a3db271313ad9c040afe148e750feb7811fa68190026be3193c23d5273ed",
+          "governed_bytes_sha256": "05fc434a3141d7c8a5a8521c1690ea4fcb325c0c25693d1a643a6492a3848ba4"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-ukraine",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ea7fc8017ace9d8ec82d5ef5be8fc9b4f7c50c983b593260a01364d029f9735d"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:264",
+        "source_ids": [
+          "clerk:119:2:264",
+          "govinfo:hrpt119-755-partA-15",
+          "govinfo:hres1438eh",
+          "govinfo:pl114-92-usai-1250",
+          "govinfo:pl114-328-usai-1237",
+          "govinfo:pl115-91-usai-1234",
+          "govinfo:pl115-232-usai-1246",
+          "govinfo:pl116-92-usai-1244",
+          "govinfo:pl116-283-usai-1235",
+          "govinfo:pl117-81-usai-1232",
+          "govinfo:pl117-263-usai-1241",
+          "govinfo:pl118-31-usai-1241",
+          "govinfo:pl118-159-usai-1208",
+          "govinfo:pl119-60-usai-1243",
+          "congressional-record:2026-07-21-ndaa-ukraine"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:264",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a2dcac5b691697498e3005343cf5c3fe958e890e6daf4ac3e946df7eca367012"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:264",
+        "url": "https://clerk.house.gov/evs/2026/roll264.xml",
+        "raw_sha256": "cf7b904ef28c88399f974c318e04e354b35ae28b34cbaab3011ce4113b5f3644",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49110,15 +49425,16 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: Statutory force for military medical-fitness policy and conditional rescission of transition-care guidance. Exact amendment scope and material incorporated/current-law qualifications remain; no separate component choice, clinical outcome or enactment is inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [212, 217, 0, 7]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:266",
         "url": "https://clerk.house.gov/evs/2026/roll266.xml",
-        "raw_sha256": "7cccdc67002125351d9131e5dad1bc349b8cd801f9fca7731fd1b7eff6b75fb5",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "d082857c0f4fed15d4162ea1d23f4b47c6ac658c5bbb1f71ff109869f8f26565",
+        "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr8800:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_8800",
       "member_action": "nay",
@@ -49127,24 +49443,88 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: Statutory force for military medical-fitness policy and conditional rescission of transition-care guidance. Exact amendment scope and material incorporated/current-law qualifications remain; no separate component choice, clinical outcome or enactment is inferred. Member projection is mechanical. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [212, 217, 0, 7]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:266",
           "url": "https://clerk.house.gov/evs/2026/roll266.xml",
-          "raw_sha256": "7cccdc67002125351d9131e5dad1bc349b8cd801f9fca7731fd1b7eff6b75fb5",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "d082857c0f4fed15d4162ea1d23f4b47c6ac658c5bbb1f71ff109869f8f26565",
+          "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-18",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "76f43a003bb7246ecd3286e9689b6055ce39511537d04d77d80355c4b3f661b6"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:eo14183-military",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-03/html/2025-02178.htm",
+          "raw_sha256": "85335571ec6b1e900e04e57cf0a1bc8f7653e5273083e4ae137a623c7f6fefc0",
+          "governed_bytes_sha256": "8443975ee3f4e0c87a8071b626942be4e97c793d62ed076a9667ecec5e870a58"
+        },
+        {
+          "source_id": "govinfo:eo14168-section2",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm",
+          "raw_sha256": "dff6c48ef10fd7c7587c04dcc97f6e3c674c99229e6e33f6574c62495b10e03c",
+          "governed_bytes_sha256": "5b76c057181df72a5457c5eaeee6447906600fd59bef539db9ae7188a2773b08"
+        },
+        {
+          "source_id": "govinfo:eo14004-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/DCPD-202100083/html/DCPD-202100083.htm",
+          "raw_sha256": "375a4d3943aabaa9075299da3877f4f690a6db4a9a9ebbf0697e682e9db83dac",
+          "governed_bytes_sha256": "1af5d39ada0d9eca042b031c98ee5fb883a3228c4cd482aa7c787054c54bbbf6"
+        },
+        {
+          "source_id": "govinfo:dodi130028-2021",
+          "url": "https://www.govinfo.gov/content/pkg/GOVPUB-D101-PURL-gpo154090/pdf/GOVPUB-D101-PURL-gpo154090.pdf",
+          "raw_sha256": "a834f2f30f670a9e2a2f303def759b865540d0040bd8fdd44b9e23cc04a2a445",
+          "governed_bytes_sha256": "169f3e74251fc652017278a9d76d4b6c90a4f51278980062620f3752a355ecc3"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-eo",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "e7f759630d0bcc158f85f02fddbdedd29f9a595c4972c49dc4d1e8e7d747c2f4"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:266",
+        "source_ids": [
+          "clerk:119:2:266",
+          "govinfo:hrpt119-755-partA-18",
+          "govinfo:hres1438eh",
+          "govinfo:eo14183-military",
+          "govinfo:eo14168-section2",
+          "govinfo:eo14004-baseline",
+          "govinfo:dodi130028-2021",
+          "congressional-record:2026-07-21-ndaa-eo"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:266",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c9672c39b2bdabbf89747e25207ab46892875f74bf60d1f4e82e4d8eb9304fbc"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:266",
+        "url": "https://clerk.house.gov/evs/2026/roll266.xml",
+        "raw_sha256": "7cccdc67002125351d9131e5dad1bc349b8cd801f9fca7731fd1b7eff6b75fb5",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49703,13 +50083,14 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Self Part A28 reorganizes Army/Navy/AirForce chaplain leadership, religious/spiritual support duties, privileged communications, religious refusal protections and adverse-personnel-action prohibitions, with endorsement/transition provisions, command resources, RFRA qualification and conforming repeal of PL112-239 section533(b). Duties include counseling and crisis prevention within pastoral/spiritual support and facilitating religious needs an assigned chaplain cannot directly minister to. Mental-health evaluation appears explicitly in the adverse-personnel-action definition; it does not create a clinical evaluation/treatment program or general clinical-care eligibility/payment rule. Exact religious-support/personnel protections remain outside Health under the established operative-service boundary. Agreed distinct amendment; competing readiness, suicide-prevention, refusal-access and motive claims are attributed rather than clinical or causal findings. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [221, 210, 0, 5]; Foushee No/Massie Aye.",
       "source": {
         "source_id": "clerk:119:2:273",
         "url": "https://clerk.house.gov/evs/2026/roll273.xml",
-        "raw_sha256": "6549ec1f36b0897cafdb4e67e6d860403f1d2f1514816654e9a31dd1d59eda21",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "d0129c5d8d2252f8a566d3b69416d6fb9c58451eca359ebb88ad7223b39be5e2",
+        "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49720,24 +50101,81 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Self Part A28 reorganizes Army/Navy/AirForce chaplain leadership, religious/spiritual support duties, privileged communications, religious refusal protections and adverse-personnel-action prohibitions, with endorsement/transition provisions, command resources, RFRA qualification and conforming repeal of PL112-239 section533(b). Duties include counseling and crisis prevention within pastoral/spiritual support and facilitating religious needs an assigned chaplain cannot directly minister to. Mental-health evaluation appears explicitly in the adverse-personnel-action definition; it does not create a clinical evaluation/treatment program or general clinical-care eligibility/payment rule. Exact religious-support/personnel protections remain outside Health under the established operative-service boundary. Agreed distinct amendment; competing readiness, suicide-prevention, refusal-access and motive claims are attributed rather than clinical or causal findings. Exact Clerk On Agreeing to the Amendment: Agreed to; Yea/Nay/Present/NotVoting totals [221, 210, 0, 5]; Foushee No/Massie Aye.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:273",
           "url": "https://clerk.house.gov/evs/2026/roll273.xml",
-          "raw_sha256": "6549ec1f36b0897cafdb4e67e6d860403f1d2f1514816654e9a31dd1d59eda21",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "d0129c5d8d2252f8a566d3b69416d6fb9c58451eca359ebb88ad7223b39be5e2",
+          "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-28",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "973b3166a02aa176f8671100863039abbb291e34cdd21f0ede31d9f68580bca7"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:pl112-239-chaplain-533",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-112publ239/html/PLAW-112publ239.htm",
+          "raw_sha256": "aac248f2176b7a6e084daa1e15168bd3e5122e88831de5def5a627b1a1cb70bb",
+          "governed_bytes_sha256": "02faf0988cbb48bba1f2e9f4144d2fe0003704095f0955cec6500148d4d3084a"
+        },
+        {
+          "source_id": "govinfo:42usc2000bb-1-2024-rfra",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap21B-sec2000bb-1.htm",
+          "raw_sha256": "4539c81c4286803366819153a2fa89601dd45c2257f4b54eabd319a3201b1a82",
+          "governed_bytes_sha256": "755c39bdc0b0e149692cd6a83b1394489c7af9ebb736556003f2d7648251f75a"
+        },
+        {
+          "source_id": "govinfo:42usc2000bb-3-2024-rfra",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap21B-sec2000bb-3.htm",
+          "raw_sha256": "1ab5a4977263989899e5dad28f28e84fce4c7999352620691a79909e3d7ebec5",
+          "governed_bytes_sha256": "65897dff0b59cf05ccde59710d8f652ba530f61eb28035879eab12a0f25f926a"
+        },
+        {
+          "source_id": "congressional-record:2026-07-22-ndaa-chaplains",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "012e59be548f9aa26bf8731b4d91adc56eca00cb7ac3f80a494335f749db29be"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:273",
+        "source_ids": [
+          "clerk:119:2:273",
+          "govinfo:hrpt119-755-partA-28",
+          "govinfo:hres1438eh",
+          "govinfo:pl112-239-chaplain-533",
+          "govinfo:42usc2000bb-1-2024-rfra",
+          "govinfo:42usc2000bb-3-2024-rfra",
+          "congressional-record:2026-07-22-ndaa-chaplains"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:273",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "206bf1cf01cbecb8eaf494823e041b65812962913be2793bb3cb5ac0e05a7171"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:273",
+        "url": "https://clerk.house.gov/evs/2026/roll273.xml",
+        "raw_sha256": "6549ec1f36b0897cafdb4e67e6d860403f1d2f1514816654e9a31dd1d59eda21",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -49747,13 +50185,14 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Issa Part A30 creates a five-year DCSA personnel-security-clearance pilot for eligible U.S. investor/technology/SME professionals independent of an existing Defense contract, for qualified investment diligence and assisting eligible businesses with Defense contracts/grants/scale. Need-to-know, security and foreign-control restrictions, suspension, no personal-trading-gain and no Federal-award preference remain. This clearance-access mechanism is not a medical-technology grant entitlement or patient-care/social-benefit financing. Failed distinct amendment; no actual clearance or contract award is inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [207, 224, 0, 6]; Foushee No/Massie No.",
       "source": {
         "source_id": "clerk:119:2:274",
         "url": "https://clerk.house.gov/evs/2026/roll274.xml",
-        "raw_sha256": "90047b7ee6e1c5ae699a22a5ceb8d3ceef24121af753517b6a8f810ae97cb9b4",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "92972207cf64edf26fe2c274d51be73f08ebe03604ea18d022da6aa138d7caa5",
+        "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d",
+        "verification": "governed_source_reuse"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -49764,24 +50203,60 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Issa Part A30 creates a five-year DCSA personnel-security-clearance pilot for eligible U.S. investor/technology/SME professionals independent of an existing Defense contract, for qualified investment diligence and assisting eligible businesses with Defense contracts/grants/scale. Need-to-know, security and foreign-control restrictions, suspension, no personal-trading-gain and no Federal-award preference remain. This clearance-access mechanism is not a medical-technology grant entitlement or patient-care/social-benefit financing. Failed distinct amendment; no actual clearance or contract award is inferred. Exact Clerk On Agreeing to the Amendment: Failed; Yea/Nay/Present/NotVoting totals [207, 224, 0, 6]; Foushee No/Massie No.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:274",
           "url": "https://clerk.house.gov/evs/2026/roll274.xml",
-          "raw_sha256": "90047b7ee6e1c5ae699a22a5ceb8d3ceef24121af753517b6a8f810ae97cb9b4",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "92972207cf64edf26fe2c274d51be73f08ebe03604ea18d022da6aa138d7caa5",
+          "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-30",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "265ea03d58b241044004c105fa66fd9bddefb5d0a6a3dc9d25906e44d2fb8e71"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-22-ndaa-remaining-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "52c11e63712e94ca10beb464a3d2e52a17317ef93717f2a5b2cec0e0b7dda410"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:274",
+        "source_ids": [
+          "clerk:119:2:274",
+          "govinfo:hrpt119-755-partA-30",
+          "govinfo:hres1438eh",
+          "congressional-record:2026-07-22-ndaa-remaining-offerings"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:274",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b0a90c022830219447b916bb5e14eaa96741ce8578dfafb7678e93811508d353"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:274",
+        "url": "https://clerk.house.gov/evs/2026/roll274.xml",
+        "raw_sha256": "90047b7ee6e1c5ae699a22a5ceb8d3ceef24121af753517b6a8f810ae97cb9b4",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -52447,11 +52922,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "107 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "109 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "38e46b84def8d9277dc94c4049bf60bbe6e895f2fb439c2947368e4cc57ba832",
+  "selection_sha256": "46b5615676e80ccf8b9d29ec3629d478332987322aa16e4c93cdcbd42b87c073",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -52559,7 +53034,9 @@
     "house:119:2:251",
     "house:119:2:271",
     "house:119:2:272",
-    "house:119:2:267"
+    "house:119:2:267",
+    "house:119:2:264",
+    "house:119:2:266"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -52579,20 +53056,11 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:259",
-    "house:119:2:260",
-    "house:119:2:261",
-    "house:119:2:262",
-    "house:119:2:263",
-    "house:119:2:264",
-    "house:119:2:266",
-    "house:119:2:273",
-    "house:119:2:274",
     "house:119:2:278"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "27 unresolved comprise 25 unfinished plus two examined dependencies;ten unfinished NDAA actions259/260/261/262/263/264/266/273/274/278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus ten bounded NDAA amendments screened;250and277preserved.",
+    "basis": "18 unresolved comprise 16 unfinished plus two examined dependencies;one unfinished NDAA whole-package278;earlier2026rolls23/27/28/42 and eleven2025actions;2025roll237/2026roll44examined dependencies;45completeness follow-up. 79-249exceptalreadycomplete128/139/198/235and elevennonNDAA251-282 plus nineteen bounded NDAA amendments screened;250and277preserved.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -52644,6 +53112,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "23f41bbd7fc1a47c154845b678b1538c04dba824f1fa1961b1d5f411c6f5a6dd",
-  "membership_review_sha256": "8d40cd5cb82d29cd23bfab5f320f9928cafdc866c6aafda84188b95eba80f06b"
+  "proposal_sha256": "7d2a3d35badaa73a0bb628d18bdda40b4e1d1438a852f7346e561a52f7ece766",
+  "membership_review_sha256": "8ea7755cf7f51427d5d56b9d69518e19c55b7f0bc8102b340dce6c27ce1f2e09"
 }

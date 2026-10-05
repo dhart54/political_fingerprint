@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "adff07c01f121cb14eec3e4df39e7572f7e358aad3ddc4c7491632f6c172020a",
-  "source_capture_sha256": "b1f7439dfd4a36143a4f45d7f8c8273ce6fdc4a4eea8f090a292f646fbcea945",
-  "core_sha256": "2fa8fec69ee454ca527e538f24647b6e6fe7615a795407cc386d053d98e85f1b",
-  "compiled_sha256": "877b65adf461f16db176ab36dac88a5b0d2fd6ad4f3e7cf1672bf3589b3c8d83",
-  "readable_sha256": "99302712f9e3ca90f81b9f6f4dc28334f549705781f8eb8e79620956058cfb03",
+  "input_sha256": "d0f0fd194b35f60d5f90d698a09c8c924c9361da35e5c0a92b30c0ddc0dd890a",
+  "source_capture_sha256": "c7d00d640c62ae8b7852a6db0b300ceb93e36e64604363d8b2a41b78540ec45f",
+  "core_sha256": "f43f3afeb2871023c3598c71f94ab0152620cc1ce215fb9771a60dec381ad73e",
+  "compiled_sha256": "c07653081d0bd95209467487860be42887f9a8cbe187f2d24d5a004cab1bd264",
+  "readable_sha256": "905c9cdbb05f2b7d28a622d63506d7e53c0d78a79f380f3bc6afedfc3c457fcb",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2153,6 +2153,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported the distinct amendment's purpose-defined TRICARE care-coverage and furnishing restriction with its stated exceptions, and removal of the sterilization qualifier from the separate under-18 contractual-care restriction",
           "source_id": "clerk:119:2:267"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:264",
+      "shared_sha256": "46ec22dd442b91e46ea48ed1d3a9229db364a251516fd6f33259a705c2157e59",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the distinct FY2027 Defense Ukraine-security-assistance funding prohibition, including its U.S. embassy-security exception",
+          "source_id": "clerk:119:2:264"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the distinct FY2027 Defense Ukraine-security-assistance funding prohibition, including its U.S. embassy-security exception",
+          "source_id": "clerk:119:2:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:266",
+      "shared_sha256": "2843ec3340feef02920785ec341fa887edd3249b85cb393b2f8117c209c93bdf",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed giving EO14183 force of law, including its medical-fitness directions and conditional rescission of inconsistent transition-care guidance",
+          "source_id": "clerk:119:2:266"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported giving EO14183 force of law, including its medical-fitness directions and conditional rescission of inconsistent transition-care guidance",
+          "source_id": "clerk:119:2:266"
         }
       ]
     }

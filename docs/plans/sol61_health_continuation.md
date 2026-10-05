@@ -1448,3 +1448,146 @@ Cached PDF/report indexing, governed authority reuse and early operative exclusi
 routing support this bounded stage; no new efficiency architecture or measured
 end-to-end/model/token saving is claimed. This remains candidate-only and the
 goal remains active; commit/push/exact-headCI receipts follow at the next stage.
+
+Checkpoint18 is159e4721747c745332415db7f879300df37c3ed0, pushed to the continuation
+branch. DraftPR196 head and stacked base were verified; frozenPR195 still reports
+f10abd6b42867d591992b368c089150e4178604b. Exact-head CI37342428842 completed with
+success, including all nine jobs; the draft body now records the receipt. This
+is an intermediate checkpoint, not corpus closure or a reason to pause the goal.
+
+### Next NDAA research stage, local captures only
+
+The remaining nine recorded amendments plus whole-package278 remain unfinished.
+Public primary EO14183 was acquired and read, and its incorporated EO14168
+section2 definitions were read completely. The latter's primary header confirms
+January20,2025/FRJanuary30pages8615–8618; policy/identity assertions remain the
+orders' wording, not adopted civic or clinical findings. The proposed exact
+codification of military medical-fitness/personnel standards still requires its
+independent membership decision; do not substitute EO14187's care restrictions.
+
+For foreign-exercise263, corrected source-path discovery located10US321 in
+subchapterIII, notII. Its complete dated operative section was read: training,
+deployment, incremental foreign-partner expense, construction, primary US-force
+training purpose and qualified payment/regulatory controls. Subsequent PL119-60
+section1201(a) was read completely; it broadens partner/training and incremental-
+expense availability and preserves the cited approval/regulatory structure.
+These are operational expense authorities, not evidence of a specific patient-
+care or household-assistance mechanism. Exact PartA14 waiver/scope still must be
+reconciled before recording membership. Failed/invalid source requests are not
+positive evidence of statutory absence.
+
+PL119-60's full public text was acquired only to extract material sections; it
+has not been reviewed as a whole. Complete1243 materially updates USAI: authority
+throughDecember31,2029,400million for eachFY2026/FY2027, qualified multi-year
+program availability, reimbursable support and equipment-return/replacement/
+notice conditions. Roll264's prohibition reaches funds made available by8800or
+otherwise toDefense forFY2027, with its embassy-security exception; do not reuse
+the narrower2025roll255 bill-only prohibition or its now-dated expiration.
+Existing governed enacted USAI medical-care/training authorities are available
+for exact version-chain reuse after inspection. RCP/EH searches found no stand-
+alone USAI heading in8800; keyword indexing is not complete whole-package review.
+
+For273, original PL112-239section533(b) chaplain-refusal protections and complete
+RFRA3 were read; RFRA6 operative applicability was read. These are dated/limited
+baseline authorities, not proof that no other current protections exist. The
+report's explicit mental-health-evaluation definition and protected-refusal scope
+need independent operative membership/qualification review; general spiritual
+crisis support is not automatically clinical treatment. The new local10US1034
+capture is only partially read and is not curated or proof of mental-health rules.
+
+Complete PartA6/7/8/9/30 report texts and their actual offering identities are
+available for bounded exclusion review. PartA6 has a material Federal environmental/
+pipeline/occupational-health savings clause qualified by(l)(8), not an unqualified
+preservation of every State requirement. PartA7 concerns easements, condemnation,
+just compensation, licensing and State preemption with retained Federal controls,
+not housing benefits. PartA8 requests a refining-preemption study, not immediate
+repeal of all State laws;9excludes chemical treatment of generated waste from its
+scrap-processing scope;30is a qualified five-year investor personnel-clearance
+pilot, not a health-technology grant entitlement. No new canonical sources,
+membership or authored meanings from this research stage have been accepted.
+
+### Checkpoint19: remaining nine NDAA amendments
+
+Continued from159e4721747c745332415db7f879300df37c3ed0 with exact2026rolls
+259/260/261/262/263/264/266/273/274, matching Report119-755 PartA6/7/8/9/14/15/
+18/28/30 and actual floor offerings/Clerk outcomes. Two new member-neutral Health
+meanings264/266 and seven exclusions join the reviewed family. Both new amendments
+failed; FousheeNo maps to Nay/opposition and MassieAye to Yea/support. Preserved267
+remains its distinct agreed-to amendment. The three observations share8800's
+existing episode without inventing three independent findings or component votes.
+
+264 reaches Defense funds under this Act or otherwise forFY2027 with an explicit
+U.S. embassy-security exception. The reused enacted USAI medical-treatment,
+associated support and training chain supplies its Health nexus. Complete current
+PL119-60 section1243 supersedes the dated2026expiration: authority throughDecember
+31,2029,400million eachFY2026/FY2027 and qualified multi-year/reimbursable/stock-
+return conditions. Neither the amount nor all security assistance is medical
+spending. Separate foreign-contribution accounts and every multi-year balance are
+not exhaustively resolved. No actual care loss, domestic replacement appropriation,
+savings, clinical outcomes or foreign-policy motives are inferred.
+
+266 codifies EO14183, not14187. Material deeper authority changed the provisional
+personnel-only exclusion lead: EO14183section5 conditionally rescinds inconsistent
+policies under revokedEO14004, whose April30,2021 DoDI1300.28 framework explicitly
+provided medically necessary transition treatment and continuity of care. Direct
+ESD/mediaDefense public requests returned403; these failed requests are not governed
+positive evidence. Public GovInfo's original22-page instruction archive was acquired
+and read completely (0.56seconds acquisition/parse), including limited ROTC/reserve
+eligibility, command/readiness timing, confidentiality and definitions. The dated
+framework establishes care reach, not currentJuly2026eligibility. OnlyEO14168
+section2definitions are incorporated; later directives, blanket treatment lists,
+separation waivers and litigation implementation are not silently codified. The
+order's applicable-law/appropriation/severability/operational-necessity/no-benefit
+qualifications and original deadline clocks remain. Policy claims about identity,
+character, fitness and clinical outcomes are attributed rather than adopted.
+
+Exclusions retain exact material boundaries:259qualified environmental/pipeline/
+occupational-health savings and State preemption;260easement/condemnation with
+compensation and retained Federal pipeline controls;261GAO study rather than actual
+wholesale State-law repeal;262scrap processing with chemical-waste-treatment
+exclusion;263foreign-exercise expenses, no printedFY2027-only cap,30day waiver
+notice and complete current1201(a)training/expense authority;273religious/spiritual
+chaplain duties and personnel anti-retaliation rather than a clinical-care program
+(the printed mental-health-evaluation definition is expressly acknowledged);
+274qualified clearance pilot rather than a health-technology grant entitlement.
+Original chaplain533 and complete RFRA3/6 support the bounded qualification;
+partially read10US1034 is not curated or offered as clinical proof.
+
+Validation: final178focused tests passed in28.747seconds; seven semantic pipeline
+checks passed. First focused run caught stale queue-count assertions, corrected to
+the independently accounted result without weakening gates. A local curation
+attempt expected an EditorialNotes marker absent in one RFRA source; no canonical
+mutation occurred until corrected bounded extraction. All107previous authored/core
+inputs,1946sources and551reviews are unchanged against159e472; all85benchmark
+inputs/core,1425sources and363reviews are unchanged againstf10abd. Only the existing
+8800derived proposition per member extends to264/266/267; all other previous
+propositions remain identical. Earlier benchmarkhousing extension remains the sole
+historical benchmark-derived difference. Inventory197changed/479identical;
+all37historical pending-capture hashes remain exact. Eight generated/packet files
+replay byte-identically. Manually read both actual three-vote compact outputs,
+normalized choices, fifteen qualifications and source bindings; all excluded rows
+and procedural controls remain noncounting. Diff is fourteen owned files, all
+within candidate/test/plan/packet scope; no acceptance/publication/production,
+frontend adapter/config/registry, merge or deployment changes.
+
+Totals:109interpreted/232procedural/19expressive/298excluded/18unresolved; the latter
+are16unfinished screenings plus the two previously examined dependencies.80episodes,
+218member observations and150propositions/readable findings (79Foushee/71Massie).
+Cumulative197new reviews sincebenchmark:24meanings/69procedural/9expressive/
+95exclusions.33new governed captures and11prior captures reused here;
+554new/1979totalcaptures and560reviews. Core
+f43f3afeb2871023c3598c71f94ab0152620cc1ce215fb9771a60dec381ad73e;
+compiledc07653081d0bd95209467487860be42887f9a8cbe187f2d24d5a004cab1bd264.
+Cached report/PDF indexing, primary authority reuse and operative exclusion routing
+support this bounded stage; no new efficiency architecture or fabricated end-to-
+end/model/token savings is claimed. All artifacts remain candidates requiring
+external semantic review.
+
+Remaining:whole-package278, earlier2026rolls23/27/28/42 and eleven2025rolls224/225/
+226/262/294/295/296/299/307/318/320. Existing237conflict and44operative dependency
+remain;45whole-package completeness is a follow-up. Initial278version review found
+HRes1438section11 adds separately House-passedS1383 at engrossment; do not silently
+use laterEHDivisionE as a fresh component choice in278. FullEH2.98millioncharacters
+and completeRCP1642pages have not been reviewed as whole packages. No completeness
+claim is made from keyword indexing. The stored goal remains active; this checkpoint
+is progress, not corpus closure or a reason to pause executable Health work.
