@@ -3,7 +3,7 @@
   "artifact_id": "candidate:HEALTH_SOCIAL:house119-through-2026-09-16",
   "domain_id": "HEALTH_SOCIAL",
   "scope_boundaries": [
-    "95 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
+    "97 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -1339,6 +1339,34 @@
         "stage_order": 20176
       },
       "mapping_sha256": "2f696f4635ac7db74a869cbda381b830bfeaf0a9ff50d6f347a3ab7bcd0dfbbf"
+    },
+    {
+      "action_id": "house:119:2:205",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr8646:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20205
+      },
+      "mapping_sha256": "7cd77955323cc2eb80a1c7abf1e19fa41202891d51cb7d3d07457ba54364932d"
+    },
+    {
+      "action_id": "house:119:2:207",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr2913:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20207
+      },
+      "mapping_sha256": "0e7ea6d24666ce006cf1d33a446127a16358d2bad43210c851aefa479a3336d5"
     }
   ],
   "episodes": [
@@ -1940,6 +1968,22 @@
       ],
       "method_boundary_types": [],
       "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr8646:119",
+      "action_ids": [
+        "house:119:2:205"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr2913:119",
+      "action_ids": [
+        "house:119:2:207"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
     }
   ],
   "policy_families": [],
@@ -1947,5 +1991,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "c7acdef7928c9a5d8c89ab55935dca64f398bd1030491b6ce18ea5c264fc325b"
+  "mapping_sha256": "cb8acaca3426da306dd3263bb285c3f05e3d83b9738cbb08cdf9a8d3fd025a12"
 }

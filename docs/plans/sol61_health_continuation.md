@@ -824,3 +824,83 @@ FousheeYea/MassieNotVoting compacts and ordered57/176observations inspected.
 Readable diff fan-out reflects repositioning the extended episode and its larger
 source/detail set; unchanged compiled propositions remain object-identical.
 Scoped15-file diff and whitespace check pass. Candidate-only gates remain closed.
+
+### Checkpoint13: June3–4 agriculture and Ukraine packages with separate controls
+
+Eleven new reviews196/197/199–207; already-complete198 remains unchanged.
+Two new shared meanings205/207, six procedural controls197/200/202/203/204/206
+and three exclusions196/199/201. Totals97interpreted/224procedural/18expressive/
+258excluded/79unresolved;77unfinished plus two examined dependencies.74episodes,
+194member observations,73Foushee/66Massie findings,139propositions. Cumulative
+126new reviews:51procedural,8expressive,55excluded,12meanings. Next208.
+
+Read complete175505-character8646EH and95129-character2913EH, precise floor
+questions and material incorporated authorities. Agriculture205includes direct
+nutrition/rural-care/housing assistance and FDA/food rules alongside broader
+agriculture policy. Both membersNay oppose the whole amended package. Amounts
+retain availability/subset/user-fee/principal distinctions and annual housing
+conditions. Governed currentlaw prevents describing existing school inspections,
+lunch milk, milk maxima or July2028traceability bar as newly created. WIC voucher
+percentages are OF2020baselines, not increases BY those percentages; printed
+FoodPackageVIII conflicts with the seven regulated categories and remains
+unrepaired. Infant peanut inclusion retains safe-consumption/development/DGA
+conditions. Cancer-drug review is expedited as appropriate, not automatically
+approved. Hospital preference, combined telemedicine/distance-learning funding,
+sponsor obligations and marriage rider remain explicit qualifications.
+
+Ukraine207Health membership rests on operative medical/humanitarian mechanisms,
+not casualties/hospital/hunger rhetoric. Rosatom isotope waiver requires three
+conditions and discretion; EAR99/non-CCLmedicine/device export exception differs
+from titleIIIhumanitarian transactions. ExistingIEEPAdonation protection and its
+exceptions are preserved. Printed892Atrust-fund revenue reference is not created
+in the EH or silently linked to the separate316interest/dividend tax. Applicable
+appropriations/assistance requirements and broader military/sanctions package
+remain qualified. FousheeYea/MassieNay are whole-package directions, not component
+positions, enacted assistance or future outcomes. Floor support/opposition claims
+remain attributed; nuclear supply warnings do not erase actual waiver clauses.
+
+Marine ecosystem196 and operative Iran/Lebanon war-powers199/201 are outside
+Health. FailedLebanon201retains2Present/12NotVoting; no withdrawal is inferred.
+Recommittals197/204carry no offered instructions; separately inserted pardon-list
+text does not become the voted motion. Discharge200, rule206 and passage207
+remain separate.1336previous-question202/agreement203onlywaive same-dayRules
+thresholds, not enact immigration/health spending. Both203officialNo labels stay
+unchanged, mechanically normalized only where needed.
+
+38new governed captures;26existing distinct captures reused, plus newly captured
+518EH reused within the batch. Cumulative359new captures/1784total. Existing
+1US7/28US1738C/1333EHwere unnecessarily refetched by a temporary acquisition
+script after lookup; their governed objects are reused unchanged, so those three
+network calls are not claimed as avoided. Native public PN655download returned
+403twice; official Senate quoted letter supplies narrow loan-limit context.
+Public PN655was viewed, but no fabricated raw-byte capture. Broader PNincome/
+appraisal/review changes are not projected. FloorPDF26/RH/EHsay1-3550, resolving
+the apparent1-3500web-rendering error. No authoritative-source conflict is added.
+ProtectedAAFCOmanual was not acquired; purely animal-food provisions have no
+novel human-health meaning. These limits do not prevent safe whole-package
+candidate representation and are explicitly routed for external semantic review.
+
+About40minutes since prior02:48Easterncommit through this checkpoint's research,
+authoring and local verification; approximately3.5–4minutes per11screened actions
+for this mix, not a general interpretation throughput claim. Deeper review changed
+WICcategory/percentage assumptions, repeated-rider novelty, cancer-drug certainty,
+Ukraine waiver breadth and funding-link expectations before authoring. No initial
+membership exclusion was forced through when operative Health mechanisms emerged.
+Manual work: source/edition/extent review, materiality decisions, debate boundaries
+and drafting qualifications. Acquisition was batched; projections, hashes, counts,
+preservation and replay remained deterministic. No new runtime/architecture
+optimization or measured token savings claimed in this batch.
+
+163focused tests and seven canonical semantic checks pass. Three new regressions
+cover exact whole-package projection/control exclusion, required current-law/
+exception source removal and an unbound automatic-waiver generalization. Fixed
+test setup access and stale finding/count expectations without changing product
+rules. All85benchmark/95previous authored/core objects,1425/1746captures and
+363/478reviews preserved exactly. All135previous propositions unchanged;123
+benchmark propositions unchanged with only the earlier housing-episode update.
+Inventory126changed/550identical. Seven generated JSON files and packet replay
+byte-identically. Actual compacts/qualifications and all four new member findings
+inspected. Coree713ffb55413aebe15556eaa7e0e06982a49d4f1ad1b6217be613666edf88935;
+compiled750df6b7f8ff5ea0915267633dfa5611dbc66dc65370acb0110948fd51d4e08b.
+Checkpoint12b173699 CI37274305410passed. Weekly12percentused/88remaining;
+watcher deadline unchanged. Continue208after push/exact-headCI; no terminal marker.

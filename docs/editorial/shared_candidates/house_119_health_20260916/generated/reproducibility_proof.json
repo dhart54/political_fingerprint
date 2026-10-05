@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "7ced4fe0026609cb2511ebb56b499c5336af3d3003911f7032d0fafa6826c8be",
-  "source_capture_sha256": "1cb9a511eab71a0f03898fb06d531f8adec42665b1ff5d803bdc235a474e367e",
-  "core_sha256": "4b4075a0ba24dc721f6bc289df63f852519da64e405c038341be1ac78b001265",
-  "compiled_sha256": "1ae3a76a4dc4c90915d56c655a4d28a104d266436907fedbc6daef7e72812610",
-  "readable_sha256": "374f2480c6457340737133ea63e7547745861c16f2eeb328c643672e4d90b1c8",
+  "input_sha256": "68eeb0884834ecd6295b315745d31e9794416233592b5202d6f3b83c09ed4e24",
+  "source_capture_sha256": "1817fdf8333c0d6705b19b6c160dc2bf72a2f80fe510ddf579aa47ebe3aa63d9",
+  "core_sha256": "e713ffb55413aebe15556eaa7e0e06982a49d4f1ad1b6217be613666edf88935",
+  "compiled_sha256": "750df6b7f8ff5ea0915267633dfa5611dbc66dc65370acb0110948fd51d4e08b",
+  "readable_sha256": "3b95f63fbdd56c13106459fe849395999e94f3e4566f2c3c2f2a491efbb2b60d",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1913,6 +1913,46 @@
           "effect": "resolved_non_directional",
           "selected_meaning": null,
           "source_id": "clerk:119:2:176"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:205",
+      "shared_sha256": "e77264c825a7cec6056a17c1b8578addfd6296acaea325ac1649cc96151a2107",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole amended fiscal2027agriculture, nutrition, rural-care/housing and FDA appropriations/policy package",
+          "source_id": "clerk:119:2:205"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole amended fiscal2027agriculture, nutrition, rural-care/housing and FDA appropriations/policy package",
+          "source_id": "clerk:119:2:205"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:207",
+      "shared_sha256": "bbe90abe9b9dc0d52840b72de4ef6ccdae156d773588f29bfd331c38df401ee0",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole Ukraine security, assistance and sanctions package with its qualified medical/humanitarian exceptions",
+          "source_id": "clerk:119:2:207"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole Ukraine security, assistance and sanctions package with its qualified medical/humanitarian exceptions",
+          "source_id": "clerk:119:2:207"
         }
       ]
     }
