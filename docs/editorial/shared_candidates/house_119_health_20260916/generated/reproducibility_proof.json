@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "cb8ce69aacc38486e5db799674154d523364bfd4889b2c5116544e9573a5c135",
-  "source_capture_sha256": "43e022a94495865c211ca4566594dd768528ecf911681ffd0ef643996ab0c73c",
-  "core_sha256": "c632f02e3d8041a1cd335db2f9487231518a8e7d09b57a59f507cdd290bb3c47",
-  "compiled_sha256": "5d8e2f0a8e48f833f807a252a22e8bea5b33a4390271feefc51d15f96d961171",
-  "readable_sha256": "60de845c8ac9e73b913cf99409ededefb6961ca2ebf8295dee7bb73fb9b5d6f7",
+  "input_sha256": "42aa5ebed9d41cc19a252826bceabbe6be1203a140d641ba0fde44dabcc68ab4",
+  "source_capture_sha256": "da6245f1fd597c2c70d4d45801ddfc128374f88329fef3be3a5cbc9f893287eb",
+  "core_sha256": "114d6284a9d2fb4618283ab00ab6142ff9b633f473b3199340e5d2ded18f67d8",
+  "compiled_sha256": "8becf2463daa8d91b0c1ba05733cd420ebaf541c9f6cf87b25c3e91b149c5b1b",
+  "readable_sha256": "388438136d8678647efa68d71b2a7c4e749d81094697575b7bc3b3800b99ab8f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1713,6 +1713,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions",
           "source_id": "clerk:119:2:78"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:87",
+      "shared_sha256": "9173cbb818c70f4ee04507fdd95d5012991ec13f50f61cf46250663e4ea2a8c7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:87"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:87"
         }
       ]
     }

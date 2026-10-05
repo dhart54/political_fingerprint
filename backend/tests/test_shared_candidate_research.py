@@ -1,11 +1,27 @@
 import copy
+import csv
+import io
 import unittest
 
 from backend.app.semantic_ir.shared_corpus import sealed_digest
-from scripts.shared_candidate_research import governed_sources_at_url, research_queue
+from scripts.shared_candidate_research import governed_sources_at_url, research_queue, queue_table
 
 
 class SharedCandidateResearchTests(unittest.TestCase):
+    def test_compact_queue_retains_dependency_flags_and_escaped_questions(self):
+        row = dict(action_id="house:119:2:44", date="2026-01-22", measure="exact",
+                   question='Question with\ta tab and "quotation"', disposition="source_unresolved",
+                   has_membership_record=True, review_progress=dict(substantive_review_performed=True,
+                       exact_action_binding_unresolved=True, required_evidence_unavailable=False,
+                       authoritative_source_conflict=True))
+        before = copy.deepcopy(row)
+        parsed = list(csv.DictReader(io.StringIO(queue_table([row])), delimiter="\t"))[0]
+        self.assertEqual(parsed["question"], row["question"])
+        for field in ["has_membership_record", *row["review_progress"]]:
+            value = row.get(field, row["review_progress"].get(field))
+            self.assertEqual(parsed[field], str(value))
+        self.assertEqual(row, before)
+
     def test_exact_url_preserves_editions_and_excerpts_and_rejects_changed_bytes(self):
         sources = []
         for sid, url, text in [("a", "https://official/2024", "first excerpt"),

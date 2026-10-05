@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
 import sys
 from pathlib import Path
@@ -57,6 +59,20 @@ def governed_sources_at_url(capture, url):
     return matches
 
 
+def queue_table(rows):
+    """Compact research display; keep the JSON queue available for full receipts."""
+    out = io.StringIO(newline="")
+    writer = csv.writer(out, delimiter="\t", lineterminator="\n")
+    progress = ("substantive_review_performed", "exact_action_binding_unresolved",
+                "required_evidence_unavailable", "authoritative_source_conflict")
+    fields = ("action_id", "date", "measure", "question", "disposition")
+    writer.writerow((*fields, "has_membership_record", *progress))
+    for row in rows:
+        writer.writerow((*[row[k] for k in fields], row["has_membership_record"],
+                         *[row["review_progress"][k] for k in progress]))
+    return out.getvalue().rstrip("\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True)
@@ -65,6 +81,7 @@ def main():
     queue.add_argument("--session", type=int, choices=[1, 2])
     queue.add_argument("--start-roll", type=int, default=1)
     queue.add_argument("--limit", type=int, default=20)
+    queue.add_argument("--compact", action="store_true", help="Tab-separated queue; JSON remains the default")
     source = commands.add_parser("source")
     source.add_argument("--url", action="append", required=True)
     source.add_argument("--show-text", action="store_true")
@@ -74,6 +91,9 @@ def main():
     if args.command == "queue":
         result = research_queue(read("universe_proposal"), read("membership_review"),
                                 session=args.session, start_roll=args.start_roll, limit=args.limit)
+        if args.compact:
+            print(queue_table(result))
+            return
     else:
         capture = read("sources")
         result = []

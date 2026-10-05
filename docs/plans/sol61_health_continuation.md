@@ -128,10 +128,87 @@ Existing HR4758 readable/member behavior is covered by bounded acceptance;
 this batch adds no substantive output. Full-record/closure/publication flags
 remain false. Benchmark PR195 still has exact head f10abd6.
 
-Next executable action: **2026roll87 HR7744 passage**. Complete124850-character
+Checkpoint1 next executable action: **2026roll87 HR7744 passage**. Complete124850-character
 EH, Clerk87 and March5 Record are staged locally but package research is pending.
 Continue after this checkpoint; it is not a Health-completion or terminal marker.
 Push/PR/exact-head CI receipts follow the commit and are recorded in the draft PR.
+
+### Checkpoint 2: exact HR7744 appropriations package
+
+2026roll87: **1 new shared interpretation**, mechanically projected as one new
+Foushee Nay finding and one Massie Yea finding. Totals **86/206/12/206/166**;
+164 unfinished screenings plus2 examined dependencies. There are67 proposal
+episodes,172 substantive member observations and66/61 readable findings.
+Earlier HR7148/HR7147 packages are context, not substitutes for this exact EH or
+an automatically inferred trajectory. The unadopted inserted DeLauro alternative
+does not become passage meaning or the failed bare recommittal's content.
+
+Read the complete124850-character EH, exact closed rule and both sides' full
+March5 floor debate. Material follow: retiree care/survivor payments, emergency
+food/shelter and firefighter/EMS grant conditions, restraint/custody standards,
+prescription import exceptions, professional license portability and existing
+lapse-pay authority. Direct care/social support establishes membership;
+enforcement/security/disaster operations remain material whole-package context.
+Preserve mixed-account amounts, existing eligibility/cost/grant conditions,
+resource/operational exceptions, permission versus mandate, lawful-obligation
+ratification and House-only outcome. No guarantee of individual services,
+agency compliance, safe detention, actual spending or benefit delivery.
+
+18 governed captures added;4 capture identities reused (three baseline
+authorities and the rule added in checkpoint1). Total1463 captures,372 shared
+membership records. January22 Record raw PDF bytes match the prior captured
+book2 digest; newly governed selected DHS pages provide material allocation
+and implementation language absent from the prior care-project excerpt. The
+PDF allocation tables were visually inspected with the PDF skill, preserving
+Final Bill versus FY2025 columns and thousand-dollar units. The child/workforce
+and medical-record amounts used in authoring have explicit narrative bindings.
+The report's proposed $8.113million medical-record amount is superseded by the
+incorporated final statement's $8.911million; it is not used as the final amount.
+The official CBP policy landing page returned403; the freely accessible signed
+primary-policy PDF mirror is expressly identified as such. No bypass or paid/
+protected source was used. Generic200 error pages and a short Record granule
+were rejected; the correct public H2432-2 article supplies complete debate.
+
+Deeper review retained the initial Health membership and whole-package Yea/Nay
+conclusion. It refined custody exceptions and existing program limits, and
+identified CARES16005 as license portability rather than an inspection rule.
+An unsupported draft reference to prompt restraint removal was removed before
+candidate writing; the exact527 text instead governs permitted restraints,
+active labor/delivery and left-side positioning. Source and choice bindings
+remain deterministic; semantic judgment, materiality and primary-document
+authentication remain manual. Approximate package research/authoring/validation
+elapsed **20–30minutes**, including work begun before checkpoint1 push. This
+complex package is not representative four-minute screening throughput.
+
+The queue helper gained optional `queue --compact` TSV output; JSON remains
+the default for full receipts. Action/date/measure/question/disposition and
+all four dependency flags remain visible, including reviewed unresolved cases.
+A focused CSV round-trip regression covers embedded tabs/quotes and flags.
+For the next25 rows, displayed characters fall from11117 to3201 (**71.2%**).
+This is measured output reduction, not a measured model-token or elapsed saving.
+Focused helper tests:4 pass. No meaning, classification or state is inferred
+by the helper, and no accepted/public boundary changes.
+
+Validation:143 candidate/corpus/IR/pipeline/helper tests pass, including the
+compact-display test; all7 canonical semantic checks passed. The new package
+regression verifies exact member choices, one finding per member, source-removal
+rejection and operative conditions. A test's literal `unadopted` expectation was
+corrected to the equivalent authored phrase `not the passed EH`; no substantive
+gate was weakened. Final helper regression passes. Seven generated JSON files
+and packet regenerate byte-identically. All85 old authored/core actions,
+1425 old captures,363 old membership records and125 old compiled propositions
+remain structurally identical to starting SHA. Only nine queue rows changed;
+667 others remain unchanged. Actual generated compacts/details for both members
+retain the same shared package meaning and limitations; each new episode gives
+one finding. Public/closure/approval flags remain false. Diff check passes.
+Core `114d6284a9d2fb4618283ab00ab6142ff9b633f473b3199340e5d2ded18f67d8`;
+compiled `8becf2463daa8d91b0c1ba05733cd420ebaf541c9f6cf87b25c3e91b149c5b1b`.
+
+Checkpoint1 exact head `d45b5bd24bc56cada906bf11bfeed7c11409fecf` has successful
+hosted CI [run37256755739](https://github.com/dhart54/political_fingerprint/actions/runs/37256755739).
+Draft continuation [PR196](https://github.com/dhart54/political_fingerprint/pull/196)
+is stacked on the frozen benchmark branch. Checkpoint2 exact-head receipt will
+be recorded after commit/push. Next ordinary action: **2026roll88 HR4294**.
 
 ## Production, rollback, blockers and reconciliation
 
@@ -139,5 +216,13 @@ Production writes: none. Candidate changes are reversible through Git; no
 production rollback needed. No evidence blocker established. Goal remains active
 until the remaining Health queue is screened or a genuine stopping condition
 prevents further work. No terminal marker at intermediate checkpoints; the
-uncommitted `CODEX_CHECKPOINT.txt` protocol applies only after all final delivery
-actions.
+uncommitted terminal marker applies only after all final delivery actions.
+The user's October4 overnight instruction now requires `.codex-task-complete`
+as the final filesystem action, replacing any older marker convention. Stale
+marker absent at receipt. Watcher file `.codex-shutdown-deadline` is authoritative:
+currently October5 06:57:44 Eastern, stop new large work06:27:44, wrap06:42:44,
+marker by06:52:44. Read it periodically because the watcher may update it.
+Weekly usage exposed5% used/95% remaining at23:00Eastern; check at substantial
+units/checkpoints. At5% remaining or the deadline wrap window, preserve the
+nearest coherent validated checkpoint, record remaining work and stop. Never
+commit either watcher file or the terminal marker.
