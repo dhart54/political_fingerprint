@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "9d773d0672df88604fd063b62336c1c20ff0381aeb3edda8c8748a583cb6230c",
-  "source_capture_sha256": "b63aff310e3ac1a3ade653a8cebedaa29d5a772ef887cdb851c8edeb4b261f5f",
-  "core_sha256": "25ebb181f1d2f5dcfb82a5da89de5c062410adadad77f4faf446ff0dc619e4d9",
-  "compiled_sha256": "1594dfd1951da561468b809c4ae3870e5fa746660421611584971d8533cdd7d7",
-  "readable_sha256": "73a0606a8c49bb6ae12293b604b2cb51e29a42f26e6cdc3151ef358ef7f76a65",
+  "input_sha256": "02270f7f3c0e48e13c0b8114e19bc8466745dac417080300eb710aacdb053fa9",
+  "source_capture_sha256": "f163d4eded8f24f82817055b591658e44e30fc94e74f3518f421c7c7dc14ec35",
+  "core_sha256": "0fce0bc1fbc167fd16d78eba8cb1412e417d8efb9a41e5e8204fce329fcd49c4",
+  "compiled_sha256": "8fcd543e2f05386710add75177c14e4466dcd18175ce618dff103c062c3b0782",
+  "readable_sha256": "431bc802d04201d6dc3175b6f892f4b010e705be9a844d2ad3d742c82054b81f",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1753,6 +1753,66 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
           "source_id": "clerk:119:2:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:145",
+      "shared_sha256": "7694738db7dba3900b1ca4989e61f0973bf2ed50dcfae9e24039d354941d1b54",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding hot rotisserie chicken to SNAP’s hot-food exceptions",
+          "source_id": "clerk:119:2:145"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding hot rotisserie chicken to SNAP’s hot-food exceptions",
+          "source_id": "clerk:119:2:145"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:146",
+      "shared_sha256": "c65b9160d1255dbc92c1ba837942e297b9338313ac0f4d4612f2e808f5393356",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations",
+          "source_id": "clerk:119:2:146"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations",
+          "source_id": "clerk:119:2:146"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:151",
+      "shared_sha256": "b8665b046da2b71d285cae270067a0079c101b3e3309ea3568536bfa379ab11c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed excluding the amendment’s defined soda purchases from SNAP after180 days",
+          "source_id": "clerk:119:2:151"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported excluding the amendment’s defined soda purchases from SNAP after180 days",
+          "source_id": "clerk:119:2:151"
         }
       ]
     }

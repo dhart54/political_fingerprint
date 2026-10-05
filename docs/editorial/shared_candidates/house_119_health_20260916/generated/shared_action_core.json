@@ -20676,7 +20676,451 @@
       "source_contract_version": "shared_legislative_corpus_v1",
       "meaning_contract_version": "candidate-extension-v1",
       "action_core_sha256": "c9bd7eb6ee04212a5a8faecac113589ef1e9af8bddc6d8af791ac946ea6f5133"
+    },
+    {
+      "action_id": "house:119:2:145",
+      "exact_action_identity": "house:119:2:145",
+      "chamber": "house",
+      "congress": 119,
+      "session": 2,
+      "roll": 145,
+      "legislative_stage": "amendment",
+      "action_date": "2026-04-30",
+      "exact_question": "On Agreeing to the Amendment",
+      "chamber_outcome": "Agreed to",
+      "enactment_status": "not_inferred_from_house_outcome",
+      "mechanism": "Allowing hot rotisserie chicken purchases with SNAP",
+      "mechanism_availability": "candidate_source_mapped",
+      "candidate_exact_action_meaning": "Crawford PartB amendment8 inserts hot rotisserie chicken and before those authorized in7USC2012(k)(1), with related clause/paragraph reference edits. Existing(k) generally defines food for home consumption and excludes alcoholic beverages, tobacco and hot foods/products ready for immediate consumption, subject to listed meal exceptions. Those exceptions include conditional meals for older/disabled people, rehabilitation-program participants, certain group-living residents, battered-women/children shelter residents and homeless households; the amendment retains those distinct pathways. It adds this named hot-food exception rather than deleting the hot-food exclusion or authorizing all restaurant/hot-food purchases. The text does not increase SNAP allotments or separately rewrite household or retailer eligibility.\n\nThe Committee of the Whole agreed to this separate amendment on April30,2026,384-35 with17 Not Voting. Debate included objections that the exception is piecemeal or lacks restaurant guardrails and arguments for convenient food access; those concerns and predicted nutrition/fiscal consequences are attributed context, not resolved outcomes. The exact choice is the printed definition change, distinct from other farm amendments and whole-bill passage. House amendment adoption does not establish enactment or actual purchases.",
+      "candidate_short_description": "Allowing hot rotisserie chicken purchases with SNAP",
+      "candidate_compact_description": "The amendment would add hot rotisserie chicken to the exceptions to SNAP’s exclusion of hot food ready for immediate consumption. It would preserve the other existing meal exceptions. This adopted amendment concerns the SNAP food definition, without increasing benefit amounts or allowing all hot foods.",
+      "compact_source_refs": [
+        "govinfo:hrpt119-628-partB-8",
+        "govinfo:7usc2012-2024-snap-definitions"
+      ],
+      "candidate_shared_limitations": [
+        "One choice on a named exception to the SNAP food definition; support does not imply a position on every farm-bill provision or all hot-food eligibility.",
+        "Existing conditional meal exceptions remain; the interpretation does not invent restaurant safeguards or guarantee that every restaurant or retailer qualifies.",
+        "No benefit-amount change, purchase, nutritional or fiscal outcome, enactment, motive or preferred alternative is inferred."
+      ],
+      "choice_meanings": {
+        "Yea": "supported adding hot rotisserie chicken to SNAP’s hot-food exceptions",
+        "Nay": "opposed adding hot rotisserie chicken to SNAP’s hot-food exceptions"
+      },
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-8",
+          "locator": "PartB amendment8 complete operative text",
+          "passage": "8. An Amendment To Be Offered by Representative Crawford of Arkansas or His Designee, Debatable for 10 Minutes At the end of subtitle A of title IV, add the following: SEC. 4114. SNAP ELIGIBLE HOT ROTISSERIE CHICKEN. Section 3(k)(1) of the Food and Nutrition Act of 2008 (7 U.S.C. 2012(k)(1)) is amended-- (1) by inserting ``hot rotisserie chicken and'' before ``those authorized''; (2) by striking ``clauses'' and inserting ``paragraphs''; and (3) by striking ``of this subsection''. ---------- "
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "locator": "Existing2012(k)(1) hot-food rule and retained exceptions",
+          "passage": "hot foods or hot food products ready for immediate consumption other than those authorized pursuant to clauses (3), (4), (5), (7), (8), and (9)"
+        }
+      ],
+      "action_meaning_ref": "house119-through-2026-09-16:house:119:2:145:candidate-v1",
+      "governed_source_identities": [
+        {
+          "source_id": "clerk:119:2:145",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "99b4b317dcf5f78b9d010f92a9cbeae83b8b7e30620dd951ed7998751bb7893a",
+          "governed_bytes_sha256": "3033e2fc7b7ce827d5a502743747c4b2088664bcb2bf283d02c7fbcae8d47b5b"
+        },
+        {
+          "source_id": "govinfo:hrpt119-628-partB-8",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment8; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "ddc9b36acaf9dd4fe54953fa32b0fc8e0e6e8a8b12854800c2a5135c4635dd2b"
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "source_type": "official_incorporated_authority",
+          "text_version": "2024 Code; complete operative2012(k), notes excluded",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "3146d1806948e4b82dcb56aaea1cf5f9be91a3023cf6f93fdbcdd11d99896950"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "governed_source_identity_sha256": "7f47bc2a7e2b66fbef67683aa21b6c6df916b6562160d19707f4abf063d316e0",
+      "action_outcome_source_identities": [
+        {
+          "source_id": "clerk:119:2:145",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "99b4b317dcf5f78b9d010f92a9cbeae83b8b7e30620dd951ed7998751bb7893a",
+          "governed_bytes_sha256": "3033e2fc7b7ce827d5a502743747c4b2088664bcb2bf283d02c7fbcae8d47b5b"
+        }
+      ],
+      "operative_meaning_source_identities": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-8",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment8; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "ddc9b36acaf9dd4fe54953fa32b0fc8e0e6e8a8b12854800c2a5135c4635dd2b"
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "source_type": "official_incorporated_authority",
+          "text_version": "2024 Code; complete operative2012(k), notes excluded",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "3146d1806948e4b82dcb56aaea1cf5f9be91a3023cf6f93fdbcdd11d99896950"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "semantic_ir_source_ids": [
+        "clerk:119:2:145",
+        "govinfo:hrpt119-628-partB-8",
+        "govinfo:7usc2012-2024-snap-definitions",
+        "govinfo:hres1224eh",
+        "congressional-record:2026-04-29-farm-exact-amendments",
+        "congressional-record:2026-04-30-farm-exact-amendments"
+      ],
+      "package_component_boundary": {
+        "boundary_type": "exact_amendment",
+        "parent_package_meaning_projected": false,
+        "basis": [
+          "One choice on a named exception to the SNAP food definition; support does not imply a position on every farm-bill provision or all hot-food eligibility.",
+          "Existing conditional meal exceptions remain; the interpretation does not invent restaurant safeguards or guarantee that every restaurant or retailer qualifies.",
+          "No benefit-amount change, purchase, nutritional or fiscal outcome, enactment, motive or preferred alternative is inferred."
+        ]
+      },
+      "source_contract_version": "shared_legislative_corpus_v1",
+      "meaning_contract_version": "candidate-extension-v1",
+      "action_core_sha256": "7694738db7dba3900b1ca4989e61f0973bf2ed50dcfae9e24039d354941d1b54"
+    },
+    {
+      "action_id": "house:119:2:146",
+      "exact_action_identity": "house:119:2:146",
+      "chamber": "house",
+      "congress": 119,
+      "session": 2,
+      "roll": 146,
+      "legislative_stage": "amendment",
+      "action_date": "2026-04-30",
+      "exact_question": "On Agreeing to the Amendment",
+      "chamber_outcome": "Agreed to",
+      "enactment_status": "not_inferred_from_house_outcome",
+      "mechanism": "Reporting on SNAP food-eligibility demonstrations",
+      "mechanism_availability": "candidate_source_mapped",
+      "candidate_exact_action_meaning": "Grothman PartB amendment20 requires the Secretary of Agriculture to report to the House Agriculture and Senate Agriculture, Nutrition, and Forestry Committees on feasibility, implementation and effectiveness of all USDA demonstration projects concerning the statutory food definition for SNAP recipients, including recommendations to Congress for changes to that definition. Its deadline is120 days after the conclusion of all such projects, not120 days after enactment or after any single project. It neither creates demonstration authority nor adopts any particular food restriction, recommendation or benefit change. Proposed Health/Social membership rests on direct administration/evaluation of this household nutrition-assistance program, not diet rhetoric or predicted clinical effects.\n\nThe Committee of the Whole adopted this distinct amendment on April30,2026,416-8 with11 Not Voting. Floor discussion included competing assertions about restrictions, confusion and health effects and an explicit statement that Congress ultimately determines permanent statutory changes. Those assertions remain attributed rather than established outcomes. Support is for this reporting duty, not for every waiver or any particular future food ban. This is separate from Crawford/Self amendments and from whole-package passage; adoption does not establish enactment.",
+      "candidate_short_description": "Reporting on SNAP food-eligibility demonstrations",
+      "candidate_compact_description": "The amendment would require USDA to report on the feasibility, implementation and effectiveness of its SNAP food-eligibility demonstrations within120 days after all such projects conclude, with recommendations for legislative changes. This adopted reporting requirement would not itself prohibit foods, change benefits or enact its recommendations.",
+      "compact_source_refs": [
+        "govinfo:hrpt119-628-partB-20"
+      ],
+      "candidate_shared_limitations": [
+        "The clock begins after all covered projects conclude; no fixed calendar reporting date is invented.",
+        "The report may recommend changes; the amendment does not itself enact those recommendations, authorize a new demonstration, restrict foods or change benefit amounts.",
+        "No position on a particular waiver, predicted diet/medical outcome, enactment, motive or preferred alternative is inferred."
+      ],
+      "choice_meanings": {
+        "Yea": "supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations",
+        "Nay": "opposed requiring a report and legislative recommendations on SNAP food-eligibility demonstrations"
+      },
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-20",
+          "locator": "PartB amendment20 complete operative text",
+          "passage": "20. An Amendment To Be Offered by Representative Grothman of Wisconsin or His Designee, Debatable for 10 Minutes At the end of subtitle A, of title IV, add the following: SEC. 4114. FOODS ELIGIBLE FOR PURCHASE WITH SNAP BENEFITS. Not later than 120 days after the conclusion of the all demonstration projects carried out by the Secretary of Agriculture regarding the statutory definition of food eligible for purchase by recipients of supplemental nutrition assistance program (SNAP) benefits, the Secretary shall submit to the Committee on Agriculture of the House of Representatives, and the Committee on Agriculture, Nutrition, and Forestry of the Senate, a report on the feasibility, implementation, and effectiveness of such projects, including recommendations to the Congress for legislative changes to such definition. ---------- "
+        }
+      ],
+      "action_meaning_ref": "house119-through-2026-09-16:house:119:2:146:candidate-v1",
+      "governed_source_identities": [
+        {
+          "source_id": "clerk:119:2:146",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "2bfc5aa8b892ba3084c335c148f247dffcc65f5878bd9242055efb592a953f75",
+          "governed_bytes_sha256": "9ac89d30c910558736a19d799086e42b2a46c738e1cf84299fa0a0cfcaf45046"
+        },
+        {
+          "source_id": "govinfo:hrpt119-628-partB-20",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment20; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "5acdf58851fa13463c6cd0b375e82f662fb73f9d5db7f9d75219ba550504dfd5"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "governed_source_identity_sha256": "a0a2fcfd0b66043890bc8756205143b51c2cf79ef976455ef1a379644543b871",
+      "action_outcome_source_identities": [
+        {
+          "source_id": "clerk:119:2:146",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "2bfc5aa8b892ba3084c335c148f247dffcc65f5878bd9242055efb592a953f75",
+          "governed_bytes_sha256": "9ac89d30c910558736a19d799086e42b2a46c738e1cf84299fa0a0cfcaf45046"
+        }
+      ],
+      "operative_meaning_source_identities": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-20",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment20; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "5acdf58851fa13463c6cd0b375e82f662fb73f9d5db7f9d75219ba550504dfd5"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "semantic_ir_source_ids": [
+        "clerk:119:2:146",
+        "govinfo:hrpt119-628-partB-20",
+        "govinfo:hres1224eh",
+        "congressional-record:2026-04-29-farm-exact-amendments",
+        "congressional-record:2026-04-30-farm-exact-amendments"
+      ],
+      "package_component_boundary": {
+        "boundary_type": "exact_amendment",
+        "parent_package_meaning_projected": false,
+        "basis": [
+          "The clock begins after all covered projects conclude; no fixed calendar reporting date is invented.",
+          "The report may recommend changes; the amendment does not itself enact those recommendations, authorize a new demonstration, restrict foods or change benefit amounts.",
+          "No position on a particular waiver, predicted diet/medical outcome, enactment, motive or preferred alternative is inferred."
+        ]
+      },
+      "source_contract_version": "shared_legislative_corpus_v1",
+      "meaning_contract_version": "candidate-extension-v1",
+      "action_core_sha256": "c65b9160d1255dbc92c1ba837942e297b9338313ac0f4d4612f2e808f5393356"
+    },
+    {
+      "action_id": "house:119:2:151",
+      "exact_action_identity": "house:119:2:151",
+      "chamber": "house",
+      "congress": 119,
+      "session": 2,
+      "roll": 151,
+      "legislative_stage": "amendment",
+      "action_date": "2026-04-30",
+      "exact_question": "On Agreeing to the Amendment",
+      "chamber_outcome": "Failed",
+      "enactment_status": "not_inferred_from_house_outcome",
+      "mechanism": "Excluding defined soda purchases from SNAP",
+      "mechanism_availability": "candidate_source_mapped",
+      "candidate_exact_action_meaning": "Self PartB amendment47 would insert soda after alcoholic beverages in7USC2012(k), adding an exclusion from SNAP eligible food. Proposed(r-1) defines soda as a carbonated beverage that contains more than1 gram of added sugar, artificial sweetener, or flavoring per serving; the exact threshold, carbonation and alternatives are retained rather than reducing the text to all sugary drinks or all carbonated drinks. Its effective date would be180 days after enactment of the Act. It changes what SNAP may purchase, not a general ban on buying soda with other funds or a change in benefit amounts.\n\nThe Committee of the Whole rejected the amendment on April30,2026,186-238 with11 Not Voting. The proposal therefore is a failed separate restriction choice, not an adopted component of the House farm package. Floor speakers disputed restriction burdens, purchasing choice, implementation and predicted nutrition/health effects; those claims are attributed context. Nay opposes this exact definition/exclusion, without establishing support for every food, another waiver policy or a preferred alternative. No enactment, actual purchasing or medical/fiscal result is inferred.",
+      "candidate_short_description": "Excluding defined soda purchases from SNAP",
+      "candidate_compact_description": "The amendment would exclude soda from SNAP’s eligible-food definition180 days after enactment. It defines soda as a carbonated beverage containing more than1 gram of added sugar, artificial sweetener or flavoring per serving. The amendment failed, so this recorded choice did not add that restriction to the House package.",
+      "compact_source_refs": [
+        "govinfo:hrpt119-628-partB-47",
+        "govinfo:7usc2012-2024-snap-definitions"
+      ],
+      "candidate_shared_limitations": [
+        "The more-than1-gram/per-serving test covers the printed added-sugar, artificial-sweetener or flavoring alternatives; do not substitute a sugary-drinks-only definition.",
+        "This failed amendment is distinct from the adopted reporting and hot-chicken amendments and from the whole farm-bill vote.",
+        "It would exclude specified SNAP purchases, not prohibit purchases with other funds; no benefit amount, health outcome or preferred alternative is inferred."
+      ],
+      "choice_meanings": {
+        "Yea": "supported excluding the amendment’s defined soda purchases from SNAP after180 days",
+        "Nay": "opposed excluding the amendment’s defined soda purchases from SNAP after180 days"
+      },
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-47",
+          "locator": "PartB amendment47 complete operative text",
+          "passage": "47. An Amendment To Be Offered by Representative Self of Texas or His Designee, Debatable for 10 Minutes At the end of subtitle A, of title IV, add the following: SEC. 4114. FUNDING IS ZERO FOR ZERO NUTRITION OPTIONS. (a) Amendments.--Section 3 of the Food and Nutrition Act of 2008 (7 U.S.C. 2012) is amended-- (1) in subsection (k) by inserting ``soda,'' after ``alcoholic beverages,'', and (2) by inserting after subsection (r) the following: ``(r-1) `Soda' means a carbonated beverage that contains more than 1 gram of added sugar, artificial sweetener, or flavoring per serving.''. (b) Effective Date.--This section shall take effect 180 days after the date of the enactment of this Act. ---------- "
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "locator": "Existing2012(k)(1) purchase definition changed",
+          "passage": "any food or food product for home consumption except alcoholic beverages, tobacco"
+        }
+      ],
+      "action_meaning_ref": "house119-through-2026-09-16:house:119:2:151:candidate-v1",
+      "governed_source_identities": [
+        {
+          "source_id": "clerk:119:2:151",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "1e2cb6d0cbe14a1bc49e41ee47536c385217fb04eae79931233ef4a5bac7888d",
+          "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-628-partB-47",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment47; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "61a55b75e78765f1eb0004374e29fa7494c9253fa7a77de8e914c625d6d0c812"
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "source_type": "official_incorporated_authority",
+          "text_version": "2024 Code; complete operative2012(k), notes excluded",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "3146d1806948e4b82dcb56aaea1cf5f9be91a3023cf6f93fdbcdd11d99896950"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "governed_source_identity_sha256": "278228fd8caf254b62104e9b401c6e262cb4b9c7fa7219a0b576140e1dceee9c",
+      "action_outcome_source_identities": [
+        {
+          "source_id": "clerk:119:2:151",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "1e2cb6d0cbe14a1bc49e41ee47536c385217fb04eae79931233ef4a5bac7888d",
+          "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f"
+        }
+      ],
+      "operative_meaning_source_identities": [
+        {
+          "source_id": "govinfo:hrpt119-628-partB-47",
+          "source_type": "official_rules_committee_report",
+          "text_version": "House Report119-628 PartB amendment47; exact complete printed amendment; floor modification separately bound where applicable",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "61a55b75e78765f1eb0004374e29fa7494c9253fa7a77de8e914c625d6d0c812"
+        },
+        {
+          "source_id": "govinfo:7usc2012-2024-snap-definitions",
+          "source_type": "official_incorporated_authority",
+          "text_version": "2024 Code; complete operative2012(k), notes excluded",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "3146d1806948e4b82dcb56aaea1cf5f9be91a3023cf6f93fdbcdd11d99896950"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "congressional-record:2026-04-29-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-29 House Record; complete PDF pages138,139,143,144,153,154,155,156; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "535f96a4cb46bf8d0673bae662631afd05b28fd913cec1b61810e919031926ff"
+        },
+        {
+          "source_id": "congressional-record:2026-04-30-farm-exact-amendments",
+          "source_type": "official_congressional_record",
+          "text_version": "2026-04-30 House Record; complete PDF pages7,8,9,10,11,12,13,14,15; exact offer/modification/debate or recorded questions/results",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "47df71f61931f6841665d4f7834361511c5dfaa80297e0066600590dc138ab95"
+        }
+      ],
+      "semantic_ir_source_ids": [
+        "clerk:119:2:151",
+        "govinfo:hrpt119-628-partB-47",
+        "govinfo:7usc2012-2024-snap-definitions",
+        "govinfo:hres1224eh",
+        "congressional-record:2026-04-29-farm-exact-amendments",
+        "congressional-record:2026-04-30-farm-exact-amendments"
+      ],
+      "package_component_boundary": {
+        "boundary_type": "exact_amendment",
+        "parent_package_meaning_projected": false,
+        "basis": [
+          "The more-than1-gram/per-serving test covers the printed added-sugar, artificial-sweetener or flavoring alternatives; do not substitute a sugary-drinks-only definition.",
+          "This failed amendment is distinct from the adopted reporting and hot-chicken amendments and from the whole farm-bill vote.",
+          "It would exclude specified SNAP purchases, not prohibit purchases with other funds; no benefit amount, health outcome or preferred alternative is inferred."
+        ]
+      },
+      "source_contract_version": "shared_legislative_corpus_v1",
+      "meaning_contract_version": "candidate-extension-v1",
+      "action_core_sha256": "b8665b046da2b71d285cae270067a0079c101b3e3309ea3568536bfa379ab11c"
     }
   ],
-  "corpus_sha256": "25ebb181f1d2f5dcfb82a5da89de5c062410adadad77f4faf446ff0dc619e4d9"
+  "corpus_sha256": "0fce0bc1fbc167fd16d78eba8cb1412e417d8efb9a41e5e8204fce329fcd49c4"
 }

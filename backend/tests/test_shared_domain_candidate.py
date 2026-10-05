@@ -20,6 +20,51 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_farm_amendments_retain_separate_snap_choices_and_failed_restriction(self):
+        actions = {a['action_id']: a for a in self.author['actions']}
+        ids = [f'house:119:2:{n}' for n in [145, 146, 151]]
+        for aid in ids:
+            self.assertEqual(actions[aid]['stage'], 'amendment')
+            self.assertEqual(actions[aid]['episode_id'], 'episode:hr7567:119')
+        self.assertIn('other existing meal exceptions', actions[ids[0]]['compact_description'])
+        self.assertIn('after all such projects conclude', actions[ids[1]]['compact_description'])
+        self.assertIn('would not itself prohibit foods', actions[ids[1]]['compact_description'])
+        self.assertIn('artificial sweetener or flavoring per serving', actions[ids[2]]['compact_description'])
+        self.assertIn('amendment failed', actions[ids[2]]['compact_description'])
+        readable = readable_candidates(self.author, self.products[0], self.products[2], self.products[4])
+        for member in readable['members']:
+            finding = next(f for f in member['findings'] if ids[0] in f['action_ids'])
+            self.assertEqual(finding['action_ids'], ids)
+            self.assertIn('neither creates demonstration authority nor adopts any particular food restriction', ' '.join(finding['detail']))
+            self.assertIn('failed separate restriction choice, not an adopted component', ' '.join(finding['detail']))
+        for projection in self.products[2]:
+            rows = {r['action_id']: r for r in projection['actions']}
+            self.assertEqual(rows[ids[0]]['official_status'], 'Yea')
+            self.assertEqual(rows[ids[1]]['official_status'], 'Yea')
+            self.assertEqual(rows[ids[2]]['official_status'], 'Nay' if projection['member_id'] == 'F000477' else 'Yea')
+        author = copy.deepcopy(self.author)
+        next(a for a in author['actions'] if a['action_id'] == ids[0])['additional_source_ids'].remove('govinfo:7usc2012-2024-snap-definitions')
+        with self.assertRaisesRegex(ValueError, 'compact meaning|claim passage absent'):
+            prepare(author, self.capture, ['F000477', 'M001184'])
+
+    def test_april_farm_controls_bind_house_versions_and_modified_exact_amendment(self):
+        records = {r['action_id']: r for r in json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))['records']}
+        sources = {s['source_id']: s for s in self.capture['sources']}
+        for n in [140, 141, 143, 153]:
+            self.assertEqual(records[f'house:119:2:{n}']['disposition'], 'procedural_context')
+        for n in [142, 144, 147, 148, 149, 150, 152]:
+            self.assertEqual(records[f'house:119:2:{n}']['disposition'], 'exact_action_ineligible')
+        self.assertIn('not cemetery-marker ES', records['house:119:2:142']['rationale'])
+        self.assertTrue(any(s['source_id'] == 'govinfo:s1318eah' for s in records['house:119:2:142']['sources']))
+        self.assertIn('not appropriations', records['house:119:2:143']['rationale'])
+        self.assertIn('replacing everyPage430 reference byPage431', records['house:119:2:150']['rationale'])
+        self.assertIn('NOT Scholten PartB45', records['house:119:2:150']['rationale'])
+        self.assertIn('Page 431', sources['congressional-record:2026-04-29-farm-exact-amendments']['text'])
+        self.assertIn('paragraphs (1) through (5)', sources['rules:hr7567-print119-22-material-amendment-pages']['text'])
+        excluded = {f'house:119:2:{n}' for n in [140,141,142,143,144,147,148,149,150,152,153]}
+        for projection in self.products[2]:
+            self.assertFalse(excluded & {r['action_id'] for r in projection['actions']})
+
     def test_late_april_reporting_and_environment_reviews_retain_material_context_without_direction(self):
         records = {r["action_id"]: r for r in json.loads((DATA / "membership_review.json").read_text(encoding="utf-8"))["records"]}
         for n in [125, 126, 127, 129, 134, 136, 137, 138]:
@@ -388,7 +433,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         core, _, projections, _, result = self.products
         readable = readable_candidates(self.author, core, projections, result)
         f = readable["members"][0]
-        self.assertEqual(len(f["findings"]), 67)
+        self.assertEqual(len(f["findings"]), 68)
         by_action = {x["action_ids"][0]: x for x in f["findings"]}
         self.assertIn("abortion", by_action["house:119:1:349"]["detail"][1])
         self.assertIn("each provision", " ".join(by_action["house:119:1:349"]["qualifications_on_both_levels"]))
@@ -464,8 +509,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":215, "source_unresolved":131,
-            "interpreted_substantive_directional":87, "expressive_nonbinding_context":14, "exact_action_ineligible":229})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":217, "source_unresolved":119,
+            "interpreted_substantive_directional":90, "expressive_nonbinding_context":14, "exact_action_ineligible":236})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -483,7 +528,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 129)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 117)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

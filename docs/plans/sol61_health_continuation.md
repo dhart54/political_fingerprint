@@ -456,6 +456,75 @@ changes or installation. Weekly usage8% used/92% remaining at00:09Eastern;
 shutdown deadline remains06:57:44. Next ordinary action: **2026roll140 H.Res.1224**.
 Exact-head hosted CI receipt follows commit/push.
 
+## Checkpoint7 — April28–30 rolls140–153
+
+Checkpoint6 exact head `bbdf0da3cf482b45f58d557b0cd1fa4c06c93077` passed hosted
+CI [run37262400849](https://github.com/dhart54/political_fingerprint/actions/runs/37262400849).
+Fourteen new governed reviews:4 procedural,7 exclusions,3 shared meanings.
+Two controls already had procedural inventory labels. Totals **90/217/14/236/119**,
+with117 unfinished screenings and2 examined dependencies. One new farm episode
+has three independently interpreted SNAP amendment observations, adding one
+finding per member: **68/63**.69 episodes/180 substantive member observations.
+31 captures added (1594 total),436 membership records. No prior governed identity
+reused this batch; newly captured rule/report/Record families support multiple
+actions. The nine complete operative amendments are source selections from one
+verified Rules report/raw receipt, avoiding nine independent report acquisitions.
+Two material Code sections and exact Rules print base pages were read; no
+automated membership decision or source-similarity classification was introduced.
+
+Crawford8 adds hot rotisserie chicken to2012(k)'s hot-food exceptions, retaining
+the other conditional meal pathways; it does not allow all hot foods or increase
+benefit amounts. Grothman20 requires feasibility/implementation/effectiveness
+reporting120 days after ALL food-definition demonstrations conclude; it creates
+neither a food ban, demonstration authority nor self-enacting recommendations.
+Self47's soda exclusion preserves carbonation,more-than1gram/per-serving,
+added-sugar/artificial-sweetener/flavoring alternatives and180-day effective date.
+It FAILED186-238/11 Not Voting and is not a passed package component. Both
+members supported8/20; Foushee opposed and Massie supported47. Opposing floor
+arguments remain attributed context; no nutrition,health,fiscal or motive claim
+is inferred. Committee-of-the-Whole totals, including delegates, remain exact;
+no House-only denominator is substituted.
+
+Roll142 binds S1318 **EAH**, FISA/query safeguards plus added House1919 anti-CBDC
+language, rather than the earlier cemetery ES. The initial ES lead was rejected
+before governing candidate state; exact-version review changed its operative
+description radically while preserving the outside-Health disposition. Roll143
+retains recommended Health/Medicare/Social Security levels and conditional
+reconciliation/enforcement as established non-counting budget process, not
+appropriations or entitlement changes.1224's deemed/conditional instructions
+remain explicit procedural context. Bentz/Hageman fuel/animal-ID changes,
+Luna's strike of three pesticide regulatory sections, Moore's narrow WV-track
+penalty exception, modified AGARDA39 and Spartz's bounded farm-engine exemption
+are independently excluded from exact mechanisms; parent farm eligibility and
+predicted exposure/health consequences do not supply membership. Printed biomass
+clause and greyhound paragraph mismatches remain unrepaired.
+
+Scholten39 modifies page references430→431 ONLY and concerns precision/climate
+agricultural research goals. A same-name SNAP-vendor45 lead was rejected after
+exact floor binding: tentative Health relevance changed to outside Health for
+150, before authoring. No claim that all AGARDA base7125 changes are the amendment.
+Material3319k plant/veterinary countermeasures and the actual infectious-disease
+connection remain explicit. Full154 farm-package Health research is separate.
+Approximate group research/authoring **20–30minutes**, including exact source
+version and same-name amendment correction. No measured model-token saving.
+Manual corrections included compact-source passage references before any input
+write, expected accounting updates and compact/detail test wording. No editorial
+contract/test weakening or workflow-code expansion. At00:31Eastern exact weekly
+usage8% used/92% remaining; watcher deadline unchanged at06:57:44.
+
+Validation:149 focused tests and all7 semantic checks pass. All85 benchmark
+authors/core actions,1425 captures,363 reviews and125 compiled propositions
+preserved;73 inventory rows changed and603 remain identical. Seven generated
+JSON files and packet replay byte-identically. Actual compacts/details inspected
+for both members retain the three distinct choices/outcomes and qualifications;
+no public/accepted/closure/publication authority appears. Current boundary,
+selection,unfinished-count and multi-action accounting metadata updated to90,
+119/117 and11 without rewriting old action objects. Diff reviewed/clean.
+Core `0fce0bc1fbc167fd16d78eba8cb1412e417d8efb9a41e5e8204fce329fcd49c4`;
+compiled `8fcd543e2f05386710add75177c14e4466dcd18175ce618dff103c062c3b0782`.
+Next ordinary action: **2026roll154**.
+Exact-head CI receipt follows commit/push.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

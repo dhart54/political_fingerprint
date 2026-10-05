@@ -1,25 +1,31 @@
 # Foushee Health & Social Policy — ongoing shared candidate
 
 **Sol 6.1 continuation from exact benchmark head f10abd6b42867d591992b368c089150e4178604b.**
-The separate continuation branch now governs 2026 rolls79–138: twenty-seven
-procedural controls, four expressive controls, twenty-six proposed exclusions and
-two new shared whole-package interpretations. Sixteen controls already had
-procedural inventory labels; their governed reviews are new. Candidate totals:
-87 interpreted /215 procedural /14 expressive /229 excluded /131 unresolved
-(129 unfinished screenings plus two examined dependencies). All 85 prior shared
-meanings and 65 Foushee /60 Massie findings are preserved; H.R.7744 and H.R.8029
-each add one finding per member (67/62 total), with Foushee Nay/Massie Yea on
-both exact passage choices. No acceptance, publication or production authority
-is created. Health screening remains active.
+The separate continuation branch now governs 2026 rolls79–153, preserving the
+already completed128/139:31 procedural controls,4 expressive controls,33 proposed
+exclusions and5 new shared meanings. Eighteen controls already had procedural
+inventory labels; their governed reviews are new. Candidate totals:
+90 interpreted /217 procedural /14 expressive /236 excluded /119 unresolved
+(117 unfinished screenings plus2 examined dependencies). All85 prior meanings
+and65 Foushee /60 Massie findings are preserved. The two DHS whole-package
+episodes and one three-amendment SNAP episode add3 findings per member (68/63).
+No acceptance, publication or production authority is created; screening remains
+active. The [continuation plan](../plans/sol61_health_continuation.md) records
+evidence, metrics, validation and next work: **roll154, whole HR7567 passage**.
 
-The [continuation plan](../plans/sol61_health_continuation.md) records evidence,
-metrics, validation, source reuse and next work. Next ordinary action: roll140,
-H.Res.1224 previous question; completed128/139 remain preserved. H.R.8029's complete operative body matches H.R.7744,
-verified independently against its exact EH; dates, rule, floor arguments and
-Clerk observations remain separate. Reused care/grant/custody/pay authorities
-retain all established qualifications. H.Res.1142's actual deemed-concurrence
-effect remains explicit non-counting procedural context, not a reconstructed
-Health finding. Neither package vote establishes separate component positions.
+The SNAP sequence preserves adopted hot-rotisserie-chicken eligibility, adopted
+demonstration reporting without self-enacting food restrictions, and the FAILED
+defined-soda exclusion. Both members supported the first two; Foushee opposed
+and Massie supported the failed restriction. These are separate exact choices,
+without a farm-package/component-position inference. Modified Scholten PartB39
+is agricultural research, distinct from her unrecorded PartB45 SNAP vendor text.
+House S1318 EAH is FISA plus anti-CBDC language, not the earlier cemetery ES.
+Budget functional levels remain non-counting process, not appropriations or
+entitlement changes. Printed greyhound/clause mismatches remain unrepaired.
+H.R.8029's complete operative body matches H.R.7744, independently verified;
+dates, rules, opposing floor context and Clerk choices remain distinct. Neither
+whole-package vote supplies separate positions on its care/enforcement components.
+H.Res.1142's deemed-concurrence effect remains non-counting procedural context.
 
 The [benchmark plan and evidence report](../plans/sol61_health_slice_benchmark.md)
 contains the frozen six-action dispositions, version/source boundaries, both
@@ -1299,7 +1305,7 @@ failures remain recorded separately.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-87 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
+90 explicitly listed candidate inputs through September 16, 2026 within fixed discovery through that date. Wider membership and episode completeness remain unproven; this is not complete Health coverage.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -1845,6 +1851,56 @@ The Clerk recorded the House result as 'Passed' on 2026-02-03. This does not est
 Evidence: house:119:2:45, house:119:2:53; finding `prop:481765d79a95c610`.
 
 Sources: [clerk:119:2:45](https://clerk.house.gov/evs/2026/roll045.xml); [govinfo:hr7148ih-passage45-scope](https://www.govinfo.gov/content/pkg/BILLS-119hr7148ih/html/BILLS-119hr7148ih.htm); [govinfo:hres1014eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm); [govinfo:hrpt119-462-operative-amendments](https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm); [congressional-record:2026-01-22-rule-and-passage](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf); [clerk:119:2:53](https://clerk.house.gov/evs/2026/roll053.xml); [govinfo:hr7148eas](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eas/html/BILLS-119hr7148eas.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm); [govinfo:hr7148eh-page-binding](https://www.govinfo.gov/content/pkg/BILLS-119hr7148eh/pdf/BILLS-119hr7148eh.pdf).
+
+### Separate choices within one legislative episode
+
+**Compact:** Foushee supported adding hot rotisserie chicken to SNAP’s hot-food exceptions. The amendment would add hot rotisserie chicken to the exceptions to SNAP’s exclusion of hot food ready for immediate consumption. It would preserve the other existing meal exceptions. This adopted amendment concerns the SNAP food definition, without increasing benefit amounts or allowing all hot foods. Foushee supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations. The amendment would require USDA to report on the feasibility, implementation and effectiveness of its SNAP food-eligibility demonstrations within120 days after all such projects conclude, with recommendations for legislative changes. This adopted reporting requirement would not itself prohibit foods, change benefits or enact its recommendations. Foushee opposed excluding the amendment’s defined soda purchases from SNAP after180 days. The amendment would exclude soda from SNAP’s eligible-food definition180 days after enactment. It defines soda as a carbonated beverage containing more than1 gram of added sugar, artificial sweetener or flavoring per serving. The amendment failed, so this recorded choice did not add that restriction to the House package.
+
+**Detail:**
+
+**house:119:2:145**
+
+Foushee supported adding hot rotisserie chicken to SNAP’s hot-food exceptions.
+
+Crawford PartB amendment8 inserts hot rotisserie chicken and before those authorized in7USC2012(k)(1), with related clause/paragraph reference edits. Existing(k) generally defines food for home consumption and excludes alcoholic beverages, tobacco and hot foods/products ready for immediate consumption, subject to listed meal exceptions. Those exceptions include conditional meals for older/disabled people, rehabilitation-program participants, certain group-living residents, battered-women/children shelter residents and homeless households; the amendment retains those distinct pathways. It adds this named hot-food exception rather than deleting the hot-food exclusion or authorizing all restaurant/hot-food purchases. The text does not increase SNAP allotments or separately rewrite household or retailer eligibility.
+
+The Committee of the Whole agreed to this separate amendment on April30,2026,384-35 with17 Not Voting. Debate included objections that the exception is piecemeal or lacks restaurant guardrails and arguments for convenient food access; those concerns and predicted nutrition/fiscal consequences are attributed context, not resolved outcomes. The exact choice is the printed definition change, distinct from other farm amendments and whole-bill passage. House amendment adoption does not establish enactment or actual purchases.
+
+The Clerk recorded the House result as 'Agreed to' on 2026-04-30. This does not establish enactment.
+
+**house:119:2:146**
+
+Foushee supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations.
+
+Grothman PartB amendment20 requires the Secretary of Agriculture to report to the House Agriculture and Senate Agriculture, Nutrition, and Forestry Committees on feasibility, implementation and effectiveness of all USDA demonstration projects concerning the statutory food definition for SNAP recipients, including recommendations to Congress for changes to that definition. Its deadline is120 days after the conclusion of all such projects, not120 days after enactment or after any single project. It neither creates demonstration authority nor adopts any particular food restriction, recommendation or benefit change. Proposed Health/Social membership rests on direct administration/evaluation of this household nutrition-assistance program, not diet rhetoric or predicted clinical effects.
+
+The Committee of the Whole adopted this distinct amendment on April30,2026,416-8 with11 Not Voting. Floor discussion included competing assertions about restrictions, confusion and health effects and an explicit statement that Congress ultimately determines permanent statutory changes. Those assertions remain attributed rather than established outcomes. Support is for this reporting duty, not for every waiver or any particular future food ban. This is separate from Crawford/Self amendments and from whole-package passage; adoption does not establish enactment.
+
+The Clerk recorded the House result as 'Agreed to' on 2026-04-30. This does not establish enactment.
+
+**house:119:2:151**
+
+Foushee opposed excluding the amendment’s defined soda purchases from SNAP after180 days.
+
+Self PartB amendment47 would insert soda after alcoholic beverages in7USC2012(k), adding an exclusion from SNAP eligible food. Proposed(r-1) defines soda as a carbonated beverage that contains more than1 gram of added sugar, artificial sweetener, or flavoring per serving; the exact threshold, carbonation and alternatives are retained rather than reducing the text to all sugary drinks or all carbonated drinks. Its effective date would be180 days after enactment of the Act. It changes what SNAP may purchase, not a general ban on buying soda with other funds or a change in benefit amounts.
+
+The Committee of the Whole rejected the amendment on April30,2026,186-238 with11 Not Voting. The proposal therefore is a failed separate restriction choice, not an adopted component of the House farm package. Floor speakers disputed restriction burdens, purchasing choice, implementation and predicted nutrition/health effects; those claims are attributed context. Nay opposes this exact definition/exclusion, without establishing support for every food, another waiver policy or a preferred alternative. No enactment, actual purchasing or medical/fiscal result is inferred.
+
+The Clerk recorded the House result as 'Failed' on 2026-04-30. This does not establish enactment.
+
+- One choice on a named exception to the SNAP food definition; support does not imply a position on every farm-bill provision or all hot-food eligibility.
+- Existing conditional meal exceptions remain; the interpretation does not invent restaurant safeguards or guarantee that every restaurant or retailer qualifies.
+- No benefit-amount change, purchase, nutritional or fiscal outcome, enactment, motive or preferred alternative is inferred.
+- The clock begins after all covered projects conclude; no fixed calendar reporting date is invented.
+- The report may recommend changes; the amendment does not itself enact those recommendations, authorize a new demonstration, restrict foods or change benefit amounts.
+- No position on a particular waiver, predicted diet/medical outcome, enactment, motive or preferred alternative is inferred.
+- The more-than1-gram/per-serving test covers the printed added-sugar, artificial-sweetener or flavoring alternatives; do not substitute a sugary-drinks-only definition.
+- This failed amendment is distinct from the adopted reporting and hot-chicken amendments and from the whole farm-bill vote.
+- It would exclude specified SNAP purchases, not prohibit purchases with other funds; no benefit amount, health outcome or preferred alternative is inferred.
+
+Evidence: house:119:2:145, house:119:2:146, house:119:2:151; finding `prop:af60d379426aa8b4`.
+
+Sources: [clerk:119:2:145](https://clerk.house.gov/evs/2026/roll145.xml); [govinfo:hrpt119-628-partB-8](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm); [govinfo:7usc2012-2024-snap-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2012.htm); [govinfo:hres1224eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm); [congressional-record:2026-04-29-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf); [congressional-record:2026-04-30-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf); [clerk:119:2:146](https://clerk.house.gov/evs/2026/roll146.xml); [govinfo:hrpt119-628-partB-20](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm); [clerk:119:2:151](https://clerk.house.gov/evs/2026/roll151.xml); [govinfo:hrpt119-628-partB-47](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm).
 
 ### Separate choices within one legislative episode
 
@@ -3475,4 +3531,7 @@ Sources: [clerk:119:2:87](https://clerk.house.gov/evs/2026/roll087.xml); [govinf
 | house:119:2:78 | supported passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions | opposed passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions | [govinfo:hr4758eh](https://www.govinfo.gov/content/pkg/BILLS-119hr4758eh/html/BILLS-119hr4758eh.htm); [govinfo:pl117-169-home-rebates-training-codes](https://www.govinfo.gov/content/pkg/PLAW-117publ169/html/PLAW-117publ169.htm); [govinfo:pl119-21-50402-energy-rescissions](https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm); [govinfo:hrpt119-484-4758](https://www.govinfo.gov/content/pkg/CRPT-119hrpt484/html/CRPT-119hrpt484.htm); [govinfo:hres1075eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm); [govinfo:usc6294a-2024-sol-slice](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6294a.htm); [govinfo:10cfr42018-2025-sol-slice](https://www.govinfo.gov/content/pkg/CFR-2025-title10-vol3/pdf/CFR-2025-title10-vol3-part420.pdf); [congressional-record:2026-02-25-4758](https://www.govinfo.gov/content/pkg/CREC-2026-02-25/pdf/CREC-2026-02-25-house.pdf) |
 | house:119:2:87 | supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards | opposed passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards | [govinfo:hr7744eh](https://www.govinfo.gov/content/pkg/BILLS-119hr7744eh/html/BILLS-119hr7744eh.htm); [govinfo:31usc1341-2024-backpay](https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm); [govinfo:42usc11331-11352-2024-food-shelter](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap119-subchapIII.htm); [govinfo:15usc2229-2024-fire](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229.htm); [govinfo:15usc2229a-2024-staffing](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229a.htm); [govinfo:21usc381-2024-import](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap9-subchapVIII-sec381.htm); [govinfo:21usc802-2024-controlled](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm); [govinfo:42usc262-2024-biological](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partF-subpart1-sec262.htm); [govinfo:pl116-93-dhs216-217](https://www.govinfo.gov/content/pkg/PLAW-116publ93/html/PLAW-116publ93.htm); [govinfo:pl116-260-dhs216](https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm); [govinfo:pl116-136-16005-health-license](https://www.govinfo.gov/content/pkg/PLAW-116publ136/html/PLAW-116publ136.htm); [govinfo:pl97-377-section156](https://www.govinfo.gov/content/pkg/STATUTE-96/pdf/STATUTE-96-Pg1830.pdf); [cbp:2021-pregnant-postpartum-custody-public-mirror](https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf); [congressional-record:2026-01-22-dhs-care-allocations](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf); [govinfo:hrpt119-173-dhs](https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm); [govinfo:srpt118-85-dhs](https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm); [congressional-record:2026-03-05-hr7744](https://www.govinfo.gov/content/pkg/CREC-2026-03-05/html/CREC-2026-03-05-pt1-PgH2432-2.htm); [govinfo:hres1095eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1095eh/html/BILLS-119hres1095eh.htm); [govinfo:10usc1086-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm) |
 | house:119:2:104 | supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards | opposed passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards | [govinfo:hr8029eh](https://www.govinfo.gov/content/pkg/BILLS-119hr8029eh/html/BILLS-119hr8029eh.htm); [govinfo:31usc1341-2024-backpay](https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm); [govinfo:42usc11331-11352-2024-food-shelter](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap119-subchapIII.htm); [govinfo:15usc2229-2024-fire](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229.htm); [govinfo:15usc2229a-2024-staffing](https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap49-sec2229a.htm); [govinfo:21usc381-2024-import](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap9-subchapVIII-sec381.htm); [govinfo:21usc802-2024-controlled](https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm); [govinfo:42usc262-2024-biological](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partF-subpart1-sec262.htm); [govinfo:pl116-93-dhs216-217](https://www.govinfo.gov/content/pkg/PLAW-116publ93/html/PLAW-116publ93.htm); [govinfo:pl116-260-dhs216](https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm); [govinfo:pl116-136-16005-health-license](https://www.govinfo.gov/content/pkg/PLAW-116publ136/html/PLAW-116publ136.htm); [govinfo:pl97-377-section156](https://www.govinfo.gov/content/pkg/STATUTE-96/pdf/STATUTE-96-Pg1830.pdf); [cbp:2021-pregnant-postpartum-custody-public-mirror](https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf); [congressional-record:2026-01-22-dhs-care-allocations](https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf); [govinfo:hrpt119-173-dhs](https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm); [govinfo:srpt118-85-dhs](https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm); [congressional-record:2026-03-26-hr8029](https://www.govinfo.gov/content/pkg/CREC-2026-03-26/html/CREC-2026-03-26-pt1-PgH2731.htm); [govinfo:hres1131eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm); [govinfo:10usc1086-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1086.htm); [govinfo:10usc1077-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm); [govinfo:pl119-37](https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm) |
+| house:119:2:145 | supported adding hot rotisserie chicken to SNAP’s hot-food exceptions | opposed adding hot rotisserie chicken to SNAP’s hot-food exceptions | [govinfo:hrpt119-628-partB-8](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm); [govinfo:7usc2012-2024-snap-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2012.htm); [govinfo:hres1224eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm); [congressional-record:2026-04-29-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf); [congressional-record:2026-04-30-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf) |
+| house:119:2:146 | supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations | opposed requiring a report and legislative recommendations on SNAP food-eligibility demonstrations | [govinfo:hrpt119-628-partB-20](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm); [govinfo:hres1224eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm); [congressional-record:2026-04-29-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf); [congressional-record:2026-04-30-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf) |
+| house:119:2:151 | supported excluding the amendment’s defined soda purchases from SNAP after180 days | opposed excluding the amendment’s defined soda purchases from SNAP after180 days | [govinfo:hrpt119-628-partB-47](https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm); [govinfo:7usc2012-2024-snap-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2012.htm); [govinfo:hres1224eh](https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm); [congressional-record:2026-04-29-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf); [congressional-record:2026-04-30-farm-exact-amendments](https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf) |
 <!-- GENERATED CANDIDATE END -->
