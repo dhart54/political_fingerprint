@@ -681,6 +681,72 @@ closed. Scoped14-file diff inspected; no runtime/production fan-out. Core609c599
 and compiled28020e2f hashes recorded in generated proof. Exact-head CI follows
 commit/push; continue176 without treating this checkpoint as terminal.
 
+## Checkpoint11 — Independent May/June screening177–195;176 pending
+
+19new governed reviews:7procedural,10exclusions,2new shared meanings (180/191).
+Five procedural actions already had procedural inventory labels. Totals94/221/18/
+255/88,with86unfinished plus2examined dependencies.72episodes,188substantive
+member observations,71Foushee/64Massie findings and135propositions. Cumulative
+114newreviews (79–175 and177–195,excluding alreadycompleted128/139),9newmeanings,
+307newcaptures.49captures added;5existing captures reused (Clerk194/195,1224,
+5503,119-43). Exact source URLs checked before acquisition; the existing38usc101
+capture had only child/parent definitions,so active-duty material was separately
+captured without pretending the old excerpt covered it.
+
+Complete short operative bill texts read.180 is a capped definedSt.Louis VAfacility
+AUTHORIZATION with authorization ofappropriations,not an actualappropriation;
+FY2025title/FY2026operative distinction retained.191 wholeEH/floor matchesRules
+PartA1.42 modification. Deep current authority review qualifies1114(r)/(t),1311(a)
+DIC,5312,COLA415(i),3729fees/waivers,3701/3702/3301training,10/32/38service
+and5503/PL119-43currentpensionlimit. The90dollar Medicaid nursingpensionlimit
+is extended,not raised; currentlaw43 already changed November2031 toJanuary2033.
+Fee heading/benefit rhetoric cannot hide1.42refinance/1.0assumption or delaylower
+rates. DIC is two triggered increases (+1 then+0.5percentagepoint aboveCOLA),not
+fixed two calendar years/general5percentcap. Existingeligibility andcare limits
+remain. FousheeYea180/Nay191; MassieNotVotingboth is nondirectional.
+
+Exclusions retain genuine ERISAplan deposit context,sharkemergency alert,9/11
+physical/mental findings versusmuseumproceeds,schoolidentity/curriculumrules,
+NativeAlaska subsistence/foodcommerce andveteranfinancialcompetency/NICS rules.
+No care direction inherited from a nearbyHealthpackage or predictedconsequence.
+Failed1329hasnoEH: independentRH plus exact May21 floor/Rules653PartB establish
+site/exhibition/identity rules anddiversity-to-range modification. Printed reports
+subsection(f)self-reference retained,not repaired. Incorrect report651 lookup was
+rejected as unrelatedcharterschools beforegovernance; no source contamination.
+PublicfailedEH response rejected; officialfloor substitutesfullybind exactchoice.
+
+176H.Res.1299 directly deems Senateconcurrence with a replacementhousingamendment,
+not merely consideration. Its exactClerk/deemedwrapper is captured; its appended
+housingpackage and typedstage need furtherreview. Initialproceduralrouting was
+rejected before any membership/inventory change.176 remainsunfinished unchanged;
+return there immediatelyafter this coherent independentcheckpoint,then196.
+No classification from resolutionlabel or borrowed earlier/later6644meaning.
+
+Approximate group research/authoring15–30minutes,withdeeper191 incorporated
+review. No measuredtoken/elapsed savings claimed. Existingread-onlysource/queue
+helper andbatch acquisition reused; no workflow/runtime expansion. Initial
+mechanicalfailures: oversizedWindows command rejected beforeexecution,missing
+Senatebill_type caught beforewrite,and subsection(b)cross-reference clipping
+corrected using fulloperativeheading beforefinalcandidate. Allpriorcandidate
+objects restored byte-identically before reapplying the corrected new batch.
+Checkpoint10exact29ba572ece401f5f7db3be8f9e7e74ad1b1cfdd1 CI37269532851 passed.
+Watcher06:57:44deadline unchanged; usage10%used/90%remaining.
+
+Validation:157 focused tests and all7 canonical semantic checks pass. All85
+benchmark/92 prior checkpoint authored/core objects,1425/1683 source captures,
+363/458 reviews and125 original propositions preserved exactly.114 inventory
+rows changed;562 identical,including pending176. Seven generated JSON files
+and packet replay byte-identically. Core0315c90c and compiledd6895d70 hashes
+are recorded in the generated proof. Two new regressions preserve current
+pension-expiry authority and non-directional observations; initial literal and
+projection-key assertions were corrected without weakening semantic gates.
+Actual180/191 Foushee compacts/detail/qualifications and MassieNotVoting
+observations inspected. Sample188 failed exact-floor exclusion (204–216),190
+fiduciary/NICS exclusion and195 consideration-rule control reviewed against
+source bindings. Scoped14-file diff and whitespace check pass; public and
+persistence boundaries stay closed. Commit/push/exact-head CI follow; then
+return176 full housing concurrence and its existing6644 episode boundary.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no

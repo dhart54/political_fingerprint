@@ -1665,9 +1665,45 @@
           }
         ],
         "member_action_source_identity_sha256": "d5de7f6ebc284b6616780121fe51f53089d0d919bd11faf117f53f84eb184c03"
+      },
+      {
+        "action_id": "house:119:2:180",
+        "action_core_sha256": "e2449eec5ec9bdd0f7d963a1b45601dda70615894b6465b77f916bf4fe30dcb1",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:180",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "cdcf9b4380ba0f7daae98c341396bea2407bf587f4b8994b28a77f45c897895b",
+            "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f"
+          }
+        ],
+        "member_action_source_identity_sha256": "8b061f135a008ce3c3112e5ca943de331d28ae3d93a8b38b7e20bb6806d075a1"
+      },
+      {
+        "action_id": "house:119:2:191",
+        "action_core_sha256": "949c6187af2a5f56d7810620d52a71af9550ec65ddc1f0def6d87552d36fb3b7",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:191",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "b910a7edc72b36e0e17fd3f3ab384a6225d3f24b0d7d52490a5d7acd0c12351e",
+            "governed_bytes_sha256": "88c4accd31d23ea0a291a94c0f6e6db50512679e3ea2c69b517977818cb57fe6"
+          }
+        ],
+        "member_action_source_identity_sha256": "68b268ef0cf18be0d7719539e530a9ed5f98adb1c86b4315670766191c1aaf68"
       }
     ],
-    "projection_sha256": "cd84d8839363025115774fbd818849167579e19e468cced255f2dd0f969f1783"
+    "projection_sha256": "ce2933d297837f72b8ab07caf16143dc6453de3f52da3fac4b00bc92580454e1"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -3335,8 +3371,44 @@
           }
         ],
         "member_action_source_identity_sha256": "d5de7f6ebc284b6616780121fe51f53089d0d919bd11faf117f53f84eb184c03"
+      },
+      {
+        "action_id": "house:119:2:180",
+        "action_core_sha256": "e2449eec5ec9bdd0f7d963a1b45601dda70615894b6465b77f916bf4fe30dcb1",
+        "official_status": "Not Voting",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "resolved_non_directional",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:180",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "cdcf9b4380ba0f7daae98c341396bea2407bf587f4b8994b28a77f45c897895b",
+            "governed_bytes_sha256": "eb88c63efbc5d13d03dcf1107601a087a1049e141679d10d89718e30331fd83f"
+          }
+        ],
+        "member_action_source_identity_sha256": "8b061f135a008ce3c3112e5ca943de331d28ae3d93a8b38b7e20bb6806d075a1"
+      },
+      {
+        "action_id": "house:119:2:191",
+        "action_core_sha256": "949c6187af2a5f56d7810620d52a71af9550ec65ddc1f0def6d87552d36fb3b7",
+        "official_status": "Not Voting",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "resolved_non_directional",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:191",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "b910a7edc72b36e0e17fd3f3ab384a6225d3f24b0d7d52490a5d7acd0c12351e",
+            "governed_bytes_sha256": "88c4accd31d23ea0a291a94c0f6e6db50512679e3ea2c69b517977818cb57fe6"
+          }
+        ],
+        "member_action_source_identity_sha256": "68b268ef0cf18be0d7719539e530a9ed5f98adb1c86b4315670766191c1aaf68"
       }
     ],
-    "projection_sha256": "8ee9ebc2ad278427cd831c448bdc9853e37a16def83cfffc846b5e4724b60131"
+    "projection_sha256": "491dcac1a6800c1f31da591777c110348008bfb4cd86f9f0caaef90febc110f0"
   }
 ]

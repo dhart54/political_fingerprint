@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "209821d60337157ec7823128df5a0575af63d5f6d9e9cb9d57cd29a5627bbf5e",
-  "source_capture_sha256": "015f0377299bc7720601140a467e8e77b13be0f8f75a9b55fd5196e18bd57a0e",
-  "core_sha256": "609c5995acb6a4fde22db7a3cec6f0c8e687539521283ee49c510e787eb03033",
-  "compiled_sha256": "28020e2f6810273d44de4677f7aa5d7751e6059987855b07d04804c3e9c2566a",
-  "readable_sha256": "52f31b38fa0c70451df12c5925f8782010fbf791d0567efb884d1a0509dbd606",
+  "input_sha256": "a2b7028c4333313260e91b275e1e559424fd646ec926d3c831ba491bf1ce7821",
+  "source_capture_sha256": "68f9e7aa190d983d203171202bf36f6a4def8afd5c667fb927f26a97d55558be",
+  "core_sha256": "0315c90c26f65bcbe0964bd2912a973d777bb8014b8328ac5cad59d9f328adb1",
+  "compiled_sha256": "d6895d7049a62b73f87c9afdcdaf3fafbf8735a113a68aad7599ee5949558340",
+  "readable_sha256": "0251dae5ddea4e831cf570c80147d0ce3100fe75215849ca64fa3d225bbf18d3",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1853,6 +1853,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the whole amended military-construction/VA package, including qualified care and veteran-support funding, specified rescissions and policy restrictions",
           "source_id": "clerk:119:2:175"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:180",
+      "shared_sha256": "e2449eec5ec9bdd0f7d963a1b45601dda70615894b6465b77f916bf4fe30dcb1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the defined St. Louis VA medical-facility project authorization",
+          "source_id": "clerk:119:2:180"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:180"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:191",
+      "shared_sha256": "949c6187af2a5f56d7810620d52a71af9550ec65ddc1f0def6d87552d36fb3b7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole qualified veteran/survivor benefits and housing package, including fee changes and the pension-limit extension",
+          "source_id": "clerk:119:2:191"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:191"
         }
       ]
     }
