@@ -126,7 +126,8 @@
     "house:119:2:267",
     "house:119:2:264",
     "house:119:2:266",
-    "house:119:2:278"
+    "house:119:2:278",
+    "house:119:2:28"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Exact operative mechanism affects health care, insurance, Medicaid, Social Security, or social-service delivery/financing. Cross-domain packages and exact amendments require independent operative support. Recorded procedures remain non-counting. This rule is proposed; unresolved membership is not exclusion.",
@@ -142,9 +143,9 @@
     "counts": {
       "procedural_context": 232,
       "exact_action_ineligible": 300,
-      "interpreted_substantive_directional": 110,
+      "interpreted_substantive_directional": 111,
       "expressive_nonbinding_context": 19,
-      "source_unresolved": 15
+      "source_unresolved": 14
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -153,14 +154,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 110,
-    "directional_substantive_actions": 110,
+    "substantive_eligible_actions": 111,
+    "directional_substantive_actions": 111,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 232,
     "expressive_nonbinding_actions": 19,
     "exact_action_ineligible_actions": 300,
-    "unresolved_boundary_cases": 15,
-    "independent_episode_count": 80,
+    "unresolved_boundary_cases": 14,
+    "independent_episode_count": 81,
     "multi_action_episode_count": 11,
     "mechanism_types": [
       "amendment",
@@ -173,12 +174,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 110,
-      "substantive_actions": 110,
+      "ready_substantive_actions": 111,
+      "substantive_actions": 111,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "2026rolls28/42 and eleven2025actions remain unfinished;2025roll237/2026roll44 are examined dependencies;45and278 whole-package completeness remain follow-ups. Whole278 Health mechanisms are screened; exhaustive package completeness remains unproven."
+      "2026roll42 and eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278 and new28 whole-package completeness remain follow-ups. Whole7006 reviewed Health mechanisms support bounded membership; exhaustive28package completeness remains unproven."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -784,6 +785,7 @@
         "house:119:2:7",
         "house:119:2:8",
         "house:119:2:11",
+        "house:119:2:28",
         "house:119:2:31",
         "house:119:2:32",
         "house:119:2:37",
@@ -863,16 +865,15 @@
         "house:119:1:307",
         "house:119:1:318",
         "house:119:1:320",
-        "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44"
       ]
     },
-    "count_basis": "110 source-mapped Health candidate inputs, not accepted eligibility or exhaustive package proof. 15 unresolved comprise 13 unfinished screenings plus2 examined dependencies. 8800 has three distinct amendment observations and one separate whole-passage278 observation. Exact23/27 exclusions and all controls remain noncounting; wider package completeness remains unproven."
+    "count_basis": "111 source-mapped Health candidate inputs, not accepted eligibility or exhaustive package proof. 14 unresolved comprise 12 unfinished screenings plus2 examined dependencies. Whole7006passage28 is separate from failed/excluded26/27amendments. Exclusions and controls remain noncounting; wider package completeness remains unproven."
   },
-  "episode_completeness": "80 candidate episodes cover 110 supplied actions. Three8800amendments and separate whole-passage278form one shared episode; previous authored/core meanings preserved with only the existing8800derived episode extended. Wider278package completeness remains unproven. Discovery/episode completeness remains unproven.",
+  "episode_completeness": "81 candidate episodes cover 111 supplied actions. New7006passage28 is a distinct whole-package episode; failed26/27amendments are excluded from Health counting. All prior author/core meanings and episode objects remain preserved. Exhaustive package and discovery/episode completeness remain unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "7680192c25599b20873d8f6f145a8ec5ef97abe04a1ae4549cb6d7bf00bc0511",
+  "universe_subject_sha256": "04076647618425de98906aa89982ad18873c73f563e8c78b50ceecb7434dbeb6",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -29385,15 +29386,16 @@
       "date": "2026-01-14",
       "measure": "bill_119_hr_7006",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact source-bound Health candidate: FY2026 financial-services and State package with health-plan rules, global health, nutrition and humanitarian funding. Distinct whole7006passage preserves division-specific funding references, failed amendments, domestic exceptions, voluntary care, conditional global/humanitarian support, binding transition safeguards and dated-authority limits. Bounded reviewed mechanisms establish membership, not exhaustive package completeness, enacted delivery or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [341, 79, 0, 11]; Foushee Nay/Massie Nay.",
       "source": {
         "source_id": "clerk:119:2:28",
         "url": "https://clerk.house.gov/evs/2026/roll028.xml",
-        "raw_sha256": "792b88153f73708709d78623a1c114567255c80b9a8dec4dad002522dc64c90e",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "7b5d7aae15fa2f41ab447180190931c754fba70248462805ca07e6db78b683a8",
+        "governed_bytes_sha256": "cd7bd2bde475909810e26468e0ffc9621af8f63e22bb41e7c2ab7763b4bec7c4",
+        "verification": "governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr7006:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_7006",
       "member_action": "nay",
@@ -29402,25 +29404,165 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact source-bound Health candidate: FY2026 financial-services and State package with health-plan rules, global health, nutrition and humanitarian funding. Distinct whole7006passage preserves division-specific funding references, failed amendments, domestic exceptions, voluntary care, conditional global/humanitarian support, binding transition safeguards and dated-authority limits. Bounded reviewed mechanisms establish membership, not exhaustive package completeness, enacted delivery or component endorsement. Member projection is mechanical. Exact Clerk On Passage: Passed; Yea/Nay/Present/NotVoting totals [341, 79, 0, 11]; Foushee Nay/Massie Nay.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:28",
           "url": "https://clerk.house.gov/evs/2026/roll028.xml",
-          "raw_sha256": "792b88153f73708709d78623a1c114567255c80b9a8dec4dad002522dc64c90e",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "7b5d7aae15fa2f41ab447180190931c754fba70248462805ca07e6db78b683a8",
+          "governed_bytes_sha256": "cd7bd2bde475909810e26468e0ffc9621af8f63e22bb41e7c2ab7763b4bec7c4"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-global-humanitarian",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "c3bf90ae289fa36dfbdf953e48b6225de28dbfc673f5953b73f3166008721be0"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-domestic-health",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "ce5682249a1ba2c2e870dd1d0beef7f33a73fa3f647545540bac0f8ff3bf9327"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-health-program-rules",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "a23c2ebc45f1f58405fbff1e9119b88b509b310bd3382600fa86819148854d0a"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-assistance-conditions",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "7a9a19515fbe47ce376e4d7ec222172537029531113f6f704fbde2c3a6292b75"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-regional-health",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "05407133a59d72bce7432b1290b199e4ede68e5dc37f1bdaf9dfc76096a93b6c"
+        },
+        {
+          "source_id": "govinfo:hr7006ih-reviewed-preliminary",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006ih/html/BILLS-119hr7006ih.htm",
+          "raw_sha256": "1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65",
+          "governed_bytes_sha256": "99a57496d0e4566b45432e0d5552a26e921001c1b35a3ebfe8f1e273fc08cf1b"
+        },
+        {
+          "source_id": "govinfo:hr7006eh-unrwa-passage-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7006eh/html/BILLS-119hr7006eh.htm",
+          "raw_sha256": "2bc164646e9fbc36aed4a8397317c46d883a8759985d1a2190640eb07cee694e",
+          "governed_bytes_sha256": "a7e9022cb2755291294d20803de5d5af8a4bc799789c139b6eb1094c0881f92f"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-7006-passage",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "b3c1ad3d4083749d87243101acda6b1995b51910911905ed2651f21f3fca3889"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-7006-health-allocations",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "cbf2fe40bb175cd3a3ee5aa1092b1ca780d259cdd1a2fed1dc2829706949c822"
+        },
+        {
+          "source_id": "congressional-record:2026-01-14-7006-transition-sector",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "raw_sha256": "0322d7a8f4a08eee2f21b6aed46059a8eb909e0946ec6c4c7c961b0e03a5c592",
+          "governed_bytes_sha256": "5fc058dd71fda27360568f0d112bf0d8288eb818781cc80af9f14bc0d6a58a16"
+        },
+        {
+          "source_id": "govinfo:hres992eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+          "raw_sha256": "584d0cdeb979876f5dc17da93d7b39364a162fd8e604baa024140111c9f7f82e",
+          "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-445",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+          "raw_sha256": "c8df027547a47d3aeb8d3ad2006155d2597775c62b4f18ed0e4f2ec79715794f",
+          "governed_bytes_sha256": "952f73f858df453ca56eb9348864b533f68d1e8d643d700a95a45ef3a3aac0e7"
+        },
+        {
+          "source_id": "clerk:119:2:26",
+          "url": "https://clerk.house.gov/evs/2026/roll026.xml",
+          "raw_sha256": "75db2e6ff5d7403aa3754cf792efbfbf833994a9b3e63f8e3dd2e959b989d958",
+          "governed_bytes_sha256": "0231dfab7420319b55eacece206706113763801fa6124ce6878505531b2514f5"
+        },
+        {
+          "source_id": "clerk:119:2:27",
+          "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+          "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+          "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab"
+        },
+        {
+          "source_id": "govinfo:22usc2601-2024-refugees",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+          "raw_sha256": "cfc69336a5116afbc0bb54cbd4298bf39003c60c65d48b6be6cb9719d93facfa",
+          "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393"
+        },
+        {
+          "source_id": "govinfo:22usc2292-2024-disaster",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapI-partIX-sec2292.htm",
+          "raw_sha256": "97b1838818d11909cb5e20a79538a4858f9901b58b7b7551a4934704809278be",
+          "governed_bytes_sha256": "4d6084c1f26ea021917577b39fdfd58dec196a2e2c2615a45f07ef0dcf57ed94"
+        },
+        {
+          "source_id": "govinfo:pl115-31-emergency7058",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ31/html/PLAW-115publ31.htm",
+          "raw_sha256": "8f26ce32f2447289bb467ba37d0f826cfcf35b9bd9cf5f7ad24889fd6c33698d",
+          "governed_bytes_sha256": "f1882b54e86cfd0256ca7fdf5d654109cb97f7e3fc07f43abbc7365cde5498e6"
+        },
+        {
+          "source_id": "govinfo:22usc7622-2024-global-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap83-subchapII-sec7622.htm",
+          "raw_sha256": "eaed7c9e1d223082b7943b2a2bdcc5becd89220b66c8a1b0c7640a89501fbf10",
+          "governed_bytes_sha256": "e4a98a5c781b3e0b1bc747a01dd66fca2539ff2885f8704efb8d9bef4d4eb302"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:28",
+        "source_ids": [
+          "clerk:119:2:28",
+          "govinfo:hr7006ih-reviewed-global-humanitarian",
+          "govinfo:hr7006ih-reviewed-domestic-health",
+          "govinfo:hr7006ih-reviewed-health-program-rules",
+          "govinfo:hr7006ih-reviewed-assistance-conditions",
+          "govinfo:hr7006ih-reviewed-regional-health",
+          "govinfo:hr7006ih-reviewed-preliminary",
+          "govinfo:hr7006eh-unrwa-passage-boundary",
+          "congressional-record:2026-01-14-7006-passage",
+          "congressional-record:2026-01-14-7006-health-allocations",
+          "congressional-record:2026-01-14-7006-transition-sector",
+          "govinfo:hres992eh",
+          "govinfo:hrpt119-445",
+          "clerk:119:2:26",
+          "clerk:119:2:27",
+          "govinfo:22usc2601-2024-refugees",
+          "govinfo:22usc2292-2024-disaster",
+          "govinfo:pl115-31-emergency7058",
+          "govinfo:22usc7622-2024-global-fund"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:28",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "next_action": "H.R.7006 IH research214 raw1bb7bd88db90afc021a2568ff5277258f8a0aceea3f614989bd93f4e09caaf65,576918characters; PDFrawc3a1c89b769171bfade34a1681d3218b36b4f5dc0b7c2ca64fedc88d9c9d9816. Readpreface1–6, completeJudiciarytitle, exactNED/7032 amendmenttargets and7062(a) operatingplan. Jan14Record research2091.315mcharacters captured, not fully read; PDF1447032/7035includesorgan-harvesting report and combat-casualty-care consultation. EH/versioncomparison, rest ofoperativebill, finalexplanation/overridebindings and materialincorporations remain. Both26/27amendmentsfailed; do not insert eitherinto finalpassage. Clerk28captured research214, floorPDF80/81result341–79. ParentclinicalorotherHealthcontent doesnot establish amendmentmembership."
+        "shared_review_record_sha256": "8edf567d40c3fcdcf495970d82bf2eccf928affe40b1c0ae5b67925e535b68c1"
+      },
+      "historical_clerk_source_identity": {
+        "source_id": "clerk:119:2:28",
+        "url": "https://clerk.house.gov/evs/2026/roll028.xml",
+        "raw_sha256": "792b88153f73708709d78623a1c114567255c80b9a8dec4dad002522dc64c90e",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -53200,11 +53342,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "110 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
+    "basis": "111 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "916e2adea790ac0523d2163950ad9271133fa2a8020c4737a67bbebb48c3693e",
+  "selection_sha256": "6dc636e6fb71f5aa380af5bc0746d6d94eb69db911e35c88c70b575e7d81f583",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -53315,7 +53457,8 @@
     "house:119:2:267",
     "house:119:2:264",
     "house:119:2:266",
-    "house:119:2:278"
+    "house:119:2:278",
+    "house:119:2:28"
   ],
   "unresolved_action_ids": [
     "house:119:1:224",
@@ -53330,13 +53473,12 @@
     "house:119:1:307",
     "house:119:1:318",
     "house:119:1:320",
-    "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44"
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "2026rolls28/42 and eleven2025actions remain unfinished;2025roll237/2026roll44 are examined dependencies;45and278 whole-package completeness remain follow-ups. Exact23 showerhead-definition passage and27 failed NED/democracy strikes are screened as exclusions independently of whole7006 passage28. No new interpreted inputs or completeness authority.",
+    "basis": "14 unresolved comprise 12 unfinished plus two examined dependencies;2026roll42 and eleven2025actions remain unfinished;2025roll237/2026roll44 examined dependencies;45/278 and new28 whole-package completeness remain follow-ups. Direct domestic/global Health, nutrition and humanitarian mechanisms support whole7006passage28 membership; this is not universal component eligibility or exhaustive package proof.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -53388,6 +53530,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "e10a805ec6131891dd226bfe08ff8d7985be5a9666848dcea027758041317d09",
-  "membership_review_sha256": "a3e78e8d7499feb66b2b0521ada66c701581dc5cac6286c54f490bbd965f3d9c"
+  "proposal_sha256": "53789c6532bbdb5016a7fc88280d32c5bc65773b8ee0b6743fa07d47bebb55cc",
+  "membership_review_sha256": "876f903236dee5f688dcccc5c17f69c383a3558d1a9a072a0cfa78a4c8c0d9e8"
 }

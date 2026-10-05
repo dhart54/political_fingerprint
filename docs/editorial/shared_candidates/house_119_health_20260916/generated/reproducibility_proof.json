@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "47d9255eb7389693a7777226f63f951dc7d32c11e5af17e1ee59f8a07bf4b88c",
-  "source_capture_sha256": "18888f82539029ffa6918a721f90cb2bea121a2a3c857f0ca65cc4400fc7e4ea",
-  "core_sha256": "121e03fc6308c65287f837d7305a24e47a7b8da12a5e724b4ec1b67fff5f305a",
-  "compiled_sha256": "03f82eff418c3b8de322148471e4186d81c82a9df271bd381cea082198d982fc",
-  "readable_sha256": "9f24581fe015fbdc27700fa9cac8f7ba3754aa1e2b5e2b5155d1df585713fd56",
+  "input_sha256": "19a320c45ceb916c3f3d676bac34edb8255bd6970c85075fedce86c797d9d59a",
+  "source_capture_sha256": "9ac01ca0d324856e1f371f71adaad89436268b8a38222cb105f9aa343a2084c4",
+  "core_sha256": "7cd1eab7c6339feb09efc8cb1369f1c410681c823d00cde57e9f454b05a8c929",
+  "compiled_sha256": "6166d337c931d72b75cfded5b99bf83d565b0cd8d4b92789e3394fa99b794b07",
+  "readable_sha256": "904a37082b80a392e946a6df194b8c6f94675bddcc35ecf1b00e17b0ad657bfe",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -2213,6 +2213,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the amended FY 2027 defense package with its reviewed care, family-support, housing and veterans-health mechanisms",
           "source_id": "clerk:119:2:278"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:28",
+      "shared_sha256": "3e204167d10efceeff4b5d2e2604f75f711788dd4ecc788508317b8842f7b85d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 financial-services and State package with its reviewed health-plan rules, global-health, nutrition and humanitarian funding and restrictions",
+          "source_id": "clerk:119:2:28"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 financial-services and State package with its reviewed health-plan rules, global-health, nutrition and humanitarian funding and restrictions",
+          "source_id": "clerk:119:2:28"
         }
       ]
     }

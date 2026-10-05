@@ -1835,3 +1835,100 @@ DivisionC101was separately located and read. Section/keyword windows are discove
 not proof of full package review. Regional restrictions and binding7058explanatory
 material remain to review, followed by separate7147Health mechanisms. No28/42
 authoring/classification is written; they remain unfinished for checkpoint22.
+
+Checkpoint21 is6e23b49f3e2154a3b4d2d02e316739dc3f3c04f7, pushed and verified as
+draftPR196 head on the original stacked base. Exact-headCI37355586745 completed
+successfully and all nine job conclusions were inspected. Draftbody updated with
+the exact receipt. FrozenPR195 remainsf10abd6b42867d591992b368c089150e4178604b.
+
+### Checkpoint22 local source review: remaining January appropriations
+
+Complete January14PDF139/140/149/150read. Binding GlobalHealth table totals
+9.415775billion; the main GlobalHealth and additional HIV appropriation headings
+are distinct. NSIPtable contains separate51.05million family-planning allocation,
+assistive technology, war victims, mobility and torture-victim programs. The
+PEPFAR explanatory transition strategy includes country-readiness criteria,
+phased funding reductions, patient-data safeguards and post-transition service
+continuity. It is not an automatic programme abolition or a numeric invented cut.
+Healthworkforce, HIV-positive pregnancy, prevention/long-acting medicines,
+nutrition/RUTF/telehealth and IHAfood/health/nutrition/shelter/protection/water
+spend-plan requirements are sourcebound. Sectorallocations include disability
+and lead-poisoning programmes. The7006IH/EH operative bodies are exactly equal
+at576011characters after removing headers/footer only, without interior text
+normalization. Regional keyword locators remain discovery, not full regional
+review; incomplete paragraph continuations are not silently called complete.
+
+7147IH/EH operative differences are now explained by primary authorities:
+the adopted HRes1014section7 adds the Senate-notification repeal later numbered
+554; subsequently agreed HRes1016 corrects230(b) in engrossment, replacing
+the all-Act/any-other-Act funding scope with DHSfunds in this/priorActs. Newly
+captured complete1016EH and January22BookI178pagePDF; complete correction
+offering/agreement on161read. As-voted floor130 retains old230(b); this locator
+is not a claim of complete130review. Passage42on156 is220Yea/207Nay/0Present/
+4NotVoting; setup and result read independently of the later correction and
+7148assembly. Stated-for absence does not replace actual recorded NotVoting.
+Complete1014EH/rule7read from governed primary text; its later7148engrossment
+assembly is distinct from a new individual component vote. HRes1009is not the
+7147rule; the initial source lookup was corrected without altering candidate state.
+
+Complete7147IH205/211/229/507/527/537and subsequent titleIIIappropriationscluster
+read.205limits the CBPfunding restriction on preventing personal imports to
+Canada/FDCA-compliant/on-person/90days, excluding controlled/biological products;
+not blanket import permission.211requires the named2021maternal/infant custody
+policy or substantively similar consulted standards.527has individualized
+flight-risk/immediate-threat or therapeutic-restraint exceptions, least-restrictive
+medical rules and absolute active-labor/delivery prohibitions; no blanket
+all-pregnancy restraint ban is inferred.229makes HousingFund deposits available
+until expended under14US2946. FEMAfood/shelter123.5million is separate from
+larger disaster/insurance/security grant budgets and has a3.5percent admin cap.
+The parser's238bucket includes the next title:238itself is a fencing clause,
+not the FEMAappropriation. The table's printed section4/explanatory reference
+must remain printed and be checked, not silently repaired. All findings remain
+local source research;28/42are unfinished with no new candidate meanings.
+
+
+### Checkpoint22: January14 State/financial-services passage
+
+Roll28 now has one shared bounded Health meaning, projected mechanically for
+Foushee and Massie, both recorded Nay. The House passed the whole H.R.7006
+package341-79. Failed amendments26/27 remain separate; no component positions,
+enactment, motives or preferred alternatives are inferred. Exact IH/EH operative
+bodies match. Division-specific Act references and binding allocation/implementation
+terms are preserved. Domestic FEHB/contraception/abortion exceptions, healthy-food
+financing, global-health/HIV funding, voluntary family-planning safeguards,
+qualified outbreak transfers, humanitarian assistance, country/recipient limits,
+UNRWA timing and PEPFAR readiness/data/service-continuity conditions are sourcebound.
+Regional7041/7042/7044/7045 and only7043(k/l), preliminary3-6, general7007/7012/
+7013/7048 and relevant explanatory tables were read. This is bounded membership;
+exhaustive whole-package/episode completeness and every current authority remain
+unproven. Dated2024 Global Fund fiscal-period clauses are not silently extended.
+
+Totals:111interpreted/232procedural/19expressive/300excluded/14unresolved.
+Twelve unfinished screenings plus two examined dependencies remain.81episodes,
+222observations,152propositions/findings:80Foushee/72Massie. Cumulative201new
+reviews since the frozen benchmark:26shared meanings/69procedural/9expressive/
+97exclusions. Eleven new captures and eight governed sources reused here;
+591new/2016total captures and564reviews. Source-family reuse and deterministic
+projection/replay preserve the evidence standard. No complete end-to-end timing
+or measured model/token savings is claimed.
+
+All184focused tests across five modules pass in30.063seconds; all seven semantic
+checks pass. The first focused run exposed one stale finding-count assertion,
+corrected for the new finding before the full rerun. Negative source-binding
+coverage rejects dropping dated Global Fund authority while retaining its claim.
+All110prior author/core records,2005sources and563reviews remain exact against
+6e23b49; all prior80episodes, projections,79/71compiled propositions and readable
+findings remain exact. All85benchmark author/core records,1425sources and363reviews
+remain exact. Inventory201changed/475identical to benchmark, with only28newly
+changed. Eight generated/packet files replay byte exactly; all37pending capture
+hashes remain exact. Actual compact/member Nay findings and both-level qualifiers
+inspected, including whole-package, failed-amendment and dated-authority limits.
+Final14-file scoped diff and whitespace check inspected. Core:
+7cd1eab7c6339feb09efc8cb1369f1c410681c823d00cde57e9f454b05a8c929;
+compiled:6166d337c931d72b75cfded5b99bf83d565b0cd8d4b92789e3394fa99b794b07.
+
+Remaining2026roll42 and2025rolls224/225/226/262/294/295/296/299/307/318/320.
+Examined237printed conflict/44operative dependency and45/278/28package completeness
+follow-ups remain explicit. Further42source review continues from preserved local
+captures. No acceptance, promotion, publication, registry/configuration, production,
+merge or deployment authority is created. This is progress, not closure/shutdown.
