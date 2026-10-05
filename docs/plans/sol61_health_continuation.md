@@ -747,6 +747,57 @@ source bindings. Scoped14-file diff and whitespace check pass; public and
 persistence boundaries stay closed. Commit/push/exact-head CI follow; then
 return176 full housing concurrence and its existing6644 episode boundary.
 
+### Checkpoint12: exact May housing concurrence176
+
+One new shared candidate and governed review; 14new captures and34reused exact
+captures. Cumulative115new reviews,10new meanings,321new captures. Totals95/221/
+18/255/87:85unfinished and2examined dependencies.1746captures,478reviews,
+72episodes,190observations and71/64findings;135propositions.176extends the existing
+6644 episode without adding an independent finding. February57 authored meaning,
+sources and exact observations are unchanged. FousheeYea176 supplies a second
+version-qualified episode observation; MassieNotVoting remains non-directional
+and his FebruaryNay retains its original version.
+
+Whole303,654-character1299EH replacement text read, with material incorporated
+authorities. Distinguish May19 debate from May20 Clerk vote and the erroneous
+floor budget-table H.Res.6644 label from actual1299. Twelve-title package includes
+conditional repair and escrow pilots, VA-income eligibility, qualified rural
+rental/voucher and ESG changes, HOME amendments and institutional-investor rules,
+alongside broader housing/banking/environmental provisions. TEN-year escrow
+sunset differs from February's seven; account duration remains separate. Existing
+income exclusions concern eligibility,not rent. Repair promissory-note threshold
+is not a grant maximum. HOME citations/tenant-selection references and expired
+12821 authority are preserved unrepaired. Explicit200million annual authorization
+and final no-additional-funds clause remain in tension. Floor requests based on
+an earlier investor draft do not add blanket disability/military/student/LIHTC
+exceptions to final text. Earlier February eviction helpline is absent here.
+
+Bounded candidate-input adapter requires exact Clerk suspension-and-agreement,
+full governedEH identity, precise concurrence clause, explicit claim binding and
+underlying6644 episode. It uses the existing suspension_and_concurrence stage;
+no IR/compiler/schema or accepted/public rules change. Methodology's direct-
+resolution candidate provision supports routing the proposal, while earlier
+108 special-rule agreement remains non-counting. The distinction is explicitly
+qualified for external semantic review rather than asserted as approved policy.
+Three focused regressions reject missing/unbound/fabricated clauses,wrong Clerk
+question and episode; verify ordered observations and nondirectional Massie.
+
+Approximately90–120minutes for this unusually long package and deep authority
+review, including typed adapter and preservation checks; not a representative
+4–5minute action. Initial label-only procedural route was rejected before
+membership write. Deeper review changed expected escrow duration, HOME/rural
+limits and investor exceptions; candidate retains drafting conflicts instead
+of repairing them. Existing34authority captures were reused after checking
+their governed extents. No measured elapsed/token saving claimed.
+
+Checkpoint11exact49b5fcdb3749055deeaaf5df1ef0209d24a5b154 CI37271926299 passed.
+160focused tests pass; seven canonical semantic checks pass outside Windows
+sandbox after temp-directory ACL failures in both default and local TEMP.
+No product failure or test weakening. Corrected test expectations for lexical
+evidence-ID ordering versus chronological observations and unfinished85 count.
+Preservation/replay/final-diff receipt follows before commit; then resume196.
+Watcher deadline unchanged; weekly11percent used/89percent remaining.
+
 ## Production, rollback, blockers and reconciliation
 
 Production writes: none. Candidate changes are reversible through Git; no
@@ -763,3 +814,13 @@ Weekly usage exposed5% used/95% remaining at23:00Eastern; check at substantial
 units/checkpoints. At5% remaining or the deadline wrap window, preserve the
 nearest coherent validated checkpoint, record remaining work and stop. Never
 commit either watcher file or the terminal marker.
+
+Checkpoint12 validation receipt: all85benchmark/94previous authored and core
+objects,1425/1732captures and363/477reviews preserved exactly.123original
+propositions unchanged; only the two derived57housing-episode propositions
+updated for176. Inventory115changed/561identical. Seven generated JSON files
+and packet replay byte-identically. Core4b4075a0 /compiled1ae3a76a. Actual
+FousheeYea/MassieNotVoting compacts and ordered57/176observations inspected.
+Readable diff fan-out reflects repositioning the extended episode and its larger
+source/detail set; unchanged compiled propositions remain object-identical.
+Scoped15-file diff and whitespace check pass. Candidate-only gates remain closed.

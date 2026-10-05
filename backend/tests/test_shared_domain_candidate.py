@@ -20,6 +20,54 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_direct_housing_resolution_extends_episode_without_new_massie_direction(self):
+        aid = "house:119:2:176"
+        action = next(a for a in self.products[0]["actions"] if a["action_id"] == aid)
+        self.assertEqual(action["legislative_stage"], "suspension_and_concurrence")
+        self.assertEqual(action["exact_question"], "On Motion to Suspend the Rules and Agree")
+        episode = next(e for e in self.products[1]["episodes"] if e["episode_id"] == "episode:hr6644:119")
+        self.assertEqual(episode["action_ids"], ["house:119:2:57", aid])
+        readable = readable_candidates(self.author, self.products[0], self.products[2], self.products[4])
+        for member in readable["members"]:
+            finding = next(f for f in member["findings"] if "house:119:2:57" in f["action_ids"])
+            self.assertEqual(finding["action_ids"], sorted(["house:119:2:57", aid])
+                             if member["member_id"] == "F000477" else ["house:119:2:57"])
+            observations = finding["action_observations"]
+            self.assertEqual([o["action_id"] for o in observations], ["house:119:2:57", aid])
+            self.assertEqual(observations[-1]["status"], "Yea" if member["member_id"] == "F000477" else "Not Voting")
+            self.assertEqual(observations[-1]["direction"], "support" if member["member_id"] == "F000477" else None)
+        meaning = next(a for a in self.author["actions"] if a["action_id"] == aid)["meaning"]
+        for phrase in ["TEN years", "Unlike February's text", "not a doubled grant maximum",
+                       "expired and omitted", "preserves the tension", "earlier posted draft"]:
+            self.assertIn(phrase, meaning)
+
+    def test_resolution_agreement_cannot_infer_concurrence_without_exact_witness(self):
+        for field, value in [("deemed_concurrence", None), ("episode_id", "episode:hres1299:119")]:
+            author = copy.deepcopy(self.author)
+            action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:176")
+            action[field] = value
+            with self.assertRaisesRegex(ValueError, "stage differs|underlying bill episode"):
+                prepare(author, self.capture, ["F000477"])
+        author = copy.deepcopy(self.author)
+        action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:176")
+        action["deemed_concurrence"]["passage"] = "This resolution concerns housing."
+        with self.assertRaisesRegex(ValueError, "exact governed operative clause"):
+            prepare(author, self.capture, ["F000477"])
+
+    def test_deemed_concurrence_rejects_wrong_clerk_question_and_unbound_clause(self):
+        capture = copy.deepcopy(self.capture)
+        clerk = next(s for s in capture["sources"] if s["source_id"] == "clerk:119:2:176")
+        clerk["metadata"]["vote-question"] = "On Agreeing to the Resolution"
+        clerk["governed_bytes_sha256"] = sealed_digest(clerk, "governed_bytes_sha256")
+        with self.assertRaisesRegex(ValueError, "exact Clerk question"):
+            prepare(self.author, capture, ["F000477"])
+        author = copy.deepcopy(self.author)
+        action = next(a for a in author["actions"] if a["action_id"] == "house:119:2:176")
+        clause = action["deemed_concurrence"]["passage"]
+        action["claim_source_map"] = [c for c in action["claim_source_map"] if c["passage"] != clause]
+        with self.assertRaisesRegex(ValueError, "exact governed operative clause"):
+            prepare(author, self.capture, ["F000477"])
+
     def test_va_facility_authorization_and_benefit_offsets_preserve_nondirectional_member(self):
         actions = {a['action_id']: a for a in self.author['actions']}
         for phrase in ['Neither clause is an actual appropriation', 'Fiscal Year2025', 'fiscal2026']:
@@ -594,8 +642,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":221, "source_unresolved":88,
-            "interpreted_substantive_directional":94, "expressive_nonbinding_context":18, "exact_action_ineligible":255})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":221, "source_unresolved":87,
+            "interpreted_substantive_directional":95, "expressive_nonbinding_context":18, "exact_action_ineligible":255})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -613,7 +661,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 86)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 85)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
@@ -1766,7 +1814,9 @@ class SharedDomainCandidateTests(unittest.TestCase):
             self.assertEqual(observation["official_status"], status)
             readable = next(m for m in readable_candidates(self.author, self.products[0], self.products[2], self.products[4])["members"] if m["member_id"] == member)
             finding = next(f for f in readable["findings"] if aid in f["action_ids"])
-            self.assertEqual(finding["action_ids"], [aid])
+            self.assertEqual(finding["action_ids"], sorted([aid, "house:119:2:176"]) if member == "F000477" else [aid])
+            self.assertEqual(finding["action_observations"][0]["shared_meaning_sha256"],
+                             next(a["action_core_sha256"] for a in self.products[0]["actions"] if a["action_id"] == aid))
             self.assertTrue(required <= set(finding["source_ids"]))
             self.assertIn("not a promised reduction in rent", " ".join(finding["detail"]))
         author = copy.deepcopy(self.author)

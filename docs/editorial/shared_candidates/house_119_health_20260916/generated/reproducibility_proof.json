@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "83618a978419b6d7df289606737579ca39759a711085d332ccf5064f43f2891b",
+    "scripts/prepare_shared_domain_candidate.py": "6158519a8acf187d59a02e31688e12f062b2f6953f08219494290460f7f312bd",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "a2b7028c4333313260e91b275e1e559424fd646ec926d3c831ba491bf1ce7821",
-  "source_capture_sha256": "68f9e7aa190d983d203171202bf36f6a4def8afd5c667fb927f26a97d55558be",
-  "core_sha256": "0315c90c26f65bcbe0964bd2912a973d777bb8014b8328ac5cad59d9f328adb1",
-  "compiled_sha256": "d6895d7049a62b73f87c9afdcdaf3fafbf8735a113a68aad7599ee5949558340",
-  "readable_sha256": "0251dae5ddea4e831cf570c80147d0ce3100fe75215849ca64fa3d225bbf18d3",
+  "input_sha256": "7ced4fe0026609cb2511ebb56b499c5336af3d3003911f7032d0fafa6826c8be",
+  "source_capture_sha256": "1cb9a511eab71a0f03898fb06d531f8adec42665b1ff5d803bdc235a474e367e",
+  "core_sha256": "4b4075a0ba24dc721f6bc289df63f852519da64e405c038341be1ac78b001265",
+  "compiled_sha256": "1ae3a76a4dc4c90915d56c655a4d28a104d266436907fedbc6daef7e72812610",
+  "readable_sha256": "374f2480c6457340737133ea63e7547745861c16f2eeb328c643672e4d90b1c8",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1893,6 +1893,26 @@
           "effect": "resolved_non_directional",
           "selected_meaning": null,
           "source_id": "clerk:119:2:191"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:176",
+      "shared_sha256": "277d379f156699cfcb5cbc45a7c6447c4ad4c897496f93ea315edfef0ac053b8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspension and agreement to the resolution directly concurring with the replacement H.R.6644 housing and banking package",
+          "source_id": "clerk:119:2:176"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:176"
         }
       ]
     }

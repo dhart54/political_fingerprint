@@ -1701,9 +1701,27 @@
           }
         ],
         "member_action_source_identity_sha256": "68b268ef0cf18be0d7719539e530a9ed5f98adb1c86b4315670766191c1aaf68"
+      },
+      {
+        "action_id": "house:119:2:176",
+        "action_core_sha256": "277d379f156699cfcb5cbc45a7c6447c4ad4c897496f93ea315edfef0ac053b8",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:176",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "d8144acb9a26747d25704607a577bfcb62ab844c56364ebace6a93470c067fea",
+            "governed_bytes_sha256": "23eae212d00234d0b68ea9dfc3d3d3b5a89ab2d87acefa65aaceb7248852e0ca"
+          }
+        ],
+        "member_action_source_identity_sha256": "f9099adbdeb0521ee1d7565b20dd615263196720897329805d18c0ac5f757047"
       }
     ],
-    "projection_sha256": "ce2933d297837f72b8ab07caf16143dc6453de3f52da3fac4b00bc92580454e1"
+    "projection_sha256": "cac02fe433c5d144cbf0b87d2ea07a9c44cfd2467e2674d09b6e40d501e4685c"
   },
   {
     "schema_version": "member_action_projection_v1",
@@ -3407,8 +3425,26 @@
           }
         ],
         "member_action_source_identity_sha256": "68b268ef0cf18be0d7719539e530a9ed5f98adb1c86b4315670766191c1aaf68"
+      },
+      {
+        "action_id": "house:119:2:176",
+        "action_core_sha256": "277d379f156699cfcb5cbc45a7c6447c4ad4c897496f93ea315edfef0ac053b8",
+        "official_status": "Not Voting",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "resolved_non_directional",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:2:176",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "d8144acb9a26747d25704607a577bfcb62ab844c56364ebace6a93470c067fea",
+            "governed_bytes_sha256": "23eae212d00234d0b68ea9dfc3d3d3b5a89ab2d87acefa65aaceb7248852e0ca"
+          }
+        ],
+        "member_action_source_identity_sha256": "f9099adbdeb0521ee1d7565b20dd615263196720897329805d18c0ac5f757047"
       }
     ],
-    "projection_sha256": "491dcac1a6800c1f31da591777c110348008bfb4cd86f9f0caaef90febc110f0"
+    "projection_sha256": "f6dfee25dc25ddd39ccfb3f4866405acb3cba5878af9cf0729762473ca72cd3a"
   }
 ]
