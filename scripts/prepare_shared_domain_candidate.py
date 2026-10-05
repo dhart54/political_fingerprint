@@ -73,6 +73,51 @@ def validate_deemed_concurrence(proposed, sources, congress):
     return True
 
 
+def validate_nested_concurrence(proposed, sources, clerk):
+    """Bind concurrence in the Senate's amendment to a House/Senate sequence."""
+    witness = proposed.get("nested_concurrence")
+    if witness is None:
+        return False
+    question = "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt"
+    if (not isinstance(witness, dict)
+            or set(witness) != {"source_id", "senate_date", "passage"}
+            or proposed.get("bill_type", "hr") != "hr"
+            or proposed["stage"] != "suspension_and_concurrence"
+            or clerk["metadata"]["vote-question"] != question
+            or witness["source_id"] != proposed["source_id"]
+            or proposed["episode_id"] != f"episode:hr{proposed['bill_number']}:{clerk['metadata']['congress']}"):
+        raise ValueError("invalid nested-concurrence candidate binding")
+    source = sources[witness["source_id"]]
+    number = proposed["bill_number"]
+    clause_start = (
+        f"In the Senate of the United States, {witness['senate_date']}. "
+        "Resolved, That the Senate agree to the amendment of the House of "
+        "Representatives to the amendment of the Senate to the bill "
+        f"(H.R. {number}) entitled "
+    )
+    clause_end = (
+        "with the following SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE "
+        "AMENDMENT: Strike all after the enacting clause and insert the following:"
+    )
+    if (source["source_type"] != "official_bill_text"
+            or source["text_version"] != "EAS2"
+            or not source["url"].endswith(f"/BILLS-{clerk['metadata']['congress']}hr{number}eas2.htm")
+            or f"[H.R. {number} Engrossed Amendment Senate (EAS)]" not in source["text"]
+            or "Attest: Secretary." not in source["text"]
+            or not source["text"].endswith("SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE AMENDMENT")
+            or not witness["passage"].startswith(clause_start)
+            or not witness["passage"].endswith(clause_end)
+            or witness["passage"] not in source["text"]
+            or not any(c["source_id"] == source["source_id"] and c["passage"] == witness["passage"]
+                       for c in proposed["claim_source_map"])):
+        raise ValueError("nested concurrence requires the exact governed EAS2 wrapper")
+    senate_date = datetime.strptime(witness["senate_date"], "%B %d, %Y").date()
+    house_date = datetime.strptime(clerk["metadata"]["action-date"], "%d-%b-%Y").date()
+    if senate_date > house_date:
+        raise ValueError("nested concurrence cannot precede its Senate amendment")
+    return True
+
+
 def validate_universe_proposal(universe, authoring=None, capture=None, membership=None):
     """Use the existing universe contract without conferring boundary authority."""
     from jsonschema import Draft202012Validator
@@ -147,6 +192,7 @@ def prepare(authoring, capture, member_ids):
             raise ValueError("Clerk measure and proposed text differ")
         question = meta["vote-question"]
         deemed_concurrence = validate_deemed_concurrence(proposed, sources, congress)
+        nested_concurrence = validate_nested_concurrence(proposed, sources, clerk)
         if deemed_concurrence and question != "On Motion to Suspend the Rules and Agree":
             raise ValueError("deemed concurrence differs from exact Clerk question")
         retained_portion = proposed.get("retained_portion")
@@ -163,7 +209,7 @@ def prepare(authoring, capture, member_ids):
             "suspension_and_passage": question in {"On Motion to Suspend the Rules and Pass", "On Motion to Suspend the Rules and Pass, as Amended"},
             "concurrence": question in {"On Motion to Concur in the Senate Amendment", "On Motion to Concur in the Senate Amendments"},
             "suspension_and_concurrence": (question == "On Motion to Suspend the Rules and Concur in the Senate Amendments"
-                                          or deemed_concurrence),
+                                          or deemed_concurrence or nested_concurrence),
             "division_retention": isinstance(retained_portion, str) and question == retention_questions.get(retained_portion),
         }
         if not valid_stage.get(proposed["stage"], False):

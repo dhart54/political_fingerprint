@@ -1001,3 +1001,95 @@ authoring/reviews (deduplicated source-reference metric, not network savings).
 unchanged. Latestweekly13percentused/87remaining; time controls the terminal state.
 This terminal documentation commit does not complete Health or change any semantic,
 public, persistence or publication state. Final marker usesCHECKPOINT/TIME_LIMIT_8_HOURS.
+
+### Daytime resumption and checkpoint15: exact June housing/KIDS group
+
+The user explicitly resumed this goal after the overnight run. Removed the prior
+uncommitted terminal marker; the old overnight deadline is historical for this new
+daytime session. No new shutdown deadline was requested. Final documentation-head
+ba5d4e44b2436ef26c11482278adad0f12c51c71CI37317565840passed. Initial app goal status
+remained blocked; work resumed under direct user instruction and the documented
+`/goal resume` command was supplied. No new terminal marker at this checkpoint.
+
+Twelve reviews223–234: two meanings224/228, two procedural230/231 and eight
+exclusions223/225/226/227/229/232/233/234.230already had a procedural inventory label,
+so accounting increases procedural by one, not two. Totals99interpreted/229procedural/
+19expressive/274excluded/55unresolved:53unfinished plus two examined dependencies.
+75episodes/198observations/74Foushee67Massie findings/141propositions. Housing224
+extends the existing February57/May176episode; KIDS228 adds one independent finding
+per member.235 remains unchanged. Cumulative153newreviews:14meanings,59procedural,
+9expressive,71exclusions.35captures added/426cumulative/1851total;48distinct sufficient
+existing captures reused. All37local pending capture files match the preserved
+manifest. Newly governed sources retain actual raw HTTP/PDF hashes and bounded
+reviewed extents; generic failed1398endpoints remain rejected rather than evidence.
+
+Housing meaning uses the complete377081-character June22EAS2, not MarchEAS or the
+May replacement. New RADconversion cap/application/tenant controls, conditional
+BUILDNowCDBGformula,PRICE,disaster recovery,restricted optionalMTWcohort andVALID
+loan comparison are source-bound. Disaster appropriations/plans,qualified70%target,
+three-year sunset and duplication rules remain explicit. PRICE pre1976rehabilitation
+exclusion/seven-year sunset and MTWwaiver bars/HQS/hardship/optional FSSparticipation/
+5%non-HAPcap matter. January2025notice baseline plus March2025technical amendment
+is followed, without incorporating a later post-vote notice. Age-option safeguards
+and rental/disability eligibility-versus-rent/funding limits remain. Printed HOME,
+privacy,BUILDNowandbank-review/no-funds tensions are not repaired.55-plus investor
+exception,ESGforced-relocation review andten-year program were already May;
+five-to-seven-year accounts are distinct. May surplus cap is absent inJune.
+Hill/Waters' suggested investor exemptions remain attributed intent, not blanket
+operative military/disability/student/subsidized exemptions. No protected IBCwas
+acquired. Shared new meanings/compacts are member-neutral; actual member statuses
+enter through projections only. Previous meanings remain unchanged.
+
+KIDS112006-character whole EH was read, followed by complete material floor debate.
+Section213explicitly disclaims duty of care and has narrower listed harms; broad
+floor claims concerning mental-health prevention do not replace that list. Title-
+specific ages/knowledge/services,qualified advertising,consent/deletion/school-use,
+encryption/FirstAmendment/230,State/enforcement and effectiveness exceptions remain.
+Chatbot suicide/ideation prompts trigger hotline resources, not every-user clinical
+treatment; three-hour break advice does not force logout. Studies address risks AND
+benefits. FTCeducation already exists. Current2025ScheduleIe and narcotic paragraph17
+definitions require additional extents, not blind reuse of old2024schedule/paragraph6.
+Schrier's wish for stronger duty/mental-health accountability and Pallone's stronger
+State-law discussion are attributed supporting-but-limiting evidence. Both members'
+actualNay observations apply to the whole package, not every component or a preferred
+alternative. FousheeYea/MassieNay on224; prior MayNotVoting remains non-directional.
+
+SBA software/conflict controls, financial exploitation and commercial terrorism
+reinsurance remain outsideHealth. TRIAincludesworkerscompensation but excludes
+health/life/medical-malpractice insurance; do not omit the former or conflate a
+reinsurance backstop with new clinical-benefit eligibility. Sexual-harassment payment
+disclosure233 is binding institutional transparency, not expressive/victim care or
+proven wrongdoing. Cold-weather critical-infrastructure exercises do not inherit
+Healthmembership from broad public-health infrastructure language. Failed Lebanon
+withdrawal retains military exceptions/no enacted withdrawal. Failed1398agreement
+and its previous question remain noncounting; disability-demo consideration does
+not pass that bill. Unoffered strike14amendment and later reconsideration stay separate.
+Both231officialNo labels remain unchanged and normalize mechanically.
+
+Bounded adapter extension recognizes the exact nested-concurrence Clerk question
+only with a complete, source/claim-bound EAS2wrapper,matching bill/episode,date,
+source type/version/URL and Senate attestation. Missing witness,wrong version/URL,
+date/episode or unbound clause fail closed. Three focused regressions cover that
+binding, actual three-stage housing/nonvoting andwhole KIDS projections, required
+current-law/waiver sources and unbound fabricated claims. Existing stale two-stage
+housing/count assertions were updated while preserving old176meaning/NotVoting checks.
+
+169focused tests and all seven canonical semantic checks pass. Preservation/replay
+checks preserve all85benchmark/97previous actions/core,1425/1816sources and363/504
+membership records. Only each member's derived housing proposition changes among
+previous propositions; two new KIDSpropositions are added.153inventory rows changed/
+523identical against benchmark. Seven generated JSON files and packet replay byte-
+identically. Readable compacts/qualifications and actual observations manually inspected.
+Large readable diff is the expanded housing trajectory/source detail, not independent
+rewrites of prior findings. No public/production/acceptance state changes.
+
+Manual work: exact-version reading, material incorporated authorities, contrary/intent
+boundaries, qualified meaning/claim authoring and output inspection. Deterministic work:
+cached acquisition parsing, member projection, accounting/hashes, generation, preservation
+and replay.35public captures from retained research were reused locally without another
+network acquisition;48previous governed objects remain unchanged. No new efficiency
+architecture or measured token/time saving claimed. Earlier pending research and resumed
+work span separate sessions; no precise end-to-end batch throughput is fabricated.
+Next236throughremaining2026queue,then eleven unfinished2025actions.2025roll237/2026roll44
+examined dependencies and2026roll45follow-up remain. Checkpoint is candidate-only and
+requires external semantic review; push/exact-head CI receipts follow.

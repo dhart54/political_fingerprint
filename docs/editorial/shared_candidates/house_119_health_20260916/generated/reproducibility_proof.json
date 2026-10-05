@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "6158519a8acf187d59a02e31688e12f062b2f6953f08219494290460f7f312bd",
+    "scripts/prepare_shared_domain_candidate.py": "acad448d612df797d0cdde3b9d488ca69edcbef5495a0c5cadd01ee8ba0e8b58",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "68eeb0884834ecd6295b315745d31e9794416233592b5202d6f3b83c09ed4e24",
-  "source_capture_sha256": "898611147fd7a3847779430a3d12e53ceb8d4a614e98d1af617c2c9edbdc85b8",
-  "core_sha256": "e713ffb55413aebe15556eaa7e0e06982a49d4f1ad1b6217be613666edf88935",
-  "compiled_sha256": "750df6b7f8ff5ea0915267633dfa5611dbc66dc65370acb0110948fd51d4e08b",
-  "readable_sha256": "3b95f63fbdd56c13106459fe849395999e94f3e4566f2c3c2f2a491efbb2b60d",
+  "input_sha256": "69207cbee12d70024a7e4bc28531de08021dd3be3d61510c93f7a811e5d08efa",
+  "source_capture_sha256": "ed3cd4b28c72f0fb9cd9d315009ef9dcf05542959f09f2f8f607e1e68c973493",
+  "core_sha256": "d96d3e6cb790bbd755c26e4ac3a885258d1f9f2bf6d6785a1db5b2c612a88f6c",
+  "compiled_sha256": "985546fd0d2ac69ed85eef3fe213e1c7f844b0c347ab29dd9913531c5b390e83",
+  "readable_sha256": "41de46058195962e185599f53d1d6c66a48ef7be5af1bbbf42ccf0c44426edaa",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1953,6 +1953,46 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passing the whole Ukraine security, assistance and sanctions package with its qualified medical/humanitarian exceptions",
           "source_id": "clerk:119:2:207"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:224",
+      "shared_sha256": "c77cc8c3c200ae9aab00599ec2aa4c4b7d7a665daa026348df4a78c9b3d5fac7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported concurring in the whole June Senate housing and banking amendment with its qualified assistance and program reforms",
+          "source_id": "clerk:119:2:224"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurring in the whole June Senate housing and banking amendment with its qualified assistance and program reforms",
+          "source_id": "clerk:119:2:224"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:228",
+      "shared_sha256": "9b10602bd2509339bbd6a549e0d1cd543cf0482202722c7ee7a88773c9354fea",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole KIDS digital safety, privacy, crisis-resource and research package with its defined limits",
+          "source_id": "clerk:119:2:228"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole KIDS digital safety, privacy, crisis-resource and research package with its defined limits",
+          "source_id": "clerk:119:2:228"
         }
       ]
     }
