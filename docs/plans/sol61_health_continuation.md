@@ -904,3 +904,79 @@ inspected. Coree713ffb55413aebe15556eaa7e0e06982a49d4f1ad1b6217be613666edf88935;
 compiled750df6b7f8ff5ea0915267633dfa5611dbc66dc65370acb0110948fd51d4e08b.
 Checkpoint12b173699 CI37274305410passed. Weekly12percentused/88remaining;
 watcher deadline unchanged. Continue208after push/exact-headCI; no terminal marker.
+
+### Checkpoint14: June8–11 general governance, labor, surveillance and controls
+
+Fifteen new reviews208–222: six procedural, eight exclusions, one expressive,
+zero meanings/findings. Totals97/228/19/266/66;64unfinished plus two examined
+dependencies. Cumulative141new reviews:57procedural/9expressive/63excluded/
+12meanings.32newcaptures,391cumulative/1816total; no pre-existing capture with
+sufficient extent was available for this group. New1345/1140source families are
+reused across adjacent actions. ExistingPublicLaw119-21captures cover other
+sections, so a new bounded100051(3)/(7)extent is justified, not blind URLreuse.
+
+Full operative bills establish general fiscal controls/training208/209,
+governmentwide data/InspectorGeneral oversight218, temporary payment controls220,
+collective-bargaining contracts216 andFAFSAverification217.218explicitly covers
+unemployment/PACT/pandemic funds for oversight, not new benefit/care eligibility
+or payment amounts.220preserves underlying program statutes/final eligibility
+and has objective risk,narrow duration/portion,notice/contest/release conditions;
+no invented exception for all Healthpayments or predicted benefit loss.216's
+healthcare strike-notice cross-reference is conforming renumbering of an existing
+notice rule; incorporated158(d)/(g)read, with no inferred clinical benefit.
+S2entireESand100051(3)/(7)show enforcement/personnel/State-local participation;
+child-exploitation identification/rescue is law-enforcement personnel, not a
+specified clinical/social-service benefit. None supplies a Healthfinding.
+
+1345Clerkdescription1355versus operative1335 remains a description qualification,
+not a changed1345identity. Discharge212/rule215/labor passage216 stay separate.
+Commit213/recommit219have no offered instructions; inserted January6settlement
+andballroom-donor amendments remain unoffered material.1335's three operative
+belief/condemnation clauses are expressive; its hospice/Medicaid/nutrition fraud
+allegations and figures stay attributed rather than verified civic conclusions.
+
+Failed9238has no validEH/IHendpoint. June10floor PDF23supplies the complete two-date
+FISAextension proposition, independently bound to June11Clerk/floor failure;
+198–218/15NotVoting, bothNay. The introductory floor motion saysas amended while
+resumedClerkquestion isSuspendRulesandPass; preserve both without inventing a
+different proposition. Exact surveillance-authority extension is outsideHealth;
+no unavailable-evidence flag is needed when full authoritative floor text resolves
+the action. Claim passages explicitly bind operative text and bare motions.
+
+Approximately15–20minutes from previouscheckpoint research into this control/
+exclusion group, before final commit/CI; this is a routing mix, not substantive
+interpretation throughput. Deeper review refined healthcare cross-reference,
+incorporated enforcement scope andpayment safeguards, without changing the final
+exclusion route. No conclusions were chosen from fraud/title/debate rhetoric.
+Manual tasks: extent/source recovery, exact motions, materiality and civic limits.
+Mechanical acquisition/projection/accounting/preservation/replay are deterministic.
+
+Recurring oversized source output justified a bounded read-only `excerpt`
+command in the existing research helper. Exactsource ID, URL, version, raw and
+governed hashes, start/end,totalextent andearlier/later flags accompany untouched
+text. Maximum20000characters; default6000. It reuses duplicate/hash validation,
+rejects missing/nontextual sources/bad bounds, assigns no membership andmutates
+nothing. Two focused regressions cover exactUnicode/newline windows/immutability,
+extent flags,bounds,tampering andduplicates. Real8464read5900–7300returns1400of
+13676textcharacters (89.8percent less text for that targeted window); this is
+output-volume reduction only, not equivalent whole-document review or measured
+elapsed/token savings. Full governed text remains available; unread material must
+still be followed when relevant.
+
+```powershell
+python scripts/shared_candidate_research.py --input docs/editorial/shared_candidates/house_119_health_20260916 excerpt --source-id govinfo:hr8464eh --start 5900 --limit 1400
+```
+
+164candidate/corpus/IR/pipeline tests passed before the two helper regressions;
+seven canonical checks passed. Final166-test receipt follows. Full authoring/core/
+mapping/projections/compiled/readable state unchanged fromcheckpoint13; source-
+proof digest updates only. All97prior meanings,1784captures,489reviews and139
+propositions preserved.141inventoryrowschanged/535identical against benchmark;
+seven generated JSON files andpacket replay byte-identically. Scoped diff and
+actual control/exclusion source bindings inspected. Checkpoint13exactdce8c58b1db5ea1f66ff45103219b51d447aaa81 CI37277782000SUCCESS.
+Next223,then independent224housingversion.235was already substantively excluded
+in the frozen inventory andis preserved without stylistic reopening. After the
+2026queue,11unfinished2025identities224/225/226/262/294/295/296/299/307/318/320
+remain genuine backlog, distinct from examined237. Earlier procedural ledger
+labels are historical; do not expand into repository-wide reconciliation.
+Weekly12percentused/88remaining; deadline unchanged; no terminal marker.

@@ -20,6 +20,24 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_failed_fisa_floor_text_is_required_without_creating_health_findings(self):
+        universe = json.loads((DATA / 'universe_proposal.json').read_text(encoding='utf-8'))
+        membership = json.loads((DATA / 'membership_review.json').read_text(encoding='utf-8'))
+        record = next(r for r in membership['records'] if r['action_id'] == 'house:119:2:221')
+        self.assertEqual(record['disposition'], 'exact_action_ineligible')
+        self.assertFalse(record['required_evidence_unavailable'])
+        passage = record['claim_source_map'][0]['passage']
+        self.assertIn('July', passage)
+        self.assertIn('EFFECTIVE', passage.replace('\n', '').replace('\r', '').replace(' ', ''))
+        self.assertFalse({f'house:119:2:{n}' for n in range(208, 223)} &
+                         {a['action_id'] for a in self.products[0]['actions']})
+        capture = copy.deepcopy(self.capture)
+        sid = 'congressional-record:2026-06-10-9238-exact-text'
+        capture['sources'] = [s for s in capture['sources'] if s['source_id'] != sid]
+        with self.assertRaises(KeyError) as caught:
+            validate_universe_proposal(universe, self.author, capture, membership)
+        self.assertEqual(caught.exception.args, (sid,))
+
     def test_agriculture_and_ukraine_votes_project_only_whole_package_choices(self):
         expected = {'house:119:2:205': {'F000477': 'Nay', 'M001184': 'Nay'},
                     'house:119:2:207': {'F000477': 'Yea', 'M001184': 'Nay'}}
@@ -682,8 +700,8 @@ class SharedDomainCandidateTests(unittest.TestCase):
     def test_membership_queue_distinguishes_work_from_exact_binding_and_unavailable_sources(self):
         u = json.loads((DATA / "universe_proposal.json").read_text(encoding="utf-8"))
         rows = {r["action_id"]: r for r in u["candidate_dispositions"]}
-        self.assertEqual(u["accounting"]["counts"], {"procedural_context":224, "source_unresolved":79,
-            "interpreted_substantive_directional":97, "expressive_nonbinding_context":18, "exact_action_ineligible":258})
+        self.assertEqual(u["accounting"]["counts"], {"procedural_context":228, "source_unresolved":66,
+            "interpreted_substantive_directional":97, "expressive_nonbinding_context":19, "exact_action_ineligible":266})
         for aid in ["house:119:2:53", "house:119:2:308", "house:119:2:313"]:
             self.assertFalse(rows[aid]["review_progress"]["exact_action_binding_unresolved"])
             self.assertTrue(rows[aid]["review_progress"]["substantive_review_performed"])
@@ -701,7 +719,7 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual([aid for aid, r in rows.items() if r["review_progress"]["authoritative_source_conflict"]],
                          ["house:119:1:237"])
         unresolved = [r for r in rows.values() if r["disposition"] == "source_unresolved"]
-        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 77)
+        self.assertEqual(sum(not r["review_progress"]["substantive_review_performed"] for r in unresolved), 64)
         self.assertEqual(rows["house:119:2:310"]["disposition"], "interpreted_substantive_directional")
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 

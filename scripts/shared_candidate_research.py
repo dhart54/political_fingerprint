@@ -1,4 +1,4 @@
-"""Read-only queue and exact-URL governed-source lookup; no editorial decisions."""
+"""Read-only queue, exact governed-source lookup and bounded text; no editorial decisions."""
 from __future__ import annotations
 
 import argparse
@@ -73,6 +73,32 @@ def queue_table(rows):
     return out.getvalue().rstrip("\n")
 
 
+def governed_source_excerpt(capture, source_id, *, start=0, limit=6000):
+    """Read a bounded, exact governed-text window without implying full review."""
+    if start < 0 or not 1 <= limit <= 20000:
+        raise ValueError("excerpt start must be nonnegative and limit between 1 and 20000")
+    source = next((s for s in capture['sources'] if s['source_id'] == source_id), None)
+    if source is None:
+        raise KeyError(source_id)
+    # Reuse the established duplicate-identity and governed-byte checks.
+    matches = governed_sources_at_url(capture, source['url'])
+    source = next(s for s in matches if s['source_id'] == source_id)
+    if not isinstance(source.get('text'), str) or not source['text']:
+        raise ValueError("source has no governed text; use source lookup for metadata")
+    total = len(source['text'])
+    if start > total:
+        raise ValueError("excerpt start exceeds governed text length")
+    end = min(total, start + limit)
+    return {k: source[k] for k in ('source_id', 'url', 'source_type', 'text_version',
+                                   'raw_sha256', 'governed_bytes_sha256')} | {
+        'text_start': start, 'text_end': end, 'text_characters': total,
+        'has_earlier_text': start > 0, 'has_later_text': end < total,
+        'entire_governed_text': start == 0 and end == total,
+        'reuse_requires_material_support_review': True,
+        'text_excerpt': source['text'][start:end],
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, required=True)
@@ -85,6 +111,10 @@ def main():
     source = commands.add_parser("source")
     source.add_argument("--url", action="append", required=True)
     source.add_argument("--show-text", action="store_true")
+    excerpt = commands.add_parser('excerpt', help='Bounded exact governed text with explicit offsets and extent')
+    excerpt.add_argument('--source-id', required=True)
+    excerpt.add_argument('--start', type=int, default=0)
+    excerpt.add_argument('--limit', type=int, default=6000)
     args = parser.parse_args()
     def read(name):
         return json.loads((args.input / f"{name}.json").read_text(encoding="utf-8"))
@@ -94,6 +124,8 @@ def main():
         if args.compact:
             print(queue_table(result))
             return
+    elif args.command == 'excerpt':
+        result = governed_source_excerpt(read('sources'), args.source_id, start=args.start, limit=args.limit)
     else:
         capture = read("sources")
         result = []

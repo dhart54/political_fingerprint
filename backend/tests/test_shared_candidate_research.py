@@ -4,10 +4,47 @@ import io
 import unittest
 
 from backend.app.semantic_ir.shared_corpus import sealed_digest
-from scripts.shared_candidate_research import governed_sources_at_url, research_queue, queue_table
+from scripts.shared_candidate_research import governed_sources_at_url, governed_source_excerpt, research_queue, queue_table
 
 
 class SharedCandidateResearchTests(unittest.TestCase):
+    def test_excerpt_preserves_exact_text_identity_bounds_and_input(self):
+        source = dict(source_id='exact', url='https://official/2025', source_type='official_bill_text',
+                      text_version='EH; bounded capture', raw_sha256='raw', text='α first\nsecond Ω')
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        capture = {'sources': [source]}
+        before = copy.deepcopy(capture)
+        result = governed_source_excerpt(capture, 'exact', start=2, limit=5)
+        self.assertEqual(result['text_excerpt'], source['text'][2:7])
+        self.assertEqual((result['text_start'], result['text_end']), (2, 7))
+        self.assertTrue(result['has_earlier_text'])
+        self.assertTrue(result['has_later_text'])
+        self.assertFalse(result['entire_governed_text'])
+        self.assertEqual(result['text_version'], source['text_version'])
+        self.assertEqual(result['governed_bytes_sha256'], source['governed_bytes_sha256'])
+        self.assertEqual(capture, before)
+        self.assertTrue(governed_source_excerpt(capture, 'exact')['entire_governed_text'])
+
+    def test_excerpt_rejects_bad_bounds_changed_bytes_duplicates_and_missing_identity(self):
+        source = dict(source_id='exact', url='https://official', source_type='official_bill_text',
+                      text_version='EH', raw_sha256='raw', text='text')
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        capture = {'sources': [source]}
+        for start, limit in [(-1, 1), (0, 0), (0, 20001), (5, 1)]:
+            with self.subTest(start=start, limit=limit), self.assertRaises(ValueError):
+                governed_source_excerpt(capture, 'exact', start=start, limit=limit)
+        with self.assertRaises(KeyError):
+            governed_source_excerpt(capture, 'other')
+        with self.assertRaisesRegex(ValueError, 'duplicate source'):
+            governed_source_excerpt({'sources': [source, source]}, 'exact')
+        metadata_only = {k: v for k, v in source.items() if k != 'text'}
+        metadata_only['governed_bytes_sha256'] = sealed_digest(metadata_only, 'governed_bytes_sha256')
+        with self.assertRaisesRegex(ValueError, 'no governed text'):
+            governed_source_excerpt({'sources': [metadata_only]}, 'exact')
+        source['text'] = 'changed'
+        with self.assertRaisesRegex(ValueError, 'governed source changed'):
+            governed_source_excerpt(capture, 'exact')
+
     def test_compact_queue_retains_dependency_flags_and_escaped_questions(self):
         row = dict(action_id="house:119:2:44", date="2026-01-22", measure="exact",
                    question='Question with\ta tab and "quotation"', disposition="source_unresolved",
