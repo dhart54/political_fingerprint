@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 84,
+        "eligible_substantive_actions": 85,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 84,
-        "resolved_eligible_actions": 84,
-        "directional_yes_no_positions": 83,
+        "in_service_eligible_actions": 85,
+        "resolved_eligible_actions": 85,
+        "directional_yes_no_positions": 84,
         "present_actions": 0,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 65,
+        "complete_episodes": 66,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1489,6 +1489,25 @@
             }
           },
           {
+            "proposition_id": "prop:4b4c154d7a99a959",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:2:78"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4758:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:e456f9eacbc5aae7",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -1579,6 +1598,7 @@
             "prop:32c536088c9104b5",
             "prop:a40c9c5e0b6bf9b9",
             "prop:365f206568f5595c",
+            "prop:4b4c154d7a99a959",
             "prop:e456f9eacbc5aae7"
           ]
         },
@@ -1679,6 +1699,7 @@
           "house:119:2:57",
           "house:119:2:6",
           "house:119:2:7",
+          "house:119:2:78",
           "house:119:2:8"
         ],
         "non_proposition_reasons": [
@@ -1695,17 +1716,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 84,
+        "eligible_substantive_actions": 85,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 84,
-        "resolved_eligible_actions": 84,
-        "directional_yes_no_positions": 78,
+        "in_service_eligible_actions": 85,
+        "resolved_eligible_actions": 85,
+        "directional_yes_no_positions": 79,
         "present_actions": 0,
         "not_voting_actions": 6,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 65,
+        "complete_episodes": 66,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -3084,6 +3105,25 @@
             }
           },
           {
+            "proposition_id": "prop:5c64d7f526831cfd",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:2:78"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr4758:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
             "proposition_id": "prop:e456f9eacbc5aae7",
             "semantic_role": "behavioral",
             "proposition_type": "notable_choice",
@@ -3169,6 +3209,7 @@
             "prop:4d600f0a77234bc7",
             "prop:5d89a712ad309313",
             "prop:32a83ca4a8e98c2d",
+            "prop:5c64d7f526831cfd",
             "prop:e456f9eacbc5aae7"
           ]
         },
@@ -3269,6 +3310,7 @@
           "house:119:2:57",
           "house:119:2:6",
           "house:119:2:7",
+          "house:119:2:78",
           "house:119:2:8"
         ],
         "non_proposition_reasons": [

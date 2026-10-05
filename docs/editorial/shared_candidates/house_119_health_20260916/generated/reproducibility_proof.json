@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "411f8f7241cbc3a61f1123c4cf39077edc736c628c49dff6b3a5f25f0cba5e12",
-  "source_capture_sha256": "fa183763d2a1c797f67aeea8d7bf78c92cc4a04efba91b9e881127cff9037acb",
-  "core_sha256": "96bbfb6798b2b692e0124fc140b302597df0ef334a3909d126215ef44af5d3ca",
-  "compiled_sha256": "a8b890cee1810e32af57f794d8498365652505dc949cab7f5223526245a5cf76",
-  "readable_sha256": "63e28b5abee95222ea6643b58e3fdac339fb1b2a2390d477ceaf20b20e3300b7",
+  "input_sha256": "cb8ce69aacc38486e5db799674154d523364bfd4889b2c5116544e9573a5c135",
+  "source_capture_sha256": "2b50360325f35356f8969975917a09a171a8a1742f45eace870789c3c328ce6c",
+  "core_sha256": "c632f02e3d8041a1cd335db2f9487231518a8e7d09b57a59f507cdd290bb3c47",
+  "compiled_sha256": "5d8e2f0a8e48f833f807a252a22e8bea5b33a4390271feefc51d15f96d961171",
+  "readable_sha256": "60de845c8ac9e73b913cf99409ededefb6961ca2ebf8295dee7bb73fb9b5d6f7",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -1693,6 +1693,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed suspension and passage of the whole H.R.6644 housing and banking package with its disability-income and assisted-family-service provisions",
           "source_id": "clerk:119:2:57"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:78",
+      "shared_sha256": "de630a84bbc0b4165d31dc5400e8b69dbd4fd94776eb531ab7d012d2ac43a921",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions",
+          "source_id": "clerk:119:2:78"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions",
+          "source_id": "clerk:119:2:78"
         }
       ]
     }

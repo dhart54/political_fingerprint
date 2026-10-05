@@ -100,6 +100,7 @@
     "house:119:2:57",
     "house:119:2:6",
     "house:119:2:7",
+    "house:119:2:78",
     "house:119:2:8"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
@@ -114,11 +115,11 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 203,
-      "exact_action_ineligible": 199,
-      "interpreted_substantive_directional": 84,
+      "procedural_context": 204,
+      "exact_action_ineligible": 203,
+      "interpreted_substantive_directional": 85,
       "expressive_nonbinding_context": 11,
-      "source_unresolved": 179
+      "source_unresolved": 173
     },
     "domain_id": "HEALTH_SOCIAL",
     "display_name": "Health & Social Policy",
@@ -127,14 +128,14 @@
       "Unresolved operative membership and episode completeness prevent a full-record claim."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 84,
-    "directional_substantive_actions": 84,
+    "substantive_eligible_actions": 85,
+    "directional_substantive_actions": 85,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 203,
+    "procedural_context_actions": 204,
     "expressive_nonbinding_actions": 11,
-    "exact_action_ineligible_actions": 199,
-    "unresolved_boundary_cases": 179,
-    "independent_episode_count": 65,
+    "exact_action_ineligible_actions": 203,
+    "unresolved_boundary_cases": 173,
+    "independent_episode_count": 66,
     "multi_action_episode_count": 10,
     "mechanism_types": [
       "amendment",
@@ -147,12 +148,12 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 84,
-      "substantive_actions": 84,
+      "ready_substantive_actions": 85,
+      "substantive_actions": 85,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
-      "177 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness."
+      "171 discovery identities remain unfinished membership screenings;2025roll237/2026roll44 remain examined source/effect dependencies. Existing2026roll45 needs broader-package completeness."
     ],
     "action_ids_by_disposition": {
       "procedural_context": [
@@ -309,6 +310,7 @@
         "house:119:2:66",
         "house:119:2:68",
         "house:119:2:73",
+        "house:119:2:74",
         "house:119:2:75",
         "house:119:2:77",
         "house:119:2:79",
@@ -535,9 +537,13 @@
         "house:119:2:55",
         "house:119:2:58",
         "house:119:2:64",
+        "house:119:2:65",
         "house:119:2:67",
         "house:119:2:69",
         "house:119:2:70",
+        "house:119:2:71",
+        "house:119:2:72",
+        "house:119:2:76",
         "house:119:2:235",
         "house:119:2:284",
         "house:119:2:285",
@@ -638,6 +644,7 @@
         "house:119:2:53",
         "house:119:2:56",
         "house:119:2:57",
+        "house:119:2:78",
         "house:119:2:128",
         "house:119:2:139",
         "house:119:2:198",
@@ -678,12 +685,6 @@
         "house:119:2:28",
         "house:119:2:42",
         "house:119:2:44",
-        "house:119:2:65",
-        "house:119:2:71",
-        "house:119:2:72",
-        "house:119:2:74",
-        "house:119:2:76",
-        "house:119:2:78",
         "house:119:2:80",
         "house:119:2:81",
         "house:119:2:82",
@@ -842,11 +843,11 @@
         "house:119:2:282"
       ]
     },
-    "count_basis": "84 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.179 unresolved comprise177 unfinished screenings and two examined dependencies."
+    "count_basis": "85 proposed source-mapped Health inputs, not accepted eligibility or exhaustive package proof.173 unresolved comprise171 unfinished screenings and two examined dependencies. Six-action Sol benchmark adds one shared meaning, one procedural control and four exclusions."
   },
-  "episode_completeness": "65 candidate episodes cover 84 supplied actions, including 10 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
+  "episode_completeness": "66 candidate episodes cover 85 supplied actions, including 10 ordered pairs. Exact amendments and passage are independently screened; related excluded actions remain in membership accounting. Wider discovery/episode completeness remains unproven.",
   "approval_receipt": null,
-  "universe_subject_sha256": "10d396c8d4bf4cb29b10aa6019900d86741c5c03e9a3fd87838f69481576badd",
+  "universe_subject_sha256": "9eea0480c6487491071d200184d25ff68a8028c83e3b0ee093ae9b8ef5c674a3",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -32559,13 +32560,14 @@
       "date": "2026-02-11",
       "measure": "bill_119_hjres_72",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Proposed exact-action exclusion: the single operative clause terminates the national emergency declared by Executive Order 14193 concerning Canadian drug flows and related border/tariff authorities under 50 USC 1622. The order describes opioid harms, but its operative measures are Canadian-product tariffs and enforcement, not a care service, medical financing or social-benefit program. Read full EH, original order and governed NEA/IEEPA authorities. Humanitarian-donation limits do not establish a Health program. Preserve the EH printed Federal Register citation rather than silently correcting it; House passage alone does not establish enacted termination.",
       "source": {
         "source_id": "clerk:119:2:65",
         "url": "https://clerk.house.gov/evs/2026/roll065.xml",
-        "raw_sha256": "18ea55d9a4154ea762c72c53071b910bb64313f25da02b38bb219a35589cc1b3",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "78cdf182d27d2fbc5ec7f40bdeb9d6a13cb6f09a550ba2333d749e018bacc4f7",
+        "governed_bytes_sha256": "4487353110e4526b9f1e44354c25f5c8dfb2dd6a08c865176c24a71df4331c6c",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -32576,24 +32578,68 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion: the single operative clause terminates the national emergency declared by Executive Order 14193 concerning Canadian drug flows and related border/tariff authorities under 50 USC 1622. The order describes opioid harms, but its operative measures are Canadian-product tariffs and enforcement, not a care service, medical financing or social-benefit program. Read full EH, original order and governed NEA/IEEPA authorities. Humanitarian-donation limits do not establish a Health program. Preserve the EH printed Federal Register citation rather than silently correcting it; House passage alone does not establish enacted termination.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:65",
           "url": "https://clerk.house.gov/evs/2026/roll065.xml",
-          "raw_sha256": "18ea55d9a4154ea762c72c53071b910bb64313f25da02b38bb219a35589cc1b3",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "78cdf182d27d2fbc5ec7f40bdeb9d6a13cb6f09a550ba2333d749e018bacc4f7",
+          "governed_bytes_sha256": "4487353110e4526b9f1e44354c25f5c8dfb2dd6a08c865176c24a71df4331c6c"
+        },
+        {
+          "source_id": "govinfo:hjres72eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres72eh/html/BILLS-119hjres72eh.htm",
+          "raw_sha256": "8a2c3da0030e52c068e9d7d5dc4084a6842224b977e3adc1d3ae21fbf8a35465",
+          "governed_bytes_sha256": "28ee4d4cec7da42b3a1aad2402c3966b8904e9c1737af9fddb33515cc65e2079"
+        },
+        {
+          "source_id": "govinfo:eo14193-20250201-canada",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-07/html/2025-02406.htm",
+          "raw_sha256": "40a567469b7a2f34468ccdcd762b500d3083d260e6ef6b8341e11cfe5e0a562f",
+          "governed_bytes_sha256": "acc3a6b3a159a2be677da48065a2ae23f711a79c36c0aec6d9aeb19d53ac539a"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "raw_sha256": "f856d35995666b82ac131edb02c496ed8d02ff08f219fc74a687b9d1aab4119f",
+          "governed_bytes_sha256": "10253600960c2528fa1104992c9bd07f91d24d808ecb01605e1c76f7f65d8b47"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:65",
+        "source_ids": [
+          "clerk:119:2:65",
+          "govinfo:hjres72eh",
+          "govinfo:eo14193-20250201-canada",
+          "govinfo:50usc1622-2024-operative",
+          "govinfo:50usc1702-2024"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:65",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2312b28c1e4af2af44ff6037a9249b1da1171fdbd1a7ce618e9b67e3126078ae"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:65",
+        "url": "https://clerk.house.gov/evs/2026/roll065.xml",
+        "raw_sha256": "18ea55d9a4154ea762c72c53071b910bb64313f25da02b38bb219a35589cc1b3",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -33081,13 +33127,14 @@
       "date": "2026-02-24",
       "measure": "bill_119_hr_6329",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Proposed exact-action exclusion: the full Information Quality Assurance Act EH adds general OMB/agency influential-information guidelines, public factual-material rulemaking dockets, notice/comment and correction procedures, and reporting. Read incorporated agency/information definitions and original section 515 information-quality authority. Application to health agencies is general administrative scope, not a healthcare or social-benefit mechanism. Express statutory disclosure exceptions preserve FOIA/Privacy Act protections; no new patient-record disclosure mandate is inferred. No additional funds are authorized.",
       "source": {
         "source_id": "clerk:119:2:71",
         "url": "https://clerk.house.gov/evs/2026/roll071.xml",
-        "raw_sha256": "030abe7e76a8bf1c0153dc6770c90c4ee76e4201beb6a1f71bd74ff169f3d5d0",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "f6da84545192aba6871ff97f9a925d8bb1de0a60e340f6803b7fbdf63b7d3858",
+        "governed_bytes_sha256": "47dbb7237dfba6f98693ab51abfa53ca2510085040226b37f8f770c6063fe7f1",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -33098,24 +33145,89 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion: the full Information Quality Assurance Act EH adds general OMB/agency influential-information guidelines, public factual-material rulemaking dockets, notice/comment and correction procedures, and reporting. Read incorporated agency/information definitions and original section 515 information-quality authority. Application to health agencies is general administrative scope, not a healthcare or social-benefit mechanism. Express statutory disclosure exceptions preserve FOIA/Privacy Act protections; no new patient-record disclosure mandate is inferred. No additional funds are authorized.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:71",
           "url": "https://clerk.house.gov/evs/2026/roll071.xml",
-          "raw_sha256": "030abe7e76a8bf1c0153dc6770c90c4ee76e4201beb6a1f71bd74ff169f3d5d0",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "f6da84545192aba6871ff97f9a925d8bb1de0a60e340f6803b7fbdf63b7d3858",
+          "governed_bytes_sha256": "47dbb7237dfba6f98693ab51abfa53ca2510085040226b37f8f770c6063fe7f1"
+        },
+        {
+          "source_id": "govinfo:hr6329eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6329eh/html/BILLS-119hr6329eh.htm",
+          "raw_sha256": "701fbd8ac6623dc3f4e888b41f5b394819ff0a835c222ca52967be873f934ac4",
+          "governed_bytes_sha256": "c32514f09e559bfc40c3f347e7afb3a3a5504ac2e321af2458f446c1fe563f54"
+        },
+        {
+          "source_id": "govinfo:44usc3502-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title44/html/USCODE-2024-title44-chap35-subchapI-sec3502.htm",
+          "raw_sha256": "c1906a71e45e4870f9c09d914ada31aeacd3b763a577501de251248efaff3825",
+          "governed_bytes_sha256": "2ff7657c5a1579c7e3e98106502b8a79db89abe8f539b8aa65faeaff82e5cec0"
+        },
+        {
+          "source_id": "govinfo:pl106-554-dakota-water610",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-106publ554/html/PLAW-106publ554.htm",
+          "raw_sha256": "bdf9332908c43fb4840f1a8b9c9794708445d13a46cbd843eeb36311983a7eea",
+          "governed_bytes_sha256": "ed37db70599e6b62c1661cf86ec89033f9cb971b49b6f182e80cd9ebf0669296"
+        },
+        {
+          "source_id": "govinfo:usc3561-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title44/html/USCODE-2024-title44-chap35-subchapIII-partA-sec3561.htm",
+          "raw_sha256": "da1bb9df92153ef6587d92a1e317ee6fcaa5342a335fdc245b8daabfcaafb903",
+          "governed_bytes_sha256": "325049458257486f2447f94bf00102b06a8961ed15962192a174dfa20dcf5ac1"
+        },
+        {
+          "source_id": "govinfo:usc552-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552.htm",
+          "raw_sha256": "b1fad0a21337dc814f2f05e47f260dba90752af9f72c66c7b0323477183323de",
+          "governed_bytes_sha256": "20a1d9cc83acbfa02274ae64a01f0d5c5c8b6efc1816e0ab081fb39f86d28e9e"
+        },
+        {
+          "source_id": "govinfo:usc552a-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap5-subchapII-sec552a.htm",
+          "raw_sha256": "19223e13c8d0413721b379ffab44ea26f39fdb00101b7afe691dc8098a254df6",
+          "governed_bytes_sha256": "ac1004d0d738e8487ef15c064bbaa7ec59c2c70abf897a5fc069f6511cd91429"
+        },
+        {
+          "source_id": "congressional-record:2026-02-23-6329-rotor",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-23/pdf/CREC-2026-02-23-house.pdf",
+          "raw_sha256": "1886bae21112baa9740c31a8112bc65dbff81b9fa31a39064747f8b3d69f1dc3",
+          "governed_bytes_sha256": "2b96ae7083152dbe845a98596c69f1a15309cfc57147e1e4fc3ce893c87c0f54"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:71",
+        "source_ids": [
+          "clerk:119:2:71",
+          "govinfo:hr6329eh",
+          "govinfo:44usc3502-2024-operative",
+          "govinfo:pl106-554-dakota-water610",
+          "govinfo:usc3561-2024-sol-slice",
+          "govinfo:usc552-2024-sol-slice",
+          "govinfo:usc552a-2024-sol-slice",
+          "congressional-record:2026-02-23-6329-rotor"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:71",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a387116ca4808e584978a1551f366d42eb68454cc88f87d0745df80073a852af"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:71",
+        "url": "https://clerk.house.gov/evs/2026/roll071.xml",
+        "raw_sha256": "030abe7e76a8bf1c0153dc6770c90c4ee76e4201beb6a1f71bd74ff169f3d5d0",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -33125,13 +33237,14 @@
       "date": "2026-02-24",
       "measure": "bill_119_s_2503",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Proposed exact-action exclusion: the full Senate-passed ROTOR Act ES establishes aircraft surveillance/equipment, government-mission exceptions, FAA/DOD coordination, audits and airspace safety reviews. Read material FY2026 section 373 and FY2019 section 1046 and ADS-B regulations. Emergency and air-medical operators appear in a risk review for commercial-airplane safety, not a patient-care benefit, payment or clinical-service program. HHS appears as a Cabinet-rank definition. The section 373(a) repeal does not repeal the separate near-miss reporting subsection (b). The 264-133 suspension vote FAILED the required two-thirds; the recorded majority does not establish House passage.",
       "source": {
         "source_id": "clerk:119:2:72",
         "url": "https://clerk.house.gov/evs/2026/roll072.xml",
-        "raw_sha256": "835eba677631e6f97aad17e03c2e39abfd2275683f03f5d653d50ee585079d54",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "b27d51f4ff5ce35cd451075217b21fe7a2edef71c504615b959fb905fab5d1f0",
+        "governed_bytes_sha256": "f3a6a10127c51412c2c6b21c6af149721a6356e5805713a55ea92454f8b8b119",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -33142,24 +33255,82 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion: the full Senate-passed ROTOR Act ES establishes aircraft surveillance/equipment, government-mission exceptions, FAA/DOD coordination, audits and airspace safety reviews. Read material FY2026 section 373 and FY2019 section 1046 and ADS-B regulations. Emergency and air-medical operators appear in a risk review for commercial-airplane safety, not a patient-care benefit, payment or clinical-service program. HHS appears as a Cabinet-rank definition. The section 373(a) repeal does not repeal the separate near-miss reporting subsection (b). The 264-133 suspension vote FAILED the required two-thirds; the recorded majority does not establish House passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:72",
           "url": "https://clerk.house.gov/evs/2026/roll072.xml",
-          "raw_sha256": "835eba677631e6f97aad17e03c2e39abfd2275683f03f5d653d50ee585079d54",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "b27d51f4ff5ce35cd451075217b21fe7a2edef71c504615b959fb905fab5d1f0",
+          "governed_bytes_sha256": "f3a6a10127c51412c2c6b21c6af149721a6356e5805713a55ea92454f8b8b119"
+        },
+        {
+          "source_id": "govinfo:s2503es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2503es/html/BILLS-119s2503es.htm",
+          "raw_sha256": "52b6d0792f5c3d7b96aae56fc371526c9974e0a161a70762abf3570080397fa3",
+          "governed_bytes_sha256": "a165ce695e6fca34f925a233061ea97d4cc6669cbb339b56911a644b945a7db0"
+        },
+        {
+          "source_id": "govinfo:pl119-60-rotor-373",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ60/html/PLAW-119publ60.htm",
+          "raw_sha256": "5656a3db271313ad9c040afe148e750feb7811fa68190026be3193c23d5273ed",
+          "governed_bytes_sha256": "74283056ebb3387d022eca5984c6c53812bf5ba49494c7537cbac00dd55c4c8d"
+        },
+        {
+          "source_id": "govinfo:pl115-232-rotor-1046",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-115publ232/html/PLAW-115publ232.htm",
+          "raw_sha256": "0c37d51e214e6f4aff18199addd892b43484c6c860bbe7c2aaabb6f3d45429a8",
+          "governed_bytes_sha256": "ab8c726e9755f39c3dd0e63057d1455cf543448018a7baceeb2b4025961993bb"
+        },
+        {
+          "source_id": "govinfo:14cfr91-225-2025-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title14-vol2/pdf/CFR-2025-title14-vol2-sec91-225.pdf",
+          "raw_sha256": "d8d5363389238d6ede4ecc49b3b72c1caa27bd253de3c4c8a9ec1e814ae74a84",
+          "governed_bytes_sha256": "b669d52ce3e33288d63385ae556fedaa055db5b67ff52ba87a609420d1abac04"
+        },
+        {
+          "source_id": "govinfo:14cfr91-227-2025-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title14-vol2/pdf/CFR-2025-title14-vol2-sec91-227.pdf",
+          "raw_sha256": "e73b10213661047533bc2e56d1384d9ea7359d0a1ee6f5da618590a5feac6a25",
+          "governed_bytes_sha256": "04110c79f17a3e6d6de3f060024f75dad34975477cdff274cbd758968fa54a16"
+        },
+        {
+          "source_id": "congressional-record:2026-02-23-6329-rotor",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-23/pdf/CREC-2026-02-23-house.pdf",
+          "raw_sha256": "1886bae21112baa9740c31a8112bc65dbff81b9fa31a39064747f8b3d69f1dc3",
+          "governed_bytes_sha256": "2b96ae7083152dbe845a98596c69f1a15309cfc57147e1e4fc3ce893c87c0f54"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:72",
+        "source_ids": [
+          "clerk:119:2:72",
+          "govinfo:s2503es",
+          "govinfo:pl119-60-rotor-373",
+          "govinfo:pl115-232-rotor-1046",
+          "govinfo:14cfr91-225-2025-sol-slice",
+          "govinfo:14cfr91-227-2025-sol-slice",
+          "congressional-record:2026-02-23-6329-rotor"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:72",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "68f99096e752cfbeba3b1e0713d7c53dcc5239bd5cb741beb58cb104f7080f8f"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:72",
+        "url": "https://clerk.house.gov/evs/2026/roll072.xml",
+        "raw_sha256": "835eba677631e6f97aad17e03c2e39abfd2275683f03f5d653d50ee585079d54",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -33213,13 +33384,14 @@
       "date": "2026-02-24",
       "measure": "bill_119_hres_1075",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "procedural_context",
+      "reason": "Procedural, non-counting: H.Res.1075 establishes closed-rule consideration of HR4626 with RCP119-20 deemed adopted and HR4758 as unamended, one hour of debate and one recommittal opportunity for each, with specified waivers. This exact question is agreement to the rule, not passage or endorsement of either underlying policy. Full EH read; the rule/package relationship is retained without creating a second substantive Health observation.",
       "source": {
         "source_id": "clerk:119:2:74",
         "url": "https://clerk.house.gov/evs/2026/roll074.xml",
-        "raw_sha256": "a1c17bc017c5ea4f504213e4396929ae8abb970db6588523150990d0d40964d2",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "dcffcb7579a934a6d9532c3b08bf7407b6aa20d15b90b830b7cd6c0801d68568",
+        "governed_bytes_sha256": "e8804152b0a41bbb4529cf2c76d09fe69df9e13cf6c4e700b10bc9249e7e57c3",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -33230,24 +33402,68 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Procedural, non-counting: H.Res.1075 establishes closed-rule consideration of HR4626 with RCP119-20 deemed adopted and HR4758 as unamended, one hour of debate and one recommittal opportunity for each, with specified waivers. This exact question is agreement to the rule, not passage or endorsement of either underlying policy. Full EH read; the rule/package relationship is retained without creating a second substantive Health observation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:74",
           "url": "https://clerk.house.gov/evs/2026/roll074.xml",
-          "raw_sha256": "a1c17bc017c5ea4f504213e4396929ae8abb970db6588523150990d0d40964d2",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "dcffcb7579a934a6d9532c3b08bf7407b6aa20d15b90b830b7cd6c0801d68568",
+          "governed_bytes_sha256": "e8804152b0a41bbb4529cf2c76d09fe69df9e13cf6c4e700b10bc9249e7e57c3"
+        },
+        {
+          "source_id": "govinfo:hres1075eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+          "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+          "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+        },
+        {
+          "source_id": "govinfo:hr4626eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626eh/html/BILLS-119hr4626eh.htm",
+          "raw_sha256": "aeffd129fe15c39a964775e40a6cf95004a441213810c12984845ed4616ea537",
+          "governed_bytes_sha256": "71d7720fc5d45c16a1f0367559122800b6e5dddf17410f1a53a7ad3b3688d467"
+        },
+        {
+          "source_id": "govinfo:hr4758eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4758eh/html/BILLS-119hr4758eh.htm",
+          "raw_sha256": "25c35f87d76424634be93693ddca5483edd163fefec4a469734d1cfb02818fdb",
+          "governed_bytes_sha256": "313ede9a3d987cb2a078231c2b716e2e3337bbe1334f148af698a5594beb8dda"
+        },
+        {
+          "source_id": "house:rcp119-20-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260223/HR4626_RCP_01_xml.pdf",
+          "raw_sha256": "91a453cf529b1b5ee18d3d039e1170921d9290798b67310d05ad9b9d2174b713",
+          "governed_bytes_sha256": "b0d7ff80c523e36018156e0b180b8b960c3daa206fb4f251ee109cd9df1ca806"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:74",
+        "source_ids": [
+          "clerk:119:2:74",
+          "govinfo:hres1075eh",
+          "govinfo:hr4626eh",
+          "govinfo:hr4758eh",
+          "house:rcp119-20-complete"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:74",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "861c910b44139b614e1071148b1fa454c96389456ac0f09f3c4f5d4312b6e4c8"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:74",
+        "url": "https://clerk.house.gov/evs/2026/roll074.xml",
+        "raw_sha256": "a1c17bc017c5ea4f504213e4396929ae8abb970db6588523150990d0d40964d2",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -33301,13 +33517,14 @@
       "date": "2026-02-24",
       "measure": "bill_119_hr_4626",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Proposed exact-action exclusion: full HR4626 EH and the rule-deemed RCP119-20 concern EPCA energy/water conservation standard review, petitions, statutory net-cost/payback and energy-saving tests, performance/availability, compliance timing, revocation/preemption and distribution-transformer standards. Read incorporated covered-product and standards definitions. Low-income and rural cost analysis imposes an analytic requirement, not income-tested assistance or a care/benefit service. Predicted pollution/health effects do not establish membership. Full print/EH legislative alphanumerics match; preserve existing standards, limited transformer restriction and continued washer/dishwasher authority rather than claiming blanket repeal.",
       "source": {
         "source_id": "clerk:119:2:76",
         "url": "https://clerk.house.gov/evs/2026/roll076.xml",
-        "raw_sha256": "1ef0a812366b38e59e1e2febac501bc61650962059cded5bc24f07ba9953a1ba",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "b29d9d017d11ddb0f06d619f868071abd44b2e605016050cb37a00f157fe2cda",
+        "governed_bytes_sha256": "fa7c8fabfed727732c54814d08f3565c5c5378d29878f51711c7c08fe40b2cee",
+        "verification": "recaptured_official_source"
       },
       "episode_candidate_id": null,
       "after_historical_july23_boundary": false,
@@ -33318,24 +33535,89 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Proposed exact-action exclusion: full HR4626 EH and the rule-deemed RCP119-20 concern EPCA energy/water conservation standard review, petitions, statutory net-cost/payback and energy-saving tests, performance/availability, compliance timing, revocation/preemption and distribution-transformer standards. Read incorporated covered-product and standards definitions. Low-income and rural cost analysis imposes an analytic requirement, not income-tested assistance or a care/benefit service. Predicted pollution/health effects do not establish membership. Full print/EH legislative alphanumerics match; preserve existing standards, limited transformer restriction and continued washer/dishwasher authority rather than claiming blanket repeal.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:76",
           "url": "https://clerk.house.gov/evs/2026/roll076.xml",
-          "raw_sha256": "1ef0a812366b38e59e1e2febac501bc61650962059cded5bc24f07ba9953a1ba",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "b29d9d017d11ddb0f06d619f868071abd44b2e605016050cb37a00f157fe2cda",
+          "governed_bytes_sha256": "fa7c8fabfed727732c54814d08f3565c5c5378d29878f51711c7c08fe40b2cee"
+        },
+        {
+          "source_id": "govinfo:hr4626eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626eh/html/BILLS-119hr4626eh.htm",
+          "raw_sha256": "aeffd129fe15c39a964775e40a6cf95004a441213810c12984845ed4616ea537",
+          "governed_bytes_sha256": "71d7720fc5d45c16a1f0367559122800b6e5dddf17410f1a53a7ad3b3688d467"
+        },
+        {
+          "source_id": "govinfo:hres1075eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+          "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+          "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+        },
+        {
+          "source_id": "house:rcp119-20-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260223/HR4626_RCP_01_xml.pdf",
+          "raw_sha256": "91a453cf529b1b5ee18d3d039e1170921d9290798b67310d05ad9b9d2174b713",
+          "governed_bytes_sha256": "b0d7ff80c523e36018156e0b180b8b960c3daa206fb4f251ee109cd9df1ca806"
+        },
+        {
+          "source_id": "govinfo:usc6291-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6291.htm",
+          "raw_sha256": "5aba3334162384fa233dce94acde722ed325ce2a73d36958a85c60d746d6e587",
+          "governed_bytes_sha256": "fb3d6c2b4e486f29b791f9db5f12f9b3579feb22ba0964cebb782efcec876209"
+        },
+        {
+          "source_id": "govinfo:usc6292-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6292.htm",
+          "raw_sha256": "8aba8789e31d07c5f27d63ddaa2529eb4a3c6567c041afb358e989643602dc9f",
+          "governed_bytes_sha256": "7c298daf27a90c6a760258ca07370c7cd67fd1f98facf636a6aaebe95cabb040"
+        },
+        {
+          "source_id": "govinfo:usc6295-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6295.htm",
+          "raw_sha256": "d8abda9d6e76ae4d5506c9cd6317664ec2822f47a6fda5e8001ccb48678bfe53",
+          "governed_bytes_sha256": "f2699315d06d18c1ee048b9a011bbc1fa8889599b298d6902386b9272da673fe"
+        },
+        {
+          "source_id": "govinfo:usc6317-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-1-sec6317.htm",
+          "raw_sha256": "0daf758ea695bc49b354e18f6d38a33f8d54fdff21a35c06d6d435efdba6a11a",
+          "governed_bytes_sha256": "a891f340209ac8e0148c3b7752f5c66f900215044dfb978c2873d00d55be2fe9"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:76",
+        "source_ids": [
+          "clerk:119:2:76",
+          "govinfo:hr4626eh",
+          "govinfo:hres1075eh",
+          "house:rcp119-20-complete",
+          "govinfo:usc6291-2024-sol-slice",
+          "govinfo:usc6292-2024-sol-slice",
+          "govinfo:usc6295-2024-sol-slice",
+          "govinfo:usc6317-2024-sol-slice"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:76",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "519dc4ed24a2a1e177941c449a37c6b3fe3972d0e2bc2a5915d56e0d13ef495c"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:76",
+        "url": "https://clerk.house.gov/evs/2026/roll076.xml",
+        "raw_sha256": "1ef0a812366b38e59e1e2febac501bc61650962059cded5bc24f07ba9953a1ba",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -33389,15 +33671,16 @@
       "date": "2026-02-25",
       "measure": "bill_119_hr_4758",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Proposed exact-action Health & Social Policy inclusion rests on repeal of direct income-tested point-of-sale household electrification support under PL117-169 section 50122. This is a social-support mechanism, not membership from an energy title or predicted health effect. Read full EH and complete targeted rebate/training/building-code sections, retained HOMES noncombination clause, prior PL119-21 contractor-training rescission, report/CBO and both floor positions. The whole package also repeals contractor-training and building-code assistance and rescinds only unobligated rebate/code balances. Preserve statutory less-than-150-percent eligibility, caps/conditions and budget/enactment limits. One shared meaning, one independent episode; rule74 is procedural context.",
       "source": {
         "source_id": "clerk:119:2:78",
         "url": "https://clerk.house.gov/evs/2026/roll078.xml",
-        "raw_sha256": "9b42f0513a2661b443e765b6f5f6447a5fe47cb562e7aaf1f7e2d36f628ebdc1",
-        "verification": "historical_source_identity_not_recaptured_this_increment"
+        "raw_sha256": "3a3233788aaf58d65b77b0daa1d991f2b0fe3052787fd38e142232d0e81d86d8",
+        "governed_bytes_sha256": "3a58f0690842cf5347741917b7161df13b4b9a4676abf80124c09758998da660",
+        "verification": "recaptured_official_source"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4758:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4758",
       "member_action": "nay",
@@ -33406,24 +33689,96 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
-      "unresolved_reason": "Exact operative-text Health membership has not been established. Historical nonselection, titles and existing classifications do not exclude this action.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Proposed exact-action Health & Social Policy inclusion rests on repeal of direct income-tested point-of-sale household electrification support under PL117-169 section 50122. This is a social-support mechanism, not membership from an energy title or predicted health effect. Read full EH and complete targeted rebate/training/building-code sections, retained HOMES noncombination clause, prior PL119-21 contractor-training rescission, report/CBO and both floor positions. The whole package also repeals contractor-training and building-code assistance and rescinds only unobligated rebate/code balances. Preserve statutory less-than-150-percent eligibility, caps/conditions and budget/enactment limits. One shared meaning, one independent episode; rule74 is procedural context.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:78",
           "url": "https://clerk.house.gov/evs/2026/roll078.xml",
-          "raw_sha256": "9b42f0513a2661b443e765b6f5f6447a5fe47cb562e7aaf1f7e2d36f628ebdc1",
-          "verification": "historical_source_identity_not_recaptured_this_increment"
+          "raw_sha256": "3a3233788aaf58d65b77b0daa1d991f2b0fe3052787fd38e142232d0e81d86d8",
+          "governed_bytes_sha256": "3a58f0690842cf5347741917b7161df13b4b9a4676abf80124c09758998da660"
+        },
+        {
+          "source_id": "govinfo:hr4758eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4758eh/html/BILLS-119hr4758eh.htm",
+          "raw_sha256": "25c35f87d76424634be93693ddca5483edd163fefec4a469734d1cfb02818fdb",
+          "governed_bytes_sha256": "313ede9a3d987cb2a078231c2b716e2e3337bbe1334f148af698a5594beb8dda"
+        },
+        {
+          "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ169/html/PLAW-117publ169.htm",
+          "raw_sha256": "434fc6a6ce14a952520b0ea027ca5be5837782c77d197e89efc91b6c5847fbac",
+          "governed_bytes_sha256": "d1d81b79bd6df6aafc2c172b3dc4a3aa018f8fad41d1e233a1680864dd20e825"
+        },
+        {
+          "source_id": "govinfo:pl119-21-50402-energy-rescissions",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "e7bf2884c0da3ad1e49960608a8d3f2d62ca9215d7c8f21522bc47139ddf9c95"
+        },
+        {
+          "source_id": "govinfo:hrpt119-484-4758",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt484/html/CRPT-119hrpt484.htm",
+          "raw_sha256": "4325bb1e56617a362e606cb41565b8bd46551e0a4a6c71f06846df5358fdda75",
+          "governed_bytes_sha256": "bfe24498d311fcf5930789e50698db3546bb6985d691884cdcce12aa964ac2b4"
+        },
+        {
+          "source_id": "govinfo:hres1075eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1075eh/html/BILLS-119hres1075eh.htm",
+          "raw_sha256": "102aa880f31fb7f1e893b3be8cd7b2104d91961898535f0d9bff77a85d044723",
+          "governed_bytes_sha256": "4afc4964cf4c3256fc127becdddabad1bafc7c423fbaf484feacd6e88ba0c07d"
+        },
+        {
+          "source_id": "govinfo:usc6294a-2024-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6294a.htm",
+          "raw_sha256": "64cc57aeafc58fef36cf76ac7c431df41254c7e16be0cab4a6c81137a7fed1df",
+          "governed_bytes_sha256": "0948cdb14c3f403f9840933d74395e180afc32d4b687af776dac34c658a3e732"
+        },
+        {
+          "source_id": "govinfo:10cfr42018-2025-sol-slice",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title10-vol3/pdf/CFR-2025-title10-vol3-part420.pdf",
+          "raw_sha256": "2d395bb80d06382a9b07fcd068d8c1614153f311d346c8a8225cbd8d49be93c4",
+          "governed_bytes_sha256": "65410e1e8317ca9acae2e954105951b1f41c552df775381f4e74555c9be1dfe4"
+        },
+        {
+          "source_id": "congressional-record:2026-02-25-4758",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-02-25/pdf/CREC-2026-02-25-house.pdf",
+          "raw_sha256": "51c4a56cab7542f8313a9b5d20090bb4dbfc357120bf0e999c0f0a9f898ac035",
+          "governed_bytes_sha256": "6b1dc65ac4ccc79c6d3efdf55cbab771dc8ce811e10ab4a06bdb7a8c3a01d27a"
         }
       ],
-      "exact_action_source_binding": null,
+      "exact_action_source_binding": {
+        "action_id": "house:119:2:78",
+        "source_ids": [
+          "clerk:119:2:78",
+          "govinfo:hr4758eh",
+          "govinfo:pl117-169-home-rebates-training-codes",
+          "govinfo:pl119-21-50402-energy-rescissions",
+          "govinfo:hrpt119-484-4758",
+          "govinfo:hres1075eh",
+          "govinfo:usc6294a-2024-sol-slice",
+          "govinfo:10cfr42018-2025-sol-slice",
+          "congressional-record:2026-02-25-4758"
+        ],
+        "membership_review_ref": "membership_review.json#action_id=house:119:2:78",
+        "review_state": "candidate_pending_external_semantic_review",
+        "complete": true
+      },
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "43aa0717d9ad815830497c7cded0e8ea2a97a92a5544bcc262fc7799f4f1ccaa"
+      },
+      "historical_raw_hash_matches": false,
+      "historical_source_identity": {
+        "source_id": "clerk:119:2:78",
+        "url": "https://clerk.house.gov/evs/2026/roll078.xml",
+        "raw_sha256": "9b42f0513a2661b443e765b6f5f6447a5fe47cb562e7aaf1f7e2d36f628ebdc1",
+        "verification": "historical_source_identity_not_recaptured_this_increment"
       }
     },
     {
@@ -44640,11 +44995,11 @@
   ],
   "selection_basis": {
     "domain_id": "HEALTH_SOCIAL",
-    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations.",
+    "basis": "82 exact-source proposed Health inputs selected by operative mechanisms and readiness, not member choices. Preserve care-payment offsets, package limits, distinct stages and non-directional statuses. Exact D.C. temporary-law disapproval adds a source-mapped care/benefit mechanism with whole-law and later-outcome boundaries. H.R.6644 adds exact supported-housing and assisted-family service mechanisms with explicit whole-package and printed-reference limitations. Six-action Sol benchmark: proposed HR4758roll78 inclusion rests on direct income-tested household point-of-sale support; rolls65/71/72/76 are exact-action exclusions and rule74 is procedural.",
     "comparison_plan": "docs/plans/foushee_next_domain_shared_interpretation.md",
     "starting_commit": "2049eaf25e2ab9f197dafe6ad97d9f8e0cc3c257"
   },
-  "selection_sha256": "e634b4393797fe511cf66201ff2a25d32cf60cada0485a9c052e1aa0c1bc4c2e",
+  "selection_sha256": "daf088698bfd477c12a8c79bfd29965a0d8eae788679ab3e689cc10adc034ddc",
   "proposed_action_ids": [
     "house:119:1:104",
     "house:119:1:115",
@@ -44729,6 +45084,7 @@
     "house:119:2:57",
     "house:119:2:6",
     "house:119:2:7",
+    "house:119:2:78",
     "house:119:2:8"
   ],
   "unresolved_action_ids": [
@@ -44749,12 +45105,6 @@
     "house:119:2:28",
     "house:119:2:42",
     "house:119:2:44",
-    "house:119:2:65",
-    "house:119:2:71",
-    "house:119:2:72",
-    "house:119:2:74",
-    "house:119:2:76",
-    "house:119:2:78",
     "house:119:2:80",
     "house:119:2:81",
     "house:119:2:82",
@@ -44914,7 +45264,7 @@
   ],
   "cross_domain_boundary_review": {
     "state": "incomplete",
-    "basis": "179 unresolved comprise177 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44). H.R.6644roll57 proposed inclusion follows full EH and material incorporation review; laterroll224 remains independent. Existing45 broader-package completeness remains separate.",
+    "basis": "173 unresolved comprise171 unfinished membership screenings and two examined dependencies (2025roll237/2026roll44). The six-action Sol benchmark is complete at roll78; roll79 and later remain unresearched. Existing45 broader-package completeness remains separate.",
     "priority_exact_action_ids": [
       "house:119:1:145",
       "house:119:1:190",
@@ -44966,6 +45316,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Current user request authorizes candidate research and preparation only; no semantic acceptance or publication.",
-  "proposal_sha256": "d9ea8d3e404118ab887d3e4969d8df47bb2bb45a583d91802816370b916fe656",
-  "membership_review_sha256": "02db43df14e31cefc2996a7fe0a2c8aa18c33106da792745f5e4754f8b3ee200"
+  "proposal_sha256": "907ece80c9d12a7fe0079346d6537d783d9e5a50ac02e57989a371ba77b212df",
+  "membership_review_sha256": "fe84b742b55c54a607a12de877056c1092167d6a050de72abebef6e330d9e43b"
 }
