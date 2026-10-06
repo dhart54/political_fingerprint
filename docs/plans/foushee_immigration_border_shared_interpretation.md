@@ -2939,3 +2939,95 @@ eligibility separately from frozen tax references, then child/enforcement
 funding, continuing/omnibus/NDAA packages and ordinary screenings. Existing
 .w/ib owner and historical markers remain, no current shutdown or merge/
 deployment/production/acceptance/promotion/publication authority.
+
+
+## Checkpoint 49: Current House student-aid status and retained boundaries
+
+Governing House 30001 is bounded through before 30002. Its four status
+alternatives are US citizen or national, INA lawful permanent resident,
+the specifically defined Cuban alternative, or lawful US residence under a
+named Compact of Free Association. Residence is not a common new requirement.
+The Cuban branch requires all five conditions: Cuban citizen or national;
+beneficiary of an approved INA 203(a) family-preference petition; all immigrant
+visa eligibility while a visa is not immediately available; not otherwise
+inadmissible under INA 212(a); and physical US presence pursuant to a parole
+grant tied to the two named migration agreements. Nationality, any parole,
+visa or other Cuban/Haitian-entrant label alone is insufficient. Full material
+family-preference, inadmissibility and parole authorities retain their own
+scope, exceptions and references. No individual determination or new status.
+
+The original May 2, 1995 statement is bound from the official White House/NARA
+archive, with its own conditional Guantanamo-parole counting. Original
+September 1994 agreement acquisition and grant/programme matching remain
+unfinished research, not unavailable evidence or an accepted classifier.
+Failed technical/redirect/certificate/DNS responses were not governed as law;
+TLS validation was not disabled and a press summary was not substituted.
+No numerical treaty reinterpretation or current policy-validity claim.
+
+Complete current HEA 484 preserves Title IV prerequisites, conditional
+verification/pending/reasonable-opportunity and institution/loan-guarantee
+protections, own SSN certification and verification, and named student/course/
+programme exceptions. Status alone is not an award or a scholarship-wide ban.
+The intellectual-disability path expressly retains (a)(3)-(6), with its own
+limited waiver authority. The confined-student Pell paragraph retains its
+notwithstanding subsection (a), otherwise-eligible and prison-programme
+conditions. Its interaction with new (a)(5) is question 42, before categorical
+denial or an individual exception. Incarcerated-loan restriction is not denial
+of every Pell award. Question 41 preserves current (g)(4)'s printed (2)/(2)(A)
+documentation references versus current (g)(2)'s work-study special rule;
+no source repair, automatic adverse result or promised delay-to-loss interval.
+Recommendations, alternatives and safe parallel work are recorded separately.
+
+House prints effective July 1, 2025, for award year 2025-2026 and each subsequent
+award year. Current HEA 481 defines award year July 1 through June 30 of the
+following year, distinct from academic and tax years. This proposed May House
+mechanism is not an enactment claim, Senate counterpart or substitution into
+frozen August 5, 1997 education-credit references. Exact floor/EH witnesses
+differ by one space only; original bytes retained. No H.Res.492 item targets
+30001; H.Res.499 adopts 492 without an additional 30001 change.
+
+Nine bindings and five new governed extents, one qualification hash and exact
+action/comparison hashes are sealed in hr1_current_student_aid_review.json.
+All prior sources/clauses, 38 other actions and selected compacts remain.
+All 11 child-credit repairs and the separate senior-age repair remain in both
+member outputs. 39 focused tests in 9.520 seconds, seven semantic checks,
+seven-file byte replay, 169 bounded extents, 990 unchanged Health sources,
+queue/accounting/audit hashes and final diff verify. Tests do not establish
+semantic truth. Core 58922a74c6d5c43b28673680c8c1fb9d1b454f7143d203b4d10619b27503a0d0.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Accounting: 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations,
+70 findings (Foushee 36, Massie 34); 1,283 sources (293 new), 691 bindings,
+259 captures. Remaining: 221 ordinary screenings, TWO partial H.R.1 component
+reviews, 42 separate application questions, and the explicit original-1994
+acquisition/matching research. Same-owner audit partial; final verdict null.
+
+Fingerprint's bounded checkpoint 47 recheck resolves the historical Major
+IB-HR1-SENIOR-AGED-BRANCH-SCOPE within its verified scope. Exact packet
+replacement and witness/hash checks verified, with full member propagation
+outside independent access. Its checkpoint 47/48 education review found no
+new material defect in checked person roles, AOTC-only EIN, dates/elections
+and frozen HEA chronology. It verified 13 of 33 bindings and receipt digest;
+20 bindings, 1996 original/split-word comparisons, full-member detail and byte
+replay remain outside that independent verdict. Corpus evidence is available
+to this owner; independent access limitations are not unavailable evidence.
+Both independent receipts and historical findings preserved. No individual,
+full-package or editorial acceptance follows.
+
+Architecture follow-up, not a current defect or scope expansion: stable
+compiled-IR hashes are expected for these meaning-only expansions. Core,
+projection and readable hashes change, with existing stale/candidate guards
+intact. Future candidate-to-approved integration must verify current shared
+core/source/qualification lineage and invalidate affected downstream review.
+Compiled hash equality alone cannot prove freshness; public selection binds
+complete approved presentations but does not automatically compare them to
+the latest shared core. No architecture/runtime/publication changes here.
+
+Owner-native exact CI for 1a3ab0aae7e269f56f58b28155344e4b074a5c4e,
+run 37535174214, and 5c96b5cb4a81962f87aae7221c71b78318192e55,
+run 37534497604, now all nine green, also independently confirmed. This
+supersedes the previous pending CI note without rewriting historical receipts.
+Current exact-head CI follows push. Continue child/enforcement funding,
+parallel original 1994 acquisition and reserved references, then remaining
+continuing/omnibus/NDAA packages and ordinary screenings. Existing .w/ib owner
+and historical markers remain; no current shutdown boundary. No merge,
+deployment, production, acceptance, promotion or publication authority.
