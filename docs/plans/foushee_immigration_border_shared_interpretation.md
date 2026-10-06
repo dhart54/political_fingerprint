@@ -2378,3 +2378,88 @@ retrieval attempts, not an unavailable-evidence disposition or screening closure
 Continue safe tax/remittance capture while resolving the precise policy witness.
 Questions 33/34/35 remain reserved. Existing .w/ib ownership and historical
 markers continue, with no current shutdown boundary or production authority.
+
+
+## Checkpoint 42: Exact remittance versions and narrow scope-copy repair
+
+House 112104 proposes 3.5%; its exception requires BOTH a written-agreement
+qualified provider AND provider-verified US citizen/national sender. New 36C
+retains taxpayer-paid tax, own/spouse qualified SSNs before the return due date,
+SIMILAR 32(d) marital rules and Secretary-satisfactory substantiation. The same
+House 110004 amendment to 24(h)(7), complete SSA issuance and marital baselines
+are bound. SSNs do not alone prove citizenship. Reporting separates exempt
+aggregates, certified-intent/named-person records and other aggregates; no
+universal every-transfer SSN reporting or automatic refund/net-cost claim.
+
+Senate 70604 proposes 1% only with named physical funding, subject to separate
+nonapplication: account institution described in 5312(a)(2)(A)-(H) AND subject
+to chapter 53/subchapter II requirements, OR US-issued debit/credit funding.
+All conjuncts, card definitions and the without-regard-to-debit-(B) wording
+remain; the latter is not a blanket prepaid-card exclusion. No House verified-
+citizen exception, credit/reporting scheme or citizenship-based Senate exemption
+is imported. Cash wording does not erase separately applicable nonapplication
+or classify intermediate withdrawal/funding paths.
+
+Complete inherited definitions retain consumer/natural-person sender in a
+defined State, provider-initiated electronic transfer to a foreign designated
+recipient, account-independence, normal-course provider and small-value
+exclusion. Physical funding and electronic transfer technology differ. Sender
+pays; provider collects/remits quarterly; secondary liability concerns only
+unpaid-at-transfer/uncollected extent. Anti-conduit deeming and regulatory
+discretion are not observed wrongdoing. Transfers start after December 31,
+2025; the House credit instead uses taxable years ENDING after that date.
+
+Question 36 reserves the House printed EFTA 920(g)/15 USC 1693o-1 mismatch;
+complete Code source credits establish 919 versus 920, without silently fixing
+the proposed reference. Question 37 reserves new 36C's citizen/national heading
+versus ANY INDIVIDUAL operative wording and the literal 6050BB paragraph-(1)
+information cross-reference. Recommendation: retain qualified direct mechanisms
+and all conditions, obtain independent application before transaction/refund
+classification. Alternatives and safe DACA/tax/funding work are recorded. No
+universal citizen refund, noncitizen eligibility/denial or repaired reference.
+
+Ten new governed sources and 18 bindings include both full top-level sections:
+House 9,015 characters and Senate 3,140, including embedded 4475/36C/6050BB
+where present. Explicit next-legislative-section bounds prevent truncation at
+new-code headings. Floor/EH comparison for 112104 and incorporated 110004
+shows only pagination after whitespace normalization. Original governing bytes
+are unchanged. hr1_remittance_review.json seals sources/actions/copy/comparison.
+
+Fingerprint's bounded independent 40/41 review found one Minor stale scope-copy
+sentence and no material operative-predicate defect. The exact stale exclusion
+now says: 'The annual filing and automatic-extension provisions are addressed
+separately below.' Exact before/after hashes are recorded and all affected
+outputs regenerated. Genuinely unfinished DACA scope remains; no broader
+historical cleanup or evidence change. Independent review checked 11/15 and
+14/16 binding instances and both receipt digests. Five operative hashes and the
+checkpoint 40 H.Res.492 hash were not recomputed; full authoring/readable/Massie
+detail unavailable, PDF text-only, no replay/full-package acceptance. Questions
+34/35 remain unresolved. See hr1_checkpoint40_41_independent_review.json.
+Historical severity records and earlier partial review limits remain intact.
+
+35 focused candidate tests (8.760 seconds), seven semantic checks and seven-file
+byte replay pass. All 18 bindings, two copy hashes, 148 bounded extents, complete
+member propagation, exact Minor repair, prior source/detail/qualification/compact
+preservation, audit/Clerk/accounting and final diff verify. All other 37 actions,
+990 Health sources, compiled IR, runtime, frontend, schema and production/
+publication boundaries remain unchanged. Tests do not establish semantic truth
+or independent acceptance; same-owner audit is partial and final verdict null.
+Core: 7e911cb11bb6dca65cc559b391029082c4f1a694c62be4f9f20f423a0aa8b2e5.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,260 governed sources (270 new), 600 claims
+and 220 provisional captures. Remaining: 221 ordinary screenings, TWO partial
+H.R. 1 component reviews and 37 separate legal/application questions.
+Exact 83414961891afa99d47700d474efc04c79c47af2 passed all nine hosted jobs
+in run 37523373557. Current exact-head CI follows push.
+
+Next: govern the original DACA memorandum and author House 44201(i). The source
+helper supplied an accessible official Supreme Court-hosted signed scan and DOJ
+Appendix E reproduction. Owner independently captured both matching raw hashes,
+visually read all three scan pages and extracted only printed 97a-101a from
+DOJ. Governance/transcription comparison follows next; poor scan OCR is not used
+as governing text. Preserve actual hosts and original 'for a least five years'
+and 'or otherwise poses a threat' wording. Acquisition is resolved, without
+current legal-status or ACA application acceptance. Then remaining tax/child/
+enforcement funding, packages and screenings. Existing .w/ib ownership and old
+markers continue, with no current shutdown or production authority.
