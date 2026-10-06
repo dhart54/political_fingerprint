@@ -473,3 +473,54 @@ and public/persistence gates pass; protectedbaseline/diffchecks areclean. Prior
 https://github.com/dhart54/political_fingerprint/actions/runs/37416475713.
 CurrentexactheadCI follows push. Weeklyusage43%used/57%remaining; overnight
 deadline remains06:41:49Eastern, no terminalmarker created.
+
+
+### Checkpoint 10: distinct sanctions mechanisms and statutory timing
+
+Four complete EH proposals add shared meanings: H.R.36, H.R.1503, H.R.1998
+and H.R.747. 281 supported reviews: 24 interpreted, 178 procedural, 78 excluded,
+1 expressive; 395 ordinary screenings remain. All 24 current meanings are
+source-first reconstructed and compared by the accountable owner, with no claim
+of a second independent human/model reviewer or full-corpus PASS.
+
+H.R.36 preserves two qualifying routes, different waivers, benefitting-family
+conditions, the express INA201 versus printed1201 reference, imported U.S.-citizen
+relative framework, literal humanitarian reference and section7/section8 sunset
+mismatch. H.R.1503 separates discretionary conviction/supervision/travel-qualified
+passport powers from the presidential organ-trafficking sanctions list; the
+aliens heading versus individual body remains visible. H.R.1998 binds all
+chapter81 predicates and incorporated221(i) revocation framework, discretionary
+property blocking and its uncapped CRUCIAL-national-security waiver.
+
+H.R.747 changes criteria for an existing sanctions menu whose visa option is
+optional and qualified. Its ten-year reporting window remains anchored to
+December20,2019; unchanged2334 ends the chapter/sanctions December20,2026.
+No implicit authority extension through2029 is accepted. This is confirmed
+against the official Code text; an unavailable GovInfo2025chapter response is
+rejected as non-evidence. The candidate binds the complete2024chapter and
+preserves the timing interaction for legal review. Seven total legal interactions
+remain explicit, separate from the 395 unfinished screenings.
+
+24 separate single-action episodes;48 observations and47 directional findings.
+Foushee:16 opposition/8 support. Massie:19 support/4 opposition/1 Present, the
+resolved non-directional HR23 observation. Both members share identical action
+meaning; actual Yea/Nay differences are mechanical observations, not motives or
+component preferences. Current audit:50 distinct actions,1 Critical/6 Major/
+2 Minor/41 No Defect; underlying defect counts remain1 Critical/2 Major/1 Minor.
+18 retained exclusions,7 procedural controls and all1 expressive are audited.
+
+Sources884 =737 unchanged Health-governed reuses +147 new witnesses;
+213 shared claim/source witnesses and56 full provisional captures. Material
+passport/report/organ/piracy/visa-revocation/IEEPA frameworks are bound. The
+protected Health and accepted cross-domain baseline diff is empty.
+
+Validation:204 focused tests pass in32.411 seconds; all7 semantic checks pass,
+and all7 JSON outputs replay byte-for-byte. Actual four new compact outputs for
+both members, directions, separate episodes, source/audit/accounting bindings
+and publication/persistence gates inspected. Diff-check clean. Shared core:
+`1a4f923aaf8d434130d8f60ce5b87a58b7db5cdaa42639f03c0e23c11c77952f`;
+compiled IR: `6253423885c7a2f7b0725319169f0b883408b972430069697498b5a620b3eebd`.
+Prior52391f25e5b19584e260e9ba8cc39d1d7cabba42 exact-head CI passes all9 jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37418106748.
+Current exact-head CI follows the push. No terminal marker or final readiness
+claim; continue ordinary screenings and large-package/version research.

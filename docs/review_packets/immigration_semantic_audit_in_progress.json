@@ -1782,6 +1782,445 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:116",
+      "audit_state": "primary_reconstructed_candidate_compared_review_dependencies_preserved",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "116",
+        "legis-num": "H R 36",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "5-May-2025",
+        "action-time": "6:56 PM",
+        "vote-desc": "MEGOBARI Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR36EH reconstructed from both sanctions routes, with required presidential determinations,90-day officials review, benefitting-family qualification and foreign/INA-alien scope. Property MAY versus immigration SHALL in6c; different6b changed-circumstances/national-security waiver versus6c180-day/15-day notice. Imported immediate-relative provision is U.S.-citizen based, including conditional surviving/abuse retention, and printed1201/express201 mismatch retained. Intelligence/necessary-admission-or-parole/humanitarian transactions and literal paragraph1 reference preserved.6gpotentialexistingIEEPA differs from mandatory visa route.6hsection7sunset citation differs from explicit5-yearActsection8. Reports/assistance/should-statements remain wholepackage. Exact Clerk suspension and Yea/Nay observed.",
+      "finding": "No defect found in the bounded source-qualified candidate description. Printed applicability/cross-reference/timing questions remain explicit review dependencies where listed; no independent-human/model review, acceptance or full-corpus PASS.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "2f581f0265842f2a54e934d14d8c9c9f84fb176fdc07c06137a91fc0ca0c8ca7",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr36eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm",
+          "governed_bytes_sha256": "c03409dc0bedfd0a538ae6189ab6aaa97d257da8435b3d8a6122492f1482379f",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1151-2024-immediate-relative-class",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1151.htm",
+          "governed_bytes_sha256": "f961bbfac1a1fe786da8f967bf788774e7ff48bdaa8fc47a345e9ea34353f811",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        }
+      ],
+      "open_review_dependencies": [
+        {
+          "action_id": "house:119:1:116",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+          "question": "Express INA201(b)(2)(A)(i) versus printed8 USC1201 citation and the imported U.S.-citizen immediate-relative framework alongside foreign-person exclusion: no repaired citation, blanket family category or individual sanction application accepted.",
+          "source_ids": [
+            "govinfo:hr36eh",
+            "govinfo:8usc1151-2024-immediate-relative-class",
+            "govinfo:8usc1101-2024-sba-status-definitions"
+          ]
+        },
+        {
+          "action_id": "house:119:1:116",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+          "question": "Section6(h) calls section7 the sunset, while section8 explicitly ends the Act after5years. Preserve both literal provisions without accepted repair or post-sunset authority.",
+          "source_ids": [
+            "govinfo:hr36eh"
+          ]
+        },
+        {
+          "action_id": "house:119:1:116",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+          "question": "Humanitarian6(i)(2)(C)(ii) references paragraph(1), which supplies definitions; preserve literal reference and do not invent scope beyond stated transaction/activity exceptions.",
+          "source_ids": [
+            "govinfo:hr36eh"
+          ]
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:119",
+      "audit_state": "primary_reconstructed_candidate_compared_review_dependencies_preserved",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "119",
+        "legis-num": "H R 1503",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "7-May-2025",
+        "action-time": "5:25 PM",
+        "vote-desc": "Stop Forced Organ Harvesting Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR1503EH reconstructed with discretionary State passport refusal/revocation:274econviction AND continuing sentence/supervision AND offense passport-use or international crossing. Existing organ-for-value/interstate/transplantation crime, paired-donation six-condition exception, expenses and organ definition independently read. Separate180-dayPreslist funding/sponsoring/facilitation requires no conviction. Mandatory blocking and printedindividual visa/admission/parole/otherbenefit restrictions differ; aliens heading versus individual body and property-use USperson definition do not supply foreign-principal exclusion. Qualified internationaladmission/humanitariantransactions/180-dayVITALNScasewaiver/15-daynotice preserved. Existing report actor/scope/deadlines and actualnonstate definition independently read. Wholebill Yea/Nay verified, notcomponent/guilt/outcome.",
+      "finding": "No defect found in the bounded source-qualified candidate description. Printed applicability/cross-reference/timing questions remain explicit review dependencies where listed; no independent-human/model review, acceptance or full-corpus PASS.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "71cbf87a2c0acb34d7a83d3a663be5a6f22aca360b5081507626e49feb5f036d",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1503eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1503eh/html/BILLS-119hr1503eh.htm",
+          "governed_bytes_sha256": "29f6ecf480494a4d2bc6e8083158e7f907940a0c5302d5910ecbe9c53424013b",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:22usc211a-2024-passport-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec211a.htm",
+          "governed_bytes_sha256": "6079a3cbbff12db72b8bca9c9e9e0c0006303af9054375ddb8036825e69b63fe",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:22usc212-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm",
+          "governed_bytes_sha256": "fdc32a66be9497f81f4b0ba8bfa8a5f1540a8df7615f07ab9b34efe1c3f42b20",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:42usc274e-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partH-sec274e.htm",
+          "governed_bytes_sha256": "28dcff88c57bd12b6aaad8eb3c571c362bc72850e1c97d3902b34ef73830fd7a",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:22usc2151n-2024-report-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapI-partI-sec2151n.htm",
+          "governed_bytes_sha256": "1478d8261c8337a41e60268cc8f13da9a7cafe79a7b23b25a6b761557a154781",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:22usc2304-2024-report-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapII-partI-sec2304.htm",
+          "governed_bytes_sha256": "cc6e565f56a43b084fd2da1101a707ec38be5d4063b98e325abfb9d076943094",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:publaw114-281-nonstate-definition",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ281/html/PLAW-114publ281.htm",
+          "governed_bytes_sha256": "330b6da01e7eb9a032a5e24dba721655db986d4d7ca7346c5b5c423a9e71e4f5",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        }
+      ],
+      "open_review_dependencies": [
+        {
+          "action_id": "house:119:1:119",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+          "question": "Section6(b)(2) heading says aliens while body says individual and supplies no foreign-person exclusion. Preserve printed language and INA/national context without adjudicating citizen entry/citizenship consequences.",
+          "source_ids": [
+            "govinfo:hr1503eh",
+            "govinfo:8usc1101-2024-sba-status-definitions",
+            "govinfo:22usc212-2024-complete"
+          ]
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:172",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "172",
+        "legis-num": "H R 1998",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "23-Jun-2025",
+        "action-time": "6:54 PM",
+        "vote-desc": "Sanction Sea Pirates Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR1998EH reconstructed: Pres foreignperson knowinglypiracy determination and State/DHS knows-or-reasonbelieves INAalien gate; chapter81all11offenses read with jurisdiction/citizenship/elements retained, not conviction-only or seaseizure-only. PropertyMAY, conditional visa/admission/parole/allINAbenefts restrictions, mandatory statedactors revocation incorporates221i. Existing discretion, notice/carrier safe reliance and limited review/sole-ground removal exception read. Foreigndefinition excludescitizens/permanentresidents/USentities but not anypersoninUS. Necessaryinternationaladmission-or-parole, humanitariantransactions, authorizedUSactivities, CRUCIALNS15-daypriorcertwaiver without180-daycap preserved. Exact amended suspension Yea/Nay verified.",
+      "finding": "No defect found in the bounded source-qualified candidate description. Printed applicability/cross-reference/timing questions remain explicit review dependencies where listed; no independent-human/model review, acceptance or full-corpus PASS.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "89450829916ad43260e83c6ba6afe26ed21930512628a0bbeac07a9683fb40d5",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1998eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm",
+          "governed_bytes_sha256": "f014a5c6f4027a9893b2f2d35c0c8031278bd42d756ff8b22aee3f696d61a5ff",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1201-2024-revocation-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIII-sec1201.htm",
+          "governed_bytes_sha256": "ff1849a9eb10141183672313f8f0b93f36181f4eed54425c6ae93adff1b8004e",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:18usc-chapter81-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap81.htm",
+          "governed_bytes_sha256": "75048e05278c5dd2dba975bde77b16cdb551188d2d3cda9bd8ac31fa1eb9841c",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        }
+      ],
+      "open_review_dependencies": [],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:220",
+      "audit_state": "primary_reconstructed_candidate_compared_review_dependencies_preserved",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "220",
+        "legis-num": "H R 747",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "2-Sep-2025",
+        "action-time": "7:03 PM",
+        "vote-desc": "Stop Chinese Fentanyl Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR747EH reconstructed independently through existingchapter28. New PRC entity goods/activity AND failedcredible-step criteria and officialresponsibility AND aiding/abetting criteria; report asks WHETHER fourheads qualify. Existing menu5entity/4individual sanctions does not make visa option mandatory;2313a8 aliencorporateofficer/principal/controllingshareholder and applicablea9executive conditions, exceptions and threewaiver families retained. Existing definitions foreignnational/entity/notforeigngovernment versus separateUSperson notcollapsed. Report5-to10-yearchange remains2019anchored; unchanged2334seven-year2026termination read. Five-yearrecent/nonterminateddrugemergency evaluation and existingIEEPAconsultation/report/regulation changes retain scope. Wholeamendedsuspension and actual bothYea verified; no actualtrafficking/list/visaoutcome.",
+      "finding": "No defect found in the bounded source-qualified candidate description. Printed applicability/cross-reference/timing questions remain explicit review dependencies where listed; no independent-human/model review, acceptance or full-corpus PASS.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "d9baab01c25d8e5e44ff3927a0fe985439941fa068dd1863dbccb9ae1e24bdde",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr747eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm",
+          "governed_bytes_sha256": "d00a8930042d9f7e5d66c8053082264523cf7a2a7f727f660f5a6c4c3e9efeb6",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:21usc-chapter28-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm",
+          "governed_bytes_sha256": "ddb1bc1af6515d0516b92b4c8014141c6e70d34daa6f8492aa63db8e58c06a21",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        },
+        {
+          "source_id": "govinfo:50usc1703-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm",
+          "governed_bytes_sha256": "a85b7493b1ffbfd272d3d6de1fd55a67669c15b48402ba679d8a0b5f95e0c332",
+          "reviewed_extent": "Complete exact EH; complete material operative incorporated framework/definition/exception/timing provisions, not search snippets or parent-policy rhetoric"
+        }
+      ],
+      "open_review_dependencies": [
+        {
+          "action_id": "house:119:1:220",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+          "question": "Ten-year2311(c)reporting endpoint is anchored toDec20,2019, but unchanged2334terminateschapter/sanctionsDec20,2026. No implied repeal or sanction-authority extension through2029 accepted.",
+          "source_ids": [
+            "govinfo:hr747eh",
+            "govinfo:21usc-chapter28-2024-complete"
+          ]
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
     }
   ],
   "noncounting_actions": [
@@ -3422,7 +3861,7 @@
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 37
+    "No Defect": 41
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -3444,7 +3883,8 @@
     "SBA source-family audit explicitly compares proposedstatutory duties with pre-voteagency relocation and June1,2025ownership/status SOP; no later2026rule imported. Earliercommittee2931destination condition is not silently substituted for exactEH.",
     "Expanded operative-versus-rhetorical/DHS and deemed-adoption sample: HRes488preamble versus resolved communication/gratitude; HR881research grants versus visa/status law; HRes294deemed293vote-pair procedure. No additional defect found. Remaining408ordinary screenings prevent full-corpus PASS.",
     "Expanded international/nationality-reference and exact-amendment sample: completeHR1048financial regime and failedamendments4/5/6; source/insertions are independently bound, not parent-meaning or accepted-cross-domain conclusions. No additional defect. Remaining401ordinaryscreenings preventfull-corpusPASS.",
-    "Citizenship/SAVE pass follows entireNVRAcriminal chapeau/civilcure, Stateexemptions, passport-versus-national and REALID classes, existingSAVEadmin-use restriction and INAregistration-versus-voting/removal distinctions. Explicitlegal interactions preserved; do not treat them as unavailable sources, inferredrepeal or a fullauditPASS."
+    "Citizenship/SAVE pass follows entireNVRAcriminal chapeau/civilcure, Stateexemptions, passport-versus-national and REALID classes, existingSAVEadmin-use restriction and INAregistration-versus-voting/removal distinctions. Explicitlegal interactions preserved; do not treat them as unavailable sources, inferredrepeal or a fullauditPASS.",
+    "Sanctions family: do not homogenize foreign-person scope, family categories, property-versus-immigration discretion, passport-conviction-versus-list predicates, waiver adjectives/periods/notices, incorporated criminal/visa-revocation elements, or reporting-versus-program termination. Literal dependencies preserved for review; no outcome claims."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -3490,6 +3930,56 @@
         "govinfo:52usc20502-20511-operative",
         "govinfo:22usc212-2024-complete",
         "govinfo:8usc1408-2024-complete"
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+      "question": "Express INA201(b)(2)(A)(i) versus printed8 USC1201 citation and the imported U.S.-citizen immediate-relative framework alongside foreign-person exclusion: no repaired citation, blanket family category or individual sanction application accepted.",
+      "source_ids": [
+        "govinfo:hr36eh",
+        "govinfo:8usc1151-2024-immediate-relative-class",
+        "govinfo:8usc1101-2024-sba-status-definitions"
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+      "question": "Section6(h) calls section7 the sunset, while section8 explicitly ends the Act after5years. Preserve both literal provisions without accepted repair or post-sunset authority.",
+      "source_ids": [
+        "govinfo:hr36eh"
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+      "question": "Humanitarian6(i)(2)(C)(ii) references paragraph(1), which supplies definitions; preserve literal reference and do not invent scope beyond stated transaction/activity exceptions.",
+      "source_ids": [
+        "govinfo:hr36eh"
+      ]
+    },
+    {
+      "action_id": "house:119:1:119",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+      "question": "Section6(b)(2) heading says aliens while body says individual and supplies no foreign-person exclusion. Preserve printed language and INA/national context without adjudicating citizen entry/citizenship consequences.",
+      "source_ids": [
+        "govinfo:hr1503eh",
+        "govinfo:8usc1101-2024-sba-status-definitions",
+        "govinfo:22usc212-2024-complete"
+      ]
+    },
+    {
+      "action_id": "house:119:1:220",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proposed-law applicability/cross-reference or statutory timing interaction; not unavailable primary evidence or an unfinished ordinary screening",
+      "question": "Ten-year2311(c)reporting endpoint is anchored toDec20,2019, but unchanged2334terminateschapter/sanctionsDec20,2026. No implied repeal or sanction-authority extension through2029 accepted.",
+      "source_ids": [
+        "govinfo:hr747eh",
+        "govinfo:21usc-chapter28-2024-complete"
       ]
     }
   ]

@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "20 explicitly listed Immigration & Border candidate inputs in a fixed 676-action September 16, 2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "24 explicitly listed Immigration & Border candidate inputs in a fixed 676-action September 16, 2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -123,6 +123,34 @@
       "mapping_sha256": "b8c355cf55e4cf4912ebbe5966398998150daccc4fc851920671d39ce871c1ea"
     },
     {
+      "action_id": "house:119:1:116",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr36:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10116
+      },
+      "mapping_sha256": "0b97fcb49494858ee2503f5c935d669f8658e8dbc23a9bf871ddd87a5c4a7956"
+    },
+    {
+      "action_id": "house:119:1:119",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1503:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10119
+      },
+      "mapping_sha256": "6816ae9d8c56a9d453d7040542171e1113796d53ae1dee9f14e613829556aba5"
+    },
+    {
       "action_id": "house:119:1:153",
       "eligibility": {
         "decision": "proposed",
@@ -179,6 +207,20 @@
       "mapping_sha256": "7dab3d25f76c920fe088252d80cc616d2160cfd7119ffd1427ca87333e848352"
     },
     {
+      "action_id": "house:119:1:172",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1998:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10172
+      },
+      "mapping_sha256": "2ca2aff862c27ab3583ae799e16a9092214ed850c5e034bbcb09d7397cb9bc4f"
+    },
+    {
       "action_id": "house:119:1:183",
       "eligibility": {
         "decision": "proposed",
@@ -205,6 +247,20 @@
         "stage_order": 10184
       },
       "mapping_sha256": "b5290149d77f49af1bdbe4521507fd6c160ffca537f13c76f2dd4c55d3f797c2"
+    },
+    {
+      "action_id": "house:119:1:220",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr747:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10220
+      },
+      "mapping_sha256": "6ec70702dd64d01ed85c4e469de993b0b5621d4f8366281e2106bad628f63381"
     },
     {
       "action_id": "house:119:1:264",
@@ -357,6 +413,22 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr36:119",
+      "action_ids": [
+        "house:119:1:116"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr1503:119",
+      "action_ids": [
+        "house:119:1:119"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr2931:119",
       "action_ids": [
         "house:119:1:153"
@@ -389,6 +461,14 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr1998:119",
+      "action_ids": [
+        "house:119:1:172"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr875:119",
       "action_ids": [
         "house:119:1:183"
@@ -400,6 +480,14 @@
       "episode_id": "episode:hr275:119",
       "action_ids": [
         "house:119:1:184"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:hr747:119",
+      "action_ids": [
+        "house:119:1:220"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -458,5 +546,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "f9e4400b2bcd2c1730455c434ef480f4f5a38f8376cb48959347fc52c8c08e01"
+  "mapping_sha256": "fa8c09752ba54c3d77ad90d42108ce73fef7298668d3ec1342a14fd3aadeb3a8"
 }

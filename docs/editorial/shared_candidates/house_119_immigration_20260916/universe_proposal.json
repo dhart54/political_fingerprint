@@ -25,12 +25,16 @@
     "house:119:1:63",
     "house:119:1:65",
     "house:119:1:102",
+    "house:119:1:116",
+    "house:119:1:119",
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
     "house:119:1:171",
+    "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:220",
     "house:119:1:264",
     "house:119:2:65",
     "house:119:2:94",
@@ -51,9 +55,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 178,
-      "interpreted_substantive_directional": 20,
+      "interpreted_substantive_directional": 24,
       "exact_action_ineligible": 78,
-      "source_unresolved": 399,
+      "source_unresolved": 395,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -63,14 +67,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 20,
-    "directional_substantive_actions": 20,
+    "substantive_eligible_actions": 24,
+    "directional_substantive_actions": 24,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 178,
     "expressive_nonbinding_actions": 1,
     "exact_action_ineligible_actions": 78,
-    "unresolved_boundary_cases": 399,
-    "independent_episode_count": 20,
+    "unresolved_boundary_cases": 395,
+    "independent_episode_count": 24,
     "multi_action_episode_count": 0,
     "mechanism_types": [
       "final_passage",
@@ -78,8 +82,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 20,
-      "substantive_actions": 20,
+      "ready_substantive_actions": 24,
+      "substantive_actions": 24,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -275,12 +279,16 @@
         "house:119:1:63",
         "house:119:1:65",
         "house:119:1:102",
+        "house:119:1:116",
+        "house:119:1:119",
         "house:119:1:153",
         "house:119:1:156",
         "house:119:1:163",
         "house:119:1:171",
+        "house:119:1:172",
         "house:119:1:183",
         "house:119:1:184",
+        "house:119:1:220",
         "house:119:1:264",
         "house:119:2:65",
         "house:119:2:94",
@@ -388,8 +396,6 @@
         "house:119:1:76",
         "house:119:1:79",
         "house:119:1:100",
-        "house:119:1:116",
-        "house:119:1:119",
         "house:119:1:145",
         "house:119:1:150",
         "house:119:1:151",
@@ -397,7 +403,6 @@
         "house:119:1:165",
         "house:119:1:166",
         "house:119:1:168",
-        "house:119:1:172",
         "house:119:1:173",
         "house:119:1:174",
         "house:119:1:179",
@@ -432,7 +437,6 @@
         "house:119:1:217",
         "house:119:1:218",
         "house:119:1:219",
-        "house:119:1:220",
         "house:119:1:222",
         "house:119:1:224",
         "house:119:1:225",
@@ -823,6 +827,18 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr36:119",
+        "action_ids": [
+          "house:119:1:116"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr1503:119",
+        "action_ids": [
+          "house:119:1:119"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr2931:119",
         "action_ids": [
           "house:119:1:153"
@@ -847,6 +863,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr1998:119",
+        "action_ids": [
+          "house:119:1:172"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr875:119",
         "action_ids": [
           "house:119:1:183"
@@ -856,6 +878,12 @@
         "episode_candidate_id": "episode:hr275:119",
         "action_ids": [
           "house:119:1:184"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr747:119",
+        "action_ids": [
+          "house:119:1:220"
         ]
       },
       {
@@ -899,7 +927,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "e7eafc476c5bf1e6a1c735415f7ac205e2bc57a2521a9a5975316a549e027c1e",
+  "universe_subject_sha256": "105a8ab96b366171e10eac989892570298b55932d95a66222bee96d92ac7d85f",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -7088,8 +7116,8 @@
       "date": "2025-05-05",
       "measure": "bill_119_hr_36",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
       "source": {
         "source_id": "clerk:119:1:116",
         "url": "https://clerk.house.gov/evs/2025/roll116.xml",
@@ -7097,7 +7125,7 @@
         "governed_bytes_sha256": "41b5c77c5be7f981fc3d21921bd610fab161ffd3a306137f4f7305fe6317ebb1",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr36:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_36",
       "member_action": "yea",
@@ -7106,25 +7134,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:116",
           "url": "https://clerk.house.gov/evs/2025/roll116.xml",
           "raw_sha256": "16345c65c0e57cd0e9df1d4f1bbd98469569810aa3d065e7a74c3479b4a0d088",
-          "governed_bytes_sha256": "41b5c77c5be7f981fc3d21921bd610fab161ffd3a306137f4f7305fe6317ebb1",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "41b5c77c5be7f981fc3d21921bd610fab161ffd3a306137f4f7305fe6317ebb1"
+        },
+        {
+          "source_id": "govinfo:hr36eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm",
+          "raw_sha256": "0fb5e8071d40bd313422b7d1e8826f90bc8914d79fc722ed32421094185d778c",
+          "governed_bytes_sha256": "c03409dc0bedfd0a538ae6189ab6aaa97d257da8435b3d8a6122492f1482379f"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:8usc1151-2024-immediate-relative-class",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1151.htm",
+          "raw_sha256": "36ca3de07eb28676d885bb33ee5e8ad3660335836d40633dfe9f5679b18e9b18",
+          "governed_bytes_sha256": "f961bbfac1a1fe786da8f967bf788774e7ff48bdaa8fc47a345e9ea34353f811"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "raw_sha256": "f48942bae5d29fd7c8f0ff901b8387d77a4f21d14928a5b1bbc32fca7b3851cd",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "raw_sha256": "2fb228029ad3a85d7afcd5353a75d6d3a99facd9243dfe38f21b9fde06ce781e",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "raw_sha256": "b0bec048357b2ceeda0f757456e9f596bacd20076a15abe44862ddd9db377db4",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8db72b4f2691b81c1e3c35d1d5ce001d8546b457b00a840ecfbbd586cf0af90a"
       },
       "historical_raw_hash_matches": true
     },
@@ -7234,8 +7304,8 @@
       "date": "2025-05-07",
       "measure": "bill_119_hr_1503",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
       "source": {
         "source_id": "clerk:119:1:119",
         "url": "https://clerk.house.gov/evs/2025/roll119.xml",
@@ -7243,7 +7313,7 @@
         "governed_bytes_sha256": "494df0b91b116cf41298651e3fef2609f6e219642fc982aa2f74b182c7ce73bf",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1503:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1503",
       "member_action": "yea",
@@ -7252,25 +7322,97 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:119",
           "url": "https://clerk.house.gov/evs/2025/roll119.xml",
           "raw_sha256": "5940c6c42a0d1c90c2e405a2f21f14a1c739e9307d1cf2d09548bd8c0690e142",
-          "governed_bytes_sha256": "494df0b91b116cf41298651e3fef2609f6e219642fc982aa2f74b182c7ce73bf",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "494df0b91b116cf41298651e3fef2609f6e219642fc982aa2f74b182c7ce73bf"
+        },
+        {
+          "source_id": "govinfo:hr1503eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1503eh/html/BILLS-119hr1503eh.htm",
+          "raw_sha256": "980468002002f4242a049b69197a9f173c23eb543334f9d13ebedc3c55e7313c",
+          "governed_bytes_sha256": "29f6ecf480494a4d2bc6e8083158e7f907940a0c5302d5910ecbe9c53424013b"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:22usc211a-2024-passport-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec211a.htm",
+          "raw_sha256": "6788c972eb5f265bd8b7100c1e5a4ac5a5f3fad532b17ac5146ced10c7f266e5",
+          "governed_bytes_sha256": "6079a3cbbff12db72b8bca9c9e9e0c0006303af9054375ddb8036825e69b63fe"
+        },
+        {
+          "source_id": "govinfo:22usc212-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm",
+          "raw_sha256": "904d1320b88ccbcd682fc8e37d2f725cf0b0d6065d0615e9e4c5c8f630ddafe7",
+          "governed_bytes_sha256": "fdc32a66be9497f81f4b0ba8bfa8a5f1540a8df7615f07ab9b34efe1c3f42b20"
+        },
+        {
+          "source_id": "govinfo:42usc274e-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partH-sec274e.htm",
+          "raw_sha256": "e2e864f2c4c74620a4c6b46037d57ac88786f39c26db1c9512e24260b8b6b8cb",
+          "governed_bytes_sha256": "28dcff88c57bd12b6aaad8eb3c571c362bc72850e1c97d3902b34ef73830fd7a"
+        },
+        {
+          "source_id": "govinfo:22usc2151n-2024-report-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapI-partI-sec2151n.htm",
+          "raw_sha256": "a54ea772f5650205deba20e4cab550674b56da673926233cc785049858a1b464",
+          "governed_bytes_sha256": "1478d8261c8337a41e60268cc8f13da9a7cafe79a7b23b25a6b761557a154781"
+        },
+        {
+          "source_id": "govinfo:22usc2304-2024-report-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapII-partI-sec2304.htm",
+          "raw_sha256": "2eff9d7f1d97e317a121382a8b11bfe00e525050313d6e2aa5b2a952a4c75215",
+          "governed_bytes_sha256": "cc6e565f56a43b084fd2da1101a707ec38be5d4063b98e325abfb9d076943094"
+        },
+        {
+          "source_id": "govinfo:publaw114-281-nonstate-definition",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-114publ281/html/PLAW-114publ281.htm",
+          "raw_sha256": "92583f9ca47d8b4a68bfbbebcc1ece0835abdf1bafd93fb7c1b061770098aef5",
+          "governed_bytes_sha256": "330b6da01e7eb9a032a5e24dba721655db986d4d7ca7346c5b5c423a9e71e4f5"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "raw_sha256": "f48942bae5d29fd7c8f0ff901b8387d77a4f21d14928a5b1bbc32fca7b3851cd",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "raw_sha256": "2fb228029ad3a85d7afcd5353a75d6d3a99facd9243dfe38f21b9fde06ce781e",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "raw_sha256": "b0bec048357b2ceeda0f757456e9f596bacd20076a15abe44862ddd9db377db4",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "bd9c86629120c3673bbf7c9bae05c9fc1a9f15748886df3a7586e5e2c34e2190"
       },
       "historical_raw_hash_matches": true
     },
@@ -10017,8 +10159,8 @@
       "date": "2025-06-23",
       "measure": "bill_119_hr_1998",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
       "source": {
         "source_id": "clerk:119:1:172",
         "url": "https://clerk.house.gov/evs/2025/roll172.xml",
@@ -10026,7 +10168,7 @@
         "governed_bytes_sha256": "c1ec60dbef3baeb706cda9ddc9bb423db394b878dd2eb77bc3439760db0cc1d7",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1998:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1998",
       "member_action": "yea",
@@ -10035,25 +10177,73 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:172",
           "url": "https://clerk.house.gov/evs/2025/roll172.xml",
           "raw_sha256": "4625f8fbdf2593d05c555a9c7952abd22cf6281818fade03199fa726c721277c",
-          "governed_bytes_sha256": "c1ec60dbef3baeb706cda9ddc9bb423db394b878dd2eb77bc3439760db0cc1d7",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "c1ec60dbef3baeb706cda9ddc9bb423db394b878dd2eb77bc3439760db0cc1d7"
+        },
+        {
+          "source_id": "govinfo:hr1998eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1998eh/html/BILLS-119hr1998eh.htm",
+          "raw_sha256": "80cfa3d1b87029fa560695ba5f63f06c315fb5ab671da8524536e6788c5b17a8",
+          "governed_bytes_sha256": "f014a5c6f4027a9893b2f2d35c0c8031278bd42d756ff8b22aee3f696d61a5ff"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:8usc1201-2024-revocation-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIII-sec1201.htm",
+          "raw_sha256": "b2514a43950a3bce0f4e34e489c9c5db07f93689b0949b70e2698fae308d78d3",
+          "governed_bytes_sha256": "ff1849a9eb10141183672313f8f0b93f36181f4eed54425c6ae93adff1b8004e"
+        },
+        {
+          "source_id": "govinfo:18usc-chapter81-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap81.htm",
+          "raw_sha256": "3cb2ce7fad0e18eb60141a752174dc7ac37ea669a48fe67c13dee30cda0b6b2e",
+          "governed_bytes_sha256": "75048e05278c5dd2dba975bde77b16cdb551188d2d3cda9bd8ac31fa1eb9841c"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "raw_sha256": "f48942bae5d29fd7c8f0ff901b8387d77a4f21d14928a5b1bbc32fca7b3851cd",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "raw_sha256": "2fb228029ad3a85d7afcd5353a75d6d3a99facd9243dfe38f21b9fde06ce781e",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "raw_sha256": "b0bec048357b2ceeda0f757456e9f596bacd20076a15abe44862ddd9db377db4",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9c1e3a35b9825ee7da79cba84b1514d74659b242256a3d3e1fed514080c89ddf"
       },
       "historical_raw_hash_matches": true
     },
@@ -12324,8 +12514,8 @@
       "date": "2025-09-02",
       "measure": "bill_119_hr_747",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
       "source": {
         "source_id": "clerk:119:1:220",
         "url": "https://clerk.house.gov/evs/2025/roll220.xml",
@@ -12333,7 +12523,7 @@
         "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr747:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_747",
       "member_action": "yea",
@@ -12342,25 +12532,73 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete exact EH and material incorporated baseline independently reconstructed. Direct conditional immigration/passport mechanism or changed criteria for an existing qualified optional visa menu establishes candidate membership; literal cross-reference, heading/body and report/sunset legal interactions preserved for review. Whole-bill choices, distinct episodes, discretion, exceptions and no-outcome boundaries retained.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:220",
           "url": "https://clerk.house.gov/evs/2025/roll220.xml",
           "raw_sha256": "4b12a6ab6eb270d244c79d56a474917ea757ea9295375ffe21f3f616fc498939",
-          "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "779b39ba344a96c9648c3ae149b177600093b0420512a248406b1116d83f5ad2"
+        },
+        {
+          "source_id": "govinfo:hr747eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr747eh/html/BILLS-119hr747eh.htm",
+          "raw_sha256": "1563bceb1c6c96edc610788d486d29ad8571f8deecde9aa7423ba8d89e935c48",
+          "governed_bytes_sha256": "d00a8930042d9f7e5d66c8053082264523cf7a2a7f727f660f5a6c4c3e9efeb6"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:21usc-chapter28-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap28.htm",
+          "raw_sha256": "d80f4d7e531d0e73d80a4c1a23395279baa4aa477275b09b862d58e81285e6d9",
+          "governed_bytes_sha256": "ddb1bc1af6515d0516b92b4c8014141c6e70d34daa6f8492aa63db8e58c06a21"
+        },
+        {
+          "source_id": "govinfo:50usc1701-2024-emergency-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm",
+          "raw_sha256": "f48942bae5d29fd7c8f0ff901b8387d77a4f21d14928a5b1bbc32fca7b3851cd",
+          "governed_bytes_sha256": "47a6bc4b2a4bb30f92a607d0bbb23b3cde55dd3073cd9d73c0f99a55ee166576"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024-operative-sanctions-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "8d6ea135ac5127dc63425c19a39583e08ea6f532530fa2f3c15497a8c0698f54"
+        },
+        {
+          "source_id": "govinfo:50usc1704-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm",
+          "raw_sha256": "2fb228029ad3a85d7afcd5353a75d6d3a99facd9243dfe38f21b9fde06ce781e",
+          "governed_bytes_sha256": "0598b2af941ad67097fac5715e22358840ff81ba36681e9fea12ee5d6f256b6e"
+        },
+        {
+          "source_id": "govinfo:50usc1705-2024-operative-penalty-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm",
+          "raw_sha256": "b0bec048357b2ceeda0f757456e9f596bacd20076a15abe44862ddd9db377db4",
+          "governed_bytes_sha256": "5ed61e5bb32c712e523260b4b9c771bcb80356a08c5076a70e403ddd9be1f1b9"
+        },
+        {
+          "source_id": "govinfo:50usc1703-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1703.htm",
+          "raw_sha256": "e61b2c3230c998148268cddb2e449b68f6752d04a02c531a71f9148f11c06647",
+          "governed_bytes_sha256": "a85b7493b1ffbfd272d3d6de1fd55a67669c15b48402ba679d8a0b5f95e0c332"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "65a0640aa93d188c785ff4860db390682c2bb3e1aef35dc4528d2079b0cc7b86"
       },
       "historical_raw_hash_matches": true
     },
@@ -35303,12 +35541,16 @@
     "house:119:1:63",
     "house:119:1:65",
     "house:119:1:102",
+    "house:119:1:116",
+    "house:119:1:119",
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
     "house:119:1:171",
+    "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:220",
     "house:119:1:264",
     "house:119:2:65",
     "house:119:2:94",
@@ -35336,8 +35578,6 @@
     "house:119:1:76",
     "house:119:1:79",
     "house:119:1:100",
-    "house:119:1:116",
-    "house:119:1:119",
     "house:119:1:145",
     "house:119:1:150",
     "house:119:1:151",
@@ -35345,7 +35585,6 @@
     "house:119:1:165",
     "house:119:1:166",
     "house:119:1:168",
-    "house:119:1:172",
     "house:119:1:173",
     "house:119:1:174",
     "house:119:1:179",
@@ -35380,7 +35619,6 @@
     "house:119:1:217",
     "house:119:1:218",
     "house:119:1:219",
-    "house:119:1:220",
     "house:119:1:222",
     "house:119:1:224",
     "house:119:1:225",
@@ -35733,6 +35971,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "007edb551cd91a9b3b721deb0745462fc23395725edc325f5e588eef233812f9",
-  "membership_review_sha256": "90da15a94c9ca39a3b3d7384528703064445a81a3d3a7045f2bd6415b60632a6"
+  "proposal_sha256": "7b094c32ce31f3ac3fb13040dad16ddf963e0ab721761c54ef3f45b29b619133",
+  "membership_review_sha256": "c952a7b62d2731aef4d80aa2428d7602c3bdb620b0e07f0a81859968bd54ba55"
 }
