@@ -3120,3 +3120,111 @@ their exact authorities, parallel original 1994 acquisition/references, then
 continuing/omnibus/NDAA packages and ordinary screenings. Existing owner,
 historical markers and absence of current shutdown preserved. No merge,
 deployment, production, editorial acceptance, promotion or publication.
+
+
+## Checkpoint 51: ICE personnel, operations and conditional cooperation funding
+
+House 70102 adds $858 million: retention bonuses may follow two additional
+years of service; signing bonuses shall go to each named agent/officer/
+attorney both hired on or after enactment and committing to five years.
+Written service-period, amount, payment and early-termination terms remain.
+Printed agreement-duty entity is U.S. Customs and Immigration Enforcement,
+different from surrounding ICE wording. Question 44 preserves that literal
+text and reserves exact application, without repair or a new agency assertion.
+
+House 70103 adds $8 billion for additional personnel and retired hiring
+priority. Printed hiring minima: 2,500 in fiscal year 2025 and 1,875 in each
+named year 2026-2029; later entries do not repeat fiscal year. No calendar
+conversion, achieved hiring or workforce claim. Separate 70104 $600 million
+recruitment/onboarding, 70105 $14.4 billion transportation/removal/departure,
+70106 $700 million IT/fine-and-penalty collection, 70107 $550 million facilities
+and 70108 $250 million fleet remain purpose-restricted accounts. All are
+additional fiscal year 2025 ICE funds available until September 30, 2029.
+Funding is not actual expenditure, a new removal ground, debt or order.
+
+House 70110 adds ICE $650 million for 287(g) agreements. Complete material
+g(1)-(10) preserves qualified officers, written agreement/training/powers/
+duties/duration/supervisor, federal-law adherence, State/local-law limits,
+federal supervision, State/local expense, federal property conditions,
+displacement prohibition and employee/liability boundaries. Agreement is
+voluntary; own status communication/cooperation paths require no agreement.
+No blanket deputization, immunity or amended conditions inferred. House
+70112 adds ICE $1.32 billion for OPLA removal representation. House 70113
+adds DHS $500 million for 235(b)(2)(C) return, with full parent applicant,
+land/contiguous/pending-1229a and crewman/expedited/stowaway exceptions bound.
+Return remains discretionary, not every arrival or permanent removal instead
+of proceedings. House 70114 adds ICE $787 million for named enforcement/
+State-local participation purposes, not a crime allegation or new local
+removal power. Same fiscal/availability dates, no actual outcome.
+
+Senate 100052 selected remaining purposes use the $29.85 billion fiscal year
+2025 ICE envelope through September 30, 2029, not separate House earmarks.
+Hiring/training includes investigators and retired hiring priority, without
+House yearly minima. Director may provide exemplary-service performance,
+two-additional-year retention and signing bonuses, the latter with both
+hire-date and five-year predicates. Signing is may, unlike House shall;
+retention/signing agreements retain required terms. Recruitment/onboarding,
+transport/related departure-removal costs, IT including fee collection,
+facilities/fleet, 287(g), VOICE staffing/nonfinancial assistance and OPLA
+enforcement/removal representation retain own scopes. Fee wording is not
+House fine/penalty wording; VOICE is not cash for every victim or status-based
+guilt. Full agreement limits retained. Previous family (8) remains unchanged.
+
+15 new bindings, two qualification hashes and eleven floor/EH comparisons
+sealed in hr1_ice_operations_funding_review.json: ten original sections exact,
+70105 differs only by floor pagination. No correcting-resolution item targets
+them. Existing governed 1357/1225 reused at exact material extents. All 1,285
+sources and 262 captures byte-unchanged; prior clauses, 37 other actions,
+choice/analytical metadata and selected compacts unchanged. All earlier
+family/child/student/child-credit/senior conditions/repairs remain in both
+members. 39 focused tests in 9.995 seconds, seven semantic checks, seven-file
+byte replay, 171 extents, 990 preserved Health sources, queue/accounting/audit
+integrity and reviewed diff pass. Tests do not establish semantic truth.
+Core ce3349ee1498b640d18126b328fee7372860a2e1f39a499f1e4da6c6f4cbd824.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged, with approval-lineage
+follow-up still preserved. 676 inventory, 455 reviews, 39 meanings, 36 episodes,
+78 observations and 70 findings (Foushee 36/Massie 34); 719 bindings. Remaining
+221 screenings, TWO partial H.R.1 reviews and 44 application questions.
+Same-owner audit partial, final verdict null; operations review pending.
+
+Fingerprint's independent checkpoint 49 review found no new material defect
+in checked student-aid scope: four alternatives, residence, five Cuban
+conditions, dates/frozen references, conditional verification/guarantees and
+confined-Pell/loan distinctions. Eight of nine bindings and receipt verified;
+operative 30001 hash, full member propagation and replay outside that verdict.
+Original 1995 statement independently retrieved, questions 41-42 accurately
+reserved. Bounded receipt recorded, no individual/full-package acceptance.
+Original 1994 helper identified the accessible three-page American University
+State Dispatch reproduction; owner read its complete 97-line web text.
+Catalog identity, exact original PDF and State digest leads recorded in
+hr1_1994_agreement_acquisition_followup.json. Raw original PDF/rendered pages
+not acquired/verified; official endpoint errors are not evidence. University
+reproduction is not upgraded to a successful State download or new governed
+source. Original-host acquisition remains partial, not unavailable evidence,
+and individual grant/programme matching unresolved. No numerical/current-
+validity interpretation or change to student-aid candidate/source hashes.
+
+Owner-native checkpoint 49 5151f49ba2f0e93eaba413de2b80a48890c35820
+CI 37537538089 now all nine green. Checkpoint 50
+84e11c363a133a0e8aabccc194c7f2e5b02bfd30 CI 37538252890 has five
+successful jobs and four pending, no failure reported. Current exact CI
+follows push. Continue remaining CBP/DOJ/incarceration/reimbursement and removal
+clauses, then continuing/omnibus/NDAA packages and screenings. Parent handles
+original 1994 acquisition; no duplicate failing endpoint research. Existing
+owner and historical markers preserved, no current shutdown. No merge,
+deployment, production, acceptance, promotion or publication authority.
+
+
+Checkpoint 51 subsequent bounded receipt: Fingerprint independently found no
+new material semantic defect in checkpoint 50 child/family clauses. House
+family conditions and pending-charge period, Senate envelope/applicable-law
+scope, separate capacity/examination predicates, disclosure and complete
+withdrawal discretion match. Question 43 remains reserved. Three of thirteen
+bindings and receipt digest independently checked; other ten binding bytes,
+full member propagation/replay, individual detention/return, question resolution
+and full-package acceptance remain outside this verdict. Prior repairs retained.
+Receipt: docs/review_packets/hr1_checkpoint50_independent_review.json.
+
+Checkpoint 51 latest pre-push CI check: exact checkpoint 50
+84e11c363a133a0e8aabccc194c7f2e5b02bfd30 run 37538252890 now has eight
+successful jobs; receipt-evidence-repair-postgres pending, no failure reported.
