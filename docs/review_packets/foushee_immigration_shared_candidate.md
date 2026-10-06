@@ -105,7 +105,7 @@ The Clerk recorded the House result as 'Passed' on 2025-07-03. This does not est
 
 - Selected source-bound Immigration highlights, not an exhaustive package or immigration-component inventory. The whole reconciliation measure also addresses taxes, benefits, defense, education, energy and other policies; a package vote cannot establish a separate position on any highlighted or omitted component.
 - House70101 prints a State-licensing-independent family-center definition and SOLE discretion over single-adult standards. It cannot be replaced by Senate90003's differently qualified text. Detention-law/judicial interactions require separate review; no universal custody duty, individual removal or legal enforceability ruling is inferred.
-- All listed appropriations are additional fiscal2025 amounts with September30,2029 availability. The State reimbursement provision requires qualifying post-January21,2021 costs and satisfactory evidence and bars specified duplicate DHS reimbursement. Availability is not actual spending, awards, detention or removal.
+- All listed appropriations are additional fiscal2025 amounts with September30,2029 availability. The State reimbursement provision requires costs associated with actions taken on or after January21,2021 and satisfactory evidence of costs incurred and bars specified duplicate DHS reimbursement. Availability is not actual spending, awards, detention or removal.
 - Asylum filing and yearly pending-application fees are separate additional charges with fiscal2025 floors, not guaranteed exact prices; the recurring trigger is each calendar year pending. Filing-fee CPI increments round down to $10; the House yearly-fee formula prints no rounding rule. Both have express no-waiver/reduction clauses.
 - The pre-vote INA fee paragraph already authorizes fees. Its MAY-to-SHALL edit and deletion of cost-cap/installment/nonmandatory language are distinguished from initial authority and substantive asylum eligibility. No later fee implementation rule or PublicLaw119-21 is imported as the pre-vote baseline.
 - H.Res.436/RCP119-3/adopted119-113 amendment control the May22 choice. June11H.Res.499/492 corrections and the July1EAS are separately recorded version events, not back-projected; the capturedEH is later corrected/renumbered and only the independently compared retained clauses are used here. The later Senate concurrence remains another question in this same episode without a trajectory claim.
@@ -1824,3 +1824,40 @@ complete claim passages. Request independent review of this bounded increment.
 Continue H.R.1 omitted components from actual floor/EAS and material pre-vote
 baselines, then continuing/omnibus/NDAA and narrow screenings. Health currentEH
 versus May22 snapshot is an adjacent follow-up, not imported into this research PR.
+
+
+## Checkpoint25: independent precision feedback and component closure guard
+
+The source-first reviewer identified a shared qualification using post-January21
+costs. Exact floor60004(b) makes the inclusive date condition apply to ACTIONS:
+costs associated with actions taken on or afterJanuary21,2021. Detailed meaning
+already retained that trigger; shared qualification and generated projections/core/
+readable/proof now match it. Whole-action direction, compiled propositions and
+accounting are unchanged. Independent feedback is not editorial acceptance.
+
+A small Immigration validation guard reports two unfinished package-component
+reviews and prevents --require-complete from passing when ordinary screenings are
+zero but those reviews remain. A completion flag alone cannot hide listed remaining
+work. Two negative tests cover both cases. The original inventory/queue mechanics
+and other domain contracts are unchanged. Components remain durably tracked in
+accounting.partial_component_reviews; later closure must reconcile actual reviewed
+source scope and remaining work, rather than merely reaching zero screenings.
+
+Detached c10bc254 review excerpts were generated using git show at exact prior
+checkpoint, never the newer working tree. Documentation-only8439dbd2a28ca04f9d140592550b94fc5a52cdb0
+stores two full authoring objects, complete bound passages and both member episode
+findings, plus54connector-readable parts under hr1_c10bc254_review. Manifest records
+sourcecommit, sourcefile blob IDs, exact extraction scope/offsets and passage hashes.
+Old excerpt wording is preserved as an exact review snapshot.
+
+222focusedtests pass(39.854s), seven regenerated outputs replay byte-identically;
+89bounded-source extents and current audit/Clerk/accounting/candidate isolation pass.
+Core:591437b3b8a8408641fddd98148fcb43413148622b6b455bf9b83eb922ec4bd3.
+Compiled remains:b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exact c10bc254 CI passed all9jobs(run37492641676); current checkpoint CI followspush.
+Counts remain455reviews/39meanings/36episodes/70findings/221ordinary/22legal;
+two H.R.1 partial-component reviews remain. Resume EAD initial/renewal fees and
+exact duration/termination/allocation clauses from floor/EAS, preserving original
+baselines and any genuinely ambiguous application questions separately.
+
+Independent selected-clause review receipt: `docs/review_packets/hr1_checkpoint24_independent_review.json`. One Minor IB-HR1-REIMBURSEMENT-DATE-QUALIFIER is linked to this correction; no Critical/Major in retained scope. Exact-blob-bound excerpts were checked, not independently re-fetched complete oversized bytes. No full-corpus PASS or editorial acceptance.

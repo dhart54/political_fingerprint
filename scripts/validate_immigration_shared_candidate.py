@@ -38,6 +38,16 @@ def normalized_measure(value):
     return f'{prefix[match[1]]} {match[2]}'
 
 
+def require_complete_research(unfinished, component_reviews):
+    if unfinished:
+        raise ValueError(f'ordinary screening remains incomplete: {len(unfinished)} actions')
+    outstanding = [r for r in component_reviews
+                   if r.get('complete_immigration_component_review') is not True
+                   or r.get('remaining_executable_component_work')]
+    if outstanding:
+        raise ValueError(f'package component review remains incomplete: {len(outstanding)} actions')
+
+
 def validate(authoring, capture, universe, membership, *, require_complete=False):
     validate_universe_proposal(universe, authoring, capture, membership)
     if authoring['domain_id'] != 'IMMIGRATION_BORDER' or universe['subject']['issue_id'] != 'IMMIGRATION_BORDER':
@@ -85,13 +95,17 @@ def validate(authoring, capture, universe, membership, *, require_complete=False
     reviewed = {r['action_id']: r for r in membership['records']}
     unfinished = [r['action_id'] for r in rows if r['action_id'] not in reviewed
                   or not reviewed[r['action_id']]['substantive_review_performed']]
-    if require_complete and unfinished:
-        raise ValueError(f'ordinary screening remains incomplete: {len(unfinished)} actions')
+    component_reviews = accounting.get('partial_component_reviews', [])
+    if require_complete:
+        require_complete_research(unfinished, component_reviews)
     queue = research_queue(universe, membership, limit=676)
     return dict(authority='Mechanical integrity only; no semantic acceptance or publication',
                 inventory_count=len(rows), ordered_action_ids_sha256=digest(ids),
                 governed_review_count=len(reviewed), unfinished_screenings=len(unfinished),
-                queue_count=len(queue), disposition_counts=accounting['counts'])
+                queue_count=len(queue), disposition_counts=accounting['counts'],
+                unfinished_component_reviews=sum(
+                    r.get('complete_immigration_component_review') is not True
+                    or bool(r.get('remaining_executable_component_work')) for r in component_reviews))
 
 
 def main():

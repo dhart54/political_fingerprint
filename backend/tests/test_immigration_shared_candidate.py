@@ -8,7 +8,7 @@ from backend.app.semantic_ir.adapters import build_persistence_proposal
 from backend.app.semantic_ir.pipeline import run_editorial_pipeline
 from backend.app.editorial_presentations.compiler import compile_public_issue_presentation, EditorialPresentationError
 from scripts.prepare_immigration_shared_candidate import prepare, readable_candidates, reproducibility_proof
-from scripts.validate_immigration_shared_candidate import DATA, validate
+from scripts.validate_immigration_shared_candidate import DATA, validate, require_complete_research
 
 
 class ImmigrationCandidateIntegrityTests(unittest.TestCase):
@@ -27,6 +27,19 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
     def test_fixed_inventory_and_every_clerk_observation(self):
         result = validate(*self.values)
         self.assertEqual(result['inventory_count'], 676)
+
+    def test_zero_ordinary_screenings_does_not_close_partial_package_review(self):
+        reviews = self.values[2]['accounting']['partial_component_reviews']
+        with self.assertRaisesRegex(ValueError, 'package component review remains incomplete: 2'):
+            require_complete_research([], reviews)
+        self.assertEqual(validate(*self.values)['unfinished_component_reviews'], 2)
+
+    def test_component_completion_flag_does_not_erase_remaining_work(self):
+        reviews = copy.deepcopy(self.values[2]['accounting']['partial_component_reviews'])
+        for review in reviews:
+            review['complete_immigration_component_review'] = True
+        with self.assertRaisesRegex(ValueError, 'package component review remains incomplete'):
+            require_complete_research([], reviews)
 
     def test_hr1_distinct_versions_project_once_per_underlying_episode(self):
         core, mapping, projections, _, result = self.products
