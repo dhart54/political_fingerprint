@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "5a815909fb554f883b3f9c0d9cfcece87def01ead393416d8ab3a7b1264d330a",
-  "source_capture_sha256": "e87b6838628f3433424477e57fbe447a3938fbd2e76d6c3d4241959253305fca",
-  "core_sha256": "87d9b007dd8facd76a25386a62daa2392b7c71d65f5ce7bbc7019168c50b4ba4",
-  "compiled_sha256": "df467d559e89add1717aadb133e3e92f02e49037c1fcdb4105090c8a75316b11",
-  "readable_sha256": "be00804710d26fcfaea3bc5e5f1460f8139ce295bba236225af0a40fb10464c7",
+  "input_sha256": "040050ac63f67da48dea1af273046aa5905c1a609ddcb6edde9bcd76fedac7ad",
+  "source_capture_sha256": "33294bf8c12cb87519a6171761b2724536e1869ea80250e87ad952445379ace7",
+  "core_sha256": "f4ed3d64d547f50b6beddd110cdde20a9ccbb1dab3fdc8771517d945db7612cc",
+  "compiled_sha256": "9dc25d6c63acf0a4c88b0bdd6341ba72692255faa7833c3f64805cbaf14be9b8",
+  "readable_sha256": "b2d25931720f4ce0087f363a6b50fe9d58d71ff3de702b78601c3458230e1326",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -155,6 +155,126 @@
           "source_id": "clerk:119:1:65"
         }
       ]
+    },
+    {
+      "action_id": "house:119:1:171",
+      "shared_sha256": "07574523e432f9067533d2c0625f5224bde6f6de76902496e6eaf7da094b4e19",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2056 with those prohibitions; no preferred alternative is established",
+          "source_id": "clerk:119:1:171"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2056 prohibiting the specified D.C. immigration-information and lawful DHS-request restrictions",
+          "source_id": "clerk:119:1:171"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:183",
+      "shared_sha256": "df3544becdadb5060360d5742c65381f806cbeb94f2fa400282c9b258add8b5e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.875 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:183"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.875 with its additional intoxicated/impaired-driving inadmissibility and conviction-based deportability grounds",
+          "source_id": "clerk:119:1:183"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:184",
+      "shared_sha256": "aac2753743a66bbe4a46c9e19dc3eec91b37583cfaa1c8dc68b8f3784f172d60",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.275 with those reporting requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:184"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.275 with its specified monthly and initial historical-period DHS encounter-reporting requirements",
+          "source_id": "clerk:119:1:184"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:264",
+      "shared_sha256": "61422deb67c15b97a683be55c252d3c2fb3dfacb8525119321e9f08e41b58db1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.3486 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:264"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.3486 with its specified entry/reentry penalty increases and qualified mandatory-minimum provisions",
+          "source_id": "clerk:119:1:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:96",
+      "shared_sha256": "e21f4484da8177e90301abf6edfe990de4c6281855ad5c633f432594c6db5cb5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.4638 with those grounds; no preferred alternative is established",
+          "source_id": "clerk:119:2:96"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.4638 with its additional conviction/admission-based immigration grounds for the specified federal police-animal offense",
+          "source_id": "clerk:119:2:96"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:120",
+      "shared_sha256": "038bf533abafb75de55073fcee89ac87c730ba8ae74785c47c5d2c0248d9020c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1689 requiring the specified Haiti TPS designation through its fixed statutory endpoint",
+          "source_id": "clerk:119:2:120"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1689 with that designation mandate; no preferred alternative is established",
+          "source_id": "clerk:119:2:120"
+        }
+      ]
     }
   ],
   "differing_real_choices_exercised": true,
@@ -196,9 +316,7 @@
         {
           "member_id": "M001184",
           "proposition_ids": [
-            "prop:f3439d6ae6e0b949",
-            "prop:45ddacc3b4640124",
-            "prop:a2a54ee5f0a96a13"
+            "prop:f3439d6ae6e0b949"
           ]
         }
       ],

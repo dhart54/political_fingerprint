@@ -4975,7 +4975,307 @@
       "claim_source_map": [],
       "reviewed_source_extents": [],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:171",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:171",
+          "url": "https://clerk.house.gov/evs/2025/roll171.xml",
+          "raw_sha256": "2280b5395fbfb34a2cecc84e48c6d4e4289bb3031b4ae60c47f3e137373c648b",
+          "governed_bytes_sha256": "1d7757b72734a79f82bd25f0f6e201f7b8cd10e1793a383e2d6532734c8f1572"
+        },
+        {
+          "source_id": "govinfo:hr2056eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2056eh/html/BILLS-119hr2056eh.htm",
+          "raw_sha256": "30fbd8c7783b01873f08b46b118982ec43b10420158bd7eedec0e7814bc2bfc9",
+          "governed_bytes_sha256": "d0ba135b804bea1b0e46b24ed68db46482b6d98281429babc8aebba4b141e87b"
+        },
+        {
+          "source_id": "govinfo:8usc1373-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1373.htm",
+          "raw_sha256": "afa09983e0f544c7a3a114fa63f8252981f8778d0708ef4107151646a900282a",
+          "governed_bytes_sha256": "2c5adf0ec92cd5ac80f70b88960127698cd19ebdc3f03b27791771e76cdd31c2"
+        },
+        {
+          "source_id": "govinfo:8usc1644-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1644.htm",
+          "raw_sha256": "44626463cf20536077ca19b14a50e946bdb3a1dba2b3507c95e6c86dd1fb53ac",
+          "governed_bytes_sha256": "cbaf3f9eb85f3d0053cdbd49271eda98734b1b248bab915a269eb4aea5ba636c"
+        },
+        {
+          "source_id": "govinfo:8usc1357-2024-dc-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1357.htm",
+          "raw_sha256": "312e90d3078e90e407b579708b29b3eb447f4ecd0e028cbddc816384ace89afb",
+          "governed_bytes_sha256": "0d37e1556d87124e0a00b9462544ffdf07788acc5c6db192716086f89fe29638"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:171",
+      "episode_candidate_id": "episode:hr2056:119"
+    },
+    {
+      "action_id": "house:119:1:183",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:183",
+          "url": "https://clerk.house.gov/evs/2025/roll183.xml",
+          "raw_sha256": "166da826013e1bd5d4adacfbcf218970e0bd1095dadd258682f8f3161cbf5e94",
+          "governed_bytes_sha256": "0271f816b19ed26be1f45ff4401c03fcbb5a7a8f25748b6aef61a8953c3997e1"
+        },
+        {
+          "source_id": "govinfo:hr875eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr875eh/html/BILLS-119hr875eh.htm",
+          "raw_sha256": "23d41fa9058bbf1c3e4d6f3d1bb4dffec2e46edf8b348bd7600ee0db0bcdeb58",
+          "governed_bytes_sha256": "6fff661ac82c178a62c254dfa72386de5d1733b4a93f5cc00189f13b063f6bec"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:183",
+      "episode_candidate_id": "episode:hr875:119"
+    },
+    {
+      "action_id": "house:119:1:184",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:184",
+          "url": "https://clerk.house.gov/evs/2025/roll184.xml",
+          "raw_sha256": "df38cdc52d2e6f73936e56f833817b5fff475975ac5574a5e6b255cbb5b41d3f",
+          "governed_bytes_sha256": "28b4496dc00888bd25f4d1723174fe403836ca1e86d672e4fa3b189ada997875"
+        },
+        {
+          "source_id": "govinfo:hr275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr275eh/html/BILLS-119hr275eh.htm",
+          "raw_sha256": "81865a9e3a8e2894507505b568dd895089525930d2cdbbe163b08faa30ce9ebc",
+          "governed_bytes_sha256": "3f4d6fd4b078cccb89db7516c7bd2ecefbd325fb45a0c189a01b9a7f03ea9bad"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:10usc4872-f2-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "raw_sha256": "2765677d90e12aa1d50f3f6375c80f8b55f3c9d46fe31983ed58625874707104",
+          "governed_bytes_sha256": "d2bbc541203d80de6e7518ae377625b8333008cbfdeeff15c6ee0432abcce411"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:184",
+      "episode_candidate_id": "episode:hr275:119"
+    },
+    {
+      "action_id": "house:119:1:264",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:264",
+          "url": "https://clerk.house.gov/evs/2025/roll264.xml",
+          "raw_sha256": "35aaab05bc51aa61412036a94991a4dd5490a9286c8cd5e300674a49c1dbff40",
+          "governed_bytes_sha256": "3f1bd2efc8b06709d0a82a27ec0595259134a91d930723d0377abe8a3c20c793"
+        },
+        {
+          "source_id": "govinfo:hr3486eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3486eh/html/BILLS-119hr3486eh.htm",
+          "raw_sha256": "4f672d796f88cb157ac13d5cf81ad9a1186ca3d210151a62b9f16d2ffede3303",
+          "governed_bytes_sha256": "1e0d8adc054ea4bb92431fd578bf065802c30db9619aab99e8bcecdead015143"
+        },
+        {
+          "source_id": "govinfo:8usc1325-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+          "raw_sha256": "792459737f43cf4236baa362a31644d7d83d41d9295d9a82813e972243993170",
+          "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4"
+        },
+        {
+          "source_id": "govinfo:8usc1326-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+          "raw_sha256": "3a2d2a4b51a8c487e4e5656d18b56476cfc3ede94dd63e4627e0f39b5e4cd627",
+          "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-aggravated-felony",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "bef308b511f4b7451990543668562133375f114d3cc472d7204a49335e52832a"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-early-removal",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "d96a6c8cc95e147ef4903c2d09f2ee3ad7e36219f45e5327590582e9751471d6"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-security-removal",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1225.htm",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "d7f99494c651a74bd6e75aa546d221f7742827f1b9ab404985a3b62cd15067b8"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:264",
+      "episode_candidate_id": "episode:hr3486:119"
+    },
+    {
+      "action_id": "house:119:2:96",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:96",
+          "url": "https://clerk.house.gov/evs/2026/roll096.xml",
+          "raw_sha256": "f04255eb9b760dc0bec40acd9d511a3e4121b7a25d1f294a75ea446a089581cc",
+          "governed_bytes_sha256": "60369934eee5f83e636a2bae98007aab0fa4980c459aec48b446cb45169f76f3"
+        },
+        {
+          "source_id": "govinfo:hr4638eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4638eh/html/BILLS-119hr4638eh.htm",
+          "raw_sha256": "064fd5843eff8b122faa1fef8daabaf2ade07dec55eb5b4866a3829eed166314",
+          "governed_bytes_sha256": "b20dc62e7d2490c077d220a05252b61c2ad613f17fe692766c19c40143376ae7"
+        },
+        {
+          "source_id": "govinfo:18usc1368-2024-working-animals",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap65-sec1368.htm",
+          "raw_sha256": "5f55d11c8e2dfed5861fe3afc301ed62900aa111842716914f69a3c33c4439e8",
+          "governed_bytes_sha256": "ff66f1ae7801620fbcc4b68dec182a7d1cb72e69606fae3533edf4760dfefa18"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:96",
+      "episode_candidate_id": "episode:hr4638:119"
+    },
+    {
+      "action_id": "house:119:2:120",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:120",
+          "url": "https://clerk.house.gov/evs/2026/roll120.xml",
+          "raw_sha256": "5f6fff2235b983525a1436479ce7c097a0c86d0b6cf55af06c33657faa974fee",
+          "governed_bytes_sha256": "a2a0c74e8fe7bc212f99d4e8b47c8ad7029275cbe9871a94d2be32947efb4c8e"
+        },
+        {
+          "source_id": "govinfo:hr1689eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1689eh/html/BILLS-119hr1689eh.htm",
+          "raw_sha256": "6b8cd2b2a28091ff107f9d041f71cb11d34b8efd26580d9935b1368fa899d565",
+          "governed_bytes_sha256": "3e2621ca655a2d1cf4cf1100601f1c2b3715632cb933f20d41bfa5cdba1134b7"
+        },
+        {
+          "source_id": "govinfo:8usc1254a-2024-tps",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1254a.htm",
+          "raw_sha256": "61d62530978f308ac7779cbbee2c635e10e6bf543220beeaa31e8cffa67991f6",
+          "governed_bytes_sha256": "a09405f62863221a0355e148491777e32718b02ce18b775afd4bd201c1f92bb0"
+        },
+        {
+          "source_id": "govinfo:8usc1158-2024-tps-eligibility-bars",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "f2a8b69cd400d79d81224edfd59fb78fff4dd1325542110b69170789a1960716"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:120",
+      "episode_candidate_id": "episode:hr1689:119"
     }
   ],
-  "review_sha256": "a2e35b3de28bec3db74ecd59a3fcc7815cf21a4f587bcb827598e948888f06b1"
+  "review_sha256": "3baa8a7ae4e037d895931b7e29cc3022c31c1e4e746fce5623bc7cb37c757435"
 }

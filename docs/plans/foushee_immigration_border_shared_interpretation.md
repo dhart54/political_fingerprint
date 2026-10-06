@@ -210,6 +210,45 @@ universe/membership pair.
   https://github.com/dhart54/political_fingerprint/actions/runs/37405329732.
   New checkpoint hosted CI must be reported at its own pushed SHA.
 
+### Checkpoint 4: D.C. cooperation, new criminal grounds, reporting and TPS
+
+- Six new independently source-researched shared meanings: 2025 rolls171/H.R.2056,
+  183/H.R.875, 184/H.R.275 and264/H.R.3486;2026 rolls96/H.R.4638 and120/H.R.1689.
+  Exact EH versions and passage questions are bound. These remain six separate
+  proposal episodes, bringing the authored set to13; no multi-action episode yet.
+- Accounting:208 explicit reviews, comprising13 interpreted,163 procedural and32
+  excluded;468 ordinary screenings remain. No genuine unavailable/conflicting
+  source dependency is identified. Discovery remains open and audit is pending.
+- Qualifications: D.C.-specific policy restrictions and lawful DHS-request scope
+  versus unlimited/new arrest powers; jurisdiction-defined DUI convictions versus
+  admissions; encounter reports including interior encounters and the initial
+  historical period versus the narrower title; improper-entry subsequent-offense
+  maxima and qualified new minimums; reentry consent/exceptions, overriding
+  minimums, retained remainder-of-sentence and collateral-review conditions;
+  federal police dogs/horses and willful/malicious attempt/conspiracy predicates;
+  fixed Haiti TPS country designation versus temporary individual eligibility,
+  criminal/asylum bars, waiver limits, registration and no automatic permanent
+  status/citizenship. No actual enforcement or individual outcome is inferred.
+- Twenty-six official observations mechanically yield25 findings: Foushee10
+  opposition/3support; Massie11support/1opposition and Present onH.R.23. Actual
+  readable accounting inspected; the Haiti TPS vote is Yea for Foushee and Nay
+  for Massie. No independent member legislative meaning was authored.
+- Sources:753 canonical objects;646 unchanged Health-governed reuses (588Clerk,
+  58operative) and107 new objects (88Clerk,19statutory). There are89 exact
+  claim/source witnesses and22 provisional full local captures in the manifest.
+  Source-family reuse covers criminal INA baselines/definitions, TPS and narrowly
+  incorporated country definitions. No accepted cross-domain object was mutated.
+- Full focused suite:202 tests pass in31.894seconds; all seven semantic checks
+  pass, all seven generatedJSON files replay byte-for-byte and protected baseline
+  paths remain unchanged. Preparation clarified exceptions and removed a generic
+  health-ground reference whose captured support was only criminal-ground text;
+  no membership or direction changed. This is not the independent audit verdict.
+- Pushed prior checkpoint:178918f74b6fe49493660aae45cb50b2f2d420c5;
+  its exact-head backend run is37407134750. New-head CI must be independently
+  reported after the next push. Remaining historical seed substantive leads include
+  H.R.1958's enumerated offenses/relief bar, H.J.Res.72's actual rescinded rule,
+  and S.2's exact appropriation purposes/exclusions and incorporated authorities.
+
 ### Overnight execution envelope
 
 The user's October 5 overnight instruction governs this active goal without
