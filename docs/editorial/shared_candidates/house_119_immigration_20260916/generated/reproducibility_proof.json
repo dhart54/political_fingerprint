@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "1f27f8c1bb46c3a1e54d6e00928ade24296549b88a7a29bff732b18f2393413e",
-  "source_capture_sha256": "a9f1ae1467d3839f9b5ce2019e33109126403bdd6f5961648ec13cc3e841ad14",
-  "core_sha256": "1b9e20f99714e5177a040db3a304bcb0982832fe45d80a8f66588617ca6ac914",
-  "compiled_sha256": "a76bedd262e3a40c26e0bcd559395113eaa048803325860acf1d19e688d9b1fa",
-  "readable_sha256": "4526f9f1b2cb455ead22957926a70ba04356cccbfc4c0341fe8d6c4133aa473a",
+  "input_sha256": "5a815909fb554f883b3f9c0d9cfcece87def01ead393416d8ab3a7b1264d330a",
+  "source_capture_sha256": "e87b6838628f3433424477e57fbe447a3938fbd2e76d6c3d4241959253305fca",
+  "core_sha256": "87d9b007dd8facd76a25386a62daa2392b7c71d65f5ce7bbc7019168c50b4ba4",
+  "compiled_sha256": "df467d559e89add1717aadb133e3e92f02e49037c1fcdb4105090c8a75316b11",
+  "readable_sha256": "be00804710d26fcfaea3bc5e5f1460f8139ce295bba236225af0a40fb10464c7",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -37,6 +37,46 @@
       ]
     },
     {
+      "action_id": "house:119:1:7",
+      "shared_sha256": "c54a2a16cf5a54b62a959603d579b1c454877d5abed5fa4404d88ea5e190f03b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.23 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:7"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Present",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:7"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:17",
+      "shared_sha256": "c1722e8688dd093d3db314e3ce59a2b4f7cb05827fd488878680d00c0c772ee5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.30 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:17"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.30 with its additional inadmissibility and sex-offense deportability grounds and expanded domestic-violence definition",
+          "source_id": "clerk:119:1:17"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:23",
       "shared_sha256": "399ed7789026039d88d6e61b70b8aaf134b885071bb570664610bac6fec4d3af",
       "choices": [
@@ -53,6 +93,66 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
           "source_id": "clerk:119:1:23"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:42",
+      "shared_sha256": "dd6618060c1d83efeeeb359875257e2fd80b50f52534d1cf5edaa1b42c2a343a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.35 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:42"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.35 with its specified vehicle-flight offense and immigration inadmissibility, deportability and relief-bar provisions",
+          "source_id": "clerk:119:1:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:63",
+      "shared_sha256": "f8badc6f217a9316c43f56089f353fb95ad7301737697c7d8a2f6e9386db899b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.495 to add annual implementation reports on the existing cross-border-tunnel strategic plan",
+          "source_id": "clerk:119:1:63"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.495 to add annual implementation reports on the existing cross-border-tunnel strategic plan",
+          "source_id": "clerk:119:1:63"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:65",
+      "shared_sha256": "c4136feec65fdb759d8d32fb6a8407ddf58281acd6427e693ef4bb2f3570519d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
+          "source_id": "clerk:119:1:65"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
+          "source_id": "clerk:119:1:65"
         }
       ]
     }
@@ -90,17 +190,15 @@
         {
           "member_id": "F000477",
           "proposition_ids": [
-            "prop:304f815e9ad8fc84",
-            "prop:642efb64155e083c",
-            "prop:3751badb96fd1af1"
+            "prop:304f815e9ad8fc84"
           ]
         },
         {
           "member_id": "M001184",
           "proposition_ids": [
             "prop:f3439d6ae6e0b949",
-            "prop:fe4a46848b7aa1d1",
-            "prop:3751badb96fd1af1"
+            "prop:45ddacc3b4640124",
+            "prop:a2a54ee5f0a96a13"
           ]
         }
       ],

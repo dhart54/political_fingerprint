@@ -4184,7 +4184,798 @@
       ],
       "reviewed_source_extents": [],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:17",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact INA inadmissibility/deportability changes, with materially incorporated criminal definitions, conviction baseline and preserved narrowly scoped waiver provisions. This is whole-bill passage, not a component position.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:17",
+          "url": "https://clerk.house.gov/evs/2025/roll017.xml",
+          "raw_sha256": "a9379a64752fbc12206b4413c004c9cf9943fe308de588af69e4402317537a89",
+          "governed_bytes_sha256": "9f51f6fe964466b86b058d512f8e55e0bd6bd3fa989291e0c27733f05b502855"
+        },
+        {
+          "source_id": "govinfo:hr30eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr30eh/html/BILLS-119hr30eh.htm",
+          "raw_sha256": "af26882bd09bf64388e2c724446077192043289065b4648109003fa716ec7743",
+          "governed_bytes_sha256": "08a35fc54e7a572cb1c6af277d88c9c33bdba9090c01612d7ad0f44f146181fd"
+        },
+        {
+          "source_id": "govinfo:34usc20911-2024-offense-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm",
+          "raw_sha256": "72664c5a1500733d58b52d283789d2ee6c04ab1d2f23fd0b58ed67e23ee492dc",
+          "governed_bytes_sha256": "216108a015a9bd8d10331cf4a2dcf089f060ea802afc0043d444994222904af2"
+        },
+        {
+          "source_id": "govinfo:34usc12291-2024-domestic-violence",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm",
+          "raw_sha256": "02970b24f1558a1ef246065f288a98fc9cf09c5c86046119dadb6828159ce1a9",
+          "governed_bytes_sha256": "59388375ff4638472167a4fe4bc639d524d29af0ee0395497b8d91503fbc2a8f"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:17",
+      "episode_candidate_id": "episode:hr30:119"
+    },
+    {
+      "action_id": "house:119:1:7",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:7",
+          "url": "https://clerk.house.gov/evs/2025/roll007.xml",
+          "raw_sha256": "583a7d6378da2bca786da923769f359df993beb9000c9b77bd8150b1fc9936cc",
+          "governed_bytes_sha256": "58986f6d3d8c7292f0e71f6570d779d08d375fa79c403adb5bb0dd2751f4df86"
+        },
+        {
+          "source_id": "govinfo:hr23eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr23eh/html/BILLS-119hr23eh.htm",
+          "raw_sha256": "0a31208488eccb9022b545c9beb0a6240affd39992702820eca0b361bc45778f",
+          "governed_bytes_sha256": "54857e6e817c00f19cb5bf0c81d5a76a75b775c21127eeb8c8180144331c59fd"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:22usc7432-2024-icc-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap81-subchapII-sec7432.htm",
+          "raw_sha256": "776f9675add2365d64314243117cdaf2c5779e44e4ed8d0c867404f6df0a4e10",
+          "governed_bytes_sha256": "40aed15842491ef1078df2a58cfb95baa195e599a2b9b9257a0b21b240fafc7d"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:7",
+      "episode_candidate_id": "episode:hr23:119"
+    },
+    {
+      "action_id": "house:119:1:42",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:42",
+          "url": "https://clerk.house.gov/evs/2025/roll042.xml",
+          "raw_sha256": "fa2dcce87111a7f8237f397ecb91b030e6a0e51fde9deceb9d36de9d80af02f0",
+          "governed_bytes_sha256": "4f31ed87f98b269af2fec44e1b56ba3e9df99ea5fb0a7db79c66bebc10fc8b9f"
+        },
+        {
+          "source_id": "govinfo:hr35eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr35eh/html/BILLS-119hr35eh.htm",
+          "raw_sha256": "5f6ada3b1b145e5661caa1e73ca3d6431faa39e59c64e4a0f856bfc1e6abfa44",
+          "governed_bytes_sha256": "d32d604d8e1d0494423df7a5eb470ab933d4d5c3350a8fc67944c9481ebc137b"
+        },
+        {
+          "source_id": "govinfo:18usc758-2024-checkpoint-flight",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap35-sec758.htm",
+          "raw_sha256": "a88111e9a35b58ede70347b4e6db216afa331d82e230a18f89aca59056a91270",
+          "governed_bytes_sha256": "32b93c6d0526d827775cce12bc5bf4294ac1f518ed60e906432e4a7941e266ce"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:42",
+      "episode_candidate_id": "episode:hr35:119"
+    },
+    {
+      "action_id": "house:119:1:39",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Exact H.Res.122 EH rule provides consideration, read/point-of-order waivers, debate, previous-question ordering and one recommittal opportunity for H.R.77. Its complete operative text neither passes H.R.77 nor deems immigration text adopted. Noncounting procedural context; no position on an underlying policy is inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:39",
+          "url": "https://clerk.house.gov/evs/2025/roll039.xml",
+          "raw_sha256": "fc448955f17bdcbb2a80859b45822b490fe60a6100191a56f982c64b9058ca05",
+          "governed_bytes_sha256": "0cad92c7ff48f8751cb9faacb917b0befa739466c409bda0997a5197481c05d5"
+        },
+        {
+          "source_id": "govinfo:hres122eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres122eh/html/BILLS-119hres122eh.htm",
+          "raw_sha256": "cb5a54a03a41f779120e6a1839c3a28dd55088d9850166b52e219867bd91cdf5",
+          "governed_bytes_sha256": "340c08e91c3897599a2bd9bbfcafb212e858eaca1203f11fcc69bcddc019515d"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:41",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.77 EH sections2(a)-(b) permit en-bloc Congressional Review Act disapproval of specified final-presidential-year rules and prescribe the resolving clause. This modifies the generic congressional rule-review mechanism; it neither disapproves a particular immigration rule nor changes an immigration status/admission/border mechanism. Full operative bill reviewed; predicted use on later immigration rules is not membership authority.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:41",
+          "url": "https://clerk.house.gov/evs/2025/roll041.xml",
+          "raw_sha256": "77c8e67d468aefdfff4fb392db83df2047ed77bbef1f278201777781ed4ffda2",
+          "governed_bytes_sha256": "3a4cf32a7060d321201c13ed3276710153e52017b4444c726bab51c254a23401"
+        },
+        {
+          "source_id": "govinfo:hr77eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr77eh/html/BILLS-119hr77eh.htm",
+          "raw_sha256": "5c53b570cc313878bea85936690383f733d9c22510c8525e7c28f3407296ac30",
+          "governed_bytes_sha256": "8b732966f32c61936798a8efabf8e54fd9cef8b5afce9d5dbb8af399becdcb8a"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:43",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.825 EH adds SBA financial-assistance disqualification for finally convicted associates and their businesses concerning defined pandemic loans/grants, with section7(b) assistance and pre-enactment agreement boundaries. Operative eligibility turns on financial misconduct/false statement, associate/control status and final conviction, not immigration status, citizenship, border entry or INA consequences. Complete operative bill reviewed; an existing program's potential noncitizen recipients do not create an immigration mechanism.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:43",
+          "url": "https://clerk.house.gov/evs/2025/roll043.xml",
+          "raw_sha256": "a980915687f274aa369318e1228ee2bc29267572fc6f700611a4fc6e272fd1b5",
+          "governed_bytes_sha256": "dc0927e19135a762b2cbdad7856b16054e57213ebff2fff863abb751c6b8053c"
+        },
+        {
+          "source_id": "govinfo:hr825eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr825eh/html/BILLS-119hr825eh.htm",
+          "raw_sha256": "720f289ed1e77922448e14f6c9095f90786dce4650c5b75aefa59e4bc016e2a8",
+          "governed_bytes_sha256": "3bef56f11a3cdcd7d19beae8f27fed56abb38c316d51b377a6ff6d53b2ceb8d7"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:44",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.832 EH expands SBA Advocacy's economic scope to the international economy and representation before foreign governments/international entities on regulatory/trade initiatives, with spelling corrections. Complete operative bill assigns general small-business advocacy, not admission, visa, status, citizenship or direct border-entry authority. Foreign-facing work alone is not Immigration membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:44",
+          "url": "https://clerk.house.gov/evs/2025/roll044.xml",
+          "raw_sha256": "e15c5cb76e40b416bbb26fe35e2f04cb5d6eb6b6f5e87dfa3d23cb9dd11bc4ad",
+          "governed_bytes_sha256": "552bd2b6512a2c49e6c59f01e740586494cc8fff71267d8a486f0216f75d4fe1"
+        },
+        {
+          "source_id": "govinfo:hr832eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr832eh/html/BILLS-119hr832eh.htm",
+          "raw_sha256": "037766e5ea6388bc8bb28670b56e6ccbf4151bec006e754d88219fba66645ee2",
+          "governed_bytes_sha256": "2d155903220186b6ef855f13fdd73e36fb8a044fe14fd47d1a325804ab35688b"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:45",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.818 EH changes federal procurement scorecards to count new small-business prime-contract entrants by industry code, with specified ownership categories and definitions, and no additional appropriation authorization. Its complete operative eligibility/counting changes concern prior contract awards and business categories, not immigration status or entry/admission. No immigration consequence inferred from procurement recipients.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:45",
+          "url": "https://clerk.house.gov/evs/2025/roll045.xml",
+          "raw_sha256": "9d479065f57c7547d61b62ee63e44aee04ae49a7681a67d103112041b3d4e51d",
+          "governed_bytes_sha256": "f37c95ba35c9d22f9f0e1845549c92e14d3aea8d0ebb8a1a179f88927c6eef5d"
+        },
+        {
+          "source_id": "govinfo:hr818eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr818eh/html/BILLS-119hr818eh.htm",
+          "raw_sha256": "520c750a90774019ad7384638bc790a02fdb28206ebdf896140f5dfa5e1f1129",
+          "governed_bytes_sha256": "eefb4342006cf4b0ff30a5e144072f1d211a200d9e446bf8c27a3116312b6782"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:49",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.804 EH directs SBA disaster-assistance access/outreach for individuals in defined rural disaster-declared areas within one year and renumbers a duplicated paragraph. The incorporated section7(b) baseline governs disaster property/economic-injury assistance. The change does not add citizenship/immigration-status eligibility, immigration processing or border authority. Complete exact bill and relevant baseline reviewed; assistance beneficiaries are not alone an immigration mechanism.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:49",
+          "url": "https://clerk.house.gov/evs/2025/roll049.xml",
+          "raw_sha256": "8b86f81eddefb0c7621b879ba5b2ce796beee7fdef925b700a774819ca2d7e61",
+          "governed_bytes_sha256": "33804994eee3e63bf27ba5db548e57fd30f677cff22d7ebefd4def5bc2d71da1"
+        },
+        {
+          "source_id": "govinfo:hr804eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr804eh/html/BILLS-119hr804eh.htm",
+          "raw_sha256": "d7ef2997224024ddf84a80af7370ec2386d2087282b7f91658f75d031bbf67e6",
+          "governed_bytes_sha256": "3bbcf4f9dc8375dc2b0369cd2e36b47e11b1cba1df714ae15a720ca380b42934"
+        },
+        {
+          "source_id": "govinfo:15usc636-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+          "raw_sha256": "1154f3dbc2aa2d9a75c79000efe8a3a436e73683b401c15b6c61f7b0ceb4852e",
+          "governed_bytes_sha256": "10cae0cd4cc071e240d8bea822a2570550d4810e01dc4a117673540940a0696c"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:72",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.R.359 EH requires a public/congressional DOE report within120days and quarterly on use of existing authority to reduce/eliminate research cost sharing. The complete operative bill governs energy-program cost-share reporting, not immigration documents, status eligibility, admission or direct border enforcement. Reporting is not an inferred immigration implementation.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:72",
+          "url": "https://clerk.house.gov/evs/2025/roll072.xml",
+          "raw_sha256": "06e98e075718654d16bf346e53e97836003d6b3ab8f3cbcbfecf656195fcf85a",
+          "governed_bytes_sha256": "ad75c60daf412d25c8d8687e5804ec67b318a8330da807fc09cd4bf6bcdb19a2"
+        },
+        {
+          "source_id": "govinfo:hr359eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr359eh/html/BILLS-119hr359eh.htm",
+          "raw_sha256": "b6e03102ff502ec97c15fd948c78520f7b0aec00cfe7e12a6ab21182a2d29edb",
+          "governed_bytes_sha256": "b7700480f0f05d99b28bc65b237f8942536869d4ec7fbe0edc1c6e53fb66e25c"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:77",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.24 EH disapproves only the identified DOE walk-in cooler/freezer energy-conservation rule (89FR104616), giving it no force/effect. The operative object is appliance energy standards, not immigration admission/status, border-crossing or enforcement authority. No INA or status mechanism is stated; general trade in appliances cannot establish this domain.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:77",
+          "url": "https://clerk.house.gov/evs/2025/roll077.xml",
+          "raw_sha256": "9ee7a64a06ff9b8eb195b75811db50b096b3819b6651f6e29aa6d0a6d7c22ffa",
+          "governed_bytes_sha256": "3d0f47db7c1b10cfd2db1c1025700fbab59e90ed9d0ee92cee260d5214ab4beb"
+        },
+        {
+          "source_id": "govinfo:hjres24eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres24eh/html/BILLS-119hjres24eh.htm",
+          "raw_sha256": "bfb8d19d4171fd0d639be5d5a7bd766dd83232c9f762e68df9227b374f3bb3db",
+          "governed_bytes_sha256": "cbba8d1eb9c47a8590dc960ec7033706c12ad334cceb5ef1ac71108873d7d9ca"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:78",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.75 EH disapproves only the identified commercial refrigerator/freezer energy-conservation rule (90FR7464), giving it no force/effect. The exact action's operative object is appliance energy standards, not immigration status/admission or direct border entry/enforcement; incidental foreign trade is not Immigration membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:78",
+          "url": "https://clerk.house.gov/evs/2025/roll078.xml",
+          "raw_sha256": "47562eb33a2ecaae536ad73c94faa9e4da84adbdcde319e259795fd93387783d",
+          "governed_bytes_sha256": "a9e4e04deb4eb7773f1d4afffabae89cdc13bf92e24a95a9d0a9cae39670aac1"
+        },
+        {
+          "source_id": "govinfo:hjres75eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres75eh/html/BILLS-119hjres75eh.htm",
+          "raw_sha256": "2d6ef399f0eddb2dd9db4bad6e7c31ee39c6c1d4beeced46fe877e4eca3e189d",
+          "governed_bytes_sha256": "8e3945ad21fedfde499d2478f5000f5a640ee9507326d717020240f47d3c3c63"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:63",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from direct cross-border-tunnel operations reporting or expressly border-operations technology planning/team authority. Exact operative source and material prior-law reporting/authorization qualifications reviewed. Planning/reporting is not actual deployment or implementation.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:63",
+          "url": "https://clerk.house.gov/evs/2025/roll063.xml",
+          "raw_sha256": "639cbfca1917f560ae613a13dc42da411c63ea4ca982e89b0a6624f9251cb185",
+          "governed_bytes_sha256": "87079ea720ebd4249c26130e35f7503bb12d3451170c9d1a42ba5c8759f5ea37"
+        },
+        {
+          "source_id": "govinfo:hr495eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr495eh/html/BILLS-119hr495eh.htm",
+          "raw_sha256": "4b1cc7d84a342eabbf615b4903345f692b7583a9b1905ddcfc57e676ed1352b2",
+          "governed_bytes_sha256": "8bf6c8a2e4f37d494d1699a06492437cce748eeea58edb21d72b76a9ed0a639c"
+        },
+        {
+          "source_id": "govinfo:6usc257-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partD-sec257.htm",
+          "raw_sha256": "26cca92fc1b6d4f632f854d62ec8359bf2a3d0af7bb572332bacb7445adf1ad8",
+          "governed_bytes_sha256": "a45ab7d57d32e9136818d892d277d10d62d9b0eec23d3132be1caa32595a9904"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:63",
+      "episode_candidate_id": "episode:hr495:119"
+    },
+    {
+      "action_id": "house:119:1:65",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration inclusion from direct cross-border-tunnel operations reporting or expressly border-operations technology planning/team authority. Exact operative source and material prior-law reporting/authorization qualifications reviewed. Planning/reporting is not actual deployment or implementation.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:65",
+          "url": "https://clerk.house.gov/evs/2025/roll065.xml",
+          "raw_sha256": "35c9f397ce065336e1f5614fd75a723cb0277f347989780882efa4b6803bd1a7",
+          "governed_bytes_sha256": "74f3e028fd501ee762c06ba78b209d88838bac2c8932f0a67de784d139610ea3"
+        },
+        {
+          "source_id": "govinfo:hr993eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr993eh/html/BILLS-119hr993eh.htm",
+          "raw_sha256": "a54481cd031cdff3fd32e599e6f711b2ed89e74a29a820af312e383ef6f18a21",
+          "governed_bytes_sha256": "6d543f75ed2ba7615de34dd509e2e34a42dfe29c35394aa751c237787a41cd7e"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:65",
+      "episode_candidate_id": "episode:hr993:119"
+    },
+    {
+      "action_id": "house:119:1:48",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.788 EH requires DOE/SBA collaborative R&D agreements, appropriate small-business inclusion, optional reimbursable/other-agency collaboration and a two-year report, under existing research-security standards and without new authorized appropriations. Its operative object is agency research coordination/security, not immigration status, work authorization, visas or entry. Applying research-security rules to those activities does not itself create an Immigration mechanism.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:48",
+          "url": "https://clerk.house.gov/evs/2025/roll048.xml",
+          "raw_sha256": "c78b4b1bab04a0c40b8b0e74b0b8449bb06c224c9e3a6a8aae82d0e4b15096f4",
+          "governed_bytes_sha256": "3f18a8feb2ebe61c0707ec67841f3375fbadb5d0213d6d375b7621ded139f8d3"
+        },
+        {
+          "source_id": "govinfo:hr788eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr788eh/html/BILLS-119hr788eh.htm",
+          "raw_sha256": "01b535a6074c8465b7b2d82fb83bb3fcd3e3a8fc73ec45817c1ad4f34cccb749",
+          "governed_bytes_sha256": "940017aaa156c96689477cced0c48dc1a2c33c8baf0319f735fe0bd7a3eb701d"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:54",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.856 EH assigns OMB a review of Defense/civilian procurement management and FAR lowest-price-technically-acceptable national-security risks, with a180-day congressional report. This is generic federal purchasing review, not border admission/enforcement, immigration status or visa authority. A Homeland Security-named recipient committee does not supply domain membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:54",
+          "url": "https://clerk.house.gov/evs/2025/roll054.xml",
+          "raw_sha256": "99d716cddb8c5f823ca29ffec82e9b9c22585df615ab8971b029262f2f1f2dd2",
+          "governed_bytes_sha256": "0e05f790d415e5eac678ba63f923ad3219b232fc275b2d92661afb65c5e29a66"
+        },
+        {
+          "source_id": "govinfo:hr856eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr856eh/html/BILLS-119hr856eh.htm",
+          "raw_sha256": "50dcae3f3d78b4e22003cb2ca4b5fcb7f8bfe13d427dbac3b7e2342be47b587a",
+          "governed_bytes_sha256": "643bb25eff5e40bc7d95fc6e0d2d72567d393d948a39ca038d392e60decabf48"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:55",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.758 EH requires USPS regulations, employee/contractor crash reports, a database, privacy-preserving annual public reports and contractor penalties for mail-transport crashes. Its operative reporting and contract-compliance scope is transportation safety, not immigration detention, border crossing, status documents or INA consequences. Vehicle/crash terminology does not establish the immigration predicate in the separate H.R.35.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:55",
+          "url": "https://clerk.house.gov/evs/2025/roll055.xml",
+          "raw_sha256": "cae5a3b6d12d7435bf89832946de49fb07676f6faa052de466d572d0eebfb154",
+          "governed_bytes_sha256": "1c81fecb36fd7eeeab6dbeae5482e2306139ac6eee7cd2049d7123b29dad1a49"
+        },
+        {
+          "source_id": "govinfo:hr758eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr758eh/html/BILLS-119hr758eh.htm",
+          "raw_sha256": "a5228997bda6b97f6f97d4938fcd2c31bdd7b048c595afc1c6e2be2021fbc690",
+          "governed_bytes_sha256": "7cc5d635b1e9c030802c007d08389d944d8233c1d3b00c48617538c69aec7d8a"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:64",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.R.901 EH adds a DHS Science and Technology duty to safeguard R&D acquisitions against unauthorized sensitive-information access/disclosure, a GAO report on research-security guidance within one year and a90-day DHS briefing. It governs Department-wide research security, not immigration status/admission, border inspection or immigration-enforcement powers. DHS administration and intelligence-community references alone are insufficient.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:64",
+          "url": "https://clerk.house.gov/evs/2025/roll064.xml",
+          "raw_sha256": "ab51f1705bbcbf00304505b1006ed4a30f1878d8971a48a05d1208f6567a4d08",
+          "governed_bytes_sha256": "606ddfc5faa26f9a291201191e0fa64a663e0db3350b38d59ba5de16861ff326"
+        },
+        {
+          "source_id": "govinfo:hr901eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr901eh/html/BILLS-119hr901eh.htm",
+          "raw_sha256": "5076dc2f5d3f7a95203e7f8722aea93c92b52df750980def4e0a5a27a9d918c0",
+          "governed_bytes_sha256": "072dce8aa8f0625a7bfe26d752ec12d808695306bdced0abffeb664ce6834884"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:57",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Complete H.Res.177 EH provides separate consideration/debate/waivers/previous-question/recommit rules for three specified appliance/emissions/marine-archaeology CRA resolutions. It contains no deemed policy adoption or passage clause. This exact rule-adoption action remains noncounting procedural context, with no inferred position on an underlying measure.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:57",
+          "url": "https://clerk.house.gov/evs/2025/roll057.xml",
+          "raw_sha256": "420c8c327b70ccba623b65f9e794e36ecb60bf12866d45520c664449ba55103d",
+          "governed_bytes_sha256": "e552d04b4ffad542e175d817e3f1be025fa05ec040089869e19a5594518143fc"
+        },
+        {
+          "source_id": "govinfo:hres177eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres177eh/html/BILLS-119hres177eh.htm",
+          "raw_sha256": "47cb33ca37e8adc1fe7471322927d8e6268e1c730af4591a5aaf01cdbd205a30",
+          "governed_bytes_sha256": "0c6eae334c07f5834b247d694caf34566c1822a0a2973bfa6cf8847d6b9dda44"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:62",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.Res.189 EH censures a named Representative, requires presence for pronouncement and public reading by the Speaker, based on stated joint-address conduct. The operative disciplinary action does not govern immigration status, admission, removal or border policy. The record does not warrant an Immigration expressive or directional finding.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:62",
+          "url": "https://clerk.house.gov/evs/2025/roll062.xml",
+          "raw_sha256": "41e12da86383ea2205600128640c70aee13558c64c1cff95d13579776b8d7480",
+          "governed_bytes_sha256": "7f087fd30b9d6735fbe2146f44a2e96c88ea99c0d3f21cdec41f0a214748180b"
+        },
+        {
+          "source_id": "govinfo:hres189eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres189eh/html/BILLS-119hres189eh.htm",
+          "raw_sha256": "decf9b0cc2c6500cae859857081d2597ecc3768003c22ce5637be617b7b4543e",
+          "governed_bytes_sha256": "abbfa6a0143c9b60ed30b7f6cdbd429ff30439e201d4a0e791576c801c1fcf6c"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:52",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.35 EH disapproves only the identified EPA petroleum/natural-gas waste-emissions-charge compliance/netting/exemptions rule (89FR91094). That operative regulatory object is emissions-charge administration, not Immigration status/admission or direct border operations; environmental compliance and predicted economic effects do not create domain membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:52",
+          "url": "https://clerk.house.gov/evs/2025/roll052.xml",
+          "raw_sha256": "f974e5d9e5b8dca8a9c78fd9735c9ed5bdf55a7f76731761a37738ba470a1dea",
+          "governed_bytes_sha256": "b0348b5fddbeb1fcb7e1b254a34de96c09e386bb8e30b5e84c2633d2083c4585"
+        },
+        {
+          "source_id": "govinfo:hjres35eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres35eh/html/BILLS-119hjres35eh.htm",
+          "raw_sha256": "2e64512b4b8873be41a8bf28073c458c435646568c51db217d5a198eeb8db41b",
+          "governed_bytes_sha256": "3fe1a9231482696982cfca921f408a7924dd8606356c766683f5209660f2c56d"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:53",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.20 EH disapproves only the identified DOE consumer gas-fired instantaneous-water-heater conservation rule (89FR105188). The operative object is appliance energy efficiency, not immigration eligibility, visa/admission or border-crossing authority. General product trade cannot establish Immigration membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:53",
+          "url": "https://clerk.house.gov/evs/2025/roll053.xml",
+          "raw_sha256": "f960b55bc4da8512805a2a1f7299b3f1e5e8540937d14bba6a9083805237e131",
+          "governed_bytes_sha256": "dd992b1fefc3b690f4b33e24e5d02942b91ce222b5437d9c08ebd63192ef0dee"
+        },
+        {
+          "source_id": "govinfo:hjres20eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres20eh/html/BILLS-119hjres20eh.htm",
+          "raw_sha256": "44175cbfc643cec98d01062f3af82d1328f797b4b6d34356ab77e726415df103",
+          "governed_bytes_sha256": "f770d5ea75b92f9735e290e7110dbac7bc676fa6cf6b3ced18f5974afa4d9665"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:58",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.61 EH disapproves only the identified EPA hazardous-air-pollutant standards for rubber-tire manufacturing (89FR94886). Its operative emissions-standard object contains no stated immigration status/admission or direct border authority; general manufacturing/trade consequences are not domain membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:58",
+          "url": "https://clerk.house.gov/evs/2025/roll058.xml",
+          "raw_sha256": "d8a878823f573d9bf6b7f00cda2f1eb99bded8460a1cfba3227b3aead6c5677b",
+          "governed_bytes_sha256": "f6d73b45b6d6a038c5768cdb046d1e33bcef236e70d65f2ccaafb7296c7e538a"
+        },
+        {
+          "source_id": "govinfo:hjres61eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres61eh/html/BILLS-119hjres61eh.htm",
+          "raw_sha256": "6d42d6e932ecb7d85fa612390d3808a9b9f0603ae2adc347d9c57ab4d5db1a28",
+          "governed_bytes_sha256": "51483a460b5cb7cc5c76fec24ee0bbde2c09856eff35e6ff0e1534dd4db9110a"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:59",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact H.J.Res.42 EH disapproves only the identified DOE appliance certification/labeling/enforcement rule (89FR81994). Its enforcement object is appliance standards, not immigration or border entry/enforcement. Consumer-product documentation is not immigration documentation.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:59",
+          "url": "https://clerk.house.gov/evs/2025/roll059.xml",
+          "raw_sha256": "e658546700f9bd8def90acbcbe1bbef3954f20c118a82ef57e80635cc78a2a98",
+          "governed_bytes_sha256": "abb8356c101ef3bf6c64bfdc359f54b10ad880d8fb39aa4f23f98ef39e8738eb"
+        },
+        {
+          "source_id": "govinfo:hjres42eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres42eh/html/BILLS-119hjres42eh.htm",
+          "raw_sha256": "12c7261ce5214297c051db835e92cbc42b168e9041a59128c192628cfcc41f00",
+          "governed_bytes_sha256": "372e54434d22009996d93bb14fb4f100ad4f373b67a6b20f481b15a4fa165dc0"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:61",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Exact Senate-engrossed S.J.Res.11 proposition before the House disapproves only the identified BOEM marine-archaeological-resource protection rule (89FR71160); the House rule supplies consideration context rather than a different policy version. This governs archaeological resources, not immigration status/admission or maritime border-entry authority. Marine location alone does not establish Immigration membership.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:61",
+          "url": "https://clerk.house.gov/evs/2025/roll061.xml",
+          "raw_sha256": "06fbbb25a31563b5d368641144f7ebe8bc0aa056c31eb5b6110e49295f9463be",
+          "governed_bytes_sha256": "c97162b80d27607981f75a68f5fc5aed1d97b7d6b939a67e61a287c3d85db0f2"
+        },
+        {
+          "source_id": "govinfo:sjres11es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres11es/html/BILLS-119sjres11es.htm",
+          "raw_sha256": "26ba0db5f68315c79f8a1c6b05f168207018626f4252330b9e40a98380a6bcd5",
+          "governed_bytes_sha256": "38b2374330f5dc50405e45b86c8d4b209723b05b8018b3beec9bb938e93306a2"
+        },
+        {
+          "source_id": "govinfo:hres177eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres177eh/html/BILLS-119hres177eh.htm",
+          "raw_sha256": "47cb33ca37e8adc1fe7471322927d8e6268e1c730af4591a5aaf01cdbd205a30",
+          "governed_bytes_sha256": "0c6eae334c07f5834b247d694caf34566c1822a0a2973bfa6cf8847d6b9dda44"
+        }
+      ],
+      "claim_source_map": [],
+      "reviewed_source_extents": [],
+      "episode_candidate_id": null
     }
   ],
-  "review_sha256": "99b8fdd38af73a921896c21de29d1b01a4dc2d48029a4da283b82f83bb95d453"
+  "review_sha256": "a2e35b3de28bec3db74ecd59a3fcc7815cf21a4f587bcb827598e948888f06b1"
 }

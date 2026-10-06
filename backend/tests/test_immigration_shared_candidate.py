@@ -113,6 +113,24 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         with self.assertRaises(EditorialPresentationError):
             compile_public_issue_presentation(compiled, {}, trusted_action_source_contract={})
 
+    def test_actual_present_status_keeps_shared_choices_without_a_directional_finding(self):
+        core, _, projections, _, result = self.products
+        aid = 'house:119:1:7'
+        shared = next(a for a in core['actions'] if a['action_id'] == aid)
+        self.assertEqual(set(shared['choice_meanings']), {'Yea', 'Nay'})
+        member = next(p for p in projections if p['member_id'] == 'M001184')
+        observed = next(a for a in member['actions'] if a['action_id'] == aid)
+        self.assertEqual(observed['official_status'], 'Present')
+        self.assertEqual(observed['action_core_sha256'], shared['action_core_sha256'])
+        readable = readable_candidates(self.values[0], core, projections, result)
+        massie = next(m for m in readable['members'] if m['member_id'] == 'M001184')
+        foushee = next(m for m in readable['members'] if m['member_id'] == 'F000477')
+        self.assertTrue(any(aid in f['action_ids'] for f in foushee['findings']))
+        self.assertFalse(any(aid in f['action_ids'] for f in massie['findings']))
+        self.assertIn({'action_id': aid, 'reason_code': 'non_directional_status',
+            'detail': 'The action is explicitly excluded from behavioral evidence.'},
+            massie['non_proposition_accounting'])
+
     def test_all_checked_in_generated_outputs_match_an_independent_replay(self):
         author, capture = self.values[:2]
         core, mapping, projections, inputs, result = self.products

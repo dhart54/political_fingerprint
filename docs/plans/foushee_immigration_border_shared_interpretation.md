@@ -161,6 +161,74 @@ universe/membership pair.
 
 ## Production, rollback, blockers and reconciliation
 
+### Checkpoint 3: criminal predicates, conditional visas and border reports
+
+- Twenty-five additional explicit reviews bring accounting to 202: seven
+  interpreted, 163 procedural and 32 excluded; 474 ordinary screenings remain.
+  These unfinished screenings are not evidence-unavailable dependencies. No
+  defensible full Immigration closure or final domain-universe size is claimed.
+- Five new shared meanings: 2025 rolls 7/H.R.23 EH, 17/H.R.30 EH,
+  42/H.R.35 EH, 63/H.R.495 EH and 65/H.R.993 EH. The first three are
+  passage choices; the last two are suspension-and-passage propositions.
+  All seven authored actions remain separate proposal episodes.
+- Material qualifications: conditional ICC actor/protected-person/family scope,
+  immediate revocations, 90-day reported waivers and termination certification;
+  sex-offense conviction versus admission predicates, consensual-conduct and
+  foreign-conviction limitations, retained narrow battered-person relief and
+  noncriminal victim-services boundaries; distinct intentional vehicle flight
+  versus existing high-speed checkpoint flight, fine-or-imprisonment alternatives
+  and the printed broad relief bar; existing tunnel-plan reporting versus a new
+  annual cadence; technology planning/permissive teams versus actual deployment.
+- Foushee: five opposition and two support findings. Massie: six support
+  findings, with Present on H.R.23 explicitly nondirectional. Fourteen actual
+  observations share seven meanings; thirteen directional findings result.
+  Both readable outputs and qualification lists inspected. No member-specific
+  legislative meaning or component vote was authored.
+- Canonical captures: 735 sources, comprising 634 unchanged Health-governed
+  reuses (588 Clerk and 46 operative captures) and 101 new objects (88 Clerk
+  and 13 statutory captures). There are 58 exact claim/source witnesses.
+  Eighteen full local research captures are hash-listed in the provisional
+  manifest; they are not automatically canonical interpretation dependencies.
+  Justice-overlap primary bills were independently interpreted; accepted
+  cross-domain conclusions and governed baseline objects were not changed.
+- Generic SBA fraud/procurement/research, USPS crashes, DHS research-security,
+  congressional censure, and identified appliance/emissions/archaeology CRA
+  objects receive exact-action exclusions. Two complete rules without deemed
+  policy passage are procedural. Rules with deemed amendments remain queued
+  for exact-text research. A manually mistyped H.J.Res.42 Federal Register
+  citation was corrected to its governed text's 89FR81994 before checkpoint.
+  No membership or member direction changed during those preparation checks.
+- Full focused suite: 202 tests pass in 32.572 seconds. All seven canonical
+  semantic checks pass. After readable spacing changes, all thirteen focused
+  Immigration tests pass and all seven JSON files replay byte-for-byte.
+  Exact-source/ledger integrity, actual Present handling, all three public and
+  persistence rejection entrypoints, and protected-baseline preservation pass.
+  These are integrity checks; the required separate source-first semantic audit
+  and its defect classifications remain pending.
+- Previous exact-head cb6feeaa3044ae1d7c2f8eef808b3fee86e44015 completed
+  all nine backend CI jobs successfully in run 37405329732:
+  https://github.com/dhart54/political_fingerprint/actions/runs/37405329732.
+  New checkpoint hosted CI must be reported at its own pushed SHA.
+
+### Overnight execution envelope
+
+The user's October 5 overnight instruction governs this active goal without
+changing its scope. No stale `.codex-task-complete` existed in either checkout.
+The authoritative `.codex-shutdown-deadline` sets shutdown at
+2026-10-06T06:41:49.8725744-04:00, stop-new-large-work at 06:11:49,
+checkpoint wrap at 06:26:49, and terminal marker due at 06:36:49 Eastern.
+Periodic exact weekly usage checks currently expose 39% used / 61% remaining
+in the 10,080-minute window. Continue while above the user's 5% reserve.
+An intermediate commit is not terminal. Finish all validation/Git/report work
+before the final uncommitted marker; use SUCCESS only for a truly complete
+goal, otherwise an explicit resumable CHECKPOINT at the controlling limit.
+
+Next research: the open exact-source/version queue, including H.R.2056,
+H.R.875/H.R.275/H.R.3486 and the SBA status/cooperation measures; then
+package, sanctions, citizenship-proof, amendment and rule-deeming leads.
+Complete independent source-first review of every shared meaning and the
+required noncounting sample before final delivery. Discovery remains open.
+
 Production writes: none. Revert candidate-branch commits for rollback; immutable
 baseline and unrelated checkout are preserved. No substantive blocker identified.
 Discovery, authoring, audit and delivery remain incomplete.
