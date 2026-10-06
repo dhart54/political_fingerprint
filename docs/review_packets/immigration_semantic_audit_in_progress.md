@@ -1177,3 +1177,88 @@ check common prerequisites across alternatives, sibling-only location/age/time/
 actor conditions, AND/OR grouping and every material temporal qualifier. Use
 natural prose or explicit parentheses, and retain unresolved referents. A correct
 detailed explanation is not evidence that compressed copy is also correct.
+
+
+## Checkpoint 32: exact travel, commercial inspection and EVUS fees
+
+House70017-19 and Senate100014-15 now bind complete operative paragraphs,
+complete material pre-vote1187(h)(3) and1356(d)/(e)/(h), and selected official
+EAS PDF pages819-824. All selected House paragraphs are byte-identical in
+governed floor/EH text; original floor remains controlling. Six new claim
+bindings have exact passage hashes/lengths and action hashes in
+hr1_travel_inspection_fee_review.json. PDF819/820/821/823 visually inspected;
+selected rawSHA4093bdc58acda5da3c425339a504495afa16b5242ead24bb0c0388327ab897d0
+and complete selected-page extraction verify. No fullPDF/package/EOIRaudit.
+
+ESTA retains its existing17component, gives the full-cost-recovery component a
+10minimum and adds a separate13minimum. It is not a10/13total or firstESTAcreation.
+Sunset extension concerns clause(i)(I) only. House has an annual not-more-than20m
+Travel Promotion Fund cap forI, remainderTreasury and explicitIII Treasury clause.
+Senate100014 does not edit(ii), which assigns onlyI/II; no HouseIII allocation
+is imported. Both adjustments nameII but use broader printed prior-base terms
+(HouseTHIS SUBSECTION / SenateTHIS SUBPARAGRAPH); no component/whole-total
+calculation is silently chosen. No printed increment-rounding/ESTA waiverbar
+is copied from anotherfee. Complete travel/admission/visa-eligibility limits read.
+
+House inspection fee retains commercial-aircraft/vessel passenger inspection
+or preinspection, replaces7with fiscal2025minimum10, adds quarter-dollar CPI
+increments,1Treasury and waiverbar, removes an origin exemption and replaces
+the separate3vessel charge with the identified exemption. Transit outsideUS AND
+noinspection is its own exception. The designated-port inspection condition
+is explicitly common to BOTH ferry/Great-Lakes arrival branches, each with its
+own definition/location/schedule conditions. Defined ferry and Great Lakes
+regular-schedule requirements remain, not all crossings or all border travelers.
+Unstruck all-(d)-receipts UserFeeAccount authority remains beside new1Treasury;
+no resolved residual distribution or personal appropriations-refund inferred.
+
+EVUS charges apply at enrollment to aliens subject to thatSystem, with30floor/
+higher rule, fiscal2026-onward quarter-dollar CPI increments and waiverbars.
+House deducts5perenrollment; Senate5timespayments, as printed and PDFconfirmed.
+Separate account appropriation/until-expended/administration terms retained;
+no unit-equivalence, newSystemeligibility/admission/grant or actualpayment inferred.
+
+Three separate printed application questions bring the queue to30: ESTA named
+component/broader priorbase; Senate newly addedIII disposition; House1Treasury
+versus retainedall-(d)-receipts account. Each includes recommendation to retain
+literal authorities, alternatives and safe parallel work. Sources are available;
+these are not unfinished ordinary screenings or unavailable-evidence substitutions.
+
+Pre-push source-first copy review checked six new qualifications independently
+of detail, and retained both unchanged selected compacts/earlier qualifications.
+It expanded designated-port/ferry/Great-Lakes scope before push and removed an
+unprinted ALREADY timing modifier. Full increment224focusedtests pass38.788s;
+after final copy refinement35candidate tests pass7.583s,7semanticchecks pass,
+7outputs replay byte-identically. Both complete member outputs, all6new
+binding/qualification hashes,97boundedextents, officialPDFwitness and current
+audit/accounting/Clerk/source integrity verify. Final diff and candidate/public/
+persistence isolation reviewed. No runtime/pipeline/schema/frontend/Health writes.
+
+Fingerprint independently resolved historicalVisa Major at exactc500cb2:
+both shared qualifications, all6readable replacements(twoepisode/fouraction),
+commoncompliance/ownalternative timings/grants/discretionarypostexpiry/literal
+suchperiod, primary/receipt/priorblob hashes, retainedfuneral/DHS fixes and
+negative regression verified. Receipt hr1_checkpoint31_independent_recheck.json
+preserves exclusions: no wider32qualification+2compact independent fullaudit,
+no legalquestion resolution/acceptance, and no transfer to newtravelcomponents.
+Original correction receipt unchanged; historicalMajors and reimbursementMinor
+remain. Exactc500cb2744bb35c4d6c4c456c0a316ed61e3dc8c CI all9green(run37504128547).
+
+Counts unchanged455reviews/39meanings/36episodes/78observations/70findings;
+221ordinary screenings and2partialcomponent reviews remain.30legalquestions;
+1207governed sources(990unchangedHealth/217new),444claims,125provisionalcaptures.
+Final full-corpusverdict remainsnull; partial-component closure gate remainsactive.
+Core93c244d9584cf1941a1df5d803309da6740eb43c1f8d6fc23de5790c9b41c484.
+Compiledb18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Current exact-headCI follows push. No production/publication/merge/deploy.
+
+Executor is confirmed resumed in existing.w/ib afterCodexupdate; preserved prior
+markers/work and no duplicate checkout. Supervisor message tool became unavailable
+afterupdate; PR198/exact committed receipts carry progress for parent inspection.
+No active shutdown boundary supplied; ownership remains with this successor.
+Resume House70011/70015-16 versusSenate100013 continuance/diversity/EOIR fees,
+with complete exceptional-circumstances, diversity, statutoryaccount and legacy
+242B(c)(3)(B) authorities as material. Keep fee exceptions/no-waiver distinctions,
+bondappeal/motion exception scope, practitioner payer, per-fee versus broader
+account-base references and LOPfunding limitation separate. Then remaining
+benefits/tax/remittance/child/enforcement funding, continuing/omnibus/NDAA and
+ordinary screening. Continue pre-push copy/predicate checks in every increment.
