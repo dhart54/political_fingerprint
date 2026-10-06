@@ -63,7 +63,7 @@ Research may require sustained sessions; no fabricated runtime/throughput estima
 - Exact-base worktree created; protected Git metadata required approved escalation.
 - Existing Health candidate contracts and audit reviewed. Tests alone do not
   establish operative support or qualification completeness.
-- Committed inventory reports 676 actions; identity verification is in progress.
+- Committed inventory's 676 identities and fixed cutoff are verified.
 
 ## Checkpoints and validation
 
@@ -104,9 +104,57 @@ Research may require sustained sessions; no fabricated runtime/throughput estima
 - No baseline candidate/accepted object changed. No initial editorial conclusion
   reversed. No model-usage or action-throughput saving is inferred.
 
-Next: complete mechanism/source/version recall across every inventory action,
-review package and amendment leads, then research the first related Immigration
-source families. Do not rerun `.tmp/init_ib.py`: it is initial setup only and
+### Checkpoint 2: first shared source family and process controls
+
+- Current accounting:177 governed reviews, comprising2 interpreted candidates,
+  161 procedural controls and14 exclusions;499 ordinary screenings remain.
+  No genuine unavailable/conflicting dependency has yet been identified.
+- Shared meanings:2025 rolls6/H.R.29 EH and23/S.5 ES. Both extend custody/detainers
+  for a conjunctive inadmissibility/offense predicate and add qualified State
+  litigation. S.5 adds officer assault and crimes causing death/serious injury;
+  the different bills remain separate episodes. Existing parole limits, conditional
+  visa duties, witness-protection release and other printed review standards are
+  distinguished from new standing/custody provisions. Exact32 claim maps bind
+  separate operative subsections and material2024 authorities.
+- Foushee:two Nay/opposition findings. Massie:two Yea/support findings. Four
+  observations mechanically share the same two meanings. Both readable outputs
+  inspected; no separate member narrative was authored.
+- The full676-question catalogue was inspected. An explicitly bounded group of
+  155 process questions receives the established noncounting contract using
+  governed Clerk metadata. This is process review, not underlying-policy review;
+  no motion instructions are inferred. Rule adoptions and exact amendments remain
+  in the operative research queue, including self-executing/package issues.
+- Additional exact-text exclusions cover disaster study/reporting, memorial
+  siting, recreational-waterway data, restricted Tribal land, hospital care and
+  beneficial-ownership deadline changes. Terms such as entry, alienation and
+  admission do not become Immigration mechanisms without their operative object.
+- Canonical700 sources:606 unchanged Health-governed source objects reused
+  (588 Clerk plus18 operative captures),94 new objects (88 Clerk plus6 bounded
+  material Code captures). The provisional full-package sources remain research
+  material. The broader GovInfo versions previously used by Justice are examined
+  independently; accepted Justice conclusion objects are not copied or mutated.
+- All seven generated JSON files reproduced byte-for-byte at the first-family
+  replay; protected Health/accepted/source/runtime paths are unchanged.
+- Twelve Immigration integrity/behavior/public-boundary/replay tests plus seven helper
+  tests pass. All three real candidate public/persistence entrypoints reject
+  preparation. Broader checkpoint validation and internal independent audit remain
+  pending; these checks do not confer semantic acceptance.
+- Full focused candidate/corpus/IR/pipeline/helper/Immigration suite:201 tests
+  passed in38.703seconds. Its first invocation lacked per-command NODE_PATH and
+  failed only the AJV-dependent schema assertion; corrected-environment rerun
+  passed. All seven canonical semantic checks pass. Seven-file byte replay and
+  protected-path preservation were rechecked after the final qualification maps.
+- Hosted backend CI includes the new Immigration validator and tests in the
+  existing candidate step. No smoke/deployment fixture or workflow was changed.
+- Draft PR198 is attached. Checkpoint1 SHA:
+  `6b7b60527a57ef46c385f1ada9a5ac82cabe8d25`; hosted backend run37403377521
+  completed successfully with all nine jobs acquired, executed and passed:
+  https://github.com/dhart54/political_fingerprint/actions/runs/37403377521.
+
+Next: continue source/version screening from the bounded queue, including2025
+roll7 ICC visas,17 sex/domestic-violence predicates and42 vehicle-flight
+consequences, plus package/amendment leads. Discovery remains open. Do not rerun
+`.tmp/init_ib.py`: it is initial setup only and
 would replace current screenings. `.tmp/apply_ib_reviews.py` applies explicit
 reviews without inferring meanings; the authoritative queue is the existing
 universe/membership pair.

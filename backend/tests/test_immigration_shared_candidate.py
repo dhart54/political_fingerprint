@@ -1,8 +1,13 @@
 import copy
 import json
+import re
 import unittest
 
 from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
+from backend.app.semantic_ir.adapters import build_persistence_proposal
+from backend.app.semantic_ir.pipeline import run_editorial_pipeline
+from backend.app.editorial_presentations.compiler import compile_public_issue_presentation, EditorialPresentationError
+from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof
 from scripts.validate_immigration_shared_candidate import DATA, validate
 
 
@@ -11,6 +16,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
     def setUpClass(cls):
         cls.values = [json.loads((DATA / (name+'.json')).read_text(encoding='utf-8'))
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
+        cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
     @staticmethod
     def seal_universe(universe):
@@ -56,6 +62,68 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.seal_universe(universe)
         with self.assertRaisesRegex(ValueError, 'disposition identity accounting differs'):
             validate(author, capture, universe, membership)
+
+    def test_shared_prose_cannot_contain_observed_member_behavior(self):
+        for action in self.values[0]['actions']:
+            prose = json.dumps([action[key] for key in ['short_description', 'compact_description',
+                'meaning', 'limitations', 'choice_meanings']])
+            self.assertIsNone(re.search(r'\b(?:Foushee|Massie|F000477|M001184)\b', prose))
+
+    def test_laken_parallel_bills_preserve_their_distinct_versions_and_episodes(self):
+        author = {a['action_id']: a for a in self.values[0]['actions']}
+        capture = {s['source_id']: s for s in self.values[1]['sources']}
+        house, senate = [author[aid] for aid in ['house:119:1:6', 'house:119:1:23']]
+        self.assertNotEqual(house['episode_id'], senate['episode_id'])
+        self.assertEqual(capture[house['source_id']]['text_version'], 'EH')
+        self.assertEqual(capture[senate['source_id']]['text_version'], 'ES')
+        self.assertNotIn('assault of a law enforcement officer offense', capture[house['source_id']]['text'])
+        self.assertIn('assault of a law enforcement officer offense', capture[senate['source_id']]['text'])
+
+    def test_missing_material_baseline_cannot_compile(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        sid = 'govinfo:8usc1226-2024-laken-context'
+        capture['sources'] = [s for s in capture['sources'] if s['source_id'] != sid]
+        with self.assertRaises(KeyError) as caught:
+            prepare(author, capture, ['F000477', 'M001184'])
+        self.assertEqual(caught.exception.args, (sid,))
+
+    def test_laken_actual_choices_reuse_one_meaning_and_exclude_controls(self):
+        core, _, projections, _, result = self.products
+        by_action = {a['action_id']: a for a in core['actions']}
+        for member in projections:
+            actual = {a['action_id']: a for a in member['actions']}
+            for aid in ['house:119:1:6', 'house:119:1:23']:
+                self.assertEqual(actual[aid]['action_core_sha256'], by_action[aid]['action_core_sha256'])
+                self.assertEqual(actual[aid]['official_status'], 'Nay' if member['member_id'] == 'F000477' else 'Yea')
+            self.assertFalse({'house:119:1:20', 'house:119:1:21'} & actual.keys())
+        readable = readable_candidates(self.values[0], core, projections, result)
+        self.assertFalse(readable['production_eligible'])
+        for member in readable['members']:
+            for finding in member['findings']:
+                for observation in finding['action_observations']:
+                    if observation['action_id'] in ['house:119:1:6', 'house:119:1:23']:
+                        self.assertEqual(observation['direction'], 'opposition' if member['member_id'] == 'F000477' else 'support')
+
+    def test_immigration_candidates_fail_closed_at_all_public_persistence_entrypoints(self):
+        inputs, compiled = self.products[3], self.products[-1].compiled_ir
+        with self.assertRaisesRegex(ValueError, 'cannot prepare'):
+            run_editorial_pipeline(inputs, prepare_persistence_proposal=True)
+        with self.assertRaises(ValueError):
+            build_persistence_proposal(compiled)
+        with self.assertRaises(EditorialPresentationError):
+            compile_public_issue_presentation(compiled, {}, trusted_action_source_contract={})
+
+    def test_all_checked_in_generated_outputs_match_an_independent_replay(self):
+        author, capture = self.values[:2]
+        core, mapping, projections, inputs, result = self.products
+        replay = dict(shared_action_core=core, shared_issue_mapping=mapping,
+            member_projections=projections, compiler_input=inputs, compiled_ir=result.compiled_ir,
+            readable_candidates=readable_candidates(author, core, projections, result),
+            reproducibility_proof=reproducibility_proof(author, capture, ['F000477', 'M001184']))
+        for name, value in replay.items():
+            with self.subTest(output=name):
+                stored = json.loads((DATA / 'generated' / (name+'.json')).read_text(encoding='utf-8'))
+                self.assertEqual(stored, value)
 
 
 if __name__ == '__main__':

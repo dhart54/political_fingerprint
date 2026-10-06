@@ -1,0 +1,115 @@
+{
+  "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "acad448d612df797d0cdde3b9d488ca69edcbef5495a0c5cadd01ee8ba0e8b58",
+    "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
+    "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
+    "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
+  },
+  "input_sha256": "1f27f8c1bb46c3a1e54d6e00928ade24296549b88a7a29bff732b18f2393413e",
+  "source_capture_sha256": "a9f1ae1467d3839f9b5ce2019e33109126403bdd6f5961648ec13cc3e841ad14",
+  "core_sha256": "1b9e20f99714e5177a040db3a304bcb0982832fe45d80a8f66588617ca6ac914",
+  "compiled_sha256": "a76bedd262e3a40c26e0bcd559395113eaa048803325860acf1d19e688d9b1fa",
+  "readable_sha256": "4526f9f1b2cb455ead22957926a70ba04356cccbfc4c0341fe8d6c4133aa473a",
+  "identical_replay": true,
+  "real_member_reuse": [
+    {
+      "action_id": "house:119:1:6",
+      "shared_sha256": "73af0ddb2b6eb73596b2f3d262905e9e7106c085d4b06ccfca995ba24386bdf7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.29 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:6"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.29 with its specified custody/detainer expansion and State enforcement-standing provisions",
+          "source_id": "clerk:119:1:6"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:23",
+      "shared_sha256": "399ed7789026039d88d6e61b70b8aaf134b885071bb570664610bac6fec4d3af",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of S.5 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:23"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
+          "source_id": "clerk:119:1:23"
+        }
+      ]
+    }
+  ],
+  "differing_real_choices_exercised": true,
+  "controlled_raw_update": {
+    "interpretation_unchanged": true,
+    "cutoff_unchanged": "2026-09-16"
+  },
+  "controlled_new_interpretation_input": {
+    "action_id": "house:119:1:6",
+    "requires_explicit_authoring_change": true,
+    "acceptance_conferred": false
+  },
+  "controlled_shared_correction": {
+    "impact": {
+      "changed_action_ids": [
+        "house:119:1:6"
+      ],
+      "affected_projections": [
+        {
+          "member_id": "F000477",
+          "action_ids": [
+            "house:119:1:6"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "action_ids": [
+            "house:119:1:6"
+          ]
+        }
+      ],
+      "affected_findings": [
+        {
+          "member_id": "F000477",
+          "proposition_ids": [
+            "prop:304f815e9ad8fc84",
+            "prop:642efb64155e083c",
+            "prop:3751badb96fd1af1"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "proposition_ids": [
+            "prop:f3439d6ae6e0b949",
+            "prop:fe4a46848b7aa1d1",
+            "prop:3751badb96fd1af1"
+          ]
+        }
+      ],
+      "acceptance_conferred": false
+    },
+    "stale_projections_rejected": [
+      "F000477",
+      "M001184"
+    ],
+    "historical_core_unchanged": true
+  }
+}

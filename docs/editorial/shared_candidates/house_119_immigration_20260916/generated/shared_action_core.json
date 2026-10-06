@@ -1,21 +1,28 @@
 {
+  "schema_version": "shared_action_core_v1",
+  "artifact_id": "shared-action-core:house:119:v3",
+  "identity_unit": "exact House legislative action and governed source version",
+  "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
-  "domain_id": "IMMIGRATION_BORDER",
-  "congress": 119,
-  "snapshot_id": "house119-immigration-through-2026-09-16",
-  "discovery_cutoff": "2026-09-16",
-  "interpretation_action_set_cutoff": "2026-09-16",
-  "boundary": "Two explicitly listed Immigration & Border candidate inputs in a fixed 676-action September 16, 2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim.",
+  "historical_inputs_rewritten": false,
   "actions": [
     {
       "action_id": "house:119:1:6",
-      "source_id": "govinfo:hr29eh",
-      "bill_number": 29,
-      "bill_type": "hr",
-      "stage": "final_passage",
-      "episode_id": "episode:hr29:119",
-      "short_description": "H.R.29: expanding specified immigration detention and State enforcement litigation",
-      "compact_description": "H.R.29 would expand mandatory immigration custody and DHS detainers for the specified inadmissibility/offense combination (burglary, theft, larceny or shoplifting), and add harm-conditioned State suits over specified detention, release, parole and visa duties.",
+      "exact_action_identity": "house:119:1:6",
+      "chamber": "house",
+      "congress": 119,
+      "session": 1,
+      "roll": 6,
+      "legislative_stage": "final_passage",
+      "action_date": "2025-01-07",
+      "exact_question": "On Passage",
+      "chamber_outcome": "Passed",
+      "enactment_status": "not_inferred_from_house_outcome",
+      "mechanism": "H.R.29: expanding specified immigration detention and State enforcement litigation",
+      "mechanism_availability": "candidate_source_mapped",
+      "candidate_exact_action_meaning": "H.R.29 would extend the federal mandatory-custody category to the following offenses: burglary, theft, larceny or shoplifting. The four listed property-offense terms take the meaning assigned by the jurisdiction where the acts occurred. The exact bill adds an INA 236(c) mandatory-custody category requiring inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) together with a specified criminal predicate: being charged, arrested, convicted, admitting commission, or admitting acts constituting the essential elements. These inadmissibility categories concern presence without admission/parole or undesignated arrival, material immigration fraud/false citizenship claims, and specified entry-document defects, subject to their existing statutory qualifications. DHS must issue a detainer for a person meeting the new ground and, if the person is not otherwise detained by Federal, State or local officials, effectively and expeditiously take custody. The bill also gives a State attorney general or other authorized State officer standing, on alleged harm to the State or residents (including financial harm in excess of $100), to seek appropriate injunctive relief in district court over five specified federal matters: INA 235(b)(1)/(2) detention/removal requirements; INA 236 release, bond or parole decisions; the existing INA 243(d) visa-discontinuance requirement for countries denying or unreasonably delaying acceptance; violation of the existing INA 212(d)(5)(A) case-by-case urgent-humanitarian/significant-public-benefit parole limits; and INA 241(a)(2) detention during the removal period. Courts must advance and expedite these cases to the greatest practicable extent. INA 236(e) removes its express release/grant shield while leaving the other printed discretionary-judgment/detention/revocation/denial restrictions, and INA 242(f)(1) receives an exception for the printed listed actions, while its separate final-removal-order injunction standard remains. These review changes do not establish a general right to enjoin every immigration action. The parole clause changes its named administering actor to the Secretary of Homeland Security. The baseline removal period is generally 90 days with specified starting/extension conditions; the bill adds litigation standing over its detention requirement rather than creating that period. The pre-existing narrow witness/cooperator-protection release exception remains, redesignated as INA 236(c)(4).",
+      "candidate_short_description": "H.R.29: expanding specified immigration detention and State enforcement litigation",
+      "candidate_compact_description": "H.R.29 would expand mandatory immigration custody and DHS detainers for the specified inadmissibility/offense combination (burglary, theft, larceny or shoplifting), and add harm-conditioned State suits over specified detention, release, parole and visa duties.",
       "compact_source_refs": [
         "govinfo:hr29eh",
         "govinfo:8usc1182-2024-laken-context",
@@ -25,8 +32,7 @@
         "govinfo:8usc1252-2024-laken-context",
         "govinfo:8usc1253-2024-laken-context"
       ],
-      "meaning": "H.R.29 would extend the federal mandatory-custody category to the following offenses: burglary, theft, larceny or shoplifting. The four listed property-offense terms take the meaning assigned by the jurisdiction where the acts occurred. The exact bill adds an INA 236(c) mandatory-custody category requiring inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) together with a specified criminal predicate: being charged, arrested, convicted, admitting commission, or admitting acts constituting the essential elements. These inadmissibility categories concern presence without admission/parole or undesignated arrival, material immigration fraud/false citizenship claims, and specified entry-document defects, subject to their existing statutory qualifications. DHS must issue a detainer for a person meeting the new ground and, if the person is not otherwise detained by Federal, State or local officials, effectively and expeditiously take custody. The bill also gives a State attorney general or other authorized State officer standing, on alleged harm to the State or residents (including financial harm in excess of $100), to seek appropriate injunctive relief in district court over five specified federal matters: INA 235(b)(1)/(2) detention/removal requirements; INA 236 release, bond or parole decisions; the existing INA 243(d) visa-discontinuance requirement for countries denying or unreasonably delaying acceptance; violation of the existing INA 212(d)(5)(A) case-by-case urgent-humanitarian/significant-public-benefit parole limits; and INA 241(a)(2) detention during the removal period. Courts must advance and expedite these cases to the greatest practicable extent. INA 236(e) removes its express release/grant shield while leaving the other printed discretionary-judgment/detention/revocation/denial restrictions, and INA 242(f)(1) receives an exception for the printed listed actions, while its separate final-removal-order injunction standard remains. These review changes do not establish a general right to enjoin every immigration action. The parole clause changes its named administering actor to the Secretary of Homeland Security. The baseline removal period is generally 90 days with specified starting/extension conditions; the bill adds litigation standing over its detention requirement rather than creating that period. The pre-existing narrow witness/cooperator-protection release exception remains, redesignated as INA 236(c)(4).",
-      "limitations": [
+      "candidate_shared_limitations": [
         "The four listed property-offense terms take the meaning assigned by the jurisdiction where the acts occurred.",
         "The new custody ground requires both inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) and a listed offense predicate. Arrest or charge can suffice for the offense predicate; conviction is not required. Existing inadmissibility exceptions and waiver routes are not repealed, including specified battered-person/false-citizenship exceptions and document/fraud waivers.",
         "The pre-existing INA 236(c) witness/cooperator-protection release exception is redesignated rather than repealed: release requires the specified protection necessity, no danger and likely appearance. Ordinary bond or parole is not substituted for that narrow exception.",
@@ -36,6 +42,10 @@
         "The existing INA 236(c)(1) when-released framework remains; the new DHS detainer clause separately requires expeditious custody when the person is not otherwise detained. No actual detention timing or individual outcome is inferred.",
         "This is a whole-bill House passage choice. It does not establish separate component positions, guilt, actual detention/removal, a successful suit or enactment. The parallel House and Senate bills remain distinct proposal episodes; later enacted text does not replace either exact voting version."
       ],
+      "choice_meanings": {
+        "Yea": "supported passage of H.R.29 with its specified custody/detainer expansion and State enforcement-standing provisions",
+        "Nay": "opposed passage of H.R.29 with those provisions; no preferred alternative is established"
+      },
       "claim_source_map": [
         {
           "source_id": "govinfo:hr29eh",
@@ -118,7 +128,129 @@
           "passage": "(d) Discontinuing granting visas to nationals of country denying or delaying accepting alien On being notified by the Attorney General that the government of a foreign country denies or unreasonably delays accepting an alien who is a citizen, subject, national, or resident of that country after the Attorney General asks whether the government will accept the alien under this section, the Secretary of State shall order consular officers in that foreign country to discontinue granting immigrant visas or nonimmigrant visas, or both, to citizens, subjects, nationals, and residents of that country until the Attorney General notifies the Secretary that the country has accepted the alien. "
         }
       ],
-      "additional_source_ids": [
+      "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:6:candidate-v1",
+      "governed_source_identities": [
+        {
+          "source_id": "clerk:119:1:6",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "ceec8fe544e4d991bf9a00085e4d399a0895d0a1e63fa737f8cc19f973628834",
+          "governed_bytes_sha256": "978420121ee22aaf946f0a93593a7a40a6f7e5d4d910a73bae647de8db2e89a0"
+        },
+        {
+          "source_id": "govinfo:hr29eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "786bf3e200a6833558957f1f2c163fb19f0b122db26004575a816a6e6e272d5d",
+          "governed_bytes_sha256": "b26873e9fcaca96cca7fa1f5ab471b2e2a1439bd5b5e04fd5a8b82632bd4f97e"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "2aee54070816643d2a2121a4d41a9dd9ece1df3426e1e43740380290c4abc5a0",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        }
+      ],
+      "governed_source_identity_sha256": "f5ab2030cb2c8e18e8a0a4c169e57eab2fbd6d8d6c91f06747066d6b2ba77ee6",
+      "action_outcome_source_identities": [
+        {
+          "source_id": "clerk:119:1:6",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "ceec8fe544e4d991bf9a00085e4d399a0895d0a1e63fa737f8cc19f973628834",
+          "governed_bytes_sha256": "978420121ee22aaf946f0a93593a7a40a6f7e5d4d910a73bae647de8db2e89a0"
+        }
+      ],
+      "operative_meaning_source_identities": [
+        {
+          "source_id": "govinfo:hr29eh",
+          "source_type": "official_bill_text",
+          "text_version": "EH",
+          "raw_sha256": "786bf3e200a6833558957f1f2c163fb19f0b122db26004575a816a6e6e272d5d",
+          "governed_bytes_sha256": "b26873e9fcaca96cca7fa1f5ab471b2e2a1439bd5b5e04fd5a8b82632bd4f97e"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "2aee54070816643d2a2121a4d41a9dd9ece1df3426e1e43740380290c4abc5a0",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        }
+      ],
+      "semantic_ir_source_ids": [
+        "clerk:119:1:6",
+        "govinfo:hr29eh",
         "govinfo:8usc1182-2024-laken-context",
         "govinfo:8usc1226-2024-laken-context",
         "govinfo:8usc1225-2024-laken-context",
@@ -126,20 +258,41 @@
         "govinfo:8usc1252-2024-laken-context",
         "govinfo:8usc1253-2024-laken-context"
       ],
-      "choice_meanings": {
-        "Yea": "supported passage of H.R.29 with its specified custody/detainer expansion and State enforcement-standing provisions",
-        "Nay": "opposed passage of H.R.29 with those provisions; no preferred alternative is established"
-      }
+      "package_component_boundary": {
+        "boundary_type": "whole_measure",
+        "parent_package_meaning_projected": false,
+        "basis": [
+          "The four listed property-offense terms take the meaning assigned by the jurisdiction where the acts occurred.",
+          "The new custody ground requires both inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) and a listed offense predicate. Arrest or charge can suffice for the offense predicate; conviction is not required. Existing inadmissibility exceptions and waiver routes are not repealed, including specified battered-person/false-citizenship exceptions and document/fraud waivers.",
+          "The pre-existing INA 236(c) witness/cooperator-protection release exception is redesignated rather than repealed: release requires the specified protection necessity, no danger and likely appearance. Ordinary bond or parole is not substituted for that narrow exception.",
+          "State litigation requires alleged harm to the State or residents, including financial harm in excess of $100. Relief is appropriate injunctive relief and expedited handling to the greatest practicable extent; a filed suit or favorable judgment is not inferred.",
+          "Case-by-case humanitarian/significant-public-benefit parole limits and the conditional visa-discontinuance duty for countries refusing or delaying acceptance already exist. The bill adds State enforcement standing and related review changes; it does not newly create those substantive baseline limits.",
+          "The visa-discontinuance duty arises after the statutory federal notification that a foreign country denies or unreasonably delays acceptance after a request. It covers immigrant visas, nonimmigrant visas, or both for the specified nationals/residents in that country, and lasts until the statutory acceptance notice. These conditions are retained, not newly imposed.",
+          "The existing INA 236(c)(1) when-released framework remains; the new DHS detainer clause separately requires expeditious custody when the person is not otherwise detained. No actual detention timing or individual outcome is inferred.",
+          "This is a whole-bill House passage choice. It does not establish separate component positions, guilt, actual detention/removal, a successful suit or enactment. The parallel House and Senate bills remain distinct proposal episodes; later enacted text does not replace either exact voting version."
+        ]
+      },
+      "source_contract_version": "shared_legislative_corpus_v1",
+      "meaning_contract_version": "candidate-extension-v1",
+      "action_core_sha256": "73af0ddb2b6eb73596b2f3d262905e9e7106c085d4b06ccfca995ba24386bdf7"
     },
     {
       "action_id": "house:119:1:23",
-      "source_id": "govinfo:s5es",
-      "bill_number": 5,
-      "bill_type": "s",
-      "stage": "final_passage",
-      "episode_id": "episode:s5:119",
-      "short_description": "S.5: expanding specified immigration detention and State enforcement litigation",
-      "compact_description": "S.5 would expand mandatory immigration custody and DHS detainers for the specified inadmissibility/offense combination (burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or any crime resulting in another person's death or serious bodily injury), and add harm-conditioned State suits over specified detention, release, parole and visa duties.",
+      "exact_action_identity": "house:119:1:23",
+      "chamber": "house",
+      "congress": 119,
+      "session": 1,
+      "roll": 23,
+      "legislative_stage": "final_passage",
+      "action_date": "2025-01-22",
+      "exact_question": "On Passage",
+      "chamber_outcome": "Passed",
+      "enactment_status": "not_inferred_from_house_outcome",
+      "mechanism": "S.5: expanding specified immigration detention and State enforcement litigation",
+      "mechanism_availability": "candidate_source_mapped",
+      "candidate_exact_action_meaning": "S.5 would extend the federal mandatory-custody category to the following offenses: burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or any crime resulting in another person's death or serious bodily injury. The listed property-offense terms, assault of a law-enforcement officer and serious bodily injury take the meanings assigned by the jurisdiction where the acts occurred. The exact bill adds an INA 236(c) mandatory-custody category requiring inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) together with a specified criminal predicate: being charged, arrested, convicted, admitting commission, or admitting acts constituting the essential elements. These inadmissibility categories concern presence without admission/parole or undesignated arrival, material immigration fraud/false citizenship claims, and specified entry-document defects, subject to their existing statutory qualifications. DHS must issue a detainer for a person meeting the new ground and, if the person is not otherwise detained by Federal, State or local officials, effectively and expeditiously take custody. The bill also gives a State attorney general or other authorized State officer standing, on alleged harm to the State or residents (including financial harm in excess of $100), to seek appropriate injunctive relief in district court over five specified federal matters: INA 235(b)(1)/(2) detention/removal requirements; INA 236 release, bond or parole decisions; the existing INA 243(d) visa-discontinuance requirement for countries denying or unreasonably delaying acceptance; violation of the existing INA 212(d)(5)(A) case-by-case urgent-humanitarian/significant-public-benefit parole limits; and INA 241(a)(2) detention during the removal period. Courts must advance and expedite these cases to the greatest practicable extent. INA 236(e) removes its express release/grant shield while leaving the other printed discretionary-judgment/detention/revocation/denial restrictions, and INA 242(f)(1) receives an exception for the printed listed actions, while its separate final-removal-order injunction standard remains. These review changes do not establish a general right to enjoin every immigration action. The parole clause changes its named administering actor to the Secretary of Homeland Security. The baseline removal period is generally 90 days with specified starting/extension conditions; the bill adds litigation standing over its detention requirement rather than creating that period. The pre-existing narrow witness/cooperator-protection release exception remains, redesignated as INA 236(c)(4).",
+      "candidate_short_description": "S.5: expanding specified immigration detention and State enforcement litigation",
+      "candidate_compact_description": "S.5 would expand mandatory immigration custody and DHS detainers for the specified inadmissibility/offense combination (burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or any crime resulting in another person's death or serious bodily injury), and add harm-conditioned State suits over specified detention, release, parole and visa duties.",
       "compact_source_refs": [
         "govinfo:s5es",
         "govinfo:8usc1182-2024-laken-context",
@@ -149,8 +302,7 @@
         "govinfo:8usc1252-2024-laken-context",
         "govinfo:8usc1253-2024-laken-context"
       ],
-      "meaning": "S.5 would extend the federal mandatory-custody category to the following offenses: burglary, theft, larceny, shoplifting, assault of a law-enforcement officer, or any crime resulting in another person's death or serious bodily injury. The listed property-offense terms, assault of a law-enforcement officer and serious bodily injury take the meanings assigned by the jurisdiction where the acts occurred. The exact bill adds an INA 236(c) mandatory-custody category requiring inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) together with a specified criminal predicate: being charged, arrested, convicted, admitting commission, or admitting acts constituting the essential elements. These inadmissibility categories concern presence without admission/parole or undesignated arrival, material immigration fraud/false citizenship claims, and specified entry-document defects, subject to their existing statutory qualifications. DHS must issue a detainer for a person meeting the new ground and, if the person is not otherwise detained by Federal, State or local officials, effectively and expeditiously take custody. The bill also gives a State attorney general or other authorized State officer standing, on alleged harm to the State or residents (including financial harm in excess of $100), to seek appropriate injunctive relief in district court over five specified federal matters: INA 235(b)(1)/(2) detention/removal requirements; INA 236 release, bond or parole decisions; the existing INA 243(d) visa-discontinuance requirement for countries denying or unreasonably delaying acceptance; violation of the existing INA 212(d)(5)(A) case-by-case urgent-humanitarian/significant-public-benefit parole limits; and INA 241(a)(2) detention during the removal period. Courts must advance and expedite these cases to the greatest practicable extent. INA 236(e) removes its express release/grant shield while leaving the other printed discretionary-judgment/detention/revocation/denial restrictions, and INA 242(f)(1) receives an exception for the printed listed actions, while its separate final-removal-order injunction standard remains. These review changes do not establish a general right to enjoin every immigration action. The parole clause changes its named administering actor to the Secretary of Homeland Security. The baseline removal period is generally 90 days with specified starting/extension conditions; the bill adds litigation standing over its detention requirement rather than creating that period. The pre-existing narrow witness/cooperator-protection release exception remains, redesignated as INA 236(c)(4).",
-      "limitations": [
+      "candidate_shared_limitations": [
         "The listed property-offense terms, assault of a law-enforcement officer and serious bodily injury take the meanings assigned by the jurisdiction where the acts occurred.",
         "The new custody ground requires both inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) and a listed offense predicate. Arrest or charge can suffice for the offense predicate; conviction is not required. Existing inadmissibility exceptions and waiver routes are not repealed, including specified battered-person/false-citizenship exceptions and document/fraud waivers.",
         "The pre-existing INA 236(c) witness/cooperator-protection release exception is redesignated rather than repealed: release requires the specified protection necessity, no danger and likely appearance. Ordinary bond or parole is not substituted for that narrow exception.",
@@ -160,6 +312,10 @@
         "The existing INA 236(c)(1) when-released framework remains; the new DHS detainer clause separately requires expeditious custody when the person is not otherwise detained. No actual detention timing or individual outcome is inferred.",
         "This is a whole-bill House passage choice. It does not establish separate component positions, guilt, actual detention/removal, a successful suit or enactment. The parallel House and Senate bills remain distinct proposal episodes; later enacted text does not replace either exact voting version."
       ],
+      "choice_meanings": {
+        "Yea": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
+        "Nay": "opposed passage of S.5 with those provisions; no preferred alternative is established"
+      },
       "claim_source_map": [
         {
           "source_id": "govinfo:s5es",
@@ -242,7 +398,129 @@
           "passage": "(d) Discontinuing granting visas to nationals of country denying or delaying accepting alien On being notified by the Attorney General that the government of a foreign country denies or unreasonably delays accepting an alien who is a citizen, subject, national, or resident of that country after the Attorney General asks whether the government will accept the alien under this section, the Secretary of State shall order consular officers in that foreign country to discontinue granting immigrant visas or nonimmigrant visas, or both, to citizens, subjects, nationals, and residents of that country until the Attorney General notifies the Secretary that the country has accepted the alien. "
         }
       ],
-      "additional_source_ids": [
+      "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:23:candidate-v1",
+      "governed_source_identities": [
+        {
+          "source_id": "clerk:119:1:23",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "6d1534595e51c0e337312ac921109d8c58ae5f170a533beca888cc4d56fe1e3d",
+          "governed_bytes_sha256": "5e3bfea582d0d4b08b6dde19a459762080e3097475b5ad447dd1619fa199fd9a"
+        },
+        {
+          "source_id": "govinfo:s5es",
+          "source_type": "official_bill_text",
+          "text_version": "ES",
+          "raw_sha256": "8c4261a990433045d7af03701dbb32959e5e0645acea842d8096e55db270bfae",
+          "governed_bytes_sha256": "4b29d7cb728387214f9a7ed69a408e69ec2aecfeb488f0d0f8e50b62ca867d49"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "2aee54070816643d2a2121a4d41a9dd9ece1df3426e1e43740380290c4abc5a0",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        }
+      ],
+      "governed_source_identity_sha256": "518451310d2acae49152c1771c8c0ccc2c30dabaa6cb05d6eab30f131fe1eb0b",
+      "action_outcome_source_identities": [
+        {
+          "source_id": "clerk:119:1:23",
+          "source_type": "house_clerk_roll_call",
+          "text_version": null,
+          "raw_sha256": "6d1534595e51c0e337312ac921109d8c58ae5f170a533beca888cc4d56fe1e3d",
+          "governed_bytes_sha256": "5e3bfea582d0d4b08b6dde19a459762080e3097475b5ad447dd1619fa199fd9a"
+        }
+      ],
+      "operative_meaning_source_identities": [
+        {
+          "source_id": "govinfo:s5es",
+          "source_type": "official_bill_text",
+          "text_version": "ES",
+          "raw_sha256": "8c4261a990433045d7af03701dbb32959e5e0645acea842d8096e55db270bfae",
+          "governed_bytes_sha256": "4b29d7cb728387214f9a7ed69a408e69ec2aecfeb488f0d0f8e50b62ca867d49"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "97d69291ed9ba2729a87ae8edcb9a2b635b7486287e95d91b39d8104e462eaf9",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "2aee54070816643d2a2121a4d41a9dd9ece1df3426e1e43740380290c4abc5a0",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "source_type": "official_statutory_text",
+          "text_version": "2024 Code; complete identified operative provisions only; unrelated section/history omitted",
+          "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        }
+      ],
+      "semantic_ir_source_ids": [
+        "clerk:119:1:23",
+        "govinfo:s5es",
         "govinfo:8usc1182-2024-laken-context",
         "govinfo:8usc1226-2024-laken-context",
         "govinfo:8usc1225-2024-laken-context",
@@ -250,13 +528,24 @@
         "govinfo:8usc1252-2024-laken-context",
         "govinfo:8usc1253-2024-laken-context"
       ],
-      "choice_meanings": {
-        "Yea": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
-        "Nay": "opposed passage of S.5 with those provisions; no preferred alternative is established"
-      }
+      "package_component_boundary": {
+        "boundary_type": "whole_measure",
+        "parent_package_meaning_projected": false,
+        "basis": [
+          "The listed property-offense terms, assault of a law-enforcement officer and serious bodily injury take the meanings assigned by the jurisdiction where the acts occurred.",
+          "The new custody ground requires both inadmissibility under INA 212(a)(6)(A), (6)(C), or (7) and a listed offense predicate. Arrest or charge can suffice for the offense predicate; conviction is not required. Existing inadmissibility exceptions and waiver routes are not repealed, including specified battered-person/false-citizenship exceptions and document/fraud waivers.",
+          "The pre-existing INA 236(c) witness/cooperator-protection release exception is redesignated rather than repealed: release requires the specified protection necessity, no danger and likely appearance. Ordinary bond or parole is not substituted for that narrow exception.",
+          "State litigation requires alleged harm to the State or residents, including financial harm in excess of $100. Relief is appropriate injunctive relief and expedited handling to the greatest practicable extent; a filed suit or favorable judgment is not inferred.",
+          "Case-by-case humanitarian/significant-public-benefit parole limits and the conditional visa-discontinuance duty for countries refusing or delaying acceptance already exist. The bill adds State enforcement standing and related review changes; it does not newly create those substantive baseline limits.",
+          "The visa-discontinuance duty arises after the statutory federal notification that a foreign country denies or unreasonably delays acceptance after a request. It covers immigrant visas, nonimmigrant visas, or both for the specified nationals/residents in that country, and lasts until the statutory acceptance notice. These conditions are retained, not newly imposed.",
+          "The existing INA 236(c)(1) when-released framework remains; the new DHS detainer clause separately requires expeditious custody when the person is not otherwise detained. No actual detention timing or individual outcome is inferred.",
+          "This is a whole-bill House passage choice. It does not establish separate component positions, guilt, actual detention/removal, a successful suit or enactment. The parallel House and Senate bills remain distinct proposal episodes; later enacted text does not replace either exact voting version."
+        ]
+      },
+      "source_contract_version": "shared_legislative_corpus_v1",
+      "meaning_contract_version": "candidate-extension-v1",
+      "action_core_sha256": "399ed7789026039d88d6e61b70b8aaf134b885071bb570664610bac6fec4d3af"
     }
   ],
-  "blocked_episode_ids": [],
-  "blocked_reason": "No authored episode held; unreviewed inventory actions remain outside generated behavioral findings.",
-  "policy_relationships": []
+  "corpus_sha256": "1b9e20f99714e5177a040db3a304bcb0982832fe45d80a8f66588617ca6ac914"
 }

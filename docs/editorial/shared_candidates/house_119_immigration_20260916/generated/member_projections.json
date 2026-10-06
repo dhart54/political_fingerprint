@@ -1,0 +1,102 @@
+[
+  {
+    "schema_version": "member_action_projection_v1",
+    "artifact_id": "member-action-projection:f000477:house:119:v3",
+    "member_id": "F000477",
+    "party": "D",
+    "context_metadata": {
+      "display_name": "Foushee",
+      "service_basis": "Named official Clerk member row at each listed action; no unobserved service interval inferred."
+    },
+    "authoritative_legislative_meaning": false,
+    "actions": [
+      {
+        "action_id": "house:119:1:6",
+        "action_core_sha256": "73af0ddb2b6eb73596b2f3d262905e9e7106c085d4b06ccfca995ba24386bdf7",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:1:6",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "ceec8fe544e4d991bf9a00085e4d399a0895d0a1e63fa737f8cc19f973628834",
+            "governed_bytes_sha256": "978420121ee22aaf946f0a93593a7a40a6f7e5d4d910a73bae647de8db2e89a0"
+          }
+        ],
+        "member_action_source_identity_sha256": "12ca0dd88a05d28e1c220418546e6313c91029f634d4c46720854309ba7498ac"
+      },
+      {
+        "action_id": "house:119:1:23",
+        "action_core_sha256": "399ed7789026039d88d6e61b70b8aaf134b885071bb570664610bac6fec4d3af",
+        "official_status": "Nay",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "opposes_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:1:23",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "6d1534595e51c0e337312ac921109d8c58ae5f170a533beca888cc4d56fe1e3d",
+            "governed_bytes_sha256": "5e3bfea582d0d4b08b6dde19a459762080e3097475b5ad447dd1619fa199fd9a"
+          }
+        ],
+        "member_action_source_identity_sha256": "c525760604f526e39b3533a4ee674b388564a11593c1dafd479d592b2dd8d1eb"
+      }
+    ],
+    "projection_sha256": "758d2f1460750a9b42fc85d8f59f7bd6846e434ffe4d4780281866b107e070c7"
+  },
+  {
+    "schema_version": "member_action_projection_v1",
+    "artifact_id": "member-action-projection:m001184:house:119:v3",
+    "member_id": "M001184",
+    "party": "R",
+    "context_metadata": {
+      "display_name": "Massie",
+      "service_basis": "Named official Clerk member row at each listed action; no unobserved service interval inferred."
+    },
+    "authoritative_legislative_meaning": false,
+    "actions": [
+      {
+        "action_id": "house:119:1:6",
+        "action_core_sha256": "73af0ddb2b6eb73596b2f3d262905e9e7106c085d4b06ccfca995ba24386bdf7",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:1:6",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "ceec8fe544e4d991bf9a00085e4d399a0895d0a1e63fa737f8cc19f973628834",
+            "governed_bytes_sha256": "978420121ee22aaf946f0a93593a7a40a6f7e5d4d910a73bae647de8db2e89a0"
+          }
+        ],
+        "member_action_source_identity_sha256": "12ca0dd88a05d28e1c220418546e6313c91029f634d4c46720854309ba7498ac"
+      },
+      {
+        "action_id": "house:119:1:23",
+        "action_core_sha256": "399ed7789026039d88d6e61b70b8aaf134b885071bb570664610bac6fec4d3af",
+        "official_status": "Yea",
+        "service_status": "in_service",
+        "evidence_status": "official_record_resolved",
+        "exact_choice_effect": "supports_exact_choice",
+        "member_action_source_identities": [
+          {
+            "source_id": "clerk:119:1:23",
+            "source_type": "house_clerk_roll_call",
+            "text_version": null,
+            "raw_sha256": "6d1534595e51c0e337312ac921109d8c58ae5f170a533beca888cc4d56fe1e3d",
+            "governed_bytes_sha256": "5e3bfea582d0d4b08b6dde19a459762080e3097475b5ad447dd1619fa199fd9a"
+          }
+        ],
+        "member_action_source_identity_sha256": "c525760604f526e39b3533a4ee674b388564a11593c1dafd479d592b2dd8d1eb"
+      }
+    ],
+    "projection_sha256": "3482aae37f8d20c121fa538a15980c2740618d0062c196d8f140ecf79b2c6d14"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
+  "domain_id": "IMMIGRATION_BORDER",
+  "scope_boundaries": [
+    "Two explicitly listed Immigration & Border candidate inputs in a fixed 676-action September 16, 2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "historical_inputs_rewritten": false,
+  "semantic_ir_case_scope": "full_record",
+  "action_mappings": [
+    {
+      "action_id": "house:119:1:6",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr29:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10006
+      },
+      "mapping_sha256": "43a5e25c9b2fb1f066bc2cd9d596d6c2ff5d069f73f2a4910699162973116fe6"
+    },
+    {
+      "action_id": "house:119:1:23",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:s5:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10023
+      },
+      "mapping_sha256": "49e0914bd4613bc2eadffee49c86fb49ef5f0442449de6b409dc71ad9bcc5529"
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "episode:hr29:119",
+      "action_ids": [
+        "house:119:1:6"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
+      "episode_id": "episode:s5:119",
+      "action_ids": [
+        "house:119:1:23"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    }
+  ],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [],
+  "source_render_constraints": [],
+  "mapping_sha256": "663cb22c97455415a20d70e10083a06c5c9c312978cbfe3d4a4afba59a6860ea"
+}
