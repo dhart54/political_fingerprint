@@ -3299,3 +3299,86 @@ CBP operations on corrected state, then remaining DOJ/incarceration/removal/
 reimbursement, continuing/omnibus/NDAA packages and ordinary screenings.
 Existing .w/ib owner and historical markers preserved, no current shutdown,
 merge, deployment, production/config/security/schema or editorial authority.
+
+
+## Checkpoint 53: Preserved CBP operations resumed on corrected bonus state
+
+Reapplied the preserved additive CBP increment on exact correction
+65a0ea27b513a2d550655680b98beb63bb28b545, rather than restoring old
+authoring. Complete snapshot comparison verifies only the existing Senate
+bonus repair and four declared precommit source-first copy refinements:
+explicit CBP facilities owned/leased/operated scope, separate facilities
+availability sentences, and clear FLETC training/facility roles. Original
+11-file pending snapshot remains intact and hash-verified. Each three-case
+bonus sentence and retention/signing-only agreement remains in both members;
+historical Major preserved, bounded independent correction recheck pending.
+
+House 60002 personnel $4.1 billion, bonuses $2,052,630,000, marked-patrol
+lease/acquisition $813 million and workforce sourcing $600 million have own
+purposes. Coordinator restriction concerns (a) personnel recruiting/hiring/
+training funds without a start date, not every funding source/activity. FLETC
+separately gets exact $285 million for newly hired DHS federal personnel
+training and $465 million facility purposes. House 60003 separately funds
+nonintrusive/narcotics-entry technology $1,076,317,000, surveillance $2.766
+billion, biometric system $673 million, Air/Marine $1.234 billion, vetting/
+criminal-history databases $16 million, DHS trafficking $500 million and
+commemorations $1 million. Additional fiscal year 2025 funds expressly until
+September 30, 2029; no actual hire/award/cost/data/enforcement/expenditure.
+Tower restriction is only (a)(2) funds, with same tower both tested and
+accepted by Federal Government under the House autonomous definition.
+
+Senate 90002 personnel $4.1 billion, recruitment/performance/retention awards
+$2,052,630,000 and repair/additional patrol units $855 million each expressly
+until September 30, 2029. Separate $5 billion facilities/checkpoints owned,
+leased or operated by CBP does not print that phrase; question 45 reserves
+availability application before borrowing it or assuming a different expiry.
+Coordinator (a)-fund restriction begins after October 31, 2028, not an
+immediate universal prohibition. Senate 90004 $6.168 billion is a listed-
+purpose envelope, including own entry-or-exit/port, initial UAC screening
+consistent with TVPRA, technology and other named purposes, without House
+earmarks. Southwest/northern tower restriction uses CBP testing/acceptance
+and the distinct algorithmic/real-time autonomous definition. Neither
+definition or funding proves accuracy or actual technology capability.
+
+Complete material biometric system preserves original collection-category,
+accuracy/access/misuse/correction/appeal and other conditions. No first-ever
+authority, new every-traveller collection rule or guaranteed correction.
+Full UAC/TVPRA initial-screening and related protections bound; no House
+tattoo/disclosure/disputed-withdrawal import or actual child outcome.
+Senate 90007 DHS $10 billion cost reimbursement uses own border-support
+purpose and dates, not an inferred State-only or other grant's January-date
+restriction. Senate 100053 $750 million FLETC has at least $285 million
+training and at most $465 million facilities. Training covers newly hired
+DHS federal personnel and State/local agencies supporting DHS; facilities
+include named maintenance/training equipment. These are not exact House
+splits. Both sections expressly until September 30, 2029, no actual result.
+
+Ten bindings, two qualification hashes, two House comparisons and snapshot/
+copy-refinement provenance sealed in hr1_cbp_operations_funding_review.json.
+60002 differs from EH by one space; 60003 only by floor pagination. Original
+bytes preserved, no correcting-resolution item targets either. All 1,285
+sources/262 captures and 37 other actions unchanged, prior clauses/compacts/
+choice metadata and all previous corrections preserved. 40 focused tests in
+10.037 seconds, seven semantic checks, seven-file byte replay, 171 extents,
+990 unchanged Health sources, candidate/publication isolation, queue/accounting/
+audit integrity, source-first copy and final diff pass. Tests do not prove
+semantic truth. Core a7af802566f312f95f8bf954033f888fb22652f70736f59d5337e3261a032307.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged, approval-lineage follow-up
+retained. 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations,
+70 findings (Foushee 36/Massie 34); 729 bindings. Remaining 221 screenings,
+TWO partial H.R.1 reviews, 45 separate application questions, original-host/
+grant-matching research. Same-owner audit partial; final verdict null.
+
+Question 45 recommendation: retain fiscal appropriation, owned/leased/operated
+scope and printed duration absence; obtain complete source-grounded applicable
+appropriations review before any duration or current-availability claim.
+Alternatives and safe parallel work recorded, not unavailable evidence or a
+screening disposition. Independent CBP review and bonus correction recheck
+pending; no application or full-package acceptance. Exact correction CI
+37539994229 has six successful jobs, m14h-exact-head, full-record benchmark
+and receipt-evidence-repair-postgres pending, no failure reported. Current
+exact CI follows push. Continue remaining DOJ/incarceration/reimbursement/
+removal clauses, then continuing/omnibus/NDAA packages and ordinary screenings.
+Existing .w/ib owner, original snapshot and historical markers preserved;
+no current shutdown, merge, deployment, production/config/security/schema,
+acceptance, promotion or publication authority.
