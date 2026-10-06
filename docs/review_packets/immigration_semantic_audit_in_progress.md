@@ -1542,3 +1542,70 @@ ACA, tax/remittance, child/enforcement funding, CR/omnibus/NDAA and screenings.
 The existing .w/ib remains active; historical deadline/terminal markers are
 preserved and no current shutdown boundary is present. No merge, deployment,
 production, acceptance, promotion, publication or methodology change.
+
+
+## Checkpoint 37: Medicaid expansion and emergency matching rates
+
+House section 44111 quotes an 80-percent expansion matching rate for specified
+State quarters beginning October 1, 2027, replacing the existing 90-percent
+percentage for the named expansion expenditures. The early-expansion formula
+retains its own cohort and quarter substitutions. This is not every Medicaid
+rate or an actual identified State's loss. Both exclusions remain at BOTH
+positions in the financial-assistance trigger: the assistance recipient or
+on-behalf-of alien AND the insurance-covered alien must each be not qualified
+and not a lawfully residing child/pregnant woman receiving 1903(v)(4) assistance.
+The separate comprehensive-coverage trigger, all funding sources, plan/program
+location, modified parole carveout, status timing and State-opinion predicates
+are preserved. Defined insurance is not every health expense; emergency care
+alone is not called comprehensive coverage.
+
+House floor and EH operative bytes are identical, including the printed
+1395d parenthetical after SSA section 1905, shortened 1905(y)(C) references
+and wavier typo. Complete 1396d and 1395d witnesses identify different SSA
+sections: Medicaid 1905 versus Medicare 1812. None of the 20 adopted H.Res. 492
+corrections targets this clause. Question 33 reserves application of the
+printed citation/anchors; no repaired source or actual legal outcome is accepted.
+Recommendation: preserve the qualified quoted mechanism pending independent
+source-grounded application review. Alternatives and safe work are in the audit
+queue; Medicare/ACA and remaining components can continue.
+
+Senate section 71110 instead caps the matching percentage for 1903(v)(2) care
+furnished to an alien described in (v)(1) at the State's 1905(b) percentage,
+notwithstanding (y)/(z), beginning October 1, 2026. Emergency necessity,
+otherwise eligibility and no-transplant predicates remain. This is a ceiling,
+not a universal 50-percent rate, automatic equality, all services or termination
+of the emergency exception. The fiscal 2026 CMS $1 million appropriation is
+available until expended, distinct from actual spending or quantified savings.
+
+Four new governed sources bind complete material rate/cohort/insurance and
+citation witnesses; twelve new claims and two source-reconstructed qualifications
+are sealed in hr1_medicaid_fmap_review.json. Earlier substantive meanings,
+claims and compacts remain. Only the previous verification qualification's
+stale 'next review' sentence is changed to identify FMAP as a separate
+description; exact before/after hashes record that context transition. Earlier
+sealed checkpoint receipts are not rewritten. Full member outputs were read
+for propagated predicates and retention of prior visa/funeral/EOIR/SNAP repairs.
+
+35 candidate tests pass (8.021 seconds); seven semantic checks pass; all seven
+outputs replay byte identically. Twelve binding/hash/length checks, two new
+copy hashes, literal floor/EH equality, 116 bounded extents, current audit,
+Clerk/accounting/hash integrity and final diff verify. No runtime, frontend,
+Health, schema or production change; no acceptance or exhaustive audit verdict.
+Tests establish mechanical integrity, not semantic truth.
+
+Core: 22e98d4ace7462782caf04454a96441c1ec82bd3b75c5b35e0e59b54627b90ff.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f (unchanged).
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (36 Foushee, 34 Massie). There are 1,228 governed sources (990
+unchanged Health reuses, 238 new), 509 claims and 160 provisional captures.
+Remaining: 221 ordinary screenings, TWO partial H.R. 1 component reviews
+and 33 separate legal/application questions. No whole-package closure.
+Exact eba06b55f82d34800b93641ea729f14d40b5623f passed all nine hosted jobs
+in run 37515153589. Current exact-head CI follows push.
+
+Next: House section 112103 versus Senate section 71201 Medicare status and
+transition rules, then ACA credit/verification, tax/remittance, child/enforcement
+funding and remaining packages/screenings. Both Medicare primary clauses are
+already read; governed baseline capture and qualification authoring are next.
+Preserve existing worktree/ownership and historical markers. No current shutdown
+boundary, duplicate checkout, production, publication or methodology change.
