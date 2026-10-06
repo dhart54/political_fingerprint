@@ -24,8 +24,10 @@
     "house:119:1:42",
     "house:119:1:63",
     "house:119:1:65",
+    "house:119:1:102",
     "house:119:1:153",
     "house:119:1:156",
+    "house:119:1:163",
     "house:119:1:171",
     "house:119:1:183",
     "house:119:1:184",
@@ -49,9 +51,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 178,
-      "interpreted_substantive_directional": 18,
+      "interpreted_substantive_directional": 20,
       "exact_action_ineligible": 78,
-      "source_unresolved": 401,
+      "source_unresolved": 399,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -61,14 +63,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 18,
-    "directional_substantive_actions": 18,
+    "substantive_eligible_actions": 20,
+    "directional_substantive_actions": 20,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 178,
     "expressive_nonbinding_actions": 1,
     "exact_action_ineligible_actions": 78,
-    "unresolved_boundary_cases": 401,
-    "independent_episode_count": 18,
+    "unresolved_boundary_cases": 399,
+    "independent_episode_count": 20,
     "multi_action_episode_count": 0,
     "mechanism_types": [
       "final_passage",
@@ -76,8 +78,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 18,
-      "substantive_actions": 18,
+      "ready_substantive_actions": 20,
+      "substantive_actions": 20,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -272,8 +274,10 @@
         "house:119:1:42",
         "house:119:1:63",
         "house:119:1:65",
+        "house:119:1:102",
         "house:119:1:153",
         "house:119:1:156",
+        "house:119:1:163",
         "house:119:1:171",
         "house:119:1:183",
         "house:119:1:184",
@@ -384,14 +388,12 @@
         "house:119:1:76",
         "house:119:1:79",
         "house:119:1:100",
-        "house:119:1:102",
         "house:119:1:116",
         "house:119:1:119",
         "house:119:1:145",
         "house:119:1:150",
         "house:119:1:151",
         "house:119:1:162",
-        "house:119:1:163",
         "house:119:1:165",
         "house:119:1:166",
         "house:119:1:168",
@@ -815,6 +817,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr22:119",
+        "action_ids": [
+          "house:119:1:102"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr2931:119",
         "action_ids": [
           "house:119:1:153"
@@ -824,6 +832,12 @@
         "episode_candidate_id": "episode:hr2966:119",
         "action_ids": [
           "house:119:1:156"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr884:119",
+        "action_ids": [
+          "house:119:1:163"
         ]
       },
       {
@@ -885,7 +899,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "523f28324743f5dad32b145aff54cd599f69b5cf177cddea5b4fcd5323e37873",
+  "universe_subject_sha256": "e7eafc476c5bf1e6a1c735415f7ac205e2bc57a2521a9a5975316a549e027c1e",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -6255,8 +6269,8 @@
       "date": "2025-04-10",
       "measure": "bill_119_hr_22",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact H.R.22 EH directly governs citizenship evidence/verification and naturalization/removal-investigation duties. Complete NVRA, SAVE statutory system/use restrictions, INA notice/alien/national/voting frameworks, passport/nationality and REAL ID authority independently read. Preserve alternative evidence, criminal/civil chapeaux, State exemptions, prospective timing and printed cross-reference/use-interaction dependencies. Candidate describes the whole proposal without resolving individual legal outcomes or implicit repeal; no interpretation reused from another domain.",
       "source": {
         "source_id": "clerk:119:1:102",
         "url": "https://clerk.house.gov/evs/2025/roll102.xml",
@@ -6264,7 +6278,7 @@
         "governed_bytes_sha256": "bf6cbdf1e34d473e581461c412d3ad2d6469c50f83e5a7ba2fd0bcb1dc419979",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr22:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_22",
       "member_action": "nay",
@@ -6273,25 +6287,109 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact H.R.22 EH directly governs citizenship evidence/verification and naturalization/removal-investigation duties. Complete NVRA, SAVE statutory system/use restrictions, INA notice/alien/national/voting frameworks, passport/nationality and REAL ID authority independently read. Preserve alternative evidence, criminal/civil chapeaux, State exemptions, prospective timing and printed cross-reference/use-interaction dependencies. Candidate describes the whole proposal without resolving individual legal outcomes or implicit repeal; no interpretation reused from another domain.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:102",
           "url": "https://clerk.house.gov/evs/2025/roll102.xml",
           "raw_sha256": "c8bc607a9db1b71c1a947d636942444a062cd90b87f98e6417e9edd4c60d5064",
-          "governed_bytes_sha256": "bf6cbdf1e34d473e581461c412d3ad2d6469c50f83e5a7ba2fd0bcb1dc419979",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bf6cbdf1e34d473e581461c412d3ad2d6469c50f83e5a7ba2fd0bcb1dc419979"
+        },
+        {
+          "source_id": "govinfo:hr22eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+          "raw_sha256": "17b0a2193f73787a04e9f1b5984eb29e06a6a4849dba7077683f4d07d7bf8273",
+          "governed_bytes_sha256": "1563d5d4b9458887c0774699747cf249316336c8868254c3d503ec252e4cd7aa"
+        },
+        {
+          "source_id": "govinfo:52usc20502-20511-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm",
+          "raw_sha256": "fe3e64aff50e191b7ff4e3c7e853083025c52c973cfdb012761f7aa94d80dc88",
+          "governed_bytes_sha256": "c4cf60927574442850f782fa77e546e1bf30445cec99f3afd01929aec0b42bdd"
+        },
+        {
+          "source_id": "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm",
+          "raw_sha256": "27bbbf783da106a5db2206b0ff52d94abaa795d7f7d56cad6c9f8de0d5302b89",
+          "governed_bytes_sha256": "7e64add5af5cf102c191142f0fddb544f47f079a67e994e61ab80a12b944948a"
+        },
+        {
+          "source_id": "govinfo:8usc1229-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm",
+          "raw_sha256": "b4f48d54d2a90aeaf2081086b4bc63f762573215eb12c196fe2d61f1860d9aea",
+          "governed_bytes_sha256": "cf713773135c4ad61006f0f50f1b35725b9f4390ae3835dbe5ac0fa8e3efb08f"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:22usc212-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm",
+          "raw_sha256": "904d1320b88ccbcd682fc8e37d2f725cf0b0d6065d0615e9e4c5c8f630ddafe7",
+          "governed_bytes_sha256": "fdc32a66be9497f81f4b0ba8bfa8a5f1540a8df7615f07ab9b34efe1c3f42b20"
+        },
+        {
+          "source_id": "govinfo:8usc1408-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partI-sec1408.htm",
+          "raw_sha256": "b27fca9d8aaa6056dc728960ac7dd98502f54739b546779bc066dbcd100e0c11",
+          "governed_bytes_sha256": "c15224822086e04dbe3b160653a9db6a08aaaef0b42d7588100bc4a9e1b7cc41"
+        },
+        {
+          "source_id": "govinfo:49usc30301-2024-real-id-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap303-sec30301.htm",
+          "raw_sha256": "afe141fe1362d0acfa6257b6a5ad9fbcfea7c15d2e179f648f4698396a6e28f2",
+          "governed_bytes_sha256": "0a48ef79fa3b9f4c5e850ce6a1b82a5a451843215313c91bc6d96520e1b4670c"
+        },
+        {
+          "source_id": "govinfo:18usc611-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm",
+          "raw_sha256": "2fddfd9195e09838b3277bac92d033498228a9c6fb9efd73890b786289b330a1",
+          "governed_bytes_sha256": "d281c26437ab6c908c1cae5c71d2370563c47b7bb47379c6ddc921a3e9413f88"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-unlawful-voting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a49e94dce9dbe79c705065681a1813f7ff52d99e2587e85d564b47f5c4e04d05"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-unlawful-voting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "1fb0e7197e3789ca796bcf0d0aff0870201a2e86a19c2216f491ab87516a4a3d"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:hres294eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres294eh/html/BILLS-119hres294eh.htm",
+          "raw_sha256": "ee784c47d450608a2bc19948528b58a94f2be91ec2756c1baf987c844360fe09",
+          "governed_bytes_sha256": "45b5b4ee38e4d75ad751b21c918737c30ebde67015ba509e3e680a782138909a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8b08f2016e3e2091986762cabc9fa3728789f536e01ced7af094cb41b6ece93b"
       },
       "historical_raw_hash_matches": true
     },
@@ -9440,8 +9538,8 @@
       "date": "2025-06-10",
       "measure": "bill_119_hr_884",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Exact D.C. citizenship-based voting prohibition and whole24-242repeal independently establish membership. Complete local Act and qualified federal voting baseline/retained nationality definition read; preserve local/federal, other-qualification, revival, fiscal/effective and separate-rule/bill boundaries. No individual outcome, penalty or immigration-removal inference.",
       "source": {
         "source_id": "clerk:119:1:163",
         "url": "https://clerk.house.gov/evs/2025/roll163.xml",
@@ -9449,7 +9547,7 @@
         "governed_bytes_sha256": "9f7e64569a52eb325d2001de0793c2c66bb53054b489748ab926516c64f178ff",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr884:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_884",
       "member_action": "nay",
@@ -9458,25 +9556,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Exact D.C. citizenship-based voting prohibition and whole24-242repeal independently establish membership. Complete local Act and qualified federal voting baseline/retained nationality definition read; preserve local/federal, other-qualification, revival, fiscal/effective and separate-rule/bill boundaries. No individual outcome, penalty or immigration-removal inference.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:163",
           "url": "https://clerk.house.gov/evs/2025/roll163.xml",
           "raw_sha256": "13d6a5a8ad30fb73b9947421e8d0efc811913a95a53fb9c94569a218b4ba88f2",
-          "governed_bytes_sha256": "9f7e64569a52eb325d2001de0793c2c66bb53054b489748ab926516c64f178ff",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "9f7e64569a52eb325d2001de0793c2c66bb53054b489748ab926516c64f178ff"
+        },
+        {
+          "source_id": "govinfo:hr884eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr884eh/html/BILLS-119hr884eh.htm",
+          "raw_sha256": "a1671e1dff73d5ee8ac8ed5773e75dc539ed2980b1f3ce620eb73c4b664fc1ee",
+          "governed_bytes_sha256": "79c9a56b2aeadafc9b973447134a884b5e1cc5b5476f3cb325567d2b401187c8"
+        },
+        {
+          "source_id": "dc-council:law24-242",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/24/laws/24-242.xml",
+          "raw_sha256": "f1300974bdcbf415fe49361f47d609338db0617c81150f9cba7371e4f85d61a4",
+          "governed_bytes_sha256": "4759a0d172c893ac439f4c8e339da22d663cff27146289cb61757a0bcffb290d"
+        },
+        {
+          "source_id": "govinfo:18usc611-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm",
+          "raw_sha256": "2fddfd9195e09838b3277bac92d033498228a9c6fb9efd73890b786289b330a1",
+          "governed_bytes_sha256": "d281c26437ab6c908c1cae5c71d2370563c47b7bb47379c6ddc921a3e9413f88"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:hres489eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+          "raw_sha256": "c677dc09189eb2c1827968311e2d56213b26f3ea41a4b3664465b82b87938654",
+          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "044ae20c1ece55f5020c30991e7bd55f52a0033527f090e17d6241ed1ed09e44"
       },
       "historical_raw_hash_matches": true
     },
@@ -35174,8 +35302,10 @@
     "house:119:1:42",
     "house:119:1:63",
     "house:119:1:65",
+    "house:119:1:102",
     "house:119:1:153",
     "house:119:1:156",
+    "house:119:1:163",
     "house:119:1:171",
     "house:119:1:183",
     "house:119:1:184",
@@ -35206,14 +35336,12 @@
     "house:119:1:76",
     "house:119:1:79",
     "house:119:1:100",
-    "house:119:1:102",
     "house:119:1:116",
     "house:119:1:119",
     "house:119:1:145",
     "house:119:1:150",
     "house:119:1:151",
     "house:119:1:162",
-    "house:119:1:163",
     "house:119:1:165",
     "house:119:1:166",
     "house:119:1:168",
@@ -35605,6 +35733,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "62485dfa7e3c1b9c314d2ece3580e44f79a1f7a3cc9cc348912e70f12085ed20",
-  "membership_review_sha256": "de142b6d5013104ff49f6a3e3767bddba5c9828f3fd7509f8898a280dd884d86"
+  "proposal_sha256": "007edb551cd91a9b3b721deb0745462fc23395725edc325f5e588eef233812f9",
+  "membership_review_sha256": "90da15a94c9ca39a3b3d7384528703064445a81a3d3a7045f2bd6415b60632a6"
 }

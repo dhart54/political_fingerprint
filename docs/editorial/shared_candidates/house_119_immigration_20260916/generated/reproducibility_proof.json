@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "1755d7d95116a27301e23535191f46e56681ff0f317425f05ea199ab4b06e146",
-  "source_capture_sha256": "85084cd7f61545db08792f409373a1b11cbd5a1756238277465881dcb702c6a4",
-  "core_sha256": "0ab5434db5a0c9a9167078c7e4d0396abbea8c8936214f6e01ff4e9a506a4d69",
-  "compiled_sha256": "082aa0a5b8405f98974ea22d9e033f0a95a7c7618435d1c3fa568fe15af8dbce",
-  "readable_sha256": "b3ed8d8e9d4bb72765a2ef81fcb554f0a1e0c0af4cc4ca36f520781a28db061d",
+  "input_sha256": "c6a33a020b4e82b4e9e72a269e156b0adfd5a64bd32a8f43c90134ce4950d21a",
+  "source_capture_sha256": "3ee26cef36a261ea0dfa1d4cdb59388c07a20d65846d24f9943cbb2ab3dca76e",
+  "core_sha256": "d8c48b13bb634f272afca3a11c225d4579c375dfda554770c5eb7385351fd9ba",
+  "compiled_sha256": "1c1cbfffd937418be45ebcaaf2099b76c85c62f40a707af247b19fe6c39071c3",
+  "readable_sha256": "c877244ff0d5409796318faaa9d8686cb51cb2d32de6dc20a9b2ac2f52099a1b",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -157,6 +157,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:102",
+      "shared_sha256": "9e1f5c5a315b4deb6c8196e0291c41dbb0a4a57f56634736d70bf13961f91e03",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.22 with those provisions; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:102"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.22 with its complete qualified citizenship-proof, verification and related election/immigration provisions",
+          "source_id": "clerk:119:1:102"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:153",
       "shared_sha256": "c44d03ebe83438ab4a207b4f7bc08865707004c965beba2cff5791b36624b4d5",
       "choices": [
@@ -193,6 +213,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.2966 imposing its specified statutory status/ownership documentation and loan-ineligibility requirements",
           "source_id": "clerk:119:1:156"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:163",
+      "shared_sha256": "9927080fdec787ad32882c26d4f452489881fcef8982b8bb1da400d6ce2cf4c2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.884 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:163"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.884 with its D.C. noncitizen-voting prohibition and local-law repeal/restoration",
+          "source_id": "clerk:119:1:163"
         }
       ]
     },

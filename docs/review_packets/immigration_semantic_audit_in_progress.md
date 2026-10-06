@@ -6,7 +6,7 @@ implementation owner performs this pass; it is not a second human/model review.
 Candidate text and passing tests are not semantic authority. No final full-corpus
 audit verdict, acceptance, promotion or publication is conferred.
 
-All eighteen currently authored meanings have been compared with primary evidence.
+All twenty currently authored meanings have been compared with primary evidence.
 The sample also covers nineteen originally excluded actions, of which eighteen
 remain excluded; seven procedural controls; and the sole expressive control.
 The machine-readable case evidence, identity, member observations, governed
@@ -14,7 +14,7 @@ source hashes and corrected-artifact bindings are in
 `immigration_semantic_audit_in_progress.json`.
 
 Distinct-action assessments use the highest severity, retaining a finding even
-after correction: **1 Critical, 6 Major, 2 Minor, 35 No Defect** across 44 actions.
+after correction: **1 Critical, 6 Major, 2 Minor, 37 No Defect** across 46 actions.
 The corrective H.J.Res.72 meaning has a separate No Defect re-review, which does
 not erase its Critical original screening defect. Distinct underlying findings
 are 1 Critical, 2 Major and 1 Minor.
@@ -37,7 +37,7 @@ assurance of all later-law currentness is claimed.
 
 Corrections are applied on the same candidate branch. Checkpoint validation,
 deterministic replay and exact-head CI are recorded in the active plan/review
-packet after execution. The 401 ordinary unfinished screenings, remaining
+packet after execution. The 399 ordinary unfinished screenings, remaining
 emergency/sanctions/DHS/package operative-governance leads and all future meanings
 still require discovery and audit. This initial audit unit is not full-goal
 completion or a full-corpus PASS.
@@ -52,3 +52,10 @@ Expanded noncounting audit includes H.Res.488, H.R.881, H.Res.294/293 and the
 complete H.R.1048 package with exact failed amendments4/5/6. Seven additional
 actions receive No Defect. Exact operative/deemed-amendment and rhetoric boundaries
 are source-bound; the remaining discovery is open.
+
+The citizenship extension covers complete H.R.22 and H.R.884 proposals, adding
+two No Defect assessments of their bounded source-qualified meanings. SAVE legal
+use/cross-reference/document-process interactions are explicitly preserved in
+`open_legal_interactions` for independent review; this is not a verdict resolving
+those interactions or an assertion of implicit repeal. D.C. local-Act operative
+text, rather than its narrower metadata summary, governs repeal/restoration.

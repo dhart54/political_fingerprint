@@ -430,3 +430,46 @@ outputs remain unchanged. Protected baseline diff and diff-check are clean.
 SBAcheckpoint2d4a400 exact-head hostedCI succeeds:
 https://github.com/dhart54/political_fingerprint/actions/runs/37415456627.
 CurrentexactheadCI follows the push.
+
+### Checkpoint 9: citizenship evidence and D.C. local voting
+
+H.R.22EH and884EH add two independently authored/audited shared meanings outside
+the historical seed.277supported reviews:20interpreted,178procedural,78excluded,
+1expressive;399ordinaryscreenings remain.20distinct bill episodes,40observations,
+39findings: Foushee16opposition/4support; Massie18support/1opposition/1Present.
+
+SAVE preserves alldocumentary routes, alternativeattestation/evidence/official
+affidavit and discrepancy process, mailproof deadlines/accommodation,30dayprogram,
+24hournecessary/batched/no-fee data, naturalizationnotice, qualifiedinvestigate
+WHETHERinitiate proceedings, voter-roll-versus-immigrationremoval, criminalintent
+and civilnotice/cure, Stateexemptions, provisionalballots and prospective timing.
+Generalpassport issuance permitsnoncitizennationals; REALID is notuniversally
+citizenship proof. ExistingSAVE noncriminalenforcement-use restriction and printed
+cross-reference/document-process interactions are preserved for independent
+candidate review, not silently resolved as repeal/individual legal outcomes.
+These are explicit reviewdependencies, distinct from unavailableoperative evidence
+or399ordinaryunfinished screenings. No final full-corpus auditPASS is claimed.
+
+884repeals/restores the entire local24-242Act, including noncitizenlocal-elector
+exception and registration/other-voting-residence wording. Its localAct fiscal/
+effective conditions and other voterqualifications are baseline, and its XML
+metadata's narrowerpermanent-resident summary does not govern operative scope.
+Both bills retain wholeproposal direction and separate episodes/rule boundaries.
+
+Sources866=730unchangedHealthgovernedreuse+136new;178sharedclaimwitnesses and46full
+provisional captures. Fournewfull primarycaptures coverpassports/nationals/REALID/
+existingqualifiedalienvoting; sixnewbounded/full witnesses arecanonical. An
+incorrectTitle6REALIDendpoint was rejected asnon-evidence and replaced by the
+correctTitle49statutorynote, with no repeated failedacquisition. All20current
+meanings audited;46distinct actions:1Critical/6Major/2Minor/37NoDefect. Expanded
+noncounting sample remains18retained exclusions/7procedures/all1expressive.
+Focused15Immigrationtests pass in0.953seconds; fullcheckpoint validation follows.
+
+Checkpoint9 validation:204focusedtests pass in32.108seconds; all7canonical
+semanticchecks and7byte-identical outputs pass. Actual39memberfindings/20separate
+episodes and bothnewbillcompacts/directions inspected. Audit/source/accounting
+and public/persistence gates pass; protectedbaseline/diffchecks areclean. Prior
+95e8c449fe2ad736587aa81ea259cec9bfad5d4a hostedCI succeeds at
+https://github.com/dhart54/political_fingerprint/actions/runs/37416475713.
+CurrentexactheadCI follows push. Weeklyusage43%used/57%remaining; overnight
+deadline remains06:41:49Eastern, no terminalmarker created.

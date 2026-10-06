@@ -1558,6 +1558,230 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:102",
+      "audit_state": "primary_reconstructed_candidate_compared_review_dependencies_preserved",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "102",
+        "legis-num": "H R 22",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Apr-2025",
+        "action-time": "11:21 AM",
+        "vote-desc": "SAVE Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR22EH reconstructed before candidate comparison. Five documentary routes have exact supplemental requirements; REALID alone is notcitizenship, militaryID needsbirth-service record, and validpassport is printed while212allowsnationalpassports. Alternative signedattestation/other-evidence/official affidavit and discrepancy processes retained. Mailin-person proof/deadlines, polling alternative/disability accommodation,30-dayprogram,24-hournecessary/batched/no-fee responses, naturalizationnotice, qualifiedinvestigateWHETHERinitiate removal and separatevoter-rollremoval are explicit. ExistingNVRAcriminalintent/fair-election chapeau and civilnotice/cure apply; no strictliability/automaticremoval. ExistingSAVEprivacy/noncriminal-usebar and currentINAalien/national/voting/noticeframeworks independently read. LiteralState8i/j andSAVEparagraph1cross-references, confidentialityknowledge differences, provisionalballot protections and prospectiveenactment/application timing retained. Separatewholebill choices and episode, actualNay/Yea verified.",
+      "finding": "No semantic defect found in the bounded description of the exact proposed scheme and source-qualified limits. This assessment does not resolve the explicitly preserved legal interactions or confer full-corpus PASS/acceptance.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "3eace352f80e3e9d8da5394420b44e6221636fc095f385fc97bbcb6aedac7714",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr22eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+          "governed_bytes_sha256": "1563d5d4b9458887c0774699747cf249316336c8868254c3d503ec252e4cd7aa",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:52usc20502-20511-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm",
+          "governed_bytes_sha256": "c4cf60927574442850f782fa77e546e1bf30445cec99f3afd01929aec0b42bdd",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm",
+          "governed_bytes_sha256": "7e64add5af5cf102c191142f0fddb544f47f079a67e994e61ab80a12b944948a",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1229-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm",
+          "governed_bytes_sha256": "cf713773135c4ad61006f0f50f1b35725b9f4390ae3835dbe5ac0fa8e3efb08f",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:22usc212-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm",
+          "governed_bytes_sha256": "fdc32a66be9497f81f4b0ba8bfa8a5f1540a8df7615f07ab9b34efe1c3f42b20",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1408-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partI-sec1408.htm",
+          "governed_bytes_sha256": "c15224822086e04dbe3b160653a9db6a08aaaef0b42d7588100bc4a9e1b7cc41",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:49usc30301-2024-real-id-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap303-sec30301.htm",
+          "governed_bytes_sha256": "0a48ef79fa3b9f4c5e850ce6a1b82a5a451843215313c91bc6d96520e1b4670c",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:18usc611-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm",
+          "governed_bytes_sha256": "d281c26437ab6c908c1cae5c71d2370563c47b7bb47379c6ddc921a3e9413f88",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-unlawful-voting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "a49e94dce9dbe79c705065681a1813f7ff52d99e2587e85d564b47f5c4e04d05",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-unlawful-voting",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "1fb0e7197e3789ca796bcf0d0aff0870201a2e86a19c2216f491ab87516a4a3d",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        },
+        {
+          "source_id": "govinfo:hres294eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres294eh/html/BILLS-119hres294eh.htm",
+          "governed_bytes_sha256": "45b5b4ee38e4d75ad751b21c918737c30ebde67015ba509e3e680a782138909a",
+          "reviewed_extent": "Complete exact bill and identified operative baseline/definition/process provisions; material surroundings and use prohibitions read and qualified in candidate"
+        }
+      ],
+      "open_review_dependencies": [
+        {
+          "action_id": "house:119:1:102",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Legal interaction; not an unavailable operative source or an unfinished ordinary screening",
+          "question": "How the proposed SAVE reference and qualified DHS investigation duty interact with retained121(c)(1) noncriminal-enforcement-use prohibition; no implicit repeal or individual lawful-use conclusion accepted.",
+          "source_ids": [
+            "govinfo:hr22eh",
+            "govinfo:42usc1320b-7-save-and-benefit-boundary"
+          ]
+        },
+        {
+          "action_id": "house:119:1:102",
+          "state": "preserved_for_independent_candidate_review",
+          "scope": "Printed proposed-law cross-reference and document/alternative-process interactions",
+          "question": "Keep literal8(i)/(j) State-exemption and paragraph(1) SAVE-request references, valid-passport/national distinction, and alternative-evidence versus missing-proof enforcement language visible; do not silently repair labels or adjudicate individual registration/liability.",
+          "source_ids": [
+            "govinfo:hr22eh",
+            "govinfo:52usc20502-20511-operative",
+            "govinfo:22usc212-2024-complete",
+            "govinfo:8usc1408-2024-complete"
+          ]
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated_review_dependencies_preserved"
+    },
+    {
+      "action_id": "house:119:1:163",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "163",
+        "legis-num": "H R 884",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Jun-2025",
+        "action-time": "5:37 PM",
+        "vote-desc": "To prohibit individuals who are not citizens of the United States from voting in elections in the District of Columbia and to repeal the Local Resident Voting Rights Amendment Act of 2022"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete1480-character884EH directly bans individuals notUScitizens fromD.C.public-office/initiative/referendum voting; notonlyunlawfulpresence orLPR. Whole24-242Actrepeal restores its amended/repealed provisions, including qualified-elector localcitizenship exception, local-electiondefinition, other-voting-residence/country and registrationwording. CompleteCouncilXMLoperativeAct read; metadataBillSummarypermanent-resident wording does not narrow actualstatute. Federal611qualifiedalienvoting prohibition predatesbill, withindependentlocalvote/parent-residence-beliefexceptions. National/citizen distinction preserved. No newproofprocess,criminalpenalty,INAremoval or reset ofeverylaterD.C.law claimed.489pending-substitute then separatepassage and ownbill episode; actualNay/Yea checked.",
+      "finding": "No material defect found in exact prohibition, complete repeal/restoration, baseline novelty, qualifications, compact, member-neutral meaning, whole-bill choices or episode. Metadata summaries do not supply operative meaning.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "cce605ac9421a5b7165d65281e225be333c54978b3bf6bfbd00bbd51e5080e8e",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr884eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr884eh/html/BILLS-119hr884eh.htm",
+          "governed_bytes_sha256": "79c9a56b2aeadafc9b973447134a884b5e1cc5b5476f3cb325567d2b401187c8",
+          "reviewed_extent": "Complete exact bill and incorporated localAct plus identified qualified federal/nationality baseline and consideration rule"
+        },
+        {
+          "source_id": "dc-council:law24-242",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-xml/main/us/dc/council/periods/24/laws/24-242.xml",
+          "governed_bytes_sha256": "4759a0d172c893ac439f4c8e339da22d663cff27146289cb61757a0bcffb290d",
+          "reviewed_extent": "Complete exact bill and incorporated localAct plus identified qualified federal/nationality baseline and consideration rule"
+        },
+        {
+          "source_id": "govinfo:18usc611-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm",
+          "governed_bytes_sha256": "d281c26437ab6c908c1cae5c71d2370563c47b7bb47379c6ddc921a3e9413f88",
+          "reviewed_extent": "Complete exact bill and incorporated localAct plus identified qualified federal/nationality baseline and consideration rule"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact bill and incorporated localAct plus identified qualified federal/nationality baseline and consideration rule"
+        },
+        {
+          "source_id": "govinfo:hres489eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
+          "reviewed_extent": "Complete exact bill and incorporated localAct plus identified qualified federal/nationality baseline and consideration rule"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
     }
   ],
   "noncounting_actions": [
@@ -3198,7 +3422,7 @@
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 35
+    "No Defect": 37
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -3219,7 +3443,8 @@
     "Operative-versus-rhetorical pattern: expanded emergency-order reading exposed EO3(b) immigration-specific recommendation omitted in exclusion; corrected HJRes72. Expand exact operative governance review across remaining emergency, sanctions, DHS and package leads. Wider456-screening discovery remains open, so no full-corpus PASS.",
     "SBA source-family audit explicitly compares proposedstatutory duties with pre-voteagency relocation and June1,2025ownership/status SOP; no later2026rule imported. Earliercommittee2931destination condition is not silently substituted for exactEH.",
     "Expanded operative-versus-rhetorical/DHS and deemed-adoption sample: HRes488preamble versus resolved communication/gratitude; HR881research grants versus visa/status law; HRes294deemed293vote-pair procedure. No additional defect found. Remaining408ordinary screenings prevent full-corpus PASS.",
-    "Expanded international/nationality-reference and exact-amendment sample: completeHR1048financial regime and failedamendments4/5/6; source/insertions are independently bound, not parent-meaning or accepted-cross-domain conclusions. No additional defect. Remaining401ordinaryscreenings preventfull-corpusPASS."
+    "Expanded international/nationality-reference and exact-amendment sample: completeHR1048financial regime and failedamendments4/5/6; source/insertions are independently bound, not parent-meaning or accepted-cross-domain conclusions. No additional defect. Remaining401ordinaryscreenings preventfull-corpusPASS.",
+    "Citizenship/SAVE pass follows entireNVRAcriminal chapeau/civilcure, Stateexemptions, passport-versus-national and REALID classes, existingSAVEadmin-use restriction and INAregistration-versus-voting/removal distinctions. Explicitlegal interactions preserved; do not treat them as unavailable sources, inferredrepeal or a fullauditPASS."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -3236,12 +3461,36 @@
   },
   "checkpoint_validation": {
     "focused_tests": 204,
-    "focused_runtime_seconds": 32.496,
+    "focused_runtime_seconds": 32.108,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null
-  }
+  },
+  "open_legal_interactions": [
+    {
+      "action_id": "house:119:1:102",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Legal interaction; not an unavailable operative source or an unfinished ordinary screening",
+      "question": "How the proposed SAVE reference and qualified DHS investigation duty interact with retained121(c)(1) noncriminal-enforcement-use prohibition; no implicit repeal or individual lawful-use conclusion accepted.",
+      "source_ids": [
+        "govinfo:hr22eh",
+        "govinfo:42usc1320b-7-save-and-benefit-boundary"
+      ]
+    },
+    {
+      "action_id": "house:119:1:102",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Printed proposed-law cross-reference and document/alternative-process interactions",
+      "question": "Keep literal8(i)/(j) State-exemption and paragraph(1) SAVE-request references, valid-passport/national distinction, and alternative-evidence versus missing-proof enforcement language visible; do not silently repair labels or adjudicate individual registration/liability.",
+      "source_ids": [
+        "govinfo:hr22eh",
+        "govinfo:52usc20502-20511-operative",
+        "govinfo:22usc212-2024-complete",
+        "govinfo:8usc1408-2024-complete"
+      ]
+    }
+  ]
 }
