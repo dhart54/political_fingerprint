@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from backend.app.semantic_ir.shared_corpus import sealed_digest
+from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
 
 
 def research_queue(universe, membership, *, session=None, start_roll=1, limit=20):
@@ -21,7 +21,22 @@ def research_queue(universe, membership, *, session=None, start_roll=1, limit=20
     """
     if limit < 1 or start_roll < 1:
         raise ValueError("queue bounds must be positive")
+    if universe.get("proposal_sha256") != sealed_digest(universe, "proposal_sha256"):
+        raise ValueError("universe proposal digest differs")
+    if (membership.get("review_sha256") != sealed_digest(membership, "review_sha256")
+            or universe.get("membership_review_sha256") != membership["review_sha256"]):
+        raise ValueError("membership review digest differs")
+    by_id = {r["action_id"]: r for r in universe["candidate_dispositions"]}
+    if len(by_id) != len(universe["candidate_dispositions"]):
+        raise ValueError("duplicate universe identity")
     reviewed = {r["action_id"] for r in membership["records"]}
+    if len(reviewed) != len(membership["records"]):
+        raise ValueError("duplicate shared membership identity")
+    for record in membership["records"]:
+        row = by_id.get(record["action_id"])
+        if (row is None or row["disposition"] != record["disposition"]
+                or row["review_progress"].get("shared_review_record_sha256") != digest(record)):
+            raise ValueError("shared membership identity or disposition differs from universe")
     result = []
     for row in universe["candidate_dispositions"]:
         if session is not None and row["session"] != session:

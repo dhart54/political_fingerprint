@@ -3,11 +3,47 @@ import csv
 import io
 import unittest
 
-from backend.app.semantic_ir.shared_corpus import sealed_digest
+from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
 from scripts.shared_candidate_research import governed_sources_at_url, governed_source_excerpt, research_queue, queue_table
 
 
 class SharedCandidateResearchTests(unittest.TestCase):
+    @staticmethod
+    def seal_queue(universe, membership):
+        for record in membership['records']:
+            row = next(r for r in universe['candidate_dispositions'] if r['action_id'] == record['action_id'])
+            row['review_progress']['shared_review_record_sha256'] = digest(record)
+        membership['review_sha256'] = sealed_digest(membership, 'review_sha256')
+        universe['membership_review_sha256'] = membership['review_sha256']
+        universe['proposal_sha256'] = sealed_digest(universe, 'proposal_sha256')
+
+    def test_queue_rejects_changed_ledgers_and_resealed_identity_mismatch(self):
+        universe = {'candidate_dispositions': [dict(action_id='1', session=2, roll=1,
+            date='date', measure='measure', question='question', disposition='exact_action_ineligible',
+            review_progress={})]}
+        membership = {'records': [dict(action_id='1', disposition='exact_action_ineligible')]}
+        self.seal_queue(universe, membership)
+        self.assertEqual(research_queue(universe, membership), [])
+        changed = copy.deepcopy(universe)
+        changed['candidate_dispositions'][0]['question'] = 'other question'
+        with self.assertRaisesRegex(ValueError, 'universe proposal digest'):
+            research_queue(changed, membership)
+        changed = copy.deepcopy(membership)
+        changed['records'][0]['disposition'] = 'source_unresolved'
+        with self.assertRaisesRegex(ValueError, 'membership review digest'):
+            research_queue(universe, changed)
+        changed['review_sha256'] = sealed_digest(changed, 'review_sha256')
+        other = copy.deepcopy(universe)
+        other['membership_review_sha256'] = changed['review_sha256']
+        other['proposal_sha256'] = sealed_digest(other, 'proposal_sha256')
+        with self.assertRaisesRegex(ValueError, 'identity or disposition'):
+            research_queue(other, changed)
+        changed = copy.deepcopy(membership)
+        changed['records'].append(copy.deepcopy(changed['records'][0]))
+        self.seal_queue(other, changed)
+        with self.assertRaisesRegex(ValueError, 'duplicate shared membership'):
+            research_queue(other, changed)
+
     def test_excerpt_preserves_exact_text_identity_bounds_and_input(self):
         source = dict(source_id='exact', url='https://official/2025', source_type='official_bill_text',
                       text_version='EH; bounded capture', raw_sha256='raw', text='α first\nsecond Ω')
@@ -88,7 +124,9 @@ class SharedCandidateResearchTests(unittest.TestCase):
                          "date": "date", "measure": "measure", "question": "question",
                          "disposition": disposition, "review_progress": {"substantive_review_performed": roll == 82}})
         universe = {"candidate_dispositions": rows}
-        membership = {"records": [{"action_id": "81"}, {"action_id": "82"}]}
+        membership = {"records": [{"action_id": "81", "disposition": "exact_action_ineligible"},
+                                   {"action_id": "82", "disposition": "source_unresolved"}]}
+        self.seal_queue(universe, membership)
         before = copy.deepcopy((universe, membership))
         result = research_queue(universe, membership, session=2, start_roll=79, limit=20)
         self.assertEqual([r["action_id"] for r in result], ["79", "80", "82"])
