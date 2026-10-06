@@ -3080,3 +3080,77 @@ follows push. Next: House 70121/70122 versus Senate DOJ purposes, distinct
 then continuing/omnibus/NDAA and screenings. Existing .w/ib owner and
 historical markers preserved; no current shutdown or production/editorial
 acceptance, promotion, publication, merge or deployment authority.
+
+
+## Checkpoint 56: DOJ prosecution and distinct reimbursement conditions
+
+House 70121 and 70122 are separate additional fiscal year 2025 DOJ
+appropriations until September 30, 2029: $500 million only for listed drug
+efforts and $600 million only for listed immigration/crime/prosecution
+matters and related DOJ personnel. Generic drug purpose does not establish
+an immigration finding. House prints voting by aliens; Senate 100054(3)
+prints unlawful voting by aliens and its own within-US child-trafficking/
+smuggling wording. Senate purposes remain within the existing $3.33 billion
+envelope through September 30, 2029, without House earmarks. These selected
+funding purposes create no blanket alien crime or new benefit eligibility.
+
+Full reused 611 operative baseline preserves named federal offices and every
+condition of the mixed-election exception: other election purpose, State/
+local authorization and independently conducted other-purpose voting with
+no opportunity to vote for federal offices. Its separate nonapplication
+rule requires all three conditions: each natural/adoptive parent citizen,
+permanent residence before 16, and reasonable citizenship belief at voting.
+No actual exception, citizenship, voting legality or guilt is determined.
+
+Senate 100055 establishes its separate named DOJ reimbursement fund, with
+grants to eligible States, State agencies and local units pursuant to
+existing statutory authorities. Locating/apprehending (1) and State-agency
+support (7) require both additional federal/State/local crime and unlawful
+presence; transport (6) refers to (1). The pair is not imported into every
+other listed purpose or satisfied by unlawful presence alone. Investigative-
+information and investigation/prosecution purposes retain their own domestic
+language. Court operations and temporary criminal detention retain their
+separate purposes, without conversion to civil detention or new State powers. Source-first
+comparison refined two uncommitted descriptions to avoid importing printed
+within-US wording from (2)/(3) into separate court paragraph (4). Exact
+before/after hashes and reasons are sealed as precommit refinements,
+without assigning a new independent severity or rewriting historical copy.
+
+Own fiscal year 2025 appropriation is not to exceed $3.5 billion, available until
+September 30, 2028, for qualified documented expenses achieving listed purposes.
+AG may grant State-agency/local expenditures for eligible completed, ongoing
+or new activities that occurred on or after January 20, 2021. That inclusive
+date is not House's separate January 21 date; 2028 is not borrowed 2029.
+Amounts under this section shall reach more than one State. No automatic grant,
+actual recipient/expense qualification, crime/status or expenditure inferred.
+Generic 100056 BOP workforce/facility appropriation preserved as receipt
+context, not wholly attributed to Immigration or a new action disposition.
+
+Five new bindings and one reused complete 100054 binding, two qualification
+hashes, two House comparisons, BOP context and two precommit refinements
+sealed in hr1_doj_prosecution_reimbursement_review.json. Complete House
+70121/70122 floor/EH are raw-equal; no 492/499 selected correction. All 1,286
+sources, 263 captures and 37 other actions unchanged, prior clauses/compacts/
+choice metadata and every earlier correction retained in both members.
+230 aggregate tests pass in 41.301 seconds, including 41 candidate tests;
+seven semantic checks and seven-file raw byte replay pass. All bindings,
+reused witness, qualification/copy/audit hashes, 172 extents, 990 unchanged
+Health sources, candidate/publication isolation, queue/accounting and final
+diff verified. Tests do not establish semantic truth or independent acceptance.
+Core 8592aebc3bb2a87696c08edf10a4908ecb1c0c4dfe7a8ce3341ae1ed809afdda.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged; approval-lineage follow-up retained.
+
+742 bindings and unchanged 46 separate application questions. Stable 676
+inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded, two expressive,
+36 episodes, 78 observations, 70 findings (Foushee 36/Massie 34). Remaining 221
+ordinary screenings and TWO partial H.R.1 reviews. Same-owner audit partial,
+final verdict null. Historical FLETC Major corrected, independent recheck
+pending; bonus Major independently resolved only within its recorded scope.
+Original-host 1994 acquisition/grant matching remain open; parent bounded
+search finished, no acquisition worker running. Owner-native exact 54 CI
+37542352494 all nine successful; exact 55 CI 37542743390 six successful,
+three pending, no failure reported. Current exact CI follows push. Next:
+House 70123/70124 at governing floor/EH, complete 235(b)(1)/(c) and 212(a)(2)/(3)
+baseline and preserved review/protection interactions; remaining DHS/local
+support and continuing/omnibus/NDAA packages/screens. No current shutdown,
+merge/deployment/production/config/security/schema or editorial authority.
