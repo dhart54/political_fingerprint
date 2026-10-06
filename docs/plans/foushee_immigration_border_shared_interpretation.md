@@ -2463,3 +2463,79 @@ and 'or otherwise poses a threat' wording. Acquisition is resolved, without
 current legal-status or ACA application acceptance. Then remaining tax/child/
 enforcement funding, packages and screenings. Existing .w/ib ownership and old
 markers continue, with no current shutdown or production authority.
+
+
+## Checkpoint 43: Original DACA policy and separately scoped House clauses
+
+House 44201(i) requires an alien GRANTED deferred action under the named June
+15, 2012 memorandum. Three literal scopes differ: IN THIS TITLE in 1312(f), FOR
+PURPOSES OF THIS SECTION in 1402(e), and FOR PURPOSES OF THE PREVIOUS SENTENCE
+in 1412(d), whose own subject is Federal payments, credits and reductions.
+The printed amendments MADE BY THIS SECTION apply with respect to plan years
+beginning on or after January 1, 2026; other distinct 44201 dates remain.
+No current grant, all-insurance ban, revoked deferral/work permit or personal
+termination date is inferred. Complete pre-vote Exchange individual-market,
+qualified-plan, silver-plan/income, whole-enrollment, individual/family and
+necessary allowed-credit/month boundaries are bound. State flexibility is not
+a promised award or accepted workaround under proposed amendments. Selected
+complete Senate 71301/71302/71303 lack these named-memo clauses; their own
+restrictions remain, without automatic DACA eligibility or whole-package
+absence-of-effects claim.
+
+Two governed original-policy witnesses use their actual official hosts:
+Supreme Court signed three-page scan and DOJ Appendix E, physical pages 99-103,
+printed 97a-101a. Owner captured both, matched helper raw hashes and visually
+read all three scan pages. Full substantive body/disclaimer compared; poor scan
+OCR is ignored. DOJ extraction retains page layout; the scan's declared
+corroborated transcription standardizes typography and line wraps only. No
+successful DHS request, byte-equivalence or current legal-validity claim.
+Original 'for a least five years' and 'or otherwise poses a threat' wording
+remain; no silent repair or individual eligibility classifier.
+
+Original background check AND case-by-case decision, no assurance of relief,
+encounter/pending-removal/non-removal paths, renewable two-year periods and
+original memo-relative implementation clock remain. At-least-15 is not universal.
+Question 38 reserves final-order 'regardless of their age' versus that minimum
+and earlier not-above-thirty criterion. Recommendation: retain literal historical
+paths and obtain independent application before personal classification; safe
+remaining tax/funding/package work continues. Applications to determine work
+qualification are not automatic work permits. The no-right/status/citizenship
+pathway disclaimer does not independently determine ACA lawful presence, and
+original policy rationale is not adopted as anyone's motives.
+
+The now-obsolete DACA-unfinished sentence is narrowly updated to say the
+DACA provisions are addressed below and other components remain unfinished.
+Exact before/after hashes are sealed in hr1_daca_original_policy_review.json;
+this is an ordinary scope-context update, not a new independent defect or
+historical cleanup. Prior annual-filing Minor repair, all earlier clauses,
+qualifications and selected compact descriptions remain. Two sources and 13
+bindings added; exact floor/EH subsection bytes match, with floor governing.
+
+Fingerprint's independent checkpoint 42 remittance review found no new material
+semantic defect. It verified 15/18 bindings, receipt digest and both prior Minor
+correction-string hashes; three operative hashes were not recomputed. Both
+projection digests changed, but full Massie detail was not independently readable.
+No independent replay, transaction decision or full-package acceptance. Questions
+36-37 remain reserved. Exact ab4dde3ef638e117e802a3da12d690012f94093a passed
+all nine jobs in run 37525815801; independent review confirmed those results.
+See hr1_checkpoint42_independent_review.json; DACA is outside its verdict.
+
+Validation: 35 focused tests in 8.819 seconds, seven semantic checks and seven-file
+byte replay pass. All 13 new bindings, copy/context/source/PDF hashes and bounds,
+148 earlier character extents, member propagation, preserved 37 other actions,
+990 unchanged Health sources, queue/accounting/audit and final diff verify.
+Trailing spaces in two newly authored qualifications were removed and dependent
+hashes/replay regenerated before sealing. Tests do not prove semantic truth.
+Core: de9ba299e114db193fd2fe8a14b0e53f6c4c301907f526d06994782e88a0c544.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f (unchanged).
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,262 governed sources (272 new), 613 claims,
+222 canonical provisional captures. Remaining: 221 ordinary screenings, TWO
+partial H.R. 1 component reviews, 38 separate legal/application questions.
+Same-owner audit remains partial, final verdict null; no editorial acceptance,
+production, publication, schema, frontend or runtime change. Current exact-head
+CI follows push. Existing .w/ib ownership and historical markers preserved.
+
+Next: remaining education/child tax and child/enforcement funding, then the
+continuing/omnibus/NDAA packages and ordinary screenings. Do not classify DACA
+applicants, answer the reserved applications, or close full H.R. 1 components.
