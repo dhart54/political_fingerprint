@@ -3817,6 +3817,188 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:145",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": "IB-HR1-SELECTED-VERSION-COMPARISON",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "145",
+        "legis-num": "H R 1",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "22-May-2025",
+        "action-time": "6:54 AM",
+        "vote-desc": "One Big Beautiful Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Source-first reconstruction: ClerkMay22PASS/OnPassage and bothNay; H.Res.436adoptsRCP119-3modified119-113manager; contemporaneousfloorRecordASAMENDED matches selected60001/manager-added60004/70101/70001-2/70010/70023paragraphs to laterEH, not entireEH. Manager60004hasduplicateoriginalsectionnumber; laterengrossmentrenumbers. Original10004a2LIHEAP/20012militaryintelligence/112205COVIDcreditenforcement are deleted byJune11adopted492, and original20013oversight/112206EITCrenumber. Sectionnumbers alone cannot prove incorporation. Border46.5b+separate50mplants+5bfacilities;12bStatecostsJanuary21,2021/satisfactoryevidence/noDHSduplicate. AdditionalFY2025appropriationsthroughSept30,2029notspending.45bdetentiononlysingleadult/family;MAYpendingdecision/ifordereduntilremoval;accompaniedchildrennotUAC;State-licensing-independentdefinitionandSOLEadultstandardsdiscretion printed, legalinteractionnotadjudicated. Complete279g2conjunction reviewed. Filing1000floor/mayrulehigher/no-waiver/additional;JulyCPIincrement10dollarrounddown;50percentEOIR/USCISdependingfilingoffice/remainderTreasury. Separatecalendar-yearpending100floor/CPIwithoutprintedrounding/Treasury/no-waiver. Completepre-vote1158d3MAYauthority,costcap/installments/nonmandatorysentence and1356mnaccountbaseline independentlyread.70023changesSHALL/deletesfollowing/preservesadditionalfeeauthority, notfirstfeeauthority/newasylumeligibility. Selecteddescriptionsandcompactchecked; omittedbenefit/tax/EAD/sponsor/removalcomponents remainexpansionwork, notauditedbyimplication. WholepackageNaynotcomponentpreferences; oneHR1episode.",
+      "finding": "No material defect in the bounded selected-clause candidate and compact comparison. This assessment does not cover omitted Immigration components, all operative package text, independent acceptance or legal enforceability. Initial provisional section-number inference was discarded before candidate application; operative content and original-to-final crosswalk govern.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "33d09efd51ce1672a7b97694c40a66641f8b97f9f8b55da7650d23ce92b08960",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm",
+          "governed_bytes_sha256": "1b1bd29c9b5ceb4b8ef6f25388e75a709a6833d490a48eaec17485c0073a50b7",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:hres436eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres436eh/html/BILLS-119hres436eh.htm",
+          "governed_bytes_sha256": "2866379c74803e8e00d01ae5c8ad5302307b2ed0c62bde0c0762b0c7055ca7b3",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:hrpt119-113-complete",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt113/html/CRPT-119hrpt113.htm",
+          "governed_bytes_sha256": "4577a542b3d3f8cbae9a99dcd2c3696b27dc14567664f701f6a243ee7b8b8f87",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "house:rcp119-3-selected-immigration-pages",
+          "url": "https://rules.house.gov/sites/evo-subsites/rules.house.gov/files/documents/rcp_119-3_final.pdf",
+          "governed_bytes_sha256": "5c9d9ac82fbe13e97d63c5456a85894b238b9f5c0f49e81982c0cd0af4598508",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-selected-vote-time",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "governed_bytes_sha256": "f7e96bd04b77aeaac3364ab57b5da2fd01d658ec7bb75fc0a32f6de4d3d53c39",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "governed_bytes_sha256": "de6f13ee9abdba11e444296965169141ee876a1abd99453d1b837b6aca5bc49a",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": true,
+      "correction_state": "local_semantic_and_focused_validation_passed_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": "IB-HR1-SELECTED-VERSION-COMPARISON",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "190",
+        "legis-num": "H R 1",
+        "vote-question": "On Motion to Concur in the Senate Amendment",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "3-Jul-2025",
+        "action-time": "2:31 PM",
+        "vote-desc": "One Big Beautiful Bill Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Source-first reconstruction: ClerkJuly3PASS/actualmotionconcurrence/bothNolabelsnormalizeNay. H.Res.566permitsconsiderationofmotion, notdeemedfinalconcurrence. July1EASreplacesallAFTERFIRSTWORD; June28PCSorHouseEHnotSenatereplacement.90001additionalFY2025CBP46.55bbarrier/roads/attributes/groundprep;90003additionalICE45bcapacity,September30,2029availability, MAYfamilydetentionpendingINAdecision/ifordereduntilremoval, SecretaryadultstandardsdiscretionCONSISTENTWITHAPPLICABLELAW;noHouseState-licensingclause.279g2definitionconjunction independentlyread.100002filing100floor/mayrulehigher/no-waiver/additional/CPIincrementroundeddown10dollars;50percentEOIRorUSCIS/remainderTreasury.100009separatecalendar-yearpending100floor/rulehigher/annualCPIincrementrounddownnearestdollar/Treasury/no-waiver.100018pre-vote1158d3MAYtoSHALLandfollowingtextreplacement/preserved286mauthority; noinitialfeeauthorityornewsubstantiveeligibility. Compactfloor100EACHretained, notHouse1000. EASownselectedmeaning;noenactedlaw/implementation/outcomeinferred. OneHR1episodeorderedtwostages/bothmemberNay, nochronologybasedtrajectory. Nonexhaustivehighlightsdo notcloseomittedcomponentresearch.",
+      "finding": "No material defect in the bounded selected-clause candidate and compact comparison. This assessment does not cover omitted Immigration components, all operative package text, independent acceptance or legal enforceability. Initial provisional section-number inference was discarded before candidate application; operative content and original-to-final crosswalk govern.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "a11dc88a3ee7f6b573314a6cfc71eaa0091c52e2665d664f894ca6a4278b1f75",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/html/BILLS-119hr1eas.htm",
+          "governed_bytes_sha256": "bab290d1cf5edfa935f82f4ad180265f1f0b4d3b5d507235f1660e45c99aaab7",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:hres566eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres566eh/html/BILLS-119hres566eh.htm",
+          "governed_bytes_sha256": "78d6957f2d3326483ef1110d3f670604a1332e5356aa876167e9c490397767af",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Selected exact clauses, original controlling-chain witnesses and complete material baseline paragraphs; full captured text is not an assertion of full-package audit"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": true,
+      "correction_state": "local_semantic_and_focused_validation_passed_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -7414,7 +7596,7 @@
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 83,
+    "No Defect": 85,
     "Minor": 3,
     "Major": 7,
     "Critical": 1
@@ -7456,7 +7638,8 @@
     "An expressly incorporated citizenship/LPR/protected-immigration-status predicate is distinct from generic foreign-country/entity/undefined-clearance context. Preserve provider versus recipient, USperson overlap, independent LPR route and criminal conjunction/ANYitem conviction-denial limits; domain/regulatory application remains candidate review.",
     "Airport-security vetting status is not immigration status; provider-payment consequences do not inherit separate INA fraud grounds; loan-purpose amendments do not inherit other bills status/ownership amendments. Actual material sources control these exclusions.",
     "WarPowers military-force removal is not alien removal; neighboring annualDHSdebate cannot supply a narrow resolution meaning. Passed93requiresactualEH; immigration-onlyWHEREAS96cannotcreateoperative or directional membership.",
-    "Failed1398rule versus laterpassed1438: postpassageS1383engrossment not directfinaladoption; printed amendment label alone cannot create an actual amendment vote."
+    "Failed1398rule versus laterpassed1438: postpassageS1383engrossment not directfinaladoption; printed amendment label alone cannot create an actual amendment vote.",
+    "H.R.1 temporal control: currently served EH incorporates June corrections/renumbering; section labels and StarPrint are not operative-content proof. Compare May22floor/RCP-plus-adopted-manager clauses before reusing selectedEHwitnesses; distinguish July1EAS after-first-word replacement. Source captures and selected-clause audit remain separate extents."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -7475,19 +7658,19 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 217,
-    "focused_runtime_seconds": 38.695,
+    "focused_tests": 220,
+    "focused_runtime_seconds": 39.296,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "pending_push_current_checkpoint",
+    "exact_head_ci": "pending_feature_push; previous exact head bac767a all nine jobs passed",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "da2f7740cc6e4240652e96b8dfb92e178e0c53cb",
+      "head": "bac767abf68781ff4bbcda4774e2893d42e2cd33",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37445825008"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37448394605"
     }
   },
   "open_legal_interactions": [
@@ -7725,6 +7908,26 @@
         "govinfo:50usc1702-2024",
         "govinfo:8usc1324b-a3-protected-definition"
       ]
+    },
+    {
+      "action_id": "house:119:1:145",
+      "related_action_ids": [
+        "house:119:1:190"
+      ],
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Printed detention permissions/standards versus other legal/judicial constraints; not unavailable primary evidence or ordinary unfinished component research",
+      "question": "How do the House State-licensing-independent family-center definition and SOLE single-adult-standard discretion interact with existing legal/judicial constraints, compared with Senate explicit consistent-with-applicable-law language? The candidate preserves each printed clause without deciding enforceability or universal detention authority.",
+      "recommendation": "Retain bounded printed-text meaning and explicit no-enforceability/no-outcome qualification pending independent legal/application review.",
+      "alternatives": [
+        "Retain printed permissions/qualifications with legal application unresolved",
+        "After separately authorized legal review, add a precisely source-grounded account of identified interactions; do not imply all constraints are removed"
+      ],
+      "safe_parallel_work": "Expand remaining H.R.1 benefit/tax/fee/sponsor/removal components from exact vote-time sources, and continue other package/narrow screenings.",
+      "source_ids": [
+        "congressional-record:2025-05-21-hr1-selected-vote-time",
+        "govinfo:hr1eas",
+        "govinfo:6usc279-2024-operative"
+      ]
     }
   ],
   "temporal_baseline_pattern_review": {
@@ -7852,5 +8055,12 @@
     "uncorrected_identified_postvote_baselines": [],
     "new_finding_id": "IB-AUDIT-JANUARY-POSTVOTE-BASELINE",
     "authority": "same-ownerinternalcandidatepatternreviewonly"
+  },
+  "hr1_selected_scope_checkpoint": {
+    "version_receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_exact_version_review.json",
+    "receipt_sha256": "e0a0e0983a1b9546ddce06f714878e312e26f52b21344bae40f377bfc9460a1f",
+    "complete_immigration_component_review": false,
+    "accounting_ref": "universe_proposal.json#accounting.partial_component_reviews",
+    "remaining_work": "Benefits, tax/remittance, EAD/other fees, sponsor/UAC and removal/enforcement; separate from221 ordinary screenings and22 legal/application questions."
   }
 }

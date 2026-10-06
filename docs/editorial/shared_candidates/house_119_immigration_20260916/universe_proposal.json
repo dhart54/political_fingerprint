@@ -27,6 +27,7 @@
     "house:119:1:102",
     "house:119:1:116",
     "house:119:1:119",
+    "house:119:1:145",
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
@@ -35,6 +36,7 @@
     "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:190",
     "house:119:1:203",
     "house:119:1:220",
     "house:119:1:264",
@@ -68,9 +70,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 211,
-      "interpreted_substantive_directional": 37,
+      "interpreted_substantive_directional": 39,
       "exact_action_ineligible": 203,
-      "source_unresolved": 223,
+      "source_unresolved": 221,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -80,15 +82,15 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 37,
-    "directional_substantive_actions": 37,
+    "substantive_eligible_actions": 39,
+    "directional_substantive_actions": 39,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 211,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 203,
-    "unresolved_boundary_cases": 223,
-    "independent_episode_count": 35,
-    "multi_action_episode_count": 2,
+    "unresolved_boundary_cases": 221,
+    "independent_episode_count": 36,
+    "multi_action_episode_count": 3,
     "mechanism_types": [
       "concurrence",
       "final_passage",
@@ -96,8 +98,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 37,
-      "substantive_actions": 37,
+      "ready_substantive_actions": 39,
+      "substantive_actions": 39,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -328,6 +330,7 @@
         "house:119:1:102",
         "house:119:1:116",
         "house:119:1:119",
+        "house:119:1:145",
         "house:119:1:153",
         "house:119:1:156",
         "house:119:1:163",
@@ -336,6 +339,7 @@
         "house:119:1:172",
         "house:119:1:183",
         "house:119:1:184",
+        "house:119:1:190",
         "house:119:1:203",
         "house:119:1:220",
         "house:119:1:264",
@@ -579,13 +583,11 @@
         "house:119:1:76",
         "house:119:1:79",
         "house:119:1:100",
-        "house:119:1:145",
         "house:119:1:150",
         "house:119:1:151",
         "house:119:1:165",
         "house:119:1:180",
         "house:119:1:182",
-        "house:119:1:190",
         "house:119:1:199",
         "house:119:1:200",
         "house:119:1:204",
@@ -853,6 +855,13 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr1:119",
+        "action_ids": [
+          "house:119:1:145",
+          "house:119:1:190"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr2931:119",
         "action_ids": [
           "house:119:1:153"
@@ -1007,6 +1016,13 @@
     ],
     "multi_action_episodes": [
       {
+        "episode_candidate_id": "episode:hr1:119",
+        "action_ids": [
+          "house:119:1:145",
+          "house:119:1:190"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr4:119",
         "action_ids": [
           "house:119:1:168",
@@ -1020,11 +1036,44 @@
           "house:119:2:108"
         ]
       }
-    ]
+    ],
+    "partial_component_reviews": [
+      {
+        "action_id": "house:119:1:145",
+        "episode_candidate_id": "episode:hr1:119",
+        "whole_action_direction_established": true,
+        "complete_immigration_component_review": false,
+        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed.",
+        "remaining_executable_component_work": [
+          "SNAP/Medicaid/Medicare/ACA benefit eligibility",
+          "tax and remittance provisions",
+          "employment authorization and other fees",
+          "child sponsor and unaccompanied-child provisions",
+          "removal and other enforcement provisions"
+        ],
+        "legal_application_questions": "Separate audit queue; printed detention clauses preserved without resolving enforceability."
+      },
+      {
+        "action_id": "house:119:1:190",
+        "episode_candidate_id": "episode:hr1:119",
+        "whole_action_direction_established": true,
+        "complete_immigration_component_review": false,
+        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed.",
+        "remaining_executable_component_work": [
+          "SNAP/Medicaid/Medicare/ACA benefit eligibility",
+          "tax and remittance provisions",
+          "employment authorization and other fees",
+          "child sponsor and unaccompanied-child provisions",
+          "removal and other enforcement provisions"
+        ],
+        "legal_application_questions": "Separate audit queue; printed detention clauses preserved without resolving enforceability."
+      }
+    ],
+    "interpreted_action_count_qualification": "39 interpreted exact actions establish candidate directional meanings. This count does not certify exhaustive component review of multi-domain packages; H.R.1 selected-clause limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "cb2465c399b5d1261b57b99eb4cb76bec6f7c9019b53e52d94d26aacccdaef77",
+  "universe_subject_sha256": "85200a1173ab4f91e6b3476d7c1004a175136cb8047296511b4365775d0d8f1d",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -8809,8 +8858,8 @@
       "date": "2025-05-22",
       "measure": "bill_119_hr_1",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
       "source": {
         "source_id": "clerk:119:1:145",
         "url": "https://clerk.house.gov/evs/2025/roll145.xml",
@@ -8818,7 +8867,7 @@
         "governed_bytes_sha256": "0921e2b4fd5c08d64fa35f164b392108454a95f51aaecdf67c9eb092865a00c0",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1",
       "member_action": "nay",
@@ -8827,26 +8876,86 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:145",
           "url": "https://clerk.house.gov/evs/2025/roll145.xml",
           "raw_sha256": "650304c381dd6956a30fcbb388d670cd0609c54ad401213070047a00eb2ee7ca",
-          "governed_bytes_sha256": "0921e2b4fd5c08d64fa35f164b392108454a95f51aaecdf67c9eb092865a00c0",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0921e2b4fd5c08d64fa35f164b392108454a95f51aaecdf67c9eb092865a00c0"
+        },
+        {
+          "source_id": "govinfo:hr1eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm",
+          "raw_sha256": "8c31f1ae49c9738d9bdf2086e25d48cf2330b85a65ac9b85f624486837a2ca91",
+          "governed_bytes_sha256": "1b1bd29c9b5ceb4b8ef6f25388e75a709a6833d490a48eaec17485c0073a50b7"
+        },
+        {
+          "source_id": "govinfo:hres436eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres436eh/html/BILLS-119hres436eh.htm",
+          "raw_sha256": "4ec51ca3e40c86e220e731d12dadf36db57d6bbd749d6619479719dcf1b15321",
+          "governed_bytes_sha256": "2866379c74803e8e00d01ae5c8ad5302307b2ed0c62bde0c0762b0c7055ca7b3"
+        },
+        {
+          "source_id": "govinfo:hrpt119-113-complete",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt113/html/CRPT-119hrpt113.htm",
+          "raw_sha256": "4ebd6f9b059b56f6efe974ecc8488e8719ae37a8f680ca119acb81f343efd16c",
+          "governed_bytes_sha256": "4577a542b3d3f8cbae9a99dcd2c3696b27dc14567664f701f6a243ee7b8b8f87"
+        },
+        {
+          "source_id": "house:rcp119-3-selected-immigration-pages",
+          "url": "https://rules.house.gov/sites/evo-subsites/rules.house.gov/files/documents/rcp_119-3_final.pdf",
+          "raw_sha256": "f29c02a74a95053f54fb33c38b9cceb874eade61ee1d83f096eb724bf41e98de",
+          "governed_bytes_sha256": "5c9d9ac82fbe13e97d63c5456a85894b238b9f5c0f49e81982c0cd0af4598508"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-selected-vote-time",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "raw_sha256": "503fe36f93f843c3911c17d5d3bccae344ba5fdfc6cb10949d4524c599b8cc7b",
+          "governed_bytes_sha256": "f7e96bd04b77aeaac3364ab57b5da2fd01d658ec7bb75fc0a32f6de4d3d53c39"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "raw_sha256": "503fe36f93f843c3911c17d5d3bccae344ba5fdfc6cb10949d4524c599b8cc7b",
+          "governed_bytes_sha256": "de6f13ee9abdba11e444296965169141ee876a1abd99453d1b837b6aca5bc49a"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "raw_sha256": "05499f2878f7b6e106aa156b6894ef83b7ab958c5ed984bad7be8fb0474eb296",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d7102561faf803b9976bed806b7f98d90e91c0c106846b32e93ab79a3c399449"
       }
     },
     {
@@ -11331,8 +11440,8 @@
       "date": "2025-07-03",
       "measure": "bill_119_hr_1",
       "question": "On Motion to Concur in the Senate Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
       "source": {
         "source_id": "clerk:119:1:190",
         "url": "https://clerk.house.gov/evs/2025/roll190.xml",
@@ -11340,7 +11449,7 @@
         "governed_bytes_sha256": "8856c55de2025cbd6d2139476907410e06245b4d56f4634291074e243476cbfa",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1",
       "member_action": "nay",
@@ -11349,26 +11458,62 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:190",
           "url": "https://clerk.house.gov/evs/2025/roll190.xml",
           "raw_sha256": "246eeada21eedab63a0926e3dbd76ee16478a1b718c9cd61d9016efadeed24f9",
-          "governed_bytes_sha256": "8856c55de2025cbd6d2139476907410e06245b4d56f4634291074e243476cbfa",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "8856c55de2025cbd6d2139476907410e06245b4d56f4634291074e243476cbfa"
+        },
+        {
+          "source_id": "govinfo:hr1eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/html/BILLS-119hr1eas.htm",
+          "raw_sha256": "123282622da535ebc7754e116c7afbdf7b3eb49d2f072795465f95448afea1c0",
+          "governed_bytes_sha256": "bab290d1cf5edfa935f82f4ad180265f1f0b4d3b5d507235f1660e45c99aaab7"
+        },
+        {
+          "source_id": "govinfo:hres566eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres566eh/html/BILLS-119hres566eh.htm",
+          "raw_sha256": "82eb7b360e25a51f8bf235e3135c8279c6450f6b00e8ee1da2e6ad38cc30e215",
+          "governed_bytes_sha256": "78d6957f2d3326483ef1110d3f670604a1332e5356aa876167e9c490397767af"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "raw_sha256": "05499f2878f7b6e106aa156b6894ef83b7ab958c5ed984bad7be8fb0474eb296",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a14f27ebac1b14140053f0f6e305075724833e56d48eb3d08247daf4db558aa6"
       }
     },
     {
@@ -38184,6 +38329,7 @@
     "house:119:1:102",
     "house:119:1:116",
     "house:119:1:119",
+    "house:119:1:145",
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
@@ -38192,6 +38338,7 @@
     "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:190",
     "house:119:1:203",
     "house:119:1:220",
     "house:119:1:264",
@@ -38230,13 +38377,11 @@
     "house:119:1:76",
     "house:119:1:79",
     "house:119:1:100",
-    "house:119:1:145",
     "house:119:1:150",
     "house:119:1:151",
     "house:119:1:165",
     "house:119:1:180",
     "house:119:1:182",
-    "house:119:1:190",
     "house:119:1:199",
     "house:119:1:200",
     "house:119:1:204",
@@ -38453,6 +38598,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "4bf6392dbd72cc14c0db86ffcdd51eba4755516ec6d3b986c0e0434296b9da33",
-  "membership_review_sha256": "609c54161e5fd5ee009d38ba71118663f8f88abe52912c4a1902c470a237b978"
+  "proposal_sha256": "06f87d36d2b7cc6d54a1ead31c3bcc8e9f3bc9ac64b1ffe5e8dcc1172692f253",
+  "membership_review_sha256": "33b1e38de8e0849df9e5d4f377c1fe8d413f6aead07908b2152325abcb6ff07a"
 }

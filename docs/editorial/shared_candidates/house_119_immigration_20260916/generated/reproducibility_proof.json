@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "017aeb7e13a6bfd17a227706b50dc16e8462b47f7ed5ccedbaebba2e67635988"
+    "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "a73e992a0e9ee841ffa5e3394b86393028a7b0aebda2400ee53c2173d21bceef",
-  "source_capture_sha256": "db7e7b7df15672ee0aed42a25cd59ab468d24b5ff21f25e145a4b007f8195c44",
-  "core_sha256": "d2ec61e61d70d13f87834c1092edbd2176e65711bd4103ab214a0161a80b2de1",
-  "compiled_sha256": "247c1692fbfc5a738f264cfbd9762caa59a7c06cee74fe837c37554b63dcd54a",
-  "readable_sha256": "b620e1eb4ed7bc159cccb3f936cf14eda09733ea40e905a0d1f11d8d16964657",
+  "input_sha256": "3a59aae235f300a7f83bad60a116556f16807026e8459783a305e4eabef06d74",
+  "source_capture_sha256": "fa8985a6572eed7fa42d9938ee90a6000aacf2f3d8fe3e7879d86e7411894932",
+  "core_sha256": "c9d84e0643d4b01d8bd2ff6e0a1d848adff4009f705b233bd3ece5df2601a944",
+  "compiled_sha256": "b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f",
+  "readable_sha256": "f03ae147ad78c18757ce52607710609b15f27944fd7164eea3a018972d770168",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -218,6 +218,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:145",
+      "shared_sha256": "4ecd4a12496959f04b409cd872856bac86a5398b6995700c28640aeadf84f289",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete House proposal; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:145"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete House proposal; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:145"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:153",
       "shared_sha256": "c44d03ebe83438ab4a207b4f7bc08865707004c965beba2cff5791b36624b4d5",
       "choices": [
@@ -374,6 +394,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.275 with its specified monthly and initial historical-period DHS encounter-reporting requirements",
           "source_id": "clerk:119:1:184"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:190",
+      "shared_sha256": "c6f34951bdf3d0bf6185fef860e828fedf90098f7be6145746368d85da34dede",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that complete Senate replacement; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:190"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that complete Senate replacement; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:190"
         }
       ]
     },

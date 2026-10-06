@@ -28,6 +28,39 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         result = validate(*self.values)
         self.assertEqual(result['inventory_count'], 676)
 
+    def test_hr1_distinct_versions_project_once_per_underlying_episode(self):
+        core, mapping, projections, _, result = self.products
+        ids = ['house:119:1:145', 'house:119:1:190']
+        actions = {a['action_id']: a for a in core['actions']}
+        self.assertEqual(actions[ids[0]]['legislative_stage'], 'final_passage')
+        self.assertEqual(actions[ids[1]]['legislative_stage'], 'concurrence')
+        self.assertNotEqual(actions[ids[0]]['action_core_sha256'], actions[ids[1]]['action_core_sha256'])
+        episode = next(e for e in mapping['episodes'] if e['episode_id'] == 'episode:hr1:119')
+        self.assertEqual(episode['action_ids'], ids)
+        readable = readable_candidates(self.values[0], core, projections, result)
+        for projection, member in zip(projections, readable['members']):
+            rows = {a['action_id']: a for a in projection['actions']}
+            for aid in ids:
+                self.assertEqual(rows[aid]['official_status'], 'Nay')
+                self.assertEqual(rows[aid]['action_core_sha256'], actions[aid]['action_core_sha256'])
+            findings = [f for f in member['findings'] if set(ids).intersection(f['action_ids'])]
+            self.assertEqual(len(findings), 1)
+            self.assertEqual(findings[0]['action_ids'], ids)
+
+    def test_hr1_senate_text_cannot_replace_house_passage_witness(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:145')
+        action['source_id'] = 'govinfo:hr1eas'
+        with self.assertRaisesRegex(ValueError, 'primary bill version differs'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_hr1_house_text_cannot_replace_senate_concurrence_witness(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:190')
+        action['source_id'] = 'govinfo:hr1eh'
+        with self.assertRaisesRegex(ValueError, 'primary bill version differs'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
     def test_direct_concurrence_uses_real_question_observations_and_one_episode(self):
         core, mapping, projections, _, result = self.products
         action = next(a for a in core['actions'] if a['action_id'] == 'house:119:1:203')

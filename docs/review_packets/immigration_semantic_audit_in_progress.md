@@ -712,3 +712,69 @@ outcome-only Record pages are insufficient. Preserve 21 source-supported legal
 questions separately from these ordinary screenings. No new large/speculative
 unit starts after the thirty-minute boundary; complete checkpoint/report/CI work
 before the intentional overnight terminal marker. This note is not the marker.
+
+
+## Checkpoint24: H.R.1 selected clauses and exact vote-time boundary
+
+Authorized successor retains the existing checkout, prior deadline and intentional
+terminal marker. PR199d9f0174 is operating guidance only; development remains on
+PR198/bac767a, based on main862b290. No current shutdown boundary was supplied.
+
+House145 is May22 passage;190 is July3 Senate-amendment concurrence. Both members
+record Nay on both choices. Two member-neutral meanings aggregate as one H.R.1
+episode and one finding per member, without a chronological trajectory. H.Res.436
+adoptsRCP119-3 as modified by119-113. The contemporaneous as-amended floor Record
+is the House operative witness. June11H.Res.499 adopts492 corrections: original
+military-intelligence20012 andCOVID-credit112205 are struck, following sections
+renumbered; the original LIHEAP conforming edit is also removed. Current EH is
+later corrected, rather than the complete May22 snapshot. A provisional section-
+number-only inference was discarded before candidate application. Selected House
+clauses compare byte-identically after normalization; EH supplies comparison only.
+July1EAS replaces all after the first word and controls190;566 permits its motion,
+rather than deeming concurrence. Full EH/EAS captures match governed Health bytes;
+no Health interpretation or artifact changes.
+
+House60001, manager-added60004,70101,70001-2,70010 and70023 are bound to complete
+operative floor paragraphs. Reimbursement12b includes qualifying costs on/after
+January21,2021, satisfactory evidence and no specified duplicate DHS reimbursement.
+Detention45b and all selected appropriations preserve additionalFY2025 scope and
+September30,2029 availability. Senate90001/90003/100002/100009/100018 bind EAS.
+Filing floors1000House/100Senate, separate pending100floor, calendar-year trigger,
+possible higher rules, no-waiver terms, distinct CPI rounding and account allocation
+are retained. Existing1158(d)(3) already allows fees; MAY-to-SHALL is not first fee
+authority. Complete material279(g)(2),1158(d)(3),1356(m)/(n) baselines are bound.
+House licensing/sole-discretion and Senate applicable-law language stay distinct;
+a new grouped legal/application question preserves their unresolved interaction.
+
+These are selected highlights, not exhaustive Immigration component reviews.
+Authoring limitations, readable candidates and accounting.partial_component_reviews
+explicitly retain executable benefit/tax/remittance/EAD/fee/sponsor/UAC/removal and
+other enforcement work. Interpreted action counts do not certify complete package
+coverage. No individual component preference, legal enforceability, enacted result,
+actual spending or detention outcome follows from the whole-package observations.
+
+455 governed reviews:39interpreted,211procedural,203excluded,2expressive;221ordinary
+screenings unfinished.36episodes/78observations(76directional) yield70findings,
+Foushee36/Massie34.1197governed sources (990unchangedHealth+207new),405claims,
+111provisional captures.96distinct same-owner assessments:1Critical/7Major/3Minor/
+85NoDefect; historical distinct repaired issues remain1Critical/3Major/2Minor.
+22legal/application questions remain separate. No independent acceptance or final
+full-corpus audit PASS. Candidate/public/persistence boundaries remain fail closed.
+
+220focused tests pass(39.296s), seven semantic checks pass, seven generated outputs
+replay byte-identically.89new bounded-source extents reconstruct exactly from full
+capture witnesses. Negative tests expose and now reject ordinary passage/EAS and
+concurrence/EH substitution before compilation. This guard does not prove vote-time
+currency; contemporaneous bindings remain required. Final diff/protected runtime,
+compiler, frontend, migration and Health paths inspected. No production work.
+Prior exact bac767a passed all nine hosted jobs(run37448394605); checkpoint24CI is
+checked after feature push and recorded in the PR/supervisor checkpoint receipt.
+Core:c9d84e0643d4b01d8bd2ff6e0a1d848adff4009f705b233bd3ece5df2601a944.
+Compiled:b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+
+Review map: hr1_exact_version_review.json records controlling/correction chains,
+source/version/paragraph hashes and action_claim_bindings; authoring.json stores
+complete claim passages. Request independent review of this bounded increment.
+Continue H.R.1 omitted components from actual floor/EAS and material pre-vote
+baselines, then continuing/omnibus/NDAA and narrow screenings. Health currentEH
+versus May22 snapshot is an adjacent follow-up, not imported into this research PR.

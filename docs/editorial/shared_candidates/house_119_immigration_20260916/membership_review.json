@@ -16631,7 +16631,145 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:145",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:145",
+          "url": "https://clerk.house.gov/evs/2025/roll145.xml",
+          "raw_sha256": "650304c381dd6956a30fcbb388d670cd0609c54ad401213070047a00eb2ee7ca",
+          "governed_bytes_sha256": "0921e2b4fd5c08d64fa35f164b392108454a95f51aaecdf67c9eb092865a00c0"
+        },
+        {
+          "source_id": "govinfo:hr1eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eh/html/BILLS-119hr1eh.htm",
+          "raw_sha256": "8c31f1ae49c9738d9bdf2086e25d48cf2330b85a65ac9b85f624486837a2ca91",
+          "governed_bytes_sha256": "1b1bd29c9b5ceb4b8ef6f25388e75a709a6833d490a48eaec17485c0073a50b7"
+        },
+        {
+          "source_id": "govinfo:hres436eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres436eh/html/BILLS-119hres436eh.htm",
+          "raw_sha256": "4ec51ca3e40c86e220e731d12dadf36db57d6bbd749d6619479719dcf1b15321",
+          "governed_bytes_sha256": "2866379c74803e8e00d01ae5c8ad5302307b2ed0c62bde0c0762b0c7055ca7b3"
+        },
+        {
+          "source_id": "govinfo:hrpt119-113-complete",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt113/html/CRPT-119hrpt113.htm",
+          "raw_sha256": "4ebd6f9b059b56f6efe974ecc8488e8719ae37a8f680ca119acb81f343efd16c",
+          "governed_bytes_sha256": "4577a542b3d3f8cbae9a99dcd2c3696b27dc14567664f701f6a243ee7b8b8f87"
+        },
+        {
+          "source_id": "house:rcp119-3-selected-immigration-pages",
+          "url": "https://rules.house.gov/sites/evo-subsites/rules.house.gov/files/documents/rcp_119-3_final.pdf",
+          "raw_sha256": "f29c02a74a95053f54fb33c38b9cceb874eade61ee1d83f096eb724bf41e98de",
+          "governed_bytes_sha256": "5c9d9ac82fbe13e97d63c5456a85894b238b9f5c0f49e81982c0cd0af4598508"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-selected-vote-time",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "raw_sha256": "503fe36f93f843c3911c17d5d3bccae344ba5fdfc6cb10949d4524c599b8cc7b",
+          "governed_bytes_sha256": "f7e96bd04b77aeaac3364ab57b5da2fd01d658ec7bb75fc0a32f6de4d3d53c39"
+        },
+        {
+          "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-05-21/html/CREC-2025-05-21-pt2-PgH2235-2.htm",
+          "raw_sha256": "503fe36f93f843c3911c17d5d3bccae344ba5fdfc6cb10949d4524c599b8cc7b",
+          "governed_bytes_sha256": "de6f13ee9abdba11e444296965169141ee876a1abd99453d1b837b6aca5bc49a"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "raw_sha256": "05499f2878f7b6e106aa156b6894ef83b7ab958c5ed984bad7be8fb0474eb296",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:145",
+      "episode_candidate_id": "episode:hr1:119"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration eligibility follows exact border infrastructure, adult/family detention and asylum-fee mechanisms, reconstructed at each distinct action/version. Selected highlights are explicitly non-exhaustive; no separate component position, complete package review, enactment, legal enforceability or outcome is inferred. May22 adopted rule/manager amendment and later June correction sequence are distinguished; one underlyingH.R.1 episode.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:190",
+          "url": "https://clerk.house.gov/evs/2025/roll190.xml",
+          "raw_sha256": "246eeada21eedab63a0926e3dbd76ee16478a1b718c9cd61d9016efadeed24f9",
+          "governed_bytes_sha256": "8856c55de2025cbd6d2139476907410e06245b4d56f4634291074e243476cbfa"
+        },
+        {
+          "source_id": "govinfo:hr1eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/html/BILLS-119hr1eas.htm",
+          "raw_sha256": "123282622da535ebc7754e116c7afbdf7b3eb49d2f072795465f95448afea1c0",
+          "governed_bytes_sha256": "bab290d1cf5edfa935f82f4ad180265f1f0b4d3b5d507235f1660e45c99aaab7"
+        },
+        {
+          "source_id": "govinfo:hres566eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres566eh/html/BILLS-119hres566eh.htm",
+          "raw_sha256": "82eb7b360e25a51f8bf235e3135c8279c6450f6b00e8ee1da2e6ad38cc30e215",
+          "governed_bytes_sha256": "78d6957f2d3326483ef1110d3f670604a1332e5356aa876167e9c490397767af"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "raw_sha256": "05499f2878f7b6e106aa156b6894ef83b7ab958c5ed984bad7be8fb0474eb296",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174"
+        },
+        {
+          "source_id": "govinfo:8usc1158d3-2024-hr1-fee-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "d3b6be0795f6f42ed6f9c35d7dc843e470485ca31a6cb7f68b238f8dd9cbe107"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:190",
+      "episode_candidate_id": "episode:hr1:119"
     }
   ],
-  "review_sha256": "609c54161e5fd5ee009d38ba71118663f8f88abe52912c4a1902c470a237b978"
+  "review_sha256": "33b1e38de8e0849df9e5d4f377c1fe8d413f6aead07908b2152325abcb6ff07a"
 }

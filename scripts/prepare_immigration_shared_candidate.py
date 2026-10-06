@@ -149,6 +149,19 @@ def _bind_concurrence(proposed, sources, congress, clerk):
 def prepare(authoring, capture, member_ids):
     if authoring.get("domain_id") != "IMMIGRATION_BORDER":
         raise ValueError("Immigration candidate adapter cannot prepare another domain")
+    sources = {s["source_id"]: s for s in capture["sources"]}
+    for proposed in authoring["actions"]:
+        # Reject known incompatible ordinary bill stages before the common
+        # adapter. This is not a full vote-time reconstruction: later corrected
+        # EH witnesses still require explicit contemporaneous claim bindings.
+        # Direct/nested replacement resolutions have their own clause guards.
+        if _extended(proposed) or proposed.get("deemed_concurrence") or proposed.get("nested_concurrence"):
+            continue
+        version = sources[proposed["source_id"]]["text_version"]
+        passage_stages = {"final_passage", "suspension_and_passage", "division_retention", "veto_override"}
+        if ((version == "EAS" and proposed["stage"] in passage_stages)
+                or (version == "EH" and proposed["stage"] in {"concurrence", "suspension_and_concurrence"})):
+            raise ValueError("primary bill version differs from exact legislative stage")
     additions = [a for a in authoring["actions"] if _extended(a)]
     ordinary = copy.deepcopy(authoring)
     ordinary["actions"] = [a for a in ordinary["actions"] if not _extended(a)]
