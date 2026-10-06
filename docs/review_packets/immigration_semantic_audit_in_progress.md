@@ -247,3 +247,51 @@ accounting/public-persistence gates inspected. Protected baseline/commonadapter
 diff and diff-check clean. Priorchild-placementdecbc06cfd14c2a57879310c33ba151b5c9b8de4
 passes all9hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37422916927.
 Current exact-head CI follows push. No full-corpus PASS, closure or terminalmarker.
+
+
+### Checkpoint 14: territorial-national tuition and sixteen screenings
+
+H.R. 6472 EH adds one independently reconstructed candidate meaning: a tuition
+and fee ceiling at resident rates for U.S. nationals residing in Guam, NMI,
+American Samoa or USVI, at qualifying public HEA-assisted institutions. Both
+residence and nationality are required. Citizens and noncitizen nationals are
+included; residence, LPR or visa status alone is insufficient. The institution-
+location State definition includes Puerto Rico, DC and the Freely Associated
+States, without expanding the four beneficiary residences. Existing Federal-
+service tuition protections, institutional definitions and participation-agreement
+framework are separately bound. No free college, automatic admission, individual
+aid, nationality/status award, invented proof procedure or actual savings claim.
+
+Sixteen exact actions excluded after operative review, including goods tariff
+entry, financial-forum participation exclusion, marine-sanctuary cable permits,
+SBA financing and ordinary education/benefit changes. Three additional source-
+first controls compare those boundaries with actual nationality/visa mechanisms.
+356 reviews now govern 28 interpreted, 185 procedural, 142 excluded and one
+expressive action. 320 ordinary screenings remain unfinished; they are not all
+unavailable-source dependencies. No closure or final full-corpus audit verdict.
+
+28 actions occupy 27 episodes; the two H.R. 4 stages remain one episode. 56 member
+observations include 55 directional actions and one Present. Readable/IR findings
+total 53 (Foushee 27, Massie 26). Foushee has 9 support and 19 opposition actions;
+Massie has 22 support, 5 opposition and one Present. Both actual new compacts,
+details, shared hashes and qualifications inspected. All 28 meanings internally
+audited by the same accountable owner in a separate primary-source reconstruction
+stage; no second independent reviewer is claimed. 64 distinct audited actions:
+1 Critical, 6 Major, 2 Minor, 55 No Defect. Historical defects/corrections remain
+recorded. 27 retained exclusions, eight procedures and all one expressive control
+sampled; ten legal-application interactions remain independent-review dependencies.
+
+996 sources = 840 unchanged Health-governed reuses + 156 new sources; 252 shared
+claim witnesses and 63 fingerprinted full provisional captures. Shared core:
+`363a133f6bb991a84a2179b65024b9f69516e6ce2efc95d90aac241fc456fdb0`.
+Compiled IR:
+`67747e33d0fd254f82cf8c7199b222d14606546ab74c5ecfbf833a2c404f582e`.
+
+210 focused tests pass in 33.308 seconds; all seven canonical semantic checks
+and all seven byte-identical replay outputs pass. Source/audit/accounting and
+public/persistence fail-closed boundaries pass. Protected baseline paths and
+the frozen common adapter remain unchanged; final diff-check is clean.
+Previous exact head aa5dc89e51bef4bfdb19da29610b92565b2489e4 passes all nine hosted
+jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37425152980.
+Current exact-head CI follows push. Continue unfinished discovery within the
+original overnight deadline; no terminal marker or ready-for-review claim.

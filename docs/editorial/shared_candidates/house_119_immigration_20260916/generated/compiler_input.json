@@ -145,6 +145,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:2:82",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
           "action_id": "house:119:2:94",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -311,6 +317,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:82",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         },
         {
           "action_id": "house:119:2:94",
@@ -945,6 +957,31 @@
         }
       },
       {
+        "action_id": "house:119:2:82",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:82:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The complete H.R. 6472 EH proposal adds HEA section 135A. A PUBLIC institution of higher education RECEIVING ASSISTANCE under the HEA must not charge a covered individual tuition OR fees above the rate charged for residents of the State WHERE THE INSTITUTION IS LOCATED. Covered individuals must satisfy BOTH residence in Guam, the Commonwealth of the Northern Mariana Islands, American Samoa or the U.S. Virgin Islands AND U.S. nationality as defined by INA 101(a)(22). That definition includes U.S. citizens and noncitizens owing permanent allegiance to the United States. Residence alone, lawful permanent residence alone or a visa alone does not establish the required nationality; this proposal does not confer nationality, citizenship, immigration status or naturalization. The four covered-residence jurisdictions are a specific list; Puerto Rico, the District of Columbia and the Freely Associated States are not added to that beneficiary-residence list. The HEA institution-location definition of State is broader: it includes the several States, Puerto Rico, DC, the four named territories and the Freely Associated States (Marshall Islands, Federated States of Micronesia and Palau). That institutional definition must not expand the covered-residence list or be collapsed to only the fifty States. Existing HEA section 101 contains the general institutional education, authorization, public/nonprofit and accreditation framework plus specified additional institutions; the proposal requires a PUBLIC institution and HEA assistance, not every private school or any business offering courses. It does not waive the retained educational-admission qualifications, require admission, provide free tuition, grant an individual federal aid award, or alter visa/admission/removal/work-authorization law. The new section 487(a)(30) requires institutional program participation agreements to comply with section 135A AS APPLICABLE. Existing 487(a) is an institutional initial-and-continuing program-eligibility agreement framework with its subpart-4 exception; this compliance clause is not a replacement of every individual aid-eligibility condition. Existing section 135 already protects resident tuition rates for qualified Federal-service members with the required domicile or permanent duty station, spouses and dependent children, including continued enrollment after duty relocation. Its service categories and effective enrollment dates are retained baseline protections, not proof that this is the first federal resident-rate protection and not deadlines imported into new section 135A. The exact EH prints no special implementation deadline, proof-document procedure or retroactive-refund rule for the new category. This is a whole-bill suspension-and-passage choice and a separate H.R. 6472 episode. No actual institutional compliance, savings, admission or individual nationality determination is established.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr6472:119",
+        "legislative_stage": "suspension_and_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:82",
+          "govinfo:hr6472eh",
+          "govinfo:8usc1101-2024-sba-status-definitions",
+          "govinfo:20usc1003-state-definition",
+          "govinfo:20usc1015d-2024-complete",
+          "govinfo:20usc1094-participation-opening",
+          "govinfo:20usc1001-general-institution"
+        ],
+        "structural_metadata": {
+          "stage_order": 20082
+        }
+      },
+      {
         "action_id": "house:119:2:94",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:94:candidate-v1",
         "eligibility": {
@@ -1242,6 +1279,14 @@
         "episode_id": "episode:hjres72:119",
         "action_ids": [
           "house:119:2:65"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr6472:119",
+        "action_ids": [
+          "house:119:2:82"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

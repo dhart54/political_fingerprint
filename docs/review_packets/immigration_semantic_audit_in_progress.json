@@ -2578,6 +2578,85 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": true,
       "correction_state": "validated_210_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:2:82",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "82",
+        "legis-num": "H R 6472",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "4-Mar-2026",
+        "action-time": "2:20 PM",
+        "vote-desc": "Territorial Student Access to Higher Education Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Source-first reconstruction: complete6472EH imposes a tuition-AND-fee resident-rate ceiling on PUBLIC HEA-assisted institutions. Coverage is four-territory residence AND INA U.S. nationality;1101(a)(22)includes citizens and noncitizen permanent-allegiance nationals, not every resident or LPR/visa holder. HEA State institution-location definition independently read: PuertoRico/DC/FAS included there, NOT added to the four beneficiary residences. General institution definition and487(a) institutional-agreement lead-in read; no automatic admission, free college, individual aid, passport proof or status award. Existing135Federal-service tuition protection fully reconstructed, including domicile/duty, family/continuous enrollment and effective dates; those dates are not imported to135A. Whole EH and March4 suspension/pass-as-amended Clerk choice aligned; actual FousheeYea and MassieNay separately projected, one new6472episode.",
+      "finding": "No material defect found in exact version, institutional scope, residence/nationality conjunction, retained baseline, compact/detail boundaries, source mapping, actual member choices or single-bill episode. A nationality-qualified benefit is operative; ordinary educational-admission wording alone would not establish membership.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "1792f82c086cd76eccffe3f017e9ea2a9aceb0d39d6a4c30655393de1d14eb56",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr6472eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6472eh/html/BILLS-119hr6472eh.htm",
+          "governed_bytes_sha256": "d2ece247bd3be4962cfbbd6193df8d59914ae90ef3568a91ac0c682d333bfbb0",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        },
+        {
+          "source_id": "govinfo:20usc1003-state-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partA-sec1003.htm",
+          "governed_bytes_sha256": "da679dde25200942c021ab348ec233f3e0149bcb33e8d6cd7dda95439340441c",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        },
+        {
+          "source_id": "govinfo:20usc1015d-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partC-sec1015d.htm",
+          "governed_bytes_sha256": "103a15fbc8a96dcec0aa2ec6a7319253292eb6b043e1c8af29e84f3a34e60fb8",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        },
+        {
+          "source_id": "govinfo:20usc1094-participation-opening",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm",
+          "governed_bytes_sha256": "9e63500a9997c4dc6cebe1de5451617c2edcbe77e653f15f1a0f5cd242029ab5",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        },
+        {
+          "source_id": "govinfo:20usc1001-general-institution",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partA-sec1001.htm",
+          "governed_bytes_sha256": "603badac2ccc42c1a22bc8b7f888fa13e4d111db965032a8f5168baabbbf6baa",
+          "reviewed_extent": "Complete exact EH, complete existing135tuition text/notes, or identified complete operative nationality/State/institution/participation witness; full provisional captures separately fingerprinted"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -4654,13 +4733,187 @@
         }
       ],
       "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:2:32",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "32",
+        "legis-num": "H R 5763",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "20-Jan-2026",
+        "action-time": "6:54 PM",
+        "vote-desc": "Main Street Parity Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Independently reconstruct complete5763EH and696financing paragraphs: removes higher startup/single-purpose borrower injection and conforms numbering. It changes financing, not2966citizenship/beneficial ownership. SBA program context and possible noncitizen borrowers alone cannot establish Immigration. Exclusion retained.",
+      "finding": "Source-grounded functional exclusion retained; no new member direction.",
+      "correction": null,
+      "before_review_record_sha256": "263b4d9e631c1089ac40a0bb85b84753d64161d90ab4e7dc18a65eef390a1b67",
+      "corrected_review_record_sha256": "263b4d9e631c1089ac40a0bb85b84753d64161d90ab4e7dc18a65eef390a1b67",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:32",
+          "url": "https://clerk.house.gov/evs/2026/roll032.xml",
+          "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        },
+        {
+          "source_id": "govinfo:hr5763eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm",
+          "governed_bytes_sha256": "a70466570b352573bf920e87cc8c60f19ed197e3e9204854438a9680da2c9bf3",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        },
+        {
+          "source_id": "govinfo:15usc696-224-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm",
+          "governed_bytes_sha256": "da993e852659e491075da455783fc1391af45680273903a591aa5418615f52b2",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:47",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "47",
+        "legis-num": "H R 6359",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "22-Jan-2026",
+        "action-time": "5:07 PM",
+        "vote-desc": "Pregnant Students’ Rights Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Independently reconstruct complete6359EH: required pregnant-student information/accommodations/TitleIX complaint contacts with no-added-rights boundary. Unlike6472, no operative national/citizen/status eligibility predicate. Educational admission and information are not INA admission. Exclusion retained.",
+      "finding": "Source-grounded functional exclusion retained; no new member direction.",
+      "correction": null,
+      "before_review_record_sha256": "efce7de06f3f37c0dc1c7d35190796f1dc8944780cc6bf3bf5aa3ba18d90a556",
+      "corrected_review_record_sha256": "efce7de06f3f37c0dc1c7d35190796f1dc8944780cc6bf3bf5aa3ba18d90a556",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:47",
+          "url": "https://clerk.house.gov/evs/2026/roll047.xml",
+          "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        },
+        {
+          "source_id": "govinfo:hr6359eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm",
+          "governed_bytes_sha256": "a88a06bbbba92e1686a1cc4eb1b8d821500012f33e269c9cbd5cc5cba30aa866",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:58",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "58",
+        "legis-num": "H R 1531",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "9-Feb-2026",
+        "action-time": "7:06 PM",
+        "vote-desc": "PROTECT Taiwan Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Independently reconstruct complete1531EH: notice-conditioned Treasury/Fed/SEC PRC representation exclusion from named financial forums, waiver/sunset. Unlike23/36/1503/1998 sanctions, this exact exclusion has no visa, INA admission/parole/revocation ground. Do not infer every foreign representative is denied entry. Exclusion retained.",
+      "finding": "Source-grounded functional exclusion retained; no new member direction.",
+      "correction": null,
+      "before_review_record_sha256": "e9c5b2d9fd4e4c1719fee3d0fbb7c260d1f88856476bc6c3746af028791c1782",
+      "corrected_review_record_sha256": "e9c5b2d9fd4e4c1719fee3d0fbb7c260d1f88856476bc6c3746af028791c1782",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:58",
+          "url": "https://clerk.house.gov/evs/2026/roll058.xml",
+          "governed_bytes_sha256": "aeca847d616d4bdc62a9224d0de41ec6170abc3fb28f64ad518821d216f51ef3",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        },
+        {
+          "source_id": "govinfo:hr1531eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1531eh/html/BILLS-119hr1531eh.htm",
+          "governed_bytes_sha256": "ad8a63626976958e57fc502c7f2df2cbb0ea59a4cfe6c3f8c67c2393a643137e",
+          "reviewed_extent": "Complete exact proposal and identified material baseline as applicable; Clerk identity/question/observations checked"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 51
+    "No Defect": 55
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -4687,7 +4940,8 @@
     "Ordinaryscreeningpass distinguishes actualbindingHouseoversight/deemedadoption from nonexistentgovernance, retaining narrowcriminalrecordscope; neither preambleICEgratitude nor genericdrug/import/safety/foreign-subject context independently supplies an immigration-person mechanism. Failedrules bindRH, laterpassedrulesEH; exactFoxxamendment doesnotimportMcGovernsalternative.",
     "Explicit noncitizen-energy workforce assessment and consumer-goods customs admission are acknowledged as operative and classified through functional-domain scope, not erased as rhetoric. ChildSSNreplacement follows exactretainedissuance/identity-evidence clauses; generalidentitychangesarenotnewimmigrationstatus grants.",
     "Full-paragraph replacement must enumerate omittedmonthlyreview/adult-transfer/URMplacement clauses, not only additions. Retainedhome-study/counsel/assistance and noROR baseline remain distinct. Childage/gangrecord/conviction versus sponsorhouseholdconviction gates and judicial/cross-reference constraints must not be homogenized.",
-    "LiteralrulethatdirectlydeemsfinalSenateconcurrence differs fromrulesmerelypermittinglatermotion. ExactEASidentity/body/priordate/clause/Clerkquestion andunderlyingbillepisoderequired. NamedunobligatedStateMRArescission isnotallrefugeeauthority/domesticICEfunding, componentvoteoractualoutcome. Entireversiondifferences preserved withoutduplicatingepisodebreadth."
+    "LiteralrulethatdirectlydeemsfinalSenateconcurrence differs fromrulesmerelypermittinglatermotion. ExactEASidentity/body/priordate/clause/Clerkquestion andunderlyingbillepisoderequired. NamedunobligatedStateMRArescission isnotallrefugeeauthority/domesticICEfunding, componentvoteoractualoutcome. Entireversiondifferences preserved withoutduplicatingepisodebreadth.",
+    "Territorial/nationality-qualified tuition: independently separate beneficiary residence list, citizen-and-noncitizen national definition and broader institution-location State definition. Expand controls across ordinary education, SBA finance and financial-forum exclusion so context alone does not supply Immigration membership."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -4697,15 +4951,15 @@
   "final_verdict": null,
   "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
   "sample_coverage": {
-    "original_exclusions_reviewed": 25,
-    "retained_exclusions_reviewed": 24,
+    "original_exclusions_reviewed": 28,
+    "retained_exclusions_reviewed": 27,
     "procedural_controls_reviewed": 8,
     "expressive_controls_reviewed": 1,
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
     "focused_tests": 210,
-    "focused_runtime_seconds": 33.866,
+    "focused_runtime_seconds": 33.308,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -4713,10 +4967,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "decbc06cfd14c2a57879310c33ba151b5c9b8de4",
+      "head": "aa5dc89e51bef4bfdb19da29610b92565b2489e4",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37422916927"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37425152980"
     }
   },
   "open_legal_interactions": [

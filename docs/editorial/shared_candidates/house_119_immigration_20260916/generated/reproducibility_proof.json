@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "98390b188f77f4626940757d05580f1a367e8bbecd7f89d312b5ed211907a4d6"
   },
-  "input_sha256": "45c15a71a6461370b36fe72b888aa0a623e7f0cf97baa4449eea2795a24edf90",
-  "source_capture_sha256": "6ce22ca9d99c07291feee0ef814e61e5e1f6250fc54a767f9b6e14e4c9227bf3",
-  "core_sha256": "5270171f77098bdeaee1663c3343b721f8d97b8bf15447615cac818966ba768b",
-  "compiled_sha256": "b78a136faa49cf5f9a7fccc44b7e98e327390a325e946ef945f2c06d5c852962",
-  "readable_sha256": "6e8d74648db1798e5ccacc7ebde2431b56c1b077a39a390b029e1a57f3419e4e",
+  "input_sha256": "865ba4e57e5e6566609f2c7918765013a68d28c8dc54d37761cb4eee289e43ff",
+  "source_capture_sha256": "8455aab4fc920f3d3a3875a67c0784366679f538b32f9ebea550ae290d47ce95",
+  "core_sha256": "363a133f6bb991a84a2179b65024b9f69516e6ce2efc95d90aac241fc456fdb0",
+  "compiled_sha256": "67747e33d0fd254f82cf8c7199b222d14606546ab74c5ecfbf833a2c404f582e",
+  "readable_sha256": "d4b8e2686a98465dffdbf0cfc50582db42087d3c1b16bddce24d0cfbd24fd15a",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -474,6 +474,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.J.Res.72 terminating the specified EO 14193 emergency subject to the statutory savings",
           "source_id": "clerk:119:2:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:82",
+      "shared_sha256": "6a21b7cad25815212dd0ac990e77e682498332206573661f5c2dcf7904b70610",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 6472 EH territorial-national tuition and fee protection proposal",
+          "source_id": "clerk:119:2:82"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 6472 EH proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:82"
         }
       ]
     },

@@ -40,6 +40,7 @@
     "house:119:1:264",
     "house:119:1:340",
     "house:119:2:65",
+    "house:119:2:82",
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:120",
@@ -58,9 +59,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 185,
-      "interpreted_substantive_directional": 27,
-      "exact_action_ineligible": 126,
-      "source_unresolved": 337,
+      "interpreted_substantive_directional": 28,
+      "exact_action_ineligible": 142,
+      "source_unresolved": 320,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -70,14 +71,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 27,
-    "directional_substantive_actions": 27,
+    "substantive_eligible_actions": 28,
+    "directional_substantive_actions": 28,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 185,
     "expressive_nonbinding_actions": 1,
-    "exact_action_ineligible_actions": 126,
-    "unresolved_boundary_cases": 337,
-    "independent_episode_count": 26,
+    "exact_action_ineligible_actions": 142,
+    "unresolved_boundary_cases": 320,
+    "independent_episode_count": 27,
     "multi_action_episode_count": 1,
     "mechanism_types": [
       "concurrence",
@@ -86,8 +87,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 27,
-      "substantive_actions": 27,
+      "ready_substantive_actions": 28,
+      "substantive_actions": 28,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -305,6 +306,7 @@
         "house:119:1:264",
         "house:119:1:340",
         "house:119:2:65",
+        "house:119:2:82",
         "house:119:2:94",
         "house:119:2:96",
         "house:119:2:120",
@@ -436,7 +438,23 @@
         "house:119:1:336",
         "house:119:1:342",
         "house:119:1:347",
-        "house:119:2:15"
+        "house:119:2:8",
+        "house:119:2:9",
+        "house:119:2:12",
+        "house:119:2:14",
+        "house:119:2:15",
+        "house:119:2:23",
+        "house:119:2:32",
+        "house:119:2:33",
+        "house:119:2:37",
+        "house:119:2:47",
+        "house:119:2:49",
+        "house:119:2:50",
+        "house:119:2:58",
+        "house:119:2:64",
+        "house:119:2:67",
+        "house:119:2:78",
+        "house:119:2:93"
       ],
       "source_unresolved": [
         "house:119:1:15",
@@ -550,26 +568,18 @@
         "house:119:2:5",
         "house:119:2:6",
         "house:119:2:7",
-        "house:119:2:8",
-        "house:119:2:9",
         "house:119:2:10",
         "house:119:2:11",
-        "house:119:2:12",
         "house:119:2:13",
-        "house:119:2:14",
         "house:119:2:17",
         "house:119:2:19",
-        "house:119:2:23",
         "house:119:2:25",
         "house:119:2:26",
         "house:119:2:27",
         "house:119:2:28",
         "house:119:2:29",
         "house:119:2:31",
-        "house:119:2:32",
-        "house:119:2:33",
         "house:119:2:35",
-        "house:119:2:37",
         "house:119:2:38",
         "house:119:2:40",
         "house:119:2:41",
@@ -577,36 +587,27 @@
         "house:119:2:43",
         "house:119:2:44",
         "house:119:2:45",
-        "house:119:2:47",
         "house:119:2:48",
-        "house:119:2:49",
-        "house:119:2:50",
         "house:119:2:52",
         "house:119:2:53",
         "house:119:2:55",
         "house:119:2:56",
         "house:119:2:57",
-        "house:119:2:58",
         "house:119:2:60",
         "house:119:2:62",
-        "house:119:2:64",
-        "house:119:2:67",
         "house:119:2:69",
         "house:119:2:70",
         "house:119:2:71",
         "house:119:2:72",
         "house:119:2:74",
         "house:119:2:76",
-        "house:119:2:78",
         "house:119:2:80",
         "house:119:2:81",
-        "house:119:2:82",
         "house:119:2:84",
         "house:119:2:85",
         "house:119:2:87",
         "house:119:2:88",
         "house:119:2:89",
-        "house:119:2:93",
         "house:119:2:95",
         "house:119:2:97",
         "house:119:2:99",
@@ -916,6 +917,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr6472:119",
+        "action_ids": [
+          "house:119:2:82"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr1958:119",
         "action_ids": [
           "house:119:2:94"
@@ -952,7 +959,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "713509f24712f6dbefd287e207539372254344ad707a151a594b484298ed9f35",
+  "universe_subject_sha256": "ca8e83cef15b4e303b2256886af7915a015e65a246911b53118c68f25306af59",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -20342,8 +20349,8 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_504",
       "question": "Passage, Objections of the President To The Contrary Notwithstanding",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete enrolled504 governs the Miccosukee Reserved Area Osceola Camp parcel/map and Army flooding mitigation. The exact choice is presidential-veto override, not proof of enactment. Tribal land boundaries and flood mitigation supply no immigration/status/admission mechanism.",
       "source": {
         "source_id": "clerk:119:2:8",
         "url": "https://clerk.house.gov/evs/2026/roll008.xml",
@@ -20360,25 +20367,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete enrolled504 governs the Miccosukee Reserved Area Osceola Camp parcel/map and Army flooding mitigation. The exact choice is presidential-veto override, not proof of enactment. Tribal land boundaries and flood mitigation supply no immigration/status/admission mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:8",
           "url": "https://clerk.house.gov/evs/2026/roll008.xml",
           "raw_sha256": "085f2f98dc036557400756f548c9d12d21527d295d650945252dc340b7909f7e",
-          "governed_bytes_sha256": "5cb39e492f4a2d032b876c1784977c9908c8af8d08cd23135ea185c2ad2d5239",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5cb39e492f4a2d032b876c1784977c9908c8af8d08cd23135ea185c2ad2d5239"
+        },
+        {
+          "source_id": "govinfo:hr504enr",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr504enr/html/BILLS-119hr504enr.htm",
+          "raw_sha256": "efe0299b735b31023476554d882cb7deb96761dc515b4aab1528ecf46b1fe7ee",
+          "governed_bytes_sha256": "4d062934e5fb8f4ee0f6624495348ea9f755d0f529bca41c441a421d5fd1abf5"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ce4b774fcdac3049ceff6ef43fcd5bda6fcfa74177fcbec27f7903fef271e219"
       },
       "historical_raw_hash_matches": true
     },
@@ -20389,8 +20402,8 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_131",
       "question": "Passage, Objections of the President To The Contrary Notwithstanding",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete enrolled131 changes Arkansas Valley Conduit repayment timing, interest, hardship terms and project operation/maintenance conditions. The exact choice is veto override; water-conduit financing is not an immigration/border-person mechanism.",
       "source": {
         "source_id": "clerk:119:2:9",
         "url": "https://clerk.house.gov/evs/2026/roll009.xml",
@@ -20407,25 +20420,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete enrolled131 changes Arkansas Valley Conduit repayment timing, interest, hardship terms and project operation/maintenance conditions. The exact choice is veto override; water-conduit financing is not an immigration/border-person mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:9",
           "url": "https://clerk.house.gov/evs/2026/roll009.xml",
           "raw_sha256": "ed98db2b6c56f6623ffb9b42adeb406bd8aa9227cd98138e010069d5d3bdee05",
-          "governed_bytes_sha256": "3afbf222c146b9e01d934f7f804ef52b8e63a882dbe5abd1450a6e90b2368aad",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "3afbf222c146b9e01d934f7f804ef52b8e63a882dbe5abd1450a6e90b2368aad"
+        },
+        {
+          "source_id": "govinfo:hr131enr",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr131enr/html/BILLS-119hr131enr.htm",
+          "raw_sha256": "b09256d58254eeacb311e9f5eb8a47d4d8d43af93c9e4121d600d19302e2dee5",
+          "governed_bytes_sha256": "e2f6356f0a01086d8c85706c8e3e3439d8d22e2ed4decf329cac95122edb82ea"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7b2c604b47b991d890ddb9ff7533aea1690b7faed0626f01577d0ea201e3c95b"
       },
       "historical_raw_hash_matches": true
     },
@@ -20530,8 +20549,8 @@
       "date": "2026-01-09",
       "measure": "bill_119_hr_5184",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete5184EH changes manufactured-home energy-standard recommendations/criteria and repeals the identified2022DOE rule. The complete rule amendatory text concerns factory-built thermal-envelope, air leakage, HVAC and equipment standards; manufacturer/importer and territorial/climate definitions address products and siting, not entry/status of people. No Immigration mechanism; no current-compliance-date inference from the original2022rule.",
       "source": {
         "source_id": "clerk:119:2:12",
         "url": "https://clerk.house.gov/evs/2026/roll012.xml",
@@ -20548,25 +20567,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete5184EH changes manufactured-home energy-standard recommendations/criteria and repeals the identified2022DOE rule. The complete rule amendatory text concerns factory-built thermal-envelope, air leakage, HVAC and equipment standards; manufacturer/importer and territorial/climate definitions address products and siting, not entry/status of people. No Immigration mechanism; no current-compliance-date inference from the original2022rule.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:12",
           "url": "https://clerk.house.gov/evs/2026/roll012.xml",
           "raw_sha256": "f5900df14df2651c2d3485e8b291fc5f777ea1c105028af2b5bac7193520069d",
-          "governed_bytes_sha256": "bb238bbc53ef030a7719bda7729731469eefb0587d63a20e3faccc131da7f3d3",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bb238bbc53ef030a7719bda7729731469eefb0587d63a20e3faccc131da7f3d3"
+        },
+        {
+          "source_id": "govinfo:hr5184eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5184eh/html/BILLS-119hr5184eh.htm",
+          "raw_sha256": "dc6fd4c5878ab8240c48d083c01e466d8132a73c44bdbe932475ac6f28f48acf",
+          "governed_bytes_sha256": "b7641109e6cbfe5527153c0b7ab3a9e533b951351af06feec262e9792f4d8cde"
+        },
+        {
+          "source_id": "doe:manufactured-housing2022-operative",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2022-05-31/html/2022-10926.htm",
+          "raw_sha256": "b2f03b69f9a42c5087f79bb49600c45ebcef637b60c3df02954ae5c5c9debdb3",
+          "governed_bytes_sha256": "a80fecf0e5558b8a721f16cdb353333c21c51ef8b5d5cd07f8090d0640dd9438"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "fcd8f081db01c6b32c4459fd2bf2dfb5bfb45daea05cb336d2e5e1c78c6ef74e"
       },
       "historical_raw_hash_matches": true
     },
@@ -20624,8 +20655,8 @@
       "date": "2026-01-12",
       "measure": "bill_119_hr_6500",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact6500EH extends AGOA goods tariff treatment to December31,2028, with qualified retroactive article liquidation/refund, request/payment deadlines and customs-fee timing. This January12HouseEH is not the later Senate version with different timing/content. Customs entry/admission concerns GOODS, not immigration admission or beneficiary-status changes.",
       "source": {
         "source_id": "clerk:119:2:14",
         "url": "https://clerk.house.gov/evs/2026/roll014.xml",
@@ -20642,25 +20673,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact6500EH extends AGOA goods tariff treatment to December31,2028, with qualified retroactive article liquidation/refund, request/payment deadlines and customs-fee timing. This January12HouseEH is not the later Senate version with different timing/content. Customs entry/admission concerns GOODS, not immigration admission or beneficiary-status changes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:14",
           "url": "https://clerk.house.gov/evs/2026/roll014.xml",
           "raw_sha256": "eeaa32aaeb56ae2838615bb43c67e84cfb082eb6cc0f64fde5ccff378ba93221",
-          "governed_bytes_sha256": "a793dd2997707a22d6a23e4f40f928195d8f0afcbb1f54418caeba85175c6015",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a793dd2997707a22d6a23e4f40f928195d8f0afcbb1f54418caeba85175c6015"
+        },
+        {
+          "source_id": "govinfo:hr6500eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eh/html/BILLS-119hr6500eh.htm",
+          "raw_sha256": "0c336ce6024ff16158e5eb774416d49366ca45feb785f7c25bf3a2d4169536aa",
+          "governed_bytes_sha256": "790a9bbf75920c650cd7ca19291ff96a40b1169fee321773b8495c56a526f8cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "341baf7b2aae776978b7cc080bbdd2e59a5c8e8206fed62acfeea2ec1e577e93"
       },
       "historical_raw_hash_matches": true
     },
@@ -21048,8 +21085,8 @@
       "date": "2026-01-13",
       "measure": "bill_119_hr_4593",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete4593EH changes the showerhead technical definition to ASME2024 with emergency-safety exception and regulatory deadline. Water-product definitions and standards have no immigration/status or border-person mechanism.",
       "source": {
         "source_id": "clerk:119:2:23",
         "url": "https://clerk.house.gov/evs/2026/roll023.xml",
@@ -21066,25 +21103,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete4593EH changes the showerhead technical definition to ASME2024 with emergency-safety exception and regulatory deadline. Water-product definitions and standards have no immigration/status or border-person mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:23",
           "url": "https://clerk.house.gov/evs/2026/roll023.xml",
           "raw_sha256": "229c8dc2ef42d4706e72568821eee288537a90dbbdb6280a2b00256d30fa3d18",
-          "governed_bytes_sha256": "e60b680904c7373c3aeac9d083deb437dbb967da02aa11d2dab973f6474198cb",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "e60b680904c7373c3aeac9d083deb437dbb967da02aa11d2dab973f6474198cb"
+        },
+        {
+          "source_id": "govinfo:hr4593eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4593eh/html/BILLS-119hr4593eh.htm",
+          "raw_sha256": "12e46bf723e77d029b584188a095720a1352bc55812f61ed4a55bc49ce25d59e",
+          "governed_bytes_sha256": "29b0df908f80e4f0387cd2a6832c73089152831f0bddab0f88e1080b85f1d741"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "17fe1364d81a5851602ee04acc331d8db0d76888db92e0b0d6744c7e651aad28"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:23",
@@ -21484,8 +21527,8 @@
       "date": "2026-01-20",
       "measure": "bill_119_hr_5763",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete5763EH removes the identified startup/single-purpose building higher borrower-contribution clauses and conforms/default-renumbers the504loan financing provision. Complete696(2)-(4) financing baseline independently read. This exact change concerns borrower injection/financing, not the separate2931office sanctuary-location or2966citizenship/ownership rules; no new status eligibility.",
       "source": {
         "source_id": "clerk:119:2:32",
         "url": "https://clerk.house.gov/evs/2026/roll032.xml",
@@ -21502,25 +21545,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete5763EH removes the identified startup/single-purpose building higher borrower-contribution clauses and conforms/default-renumbers the504loan financing provision. Complete696(2)-(4) financing baseline independently read. This exact change concerns borrower injection/financing, not the separate2931office sanctuary-location or2966citizenship/ownership rules; no new status eligibility.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:32",
           "url": "https://clerk.house.gov/evs/2026/roll032.xml",
           "raw_sha256": "bd68eac5103682e0f1af70f5857b6b996f2fce34816bf4795a8b581ab069dc0f",
-          "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "147abb19cc5d6e114234a4a288128424cd756ef183c97b97c810d8352e600983"
+        },
+        {
+          "source_id": "govinfo:hr5763eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5763eh/html/BILLS-119hr5763eh.htm",
+          "raw_sha256": "c928f453a07b098a5ba3557e415110ff6b32833653b9da82b49294d38ad133cd",
+          "governed_bytes_sha256": "a70466570b352573bf920e87cc8c60f19ed197e3e9204854438a9680da2c9bf3"
+        },
+        {
+          "source_id": "govinfo:15usc696-224-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec696.htm",
+          "raw_sha256": "eeed887bd77bcbf883c2829294068ce00c418f10464ff3c57d69f9fefd2d68f4",
+          "governed_bytes_sha256": "da993e852659e491075da455783fc1391af45680273903a591aa5418615f52b2"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "263b4d9e631c1089ac40a0bb85b84753d64161d90ab4e7dc18a65eef390a1b67"
       },
       "historical_raw_hash_matches": true
     },
@@ -21531,8 +21586,8 @@
       "date": "2026-01-20",
       "measure": "bill_119_hr_5764",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete5764EH supplies Small Business Development Center AI guidance, training/outreach, technical coordination and an AI definition, without additional authorized appropriations. Generic small-business assistance/technology does not establish citizenship/status eligibility or immigration administration.",
       "source": {
         "source_id": "clerk:119:2:33",
         "url": "https://clerk.house.gov/evs/2026/roll033.xml",
@@ -21549,25 +21604,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete5764EH supplies Small Business Development Center AI guidance, training/outreach, technical coordination and an AI definition, without additional authorized appropriations. Generic small-business assistance/technology does not establish citizenship/status eligibility or immigration administration.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:33",
           "url": "https://clerk.house.gov/evs/2026/roll033.xml",
           "raw_sha256": "511e5f3f1a59e0343c871062406fe3f885e0870ed5bb154bde8f8b672219a7d0",
-          "governed_bytes_sha256": "abe581bafae522468d99474e793cd878719baada8ff8d655536d5583832e36a7",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "abe581bafae522468d99474e793cd878719baada8ff8d655536d5583832e36a7"
+        },
+        {
+          "source_id": "govinfo:hr5764eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5764eh/html/BILLS-119hr5764eh.htm",
+          "raw_sha256": "3aece90395244d38abdf49b298cad69d05154084b075b9bad9a2e3f965d21d3e",
+          "governed_bytes_sha256": "ac70a26b8fb9fe5be6c0e1aaf0a8abc31d2c383d559cc69f75b31344db629736"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "15f6a62f836afd45add68744b34b75913c51dc8e5321a9ea7191f43f14f3feae"
       },
       "historical_raw_hash_matches": true
     },
@@ -21718,8 +21779,8 @@
       "date": "2026-01-21",
       "measure": "H R 6945",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete6945EH expressly permits qualified State TANF funds for defined pregnancy-center services including counseling, referrals and supplies. The exact permission concerns service/provider uses; it adds no citizenship/immigration-status benefit eligibility or entry/removal mechanism. Existing general program context does not establish exact-action Immigration membership.",
       "source": {
         "source_id": "clerk:119:2:37",
         "url": "https://clerk.house.gov/evs/2026/roll037.xml",
@@ -21737,25 +21798,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete6945EH expressly permits qualified State TANF funds for defined pregnancy-center services including counseling, referrals and supplies. The exact permission concerns service/provider uses; it adds no citizenship/immigration-status benefit eligibility or entry/removal mechanism. Existing general program context does not establish exact-action Immigration membership.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:37",
           "url": "https://clerk.house.gov/evs/2026/roll037.xml",
           "raw_sha256": "3c8514473da2da20ff660e5dbd2119d5948d334891f12968df5e980509e99a76",
-          "governed_bytes_sha256": "0a2eb92cfba275e68fc6d8f0920676bd33fc6f863f50bb6e81fa552e79ce8781",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0a2eb92cfba275e68fc6d8f0920676bd33fc6f863f50bb6e81fa552e79ce8781"
+        },
+        {
+          "source_id": "govinfo:hr6945eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6945eh/html/BILLS-119hr6945eh.htm",
+          "raw_sha256": "1b624f04ea2a147e2285d50c06b57e1eccf8fd501a88c57f4ca1a03dd7ff4d1c",
+          "governed_bytes_sha256": "033c55add4ab29d19c61204b0a2c798935f0be40d49866d1af465e631e64fe32"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1a4030fdfdf259d8f9f1f9e991f7e95436bb7f7842e184759752c2def4944bb8"
       }
     },
     {
@@ -22191,8 +22258,8 @@
       "date": "2026-01-22",
       "measure": "bill_119_hr_6359",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete6359EH requires information on pregnant students rights/accommodations and institutional/TitleIX complaint routes while retaining its no-new-rights rule. Educational access/admission and student information are not immigration admission, visa/status or work-authorization changes.",
       "source": {
         "source_id": "clerk:119:2:47",
         "url": "https://clerk.house.gov/evs/2026/roll047.xml",
@@ -22209,25 +22276,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete6359EH requires information on pregnant students rights/accommodations and institutional/TitleIX complaint routes while retaining its no-new-rights rule. Educational access/admission and student information are not immigration admission, visa/status or work-authorization changes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:47",
           "url": "https://clerk.house.gov/evs/2026/roll047.xml",
           "raw_sha256": "21d9a052299978f0af0a2ac8e6eb0067781373cc286a57f695aecc44bcdd542b",
-          "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "b1f023a3f1ce45ddad073573133b8a8ada0ad1c33ce8d5682a40987780c8ba5e"
+        },
+        {
+          "source_id": "govinfo:hr6359eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6359eh/html/BILLS-119hr6359eh.htm",
+          "raw_sha256": "056442fa0bc476d8d4c9bd3dc31c812e3e69138cf658809048b9951b938813b4",
+          "governed_bytes_sha256": "a88a06bbbba92e1686a1cc4eb1b8d821500012f33e269c9cbd5cc5cba30aa866"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "efce7de06f3f37c0dc1c7d35190796f1dc8944780cc6bf3bf5aa3ba18d90a556"
       },
       "historical_raw_hash_matches": true
     },
@@ -22285,8 +22358,8 @@
       "date": "2026-02-02",
       "measure": "bill_119_hr_980",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete980EH removes3697B(a)second-sentence VA-employee-only campus counseling condition, provides specified nondegree-flight-program approval/report/outreach timing and extends5503(d) institutional pension authority. Complete3697A/B and material5503(d) independently read. These exact counseling, training and institutional pension changes do not change immigration eligibility or award a status; educational admission is not INA admission.",
       "source": {
         "source_id": "clerk:119:2:49",
         "url": "https://clerk.house.gov/evs/2026/roll049.xml",
@@ -22303,25 +22376,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete980EH removes3697B(a)second-sentence VA-employee-only campus counseling condition, provides specified nondegree-flight-program approval/report/outreach timing and extends5503(d) institutional pension authority. Complete3697A/B and material5503(d) independently read. These exact counseling, training and institutional pension changes do not change immigration eligibility or award a status; educational admission is not INA admission.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:49",
           "url": "https://clerk.house.gov/evs/2026/roll049.xml",
           "raw_sha256": "9c1c53cebcf84b971f5f33846b058407121627ff4247a12f0d2f248c59755c58",
-          "governed_bytes_sha256": "bebbd13daa260dc6c69fb00d99cf9daf831f0386b422e957342e5f9940e26dba",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bebbd13daa260dc6c69fb00d99cf9daf831f0386b422e957342e5f9940e26dba"
+        },
+        {
+          "source_id": "govinfo:hr980eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr980eh/html/BILLS-119hr980eh.htm",
+          "raw_sha256": "bc1cd582c300a5a3d3112c3ce8084985cd531973210287a0397a6e4e946c8090",
+          "governed_bytes_sha256": "a4c4038d3f7ae8b9133bb8f3d4b7674b7afcaf5ccccd77ddd0595984706203a0"
+        },
+        {
+          "source_id": "govinfo:38usc3697A-B-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap36.htm",
+          "raw_sha256": "55453a90f9c2940b5412873c52eb059f49b5c35287b7a23008dbb957dc26e9d3",
+          "governed_bytes_sha256": "1e99e7c24760951cfe793d3d4fa8dcb0d07156be77044f87d0b3686ff10d31d4"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "388ab2924e5db8190e9d66cdb14ff56b1c36b3dfed4998c7d7ea14802ff6fc60"
       },
       "historical_raw_hash_matches": true
     },
@@ -22332,8 +22423,8 @@
       "date": "2026-02-02",
       "measure": "bill_119_hr_3123",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete3123EH changes priority/application treatment of previously awarded but unpaid deceased-beneficiary pension, including conditional estate treatment, future-death applicability and5503(d) date extension. Material5503(d) institutional pension context read; the exact payment/succession change has no citizenship/status or immigration administration mechanism.",
       "source": {
         "source_id": "clerk:119:2:50",
         "url": "https://clerk.house.gov/evs/2026/roll050.xml",
@@ -22350,25 +22441,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete3123EH changes priority/application treatment of previously awarded but unpaid deceased-beneficiary pension, including conditional estate treatment, future-death applicability and5503(d) date extension. Material5503(d) institutional pension context read; the exact payment/succession change has no citizenship/status or immigration administration mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:50",
           "url": "https://clerk.house.gov/evs/2026/roll050.xml",
           "raw_sha256": "812a38ddf813ba406d928127db1d05d875c07843061a9f44d6225e1c05bded03",
-          "governed_bytes_sha256": "d8c778c05ceeca85a180f5267512f511415b7b8c208c416c7e4d5a76cc9df85b",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "d8c778c05ceeca85a180f5267512f511415b7b8c208c416c7e4d5a76cc9df85b"
+        },
+        {
+          "source_id": "govinfo:hr3123eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3123eh/html/BILLS-119hr3123eh.htm",
+          "raw_sha256": "36b0e5c5f684abb4b0e2cd3b4acca3db08c88434c9ae415585efc5fb5f43ac2e",
+          "governed_bytes_sha256": "cf9a5749e18b90834a4b9eb5f78787ee46c3f1c7be735825735624f659abc78a"
+        },
+        {
+          "source_id": "govinfo:38usc5503-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "2cb640dfd62bafc6f4fcbacc47a0675b1129e3f1fa553262267abfddb3adc538"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1a9dec7e15433e9c3d39aeef3d0c7e376331e5d8963f3264cfeadddcad0fcc5e"
       },
       "historical_raw_hash_matches": true
     },
@@ -22706,8 +22809,8 @@
       "date": "2026-02-09",
       "measure": "bill_119_hr_1531",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete1531EH conditionally directs Treasury/FederalReserve/SEC steps to exclude PRC representatives from six named international financial forums after the specified Taiwan presidential notice, with national-security waiver and defined termination. Exclusion here is financial-forum participation, not an INA visa/admission sanction or border-person restriction.",
       "source": {
         "source_id": "clerk:119:2:58",
         "url": "https://clerk.house.gov/evs/2026/roll058.xml",
@@ -22724,25 +22827,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete1531EH conditionally directs Treasury/FederalReserve/SEC steps to exclude PRC representatives from six named international financial forums after the specified Taiwan presidential notice, with national-security waiver and defined termination. Exclusion here is financial-forum participation, not an INA visa/admission sanction or border-person restriction.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:58",
           "url": "https://clerk.house.gov/evs/2026/roll058.xml",
           "raw_sha256": "6d5b9f2afa0da525a51d712e94d7daa7df5f5c1d3f94e87b1872645262b092c4",
-          "governed_bytes_sha256": "aeca847d616d4bdc62a9224d0de41ec6170abc3fb28f64ad518821d216f51ef3",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "aeca847d616d4bdc62a9224d0de41ec6170abc3fb28f64ad518821d216f51ef3"
+        },
+        {
+          "source_id": "govinfo:hr1531eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1531eh/html/BILLS-119hr1531eh.htm",
+          "raw_sha256": "ed20eb2de645d9b7baa9f37b44b29e7a40a3cddb9a6737d17995a327bd60352c",
+          "governed_bytes_sha256": "ad8a63626976958e57fc502c7f2df2cbb0ea59a4cfe6c3f8c67c2393a643137e"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e9c5b2d9fd4e4c1719fee3d0fbb7c260d1f88856476bc6c3746af028791c1782"
       },
       "historical_raw_hash_matches": true
     },
@@ -22985,8 +23094,8 @@
       "date": "2026-02-11",
       "measure": "bill_119_hr_3617",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete3617EH requires Energy critical-mineral/resource assessments, supply-chain/foreign-market strategy and regulatory/report work. Foreign supply/markets and generic workforce/economic context supply no immigration-status, work-authorization or entry/enforcement mechanism.",
       "source": {
         "source_id": "clerk:119:2:64",
         "url": "https://clerk.house.gov/evs/2026/roll064.xml",
@@ -23003,25 +23112,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete3617EH requires Energy critical-mineral/resource assessments, supply-chain/foreign-market strategy and regulatory/report work. Foreign supply/markets and generic workforce/economic context supply no immigration-status, work-authorization or entry/enforcement mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:64",
           "url": "https://clerk.house.gov/evs/2026/roll064.xml",
           "raw_sha256": "ecceac9290f6020d9c43511bf24bb6bea26fb1c1158c2f0776aba2d151c75d55",
-          "governed_bytes_sha256": "bd0e767436cefecd56a4ed195595e9321f782c164a56640f7be4e107cd4aa915",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bd0e767436cefecd56a4ed195595e9321f782c164a56640f7be4e107cd4aa915"
+        },
+        {
+          "source_id": "govinfo:hr3617eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3617eh/html/BILLS-119hr3617eh.htm",
+          "raw_sha256": "fed5bc25d849387490da7e2b2793f332fd21fb5528125c8f8282b7e3548b0fc1",
+          "governed_bytes_sha256": "2eb5acf11b3a585595fab91a24d649c3d19d09348c7e5fe87a51cf136dc30cc7"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9356ce13da97d7b0dd6eddf855c66b886c03cc0b96f9b6ffbcfeb049b5cc1d32"
       },
       "historical_raw_hash_matches": true
     },
@@ -23167,8 +23282,8 @@
       "date": "2026-02-11",
       "measure": "bill_119_hr_261",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete261EH addresses national MARINE-sanctuary undersea-fiber-optic cable approvals, related permit coordination/limits and repeals1441(c)(2)/(3) permit duration/resource-injury conditions. Complete1441 operative terms read. Sanctuary is a marine conservation area; cable entry/infrastructure and maritime location do not establish immigration sanctuary or admission of persons.",
       "source": {
         "source_id": "clerk:119:2:67",
         "url": "https://clerk.house.gov/evs/2026/roll067.xml",
@@ -23185,25 +23300,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete261EH addresses national MARINE-sanctuary undersea-fiber-optic cable approvals, related permit coordination/limits and repeals1441(c)(2)/(3) permit duration/resource-injury conditions. Complete1441 operative terms read. Sanctuary is a marine conservation area; cable entry/infrastructure and maritime location do not establish immigration sanctuary or admission of persons.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:67",
           "url": "https://clerk.house.gov/evs/2026/roll067.xml",
           "raw_sha256": "ff9aa29026c884e0b9e4ef37e02a5bc353c9eab2b8688041b21fbb9320a63453",
-          "governed_bytes_sha256": "2123218ea1d5f73d09815fc9ece0978ffca97d9e23641b04e154b88d3c38b9fd",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "2123218ea1d5f73d09815fc9ece0978ffca97d9e23641b04e154b88d3c38b9fd"
+        },
+        {
+          "source_id": "govinfo:hr261eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr261eh/html/BILLS-119hr261eh.htm",
+          "raw_sha256": "fbcffd18401c7fcdb608155de6e8270318b2998cc5f575e39c4c2f3aeec08606",
+          "governed_bytes_sha256": "db341dda742912e1482f18c9246f176b138d81c57b35b31677f4df802bb9e51f"
+        },
+        {
+          "source_id": "govinfo:16usc1441-permit-terms",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap32-sec1441.htm",
+          "raw_sha256": "b5a2825fd86226e71fc570e5c1ad1fcd89ad6c0abf2b88d2d8c319af9ca022c7",
+          "governed_bytes_sha256": "15f8245e2ef99975337f927d24b6c68528b3d69b79017f533a844a1fdd83ccd4"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c4b5559d43d2081b2b7838efb1847a67eb343036df9de16ce8b389a3827dd2a1"
       },
       "historical_raw_hash_matches": true
     },
@@ -23705,8 +23832,8 @@
       "date": "2026-02-25",
       "measure": "bill_119_hr_4758",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete4758EH repeals specified117-169home-electrification rebate, contractor-training and building-energy-code assistance provisions, rescinds identified unobligated amounts and conforms50121(c)(7). Complete identified50121/50122/50123/50131 source family read. Their household-income/building/project/training criteria and funding purposes are not a new nationality/status restriction or immigration administration mechanism; do not invent an individual immigration outcome from generic grant repeal.",
       "source": {
         "source_id": "clerk:119:2:78",
         "url": "https://clerk.house.gov/evs/2026/roll078.xml",
@@ -23723,25 +23850,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete4758EH repeals specified117-169home-electrification rebate, contractor-training and building-energy-code assistance provisions, rescinds identified unobligated amounts and conforms50121(c)(7). Complete identified50121/50122/50123/50131 source family read. Their household-income/building/project/training criteria and funding purposes are not a new nationality/status restriction or immigration administration mechanism; do not invent an individual immigration outcome from generic grant repeal.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:78",
           "url": "https://clerk.house.gov/evs/2026/roll078.xml",
           "raw_sha256": "3a3233788aaf58d65b77b0daa1d991f2b0fe3052787fd38e142232d0e81d86d8",
-          "governed_bytes_sha256": "3a58f0690842cf5347741917b7161df13b4b9a4676abf80124c09758998da660",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "3a58f0690842cf5347741917b7161df13b4b9a4676abf80124c09758998da660"
+        },
+        {
+          "source_id": "govinfo:hr4758eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4758eh/html/BILLS-119hr4758eh.htm",
+          "raw_sha256": "25c35f87d76424634be93693ddca5483edd163fefec4a469734d1cfb02818fdb",
+          "governed_bytes_sha256": "313ede9a3d987cb2a078231c2b716e2e3337bbe1334f148af698a5594beb8dda"
+        },
+        {
+          "source_id": "govinfo:pl117-169-home-rebates-training-codes",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ169/html/PLAW-117publ169.htm",
+          "raw_sha256": "434fc6a6ce14a952520b0ea027ca5be5837782c77d197e89efc91b6c5847fbac",
+          "governed_bytes_sha256": "d1d81b79bd6df6aafc2c172b3dc4a3aa018f8fad41d1e233a1680864dd20e825"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e6720d2d37e0175e6f6199e9422fa04e0eac09eb9400940b0cb1e9db937297e6"
       },
       "historical_raw_hash_matches": false,
       "historical_source_identity": {
@@ -23914,8 +24053,8 @@
       "date": "2026-03-04",
       "measure": "bill_119_hr_6472",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete exact EH establishes a new U.S.-nationality-qualified tuition/fee protection, coupled to four specified territorial residences and institutional HEA assistance. Direct nationality/benefit eligibility supplies the Immigration & Border functional boundary; geography or higher-education context alone would not. Retained statutory definitions and existing tuition/participation protections independently read; no individual status or observed outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:82",
         "url": "https://clerk.house.gov/evs/2026/roll082.xml",
@@ -23923,7 +24062,7 @@
         "governed_bytes_sha256": "57fe98fed4fe5b3271a164719d044d1e97d7dfd0abd969f2dfee42fdf27d50d6",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr6472:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_6472",
       "member_action": "yea",
@@ -23932,25 +24071,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete exact EH establishes a new U.S.-nationality-qualified tuition/fee protection, coupled to four specified territorial residences and institutional HEA assistance. Direct nationality/benefit eligibility supplies the Immigration & Border functional boundary; geography or higher-education context alone would not. Retained statutory definitions and existing tuition/participation protections independently read; no individual status or observed outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:82",
           "url": "https://clerk.house.gov/evs/2026/roll082.xml",
           "raw_sha256": "b0bc703e50bd8cc12e4f6eac2b511a9e8a617cf91f40bf166abb02c16f9905c1",
-          "governed_bytes_sha256": "57fe98fed4fe5b3271a164719d044d1e97d7dfd0abd969f2dfee42fdf27d50d6",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "57fe98fed4fe5b3271a164719d044d1e97d7dfd0abd969f2dfee42fdf27d50d6"
+        },
+        {
+          "source_id": "govinfo:hr6472eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6472eh/html/BILLS-119hr6472eh.htm",
+          "raw_sha256": "a45df704036c0c79cf4c1f3a1caf13df7cba6d7ba56c9add4ce2f29dcf1e9f51",
+          "governed_bytes_sha256": "d2ece247bd3be4962cfbbd6193df8d59914ae90ef3568a91ac0c682d333bfbb0"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        },
+        {
+          "source_id": "govinfo:20usc1003-state-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partA-sec1003.htm",
+          "raw_sha256": "9f488fd128167ec309d9f2c6a1629c7431cc063503df5fe86129ad443bd920a8",
+          "governed_bytes_sha256": "da679dde25200942c021ab348ec233f3e0149bcb33e8d6cd7dda95439340441c"
+        },
+        {
+          "source_id": "govinfo:20usc1015d-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partC-sec1015d.htm",
+          "raw_sha256": "020f6157a25d48c1789ac8f81e3e61778a11ca0e83b136b90f33523a7324355a",
+          "governed_bytes_sha256": "103a15fbc8a96dcec0aa2ec6a7319253292eb6b043e1c8af29e84f3a34e60fb8"
+        },
+        {
+          "source_id": "govinfo:20usc1094-participation-opening",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm",
+          "raw_sha256": "cdd8d42fff6c79e9693c43bc7f8b0c564b593938802d19b09012c267400d6b7f",
+          "governed_bytes_sha256": "9e63500a9997c4dc6cebe1de5451617c2edcbe77e653f15f1a0f5cd242029ab5"
+        },
+        {
+          "source_id": "govinfo:20usc1001-general-institution",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partA-sec1001.htm",
+          "raw_sha256": "58b11868f544031e7cc3cbd41d01a5cb4ba591a1dc0db799cb17a63e7cd15ae6",
+          "governed_bytes_sha256": "603badac2ccc42c1a22bc8b7f888fa13e4d111db965032a8f5168baabbbf6baa"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6416ec6b7abb2dac3b9a40c19707ce92cd43383ed260fa2dae74e9cc3ec3f968"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:82",
@@ -24492,8 +24667,8 @@
       "date": "2026-03-18",
       "measure": "bill_119_hr_556",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete556EH restricts agency lead-ammunition/tackle prohibitions on specified Federal lands/waters with migratory-bird regulatory savings and qualified local wildlife-decline exceptions/notice. Wildlife, geographic borders and access to land are not immigration entry/status enforcement; no Immigration mechanism.",
       "source": {
         "source_id": "clerk:119:2:93",
         "url": "https://clerk.house.gov/evs/2026/roll093.xml",
@@ -24510,25 +24685,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete556EH restricts agency lead-ammunition/tackle prohibitions on specified Federal lands/waters with migratory-bird regulatory savings and qualified local wildlife-decline exceptions/notice. Wildlife, geographic borders and access to land are not immigration entry/status enforcement; no Immigration mechanism.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:93",
           "url": "https://clerk.house.gov/evs/2026/roll093.xml",
           "raw_sha256": "c6bcf4caa3c62da7ad92e9b7daaa2aed0a63aba30ce62db97ce61210c13d7256",
-          "governed_bytes_sha256": "90c40ea98bd2a41f2e858414a13d8ad5bbf08192167de2ce401c46feab9c5468",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "90c40ea98bd2a41f2e858414a13d8ad5bbf08192167de2ce401c46feab9c5468"
+        },
+        {
+          "source_id": "govinfo:hr556eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr556eh/html/BILLS-119hr556eh.htm",
+          "raw_sha256": "3c44859e2a5cef76f6b99010f8688677a101c2f78890ae00f9dddccc7957d475",
+          "governed_bytes_sha256": "d9e0a21572eceb1bf06592bac9a7117ed15ca6ab4e7132f6d520c63e2cf4c57c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8b7da925f0bc8ed65071b50f6f2f3e082818e654d02852b2a1ace36a075dc049"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:93",
@@ -36199,6 +36380,7 @@
     "house:119:1:264",
     "house:119:1:340",
     "house:119:2:65",
+    "house:119:2:82",
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:120",
@@ -36316,26 +36498,18 @@
     "house:119:2:5",
     "house:119:2:6",
     "house:119:2:7",
-    "house:119:2:8",
-    "house:119:2:9",
     "house:119:2:10",
     "house:119:2:11",
-    "house:119:2:12",
     "house:119:2:13",
-    "house:119:2:14",
     "house:119:2:17",
     "house:119:2:19",
-    "house:119:2:23",
     "house:119:2:25",
     "house:119:2:26",
     "house:119:2:27",
     "house:119:2:28",
     "house:119:2:29",
     "house:119:2:31",
-    "house:119:2:32",
-    "house:119:2:33",
     "house:119:2:35",
-    "house:119:2:37",
     "house:119:2:38",
     "house:119:2:40",
     "house:119:2:41",
@@ -36343,36 +36517,27 @@
     "house:119:2:43",
     "house:119:2:44",
     "house:119:2:45",
-    "house:119:2:47",
     "house:119:2:48",
-    "house:119:2:49",
-    "house:119:2:50",
     "house:119:2:52",
     "house:119:2:53",
     "house:119:2:55",
     "house:119:2:56",
     "house:119:2:57",
-    "house:119:2:58",
     "house:119:2:60",
     "house:119:2:62",
-    "house:119:2:64",
-    "house:119:2:67",
     "house:119:2:69",
     "house:119:2:70",
     "house:119:2:71",
     "house:119:2:72",
     "house:119:2:74",
     "house:119:2:76",
-    "house:119:2:78",
     "house:119:2:80",
     "house:119:2:81",
-    "house:119:2:82",
     "house:119:2:84",
     "house:119:2:85",
     "house:119:2:87",
     "house:119:2:88",
     "house:119:2:89",
-    "house:119:2:93",
     "house:119:2:95",
     "house:119:2:97",
     "house:119:2:99",
@@ -36559,6 +36724,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "c40b833053a26c3912bdcd94763216b04aa1a237fffb3c76895600674553bf75",
-  "membership_review_sha256": "cdc3f44e2e5c719860eb4e105eff759205335a883b3e4e047f19d616429d2ec0"
+  "proposal_sha256": "c7f5e5cf406c072293af67b814b6209d6db8885ccacfb6ad87935de3cb91b0b5",
+  "membership_review_sha256": "681d22cdcbbe171a994bd790b87c96f4fcf274acc78394286219edaaeb0fc389"
 }
