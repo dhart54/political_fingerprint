@@ -1395,3 +1395,68 @@ material pre-vote definition authorities, not generic humanitarian shorthand.
 Then benefits/tax/remittance and remaining child/enforcement funding, followed by
 continuing/omnibus/NDAA and ordinary screenings. No completeness implied by counts;
 component closure guard remains active and original deadline markers preserved.
+
+
+## Checkpoint28: exact parole/SIJ/TPS status-specific fee provisions
+
+House70004-6 andSenate100004-6 now have complete operative paragraphs plus
+material pre-voteSIJ,parent-definition, family-preference, Cuban/Haitianentrant
+andTPSregistration baselines. Three exact-excerpt captures omit unrelated classes/
+history and replay against full captures. ExploratoryJlabels initially reached
+nonimmigrantJ1/internalphysician references; nonewasauthored/accepted. Exacta27
+special-immigrant introduction and full(J)opening control the1367characterSIJclause.
+HouseEHcomparison removes only explicitH2280pagination and one adoption- related
+layout split; original floorpassage is preserved, with exact comparator hashes.
+
+Parole1000fiscal2025floors/higherDHSrule/CPI10dollarincrements/Treasury are distinct
+from their printed exceptions. All medical/residence/time/family-inUS/transplant/
+adoption/lawful245temporary-return/contiguous-return/hearing/law-enforcement predicates
+and AND/OR groupings remain. HouseCuba-residence/approved203(a)petition/noavailable
+visa/allvisaeligibility/nootherinadmissibility/program-grant conjunction differs
+fromSen grantedCuban/Haitianentrant condition/full501(e)definition; not nationality
+alone or proof of actualgrant/exemption. Senate fee exceptions explicitly require
+DHS satisfaction individual/case-by-case; no silent import into House fee procedure.
+Fee exceptions, waiverbar and existingcase-by-caseparole/non-admission authority
+remain distinct; no actualpermission, grant, admission or outcome inferred.
+
+HouseSIJ500minimum has oneviableparent/legalguardian and othernonviable predicate;
+Sen250minimum namesalien/parent/legalguardian, lacks Housecondition/expresswaiverbar.
+No cumulative charges on everypayer or waiveravailability inferred. ExactSIJcourt/
+nonviable1ORbothparents/best-interest/DHSconsent/HHSjurisdictionconsent/parentage-rights
+baseline retained; notJ1, automaticstatus, a UACage rule or newSIJeligibilitygrant.
+
+HouseTPS500additionalminimum has exact non-admission/lapsed-nonimmigrant-atapplication
+predicate and separately printedCPI/Treasury/no-waiver terms. Senate raises existing
+reasonableMAY-registration50MAXIMUMto500 with annualmaximum CPI10dollarincrements,
+retaining separatework-docauthority. Not universalmandatory500, a500minimum, EADfee
+or a statuseligibility/outcome. Its addedTreasuryiii coexists with an unstruck
+appropriation-credit sentence in redesignated(i); question26 preserves application,
+without deleting baseline or silently choosing proceeds. Allmaterialparagraphs read.
+
+Counts455reviews/39meanings/36episodes/78observations/70findings unchanged;
+221ordinary screenings/2partialcomponentreviews/26legalapplicationquestions remain.
+1203governedsources(990Healthreuses/213new),432claims,120provisionalcaptures;
+94boundedextentwitnesses reconstruct.8newclaimbindings and prior/current meaning
+hashes are in hr1_status_specific_fee_review.json. Candidate/public/persistence
+isolation and runtime/compiler/frontend/Health protectedpaths unchanged.
+222focusedtests pass(38.296s),7semanticchecks pass,7outputs replay byte-identically;
+source/Clerk/audit/accounting/hash, finaldiff and actualqualifiedcopy inspected.
+Core:42d5cb914ca6044b61c634bab120ed56c55a62cf4d01cf51ae5facb34c25edbc.
+Compiled remains:b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exactec464fd checkpoint27passesall9CIjobs(run37497133128); currentCI follows push.
+
+Independent checkpoint27source-firstreview found no material defect within its
+selectedscope and verified9newbindinghashes/lengths; receipt explicitly excludes
+fullmemberJSON/replay/exhaustivepackage/acceptance. ReviewerPDFcheck was text-only
+because screenshot failed; implementation owner visualverification remains separate.
+No transfer of this independent scope to newstatus-fee components, fullIR/domain
+acceptance, production or publication. No full-corpusPASS.
+
+Next: House70008-9/70011/70015-19 versusSen100007-8/100013-15 visa-integrity/I94/
+continuance/diversity/EOIR/ESTA/user/EVUS fees. Preserveinitial/CPI/fraction/account
+versus mandatoryreimbursement/discretionaryrefund distinctions and material235/286/
+217 baselines. Then benefits/tax/remittance and remaining child/enforcement funding,
+continuing/omnibus/NDAA and ordinaryscreenings. Partialcomponent closure remains
+gated; legalquestions remain separate, not unavailable sources or completed research.
+Original deadline/terminalmarkers remain historical/intact; successor remainsactive
+with no suppliedcurrent shutdownboundary. No merge/deploy/production work.
