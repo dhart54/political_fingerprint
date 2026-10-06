@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "017aeb7e13a6bfd17a227706b50dc16e8462b47f7ed5ccedbaebba2e67635988"
   },
-  "input_sha256": "a626d65910e589d1de8fb26176c095f40433bc74412852bfc9bd2509fe8a1a64",
-  "source_capture_sha256": "59045a5ab5720490ebefbefd97de5d5fd339fce8f773d43c27996e420351c929",
-  "core_sha256": "0f4d00d7a3ca942878d35fc405fc43945225a2bc51cd1a6839ab8dfbf9b1d0be",
-  "compiled_sha256": "a0fe2eaa4de5cb37edd2bbb6c9ee9899a3b9b383c0aaa12ab3c268d4cd615b54",
-  "readable_sha256": "06713d833dc07ee69ca4b44b43a6ddc6014741ef696ad99f362af69dad7473bc",
+  "input_sha256": "a73e992a0e9ee841ffa5e3394b86393028a7b0aebda2400ee53c2173d21bceef",
+  "source_capture_sha256": "881ff8e19d37fba105b022122109f64045c443698f122a4767f5ca54626dac76",
+  "core_sha256": "d2ec61e61d70d13f87834c1092edbd2176e65711bd4103ab214a0161a80b2de1",
+  "compiled_sha256": "247c1692fbfc5a738f264cfbd9762caa59a7c06cee74fe837c37554b63dcd54a",
+  "readable_sha256": "b620e1eb4ed7bc159cccb3f936cf14eda09733ea40e905a0d1f11d8d16964657",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -454,6 +454,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.4371 as a whole with its child-placement, sponsor and household-information provisions",
           "source_id": "clerk:119:1:340"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:13",
+      "shared_sha256": "05a7491d413a6877e39ed4038958cb019f6623bca8fe4a7bf7628ebc47e86048",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 2683 remote-access control and congressional-information proposal, with its defined status/recipient and risk conditions",
+          "source_id": "clerk:119:2:13"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 2683 proposal; no preferred alternative or motive is established",
+          "source_id": "clerk:119:2:13"
         }
       ]
     },

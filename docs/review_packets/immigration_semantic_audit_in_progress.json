@@ -3689,6 +3689,134 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:13",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "Minor",
+      "finding_id": "IB-AUDIT-REMOTE-CRIMINAL-PENALTY-PRECISION",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "13",
+        "legis-num": "H R 2683",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jan-2026",
+        "action-time": "6:56 PM",
+        "vote-desc": "Remote Access Security Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: complete January12 EH, actual amended suspension Yea/Nay. New remote definition is conjunctive item jurisdiction/network/different physical location/foreign recipient/Commerce serious-risk determination, with four civil access mental-state categories and express no-lowered-criminal-mens-rea rule. Complete ECRA4801/4811-16/4819-20/4825 baseline independently read: natural foreign recipient excludes citizen/LPR/defined protected status, distinct entity branch;1324b(a3) imports nationality, named temporary/refugee/asylee categories and naturalization qualifications, but explicit independent LPR exclusion remains.4801USperson(any person INUS) not complement of foreignperson. This actual status predicate distinguishes the candidate from259energyassets/256foreignmilitaryeducation/274undefinedclearance/97entitygeography exclusions; domain/application remains review-routed. Authorities SHALLcontrol/regulate qualified access, with existing licensing/policy/list/IEEPA limits, enhancedUSperson weapons activities, no automatic blanket country/model ban or unrestricted citizen entitlement. Retained willfulness/notice-hearing/statutory criminal maxima/discretionaryconviction/relatedparty denial, ANYitem remote-denial wording, item/conveyance enforcement, confidentiality/sharing and coordination reconstructed. Original penalty sentence recast the printed AND/ORboth as simple fine-or-prison; preserve exact clause and maxima without sentencing adjudication. Committees informed but no approvalprecondition; existing30day license wording is best-efforts SENSE, not harddeadline/automaticapproval.2024/asofJanuary2025 baseline labels retained, not current-regulation or universalcurrency claim. No INA status/visa/deportation/workauthorization change or inferred outcome; actual whole-choice separate2683episode.",
+      "finding": "Minor source-precision defect: initial authoring paraphrased the criminal fine/imprisonment conjunction as simple alternatives. Preserve the printed AND and OR BOTH clause and statutory maxima without adjudicating sentencing. The explicit ANY-item discretionary access-denial boundary is also clarified. Membership, actual direction and episode are unchanged; cross-domain/status and regulatory application remain independent-review questions.",
+      "correction": "Replace the penalty-alternative paraphrase with exact conjunction-qualified statutory maxima; clarify ANY item WHETHER OR NOT controlled for the discretionary prior-conviction remote-access/provision denial; spacing cleanup only otherwise.",
+      "before_authoring_action_sha256": "40da063eb43f6fecd5d0eb455c0b4d6d838f2b49f609cec5ddcc8f7812b9b01e",
+      "corrected_authoring_action_sha256": "a92e89f0d50d9dfb9ef98ba7f9dbce9e616035259f1332f29204bff727ef58d7",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr2683eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2683eh/html/BILLS-119hr2683eh.htm",
+          "governed_bytes_sha256": "5baab89750a7ccfde24d41cab1d3b7c492f47631ca42394b2067f9545b46ddfa",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4801-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4801&num=0&edition=2024",
+          "governed_bytes_sha256": "26bb259f48c477a1edab799ec56219a5b215be84c35c8a821510260074e94d13",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4811-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4811&num=0&edition=2024",
+          "governed_bytes_sha256": "eacb50335689a0bcf7c3f20b7bee3e02cc324b431b65d43adbb7bd3a45d28f4d",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4812-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4812&num=0&edition=2024",
+          "governed_bytes_sha256": "edc1f4fa8b86b86ee56984f53fc20f7d8edc8ad96a63504dc00aa9845d2327bb",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4813-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4813&num=0&edition=2024",
+          "governed_bytes_sha256": "7e9c5080fe05baef101faa2a5ea528b5b4fd609bf0dbd11bae99ee03d99e3be0",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4814-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4814&num=0&edition=2024",
+          "governed_bytes_sha256": "9d58700e3e3951c41ad336fe5b58cdf888d481a1fd81a8c5066791c845281aa8",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4815-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4815&num=0&edition=2024",
+          "governed_bytes_sha256": "a4aad570a96eb18c4683210a164d01fd0a618509cf2b89adc31a2ffce27a1dd6",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4816-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4816&num=0&edition=2024",
+          "governed_bytes_sha256": "84fa7cdbc51b8e9f40f909ae1885df114d6fa917bd4b097c5f63acebb213dd2b",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4819-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4819&num=0&edition=2024",
+          "governed_bytes_sha256": "5a4d48574cee55cacfa6607ee86fb1c432f7c6c31a4eebfc165b08eaa3d76266",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4820-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4820&num=0&edition=2024",
+          "governed_bytes_sha256": "3f031bec30a79f1bde1ec80252e34d5879653cd0c1b33ff6c911fcef7b537b60",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "olrc:50usc4825-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4825&num=0&edition=2024",
+          "governed_bytes_sha256": "925719d76d04e2ba48548d6059ecaae25db9632de136393c3182794e8ab2df43",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "govinfo:8usc1324b-a3-protected-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324b.htm",
+          "governed_bytes_sha256": "bd5c1276affa5a35f7420032fe02af38ce32c950ea875c19d81f1d8b99a1f7aa",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete EH and affected ECRA operative sections, full IEEPA witness, complete incorporated1324b(a3)definition and identified INA LPR/national definitions; no unrelated employment remedies or status-criteria history imported."
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -6835,14 +6963,14 @@
   ],
   "action_assessment_counts": {
     "No Defect": 76,
-    "Minor": 2,
+    "Minor": 3,
     "Major": 7,
     "Critical": 1
   },
   "distinct_finding_counts": {
     "Critical": 1,
     "Major": 3,
-    "Minor": 1
+    "Minor": 2
   },
   "unaudited_current_substantive_action_ids": [],
   "required_noncounting_sample": {
@@ -6872,7 +7000,8 @@
     "AnnualDHSappropriation/statutory/reportscopeversuswholeCRreplacement;exactJanuaryIH/1014as-votedtextbefore1016correction,Januarypre-Feb3baselineversusvalidMarchpost-Feb3baseline,andone7147episodewithMassiemixedofficialdirections. FinaltableversusHousePROPOSALcolumn/numberedrider is an explicitaudit lens.",
     "Foreigncountrymilitaryeducation/classifiedclearance/investment controls do not bythemselves defineimmigrationstatus; exactreportamendment-author numberdiffersfromfloorordinal. EOdefinitionincorporationnotwholeparentpassportpolicy.1438postpassageS1383packagingnot1142directfinaladoption.",
     "Citizen aggregate fiscal population is not personal immigration eligibility; country-only incorporation does not import other alien/person definitions; calls to enact SAVE remain expressive. Pending substitute adoption differs from direct final concurrence, and extended legislative days are not an immigration extension.",
-    "RCP versus final adopted modifications control eligibility/exception/ID-list/timing; Senate bill title may retain unrelated original body. Code21083a is statutory304, not statutory303A. Treat citizen/alien/national and NVRA/HAVA/UOCAVA State definitions separately; past guidance deadline is not repaired."
+    "RCP versus final adopted modifications control eligibility/exception/ID-list/timing; Senate bill title may retain unrelated original body. Code21083a is statutory304, not statutory303A. Treat citizen/alien/national and NVRA/HAVA/UOCAVA State definitions separately; past guidance deadline is not repaired.",
+    "An expressly incorporated citizenship/LPR/protected-immigration-status predicate is distinct from generic foreign-country/entity/undefined-clearance context. Preserve provider versus recipient, USperson overlap, independent LPR route and criminal conjunction/ANYitem conviction-denial limits; domain/regulatory application remains candidate review."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -6891,7 +7020,7 @@
   },
   "checkpoint_validation": {
     "focused_tests": 217,
-    "focused_runtime_seconds": 37.579,
+    "focused_runtime_seconds": 37.715,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -6899,10 +7028,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "4f6aeb1ac2bf8596cff98a05f6876ac7d13ef87b",
+      "head": "37e6b3cb304a1566d682f2afb885f1a95e8c11d4",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37443178973"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37444715812"
     }
   },
   "open_legal_interactions": [
@@ -7115,10 +7244,35 @@
         "govinfo:hrpt119-493",
         "govinfo:hres1057eh"
       ]
+    },
+    {
+      "action_id": "house:119:2:13",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Cross-domain operative status-predicate classification; not missing primary evidence or unfinished ordinary screening",
+      "question": "The exact new foreign-person remote-access subject uses citizen/LPR/protected-immigration-status exclusions, unlike generic entity/country controls. Preserve this defensible eligibility-overlap candidate for independent review; do not convert it into a new immigration status, employment entitlement, INA ground or accepted ontology rule.",
+      "source_ids": [
+        "govinfo:hr2683eh",
+        "olrc:50usc4801-2024-operative",
+        "govinfo:8usc1324b-a3-protected-definition"
+      ]
+    },
+    {
+      "action_id": "house:119:2:13",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Individual regulatory/status application and retained authority limits; not missing primary evidence or unfinished ordinary screening",
+      "question": "Actual item jurisdiction, serious-risk determination, controls/licenses, IEEPA exceptions, independent LPR/protected-status routes and provider/recipient distinctions require their own application. Printed criminal AND/OR BOTH is not adjudicated;2024/asofJanuary2025 captured baseline is not universal later-law/current-regulation currency.",
+      "source_ids": [
+        "govinfo:hr2683eh",
+        "olrc:50usc4812-2024-operative",
+        "olrc:50usc4813-2024-operative",
+        "olrc:50usc4819-2024-operative",
+        "govinfo:50usc1702-2024",
+        "govinfo:8usc1324b-a3-protected-definition"
+      ]
     }
   ],
   "temporal_baseline_pattern_review": {
-    "scope": "All36 authored source bindings scanned for the identified11975 later-law baseline pattern; related enacted-law/EO/SOP chronology and new February11 SAVE replacement chronology independently reconciled to primary dates. This is not all-law currency acceptance.",
+    "scope": "All37 authored source bindings screened for the identified11975 later-law baseline pattern; related law/EO/SOP/replacement chronology independently reconciled to primary dates.2024/asofJanuary2025 ECRA labels do not establish universal subsequent-law currency.",
     "entries": [
       {
         "action_id": "house:119:1:156",
@@ -7219,6 +7373,24 @@
         ],
         "current_authoring_action_sha256": "4682a7fa5be55499034131bd5752bce212eb4364e17b8553e42aacd561d2deb0",
         "assessment": "February6RCP and February11adopted rule/report precede final House replacement choice; October4,2024observer law is an existing baseline, not future context. PrintedOctober1,2025guidance deadline is preserved as a proposal timing interaction, not a substitute baseline or future law."
+      },
+      {
+        "action_id": "house:119:2:13",
+        "clerk_action_date": "12-Jan-2026",
+        "material_source_ids": [
+          "olrc:50usc4801-2024-operative",
+          "olrc:50usc4811-2024-operative",
+          "olrc:50usc4812-2024-operative",
+          "olrc:50usc4813-2024-operative",
+          "olrc:50usc4814-2024-operative",
+          "olrc:50usc4815-2024-operative",
+          "olrc:50usc4816-2024-operative",
+          "olrc:50usc4819-2024-operative",
+          "olrc:50usc4820-2024-operative",
+          "olrc:50usc4825-2024-operative"
+        ],
+        "current_authoring_action_sha256": "a92e89f0d50d9dfb9ef98ba7f9dbce9e616035259f1332f29204bff727ef58d7",
+        "assessment": "Official2024Code operative captures label asofJanuary6,2025before the January12,2026choice. No postvote law back-projected; subsequent-law/current-regulation currency remains limited, not universally accepted."
       }
     ],
     "uncorrected_identified_postvote_baselines": [],

@@ -15775,7 +15775,112 @@
       ],
       "claim_source_map_ref": "authoring.json#action_id=house:119:2:69",
       "episode_candidate_id": "episode:s1383:119"
+    },
+    {
+      "action_id": "house:119:2:13",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "The new remote-access subject expressly incorporates4801(5)(A)natural-person citizenship/LPR/protected-immigration-status exclusions, including statuses defined through1324b(a)(3); status itself affects whether the natural-person recipient is covered. This is a defensible Immigration-related eligibility overlap candidate, unlike generic foreign-country military, entity-geography or undefined-clearance controls. Complete exact functional authority and material baselines independently reconstructed, with cross-domain/application review explicitly routed; no visa/status award or actual outcome inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:13",
+          "url": "https://clerk.house.gov/evs/2026/roll013.xml",
+          "raw_sha256": "baa8e074ea3ebc36258923da7fe1584f9c4db5e7d19a1c49f800a201136d5173",
+          "governed_bytes_sha256": "988bd9497aa2c691cd18534c49c795005138b47a836cd32f10c74e6df408e8ca"
+        },
+        {
+          "source_id": "govinfo:hr2683eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2683eh/html/BILLS-119hr2683eh.htm",
+          "raw_sha256": "1c5eca67b4d0dcda1a55731afa68effb345e27d91a1ab69eb883433693fc922a",
+          "governed_bytes_sha256": "5baab89750a7ccfde24d41cab1d3b7c492f47631ca42394b2067f9545b46ddfa"
+        },
+        {
+          "source_id": "olrc:50usc4801-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4801&num=0&edition=2024",
+          "raw_sha256": "7ec3a1600ab0a3d8f12aa16ff8ca07b985a9b4d1c48c137acd43f76226172a0a",
+          "governed_bytes_sha256": "26bb259f48c477a1edab799ec56219a5b215be84c35c8a821510260074e94d13"
+        },
+        {
+          "source_id": "olrc:50usc4811-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4811&num=0&edition=2024",
+          "raw_sha256": "6a48a238892e4d7de524449117ea77994007d83be5a931046e98c253baf2eee2",
+          "governed_bytes_sha256": "eacb50335689a0bcf7c3f20b7bee3e02cc324b431b65d43adbb7bd3a45d28f4d"
+        },
+        {
+          "source_id": "olrc:50usc4812-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4812&num=0&edition=2024",
+          "raw_sha256": "810ac3e9ebff887b8cf66c7871aa6f5d1e094e091d8e34f3dae103ea3e7c6707",
+          "governed_bytes_sha256": "edc1f4fa8b86b86ee56984f53fc20f7d8edc8ad96a63504dc00aa9845d2327bb"
+        },
+        {
+          "source_id": "olrc:50usc4813-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4813&num=0&edition=2024",
+          "raw_sha256": "4cc33c30a6330b3d0fcfa289a7595510c09342d951ea10844a4a79e8c19ad427",
+          "governed_bytes_sha256": "7e9c5080fe05baef101faa2a5ea528b5b4fd609bf0dbd11bae99ee03d99e3be0"
+        },
+        {
+          "source_id": "olrc:50usc4814-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4814&num=0&edition=2024",
+          "raw_sha256": "d9c75abffbd66a3ec23962851af9c94bf0cb59071bf7d4412605a2911b1ffa7b",
+          "governed_bytes_sha256": "9d58700e3e3951c41ad336fe5b58cdf888d481a1fd81a8c5066791c845281aa8"
+        },
+        {
+          "source_id": "olrc:50usc4815-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4815&num=0&edition=2024",
+          "raw_sha256": "6a17da004a83442fbd9ea16a7603f3f6199bb8f71fed9dd1a0731edc978e6a50",
+          "governed_bytes_sha256": "a4aad570a96eb18c4683210a164d01fd0a618509cf2b89adc31a2ffce27a1dd6"
+        },
+        {
+          "source_id": "olrc:50usc4816-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4816&num=0&edition=2024",
+          "raw_sha256": "0b812b6adc32f1dbff51ad09478441137de4936b62b665ae948b3686077fe745",
+          "governed_bytes_sha256": "84fa7cdbc51b8e9f40f909ae1885df114d6fa917bd4b097c5f63acebb213dd2b"
+        },
+        {
+          "source_id": "olrc:50usc4819-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4819&num=0&edition=2024",
+          "raw_sha256": "a458c83e15220a268129a8f4711b91db904966587605e8678707f39877b43960",
+          "governed_bytes_sha256": "5a4d48574cee55cacfa6607ee86fb1c432f7c6c31a4eebfc165b08eaa3d76266"
+        },
+        {
+          "source_id": "olrc:50usc4820-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4820&num=0&edition=2024",
+          "raw_sha256": "00b0716b00a9938c55521059534406c909d9486fe3ca27ba751293b2816ea3ab",
+          "governed_bytes_sha256": "3f031bec30a79f1bde1ec80252e34d5879653cd0c1b33ff6c911fcef7b537b60"
+        },
+        {
+          "source_id": "olrc:50usc4825-2024-operative",
+          "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-2024-title50-section4825&num=0&edition=2024",
+          "raw_sha256": "a73502a8c8a5bb5e155b3fa935bc810670affac5fc62206108652aae87a1ab81",
+          "governed_bytes_sha256": "925719d76d04e2ba48548d6059ecaae25db9632de136393c3182794e8ab2df43"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "raw_sha256": "3f41ab3b425973acf166458892714dd4d7e3fed776ec398a3f24e1a3473da968",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6"
+        },
+        {
+          "source_id": "govinfo:8usc1324b-a3-protected-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324b.htm",
+          "raw_sha256": "025b1a38de479b3cd3a8573816a12629f2dd80b872b1ec379ed638af3e05908f",
+          "governed_bytes_sha256": "bd5c1276affa5a35f7420032fe02af38ce32c950ea875c19d81f1d8b99a1f7aa"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:13",
+      "episode_candidate_id": "episode:hr2683:119"
     }
   ],
-  "review_sha256": "352d5b7214a2128cb29f3abd76946dde125ae4ac2566306544d7c162f3f47e6a"
+  "review_sha256": "1b809b71aac31a428ce3c5ebd3cdc5d56f2a3be5789ff63415a7b5a530ee9b07"
 }

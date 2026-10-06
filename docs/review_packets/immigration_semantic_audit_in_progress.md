@@ -613,3 +613,47 @@ protected baseline and clean final diff reviewed. Previous exact head
 https://github.com/dhart54/political_fingerprint/actions/runs/37443178973.
 Current-head CI follows push. This is an intermediate candidate checkpoint;
 continue remaining source review under the unchanged overnight deadline.
+
+
+### Checkpoint 22: status-defined remote access and source-precision correction
+
+Complete H.R. 2683 EH and affected ECRA operative sections independently read.
+Its new risk-qualified remote-access recipient uses an explicit citizen/LPR/defined
+protected-immigration-status predicate. This is a defensible eligibility-overlap
+candidate distinct from generic foreign-country military education, undefined
+clearance or foreign entity geography; the cross-domain boundary remains routed
+for independent review. Complete 1324b(a)(3) and INA definitions preserve national,
+refugee/asylum/temporary categories and naturalization qualifications. LPR exclusion
+is separately explicit; USperson and foreign person are not simple complements.
+
+Shared meaning preserves item/jurisdiction/network/different-location/Commerce-risk
+conditions, licensing/policy/IEEPA limits, provider duties, retained criminal willfulness,
+civil hearing, discretionary prior-conviction ANY-item access/provision denial,
+item/conveyance enforcement, confidentiality and committee-information-without-veto
+boundaries. Existing thirty-day processing is best-efforts sense of Congress.
+No new INA admission, visa, status, work-authorization or removal power is inferred.
+Internal reconstruction found a Minor penalty-precision defect: an initial sentence
+simplified printed AND/OR BOTH into fine-or-prison alternatives. The repair preserves
+the exact conjunction-qualified maxima without sentencing adjudication; before/after
+hashes and finding remain. Membership, observations and episode are unchanged.
+
+441 governed reviews: 37 interpreted, 210 procedural, 192 excluded, two expressive;
+235 ordinary screenings unfinished. Thirty-five episodes, two multi-action episodes,
+74 observations (72 directional, Present and Not Voting retained), 68 actual findings
+(Foushee 35, Massie 33). Foushee 10 support/27 opposition; Massie 28 support/7 opposition
+plus two nondirectional statuses. Actual remote-access Yea/Nay compacts/details/limits
+inspected. All 37 meanings have separate same-owner primary reconstruction/comparison.
+87 distinct assessments: 1 Critical/7 Major/3 Minor/76 No Defect; distinct issues
+1 Critical/3 Major/2 Minor. Twenty-one legal/cross-domain interactions remain.
+1,165 sources = 971 unchanged Health reuses + 194 new; 380 claims; 98 provisional captures.
+Core: `d2ec61e61d70d13f87834c1092edbd2176e65711bd4103ab214a0161a80b2de1`;
+IR: `247c1692fbfc5a738f264cfbd9762caa59a7c06cee74fe837c37554b63dcd54a`.
+217 focused tests pass in 37.715 seconds; seven semantic checks and seven
+byte-identical outputs pass. Source/audit/accounting, fail-closed public/persistence,
+protected baseline and clean diff reviewed. Previous exact head
+37e6b3cb304a1566d682f2afb885f1a95e8c11d4 passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37444715812.
+Current-head CI follows push. S. 3971's full ES was read as a new lead; its material
+security/eligibility baselines still require reconstruction, and no disposition is
+assigned from generic foreign-risk words. Continue bounded source work under the
+original deadline; no terminal marker or readiness declaration at this checkpoint.
