@@ -1046,3 +1046,70 @@ two unfinished package component reviews and 26 legal/application questions
 remain. Preserve all partial-component gates and historical deadline markers.
 Main's separate PR200 maintenance merge 7a8c6ee11a899ea6912a4d37588917fcd0de0a24
 does not change this candidate branch/base or authorize its merge/deployment.
+
+
+## Checkpoint 30: visa-integrity and I-94 exact-version fees
+
+House 70008-9 and Senate 100007-8 now bind complete operative fee paragraphs
+and complete material pre-vote nonimmigrant-visa/account authorities. One new
+bounded 1356(q) capture reconstructs exactly against the earlier full source;
+six new claim bindings have passage hashes/lengths and current/prior action
+hashes in hr1_visa_i94_fee_review.json. House clauses match served EH after
+joining only Arrival/ Departure; original floor text remains controlling.
+
+Both issuance fees have fiscal 2025 $250 floors/higher DHS rule authority,
+nearest-dollar CPI increments, unreimbursed Treasury proceeds and waiver bars.
+House discretionary reimbursement after visa validity expires has three
+alternatives: nonuse OR compliance AND qualified departure OR filed extension,
+change or adjustment during validity. Senate instead requires post-admission
+compliance AND either no extension request plus its printed departure condition
+OR a GRANTED extension/adjustment during validity. All AND/OR and timing
+conditions remain explicit; filing, grant, visa validity and admission period
+are not interchangeable. Senate's literal "such period" departure referent
+becomes separate application question 27, with recommendation, alternatives
+and safe parallel work. No general stay/work grace period or guaranteed refund.
+
+I-94 application fees have $24 floors/higher rule authority and 20-percent CBP
+account share/Treasury remainder. House has no printed increment-rounding rule;
+Senate rounds its increment down to the nearest dollar. Existing land-port
+account receipt scope does not narrow the new any-alien form-application
+predicate. Baseline appropriations refunds do not become applicant refunds.
+No new admission, compliance, collection or status outcome is inferred.
+
+Same-owner source-first comparison inspected both expanded version meanings,
+unchanged selected compact highlights and member details. All earlier meaning
+prefixes/suffixes and claim bindings are preserved, including corrected funeral
+and DHS-determination predicates. 223 focused tests pass (39.554s), seven
+semantic checks pass, seven outputs replay byte identically and 95 bounded
+source witnesses reconstruct. Source/Clerk/current-audit/accounting integrity,
+final diff and candidate/public/persistence isolation pass. No runtime,
+pipeline/schema, Health, frontend or production changes.
+
+Fingerprint's bounded independent recheck resolved the historical funeral
+Major at ced5073953694d7d120664d05402709e45729b70. It verified both authoring
+replacements, corrected core/Foushee detail, both member projection digests
+and Nay choices, four primary hashes and correction receipt/original blob
+binding. It could not directly inspect full Massie readable bytes through
+the oversized connector and did not rerun tests/replay. These limits and
+exclusion of this later fee expansion are preserved separately in
+hr1_checkpoint29_independent_recheck.json; original correction receipt remains
+byte unchanged. Historical Major and reimbursement Minor remain. No transfer
+of bounded independent scope to this extension, full package/domain or acceptance.
+
+Counts: 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations,
+70 findings; 221 ordinary screenings and two package component reviews remain.
+27 legal/application questions are separate. 1,204 governed sources (990
+unchanged Health reuses / 214 new), 438 claim witnesses, 121 provisional
+captures. Component closure gate remains active; final full-corpus verdict null.
+Core: 6c7a39163f8598016babc3c4f69eee730773f0f4f88662b20356de63713ebbae.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Correction ced5073 exact-head CI run37501536160 remains under observation;
+current fee checkpoint CI follows push. No publication or production authority.
+
+Resume House 70011 and 70015-19 versus Senate 100013-15 continuance/diversity/
+EOIR/ESTA/user/EVUS provisions, using complete material 235/286/217 authorities.
+Then benefit, tax/remittance and remaining child/enforcement funding components,
+continuing/omnibus/NDAA packages and ordinary screenings. Preserve legal questions
+separately from executable unfinished research and unavailable evidence.
+Original deadline/terminal markers remain intact; no successor shutdown supplied.
+PR200 maintenance on main is separate; this branch was not merged or rebased.
