@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "017aeb7e13a6bfd17a227706b50dc16e8462b47f7ed5ccedbaebba2e67635988"
   },
-  "input_sha256": "832636e533a01adece140d641782ee99cb6cb0a7845d4eb32ccacb139b6a4f17",
-  "source_capture_sha256": "95976044cdadd53e9b0217d4688dd554a723fc87e674e4dbfe89aecdb7e23621",
-  "core_sha256": "d7287c8974ac49aa49f7749823c07133242cde8f91ba8e34ccf7d75e2d87cb5d",
-  "compiled_sha256": "49bc821513c7347d2ba9cd19f66b495e3452a02849ab9b7d2f8da8edfcdc77ed",
-  "readable_sha256": "b078e17f12eb0bd85f5287de3bf1a1b3822c82be4850902b8854121cb5422e06",
+  "input_sha256": "a626d65910e589d1de8fb26176c095f40433bc74412852bfc9bd2509fe8a1a64",
+  "source_capture_sha256": "59045a5ab5720490ebefbefd97de5d5fd339fce8f773d43c27996e420351c929",
+  "core_sha256": "0f4d00d7a3ca942878d35fc405fc43945225a2bc51cd1a6839ab8dfbf9b1d0be",
+  "compiled_sha256": "a0fe2eaa4de5cb37edd2bbb6c9ee9899a3b9b383c0aaa12ab3c268d4cd615b54",
+  "readable_sha256": "06713d833dc07ee69ca4b44b43a6ddc6014741ef696ad99f362af69dad7473bc",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -494,6 +494,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.J.Res.72 terminating the specified EO 14193 emergency subject to the statutory savings",
           "source_id": "clerk:119:2:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:69",
+      "shared_sha256": "84153432577300ec20288f060d8620c16be7573d1428da8cc7553aff070af3bd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete S. 1383 House replacement; no preferred alternative or motive is established",
+          "source_id": "clerk:119:2:69"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete S. 1383 House SAVE America replacement, including citizenship-verification and qualified photo-ID rules",
+          "source_id": "clerk:119:2:69"
         }
       ]
     },

@@ -995,3 +995,52 @@ protected baseline and clean diff inspected. Previous exact head
 https://github.com/dhart54/political_fingerprint/actions/runs/37442227327.
 Current-head checks follow push. Continue source work under the unchanged overnight
 boundary; this is an intermediate checkpoint, with no terminal marker.
+
+
+### Checkpoint 21: February S. 1383 House SAVE America replacement
+
+The complete EAH and independently read 32-page RCP 119-19, Report 119-493
+modifications and adopted H.Res. 1057 correction establish SAVE America as the
+actual February 11 whole-passage proposal, despite the retained veterans title.
+Final text broadens defined uniformed-services exceptions, removes the extra
+State-selected ID category, submits the complete official list for SAVE comparison,
+and replaces original 2027 photo-rule timing with enactment effectiveness.
+
+The shared meaning preserves five citizenship-proof routes, name-change affidavits,
+other-evidence/official-determination process, mail/disability rules, distinct NVRA/
+HAVA/UOCAVA definitions, qualified list-removal notice/proof opportunity, SSA limits,
+DHS investigation WHETHER to initiate alien proceedings, retained criminal intent,
+civil notice/cure, naturalization notification and provisional distinctions. Ballot
+photo rules have exactly five final ID classes, three-day provisional cure, qualified
+religious affidavit, copy or last-four-SSN plus reasonable-efforts affidavit, specified
+absent-service/inaccessible-pollingplace exceptions, and practicable free copying
+rather than free ID issuance. Citizenship, nationality and alien status are distinct.
+
+Three additional review dependencies concern retained SAVE noncriminal-use limits,
+literal reference/proof/enforcement interactions, and the printed October 1, 2025
+photo-guidance deadline. They are supported-source legal questions, not unfinished
+ordinary screenings. Independent statutory reconstruction resolves a possible
+numbering concern: Code 21083a is existing HAVA section 304 observer access, not
+303A; proposed photo section 303A does not create the imagined collision. No such
+research hypothesis was added as an authoring defect. All conclusions remain candidates.
+
+440 governed reviews: 36 interpreted, 210 procedural, 192 excluded, two expressive;
+236 ordinary screenings unfinished. Thirty-four episodes include H.R. 4 and H.R. 7147
+as the two multi-action episodes. 72 observations: 70 directional, Present and Not
+Voting retained. Foushee 9 support/27 opposition; Massie 28 support/6 opposition,
+plus the two nondirectional statuses. Actual S. 1383 compacts/details/qualifications
+and Nay/Yea observations inspected. Sixty-six findings: Foushee 34, Massie 32.
+All 36 meanings have separate same-owner primary reconstruction/comparison.
+86 distinct assessments: 1 Critical/7 Major/2 Minor/76 No Defect; 19 legal interactions.
+Samples: 34 retained exclusions, fourteen procedures and all two expressive choices.
+1,153 sources: 960 unchanged Health reuses, 193 new; 366 claims; 98 provisional captures.
+Core: `0f4d00d7a3ca942878d35fc405fc43945225a2bc51cd1a6839ab8dfbf9b1d0be`;
+IR: `a0fe2eaa4de5cb37edd2bbb6c9ee9899a3b9b383c0aaa12ab3c268d4cd615b54`.
+
+217 focused tests pass in 37.579 seconds; seven semantic checks and seven
+byte-identical outputs pass. Source/audit/accounting, public/persistence rejection,
+protected baseline and clean final diff reviewed. Previous exact head
+4f6aeb1ac2bf8596cff98a05f6876ac7d13ef87b passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37443178973.
+Current-head CI follows push. This is an intermediate candidate checkpoint;
+continue remaining source review under the unchanged overnight deadline.

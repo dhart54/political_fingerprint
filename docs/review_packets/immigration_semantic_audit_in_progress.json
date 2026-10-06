@@ -3513,6 +3513,182 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:69",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "69",
+        "legis-num": "S 1383",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Feb-2026",
+        "action-time": "6:43 PM",
+        "vote-desc": "Veterans Accessibility Advisory Committee Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: February 11 Clerk On Passage, Foushee Nay/Massie Yea; actual EAH whole-enacting-clause replacement is SAVE America despite retained veterans title. Entire 32-page RCP19 read independently, then each Report493 modification and rule1057 section6 line correction reconciled to the complete EAH. Complete-list SAVE comparison, absent-uniformed registration and final absentee exceptions, deletion of additional State-ID category, and immediate versus2027 timing are substantive differences from unmodified RCP. Defined absent services includes qualified domestic absence and spouses/dependents; not all civilian overseas citizens. Full NVRA20502-11, HAVA first-mail identification/provisional/AG/guidance, accessibility and UOCAVA definitions, SAVE benefit/use framework, SSA agreement, REALID definitions/issuance, passport/national/alien distinction and239proceedings independently reconstructed. Mandatory State list comparison has notice/proof opportunity, existing-agreement option and no-SSA-only-removal boundary. DHS SHALL investigate WHETHER proceedings for an alien unlawfully registered pursuant to specified verification provisions, not automatic deportation or every noncitizen. Five documentary routes and OTHER-evidence/official affidavit alternatives, name-change affidavit, mail in-person/disability process, retained criminal knowledge/willfulness, civil notice/cure, prompt naturalization notice, PRA/guidance/exemption and provisional boundaries preserved. Distinct ballot photo rules retain three-day provisional ID/religious affidavit cure, copy OR lastfourSSN plus reasonable-efforts affidavit, qualified inaccessible-pollingplace alternative, exactlyfive final IDclasses and practicable copying not freeID. NVRA and HAVA State definitions separately reconstructed. New52US21083a/PL118106 read: existing STATUTORY304 observer section is not303A; code numbering does not establish a collision or missing enforcement match. PrintedOctober2025recommendation deadline predates vote and is routed, not repaired. SAVE noncriminal-use/literal-reference/alternative-enforcement interactions remain explicit. Separate S1383 episode, not HR22 or new later-packaging component; actual whole choices retain no inferred outcome/motive/alternative.",
+      "finding": "No material defect in the bounded replacement identity, adopted modifications, material baseline/exception reconstruction, shared whole-choice meaning, source mapping, member observation or distinct bill episode. Three legal/application/timing interactions are routed for independent candidate review; no individual eligibility or authoritative law compilation accepted.",
+      "correction": "Spacing-only readable cleanup; retained primary reconstruction and all qualifications unchanged.",
+      "before_authoring_action_sha256": "ef5ebe89b9366c861c49a493161432b1d40a89598773b9236959f49491e8a004",
+      "corrected_authoring_action_sha256": "4682a7fa5be55499034131bd5752bce212eb4364e17b8553e42aacd561d2deb0",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:s1383eah",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+          "governed_bytes_sha256": "24b2790d0fec3c22eb31d6281d7ff90465654ea8d511cfa9c8d153be6f861853",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:hres1057eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1057eh/html/BILLS-119hres1057eh.htm",
+          "governed_bytes_sha256": "65102dca6419fb40c83faa1079ecaf820452a419dcb047643be8acbeaf8edc53",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:hrpt119-493",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt493/html/CRPT-119hrpt493.htm",
+          "governed_bytes_sha256": "eb35b8f9232978ae501a0845968893da78f04350756899246adccebc4d301c9a",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "house:rcp119-19-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260209/RCP_S1383_xml.pdf",
+          "governed_bytes_sha256": "9cc01942babc1a9c876626642b9d5722e63d0dafeb09e2b01422b61aa7a85370",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc20502-20511-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm",
+          "governed_bytes_sha256": "c4cf60927574442850f782fa77e546e1bf30445cec99f3afd01929aec0b42bdd",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc20102-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap201-sec20102.htm",
+          "governed_bytes_sha256": "843153823c89d5c82de6874fcf6e599f7052929d69853a443a3e43dfeada9e42",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc20310-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap203-sec20310.htm",
+          "governed_bytes_sha256": "8f606accff3e622f794adfb6f5dfda3081c534fcf279f5851cf4c034adab1fe2",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21082-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21082.htm",
+          "governed_bytes_sha256": "0b975da9257e7518e05f7e0f029ccfd2c3cdda46d281969a672ba91ad7e67960",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21083-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21083.htm",
+          "governed_bytes_sha256": "9d418865e6a143ee10ab99a26ccfddcb2b3fa2ba9ee482836c0ade1f1d2dd5d9",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21111-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIV-sec21111.htm",
+          "governed_bytes_sha256": "a4e922ddda22bb42b949c5b5198f892a219909c398a0c441de823a81ddfa0ec3",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21101-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partB-sec21101.htm",
+          "governed_bytes_sha256": "9353e63a139de5c0b1c6fcf42aeac87c69982b0c1cea3c94dcfb034dd6dfad23",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:42usc1320b-7-save-and-benefit-boundary",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm",
+          "governed_bytes_sha256": "7e64add5af5cf102c191142f0fddb544f47f079a67e994e61ab80a12b944948a",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:42usc405r9-voter-verification",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+          "governed_bytes_sha256": "092dc7a5c26c5756e0963c96281b5e012020e8870bc538e9f1444961eaa6e3b1",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:8usc1101a3-alien-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cd54105b7e87d0809dfa230c3a9fea397883076c508ba1859cea00a9193fb4b6",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:8usc1229-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm",
+          "governed_bytes_sha256": "cf713773135c4ad61006f0f50f1b35725b9f4390ae3835dbe5ac0fa8e3efb08f",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:49usc30301-2024-real-id-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap303-sec30301.htm",
+          "governed_bytes_sha256": "0a48ef79fa3b9f4c5e850ce6a1b82a5a451843215313c91bc6d96520e1b4670c",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:22usc212-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm",
+          "governed_bytes_sha256": "fdc32a66be9497f81f4b0ba8bfa8a5f1540a8df7615f07ab9b34efe1c3f42b20",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:8usc1408-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partI-sec1408.htm",
+          "governed_bytes_sha256": "c15224822086e04dbe3b160653a9db6a08aaaef0b42d7588100bc4a9e1b7cc41",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:18usc611-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm",
+          "governed_bytes_sha256": "d281c26437ab6c908c1cae5c71d2370563c47b7bb47379c6ddc921a3e9413f88",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21141-state-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209.htm",
+          "governed_bytes_sha256": "f68a419784cd68253556b1bc3fc5b69611b3d9ae6287c189dec20e8634bb3be9",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:pl118-106-election-observers-complete",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ106/html/PLAW-118publ106.htm",
+          "governed_bytes_sha256": "49eb6e5f0ef781c39e95b366ebd7e033e1746f0665d61f30b23101c3740f24ce",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        },
+        {
+          "source_id": "govinfo:52usc21083a-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap209-subchapIII-partA-sec21083a.htm",
+          "governed_bytes_sha256": "e0324d312cc7da4cfb7d2302894c22dbc33196e1455d1373af7acb3d773d4441",
+          "reviewed_extent": "Complete exact EAH, RCP, modifying rule/report, or complete identified operative baseline/definition; unrelated provisional title/chapter capture and historical notes not claimed as globally reviewed."
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -6658,7 +6834,7 @@
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 75,
+    "No Defect": 76,
     "Minor": 2,
     "Major": 7,
     "Critical": 1
@@ -6695,7 +6871,8 @@
     "DirectfinalwholeHousereplacementversusunamendedSenateconcurrenceorconsideration-onlyrule;residualCRouterdateversusannualDHSfunding,earlierprojectendpointsandfixedprogramsunsets. PreserveprintedFeb14lapseratherthanparallelbillFeb13wording.",
     "AnnualDHSappropriation/statutory/reportscopeversuswholeCRreplacement;exactJanuaryIH/1014as-votedtextbefore1016correction,Januarypre-Feb3baselineversusvalidMarchpost-Feb3baseline,andone7147episodewithMassiemixedofficialdirections. FinaltableversusHousePROPOSALcolumn/numberedrider is an explicitaudit lens.",
     "Foreigncountrymilitaryeducation/classifiedclearance/investment controls do not bythemselves defineimmigrationstatus; exactreportamendment-author numberdiffersfromfloorordinal. EOdefinitionincorporationnotwholeparentpassportpolicy.1438postpassageS1383packagingnot1142directfinaladoption.",
-    "Citizen aggregate fiscal population is not personal immigration eligibility; country-only incorporation does not import other alien/person definitions; calls to enact SAVE remain expressive. Pending substitute adoption differs from direct final concurrence, and extended legislative days are not an immigration extension."
+    "Citizen aggregate fiscal population is not personal immigration eligibility; country-only incorporation does not import other alien/person definitions; calls to enact SAVE remain expressive. Pending substitute adoption differs from direct final concurrence, and extended legislative days are not an immigration extension.",
+    "RCP versus final adopted modifications control eligibility/exception/ID-list/timing; Senate bill title may retain unrelated original body. Code21083a is statutory304, not statutory303A. Treat citizen/alien/national and NVRA/HAVA/UOCAVA State definitions separately; past guidance deadline is not repaired."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -6714,7 +6891,7 @@
   },
   "checkpoint_validation": {
     "focused_tests": 217,
-    "focused_runtime_seconds": 37.992,
+    "focused_runtime_seconds": 37.579,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -6722,10 +6899,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "7bcf586fb32e59b6de710c8a993dc5668ab09993",
+      "head": "4f6aeb1ac2bf8596cff98a05f6876ac7d13ef87b",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37442227327"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37443178973"
     }
   },
   "open_legal_interactions": [
@@ -6903,10 +7080,45 @@
         "govinfo:hres1014eh",
         "congressional-record:2026-01-22-dhs-narrative-pages309-332"
       ]
+    },
+    {
+      "action_id": "house:119:2:69",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "SAVE verification/noncriminal enforcement interaction; not an unavailable source or unfinished ordinary screening",
+      "question": "How mandatory list comparison, specified DHS investigation and retained121(c)(1)noncriminal-enforcement-use bar interact; no implied repeal or individual lawful-use conclusion.",
+      "source_ids": [
+        "govinfo:s1383eah",
+        "govinfo:42usc1320b-7-save-and-benefit-boundary",
+        "govinfo:8usc1229-2024-operative"
+      ]
+    },
+    {
+      "action_id": "house:119:2:69",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Literal proof/alternative-process/enforcement references; not an unavailable source or unfinished ordinary screening",
+      "question": "Preserve paragraph(1)/paragraph(A) printed references, name/other-evidence processes and missing-proof civil/criminal language, retained knowing/willful elements, citizen versus noncitizen-national/passport/alien distinction. No repaired reference, strict liability or individual eligibility accepted.",
+      "source_ids": [
+        "govinfo:s1383eah",
+        "govinfo:52usc20502-20511-operative",
+        "govinfo:22usc212-2024-complete",
+        "govinfo:8usc1408-2024-complete"
+      ]
+    },
+    {
+      "action_id": "house:119:2:69",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Printed photo-guidance timing versus immediate statutory effectiveness; not an unavailable source or unfinished ordinary screening",
+      "question": "October1,2025voluntary photo-guidance deadline predates February11,2026choice; no substitute prospective deadline or delay of nested/whole immediate-effect clauses. Registration guidance separately ten days after enactment.",
+      "source_ids": [
+        "govinfo:s1383eah",
+        "govinfo:52usc21101-2024-operative",
+        "govinfo:hrpt119-493",
+        "govinfo:hres1057eh"
+      ]
     }
   ],
   "temporal_baseline_pattern_review": {
-    "scope": "All35authoredsourcebindings scanned for theidentified11975later-lawbaselinepattern, andrelated11937/11921/EO/SOPchronology independentlyreconciled toalreadyreadprimarydates. Original2025Code/OLRCunavailability/currentnesslimits remain;thisisnotnewall-lawcurrencyacceptance.",
+    "scope": "All36 authored source bindings scanned for the identified11975 later-law baseline pattern; related enacted-law/EO/SOP chronology and new February11 SAVE replacement chronology independently reconciled to primary dates. This is not all-law currency acceptance.",
     "entries": [
       {
         "action_id": "house:119:1:156",
@@ -6995,6 +7207,18 @@
         ],
         "current_authoring_action_sha256": "adcba3e215c15feedaa380627bb9fe2f015e796ff18fdc7fb6f2cb85a03e976e",
         "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:69",
+        "clerk_action_date": "11-Feb-2026",
+        "material_source_ids": [
+          "house:rcp119-19-complete",
+          "govinfo:hres1057eh",
+          "govinfo:hrpt119-493",
+          "govinfo:pl118-106-election-observers-complete"
+        ],
+        "current_authoring_action_sha256": "4682a7fa5be55499034131bd5752bce212eb4364e17b8553e42aacd561d2deb0",
+        "assessment": "February6RCP and February11adopted rule/report precede final House replacement choice; October4,2024observer law is an existing baseline, not future context. PrintedOctober1,2025guidance deadline is preserved as a proposal timing interaction, not a substitute baseline or future law."
       }
     ],
     "uncorrected_identified_postvote_baselines": [],

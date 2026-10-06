@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "35 explicitly listed Immigration & Border candidate inputs in a fixed 676-action inventory through September 16, 2026. Wider membership, source and episode research remains incomplete; no full-issue, acceptance or public claim."
+    "36 explicitly listed Immigration & Border candidate inputs in a fixed 676-action inventory through September 16, 2026. Wider membership, source and episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -345,6 +345,20 @@
         "stage_order": 20065
       },
       "mapping_sha256": "88703637f6d2cdc7a15b3ad8421d9439e7ab72c77505f43fa426e4555ec34841"
+    },
+    {
+      "action_id": "house:119:2:69",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:s1383:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 20069
+      },
+      "mapping_sha256": "8b20bec5c60f3b942c2cc8044c5609e653e1e254e23ace607869100bbf13c602"
     },
     {
       "action_id": "house:119:2:70",
@@ -689,6 +703,14 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:s1383:119",
+      "action_ids": [
+        "house:119:2:69"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr2189:119",
       "action_ids": [
         "house:119:2:70"
@@ -774,5 +796,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "de50f4a8f12692959be1954d6a06f31a2a76a8e188cb0499c349969ebf31610e"
+  "mapping_sha256": "15b8fc698a823d63f5db994ba551f6a2d0a1dc5f11ec8adde73926fb7ae3cca0"
 }
