@@ -1928,3 +1928,74 @@ Keep own exact clauses/copy grouping and source-mapped reserved decisions;
 continue executable work with original historical markers preserved and no
 current deadline/otherowner/duplicatecheckout. No merge,deployment,production,
 acceptance,promotion,publication or new methodology authority.
+
+
+## Checkpoint 36: Medicaid verification and status-payment boundaries
+
+House section 44110 and Senate section 71109 are bound as distinct exact-action
+components. Beginning October 1, 2026, the House makes assistance during named
+verification periods a State option and bars federal payment for those
+expenditures unless the applicable status is verified by the period's end.
+The unstruck first clerical-resolution effort still requires assistance while
+that effort occurs. Individual receipt of notice starts the separate 90-day
+process; the printed OR predicate and 30 days afterward are retained. Other
+reasonable opportunities are not all 90 days. Existing documentary exceptions,
+emergency-treatment exclusions and appeal rights remain. Missing verification
+does not establish unlawful status or universal immediate loss of assistance.
+The new Medicaid qualifier is not applied to every other verification program.
+
+The Senate instead conditions State payment on common residence in a State,
+DC or US territory AND one own listed status, except existing emergency-care
+and lawfully residing child/pregnancy State-option cases. Each exception keeps
+its necessity, eligibility, transplant, residence, age, election and other
+own predicates. The printed pregnancy category does not establish a universal
+postpartum cutoff. The CHIP services exception concerns children's health
+initiatives under 2105(a)(1)(D)(ii), not pregnancy alone or all CHIP payments.
+Section 71103(b)'s expressly incorporated amendment order is bound. The fiscal
+2026 CMS appropriation of $15 million is not evidence of spending or an award.
+
+Five new governed sources and eighteen claim bindings include complete material
+pre-vote verification, payment, emergency, CHIP and incorporated status rules.
+Seven provisional master captures support this and the next funding-rate review;
+their capture does not accept an interpretation of the remaining clauses.
+The sealed hr1_medicaid_verification_status_review.json records action, passage,
+qualification and floor/EH comparison hashes. Only H2265 pagination and two EH
+formatting spaces differ; original sources remain intact. The two new
+qualifications were reconstructed from primary text. Prior detailed meanings,
+qualifications, compact copy, bindings and all other 37 actions are preserved.
+
+Fingerprint's bounded independent review of checkpoints 34/35 found no new
+material EOIR/SNAP defect. SNAP 14/16 and EOIR 9/15 binding instances from five
+unique exposed EOIR texts were independently recomputed; other hashes were
+not, although operative meanings were read. PDF corroboration was text-only.
+No independent replay, full member JSON audit, legal resolution, full-package
+PASS or acceptance was supplied. Exact heads 4434a740 and d0989555 each passed
+all nine CI jobs. See hr1_checkpoint34_35_independent_review.json; historical
+severities and earlier correction receipts remain unchanged.
+
+Validation: 35 focused candidate tests and seven semantic checks pass; all
+seven generated files replay byte identically. Eighteen new claim bindings,
+both qualifications, full Foushee/Massie propagation, 112 bounded source
+extents, current audit, source/Clerk/accounting integrity and final diff verify.
+A missing audit evidence link was corrected before the passing run; no rule
+or test was weakened. The compiled IR remains unchanged. Public/persistence
+entrypoints stay closed; no runtime, Health, frontend, schema or production
+changes. Same-owner review remains partial, separate from acceptance.
+
+Core: e88120cf154cf95de1008f118721f6e73d22c46c59808662c300f511de444ba9.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34). Remaining: 221 ordinary screenings,
+TWO partial H.R. 1 component reviews and 32 separate legal/application questions.
+There are 1,224 governed sources (990 unchanged Health reuses, 234 new),
+497 claim bindings and 156 provisional captures. No new legal question or
+whole-package closure. Current exact-head CI follows push.
+
+Next: House section 44111 expansion FMAP versus Senate section 71110 emergency
+FMAP, whose complete primary clauses and material masters have been read.
+Keep the House's printed citation/anchor anomalies literal and route any
+application requiring a repair; do not silently correct text. Then Medicare,
+ACA, tax/remittance, child/enforcement funding, CR/omnibus/NDAA and screenings.
+The existing .w/ib remains active; historical deadline/terminal markers are
+preserved and no current shutdown boundary is present. No merge, deployment,
+production, acceptance, promotion, publication or methodology change.
