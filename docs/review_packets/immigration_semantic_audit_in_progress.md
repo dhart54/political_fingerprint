@@ -295,3 +295,44 @@ Previous exact head aa5dc89e51bef4bfdb19da29610b92565b2489e4 passes all nine hos
 jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37425152980.
 Current exact-head CI follows push. Continue unfinished discovery within the
 original overnight deadline; no terminal marker or ready-for-review claim.
+
+
+### Checkpoint 15: firearm-definition incorporation and exact procedure controls
+
+H.R. 2189 EH adds a qualified-device definition exception expressly linked to
+INA 237(a)(2)(C), with the distinct unamended destructive-device route and
+after-admission conviction/chapeau preserved. Retained alien-status firearm
+restrictions, nonimmigrant-visa exceptions/waiver and visa definition are separately
+bound. The broader tax classification, above-500 list, clocks and enacted prior
+tax relief are distinct from the Title I/INA definition. No automatic individual
+device/conviction result, retroactive relief or component-only preference. Its
+application interaction is the eleventh preserved legal-review dependency.
+
+21 additional screenings cover seventeen procedures and four exclusions. The
+failed 2262 proposition binds RH + adopted 988 Part B, rather than expecting EH.
+1014 directly adopts a complete replacement E-15 council resolution, acknowledged
+as unrelated to Immigration; 1042 is a failed RH consideration/calendar rule.
+1142 remains an unfinished lead because it directly concurs with replacement text.
+
+378 governed reviews: 29 interpreted, 202 procedural, 146 excluded, one expressive;
+298 ordinary screenings unfinished. 29 actions occupy 28 episodes, retaining the
+one two-stage H.R. 4 episode. 58 observations include 57 directional actions and
+one Present; 55 readable/IR findings (Foushee 28, Massie 27). Action directions:
+Foushee 9 support/20 opposition; Massie 23 support/5 opposition/one Present.
+Both new actual compacts, details, qualifications and whole-choice/source/episode
+boundaries inspected. All 29 meanings internally audited in a separate same-owner
+primary reconstruction stage. 67 distinct assessments: 1 Critical/6 Major/2 Minor/
+58 No Defect. Sample: 27 retained exclusions/10 procedures/all one expressive.
+No full-corpus closure, final PASS, second independent reviewer or publication.
+
+1,032 governed sources = 871 unchanged Health reuses + 161 new; 262 shared claim
+witnesses and 66 full provisional captures. Core:
+`c3de2ddca94b1cca82dfd85811c785219e116ff3b758cea2bbbda4437915e6ce`;
+compiled IR: `e6ecf30f0365e7cf0e38f3b96351f156835824a250718ab4ab3de7549fe58368`.
+210 focused tests pass in 33.252 seconds, all seven canonical checks and all seven
+byte-identical replay outputs pass. Source/audit/accounting and fail-closed gates
+pass; protected baseline/common adapter unchanged and diff-check clean. Previous
+exact head ce2cd6ea48cf37b1094de20022fff6f81533faf9 passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37427798740.
+Current exact-head CI follows push. Original overnight deadline remains; continue
+unfinished discovery, without a terminal marker or readiness declaration.

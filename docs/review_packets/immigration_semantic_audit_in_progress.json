@@ -2657,6 +2657,109 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:70",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "70",
+        "legis-num": "H R 2189",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Feb-2026",
+        "action-time": "10:45 AM",
+        "vote-desc": "Law-Enforcement Innovate to De-Escalate Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Independent primary reconstruction: complete2189EHadds strict921(a)(39)device class to firearm exception, retains921(a)(4)destructive-device definition. ExistingINA237(a)(2)(C)EXPRESSLYincorporatesbothfirearmORdestructivedevice; after-admissionconviction and IN/ADMITTEDchapeau retained, no arrest/admission-only or automaticindividualrelief. Existing922(g)(5)regulatedobjects/status and complete(y)exceptions/waiver independently read; nonimmigrantVISAproperlyissued definition retained, not allnoncitizens/nonimmigrantstatus. All design/conversion/velocity/use/feed conditions reconstructed, AG90daysafterdeviceRECEIPTnotautomaticapproval. DistinctTAXabove500list and5845exclusions do not expandTitleIexception. Completepreexisting4181/4182/5845and enacted119-21section70436read; no firsttaxrelief or identicalpriorproductrate assumption. Section202postenactsales/first180request-clock differsfromTitleIandno retroconvictionrule. ActualFebruary12finalPassFousheeNay/MassieYea mechanically separated; one2189episode, not1042/1057rule findings.",
+      "finding": "No material defect found in bounded candidate comparison. Domain eligibility rests on express statutory incorporation and immigration-status object restrictions, with individual/categorical device/conviction application retained as an open legal-review interaction. Generic crime context alone would not suffice.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "26f9ddc12df51582ed5f1e2004a1d3e097db2e2d758367241c394dced11b2af0",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr2189eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2189eh/html/BILLS-119hr2189eh.htm",
+          "governed_bytes_sha256": "555305fe5ab2ae622d45c9006d4677d7c5be32df3f6f7c1a281fa5c77f04dfcb",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:18usc921-2024-device-ammunition-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap44-sec921.htm",
+          "governed_bytes_sha256": "c50d2c2b2383b8e3a0c64f564ae765c2d54af21b6e9433018527449ce02aac94",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:18usc922-2024-alien-firearm-status",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap44-sec922.htm",
+          "governed_bytes_sha256": "3d95a75d4520ab136eca9cd13962410ffb840d748f60ef833832db3863fb1947",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-firearm-ground",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "56f50560d3e2d7e0a5d48e649d73414e9f6ca538e5bcc1b396c8d44c9438789a",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:26usc5845-firearm",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleE-chap53-subchapB-partI-sec5845.htm",
+          "governed_bytes_sha256": "a8b6fd921916b16bd7a6e85c50d2600f23cb9ba7ad20d4ec666a97fdf2d6f437",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:26usc4181-4182-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleD-chap32.htm",
+          "governed_bytes_sha256": "d33d8b68916d8674d26a78f863ab3875c9039ea592800931dc67743b96284abc",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:pl119-21-firearm-tax-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "governed_bytes_sha256": "21f4bd344bdfd9585762741de490dfd18e1743a9990d7955112ccdcc034a8be8",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-nonimmigrant-visa-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "11605ff42af5298fe96106259a674479b16be9d1bb66a93976e3bab072853b9a",
+          "reviewed_extent": "Complete exact EH or identified complete material operative firearm/destructive-device/ammunition/status/INA-conviction and enacted-tax witness; no broader court/individual application asserted"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -4907,13 +5010,137 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:41",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "41",
+        "legis-num": "H RES 1014",
+        "vote-question": "On Agreeing to the Resolution, as Amended",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "22-Jan-2026",
+        "action-time": "11:52 AM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 7148) the Consolidated Appropriations Act, 2026; providing for consideration of the bill (H.R. 7147) the Department of Homeland Security Appropriations Act, 2026; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete1014EH+complete462PartsA-C reconstructed: pendingDHS/broaderappropriation amendments and separatepasses; post-passageengrossment/messages; direct375adoption is fullPartCreplacementE15energyCouncilwithpreamblestruck. Do not label everydeemedactionpending, and do not import a nonImmigrationdirectlyadoptedobject into Immigration. Procedural/noncounting retained.",
+      "finding": "Exact source-supported procedural boundary retained.",
+      "correction": null,
+      "before_review_record_sha256": "6877b8b2e7e17bf2b82eed42965d20aca201b747a13ba3b2d0bda6919c87b350",
+      "corrected_review_record_sha256": "6877b8b2e7e17bf2b82eed42965d20aca201b747a13ba3b2d0bda6919c87b350",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:41",
+          "url": "https://clerk.house.gov/evs/2026/roll041.xml",
+          "governed_bytes_sha256": "081acec95bc50bebd7f773e42d2448dcca1e961321244e3a899219ca06d06b5d",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        },
+        {
+          "source_id": "govinfo:hres1014eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+          "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        },
+        {
+          "source_id": "govinfo:hrpt119-462-operative-amendments",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+          "governed_bytes_sha256": "efbf7c6f8c904db00ae540fb516f9fbaafde21882d15b40cc3e2d3d51cfc54e9",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:60",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "60",
+        "legis-num": "H RES 1042",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "10-Feb-2026",
+        "action-time": "9:54 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 2189) the Law-Enforcement Innovate to De-Escalate Act; consideration of the bill (H.R. 261) the Undersea Cable Protection Act; consideration of the bill (H.R. 3617) the Securing America’s Critical Minerals Supply Act; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete1042RH+ClerkFAILEDroll60 reconstructed. Pendingweapon/marinesanctuary/mineralconsideration and NEA202calendarclock restriction do not themselves pass policy or terminateEO3bcooperation. FailedRH is proper proposition evidence, not missingEHunavailability. ActualbothNo labels retained; procedural/noncounting.",
+      "finding": "Exact source-supported procedural boundary retained.",
+      "correction": null,
+      "before_review_record_sha256": "1ce007b8f7c38bf8e0417758571b866eba3ca6621a3c547ac2cee6c401f05a3f",
+      "corrected_review_record_sha256": "1ce007b8f7c38bf8e0417758571b866eba3ca6621a3c547ac2cee6c401f05a3f",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:60",
+          "url": "https://clerk.house.gov/evs/2026/roll060.xml",
+          "governed_bytes_sha256": "f15732bdf624991c5212e767a076e769aaca2613205759c2fa8a13c51370eefc",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        },
+        {
+          "source_id": "govinfo:hres1042rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1042rh/html/BILLS-119hres1042rh.htm",
+          "governed_bytes_sha256": "101876ca44fe11add558158d00b5464b0a4f9fd5d194950b259a308d5ee75a7f",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "governed_bytes_sha256": "10253600960c2528fa1104992c9bd07f91d24d808ecb01605e1c76f7f65d8b47",
+          "reviewed_extent": "Complete exact rule, referenced complete operative amendment text or NEAconsideration-clock framework"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "Critical": 1,
-    "Major": 6,
+    "No Defect": 58,
     "Minor": 2,
-    "No Defect": 55
+    "Major": 6,
+    "Critical": 1
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -4941,7 +5168,8 @@
     "Explicit noncitizen-energy workforce assessment and consumer-goods customs admission are acknowledged as operative and classified through functional-domain scope, not erased as rhetoric. ChildSSNreplacement follows exactretainedissuance/identity-evidence clauses; generalidentitychangesarenotnewimmigrationstatus grants.",
     "Full-paragraph replacement must enumerate omittedmonthlyreview/adult-transfer/URMplacement clauses, not only additions. Retainedhome-study/counsel/assistance and noROR baseline remain distinct. Childage/gangrecord/conviction versus sponsorhouseholdconviction gates and judicial/cross-reference constraints must not be homogenized.",
     "LiteralrulethatdirectlydeemsfinalSenateconcurrence differs fromrulesmerelypermittinglatermotion. ExactEASidentity/body/priordate/clause/Clerkquestion andunderlyingbillepisoderequired. NamedunobligatedStateMRArescission isnotallrefugeeauthority/domesticICEfunding, componentvoteoractualoutcome. Entireversiondifferences preserved withoutduplicatingepisodebreadth.",
-    "Territorial/nationality-qualified tuition: independently separate beneficiary residence list, citizen-and-noncitizen national definition and broader institution-location State definition. Expand controls across ordinary education, SBA finance and financial-forum exclusion so context alone does not supply Immigration membership."
+    "Territorial/nationality-qualified tuition: independently separate beneficiary residence list, citizen-and-noncitizen national definition and broader institution-location State definition. Expand controls across ordinary education, SBA finance and financial-forum exclusion so context alone does not supply Immigration membership.",
+    "Firearm-definition incorporation: directly read INA237(a)(2)(C)ratherthanexcludeallgeneralcriminal-classificationchanges; retainunamendeddestructivedeviceroute, conviction/admissionthreshold, tax-versusTitleIclassification and actualindividualapplicationboundary. No correction of an earlier2189exclusion needed because no such screening had been accepted into the candidate ledger."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -4953,13 +5181,13 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 28,
     "retained_exclusions_reviewed": 27,
-    "procedural_controls_reviewed": 8,
+    "procedural_controls_reviewed": 10,
     "expressive_controls_reviewed": 1,
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
     "focused_tests": 210,
-    "focused_runtime_seconds": 33.308,
+    "focused_runtime_seconds": 33.252,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -4967,10 +5195,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "aa5dc89e51bef4bfdb19da29610b92565b2489e4",
+      "head": "ce2cd6ea48cf37b1094de20022fff6f81533faf9",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37425152980"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37427798740"
     }
   },
   "open_legal_interactions": [
@@ -5077,6 +5305,18 @@
         "govinfo:8usc1101-2024-aggravated-felony",
         "govinfo:18usc16-2024-complete",
         "supreme-court:dimaya-2018-identified-opinion"
+      ]
+    },
+    {
+      "action_id": "house:119:2:70",
+      "state": "preserved_for_independent_candidate_review",
+      "scope": "Express INA definition incorporation and separate destructive-device/categorical conviction application",
+      "question": "The proposal changes921(a)(3)firearm classification but retains921(a)(4), and237(a)(2)(C)incorporatesfirearmORdestructivedevice. The structural link is established; qualification of an actual device, state conviction, other grounds or prior order requires legal review. Do not infer automatic retroactive relief or declare every qualifying device outside every branch.",
+      "source_ids": [
+        "govinfo:hr2189eh",
+        "govinfo:18usc921-2024-device-ammunition-definitions",
+        "govinfo:8usc1227-2024-deportability-framework",
+        "govinfo:8usc1227-2024-firearm-ground"
       ]
     }
   ]

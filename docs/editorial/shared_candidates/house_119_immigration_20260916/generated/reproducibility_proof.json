@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "98390b188f77f4626940757d05580f1a367e8bbecd7f89d312b5ed211907a4d6"
   },
-  "input_sha256": "865ba4e57e5e6566609f2c7918765013a68d28c8dc54d37761cb4eee289e43ff",
-  "source_capture_sha256": "8455aab4fc920f3d3a3875a67c0784366679f538b32f9ebea550ae290d47ce95",
-  "core_sha256": "363a133f6bb991a84a2179b65024b9f69516e6ce2efc95d90aac241fc456fdb0",
-  "compiled_sha256": "67747e33d0fd254f82cf8c7199b222d14606546ab74c5ecfbf833a2c404f582e",
-  "readable_sha256": "d4b8e2686a98465dffdbf0cfc50582db42087d3c1b16bddce24d0cfbd24fd15a",
+  "input_sha256": "c196222cc2b62b25339d6e9968f55724adccf81e13edf37a8d065506a90ce2ae",
+  "source_capture_sha256": "ed8c471108f44061d8298878bf4d7eb26121d2935078414a7c5d33025a4d7206",
+  "core_sha256": "c3de2ddca94b1cca82dfd85811c785219e116ff3b758cea2bbbda4437915e6ce",
+  "compiled_sha256": "e6ecf30f0365e7cf0e38f3b96351f156835824a250718ab4ab3de7549fe58368",
+  "readable_sha256": "608c5a425da0661b4c96c121239473962cc953b932b21c195383640f8e6fcc59",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -474,6 +474,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.J.Res.72 terminating the specified EO 14193 emergency subject to the statutory savings",
           "source_id": "clerk:119:2:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:70",
+      "shared_sha256": "ee09ba0e4e64d6aec89c2c2617d28ef0c909175d26af16a3e0fe833cf67e5d9d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 2189 EH package; no preferred alternative is established",
+          "source_id": "clerk:119:2:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 2189 EH qualified-device classification and tax package",
+          "source_id": "clerk:119:2:70"
         }
       ]
     },

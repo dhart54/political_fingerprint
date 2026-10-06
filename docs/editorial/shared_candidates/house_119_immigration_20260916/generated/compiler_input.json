@@ -145,6 +145,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:2:70",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:82",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -314,6 +320,12 @@
         },
         {
           "action_id": "house:119:2:65",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:70",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -957,6 +969,35 @@
         }
       },
       {
+        "action_id": "house:119:2:70",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:70:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The complete H.R. 2189 EH adds a narrowly defined less-than-lethal projectile-device exception to the second sentence of 18 USC 921(a)(3), alongside its pre-existing antique-firearm exception, and adds paragraph (39). This is not solely a label for general criminal enforcement: existing INA 237(a)(2)(C) expressly incorporates FIREARM OR DESTRUCTIVE DEVICE as defined in 921(a), and existing 922(g)(5) regulates firearms/ammunition using illegal or unlawful presence or admission under a nonimmigrant visa. The candidate domain connection is those express definition/status links, not presumed immigration consequences from a crime. The firearm branch of the incorporated definition would acquire the new exception. The separate 921(a)(4) destructive-device definition is NOT amended by TitleI, and the INA ground separately includes destructive devices; a qualifying-device label therefore does not establish exemption from every branch or every other immigration ground. Existing 237(a)applies to an alien IN AND ADMITTED TO the United States, with removal upon the specified order, and 237(a)(2)(C)requires an after-admission CONVICTION under any law of the specified purchase/sale/exchange/use/ownership/possession/carrying or attempt/conspiracy conduct involving a qualifying weapon, part or accessory in violation of law. Arrest, allegation or a conduct admission alone is not this conviction predicate. No individual device classification, state-conviction comparison, adjudication, cancellation of an existing order or actual avoidance of removal is inferred. The new device must satisfy ALL printed criteria: not designed/intended to expel, nor readily convertible to accept/discharge, common handgun/rifle/shotgun ammunition or any other projectile above 500 feet/second; designed/intended use not likely to cause death or serious bodily injury; and unable to accept or be readily modified to accept a feeding device loaded through a pistol grip or commonly used in semiautomatic firearms. It is not every less-lethal weapon, every projectile device or a universal harmlessness finding. The AG must make a requested device determination within 90 days AFTER RECEIVING THE DEVICE; the deadline is not automatic approval or compulsory classification of every product. Existing 922(g)(5) and (y) status predicates, hunting/sport/license, foreign-official and friendly-government law-enforcement exceptions and qualified AG waiver remain baseline; not all noncitizens are prohibited. Existing ammunition is separately defined by 921(a)(17), so the proposal is not a blanket permission to possess otherwise regulated ammunition or ordinary firearms. It confers no nationality, visa, lawful presence, admission, work authorization or unrestricted weapons right. TitleII separately adds 4181 excise-tax exemptions for the defined devices, devices on the Secretary annual list meeting the criteria except the above 500 velocity criterion, and specified shells/cartridges with the printed design/use conditions; adds 90 day classification duties, annual lists/reports, and expands the distinct 5845(a)NFA definition exclusions to those device categories. The TAX listed-above 500 category is not inserted into TitleI 921(a)(39) and cannot be imported into the INA firearm-definition exception. Section 202 sales apply after enactment; qualifying requests in the first 180 days are treated as received at the close of that period for the 90 day rule. No special retroactive immigration/conviction rule is printed. Existing 4182 military, small-manufacturer and paid-NFA exemptions, existing 5845 antique/qualified collector-device exclusions, and enacted 119-21 section 70436 zero transfer/making-tax and 4182(a)conforming provisions are retained context, so this is not the first federal device exemption or tax relief and not a claim every affected product previously paid the same tax. These are distinct criminal, immigration-incorporation and tax objects. The exact whole-bill final-passage choice includes BOTH titles, not a separate vote on the removal ground, noncitizen possession or an individual device. One H.R. 2189 episode; the failed 1042 and adopted 1057 rules only established proposed/pending consideration and do not add independent policy findings. No actual sales, tax savings, public-safety effect or enactment is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr2189:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:70",
+          "govinfo:hr2189eh",
+          "govinfo:18usc921-2024-device-ammunition-definitions",
+          "govinfo:18usc922-2024-alien-firearm-status",
+          "govinfo:8usc1227-2024-deportability-framework",
+          "govinfo:8usc1227-2024-firearm-ground",
+          "govinfo:26usc5845-firearm",
+          "govinfo:26usc4181-4182-operative",
+          "govinfo:pl119-21-firearm-tax-baseline",
+          "govinfo:8usc1101-2024-alien-admission-context",
+          "govinfo:8usc1101-2024-nonimmigrant-visa-definition"
+        ],
+        "structural_metadata": {
+          "stage_order": 20070
+        }
+      },
+      {
         "action_id": "house:119:2:82",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:82:candidate-v1",
         "eligibility": {
@@ -1279,6 +1320,14 @@
         "episode_id": "episode:hjres72:119",
         "action_ids": [
           "house:119:2:65"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr2189:119",
+        "action_ids": [
+          "house:119:2:70"
         ],
         "method_boundary_types": [],
         "policy_family_id": null
