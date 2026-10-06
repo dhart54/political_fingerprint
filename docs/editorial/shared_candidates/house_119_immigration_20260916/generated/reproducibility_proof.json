@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "e2a38feee49cae82102bb50575cca950be1488e9e60e135d3f106070b5a3a73e",
-  "source_capture_sha256": "4ac1fc9fed660c868291f94863f35701c93c726526a29738b7985c012a9471ab",
-  "core_sha256": "1a4f923aaf8d434130d8f60ce5b87a58b7db5cdaa42639f03c0e23c11c77952f",
-  "compiled_sha256": "6253423885c7a2f7b0725319169f0b883408b972430069697498b5a620b3eebd",
-  "readable_sha256": "e1233c40c7810f40314e5b2941ea86f68d61e7702e401c7e392c21c702df45ae",
+  "input_sha256": "f94ecfb690f945818e369e7353a693226dcec3e2aaf67dc3f1d346fca9f0ff76",
+  "source_capture_sha256": "ba786e0bba444e616593f8f0b0a587d5e5f172034b4fbd68865dd75009e2be9c",
+  "core_sha256": "004028122c214024530423e1814074dfcae615d15c491c8c8bd599327c872715",
+  "compiled_sha256": "da10d8843f2b51f053fb8450efe19ce6e1397d1c0b3f34c28768466ec6552511",
+  "readable_sha256": "8e1a0cc2616bca196519d18a469938ffb19a3a1e89b2f987b6d740c836e7a819",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -393,6 +393,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.3486 with its specified entry/reentry penalty increases and qualified mandatory-minimum provisions",
           "source_id": "clerk:119:1:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:340",
+      "shared_sha256": "6a68bad87446412c478e27e80c593cd1f4cfb9169aa5531dbe47fdb206be0cac",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.4371 as a whole with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:340"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.4371 as a whole with its child-placement, sponsor and household-information provisions",
+          "source_id": "clerk:119:1:340"
         }
       ]
     },

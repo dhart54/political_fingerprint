@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 57,
+  "source_count": 59,
   "sources": [
     {
       "source_id": "govinfo:15usc633-2024-complete",
@@ -57,6 +57,14 @@
       "governed_bytes_sha256": "6b032b9ee66ea44a443b07e666b856b35331aa4595d9b5ce93bd84c86e2b8e7c",
       "text_sha256": "f5f82d065ec1c2c122719713e8ddfb70be91dd36ee62a48c4aab6efb3b5176de",
       "text_length": 7543
+    },
+    {
+      "source_id": "govinfo:18usc16-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap1-sec16.htm",
+      "raw_sha256": "0918a6a48c5d78ffd9d2481d5ae3ba6cfc2dad144156cf791ecb48967d3dace7",
+      "governed_bytes_sha256": "ba4206e88ea8633b58fa9770d7d9237ce72605f088aa2845a043f20343b5f8b1",
+      "text_sha256": "c2d8f140dd13079ebcbd8f8cb1fc01f29b03afd5376932b0bb51e203ab2edfe9",
+      "text_length": 1059
     },
     {
       "source_id": "govinfo:18usc3521-2024-complete",
@@ -457,6 +465,14 @@
       "governed_bytes_sha256": "85d7dedb33695e98d2c00769a676dc80595d17ded75d8bdc74d572164f4599c8",
       "text_sha256": "706123c9041ecce317718237a53ce5eb6ed71d975f5c1d3c19354ed9d85ec2d3",
       "text_length": 1055434
+    },
+    {
+      "source_id": "supreme-court:dimaya-2018-complete-case",
+      "url": "https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf",
+      "raw_sha256": "93842e308ad3a9000b66032cbf84f697aad5ad73ee0e3d63f265b04e08d366bf",
+      "governed_bytes_sha256": "37de0c79251a73f715dce4f72cd4d3960a13a8537d47d9ac1432a530b5761281",
+      "text_sha256": "314655770e4aa56dc5be554b1cc1f3f4b221ce9609cad723b16509bc9795919f",
+      "text_length": 192609
     }
   ],
   "rejected_responses_are_not_evidence": true

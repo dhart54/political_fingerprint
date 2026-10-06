@@ -10257,7 +10257,154 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:340",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Complete exact child-placement proposal and material replaced/retained clauses reconstructed independently. Source-qualified custody/placement/sponsor/data-sharing changes establish candidate membership; full-paragraph omissions and predicate differences retained, literal/judicial-application dependencies routed for review without individual outcome or acceptance.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:340",
+          "url": "https://clerk.house.gov/evs/2025/roll340.xml",
+          "raw_sha256": "48496b02546ef4001ee9a78869b0650f6c7141a5ec8f33e9adea59f79325cce5",
+          "governed_bytes_sha256": "dd1f6ac84d08418a97f409bafe2d9ab74b4f779567283ed97d56e88ad47d95b0"
+        },
+        {
+          "source_id": "govinfo:hr4371eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4371eh/html/BILLS-119hr4371eh.htm",
+          "raw_sha256": "ec8d77208e228557e09468a071442f722108808099fe9baf7ac8e1b32be52972",
+          "governed_bytes_sha256": "44760216939ab7f7d0f5ee6fd39735ed9a106ab428536393f2e6bca1eb4e39a9"
+        },
+        {
+          "source_id": "govinfo:6usc279-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partE-sec279.htm",
+          "raw_sha256": "05499f2878f7b6e106aa156b6894ef83b7ab958c5ed984bad7be8fb0474eb296",
+          "governed_bytes_sha256": "e93673943ac2a408cdeb2141876564124a2986cb4867f2de778bd6f64d0d9174"
+        },
+        {
+          "source_id": "govinfo:8usc1232-2024-care-placement",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm",
+          "raw_sha256": "61670c39eb64768b40d6ccab7a1e49b63604926c74cf2718d074b23484c02c6e",
+          "governed_bytes_sha256": "0b6894d616fb6ca681e8d2dd7cb23a5b8e96c338215056d74c95f7fa34dab4e4"
+        },
+        {
+          "source_id": "govinfo:8usc1232-2024-retained-assistance",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1232.htm",
+          "raw_sha256": "61670c39eb64768b40d6ccab7a1e49b63604926c74cf2718d074b23484c02c6e",
+          "governed_bytes_sha256": "648643ddbca5eb50ecba08add23712d4fe49ae1670035f381605c23d83dbc253"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-serious-offense",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "fefac56f8b87cf20034b559b592e6a355d3226fa67b27daf46277d20af796c32"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-aggravated-felony",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "bef308b511f4b7451990543668562133375f114d3cc472d7204a49335e52832a"
+        },
+        {
+          "source_id": "govinfo:18usc16-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap1-sec16.htm",
+          "raw_sha256": "0918a6a48c5d78ffd9d2481d5ae3ba6cfc2dad144156cf791ecb48967d3dace7",
+          "governed_bytes_sha256": "ba4206e88ea8633b58fa9770d7d9237ce72605f088aa2845a043f20343b5f8b1"
+        },
+        {
+          "source_id": "supreme-court:dimaya-2018-identified-opinion",
+          "url": "https://www.supremecourt.gov/opinions/boundvolumes/584bv.pdf",
+          "raw_sha256": "93842e308ad3a9000b66032cbf84f697aad5ad73ee0e3d63f265b04e08d366bf",
+          "governed_bytes_sha256": "f8278005701b977dbc80353a2959475722e628df6a85a3ca77a206758dec296e"
+        },
+        {
+          "source_id": "govinfo:34usc20911-2024-offense-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm",
+          "raw_sha256": "72664c5a1500733d58b52d283789d2ee6c04ab1d2f23fd0b58ed67e23ee492dc",
+          "governed_bytes_sha256": "216108a015a9bd8d10331cf4a2dcf089f060ea802afc0043d444994222904af2"
+        },
+        {
+          "source_id": "govinfo:22usc7102-2024-severe-trafficking",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap78-sec7102.htm",
+          "raw_sha256": "2f93caaade92d85acb8553c4d56ed4533491b87357dd21740b146c87bf43b025",
+          "governed_bytes_sha256": "df132017ec29e1b3215477bc49799a4e8fdd53907156de1bc54b3ae206df2e9f"
+        },
+        {
+          "source_id": "govinfo:34usc12291-2024-domestic-violence",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm",
+          "raw_sha256": "02970b24f1558a1ef246065f288a98fc9cf09c5c86046119dadb6828159ce1a9",
+          "governed_bytes_sha256": "59388375ff4638472167a4fe4bc639d524d29af0ee0395497b8d91503fbc2a8f"
+        },
+        {
+          "source_id": "govinfo:42usc5101-2024-capta-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap67-subchapI-sec5101.htm",
+          "raw_sha256": "f089d574b4e995572f82a5862930b9920c7e947f481d18cb0f4bbd72b2e5ec41",
+          "governed_bytes_sha256": "3d18b6cb18cbad43c36ea8456aa1143223fc202282abe538a6e6b98753c8fc5d"
+        },
+        {
+          "source_id": "govinfo:18usc1111-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1111.htm",
+          "raw_sha256": "1d5a7695d116fe30ca2a0b97dfe10377ab59614e7a7e050297952793007fec4f",
+          "governed_bytes_sha256": "b1ead8762cae08cff7ae35b6d16202cdeaef5e10aa7187a71943a8c693252f81"
+        },
+        {
+          "source_id": "govinfo:18usc1112-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1112.htm",
+          "raw_sha256": "c9dcf30bc570c811b06951a10041b3e12a0392d32e187228b7fe8dff9cb2329f",
+          "governed_bytes_sha256": "a9b5728581df75243a95c1a9d14442d10f9feac93cdd7bc1a6abfd154c883488"
+        },
+        {
+          "source_id": "govinfo:18usc1113-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap51-sec1113.htm",
+          "raw_sha256": "8f16d385c6c7878e573387e8261df1120498b115ebb692050b86ea894b918c09",
+          "governed_bytes_sha256": "4cd42f1eb3689d6172334fcc0eefcbf42ffcad5460ad9c89fbf29d080e64ab03"
+        },
+        {
+          "source_id": "govinfo:18usc2252-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm",
+          "raw_sha256": "7286d66b777321766b13c46ddeef7990d9a69f7c931392612e88183513e5d585",
+          "governed_bytes_sha256": "00f9b87e23403d3fb554bc25ff764a5f142512a599f37b1c24bf0e650c62729f"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "raw_sha256": "ce002f86d9be00eba8d82368e9f57d999b2e0ba290be5a349211ba930237a3d6",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83"
+        },
+        {
+          "source_id": "govinfo:pl119-1-section2",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm",
+          "raw_sha256": "faf0f7128ffac05ec99afb77f586abe909d207b3046a06044c33f0962e61a182",
+          "governed_bytes_sha256": "29290a4553f0f1c4a36ad2fcf3654ce7d35a676a63dc006db8dd47d75d8f3965"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:340",
+      "episode_candidate_id": "episode:hr4371:119"
     }
   ],
-  "review_sha256": "fa03cfbb6a85cec7cb97d6b2bb59eb3349726aaf640e035164b86ff3d15bdfc3"
+  "review_sha256": "e6a14423158fbd1130193d9e7fb3819cb88188530e57f33d433c9e2ccc8ddddb"
 }

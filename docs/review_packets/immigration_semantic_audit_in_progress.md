@@ -6,7 +6,7 @@ implementation owner performs this pass; it is not a second human/model review.
 Candidate text and passing tests are not semantic authority. No final full-corpus
 audit verdict, acceptance, promotion or publication is conferred.
 
-All twenty-four currently authored meanings have been compared with primary evidence.
+All twenty-five currently authored meanings have been compared with primary evidence.
 The sample also covers twenty-five originally excluded actions, of which twenty-four
 remain excluded; eight procedural controls; and the sole expressive control.
 The machine-readable case evidence, identity, member observations, governed
@@ -14,7 +14,7 @@ source hashes and corrected-artifact bindings are in
 `immigration_semantic_audit_in_progress.json`.
 
 Distinct-action assessments use the highest severity, retaining a finding even
-after correction: **1 Critical, 6 Major, 2 Minor, 48 No Defect** across 57 actions.
+after correction: **1 Critical, 6 Major, 2 Minor, 49 No Defect** across 58 actions.
 The corrective H.J.Res.72 meaning has a separate No Defect re-review, which does
 not erase its Critical original screening defect. Distinct underlying findings
 are 1 Critical, 2 Major and 1 Minor.
@@ -37,7 +37,7 @@ assurance of all later-law currentness is claimed.
 
 Corrections are applied on the same candidate branch. Checkpoint validation,
 deterministic replay and exact-head CI are recorded in the active plan/review
-packet after execution. The 340 ordinary unfinished screenings, remaining
+packet after execution. The 339 ordinary unfinished screenings, remaining
 emergency/sanctions/DHS/package operative-governance leads and all future meanings
 still require discovery and audit. This initial audit unit is not full-goal
 completion or a full-corpus PASS.
@@ -151,3 +151,51 @@ separate episodes are unchanged; the evidence inventory/reproducibility receipt
 updates. Diff-check clean. Prior157bdb2aee0f1a0cc24266f8f18f3c06abf1a7d6 passes all9
 hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37420190072.
 Current exact-head CI follows push. Continue discovery; no terminal marker.
+
+
+### Checkpoint 12: unaccompanied-child placement and retained safeguards
+
+H.R.4371EH adds the25th shared meaning, outside the historical seed.337 supported
+reviews:25interpreted,185procedural,126excluded,1expressive;339ordinary screenings
+remain. Whole-paragraph replacement omits old monthly secure-placement review,
+express trafficking-victim refugee-minor placement option and age18HHS-to-DHS
+least-restrictive/alternative-detention language. Restated general best-interest
+placement has new exceptions; other home-study, counsel, advocate and qualified
+refugee assistance remain, rather than an invented repeal of all protections.
+
+The candidate distinguishes12+consular-contact/tattoo/secure-placement rules from
+all-age sponsor and adult-household requirements, child gang-record triggers from
+sponsor/household CONVICTION gates, statutory citizen/LPR sponsorship and eachadult
+DHS data/check sharing, and old no-own-recognizance duties from new provisions.
+Referenced crime categories, SORNA exceptions, criminal/civil-abuse distinctions,
+current119-1custody-list supplement, serious/aggravated definitions and judicial
+constraints are bound. Conditional PRA/APA and pending/future/redetermination
+applicability preserve their actual limits.
+
+Printed642(g)(2) versus actual462(g)(2), retained279(b)(4) pointing into replaced
+2(B), and novel placement application of criminal definitions/Dimaya remain review
+dependencies. The obsolete slip-opinion link and GovInfo case PDF were rejected;
+Court official584boundvolume succeeds. Identified Court setting/analysis/holding
+is bound, including16(b) INA-aggravated-felony vagueness constraint; syllabus and
+dissent are not substituted for law, and no individual classification is made.
+Ten total legal interactions remain explicit, distinct from unfinished screenings.
+
+All25current meanings internally audited;58distinct actions assess1Critical,
+6Major,2Minor,49NoDefect. Underlying defects remain1Critical/2Major/1Minor;
+24retained exclusions/8procedures/all1expressive sampled. No final corpus PASS,
+second human/model reviewer, acceptance or public/persistence eligibility.
+
+25separate episodes,50observations,49directional findings. Foushee17opposition/
+8support; Massie20support/4opposition/1Present. Both actual child-placement compacts,
+whole-bill directions, source bindings and single episode inspected. Sources962=
+811unchanged Health-governed reuses+151new;234shared claim witnesses and59full
+provisional captures. Core `004028122c214024530423e1814074dfcae615d15c491c8c8bd599327c872715`;
+compiled IR `da10d8843f2b51f053fb8450efe19ce6e1397d1c0b3f34c28768466ec6552511`.
+
+204focused tests pass in32.909seconds; after a compact spacing fix,15integrity
+tests pass in1.128seconds. All7canonical checks and7byte-identical output replay
+pass on final authoring. Public/persistence gates and audit/source/accounting pass;
+protected baseline diff/diff-check clean. Prior739d70ad1d922de410c419fd01568371c6db2349
+passes all9hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37421496978.
+Current exact-head CI follows push. Weeklyusage44%used/56%remaining; original
+06:41:49Eastern deadline persists. Continue discovery; no terminal marker.
