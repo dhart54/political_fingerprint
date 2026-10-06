@@ -7,13 +7,14 @@
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
-    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
+    "scripts/prepare_immigration_shared_candidate.py": "98390b188f77f4626940757d05580f1a367e8bbecd7f89d312b5ed211907a4d6"
   },
-  "input_sha256": "f94ecfb690f945818e369e7353a693226dcec3e2aaf67dc3f1d346fca9f0ff76",
-  "source_capture_sha256": "ba786e0bba444e616593f8f0b0a587d5e5f172034b4fbd68865dd75009e2be9c",
-  "core_sha256": "004028122c214024530423e1814074dfcae615d15c491c8c8bd599327c872715",
-  "compiled_sha256": "da10d8843f2b51f053fb8450efe19ce6e1397d1c0b3f34c28768466ec6552511",
-  "readable_sha256": "8e1a0cc2616bca196519d18a469938ffb19a3a1e89b2f987b6d740c836e7a819",
+  "input_sha256": "45c15a71a6461370b36fe72b888aa0a623e7f0cf97baa4449eea2795a24edf90",
+  "source_capture_sha256": "6ce22ca9d99c07291feee0ef814e61e5e1f6250fc54a767f9b6e14e4c9227bf3",
+  "core_sha256": "5270171f77098bdeaee1663c3343b721f8d97b8bf15447615cac818966ba768b",
+  "compiled_sha256": "b78a136faa49cf5f9a7fccc44b7e98e327390a325e946ef945f2c06d5c852962",
+  "readable_sha256": "6e8d74648db1798e5ccacc7ebde2431b56c1b077a39a390b029e1a57f3419e4e",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -277,6 +278,26 @@
       ]
     },
     {
+      "action_id": "house:119:1:168",
+      "shared_sha256": "a7d6bede91bc43b7ce3a8d45a42c243ca6b7bc1e78a7a798db2fd5365d8b4681",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.4 EH rescission package; no preferred alternative is established",
+          "source_id": "clerk:119:1:168"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R.4 EH rescission package",
+          "source_id": "clerk:119:1:168"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:1:171",
       "shared_sha256": "07574523e432f9067533d2c0625f5224bde6f6de76902496e6eaf7da094b4e19",
       "choices": [
@@ -353,6 +374,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.275 with its specified monthly and initial historical-period DHS encounter-reporting requirements",
           "source_id": "clerk:119:1:184"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:203",
+      "shared_sha256": "99eb0a9071568f9038989e90f43852e0b65ea33292db28effbb1b714d54ecb2a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the direct H.R.4 Senate-amendment concurrence and its complete package; no preferred alternative is established",
+          "source_id": "clerk:119:1:203"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the direct H.R.4 Senate-amendment concurrence and its complete rescission package",
+          "source_id": "clerk:119:1:203"
         }
       ]
     },

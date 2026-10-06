@@ -30,10 +30,12 @@
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
+    "house:119:1:168",
     "house:119:1:171",
     "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:203",
     "house:119:1:220",
     "house:119:1:264",
     "house:119:1:340",
@@ -56,9 +58,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 185,
-      "interpreted_substantive_directional": 25,
+      "interpreted_substantive_directional": 27,
       "exact_action_ineligible": 126,
-      "source_unresolved": 339,
+      "source_unresolved": 337,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -68,23 +70,24 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 25,
-    "directional_substantive_actions": 25,
+    "substantive_eligible_actions": 27,
+    "directional_substantive_actions": 27,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 185,
     "expressive_nonbinding_actions": 1,
     "exact_action_ineligible_actions": 126,
-    "unresolved_boundary_cases": 339,
-    "independent_episode_count": 25,
-    "multi_action_episode_count": 0,
+    "unresolved_boundary_cases": 337,
+    "independent_episode_count": 26,
+    "multi_action_episode_count": 1,
     "mechanism_types": [
+      "concurrence",
       "final_passage",
       "suspension_and_passage"
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 25,
-      "substantive_actions": 25,
+      "ready_substantive_actions": 27,
+      "substantive_actions": 27,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -292,10 +295,12 @@
         "house:119:1:153",
         "house:119:1:156",
         "house:119:1:163",
+        "house:119:1:168",
         "house:119:1:171",
         "house:119:1:172",
         "house:119:1:183",
         "house:119:1:184",
+        "house:119:1:203",
         "house:119:1:220",
         "house:119:1:264",
         "house:119:1:340",
@@ -457,13 +462,11 @@
         "house:119:1:150",
         "house:119:1:151",
         "house:119:1:165",
-        "house:119:1:168",
         "house:119:1:180",
         "house:119:1:182",
         "house:119:1:190",
         "house:119:1:199",
         "house:119:1:200",
-        "house:119:1:203",
         "house:119:1:204",
         "house:119:1:205",
         "house:119:1:206",
@@ -858,6 +861,13 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr4:119",
+        "action_ids": [
+          "house:119:1:168",
+          "house:119:1:203"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr2056:119",
         "action_ids": [
           "house:119:1:171"
@@ -930,11 +940,19 @@
         ]
       }
     ],
-    "multi_action_episodes": []
+    "multi_action_episodes": [
+      {
+        "episode_candidate_id": "episode:hr4:119",
+        "action_ids": [
+          "house:119:1:168",
+          "house:119:1:203"
+        ]
+      }
+    ]
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "791606c303c1f672ccc96214ad00081aa1ad994e3c46757c9fe650ccfaf50011",
+  "universe_subject_sha256": "713509f24712f6dbefd287e207539372254344ad707a151a594b484298ed9f35",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -9974,8 +9992,8 @@
       "date": "2025-06-12",
       "measure": "bill_119_hr_4",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete EH/EAS and actual590deemed-final-concurrence clause establish distinct exact choices with the same named Migration and Refugee Assistance balance and oneunderlyingbill episode. Material enactedappropriation/continuation/purpose scope, unobligated/enactment/wholepackage/version limits preserved. No generic rule-to-passage inference, duplicateepisodebreadth or actual refugee/status/spending outcome.",
       "source": {
         "source_id": "clerk:119:1:168",
         "url": "https://clerk.house.gov/evs/2025/roll168.xml",
@@ -9983,7 +10001,7 @@
         "governed_bytes_sha256": "6a4fc460f978a8d62eb7358f293313ed0697ae5c6c8806dd713d474906264645",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_4",
       "member_action": "nay",
@@ -9992,25 +10010,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete EH/EAS and actual590deemed-final-concurrence clause establish distinct exact choices with the same named Migration and Refugee Assistance balance and oneunderlyingbill episode. Material enactedappropriation/continuation/purpose scope, unobligated/enactment/wholepackage/version limits preserved. No generic rule-to-passage inference, duplicateepisodebreadth or actual refugee/status/spending outcome.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:168",
           "url": "https://clerk.house.gov/evs/2025/roll168.xml",
           "raw_sha256": "4c9fbf338f6fc599717c12c56f28cb3bffaaad1c436086c1844d5562daa61fc2",
-          "governed_bytes_sha256": "6a4fc460f978a8d62eb7358f293313ed0697ae5c6c8806dd713d474906264645",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6a4fc460f978a8d62eb7358f293313ed0697ae5c6c8806dd713d474906264645"
+        },
+        {
+          "source_id": "govinfo:hr4eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm",
+          "raw_sha256": "4b75828108b01e4b5be8314ed8c6126df6ef3762f7f2da1f7ea25e73b2bda598",
+          "governed_bytes_sha256": "a989b460bb97d948ea21e3a8b957d0fbdf89054e610204e3678e66ffcafc4c55"
+        },
+        {
+          "source_id": "govinfo:22usc2601-2024-refugees",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+          "raw_sha256": "cfc69336a5116afbc0bb54cbd4298bf39003c60c65d48b6be6cb9719d93facfa",
+          "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393"
+        },
+        {
+          "source_id": "govinfo:pl119-4-mra-continuation-context",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "f17152aa6edfdbf29b439de17149a03fddc9d1676999ddfd353869be6248fcf7"
+        },
+        {
+          "source_id": "govinfo:pl118-47",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres499eh/html/BILLS-119hres499eh.htm",
+          "raw_sha256": "4663e8d99f942318160ab581c0371097fd082ab7b0574f26dbc2147695e3e1fc",
+          "governed_bytes_sha256": "08fb1093b9e5c64f60059e9a2c2758ac612f1d78302e6557a9713432b881bd81"
+        },
+        {
+          "source_id": "govinfo:hres492ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres492ih/html/BILLS-119hres492ih.htm",
+          "raw_sha256": "961078ae5c99a3d97eaec47d9b69a741515550f0772ac5a596fae7ff703eec24",
+          "governed_bytes_sha256": "05b765d46897302ed6f234e46afc81f7901faa67fcd533f8d02f2a3f267b6e4c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "e7b393078c5b5414e2af719664b8dc00ba7fd9a903fa5028abf1cf4a66f28dd1"
       },
       "historical_raw_hash_matches": true
     },
@@ -11843,8 +11897,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hres_590",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete EH/EAS and actual590deemed-final-concurrence clause establish distinct exact choices with the same named Migration and Refugee Assistance balance and oneunderlyingbill episode. Material enactedappropriation/continuation/purpose scope, unobligated/enactment/wholepackage/version limits preserved. No generic rule-to-passage inference, duplicateepisodebreadth or actual refugee/status/spending outcome.",
       "source": {
         "source_id": "clerk:119:1:203",
         "url": "https://clerk.house.gov/evs/2025/roll203.xml",
@@ -11852,7 +11906,7 @@
         "governed_bytes_sha256": "9c3883939d2ee4968cbedf08339ba4cd4b1d183d9c119bcb58ea325007b560b4",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr4:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hres_590",
       "member_action": "nay",
@@ -11861,25 +11915,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete EH/EAS and actual590deemed-final-concurrence clause establish distinct exact choices with the same named Migration and Refugee Assistance balance and oneunderlyingbill episode. Material enactedappropriation/continuation/purpose scope, unobligated/enactment/wholepackage/version limits preserved. No generic rule-to-passage inference, duplicateepisodebreadth or actual refugee/status/spending outcome.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:203",
           "url": "https://clerk.house.gov/evs/2025/roll203.xml",
           "raw_sha256": "53a7c0a438c8ca52b5d40769553fe6837aa48622af20dbbce5d0838151860cc1",
-          "governed_bytes_sha256": "9c3883939d2ee4968cbedf08339ba4cd4b1d183d9c119bcb58ea325007b560b4",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "9c3883939d2ee4968cbedf08339ba4cd4b1d183d9c119bcb58ea325007b560b4"
+        },
+        {
+          "source_id": "govinfo:hres590eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres590eh/html/BILLS-119hres590eh.htm",
+          "raw_sha256": "3894180aa008616b807117c1ac5d80463dd457ae3ec8f14f8af4eb904510b51c",
+          "governed_bytes_sha256": "3d5dcba08107aed179979f8f33318c133cb1200cdacb68ae71d1ea7f186c9396"
+        },
+        {
+          "source_id": "govinfo:22usc2601-2024-refugees",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+          "raw_sha256": "cfc69336a5116afbc0bb54cbd4298bf39003c60c65d48b6be6cb9719d93facfa",
+          "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393"
+        },
+        {
+          "source_id": "govinfo:pl119-4-mra-continuation-context",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "f17152aa6edfdbf29b439de17149a03fddc9d1676999ddfd353869be6248fcf7"
+        },
+        {
+          "source_id": "govinfo:pl118-47",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1"
+        },
+        {
+          "source_id": "govinfo:hr4eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eas/html/BILLS-119hr4eas.htm",
+          "raw_sha256": "5215805d1aa9044eae6dbdb7703d6f7d43a987e8fe530fa59df509ae3c221929",
+          "governed_bytes_sha256": "2069f3eda1c9e4326e489e3ed94f1612e4fd54022b00a0655edc9baa132abf78"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8e3e85247a518c53dc218e42dd58f75aac412fd44d7a620aa85214c74e88e9d3"
       },
       "historical_raw_hash_matches": true
     },
@@ -36105,10 +36189,12 @@
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
+    "house:119:1:168",
     "house:119:1:171",
     "house:119:1:172",
     "house:119:1:183",
     "house:119:1:184",
+    "house:119:1:203",
     "house:119:1:220",
     "house:119:1:264",
     "house:119:1:340",
@@ -36142,13 +36228,11 @@
     "house:119:1:150",
     "house:119:1:151",
     "house:119:1:165",
-    "house:119:1:168",
     "house:119:1:180",
     "house:119:1:182",
     "house:119:1:190",
     "house:119:1:199",
     "house:119:1:200",
-    "house:119:1:203",
     "house:119:1:204",
     "house:119:1:205",
     "house:119:1:206",
@@ -36475,6 +36559,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "ee84ecc99dd951080d0977af28fab42c0e653e9976e0685665aa4570dd710faa",
-  "membership_review_sha256": "e6a14423158fbd1130193d9e7fb3819cb88188530e57f33d433c9e2ccc8ddddb"
+  "proposal_sha256": "c40b833053a26c3912bdcd94763216b04aa1a237fffb3c76895600674553bf75",
+  "membership_review_sha256": "cdc3f44e2e5c719860eb4e105eff759205335a883b3e4e047f19d616429d2ec0"
 }

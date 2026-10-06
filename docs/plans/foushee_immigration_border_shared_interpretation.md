@@ -613,3 +613,68 @@ protected baseline diff/diff-check clean. Prior739d70ad1d922de410c419fd01568371c
 passes all9hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37421496978.
 Current exact-head CI follows push. Weeklyusage44%used/56%remaining; original
 06:41:49Eastern deadline persists. Continue discovery; no terminal marker.
+
+
+### Active bounded adapter unit: explicit unamended deemed concurrence
+
+Use the already established V1 concurrence stage for H.Res.590's literal final
+House adoption of the H.R.4 Senate amendment. Extend only the candidate-input
+source binding: exact EH clause, exact EAS bill/whole text, prior Senate date,
+Clerk agreement question and same underlying bill episode. Existing replacement-
+text suspension bindings remain byte/behavior compatible. Generic consideration
+rules fail closed. No new semantic type, counting methodology or public runtime.
+
+Author/audit both H.R.4 stages with their whole-package/Migration and Refugee
+Assistance limits and one episode. Expected changes: adapter plus targeted
+adversarial tests, candidate authoring/evidence/generated outputs and current
+plan/review packet. Validate both new and existing bindings, seven canonical
+checks, focused suites, replay and protected baseline. Stop at a validated draft
+checkpoint, then continue unfinished discovery.
+
+
+### Checkpoint 13: exact rescission stages and one shared episode
+
+H.R.4EH final passage and H.Res.590EH direct adoption of H.R.4EAS concurrence
+add two exact shared meanings.339supported reviews:27interpreted,185procedural,
+126excluded,1expressive;337ordinary screenings remain. Named $800million State
+Migration and Refugee Assistance UNOBLIGATED budget authority is source-bound to
+enacted119-4continuation/availability and complete2024account/2601purpose limits.
+No recovery of obligated payments, whole-account/all-authority repeal, individual
+eligibility or actual spending/refugee effect is inferred.
+
+EHpermanently wording, laterEASmodifier/protected-account/other-proviso differences
+and the literal590FINALconcurrence clause remain distinct. A rule merely permitting
+a later motion is rejected. ActualNo/Aye labels are preserved in evidence and
+normalize mechanically toNay/Yea.27actions occupy26episodes, with oneHR4two-action
+episode;54observations include53directional actions and1Present, rendered as51
+findings (Foushee26,Massie25) with both stage details. Breadth is not double-counted.
+Foushee19opposition/8support; Massie22support/4opposition/1Present at action level.
+
+The frozen Health proof fingerprints the common adapter. An initial uncommitted
+extension exposed that fingerprint failure; the common file was restored exactly.
+The Immigration-only input adapter now composes the existing shared forms and
+Semantic IR pipeline, using the established concurrence stage. Exact EH clause,
+whole EAS bill/version, prior Senate date, real Clerk question and underlying
+bill episode are required; no observation/source is rewritten to fit the adapter.
+The existing replacement-text suspension path and frozen Health artifacts/code
+identity remain preserved. The new adapter is included in the candidate proof.
+
+Use this candidate preparation command for the extended Immigration authoring:
+`python scripts/prepare_immigration_shared_candidate.py --input docs/editorial/shared_candidates/house_119_immigration_20260916 --member F000477 --member M001184 --output docs/editorial/shared_candidates/house_119_immigration_20260916/generated --review-packet docs/review_packets/foushee_immigration_shared_candidate.md`.
+It is a source-binding extension over the sole Semantic IR V1 architecture, not
+an acceptance/publication path or a restored pre-IR generator.
+
+All27meanings internally audited.60distinct actions assess1Critical/6Major/2Minor/
+51NoDefect; underlyingfindings unchanged.24retained exclusions/8procedures/all1
+expressive sampled; ten legal interactions remain review dependencies. Sources970=
+818unchanged Health-governed reuses+152new;246shared claim/source witnesses,59full
+provisional captures. Sharedcore `5270171f77098bdeaee1663c3343b721f8d97b8bf15447615cac818966ba768b`;
+compiledIR `b78a136faa49cf5f9a7fccc44b7e98e327390a325e946ef945f2c06d5c852962`.
+
+210focusedtests pass in33.866seconds, including six new concurrence/source/date/
+episode rejection and real-observation tests. All7semantic checks and7byte-identical
+outputs pass. Both actual two-stage compacts/details, oneepisode and source/audit/
+accounting/public-persistence gates inspected. Protected baseline/commonadapter
+diff and diff-check clean. Priorchild-placementdecbc06cfd14c2a57879310c33ba151b5c9b8de4
+passes all9hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37422916927.
+Current exact-head CI follows push. No full-corpus PASS, closure or terminalmarker.

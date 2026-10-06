@@ -2426,6 +2426,158 @@
       "episode_reaggregation_required": false,
       "correction_state": "validated_204_tests_then15_integrity_tests_after_spacing_fix_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push",
       "formatting_note": "Rendered inspection corrected age-18 transfer spacing; no mechanism, direction, source or episode change."
+    },
+    {
+      "action_id": "house:119:1:168",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "168",
+        "legis-num": "H R 4",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jun-2025",
+        "action-time": "3:52 PM",
+        "vote-desc": "Rescissions Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR4EHpermanentlyrescindsnamedFY2025StateMRA800millionUNOBLIGATEDbudgetauthorityuponenactment withinfull21paragraphmultiaccountpackage. Enacted1194continuation/generalavailabilityandStateanomalies, complete2024account3.928billionno-year/emergency/Israelparagraph and2601a/bmovement/internationalorganizations/overseasdesignation read. Distinguishseparate2601cemergencyfund, fundingbalancefromeligibility/underlyingauthorities/actualspend; no componentvoteornewdomesticICEappropriation. Rule499separatefinalpassageplus492adoptionnottransplantedintoHR4. ExactClerkPassed/Nay/Yea.",
+      "finding": "No defect found in the bounded whole-package/source-qualified candidate. Explicit final-concurrence effect, exactversiondifferences and oneepisode remain governed; no component preference, actual spending/refugee/status effect or acceptance.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "ec8acf71f4c04ddbc4ceca5ba9800f400f82d0233db38c3b0857e4ee8eb9d13e",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr4eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eh/html/BILLS-119hr4eh.htm",
+          "governed_bytes_sha256": "a989b460bb97d948ea21e3a8b957d0fbdf89054e610204e3678e66ffcafc4c55",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:22usc2601-2024-refugees",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+          "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:pl119-4-mra-continuation-context",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "governed_bytes_sha256": "f17152aa6edfdbf29b439de17149a03fddc9d1676999ddfd353869be6248fcf7",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:pl118-47",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres499eh/html/BILLS-119hres499eh.htm",
+          "governed_bytes_sha256": "08fb1093b9e5c64f60059e9a2c2758ac612f1d78302e6557a9713432b881bd81",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:hres492ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres492ih/html/BILLS-119hres492ih.htm",
+          "governed_bytes_sha256": "05b765d46897302ed6f234e46afc81f7901faa67fcd533f8d02f2a3f267b6e4c",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "validated_210_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:203",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "203",
+        "legis-num": "H RES 590",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:03 AM",
+        "vote-desc": "Relating to consideration of the Senate amendment to the bill (H.R. 4) to rescind certain budget authority proposed to be rescinded in special messages transmitted to the Congress by the President on June 3, 2025, in accordance with section 1012(a) of the Congressional Budget and Impoundment Control Act of 1974"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete590EHliteralResolvedclausedirectlydeemsFINALconcurrenceinHR4Senateamendment; independentlycompleteEASwithJuly17beforeJuly18Clerk. SameMRA800millionunobligatedtarget2b6versusEH2b7, butEASdropspermanentword, removessecondGHP400millionline andaddsqualifiedother-accountprogramprovisos. No inferredtemporaryrestorationorrepeated800millioncancellation. Sameenactedappropriation/purposecontextread; earlierEHnotvoteonlaterEASqualifiers. ActualNo/AyenormalizeNay/Yea with labels/provenance preserved. BothstagesoneHR4episode, no doubledindependentbreadth; existingtypedconcurrencestagewithstrictsourcebinder, genericrulesfailclosed.",
+      "finding": "No defect found in the bounded whole-package/source-qualified candidate. Explicit final-concurrence effect, exactversiondifferences and oneepisode remain governed; no component preference, actual spending/refugee/status effect or acceptance.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "50c09f8cd549c9b1005d0f4ee91ef2c15356c277d3856d3f6ff00fc51ec71dd4",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hres590eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres590eh/html/BILLS-119hres590eh.htm",
+          "governed_bytes_sha256": "3d5dcba08107aed179979f8f33318c133cb1200cdacb68ae71d1ea7f186c9396",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:22usc2601-2024-refugees",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+          "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:pl119-4-mra-continuation-context",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "governed_bytes_sha256": "f17152aa6edfdbf29b439de17149a03fddc9d1676999ddfd353869be6248fcf7",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:pl118-47",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "governed_bytes_sha256": "e61f8fa0f1d30ad6667fb743dec1b9abd84662fa50ce94313e65be3e725780f1",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        },
+        {
+          "source_id": "govinfo:hr4eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4eas/html/BILLS-119hr4eas.htm",
+          "governed_bytes_sha256": "2069f3eda1c9e4326e489e3ed94f1612e4fd54022b00a0655edc9baa132abf78",
+          "reviewed_extent": "Complete exact EH/EAS/590 finalclause or identifiedcompleteappropriation/continuation/purpose/consideration witnesses"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": true,
+      "correction_state": "validated_210_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
     }
   ],
   "noncounting_actions": [
@@ -4508,7 +4660,7 @@
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 49
+    "No Defect": 51
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -4534,7 +4686,8 @@
     "Sanctions family: do not homogenize foreign-person scope, family categories, property-versus-immigration discretion, passport-conviction-versus-list predicates, waiver adjectives/periods/notices, incorporated criminal/visa-revocation elements, or reporting-versus-program termination. Literal dependencies preserved for review; no outcome claims.",
     "Ordinaryscreeningpass distinguishes actualbindingHouseoversight/deemedadoption from nonexistentgovernance, retaining narrowcriminalrecordscope; neither preambleICEgratitude nor genericdrug/import/safety/foreign-subject context independently supplies an immigration-person mechanism. Failedrules bindRH, laterpassedrulesEH; exactFoxxamendment doesnotimportMcGovernsalternative.",
     "Explicit noncitizen-energy workforce assessment and consumer-goods customs admission are acknowledged as operative and classified through functional-domain scope, not erased as rhetoric. ChildSSNreplacement follows exactretainedissuance/identity-evidence clauses; generalidentitychangesarenotnewimmigrationstatus grants.",
-    "Full-paragraph replacement must enumerate omittedmonthlyreview/adult-transfer/URMplacement clauses, not only additions. Retainedhome-study/counsel/assistance and noROR baseline remain distinct. Childage/gangrecord/conviction versus sponsorhouseholdconviction gates and judicial/cross-reference constraints must not be homogenized."
+    "Full-paragraph replacement must enumerate omittedmonthlyreview/adult-transfer/URMplacement clauses, not only additions. Retainedhome-study/counsel/assistance and noROR baseline remain distinct. Childage/gangrecord/conviction versus sponsorhouseholdconviction gates and judicial/cross-reference constraints must not be homogenized.",
+    "LiteralrulethatdirectlydeemsfinalSenateconcurrence differs fromrulesmerelypermittinglatermotion. ExactEASidentity/body/priordate/clause/Clerkquestion andunderlyingbillepisoderequired. NamedunobligatedStateMRArescission isnotallrefugeeauthority/domesticICEfunding, componentvoteoractualoutcome. Entireversiondifferences preserved withoutduplicatingepisodebreadth."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -4551,8 +4704,8 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 204,
-    "focused_runtime_seconds": 32.909,
+    "focused_tests": 210,
+    "focused_runtime_seconds": 33.866,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -4560,13 +4713,11 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "739d70ad1d922de410c419fd01568371c6db2349",
+      "head": "decbc06cfd14c2a57879310c33ba151b5c9b8de4",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37421496978"
-    },
-    "final_spacing_integrity_tests": 15,
-    "final_spacing_integrity_runtime_seconds": 1.128
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37422916927"
+    }
   },
   "open_legal_interactions": [
     {

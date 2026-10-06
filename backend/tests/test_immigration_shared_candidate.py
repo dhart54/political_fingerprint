@@ -7,7 +7,7 @@ from backend.app.semantic_ir.shared_corpus import digest, sealed_digest
 from backend.app.semantic_ir.adapters import build_persistence_proposal
 from backend.app.semantic_ir.pipeline import run_editorial_pipeline
 from backend.app.editorial_presentations.compiler import compile_public_issue_presentation, EditorialPresentationError
-from scripts.prepare_shared_domain_candidate import prepare, readable_candidates, reproducibility_proof
+from scripts.prepare_immigration_shared_candidate import prepare, readable_candidates, reproducibility_proof
 from scripts.validate_immigration_shared_candidate import DATA, validate
 
 
@@ -27,6 +27,78 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
     def test_fixed_inventory_and_every_clerk_observation(self):
         result = validate(*self.values)
         self.assertEqual(result['inventory_count'], 676)
+
+    def test_direct_concurrence_uses_real_question_observations_and_one_episode(self):
+        core, mapping, projections, _, result = self.products
+        action = next(a for a in core['actions'] if a['action_id'] == 'house:119:1:203')
+        self.assertEqual(action['exact_question'], 'On Agreeing to the Resolution')
+        self.assertEqual(action['legislative_stage'], 'concurrence')
+        episode = next(e for e in mapping['episodes'] if e['episode_id'] == 'episode:hr4:119')
+        self.assertEqual(episode['action_ids'], ['house:119:1:168', 'house:119:1:203'])
+        readable = readable_candidates(self.values[0], core, projections, result)
+        for member, status in [('F000477', 'Nay'), ('M001184', 'Yea')]:
+            projection = next(p for p in projections if p['member_id'] == member)
+            row = next(a for a in projection['actions'] if a['action_id'] == action['action_id'])
+            self.assertEqual(row['official_status'], status)
+            self.assertEqual(row['action_core_sha256'], action['action_core_sha256'])
+            finding = next(f for m in readable['members'] if m['member_id'] == member
+                           for f in m['findings'] if action['action_id'] in f['action_ids'])
+            self.assertEqual(finding['action_ids'], episode['action_ids'])
+
+    def test_resealed_consideration_rule_cannot_become_final_concurrence(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:203')
+        source = next(s for s in capture['sources'] if s['source_id'] == action['source_id'])
+        old = action['deemed_concurrence']['passage']
+        new = 'Resolved, That it shall be in order to consider a motion to concur in the Senate amendment.'
+        source['text'] = source['text'].replace(old, new)
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        action['deemed_concurrence']['passage'] = new
+        for claim in action['claim_source_map']:
+            if claim['source_id'] == source['source_id']:
+                claim['passage'] = claim['passage'].replace(old, new)
+        with self.assertRaisesRegex(ValueError, 'exact governed operative clause'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_direct_concurrence_requires_the_bound_senate_amendment(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:203')
+        action['additional_source_ids'].remove(action['deemed_concurrence']['senate_amendment_source_id'])
+        with self.assertRaisesRegex(ValueError, 'exact Senate amendment'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_resealed_wrong_direct_concurrence_clerk_question_is_rejected(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        source = next(s for s in capture['sources'] if s['source_id'] == 'clerk:119:1:203')
+        source['metadata']['vote-question'] = 'On Ordering the Previous Question'
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        with self.assertRaisesRegex(ValueError, 'differs from exact Clerk question'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_resealed_wrong_amendment_version_or_future_date_is_rejected(self):
+        for change in ['version', 'date']:
+            with self.subTest(change=change):
+                author, capture, _, _ = copy.deepcopy(self.values)
+                source = next(s for s in capture['sources'] if s['source_id'] == 'govinfo:hr4eas')
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:203')
+                if change == 'version':
+                    source['text_version'] = 'EH'
+                else:
+                    source['text'] = source['text'].replace('July 17 (legislative day, July 16), 2025',
+                                                         'July 19 (legislative day, July 18), 2025')
+                    for claim in action['claim_source_map']:
+                        if claim['source_id'] == source['source_id']:
+                            claim['passage'] = source['text']
+                source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+                with self.assertRaisesRegex(ValueError, 'exact Senate amendment|follows the House choice'):
+                    prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_direct_concurrence_cannot_create_a_separate_rule_episode(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:1:203')
+        action['episode_id'] = 'episode:hres590:119'
+        with self.assertRaisesRegex(ValueError, 'underlying bill episode'):
+            prepare(author, capture, ['F000477', 'M001184'])
 
     def test_resealed_changed_exact_question_is_not_trusted(self):
         author, capture, universe, membership = copy.deepcopy(self.values)
