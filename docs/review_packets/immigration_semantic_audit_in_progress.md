@@ -1113,3 +1113,67 @@ continuing/omnibus/NDAA packages and ordinary screenings. Preserve legal questio
 separately from executable unfinished research and unavailable evidence.
 Original deadline/terminal markers remain intact; no successor shutdown supplied.
 PR200 maintenance on main is separate; this branch was not merged or rebased.
+
+
+## Checkpoint 31: preserve common visa-reimbursement compliance prerequisite
+
+Independent checkpoint 30 delta/prose/binding review at exact
+401f9ec46bbe9ed1d4007ced8cfdd4cc4ae30ab2 identified Major
+IB-HR1-VISA-REFUND-CONJUNCTION. Shared qualification compression could read
+(compliance AND A) OR B, although the detailed meaning and original receipt
+matrix correctly required compliance AND (A OR B). Both shared qualifications
+now explicitly require post-admission compliance with ALL visa conditions in
+BOTH alternatives, then give each complete no-extension-request/departure or
+GRANTED extension/LPR-adjustment alternative with its own temporal conditions.
+House's three alternatives, discretionary reimbursement after validity expires
+and Senate's unresolved literal "such period" application question remain.
+Detailed meanings, compact descriptions, every source/claim binding, choices,
+episode projection and queue counts are unchanged; no new eligibility decision.
+
+Historical Major finding, before/current action hashes and original authoring
+blob are preserved in hr1_checkpoint30_visa_conjunction_correction.json. Its
+independent review scope includes the new prose/amounts/collection events/
+waiver/rounding/20-percent-account/any-alien baseline and all six binding
+hashes/lengths; it excludes reviewer replay, full-member JSON, legal resolution
+and exhaustive acceptance. Correction recheck is pending. Prior funeral Major
+resolution and reimbursement Minor remain historical, with their bounded limits.
+
+All 32 current H.R.1 qualifications and both selected compact descriptions were
+checked against their source predicates. No additional sibling-predicate or
+grouping defect was found in that selected copy scope. The regression reproduced
+the ambiguous old wording in both action subtests, then passed after correction.
+224 focused tests pass (39.761s), seven semantic checks pass and all seven
+outputs replay byte identically. Both full member readables carry the corrected
+qualification. All 32 qualification/source hashes, primary reimbursement passage,
+receipt seal, current audit hashes and 95 bounded source witnesses verify.
+Candidate/public/persistence isolation and final diff inspected; no runtime,
+pipeline/schema, frontend, Health or production change. Tests and same-owner
+copy review do not establish independent semantic truth or acceptance.
+
+Core: 317006f8cb78bd0b459cbfaad310000257c508eb14568fbd5e60c560297694fb.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Prior exact checkpoint30 passes all nine CI jobs (run37502494255); previous
+correction ced5073 also passes all nine (run37501536160). Current CI follows push.
+96 highest-severity action assessments remain 1 Critical/9 Major/3 Minor/
+83 No Defect; distinct Major findings rise to five. No full-corpus verdict.
+
+The Codex update briefly disconnected the executor. Reconnection verified the
+same .w/ib path, local/remote401f9ec, preserved uncommitted correction and original
+shutdown markers. Pending generator/regression session3084 had completed; full
+validation and fresh replay above followed reconnection. Main remains separate
+7a8c6ee11a899ea6912a4d37588917fcd0de0a24; no rebase/merge or duplicate checkout.
+
+Resume remaining House70017-19 versus Senate100014-15 travel/user/EVUS fees,
+then House70011/70015-16 versus Senate100013 continuance/diversity/EOIR provisions,
+remaining benefits/tax/remittance/funding, continuing/omnibus/NDAA and ordinary
+screenings. Provisional official pre-vote1187 capture is preserved in ignored
+.tmp only, not yet canonically applied. Counts remain455reviews/39meanings/
+36episodes/70findings,221ordinary/two partial component reviews/27questions,
+1204sources/438claims/121 canonical provisional captures. No closure/acceptance.
+
+For every remaining increment, pre-push review must reconstruct each compact
+description AND qualification independently from its primary clause. Explicitly
+check common prerequisites across alternatives, sibling-only location/age/time/
+actor conditions, AND/OR grouping and every material temporal qualifier. Use
+natural prose or explicit parentheses, and retain unresolved referents. A correct
+detailed explanation is not evidence that compressed copy is also correct.

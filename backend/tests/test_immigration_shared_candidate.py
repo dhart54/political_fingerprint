@@ -54,6 +54,24 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertNotRegex(action['meaning'], re.compile(
                 r'funeral of a close family member\s+(?:in the US|in the United States)', re.I))
 
+    def test_visa_refund_qualification_preserves_common_compliance_predicate(self):
+        senate = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in senate['claim_source_map']
+                       if c['passage'].startswith('SEC. 100007.'))
+        refund = passage[passage.index('(b) Fee Reimbursement'):passage.index('SEC. 100008.')]
+        self.assertIn('; and (2)(A)', refund)
+        self.assertIn('; or (B)', refund)
+        for aid in ['house:119:1:145', 'house:119:1:190']:
+            with self.subTest(action_id=aid):
+                action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+                qualification = next(q for q in action['limitations']
+                                     if q.startswith('Visa-integrity reimbursement'))
+                self.assertNotRegex(qualification, re.compile(
+                    r'Senate compliance\s+AND\s+no-extension-request.*\sOR\s+granted', re.I))
+                self.assertIn('Senate requires post-admission compliance with all visa conditions in BOTH alternatives', qualification)
+                self.assertIn('during the visa validity period', qualification)
+                self.assertIn('"such period"', qualification)
+
     def test_hr1_distinct_versions_project_once_per_underlying_episode(self):
         core, mapping, projections, _, result = self.products
         ids = ['house:119:1:145', 'house:119:1:190']

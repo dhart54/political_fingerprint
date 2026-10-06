@@ -5,11 +5,11 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest checkpoint30:455 reviewed,39 interpreted,211 procedural,203 excluded,
+Latest checkpoint31:455 reviewed,39 interpreted,211 procedural,203 excluded,
 2expressive;221 ordinary screenings remain.36episodes produce78observations and
 70 findings(Foushee36/Massie34).H.R.1 selected clauses remain explicitly partial
 in authoring/readable/accounting.27 legal/application questions are separate.
-See checkpoint30 below and exact-version/component receipts for controlling source maps.
+See checkpoint31 below and exact-version/component receipts for controlling source maps.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Current ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -117,7 +117,7 @@ The Clerk recorded the House result as 'Passed' on 2025-07-03. This does not est
 - Parole-entry fees preserve all printed medical/family/transplant/adoption/temporary-return/hearing/law-enforcement predicates, not generic humanitarian labels. House Cuba-residence/family-visa/program conjunction differs from Senate granted-Cuban/Haitianentrant condition with its full definition. Exceptions and waiver bars are distinct; neither fee payment nor an exception creates parole/admission/status or an actual exemption.
 - HouseSIJ500minimum is conditional on its one-viable-parent/other-nonviable predicate; SenateSIJ250minimum namesalien/parent/legalguardian and lacks that House condition/expresswaiverbar. Existing complete1101(a)(27)(J), not(a)(15)(J), supplies court/best-interest/consent/parentage qualifications; no UACage rule, duplicate-payer charges or waiver availability inferred.
 - HouseTPS500additionalminimum has the exact non-admission/lapsed-nonimmigrant predicate. Senate raises existing50registrationMAXIMUMto500 and retainsreasonableMAY authority; do not substitute a universal500charge or copy the House floor/status scope. Its addedTreasury sentence coexists with an unstruck appropriation-credit baseline sentence, preserved as an application question. EADfees/status grant/duration and registration fee authority remain distinct.
-- Visa-integrity reimbursement is discretionary after visa validity expires. House nonuse/compliance-plus-departure/filing alternatives differ from Senate compliance AND no-extension-request-plus-printed-departure OR granted-extension/adjustment. Do not transfer filing into grant, visa validity into admission duration, or five-day reimbursement conditions into general stay/work permission. Senate "such period" application remains separately reserved.
+- Visa-integrity reimbursement is discretionary and available only after the visa period of validity expires. House requires demonstration of one of three alternatives: no admission sought during that validity period; or compliance with all visa conditions after admission, including no unauthorized employment, together with departure no later than five days after the date authorized to remain; or filing to extend, change or adjust status within visa validity. Senate requires post-admission compliance with all visa conditions in BOTH alternatives, including no unauthorized employment, together with either (A) no request to extend the period of admission during the visa validity period AND departure no later than five days after the last day of "such period", or (B) a GRANTED nonimmigrant extension or adjustment to lawful permanent resident status during the visa validity period. The printed Senate "such period" referent remains a separate application question. Filing is not a grant; visa validity is not admission duration; the five-day reimbursement conditions do not establish general stay/work permission.
 - I-94 fees attach to any-alien form application, not necessarily every entry or only land ports. The existing account deposit and appropriations refund do not create applicant refund rights. Preserve House lack of express CPI rounding versus Senate nearest-dollar increment rounding, 20-percent CBP account share and Treasury remainder separately from the visa fee.
 - Selected Immigration highlights do not inventory every immigration-related benefit, tax, fee, child-sponsor or enforcement provision. This is a whole multi-domain replacement choice; no separate component preference or preferred alternative is established.
 - EAS90003 explicitly qualifies single-adult detention standards by applicable law and lacks the House's express State-licensing-independent language. It cannot inherit House70101's exact wording. Permission and funding do not prove universal detention, removal or legal enforceability.
@@ -2170,3 +2170,67 @@ continuing/omnibus/NDAA packages and ordinary screenings. Preserve legal questio
 separately from executable unfinished research and unavailable evidence.
 Original deadline/terminal markers remain intact; no successor shutdown supplied.
 PR200 maintenance on main is separate; this branch was not merged or rebased.
+
+
+## Checkpoint 31: preserve common visa-reimbursement compliance prerequisite
+
+Independent checkpoint 30 delta/prose/binding review at exact
+401f9ec46bbe9ed1d4007ced8cfdd4cc4ae30ab2 identified Major
+IB-HR1-VISA-REFUND-CONJUNCTION. Shared qualification compression could read
+(compliance AND A) OR B, although the detailed meaning and original receipt
+matrix correctly required compliance AND (A OR B). Both shared qualifications
+now explicitly require post-admission compliance with ALL visa conditions in
+BOTH alternatives, then give each complete no-extension-request/departure or
+GRANTED extension/LPR-adjustment alternative with its own temporal conditions.
+House's three alternatives, discretionary reimbursement after validity expires
+and Senate's unresolved literal "such period" application question remain.
+Detailed meanings, compact descriptions, every source/claim binding, choices,
+episode projection and queue counts are unchanged; no new eligibility decision.
+
+Historical Major finding, before/current action hashes and original authoring
+blob are preserved in hr1_checkpoint30_visa_conjunction_correction.json. Its
+independent review scope includes the new prose/amounts/collection events/
+waiver/rounding/20-percent-account/any-alien baseline and all six binding
+hashes/lengths; it excludes reviewer replay, full-member JSON, legal resolution
+and exhaustive acceptance. Correction recheck is pending. Prior funeral Major
+resolution and reimbursement Minor remain historical, with their bounded limits.
+
+All 32 current H.R.1 qualifications and both selected compact descriptions were
+checked against their source predicates. No additional sibling-predicate or
+grouping defect was found in that selected copy scope. The regression reproduced
+the ambiguous old wording in both action subtests, then passed after correction.
+224 focused tests pass (39.761s), seven semantic checks pass and all seven
+outputs replay byte identically. Both full member readables carry the corrected
+qualification. All 32 qualification/source hashes, primary reimbursement passage,
+receipt seal, current audit hashes and 95 bounded source witnesses verify.
+Candidate/public/persistence isolation and final diff inspected; no runtime,
+pipeline/schema, frontend, Health or production change. Tests and same-owner
+copy review do not establish independent semantic truth or acceptance.
+
+Core: 317006f8cb78bd0b459cbfaad310000257c508eb14568fbd5e60c560297694fb.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Prior exact checkpoint30 passes all nine CI jobs (run37502494255); previous
+correction ced5073 also passes all nine (run37501536160). Current CI follows push.
+96 highest-severity action assessments remain 1 Critical/9 Major/3 Minor/
+83 No Defect; distinct Major findings rise to five. No full-corpus verdict.
+
+The Codex update briefly disconnected the executor. Reconnection verified the
+same .w/ib path, local/remote401f9ec, preserved uncommitted correction and original
+shutdown markers. Pending generator/regression session3084 had completed; full
+validation and fresh replay above followed reconnection. Main remains separate
+7a8c6ee11a899ea6912a4d37588917fcd0de0a24; no rebase/merge or duplicate checkout.
+
+Resume remaining House70017-19 versus Senate100014-15 travel/user/EVUS fees,
+then House70011/70015-16 versus Senate100013 continuance/diversity/EOIR provisions,
+remaining benefits/tax/remittance/funding, continuing/omnibus/NDAA and ordinary
+screenings. Provisional official pre-vote1187 capture is preserved in ignored
+.tmp only, not yet canonically applied. Counts remain455reviews/39meanings/
+36episodes/70findings,221ordinary/two partial component reviews/27questions,
+1204sources/438claims/121 canonical provisional captures. No closure/acceptance.
+
+For every remaining increment, pre-push review must reconstruct each compact
+description AND qualification independently from its primary clause. Explicitly
+check common prerequisites across alternatives, sibling-only location/age/time/
+actor conditions, AND/OR grouping and every material temporal qualifier. Use
+natural prose or explicit parentheses, and retain unresolved referents. A correct
+detailed explanation is not evidence that compressed copy is also correct.
