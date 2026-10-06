@@ -3855,13 +3855,455 @@
         }
       ],
       "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:166",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "166",
+        "legis-num": "S 331",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jun-2025",
+        "action-time": "3:34 PM",
+        "vote-desc": "HALT Fentanyl Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteS331ES schedules fentanyl-relatedsubstances/research/criminaldrugpenalty/regulation and goodsimport/export mechanisms. ExistingcollateralINAconsequences are not claimed absent; proposalhasno independentlychanged immigration-person mechanism. This criterion differs from747explicitperson-scope change to an existingqualifiedvisasanctionmenu.",
+      "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
+      "correction": null,
+      "before_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
+      "corrected_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:166",
+          "url": "https://clerk.house.gov/evs/2025/roll166.xml",
+          "governed_bytes_sha256": "dfdab4d507d7a3d6bb23b142fb2c4a16b415c812c603f17a3ed3a8752777d44a",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:s331es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm",
+          "governed_bytes_sha256": "c67c5d2b5bf4cbf0b92588b6b8957c8b41c82ba7eb7a999fcde3df9777b640ea",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres489eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:185",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "185",
+        "legis-num": "H RES 516",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "27-Jun-2025",
+        "action-time": "10:38 AM",
+        "vote-desc": "Condemning the violent June 2025 riots in Los Angeles, California"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete516EH resolvedclausesrecognizepeacefulassembly,condemnviolence,generalriot-endcoordination and multidepartmentgratitudeincludingICE. Whereasimmig/status/guilt/statistics remainassertions, not operativeINAmechanism. Compare488samepreamble/operativeboundary; no specific endorsementofallICEenforcement or actualoutcome.",
+      "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
+      "correction": null,
+      "before_review_record_sha256": "ea1210ed84c4dc154488f3eda36f92d4d3da1091caa2766a970f0e91d9d147fd",
+      "corrected_review_record_sha256": "ea1210ed84c4dc154488f3eda36f92d4d3da1091caa2766a970f0e91d9d147fd",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:185",
+          "url": "https://clerk.house.gov/evs/2025/roll185.xml",
+          "governed_bytes_sha256": "c3ca1b4122d13de66b004ce923ae89e36929fd47351544c3c7f706422f96a5e6",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres516eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres516eh/html/BILLS-119hres516eh.htm",
+          "governed_bytes_sha256": "213e5f5bc966cb70d3267fcf516ced61dd098acd65e662f07e6ea22805ec29e2",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres530rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm",
+          "governed_bytes_sha256": "7ac031be4097780ebce4731e118077a5f1a56f13a80db3854bfa95e3596b7d7a",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:188",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "188",
+        "legis-num": "H RES 566",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "1",
+        "amendment-author": "Foxx of North Carolina Amendment",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Agreed to",
+        "action-date": "2-Jul-2025",
+        "action-time": "9:31 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact188Foxxamendment1fullprimaryrecord identifiable, versusseparatelyprintedMcGovern alternative. Offeredamendmentonlyorderspreviousquestionon separatelyconsideredconcurrencemotion; RHandEHconfirmparentbillnotalreadyconcurredbyrule. Proceduralnoncountingstatusindependentofmemberdirection.",
+      "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
+      "correction": null,
+      "before_review_record_sha256": "7d6784442175b678516da01f56b6dd6035261cb6d08965b6ff669800e34c5b01",
+      "corrected_review_record_sha256": "7d6784442175b678516da01f56b6dd6035261cb6d08965b6ff669800e34c5b01",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:188",
+          "url": "https://clerk.house.gov/evs/2025/roll188.xml",
+          "governed_bytes_sha256": "f0a023a72a05b08adf12a0b468948a8d96c7f65f7b3e193adc1d7ebcaf0db4be",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "congressional-record:2025-07-02",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-02/pdf/CREC-2025-07-02-house.pdf",
+          "governed_bytes_sha256": "629c8ff9c9387798481c6b0d5b56c87354ebbb920c75c2546c07b29c6332d963",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres566rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres566rh/html/BILLS-119hres566rh.htm",
+          "governed_bytes_sha256": "de410ee4f2cbf48c80ae389736a5b41c8ef0309ef4679e85f9dfa8843723cebe",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres566eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres566eh/html/BILLS-119hres566eh.htm",
+          "governed_bytes_sha256": "78d6957f2d3326483ef1110d3f670604a1332e5356aa876167e9c490397767af",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:222",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "222",
+        "legis-num": "H RES 672",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "3-Sep-2025",
+        "action-time": "2:05 PM",
+        "vote-desc": "Providing for consideration of the bill H.R. 4553 the Energy and Water Development and Related Agencies Appropriations Act, 2026; providing for consideration of the joint resolutions H.J. Res. 104, H.J. Res. 105, and H.J. Res. 106; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Entire672EHincludesnotonlyordinaryconsiderationrulesbutdeemed668/605adoptionsand598tabling. Complete668isoperativeEpsteinrelatedcriminalinvestigation/disclosurewithtravel/customs/immigdocumentsamongqualifiedrecords;605January6Houseinvestigation;598alternativeEpsteinrelease. AcknowledgeactualHousegovernancedutywhileboundedcriminalinvestigationscope doesnotindependentlyalterimmigration-personprocessing/status/enforcementora programreportonimmigrationadministration. No sourceclaim these clauses merelyrhetorical/nonexistent.",
+      "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
+      "correction": null,
+      "before_review_record_sha256": "6e2abefef9e5b27fa1ecc291e165e8121dd63fb125e7645af669f3d38f47c8d3",
+      "corrected_review_record_sha256": "6e2abefef9e5b27fa1ecc291e165e8121dd63fb125e7645af669f3d38f47c8d3",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:222",
+          "url": "https://clerk.house.gov/evs/2025/roll222.xml",
+          "governed_bytes_sha256": "c6754776237d6aa509c1a9dd0094bdd197e177a7b980f9128d2535f60c2ef909",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres672eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres672eh/html/BILLS-119hres672eh.htm",
+          "governed_bytes_sha256": "5cbcfbfd4048e3c66bc1c3b1825b030a18d4a9c6715a99f95b52c3ade6c373d8",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres668eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres668eh/html/BILLS-119hres668eh.htm",
+          "governed_bytes_sha256": "51dd7b36fc27b6e8eb1d7c8f830b52b1a7372725d857866010ec69fdf3762050",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres605eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres605eh/html/BILLS-119hres605eh.htm",
+          "governed_bytes_sha256": "9174ab7091aa624cd2b5e761f98ed0cd37b1f7a4b7aea12471cab479c9c113c3",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        },
+        {
+          "source_id": "govinfo:hres598rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres598rh/html/BILLS-119hres598rh.htm",
+          "governed_bytes_sha256": "f06217ea54f6fac9c15bdf58158c3fd0876437b2a1bb1cb4b54cbce94df3c4a7",
+          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:192",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "192",
+        "legis-num": "H R 1770",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "14-Jul-2025",
+        "action-time": "7:03 PM",
+        "vote-desc": "Consumer Safety Technology Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Not Voting",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Entire1770EHincludesAIconsumerproductsafety pilot, optionalproduct-refused-customsterritory-admission identification, blockchainstudy andtokenconsumerprotectionreport. Admissionexpresslygoods/safety, nothumanINA; acknowledgeoperativeborder-goodsclausewithoutassertingimmigration-personmechanism.",
+      "finding": "No defect found in the bounded functional-domain screening; explicit operative status/entry terminology acknowledged and precise context retained. Candidate membership remains proposed and not accepted.",
+      "correction": null,
+      "before_review_record_sha256": "4a7d7b943c8bee7b263d2356faa3b2508a351d50389a56cfe6039d4d038e3d99",
+      "corrected_review_record_sha256": "4a7d7b943c8bee7b263d2356faa3b2508a351d50389a56cfe6039d4d038e3d99",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:192",
+          "url": "https://clerk.house.gov/evs/2025/roll192.xml",
+          "governed_bytes_sha256": "4ccd411b357b674cb097bab37b8119d993fed51155990dfb3a6d713b95656a85",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        },
+        {
+          "source_id": "govinfo:hr1770eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1770eh/html/BILLS-119hr1770eh.htm",
+          "governed_bytes_sha256": "1f10bf0ab838db862553a522580e20121e8bfe32f375efc8db531352a4625e4e",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:306",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "306",
+        "legis-num": "H R 5348",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "1-Dec-2025",
+        "action-time": "6:57 PM",
+        "vote-desc": "Social Security Child Protection Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Not Voting",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Entire5348EHchangeschildSSNreplacementaftertransmissionloss/theft, qualifiedunder14IV/Vissuance,evidence/perjury,dutyrecord and180-dayeffect. Complete205c2Bread includeschildrequest/schoolenrollmentroutes andretainedapplicantage/citizenship/alien-status/identity evidence. No underlyingemployment/immigrationstatuscriteria changed or guaranteednewstatus.",
+      "finding": "No defect found in the bounded functional-domain screening; explicit operative status/entry terminology acknowledged and precise context retained. Candidate membership remains proposed and not accepted.",
+      "correction": null,
+      "before_review_record_sha256": "697dcddbc0f357db60d6c40b2f56d4edb74082e5704aad99b516092b710701d6",
+      "corrected_review_record_sha256": "697dcddbc0f357db60d6c40b2f56d4edb74082e5704aad99b516092b710701d6",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:306",
+          "url": "https://clerk.house.gov/evs/2025/roll306.xml",
+          "governed_bytes_sha256": "26f7e5f34ab9f7c37d49ccc2a82f8e7ed2a2831c543a6dcd750fc794a2ca2b1c",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        },
+        {
+          "source_id": "govinfo:hr5348eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5348eh/html/BILLS-119hr5348eh.htm",
+          "governed_bytes_sha256": "cdac54888eb8605fded4f98a3c2dba674d9cdd07d88ed3375adec9ae06082dfd",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        },
+        {
+          "source_id": "govinfo:42usc405-2024-child-ssn-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec405.htm",
+          "governed_bytes_sha256": "734b1b6a618db578199d6e21a00cd284bf032cb4b7db50a1432aaa9b3b2431ef",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+    },
+    {
+      "action_id": "house:119:1:324",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "324",
+        "legis-num": "H R 3638",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Dec-2025",
+        "action-time": "2:22 PM",
+        "vote-desc": "Electric Supply Chain Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Entire3638EHrequiresenergysupply-chainassessment includingEXPRESSnon-UScitizenfacility-employmentvulnerabilities. Clauseisoperativeandrecognized; candidateexclusionrests on functionalenergy/workforcesecurity-reportscope withno change to immigrationpersonstatus/entry/workauthorization/admin/enforcement, not dismissal as preamble or assumedworker-risk fact. Relatedforeign-sourcefinance/cyberreport screeningsuse the same functional-domain boundary.",
+      "finding": "No defect found in the bounded functional-domain screening; explicit operative status/entry terminology acknowledged and precise context retained. Candidate membership remains proposed and not accepted.",
+      "correction": null,
+      "before_review_record_sha256": "a62d72041deda9b470f1be8c31c519e794855966937840c3e4144181b6b239d4",
+      "corrected_review_record_sha256": "a62d72041deda9b470f1be8c31c519e794855966937840c3e4144181b6b239d4",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:324",
+          "url": "https://clerk.house.gov/evs/2025/roll324.xml",
+          "governed_bytes_sha256": "27ce95944aa378ac030018abcba12b3946f53495cbd9d265fc87e1d2f3bda11a",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        },
+        {
+          "source_id": "govinfo:hr3638eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3638eh/html/BILLS-119hr3638eh.htm",
+          "governed_bytes_sha256": "8a38182a5ad10c5f43cbcb6228c89fde789e6bbf6039c01723a6286e4c161abc",
+          "reviewed_extent": "Complete proposal and identified full material baseline/definition witness"
+        }
+      ],
+      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
     }
   ],
   "action_assessment_counts": {
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 41
+    "No Defect": 48
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -3884,7 +4326,9 @@
     "Expanded operative-versus-rhetorical/DHS and deemed-adoption sample: HRes488preamble versus resolved communication/gratitude; HR881research grants versus visa/status law; HRes294deemed293vote-pair procedure. No additional defect found. Remaining408ordinary screenings prevent full-corpus PASS.",
     "Expanded international/nationality-reference and exact-amendment sample: completeHR1048financial regime and failedamendments4/5/6; source/insertions are independently bound, not parent-meaning or accepted-cross-domain conclusions. No additional defect. Remaining401ordinaryscreenings preventfull-corpusPASS.",
     "Citizenship/SAVE pass follows entireNVRAcriminal chapeau/civilcure, Stateexemptions, passport-versus-national and REALID classes, existingSAVEadmin-use restriction and INAregistration-versus-voting/removal distinctions. Explicitlegal interactions preserved; do not treat them as unavailable sources, inferredrepeal or a fullauditPASS.",
-    "Sanctions family: do not homogenize foreign-person scope, family categories, property-versus-immigration discretion, passport-conviction-versus-list predicates, waiver adjectives/periods/notices, incorporated criminal/visa-revocation elements, or reporting-versus-program termination. Literal dependencies preserved for review; no outcome claims."
+    "Sanctions family: do not homogenize foreign-person scope, family categories, property-versus-immigration discretion, passport-conviction-versus-list predicates, waiver adjectives/periods/notices, incorporated criminal/visa-revocation elements, or reporting-versus-program termination. Literal dependencies preserved for review; no outcome claims.",
+    "Ordinaryscreeningpass distinguishes actualbindingHouseoversight/deemedadoption from nonexistentgovernance, retaining narrowcriminalrecordscope; neither preambleICEgratitude nor genericdrug/import/safety/foreign-subject context independently supplies an immigration-person mechanism. Failedrules bindRH, laterpassedrulesEH; exactFoxxamendment doesnotimportMcGovernsalternative.",
+    "Explicit noncitizen-energy workforce assessment and consumer-goods customs admission are acknowledged as operative and classified through functional-domain scope, not erased as rhetoric. ChildSSNreplacement follows exactretainedissuance/identity-evidence clauses; generalidentitychangesarenotnewimmigrationstatus grants."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -3893,21 +4337,27 @@
   "final_verdict": null,
   "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
   "sample_coverage": {
-    "original_exclusions_reviewed": 19,
-    "retained_exclusions_reviewed": 18,
-    "procedural_controls_reviewed": 7,
+    "original_exclusions_reviewed": 25,
+    "retained_exclusions_reviewed": 24,
+    "procedural_controls_reviewed": 8,
     "expressive_controls_reviewed": 1,
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
     "focused_tests": 204,
-    "focused_runtime_seconds": 32.108,
+    "focused_runtime_seconds": 32.886,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
     "exact_head_ci": "pending_push_current_checkpoint",
-    "final_full_corpus_audit_verdict": null
+    "final_full_corpus_audit_verdict": null,
+    "previous_exact_head_ci": {
+      "head": "157bdb2aee0f1a0cc24266f8f18f3c06abf1a7d6",
+      "conclusion": "success",
+      "all_nine_jobs_successful": true,
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37420190072"
+    }
   },
   "open_legal_interactions": [
     {

@@ -753,3 +753,44 @@ Prior52391f25e5b19584e260e9ba8cc39d1d7cabba42 exact-head CI passes all9 jobs:
 https://github.com/dhart54/political_fingerprint/actions/runs/37418106748.
 Current exact-head CI follows the push. No terminal marker or final readiness
 claim; continue ordinary screenings and large-package/version research.
+
+
+### Checkpoint 11: ordinary screening and functional-domain boundaries
+
+55 additional source-supported screenings bring336 reviewed actions:24 interpreted,
+185 procedural,126 excluded and1 expressive;340 ordinary screenings remain.
+Complete texts and material incorporated provisions distinguish consumer-product
+customs admission, electricity-workforce security assessment, school foreign-source
+finance, SSN replacement, medical/institutional pension and general criminal rules
+from an independently changed immigration-person mechanism. Explicit operative
+clauses are acknowledged; exclusions do not erase them as rhetoric or claim no
+possible collateral consequence under other laws.
+
+672 expressly adopts668/605 and tables598: complete criminal-investigation record
+release and January6House governance are retained in the rationale, including the
+Epstein-related immigration-document evidence category. 516/519/719resolvedclauses
+remain separate from preamble assertions or every policy view of an honored person.
+188 binds the exact Foxx rule amendment, not the separately printed McGovern alternative;
+failed580 uses RH and later passed580 uses EH. 566/873/432 retain separate final
+House choices. 499/590and other material deemed-governance leads remain in research.
+
+New source-first audit assessments cover166/185/188/222/192/306/324 with no defect
+found in the bounded candidate screening. Current57distinct actions assess1Critical,
+6Major,2Minor,48NoDefect; underlyingfindings remain1Critical/2Major/1Minor.
+Sample25originalexclusions includes24retained exclusions,8proceduralcontrols and
+all1expressive. All24current meanings remain audited; seven legal interactions
+remain review dependencies. No final full-corpus audit verdict or acceptance.
+
+Sources949 =800 unchanged Health-governed reuses +149 new witnesses;213 shared
+meaning claim witnesses and57full provisional captures. Two newly bounded witnesses
+cover childSSNissuance/identity evidence and the exact Senate-data213repeal target,
+without importing the unrelated VA213or entire continuing resolution. Health and
+accepted cross-domain baseline diff remains empty.
+
+Validation:204focused tests pass in32.886seconds; all7semantic checks pass and
+all7JSON outputs replay byte-identically. Source/audit/accounting and publication/
+persistence rejection remain sound.24meaning core,47directional findings and24
+separate episodes are unchanged; the evidence inventory/reproducibility receipt
+updates. Diff-check clean. Prior157bdb2aee0f1a0cc24266f8f18f3c06abf1a7d6 passes all9
+hosted jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37420190072.
+Current exact-head CI follows push. Continue discovery; no terminal marker.
