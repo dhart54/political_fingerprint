@@ -37,6 +37,23 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn(bound, sentence)
             self.assertNotRegex(sentence, re.compile(r'before\s+(?:2028|2029|January 1, 2029)', re.I))
 
+    def test_house_senior_baseline_keeps_separate_person_age_branches(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        source = next(s['text'] for s in self.values[1]['sources']
+                      if s['source_id'] == 'govinfo:26usc63-operative-2024-senior-income-baseline')
+        aged = source[source.index('(1) Additional amounts for the aged'):
+                      source.index('(2) Additional amount for blind')]
+        self.assertIn('(A) for himself if he has attained age 65 before the close of his taxable year', aged)
+        self.assertIn('(B) for the spouse of the taxpayer if the spouse has attained age 65', aged)
+        self.assertIn('an additional exemption is allowable to the taxpayer for such spouse under section 151(b)', aged)
+        sentences = re.split(r'(?<=[.!?])\s+', action['meaning'])
+        own = next((s for s in sentences if 'taxpayer amount' in s), '')
+        spouse = next((s for s in sentences if 'spouse amount' in s), '')
+        self.assertIn('taxpayer to have attained 65 before the tax year closes', own)
+        self.assertIn('spouse to have attained 65 before that close', spouse)
+        self.assertIn('exemption for that spouse to be allowable to the taxpayer under section 151(b)', spouse)
+        self.assertNotIn('taxpayer to have attained 65', spouse)
+
     def test_child_credit_due_date_applies_to_both_issuance_categories(self):
         for aid, section in [('house:119:1:145', '110004'), ('house:119:1:190', '70104')]:
             action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)

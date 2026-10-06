@@ -2773,3 +2773,70 @@ and ordinary screenings. House 112105's next legislative section is 112201,
 not a nonexistent 112106; keep exact explicit extent/version bounds. Existing
 .w/ib ownership, preserved senior snapshot and historical markers remain;
 no current shutdown or merge/deployment/production/acceptance/publication.
+
+
+## Checkpoint 47: Separate senior baseline age branches corrected
+
+Fingerprint's bounded independent checkpoint 46 review found Major
+IB-HR1-SENIOR-AGED-BRANCH-SCOPE in House 145 meaning. The old umbrella sentence
+could make taxpayer age 65 common to the separate spouse amount. Complete
+pre-vote section 63(f)(1), printed Code page 454, has distinct branches:
+the taxpayer's own amount requires the taxpayer to have attained 65 before
+the tax year closes; the separate spouse amount requires the spouse to have
+attained 65 before that close and an additional exemption for the spouse to
+be allowable to the taxpayer under section 151(b). The current meaning now
+states both branches explicitly. This is faithful baseline applicability,
+without a determination of actual taxpayer eligibility, bonus or exclusion
+override. New SSN, similar-32(d), itemization and reserved question 40 limits
+remain. Historical checkpoint 46 narrative/receipt remain as reviewed evidence.
+
+One exact meaning repair, before/after and complete source witness hashes,
+negative-regression result and bounded recurrence review are sealed in
+hr1_senior_age_branch_correction.json. Analogous complete/full/paragraph
+requirement formulations in current meanings, qualifications and compacts
+were checked; other matching complete 1818(a) descriptions preserve that
+program's own conjunctive prerequisites. No further material mistaken
+common-person scope established within this review. This is a same-owner
+correction, with independent correction recheck pending.
+
+The independent senior review found no additional material defect in checked
+amounts, literal date windows, phaseouts, Senate common age/own-number rules,
+itemization/exclusions or mathematical-error procedures. It verified 17 of 19
+binding instances and receipt digest, with two operative hashes unrecomputed.
+Full member blobs and replay were outside its scope; PDF text was used where
+HTML failed. All 11 checkpoint 45 repairs independently remain exact. Question
+40 remains reserved; no actual-taxpayer or whole-package acceptance. See
+hr1_checkpoint46_independent_review.json.
+
+The bounded independent checkpoint 45 recheck is separately recorded in
+hr1_checkpoint45_independent_recheck.json: both named child-credit findings
+resolved in its verified scope, including all 11 replacements, 22 replacement
+hashes, five witness hashes and receipt digest, unchanged sources/projections
+and genuine regressions without weakened gates. Broader 55/71 recurrence scan
+and 250 H.R. 1 binding review remain same-owner; no independent byte replay or
+full-package acceptance. Those review-context limits are not evidence
+unavailability. The historical Major/material findings remain.
+
+39 focused tests in 9.219 seconds, seven semantic checks and seven-file byte
+replay pass. The new source-backed regression rejects exact ea376ac9 old copy
+by assertion with zero errors. All 649 bindings and 1,269 governed sources,
+234 canonical captures, other 38 actions including Senate, both compacts and
+qualifications, all prior 11 repairs, 155 bounded source extents, queue/audit
+hashes and final diff verify. Core c7c9895c449e4d15f56c1cff3cd36b98af0ea6d9a706235c98ee7d0f06bf5bf9.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Tests do not prove semantic truth or independent acceptance. Accounting
+unchanged: 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations,
+70 findings (Foushee 36, Massie 34); 221 ordinary screenings, TWO partial H.R. 1
+component reviews, 40 separate application questions. Same-owner audit partial,
+final verdict null. No production, publication, runtime, frontend or schema.
+
+Exact ea376ac9d01c96bd488026e13739edfb56432844 CI 37531488946 is completed,
+all nine jobs successful, verified natively and independently. Exact correction
+1adc902e3700d2bd70d6e3950dda9c117fdde714 CI 37530549264 also all nine successful.
+Current exact-head CI follows this push. Education research is preserved locally
+but not yet canonical: complete 25A and 6013(g)/(h), 1996/1997 frozen HEA material
+witnesses, original bytes and declared split-word comparisons. Continue selected
+House 112105 (before 112201) versus Senate 70606, then separately current House
+30001 student aid, child/enforcement funding, packages and screenings. Existing
+.w/ib ownership and historical deadline/terminal markers remain, no current
+shutdown. No merge/deployment/production/acceptance/promotion/publication.
