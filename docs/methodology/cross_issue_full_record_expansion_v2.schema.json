@@ -47,7 +47,7 @@
       ],
       "properties": {
         "schema_version": {"const": "cross_issue_universe_proposal_v2"},
-        "milestone": {"enum": ["m12a_next_full_record_issue_selection_v1", "m13a_next_full_record_issue_selection_v1"]},
+        "milestone": {"enum": ["m12a_next_full_record_issue_selection_v1", "m13a_next_full_record_issue_selection_v1", "foushee_shared_health_candidate"]},
         "proposal_id": {"type": "string"},
         "proposal_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
         "accounting": {"$ref": "#/$defs/domainAccounting"},

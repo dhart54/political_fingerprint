@@ -1223,6 +1223,8 @@ def compile_public_issue_presentation(
 ) -> dict[str, Any]:
     """Compile reviewed wording without deriving or rewriting analytical prose."""
 
+    if compiled_ir.get("review_state") == "candidate_pending_external_semantic_review":
+        raise EditorialPresentationError("shared candidates cannot compile public presentations")
     snapshot = copy.deepcopy(compiled_ir)
     identity = editorial_input["artifact_identity"]
     member = _member(snapshot, identity["member_id"])

@@ -39,6 +39,19 @@ presentation target:
 - `policy_trajectories`;
 - `other_notable_choices`.
 
+Candidate preparation may represent several source-grounded questions within
+one episode as a single `notable_choice` with ordered `action_observations`.
+Each observation binds an exact action/meaning reference, recorded status,
+service/evidence state and nullable direction. Only resolved substantive Yea/Nay
+observations count as behavioral evidence. The episode counts once; differing
+questions alone do not make it mixed. Aggregate direction reports the observed
+choices, not equivalence, motive, inconsistency or change of belief.
+
+This extension is candidate-scoped for PR194. Frozen accepted-reference outputs
+retain their historical shape. Actual trajectory claims still require the
+existing independently trusted substantive-comparability evidence; chronology
+does not supply that authority.
+
 Synthesis propositions derive a conclusion from behavioral propositions.
 `mechanism_divide`, `uniform_direction`, `no_common_throughline`, and
 `interpretive_boundary` are synthesis types. They may target

@@ -16,15 +16,22 @@
       }
     },
     "sharedAction": {
-      "type": "object", "additionalProperties": false,
-      "required": ["action_id", "exact_action_identity", "chamber", "congress", "session", "roll", "legislative_stage", "action_date", "chamber_outcome", "enactment_status", "mechanism", "mechanism_availability", "accepted_exact_action_meaning", "accepted_shared_limitations", "action_meaning_ref", "governed_source_identities", "governed_source_identity_sha256", "action_outcome_source_identities", "operative_meaning_source_identities", "semantic_ir_source_ids", "package_component_boundary", "source_contract_version", "meaning_contract_version", "action_core_sha256"],
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_id", "exact_action_identity", "chamber", "congress", "session", "roll", "legislative_stage", "action_date", "chamber_outcome", "enactment_status", "mechanism", "mechanism_availability", "action_meaning_ref", "governed_source_identities", "governed_source_identity_sha256", "action_outcome_source_identities", "operative_meaning_source_identities", "semantic_ir_source_ids", "package_component_boundary", "source_contract_version", "meaning_contract_version", "action_core_sha256"],
       "properties": {
         "action_id": {"type": "string", "pattern": "^house:[0-9]+:[0-9]+:[0-9]+$"},
         "exact_action_identity": {"type": "string", "minLength": 1},
-        "chamber": {"const": "house"}, "congress": {"type": "integer"}, "session": {"type": "integer"}, "roll": {"type": "integer"},
-        "legislative_stage": {"type": "string", "minLength": 1}, "action_date": {"type": "string", "format": "date"},
-        "chamber_outcome": {"type": "string", "minLength": 1}, "enactment_status": {"const": "not_inferred_from_house_outcome"},
-        "mechanism": {"type": ["string", "null"]}, "mechanism_availability": {"type": "string", "minLength": 1},
+        "chamber": {"const": "house"},
+        "congress": {"type": "integer"},
+        "session": {"type": "integer"},
+        "roll": {"type": "integer"},
+        "legislative_stage": {"type": "string", "minLength": 1},
+        "action_date": {"type": "string", "format": "date"},
+        "chamber_outcome": {"type": "string", "minLength": 1},
+        "enactment_status": {"const": "not_inferred_from_house_outcome"},
+        "mechanism": {"type": ["string", "null"]},
+        "mechanism_availability": {"type": "string", "minLength": 1},
         "accepted_exact_action_meaning": {"type": ["string", "null"], "minLength": 1},
         "accepted_shared_limitations": {"type": "array", "items": {"type": "string"}},
         "action_meaning_ref": {"type": "string", "minLength": 1},
@@ -33,29 +40,36 @@
         "action_outcome_source_identities": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceIdentity"}},
         "operative_meaning_source_identities": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceIdentity"}},
         "semantic_ir_source_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
-        "package_component_boundary": {
-          "type": "object", "additionalProperties": false,
-          "required": ["boundary_type", "parent_package_meaning_projected", "basis"],
-          "properties": {
-            "boundary_type": {"type": "string"}, "parent_package_meaning_projected": {"const": false},
-            "basis": {"type": ["string", "array"]},
-            "governed_component_relationships": {"type": "array", "items": {"type": "string"}}
-          }
-        },
-        "source_contract_version": {"type": "string"}, "meaning_contract_version": {"type": "string"},
-        "action_core_sha256": {"$ref": "#/$defs/sha256"}
-      }
+        "package_component_boundary": {"type": "object", "additionalProperties": false, "required": ["boundary_type", "parent_package_meaning_projected", "basis"], "properties": {"boundary_type": {"type": "string"}, "parent_package_meaning_projected": {"const": false}, "basis": {"type": ["string", "array"]}, "governed_component_relationships": {"type": "array", "items": {"type": "string"}}}},
+        "source_contract_version": {"type": "string"},
+        "meaning_contract_version": {"type": "string"},
+        "action_core_sha256": {"$ref": "#/$defs/sha256"},
+        "candidate_exact_action_meaning": {"type": "string", "minLength": 1},
+        "candidate_shared_limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "exact_question": {"type": "string", "minLength": 1},
+        "candidate_short_description": {"type": "string", "minLength": 1},
+        "candidate_compact_description": {"type": "string", "minLength": 1},
+        "compact_source_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "choice_meanings": {"type": "object", "additionalProperties": false, "required": ["Yea", "Nay"], "properties": {"Yea": {"type": "string", "minLength": 1}, "Nay": {"type": "string", "minLength": 1}}},
+        "claim_source_map": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["source_id", "locator", "passage"], "properties": {"source_id": {"type": "string", "minLength": 1}, "locator": {"type": "string", "minLength": 1}, "passage": {"type": "string", "minLength": 1}}}}
+      },
+      "oneOf": [{"required": ["accepted_exact_action_meaning", "accepted_shared_limitations"], "not": {"required": ["candidate_exact_action_meaning"]}}, {"required": ["candidate_exact_action_meaning", "candidate_shared_limitations", "candidate_short_description", "candidate_compact_description", "compact_source_refs", "choice_meanings", "claim_source_map", "exact_question"], "not": {"anyOf": [{"required": ["accepted_exact_action_meaning"]}, {"required": ["accepted_shared_limitations"]}]}}]
     },
     "sharedActionCoreArtifact": {
-      "type": "object", "additionalProperties": false,
+      "type": "object",
+      "additionalProperties": false,
       "required": ["schema_version", "artifact_id", "identity_unit", "authoritative_for_new_editorial_work", "historical_inputs_rewritten", "actions", "corpus_sha256"],
       "properties": {
-        "schema_version": {"const": "shared_action_core_v1"}, "artifact_id": {"type": "string", "pattern": "^shared-action-core:house:[0-9]+:v[0-9]+$"},
+        "schema_version": {"const": "shared_action_core_v1"},
+        "artifact_id": {"type": "string", "pattern": "^shared-action-core:house:[0-9]+:v[0-9]+$"},
         "identity_unit": {"const": "exact House legislative action and governed source version"},
-        "authoritative_for_new_editorial_work": {"const": true}, "historical_inputs_rewritten": {"const": false},
+        "authoritative_for_new_editorial_work": {"type": "boolean"},
+        "historical_inputs_rewritten": {"const": false},
         "actions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sharedAction"}},
-        "corpus_sha256": {"$ref": "#/$defs/sha256"}
-      }
+        "corpus_sha256": {"$ref": "#/$defs/sha256"},
+        "review_state": {"const": "candidate_pending_external_semantic_review"}
+      },
+      "allOf": [{"if": {"properties": {"authoritative_for_new_editorial_work": {"const": false}}}, "then": {"required": ["review_state"]}, "else": {"not": {"required": ["review_state"]}}}]
     },
     "actionMapping": {
       "type": "object", "additionalProperties": false,
@@ -102,17 +116,28 @@
       "properties": {"action_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "constraint_id": {"type": "string"}, "detail": {"type": "string"}, "semantic_effect": {"type": "string"}}
     },
     "sharedIssueMappingArtifact": {
-      "type": "object", "additionalProperties": false,
+      "type": "object",
+      "additionalProperties": false,
       "required": ["schema_version", "artifact_id", "domain_id", "scope_boundaries", "authoritative_for_new_editorial_work", "historical_inputs_rewritten", "semantic_ir_case_scope", "action_mappings", "episodes", "policy_families", "policy_traits", "trait_relationships", "shared_review_dependencies", "source_render_constraints", "mapping_sha256"],
       "properties": {
-        "schema_version": {"const": "shared_issue_mapping_v1"}, "artifact_id": {"type": "string"}, "domain_id": {"type": "string"},
-        "scope_boundaries": {"type": "array", "items": {"type": "string"}}, "authoritative_for_new_editorial_work": {"const": true}, "historical_inputs_rewritten": {"const": false},
-        "semantic_ir_case_scope": {"type": ["object", "string"]}, "action_mappings": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/actionMapping"}},
-        "episodes": {"type": "array", "items": {"$ref": "#/$defs/episode"}}, "policy_families": {"type": "array", "items": {"$ref": "#/$defs/policyFamily"}},
-        "policy_traits": {"type": "array", "items": {"$ref": "#/$defs/policyTrait"}}, "trait_relationships": {"type": "array", "items": {"$ref": "#/$defs/traitRelationship"}},
-        "shared_review_dependencies": {"type": "array", "items": {"$ref": "#/$defs/reviewDependency"}}, "source_render_constraints": {"type": "array", "items": {"$ref": "#/$defs/sourceConstraint"}},
-        "mapping_sha256": {"$ref": "#/$defs/sha256"}
-      }
+        "schema_version": {"const": "shared_issue_mapping_v1"},
+        "artifact_id": {"type": "string"},
+        "domain_id": {"type": "string"},
+        "scope_boundaries": {"type": "array", "items": {"type": "string"}},
+        "authoritative_for_new_editorial_work": {"type": "boolean"},
+        "historical_inputs_rewritten": {"const": false},
+        "semantic_ir_case_scope": {"type": ["object", "string"]},
+        "action_mappings": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/actionMapping"}},
+        "episodes": {"type": "array", "items": {"$ref": "#/$defs/episode"}},
+        "policy_families": {"type": "array", "items": {"$ref": "#/$defs/policyFamily"}},
+        "policy_traits": {"type": "array", "items": {"$ref": "#/$defs/policyTrait"}},
+        "trait_relationships": {"type": "array", "items": {"$ref": "#/$defs/traitRelationship"}},
+        "shared_review_dependencies": {"type": "array", "items": {"$ref": "#/$defs/reviewDependency"}},
+        "source_render_constraints": {"type": "array", "items": {"$ref": "#/$defs/sourceConstraint"}},
+        "mapping_sha256": {"$ref": "#/$defs/sha256"},
+        "review_state": {"const": "candidate_pending_external_semantic_review"}
+      },
+      "allOf": [{"if": {"properties": {"authoritative_for_new_editorial_work": {"const": false}}}, "then": {"required": ["review_state"]}, "else": {"not": {"required": ["review_state"]}}}]
     },
     "memberAction": {
       "type": "object", "additionalProperties": false,
