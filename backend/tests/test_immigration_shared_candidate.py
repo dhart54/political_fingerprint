@@ -41,6 +41,19 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'package component review remains incomplete'):
             require_complete_research([], reviews)
 
+    def test_parole_funeral_exception_does_not_inherit_relative_location(self):
+        for aid, section in [('house:119:1:145', '70004'), ('house:119:1:190', '100004')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            passage = next(c['passage'] for c in action['claim_source_map']
+                           if c['passage'].startswith('SEC. ' + section + '.'))
+            dying = passage[passage.index('(4)'):passage.index('(5)')]
+            funeral = passage[passage.index('(5)'):passage.index('(6)')]
+            self.assertIn('close family member in the United States', dying)
+            self.assertNotIn('close family member in the United States', funeral)
+            self.assertIn('funeral', action['meaning'])
+            self.assertNotRegex(action['meaning'], re.compile(
+                r'funeral of a close family member\s+(?:in the US|in the United States)', re.I))
+
     def test_hr1_distinct_versions_project_once_per_underlying_episode(self):
         core, mapping, projections, _, result = self.products
         ids = ['house:119:1:145', 'house:119:1:190']

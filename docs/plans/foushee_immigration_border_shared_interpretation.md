@@ -1460,3 +1460,46 @@ continuing/omnibus/NDAA and ordinaryscreenings. Partialcomponent closure remains
 gated; legalquestions remain separate, not unavailable sources or completed research.
 Original deadline/terminalmarkers remain historical/intact; successor remainsactive
 with no suppliedcurrent shutdownboundary. No merge/deploy/production work.
+
+
+## Checkpoint 29: separate parole fee-exception predicates
+
+Independent source comparison at exact checkpoint 28 commit
+d1d146567e17d764b45f1f838afd8da0d2377db4 identified Major finding
+IB-HR1-PAROLE-FUNERAL-LOCATION. The combined summary carried the dying
+relative's US-location condition into the separate funeral exception, narrowing
+its eligibility. Both House 70004(a)(4)/(5) and Senate 100004(b)(4)/(5) now
+retain their own location, purpose and normal-visa arrival-time predicates in
+shared authoring and both regenerated member details. Direction, membership,
+source bindings, inventory and all queue counts are unchanged.
+
+All ten exceptions in each version were re-read for transferred modifiers.
+The printed DHS significant-public-benefit determination is also explicit,
+alongside the existing assistance AND required presence AND one eligibility/time
+alternative. Medical residence/time alternatives, parent-of-minor condition,
+adoption, lawful temporary return, hearing and distinct Cuban program/entrant
+conjunctions remain separate. No new application decision was made.
+
+The source-backed regression reproduced the funeral-location defect before
+correction and passes afterward for both versions. 223 focused tests pass
+(38.526s), seven semantic checks pass and seven outputs replay byte identically.
+All 94 bounded source witnesses reconstruct; current audit/authoring hashes,
+accounting and candidate/public/persistence isolation pass. Historical Major
+and reimbursement Minor remain preserved in their own receipts; same-owner
+correction is not independent acceptance. Independent recheck is pending.
+Current highest-severity action assessments: 96 total, 1 Critical, 9 Major,
+3 Minor and 83 No Defect. No full-corpus verdict or publication authority.
+
+Core: 8d0075c4c04fd67a34b2c7adfae5ef7075a00d4de0327a46fe1dd46e034bc704.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Prior checkpoint 28 passed all nine CI jobs (run 37499549019); this correction's
+exact-head CI follows push. Receipt: hr1_checkpoint28_funeral_location_correction.json.
+
+Resume with House 70008-9 versus Senate 100007-8 visa-integrity/I-94 clauses,
+then remaining fee, benefit, tax/remittance and funding components. Provisional
+visa research remains local only until source comparison and binding completion.
+455 reviews, 39 meanings, 36 episodes, 70 findings, 221 ordinary screenings,
+two unfinished package component reviews and 26 legal/application questions
+remain. Preserve all partial-component gates and historical deadline markers.
+Main's separate PR200 maintenance merge 7a8c6ee11a899ea6912a4d37588917fcd0de0a24
+does not change this candidate branch/base or authorize its merge/deployment.
