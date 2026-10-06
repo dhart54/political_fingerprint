@@ -1,7 +1,7 @@
 {
   "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
   "rule_files_sha256": {
-    "scripts/prepare_shared_domain_candidate.py": "83618a978419b6d7df289606737579ca39759a711085d332ccf5064f43f2891b",
+    "scripts/prepare_shared_domain_candidate.py": "acad448d612df797d0cdde3b9d488ca69edcbef5495a0c5cadd01ee8ba0e8b58",
     "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
     "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
     "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "411f8f7241cbc3a61f1123c4cf39077edc736c628c49dff6b3a5f25f0cba5e12",
-  "source_capture_sha256": "fa183763d2a1c797f67aeea8d7bf78c92cc4a04efba91b9e881127cff9037acb",
-  "core_sha256": "96bbfb6798b2b692e0124fc140b302597df0ef334a3909d126215ef44af5d3ca",
-  "compiled_sha256": "a8b890cee1810e32af57f794d8498365652505dc949cab7f5223526245a5cf76",
-  "readable_sha256": "63e28b5abee95222ea6643b58e3fdac339fb1b2a2390d477ceaf20b20e3300b7",
+  "input_sha256": "e3635915ea489b139af9dbee84409fa812ff09ae1d3f5edb255679cdba378702",
+  "source_capture_sha256": "4963bcb01fda265577cc42c638f7b4bab2461bd5fabc9bc4fc172f72568d64b2",
+  "core_sha256": "53ffcdae82a285a2165e723e7394323a7b8005270908b46cbc6c537af5a26806",
+  "compiled_sha256": "b94cca28d54635276081fe944828f601c75a3b52ccb015bf9070d2cba81aaf1c",
+  "readable_sha256": "67ada26e2201f9cea0f30516c235a5da4db922c9048823683c3bf1a25298af47",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -978,7 +978,7 @@
     },
     {
       "action_id": "house:119:1:212",
-      "shared_sha256": "89822ca6d5f9178fbf6b644b28fe3e92942d4240a4cec9aeda718343719bacaa",
+      "shared_sha256": "347eb74d77ce5e03b1372e3c8fdbdc179acbe83da07a9e7bfecd101739cedf75",
       "choices": [
         {
           "member_id": "F000477",
@@ -1693,6 +1693,626 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed suspension and passage of the whole H.R.6644 housing and banking package with its disability-income and assisted-family-service provisions",
           "source_id": "clerk:119:2:57"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:78",
+      "shared_sha256": "de630a84bbc0b4165d31dc5400e8b69dbd4fd94776eb531ab7d012d2ac43a921",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions",
+          "source_id": "clerk:119:2:78"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole package repealing income-tested electrification rebates and related training/code assistance, with the specified unobligated-fund rescissions",
+          "source_id": "clerk:119:2:78"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:87",
+      "shared_sha256": "4a74b9012b9167e481c45bd0ff4764ca1e82714b2c3f248a87e871884eb73fd9",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:87"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:87"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:104",
+      "shared_sha256": "e9e1df8ada571f73c34ecf52d20b09c7879da255843d18ee37256cddb35270e8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole FY2026 DHS appropriations and lapse-pay package, including its care/social-support funding and qualified custody safeguards",
+          "source_id": "clerk:119:2:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:145",
+      "shared_sha256": "6b5a6b3f40ad10a5f9d562cfe303e7a0a727388d3f2f2c53e961a8ec5cdcb338",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding hot rotisserie chicken to SNAP’s hot-food exceptions",
+          "source_id": "clerk:119:2:145"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding hot rotisserie chicken to SNAP’s hot-food exceptions",
+          "source_id": "clerk:119:2:145"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:146",
+      "shared_sha256": "58cf40cbbc21b3978dd7a29c75bb7bb2eb85bae473d5c466a7450320c95e8fb3",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations",
+          "source_id": "clerk:119:2:146"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported requiring a report and legislative recommendations on SNAP food-eligibility demonstrations",
+          "source_id": "clerk:119:2:146"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:151",
+      "shared_sha256": "040ba164c86baac2a7b79dd45bac8c94464596c23690c1590284600d79fa738e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed excluding the amendment’s defined soda purchases from SNAP after180 days",
+          "source_id": "clerk:119:2:151"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported excluding the amendment’s defined soda purchases from SNAP after180 days",
+          "source_id": "clerk:119:2:151"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:154",
+      "shared_sha256": "85f77f1e41f34e418fe878f3c471f65efdf7d36c5730a3dd60bfa90d55a58f9d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole farm package, including its qualified nutrition-assistance, rural-care and social-service provisions",
+          "source_id": "clerk:119:2:154"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole farm package, including its qualified nutrition-assistance, rural-care and social-service provisions",
+          "source_id": "clerk:119:2:154"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:175",
+      "shared_sha256": "28cf27654aa6d1eabf96fde1ea72591ddb662a6d8a1a6d5a6c0517dd9d6439db",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole amended military-construction/VA package, including qualified care and veteran-support funding, specified rescissions and policy restrictions",
+          "source_id": "clerk:119:2:175"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole amended military-construction/VA package, including qualified care and veteran-support funding, specified rescissions and policy restrictions",
+          "source_id": "clerk:119:2:175"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:180",
+      "shared_sha256": "7df0c99b81ac06d558a9a6906202b25993e3f38eb9fe9a9421fd3c827e95e3e5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the defined St. Louis VA medical-facility project authorization",
+          "source_id": "clerk:119:2:180"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:180"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:191",
+      "shared_sha256": "91445a0c358cfabe714822391255683ba235c4f0ec414cb2f1d28f583b1142f2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole qualified veteran/survivor benefits and housing package, including fee changes and the pension-limit extension",
+          "source_id": "clerk:119:2:191"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:191"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:176",
+      "shared_sha256": "e5fd1b337b4f7907ec1aa0a45e20e0615e8ba8f7fef3e8a7d6bb937c4f22636e",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspension and agreement to the resolution directly concurring with the replacement H.R.6644 housing and banking package",
+          "source_id": "clerk:119:2:176"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:176"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:205",
+      "shared_sha256": "e73cb7b00579a8573c170bb1b1c8d81dd18a067e88c5a94121b099f0959554ef",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole amended fiscal2027agriculture, nutrition, rural-care/housing and FDA appropriations/policy package",
+          "source_id": "clerk:119:2:205"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole amended fiscal2027agriculture, nutrition, rural-care/housing and FDA appropriations/policy package",
+          "source_id": "clerk:119:2:205"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:207",
+      "shared_sha256": "5b38191374ea2bcac0c24544eacbc070c62b2fc492e4a8575e1af892dabd46d8",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the whole Ukraine security, assistance and sanctions package with its qualified medical/humanitarian exceptions",
+          "source_id": "clerk:119:2:207"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole Ukraine security, assistance and sanctions package with its qualified medical/humanitarian exceptions",
+          "source_id": "clerk:119:2:207"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:224",
+      "shared_sha256": "cc997edde717eb07365b8da64b99b1bd64b0c3179cd7ae6ddb10adfee6c8e3cf",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported concurring in the whole June Senate housing and banking amendment with its qualified assistance and program reforms",
+          "source_id": "clerk:119:2:224"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurring in the whole June Senate housing and banking amendment with its qualified assistance and program reforms",
+          "source_id": "clerk:119:2:224"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:228",
+      "shared_sha256": "b16f47d12b214836736780ff8662ac7eddf59b807b77764a5cba956204a4a505",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole KIDS digital safety, privacy, crisis-resource and research package with its defined limits",
+          "source_id": "clerk:119:2:228"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole KIDS digital safety, privacy, crisis-resource and research package with its defined limits",
+          "source_id": "clerk:119:2:228"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:243",
+      "shared_sha256": "905b08f4386313118286a4e61d7488a5c2e0f6b12409a808a829fb48690528b6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Israel funding prohibition and $3.3-billion military-financing reduction, including its broader refugee-assistance intersection",
+          "source_id": "clerk:119:2:243"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Israel funding prohibition and $3.3-billion military-financing reduction, including its broader refugee-assistance intersection",
+          "source_id": "clerk:119:2:243"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:244",
+      "shared_sha256": "059689a91e2fc2fc2b4b28411155334ea06dc09c41fb6cb226bb73aaf36035c7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the Jordan funding prohibition and eight whole-account reductions, including global-health and emergency-refugee cuts",
+          "source_id": "clerk:119:2:244"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the Jordan funding prohibition and eight whole-account reductions, including global-health and emergency-refugee cuts",
+          "source_id": "clerk:119:2:244"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:245",
+      "shared_sha256": "2a0b558a76c2991f048d88ff756ee2b68e1166fafce65a59b58dc6485a49473f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed prohibiting this Act’s funds from being made available to the United Nations, including its humanitarian-recipient intersection",
+          "source_id": "clerk:119:2:245"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported prohibiting this Act’s funds from being made available to the United Nations, including its humanitarian-recipient intersection",
+          "source_id": "clerk:119:2:245"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:247",
+      "shared_sha256": "42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2027 State/security,global-health/humanitarian and rule-added SAVE package with its qualified restrictions",
+          "source_id": "clerk:119:2:247"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole FY2027 State/security,global-health/humanitarian and rule-added SAVE package with its qualified restrictions",
+          "source_id": "clerk:119:2:247"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:251",
+      "shared_sha256": "b4adf05dc8ab48dbf920bd2a7a92d8884eb3e11dd6cc5d3e961792c110f4f978",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passing the FECA medical-provider payment-suspension authority with its conviction, rulemaking and effective-date limits",
+          "source_id": "clerk:119:2:251"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:251"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:271",
+      "shared_sha256": "80eb86154312c499b38b611c78cac99c21d512ee9b03bb7615993517aca50b56",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole banking package including its qualified affordable-housing CDFI bond-guarantee changes",
+          "source_id": "clerk:119:2:271"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole banking package including its qualified affordable-housing CDFI bond-guarantee changes",
+          "source_id": "clerk:119:2:271"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:272",
+      "shared_sha256": "8a916feb12bbb560554a96a430bdb1c1d42c891ca488c2cc33b70d70606177a7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole temporary continuing-appropriations package with its qualified medical, nutrition, IHS and TANF funding provisions",
+          "source_id": "clerk:119:2:272"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passing the whole temporary continuing-appropriations package with its qualified medical, nutrition, IHS and TANF funding provisions",
+          "source_id": "clerk:119:2:272"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:267",
+      "shared_sha256": "6a82b159bd95cf4341b71d753722fc7b3e02bc17826d275bc04ade465383e180",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the distinct amendment's purpose-defined TRICARE care-coverage and furnishing restriction with its stated exceptions, and removal of the sterilization qualifier from the separate under-18 contractual-care restriction",
+          "source_id": "clerk:119:2:267"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the distinct amendment's purpose-defined TRICARE care-coverage and furnishing restriction with its stated exceptions, and removal of the sterilization qualifier from the separate under-18 contractual-care restriction",
+          "source_id": "clerk:119:2:267"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:264",
+      "shared_sha256": "921f8d6118797c3dfefdfe470c87ce806b77b6462b4c9216e6a4968ad49826aa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the distinct FY2027 Defense Ukraine-security-assistance funding prohibition, including its U.S. embassy-security exception",
+          "source_id": "clerk:119:2:264"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the distinct FY2027 Defense Ukraine-security-assistance funding prohibition, including its U.S. embassy-security exception",
+          "source_id": "clerk:119:2:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:266",
+      "shared_sha256": "4339d9daa4417c044761f2eed50fc103289be07637d17d59ec3583a67b7d3632",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed giving EO14183 force of law, including its medical-fitness directions and conditional rescission of inconsistent transition-care guidance",
+          "source_id": "clerk:119:2:266"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported giving EO14183 force of law, including its medical-fitness directions and conditional rescission of inconsistent transition-care guidance",
+          "source_id": "clerk:119:2:266"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:278",
+      "shared_sha256": "3e70666d7bf2de294118d0f9dc7fec67db62d00211e7ab572f8c30a0d0b70684",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the amended FY 2027 defense package with its reviewed care, family-support, housing and veterans-health mechanisms",
+          "source_id": "clerk:119:2:278"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the amended FY 2027 defense package with its reviewed care, family-support, housing and veterans-health mechanisms",
+          "source_id": "clerk:119:2:278"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:28",
+      "shared_sha256": "927e462b68bd2109a5e055821508ece3c760a162b0deecf5a42d10a440a0fac3",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 financial-services and State package with its reviewed health-plan rules, global-health, nutrition and humanitarian funding and restrictions",
+          "source_id": "clerk:119:2:28"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 financial-services and State package with its reviewed health-plan rules, global-health, nutrition and humanitarian funding and restrictions",
+          "source_id": "clerk:119:2:28"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:42",
+      "shared_sha256": "5f10e260a1aeb7ef873733e8543b351c6d6d7ddbe02b79d773e555d77b94a2b0",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 DHS package with its reviewed custody-care, medical-licensing and emergency-assistance provisions and limits",
+          "source_id": "clerk:119:2:42"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the FY2026 DHS package with its reviewed custody-care, medical-licensing and emergency-assistance provisions and limits",
+          "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:262",
+      "shared_sha256": "9edcbd4dbbd31c9ce44192e52d91876977020868ee60af45b6708c2d3190c8d6",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the September2025 House defense package with its reviewed care-access provisions and restrictions",
+          "source_id": "clerk:119:1:262"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the September2025 House defense package with its reviewed care-access provisions and restrictions",
+          "source_id": "clerk:119:1:262"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:299",
+      "shared_sha256": "0142ebe30e3e4cbd5fce93efe770b27c0ea398dfb03ba749dad94a2bf49ce90d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the DC repeal-and-restoration bill with its qualified distribution-exception removal and preservedA/Sprovisions",
+          "source_id": "clerk:119:1:299"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the DC repeal-and-restoration bill with its qualified distribution-exception removal and preservedA/Sprovisions",
+          "source_id": "clerk:119:1:299"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:320",
+      "shared_sha256": "394f6c11ce49442e2c72de353ba27f7b38078f2447f17c22caf80de471734550",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the December2025 substituted defense package with its reviewed care-access and medical-surge provisions",
+          "source_id": "clerk:119:1:320"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the December2025 substituted defense package with its reviewed care-access and medical-surge provisions",
+          "source_id": "clerk:119:1:320"
         }
       ]
     }
