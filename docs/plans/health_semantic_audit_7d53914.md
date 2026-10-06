@@ -218,9 +218,11 @@ semantics. No current hard blocker prevents primary-evidence audit.
 
 ## Final reconciliation
 
-Pending. Final report must distinguish semantic audit, deterministic validation,
-corrections and evidence uncertainty. Candidate-quality verdict confers no
-acceptance or next-domain execution authority.
+Substantive audit complete: PASS WITH CORRECTIONS, candidate quality only.
+The final report and detailed receipts are in the two Health semantic audit
+review-packet files. The user-requested restart checkpoint below is historical.
+Final ending-SHA hosted CI is recorded in PR197 and the delivery after execution;
+no acceptance, publication, production or next-domain execution is authorized.
 
 
 ## User-requested restart checkpoint — October 5
@@ -267,3 +269,28 @@ jobs against the audit ending SHA. Then give the candidate-quality verdict,
 next-domain recommendation from the existing matrix only, and the requested
 17-field final report. Do not redo completed primary research or create a new
 goal. Do not emit the audit-ready line or mark the goal complete at this checkpoint.
+
+
+## Resumed audit reconciliation — October 5
+
+Resume supersedes the checkpoint pause. All requested primary, member-output,
+helper, replay and preservation work is complete. The focused public/persistence
+boundary test passed again: all three candidate entry points reject preparation.
+Audit narrative encoding was repaired without modifying governed source text.
+Corrected checkpoint5a523f8 hosted run37394493609 executed all nine jobs and passed;
+four old milestone-only scope steps were conditionally skipped, with no skipped
+or cancelled job. Final documentation is the only later change. The ending-SHA
+run must execute and pass before final delivery and goal completion.
+
+Verdict: PASS WITH CORRECTIONS.13 defect issues:0Critical,9Major,4Minor.
+Across30 new actions, highest original severities are13Major,10Minor,7NoDefect;
+22 noncounting samples showed no defect. Both dependencies remain appropriately
+unresolved. Five package judgments are A and45 is B with its retained summary
+safely qualified. The complete shared-subject recurrence was checked across115
+actions, and the surgical-scope cluster includes distinct267/262 versions.
+
+The next recommendation is Immigration & Border bounded discovery and exact-
+version review, using the existing September17 coverage matrix only. Its small
+public receipt coverage, useful scope and Justice/DHS source reuse make a
+tractable next candidate milestone. Historical14 passage/18 control leads are
+not accepted current evidence. No next-domain research was begun.
