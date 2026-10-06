@@ -6289,10 +6289,376 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:95",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "95",
+        "legis-num": "H J RES 139",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "18-Mar-2026",
+        "action-time": "5:34 PM",
+        "vote-desc": "Proposing an amendment to the Constitution of the United States requiring a balanced budget for the Federal Government"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: actual March18 failed suspension and complete Record six-section text agree with RH. The citizen-population quantity adjusts a fiscal ceiling; the proposal does not define or confer citizenship, prescribe status proof, admission or a status-qualified personal entitlement. Ratification and fiscal waivers remain distinct from governing immigration. Candidate exclusion retained; lack of EH after failed suspension is not unavailable evidence.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "ae9cf304a8f50a89f5fb497356a2ca62253ca49729435a6203f5614051309d28",
+      "corrected_review_record_sha256": "ae9cf304a8f50a89f5fb497356a2ca62253ca49729435a6203f5614051309d28",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:95",
+          "url": "https://clerk.house.gov/evs/2026/roll095.xml",
+          "governed_bytes_sha256": "d81fc77cc0368d7ebc9c756a8af613a9c30e44dea3fb20da8b9b3ad36f0aad4f",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hjres139rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres139rh/html/BILLS-119hjres139rh.htm",
+          "governed_bytes_sha256": "0d752226ab1d413016194bf2b60e0176a6d36d6f018dd416252be79c46ce9984",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "congressional-record:2026-03-18-hjres139",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-18/html/CREC-2026-03-18-pt1-PgH2560-8.htm",
+          "governed_bytes_sha256": "acbf0b3a6debd67c53c679fa5195bc207ead4110d6747452236f743bbe9e0b29",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:97",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "97",
+        "legis-num": "H R 6422",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "24-Mar-2026",
+        "action-time": "6:56 PM",
+        "vote-desc": "American Water Stewardship Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: complete March24 EH restoration/grant/testing/reports. Exact8 imports ONLY19237country definition, then applies organization/headquarters/business/domicile/project geography. Paragraph3foreign-entity and paragraph4malign-talent definitions, despite immigration words elsewhere in that section, are not incorporated. No personal immigrant-status predicate or right is changed. Geographic entity funding restriction supports candidate exclusion.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "5fb00b38cee3d2491bea16a631c94638f59795c90b5f8d0c24db070be9d8b40c",
+      "corrected_review_record_sha256": "5fb00b38cee3d2491bea16a631c94638f59795c90b5f8d0c24db070be9d8b40c",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:97",
+          "url": "https://clerk.house.gov/evs/2026/roll097.xml",
+          "governed_bytes_sha256": "c3674cb7fa4095a81e3b26bad4ad9bc50cd42d0fde701f80649cf6bac9fb6ecf",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hr6422eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6422eh/html/BILLS-119hr6422eh.htm",
+          "governed_bytes_sha256": "91ea81fa45068925f076d6d71d24a28d6cf39cc431542c0a222c289870e75e30",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:42usc19237-country-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partC-sec19237.htm",
+          "governed_bytes_sha256": "e9c066c82c0a515862e2aa8f5ac25bb64001c5cbc9ca495c8229bb0409f5e81a",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:33usc1346-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1346.htm",
+          "governed_bytes_sha256": "23e01323bfc59b77ea77c8704a830750fdb22266f4ead077f93d6b14346afae8",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:289",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "expressive_nonbinding_context",
+      "current_disposition": "expressive_nonbinding_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "289",
+        "legis-num": "H RES 1490",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "1-Sep-2026",
+        "action-time": "5:47 PM",
+        "vote-desc": "Providing for the condemnation and denouncement of socialism in all its forms, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: September1complete1490EH and Clerk agreement. Resolved(1)-(5) are denunciation/reaffirmation/reiteration/recommitment/CALLFORenactment. Citizen-voting/SAVE statements make domain context expressive; they do not enact S1383, establish allegation truth, alter eligibility, or give a new directional governing observation. Compare actual HR22 legislative choice and1438post-passagepackaging without importing either meaning. Candidate expressive noncounting disposition retained.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "b53ded9b31de126c2a47391833c3bb862db99a2b0947d7b338eb125734d85663",
+      "corrected_review_record_sha256": "b53ded9b31de126c2a47391833c3bb862db99a2b0947d7b338eb125734d85663",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:289",
+          "url": "https://clerk.house.gov/evs/2026/roll289.xml",
+          "governed_bytes_sha256": "423c3c3eefdfe9a75343901ac032f620bf6fce4a458bc393ec160db7a4f2383b",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres1490eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1490eh/html/BILLS-119hres1490eh.htm",
+          "governed_bytes_sha256": "568428f0b87c7f05877ddcd168287880dd3e84ef0c0f3839ae77c2dc699feda7",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:344",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "344",
+        "legis-num": "H RES 953",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "17-Dec-2025",
+        "action-time": "11:06 AM",
+        "vote-desc": "Providing for consideration of the bills (H.R. 6703) Lower Health Care Premiums for All Americans Act; (H.R. 498) Do No Harm in Medicaid Act; and (H.R. 3492) Protect Children’s Innocence Act; and relating to consideration of the bill (H.R. 4776) SPEED Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: complete953EH is pending bills, debate/recommit/offeredamendment, plus a specific NEPA administrative-correction savings amendment during consideration. Consideredasadopted applies to an amendment in a pending bill, not direct finalpassage/concurrence. No parent health/criminal immigration meaning is inherited; procedural candidate retained.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "da2a871d99f69fe72bdea33fb5514e4d5546dc1bc22128b0af7bf5451cf62fe2",
+      "corrected_review_record_sha256": "da2a871d99f69fe72bdea33fb5514e4d5546dc1bc22128b0af7bf5451cf62fe2",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:344",
+          "url": "https://clerk.house.gov/evs/2025/roll344.xml",
+          "governed_bytes_sha256": "5a423ee3ee3dc23d90c0052865486bee0ec7a0ce9747962bca5433c5607a6f28",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres953eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres953eh/html/BILLS-119hres953eh.htm",
+          "governed_bytes_sha256": "45cf2ae5f24d6266b0e695ab04243d01a17922b499d66001e6cc109c33377ab1",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:99",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "99",
+        "legis-num": "H RES 1131",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "25-Mar-2026",
+        "action-time": "2:06 PM",
+        "vote-desc": "Providing for consideration of (H.R. 8029) Pay Our Homeland Defenders Act; (H.R. 5103) Make the District of Columbia Safe and Beautiful Act; (H.R. 7084) Defending American Property Abroad Act; and (H. Res. 1128) Expressing the Support of the House of Representatives for the Department of Homeland Security"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: complete1131EH prepares8029/1128/5103/7084 for separate final choices. Section5extends707section8; reading707then354section5 resolves this to legislative-day treatment under ruleXIII7. Not an extension of immigration status, DHS funding or an emergency. Procedural candidate retained; different from1142literal direct final concurrence.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "e4ba0f7e47877c4b220036e2aed92eb2e7d5a58cd3cd5888399819fbdd59d6f1",
+      "corrected_review_record_sha256": "e4ba0f7e47877c4b220036e2aed92eb2e7d5a58cd3cd5888399819fbdd59d6f1",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:99",
+          "url": "https://clerk.house.gov/evs/2026/roll099.xml",
+          "governed_bytes_sha256": "9e589a26be1a5c691fd3f9860df40700f93fc62a663b32e4db23a219fe2e9b98",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres1131eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm",
+          "governed_bytes_sha256": "f1634cfbdfae95cdf268588b07453ded0778abd1fe228e6056414a4740c8fd5b",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres707eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres354eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres354eh/html/BILLS-119hres354eh.htm",
+          "governed_bytes_sha256": "f3a7e01da2e874da7c351f86ed7dd7d5965f8d4f2573555a1e621c19f2601397",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:288",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "288",
+        "legis-num": "H RES 1499",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "1-Sep-2026",
+        "action-time": "2:20 PM",
+        "vote-desc": "Providing for consideration of the bills (H.R. 1501, H.R. 9436, and H.R. 4795); providing for consideration of the resolution (H. Res. 1490); and relating to consideration of motions to suspend the rules"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate primary reconstruction: complete1499EH prepares1501/9436/1490/4795 and extends SupremeCourt suspension debate. RCP and committee substitutes are considered adopted into pending measures; no full bill is deemed passed or concurred.1490expressive and potential4795academic eligibility require their own exact choices. Procedural candidate retained.",
+      "finding": "Separate primary-source reconstruction supports the exact functional exclusion or noncounting boundary; no earlier domain conclusion used.",
+      "correction": null,
+      "before_review_record_sha256": "ada0b1fb8490cc733489546ff73fc0aafc49b5373c5c28a6c0e408b7c6d92c15",
+      "corrected_review_record_sha256": "ada0b1fb8490cc733489546ff73fc0aafc49b5373c5c28a6c0e408b7c6d92c15",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:288",
+          "url": "https://clerk.house.gov/evs/2026/roll288.xml",
+          "governed_bytes_sha256": "34abff40aecc992304d6db2be8051a5fe7577aeff6e3724fc338986d582204dc",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        },
+        {
+          "source_id": "govinfo:hres1499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1499eh/html/BILLS-119hres1499eh.htm",
+          "governed_bytes_sha256": "ee2f95bff4ee0069cff97d06b6c9127cf25857038f2911cb9391fbd0e83490ec",
+          "reviewed_extent": "Complete exact primary body and explicitly identified material incorporated provision; contextual preambles and unrelated definitions do not supply operative meaning."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 69,
+    "No Defect": 75,
     "Minor": 2,
     "Major": 7,
     "Critical": 1
@@ -6328,7 +6694,8 @@
     "Direct operativeCommissionrecommendationsversusrhetoric, andexplicitFederalimmigrationbail-businessdefinitionversusgenericcriminalbailreport. PreserveexactincorporatedEOsectionratherthanimportallparentpassportcommands; separatelegislativechoicefromresolvedNotVotingstatus.",
     "DirectfinalwholeHousereplacementversusunamendedSenateconcurrenceorconsideration-onlyrule;residualCRouterdateversusannualDHSfunding,earlierprojectendpointsandfixedprogramsunsets. PreserveprintedFeb14lapseratherthanparallelbillFeb13wording.",
     "AnnualDHSappropriation/statutory/reportscopeversuswholeCRreplacement;exactJanuaryIH/1014as-votedtextbefore1016correction,Januarypre-Feb3baselineversusvalidMarchpost-Feb3baseline,andone7147episodewithMassiemixedofficialdirections. FinaltableversusHousePROPOSALcolumn/numberedrider is an explicitaudit lens.",
-    "Foreigncountrymilitaryeducation/classifiedclearance/investment controls do not bythemselves defineimmigrationstatus; exactreportamendment-author numberdiffersfromfloorordinal. EOdefinitionincorporationnotwholeparentpassportpolicy.1438postpassageS1383packagingnot1142directfinaladoption."
+    "Foreigncountrymilitaryeducation/classifiedclearance/investment controls do not bythemselves defineimmigrationstatus; exactreportamendment-author numberdiffersfromfloorordinal. EOdefinitionincorporationnotwholeparentpassportpolicy.1438postpassageS1383packagingnot1142directfinaladoption.",
+    "Citizen aggregate fiscal population is not personal immigration eligibility; country-only incorporation does not import other alien/person definitions; calls to enact SAVE remain expressive. Pending substitute adoption differs from direct final concurrence, and extended legislative days are not an immigration extension."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -6339,15 +6706,15 @@
   "final_verdict": null,
   "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
   "sample_coverage": {
-    "original_exclusions_reviewed": 33,
-    "retained_exclusions_reviewed": 32,
-    "procedural_controls_reviewed": 11,
-    "expressive_controls_reviewed": 1,
+    "original_exclusions_reviewed": 35,
+    "retained_exclusions_reviewed": 34,
+    "procedural_controls_reviewed": 14,
+    "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
     "focused_tests": 217,
-    "focused_runtime_seconds": 38.407,
+    "focused_runtime_seconds": 37.992,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -6355,10 +6722,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "ade547db3dfc0f5d0e87ad5bd25dfdfbbb31b779",
+      "head": "7bcf586fb32e59b6de710c8a993dc5668ab09993",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37439868561"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37442227327"
     }
   },
   "open_legal_interactions": [

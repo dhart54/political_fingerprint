@@ -1459,3 +1459,40 @@ passes all nine hosted jobs:
 https://github.com/dhart54/political_fingerprint/actions/runs/37439868561.
 Current-head CI follows push. Continue ordinary source review under the unchanged
 overnight deadline. This checkpoint is not terminal and creates no shutdown marker.
+
+
+### Checkpoint 20: short operative boundaries and all expressive choices
+
+Fifteen additional exact screenings distinguish a citizen-population fiscal formula
+from personal immigration eligibility; water-project entity/country geography from
+status; tax-whistleblower remedies, shrimp-project finance, standard time and general
+procurement from person-border mechanisms. The failed constitutional suspension is
+corroborated by its complete Clerk-read proposal. Country-only incorporation does
+not import unrelated foreign-entity/talent definitions. Complete material provisions
+are source-mapped with bounded extents. A failed standalone procurement URL was
+rejected, not ingested; the existing exact primary definition was independently
+corroborated in the official title-level capture. Unrelated title text stays provisional.
+
+Seven rules remain procedural after complete direct-final screening, including
+pending substitute adoption, an exact NEPA savings amendment and legislative-day
+extensions. H.Res. 1490's resolved call to enact SAVE America is the second expressive
+Immigration context: it does not enact SAVE, alter eligibility or establish allegations.
+The unrelated Iran policy declaration is excluded on its exact mechanism.
+
+439 governed reviews: 35 interpreted, 210 procedural, 192 excluded, two expressive;
+237 ordinary screenings unfinished. Meanings, 33 episodes, 70 observations, 64
+readable/IR findings and core/IR hashes are unchanged. 1,139 governed sources:
+949 unchanged Health reuses and 190 new; 344 claim witnesses; 95 provisional captures.
+All 35 meanings and both expressive contexts have separate same-owner primary
+reconstruction/comparison. Six more controls give 85 distinct assessments:
+1 Critical/7 Major/2 Minor/75 No Defect. Thirty-five original exclusions reviewed,
+34 retained exclusions and fourteen procedural controls. Sixteen legal interactions
+remain. No final audit PASS, independent second reviewer or universe closure.
+
+217 focused tests pass in 37.992 seconds; seven semantic checks and seven byte-identical
+outputs pass. Actual unchanged outputs, source/audit/accounting, fail-closed boundaries,
+protected baseline and clean diff inspected. Previous exact head
+7bcf586fb32e59b6de710c8a993dc5668ab09993 passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37442227327.
+Current-head checks follow push. Continue source work under the unchanged overnight
+boundary; this is an intermediate checkpoint, with no terminal marker.
