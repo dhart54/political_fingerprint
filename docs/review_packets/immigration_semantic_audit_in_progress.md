@@ -2999,3 +2999,84 @@ Green CI did not detect the semantic Major. Current exact correction CI
 follows push. Continue preserved EOIR candidate, remaining DOJ/reimbursement/
 removal and packages/screens. Existing .w/ib owner and historical markers
 preserved; no current shutdown or merge/deployment/production/editorial authority.
+
+
+## Checkpoint 55: EOIR and State-incarceration funding on corrected FLETC state
+
+Resumed the preserved additive EOIR/incarceration candidate on
+1ac6e7d82082f88ad5747c299e0e1ceaf9fe9593. Current authoring exactly equals
+the saved candidate plus both FLETC law-enforcement actor repairs. All 13
+original snapshot raw hashes remain intact. Original uncommitted receipt
+also preserved in the snapshot; current receipt records corrected-head
+lineage and new validation. No old FLETC copy restored or unrelated work
+altered. Bonus and all previous child/senior/other corrections remain in
+both member projections/readables. FLETC independent repair recheck pending.
+
+House 70100 separately adds EOIR $1.25 billion for fiscal year 2025, until
+September 30, 2029, only for immigration judges, support staff and courtroom
+capacity/infrastructure. It does not import the Senate staffing cap.
+House 70111 separately adds DOJ $950 million on those dates only for the
+specified State/political-subdivision incarceration compensation. Senate
+100054 instead provides one additional DOJ $3.33 billion envelope for fiscal
+year 2025 through September 30, 2029, including selected EOIR, Byrne/COPS
+and incarceration purposes, without House earmarks. Its effective November
+1, 2028 ceiling is not more than 800 immigration judges plus necessary
+support, not a minimum, actual workforce, inferred cuts or backlog outcome.
+
+Both compensation clauses require a felony conviction or at least two
+misdemeanor convictions in every case, plus one complete alternative:
+entry without inspection or at an undesignated time/place; removal proceedings
+at State/local custody time; or nonimmigrant admission plus failure at custody
+time to maintain admitted/changed status or its conditions. No charge, one
+misdemeanor or generic alien-status shortcut. Every printed entity funding
+exclusion and law-compliance/cooperation/status-information activity remains;
+no actual State disqualification, constitutional/enforceability acceptance,
+new crime, local removal power or individual conviction/status/custody finding.
+
+New full pre-vote 1231(i) extent preserves original chief-executive written
+request, AG compensation-contract or federal-custody alternative, cost basis,
+complete criminal/status definition, priority/security, dated authorizations
+and correctional-purpose limits. Original AG/exclusion/deportation wording
+differs from new DHS/removal text. No first-ever authority or actual award;
+old-route fields not silently imported into new self-contained appropriations.
+Complete reused 1373 retains agency/information categories and authorized-law
+inquiry purpose, original INS wording and transfer note. Immigration-laws
+definition retains laws/conventions/treaties without new independent powers.
+
+Question 46 reserves the precise Senate 100054(5)(B)/(C) and (7)(C)
+under-this-subsection scope for community-violence funding, AG-determined
+1373 eligibility and more-than-one-State distribution. Section uses numbered
+purposes rather than expressly lettered subsections. Keep exact words and
+locations; obtain independent source-grounded application review before
+whole-account or nearby-purpose-only claims. Alternatives and safe parallel
+remaining research recorded. This does not turn unfinished application
+research into unavailable evidence or an ordinary screening disposition.
+
+Eight new bindings, two qualification hashes, two House comparisons and
+resumption provenance sealed in hr1_eoir_incarceration_funding_review.json.
+Complete floor/EH 70100 and 70111 are raw-equal; no 492 target or 499 additional
+selected correction. One new governed 1231(i) extent matches its original
+full capture; all 1,285 earlier sources and 37 other actions unchanged.
+Complete primary sources versus owning copy and unchanged compact inspected.
+230 established aggregate tests pass in 40.821 seconds, including 41 candidate
+tests; seven semantic checks, seven-file raw byte replay, 172 extents,
+990 unchanged Health sources, all previous repairs/both members, source/
+qualification/snapshot/audit hashes, queue/accounting and candidate/publication
+isolation verify. Final diff reviewed. Tests do not prove semantic truth.
+Core 9904c1793419d4ca3a46d17c9dbd472e8d9b6b0e7575bd8970aca721aa03dab7.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged; approval-lineage follow-up retained.
+
+1,286 sources, 737 bindings, 263 captures and 46 separate application questions.
+Stable 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings (Foushee 36/Massie
+34). Remaining 221 screenings and TWO partial H.R.1 reviews. Same-owner audit
+partial, final verdict null. No new independent component verdict or package
+acceptance. Original-host 1994 acquisition and grant matching remain open;
+parent bounded search finished, no acquisition worker currently running.
+Exact correction CI 37542352494 has five successful jobs and four pending,
+no failure reported; checkpoints 52/53 all nine successful. Current exact CI
+follows push. Next: House 70121/70122 versus Senate DOJ purposes, distinct
+100055 reimbursement predicates/dates, remaining exact removal amendments,
+then continuing/omnibus/NDAA and screenings. Existing .w/ib owner and
+historical markers preserved; no current shutdown or production/editorial
+acceptance, promotion, publication, merge or deployment authority.
