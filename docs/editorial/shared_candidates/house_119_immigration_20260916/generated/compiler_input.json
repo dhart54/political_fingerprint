@@ -73,6 +73,12 @@
           "status": "Nay"
         },
         {
+          "action_id": "house:119:2:94",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:96",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -83,6 +89,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:214",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -157,6 +169,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:2:94",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
           "action_id": "house:119:2:96",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -167,6 +185,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:214",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         }
       ]
     }
@@ -436,6 +460,42 @@
         }
       },
       {
+        "action_id": "house:119:2:94",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:94:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact H.R.1958 EH proposal adds INA 212(a)(2)(J) inadmissibility and 237(a)(2)(G) deportability for an alien convicted of, admitting commission of, or admitting acts constituting the essential elements of any listed offense. Both clauses allow specified admissions, despite the title's conviction-only wording. The list is: SNAP offenses under 7 USC 2024; Social Security Act 208/42 USC 408 offenses;18 USC 666 theft/bribery concerning federally funded programs;1028 identification-document/authentication/identity offenses;1031 major federal fraud; any offense under title 18chapter 63;371 federal-offense/government-fraud conspiracy; any other offense involving defrauding the United States Government or unlawful receipt of a defined Federal/State/local public benefit; and conspiracy to commit any of those. These incorporate criminal offenses with their own elements, not every administrative overpayment, eligibility mistake, suspicion or civil injunction. The enumerated statutes are not narrowed by the bill's government-fraud title: chapter 63 includes mail/wire/bank fraud, health-care fraud, securities/commodities fraud, qualifying false corporate financial certification, foreign labor-contracting fraud, foreign-official bribery and attempts/conspiracies. Its civil injunction and definition provisions are not themselves new criminal offenses. A healthcare-benefit program under 18 USC 24 can be public or private and must affect commerce. The predicate statutes retain material qualifications. SNAP knowing unauthorized-use/presentation crimes include low-value misdemeanors, with value-based penalty tiers; the bill adds no felony-only or universal loss threshold. Section 666 requires the stated$5,000 property/transaction threshold and an entity receiving more than$10,000 federal-program benefits in the specified year, and excludes ordinary-course bona fide compensation/expenses. Section 1031 requires knowing execution/attempt with the specified fraud intent in federal assistance/procurement valued at least$1 million, not necessarily$1 million loss. Section 1028 retains its identified knowing/intent predicates, document/commerce/mail/federal nexus (including the five-or-more document/feature condition for 1028(a)(3)) and authorized investigative/protective/intelligence exceptions. Section 371 requires at least two conspirators and an act to effect the object. Section 408 retains its distinct false-statement/conversion/identity/number/disclosure offenses and narrow legacy-adjustment prosecution exception, with its specified carveouts; that prosecution exception is not represented as blanket immunity from the new INA clauses. The benefit catchall uses 1611(c)/1621(c) definitions encompassing specified grants/contracts/loans/licenses and household/individual retirement, welfare, health, disability, housing, education, food, unemployment or similar assistance. Their employment-related nonimmigrant/compact, treaty-benefit and foreign-professional-license exceptions remain; State/local benefit also excludes Federal benefit under 1611(c). The catchall requires an offense involving unlawful receipt, not merely receipt by a noncitizen, and does not itself repeal those definitions' exclusions. Section 2(c) makes a person described in the newJ orG ineligible for any relief under the immigration laws, expressly including PublicLaw 105-277 section 2242. That incorporated statute implements the policy against involuntary return where substantial grounds indicate danger of torture, with its stated treaty/reservation, exclusion and review conditions. The bill expressly seeks a broad relief bar rather than merely new admission grounds; no actual return to torture, individual adjudication or conclusion about treaty/constitutional enforceability is inferred. INA 101's immigration-laws definition includes relevant laws, conventions and treaties. The relief clause expressly identifies INA 212(a)(2)(J) but prints 8 USC 1128 in its parenthetical; that citation irregularity is preserved and disclosed, not silently repaired. The offenses and existing criminal INA grounds predate this proposal; the new clauses add immigration grounds and a separate relief bar. Existing moral-turpitude/aggravated-felony conditions are not treated as thresholds for these new clauses, and their narrow waivers/exceptions are not represented as overriding the new relief bar. Whole-bill passage does not establish guilt, actual denial/deportation, a component preference or enactment.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1958:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:94",
+          "govinfo:hr1958eh",
+          "govinfo:7usc2024-2024-fraud-predicate",
+          "govinfo:42usc408-2024-fraud-predicate",
+          "govinfo:18usc666-2024-fraud-predicate",
+          "govinfo:18usc1028-2024-fraud-predicate",
+          "govinfo:18usc1031-2024-fraud-predicate",
+          "govinfo:18usc371-2024-fraud-predicate",
+          "govinfo:8usc1101-2024-immigration-laws",
+          "govinfo:farra2242-1998-operative",
+          "govinfo:18usc-chapter63-2024-fraud-predicates",
+          "govinfo:8usc1611-2024-benefit-definition",
+          "govinfo:8usc1621-2024-benefit-definition",
+          "govinfo:18usc24-2024-health-benefit-definition",
+          "govinfo:8usc1182-2024-hr30-context",
+          "govinfo:8usc1227-2024-hr30-context",
+          "govinfo:8usc1101-2024-conviction-context",
+          "govinfo:8usc1101-2024-aggravated-felony"
+        ],
+        "structural_metadata": {
+          "stage_order": 20094
+        }
+      },
+      {
         "action_id": "house:119:2:96",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:96:candidate-v1",
         "eligibility": {
@@ -480,6 +540,39 @@
         ],
         "structural_metadata": {
           "stage_order": 20120
+        }
+      },
+      {
+        "action_id": "house:119:2:214",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:214:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact Senate-engrossed S.2 proposal before the House is a complete reconciliation appropriations package. Each appropriation is additional fiscal 2026 Treasury funding, available until September 30,2029. TitleII section 201 appropriates$13.020 billion to the CBP Commissioner for agents/support staff and mission/operation expenses to conduct immigration enforcement. Section 202 appropriates$31.075 billion to the ICE Director for immigration-enforcement personnel; departure/removal transportation; enforcement/removal IT, fee-collection and body-camera improvements; facility/fleet maintenance;287(g) coordination; Principal Legal Advisor attorneys/support for enforcement/removal proceedings; and mission support/operations, including awards. Those sums are appropriations the bill would make upon enactment, not proof of spending, deployments or removals. Within section 202, paragraph 9 sets aside at least$350 million for existing-law detainer management/issuance, custodial transfer, release monitoring, transportation and arrests of defined covered unlawful aliens encountered in non-qualified-cooperating jurisdictions. Indian tribal governments cannot be treated as such non-qualified jurisdictions for this paragraph. A qualified jurisdiction is a State/subdivision that, as of enactment, either has an effective written 287(g) agreement or has effective and filed certification of compliance with 8 USC 1373/1644, in the Secretary's prescribed form. This criterion is not a finding that a jurisdiction or resident has acted unlawfully. The covered definition is an adult alien meeting any of five alternatives: described inINA 236(c)(1); criminal inadmissibility under 212(a)(2); criminal deportability under 237(a)(2); a DHS detainer/notice/custody-transfer request under 236,241(a) or 287 following arrest/charge/booking/conviction for a Federal/State/local criminal offense other than a minor traffic offense; or charge/conviction for 275/276 improper entry/reentry. It does not require conviction for every alternative or cover every alien merely by that label. Section 236(c) is read with the enacted January 2025PublicLaw 119-1 custody addition rather than frozen 2024text alone. The paragraph 9 funds cannot be used for release, parole, alternatives to detention, release transportation or other facilitation of community release of a covered person, except as required by existing law. This is a restriction on that paragraph's funds, not a repeal of every existing release/relief requirement or an instruction to detain every noncitizen. TitleII 203 separately appropriates$2.5 billion to the DHS Secretary for TitleII purposes or PublicLaw 119-21section 100051(3)/(7): qualified DHS/State personnel assignments underINA 103(a)/287(g), and State/local homeland-security participation including criminal gangs, public safety, smuggling/trafficking, immigration enforcement and reimbursement. It adds funding for retained legal authorities rather than creating those powers. TitleI 101 appropriates$9.55 billion to the CBP Commissioner for Border Patrol agents/support personnel for functions other than immigration-enforcement/customs; those funds cannot recruit/hire/train processing-coordinator duties after October 31,2028. TitleI 102 appropriates$7.45 billion to the ICE Director for HSI agents/support, mission support and operations/maintenance, excluding HSI immigration/customs-enforcement missions;$108.5 million within that amount is directed to specified child-exploitation investigators/forensics personnel, equipment and training. These exclusions are not applied to TitleII's explicit immigration appropriations. TitleI 103 appropriates$3.45 billion to the CBP Commissioner for specified border inspection/drug-interdiction equipment and associated works, air/marine platforms, surveillance, deployment of technology for the existing 1365b biometric entry/exit system, drug trafficking/fentanyl/precursor efforts, and non-immigration/customs mission support/operations. It bars those funds from southwest/northern-border surveillance towers not tested and accepted by CBP to deliver defined autonomous capabilities. Autonomous means real-time algorithmic detection/identification/classification/tracking with operational adjustments without active personnel engagement or continuous human command/control. The existing entry/exit system's legally covered traveler categories, accuracy/integrity and correction safeguards remain; the bill does not create a universal new biometric-eligibility rule. TitleI 104 adds a separate$2.5 billion to the DHS Secretary for TitleI purposes. Independent Immigration membership follows explicit immigration enforcement/removal/cooperation funding and direct entry/exit/border-operation mechanisms, not merely DHS labels. This whole-package passage choice does not establish separate positions on every account, exclusion, criminal-investigation program, technology or release provision, or any actual enforcement, spending or enactment.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:s2:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:214",
+          "govinfo:s2es",
+          "govinfo:8usc1365b-2024-s2-biometric-system",
+          "govinfo:8usc1103-2024-s2-enforcement",
+          "govinfo:pl119-21-100051-border-incorporation",
+          "govinfo:8usc1357-2024-dc-context",
+          "govinfo:8usc1373-2024-complete",
+          "govinfo:8usc1644-2024-complete",
+          "govinfo:8usc1226-2024-laken-context",
+          "govinfo:pl119-1-section2",
+          "govinfo:8usc1182-2024-hr30-context",
+          "govinfo:8usc1227-2024-hr30-context",
+          "govinfo:8usc1325-2024-operative",
+          "govinfo:8usc1326-2024-operative",
+          "govinfo:8usc1231-2024-laken-context"
+        ],
+        "structural_metadata": {
+          "stage_order": 20214
         }
       }
     ],
@@ -573,6 +666,14 @@
         "policy_family_id": null
       },
       {
+        "episode_id": "episode:hr1958:119",
+        "action_ids": [
+          "house:119:2:94"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
         "episode_id": "episode:hr4638:119",
         "action_ids": [
           "house:119:2:96"
@@ -584,6 +685,14 @@
         "episode_id": "episode:hr1689:119",
         "action_ids": [
           "house:119:2:120"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:s2:119",
+        "action_ids": [
+          "house:119:2:214"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

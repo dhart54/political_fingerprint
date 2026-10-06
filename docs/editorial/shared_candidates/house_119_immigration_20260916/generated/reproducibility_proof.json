@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "040050ac63f67da48dea1af273046aa5905c1a609ddcb6edde9bcd76fedac7ad",
-  "source_capture_sha256": "33294bf8c12cb87519a6171761b2724536e1869ea80250e87ad952445379ace7",
-  "core_sha256": "f4ed3d64d547f50b6beddd110cdde20a9ccbb1dab3fdc8771517d945db7612cc",
-  "compiled_sha256": "9dc25d6c63acf0a4c88b0bdd6341ba72692255faa7833c3f64805cbaf14be9b8",
-  "readable_sha256": "b2d25931720f4ce0087f363a6b50fe9d58d71ff3de702b78601c3458230e1326",
+  "input_sha256": "f479455923627be81c7388aa459d7422125858c0767d03ecc83063f0dac8467e",
+  "source_capture_sha256": "44e8477cc7e779b033059307cf38f0845a8026819351ade0b960901fb593eb54",
+  "core_sha256": "b6ef0c1bfc5d54de579217ce726dc8f99f6d8d9d959acc9347328c0ea513e1e2",
+  "compiled_sha256": "1a2bdf70dffacb925d47d4422462b5b54a8eb343ae0d689b63e6dcfa26252c6e",
+  "readable_sha256": "cae063009332adb7c1e00270f9fd597ac5dc3d4fac016b0037accbcfc99d54a4",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -237,6 +237,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:94",
+      "shared_sha256": "bcf966b9108ab25eba3886c8dc8f457a31f46f3a2b973e7f399f1a6547b0dc24",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1958 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:2:94"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1958 with its specified-offense inadmissibility/deportability grounds and express broad immigration-relief bar",
+          "source_id": "clerk:119:2:94"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:96",
       "shared_sha256": "e21f4484da8177e90301abf6edfe990de4c6281855ad5c633f432594c6db5cb5",
       "choices": [
@@ -273,6 +293,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of H.R.1689 with that designation mandate; no preferred alternative is established",
           "source_id": "clerk:119:2:120"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:214",
+      "shared_sha256": "b9c6aba5c7faa643019083cb7c7c23131072bd8072f3aa3200180d860fbff09f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of S.2 with that package; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:2:214"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of S.2 with its complete qualified immigration and other border/DHS appropriations package",
+          "source_id": "clerk:119:2:214"
         }
       ]
     }

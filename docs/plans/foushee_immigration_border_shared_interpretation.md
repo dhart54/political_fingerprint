@@ -249,6 +249,56 @@ universe/membership pair.
   H.R.1958's enumerated offenses/relief bar, H.J.Res.72's actual rescinded rule,
   and S.2's exact appropriation purposes/exclusions and incorporated authorities.
 
+### Checkpoint 5: historical seed reconciliation and additional package sources
+
+- Twelve reviews beyond checkpoint4 bring the ledger to220:15 interpreted,
+  169procedural,35excluded,1expressive context;456 ordinary screenings remain.
+  Every historical M13A32 lead now has a supported candidate disposition:
+  13interpreted,15procedural,1expressive,3excluded. Two substantive additions
+  outside the seed remain H.R.23/H.R.35; the wider September16 discovery is open.
+- Historical proposed-substantive H.J.Res.72 becomes an exact-action exclusion.
+  Its exact February1 Canada emergency/order is independently read with the NEA,
+  IEEPA, earlier southern-border proclamation and pre-vote continuation notice.
+  Immigration rhetoric does not import a parent proclamation's separate military/
+  detention/barrier directives into the narrower economic-emergency termination.
+  This is an unapproved candidate boundary judgment, included in the later audit.
+- New shared H.R.1958 EH meaning preserves conviction/admission predicates,
+  all seven incorporated criminal source families, benefit-definition exceptions,
+  monetary/nexus/intent exclusions, private-sector offense scope and the explicit
+  relief bar including FARRA2242. The bill's1128 parenthetical versus express
+  INA212 reference is disclosed rather than silently repaired. Preparation corrected
+  the408(e) legacy-conduct cutoff to its actual60days-after-November5,1990 wording.
+- New shared S.2 ES meaning preserves all seven appropriation purposes/amounts,
+  fiscal2026/September2029 availability, separate TitleI non-immigration use
+  exclusions, processing-coordinator cutoff, autonomous-tower restriction,
+  within-account set-asides, adult alternative predicates, enactment-date
+  jurisdiction conditions, Tribal exception and existing-law-required release
+  exception. Existing biometrics/cooperation/custody authorities are distinguished
+  from new money; the enacted119-1 addition is read with the2024 custody baseline.
+- Six remaining historical rule controls preserve deemed pending-bill amendments
+  and separate final-passage boundaries. H.Res.965's exact TPS substitute and
+  after-passage message condition do not create a duplicate finding. H.Res.530
+  has only an RH text edition on Congress.gov; Clerk and official action history
+  confirm it passed without amendment. An initial local metadata assumption of
+  failed adoption was corrected before canonical ingestion. Missing EH does not
+  establish failure. Its voted text/outcome are separately grounded.
+- Historical energy-facility crossing and Haiti-article customs exclusions are
+  independently confirmed. H.Res.1128 remains noncounting broad-DHS funding
+  expression; it makes no appropriation or independent substantive Immigration
+  claim, and no ICE-only component preference or preamble allegation is adopted.
+- Sources:787 canonical objects;666 unchanged Health-governed reuses (588Clerk,
+  78operative) and121new (88Clerk,30statutory,2executive,1reported-rule capture).
+  There are125 claim/source witnesses and34 full local research captures in the
+  manifest. Fifteen separate authored episodes yield30 official observations and
+  29findings: Foushee12opposition/3support; Massie13support/1opposition/1Present.
+  Both readable outputs and seven-file byte replay inspected. No accepted baseline
+  object changed. Internal source-first audit and wider discovery remain pending.
+- Seven canonical semantic checks and202focused tests pass (32.684seconds).
+  Historical seed reconciliation is machine-readable and source/digest bound.
+  Prior exact-head
+  3e8f26f1534a2d3e488634f4cb0d6f7196499dcb passed all nine hosted backend jobs:
+  https://github.com/dhart54/political_fingerprint/actions/runs/37408178473.
+
 ### Overnight execution envelope
 
 The user's October 5 overnight instruction governs this active goal without
