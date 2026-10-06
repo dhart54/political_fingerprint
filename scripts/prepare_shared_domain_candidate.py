@@ -35,6 +35,89 @@ def validate_sources(sources):
             raise ValueError(f"governed source changed: {source['source_id']}")
 
 
+def validate_deemed_concurrence(proposed, sources, congress):
+    """Bind a resolution's direct concurrence to its operative clause.
+
+    This candidate-input adapter uses the existing concurrence stage. A
+    resolution label or generic agreement question cannot establish meaning.
+    """
+    witness = proposed.get("deemed_concurrence")
+    if witness is None:
+        return False
+    if (not isinstance(witness, dict)
+            or set(witness) != {"underlying_bill_number", "source_id", "passage"}
+            or proposed.get("bill_type") != "hres"
+            or proposed["stage"] != "suspension_and_concurrence"):
+        raise ValueError("invalid deemed-concurrence candidate binding")
+    number = witness["underlying_bill_number"]
+    if (not isinstance(number, str) or not number.isdigit() or int(number) <= 0
+            or proposed["episode_id"] != f"episode:hr{number}:{congress}"
+            or witness["source_id"] != proposed["source_id"]):
+        raise ValueError("deemed concurrence must bind the underlying bill episode")
+    source = sources[witness["source_id"]]
+    clause = (
+        "Resolved, That upon the adoption of this resolution the House shall be "
+        "considered to have taken from the Speaker's table the bill, "
+        f"H.R. {number}, with the Senate amendment thereto, and to have concurred "
+        "in the Senate amendment with the following amendment: In lieu of the "
+        "matter proposed to be inserted by the amendment of the Senate to the "
+        "text of the bill, insert the following:"
+    )
+    if (source["source_type"] != "official_bill_text" or source["text_version"] != "EH"
+            or f"[H. Res. {proposed['bill_number']} Engrossed in House (EH)]" not in source["text"]
+            or witness["passage"] != clause or clause not in source["text"]
+            or not source["text"].endswith("Attest: Clerk.")
+            or not any(c["source_id"] == source["source_id"] and c["passage"] == clause
+                       for c in proposed["claim_source_map"])):
+        raise ValueError("deemed concurrence requires the exact governed operative clause")
+    return True
+
+
+def validate_nested_concurrence(proposed, sources, clerk):
+    """Bind concurrence in the Senate's amendment to a House/Senate sequence."""
+    witness = proposed.get("nested_concurrence")
+    if witness is None:
+        return False
+    question = "On Motion to Suspend the Rules and Concur in Senate Adt to House Adt to Senate Adt"
+    if (not isinstance(witness, dict)
+            or set(witness) != {"source_id", "senate_date", "passage"}
+            or proposed.get("bill_type", "hr") != "hr"
+            or proposed["stage"] != "suspension_and_concurrence"
+            or clerk["metadata"]["vote-question"] != question
+            or witness["source_id"] != proposed["source_id"]
+            or proposed["episode_id"] != f"episode:hr{proposed['bill_number']}:{clerk['metadata']['congress']}"):
+        raise ValueError("invalid nested-concurrence candidate binding")
+    source = sources[witness["source_id"]]
+    number = proposed["bill_number"]
+    clause_start = (
+        f"In the Senate of the United States, {witness['senate_date']}. "
+        "Resolved, That the Senate agree to the amendment of the House of "
+        "Representatives to the amendment of the Senate to the bill "
+        f"(H.R. {number}) entitled "
+    )
+    clause_end = (
+        "with the following SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE "
+        "AMENDMENT: Strike all after the enacting clause and insert the following:"
+    )
+    if (source["source_type"] != "official_bill_text"
+            or source["text_version"] != "EAS2"
+            or not source["url"].endswith(f"/BILLS-{clerk['metadata']['congress']}hr{number}eas2.htm")
+            or f"[H.R. {number} Engrossed Amendment Senate (EAS)]" not in source["text"]
+            or "Attest: Secretary." not in source["text"]
+            or not source["text"].endswith("SENATE AMENDMENT TO HOUSE AMENDMENT TO SENATE AMENDMENT")
+            or not witness["passage"].startswith(clause_start)
+            or not witness["passage"].endswith(clause_end)
+            or witness["passage"] not in source["text"]
+            or not any(c["source_id"] == source["source_id"] and c["passage"] == witness["passage"]
+                       for c in proposed["claim_source_map"])):
+        raise ValueError("nested concurrence requires the exact governed EAS2 wrapper")
+    senate_date = datetime.strptime(witness["senate_date"], "%B %d, %Y").date()
+    house_date = datetime.strptime(clerk["metadata"]["action-date"], "%d-%b-%Y").date()
+    if senate_date > house_date:
+        raise ValueError("nested concurrence cannot precede its Senate amendment")
+    return True
+
+
 def validate_universe_proposal(universe, authoring=None, capture=None, membership=None):
     """Use the existing universe contract without conferring boundary authority."""
     from jsonschema import Draft202012Validator
@@ -104,10 +187,14 @@ def prepare(authoring, capture, member_ids):
         meta = clerk["metadata"]
         if (int(meta["congress"]), int(meta["session"][0]), int(meta["rollcall-num"])) != (int(congress), int(session), int(roll)):
             raise ValueError("Clerk source does not match exact action")
-        measure_prefix = {"hr": "H R", "s": "S", "hjres": "H J RES"}.get(proposed.get("bill_type", "hr"))
+        measure_prefix = {"hr": "H R", "s": "S", "hjres": "H J RES", "hres": "H RES"}.get(proposed.get("bill_type", "hr"))
         if measure_prefix is None or meta["legis-num"] != f"{measure_prefix} {proposed['bill_number']}":
             raise ValueError("Clerk measure and proposed text differ")
         question = meta["vote-question"]
+        deemed_concurrence = validate_deemed_concurrence(proposed, sources, congress)
+        nested_concurrence = validate_nested_concurrence(proposed, sources, clerk)
+        if deemed_concurrence and question != "On Motion to Suspend the Rules and Agree":
+            raise ValueError("deemed concurrence differs from exact Clerk question")
         retained_portion = proposed.get("retained_portion")
         retention_questions = {
             "Division A": "On Retaining Division A",
@@ -121,7 +208,8 @@ def prepare(authoring, capture, member_ids):
             "amendment": question == "On Agreeing to the Amendment",
             "suspension_and_passage": question in {"On Motion to Suspend the Rules and Pass", "On Motion to Suspend the Rules and Pass, as Amended"},
             "concurrence": question in {"On Motion to Concur in the Senate Amendment", "On Motion to Concur in the Senate Amendments"},
-            "suspension_and_concurrence": question == "On Motion to Suspend the Rules and Concur in the Senate Amendments",
+            "suspension_and_concurrence": (question == "On Motion to Suspend the Rules and Concur in the Senate Amendments"
+                                          or deemed_concurrence or nested_concurrence),
             "division_retention": isinstance(retained_portion, str) and question == retention_questions.get(retained_portion),
         }
         if not valid_stage.get(proposed["stage"], False):
@@ -161,7 +249,10 @@ def prepare(authoring, capture, member_ids):
                 "parent_package_meaning_projected": False,
                 "basis": proposed["limitations"],
                 **({"governed_component_relationships": [f"Retaining {retained_portion}; distinct from whole-bill passage"]}
-                   if proposed["stage"] == "division_retention" else {}),
+                   if proposed["stage"] == "division_retention" else
+                   {"governed_component_relationships": [
+                       f"H.Res.{proposed['bill_number']} directly deems concurrence with replacement text for H.R.{proposed['deemed_concurrence']['underlying_bill_number']}; distinct exact action within the underlying bill episode"]}
+                   if deemed_concurrence else {}),
             },
             "source_contract_version": "shared_legislative_corpus_v1",
             "meaning_contract_version": "candidate-extension-v1",
