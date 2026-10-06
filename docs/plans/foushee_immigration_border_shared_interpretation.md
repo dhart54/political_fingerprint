@@ -2690,3 +2690,86 @@ condition/date prose as complete explicitly scoped sentences, then education
 SSN/student eligibility, child/enforcement funding, packages and screenings.
 Keep the exact corrected amount window and common predicates through reapplication.
 No current shutdown or merge/deployment/production/acceptance/publication authority.
+
+
+## Checkpoint 46: Preserved senior work reapplied onto corrected copy
+
+This increment follows isolated correction 45. The pending senior source work
+was reused, while all new senior prose was rewritten as complete sentences
+with shared conditions explicit. Exact child-credit December 31, 2028 bounds,
+separate subsequent-year amount/inflation, common issuance due date, Senate
+child-number condition and all 11 correction/clarification pairs remain.
+Historical Major/material findings and bounded independent verdicts preserved.
+
+House 110103 prints a $4,000 bonus to aged 63(f)(1), for taxable years beginning
+after December 31, 2024, and before January 1, 2029. The aged paragraph's own
+before-tax-year-close age 65 and spouse/exemption references are bound; the
+separate blind paragraph is not a younger-blind bonus. Own modified-income
+phaseout is 4 percent over $75,000, or $150,000 joint, reduced no lower than
+zero. The taxpayer must supply the defined SSN; if married, the spouse's
+number is also required. Similar-32(d) remains distinct from identical rules
+or universal separate-return denial. Printed (E) concerns inflation for this
+new paragraph's dollar amounts. Printed (F) concerns the hypothetical aggregate
+increase if the taxpayer did not itemize, after applying (B), (D) and (E), with
+the same exact period; no universal $4,000 itemizer award or exclusion override.
+
+Senate 70103 defines two person alternatives: taxpayer, or spouse on a joint
+return. In either case, each claimed person must have attained 65 before the
+tax year closes and that person's defined SSN must appear. One spouse's number
+does not establish deductions for both. Its deduction is $6,000 per qualified
+individual, with own 6 percent phaseout over $75,000/$150,000 joint and no lower
+than zero; own limits for taxable years beginning after December 31, 2024, and before January 1, 2029. If married
+within 7703, joint filing with the spouse is required. No new House similar-
+32(d), blind bonus or hypothetical-itemizer provision is imported.
+
+Both inherit their own same-bill 24(h)(7) definition: issuance to either listed
+citizen or work-authorized-alien category; in either case before the return due
+date. Full taxable-income, itemization, standard-deduction exclusions (including
+nonresident alien), spouse/exemption and marital-reference authorities remain.
+A deduction is not a credit, exemption of all Social Security income or promised
+refund. Own 911/931/933 modified-income inclusions and mathematical-error labels
+(House Z versus Senate W) differ as printed. Notice, 60 days after notice SENT,
+abatement upon receipt, deficiency reassessment and collection stay remain;
+no actual debt, fraud, personal eligibility or loss of all remedies.
+
+Question 40 reserves governing House floor quotation closure after the SSN
+reference before printed (E)/(F), unlike later EH formatting. All substantive
+words agree under the declared comparison-only whitespace/page/one-closure
+normalization. Original bytes unchanged, floor governs, and no H.Res.492 item
+targets this section. Recommendation: preserve qualified printed mechanisms,
+obtain independent source-grounded boundary application before settled
+codification or personal inflation/itemizer outcomes. Alternatives and safe
+education/student/funding/package work recorded. No silent quotation repair.
+
+Three preserved governed sources and 19 bindings added;
+hr1_senior_identification_review.json seals source/action/qualification,
+context-update and exact comparison hashes. Two now-obsolete meaning scope
+phrases and one Senate child qualification scope phrase updated narrowly;
+prior sealed receipts remain historical. No stale senior-unfinished qualifier
+left in current child-credit description. All compacts remain selected fee/
+funding highlights without new individual-payment meaning.
+
+38 focused tests in 9.058 seconds, seven semantic checks and seven-file replay
+pass. All 19 bindings/two qualification hashes, 155 bounded source extents,
+member propagation, preserved 37 other actions/990 Health sources, correction
+45 invariants, audit/queue/accounting and final diff verify. No uppercase Boolean
+compression in new prose; source text remains literal. Tests do not establish
+semantic truth or independent application/acceptance. Core:
+abcaa9632dba9396b965f0ef8ec6b4ccdefae95cd0399dce1d13163915825c61.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f (unchanged).
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,269 governed sources (279 new), 649 claims,
+234 canonical captures. Remaining: 221 screenings, TWO partial H.R. 1 components,
+40 separate legal/application questions. Same-owner audit partial, final verdict
+null; no production/publication, runtime, frontend or schema change.
+Exact 1adc902e3700d2bd70d6e3950dda9c117fdde714 CI 37530549264 is in progress,
+eight jobs successful, receipt-evidence-repair-postgres pending, no failure
+reported. Current exact-head CI follows push. Last completed exact feb805df
+passed all nine jobs in 37528575804.
+
+Next: House 112105 versus Senate 70606 education-credit SSN, then House 30001
+student eligibility, child/enforcement funding, continuing/omnibus/NDAA packages
+and ordinary screenings. House 112105's next legislative section is 112201,
+not a nonexistent 112106; keep exact explicit extent/version bounds. Existing
+.w/ib ownership, preserved senior snapshot and historical markers remain;
+no current shutdown or merge/deployment/production/acceptance/publication.
