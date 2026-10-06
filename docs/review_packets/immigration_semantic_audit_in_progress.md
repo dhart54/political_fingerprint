@@ -1325,3 +1325,83 @@ operative historical text. Then remaining benefits, tax/remittance, child and
 enforcement funding; continuing/omnibus/NDAA and ordinary screening. Continue
 source-first compact/qualification predicate review before each push. No
 production, publication, promotion, acceptance, merge or deployment authority.
+
+
+## Checkpoint 34: exact EOIR fees and historical motion exceptions
+
+Complete House 70016 and Senate 100013 now retain all ten own court-application,
+appeal and motion events, fiscal2025 minima/higher AttorneyGeneral rule amounts,
+and fiscal2026-onward own-fee CPI increments rounded down to $10. Filing OR
+applicable prior court adjudication does not imply two charges. The practitioner
+disciplinary appeal payer remains the filing practitioner. Senate(j)'s non-LPR
+payer/application FOR ANY ALIEN is explicit, without substituting House's
+application-category wording. Existing compacts remain selected prior highlights;
+prior detail/qualifications/bindings and all other37 actions are unchanged.
+
+Bond appeals and narrow in-absentia REOPENING exceptions remain distinct from
+all motions/reconsideration or180-day exceptional-circumstances grounds. Both
+current and legacy authorities require demonstrated lack of the specified
+notice OR Federal/State custody AND nonappearance through no fault. Complete
+1229 notice text, 1229a(b)(5), historical1995Code1252b and the material1996
+amendment/effective-date crosswalk are bound. The later repeal/history notice
+is metadata only. The intervening371(b)(7) amendment affects(d)(1), not(c)(3)(B);
+legacyPDFpage2 visually confirms the actual alternatives. No fee exception
+establishes an actual grant, rescission, automatic judicial finding or status.
+
+House(g) explicitly uses the SECTION AS IT EXISTED beforeApril1,1997. Senate's
+shorter PRIOR TO APRIL1,1997 attachment is preserved as an application question;
+PDF812 visually confirms it, with no parser repair, asserted filing cutoff or
+deleted date. House's repeated SECTION-wide50percent(a)/25percent(b)-(j)
+account-transfer references are another application question. Senate instead
+uses25percent of EACH SUBSECTION, visually confirmed onPDF800. No fixed/summed
+shares or actual transfer/spending are inferred. Complete1356(m)-(n) account
+baseline is retained. House(k)'s waiver/reduction bar is not imported into
+Senate, and Senate waiver availability is not inferred. LOP OR successor
+restrictions retain the identified receipt/EOIR-spender boundaries; they do
+not establish program termination or a prohibition on every funding source.
+
+Fifteen new bindings and two independently source-reconstructed qualifications
+are recorded in hr1_eoir_fee_review.json. Floor/EH comparison differs only by
+the floor's H2282/H2283 pagination: the receipt records ORIGINAL distinct hashes,
+both page markers and the comparison-only whitespace/pagination normalization.
+The controlling floor binding is unchanged; no claim of original byte identity.
+Five new governed sources and seven provisional captures are exact-versioned.
+LegacyPDF and EAS selected visual inspection are same-owner evidence only.
+
+Fingerprint's independent selected32/33 review found no new material defect in
+travel and Housecontinuance/diversity meanings. Four continuance/diversity and
+four exposed travel baseline/PDF binding instances were recomputed. Two travel
+operative hashes could not be independently recomputed because the patch was
+oversized; meanings were source-checked. Separate bounded receipt preserves
+those limits, excluding replay/full-memberJSON/PDFvisual/fullpackage/acceptance
+and the later EOIR extension. Historical Major corrections remain recorded.
+
+35 focused candidate tests pass (7.637s); seven semantic checks pass; seven
+generated outputs replay byte identically. The initial restricted semantic
+run hit Windows temporary-file permissions and passed with normal authorized
+user access, without changing tests or contracts. All fifteen new hashes/lengths,
+ten source-parsed fee floors, both full readable member propagation, prior
+copy/meaning preservation,101 bounded source extents, Clerk/accounting/current
+audit hashes and final diff verify. Only docs/candidate artifacts changed;
+runtime/compiler/frontend/Health/migrations and production/publication remain
+untouched. Compiled IR is unchanged; no acceptance/full-corpus verdict.
+
+Core: e792635db7da8429556efa1bb531e65a6b36ef58de8b75c7180f70cc8dd0e6f7.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Previous exact68b3ca53089e648dd9cec6e47597473014eab07c passes9/9 hosted jobs
+(run37508095023). Current exact-head CI follows push. Main remains separate
+at7a8c6ee11a899ea6912a4d37588917fcd0de0a24; no smoke-maintenance integration.
+
+Counts remain676 inventory,455 reviews,39 meanings,36 episodes,78 observations,
+70 findings;221 ordinary screenings and TWO separately partial package reviews.
+There are now32 legal/application questions,1,213 governed sources (990 unchanged
+Health reuses/223 new),463 claims and133 provisional captures. Component
+completion gates remain false. Original terminal/deadline evidence is preserved;
+no current shutdown deadline, duplicate checkout or other implementation owner.
+
+Next: remaining exact benefits(SNAP/Medicaid/Medicare/ACA), tax/remittance,
+child/enforcement funding, then continuing/omnibus/NDAA and ordinary screenings.
+Reuse exact version/extent authorities, preserve source-grounded reserved
+questions separately and reconstruct each compact/qualification predicate
+before push. Continue safe executable work; no production, merge, deployment,
+editorial approval, promotion, publication or methodology authority.
