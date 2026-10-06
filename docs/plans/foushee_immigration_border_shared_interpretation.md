@@ -2539,3 +2539,78 @@ CI follows push. Existing .w/ib ownership and historical markers preserved.
 Next: remaining education/child tax and child/enforcement funding, then the
 continuing/omnibus/NDAA packages and ordinary screenings. Do not classify DACA
 applicants, answer the reserved applications, or close full H.R. 1 components.
+
+
+## Checkpoint 44: Child-credit claimant and spouse identification boundaries
+
+House 110004 requires taxpayer AND qualifying-child AND, if married, spouse
+SSNs. Its separate SIMILAR 32(d) marital rule is bound with the full joint-return
+and defined separated-spouse context, without making similarity identical or
+all separate returns ineligible. Senate 70104 instead requires taxpayer OR,
+ON A JOINT RETURN, AT LEAST ONE SPOUSE SSN, AND the child SSN; the new House
+marital clause is not imported. Both definitions retain SSA issuance to a US
+citizen OR the named work-authorized-alien branch/catch-up portion AND issuance
+before the return due date, rather than every SSA number, ITIN or citizenship
+proof alone. Pre-vote 24(h)(7) was child-only; own new claimant conditions differ.
+
+Full material 24(a)-(h) and operative 152 preserve qualifying-child AND own
+not-attained-17, citizenship/residence, relationship, abode/support/joint-return,
+competing-claim, custody/release and adoption/foster/missing-child boundaries.
+Own income, refund, identification, tax/year and other credit prerequisites
+remain. The separate historical 2021 regime is excluded. Neither an SSN nor a
+status label establishes all requirements or an actual payment. House prints
+$2,500 for years beginning after 2024 AND before 2028, then $2,000, with credit
+inflation only after 2028. Senate prints $2,200 with its own after-2025 inflation.
+Own refundable ceilings/base-year substitutions/rounding remain; no indexed
+payment is calculated. Child-credit amendments begin with taxable years after
+December 31, 2024; same-bill zero-exemption extension dates differ (House after
+2025, Senate after 2024). Those amendments retain the 151(d)(5)(B) reference
+rule: zero exemption is ignored for other-title-provision deduction references,
+so zero alone does not establish no child credit. Senate senior mechanism and
+House religious-association earned-income/other tax components remain unfinished.
+
+Retained 24(h)(4)(C) treats a qualifying child denied credit by reason of
+paragraph (7) as a dependent for the separate (A) branch, with own (B) and
+remaining prerequisites. Neither proposed section strikes it. Question 39
+reserves its application to new claimant/spouse failures across both versions.
+Recommendation: retain literal expanded SSN AND fallback mechanisms, obtain
+independent application before personal $500 or whole-household-loss claims.
+Alternatives and safe senior/education/funding/package work are recorded; no
+automatic fallback, silent repeal or universal household-credit denial.
+
+Both change 6213(g)(2)(I) from 24(e) to SECTION 24. Full 6213(b)(1)/(2) and (g)
+retain alleged-error AND explanation notice, no Tax Court petition BASED ON
+THAT NOTICE, request for abatement WITHIN 60 DAYS AFTER NOTICE SENT, mandatory
+abatement UPON RECEIPT of that request, reassessment under deficiency procedures
+and stay of levy/court collection during the abatement period. This is not an
+actual debt/fraud finding, successful credit claim or removal of every remedy.
+
+Four new governed sources and 17 bindings added. Exact House 110003/110004
+floor/EH comparisons show only pagination after normalization; original bytes
+remain and floor governs. hr1_child_credit_identification_review.json seals
+sources/actions/qualifications/comparison. Earlier DACA/remittance/annual filing,
+program/status/cohort/family/date qualifications and compacts remain unchanged.
+No new independent review receipt: DACA and child credit await bounded review.
+
+Validation: 35 focused tests in 9.000 seconds, seven semantic checks and seven-file
+byte replay pass. All 17 bindings, two qualification hashes, four new baselines,
+152 bounded source extents, member propagation, all 37 other actions and 990
+Health sources, queue/accounting/audit hashes and final diff verify. Compiled
+IR, runtime, frontend, schema and production/publication boundaries unchanged.
+Core: 57f4dbbe642a2fc1e6bb1e8a5d2db7ead2f89058c64e622212c0cbb393255b66.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,266 governed sources (276 new), 630 claims,
+229 canonical provisional captures. Remaining: 221 ordinary screenings, TWO
+partial H.R. 1 component reviews and 39 separate legal/application questions.
+Same-owner audit remains partial, final verdict null; tests are not semantic
+truth or editorial acceptance. Exact 817c06b19e30660615d0af5780cda845150f7787
+CI 37527610964 is in progress at this checkpoint, eight jobs successful and
+receipt-evidence-repair-postgres pending; no failure reported. Last completed
+ab4dde3ef638e117e802a3da12d690012f94093a passed all nine jobs in 37525815801.
+Current exact-head CI follows push; no unrelated smoke maintenance absorbed.
+
+Next: Senate senior-deduction SSN mechanism and House student eligibility/
+education tax provisions, then child/enforcement funding, continuing/omnibus/
+NDAA packages and screenings. Existing .w/ib and historical markers preserved;
+no current shutdown, merge/deployment/production or acceptance/publication.
