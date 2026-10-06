@@ -28,6 +28,7 @@
     "house:119:1:183",
     "house:119:1:184",
     "house:119:1:264",
+    "house:119:2:65",
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:120",
@@ -46,8 +47,8 @@
   "accounting": {
     "counts": {
       "procedural_context": 169,
-      "interpreted_substantive_directional": 15,
-      "exact_action_ineligible": 35,
+      "interpreted_substantive_directional": 16,
+      "exact_action_ineligible": 34,
       "source_unresolved": 456,
       "expressive_nonbinding_context": 1
     },
@@ -58,14 +59,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 15,
-    "directional_substantive_actions": 15,
+    "substantive_eligible_actions": 16,
+    "directional_substantive_actions": 16,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 169,
     "expressive_nonbinding_actions": 1,
     "exact_action_ineligible_actions": 35,
     "unresolved_boundary_cases": 456,
-    "independent_episode_count": 15,
+    "independent_episode_count": 16,
     "multi_action_episode_count": 0,
     "mechanism_types": [
       "final_passage",
@@ -73,8 +74,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 15,
-      "substantive_actions": 15,
+      "ready_substantive_actions": 16,
+      "substantive_actions": 16,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -264,6 +265,7 @@
         "house:119:1:183",
         "house:119:1:184",
         "house:119:1:264",
+        "house:119:2:65",
         "house:119:2:94",
         "house:119:2:96",
         "house:119:2:120",
@@ -303,8 +305,7 @@
         "house:119:1:77",
         "house:119:1:78",
         "house:119:1:277",
-        "house:119:2:15",
-        "house:119:2:65"
+        "house:119:2:15"
       ],
       "source_unresolved": [
         "house:119:1:15",
@@ -836,6 +837,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hjres72:119",
+        "action_ids": [
+          "house:119:2:65"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr1958:119",
         "action_ids": [
           "house:119:2:94"
@@ -864,7 +871,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "dc38ba1788bafdd3d3fc12ed6c45c90932ee6b8278c50128811035cebc97bd52",
+  "universe_subject_sha256": "79df58ae00761155ad2d68534f463800e86cf6f981797af44fa3ed4118e55f65",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -1112,7 +1119,7 @@
       "measure": "bill_119_hr_29",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection.",
+      "reason": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection. Source-first audit clarifies all retained protection-release categories/conditions and binds materially incorporated3521authority.",
       "source": {
         "source_id": "clerk:119:1:6",
         "url": "https://clerk.house.gov/evs/2025/roll006.xml",
@@ -1130,7 +1137,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection.",
+      "rationale": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection. Source-first audit clarifies all retained protection-release categories/conditions and binds materially incorporated3521authority.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -1180,6 +1187,12 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1253.htm",
           "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
           "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        },
+        {
+          "source_id": "govinfo:18usc3521-2024-release-protection-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partII-chap224-sec3521.htm",
+          "raw_sha256": "39bb2e5a566df4ea3b98b04ca6723b7ffb538bd4ba2c130196309b4f3c4f0606",
+          "governed_bytes_sha256": "92b19638ac471348f06ab23153481c33259c20cdb782cadf17a1aad3a0569ea7"
         }
       ],
       "exact_action_source_binding": null,
@@ -1189,7 +1202,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "519fdabf31f457f49397750d7424e78bd781eacd5200a8916e8e776e52869dd7"
+        "shared_review_record_sha256": "b4613937fdcf1166c3c38697de8f2cb3bacc751c8b28ec859d8a57140f81a771"
       },
       "historical_raw_hash_matches": true
     },
@@ -1729,7 +1742,7 @@
       "measure": "bill_119_hr_30",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact INA inadmissibility/deportability changes, with materially incorporated criminal definitions, conviction baseline and preserved narrowly scoped waiver provisions. This is whole-bill passage, not a component position.",
+      "reason": "Independent Immigration inclusion from exact INA inadmissibility/deportability changes, with materially incorporated criminal definitions, conviction baseline and preserved narrowly scoped waiver provisions. This is whole-bill passage, not a component position. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "source": {
         "source_id": "clerk:119:1:17",
         "url": "https://clerk.house.gov/evs/2025/roll017.xml",
@@ -1747,7 +1760,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact INA inadmissibility/deportability changes, with materially incorporated criminal definitions, conviction baseline and preserved narrowly scoped waiver provisions. This is whole-bill passage, not a component position.",
+      "rationale": "Independent Immigration inclusion from exact INA inadmissibility/deportability changes, with materially incorporated criminal definitions, conviction baseline and preserved narrowly scoped waiver provisions. This is whole-bill passage, not a component position. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -1791,6 +1804,18 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
@@ -1800,7 +1825,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "0f732c82bd1b6ac77e3f7975fee405811ae46d204a5ffc3d61b4071abdbb1df2"
+        "shared_review_record_sha256": "c727d9c33ffb928a626a01df590ad336f97137e9a48abea59c3db4398c5bb34b"
       },
       "historical_raw_hash_matches": true
     },
@@ -2076,7 +2101,7 @@
       "measure": "bill_119_s_5",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection.",
+      "reason": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection. Source-first audit clarifies all retained protection-release categories/conditions and binds materially incorporated3521authority.",
       "source": {
         "source_id": "clerk:119:1:23",
         "url": "https://clerk.house.gov/evs/2025/roll023.xml",
@@ -2094,7 +2119,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection.",
+      "rationale": "Independent Immigration inclusion: exact detention/detainer, admission/parole/visa and State-litigation mechanisms in the voted version and material baseline authorities. Member choices are applied only through projection. Source-first audit clarifies all retained protection-release categories/conditions and binds materially incorporated3521authority.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -2144,6 +2169,12 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1253.htm",
           "raw_sha256": "416d8515b744d80c0d9440666ba45d66a615f2a983dc592765abe3f30ff4b134",
           "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72"
+        },
+        {
+          "source_id": "govinfo:18usc3521-2024-release-protection-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partII-chap224-sec3521.htm",
+          "raw_sha256": "39bb2e5a566df4ea3b98b04ca6723b7ffb538bd4ba2c130196309b4f3c4f0606",
+          "governed_bytes_sha256": "92b19638ac471348f06ab23153481c33259c20cdb782cadf17a1aad3a0569ea7"
         }
       ],
       "exact_action_source_binding": null,
@@ -2153,7 +2184,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "4943d1bc0cdf2932c4f01629262a47ff1536a487af505ae015a65ed5541e8bfa"
+        "shared_review_record_sha256": "e25ae7ceb51e6dd224ba5356a2f73dd16885b9fedc5d3329092a5d507388f2c4"
       },
       "historical_raw_hash_matches": true
     },
@@ -3048,7 +3079,7 @@
       "measure": "bill_119_hr_35",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved.",
+      "reason": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "source": {
         "source_id": "clerk:119:1:42",
         "url": "https://clerk.house.gov/evs/2025/roll042.xml",
@@ -3066,7 +3097,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved.",
+      "rationale": "Independent Immigration inclusion from exact operative visa/admission/parole/benefit restrictions or conviction/admission-based INA consequences and relief ineligibility. Criminal/foreign-affairs context is not alone membership authority. Whole-bill choice and material incorporated definitions/baselines preserved. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -3110,6 +3141,12 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
         }
       ],
       "exact_action_source_binding": null,
@@ -3119,7 +3156,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "1b615e78df60fbecad7d51f5d85978b6fe6de2a07c0546dd3cf393081892c6c9"
+        "shared_review_record_sha256": "feb19187d44937980307a89d304cd0b08887138e2032bf5100027ed7b6e390cc"
       },
       "historical_raw_hash_matches": true
     },
@@ -9860,7 +9897,7 @@
       "measure": "bill_119_hr_875",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority.",
+      "reason": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "source": {
         "source_id": "clerk:119:1:183",
         "url": "https://clerk.house.gov/evs/2025/roll183.xml",
@@ -9878,7 +9915,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority.",
+      "rationale": "Independent Immigration inclusion from exact status-information/lawful detainer cooperation, conviction/admission INA consequences, or specified alien/border encounter reporting. Primary voted version and material incorporated baseline/definition provisions reviewed; criminal context, labels and title rhetoric are not membership authority. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -9916,6 +9953,12 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
         }
       ],
       "exact_action_source_binding": null,
@@ -9925,7 +9968,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "b189829e6d1963f972acffa8ff4a7508d11042e8bdaedabb306de288a0847707"
+        "shared_review_record_sha256": "3b0c2136f681683e81c24f2f83beb7b4e31cd8da8bca3c84b3cee8d2eb0c7a15"
       },
       "historical_raw_hash_matches": true
     },
@@ -21468,8 +21511,8 @@
       "date": "2026-02-11",
       "measure": "bill_119_hjres_72",
       "question": "On Passage",
-      "disposition": "exact_action_ineligible",
-      "reason": "Independent exact-action exclusion, contrary to the historical proposed-substantive seed. H.J.Res.72 EH identifies termination of the February1,2025 emergency in EO14193 under NEA202. The full EO's operative mechanism is Canada-product tariffs, customs/foreign-trade-zone treatment and associated implementation, consultation/recommendation and emergency reports under IEEPA; migration/drug/border language supplies rationale, not a changed INA status/admission/removal or direct immigration-enforcement rule. NEA1622 stops powers exercised by reason of the identified emergency while preserving specified pending/prior actions and matured rights/duties/penalties. The January2026 continuation notice separately identifies the declared-or-expanded emergencies. Proclamation10886 contains broader January20 southern-border military/logistics/barrier directions, but this narrower vote cannot inherit those mechanisms merely because EO14193 discusses/expands that earlier emergency; the exact resolution does not purport to repeal every January20 border direction or INA authority. No individual border-entry or immigration consequence is established from tariff/emergency rhetoric. This screening remains a candidate and makes no claim about actual emergency termination, tariff outcomes, constitutional validity or enactment.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Internal source-first audit reverses the earlier exclusion: EO 14193 section 3(b) imposes an immigration-specific DHS cooperative-enforcement recommendation duty, which cannot all be dismissed as rhetoric. H.J.Res.72 terminates the specifically identified emergency under NEA202 with its savings. Author a bounded whole-resolution candidate preserving trade/package and overlapping-emergency limits; do not import or adjudicate repeal of every earlier southern-border/INA power.",
       "source": {
         "source_id": "clerk:119:2:65",
         "url": "https://clerk.house.gov/evs/2026/roll065.xml",
@@ -21477,7 +21520,7 @@
         "governed_bytes_sha256": "4487353110e4526b9f1e44354c25f5c8dfb2dd6a08c865176c24a71df4331c6c",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hjres72:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hjres_72",
       "member_action": "yea",
@@ -21486,8 +21529,8 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "exact_action_ineligible",
-      "rationale": "Independent exact-action exclusion, contrary to the historical proposed-substantive seed. H.J.Res.72 EH identifies termination of the February1,2025 emergency in EO14193 under NEA202. The full EO's operative mechanism is Canada-product tariffs, customs/foreign-trade-zone treatment and associated implementation, consultation/recommendation and emergency reports under IEEPA; migration/drug/border language supplies rationale, not a changed INA status/admission/removal or direct immigration-enforcement rule. NEA1622 stops powers exercised by reason of the identified emergency while preserving specified pending/prior actions and matured rights/duties/penalties. The January2026 continuation notice separately identifies the declared-or-expanded emergencies. Proclamation10886 contains broader January20 southern-border military/logistics/barrier directions, but this narrower vote cannot inherit those mechanisms merely because EO14193 discusses/expands that earlier emergency; the exact resolution does not purport to repeal every January20 border direction or INA authority. No individual border-entry or immigration consequence is established from tariff/emergency rhetoric. This screening remains a candidate and makes no claim about actual emergency termination, tariff outcomes, constitutional validity or enactment.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Internal source-first audit reverses the earlier exclusion: EO 14193 section 3(b) imposes an immigration-specific DHS cooperative-enforcement recommendation duty, which cannot all be dismissed as rhetoric. H.J.Res.72 terminates the specifically identified emergency under NEA202 with its savings. Author a bounded whole-resolution candidate preserving trade/package and overlapping-emergency limits; do not import or adjudicate repeal of every earlier southern-border/INA power.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -21540,7 +21583,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "24927e566ced10d6feeff8dd6fca2d8d9e61837843cb5d47922ff6dff86d2583"
+        "shared_review_record_sha256": "0e7cedc22127f0b1790e59dfc7980c637cfad06f120c1f85fa8bbf5386446bf4"
       },
       "historical_raw_hash_matches": false,
       "historical_source_identity": {
@@ -22981,7 +23024,7 @@
       "measure": "bill_119_hr_1958",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact additional INA conviction/admission grounds and the separately printed broad relief bar. Incorporated offense/benefit definitions, thresholds, exclusions, existing-law distinctions and the source citation irregularity are explicit; title and other-domain conclusions are not authority.",
+      "reason": "Independent Immigration inclusion from exact additional INA conviction/admission grounds and the separately printed broad relief bar. Incorporated offense/benefit definitions, thresholds, exclusions, existing-law distinctions and the source citation irregularity are explicit; title and other-domain conclusions are not authority. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "source": {
         "source_id": "clerk:119:2:94",
         "url": "https://clerk.house.gov/evs/2026/roll094.xml",
@@ -22999,7 +23042,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact additional INA conviction/admission grounds and the separately printed broad relief bar. Incorporated offense/benefit definitions, thresholds, exclusions, existing-law distinctions and the source citation irregularity are explicit; title and other-domain conclusions are not authority.",
+      "rationale": "Independent Immigration inclusion from exact additional INA conviction/admission grounds and the separately printed broad relief bar. Incorporated offense/benefit definitions, thresholds, exclusions, existing-law distinctions and the source citation irregularity are explicit; title and other-domain conclusions are not authority. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -23109,6 +23152,18 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "bef308b511f4b7451990543668562133375f114d3cc472d7204a49335e52832a"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
@@ -23118,7 +23173,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "b08782ba8c57f167bf6b2c0acf7a1fb47931c38e4e76514b0413e385e5832d69"
+        "shared_review_record_sha256": "68c13eb82ddad6cd0405bcb8867674c146860b153cf15070f575f40187d1efd9"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:94",
@@ -23187,7 +23242,7 @@
       "measure": "bill_119_hr_4638",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "reason": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "source": {
         "source_id": "clerk:119:2:96",
         "url": "https://clerk.house.gov/evs/2026/roll096.xml",
@@ -23205,7 +23260,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred. Source-first audit correction preserves the governing237(a) in-and-admitted scope and distinguishes immigration admission from admission of conduct and any separate relief bar.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -23243,6 +23298,18 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
@@ -23252,7 +23319,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "1b38cb9543072ed64bdaa34073ea0cc3992b379ba6a3486b2009c7d41e2cb726"
+        "shared_review_record_sha256": "84c92921de7075cb83cc156943313f9b8482449e704e0012c7931e79af8c499e"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:96",
@@ -24488,7 +24555,7 @@
       "measure": "bill_119_hr_1689",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "reason": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred. Current-law audit correction:2024TPS authority is supplemented by enacted119-21 fee conditions and initial-employment-authorization duration; no individual fee/document outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:120",
         "url": "https://clerk.house.gov/evs/2026/roll120.xml",
@@ -24506,7 +24573,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred.",
+      "rationale": "Independent Immigration inclusion from exact improper-entry/reentry penalty changes, new predicate-based INA grounds or the mandatory fixed-duration TPS designation. Material incorporated definitions/baselines preserve consent, criminal/admission thresholds, individual eligibility and temporary-status boundaries; title rhetoric and actual outcomes are not inferred. Current-law audit correction:2024TPS authority is supplemented by enacted119-21 fee conditions and initial-employment-authorization duration; no individual fee/document outcome inferred.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -24538,6 +24605,12 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:pl119-21-tps-current-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "ceadaa734cf2c4e293bc23278f737a2fe90966dd52d3dc724bac844b3812c231"
         }
       ],
       "exact_action_source_binding": null,
@@ -24547,7 +24620,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "b4e7b0094e0a79f562f372b90d3ec415ecb63e16496bcfb5ec0c594358c4f871"
+        "shared_review_record_sha256": "3973cb045d285815d661a37f3f3852cb19e022136659a0f4178cc8f192256612"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:120",
@@ -29394,7 +29467,7 @@
       "measure": "bill_119_s_2",
       "question": "On Passage",
       "disposition": "interpreted_substantive_directional",
-      "reason": "Independent Immigration inclusion from direct immigration enforcement/removal/cooperation appropriations and entry/exit/border mechanisms in exactS.2ES. Complete package accounts, exclusions, within-account amounts, existing-law qualifications and material incorporated authorities reviewed; DHS administration alone is not membership authority.",
+      "reason": "Independent Immigration inclusion from direct immigration enforcement/removal/cooperation appropriations and entry/exit/border mechanisms in exactS.2ES. Complete package accounts, exclusions, within-account amounts, existing-law qualifications and material incorporated authorities reviewed; DHS administration alone is not membership authority. Internal pattern review binds the governing admitted-person scope of the incorporated deportable category without applying it to the other adult alternatives.",
       "source": {
         "source_id": "clerk:119:2:214",
         "url": "https://clerk.house.gov/evs/2026/roll214.xml",
@@ -29412,7 +29485,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "interpreted_substantive_directional",
-      "rationale": "Independent Immigration inclusion from direct immigration enforcement/removal/cooperation appropriations and entry/exit/border mechanisms in exactS.2ES. Complete package accounts, exclusions, within-account amounts, existing-law qualifications and material incorporated authorities reviewed; DHS administration alone is not membership authority.",
+      "rationale": "Independent Immigration inclusion from direct immigration enforcement/removal/cooperation appropriations and entry/exit/border mechanisms in exactS.2ES. Complete package accounts, exclusions, within-account amounts, existing-law qualifications and material incorporated authorities reviewed; DHS administration alone is not membership authority. Internal pattern review binds the governing admitted-person scope of the incorporated deportable category without applying it to the other adult alternatives.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -29504,6 +29577,18 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
           "raw_sha256": "23ae8560271aa0f174cbfce54eb3c95543d6c82e26d96550db6e1f6b4cc50286",
           "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
         }
       ],
       "exact_action_source_binding": null,
@@ -29513,7 +29598,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "3e0b6b44bc955ca5285c3f8a40326baaf72729c768e2f4977ff283a1724f9d87"
+        "shared_review_record_sha256": "5bc44cbc4810a6e48b3bef484c75ef5eb9c2ff0d5bb242a61545a291ea0bf95b"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:214",
@@ -34581,6 +34666,7 @@
     "house:119:1:183",
     "house:119:1:184",
     "house:119:1:264",
+    "house:119:2:65",
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:120",
@@ -35060,6 +35146,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "b9e6280609d1de8132a56265983543fa048bcb111f3581506de11248a0823572",
-  "membership_review_sha256": "60edcfb8b1ee3b1252dcdc25cf2bc9fd7b2268d05d9bc36e339ce054584971df"
+  "proposal_sha256": "d92d09577e679c6d075aef3ae306176851492c4123ef6f5f2e2b07eda56ebe91",
+  "membership_review_sha256": "da66a5fe250463de14ea7e594c02097f9c1a1a5faec6a1cfe52609912f70e872"
 }

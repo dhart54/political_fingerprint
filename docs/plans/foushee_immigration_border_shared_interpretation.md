@@ -299,6 +299,44 @@ universe/membership pair.
   3e8f26f1534a2d3e488634f4cb0d6f7196499dcb passed all nine hosted backend jobs:
   https://github.com/dhart54/political_fingerprint/actions/runs/37408178473.
 
+### Initial internal audit unit and corrections
+
+The separate source-first pass against375705e now covers all16current shared
+meanings and13initial exclusions (12retained),6procedures and all1expressive
+control. Highest-severity distinct-action counts:1Critical,6Major,2Minor,26NoDefect.
+Distinct issues:1Critical,2Major,1Minor. Same-owner evidence reconstruction and
+candidate comparison are explicitly disclosed; no second reviewer is claimed.
+
+- Critical: H.J.Res.72's earlier exclusion wrongly dismissed EO14193 section3(b)
+  immigration-cooperation recommendation as rhetoric. It now has one bounded
+  emergency-termination meaning, NEA savings, direct operative duty and explicit
+  overlapping-emergency/package limits. Both actual Yea observations create
+  support findings. This supersedes checkpoint5's exclusion rationale.
+- Major: five criminal-ground meanings lacked INA237(a)'s governing in-and-admitted
+  scope. Complete chapeau/admission definitions now govern compact/detail/limits;
+  criminal conduct admissions and separate relief-bar predicates stay distinct.
+  S.2's literal deportable-category alternative receives the source binding too.
+- Major: Haiti TPS requires enacted119-21 fee adjustment/no-waiver and initial
+  work-document duration supplement, with no actual agency-fee/document assertion.
+- Minor: both Laken meanings explicitly retain complete qualified witness/family/
+  close-associate release categories and severity procedure, with3521 context.
+
+Current220 reviews:16interpreted,169procedural,34excluded,1expressive;456unfinished.
+Historical32:14interpreted,15procedural,2excluded,1expressive.16separate episodes,
+32observations,31findings. Sources790=666unchanged reuse+124new;144claim witnesses,
+36full provisional local captures. Seven-output regeneration, meaningful focused
+tests, canonical semantic checks, actual readable inspection, binding/preservation
+checks pass for this coherent checkpoint:204tests in32.637seconds,7canonical
+checks and7byte-identical generated files. Actual Foushee/Massie outputs and
+16single-action episodes inspected; source/audit bindings and public/persistence
+fail-closed checks pass. Protected baseline paths are unchanged. Exact-head
+hosted CI follows the push.
+
+GovInfo later-Code endpoints and current OLRC maintenance responses are rejected
+as non-evidence; material enacted law is followed where available. No universal
+temporal-currentness or full-corpus audit PASS. Remaining discovery, operative
+governance pattern review and every future meaning require continued audit.
+
 ### Overnight execution envelope
 
 The user's October 5 overnight instruction governs this active goal without
@@ -306,14 +344,14 @@ changing its scope. No stale `.codex-task-complete` existed in either checkout.
 The authoritative `.codex-shutdown-deadline` sets shutdown at
 2026-10-06T06:41:49.8725744-04:00, stop-new-large-work at 06:11:49,
 checkpoint wrap at 06:26:49, and terminal marker due at 06:36:49 Eastern.
-Periodic exact weekly usage checks currently expose 39% used / 61% remaining
+Periodic exact weekly usage checks most recently expose 42% used / 58% remaining
 in the 10,080-minute window. Continue while above the user's 5% reserve.
 An intermediate commit is not terminal. Finish all validation/Git/report work
 before the final uncommitted marker; use SUCCESS only for a truly complete
 goal, otherwise an explicit resumable CHECKPOINT at the controlling limit.
 
-Next research: the open exact-source/version queue, including H.R.2056,
-H.R.875/H.R.275/H.R.3486 and the SBA status/cooperation measures; then
+Next research: the open exact-source/version queue, starting with the SBA
+status/cooperation measures; then
 package, sanctions, citizenship-proof, amendment and rule-deeming leads.
 Complete independent source-first review of every shared meaning and the
 required noncounting sample before final delivery. Discovery remains open.

@@ -1,0 +1,2604 @@
+{
+  "audit_base": "375705ef07e14b30179a6bbf72d9035c83db43ea",
+  "authority": "Candidate-quality internal evidence audit only; no acceptance, promotion, publication or final full-corpus audit verdict",
+  "audit_state": "in_progress_partial",
+  "method": "Separate primary-evidence reconstruction followed by candidate comparison; same accountable implementation owner, no claim of a second independent human/model reviewer. Tests and the authored candidate are not semantic authority.",
+  "substantive_actions": [
+    {
+      "action_id": "house:119:1:6",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Minor",
+      "finding_id": "IB-AUDIT-RELEASE-CATEGORIES",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "6",
+        "legis-num": "H R 29",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "7-Jan-2025",
+        "action-time": "1:27 PM",
+        "vote-desc": "Laken Riley Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact HR29EH adds the status-and-offense conjunction, detainer/custody duty and five harm-conditioned State litigation routes. 236e printed deletions preserve other review limits;242f exception is for the listed actions. The existing236c protection-release clause is redesignated, preserving protected witnesses/potential witnesses/cooperators and their immediate family/close associates, no danger/appearance and severity procedure. Yea/Nay concern wholebill; no guilt/outcome/enactment inference.",
+      "finding": "The shorthand retained witness/cooperator exception omitted explicit family/close-associate categories and severity procedure, despite correct complete baseline binding. This is a real summary imprecision, not a reversal of direction or stated repeal.",
+      "correction": "Expand shared detail and qualification to the complete protected categories and procedure; regenerate both members from the same corrected meaning.",
+      "before_authoring_action_sha256": "342750c198baa57ef3408e281a5254062d5c623247d81370508d0d7af3a126b5",
+      "corrected_authoring_action_sha256": "9e1e4b906f7acbadc53e4ed7e678f03a5f33274aad01dbcb8b5e1ad2cac6bd81",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr29eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr29eh/html/BILLS-119hr29eh.htm",
+          "governed_bytes_sha256": "b26873e9fcaca96cca7fa1f5ab471b2e2a1439bd5b5e04fd5a8b82632bd4f97e",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1225.htm",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1252.htm",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1253.htm",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:18usc3521-2024-release-protection-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partII-chap224-sec3521.htm",
+          "governed_bytes_sha256": "92b19638ac471348f06ab23153481c33259c20cdb782cadf17a1aad3a0569ea7",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:23",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Minor",
+      "finding_id": "IB-AUDIT-RELEASE-CATEGORIES",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "23",
+        "legis-num": "S 5",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "22-Jan-2025",
+        "action-time": "5:01 PM",
+        "vote-desc": "Laken Riley Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact S5ES is a distinct Senate-bill House passage proposition, adding officer assault and death/seriousinjury-resulting crimes to the property-offense list. Preserve the same conjunctive status predicate and separately read State-standing/review provisions, existing parole/conditionalvisa/removal-period law, and redesignated236c protection release. Do not replace HR29 with this later broader offense version or aggregate the separate bill episodes.",
+      "finding": "The shared release shorthand has the same protected-family/associate and severity-procedure precision omission as HR29; correct both affected meanings.",
+      "correction": "Use the same complete retained-release qualification without changing the different offense list or separate episode.",
+      "before_authoring_action_sha256": "3d7ee4f62e7407bb7783737a4e33e2271683dc808724c66034bbf6b9a65cbd45",
+      "corrected_authoring_action_sha256": "14eb7c021a680ec353bda06082da3d835ab7ebf8dc4e06e23a2a88c26a67fe06",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:s5es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s5es/html/BILLS-119s5es.htm",
+          "governed_bytes_sha256": "4b29d7cb728387214f9a7ed69a408e69ec2aecfeb488f0d0f8e50b62ca867d49",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1225.htm",
+          "governed_bytes_sha256": "3942495aa5718e6d51b7a9f813988333bd759f97e4779ff392d49ce0e15ee18c",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1252-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1252.htm",
+          "governed_bytes_sha256": "7dc50e81cb77137367e82fd5a9108648059c0c6008a10b9e32a9f151a9f99db6",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1253-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1253.htm",
+          "governed_bytes_sha256": "f5236c8d026c59bf5bf93629dc16f400d3d67959bbcd9f1beefd547ee5a50c72",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:18usc3521-2024-release-protection-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partII-chap224-sec3521.htm",
+          "governed_bytes_sha256": "92b19638ac471348f06ab23153481c33259c20cdb782cadf17a1aad3a0569ea7",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:120",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-TPS-POST2025-BASELINE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "120",
+        "legis-num": "H R 1689",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Apr-2026",
+        "action-time": "2:21 PM",
+        "vote-desc": "To require the Secretary of Homeland Security to designate Haiti for temporary protected status"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact HR1689EH mandates DHS Haiti country designation until three months afterJan20,2029. Individual TPS eligibility remains separate. Existing1254a must be read with enacted11921: TPS registration-fee ceiling raised from50to500 with fiscal2026 CPI adjustments/no waiver; additional initial employment-authorization fee uses fiscal2025 greater-of550/rule amount with adjustments/no waiver; initial employment authorization one year or TPS duration, whichever shorter. No permanent status, citizenship, individual award, current agency price or one document through2029 follows.",
+      "finding": "The candidate cited complete2024TPS text without the material enacted2025fee/duration supplement. Its current-law qualification was incomplete and could imply the older conditions or a longer initial work document.",
+      "correction": "Add source-mapped enacted11921TPS provisions; distinguish statutory ceiling/base-year additional fee from present administrative price, preserve no-waiver and initial-duration limits in compact/detail/qualifications. Refresh membership/universe/seed receipt bindings and regenerate both members.",
+      "before_authoring_action_sha256": "076309626c1729440d295585fe68d8e2bf608aad671476f8b91062446f53f65b",
+      "corrected_authoring_action_sha256": "5086fb6b2835dbb0c871056987d44204d3eff20f7ca8907fefe9cd5e9f45f346",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1689eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1689eh/html/BILLS-119hr1689eh.htm",
+          "governed_bytes_sha256": "3e2621ca655a2d1cf4cf1100601f1c2b3715632cb933f20d41bfa5cdba1134b7",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1254a-2024-tps",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1254a.htm",
+          "governed_bytes_sha256": "a09405f62863221a0355e148491777e32718b02ce18b775afd4bd201c1f92bb0",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1158-2024-tps-eligibility-bars",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "governed_bytes_sha256": "f2a8b69cd400d79d81224edfd59fb78fff4dd1325542110b69170789a1960716",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        },
+        {
+          "source_id": "govinfo:pl119-21-tps-current-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "governed_bytes_sha256": "ceadaa734cf2c4e293bc23278f737a2fe90966dd52d3dc724bac844b3812c231",
+          "reviewed_extent": "Complete governed operative text and the identified material baseline provisions; for TPS includes enacted2025supplement"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:17",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-237-GOVERNING-SCOPE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "17",
+        "legis-num": "H R 30",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Jan-2025",
+        "action-time": "11:00 AM",
+        "vote-desc": "Preventing Violence Against Women by Illegal Aliens Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "HR30EH adds inadmissibility for specified sex/DV/stalking/child/protective-order crime convictions or admissions, new conviction-only sex deportability, and expanded crime-based DV definition. Preserve defined-sex foreign/consensual limits, crime rather than noncriminal victim-services conduct, INA conviction meaning, limited DV waiver and no automatic juvenile-definition import. ExistingEafter-admission crime timing is distinct from newG and the governing237admitted-person scope.",
+      "finding": "The criminal-ground excerpt and candidate omitted237(a)governing in-and-admitted scope. Unqualified any-alien newG wording could materially overstate deportability, and must be distinguished from conduct admissions, offense timing and separate relief bars.",
+      "correction": "Bind the complete237(a)chapeau and INA alien/admission definitions; preserve the scope in shared compact/detail/qualifications, including independent208Aor2(c)relief-bar clauses. Refresh ledger and seed bindings and regenerate both members.",
+      "before_authoring_action_sha256": "70aad9a508b8b8acef7d0e9c426f88556f638f2d3cdd57374050b0381c510514",
+      "corrected_authoring_action_sha256": "565ce91ade5778b09fb8747401da58d19fb502b771188d2b59c9bd06ff934baa",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr30eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr30eh/html/BILLS-119hr30eh.htm",
+          "governed_bytes_sha256": "08a35fc54e7a572cb1c6af277d88c9c33bdba9090c01612d7ad0f44f146181fd",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:34usc20911-2024-offense-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleII-chap209-subchapI-partA-sec20911.htm",
+          "governed_bytes_sha256": "216108a015a9bd8d10331cf4a2dcf089f060ea802afc0043d444994222904af2",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:34usc12291-2024-domestic-violence",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title34/html/USCODE-2024-title34-subtitleI-chap121-subchapIII-sec12291.htm",
+          "governed_bytes_sha256": "59388375ff4638472167a4fe4bc639d524d29af0ee0395497b8d91503fbc2a8f",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated",
+      "formatting_only_after_review": "Trim trailing whitespace; no semantic change."
+    },
+    {
+      "action_id": "house:119:1:42",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-237-GOVERNING-SCOPE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "42",
+        "legis-num": "H R 35",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "13-Feb-2025",
+        "action-time": "10:45 AM",
+        "vote-desc": "Agent Raul Gonzalez Officer Safety Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "HR35EH creates intentional vehicle flight within100miles from the specified pursuing officers; preserve lawful BP authority and officer relationship, ordinary/enhanced imprisonment versus fine alternatives. NewJ/G and208A use conviction/admission-of-conduct predicates. Existing758checkpoint/speed elements are different. NewGoperates under237admitted-person scope;208Ahas its own any-alien relief-bar predicate. Report duty is not actual enforcement.",
+      "finding": "The criminal-ground excerpt and candidate omitted237(a)governing in-and-admitted scope. Unqualified any-alien newG wording could materially overstate deportability, and must be distinguished from conduct admissions, offense timing and separate relief bars.",
+      "correction": "Bind the complete237(a)chapeau and INA alien/admission definitions; preserve the scope in shared compact/detail/qualifications, including independent208Aor2(c)relief-bar clauses. Refresh ledger and seed bindings and regenerate both members.",
+      "before_authoring_action_sha256": "956034d5bf11c42b65596e3e32d1eaa049a8105f1356f5984d5c83fd360a9297",
+      "corrected_authoring_action_sha256": "38971532c24c8f535445ee104fbcaba530621003efdf1eeed14cbdd5ca251400",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr35eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr35eh/html/BILLS-119hr35eh.htm",
+          "governed_bytes_sha256": "d32d604d8e1d0494423df7a5eb470ab933d4d5c3350a8fc67944c9481ebc137b",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc758-2024-checkpoint-flight",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap35-sec758.htm",
+          "governed_bytes_sha256": "32b93c6d0526d827775cce12bc5bf4294ac1f518ed60e906432e4a7941e266ce",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated",
+      "formatting_only_after_review": "Trim trailing whitespace; no semantic change."
+    },
+    {
+      "action_id": "house:119:1:183",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-237-GOVERNING-SCOPE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "183",
+        "legis-num": "H R 875",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "26-Jun-2025",
+        "action-time": "3:27 PM",
+        "vote-desc": "Jeremy and Angel Seay and Sergeant Brandon Mendoza Protect Our Communities from DUIs Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "HR875EH newJ permits conviction or specified conduct admissions of jurisdiction-defined alcohol/drug impaired-driving offense; newGrequires conviction, with no new offense-after-admission timing clause of its own. Classification as misdemeanor/felony is irrelevant, but the237governing admitted-person status framework remains. No injury/repeat conviction threshold or automatic actual removal implied.",
+      "finding": "The criminal-ground excerpt and candidate omitted237(a)governing in-and-admitted scope. Unqualified any-alien newG wording could materially overstate deportability, and must be distinguished from conduct admissions, offense timing and separate relief bars.",
+      "correction": "Bind the complete237(a)chapeau and INA alien/admission definitions; preserve the scope in shared compact/detail/qualifications, including independent208Aor2(c)relief-bar clauses. Refresh ledger and seed bindings and regenerate both members.",
+      "before_authoring_action_sha256": "9884695f1293fb2f410fa34fbb13429a91e3d70174d2ef1268fb7fded79e62ed",
+      "corrected_authoring_action_sha256": "f7eaa54adac32d9dce7256a35a65f25952a12142ee237af4f1a27e1f8c07f6ff",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr875eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr875eh/html/BILLS-119hr875eh.htm",
+          "governed_bytes_sha256": "6fff661ac82c178a62c254dfa72386de5d1733b4a93f5cc00189f13b063f6bec",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated",
+      "formatting_only_after_review": "Trim trailing whitespace; no semantic change."
+    },
+    {
+      "action_id": "house:119:2:94",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-237-GOVERNING-SCOPE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "94",
+        "legis-num": "H R 1958",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "18-Mar-2026",
+        "action-time": "5:27 PM",
+        "vote-desc": "Deporting Fraudsters Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "HR1958EH separately enumerates identical newJ/G conviction/conduct-admission offense predicates, catchall unlawful defined benefits/government fraud and conspiracies, plus express broad relief bar includingFARRA2242. Read all seven crime families, statutory thresholds/nexus/intent/exclusions, public-benefit exceptions, civilversuscrime provisions and private-sector reach. NewGhas237admitted-person scope; the separateJ-orGrelief bar is not reduced to that route. Preserve1128parenthetical discrepancy against expressINA212text; do not decide individual treaty/enforceability outcomes.",
+      "finding": "The criminal-ground excerpt and candidate omitted237(a)governing in-and-admitted scope. Unqualified any-alien newG wording could materially overstate deportability, and must be distinguished from conduct admissions, offense timing and separate relief bars.",
+      "correction": "Bind the complete237(a)chapeau and INA alien/admission definitions; preserve the scope in shared compact/detail/qualifications, including independent208Aor2(c)relief-bar clauses. Refresh ledger and seed bindings and regenerate both members.",
+      "before_authoring_action_sha256": "14bea90f3cd97ff7d30587155ef33835baed4eab40089143bc0de4472444bd6a",
+      "corrected_authoring_action_sha256": "f6514d15088efca518b8afdcdc30589fde168e843853aac00fa1f462a9191bd6",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1958eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1958eh/html/BILLS-119hr1958eh.htm",
+          "governed_bytes_sha256": "ff6a728f17ed3f25b9847e0d20d6e278d5c7602352b32b42a769a6e08ee11920",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:7usc2024-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2024.htm",
+          "governed_bytes_sha256": "8a5b54b7ba7b24a009bb3c5c675ac18840731f9ab16cfcaa446cb28e8efe498e",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:42usc408-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec408.htm",
+          "governed_bytes_sha256": "f034f0807aeaf6e8bf572b17817c121cf1580ca5eebca89b9103ae42211aabbc",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc666-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap31-sec666.htm",
+          "governed_bytes_sha256": "2033ea23df240d5535e9f3c56d7f515a25e066d26143f268bfe7e1f7d41c72f4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc1028-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap47-sec1028.htm",
+          "governed_bytes_sha256": "163fff702ddf89f57aee15d1d1151d838e39ab401af80cf1f4a4f904e12633e5",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc1031-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap47-sec1031.htm",
+          "governed_bytes_sha256": "c744f580374f61d67c6fc9836dd579bcf70557ac2b2149af563942b707c21035",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc371-2024-fraud-predicate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap19-sec371.htm",
+          "governed_bytes_sha256": "c2ada6117436aad720ab30c8e9952c670f78df36c5aab5e2720f7c4246698475",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-immigration-laws",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "5d35922d0695de4e3c2fc86113298bcfac8de826946a9841852e0004918fdc5b",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:farra2242-1998-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "governed_bytes_sha256": "de25eb6ff0a1daa6c0f0ebebf3e984c7cf80dc4a7044a17c583034d29fe1346d",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc-chapter63-2024-fraud-predicates",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap63.htm",
+          "governed_bytes_sha256": "806849ce20de1df9bf9c78afa3f2c5acf65747542642d0c65a8dd6143fd370a9",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1611-2024-benefit-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapI-sec1611.htm",
+          "governed_bytes_sha256": "c8ef21bb11777c4f4ce50a782dc5873aa212b9a36d4f4a5d18ec34e72ba98f2f",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1621-2024-benefit-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapII-sec1621.htm",
+          "governed_bytes_sha256": "127add75c235acb0a2034123bae4cc258a0693ba0efc5102dc2134fd701b72b4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc24-2024-health-benefit-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap1-sec24.htm",
+          "governed_bytes_sha256": "1fbbaf19961e0f810167f56ab58685257fa52c610c9e6cb5fed805bdd3f0b5e2",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-aggravated-felony",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "bef308b511f4b7451990543668562133375f114d3cc472d7204a49335e52832a",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated",
+      "formatting_only_after_review": "Trim trailing whitespace; no semantic change."
+    },
+    {
+      "action_id": "house:119:2:96",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "severity": "Major",
+      "finding_id": "IB-AUDIT-237-GOVERNING-SCOPE",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "96",
+        "legis-num": "H R 4638",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "19-Mar-2026",
+        "action-time": "10:30 AM",
+        "vote-desc": "BOWOW Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "HR4638EH both newJ/Gpermit conviction or conduct admissions, incorporating existing1368willful/malicious harm, attempt/conspiracy to harm a federally employed dog/horse with specified principal law-enforcement purpose. Not every animal/onlyCBP or only conviction. Preserve old criminal penalties and separate INA consequence; newGretains237admitted-person framework. No guilt/outcome/enactment inferred.",
+      "finding": "The criminal-ground excerpt and candidate omitted237(a)governing in-and-admitted scope. Unqualified any-alien newG wording could materially overstate deportability, and must be distinguished from conduct admissions, offense timing and separate relief bars.",
+      "correction": "Bind the complete237(a)chapeau and INA alien/admission definitions; preserve the scope in shared compact/detail/qualifications, including independent208Aor2(c)relief-bar clauses. Refresh ledger and seed bindings and regenerate both members.",
+      "before_authoring_action_sha256": "70afd3f9cc0668492191d01f3a6963bcbd004d958875130d33f95091c295cf35",
+      "corrected_authoring_action_sha256": "babe2e4b46d35df4dbad5cf05ae54fd4b25b88622354c4dc31926ce881413db9",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr4638eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4638eh/html/BILLS-119hr4638eh.htm",
+          "governed_bytes_sha256": "b20dc62e7d2490c077d220a05252b61c2ad613f17fe692766c19c40143376ae7",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:18usc1368-2024-working-animals",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap65-sec1368.htm",
+          "governed_bytes_sha256": "ff66f1ae7801620fbcc4b68dec182a7d1cb72e69606fae3533edf4760dfefa18",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact bill and identified material predicate/definition/framework/waiver provisions; surrounding237(a)chapeau independently read"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated",
+      "formatting_only_after_review": "Trim trailing whitespace; no semantic change."
+    },
+    {
+      "action_id": "house:119:1:7",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "7",
+        "legis-num": "H R 23",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "9-Jan-2025",
+        "action-time": "1:37 PM",
+        "vote-desc": "Illegitimate Court Counteraction Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Present",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR23EH conditionally sanctions presidentially identified foreign actors for ICC efforts against defined protected persons; alien relatives have only the immigration-sanctions route. Preserve citizen/LPR/entity/in-US exclusions for principals, adult-child family limit, protected ally conditions, immediate revocation, 60-day/ongoing trigger, 90-day pre-reported waiver, two termination certifications and 10-day notice. Whole package contains property/funding provisions. Existing INA definitions and ICC definitions independently read; Massie Present is nondirectional.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "d35bf396dc9d67530257517f0dd131b541c1e663f4695040a7ae60a891b71d5d",
+      "corrected_authoring_action_sha256": "d35bf396dc9d67530257517f0dd131b541c1e663f4695040a7ae60a891b71d5d",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr23eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr23eh/html/BILLS-119hr23eh.htm",
+          "governed_bytes_sha256": "54857e6e817c00f19cb5bf0c81d5a76a75b775c21127eeb8c8180144331c59fd",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:22usc7432-2024-icc-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap81-subchapII-sec7432.htm",
+          "governed_bytes_sha256": "40aed15842491ef1078df2a58cfb95baa195e599a2b9b9257a0b21b240fafc7d",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:63",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "63",
+        "legis-num": "H R 495",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Mar-2025",
+        "action-time": "6:51 PM",
+        "vote-desc": "Subterranean Border Defense Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR495EH inserts only annual recurrence into existing7134(a)(2). Complete257 section and statutory note distinguish existing DHS annual tunnel report from CBP one-year strategic-plan implementation report, retain existing180-day plan scope/actors and fiscal2023/2024 authorization. Suspension-and-passage means the complete bill; reporting is not implementation or new money.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "71026f82d551f89ca5ab2c9b015ebdc5c182e54112fce9a9a44ba2fdc498eeb7",
+      "corrected_authoring_action_sha256": "71026f82d551f89ca5ab2c9b015ebdc5c182e54112fce9a9a44ba2fdc498eeb7",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr495eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr495eh/html/BILLS-119hr495eh.htm",
+          "governed_bytes_sha256": "8bf6c8a2e4f37d494d1699a06492437cce748eeea58edb21d72b76a9ed0a639c",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:6usc257-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partD-sec257.htm",
+          "governed_bytes_sha256": "a45ab7d57d32e9136818d892d277d10d62d9b0eec23d3132be1caa32595a9904",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:65",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "65",
+        "legis-num": "H R 993",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Mar-2025",
+        "action-time": "7:06 PM",
+        "vote-desc": "Emerging Innovative Border Technologies Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR993EH assigns Secretary through CBP/S&T the180-day plan, including privacy, procurement, costs, metrics and specified technologies. Commissioner may maintain teams; maintained teams must have procedures, strategic plans and transition protocols. Separate Commissioner180-day/annual reports concern pilots/gaps/transitions. Statutory authority does not prove first-ever teams, universal deployment, successful pilots or appropriations.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "73d65b8f7a5165561c999c68230f7cc0e2afc9ae3ef80425c5ecb13ebb40dc73",
+      "corrected_authoring_action_sha256": "73d65b8f7a5165561c999c68230f7cc0e2afc9ae3ef80425c5ecb13ebb40dc73",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr993eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr993eh/html/BILLS-119hr993eh.htm",
+          "governed_bytes_sha256": "6d543f75ed2ba7615de34dd509e2e34a42dfe29c35394aa751c237787a41cd7e",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:171",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "171",
+        "legis-num": "H R 2056",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jun-2025",
+        "action-time": "4:12 PM",
+        "vote-desc": "District of Columbia Federal Immigration Compliance Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR2056EH bars D.C. restrictive statutes/policies/practices on specified citizenship/status information exchanges and compliance with lawfully made DHS236/287 detainer or release-notice requests. Existing1373/1644 and complete identified qualified custody/officer provisions do not create unlimited arrest powers. No universal duty to obey every request or constitutional adjudication. D.C.-specific whole-bill choice.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "c728426c2e4f0c0dbd1247ffff84dd4ed1277a1e86c26f416d58fc78755e345f",
+      "corrected_authoring_action_sha256": "c728426c2e4f0c0dbd1247ffff84dd4ed1277a1e86c26f416d58fc78755e345f",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr2056eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2056eh/html/BILLS-119hr2056eh.htm",
+          "governed_bytes_sha256": "d0ba135b804bea1b0e46b24ed68db46482b6d98281429babc8aebba4b141e87b",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1373-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1373.htm",
+          "governed_bytes_sha256": "2c5adf0ec92cd5ac80f70b88960127698cd19ebdc3f03b27791771e76cdd31c2",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1644-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1644.htm",
+          "governed_bytes_sha256": "cbaf3f9eb85f3d0053cdbd49271eda98734b1b248bab915a269eb4aea5ba636c",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1357-2024-dc-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1357.htm",
+          "governed_bytes_sha256": "0d37e1556d87124e0a00b9462544ffdf07788acc5c6db192716086f89fe29638",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:184",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "184",
+        "legis-num": "H R 275",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "26-Jun-2025",
+        "action-time": "3:36 PM",
+        "vote-desc": "Special Interest Alien Reporting Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR275EH requires seventh-day monthly public/two-committee reports beginning first full post-enactment month, preceding-month data plus fixed2021–2025 initial period. Travel-pattern-based potential risk is not guilt; scope expressly includes interior as well as ports/between ports. Only4872(f)(2) four-country definition imported, not procurement authority. New reporting, not admission/removal rules.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "c41accf6e0b41cf9743303ed3f342aef136008c3ba34ffefe2f8e553715e3a5b",
+      "corrected_authoring_action_sha256": "c41accf6e0b41cf9743303ed3f342aef136008c3ba34ffefe2f8e553715e3a5b",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr275eh/html/BILLS-119hr275eh.htm",
+          "governed_bytes_sha256": "3f4d6fd4b078cccb89db7516c7bd2ecefbd325fb45a0c189a01b9a7f03ea9bad",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:10usc4872-f2-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "governed_bytes_sha256": "d2bbc541203d80de6e7518ae377625b8333008cbfdeeff15c6ee0432abcce411",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:264",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "264",
+        "legis-num": "H R 3486",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Sep-2025",
+        "action-time": "10:47 AM",
+        "vote-desc": "Stop Illegal Entry Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR3486EH compared with complete1325/1326 and incorporated conviction/aggravated-felony/qualified removal provisions. Distinguish subsequent-entry maximum and new post-entry conviction minimum; reentry consent exceptions retained with DHS actor; three-misdemeanor, terrorism nonconcurrent, early-removal and repeated-removal categories differ. New overriding pre-removal conviction minimum retains three alternative predicates. Unserved-term and three conjunctive collateral-order-review conditions retained/redesignated. No individualized sentence or outcome.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": null,
+      "before_authoring_action_sha256": "7661c3768cae63871108b88c9e0120175d16aec84038f8838f5e5a763d4336b2",
+      "corrected_authoring_action_sha256": "7661c3768cae63871108b88c9e0120175d16aec84038f8838f5e5a763d4336b2",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr3486eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3486eh/html/BILLS-119hr3486eh.htm",
+          "governed_bytes_sha256": "1e0d8adc054ea4bb92431fd578bf065802c30db9619aab99e8bcecdead015143",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1325-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+          "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1326-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+          "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-aggravated-felony",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "bef308b511f4b7451990543668562133375f114d3cc472d7204a49335e52832a",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-conviction-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "fc0f60a23cc9d7d122005048e52c35d3d3d64cf6c7220ceb938fab96f33b5082",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-early-removal",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "governed_bytes_sha256": "d96a6c8cc95e147ef4903c2d09f2ee3ad7e36219f45e5327590582e9751471d6",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1225-2024-security-removal",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1225.htm",
+          "governed_bytes_sha256": "d7f99494c651a74bd6e75aa546d221f7742827f1b9ab404985a3b62cd15067b8",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:214",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "214",
+        "legis-num": "S 2",
+        "vote-question": "On Passage",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "9-Jun-2026",
+        "action-time": "5:23 PM",
+        "vote-desc": "Secure America Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete S2ES has seven distinct additionalFY2026 accounts throughSeptember2029; TitleI non-immigration/customs exclusions differ from TitleII immigration funding. Within-account350m and108.5m amounts are not additive; processing-coordinator cutoff/tower geography and autonomous definition preserved. Adult five-route set-aside is not conviction-only, qualified cooperation is enactment-date-specific, Tribal exception retained, release-use restriction only paragraph9 funds and existing-law exception. Incorporated custody read with enacted119-1; complete119-21section100051 checked before selecting3/7; biometric/system/cooperation powers retained. Governing237 framework applies only to its deportability route. Whole-package choice cannot create component preferences.",
+      "finding": "No material semantic defect found in the compared exact-action mechanism, compact, choice meanings, qualifications, source map or single-bill episode.",
+      "correction": "S.2 additionally binds the governing237 scope as expanded-pattern source-map hardening; its literal deportable-category predicate and member direction were already preserved.",
+      "before_authoring_action_sha256": "a792be3f041bc302a52628a017bb060e5ff1f23ac541add4ae71a88445c5cdb0",
+      "corrected_authoring_action_sha256": "adcba3e215c15feedaa380627bb9fe2f015e796ff18fdc7fb6f2cb85a03e976e",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:s2es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2es/html/BILLS-119s2es.htm",
+          "governed_bytes_sha256": "484dce5d26673f109e915c3400c2a6ba9ab72856c2268d266ad1d5608765e660",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1365b-2024-s2-biometric-system",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1365b.htm",
+          "governed_bytes_sha256": "444f5046b3e6ce9bfbe74cb0a9eec2facca30eb9929948c7e0b2ebf97c746d10",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1103-2024-s2-enforcement",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1103.htm",
+          "governed_bytes_sha256": "3147a8d9bbbfbafa814bd6ee6737800750bf966ac1e86878b6ceff64de14cd66",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:pl119-21-100051-border-incorporation",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "governed_bytes_sha256": "01aaa48288cfc39a5f2b106ca3f62bc0822fe0059e33a448a645eba6fac0564b",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1357-2024-dc-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1357.htm",
+          "governed_bytes_sha256": "0d37e1556d87124e0a00b9462544ffdf07788acc5c6db192716086f89fe29638",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1373-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1373.htm",
+          "governed_bytes_sha256": "2c5adf0ec92cd5ac80f70b88960127698cd19ebdc3f03b27791771e76cdd31c2",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1644-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1644.htm",
+          "governed_bytes_sha256": "cbaf3f9eb85f3d0053cdbd49271eda98734b1b248bab915a269eb4aea5ba636c",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:pl119-1-section2",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm",
+          "governed_bytes_sha256": "29290a4553f0f1c4a36ad2fcf3654ce7d35a676a63dc006db8dd47d75d8f3965",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "89600cc01e15a30ce0dd4ee9c925a24838b1c9639e18714dd7c1af3d17136856",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-hr30-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "aa37d3cf2cfe514c2d9fee930006cce4b15c5dc93f3fcb60313d587e2eb030e1",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1325-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1325.htm",
+          "governed_bytes_sha256": "e4f1d31f1aeecfc02812f65622bd81bc3f33dc17dcffe3a82e1cf01d74cc5ac4",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1326-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1326.htm",
+          "governed_bytes_sha256": "162715aa06228c4ec0447a251dc3b0d48443cb21f5e042756a76d2b4dff9438e",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1231-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1231.htm",
+          "governed_bytes_sha256": "43edc9a605b85e0c88f074c2f98bdd8df7226de98439183065a873116c2d2814",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1227-2024-deportability-framework",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "58358f7e7f2c0ff44416d26d78b64af48f634eec9497996f7a0f3de5216557a4",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-alien-admission-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07",
+          "reviewed_extent": "Complete exact operative bill and materially incorporated/baseline provisions; complete surrounding source read where stated in reconstruction"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "applied_checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:65",
+      "audit_state": "corrective_meaning_primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "65",
+        "legis-num": "H J RES 72",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Feb-2026",
+        "action-time": "6:17 PM",
+        "vote-desc": "Relating to a national emergency by the President on February 1, 2025"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HJRes72EH, EO14193, Proclamation10886, continuation notice and NEA202 separately reconstructed. Contrary to the exclusion rationale, EO3(b) legally requires DHS to recommend additional action about illegal migration/cooperative enforcement when Canadian action is inadequate. Emergency termination with statutory savings therefore has direct immigration-cooperation governance as well as trade purposes. Do not import every parent-emergency directive or adjudicate every overlapping-scope consequence. Correct to bounded substantive candidate and independently compare that corrective meaning.",
+      "finding": "Corrective shared compact/detail/choices preserve specific emergency termination, direct operative recommendation, statutory savings and overlapping-scope limits. Both Yea observations support the whole resolution only; separate episode.",
+      "corrected_authoring_action_sha256": "a56352c49ac19c30e49ca1fda48d0a454a6e69b5040b1f4daa4b9b32f5ca236e",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hjres72eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres72eh/html/BILLS-119hjres72eh.htm",
+          "governed_bytes_sha256": "28ee4d4cec7da42b3a1aad2402c3966b8904e9c1737af9fddb33515cc65e2079",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        },
+        {
+          "source_id": "govinfo:eo14193-20250201-canada",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-07/html/2025-02406.htm",
+          "governed_bytes_sha256": "acc3a6b3a159a2be677da48065a2ae23f711a79c36c0aec6d9aeb19d53ac539a",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "governed_bytes_sha256": "10253600960c2528fa1104992c9bd07f91d24d808ecb01605e1c76f7f65d8b47",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        },
+        {
+          "source_id": "govinfo:proclamation10886-20250120",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-29/html/2025-01948.htm",
+          "governed_bytes_sha256": "043c7c7b095c2745d1a3be410d5aac66f45ff36ee58bdd276d9df724032b00dc",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        },
+        {
+          "source_id": "govinfo:emergency-continuation-20260114",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-01-14/html/2026-00731.htm",
+          "governed_bytes_sha256": "1a414e6dfe2c14b7d1ce3543cffadb8e9f226560df7841fbc92567eae05c08b3",
+          "reviewed_extent": "Complete exact resolution/order and identified statutory/context authorities"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    }
+  ],
+  "noncounting_actions": [
+    {
+      "action_id": "house:119:1:12",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "12",
+        "legis-num": "H R 28",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "14-Jan-2025",
+        "action-time": "2:42 PM",
+        "vote-desc": "Protection of Women and Girls in Sports Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR28EH regulates TitleIX athletics and study/training-benefit conditions. Admission means educational admission; no citizenship or immigration predicate or consequence. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "b3d2caf1c852b256f67b73bc757d8d3f66892073864ac04fea993f7b475f9222",
+      "corrected_review_record_sha256": "b3d2caf1c852b256f67b73bc757d8d3f66892073864ac04fea993f7b475f9222",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:12",
+          "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+          "governed_bytes_sha256": "08c746c11e78e157b36e1e86f560e682935fec98c4a6deda961d46148b54951f",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr28eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr28eh/html/BILLS-119hr28eh.htm",
+          "governed_bytes_sha256": "35006ece95e315b058f5af8f06b290ead9c2c5d69fa0bb8d872296ef97597023",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:27",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "27",
+        "legis-num": "H R 21",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "23-Jan-2025",
+        "action-time": "3:55 PM",
+        "vote-desc": "Born-Alive Abortion Survivors Protection Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR21EH regulates live-born infant clinical care, hospital admission, reporting, criminal penalties and maternal remedies/immunity. Personhood/Fourteenth-Amendment findings do not change nationality or INA law. Justice/Health overlap independently does not establish Immigration. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "5c9c4348d9663b3ff4e4d5eda83c9954dcf539ae485ba1ab9b298e73a4adeff9",
+      "corrected_review_record_sha256": "5c9c4348d9663b3ff4e4d5eda83c9954dcf539ae485ba1ab9b298e73a4adeff9",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:27",
+          "url": "https://clerk.house.gov/evs/2025/roll027.xml",
+          "governed_bytes_sha256": "74fa4133471e914824761890b1cc6a32e1762418720d5e368fdd4d105ceb1373",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr21eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr21eh/html/BILLS-119hr21eh.htm",
+          "governed_bytes_sha256": "da962a12e202551664244dbdd2a050f15d9ea58142c676725e29b7e6594b6064",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:22",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "22",
+        "legis-num": "H R 165",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "22-Jan-2025",
+        "action-time": "4:55 PM",
+        "vote-desc": "Wounded Knee Massacre Memorial and Sacred Site Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR165EH and definitions concern identified Tribal land restricted-fee ownership/jurisdiction/transfer, encumbrances, covenant and gaming. Alienation means land transfer, not alien status. Material incorporated land-law/covenant scope cannot turn the exact parcel-siting proposition into immigration law. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "c7489222523107ea1d4f1a432768f37ec7e3e17424270a69dac3c0f26c48eb63",
+      "corrected_review_record_sha256": "c7489222523107ea1d4f1a432768f37ec7e3e17424270a69dac3c0f26c48eb63",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:22",
+          "url": "https://clerk.house.gov/evs/2025/roll022.xml",
+          "governed_bytes_sha256": "56435911bbf6851fae9a2fc514a63305d2de6d7910c053ad229772e5338a0001",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr165eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr165eh/html/BILLS-119hr165eh.htm",
+          "governed_bytes_sha256": "31a524026990b51862981b57a928d19886d013b271840c39f9c6dc49892bb88e",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:24",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "24",
+        "legis-num": "H R 375",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "23-Jan-2025",
+        "action-time": "3:35 PM",
+        "vote-desc": "Continued Rapid Ohia Death Response Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete exact January2025 HR375EH is RapidOhiaDeath research, restoration and consent-conditioned land management. This edition is not later SAVE replacement language. No operative immigration mechanism. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "ecb9e03e55d43d4e1dc23c27e1eb876a39a484e1870b5ad49a684b0d6194f700",
+      "corrected_review_record_sha256": "ecb9e03e55d43d4e1dc23c27e1eb876a39a484e1870b5ad49a684b0d6194f700",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:24",
+          "url": "https://clerk.house.gov/evs/2025/roll024.xml",
+          "governed_bytes_sha256": "40524b77d2e4318ec6fe8b0e28a497377dac36719892e1c4d2c905816766302f",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr375eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr375eh/html/BILLS-119hr375eh.htm",
+          "governed_bytes_sha256": "ecf5cf820bb08231d73f17bb4c945db535867ae917f9fd53fd41ade84f8a0fe1",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:43",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "43",
+        "legis-num": "H R 825",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "24-Feb-2025",
+        "action-time": "6:53 PM",
+        "vote-desc": "Assisting Small Businesses Not Fraudsters Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR825EH attaches SBA assistance restrictions to finally convicted pandemic-loan/grant misconduct and associate/business control, excludes7(b) and pre-enactment government agreements. No status eligibility or INA consequence; a noncitizen may commit a crime without making criminal predicate immigration policy. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "aed2f4fc9e3aaa923d3a868bef4ced8ee3786a24da0efe064d41f01ff401a2a3",
+      "corrected_review_record_sha256": "aed2f4fc9e3aaa923d3a868bef4ced8ee3786a24da0efe064d41f01ff401a2a3",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:43",
+          "url": "https://clerk.house.gov/evs/2025/roll043.xml",
+          "governed_bytes_sha256": "dc0927e19135a762b2cbdad7856b16054e57213ebff2fff863abb751c6b8053c",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr825eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr825eh/html/BILLS-119hr825eh.htm",
+          "governed_bytes_sha256": "3bef56f11a3cdcd7d19beae8f27fed56abb38c316d51b377a6ff6d53b2ceb8d7",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:49",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "49",
+        "legis-num": "H R 804",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "25-Feb-2025",
+        "action-time": "7:38 PM",
+        "vote-desc": "Rural Small Business Resilience Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR804EH changes rural disaster-assistance access/outreach and a duplicated paragraph number; identified636(b) baseline describes disaster property/economic-injury lending. The exact change adds no citizenship/status restriction. Benefit program context alone does not establish Immigration. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "b2d3d4a977c58a18b55dda97b831bb8f4a46a272f4867f1beb9f91194e4c5502",
+      "corrected_review_record_sha256": "b2d3d4a977c58a18b55dda97b831bb8f4a46a272f4867f1beb9f91194e4c5502",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:49",
+          "url": "https://clerk.house.gov/evs/2025/roll049.xml",
+          "governed_bytes_sha256": "33804994eee3e63bf27ba5db548e57fd30f677cff22d7ebefd4def5bc2d71da1",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr804eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr804eh/html/BILLS-119hr804eh.htm",
+          "governed_bytes_sha256": "3bbcf4f9dc8375dc2b0369cd2e36b47e11b1cba1df714ae15a720ca380b42934",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:15usc636-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+          "governed_bytes_sha256": "10cae0cd4cc071e240d8bea822a2570550d4810e01dc4a117673540940a0696c",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:64",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "64",
+        "legis-num": "H R 901",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Mar-2025",
+        "action-time": "6:59 PM",
+        "vote-desc": "Research Security and Accountability in DHS Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR901EH adds department-wide DHS sensitive-R&D acquisition safeguarding, GAO review and briefing. Research-security/disclosure coordination is not immigration adjudication, work eligibility, entry or border power. DHS-only exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "30a031fd5c4ff214525a698af7857cdf970c9e607f48ca9d6202bd820af07b59",
+      "corrected_review_record_sha256": "30a031fd5c4ff214525a698af7857cdf970c9e607f48ca9d6202bd820af07b59",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:64",
+          "url": "https://clerk.house.gov/evs/2025/roll064.xml",
+          "governed_bytes_sha256": "606ddfc5faa26f9a291201191e0fa64a663e0db3350b38d59ba5de16861ff326",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr901eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr901eh/html/BILLS-119hr901eh.htm",
+          "governed_bytes_sha256": "072dce8aa8f0625a7bfe26d752ec12d808695306bdced0abffeb664ce6834884",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:59",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "59",
+        "legis-num": "H J RES 42",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "5-Mar-2025",
+        "action-time": "4:42 PM",
+        "vote-desc": "Providing for congressional disapproval of the rule submitted by the Department of Energy relating to “Energy Conservation Program for Appliance Standards: Certification Requirements, Labeling Requirements, and Enforcement Provisions for Certain Consumer Products and Commercial Equipment”"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HJRes42EH disapproves exactly89FR81994 appliance certification/labeling/enforcement. Consumer-product documents and enforcement are not immigration documents/enforcement; existing incorrect FR shorthand already corrected before this independent pass. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "9ed20069c95b95d60e674b99160ff34c07640ebc3ba664b007b831ea438babf3",
+      "corrected_review_record_sha256": "9ed20069c95b95d60e674b99160ff34c07640ebc3ba664b007b831ea438babf3",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:59",
+          "url": "https://clerk.house.gov/evs/2025/roll059.xml",
+          "governed_bytes_sha256": "abb8356c101ef3bf6c64bfdc359f54b10ad880d8fb39aa4f23f98ef39e8738eb",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hjres42eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres42eh/html/BILLS-119hjres42eh.htm",
+          "governed_bytes_sha256": "372e54434d22009996d93bb14fb4f100ad4f373b67a6b20f481b15a4fa165dc0",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:61",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "61",
+        "legis-num": "S J RES 11",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "6-Mar-2025",
+        "action-time": "10:19 AM",
+        "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Bureau of Ocean Energy Management relating to “Protection of Marine Archaeological Resources”"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete SJRes11ES disapproves BOEM marine-archaeology rule89FR71160; completeHRes177 consideration context does not replace the policy version. Maritime location alone supplies no immigration admission or border-operation mechanism. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "ae1e59888b1311db0a408fc5f91e166360dff78dc2f930f4929331739830dda8",
+      "corrected_review_record_sha256": "ae1e59888b1311db0a408fc5f91e166360dff78dc2f930f4929331739830dda8",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:61",
+          "url": "https://clerk.house.gov/evs/2025/roll061.xml",
+          "governed_bytes_sha256": "c97162b80d27607981f75a68f5fc5aed1d97b7d6b939a67e61a287c3d85db0f2",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:sjres11es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres11es/html/BILLS-119sjres11es.htm",
+          "governed_bytes_sha256": "38b2374330f5dc50405e45b86c8d4b209723b05b8018b3beec9bb938e93306a2",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres177eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres177eh/html/BILLS-119hres177eh.htm",
+          "governed_bytes_sha256": "0c6eae334c07f5834b247d694caf34566c1822a0a2973bfa6cf8847d6b9dda44",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:277",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "277",
+        "legis-num": "H R 3062",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "18-Sep-2025",
+        "action-time": "4:34 PM",
+        "vote-desc": "Promoting Cross-border Energy Infrastructure Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR3062EH defines crossing facility as oil/gas pipeline or electric transmission within1000feet; creates qualified crossing certificates/permit and commodity-authority changes. The crossed object is energy infrastructure, not admission/inspection of persons or immigration-status/enforcement law. Historical classification independently confirmed, exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "21a916fd0c1f4efb0771d9be71e38ada6b01a07487f224938c93771b7ca07f39",
+      "corrected_review_record_sha256": "21a916fd0c1f4efb0771d9be71e38ada6b01a07487f224938c93771b7ca07f39",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:277",
+          "url": "https://clerk.house.gov/evs/2025/roll277.xml",
+          "governed_bytes_sha256": "6103ea54adbec18885466bdadcb19f9a393e16d68be5d51addd1eb77ca9ab2d2",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr3062eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3062eh/html/BILLS-119hr3062eh.htm",
+          "governed_bytes_sha256": "18a5560484cffc1f6d7bd3aba138af8cf9f46f2549ba1fd2ea9d325aa5570b87",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:15",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "15",
+        "legis-num": "H R 6504",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jan-2026",
+        "action-time": "7:11 PM",
+        "vote-desc": "Haiti Economic Lift Program Extension Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR6504EH extends Haiti article/apparel tariff treatment, tariff-schedule restoration and qualified retrospective customs liquidation/refund. Entry is article entry or warehouse withdrawal, not Haitian TPS or admission of people; CBP customs duty does not establish Immigration. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "2f43a08a0824da3fcfc1f6b172c90480c3ee73a5815e3c89ac828f8925d75c84",
+      "corrected_review_record_sha256": "2f43a08a0824da3fcfc1f6b172c90480c3ee73a5815e3c89ac828f8925d75c84",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:15",
+          "url": "https://clerk.house.gov/evs/2026/roll015.xml",
+          "governed_bytes_sha256": "0cf788c58ffd5c2c80b1887f3bb0d3be4c4575b99ece52d6ceeaf20bca7f8447",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr6504eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6504eh/html/BILLS-119hr6504eh.htm",
+          "governed_bytes_sha256": "03e32101c612cf8e0259c719cb3ebe130c8e92e9478e7942a1f259e171f64c7e",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:55",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "55",
+        "legis-num": "H R 758",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "3-Mar-2025",
+        "action-time": "7:01 PM",
+        "vote-desc": "Mail Traffic Deaths Reporting Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HR758EH USPS crash reports/regulations/database/public privacy-safe summaries and contractor sanctions concern mail transportation. Vehicle/criminal language does not supply INA consequences or the separate HR35 border-flight predicate. Exclusion retained.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "b8270ec56c3ebc521078f8fdbc710e226e146c682ccd4b64b75dec752b7384d8",
+      "corrected_review_record_sha256": "b8270ec56c3ebc521078f8fdbc710e226e146c682ccd4b64b75dec752b7384d8",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:55",
+          "url": "https://clerk.house.gov/evs/2025/roll055.xml",
+          "governed_bytes_sha256": "1c81fecb36fd7eeeab6dbeae5482e2306139ac6eee7cd2049d7123b29dad1a49",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hr758eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr758eh/html/BILLS-119hr758eh.htm",
+          "governed_bytes_sha256": "7cc5d635b1e9c030802c007d08389d944d8233c1d3b00c48617538c69aec7d8a",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:65",
+      "audit_state": "primary_reconstructed_candidate_compared_corrected",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "interpreted_substantive_directional",
+      "severity": "Critical",
+      "finding_id": "IB-AUDIT-OPERATIVE-VS-RHETORICAL",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "65",
+        "legis-num": "H J RES 72",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Feb-2026",
+        "action-time": "6:17 PM",
+        "vote-desc": "Relating to a national emergency by the President on February 1, 2025"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HJRes72EH, EO14193, Proclamation10886, continuation notice and NEA202 separately reconstructed. Contrary to the exclusion rationale, EO3(b) legally requires DHS to recommend additional action about illegal migration/cooperative enforcement when Canadian action is inadequate. Emergency termination with statutory savings therefore has direct immigration-cooperation governance as well as trade purposes. Do not import every parent-emergency directive or adjudicate every overlapping-scope consequence. Correct to bounded substantive candidate and independently compare that corrective meaning.",
+      "finding": "Earlier exclusion dismissed operative immigration-specific recommendation governance as rhetoric, removing two supported whole-resolution member findings.",
+      "correction": "Author one bounded shared emergency-termination meaning; project both actual Yea observations; preserve package and overlapping-emergency limits.",
+      "before_review_record_sha256": "24927e566ced10d6feeff8dd6fca2d8d9e61837843cb5d47922ff6dff86d2583",
+      "corrected_review_record_sha256": "0e7cedc22127f0b1790e59dfc7980c637cfad06f120c1f85fa8bbf5386446bf4",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:65",
+          "url": "https://clerk.house.gov/evs/2026/roll065.xml",
+          "governed_bytes_sha256": "4487353110e4526b9f1e44354c25f5c8dfb2dd6a08c865176c24a71df4331c6c",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hjres72eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres72eh/html/BILLS-119hjres72eh.htm",
+          "governed_bytes_sha256": "28ee4d4cec7da42b3a1aad2402c3966b8904e9c1737af9fddb33515cc65e2079",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:eo14193-20250201-canada",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-07/html/2025-02406.htm",
+          "governed_bytes_sha256": "acc3a6b3a159a2be677da48065a2ae23f711a79c36c0aec6d9aeb19d53ac539a",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:50usc1622-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap34-subchapII-sec1622.htm",
+          "governed_bytes_sha256": "10253600960c2528fa1104992c9bd07f91d24d808ecb01605e1c76f7f65d8b47",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:50usc1702-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm",
+          "governed_bytes_sha256": "768f71c178b3f502fceb5c78cd84731bd7783bc0cff2b069dedc8d8591b245c6",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:proclamation10886-20250120",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-29/html/2025-01948.htm",
+          "governed_bytes_sha256": "043c7c7b095c2745d1a3be410d5aac66f45ff36ee58bdd276d9df724032b00dc",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:emergency-continuation-20260114",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2026-01-14/html/2026-00731.htm",
+          "governed_bytes_sha256": "1a414e6dfe2c14b7d1ce3543cffadb8e9f226560df7841fbc92567eae05c08b3",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "applied_checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:161",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "161",
+        "legis-num": "H RES 489",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "10-Jun-2025",
+        "action-time": "2:14 PM",
+        "vote-desc": "Providing for consideration of the bills H.R. 884, H.R. 2056, H.R. 2096, S. 331, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes489EH deems pending-bill substitutes for884/2056/2096 and provides S331 consideration, debate/waivers and separate passage/recommit/commit steps. No final adoption of underlying immigration policy; procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "e422c8cd9ddfc9d3358b85988f5179f81eb825915674b53d0b4b597d84bb37ad",
+      "corrected_review_record_sha256": "e422c8cd9ddfc9d3358b85988f5179f81eb825915674b53d0b4b597d84bb37ad",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:161",
+          "url": "https://clerk.house.gov/evs/2025/roll161.xml",
+          "governed_bytes_sha256": "3238816ac1ab76f8af55ec033ce86a4d741d455921f5e44329dc237313db75e9",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres489eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:177",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "177",
+        "legis-num": "H RES 530",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "24-Jun-2025",
+        "action-time": "2:17 PM",
+        "vote-desc": "Providing for consideration of the bills H.R. 3944, H.R. 275, H.R. 875, and providing for consideration of the resolution H.Res. 516"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes530RH is sole available reported edition; bound Clerk identity/outcome and separately checked unamended action history support adopted text. Pending3944 substitute/structured amendments,275/875 substitutes and516 consideration retain separate final votes. Missing EH is not failed adoption. Procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "1d942c1ec99b8640e4dc13491b559ce363c9ce6ce6a73410e898752e6991fe88",
+      "corrected_review_record_sha256": "1d942c1ec99b8640e4dc13491b559ce363c9ce6ce6a73410e898752e6991fe88",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:177",
+          "url": "https://clerk.house.gov/evs/2025/roll177.xml",
+          "governed_bytes_sha256": "c600540e2a57e1f8a99cf32ff8f9c5a1cae44c949c26ebf581fee949212a61e6",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres530rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm",
+          "governed_bytes_sha256": "7ac031be4097780ebce4731e118077a5f1a56f13a80db3854bfa95e3596b7d7a",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:243",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "243",
+        "legis-num": "H RES 682",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "9-Sep-2025",
+        "action-time": "2:10 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 3838) Streamlining Procurement for Effective Execution and Delivery and National Defense Authorization Act for FY 2026, and providing for consideration of the bill (H.R. 3486) Stop Illegal Entry Act, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes682EH deems RCP119-8 and pending3486 committee/Rules modifications with amendment procedures and later final votes. Deemed pending-bill text is not final policy passage. Procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "67b067d2053782e2c027108e29567de422b083e265497cc739606957aa1fdead",
+      "corrected_review_record_sha256": "67b067d2053782e2c027108e29567de422b083e265497cc739606957aa1fdead",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:243",
+          "url": "https://clerk.house.gov/evs/2025/roll243.xml",
+          "governed_bytes_sha256": "1e25d5757a4d4ca5d1ab168d95dfe24a5adbc61c8351092e5ffb0e320e08ac22",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres682eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres682eh/html/BILLS-119hres682eh.htm",
+          "governed_bytes_sha256": "39fb87bb3f4bdb99bbc80f0c205664406228cab1fb686411c4e92bd4ae3e40d8",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:268",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "268",
+        "legis-num": "H RES 707",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "16-Sep-2025",
+        "action-time": "2:43 PM",
+        "vote-desc": "Providing for consideration of the bills H.R. 4922, H.R. 5143, H.R. 5140, H.R. 5125, H.R. 1047, H.R. 3015, and H.R. 3062; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes707EH has pending-bill substitutes and separate final votes; already-passed1919 engrossment into3633 and NEA/calendar provisions are procedural. The cross-border facility bill concerns energy goods, not people. No newly passed immigration mechanism from this rule; procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "7373064f2ec1dc7704647cea0c5aca6fb67d3ab51c02c05205dd5c57e71c05ce",
+      "corrected_review_record_sha256": "7373064f2ec1dc7704647cea0c5aca6fb67d3ab51c02c05205dd5c57e71c05ce",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:268",
+          "url": "https://clerk.house.gov/evs/2025/roll268.xml",
+          "governed_bytes_sha256": "0d2ab1687b010864a0067ca6af46895a21757639a754d468125a5b883ac24fbb",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres707eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres707eh/html/BILLS-119hres707eh.htm",
+          "governed_bytes_sha256": "2981e2616082c400b89ea5587d9e11454602c64aba476b4281361c6996649f73",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:91",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "91",
+        "legis-num": "H RES 1115",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "17-Mar-2026",
+        "action-time": "3:57 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 556) Protecting Access for Hunters and Anglers Act; providing for consideration of the bill (H.R. 1958) Deporting Fraudsters Act; and providing for consideration of the bill (H.R. 4638) BOWOW Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes1115EH deems pending556/1958/4638 substitutes (including4638 modification) with separate final-passage/recommit steps and balanced-budget debate extension. Rule adoption is not the separate criminal-ground bill vote; procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "9c452ffda4a561cbb2fb0ee634afa882791900e93d5db9747bb78f34acfdef1e",
+      "corrected_review_record_sha256": "9c452ffda4a561cbb2fb0ee634afa882791900e93d5db9747bb78f34acfdef1e",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:91",
+          "url": "https://clerk.house.gov/evs/2026/roll091.xml",
+          "governed_bytes_sha256": "dff3f069aa653e71e96faa13a0f50961ace0f92f2a5011e629a55769f82ddb34",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres1115eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1115eh/html/BILLS-119hres1115eh.htm",
+          "governed_bytes_sha256": "b17f4408bb37932e0b0b733b7e954a659ad26f4b3db9ddc05cfe519a9b3c202f",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:119",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "119",
+        "legis-num": "H RES 965",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Apr-2026",
+        "action-time": "12:43 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 1689) to require the Secretary of Homeland Security to designate Haiti for temporary protected status"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete HRes965EH immediately considers1689 and deems explicit fixed TPS-date substitute; message transmission is conditioned on later passage. No duplication of next roll120 country-designation finding. Procedural and noncounting.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "9d463d5544b80a76ed9d560ec7c57cf01eb9a4173fd5868e2e607458787dfc82",
+      "corrected_review_record_sha256": "9d463d5544b80a76ed9d560ec7c57cf01eb9a4173fd5868e2e607458787dfc82",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:119",
+          "url": "https://clerk.house.gov/evs/2026/roll119.xml",
+          "governed_bytes_sha256": "87fd417efbd21436152e1bf98d3ef7102e62fcc67ccfae8fb49a71a487f751f8",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres965eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres965eh/html/BILLS-119hres965eh.htm",
+          "governed_bytes_sha256": "6da458873fd35060ed402946c731fbf84f682e9129d9a234771e65bc02b75f92",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:2:102",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "expressive_nonbinding_context",
+      "current_disposition": "expressive_nonbinding_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "102",
+        "legis-num": "H RES 1128",
+        "vote-question": "On Agreeing to the Resolution, as Amended",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "26-Mar-2026",
+        "action-time": "3:11 PM",
+        "vote-desc": "Expressing the support of the House of Representatives for the Department of Homeland Security"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete amended HRes1128EH and HRes1131EH consideration context are broad nonbinding DHS funding/resources/coordination/gratitude expression. Immigration/port-entry missions are context among many. Preserve only noncounting expressive context with no appropriation, independent substantive membership, ICE-only component position or truth of preamble allegations. No directional finding.",
+      "finding": "Supported noncounting disposition retained.",
+      "correction": null,
+      "before_review_record_sha256": "15128c97251bd944e862b627465f77a76a9fff806b49719f39e7c74c68d91238",
+      "corrected_review_record_sha256": "15128c97251bd944e862b627465f77a76a9fff806b49719f39e7c74c68d91238",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:102",
+          "url": "https://clerk.house.gov/evs/2026/roll102.xml",
+          "governed_bytes_sha256": "4830ae63c7aeb75789426bc732fd8742e9cbcb3f90b0a3be241aa40660a53d24",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres1128eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1128eh/html/BILLS-119hres1128eh.htm",
+          "governed_bytes_sha256": "cbec9646197cb51a0cc842601c1d92b10608c65e52b24931231d21b983781d2f",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        },
+        {
+          "source_id": "govinfo:hres1131eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1131eh/html/BILLS-119hres1131eh.htm",
+          "governed_bytes_sha256": "f1634cfbdfae95cdf268588b07453ded0778abd1fe228e6056414a4740c8fd5b",
+          "reviewed_extent": "Complete exact operative governed text and material referenced context; Clerk exact metadata and both observations checked"
+        }
+      ],
+      "correction_state": "checkpoint_validated"
+    }
+  ],
+  "action_assessment_counts": {
+    "Critical": 1,
+    "Major": 6,
+    "Minor": 2,
+    "No Defect": 26
+  },
+  "distinct_finding_counts": {
+    "Critical": 1,
+    "Major": 2,
+    "Minor": 1
+  },
+  "unaudited_current_substantive_action_ids": [],
+  "required_noncounting_sample": {
+    "exclusions": 12,
+    "procedural": 6,
+    "expressive": "all"
+  },
+  "expanded_patterns": [
+    "Review all post2025 referenced baselines for enacted amendments; TPS fee/duration is not safely represented by2024Code alone.",
+    "Check retained release/waiver categories and conditions across criminal-predicate and custody source families.",
+    "Expand surrounding-chapeau review across every candidate using criminal237grounds; verify other status/custody/relief clauses on their own scope rather than transporting the237admission condition.",
+    "Initial15meaning pattern pass: criminal237chapeau reviewed across all five newly added criminal-ground bills and S.2 incorporated category; custody-release and independent relief scopes checked separately. Initial15 reviewed; future meanings and remaining discovery still require audit. Material enacted TPS fee/duration and S.2 custody amendments followed; unavailable later-Code endpoints do not justify a universal temporal-currentness assurance.",
+    "Operative-versus-rhetorical pattern: expanded emergency-order reading exposed EO3(b) immigration-specific recommendation omitted in exclusion; corrected HJRes72. Expand exact operative governance review across remaining emergency, sanctions, DHS and package leads. Wider456-screening discovery remains open, so no full-corpus PASS."
+  ],
+  "source_availability_notes": [
+    "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
+    "OLRC current section pages returned maintenance; these responses are not law/evidence. Applicable enacted11921primary text is available and supplies the material TPS correction. No final temporal-pattern PASS claimed."
+  ],
+  "final_verdict": null,
+  "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
+  "sample_coverage": {
+    "original_exclusions_reviewed": 13,
+    "retained_exclusions_reviewed": 12,
+    "procedural_controls_reviewed": 6,
+    "expressive_controls_reviewed": 1,
+    "all_current_expressive_controls_reviewed": true
+  },
+  "checkpoint_validation": {
+    "focused_tests": 204,
+    "focused_runtime_seconds": 32.637,
+    "canonical_semantic_checks": 7,
+    "seven_generated_outputs_byte_identical": true,
+    "public_and_persistence_entrypoints_fail_closed": true,
+    "baseline_protected_paths_unchanged": true,
+    "exact_head_ci": "pending_push",
+    "final_full_corpus_audit_verdict": null
+  }
+}

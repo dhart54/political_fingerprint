@@ -143,6 +143,37 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 stored = json.loads((DATA / 'generated' / (name+'.json')).read_text(encoding='utf-8'))
                 self.assertEqual(stored, value)
 
+    def test_recorded_audit_binds_current_meanings_sources_and_observations(self):
+        audit_path = DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json'
+        audit = json.loads(audit_path.read_text(encoding='utf-8'))
+        actions = {a['action_id']: a for a in self.values[0]['actions']}
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        reviewed = {r['action_id']: r for r in audit['substantive_actions']}
+        self.assertEqual(set(reviewed), set(actions))
+        for aid, action in actions.items():
+            with self.subTest(action=aid):
+                record = reviewed[aid]
+                self.assertEqual(record['corrected_authoring_action_sha256'], digest(action))
+                clerk = sources['clerk:' + aid.removeprefix('house:')]
+                self.assertEqual(record['exact_identity'], clerk['metadata'])
+                self.assertEqual(record['recorded_member_observations'], clerk['member_records'])
+                evidence = {s['source_id']: s for s in record['primary_evidence']}
+                self.assertTrue({action['source_id'], *action['additional_source_ids']} <= evidence.keys())
+                for sid, witness in evidence.items():
+                    self.assertEqual(witness['governed_bytes_sha256'], sources[sid]['governed_bytes_sha256'])
+
+    def test_noncounting_audit_sample_binds_current_ledger_and_covers_risks(self):
+        audit_path = DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json'
+        audit = json.loads(audit_path.read_text(encoding='utf-8'))
+        ledger = {r['action_id']: r for r in self.values[3]['records']}
+        sample = audit['noncounting_actions']
+        for case in sample:
+            self.assertEqual(case['corrected_review_record_sha256'], digest(ledger[case['action_id']]))
+        self.assertGreaterEqual(sum(c['current_disposition'] == 'exact_action_ineligible' for c in sample), 12)
+        self.assertGreaterEqual(sum(c['current_disposition'] == 'procedural_context' for c in sample), 6)
+        expressive = {aid for aid, r in ledger.items() if r['disposition'] == 'expressive_nonbinding_context'}
+        self.assertTrue(expressive <= {c['action_id'] for c in sample})
+
 
 if __name__ == '__main__':
     unittest.main()

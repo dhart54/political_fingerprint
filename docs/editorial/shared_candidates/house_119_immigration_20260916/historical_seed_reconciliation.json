@@ -11,14 +11,12 @@
   "seed_count": 32,
   "all_seed_leads_screened": true,
   "current_seed_disposition_counts": {
-    "interpreted_substantive_directional": 13,
+    "interpreted_substantive_directional": 14,
     "procedural_context": 15,
-    "exact_action_ineligible": 3,
+    "exact_action_ineligible": 2,
     "expressive_nonbinding_context": 1
   },
-  "changed_proposed_substantive_leads": [
-    "house:119:2:65"
-  ],
+  "changed_proposed_substantive_leads": [],
   "authored_substantive_additions_outside_seed": [
     "house:119:1:7",
     "house:119:1:42"
@@ -28,7 +26,7 @@
       "action_id": "house:119:1:6",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "519fdabf31f457f49397750d7424e78bd781eacd5200a8916e8e776e52869dd7",
+      "shared_review_record_sha256": "b4613937fdcf1166c3c38697de8f2cb3bacc751c8b28ec859d8a57140f81a771",
       "source_ids": [
         "clerk:119:1:6",
         "govinfo:hr29eh",
@@ -37,7 +35,8 @@
         "govinfo:8usc1225-2024-laken-context",
         "govinfo:8usc1231-2024-laken-context",
         "govinfo:8usc1252-2024-laken-context",
-        "govinfo:8usc1253-2024-laken-context"
+        "govinfo:8usc1253-2024-laken-context",
+        "govinfo:18usc3521-2024-release-protection-context"
       ]
     },
     {
@@ -53,7 +52,7 @@
       "action_id": "house:119:1:17",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "0f732c82bd1b6ac77e3f7975fee405811ae46d204a5ffc3d61b4071abdbb1df2",
+      "shared_review_record_sha256": "c727d9c33ffb928a626a01df590ad336f97137e9a48abea59c3db4398c5bb34b",
       "source_ids": [
         "clerk:119:1:17",
         "govinfo:hr30eh",
@@ -61,14 +60,16 @@
         "govinfo:34usc12291-2024-domestic-violence",
         "govinfo:8usc1227-2024-hr30-context",
         "govinfo:8usc1182-2024-hr30-context",
-        "govinfo:8usc1101-2024-conviction-context"
+        "govinfo:8usc1101-2024-conviction-context",
+        "govinfo:8usc1227-2024-deportability-framework",
+        "govinfo:8usc1101-2024-alien-admission-context"
       ]
     },
     {
       "action_id": "house:119:1:23",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "4943d1bc0cdf2932c4f01629262a47ff1536a487af505ae015a65ed5541e8bfa",
+      "shared_review_record_sha256": "e25ae7ceb51e6dd224ba5356a2f73dd16885b9fedc5d3329092a5d507388f2c4",
       "source_ids": [
         "clerk:119:1:23",
         "govinfo:s5es",
@@ -77,7 +78,8 @@
         "govinfo:8usc1225-2024-laken-context",
         "govinfo:8usc1231-2024-laken-context",
         "govinfo:8usc1252-2024-laken-context",
-        "govinfo:8usc1253-2024-laken-context"
+        "govinfo:8usc1253-2024-laken-context",
+        "govinfo:18usc3521-2024-release-protection-context"
       ]
     },
     {
@@ -166,14 +168,15 @@
       "action_id": "house:119:1:183",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "b189829e6d1963f972acffa8ff4a7508d11042e8bdaedabb306de288a0847707",
+      "shared_review_record_sha256": "3b0c2136f681683e81c24f2f83beb7b4e31cd8da8bca3c84b3cee8d2eb0c7a15",
       "source_ids": [
         "clerk:119:1:183",
         "govinfo:hr875eh",
         "govinfo:8usc1101-2024-conviction-context",
         "govinfo:8usc1182-2024-hr30-context",
         "govinfo:8usc1227-2024-hr30-context",
-        "govinfo:8usc1101-2024-alien-admission-context"
+        "govinfo:8usc1101-2024-alien-admission-context",
+        "govinfo:8usc1227-2024-deportability-framework"
       ]
     },
     {
@@ -265,8 +268,8 @@
     {
       "action_id": "house:119:2:65",
       "historical_lead_disposition": "proposed_in_scope_substantive",
-      "current_candidate_disposition": "exact_action_ineligible",
-      "shared_review_record_sha256": "24927e566ced10d6feeff8dd6fca2d8d9e61837843cb5d47922ff6dff86d2583",
+      "current_candidate_disposition": "interpreted_substantive_directional",
+      "shared_review_record_sha256": "0e7cedc22127f0b1790e59dfc7980c637cfad06f120c1f85fa8bbf5386446bf4",
       "source_ids": [
         "clerk:119:2:65",
         "govinfo:hjres72eh",
@@ -275,7 +278,8 @@
         "govinfo:50usc1702-2024",
         "govinfo:proclamation10886-20250120",
         "govinfo:emergency-continuation-20260114"
-      ]
+      ],
+      "audit_correction": "Earlier candidate exclusion reversed after source-first review of operative EO14193 section3(b); historical lead membership is not authority."
     },
     {
       "action_id": "house:119:2:90",
@@ -300,7 +304,7 @@
       "action_id": "house:119:2:94",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "b08782ba8c57f167bf6b2c0acf7a1fb47931c38e4e76514b0413e385e5832d69",
+      "shared_review_record_sha256": "68c13eb82ddad6cd0405bcb8867674c146860b153cf15070f575f40187d1efd9",
       "source_ids": [
         "clerk:119:2:94",
         "govinfo:hr1958eh",
@@ -319,21 +323,25 @@
         "govinfo:8usc1182-2024-hr30-context",
         "govinfo:8usc1227-2024-hr30-context",
         "govinfo:8usc1101-2024-conviction-context",
-        "govinfo:8usc1101-2024-aggravated-felony"
+        "govinfo:8usc1101-2024-aggravated-felony",
+        "govinfo:8usc1227-2024-deportability-framework",
+        "govinfo:8usc1101-2024-alien-admission-context"
       ]
     },
     {
       "action_id": "house:119:2:96",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "1b38cb9543072ed64bdaa34073ea0cc3992b379ba6a3486b2009c7d41e2cb726",
+      "shared_review_record_sha256": "84c92921de7075cb83cc156943313f9b8482449e704e0012c7931e79af8c499e",
       "source_ids": [
         "clerk:119:2:96",
         "govinfo:hr4638eh",
         "govinfo:18usc1368-2024-working-animals",
         "govinfo:8usc1182-2024-hr30-context",
         "govinfo:8usc1227-2024-hr30-context",
-        "govinfo:8usc1101-2024-conviction-context"
+        "govinfo:8usc1101-2024-conviction-context",
+        "govinfo:8usc1227-2024-deportability-framework",
+        "govinfo:8usc1101-2024-alien-admission-context"
       ]
     },
     {
@@ -370,13 +378,14 @@
       "action_id": "house:119:2:120",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "b4e7b0094e0a79f562f372b90d3ec415ecb63e16496bcfb5ec0c594358c4f871",
+      "shared_review_record_sha256": "3973cb045d285815d661a37f3f3852cb19e022136659a0f4178cc8f192256612",
       "source_ids": [
         "clerk:119:2:120",
         "govinfo:hr1689eh",
         "govinfo:8usc1254a-2024-tps",
         "govinfo:8usc1158-2024-tps-eligibility-bars",
-        "govinfo:8usc1101-2024-alien-admission-context"
+        "govinfo:8usc1101-2024-alien-admission-context",
+        "govinfo:pl119-21-tps-current-baseline"
       ]
     },
     {
@@ -392,7 +401,7 @@
       "action_id": "house:119:2:214",
       "historical_lead_disposition": "proposed_in_scope_substantive",
       "current_candidate_disposition": "interpreted_substantive_directional",
-      "shared_review_record_sha256": "3e0b6b44bc955ca5285c3f8a40326baaf72729c768e2f4977ff283a1724f9d87",
+      "shared_review_record_sha256": "5bc44cbc4810a6e48b3bef484c75ef5eb9c2ff0d5bb242a61545a291ea0bf95b",
       "source_ids": [
         "clerk:119:2:214",
         "govinfo:s2es",
@@ -408,8 +417,18 @@
         "govinfo:8usc1227-2024-hr30-context",
         "govinfo:8usc1325-2024-operative",
         "govinfo:8usc1326-2024-operative",
-        "govinfo:8usc1231-2024-laken-context"
+        "govinfo:8usc1231-2024-laken-context",
+        "govinfo:8usc1227-2024-deportability-framework",
+        "govinfo:8usc1101-2024-alien-admission-context"
       ]
+    }
+  ],
+  "candidate_screenings_revised_during_audit": [
+    {
+      "action_id": "house:119:2:65",
+      "before": "exact_action_ineligible",
+      "after": "interpreted_substantive_directional",
+      "basis": "Operative EO14193 section3(b) immigration-cooperation recommendation duty; no historical-conclusion reuse"
     }
   ]
 }
