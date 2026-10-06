@@ -1837,3 +1837,87 @@ Next: remaining House 44201 annual filing/automatic-extension and DACA clauses
 at their own exact authorities; then tax/remittance, child/enforcement funding,
 remaining packages and ordinary screenings. Existing .w/ib ownership and
 historical markers persist, with no current shutdown or production authority.
+
+
+## Checkpoint 41: Annual filing, narrow extension and cost-sharing dependency
+
+House 44201(b)(2) keeps prior advance payments to the issuer, the relevant
+prior tax-data year, and an Exchange determination based on Treasury information.
+Failure is NOT FILED AS REQUIRED OR NOT RECONCILED AS NECESSARY. It does not
+require every enrollee to file or determine anyone's tax debt. Attestation
+requires filing AND necessary reconciliation; the Secretary MAY make an INITIAL
+determination AND MAY delay a contrary determination for a Secretary-determined
+REASONABLE PERIOD. No guaranteed approval or permanent override of Treasury data.
+
+A noncompliance determination AND notification to the Exchange trigger the
+named 155.305(f)(4)(i) notice AS IN EFFECT FOR PLAN YEAR 2025. Complete annual
+2024 text and the intervening January 15, 2025 final amendment show that (i)
+was unchanged while (ii) was added. The named notice retains printed
+second-consecutive-year risk wording; March proposed/June final immediately-
+upon-receipt wording is not substituted. Question 35 separately reserves
+coordination with the new annual bar. Recommendation: retain exact text and
+qualified candidate, obtain independent application before describing individual
+notice/timing. Alternatives and safe tax/remittance/funding work are recorded;
+no guaranteed second-year grace or silent repair.
+
+House (b)(3) removes ONLY the automatic income-document extension, which the
+bound pre-vote 155.315(f)(7) supplies as 60 days. It does not remove every
+extension or create a universal 90-day cutoff. Separate demonstrated-good-faith
+extension, clerical/contact effort, notice SENT clock, conditional interim
+assistance, own data/determination rules and case-by-case documentary exception
+remain; that exception excludes citizenship/immigration-status inconsistencies.
+Own plan years begin on or after January 1, 2026. Original floor successor-
+regulation wording and later EH corrections remain distinct.
+
+Fingerprint's ACA source-completeness follow-on is now governed as complete
+pre-vote 1402(g). NO cost-sharing reduction for any month UNLESS a coverage
+month for which 36B credit is allowed TO THE INSURED OR AN APPLICABLE TAXPAYER
+ON THE INSURED'S BEHALF. This is necessary, not sufficient, and does not require
+every insured personally to file. Shared definitions and the advance-
+determination tax year, rather than credit-allowed tax year, are bound. An
+undeleted cost-sharing sentence or basic-health branch alone cannot establish
+continuing benefits. Question 34 now includes this source/dependency and stays
+RESERVED; no legal answer or actual credit/reduction/basic-health outcome.
+
+Seven new governed sources and 16 claims bind filing authorities, complete
+credit reconciliation, annual notices, the intervening amendment, income
+opportunities and cost-sharing dependency. The sealed receipt is
+hr1_aca_filing_extension_dependency_review.json. Both new qualifications were
+reconstructed from primary clauses, checked against the full material predicates
+and propagated to both complete member outputs. Every earlier source, detailed
+clause, qualification, compact and all other 37 actions are unchanged.
+
+Fingerprint's bounded independent checkpoint 39 review found no new material
+semantic defect in retained ACA clauses/qualifications. It independently
+verified 20/24 binding instances and the receipt digest; four operative hashes
+were not recomputed. Full authoring/readable/Massie detail was unavailable to
+that review, PDF was text-only, and no replay, residual legal resolution or
+full-package acceptance was supplied. The missing 1402(g)(2) dependency was
+research follow-on, not an established false continuing-benefit claim. Exact
+checkpoint 39 CI was independently all nine green. See
+hr1_checkpoint39_independent_review.json; prior bounded verdicts remain scoped.
+
+35 focused candidate tests (8.695 seconds), seven semantic checks and seven-file
+byte replay pass. All 16 bindings, two copy hashes, 138 bounded source extents,
+notice/extension/version predicates, member propagation, prior source/copy
+preservation, audit/Clerk/accounting hashes and final diff verify. Compiled IR,
+990 Health sources, runtime, frontend, schema and production/publication
+boundaries remain unchanged. Tests are mechanical evidence, not semantic truth
+or independent acceptance. Same-owner audit remains partial; final verdict null.
+
+Core: 50e66fb08e9ddde819aaf57c7d3ae2084181f78cfffe522168ef539a2e59c465.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,250 governed sources (260 new), 582 claims
+and 201 provisional captures. Remaining: 221 ordinary screenings, TWO partial
+H.R. 1 component reviews and 35 separate legal/application questions.
+Exact 2e97819155cfa3858e97eb5af8267002df1aad0f passed all nine hosted jobs
+in run 37521580239. Current exact-head CI follows push.
+
+Next: DACA-specific House 44201(i) original-policy authority research, then
+exact tax/remittance and child/enforcement funding, remaining packages and
+screenings. Original DHS/USCIS memo routes returned 403; these are provisional
+retrieval attempts, not an unavailable-evidence disposition or screening closure.
+Continue safe tax/remittance capture while resolving the precise policy witness.
+Questions 33/34/35 remain reserved. Existing .w/ib ownership and historical
+markers continue, with no current shutdown boundary or production authority.
