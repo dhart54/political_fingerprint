@@ -2383,3 +2383,102 @@ House 112105 (before 112201) versus Senate 70606, then separately current House
 30001 student aid, child/enforcement funding, packages and screenings. Existing
 .w/ib ownership and historical deadline/terminal markers remain, no current
 shutdown. No merge/deployment/production/acceptance/promotion/publication.
+
+
+## Checkpoint 48: Exact education-credit identification and material baseline
+
+House 112105 is bounded through before 112201, not nonexistent 112106;
+Senate 70606 through before 70607. Both replace 25A(g)(1) for American
+Opportunity and Lifetime Learning credits. House requires the taxpayer's
+defined SSN in all cases, plus the spouse's if married. If expenses concern
+an individual other than taxpayer or spouse, that person's name and defined
+SSN are also required. Senate requires the individual's defined SSN in all
+cases, plus the name and defined SSN for that same other-person expense case.
+It does not add House's spouse-number clause. House also replaces 25A(g)(6)
+with rules similar to 32(d), preserving own separated-spouse context without
+automatic identical application. Senate retains joint filing for a taxpayer
+married within 7703; no separate-return eligibility or imported child-credit
+at-least-one-spouse alternative. Meaning and qualification name the exact
+other-than-taxpayer-or-spouse boundary, without a broader spouse expense rule.
+
+Both institution clauses are AOTC-only: EIN of any institution to which the
+taxpayer paid qualified expenses taken into account on the tax-year return.
+Retained dependent-payment treatment remains. This does not apply a new EIN
+rule to Lifetime Learning or every institution irrespective of those payments.
+Both incorporate their own same-bill 24(h)(7): citizen or named work-authorized-
+alien issuance; in either case before the return due date. The old AOTC student
+on-or-before deadline is distinct. No any-number/ITIN, citizenship-only,
+child-credit claimant or senior person-rule substitution. Both apply to
+taxable years beginning after December 31, 2025, and change mathematical-error
+(J) TIN to SSN or EIN. Own alleged-error/explanation notice, 60 days after
+notice is sent, abatement upon receipt, deficiency reassessment and collection
+stay remain. No actual debt, wrongdoing, award or loss of every remedy.
+
+Complete pre-vote 25A preserves distinct per-student AOTC election/period/
+half-time/first-four-years and named prior-claim/drug restrictions, per-taxpayer
+Lifetime Learning course/job-skills context, own income/expense/assistance/
+dependent/prepayment/double-benefit/payee-statement/refund/recapture boundaries.
+Identification is not proof of every prerequisite or an actual credit/refund.
+The AOTC student reference freezes HEA 484(a)(1) with its own (b)(3)/(4)
+exceptions, not all current 484(a) or its citizenship paragraph. Institution
+definition retains frozen HEA 481 plus its distinct title IV participation
+eligibility condition. Code reference notes explicitly identify August 5,
+1997 as enactment; no later effective date or AOTC rename substitution.
+
+Adjacent 1996/1997 official witnesses and amendment chronology are bound.
+Selected student passages and incorporated 1141(a)-(c) institution definitions
+match exactly. Complete 1088 operative text differs in two split words:
+1996 'high er education' and 1997 'non profit institution'. The declared
+comparison-only join of those words makes operative wording match; both
+original witnesses remain unchanged. Complete annual masters are not declared
+byte-identical. No 1997 statutory amendment recorded in these witnesses;
+1996 student verification change concerns (g)(4)(B)(i), not selected (a)(1).
+Annual dates alone do not establish personal/institution eligibility. No
+current student-aid or new House 30001 substitution into frozen tax references.
+
+Retained nonresident rule applies if nonresident for any portion of the tax
+year, with chapter-1 resident treatment by own 6013(g)/(h) election. The (g)
+path requires the named nonresident at year close married to citizen/resident
+and both electing; own duration, neither-spouse-resident nonapplication,
+termination and re-election conditions remain. The (h) path requires
+nonresident status at year beginning, resident at year close, marriage at
+year close to citizen/resident and both prescribed elections, with own
+one-election restriction. Full clauses are bound. This is not categorical
+all-noncitizen denial or immigration status, citizenship, work authorization
+or automatic credit. No individual return, family, institution or tax amount
+is determined.
+
+Floor and later EH section 112105 words match after declared whitespace and
+exact 'Error.-- Section' heading-spacing comparison; original bytes unequal
+and preserved. No H.Res.492 item targets this section, and floor still governs
+May vote. Nine governed sources and 33 new bindings, two qualification hashes,
+own action digests and three historical comparisons are sealed in
+hr1_education_identification_review.json. All earlier clauses, sources, other
+37 actions and compacts preserved; senior branch correction 47 and all 11
+child-credit repairs remain in both outputs. Selected fee/funding compact
+unchanged, without new education-credit loss or individual-payment claim.
+
+39 focused tests in 9.349 seconds, seven semantic checks and seven-file byte
+replay pass. All new bindings, 164 bounded source extents, historical material/
+chronology and exact House comparison, both-member propagation, 990 unchanged
+Health sources, queue/audit/accounting hashes and final diff verify. Tests do
+not prove semantic truth. Core 2a646e38fbb5b367134dac9302e0db6bed9fd20384331cc103f9a20f2f5db15a.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Accounting: 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations,
+70 findings (Foushee 36, Massie 34); 1,278 sources (288 new), 682 claims,
+251 canonical captures. Remaining: 221 ordinary screenings, TWO partial H.R. 1
+component reviews, 40 separate application questions. No new legal ambiguity
+resolved by implication. Same-owner audit partial, final verdict null;
+independent senior correction/education review pending. No production,
+publication, runtime, frontend or schema effects.
+
+Exact correction 5c96b5cb4a81962f87aae7221c71b78318192e55 CI 37534497604 is
+in progress: seven successful jobs, receipt-evidence-repair-postgres and
+foushee-full-record-benchmark pending, no failure reported. Last completed
+ea376ac9d01c96bd488026e13739edfb56432844 CI 37531488946 all nine green; CI did
+not establish semantic truth or close the historical senior scope finding.
+Current exact-head CI follows this push. Continue House 30001 current student
+eligibility separately from frozen tax references, then child/enforcement
+funding, continuing/omnibus/NDAA packages and ordinary screenings. Existing
+.w/ib owner and historical markers remain, no current shutdown or merge/
+deployment/production/acceptance/promotion/publication authority.
