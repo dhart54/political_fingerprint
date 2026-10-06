@@ -872,3 +872,69 @@ is discretionary/qualified. EAS100017 prints two different disposition clauses
 and lacks a copied no-waiver clause; preserve exact text pending applicationreview.
 Full clauses have been read provisionally; they are not yet authored/audited or
 counted complete. Continue other fees/benefits/tax then package/narrow screenings.
+
+
+## Checkpoint27: H.R.1 sponsor and removal/apprehension fee components
+
+House70007 and70020 are distinct additional sponsor fees, fiscal2025floors3500/
+5000 or higher rule amounts with separate10dollar-rounded CPI increments and
+no-waiver terms. Both collect BEFOREplacement/release;70020's failure-to-appear
+title does not impose an already-missed-court collection predicate. HHS MAY refund
+at end of proceedings as aUAC OR end of sponsorship with no-in-absentia-order
+showing; after rescission sponsorMAYseek reimbursement. No automatic refund.
+70007credits25percentHHS for enumerated sponsor/all-adult-household identity/status/
+background checks, remainderTreasury; existing1232(c) already governs protective/
+suitability/home-study/counsel context. No first-ever vetting or criminality claim.
+
+House70021 andSenate100016 require BOTH an in-absentia removal order AND later
+ICEarrest,5000fiscal2025floor/higher rules/CPI10dollarincrements and rescinded-order
+exception. HousegoesTreasury; Senatecredits50percentICE/restTreasury. Bothprint
+waiver bars. House70022 separately requires inadmissibility plusCBPapprehension
+BETWEENports; Senate100017does not nameCBP in its predicate. Both5000fiscal2025
+floor/higher rule/CPI increments. Preserve exact distinct predicates, not every
+arrest/encounter/not-admitted person or failure to attend court.
+
+Senate100017(c) credits50percentICE/restTreasury, while(d) saysALLTreasury. Exact
+EASHTML and officialPDFpages827-828 print both; visually verified and source-bound.
+Section100017prints no waiver bar; neither a House/neighboring prohibition nor
+waiver availability is inferred. One genuine printed allocation/applicationquestion
+is preserved separately with recommendation to retain literal amount/predicates/
+clauses and route application. PDF792also confirms prior SUCHPAROLEantecedent;
+source witness contains completepages792/826-828only, not a wholePDFaudit.
+PDFrawSHA4093bdc58acda5da3c425339a504495afa16b5242ead24bb0c0388327ab897d0.
+
+Complete pre-vote1229a(b)(5)/(e),1229notice and1232(c) material paragraphs are
+bound. Notice/address exceptions, clear/unequivocal/convincing proof,180day
+exceptional-circumstances-or-anytime lack-of-notice/no-fault-custody reopening,
+removal stay and exact definitions remain. Fees do not create new removal grounds,
+actual orders/arrests/collections, guarantee refunds or establish sponsor suitability.
+Source meanings are contemporaneous floor/EAS; retained HouseEH comparison excludes
+only explicit RecordH2284pagination. Version/baseline/sourcehash extents are recorded
+in hr1_sponsor_removal_fee_review.json;9newfullclaimbindings,424totalclaims.
+
+Counts remain455reviews/39meanings/36episodes/78observations/70findings;
+221ordinary screenings and2partialcomponent reviews remain.25legal/application
+questions(prior24plus printedEASdisposition issue).1200governed sources(990unchanged
+Health/210new),115provisional captures,91boundedextents. Candidate/public/persistence
+boundaries remainclosed; protected runtime/compiler/frontend/Health unchanged.
+222focusedtests pass(38.438s),7semanticchecks pass,7outputsbyte-identical;
+PDFselectedpage extraction/rawSHA and source/audit/accounting/Clerk integrity pass.
+Core:2a071aeff84c61ffb471d58b6cae6fd07d0bd515acada96251d3151ca7e23a93.
+Compiled remains:b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exacta15f698 checkpoint26passedall9CIjobs(run37495399462); currentCIfollowspush.
+
+Independent EAD prose/primary review found no new material defect in its selected
+scope; receipt hr1_checkpoint26_independent_review.json explicitly excludes ten
+binding hash recomputations, full memberJSON/replay, fullpackage/domain and legal
+application/acceptance. Do not transfer that scope to new sponsor/removal components.
+Same-owner reconstruction/comparison is distinct from independent review and approval.
+
+Continue remaining fees: House70004-6/70008-9/70011/70015-19 versusSenate100004-8/
+100013-15. TPSregistration House conditional500minimum differs Senate50to500statutory
+maximum edit; do not transfer floor/cap or status scope. SIJ500House qualifying
+one-parent-reunification versusSenate250fee/applicant-parent-guardian scope needs
+complete1101(a)(27)(J). Parole fees require all printed exception predicates and
+material pre-vote definition authorities, not generic humanitarian shorthand.
+Then benefits/tax/remittance and remaining child/enforcement funding, followed by
+continuing/omnibus/NDAA and ordinary screenings. No completeness implied by counts;
+component closure guard remains active and original deadline markers preserved.

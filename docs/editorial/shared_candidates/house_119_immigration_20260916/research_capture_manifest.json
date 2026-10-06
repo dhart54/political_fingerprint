@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 112,
+  "source_count": 115,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -897,6 +897,30 @@
       "governed_bytes_sha256": "b85e2511fce6f64dca22cbff26b1fe88598e75fa62805b8885fb49842c2d905d",
       "text_sha256": "25913c02127b323439b27324e56440ab67e1e796adc556838b28b7893c621afe",
       "text_length": 351
+    },
+    {
+      "source_id": "govinfo:8usc1229a-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229a.htm",
+      "raw_sha256": "ffcd14b2444fa7ae2e10f27fb6b5da9a36037cbf642df6b03cdd21524874931e",
+      "governed_bytes_sha256": "70c140768f79722f1317b6570ea0c3a79fde9ce86788a0d42f9da06143390500",
+      "text_sha256": "007ccafd6b8f04efc4480a26d4d1ca63bf0113de385e5f4386e1d9d5f5dfcccc",
+      "text_length": 25506
+    },
+    {
+      "source_id": "govinfo:8usc1229ab5e-2024-hr1-absentia",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229a.htm",
+      "raw_sha256": "ffcd14b2444fa7ae2e10f27fb6b5da9a36037cbf642df6b03cdd21524874931e",
+      "governed_bytes_sha256": "2ecddd1d65087a674cae31b99ceab6c24775e6e6261bd3394ad0a4c3da7df043",
+      "text_sha256": "a7253d163fd590810e690d079105982e6cd1e37321d415dff8080bb95bba8fd1",
+      "text_length": 3089
+    },
+    {
+      "source_id": "govinfo:hr1eas-selected-printing-witness",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/pdf/BILLS-119hr1eas.pdf",
+      "raw_sha256": "4093bdc58acda5da3c425339a504495afa16b5242ead24bb0c0388327ab897d0",
+      "governed_bytes_sha256": "1cbdcd515c81fd4abc5b8a00508f62c928865d54fdb8ef71052592009d53cf3d",
+      "text_sha256": "ab79ca63cfa368a262fc71e6b82a391b88cc4813b14c2910cd02ce95bbbd2c11",
+      "text_length": 4599
     }
   ],
   "rejected_responses_are_not_evidence": true
