@@ -2216,3 +2216,81 @@ Acquire/read the precise incorporated rule versions before authoring. Then
 tax/remittance, child/enforcement funding, remaining packages and screenings.
 Questions 33/34 remain independent application matters. Existing ownership
 and historical markers continue; no current shutdown or production authority.
+
+
+## Checkpoint 40: Exchange verification at exact published-rule versions
+
+House section 112201 and Senate section 71303 retain their distinct credit
+coverage-month conditions, information lists, past-month wording and process
+scope. Both distinguish failing this verification paragraph alone from
+eligibility to enroll. House verifies enrollment, advance credit AND reduced
+cost-sharing, names any immigration status and prints IF AND ONLY IF for past
+months. Senate verifies enrollment AND advance credit, asks whether an eligible
+alien, pairs household income/family size and prints IF. Its Secretary MAY
+waive ONLY subparagraph (A) for one or more tax-year months enrolled during a
+special enrollment period based on change in the individual's family size.
+Any available data and RELIABLE third-party sources remain for verification
+by the applicant; permission does not establish reliability or eliminate it.
+
+House expressly references the March 19, 2025 PROPOSED RULE's full filing
+paragraph. Senate expressly references the June 25, 2025 FINAL RULE's (iii),
+applying it as though to all plan years after 2025 despite the printed 2026-only
+limit. No current CFR, later rule or introductory two-year baseline is
+substituted. Exact amendment instructions, filing/reconciliation conditions
+and protected notice alternatives are bound. Prior advance payments, HHS
+notification, filer/spouse and the year whose tax data would be used remain
+prerequisites. No universal filing test or guaranteed notice-to-loss interval.
+
+Any applicant MAY use an Exchange-provided pre-enrollment process beginning
+not later than August 1 for the subsequent plan year. That is process
+availability, not a universal applicant submission/completion deadline.
+House process scope includes enrollment/advance credit/cost-sharing; Senate
+household income/enrollment. Both sections apply to taxable years beginning
+after December 31, 2027, distinct from incorporated-rule duration.
+
+Related House 44201(b)(1) applies to plan years on or after January 1, 2026.
+Missing Treasury income data cannot be verified solely by attestation; the
+existing process applies. Its discrepancy branch requires ALL four predicates:
+qualifying attested projected income, Treasury or reliable third-party data
+below the applicable-taxpayer floor, excess by an Exchange-established AND
+Secretary-approved threshold not less than 10% (may ALSO include dollars), and
+no data-based finding of Medicaid/CHIP income eligibility. The lawfully present
+alien AND Medicaid-ineligible-because-of-alien-status exception excludes ONLY
+that discrepancy subparagraph, not missing data or all verification. Complete
+1411(e)/(f) retains separate citizenship/presence and other-information routes,
+clerical/contact effort, documents OR resolution with the verifying person,
+90 days beginning when notice is SENT, provisional determinations, end-period
+notice and appeals. Medicaid's individual-receipt clock is not imported.
+
+Three new governed sources and 15 claims bind the complete material process
+and exact March/June regulatory amendments. hr1_exchange_verification_review.json
+seals passages, action/copy hashes and House/EH comparisons. Complete 44201
+comparison explicitly follows later H.Res.492 corrections 14/15 removing
+successor-regulation parentheticals plus page/typographic differences; 112201
+has only typography. Original May-vote floor governs, June-corrected EH is a
+comparison witness, and all original bytes remain intact. Other annual filing,
+automatic-extension and DACA clauses remain separate; no package closure.
+
+35 focused candidate tests, seven semantic checks and seven-file byte replay
+pass. All 15 bindings, two primary-reconstructed qualifications, exact publication
+raw hashes, 131 bounded extents, both complete member outputs, earlier source/
+clause/qualification/compact preservation, audit/Clerk/accounting and final
+diff verify. All other 37 actions, 990 Health sources, compiled IR, runtime,
+frontend, schema and production/publication boundaries remain unchanged.
+Tests are mechanical evidence, not semantic truth or independent acceptance.
+
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34); 1,243 governed sources (253 new), 566 claims
+and 189 provisional captures. Remaining: 221 ordinary screenings, TWO partial
+H.R. 1 component reviews and 34 separate legal/application questions. Existing
+questions 33/34 remain reserved. Same-owner audit remains partial, final verdict
+null; bounded independent receipts keep their stated scope and limitations.
+Core: bb3008dd30a00d77c36bc05eecdcfa37cb89231f43bb9bcdcddd7dab994c99c3.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exact ae0a50674b61493b1126b2b4b830791ab8de997a passed all nine hosted jobs
+in run 37520028461. Current exact-head CI follows push.
+
+Next: remaining House 44201 annual filing/automatic-extension and DACA clauses
+at their own exact authorities; then tax/remittance, child/enforcement funding,
+remaining packages and ordinary screenings. Existing .w/ib ownership and
+historical markers persist, with no current shutdown or production authority.
