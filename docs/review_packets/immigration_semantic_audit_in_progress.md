@@ -1405,3 +1405,69 @@ Reuse exact version/extent authorities, preserve source-grounded reserved
 questions separately and reconstruct each compact/qualification predicate
 before push. Continue safe executable work; no production, merge, deployment,
 editorial approval, promotion, publication or methodology authority.
+
+
+## Checkpoint 35: SNAP exact status lists and household boundaries
+
+Complete House10012 and Senate10108 replace2015(f), with USresidence COMMON to
+EACH own alternative AND at least one listed status, within an OTHERWISE
+ELIGIBLE household. Citizen OR USnational, definedLPR, version-specific(C)
+and lawful USresidence in accordance with referencedCOFA remain distinct.
+House(C)'s Cuban nationality/approved203(a)petition/allvisaeligibility-but-no-
+immediatevisa/nootherinadmissibility/physicalUSpresence-under-specified1994/1995
+parole-commitment conjunction is preserved. No living-in-Cuba predicate from
+the different parole-fee exception or Senateentrant phrase is imported.
+Senate(C) retains HASBEENGRANTED definedCuban/Haitian-entrant status. Complete
+501(e)'s specialstatus category and OTHERnational category remain distinct:
+the latter's own parole-with-no-other-status OR removalproceedings OR pending
+asylum alternatives share NO final/nonappealable/legally-enforceable order;
+that condition is not transferred to every specialstatus case. Service-time
+wording/nationality do not prove an actual grant or eligibility determination.
+
+Fullpre-vote2015(a)/(f),1611/1612/1613/1641 operative public-benefit framework,
+1101(a)(15)/(20)/(22) and own203(a)/501(e) are bound. The rewritten(f) removes
+the old conditional-entry/general-parole/withholding categories as separate
+entries, not every individual's other listed status or every unamended law.
+Existing qualified-status/program-specific restrictions/five-yearframework
+andexceptions remain;2024COFA rules are not called newly created eligibility.
+The retained INELIGIBLE INDIVIDUAL'S income(StateOPTION pro-rata subtraction)
+AND financialresources concern household eligibility/allotment calculation,
+not automatic whole-household disqualification, all-resource exclusion or a
+newly created calculation. No benefit award, precise amount or blanket
+refugee/asylee/parolee/nationality outcome follows from the whole-package vote.
+
+Six new governed sources and eleven provisional captures add sixteen claim
+bindings. hr1_snap_eligibility_review.json records original action/passages,
+copy hashes and prior/current source maps. Housefloor/EH differ only byH2240
+pagination and EH's space after the Cuba-title hyphen; exact original hashes
+and comparison-only transformations are explicit, with no rewritten source.
+Full2015(f) on officialPDFpage8 was visually checked by implementation owner;
+this is not an independent20-page/PDF/package acceptance. Both new compressed
+qualifications were reconstructed directly from primary predicates; prior
+compacts/detail/qualifications/bindings and all other37 actions remain unchanged.
+
+35 focused candidate tests pass(7.920s); seven semantic checks pass; all seven
+generated outputs replay byte identically. Sixteen source/hash/length andtwo
+copy bindings, both full readable member propagation, prior EOIR/visa/funeral
+predicates,107 bounded source extents, currentaudit/Clerk/accounting/hash
+integrity and final diff verify. CompiledIR remains unchanged. No runtime,
+compiler,frontend,Health,migration,production/publication boundary changes.
+Same-owner partial review remains separate from acceptance/full-corpus verdict.
+
+Core: da0fe76e43dc54683190b671c759b9dd62b17411d20cae445244f7bf8189e364.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Previous exact4434a740aaf708f14e94e6e8afba13873820cc55 passes9/9 hostedjobs
+(run37510325789). Current exactheadCI follows push. Counts remain676 inventory,
+455 reviews,39 meanings,36episodes/78observations/70findings;221 ordinary
+screenings,TWO partialpackage reviews and32 separately reserved legalquestions.
+Now1,219 governed sources(990 unchangedHealth reuses/229new),479 claim bindings,
+144 provisional captures. No new legalquestion, closure or unavailable evidence.
+
+Next: exact Medicaid House44110verification/44111expansionFMAP versus
+Senate71109status eligibility/71110emergencyFMAP, including materialbaseline
+citizenship/verification/emergency/program exceptions. Then Medicare/ACA,
+tax/remittance,child/enforcement funding; CR/omnibus/NDAA and ordinaryscreening.
+Keep own exact clauses/copy grouping and source-mapped reserved decisions;
+continue executable work with original historical markers preserved and no
+current deadline/otherowner/duplicatecheckout. No merge,deployment,production,
+acceptance,promotion,publication or new methodology authority.
