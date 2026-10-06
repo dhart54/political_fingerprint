@@ -101,6 +101,22 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('For retention and signing bonuses', agreement)
         self.assertNotIn('performance', agreement)
 
+    def test_fletc_training_preserves_law_enforcement_actor_restrictions(self):
+        for aid, section in [('house:119:1:145', '60002'), ('house:119:1:190', '100053')]:
+            with self.subTest(action_id=aid):
+                action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+                passage = next(c['passage'] for c in action['claim_source_map']
+                               if c['passage'].startswith('SEC. ' + section + '.'))
+                self.assertIn('newly hired Federal law enforcement personnel employed by the Department of Homeland Security', passage)
+                qualification = next(q for q in action['limitations'] if 'FLETC' in q)
+                for text in [action['meaning'], qualification]:
+                    training = next((s for s in re.split(r'(?<=[.!?])\s+', text)
+                                     if 'newly hired' in s and ('FLETC' in s or 'training' in s.lower())), '')
+                    self.assertRegex(training, r'newly hired (?:Federal law enforcement personnel employed by DHS|DHS federal[ -]law[ -]enforcement (?:personnel|training))')
+                    if section == '100053':
+                        self.assertIn('State and local law enforcement agencies operating in support of DHS', training)
+                        self.assertIn('State and local law enforcement agencies operating in support of the Department of Homeland Security', passage)
+
     def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']

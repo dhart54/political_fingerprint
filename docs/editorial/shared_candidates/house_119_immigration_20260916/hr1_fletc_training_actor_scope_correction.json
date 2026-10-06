@@ -1,0 +1,63 @@
+{
+  "authority": "Same-owner source-backed repair of independently reported Major; candidate only",
+  "finding_id": "IB-HR1-FLETC-TRAINING-ACTOR-SCOPE",
+  "severity": "Major",
+  "prior_checkpoint": "b94b833e62af1d7e0afd85dd90146345670ab548",
+  "action_id": "house:119:1:190",
+  "prior_authoring_action_sha256": "7d61f36c0cdb665e1b2188c8735b67cf25c90753856650d514994a73a709086c",
+  "current_authoring_action_sha256": "384a903d389c4691abdef06481e75f3d2d4b4221ccb8167cd3d2de02ba2138e4",
+  "replacements": [
+    {
+      "field": "meaning",
+      "before": "Not less than $285 million is for training newly hired DHS federal personnel and State/local agencies operating in support of DHS.",
+      "after": "Not less than $285 million is for training newly hired Federal law enforcement personnel employed by DHS and State and local law enforcement agencies operating in support of DHS.",
+      "before_sha256": "d1e38aec49f47571de5beec5e332c742904fb87d7178399f730c40ed46d6865e",
+      "after_sha256": "9efdd3dd5f3acf794d2f8765995b3d85cc813b609de2b853eca506379784d6ea"
+    },
+    {
+      "field": "qualification",
+      "before": "Training includes newly hired DHS federal law-enforcement personnel and State/local agencies operating in support of DHS.",
+      "after": "Training includes newly hired Federal law enforcement personnel employed by DHS and State and local law enforcement agencies operating in support of DHS.",
+      "before_sha256": "4bd17de8cc8937f0b385339d077ce764ff5428ddc1b850ed79ab8364d9fbd3f3",
+      "after_sha256": "6c8a8c94e6629a523d93a42b166bb069f4ae26243d31a702e67b969ee20d4141"
+    }
+  ],
+  "primary_witness": {
+    "source_id": "govinfo:hr1eas",
+    "passage": "(b) Training.--Not less than $285,000,000 of the amounts available under subsection (a) shall be for supporting the training of newly hired Federal law enforcement personnel employed by the Department of Homeland Security and State and local law enforcement agencies operating in support of the Department of Homeland Security. ",
+    "passage_sha256": "447940fd8c2e15921bee8b071e59ce5c0ae74fde59520cd3020036c0161847af"
+  },
+  "historical_cbp_receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_cbp_operations_funding_review.json",
+  "preservation_receipt": ".tmp/checkpoint54_preserved_before_fletc_correction/preservation_receipt.json",
+  "recurrence_review": {
+    "scope": "House 60002 and Senate 100053 owning training meaning/qualifications plus preserved pending EOIR judge/support descriptions",
+    "result": "House owning meaning and qualification already restrict newly hired DHS federal law-enforcement personnel; no State/local Senate actor imported. Pending EOIR names judges and support staff, rather than FLETC personnel. Only two Senate actor descriptions require repair.",
+    "limits": "Bounded same-owner source comparison, no full-corpus or independent acceptance"
+  },
+  "unchanged": "House action, 38 other actions, all source/capture/claim bindings, compact copy, accounts, floor/ceiling, dates, membership/universe and 45 questions unchanged",
+  "publication_authorized": false,
+  "receipt_sha256": "b6e3d71011c79863f555318d5fbb1226f011c75a7a8b2d9ade4906bb261080d6",
+  "validation": {
+    "candidate_focused_tests": 41,
+    "aggregate_tests": 230,
+    "aggregate_runtime_seconds": 41.649,
+    "aggregate_modules": [
+      "test_shared_domain_candidate",
+      "test_shared_legislative_corpus",
+      "test_editorial_semantic_ir",
+      "test_editorial_pipeline",
+      "test_shared_candidate_research",
+      "test_immigration_shared_candidate"
+    ],
+    "semantic_checks": 7,
+    "byte_replay_files": 7,
+    "negative_regression_probe": {
+      "reviewed_commit": "b94b833e62af1d7e0afd85dd90146345670ab548",
+      "test": "test_fletc_training_preserves_law_enforcement_actor_restrictions",
+      "tests_run": 1,
+      "assertion_failures": 1,
+      "errors": 0
+    },
+    "limits": "Tests establish regression and mechanical integrity, not semantic truth. Initial pre-regeneration invocation and case-sensitive Training selector were corrected; clean aggregate passed with required NODE_PATH. No validation obligation removed."
+  }
+}

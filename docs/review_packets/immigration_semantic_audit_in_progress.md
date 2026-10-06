@@ -2925,3 +2925,77 @@ removal clauses, then continuing/omnibus/NDAA packages and ordinary screenings.
 Existing .w/ib owner, original snapshot and historical markers preserved;
 no current shutdown, merge, deployment, production/config/security/schema,
 acceptance, promotion or publication authority.
+
+
+## Checkpoint 54: FLETC law-enforcement actor scope corrected
+
+Independent source-first review found Major IB-HR1-FLETC-TRAINING-ACTOR-SCOPE
+at b94b833e62af1d7e0afd85dd90146345670ab548. Senate 100053(b) names newly
+hired Federal law enforcement personnel employed by DHS and State and local
+law enforcement agencies operating in support of DHS. Prior detailed meaning
+omitted law enforcement in both groups; qualification omitted it in the
+State/local group. Two complete source-specific sentences now retain both
+restrictions in owning meaning and qualification and both member outputs.
+The $285 million floor, $465 million ceiling, $750 million envelope and
+availability until September 30, 2029 remain unchanged. No actual training,
+agency/person eligibility determination or resolution of question 45.
+
+Exact old/new copy and hashes, action hashes, complete primary training
+witness and historical Major are sealed in
+hr1_fletc_training_actor_scope_correction.json. House sibling meaning and
+qualification already retain newly hired DHS federal law-enforcement
+restriction; no Senate State/local group imported. Preserved EOIR descriptions
+name immigration judges/support staff. This bounded recurrence check is
+same-owner source comparison, not full-corpus acceptance. Historical CBP
+receipt and exact original bytes remain untouched. Independent repair recheck
+pending. Independent CBP review found no additional material defect in checked
+funding, coordinator dates, towers, biometric/UAC or reimbursement boundaries;
+question 45 reserved. Receipt digest matches, two of ten binding instances
+previously independently verified; other eight, full member propagation,
+replay and saved-snapshot reapplication excluded from independent verification.
+
+Bonus Major IB-HR1-ICE-BONUS-CONDITION-SCOPE independently resolved at exact
+65a0ea27b513a2d550655680b98beb63bb28b545 within bounded recheck scope:
+all four readable replacements across both members, owning authoring and two
+core occurrences inspected; two replacement hashes, four witness hashes and
+receipt digest verified. No package acceptance. New independent receipts
+hr1_checkpoint52_bonus_independent_recheck.json and
+hr1_checkpoint53_independent_review.json preserve each result and limit.
+
+Pending EOIR/incarceration continuation was preserved in 13 own files under
+.tmp/checkpoint54_preserved_before_fletc_correction/preservation_receipt.json,
+with original bytes/hash verification. Only own pending tracked files restored
+to committed content for correction; no reset/stash/unrelated restoration.
+Pending EOIR receipt and helper remain intact, unstaged; its eight bindings,
+one extent and proposed question 46 are outside correction accounting.
+Resume that additive candidate on corrected state without restoring old
+FLETC copy. Original-host 1994 acquisition and individual grant matching
+remain open. Parent bounded search has finished with university reproduction
+and blocked official leads; no acquisition worker is currently running.
+
+New genuine source-backed regression rejects exact checkpoint 53 with one
+assertion failure and zero errors; House sibling passes. Clean established
+candidate/corpus/IR/pipeline/helper/Immigration aggregate: 230 tests pass in
+41.649 seconds, including 41 candidate-focused tests. This differs from the
+former 40-test candidate-only scope; no aggregate obligation removed. Seven
+canonical semantic checks and seven-file raw byte replay pass. Initial test
+ordering before generation and capitalized Training selector were corrected
+before clean validation. Source witness, two replacement pairs, 13 pending
+raw hashes, all earlier repairs in both members, 171 extents, 990 unchanged
+Health sources, candidate/publication isolation, queue/accounting/audit
+integrity and final diff checked. Tests do not prove semantic truth.
+Core e8f89a1ea647fec408342a3ee3e5453c3ea41d0a11a1ce0478e209145d1873dc.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged; approval-lineage follow-up retained.
+
+Unchanged 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings (Foushee 36/Massie
+34); 1,285 sources, 729 bindings, 262 captures, compacts, source/account/date
+boundaries, membership/universe and 45 separate application questions.
+Remaining 221 ordinary screenings and TWO partial H.R.1 component reviews.
+Same-owner audit partial, final verdict null. Exact checkpoints 52 and 53
+each have all nine CI jobs successful, owner-native verified; independent
+mechanical review confirms bounded protected paths and honest partial labels.
+Green CI did not detect the semantic Major. Current exact correction CI
+follows push. Continue preserved EOIR candidate, remaining DOJ/reimbursement/
+removal and packages/screens. Existing .w/ib owner and historical markers
+preserved; no current shutdown or merge/deployment/production/editorial authority.
