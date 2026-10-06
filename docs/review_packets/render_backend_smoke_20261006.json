@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "api_base_url": "https://political-fingerprint.onrender.com",
+  "captured_at_utc": "2026-10-06T16:28:32.188745+00:00",
+  "authority_file": "docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-direct.json.gz",
+  "checked_endpoints": [
+    "/health",
+    "/legislators/leg_valerie_p_foushee/positions?scope=119",
+    "/legislators/leg_valerie_p_foushee/positions/JUSTICE_PUBLIC_SAFETY/evidence?scope=119",
+    "/legislators/leg_valerie_p_foushee/editorial-presentations?scope=119",
+    "/legislators/leg_valerie_p_foushee/editorial-presentations?scope=all",
+    "/legislators/leg_valerie_p_foushee/editorial-presentations?scope=118",
+    "/legislators/leg_thomas_massie/editorial-presentations?scope=119",
+    "/health"
+  ],
+  "deployed_commit": "862b290cceea8af7d6c1c800d1ecdfa52386a490",
+  "published_issues": [
+    "EDUCATION_WORKFORCE",
+    "ENVIRONMENT_ENERGY",
+    "JUSTICE_PUBLIC_SAFETY",
+    "NATIONAL_SECURITY_FOREIGN"
+  ],
+  "justice_directional_receipts": 35,
+  "justice_noncounting_controls": 2,
+  "cross_scope_and_member_isolation": "passed",
+  "completed_at_utc": "2026-10-06T16:28:38.950946+00:00",
+  "response_file_sha256": {
+    "evidence.json": "1ea1e11679de47febaebe3132d944057d3eeef648496e41f309d96e8a133f1e7",
+    "health-after.json": "4f0db13f9b44f96c068f5587912629ff2404dcdbc8c5a6172a4f8c56b3a75533",
+    "health.json": "4f0db13f9b44f96c068f5587912629ff2404dcdbc8c5a6172a4f8c56b3a75533",
+    "other-member.json": "fd4c467199c367d04af57f1a45ae0e38d1aa9638e995672dca1540a4ea17e401",
+    "positions.json": "4dc9576bf3477bb78e05fed11ab41a433d3b0a39e57e6675e78b06a0bc7153fb",
+    "presentations-118.json": "2de7cb4d7c11cb253d44fc376df03ee661b8db721a87547afec5d5549b3cd9a8",
+    "presentations-119.json": "57137ce75385651690cae74db2a85bef19949d34fc5d82ea49b65e77a1baece8",
+    "presentations-all.json": "b3ab093dc7bec160131bc1615102fe5494ceeb3bdca8d0d760050b5b46b7a50d"
+  },
+  "authority_file_sha256": "a06fe2853a0fd1bdf9db04878ce8c73c6921229ef464b6627272b5e68b686530"
+}
