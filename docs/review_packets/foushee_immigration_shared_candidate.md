@@ -1655,3 +1655,58 @@ Current-head CI follows push. S. 3971's full ES was read as a new lead; its mate
 security/eligibility baselines still require reconstruction, and no disposition is
 assigned from generic foreign-risk words. Continue bounded source work under the
 original deadline; no terminal marker or readiness declaration at this checkpoint.
+
+
+### Checkpoint 23: twelve exact screenings and expanded source-bound controls
+
+Five exclusions cover software loan purposes, cold-weather DHS exercises, airport
+family-security lanes, fraud-convicted provider payments and an existing clinic name.
+Material definitions distinguish aviation security vetting from immigration status;
+retained baggage-preclearance/CBP context is not a new pilot admission mechanism.
+Provider-payment consequences do not inherit separate INA fraud grounds; software
+loan uses do not inherit other bills' citizenship/ownership or access predicates.
+Rejected aviation URLs and OLRC maintenance pages were not ingested. Correct
+GovInfo subpart/subchapter paths recovered both complete material provisions.
+
+Six further exclusions bind military-force withdrawal and generic police support.
+Failed 61/68/40/75 choices have exact Clerk-read witnesses; actually passed September
+93 uses newly captured EH. Military removal is not alien removal. Adjacent annual
+DHS debate is not the narrow 68 proposition. In 96, immigration appears only in
+WHEREAS findings; generic resolved police support supplies no new immigration
+mechanism or directional evidence under the user's findings-only boundary.
+H.Res. 1398 is a seventh procedural control: complete actual fourteen-section
+rule, unoffered strike-14 context, previous-question PASS and agreement FAIL.
+Already-passed S. 1383 post-passage engrossment is not a direct final bill adoption
+or a new SAVE component vote; later 1438/8800 text cannot be back-projected.
+
+453 governed reviews: 37 interpreted, 211 procedural, 203 excluded, two expressive;
+223 ordinary screenings unfinished. Core, IR, 35 episodes, 74 observations and
+68 actual readable findings are unchanged from checkpoint22. All 37 meanings are
+internally audited by separate same-owner primary reconstruction/comparison.
+94 distinct assessments: 1 Critical/7 Major/3 Minor/83 No Defect. Distinct repaired
+issues remain 1 Critical/3 Major/2 Minor. Samples: 41 original exclusions reviewed,
+40 retained exclusions, fifteen procedures and all two expressive choices.
+Twenty-one legal/cross-domain/application questions remain. No final audit PASS,
+independent second reviewer, acceptance or universe closure is claimed.
+1,189 governed sources = 988 unchanged Health reuses + 201 new; 380 claims;
+104 provisional captures. Unrelated full-capture history remains provisional.
+217 focused tests pass in 38.695 seconds; seven canonical semantic checks and
+seven byte-identical outputs pass. Source/audit/accounting, fail-closed boundaries,
+protected baseline and clean final diff inspected. Previous exact head
+da2f7740cc6e4240652e96b8dfb92e178e0c53cb passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37445825008.
+Current-head CI follows push. Original deadline remains unchanged: stop new large
+work at06:11:49Eastern, checkpoint wrap at06:26:49, terminal marker by06:36:49.
+
+Resume from the committed queue, not historical counts: prioritize H.R.1 House
+passage1:145 and Senate-amendment concurrence1:190, including the exact EH and
+adopted492/499 corrections versus EAS, then continuing/omnibus and NDAA package
+choices with material immigration clauses. All 223 ordinary screenings remain
+work, not blanket missing-source dependencies. S.3971 fullES was read, but638g/o/vv
+security and eligibility baselines still need reconstruction. S.2403 fullES and
+adequate-consideration/ESOP definitions were read; material RevenueRuling59-60
+remains to be checked. Failed84/108 exact floor-body bindings remain to complete;
+outcome-only Record pages are insufficient. Preserve 21 source-supported legal
+questions separately from these ordinary screenings. No new large/speculative
+unit starts after the thirty-minute boundary; complete checkpoint/report/CI work
+before the intentional overnight terminal marker. This note is not the marker.

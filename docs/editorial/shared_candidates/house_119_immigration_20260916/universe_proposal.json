@@ -67,10 +67,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 210,
+      "procedural_context": 211,
       "interpreted_substantive_directional": 37,
-      "exact_action_ineligible": 192,
-      "source_unresolved": 235,
+      "exact_action_ineligible": 203,
+      "source_unresolved": 223,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -83,10 +83,10 @@
     "substantive_eligible_actions": 37,
     "directional_substantive_actions": 37,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 210,
+    "procedural_context_actions": 211,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 192,
-    "unresolved_boundary_cases": 235,
+    "exact_action_ineligible_actions": 203,
+    "unresolved_boundary_cases": 223,
     "independent_episode_count": 35,
     "multi_action_episode_count": 2,
     "mechanism_types": [
@@ -301,6 +301,7 @@
         "house:119:2:213",
         "house:119:2:219",
         "house:119:2:230",
+        "house:119:2:231",
         "house:119:2:236",
         "house:119:2:239",
         "house:119:2:246",
@@ -480,6 +481,7 @@
         "house:119:1:335",
         "house:119:1:336",
         "house:119:1:342",
+        "house:119:1:345",
         "house:119:1:347",
         "house:119:2:8",
         "house:119:2:9",
@@ -492,6 +494,7 @@
         "house:119:2:33",
         "house:119:2:37",
         "house:119:2:47",
+        "house:119:2:48",
         "house:119:2:49",
         "house:119:2:50",
         "house:119:2:58",
@@ -506,6 +509,7 @@
         "house:119:2:95",
         "house:119:2:97",
         "house:119:2:109",
+        "house:119:2:114",
         "house:119:2:116",
         "house:119:2:118",
         "house:119:2:125",
@@ -519,6 +523,8 @@
         "house:119:2:138",
         "house:119:2:139",
         "house:119:2:156",
+        "house:119:2:165",
+        "house:119:2:170",
         "house:119:2:171",
         "house:119:2:173",
         "house:119:2:177",
@@ -527,7 +533,12 @@
         "house:119:2:180",
         "house:119:2:181",
         "house:119:2:184",
+        "house:119:2:226",
+        "house:119:2:234",
+        "house:119:2:235",
         "house:119:2:238",
+        "house:119:2:248",
+        "house:119:2:251",
         "house:119:2:252",
         "house:119:2:255",
         "house:119:2:256",
@@ -547,7 +558,8 @@
         "house:119:2:273",
         "house:119:2:274",
         "house:119:2:275",
-        "house:119:2:276"
+        "house:119:2:276",
+        "house:119:2:307"
       ],
       "source_unresolved": [
         "house:119:1:15",
@@ -642,7 +654,6 @@
         "house:119:1:332",
         "house:119:1:334",
         "house:119:1:338",
-        "house:119:1:345",
         "house:119:1:346",
         "house:119:1:349",
         "house:119:1:351",
@@ -667,7 +678,6 @@
         "house:119:2:43",
         "house:119:2:44",
         "house:119:2:45",
-        "house:119:2:48",
         "house:119:2:53",
         "house:119:2:55",
         "house:119:2:56",
@@ -678,7 +688,6 @@
         "house:119:2:89",
         "house:119:2:105",
         "house:119:2:110",
-        "house:119:2:114",
         "house:119:2:121",
         "house:119:2:123",
         "house:119:2:124",
@@ -700,10 +709,8 @@
         "house:119:2:157",
         "house:119:2:162",
         "house:119:2:164",
-        "house:119:2:165",
         "house:119:2:166",
         "house:119:2:167",
-        "house:119:2:170",
         "house:119:2:174",
         "house:119:2:175",
         "house:119:2:176",
@@ -733,15 +740,11 @@
         "house:119:2:223",
         "house:119:2:224",
         "house:119:2:225",
-        "house:119:2:226",
         "house:119:2:227",
         "house:119:2:228",
         "house:119:2:229",
-        "house:119:2:231",
         "house:119:2:232",
         "house:119:2:233",
-        "house:119:2:234",
-        "house:119:2:235",
         "house:119:2:237",
         "house:119:2:240",
         "house:119:2:241",
@@ -750,9 +753,7 @@
         "house:119:2:244",
         "house:119:2:245",
         "house:119:2:247",
-        "house:119:2:248",
         "house:119:2:250",
-        "house:119:2:251",
         "house:119:2:271",
         "house:119:2:272",
         "house:119:2:278",
@@ -777,7 +778,6 @@
         "house:119:2:304",
         "house:119:2:305",
         "house:119:2:306",
-        "house:119:2:307",
         "house:119:2:308",
         "house:119:2:309",
         "house:119:2:310",
@@ -1024,7 +1024,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "42c3919bd333b74ca08f3ca550f2d7283bcafb34a20867ee5a614a12e89a2ffb",
+  "universe_subject_sha256": "cb2465c399b5d1261b57b99eb4cb76bec6f7c9019b53e52d94d26aacccdaef77",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -19263,8 +19263,8 @@
       "date": "2025-12-17",
       "measure": "bill_119_hconres_61",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete resolution directs US ARMEDFORCES withdrawal from hostilities with presidentially designated terrorist organizations in the Western Hemisphere, qualified by declaredwar/specificAUMF. Exact call-up/Clerk-read body independently corroborates IH. Material1544read. Removal means military withdrawal; it neither changes terrorist designation/INAvisa sanctions nor governs immigration status/admission/detention. Regional/narcotics rhetoric is insufficient; actualFailedoutcome is not enactment. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:1:345",
         "url": "https://clerk.house.gov/evs/2025/roll345.xml",
@@ -19281,25 +19281,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete resolution directs US ARMEDFORCES withdrawal from hostilities with presidentially designated terrorist organizations in the Western Hemisphere, qualified by declaredwar/specificAUMF. Exact call-up/Clerk-read body independently corroborates IH. Material1544read. Removal means military withdrawal; it neither changes terrorist designation/INAvisa sanctions nor governs immigration status/admission/detention. Regional/narcotics rhetoric is insufficient; actualFailedoutcome is not enactment. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:345",
           "url": "https://clerk.house.gov/evs/2025/roll345.xml",
           "raw_sha256": "3807f1f685620d62a29aa6d510a36aa61402cf585c9185b274b8066e91dadfb7",
-          "governed_bytes_sha256": "7195989c3512d60535e22b41d1116c95a9127d0f780dd83060052f4026fe0963",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "7195989c3512d60535e22b41d1116c95a9127d0f780dd83060052f4026fe0963"
+        },
+        {
+          "source_id": "govinfo:hconres61ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres61ih/html/BILLS-119hconres61ih.htm",
+          "raw_sha256": "e6aa56797bbc10a2b6c9f1fb1c350bc596cdc376b62fc9d122eee4bdfe4cfb9a",
+          "governed_bytes_sha256": "7de60419c4fcc0b77cb92abcf236984c1dea5f3c200efe4b1750cedf3b449f5b"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "congressional-record:2025-12-17-hconres61-exact",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "40bb44f8f71dfe64f3f054076b7c99d33db465f87a41793289fe5b39de15dd7e"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a876bf355406b5805dee9d1c022ee239235ad0b081d453a70c8480f9a2224326"
       },
       "historical_raw_hash_matches": true
     },
@@ -22718,8 +22736,8 @@
       "date": "2026-01-22",
       "measure": "bill_119_hconres_68",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact68IH military-force removal from Venezuela unless declaredwar/specificAUMF, with complete material1544 and exactcall-up/Clerk-read68body. Adjacent annualDHS debate on the same Record page cannot supply this narrower resolution an immigration mechanism. Not deportation, TPS, asylum/parole or immigration-status adjudication. ActualFailedoutcome notenactment/actualwithdrawal. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:2:48",
         "url": "https://clerk.house.gov/evs/2026/roll048.xml",
@@ -22736,25 +22754,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact68IH military-force removal from Venezuela unless declaredwar/specificAUMF, with complete material1544 and exactcall-up/Clerk-read68body. Adjacent annualDHS debate on the same Record page cannot supply this narrower resolution an immigration mechanism. Not deportation, TPS, asylum/parole or immigration-status adjudication. ActualFailedoutcome notenactment/actualwithdrawal. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:48",
           "url": "https://clerk.house.gov/evs/2026/roll048.xml",
           "raw_sha256": "cd3b6650771d4f892ae8c4297b0b2a971f7efbc5d2b258497bd90ed53323bf93",
-          "governed_bytes_sha256": "5b90e5687bcbd9a58c8ce87b6f2cc4e1fc0c200dc517c0fc664b169503881cad",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5b90e5687bcbd9a58c8ce87b6f2cc4e1fc0c200dc517c0fc664b169503881cad"
+        },
+        {
+          "source_id": "govinfo:hconres68ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres68ih/html/BILLS-119hconres68ih.htm",
+          "raw_sha256": "cb006999a6c01065c14b79ec9e269830c647965a989d2492eb80aa0fcd32d8f8",
+          "governed_bytes_sha256": "7f625036266ca8f5c70483f0d01661158954e4f3d5386a9d827ecac7b8119dc9"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-hconres68-exact",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "dc80271d5c3b72adfbed131bc09111c296dfb82bb31c9adf7b8f15e3ae27a66e"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "333aa2f82f07ab39179151e599b1b14885a6d050356352f3465e560b9827211f"
       },
       "historical_raw_hash_matches": true
     },
@@ -26987,8 +27023,8 @@
       "date": "2026-04-16",
       "measure": "bill_119_hconres_40",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact40IH corroborated by complete April16Clerk-read text: remove ARMEDFORCES from Iran hostilities, imminent-attack defense exception with1544(b)compliance and declaredwar/specificAUMF qualification. Complete1544read. Militarydeployment and statutorymilitaryreporting/termination exceptions do not alter immigration status/visa, asylum/admission or person-border crossings; no actualhostilities/outcome established. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:2:114",
         "url": "https://clerk.house.gov/evs/2026/roll114.xml",
@@ -27005,25 +27041,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact40IH corroborated by complete April16Clerk-read text: remove ARMEDFORCES from Iran hostilities, imminent-attack defense exception with1544(b)compliance and declaredwar/specificAUMF qualification. Complete1544read. Militarydeployment and statutorymilitaryreporting/termination exceptions do not alter immigration status/visa, asylum/admission or person-border crossings; no actualhostilities/outcome established. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:114",
           "url": "https://clerk.house.gov/evs/2026/roll114.xml",
           "raw_sha256": "c078629f58e26d5492966f15aa936e7481ed3949eab815b696c36f77e27ff90b",
-          "governed_bytes_sha256": "15a9ed15df7a3059ae2c54c83690129cd02790aec7b182b7ffcb0e5fc42d8190",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "15a9ed15df7a3059ae2c54c83690129cd02790aec7b182b7ffcb0e5fc42d8190"
+        },
+        {
+          "source_id": "govinfo:hconres40ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres40ih/html/BILLS-119hconres40ih.htm",
+          "raw_sha256": "cb2c7e6d4df169e3b947c13b0df964cfbdea62a063f89e203d80649f34f8ecf9",
+          "governed_bytes_sha256": "80c1d2032224050d4f16629de4e2292a176ede08e5afa15e85362dd844ce3ac7"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "congressional-record:2026-04-16-hconres40",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/html/CREC-2026-04-16-pt1-PgH2929-2.htm",
+          "raw_sha256": "0d2d3dbdd64985750d9eef932d7684bdad7426e97327f123e1257a1842855c43",
+          "governed_bytes_sha256": "cebd33ac3456e56fd786d856964e3002335894b69ce8b39967637303ddf4839a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "dff5ee629445ad0301126e588cae371ff53f7aef20377fe1b624e0be16034634"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:114",
@@ -29776,8 +29830,8 @@
       "date": "2026-05-13",
       "measure": "bill_119_hconres_96",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact96EH and1275consideration rule: immigration/sanctuary cooperation appears ONLYINWHEREASFINDINGS. Resolved clauses appreciate/value lawenforcement contributions, recognize sacrifice and expresssupport. They do not adopt an immigration-cooperation/status/power restriction or even a resolved immigration-specific governing proposition. Under the user explicit findings-only boundary this action is excluded, without assuming preambular allegations true or adding a component vote. Genericpolicesupport is not substantiveimmigration direction. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:2:165",
         "url": "https://clerk.house.gov/evs/2026/roll165.xml",
@@ -29794,25 +29848,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact96EH and1275consideration rule: immigration/sanctuary cooperation appears ONLYINWHEREASFINDINGS. Resolved clauses appreciate/value lawenforcement contributions, recognize sacrifice and expresssupport. They do not adopt an immigration-cooperation/status/power restriction or even a resolved immigration-specific governing proposition. Under the user explicit findings-only boundary this action is excluded, without assuming preambular allegations true or adding a component vote. Genericpolicesupport is not substantiveimmigration direction. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:165",
           "url": "https://clerk.house.gov/evs/2026/roll165.xml",
           "raw_sha256": "3f07e6e59c17baab04f0359d1110d7e10c4204a72b3344f0a6692920839536c2",
-          "governed_bytes_sha256": "1e763004d65cfac6b08ef183459048575d3a0c4494453af464bee46f35a25856",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "1e763004d65cfac6b08ef183459048575d3a0c4494453af464bee46f35a25856"
+        },
+        {
+          "source_id": "govinfo:hconres96eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres96eh/html/BILLS-119hconres96eh.htm",
+          "raw_sha256": "a4fae2f66d404eccc62d8b7cf54bdd20e0d6a7d33ab2ec5eab6520fd1f62dc8c",
+          "governed_bytes_sha256": "c900879066f3a7937101eab066e9ed3935841c43687c2f55ceefdb5b2564e2a4"
+        },
+        {
+          "source_id": "govinfo:hres1275eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1275eh/html/BILLS-119hres1275eh.htm",
+          "raw_sha256": "9889d55d7b3ff8c93c192f523ffd961103b36efcc74129b13c352bf78e1bebfa",
+          "governed_bytes_sha256": "033b17ac95eb53d5dcb8370fe98ac6c2884346bb0e116d1b0ef675bfe252dbcc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7444e87469f566ffcf35ef77a14465be4eb3ae0d9c384c95d52e99fa6ac65a9e"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:165",
@@ -30054,8 +30120,8 @@
       "date": "2026-05-14",
       "measure": "bill_119_hconres_75",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete75IH and exactMay13Clerk-read body/May14roll170outcome: military-hostilities termination deadline anchored toFebruary28introduction, defensiveforce/trooppresence/nonhostileforces/intelligence-sharing/nonauthorization savings. Complete1544and1547read. Removal/occupation refer to ARMEDFORCES, not aliens; domestic security rhetoric or possible migration consequences do not supply a new INA mechanism. ActualFailedtie retained, not enacted withdrawal or motive. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:2:170",
         "url": "https://clerk.house.gov/evs/2026/roll170.xml",
@@ -30072,25 +30138,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete75IH and exactMay13Clerk-read body/May14roll170outcome: military-hostilities termination deadline anchored toFebruary28introduction, defensiveforce/trooppresence/nonhostileforces/intelligence-sharing/nonauthorization savings. Complete1544and1547read. Removal/occupation refer to ARMEDFORCES, not aliens; domestic security rhetoric or possible migration consequences do not supply a new INA mechanism. ActualFailedtie retained, not enacted withdrawal or motive. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:170",
           "url": "https://clerk.house.gov/evs/2026/roll170.xml",
           "raw_sha256": "5f2d57aec09fb7ca20a18cd77251b30852f4e21c998dfd0898f25c7e17018bdf",
-          "governed_bytes_sha256": "dcc28775107e2f387bacc29e7b9c95320c83700a3a201b01457788f8548cfe96",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "dcc28775107e2f387bacc29e7b9c95320c83700a3a201b01457788f8548cfe96"
+        },
+        {
+          "source_id": "govinfo:hconres75ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres75ih/html/BILLS-119hconres75ih.htm",
+          "raw_sha256": "275a3d373b56ce8140137c41b5233df0a973fdf49c039ce346278c87cac6a72d",
+          "governed_bytes_sha256": "8b683b4660ebd53c4a9baab04242e87a2b8a087cf5cf02b3b354ff7c4e59af4f"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1547.htm",
+          "raw_sha256": "61324bfe25a28d749bd81a64ac0dd2bfd38b82ec2fd7a7b34ea08fae58bf34d9",
+          "governed_bytes_sha256": "c9f724283b028e7ee075718b8ed3cc02eaa2c6c3030da2836dcd790672d835ee"
+        },
+        {
+          "source_id": "congressional-record:2026-05-13-hconres75-exact",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-13/pdf/CREC-2026-05-13-house.pdf",
+          "raw_sha256": "f8eece54e6c0db127a6ee6d427c1068409fdea3ede71bc307a99f4a361fa96e1",
+          "governed_bytes_sha256": "566f98501e34ba36947206b705a54573c4073bc783b7e5a770df0dcdf87af12d"
+        },
+        {
+          "source_id": "congressional-record:2026-05-14-hconres75-outcome",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/pdf/CREC-2026-05-14-house.pdf",
+          "raw_sha256": "a27a8233caad07b1a00a7b14ff7257d1c0ed8f9fa0705463f6d834bfcbc08d85",
+          "governed_bytes_sha256": "d032a370f7a5c86bbefa87510c2ac07e905798ddb86e800ccf2e339fc46391f4"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a67e93b7f4d10b13d49f8544efdc16f566cdd1230c7b382fe1339e48ef683109"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:170",
@@ -33135,8 +33231,8 @@
       "date": "2026-06-24",
       "measure": "bill_119_hr_915",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact business-software/cloud/AI loan-purpose authorization and savings: previous such loans not declared impermissible, noR&D authorization, no working-capital-definition limitation. Material7(a)authority lead-in read. New loan USES do not create/change citizenship/LPR/beneficial-owner eligibility, borrower documentation or immigration work authorization. Unlike2966, it does not amend status predicates; software/AIcontext cannot inherit2683foreign-recipient access meaning. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:226",
         "url": "https://clerk.house.gov/evs/2026/roll226.xml",
@@ -33153,25 +33249,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact business-software/cloud/AI loan-purpose authorization and savings: previous such loans not declared impermissible, noR&D authorization, no working-capital-definition limitation. Material7(a)authority lead-in read. New loan USES do not create/change citizenship/LPR/beneficial-owner eligibility, borrower documentation or immigration work authorization. Unlike2966, it does not amend status predicates; software/AIcontext cannot inherit2683foreign-recipient access meaning. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:226",
           "url": "https://clerk.house.gov/evs/2026/roll226.xml",
           "raw_sha256": "e2cb2e0af07ead810c0258866b261c01d3ef39dc5f37fbab65dc317e168799e2",
-          "governed_bytes_sha256": "285f7d57bb23991bf9e7fd9e04e7f97e6aa14c3e09c9d524166f3f4964f08a25",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "285f7d57bb23991bf9e7fd9e04e7f97e6aa14c3e09c9d524166f3f4964f08a25"
+        },
+        {
+          "source_id": "govinfo:hr915eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr915eh/html/BILLS-119hr915eh.htm",
+          "raw_sha256": "1d5176e0a0c3f841b96d67d745e0e6b05e02ac901977ca7a28ab6315d6cb3c15",
+          "governed_bytes_sha256": "f91214cbea3bba320a2b45ff5cbe3303afa1e46c0c11e27de3eaa9c8bb4d5bfb"
+        },
+        {
+          "source_id": "govinfo:15usc636-2024-7a-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+          "raw_sha256": "1154f3dbc2aa2d9a75c79000efe8a3a436e73683b401c15b6c61f7b0ceb4852e",
+          "governed_bytes_sha256": "fa25914beba6f036bea74f8a981af5accaf00d5eb536ab5adc8b729db8d8966c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "57c3411833d5b91dcf2e3cf1b13adc3f017c9afe057adfb8a1bc08eace4ae99a"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:226",
@@ -33397,8 +33505,8 @@
       "date": "2026-06-30",
       "measure": "H RES 1398",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete exact1398Clerk-read fourteen-section rule and actual230previous-question/231FAILEDagreement independently read. PendingNDAA/Stateappropr/SSA/expressiveconsideration, RCP/committee substitutions, amendment/debate/enbloc/recommit and laying1377ontable are procedures. Section14addsALREADYHouse-passedS1383onlyINENGROSSMENTafterNDAApassage; no directfinaldeemedbillpassage/concurrence or freshSAVEcomponentchoice. The printed proposed strike14amendment was not a separate adopted/amendment roll; PQpassed and ruleFAILED. Do not substitute later1438passedrule or eventual8800EH for this exactquestion, or infer motive/preferredalternative/actualpackaging.",
       "source": {
         "source_id": "clerk:119:2:231",
         "url": "https://clerk.house.gov/evs/2026/roll231.xml",
@@ -33416,25 +33524,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete exact1398Clerk-read fourteen-section rule and actual230previous-question/231FAILEDagreement independently read. PendingNDAA/Stateappropr/SSA/expressiveconsideration, RCP/committee substitutions, amendment/debate/enbloc/recommit and laying1377ontable are procedures. Section14addsALREADYHouse-passedS1383onlyINENGROSSMENTafterNDAApassage; no directfinaldeemedbillpassage/concurrence or freshSAVEcomponentchoice. The printed proposed strike14amendment was not a separate adopted/amendment roll; PQpassed and ruleFAILED. Do not substitute later1438passedrule or eventual8800EH for this exactquestion, or infer motive/preferredalternative/actualpackaging.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:231",
           "url": "https://clerk.house.gov/evs/2026/roll231.xml",
           "raw_sha256": "dd744439e153320d3040364a2d545d6a7b7fac105cf2fa7146e57a888896019c",
-          "governed_bytes_sha256": "18dfe4e9cd55c41f76e13e21aa4c4156e6aac3021a16a6740f125d60a1ece8ed",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "18dfe4e9cd55c41f76e13e21aa4c4156e6aac3021a16a6740f125d60a1ece8ed"
+        },
+        {
+          "source_id": "congressional-record:2026-06-30-1398-exact-body",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-30/pdf/CREC-2026-06-30-house.pdf",
+          "raw_sha256": "75a23dea753d21bed1a0a2cf08de6a9a33f3b8ac48a1ce2f16fb7ff392682ce9",
+          "governed_bytes_sha256": "37a9038537910900cca8112f7e01af60b8a5676f6a8c60b4408bee54db435aef"
+        },
+        {
+          "source_id": "congressional-record:2026-06-30-1398-rule",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-30/pdf/CREC-2026-06-30-house.pdf",
+          "raw_sha256": "75a23dea753d21bed1a0a2cf08de6a9a33f3b8ac48a1ce2f16fb7ff392682ce9",
+          "governed_bytes_sha256": "012c9444e3d78ba7cb0c7ffee45b2ec1639938a83471cc44ccf2354f55432286"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "963e47b25dc0be8b4096b361506f2f8a8d054c00eabbee65c0312714324a7482"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:231",
@@ -33555,8 +33675,8 @@
       "date": "2026-07-13",
       "measure": "bill_119_hr_3106",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete exact DHS collective terrorism/extreme-cold infrastructure exercise, scenario coordination and qualified after-action report. Complete incorporated5195c(e)defines physical/virtual critical SYSTEMSANDASSETS. DHSagency role and international/territorial coordination do not add border-person entry/status/immigration enforcement; proposed legislative changes in a report are not enacted mechanisms. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:234",
         "url": "https://clerk.house.gov/evs/2026/roll234.xml",
@@ -33573,25 +33693,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete exact DHS collective terrorism/extreme-cold infrastructure exercise, scenario coordination and qualified after-action report. Complete incorporated5195c(e)defines physical/virtual critical SYSTEMSANDASSETS. DHSagency role and international/territorial coordination do not add border-person entry/status/immigration enforcement; proposed legislative changes in a report are not enacted mechanisms. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:234",
           "url": "https://clerk.house.gov/evs/2026/roll234.xml",
           "raw_sha256": "41a2e16dcf5778ce7551f46625625ea6931333601dc3a5c7764bad7dd55dd72b",
-          "governed_bytes_sha256": "01e46f4e9366d706167a4ba1605a080dbec05ae9bac66c50a80323cfe6a8c0f9",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "01e46f4e9366d706167a4ba1605a080dbec05ae9bac66c50a80323cfe6a8c0f9"
+        },
+        {
+          "source_id": "govinfo:hr3106eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3106eh/html/BILLS-119hr3106eh.htm",
+          "raw_sha256": "20916e3cc9320355d41167529bc904acb4fcb9e08607f819f68646696c35d083",
+          "governed_bytes_sha256": "69d9b7b64b9148e62dc75250647a4d78b6794067776a77aa3c06c41120bbe0f9"
+        },
+        {
+          "source_id": "govinfo:42usc5195c-e-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapIV-B-sec5195c.htm",
+          "raw_sha256": "1b439982da0ee873532f67aa6c253df8dc4fd3ae6289c66c4ec6e50fb6284c23",
+          "governed_bytes_sha256": "3f42ee29ec79e517dc8f124b564ffc3fd5110422f734abacc056b6b623595eff"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "07445a661a3b374b772a7ef3fa7d251ca2dd2e11ce0a7c041a39dbc7e00a3366"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:234",
@@ -33607,8 +33739,8 @@
       "date": "2026-07-13",
       "measure": "H R 8897",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete discretionary two-year airport adult/accompanying-child12-and-under expedited-access pilot, airport/resource selection,270daybriefing and retainedsecurity/vetting/boarding-pass constraints. Complete44901operative section and44903(j)(2)SecureFlight independently read: screening/watchlists/redress/security categories, not INAadmission or lawfulpresence. Vetting STATUS is aviation security, not immigration status; American in title is not a new citizenship predicate. Existingbaggage-preclearance/CBP/general-aviation-border context in44901doesnotbecome a newpilot immigration mechanism. No PreCheck eligibility expansion, citizenship/status right, allpassenger screening exemption or actualops inferred. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:235",
         "url": "https://clerk.house.gov/evs/2026/roll235.xml",
@@ -33627,25 +33759,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete discretionary two-year airport adult/accompanying-child12-and-under expedited-access pilot, airport/resource selection,270daybriefing and retainedsecurity/vetting/boarding-pass constraints. Complete44901operative section and44903(j)(2)SecureFlight independently read: screening/watchlists/redress/security categories, not INAadmission or lawfulpresence. Vetting STATUS is aviation security, not immigration status; American in title is not a new citizenship predicate. Existingbaggage-preclearance/CBP/general-aviation-border context in44901doesnotbecome a newpilot immigration mechanism. No PreCheck eligibility expansion, citizenship/status right, allpassenger screening exemption or actualops inferred. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:235",
           "url": "https://clerk.house.gov/evs/2026/roll235.xml",
           "raw_sha256": "986cba295517be29858e3813b3e8c30e2647e5a85d630c3fa0b43c39aed85654",
-          "governed_bytes_sha256": "936e3e4bb23714b7ad2535832a6292899955a13559d9ef8e264ab70d3c8f1d32",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "936e3e4bb23714b7ad2535832a6292899955a13559d9ef8e264ab70d3c8f1d32"
+        },
+        {
+          "source_id": "govinfo:hr8897eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8897eh/html/BILLS-119hr8897eh.htm",
+          "raw_sha256": "5d271d630c6b481a3de485d8704e8e9dff011a7466ae8e41f3e8af04b5a246b2",
+          "governed_bytes_sha256": "6b8d92094428a4925e66afb0337492950dc7827a75548007af35a1da74bc30a8"
+        },
+        {
+          "source_id": "govinfo:49usc44901-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVII-partA-subpartiii-chap449-subchapI-sec44901.htm",
+          "raw_sha256": "206644da405ba2e2bc192e7edd67559318a65d3235fef4a2601b0cafae3ba145",
+          "governed_bytes_sha256": "fa1fc11c3f2dfc63d2227148befdfa191292cce1901a34211e28059689b8852b"
+        },
+        {
+          "source_id": "govinfo:49usc44903-j2-secure-flight",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVII-partA-subpartiii-chap449-subchapI-sec44903.htm",
+          "raw_sha256": "2ad54b2f02903c45de1c865d13df332443f5984847b0726f135c2c38ab673f81",
+          "governed_bytes_sha256": "fdedc61308c9fb6d2769342536d57165ed0a36420552dafa2d02f76fd94c2d12"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "da1cc08375989fd3287bea5507fff2b70afe39dbb61f771a8fe6787b98024b89"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:235",
@@ -34304,8 +34454,8 @@
       "date": "2026-07-16",
       "measure": "bill_119_hr_5362",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete clinic-name designation/record-reference instruction. The military/overseas charitable-service biography is findings only; new operative mechanism names an existing VAclinic, with no new healthcare eligibility, citizenship/naturalization/status or border-person authority. Literal clinic naming does not establish immigrant-service benefits or actual care. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:248",
         "url": "https://clerk.house.gov/evs/2026/roll248.xml",
@@ -34322,25 +34472,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete clinic-name designation/record-reference instruction. The military/overseas charitable-service biography is findings only; new operative mechanism names an existing VAclinic, with no new healthcare eligibility, citizenship/naturalization/status or border-person authority. Literal clinic naming does not establish immigrant-service benefits or actual care. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:248",
           "url": "https://clerk.house.gov/evs/2026/roll248.xml",
           "raw_sha256": "362b22a27ced50d9705e6864f0cebf22d00b0c1230822d10366bb97277a487ee",
-          "governed_bytes_sha256": "d003d906a66c56933dbcd5bd314a698b0e86892ff61d48b606f797dc9b82fdbc",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "d003d906a66c56933dbcd5bd314a698b0e86892ff61d48b606f797dc9b82fdbc"
+        },
+        {
+          "source_id": "govinfo:hr5362eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5362eh/html/BILLS-119hr5362eh.htm",
+          "raw_sha256": "de34e4668477d6ce8119c9d0f94fc766752bac8da18c924aca2f1a81a13d9fd2",
+          "governed_bytes_sha256": "21e075644d6e4c8e3adab5ffd2bbd3938c6dea56e5835775e5bd7c3816841224"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "dd4b651dc38f919973aea1d81876b2689e6c6de0b7022178248a8e0789c5280b"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:248",
@@ -34455,8 +34611,8 @@
       "date": "2026-07-20",
       "measure": "bill_119_hr_8823",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete FECAprovider-payment/voucher/certification suspension authority for specified FRAUDCONVICTIONS, required regulations and180dayeffective-payment boundary. Full8103oldmedicalservices/payment framework and18US24healthbenefit definition read. It changes provider-payment administration, not a new criminal offense, INAinadmissibility/removal ground, citizenship/work-authorization predicate or immigrant-benefit eligibility. Unlike1958benefits-fraud INAamendments, this exact action cannot inherit an immigration consequence just because a convicted provider could be noncitizen. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
       "source": {
         "source_id": "clerk:119:2:251",
         "url": "https://clerk.house.gov/evs/2026/roll251.xml",
@@ -34473,25 +34629,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete FECAprovider-payment/voucher/certification suspension authority for specified FRAUDCONVICTIONS, required regulations and180dayeffective-payment boundary. Full8103oldmedicalservices/payment framework and18US24healthbenefit definition read. It changes provider-payment administration, not a new criminal offense, INAinadmissibility/removal ground, citizenship/work-authorization predicate or immigrant-benefit eligibility. Unlike1958benefits-fraud INAamendments, this exact action cannot inherit an immigration consequence just because a convicted provider could be noncitizen. Exact Clerk identity/question/date/outcome and both actual choices remain bound; no parentmeaning/motive/outcome inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:251",
           "url": "https://clerk.house.gov/evs/2026/roll251.xml",
           "raw_sha256": "ef5f0e888a22dd002b69d3d060508d24ee060a9ea76a488e82b08223d1cfd492",
-          "governed_bytes_sha256": "df6c6e89298995ea0fec910e151aa0bd519f4ef3da11e3a96e509b4753ef842c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "df6c6e89298995ea0fec910e151aa0bd519f4ef3da11e3a96e509b4753ef842c"
+        },
+        {
+          "source_id": "govinfo:hr8823eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8823eh/html/BILLS-119hr8823eh.htm",
+          "raw_sha256": "21606075b0a95f8b4fedf515a16527dbda260a856bff221de3b45c8ba92e8c2a",
+          "governed_bytes_sha256": "dc8e994161db79bdc8696db0393da483a61337dc1d42587fc79eb61db18e642b"
+        },
+        {
+          "source_id": "govinfo:5usc8103-2024-feca-medical",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartG-chap81-subchapI-sec8103.htm",
+          "raw_sha256": "b590bfc89e9c3b7a4522abc01ac2b8e62089b61e107e05da6808a04287975d03",
+          "governed_bytes_sha256": "9f485dbc853c5b4eb21fc4f1713bec7fd3b218286c2e428612fef75f5d9f12a6"
+        },
+        {
+          "source_id": "govinfo:18usc24-2024-health-benefit-definition",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap1-sec24.htm",
+          "raw_sha256": "6ec6bdbcb5cb81bca74fc06eb8e0b8d1426c893db7c2d3bffd5744cda6a6d63e",
+          "governed_bytes_sha256": "1fbbaf19961e0f810167f56ab58685257fa52c610c9e6cb5fed805bdd3f0b5e2"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "94267614ec041bbc1cd7682b1b543914f9e44bc0d572ca1559f3153dd11e725a"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:251",
@@ -37613,8 +37787,8 @@
       "date": "2026-09-15",
       "measure": "H CON RES 93",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete actually passed September15EH, not IH alone: Iran-hostilities ARMEDFORCES withdrawal with imminent-attack defense/1544(b)compliance/declaredwar or specificAUMF qualifications. Complete1544read. HousePassed is not automaticSenateadoption/enactment or actualwithdrawal. Exactmilitarymechanism doesnotchange INAstatus/removal/visa/admission or personalbordercrossing; no preferredalternative/motive/outcome inferred. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
       "source": {
         "source_id": "clerk:119:2:307",
         "url": "https://clerk.house.gov/evs/2026/roll307.xml",
@@ -37631,26 +37805,38 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete actually passed September15EH, not IH alone: Iran-hostilities ARMEDFORCES withdrawal with imminent-attack defense/1544(b)compliance/declaredwar or specificAUMF qualifications. Complete1544read. HousePassed is not automaticSenateadoption/enactment or actualwithdrawal. Exactmilitarymechanism doesnotchange INAstatus/removal/visa/admission or personalbordercrossing; no preferredalternative/motive/outcome inferred. Exact Clerk question/date/outcome and both member observations remain bound; constitutional war-power enforceability is not adjudicated for this immigration exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:307",
           "url": "https://clerk.house.gov/evs/2026/roll307.xml",
           "raw_sha256": "0a8c0d7372c1d203a76c0051af71593d5460cd3913027111810867e1a4a7778f",
-          "governed_bytes_sha256": "1075a2576ea1a20e4252113d41c33d8129bf238858ac96159867b004c734356f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "1075a2576ea1a20e4252113d41c33d8129bf238858ac96159867b004c734356f"
+        },
+        {
+          "source_id": "govinfo:hconres93eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres93eh/html/BILLS-119hconres93eh.htm",
+          "raw_sha256": "50aa7bc75d7b023a8b3e0b191633ec38dab83b4a0d850fc2bf9ff2194288bb77",
+          "governed_bytes_sha256": "6920f969522b705c155595568e7d553331149001abbb085a16e8c650ed531461"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "65c4c9d4981fea8698fe715627f5d2167f5f89ddbdc3145d13f3fb75bfd2dbc3"
       }
     },
     {
@@ -38119,7 +38305,6 @@
     "house:119:1:332",
     "house:119:1:334",
     "house:119:1:338",
-    "house:119:1:345",
     "house:119:1:346",
     "house:119:1:349",
     "house:119:1:351",
@@ -38144,7 +38329,6 @@
     "house:119:2:43",
     "house:119:2:44",
     "house:119:2:45",
-    "house:119:2:48",
     "house:119:2:53",
     "house:119:2:55",
     "house:119:2:56",
@@ -38155,7 +38339,6 @@
     "house:119:2:89",
     "house:119:2:105",
     "house:119:2:110",
-    "house:119:2:114",
     "house:119:2:121",
     "house:119:2:123",
     "house:119:2:124",
@@ -38177,10 +38360,8 @@
     "house:119:2:157",
     "house:119:2:162",
     "house:119:2:164",
-    "house:119:2:165",
     "house:119:2:166",
     "house:119:2:167",
-    "house:119:2:170",
     "house:119:2:174",
     "house:119:2:175",
     "house:119:2:176",
@@ -38210,15 +38391,11 @@
     "house:119:2:223",
     "house:119:2:224",
     "house:119:2:225",
-    "house:119:2:226",
     "house:119:2:227",
     "house:119:2:228",
     "house:119:2:229",
-    "house:119:2:231",
     "house:119:2:232",
     "house:119:2:233",
-    "house:119:2:234",
-    "house:119:2:235",
     "house:119:2:237",
     "house:119:2:240",
     "house:119:2:241",
@@ -38227,9 +38404,7 @@
     "house:119:2:244",
     "house:119:2:245",
     "house:119:2:247",
-    "house:119:2:248",
     "house:119:2:250",
-    "house:119:2:251",
     "house:119:2:271",
     "house:119:2:272",
     "house:119:2:278",
@@ -38254,7 +38429,6 @@
     "house:119:2:304",
     "house:119:2:305",
     "house:119:2:306",
-    "house:119:2:307",
     "house:119:2:308",
     "house:119:2:309",
     "house:119:2:310",
@@ -38279,6 +38453,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "2671186c6161a9a50ad60af56eb1d7887ce843db4ae87262f8eeff642feb0d6e",
-  "membership_review_sha256": "1b809b71aac31a428ce3c5ebd3cdc5d56f2a3be5789ff63415a7b5a530ee9b07"
+  "proposal_sha256": "4bf6392dbd72cc14c0db86ffcdd51eba4755516ec6d3b986c0e0434296b9da33",
+  "membership_review_sha256": "609c54161e5fd5ee009d38ba71118663f8f88abe52912c4a1902c470a237b978"
 }
