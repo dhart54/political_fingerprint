@@ -3768,3 +3768,65 @@ Senate 100051 child, examination, registration/DNA, assignment and support
 purposes, then 90005 State-border/Stonegarden and remaining packages/screens.
 No current deadline or production, merge, deployment, acceptance, promotion
 or publication authority. Historical markers and unrelated work preserved.
+
+
+### Successor checkpoint 59: Senate child withdrawal and examination funding
+
+Exact Senate 100051(8)/(11) are purposes in the additional fiscal year 2025
+Secretary of Homeland Security $2,055,000,000 appropriation through September
+30, 2029, not the ICE account or separate full-envelope child earmarks.
+Paragraph (8) funds specified-child removal operations but shall only fund
+permitting withdrawal under 235(a)(4). The Secretary's case-by-case determination
+is common to all three complete conditions: officer finding at a land border
+or port and inadmissibility; no prior severe trafficking victimization together
+with no credible return-trafficking risk; and no return fear owing to credible
+persecution fear. Defined UAC status/under-18 age and the complete parent/care
+alternatives remain, with complete severe-trafficking definition bound.
+No House express contiguous/non-contiguous phrase silently inserted.
+
+Paragraph (11) checks defined children age 12 or older, including tattoos/other
+gang markings. It prints no additional CBP-encounter condition. Its age floor
+does not restrict paragraph (8). Examination is not gang membership, crime or
+danger. Full captured 235(a)(4) discretion and material TVPRA screening,
+independent-decision, safe return, custody/transfer, proceedings/relief/counsel
+and placement safeguards remain. No repeal, automatic return, actual eligibility
+or universal protection conclusion. Question 49 separately reserves exact Senate
+interaction; original House question 43 preserved. Recommendation: preserve
+printed predicates and all retained authorities; obtain independent application
+review before individual pathway, voluntariness or repeal/outcome claims.
+Alternatives and safe parallel work recorded; evidence available, research pending.
+
+The existing exact 100051 binding and full TVPRA/UAC sources reused. Two new
+Senate bindings reuse existing complete withdrawal and trafficking-definition
+sources. Zero new sources/captures. Seven operative-clause matrices check each
+actor/action/object/location/time/conjunction/exception/discretion dimension
+against own source and both prose surfaces, with omitted additional conditions
+explicitly outside the bounded claim. Detailed meaning and new qualification
+authored once, projected deterministically to both members. Full candidate
+reconstructs exactly from checkpoint 58 plus declared prose and two bindings.
+All 38 other actions, earlier Senate clauses, House, compact copy, choices,
+source inventory, captures, membership, universe and committed receipts unchanged.
+
+Final 232-test six-module aggregate passes in 41.244 seconds, including
+43 candidate tests; seven semantic checks and seven-file raw byte replay pass.
+Source/binding/qualification/audit/seal/extent hashes, both member propagation,
+queue/accounting and candidate/publication isolation verify. Initial aggregate
+had one audit-hash mismatch because owner changed final whitespace while it
+ran; files stabilized. The next run found missing audit evidence for two new source bindings; exact governed witnesses added. Final complete suite rerun after both corrections. No rule weakened. Final diff
+reviewed; tests and same-owner work do not establish semantic truth/acceptance.
+Core 69f318ca9e351dd7125f1f144ebbfeef406be4e14c9e311f8a14afb94556ffa8; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Accounting: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings (Foushee 36/Massie 34).
+1,291 sources, 760 bindings, 268 captures and 176 verified bounded extents.
+Remaining 221 ordinary screenings, two partial H.R.1 reviews and 49 separate
+application questions. Same-owner audit partial, final verdict null. Independent
+transport repair recheck and this new bounded review pending. Checkpoint 58
+bf2b5cfe65595027e04c4c40c0fbb95f6d2061a8 CI run 37547133989 remains tracked;
+current checkpoint CI follows push. Original 1994 acquisition/application
+follow-up remains separate. Next: remaining 100051 registration/DNA, assignment,
+screening and support, then 90005 State-border/Stonegarden and packages/screens.
+Existing owner, original markers and unrelated work preserved; no current
+shutdown or merge/deploy/production/editorial acceptance/promotion/publication.
+
+Checkpoint 58 exact CI 37547133989 completed successfully at bf2b5cfe65595027e04c4c40c0fbb95f6d2061a8; implementation owner natively verified all nine jobs.
