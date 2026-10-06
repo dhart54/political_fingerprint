@@ -5,9 +5,9 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Current ledger:247 reviewed (18 interpreted,169procedural,59excluded,1expressive
-context), with429 ordinary screenings unfinished. These are unfinished research,
-not429 genuine unavailable-evidence dependencies or a closed Immigration universe.
+Current ledger:275 reviewed (18 interpreted,178procedural,78excluded,1expressive
+context), with401 ordinary screenings unfinished. These are unfinished research,
+not401 genuine unavailable-evidence dependencies or a closed Immigration universe.
 Eighteen separate proposal episodes yield36 observations and35 directional findings:
 Foushee14opposition/4support; Massie16support/1opposition/1Present. H.R.23's Present
 observation produces no directional Massie finding. The generated appendix
@@ -26,14 +26,14 @@ adjudicate repeal of every earlier southern-border/INA authority.
 
 The historical32lead set now independently screens as14interpreted,15procedural,
 1expressive and2excluded. H.R.23/H.R.35/H.R.2931/H.R.2966 are additional authored meanings outside
-that seed; later ordinary discovery remains open.825canonical source objects
-include695 unchanged Health-governed reuses and130new objects.41full provisional
+that seed; later ordinary discovery remains open.854canonical source objects
+include724 unchanged Health-governed reuses and130new objects.42full provisional
 local research captures are separately inventoried; they are not automatic meaning
 or replay dependencies.159claim/source witnesses govern the current meanings.
 
 The separate primary-evidence audit covers all18current meanings and the required
-sample:12retained exclusions,6procedures and all1expressive control. Across37
-distinct actions it records1Critical,6Major,2Minor,28NoDefect; corrective re-review
+sample:18retained exclusions,7procedures and all1expressive control. Across44
+distinct actions it records1Critical,6Major,2Minor,35NoDefect; corrective re-review
 does not erase the original finding. Corrections address operative-versus-rhetorical
 screening, governing237admission scope, enacted TPS fees/document duration and
 retained release categories. Its method, cases and remaining pattern work are in
@@ -49,6 +49,13 @@ loan requirements. Existing office authority, March2025announced relocation and
 June1,2025SOP restrictions are separately bound; proposed statutory text is not
 misrepresented as first-ever agency restrictions. Earlier committee text and
 later2026agency rules do not replace the exact passage version/baseline.
+
+The latest noncounting expansion independently distinguishes operative clauses
+from Boulder-resolution preamble assertions, DHS research grants from immigration
+policy, and deemed vote-pair procedure from member observations. The complete
+DETERRENT financial-disclosure bill and three failed amendments use exact report/
+Rules-print/proceedings bindings; international-court/nationality references do
+not import the separate ICC visa-sanctions mechanism.
 
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings

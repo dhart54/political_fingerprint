@@ -393,3 +393,40 @@ checks pass; all7JSON outputs replay byte-for-byte. Both actual new SBA member
 compacts/directions and separate episodes inspected. Source/audit/accounting and
 public/persistence gates pass; protected baseline diff remains empty. Current
 exact-head hostedCI follows the push.
+
+### Checkpoint 8: procedural, foreign-reference and exact-amendment screenings
+
+28new reviews bring275supported screenings:18interpreted,178procedural,78excluded,
+1expressive,401ordinaryunfinished. Nine rules include failed282RH and adopted294EH;
+294deems293adopted, independently read as House vote-pair announcement procedure.
+No NotVoting observation is made directional. Rules retain pending-text versus
+separate final-passage limits. Boulder488operativeclauses are condemnation/general
+coordination/gratitude; its immigration assertions remain preamble claims.
+DHS881research funding and general criminal/officer/consumer/maritime/diplomatic
+mechanisms are independently excluded from their full operative texts.
+
+Complete57840-character1048EH financial-regulation package is separately read;
+failedamendments4/5/6 bind119-38numbered texts and RCP119-1insertion pages2/57/39,
+adopted242rule and March27recordedproceedings/Clerk. Internationalcourt/foreign-source
+nationality/report-recipient references do not import23INAvisa sanctions or turn
+university admissions into border admission. Six additional noncounting claim
+witnesses preserve exact amendment/insertion text. Expandedaudit adds7NoDefect,
+so44distinct actions assess1Critical/6Major/2Minor/35NoDefect; eighteen retained
+exclusions,sevenprocedures and all1expressive are sampled. All18current meanings
+remain audited, with no new semantic defect found in this noncounting unit.
+
+Sources854=724unchanged Health-governed reuses+130new;159shared-meaning claim
+witnesses and42full provisional captures. A verification recapture of293EH is
+byte/object-identical to Health and the canonical object is reused unchanged.
+No new substantive findings or episodes in this unit. Complete checkpoint
+validation/replay and exact-headCI follow. The prior e05427d checkpoint passes
+all9hosted backend jobs at https://github.com/dhart54/political_fingerprint/actions/runs/37414389842.
+No final full-corpus PASS or discovery closure; ordinary401screening queue remains.
+
+Checkpoint8 validation:204focused tests pass in32.496seconds, all7canonical
+semantic checks pass and all7JSON outputs replay byte-for-byte. Expanded audit
+source/ledger bindings pass;18episode/35finding core and actual readable member
+outputs remain unchanged. Protected baseline diff and diff-check are clean.
+SBAcheckpoint2d4a400 exact-head hostedCI succeeds:
+https://github.com/dhart54/political_fingerprint/actions/runs/37415456627.
+CurrentexactheadCI follows the push.
