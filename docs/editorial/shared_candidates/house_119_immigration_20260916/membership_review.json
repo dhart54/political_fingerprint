@@ -13071,7 +13071,490 @@
       ],
       "claim_source_map_ref": "authoring.json#action_id=house:119:2:108",
       "episode_candidate_id": "episode:hr7147:119"
+    },
+    {
+      "action_id": "house:119:2:42",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Completeexactannualversions with actualrule/correctionsequence, fullmaterialstatutoryclauses, independentlyreadfinalexplanatorynarrative/visuallyverifiedtablecolumns, earlierreportdirections andretainedstatutory/agencybaselines. OperativeDHSImmigrationappropriation/conditions qualifybeyondagencyname. Wholechoice, statutory/report, new/continued, population/exception/funding/timing, actualoutcome andbill-episodeboundariespreserved; novelapplicationquestions routedcandidateonly.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:42",
+          "url": "https://clerk.house.gov/evs/2026/roll042.xml",
+          "raw_sha256": "b6d23102628e791928a3911d1f1d9fad27807d439cda3bf03d02f15ba49d1f83",
+          "governed_bytes_sha256": "ffdd38d072637d2fe8d11885480c058e8deeea8b7af6c018885803f7622f8958"
+        },
+        {
+          "source_id": "govinfo:hr7147ih-immigration-complete",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147ih/html/BILLS-119hr7147ih.htm",
+          "raw_sha256": "a31c4e33d57ab14ebada9ab38554e34b8af5232ea70a307b4adae60057bcaedf",
+          "governed_bytes_sha256": "9ba2e0a8327c1189e2e39776f3bcc439a977335d8a30286eab0bc7228e08b7ce"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "07b1a213ee521c233447e7de07f05761b4d5b7a7046eac8d17cf0ddc56857684"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-reviewed-table-rows",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "79d512fe4ba5d481fcf3abd091303f21d0a184f159f55fa7b91c832171183d2f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-173-immigration-material-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm",
+          "raw_sha256": "f8b02e171ade9a05eb6c5806a20bc1fc975727ed17f34aa3a3e22038679cabc0",
+          "governed_bytes_sha256": "e4e673b8ddebfbf650e056225e28a808f4e5edf42e9b440c03f23abbd206e61c"
+        },
+        {
+          "source_id": "govinfo:srpt118-85-continued-immigration-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm",
+          "raw_sha256": "776bbbf4949e43a7e4cb21ae7e9918244213ac69da73e5b7957ba3aec7cd6f29",
+          "governed_bytes_sha256": "ecf842b32efe51d513fae07665674144591b049a91127dddd2f706bad3353891"
+        },
+        {
+          "source_id": "govinfo:hrpt116-458-continued-migrant-care",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-116hrpt458/html/CRPT-116hrpt458.htm",
+          "raw_sha256": "1bac60ca8db1a2462d6715586753b6184cc156d5fe5e29c8c2ade301610887c6",
+          "governed_bytes_sha256": "cd0483f553ee5b9dc5f539d7e7848fc97395b0b86b84f911a5130490c6c6f726"
+        },
+        {
+          "source_id": "govinfo:hrpt118-553-continued-ferm-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt553/html/CRPT-118hrpt553.htm",
+          "raw_sha256": "598972f651ab6d74858b57047c9b10b76ef748e625ba4a74a1bec0d2fe77168a",
+          "governed_bytes_sha256": "5935436794ea903bbd334803a9742ebd0aa3f4321965f5c8d49e6cd773097dea"
+        },
+        {
+          "source_id": "govinfo:pl118-47-complete-dhs-division-c",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "81c0e9997b93f880a830cfc6ed711bc9c45dd589ca7d34e984e38cbd21a42ebf"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
+          "source_id": "govinfo:pl119-37-complete-division-a-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "85f16b8eef173d108d14b47568575fcbf35b93da3ffdb85a3e2fe85714b6f3ea"
+        },
+        {
+          "source_id": "govinfo:pl116-93-dhs216-217",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ93/html/PLAW-116publ93.htm",
+          "raw_sha256": "ebaa04625f2ac6bab135d1de777b4c58734a09c8bdf5c170e199567cafbb3831",
+          "governed_bytes_sha256": "7d65a3601a2b2d7351f27c128dda71009b3757c48b18f0f0af40217fbba5624e"
+        },
+        {
+          "source_id": "govinfo:pl116-260-dhs216",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "593ca0b66b3efa17daef5b9628f120a8ba87919b3fbe10a44949ef53b22010d9"
+        },
+        {
+          "source_id": "govinfo:pl116-260-fencing211-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "d2b030435e65d8aa39221de73c7def6cdf9e04ec2048f2223580ced3b6daffde"
+        },
+        {
+          "source_id": "cbp:2021-pregnant-postpartum-custody-public-mirror",
+          "url": "https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf",
+          "raw_sha256": "a1ce489ac6a9245c4660ff2d72b33ed6188b2cbe545cedb8d33791bf0ec93cee",
+          "governed_bytes_sha256": "3580880f2f9b5d8f0d61d3bd9ee8cb6c842faf9e814bcb3cff87eb913d28953c"
+        },
+        {
+          "source_id": "govinfo:pl119-21-90004-autonomous-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "97bd98071aef3b2b01ef95ceae31b187deddf0fe487c37073e913eec51ed6ff1"
+        },
+        {
+          "source_id": "govinfo:pl118-159-6303-covered-activity-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "0129c9e8d6d6727947ef1b12ad6d13ee6358304b4dd7c43a2ce94b105d1fe4e8"
+        },
+        {
+          "source_id": "govinfo:8usc1448-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partII-sec1448.htm",
+          "raw_sha256": "f4a050bef288c190a67630c72fabdda891f1b3281eb6167afc494366dfc2799e",
+          "governed_bytes_sha256": "e0cf126748d04d07ba772d39ca45a2d6b966f971a73b4e813fbab676f60d2561"
+        },
+        {
+          "source_id": "govinfo:8usc1324ah3-unauthorized-employment-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "92f7ad836156b49422b1708563d75f31a9b18989d5e9366c8323975d5b0f01fa"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-note-404-immigration-emergency-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "c9db766eb4eef8f674df06030d70100cd9b9e9b4a79d23ede7bbb0d6a5494dd1"
+        },
+        {
+          "source_id": "govinfo:hres1014eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+          "raw_sha256": "5e3f2a713beda1ea584d8eb1d21dd09b69fb195d83714feb525d688d0b8c60b7",
+          "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de"
+        },
+        {
+          "source_id": "govinfo:hres1016eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1016eh/html/BILLS-119hres1016eh.htm",
+          "raw_sha256": "3c961a4349ddd3ce55f56f68988ee16871462800874cfd7b3f8d38cd170b0409",
+          "governed_bytes_sha256": "9d16d2fea044a3f57cdcf7b429c8b931db7148de88c7b6a4cca7ca6c148aee94"
+        },
+        {
+          "source_id": "govinfo:hr7147-reviewed-version-boundaries",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7147eh/html/BILLS-119hr7147eh.htm",
+          "raw_sha256": "03795a47a762a4138f0dbe3b7428bdd821fb6e66365c3391c5c04559aa7cb0e8",
+          "governed_bytes_sha256": "704f959e780a2cbd474636571f5becfaff714772a93db1a9a72ffe4d082de78a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-7147-passage42",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "28b9401bd16b0082c205172dbeaaea4a86d33d7345ae04d3332170f766e76939"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-7147-correction-after42",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "raw_sha256": "392e87efb012e742c76da6189f4560d02e76e98dac4cc4d9e341a11851044f69",
+          "governed_bytes_sha256": "d9581deb2b882f1a6cec8ec76ba9f6f29181ddd07057321c9ebd1647020ceab9"
+        },
+        {
+          "source_id": "govinfo:pl119-75-enactment-date-context",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "837c4c10c29fdef0dd212920623f80421f4eaa51193ba65fb0ec42a0aa770836"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:42",
+      "episode_candidate_id": "episode:hr7147:119"
+    },
+    {
+      "action_id": "house:119:2:87",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Completeexactannualversions with actualrule/correctionsequence, fullmaterialstatutoryclauses, independentlyreadfinalexplanatorynarrative/visuallyverifiedtablecolumns, earlierreportdirections andretainedstatutory/agencybaselines. OperativeDHSImmigrationappropriation/conditions qualifybeyondagencyname. Wholechoice, statutory/report, new/continued, population/exception/funding/timing, actualoutcome andbill-episodeboundariespreserved; novelapplicationquestions routedcandidateonly.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:87",
+          "url": "https://clerk.house.gov/evs/2026/roll087.xml",
+          "raw_sha256": "40c938c462eb47d6abd29479770ba9fb01fcf64625ebdf2d7c0f4d63938c3a68",
+          "governed_bytes_sha256": "d9e37d484c67d148501b8c64693583ba5a7ac65efb763db1d537443015045f46"
+        },
+        {
+          "source_id": "govinfo:hr7744eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7744eh/html/BILLS-119hr7744eh.htm",
+          "raw_sha256": "ef9bba04ccddcbcfd9e5d262a5a91a8bbf44cec6b98fdbd539a0c4bb16cf64b7",
+          "governed_bytes_sha256": "5d72fe14f80665fdc64c66f06f177d75749ee86d59c40e38a9a8b8bee848b70a"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "07b1a213ee521c233447e7de07f05761b4d5b7a7046eac8d17cf0ddc56857684"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-reviewed-table-rows",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "79d512fe4ba5d481fcf3abd091303f21d0a184f159f55fa7b91c832171183d2f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-173-immigration-material-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm",
+          "raw_sha256": "f8b02e171ade9a05eb6c5806a20bc1fc975727ed17f34aa3a3e22038679cabc0",
+          "governed_bytes_sha256": "e4e673b8ddebfbf650e056225e28a808f4e5edf42e9b440c03f23abbd206e61c"
+        },
+        {
+          "source_id": "govinfo:srpt118-85-continued-immigration-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm",
+          "raw_sha256": "776bbbf4949e43a7e4cb21ae7e9918244213ac69da73e5b7957ba3aec7cd6f29",
+          "governed_bytes_sha256": "ecf842b32efe51d513fae07665674144591b049a91127dddd2f706bad3353891"
+        },
+        {
+          "source_id": "govinfo:hrpt116-458-continued-migrant-care",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-116hrpt458/html/CRPT-116hrpt458.htm",
+          "raw_sha256": "1bac60ca8db1a2462d6715586753b6184cc156d5fe5e29c8c2ade301610887c6",
+          "governed_bytes_sha256": "cd0483f553ee5b9dc5f539d7e7848fc97395b0b86b84f911a5130490c6c6f726"
+        },
+        {
+          "source_id": "govinfo:hrpt118-553-continued-ferm-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt553/html/CRPT-118hrpt553.htm",
+          "raw_sha256": "598972f651ab6d74858b57047c9b10b76ef748e625ba4a74a1bec0d2fe77168a",
+          "governed_bytes_sha256": "5935436794ea903bbd334803a9742ebd0aa3f4321965f5c8d49e6cd773097dea"
+        },
+        {
+          "source_id": "govinfo:pl118-47-complete-dhs-division-c",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "81c0e9997b93f880a830cfc6ed711bc9c45dd589ca7d34e984e38cbd21a42ebf"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
+          "source_id": "govinfo:pl119-37-complete-division-a-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "85f16b8eef173d108d14b47568575fcbf35b93da3ffdb85a3e2fe85714b6f3ea"
+        },
+        {
+          "source_id": "govinfo:pl119-75-complete-division-h-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "75bb969e15cc1f9996195bde3e5816d41dca47642b92cbf1973eb07ac160ff1a"
+        },
+        {
+          "source_id": "govinfo:pl116-93-dhs216-217",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ93/html/PLAW-116publ93.htm",
+          "raw_sha256": "ebaa04625f2ac6bab135d1de777b4c58734a09c8bdf5c170e199567cafbb3831",
+          "governed_bytes_sha256": "7d65a3601a2b2d7351f27c128dda71009b3757c48b18f0f0af40217fbba5624e"
+        },
+        {
+          "source_id": "govinfo:pl116-260-dhs216",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "593ca0b66b3efa17daef5b9628f120a8ba87919b3fbe10a44949ef53b22010d9"
+        },
+        {
+          "source_id": "govinfo:pl116-260-fencing211-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "d2b030435e65d8aa39221de73c7def6cdf9e04ec2048f2223580ced3b6daffde"
+        },
+        {
+          "source_id": "cbp:2021-pregnant-postpartum-custody-public-mirror",
+          "url": "https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf",
+          "raw_sha256": "a1ce489ac6a9245c4660ff2d72b33ed6188b2cbe545cedb8d33791bf0ec93cee",
+          "governed_bytes_sha256": "3580880f2f9b5d8f0d61d3bd9ee8cb6c842faf9e814bcb3cff87eb913d28953c"
+        },
+        {
+          "source_id": "govinfo:pl119-21-90004-autonomous-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "97bd98071aef3b2b01ef95ceae31b187deddf0fe487c37073e913eec51ed6ff1"
+        },
+        {
+          "source_id": "govinfo:pl118-159-6303-covered-activity-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "0129c9e8d6d6727947ef1b12ad6d13ee6358304b4dd7c43a2ce94b105d1fe4e8"
+        },
+        {
+          "source_id": "govinfo:8usc1448-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partII-sec1448.htm",
+          "raw_sha256": "f4a050bef288c190a67630c72fabdda891f1b3281eb6167afc494366dfc2799e",
+          "governed_bytes_sha256": "e0cf126748d04d07ba772d39ca45a2d6b966f971a73b4e813fbab676f60d2561"
+        },
+        {
+          "source_id": "govinfo:8usc1324ah3-unauthorized-employment-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "92f7ad836156b49422b1708563d75f31a9b18989d5e9366c8323975d5b0f01fa"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-note-404-immigration-emergency-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "c9db766eb4eef8f674df06030d70100cd9b9e9b4a79d23ede7bbb0d6a5494dd1"
+        },
+        {
+          "source_id": "govinfo:31usc1341-2024-backpay",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm",
+          "raw_sha256": "7ad2e1928f151859e6c8f4f36b7b42c9d6d76cc7b61df73a7ae59543fe00acfd",
+          "governed_bytes_sha256": "81d06827ecb738e342bfb52aa1dcb761953bcdcea774b5359630a3bf655de161"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:87",
+      "episode_candidate_id": "episode:hr7744:119"
+    },
+    {
+      "action_id": "house:119:2:104",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Completeexactannualversions with actualrule/correctionsequence, fullmaterialstatutoryclauses, independentlyreadfinalexplanatorynarrative/visuallyverifiedtablecolumns, earlierreportdirections andretainedstatutory/agencybaselines. OperativeDHSImmigrationappropriation/conditions qualifybeyondagencyname. Wholechoice, statutory/report, new/continued, population/exception/funding/timing, actualoutcome andbill-episodeboundariespreserved; novelapplicationquestions routedcandidateonly.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:104",
+          "url": "https://clerk.house.gov/evs/2026/roll104.xml",
+          "raw_sha256": "e8b08442f23e34f0843e73afea911f18cab0aa3d0932a73ad051f22155af8b70",
+          "governed_bytes_sha256": "2bcbe12f5b3b0bae7c2bc56d25de652d2bf4fb51e7beb55ce8aa956b68e01584"
+        },
+        {
+          "source_id": "govinfo:hr8029eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8029eh/html/BILLS-119hr8029eh.htm",
+          "raw_sha256": "0ac59dd6578ff1e5e4cdcd63b29417e1dbc7aefdc34dd26a8d6ec26abb8878c5",
+          "governed_bytes_sha256": "f7599c275cd2de2d932a4a60b474fc1ee7bfbda597b63e565bfd010de228a2d2"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "07b1a213ee521c233447e7de07f05761b4d5b7a7046eac8d17cf0ddc56857684"
+        },
+        {
+          "source_id": "congressional-record:2026-01-22-dhs-reviewed-table-rows",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+          "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+          "governed_bytes_sha256": "79d512fe4ba5d481fcf3abd091303f21d0a184f159f55fa7b91c832171183d2f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-173-immigration-material-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm",
+          "raw_sha256": "f8b02e171ade9a05eb6c5806a20bc1fc975727ed17f34aa3a3e22038679cabc0",
+          "governed_bytes_sha256": "e4e673b8ddebfbf650e056225e28a808f4e5edf42e9b440c03f23abbd206e61c"
+        },
+        {
+          "source_id": "govinfo:srpt118-85-continued-immigration-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm",
+          "raw_sha256": "776bbbf4949e43a7e4cb21ae7e9918244213ac69da73e5b7957ba3aec7cd6f29",
+          "governed_bytes_sha256": "ecf842b32efe51d513fae07665674144591b049a91127dddd2f706bad3353891"
+        },
+        {
+          "source_id": "govinfo:hrpt116-458-continued-migrant-care",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-116hrpt458/html/CRPT-116hrpt458.htm",
+          "raw_sha256": "1bac60ca8db1a2462d6715586753b6184cc156d5fe5e29c8c2ade301610887c6",
+          "governed_bytes_sha256": "cd0483f553ee5b9dc5f539d7e7848fc97395b0b86b84f911a5130490c6c6f726"
+        },
+        {
+          "source_id": "govinfo:hrpt118-553-continued-ferm-directions",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt553/html/CRPT-118hrpt553.htm",
+          "raw_sha256": "598972f651ab6d74858b57047c9b10b76ef748e625ba4a74a1bec0d2fe77168a",
+          "governed_bytes_sha256": "5935436794ea903bbd334803a9742ebd0aa3f4321965f5c8d49e6cd773097dea"
+        },
+        {
+          "source_id": "govinfo:pl118-47-complete-dhs-division-c",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+          "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+          "governed_bytes_sha256": "81c0e9997b93f880a830cfc6ed711bc9c45dd589ca7d34e984e38cbd21a42ebf"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
+          "source_id": "govinfo:pl119-37-complete-division-a-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "85f16b8eef173d108d14b47568575fcbf35b93da3ffdb85a3e2fe85714b6f3ea"
+        },
+        {
+          "source_id": "govinfo:pl119-75-complete-division-h-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "75bb969e15cc1f9996195bde3e5816d41dca47642b92cbf1973eb07ac160ff1a"
+        },
+        {
+          "source_id": "govinfo:pl116-93-dhs216-217",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ93/html/PLAW-116publ93.htm",
+          "raw_sha256": "ebaa04625f2ac6bab135d1de777b4c58734a09c8bdf5c170e199567cafbb3831",
+          "governed_bytes_sha256": "7d65a3601a2b2d7351f27c128dda71009b3757c48b18f0f0af40217fbba5624e"
+        },
+        {
+          "source_id": "govinfo:pl116-260-dhs216",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "593ca0b66b3efa17daef5b9628f120a8ba87919b3fbe10a44949ef53b22010d9"
+        },
+        {
+          "source_id": "govinfo:pl116-260-fencing211-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+          "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+          "governed_bytes_sha256": "d2b030435e65d8aa39221de73c7def6cdf9e04ec2048f2223580ced3b6daffde"
+        },
+        {
+          "source_id": "cbp:2021-pregnant-postpartum-custody-public-mirror",
+          "url": "https://iptp-production.s3.amazonaws.com/media/documents/2021.11.30_U.S._Customs_and_Border_Protection_Policy_Statement_and_Required_Actions.pdf",
+          "raw_sha256": "a1ce489ac6a9245c4660ff2d72b33ed6188b2cbe545cedb8d33791bf0ec93cee",
+          "governed_bytes_sha256": "3580880f2f9b5d8f0d61d3bd9ee8cb6c842faf9e814bcb3cff87eb913d28953c"
+        },
+        {
+          "source_id": "govinfo:pl119-21-90004-autonomous-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "97bd98071aef3b2b01ef95ceae31b187deddf0fe487c37073e913eec51ed6ff1"
+        },
+        {
+          "source_id": "govinfo:pl118-159-6303-covered-activity-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "0129c9e8d6d6727947ef1b12ad6d13ee6358304b4dd7c43a2ce94b105d1fe4e8"
+        },
+        {
+          "source_id": "govinfo:8usc1448-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partII-sec1448.htm",
+          "raw_sha256": "f4a050bef288c190a67630c72fabdda891f1b3281eb6167afc494366dfc2799e",
+          "governed_bytes_sha256": "e0cf126748d04d07ba772d39ca45a2d6b966f971a73b4e813fbab676f60d2561"
+        },
+        {
+          "source_id": "govinfo:8usc1324ah3-unauthorized-employment-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+          "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+          "governed_bytes_sha256": "92f7ad836156b49422b1708563d75f31a9b18989d5e9366c8323975d5b0f01fa"
+        },
+        {
+          "source_id": "govinfo:8usc1356mn-fees-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+          "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+          "governed_bytes_sha256": "b5896fdf265ade52416340868aefe9b702a41a4ccebe9318abae508dcf4ae3e1"
+        },
+        {
+          "source_id": "govinfo:8usc1101-note-404-immigration-emergency-fund",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "c9db766eb4eef8f674df06030d70100cd9b9e9b4a79d23ede7bbb0d6a5494dd1"
+        },
+        {
+          "source_id": "govinfo:31usc1341-2024-backpay",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm",
+          "raw_sha256": "7ad2e1928f151859e6c8f4f36b7b42c9d6d76cc7b61df73a7ae59543fe00acfd",
+          "governed_bytes_sha256": "81d06827ecb738e342bfb52aa1dcb761953bcdcea774b5359630a3bf655de161"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:2:104",
+      "episode_candidate_id": "episode:hr8029:119"
     }
   ],
-  "review_sha256": "f71b57cc093695821fe85607102b4449b389530cadf9f0a34ee273c41abcf9c1"
+  "review_sha256": "4bf04054b96a9214813cc106117821fd96f6a5f62bb5b8d6977b9bbd6d0efc49"
 }

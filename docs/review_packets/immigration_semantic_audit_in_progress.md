@@ -427,3 +427,64 @@ pass. Previous exact head fbfd2b50f97393695c422152fd2b2e5c2a89f45f passes all
 nine hosted jobs: https://github.com/dhart54/political_fingerprint/actions/runs/37431416284.
 Current-head CI follows push. Continue annual-DHS sources and ordinary screenings
 under the original overnight deadline; no terminal marker or readiness declaration.
+
+
+### Checkpoint 18: three annual DHS choices and exact mixed-episode accounting
+
+H.R. 7147 January passage is bound to its complete IH body plus adopted 1014
+amendment. The later 1016 engrossment correction is separately witnessed and
+not back-projected. H.R. 7744 March 5 and H.R. 8029 March 26 retain the corrected
+annual DHS body plus their own complete lapse-pay/qualified ratification division.
+Each actual bill, question, proposal, baseline and member observation remains
+distinct. They do not adopt the March 27 continuing-resolution replacement.
+
+All material annual statutory clauses, January explanatory narrative and
+incorporated report directions were independently read. Material funding rows
+were rendered and visually checked with units, all three columns and continuation
+pages. Final allocations distinguish ICE HSI/ERO/custody/ATD/OPLA, USCIS verification
+and application processing, oversight offices, fee-funded programs and other DHS
+functions. Sponsor-information exceptions, IG/contract triggers, custody/restraint,
+medical/family/legal access, fees, fence, oversight-notice, intelligence, transfer,
+budget and unobligated-rescission boundaries are preserved. Earlier proposal
+amounts and report-rider numbers are not substituted for final statute or tables.
+The provisional visual transcription's five support/OPLA baseline rows were
+corrected against the actual table before canonical binding.
+
+Source-first audit exposed a Major temporal-baseline error in the newly authored
+January choice: February 3 law 119-75 appeared as an unqualified baseline. The
+repair uses January's 119-37 original January 30 endpoint; 119-75's February 3
+header is later chronology context only. March choices can use the enacted
+February law. The defect, prior hash, repair, current hash and sources remain
+visible; membership and actual choices are unchanged. Report implementation and
+January's consolidated-Act cross-reference are four additional candidate-review
+dependencies, rather than silently adjudicated individual rights.
+
+404 governed reviews: 35 interpreted, 202 procedural, 166 excluded, one expressive;
+272 ordinary screenings unfinished. 35 actions occupy 33 current episodes with
+two multi-action episodes: H.R. 4 [1:168,1:203], H.R. 7147 [2:42,2:108].
+Separate annual proposals remain separate bill episodes under the established
+contract; no new policy family or distinct-concept-breadth claim is invented.
+70 observations: 68 directional, one Present and one Not Voting. Foushee 9 support/
+26 opposition; Massie 27 support/6 opposition plus the two nondirectional statuses.
+64 readable/IR findings: Foushee 33, Massie 31. Native IR represents Massie's
+January Nay and March replacement Yea as one mixed episode with both ordered
+observations and their separate meanings. Foushee's two opposed choices similarly
+remain visible within one episode. No inference of a preferred alternative.
+
+All 35 meanings have separate same-owner primary reconstruction/comparison.
+75 distinct assessments: 1 Critical/7 Major/2 Minor/65 No Defect. Distinct issues:
+1 Critical/3 Major/1 Minor. Sixteen legal-application interactions remain.
+No final audit PASS, independent second reviewer, acceptance or closure is claimed.
+1,090 sources = 906 unchanged Health reuses + 184 new; 344 claim witnesses,
+87 provisional captures. Core:
+`d7287c8974ac49aa49f7749823c07133242cde8f91ba8e34ccf7d75e2d87cb5d`;
+IR: `49bc821513c7347d2ba9cd19f66b495e3452a02849ab9b7d2f8da8edfcdc77ed`.
+217 focused tests pass in 38.103 seconds, seven semantic checks and seven
+byte-identical outputs pass. Actual compacts/details/statuses/mixed graph and
+source/audit/accounting/public-persistence rejection reviewed; protected baseline
+and common adapter unchanged; diff-check clean. Replacement binding now also
+rejects a print later on the same day or an undated Clerk time. Previous exact
+head 19783612d8a2e72a8da7e2621fdbd26941c538c6 passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37436592126.
+Current-head CI follows push. Continue ordinary narrow-amendment/screening work
+under the original overnight deadline; no terminal marker or readiness declaration.

@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "f484fe5ccbc1830c645387123cd052ca1b9b126f0b369863bb6c0b7af3700b7f"
+    "scripts/prepare_immigration_shared_candidate.py": "017aeb7e13a6bfd17a227706b50dc16e8462b47f7ed5ccedbaebba2e67635988"
   },
-  "input_sha256": "1d4affa65371567eee5f52fddc7d8fc96415a23974e47caaa4c9c9320568ce3c",
-  "source_capture_sha256": "6c003988b3d7beb5ad71d5a2787ae528a5a6bbb40f4b1f8d0ed2adb8209c9d77",
-  "core_sha256": "e4fb3dd2666e11f4a802c0036a5225af8c4edd05bccd1acb1582d90143b531cd",
-  "compiled_sha256": "303b0ce4e931fe898a857d7872aba002b4ea0cc8e9b4ca0b66edd02bbe88d78e",
-  "readable_sha256": "4df889e24ad32d147d2d1736ac0ab325d929400c196fcbe0df8fc26833c4e574",
+  "input_sha256": "832636e533a01adece140d641782ee99cb6cb0a7845d4eb32ccacb139b6a4f17",
+  "source_capture_sha256": "212d7c81ab50dbbffea714ce023455207aba71d5863c9d1cdc6d7894a39f0210",
+  "core_sha256": "d7287c8974ac49aa49f7749823c07133242cde8f91ba8e34ccf7d75e2d87cb5d",
+  "compiled_sha256": "49bc821513c7347d2ba9cd19f66b495e3452a02849ab9b7d2f8da8edfcdc77ed",
+  "readable_sha256": "b078e17f12eb0bd85f5287de3bf1a1b3822c82be4850902b8854121cb5422e06",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -458,6 +458,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:42",
+      "shared_sha256": "20c50ac03575eab99f3e82eca71630242a414fd72b9700e3211591d9eaf1f6a4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:42"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:65",
       "shared_sha256": "93e7be516b6001446f36fb302fda36344b33adf10e200cf13c45a8bbcc0b7120",
       "choices": [
@@ -514,6 +534,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of the complete H.R. 6472 EH proposal; no preferred alternative is established",
           "source_id": "clerk:119:2:82"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:87",
+      "shared_sha256": "49f923dfd9d1c92367e45b5ac24c1542cf31aeaccf7b73b0108006e30c63edeb",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7744 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:87"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact H.R. 7744 annual DHS funding proposal",
+          "source_id": "clerk:119:2:87"
         }
       ]
     },
@@ -578,8 +618,28 @@
       ]
     },
     {
+      "action_id": "house:119:2:104",
+      "shared_sha256": "b06dc869e38463762bb12a695b8cbda805e6fa8abb24418f8ffd9af366d22a15",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 8029 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact H.R. 8029 annual DHS funding proposal",
+          "source_id": "clerk:119:2:104"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:108",
-      "shared_sha256": "4dfc3749193558e615d25a5767c6ac915c152bcc4e21caa6d354ef496831a37a",
+      "shared_sha256": "0d47b3048cffcb711b6284872861f2301d384ef5dc217077f4257c948061c8d7",
       "choices": [
         {
           "member_id": "F000477",
@@ -592,7 +652,7 @@
           "member_id": "M001184",
           "status": "Yea",
           "effect": "supports_exact_choice",
-          "selected_meaning": "supported adoption of the complete H.R.7147 House continuing-resolution replacement in Rules Committee Print119-21",
+          "selected_meaning": "supported adoption of the complete H.R. 7147 House continuing-resolution replacement in Rules Committee Print 119-21",
           "source_id": "clerk:119:2:108"
         }
       ]

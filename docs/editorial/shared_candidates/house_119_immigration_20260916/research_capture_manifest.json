@@ -1,7 +1,23 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 81,
+  "source_count": 87,
   "sources": [
+    {
+      "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+      "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+      "governed_bytes_sha256": "07b1a213ee521c233447e7de07f05761b4d5b7a7046eac8d17cf0ddc56857684",
+      "text_sha256": "fb384d53ace9648bfa6b04f8401e13dffa8690002c336863854ee3d02d2f5e4c",
+      "text_length": 266058
+    },
+    {
+      "source_id": "congressional-record:2026-01-22-dhs-reviewed-table-rows",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+      "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+      "governed_bytes_sha256": "79d512fe4ba5d481fcf3abd091303f21d0a184f159f55fa7b91c832171183d2f",
+      "text_sha256": "b39ea9e385d7e32b1511f8041094524280c5035ffea82e144d5a21c63b8b9ba8",
+      "text_length": 3199
+    },
     {
       "source_id": "congressional-record:2026-01-22-dhs-statement-research-window",
       "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
@@ -539,6 +555,22 @@
       "text_length": 9774
     },
     {
+      "source_id": "govinfo:hrpt116-458-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-116hrpt458/html/CRPT-116hrpt458.htm",
+      "raw_sha256": "1bac60ca8db1a2462d6715586753b6184cc156d5fe5e29c8c2ade301610887c6",
+      "governed_bytes_sha256": "a55f5249a125af98b255340fdd7984a54ad2a7cd8ba76b3210c8ec0416e056b5",
+      "text_sha256": "b7a0b2c99b20644dadd84e0fae8d02f844dab73dd41ecef1d5743648f8ed5f9f",
+      "text_length": 334808
+    },
+    {
+      "source_id": "govinfo:hrpt118-553-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-118hrpt553/html/CRPT-118hrpt553.htm",
+      "raw_sha256": "598972f651ab6d74858b57047c9b10b76ef748e625ba4a74a1bec0d2fe77168a",
+      "governed_bytes_sha256": "7306ef6629c75d5dc2e9a88ba28b9663586233c9b5e45bd9e1275a2123bae7cb",
+      "text_sha256": "27ffa62425188fc8a9d93510784699a54d16eb064b88463e417b08d542c27479",
+      "text_length": 334780
+    },
+    {
       "source_id": "govinfo:hrpt119-173-complete",
       "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm",
       "raw_sha256": "f8b02e171ade9a05eb6c5806a20bc1fc975727ed17f34aa3a3e22038679cabc0",
@@ -569,6 +601,14 @@
       "governed_bytes_sha256": "ddb11387be3baea9f07253c5dd0e1942c345d56ea72948a08c5830d159f08b6e",
       "text_sha256": "b9f99524b89ad8a9e705cf9731764c963366144fb4ad3ce1a87fc1fc1936ab15",
       "text_length": 6227671
+    },
+    {
+      "source_id": "govinfo:pl118-159-covered-activity-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+      "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+      "governed_bytes_sha256": "0ef025649c4908efd2c203aeb0fab3e4920d2d67b99e2522ffbc9184f8e0fbd9",
+      "text_sha256": "798714d788ec583205b9a2fd70b77ba3272103aee52772aeafe99f698fd25d2d",
+      "text_length": 2301527
     },
     {
       "source_id": "govinfo:pl118-47-dhs-complete",
@@ -617,6 +657,14 @@
       "governed_bytes_sha256": "098381eb495526b276796c88fb64a96282a480e0229d76320e8f138a479e9607",
       "text_sha256": "07aaa07d7e1efd61c0a076e8df03e5a1a1c9081c4da7ab3853ba1bb162ea496c",
       "text_length": 3491744
+    },
+    {
+      "source_id": "govinfo:srpt118-85-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-118srpt85/html/CRPT-118srpt85.htm",
+      "raw_sha256": "776bbbf4949e43a7e4cb21ae7e9918244213ac69da73e5b7957ba3aec7cd6f29",
+      "governed_bytes_sha256": "d7803cd7b38c3c6ec1020720c055e1254ae36bfe860dc8f7d194782d321e29b0",
+      "text_sha256": "183137fc9f2bb1af7091a61fc0041616b5699f544b01bddb4cefb6cb929e23d1",
+      "text_length": 494874
     },
     {
       "source_id": "house:rcp119-21-complete",

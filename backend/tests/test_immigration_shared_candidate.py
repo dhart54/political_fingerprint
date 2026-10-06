@@ -135,7 +135,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                     prepare(author, capture, ['F000477', 'M001184'])
 
     def test_resealed_replacement_print_wrong_bill_number_or_future_date_is_rejected(self):
-        for defect in ['wrong_bill', 'wrong_print', 'future_date']:
+        for defect in ['wrong_bill', 'wrong_print', 'future_date', 'later_same_day']:
             with self.subTest(defect=defect):
                 author, capture, _, _ = copy.deepcopy(self.values)
                 action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:108')
@@ -143,7 +143,8 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 source = next(s for s in capture['sources'] if s['source_id'] == sid)
                 old, new = {'wrong_bill': ('H.R. 7147', 'H.R. 7744'),
                             'wrong_print': ('119–21', '119–22'),
-                            'future_date': ('March 27, 2026', 'March 28, 2026')}[defect]
+                            'future_date': ('March 27, 2026', 'March 28, 2026'),
+                            'later_same_day': ('12:42 p.m.', '11:30 p.m.')}[defect]
                 self.assertIn(old, source['text'])
                 source['text'] = source['text'].replace(old, new)
                 source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
@@ -175,6 +176,33 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                     action['deemed_concurrence'] = copy.deepcopy(action['deemed_replacement_concurrence'])
                 with self.assertRaisesRegex(ValueError, 'underlying bill episode|invalid whole-replacement'):
                     prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_missing_clerk_time_cannot_establish_same_day_replacement(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        source = next(s for s in capture['sources'] if s['source_id'] == 'clerk:119:2:108')
+        del source['metadata']['action-time']
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        with self.assertRaisesRegex(ValueError, 'exact dated Clerk time'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_annual_and_replacement_choices_share_one_episode_preserving_mixed_direction(self):
+        core, mapping, projections, _, result = self.products
+        episode = next(e for e in mapping['episodes'] if e['episode_id'] == 'episode:hr7147:119')
+        self.assertEqual(episode['action_ids'], ['house:119:2:42', 'house:119:2:108'])
+        readable = readable_candidates(self.values[0], core, projections, result)
+        for mid, expected in [('F000477', ['Nay', 'Nay']), ('M001184', ['Nay', 'Yea'])]:
+            member = next(m for m in readable['members'] if m['member_id'] == mid)
+            findings = [f for f in member['findings'] if set(episode['action_ids']) & set(f['action_ids'])]
+            self.assertEqual(len(findings), 1)
+            self.assertEqual(set(findings[0]['action_ids']), set(episode['action_ids']))
+            self.assertEqual([r['status'] for r in findings[0]['action_observations']], expected)
+            self.assertIn('annual DHS', findings[0]['compact'])
+            self.assertIn('continuing-resolution replacement', findings[0]['compact'])
+        member = next(m for m in result.compiled_ir['members'] if m['member_id'] == 'M001184')
+        nodes = [p for p in member['proposition_graph']['propositions']
+                 if p['evidence_episode_ids'] == ['episode:hr7147:119']]
+        self.assertEqual(len(nodes), 1)
+        self.assertEqual(nodes[0]['direction'], 'mixed')
 
     def test_resealed_changed_exact_question_is_not_trusted(self):
         author, capture, universe, membership = copy.deepcopy(self.values)

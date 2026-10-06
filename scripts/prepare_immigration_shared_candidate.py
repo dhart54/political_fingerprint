@@ -71,8 +71,14 @@ def _bind_replacement_concurrence(proposed, sources, congress, clerk):
     replacement = sources[replacement_id]
     normalized = " ".join(replacement["text"].split())
     header = f"RULES COMMITTEE PRINT {congress}–{print_number}"
-    house_date = datetime.strptime(clerk["metadata"]["action-date"], "%d-%b-%Y").date()
-    dates = re.findall(r"([A-Za-z]+) (\d+), (\d{4}) \(\d+:\d+ [ap]\.m\.\)", normalized)
+    try:
+        house_choice = datetime.strptime(
+            clerk["metadata"]["action-date"] + " " + clerk["metadata"]["action-time"],
+            "%d-%b-%Y %I:%M %p",
+        )
+    except (KeyError, ValueError) as exc:
+        raise ValueError("replacement concurrence requires the exact dated Clerk time") from exc
+    dates = re.findall(r"([A-Za-z]+) (\d+), (\d{4}) \((\d+):(\d+) ([ap])\.m\.\)", normalized)
     if (replacement["source_type"] != "official_rules_committee_print"
             or header not in normalized
             or f"TEXT OF THE HOUSE AMENDMENT TO THE SENATE AMENDMENT TO H.R. {number}" not in normalized
@@ -81,7 +87,11 @@ def _bind_replacement_concurrence(proposed, sources, congress, clerk):
             or not any(c["source_id"] == replacement_id and c["passage"] == replacement["text"]
                        for c in proposed["claim_source_map"])):
         raise ValueError("replacement concurrence requires the whole exact Rules print")
-    if any(datetime.strptime(" ".join(date), "%B %d %Y").date() > house_date for date in dates):
+    timestamps = [datetime.strptime(
+        " ".join(date[:3]) + " " + date[3] + ":" + date[4] + " " + date[5].upper() + "M",
+        "%B %d %Y %I:%M %p",
+    ) for date in dates]
+    if any(stamp > house_choice for stamp in timestamps):
         raise ValueError("replacement concurrence Rules print follows the House choice")
     return True
 
