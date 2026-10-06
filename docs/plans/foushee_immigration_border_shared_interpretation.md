@@ -3611,3 +3611,102 @@ House 70123/70124 at governing floor/EH, complete 235(b)(1)/(c) and 212(a)(2)/(3
 baseline and preserved review/protection interactions; remaining DHS/local
 support and continuing/omnibus/NDAA packages/screens. No current shutdown,
 merge/deployment/production/config/security/schema or editorial authority.
+
+
+## Checkpoint 57: Removal-purpose funding and preserved procedural boundaries
+
+House 70123 adds separate DHS $75 million for fiscal year 2025 until
+September 30, 2029, only to apply 235(b)(1) to aliens inadmissible under
+212(a)(2) or (3), regardless of physical-presence period. House 70124 adds
+$25 million on those dates only to apply 235(c) to arriving aliens whom
+an officer or immigration judge suspects may be inadmissible under those
+paragraphs. Inadmissibility, suspicion and conviction remain distinct;
+neither funding paragraph prints a strike-and-insert procedural amendment.
+Senate removal purposes are 100051(9)/(10), within the additional DHS
+$2,055,000,000 fiscal year 2025 envelope through September 30, 2029,
+in accordance with the named procedures. No House earmark, express grounds
+or regardless-of-presence wording is imported into Senate copy.
+
+The owner's source-first comparison found a material uncommitted account
+mistake: initial Senate descriptions named 100052 and $29.85 billion ICE.
+Exact EAS places these purposes in 100051 DHS. Before any commit/push,
+two descriptions were repaired, complete owning 100051 binding added and
+invalid prospective 100052 reuse removed. Exact old authoring raw bytes
+remain under .tmp/checkpoint57_precommit_account_scope, with hash receipt.
+Before/after hashes and complete primary witness are sealed in
+hr1_removal_funding_procedural_boundary_review.json, origin same-owner
+uncommitted comparison, no independent severity invented. New source-backed
+test rejects that actual old candidate with one assertion failure and no
+errors, then passes corrected copy. The initial 230-test run passed the
+wrong copy; source review, not tests, discovered the error. Two further
+declared precommit wording refinements compare literal grounds without
+treating their legal expansion as settled. Full authoring reconstructs
+exactly from the preserved candidate plus declared corrections/refinements
+and new binding. Original ICE operations remain unchanged.
+
+Complete 235(b)(1) binds own arrival/designation/no-admission-or-parole/
+two-year/exception and screening-ground scope, asylum/fear referral and
+interview, credible-fear consideration, negative record/notes/requested
+judge review, hearing opportunity/time limits, consultation/detention,
+protected-status and administrative/collateral-review conditions. Full
+235(c) binds original narrow security grounds, required AG review/report,
+both confidential-inadmissibility and post-consultation disclosure-prejudice
+conditions for discretionary removal without further immigration-judge
+inquiry, otherwise further inquiry/hearing, and written submissions.
+No automatic no-process or individual removal/conviction finding.
+
+Complete 212(a) grounds and new full 212(h)/(d)(3) waivers retain every
+own conditional standard, alternative/common prerequisite, exception and
+discretion; no conviction-only, status-only or universal waiver classifier.
+Full 242(e) retains limited habeas, protected-status proof, system-challenge
+court/deadlines, remedies and inquiry limits. Original official January 29,
+2025 Public Law 119-1 captured with raw hash; its separate State-enforcement
+and injunction amendment is bound, not ignored by calling the 2024 capture
+the whole unamended pre-vote Code. Original source bytes remain intact.
+
+Questions 47/48 separately reserve House funding-purpose interaction with
+incorporated screening/designation/grounds/procedures and review. Recommendation:
+keep printed funding wording and complete retained authorities; obtain
+independent source-grounded application review before any automatic expansion,
+repeal or individual no-hearing/no-review/removal claim. Alternatives and safe
+parallel work recorded. Senate in-accordance-with language is not a new
+House-style expansion. No unfinished research labeled unavailable evidence.
+
+Sixteen new bindings, one reused full grounds binding, two qualifications,
+two House comparisons, four new statutory extents and one enacted-law
+capture sealed. All 1,286 prior sources, 37 other actions, prior clauses,
+compacts and choice metadata unchanged. 231 aggregate tests pass in 41.066
+seconds, including 42 candidate tests; seven semantic checks and seven-file
+raw byte replay pass. All binding/witness/replacement/qualification/audit
+hashes, old raw snapshot, complete source comparison, 176 extents, 990 unchanged
+Health sources, member propagation of all repairs, queue/accounting and
+candidate/publication isolation verify. Final diff reviewed. Tests and
+same-owner work do not prove semantic truth or acceptance.
+Core 54550ed641a08bdadbc8443e90012525e3b75f677b40db885cf5754718e46b78.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged; approval-lineage follow-up retained.
+
+Independent FLETC Major recheck resolves within accessible exact 54 packet:
+two replacements reproduce corrected copy; all four replacement hashes,
+primary witness and receipt match, both projection digests updated. Full
+Massie readable propagation not independently byte-verified because full
+patches omitted. Independent 54/55 mechanical review confirms exact CI,
+protected paths, one EOIR source/eight bindings/263 captures and honest
+230-test scope. Owner local reruns and 13-file reconstruction not independently
+reproduced. Final bounded EOIR review finds no new material defect in checked
+common convictions/custody-time, accounts, ceiling/date, exclusions and old/
+information-law boundaries; two of eight bindings and receipt digest verified.
+Other six, full-member/replay, individual/package acceptance excluded; question
+46 unresolved. Three new independent receipts retain these precise limits.
+
+1,291 sources, 758 bindings, 268 captures, 48 separate application questions.
+Stable 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings (Foushee 36/Massie
+34); remaining 221 screenings and TWO partial H.R.1 reviews. Same-owner audit
+partial, final verdict null. Original-host 1994 acquisition/grant matching open,
+parent bounded search finished. Exact 54, 55 and 56 each all nine CI jobs
+successful, owner-native checked; exact 56 run 37543398935. Current exact CI
+follows push. Next: remaining Senate 100051 child-withdrawal/examination/
+registration/DNA/assignment/support purposes, 90005 State-border/Stonegarden
+funding, then continuing/omnibus/NDAA packages and screenings. Existing owner
+and historical markers preserved; no current shutdown, merge/deployment/
+production/config/security/schema or editorial acceptance/promotion/publication.

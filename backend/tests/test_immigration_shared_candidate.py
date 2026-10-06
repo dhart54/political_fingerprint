@@ -117,6 +117,25 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                         self.assertIn('State and local law enforcement agencies operating in support of DHS', training)
                         self.assertIn('State and local law enforcement agencies operating in support of the Department of Homeland Security', passage)
 
+    def test_senate_removal_funding_keeps_own_dhs_account(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:hr1eas')
+        start = source.index('SEC. 100051.')
+        passage = source[start:source.index('SEC. 100052.', start)]
+        self.assertIn('appropriated to the Secretary of Homeland Security', passage)
+        self.assertIn('$2,055,000,000', passage)
+        for purpose in ['(9) Expedited removal of criminal aliens.', '(10) Removal of certain criminal aliens without further hearings.']:
+            self.assertIn(purpose, passage)
+        self.assertTrue(any(c['passage'] == passage for c in action['claim_source_map']))
+        qualification = next(q for q in action['limitations'] if q.startswith('Senate 100051(9)/(10)'))
+        for text in [action['meaning'], qualification]:
+            sentence = next((s for s in re.split(r'(?<=[.!?])\s+', text)
+                             if 'removal purposes remain' in s or s.startswith('Senate 100051(9)/(10)')), '')
+            self.assertIn('100051', sentence)
+            self.assertIn('$2,055,000,000', sentence)
+            self.assertIn('DHS envelope', sentence)
+            self.assertNotIn('ICE envelope', sentence)
+
     def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']
