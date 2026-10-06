@@ -1420,3 +1420,42 @@ head 19783612d8a2e72a8da7e2621fdbd26941c538c6 passes all nine hosted jobs:
 https://github.com/dhart54/political_fingerprint/actions/runs/37436592126.
 Current-head CI follows push. Continue ordinary narrow-amendment/screening work
 under the original overnight deadline; no terminal marker or readiness declaration.
+
+
+### Checkpoint 19: exact NDAA amendments and temporal-pattern controls
+
+Nineteen complete Part A amendments are excluded on their own operative mechanisms;
+H.Res. 1438 is procedural. The actual Clerk amendment-author report number governs,
+not a sometimes different floor ordinal. Foreign military academy instruction,
+classified clearance, energy/property entry, litigation removal, military service,
+and a definitions-only EO incorporation do not become immigration status or border
+person mechanisms through their titles or parent NDAA. Complete material struck
+provisions, incorporated definitions, and actual offerings were read. The rule's
+post-passage addition of already-passed S. 1383 differs from direct final deemed
+concurrence; later engrossed packaging cannot establish a new component choice.
+
+424 governed reviews: 35 interpreted, 203 procedural, 185 excluded, one expressive;
+252 ordinary screenings unfinished. Shared meanings, 33 episodes, 70 observations
+and 64 actual readable/IR findings remain unchanged. Core and IR hashes remain
+`d7287c8974ac49aa49f7749823c07133242cde8f91ba8e34ccf7d75e2d87cb5d` and
+`49bc821513c7347d2ba9cd19f66b495e3452a02849ab9b7d2f8da8edfcdc77ed`.
+1,118 sources: 932 unchanged Health reuses and 186 new; 344 claim witnesses;
+89 provisional captures. Seven generated outputs replay byte identically.
+
+Four additional separate same-owner controls bring distinct assessments to 79:
+1 Critical, 7 Major, 2 Minor, 69 No Defect. Samples include 33 original exclusions
+reviewed, 32 retained exclusions, eleven procedures and all one expressive action.
+All 35 meanings remain internally audited; sixteen legal-application dependencies
+remain. All 35 source bindings were scanned for the identified later-law baseline
+pattern, with nine related chronology receipts reconciled. No uncorrected identified
+post-vote baseline remains; this does not establish universal current-law currency.
+No independent second reviewer, final audit PASS, closure or acceptance is claimed.
+
+217 focused tests pass in 38.407 seconds; seven canonical semantic checks pass.
+Source/audit/accounting integrity, fail-closed public/persistence entrypoints and
+protected baseline preservation pass. Semantic/readable outputs are unchanged;
+final diff-check is clean. Previous exact head ade547db3dfc0f5d0e87ad5bd25dfdfbbb31b779
+passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37439868561.
+Current-head CI follows push. Continue ordinary source review under the unchanged
+overnight deadline. This checkpoint is not terminal and creates no shutdown marker.

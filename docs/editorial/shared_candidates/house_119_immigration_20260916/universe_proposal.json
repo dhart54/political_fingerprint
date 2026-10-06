@@ -65,10 +65,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 202,
+      "procedural_context": 203,
       "interpreted_substantive_directional": 35,
-      "exact_action_ineligible": 166,
-      "source_unresolved": 272,
+      "exact_action_ineligible": 185,
+      "source_unresolved": 252,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -81,10 +81,10 @@
     "substantive_eligible_actions": 35,
     "directional_substantive_actions": 35,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 202,
+    "procedural_context_actions": 203,
     "expressive_nonbinding_actions": 1,
-    "exact_action_ineligible_actions": 166,
-    "unresolved_boundary_cases": 272,
+    "exact_action_ineligible_actions": 185,
+    "unresolved_boundary_cases": 252,
     "independent_episode_count": 33,
     "multi_action_episode_count": 2,
     "mechanism_types": [
@@ -298,6 +298,7 @@
         "house:119:2:246",
         "house:119:2:249",
         "house:119:2:253",
+        "house:119:2:254",
         "house:119:2:270",
         "house:119:2:277",
         "house:119:2:279",
@@ -509,7 +510,26 @@
         "house:119:2:179",
         "house:119:2:180",
         "house:119:2:181",
-        "house:119:2:184"
+        "house:119:2:184",
+        "house:119:2:255",
+        "house:119:2:256",
+        "house:119:2:257",
+        "house:119:2:258",
+        "house:119:2:259",
+        "house:119:2:260",
+        "house:119:2:261",
+        "house:119:2:262",
+        "house:119:2:263",
+        "house:119:2:264",
+        "house:119:2:265",
+        "house:119:2:266",
+        "house:119:2:267",
+        "house:119:2:268",
+        "house:119:2:269",
+        "house:119:2:273",
+        "house:119:2:274",
+        "house:119:2:275",
+        "house:119:2:276"
       ],
       "source_unresolved": [
         "house:119:1:15",
@@ -730,28 +750,8 @@
         "house:119:2:250",
         "house:119:2:251",
         "house:119:2:252",
-        "house:119:2:254",
-        "house:119:2:255",
-        "house:119:2:256",
-        "house:119:2:257",
-        "house:119:2:258",
-        "house:119:2:259",
-        "house:119:2:260",
-        "house:119:2:261",
-        "house:119:2:262",
-        "house:119:2:263",
-        "house:119:2:264",
-        "house:119:2:265",
-        "house:119:2:266",
-        "house:119:2:267",
-        "house:119:2:268",
-        "house:119:2:269",
         "house:119:2:271",
         "house:119:2:272",
-        "house:119:2:273",
-        "house:119:2:274",
-        "house:119:2:275",
-        "house:119:2:276",
         "house:119:2:278",
         "house:119:2:280",
         "house:119:2:281",
@@ -1010,7 +1010,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "a05ccdc79dc586a452e50dc30ea2839cc3ab0b375ae62c0b914affa4b1e8e962",
+  "universe_subject_sha256": "16001c8006d4a26cfaa27a45df22b9c4f6e4bd559b1aeb602336f534bdbf2d88",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -34261,8 +34261,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hres_1438",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete1438EH governs pendingNDAA/SS/budget/stocks/bank/CRconsideration, substitutions/enbloc/debate/order/waivers/recommit and AFTER-PASSAGE8800engrossment addition of already-passedHouseS1383. It doesnotdirectlydeem finalpassage/concurrence of anylistedmeasure, adopt an operative immigration eligibility/rider into law onitsown, or createanewcomponentvote onS1383. Pending substitutes differfromwholefinal1142replacement; administrativepackaging/sourcecontextremainsnoncounting underestablishedcontract.",
       "source": {
         "source_id": "clerk:119:2:254",
         "url": "https://clerk.house.gov/evs/2026/roll254.xml",
@@ -34279,25 +34279,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete1438EH governs pendingNDAA/SS/budget/stocks/bank/CRconsideration, substitutions/enbloc/debate/order/waivers/recommit and AFTER-PASSAGE8800engrossment addition of already-passedHouseS1383. It doesnotdirectlydeem finalpassage/concurrence of anylistedmeasure, adopt an operative immigration eligibility/rider into law onitsown, or createanewcomponentvote onS1383. Pending substitutes differfromwholefinal1142replacement; administrativepackaging/sourcecontextremainsnoncounting underestablishedcontract.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:254",
           "url": "https://clerk.house.gov/evs/2026/roll254.xml",
           "raw_sha256": "cc1b304ce0bbd79e1a456cbf8645d7ce9f321876f9670a545660d27d794dcba5",
-          "governed_bytes_sha256": "76a74e64e25bf44f0c714b174aaf1797586abd093408b2cc2988d440ff556b64",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "76a74e64e25bf44f0c714b174aaf1797586abd093408b2cc2988d440ff556b64"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9dc5fe2504489512c8a6c78936adb5a9696bd9adf5816978e89631713510a42b"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:254",
@@ -34313,8 +34319,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA1 strikes only RCP119-33 section1213, extending the Afghanistan War Commission final-report deadline from three to four years. Complete struck provision read: Afghanistan is the subject of a military-history report, with no refugee/admission/status/visa or border-person mechanism. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:255",
         "url": "https://clerk.house.gov/evs/2026/roll255.xml",
@@ -34331,25 +34337,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA1 strikes only RCP119-33 section1213, extending the Afghanistan War Commission final-report deadline from three to four years. Complete struck provision read: Afghanistan is the subject of a military-history report, with no refugee/admission/status/visa or border-person mechanism. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:255",
           "url": "https://clerk.house.gov/evs/2026/roll255.xml",
           "raw_sha256": "711b7eae9168e5af2c407ef56319a863021411c153663e42c455f6e607ebce8b",
-          "governed_bytes_sha256": "3d881b5d9adf240854cef881df2b02b635a7fe67d08a0b977549b7b4d5798111",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "3d881b5d9adf240854cef881df2b02b635a7fe67d08a0b977549b7b4d5798111"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-1",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "8c3fa485e5a078c1c8debe56377f0d710507288189b83d1e666df97180a8fba2"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1040e53ed4d475cc7a3128fe6b4a34cb23eecd853edd28642f3e933374dd21ac"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:255",
@@ -34365,8 +34395,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA2 replaces RCP521 and the WHOLE10US347 international-engagement section with a foreign-country-person instruction bar at the three academies. Independently read complete347: foreign-country selection, reimbursement, academy exchanges/cultural visitors, military-education attendance and no graduation-based USmilitary commission. Academy admission is education/security-cooperation, not INA admission. This replacement does not itself change citizenship/naturalization/visa/alien-status or employment authorization; no immigration status category is the operative predicate. RCP521covered-country definition4872also independently read; foreigncountry/national-security context is not imported as an immigration classification. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:256",
         "url": "https://clerk.house.gov/evs/2026/roll256.xml",
@@ -34383,25 +34413,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA2 replaces RCP521 and the WHOLE10US347 international-engagement section with a foreign-country-person instruction bar at the three academies. Independently read complete347: foreign-country selection, reimbursement, academy exchanges/cultural visitors, military-education attendance and no graduation-based USmilitary commission. Academy admission is education/security-cooperation, not INA admission. This replacement does not itself change citizenship/naturalization/visa/alien-status or employment authorization; no immigration status category is the operative predicate. RCP521covered-country definition4872also independently read; foreigncountry/national-security context is not imported as an immigration classification. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:256",
           "url": "https://clerk.house.gov/evs/2026/roll256.xml",
           "raw_sha256": "2c4b1e9203e940c3777ebe838f708239c5cc4b4bccbe0964bb3eae64902ea10b",
-          "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-2",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "4fea98df1bbfe243d2a805df2c40f4cc12fd25d48d4fc93af2e13193e64e8804"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+          "governed_bytes_sha256": "4ca3f2d311ee22ffc9aeb9d5fd12ff890a7f5882a23660372d386d0a72180948"
+        },
+        {
+          "source_id": "govinfo:10usc4872-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "raw_sha256": "2765677d90e12aa1d50f3f6375c80f8b55f3c9d46fe31983ed58625874707104",
+          "governed_bytes_sha256": "1b378e7e8f8e8fc85bfd3299e97742f2d054761362b9010961b0ae13197356d9"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "16c222b6e237e5c7f9bd8d673b87d60cf519ff24d2972b945c3478954e179ef1"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:256",
@@ -34417,8 +34483,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA3 strikes only RCP524, which removes the five-cadet/midshipman cap for academy alternative military-service obligations to become professional athletes. Exact struck operative provision read. Military service/athlete alternatives are not INA status, student-visa work eligibility or immigration admission; parentbill and laterathletevisa discussion cannot be inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:257",
         "url": "https://clerk.house.gov/evs/2026/roll257.xml",
@@ -34435,25 +34501,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA3 strikes only RCP524, which removes the five-cadet/midshipman cap for academy alternative military-service obligations to become professional athletes. Exact struck operative provision read. Military service/athlete alternatives are not INA status, student-visa work eligibility or immigration admission; parentbill and laterathletevisa discussion cannot be inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:257",
           "url": "https://clerk.house.gov/evs/2026/roll257.xml",
           "raw_sha256": "12d94deb836cb614716981bc728fe70071abeef06793ecc5874d68e74e03bea3",
-          "governed_bytes_sha256": "abca6fd0fe7ac6e6f86e4131b7073e556ae0126e8dd78544a4a09a29de296b33",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "abca6fd0fe7ac6e6f86e4131b7073e556ae0126e8dd78544a4a09a29de296b33"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-3",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "21db4c651cce4183b2cb2aad77f15c66e10eede57221fbbe496bce465da35f02"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "905d55b94b138763ba35bd23ba1496099f0f7048aef9925a8bdc736b62cd2205"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:257",
@@ -34469,8 +34559,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA4 strikes only RCP518, a discretionary voice-based-risk drug-testing pilot for ArmedForces members with evaluation/privacy/punitive-use/report/sunset conditions. Complete struck provision read. This is military drug-testing administration, not a new INA drug conviction/admission ground or immigration screening; possible noncitizen servicemembers alone are insufficient. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:258",
         "url": "https://clerk.house.gov/evs/2026/roll258.xml",
@@ -34487,25 +34577,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA4 strikes only RCP518, a discretionary voice-based-risk drug-testing pilot for ArmedForces members with evaluation/privacy/punitive-use/report/sunset conditions. Complete struck provision read. This is military drug-testing administration, not a new INA drug conviction/admission ground or immigration screening; possible noncitizen servicemembers alone are insufficient. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:258",
           "url": "https://clerk.house.gov/evs/2026/roll258.xml",
           "raw_sha256": "b4a3d127cef7f715d15ad086cafe2c2da5a3965e63f37b826ada5fdd94dc0272",
-          "governed_bytes_sha256": "8acedca14aa98c9b7c47a27ac8d4152f1c6e0200a3aec22c3c2779213580df71",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "8acedca14aa98c9b7c47a27ac8d4152f1c6e0200a3aec22c3c2779213580df71"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-4",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "e274559547db5129ac8e3e42b6e5b0e1f53963b5445d008ff01266b5812eca9f"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "raw_sha256": "c4344372e843ae07d5fc8a6bc9d746a943fb107079a46619de16de2da5d3b989",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "665329a0cb208b17580039519aca5ed5bfcd2da15709bc6b78b2de9128831ad5"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:258",
@@ -34521,8 +34635,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA6 judicial/certification framework covers defined domestic energy pipelines/production/storage supporting military fuel supply, including record/termination, venue/removal of STATECOURTCASES, injunction/permit/preemption/compensation-enforcement and retained Federal-law limits. Covered action/operator/infrastructure definitions independently read. Removal is litigation removal, permits authorize energy assets, and national-security rhetoric is not border-person/immigration status. No parentbill immigration meaning imported. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:259",
         "url": "https://clerk.house.gov/evs/2026/roll259.xml",
@@ -34539,25 +34653,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA6 judicial/certification framework covers defined domestic energy pipelines/production/storage supporting military fuel supply, including record/termination, venue/removal of STATECOURTCASES, injunction/permit/preemption/compensation-enforcement and retained Federal-law limits. Covered action/operator/infrastructure definitions independently read. Removal is litigation removal, permits authorize energy assets, and national-security rhetoric is not border-person/immigration status. No parentbill immigration meaning imported. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:259",
           "url": "https://clerk.house.gov/evs/2026/roll259.xml",
           "raw_sha256": "3c2549f2a9d49cf201a07e58ba30f8fa37bfce4b821774e52b063ec2c41ae6ad",
-          "governed_bytes_sha256": "5a4ffe5161c0a71a88f5bcd8c7d8fd0fdb05aa997c9acb1b00ef7937a7df0302",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5a4ffe5161c0a71a88f5bcd8c7d8fd0fdb05aa997c9acb1b00ef7937a7df0302"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-6",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "179aefb1a31b31f54d2128951d1058bed268ec52a8ae84544160c18e4ec3c7b0"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "55cfad8b44b2f69744fbd2fbf8855e171db840a5d970f8b2571da001a00c9376"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:259",
@@ -34573,8 +34699,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA7 grants specified SantaYnez/Gaviota/onshore/offshore California fuel-pipeline EASEMENTS, condemnation/compensation, operator licenses, state-permit/preemption and Federal-safety rules with full definitions. Right to enter is property access; pipeline transport/license and state-submerged-title restrictions are not personal border crossing, visa/admission or immigration status. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:260",
         "url": "https://clerk.house.gov/evs/2026/roll260.xml",
@@ -34591,25 +34717,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA7 grants specified SantaYnez/Gaviota/onshore/offshore California fuel-pipeline EASEMENTS, condemnation/compensation, operator licenses, state-permit/preemption and Federal-safety rules with full definitions. Right to enter is property access; pipeline transport/license and state-submerged-title restrictions are not personal border crossing, visa/admission or immigration status. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:260",
           "url": "https://clerk.house.gov/evs/2026/roll260.xml",
           "raw_sha256": "46102e93ffc0673815ab51f1efb699b50f66c0cee2f6680cc28a7a28a56f3960",
-          "governed_bytes_sha256": "9120275600d6d7d48d080db262bde20a4c52357a28cbec64c30edea510023006",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "9120275600d6d7d48d080db262bde20a4c52357a28cbec64c30edea510023006"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-7",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "0b54ab5bd66c35a0640a1c1df03c94711ab9410f4fca6825b753c79d7a519534"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "68858655d78e041730985a06ae2b334c8933a091174f4aa394fe2cddbb5c31a2"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:260",
@@ -34625,8 +34763,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA8 requires GAO/EnergyInfo study/report on regulatory preemption, national-security waivers and other ways to protect domestic refining capacity, with California case study and30/120day timing. Waivers concern energy/state regulation, not immigration admission or nationality-qualified work eligibility. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:261",
         "url": "https://clerk.house.gov/evs/2026/roll261.xml",
@@ -34643,25 +34781,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA8 requires GAO/EnergyInfo study/report on regulatory preemption, national-security waivers and other ways to protect domestic refining capacity, with California case study and30/120day timing. Waivers concern energy/state regulation, not immigration admission or nationality-qualified work eligibility. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:261",
           "url": "https://clerk.house.gov/evs/2026/roll261.xml",
           "raw_sha256": "215bdf4f69a6c4185be13727d8b00a3cc6787093246bed2a4da9aabc2349d3b9",
-          "governed_bytes_sha256": "f22381f96bd9add954a2f5d95bb04149588cabbf64f652a2f3b3dfce8f8d5841",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f22381f96bd9add954a2f5d95bb04149588cabbf64f652a2f3b3dfce8f8d5841"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-8",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "ab2fafb293348649bdf0cebd97b4fa8a00bf5b7ab1a0a9d4f445f3837ec81169"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "f2876aba9d817cd4e7290ce59ad5cd0c71f7d374053d5b866de3190f497cebd2"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:261",
@@ -34677,8 +34827,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA9 preempts nonidentical State rules for physical/mechanical scrap processing and defense-article disposal/recycling, preserving specified waste-treatment exclusion and material/property definitions. No immigration, border-person enforcement or immigration-status predicate; strategic materials do not imply foreignperson admission. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:262",
         "url": "https://clerk.house.gov/evs/2026/roll262.xml",
@@ -34695,25 +34845,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA9 preempts nonidentical State rules for physical/mechanical scrap processing and defense-article disposal/recycling, preserving specified waste-treatment exclusion and material/property definitions. No immigration, border-person enforcement or immigration-status predicate; strategic materials do not imply foreignperson admission. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:262",
           "url": "https://clerk.house.gov/evs/2026/roll262.xml",
           "raw_sha256": "2b616f2a58ba8fb8f9a9921713b0fee757590d8189a746e6da09e6b74dcb39ad",
-          "governed_bytes_sha256": "874e314dd057268759789d444928a5d986af0c385b694e593f03eedd289955bf",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "874e314dd057268759789d444928a5d986af0c385b694e593f03eedd289955bf"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-9",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "96b8a7cb529c16bbfc104e0768b5294a1d6e9699c092069ea1f611ce074f348f"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "75dc4c80d3ebe78ebc2aac258ca0dc857e26473f8646548fe470d2e17dc5d1e5"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:262",
@@ -34729,8 +34891,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA14 would bar DoD funds covering specified foreign-MILITARY-personnel exercise costs, with national-security determination waiver and30day committee notice. Foreign military cooperation support is the funding object; transportation/training/reimbursement costs do not change INA status, visas, admission, detention or immigration employment authorization. Do not turn every foreign beneficiary into Immigration evidence. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:263",
         "url": "https://clerk.house.gov/evs/2026/roll263.xml",
@@ -34747,25 +34909,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA14 would bar DoD funds covering specified foreign-MILITARY-personnel exercise costs, with national-security determination waiver and30day committee notice. Foreign military cooperation support is the funding object; transportation/training/reimbursement costs do not change INA status, visas, admission, detention or immigration employment authorization. Do not turn every foreign beneficiary into Immigration evidence. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:263",
           "url": "https://clerk.house.gov/evs/2026/roll263.xml",
           "raw_sha256": "24e51dcc6e6b96b4784993487ef392c0433efbc820b79ac7691f3a7d85666bd5",
-          "governed_bytes_sha256": "52e5d02570d32432876e3b10a9188e889ffa1e070e62cba4bfae3e6c77a55367",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "52e5d02570d32432876e3b10a9188e889ffa1e070e62cba4bfae3e6c77a55367"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-14",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "47714a2e77a004f89b23ad314d65078fbc0b0e72be4fa26d97dd409ca47ff94e"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ed8b93b17908de78401c062c712ef47f8ba2d65e4cd0c0487b82f1612a2baa06"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:263",
@@ -34781,8 +34955,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA15 restricts FY2027DoD Ukraine SECURITYASSISTANCE funds except USembassy security. It does not change Ukrainian refugee/TPS/parole, visa/admission or person-border-crossing rules; Ukraine/foreign location alone does not establish Immigration. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:264",
         "url": "https://clerk.house.gov/evs/2026/roll264.xml",
@@ -34799,25 +34973,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA15 restricts FY2027DoD Ukraine SECURITYASSISTANCE funds except USembassy security. It does not change Ukrainian refugee/TPS/parole, visa/admission or person-border-crossing rules; Ukraine/foreign location alone does not establish Immigration. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:264",
           "url": "https://clerk.house.gov/evs/2026/roll264.xml",
           "raw_sha256": "55ba40cd41d63d8f64dd330a2a689ea241653034801f2f92a5c868b8280be021",
-          "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "334ff94d13ba04f6de61ca025ef7d09c74bd8b9692cad8a0d0fa9a51e43d087f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-15",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "44b8b024396affbd4da190c5a2f194551c5fc8e444b6126a3ab0539d1ead33e0"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "3dc88f566fc038638505e037b3867b8627cfc16787e8dcdc1132a624e0dc373d"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:264",
@@ -34833,8 +35019,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA17 establishes commander permission/presumed-approval for assigned military/DoDcivilian personnel to carry firearms at specified domestic defense facilities, related18US930authorization, implementation deadline and repeal of earlierfacilitypolicy. It does not amend the921firearm definition incorporated in INA or a direct immigration/status ground, and doesnotmakeimmigrationstatus the new employment/carry predicate. Generic firearm/criminal/installation permission does not qualify merely because some personnel may be noncitizens. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:265",
         "url": "https://clerk.house.gov/evs/2026/roll265.xml",
@@ -34851,25 +35037,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA17 establishes commander permission/presumed-approval for assigned military/DoDcivilian personnel to carry firearms at specified domestic defense facilities, related18US930authorization, implementation deadline and repeal of earlierfacilitypolicy. It does not amend the921firearm definition incorporated in INA or a direct immigration/status ground, and doesnotmakeimmigrationstatus the new employment/carry predicate. Generic firearm/criminal/installation permission does not qualify merely because some personnel may be noncitizens. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:265",
           "url": "https://clerk.house.gov/evs/2026/roll265.xml",
           "raw_sha256": "906f278e5dfd6d58a8b02c13bbb0b1be68761dec98c266c21c0b335354513657",
-          "governed_bytes_sha256": "a776910596377a7566a68a1b81d5006cbfb07db5cfba59555fe039332d566c3c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a776910596377a7566a68a1b81d5006cbfb07db5cfba59555fe039332d566c3c"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-17",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "48f1ddf37c10ca403fd3dfaf8a9f54e70477ab41b223533d05b8b1a473f546d4"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "f903986cdb40385e349e3a3c63bb6a198d99992268b9f624ad1d4a1d11778473"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:265",
@@ -34885,8 +35089,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA18 gives EO14183 force/effect of law. Complete original EO14183 and referenced EO14168definitions independently read: gender-dysphoria/service medical/fitness standards, pronoun/facility rules, policy rescissions, DoDandCoastGuard updates and lawful/appropriation/rights limits. EO14183importsDEFINITIONS, not everyEO14168passport or immigration command. DHSrolehereisCoastGuard militaryservice, not immigration administration. No new citizenship/visa/status/immigration-document predicate. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:266",
         "url": "https://clerk.house.gov/evs/2026/roll266.xml",
@@ -34903,25 +35107,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA18 gives EO14183 force/effect of law. Complete original EO14183 and referenced EO14168definitions independently read: gender-dysphoria/service medical/fitness standards, pronoun/facility rules, policy rescissions, DoDandCoastGuard updates and lawful/appropriation/rights limits. EO14183importsDEFINITIONS, not everyEO14168passport or immigration command. DHSrolehereisCoastGuard militaryservice, not immigration administration. No new citizenship/visa/status/immigration-document predicate. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:266",
           "url": "https://clerk.house.gov/evs/2026/roll266.xml",
           "raw_sha256": "d082857c0f4fed15d4162ea1d23f4b47c6ac658c5bbb1f71ff109869f8f26565",
-          "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-18",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "76f43a003bb7246ecd3286e9689b6055ce39511537d04d77d80355c4b3f661b6"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:eo14183-military",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-03/html/2025-02178.htm",
+          "raw_sha256": "85335571ec6b1e900e04e57cf0a1bc8f7653e5273083e4ae137a623c7f6fefc0",
+          "governed_bytes_sha256": "8443975ee3f4e0c87a8071b626942be4e97c793d62ed076a9667ecec5e870a58"
+        },
+        {
+          "source_id": "govinfo:eo14168-section2",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm",
+          "raw_sha256": "dff6c48ef10fd7c7587c04dcc97f6e3c674c99229e6e33f6574c62495b10e03c",
+          "governed_bytes_sha256": "5b76c057181df72a5457c5eaeee6447906600fd59bef539db9ae7188a2773b08"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5b020bc1cca74aaf0cc9b88ad5ab5118411b617c7c45e087bae7228b8a669c66"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:266",
@@ -34937,8 +35165,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA19 changes defined gender-related TRICARE treatment coverage/furnishment with listed medical exceptions, definitions, existing-entitlement savings and1077/1079conforming language. The operative treatment/medical-sex predicates do not add an immigration/citizenship/work-authorization eligibility rule; possible immigrant military families do not supply membership. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:267",
         "url": "https://clerk.house.gov/evs/2026/roll267.xml",
@@ -34955,25 +35183,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA19 changes defined gender-related TRICARE treatment coverage/furnishment with listed medical exceptions, definitions, existing-entitlement savings and1077/1079conforming language. The operative treatment/medical-sex predicates do not add an immigration/citizenship/work-authorization eligibility rule; possible immigrant military families do not supply membership. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:267",
           "url": "https://clerk.house.gov/evs/2026/roll267.xml",
           "raw_sha256": "f0bb5bcc20aa2e2bfebe91f6eeefdcff527d66dbfefd083dab2e4150fa16bcdf",
-          "governed_bytes_sha256": "04aa3ec0fa1d4d034fb0699826d6a359589cad847bc07456f2f1e462c0394fe8",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "04aa3ec0fa1d4d034fb0699826d6a359589cad847bc07456f2f1e462c0394fe8"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-19",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "fcf8dd57e811084bb19d94b9a31c740a68d16a00a996ee2a3be5af92c7e03050"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c1e57935b7fa1954faae805d50707b307eeb11a8505c68b1f113b2bbfc27a003"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:267",
@@ -34989,8 +35229,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA20 restricts male participation in female DoDEAschool athletics, with no-displaced-benefit practice/training exception and specifiedsex/activitydefinitions. School sport eligibility is not INA/status eligibility or immigration documents. ParentNDAAvisa/border context is not inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:268",
         "url": "https://clerk.house.gov/evs/2026/roll268.xml",
@@ -35007,25 +35247,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA20 restricts male participation in female DoDEAschool athletics, with no-displaced-benefit practice/training exception and specifiedsex/activitydefinitions. School sport eligibility is not INA/status eligibility or immigration documents. ParentNDAAvisa/border context is not inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:268",
           "url": "https://clerk.house.gov/evs/2026/roll268.xml",
           "raw_sha256": "95b8f94d910210d0cc7b645989eb81a0f641dfc702de0ed67f31e4cf8fc611e4",
-          "governed_bytes_sha256": "5aae6f0f2369fcaf6b83f3b9ff749cd8f88eb3f618a8cb071941aa7f32fc4667",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5aae6f0f2369fcaf6b83f3b9ff749cd8f88eb3f618a8cb071941aa7f32fc4667"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-20",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "ba407a2052b0a918778969061fa0dd8df305b2d50f08317b94e4765c3f809675"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a483f5c0e3deedcc0c4655142a4d8ea0f9764a872315a407a45b31e4c10f68c4"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:268",
@@ -35041,8 +35299,8 @@
       "date": "2026-07-21",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA26 optional education-choice pilot for full-time active-duty military families covers defined minors/dependents/private/faith/charter/home-school costs with2030-31sunset and school/geographic terms. The operative new eligibility is duty/dependent/education, not immigration status; sponsor means military family support, not an immigration sponsor or UAC placement. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:269",
         "url": "https://clerk.house.gov/evs/2026/roll269.xml",
@@ -35059,25 +35317,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA26 optional education-choice pilot for full-time active-duty military families covers defined minors/dependents/private/faith/charter/home-school costs with2030-31sunset and school/geographic terms. The operative new eligibility is duty/dependent/education, not immigration status; sponsor means military family support, not an immigration sponsor or UAC placement. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:269",
           "url": "https://clerk.house.gov/evs/2026/roll269.xml",
           "raw_sha256": "3490f1e3d961fb3b2e6d4d3ceddd09ef2a25576175169919aacb8ddc2d0bb69e",
-          "governed_bytes_sha256": "0f5d05afe3f041ef1b721da0ed72f58e7d9019f0ce54e704195f00bc13c81712",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0f5d05afe3f041ef1b721da0ed72f58e7d9019f0ce54e704195f00bc13c81712"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-26",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "43101b90746f06b5b43d0c5f2280f49eac2a3010bd5c8db2981271eee9a148ea"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "raw_sha256": "d5845683360ab64bcb58537f716bbd52783538d11b70c863e91ff95706b7f018",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "922d97ddaab18d8cb57c9a1e7211f3369a855348375114a15a5d85f06efcda03"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:269",
@@ -35249,8 +35525,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA28 military-chaplain subtitle including allArmy/Navy/AirForceorganization/duties, religious-endorsing/administrative-endorser definitions, confidential communications, discipline/UCMJ/remedy/regulation and old533repeal/conforming rules independently read. Complete namedRFRAandold533witnesses read. Religious ministry/chaplain qualifications and military protections are not religious-worker immigration visas/status, citizenship or new naturalization rules; factualfindings/litigationreferencesnottranslated into border policy. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:273",
         "url": "https://clerk.house.gov/evs/2026/roll273.xml",
@@ -35267,25 +35543,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA28 military-chaplain subtitle including allArmy/Navy/AirForceorganization/duties, religious-endorsing/administrative-endorser definitions, confidential communications, discipline/UCMJ/remedy/regulation and old533repeal/conforming rules independently read. Complete namedRFRAandold533witnesses read. Religious ministry/chaplain qualifications and military protections are not religious-worker immigration visas/status, citizenship or new naturalization rules; factualfindings/litigationreferencesnottranslated into border policy. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:273",
           "url": "https://clerk.house.gov/evs/2026/roll273.xml",
           "raw_sha256": "d0129c5d8d2252f8a566d3b69416d6fb9c58451eca359ebb88ad7223b39be5e2",
-          "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "7c63a341532de0eb1b79bc7fdf5a8ef0b2a67ce3eb87dc0d178c1dc3de152f9f"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-28",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "973b3166a02aa176f8671100863039abbb291e34cdd21f0ede31d9f68580bca7"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
+        },
+        {
+          "source_id": "govinfo:pl112-239-chaplain-533",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-112publ239/html/PLAW-112publ239.htm",
+          "raw_sha256": "aac248f2176b7a6e084daa1e15168bd3e5122e88831de5def5a627b1a1cb70bb",
+          "governed_bytes_sha256": "02faf0988cbb48bba1f2e9f4144d2fe0003704095f0955cec6500148d4d3084a"
+        },
+        {
+          "source_id": "govinfo:42usc2000bb-1-2024-rfra",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap21B-sec2000bb-1.htm",
+          "raw_sha256": "4539c81c4286803366819153a2fa89601dd45c2257f4b54eabd319a3201b1a82",
+          "governed_bytes_sha256": "755c39bdc0b0e149692cd6a83b1394489c7af9ebb736556003f2d7648251f75a"
+        },
+        {
+          "source_id": "govinfo:42usc2000bb-3-2024-rfra",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap21B-sec2000bb-3.htm",
+          "raw_sha256": "1ab5a4977263989899e5dad28f28e84fce4c7999352620691a79909e3d7ebec5",
+          "governed_bytes_sha256": "65897dff0b59cf05ccde59710d8f652ba530f61eb28035879eab12a0f25f926a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "91ded080abd308c18562c44f91caf7b173608eb5c5fb703fb092d92670450c5d"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:273",
@@ -35301,8 +35607,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA30 creates an investor-sponsored classified-security-clearance pilot for definedinvestmentprofessionals/eligibleinvestors/companies, need-to-know/industrial-security limits, foreignperson/ownership exclusions, no-award-preference and five-year sunset. CLEARANCEmeansclassified-informationaccess, not immigration clearance, employment authorization, a visa or INA admission. Undefinedforeignperson/USperson terms are not silently equated to an immigration-status category, citizen-only right, LPRbar or removal ground. General national-security investment participation ratherthan immigrationstatus itself is the exact mechanism. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:274",
         "url": "https://clerk.house.gov/evs/2026/roll274.xml",
@@ -35319,25 +35625,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA30 creates an investor-sponsored classified-security-clearance pilot for definedinvestmentprofessionals/eligibleinvestors/companies, need-to-know/industrial-security limits, foreignperson/ownership exclusions, no-award-preference and five-year sunset. CLEARANCEmeansclassified-informationaccess, not immigration clearance, employment authorization, a visa or INA admission. Undefinedforeignperson/USperson terms are not silently equated to an immigration-status category, citizen-only right, LPRbar or removal ground. General national-security investment participation ratherthan immigrationstatus itself is the exact mechanism. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:274",
           "url": "https://clerk.house.gov/evs/2026/roll274.xml",
           "raw_sha256": "92972207cf64edf26fe2c274d51be73f08ebe03604ea18d022da6aa138d7caa5",
-          "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-30",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "265ea03d58b241044004c105fa66fd9bddefb5d0a6a3dc9d25906e44d2fb8e71"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "30f6be43ba94b72369ebadc4abfd47a05281a63dc3c0fd0f84fa8623f8724b53"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:274",
@@ -35353,8 +35671,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA44 bars/ends automated SPEED-enforcement cameras on military installations, retaining other law-enforcement andsecurity/access-control/criminal-investigation cameras. Speed traffic enforcement andphysicalfacilityaccess are not immigration enforcement or a status/citizenship criterion; no parentNDAAborder-surveillance policy inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:275",
         "url": "https://clerk.house.gov/evs/2026/roll275.xml",
@@ -35371,25 +35689,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA44 bars/ends automated SPEED-enforcement cameras on military installations, retaining other law-enforcement andsecurity/access-control/criminal-investigation cameras. Speed traffic enforcement andphysicalfacilityaccess are not immigration enforcement or a status/citizenship criterion; no parentNDAAborder-surveillance policy inherited. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:275",
           "url": "https://clerk.house.gov/evs/2026/roll275.xml",
           "raw_sha256": "07ab443206c49fe20084c474b12b6ab2d37bdea221d0e0a356c0013b5dce2265",
-          "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "db027ade1196693be98cf42b9ed66d88492a1c67b8b9fbfd4977a14efb1bd4e4"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-44",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "dd6dbf94585ee927a23890a8abdc00a2862dcc13af97ac59e11ae831cda37b5e"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "81ed46d0151379de57c5d7e8625f5e78ade39a43aceb820f35335a7ef8613f82"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:275",
@@ -35405,8 +35735,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hr_8800",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete PartA316 requires a180day report on options to reduce DoDcivilianemployment by200,000, with staffing/cost/mission/legal-action analysis. It is a report, not immediate layoffs, and adds no immigration-status/foreign-national work-authorization criterion. Civilianmilitaryemployee counts alone do not establish Immigration. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
       "source": {
         "source_id": "clerk:119:2:276",
         "url": "https://clerk.house.gov/evs/2026/roll276.xml",
@@ -35423,25 +35753,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete PartA316 requires a180day report on options to reduce DoDcivilianemployment by200,000, with staffing/cost/mission/legal-action analysis. It is a report, not immediate layoffs, and adds no immigration-status/foreign-national work-authorization criterion. Civilianmilitaryemployee counts alone do not establish Immigration. Exact Clerk amendment-author PartA number, report text, rule and actual question/date/outcome/member observations are bound; numeric Clerk floorordinal is not substituted for reportnumber. Failed/adopted status doesnotchange thisfunctional domain exclusion.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:276",
           "url": "https://clerk.house.gov/evs/2026/roll276.xml",
           "raw_sha256": "58ba211fccbfc02fee506ea4894c4b2cbf6629b0ab0e3a6e7bd0698c55c272ac",
-          "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "c13285626c1d3f2feb60ec8a61b60eb40864ab0ac2de6b6228e692f10d8c8211"
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-316",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "raw_sha256": "aba3352c74d86b10dd20f0cd1a16a66b88a05a323aee454b22ba2044f5379550",
+          "governed_bytes_sha256": "4dc056886ece9ba8b97d24995144914e88160eeabd2b197f38cdf7e2ea3ed4b6"
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "raw_sha256": "acb791a9b959bd4a0be81e63b9de10e684f9429d126559646e4945aa6c797799",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9e94af9ede6c921493986c2a830ae68f868656d9de3bd6227ef016afb9c5dda4"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:276",
@@ -37527,28 +37869,8 @@
     "house:119:2:250",
     "house:119:2:251",
     "house:119:2:252",
-    "house:119:2:254",
-    "house:119:2:255",
-    "house:119:2:256",
-    "house:119:2:257",
-    "house:119:2:258",
-    "house:119:2:259",
-    "house:119:2:260",
-    "house:119:2:261",
-    "house:119:2:262",
-    "house:119:2:263",
-    "house:119:2:264",
-    "house:119:2:265",
-    "house:119:2:266",
-    "house:119:2:267",
-    "house:119:2:268",
-    "house:119:2:269",
     "house:119:2:271",
     "house:119:2:272",
-    "house:119:2:273",
-    "house:119:2:274",
-    "house:119:2:275",
-    "house:119:2:276",
     "house:119:2:278",
     "house:119:2:280",
     "house:119:2:281",
@@ -37598,6 +37920,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "5aa4425b7956aa628278b2a1b1e70b7fbab98c2e51b61455a9a19badca7c0c82",
-  "membership_review_sha256": "4bf04054b96a9214813cc106117821fd96f6a5f62bb5b8d6977b9bbd6d0efc49"
+  "proposal_sha256": "44e3b71c8779bb25662d7846af4fc77c2cf87b69763a745935b38be58227c7c8",
+  "membership_review_sha256": "d0dbe63f6a0bffaaa08197fa830d388fa548f2dd2ce47d404a9d700a26b1251c"
 }

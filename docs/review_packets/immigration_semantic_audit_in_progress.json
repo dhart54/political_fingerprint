@@ -6005,10 +6005,294 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:256",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "256",
+        "legis-num": "H R 8800",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "2",
+        "amendment-author": "Boebert of Colorado Part A Amendment No. 2",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "21-Jul-2026",
+        "action-time": "9:05 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separateprimaryreconstruction: actualClerkBoebertPartA2(ReportRoyordesignee)Failed;wholeamendreplaces347andRCP521notamendmenttoINA. Complete347foreigncountryselection,80appointments,foreignreimbursement/waiver,exchange/culturalvisits,appointment/oath distinction showssecurity-cooperationeducation. Full4872countrydefinitionclarifiesparentRCPcountrybar. Newwholeforeigncountryinstructionban isnotanINAadmissionorimmigration-statuscategory; do notinferallnoncitizens/LPRs/dualnationalityfromtitle. Candidateexclusionretained underuseroperative-statusboundary, independentlyfromHealth/NSconclusions.",
+      "finding": "Completeexactfunctionalmechanism andmaterialincorporation independentlyreconstructed; reportnumber/floorordinal/actualoffering, parent-versus-narrowaction and immigration-status-versus-foreignprogram boundaries supportthecandidateexclusion/proceduraldisposition.",
+      "correction": null,
+      "before_review_record_sha256": "16c222b6e237e5c7f9bd8d673b87d60cf519ff24d2972b945c3478954e179ef1",
+      "corrected_review_record_sha256": "16c222b6e237e5c7f9bd8d673b87d60cf519ff24d2972b945c3478954e179ef1",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:256",
+          "url": "https://clerk.house.gov/evs/2026/roll256.xml",
+          "governed_bytes_sha256": "ae3ffb3ef869c7f23efcf2849b4709bc936488eb1e6597b912281dab64f243f8",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-2",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "governed_bytes_sha256": "4fea98df1bbfe243d2a805df2c40f4cc12fd25d48d4fc93af2e13193e64e8804",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "rules:rcp119-33-ndaa-struck-sections",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h8800_xml.pdf",
+          "governed_bytes_sha256": "22ab79ebcb22cbf4472d790f377297214d80728f0f959e161a0da886b2faab9a",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "governed_bytes_sha256": "4ca3f2d311ee22ffc9aeb9d5fd12ff890a7f5882a23660372d386d0a72180948",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:10usc4872-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+          "governed_bytes_sha256": "1b378e7e8f8e8fc85bfd3299e97742f2d054761362b9010961b0ae13197356d9",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "congressional-record:2026-07-21-ndaa-offerings",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-21/pdf/CREC-2026-07-21-house.pdf",
+          "governed_bytes_sha256": "ca9411e5938e5ab6213d290342f98aed14f787ae9db4d80167146fd77a25a7cb",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:266",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "266",
+        "legis-num": "H R 8800",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "13",
+        "amendment-author": "Boebert of Colorado Part A Amendment No. 18",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "21-Jul-2026",
+        "action-time": "9:43 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separateprimaryreconstruction: PartA18EO14183codification, actualBoebert/Failedfloorordinal13versusREPORT18. FulloriginalEOmilitarymedical/fitness/pronouns/facilities/DoDandCoastGuardimplementation/rescissionlawlimits read, includingdefinitionsONLYof14168. Noimportof14168passport/immigrationcommands. DHSroleCoastGuardnotimmigauthority. Candidateexactexclusionretained; nationality isnotnewservicepredicate.",
+      "finding": "Completeexactfunctionalmechanism andmaterialincorporation independentlyreconstructed; reportnumber/floorordinal/actualoffering, parent-versus-narrowaction and immigration-status-versus-foreignprogram boundaries supportthecandidateexclusion/proceduraldisposition.",
+      "correction": null,
+      "before_review_record_sha256": "5b020bc1cca74aaf0cc9b88ad5ab5118411b617c7c45e087bae7228b8a669c66",
+      "corrected_review_record_sha256": "5b020bc1cca74aaf0cc9b88ad5ab5118411b617c7c45e087bae7228b8a669c66",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:266",
+          "url": "https://clerk.house.gov/evs/2026/roll266.xml",
+          "governed_bytes_sha256": "440b98fd78107f6257114f39e66bb652ceffd19126a2301945aea963fccdec0d",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-18",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "governed_bytes_sha256": "76f43a003bb7246ecd3286e9689b6055ce39511537d04d77d80355c4b3f661b6",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:eo14183-military",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-02-03/html/2025-02178.htm",
+          "governed_bytes_sha256": "8443975ee3f4e0c87a8071b626942be4e97c793d62ed076a9667ecec5e870a58",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:eo14168-section2",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-30/html/2025-02090.htm",
+          "governed_bytes_sha256": "5b76c057181df72a5457c5eaeee6447906600fd59bef539db9ae7188a2773b08",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:274",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "274",
+        "legis-num": "H R 8800",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "18",
+        "amendment-author": "Issa of California Part A Amendment No. 30",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "22-Jul-2026",
+        "action-time": "4:14 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separateprimaryreconstruction: actualIssaPartA30Failed, floorordinal18notreport18. Completeclearancepilot hasinvestors/professionals/companies,need-to-know/access/industrial-security,foreignperson/ownershipcontrols,annualreport/fiveyrsunset/noFederalawardpreference. NoINA/citizenship/naturalization/visa/statusdefinitionorworkauthorizationchange. Do notturnundefinedUSperson/foreignperson security/investmenttermsintoanimmigrationstatus; clearance meansclassifiedaccess. Functionalexclusionretained withoutassumingrighttoemploymentorreinterpretingallnoncitizens.",
+      "finding": "Completeexactfunctionalmechanism andmaterialincorporation independentlyreconstructed; reportnumber/floorordinal/actualoffering, parent-versus-narrowaction and immigration-status-versus-foreignprogram boundaries supportthecandidateexclusion/proceduraldisposition.",
+      "correction": null,
+      "before_review_record_sha256": "30f6be43ba94b72369ebadc4abfd47a05281a63dc3c0fd0f84fa8623f8724b53",
+      "corrected_review_record_sha256": "30f6be43ba94b72369ebadc4abfd47a05281a63dc3c0fd0f84fa8623f8724b53",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:274",
+          "url": "https://clerk.house.gov/evs/2026/roll274.xml",
+          "governed_bytes_sha256": "fc0c50268bf337a424b4781248a872e286ac539a4c0315df0fa75c15b230581d",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hrpt119-755-partA-30",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt755/html/CRPT-119hrpt755.htm",
+          "governed_bytes_sha256": "265ea03d58b241044004c105fa66fd9bddefb5d0a6a3dc9d25906e44d2fb8e71",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:254",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "procedural_context",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "254",
+        "legis-num": "H RES 1438",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "21-Jul-2026",
+        "action-time": "2:39 PM",
+        "vote-desc": "Providing for consideration of the bills (H.R. 8800, H.R. 8884, H.R. 7008, H.R. 6955, and H.R. 9770); and providing for consideration of the concurrent resolution (H. Con. Res. 113)"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separateprimaryreconstruction ofcomplete1438EH: pendingconsideration/substitutions/enbloc/budget/stock/bank/CR/NDAA rules;no directfinaldeemedpassage/concurrence.11postpassageengrossmentaddsALREADYHouse-passedS1383, notfreshcomponentchoiceinrule. Compare1142literalfinalwholeRCPreplacement and590directconcurrence: differentactualmechanism. Proceduralnoncountingretained; eventual8800passage mustnotinheritafterpassageSAVEadditionasnewcomponentvote.",
+      "finding": "Completeexactfunctionalmechanism andmaterialincorporation independentlyreconstructed; reportnumber/floorordinal/actualoffering, parent-versus-narrowaction and immigration-status-versus-foreignprogram boundaries supportthecandidateexclusion/proceduraldisposition.",
+      "correction": null,
+      "before_review_record_sha256": "9dc5fe2504489512c8a6c78936adb5a9696bd9adf5816978e89631713510a42b",
+      "corrected_review_record_sha256": "9dc5fe2504489512c8a6c78936adb5a9696bd9adf5816978e89631713510a42b",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:254",
+          "url": "https://clerk.house.gov/evs/2026/roll254.xml",
+          "governed_bytes_sha256": "76a74e64e25bf44f0c714b174aaf1797586abd093408b2cc2988d440ff556b64",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        },
+        {
+          "source_id": "govinfo:hres1438eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1438eh/html/BILLS-119hres1438eh.htm",
+          "governed_bytes_sha256": "83978d4c8dcf92b0ba2a0d95196e824e7213ce73c1810928789adede30f67f00",
+          "reviewed_extent": "Complete exact amendment/rule and complete identifiedmaterialCode/EO/report/struck provision. No entireparentNDAAor laterEHmeaning imported."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 65,
+    "No Defect": 69,
     "Minor": 2,
     "Major": 7,
     "Critical": 1
@@ -6043,7 +6327,8 @@
     "Firearm-definition incorporation: directly read INA237(a)(2)(C)ratherthanexcludeallgeneralcriminal-classificationchanges; retainunamendeddestructivedeviceroute, conviction/admissionthreshold, tax-versusTitleIclassification and actualindividualapplicationboundary. No correction of an earlier2189exclusion needed because no such screening had been accepted into the candidate ledger.",
     "Direct operativeCommissionrecommendationsversusrhetoric, andexplicitFederalimmigrationbail-businessdefinitionversusgenericcriminalbailreport. PreserveexactincorporatedEOsectionratherthanimportallparentpassportcommands; separatelegislativechoicefromresolvedNotVotingstatus.",
     "DirectfinalwholeHousereplacementversusunamendedSenateconcurrenceorconsideration-onlyrule;residualCRouterdateversusannualDHSfunding,earlierprojectendpointsandfixedprogramsunsets. PreserveprintedFeb14lapseratherthanparallelbillFeb13wording.",
-    "AnnualDHSappropriation/statutory/reportscopeversuswholeCRreplacement;exactJanuaryIH/1014as-votedtextbefore1016correction,Januarypre-Feb3baselineversusvalidMarchpost-Feb3baseline,andone7147episodewithMassiemixedofficialdirections. FinaltableversusHousePROPOSALcolumn/numberedrider is an explicitaudit lens."
+    "AnnualDHSappropriation/statutory/reportscopeversuswholeCRreplacement;exactJanuaryIH/1014as-votedtextbefore1016correction,Januarypre-Feb3baselineversusvalidMarchpost-Feb3baseline,andone7147episodewithMassiemixedofficialdirections. FinaltableversusHousePROPOSALcolumn/numberedrider is an explicitaudit lens.",
+    "Foreigncountrymilitaryeducation/classifiedclearance/investment controls do not bythemselves defineimmigrationstatus; exactreportamendment-author numberdiffersfromfloorordinal. EOdefinitionincorporationnotwholeparentpassportpolicy.1438postpassageS1383packagingnot1142directfinaladoption."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -6054,15 +6339,15 @@
   "final_verdict": null,
   "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
   "sample_coverage": {
-    "original_exclusions_reviewed": 30,
-    "retained_exclusions_reviewed": 29,
-    "procedural_controls_reviewed": 10,
+    "original_exclusions_reviewed": 33,
+    "retained_exclusions_reviewed": 32,
+    "procedural_controls_reviewed": 11,
     "expressive_controls_reviewed": 1,
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
     "focused_tests": 217,
-    "focused_runtime_seconds": 38.103,
+    "focused_runtime_seconds": 38.407,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -6070,10 +6355,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "19783612d8a2e72a8da7e2621fdbd26941c538c6",
+      "head": "ade547db3dfc0f5d0e87ad5bd25dfdfbbb31b779",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37436592126"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37439868561"
     }
   },
   "open_legal_interactions": [
@@ -6252,5 +6537,101 @@
         "congressional-record:2026-01-22-dhs-narrative-pages309-332"
       ]
     }
-  ]
+  ],
+  "temporal_baseline_pattern_review": {
+    "scope": "All35authoredsourcebindings scanned for theidentified11975later-lawbaselinepattern, andrelated11937/11921/EO/SOPchronology independentlyreconciled toalreadyreadprimarydates. Original2025Code/OLRCunavailability/currentnesslimits remain;thisisnotnewall-lawcurrencyacceptance.",
+    "entries": [
+      {
+        "action_id": "house:119:1:156",
+        "clerk_action_date": "6-Jun-2025",
+        "material_source_ids": [
+          "sba:sop50108-20250601-citizenship"
+        ],
+        "current_authoring_action_sha256": "b0cde14686903ad001145a5fd1284192140a7027eb960b6105ca84787f62de82",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:42",
+        "clerk_action_date": "22-Jan-2026",
+        "material_source_ids": [
+          "govinfo:pl119-37-complete-division-a-immigration",
+          "govinfo:pl119-21-90004-autonomous-immigration",
+          "govinfo:pl119-75-enactment-date-context"
+        ],
+        "current_authoring_action_sha256": "706b86a09708b546e28afa00a94879311563b8e29a449e520d00a17898218f51",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:70",
+        "clerk_action_date": "12-Feb-2026",
+        "material_source_ids": [
+          "govinfo:pl119-21-firearm-tax-baseline"
+        ],
+        "current_authoring_action_sha256": "26f9ddc12df51582ed5f1e2004a1d3e097db2e2d758367241c394dced11b2af0",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:87",
+        "clerk_action_date": "5-Mar-2026",
+        "material_source_ids": [
+          "govinfo:pl119-37-complete-division-a-immigration",
+          "govinfo:pl119-75-complete-division-h-immigration",
+          "govinfo:pl119-21-90004-autonomous-immigration"
+        ],
+        "current_authoring_action_sha256": "097331e495e091376dcf946cfcc011fbbb605a0f80a24e6deb1d4490dc659521",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:101",
+        "clerk_action_date": "25-Mar-2026",
+        "material_source_ids": [
+          "govinfo:eo14252-dc-safe-beautiful"
+        ],
+        "current_authoring_action_sha256": "f5b8491b99e6c762b78fec0c6fc609e1851ab7c5f521500fcf1752c7bf50d2bd",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:104",
+        "clerk_action_date": "26-Mar-2026",
+        "material_source_ids": [
+          "govinfo:pl119-37-complete-division-a-immigration",
+          "govinfo:pl119-75-complete-division-h-immigration",
+          "govinfo:pl119-21-90004-autonomous-immigration"
+        ],
+        "current_authoring_action_sha256": "e033b5bc2e07e4b25f2caa521e5a4e84f7bfd01c3bfaa1645e342565692ab29b",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:108",
+        "clerk_action_date": "27-Mar-2026",
+        "material_source_ids": [
+          "govinfo:pl119-37-complete-division-a-immigration",
+          "govinfo:pl119-75-complete-division-h-immigration"
+        ],
+        "current_authoring_action_sha256": "392e47095091fc111c5245756010a31daad426972984afa49caf46860f0e7707",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:120",
+        "clerk_action_date": "16-Apr-2026",
+        "material_source_ids": [
+          "govinfo:pl119-21-tps-current-baseline"
+        ],
+        "current_authoring_action_sha256": "5086fb6b2835dbb0c871056987d44204d3eff20f7ca8907fefe9cd5e9f45f346",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      },
+      {
+        "action_id": "house:119:2:214",
+        "clerk_action_date": "9-Jun-2026",
+        "material_source_ids": [
+          "govinfo:pl119-21-100051-border-incorporation"
+        ],
+        "current_authoring_action_sha256": "adcba3e215c15feedaa380627bb9fe2f015e796ff18fdc7fb6f2cb85a03e976e",
+        "assessment": "January11975header is explicitlylater-context-only; otherlisted11937/75/21/EO/SOPgoverningbaselinesprecedethecorrespondingchoice. No universalcurrent-lawcurrency orunrelatedhistoryclaim."
+      }
+    ],
+    "uncorrected_identified_postvote_baselines": [],
+    "new_finding_id": "IB-AUDIT-JANUARY-POSTVOTE-BASELINE",
+    "authority": "same-ownerinternalcandidatepatternreviewonly"
+  }
 }
