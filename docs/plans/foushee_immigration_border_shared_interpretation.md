@@ -3031,3 +3031,92 @@ parallel original 1994 acquisition and reserved references, then remaining
 continuing/omnibus/NDAA packages and ordinary screenings. Existing .w/ib owner
 and historical markers remain; no current shutdown boundary. No merge,
 deployment, production, acceptance, promotion or publication authority.
+
+
+## Checkpoint 50: Exact child/family funding and retained protection boundaries
+
+House 70109 adds $20 million to ICE for fiscal year 2025, available until
+September 30, 2029, only for care/custody during the specified pending charge
+and co-detention. The alien must both be charged only with the INA 275(a)
+misdemeanor and have entered with the alien's under-18 child. Charge is not
+conviction; accompanied parent/child is distinct from UAC. Senate 100052(8)
+retains those personal/charge conditions and expressly adds in accordance
+with applicable laws for care/custody. It is a purpose within the $29.85
+billion fiscal year 2025 ICE account, available through September 30, 2029,
+not a full-account or separate House $20 million family earmark. No actual
+detention, universal family entitlement or legal-constraint adjudication.
+
+House 70115 separately adds ORR $3 billion for custody housing/transport/
+supervision under TVPRA 235. House 70116 adds CBP $20 million for gang-marking
+examination of a UAC who has attained 12 and is encountered by CBP. House
+70117 adds ORR another $20 million for its statutory danger determination
+through that examination of each UAC who has attained 12; CBP encounter is
+not imported into this clause. All are additional fiscal year 2025 funding
+available until September 30, 2029. UAC status retains all conditions,
+including the available-parent/guardian alternative and material in-loco-
+parentis rule. Marking/examination is not gang membership, guilt or an
+automatic danger/secure-placement finding. Current least-restrictive best-
+interest placement, secure placement's own danger-or-criminal-charge
+predicates and at-least-monthly review remain source-bound.
+
+House 70118 adds ORR $50 million on the same dates. Before placing a UAC
+with an individual under 235(c), HHS must give DHS all specified information
+concerning that individual and all adult household residents, including
+listed background/check results. Validated residence where the child will
+be placed remains distinct from all persons' other listed information.
+This HHS-to-DHS duty is separate from sponsor fees, status disqualification,
+actual criminal allegations, retained suitability/home studies and reverse
+DHS-to-HHS database assistance. No actual placement or disclosure conclusion.
+
+House 70119 adds DHS $100 million on the same dates only to permit its
+specified UAC's discretionary admission-application withdrawal. Both
+country groups are expressly covered. All case-by-case determinations hold:
+found at land border/port and inadmissible; no severe-trafficking victimhood
+and no credible return-trafficking-risk evidence; and no return fear owing
+to credible fear of persecution. Own severe-trafficking definition and
+INA 235(a)(4) discretionary withdrawal/immediate-departure authority are
+bound, not an actual removal order or every-child return mandate.
+
+Complete current TVPRA 235 retains its independent-decision predicate for
+the contiguous-child route, 48-hour/before-return screening and failed/
+undetermined screening transfer, plus other-child custody/transfer,
+proceedings, conditional counsel and safe-return provisions. General
+transfer is 72 hours after UAC determination except exceptional circumstances.
+House's broader specified-child clause does not print independent decision.
+Question 43 reserves that interaction before individual return, voluntariness,
+counsel/proceedings or repeal conclusions. Recommendation: preserve complete
+printed conditions and material safeguards and require independent application
+review. Alternatives and safe parallel work recorded; no automatic return or
+protection, no silent repeal. Earlier 42 questions and original 1994 agreement
+acquisition research remain unfinished separately.
+
+13 bindings, two qualification hashes and two new governed source extents
+sealed in hr1_child_family_funding_review.json. Six floor/EH comparisons:
+70109/70115/70117 exactly equal; 70116/70119 single-space differences; 70118
+floor pagination only. Original bytes preserved, no correcting-resolution
+item targets these clauses. Reacquired full 1232 master matches original
+care-placement raw witness; complete operative (a)-(i) extends rather than
+replaces prior evidence. All 37 other actions and prior clauses/sources,
+choice/analytical metadata and selected compacts preserved. Previous student,
+child-credit and senior-age clauses/repairs remain in both members.
+
+39 focused tests in 9.658 seconds, seven semantic checks, seven-file byte
+replay, 171 bounded extents, 990 unchanged Health sources, queue/accounting/
+audit integrity and reviewed diff pass. Tests do not prove semantic truth.
+Core dff064ac9322f7356df31fbfbf2138b3f6a771b768b4a323a9ec7b3af18f98af.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged, with source/qualification/
+core lineage follow-up preserved from checkpoint 49.
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 36 episodes,
+78 observations, 70 findings (Foushee 36/Massie 34). Now 1,285 sources
+(295 new), 704 bindings, 262 captures. Remaining: 221 ordinary screenings,
+TWO partial H.R.1 reviews, 43 legal/application questions. Same-owner audit
+partial and final verdict null; independent review of this increment pending.
+
+Prior exact 5151f49ba2f0e93eaba413de2b80a48890c35820 CI 37537538089
+has seven successful jobs, m14h-exact-head and receipt-evidence-repair-postgres
+pending, no failure reported. Current exact-head CI follows push. Continue
+remaining enforcement/personnel/transport/cooperation/removal clauses and
+their exact authorities, parallel original 1994 acquisition/references, then
+continuing/omnibus/NDAA packages and ordinary screenings. Existing owner,
+historical markers and absence of current shutdown preserved. No merge,
+deployment, production, editorial acceptance, promotion or publication.
