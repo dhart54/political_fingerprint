@@ -3830,3 +3830,74 @@ Existing owner, original markers and unrelated work preserved; no current
 shutdown or merge/deploy/production/editorial acceptance/promotion/publication.
 
 Checkpoint 58 exact CI 37547133989 completed successfully at bf2b5cfe65595027e04c4c40c0fbb95f6d2061a8; implementation owner natively verified all nine jobs.
+
+
+### Successor checkpoint 60: fingerprint and DNA funding authority boundaries
+
+Exact Senate 100051(5) uses the additional fiscal year 2025 DHS $2,055,000,000
+account through September 30, 2029. Aliens and alien children entering without
+a valid visa are the common printed circumstance. Fingerprints are funded in
+accordance with 262 and 235(a)(3)/(b); DNA is funded separately in accordance
+with 235(d)/287(b). No universal collection, actual collection or individual
+status/registration/parent/child finding follows from a funding purpose.
+
+Complete 262(a) retains all US-presence, age at least 14, prior registration/
+fingerprinting and 30-day duration conditions with its own deadline. Separate
+262(b) parent/guardian path retains under-14 age, prior registration, US presence
+and 30-day duration for registration, not the same under-14 fingerprint duty.
+Its fourteenth-birthday in-person registration/fingerprint rule has its own
+30-day period. Nonimmigrant fingerprint waiver remains discretionary and
+subject to reciprocity and prescribed regulations. Complete inspection and
+screening/asylum/review/detention/contiguous-return conditions bound. Original
+favorable-admission challenge is (3) in 2024, renumbered (4) by January 29,
+2025 Public Law 119-1, which inserts distinct State enforcement (3). Full original
+statute and exact amending law remain separate; no unamended-2025 relabeling.
+
+Complete 235(d) conveyance-belief search, delivery/detention and crewmember
+exception, oath/evidence and subpoena-purpose/court-enforcement conditions;
+287(b) designated officer/employee, oath/evidence and knowing/willful false-evidence/
+perjury conditions remain bound. Neither cited provision expressly names DNA.
+Question 50 reserves exact DNA authority interaction, including any relevant
+other law/implementation, without silently repairing printed references or
+inventing general biometric power. Question 51 separately reserves fingerprint
+funding circumstance alongside complete age/prior-registration/duration/parent/
+birthday/waiver and inspection paths. Recommendations preserve exact texts and
+require independent application review before individual/universal collection,
+new duty or repeal conclusions; alternatives and safe parallel work recorded.
+Available evidence is not labeled unavailable because application remains open.
+
+Four new exact extents, six new bindings and two reused owning/account/amendment
+bindings; original public registration HTML raw hash preserved. Existing full
+235(b)(1)/(2) and 287(b) source text reused, not duplicated as new source entries.
+Five new capture records (one original master, four extents). All 1,291 earlier
+sources, 268 earlier manifest rows, 38 other actions including House, earlier
+Senate clauses/compacts/choices and frozen receipts unchanged. One membership
+source list and matching proposal refs/scope updated without disposition change.
+Inventory, review/queue/episode/findings accounting and two partial reviews intact.
+
+Seven clause matrices check eight condition dimensions against own source and
+both prose surfaces. Exact prior candidate plus additions/source-reference
+reconstruction, eight binding hashes, 180 complete extent checks, source/audit/
+qualification/receipt seals and both member propagation pass. All 232 six-module
+tests pass in 41.836 seconds, including 43 candidate tests. Seven semantic checks
+and seven-file raw byte replay pass. Public/persistence boundaries remain closed.
+Final diff reviewed; tests and same-owner candidate checks do not prove semantic
+truth, independent acceptance or full-package completion.
+Core 87a720f7199145e3d553deb34cdc9cd142aeba2135cc95d61b66f6ff86943403; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Checkpoint 59 fe5506da07d56538e878f078774e97d3f41745d1 exact CI 37547865506
+completed successfully; implementation owner natively verified all nine jobs.
+Current exact CI follows push. Independent transport repair recheck and later
+bounded component reviews remain pending; no historical severity or receipt
+rewritten. Same-owner audit partial and final verdict null.
+
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural,
+203 excluded, two expressive, 36 episodes, 78 observations and 70 findings
+(Foushee 36/Massie 34). Sources 1,295; bindings 766; captures 273; extents 180.
+Remaining 221 screenings, two partial H.R.1 reviews and 51 separate application
+questions. Original 1994 acquisition/application follow-up separate. Next:
+remaining 100051 personnel/assignment/screening/transport/State-local-support/IT,
+then 90005 State-border/Stonegarden and continuing/omnibus/NDAA/screens.
+Existing owner, historical deadline/terminal evidence and unrelated work
+preserved; no current shutdown or production/config/security/schema, merge,
+deployment, editorial acceptance, promotion or publication authorization.
