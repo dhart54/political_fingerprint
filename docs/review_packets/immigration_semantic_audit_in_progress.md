@@ -3253,3 +3253,61 @@ registration/DNA/assignment/support purposes, 90005 State-border/Stonegarden
 funding, then continuing/omnibus/NDAA packages and screenings. Existing owner
 and historical markers preserved; no current shutdown, merge/deployment/
 production/config/security/schema or editorial acceptance/promotion/publication.
+
+
+### Successor checkpoint 58: domestic transport condition and clause review
+
+Checkpoint 57 is preserved at acc4edef8c14238bb14254db78ab797e5a9c3404.
+It was committed but remained unpushed when the independent checkpoint 56
+review reported Major IB-HR1-REIMBURSEMENT-TRANSPORT-GEOGRAPHY. Both Senate
+100055(b)(6) descriptions omitted "within the United States". This correction
+restores that limit, the paragraph (1) person category and all destination
+purposes in detailed meaning and qualification. Historical old copy, hashes,
+Major severity and independent review limits remain. No hosted checkpoint 57
+CI was launched; checkpoints 57 and 58 will be pushed together.
+
+Before another component, the new correction receipt checks all seven own
+purposes and three common funding/eligibility clauses against the exact EAS.
+Each actor, action, object, location, time, conjunction, exception and discretion
+cell identifies retained source fragments or explicitly excludes an additional
+condition from the bounded claim. Each purpose has a complete source-derived
+sentence in both surfaces. Court operations and temporary criminal detention
+borrow no neighboring geographic predicate; paragraphs (1)/(7) retain their
+own crime and unlawful-presence requirements; transport keeps its own domestic
+limit. The printed crime-category and-list is retained without an individual
+grant co-occurrence rule. Common existing authority, eligible grantees, ceiling,
+availability, qualified and documented expenses, inclusive January 20, 2021
+activity date, discretionary grants and distribution to more than one State
+remain. These literal refinements carry no invented independent severity.
+
+Exact reconstruction from checkpoint 57 plus two declared Major repairs and
+ten ordered source-fragment refinements passes. A genuine source-backed test
+rejects the actual checkpoint 56 candidate with one assertion failure and no
+errors. Both member outputs contain the complete transport sentence. All 38
+other actions, sources, bindings, captures, compact copy, choices, membership,
+inventory and 48 questions remain unchanged; committed checkpoint 57 receipts
+retain their bytes and seals. The full 232-test six-module aggregate includes
+43 candidate tests and passes in 41.533 seconds. Seven semantic checks,
+seven-file raw byte replay, audit/seal/extent/queue/accounting and candidate
+isolation checks pass. Final diff reviewed. Tests do not establish semantic truth.
+Core bf2445057dde225a2e77e78cfa7557006b36576e66bbc66f3f83c2a2435b281e; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f remains unchanged.
+
+New independent checkpoint 56 receipt records the historical Major and no
+additional material defect in the checked voting/funding/purpose/date/discretion
+scope. Receipt digest verified, five new and one reused binding hashes not
+independently recomputed. Independent mechanical review confirms exact 56
+CI 37543398935, all nine jobs, 13 candidate/document paths, protected paths and
+honest partial accounting; owner aggregate/replay not independently rerun.
+Full-member, individual application and package acceptance remain excluded.
+The current correction is validated by the owner; independent recheck pending.
+
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural,
+203 excluded, two expressive, 36 episodes, 78 observations and 70 findings
+(Foushee 36/Massie 34), with 1,291 sources, 758 bindings and 268 captures.
+Remaining: 221 ordinary screenings, two partial H.R.1 reviews and 48 separate
+application questions. Same-owner audit partial, final verdict null. Original
+1994 acquisition/application follow-up remains separate. Next: remaining exact
+Senate 100051 child, examination, registration/DNA, assignment and support
+purposes, then 90005 State-border/Stonegarden and remaining packages/screens.
+No current deadline or production, merge, deployment, acceptance, promotion
+or publication authority. Historical markers and unrelated work preserved.

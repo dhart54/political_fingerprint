@@ -136,6 +136,23 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertIn('DHS envelope', sentence)
             self.assertNotIn('ICE envelope', sentence)
 
+    def test_reimbursement_transport_keeps_domestic_limit_and_person_category(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('SEC. 100055.'))
+        transport = passage[passage.index('(6) Transporting'):passage.index('(7) Vehicle')]
+        for phrase in ['aliens described in paragraph (1)', 'within the United States',
+                       'apprehension, detention, and prosecution']:
+            self.assertIn(phrase, transport)
+        qualification = next(q for q in action['limitations'] if q.startswith('Senate 100054(2)/(3)'))
+        for text in [action['meaning'], qualification]:
+            sentence = next((s for s in re.split(r'(?<=[.!?])\s+', text)
+                             if ('(6)' in s or 'paragraph 6' in s) and 'transport' in s.lower()), '')
+            self.assertIn('within the United States', sentence)
+            self.assertIn('aliens described in paragraph (1)', sentence)
+            for purpose in ['apprehension', 'detention', 'prosecution']:
+                self.assertIn(purpose, sentence)
+
     def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']
