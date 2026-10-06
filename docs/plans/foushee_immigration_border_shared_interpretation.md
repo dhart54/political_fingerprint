@@ -1272,3 +1272,60 @@ exact duration/termination/allocation clauses from floor/EAS, preserving origina
 baselines and any genuinely ambiguous application questions separately.
 
 Independent selected-clause review receipt: `docs/review_packets/hr1_checkpoint24_independent_review.json`. One Minor IB-HR1-REIMBURSEMENT-DATE-QUALIFIER is linked to this correction; no Critical/Major in retained scope. Exact-blob-bound excerpts were checked, not independently re-fetched complete oversized bytes. No full-corpus PASS or editorial acceptance.
+
+
+## Checkpoint26: H.R.1 employment-authorization component expansion
+
+Continue beyond checkpoint25: House70003/70012-14 andSenate100003/100010-12 now
+have full exact-version claim paragraphs and member-neutral meaning/compact/
+qualification coverage. Each uses the existing contemporaneous floor/EAS capture;
+House EH only compares after removal of two explicit Record pagination annotations.
+Complete pre-vote1158(d)(2),1254a(a)(1)-(2),1182(d)(5)(A)/(B) paragraphs preserve
+no entitlement/regulated asylum work permission and180day otherwise-ineligible
+wait; TPS continuing work authority; parole statutory exceptions/non-admission.
+Document limits/fees are not first work authority, TPS termination or a parole grant.
+
+Initial asylum/parole/TPS fees have fiscal2025floors550both versions, higher-rule
+options, no-waiver terms and printed CPI increments rounded down10dollars. House
+initial/renewed documents are at most6months; Senate parole/TPS initial documents
+are1year or the status duration, whichever shorter, and SenateTPSrenewals use
+1year/designation duration. Senate asylum paragraphs do not print House6monthlimit.
+Parole/TPSrenewal floors are550House/275Senate with CPI; asylumrenewals are at
+least550House/275Senate without printed annual CPI formula. Three denial termination
+points and referral/timely-BIA-appeal exceptions remain; only House additionally
+prohibits later grants/renewals absent FederalCourtOfAppeals remand. No inference
+of unlimited permission, removal, endedTPS or lack of other law.
+
+Allocation distinctions retain credited share versus total fees and50percentHouse/
+not-less-than50percentSenate fraud use of asylum-initial credited amounts. Senate
+renewals credit25percentUSCIS/restTreasury; House renewals goTreasury. Two genuine
+printed application questions are separate: House70003(a)(4) UNDER THIS SECTION
+versus separately printed parole/TPS Treasury clauses; Senate100010 renewal/extension
+OF SUCH PAROLE antecedent. Candidate preserves words and routes application rather
+than silently selecting a distribution or creating a new parole renewal rule.
+
+Counts unchanged455reviews/39meanings/36episodes/78observations/70findings;
+221ordinary screenings and two partial H.R.1 component reviews remain.24legal/
+application questions (prior22plus2EAD) are separate.1198governed sources(990Health
+reuses/208new),415claims,112provisional captures;90boundedextents reconstruct.
+All39current audit hashes bind expanded meanings; independent checkpoint24receipt
+still covers only its original selected clauses, never these newEADcomponents.
+No acceptance/full-corpusPASS/public/persistence/production change.
+
+222focusedtests pass(39.145s); seven generated files replay byte-identically.
+Canonical semantic tier passes7checks. Source/Clerk/accounting/audit/candidate isolation
+and final diff inspected; protected runtime/compiler/frontend/Health unchanged.
+Core:85fe80ce840a60c3ef38ba5f323b4710fdeb1752e7080acda5b22410d6c2b105.
+Compiled remains:b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exactcheckpoint25e7b2c9c passed all9CIjobs(run37494071889); checkpoint26CI follows push.
+
+Review/resume receipt: hr1_employment_authorization_review.json binds prior/current
+meaning hashes and10newfullparagraphs/sourceextent hashes. Remaining component
+ledger retains benefits/tax/remittance/otherfees/sponsor/UAC/removal/enforcement,
+without closing coverage. Next expand sponsor/absentia/apprehension provisions:
+House70007/70020-22,Senate100016-17, full1232(c)/1229a(b)(5) baselines. House70020
+fee is collected BEFORErelease despite its failure-to-appear title; reimbursement
+is discretionary/qualified. EAS100017 prints two different disposition clauses
+and lacks a copied no-waiver clause; preserve exact text pending applicationreview.
+Full clauses have been read provisionally; they are not yet authored/audited or
+counted complete. Continue other fees/benefits/tax then package/narrow screenings.

@@ -1043,11 +1043,11 @@
         "episode_candidate_id": "episode:hr1:119",
         "whole_action_direction_established": true,
         "complete_immigration_component_review": false,
-        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed.",
+        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed. Complete selected initial and renewal/extension EAD fee/document/termination clauses and material pre-vote employment/parole baselines.",
         "remaining_executable_component_work": [
           "SNAP/Medicaid/Medicare/ACA benefit eligibility",
           "tax and remittance provisions",
-          "employment authorization and other fees",
+          "other immigration fees and any remaining employment-authorization components",
           "child sponsor and unaccompanied-child provisions",
           "removal and other enforcement provisions"
         ],
@@ -1058,11 +1058,11 @@
         "episode_candidate_id": "episode:hr1:119",
         "whole_action_direction_established": true,
         "complete_immigration_component_review": false,
-        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed.",
+        "reviewed_scope": "Selected exact-version border infrastructure, adult/family detention and asylum-fee clauses; House also includes manager-added State reimbursement. Material baseline paragraphs and qualifications reviewed. Complete selected initial and renewal/extension EAD fee/document/termination clauses and material pre-vote employment/parole baselines.",
         "remaining_executable_component_work": [
           "SNAP/Medicaid/Medicare/ACA benefit eligibility",
           "tax and remittance provisions",
-          "employment authorization and other fees",
+          "other immigration fees and any remaining employment-authorization components",
           "child sponsor and unaccompanied-child provisions",
           "removal and other enforcement provisions"
         ],
@@ -1073,7 +1073,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "85200a1173ab4f91e6b3476d7c1004a175136cb8047296511b4365775d0d8f1d",
+  "universe_subject_sha256": "3dd1edad3fd84e21b6177473081c5971b86f9a627f563a1d499fbf4b2c1ab516",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -8945,6 +8945,24 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:8usc1158d2-2024-hr1-employment-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "b85e2511fce6f64dca22cbff26b1fe88598e75fa62805b8885fb49842c2d905d"
+        },
+        {
+          "source_id": "govinfo:8usc1254a-2024-tps",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1254a.htm",
+          "raw_sha256": "61d62530978f308ac7779cbbee2c635e10e6bf543220beeaa31e8cffa67991f6",
+          "governed_bytes_sha256": "a09405f62863221a0355e148491777e32718b02ce18b775afd4bd201c1f92bb0"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
         }
       ],
       "exact_action_source_binding": null,
@@ -8955,7 +8973,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "d7102561faf803b9976bed806b7f98d90e91c0c106846b32e93ab79a3c399449"
+        "shared_review_record_sha256": "146a49b9deab07c6ef0945c018309f2665a3a1d7fb1b5ecf9a793fd273f37a4f"
       }
     },
     {
@@ -11503,6 +11521,24 @@
           "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
           "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
           "governed_bytes_sha256": "cdfe9a8b22a44bc9cef735c34aa1bb50ef948b1b56a7cab4504c8fcbc33aff07"
+        },
+        {
+          "source_id": "govinfo:8usc1158d2-2024-hr1-employment-baseline",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1158.htm",
+          "raw_sha256": "1f5816680b5ff38d69d2b376a15a10ffa4e6cec65660a08d878c694e47005f51",
+          "governed_bytes_sha256": "b85e2511fce6f64dca22cbff26b1fe88598e75fa62805b8885fb49842c2d905d"
+        },
+        {
+          "source_id": "govinfo:8usc1254a-2024-tps",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1254a.htm",
+          "raw_sha256": "61d62530978f308ac7779cbbee2c635e10e6bf543220beeaa31e8cffa67991f6",
+          "governed_bytes_sha256": "a09405f62863221a0355e148491777e32718b02ce18b775afd4bd201c1f92bb0"
+        },
+        {
+          "source_id": "govinfo:8usc1182-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "a724b4dcffeb7b6330ceb4a69aeeb5cda14f7998c5b57bc5723c426b4259f04e"
         }
       ],
       "exact_action_source_binding": null,
@@ -11513,7 +11549,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "a14f27ebac1b14140053f0f6e305075724833e56d48eb3d08247daf4db558aa6"
+        "shared_review_record_sha256": "35f0043d1cd6b67bad7ebf109814ff874a79b7a01a7b2fcfd9501d0d47c6cc27"
       }
     },
     {
@@ -38598,6 +38634,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "06f87d36d2b7cc6d54a1ead31c3bcc8e9f3bc9ac64b1ffe5e8dcc1172692f253",
-  "membership_review_sha256": "33b1e38de8e0849df9e5d4f377c1fe8d413f6aead07908b2152325abcb6ff07a"
+  "proposal_sha256": "b61155788ca2ea4e6890376eda3c8e38ae629a3492c4b0a706a6c985b1913662",
+  "membership_review_sha256": "f7663fa98a53fac74800aa2cc12cf84ff5efd5826d7eb1c357d97057f5220526"
 }
