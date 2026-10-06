@@ -2127,3 +2127,92 @@ material baseline capture is next. Then tax/remittance, child/enforcement
 funding and remaining packages/screenings. Printed FMAP references remain
 reserved as question 33. Existing ownership and historical markers continue;
 no current shutdown boundary or production/publication authority.
+
+
+## Checkpoint 39: ACA status lists and the special income rule
+
+House sections 112101/112102 and Senate sections 71301/71302 retain their
+distinct status definitions and conforming program scopes. Eligible-alien
+treatment concerns a lawfully present alien with current status AND reasonable
+expectation of the listed status for the entire credit-enrollment period,
+common to each alternative. The House prints IF AND ONLY IF and its full Cuban
+conjunction; the Senate prints IF and granted, defined entrant status with
+modifiers in their own branches. Citizens/US nationals retain their separate
+existing condition. No single-day, nationality-only or generic lawful-stay
+substitution. Separate credit, program and insurance-enrollment conditions remain.
+
+The named section 151 tax-family condition, individual premium attribution,
+family-size and household-income calculation remain distinct from automatic
+whole-household credit loss. The repealed special rule requires ALL income
+no greater than 100 percent of poverty, lawful alien presence, and Medicaid
+ineligibility BECAUSE OF alien status. Deletion does not alone prove loss at
+exactly 100 percent, where ordinary credit eligibility begins, or for every
+Medicaid-ineligible person. The repeal starts taxable years after December 31,
+2025. Status changes use taxable years after December 31, 2026; conforming
+changes use plan years on or after January 1, 2027. Existing zero monetary
+mandate-penalty components are not amended.
+
+House direct cost-sharing/basic-health amendments, attestation/payment scope,
+renumbering and special-branch/reference-sentence deletions are not imported
+into Senate text. Senate residual cost-sharing/basic-health application,
+including the retained reference to deleted 36B(c)(1)(B), is reserved as
+question 34. Recommendation: preserve direct amendment meanings and full
+baseline predicates pending independent application; alternatives and safe
+Exchange/tax/funding/screening work are explicit. Absence of direct Senate
+deletions does not establish continuing awards or automatic losses. The
+House's printed unfinished basic-health parenthetical is not repaired.
+
+Seven new governed sources and twenty-four bindings include material credit,
+mandate, basic-health, cost-sharing, verification, advance-payment and Exchange
+enrollment baselines. hr1_aca_status_income_review.json seals action/passages,
+copy hashes and exact comparisons. House 112101 differs only by H2329 pagination
+and spacing before section 5000A; 112102 operative bytes match the EH witness.
+All earlier sources, detailed clauses, qualifications, compacts and the other
+37 actions are unchanged. Both new qualifications were reconstructed directly
+from primary text and checked in both complete member outputs.
+
+Fingerprint's independent Medicaid 36/37 review found no new material defect
+within its scope. It recomputed 14/18 verification/status and 10/12 FMAP
+instances; remaining operative/SAVE hashes were not independently recomputed.
+Annual 1397gg live fetch failed, but full governed repository text/digest was
+inspected, without an unavailable-evidence disposition. No independent replay,
+full member audit, legal resolution, full-package PASS or acceptance. Printed
+House reference application stays reserved. Both exact CI runs passed all
+nine jobs. See hr1_checkpoint36_37_independent_review.json; earlier bounded
+reviews and historical findings remain unchanged.
+
+Fingerprint's bounded independent Medicare 38 review also found no new material
+defect in accessible clauses. It recomputed 16/18 binding instances and the
+receipt digest; operative hashes were not independently recomputed. Full
+authoring/readable blobs and Massie detail were not accessible to that review.
+Annual 426-1/1395i-2 live retrieval failed; governed captures received limited
+SSA corroboration without replacing them with incomplete current SSA text.
+No independent replay, full member audit or package acceptance. See
+hr1_checkpoint38_independent_review.json. Exact CI was independently green.
+
+35 candidate tests and seven semantic checks pass; all seven generated outputs
+replay byte identically. Twenty-four source/hash/length and two qualification
+checks, 128 bounded source extents, complete member propagation, prior source/
+clause/copy preservation, audit/Clerk/accounting integrity and final diff verify.
+Compiled IR, Health sources, runtime, frontend, schema and production/publication
+boundaries are unchanged. Tests do not establish semantic truth or acceptance.
+
+Core: 32ababe5d0205cf56468449c330ebc5a75831013288dcf01065efc11081806e0.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Counts: 676 inventory; 455 reviews; 39 meanings; 36 episodes; 78 observations;
+70 findings (Foushee 36, Massie 34). There are 1,240 governed sources (990
+unchanged Health reuses, 250 new), 551 claims and 184 provisional captures.
+Remaining: 221 ordinary screenings, TWO partial H.R. 1 component reviews
+and 34 legal/application questions. No whole-package closure.
+Exact 0c05040f253dc2abbed544445ee8b1a6309f4ef0 passed all nine hosted jobs
+in run 37517372650. Current exact-head CI follows push.
+
+Next: House 112201 versus Senate 71303 Exchange verification, including the
+relevant House 44201 income-verification exception and exact March 19/June 25,
+2025 published-rule references. Full primary sections are captured; the initial
+read identified credit-month versus enrollment, past-month verification,
+family-change waiver, data-source and pre-enrollment-process differences.
+Acquire/read the precise incorporated rule versions before authoring. Then
+tax/remittance, child/enforcement funding, remaining packages and screenings.
+Questions 33/34 remain independent application matters. Existing ownership
+and historical markers continue; no current shutdown or production authority.
