@@ -1,7 +1,15 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 66,
+  "source_count": 73,
   "sources": [
+    {
+      "source_id": "dc-code:1-31502-mayor-executive-office",
+      "url": "https://code.dccouncil.gov/us/dc/council/code/sections/1-315.02",
+      "raw_sha256": "5fb2032b1e298a1ac6962d22bbfcb7d5423efc8524d54426a65cf2d2bf1acd09",
+      "governed_bytes_sha256": "b0e9d4d24e37411b8634fbfaabbd204af16c2335d00af6ff73d8ed1a21587c31",
+      "text_sha256": "e332858dfa08e36e54daefb5dcce88b3e1b30885770dc3a3c8d922e53c50e54c",
+      "text_length": 418
+    },
     {
       "source_id": "govinfo:15usc633-2024-complete",
       "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec633.htm",
@@ -57,6 +65,22 @@
       "governed_bytes_sha256": "6b032b9ee66ea44a443b07e666b856b35331aa4595d9b5ce93bd84c86e2b8e7c",
       "text_sha256": "f5f82d065ec1c2c122719713e8ddfb70be91dd36ee62a48c4aab6efb3b5176de",
       "text_length": 7543
+    },
+    {
+      "source_id": "govinfo:18usc1033-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap47-sec1033.htm",
+      "raw_sha256": "0b6b4edaaa68aefc1e574422f881ed8deac373d58b447755cb318842a115690a",
+      "governed_bytes_sha256": "fc9db3ec85392c134c47e9cd874c7fb9cdf875797f64bacc813b3a5e522ed5b1",
+      "text_sha256": "3a9e4e7c5a03f7a414b6ab6e741613cad790f8498a43145cc78740c4e757a96d",
+      "text_length": 7356
+    },
+    {
+      "source_id": "govinfo:18usc1034-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap47-sec1034.htm",
+      "raw_sha256": "d87c721e3662cfc6680500d039eacc18c2dab1d685123607a48647319b3ae5fc",
+      "governed_bytes_sha256": "4f43de731a0ecc867dbad0bc4fe5101fe37873b5017a9c7d570c493febb9b312",
+      "text_sha256": "66d9a98a2a4a84d01fdc2b05f82ca6153fea8f7893c27ac555b1f1303c283c61",
+      "text_length": 2055
     },
     {
       "source_id": "govinfo:18usc16-2024-complete",
@@ -355,12 +379,28 @@
       "text_length": 10972
     },
     {
+      "source_id": "govinfo:8usc1324a-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324a.htm",
+      "raw_sha256": "7fc9d90fde1a4f34521458419473910195e7d58e75d7b4d430972dc1a6ab15dc",
+      "governed_bytes_sha256": "d895e92463e83e93e70dee7068c4362e779589491ab718b108023236c138e8e7",
+      "text_sha256": "cce365d7faa3edda55f04cf72df37cb14fb9a0876b8ce703c4a0108a937db652",
+      "text_length": 96785
+    },
+    {
       "source_id": "govinfo:8usc1324b-2024-complete",
       "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partVIII-sec1324b.htm",
       "raw_sha256": "025b1a38de479b3cd3a8573816a12629f2dd80b872b1ec379ed638af3e05908f",
       "governed_bytes_sha256": "6f93a37170ac18c7cf081ffed941557ab7b2090e9f848a37a9c1e658e9803c9d",
       "text_sha256": "637329fa38bc349e8b30111fa7d8bb0e28dcb94b5c44ac38f23f0c2e607970b4",
       "text_length": 31208
+    },
+    {
+      "source_id": "govinfo:8usc1356-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1356.htm",
+      "raw_sha256": "0871da7a0778b1ab2791656bb27e027b1538cabf4403371fa2ae8f1ce36fe09f",
+      "governed_bytes_sha256": "b8c18f91718d4cb3d8d836aa7313883570a272d19f30a3c5fbe32a8ff849464c",
+      "text_sha256": "d7c251ea6e35a93bfee2d6d5391240588b8b5b929a01d68485a349a95a085c49",
+      "text_length": 72988
     },
     {
       "source_id": "govinfo:8usc1357-2024-complete",
@@ -395,6 +435,14 @@
       "text_length": 3406
     },
     {
+      "source_id": "govinfo:8usc1448-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partII-sec1448.htm",
+      "raw_sha256": "f4a050bef288c190a67630c72fabdda891f1b3281eb6167afc494366dfc2799e",
+      "governed_bytes_sha256": "e0cf126748d04d07ba772d39ca45a2d6b966f971a73b4e813fbab676f60d2561",
+      "text_sha256": "96336d0a03561eeb4d6af86aafdfa35fe55a9b27d6772d4e9ffff4389bbbbf0f",
+      "text_length": 11618
+    },
+    {
       "source_id": "govinfo:8usc1644-2024-complete",
       "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1644.htm",
       "raw_sha256": "44626463cf20536077ca19b14a50e946bdb3a1dba2b3507c95e6c86dd1fb53ac",
@@ -409,6 +457,14 @@
       "governed_bytes_sha256": "1a414e6dfe2c14b7d1ce3543cffadb8e9f226560df7841fbc92567eae05c08b3",
       "text_sha256": "8e90ce7f529d84b1d86025eca0aa4dbe2d47344678c51c64f17a72ae28460489",
       "text_length": 4507
+    },
+    {
+      "source_id": "govinfo:eo14252-dc-safe-beautiful",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05837.htm",
+      "raw_sha256": "49f0b19f32bda73bc2c0647de6f05eea0ddc38f9a9c536c4125f660b8d60aa01",
+      "governed_bytes_sha256": "b18a5d0f7c623f3657d650ce80618c59b656336e224125b224be2ffa29425d4b",
+      "text_sha256": "77cb925d6aee74fb0c790b9073d727ddfd49f7800eb335ba25521a255491106e",
+      "text_length": 9154
     },
     {
       "source_id": "govinfo:hr3838eh-immigration-complete",

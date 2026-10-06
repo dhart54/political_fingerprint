@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "98390b188f77f4626940757d05580f1a367e8bbecd7f89d312b5ed211907a4d6"
   },
-  "input_sha256": "c196222cc2b62b25339d6e9968f55724adccf81e13edf37a8d065506a90ce2ae",
-  "source_capture_sha256": "ed8c471108f44061d8298878bf4d7eb26121d2935078414a7c5d33025a4d7206",
-  "core_sha256": "c3de2ddca94b1cca82dfd85811c785219e116ff3b758cea2bbbda4437915e6ce",
-  "compiled_sha256": "e6ecf30f0365e7cf0e38f3b96351f156835824a250718ab4ab3de7549fe58368",
-  "readable_sha256": "608c5a425da0661b4c96c121239473962cc953b932b21c195383640f8e6fcc59",
+  "input_sha256": "1c821ba3892caa0f2eece9c8dac8d18eaa20f867a85e2e1b5061bbb6dcb51532",
+  "source_capture_sha256": "fdf67b3c7960fdd67023783fa87eb03ca978fe43cceacbcec94b0e7c9da115d8",
+  "core_sha256": "16eb8637b37b693f3057148d272265b610fb0e3cf6ee7ee3f66b179170f6d90a",
+  "compiled_sha256": "5d9990e49f7f73ba9b1dd7b3ba45c0687e98b5ad986593e69aa67c2fdd863d9c",
+  "readable_sha256": "374755709c07b660c47cbcb5414d863dd3c5440e949cf085bff0910b288908cd",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -558,6 +558,26 @@
       ]
     },
     {
+      "action_id": "house:119:2:101",
+      "shared_sha256": "f7232adbc37f55323ada862497f938b79a721ffae487e31d21a916ee7aef5efe",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 5103 EH proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:101"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 5103 EH DC commission and beautification proposal",
+          "source_id": "clerk:119:2:101"
+        }
+      ]
+    },
+    {
       "action_id": "house:119:2:120",
       "shared_sha256": "f4e2ee2359c8a8f04554248e05e124dc7aadbc7b285918eee4b862324642b612",
       "choices": [
@@ -574,6 +594,26 @@
           "effect": "opposes_exact_choice",
           "selected_meaning": "opposed passage of H.R.1689 with that designation mandate; no preferred alternative is established",
           "source_id": "clerk:119:2:120"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:169",
+      "shared_sha256": "ae86db6cb92b5ef0a381b66ac528e74fb338e29f4c91ae37de939e37de71b1d4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 6260 EH insurance-definition proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:169"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:169"
         }
       ]
     },

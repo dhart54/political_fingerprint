@@ -336,3 +336,48 @@ exact head ce2cd6ea48cf37b1094de20022fff6f81533faf9 passes all nine hosted jobs:
 https://github.com/dhart54/political_fingerprint/actions/runs/37427798740.
 Current exact-head CI follows push. Original overnight deadline remains; continue
 unfinished discovery, without a terminal marker or readiness declaration.
+
+
+### Checkpoint 16: DC recommendations, immigration-bail coverage and twenty screenings
+
+H.R. 5103 EH creates statutory Commission recommendation/review and sanctuary-
+compliance monitoring duties alongside policing/beautification work. Complete
+original EO 14252 and the incorporated DC Executive Office definition establish
+the related earlier task force and precise actor/geographic/reporting differences;
+the bill does not first create all enforcement power or itself deport anyone.
+H.R. 6260 EH expressly includes Federal immigration bail-bond posting in the
+1033 insurance-business definition. Complete retained offense, intent, jurisdiction,
+qualified penalty and authorized-consent framework plus 1034 civil enforcement
+are bound; no automatic crime for every cash gift/provider, new detainee release
+criterion or first-ever fraud illegality. Specific provider/consent construction
+is the twelfth preserved legal-review interaction.
+
+Twenty additional exact exclusions independently separate farmland fencing,
+cross-border pollution, infrastructure authorizations, ordinary grant/tax/bank
+rules, criminal-bail reporting and school forms from Immigration mechanisms.
+The school proposal incorporates only EO 14168 section 2, not its passport commands.
+400 governed reviews: 31 interpreted, 202 procedural, 166 excluded, one expressive;
+276 ordinary screenings unfinished. Larger DHS/package/version work continues.
+31 actions occupy 30 episodes (one two-stage H.R. 4 episode). 62 observations:
+60 directional, one Present and one Not Voting. 58 readable/IR findings (Foushee
+30, Massie 28). Foushee 9 support/22 opposition; Massie 24 support/5 opposition,
+one Present/one Not Voting. Massie’s actual 6260 Not Voting is resolved official
+evidence and produces no directional finding. New compacts/details/qualifications,
+source/whole-choice/episode limits and nondirectional observation inspected.
+
+All 31 meanings internally audited in a separate same-owner primary reconstruction
+stage. 71 distinct assessments: 1 Critical/6 Major/2 Minor/62 No Defect; historical
+corrected defects remain visible. Samples: 29 retained exclusions, ten procedures,
+all one expressive. No final audit PASS, closure or independent second reviewer.
+1,059 governed sources = 894 unchanged Health reuses + 165 new; 268 shared claim
+witnesses and 73 provisional capture witnesses (including the complete identified
+DC definition, with full-page/raw fingerprints). Core:
+`16eb8637b37b693f3057148d272265b610fb0e3cf6ee7ee3f66b179170f6d90a`;
+compiled IR: `5d9990e49f7f73ba9b1dd7b3ba45c0687e98b5ad986593e69aa67c2fdd863d9c`.
+210 focused tests pass in 33.629 seconds; seven canonical checks and seven byte-
+identical outputs pass. Fail-closed/source/audit/accounting gates pass; protected
+baseline/common adapter unchanged and diff-check clean. Previous exact head
+f85c9d8563ee388ceeba8f6458d0f6422c18f993 passes all nine hosted jobs:
+https://github.com/dhart54/political_fingerprint/actions/runs/37429331603.
+Current exact-head CI follows push. Original overnight deadline persists;
+continue discovery, without a terminal marker or readiness declaration.
