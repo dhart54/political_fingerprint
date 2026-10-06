@@ -5,11 +5,11 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest checkpoint 51: 455 reviewed, 39 interpreted, 211 procedural, 203 excluded,
+Latest checkpoint 52: 455 reviewed, 39 interpreted, 211 procedural, 203 excluded,
 2 expressive; 221 ordinary screenings remain. 36 episodes produce 78 observations and
 70 findings (Foushee 36/Massie 34). H.R.1 selected clauses remain explicitly partial
 in authoring/readable/accounting. 44 legal/application questions are separate.
-See checkpoint 51 below and exact-version/component receipts for controlling source maps.
+See checkpoint 52 below and exact-version/component receipts for controlling source maps.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Current ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -161,7 +161,7 @@ The Clerk recorded the House result as 'Passed' on 2025-07-03. This does not est
 - The Senate $6,000 deduction is per qualified person. The listed alternatives are the taxpayer or the spouse on a joint return. In either case, the claimed person must have attained 65 before the tax year closes and must supply that person's defined SSN. One spouse's number does not establish deductions for both. The phaseout rate is 6 percent over $75,000, or $150,000 on a joint return. A taxpayer married within section 7703 must file jointly with the spouse; the new House similar-32(d) clause, blind bonus and hypothetical-itemizer mechanism are not imported. Own mathematical-error label is (W). The same-version SSN definition permits issuance to either a US citizen or the named work-authorized-alien category. In either case, the number must have been issued before the due date for the return. Other SSA numbers or ITINs do not alone qualify. Child-credit identification is not senior identification. Own taxable-income, itemization, spouse/exemption and marital predicates remain, along with the nonresident-alien standard-deduction exclusion, without an individual eligibility finding or accepted override. A deduction is not a dollar-for-dollar credit, exemption of all Social Security income or guaranteed refund. Both senior amendments apply to taxable years beginning after December 31, 2024; their own upper limit is a taxable year beginning before January 1, 2029. Modified income includes the named 911/931/933 exclusions. Mathematical-error notice requires the alleged error and explanation; the no-petition rule concerns that notice. The abatement request period is 60 days after notice is sent, abatement follows receipt, reassessment uses deficiency procedures and collection is stayed during the abatement period. No actual debt, fraud, payment or loss of every remedy.
 - Senate requires the individual's defined SSN in all cases. A credit for the qualified expenses of an individual other than the taxpayer or spouse must also include that individual's name and defined SSN. No new House spouse-number or similar-32(d) amendment is imported; retained 25A(g)(6) requires joint filing for a taxpayer married within 7703. No separate-return eligibility or child-credit joint-number alternative is inferred. The same-version defined SSN permits citizen issuance or the named work-authorized-alien branch. In either case, issuance must precede the return due date; an ITIN or any SSA number does not alone suffice. The old AOTC student on-or-before deadline is distinct. The institution EIN clause is AOTC-only and tied to the named taxpayer-paid qualified expenses taken into account, with retained dependent-payment treatment; it is not a Lifetime Learning or every-institution requirement. Full credit, income, student, institution, qualified-expense, assistance, dependent, prepayment, double-benefit, payee-statement, refund and recapture conditions remain, without an individual amount or eligibility determination. The AOTC student reference freezes HEA 484(a)(1), with its own exceptions, at August 5, 1997; it does not import all current student eligibility or its citizenship paragraph. The institution definition retains frozen HEA 481 and its own title IV eligibility condition. Exact historical passages and amendment chronology are bound; full HEA 481 comparison uses two declared split-word normalizations, without source mutation or personal/institution classification. A taxpayer nonresident during any portion of the year retains the conditional 6013(g)/(h) chapter-1 resident-election path, each with own spouse/status/both-election and duration/termination/re-election predicates; this is not all-noncitizen denial or immigration status/work authorization. Both apply to taxable years beginning after December 31, 2025. Own mathematical-error (J) changes TIN to SSN or EIN; alleged-error/explanation notice, 60 days after notice is sent, abatement upon receipt, deficiency reassessment and collection stay remain. No debt, wrongdoing, guaranteed credit/refund, loss of every remedy or whole-package closure.
 - Senate 100052(8) family-unity funding uses a purpose within the $29.85 billion additional fiscal year 2025 ICE account, available through September 30, 2029; neither the full envelope nor House $20 million is a separate Senate family earmark. Pending specified charge, charged only with the INA 275(a) misdemeanor and entry with the alien's under-18 child all retain their own scope; care/custody expressly in accordance with applicable laws, plus co-detention purpose. Charge is not guilt or an actual custody result. Accompanied parent/child is not UAC; no House child-disclosure/withdrawal mechanism, universal detention or family entitlement imported. No individual outcome, legal-constraint adjudication or full-package closure.
-- Senate 100052 uses one additional fiscal year 2025 $29.85 billion ICE envelope through September 30, 2029 for listed purposes; no House account amounts or hiring minima imported. Hiring/training includes named investigators and retired hiring priority; recruitment/onboarding distinct. Director may grant exemplary-service performance, two-additional-year retention, or signing bonuses to a named officer/agent/attorney both hired on/after enactment and committed to five years. Signing is may, unlike House shall; retention/signing written agreement/termination predicates retained. Transportation/related departure-removal costs, IT including fee collection, facilities/fleet, 287(g) agreements, VOICE staffing/nonfinancial victim assistance and OPLA immigration-enforcement/removal representation remain distinct purposes. Full material 287(g) limits, State/local expense and voluntary agreement/own no-agreement communication/cooperation paths remain; no blanket deputization, power or immunity. Victim-assistance perpetrator condition is not status-based guilt, cash for every victim or actual crime. Family paragraph (8) remains separately qualified. No actual hiring/bonus/agreement/collection/removal/expenditure or full-package closure.
+- Senate 100052 uses one additional fiscal year 2025 $29.85 billion ICE envelope through September 30, 2029 for listed purposes; no House account amounts or hiring minima imported. Hiring/training includes named investigators and retired hiring priority; recruitment/onboarding distinct. The Director may provide a performance bonus to a named ICE agent, officer or attorney who demonstrates exemplary service. The Director may provide a retention bonus to a named ICE agent, officer or attorney who commits to two additional years of immigration-enforcement service. The Director may provide a signing bonus to a named ICE agent, officer or attorney only if that person is hired on or after enactment and commits to five years of immigration-enforcement service. Signing is may, unlike House shall. For retention and signing bonuses, the Director shall provide each qualifying individual a written service agreement with its required period, amount, payment and early-termination terms. Transportation/related departure-removal costs, IT including fee collection, facilities/fleet, 287(g) agreements, VOICE staffing/nonfinancial victim assistance and OPLA immigration-enforcement/removal representation remain distinct purposes. Full material 287(g) limits, State/local expense and voluntary agreement/own no-agreement communication/cooperation paths remain; no blanket deputization, power or immunity. Victim-assistance perpetrator condition is not status-based guilt, cash for every victim or actual crime. Family paragraph (8) remains separately qualified. No actual hiring/bonus/agreement/collection/removal/expenditure or full-package closure.
 
 Evidence: house:119:1:145, house:119:1:190; finding `prop:3e335a2413ee0d6d`.
 
@@ -3864,3 +3864,74 @@ Receipt: docs/review_packets/hr1_checkpoint50_independent_review.json.
 Checkpoint 51 latest pre-push CI check: exact checkpoint 50
 84e11c363a133a0e8aabccc194c7f2e5b02bfd30 run 37538252890 now has eight
 successful jobs; receipt-evidence-repair-postgres pending, no failure reported.
+
+
+## Checkpoint 52: Separate Senate bonus qualification conditions corrected
+
+Fingerprint independently identified Major IB-HR1-ICE-BONUS-CONDITION-SCOPE
+at 28062344552e23358be530780eb2b577fa6a1df4. The Senate qualification put
+performance, retention and signing in one list followed by hire-date/five-year
+conditions, which could incorrectly apply only-signing conditions to all
+three cases. The detailed meaning already separated them correctly.
+Exact EAS 100052(2)(B)/(C)/(D) requires exemplary service for a discretionary
+performance bonus; two additional years of service for retention; and both
+hire on/after enactment and a five-year commitment for signing. Qualification
+now uses three complete sentences with each predicate assigned to its own
+named officer/agent/attorney case. Paragraph (E)'s written agreement, service
+period, amount, payment and termination terms apply to retention/signing only.
+House signing shall versus Senate may remains unchanged. No actual bonus,
+performance/hiring outcome or individual eligibility determination.
+
+One exact qualification replacement, before/after/action/qualification hashes,
+four complete primary bonus/agreement witnesses and a bounded recurrence
+review are sealed in hr1_ice_bonus_condition_scope_correction.json. Reviewed
+the new family/child, ICE and preserved pending CBP funding meanings and
+qualifications against their own clauses. No additional material unintended
+common modifier established within that scope; source-common conditions
+remain explicit. This is a same-owner repair, independent recheck pending.
+Historical finding, exact checkpoint 51 receipt/narrative and legacy action
+severity snapshot retained. No rewrite of sealed historical receipts.
+
+Independent final checkpoint 51 verdict found no additional material defect
+in checked amounts/timing/accounts/hiring minima, agreement limits or
+contiguous-return scope. Question 44 remains reserved. Two receipt digests
+matched, but no new binding hashes independently recomputed. University
+reproduction provenance labeling correct; semantic reviewer could not
+recertify its retrieval. Full member propagation/replay and package acceptance
+outside verdict. Bounded receipt hr1_checkpoint51_independent_review.json
+records the Major and correction linkage without claiming acceptance.
+
+Pending CBP continuation was preserved before correction: all 11 own files
+copied and SHA-256 verified under
+.tmp/checkpoint52_preserved_before_ice_bonus_correction/preservation_receipt.json.
+Only own pending tracked candidate files were restored to committed content;
+no reset, stash or unrelated restoration. New pending receipt retained in
+that snapshot, helpers intact, old deadline/terminal markers untouched.
+The preserved CBP increment has ten bindings and its proposed question 45;
+these are not part of this correction's canonical counts. Resume by reapplying
+that additive increment onto corrected authoring, never restoring old Senate
+qualification. Original acquisition follow-up and supervisor research retained.
+
+40 focused tests in 9.786 seconds, seven semantic checks and seven-file raw
+byte replay pass. New source-backed test rejects exact checkpoint 51 old
+qualification with one assertion failure and zero errors. Four primary
+witnesses, 11 pending snapshot hashes, all prior child/senior repairs in
+both members, 171 extents, 990 unchanged Health sources, queue/accounting/
+audit hashes, candidate/publication isolation and final diff verified.
+Core b5039d076d7216b1871d21bf6f19115b0a4cad7501a634a6f5757bd8556fa1ef.
+Compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged. Tests do not prove semantic
+truth or independent acceptance. Both detailed meanings, all 38 other actions,
+1,285 sources, 719 bindings, 262 captures, compacts, choice metadata,
+membership/universe and 44 application questions unchanged. 676 inventory,
+455 reviews, 39 meanings, 36 episodes, 78 observations and 70 findings
+(Foushee 36/Massie 34); 221 ordinary screenings and TWO partial H.R.1 reviews.
+Same-owner audit partial; final verdict null. Question 44 and prior applications
+unresolved; no acceptance, promotion or publication.
+
+Owner-native exact checkpoint 51 CI 37538997606 and checkpoint 50
+CI 37538252890 now all nine green. Green CI did not detect or close this
+semantic defect. Current exact correction CI follows push. Continue preserved
+CBP operations on corrected state, then remaining DOJ/incarceration/removal/
+reimbursement, continuing/omnibus/NDAA packages and ordinary screenings.
+Existing .w/ib owner and historical markers preserved, no current shutdown,
+merge, deployment, production/config/security/schema or editorial authority.

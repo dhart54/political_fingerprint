@@ -67,6 +67,40 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertRegex(text, r'In either case, (?:the SSN must have been issued|it must have been issued) before the due date for the return')
                 self.assertNotIn('BRANCH AND BEFORE RETURN DUE DATE', text)
 
+    def test_senate_ice_bonus_conditions_remain_separate_by_bonus(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('SEC. 100052.'))
+        performance = passage[passage.index('(B) Performance bonuses.'):
+                              passage.index('(C) Retention bonuses.')]
+        retention = passage[passage.index('(C) Retention bonuses.'):
+                            passage.index('(D) Signing bonuses.')]
+        signing = passage[passage.index('(D) Signing bonuses.'):
+                          passage.index('(E) Service agreement.')]
+        self.assertIn('demonstrates exemplary service', performance)
+        self.assertNotIn('date of the enactment', performance)
+        self.assertIn('commits to 2 years of additional service', retention)
+        self.assertNotIn('5 years', retention)
+        self.assertIn('is hired on or after the date of the enactment', signing)
+        self.assertIn('commits to 5 years of service', signing)
+        self.assertIn('In providing a retention or signing bonus', passage)
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Senate 100052 uses one additional'))
+        sentences = re.split(r'(?<=[.!?])\s+', qualification)
+        performance_copy = next((s for s in sentences if 'performance bonus' in s), '')
+        retention_copy = next((s for s in sentences if 'retention bonus' in s), '')
+        signing_copy = next((s for s in sentences if 'signing bonus' in s), '')
+        self.assertIn('demonstrates exemplary service', performance_copy)
+        self.assertIn('commits to two additional years', retention_copy)
+        for text in [performance_copy, retention_copy]:
+            self.assertNotIn('hired on or after', text)
+            self.assertNotIn('five years', text)
+        self.assertIn('hired on or after enactment', signing_copy)
+        self.assertIn('commits to five years', signing_copy)
+        agreement = next((s for s in sentences if 'written service agreement' in s), '')
+        self.assertIn('For retention and signing bonuses', agreement)
+        self.assertNotIn('performance', agreement)
+
     def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']

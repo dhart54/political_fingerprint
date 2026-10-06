@@ -1,0 +1,75 @@
+{
+  "authority": "Source-backed same-owner correction of independently identified Major; no editorial acceptance",
+  "prior_checkpoint": "28062344552e23358be530780eb2b577fa6a1df4",
+  "finding_id": "IB-HR1-ICE-BONUS-CONDITION-SCOPE",
+  "severity": "Major",
+  "action_id": "house:119:1:190",
+  "prior_authoring_action_sha256": "73551b2767394c6f37e94b4f35a6d572461a86661619ecae3aafec027bbc31db",
+  "current_authoring_action_sha256": "c0162e23da0627557286a97974e28e225b63b45a805782e282569d74ccc8e9c0",
+  "prior_qualification_sha256": "d1e4deab82b2d9eec62f925236f0a68b363588264fa5b207b21db8b57692b785",
+  "current_qualification_sha256": "76e82b8badb8f527a57813b7b7b77de77d586d25eae4645cf7974404aa30135b",
+  "repairs": [
+    {
+      "before": "Director may grant exemplary-service performance, two-additional-year retention, or signing bonuses to a named officer/agent/attorney both hired on/after enactment and committed to five years. Signing is may, unlike House shall; retention/signing written agreement/termination predicates retained.",
+      "after": "The Director may provide a performance bonus to a named ICE agent, officer or attorney who demonstrates exemplary service. The Director may provide a retention bonus to a named ICE agent, officer or attorney who commits to two additional years of immigration-enforcement service. The Director may provide a signing bonus to a named ICE agent, officer or attorney only if that person is hired on or after enactment and commits to five years of immigration-enforcement service. Signing is may, unlike House shall. For retention and signing bonuses, the Director shall provide each qualifying individual a written service agreement with its required period, amount, payment and early-termination terms.",
+      "before_sha256": "ca91b22b6726a258e75187d449b6162e44c3f1660ea728680e83d0fb48bb4952",
+      "after_sha256": "927d01510109a3d49410919e5122f6c964198bbc08e3d6c28a24a936e3352d20"
+    }
+  ],
+  "primary_witnesses": [
+    {
+      "source_id": "govinfo:hr1eas",
+      "locator": "(B) Performance bonuses.",
+      "passage": "(B) Performance bonuses.--The Director of U.S. Immigration and Customs Enforcement, at the Director's discretion, may provide performance bonuses to any U.S. Immigration and Customs Enforcement agent, officer, or attorney who demonstrates exemplary service. ",
+      "passage_sha256": "a449965d4e1817e83f0ef33ed14f2c26421a719688003268424cd3be17ce7aa7"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "locator": "(C) Retention bonuses.",
+      "passage": "(C) Retention bonuses.--The Director of U.S. Immigration and Customs Enforcement may provide retention bonuses to any U.S. Immigration and Customs Enforcement agent, officer, or attorney who commits to 2 years of additional service with U.S. Immigration and Customs Enforcement to carry out immigration enforcement activities. ",
+      "passage_sha256": "a362d8d4547a4569632b7479c72210480c1b864c9f1b27509f640a4e2484a342"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "locator": "(D) Signing bonuses.",
+      "passage": "(D) Signing bonuses.--The Director of U.S. Immigration and Customs Enforcement may provide a signing bonus to any U.S. Immigration and Customs Enforcement agent, officer, or attorney who-- (i) is hired on or after the date of the enactment of this Act; and (ii) who commits to 5 years of service with U.S. Immigration and Customs Enforcement to carry out immigration enforcement activities. ",
+      "passage_sha256": "1ec93264ed222889fe32c1610f10b90861685d420bcdc4d06a5da8333a5e3e3a"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "locator": "(E) Service agreement.",
+      "passage": "(E) Service agreement.--In providing a retention or signing bonus under this paragraph, the Director of U.S. Immigration and Customs Enforcement shall provide each qualifying individual with a written service agreement that includes-- (i) the commencement and termination dates of the required service period (or provisions for the determination of such dates); (ii) the amount of the bonus; and (iii) any other term or condition under which the bonus is payable, subject to the requirements of this paragraph, including-- (I) the conditions under which the agreement may be terminated before the agreed-upon service period has been completed; and (II) the effect of a termination described in subclause (I). ",
+      "passage_sha256": "7d24abd37b207579eb4ef57bcb02ac5f988c9fe7e5cbcb617f110bc02c97c43d"
+    }
+  ],
+  "pending_cbp_preservation": ".tmp/checkpoint52_preserved_before_ice_bonus_correction/preservation_receipt.json",
+  "publication_authorized": false,
+  "receipt_sha256": "05cfe068639391bc507b3e90faca80984c107772460b1ff843c6bce0030d8b72",
+  "recurrence_review": {
+    "authority": "Bounded same-owner source-first review, not independent/full-corpus acceptance",
+    "scope": "New checkpoint 50 family/child and checkpoint 51 ICE meanings/qualifications for both actions, plus preserved uncommitted CBP meanings/qualifications; shared versus case-specific modifiers reconstructed against complete own source clauses",
+    "checks": [
+      "House and Senate family care pending-charge/person predicates are genuinely common to each own family purpose",
+      "UAC capacity/examination/age/encounter/disclosure/withdrawal conditions remain separately scoped, no imported CBP encounter into ORR",
+      "House retention/signing modal/service conditions remain separate; Senate repaired into three full sentences, agreement applies only to retention/signing",
+      "287(g), contiguous-return and VOICE condition scopes retain own actual predicates, no general fund-purpose crime/deputization/outcome inference",
+      "Pending House CBP restriction applies to personnel funds and tower tested/accepted is common to same tower",
+      "Pending Senate CBP restriction/tower scope differs; a4 duration absence and FLETC floor/ceiling remain explicitly separate, with proposed question 45 still uncommitted"
+    ],
+    "result": "Reported Senate bonus scope repaired; no additional material unintended common modifier established within checked scope. Pending CBP increment is preserved and remains uncommitted, not accepted."
+  },
+  "validation": {
+    "focused_tests": 40,
+    "focused_runtime_seconds": 9.786,
+    "semantic_checks": 7,
+    "byte_replay_files": 7,
+    "negative_regression_probe": {
+      "reviewed_commit": "28062344552e23358be530780eb2b577fa6a1df4",
+      "test": "test_senate_ice_bonus_conditions_remain_separate_by_bonus",
+      "tests_run": 1,
+      "assertion_failures": 1,
+      "errors": 0
+    },
+    "limits": "Tests prove regression detection/mechanical integrity, not independent semantic acceptance. Four primary witnesses compared; one qualification repaired, all 38 other actions, both meanings, sources/bindings/compacts and earlier repairs unchanged."
+  }
+}
