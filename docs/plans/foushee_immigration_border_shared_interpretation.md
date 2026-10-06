@@ -1719,3 +1719,66 @@ bondappeal/motion exception scope, practitioner payer, per-fee versus broader
 account-base references and LOPfunding limitation separate. Then remaining
 benefits/tax/remittance/child/enforcement funding, continuing/omnibus/NDAA and
 ordinary screening. Continue pre-push copy/predicate checks in every increment.
+
+
+## Checkpoint 33: House continuance and diversity fees
+
+House 70011 and 70015 now bind full operative paragraphs, complete pre-vote
+1229a(e)(1) and 1153(c). Both floor/EH comparisons are byte-identical; the
+original floor remains controlling. Four new binding hashes/lengths, prior/current
+House action hashes and the unchanged Senate action hash are recorded in
+hr1_continuance_diversity_fee_review.json. One new bounded diversity-program
+source reconstructs exactly; no family-preference parent context substitutes
+for the actual 203(c) program. All other 38 shared actions remain unchanged.
+
+Continuance fees require BOTH alien request AND immigration-judge grant, for
+each such continuance, with fiscal 2025 $100 minimum/higher rule authority,
+later CPI without printed rounding, Treasury and no waiver/reduction. The
+separate no-fee exception requires a grant based on exceptional circumstances.
+Full beyond-control/not-less-compelling boundaries and illustrative own
+person/event examples are explicit in both detail and qualification; they do
+not become an exclusive list, any family illness/death, ordinary good cause,
+a fee waiver, a denied-request charge or an actual judicial finding.
+
+Diversity application-at-filing $400 and program-registration-at-registration
+$250 minima/higher-rule amounts are separate. Only application CPI expressly
+rounds down to $10; both applicable fees have waiver/reduction bars. Separate
+10-percent fraud/program-cost and ICE shares concern section receipts, with
+unused/uncredited amounts to Treasury, without an assumed cash distribution.
+Existing allocation/geographic rules and high-school/equivalent OR the exact
+two-year-work/five-year-application/qualified-occupation alternative remain.
+Neither fee creates the program or establishes selection/visa issuance. No
+counterpart is imported into the unchanged Senate replacement.
+
+Source-first review checked both new qualifications separately, including
+the full person/event and work-duration predicates; selected compacts and all
+prior qualifications remain unchanged. 35 focused candidate tests pass (7.515s),
+seven semantic checks pass, seven outputs replay byte identically. Four new
+binding/copy hashes, both member output propagation, 98 bounded source witnesses,
+current audit/accounting/source/Clerk integrity and final diff verify. Validation
+is proportional to this House-only authoring extension; no release loop.
+Protected runtime/compiler/frontend/Health and candidate/public/persistence
+boundaries are unchanged. No independent acceptance of these new components.
+
+Core: 673872b549879d9075ba41d9889b2f3d077b9970187d4ce2e4beedadb4a7fcdc.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+Exact previous d06eee57879abf8a55e7d30a1452c8d04fdc2eb2 passes all nine CI jobs
+(run37506819521). Current exact-head CI follows push. Prior independent closure
+receipts remain bounded; wider source/copy review is same-owner evidence.
+
+Counts remain 455 reviews / 39 meanings / 36 episodes / 78 observations /
+70 findings; 221 ordinary screenings, two partial component reviews and
+30 legal/application questions. Now 1,208 governed sources (990 unchanged
+Health reuses / 218 new), 448 claims and 126 provisional captures. No package
+closure or full-corpus verdict. Original shutdown markers remain preserved;
+executor is active with no supplied current deadline or duplicate checkout.
+
+Next: exact House 70016 versus Senate 100013 EOIR fees, preserving every filing/
+adjudication event, practitioner payer, bond-appeal and narrow motion exceptions,
+section/subsection proceeds references and Legal Orientation Program funding
+restriction. Acquire the material pre-April1997 INA242B(c)(3)(B) baseline before
+interpreting its specific exception; current repealed-section notices are not
+operative historical text. Then remaining benefits, tax/remittance, child and
+enforcement funding; continuing/omnibus/NDAA and ordinary screening. Continue
+source-first compact/qualification predicate review before each push. No
+production, publication, promotion, acceptance, merge or deployment authority.
