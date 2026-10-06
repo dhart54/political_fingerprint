@@ -1,0 +1,1167 @@
+{
+  "authority": "Supervisor-prioritized bounded source-backed correction and current H.R. 1 condition/date recurrence review; no editorial acceptance",
+  "prior_checkpoint": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+  "historical_findings": [
+    {
+      "finding_id": "IB-HR1-CTC-HOUSE-AMOUNT-WINDOW",
+      "severity": "Major",
+      "reviewed_commit": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+      "problem": "Compressed before December 31, 2028 into before 2028, excluding taxable years beginning during 2028; affects House meaning and qualification",
+      "source_locator": "Governing House floor 110004(b), Congressional Record lines 13859-13863",
+      "state": "Locally corrected and validated; historical independent finding retained, no editorial acceptance"
+    },
+    {
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "severity": null,
+      "reviewed_commit": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+      "problem": "Unparenthesized issuance-category and due-date shorthand obscures common due-date predicate; Senate child-number condition needs explicit application to both claimant alternatives",
+      "state": "Locally corrected and validated; historical independent finding retained, no editorial acceptance",
+      "classification": "Material common-condition scope ambiguity as identified by the independent reviewer; no separate severity label supplied"
+    }
+  ],
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "cbf81c606190f9a0c3dc4867722da7a8e23cd4d167aea92ff686d602354c1453",
+    "house:119:1:190": "d9f054ad37ae6819bf8a793dddffa1553c81788561469f4cb893077ab26af6bf"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "163dc650d476898a0f079a235a7fd3c9d2fd5a17d703362d08bcfbf47afefaed",
+    "house:119:1:190": "e17243f570518a0e4ed67cffda97ece51b78abe317049fdf2bea1140d0253c29"
+  },
+  "repairs": [
+    {
+      "action_id": "house:119:1:145",
+      "field": "meaning",
+      "finding_id": "IB-HR1-CTC-HOUSE-AMOUNT-WINDOW",
+      "before": "Full section context extends 24(h), prints $2,500 for tax years beginning after 2024 AND BEFORE 2028 and $2,000 for SUBSEQUENT years, with its own inflation/refundable ceilings/rounding; those nominal figures are not an award to every household, and the specified credit-amount inflation begins after 2028 rather than 2028 itself.",
+      "after": "Full section context extends 24(h). The $2,500 substitution applies to taxable years beginning after December 31, 2024, and before December 31, 2028. The $2,000 substitution applies to any subsequent taxable year. Its separate credit-amount inflation applies in a taxable year beginning after 2028. Own refundable ceilings and rounding remain; these nominal amounts are not an award to every household.",
+      "before_sha256": "e8b85ef2cd5c7b6e14307b9c9da11cfa3e49fac9b79477ef081fc1c3fbd789de",
+      "after_sha256": "f0392119274723bd9c00f5aeda676dfdfd3eb99396573b739ceead7117678058",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended"
+    },
+    {
+      "action_id": "house:119:1:145",
+      "field": "limitations[31]",
+      "finding_id": "IB-HR1-CTC-HOUSE-AMOUNT-WINDOW",
+      "before": "Temporary $2,500 begins after 2024 AND before 2028; subsequent $2,000, own credit inflation only after 2028.",
+      "after": "The temporary $2,500 substitution applies to taxable years beginning after December 31, 2024, and before December 31, 2028. The $2,000 substitution applies to any subsequent taxable year. The separate credit-amount inflation applies in a taxable year beginning after 2028.",
+      "before_sha256": "52beccce4363cd98590cf6a34175312d5134f0fb2f994a4d060b1e61305ffd7c",
+      "after_sha256": "d2e153e37344eb1aabdede3d5431f79fcd092bb09a331e0d51d9d4388722fb88",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended"
+    },
+    {
+      "action_id": "house:119:1:145",
+      "field": "meaning",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "An SSN is not alone citizenship proof: both new definitions require SSA issuance TO A US CITIZEN OR UNDER THE NAMED WORK-AUTHORIZED-ALIEN BRANCH (including the specified catch-up portion) AND issuance BEFORE THE RETURN DUE DATE, not any number, ITIN or number issued for every SSA purpose.",
+      "after": "An SSN is not alone citizenship proof. Both new definitions permit SSA issuance to either a US citizen or an individual under the named work-authorized-alien branch, including the specified catch-up portion. In either case, the SSN must have been issued before the due date for the return. Any other SSA issuance purpose or an ITIN does not alone satisfy this definition.",
+      "before_sha256": "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45",
+      "after_sha256": "c91611c056d41aa1d5ce0b16e6d56387c3235c5fb0ee48b708027382dd4a7bc9",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended"
+    },
+    {
+      "action_id": "house:119:1:145",
+      "field": "limitations[31]",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "Defined SSN must be issued TO US CITIZEN OR NAMED WORK-AUTHORIZED-ALIEN BRANCH AND BEFORE RETURN DUE DATE; not any SSA number/ITIN/citizenship proof alone.",
+      "after": "The defined SSN may be issued to either a US citizen or an individual under the named work-authorized-alien branch. In either case, it must have been issued before the due date for the return. Any SSA number, an ITIN or citizenship proof alone is insufficient.",
+      "before_sha256": "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8",
+      "after_sha256": "a74ee4cf077053cbb9e26b0f8216b58301c747cf12c6ba95f2d95bfef3c224ea",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "meaning",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "An SSN is not alone citizenship proof: both new definitions require SSA issuance TO A US CITIZEN OR UNDER THE NAMED WORK-AUTHORIZED-ALIEN BRANCH (including the specified catch-up portion) AND issuance BEFORE THE RETURN DUE DATE, not any number, ITIN or number issued for every SSA purpose.",
+      "after": "An SSN is not alone citizenship proof. Both new definitions permit SSA issuance to either a US citizen or an individual under the named work-authorized-alien branch, including the specified catch-up portion. In either case, the SSN must have been issued before the due date for the return. Any other SSA issuance purpose or an ITIN does not alone satisfy this definition.",
+      "before_sha256": "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45",
+      "after_sha256": "c91611c056d41aa1d5ce0b16e6d56387c3235c5fb0ee48b708027382dd4a7bc9",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "limitations[29]",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "Defined SSN must be issued TO US CITIZEN OR NAMED WORK-AUTHORIZED-ALIEN BRANCH AND BEFORE RETURN DUE DATE; not any SSA number/ITIN/citizenship proof alone.",
+      "after": "The defined SSN may be issued to either a US citizen or an individual under the named work-authorized-alien branch. In either case, it must have been issued before the due date for the return. Any SSA number, an ITIN or citizenship proof alone is insufficient.",
+      "before_sha256": "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8",
+      "after_sha256": "a74ee4cf077053cbb9e26b0f8216b58301c747cf12c6ba95f2d95bfef3c224ea",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "meaning",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "Selected Senate section 70104 child-credit identification provisions require the TAXPAYER'S SSN OR, IN THE CASE OF A JOINT RETURN, THE SSN OF AT LEAST ONE SPOUSE, AND the QUALIFYING CHILD'S SSN.",
+      "after": "Selected Senate section 70104 requires the qualifying child's defined SSN in either case. The taxpayer must also include the taxpayer's defined SSN or, on a joint return, the defined SSN of at least one spouse.",
+      "before_sha256": "73ce187bbb3fc3560ac981226bb7c7adc1d57f9d4690a9c2f336d8ef1d933ed2",
+      "after_sha256": "70d50d7705a20bfd04deba624cf9c87b18d3eae56098dab39f7dbb782c437070",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "limitations[29]",
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "before": "Senate requires TAXPAYER OR ON JOINT RETURN AT LEAST ONE SPOUSE SSN, AND CHILD SSN; not both spouses on every joint return or a child number alone.",
+      "after": "The qualifying child's defined SSN is required in either case. The Senate also requires the taxpayer's defined SSN or, on a joint return, the defined SSN of at least one spouse. This is not both spouses on every joint return or a child number alone.",
+      "before_sha256": "23c83b6c83e970f63fda7cfe8ecb0d0be1f38a6b8e851bb2aaa77644da47a44f",
+      "after_sha256": "58089f94931e47f69a62b7a6f7355a0054ab1602819e40990d7b12a8bb339a90",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "limitations[21]",
+      "finding_id": "IB-HR1-CONDITION-RECURRENCE-CLARIFICATION",
+      "before": "EXCEPT for existing (v)(2)/(v)(4), State payment requires BOTH residence in a State/DC/US territory (COMMON TO EACH alternative) AND US citizen OR US national, defined LPR, HAS BEEN GRANTED defined Cuban/Haitian entrant status, OR lawful US residence under a referenced COFA.",
+      "after": "Except for existing (v)(2)/(v)(4), State payment requires residence in a State, DC or a US territory for every listed status alternative. The individual must also satisfy at least one listed category: US citizen or US national; defined LPR; an alien who has been granted defined Cuban/Haitian entrant status; or lawful US residence under a referenced COFA. The residence requirement applies in each case.",
+      "before_sha256": "8d439d168f8a2a91b79f8c89d6b3c400aa8c74ef57f23f118d8fda61d1e264fa",
+      "after_sha256": "f816c6b5a2421fd08e2d61807112137757a40a38f0eeb9d851162b6fdacbd994",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:190",
+      "field": "limitations[27]",
+      "finding_id": "IB-HR1-CONDITION-RECURRENCE-CLARIFICATION",
+      "before": "Senate tax is 1 PERCENT and ONLY named physical funding, subject to SEPARATE nonapplication: institution described (A)-(H) AND subject to BSA chapter 53/subchapter II, OR US-ISSUED debit/credit funding.",
+      "after": "Senate tax is 1 percent and concerns only the named physical funding, subject to separate nonapplication alternatives. One alternative requires funds withdrawn from an account held in or by an institution described in (A)-(H); that institution must also be subject to BSA chapter 53/subchapter II. The other alternative requires funding with a US-issued debit or credit card.",
+      "before_sha256": "a7cb40c11fb2bdc174ce6d78747ca041a16309f070d13e816212b487dd9ce4c4",
+      "after_sha256": "38dcf20f858ef87e1472522fa1c0c2ebda0fd94fe41d70ff2cc9ac8764cbf7e1",
+      "source_id": "govinfo:hr1eas"
+    },
+    {
+      "action_id": "house:119:1:145",
+      "field": "limitations[29]",
+      "finding_id": "IB-HR1-CONDITION-RECURRENCE-CLARIFICATION",
+      "before": "House remittance tax is 3.5 PERCENT; its exception requires BOTH written-agreement QUALIFIED PROVIDER AND provider-VERIFIED US CITIZEN OR NATIONAL, not mere assertion/any provider/SSN.",
+      "after": "House remittance tax is 3.5 percent. Its exception requires a written-agreement qualified provider and that provider must verify the sender as either a US citizen or a US national. The provider/agreement and verification conditions apply to both categories, rather than mere assertion, any provider or an SSN alone.",
+      "before_sha256": "15e5dfdffc23a88318f542e4453fe567caed25683da7036aca4b7e979ae2b120",
+      "after_sha256": "83cbf4c7b00d9a9af87a86201e2726a5608ae2c41e424262adfff229cc1d88a9",
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended"
+    }
+  ],
+  "primary_witnesses": [
+    {
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+      "section": 110004,
+      "passage": "SEC. 110004. EXTENSION OF INCREASED CHILD TAX CREDIT AND TEMPORARY ENHANCEMENT. (a) Extension of Expanded Child Tax Credit.--Section 24(h) is amended-- (1) in paragraph (1), by striking ``and before January 1, 2026,'', and (2) by striking ``2018 Through 2025'' in the heading and inserting ``Beginning After 2017''. (b) Increase in Child Tax Credit.--Section 24(h)(2) is amended to read as follows: ``(2) Credit amount.--Subsection (a) shall be applied by substituting-- ``(A) in the case of taxable years beginning after December 31, 2024, and before December 31, 2028, `$2,500' for `$1,000', or ``(B) in the case of any subsequent taxable year, `$2,000' for `$1,000'.''. (c) Social Security Number Required.--Section 24(h)(7) is amended to read as follows: ``(7) Social security number required.-- ``(A) In general.--No credit shall be allowed under this section to a taxpayer with respect to any qualifying child unless the taxpayer includes on the return of tax for the taxable year-- ``(i) such individual's social security number, ``(ii) the social security number of such qualifying child, and ``(iii) if the individual is married, the social security number of such individual's spouse. ``(B) Social security number.--For purposes of this paragraph, the term `social security number' means a social security number issued to an individual by the Social Security Administration, but only if the social security number is issued-- ``(i) to a citizen of the United States or pursuant to subclause (I) (or that portion of subclause (III) that relates to subclause (I)) of section 205(c)(2)(B)(i) of the Social Security Act, and ``(ii) before the due date for such return. [[Page H2299]] ``(C) Married individuals.--Rules similar to the rules of section 32(d) shall apply to this section.''. (d) Inflation Adjustments.-- (1) In general.--Section 24(i) is amended to read as follows: ``(i) Inflation Adjustments.-- ``(1) Maximum amount of refundable credit.--In the case of a taxable year beginning after 2024, the $1,400 amount in subsection (h)(5) shall be increased by an amount equal to-- ``(A) such dollar amount, multiplied by ``(B) the cost-of-living adjustment determined under section 1(f)(3) for the calendar year in which the taxable year begins, determined by substituting `2017' for `2016' in subparagraph (A)(ii) thereof. ``(2) Special rule for adjustment of credit amount.--In the case of a taxable year beginning after 2028, the $2,000 amount in subsection (h)(2)(B), shall be increased by an amount equal to-- ``(A) such dollar amount, multiplied by ``(B) the cost-of-living adjustment determined under section 1(f)(3) for the calendar year in which the taxable year begins, determined by substituting `2024' for `2016' in subparagraph (A)(ii) thereof. ``(3) Rounding.--If any increase under this subsection is not a multiple of $100, such increase shall be rounded to the next lowest multiple of $100.''. (e) Conforming Amendment.--Section 24(h)(5) is amended to read as follows: ``(5) Maximum amount of refundable credit.--The amount determined under subsection (d)(1)(A) with respect to any qualifying child shall not exceed $1,400, and such subsection shall be applied without regard to paragraph (4) of this subsection.''. (f) Treatment of Certain Benefits of Members of Religious and Apostolic Associations as Earned Income.--Section 24(d)(1) is amended by adding at the end the following: ``For purposes of subparagraph (B), any amount treated as a dividend received under the last sentence of section 501(d) shall be treated as earned income which is taken into account in computing taxable income for the taxable year.''. (g) Omission of Correct Social Security Number Treated as Mathematical or Clerical Error.--Section 6213(g)(2)(I) is amended by striking ``section 24(e)'' and inserting ``section 24''. (h) Effective Date.--The amendments made by this section shall apply to taxable years beginning after December 31, 2024. ",
+      "passage_sha256": "d9984b63b88070167898f2cbea0dbdfd6bd417ba40b86c7f0c1b5da6405ff99d"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "section": 70104,
+      "passage": "SEC. 70104. EXTENSION AND ENHANCEMENT OF INCREASED CHILD TAX CREDIT. (a) Extension and Increase of Expanded Child Tax Credit.--Section 24(h) is amended-- (1) in paragraph (1), by striking ``, and before January 1, 2026'', (2) in paragraph (2), by striking ``$2,000'' and inserting ``$2,200'', and (3) by striking ``2018 Through 2025'' in the heading and inserting ``Beginning After 2017''. (b) Social Security Number Required.--Section 24(h)(7) is amended to read as follows: ``(7) Social security number required.-- ``(A) In general.--No credit shall be allowed under this section to a taxpayer with respect to any qualifying child unless the taxpayer includes on the return of tax for the taxable year-- ``(i) the taxpayer's social security number (or, in the case of a joint return, the social security number of at least 1 spouse), and ``(ii) the social security number of such qualifying child. ``(B) Social security number.--For purposes of this paragraph, the term `social security number' means a social security number issued to an individual by the Social Security Administration, but only if the social security number is issued-- ``(i) to a citizen of the United States or pursuant to subclause (I) (or that portion of subclause (III) that relates to subclause (I)) of section 205(c)(2)(B)(i) of the Social Security Act, and ``(ii) before the due date for such return.''. (c) Inflation Adjustments.--Section 24(i) is amended to read as follows: ``(i) Inflation Adjustments.-- ``(1) Maximum amount of refundable credit.--In the case of a taxable year beginning after 2024, the $1,400 amount in subsection (h)(5) shall be increased by an amount equal to-- ``(A) such dollar amount, multiplied by ``(B) the cost-of-living adjustment determined under section 1(f)(3) for the calendar year in which the taxable year begins, determined by substituting `2017' for `2016' in subparagraph (A)(ii) thereof. ``(2) Special rule for adjustment of credit amount.--In the case of a taxable year beginning after 2025, the $2,200 amount in subsection (h)(2) shall be increased by an amount equal to-- ``(A) such dollar amount, multiplied by ``(B) the cost-of-living adjustment determined under section 1(f)(3) for the calendar year in which the taxable year begins, determined by substituting `2024' for `2016' in subparagraph (A)(ii) thereof. ``(3) Rounding.--If any increase under this subsection is not a multiple of $100, such increase shall be rounded to the next lowest multiple of $100.''. (d) Conforming Amendment.--Section 24(h)(5) is amended to read as follows: ``(5) Maximum amount of refundable credit.--The amount determined under subsection (d)(1)(A) with respect to any qualifying child shall not exceed $1,400, and such subsection shall be applied without regard to paragraph (4) of this subsection.''. (e) Omission of Correct Social Security Number Treated as Mathematical or Clerical Error.--Section 6213(g)(2)(I) is amended by striking ``section 24(e)'' and inserting ``section 24''. (f) Effective Date.--The amendments made by this section shall apply to taxable years beginning after December 31, 2024. ",
+      "passage_sha256": "aa4e7fb116e811d696a612e1622e820456fbf701b2a9925cbc38ba1986cdd3be"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "section": 71109,
+      "passage": "SEC. 71109. ALIEN MEDICAID ELIGIBILITY. (a) Medicaid.--Section 1903(v) of the Social Security Act (42 U.S.C. 1396b(v)) is amended-- (1) in paragraph (1), by striking ``and (4)''and inserting ``, (4), and (5)''; and (2) by adding at the end the following new paragraph: ``(5) Notwithstanding the preceding paragraphs of this subsection, beginning on October 1, 2026, except as provided in paragraphs (2) and (4), in no event shall payment be made to a State under this section for medical assistance furnished to an individual unless such individual is-- ``(A) a resident of 1 of the 50 States, the District of Columbia, or a territory of the United States; and ``(B) either-- ``(i) a citizen or national of the United States; ``(ii) an alien lawfully admitted for permanent residence as an immigrant as defined by sections 101(a)(15) and 101(a)(20) of the Immigration and Nationality Act, excluding, among others, alien visitors, tourists, diplomats, and students who enter the United States temporarily with no intention of abandoning their residence in a foreign country; ``(iii) an alien who has been granted the status of Cuban and Haitian entrant, as defined in section 501(e) of the Refugee Education Assistance Act of 1980 (Public Law 96-422); or ``(iv) an individual who lawfully resides in the United States in accordance with a Compact of Free Association referred to in section 402(b)(2)(G) of the Personal Responsibility and Work Opportunity Reconciliation Act of 1996.''. (b) CHIP.--Section 2107(e)(1) of the Social Security Act, as amended by section 71103(b), is further amended-- (1) by redesignating subparagraphs (R) through (V) as paragraphs (S) through (W), respectively; and (2) by inserting after paragraph (Q) the following: ``(R) Section 1903(v)(5) (relating to payments for medical assistance furnished to aliens), except in relation to payments for services provided under section 2105(a)(1)(D)(ii).''. (c) Implementation Funding.--For the purposes of carrying out the provisions of, and the amendments made by, this section, there are appropriated, out of any monies in the Treasury not otherwise appropriated, to the Administrator of the Centers for Medicare & Medicaid Services, $15,000,000 for fiscal year 2026, to remain available until expended. ",
+      "passage_sha256": "d5ef3bce8626c66469bc42a193c5fc6b4e711343eadbf18f6176cdd7d5f8e914"
+    },
+    {
+      "source_id": "govinfo:hr1eas",
+      "section": 70604,
+      "passage": "SEC. 70604. EXCISE TAX ON CERTAIN REMITTANCE TRANSFERS. (a) In General.--Chapter 36 is amended by inserting after subchapter B the following new subchapter: ``Subchapter C--Remittance Transfers ``Sec. 4475. Imposition of tax. ``SEC. 4475. IMPOSITION OF TAX. ``(a) In General.--There is hereby imposed on any remittance transfer a tax equal to 1 percent of the amount of such transfer. ``(b) Payment of Tax.-- ``(1) In general.--The tax imposed by this section with respect to any remittance transfer shall be paid by the sender with respect to such transfer. ``(2) Collection of tax.--The remittance transfer provider with respect to any remittance transfer shall collect the amount of the tax imposed under subsection (a) with respect to such transfer from the sender and remit such tax quarterly to the Secretary at such time and in such manner as provided by the Secretary, ``(3) Secondary liability.--Where any tax imposed by subsection (a) is not paid at the time the transfer is made, then to the extent that such tax is not collected, such tax shall be paid by the remittance transfer provider. ``(c) Tax Limited to Cash and Similar Instruments.--The tax imposed under subsection (a) shall apply only to any remittance transfer for which the sender provides cash, a money order, a cashier's check, or any other similar physical instrument (as determined by the Secretary) to the remittance transfer provider. ``(d) Nonapplication to Certain Noncash Remittance Transfers.-- Subsection (a) shall not apply to any remittance transfer for which the funds being transferred are-- ``(1) withdrawn from an account held in or by a financial institution-- ``(A) which is described in subparagraphs (A) through (H) of section 5312(a)(2) of title 31, United States Code, and ``(B) that is subject to the requirements under subchapter II of chapter 53 of such title, or ``(2) funded with a debit card or a credit card which is issued in the United States. ``(e) Definitions.--For purposes of this section-- ``(1) In general.--The terms `remittance transfer', `remittance transfer provider', and `sender' shall each have the respective meanings given such terms by section 919(g) of the Electronic Fund Transfer Act (15 U.S.C. 1693o-1(g)). ``(2) Credit card.--The term `credit card' has the same meaning given such term under section 920(c)(3) of the Electronic Fund Transfer Act (15 U.S.C. 1693o-2(c)(3)). ``(3) Debit card.--The term `debit card' has the same meaning given such term under section 920(c)(2) of the Electronic Fund Transfer Act (15 U.S.C. 1693o-2(c)(2)), without regard to subparagraph (B) of such section. ``(f) Application of Anti-conduit Rules.--For purposes of section 7701(l), with respect to any multiple-party arrangements involving the sender, a remittance transfer shall be treated as a financing transaction.''. (b) Conforming Amendment.--The table of subchapters for chapter 36 is amended by inserting after the item relating to subchapter B the following new item: ``subchapter c--remittance transfers''. (c) Effective Date.--The amendments made by this section shall apply to transfers made after December 31, 2025. ",
+      "passage_sha256": "24a7216446993b05a32f3cb412c343d7b60044e0d8e04b006b546c20468c7880"
+    },
+    {
+      "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+      "section": 112104,
+      "passage": "SEC. 112104. EXCISE TAX ON REMITTANCE TRANSFERS. (a) In General.--Chapter 36 is amended by inserting after subchapter B the following new subchapter: ``Subchapter C--Remittance Transfers ``Sec. 4475. Imposition of tax. ``SEC. 4475. IMPOSITION OF TAX. ``(a) In General.--There is hereby imposed on any remittance transfer a tax equal to 3.5 percent of the amount of such transfer. ``(b) Payment of Tax.-- ``(1) In general.--The tax imposed by this section with respect to any remittance transfer shall be paid by the sender with respect to such transfer. ``(2) Collection.--The remittance transfer provider with respect to any remittance transfer shall collect the amount of the tax imposed under subsection (a) with respect to such transfer from the sender and remit such tax quarterly to the Secretary at such time and in such manner as provided by the Secretary. ``(3) Secondary liability.--Where any tax imposed by subsection (a) is not paid at the time the transfer is made, then to the extent that such tax is not collected, such tax shall be paid by the remittance transfer provider. ``(c) Exception for Remittance Transfers Sent by Citizens and Nationals of the United States Through Certain Providers.-- ``(1) In general.--Subsection (a) shall not apply to any remittance transfer with respect to which the remittance transfer provider is a qualified remittance transfer provider and the sender is a verified United States sender. ``(2) Qualified remittance transfer provider.--For purposes of this subsection, the term `qualified remittance transfer provider' means any remittance transfer provider which enters into a written agreement with the Secretary pursuant to which such provider agrees to verify the status of senders as citizens or nationals of the United States in such manner, and in accordance with such procedures, as the Secretary may specify. ``(3) Verified united states sender.--For purposes of this subsection, the term `verified United States sender' means any sender who is verified by a qualified remittance transfer provider as being a citizen or national of the United States pursuant to an agreement described in paragraph (2). ``(d) Definitions.--For purposes of this section, the terms `remittance transfer', `remittance transfer provider', `designated recipient', and `sender' shall each have the respective meanings given such terms by section 920(g) of the Electronic Fund Transfer Act (15 U.S.C. 1693o-1; relating to ``Remittance Transfers''). ``(e) Application of Anti-conduit Rules.--For purposes of section 7701(l) with respect to any multiple-party arrangements involving the sender, a remittance transfer shall be treated as a financing transaction.''. (b) Refundable Income Tax Credit Allowed to Citizens and Nationals of the United States for Excise Tax on Remittance Transfers.--Subpart C of part IV of subchapter A of chapter 1 is amended by inserting after section 36B the following new section: ``SEC. 36C. CREDIT FOR EXCISE TAX ON REMITTANCE TRANSFERS OF CITIZENS AND NATIONALS OF THE UNITED STATES. ``(a) In General.--In the case of any individual, there shall be allowed as a credit against the tax imposed by this subtitle for any taxable year an amount equal to the aggregate amount of taxes paid by such individual under section 4475 during such taxable year. ``(b) Social Security Number Requirement.-- ``(1) In general.--No credit shall be allowed under this section unless the taxpayer includes on the return of tax for the taxable year-- ``(A) the individual's social security number, and ``(B) if the individual is married, the social security number of such individuals's spouse. ``(2) Social security number.--For purposes of this subsection, the term `social security number' has the meaning given such term in section 24(h)(7). ``(3) Married individuals.--Rules similar to the rules of section 32(d) shall apply to this section. ``(c) Substantiation Requirements.--No credit shall be allowed under this section unless the taxpayer demonstrates to the satisfaction of the Secretary that the tax under section 4475 with respect to which such credit is determined-- ``(1) was paid by the taxpayer, and ``(2) is with respect to a remittance transfer with respect to which the taxpayer provided to the remittance transfer provider the certification and information referred to in section 6050BB(a)(2). ``(d) Definitions.--Any term used in this section which is also used in section 4475 shall have the meaning given such term in section 4475. ``(e) Application of Anti-conduit Rules.--For rules providing for the application of the anti-conduit rules of section 7701(l) to remittance transfers, see section 4475(e).''. (c) Reporting by Remittance Transfer Providers.-- (1) In general.--Subpart B of part III of subchapter A of chapter 61, as amended by the preceding provisions of this Act, is amended by adding at the end the following new section: ``SEC. 6050BB. RETURNS RELATING TO REMITTANCE TRANSFERS. ``(a) In General.--Each remittance transfer provider shall make a return at such time as the Secretary may provide setting forth-- ``(1) in the case of a qualified remittance transfer provider with respect to remittance transfers to which section 4475(a) does not apply by reason of section 4475(c), the aggregate number and value of such transfers, [[Page H2330]] ``(2) in the case of any remittance transfer not described in paragraph (1) and with respect to which the sender certifies to the remittance transfer provider an intent to claim the credit under section 36C and provides the information described in paragraph (1)-- ``(A) the name, address, and social security number of the sender, ``(B) the amount of tax paid by the sender under section 4475(b)(1), and ``(C) the amount of tax remitted by the remittance transfer provider under section 4475(b)(2), and ``(3) in the case of any remittance transfer not included under paragraph (1) or (2)-- ``(A) the aggregate amount of tax paid under section 4475(b)(1) with respect to such transfers, and ``(B) the aggregate amount of tax remitted under section 4475(b)(2) with respect to such transfers. ``(b) Statement to Be Furnished to Named Persons.--Every person required to make a return under subsection (a) shall furnish, at such time as the Secretary may provide, to each person whose name is required to be set forth in such return a written statement showing-- ``(1) the name and address of the information contact of the required reporting person, and ``(2) the information described in subsection (a)(2) which relates to such person. ``(c) Definitions.--Any term used in this section which is also used in section 4475 shall have the meaning given such term in such section.''. (2) Penalties.--Section 6724(d), as amended by the preceding provisions of this Act, is amended-- (A) in paragraph (1)(B), by striking ``or'' at the end of clause (xxviii), by striking ``and'' at the end of clause (xxix) and inserting ``or'', and by adding at the end the following new clause: ``(xxx) section 6050BB(a) (relating to returns relating to remittance transfers), and'', and (B) in paragraph (2), by striking ``or'' at the end of subparagraph (NN), by striking the period at the end of subparagraph (OO) and inserting ``, or'', and by inserting after subparagraph (OO) the following new subparagraph: ``(PP) section 6050BB(b) (relating to statements relating to remittance transfers).''. (d) Conforming Amendments.-- (1) Section 6211(b)(4)(A) is amended by inserting ``36C,'' after ``36B,''. (2) Section 6213(g)(2), as amended by the preceding provisions of this Act, is amended by striking ``and'' at the end of subparagraph (Z), by the striking the period at the end of subparagraph (AA) and inserting ``, and'', and by inserting after subparagraph (AA) the following new subparagraph: ``(BB) an omission of a correct social security number under section 36C(b) to be included on a return.''. (3) Section 1324(b)(2) of title 31, United States Code, is amended by inserting ``36C,'' after ``36B,''. (4) The table of sections for subpart C of part IV of subchapter A of chapter 1 is amended by inserting after the item relating to section 36B the following new item: ``Sec. 36C. Credit for excise tax on remittance transfers of citizens and nationals of the United States.''. (5) The table of sections for subpart B of part III of subchapter A of chapter 61 is amended by adding at the end the following new item: ``Sec. 6050BB. Returns relating to remittance transfers.''. (6) The table of subchapters for chapter 36 is amended by inserting after the item relating to subchapter B the following new item: ``subchapter c--remittance transfers''. (e) Effective Date.-- (1) In general.--Except as otherwise provided in this subsection, the amendments made by this section shall apply to transfers made after December 31, 2025. (2) Tax credit.--The amendments made by subsection (b), and paragraphs (1) through (4) of subsection (d), shall apply to taxable years ending after December 31, 2025. ",
+      "passage_sha256": "58376d320b032df27d3e6b7640130d9906fd15103f15ed0327119f55b599642d"
+    }
+  ],
+  "recurrence_scope": "Only current H.R. 1 meanings, compact descriptions and qualifications; preserved pending senior tranche separately, no repository-wide historical reconciliation",
+  "publication_authorized": false,
+  "receipt_sha256": "3a0e63b7bb9993584bc589263e09123cac4ba069573c31ea8a5591e5ef421291",
+  "recurrence_review": {
+    "authority": "Bounded same-owner source-first current-copy recurrence review, not independent whole-package acceptance",
+    "trigger_inventory": [
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "DHS MAY reimburse after the visa period of validity expires if the alien demonstrates ONE of three printed alternatives: did not seek admission during that validity period; OR after admission complied with ALL visa conditions, including no unauthorized employment, AND departed no later than five days after the date authorized to remain in the US; OR FILED to extend, change or adjust status within the visa validity period.",
+        "sentence_sha256": "45cc15d37e2677f5162824fee67582594ac32b4c4b8676bb63dee3a3ff7482f7",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Complete pre-vote1229a(b)(5)(C)(ii) allows the identified motion at any time upon demonstrating either lack of notice in accordance with1229(a)(1) OR(a)(2), OR Federal/State custody AND nonappearance through no fault of the alien.",
+        "sentence_sha256": "8aa7b84ae25f97d34bd08c4e95c5009c2ba8dae0fc84da4adb80d32841b2a2ad",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Complete historical1252b(c)(3)(B) likewise allows the identified motion at any time upon demonstrating lack of notice in accordance with its(a)(2), OR Federal/State custody AND nonappearance through no fault of the alien.",
+        "sentence_sha256": "f76844771be9a3fc210a3e06e9306b8cbee558fc2f85829f15ef349e9421c0a0",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "US RESIDENCE is common to EACH of the four alternatives, AND the individual must meet at least one listed category: (A) a citizen OR NATIONAL of the UNITED STATES; (B) the defined lawful permanent-resident immigrant, retaining the express exclusion of ordinary temporary visitors/tourists/diplomats/students with no intention of abandoning foreign residence; (C) the version's own status category described below; OR (D) an individual lawfully residing in the US IN ACCORDANCE WITH a Compact of Free Association referred to in PRWORA402(b)(2)(G).",
+        "sentence_sha256": "35e953ac56670066cb8e0a9bf5f16a97edfeee44df858162407d746614dd796b",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "That unamended printed OR is retained rather than silently replaced with AND or treated as a new resolved legal decision on every combined evidentiary path.",
+        "sentence_sha256": "e5d2f859c1cc7d7c33fa3f9f9b20da0e3d10edf0bada7b3ecce536275a8dfe2b",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The financial-assistance alternative requires assistance TO OR ON BEHALF OF an alien who is BOTH not a qualified alien under the proposal's modified definition AND not a lawfully US-residing child or pregnant woman RECEIVING MEDICAL ASSISTANCE UNDER 1903(v)(4), FOR purchasing defined health-insurance coverage FOR an alien who ALSO satisfies BOTH of those exclusions.",
+        "sentence_sha256": "cf235be75191bf9e5ae6a9ab1d2263d6c723492a6cd5e0d01f9234359cca721b",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Existing 36B(e)(2) whole-period citizenship/nationality/lawful-presence wording is retained as subparagraph(A); the new eligible-alien provision concerns an individual who IS AN ALIEN AND LAWFULLY PRESENT and who IS, AND IS REASONABLY EXPECTED TO BE FOR THE ENTIRE CREDIT-ENROLLMENT PERIOD, within its own listed LPR, version-specific Cuban-related, OR COFA-lawful-residence category.",
+        "sentence_sha256": "7c018a57b052cfce05497f5c3c85bac82b0ed2c763890d3f24ca4680181fc5c7",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The status provision's non-conforming amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2026; its conforming amendments apply to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2027.",
+        "sentence_sha256": "96f4954b89f334420bd6482abcd387520c8613cd3af2a675976aca63d2566eb3",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Amendments in these selected sections apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027; the incorporated Senate rule's post-2025 scope is not substituted as the statute's effective date.",
+        "sentence_sha256": "4aad519ad0aa2952392aeb095d4841daf548e483b0e3d5e9d58731120325a7b9",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The related House section 44201(b)(1) income-verification amendment applies to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026.",
+        "sentence_sha256": "fa7d16741d21317bb29008b425b4ac79f9f20f8545c50e23cf6ce3f44e2fb16f",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Its specified-income-discrepancy branch requires ALL of an attested projected annual household income qualifying under 36B(c)(1)(A), Treasury OR RELIABLE third-party data indicating income below that applicable-taxpayer floor, an excess over the data by an Exchange-established AND Secretary-approved reasonable threshold of NOT LESS THAN 10 PERCENT (which may ALSO be a dollar amount), AND no Exchange assessment/determination from those data that household income meets the applicable Medicaid OR CHIP income standard.",
+        "sentence_sha256": "c057b1d310662d4e61793576596f2e4e4a2f4373bdf73effd244f1ae96e0f796",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Its annual advance-credit rule applies to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026 for an individual whose prior advance premium credit was paid TO THE PLAN ISSUER for the RELEVANT PRIOR TAX YEAR.",
+        "sentence_sha256": "ca3404bfbc28c5729948c066941e1ca2556ae87cde951699910f92d26f3bd3a6",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The separate(b)(3) provision directs removal of 155.315(f)(7) for PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026, so an Exchange providing the named 90-day inconsistency opportunity may NOT AUTOMATICALLY EXTEND IT ON THE BASIS THAT THE APPLICANT MUST PRESENT SATISFACTORY HOUSEHOLD-INCOME DOCUMENTS.",
+        "sentence_sha256": "e6f935ad15bed173b87f56ab62fe51b5aa4ba5ab051c2e9504ffd1ca5a6ee8a7",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Transfer amendments apply to TRANSFERS MADE AFTER DECEMBER 31, 2025, not the vote date or a substituted later enacted date.",
+        "sentence_sha256": "211382788a893e9841c8383d4c68a11ea5e239c5b32ee27f05fc997aa004b977",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The House exception requires BOTH a QUALIFIED REMITTANCE PROVIDER with a WRITTEN AGREEMENT WITH THE SECRETARY to verify citizen/national status by prescribed procedures AND a sender VERIFIED BY THAT QUALIFIED PROVIDER AS A US CITIZEN OR NATIONAL pursuant to the agreement.",
+        "sentence_sha256": "bb12f81fecf169eb33f45939c30c8238da5da9a08fbc6da5a1495b81f32665b0",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The selected transfer provisions start after December 31, 2025; the new credit and its named conforming amendments instead apply to TAXABLE YEARS ENDING AFTER DECEMBER 31, 2025, not taxable years BEGINNING then.",
+        "sentence_sha256": "9ea3bfa82a590a20ddf4c21558d4a4305e09a4a3fd6e4d168b9feba6aba0c797",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Subsection (i)(4) prints that amendments MADE BY THIS SECTION apply WITH RESPECT TO PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026; that wording is preserved alongside the other distinct 44201 dates, without a personal termination date or silently narrowing its section referent.",
+        "sentence_sha256": "7c998d257fcf5c6c11784a8aa265911d3283911d1af2d384a49ec17c0fbbcd1d",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The child-credit amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "6d10335f900c90afa7c74b35b978f9b8a670fca3832447bf89b3cd7900e4e74e",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Full section context extends 24(h), prints $2,500 for tax years beginning after 2024 AND BEFORE 2028 and $2,000 for SUBSEQUENT years, with its own inflation/refundable ceilings/rounding; those nominal figures are not an award to every household, and the specified credit-amount inflation begins after 2028 rather than 2028 itself.",
+        "sentence_sha256": "e8b85ef2cd5c7b6e14307b9c9da11cfa3e49fac9b79477ef081fc1c3fbd789de",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "e8b85ef2cd5c7b6e14307b9c9da11cfa3e49fac9b79477ef081fc1c3fbd789de"
+        ]
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "An SSN is not alone citizenship proof: both new definitions require SSA issuance TO A US CITIZEN OR UNDER THE NAMED WORK-AUTHORIZED-ALIEN BRANCH (including the specified catch-up portion) AND issuance BEFORE THE RETURN DUE DATE, not any number, ITIN or number issued for every SSA purpose.",
+        "sentence_sha256": "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45"
+        ]
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[21]",
+        "sentence": "The bond-appeal exception and the narrow IN-ABSENTIA REOPENING motions remain separate: upon DEMONSTRATION of (lack of the specifically required notice) OR (Federal/State custody AND nonappearance through no fault), not any custody/missed hearing or all motions/reconsideration/180-day exceptional-circumstances claims.",
+        "sentence_sha256": "afcdec04b4253543bceff95d9b8d04907fae6435631b993cb5736ee3cd5ecbf0",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[22]",
+        "sentence": "SNAP10012 requires BOTH US RESIDENCE (common to EACH alternative) AND at least ONE own listed status: UScitizen OR USnational; definedLPR; version-specific(C); OR lawful USresidence INACCORDANCEWITH a referencedCOFA.",
+        "sentence_sha256": "d8c865f2ff1e7085eb605529ed68cf00e5103d2fdd432f54a769f6f7fb011d8e",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[27]",
+        "sentence": "Sections 112201/71303 apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027, distinct from the House discrepancy PLAN YEARS ON/AFTER JANUARY 1, 2026 and the Senate incorporated-rule duration.",
+        "sentence_sha256": "3d71c34f96571e06ad5d067b82de2b7fba030628f62d984892ae6383951a0ad4",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[29]",
+        "sentence": "House remittance tax is 3.5 PERCENT; its exception requires BOTH written-agreement QUALIFIED PROVIDER AND provider-VERIFIED US CITIZEN OR NATIONAL, not mere assertion/any provider/SSN.",
+        "sentence_sha256": "15e5dfdffc23a88318f542e4453fe567caed25683da7036aca4b7e979ae2b120",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "15e5dfdffc23a88318f542e4453fe567caed25683da7036aca4b7e979ae2b120"
+        ]
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[29]",
+        "sentence": "Transfers apply AFTER DECEMBER 31, 2025.",
+        "sentence_sha256": "ed3a9af8b08a9873e166b5c945f9c9f81805dc5af0407b61b21fb64987a2143d",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[30]",
+        "sentence": "Literal amendments MADE BY THIS SECTION apply WITH RESPECT TO PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026.",
+        "sentence_sha256": "33459e21932f595e9237758b87d4abb5302c476524f51f253485eaeb8a168e04",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[31]",
+        "sentence": "Temporary $2,500 begins after 2024 AND before 2028; subsequent $2,000, own credit inflation only after 2028.",
+        "sentence_sha256": "52beccce4363cd98590cf6a34175312d5134f0fb2f994a4d060b1e61305ffd7c",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "52beccce4363cd98590cf6a34175312d5134f0fb2f994a4d060b1e61305ffd7c"
+        ]
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[31]",
+        "sentence": "Both child-credit amendments begin with TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "191e3f358a11829cf682fa66e49f0bc7a03251083fa6754383a3e1691cd3d677",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[31]",
+        "sentence": "Defined SSN must be issued TO US CITIZEN OR NAMED WORK-AUTHORIZED-ALIEN BRANCH AND BEFORE RETURN DUE DATE; not any SSA number/ITIN/citizenship proof alone.",
+        "sentence_sha256": "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8"
+        ]
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "DHS MAY reimburse after the visa period of validity expires only if the alien demonstrates compliance with ALL visa conditions after admission, including no unauthorized employment, AND one of two printed alternatives: (A) did not seek to extend the period of admission during the visa validity period AND departed no later than five days after the last day of \"such period\"; OR (B) during that validity period WAS GRANTED an extension of nonimmigrant status or adjustment to lawful permanent resident status.",
+        "sentence_sha256": "d0a725eb7596c2f7592823cc4b6d64db9f10a5e6f4a6a68253ee93d338b30c37",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Complete pre-vote1229a(b)(5)(C)(ii) allows the identified motion at any time upon demonstrating either lack of notice in accordance with1229(a)(1) OR(a)(2), OR Federal/State custody AND nonappearance through no fault of the alien.",
+        "sentence_sha256": "8aa7b84ae25f97d34bd08c4e95c5009c2ba8dae0fc84da4adb80d32841b2a2ad",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Complete historical1252b(c)(3)(B) likewise allows the identified motion at any time upon demonstrating lack of notice in accordance with its(a)(2), OR Federal/State custody AND nonappearance through no fault of the alien.",
+        "sentence_sha256": "f76844771be9a3fc210a3e06e9306b8cbee558fc2f85829f15ef349e9421c0a0",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "US RESIDENCE is common to EACH of the four alternatives, AND the individual must meet at least one listed category: (A) a citizen OR NATIONAL of the UNITED STATES; (B) the defined lawful permanent-resident immigrant, retaining the express exclusion of ordinary temporary visitors/tourists/diplomats/students with no intention of abandoning foreign residence; (C) the version's own status category described below; OR (D) an individual lawfully residing in the US IN ACCORDANCE WITH a Compact of Free Association referred to in PRWORA402(b)(2)(G).",
+        "sentence_sha256": "35e953ac56670066cb8e0a9bf5f16a97edfeee44df858162407d746614dd796b",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate 71109 adds 1903(v)(5), beginning October 1, 2026: EXCEPT for existing (v)(2) emergency care and (v)(4) State-option assistance, payment to a State for medical assistance requires BOTH residence in one of the 50 States, the District of Columbia or a US territory AND at least ONE own listed status: US citizen OR US national; the defined lawful permanent-resident immigrant; an alien who HAS BEEN GRANTED defined Cuban and Haitian entrant status; OR lawful US residence IN ACCORDANCE WITH a referenced Compact of Free Association.",
+        "sentence_sha256": "e2f29f82508b5a94e4590ff441df7d361a54de5d541d8586a5d887c8ccdb831e",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Special entrant parole/subsequent special status retains its own service-time wording; OTHER Cuban/Haitian nationals require their own parole-with-no-other-acquired-INA-status OR removal-proceedings OR pending-asylum alternative AND no final, nonappealable, legally enforceable removal order.",
+        "sentence_sha256": "195ab008a4e95c30e89edb465b6acf4beb02d2ead232642ddffb399c270d61d9",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The complete definition retains the special-parole/subsequent-special-status category's service-time wording, and the OTHER Cuban/Haitian-national category's (parole with NO other-acquired-INA-status OR removal proceedings OR pending asylum) AND NO final/nonappealable/legally-enforceable removal-order grouping.",
+        "sentence_sha256": "04a5b85ff305107b32c4cbaa4f4ca4e3b9497a3cdf84afd5a1fe358910e5d097",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Existing 36B(e)(2) whole-period citizenship/nationality/lawful-presence wording is retained as subparagraph(A); the new eligible-alien provision concerns an individual who IS AN ALIEN AND LAWFULLY PRESENT and who IS, AND IS REASONABLY EXPECTED TO BE FOR THE ENTIRE CREDIT-ENROLLMENT PERIOD, within its own listed LPR, version-specific Cuban-related, OR COFA-lawful-residence category.",
+        "sentence_sha256": "7c018a57b052cfce05497f5c3c85bac82b0ed2c763890d3f24ca4680181fc5c7",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The status provision's non-conforming amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2026; its conforming amendments apply to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2027.",
+        "sentence_sha256": "96f4954b89f334420bd6482abcd387520c8613cd3af2a675976aca63d2566eb3",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Amendments in these selected sections apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027; the incorporated Senate rule's post-2025 scope is not substituted as the statute's effective date.",
+        "sentence_sha256": "4aad519ad0aa2952392aeb095d4841daf548e483b0e3d5e9d58731120325a7b9",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The Senate filing-compliance clause names ONLY 45 CFR 155.305(f)(4)(iii) AS PUBLISHED JUNE 25, 2025 (90 FR 27074), APPLIED AS THOUGH TO ALL PLAN YEARS AFTER 2025.",
+        "sentence_sha256": "72b5c7425b4d879ed5c51c024a8317258e300377026687e913ce75301787a88e",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Transfer amendments apply to TRANSFERS MADE AFTER DECEMBER 31, 2025, not the vote date or a substituted later enacted date.",
+        "sentence_sha256": "211382788a893e9841c8383d4c68a11ea5e239c5b32ee27f05fc997aa004b977",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Nonapplication covers funds WITHDRAWN FROM AN ACCOUNT held in/by an institution BOTH DESCRIBED IN 31 USC 5312(a)(2)(A)-(H) AND SUBJECT TO SUBCHAPTER II OF CHAPTER 53 requirements, OR funds PROVIDED WITH A DEBIT OR CREDIT CARD ISSUED IN THE US.",
+        "sentence_sha256": "5dfe2261ccaebd5e75602540a203146d3d5ed9e2d062393862529012e2d1ff78",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Its amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "4acbdfd15f2adf63aa546f67fd60b7e556677b3ebb260b73d911c43b29981411",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "An SSN is not alone citizenship proof: both new definitions require SSA issuance TO A US CITIZEN OR UNDER THE NAMED WORK-AUTHORIZED-ALIEN BRANCH (including the specified catch-up portion) AND issuance BEFORE THE RETURN DUE DATE, not any number, ITIN or number issued for every SSA purpose.",
+        "sentence_sha256": "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "ebea28377089b0d595ae7f36c7372442b0ceee4abb05a41085be2067360b3b45"
+        ]
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[19]",
+        "sentence": "The bond-appeal exception and the narrow IN-ABSENTIA REOPENING motions remain separate: upon DEMONSTRATION of (lack of the specifically required notice) OR (Federal/State custody AND nonappearance through no fault), not any custody/missed hearing or all motions/reconsideration/180-day exceptional-circumstances claims.",
+        "sentence_sha256": "afcdec04b4253543bceff95d9b8d04907fae6435631b993cb5736ee3cd5ecbf0",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[20]",
+        "sentence": "SNAP10108 requires BOTH US RESIDENCE (common to EACH alternative) AND at least ONE own listed status: UScitizen OR USnational; definedLPR; version-specific(C); OR lawful USresidence INACCORDANCEWITH a referencedCOFA.",
+        "sentence_sha256": "a3b898ddadcb2ecc63b5075d5323c6e4a51e5496299180b0fa5f5a7c8aebd43c",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[20]",
+        "sentence": "Category(2) OTHER Cuban/Haitian nationals require (parole with NO otheracquiredINAstatus OR removalproceedings OR pendingasylum) AND NO final/nonappealable/legally-enforceable removalorder; each modifier stays in its own category/alternative.",
+        "sentence_sha256": "e98f36703bedeed563d57e2c1dd18517bc25cb8d834a2e74c62e18559ef9649c",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[21]",
+        "sentence": "EXCEPT for existing (v)(2)/(v)(4), State payment requires BOTH residence in a State/DC/US territory (COMMON TO EACH alternative) AND US citizen OR US national, defined LPR, HAS BEEN GRANTED defined Cuban/Haitian entrant status, OR lawful US residence under a referenced COFA.",
+        "sentence_sha256": "8d439d168f8a2a91b79f8c89d6b3c400aa8c74ef57f23f118d8fda61d1e264fa",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "8d439d168f8a2a91b79f8c89d6b3c400aa8c74ef57f23f118d8fda61d1e264fa"
+        ]
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[25]",
+        "sentence": "Exact June 25, 2025 final-rule(iii), printed 2026 ONLY, is expressly applied as though to ALL PLAN YEARS AFTER 2025; no substitution of its separate two-year introductory baseline or House March proposal.",
+        "sentence_sha256": "b6f2bf546f284ff5e41520dcedc13cbbc67b6ff8c9677189f9bbabdc7e33f429",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[25]",
+        "sentence": "Sections 112201/71303 apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027, distinct from the House discrepancy PLAN YEARS ON/AFTER JANUARY 1, 2026 and the Senate incorporated-rule duration.",
+        "sentence_sha256": "3d71c34f96571e06ad5d067b82de2b7fba030628f62d984892ae6383951a0ad4",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[27]",
+        "sentence": "Senate tax is 1 PERCENT and ONLY named physical funding, subject to SEPARATE nonapplication: institution described (A)-(H) AND subject to BSA chapter 53/subchapter II, OR US-ISSUED debit/credit funding.",
+        "sentence_sha256": "a7cb40c11fb2bdc174ce6d78747ca041a16309f070d13e816212b487dd9ce4c4",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "a7cb40c11fb2bdc174ce6d78747ca041a16309f070d13e816212b487dd9ce4c4"
+        ]
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[27]",
+        "sentence": "Transfers apply AFTER DECEMBER 31, 2025.",
+        "sentence_sha256": "ed3a9af8b08a9873e166b5c945f9c9f81805dc5af0407b61b21fb64987a2143d",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[29]",
+        "sentence": "Senate requires TAXPAYER OR ON JOINT RETURN AT LEAST ONE SPOUSE SSN, AND CHILD SSN; not both spouses on every joint return or a child number alone.",
+        "sentence_sha256": "23c83b6c83e970f63fda7cfe8ecb0d0be1f38a6b8e851bb2aaa77644da47a44f",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "23c83b6c83e970f63fda7cfe8ecb0d0be1f38a6b8e851bb2aaa77644da47a44f"
+        ]
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[29]",
+        "sentence": "Both child-credit amendments begin with TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "191e3f358a11829cf682fa66e49f0bc7a03251083fa6754383a3e1691cd3d677",
+        "disposition": "Retained: explicit common scope/list/parentheses or correct own literal period; no additional material defect established",
+        "repair_before_sha256": []
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[29]",
+        "sentence": "Defined SSN must be issued TO US CITIZEN OR NAMED WORK-AUTHORIZED-ALIEN BRANCH AND BEFORE RETURN DUE DATE; not any SSA number/ITIN/citizenship proof alone.",
+        "sentence_sha256": "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8",
+        "disposition": "Corrected with exact source-backed repair",
+        "repair_before_sha256": [
+          "f9d569e5f99bba90e8345f9944ed48b108a5a458d2bd6f50e2dcf54f101e97c8"
+        ]
+      }
+    ],
+    "trigger_sentence_count": 55,
+    "fiscal_and_beginning_ending_inventory": [
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Section60001 would make additional fiscal2025 CBP appropriations available until September30,2029: $46.5billion for primary/waterborne/secondary barriers, access roads and associated detection attributes; a separate $50million for specified invasive plants impeding RioGrande border operations; and $5billion for CBP facilities/checkpoints near the southwest, northern and maritime borders.",
+        "sentence_sha256": "a9fd077f597992ea5af4b4b49c1afd5836354e72a80d3b6b2b6ccc9bde7da2de"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The adopted manager amendment adds section60004: $12billion in additional fiscal2025 DHS funds, available until September30,2029, for grants reimbursing States for costs of actions on or after January21,2021 assisting federal border/immigration enforcement, including detention/removal and combating unlawful entry of persons/contraband.",
+        "sentence_sha256": "04dbbe0e8f25519a82ae9381944eb7f0b6af30208a53299fdc4b6da1e9b04e75"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Section70101 would appropriate an additional $45billion for fiscal2025 to ICE, available until September30,2029, solely for single-adult alien detention and family residential-center capacity.",
+        "sentence_sha256": "fadf44cb2ca453aa0cf87a24e64418056d7a853c7618d2f65b21ac27a6533134"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Section70002 would require an additional fee at the time an alien files an asylum application: the fiscal2025 amount may be set by rule but cannot be less than $1,000.",
+        "sentence_sha256": "1fd7e0f849dab21d32c597f7ec35ea40b5d9819097163f355c9b4ae729e39a32"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "From fiscal2026 its amount increases using the prior fiscal-year fee and the printed July-to-July CPI-U increase, with the increment rounded down to a multiple of $10.",
+        "sentence_sha256": "18e6731f1dc5915ceee65c227d40af7212e7a7b12b70cd93c445f39387ffab31"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Section70010 separately requires a fee for EACH CALENDAR YEAR an application remains pending, initially at least $100 for fiscal2025, with later CPI-U adjustment, Treasury disposition and no waiver/reduction.",
+        "sentence_sha256": "40423cfce8e26d9797058017df594ca06d22adec1c6ed85df25ca156588f61b8"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Each initial fee has a fiscal2025 floor of$550, may be higher by DHS rule, cannot be waived/reduced and has the printed fiscal2026-onward July-to-July CPI-U increment rounded down to$10.",
+        "sentence_sha256": "9b1bc54be8637391628ae112c4824a59ba8644e0705631710b4fb05499f2f767"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House70012 and70014 separately impose additional parole/TPS employment-authorization renewal or extension fees with fiscal2025$550floors, possible higher rule amounts, subsequent CPI increments rounded down to$10, Treasury disposition and no waiver/reduction.",
+        "sentence_sha256": "b0a1df462e209b079277c3bd75c5e3fb804a3aa25d3b91e80d98afd313f58787"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Its fiscal2025 floor is$3,500 or a higher rule amount, with fiscal2026-onward July-to-July CPI-U increments rounded down to$10 and no waiver/reduction.",
+        "sentence_sha256": "7db0ce63214b63c2cbcf068893fde9a576865084d853fa672171cd5aa22205e6"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Its fiscal2025 floor is$5,000 or a higher rule amount with later CPI increments rounded down to$10, Treasury disposition and no waiver/reduction.",
+        "sentence_sha256": "0e100496677ca1b894c1a1417cdd04b5fb1cd59b50d02af918ab2a27f2f2eb47"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House70021 requires a separate fiscal2025 fee of at least$5,000, possibly higher by rule, on an alien BOTH ordered removed in absentia under1229a(b)(5) AND subsequently arrested by ICE.",
+        "sentence_sha256": "e1db0781598ed95840aae353e2f53b5d8bc053fe3eda1a7422a4ab667d8046fe"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House70022 separately charges any INADMISSIBLE alien at the time CBP apprehends the person BETWEEN PORTS OF ENTRY; its fiscal2025 floor is$5,000 or higher by rule, later CPI increments rounded down to$10, Treasury disposition and no waiver/reduction.",
+        "sentence_sha256": "f15b7012ffb59fef211f111553445827ee62048d2b6dbced8eecc61d2277d55f"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House70004 adds a parole-entry fee with fiscal2025floor$1,000 or a higher DHS rule amount, fiscal2026-onward July-to-July CPI-U increments rounded down to$10, Treasury disposition and no waiver/reduction for an applicable fee.",
+        "sentence_sha256": "2f74ab318fa2cb06e26f8815f4aa28002b07c4bca3fa41163b5a2d346b9dcd03"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The fiscal 2025 minimum is $250 or a higher DHS rule amount; fiscal 2026 onward adds the July-to-July CPI-U increment rounded down to the next lowest multiple of $1.",
+        "sentence_sha256": "9519675ff78a9e582ad5e02aef53a061cf7558b0babaa7f32073f666f2a34b18"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House 70009 separately adds a fee on ANY alien applying for Form I-94, with fiscal 2025 minimum $24 or a higher DHS rule amount, later July-to-July CPI-U increments, no expressly printed increment-rounding rule, and no waiver/reduction.",
+        "sentence_sha256": "3ab556f191714b18f431d3e2cfc1a912292f211873ebf9c4f2d89b03593cc19e"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The existing $7 becomes a fiscal2025 MINIMUM of $10, with later July-to-July CPI-U increments rounded down to the next lowest $0.25 and a no-waiver/reduction clause.",
+        "sentence_sha256": "1c7ce394a9f9ecaac2e36934e2a971ebfa02c7a37d18f9a5e5bba1c45392dab0"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The fiscal2025 minimum is $100 or a higher AttorneyGeneral rule amount, with fiscal2026-onward July-to-July CPI-U increments and no expressly printed increment-rounding rule.",
+        "sentence_sha256": "858f00103f43df8ffe893d93ffb84422cac15a34a869873a3d073d5497a203a0"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "House 70015 separately adds fees for two different diversity-visa events: filing a diversity immigrant-visa application ($400 fiscal2025 minimum or higher DHS rule amount, collected at filing) and registering for that program ($250 minimum or higher rule amount, collected at registration).",
+        "sentence_sha256": "3021409d9fe75a0c4fdb78d93e24ceef1219acd4f01f579663cc0631848a4012"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Both have fiscal2026-onward July-to-July CPI-U increments; ONLY the application increment expressly rounds down to$10, while the registration formula prints no rounding rule.",
+        "sentence_sha256": "5840cec63ebe2ffbc6bf0781fd8bd87253b49d22aba0925b0e7d673c84a13c29"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The ten listed fiscal2025 floors are separate fee events, additional to other authorized fees, with a higher AttorneyGeneral rule amount permitted: adjustment to lawful permanent residence $1,500; waiver of grounds of inadmissibility $1,050; TPS $500; appeal from an immigration-judge decision $900; appeal from a DHS-officer decision $900; practitioner disciplinary appeal $1,325; motion to reopen or reconsider an immigration-judge or Board of Immigration Appeals decision $900; suspension of deportation application $600; cancellation of removal for the specified permanent-resident category $600; and cancellation/adjustment for the specified nonpermanent-resident category $1,500.",
+        "sentence_sha256": "93a9116c6e36cd3725a8d6cd0b7d6daaa45195e2e7702a069180448f81bb393f"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Each subsection has fiscal2026-onward July-to-July CPI-U adjustment of its own prior-year fee, with the INCREMENT rounded down to $10, not an automatically exact future price or a sum charged to every alien.",
+        "sentence_sha256": "00586f89e30fde06883783b442552266679c3c48b69af37df4d6eceebd84f77b"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Deletion removes that special treatment for taxable years beginning after December 31, 2025; it does not alone prove that EVERY person at EXACTLY 100 percent loses the credit, because ordinary (c)(1)(A) begins at 100 percent subject to its other rules.",
+        "sentence_sha256": "f556004c17564807bcebe039a3819157f079a5045fd384d3588ea452afcc833c"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The status provision's non-conforming amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2026; its conforming amendments apply to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2027.",
+        "sentence_sha256": "96f4954b89f334420bd6482abcd387520c8613cd3af2a675976aca63d2566eb3"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Amendments in these selected sections apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027; the incorporated Senate rule's post-2025 scope is not substituted as the statute's effective date.",
+        "sentence_sha256": "4aad519ad0aa2952392aeb095d4841daf548e483b0e3d5e9d58731120325a7b9"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The related House section 44201(b)(1) income-verification amendment applies to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026.",
+        "sentence_sha256": "fa7d16741d21317bb29008b425b4ac79f9f20f8545c50e23cf6ce3f44e2fb16f"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Its annual advance-credit rule applies to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026 for an individual whose prior advance premium credit was paid TO THE PLAN ISSUER for the RELEVANT PRIOR TAX YEAR.",
+        "sentence_sha256": "ca3404bfbc28c5729948c066941e1ca2556ae87cde951699910f92d26f3bd3a6"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The separate(b)(3) provision directs removal of 155.315(f)(7) for PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026, so an Exchange providing the named 90-day inconsistency opportunity may NOT AUTOMATICALLY EXTEND IT ON THE BASIS THAT THE APPLICANT MUST PRESENT SATISFACTORY HOUSEHOLD-INCOME DOCUMENTS.",
+        "sentence_sha256": "e6f935ad15bed173b87f56ab62fe51b5aa4ba5ab051c2e9504ffd1ca5a6ee8a7"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The selected transfer provisions start after December 31, 2025; the new credit and its named conforming amendments instead apply to TAXABLE YEARS ENDING AFTER DECEMBER 31, 2025, not taxable years BEGINNING then.",
+        "sentence_sha256": "9ea3bfa82a590a20ddf4c21558d4a4305e09a4a3fd6e4d168b9feba6aba0c797"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "Subsection (i)(4) prints that amendments MADE BY THIS SECTION apply WITH RESPECT TO PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026; that wording is preserved alongside the other distinct 44201 dates, without a personal termination date or silently narrowing its section referent.",
+        "sentence_sha256": "7c998d257fcf5c6c11784a8aa265911d3283911d1af2d384a49ec17c0fbbcd1d"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "meaning",
+        "sentence": "The child-credit amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "6d10335f900c90afa7c74b35b978f9b8a670fca3832447bf89b3cd7900e4e74e"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "compact_description",
+        "sentence": "1 provisions would fund border infrastructure and detention, set fiscal 2025 asylum filing/pending fee floors of $1,000/$100 and specified asylum/parole/TPS employment-authorization initial/renewal fee floors of $550, and limit those documents to at most six months.",
+        "sentence_sha256": "8fd4a7df3083b1a9c20313d47af19140486f0aaad1d9f1d080189076d6ec55d7"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[2]",
+        "sentence": "All listed appropriations are additional fiscal2025 amounts with September30,2029 availability.",
+        "sentence_sha256": "53fffb3f1a2b029c426818b050dfb476a7aa561a54e5c7d256d8d5403ffe93b2"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[3]",
+        "sentence": "Asylum filing and yearly pending-application fees are separate additional charges with fiscal2025 floors, not guaranteed exact prices; the recurring trigger is each calendar year pending.",
+        "sentence_sha256": "12d71365a9c14093afeb80e761f7d278aeccef325d66bc50743c259333f1caec"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[18]",
+        "sentence": "$30 is a fiscal2025 minimum/higher-rule boundary, CPI increments round down to$0.25, waiver bars apply to EVUS and account spending permission does not prove actual expenditure.",
+        "sentence_sha256": "347917351d3040a4f9adbe7a63e3e1edd2304c1165285f5d50d3832acf631780"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[19]",
+        "sentence": "$100 is a fiscal2025 minimum or higher rule amount, not a guaranteed price; later CPI increments have no printed rounding rule.",
+        "sentence_sha256": "02d1d5bc060db369fb08b7367216b5b1d44de4c4740fff0617c6a6d3186879cb"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[21]",
+        "sentence": "EOIR70016 has TEN distinct fee events and fiscal2025 minimum/higher-rule amounts, each own annual CPI increment rounded DOWN to$10.",
+        "sentence_sha256": "9b11a7de738b9e2d7a748cfeab1cd712e2326a2140ad07700f67382f4a376d02"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[27]",
+        "sentence": "Sections 112201/71303 apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027, distinct from the House discrepancy PLAN YEARS ON/AFTER JANUARY 1, 2026 and the Senate incorporated-rule duration.",
+        "sentence_sha256": "3d71c34f96571e06ad5d067b82de2b7fba030628f62d984892ae6383951a0ad4"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[29]",
+        "sentence": "Credit uses TAXABLE YEARS ENDING AFTER December 31, 2025, not beginning.",
+        "sentence_sha256": "7eb372f58cdc9aceec92bab07a641ec12559630eee585c331b79e37b1f867668"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[30]",
+        "sentence": "Literal amendments MADE BY THIS SECTION apply WITH RESPECT TO PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2026.",
+        "sentence_sha256": "33459e21932f595e9237758b87d4abb5302c476524f51f253485eaeb8a168e04"
+      },
+      {
+        "action_id": "house:119:1:145",
+        "field": "limitations[31]",
+        "sentence": "Both child-credit amendments begin with TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "191e3f358a11829cf682fa66e49f0bc7a03251083fa6754383a3e1691cd3d677"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Section90001 would appropriate an additional $46.55billion for fiscal2025 to CBP, available until September30,2029, for new/replacement primary, waterborne and secondary barriers, access roads, detection attributes and ground preparation for CBP operations and barrier construction/maintenance.",
+        "sentence_sha256": "db5af0dab606ef3a7514d21f69c6bd0460b2c61632485887540f6b308500b9fe"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Section90003 would appropriate an additional $45billion for fiscal2025 to ICE, available until September30,2029, for single-adult alien detention and family residential-center capacity.",
+        "sentence_sha256": "1654998149de0d62c30cfaaa47be2057a00bd839b37b0571aad65cb8c80d2de0"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The fiscal2025 amount is the greater of $100 or the amount set by DHS/the Attorney General, as applicable, by rule; it cannot be waived/reduced.",
+        "sentence_sha256": "37ce7ea3e190f33b5b91c9365c67347155c55da222aad870022bb6c67f0e40c8"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "From fiscal2026 the prior fiscal-year fee is increased by the printed July-to-July CPI-U increment rounded down to a multiple of $10.",
+        "sentence_sha256": "865f2f12228ef9a6afe378484d5ba258fe0e4d596ae1b8369e3fe42113cd993d"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Its fiscal2025 amount is the greater of $100 or a DHS rule amount, followed by the printed CPI-U annual adjustment with the increment rounded DOWN TO THE NEAREST DOLLAR; receipts go to Treasury and the fee cannot be waived/reduced.",
+        "sentence_sha256": "c703c79fced9b5196f4056d95be9984030fca738397abea4729ef8f0680f3e9c"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Each fiscal2025 floor is$550 or a higher DHS rule amount, with no waiver/reduction and fiscal2026-onward July-to-July CPI-U increments rounded down to$10.",
+        "sentence_sha256": "ae0380e28df3593944182c009cc837ca85ba3713639ec06d5d8ca47d3cb4a998"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate100010 and100012 set separate parole/TPS employment-authorization renewal/extension fiscal2025 fee floors of$275, possible higher DHS rule amounts and later CPI increments rounded down to$10.",
+        "sentence_sha256": "8612197c52d8fa9d656069d60f33a93811432c849aae0c81ad4ed016965a9042"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate100016 requires a fiscal2025 fee of at least$5,000, or a higher DHS rule amount, on an alien BOTH ordered removed in absentia under1229a(b)(5) AND subsequently arrested by ICE, with fiscal2026-onward CPI-U increments rounded down to$10.",
+        "sentence_sha256": "c0729693ae85ed3f5d921650a76ba8c4d770a0a8b233f04694836b5e4d4848e3"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Its fiscal2025 floor is$5,000 or a higher DHS rule amount, with later CPI-U increments rounded down to$10.",
+        "sentence_sha256": "2a44c06b25b00e17c39aac306ae550939eebd5f368966fdcee2f31a9636376aa"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate100006 edits EXISTING1254a(c)(1)(B) registration authority: it raises the statutory fee MAXIMUM from$50 to$500, subject to fiscal2026-onward CPI-U adjustments rounded down to$10.",
+        "sentence_sha256": "0c08c43993ef929d22c1f414bd6b54c7a509b5fd5f2638edacab728b2dff277c"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The fiscal 2025 minimum is $250 or a higher DHS rule amount; subsequent July-to-July CPI-U increments are rounded down to the nearest dollar.",
+        "sentence_sha256": "c895f9808d31096dddc1dd825644b5576c9d3589abc0ea6566ae8d2441857766"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate 100008 separately adds an I-94 application fee on any alien submitting that application, with fiscal 2025 minimum $24 or higher DHS rule amount, later July-to-July CPI-U increments rounded down to the nearest dollar and no waiver/reduction.",
+        "sentence_sha256": "081f5ac8d256f94ac319151d6d10a299cbc9fd81fe53661f25564af61a00038f"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Its fiscal2026-onward CPI-U adjustment names the clause(i)(II) amount but literally uses the prior fee required UNDER THIS SUBPARAGRAPH as its base.",
+        "sentence_sha256": "727540912dfa172f52bc93095efed652d2f6b19a35235d9d0b0e8ce062b4bb23"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Senate 100015 separately adds an EVUS fee at enrollment for any alien SUBJECT to that System, additional to other authorized fees, with fiscal2025 minimum $30 or a higher DHS rule amount, later CPI-U increments rounded down to $0.25 and no waiver/reduction.",
+        "sentence_sha256": "36aae80df3d4289a2b78487c77cc01fce9bc1f8a974975db825ce860ad5c2bc8"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The ten listed fiscal2025 floors are separate fee events, additional to other authorized fees, with a higher AttorneyGeneral rule amount permitted: adjustment to lawful permanent residence $1,500; waiver of grounds of inadmissibility $1,050; TPS $500; appeal from an immigration-judge decision $900; appeal from a DHS-officer decision $900; practitioner disciplinary appeal $1,325; motion to reopen or reconsider an immigration-judge or Board of Immigration Appeals decision $900; suspension of deportation application $600; cancellation of removal for the specified permanent-resident category $600; and cancellation/adjustment for the specified nonpermanent-resident category $1,500.",
+        "sentence_sha256": "93a9116c6e36cd3725a8d6cd0b7d6daaa45195e2e7702a069180448f81bb393f"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Each subsection has fiscal2026-onward July-to-July CPI-U adjustment of its own prior-year fee, with the INCREMENT rounded down to $10, not an automatically exact future price or a sum charged to every alien.",
+        "sentence_sha256": "00586f89e30fde06883783b442552266679c3c48b69af37df4d6eceebd84f77b"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The section appropriates $15 million to CMS for fiscal 2026 implementation, available until expended, without establishing actual spending or benefit amounts.",
+        "sentence_sha256": "3f238ca24a1c2e77afc6d79c7ebf46b97e0048b0a08c2cbf8b0b30de92a1a21f"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The section also appropriates $1 million to CMS for fiscal year 2026 implementation, available until expended; this is an appropriation, not proven spending, a beneficiary payment or quantified savings.",
+        "sentence_sha256": "59c17a2117fb0ad70a9f7c57043e41c838ebb0c421b08aea6aa36dfe559267d6"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Deletion removes that special treatment for taxable years beginning after December 31, 2025; it does not alone prove that EVERY person at EXACTLY 100 percent loses the credit, because ordinary (c)(1)(A) begins at 100 percent subject to its other rules.",
+        "sentence_sha256": "f556004c17564807bcebe039a3819157f079a5045fd384d3588ea452afcc833c"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "The status provision's non-conforming amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2026; its conforming amendments apply to PLAN YEARS BEGINNING ON OR AFTER JANUARY 1, 2027.",
+        "sentence_sha256": "96f4954b89f334420bd6482abcd387520c8613cd3af2a675976aca63d2566eb3"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Amendments in these selected sections apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027; the incorporated Senate rule's post-2025 scope is not substituted as the statute's effective date.",
+        "sentence_sha256": "4aad519ad0aa2952392aeb095d4841daf548e483b0e3d5e9d58731120325a7b9"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "meaning",
+        "sentence": "Its amendments apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "4acbdfd15f2adf63aa546f67fd60b7e556677b3ebb260b73d911c43b29981411"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "compact_description",
+        "sentence": "1 provisions would fund border infrastructure and detention, set fiscal 2025 asylum filing/pending fee floors of $100 each and specified asylum/parole/TPS employment-authorization initial/renewal fee floors of $550/$275, with distinct duration and termination rules.",
+        "sentence_sha256": "697954b1ba873369b5bb23ed7209257273df9b57f2977d700e22d0ba79377f68"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[2]",
+        "sentence": "Listed border and detention appropriations are additional fiscal2025 amounts available until September30,2029.",
+        "sentence_sha256": "4e83a624cc453177096506373e071d2967a7cbb5def6c7eae10f6a3b09cff109"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[3]",
+        "sentence": "Initial filing and annual pending-application fees are separate charges, each with a fiscal2025 $100 floor, possible higher rule amount and no waiver/reduction.",
+        "sentence_sha256": "0b617e11f8e09453d1491e171e7144d167db14c5a5e35ef4704a3b08e0ba3b2e"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[18]",
+        "sentence": "$30 is a fiscal2025 minimum/higher-rule boundary, CPI increments round down to$0.25, waiver bars apply to EVUS and account spending permission does not prove actual expenditure.",
+        "sentence_sha256": "347917351d3040a4f9adbe7a63e3e1edd2304c1165285f5d50d3832acf631780"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[19]",
+        "sentence": "EOIR100013 has TEN distinct fee events and fiscal2025 minimum/higher-rule amounts, each own annual CPI increment rounded DOWN to$10.",
+        "sentence_sha256": "ceb122e44d0e4d5c58e6401bb05cf232656f000b200110a77ee7016fbf6494c3"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[21]",
+        "sentence": "CMS receives a fiscal year 2026 $15 million appropriation available until expended, not proven expenditure.",
+        "sentence_sha256": "8e948740c37d0f2a36e7a4c26ae4f16a745ca69c2d39167b8c76b2216ac7f8a9"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[22]",
+        "sentence": "The CMS fiscal year 2026 $1 million appropriation remains available until expended, without proving expenditure or savings.",
+        "sentence_sha256": "381395f3fe821ae968b3c6b2fa949a885b21a95cd38cae563558f8bfcad945fd"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[25]",
+        "sentence": "Sections 112201/71303 apply to TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2027, distinct from the House discrepancy PLAN YEARS ON/AFTER JANUARY 1, 2026 and the Senate incorporated-rule duration.",
+        "sentence_sha256": "3d71c34f96571e06ad5d067b82de2b7fba030628f62d984892ae6383951a0ad4"
+      },
+      {
+        "action_id": "house:119:1:190",
+        "field": "limitations[29]",
+        "sentence": "Both child-credit amendments begin with TAXABLE YEARS BEGINNING AFTER DECEMBER 31, 2024.",
+        "sentence_sha256": "191e3f358a11829cf682fa66e49f0bc7a03251083fa6754383a3e1691cd3d677"
+      }
+    ],
+    "fiscal_and_beginning_ending_sentence_count": 71,
+    "source_first_scope_checks": [
+      {
+        "scope": "House/Senate visa reimbursement",
+        "result": "House has three distinct alternatives; Senate compliance common to both own alternatives, grant versus filed and own period referent preserved",
+        "source_sections": [
+          "70014",
+          "100007"
+        ]
+      },
+      {
+        "scope": "Current/legacy in-absentia reopening",
+        "result": "Lack-notice alternative separate from custody plus no-fault alternative; neither every motion nor universal custody waiver",
+        "source_sections": [
+          "70100",
+          "100051"
+        ]
+      },
+      {
+        "scope": "SNAP/status and entrant definitions",
+        "result": "Residence explicitly common to every category; own status/other entrant grouping and no-final-order predicate remain with parenthesized branch qualifiers, no household-wide loss",
+        "source_sections": [
+          "10012",
+          "10108"
+        ]
+      },
+      {
+        "scope": "Medicaid/CHIP/FMAP/Medicare",
+        "result": "Residence common in Medicaid but not new common Medicare modifier; v2/v4 exceptions, both financial exclusions, source-relative State/quarter/cohort/notice dates retained; Medicaid qualification clarified in complete sentences",
+        "source_sections": [
+          "44110",
+          "44111",
+          "44124",
+          "112103",
+          "71109",
+          "71110",
+          "71201"
+        ]
+      },
+      {
+        "scope": "ACA status/income/verification/filing/DACA",
+        "result": "Current and whole-period conditions common to status categories; each program scope, discrepancy four predicates, common threshold approvals, required-return OR necessary-reconciliation and discretionary attestation preserved; full effective dates versus published rule scope and memo/grant paths distinct",
+        "source_sections": [
+          "112101",
+          "112102",
+          "112201",
+          "44201",
+          "71301",
+          "71302",
+          "71303"
+        ]
+      },
+      {
+        "scope": "Remittance",
+        "result": "Own rate, transfer-after date versus House credit taxable-year ENDING date retained; bank account withdrawal and both institutional conditions separated from card alternative; provider verification explicit for both citizen/national categories",
+        "source_sections": [
+          "112104",
+          "70604"
+        ]
+      },
+      {
+        "scope": "Child credit",
+        "result": "Exact December 31, 2028 nominal window repaired without before-2029 normalization; subsequent-year amount and source literal after-2028 inflation retained separately. Both issuance categories share due date; child number explicit in both Senate claimant alternatives",
+        "source_sections": [
+          "110004",
+          "70104"
+        ]
+      }
+    ],
+    "all_current_hr1_binding_instances_verified": 250,
+    "compact_result": "Both compacts explicitly selected fee/funding highlights retain fiscal year 2025, no taxable-year ending/beginning substitution or child-credit amount/SSN claim",
+    "additional_material_date_defect_established": false,
+    "additional_common_scope_clarifications": [
+      "Medicaid residence applies to every alternative",
+      "Remittance account withdrawal plus both institutional criteria versus US-issued card alternative",
+      "House provider verification applies to both citizen/national categories"
+    ],
+    "expansion_policy": "Use complete sentences, separated alternatives and explicitly repeated common conditions for new prose; no new semantic architecture",
+    "limitations": "Same-owner bounded copy/source comparison. Historical findings and independently scoped verdicts preserved; no full package/application/editorial acceptance. Pending senior source work held outside canonical artifacts."
+  },
+  "validation": {
+    "focused_tests": 38,
+    "focused_runtime_seconds": 9.345,
+    "semantic_checks": 7,
+    "byte_replay_files": 7,
+    "negative_regression_probe": {
+      "anchor": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+      "old_copy_rejected": 3,
+      "unexpected_errors": 0,
+      "tests": [
+        "test_house_child_credit_preserves_literal_amount_window",
+        "test_child_credit_due_date_applies_to_both_issuance_categories",
+        "test_senate_child_ssn_is_required_in_both_claimant_alternatives"
+      ]
+    },
+    "note": "Initial negative probe exposed copy-specific lookup errors; locators changed to the unchanged fallback-clause identity, after which all three old-copy cases fail by assertion with zero errors. Current 38 tests and seven semantic checks pass. Tests do not establish semantic truth."
+  }
+}

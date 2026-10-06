@@ -1,0 +1,42 @@
+{
+  "authority": "Bounded independent combined DACA/child-credit review supplied by Fingerprint; no editorial acceptance",
+  "reviewed_commits": [
+    "817c06b19e30660615d0af5780cda845150f7787",
+    "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d"
+  ],
+  "result": "Child-credit Major amount-window and material common-condition corrections required; reviewed DACA prose has no new material defect",
+  "historical_findings": [
+    {
+      "finding_id": "IB-HR1-CTC-HOUSE-AMOUNT-WINDOW",
+      "severity": "Major",
+      "reviewed_commit": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+      "problem": "Compressed before December 31, 2028 into before 2028, excluding taxable years beginning during 2028; affects House meaning and qualification",
+      "source_locator": "Governing House floor 110004(b), Congressional Record lines 13859-13863",
+      "state": "Correction authored; validation and exact checkpoint pending"
+    },
+    {
+      "finding_id": "IB-HR1-CTC-COMMON-CONDITIONS",
+      "severity": null,
+      "reviewed_commit": "feb805df70ef8e5daa05d8ba4bf94c63e4729c9d",
+      "problem": "Unparenthesized issuance-category and due-date shorthand obscures common due-date predicate; Senate child-number condition needs explicit application to both claimant alternatives",
+      "state": "Correction authored; validation and exact checkpoint pending",
+      "classification": "Material common-condition scope ambiguity; independent reviewer did not supply a separate severity label"
+    }
+  ],
+  "verified_scope": [
+    "DACA historical memo qualifications, distinct ACA scopes and reserved question 38 without current-status conclusion",
+    "Other checked child/dependent, reserved fallback question 39 and mathematical-error predicates faithful",
+    "DACA 9/13 and child-credit 13/17 binding instances, both receipt digests",
+    "Both exact CI runs independently all nine green; CI does not resolve semantic defects"
+  ],
+  "limitations": [
+    "Eight operative hashes unrecomputed",
+    "No full generated member-byte or byte-replay verification",
+    "No independent certification of memo page images; separate helper visual acquisition evidence remains distinct",
+    "No full-package or editorial acceptance"
+  ],
+  "independent_source": "Trusted Fingerprint supervisor delegation, 2026-10-06",
+  "full_corpus_verdict": null,
+  "publication_authorized": false,
+  "receipt_sha256": "c03894baf2684196352475d3bb6f2b76fc98cd7fa4bf4615bc04b12ff20b9eaf"
+}

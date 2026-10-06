@@ -24,6 +24,45 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             cutoff=universe['cutoff'], candidate_records=universe['candidate_dispositions']))
         universe['proposal_sha256'] = sealed_digest(universe, 'proposal_sha256')
 
+    def test_house_child_credit_preserves_literal_amount_window(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('SEC. 110004.'))
+        window = re.search(r"taxable years beginning after (December 31, 2024), and before (December 31, 2028)", passage)
+        self.assertIsNotNone(window, 'Exact governing nominal-amount window must remain available')
+        for text in [action['meaning'], next(q for q in action['limitations'] if 'Existing 24(h)(4)(C)' in q)]:
+            sentence = next(s for s in re.split(r'(?<=[.!?])\s+', text)
+                            if '$2,500' in s)
+            for bound in window.groups():
+                self.assertIn(bound, sentence)
+            self.assertNotRegex(sentence, re.compile(r'before\s+(?:2028|2029|January 1, 2029)', re.I))
+
+    def test_child_credit_due_date_applies_to_both_issuance_categories(self):
+        for aid, section in [('house:119:1:145', '110004'), ('house:119:1:190', '70104')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            passage = next(c['passage'] for c in action['claim_source_map']
+                           if c['passage'].startswith('SEC. ' + section + '.'))
+            definition = passage[passage.index('(B) Social security number.'):
+                                 passage.index('before the due date for such return.') + len('before the due date for such return.')]
+            self.assertIn('to a citizen of the United States or pursuant to', definition)
+            self.assertIn('and ``(ii) before the due date', definition)
+            for text in [action['meaning'], next(q for q in action['limitations'] if 'Existing 24(h)(4)(C)' in q)]:
+                self.assertRegex(text, r'In either case, (?:the SSN must have been issued|it must have been issued) before the due date for the return')
+                self.assertNotIn('BRANCH AND BEFORE RETURN DUE DATE', text)
+
+    def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('SEC. 70104.'))
+        requirement = passage[passage.index('(A) In general.--No credit'):
+                              passage.index('(B) Social security number.')]
+        self.assertIn('at least 1 spouse), and', requirement)
+        self.assertIn('``(ii) the social security number of such qualifying child', requirement)
+        for text in [action['meaning'], next(q for q in action['limitations'] if 'Existing 24(h)(4)(C)' in q)]:
+            self.assertRegex(text, r"qualifying child's defined SSN (?:in either case|is required in either case)")
+            self.assertIn('on a joint return', text)
+            self.assertIn('defined SSN of at least one spouse', text)
+
     def test_fixed_inventory_and_every_clerk_observation(self):
         result = validate(*self.values)
         self.assertEqual(result['inventory_count'], 676)

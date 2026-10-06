@@ -2614,3 +2614,79 @@ Next: Senate senior-deduction SSN mechanism and House student eligibility/
 education tax provisions, then child/enforcement funding, continuing/omnibus/
 NDAA packages and screenings. Existing .w/ib and historical markers preserved;
 no current shutdown, merge/deployment/production or acceptance/publication.
+
+
+## Checkpoint 45: Child-credit correction and bounded condition/date recurrence
+
+This checkpoint corrects the current canonical candidate. The checkpoint 44
+narrative and sealed receipts remain historical and contain the superseded
+'before 2028' compression; they do not establish the current amount window.
+
+Historical Major IB-HR1-CTC-HOUSE-AMOUNT-WINDOW is preserved. House 110004(b)
+prints taxable years beginning after December 31, 2024, and before December 31,
+2028 (Record lines 13859-13863). The previous meaning and qualification said
+before 2028, incorrectly excluding years beginning during 2028. Both now retain
+the exact full-date bounds, including December 31, 2028 rather than normalization
+to before 2029. Subsequent-year $2,000 and the separate source-literal inflation
+rule for a taxable year beginning after 2028 remain distinct. No actual award.
+
+IB-HR1-CTC-COMMON-CONDITIONS preserves the independent material scope-ambiguity
+finding, without inventing a separate historical severity label. Both SSN
+issuance categories now explicitly share the before-return-due-date requirement:
+the number may be issued to either a US citizen or the named work-authorized-
+alien category; in either case it must have been issued before the due date.
+Senate meaning and qualification expressly require the child's defined SSN in
+either claimant alternative, plus the taxpayer's number or, on a joint return,
+at least one spouse's number. No child-number-only or citizen timing exception.
+
+The bounded review covers current House/Senate H.R. 1 meanings, both compacts
+and all qualifications: 55 date/combined-condition trigger sentences and 71
+fiscal/beginning/ending-year sentences, with source-first visa, reopening,
+SNAP, Medicaid/CHIP/FMAP/Medicare, ACA/DACA, remittance and child-credit checks.
+No additional material date defect established. Three recurrence clarifications
+make Medicaid residence common to every status alternative, account withdrawal
+plus both institutional/BSA conditions distinct from card funding, and provider
+verification common to citizens and nationals. All new prose uses complete
+sentences and explicit common conditions. Eleven exact repairs carry before/
+after hashes and five complete primary witnesses in
+hr1_child_credit_condition_date_correction.json. Original source bytes, 630
+bindings, other 37 actions, compacts and all accounting remain unchanged.
+This is bounded faithful authoring; no new semantic architecture or broad
+historical severity reconciliation.
+
+Fingerprint's combined independent 43/44 review found no new material DACA
+prose defect in its scope, while requiring the two child-credit corrections.
+Other checked child/dependent, question 39 fallback and math-error predicates
+match. It verified 9/13 DACA and 13/17 child-credit binding instances and both
+receipt digests; eight operative hashes unrecomputed. No full generated member
+bytes/replay or independent memo-image certification: the separate helper's
+visual acquisition evidence remains distinct. No full-package acceptance.
+See hr1_checkpoint43_44_independent_review.json. Both exact CI runs were
+independently nine green; CI did not close these semantic defects.
+
+38 focused tests in 9.345 seconds, seven semantic checks and seven-file byte
+replay pass. Three source-backed regressions reject the actual erroneous
+checkpoint 44 copy by assertions with zero unexpected errors. Initial negative
+probe showed overly specific lookup errors; selectors now use the unchanged
+fallback-clause identity. Full exact repair propagation, original source/binding/
+accounting/compact preservation, 152 bounded source extents, audit hashes and
+final diff verify. Tests are not semantic truth or independent correction
+acceptance. Core: b655b7b414018c9287df0ea57af75c758f2a22608ab126c94a9123e6c7f30996.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f (unchanged).
+Counts remain 676 inventory; 455 reviews; 39 meanings; 36 episodes;
+78 observations; 70 findings (Foushee 36, Massie 34); 1,266 sources, 630 claims,
+229 canonical captures. Remaining: 221 screenings, TWO partial H.R. 1 component
+reviews and 39 legal/application questions; final verdict null. Exact
+feb805df70ef8e5daa05d8ba4bf94c63e4729c9d passed all nine jobs in 37528575804.
+Current correction-head CI follows push.
+
+Pending senior expansion was preserved byte-for-byte in 13 own files under
+.tmp/checkpoint45_preserved_before_ctc_correction, with hashes and exact base
+feb805df recorded. Only sole-owner tracked changes were restored for isolation;
+no reset/stash, duplicate checkout or unrelated work changed. Its local source
+pool is retained; pending sources/question are not canonical or in this commit.
+Next: reapply preserved senior work onto this corrected checkpoint, rewrite new
+condition/date prose as complete explicitly scoped sentences, then education
+SSN/student eligibility, child/enforcement funding, packages and screenings.
+Keep the exact corrected amount window and common predicates through reapplication.
+No current shutdown or merge/deployment/production/acceptance/publication authority.
