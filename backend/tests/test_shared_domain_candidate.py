@@ -20,6 +20,29 @@ DATA = ROOT / "docs/editorial/shared_candidates/house_119_health_20260916"
 
 
 class SharedDomainCandidateTests(unittest.TestCase):
+    def test_cr_tanf_claim_requires_operative_extension_not_contents_heading(self):
+        author = copy.deepcopy(self.author)
+        capture = copy.deepcopy(self.capture)
+        source = next(s for s in capture['sources']
+                      if s['source_id'] == 'govinfo:pl119-75-cr-baseline')
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:272')
+        claim = next(c for c in action['claim_source_map']
+                     if c['locator'] == 'PL119-75 complete operative section6304; not table-of-contents entry')
+        self.assertIn('shall continue through December 31, 2026', claim['passage'])
+        self.assertIn('other than under section 403(c) or 418', claim['passage'])
+        before = source['text']
+        source['text'] = before.replace(claim['passage'],
+                                       'Sec. 6304. Extension of the Temporary Assistance for Needy Families Program.')
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        # Even a newly sealed capture and rebound broad passages cannot replace
+        # the specific operative witness with a table-of-contents label.
+        for proposed in author['actions']:
+            for mapping in proposed['claim_source_map']:
+                if mapping['source_id'] == source['source_id'] and mapping['passage'] == before:
+                    mapping['passage'] = source['text']
+        with self.assertRaisesRegex(ValueError, 'claim passage absent from bound source'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
     def test_dhs_passage_preserves_licensure_restraint_and_version_limits(self):
         aid = 'house:119:2:42'
         action = next(a for a in self.author['actions'] if a['action_id'] == aid)
@@ -1095,10 +1118,17 @@ class SharedDomainCandidateTests(unittest.TestCase):
         self.assertEqual(rows["house:119:2:309"]["disposition"], "exact_action_ineligible")
 
     def test_final_shared_legislative_meanings_keep_member_choices_in_projection(self):
-        for aid in ["house:119:1:262", "house:119:1:299", "house:119:1:320"]:
-            shared = next(a for a in self.author["actions"] if a["action_id"] == aid)
-            self.assertNotIn("Foushee", shared["meaning"])
-            self.assertNotIn("Massie", shared["meaning"])
+        # Real observed subjects belong in Clerk records and member projections.
+        # Check every shared prose field, including compact text and limitations,
+        # so a newly authored action cannot leak another member's observation.
+        for shared in self.author["actions"]:
+            prose = [shared["meaning"], shared["short_description"],
+                     shared["compact_description"], *shared["limitations"],
+                     *shared["choice_meanings"].values()]
+            with self.subTest(action_id=shared["action_id"]):
+                for text in prose:
+                    self.assertNotIn("Foushee", text)
+                    self.assertNotIn("Massie", text)
         for member in self.products[2]:
             choices = {a["action_id"]: a["official_status"] for a in member["actions"]}
             self.assertEqual(choices["house:119:1:262"], "Nay")
