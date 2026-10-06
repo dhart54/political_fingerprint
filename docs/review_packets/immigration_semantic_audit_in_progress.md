@@ -1609,3 +1609,64 @@ funding and remaining packages/screenings. Both Medicare primary clauses are
 already read; governed baseline capture and qualification authoring are next.
 Preserve existing worktree/ownership and historical markers. No current shutdown
 boundary, duplicate checkout, production, publication or methodology change.
+
+
+## Checkpoint 38: Medicare status and existing-enrollee transition
+
+House section 112103 and Senate section 71201 add their own section 1899C
+status lists. A listed category is necessary, not sufficient entitlement or
+enrollment. The new list has no new common residence modifier across all
+alternatives; the COFA branch and separate existing enrollment residence
+requirements keep their own scopes. Complete material hospital, disability,
+renal, Part B and aged/disabled premium enrollment baselines are bound. The
+five-year LPR residence condition belongs to its own enrollment path, not
+every citizen or insured-benefit entitlement. Limited immunosuppressive-drug
+enrollment remains distinct from full benefits.
+
+The House retains Cuban nationality AND its approved petition, visa eligibility
+without immediate availability, no-other-inadmissibility and physical presence
+under the specified parole conjunction. No living-in-Cuba fee condition is
+imported. The Senate retains HAS BEEN GRANTED defined Cuban/Haitian entrant
+status, with each 501(e) modifier in its own branch. Existing entitlement or
+enrollment AS OF ENACTMENT identifies the transition cohort. House restriction
+begins one year after enactment with review completed within six months;
+Senate restriction begins eighteen months after enactment with review within
+one year. Each identified person outside all four alternatives receives notice
+as soon as practicable after identification, designed for comprehension and
+naming the enactment-relative termination date. Review, notice and termination
+are distinct. No notice-relative grace, guaranteed minimum notice, perpetual
+grandfathering, vote-date/later-law substitution or actual termination follows.
+
+Five new governed sources, eighteen claims and two primary-reconstructed
+qualifications are sealed in hr1_medicare_status_transition_review.json.
+The complete House floor/EH operative bytes are identical, with no pagination
+or whitespace transformation needed. Earlier detailed clauses, claims,
+qualifications, compacts and all other 37 actions remain unchanged. Both complete
+member outputs were checked for the new predicates and prior retained repairs.
+
+35 focused candidate tests pass (8.219 seconds); seven semantic checks pass;
+seven generated files replay byte identically. Eighteen binding/hash/length
+checks, two qualification hashes, 121 bounded extents, audit/Clerk/accounting
+integrity and final diff verify. Compiled IR, Health sources, runtime, frontend,
+schema and production/publication boundaries remain unchanged. Same-owner
+review is partial and does not supply semantic truth or acceptance.
+
+Core: c0928d5a3406e7067091f5a84589925da8ae544892bf296a8fde1378ccfacd40.
+Compiled: b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f.
+There are 676 inventory, 455 reviews, 39 meanings, 36 episodes, 78 observations
+and 70 findings (Foushee 36, Massie 34). Source totals: 1,233 governed (990
+unchanged Health reuses, 243 new), 527 claims, 170 provisional captures.
+Remaining: 221 ordinary screenings, TWO partial H.R. 1 component reviews
+and 33 legal/application questions. No new legal question or package closure.
+Previous exact 5739ba84fbc1f6c60a011eccaea8e2f42adcf35d CI run 37516286301
+last showed eight jobs successful and one running; no final success is claimed
+from that intermediate result. Current exact-head CI follows push.
+
+Next: narrow ACA status-list and below-poverty Medicaid-ineligibility provisions
+(House 112101/112102 versus Senate 71301/71302), then exact Exchange verification
+and incorporated published-rule versions. The first ACA primary read identified
+distinct credit, cost-sharing, basic-health-program and verification scopes;
+material baseline capture is next. Then tax/remittance, child/enforcement
+funding and remaining packages/screenings. Printed FMAP references remain
+reserved as question 33. Existing ownership and historical markers continue;
+no current shutdown boundary or production/publication authority.
