@@ -381,3 +381,49 @@ f85c9d8563ee388ceeba8f6458d0f6422c18f993 passes all nine hosted jobs:
 https://github.com/dhart54/political_fingerprint/actions/runs/37429331603.
 Current exact-head CI follows push. Original overnight deadline persists;
 continue discovery, without a terminal marker or readiness declaration.
+
+
+### Checkpoint 17: adopted whole House continuing-resolution replacement
+
+H.Res. 1142 directly deems final H.R. 7147 concurrence with the whole House
+replacement in Rules Committee Print 119-21. The complete official two-page
+print replaces the Senate-inserted matter. It changes the residual continuing-
+resolution outer date to May 22, 2026, preserving earlier applicable funding
+endpoints, existing rates/conditions/anomalies and qualified lapse-pay and
+obligation provisions. It does not adopt the annual DHS bills or riders.
+The printed February 14 lapse date remains distinct from other annual prints.
+Complete 119-37 division A, 119-75 division H, incorporated 119-4 adjustments
+and 1341(c) supply the independently read baseline. House adoption does not
+establish enactment, actual operations, payment or a new immigration power.
+
+The Immigration-only source binder supports an explicitly governed whole House
+replacement over the same Semantic IR V1 architecture. It preserves the actual
+rule question, No/Aye observations, underlying H.R. 7147 episode and canonical
+candidate/publication boundaries. Five additional adversarial/actual tests
+reject missing or partial print claims, wrong bills/prints, future dates,
+consideration-only clauses, rule episodes and conflicting witness types.
+The common adapter and frozen Health proof remain unchanged.
+
+401 governed reviews: 32 interpreted, 202 procedural, 166 excluded, one expressive;
+275 ordinary screenings unfinished. 32 actions occupy 31 current episodes;
+the H.R. 4 episode retains two actions. H.R. 7147's earlier annual action remains
+unfinished source research and will join its existing episode when authored.
+64 observations: 62 directional, one Present and one Not Voting. 60 readable/IR
+findings (31 Foushee, 29 Massie); actual replacement compact, detail, qualified
+continuation and opposed/support observations inspected.
+
+All 32 meanings internally audited in a separate same-owner primary reconstruction
+stage. 72 distinct assessments: 1 Critical/6 Major/2 Minor/63 No Defect. Twelve
+legal-application interactions remain. No full audit PASS, universe closure,
+acceptance, promotion, publication or second independent reviewer is claimed.
+1,065 governed sources = 897 unchanged Health reuses + 168 new; 274 claim witnesses
+and 81 provisional capture witnesses. Core:
+`e4fb3dd2666e11f4a802c0036a5225af8c4edd05bccd1acb1582d90143b531cd`;
+IR: `303b0ce4e931fe898a857d7872aba002b4ea0cc8e9b4ca0b66edd02bbe88d78e`.
+215 focused tests pass in 35.498 seconds, seven canonical semantic checks pass,
+and all seven generated files replay byte-identically. Source/audit/accounting,
+public/persistence rejection, protected-baseline/common-adapter and diff gates
+pass. Previous exact head fbfd2b50f97393695c422152fd2b2e5c2a89f45f passes all
+nine hosted jobs: https://github.com/dhart54/political_fingerprint/actions/runs/37431416284.
+Current-head CI follows push. Continue annual-DHS sources and ordinary screenings
+under the original overnight deadline; no terminal marker or readiness declaration.

@@ -1,8 +1,9 @@
 """Immigration-only candidate source binding over the established Semantic IR V1.
 
 The common adapter and frozen Health proof remain unchanged. This module admits
-only explicitly bound unamended deemed concurrence; it invents no House question,
-member observation, legislative meaning, acceptance or publication authority.
+only explicitly bound unamended or whole-replacement deemed concurrence. It
+invents no House question, member observation, legislative meaning, acceptance
+or publication authority.
 """
 from __future__ import annotations
 import argparse
@@ -25,7 +26,64 @@ CANDIDATE = common.CANDIDATE
 
 def _extended(action):
     witness = action.get("deemed_concurrence")
-    return isinstance(witness, dict) and "senate_amendment_source_id" in witness
+    return (isinstance(witness, dict) and "senate_amendment_source_id" in witness
+            or "deemed_replacement_concurrence" in action)
+
+
+def _bind_replacement_concurrence(proposed, sources, congress, clerk):
+    witness = proposed.get("deemed_replacement_concurrence")
+    if (not isinstance(witness, dict)
+            or set(witness) != {"underlying_bill_number", "source_id", "passage",
+                                "replacement_text_source_id", "rules_committee_print_number"}
+            or "deemed_concurrence" in proposed
+            or proposed.get("stage") != "concurrence"
+            or proposed.get("bill_type") != "hres"):
+        raise ValueError("invalid whole-replacement concurrence binding")
+    number = witness["underlying_bill_number"]
+    print_number = witness["rules_committee_print_number"]
+    if (not isinstance(number, str) or not number.isdigit() or int(number) <= 0
+            or not isinstance(print_number, str) or not print_number.isdigit()
+            or int(print_number) <= 0
+            or proposed["episode_id"] != f"episode:hr{number}:{congress}"
+            or witness["source_id"] != proposed["source_id"]):
+        raise ValueError("replacement concurrence must bind the underlying bill episode and print")
+    source = sources[witness["source_id"]]
+    clause = witness["passage"]
+    prefix = ("Resolved, That upon adoption of this resolution, the House shall be "
+              "considered to have taken from the Speaker's table the bill "
+              f"(H.R. {number}) ")
+    suffix = (", with the Senate amendment thereto, and to have concurred in the "
+              "Senate amendment with an amendment consisting of the text of "
+              f"Rules Committee Print {congress}-{print_number}.")
+    if (source["source_type"] != "official_bill_text" or source["text_version"] != "EH"
+            or f"[H. Res. {proposed['bill_number']} Engrossed in House (EH)]" not in source["text"]
+            or not isinstance(clause, str) or not clause.startswith(prefix)
+            or not clause.endswith(suffix)
+            or not source["text"].endswith(clause + " Attest: Clerk.")
+            or source["text"].count("Resolved,") != 1
+            or not any(c["source_id"] == source["source_id"] and c["passage"] == clause
+                       for c in proposed["claim_source_map"])):
+        raise ValueError("replacement concurrence requires the exact governed operative clause")
+    replacement_id = witness["replacement_text_source_id"]
+    if (replacement_id not in proposed.get("additional_source_ids", [])
+            or replacement_id not in sources):
+        raise ValueError("replacement concurrence requires the whole exact Rules print")
+    replacement = sources[replacement_id]
+    normalized = " ".join(replacement["text"].split())
+    header = f"RULES COMMITTEE PRINT {congress}–{print_number}"
+    house_date = datetime.strptime(clerk["metadata"]["action-date"], "%d-%b-%Y").date()
+    dates = re.findall(r"([A-Za-z]+) (\d+), (\d{4}) \(\d+:\d+ [ap]\.m\.\)", normalized)
+    if (replacement["source_type"] != "official_rules_committee_print"
+            or header not in normalized
+            or f"TEXT OF THE HOUSE AMENDMENT TO THE SENATE AMENDMENT TO H.R. {number}" not in normalized
+            or "In lieu of the matter proposed to be inserted by the Senate amendment, insert the following:" not in normalized
+            or not dates
+            or not any(c["source_id"] == replacement_id and c["passage"] == replacement["text"]
+                       for c in proposed["claim_source_map"])):
+        raise ValueError("replacement concurrence requires the whole exact Rules print")
+    if any(datetime.strptime(" ".join(date), "%B %d %Y").date() > house_date for date in dates):
+        raise ValueError("replacement concurrence Rules print follows the House choice")
+    return True
 
 def _bind_concurrence(proposed, sources, congress, clerk):
     witness = proposed["deemed_concurrence"]
@@ -104,7 +162,10 @@ def prepare(authoring, capture, member_ids):
         date = datetime.strptime(meta["action-date"], "%d-%b-%Y").date().isoformat()
         if date > authoring["interpretation_action_set_cutoff"]:
             raise ValueError("new raw action cannot extend declared interpretation cutoff")
-        _bind_concurrence(proposed, sources, congress, clerk)
+        if "deemed_replacement_concurrence" in proposed:
+            _bind_replacement_concurrence(proposed, sources, congress, clerk)
+        else:
+            _bind_concurrence(proposed, sources, congress, clerk)
         operative = [sources[sid] for sid in [proposed["source_id"], *proposed.get("additional_source_ids", [])]]
         by_id = {s["source_id"]: s for s in operative}
         if not proposed["compact_source_refs"] or not set(proposed["compact_source_refs"]) <= set(by_id):
@@ -113,6 +174,12 @@ def prepare(authoring, capture, member_ids):
             if claim["source_id"] not in by_id or claim["passage"] not in by_id[claim["source_id"]]["text"]:
                 raise ValueError(f"claim passage absent from bound source: {aid}")
         source_ids = [identity(clerk), *[identity(s) for s in operative]]
+        witness = proposed.get("deemed_replacement_concurrence", proposed.get("deemed_concurrence"))
+        relationship = (f"H.Res.{proposed['bill_number']} directly deems concurrence in the Senate amendment "
+                        f"for H.R.{witness['underlying_bill_number']}")
+        if "deemed_replacement_concurrence" in proposed:
+            relationship += f" with the whole House replacement in Rules Committee Print {congress}-{witness['rules_committee_print_number']}"
+        relationship += "; distinct exact action within the underlying bill episode"
         action = {
             "action_id": aid, "exact_action_identity": aid,
             "chamber": "house", "congress": int(congress), "session": int(session), "roll": int(roll),
@@ -128,8 +195,7 @@ def prepare(authoring, capture, member_ids):
             "action_outcome_source_identities": [identity(clerk)], "operative_meaning_source_identities": [identity(s) for s in operative],
             "semantic_ir_source_ids": [s["source_id"] for s in source_ids],
             "package_component_boundary": {"boundary_type": "whole_measure", "parent_package_meaning_projected": False,
-                "basis": proposed["limitations"], "governed_component_relationships": [
-                    f"H.Res.{proposed['bill_number']} directly deems concurrence in the Senate amendment for H.R.{proposed['deemed_concurrence']['underlying_bill_number']}; distinct exact action within the underlying bill episode"]},
+                "basis": proposed["limitations"], "governed_component_relationships": [relationship]},
             "source_contract_version": "shared_legislative_corpus_v1", "meaning_contract_version": "candidate-extension-v1",
         }
         action["action_core_sha256"] = digest(action)

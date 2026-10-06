@@ -175,6 +175,12 @@
           "status": "Nay"
         },
         {
+          "action_id": "house:119:2:108",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:2:120",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -362,6 +368,12 @@
         },
         {
           "action_id": "house:119:2:101",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:108",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -1133,6 +1145,31 @@
         }
       },
       {
+        "action_id": "house:119:2:108",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:108:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The complete H.Res.1142 EH directly deems the House to have taken H.R.7147 from the Speaker's table and concurred in the Senate amendment WITH an amendment consisting of the whole Rules Committee Print 119-21. This is the final House replacement choice, not a rule merely permitting later consideration or a vote adopting the unamended Senate annual DHS text. The complete two-page print expressly replaces the entire matter proposed to be inserted by the Senate amendment. Its section 2 changes the date in 119-37 divisionA 106(3) to May 22,2026. The existing 119-75 divisionH 101 date is February 13,2026; the proposal continues the residual continuing-appropriations framework, including DHS border, immigration-enforcement and citizenship-services activities, under its existing rates, authority, conditions and exceptions. It does not supply the separate annual DHS funding totals or new riders from earlier H.R.7147 annual versions, H.R.7744 or H.R.8029. Under 119-37 divisionA 101, FY 2025 rates and conditions derive from 119-4 divisionA subject to express exclusions and anomalies.119-4 incorporates FY 2024 DHS appropriations with identified exceptions and its own DHS 1701-1709 adjustments, including the 9.986542 b ICE Operations and Support annualized rate. That is an incorporated rate for continuation, not an assertion that this short extension newly appropriates or spends that full annual amount.119-37 section 106 still ends any project/activity appropriation or authority at the EARLIEST applicable project-specific appropriation, enactment of an applicable appropriations Act without that project, or the substituted date. It therefore does not extend already superseded appropriations for every agency indiscriminately. Sections 103-105 and 109-110 retain the pertinent manner, no-new-FY 2025-unfunded-activity, obligation-period and limited-continuation constraints. The date amendment does not expressly rewrite every separately fixed immigration-program sunset, change visa/admission/removal eligibility, grant a new enforcement power, abolish fees, or reproduce the separate FY 2025 reconciliation appropriations. The complete divisionA also retains its specific anomalies and linked-date extensions; only section 106(3) is expressly changed here. Section 3 includes the lapse beginning ON OR ABOUT February 14,2026 in the covered period. Preserve that printed date rather than importing the February 13 wording of the separate March annual bills. Section 4 makes amounts already made available for personnel pay, allowances and benefits under 119-37 divisionA and 119-75 divisionH available for 31 US 1341(c) payments and directs that they SHALL be made. Existing 1341(c) already covers qualifying furloughed and excepted Government/DC employees, standard pay, earliest possible payment after a covered lapse ends, enactment of ending appropriations, and qualifying leave compensation; this proposal is not first-ever backpay authority or evidence anyone actually received pay. Section 5 ratifies anticipated obligations for essential life/property protection, orderly shutdown or otherwise legally authorized purposes ONLY if otherwise in accord with the referenced Acts. It does not validate any unlawful obligation without qualification. The whole adopted replacement also carries this personnel/obligation framework for the referenced Acts, beyond Immigration; no component-only immigration preference is attributed. Its legal vehicle remains H.R.7147, one underlying bill episode, while this exact concurrence has a different operative proposal from the January annual funding choice. Do not substitute later enrolled/enacted text or infer enactment, May 22 actual operations, payments, removals or immigration outcomes from the House resolution result.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr7147:119",
+        "legislative_stage": "concurrence",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:108",
+          "govinfo:hres1142eh",
+          "house:rcp119-21-complete",
+          "govinfo:pl119-37-complete-division-a-immigration",
+          "govinfo:pl119-75-complete-division-h-immigration",
+          "govinfo:pl119-4",
+          "govinfo:31usc1341-2024-backpay"
+        ],
+        "structural_metadata": {
+          "stage_order": 20108
+        }
+      },
+      {
         "action_id": "house:119:2:120",
         "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:120:candidate-v1",
         "eligibility": {
@@ -1428,6 +1465,14 @@
         "episode_id": "episode:hr5103:119",
         "action_ids": [
           "house:119:2:101"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr7147:119",
+        "action_ids": [
+          "house:119:2:108"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

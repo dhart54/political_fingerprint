@@ -100,6 +100,82 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'underlying bill episode'):
             prepare(author, capture, ['F000477', 'M001184'])
 
+    def test_whole_house_replacement_preserves_actual_rule_choices(self):
+        core, mapping, projections, _, result = self.products
+        action = next(a for a in core['actions'] if a['action_id'] == 'house:119:2:108')
+        self.assertEqual(action['exact_question'], 'On Agreeing to the Resolution')
+        self.assertEqual(action['legislative_stage'], 'concurrence')
+        self.assertEqual(next(r for r in mapping['action_mappings']
+                             if r['action_id'] == action['action_id'])['episode_id'], 'episode:hr7147:119')
+        self.assertIn('May22,2026', action['candidate_exact_action_meaning'].replace(' ', ''))
+        readable = readable_candidates(self.values[0], core, projections, result)
+        for mid, status in [('F000477', 'Nay'), ('M001184', 'Yea')]:
+            row = next(a for p in projections if p['member_id'] == mid
+                       for a in p['actions'] if a['action_id'] == action['action_id'])
+            self.assertEqual(row['official_status'], status)
+            self.assertEqual(row['action_core_sha256'], action['action_core_sha256'])
+            findings = [f for m in readable['members'] if m['member_id'] == mid
+                        for f in m['findings'] if action['action_id'] in f['action_ids']]
+            self.assertEqual(len(findings), 1)
+
+    def test_replacement_concurrence_rejects_unbound_or_partial_print_claim(self):
+        for defect in ['missing_source', 'missing_reference', 'partial_claim']:
+            with self.subTest(defect=defect):
+                author, capture, _, _ = copy.deepcopy(self.values)
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:108')
+                sid = action['deemed_replacement_concurrence']['replacement_text_source_id']
+                if defect == 'missing_source':
+                    capture['sources'] = [s for s in capture['sources'] if s['source_id'] != sid]
+                elif defect == 'missing_reference':
+                    action['additional_source_ids'].remove(sid)
+                else:
+                    claim = next(c for c in action['claim_source_map'] if c['source_id'] == sid)
+                    claim['passage'] = claim['passage'][:400]
+                with self.assertRaisesRegex(ValueError, 'whole exact Rules print'):
+                    prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_resealed_replacement_print_wrong_bill_number_or_future_date_is_rejected(self):
+        for defect in ['wrong_bill', 'wrong_print', 'future_date']:
+            with self.subTest(defect=defect):
+                author, capture, _, _ = copy.deepcopy(self.values)
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:108')
+                sid = action['deemed_replacement_concurrence']['replacement_text_source_id']
+                source = next(s for s in capture['sources'] if s['source_id'] == sid)
+                old, new = {'wrong_bill': ('H.R. 7147', 'H.R. 7744'),
+                            'wrong_print': ('119–21', '119–22'),
+                            'future_date': ('March 27, 2026', 'March 28, 2026')}[defect]
+                self.assertIn(old, source['text'])
+                source['text'] = source['text'].replace(old, new)
+                source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+                next(c for c in action['claim_source_map'] if c['source_id'] == sid)['passage'] = source['text']
+                with self.assertRaisesRegex(ValueError, 'whole exact Rules print|follows the House choice'):
+                    prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_resealed_consideration_only_rule_cannot_adopt_replacement(self):
+        author, capture, _, _ = copy.deepcopy(self.values)
+        action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:108')
+        source = next(s for s in capture['sources'] if s['source_id'] == action['source_id'])
+        old = action['deemed_replacement_concurrence']['passage']
+        new = 'Resolved, That it shall be in order to consider a motion to concur with the House replacement.'
+        source['text'] = source['text'].replace(old, new)
+        source['governed_bytes_sha256'] = sealed_digest(source, 'governed_bytes_sha256')
+        action['deemed_replacement_concurrence']['passage'] = new
+        next(c for c in action['claim_source_map'] if c['source_id'] == source['source_id'])['passage'] = new
+        with self.assertRaisesRegex(ValueError, 'exact governed operative clause'):
+            prepare(author, capture, ['F000477', 'M001184'])
+
+    def test_replacement_cannot_use_a_rule_episode_or_two_conflicting_witnesses(self):
+        for defect in ['rule_episode', 'parallel_witness']:
+            with self.subTest(defect=defect):
+                author, capture, _, _ = copy.deepcopy(self.values)
+                action = next(a for a in author['actions'] if a['action_id'] == 'house:119:2:108')
+                if defect == 'rule_episode':
+                    action['episode_id'] = 'episode:hres1142:119'
+                else:
+                    action['deemed_concurrence'] = copy.deepcopy(action['deemed_replacement_concurrence'])
+                with self.assertRaisesRegex(ValueError, 'underlying bill episode|invalid whole-replacement'):
+                    prepare(author, capture, ['F000477', 'M001184'])
+
     def test_resealed_changed_exact_question_is_not_trusted(self):
         author, capture, universe, membership = copy.deepcopy(self.values)
         universe['candidate_dispositions'][0]['question'] = 'On Passage'

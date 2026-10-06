@@ -1,7 +1,15 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 73,
+  "source_count": 81,
   "sources": [
+    {
+      "source_id": "congressional-record:2026-01-22-dhs-statement-research-window",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-bk2.pdf",
+      "raw_sha256": "2a560a9993586f0a276cfc22724ce1d7e2ff8e87e0ba431789c6d09073160dc6",
+      "governed_bytes_sha256": "360156bc65df3fb826cb860b5ab33ff08f1569fb705ad07a68e5119b21f1ef1e",
+      "text_sha256": "5eca6565f2180299e5ad72f830c4d177bd0a84276400fa2dd6bf58269de1ded7",
+      "text_length": 294585
+    },
     {
       "source_id": "dc-code:1-31502-mayor-executive-office",
       "url": "https://code.dccouncil.gov/us/dc/council/code/sections/1-315.02",
@@ -531,12 +539,60 @@
       "text_length": 9774
     },
     {
+      "source_id": "govinfo:hrpt119-173-complete",
+      "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt173/html/CRPT-119hrpt173.htm",
+      "raw_sha256": "f8b02e171ade9a05eb6c5806a20bc1fc975727ed17f34aa3a3e22038679cabc0",
+      "governed_bytes_sha256": "c26790719350c105ccaf1e42abbb948937ff516c56ddfc86e0767df099d2a038",
+      "text_sha256": "702a4566e7e6f8ad5ef4c0ddc00db61be4f6a4677488d096236ebda784985e59",
+      "text_length": 569002
+    },
+    {
+      "source_id": "govinfo:pl109-295-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-109publ295/html/PLAW-109publ295.htm",
+      "raw_sha256": "212152201318629c49eb4bfa9f1b467bb851dd11ef18dc6173ff427115fb61e4",
+      "governed_bytes_sha256": "666e5c92f77878cd67d39abcf31d6bcdb26631c50b2fa2381d934e9b59d218a9",
+      "text_sha256": "76a71d9fee459ba17c595a0a5587f4bcff72a327d4f768d3f05f4e9dc434eb16",
+      "text_length": 319089
+    },
+    {
+      "source_id": "govinfo:pl110-161-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-110publ161/html/PLAW-110publ161.htm",
+      "raw_sha256": "e63e2a5dde3b5b2f551c3acd6373bdc50f46adc2fe8d352d8ad1d6610ae10f6f",
+      "governed_bytes_sha256": "fc272008a1a0c2f58d4a2502643d903d7e1f1255390428d518248b69b1db8e10",
+      "text_sha256": "67bb23c8d49104c1a49a5312e00282b4e1ea98af40ad96fa30fb0d900673a6fa",
+      "text_length": 1869916
+    },
+    {
+      "source_id": "govinfo:pl116-260-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ260/html/PLAW-116publ260.htm",
+      "raw_sha256": "c5d5b08013295d9a28c6857ef75ddf791cbf28906e9c72d53c222d5c83ea1156",
+      "governed_bytes_sha256": "ddb11387be3baea9f07253c5dd0e1942c345d56ea72948a08c5830d159f08b6e",
+      "text_sha256": "b9f99524b89ad8a9e705cf9731764c963366144fb4ad3ce1a87fc1fc1936ab15",
+      "text_length": 6227671
+    },
+    {
+      "source_id": "govinfo:pl118-47-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ47/html/PLAW-118publ47.htm",
+      "raw_sha256": "4a1f78da4e44c5f1c5ea358ad4a68913523df9f3fe305a22f3ee9c6bbb7cd52c",
+      "governed_bytes_sha256": "a8f7f6ebcd9da29e955da25284be2de94e57f1d0bda4f266f0aa6a72db816870",
+      "text_sha256": "c3bffd9e127b8f7844aa3cbfdaf73519758c9d5bec80eae170bc9df6bb1a1eed",
+      "text_length": 1252353
+    },
+    {
       "source_id": "govinfo:pl119-21-immigration-audit-complete",
       "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
       "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
       "governed_bytes_sha256": "926db69d756a8f0d82bb0455491799081435fa4f16293fc378c4baead7e019af",
       "text_sha256": "2edb35c8658ea6b3da678e0d7449f1ac31b8cde3206e166ccbadcc1026c62918",
       "text_length": 903049
+    },
+    {
+      "source_id": "govinfo:pl119-75-dhs-complete",
+      "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+      "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+      "governed_bytes_sha256": "86051e2e39339c904dd988959c480f9f179a758da60fd791641e022d34c01d16",
+      "text_sha256": "a668fe465e1d3af2e18229905d23a544f206d5fffc091150ece7132e558cc02c",
+      "text_length": 1733741
     },
     {
       "source_id": "govinfo:proclamation10886-20250120",
@@ -561,6 +617,14 @@
       "governed_bytes_sha256": "098381eb495526b276796c88fb64a96282a480e0229d76320e8f138a479e9607",
       "text_sha256": "07aaa07d7e1efd61c0a076e8df03e5a1a1c9081c4da7ab3853ba1bb162ea496c",
       "text_length": 3491744
+    },
+    {
+      "source_id": "house:rcp119-21-complete",
+      "url": "https://docs.house.gov/billsthisweek/20260323/RCP_119-21_02_xml.pdf",
+      "raw_sha256": "25592736a363448aca4b814b403285a628ba2a98d71160479208253c26d938ec",
+      "governed_bytes_sha256": "33a4731072c07b9d88675cd2579a9f7d7ff9444290c03ece088e269dba029694",
+      "text_sha256": "eb3dfdb652a91a85ae4bc05e5571c1236921f3d2522cfa7dca88123646bb206e",
+      "text_length": 2440
     },
     {
       "source_id": "sba:relocation-announcement-20250306-complete",

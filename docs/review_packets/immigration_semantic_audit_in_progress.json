@@ -2882,6 +2882,85 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:108",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "108",
+        "legis-num": "H RES 1142",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "27-Mar-2026",
+        "action-time": "11:25 PM",
+        "vote-desc": "Providing for disposition of the Senate amendment to the bill (H.R. 7147) Department of Homeland Security Appropriations Act, 2026"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Separate source-first reconstruction: complete1142EHsingleResolvedclause directly deems7147concurrenceWITH119-21wholeHouseamendment. Completeofficialtwo-pageprint replacesALLSenateinsertedmatter. Only106(3)date expresslysubstitutedMay22;119-75HcurrentFeb13baseline plus119-37Awholecontinuation/anomalies/earliest-project-endpoint/no-new-unfunded-activity constraints and119-4FY2025rate/conditionincorporation/DHSadjustments independentlyread. NoannualDHSriderorfullannualspendinferred. PrintedlapseFeb14notFebruary13fromotherbills.1341(c)existingcoveredfurloughed/exceptedstandardpay/qualifyingleave/enactmentconditionread;4mandatoryavailablepaynotfirstentitlement/actualpayment.5essential-life/property/orderlyshutdown/otherwiselegalobligONLYotherwiseinaccordratification. Fixedotherprogramsunsetsnotexpresslyrewritten. ActualClerkMarch27No/Aye separatelynormalizeNay/Yea;oneunderlying7147episode. Futureother7147stagesmustretainexactdistinctmeaningsandchoiceswithoutartificialindependentepisode.",
+      "finding": "No material defect in exact whole-replacement, continuing-authority/rate/endpoint baseline, qualified pay/ratification, printed-date, whole-choice and underlying-episode candidate comparison. This remains partial-corpus candidate authoring, not independent acceptance or publication.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "4c1c0ca182088dc0f0bd81a6ad3065c06a61106493d6ed14e5c44ec35165e57d",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hres1142eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1142eh/html/BILLS-119hres1142eh.htm",
+          "governed_bytes_sha256": "c23b15fa7343eb3b6ead62d52dbb189dc0a3a433615b2813fddd34a29baa8b25",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        },
+        {
+          "source_id": "house:rcp119-21-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260323/RCP_119-21_02_xml.pdf",
+          "governed_bytes_sha256": "33a4731072c07b9d88675cd2579a9f7d7ff9444290c03ece088e269dba029694",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        },
+        {
+          "source_id": "govinfo:pl119-37-complete-division-a-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "governed_bytes_sha256": "85f16b8eef173d108d14b47568575fcbf35b93da3ffdb85a3e2fe85714b6f3ea",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        },
+        {
+          "source_id": "govinfo:pl119-75-complete-division-h-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "governed_bytes_sha256": "75bb969e15cc1f9996195bde3e5816d41dca47642b92cbf1973eb07ac160ff1a",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        },
+        {
+          "source_id": "govinfo:31usc1341-2024-backpay",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm",
+          "governed_bytes_sha256": "81d06827ecb738e342bfb52aa1dcb761953bcdcea774b5359630a3bf655de161",
+          "reviewed_extent": "Complete exact adopted rule/print, complete referenced continuing divisions and lapse-pay subsection;119-4completeincorporation/endpoints/DHS1701-1709independentlyread, no unrelated-domain interpretation reused"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -5377,10 +5456,10 @@
     }
   ],
   "action_assessment_counts": {
-    "Critical": 1,
-    "Major": 6,
+    "No Defect": 63,
     "Minor": 2,
-    "No Defect": 62
+    "Major": 6,
+    "Critical": 1
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -5410,7 +5489,8 @@
     "LiteralrulethatdirectlydeemsfinalSenateconcurrence differs fromrulesmerelypermittinglatermotion. ExactEASidentity/body/priordate/clause/Clerkquestion andunderlyingbillepisoderequired. NamedunobligatedStateMRArescission isnotallrefugeeauthority/domesticICEfunding, componentvoteoractualoutcome. Entireversiondifferences preserved withoutduplicatingepisodebreadth.",
     "Territorial/nationality-qualified tuition: independently separate beneficiary residence list, citizen-and-noncitizen national definition and broader institution-location State definition. Expand controls across ordinary education, SBA finance and financial-forum exclusion so context alone does not supply Immigration membership.",
     "Firearm-definition incorporation: directly read INA237(a)(2)(C)ratherthanexcludeallgeneralcriminal-classificationchanges; retainunamendeddestructivedeviceroute, conviction/admissionthreshold, tax-versusTitleIclassification and actualindividualapplicationboundary. No correction of an earlier2189exclusion needed because no such screening had been accepted into the candidate ledger.",
-    "Direct operativeCommissionrecommendationsversusrhetoric, andexplicitFederalimmigrationbail-businessdefinitionversusgenericcriminalbailreport. PreserveexactincorporatedEOsectionratherthanimportallparentpassportcommands; separatelegislativechoicefromresolvedNotVotingstatus."
+    "Direct operativeCommissionrecommendationsversusrhetoric, andexplicitFederalimmigrationbail-businessdefinitionversusgenericcriminalbailreport. PreserveexactincorporatedEOsectionratherthanimportallparentpassportcommands; separatelegislativechoicefromresolvedNotVotingstatus.",
+    "DirectfinalwholeHousereplacementversusunamendedSenateconcurrenceorconsideration-onlyrule;residualCRouterdateversusannualDHSfunding,earlierprojectendpointsandfixedprogramsunsets. PreserveprintedFeb14lapseratherthanparallelbillFeb13wording."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -5427,8 +5507,8 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 210,
-    "focused_runtime_seconds": 33.629,
+    "focused_tests": 215,
+    "focused_runtime_seconds": 35.498,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -5436,10 +5516,10 @@
     "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "f85c9d8563ee388ceeba8f6458d0f6422c18f993",
+      "head": "fbfd2b50f97393695c422152fd2b2e5c2a89f45f",
       "conclusion": "success",
       "all_nine_jobs_successful": true,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37429331603"
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37431416284"
     }
   },
   "open_legal_interactions": [

@@ -8,13 +8,13 @@
     "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
-    "scripts/prepare_immigration_shared_candidate.py": "98390b188f77f4626940757d05580f1a367e8bbecd7f89d312b5ed211907a4d6"
+    "scripts/prepare_immigration_shared_candidate.py": "f484fe5ccbc1830c645387123cd052ca1b9b126f0b369863bb6c0b7af3700b7f"
   },
-  "input_sha256": "1c821ba3892caa0f2eece9c8dac8d18eaa20f867a85e2e1b5061bbb6dcb51532",
-  "source_capture_sha256": "fdf67b3c7960fdd67023783fa87eb03ca978fe43cceacbcec94b0e7c9da115d8",
-  "core_sha256": "16eb8637b37b693f3057148d272265b610fb0e3cf6ee7ee3f66b179170f6d90a",
-  "compiled_sha256": "5d9990e49f7f73ba9b1dd7b3ba45c0687e98b5ad986593e69aa67c2fdd863d9c",
-  "readable_sha256": "374755709c07b660c47cbcb5414d863dd3c5440e949cf085bff0910b288908cd",
+  "input_sha256": "1d4affa65371567eee5f52fddc7d8fc96415a23974e47caaa4c9c9320568ce3c",
+  "source_capture_sha256": "6c003988b3d7beb5ad71d5a2787ae528a5a6bbb40f4b1f8d0ed2adb8209c9d77",
+  "core_sha256": "e4fb3dd2666e11f4a802c0036a5225af8c4edd05bccd1acb1582d90143b531cd",
+  "compiled_sha256": "303b0ce4e931fe898a857d7872aba002b4ea0cc8e9b4ca0b66edd02bbe88d78e",
+  "readable_sha256": "4df889e24ad32d147d2d1736ac0ab325d929400c196fcbe0df8fc26833c4e574",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -574,6 +574,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of the complete H.R. 5103 EH DC commission and beautification proposal",
           "source_id": "clerk:119:2:101"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:108",
+      "shared_sha256": "4dfc3749193558e615d25a5767c6ac915c152bcc4e21caa6d354ef496831a37a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adoption of that complete continuing-resolution replacement; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:108"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adoption of the complete H.R.7147 House continuing-resolution replacement in Rules Committee Print119-21",
+          "source_id": "clerk:119:2:108"
         }
       ]
     },

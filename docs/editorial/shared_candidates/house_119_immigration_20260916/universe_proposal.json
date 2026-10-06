@@ -45,6 +45,7 @@
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:101",
+    "house:119:2:108",
     "house:119:2:120",
     "house:119:2:169",
     "house:119:2:214"
@@ -62,9 +63,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 202,
-      "interpreted_substantive_directional": 31,
+      "interpreted_substantive_directional": 32,
       "exact_action_ineligible": 166,
-      "source_unresolved": 276,
+      "source_unresolved": 275,
       "expressive_nonbinding_context": 1
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -74,14 +75,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 31,
-    "directional_substantive_actions": 31,
+    "substantive_eligible_actions": 32,
+    "directional_substantive_actions": 32,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 202,
     "expressive_nonbinding_actions": 1,
     "exact_action_ineligible_actions": 166,
-    "unresolved_boundary_cases": 276,
-    "independent_episode_count": 30,
+    "unresolved_boundary_cases": 275,
+    "independent_episode_count": 31,
     "multi_action_episode_count": 1,
     "mechanism_types": [
       "concurrence",
@@ -90,8 +91,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 31,
-      "substantive_actions": 31,
+      "ready_substantive_actions": 32,
+      "substantive_actions": 32,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -331,6 +332,7 @@
         "house:119:2:94",
         "house:119:2:96",
         "house:119:2:101",
+        "house:119:2:108",
         "house:119:2:120",
         "house:119:2:169",
         "house:119:2:214"
@@ -644,7 +646,6 @@
         "house:119:2:99",
         "house:119:2:104",
         "house:119:2:105",
-        "house:119:2:108",
         "house:119:2:110",
         "house:119:2:114",
         "house:119:2:121",
@@ -950,6 +951,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr7147:119",
+        "action_ids": [
+          "house:119:2:108"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr1689:119",
         "action_ids": [
           "house:119:2:120"
@@ -980,7 +987,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "911b4882d318de2a7e043abacb3f3f2eff34de2bae916bb7699993e6a6a38a1d",
+  "universe_subject_sha256": "ed1e36a273a46b3fb4f822de939d76c77b00b6f905d4acb0ebcb0c97087712c0",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -25865,8 +25872,8 @@
       "date": "2026-03-27",
       "measure": "bill_119_hres_1142",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Complete adopted1142EH directly deems final H.R.7147 concurrence with the whole119-21 House replacement. Independently read complete print,119-37A,119-75H,119-4incorporation/DHSadjustments and1341(c). Operative remaining-DHS continuation is substantive, with existing-authority, earlier-endpoint, qualified lapse-pay/ratification, exact-date, whole-replacement and underlying-episode boundaries preserved.",
       "source": {
         "source_id": "clerk:119:2:108",
         "url": "https://clerk.house.gov/evs/2026/roll108.xml",
@@ -25874,7 +25881,7 @@
         "governed_bytes_sha256": "f27de4540ec182d00f521060c1fab8fb7fbc723e338e87e694b5fe9d8ae69243",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr7147:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hres_1142",
       "member_action": "nay",
@@ -25883,25 +25890,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Complete adopted1142EH directly deems final H.R.7147 concurrence with the whole119-21 House replacement. Independently read complete print,119-37A,119-75H,119-4incorporation/DHSadjustments and1341(c). Operative remaining-DHS continuation is substantive, with existing-authority, earlier-endpoint, qualified lapse-pay/ratification, exact-date, whole-replacement and underlying-episode boundaries preserved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:108",
           "url": "https://clerk.house.gov/evs/2026/roll108.xml",
           "raw_sha256": "54b39dd05fb293cc30df7b87f0e27d88e159ef04531a1e4210567d0ef4495e76",
-          "governed_bytes_sha256": "f27de4540ec182d00f521060c1fab8fb7fbc723e338e87e694b5fe9d8ae69243",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f27de4540ec182d00f521060c1fab8fb7fbc723e338e87e694b5fe9d8ae69243"
+        },
+        {
+          "source_id": "govinfo:hres1142eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1142eh/html/BILLS-119hres1142eh.htm",
+          "raw_sha256": "251388ac8df82a0c9ca0be3680f058ebce787f08a8dbcbcf82a5279042eef908",
+          "governed_bytes_sha256": "c23b15fa7343eb3b6ead62d52dbb189dc0a3a433615b2813fddd34a29baa8b25"
+        },
+        {
+          "source_id": "house:rcp119-21-complete",
+          "url": "https://docs.house.gov/billsthisweek/20260323/RCP_119-21_02_xml.pdf",
+          "raw_sha256": "25592736a363448aca4b814b403285a628ba2a98d71160479208253c26d938ec",
+          "governed_bytes_sha256": "33a4731072c07b9d88675cd2579a9f7d7ff9444290c03ece088e269dba029694"
+        },
+        {
+          "source_id": "govinfo:pl119-37-complete-division-a-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "raw_sha256": "6c25cc7451b86af49e0b38cc7feabddd0f76ac9ca2fc0cc4c64b391b5c056067",
+          "governed_bytes_sha256": "85f16b8eef173d108d14b47568575fcbf35b93da3ffdb85a3e2fe85714b6f3ea"
+        },
+        {
+          "source_id": "govinfo:pl119-75-complete-division-h-immigration",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ75/html/PLAW-119publ75.htm",
+          "raw_sha256": "19a5a1381da28fc6f7b69f60f69ab42ffeebdf333964225f53fcd667e89d36a1",
+          "governed_bytes_sha256": "75bb969e15cc1f9996195bde3e5816d41dca47642b92cbf1973eb07ac160ff1a"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
+          "source_id": "govinfo:31usc1341-2024-backpay",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleII-chap13-subchapIII-sec1341.htm",
+          "raw_sha256": "7ad2e1928f151859e6c8f4f36b7b42c9d6d76cc7b61df73a7ae59543fe00acfd",
+          "governed_bytes_sha256": "81d06827ecb738e342bfb52aa1dcb761953bcdcea774b5359630a3bf655de161"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "423d6cf6d344808f57d5522ac2c4cfb60f67f8528a26b7f031466f859e842eb0"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:108",
@@ -36814,6 +36857,7 @@
     "house:119:2:94",
     "house:119:2:96",
     "house:119:2:101",
+    "house:119:2:108",
     "house:119:2:120",
     "house:119:2:169",
     "house:119:2:214"
@@ -36959,7 +37003,6 @@
     "house:119:2:99",
     "house:119:2:104",
     "house:119:2:105",
-    "house:119:2:108",
     "house:119:2:110",
     "house:119:2:114",
     "house:119:2:121",
@@ -37112,6 +37155,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "69f81a59c881cadb17aace14e6e11ebd3d74c4db7fca0aea4aaa0e7c4f58140a",
-  "membership_review_sha256": "2982194a8b27ff136d3e58c008be4b6050cf05ec78eba3d08843a444740fe908"
+  "proposal_sha256": "9e0923db13379299814d495a98f3a69bcc763b0f8f0766d1cdee878a7bcca5ce",
+  "membership_review_sha256": "f71b57cc093695821fe85607102b4449b389530cadf9f0a34ee273c41abcf9c1"
 }
