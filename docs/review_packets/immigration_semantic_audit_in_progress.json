@@ -1382,6 +1382,182 @@
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
       "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:153",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "153",
+        "legis-num": "H R 2931",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "5-Jun-2025",
+        "action-time": "4:48 PM",
+        "vote-desc": "Save SBA from Sanctuary Cities Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Reconstruct complete HR2931EH: public Administrator location determination BEFORE ordering relocation; deadline120days from publication; non-sanctuary destination; after missed deadline closure/staff reassignment,5-day head explanation and conditional immediate removal. Same-State preference is reassigned staff, not the earlier reported-version office destination. Exact political-subdivision definition incorporates status-information and LAWFUL236/287 requests; headquarters/otherfullyfunded component definition preserved. Existing633office authority and March6announcement independently read; not first relocation. Custody base read with enacted119-1, not unlimited detention. HRes458deemed modified pending substitute then separate passage. Whole-bill choices and distinct episode; both Clerkobservations verified.",
+      "finding": "No material defect found in compared mechanism, compact, qualifications, source map, whole-choice/member separation or single-bill episode. Dated agency baseline and exact bill are separate authority objects.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "07af040af7339680731fb22593c26880e218129f0abcf6f3578533cdc0864f0d",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr2931eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2931eh/html/BILLS-119hr2931eh.htm",
+          "governed_bytes_sha256": "a28205caaee2b11674a2871b08d1faf1607e056fcbcb33d148d5d975f5d2af71",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:15usc633-2024-office-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec633.htm",
+          "governed_bytes_sha256": "41c06f82420eb50c7e710108b8db874050eda0868aaa34155370e489cd636ce2",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "sba:relocation-announcement-20250306",
+          "url": "https://legacy.sba.gov/article/2025/03/06/administrator-loeffler-announces-sba-reforms-put-american-citizens-first",
+          "governed_bytes_sha256": "65f52183628fa4689c2b4377f9f0e0f1fb4be2e6ad3d55426362378402c6a364",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:8usc1373-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1373.htm",
+          "governed_bytes_sha256": "2c5adf0ec92cd5ac80f70b88960127698cd19ebdc3f03b27791771e76cdd31c2",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:8usc1644-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap14-subchapIV-sec1644.htm",
+          "governed_bytes_sha256": "cbaf3f9eb85f3d0053cdbd49271eda98734b1b248bab915a269eb4aea5ba636c",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:8usc1226-2024-laken-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1226.htm",
+          "governed_bytes_sha256": "00d4fe8d0cff5e91f671cc67b8ce2eafeccaba941dacd6d5d98e07f81d5d2b83",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:pl119-1-section2",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ1/html/PLAW-119publ1.htm",
+          "governed_bytes_sha256": "29290a4553f0f1c4a36ad2fcf3654ce7d35a676a63dc006db8dd47d75d8f3965",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:8usc1357-2024-dc-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIX-sec1357.htm",
+          "governed_bytes_sha256": "0d37e1556d87124e0a00b9462544ffdf07788acc5c6db192716086f89fe29638",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:hres458eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres458eh/html/BILLS-119hres458eh.htm",
+          "governed_bytes_sha256": "3dd0a670cdb3ac2820afe38836dc86f06ec1a9a9b4e29479a76de452ade511d7",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
+    },
+    {
+      "action_id": "house:119:1:156",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "156",
+        "legis-num": "H R 2966",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "6-Jun-2025",
+        "action-time": "10:15 AM",
+        "vote-desc": "American Entrepreneurs First Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Reconstruct complete HR2966EH:7(a)/titleV applicationDOB, positive citizen/national/LPR or100%beneficial-owner certification, no direct/indirect ineligible owner certification and specified LPRalien-number records. Six explicit ineligible categories include printedvisa/asylee/refugee wording; no de minimis share or individualstatus-overlap adjudication. Post-enactment application phrase applies missing-document route, not an invented universal loan-cancellation/grandfather clause. SectionACh1ParagraphF of June1SOP read completely, including lookback/divestment/limited-guaranty/residence/entity/conditional-card/verification conditions; newstatutory rules overlap preexistingagency restrictions but do not automatically copy or repeal everySOPcondition. Retainednational/LPR/immigration-law definitions and programauthority read. HRes458separatependingtext/finalpassage boundary; whole-bill choices and distinct episode; both Clerkobservations verified.",
+      "finding": "No material defect found in compared mechanism, compact, qualifications, source map, whole-choice/member separation or single-bill episode. Dated agency baseline and exact bill are separate authority objects.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "b0cde14686903ad001145a5fd1284192140a7027eb960b6105ca84787f62de82",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr2966eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2966eh/html/BILLS-119hr2966eh.htm",
+          "governed_bytes_sha256": "cf92bc16866a940163f4956a628482f97e04860975f3d5b8b0d91c7b7d14b2b9",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:15usc636-2024-7a-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+          "governed_bytes_sha256": "fa25914beba6f036bea74f8a981af5accaf00d5eb536ab5adc8b729db8d8966c",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:15usc695-2024-titlev-authority",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec695.htm",
+          "governed_bytes_sha256": "34f20c1ab2c69e962e676f35795d0847fadb3280fae22a03f7bf52673e9a9829",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-sba-status-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "13edd9bb6aa6c99fba35af95e85f265ffac3ca7d53a4157a45930047a43094d0",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "sba:sop50108-20250601-citizenship",
+          "url": "https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx",
+          "governed_bytes_sha256": "e3817d91ab92e0d8ac933598660845bc54d3219c9b42f7bc0495bbbf26b2281d",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        },
+        {
+          "source_id": "govinfo:hres458eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres458eh/html/BILLS-119hres458eh.htm",
+          "governed_bytes_sha256": "3dd0a670cdb3ac2820afe38836dc86f06ec1a9a9b4e29479a76de452ade511d7",
+          "reviewed_extent": "Complete exact operative bill, identified incorporated/baseline provisions and complete relevant SBA SOP paragraph or announcement; source extents bound"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
     }
   ],
   "noncounting_actions": [
@@ -2558,7 +2734,7 @@
     "Critical": 1,
     "Major": 6,
     "Minor": 2,
-    "No Defect": 26
+    "No Defect": 28
   },
   "distinct_finding_counts": {
     "Critical": 1,
@@ -2576,7 +2752,8 @@
     "Check retained release/waiver categories and conditions across criminal-predicate and custody source families.",
     "Expand surrounding-chapeau review across every candidate using criminal237grounds; verify other status/custody/relief clauses on their own scope rather than transporting the237admission condition.",
     "Initial15meaning pattern pass: criminal237chapeau reviewed across all five newly added criminal-ground bills and S.2 incorporated category; custody-release and independent relief scopes checked separately. Initial15 reviewed; future meanings and remaining discovery still require audit. Material enacted TPS fee/duration and S.2 custody amendments followed; unavailable later-Code endpoints do not justify a universal temporal-currentness assurance.",
-    "Operative-versus-rhetorical pattern: expanded emergency-order reading exposed EO3(b) immigration-specific recommendation omitted in exclusion; corrected HJRes72. Expand exact operative governance review across remaining emergency, sanctions, DHS and package leads. Wider456-screening discovery remains open, so no full-corpus PASS."
+    "Operative-versus-rhetorical pattern: expanded emergency-order reading exposed EO3(b) immigration-specific recommendation omitted in exclusion; corrected HJRes72. Expand exact operative governance review across remaining emergency, sanctions, DHS and package leads. Wider456-screening discovery remains open, so no full-corpus PASS.",
+    "SBA source-family audit explicitly compares proposedstatutory duties with pre-voteagency relocation and June1,2025ownership/status SOP; no later2026rule imported. Earliercommittee2931destination condition is not silently substituted for exactEH."
   ],
   "source_availability_notes": [
     "GovInfo2025Code endpoints returnedPageNotFound; rejected as non-evidence and removed from repeated acquisition requests.",
@@ -2593,12 +2770,12 @@
   },
   "checkpoint_validation": {
     "focused_tests": 204,
-    "focused_runtime_seconds": 32.637,
+    "focused_runtime_seconds": 32.11,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "pending_push",
+    "exact_head_ci": "pending_push_current_checkpoint",
     "final_full_corpus_audit_verdict": null
   }
 }

@@ -9,11 +9,11 @@
     "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730"
   },
-  "input_sha256": "97a4b4053f146992902a100b814ef184d565ec40173c94807b762fd774f1556f",
-  "source_capture_sha256": "0e9610b6a52edab8089c97239422bd51ec634a65c77cbb7f3b66f7d53435b57a",
-  "core_sha256": "4b1deb8add97384edc6c985a5bbff9a9f51d35972342b701b1f6205a5b47940d",
-  "compiled_sha256": "040c10595335432f3de070c22c35eed6e1a1f0d006c3266d22a4e8fcff1cc9bc",
-  "readable_sha256": "81c2c36308f9bfefd5cfecbda01a068bace6abf70e0d8bf7bcbc97b67d451db1",
+  "input_sha256": "1755d7d95116a27301e23535191f46e56681ff0f317425f05ea199ab4b06e146",
+  "source_capture_sha256": "141d3f1e7c86a517f8c926bdb66cb4f1c612a053dc49693cfcf7abc184c885f1",
+  "core_sha256": "0ab5434db5a0c9a9167078c7e4d0396abbea8c8936214f6e01ff4e9a506a4d69",
+  "compiled_sha256": "082aa0a5b8405f98974ea22d9e033f0a95a7c7618435d1c3fa568fe15af8dbce",
+  "readable_sha256": "b3ed8d8e9d4bb72765a2ef81fcb554f0a1e0c0af4cc4ca36f520781a28db061d",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -153,6 +153,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
           "source_id": "clerk:119:1:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:153",
+      "shared_sha256": "c44d03ebe83438ab4a207b4f7bc08865707004c965beba2cff5791b36624b4d5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2931 with those requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:153"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2931 with its immigration-policy-conditioned SBA office relocation and noncompliance requirements",
+          "source_id": "clerk:119:1:153"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:156",
+      "shared_sha256": "88498cdc99f4b04480a323781d7aa9bdc2184b1ed403109c3e9681cb8cc2ad5b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2966 with those requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:156"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2966 imposing its specified statutory status/ownership documentation and loan-ineligibility requirements",
+          "source_id": "clerk:119:1:156"
         }
       ]
     },

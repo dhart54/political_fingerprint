@@ -6,7 +6,7 @@ implementation owner performs this pass; it is not a second human/model review.
 Candidate text and passing tests are not semantic authority. No final full-corpus
 audit verdict, acceptance, promotion or publication is conferred.
 
-All sixteen currently authored meanings have been compared with primary evidence.
+All eighteen currently authored meanings have been compared with primary evidence.
 The sample also covers thirteen originally excluded actions, of which twelve
 remain excluded; six procedural controls; and the sole expressive control.
 The machine-readable case evidence, identity, member observations, governed
@@ -14,7 +14,7 @@ source hashes and corrected-artifact bindings are in
 `immigration_semantic_audit_in_progress.json`.
 
 Distinct-action assessments use the highest severity, retaining a finding even
-after correction: **1 Critical, 6 Major, 2 Minor, 26 No Defect** across 35 actions.
+after correction: **1 Critical, 6 Major, 2 Minor, 28 No Defect** across 37 actions.
 The corrective H.J.Res.72 meaning has a separate No Defect re-review, which does
 not erase its Critical original screening defect. Distinct underlying findings
 are 1 Critical, 2 Major and 1 Minor.
@@ -37,7 +37,13 @@ assurance of all later-law currentness is claimed.
 
 Corrections are applied on the same candidate branch. Checkpoint validation,
 deterministic replay and exact-head CI are recorded in the active plan/review
-packet after execution. The 456 ordinary unfinished screenings, remaining
+packet after execution. The 429 ordinary unfinished screenings, remaining
 emergency/sanctions/DHS/package operative-governance leads and all future meanings
 still require discovery and audit. This initial audit unit is not full-goal
 completion or a full-corpus PASS.
+
+The SBA extension compares H.R.2931/H.R.2966 against exact EH texts, H.Res.458
+consideration, retained office/program/INA definitions and pre-vote agency
+announcement/SOP. Both current meanings receive No Defect; no later agency rule
+or previous reported-bill wording substitutes for that evidence. Wider discovery
+and every future meaning remain unaudited until separately recorded.

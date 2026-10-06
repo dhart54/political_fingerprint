@@ -5,21 +5,59 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 16,
+        "eligible_substantive_actions": 18,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 16,
-        "resolved_eligible_actions": 16,
-        "directional_yes_no_positions": 16,
+        "in_service_eligible_actions": 18,
+        "resolved_eligible_actions": 18,
+        "directional_yes_no_positions": 18,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 16,
+        "complete_episodes": 18,
         "partial_episodes": 0
       },
       "proposition_graph": {
         "propositions": [
+          {
+            "proposition_id": "prop:d607deaa79c7b0f8",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:153"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr2931:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:7a1ed641b3f0b711",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:156"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr2966:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
           {
             "proposition_id": "prop:c4a52ddd5c236892",
             "semantic_role": "behavioral",
@@ -333,6 +371,8 @@
         },
         "presentation_ownership": {
           "other_notable_choices": [
+            "prop:d607deaa79c7b0f8",
+            "prop:7a1ed641b3f0b711",
             "prop:c4a52ddd5c236892",
             "prop:025057881bfdaa58",
             "prop:557144ff8dd5575d",
@@ -356,6 +396,8 @@
       },
       "action_accounting": {
         "behavioral_proposition_action_ids": [
+          "house:119:1:153",
+          "house:119:1:156",
           "house:119:1:17",
           "house:119:1:171",
           "house:119:1:183",
@@ -381,21 +423,59 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 16,
+        "eligible_substantive_actions": 18,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 16,
-        "resolved_eligible_actions": 16,
-        "directional_yes_no_positions": 15,
+        "in_service_eligible_actions": 18,
+        "resolved_eligible_actions": 18,
+        "directional_yes_no_positions": 17,
         "present_actions": 1,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 16,
+        "complete_episodes": 18,
         "partial_episodes": 0
       },
       "proposition_graph": {
         "propositions": [
+          {
+            "proposition_id": "prop:f57181cd9a44ac71",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:153"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr2931:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:28094c20b96a1108",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:156"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr2966:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
           {
             "proposition_id": "prop:127d1ea93d8d97fa",
             "semantic_role": "behavioral",
@@ -690,6 +770,8 @@
         },
         "presentation_ownership": {
           "other_notable_choices": [
+            "prop:f57181cd9a44ac71",
+            "prop:28094c20b96a1108",
             "prop:127d1ea93d8d97fa",
             "prop:a77e5c1d91a2748f",
             "prop:4571d99bead2df6f",
@@ -722,6 +804,8 @@
       },
       "action_accounting": {
         "behavioral_proposition_action_ids": [
+          "house:119:1:153",
+          "house:119:1:156",
           "house:119:1:17",
           "house:119:1:171",
           "house:119:1:183",

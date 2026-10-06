@@ -1,7 +1,31 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 36,
+  "source_count": 41,
   "sources": [
+    {
+      "source_id": "govinfo:15usc633-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec633.htm",
+      "raw_sha256": "6667a3118c7a52dcc97da1f1f0994422d93308cd739d9ec7e065a6da907f7a51",
+      "governed_bytes_sha256": "cddc357e461c6664282b63dd6ca037cddc0fd19ae0712fc8fe276673e627ebaa",
+      "text_sha256": "9170463eec26c9e8174d0b6726074ab148ac23bee864e794f80b9cc358264d72",
+      "text_length": 62051
+    },
+    {
+      "source_id": "govinfo:15usc636-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14A-sec636.htm",
+      "raw_sha256": "1154f3dbc2aa2d9a75c79000efe8a3a436e73683b401c15b6c61f7b0ceb4852e",
+      "governed_bytes_sha256": "3a54dc8097c6c3dad377037ec587432cbd7f95b01c15d93e677c9d3c38f90330",
+      "text_sha256": "cdea4fd1e4ceb522c05fb02e9be1661dc4b320ca67772ef1e6533c1fa11a84cc",
+      "text_length": 460357
+    },
+    {
+      "source_id": "govinfo:15usc695-2024-complete",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap14B-subchapV-sec695.htm",
+      "raw_sha256": "3256983c6a62598979dd04b2e8c0e5a67805821281e9c445bfd343c054440c69",
+      "governed_bytes_sha256": "94ae1b18e3971d9510402b0fb5b5ad101fac1be9ce8d85f249ec2560223b2826",
+      "text_sha256": "da683aa62fff888c93a7908ad18714162c62cf9c25fc3db74c0e04165c105ea9",
+      "text_length": 14488
+    },
     {
       "source_id": "govinfo:18usc-chapter63-2024-complete",
       "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap63.htm",
@@ -289,6 +313,22 @@
       "governed_bytes_sha256": "098381eb495526b276796c88fb64a96282a480e0229d76320e8f138a479e9607",
       "text_sha256": "07aaa07d7e1efd61c0a076e8df03e5a1a1c9081c4da7ab3853ba1bb162ea496c",
       "text_length": 3491744
+    },
+    {
+      "source_id": "sba:relocation-announcement-20250306-complete",
+      "url": "https://legacy.sba.gov/article/2025/03/06/administrator-loeffler-announces-sba-reforms-put-american-citizens-first",
+      "raw_sha256": "489971bd19c25905a82857e9e2c7c15c4c78419224393a89d746b9c6521034da",
+      "governed_bytes_sha256": "af1adff38fadd572fe87f68aa8bc5b81aa06c66c5fde9f10909605b6fc01de19",
+      "text_sha256": "9e1082955841f113826235d62bc8a7ba0f528d065a4171225e130f3fe803e85b",
+      "text_length": 5101
+    },
+    {
+      "source_id": "sba:sop50108-20250601-complete",
+      "url": "https://legacy.sba.gov/sites/default/files/2025-05/SOP%2050%2010%208%20Technical%20Updates%20effective%206.1.2025.docx",
+      "raw_sha256": "bf5cae038c3baeab115daee1ecd0151510426cd13d8dcbf13095fbf70fb17ac1",
+      "governed_bytes_sha256": "85d7dedb33695e98d2c00769a676dc80595d17ded75d8bdc74d572164f4599c8",
+      "text_sha256": "706123c9041ecce317718237a53ce5eb6ed71d975f5c1d3c19354ed9d85ec2d3",
+      "text_length": 1055434
     }
   ],
   "rejected_responses_are_not_evidence": true

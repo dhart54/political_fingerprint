@@ -49,6 +49,18 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:1:153",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:156",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:1:171",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -146,6 +158,18 @@
         },
         {
           "action_id": "house:119:1:65",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:153",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:156",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -378,6 +402,59 @@
         ],
         "structural_metadata": {
           "stage_order": 10065
+        }
+      },
+      {
+        "action_id": "house:119:1:153",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:153:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact H.R.2931 EH proposal requires the SBA Administrator to relocate each covered office in a defined sanctuary jurisdiction, but only after making and publishing that office-location determination before ordering relocation. The destination must not be in such a jurisdiction. The jurisdiction definition is a political subdivision of a State with an effective statute, ordinance, policy or practice restricting a government entity/official from exchanging or maintaining specified citizenship or lawful/unlawful immigration-status information with Federal/State/local entities, or complying with a lawfully made DHS detainer or release-notice request under INA 236 or 287. Independent Immigration membership follows these express status-information and lawful-request cooperation conditions, not the SBA label or alleged community crime. The relocation deadline is 120 days after the public determination, not after enactment. If the office has not moved by that deadline, its head must provide a written explanation within 5 days; operations cease from the next day until relocation, and employees are assigned to another covered office in the same State outside a defined sanctuary jurisdiction if one exists, otherwise to another such office. The Administrator must immediately remove the office head if the explanation is absent or the reasons are determined insufficient. The Administrator also cannot establish a covered office in a defined sanctuary jurisdiction. Covered office includes regional/district/local offices other than headquarters, or other fully congressionally funded SBA components under the printed definition. Existing 15 USC 633(a) already allows branch/regional offices at locations determined by the Administrator. SBA announced a six-regional-office relocation policy in March 2025; this proposal adds statutory definitions, triggers, deadlines and noncompliance consequences rather than first creating all relocation authority or proving the announced moves occurred. Existing INA custody/officer authorities, read with enacted 119-1 custody amendments, remain qualified; the bill does not independently make every detainer lawful or compel every local officer to act. H.Res.458 supplies a deemed modified pending-bill substitute and later separate final-passage context; the exact EH text controls this passage, not the earlier committee version. Actual office closures/moves, staff transfers, head removal, local wrongdoing, detention/removal, service loss or enactment is not inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr2931:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:153",
+          "govinfo:hr2931eh",
+          "govinfo:15usc633-2024-office-authority",
+          "sba:relocation-announcement-20250306",
+          "govinfo:8usc1373-2024-complete",
+          "govinfo:8usc1644-2024-complete",
+          "govinfo:8usc1226-2024-laken-context",
+          "govinfo:pl119-1-section2",
+          "govinfo:8usc1357-2024-dc-context",
+          "govinfo:hres458eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10153
+        }
+      },
+      {
+        "action_id": "house:119:1:156",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:156:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact H.R.2966 EH proposal requires the SBA Administrator to ensure every application for a loan under Small Business Act 7(a) or Small Business Investment Act titleV includes individual-applicant/individual-owner dates of birth, specified citizenship/status and ownership certifications, a certification that no direct/indirect applicant-concern owner is an ineligible person, and alien-registration numbers for LPR individual applicants or owners. The positive certification is that an individual applicant is a U.S. citizen, U.S. national or LPR, or that an applicant concern or loan guarantor is 100 percent beneficially owned by individuals in those categories. The printed ineligible-person categories are an asylee, refugee, individual issued a visa to remain in the United States, nonimmigrant under any INA 101(a)(15) subparagraph, DACA deferred-action recipient, or alien present without lawful status under the defined immigration laws. Direct/indirect ownership, not merely controlling ownership, matters. Section 2(b) makes the applicant ineligible if a post-enactment submitted application lacks required information, or if the applicant concern has any direct/indirect ineligible owner, or the individual applicant is an ineligible person. The post-enactment submission condition is printed in the missing-information route; it is not an express universal grandfathering clause for the separate status routes or proof of cancellation of existing loans. Existing 7(a) and titleV loan authorities remain, including development-company financing; the bill does not create the loan programs or guarantee approval to every positively certified person. The effective June 1,2025 SBA SOP already limits 7(a)/504 financing to 100 percent qualifying direct/indirect owners and required guarantors, with citizenship/national/LPR status, residence/entity conditions, ineligible categories, verification and its own qualified divestment/limited-guaranty exceptions. The proposal supplies statutory requirements substantially overlapping those agency restrictions, not the first restriction on noncitizen-owned borrowing. It does not expressly reproduce every SOP lookback, residence, conditional-card or limited-guaranty provision; existing program requirements are not assumed repealed, nor are agency exceptions silently inserted into the bill's text. U.S. nationality and lawful permanent residence have distinct retained INA definitions. The bill's visa/asylee/refugee labels and positive LPR certification are preserved without adjudicating an individual's prior or adjusted status. No removal of immigration status, actual application denial, loan cancellation, benefit loss or enactment is established by this House passage choice. H.Res.458's pending substitute and separate passage boundary are retained; this is the whole exact EH bill, not a component vote.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr2966:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:156",
+          "govinfo:hr2966eh",
+          "govinfo:15usc636-2024-7a-authority",
+          "govinfo:15usc695-2024-titlev-authority",
+          "govinfo:8usc1101-2024-sba-status-definitions",
+          "sba:sop50108-20250601-citizenship",
+          "govinfo:hres458eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10156
         }
       },
       {
@@ -679,6 +756,22 @@
         "episode_id": "episode:hr993:119",
         "action_ids": [
           "house:119:1:65"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr2931:119",
+        "action_ids": [
+          "house:119:1:153"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr2966:119",
+        "action_ids": [
+          "house:119:1:156"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

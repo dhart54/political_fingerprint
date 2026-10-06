@@ -359,3 +359,37 @@ required noncounting sample before final delivery. Discovery remains open.
 Production writes: none. Revert candidate-branch commits for rollback; immutable
 baseline and unrelated checkout are preserved. No substantive blocker identified.
 Discovery, authoring, audit and delivery remain incomplete.
+
+### Checkpoint 7: SBA statutory/agency baseline and ordinary exclusions
+
+27new screenings:2shared SBA meanings plus25complete-text exclusions, bringing
+247reviews to18interpreted,169procedural,59excluded,1expressive and429unfinished.
+H.R.2931 uses exactEH relocation destination and staff reassignment conditions,
+not the earlier committee version. Existing633office authority and March2025
+announced moves are separate from the proposed statute. H.R.2966 adds explicit
+statutory application/status/ownership duties; June1,2025SOP already contained
+related restrictions with its own qualifications. The missing-document timing
+clause is not transported to every status route or existing-loan cancellation.
+Both shared meanings have separately reconstructed primary-evidence audit cases,
+raising NoDefect distinct actions to28 (37total); defect counts remain1/6/2.
+
+18single-action episodes,36observations,35findings: Foushee14opposition/4support,
+Massie16support/1opposition/1Present. Sources825=695unchanged Health-governed
+reuses+130new;159claim witnesses and41full provisional local research captures.
+Five new full captures are dated SBA SOP/announcement and633/636/695 authorities;
+six bounded witnesses enter the canonical candidate. These are not accepted
+cross-domain mutations.25noncounting exclusions include full exact tax, VA,
+consumer, banking, environmental, park/naming and lender-cap propositions; the
+VA pension reference is independently checked for its actual institutional scope.
+Focused Immigration15tests pass in0.867seconds; full checkpoint checks/replay
+and exact-headCI follow. The previously pushed e05427d audit checkpoint has
+seven hosted jobs successful and two still running at last observation.
+
+Next research: remaining rules, sanctions, citizenship-proof and large-package/
+amendment leads. No final universe closure, semantic PASS or public eligibility.
+
+Checkpoint7 full validation:204focused tests pass in32.110seconds; all7semantic
+checks pass; all7JSON outputs replay byte-for-byte. Both actual new SBA member
+compacts/directions and separate episodes inspected. Source/audit/accounting and
+public/persistence gates pass; protected baseline diff remains empty. Current
+exact-head hostedCI follows the push.
