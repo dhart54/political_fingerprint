@@ -5780,3 +5780,89 @@ Accounting stays 676 inventory, 455 reviews, 39 meanings, 211 procedures, 203 ex
 two expressive, 36 episodes, 78 observations and 70 findings; 221 ordinary screens,
 two partial H.R.1 reviews and 62 application questions. Ownership active, no new
 deadline or production/publication authority.
+
+
+### Successor checkpoint 78: exact electricity entity predicates and scope review
+
+Complete House 112008, EH 112008 and Senate 70512 retain the clean-electricity
+production-credit mechanism and all foreign-entity, material-assistance and own
+administrative clauses. House covered-country person definition includes citizens,
+nationals or residents, except United States citizens or lawful permanent residents.
+Senate includes citizens or nationals, omits a resident-only branch, and expressly
+excepts United States citizens, nationals or lawful permanent residents. These
+version-specific rules are not an admission/removal permission or a universal
+credit ban on immigrants, noncitizens or people born abroad.
+
+Own foreign-controlled and foreign-influenced rules remain distinct. House has
+10/25-percent equity, 25-percent debt, direct or indirect appointment, and knowing
+or reason-to-know prior-year payment conditions. Senate has 25/40-percent equity,
+15-percent debt issuance, direct appointment, complete contractual control and
+licensing conditions, bona-fide intellectual-property exception and public-market
+rules. Both retain more-than-50-percent foreign control. House incorporates section
+318 except (a)(3); Senate only (a)(2). No ownership or control of an actual entity
+adjudicated. Qualified business unit definition is separately bound.
+
+Senate material-assistance cost ratio subtracts prohibited costs from total costs
+and divides by own total; material assistance arises below the category/year
+threshold. All schedules, guidance, certifications, knowledge exceptions, six-year
+retention, binding-contract election and construction/service/sale dates retained.
+House component/design mechanism and conditional assembly/material exclusions
+remain separate. Preserve own termination/nuclear exceptions, leasing rules,
+Senate credit-transfer limits, assessment period and conditional supplier penalties.
+No inverted ratio, general grandfather exemption or blanket foreign credit denial.
+
+Ten material original witnesses retain complete 4651 definitions, 318 ownership,
+989 qualified-unit context, section 2 forced-labor strategy/list authorities,
+original section 154 battery entities and successors, complete 2024 section 1260H
+note as amended in 2024, original four-country definition, protected-individual
+qualifications and permanent-residence/United States national definitions. Import
+4651(8) branches A/B/D/E, not C, with underlying foreign-entity/protected-individual
+context. Natural-person citizenship predicates are distinct from the Chinese
+military-company definition, which excludes natural persons. No actual listing or
+misconduct asserted. Section 154(b) is imported; its October-2027 procurement date
+or military waiver is not transplanted as a tax exemption. No whole-law review or
+application adjudication of other tax-property/public-market/regulatory references.
+
+Three complete operative witnesses, two complete adopted correction witnesses and
+ten original context witnesses, plus 27 clauses with eight dimensions each, are
+sealed in hr1_foreign_entity_electricity_scope_review.json. House and EH are not
+byte-identical: floor definitions and leasing both print (d), while EH definitions
+print (c) and leasing (d); three spacing differences also enumerated. Complete
+comparison after only specified steps verified, raw witnesses and formal labels
+unchanged. No direct 112008 correction in full adopted H.Res. 492/499 chain.
+Senate full (a)-(l) includes inner 6695B, not treated as a package section boundary.
+
+Proposed context-only fit is separately reserved. Recommendation: retain the entity/
+credit mechanism as context while the supervisor applies the established Immigration
+operative-effect boundary to personal-status and protected-individual predicates.
+Alternatives: a literal shared candidate if existing standards include that entity
+credit consequence; fiscal/security context if the boundary requires an Immigration
+governing mechanism; keep bounded fit reserved if standards cannot settle it.
+HRA and foreign-tax fit remain explicit; 62 application questions stay unchanged
+and do not block ordinary screenings. Next safe work: full counterpart/package
+coverage reconciliation, continuing/omnibus/NDAA components and ordinary screens.
+All eight scope leads now have bounded assessments; this is not full package closure.
+
+Six original acquisitions append to prior 329 rows, total 335. Wrong-location 318
+HTML response failed the edition check and remains private outside evidence; correct
+part I/subpart C acquired once. Existing captured 4651 bytes reused while correcting
+the private acquisition helper; no successful original capture restarted. Full
+acquisition is not approval of whole NDAA, notes or complete forced-labor law.
+All 1323 canonical sources, 850 bindings, 39 meanings, previous receipts and both
+members remain unchanged. Candidate/publication isolation remains intact.
+
+262 tests in 42.674 seconds (73 candidate tests), seven semantic checks and seven
+raw generated replay files pass. Four mutations each fail one assertion, zero
+errors: House resident-only branch removed, Senate United States national exception
+removed, House ownership instruction replaced by Senate, material ratio inequality
+inverted. Tracked Git text conversion and separate raw generated replay retain
+separate provenance. Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8
+and compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f remain unchanged.
+Tests do not prove semantic truth. Checkpoint 77 run 37640395671 completed all nine
+associated jobs successfully; five pinned-head, three synthetic-merge and one mixed
+repair checkout distinction retained. Checkpoint 78 CI follows feature push.
+Accounting stays 676 inventory, 455 reviews, 39 meanings, 211 procedures, 203 exclusions,
+two expressive, 36 episodes, 78 observations and 70 findings; 221 ordinary screens,
+two partial H.R.1 reviews and 62 application questions. Domain fits reserved, full
+package/counterpart gates open, ownership active, no new deadline or production/
+acceptance/promotion/publication authority.

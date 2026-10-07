@@ -18,6 +18,62 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_electricity_person_predicates_keep_exact_version_exceptions(self):
+        receipt = getattr(self, 'electricity_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_foreign_entity_electricity_scope_review.json').read_text(encoding='utf-8'))
+        bodies = {w['source_id']: w['passage'] for w in receipt['operative_witnesses']}
+        house = bodies['congressional-record:2025-05-21-hr1-as-amended']
+        senate = bodies['govinfo:hr1eas']
+        self.assertIn('a person who is a citizen, national, or resident of a covered nation', house)
+        self.assertIn('not an individual who is a citizen or lawful permanent resident of the United States', house)
+        self.assertIn('a person who is a citizen or national of a covered nation', senate)
+        self.assertIn('not an individual who is a citizen, national, or lawful permanent resident of the United States', senate)
+        self.assertNotIn('citizen, national, or resident of a covered nation', senate)
+        originals = receipt['original_context_witnesses']
+        protected = next(w['passage'] for w in originals if '1324b' in w['source_id'])
+        self.assertIn('fails to apply for naturalization within six months', protected)
+        self.assertIn('actively pursuing naturalization', protected)
+        company = next(w['passage'] for w in originals if '10usc113' in w['source_id'])
+        self.assertIn('does not include natural persons', company)
+        self.assertEqual(receipt['scope_assessment']['domain_application_boundary']['state'], 'reserved_bounded_domain_fit')
+        self.assertFalse(receipt['scope_assessment']['canonical_meanings_changed'])
+
+    def test_electricity_ownership_and_influence_rules_are_version_specific(self):
+        receipt = getattr(self, 'electricity_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_foreign_entity_electricity_scope_review.json').read_text(encoding='utf-8'))
+        bodies = {w['source_id']: w['passage'] for w in receipt['operative_witnesses']}
+        house = bodies['congressional-record:2025-05-21-hr1-as-amended']
+        senate = bodies['govinfo:hr1eas']
+        self.assertIn('section 318 (other than subsection (a)(3) thereof)', house)
+        self.assertIn('section 318(a)(2) shall apply', senate)
+        self.assertIn('direct or indirect authority to appoint a covered officer', house)
+        self.assertIn('direct authority to appoint a covered officer', senate)
+        self.assertIn('owns at least 10 percent', house)
+        self.assertIn('owns at least 25 percent', senate)
+        self.assertIn('shall not apply unless such entity makes such payments knowingly (or has reason to know)', house)
+        self.assertIn('any purchase or sale of intellectual property where the agreement provides that ownership of the intellectual property reverts', senate)
+        self.assertIn('not be considered a bona-fide purchase or sale', senate)
+        self.assertIn('not less than 80 percent of the equity securities', senate)
+
+    def test_electricity_material_ratio_and_house_formal_labels_are_preserved(self):
+        receipt = getattr(self, 'electricity_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_foreign_entity_electricity_scope_review.json').read_text(encoding='utf-8'))
+        bodies = {w['source_id']: w['passage'] for w in receipt['operative_witnesses']}
+        senate = bodies['govinfo:hr1eas']
+        self.assertIn('a material assistance cost ratio which is less than the threshold percentage', senate)
+        self.assertIn('the total direct costs to the taxpayer attributable to all manufactured products', senate)
+        self.assertIn('the cost to the taxpayer with respect to such product, component, element, material, or subcomponent shall not be included', senate)
+        self.assertIn('pursuant to a binding written contract which was entered into prior to June 16, 2025', senate)
+        self.assertIn('the taxpayer may not rely on such certification', senate)
+        self.assertIn('due to a reasonable cause and not willful neglect', senate)
+        self.assertIn('(d) Definitions Relating to Prohibited Foreign Entities', bodies['congressional-record:2025-05-21-hr1-as-amended'])
+        self.assertIn('(c) Definitions Relating to Prohibited Foreign Entities', bodies['govinfo:hr1eh'])
+        self.assertFalse(receipt['house_eh_comparison']['exact_bytes_equal'])
+        self.assertFalse(receipt['scope_assessment']['full_package_review_complete'])
+
     def test_foreign_tax_applicability_is_not_nationality_or_immigration_entry(self):
         receipt = getattr(self, 'foreign_tax_scope_receipt', None)
         if receipt is None:
