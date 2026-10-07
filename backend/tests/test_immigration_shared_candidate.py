@@ -18,6 +18,43 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hra_employee_class_permission_keeps_joint_tax_predicate(self):
+        receipt = getattr(self, 'hra_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_hra_employee_class_scope_review.json').read_text(encoding='utf-8'))
+        house = receipt['operative_witnesses'][0]['passage']
+        self.assertIn('any of the following may be designated as a specified class of employee', house)
+        self.assertIn('who are nonresident aliens and who receive no earned income', house)
+        self.assertIn('(within the meaning of section 911(d)(2)) from the employer', house)
+        self.assertIn('income from sources within the United States (within the meaning of section 861(a)(3))', house)
+        self.assertIn('offers such arrangement to all employees within such specified class on the same terms', house)
+        self.assertIn('To the extent not inconsistent with the amendments made by this section', house)
+        self.assertIn('plan years beginning after December 31, 2025', house)
+        self.assertFalse(receipt['scope_assessment']['canonical_meanings_changed'])
+        self.assertFalse(receipt['scope_assessment']['eligibility_or_counting_changed'])
+        self.assertTrue(receipt['scope_assessment']['independent_domain_review_pending'])
+
+    def test_hra_original_tax_exceptions_and_cfr_reference_remain_distinct(self):
+        receipt = getattr(self, 'hra_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_hra_employee_class_scope_review.json').read_text(encoding='utf-8'))
+        witnesses = receipt['original_context_witnesses']
+        income = next(w['passage'] for w in witnesses if w['source_id'] == 'govinfo:26usc861-2024-complete')
+        self.assertIn('not exceeding a total of 90 days', income)
+        self.assertIn('does not exceed $3,000 in the aggregate', income)
+        self.assertIn('regular member of the crew of a foreign vessel', income)
+        earned = next(w['passage'] for w in witnesses if w['source_id'] == 'govinfo:26usc911-2024-complete'
+                      and w['passage'].startswith('(2) Earned income'))
+        self.assertIn('not in excess of 30 percent', earned)
+        self.assertIn('distribution of earnings or profits rather than a reasonable allowance', earned)
+        definition = next(w['passage'] for w in witnesses if w['source_id'] == 'govinfo:26usc7701-2024-complete')
+        self.assertIn('Substantial presence test', definition)
+        self.assertIn('First year election', definition)
+        self.assertIn('neither a citizen of the United States nor a resident of the United States', definition)
+        old_class = next(w['passage'] for w in witnesses if w['source_id'] == 'govinfo:cfr2024-26-1.105-11-page407')
+        self.assertIn('911(b)', old_class)
+        self.assertNotIn('911(d)(2)', old_class)
+
     def test_duplicate_enrollment_number_condition_is_not_a_new_status_gate(self):
         receipt = getattr(self, 'duplicate_enrollment_receipt', None)
         if receipt is None:

@@ -5544,3 +5544,65 @@ Senate counterpart or supported absence, then other three and full package cover
 continuing/omnibus/NDAA packages and ordinary screens. No scope is preapproved from
 keywords. No current deadline/shutdown; historical markers preserved, ownership active.
 No merge, deploy, production write, editorial acceptance, promotion or publication.
+
+
+### Successor checkpoint 74: HRA employee class and reserved domain application
+
+Complete House 110201 permits a designated employee class requiring nonresident-
+alien tax status together with no employer earned income from United States sources.
+It does not require denial of coverage to every noncitizen. Own arrangement coverage,
+same-terms/other-plan/small-group exception, class combinations/new hires, dependent/
+age variation, substantiation, notice, W-2 and plan-year-after-2025 clauses remain
+bound. Original 911(d)(2), 861(a)(3) and full 7701(b) retain earned-income exceptions,
+90-day/$3000/employer conjunction, foreign-vessel crew alternative and tax-resident
+presence/election/timing rules. No universal status, work-authorization or benefit
+eligibility outcome accepted. The full 8804-character floor and 8789-character EH
+match after explicit H2309 pagination/whitespace only; full correction witnesses reused.
+
+The 2019 rule already names a comparable employee class. Its referenced dated CFR
+1.105-11(c)(2)(iii)(E) prints 911(b), while House prints 911(d)(2); both complete Code
+definitions retained. No silent reference repair, identical legal application or
+first-ever class permission claim. Complete 2019 26 CFR class and same-terms paragraphs
+are bounded context, not all-agency/full-rule review. House no-inference rule only
+applies to the extent not inconsistent and requires conforming regulations.
+
+Reserved bounded decision: does this tax/employee-class permission have a direct
+operative Immigration effect under the existing boundary? Recommendation: context-
+only candidate, no Immigration proposition now. Alternative: after bounded review,
+route a literal employer-class candidate if existing standards support direct fit;
+otherwise preserve the scope application. No new methodology, acceptance or domain
+eligibility/counting change. This is separately routed scope work, not a new legal
+question silently added to the prior 62 or unfinished evidence labeled unavailable.
+Safe work continues on foreign-entity energy, foreign-tax remedy, commercial customs,
+package coverage and continuing/omnibus/NDAA/ordinary screenings.
+
+Seven full clauses/eight dimensions and eight original-context witnesses sealed in
+hr1_hra_employee_class_scope_review.json. Five append-only acquisition captures make
+326; no canonical source added. Three Code originals, full original 2019 acquisition,
+and replacement-free full PDF page 407 retained. Raw CFR PDF hash
+74e655f70bc351ec538df3ee2fc4895f53e84147b5932d32a0e40baeced12f5b, seven pages;
+only page 407 text (index 2) captured, selected E clause visually verified. Other pages
+have extraction replacement glyphs and are not governed text; no glyph repair or
+all-page extraction equivalence. Rejected erroneous Code/CFR HTML responses remain
+private and excluded from sources/manifests. Full exact EAS subject anchors identify
+no printed HRA counterpart, which is bounded non-identification; the complete
+counterpart-absence/package gate remains open.
+
+255 focused aggregate tests in 42.179 seconds (66 candidate tests), seven semantic
+checks and seven raw generated-byte replay files pass. Three mutations each rejected
+with one assertion failure and zero errors: conjunction changed to alternative,
+90-day exception enlarged, CFR printed reference silently changed. Canonical inputs,
+all 39 meanings, both member outputs, 1323 sources/850 bindings, prior 321 capture
+rows, prior receipts/62 application questions and all action audit hashes unchanged.
+Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8;
+compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Tests do not establish semantic truth; bounded independent scope review pending.
+
+Checkpoint 73-associated CI run 37560982589 at 9046b8ec8307380941fcbfcaf4a908bd6d328af8
+passed all nine jobs, with five pinned-head/three synthetic-merge/one mixed repair
+checkout scopes preserved. Checkpoint 74 CI follows push. Accounting remains 676
+inventory, 455 reviews, 39 meanings, 211 procedures, 203 exclusions, two expressive,
+36 episodes/78 observations/70 findings. 221 ordinary screenings and two H.R. 1 partial
+reviews remain. Three leads still need source research, with this HRA scope application
+routed separately. No current deadline; historical markers unchanged. No merge,
+deploy, production write, editorial acceptance, promotion or publication.
