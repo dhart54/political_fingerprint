@@ -18,6 +18,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_citizen_program_keeps_status_victim_and_existing_eligibility(self):
+        action = getattr(self, 'hr1968_citizen_program_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The separately printed citizen/permanent-resident trafficking-assistance program', 1)[1]
+        self.assertIn('United States citizens or aliens lawfully admitted for permanent residence who are victims of severe trafficking', text)
+        self.assertIn('such status not having changed', text)
+        self.assertIn('referrals to programs for which victims are already eligible', text)
+        self.assertIn('not a new entitlement or blanket eligibility for every Federal benefit', text)
+        self.assertIn('Mandatory program/coordination duties remain distinct from discretionary grant awards', text)
+        self.assertIn('Federal grant share cannot exceed 75 percent of the total costs of projects described in the grantee\'s application', text)
+        self.assertIn('govinfo:8usc1101a20-2024-electricity-status',
+                      {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_citizen_program_keeps_fund_boundary_and_duplicate_reference_reservation(self):
+        action = getattr(self, 'hr1968_citizen_program_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The separately printed citizen/permanent-resident trafficking-assistance program', 1)[1]
+        self.assertIn('without further appropriation', text)
+        self.assertIn('in addition to other available amounts', text)
+        self.assertIn('to award grants or enhance victims\' programming', text)
+        self.assertIn('each fiscal year 2016-2027', text)
+        self.assertIn('medical-items/services bar retains the express (h)(2) exception', text)
+        self.assertIn('Code prints two enacted subsections (f)', text)
+        self.assertIn('Omitted Code text is not automatically repealed law', text)
+        self.assertIn('historical adjustment predicates are not imported as current rules', text)
+        self.assertIn('Neither label is silently renumbered', text)
+        self.assertIn('reserved separately as question 68', text)
+        refs = {b['source_id'] for b in action['claim_source_map']}
+        self.assertTrue({'govinfo:22usc7105f-2024-citizen-lpr-program-duplicate-notes',
+                         'govinfo:18usc3014e-2024-programming-medical-boundary',
+                         'govinfo:pl106-386-sec107f-historical-adjustment-directive',
+                         'govinfo:pl110-457-sec213a1-assistance-program-insertion'} <= refs)
+        questions = getattr(self, 'citizen_f_reference_questions', None)
+        if questions is None:
+            audit = json.loads((DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+            questions = [q for q in audit['open_legal_interactions'] if q['scope'].startswith('Question 68:')]
+        self.assertEqual(1, len(questions))
+        receipt = json.loads((DATA / 'hr1968_citizen_lpr_trafficking_program_review.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['new_application_question'], questions[0])
+
     def test_hr1968_state_grants_keep_current_jurisdiction_purposes_and_partners(self):
         action = getattr(self, 'hr1968_state_grant_action', None)
         if action is None:

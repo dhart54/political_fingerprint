@@ -7213,3 +7213,85 @@ Continue material fund-use/medical-transfer authorities/exact 2101(d)-(e), furth
 authorities where applied, then State/migration/refugee, supplementary/other DHS,
 counterparts, ordinary screenings and final package comparison. Draft PR198 remains
 authorized delivery boundary; merge requires separate authorization.
+
+
+### Successor checkpoint 108: citizen/LPR assistance and literal fund reference
+
+Complete current operative 7105(f)(1)-(3) retains the citizen-or-LPR and severe-victim
+conjunction, distinct from current 20705 whose old citizenship condition was deleted.
+Existing complete 1101(a)(20) and severe-trafficking definitions are reused. Mandatory
+program establishment, agency/NGO consultation, provider coordination and referrals to
+already eligible programs remain distinct from discretionary grants to named entities.
+The Federal share is a ceiling of 75 percent of grantee-application project costs.
+No blanket new benefits, individual status/certification finding or actual grant.
+
+Complete fund(e) preserves available money alongside other available amounts, without
+further appropriation, and fiscal-year 2016-2027 grants or enhanced programming under
+four printed authorities. No new fixed money, nominal assessments as receipts or whole
+CJS-line allocation. The medical bar retains the express (h)(2) exception. Printed
+child-center citation and its original qualification footnote remain without repair.
+Further center/ICAC, health-transfer conditions and exact 2101(d)-(e) remain research;
+no current medical allocation or whole-fund closure.
+
+The Code preserves two enacted (f) labels: operative assistance inserted by complete
+2008 section 213(a)(1), and an omitted second-(f) originating as the complete 2000
+section 107(f ) adjustment amendment. Original numbering/glyphs, omitted marker,
+codification identity and explicit duplicate footnote are retained. Omission is not
+automatic repeal; original adjustment predicates are not current law or new H.R. 1968
+permission. Neither label is silently renumbered. Formal fund(e)(1)(B) application is
+reserved as question 68 with four complete witnesses, separate from prior 67 questions.
+Recommendation: preserve current program, literal reference and both identities; obtain
+bounded authoritative application review before categorical target/allocation conclusions.
+Alternatives retain literal objects or bind a supported application after review. Safe
+parallel work includes other fund/center/ICAC/health, State/migration/refugee/supplementary/
+other DHS/counterparts and 216 ordinary screenings. Later health references are not
+implied completed by this question's scope.
+
+Four selected sources, five bindings/member-review references, seven original coordinates
+and two strict original-act captures. Existing Code/fund originals and global status
+source reused at identical extents/versions; raw/full-text hashes, governed seals and
+passages/extents verify. ICAC acquisition remains private and unregistered pending review.
+All 39 other meanings, prior 1,382 sources, 67 questions, frozen receipts, compact/choices,
+counting/eligibility and compiled graph remain unchanged; all 118 prior methods preserved.
+Two guards, fourteen qualifier mutations and four question removal/duplication/recommendation/
+witness mutations meet expected assertion failures with zero errors; unrelated ordering passes.
+Both member details, unchanged compact/choices and final diff inspected.
+
+Final 146 focused tests pass in 15.651 seconds; reference validator and seven semantic
+checks pass. Seven generated files match separate final raw-byte replay. Additive-money
+and grants-or-programming alternatives were made explicit before delivery; earlier private
+146-test/15.547-second result, reference/seven checks/seven-file replay and full prior
+core are preserved in .tmp/citizen108_before_fund_sentence_expansion. Source passages
+and question unchanged by that expansion. Incorrect read-only label searches were
+corrected against actual headings before selection, with no unavailable-evidence claim.
+Core 201a31fa556df7ea50fabd07e5a885af1c04b203d4f481344b4996ba9d1c4e76;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Tests/replay establish mechanical confidence, not semantic acceptance.
+
+Accounting: 676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded,
+two expressive; 216 ordinary unfinished, three partial packages, 68 application questions.
+37 episodes, 80 observations, 72 findings; 1,386 sources, 984 bindings, 365 captures,
+265 extent objects and 440 coordinates. Unique-action 84 No Defect/three Minor/eleven
+Major/one Critical and historical findings unchanged. New question 68 is separate from
+ordinary screenings and unavailable evidence; domain/package readiness remains false.
+
+Final independent 107 source/propagation and mechanics are clean within bounded scopes:
+all original/current mapping and qualifiers, three extents/bindings, one capture, reused
+originals, both-member/core/compiler/packet/seals/proofs and prior objects/questions/106
+P3 correction verify. Scoped child guard retains every predicate and uniquely identifies
+one limitation; append/reorder pass, deletion/duplication/wrong scope/weakening/meaning or
+source loss fail. Other 115 methods unchanged; two extracted guards and 19 independent
+mutations meet expected failures. No independent full generator/test-suite, owner-private
+archive or individual application review; no new 108/domain/package acceptance. Separate
+diagnostic corroborated actual Windows 107 head/writes at 22:53:26 UTC; resume seal verifies.
+
+Owner-read exact 107 run 37698579615 is terminal nine green: five feature-pinned,
+three synthetic and one mixed. Synthetic a67758f049d48a77e318a41b9dfbfbe531ebb9be;
+hosted 273 distinct from owner 144 then/146 here. Nine raw-log hashes and actual contexts
+are sealed; audit current CI points to 107, with old 84/prior receipts historical. New
+108 needs its own pushed-head run. Existing .w/ib ownership continues under 22:39 resume
+authority, without a new deadline, preserving pause/terminal history. No merge, deploy,
+production, editorial approval, promotion or publication. Continue center/ICAC and fund
+health/exact 2101(d)-(e), then State/migration/refugee/supplementary/other DHS/counterparts,
+ordinary screenings and final package comparison. Draft PR198 remains the delivery boundary;
+merge requires separate authorization.
