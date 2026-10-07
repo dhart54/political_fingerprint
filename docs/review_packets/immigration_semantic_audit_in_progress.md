@@ -6084,3 +6084,73 @@ trafficking, State/migration/refugee/supplementary authorities, ordinary screeni
 and H.R. 1 exact-version component coverage. Questions 63 and 66 remain separate.
 Readiness/publication false, final verdict null; no merge/deploy/production or
 editorial acceptance/promotion/publication authorization.
+
+
+### Successor checkpoint 100: qualified State Criminal Alien Assistance funding
+
+The incorporated CJS SCAAP paragraph (2) specifies $234 million and bars jurisdiction
+requests above actual cost for Federal immigration and other detainees in State/local
+facilities. The account's printed no-year availability remains subject to comparable
+availability under 1103. Exact EH 1301(4) changes the mixed account to $2,000,033,000,
+paragraph (1) to $499,033,000 and (1)(Q)/(R) to zero; it does not change SCAAP paragraph
+(2) to those amounts. Excluded section 222 convention funding is separate. No whole-
+account immigration attribution, actual net award or individual entitlement.
+
+Complete reused 2024 INA 241(i) preserves chief-executive written request, Attorney
+General determination and compensation-or-Federal-custody alternative. Its definition
+requires a felony or two misdemeanor convictions together with one of three printed
+status routes, retaining custody timing and original agency/proceedings terms. It is
+not every noncitizen, an arrest-only group or a modern case determination. Determined
+average State incarceration cost and separate appropriation actual-cost cap remain
+distinct without calculating an individual award. Priority/security, printed 2006-
+2011 authorization and correctional-only distributed use remain; dated authorization
+is not a new appropriation, and correctional purpose is not unrestricted policing.
+
+Complete section 212 binds distinct up-to-two-percent training/technical-assistance
+permission and NIJ/BJS transfer/merge direction, Attorney General discretion, specific
+research-fund exception and (1)(R) exclusion. The shall direction remains qualified by
+the discretion/up-to cap. No automatic four-percent deduction, SCAAP exemption or
+guaranteed net award. Already-bound 205/209/505 caps/exceptions/deviation/prior-balance
+and advance-notice conditions remain qualified. No actual movement, individual status,
+conviction, detention/removal, jurisdiction entitlement or separate member component
+stance is established. Other DOJ/State/migration/supplementary components stay open.
+
+One new selected canonical source with three exact original coordinates and six
+bindings added, reusing the full signed-law capture and complete governed INA baseline.
+The existing baseline is newly attached to roll 70 as a source reference; its canonical
+bytes are unchanged. No duplicate original capture or whole-account/body review claim.
+Original full-act raw hash, selected/full governed source seals and complete witnesses
+reproduce. Prior 1,360 sources, 39 other actions, 66 application questions, frozen
+receipts, whole-package choices, compact copy, accounting and compiled graph preserved.
+Question 63 and 66 scope remains separate; no legal application judgment or acceptance.
+
+129 focused candidate/IR tests pass in 12.310 seconds, IR reference validator and seven
+semantic checks pass. Seven files match separate raw-byte replay. Two new bounded
+qualification guards and eight cost/amount/conviction/alternative/use/discretion/
+exception/direction mutations pass their expected assertion failures with zero errors.
+Both members' full detail propagation, unchanged compact/recorded choices, all source/
+action/receipt seals, queue/partial accounting and final diff inspected. Core
+714db9265c86fbd920c5727c2a659c39d85e5a1c82499a80d84cfb930009c48b; compiled
+f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Owner tests/replay do not prove semantic truth or independent acceptance.
+
+Accounting remains 676 inventory, 460 reviewed, 40 interpreted, 211 procedural,
+207 excluded, two expressive, 216 ordinary unfinished; three partial packages and
+66 separate application questions. 37 episodes, 80 member observations, 72 findings.
+Sources 1,361, bindings 941, captures 347, extent objects 240 and coordinates 398.
+Unique-action audit 84 No Defect/three Minor/eleven Major/one Critical unchanged;
+historical distinct findings/precision reports preserved, final verdict null.
+
+Checkpoint 99 exact 8bfd92fe3c8a269f3aa58140725697c928758af5 is pushed and draft PR
+head freshly verified; its run 37683116128 was still in progress at last read and is
+not claimed successful. Exact 98 nine-green owner-log provenance and final independent
+bounded source/propagation/mechanics closure are durably sealed in 99. New 100 needs
+its own pushed-head run and bounded review. Prior screening 99 review remains pending;
+clean 98 does not accept later additions or the full record. No production effects.
+
+Next: prisoner/alien transportation, trafficking victim program material authorities,
+State/migration/refugee assistance, supplementary acts, other DHS/exact counterparts,
+ordinary screenings and final source-bound package coverage comparison. The same
+successor owner continues without a current deadline in .w/ib, preserving original
+shutdown/terminal evidence and unrelated work. Readiness/publication false; no merge,
+deploy, production write or editorial acceptance/promotion/publication authorized.

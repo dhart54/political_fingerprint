@@ -18,6 +18,35 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_scaap_keeps_separate_amount_cost_cap_and_conviction_plus_status(self):
+        action = getattr(self, 'hr1968_scaap_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected State Criminal Alien Assistance Program funding', 1)[1]
+        self.assertIn('does not replace SCAAP paragraph (2)\'s $234 million', text)
+        self.assertIn('no jurisdiction request compensation above its actual cost', text)
+        self.assertIn('chief executive\'s written request', text)
+        self.assertIn('contractual compensation arrangement or Federal custody/incarceration alternative', text)
+        self.assertIn('a felony conviction or two or more misdemeanor convictions, together with one of the three stated status routes', text)
+        self.assertIn('when taken into that custody', text)
+        self.assertIn('average State incarceration-cost basis as determined by the Attorney General', text)
+        self.assertIn('fiscal-year 2006-2011 authorization amounts', text)
+        self.assertIn('correctional-purpose-only use', text)
+
+    def test_hr1968_scaap_keeps_distinct_two_percent_mechanisms_and_no_guaranteed_award(self):
+        action = getattr(self, 'hr1968_scaap_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected State Criminal Alien Assistance Program funding', 1)[1]
+        self.assertIn('two distinct up-to-two-percent mechanisms at the Attorney General\'s discretion', text)
+        self.assertIn('training/technical assistance may use up to two percent', text)
+        self.assertIn('transferred and merged into NIJ/BJS research, evaluation or statistics', text)
+        self.assertIn('except funds specifically appropriated for those NIJ/BJS purposes', text)
+        self.assertIn('shall-transfer direction remains subject to the stated discretion and up-to cap', text)
+        self.assertIn('exclusion does not become an exclusion for SCAAP paragraph (2)', text)
+        self.assertIn('not an automatic four-percent deduction or a computed guaranteed net SCAAP award', text)
+        self.assertIn('no unlimited transfer or every-expenditure notice claim', text)
+
     def test_hr1968_eoir_funding_keeps_included_fees_minimum_and_comparable_availability(self):
         action = getattr(self, 'hr1968_eoir_action', None)
         if action is None:
