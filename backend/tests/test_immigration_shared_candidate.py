@@ -53,6 +53,32 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertFalse(partial['complete_immigration_component_review'])
         self.assertTrue(partial['remaining_executable_component_work'])
 
+    def test_hr1968_incorporated_programs_preserve_limits_and_reserved_timing(self):
+        action = getattr(self, 'hr1968_g_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = {c['source_id']: c['passage'] for c in action['claim_source_map']}
+        incorporated = claims['govinfo:pl118-47-g102-105-hr1968']
+        self.assertIn('September 30, 2024', incorporated)
+        self.assertIn('during fiscal year 2024', incorporated)
+        self.assertIn('may increase', incorporated)
+        self.assertIn('highest number of H-2B nonimmigrants', incorporated)
+        self.assertIn('separately reserved for source-grounded review', action['meaning'])
+        self.assertIn('not a universal deadline for every physician-waiver application', action['meaning'])
+        self.assertIn('generally voluntary participation with specific', action['meaning'])
+        self.assertIn('tentative nonconfirmation may be contested', action['meaning'])
+        self.assertIn('both non-minister paths', action['meaning'])
+        self.assertIn('permits, rather than mandates', action['meaning'])
+        self.assertIn('not an unlimited allotment', action['meaning'])
+        self.assertIn('reserved timing questions', action['compact_description'])
+        audit = json.loads((DATA.parents[2] / 'review_packets' /
+                            'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+        questions = [q for q in audit['open_legal_interactions']
+                     if q['action_id'] == action['action_id'] and
+                     'G102-105' in q['scope']]
+        self.assertEqual(len(questions), 1)
+        self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
+
     def test_package_documentary_index_preserves_occurrences_and_tail_boundaries(self):
         receipt = getattr(self, 'package_coverage_receipt', None)
         if receipt is None:

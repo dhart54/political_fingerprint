@@ -5079,3 +5079,75 @@ merge, deployment, editorial acceptance, promotion or publication. Ownership con
 Next: division G102-105 material baselines and own timing/application qualifications,
 remaining referenced DHS controls, then DOJ/State/other package incorporation and
 full semantic comparison. The package stays partial throughout unfinished research.
+
+
+### Successor checkpoint 84: incorporated program authorities and reserved timing
+
+House 119/1/70 now binds complete incorporated 2024 division G sections 102-105
+and their material physician-waiver, E-Verify, non-minister religious-worker and
+H-2B baselines. Eight complete original extents create five canonical source objects.
+One strict original 2024 section 1184 acquisition is appended after exact URL reuse
+lookup found no existing acquisition: 169314 original bytes, 140026 normalized
+characters, raw SHA2193512ace1f5dc4451ef76f587eb798e4e5e1a96ed161f54c4f58950cd48520.
+Complete selected 1184(g)(1)-(11) and (l)(1)-(3) were read; complete unrelated notes
+are not claimed reviewed. The existing full 1182, 1101, 1324a and Public Law 118-47
+captures are reused at exact extents. No frozen source glyphs or historical receipts
+are rewritten. Private read-helper heading anchors were corrected before successful
+complete material readings, with no evidence change.
+
+The physician 220(c) date is a stated J admission/status cohort, not every waiver
+filing deadline. Complete foreign-residence/waiver rules preserve favorable
+recommendation/public interest, applicable agency/country conditions, the state
+30-per-year limit, employment start/service requirements, shortage-area/specialty
+conditions and qualified Veterans Affairs, research/training and up-to-ten facility
+exceptions. E-Verify remains generally voluntary with specific statutory exceptions;
+tentative/final nonconfirmation, contest, termination, notification and rebuttable
+presumption rules remain distinct. Both non-minister date paths retain denomination,
+nonprofit/work and qualified family requirements; the separate minister path is not
+assigned their date. H-2B's increase remains discretionary after consultation and
+the qualified labor-shortage determination, with the historical returning-worker
+maximum formula. Ordinary principal-worker and first-six-month caps remain distinct;
+no fixed increase, automatic returning-worker exemption or actual applicant outcome.
+
+One new bounded application question is routed in open_legal_interactions and
+hr1968_division_g_scope_review.json with recommendation, exact evidence, alternatives
+and safe parallel work. It concerns general sections 1105/1106 continuance versus
+G102-104's own September 30, 2024 substitutions and G105's fiscal-year-2024 clauses.
+Recommendation: retain complete separate rules and qualifications until independent
+source-grounded combined application review; do not silently replace every date,
+declare old-year-only nullification, adjudicate a cohort deadline or a FY2025 quota.
+This is an application boundary, not unavailable evidence or an ordinary screening.
+No product/methodology direction is changed or application accepted. Remaining DHS
+references, DOJ/State/other incorporation and ordinary screenings can continue.
+
+269 focused tests passed in 42.823 seconds before the final compact qualification
+correction; final copy passed 80 candidate tests in 11.623 seconds and seven semantic
+checks. Seven generated JSON files match separate final replay byte for byte; all
+eight original witnesses, capture/source seals and every extent recipe verify.
+Both members' compact/detail were inspected: timing reservation appears on both
+levels, qualified refugee-rule/inspection-parole window wording is preserved, and
+actual whole-package Nay is not assigned to separate programs. Six controlled
+mutations each fail one assertion, zero errors: accepted timing, universal physician
+filing deadline, universal E-Verify, borrowed minister-path date, mandatory H-2B and
+unlimited H-2B. Disk artifacts are unchanged by mutations. Final diff reviewed.
+Tests establish mechanical confidence, not semantic truth or independent acceptance.
+
+Prior 39 other meanings, 1330 source objects, 338 capture rows, 17 prior action claims,
+62 earlier questions, other membership/disposition/audit records and checkpoints82/83
+receipts are unchanged. The compiled proposition graph is unchanged. Accounting:
+676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205 excluded, two
+expressive, 218 ordinary unfinished, three partial packages, 63 application questions,
+37 episodes, 80 member observations and 72 readable candidate findings. 1335 canonical
+sources, 872 bindings, 339 captures, 216 extent-bearing objects and 360 coordinates.
+Three H.R. 1 domain fits remain separately reserved. Core
+94663145abd5bc883b91bb95b30fbd7421588d2fc49726ff727717dc6f082c00;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Final verdict, full issue closure/readiness and publication eligibility remain false.
+
+Remote/PR198 last verified checkpoint77 f869e2f527b1e88e0db506a6a18b91a9ed5fbc00;
+local78-84 remain pending transport recovery after two GitHub500 failures. PR body
+and exact-head CI have not been claimed updated. No repeated push retry, production
+write, merge, deployment, editorial acceptance, promotion or publication. Ownership
+continues. Next: remaining DHS fee/fencing/family-detention/transfer references,
+then DOJ/State/other package incorporation and full semantic comparison. The new
+timing question remains separate while safely executable work proceeds.
