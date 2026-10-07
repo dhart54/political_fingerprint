@@ -5929,3 +5929,48 @@ report/budget conflation each failed once with zero errors. New sealed independe
 recheck receipt records bounded closure without clearance of all 86-87 additions,
 editorial acceptance or publication. P3 allocation recheck remains pending. Continue
 bounded cross-case mapping rationale and ordinary screenings, then package research.
+
+
+### Successor checkpoint 90: bounded cross-case domain application rationale
+
+One source-mapped comparison covers eight cases with fifteen complete clause bindings
+and six frozen source-receipt references. Existing universe eligibility and full-record
+cross-domain contracts are applied; no new categorical rule or methodology. The
+remote-access candidate directly excludes citizens/LPR/protected individuals from
+the foreign natural-person recipient. The Senate scholarship candidate directly
+conditions the donor's credit on printed citizen/resident language. Neither requires
+creating admission powers, and neither is treated as approved ontology or a source
+of meaning for unrelated components. Donor/student/entity roles remain distinct.
+
+| Component | Current candidate recommendation | Source-specific reason and limit |
+| --- | --- | --- |
+| Foreign-tax remedy | Author qualified personal-coverage candidate | Explicit citizen-or-resident exclusion plus discriminatory-country tax residence governs individual tax treatment; retain all own rates, reductions, dates and exceptions. Tax residence includes LPR, presence and election paths and is not synonymous with immigration status. |
+| Electricity foreign-person branches | Author qualified own-version personal-status candidate | Defined covered-country person flows into specified-foreign-entity taxpayer credit restriction. Preserve House citizen/national/resident versus Senate citizen/national and different U.S. exceptions. Ownership/control/supplier rules are distinct; not every energy provision becomes Immigration. |
+| HRA employee class | Provisional context with close inclusion counterargument | Optional conjunctive nonresident-tax/no-US-source-employer-income class within an arrangement. Record argument that its personal class boundary could qualify; discretion or earlier regulatory similarity alone is not a general exclusion test. No universal coverage denial. |
+| Village land, IMF and goods customs | Negative controls | Historical land occupancy, international monetary advocacy and goods privileges are different operative objects; foreign/native/border labels do not create personal immigration/status effects. |
+
+Earlier context-only recommendations remain frozen historical assessments, including
+their disagreements. Reserved fit labels are review work rather than automatic Dylan
+gates. Literal candidates supported by existing standards can be authored and routed
+for independent review without new methodology or editorial approval. Escalate only
+if a genuinely new product/methodology judgment is necessary. HRA's closer application
+and all personal legal/tax/entity outcomes remain unresolved; no safe candidate may
+infer blanket noncitizen exclusion, unlawful presence or actual liability/entitlement.
+
+Mechanical checks verify eight cases/fifteen complete bindings/six receipt seals and
+original extent reconstructions. Twelve canonical inputs/generated files are byte
+unchanged. Current membership rule, candidate accounting validator and Semantic IR
+reference validator pass. No fresh capture/source, new meaning, counting, eligibility,
+readiness or publication change. No extra test suite repeated for a receipt-only
+increment. Existing targeted 114 tests belong to 89; no new 114-test claim. Final diff
+reviewed. Independent domain review remains pending; no acceptance or promotion.
+
+Next executable work: author literal qualified foreign-tax/electricity components
+and preserve source-mapped review boundaries; continue ordinary exact-action screens
+alongside HRA/application review; then remaining H.R. 1968 and H.R. 1 package coverage.
+Current 89 pushed c103981096f9cebea40096a4417298f828051770, draft update 17:30:10 UTC,
+own run 37659496537 in progress. Current Render PR200 maintenance is complete on main
+per supervisor; stale follow-up wording removed from current PR while history is
+preserved. Same-owner audit remains partial, 64 application questions and three partial
+packages remain; ownership active. No production, merge, deployment or editorial
+acceptance/promotion/publication authorized.
