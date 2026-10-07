@@ -6790,3 +6790,98 @@ terminal nine green with five pinned/three synthetic/one mixed checkout and host
 260 distinct from owner 131. A separate sealed mechanical receipt preserves the
 complete source/PDF review unchanged. No independent full pipeline/replay or new 102
 review, whole-record acceptance or publication authority. New 102 remains pending.
+
+
+### Successor checkpoint 103: current minor-victim grants and historical boundaries
+
+Current 34 USC 20702 is one shared program under original 2005 section 202 and
+PL113-4 section 1241 references, not duplicate appropriations or separate votes.
+Complete current body, classification/amendment/effective notes preserve 2018
+restoration of the March 6, 2017 text and repeal of the original 2013 sunset. The
+original HHS citizenship/permanent-residence cohort, 75-percent project-cost share
+and 2006-2007 authorization remain historical, not current recipient/match rules.
+No automatic program expiration or new H.R. 1968 program inferred.
+
+Current recipients are under-18 victims of the printed federal/comparable-State
+offense, or qualified previously served 18-20-year-olds, not every youth/trafficking
+victim or a status-based citizenship cohort. Complete material 1591(a)/(c)/(e) keeps
+jurisdiction/acts/benefiting alternative, knowledge/recklessness with advertising
+exception, force-or-under-age and prospective commercial-act conditions, narrow
+age-knowledge proof exception and all definitions. No individual offense, State-law
+equivalence, conviction/sentence/victim status or immigration benefit adjudicated.
+
+Four geographic eligible State/local entities, small-State condition, stated
+conditional grant range/term/renewal and later-year qualified-recipient priority
+remain. Complete plans/noncollaboration assurance and experience-or-specialized-staff
+plus sustainability are distinct. At least 67 percent per block grant supports the
+four specified care-use categories through qualified providers; this is not a share
+of the whole $88 million or a requirement that every victim receive all four services.
+Other permitted uses retain the limited purchaser-treatment condition and exclude
+a purchaser charged with buying sex with a minor. Applications/evaluation and
+anti-duplication consultation stay qualified; no actual award/compliance finding.
+
+The separate current 2023 pilot primarily serves broader adolescent/youth alternatives
+through underserved/rural-priority community models. Complete eight uses and mandatory
+program priority remain; it is not confined to the block-grant minor-victim definition,
+a fixed appropriation allocation or observed establishment. Current unauthorized-cost
+exclusion/compliance, three-percent appropriated-amount administration cap and
+15/25/40/50-percent grant matches remain distinct from original/first-authority Federal
+project-share rules. Dated audits, 2018-2021 $8 million authorizations and GAO timing
+are not new appropriations, observed completion or automatic program termination.
+Concurrent 20705 application savings does not close that separate program's research.
+
+New bounded application question 67: the amount condition in 20702(b)(1)(C) refers
+to appropriations under (g), while current (g) contains matching and (i) authorization.
+The original 2013 grant-amount subparagraph repeats the same printed reference. Four
+complete current/historical witnesses bind the condition and bodies. Recommendation:
+preserve the literal conditional range and separate bodies, obtain bounded authoritative
+application review before redirecting the target or assigning a current award. Alternatives
+are literal preservation or a later supported exact application; silent (g)-to-(i) repair,
+automatic new award and discarding the program as unavailable are not accepted. Other
+current programs and 216 ordinary screens continue safely. Prior 66 questions unchanged;
+question 67 is separate from ordinary unfinished research, not resolved by owner tests.
+
+Four selected sources/ten bindings/seven original coordinates added. Four original
+captures newly registered: two current Code acquisitions plus two earlier private
+original-act captures reused without redownload. Original 2013 amount subparagraph and
+sunset are complete selected clauses, not whole-act review; their original glyphs/page
+markers remain. Four application witnesses, all raw/full-text hashes, full/selected
+governed seals and extents reproduce. A private pre-reservation candidate, its earlier
+136-test result/core and byte replay are preserved; final artifacts include the reserved
+condition and traceable original amount clause, with fresh validation. No source
+unavailability or complete-authority/package coverage claim.
+
+136 final focused candidate/IR tests pass in 12.606 seconds; reference validator and
+seven semantic checks pass. Seven generated files match separate final raw-byte replay;
+three guards/fourteen recipient/provider/amount-reference/match/pilot/criminal-predicate
+mutations fail by assertion with zero errors. Both full member explanations, unchanged
+compact/choices, all prior 1,367 sources/39 other meanings, questions and final diff
+inspected. Blue Campaign test now compares its exact frozen question by scoped identity
+instead of last position/global count; original question 66/frozen receipt unchanged,
+other old test methods preserved. Core
+701d21a5f16c7da67e2fcf4a34f7ca805f894b9ac31384f3d5d1ce662c91451e;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Tests/replay prove mechanical checks, not semantic truth or acceptance.
+
+Accounting: 676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded,
+two expressive and 216 ordinary unfinished; three partial packages remain. Application
+questions now 67, with prior 66 exact objects preserved. 37 episodes, 80 member observations,
+72 findings, 1,371 canonical sources, 966 interpreted bindings, 355 registered captures,
+250 extent objects and 417 coordinates. Counting/eligibility/choices/compact/graph and
+frozen receipts preserved. Unique-action audit remains 84 No Defect/three Minor/eleven
+Major/one Critical with historical findings unchanged. New 102/103 bounded reviews pending.
+
+Owner-read exact 102 run 37688629265 is terminal nine green: five feature-pinned,
+three synthetic and one mixed checkout, synthetic SHA
+bfae5436b7f9cf3c00edd0d47466d53fc1823856. Hosted 262 differs from owner 133 then
+and 136 final here. Separate sealed CI receipt retains raw hashes/provenance; audit
+current CI points to 102, preserving historical old 84 and prior CI receipts. New 103
+needs its own pushed-head run. No all-nine-feature-only or production-authority claim.
+
+Continue distinct rewritten 2005 section 203/current 20703, current 20705 and other
+trafficking programs/material references, then State/migration/refugee assistance,
+supplementary acts, other DHS/exact counterparts, ordinary screenings and final package
+comparison. Existing .w/ib ownership remains active without a current deadline; old
+shutdown/terminal evidence and unrelated work preserved. Questions 63/66 stay distinct,
+HRA provisional. Readiness/publication false, final verdict null; delivery remains draft
+PR198 with no merge/deploy/production or editorial acceptance/promotion/publication.

@@ -18,6 +18,55 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_minor_grants_keep_current_recipient_and_block_grant_qualifications(self):
+        action = getattr(self, 'hr1968_minor_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The current domestic minor-victim block-grant program', 1)[1]
+        self.assertIn('person ages 18-20 who met the under-18 definition before turning 18 and was receiving shelter or services as a minor victim', text)
+        self.assertIn('not every 18-20-year-old', text)
+        self.assertIn('four eligible State/local entities in different United States regions', text)
+        self.assertIn('at least one in a State population below five million', text)
+        self.assertIn('At least 67 percent of each block grant', text)
+        self.assertIn('four care-use clauses', text)
+        self.assertIn('each victim must receive all four services', text)
+        self.assertIn('preceding-year recipients eligible for renewal receive mandatory priority', text)
+        self.assertIn('experience or specialized staff, together with a sustainability plan', text)
+        self.assertIn('excludes a person charged with purchasing sex with a minor', text)
+
+    def test_hr1968_minor_grants_keep_restoration_pilot_and_matching_distinctions(self):
+        action = getattr(self, 'hr1968_minor_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The current domestic minor-victim block-grant program', 1)[1]
+        self.assertIn('original 2005 section 202 HHS program', text)
+        self.assertIn('historical, not imported as current recipient or matching rules', text)
+        self.assertIn('2018 restoration of the March 6, 2017 text', text)
+        self.assertIn('repeal of the sunset provision', text)
+        self.assertIn('not silently redirected to (i)', text)
+        self.assertIn('Subsection (g) contains matching requirements while subsection (i) contains authorization of appropriations', text)
+        self.assertIn('pilot is not confined to the block grant\'s defined minor sex-trafficking-victim cohort', text)
+        self.assertIn('three-percent administration cap on the total amount appropriated', text)
+        self.assertIn('15/25/40/50 percent of the grant', text)
+        self.assertIn('not the historical 75-percent Federal project-cost ceiling', text)
+        self.assertIn('dated provisions, not new current appropriations', text)
+        self.assertIn('other current 2005/2013 trafficking programs', text.lower())
+
+    def test_hr1968_minor_recipient_predicate_keeps_advertising_and_age_proof_boundaries(self):
+        action = getattr(self, 'hr1968_minor_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The current domestic minor-victim block-grant program', 1)[1]
+        self.assertIn('reckless-disregard route excludes a paragraph (1) advertising violation', text)
+        self.assertIn('under-18 commercial-sex branch are alternatives', text)
+        self.assertIn('person will be caused to engage in a commercial sex act', text)
+        self.assertIn('limited to the stated (a)(1) prosecution and listed acts', text)
+        self.assertIn('removes proof of under-age knowledge/recklessness, not every offense element', text)
+        self.assertIn('No actual offense, State-law equivalence, conviction, sentence', text)
+        refs = {b['source_id'] for b in action['claim_source_map']}
+        self.assertIn('govinfo:18usc1591-2024-grant-recipient-predicate', refs)
+        self.assertIn('govinfo:34usc20702-2024-minor-victim-block-grants', refs)
+
     def test_hr1968_trafficking_grants_keep_alternative_authorities_and_scoped_percentages(self):
         action = getattr(self, 'hr1968_trafficking_action', None)
         if action is None:
@@ -149,8 +198,10 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('combined fiscal-year application is reserved', text)
         self.assertIn('rather than replacing every 2024 reference with 2025', text)
         audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(audit['open_legal_interactions']), 66)
-        self.assertIn('separate from frozen incorporated-program question63', audit['open_legal_interactions'][-1]['scope'])
+        frozen = json.loads((DATA / 'hr1968_blue_campaign_scope_review.json').read_text(encoding='utf-8'))['new_application_question']
+        questions = [q for q in audit['open_legal_interactions']
+                     if 'separate from frozen incorporated-program question63' in q['scope']]
+        self.assertEqual(questions, [frozen])
 
     def test_hr1968_blue_campaign_keeps_broader_program_and_distinct_trafficking_definitions(self):
         action = getattr(self, 'hr1968_blue_action', None)
