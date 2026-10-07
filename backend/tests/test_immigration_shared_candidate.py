@@ -18,6 +18,52 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_child_grants_keep_current_cohort_access_and_expertise(self):
+        action = getattr(self, 'hr1968_child_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The distinct current child-trafficking deterrence block-grant program', 1)[1]
+        self.assertIn('current child definition is under 18', text)
+        self.assertIn('including sex-trafficking and forced-labor branches', text)
+        self.assertIn('not only sex trafficking, every child, a citizenship/LPR condition', text)
+        self.assertIn('access to funded shelter or services must not require law-enforcement collaboration', text)
+        self.assertIn('substantial relevant service experience or specialized staff', text)
+        self.assertIn('alternatives, not two cumulative qualifications', text)
+        refs = {b['source_id'] for b in action['claim_source_map']}
+        self.assertTrue({'govinfo:34usc20703-2024-child-deterrence-block-grants',
+                         'govinfo:pl109-164-sec203-historical-juvenile-pilot',
+                         'govinfo:22usc7102-2024-blue-campaign-definitions'} <= refs)
+
+    def test_hr1968_child_grants_keep_salary_court_and_preference_conditions(self):
+        action = getattr(self, 'hr1968_child_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The distinct current child-trafficking deterrence block-grant program', 1)[1]
+        self.assertIn('percentage of on-duty time devoted to child-trafficking cases', text)
+        self.assertIn('percentage of total worked hours devoted to those cases', text)
+        self.assertIn('regular mandatory victim appearances', text)
+        self.assertIn('relevant nonviolent charges following successful compliance', text)
+        self.assertIn('whether charged or not', text)
+        self.assertIn('alternative routes to preference, not both required', text)
+        self.assertIn('expires three years after award and may renew no more than twice', text)
+        self.assertIn('each renewal lasting no more than two years', text)
+
+    def test_hr1968_child_grants_keep_expended_cap_share_and_reference_boundaries(self):
+        action = getattr(self, 'hr1968_child_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The distinct current child-trafficking deterrence block-grant program', 1)[1]
+        self.assertIn('five percent of total amount expended', text)
+        self.assertIn('program-cost share is 70/60/50 percent', text)
+        self.assertIn('each fiscal year 2016-2020', text)
+        self.assertIn('not a new H.R. 1968 $7 million appropriation', text)
+        self.assertIn('explicit original note tracing reclassification to 34 USC 20301 et seq.', text)
+        self.assertIn('grant criteria may require listed elements', text)
+        self.assertIn('excluding a member convicted or accused of child abuse', text)
+        self.assertIn('Further center/fund-use/medical-transfer authorities remain ordinary research', action['limitations'][-1])
+        refs = {b['source_id'] for b in action['claim_source_map']}
+        self.assertIn('govinfo:34usc20302-20304-material-center-context', refs)
+
     def test_hr1968_special_assessment_keeps_exact_date_amount_and_conviction_cohort(self):
         action = getattr(self, 'hr1968_assessment_action', None)
         if action is None:
