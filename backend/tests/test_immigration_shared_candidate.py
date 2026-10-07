@@ -18,6 +18,41 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_dhs_account_amounts_do_not_become_unqualified_enforcement_totals(self):
+        action = getattr(self, 'hr1968_dhs_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('$9,986,542,000', claims)
+        self.assertIn('not less than $5,082,218,000', claims)
+        self.assertIn('$650,000,000 shall be transferred', claims)
+        self.assertIn('not to exceed $9,100,000', claims)
+        self.assertIn('mixed-use account', action['meaning'])
+        self.assertIn('include DHS funding and retained safeguards', action['meaning'])
+        self.assertIn('within that amount', action['meaning'])
+        self.assertIn('not a repeal of all current USCIS funding or fee revenue', action['meaning'])
+        self.assertIn('except sections 543 through 546', claims)
+        self.assertIn('their old rescissions are not repeated', action['meaning'])
+
+    def test_hr1968_dhs_custody_controls_keep_different_triggers_and_exceptions(self):
+        action = getattr(self, 'hr1968_dhs_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('two most recent overall performance evaluations', claims)
+        self.assertIn('Office of Professional Responsibility', claims)
+        self.assertIn('both of the two most recent', action['meaning'])
+        self.assertIn('not the Inspector General', action['meaning'])
+        self.assertIn('Active labor or delivery is an absolute restraint bar', action['meaning'])
+        self.assertIn("requires that person's request", action['meaning'])
+        self.assertIn('24 hours ahead', action['meaning'])
+        self.assertIn('towing-vessel inspection-fee funding restriction', action['meaning'])
+        self.assertIn('not an immigration detention safeguard', action['meaning'])
+        partial = next(r for r in self.values[2]['accounting']['partial_component_reviews']
+                       if r['action_id'] == action['action_id'])
+        self.assertFalse(partial['complete_immigration_component_review'])
+        self.assertTrue(partial['remaining_executable_component_work'])
+
     def test_package_documentary_index_preserves_occurrences_and_tail_boundaries(self):
         receipt = getattr(self, 'package_coverage_receipt', None)
         if receipt is None:

@@ -5012,3 +5012,70 @@ history and PR/hosted CI updates await push transport recovery. No repeated retr
 Next: complete H.R. 1968 material DHS appropriation/rider incorporation (including
 division G sections 102–105 and own anomalies), DOJ/State and other material source
 boundaries, then full package semantic comparison; ordinary screenings can continue.
+
+
+### Successor checkpoint 83: qualified H.R. 1968 DHS funding and controls
+
+House 119/1/70's existing member-neutral candidate now includes selected DHS
+funding, carryover rescission, custody/oversight and reporting provisions. Complete
+exact House EH and all 107654 characters of the governed 2024 DHS division C were
+read. Thirteen new complete-clause witnesses bind the EH incorporation/anomalies,
+unchanged DHS source and complete existing 1357(g) state/local delegation baseline.
+No new source or capture: 1330 canonical sources and 338 acquisitions are preserved;
+bindings increase from 854 to 867. Prior 39 other meanings, all earlier source
+objects, membership/disposition/audit records outside this action, the checkpoint82
+receipt and its first four claims remain unchanged. No publication state changes.
+
+ICE operations/support level is $9,986,542,000, not an all-removal expenditure; its
+retained $5,082,218,000 enforcement/detention/removal minimum is a distinct allocation
+within a mixed-use account. CBP's $650,000,000 sheltering transfer is inside its
+$18,426,870,000 level, with the $9,100,000 FEMA administrative cap. USCIS operations
+and citizenship/integration grant accounts remain separate. Prior CR expenditures
+are charged against applicable funding, not added again. The $2,514,000 USCIS
+rescission concerns the specified section505 carryover balances, not all current
+appropriations or fee funds. Printed fiscal-year/notification/availability clauses
+are retained; no universal date replacement or actual funds application is inferred.
+DHS543-546 are expressly excluded. The 1705 removal of 227 concerns towing-vessel
+inspection-fee restrictions, not cancellation of immigration detention safeguards;
+no vessel-fee application is adjudicated.
+
+The Inspector General's material 287(g) agreement-violation trigger is separate
+from both of the two latest overall facility evaluations by ICE OPR, each restricting
+the specified ICE operations/support funds. Congressional Member/staff access,
+pregnancy/post-delivery restraints and records/disclosure retain their distinct
+qualifications. The printed pregnancy exceptions, absolute active-labor/delivery
+restraint bar and medical/position limits are not flattened. Bimonthly arrival
+estimates retain review/sharing/budget uses and conditional transfer-authority
+suspension; Defense-support requests retain prior analyses and reports. No actual
+expenditure, violation, abuse, arrival forecast, deployment or component preference.
+Both official Nay observations remain whole-package opposition only.
+
+268 focused tests passed in 43.145 seconds before final wording corrections.
+Final copy passed 79 candidate tests in 11.569 seconds and seven semantic checks.
+Seven generated JSON files match final separate replay byte for byte; all selected
+witnesses, source seals and every extent recipe verify. Both members' actual compact
+and detail were inspected. That inspection corrected a stale scope lead and clarified
+that the printed restraint exceptions are phrased for a pregnant woman. Six controlled
+mutations each fail one assertion with zero errors: extra shelter transfer, universal
+USCIS rescission, retained excluded rescissions, one facility evaluation, incorrect
+Inspector General evaluator and removal of the active-labor bar. Disk artifacts
+are unchanged by mutations. A missing private replay packet was initialized before
+successful replay; no canonical data changed from that first error. Final diff reviewed.
+Tests establish mechanical confidence; this is same-owner partial review, not acceptance.
+
+Core 4ae016572fff567c70b41d968b55031e940041df5641037eb2911b91e97d1a98;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+The compiled proposition graph is unchanged: neither recorded choices, eligibility,
+counting nor episode aggregation changed. Accounting remains 676 inventory, 458
+reviews, 40 interpreted, 211 procedural, 205 excluded, two expressive, 218 ordinary
+unfinished, three partial packages, 62 application questions, 37 episodes, 80 member
+observations and 72 readable candidate findings. Three H.R. 1 domain fits are reserved.
+Final audit verdict, full issue readiness and publication eligibility remain false.
+
+Remote/PR198 last verified checkpoint77 f869e2f527b1e88e0db506a6a18b91a9ed5fbc00.
+The two GitHub500 push failures remain a transport blocker; local78-83 and prepared
+PR/hosted-CI updates await demonstrated recovery. No repeated retry, production work,
+merge, deployment, editorial acceptance, promotion or publication. Ownership continues.
+Next: division G102-105 material baselines and own timing/application qualifications,
+remaining referenced DHS controls, then DOJ/State/other package incorporation and
+full semantic comparison. The package stays partial throughout unfinished research.
