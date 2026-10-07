@@ -6034,3 +6034,71 @@ H.R. 1968/H.R. 1 package coverage alongside HRA/application review. Current owne
 remains active under the authorized successor continuation, without a new deadline.
 Shutdown 75 evidence and unrelated work remain preserved. No production, merge,
 deployment or editorial acceptance/promotion/publication is authorized.
+
+
+### Successor checkpoint 92: qualified House foreign-tax personal coverage candidate
+
+The existing issue eligibility boundary and returned independent rationale comparison
+support one literal House 112028 personal-coverage candidate. Ordinary applicability
+excludes United States citizens or residents and requires tax residence in a
+discriminatory foreign country, subject to Secretary exceptions and the printed
+less-than-one-year continuation rule. Tax residence retains permanent-residence,
+presence and election routes, exceptions and timing; it establishes no admission
+permission or lawful presence. No universal noncitizen/immigrant increase is inferred.
+
+Specified personal income/withholding effects preserve the non-FIRPTA reduction,
+five-point annual increments, statutory-rate-plus-twenty-point ceiling, fourteen-percent
+withholding exception, country definitions/Secretary authority, weighted years,
+latest-of dates and safe harbors. Corporate and other fiscal branches stay distinct.
+Complete exact House/EH, adopted-correction and governed original 871/897/7701(b)
+witnesses are bound; no new capture. Frozen checkpoint 77 context-only recommendation
+remains historical disagreement. The six-anchor Senate search is non-identification,
+not certified absence, so no House tax component is borrowed into Senate concurrence.
+
+Printed (e)(1) refers to absent (c)(2)(A)(ii). Existing source ambiguity is now separately
+tracked as application question 65 when the literal component enters the canonical
+candidate; no silent repair or accepted legal target. The prior 64 questions remain
+unchanged. Actual country listings, dates, personal tax status/liability and individual
+outcomes are not decided. Three package reviews remain partial; existing whole-package
+Nay observations, choices and selected compact copy do not become component stances.
+
+Five complete bindings and three reused original source objects are added: 1,343
+sources, 893 interpreted bindings, 342 captures, 223 extent objects and 368 coordinates.
+676 inventory, 459 reviews, 40 interpreted, 211 procedural, 206 excluded, two expressive
+and 217 ordinary unfinished screenings remain. All 39 other action meanings, 459 review
+records except the source additions for this action, 1,340 old sources and prior questions
+are preserved. Core is now f704936daa7e2f25245cbad3262fad6a8199fd8d29750db4714caf721b3ccb1e;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 is unchanged.
+
+116 focused candidate/IR tests pass in 12.167 seconds, seven semantic checks and the
+Semantic IR reference validator pass. Seven canonical files match separate raw-byte
+replay. Seven mutations each produce one assertion failure and zero errors: lost foreign
+tax-residence conjunct, universal noncitizen increase, tax residence equated with
+immigration permission, House meaning copied into Senate, total-rate ceiling confusion,
+fourteen-percent exception loss and silent statutory-reference repair. Source/correction
+extent joins, source seals, all prior objects and canonical/member propagation verify.
+Both full member details and their unchanged compact copy were inspected. Final diff
+reviewed. The independent comparison supports drafting; literal component semantic
+review remains pending. Tests and replay are not semantic truth or editorial acceptance.
+
+The supervisor's final independent combined 88-89/current 90 report closes the refugee
+P3 precision correction and verifies oath/ID/employment incorporation and own limits.
+EH 1703's disapplied 517 is Coast Guard title 10, not the DHS rider. Only H.R. 1968 changes
+among 40 actions; original 33 claims plus five additions and all seals, choices, compiled
+graph and propagation reproduce. Twelve 89-to-90 canonical files and 64 older review
+artifacts match. The sealed new bounded recheck preserves historical P3 and earlier
+pending receipts. Archive limit: authoring plus eight unchanged entries independently
+reproduce; six uncommitted intermediate generated/audit files are not remotely verified.
+Owner-local fifteen-hash verification is separate. No independent full suite/replay,
+package acceptance, merge clearance or automatic clearance of this new tax component.
+
+Checkpoint 91 c57dee9e300acc379b604cf3f08d1b731335e34c is pushed and PR198 head verified;
+own CI run 37662606557 is being checked. Checkpoint 92 needs its own exact pushed-head
+checks. Next executable work: own-version electricity direct personal-status components,
+then remaining package/counterpart and ordinary screening work alongside HRA/application
+review. Active successor ownership continues without a new deadline. Candidate readiness,
+publication and final audit verdict remain false/false/null; no production, merge,
+deployment or editorial acceptance/promotion/publication is authorized.
+
+
+Checkpoint 92 delivery preflight: exact 91 run 37662606557 is terminal with nine successful jobs. Five feature-pinned, three synthetic (575a6537d73f42911352497513ae64310b21cef5) and one mixed repair checkout are verified from preserved raw logs. Hosted m14h candidate-block counts remain their own four-module scope; no claim that all nine jobs test only feature bytes. The sealed delivery receipt records log hashes and provenance. Checkpoint 92 awaits its own push/checks; active ownership continues.

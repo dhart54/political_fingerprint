@@ -18,6 +18,35 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_house_foreign_tax_candidate_keeps_conjunctive_personal_coverage(self):
+        action = getattr(self, 'foreign_tax_candidate_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        text = action['meaning'].split('Selected exact House section 112028 adds', 1)[1]
+        self.assertIn('other than a citizen or resident of the United States who is also tax resident of a discriminatory foreign country', text)
+        self.assertIn('subject to Secretary exceptions', text)
+        self.assertIn('cease to be applicable for less than one year', text)
+        self.assertIn('not a tax increase on every immigrant, noncitizen or foreign national', text)
+        self.assertIn('permanent-residence, substantial-presence and first-year-election routes', text)
+        self.assertIn('tax residence does not establish citizenship, lawful presence or immigration permission', text)
+        self.assertIn('House mechanism is not copied into the Senate concurrence', text)
+
+    def test_house_foreign_tax_candidate_keeps_qualified_fiscal_effect_and_unrepaired_reference(self):
+        action = getattr(self, 'foreign_tax_candidate_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        text = action['meaning'].split('Selected exact House section 112028 adds', 1)[1]
+        self.assertIn('non-FIRPTA reduction, not below zero', text)
+        self.assertIn('statutory rate plus twenty percentage points', text)
+        self.assertIn('not a twenty-percent total tax rate', text)
+        self.assertIn('fourteen-percent rate specified in 1441(a) is expressly excluded', text)
+        self.assertIn('listed-country withholding safe harbors', text)
+        self.assertIn('conditional best-efforts withholding-agent protection before January 1, 2027', text)
+        self.assertIn('No present country listing, current effective date, actual compliance or tax owed is inferred', text)
+        self.assertIn('printed (c)(2) has no such subparagraph', text)
+        self.assertIn('separately reserved without source repair', text)
+        self.assertIn('Yea or Nay does not establish a separate component preference', text)
+
     def test_hr1968_dhs_account_amounts_do_not_become_unqualified_enforcement_totals(self):
         action = getattr(self, 'hr1968_dhs_action', None)
         if action is None:
