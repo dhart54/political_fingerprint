@@ -280,6 +280,46 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn('subject to the provisions of section 275', relationship)
                 self.assertIn('except as provided in subsection (e), section 276', relationship)
 
+    def test_senate_orr_sponsor_funding_keeps_own_purposes_and_definitions(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['source_id'] == 'govinfo:hr1eas' and c['passage'].startswith('SEC. 87001.'))
+        self.assertNotIn('TITLE IX', passage)
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact Senate 87001 ORR sponsor-vetting'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('Selected exact Senate 87001 ORR sponsor-vetting'):]
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                self.assertIn('appropriated to the Office of Refugee Resettlement for fiscal year 2025', own)
+                self.assertIn('$300,000,000, to remain available until September 30, 2028', own)
+                self.assertIn('may only be used for the Office of Refugee Resettlement', own)
+                checks = own[own.index('Senate 87001 background-check purpose and required contents:'):own.index('Senate 87001 home-study purpose:')]
+                self.assertIn('social security number or tax payer identification number', checks)
+                self.assertIn('in-person or virtual interview with, and suitability study concerning', checks)
+                self.assertIn('national criminal history check based on fingerprints', checks)
+                self.assertIn('an individual or entity who applies for the custody', own)
+                exam = own[own.index('Senate 87001 child examination and covering purpose:'):own.index('Senate 87001 data-system purpose:')]
+                self.assertIn('while the child is in the care of the Office of Refugee Resettlement', exam)
+                self.assertNotIn('12', exam)
+                self.assertNotIn('Customs', exam)
+
+    def test_senate_orr_funding_retains_placement_and_category_protections(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact Senate 87001 ORR sponsor-vetting'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('Selected exact Senate 87001 ORR sponsor-vetting'):]
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                self.assertIn('no parent or legal guardian in the United States is available to provide care and physical custody', own)
+                self.assertIn('has no lawful immigration status in the United States', own)
+                self.assertIn('has not attained 18 years of age', own)
+                self.assertIn('least restrictive setting that is in the best interest of the child', own)
+                self.assertIn('shall not be placed in a secure facility absent a determination', own)
+                self.assertIn('shall be reviewed, at a minimum, on a monthly basis', own)
+                self.assertIn('Before placing the child with an individual', own)
+                self.assertIn('shall determine whether a home study is first necessary', own)
+                self.assertIn('Subject to the requirements of subparagraph (B)', own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],

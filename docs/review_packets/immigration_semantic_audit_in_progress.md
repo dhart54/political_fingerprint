@@ -4160,3 +4160,66 @@ Route: 87001, Coast Guard, then bounded remaining mechanism/extent/counterpart r
 continue continuing/omnibus/NDAA packages and 221 ordinary screenings alongside the
 separate application queue. Both H.R.1 component flags stay incomplete. Accounting,
 candidate isolation, canonical outputs and all established gates remain unchanged.
+
+
+### Successor checkpoint 70: Senate ORR sponsor-vetting funding
+
+Exact EAS 87001 appropriates ORR $300 million for fiscal 2025, available until
+September 30, 2028, with may-only funding for five separate purposes. Complete
+3033-character section excludes the following Title IX heading. The background-
+check purpose retains every A-G item, named sponsor/all adult household subjects,
+SSN or taxpayer-identification alternative, in-person or virtual interview plus
+suitability study, validated child-placement residence, contact information and
+minimum sex-offender/public-record/fingerprint-based national history checks.
+Other purposes retain home studies, child tattoo/marking examination and covering
+while in ORR care, data-system/sharing support for sponsor suitability and child-
+labor/trafficking identification/investigation, and State child-welfare placement
+coordination. Examination has no printed age-12 floor or CBP-encounter condition;
+House 70116/70117 conditions are not imported. Sponsor expressly means an individual
+or entity applying for custody; UAC incorporates the complete original 279(g).
+
+Full original 279 and 1232(c) sources are reused unchanged. Category retains all
+three criteria, including the alternative no-US-parent versus none available for
+care/physical custody. Full material placement/suitability/home-study clauses retain
+least-restrictive/best-interest rules, secure-placement determination and monthly
+review, individual-versus-entity custodian assessment and conditional/mandatory
+home-study rules. Other original protection/counsel/advocate context stays bound.
+Funding does not itself establish actual checks, danger/gang findings, sponsor
+citizenship, universal work-SSN or detention mandate, first-ever vetting authority,
+implicit protection repeal, or a new standalone universal placement deadline.
+
+One Senate action and two new bindings (3033-character bill section and complete
+10450-character original placement baseline); two existing full 279 witnesses reused.
+No new canonical source, capture or reserved question. House and other 37 actions,
+old clauses/qualifications/choices/compacts, all 1317 sources/310 captures/frozen
+receipts and 61 application questions reconstruct unchanged. Review source/proposal
+references and Senate partial scope only; no disposition/eligibility/counting change.
+Ten full source-to-prose clauses across eight dimensions, both member propagation,
+audit/source seals and candidate/publication isolation verified. No package closure.
+
+Validation: 247 tests in 42.162 seconds including 58 candidate tests; seven semantic
+checks and seven raw generated-byte replay files pass. Exclusive-purpose expansion,
+SSN alternative changed to conjunction and House age-12 import each rejected with
+one assertion subtest failure and zero errors. The SSN mutation exposed a repeated-
+phrase false negative in the first guard; scoping the guard to the actual background-
+check clause fixed it, followed by the fresh aggregate. Candidate semantics unchanged.
+Tests establish contract integrity, not semantic truth. Core 80882bd602cafde0f303c156666001891636d4fbe93fcf66625cec1e4e46ad6f; compiled
+b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged. Exact 69 head fcb092303291738e7556f7107c39a6bbef428d43 run
+37557033663 completed all nine green, owner-native. Exact 70 CI follows push.
+
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203
+excluded, two expressive, 36 episodes, 78 observations, 70 findings; 1317 sources,
+829 bindings, 310 captures, 201 sources with 304 verified extent coordinates.
+Remaining 221 ordinary screenings, two partial H.R.1 reviews and 61 separate
+application questions. The frozen checkpoint 69 reconciliation remains historical;
+its sponsor-vetting research group now has this literal increment, independent
+semantic review pending. Seven other groups remain: Coast Guard plus six bounded
+scope assessments; counterpart/absence and whole-package coverage still incomplete.
+
+Next: exact House/Senate Coast Guard asset/purpose/report/acquisition conditions.
+Original 2024 title 14 chapters 11/51, title 46 chapter 121 and Public Law 117-263
+have been downloaded to private research captures; extents need full inspection
+before governing them. Then the six bounded benefit/tax/trade mechanism assessments,
+continuing/omnibus/NDAA packages and ordinary screens. Independent 67-70 review and
+earlier bounded limits remain explicit; no application/package acceptance, production,
+merge, deployment, promotion or publication. Historical markers remain untouched.
