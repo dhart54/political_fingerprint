@@ -18,6 +18,77 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_centers_keep_program_criteria_and_privacy_qualifications(self):
+        action = getattr(self, 'hr1968_center_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split("The separately referenced local children's advocacy-center authority", 1)[1]
+        for qualification in [
+            'General center grants under (a) are mandatory authority duties; specialized direct-service grants under (b) are discretionary',
+            'current 7102(11)(A), the sex-trafficking branch, with under-18-at-the-time-of-offense qualification',
+            'No Senate-confirmation requirement',
+            'reasonable notice and an opportunity for hearing',
+            'law-authorized disclosure, service-recipient/representative consent or necessary-administration qualifications',
+            'may under no circumstances contain actual names of individual service recipients',
+            'permissive criteria the Administrator may require',
+            'cases meeting designated referral criteria',
+            '24 hours to the greatest extent practicable, but in no case later than 72 hours',
+            'all eligible States',
+            'an unspecified portion for State chapters',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:34usc20304-2024-complete-local-center-program',
+                         'govinfo:34usc11183-2024-center-criteria-consistency',
+                         'govinfo:34usc11186-2024-center-confidentiality-consistency'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_centers_keep_audit_periods_and_literal_reference_reservation(self):
+        action = getattr(self, 'hr1968_center_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split("The separately referenced local children's advocacy-center authority", 1)[1]
+        for qualification in [
+            'within twelve months from the date when the final audit report is issued and any appeal has been completed',
+            'ineligible during the following two fiscal years',
+            'in the prior three fiscal years',
+            'literally cites paragraph (2)',
+            'audit exclusion is in paragraph (1)(C)',
+            'same reference',
+            'reserved separately as question 69',
+            'no additional two-year nonprofit bar is invented',
+        ]:
+            self.assertIn(qualification, text)
+        questions = getattr(self, 'center_reimbursement_questions', None)
+        if questions is None:
+            audit = json.loads((DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+            questions = [q for q in audit['open_legal_interactions'] if q['scope'].startswith('Question 69:')]
+        self.assertEqual(1, len(questions))
+        receipt = json.loads((DATA / 'hr1968_local_center_accountability_review.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['new_application_question'], questions[0])
+        self.assertTrue({'govinfo:34usc20307-2024-center-accountability',
+                         'govinfo:pl113-163-sec2b-original-center-accountability'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_centers_keep_nonprofit_purpose_disclosure_and_conference_scope(self):
+        action = getattr(self, 'hr1968_center_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split("The separately referenced local children's advocacy-center authority", 1)[1]
+        for qualification in [
+            'requires both description under 501(c)(3) and exemption under 501(a)',
+            'for the purpose of avoiding the tax described in complete 511(a)',
+            'applies only to grantees using the prescribed rebuttable-presumption procedures',
+            'public inspection of that disclosed information is upon request',
+            'amounts authorized to be appropriated to DOJ under this center subchapter',
+            'more than $20,000 in Department funds',
+            'discretionary funds through a cooperative agreement under the printed Act',
+            'prior written authorization',
+            'with an all-cost estimate',
+            'due by March 1 each year',
+            'no actual submission is claimed',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:26usc501a-c3-2024-center-nonprofit-definition',
+                         'govinfo:26usc511a-2024-center-offshore-tax-reference'} <= {b['source_id'] for b in action['claim_source_map']})
+
     def test_hr1968_icac_keeps_formula_need_pools_and_qualified_match(self):
         action = getattr(self, 'hr1968_icac_action', None)
         if action is None:

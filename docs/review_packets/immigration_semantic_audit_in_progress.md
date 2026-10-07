@@ -6915,3 +6915,98 @@ nine raw-log hashes and actual checkout/test contexts are sealed in
 docs/review_packets/immigration_delivery_checkpoint108_ci.json.
 Hosted aggregate differs from owner 146 then/148 here. Current CI field points to 108,
 preserving earlier receipts as historical; new 109 requires its own pushed-head run.
+
+
+### Successor checkpoint 110: local center program and qualified accountability
+
+Complete current 20302/20304/20307, Administrator identity, criteria-consistency
+withholding/confidentiality, referenced nonprofit/named-tax text and original 2014
+accountability insertion are bound. General center grants are mandatory authority duties;
+specialized direct services remain discretionary. Printed 7102(9)(A) retains its explicit
+redesignation note to current 11(A), the sex-trafficking branch, and under-18-at-offense
+qualification, alongside the separately printed human-trafficking/child-pornography phrase.
+No substituted severe branch, universal age cohort or individual victim finding.
+
+Definitions preserve applicant/child-abuse/multidisciplinary/nonoffending-family/census/
+regional/State-chapter context. Administrator identity retains experienced presidential
+appointee and grant/regulation/reporting powers without added confirmation or actual status.
+All twelve local elements remain permissive criteria, not universal mandatory features.
+Designated-referral cases retain practicable 24-hour target and absolute 72-hour outer bound.
+Eligible-State/jurisdiction distribution, regional consultation and unspecified State-chapter
+portion remain qualified. Withholding consistency preserves notice/hearing and appropriate
+proceedings; confidentiality preserves law/consent/necessary-administration exceptions and
+the absolute actual-name prohibition in public reports. No observed violation/disclosure.
+
+Audit exclusion preserves final-report/appeal/twelve-month unresolved finding, following
+two-fiscal-year bar and distinct prior-three-year priority. Complete original/current
+reimbursement wording literally points to paragraph (2), whose nonprofit requirements
+are distinct from the exclusion in (1)(C). This is reserved as question 69 with two complete
+original/current witnesses. Recommendation: preserve literal condition/reference and
+surrounding audit/nonprofit/conference objects; obtain bounded authoritative application
+review before categorical target/repayment/bar conclusions. Alternatives retain literal
+objects or bind a supported application after review. No silent correction or invented
+two-year nonprofit bar. Safe parallel work continues other center/regional/authorization,
+fund health/medical/exact 2101(d)-(e), State/migration/refugee, supplementary/other DHS/
+counterparts and 216 ordinary screenings. Prior 68 questions remain unchanged.
+
+Nonprofit definition retains both 501(c)(3) description and 501(a) exemption; named tax
+and exemption/lobbying references remain without whole-tax-law or individual status
+application. Offshore rule retains purpose of avoiding named tax, without every offshore
+account as disqualification or a motive finding. Compensation disclosure remains conditional
+on prescribed procedures and public inspection upon request. Conference rule retains exact
+authorized-DOJ/subchapter/cooperative-agreement scope, more-than-$20,000 Department-fund
+threshold, prior written authorization/delegation/all-cost estimate and annual reporting.
+Separate March 1 annual report fields remain, without observed completion or absolute ban.
+
+Nine selected sources/bindings/member references, ten original coordinates and six strict
+official captures. Previously governed center original/current trafficking/fund text reused
+at exact version/extents; every selected passage, raw/full-text hash and seal verifies.
+All prior 1,389 sources, 39 other meanings, 68 questions, older receipts and 122 test methods
+preserved. Both member details carry the shared addition; compact/choices, counting,
+eligibility, graph and publication boundary remain unchanged.
+
+151 focused tests pass in 13.268 seconds; reference validator and seven semantic checks
+pass. Seven generated files match separate raw-byte replay. Three guards, thirty controlled
+qualifier mutations and four question mutations meet expected single assertion failures with
+zero errors; actual full-bank unrelated reorder/append pass. The private verifier's old
+single-extent assumption was corrected to joined extents for the two-part nonprofit source;
+candidate/source bytes unchanged. Initial invalid research URLs/headings were corrected
+against the official hierarchy while preserving successful acquisitions; no unavailable-
+evidence disposition. Only new human metadata spacing was normalized, preserving all
+source glyphs/coordinates and prior objects. Full detail/compact/source/diff inspected.
+Tests and replay establish mechanical confidence, not semantic acceptance.
+
+Core 4065d7b63ecb3a5eb91b075dc45cf0a83610a4377f685b681bbb3a9210c158f0;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. 1,398 sources, 996 bindings, 372 captures, 277 extent objects, 453 coordinates.
+676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded, two expressive;
+216 ordinary unfinished, three partial packages and 69 application questions. 37 episodes,
+80 observations, 72 findings; unique-action 84 No Defect/three Minor/eleven Major/one Critical
+and historical findings unchanged. Readiness/publication false, final verdict null.
+
+Final independent 108 mechanics and source/propagation are both clean within bounds at
+14d001aac1c2a5fd08a7ffa829c56c5581e7bce3: status/victim conjunction, mandatory program/
+discretionary grants/referrals, ceiling, additive money/programming/years/medical exception,
+duplicate identities and unresolved Q68 match full witnesses. Five bindings/four sources/
+two captures/seven extents/four Q68 witnesses and full both-member propagation/seals verify;
+prior 39 meanings/67 questions/compacts/choices/graph/118 methods unchanged. Mechanical
+two extracted guards, 21 wording/reference and seven question mutations fail as expected;
+unrelated ordering/appends pass. Source lane checks both guards/four negative Q68 cases.
+No independent full generator/test-suite, private pre-expansion archive or individual
+application review; no 109/110/domain/package acceptance. Separate frozen receipt preserves
+this bounded review alongside the owner 146 tests/full replay at 108.
+
+Checkpoint 109 pushed at 08db2156283fd4e63d1827a8af12f474a6887fc0; fresh local/remote/
+draft identity matched. Existing .w/ib ownership continues under explicit 22:39 restart
+resume, preserving pause/deadline evidence, with no new current deadline. No merge, deploy,
+production, editorial approval, promotion or publication. Continue materially applied
+regional/center authorizations and full fund health/medical/exact 2101(d)-(e), then State/
+migration/refugee, supplementary/other DHS/counterparts, ordinary screenings and final
+package comparison. Draft PR198 remains the authorized delivery boundary.
+
+Owner-read exact 109 run 37702699889 is terminal nine green: five feature-pinned,
+three synthetic and one mixed. Synthetic 7487d6f1a57a4860cd6439c88857b4cf7532106d;
+nine raw-log hashes and actual checkout/test contexts are sealed in
+docs/review_packets/immigration_delivery_checkpoint109_ci.json.
+Hosted aggregate differs from owner 148 then/151 here. Current CI field points to 109,
+preserving earlier receipts as historical; new 110 requires its own pushed-head run.
