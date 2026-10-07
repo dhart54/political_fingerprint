@@ -5606,3 +5606,42 @@ inventory, 455 reviews, 39 meanings, 211 procedures, 203 exclusions, two express
 reviews remain. Three leads still need source research, with this HRA scope application
 routed separately. No current deadline; historical markers unchanged. No merge,
 deploy, production write, editorial acceptance, promotion or publication.
+
+
+### Shutdown checkpoint 75: paused, goal incomplete
+
+Dylan requested a safe checkpoint before PC shutdown at 02:26 UTC on October 7,
+2026. Stop new research; preserve by 02:35 UTC. Last complete implementation is
+checkpoint 74, 45ef2a7b87e89a1e7f9446478f3db7bbfbfb1acf, already pushed to PR198.
+255 tests in 42.179 seconds, 66 candidate tests, seven semantic checks, seven raw
+generated-byte replay files and three controlled mutation rejections passed there.
+Checkpoint 74-associated run 37561984509 was in progress at recording; exact final
+status and shutdown commit appear in the terminal marker/final report. Prior run
+37560982589 at checkpoint 73 passed all nine jobs with known checkout distinctions.
+This shutdown increment records preservation/review evidence only, not new behavior.
+
+New frozen hr1_checkpoint72_73_independent_reviews.json records separate bounded
+source no-material-defect and mechanics no-blocker verdicts. Ten distinct raw primary
+hashes, scholarship eleven bindings/eighteen clauses/both member additions, duplicate
+enrollment ten witnesses/twelve matrices/extents, full predecessor reconstruction
+and seven unchanged checkpoint-73 Git blobs verified. Three full-capture record seals
+not independently reconstructed. Four isolated guards pass; six mutations each cause
+one assertion failure/zero errors. No broad independent tests, generator/raw replay,
+historical/member/package re-audit or application adjudication. CI groups 217/219 are
+distinct from owner local 251/253 aggregates. Historical pending snapshots retained.
+
+Canonical scope/accounting unchanged: 39 meanings, 1323 sources, 850 bindings,
+326 manifested captures, 455 of 676 reviews, 221 ordinary screenings, two partial
+H.R. 1 reviews and 62 application questions. HRA domain application remains separately
+routed; three source leads remain (customs, foreign-tax remedy, foreign-entity energy).
+The acquired original customs Chapter 4 HTML and normalized text remain private,
+uncommitted and unmanifested; paths/hashes are in immigration_shutdown_checkpoint_
+20261007.json. No customs disposition, new interpretation, validation or completion
+claimed. Preserve and verify them before resuming source work; no helper re-execution.
+
+The shutdown receipt preserves historical terminal/deadline marker originals verbatim
+and byte hashes; historical deadline file stays unchanged. Terminal marker is written
+last as paused checkpoint, not goal success. No tracked candidate work is left pending.
+No PC shutdown/OS settings change, merge/deploy, production write, acceptance,
+promotion or publication. Stop project mutations after preservation. Do not resume on
+wake/reconnect or routine supervisory messages: explicit Dylan authorization required.
