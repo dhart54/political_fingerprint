@@ -4419,3 +4419,89 @@ scan must include five- and six-digit section IDs while excluding inserted four-
 digit Code IDs; keyword hits/identifier mentions alone do not establish coverage
 or membership. Historical markers preserved, no current shutdown or production/
 merge/deployment/editorial acceptance authority.
+
+
+### Successor checkpoint 68: exact House EITC definition and separate increase
+
+Governing floor 112206 EITC body corresponds to served EH 112205, whose 112206 is
+Direct File. Exact full EITC body hashes, floor preceding 112205 employee-retention-
+credit enforcement section and H.Res.492/499 correction chain bound separately.
+H.Res.492 strikes that preceding floor section; applying its number blindly to a
+later served version would incorrectly delete EITC. Comparison-only outer label,
+Record page, heading spacing and split on-line token normalization establishes
+otherwise exact operative words; both original witnesses unchanged. No whole-EH
+vote-time equivalence, same-number substitution or Senate EITC claim.
+
+House replaces original 32(m) text from issued-to-individual onward with printed
+(as defined section 24(h)(7)), retaining solely-for 32(c)(1)(E)/(c)(3)(D) role scope.
+Full original operative 32 bound: taxpayer/conditional-spouse identification and
+child name/age/TIN/alternative-information methods; ordinary eligible-individual
+alternatives, no-child residence/age/dependency conjunction, child ineligibility,
+911 exclusion, nonresident limitation with 6013(g)/(h) resident-treatment election
+exception, modified 152(c) child definition excluding self-support and 152(e),
+married-child/United-States-abode rules and military context. Original 32(d), income/
+table/investment rules and dated historical 2021 provisions remain separate baseline,
+not reset or automatically waived. No blanket exclusion of every noncitizen.
+
+Original 32(m) uses excluded nonwork clause-II/related-clause-III issuance language
+and on-or-before return due date. Own same-bill 24(h)(7) uses citizen-or-specified-
+authorization issuance and before due date. Both material issuance and temporal
+wordings preserved, no bare number/citizen-only shortcut or old inclusive-deadline
+import. Number amendment applies to tax years beginning after December 31, 2024.
+
+Separate Purple Heart increase retains whether or not an eligible individual;
+award plus actual 223(a) disability payments that cease by reason of 223(e)(1);
+own 12-month window, exclusion for any month receiving those benefits, prior-month
+payment amount and only enumerated (a)(2)/(d)/(e)/(f)/(i) exceptions applying to
+that increase. Its tax years ending after enactment differ from the number
+amendment's tax years beginning date. Full original 223(a) benefit conditions and
+timing, own citizen/national/number or temporary-business/crewman alternatives and
+223(e) actual earnings-based nonpayment after third month during 36-month post-
+trial-work period and related dependent-benefit rule bound. No award/disability/
+benefit/employment/immigration status determination, credit for every veteran or
+blanket exemption/denial. Question 60 reserves combined ordinary identification/
+eligibility and separate increase application with recommendations, evidence,
+alternatives and safe parallel work. Other certification/task-force provisions
+remain full source context, not Immigration conclusions. Prior 59 questions intact.
+
+Three new extents: full operative 32 and complete 223(a)/(e), from one new original
+SSA capture and reused original 32; four capture records. Seven new/seven reused
+bindings, eight complete blocks across eight dimensions. New H.Res.499 binding
+reuses unchanged canonical source and explicitly establishes adoption of 492.
+One House review-source/proposal-reference/scope update; exact prior checkpoint
+plus declared one-action additions reconstructs authoring. Other 38 actions,
+entire Senate action, previous House clauses/qualifications/choices/compacts,
+1,313 sources/304 capture rows/frozen receipts and prior 59 questions unchanged;
+no disposition/eligibility/counting change. Both members preserve exact new detail;
+source/capture/receipt/audit/hash integrity, 200 text extents and isolation verify.
+
+Validation: 243 tests in 43.210 seconds including 54 candidate tests, seven semantic
+checks and seven raw generated-byte replay files pass. Inclusive-deadline import,
+eligible-individual-only increase and same-number EH substitution mutations each
+rejected with one assertion failure, zero errors. Final diff/source comparison
+reviewed; tests establish contract integrity, not semantic truth. Core bb20ff1fe54244d673cb00a96e08cc512a7a727e8c1a6e58da1f56452f2cd36d;
+compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Durable independent 65/66 receipt: no mechanical blocker or bounded semantic material
+defect. Loan 65 all 22 binding instances, ten clause hashes and receipt covered;
+three operative hashes closed using exact authoring plus independently fetched
+normalized primary text with retained trailing space, not raw HTML byte equivalence.
+Account/pilot 66 preserves citizenship/age/number/date rules and reserved 56/57;
+13 of 18 binding hashes, all 29 matrices and receipt/prose hashes verified, five
+outer/EH hashes unrecomputed. Exact readable blob confirms both detail appends,
+new qualifications, prior text and compacts within checked scope; full Massie detail,
+local tests/replay and raw acquisition byte equivalence remain outside independent
+coverage. No new 67/68 semantic review or package acceptance. Prior receipts frozen;
+final audit verdict null. Exact 65/66 CI independently all nine green, owner-native
+verified; latest 67 head 54716ef74e909b9fc9f1c034a5a6ec2025ba27b5 run 37554831947 all
+nine green owner-native. Current exact CI follows push.
+
+Accounting: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings. 1,316 sources, 822 bindings,
+308 captures, 200 text extents. Remaining 221 screenings, two partial H.R.1 reviews,
+60 application questions and separate original 1994 follow-up. Next remaining exact
+H.R.1 component inventory/material authorities, including DOD border-support and
+Coast Guard funding candidates and Senate scholarship-credit status role, then
+continuing/omnibus/NDAA/screens. Provisional five/six-digit keyword/full-binding scan
+is a private discovery aid, not domain eligibility or completion. Existing markers
+preserved, no current shutdown/production/merge/deployment/editorial acceptance.

@@ -203,6 +203,43 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                             self.assertIn('paid voluntarily without any consequence in the event of nonpayment', own)
                             self.assertIn('reduced (but not below zero) by $100 for each $1,000', own)
 
+    def test_eitc_definition_keeps_role_scope_and_exact_version_mapping(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        floor = next(c['passage'] for c in action['claim_source_map']
+                     if c['locator'].startswith('Complete governing floor 112206 EITC'))
+        engrossed = next(c['passage'] for c in action['claim_source_map']
+                         if c['locator'].startswith('Served EH 112205 EITC comparison'))
+        self.assertTrue(floor.startswith('SEC. 112206. EARNED INCOME TAX CREDIT REFORMS.'))
+        self.assertTrue(engrossed.startswith('SEC. 112205. EARNED INCOME TAX CREDIT REFORMS.'))
+        baseline = next(s['text'] for s in self.values[1]['sources']
+                        if s['source_id'] == 'govinfo:26usc32-operative-2024-eitc-baseline')
+        self.assertIn('Solely for purposes of subsections (c)(1)(E) and (c)(3)(D)', baseline)
+        self.assertIn('on or before the due date for filing the return', baseline)
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact House floor 112206 EITC'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('Selected exact House floor 112206 EITC'):]
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                self.assertIn('before the return due date, not the original on-or-before boundary', own)
+                self.assertIn('No change is invented for the unchanged solely-for role limitation', own)
+                self.assertIn('No Senate EITC amendment', own)
+                self.assertIn('the correction strikes that preceding floor section', own)
+
+    def test_eitc_increase_keeps_separate_eligibility_payment_and_date_conditions(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact House floor 112206 EITC'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('Selected exact House floor 112206 EITC'):]
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                self.assertIn('whether or not such specified Purple Heart recipient is an eligible individual', own)
+                self.assertIn('ceased to be payable by reason of section 223(e)(1)', own)
+                self.assertIn('12-month period beginning with the first month', own)
+                self.assertIn('shall not include any month if the specified Purple Heart recipient receives any benefit payment', own)
+                self.assertIn('shall not apply with respect to the increase under paragraph (1)', own)
+                self.assertIn('taxable years ending after the date of the enactment', own)
+                self.assertIn('number-amendment taxable-year-beginning applicability: The amendment made by this section shall apply to taxable years beginning after December 31, 2024', own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
