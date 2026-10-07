@@ -5339,3 +5339,136 @@ oath/employment and other riders, DOJ/State/supplementary incorporation, final
 whole-package comparison and ordinary screenings. Existing reporter-correction
 recheck and reserved domain/application questions remain bounded parallel review.
 No production work, merge, deployment, editorial acceptance, promotion or publication.
+
+
+### Successor checkpoint 88: H.R. 1968 oath, ID and employment funding limits
+
+Five complete witnesses bind DHS 512, 514 and 517, complete governed 1448 oath
+baseline and complete 274A(h)(3) employment-at-the-particular-time definition.
+The oath amendment funding bar leaves established qualified religious, child and
+disability accommodations intact; no new oath or individual waiver. National-ID
+development activities are constrained by current Act funds, not abolition of all
+documents or other-funded activities. The employment definition preserves permanent
+residence or other authorization, not an all-noncitizen ban or actual violation.
+Complete sources are unchanged; no new acquisitions, sources or questions.
+
+113 focused tests passed in 12.075 seconds: 87 candidate and 26 Semantic IR tests.
+Canonical Semantic IR validation and seven semantic checks passed. Seven generated
+files match separate replay byte for byte; all source/extent/capture seals, five
+complete witnesses and current 40 action-audit hashes verify. Five mutations each
+fail one assertion with zero errors: removed oath accommodations, automatic waiver,
+all-ID abolition, general status substituted for time-specific authorization and
+all-noncitizen ban. Both members' compact/new detail inspected, preserving actual
+Nay observations and unchanged compiled graph. Prior 39 other meanings, 33 claims,
+all source/capture pools, 64 questions and frozen receipts remain unchanged. Final
+diff reviewed. Same-owner comparison remains partial, not independent acceptance.
+
+Accounting remains 676 inventory, 458 reviews, 40 interpreted, 211 procedural,
+205 excluded, two expressive, 218 ordinary unfinished, three partial packages,
+64 application questions, 37 episodes, 80 member observations and 72 findings.
+1336 sources, 888 bindings, 340 captures, 217 extent objects and 361 coordinates.
+Core 7bc69b404b3e4c2bb4e0579a5da50667ac4cf5080defc4e190b89b6db4f37f2d;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+
+Exact 86 run37656175441 passed all nine jobs. Preserved logs verify five feature
+checkouts at 8408f65bc1207e1d14f8b33081eea2940f00da4f, three synthetic-merge
+checkouts at 84aae6b872e1eb66e7a757c27ab4f48e66dc2661 and one mixed receipt-repair
+job later checking out feature 8408f65. The hosted m14h 238-test group is distinct
+from the owner's focused scopes; no claim every job ran only feature bytes. New
+immigration_delivery_checkpoint86_ci.json seals checkout provenance and actual
+85-86 fast-forward/PR update while preserving the earlier GitHub500 failure.
+Checkpoint87 normal push and draft update confirmed 17:12:05 UTC at
+5bc5f1dbd5834051b0c75d286231f1f9d6d0f731; run37657193630 is in progress.
+Exact 88 CI awaits its own push/run. Earlier successes are not substituted.
+
+Ownership continues through delivery/CI, remaining DHS sponsor/family exception
+definitions and other material riders, DOJ/State/supplementary incorporation,
+whole-package comparison and ordinary screenings. Three domain fits, 64 application
+questions and the retained-reporter independent recheck remain reserved. Final
+verdict/readiness/publication eligibility remain false. No production work, merge,
+deployment, editorial acceptance, promotion or publication.
+
+
+### Successor checkpoint 89: independent P3 refugee-allocation precision correction
+
+Independent exact 84 review identified editorial/semantic precision ambiguity in the
+599D(b)(3) allocation sentence, not a demonstrated wrong beneficiary class or extra
+quota. Historical severity is P3. Exact84 authoring 618, core 1464, readable 5755/5788
+and 13439/13472, and review-packet 787 were identified by the reviewer. Current shared
+meaning now distinguishes the larger 207(a)(3)former-Soviet/Baltic-national admissions
+allocation from the narrower 599D(b)(2)(B)religious recipient category, retaining
+current Ukrainian Catholic/Ukrainian Orthodox membership and public, active,
+continuous participation or attempted participation in its religious activities.
+The qualification explicitly preserves the same distinction and no extra overall
+quota. Existing complete 599D baseline and exact EH 11208 witnesses ground both edits.
+Core, both members, projection hashes and packet regenerated canonically.
+
+Before correction, 15 exact artifacts were archived with byte hashes. They preserve
+the validated uncommitted 88 oath/employment candidate, seven outputs, source/ledger
+state, audit and delivery receipt. There is no standalone 88 feature commit claim.
+The combined next commit contains that unchanged funding increment and 89 correction.
+Frozen 88 scope receipt remains its truthful intermediate snapshot, linked by the
+new correction receipt and archive; prior committed/frozen receipts stay untouched.
+Only the shared allocation sentence and one qualification changed after preservation;
+all 38 claims, source/capture pools, 64 questions and 39 other meanings are unchanged.
+
+Final 114 focused tests passed in 11.982 seconds (88 candidate plus 26 Semantic IR), canonical
+Semantic IR validator and seven semantic checks passed. Seven final generated JSONs
+match separate replay byte for byte. All 15 archived byte hashes/two complete witnesses/
+current 40 audit hashes verify. Four controlled mutations each fail one assertion with
+zero errors: blurred parent/recipient, omitted current membership, omitted participation
+and extra ceiling. Both actual compact/detail and review packet were inspected; actual
+Nay observations, compact summaries and compiled graph remain unchanged. One stale
+pre-correction exact-wording test assertion was updated to retain the explicit parent
+pool; no rule weakened. Final diff reviewed. Correction remains pending independent
+recheck, not acceptance. Historical action-assessment totals remain unchanged because
+the reviewer supplied P3 precision rather than a new repository Major/Minor translation.
+
+New supervisory receipt records the bounded 77-84 mechanics/78-81 source-scope review
+and selected 82-84 final semantic review. No material DHS/DivisionG defect beyond P3;
+9 raw hashes/11 source seals/10 extent reconstructions/26 witnesses/3 receipt seals/22 claims,
+core/both projections and both members' copy verified by the reviewer. No reviewer
+tests/compiler replay/mutations/CI, no whole-package/application acceptance, and no
+automatic transfer to later 85-88 components. Optional physician-copy clarification is
+recorded as follow-up. Retained 287(g)correction recheck is in progress with reviewer.
+
+Exact 87 run 37657193630 passed nine jobs. Logs verify five feature checkouts at
+5bc5f1dbd5834051b0c75d286231f1f9d6d0f731, three synthetic merge checkouts at
+cf663b6720145b47780e89299ee27830e6e7df45 and one mixed receipt repair later checking
+out 5bc5f1d. The hosted 240-test group has its own scope. Separate sealed 87 delivery/CI
+receipt records actual provenance; no claim every job ran only feature bytes or that
+87 CI covers corrected 89. Combined88/89 awaits own push/run.
+
+Accounting: 676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205 excluded, two expressive,
+218 ordinary unfinished,three partial packages,64 application questions,37 episodes,
+80 member observations,72 findings; 1336 sources, 888 bindings, 340 captures, 217 extent objects
+and 361coordinates. Core c1dd1fd4bc5e02825afc1d9cb323cefa64e66c1e371197b7af1b2073a25fabc8;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Final verdict/readiness/publication eligibility remain false.
+
+Current supervisory steering: PR200 Render smoke maintenance is merged/deployed/
+verified on main 7a8c6ee; remove stale follow-up wording from current PR status while
+preserving history. Reserved domain-fit labels are not automatic Dylan gates. Next:
+one bounded foreign-tax/HRA/electricity comparison against remote-access citizenship/
+LPR/protected-status and scholarship 72 precedents plus negative controls. Explicit
+citizen-or-resident personal coverage gives foreign-tax a stronger candidate-in-scope
+case; HRA is closer/provisional context-only pending comparison. Do not equate all
+tax residence with immigration status or invent a categorical rule. Preserve disagreement
+and independent domain review; escalate only a genuinely new methodology/product
+judgment. Ordinary screenings continue alongside proposals. Then remaining H.R. 1968
+DHS/DOJ/State/package research. Ownership remains active; no production, merge,
+deployment, editorial acceptance, promotion or publication authorized.
+
+
+Checkpoint 89 review update: the independent narrow recheck at exact checkpoint 87
+5bc5f1dbd5834051b0c75d286231f1f9d6d0f731 resolves the retained-report correction 85
+within its documented scope. Historical Major IB-DHS-RETAINED-287G-REPORTER-AND-FIELDS
+remains. Four fresh primary raw hashes, three incorporation clauses and the complete
+retained 2020 report extent match; three annual-DHS actions have only the documented
+sentence replacements, with choices/compact/counting unchanged. Twelve archived
+Windows CRLF byte hashes reproduce 84; larger local byte lengths are valid. Five new
+85-87 guards passed independently in isolation; wrong actor, invented training and
+report/budget conflation each failed once with zero errors. New sealed independent
+recheck receipt records bounded closure without clearance of all 86-87 additions,
+editorial acceptance or publication. P3 allocation recheck remains pending. Continue
+bounded cross-case mapping rationale and ordinary screenings, then package research.

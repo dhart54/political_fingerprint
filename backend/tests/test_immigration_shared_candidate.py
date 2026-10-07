@@ -79,6 +79,47 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(len(questions), 1)
         self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
 
+    def test_hr1968_refugee_allocation_distinguishes_parent_pool_and_religious_recipients(self):
+        action = getattr(self, 'hr1968_allocation_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claim = next(c['passage'] for c in action['claim_source_map']
+                     if c['source_id'] == 'govinfo:8usc1157-2024-hr1968-refugee-rules')
+        self.assertIn('Within the number of admissions of refugees allocated', claim)
+        self.assertIn('shall allocate one thousand of such admissions', claim)
+        self.assertIn('current members of, and demonstrate public, active, and continuous participation (or attempted participation)', claim)
+        self.assertIn('larger nationality-based admissions allocation and this narrower religious recipient category are distinct', action['meaning'])
+        self.assertIn('are current members of the Ukrainian Catholic Church or Ukrainian Orthodox Church', action['meaning'])
+        self.assertIn('demonstrate public, active and continuous participation (or attempted participation)', action['meaning'])
+        self.assertIn('does not increase the general refugee admission ceiling', action['meaning'])
+        limitation = next(l for l in action['limitations'] if l.startswith('The 599D(b)(3)'))
+        self.assertIn('larger former-Soviet/Baltic-national refugee admissions allocation', limitation)
+        self.assertIn('narrower 599D(b)(2)(B) recipient category', limitation)
+        self.assertIn('public, active and continuous participation (or attempted participation)', limitation)
+
+    def test_hr1968_oath_funding_bar_preserves_existing_qualified_accommodations(self):
+        action = getattr(self, 'hr1968_restrictions_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('may be used to amend the oath of allegiance', claims)
+        self.assertIn('physical or developmental disability or mental impairment', claims)
+        self.assertIn('existing oath\'s accommodations', action['meaning'])
+        self.assertIn('Their stated showings and official determinations remain', action['meaning'])
+        self.assertIn('does not grant a waiver to any person', action['meaning'])
+
+    def test_hr1968_id_and_employment_funding_bars_do_not_become_universal_status_rules(self):
+        action = getattr(self, 'hr1968_restrictions_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('with respect to the employment of an alien at a particular time', claims)
+        self.assertIn('lawfully admitted for permanent residence', claims)
+        self.assertIn('authorized to be so employed', claims)
+        self.assertIn('does not abolish all existing identification documents', action['meaning'])
+        self.assertIn('employment-specific at the particular time', action['meaning'])
+        self.assertIn('not a bar on employing every noncitizen', action['meaning'])
+
     def test_hr1968_transfer_exceptions_do_not_erase_other_conditions_or_create_payments(self):
         action = getattr(self, 'hr1968_controls_action', None)
         if action is None:
@@ -1031,7 +1072,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('at least 1 year', adjustment)
         self.assertIn('physically present in the United States on the date', adjustment)
         self.assertIn('pays a fee', adjustment)
-        self.assertIn('within the refugee admissions already allocated', action['meaning'])
+        self.assertIn('Within refugee admissions already allocated under section 207(a)(3)', action['meaning'])
         self.assertIn('three section 599D(e) branches', action['meaning'])
         self.assertIn('changes only the terminal year in the heading', action['meaning'])
         self.assertIn('not a new universal parole power', action['meaning'])
