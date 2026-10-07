@@ -5399,3 +5399,73 @@ remains unfinished; no canonical interpretation, additional partial-action flag,
 individual eligibility claim or unavailable-evidence label is authored yet. Next:
 finish the material incorporation boundary and compile a qualified member-neutral
 package candidate through the established partial-package contract.
+
+
+### Successor checkpoint 82: selected H.R. 1968 refugee and adjustment candidate
+
+House 119/1/70 now has one member-neutral candidate meaning, projected from the
+actual March 11, 2025 whole-package passage choice. Both Foushee and Massie have
+official Nay observations. Complete exact H.R. 1968 EH was read; March 15 enacted
+Public Law 119-4 is later evidence and is not substituted for the voting version.
+Selected division A section 11208(a) and (b) mechanisms are source-bound; remaining
+DHS, DOJ, State and other incorporated component review remains explicitly partial.
+
+The section 599D one-thousand allocation remains within already allocated refugee
+admissions and its defined category; it is not a general ceiling increase. All three
+application, written-decision and reapplication date branches are retained, including
+the maximum-feasible written-reasons qualification. Category-based fear showing
+requires an asserted fear and credible basis for concern, with other refugee
+admission qualifications. The section 599E inspection/parole-after-denial window
+retains its August 15, 1988 start and extends the ending year to 2025. Its own
+national list excludes the Iranian category found in 599D. One-year and filing-day
+physical presence, application, fee, admissibility/waiver, admission-record date
+and no-visa-offset rules remain. No universal parole power, automatic residence,
+individual eligibility or general adjustment filing deadline is inferred.
+
+Afghan section 602(b)(3)(F) changes its heading only. Complete captured operative
+qualification and numerical-limit clauses remain separately bound; no new visa
+quota, employment period or application deadline is invented. The section's Israel
+financial amendments are separate context. Shared choice text and compact copy
+preserve whole-package opposition, without claiming opposition to an individual
+refugee or a separate provision. No component-only preferences or enacted outcomes.
+
+hr1968_selected_refugee_scope_review.json records one complete outer-section witness
+and four original authority extents. Two saved dated Code acquisitions are appended
+to the durable manifest and private pool, 336 to 338. The complete 599D/1157 operative
+source is 14615 characters, 599E is 2170 and selected Afghan clauses are 11028. Four
+new canonical sources include unchanged governed House EH. All prior 39 meanings,
+457 reviews, source objects and 336 capture rows are preserved. No earlier source
+bytes, receipts or publication state are rewritten. A private verifier initially
+assumed all source objects have text; corrected to retain Clerk metadata-only
+objects before verification, with no evidence change.
+
+The established partial-package contract now records three incomplete actions:
+H.R. 1 House passage, H.R. 1 Senate concurrence and H.R. 1968 passage. The existing
+closure guard derives the incomplete count while preserving both H.R. 1 identities;
+zero ordinary screenings cannot certify package completion. New meaningful guards
+cover the allocation/country/window/heading distinctions and incomplete package
+state. Four controlled mutations each yield one assertion failure and zero errors:
+outside-allocation quota, Iranian adjustment eligibility, heading-as-deadline change
+and premature component closure. Disk artifacts are unchanged by mutation tests.
+
+266 tests passed in 42.604 seconds before final spacing/explanatory wording cleanup;
+after that cleanup, all 77 candidate tests passed in 11.528 seconds and seven
+semantic checks passed. Seven final generated JSON files match separate replay byte
+for byte, all original witnesses and source/extents/raw hashes verify, and both
+members' compact/detail output was inspected. Final diff reviewed. Tests establish
+mechanical confidence, not semantic truth or independent acceptance. Core
+3b045ede8bf9b2fd2e21b28ee18df458227c6d5555bbffc0b4f5606d5b63fadd and compiled
+f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+
+Accounting: 676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205 excluded,
+two expressive, 218 ordinary unfinished, three incomplete packages, 62 application
+questions, 37 episodes, 80 member observations and 72 readable candidate findings.
+1330 canonical sources, 854 claim bindings, 338 captures, 211 extent-bearing source
+objects and 352 coordinates. Three H.R. 1 domain fits remain separately reserved.
+Final audit verdict, complete-issue readiness and publication eligibility stay false.
+No production write, merge, deployment, acceptance or promotion. Remote and draft
+PR198 last verified f869e2f527b1e88e0db506a6a18b91a9ed5fbc00; local 78–82 feature
+history and PR/hosted CI updates await push transport recovery. No repeated retry.
+Next: complete H.R. 1968 material DHS appropriation/rider incorporation (including
+division G sections 102–105 and own anomalies), DOJ/State and other material source
+boundaries, then full package semantic comparison; ordinary screenings can continue.

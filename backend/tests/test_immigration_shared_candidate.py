@@ -863,9 +863,38 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
 
     def test_zero_ordinary_screenings_does_not_close_partial_package_review(self):
         reviews = self.values[2]['accounting']['partial_component_reviews']
-        with self.assertRaisesRegex(ValueError, 'package component review remains incomplete: 2'):
+        incomplete = sum(r.get('complete_immigration_component_review') is not True
+                         or bool(r.get('remaining_executable_component_work')) for r in reviews)
+        self.assertGreaterEqual(incomplete, 2)
+        self.assertTrue({'house:119:1:145', 'house:119:1:190'} <= {r['action_id'] for r in reviews})
+        with self.assertRaisesRegex(ValueError, f'package component review remains incomplete: {incomplete}'):
             require_complete_research([], reviews)
-        self.assertEqual(validate(*self.values)['unfinished_component_reviews'], 2)
+        self.assertEqual(validate(*self.values)['unfinished_component_reviews'], incomplete)
+
+    def test_hr1968_refugee_adjustment_and_heading_keep_distinct_limits(self):
+        action = getattr(self, 'hr1968_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = {c['source_id']: c['passage'] for c in action['claim_source_map']}
+        refugee = claims['govinfo:8usc1157-2024-hr1968-refugee-rules']
+        adjustment = claims['govinfo:8usc1255-2024-hr1968-adjustment-rules']
+        self.assertIn('within the number of such admissions allocated', refugee)
+        self.assertIn('before October 1, 2024', refugee)
+        self.assertNotIn('Iran', adjustment)
+        self.assertIn('beginning on August 15, 1988', adjustment)
+        self.assertIn('after being denied refugee status', adjustment)
+        self.assertIn('at least 1 year', adjustment)
+        self.assertIn('physically present in the United States on the date', adjustment)
+        self.assertIn('pays a fee', adjustment)
+        self.assertIn('within the refugee admissions already allocated', action['meaning'])
+        self.assertIn('three section 599D(e) branches', action['meaning'])
+        self.assertIn('changes only the terminal year in the heading', action['meaning'])
+        self.assertIn('not a new universal parole power', action['meaning'])
+        self.assertIn('no separate position', action['choice_meanings']['Nay'])
+        partial = next(r for r in self.values[2]['accounting']['partial_component_reviews']
+                       if r['action_id'] == action['action_id'])
+        self.assertFalse(partial['complete_immigration_component_review'])
+        self.assertTrue(partial['remaining_executable_component_work'])
 
     def test_component_completion_flag_does_not_erase_remaining_work(self):
         reviews = copy.deepcopy(self.values[2]['accounting']['partial_component_reviews'])

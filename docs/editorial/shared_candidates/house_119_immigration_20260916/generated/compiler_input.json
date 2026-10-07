@@ -49,6 +49,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:1:70",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:1:102",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -287,6 +293,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
+        },
+        {
+          "action_id": "house:119:1:70",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         },
         {
           "action_id": "house:119:1:102",
@@ -654,6 +666,29 @@
         ],
         "structural_metadata": {
           "stage_order": 10065
+        }
+      },
+      {
+        "action_id": "house:119:1:70",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:70:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact March 11, 2025 House choice is passage of the complete H.R. 1968 continuing-appropriations and extensions package. The selected, separately source-bound Immigration mechanisms here are division A section 11208(a) refugee and adjustment date amendments and the separate section 11208(b) Afghan-program heading amendment. Other Immigration components of the package remain under review; this candidate does not claim complete component coverage.\n\nSection 11208(a)(1) would add fiscal year 2025 to the existing section 599D(b)(3) one-thousand allocation within the refugee admissions already allocated to the specified former-Soviet/Baltic national category described in (b)(2)(B). It is not an extra one thousand outside the allocated admissions ceiling, and it does not increase the general refugee admission ceiling. Replacing 2024 with 2025 in all three section 599D(e) branches would carry forward the special category-based fear showing (asserting a well-founded fear and a credible basis for concern about possible persecution) for applications submitted before October 1, 2025, the written-reasons requirement to the maximum extent feasible for decisions made before that date, and the specified previously denied applicants' reapplication route before that date. The complete baseline keeps its distinct former-Soviet/Baltic, Vietnam/Laos/Cambodia and Iranian religious-minority category definitions and other refugee admission qualifications. Neither country membership alone nor a reduced fear-showing rule guarantees admission.\n\nSection 11208(a)(2) would change the section 599E(b)(2) qualifying inspection-and-parole window's ending date from September 30, 2024 to September 30, 2025, retaining the August 15, 1988 starting date. Its separate national list covers former-Soviet states, Estonia, Latvia, Lithuania, Vietnam, Laos and Cambodia; the Iranian category in 599D is not imported into this adjustment route. The person must have been denied refugee status before the qualifying inspection and parole, apply for adjustment, have at least one year of physical presence and be physically present on filing, satisfy the remaining admissibility and qualified waiver rules, and pay the prescribed fee. The baseline's admission-record date and no-visa-offset rules remain. Extending the parole window is not a new universal parole power, automatic permanent residence, or an extension of every person's adjustment filing deadline.\n\nSection 11208(b) changes only the terminal year in the heading of Afghan Allies Protection Act section 602(b)(3)(F), from 2024 to 2025. It does not amend that paragraph's printed operative visa-number limit, employment-period endpoint, Chief-of-Mission application deadline or exhaustion rule. Those are distinct from the heading and retain their own complete captured qualifications; the candidate does not declare a new visa quota or a new application deadline from this heading edit. The same outer section's Israel loan-guarantee and stockpile amendments are separate fiscal/foreign-assistance context, not personal immigration mechanisms.\n\nYea and Nay concern passage of the whole package, including these selected mechanisms. They establish no separate vote on refugee admission, an individual applicant, an Afghan quota, an ICE account or another component. No actual admission, adjustment, expenditure, enactment or preferred alternative is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1968:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:70",
+          "govinfo:hr1968eh",
+          "govinfo:8usc1157-2024-hr1968-refugee-rules",
+          "govinfo:8usc1255-2024-hr1968-adjustment-rules",
+          "govinfo:8usc1101-2024-hr1968-afghan-heading-context"
+        ],
+        "structural_metadata": {
+          "stage_order": 10070
         }
       },
       {
@@ -1885,6 +1920,14 @@
         "episode_id": "episode:hr993:119",
         "action_ids": [
           "house:119:1:65"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr1968:119",
+        "action_ids": [
+          "house:119:1:70"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

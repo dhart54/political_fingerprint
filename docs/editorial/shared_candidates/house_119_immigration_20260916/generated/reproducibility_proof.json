@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "f45cc34b6a4880423f7e68c65ecfe3b842d4d66003539f193bc5ece1d482c8fe",
-  "source_capture_sha256": "9cf71c23f28ec401209dfdb17d50e65a2cc539563d865b5b8c04202048e99085",
-  "core_sha256": "79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8",
-  "compiled_sha256": "b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f",
-  "readable_sha256": "57333fd98082f1d4ccaff3b2fd9a6ad5f8352bc8ca46aaf278d441521be958da",
+  "input_sha256": "c2b46670b11cc03c792a98b4519fc1ffb5d1862c47de8ace9f8da0d7298b9860",
+  "source_capture_sha256": "884402b53d1ecc232f8dff72d57776c46238c3fe0a6b99e075875ff71987a20d",
+  "core_sha256": "3b045ede8bf9b2fd2e21b28ee18df458227c6d5555bbffc0b4f5606d5b63fadd",
+  "compiled_sha256": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898",
+  "readable_sha256": "36f44839e8feaa3327cc4ec6f408f1fbb8ed4f1540f74e76846a51fd41ba84fd",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -154,6 +154,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
           "source_id": "clerk:119:1:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:70",
+      "shared_sha256": "9967f076d03ab797b6187f25af9dbde7b714ec34a762c9e0a399e442fa37b419",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete H.R. 1968 package; no separate position on a refugee, adjustment or other component, or preferred alternative, is established",
+          "source_id": "clerk:119:1:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete H.R. 1968 package; no separate position on a refugee, adjustment or other component, or preferred alternative, is established",
+          "source_id": "clerk:119:1:70"
         }
       ]
     },

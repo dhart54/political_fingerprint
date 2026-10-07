@@ -18318,7 +18318,52 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:70",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Independent Immigration membership is established by the exact refugee and adjustment date amendments with complete material baseline qualifications. Whole-package direction is projected from the actual Clerk choice; component coverage remains explicitly incomplete.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:70",
+          "url": "https://clerk.house.gov/evs/2025/roll070.xml",
+          "raw_sha256": "e05290fa16ed906c06b697f7742db7af869bd620f4ff9bc2f0120610a0de13dd",
+          "governed_bytes_sha256": "a5c51f5884dab43db6d073601285422d933e47b36807f33aaf5bbd223eb83922"
+        },
+        {
+          "source_id": "govinfo:hr1968eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm",
+          "raw_sha256": "027b3102102b18d3c44e9bfe18c4bb48449995fbe8fa072c9601bbe6a2e34c3d",
+          "governed_bytes_sha256": "2588417f3624bb21e9701320e405ea2d0604f7ce05a03bb96677a11fbd030628"
+        },
+        {
+          "source_id": "govinfo:8usc1157-2024-hr1968-refugee-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1157.htm",
+          "raw_sha256": "8e57ca6a5ba7a53301b0ec04018c1850f5165e2b016721b1b8ba7701cdaccaae",
+          "governed_bytes_sha256": "86cbd43448f139ac469b8ca3c4e13bb6a3dcfecf598841cc48b4a46e03a07107"
+        },
+        {
+          "source_id": "govinfo:8usc1255-2024-hr1968-adjustment-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1255.htm",
+          "raw_sha256": "0e1f23c103b542d05915a90b274384cbbc0cd729a9f9efbf5b10e143bd9be576",
+          "governed_bytes_sha256": "122315cef86a9b51ed9580eaf994dce9e7ee0e42238bacb39fd728a2047f919d"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-hr1968-afghan-heading-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "raw_sha256": "2c43a69560ee9c024b3c00bc093d2a613741bb6145179abb116ea1983e2d9fed",
+          "governed_bytes_sha256": "99f46ece57347fdef302ad1cbaa968a596678d6a2d7278c02d97fe31c383f19d"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:70",
+      "episode_candidate_id": "episode:hr1968:119"
     }
   ],
-  "review_sha256": "475b0652c44a02d725e073684183b6df75534966443f4a575d8ee0beb8cdc081"
+  "review_sha256": "4c750aa25e47e2a3f0d35c916503e2051d8f526306be234f9c3d9e7dd82b99af"
 }

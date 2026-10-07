@@ -77,7 +77,7 @@ actual registration loss, voting offense or immigration removal is inferred.
 <!-- GENERATED CANDIDATE START -->
 ## Generated Foushee candidate findings
 
-39 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim.
+40 explicitly listed Immigration & Border candidate inputs in the fixed 676-action inventory through September 16, 2026. Membership, source, episode and package-component research remain incomplete; no full-issue, acceptance or public claim.
 
 All wording below remains candidate copy. Qualifications apply at both compact and detailed levels.
 
@@ -772,6 +772,40 @@ Evidence: house:119:1:7; finding `prop:0fe6688ae0a0fe34`.
 
 Sources: [clerk:119:1:7](https://clerk.house.gov/evs/2025/roll007.xml); [govinfo:hr23eh](https://www.govinfo.gov/content/pkg/BILLS-119hr23eh/html/BILLS-119hr23eh.htm); [govinfo:8usc1101-2024-alien-admission-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:22usc7432-2024-icc-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap81-subchapII-sec7432.htm); [govinfo:8usc1182-2024-hr30-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm).
 
+### H.R. 1968 package with selected qualified refugee and adjustment date amendments
+
+**Compact:** Foushee opposed passage of that complete H.R. 1968 package; no separate position on a refugee, adjustment or other component, or preferred alternative, is established. H.R. 1968 includes qualified refugee-rule and inspection/parole-window extensions, plus an Afghan-program heading edit; other Immigration components remain under review. The vote concerns the whole continuing-appropriations package.
+
+**Detail:**
+
+**house:119:1:70**
+
+Foushee opposed passage of that complete H.R. 1968 package; no separate position on a refugee, adjustment or other component, or preferred alternative, is established.
+
+The exact March 11, 2025 House choice is passage of the complete H.R. 1968 continuing-appropriations and extensions package. The selected, separately source-bound Immigration mechanisms here are division A section 11208(a) refugee and adjustment date amendments and the separate section 11208(b) Afghan-program heading amendment. Other Immigration components of the package remain under review; this candidate does not claim complete component coverage.
+
+Section 11208(a)(1) would add fiscal year 2025 to the existing section 599D(b)(3) one-thousand allocation within the refugee admissions already allocated to the specified former-Soviet/Baltic national category described in (b)(2)(B). It is not an extra one thousand outside the allocated admissions ceiling, and it does not increase the general refugee admission ceiling. Replacing 2024 with 2025 in all three section 599D(e) branches would carry forward the special category-based fear showing (asserting a well-founded fear and a credible basis for concern about possible persecution) for applications submitted before October 1, 2025, the written-reasons requirement to the maximum extent feasible for decisions made before that date, and the specified previously denied applicants' reapplication route before that date. The complete baseline keeps its distinct former-Soviet/Baltic, Vietnam/Laos/Cambodia and Iranian religious-minority category definitions and other refugee admission qualifications. Neither country membership alone nor a reduced fear-showing rule guarantees admission.
+
+Section 11208(a)(2) would change the section 599E(b)(2) qualifying inspection-and-parole window's ending date from September 30, 2024 to September 30, 2025, retaining the August 15, 1988 starting date. Its separate national list covers former-Soviet states, Estonia, Latvia, Lithuania, Vietnam, Laos and Cambodia; the Iranian category in 599D is not imported into this adjustment route. The person must have been denied refugee status before the qualifying inspection and parole, apply for adjustment, have at least one year of physical presence and be physically present on filing, satisfy the remaining admissibility and qualified waiver rules, and pay the prescribed fee. The baseline's admission-record date and no-visa-offset rules remain. Extending the parole window is not a new universal parole power, automatic permanent residence, or an extension of every person's adjustment filing deadline.
+
+Section 11208(b) changes only the terminal year in the heading of Afghan Allies Protection Act section 602(b)(3)(F), from 2024 to 2025. It does not amend that paragraph's printed operative visa-number limit, employment-period endpoint, Chief-of-Mission application deadline or exhaustion rule. Those are distinct from the heading and retain their own complete captured qualifications; the candidate does not declare a new visa quota or a new application deadline from this heading edit. The same outer section's Israel loan-guarantee and stockpile amendments are separate fiscal/foreign-assistance context, not personal immigration mechanisms.
+
+Yea and Nay concern passage of the whole package, including these selected mechanisms. They establish no separate vote on refugee admission, an individual applicant, an Afghan quota, an ICE account or another component. No actual admission, adjustment, expenditure, enactment or preferred alternative is inferred.
+
+The Clerk recorded the House result as 'Passed' on 2025-03-11. This does not establish enactment.
+
+- Selected-clause candidate only: full House EH was read, but full Immigration component review and material incorporated appropriation/rider baselines remain unfinished. Full issue coverage and publication readiness stay false.
+- The 599D one-thousand rule operates within the specified allocated refugee admissions and its defined (b)(2)(B) category; it does not add a universal or additional overall refugee quota.
+- All three 599D(e) branches are distinct: applications, written denial decisions and reapplications. Before October 1, 2025 is retained literally; there is no claim that every person from a listed country qualifies or is admitted.
+- The 599E amendment extends the qualifying inspection/parole period ending September 30, 2025, after denial of refugee status. Its separate country list, physical-presence, filing, fee, admissibility and waiver conditions remain; Iranian religious minorities are not added by borrowing 599D categories.
+- Section 11208(b) changes only the Afghan F heading. Unchanged operative limits and deadlines are source-bound separately; no new quota, employment-period extension or application-deadline extension is inferred from the heading.
+- March 15 enacted Public Law 119-4 is after the March 11 House vote and is not substituted as its governing exact version. The later law already present in the source pool is not a primary meaning binding for this action.
+- This is the whole package passage choice, not separate support or opposition to any selected provision or individual outcome. Remaining DHS, DOJ, State and other material incorporation work is executable research, not unavailable evidence.
+
+Evidence: house:119:1:70; finding `prop:735f031e8edbb264`.
+
+Sources: [clerk:119:1:70](https://clerk.house.gov/evs/2025/roll070.xml); [govinfo:hr1968eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm); [govinfo:8usc1157-2024-hr1968-refugee-rules](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1157.htm); [govinfo:8usc1255-2024-hr1968-adjustment-rules](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1255.htm); [govinfo:8usc1101-2024-hr1968-afghan-heading-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm).
+
 ### H.R. 5103 DC commission immigration recommendations and monitoring
 
 **Compact:** Foushee opposed passage of the complete H.R. 5103 EH proposal; no preferred alternative is established. H.R. 5103 would establish a DC commission to recommend and review immigration-enforcement policies and monitor sanctuary-city compliance, alongside broader policing and beautification work, through January 2, 2029.
@@ -1147,6 +1181,7 @@ Sources: [clerk:119:2:96](https://clerk.house.gov/evs/2026/roll096.xml); [govinf
 | house:119:1:42 | supported passage of H.R.35 with its specified vehicle-flight offense and immigration inadmissibility, deportability and relief-bar provisions | opposed passage of H.R.35 with those provisions; no preferred alternative is established | [govinfo:hr35eh](https://www.govinfo.gov/content/pkg/BILLS-119hr35eh/html/BILLS-119hr35eh.htm); [govinfo:18usc758-2024-checkpoint-flight](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap35-sec758.htm); [govinfo:8usc1227-2024-hr30-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm); [govinfo:8usc1182-2024-hr30-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm); [govinfo:8usc1101-2024-conviction-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-alien-admission-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1227-2024-deportability-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm) |
 | house:119:1:63 | supported suspending the rules and passing H.R.495 to add annual implementation reports on the existing cross-border-tunnel strategic plan | opposed that suspension-and-passage proposition for H.R.495; no preferred alternative is established | [govinfo:hr495eh](https://www.govinfo.gov/content/pkg/BILLS-119hr495eh/html/BILLS-119hr495eh.htm); [govinfo:6usc257-2024-complete](https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapIV-partD-sec257.htm) |
 | house:119:1:65 | supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting | opposed that suspension-and-passage proposition for H.R.993; no preferred alternative is established | [govinfo:hr993eh](https://www.govinfo.gov/content/pkg/BILLS-119hr993eh/html/BILLS-119hr993eh.htm) |
+| house:119:1:70 | supported passage of the H.R. 1968 package containing the selected qualified refugee and adjustment date amendments; no separate component position is established | opposed passage of that complete H.R. 1968 package; no separate position on a refugee, adjustment or other component, or preferred alternative, is established | [govinfo:hr1968eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm); [govinfo:8usc1157-2024-hr1968-refugee-rules](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1157.htm); [govinfo:8usc1255-2024-hr1968-adjustment-rules](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1255.htm); [govinfo:8usc1101-2024-hr1968-afghan-heading-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm) |
 | house:119:1:102 | supported passage of H.R.22 with its complete qualified citizenship-proof, verification and related election/immigration provisions | opposed passage of H.R.22 with those provisions; no preferred alternative or separate component position is established | [govinfo:hr22eh](https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm); [govinfo:52usc20502-20511-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title52/html/USCODE-2024-title52-subtitleII-chap205.htm); [govinfo:42usc1320b-7-save-and-benefit-boundary](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1320b-7.htm); [govinfo:8usc1229-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1229.htm); [govinfo:8usc1101-2024-alien-admission-context](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1101-2024-sba-status-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:22usc212-2024-complete](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm); [govinfo:8usc1408-2024-complete](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapIII-partI-sec1408.htm); [govinfo:49usc30301-2024-real-id-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap303-sec30301.htm); [govinfo:18usc611-2024-operative](https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap29-sec611.htm); [govinfo:8usc1182-2024-unlawful-voting](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm); [govinfo:8usc1227-2024-unlawful-voting](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm); [govinfo:8usc1227-2024-deportability-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm); [govinfo:hres294eh](https://www.govinfo.gov/content/pkg/BILLS-119hres294eh/html/BILLS-119hres294eh.htm) |
 | house:119:1:116 | supported passage of H.R.36 as a whole with its source-qualified provisions | opposed passage of H.R.36 as a whole; no preferred alternative is established | [govinfo:hr36eh](https://www.govinfo.gov/content/pkg/BILLS-119hr36eh/html/BILLS-119hr36eh.htm); [govinfo:8usc1101-2024-sba-status-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:8usc1151-2024-immediate-relative-class](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1151.htm); [govinfo:50usc1701-2024-emergency-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm); [govinfo:50usc1702-2024-operative-sanctions-authority](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm); [govinfo:50usc1705-2024-operative-penalty-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm) |
 | house:119:1:119 | supported passage of H.R.1503 as a whole with its source-qualified provisions | opposed passage of H.R.1503 as a whole; no preferred alternative is established | [govinfo:hr1503eh](https://www.govinfo.gov/content/pkg/BILLS-119hr1503eh/html/BILLS-119hr1503eh.htm); [govinfo:8usc1101-2024-sba-status-definitions](https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm); [govinfo:22usc211a-2024-passport-authority](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec211a.htm); [govinfo:22usc212-2024-complete](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap4-sec212.htm); [govinfo:42usc274e-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap6A-subchapII-partH-sec274e.htm); [govinfo:22usc2151n-2024-report-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapI-partI-sec2151n.htm); [govinfo:22usc2304-2024-report-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap32-subchapII-partI-sec2304.htm); [govinfo:publaw114-281-nonstate-definition](https://www.govinfo.gov/content/pkg/PLAW-114publ281/html/PLAW-114publ281.htm); [govinfo:50usc1701-2024-emergency-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1701.htm); [govinfo:50usc1702-2024-operative-sanctions-authority](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1702.htm); [govinfo:50usc1704-2024](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1704.htm); [govinfo:50usc1705-2024-operative-penalty-framework](https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap35-sec1705.htm) |
@@ -6023,3 +6058,73 @@ remains unfinished; no canonical interpretation, additional partial-action flag,
 individual eligibility claim or unavailable-evidence label is authored yet. Next:
 finish the material incorporation boundary and compile a qualified member-neutral
 package candidate through the established partial-package contract.
+
+
+### Successor checkpoint 82: selected H.R. 1968 refugee and adjustment candidate
+
+House 119/1/70 now has one member-neutral candidate meaning, projected from the
+actual March 11, 2025 whole-package passage choice. Both Foushee and Massie have
+official Nay observations. Complete exact H.R. 1968 EH was read; March 15 enacted
+Public Law 119-4 is later evidence and is not substituted for the voting version.
+Selected division A section 11208(a) and (b) mechanisms are source-bound; remaining
+DHS, DOJ, State and other incorporated component review remains explicitly partial.
+
+The section 599D one-thousand allocation remains within already allocated refugee
+admissions and its defined category; it is not a general ceiling increase. All three
+application, written-decision and reapplication date branches are retained, including
+the maximum-feasible written-reasons qualification. Category-based fear showing
+requires an asserted fear and credible basis for concern, with other refugee
+admission qualifications. The section 599E inspection/parole-after-denial window
+retains its August 15, 1988 start and extends the ending year to 2025. Its own
+national list excludes the Iranian category found in 599D. One-year and filing-day
+physical presence, application, fee, admissibility/waiver, admission-record date
+and no-visa-offset rules remain. No universal parole power, automatic residence,
+individual eligibility or general adjustment filing deadline is inferred.
+
+Afghan section 602(b)(3)(F) changes its heading only. Complete captured operative
+qualification and numerical-limit clauses remain separately bound; no new visa
+quota, employment period or application deadline is invented. The section's Israel
+financial amendments are separate context. Shared choice text and compact copy
+preserve whole-package opposition, without claiming opposition to an individual
+refugee or a separate provision. No component-only preferences or enacted outcomes.
+
+hr1968_selected_refugee_scope_review.json records one complete outer-section witness
+and four original authority extents. Two saved dated Code acquisitions are appended
+to the durable manifest and private pool, 336 to 338. The complete 599D/1157 operative
+source is 14615 characters, 599E is 2170 and selected Afghan clauses are 11028. Four
+new canonical sources include unchanged governed House EH. All prior 39 meanings,
+457 reviews, source objects and 336 capture rows are preserved. No earlier source
+bytes, receipts or publication state are rewritten. A private verifier initially
+assumed all source objects have text; corrected to retain Clerk metadata-only
+objects before verification, with no evidence change.
+
+The established partial-package contract now records three incomplete actions:
+H.R. 1 House passage, H.R. 1 Senate concurrence and H.R. 1968 passage. The existing
+closure guard derives the incomplete count while preserving both H.R. 1 identities;
+zero ordinary screenings cannot certify package completion. New meaningful guards
+cover the allocation/country/window/heading distinctions and incomplete package
+state. Four controlled mutations each yield one assertion failure and zero errors:
+outside-allocation quota, Iranian adjustment eligibility, heading-as-deadline change
+and premature component closure. Disk artifacts are unchanged by mutation tests.
+
+266 tests passed in 42.604 seconds before final spacing/explanatory wording cleanup;
+after that cleanup, all 77 candidate tests passed in 11.528 seconds and seven
+semantic checks passed. Seven final generated JSON files match separate replay byte
+for byte, all original witnesses and source/extents/raw hashes verify, and both
+members' compact/detail output was inspected. Final diff reviewed. Tests establish
+mechanical confidence, not semantic truth or independent acceptance. Core
+3b045ede8bf9b2fd2e21b28ee18df458227c6d5555bbffc0b4f5606d5b63fadd and compiled
+f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+
+Accounting: 676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205 excluded,
+two expressive, 218 ordinary unfinished, three incomplete packages, 62 application
+questions, 37 episodes, 80 member observations and 72 readable candidate findings.
+1330 canonical sources, 854 claim bindings, 338 captures, 211 extent-bearing source
+objects and 352 coordinates. Three H.R. 1 domain fits remain separately reserved.
+Final audit verdict, complete-issue readiness and publication eligibility stay false.
+No production write, merge, deployment, acceptance or promotion. Remote and draft
+PR198 last verified f869e2f527b1e88e0db506a6a18b91a9ed5fbc00; local 78–82 feature
+history and PR/hosted CI updates await push transport recovery. No repeated retry.
+Next: complete H.R. 1968 material DHS appropriation/rider incorporation (including
+division G sections 102–105 and own anomalies), DOJ/State and other material source
+boundaries, then full package semantic comparison; ordinary screenings can continue.

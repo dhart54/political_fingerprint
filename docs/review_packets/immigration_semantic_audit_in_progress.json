@@ -5601,6 +5601,73 @@
       "remaining_dhs_primary_comparison": "Exact seven remaining 100051 purposes and common own DHS account, distinct source/location/list predicates, complete incorporated authority, January212(d)(5) amendment and own pending240 return conditions; no individual power/status/crime/return or whole-package claim.",
       "state_border_fund_primary_comparison": "All ten own operative clause blocks retained on both surfaces: own four purpose predicates, eligible grantees, DHS amount/date, discretionary prior expenditures, State application actor/start timing, exclusively Federal authority construction and FEMA subsection/section cap scope.",
       "stonegarden_primary_comparison": "Exact EAS 90005(a) own Administrator/date/four amounts/B/C-only exemptions; full 603/605/609 and dated 2024 NOFO agency/border/cooperation/ingress-egress/inherent-authority scope, no automatic award application."
+    },
+    {
+      "action_id": "house:119:1:70",
+      "audit_state": "primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "70",
+        "legis-num": "H R 1968",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Mar-2025",
+        "action-time": "5:45 PM",
+        "vote-desc": "Full-Year Continuing Appropriations and Extensions Act, 2025"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete March 11 House EH and selected complete original provisions were reconstructed before member projection: section 1157 operative text, all section 599D and 599E clauses, and Afghan section 602(b)(1) through (3). The one-thousand allocation remains within already allocated admissions and its defined category. The three separate pre-October 1 application, denial-decision and reapplication branches are preserved. The adjustment route retains its separate national list, inspection and parole after refugee denial, original starting date, one-year and filing-day presence, fee, admissibility, waiver, record-date and visa-offset conditions. The Afghan heading edit does not amend the operative visa limit, employment period, application deadline or exhaustion rule. The Israel amendments remain separate context. March 15 enacted text is not substituted for the voting version. Both members have actual Nay observations on whole-package passage, with no separate component preference. Three explicit partial-package flags prevent closure. Remaining material appropriations and rider incorporations are unfinished research.",
+      "finding": "No material defect in bounded source-to-candidate comparison; remaining incorporated DHS/DOJ/State and other Immigration components are explicitly unfinished. Same-owner review is partial and is not independent acceptance.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "c8f3f54587b0cc78a56eac134da2dd70e556981bf32b6454fdf4287c76d01f00",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr1968eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1968eh/html/BILLS-119hr1968eh.htm",
+          "governed_bytes_sha256": "2588417f3624bb21e9701320e405ea2d0604f7ce05a03bb96677a11fbd030628",
+          "reviewed_extent": "Complete exact EH or selected complete original operative clauses; exact extents and separate component limits retained"
+        },
+        {
+          "source_id": "govinfo:8usc1157-2024-hr1968-refugee-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partI-sec1157.htm",
+          "governed_bytes_sha256": "86cbd43448f139ac469b8ca3c4e13bb6a3dcfecf598841cc48b4a46e03a07107",
+          "reviewed_extent": "Complete exact EH or selected complete original operative clauses; exact extents and separate component limits retained"
+        },
+        {
+          "source_id": "govinfo:8usc1255-2024-hr1968-adjustment-rules",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partV-sec1255.htm",
+          "governed_bytes_sha256": "122315cef86a9b51ed9580eaf994dce9e7ee0e42238bacb39fd728a2047f919d",
+          "reviewed_extent": "Complete exact EH or selected complete original operative clauses; exact extents and separate component limits retained"
+        },
+        {
+          "source_id": "govinfo:8usc1101-2024-hr1968-afghan-heading-context",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapI-sec1101.htm",
+          "governed_bytes_sha256": "99f46ece57347fdef302ad1cbaa968a596678d6a2d7278c02d97fe31c383f19d",
+          "reviewed_extent": "Complete exact EH or selected complete original operative clauses; exact extents and separate component limits retained"
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "checkpoint_validated"
     }
   ],
   "noncounting_actions": [
@@ -9198,7 +9265,7 @@
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 83,
+    "No Defect": 84,
     "Minor": 3,
     "Major": 9,
     "Critical": 1
@@ -9262,13 +9329,13 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 76,
-    "focused_runtime_seconds": 12.19,
+    "focused_tests": 77,
+    "focused_runtime_seconds": 11.528,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "blocked_until_checkpoint78_80_feature_push",
+    "exact_head_ci": "blocked_until_checkpoint78_82_feature_push",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -9298,14 +9365,14 @@
         "note": "Nine successful jobs belong to the head-associated PR run. Run headSha is association, not proof that every job executes solely feature-head bytes. No rerun required solely to relabel provenance."
       }
     },
-    "unfinished_component_reviews": 2,
+    "unfinished_component_reviews": 3,
     "previous_correction_ci": {
       "head": "ced5073953694d7d120664d05402709e45729b70",
       "run": 37501536160,
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "76 candidate tests pass after appending omitted checkpoint80 acquisition row; one controlled missing-row mutation fails exactly once with zero errors. Prior checkpoint80 six-module aggregate (264) and seven semantic checks preserved as historical validation.",
+    "focused_scope_note": "Selected H.R.1968 refugee/adjustment/heading candidate and generic package closure guard validated; final copy77 candidate tests/seven semantic checks/raw replay. Other package components remain incomplete.",
     "last_completed_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
       "run": 37640395671,
@@ -9361,8 +9428,8 @@
       "successful_jobs": 9,
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37538252890"
     },
-    "aggregate_tests": 264,
-    "aggregate_runtime_seconds": 42.646,
+    "aggregate_tests": 266,
+    "aggregate_runtime_seconds": 42.604,
     "aggregate_modules": [
       "test_shared_domain_candidate",
       "test_shared_legislative_corpus",
@@ -9371,7 +9438,7 @@
       "test_shared_candidate_research",
       "test_immigration_shared_candidate"
     ],
-    "candidate_focused_execution_scope": "76 candidate tests run separately in 12.190 seconds; previous 264-test aggregate belongs to checkpoint80. No new full-aggregate result claimed."
+    "candidate_focused_execution_scope": "266-test aggregate before final wording cleanup; final77 candidate tests separately11.528 seconds plus seven semantic checks. No final-copy repeat of the full aggregate claimed."
   },
   "open_legal_interactions": [
     {
@@ -11516,5 +11583,15 @@
     "prior_manifest_rows_preserved": 335,
     "total_captures": 336,
     "corrected_omitted_manifest_row": true
+  },
+  "hr1968_selected_refugee_scope_checkpoint": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_selected_refugee_scope_review.json",
+    "receipt_sha256": "a4260b385ca58abc34b76f1877272bc99a7a4fe0a758d2571431e0f13f5742c9",
+    "complete_component_review": false,
+    "same_owner_candidate_comparison": true,
+    "independent_review_pending": true,
+    "whole_package_choice_only": true,
+    "remaining_partial_packages": 3,
+    "application_questions": 62
   }
 }
