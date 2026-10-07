@@ -6697,3 +6697,63 @@ per supervisor; stale follow-up wording removed from current PR while history is
 preserved. Same-owner audit remains partial, 64 application questions and three partial
 packages remain; ownership active. No production, merge, deployment or editorial
 acceptance/promotion/publication authorized.
+
+
+### Successor checkpoint 91: exact pension screening and bounded comparison returned
+
+House 119/1/51, February 26, 2025 suspension-and-passage of amended H.R. 695,
+is now a source-grounded non-counting exclusion. Both members recorded Yea.
+The complete 3,324-character EH changes the Medal of Honor special-pension rate
+formula, prevents a duplicate annual increase and extends an existing pension-limit
+expiration from November 30, 2031 to January 31, 2033. Complete 2024 section 1562(a)-(g),
+1114(m)/(p) and 5503(d)(1)-(7) retain recipient/survivor protections, intermediate-rate
+qualifications and the qualified $90 payment limit. Disability criteria in the rate
+reference are not imported as new Medal of Honor recipient criteria; the payment
+limit is not imposed on every Medal of Honor recipient. No new Immigration & Border
+mechanism, actual payment, current computed rate, Medicaid eligibility or enactment
+is inferred. Historical notes and unrelated provisions were not reviewed.
+
+Two original official acquisitions and four canonical source objects are added.
+All prior 458 reviews, 1,336 sources, 40 meanings, three partial-package records and
+64 application questions remain unchanged. New accounting: 676 inventory, 459 reviews,
+40 interpreted, 211 procedural, 206 excluded, two expressive and 217 unfinished
+ordinary screenings. There are 1,340 sources, 888 interpreted claim bindings,
+342 captures and 220 extent objects with 365 coordinates. The new same-owner
+non-counting reconstruction adds one No Defect action: unique audit counts are now
+83 No Defect, three Minor, eleven Major and one Critical. Historical findings and
+the P3 refugee precision classification remain distinct and preserved.
+
+114 focused candidate/IR tests pass in 12.121 seconds, seven semantic checks and
+the Semantic IR reference validator pass, and seven canonical JSON files match a
+separate raw-byte replay. Only the generated reproducibility proof changes; core
+c1dd1fd4bc5e02825afc1d9cb323cefa64e66c1e371197b7af1b2073a25fabc8 and compiled
+f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 remain unchanged.
+All acquisition hashes, complete material extents, claim bindings and prior source
+seals reproduce. Same-owner source comparison and tests are not independent acceptance.
+Final diff inspected; candidate/publication isolation remains.
+
+The supervisor reports the independent eight-case rationale 90 comparison returned
+with no material objection to drafting direct personal-status foreign-tax/electricity
+components under the existing boundary. Fifteen binding hashes and six frozen receipt
+seals verify. Version-specific personal branches and tax-residence caveats remain;
+remote-access and scholarship are candidate comparators rather than accepted rules.
+HRA remains provisional with its inclusion counterargument, and negative controls
+are unchanged. This supports bounded literal candidate preparation, not a new rule
+or editorial acceptance. Earlier incomplete review sessions are not closure; the
+combined 88-89 oath/employment/allocation final propagation report remains pending.
+The new sealed independent comparison receipt preserves this scope and the nuance
+that earlier raw hashes are CRLF working-tree bytes while committed Git bytes are LF.
+All twelve 89-to-90 canonical Git blobs independently match and were reproduced here.
+
+Durable CI receipts seal exact 89 c103981 and 90 eadb7e2, each nine successful jobs:
+five feature-pinned, three synthetic-merge and one mixed repair checkout. Raw log
+hashes and distinct checkout provenance are retained; no claim that all jobs test only
+feature bytes. Hosted test counts retain their own four-module scope. Checkpoint 91
+requires its own pushed-head checks; earlier CI success is not substituted.
+
+Next: author supported literal foreign-tax/electricity personal-status components
+as provisional shared candidates, then continue ordinary screenings and remaining
+H.R. 1968/H.R. 1 package coverage alongside HRA/application review. Current ownership
+remains active under the authorized successor continuation, without a new deadline.
+Shutdown 75 evidence and unrelated work remain preserved. No production, merge,
+deployment or editorial acceptance/promotion/publication is authorized.

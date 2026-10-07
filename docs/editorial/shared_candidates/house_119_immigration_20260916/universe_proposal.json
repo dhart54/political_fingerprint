@@ -72,8 +72,8 @@
     "counts": {
       "procedural_context": 211,
       "interpreted_substantive_directional": 40,
-      "exact_action_ineligible": 205,
-      "source_unresolved": 218,
+      "exact_action_ineligible": 206,
+      "source_unresolved": 217,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -88,8 +88,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 211,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 205,
-    "unresolved_boundary_cases": 218,
+    "exact_action_ineligible_actions": 206,
+    "unresolved_boundary_cases": 217,
     "independent_episode_count": 37,
     "multi_action_episode_count": 3,
     "mechanism_types": [
@@ -385,6 +385,7 @@
         "house:119:1:45",
         "house:119:1:48",
         "house:119:1:49",
+        "house:119:1:51",
         "house:119:1:52",
         "house:119:1:53",
         "house:119:1:54",
@@ -576,7 +577,6 @@
         "house:119:1:32",
         "house:119:1:33",
         "house:119:1:50",
-        "house:119:1:51",
         "house:119:1:68",
         "house:119:1:71",
         "house:119:1:73",
@@ -1093,7 +1093,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "2a4465387a2006a4898e1e490855f7da7d8f9c7094b7dfb180028aa11dd5af1a",
+  "universe_subject_sha256": "478c5e4650f122a86cb2284957eeef27c56394de3f206a72f356d2e98290bfcc",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -3824,8 +3824,8 @@
       "date": "2025-02-26",
       "measure": "bill_119_hr_695",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete February 26, 2025 House EH and complete material 2024 pension provisions were read for the exact motion to suspend the rules and pass as amended. Section 3 replaces the printed Medal of Honor special-pension rate with the monthly-compensation amount for a veteran without dependents under 38 USC 1114(m), increased to the next intermediate rate under 1114(p), and prevents a separate subsection (e)(1) annual increase in a year when the special-pension amount was otherwise increased. Those disability-compensation provisions supply the rate formula; the proposal does not import their disability criteria as new Medal of Honor recipient criteria. The complete 1562(a)-(g) baseline retains recipient and surviving-spouse qualifications and other payment protections. Section 4 extends the expiration of complete 5503(d) from November 30, 2031 to January 31, 2033, retaining its qualified $90 pension limit, Medicaid-payment saving, liability exception and survivor/child application. It does not impose that limit on every Medal of Honor pension recipient. These are veterans' pension amount, annual-adjustment and existing payment-limit mechanisms; this exact action establishes no Immigration & Border admission, removal, work-authorization or new personal immigration/status eligibility rule. No actual pension payment, computed current rate, Medicaid eligibility, individual entitlement, enactment or motive is asserted. Prior Health issue membership is not inherited.",
       "source": {
         "source_id": "clerk:119:1:51",
         "url": "https://clerk.house.gov/evs/2025/roll051.xml",
@@ -3842,25 +3842,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete February 26, 2025 House EH and complete material 2024 pension provisions were read for the exact motion to suspend the rules and pass as amended. Section 3 replaces the printed Medal of Honor special-pension rate with the monthly-compensation amount for a veteran without dependents under 38 USC 1114(m), increased to the next intermediate rate under 1114(p), and prevents a separate subsection (e)(1) annual increase in a year when the special-pension amount was otherwise increased. Those disability-compensation provisions supply the rate formula; the proposal does not import their disability criteria as new Medal of Honor recipient criteria. The complete 1562(a)-(g) baseline retains recipient and surviving-spouse qualifications and other payment protections. Section 4 extends the expiration of complete 5503(d) from November 30, 2031 to January 31, 2033, retaining its qualified $90 pension limit, Medicaid-payment saving, liability exception and survivor/child application. It does not impose that limit on every Medal of Honor pension recipient. These are veterans' pension amount, annual-adjustment and existing payment-limit mechanisms; this exact action establishes no Immigration & Border admission, removal, work-authorization or new personal immigration/status eligibility rule. No actual pension payment, computed current rate, Medicaid eligibility, individual entitlement, enactment or motive is asserted. Prior Health issue membership is not inherited.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:51",
           "url": "https://clerk.house.gov/evs/2025/roll051.xml",
           "raw_sha256": "7c1db01051fd7fc03b832fbfd08478ea1960130c9332f973743229317cf757e7",
-          "governed_bytes_sha256": "f0d32cb1059afb776ccd9723549965f6ae16ded53fe8d5b10ed05db04244f06a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f0d32cb1059afb776ccd9723549965f6ae16ded53fe8d5b10ed05db04244f06a"
+        },
+        {
+          "source_id": "govinfo:hr695eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr695eh/html/BILLS-119hr695eh.htm",
+          "raw_sha256": "13f232da1304bc42178ee0605f60375dc753970be806899a06927cff5c3b86fd",
+          "governed_bytes_sha256": "e64081b0b5ad643abc31ac1d7ebef240e69fe120b300c86f5989a7255be256f8"
+        },
+        {
+          "source_id": "govinfo:38usc1562-2024-medal-pension-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap15-subchapIV-sec1562.htm",
+          "raw_sha256": "751006b452731b71b08f9abc74866c4bfb12170e0845103aca49206fbb1b6383",
+          "governed_bytes_sha256": "0dd3566f640ac2d96e8e3704d312f4b976324240e96b3da42f2884b0f2879f06"
+        },
+        {
+          "source_id": "govinfo:38usc1114mp-2024-medal-rate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap11-subchapII-sec1114.htm",
+          "raw_sha256": "df7cd752d8203568a85ef41564d7ff4fa2b245a79fd3f352df9315307bdcac9c",
+          "governed_bytes_sha256": "c7f391cb0df06756136f0fc31fe609194e1db9e4ec505c2b730aebec43be12ec"
+        },
+        {
+          "source_id": "govinfo:38usc5503d-2024-pension-cap",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "raw_sha256": "52c271796ba261f2c7ee788b7eb187e1acd4eba3d66b6501a8da8174fdc38cc9",
+          "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "015a3d1ac2e8976e1c847117b87db98c5858a62265d32d306777eabf01836dcd"
       },
       "historical_raw_hash_matches": true
     },
@@ -39959,7 +39983,6 @@
     "house:119:1:32",
     "house:119:1:33",
     "house:119:1:50",
-    "house:119:1:51",
     "house:119:1:68",
     "house:119:1:71",
     "house:119:1:73",
@@ -40188,6 +40211,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "5f67ff4e322e004bff4eee81e8b6889d4f8a936758904cb06ffc8f01d9e755e9",
-  "membership_review_sha256": "ae85f8e364ff23d271a668378741f4b42ebb8e1cff9d8d5a327b10fea12a7fae"
+  "proposal_sha256": "51a88b605ab5a236e2b891444bf7699ba22e18426c1e5d38fa0fb195def2a76b",
+  "membership_review_sha256": "682bab316ae70351d5f16eb2f7fd880454f9c954be25b034bf3c5c174347d12c"
 }

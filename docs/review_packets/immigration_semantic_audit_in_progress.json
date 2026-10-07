@@ -9444,10 +9444,84 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:51",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "51",
+        "legis-num": "H R 695",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "26-Feb-2025",
+        "action-time": "4:33 PM",
+        "vote-desc": "Medal of Honor Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete February 26, 2025 House EH and complete material 2024 pension provisions were read for the exact motion to suspend the rules and pass as amended. Section 3 replaces the printed Medal of Honor special-pension rate with the monthly-compensation amount for a veteran without dependents under 38 USC 1114(m), increased to the next intermediate rate under 1114(p), and prevents a separate subsection (e)(1) annual increase in a year when the special-pension amount was otherwise increased. Those disability-compensation provisions supply the rate formula; the proposal does not import their disability criteria as new Medal of Honor recipient criteria. The complete 1562(a)-(g) baseline retains recipient and surviving-spouse qualifications and other payment protections. Section 4 extends the expiration of complete 5503(d) from November 30, 2031 to January 31, 2033, retaining its qualified $90 pension limit, Medicaid-payment saving, liability exception and survivor/child application. It does not impose that limit on every Medal of Honor pension recipient. These are veterans' pension amount, annual-adjustment and existing payment-limit mechanisms; this exact action establishes no Immigration & Border admission, removal, work-authorization or new personal immigration/status eligibility rule. No actual pension payment, computed current rate, Medicaid eligibility, individual entitlement, enactment or motive is asserted. Prior Health issue membership is not inherited.",
+      "finding": "Complete exact pension proposal and material incorporated provisions support non-counting Immigration exclusion; no inherited Health membership, disability recipient criterion or immigration-status restriction inferred.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "015a3d1ac2e8976e1c847117b87db98c5858a62265d32d306777eabf01836dcd",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:51",
+          "url": "https://clerk.house.gov/evs/2025/roll051.xml",
+          "governed_bytes_sha256": "f0d32cb1059afb776ccd9723549965f6ae16ded53fe8d5b10ed05db04244f06a",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 pension baseline; no whole historical notes or unrelated statute review claimed"
+        },
+        {
+          "source_id": "govinfo:hr695eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr695eh/html/BILLS-119hr695eh.htm",
+          "governed_bytes_sha256": "e64081b0b5ad643abc31ac1d7ebef240e69fe120b300c86f5989a7255be256f8",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 pension baseline; no whole historical notes or unrelated statute review claimed"
+        },
+        {
+          "source_id": "govinfo:38usc1562-2024-medal-pension-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap15-subchapIV-sec1562.htm",
+          "governed_bytes_sha256": "0dd3566f640ac2d96e8e3704d312f4b976324240e96b3da42f2884b0f2879f06",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 pension baseline; no whole historical notes or unrelated statute review claimed"
+        },
+        {
+          "source_id": "govinfo:38usc1114mp-2024-medal-rate",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partII-chap11-subchapII-sec1114.htm",
+          "governed_bytes_sha256": "c7f391cb0df06756136f0fc31fe609194e1db9e4ec505c2b730aebec43be12ec",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 pension baseline; no whole historical notes or unrelated statute review claimed"
+        },
+        {
+          "source_id": "govinfo:38usc5503d-2024-pension-cap",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIV-chap55-sec5503.htm",
+          "governed_bytes_sha256": "19744f7f2b2100d95781fa5b7e3fa6747bf5f67c02029ee94dd5ce82f08881a9",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 pension baseline; no whole historical notes or unrelated statute review claimed"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 82,
+    "No Defect": 83,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -9508,7 +9582,8 @@
     "retained_exclusions_reviewed": 40,
     "procedural_controls_reviewed": 15,
     "expressive_controls_reviewed": 2,
-    "all_current_expressive_controls_reviewed": true
+    "all_current_expressive_controls_reviewed": true,
+    "successor_new_exclusions_reviewed": 1
   },
   "checkpoint_validation": {
     "focused_tests": 114,
@@ -9517,7 +9592,7 @@
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "87_run37657193630_success9_checkout_provenance_verified_combined88_89_pending_push",
+    "exact_head_ci": "91 pending feature push; 89 and 90 each terminal nine green, with five pinned, three synthetic and one mixed checkout context",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -9554,7 +9629,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "88 candidate and26 Semantic IR tests, seven semantic checks and seven raw final replay files. P3 correction89 with preserved locally validated88 evidence; no new full aggregate.",
+    "focused_scope_note": "One complete exact House pension action and four complete material baseline coordinates screened; earlier 458 reviews, 1336 sources and 40 meanings preserved; seven raw outputs replay. Independent mapping comparison supports literal candidate drafting without acceptance.",
     "last_completed_exact_head_ci": {
       "head": "37b22470570c700dcb21345bcff7038811d4f42e",
       "run": 37652464826,
@@ -12274,5 +12349,36 @@
     "reserved_labels_not_automatic_user_gates": true,
     "new_methodology": false,
     "canonical_meanings_or_counts_changed": false
-  }
+  },
+  "ordinary_screening_checkpoint91": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint91.json",
+    "receipt_sha256": "2d7352f459954c618a7b493700ed1f9c285ad3cd3fb69369dd888df38694ed4e",
+    "same_owner_primary_source_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 217,
+    "application_questions": 64
+  },
+  "independent_cross_case_checkpoint90": {
+    "receipt_ref": "docs/review_packets/immigration_cross_case_checkpoint90_independent_review.json",
+    "receipt_sha256": "b1c2c8f232de41c869701c5e01383845291ad80022a58e3ea035f13e87314c0f",
+    "bounded_candidate_drafting_supported": true,
+    "editorial_acceptance": false
+  },
+  "prior_head_ci_checkpoints89_90": [
+    {
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint89_ci.json",
+      "receipt_sha256": "6beca22c68e17088d8428a8fcb62395360d3b0fc51e977595cc82567a9ea4ab6",
+      "head": "c103981096f9cebea40096a4417298f828051770",
+      "run": 37659496537,
+      "successful_jobs": 9
+    },
+    {
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint90_ci.json",
+      "receipt_sha256": "8d0fe2b6f2dcf0cf0f418e34615422a5a016ef289d68bfe4498db2049f8b32ce",
+      "head": "eadb7e225a260247c2ff516af18f835c946ec4af",
+      "run": 37660826971,
+      "successful_jobs": 9
+    }
+  ]
 }
