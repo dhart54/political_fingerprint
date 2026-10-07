@@ -4223,3 +4223,87 @@ before governing them. Then the six bounded benefit/tax/trade mechanism assessme
 continuing/omnibus/NDAA packages and ordinary screens. Independent 67-70 review and
 earlier bounded limits remain explicit; no application/package acceptance, production,
 merge, deployment, promotion or publication. Historical markers remain untouched.
+
+
+### Successor checkpoint 71: own Coast Guard asset purposes and conditions
+
+Exact House 100001 funds Commandant asset acquisition/sustainment/improvement/
+operation for fiscal 2025 through September 30, 2029; ten separate line amounts and
+own within-line shore/depot/domain allocations retained. The heading mentions the
+maritime border/migrants/drugs, while operative asset purposes remain broader; no
+all-assets Immigration-spending conclusion from a heading or agency mission.
+Exact Senate 40001 adds a separate $24.5935 billion Coast Guard appropriation for
+fiscal 2025 through September 30, 2029. Its thirteen line purposes distinguish
+express maritime-border purposes (1)-(5), Arctic/Antarctic presence (6)-(7), qualified-
+shipyard domestic icebreaking (8), navigation/coastal security/inland rescue (9),
+shore facilities (10), depot/cyber maintenance (11), border/port/land/cyber awareness
+(12) and autonomous systems (13). Not every dollar is labelled Immigration spending;
+no unlawful-status-of-all-persons, removal power, activity/outcome or component stance.
+
+House retains drydock prohibition/three-method exception through September 30, 2030,
+documented-vessel and lifting-capability conjunction, paragraph (9) 15-percent facility
+design cap, exact funded-acquisition exceptions, Arctic/domestic-icebreaker third-
+entity permission, whole-section 5102/5103 reporting compliance excluding only
+5103(e), separate aviation-lines report gate, one-week procurement notification,
+90-day plan and own paragraph (4)-(7) foreign-yard written-explanation condition.
+Original 1151 national-security determination/Congress notice/30-day contract wait
+retained alongside House additional gate. Senate prints its own 1105(a)(1)-(2),
+1131/1132/1133/1156 exceptions, not those House gates. Senate shore allocation is
+not more than $2.7295 billion, and its 2025-commissioned existing polar-icebreaker
+homeport line remains separate. Neither version implies exemption from all law.
+
+Four new original-context sources govern six acquisition sections, two full reports,
+all 31 operative vessel-documentation sections and complete original 11217 aviation
+report. Forty exact extent coordinates, eight acquisition/extent capture rows. Full
+documentation endorsements/ownership/identification/exception/enforcement context
+remains bound without a new universal citizen-only vessel/immigration-status rule or
+actual vessel adjudication. Private title46 provenance extraction was corrected before
+governing sources; original bytes/glyphs retained, historical notes/subsequent sections
+excluded. Printed original law note/page markers remain exact. House 7095-character
+floor section and 7080-character EH witness match after H2297 pagination, one heading
+space and line-wrapped law-number normalization only; full correction witnesses reused.
+
+Two actions and twelve new bindings, including explicit House comparison context for
+Senate qualifications, plus two reused correction witnesses. Thirty-eight complete
+source-to-prose clauses across eight dimensions. Other 37 actions, prior clauses/
+qualifications/choices/compacts/dispositions, 1317 prior sources/310 captures/frozen
+receipts and 61 questions reconstruct unchanged. Only review sources/proposal refs and
+partial scopes updated; eligibility/counting unchanged. Both member additions, audit/
+source seals, capture lineage and candidate/publication isolation verified.
+
+Validation: 249 tests in 42.452 seconds including 60 candidate tests, seven semantic
+checks and seven raw generated-byte replay files pass. Included-versus-excluded House
+5103(e), Senate allocation minimum-versus-maximum and Arctic-purpose-to-border
+mutations each rejected with one assertion subtest failure, zero errors. Core 9fe02b412f72739b4e13fdaf68bb10faafb4e3e9d1bd7427994f1058acac6ca1;
+compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged. Tests are not semantic truth.
+
+New frozen independent receipt hr1_checkpoint67_70_independent_reviews.json preserves
+bounded mechanical 67-70 no-blocker and separate source 69-70 no-material-defect verdicts.
+Mechanical prior-authoring/test reconstruction, 47 bindings/eight new source seals and
+six prose/qualification pairs remain distinct from source eight raw hashes, 17 clause
+hashes and both full member files' increment propagation. No independent local tests/
+mutations/raw replay, renewed historic-member/package audit or application adjudication.
+Final source 67/68 verdict was not supplied; re-established review remains separate.
+Checkpoint 71 independent review pending; final audit verdict remains null.
+
+CI provenance: 70 run 37557657131 associated with exact 73af52d9e3d72912aee1afc81e962688f755f5bf
+completed all nine jobs green. Five m14*-exact-head jobs pin PR head; benchmark,
+amendment and publication jobs use default synthetic merge checkout. Receipt repair
+begins in merge context and explicitly detaches to PR head for later normalized-storage/
+M15B stages. Nine run-associated successes do not mean every job tested solely feature-
+head bytes. Independent m14h groups 207/209/211/213 differ from local six-module totals;
+CI JSON comparison is not raw-byte replay. No rerun needed just to relabel evidence.
+Exact 71 associated run follows push, with the same checkout distinctions.
+
+Accounting remains 676 inventory/455 reviews/39 meanings, 211 procedural/203 excluded/
+two expressive, 36 episodes/78 observations/70 findings. 1321 sources, 841 bindings,
+318 captures, 205 sources with 344 verified extent coordinates. 221 ordinary screenings,
+two incomplete H.R.1 component reviews and 61 separate application questions remain.
+Frozen 69 reconciliation is historical: ORR and Coast Guard literal increments now
+advance those two groups; six cross-domain leads remain explicit scope assessments.
+Next exact scholarship contributing-taxpayer role/printed definition and House
+counterpart, then duplicate enrollment, HRA employee class, foreign-entity energy,
+foreign-tax remedy and commercial customs mechanisms. Do not assume they require
+Immigration meanings. Verify substantive counterparts/absence and full package scope;
+continue other packages/screens with reserved application judgments separately routed.
+No merge/deploy/production/editorial acceptance/promotion/publication. Markers untouched.

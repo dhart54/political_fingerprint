@@ -1,0 +1,106 @@
+{
+  "authority": "Independent bounded findings relayed by Fingerprint supervisor in source thread 01a1119d-9871-7262-b3e5-9e8afa16b0fc; preserved report, not same-owner invented verdict, package acceptance or publication",
+  "recorded_at": "2026-10-07T01:43:24.675048+00:00",
+  "mechanical_review": {
+    "checkpoints": [
+      67,
+      68,
+      69,
+      70
+    ],
+    "verdict": "no_blocker_in_bounded_increments",
+    "scope": [
+      "Prior authoring reconstructed by removing only declared increments",
+      "Four receipt seals, affected action hashes, six prose/qualification pairs, 47 binding instances",
+      "Eight new source seals and append-only source/capture changes",
+      "Member projection seals and unchanged prior 57 questions",
+      "Fifty prior tests reconstructed unchanged after removing eight additions"
+    ],
+    "ci_runs": [
+      {
+        "checkpoint": 67,
+        "head": "54716ef74e909b9fc9f1c034a5a6ec2025ba27b5",
+        "run": 37554831947,
+        "successful_jobs": 9,
+        "m14h_test_group": 207
+      },
+      {
+        "checkpoint": 68,
+        "head": "834bdc2e187a6e63bee1e9ff3c3212560bae2e82",
+        "run": 37555589295,
+        "successful_jobs": 9,
+        "m14h_test_group": 209
+      },
+      {
+        "checkpoint": 69,
+        "head": "fcb092303291738e7556f7107c39a6bbef428d43",
+        "run": 37557033663,
+        "successful_jobs": 9,
+        "m14h_test_group": 211
+      },
+      {
+        "checkpoint": 70,
+        "head": "73af52d9e3d72912aee1afc81e962688f755f5bf",
+        "run": 37557657131,
+        "successful_jobs": 9,
+        "m14h_test_group": 213
+      }
+    ],
+    "limits": [
+      "No independent pytest or mutation execution",
+      "No independent raw-byte generator replay; CI JSON comparison is not byte replay",
+      "m14h groups differ from local six-module totals",
+      "Mechanical verdict does not close separate source semantics of 67/68"
+    ]
+  },
+  "source_review": {
+    "checkpoints": [
+      69,
+      70
+    ],
+    "verdict": "no_material_source_to_prose_defect_in_bounded_increments",
+    "exact_heads": [
+      "fcb092303291738e7556f7107c39a6bbef428d43",
+      "73af52d9e3d72912aee1afc81e962688f755f5bf"
+    ],
+    "scope": [
+      "Recovered exact authoring/core/readable files via raw GitHub and fetched primary HTML",
+      "Eight primary raw hashes matched across both increments",
+      "All fourteen chapter 15 extents reproduce governed text with declared joins",
+      "Seven DOD and four ORR binding instances, seventeen clause hashes, action/addition/qualification/receipt hashes and reconciliation seal verified",
+      "Exact core and both full member readable files propagate these additions/qualifications; compacts and other actions unchanged",
+      "ORR five exclusive purposes/all seven background-check items and named subjects, SSN-or-TIN/interview alternatives and definitions retained",
+      "Original placement/suitability/home-study safeguards remain conditional; no imported House examination limits or inferred gang/citizenship findings"
+    ],
+    "limits": [
+      "Increment propagation, not renewed historic-member or full-package audit",
+      "No independent local tests or generator replay",
+      "No legal application adjudication; Q61 remains unadjudicated",
+      "Reconciliation nonclosing; sponsor-vetting advances only its one group, seven groups remained at checkpoint70",
+      "Independent source review of 67/68 was being re-established; no final source verdict supplied in these messages"
+    ]
+  },
+  "ci_checkout_provenance": {
+    "pr_head_pinned_jobs": [
+      "m14d-exact-head",
+      "m14e-exact-head",
+      "m14f-exact-head",
+      "m14g-exact-head",
+      "m14h-exact-head"
+    ],
+    "default_synthetic_merge_checkout_jobs": [
+      "foushee-full-record-benchmark",
+      "amendment-evidence-contracts",
+      "publication-activation-postgres"
+    ],
+    "mixed_context_job": {
+      "name": "receipt-evidence-repair-postgres",
+      "initial_context": "synthetic merge checkout",
+      "later_context": "explicit detached PR head for normalized-storage/M15B stages"
+    },
+    "note": "Nine successful jobs belong to the head-associated PR run. Run headSha is association, not proof that every job executes solely feature-head bytes. No rerun required solely to relabel provenance."
+  },
+  "publication_authorized": false,
+  "editorial_acceptance": false,
+  "receipt_sha256": "d76f2ccf16a45ee778e88db174ae28e771fe8e1f201f2362b5278f40412f1c5a"
+}

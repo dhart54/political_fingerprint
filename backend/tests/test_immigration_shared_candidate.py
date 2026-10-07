@@ -320,6 +320,56 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn('shall determine whether a home study is first necessary', own)
                 self.assertIn('Subject to the requirements of subparagraph (B)', own)
 
+    def test_coast_guard_versions_keep_own_asset_purposes_and_exceptions(self):
+        for aid, label in [('house:119:1:145', 'House'), ('house:119:1:190', 'Senate')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' Coast Guard funding'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index('Selected exact ' + label + ' Coast Guard funding'):]
+                with self.subTest(action=aid, surface='meaning' if text == action['meaning'] else 'qualification'):
+                    self.assertIn('September 30, 2029', own)
+                    if label == 'House':
+                        opening = own[own.index('House 100001 own Commandant appropriation'):own.index('House 100001 asset line 1:')]
+                        self.assertIn('appropriated to the Commandant of the Coast Guard', opening)
+                        self.assertIn('acquisition, sustainment, improvement, and operation', opening)
+                        self.assertIn('heading or agency mission does not establish every asset as Immigration spending', own)
+                    else:
+                        opening = own[own.index('Senate 40001 own Coast Guard appropriation'):own.index('Senate 40001 asset line 1:')]
+                        self.assertIn('appropriated to the Coast Guard', opening)
+                        self.assertIn('$24,593,500,000', opening)
+                        self.assertIn('paragraphs (1) and (2) of section 1105(a)', opening)
+                        self.assertIn('1131, 1132, 1133, and 1156', opening)
+                        arctic = own[own.index('Senate 40001 asset line 6:'):own.index('Senate 40001 asset line 8:')]
+                        self.assertIn('Arctic and Antarctic regions', arctic)
+                        self.assertNotIn('maritime border', arctic)
+                        shore = own[own.index('Senate 40001 asset line 10:'):own.index('Senate 40001 asset line 11:')]
+                        self.assertIn('not more than $2,729,500,000', shore)
+                        self.assertIn('homeporting of the existing polar icebreaker commissioned into service in 2025', shore)
+
+    def test_house_coast_guard_reporting_drydock_and_foreign_yard_gates(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact House Coast Guard funding'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('Selected exact House Coast Guard funding'):]
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                gate = own[own.index('House 100001 own condition f:'):own.index('House 100001 own condition g:')]
+                self.assertIn('this section may be obligated or expended during any fiscal year', gate)
+                self.assertIn('sections 5102 and 5103 (excluding section 5103(e))', gate)
+                self.assertIn('paragraphs (1) and (2) of subsection (a)', gate)
+                self.assertIn('Public Law 117-263', gate)
+                drydock = own[own.index('House 100001 own condition b:'):own.index('House 100001 own condition c:')]
+                self.assertIn('Except as provided in paragraph (2)', drydock)
+                self.assertIn('may, through September 30, 2030', drydock)
+                self.assertIn('documented under chapter 121', drydock)
+                self.assertIn('Offshore Patrol Cutter or a National Security Cutter', drydock)
+                foreign = own[own.index('House 100001 own condition i:'):own.index('Original statutory context 1151:')]
+                self.assertIn('paragraphs (4) through (7)', foreign)
+                self.assertIn('no such funds shall be obligated until the President submits', foreign)
+                self.assertIn('insufficient qualified United States shipyards', foreign)
+                self.assertIn('prior to the issuance of such an exception', foreign)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
