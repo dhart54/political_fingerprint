@@ -4335,3 +4335,87 @@ exact H.R.1 component inventory/material authorities, then continuing/omnibus/ND
 and ordinary screenings. Identifier occurrence alone is not coverage. Historical
 markers retained, no current shutdown or production/merge/deployment/editorial
 acceptance authority.
+
+
+### Successor checkpoint 67: tips/overtime qualified-income and own SSN rules
+
+Exact House 110101/110102 versus Senate 70201/70202 tips/overtime deduction clauses
+retain full selected qualified-income, identification, marital, non-itemizer,
+math-error, dollar/income-limit and tax-year predicates. Headings do not become
+blanket zero-tax claims. Each defined-number gate uses own same-bill 24(h)(7),
+complete SSA citizen-or-specified-authorization issuance route and return-due-date
+condition. A valid number or filing alone is not actual deduction eligibility.
+
+House requires taxpayer and conditional married-spouse SSNs and rules similar to
+32(d), with full joint-return/separated-spouse baseline retained. Question 58
+reserves its actual adaptation separately from prior loan question 54. No universal
+child/joint-return duty or Senate rule imported. House tips retains above-threshold
+earned-income exclusion; overtime separately retains qualified-tip and highly-
+compensated/earned-income alternatives. Full original 414(q) ownership, preceding-
+year, employer-election, adjustment, coordination and nonresident-alien provisions
+and 32(c)(2) earned-income exclusions bound. No fixed unadjusted $80,000 or actual
+employment/income classification. House does not print Senate deduction caps or
+MAGI phaseout. Own math-error additions tips (X), overtime (Y) retained.
+
+Senate SSN clauses require taxpayer number without separately printed House spouse
+number or similar-32(d) addition. Distinct joint-return condition applies to married
+individuals within 7703: complete end-of-year/death, legal-separation and living-
+apart alternative with separate-return/child-household/dependency/over-half-costs/
+final-six-month-spouse conditions retained. Tips $25,000 cap, overtime $12,500 or
+joint-return $25,000, each $100 per $1,000 above $150,000/$300,000 MAGI reduction and
+own 911/931/933 additions stay separate. Own cash/charged/tip-sharing and employee/
+employer service-business clauses retained. No House compensation-threshold
+exclusion imported. Own math-error tips (Y), overtime (Z) retained.
+
+All four apply to taxable years beginning after December 31, 2024 and deny these
+deductions for taxable years beginning after December 31, 2028. Other reporting/
+business-credit/withholding context is not declared repealed at that endpoint.
+Both overtime definitions require FLSA section 7 compensation in excess of regular
+rate; no all-overtime-wages or universal 40-hour/all-worker eligibility inference.
+Complete section 7 applicability, rate inclusions/exclusions, alternative arrangements,
+compensatory-time and exceptions bound. Full 199A(d)(2) service-business definition
+with own 1202/475 references retained; no automatic import of separate 199A(d)(3)
+qualified-business-income phase-in into the tips exclusion or actual profession
+classification. No actual deduction/assessment/fraud determination.
+
+Full House floor and served EH section bytes differ: floor prints one extra closing
+quote/period after each 24(h)(7) clause and EH omits it. All other operative words
+match after declared Record-page/heading-spacing normalization. Exact differing
+passages and raw/display comparison hashes preserved; question 59 reserves source-
+grounded boundary application/rendering, distinct from senior question 40. No
+silent repair or whole-EH vote-time substitution. Full H.Res.492/499 witnesses do
+not directly amend selected sections; both witness hashes verified. Candidate
+literal meanings and other safe research proceed with recommendations, evidence,
+alternatives and safe parallel work recorded for both questions.
+
+Four new governed extents from three new originals and one reused full 32 original;
+12 new/ten reused bindings, 38 complete blocks across eight dimensions. Canonical
+source/capture additions append-only; prior 1,309 sources/297 captures, frozen
+receipts and 57 questions unchanged. Exact prior checkpoint plus declared two-
+action additions reconstructs current authoring; other 37 actions, earlier clauses,
+qualifications, choices and compacts unchanged. Two review-source/proposal-reference/
+scope updates only; no disposition/eligibility/counting change. Source/receipt/audit/
+metadata/hash integrity, 197 text extents, both members and candidate isolation verify.
+
+Validation: 241 tests in 43.060 seconds including 52 candidate tests, seven semantic
+checks and seven raw generated-byte replay files pass. Controlled unconditional
+House spouse, reversed Senate joint-return and regular-rate-including overtime
+mutations each rejected with one assertion subtest failure, zero errors. Source
+comparison and final diff reviewed; tests establish contract integrity, not semantic
+truth. Core 9c5a3e2ee773115e1835aa90cda842588e68739e5617e47f26d43c7a60a90930; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Exact checkpoint 66 head 13b2aa99ef318c24890cd7dd88318fbbcac3e04d CI run 37554169645
+all nine green, owner-native verified. Exact current CI follows push. Independent
+new 65/66/67 semantic review pending; earlier bounded reviews and limits preserved.
+Final audit verdict null; no application/package acceptance or publication.
+
+Accounting: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings. 1,313 sources, 815 bindings,
+304 captures, 197 text extents. Remaining 221 screenings, two partial H.R.1 reviews,
+59 application questions and separate original 1994 follow-up. Next House 112206
+EITC definition with material original 32 baseline and exact version, remaining
+components/material authorities, then continuing/omnibus/NDAA/screens. Outer bill
+scan must include five- and six-digit section IDs while excluding inserted four-
+digit Code IDs; keyword hits/identifier mentions alone do not establish coverage
+or membership. Historical markers preserved, no current shutdown or production/
+merge/deployment/editorial acceptance authority.

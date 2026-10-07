@@ -148,6 +148,61 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                         self.assertIn('no prior election has been made under this section by such individual or any other individual', own)
                         self.assertIn('shall not begin before January 1, 2028', own)
 
+    def test_tips_overtime_keep_own_spouse_number_and_married_return_rules(self):
+        for aid, label, sections in [('house:119:1:145', 'House', ['110101', '110102']),
+                                      ('house:119:1:190', 'Senate', ['70201', '70202'])]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' tips and overtime'))
+            for section in sections:
+                source = next(c['passage'] for c in action['claim_source_map']
+                              if c['passage'].startswith('SEC. ' + section + '.'))
+                source_numbers = source[source.index('Social Security Number Required.--'):]
+                source_numbers = source_numbers[:source_numbers.index('Regulations.--')]
+                for text in [action['meaning'], qualification]:
+                    with self.subTest(action=aid, section=section):
+                        own = text[text.index(label + ' ' + section + ' identification'):]
+                        own = own[:own.index(label + ' ' + section + ' ', 1)]
+                        if label == 'House':
+                            self.assertIn('if the individual is married', source_numbers)
+                            self.assertIn('if the individual is married', own)
+                            self.assertIn("social security number of such individual's spouse", own)
+                            self.assertIn('Rules similar to the rules of section 32(d)', own)
+                        else:
+                            self.assertNotIn('social security number of such individual\'s spouse', source_numbers)
+                            self.assertNotIn('spouse', own)
+                            self.assertNotIn('32(d)', own)
+                            married = text[text.index(label + ' ' + section + ' own married-individual joint-return rule:'):]
+                            married = married[:married.index(label + ' ' + section + ' ', 1)]
+                            self.assertIn('within the meaning of section 7703', married)
+                            self.assertIn("only if the taxpayer and the taxpayer's spouse file a joint return", married)
+
+    def test_tips_overtime_preserve_qualified_income_and_tax_year_limits(self):
+        for aid, label, sections in [('house:119:1:145', 'House', ['110101', '110102']),
+                                      ('house:119:1:190', 'Senate', ['70201', '70202'])]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' tips and overtime'))
+            for section in sections:
+                source = next(c['passage'] for c in action['claim_source_map']
+                              if c['passage'].startswith('SEC. ' + section + '.'))
+                self.assertIn('taxable year beginning after December 31, 2028', source)
+                for text in [action['meaning'], qualification]:
+                    with self.subTest(action=aid, section=section):
+                        own = text[text.index(label + ' ' + section + ' deduction'):]
+                        own = own[:own.index(label + ' ' + section + ' tax-year applicability:')]
+                        self.assertIn('taxable year beginning after December 31, 2028', own)
+                        if section in ['110102', '70202']:
+                            self.assertIn('required under section 7 of the Fair Labor Standards Act of 1938', own)
+                            self.assertIn('that is in excess of the regular rate', own)
+                        elif label == 'House':
+                            self.assertIn('paid voluntarily without any consequence in the event of nonpayment', own)
+                            self.assertIn('earned income', own)
+                        else:
+                            self.assertIn('shall not exceed $25,000', own)
+                            self.assertIn('paid voluntarily without any consequence in the event of nonpayment', own)
+                            self.assertIn('reduced (but not below zero) by $100 for each $1,000', own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
