@@ -4785,3 +4785,81 @@ two expressive, 36 episodes, 78 observations and 70 findings; 221 ordinary scree
 two partial H.R.1 reviews and 62 application questions. Domain fits reserved, full
 package/counterpart gates open, ownership active, no new deadline or production/
 acceptance/promotion/publication authority.
+
+
+### Successor checkpoint 79: complete documentary package coverage reconciliation
+
+All 976 outer-section occurrences are indexed: 335 House floor, 332 served EH and
+309 Senate EAS. Each has exact source coordinates/hash and a distinct occurrence ID.
+Final statutory tails close at the explicit floor debate, House passage attestation
+or Senate attestation witness. Frozen checkpoint 69's intentionally unclosed ledger
+stays unchanged. Adjacent intervals retain intervening headings/whitespace and are
+not certified final operative extents; short title, preamble and contents are outside
+this outer-section index. Entire-act semantic review is not claimed.
+
+House prints two different 60004 sections: border reimbursement and presidential-
+residence protection. Both occurrences are preserved. House has nine number labels
+not present in EH; EH has seven not present in House. These are numbering differences,
+not evidence of substantive absence. A private preparation guard rejected an initial
+three-strikes number-set assumption before any evidence artifact was written. Exact
+source and frozen temporal crosswalks establish that deleted original military-
+intelligence and COVID-enforcement headings do not share the meanings of later EH
+sections inheriting their numbers. No earlier receipts, source bytes or candidates
+rewritten. Same-number and heading matches remain documentary leads only.
+
+326 same-number occurrence comparisons among 335 House rows: 175 exact adjacent
+interval matches, 204 matches after only page furniture and collapsed whitespace,
+and 122 differences under that limited comparison. Nine rows lack a same-number EH
+interval. Heading candidates also preserve their limits. No normalization or matching
+step certifies meaning, corrections, full-section review or a Senate counterpart.
+Literal canonical bindings overlap 76 House-floor, 10 EH and 49 Senate intervals:
+135 documentary overlaps, 841 unoverlapped intervals. These counts are not review
+completion counts; overlap can be partial and unoverlapped text can have separate
+context receipts. All evidence is available; unfinished review is not unavailability.
+
+hr1_full_package_coverage_reconciliation.json seals the complete index, prior receipt
+snapshot, exact-version limitations and three separately reserved fit decisions: HRA,
+foreign-tax remedy and foreign-entity electricity. Full-section semantic screening
+and absent-counterpart certification remain false. Existing two partial H.R.1 flags
+remain unchanged. Ordinary screenings and other package work can continue alongside
+62 application questions; no requirement to adjudicate individual law first.
+Next: source-grounded full-section/counterpart review from this index, and remaining
+continuing/omnibus/NDAA packages and ordinary screenings. Eight scope assessments
+are completed as bounded research, not package closure or editorial acceptance.
+
+Final bounded independent 76/77 source verdict: no material defect. All nine distinct
+raw hashes, both receipts, thirteen witnesses/full-text/extents and twenty clauses
+verify. Customs goods/penalties/dates/targets and foreign-tax exception/predicate/
+ceiling/timing/waivers/unmatched reference remain qualified. Capture prefixes
+326 to 327 to 329 and declared comparisons match. No source-review tests, generator
+replay, private acquisition-record seal reconstruction or domain/application judgment.
+Senate zero anchors remain bounded non-identification. Mechanical review: no
+regression; full Git trees preserve canonical/protected/earlier objects, 160 dimension
+bindings verify, four independent guards pass and six genuine mutations each give
+one assertion failure with zero errors. Prior setup/test ASTs unchanged. Both 76/77
+associated CI runs have nine successes with five pinned-head/three synthetic-merge/
+one mixed repair provenance. Hosted 77 m14h candidate group 225 differs from owner
+259 aggregate. No independent full suite or seven-output regeneration. Complete
+limits sealed in hr1_checkpoint76_77_independent_reviews.json; no acceptance/promotion.
+
+264 tests in 42.566 seconds (75 candidate tests), seven semantic checks and seven
+raw generated replay files pass. All 976 intervals, source tails, unique occurrence
+IDs, literal binding overlaps, numbered comparison results and prior receipt seals
+verify. Four separate mutations each fail one assertion and zero errors: collapsing
+a duplicate occurrence, adding debate to the final tail, claiming semantic closure,
+and transferring meaning through number matching. Canonical inputs/generated outputs,
+335 captures and 62 questions unchanged. Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8
+and compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Tests do not prove semantic truth.
+
+Checkpoint 78 is locally committed at f4a63ea27fb96be4d8796e57aeed15686e31aa59.
+Two ordinary feature pushes were rejected by GitHub Internal Server Error, at
+15:08:23 and 15:09:07 UTC October 7. Remote read before retry confirmed 77, so no
+unknown mutation was replayed. Repeated retries stopped; remote/draft PR remain at
+f869e2f527b1e88e0db506a6a18b91a9ed5fbc00, checkpoint 77. Neither 78 PR-body update
+nor hosted CI claimed. Local research continues; preserve the committed queue and
+push this feature history when the server issue is resolved, without replacing Git
+history. All nine CI jobs at checkpoint 77 succeeded. No shutdown boundary, new
+production authority or new methodology decision. Accounting unchanged: 676 inventory,
+455 reviews, 39 meanings, 211 procedures, 203 exclusions, two expressive, 36 episodes,
+78 observations, 70 findings, 221 ordinary screens and two partial H.R.1 reviews.

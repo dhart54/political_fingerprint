@@ -9262,13 +9262,13 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 73,
+    "focused_tests": 75,
     "focused_runtime_seconds": null,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "pending_checkpoint78_push",
+    "exact_head_ci": "blocked_until_checkpoint78_79_feature_push",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -9305,7 +9305,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Complete House 112008/EH and Senate 70512 credit, personal/foreign-entity/control/material-assistance rules, material original definitions/list authorities, distinct national/resident exceptions and House/EH formal labels. Domain fit reserved, no canonical meaning or package closure",
+    "focused_scope_note": "Complete 976-interval documentary index preserves duplicate occurrences, explicit final tails, exact binding overlap and numbered/heading comparison limits; canonical inputs and package/counterpart semantic gates unchanged.",
     "last_completed_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
       "run": 37640395671,
@@ -9361,8 +9361,8 @@
       "successful_jobs": 9,
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37538252890"
     },
-    "aggregate_tests": 262,
-    "aggregate_runtime_seconds": 42.674,
+    "aggregate_tests": 264,
+    "aggregate_runtime_seconds": 42.566,
     "aggregate_modules": [
       "test_shared_domain_candidate",
       "test_shared_legislative_corpus",
@@ -9371,7 +9371,7 @@
       "test_shared_candidate_research",
       "test_immigration_shared_candidate"
     ],
-    "candidate_focused_execution_scope": "73 candidate tests included in 262-test six-module aggregate; no separate runtime claimed"
+    "candidate_focused_execution_scope": "75 candidate tests included in 264-test six-module aggregate; no separate runtime claimed"
   },
   "open_legal_interactions": [
     {
@@ -11467,5 +11467,33 @@
     "domain_application_reserved": true,
     "full_package_review_complete": false,
     "next_action": "Full counterpart/package coverage gates and remaining continuing/omnibus/NDAA and ordinary screening work; HRA, foreign-tax and electricity domain fit remain separately reserved."
+  },
+  "hr1_full_package_documentary_coverage_checkpoint": {
+    "receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_full_package_coverage_reconciliation.json",
+    "receipt_sha256": "0da7706f1a342b7cbac60e2592eb5998e067c3b69e41e5419eb6634b2559f7f7",
+    "outer_intervals": 976,
+    "full_section_semantic_screening_complete": false,
+    "all_absent_counterparts_verified": false,
+    "canonical_inputs_unchanged": true,
+    "domain_fits_separately_reserved": 3,
+    "application_questions_unchanged": 62,
+    "ordinary_screenings_can_continue": true
+  },
+  "independent_checkpoint76_77_reviews": {
+    "receipt": "docs/review_packets/hr1_checkpoint76_77_independent_reviews.json",
+    "receipt_sha256": "5e5865f974d1404308a0f07284e646d9c482267f11ebe606e9c35e0037043476",
+    "source_verdict": "no_material_semantic_defect_in_bounded_representation",
+    "mechanical_verdict": "no_regression_in_bounded_checks",
+    "bounded_limits_preserved": true
+  },
+  "feature_push_transport_boundary": {
+    "last_pushed_head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
+    "local_committed_checkpoint78": "f4a63ea27fb96be4d8796e57aeed15686e31aa59",
+    "checkpoint78_push_attempts": 2,
+    "result": "GitHub remote Internal Server Error at 15:08:23 and 15:09:07 UTC October 7",
+    "repeated_retries_stopped": true,
+    "pr_checkpoint78_body_not_updated": true,
+    "local_research_continues": true,
+    "checkpoint78_79_hosted_ci_not_claimed": true
   }
 }

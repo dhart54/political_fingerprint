@@ -1,0 +1,56 @@
+{
+  "authority": "Final bounded source and mechanical review relayed by Fingerprint in source thread 01a1119d-9871-7262-b3e5-9e8afa16b0fc; independently reviewed candidate, not editorial acceptance or publication.",
+  "recorded_at": "2026-10-07T15:19:54.057813+00:00",
+  "checkpoints": [
+    {
+      "checkpoint": 76,
+      "exact_head": "be0f3a5b3c37a44fbba2273b0d1b5bc68572f865",
+      "receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_customs_shipment_scope_review.json",
+      "receipt_sha256": "8b0a5e3b6375588a9c5153d28f51ffea0da5522858c2a591c4e4b5f81cba9afc"
+    },
+    {
+      "checkpoint": 77,
+      "exact_head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
+      "receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_remedy_scope_review.json",
+      "receipt_sha256": "f6dfc5d301365301b2c6756c9a9691ab5f78468fa95388aa05e4e54587687a37"
+    }
+  ],
+  "source_review": {
+    "verdict": "no_material_semantic_defect_in_bounded_representation",
+    "verified": [
+      "Literal customs article/privilege scope, penalties and dates, distinct printed House/Senate amendment targets without personal admission or accepted codification inference",
+      "Foreign-tax United States citizen/resident exception, separate foreign tax-residence predicate, rate ceiling/formula, timing, waivers and unmatched reference qualified; domain fit reserved",
+      "All nine distinct primary raw hashes match; both receipts, thirteen witness passages/full-text hashes/extents and twenty clause hashes verify",
+      "Declared complete House/EH comparisons and capture prefixes 326 to 327 to 329 match; canonical meanings, sources and generated outputs unchanged"
+    ],
+    "limits": [
+      "No independent source-review tests or generator replay",
+      "No private acquisition-record seal reconstruction",
+      "No codification, application or domain adjudication",
+      "Senate zero-anchor results remain bounded non-identification, not complete counterpart absence"
+    ]
+  },
+  "mechanical_review": {
+    "verdict": "no_regression_in_bounded_checks",
+    "verified": [
+      "Full Git trees preserve canonical inputs, seven generated outputs, protected paths and earlier receipts",
+      "Captures append exactly 326 to 327 to 329; receipts, thirteen witness hashes/extents, twenty clauses and 160 dimension bindings verified",
+      "Four new guards independently pass; six genuine mutations each yield one assertion failure and zero errors; prior setup and test ASTs unchanged",
+      "Both associated CI runs 37639001859 and 37640395671 have nine successful jobs with independently verified five pinned-head, three synthetic-merge and one mixed repair checkout contexts"
+    ],
+    "independent_guard_tests": 4,
+    "independent_mutations": 6,
+    "failures_per_mutation": 1,
+    "errors_per_mutation": 0,
+    "checkpoint77_hosted_m14h_candidate_group_tests": 225,
+    "checkpoint77_owner_aggregate_tests": 259,
+    "limits": [
+      "No independent full focused suite or seven-output regeneration",
+      "No application, domain-fit or counterpart closure",
+      "No whole-historical audit, editorial acceptance, promotion or publication"
+    ]
+  },
+  "editorial_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "5e5865f974d1404308a0f07284e646d9c482267f11ebe606e9c35e0037043476"
+}

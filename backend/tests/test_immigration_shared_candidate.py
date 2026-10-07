@@ -18,6 +18,45 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_package_documentary_index_preserves_occurrences_and_tail_boundaries(self):
+        receipt = getattr(self, 'package_coverage_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_full_package_coverage_reconciliation.json').read_text(encoding='utf-8'))
+        versions = receipt['version_ledgers']
+        self.assertEqual([len(v['rows']) for v in versions], [335, 332, 309])
+        self.assertEqual(sum(len(v['rows']) for v in versions), 976)
+        for version in versions:
+            self.assertEqual(len({r['interval_id'] for r in version['rows']}), len(version['rows']))
+            self.assertEqual(version['rows'][-1]['source_text_extent']['end'], version['indexed_body_extent']['end'])
+            self.assertNotIn('The SPEAKER pro tempore', version['final_section_passage'])
+            self.assertNotIn('Passed the House of Representatives', version['final_section_passage'])
+            self.assertNotIn('Attest:', version['final_section_passage'])
+        duplicates = [r for r in versions[0]['rows'] if r['outer_section'] == 60004]
+        self.assertEqual(len(duplicates), 2)
+        self.assertNotEqual(duplicates[0]['source_text_extent']['start'], duplicates[1]['source_text_extent']['start'])
+        self.assertIn('STATE BORDER SECURITY REIMBURSEMENT', duplicates[0]['title_excerpt'])
+        self.assertIn('PRESIDENTIAL RESIDENCE PROTECTION', duplicates[1]['title_excerpt'])
+
+    def test_package_index_does_not_promote_overlap_or_numbers_to_semantic_closure(self):
+        receipt = getattr(self, 'package_coverage_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_full_package_coverage_reconciliation.json').read_text(encoding='utf-8'))
+        self.assertFalse(receipt['full_section_semantic_screening_complete'])
+        self.assertFalse(receipt['all_absent_counterparts_verified'])
+        self.assertTrue(receipt['ordinary_screenings_can_continue'])
+        self.assertTrue(receipt['available_operative_evidence_not_reclassified_unavailable'])
+        self.assertTrue(receipt['number_identity_limitations']['numeric_pairing_not_safe_for_semantic_counterparts'])
+        self.assertEqual(len(receipt['remaining_domain_fits']), 3)
+        self.assertEqual(receipt['accounting']['application_questions'], 62)
+        for row in receipt['house_eh_documentary_comparison_index']:
+            self.assertFalse(row['meaning_transferred'])
+            self.assertFalse(row['full_semantic_comparison_complete'])
+        for version in receipt['version_ledgers']:
+            for row in version['rows']:
+                self.assertFalse(row['full_section_semantic_review_complete'])
+                for overlap in row['exact_primary_canonical_binding_overlaps']:
+                    self.assertTrue(overlap['not_full_section_semantic_coverage'])
+
     def test_electricity_person_predicates_keep_exact_version_exceptions(self):
         receipt = getattr(self, 'electricity_scope_receipt', None)
         if receipt is None:
