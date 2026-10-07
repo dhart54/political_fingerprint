@@ -18,6 +18,41 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_icac_keeps_formula_need_pools_and_qualified_match(self):
+        action = getattr(self, 'hr1968_icac_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split("The fund's separately named ICAC grant authority", 1)[1]
+        self.assertIn('At least 75 percent of the total funds appropriated to carry out 21116', text)
+        self.assertIn('minimum 0.5 percent is measured against funds available for formula grants', text)
+        self.assertIn('at least 25 percent is measured against funds received under the remaining need-based branch only', text)
+        self.assertIn('not total project costs, every formula grant or the whole appropriation', text)
+        self.assertIn('disqualifies the task force from that need-based branch', text)
+        self.assertIn('may waive all or part for good cause or financial hardship', text)
+        self.assertIn('No combined net award is calculated', text)
+        self.assertIn('govinfo:34usc21116-2024-icac-grants', {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_icac_keeps_duties_privacy_and_dated_authorities(self):
+        action = getattr(self, 'hr1968_icac_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split("The fund's separately named ICAC grant authority", 1)[1]
+        for qualification in [
+            'award ceiling applies to any one entity other than a law-enforcement agency',
+            'as permitted by available task-force resources',
+            "qualified by consistency with the task force's State law",
+            'existing Federal privacy laws',
+            'prohibits using the system to search for or obtain information that does not involve Internet-facilitated child exploitation',
+            'foreign or international agency support requires Attorney General approval',
+            'separate Attorney General report to Congress is due within one year after October 13, 2008',
+            'appropriated funds remaining available until expended',
+            'distinct from an actual appropriation',
+            'All prior 68 application questions',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:34usc21112-21115-2024-icac-program-context',
+                         'govinfo:34usc21117-2024-icac-dated-authorization'} <= {b['source_id'] for b in action['claim_source_map']})
+
     def test_hr1968_citizen_program_keeps_status_victim_and_existing_eligibility(self):
         action = getattr(self, 'hr1968_citizen_program_action', None)
         if action is None:

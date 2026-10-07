@@ -7295,3 +7295,80 @@ production, editorial approval, promotion or publication. Continue center/ICAC a
 health/exact 2101(d)-(e), then State/migration/refugee/supplementary/other DHS/counterparts,
 ordinary screenings and final package comparison. Draft PR198 remains the delivery boundary;
 merge requires separate authorization.
+
+
+### Successor checkpoint 109: ICAC grants and qualified program context
+
+Complete current 21116 and its directly referenced 21112-21115 program/data context,
+with complete 21117 dated authorization/availability, remain incorporated mixed
+child-exploitation authority context. They do not create a separate member vote,
+an individual immigration classification or a categorical domain mapping of every
+child-exploitation offense. Existing fund(e) and all prior 68 application questions,
+including the literal duplicate-(f) reservation, remain unchanged.
+
+Three separate financial bases are explicit: at least 75 percent of funds appropriated
+to 21116 for formula grants; each task force's minimum 0.5 percent of the formula pool;
+and at least 25 percent non-Federal match against funds received through the remaining
+need-based branch. The six formula/need factors, branch-specific ineligibility and
+good-cause/financial-hardship waiver remain. No whole-fund/project-cost denominator
+substitution, current fixed award or combined net award is calculated. Discretionary
+grants, complete application requirements and all six allowable uses remain distinct.
+
+Program/task-force duties retain at least one task force per State, conditional existing
+task-force inclusion, advance congressional notice for new-task-force discretion and
+periodic reviews. The annual training award ceiling excludes law-enforcement agencies.
+Coordination retains available-resource qualification; seeking national standards is
+qualified by State-law consistency. Priority investigative leads retain child rescue/
+identification, seriousness and danger context. Data-system privacy, Internet-facilitated
+child-exploitation scope, credentialed access and foreign-agency approval remain explicit;
+no unrestricted surveillance or observed implementation/investigation/conviction claim.
+
+Annual recipient reports preserve all seven complete fields. The separate congressional
+report remains one year after October 13, 2008. Data-system 2009-2016 and program
+2009-2024 authorizations are dated; until-expended appropriated-money availability does
+not become new H.R. 1968 money, actual appropriation or automatic program expiration.
+National-strategy contents and older appropriations-act origins remain reference context.
+Further child-center, fund health/medical and exact 2101(d)-(e) remain executable research.
+
+Three selected sources/bindings/member references and original coordinates; one strict
+official capture, previously private, is now registered at the material reviewed extent.
+Raw/full-text hashes, governed seals, complete passages and all original coordinates
+verify. All prior 1,386 sources, 39 other meanings, 68 questions, frozen receipts and
+120 test methods remain unchanged. Both member details carry the same shared addition;
+compact/recorded choices, counting/eligibility and compiled graph remain unchanged.
+
+148 focused tests pass in 15.987 seconds. Reference validator and seven semantic checks
+pass; seven generated files match separate raw-byte replay. Two new guards and sixteen
+controlled qualifier mutations each produce the expected single assertion failure with
+zero errors. The first private replay attempt lacked its required packet template; the
+template was copied and replay completed without canonical correction or evidence loss.
+Full detail/compact/source comparison, protected-object checks and final diff inspected.
+Tests and replay establish mechanical confidence, not semantic truth or acceptance.
+
+Core af3a535e46bfdc779be5bdafdbb3a2033e3e689f4cfcaac3e83a3e3c8a30455b;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. 1,389 sources, 987 bindings, 366 captures, 268 extent objects, 443 coordinates.
+Accounting remains 676 inventory, 460 reviewed, 40 interpreted, 211 procedural,
+207 excluded, two expressive, 216 ordinary unfinished, three partial packages and
+68 application questions. 37 episodes, 80 observations, 72 findings; unique-action
+84 No Defect/three Minor/eleven Major/one Critical and historical findings unchanged.
+
+Checkpoint 108 was pushed at 14d001aac1c2a5fd08a7ffa829c56c5581e7bce3; fresh local,
+remote and draft identities matched. Private archive verification was corrected to the
+canonical action-array corpus hash, with prior core/compiled bytes and replay preserved.
+That verifier setup issue did not alter candidate artifacts. Current 109 bounded
+independent review remains pending; no domain/package acceptance or publication.
+
+Existing .w/ib ownership continues under the explicit 22:39 post-restart authorization;
+original pause/deadline evidence preserved and no current deadline imposed. No merge,
+deploy, production, editorial approval, promotion or publication. Continue further
+child-center authorities, fund health-transfer/medical conditions and exact 2101(d)-(e),
+then State/migration/refugee, supplementary/other DHS/counterparts, 216 ordinary screenings
+and final package comparison. Draft PR198 remains the authorized delivery boundary.
+
+Owner-read exact 108 run 37701594161 is terminal nine green: five feature-pinned,
+three synthetic and one mixed. Synthetic a3a2afcf526a2a27de7137c552003aaad8eabf88;
+nine raw-log hashes and actual checkout/test contexts are sealed in
+docs/review_packets/immigration_delivery_checkpoint108_ci.json.
+Hosted aggregate differs from owner 146 then/148 here. Current CI field points to 108,
+preserving earlier receipts as historical; new 109 requires its own pushed-head run.
