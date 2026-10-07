@@ -9262,8 +9262,8 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 75,
-    "focused_runtime_seconds": null,
+    "focused_tests": 76,
+    "focused_runtime_seconds": 12.19,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
@@ -9305,7 +9305,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Two complete exact House actions and incorporated land-conveyance (c)/(g) are screened; all earlier membership/source objects and 39 interpretations preserved; seven raw generated outputs match separate replay.",
+    "focused_scope_note": "76 candidate tests pass after appending omitted checkpoint80 acquisition row; one controlled missing-row mutation fails exactly once with zero errors. Prior checkpoint80 six-module aggregate (264) and seven semantic checks preserved as historical validation.",
     "last_completed_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
       "run": 37640395671,
@@ -9371,7 +9371,7 @@
       "test_shared_candidate_research",
       "test_immigration_shared_candidate"
     ],
-    "candidate_focused_execution_scope": "75 candidate tests included in 264-test six-module aggregate; no separate runtime claimed"
+    "candidate_focused_execution_scope": "76 candidate tests run separately in 12.190 seconds; previous 264-test aggregate belongs to checkpoint80. No new full-aggregate result claimed."
   },
   "open_legal_interactions": [
     {
@@ -11509,5 +11509,12 @@
     "unfinished_ordinary": 219,
     "domain_fits_reserved": 3,
     "application_questions": 62
+  },
+  "ordinary_screening_checkpoint80_capture_reconciliation": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint80_capture_reconciliation.json",
+    "receipt_sha256": "d93ccf63848c9ca75acc1e521caabe78e56a8aae295215a7fb93102cfb030670",
+    "prior_manifest_rows_preserved": 335,
+    "total_captures": 336,
+    "corrected_omitted_manifest_row": true
   }
 }

@@ -847,6 +847,20 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         result = validate(*self.values)
         self.assertEqual(result['inventory_count'], 676)
 
+    def test_ordinary_screening_capture_is_present_in_durable_manifest(self):
+        receipt = json.loads((DATA / 'ordinary_screening_checkpoint80.json').read_text(encoding='utf-8'))
+        manifest = getattr(self, 'screening_capture_manifest', None)
+        if manifest is None:
+            manifest = json.loads((DATA / 'research_capture_manifest.json').read_text(encoding='utf-8'))
+        rows = [r for r in manifest['sources'] if r['source_id'] == receipt['acquisition_source_id']]
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0]['raw_sha256'], receipt['acquisition']['raw_sha256'])
+        self.assertEqual(rows[0]['text_length'], receipt['acquisition']['full_text_length'])
+        source = next(s for s in self.values[1]['sources']
+                      if s['source_id'] == 'govinfo:43usc1613-2024-land-conveyance-c-g')
+        self.assertEqual(source['captured_full_text_sha256'], rows[0]['text_sha256'])
+        self.assertEqual(source['raw_sha256'], rows[0]['raw_sha256'])
+
     def test_zero_ordinary_screenings_does_not_close_partial_package_review(self):
         reviews = self.values[2]['accounting']['partial_component_reviews']
         with self.assertRaisesRegex(ValueError, 'package component review remains incomplete: 2'):

@@ -5365,3 +5365,37 @@ No repeated retry or hosted result is claimed. Next: continue ordinary exact-act
 screenings and remaining continuing/omnibus/NDAA packages, alongside the reserved
 fits and application questions. Existing explicit Resume authorization remains active;
 no new deadline was supplied, and shutdown 75 evidence stays frozen.
+
+
+### Successor checkpoint 81: checkpoint 80 acquisition manifest reconciliation
+
+A final acquisition-ledger check found that the saved source pool and checkpoint 80
+receipt correctly reported 336 captures, but the durable manifest still held 335.
+Append the already captured 43 USC 1613 row; all preceding 335 rows verify unchanged.
+No recapture, source change, meaning change or historical receipt rewrite. The new
+ordinary_screening_checkpoint80_capture_reconciliation.json records the correction.
+A durable guard binds the ordinary screening receipt, manifest raw/text hashes and
+canonical selected-source original-text reference. Removing the row in a separate
+controlled mutation produces one assertion failure and zero errors. All 76 candidate
+tests pass in 12.190 seconds; all seven generated files still match the separate
+checkpoint 80 replay. The previous 264-test aggregate and seven semantic checks are
+checkpoint 80 results, not a newly claimed 265-test aggregate.
+
+Accounting remains 457 reviews, 205 exclusions, 219 ordinary unfinished, two partial
+H.R.1 actions and 62 application questions; three H.R.1 domain fits reserved. Remote
+PR198 last verified checkpoint77; 78–81 pushes and hosted CI remain pending. No
+retry based on GitHub status: its 14:29 response predates the 15:08/15:09 errors.
+
+Continuing-package research now follows H.R.1968 exact March11,2025 EH. Complete
+109266-character House text has been read without substituting later enacted law.
+Two dated public authorities, 8 USC 1157 and 1255, are saved privately for the full
+599D/599E refugee/adjustment clauses; captures are not yet entered in the manifest or
+canonical model. Complete relevant 599D/599E clauses were read, with distinct country
+lists, dates, allocations, denial/reapplication and qualified adjustment conditions.
+The separate Afghan 602(b)(3)(F) change amends its heading; it must not be summarized
+as changing the unchanged operative visa cap or application deadline. Incorporated
+DHS divisionC and divisionG102–105 require further material source review. H.R.1968
+remains unfinished; no canonical interpretation, additional partial-action flag,
+individual eligibility claim or unavailable-evidence label is authored yet. Next:
+finish the material incorporation boundary and compile a qualified member-neutral
+package candidate through the established partial-package contract.
