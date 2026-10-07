@@ -240,6 +240,46 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn('taxable years ending after the date of the enactment', own)
                 self.assertIn('number-amendment taxable-year-beginning applicability: The amendment made by this section shall apply to taxable years beginning after December 31, 2024', own)
 
+    def test_dod_border_funding_preserves_own_account_amount_and_chapter_reference(self):
+        for aid, label, amount in [('house:119:1:145', 'House', '$5,000,000,000'),
+                                   ('house:119:1:190', 'Senate', '$1,000,000,000')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            source_id = 'congressional-record:2025-05-21-hr1-as-amended' if label == 'House' else 'govinfo:hr1eas'
+            passage = next(c['passage'] for c in action['claim_source_map']
+                           if c['source_id'] == source_id and c['passage'].startswith('SEC. 20011.'))
+            self.assertIn(amount, passage)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' 20011 DOD border-support'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index(label + ' 20011 DOD border-support appropriation:'):]
+                own = own[:own.index('Senate 20011 incorporated chapter 15 section') if label == 'Senate' else own.index('Both exact provisions')]
+                with self.subTest(action=aid):
+                    self.assertIn('appropriated to the Secretary of Defense for fiscal year 2025', own)
+                    self.assertIn('remain available until September 30, 2029', own)
+                    self.assertIn(amount, own)
+                    self.assertIn('temporary detention of migrants on Department of Defense installations', own)
+                    if label == 'Senate':
+                        self.assertIn('in accordance with chapter 15 of title 10', own)
+                    else:
+                        self.assertNotIn('chapter 15', own)
+
+    def test_dod_chapter_restriction_retains_otherwise_law_and_preparedness_waiver(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact Senate 20011 DOD border-support'))
+        for text in [action['meaning'], qualification]:
+            with self.subTest(surface='meaning' if text == action['meaning'] else 'qualification'):
+                restriction = text[text.index('Senate 20011 incorporated chapter 15 section 275:'):text.index('Senate 20011 incorporated chapter 15 section 276:')]
+                self.assertIn('Army, Navy, Air Force, or Marine Corps', restriction)
+                self.assertIn('search, seizure, arrest, or other similar activity', restriction)
+                self.assertIn('unless participation in such activity by such member is otherwise authorized by law', restriction)
+                waiver = text[text.index('Senate 20011 chapter 15 counterdrug short-term preparedness waiver:'):text.index('Senate 20011 chapter 15 counterdrug relationship and exceptions:')]
+                self.assertIn('adversely affect the military preparedness of the United States in the short term', waiver)
+                self.assertIn('importance of providing such support outweighs such short-term adverse effect', waiver)
+                relationship = text[text.index('Senate 20011 chapter 15 counterdrug relationship and exceptions:'):text.index('Both exact provisions')]
+                self.assertIn('subject to the provisions of section 275', relationship)
+                self.assertIn('except as provided in subsection (e), section 276', relationship)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],

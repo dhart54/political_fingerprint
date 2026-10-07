@@ -4505,3 +4505,115 @@ Coast Guard funding candidates and Senate scholarship-credit status role, then
 continuing/omnibus/NDAA/screens. Provisional five/six-digit keyword/full-binding scan
 is a private discovery aid, not domain eligibility or completion. Existing markers
 preserved, no current shutdown/production/merge/deployment/editorial acceptance.
+
+
+### Successor checkpoint 69: DOD border-support funding and authority boundary
+
+Exact House/Senate 20011 share Secretary of Defense actor, additional fiscal 2025
+appropriation and availability until September 30, 2029; House $5 billion, Senate
+$1 billion. Own military personnel, border operations/maintenance, counter-narcotics/
+transnational criminal organization support, national-defense-area operation and
+construction, and temporary migrant detention on DOD installations purposes retained.
+No DHS/ICE/CBP account, invented status/crime/child/family/duration predicate, actual
+spending/deployment/detention/removal or conditions/outcome claim.
+
+Senate expressly qualifies purposes with in accordance with chapter 15 of title 10.
+All fourteen complete original 2024 operative sections 271-284 are governed in one
+multi-extent source, with original byte/full-text hash and fourteen exact extent
+coordinates; provenance/editorial notes excluded. Full actor/request/discretion/
+purpose/geography/approval/reimbursement/notice/report/definition conditions remain
+bound. Seven complete source-to-prose clauses retain each appropriation plus Senate
+275/276/278 and 284(e)/(g) restriction/exception relationships. Section 275 retains
+regulation duty, Army/Navy/Air Force/Marine Corps direct search/seizure/arrest/similar
+restriction and otherwise-authorized-by-law exception. Section 276 readiness rule
+is retained with actual short-term adverse-effect/two-determination 284(e) waiver;
+284(g) subjects its support to 275 and 276 except (e). Section 278 preserves prior
+executive authority, not unlimited new powers. Other chapter pathways are not all
+simultaneously universal: 277(b) own National Guard boundary, 282/283 emergency/
+DOJ/approval limits and 284 additional-authority/exception framework retained.
+
+House does not print the Senate chapter phrase; absence is not an exemption from
+underlying law or unlimited military powers. Original chapter is legal context for
+reserved application, not a Senate clause copied into House operative text. Printed
+legacy numerical references stay exact. Full 284 requests/domestic-foreign/25-mile/
+drug-corridor/notice/report conditions remain bound, not a universal migrant-detention
+or all-border-construction power from title alone. Question 61 reserves an actual
+national-defense-area, detention or direct-participation/support-path application
+with recommendation/evidence/alternatives/safe parallel work; no categorical lawful/
+unlawful determination. Coast Guard funding/roles remain separate research. House
+Coast Guard heading mentions migrants but operative asset purposes are broader;
+agency/parent/heading context does not establish all asset funding as Immigration.
+
+One new canonical full-chapter source, two capture records; five new bindings and
+two reused House correction-chain witnesses. Complete House floor/EH appropriation
+body matches after declared line-wrapped counterdrug/transnational token joins only;
+no direct H.Res.492/499 selected-section amendment or whole-EH vote-time equivalence.
+Exact prior checkpoint plus declared two-action additions reconstructs authoring.
+Other 37 actions, earlier meanings/qualifications/choices/compacts, 1,316 sources/
+308 captures/frozen receipts/prior 60 questions unchanged. Two review-source/proposal-
+reference/scope updates only; no disposition/eligibility/counting change. New prose/
+metadata spacing corrected before tests, preserving original source text/IDs/bytes.
+Source/receipt/audit/capture hashes and 201 sources with verified text extents verify; chapter's
+fourteen joined extents exactly reproduce governed text. Both members preserve
+new detail and candidate/publication isolation; compact copy stays unchanged.
+
+Validation: 245 tests in 43.275 seconds including 56 candidate tests, seven semantic
+checks and seven raw generated-byte replay files pass. Wrong House amount, removed
+otherwise-law exception and omitted waiver weighing condition each rejected with
+one assertion subtest failure, zero errors. Source comparison and final diff reviewed.
+Tests establish contract integrity, not semantic truth. Core 69416ae2b8bb2f7a425ecae7a24aa02e5e9ee39c000bfa9267301fedb18c613b; compiled
+b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Exact 68 head 834bdc2e187a6e63bee1e9ff3c3212560bae2e82 run 37555589295 all nine green,
+owner-native. Exact current CI follows push. Independent 67/68/69 review pending;
+prior bounded 65/66 no-material-defect verdict and every stated limitation preserved.
+Audit partial, final verdict null; no activity/application/package acceptance.
+
+Accounting: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings. 1,317 sources, 827 bindings,
+310 captures, 201 sources with verified text extents (new chapter source has fourteen offsets).
+Remaining 221 screenings, two partial H.R.1 reviews, 61 application questions and
+separate original 1994 follow-up. Next exact separate Coast Guard scope/funding
+conditions and Senate scholarship status role, other components/material authorities,
+then continuing/omnibus/NDAA/screens. Existing markers retained, no current shutdown
+or production/merge/deployment/editorial acceptance authority.
+
+
+### Checkpoint 69 remaining H.R. 1 component reconciliation
+
+`hr1_remaining_component_reconciliation.json` records both exact governed versions,
+House correction-chain witnesses, source coordinates and existing binding overlaps.
+It separates four work categories and preserves the existing partial-component gates.
+The ledger is bounded discovery, not a full-package semantic verdict: numeric identity,
+keyword occurrence and a binding overlap do not prove whole-section review. Complete
+grouped fee bindings remain covered; selected ACA and Senate 71103(b) context bindings
+do not become whole-section coverage. Embedded Code headings and trailing section/title
+context are explicitly distinguished. No canonical candidate input changed for this
+reconciliation, and no frozen receipt was rewritten.
+
+Research next: Senate 87001 ORR sponsor-vetting appropriation and all five purposes;
+House 100001/Senate 40001 Coast Guard asset/purpose/condition boundaries; House 44103/
+Senate 71103 duplicate-enrollment mechanisms; Senate 70411 contributing-taxpayer
+citizen/resident condition (printed 7701(a)(9), not 7701(b)); House 110201 HRA employee
+class; House 112008/Senate 70512 foreign-entity electricity credit restrictions;
+House 112028 foreign-tax remedy; House 112030/Senate 70531 commercial-shipment customs.
+The last six are established-domain scope assessments, not preapproved Immigration
+interpretations. Verify substantive counterparts/absence before package closure.
+
+Source acquisition is separate: complete bill operatives are already acquired.
+Verify/reuse the original UAC and placement definitions for 87001; acquire material
+original Coast Guard statutory/report/account conditions before authority prose.
+Other leads need only the original material reference extents warranted by their
+actual mechanism. Pending work does not become unavailable evidence.
+
+Semantic review is separate: independent 67-68 review is underway, 69 pending;
+previous bounded verdicts and unrecomputed/full-Massie/raw-acquisition/replay limits
+remain explicit. Full package/component coverage is not closed. Reserved application
+judgments are separately indexed to unchanged audit question hashes; the total queue
+is 61, including non-H.R.1 questions. Their adjudication is not an automatic condition
+for finishing supported literal candidate research or resuming ordinary screenings.
+
+Route: 87001, Coast Guard, then bounded remaining mechanism/extent/counterpart review;
+continue continuing/omnibus/NDAA packages and 221 ordinary screenings alongside the
+separate application queue. Both H.R.1 component flags stay incomplete. Accounting,
+candidate isolation, canonical outputs and all established gates remain unchanged.
