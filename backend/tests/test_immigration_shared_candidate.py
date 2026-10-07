@@ -50,6 +50,21 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertIn('only FIFA paragraph (1)(B) and Olympics paragraph (1)(C)', text)
             self.assertIn('no exemption for Stonegarden paragraph (1)(D) or drone paragraph (1)(A)', text)
 
+    def test_house_stonegarden_context_keeps_own_event_wording(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('SEC. 60005. STATE HOMELAND SECURITY GRANT PROGRAM.'))
+        event = passage[passage.index('(3) $1,000,000,000'):passage.index('(4) $450,000,000')]
+        literal_events = '2028 Olympic Games and 2028 Paralympic Games'
+        self.assertIn(literal_events, event)
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected exact House floor State Homeland Security'))
+        for text in [action['meaning'], qualification]:
+            own = text[text.index('House floor 60005 purpose 3:'):text.index('House floor 60005 purpose 4:')]
+            self.assertIn(literal_events, own)
+            self.assertIn('until September 30, 2029', own)
+            self.assertIn('security, planning, and other costs', own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],

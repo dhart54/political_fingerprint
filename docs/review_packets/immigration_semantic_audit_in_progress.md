@@ -3653,3 +3653,63 @@ original 1994 acquisition/application follow-up. Next: House 60005 Stonegarden o
 wording/version and other exact package components, then continuing/omnibus/NDAA
 and ordinary screenings. No current shutdown, production/config/security/schema,
 merge/deployment or editorial acceptance/promotion/publication authority.
+
+
+### Successor checkpoint 64: exact House Stonegarden funding
+
+House floor 60005 retains FEMA Administrator, additional fiscal year 2025 funding
+under State Homeland Security Grant Program 605, and all four own purpose amounts
+with each availability until September 30, 2029. Own $450 million Stonegarden
+purpose reuses established dated program context and complete pre-vote 603/605/609
+authorities. Generic drone/event purposes are context without inferred Immigration
+purpose. House $625 million FIFA clause expressly includes planning; $1 billion
+event clause names both Olympic Games and Paralympic Games. These printed words
+are preserved without deciding actual event-expense eligibility. House prints no
+Senate B/C-only exemptions or added consistent-with-titles-18-and-49 phrase; this
+source comparison does not disregard other applicable law. No State-border fund
+amount/date or administration cap imported.
+
+Complete floor 60005 and served EH 60006 operative bodies match exactly after
+section-number/title labels are removed solely for comparison. Original sources
+and labels unchanged. Exact H.Res.492/499 witnesses contain no direct textual
+change to this selected clause; they do not prove whole served EH equals the
+vote-time bill. Original floor/adopted authority remains controlling. Six new
+bindings reuse existing sources: floor clause, EH comparison, three full statutes
+and dated NOFO. Five full clause blocks across eight dimensions plus complete-body
+comparison and two correction-chain witness hashes verified on both surfaces.
+Compact copy unchanged; package member choices imply no component-specific stance.
+
+Question 53 reserves House-version implementation under printed 605 administration,
+complete 603/605/609 and dated program context separately from Senate question 52.
+Recommendation: retain literal House funding/availability and complete authorities;
+obtain independent source-grounded application review before actual award/expense/
+allocation/power conclusions or automatic 2024 policy/later Senate exemption import.
+Alternatives and safe parallel work recorded. No novel methodology decision.
+
+Exact checkpoint 63 plus declared House-only additions reconstruct current
+authoring; Senate, all 38 other actions, earlier House clauses/choices/compacts,
+all 1,302 sources/283 manifest rows/186 text extents, frozen receipts and prior 52
+questions unchanged. One House membership source-list/proposal reference/scope
+update, no disposition/eligibility/counting change. All six binding/two witness/
+receipt/audit hashes, five blocks across eight dimensions, both member propagation,
+candidate isolation, accounting and seven generated raw replay files pass. Source-
+backed event-wording guard rejects House-to-Senate wording mutation with one
+assertion failure and zero errors. Final 236 tests in 41.591 seconds, including 47
+candidate tests; seven semantic checks pass. Diff reviewed. Tests are integrity
+evidence, not semantic truth or acceptance. Core d117380af966d01d9593e10792c685690626d139ffb2ab0a35389f499654a8a2; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f
+unchanged.
+
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203
+excluded, two expressive, 36 episodes, 78 observations and 70 findings. Sources
+1,302, bindings 782, captures 283. Remaining 221 ordinary screenings, two partial
+H.R.1 reviews and 53 application questions; original 1994 follow-up separate.
+Audit partial, final verdict null; independent new-increment review pending.
+Last owner-native exact 63 CI 37551514431 at c0b14c6d8acd1b834d7b1f412b7e3241a2dd73ff
+had eight successful jobs, receipt-evidence repair pending, no failure reported.
+Exact 62 remains last all-nine completed run 37550682917, independently confirmed.
+Current exact CI follows push. Continue remaining tax/benefit/other exact package
+components: discovery identifies unreviewed House 110019/Senate 70119 death/disability
+loan-exclusion SSN clauses and House 110115/Senate 70204 account/pilot citizenship/
+SSN clauses. Identifier occurrence alone is not coverage: Senate 70119 appeared
+only inside earlier House-UAC range reference. Then continuing/omnibus/NDAA and
+ordinary screenings. No shutdown or production/merge/deployment/acceptance authority.
