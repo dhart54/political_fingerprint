@@ -6395,3 +6395,71 @@ counterparts and ordinary screenings, then full source-bound package comparison.
 No current deadline; ownership continues. Preserved shutdown/history/unrelated work,
 false readiness/publication and null final verdict remain. No merge/deploy/production
 or editorial acceptance/promotion/publication authorized.
+
+
+### Successor checkpoint 98: qualified incorporated EOIR court funding
+
+Complete CJS EOIR account and sections 205/209/505 are bound with exact H.R. 1968
+1101(a)(2) incorporation/substitutions/exclusions, 1101(b)-(c)/1102/1103 level/availability
+and complete original fee-account rules. $844 million includes the $4 million specified
+fee-derived transfer; it is not $848 million or a fee-rate change. Legal Orientation
+Program $28 million is a minimum, not a ceiling or individual representation right.
+Courtroom-space $50 million is a cap within the account. Original printed September
+30, 2028 availability and the comparable multi-year/no-year rule remain separately
+bound without inventing a new fixed endpoint or actual construction/case outcome.
+
+Transfers retain five percent source and ten percent receiving ceilings, express
+exception and two named paragraph exclusions; those do not become an EOIR exemption.
+Section 505 retains all eight qualifying reprogramming routes, $500,000-or-ten-percent
+augmentation threshold whichever is less, distinct ten-percent funding/personnel
+reduction and fifteen-day advance notification to both Appropriations Committees.
+Section 209 preserves specified activity/explanatory-statement deviations and prior-
+deobligation scope. Unreviewed explanatory-statement amounts are not imported. No
+unlimited/observed transfer, every-purchase notice rule, late notice, double count,
+new service/representation/fee/status entitlement or separate member component stance.
+
+One complete original Public Law 118-42 capture, one canonical selected source and
+four bindings added. Four original account/control extents reproduce; complete DOJ
+general provisions were read as screening context, without whole-CJS/DOJ acceptance.
+The correct signed-law division/annotated section boundaries were located in the
+original source after private helper anchor assumptions failed. No unavailable-evidence
+disposition or source repair. Sources 1,355, bindings 935, captures 346, extent objects
+235 and coordinates 390. All prior 1,354 sources, 39 other meanings, 66 questions,
+whole-package choices and compact copy preserved; H.R. 1 candidates/correction and
+frozen prior receipts unchanged. Accounting remains 676 inventory, 459 reviewed,
+40 interpreted, 211 procedural, 206 excluded, two expressive, 217 ordinary unfinished,
+three partial packages and 66 application questions; 37 episodes, 72 findings.
+
+127 focused candidate/IR tests pass in 13.902 seconds, IR reference validator and
+seven semantic checks pass. Seven generated files match raw-byte replay. Eight
+fee/minimum/cap/period/transfer/threshold/notice mutations each fail once with zero
+errors. Four complete witnesses, original extents/raw hash/source and receipt seals,
+queue/accounting and both members' detail/unchanged compact/choices inspected. Final
+diff reviewed. Core a0a498feeb52ffb3c84cd86521731e528b1130fcc39666b0081a2c5d831c8138;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Owner checks do not prove semantic truth or independent acceptance.
+
+Final independent 97 source/propagation and mechanics are clean within bounded scope.
+Minimum/ICE-account/notice, broader program/governance/training/transfer/reference
+notes and seven material definitions verify, as do two captures/eight extents/four
+bindings and both member/core/compiler/packet propagation. Prior 65 questions/frozen
+63/test preserved; separate new 66 scope and deliberate selector-collision guard verify.
+Two bounded guards and fifteen wording-removal mutations pass their expectations.
+No full independent pipeline/generator/test suite or combined fiscal-year judgment.
+Question 66 remains reserved. New sealed review receipt records exact scope; frozen
+97 source receipt remains historical and new 98 is not automatically cleared.
+
+Owner exact 97 CI run 37676760516 is terminal nine green; raw logs verify five feature-
+pinned, three synthetic (5b6b1f883d5ddacfe61704f904f80d3b48aea8ac) and one mixed repair
+checkout. Hosted 254 differs from owner 125 at 97 and 127 here. Sealed CI preserves
+log hashes/context; no all-nine-feature-only claim. New 98 needs its own push/run.
+
+A fresh local read-only diagnostic at 2026-10-07 19:58:37 UTC succeeded in .w/ib,
+HEAD 9d91e485efd7634253ae4f14d2be08338b4fd291, with no matching task-owned Python process
+active at that instant. The owner was reviewing completed validation between commands;
+no task-list/sidebar visibility was inferred or project grouping changed. This does not
+create a pause boundary. Active successor ownership and original shutdown/history
+evidence remain; no current deadline. Next: remaining SCAAP/transportation/trafficking
+and State/migration/supplementary acts and other DHS/counterparts, plus ordinary screening.
+No package closure, merge/deploy/production or editorial acceptance/promotion/publication;
+readiness/publication false, final audit verdict null.

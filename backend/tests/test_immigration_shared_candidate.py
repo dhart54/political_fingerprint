@@ -18,6 +18,35 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_eoir_funding_keeps_included_fees_minimum_and_comparable_availability(self):
+        action = getattr(self, 'hr1968_eoir_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected DOJ court-funding mechanism', 1)[1]
+        self.assertIn('$4 million is included in, not added to, the $844 million', text)
+        self.assertIn('Not less than $28 million', text)
+        self.assertIn('not a ceiling or an individual right to a lawyer', text)
+        self.assertIn('not more than $50 million of the total', text)
+        self.assertIn('printed availability through September 30, 2028', text)
+        self.assertIn('section 1103 carries comparable multi-year/no-year availability', text)
+        self.assertIn('no silently invented new fixed courtroom endpoint', text)
+        self.assertIn('No actual fee collection, transfer, reprogramming', text)
+
+    def test_hr1968_eoir_transfer_and_reprogramming_keep_caps_lower_threshold_and_advance_notice(self):
+        action = getattr(self, 'hr1968_eoir_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected DOJ court-funding mechanism', 1)[1]
+        self.assertIn('not more than five percent', text)
+        self.assertIn('increased by more than ten percent by such transfers except as otherwise specifically provided', text)
+        self.assertIn('exclusions do not become an EOIR exemption', text)
+        self.assertIn('all eight listed kinds of change', text)
+        self.assertIn('more than $500,000 or ten percent, whichever is less', text)
+        self.assertIn('separate funding/personnel reduction trigger is ten percent', text)
+        self.assertIn('Both Appropriations Committees must be notified fifteen days in advance', text)
+        self.assertIn('use of previous-year deobligated balances', text)
+        self.assertIn('Unreviewed explanatory-statement allocations are not imported', text)
+
     def test_hr1968_blue_campaign_keeps_minimum_before_obligation_and_reserved_fiscal_year(self):
         action = getattr(self, 'hr1968_blue_action', None)
         if action is None:
