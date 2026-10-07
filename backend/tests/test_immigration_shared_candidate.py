@@ -27,13 +27,28 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('unlawfully entered the United States and have committed a crime', detection)
         self.assertIn('from small population centers to other domestic locations', relocation)
         self.assertNotIn('committed a crime', relocation)
-        for text in [action['meaning'], action['limitations'][-1]]:
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('The Senate 90005(b) State Border Security Reinforcement Fund'))
+        for text in [action['meaning'], qualification]:
             own_detection = text[text.index('Senate 90005(b) purpose C:'):text.index('Senate 90005(b) purpose D:')]
             own_relocation = text[text.index('Senate 90005(b) purpose D:'):text.index('Senate 90005(b) paragraph 3:')]
             self.assertIn('unlawfully entered the United States and have committed a crime', own_detection)
             self.assertIn('transfer or referral of such aliens to the Department of Homeland Security as provided by law', own_detection)
             self.assertIn('unlawfully present in the United States from small population centers to other domestic locations', own_relocation)
             self.assertNotIn('committed a crime', own_relocation)
+
+    def test_stonegarden_context_does_not_confer_additional_authority(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        notice = next(s['text'] for s in self.values[1]['sources']
+                      if s['source_id'] == 'hawaii:fema-fy2024-hsgp-nofo-program-eligibility')
+        self.assertIn('do not receive any additional authority by participating in OPSG',
+                      ' '.join(notice.split()))
+        qualification = next(q for q in action['limitations']
+                             if q.startswith('Selected Senate 90005(a) funding'))
+        for text in [action['meaning'], qualification]:
+            self.assertIn('use their inherent law enforcement authorities and receive no additional authority', text)
+            self.assertIn('only FIFA paragraph (1)(B) and Olympics paragraph (1)(C)', text)
+            self.assertIn('no exemption for Stonegarden paragraph (1)(D) or drone paragraph (1)(A)', text)
 
     @staticmethod
     def seal_universe(universe):

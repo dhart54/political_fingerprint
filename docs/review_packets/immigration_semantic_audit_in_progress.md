@@ -3580,3 +3580,76 @@ package components, continuing/omnibus/NDAA and ordinary screenings. Original
 1994 acquisition follow-up stays separate. Existing historical terminal markers
 and unrelated work preserved, no current shutdown or production/merge/deployment/
 editorial acceptance/promotion/publication permission.
+
+
+### Successor checkpoint 63: Stonegarden funding and dated program context
+
+Senate 90005(a) names FEMA Administrator, additional fiscal 2025 funding until
+September 30, 2029, administration under the State Homeland Security Grant Program
+in 605, and State/local/Tribal security grants, contracts, cooperative agreements
+and other activities. Six complete own operative blocks retain $500 million drone
+threat capabilities, $625 million 2026 FIFA security/other costs, $1 billion 2028
+Olympics security/planning/other costs and $450 million Operation Stonegarden.
+Drone/FIFA/Olympics are adjacent context without an inferred Immigration purpose.
+Only FIFA(B) and Olympics(C) are exempted from 605(e)(1) minimum allocation and
+609(a)(12) grant-administration cap. No Stonegarden(D) or drone(A) exemption or
+State-border fund's separate one-percent cap imported. Full material 603/605/609
+operative authorities are source-bound; own restrictions/waivers/roles preserved.
+
+Hawaii's official reproduction of DHS/FEMA FY 2024 HSGP NOFO provides exact five
+pages 5-6/17-19, all visually compared after Poppler 100-110 dpi rendering. Page 6
+describes Stonegarden CBP/USBP/Federal/State/local/Tribal/territorial cooperation,
+border-security routes of ingress AND egress to/from international borders,
+Mexico/Canada travel corridors and international water borders. Participating
+SLTT agencies use inherent law-enforcement authorities and receive no additional
+authority. Dated context does not automatically import 2024 funding, deadlines,
+performance periods, subrecipient tiers or other conditions into 2025 appropriation.
+FEMA direct PDF returned 403 in browser/native request; actual Hawaii reproduction
+host and raw SHA 4963aca7961eb43071b321eb85b3a27f026db87b15cd43acc85235ef3f3a9b3f
+recorded. Invalid guessed Code path returned a page-not-found body and was rejected;
+correct 2024 part A 603/605/609 originals verified. No access bypass or source repair.
+
+Question 52 reserves application of printed 605 administration, full 603/605/609
+authorities and separately described 2024 HSGP components/conditions to a proposed
+new Stonegarden award. Recommendation: retain literal funding and B/C-only
+exemptions with dated purpose/no-additional-authority context; obtain independent
+source-grounded application review before any allocation/expense/recipient/power
+conclusion or 2024 rule import. Alternatives and safe parallel work source-mapped;
+no new methodology or application judgment by owner.
+
+Four new governed sources, five new bindings, three original HTML files/one PDF,
+seven capture records and three text extents. Exact checkpoint 62 plus declared
+one-action additions reconstruct current authoring; all 38 other actions, House,
+earlier Senate clauses, choices/compacts, prior 1298 sources/276 manifest rows and
+frozen receipts preserved. Four-source membership/proposal references and partial
+scope update only, no disposition/eligibility/counting change. Prior 51 questions
+unchanged, one new reserved question. All five binding/witness/receipt/audit seals,
+six blocks across eight dimensions, five exact PDF page texts/raw provenance,
+186 text extents, both member propagation, candidate isolation, queue/accounting
+and seven generated raw byte replay files pass. New source-backed authority guard
+rejects authority-granting mutation with one assertion failure, zero errors.
+Earlier fund test now selects its own qualification instead of array-last position.
+Final 235 tests in 42.540 seconds, including 46 candidate tests; seven semantic checks
+pass. Diff reviewed. Tests are contract evidence, not semantic truth or acceptance.
+Core b2394b4c069ce474d2ae1c4bfe6bea17d28fdbc57a643e65d49a821a6994eb1b; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Durable independent 61/62 receipt records bounded no-material-defect verdicts.
+For 61, receipt/prose/ten matrix/eight replacement-string/two witness hashes and
+two of nine binding hashes verified; seven binding hashes and local precommit-file
+provenance independently unverified. For 62, complete 3,003-character binding rebuilt
+from ten fragments plus heading, all binding/receipt/prose/fragment hashes and full
+qualification verified. Exact Senate appends, unchanged House/compact/earlier
+qualifications and both core digests checked; full Massie detail and full-member
+replay independently unverified. Mechanical 62 no blocker, 234 aggregate including 45
+candidate tests correctly owner-attributed; no package/application closure. New 63
+review pending. Owner-native and independent exact 61/62 CI all nine green; latest
+62 run 37550682917 at 2df074c98a7543b45a6c429279baea48039ac91f. Exact 63 CI follows push.
+
+Accounting unchanged: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203
+excluded, two expressive, 36 episodes, 78 observations, 70 findings. Sources 1,302,
+bindings 776, captures 283, 186 text extents plus new five-page PDF source. Remaining
+221 screenings, two partial H.R.1 reviews, 52 application questions and separate
+original 1994 acquisition/application follow-up. Next: House 60005 Stonegarden own
+wording/version and other exact package components, then continuing/omnibus/NDAA
+and ordinary screenings. No current shutdown, production/config/security/schema,
+merge/deployment or editorial acceptance/promotion/publication authority.
