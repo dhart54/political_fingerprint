@@ -5286,3 +5286,56 @@ Push, draft update and exact-head CI remain delivery work. Ownership continues:
 remaining DHS sponsor/fee/fencing/transfer references, DOJ/State/other incorporation,
 whole-package comparison and ordinary screenings. The reporter correction's independent
 recheck remains pending. No merge, deployment, production effects or editorial approval.
+
+
+### Successor checkpoint 87: H.R. 1968 qualified funding controls
+
+Six complete witnesses extend the exact House 119/1/70 candidate using unchanged
+governed sources: DHS 208-211, 214 and 403; complete 2021 fencing section 211;
+complete 8 USC 1356(m)-(n); and the complete Immigration Emergency Fund baseline.
+Existing complete section 503 and USCIS account witnesses supply their other
+material conditions. No new capture/source or application question.
+
+The source comparison preserves CBP procurement-plan gates and mixed earmarks,
+six-location fencing limits (including within or east of Vista del Mar), the
+qualified National Targeting Center vetting bar, and section 214's exception only
+to section 503(d). Section 503(f)'s up-to-$20 million transfer and five-day notice
+remain separate from the fund's $35 million balance authorization and paragraph 2
+qualified $20 million aggregate local-reimbursement route. The latter expressly
+does not require the paragraph 1 emergency determination; general withdrawals
+retain Presidential determination/certification. No automatic combined allotment,
+actual balance, emergency, transfer or payment. Fee cost-recovery, territorial
+payments and no-year reimbursement do not set an actual charge or abolish fees.
+Section 403 permits biometrics at a virtually supervised USCIS Application Support
+Center using appropriate technology, not unrestricted home collection or a mandate.
+Printed funding/year/availability conditions remain; no blanket date replacement.
+
+111 focused tests passed in 12.105 seconds: 85 candidate and 26 Semantic IR tests.
+Canonical Semantic IR validator and seven semantic checks passed. Seven generated
+files match separate replay byte for byte. Six complete witnesses, all source seals,
+217 extent recipes/361 coordinates, 340 captures and current 40 action-audit hashes
+verify. Seven controlled mutations each fail one assertion with zero errors: all
+transfer caps erased, universal emergency requirement, combined ceilings, universal
+fence ban, all-wall total, inferred applicant fee, and unrestricted home collection.
+Both members' actual compact and new detail were inspected. Compact, actual Nay
+observations, compiled graph and all prior 39 meanings/27 claims/source pools/64
+questions/frozen receipts are preserved. Final diff reviewed. Same-owner partial
+comparison is not independent acceptance; tests do not establish semantic truth.
+
+Accounting remains 676 inventory, 458 reviews, 40 interpreted, 211 procedural,
+205 excluded, two expressive, 218 ordinary unfinished, three partial packages,
+64 separate application questions, 37 episodes, 80 member observations and 72
+readable findings. 1336 canonical sources, 883 bindings, 340 captures, 217 extent
+objects and 361 coordinates. Core d95d75841d8e50d70de29c3cd754b296e9ece97405055b17326a6efd89b870bc;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Final verdict/full-issue readiness/publication eligibility remain false.
+
+Normal fast-forward push delivered 85-86 to 8408f65bc1207e1d14f8b33081eea2940f00da4f;
+draft PR198 update confirmed 17:05:01 UTC. The earlier 16:57:08 GitHub500 request
+C7CB:B6910:49F6:67AE:6AC679E2 remains preserved. Exact 86 backend run37656175441
+is in progress; 87 awaits its own push/run. No success substituted from 84.
+Ownership continues through delivery/CI and remaining DHS sponsor/family definitions,
+oath/employment and other riders, DOJ/State/supplementary incorporation, final
+whole-package comparison and ordinary screenings. Existing reporter-correction
+recheck and reserved domain/application questions remain bounded parallel review.
+No production work, merge, deployment, editorial acceptance, promotion or publication.

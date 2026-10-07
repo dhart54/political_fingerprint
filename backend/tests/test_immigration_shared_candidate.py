@@ -79,6 +79,33 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(len(questions), 1)
         self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
 
+    def test_hr1968_transfer_exceptions_do_not_erase_other_conditions_or_create_payments(self):
+        action = getattr(self, 'hr1968_controls_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('limitation as to time and condition of section 503(d)', claims)
+        self.assertIn('at least 5 days in advance', claims)
+        self.assertIn('requirement of paragraph (1) that an immigration emergency be determined shall not apply', claims)
+        self.assertIn('specific subsection exception, not removal of all transfer caps', action['meaning'])
+        self.assertIn('paragraph expressly does not require the paragraph (1)', action['meaning'])
+        self.assertIn('not combined into an automatic $40,000,000 allotment', action['meaning'])
+        self.assertIn('does not establish that balance or actual transfers', action['meaning'])
+
+    def test_hr1968_fence_fee_and_biometric_scopes_remain_qualified(self):
+        action = getattr(self, 'hr1968_controls_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('within or east of the Vista del Mar', claims)
+        self.assertIn('remain available until expended', claims)
+        self.assertIn('Application Support Center that is overseen virtually', claims)
+        self.assertIn('not a prohibition on every border project or every other funding stream', action['meaning'])
+        self.assertIn('not an all-wall-construction amount', action['meaning'])
+        self.assertIn('Virgin Islands and Guam payment provisions', action['meaning'])
+        self.assertIn('neither that saving nor this baseline fixes a new applicant fee', action['meaning'])
+        self.assertIn('not permission for unrestricted home collection', action['meaning'])
+
     def test_hr1968_reporting_keeps_actors_cadence_and_literal_duration_boundaries(self):
         action = getattr(self, 'hr1968_reporting_action', None)
         if action is None:
