@@ -18,6 +18,35 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_marshals_budget_keeps_override_caps_and_two_designations(self):
+        action = getattr(self, 'hr1968_transport_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected Marshals mechanism', 1)[1]
+        self.assertIn('replaces the account level with $2,236,000,000 rather than adding', text)
+        self.assertIn('total is not a separately allocated Immigration or JPATS transportation budget', text)
+        self.assertIn('$250 million emergency designation is within its printed total', text)
+        self.assertIn('both a congressional account-specific emergency designation and a subsequent presidential designation', text)
+        self.assertIn('not more than $20 million within its funds', text)
+        self.assertIn('a cap, not a minimum, an additional appropriation', text)
+        self.assertIn('allowable costs or other conditions specified in the contract for per-diem rates', text)
+        self.assertIn('not a universal actual-cost-only rule', text)
+
+    def test_hr1968_transport_keeps_current_fund_lease_and_conviction_security_predicates(self):
+        action = getattr(self, 'hr1968_transport_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected Marshals mechanism', 1)[1]
+        self.assertIn('printed illegal/criminal-alien categories in Marshals custody', text)
+        self.assertIn('reimbursement or advance-credit rates recovering operating expense including leave and depreciation', text)
+        self.assertIn('credit of aircraft-disposal proceeds', text)
+        self.assertIn('operating-equipment leases not exceeding ten years', text)
+        self.assertIn('older five-year predecessor is not substituted', text)
+        self.assertIn('not a universal duration limit for the separate reasonable-duration detention-contract authority', text)
+        self.assertIn('prisoner pursuant to a State/Federal conviction and classified maximum or high security', text)
+        self.assertIn('appropriately secure BOP-certified prison or other facility', text)
+        self.assertIn('not every civil immigration detainee, all DHS transport', text)
+
     def test_hr1968_scaap_keeps_separate_amount_cost_cap_and_conviction_plus_status(self):
         action = getattr(self, 'hr1968_scaap_action', None)
         if action is None:

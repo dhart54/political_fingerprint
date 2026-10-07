@@ -6154,3 +6154,91 @@ ordinary screenings and final source-bound package coverage comparison. The same
 successor owner continues without a current deadline in .w/ib, preserving original
 shutdown/terminal evidence and unrelated work. Readiness/publication false; no merge,
 deploy, production write or editorial acceptance/promotion/publication authorized.
+
+
+### Successor checkpoint 101: qualified Marshals account and JPATS transportation
+
+Exact EH 1302(2) replaces the Federal Prisoner Detention account level with
+$2,236,000,000; it is not added to the original $2.1 billion or assigned wholly to
+Immigration/JPATS transport. The original $250 million emergency designation is
+within the printed account, not an add-on. Complete 901(b)(2)/(A) retains enacted
+discretionary-account and congressional plus subsequent presidential designation
+conditions; no actual designation, budget-cap calculation or year adjudication.
+The account's not-more-than-$20-million State/local assistance treatment is a cap
+within funds, not a minimum, separate appropriation or observed award.
+
+Complete material 4013(a)-(c) preserves necessary support, qualified contracts/bed
+space, average per-inmate construction cost, Federal availability and per-diem
+allowable costs **or other contract conditions**. That alternative prevents a
+universal cost-only detention-contract claim. Private-entity standards/need/law/
+plans/other rules and public-comment opportunity remain; no actual contract/facility
+approval or modern legal dispute is adjudicated. The permanent reasonable-basis/
+duration note stays distinct. Official OLC December 31, 2002 headnote and complete
+II.B.3 are bound as attributed executive qualification context, not a court ruling,
+blanket procurement/safety waiver or new methodology. The opinion's old (a)(4)(C)
+reference is traced to current (b)(3) by the complete original redesignation note.
+
+Current JPATS fund note retains Marshals custody/printed prisoner and alien
+categories, necessary expenses, reimbursement/advance credit recovering expense
+including leave/depreciation, aircraft-disposal credits, no-year availability and
+ten-year operating-equipment lease limit. The older five-year predecessor is separate;
+equipment leases are not the universal duration limit for reasonable-duration housing
+contracts. No unprinted JPATS appropriation, all-DHS/civil-detainee cohort, removal
+power, flight/aircraft acquisition or actual payment. CJS 206 requires both conviction
+and maximum/high security and an appropriately secure BOP-certified destination for
+the stated BOP/Marshals funds; it is not every civil detainee or all DHS transport.
+Prior transfer/reprogramming/continuance/prior-expenditure conditions stay qualified.
+
+Four selected sources/eight bindings/nine original coordinates and three strict
+official acquisitions added, reusing the full signed-law capture. Raw originals,
+full extraction hashes, selected/full governed seals, exact witnesses and original
+redesignation map reproduce. PDF extraction retains original cross-page footnote and
+footer glyphs without repair. A guessed wrong chapter path was rejected before
+capture; the resolved chapter 301 source is used. A private helper's source-identity
+branch assumption was corrected before candidate writes. New metadata explicitly
+includes the already-bound redesignation note and dependent seals reproduce; no
+meaning/source passage changed. No unavailable-evidence disposition or whole-act,
+whole-Code, full-opinion or executive-order application claim.
+
+131 focused candidate/IR tests pass in 12.407 seconds; IR reference validator and
+seven semantic checks pass. Seven files match separate raw-byte replay. Two new
+guards/eight budget/cap/designation/cost/lease/custody/security mutations fail by
+assertion with zero errors. Both member detail propagation, unchanged compact/
+recorded choices, all seals/prior-state and final diff inspected. Core
+6b4046b79b70ca93f133f5557f166b5443e4053a33fee4c9aa7b81ae2afd4b31; compiled
+f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Owner tests/replay establish mechanical integrity, not semantic truth or acceptance.
+
+Accounting: 676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded,
+two expressive, 216 ordinary unfinished; three partial packages and 66 questions
+unchanged. 37 episodes, 80 member observations, 72 findings; 1,365 sources, 949
+interpreted bindings, 350 captures, 244 extent objects and 407 coordinates. All prior
+1,361 sources, 39 other meanings, questions, counting/choices/compact/graph and frozen
+receipts preserved. Unique-action counts 84 No Defect/three Minor/eleven Major/one
+Critical and historical distinct findings/precision reports remain unchanged.
+
+Final independent 99-100 source/propagation and mechanics are clean within bounded
+scope: exact H.R. 1156 exclusion, five extents/raw originals and no new proposition;
+qualified SCAAP/override/full authority/two-percent controls, six bindings/three
+extents, full both-member/core/compiler/packet and all seals verify. Prior artifacts/
+questions/compacts/protected paths and test methods preserved; removal of new SCAAP
+source reconstructs prior Git blob. Two guards/seventeen removal mutations pass
+expectations. No independent full generator/test suite or individual application
+judgment; new 101 is pending and full record remains unaccepted. Original 99/100
+receipts remain historical, with bounded closure recorded in a new sealed receipt.
+
+Owner-read exact 99 run 37683116128 and 100 run 37684309888 are each terminal nine
+green, with five pinned/three synthetic/one mixed checkout contexts. Synthetic SHAs
+are respectively 3b293ad07d6a06dc501aa8a7534cc7b7500b431c and
+59e2147f1f895498dafa636cd8765bd4d9b8cf35. Hosted 256/258 differ from owner 127/129
+at those heads and 131 here. Separate CI receipts preserve raw-log hashes/context.
+Audit's stale last-completed-CI field now points to exact 100's sealed receipt;
+its old 84 object is retained under an explicitly historical field. No all-nine-
+feature-only claim or production authority. New 101 needs its own pushed-head run.
+
+Next: trafficking victim material authorities, State/migration/refugee assistance,
+supplementary acts, other DHS/exact counterparts, ordinary screenings and final
+source-bound package comparison. Ownership continues in existing .w/ib without a
+current deadline; original shutdown/terminal evidence and unrelated work preserved.
+Questions 63/66 remain separate, HRA provisional. Readiness/publication false, final
+verdict null; no merge/deploy/production or editorial acceptance/promotion/publication.
