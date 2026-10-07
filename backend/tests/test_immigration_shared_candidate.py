@@ -90,6 +90,64 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                         self.assertNotIn('32(d)', own)
                         self.assertIn("taxpayer's social security number on the return", own)
 
+    def test_account_and_pilot_keep_distinct_citizenship_and_identification_rules(self):
+        for aid, label, account_section, pilot_section in [
+                ('house:119:1:145', 'House', '110115', '110116'),
+                ('house:119:1:190', 'Senate', '70204', '70204')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' account and separate pilot'))
+            source = next(c['passage'] for c in action['claim_source_map']
+                          if c['passage'].startswith('SEC. ' + pilot_section + '.'))
+            pilot_source = source[source.index('``SEC. 6434.') : source.index('``SEC. 6659.')]
+            citizenship = 'who is a United States citizen at birth' if label == 'House' else 'who is a United States citizen'
+            self.assertIn(citizenship, pilot_source)
+            if label == 'Senate':
+                self.assertNotIn('citizen at birth', pilot_source)
+                self.assertNotIn('spouse', pilot_source)
+                self.assertIn('before the date of the election made under section 6434', pilot_source)
+            for text in [action['meaning'], qualification]:
+                with self.subTest(action=aid):
+                    child_label = 'pilot birth window and citizenship at birth:' if label == 'House' else 'pilot birth window, no prior election and citizenship:'
+                    child = text[text.index(label + ' ' + pilot_section + ' ' + child_label):]
+                    child = child[:child.index(label + ' ' + pilot_section + ' ', 1)]
+                    self.assertIn(citizenship, child)
+                    identification_label = 'pilot return identification:' if label == 'House' else 'pilot child identification and election-date definition:'
+                    identification = text[text.index(label + ' ' + pilot_section + ' ' + identification_label):]
+                    identification = identification[:identification.index(label + ' ' + pilot_section + ' ', 1)]
+                    account = text[text.index(label + ' ' + account_section + ' account establishment and instrument:'):]
+                    account = account[:account.index(label + ' ' + account_section + ' ', 1)]
+                    self.assertNotIn('citizen', account)
+                    if label == 'House':
+                        self.assertIn('if such individual is married', identification)
+                        self.assertIn("social security number of such individual's spouse", identification)
+                        self.assertNotIn('24(h)(7)', account)
+                        self.assertIn('has not attained age 8 on the date of the establishment', account)
+                    else:
+                        self.assertNotIn('at birth', child)
+                        self.assertNotIn('spouse', identification)
+                        self.assertIn('includes with the election', identification)
+                        self.assertIn('before the date of the election made under section 6434', identification)
+
+    def test_account_pilot_preserve_own_election_and_applicability_dates(self):
+        for aid, label in [('house:119:1:145', 'House'), ('house:119:1:190', 'Senate')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' account and separate pilot'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index('Selected exact ' + label + ' account and separate pilot'):]
+                with self.subTest(action=aid):
+                    if label == 'House':
+                        self.assertIn('before January 1, 2026', own)
+                        self.assertIn('House 110116 tax-year applicability: The amendments made by this section shall apply to taxable years beginning after December 31, 2024.', own)
+                    else:
+                        self.assertIn('12 months after the date of the enactment', own)
+                        self.assertIn('Senate 70204 tax-year applicability: The amendments made by this section shall apply to taxable years beginning after December 31, 2025.', own)
+                        self.assertIn('before the close of the calendar year in which the election', own)
+                        self.assertIn('issued before the date on which an election', own)
+                        self.assertIn('no prior election has been made under this section by such individual or any other individual', own)
+                        self.assertIn('shall not begin before January 1, 2028', own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],

@@ -3783,3 +3783,98 @@ No current shutdown, production/merge/deployment/editorial acceptance authority.
 
 
 Checkpoint 65 review follow-up received before commit: independent 63/64 source review found no material defect within its stated scope. All 11 binding-instance hashes, both receipt/prose hashes, 11 matrix hashes, two correction-witness hashes and House-body digest verified; exact detail appends, new qualifications and prior repairs retained. Full Massie detail bytes, raw acquisition hashes and PDF pixels remain independently unverified. Questions 52/53 remain separate; no actual award, implementation or package acceptance. Earlier pending-at-message-time statement above remains historical, with this follow-up recorded in the bounded independent receipt. New checkpoint 65 independent review remains pending.
+
+
+### Successor checkpoint 66: account creation and separate contribution pilot
+
+Selected exact House 110115 account-creation and separate 110116 pilot clauses
+compared with full Senate 70204, including inserted Code 6434 and 6659. The earlier
+private truncated outer-section preview was not candidate evidence. Full bindings
+retain the outer sections and other financial context; selected eligibility,
+identification, payment, penalty, math-error and applicability clauses have their
+own complete source-to-prose matrix. Account creation and pilot eligibility stay
+separate, with no pilot citizenship test imported to every account, no United States
+birthplace inference and no component position inferred from a package choice.
+
+House account instrument retains establishing-individual and beneficiary SSNs
+without an explicit 24(h)(7) definition in that clause, beneficiary under age 8 at
+establishment, non-rollover January 1, 2026/cash/under-18/limit conditions and own
+birthday/under-25 distribution boundaries. Its separate pilot retains one-time
+$1,000 credit payable only to the eligible individual's account, exact first-return
+no-account determination, Secretary establishment, notice and opt-out; qualifying
+child, birth after December 31, 2024 and before January 1, 2029 and citizen at birth.
+Taxpayer, conditional spouse and eligible-individual defined SSNs on the return,
+fixed-dollar negligent/fraudulent excessive-claim alternatives and math-error (AA)
+addition are retained. No similar-32(d) clause borrowed from loan exclusion. Both
+House sections' tax-year applicability after December 31, 2024 is distinct from
+account contribution start.
+
+Senate account is an IRA, not Roth, subject to new 530A and regulations/guidance.
+Its own creation alternatives, year-end age and before-election defined-number
+conditions, reciprocal Secretary/other-person election paths and prior-election
+conditions stay intact. Rollover is a full-balance transfer; United States account
+organization is not citizenship or birthplace. Contribution start is 12 months
+after enactment, distribution calendar-year boundary and subsection (d) exceptions
+are distinct from House age-birthday/half-value rules. Senate pilot retains child
+payment/refund only to the account, qualifying-child and same birth window, no
+prior election by this or any other person and United States citizenship without
+House at-birth wording. Child SSN accompanies election with an express before-
+election definition substitution; no House taxpayer/spouse SSNs or return-only
+requirement. Offset, interest-not-before-January-1-2028 and mirror-code election
+rules retained. Its own ineligible-child election penalties, math-error (AA), tax
+years beginning after December 31, 2025 and Treasury $410 million administration
+appropriation through September 30, 2034 remain separate clauses/purposes.
+
+Original full 152 definitions/exceptions/qualifying-child conditions/tie-breakers,
+divorced-parent alternatives/adoption/foster-child and limited missing-child rules
+remain bound, without automatic actual child/parent eligibility. Own same-bill
+24(h)(7), SSA issuance and deadline lineage retained, number validity distinct from
+citizenship and other eligibility. Two new governed extents: full 408(a) IRA
+instrument definition/requirements and 6662(c) negligence/disregard definitions.
+No 6662(a) 20-percent penalty imported; no actual fault/assessment/payment. Other
+investment/distribution/employer-contribution and financial mechanics remain full
+source context rather than fully interpreted component claims.
+
+Question 56 reserves House printed account references (e)(2), 503A(b) and 530A(h)
+without silent correction or borrowing Senate text. Question 57 reserves application
+of Senate account's before-election condition together with its unmodified
+24(h)(7) return-due-date definition, distinct from express pilot substitution.
+Recommendations/evidence/alternatives/safe parallel work recorded. Existing 55
+questions preserved; no new product/methodology or individual application decided.
+
+Two original HTML captures and two canonical extents, eight new/ten reused binding
+hashes, 29 complete blocks across eight dimensions. House floor/EH two complete
+sections match after declared TRUMP/Trump capitalization, Record page-label and
+heading-spacing normalization only; exact bytes separately hashed and preserved.
+Full H.Res.492/499 correction witness hashes retained, no direct selected-section
+amendment, no whole-EH vote-time equivalence. Exact prior checkpoint plus declared
+two-action additions reconstructs current authoring. Other 37 actions, prior clauses/
+qualifications/choices/compacts, 1,307 sources/293 capture rows/all frozen receipts
+and prior 55 questions unchanged. Two review-source/proposal-reference/scope updates,
+no disposition/eligibility/counting change. Candidate/publication isolation remains.
+
+Validation: 239 tests in 42.955 seconds, including 50 candidate tests; seven semantic
+checks and seven raw generated-byte replay files pass. Source/capture/receipt/audit
+hash integrity and 193 bounded text extents verify. Both members retain exact new
+detail. Controlled House-at-birth removal, Senate-spouse import and Senate-start-date
+replacement each rejected with one assertion subtest failure, zero errors. Tests
+establish contract integrity, not semantic truth. Private verifier corrected its
+assumption that the House action's historical primary EH field equals the governing
+floor source, and its JSON-escaped string search; exact source and loaded detail
+checks pass, no candidate meaning was changed for either verification correction.
+Final diff reviewed. Core 8f3f5d3fd16765c0905bca6104993463f868d5ba373b37f17b5c102d1eb83e50; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Exact checkpoint 65 head 3f35e63edda0ba483e1e49ca042ab5dad3078e0a CI run 37553456390
+completed all nine green, owner-native verified. Current exact CI follows push.
+Independent new 65/66 review remains pending; prior 63/64 bounded no-material-defect
+verdict and explicit full-Massie/raw-acquisition/PDF-pixel limits remain recorded.
+Final audit verdict null; no award/application/package acceptance or publication.
+
+Accounting: 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings. 1,309 sources, 803 bindings,
+297 captures, 193 text extents. Remaining 221 screenings, two partial H.R.1 reviews,
+57 application questions and separate original 1994 follow-up. Continue remaining
+exact H.R.1 component inventory/material authorities, then continuing/omnibus/NDAA
+and ordinary screenings. Identifier occurrence alone is not coverage. Historical
+markers retained, no current shutdown or production/merge/deployment/editorial
+acceptance authority.
