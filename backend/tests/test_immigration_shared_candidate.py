@@ -18,6 +18,37 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_sponsor_protection_keeps_funding_information_and_distinct_exceptions(self):
+        action = getattr(self, 'hr1968_sponsor_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained sponsor-information protection', 1)[1]
+        self.assertIn('funds provided by this Act or any other Act', text)
+        self.assertIn('specified Treasury fee accounts', text)
+        self.assertIn('sponsor, potential sponsor or household member of either', text)
+        self.assertIn('based on information shared by the Secretary of Health and Human Services', text)
+        self.assertIn('not limited to one ICE annual account', text)
+        self.assertIn('felony conviction or pending felony charge', text)
+        self.assertIn('pending charge is not recast as a conviction', text)
+        self.assertIn('minor unrelated to the sponsor/potential sponsor/household member', text)
+        self.assertIn('minor is not paid a legal wage or cannot attend school due to the employment', text)
+        self.assertIn('second and third routes do not gain an invented felony-conviction prerequisite', text)
+        self.assertIn('does not order detention', text)
+
+    def test_hr1968_sponsor_child_and_criminal_definitions_do_not_become_universal_categories(self):
+        action = getattr(self, 'hr1968_sponsor_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained sponsor-information protection', 1)[1]
+        self.assertIn('requires no lawful immigration status in the United States and age under eighteen', text)
+        self.assertIn('either no parent/legal guardian in the United States or no parent/legal guardian there available to provide care and physical custody', text)
+        self.assertIn('not a definition of every foreign minor, every separated child or only orphans', text)
+        self.assertIn('do not convert every felony into an aggravated felony', text)
+        self.assertIn('16(b) residual clause in the INA aggravated-felony context', text)
+        self.assertIn('printed residual clause is not treated as an automatically valid classification rule', text)
+        self.assertIn('does not invalidate the entire aggravated-felony list', text)
+        self.assertIn('No particular pending charge, conviction, background-check association or sponsor/child category is classified', text)
+
     def test_house_foreign_tax_applicable_date_starts_on_first_day_with_three_latest_triggers(self):
         action = getattr(self, 'foreign_tax_date_action', None)
         if action is None:

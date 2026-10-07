@@ -5731,3 +5731,73 @@ literal-component/HRA/application review. Current candidate full readiness/publi
 remain false and final audit verdict null. Active successor ownership continues without
 a new deadline, preserving shutdown 75 history. No production, merge, deployment or
 editorial acceptance/promotion/publication is authorized.
+
+
+### Successor checkpoint 95: qualified retained sponsor/family protection
+
+Seven complete witnesses bind current 2024 section 216, retained 2020 section 216(a)-(b),
+complete original child definition and material criminal/identified judicial context.
+The sponsor protection covers stated Act/other-Act/fee funds used by the DHS Secretary
+for listed detention/removal/referral/initiation actions based on HHS information about
+sponsors, potential sponsors and household members. It is not a one-account restriction,
+every-information-source enforcement ban or blanket criminal immunity. All three
+background-check exceptions retain scope: felony conviction or pending felony charge
+with specified relationship; unrelated employed minor with legal-wage or school-attendance
+conditions; prostitution organization/implementation association. A pending charge is
+not a conviction, business/prostitution routes do not gain invented conviction prerequisites,
+and an exception does not order detention or establish other removal grounds.
+
+The child definition retains no lawful status and age under eighteen plus either no
+United States parent/guardian or none there available for care and physical custody.
+It is not every foreign/separated minor or only orphans. Complete original aggravated-
+felony/conviction/imprisonment/crime-of-violence definitions and governing Dimaya context
+remain. The printed 16(b) residual is not automatically treated as valid; the INA
+aggravated-felony constraint does not invalidate all other predicates or classify each
+pending charge, association or child/sponsor. No actual status, placement, information
+sharing, enforcement or individual case decision. Existing novel-placement questions
+for H.R. 4371 remain separate; no new hypothetical application question is created.
+
+Seven bindings are added, with all source/capture objects unchanged. Accounting stays
+676 inventory, 459 reviewed, 40 interpreted, 211 procedural, 206 excluded, two expressive,
+217 ordinary unfinished and three partial packages, with 65 questions. There are 1,351
+sources, 923 interpreted bindings, 342 captures, 231 extent objects and 376 coordinates;
+37 episodes and 72 findings. All 39 other meanings, prior H.R. 1 tax/electricity candidates
+and first-day correction, membership records except added references for this action,
+source pools, questions, whole-package choices and selected compact copy are preserved.
+The package remains partial; remaining DHS material/program authorities and DOJ/State/
+migration/supplementary-act/counterpart review continue. Individual application is not
+silently accepted or labeled unavailable evidence.
+
+After interruption, local HEAD, remote branch and draft PR198 were verified at
+7639f0a230967030da108630d1c5204b37e61c52; main stays 7a8c6ee without changing development
+base. No task-owned validation process was active. Old test session 81554 was unavailable,
+so its 121-test result was not claimed recovered. A fresh bounded rerun passes 121 tests
+in 12.731 seconds, the Semantic IR reference validator and seven semantic checks.
+Seven canonical files match raw-byte replay. Eight scope/charge/exception/status/parental/
+judicial mutations each yield one assertion failure and zero errors. All seven full
+witnesses, source seals, earlier artifacts and current audit action hashes verify; both
+members' detail and unchanged compact copy were inspected. Final diff reviewed. Core
+44fda0f3a28d56954784637171e3604e1ee710a3ed86db99860f88de1b3eb5c8;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Source comparison and tests do not establish independent acceptance or semantic truth.
+
+The saved supervisory source verdict for exact checkpoint 92 verifies five bindings,
+receipt, three fresh original raw hashes and complete selected passages, with no other
+material semantic defect beyond the P3 date wording. It does not close the new date
+correction recheck. Pending 91 mechanics are being re-established after the old review
+session ended; electricity/correction and 91-94 preservation/CI review remain underway.
+No incomplete session or pending review is acceptance.
+
+Owner exact combined 94 CI, run 37667270355, is terminal nine green with five feature-
+pinned, three synthetic (71f8172a4e5784e6fde7752631b6bb19086e7037) and one mixed repair
+checkout verified in raw logs. The durable sealed receipt preserves log hashes, hosted
+test scope and provenance. Hosted candidate block differs from owner 119 at 94 and 121
+here; no claim all nine test only feature bytes. Checkpoint 95 needs its own push/run.
+
+Next executable work: remaining DHS material/program riders, followed by remaining
+DOJ/State/migration/supplementary-package and counterpart work and ordinary screening
+alongside independent literal/HRA/application review. Active ownership continues under
+the standing successor authorization. No new deadline or pause request was supplied;
+routine tool interruption is not a human gate. Shutdown 75 evidence and unrelated work
+remain preserved. Readiness/publication are false and final audit verdict null; no
+production, merge, deployment or editorial acceptance/promotion/publication authorized.
