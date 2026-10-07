@@ -18,6 +18,43 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_regional_centers_keep_prior_attributes_proposal_and_selection(self):
+        action = getattr(self, 'hr1968_regional_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The separately incorporated regional-center consultation and evaluation context', 1)[1]
+        for qualification in [
+            'printed in-region and 20304-recipient qualification',
+            'one year after November 4, 1992',
+            'conditions the Administrator may require: one or more of five existing attributes',
+            'literal proven-record reference to kinds of activities described in subsection (c)',
+            'demonstrate ability to operate a center or provide training so others can do so',
+            'Selection is competitive',
+            'to the greatest extent possible and subject to available appropriations',
+            'amounts made available in separate appropriation Acts',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertIn('govinfo:34usc20303-2024-complete-regional-center-context', {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_regional_centers_keep_reporting_shared_authorization_and_repeal(self):
+        action = getattr(self, 'hr1968_regional_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The separately incorporated regional-center consultation and evaluation context', 1)[1]
+        for qualification in [
+            'compliance with the original proposal and modifications',
+            'report annually on progress and needed/ongoing changes',
+            'Upon funding discontinuation the Administrator must solicit new proposals under (c)',
+            '2019 deletion of the former regional discontinuation-notice/reconsideration clause',
+            'authorizes $40 million for each fiscal year 2022-2028',
+            'shared authorization context for all three named authorities',
+            'not $40 million newly appropriated by H.R. 1968',
+            'not imported as the current amount or automatic program expiration',
+            'All prior 69 application questions',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertIn('govinfo:34usc20306-2024-shared-center-authorization', {b['source_id'] for b in action['claim_source_map']})
+
     def test_hr1968_centers_keep_program_criteria_and_privacy_qualifications(self):
         action = getattr(self, 'hr1968_center_action', None)
         if action is None:

@@ -7010,3 +7010,61 @@ nine raw-log hashes and actual checkout/test contexts are sealed in
 docs/review_packets/immigration_delivery_checkpoint109_ci.json.
 Hosted aggregate differs from owner 148 then/151 here. Current CI field points to 109,
 preserving earlier receipts as historical; new 110 requires its own pushed-head run.
+
+
+### Successor checkpoint 111: regional consultation and shared authorization
+
+Complete materially referenced 20303 regional program and 20306 current authorization
+are reused from the registered center original at exact new extents. In-region/local-
+recipient training qualification, full program/recipient duties, conditional one-or-more
+prior attributes, literal subsection (c) record reference and complete proposals/plans
+remain. The operate-or-train alternative is distinct from both being required; selection
+is competitive, with at least one applicant per census region only to the greatest extent
+possible and subject to available appropriations. The 1992-relative solicitation is dated.
+
+Funding retains amounts made available in separate appropriation Acts. Recipient regular
+consultation, original/modified-proposal compliance monitoring, annual reports and new
+proposals upon discontinuation remain authority duties, without observed implementation.
+Historical deleted regional notice/reconsideration/advisory provisions are not restored.
+The shared $40 million fiscal-year 2022-2028 authorization covers three named regional/
+local/specialized-training sections. It is not new H.R. 1968 money, three separate amounts,
+local-only funding, a grant minimum or an observed award. Prior authorization repeal is
+explicit; specialized-training naming does not import sibling criteria into other programs.
+
+Two selected sources/bindings/member references and original coordinates; no new capture.
+Registered original/raw/full-text hashes and governed seals reproduce both complete
+selected sections. All prior 1,398 sources, 39 other meanings, 69 questions, older receipts,
+manifest/captures and 125 test methods unchanged. Both-member detail carries the shared
+addition; compact/choices, counting/eligibility, compiled graph and publication isolation
+remain unchanged. Literal-reference applications Q68/Q69 remain separate and unresolved.
+
+153 focused tests pass in 13.067 seconds, reference validator and seven semantic checks
+pass; seven generated files match separate raw-byte replay. Two guards and seventeen
+controlled qualifier mutations produce expected single assertion failures with zero errors.
+Full primary/detail/compact/protected-object comparison and final diff inspected. Tests
+and replay establish mechanical confidence, not semantic truth or independent acceptance.
+Core 603ff74d47f084eba924fba7bf2df9cdd2b4ece3cc0cda5e97b827fca8ac694e;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. 1,400 sources, 998 bindings, 372 captures, 279 extent objects, 455 coordinates.
+
+Accounting remains 676 inventory, 460 reviewed, 40 interpreted, 211 procedural,
+207 excluded, two expressive; 216 ordinary unfinished, three partial packages and
+69 application questions. 37 episodes, 80 observations, 72 findings; unique-action
+84 No Defect/three Minor/eleven Major/one Critical and historical findings unchanged.
+Readiness/publication false, final verdict null. Bounded independent 109/110/111 reviews
+remain pending; prior complete bounded 108 remains separate from whole-package acceptance.
+
+Checkpoint 110 pushed at 8d586adab73669a33f9535948818f6c08319f3f8; fresh local/remote/
+draft identities matched and tracked work was clean before this increment. Existing .w/ib
+ownership continues under explicit 22:39 restart resume with original pause/deadline
+evidence preserved and no new current deadline. No merge, deploy, production, editorial
+approval, promotion or publication. Continue full fund-health/medical conditions and exact
+2101(d)-(e), then State/migration/refugee, supplementary/other DHS/counterparts, 216 ordinary
+screenings and final package comparison. Draft PR198 is the authorized delivery boundary.
+
+Owner-read exact 110 run 37703778393 is terminal nine green: five feature-pinned,
+three synthetic and one mixed. Synthetic 531df6f7806f3e399a9af747903869beea2d8d88;
+nine raw-log hashes and actual checkout/test contexts are sealed in
+docs/review_packets/immigration_delivery_checkpoint110_ci.json.
+Hosted aggregate differs from owner 151 then/153 here. Current CI field points to 110,
+preserving earlier receipts as historical; new 111 requires its own pushed-head run.
