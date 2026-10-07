@@ -153,6 +153,36 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             for purpose in ['apprehension', 'detention', 'prosecution']:
                 self.assertIn(purpose, sentence)
 
+    def test_dhs_assignment_and_return_keep_own_authority_predicates(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        assignment = next(c['passage'] for c in action['claim_source_map']
+                          if c['source_id'] == 'govinfo:8usc1103-2024-s2-enforcement')
+        assignment = assignment[assignment.index('(10) In the event'):assignment.index('(11) The Attorney')]
+        return_source = next(c['passage'] for c in action['claim_source_map']
+                             if c['source_id'] == 'govinfo:8usc1225-2024-laken-context')
+        return_source = return_source[return_source.index('(2) Inspection of other aliens'):]
+        offshore = 'aliens arriving off the coast of the United States, or near a land border'
+        entitlement = 'not clearly and beyond a doubt entitled to be admitted'
+        self.assertIn(offshore, assignment)
+        self.assertIn('conferred or imposed by this chapter or regulations issued thereunder', assignment)
+        self.assertIn(entitlement, return_source)
+        qualification = next(q for q in action['limitations'] if q.startswith('Remaining Senate 100051 purposes'))
+        for surface, text in [('meaning', action['meaning']), ('qualification', qualification)]:
+            sentences = re.split(r'(?<=[.!?])\s+', text)
+            with self.subTest(surface=surface, authority='103(a)(10)'):
+                own = next((s for s in sentences if s.startswith('Its (10) State/local')
+                            or s.startswith('In captured 103(a)(10)')), '')
+                for predicate in [offshore, 'Attorney General', 'urgent circumstances requiring an immediate Federal response',
+                                  'conferred or imposed by this chapter or regulations issued thereunder',
+                                  'with the consent of the head of the department, agency, or establishment']:
+                    self.assertIn(predicate, own)
+            with self.subTest(surface=surface, authority='235(b)(2)(C)'):
+                own = next((s for s in sentences if s.startswith('The captured authority concerns an alien described in (A)')
+                            or s.startswith('The captured 235(b)(2)(C) return authority')), '')
+                for predicate in [entitlement, 'applicant for admission', 'examining immigration officer',
+                                  'arriving on land', 'from a foreign territory contiguous to the United States']:
+                    self.assertIn(predicate, own)
+
     def test_senate_child_ssn_is_required_in_both_claimant_alternatives(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']

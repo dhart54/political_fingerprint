@@ -3444,3 +3444,84 @@ then 90005 State-border/Stonegarden and continuing/omnibus/NDAA/screens.
 Existing owner, historical deadline/terminal evidence and unrelated work
 preserved; no current shutdown or production/config/security/schema, merge,
 deployment, editorial acceptance, promotion or publication authorization.
+
+
+### Successor checkpoint 61: remaining exact DHS funding purposes
+
+Senate 100051(1)-(4), (6), (7) and (12) retain the additional fiscal year 2025
+Secretary of Homeland Security $2,055,000,000 account through September 30,
+2029. Complete own purposes describe CBP agents/support hiring and training,
+departure/removal transport, DHS employee/State officer assignments pursuant to
+103(a)/287(g), entry/remaining screening with own 212/237 references, pursuant-
+authority contiguous return, all five State/local participation purposes and
+immigration IT fee/revenue collection. Own source lists/location/citations remain;
+no reimbursement-fund crime/status/domestic-transport condition or House/ICE
+amount imported. No particular expenditure required to cover every listed category.
+
+Complete 103(a), previously bound 287(g), 212(a) plus remaining operative 212,
+237, 235(b)(2) and 240 retain their own agency/qualification/consent/training/
+supervision, grounds/waiver/exception/notice, proceedings/burden/representation/
+appeal/motion/deadline/stay boundaries. January Public Law 119-1 changes 212(d)(5)
+Attorney General to Secretary of Homeland Security and adds distinct State
+enforcement; original 2024 words and exact amending law remain separate. No
+actual assignment, new general State power, individual crime/admissibility/
+deportability/screening/return, universal hearing rule or guaranteed relief/counsel.
+
+Owner source-first comparison caught two uncommitted shorthand defects after
+initial passing 232 tests: near-the-coast summary omitted exact offshore-entry
+and determining-actor scope; return parent reference omitted explicit applicant/
+officer-entitlement conditions. Four declared replacements repair both meaning
+and qualification before first commit. Exact old raw authoring/hash preserved
+under .tmp/checkpoint61_precommit_authority_scope. Full 103(a)(10) event-specific
+AG authorization now retains actual/imminent influx of aliens arriving off the
+US coast or near a land border, urgent immediate-Federal-response condition,
+serving department/agency/establishment head consent, discretion and exact
+INA/regulations power scope. Contiguous return explicitly retains applicant-
+for-admission and officer not-clearly-and-beyond-a-doubt-entitled determination,
+on-land arrival, territory, AG discretion, pending 240 proceeding and parent
+exceptions. This is a same-owner precommit correction, no independent severity.
+
+New source-backed regression rejects actual old candidate with four assertion
+subtest failures and no errors. Current candidate reconstructs exactly from
+preserved old bytes plus four declared refinements, and from checkpoint 60 plus
+declared additions. Three new extents, four new and five reused bindings, zero
+new original-source acquisition. Earlier sources/capture rows/38 other actions/
+House/earlier Senate clauses/compacts/choices/frozen receipts unchanged. One
+source-reference/scope update without disposition/eligibility/counting change.
+All twelve 100051 purposes now have selected candidate descriptions; this does
+not close the whole H.R.1 Immigration component or resolve application questions.
+
+Ten clause matrices across eight dimensions, all nine binding/witness hashes,
+four replacement pairs, raw snapshot, qualifications/audit/receipt seals, 183
+bounded extents, 990 unchanged Health sources, both member propagation and
+queue/accounting/candidate isolation verify. Final 233-test six-module aggregate
+passes in 40.999 seconds, including 44 candidate tests; seven semantic checks
+and seven-file raw byte replay pass. Final diff reviewed. Initial tests did not
+prove source completeness; final tests and owner checks are not semantic truth
+or acceptance. Core 69f754f82f521eb9c06c16ff1ecee9c3c1f036c82765a31a3a2eff459eb60e08; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+New independent receipt records bounded no-material-defect verdicts for 57,
+59 and 60. Binding hashes verified: 11 of 16 for 57, three of five for child 59,
+five of eight for 60; remaining five/two/three unrecomputed, identifiers not
+invented. Full EAS/severe-trafficking child binding hashes remain unverified.
+Both transport/child receipt seals, all 17 matrix passage hashes, all 24 transport
+replacement hashes and 60 receipt/prose/seven matrix hashes verified. Transport
+Major independently resolved at exact 58, retained at 59; all twelve replacement
+pairs reproduce packet bytes and both projection digests update. Full Massie
+detail still independently unverified. Questions 43/47/48/49/50/51 remain reserved.
+Mechanical review confirms append-only/protected/compiled/mapping/audit/accounting
+scope and exact 58/59/60 CI all nine green, no hosted 57 run claim. Owner aggregate
+and replay not independently rerun. No package/domain acceptance; new 61 review
+pending. Historical sealed receipts preserved; final audit verdict remains null.
+
+Latest exact 60 CI 37548549982 at 02fcf071d0beab7c6b05241d469068ac6806fae3
+completed successfully, owner-native all nine verified as well as independent
+mechanical check. Current exact CI follows push. Sources 1,298, bindings 770,
+captures 276, extents 183; 51 application questions unchanged. Accounting stays
+676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded, two
+expressive, 36 episodes, 78 observations, 70 findings (Foushee 36/Massie 34).
+Remaining 221 screenings and two partial H.R.1 reviews. Next: 90005 State-border/
+Stonegarden and remaining package components, then continuing/omnibus/NDAA/screens.
+Original 1994 follow-up separate; existing owner/historical markers/unrelated
+work preserved. No current shutdown, production/config/security/schema, merge,
+deployment or editorial acceptance/promotion/publication authority.
