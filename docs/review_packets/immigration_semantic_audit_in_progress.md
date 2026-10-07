@@ -4307,3 +4307,83 @@ foreign-tax remedy and commercial customs mechanisms. Do not assume they require
 Immigration meanings. Verify substantive counterparts/absence and full package scope;
 continue other packages/screens with reserved application judgments separately routed.
 No merge/deploy/production/editorial acceptance/promotion/publication. Markers untouched.
+
+
+### Successor checkpoint 72: scholarship donor status and distinct student scope
+
+Exact House 110109 is the substantive counterpart of Senate 70411. Senate new 25F(a)
+prints citizen or resident of the United States (within the meaning of 7701(a)(9)) on
+the contributing individual taxpayer claiming a tax credit. Under the established
+status-based public-tax-benefit candidate boundary, that supported donor mechanism
+is distinct from scholarship recipients, eligible students, organizations and income
+exclusions; broader education policy is not automatically Immigration scope. Original
+7701(a)(9) defines United States geographically as only States and District of Columbia.
+No printed reference replacement by 7701(b), universal residency/territory outcome or
+citizenship/SSN condition imposed on students. House new allowance lacks that printed
+phrase, which does not establish an exemption from otherwise applicable tax law.
+
+Both own student definitions retain household income at most 300 percent of area
+median gross income together with eligibility to enroll in a public elementary or
+secondary school; Senate specifies prior application calendar year. Actual enrollment,
+tax eligibility or scholarship receipt is not inferred. House credit limits preserve
+greater of 10-percent AGI or $5000, volume allocation and State-credit reduction; Senate
+retains $1700, its State-credit reduction, voluntary covered-State/list and cash/within-
+State contribution mechanisms. Senate full new 25F(a)-(h), organization requirements,
+income exclusion and own dates are source-mapped; original 530(b)(3) expense definitions
+preserve enrollment/attendance/family/software exclusion and State-law school context.
+No blanket student benefit or actual tax application follows.
+
+House 139J concerns dependent amounts and explicit received-after-2029 termination;
+Senate 139K concerns amounts to the individual or dependent and lacks that House
+termination. Own applicability uses taxable years ending after December 31, 2025
+(House) versus 2026 (Senate), each with its own received-after date for income clauses.
+House complete 25F(g) retains $5 billion for calendar 2026-2029 and zero thereafter,
+first-come allocation/State-share/high-use 105-percent increase/nondecrease conditions.
+Question 62 separately reserves those future-year interactions; recommendation is to
+keep all printed rules, route application review before selecting an override, and
+continue five other scope assessments/packages/screens. No permanent-credit/universal
+sunset inference or House cap/income termination copied into Senate.
+
+Two new original extent sources and three capture rows: reused complete 7701 original
+acquisition with exact 132-character (a)(9) extent; new original 530 acquisition with
+complete 1620-character (b)(3)(A)-(C) expense definitions. Original bytes/glyphs retained.
+House complete 20057-character floor section and 20042-character EH witness match
+after explicit H2305 pagination, norm-referenced line wrap and administrative-heading
+space only; complete correction-chain witnesses reused. Nine new bindings/two reused
+witnesses across two actions, 18 complete clauses across eight dimensions. Other 37
+actions/prior clauses/qualifications/choices/compacts/dispositions, 1321 prior sources/
+318 captures/frozen receipts and prior 61 questions reconstruct unchanged. Only review
+source/proposal references and partial scopes updated; eligibility/counting unchanged.
+Candidate/publication isolation, both member detail/qualification propagation and
+audit/source/capture/extent seals verified. All component/package gates remain open.
+
+Validation: 251 tests in 42.112 seconds including 62 candidate tests, seven semantic
+checks and seven raw generated-byte replay files pass. Wrong printed reference,
+dependent-only Senate income recipient and weakened House nondecrease condition
+each rejected with one assertion subtest failure and zero errors. Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8;
+compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged. Tests do not establish semantic truth.
+
+New frozen hr1_checkpoint67_68_independent_source_review.json records newly supplied
+bounded no-material-defect verdict, 36 bindings/46 clause hashes/three additions/
+18 source seals/15 primary raw hashes/13 extent reconstructions/declared comparisons,
+exact prior-authoring reconstruction and both full member files' increment propagation.
+Q58-Q60 stay reserved; no independent local tests/replay, renewed historic-member/
+package audit or application adjudication. This replaces pending review with a new
+bounded verdict, not a claim an unavailable earlier reviewer completed. Historical 71
+pending-at-message-time receipt remains intact. New 71/72 source review pending.
+
+Exact 71-associated run 37558630300 at 67c91c404bf37aff28ff79ff0c567694b2166b89 completed
+all nine green, preserving five PR-head jobs/three synthetic-merge jobs/one mixed-context
+repair job. Run association is not a claim every job tested only feature-head bytes;
+CI JSON comparisons are not raw-byte replay proof. Exact 72 run follows push.
+
+Accounting remains 676 inventory/455 reviews/39 meanings, 211 procedural/203 excluded/
+two expressive, 36 episodes/78 observations/70 findings. 1323 sources, 850 bindings,
+321 captures, 207 sources with 346 verified extent coordinates. 221 ordinary screenings,
+two incomplete H.R.1 component reviews and 62 separately routed application questions.
+Three of the frozen reconciliation's eight groups now have bounded literal increments
+(ORR, Coast Guard, scholarship donor); five leads remain explicit scope assessments:
+duplicate enrollment, HRA employee class, foreign-entity electricity, foreign-tax remedy,
+commercial-shipment customs. Verify substantive counterparts/absence and full package
+scope before any closure; continue other packages/screens alongside reserved judgments.
+No merge/deploy/production/editorial acceptance/promotion/publication. Markers untouched.

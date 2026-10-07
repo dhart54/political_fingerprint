@@ -370,6 +370,55 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 self.assertIn('insufficient qualified United States shipyards', foreign)
                 self.assertIn('prior to the issuance of such an exception', foreign)
 
+    def test_scholarship_citizen_resident_condition_stays_with_senate_donor(self):
+        for aid, label in [('house:119:1:145', 'House'), ('house:119:1:190', 'Senate')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' scholarship contributing-taxpayer'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index('Selected exact ' + label + ' scholarship contributing-taxpayer'):]
+                with self.subTest(action=aid, surface='meaning' if text == action['meaning'] else 'qualification'):
+                    if label == 'House':
+                        allowance = own[own.index('House new 25F allowance:'):own.index('House own contributing-taxpayer credit limits:')]
+                        student = own[own.index('House own eligible-student definition:'):own.index('House own complete calendar volume-cap mechanism:')]
+                        self.assertNotIn('citizen or resident', allowance)
+                    else:
+                        allowance = own[own.index('Senate own new 25F clause a:'):own.index('Senate own new 25F clause b:')]
+                        self.assertIn('individual who is a citizen or resident of the United States', allowance)
+                        self.assertIn('section 7701(a)(9)', allowance)
+                        self.assertNotIn('7701(b)', allowance)
+                        definitions = own[own.index('Senate own new 25F clause c:'):own.index('Senate own new 25F clause d:')]
+                        student = definitions[definitions.index('(2) Eligible student.--'):definitions.index('(3) Qualified contribution.--')]
+                        self.assertIn('calendar year prior to the date of the application', student)
+                    self.assertIn('300 percent of the area median gross income', student)
+                    self.assertIn('eligible to enroll in a public elementary or secondary school', student)
+                    self.assertNotIn('citizen or resident', student)
+
+    def test_scholarship_versions_keep_income_recipient_and_calendar_boundaries(self):
+        for aid, label, year in [('house:119:1:145', 'House', '2025'), ('house:119:1:190', 'Senate', '2026')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' scholarship contributing-taxpayer'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index('Selected exact ' + label + ' scholarship contributing-taxpayer'):]
+                with self.subTest(action=aid, surface='meaning' if text == action['meaning'] else 'qualification'):
+                    income = own[own.index(label + ' separate scholarship income '):own.index(label + ' own applicability dates:')]
+                    dates = own[own.index(label + ' own applicability dates:'):]
+                    self.assertIn('taxable years ending after December 31, ' + year, dates)
+                    if label == 'House':
+                        self.assertIn('provided to any dependent of such individual', income)
+                        self.assertIn('shall not apply to amounts received after December 31, 2029', income)
+                        cap = own[own.index('House own complete calendar volume-cap mechanism:'):own.index('House separate scholarship income exemption:')]
+                        self.assertIn('calendar years 2026 through 2029, and zero for calendar years thereafter', cap)
+                        self.assertIn('105 percent', cap)
+                        self.assertIn('shall not be less than the volume cap', cap)
+                        self.assertIn('separately reserved as question 62', own)
+                    else:
+                        self.assertIn('provided to such individual or any dependent of such individual', income)
+                        self.assertNotIn('2029', income)
+                        limit = own[own.index('Senate own new 25F clause b:'):own.index('Senate own new 25F clause c:')]
+                        self.assertIn('shall not exceed $1,700', limit)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
