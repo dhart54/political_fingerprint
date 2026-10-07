@@ -18,6 +18,53 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_house_foreign_tax_applicable_date_starts_on_first_day_with_three_latest_triggers(self):
+        action = getattr(self, 'foreign_tax_date_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:145')
+        self.assertIn('The applicable date is the first day of the first calendar year beginning on or after the latest of the printed enactment-related 90-day, foreign-tax-enactment-related 180-day and foreign-tax-first-application events;', action['meaning'])
+        receipt = json.loads((DATA / 'hr1_foreign_tax_date_precision_correction.json').read_text(encoding='utf-8'))
+        source = receipt['operative_witness']['passage']
+        self.assertIn('first day of the first calendar year beginning on or after the latest of', source)
+        self.assertIn('90 days after the date of enactment of this section', source)
+        self.assertIn('180 days after the date of enactment of the unfair foreign tax', source)
+        self.assertIn('the first date that an unfair foreign tax of such country begins to apply', source)
+
+    def test_electricity_personal_status_candidates_keep_exact_version_predicates(self):
+        actions = getattr(self, 'electricity_candidate_actions', None)
+        if actions is None:
+            actions = {a['action_id']: a for a in self.values[0]['actions']}
+        house = actions['house:119:1:145']['meaning'].split('Selected exact House 112008 clean-electricity', 1)[1]
+        senate = actions['house:119:1:190']['meaning'].split('Selected exact Senate 70512 clean-electricity', 1)[1]
+        self.assertIn('citizen, national or resident of a covered nation', house)
+        self.assertIn('except an individual who is a United States citizen or lawful permanent resident', house)
+        self.assertIn('House branch does not separately print a United States national exception', house)
+        self.assertIn('citizen or national of a covered nation', senate)
+        self.assertIn('except an individual who is a United States citizen, national or lawful permanent resident', senate)
+        self.assertIn("does not add the House's covered-country residence-only route", senate)
+        self.assertIn('national and citizen are not collapsed', senate)
+        for text in [house, senate]:
+            self.assertIn('defined person can feed the specified-foreign-entity', text)
+            self.assertIn('subject to', text)
+
+    def test_electricity_candidates_keep_branch_exclusions_and_own_credit_periods(self):
+        actions = getattr(self, 'electricity_candidate_actions', None)
+        if actions is None:
+            actions = {a['action_id']: a for a in self.values[0]['actions']}
+        house = actions['house:119:1:145']['meaning'].split('Selected exact House 112008 clean-electricity', 1)[1]
+        senate = actions['house:119:1:190']['meaning'].split('Selected exact Senate 70512 clean-electricity', 1)[1]
+        for text in [house, senate]:
+            self.assertIn('4651(8)(A), (B), (D) and (E), not (C)', text)
+            self.assertIn('not the product list (iii)', text)
+            self.assertIn('not a blanket protected-person exemption', text)
+            self.assertIn('company definition excludes natural persons', text)
+        self.assertIn('that delay is not applied to the direct specified-foreign-entity route', house)
+        self.assertIn("not the House's separate two-year foreign-influence delay", senate)
+        self.assertIn('first-year first-day exception applies to specified-foreign-entity clauses (i)-(iv)', senate)
+        self.assertIn('not the direct foreign-controlled clause (v)', senate)
+        self.assertIn('ratio is not the prohibited-foreign-entity share', senate)
+        self.assertIn('knowing/reason-to-know certification limits', senate)
+
     def test_house_foreign_tax_candidate_keeps_conjunctive_personal_coverage(self):
         action = getattr(self, 'foreign_tax_candidate_action', None)
         if action is None:

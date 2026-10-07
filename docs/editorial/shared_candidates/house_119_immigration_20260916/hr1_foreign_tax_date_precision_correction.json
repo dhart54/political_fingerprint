@@ -1,0 +1,188 @@
+{
+  "checkpoint": 94,
+  "review_state": "candidate_pending_external_semantic_review",
+  "action_id": "house:119:1:145",
+  "change": {
+    "finding_id": "IB-HR1-FOREIGN-TAX-APPLICABLE-DATE-FIRST-DAY",
+    "severity": "P3",
+    "classification": "Temporal wording precision ambiguity, not a demonstrated wrong personal tax result",
+    "source": "Supervisory delegation reporting independent checkpoint92 review",
+    "reviewed_exact_head": "6fa26f7b65f763456b98004bdec26e0df0bf75d9",
+    "historical_surfaces": {
+      "authoring_line": 1350,
+      "core_line": 2997,
+      "compiler_input_line": 805,
+      "readable_lines": [
+        23,
+        131,
+        7952,
+        8060
+      ],
+      "packet": "As applicable"
+    },
+    "state": "candidate_correction_pending_validation_and_independent_recheck",
+    "before_action_sha256": "6f34b40034b2bf6c1574bf3d34925c0dbdc26c2595507fbf81a5438c2bb9e125",
+    "corrected_action_sha256": "dea1bf9f30bc7ba972af84db8a33e640e7b6eea3f1bc6e2d4fc50850e3cba203",
+    "before_phrase": "The applicable date follows the first calendar year beginning on or after the latest of the printed enactment-related 90-day, foreign-tax-enactment-related 180-day and foreign-tax-first-application events;",
+    "corrected_phrase": "The applicable date is the first day of the first calendar year beginning on or after the latest of the printed enactment-related 90-day, foreign-tax-enactment-related 180-day and foreign-tax-first-application events;"
+  },
+  "preservation_receipt": {
+    "state": "Uncommitted but locally validated checkpoint 93 electricity candidates preserved before independently reported checkpoint92 tax-date P3 correction",
+    "committed_base": "6fa26f7b65f763456b98004bdec26e0df0bf75d9",
+    "files": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+        "bytes": 9088273,
+        "sha256": "2a809ea99d2c09b005bf1e2bec5b8df619b672aace7db5a9c864d1bca0b4f267"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+        "bytes": 10493224,
+        "sha256": "e0091ab8c3509570ab4b786bb56981d9b8ae05d1ff1f3aec35eb00e6616372a7"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json",
+        "bytes": 1346251,
+        "sha256": "1a075c36939df9eee576269ae4d669faa6a3d88702211daf85699c9426ea467c"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+        "bytes": 2252818,
+        "sha256": "2ab6c31cc0b7746b3f3ffb1f75d779a3135e1443e24f7adbdd5c3ba46659b544"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/research_capture_manifest.json",
+        "bytes": 174062,
+        "sha256": "9e6b24c00d990d7a081ec9df1cf9e139a59e3f90d03f6ea601bae06d0c56cfc9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_electricity_personal_status_candidate_review.json",
+        "bytes": 132458,
+        "sha256": "04ea17865e5ab7cbabe73217d0af3c9b26e6a51cd2349d17f5388d75da434e49"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_personal_coverage_candidate_review.json",
+        "bytes": 143949,
+        "sha256": "124efa9720f3dd3e96a2b34da3c14d8a129807184c477325c3d7f8a72e052ad3"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+        "bytes": 61457,
+        "sha256": "3491089a515682d34842c1df550604a1387a78ed06fa2bd3958a0505b0716a74"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+        "bytes": 655063,
+        "sha256": "788832999bf2b7bf3706a4c72d8b3b1c77a9d4030518fa921ccbb62afd529b5d"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+        "bytes": 71477,
+        "sha256": "a2a67b386875e8a6a6028623614377681ae72b0c72b38646142a14c95c023241"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+        "bytes": 20076165,
+        "sha256": "2c1fe43dfc85a30753a98169f3253182a5c7bcd3128670002260309ff0ffe3b9"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+        "bytes": 34978,
+        "sha256": "54541824b65a72e9aaac9245c7222a543c4739719a5ad2de94ad997d2a623f80"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+        "bytes": 10133283,
+        "sha256": "880a88f2cf026836dcc01ef29aac18a8e181b65482e61e521cc103f70a3ab9d5"
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+        "bytes": 25052,
+        "sha256": "a8c1036972faf392c0b575f193b3ce8ca17c7dece295800bea70bfc53ea8969e"
+      },
+      {
+        "path": "docs/review_packets/immigration_semantic_audit_in_progress.json",
+        "bytes": 927673,
+        "sha256": "78fa740bc7d4d927d7e70de63328a49a6d248a430b8f7782e15c9f3bc19fabbd"
+      },
+      {
+        "path": "backend/tests/test_immigration_shared_candidate.py",
+        "bytes": 117930,
+        "sha256": "a4477e9cccf15f956c2cc9a34fcc7ce404faf81397f58c7424aba14fffd1340e"
+      },
+      {
+        "path": "docs/review_packets/foushee_immigration_shared_candidate.md",
+        "bytes": 1481531,
+        "sha256": "cd1ae2413a81aac52166cfc698e0706a99be6c491458aa76a13946abc0e9d6f3"
+      }
+    ],
+    "local_owner_evidence_only": true,
+    "independent_archive_verification": false
+  },
+  "operative_witness": {
+    "source_id": "govinfo:hr1eh",
+    "start": 953127,
+    "end": 953637,
+    "total": 1015702,
+    "passage": "``(C) Applicable date.--For purposes of this section, the term `applicable date' means, with respect to any discriminatory foreign country, the first day of the first calendar year beginning on or after the latest of-- ``(i) 90 days after the date of enactment of this section, ``(ii) 180 days after the date of enactment of the unfair foreign tax that causes such country to be treated as a discriminatory foreign country, or ``(iii) the first date that an unfair foreign tax of such country begins to apply. ",
+    "passage_sha256": "8bce170ccb443d9c0f16bb11a47a6b72b31317f625715c5f0730beb83a01085f",
+    "scope": "Complete proposed899(a)(4)(C), preserving first day of first calendar year and all three latest-of events"
+  },
+  "source_grounded_single_phrase_correction": true,
+  "prior_39_other_actions_preserved": true,
+  "sources_claim_bindings_ledgers_captures_questions_choices_unchanged": true,
+  "locally_validated_electricity93_preserved": true,
+  "original_electricity93_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_electricity_personal_status_candidate_review.json",
+  "original_electricity93_receipt_sha256": "925704cc6bb555535d65c1a1615352041644cb9321852a270e22f1b9c28a7f14",
+  "original_foreign_tax92_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_foreign_tax_personal_coverage_candidate_review.json",
+  "original_foreign_tax92_receipt_sha256": "fc897ca893af27f49aa57f970e039085e83013af02e804fa4012fb41486c2684",
+  "independent_recheck_pending": true,
+  "complete_component_review": false,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "e46dc3d6f7ca7b73e2b2ae5aea90ac81c5bb0513c1a5f604a41d526975106506",
+  "validation": {
+    "focused_tests": 119,
+    "focused_runtime_seconds": 12.383,
+    "semantic_pipeline_checks": 7,
+    "semantic_ir_reference_validator_passed": true,
+    "final_raw_byte_replay_files": 7,
+    "preserved_archive_owner_local_hashes": 17,
+    "archived93_raw_replay_and_eight_electricity_mutations_reproduce": true,
+    "final_first_day_mutation_cases": 4,
+    "each_mutation_one_assertion_failure_zero_errors": true,
+    "source_grounded_single_phrase_only": true,
+    "all39_other_actions_ledgers_sources_65_questions_choices_and_compiled_graph_preserved": true,
+    "both_members_detail_and_unchanged_compact_and_packet_verified": true,
+    "final_diff_reviewed": true,
+    "independent_recheck_pending": true,
+    "independent_archive_verification": false,
+    "exact_head_ci": "92 run 37664102441 terminal nine green with verified checkout provenance; no standalone 93 commit/run, combined 94 pending own push"
+  },
+  "accounting": {
+    "inventory": 676,
+    "governed_reviews": 459,
+    "interpreted_actions": 40,
+    "procedural": 211,
+    "excluded": 206,
+    "expressive": 2,
+    "unfinished_ordinary": 217,
+    "partial_packages": 3,
+    "application_questions": 65,
+    "canonical_sources": 1351,
+    "canonical_claim_bindings": 916,
+    "acquisition_captures": 342,
+    "extent_sources": 231,
+    "extent_coordinates": 376
+  },
+  "output_hashes": {
+    "core": "f0690198992dce56341a6905657d05c988c90a1649a8350b1c81cbc54b8496f2",
+    "compiled": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898"
+  },
+  "prior_exact_head_ci_receipt": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint92_ci.json",
+    "receipt_sha256": "cc4fbfb9f79a0be1da0c74e6bf0853ae6a301ea097703c46099bbf0b086930ed",
+    "head": "6fa26f7b65f763456b98004bdec26e0df0bf75d9",
+    "run": 37664102441
+  }
+}

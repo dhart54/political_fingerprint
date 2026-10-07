@@ -6102,3 +6102,89 @@ deployment or editorial acceptance/promotion/publication is authorized.
 
 
 Checkpoint 92 delivery preflight: exact 91 run 37662606557 is terminal with nine successful jobs. Five feature-pinned, three synthetic (575a6537d73f42911352497513ae64310b21cef5) and one mixed repair checkout are verified from preserved raw logs. Hosted m14h candidate-block counts remain their own four-module scope; no claim that all nine jobs test only feature bytes. The sealed delivery receipt records log hashes and provenance. Checkpoint 92 awaits its own push/checks; active ownership continues.
+
+
+### Successor checkpoint 93 preserved locally, combined checkpoint 94: electricity candidates and tax-date P3 correction
+
+Own-version direct personal-status branches are now authored as shared candidates for
+House 112008 and Senate 70512. The returned bounded independent rationale supports
+drafting under existing standards, not acceptance. Defined people feed the specified-
+foreign-entity taxpayer credit restriction; the mechanism is not solely corporate.
+Each branch retains its own taxpayer/credit, country/status, timing and other conditions.
+
+| Material boundary | House exact version | Senate exact version |
+| --- | --- | --- |
+| Covered-country person | Citizen, national or resident | Citizen or national; no residence-only route imported |
+| Individual United States exception in that branch | Citizen or lawful permanent resident | Citizen, national or lawful permanent resident |
+| Specified-foreign-entity taxpayer credit rule | Allowance under section 38, taxable years beginning after enactment | Determination under section 45Y; general years beginning after enactment |
+| Other influence/payment timing | Own two-years-after-enactment condition | No House two-year delay imported; own effective-control facility qualification |
+| Officer appointment | Direct or indirect | Direct |
+| Single/aggregate ownership and debt influence | Ten/twenty-five percent ownership, twenty-five percent held debt | Twenty-five/forty percent ownership, fifteen percent issued debt |
+| Ownership attribution | 318 except (a)(3) | 318(a)(2) |
+| Material assistance context | Component/design rules with qualified part/material exclusion | Own non-prohibited cost ratio, thresholds, guidance, certification and existing-contract qualifications |
+
+Branch-specific 4651 natural-person citizenship/permanent-residence/protected-individual
+exclusions and full 1324b qualifications do not become a blanket exception across every
+prohibited-entity route. Exact 4651 A/B/D/E selection excludes C; PL117-78 entity lists
+i/ii/iv/v exclude product list iii. 1260H excludes natural persons. The named 154(b)
+entities/successors do not import the whole procurement rule/waiver. Covered-country
+definition, constructive ownership, business-unit, control, public-trading, licensing,
+supplier, facility, material-cost and own date qualifiers remain bound context. Senate
+last-day classification and the initial-year first-day exception for listed (i)-(iv)
+remain distinct from the direct foreign-controlled (v) route. No universal noncitizen
+denial, actual listing/company finding, individual status, project, credit or tax result.
+Broader corporate/energy context does not automatically receive Immigration meaning.
+Both whole-package Nay observations, choices and selected compact copy remain unchanged.
+
+Eight reused original authority objects and 23 complete bindings are added, with no
+new acquisition or application question. Prior 38 other meanings, all 459 membership
+records except source additions for the two actions, 1,343 old sources, prior House tax
+component and 65 questions reproduce. Accounting stays 676 inventory, 459 reviewed,
+40 interpreted, 211 procedural, 206 excluded, two expressive, 217 ordinary unfinished
+and three partial packages. There are 1,351 sources, 916 interpreted bindings,
+342 captures, 231 extent objects and 376 coordinates; 37 episodes and 72 findings.
+Audit unique-action counts stay 83 No Defect, three Minor, eleven Major and one Critical.
+
+The electricity increment was locally validated as uncommitted checkpoint 93: 118
+focused tests in 12.403 seconds, seven semantic checks, seven raw replay files and eight
+predicate/timing/protected-branch/cost-ratio mutations each fail once without errors.
+It has no standalone feature commit or hosted run. Seventeen owner-local artifacts,
+including that sealed receipt and complete canonical/generated state, were archived
+before applying the independent checkpoint 92 P3 tax-date finding. These are local
+owner hashes, not an independent verification claim or editorial approval.
+
+The source correctly says first day of the first calendar year beginning on or after
+the latest of the three events. Candidate wording follows the first calendar year
+could imply a later year. Checkpoint 94 changes exactly one House tax phrase to is the
+first day of the first calendar year, preserving all three 90-day/180-day/first-application
+triggers. No actual date or wrong personal tax result was previously asserted. Historical
+P3 is precision ambiguity, not automatically a repository Minor/Major finding. Complete
+899(a)(4)(C) is traced in the EH. Sources, all claims, ledgers, capture pool, choices,
+limitations, 39 other actions and 65 questions are unchanged relative to archived 93.
+Both electricity candidates survive intact. Frozen 92/93 receipts and pre-correction
+hashes remain historical; final current action hashes and propagation bind correction 94.
+
+Final 119 focused candidate/IR tests pass in 12.383 seconds, seven semantic checks and
+the Semantic IR reference validator pass, and seven final canonical files match raw-byte
+replay. All 17 archived hashes, prior electricity source/extent joins, seals and eight
+mutations reproduce. Four new first-day/latest-of/trigger mutations each produce one
+assertion failure with zero errors. Final core, compiler input, both full member details,
+unchanged compact copy and packet propagate the exact date phrase. Final core
+f0690198992dce56341a6905657d05c988c90a1649a8350b1c81cbc54b8496f2;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Final diff reviewed. Independent literal tax/electricity semantic review and the date
+P3 recheck remain pending; tests and replay do not prove truth or acceptance.
+
+Exact checkpoint 92 6fa26f7b65f763456b98004bdec26e0df0bf75d9, run 37664102441, has nine
+successful jobs with five feature-pinned, three synthetic (df7f448a375b3366b0f78f351b25234a58d5f47c)
+and one mixed repair checkout verified from raw logs. A durable sealed receipt retains
+log hashes, hosted test scopes and checkout provenance. No claim all nine test only
+feature bytes. Combined 93-94 requires its own pushed-head CI; earlier success is not
+substituted. Previous refugee/oath bounded closure and its archive limits stay preserved.
+
+Next executable work: H.R. 1968 remaining DHS sponsor/family and incorporated definitions,
+then remaining package/counterpart work and ordinary screening alongside independent
+literal-component/HRA/application review. Current candidate full readiness/publication
+remain false and final audit verdict null. Active successor ownership continues without
+a new deadline, preserving shutdown 75 history. No production, merge, deployment or
+editorial acceptance/promotion/publication is authorized.
