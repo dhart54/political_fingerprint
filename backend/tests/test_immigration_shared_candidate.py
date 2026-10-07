@@ -79,6 +79,24 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(len(questions), 1)
         self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
 
+    def test_retained_287g_reporter_and_fields_are_separate_from_ig_and_budget_roles(self):
+        actions = getattr(self, 'retained_report_actions', None)
+        if actions is None:
+            actions = [a for a in self.values[0]['actions']
+                       if a['action_id'] in {'house:119:2:42', 'house:119:2:87', 'house:119:2:104'}]
+        self.assertEqual(len(actions), 3)
+        source = next(s for s in self.values[1]['sources']
+                      if s['source_id'] == 'govinfo:pl116-93-dhs216-217')['text']
+        retained = source[source.index('Sec. 217.'):source.index('Sec. 218.')]
+        self.assertIn('Director of U.S. Immigration and Customs Enforcement', retained)
+        self.assertNotIn('training', retained.lower())
+        for action in actions:
+            with self.subTest(action=action['action_id']):
+                self.assertIn('submitted by the ICE Director, not the Inspector General', action['meaning'])
+                self.assertIn('enumerated fields do not include training', action['meaning'])
+                self.assertIn("distinct from the current Act's section 217 budget plan", action['meaning'])
+                self.assertNotIn('The accompanying IG 287(g) report', action['meaning'])
+
     def test_package_documentary_index_preserves_occurrences_and_tail_boundaries(self):
         receipt = getattr(self, 'package_coverage_receipt', None)
         if receipt is None:

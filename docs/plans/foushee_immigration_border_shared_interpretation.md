@@ -5608,3 +5608,78 @@ write, merge, deployment, editorial acceptance, promotion or publication. Owners
 continues. Next: remaining DHS fee/fencing/family-detention/transfer references,
 then DOJ/State/other package incorporation and full semantic comparison. The new
 timing question remains separate while safely executable work proceeds.
+
+
+### Successor checkpoint 85: retained 287(g) reporter correction and transport recovery
+
+Primary-source follow-through for H.R. 1968 exposed one blocking source-to-candidate
+defect in three existing annual DHS meanings: House 119/2/42 (H.R. 7147), 119/2/87
+(H.R. 7744) and 119/2/104 (H.R. 8029). Each exact governing section 216 reapplies
+complete 2020 sections 216/217. The retained section 217 report is submitted by the
+ICE Director, not the Inspector General, and enumerates community outreach,
+removal-proceeding counts, state/local officer performance with nationality/criminality,
+and future agreement-expansion plans. The earlier shared sentence misattributed the
+report to the IG and added a training-report requirement absent from the full list.
+
+Twelve exact artifacts were archived with byte hashes before correction, including
+authoring, sources, membership, universe, all seven generated outputs and current
+audit. The durable correction receipt embeds that preservation receipt and four
+complete source witnesses: the three exact incorporation clauses and the complete
+retained 2020 report. Three exact sentence replacements repair the owning shared
+meaning layer; deterministic regeneration projects the correction into both members.
+The legitimate IG material-agreement-violation role and current-Act 217 budget plan
+stay distinct. Actual member statuses, stages, eligibility, counts and episode
+aggregation are unchanged, as is the compiled proposition graph. No source bytes,
+claims, other 37 meanings, earlier receipts or publication state are rewritten.
+
+IB-DHS-RETAINED-287G-REPORTER-AND-FIELDS is preserved as one new Major finding,
+affecting three actions. The existing 42 Major finding remains; 87/104 change from
+No Defect to Major. Unique action assessment counts become No Defect 82, Minor 3,
+Major 11, Critical 1 (97 actions), distinct from 72 readable findings. Earlier distinct
+finding counts remain their historical snapshot; this new distinct Major is recorded
+separately rather than reconciling unrelated historical counting. Same-owner
+correction is mechanically validated and pending independent bounded recheck; it
+does not establish editorial acceptance. Prior findings remain in history.
+
+107 focused tests passed in 11.989 seconds: 81 candidate plus 26 Semantic IR tests.
+The canonical Semantic IR validator passed 12 accepted, 4 accepted held-out and4
+held-out reference checks; seven pipeline semantic checks passed. Seven generated
+JSON files match separate replay byte for byte. All 12 archived byte hashes, four
+complete witnesses and current 40 audit hashes verify. Three controlled mutations
+each fail one assertion with zero errors: wrong IG reporter, invented training field
+and conflation with the budget plan. Both members' actual corrected detail and
+unchanged compact were inspected for all three actions, preserving Foushee's three
+Nay observations and Massie's Nay/Yea/Yea. Final diff reviewed. The prior 269-test
+six-module aggregate belongs to 84; no new full-aggregate or release-loop claim.
+Tests establish mechanical confidence, not source truth or independent acceptance.
+
+GitHub reported full Git Operations/Pull Requests/Actions recovery at 15:58:35 UTC
+for its incident covering 15:06-15:16, matching both earlier 500 push failures. One
+normal fast-forward push then succeeded from f869e2f527b1e88e0db506a6a18b91a9ed5fbc00
+to 37b22470570c700dcb21345bcff7038811d4f42e, covering 78-84. Draft PR198 was updated
+at 16:31:07. Exact 37b2247 backend run 37652464826 completed successfully with nine
+jobs. Logs verify five feature-head-pinned jobs, three default synthetic-merge jobs
+at 5e546f013f0fda623e89b8560eef4b94951384bb, and one mixed receipt-repair job that
+later checks out the feature head. The m14h hosted 235-test group differs from the
+owner's 269-test aggregate. No claim that every job ran only feature bytes. Sealed
+immigration_transport_recovery_checkpoint84.json preserves the original failure,
+recovery, actual push/PR update, nine outcomes and checkout provenance. Correction 85
+CI remains pending its own push/run; prior 84 success is not substituted for 85.
+
+Accounting remains 676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205
+excluded, two expressive, 218 ordinary unfinished, three partial packages, 63 separate
+application questions, 37 episodes, 80 member observations and 72 readable findings.
+1335 canonical sources,872 bindings,339 captures,216 extent-bearing objects and 360
+coordinates. A newly verified historical eCFR 115.5 source is private pending the
+next DHS increment; it has not been inserted into those capture/source counts.
+Early unsuccessful GovInfo addresses were not registered. The official historical
+API required response compression; its error was resolved with gzip and original
+response/XML bytes retained. No unavailable-evidence classification from those errors.
+Three H.R. 1 domain fits remain reserved. Core
+c60bbc52bab7237fd5a865a16900f1dabae677fd99343e5646381c9ef844223d;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Final verdict/full-issue readiness/publication eligibility remain false. No production
+write, merge, deployment, editorial acceptance, promotion or publication. Ownership
+continues through commit/push/PR update/exact-headCI, then remaining H.R. 1968 DHS,
+DOJ/State/other incorporation and ordinary screenings. The correction recheck and
+existing reserved decisions can proceed alongside safely executable research.
