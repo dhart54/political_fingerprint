@@ -5944,3 +5944,48 @@ history. All nine CI jobs at checkpoint 77 succeeded. No shutdown boundary, new
 production authority or new methodology decision. Accounting unchanged: 676 inventory,
 455 reviews, 39 meanings, 211 procedures, 203 exclusions, two expressive, 36 episodes,
 78 observations, 70 findings, 221 ordinary screens and two partial H.R.1 reviews.
+
+
+### Successor checkpoint 80: ordinary exact-action screening resumed
+
+Two pending actions are now source-grounded exclusions: House 119/1/28, motion to
+suspend and pass H.R.43, and 119/1/36, motion to suspend and pass H.R.692 as amended.
+Both complete exact House EH texts are reused unchanged from the governed Health
+pool. H.R.43 changes village land trusts and conditional reversion, with both formal
+requesters, no-existing-municipality condition, valid existing rights, easements and
+lease/use obligations preserved. Complete original 2024 section 1613(c) and (g)
+establish the conveyance baseline. Historical Native/non-Native occupancy concerns
+land title; it supplies no new immigration status or admission condition. H.R.692
+directs IMF exchange-rate advocacy, consultations and governance treatment, with its
+own two-condition report route and seven-year sunset alternative. Its country and
+findings references do not enact a restriction on personal entry. No enacted outcome,
+individual entitlement, motive or actual compliance is asserted.
+
+ordinary_screening_checkpoint80.json records exact proposals, complete material
+baseline extents, claim maps, preserved qualifications and source seals. One raw
+GovInfo capture is appended (335 to 336); three governed canonical source objects
+are added (1323 to 1326), including the two unchanged Health witnesses and the
+selected complete baseline subsections. All prior 455 review records and canonical
+sources remain unchanged. Accounting: 676 inventory, 457 reviews, 39 interpreted,
+211 procedural, 205 excluded, two expressive, 219 ordinary unfinished screenings,
+two partial H.R.1 reviews and 62 separate application questions. Three H.R.1 domain
+fits remain reserved. H.R.33 contains tax-residence mechanisms and remains unfinished
+for its own source-grounded review; its title was not used to screen it out.
+
+264 focused aggregate tests pass in 42.646 seconds (75 candidate tests), along with
+seven semantic checks, queue validation and all source/extent/claim/raw hash checks.
+Seven generated JSON files match separate replay byte for byte. The generated source
+capture proof changes; the other six generated objects and 39 meanings are unchanged.
+Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8 and compiled
+b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f remain unchanged.
+208 canonical source objects have 348 verified extent coordinates. Same-owner semantic
+comparison and mechanical checks are not independent acceptance or semantic truth.
+No candidate/publication flags changed. Final diff reviewed; no production actions.
+
+GitHub rejected two checkpoint 78 pushes with server errors; remote and draft PR198
+last verified checkpoint 77, f869e2f527b1e88e0db506a6a18b91a9ed5fbc00. Checkpoints
+78–80 are preserved locally, hosted CI and PR updates pending transport recovery.
+No repeated retry or hosted result is claimed. Next: continue ordinary exact-action
+screenings and remaining continuing/omnibus/NDAA packages, alongside the reserved
+fits and application questions. Existing explicit Resume authorization remains active;
+no new deadline was supplied, and shutdown 75 evidence stays frozen.
