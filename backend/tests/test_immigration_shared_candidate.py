@@ -18,6 +18,47 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_special_assessment_keeps_exact_date_amount_and_conviction_cohort(self):
+        action = getattr(self, 'hr1968_assessment_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected additional-special-assessment amendment', 1)[1]
+        self.assertIn('division C section 3103', text)
+        self.assertIn('replace March 14, 2025 with September 30, 2025', text)
+        self.assertIn('retain the May 29, 2015 starting reference', text)
+        self.assertIn('not the $5,000 amount, the separate section 3013 assessment', text)
+        self.assertIn('non-indigent person or entity convicted under one of five named branches', text)
+        self.assertIn('not every person with an immigration violation', text)
+        self.assertIn('spouse/parent/son/daughter relationship at the time of action and no other individual', text)
+        self.assertIn('printed referent is not silently reassigned', text)
+
+    def test_hr1968_special_assessment_keeps_payment_priority_and_fine_restitution_duration(self):
+        action = getattr(self, 'hr1968_assessment_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected additional-special-assessment amendment', 1)[1]
+        self.assertIn('not payable until all outstanding court-ordered fines, restitution and other victim-compensation obligations', text)
+        self.assertIn('civil remedies authorized by section 3613 where appropriate', text)
+        self.assertIn('pay-until-full language remains subject to complete 3613(b)', text)
+        self.assertIn('later of twenty years from judgment or release from imprisonment, or the individual\'s death', text)
+        self.assertIn('restitution has its own later-of-twenty-year rule and estate responsibility until written liability release', text)
+        self.assertIn('No universal perpetual assessment, September-30 discharge', text)
+        self.assertIn('qualified religious-denomination/nonprofit volunteer-minister exception', text)
+
+    def test_hr1968_special_assessment_keeps_collected_amount_and_explicit_fee_reference_mapping(self):
+        action = getattr(self, 'hr1968_assessment_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected additional-special-assessment amendment', 1)[1]
+        self.assertIn('amount equal to assessments collected, available until expended', text)
+        self.assertIn('not every nominal charge as an observed receipt or a new fixed appropriation', text)
+        self.assertIn('explicit original reference note identifies the redesignation to current 3718(d)', text)
+        self.assertIn('qualifying contract under (a) or (b) may pay a recovery fee from recovered amounts', text)
+        self.assertIn('appropriation-effectiveness limit has its express fee-contract exception', text)
+        self.assertIn('excludes Internal Revenue Code debts', text)
+        self.assertIn('No actual contract/fee or unconditional zero-fee/no-exception net-deposit calculation', text)
+        self.assertIn('other use/health-transfer clauses and their material authorities', text)
+
     def test_hr1968_minor_grants_keep_current_recipient_and_block_grant_qualifications(self):
         action = getattr(self, 'hr1968_minor_grant_action', None)
         if action is None:

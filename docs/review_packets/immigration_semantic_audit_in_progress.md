@@ -6428,3 +6428,103 @@ comparison. Existing .w/ib ownership remains active without a current deadline; 
 shutdown/terminal evidence and unrelated work preserved. Questions 63/66 stay distinct,
 HRA provisional. Readiness/publication false, final verdict null; delivery remains draft
 PR198 with no merge/deploy/production or editorial acceptance/promotion/publication.
+
+
+### Successor checkpoint 104: exact special-assessment end-date amendment
+
+Complete EH division C section 3103 replaces March 14, 2025 with September 30, 2025
+in the additional-special-assessment provision. Complete pre-vote 3014(a)-(d)/(f)-(g)
+and original enactment-date note preserve May 29, 2015 starting reference, $5,000 amount,
+separate 3013 assessment and the named conviction/non-indigence requirements. This is
+a direct amendment, not a date inferred from general appropriation continuance or
+all-offense/fine/conviction-date change. No actual enactment/assessment/collection.
+
+The five named conviction branches remain mixed criminal categories, not all Immigration
+or every noncitizen/arrest/violation. The complete printed INA 274 family-only entry
+exception retains relationships at action and no other individual, without reassigning
+its printed referent or declaring a broad family shield. Complete referenced criminal
+subsection 1324(a) preserves distinct offense/knowledge/penalty branches and narrow
+religious volunteer-minister exception. Existing employment-at-time definition is reused
+without recapture. No new offense, unrestricted encouragement, individual modern speech/
+prosecution/status/conviction/sentence judgment or all-religious-activity exception.
+
+Underlying fines/restitution/victim-compensation obligations must be satisfied before
+the assessment is payable. Collection/civil remedies remain qualified. Pay-until-full
+language is subject to complete 3613(b): fine liability later-of-twenty-year/death rules
+stay distinct from restitution/estate/lien-release provisions. No perpetual assessment,
+September 30 discharge of old liability, death discharge of every restitution debt or
+individual balance/indigence/asset/estate/deadline calculation.
+
+Existing Treasury fund and amount-equal-to-assessments-collected transfer retain no-year
+availability and AG/DHS/HHS consultation, not nominal charges as actual receipts or new
+fixed appropriation/whole-CJS-line/net-award attribution. Complete 3302(b) deposit text
+retains the printed3718(b) exception; its explicit original note traces redesignation
+to current(d). Full material 3718(a)-(b)/(d)-(f) preserves qualified contracts, retained
+agency authority, applicable practice/privacy conditions, recovered-amount fee permission,
+appropriation-effectiveness rule/fee-contract exception and IRC-debt exclusion. No silent
+current(b) substitution, universal fee waiver, actual contract/fee or net-deposit calculation.
+Fund-use/health-transfer provisions and separate exact 2101(d)-(e) health conforming change
+remain executable research, alongside current 20703/20705. This is not whole-fund closure.
+
+Five selected sources/seven bindings/nine original coordinates and five strict official
+captures registered. Complete source clauses/original reference note, all raw/full-text
+hashes, selected/full governed seals and original extents reproduce; original glyphs
+preserved. Read-only substring assumptions were corrected against actual labels before
+material selection; failed label searches are not evidence unavailability or source claims.
+Prior 1,371 sources/39 other meanings/all 67 questions, frozen receipts, choices/counting/
+eligibility/compact/graph preserved. Three new guards/fourteen controlled date/amount/
+cohort/family/priority/duration/estate/collection/ref/fee/tax mutations fail by assertion
+with zero errors. Final 139 focused tests pass in 12.549 seconds; reference validator and
+seven semantic checks pass. Seven generated files match separate raw-byte replay. Both
+full member explanations, unchanged compact/recorded choices and final diff inspected.
+Core 0c1dba7a9de4662f81c7b85e9ebad9e8446c998b30686eda45d7dc00a3a3cccd;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Tests/guards/replay prove mechanical confidence, not semantic truth/acceptance.
+
+Accounting unchanged:676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded,
+two expressive, 216 ordinary unfinished, three partial packages and67 application questions.
+37 episodes, 80 observations, 72 findings;1,376 sources, 973 interpreted bindings, 360 registered
+captures, 255 extent objects and426 coordinates. Unique-action84 No Defect/three Minor/
+eleven Major/one Critical and historical findings unchanged. Questions 63/66/67 remain separate;
+new source/reference context creates no new application decision or unavailable-evidence row.
+
+Final independent102 source/propagation and mechanics are clean within bounded scopes:
+three-authority $88 million line/only first grant branch, grantees/nonexclusive examples,
+age-plus-circumstance, scoped3/5/1 set-asides, project-cost75-percent ceiling/matching and
+narrow discretionary priority/four attestations/resources match. Raw/full-text hashes,
+three extents/seven bindings and full both-member/core/compiler/packet/seals verify.
+Other 39 actions/all 66 questions/prior 105 tests/protected paths/choices/graph preserved;
+two guards/twenty qualifier mutations meet expectations. Later historical registration,
+question 67 and new103/104 are separate increments. No independent full generator/pipeline/
+replay/test suite, other-authority completion or individual application judgment.
+
+Owner-read exact 103 run 37690567209 terminal nine green with five feature-pinned,
+three synthetic and one mixed checkout; synthetic SHA
+b8ef248137af0827f0932ee6070d863177669551. Hosted265 distinct from owner 136 final
+then and139 here. Separate CI receipt retains raw-log hashes/provenance; audit current
+CI points to103 while old84 and prior receipts remain historical. New104 needs its own
+pushed-head run. Bounded independent review and hosted checks do not grant acceptance.
+
+Continue current 20703/20705 and material fund-use/health-transfer authorities including
+exact 2101(d)-(e), then State/migration/refugee assistance, supplementary acts, other DHS/
+exact counterparts, ordinary screenings and final package comparison. Existing .w/ib
+ownership remains active without a current deadline; original shutdown/terminal evidence
+and unrelated work preserved. HRA provisional, readiness/publication false, final verdict null;
+delivery boundary draft PR198, no merge/deploy/production/editorial acceptance/promotion/publication.
+
+Checkpoint 104 final prose spacing update preserves every source passage and qualification;
+new prose/metadata and dependent seals were normalized before commit. Private prior
+source/receipt/generated state and 139-test result remain preserved separately. Final
+139 tests pass in 12.549 seconds with fresh seven-file replay and fourteen mutations.
+
+
+Checkpoint 104 delivery update: final independent 103 mechanics is clean within its
+bounded scope. Ten bindings/four sources and captures/seven extents and all hashes,
+full both-member propagation/prior objects verify. Prior 39 actions/66 questions
+preserved; question 67 four full witnesses match while application remains unresolved.
+The scoped Blue Campaign guard preserves six semantics and exact frozen-question
+equality, accepting unrelated reordering/appends while rejecting mutation/deletion/
+duplication/qualification loss. Three guards/thirty independent mutations meet expected
+assertion failures without errors. Exact 103 CI contexts/counts verified. No independent
+full pipeline/replay or private pre-reservation archive verification; final source lane
+still finishing here, no new 104 review or acceptance. Separate mechanical receipt sealed.
