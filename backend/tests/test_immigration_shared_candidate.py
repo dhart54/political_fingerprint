@@ -79,6 +79,45 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(len(questions), 1)
         self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
 
+    def test_hr1968_reporting_keeps_actors_cadence_and_literal_duration_boundaries(self):
+        action = getattr(self, 'hr1968_reporting_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = '\n'.join(c['passage'] for c in action['claim_source_map'])
+        self.assertIn('Chief Financial Officer', claims)
+        self.assertIn('previous twelve months of semimonthly data', claims)
+        self.assertIn('for less than 6 months', claims)
+        self.assertIn('submitted by the ICE Director, not the Inspector General', action['meaning'])
+        self.assertIn('submitted by the ICE Chief Financial Officer', action['meaning'])
+        self.assertIn('There is no enumerated training-report requirement', action['meaning'])
+        self.assertIn('Semimonthly is retained; no biweekly schedule', action['meaning'])
+        self.assertIn('preserves those exact endpoints rather than filling unstated boundary cases', action['meaning'])
+        self.assertIn('not observed counts', action['meaning'])
+
+    def test_hr1968_reporting_cohort_is_reserved_with_complete_historical_definitions(self):
+        action = getattr(self, 'hr1968_reporting_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        claims = {c['source_id']: c['passage'] for c in action['claim_source_map']}
+        source = next(s for s in self.values[1]['sources']
+                      if s['source_id'] == 'ecfr:28cfr1155-2024-04-01-complete')
+        self.assertEqual(claims[source['source_id']], source['text'])
+        for definition in ['Detainee means', 'Employee means', 'Intersex means',
+                           'Transgender means', 'Youthful detainee means']:
+            self.assertIn(definition, source['text'])
+        self.assertIn('selects neither only transgender/intersex people nor every person', action['meaning'])
+        self.assertIn('does not extend all of part 115', action['meaning'])
+        audit = json.loads((DATA.parents[2] / 'review_packets' /
+                            'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+        questions = [q for q in audit['open_legal_interactions']
+                     if q['action_id'] == action['action_id'] and '115.5 reporting-cohort' in q['scope']]
+        self.assertEqual(len(questions), 1)
+        self.assertEqual(questions[0]['state'], 'preserved_for_independent_candidate_review')
+        self.assertIn(source['source_id'], questions[0]['source_ids'])
+        self.assertTrue(questions[0]['recommendation'])
+        self.assertTrue(questions[0]['alternatives'])
+        self.assertTrue(questions[0]['safe_parallel_work'])
+
     def test_retained_287g_reporter_and_fields_are_separate_from_ig_and_budget_roles(self):
         actions = getattr(self, 'retained_report_actions', None)
         if actions is None:

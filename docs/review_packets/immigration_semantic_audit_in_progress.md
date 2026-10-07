@@ -5226,3 +5226,63 @@ write, merge, deployment, editorial acceptance, promotion or publication. Owners
 continues through commit/push/PR update/exact-headCI, then remaining H.R. 1968 DHS,
 DOJ/State/other incorporation and ordinary screenings. The correction recheck and
 existing reserved decisions can proceed alongside safely executable research.
+
+
+### Successor checkpoint 86: H.R. 1968 retained reporting chains
+
+Five complete reporting witnesses extend the existing exact House 119/1/70 EH
+candidate: 2024 DHS sections 215-217; separate complete 2020 sections 217 and 218;
+complete 2021 section 216; and complete official historical 28 CFR 115.5 as of
+April 1, 2024. The historical API acquisition preserves original gzip response,
+decoded XML and normalized full text with distinct byte hashes. It is one new
+capture and one canonical regulatory source; no glyph repair or current-version
+substitution. Earlier failed addresses were not registered as unavailable evidence.
+
+Source comparison keeps three duties separate: the ICE Director's public detention
+report, the Director's retained 287(g) agreement report, and the ICE Chief Financial
+Officer's current obligation plan. Public reporting retains semimonthly cadence,
+at least twelve months of data, searchable/sortable/downloadable format, enumerated
+detention, supervision, facility and release/removal fields, and disaggregations.
+Exact printed stay-duration endpoints remain; no gaps are repaired silently. The
+retained agreement report has four enumerated fields and no training-report field.
+Neither report is the Inspector General's material-agreement-violation trigger.
+No actual report delivery, counts, violations, facility conditions, individual status,
+solitary confinement, reset initial deadline or new credible-fear rule is inferred.
+
+New application question 64 preserves the literal reference to individuals described
+in 28 CFR 115.5. Its complete definitions cover numerous custody, staff, facility
+and gender terms without the appropriation selecting one definition. Recommendation:
+preserve the literal field and obtain bounded source-grounded independent application
+review before choosing a cohort. Alternatives and safe parallel work are recorded.
+Neither a transgender/intersex-only cohort, every defined person, nor all of part 115
+is accepted. This is a separate application question, not ordinary unfinished research
+or unavailable evidence. The earlier 63 questions and three H.R. 1 domain fits remain.
+
+109 focused tests passed in 12.066 seconds: 83 candidate and 26 Semantic IR tests.
+Canonical Semantic IR reference validation and seven semantic pipeline checks passed.
+Seven generated JSON files match separate replay byte for byte. All source seals,
+217 extent recipes/361 coordinates, five witnesses and 340 capture rows verify.
+Six controlled mutations each fail one assertion with zero errors: wrong obligation
+actor, invented training field, changed cadence, repaired duration gaps, gender-only
+cohort and overbroad part incorporation. Both members' actual compact/detail were read;
+the compact summaries, official Nay observations and compiled graph are unchanged.
+Prior 39 other meanings, 22 claims for this action, 1335 source objects, 339 capture
+rows, prior audit findings and frozen scope/correction receipts remain unchanged.
+Final diff reviewed. Tests do not establish semantic truth or independent acceptance.
+
+Accounting: 676 inventory, 458 reviews, 40 interpreted, 211 procedural, 205 excluded,
+two expressive, 218 ordinary unfinished, three partial packages, 64 application
+questions, 37 episodes, 80 member observations and 72 readable candidate findings.
+1336 canonical sources, 877 bindings, 340 captures, 217 extent-bearing objects and
+361 coordinates. Core dc7b2c81bfa470e8de432813c0471b54b65a923423e4a3c5b1a8f0e5daaea290;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Final verdict/full-issue readiness/publication eligibility remain false.
+
+Checkpoint 85 push was rejected by GitHub at 16:57:08 UTC with Internal Server Error,
+request C7CB:B6910:49F6:67AE:6AC679E2. PR198 remains draft at exact checkpoint 84
+37b22470570c700dcb21345bcff7038811d4f42e; its nine successful jobs and checkout
+provenance are sealed separately. Those results are not CI for local 85 or 86.
+Push, draft update and exact-head CI remain delivery work. Ownership continues:
+remaining DHS sponsor/fee/fencing/transfer references, DOJ/State/other incorporation,
+whole-package comparison and ordinary screenings. The reporter correction's independent
+recheck remains pending. No merge, deployment, production effects or editorial approval.
