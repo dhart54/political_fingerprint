@@ -18,6 +18,44 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_foreign_tax_applicability_is_not_nationality_or_immigration_entry(self):
+        receipt = getattr(self, 'foreign_tax_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_foreign_tax_remedy_scope_review.json').read_text(encoding='utf-8'))
+        for witness in receipt['operative_witnesses']:
+            with self.subTest(source=witness['source_id']):
+                self.assertIn('any individual (other than a citizen or resident of the United States) who is tax resident of a discriminatory foreign country', witness['passage'])
+                self.assertIn('if a person would cease to be an applicable person for a period of less than one year', witness['passage'])
+        original = {w['source_id']: w['passage'] for w in receipt['original_context_witnesses']}
+        self.assertIn('temporarily present in the United States as a nonimmigrant', original['govinfo:26usc871-2024-complete'])
+        self.assertIn('under section 871(b)(1)', original['govinfo:26usc897-2024-complete'])
+        definition = original['govinfo:26usc7701-2024-complete']
+        self.assertIn('Such individual meets the substantial presence test', definition)
+        self.assertIn('is neither a citizen of the United States nor a resident of the United States', definition)
+        self.assertFalse(receipt['scope_assessment']['canonical_meanings_changed'])
+        self.assertEqual(receipt['scope_assessment']['domain_application_boundary']['state'], 'reserved_bounded_domain_fit')
+        self.assertFalse(receipt['senate_counterpart_search']['complete_counterpart_absence_verified'])
+
+    def test_foreign_tax_cap_exceptions_and_printed_reference_remain_bounded(self):
+        receipt = getattr(self, 'foreign_tax_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_foreign_tax_remedy_scope_review.json').read_text(encoding='utf-8'))
+        for witness in receipt['operative_witnesses']:
+            with self.subTest(source=witness['source_id']):
+                body = witness['passage']
+                self.assertIn('statutory rate) increased by 20 percentage points', body)
+                self.assertIn('shall not apply to the 14 percent rate', body)
+                self.assertIn('first day of the first calendar year beginning on or after the latest of', body)
+                self.assertIn('90 days after the date of enactment of this section', body)
+                self.assertIn('180 days after the date of enactment of the unfair foreign tax', body)
+                self.assertIn('before January 1, 2027', body)
+                self.assertIn('made best efforts to comply', body)
+                self.assertIn('(c)(2)(A)(ii)', body)
+                self.assertIn('Such term does not include any possession of the United States', body)
+        self.assertFalse(receipt['house_eh_comparison']['exact_bytes_equal'])
+        self.assertEqual(len(receipt['house_eh_comparison']['enumerated_typographic_differences']), 3)
+        self.assertEqual(receipt['scope_assessment']['candidate_scope_disposition'], 'proposed_context_only_pending_bounded_domain_review')
+
     def test_customs_scope_keeps_article_object_and_maximum_penalty(self):
         receipt = getattr(self, 'customs_scope_receipt', None)
         if receipt is None:
