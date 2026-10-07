@@ -18,6 +18,36 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_blue_campaign_keeps_minimum_before_obligation_and_reserved_fiscal_year(self):
+        action = getattr(self, 'hr1968_blue_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained Blue Campaign provision', 1)[1]
+        self.assertIn('not less than $5 million', text)
+        self.assertIn('amount is a minimum, not a $5 million ceiling or an observed transfer/spend', text)
+        self.assertIn('both House and Senate Appropriations Committees before obligation', text)
+        self.assertIn('printed fiscal year 2024', text)
+        self.assertIn('combined fiscal-year application is reserved', text)
+        self.assertIn('rather than replacing every 2024 reference with 2025', text)
+        audit = json.loads((DATA.parents[2] / 'review_packets/immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(audit['open_legal_interactions']), 66)
+        self.assertIn('separate from frozen incorporated-program question63', audit['open_legal_interactions'][-1]['scope'])
+
+    def test_hr1968_blue_campaign_keeps_broader_program_and_distinct_trafficking_definitions(self):
+        action = getattr(self, 'hr1968_blue_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained Blue Campaign provision', 1)[1]
+        self.assertIn('broader scope than Immigration alone', text)
+        self.assertIn('no border crossing, foreign citizenship, lack of lawful status or immigration benefit is required', text)
+        self.assertIn('redesignation to (11) and (12)', text)
+        self.assertIn('Complete severe-trafficking and sex-trafficking definitions remain distinct', text)
+        self.assertIn('commercial sex act induced by force, fraud or coercion, or a person induced to perform it under eighteen', text)
+        self.assertIn('labor/services route requires the stated force/fraud/coercion', text)
+        self.assertIn('without importing every severe-form qualifier into it', text)
+        self.assertIn('no individual conduct, criminal liability or victim classification is adjudicated', text)
+        self.assertIn('do not establish new H.R. 1968 transfer events', text)
+
     def test_hr1968_uscis_vehicle_permission_keeps_replacement_area_and_discretion(self):
         action = getattr(self, 'hr1968_operational_action', None)
         if action is None:

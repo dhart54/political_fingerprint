@@ -6325,3 +6325,73 @@ needs its own push/run. New 96 review is pending, not automatically cleared by 9
 Active successor ownership continues; no current deadline. Preserved shutdown/checkpoint
 evidence and unrelated work remain. Readiness/publication false, final audit verdict null;
 no merge, deploy, production or editorial acceptance/promotion/publication authorized.
+
+
+### Successor checkpoint 97: qualified Blue Campaign transfer and program context
+
+Complete retained section 542(a)-(b) binds not less than $5 million to ICE Operations
+and Support for necessary Blue Campaign operations for printed fiscal year 2024,
+with notification to both Appropriations Committees before obligation. Minimum is
+not a cap or actual transfer/spend. Complete original program statute, reference
+redesignation and historical transfer/governance notes and seven complete material
+trafficking definitions are bound. The program includes border/airport identification
+within broader guidance/training/awareness/victim-service coordination, not entirely
+immigration or detention/removal funding. No crossing/status prerequisite or actual
+victim/crime/status/service outcome. Severe and sex trafficking remain distinct;
+force/fraud/coercion, under-eighteen alternative, labor/services-purpose and subsidiary
+definitions retain all printed qualifiers. Original note maps printed 7102(9)/(10)
+to redesignated (11)/(12); no silent pointing at current unrelated definitions.
+
+The rider's printed fiscal year and H.R. 1968 section 1105 general continuance are
+separately bound. New question 66 reserves their combined year application with a
+recommendation, exact evidence, alternatives and safe parallel work. This is a real
+operative temporal boundary, not unfinished research relabeled unavailable evidence
+or a hypothetical individual question. Preserve literal qualified transfer/context
+pending bounded combined application review; do not universally change 2024 to 2025,
+declare automatic inoperation or infer a new-year allocation. Frozen question 63's
+incorporated G102-105 scope and all prior 65 questions remain unchanged. Ordinary
+screening and other package/counterpart research proceed independently.
+
+Two strict official 2024 Code captures and two canonical selected sources added;
+four bindings and eight exact original extents. The fresh 7102 raw hash matches
+the earlier severe-definition source, which remains unchanged. The initial web tool
+could not open the valid 242 URL; official title/part verified and direct original
+acquisition succeeded. No unavailable-evidence disposition. Sources 1,354, bindings
+931, captures 345, extent objects 234, coordinates 386. Accounting stays 676 inventory,
+459 reviewed, 40 interpreted, 211 procedural, 206 excluded, two expressive, 217 ordinary
+unfinished and three partial packages, now 66 application questions; 37 episodes,
+72 findings. All 39 other meanings, prior sources, compacts/choices and compiled IR
+preserved. HRA stays provisional with its counterargument; no new categorical rule.
+
+Validation passes 125 focused candidate/IR tests in 12.573 seconds, IR reference
+validator and seven semantic checks. An initial 125-test run had one failure because
+the new question scope mentioned G102-105 and collided with the established selector.
+The new label was made disjoint; frozen question 63 and prior test were not changed.
+Seven generated files match raw-byte replay; eight minimum/notification/year/program/
+status/definition mutations each fail once with zero errors. Four witnesses, eight
+original extents, raw acquisition/source/receipt seals and queue integrity verify;
+both member details and unchanged compacts/choices inspected. Final diff reviewed.
+Core c99f1b253eae066cbc5e8f506e35baa05a27190df8c55f529e7ab116dcef9c33;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+These owner checks do not prove semantic truth or independent acceptance.
+
+Final independent 96 source/propagation and mechanics verdicts are clean within
+bounded scopes. Exact vehicle/A-76/reporting qualifications, original archival raw
+hash/full text/two extents/four witnesses and both members/core/compiler/packet
+propagation verify. Prior 39 actions/sources/captures/questions/compacts/choices and
+compiled IR unchanged. Two guards and seventeen qualification/category mutations
+pass their expectations. No independent full pipeline/generator/test suite, actual
+competition application or new domain judgment. Frozen original 96 receipt remains
+historical; new sealed independent receipt records the bounded closure.
+
+Owner exact 96 run 37674077312 is terminal nine green, with five feature-pinned,
+three synthetic (8325ef67bb58ed8bacfb6b0c7e4fda911395b4d5) and one mixed repair checkout
+verified in raw logs. Hosted 252 candidate tests differ from owner 123 at 96 and 125
+here. Separate sealed CI preserves log hashes/provenance; no all-nine-feature-only
+claim. New 97 requires its own pushed run and independent scope review.
+
+Next: remaining DHS and material DOJ/State/migration/supplementary acts, exact package
+counterparts and ordinary screenings, then full source-bound package comparison.
+No current deadline; ownership continues. Preserved shutdown/history/unrelated work,
+false readiness/publication and null final verdict remain. No merge/deploy/production
+or editorial acceptance/promotion/publication authorized.
