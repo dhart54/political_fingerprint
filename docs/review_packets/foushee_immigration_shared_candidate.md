@@ -951,7 +951,7 @@ The unchanged $5,000 assessment requires a non-indigent person or entity convict
 
 Complete INA 274 criminal subsection (a) is bound as the named conviction context. Its distinct bringing/transporting/harboring/encouraging/conspiracy/assistance, bringing-without-prior-authorization, knowing-ten-hires-in-twelve-months and aggravated commercial/group-danger branches retain their own knowledge, conduct and penalty qualifications. The qualified religious-denomination/nonprofit volunteer-minister exception remains distinct, including its limits on encouraging entry; it is not an exemption for all religious activity. The already-bound unauthorized-alien definition is employment-specific at the particular time, retaining lawful permanent residence or statutory/Attorney-General employment authorization alternatives. No all-noncitizen employment rule, new criminal offense, unrestricted reading of encouragement, modern speech/prosecution holding, actual charge/conviction/sentence or person's status is established by extending the assessment date.
 
-The assessment is not payable until all outstanding court-ordered fines, restitution and other victim-compensation obligations from its underlying convictions have been satisfied. The collection method remains the criminal-fine method subject to that priority, including civil remedies authorized by section 3613 where appropriate; this is not immediate assessment collection before restitution or blanket seizure of every asset. Section 3014(g)'s pay-until-full language remains subject to complete 3613(b). That baseline separately limits fine liability to the later of twenty years from judgment or release from imprisonment, or the individual's death, while restitution has its own later-of-twenty-year rule and estate responsibility until written liability release. No universal perpetual assessment, September-30 discharge of existing liability or claim that death cancels every restitution debt. No individual balance, indigence finding, deadline, property/lien eligibility or estate release is calculated.
+The assessment is not payable until all outstanding court-ordered fines, restitution and other victim-compensation obligations from its underlying convictions have been satisfied. The collection method remains the criminal-fine method subject to that priority, including civil remedies authorized by section 3613 where appropriate; this is not immediate assessment collection before restitution or blanket seizure of every asset. Section 3014(g)'s pay-until-full language remains subject to complete 3613(b). Fine liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment; it also terminates upon the individual's death. Restitution liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment. On death, the individual's estate is responsible for any unpaid restitution balance; the subsection (c) lien continues until the estate receives written release of that liability. No universal perpetual assessment, September-30 discharge of existing liability or claim that death cancels every restitution debt. No individual balance, indigence finding, deadline, property/lien eligibility or estate release is calculated.
 
 The named Domestic Trafficking Victims' Fund is an existing Treasury fund administered by the Attorney General consulting DHS and HHS. Its transfer is an amount equal to assessments collected, available until expended, not every nominal charge as an observed receipt or a new fixed appropriation. Complete Treasury deposit text preserves the printed section 3718(b) exception; its explicit original reference note identifies the redesignation to current 3718(d). Complete material current 3718 keeps qualified agency/private-counsel contracts, retained dispute/claim/termination authority and applicable privacy/debt-collection conditions. A qualifying contract under (a) or (b) may pay a recovery fee from recovered amounts; the appropriation-effectiveness limit has its express fee-contract exception, and this section excludes Internal Revenue Code debts. No actual contract/fee or unconditional zero-fee/no-exception net-deposit calculation is inferred. This fund and its collected-assessment mechanism are separate from assigning the whole CJS $88 million line to Immigration, child grants or a guaranteed net award. Its other use/health-transfer clauses and their material authorities, including the separate H.R. 1968 health-funding conforming amendment, remain under review. This bounded date/assessment/collection review does not close the whole fund, chapter-crime universe, child-trafficking program, other acts or whole package.
 
@@ -7985,3 +7985,58 @@ read error was corrected by explicit UTF-8; no executor disconnection. Continue 
 further center authorities where applied, then State/migration/refugee assistance,
 supplementary acts, other DHS/exact counterparts, ordinary screenings and final package
 comparison. Delivery boundary remains draft PR198; merge needs separate authorization.
+
+
+### Successor checkpoint 106: duration and estate/lien precision correction
+
+Final independent source and mechanical reviews of exact checkpoint 104 found one
+P3/Minor wording issue, with all other bounded source/propagation and mechanics clean.
+Complete 3613(b) source was already correct: twenty years from entry of judgment or
+twenty years after release appears separately for fine and restitution. Shared prose
+compressed the second offset and attached written release to estate responsibility
+instead of the lien. Both member outputs faithfully carried that wording. Preserve
+the historical finding; 104 is not called fully clean before independent recheck.
+
+Checkpoint 106 replaces that single shared sentence with explicit twenty-year offsets
+for both endpoints in each rule and fine death termination. On death the estate is
+responsible for the unpaid restitution balance; separately, the subsection (c) lien
+continues until the estate receives written release of that liability. One existing
+payment-duration guard now checks these distinct propositions. No source replacement,
+new binding, individual estate/property/deadline judgment or new legal question.
+
+Private .tmp/checkpoint106_before_duration_precision preserves committed 105 authoring,
+both historical 104/105 receipts, guard, packet, audit and seven generated files; all
+raw hashes/lengths and committed byte equivalence verified. All historical receipts
+remain frozen. New separate independent 104 receipt records both final bounded lanes,
+the P3 finding, three isolated guards/23 negative mutations and exact 104 CI provenance;
+no full generator/test-suite rerun or fund/medical closure was independently performed.
+New 105/106 reviews and correction recheck remain separate, with no acceptance.
+
+142 tests pass in 13.745 seconds, reference validator and seven semantic checks pass.
+Seven files match separate raw-byte replay. Five offset/death/estate/lien mutations
+each fail once by assertion with zero errors. Full both-member meanings carry the
+corrected sentence; compact copy and recorded choices unchanged. Other 39 meanings,
+all 1,379 sources/362 captures/976 bindings/67 questions, membership/universe/manifest,
+compiled graph and counting/eligibility exactly preserved. Final bounded diff reviewed.
+Core d020e6e688e218e2abc52ae3da428e807ec4575ef6800939e5de4f80cce2143e;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Tests/byte replay establish mechanical confidence, not semantic acceptance.
+No queue or audit-count change: 676 inventory, 460 reviewed, 216 ordinary unfinished,
+three partial packages, 67 questions, 37 episodes/80 observations/72 historical findings.
+New P3 correction receipt preserves bounded review history without changing action
+assessment categories or declaring full-record review complete.
+
+Exact 105 is eb10c16df6add767af4075b32750c919bfa732ec, pushed/draft updated before
+this correction. Its run 37695133878 was in progress at validation. Last terminal
+owner-read CI remains sealed 104 run 37693590562 with five feature/three synthetic/
+one mixed checkout and hosted 268 distinct from 139 then/142 here. New 106 requires
+its own pushed-head checks. Fresh 22:17:17 UTC local HEAD/status verified committed
+105 with clean tracked state before this correction; no git/ssh/python process existed
+at that instant, so diagnostic process query returned no rows. No disconnect or new
+shutdown boundary. Prior broad diagnostic independently corroborated by supervisor.
+
+Existing .w/ib ownership continues; no merge, deploy, production, editorial approval,
+promotion or publication. Continue current 20705 and material fund-use/medical-transfer
+authorities including exact 2101(d)-(e), further center authorities where applied,
+then State/migration/refugee, supplementary/other DHS, counterparts and ordinary queue.
+Draft PR198 remains authorized delivery boundary; merge requires separate authorization.

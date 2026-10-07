@@ -1,0 +1,56 @@
+{
+  "checkpoint": 106,
+  "review_state": "candidate_only",
+  "prior_checkpoint": "eb10c16df6add767af4075b32750c919bfa732ec",
+  "action_id": "house:119:1:70",
+  "prior_action_sha256": "2a9606fae4ac6cacc6b5eb889a93b1fc5f812f2c4192693c9486bc8694a4f0c9",
+  "proposed_action_sha256": "c601af2ed6775e61cd974b150bc8716d6953f240a6a6ff5a6723610f70b41d3c",
+  "replacements": [
+    {
+      "before": "That baseline separately limits fine liability to the later of twenty years from judgment or release from imprisonment, or the individual's death, while restitution has its own later-of-twenty-year rule and estate responsibility until written liability release.",
+      "after": "Fine liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment; it also terminates upon the individual's death. Restitution liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment. On death, the individual's estate is responsible for any unpaid restitution balance; the subsection (c) lien continues until the estate receives written release of that liability."
+    }
+  ],
+  "source_id": "govinfo:18usc3613b-2024-fine-restitution-duration",
+  "source_governed_bytes_sha256": "c813f6e60b42e6fd556a5594d818c77081810562ae2335547591fde189ae1684",
+  "complete_source_passage": "(b) Termination of Liability .—The liability to pay a fine shall terminate the later of 20 years from the entry of judgment or 20 years after the release from imprisonment of the person fined, or upon the death of the individual fined. The liability to pay restitution shall terminate on the date that is the later of 20 years from the entry of judgment or 20 years after the release from imprisonment of the person ordered to pay restitution. In the event of the death of the person ordered to pay restitution, the individual's estate will be held responsible for any unpaid balance of the restitution amount, and the lien provided in subsection (c) of this section shall continue until the estate receives a written release of that liability. ",
+  "source_passage_sha256": "c0beab18f9ca050c4d6d1983a97c9b69ab7d28d2f6fd596410c82cce066edbe9",
+  "existing_complete_binding_reused": true,
+  "new_sources": 0,
+  "new_captures": 0,
+  "new_bindings": 0,
+  "all_prior_sources_and_questions_preserved": true,
+  "independent_finding_receipt": {
+    "receipt_ref": "docs/review_packets/immigration_special_assessment_checkpoint104_independent_review.json",
+    "receipt_sha256": "a4d99dcd5f131211eee3af3ae5ca4c713b2f0fc3b2dc5b74f6c31049557a202a"
+  },
+  "private_preservation_receipt": ".tmp/checkpoint106_before_duration_precision/preservation_receipt.json",
+  "prior_104_and_105_receipts_frozen": true,
+  "individual_application_decision": false,
+  "independent_correction_recheck_pending": true,
+  "publication_authorized": false,
+  "production_eligible": false,
+  "next_action": "Return to current 20705 and material fund-use/medical-transfer research after bounded correction validation and draft delivery.",
+  "receipt_sha256": "dbc10814e745c6deb7616a5ff247ca67be8ecb71382f0bf1d66f7b9e5621bcc3",
+  "validation": {
+    "focused_tests": 142,
+    "focused_runtime_seconds": 13.745,
+    "semantic_ir_reference_validator_passed": true,
+    "semantic_checks": 7,
+    "seven_generated_files_raw_byte_identical": true,
+    "controlled_mutations": 5,
+    "each_mutation_one_assertion_failure_zero_errors": true,
+    "prior_archive_raw_hashes_and_committed_bytes_verified": true,
+    "only_one_shared_meaning_sentence_and_one_guard_changed": true,
+    "both_members_corrected_detail_and_unchanged_compact_choices_verified": true,
+    "all_39_other_meanings_1379_sources_362_captures_976_bindings_67_questions_preserved": true,
+    "compiled_graph_unchanged": true,
+    "final_diff_reviewed": true,
+    "independent_correction_recheck_pending": true,
+    "exact_head_ci": "Prior 104 run 37693590562 terminal nine green and sealed; 105 run 37695133878 in progress at validation, new 106 needs its own pushed-head run"
+  },
+  "output_hashes": {
+    "core": "d020e6e688e218e2abc52ae3da428e807ec4575ef6800939e5de4f80cce2143e",
+    "compiled": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898"
+  }
+}

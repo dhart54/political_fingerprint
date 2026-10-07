@@ -86,8 +86,11 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('not payable until all outstanding court-ordered fines, restitution and other victim-compensation obligations', text)
         self.assertIn('civil remedies authorized by section 3613 where appropriate', text)
         self.assertIn('pay-until-full language remains subject to complete 3613(b)', text)
-        self.assertIn('later of twenty years from judgment or release from imprisonment, or the individual\'s death', text)
-        self.assertIn('restitution has its own later-of-twenty-year rule and estate responsibility until written liability release', text)
+        self.assertIn('Fine liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment', text)
+        self.assertIn('it also terminates upon the individual\'s death', text)
+        self.assertIn('Restitution liability terminates at the later of twenty years from entry of judgment or twenty years after release from imprisonment', text)
+        self.assertIn('the individual\'s estate is responsible for any unpaid restitution balance', text)
+        self.assertIn('the subsection (c) lien continues until the estate receives written release of that liability', text)
         self.assertIn('No universal perpetual assessment, September-30 discharge', text)
         self.assertIn('qualified religious-denomination/nonprofit volunteer-minister exception', text)
 
