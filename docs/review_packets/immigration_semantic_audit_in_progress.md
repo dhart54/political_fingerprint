@@ -6242,3 +6242,94 @@ source-bound package comparison. Ownership continues in existing .w/ib without a
 current deadline; original shutdown/terminal evidence and unrelated work preserved.
 Questions 63/66 remain separate, HRA provisional. Readiness/publication false, final
 verdict null; no merge/deploy/production or editorial acceptance/promotion/publication.
+
+
+### Successor checkpoint 102: trafficking funding and first qualified grant branch
+
+The incorporated CJS paragraph (3) specifies $88 million across three alternative
+named authorities. Exact EH 1301(4) changes the mixed account and paragraph (1),
+not paragraph (3). The whole line is not allocated to a single authority, added
+again or treated as the whole account. No observed grant or individual entitlement.
+Complete pre-vote 7105(b)(2), with its United States subsection heading, preserves
+qualified grantees, discretionary grants subject to appropriations and nonexclusive
+trauma-care/housing examples. Age and circumstance are combined within the first
+example; the three examples are alternatives, not a universal age floor or women-only
+cohort. Individual-assistance/certification branches are not silently imported.
+
+Mandatory three/five/one-percent set-asides attach to amounts for grants under that
+paragraph, not automatically all $88 million. The 75-percent ceiling attaches to
+total project cost with a qualified match. Already-bound CJS 212 mechanisms remain
+distinct, with no automatic combined deduction or fixed net award. Priority is
+discretionary and limited to law-enforcement-only grants; all four fund-use
+attestations and dedicated resources beyond grant duration remain. No mandatory
+priority for every grant, universal services prohibition, actual application award,
+individual immigration status/admission/visa/benefit or separate member stance.
+
+The other two named authorities remain executable material research. Strict full
+2005/2013 act captures remain private and unregistered here; selected historical
+clauses were compared but are not applied as current rules or called unavailable.
+Current program mapping has found subsequent amendments, so old citizenship/residence
+cohorts and the original 2013 sunset cannot be treated as present rules without that
+operative comparison. No new legal question or whole-DOJ/package closure. The next
+increment continues those authorities from acquired current 2024 sections 20702 and
+20703, preserving all original captures. A strict identity check rejected the guessed
+20702 heading before any capture; the resolved official heading was verified and
+captured. A sibling 20703 acquisition succeeded and was preserved without redownload.
+Those current captures are private pending research, outside this registered count.
+
+Two selected sources, one registered full acquisition, three original coordinates
+and seven exact claim bindings added, reusing the signed-law capture and qualified
+continuance/transfer controls. Strict raw/full-text hashes, full/selected governed
+seals and original extents reproduce with original glyphs preserved. 133 focused
+candidate/IR tests pass in 12.387 seconds; IR reference validator and seven semantic
+checks pass. Seven generated files match separate raw-byte replay. Two bounded
+guards/nine controlled authority/scope/project-share/match/example/priority/resource
+mutations fail by assertion with zero errors. Both full member explanations,
+unchanged compact/recorded choices, prior-state preservation and final diff inspected.
+Core 4ae062074af6b3ca208684784bae6dbea6e8ca9e0a57c26c29a111830bd64b77;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Mechanical checks do not establish semantic truth or acceptance.
+
+Accounting unchanged: 676 inventory, 460 reviewed, 40 interpreted, 211 procedural,
+207 excluded, two expressive, 216 ordinary unfinished, three partial packages and
+66 application questions. 37 episodes, 80 member observations and 72 findings;
+1,367 canonical sources, 956 interpreted bindings, 351 registered captures, 246
+extent objects and 410 coordinates. All prior 1,365 sources, 39 other meanings,
+questions/choices/counting/compact/graph and frozen receipts preserved. Unique-action
+84 No Defect/three Minor/eleven Major/one Critical and historical findings unchanged.
+
+Final independent 101 source/propagation review is clean within its reported bounds:
+mixed account/designation/cap, construction/per-diem/private-contract qualifications,
+attributed OLC/full opinion/cross-page reference mapping, distinct current/prior
+leases versus housing-contract duration and section 206 predicates match. Three
+raw/full-text hashes, eight bindings/nine extents and full both-member/core/compiler/
+packet propagation verify; prior objects/choices/questions match and both guards pass.
+Final mechanical confirmation remains pending at this source receipt. No independent
+full generator/test suite, individual application judgment or review of new 102.
+
+Owner-read exact 101 run 37686436054 is terminal nine green with five feature-pinned,
+three synthetic and one mixed checkout. Synthetic SHA
+2c149045256de3dd3e48d66003f8344e9250e6b8; hosted 260 four-module candidate tests
+are distinct from owner 131 then and 133 here. Separate sealed CI receipt retains
+raw-log hashes and checkout evidence; audit current CI points to 101, preserving
+historical old 84 and earlier receipts. New 102 needs its own pushed-head run.
+
+Continue current trafficking-program authorities, State/migration/refugee assistance,
+supplementary acts, other DHS/exact counterparts and ordinary screenings, then final
+source-bound package comparison. No current deadline; original shutdown/terminal
+evidence and unrelated work remain preserved in existing .w/ib. Questions 63/66 are
+separate, HRA provisional; readiness/publication false and final verdict null. The
+delivery boundary remains the draft PR, with no merge/deploy/production or editorial
+acceptance/promotion/publication authority.
+
+
+Checkpoint 102 delivery update: final independent 101 mechanics arrived after the
+separate source/PDF receipt above was sealed. Eight bindings/four sources/three
+captures append cleanly; prior 39 actions, all 66 questions and 103 old test methods
+are preserved. All receipt/action/core/projection/proof seals and both member
+propagation verify. Two isolated guards/seventeen qualifier-removal mutations meet
+expected assertion failures with zero errors. Exact 101 CI is independently verified
+terminal nine green with five pinned/three synthetic/one mixed checkout and hosted
+260 distinct from owner 131. A separate sealed mechanical receipt preserves the
+complete source/PDF review unchanged. No independent full pipeline/replay or new 102
+review, whole-record acceptance or publication authority. New 102 remains pending.

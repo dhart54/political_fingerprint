@@ -18,6 +18,38 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_trafficking_grants_keep_alternative_authorities_and_scoped_percentages(self):
+        action = getattr(self, 'hr1968_trafficking_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected trafficking victim-services funding', 1)[1]
+        self.assertIn('three alternative named authorities', text)
+        self.assertIn("not paragraph (3)'s $88 million", text)
+        self.assertIn('not automatically to the entire $88 million line covering alternative authorities', text)
+        self.assertIn('three percent for research/evaluation/statistics', text)
+        self.assertIn('five percent for training/technical assistance', text)
+        self.assertIn('one percent for management/administration', text)
+        self.assertIn('remain separate from CJS section 212', text)
+        self.assertIn('75 percent of total project cost', text)
+        self.assertIn('consistent with grant requirements and approved project scope', text)
+        self.assertIn('other two named authorities still require current program mapping', text)
+
+    def test_hr1968_trafficking_priority_keeps_nonexclusive_examples_and_narrow_attestations(self):
+        action = getattr(self, 'hr1968_trafficking_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The selected trafficking victim-services funding', 1)[1]
+        self.assertIn('examples are nonexclusive', text)
+        self.assertIn('age and circumstance requirements are joined within the first example', text)
+        self.assertIn('three examples are alternatives', text)
+        self.assertIn('priority applies only when selecting grants available solely for law-enforcement operations or task forces', text)
+        self.assertIn('Attorney General may prioritize', text)
+        self.assertIn('offenses directly resulting from victimization', text)
+        self.assertIn('not condition access to shelter or restorative services on collaboration with law enforcement', text)
+        self.assertIn("resources extending beyond the grant's duration", text)
+        self.assertIn('combined attestation conditions for that discretionary priority', text)
+        self.assertIn('not silently narrowed by importing separate individual-assistance/certification provisions', text)
+
     def test_hr1968_marshals_budget_keeps_override_caps_and_two_designations(self):
         action = getattr(self, 'hr1968_transport_action', None)
         if action is None:
