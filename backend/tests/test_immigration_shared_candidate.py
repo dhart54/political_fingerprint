@@ -18,6 +18,23 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_state_border_fund_keeps_separate_detection_and_relocation_categories(self):
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
+        passage = next(c['passage'] for c in action['claim_source_map']
+                       if c['passage'].startswith('(b) State Border Security Reinforcement Fund.'))
+        detection = passage[passage.index('(C) Detection'):passage.index('(D) Relocation')]
+        relocation = passage[passage.index('(D) Relocation'):passage.index('(3) Appropriation')]
+        self.assertIn('unlawfully entered the United States and have committed a crime', detection)
+        self.assertIn('from small population centers to other domestic locations', relocation)
+        self.assertNotIn('committed a crime', relocation)
+        for text in [action['meaning'], action['limitations'][-1]]:
+            own_detection = text[text.index('Senate 90005(b) purpose C:'):text.index('Senate 90005(b) purpose D:')]
+            own_relocation = text[text.index('Senate 90005(b) purpose D:'):text.index('Senate 90005(b) paragraph 3:')]
+            self.assertIn('unlawfully entered the United States and have committed a crime', own_detection)
+            self.assertIn('transfer or referral of such aliens to the Department of Homeland Security as provided by law', own_detection)
+            self.assertIn('unlawfully present in the United States from small population centers to other domestic locations', own_relocation)
+            self.assertNotIn('committed a crime', own_relocation)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],

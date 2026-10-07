@@ -3525,3 +3525,58 @@ Stonegarden and remaining package components, then continuing/omnibus/NDAA/scree
 Original 1994 follow-up separate; existing owner/historical markers/unrelated
 work preserved. No current shutdown, production/config/security/schema, merge,
 deployment or editorial acceptance/promotion/publication authority.
+
+
+### Successor checkpoint 62: exact State Border Security Reinforcement Fund
+
+Senate 90005(b) establishes its own DHS fund, with eligible-State/local-unit
+purposes and discretionary State-agency/local-government expenditure grants kept
+distinct. Four purposes retain their complete operative clauses on both meaning
+and qualification surfaces. Wall/fencing/barrier/buoy construction specifies the
+southern border and permits related planning/material/personnel costs; ground
+preparation concerns at or near land borders and construction and maintenance.
+Detection/interdiction retains illicit substances and the alien category requiring
+both unlawful entry and commission of a Federal/State/local crime, with lawful
+transfer or referral. Domestic relocation instead retains unlawful presence and
+small-population-center origin; no crime or unlawful-entry condition is borrowed.
+
+Own additional fiscal 2025 DHS $10 billion is available until September 30, 2034
+for qualified purpose expenses. Grants may cover lawful completed, ongoing or
+new activities on or after January 20, 2021. Each State application must supply
+the information the Secretary may require, purpose and allocation plan; Secretary
+must begin acceptance within 90 days of enactment. No applicant deadline or actual
+application opening, award or expenditure determination. Exclusively Federal
+immigration/border authorities remain reserved without deciding actual functions.
+FEMA may use no more than one percent of funds under this subsection to administer
+grants in this section; both printed scope words retained. House reimbursement
+amount/date/duplicate-reimbursement rules and 90005(a) program meaning not imported.
+
+Ten source-to-prose blocks across eight dimensions retain complete operative
+wording, not abbreviated status/condition summaries. One new binding to existing
+governed EAS, no new source or capture. Owner primary comparison includes all
+actors, actions, objects, geography, timing, conjunctions, exceptions and
+discretion, plus unchanged compact copy. Exact checkpoint 61 plus declared text
+and binding reconstruct current authoring; all 38 other actions/House/earlier
+Senate clauses/choices/compacts, 1,298 sources, 276 captures, 183 extents, membership
+and disposition records, 51 application questions and frozen receipts unchanged.
+Only partial-component scope sentence and proposal seal change. Audit source
+coverage/current action digests, both member propagation, candidate isolation,
+accounting and seven raw generated replay files pass. Source-backed category guard
+rejects entry-to-presence mutation with one assertion failure and zero errors.
+
+Final 234 tests in six-module aggregate pass in 41.379 seconds, including 45
+candidate tests; seven semantic checks pass. Tests establish contract integrity,
+not semantic truth. Diff reviewed. Core 3cb54113eb37df1e2048a0eb328f92c1f91ba498df0e013d93580f9a231b1821; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203
+excluded, two expressive, 36 episodes, 78 observations, 70 findings. Sources
+1,298, bindings 771, captures 276; remaining 221 screenings, two partial H.R.1
+component reviews and 51 application questions. Independent new-increment review
+pending; same-owner audit partial and final verdict null. No publication authority.
+
+Exact checkpoint 61 CI 37549854197 at ce5bdd6f3afad53cccfe8552176a48ede6e6da7a
+completed successfully; owner-native all nine jobs verified. Exact 62 CI follows
+push. Continue 90005(a) Stonegarden with own pre-vote program authority, other
+package components, continuing/omnibus/NDAA and ordinary screenings. Original
+1994 acquisition follow-up stays separate. Existing historical terminal markers
+and unrelated work preserved, no current shutdown or production/merge/deployment/
+editorial acceptance/promotion/publication permission.
