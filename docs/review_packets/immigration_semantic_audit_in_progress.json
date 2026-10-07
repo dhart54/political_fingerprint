@@ -9262,21 +9262,21 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 66,
+    "focused_tests": 68,
     "focused_runtime_seconds": null,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "pending_checkpoint74_push",
+    "exact_head_ci": "pending_checkpoint76_push",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "9046b8ec8307380941fcbfcaf4a908bd6d328af8",
-      "run": 37560982589,
+      "head": "c4ce6f129d6233bc186543657212251cb94a1150",
+      "run": 37562307986,
       "status": "completed",
       "conclusion": "success",
       "successful_jobs": 9,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37560982589",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37562307986",
       "checkout_provenance": {
         "pr_head_pinned_jobs": [
           "m14d-exact-head",
@@ -9305,14 +9305,14 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Exact House 110201 HRA employee-class tax nonresident and no-US-source-employer-income conjunction, complete definitions/exceptions/own arrangement context and distinct dated CFR 911(b) reference. Proposed context-only scope routed for bounded domain review; no new Immigration meaning or package closure.",
+    "focused_scope_note": "Exact House 112030/Senate 70531 imported-article customs scope, distinct target and penalty/repeal dates, original 1321 categories/exceptions. No immigration entry inference, codification adjudication or canonical meaning/eligibility change.",
     "last_completed_exact_head_ci": {
-      "head": "9046b8ec8307380941fcbfcaf4a908bd6d328af8",
-      "run": 37560982589,
+      "head": "c4ce6f129d6233bc186543657212251cb94a1150",
+      "run": 37562307986,
       "status": "completed",
       "conclusion": "success",
       "successful_jobs": 9,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37560982589",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37562307986",
       "checkout_provenance": {
         "pr_head_pinned_jobs": [
           "m14d-exact-head",
@@ -9361,8 +9361,8 @@
       "successful_jobs": 9,
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37538252890"
     },
-    "aggregate_tests": 255,
-    "aggregate_runtime_seconds": 42.179,
+    "aggregate_tests": 257,
+    "aggregate_runtime_seconds": 44.28,
     "aggregate_modules": [
       "test_shared_domain_candidate",
       "test_shared_legislative_corpus",
@@ -9371,7 +9371,7 @@
       "test_shared_candidate_research",
       "test_immigration_shared_candidate"
     ],
-    "candidate_focused_execution_scope": "66 candidate tests included in 255-test six-module aggregate; no separate runtime claimed"
+    "candidate_focused_execution_scope": "68 candidate tests included in 257-test six-module aggregate; no separate runtime claimed"
   },
   "open_legal_interactions": [
     {
@@ -11414,5 +11414,33 @@
     "state": "paused_goal_incomplete",
     "resume_requires_explicit_dylan_authorization": true,
     "no_new_customs_candidate_authored": true
+  },
+  "hr1_customs_shipment_scope_checkpoint": {
+    "receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_customs_shipment_scope_review.json",
+    "receipt_sha256": "8b0a5e3b6375588a9c5153d28f51ffea0da5522858c2a591c4e4b5f81cba9afc",
+    "scope_disposition": "context_only_no_new_immigration_meaning",
+    "canonical_meanings_unchanged": true,
+    "complete_immigration_component_review": false,
+    "ordinary_screenings": 221,
+    "unfinished_component_reviews": 2,
+    "legal_application_questions": 62,
+    "remaining_unresearched_scope_leads": 2,
+    "reserved_hra_domain_application_unchanged": true,
+    "next_action": "Foreign-tax remedy and foreign-entity electricity source-grounded scope assessments; full counterpart/package gates, then continuing/omnibus/NDAA packages and ordinary screens. HRA scope application stays separately reserved."
+  },
+  "independent_checkpoint74_source_review": {
+    "receipt": "docs/review_packets/hr1_checkpoint74_independent_source_review.json",
+    "receipt_sha256": "8229f54d5b87be76848b7454c1ac3ab7b7ed78f6de812dfe2cb3998fb47c4baf",
+    "verdict": "no_material_semantic_defect_in_bounded_research_representation",
+    "domain_application_unresolved": true,
+    "fresh_2019_raw_bytes_differ_normalized_text_matches": true,
+    "no_independent_local_replay_or_application_judgment": true
+  },
+  "resumption_authorization_20261007": {
+    "receipt": "docs/review_packets/immigration_resume_authorization_20261007.json",
+    "receipt_sha256": "70c7d7eaa8e54090bf0440aa39f717098dfb6ffee495fabf1d19c2dbe0e0f675",
+    "state": "active_authorized_successor",
+    "current_deadline": null,
+    "shutdown75_remains_historical": true
   }
 }

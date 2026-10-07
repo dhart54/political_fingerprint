@@ -18,6 +18,44 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_customs_scope_keeps_article_object_and_maximum_penalty(self):
+        receipt = getattr(self, 'customs_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_customs_shipment_scope_review.json').read_text(encoding='utf-8'))
+        for witness in receipt['operative_witnesses']:
+            with self.subTest(source=witness['source_id']):
+                body = witness['passage']
+                self.assertIn('attempts to introduce an article into the United States using the privilege', body)
+                self.assertIn('the importation of which violates any other provision of United States customs law', body)
+                self.assertIn('up to $5,000 for the first violation and up to $10,000 for each subsequent violation', body)
+                self.assertIn('in addition to any other penalty permitted by law', body)
+                self.assertIn('30 days after the date of the enactment of this Act', body)
+                self.assertIn('Subsection (c) of such section 321, as added by subsection (a) of this section, is repealed', body)
+                self.assertIn('shall take effect on July 1, 2027', body)
+                self.assertNotIn('CHAPTER 6--', body)
+        scope = receipt['scope_assessment']
+        self.assertEqual(scope['candidate_scope_disposition'], 'context_only_no_new_immigration_meaning')
+        self.assertFalse(scope['canonical_meanings_changed'])
+        self.assertFalse(scope['eligibility_or_counting_changed'])
+
+    def test_customs_version_targets_and_original_goods_privileges_are_distinct(self):
+        receipt = getattr(self, 'customs_scope_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_customs_shipment_scope_review.json').read_text(encoding='utf-8'))
+        bodies = {w['source_id']: w['passage'] for w in receipt['operative_witnesses']}
+        self.assertIn('Section 321(a)(2)(B) of such Act (19 U.S.C. 1321(a)(2)(B))', bodies['congressional-record:2025-05-21-hr1-as-amended'])
+        self.assertIn('Section 321(a)(2) of such Act (19 U.S.C. 1321(a)(2))', bodies['govinfo:hr1eas'])
+        self.assertNotIn('1321(a)(2)(B)', bodies['govinfo:hr1eas'])
+        original = receipt['original_context_witnesses'][0]['passage']
+        self.assertIn('articles imported by one person on one day', original)
+        self.assertIn('$100 in the case of articles sent as bona fide gifts', original)
+        self.assertIn('$200 in the case of articles accompanying, and for the personal or household use', original)
+        self.assertIn('$800 in any other case', original)
+        self.assertIn('a single order or contract is forwarded in separate lots', original)
+        self.assertIn('The Secretary of the Treasury is authorized by regulations to prescribe exceptions', original)
+        self.assertEqual(receipt['scope_assessment']['amendment_application_boundary']['state'],
+                         'literal_instruction_preserved_no_codification_adjudication')
+
     def test_hra_employee_class_permission_keeps_joint_tax_predicate(self):
         receipt = getattr(self, 'hra_scope_receipt', None)
         if receipt is None:
