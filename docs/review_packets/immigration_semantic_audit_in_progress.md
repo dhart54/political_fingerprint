@@ -3713,3 +3713,73 @@ loan-exclusion SSN clauses and House 110115/Senate 70204 account/pilot citizensh
 SSN clauses. Identifier occurrence alone is not coverage: Senate 70119 appeared
 only inside earlier House-UAC range reference. Then continuing/omnibus/NDAA and
 ordinary screenings. No shutdown or production/merge/deployment/acceptance authority.
+
+
+### Successor checkpoint 65: loan-discharge exclusion and own SSN rules
+
+House 110019 and Senate 70119 replace 108(f)(5) with their own complete exclusion
+grounds, common loan-category gate, identification rules, math-error amendment and
+applicability to discharges after December 31, 2025. Full ten operative clause
+blocks retain three separate ground alternatives: specified HEA 437(a)/(d)/parallel
+Part D, 464(c)(1)(F), or otherwise death/total-permanent disability of the student.
+Every ground retains the common requirement that the loan meet subparagraph (B).
+Full 108(f)(2) and 140(a) definitions, HEA 437/464/455 material authorities bound;
+parent borrower and student remain distinct. Tax exclusion is distinct from loan
+cancellation. Original 2024 temporary rule's discharge window and loan categories
+are not extended unchanged, while other 108 exclusions remain separate. No actual
+loan, discharge, exclusion, marital or number-validity determination.
+
+Both versions invoke 24(h)(7) with their own same-bill definition and complete SSA
+issuance authority: citizen OR specified authorization route, common issuance
+before return due date. No citizen-only rule, bare number, child-credit amount or
+qualifying-child duty imported. House requires taxpayer and conditional married-
+spouse SSNs plus rules similar to 32(d); Senate only taxpayer number, with no new
+spouse/similar-marital clause borrowed. House adds math-error (W), Senate adds (X)
+to its as-amended list, preserving notice/conditional abatement/deficiency context
+including 60-day abatement-request route; no fraud or actual assessment inference.
+
+Question 54 reserves House similar-to 32(d) application with full joint-return/
+separated-spouse conjunctions, child-residence/abode/decree/household conditions.
+Question 55 reserves common loan-category application to named HEA paths, especially
+parent loans, full student/private loan definitions and Direct Loan limitations.
+Recommendations retain both literal rules and complete source conditions before
+individual application review; no blanket all-HEA-discharge tax exclusion, universal
+child/joint-return requirement or cross-version marital rule. Alternatives/safe
+parallel work bound. No new methodology or actual application decided by owner.
+
+Five new original HTML captures/five extents, 13 new and 9 reused binding hashes,
+10 clause blocks across 8 dimensions. House floor/EH complete 2,360-character section
+matches exactly, sources unchanged. Quote/heading display normalization removes no
+operative words. Exact checkpoint 64 plus declared two-action additions reconstruct
+current authoring. Other 37 actions/earlier House/Senate clauses/choices/compacts,
+prior 1,302 sources/283 manifest rows/frozen receipts and prior 53 questions preserved.
+Two membership source-list/proposal-reference/scope updates, no disposition/counting/
+eligibility change. 191 text extents, audit/witness/receipt/source hashes, common
+loan/role/ground predicates, both members, candidate isolation/accounting and seven
+raw generated-byte replay files verify. Conditional-spouse mutation rejected with
+one assertion subtest failure, zero errors. Final 237 tests in 42.691 seconds,
+including 48 candidate tests; seven semantic checks pass. Diff reviewed. Tests are
+contract evidence, not semantic truth. Core adbaa9fbe47de87ca4b4d04ed724591e2e7c48692a27e875c22243bb52954733; compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+
+Durable independent 63/64 mechanics receipt records no blocker: regression selector/
+assertions and negative mutations, append-only sources, protected/compiled/mapping
+scope, five Senate/six House bindings, 283 captures, 53 questions and partial
+accounting. Earlier 61/62 receipt limits intact; local tests/replay owner evidence,
+source 63/64 audit still running at message time, no new 65 review/acceptance. Exact
+63 run 37551514431 and 64 run 37552019419 all nine green, independently and owner-native
+verified; last 64 head 44275b39a9f760ce58bbb1e3ca40fe2d507ae6df. Current CI follows push.
+
+Accounting remains 676 inventory, 455 reviews, 39 meanings, 211 procedural, 203 excluded,
+two expressive, 36 episodes, 78 observations, 70 findings. Sources 1,307, bindings 795,
+captures 293, 191 text extents. Remaining 221 ordinary screenings, two partial H.R.1
+reviews, 55 application questions and original 1994 follow-up. Final audit verdict
+null, independent new-increment review pending. Next: House 110115 accounts and
+House 110116 pilot versus full Senate 70204. Read-only discovery corrected private
+outer-section previews that stopped at nested inserted Code 6434: full bill sections
+include that inserted section and later clauses; no candidate used the truncated
+preview. House pilot is separately 110116. Distinct account/pilot citizen/number/
+age/election rules require own source meanings, then remaining packages/screens.
+No current shutdown, production/merge/deployment/editorial acceptance authority.
+
+
+Checkpoint 65 review follow-up received before commit: independent 63/64 source review found no material defect within its stated scope. All 11 binding-instance hashes, both receipt/prose hashes, 11 matrix hashes, two correction-witness hashes and House-body digest verified; exact detail appends, new qualifications and prior repairs retained. Full Massie detail bytes, raw acquisition hashes and PDF pixels remain independently unverified. Questions 52/53 remain separate; no actual award, implementation or package acceptance. Earlier pending-at-message-time statement above remains historical, with this follow-up recorded in the bounded independent receipt. New checkpoint 65 independent review remains pending.

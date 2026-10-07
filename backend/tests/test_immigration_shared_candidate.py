@@ -65,6 +65,31 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertIn('until September 30, 2029', own)
             self.assertIn('security, planning, and other costs', own)
 
+    def test_loan_exclusion_keeps_version_specific_spouse_requirements(self):
+        for aid, label, section in [('house:119:1:145', 'House', '110019'),
+                                    ('house:119:1:190', 'Senate', '70119')]:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            passage = next(c['passage'] for c in action['claim_source_map']
+                           if c['passage'].startswith('SEC. ' + section + '.'))
+            own_source = passage[passage.index('``(C) Social security number requirement.'):
+                                 passage.index('(b) Omission of Correct Social Security Number')]
+            qualification = next(q for q in action['limitations']
+                                 if q.startswith('Selected exact ' + label + ' ' + section + ' death/disability'))
+            for text in [action['meaning'], qualification]:
+                own = text[text.index(label + ' ' + section + ' identification and own marital rules:'):
+                           text.index(label + ' ' + section + ' math-error amendment:')]
+                with self.subTest(action=aid):
+                    if label == 'House':
+                        self.assertIn('if the taxpayer is married', own_source)
+                        self.assertIn('if the taxpayer is married', own)
+                        self.assertIn('social security number of such taxpayers\'s spouse', own)
+                        self.assertIn('Rules similar to the rules of section 32(d)', own)
+                    else:
+                        self.assertNotIn('spouse', own_source)
+                        self.assertNotIn('spouse', own)
+                        self.assertNotIn('32(d)', own)
+                        self.assertIn("taxpayer's social security number on the return", own)
+
     @staticmethod
     def seal_universe(universe):
         universe['universe_subject_sha256'] = digest(dict(subject=universe['subject'],
