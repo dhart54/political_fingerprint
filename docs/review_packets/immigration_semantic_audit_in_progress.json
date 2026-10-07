@@ -9262,20 +9262,21 @@
     "all_current_expressive_controls_reviewed": true
   },
   "checkpoint_validation": {
-    "focused_tests": 62,
+    "focused_tests": 64,
     "focused_runtime_seconds": null,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "pending_checkpoint72_push",
+    "exact_head_ci": "pending_checkpoint73_push",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
-      "head": "67c91c404bf37aff28ff79ff0c567694b2166b89",
+      "head": "fce698a19923f3da30b5bf1730b03c94f76a6cc4",
+      "run": 37560148824,
       "status": "completed",
       "conclusion": "success",
       "successful_jobs": 9,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37558630300",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37560148824",
       "checkout_provenance": {
         "pr_head_pinned_jobs": [
           "m14d-exact-head",
@@ -9304,13 +9305,14 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Exact House 110109/Senate 70411 donor/student/organization/income/applicability boundaries, printed 7701(a)(9) and original 530(b)(3) expenses; House volume-cap future-year interaction separately reserved as question 62.",
+    "focused_scope_note": "Complete House 44103/Senate 71103 duplicate-enrollment/address mechanism assessed as context only. Conditional SSN transmission, State-residence exception and own actor/notification/PARIS differences preserved; no new Immigration meaning, eligibility/counting change or full package closure.",
     "last_completed_exact_head_ci": {
-      "head": "67c91c404bf37aff28ff79ff0c567694b2166b89",
+      "head": "fce698a19923f3da30b5bf1730b03c94f76a6cc4",
+      "run": 37560148824,
       "status": "completed",
       "conclusion": "success",
       "successful_jobs": 9,
-      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37558630300",
+      "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37560148824",
       "checkout_provenance": {
         "pr_head_pinned_jobs": [
           "m14d-exact-head",
@@ -9359,8 +9361,8 @@
       "successful_jobs": 9,
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37538252890"
     },
-    "aggregate_tests": 251,
-    "aggregate_runtime_seconds": 42.112,
+    "aggregate_tests": 253,
+    "aggregate_runtime_seconds": 42.03,
     "aggregate_modules": [
       "test_shared_domain_candidate",
       "test_shared_legislative_corpus",
@@ -9369,7 +9371,7 @@
       "test_shared_candidate_research",
       "test_immigration_shared_candidate"
     ],
-    "candidate_focused_execution_scope": "62 candidate tests included in 251-test six-module aggregate; no separate runtime claimed"
+    "candidate_focused_execution_scope": "64 candidate tests included in 253-test six-module aggregate; no separate runtime claimed"
   },
   "open_legal_interactions": [
     {
@@ -11360,5 +11362,27 @@
     "new_bounded_verdict": "no_material_defect",
     "earlier_pending_state_is_historical": true,
     "no_local_test_replay_or_application_adjudication": true
+  },
+  "hr1_duplicate_enrollment_scope_checkpoint": {
+    "receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_duplicate_enrollment_scope_review.json",
+    "receipt_sha256": "0a16e7ea4b6fdaf786b508c12c4100b0eeda09817fcdcf1e167f3acef4ac599c",
+    "scope_disposition": "context_only_no_new_immigration_meaning",
+    "canonical_candidate_inputs_unchanged": true,
+    "complete_immigration_component_review": false,
+    "ordinary_screenings": 221,
+    "unfinished_component_reviews": 2,
+    "legal_application_questions": 62,
+    "remaining_scope_assessments": 4,
+    "next_action": "Exact HRA employee-class scope and substantive Senate counterpart/absence; then foreign-entity energy, foreign-tax remedy and commercial-shipment customs, full package coverage and continuing/omnibus/NDAA/ordinary screens."
+  },
+  "independent_checkpoint71_reviews": {
+    "receipt": "docs/review_packets/hr1_checkpoint71_independent_reviews.json",
+    "receipt_sha256": "3b7d80e9f85e504dc1bffe009402cad964bc89df348e8a577ddace61e9412d01",
+    "separate_source_and_mechanical_verdicts": true,
+    "source": "no_material_defect",
+    "mechanical": "no_blocker",
+    "independent_guard_tests": 2,
+    "independent_mutations": 3,
+    "no_full_local_replay_or_application_adjudication": true
   }
 }

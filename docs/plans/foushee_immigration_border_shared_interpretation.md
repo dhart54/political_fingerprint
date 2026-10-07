@@ -4844,3 +4844,79 @@ duplicate enrollment, HRA employee class, foreign-entity electricity, foreign-ta
 commercial-shipment customs. Verify substantive counterparts/absence and full package
 scope before any closure; continue other packages/screens alongside reserved judgments.
 No merge/deploy/production/editorial acceptance/promotion/publication. Markers untouched.
+
+
+### Successor checkpoint 73: State duplicate enrollment is a context-only lead
+
+Complete House 44103 and Senate 71103 establish address verification and prevention
+of simultaneous enrollment under multiple State Medicaid/CHIP plans. They do not add
+a citizenship, lawful-presence, nationality, work-authorization or immigration-status
+eligibility test. Number transmission applies only if the person has an SSN and is
+required to supply it for enrollment. A State identifies residence and disenrolls a
+nonresident unless a Secretary-specified exception applies; State residence is not
+immigration-status residence. This is a bounded context-only component disposition,
+not an exclusion of either entire H.R. 1 action or a change to its candidate meaning.
+
+House 44103 matches its complete 7003-character served EH witness exactly; complete
+adopted correction witnesses have no direct 44103 change. Senate is 7099 characters,
+with a different heading and own operative differences: House notify-or-transmit,
+Senate transmit; House Secretary funding, Senate CMS Administrator funding/system
+and standards; Senate PARIS waiver expressly limits matching to address verification.
+Each retains own $10 million fiscal 2026/$20 million fiscal 2029 until expended,
+January 2027 address process/October 2029 system timing, monthly and eligibility-
+determination submissions, privacy safeguards, reliable-source requirements, prompt
+managed-care updates and CHIP incorporation. Exact House wavier spelling retained.
+No automatic SSN-denial, removal, extra enforcement power or actual eligibility/loss
+inferred; this does not decide every incorporated managed-care definition or claim
+all other law/H.R. 1 provisions leave eligibility unchanged.
+
+Twelve complete clauses across eight dimensions, three complete bill witnesses,
+two full correction witnesses and five original-context witnesses are sealed in
+hr1_duplicate_enrollment_scope_review.json. Reuse original manifested 1902(a)(7),
+1902(a)(16) and 1903(r)(3) captures plus two already governed verification/CHIP extents.
+Original PARIS matching and resident-but-absent context distinguish this mechanism
+from first-ever verification or citizenship classification. No new source/capture,
+canonical action binding, shared meaning, member clause, choice, compact or disposition.
+The existing Senate (b) context binding alone still does not establish full coverage.
+
+253 tests in 42.030 seconds, including 64 candidate tests, and seven semantic checks
+pass. Conditional SSN made universal, residence exception removed, and Senate CMS
+actor replaced each produce one assertion failure and zero errors in separate
+controlled mutations. Canonical inputs and seven generated tracked texts match the
+exact predecessor under existing Git Windows line-ending conversion. Seven newly
+generated raw JSON files are byte-identical to separate replay. These are distinct
+claims; Git text normalization is not original acquisition-byte equivalence. All
+39 audit action hashes, 1323 sources, 850 bindings, 321 captures, 207 governed extent
+objects/346 coordinates, both members and all prior receipts/62 questions preserved.
+Core 79d1d9f481765fcb83e2cbd17ca8fcdcaf84d7ccca87d37794e69a1b624722e8 and
+compiled b18d6c660e29cf45ab72559478df7674e538d009e233002de5ae9742b514102f unchanged.
+Tests do not establish semantic truth; independent new-scope review pending.
+
+New frozen hr1_checkpoint71_independent_reviews.json records separate source no-
+material-defect and mechanics no-blocker verdicts. Source reviewer verified all
+four primary/raw-text hashes, 40 extents, 31 provenance-free vessel sections,
+14 bindings, 38 clauses, comparisons, full additions/qualifications and both full
+member propagation. No source-review tests/replay, exhaustive capture-manifest audit,
+historical-member/package re-audit or application approval. Mechanics reviewer
+reconstructed prior authoring/source patch/capture prefix, all action hashes and
+member preservation, and independently executed only two new guards plus three
+in-memory mutations (one assertion failure/zero errors each). This focused execution
+is not full unittest/pytest, pipeline, generator or raw acquisition replay. The
+215 m14h candidate-preparation tests differ from owner 249 aggregate at checkpoint 71.
+Current checkpoint 72/73 review remains pending, with all reserved questions intact.
+
+Checkpoint 72-associated run 37560148824 completed all nine jobs green. Preserve
+five jobs pinned to PR head, three synthetic-merge checkouts and one mixed-context
+repair job; associated head is not proof every job executes feature-only bytes.
+Checkpoint 73 CI follows push, with no rerun merely to relabel provenance.
+
+Accounting unchanged: 676 inventory, 455 reviews, 39 meanings, 211 procedures,
+203 exclusions, two expressive controls, 36 episodes, 78 observations, 70 findings.
+221 ordinary unfinished screenings and two partial H.R. 1 reviews remain, separately
+from 62 reserved application questions. Four bounded scope assessments remain:
+HRA employee class, foreign-entity electricity, foreign-tax remedy and commercial
+shipment customs. Next assess the complete HRA class/definitions and substantive
+Senate counterpart or supported absence, then other three and full package coverage,
+continuing/omnibus/NDAA packages and ordinary screens. No scope is preapproved from
+keywords. No current deadline/shutdown; historical markers preserved, ownership active.
+No merge, deploy, production write, editorial acceptance, promotion or publication.

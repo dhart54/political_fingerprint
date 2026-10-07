@@ -18,6 +18,44 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_duplicate_enrollment_number_condition_is_not_a_new_status_gate(self):
+        receipt = getattr(self, 'duplicate_enrollment_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_duplicate_enrollment_scope_review.json').read_text(encoding='utf-8'))
+        scope = receipt['scope_assessment']
+        self.assertEqual(scope['candidate_scope_disposition'], 'context_only_no_new_immigration_meaning')
+        self.assertFalse(scope['whole_action_disposition_changed'])
+        self.assertFalse(scope['eligibility_or_counting_changed'])
+        for witness in receipt['operative_witnesses']:
+            with self.subTest(source=witness['source_id']):
+                body = witness['passage']
+                self.assertIn('if such individual has a social security number and is required to provide such number', body)
+                self.assertIn('if such individual does not reside in such State', body)
+                self.assertIn('unless such individual meets such an exception as the Secretary may specify', body)
+                self.assertIn('not less frequently than once each month and during each determination or redetermination', body)
+                self.assertIn('consistent with subsection (a)(7)', body)
+                self.assertIn('directly from, or verified by such entity or plan directly with, such individual', body)
+
+    def test_duplicate_enrollment_versions_preserve_funding_actor_and_paris_scope(self):
+        receipt = getattr(self, 'duplicate_enrollment_receipt', None)
+        if receipt is None:
+            receipt = json.loads((DATA / 'hr1_duplicate_enrollment_scope_review.json').read_text(encoding='utf-8'))
+        bodies = {w['source_id']: w['passage'] for w in receipt['operative_witnesses']}
+        house = bodies['congressional-record:2025-05-21-hr1-as-amended']
+        senate = bodies['govinfo:hr1eas']
+        self.assertIn('appropriated to the Secretary', house)
+        self.assertIn('notify or transmit information to a State', house)
+        self.assertIn('appropriated to the Administrator of the Centers for Medicare & Medicaid Services', senate)
+        self.assertNotIn('notify or transmit information to a State', senate)
+        self.assertIn('(for purposes of address verification under section 1902(vv))', senate)
+        self.assertNotIn('(for purposes of address verification under section 1902(vv))', house)
+        self.assertIn('(or wavier of such plan)', house)
+        for body in [house, senate]:
+            self.assertIn('for fiscal year 2026, $10,000,000', body)
+            self.assertIn('for fiscal year 2029, $20,000,000', body)
+            self.assertIn('beginning not later than January 1, 2027', body)
+            self.assertIn('beginning not later than October 1, 2029', body)
+
     def test_state_border_fund_keeps_separate_detection_and_relocation_categories(self):
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:190')
         passage = next(c['passage'] for c in action['claim_source_map']
