@@ -5801,3 +5801,70 @@ the standing successor authorization. No new deadline or pause request was suppl
 routine tool interruption is not a human gate. Shutdown 75 evidence and unrelated work
 remain preserved. Readiness/publication are false and final audit verdict null; no
 production, merge, deployment or editorial acceptance/promotion/publication authorized.
+
+
+### Successor checkpoint 96: qualified USCIS operational riders
+
+Complete retained DHS sections 401(a)-(b), 402 and 515 are bound. USCIS vehicle
+permission is up to five, replacement only and restricted to no-GSA-lease areas;
+the Director may authorize commuting use for employees assigned there. No purchase
+mandate, fleet expansion or actual vehicle/travel outcome. The A-76 restriction
+concerns Act funds used to process/approve a competition for five named USCIS
+employee classes, including temporary/term employees. It is not a blanket ban on
+contracting/outsourcing, all funds or all DHS services. Report/certification authority
+may not be delegated unless specifically authorized in the Act; Director/CFO report
+actors remain distinct, with no new deadline, cohort or universal delegation ban.
+
+One official archival corrected A-76 HTML capture and one canonical selected source
+are added. Complete main-circular identity, policy/scope/transition and application
+footnotes plus Competition definition are bound; other attachments, costing and
+individual competition/memorandum applications are not imported. Original HTML
+glyphs and raw bytes remain traceable. A private PDF acquisition was not promoted
+as a canonical claim/capture; its extraction does not substitute for the strict HTML.
+Four bindings added: sources 1,352, bindings 927, captures 343, extent objects 232,
+coordinates 378. All prior 1,351 sources, 39 other meanings and 65 questions preserved.
+Accounting stays 676 inventory, 459 reviewed, 40 interpreted, 211 procedural,
+206 excluded, two expressive, 217 ordinary unfinished and three partial packages.
+37 episodes and 72 findings. Blue Campaign, other remaining DHS material/program
+work and DOJ/State/migration/supplementary-act/counterpart coverage remain executable.
+One whole-package choice; no separate member component stance or actual status effect.
+
+Validation passes 123 focused candidate/IR tests in 12.648 seconds, the Semantic IR
+reference validator and seven semantic checks. Seven generated files match raw-byte
+replay. Eight bounded scope/employee/exception mutations each fail by assertion once,
+with zero errors. Four witnesses, original acquisition hashes/extents, membership and
+queue integrity verified; both member detail, unchanged compact/choices and 39 other
+meanings inspected. Private comparison assumptions were corrected to the established
+action-ID lookup and unchanged recorded choices while allowing regenerated meaning/source
+metadata; all preservation checks then passed. No product or semantic repair resulted.
+Core f810847f685da57377db1fa903689e3322474ad45a1ae44fb1af6293984ccbb1;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898 unchanged.
+Final diff reviewed. Tests do not prove semantic truth or acceptance.
+
+Final independent 91-94 mechanics and 93-94 source/propagation verdicts report no new
+material finding within their bounded scope. Historical first-day P3 is resolved across
+active surfaces; frozen 92 and 93 receipts remain historical. Fifteen witnesses,
+27 comparisons, 23 electricity bindings and eight source additions verify. Both members'
+identities, details/limits, compacts/choices and seals verify; three bounded guards pass.
+Inverse correction reproduces the 93 authoring CRLF hash and eight unchanged archive
+entries, but original uncommitted archive and full generator/pipeline were not independently
+observed. No standalone 93 commit/run. The separate sealed receipts preserve these limits.
+
+Final independent 95 source and mechanics verdicts report no new material finding.
+Seven witnesses and exact incorporation, funding/HHS trigger, three exceptions, child
+definition and qualified criminal/Dimaya context verify, including Court raw PDF and
+full capture digest. Both members' propagation, seals and seven appended bindings verify;
+other 39 actions/sources/captures/questions remain. Two bounded guards and nineteen
+qualification-removal mutations pass their respective expectations. No full independent
+pipeline/replay, individual application adjudication or editorial acceptance. The
+historical interrupted result remains unavailable and distinct from the fresh 121 rerun.
+
+Owner exact 95 CI run 37670527704 is terminal nine green. Raw logs verify five feature-
+pinned, three synthetic (b3d875e04e5295266d136bdcff0f96043cb7cbc8) and one mixed repair
+checkout; hosted 250 candidate tests differ from owner 121 at 95 and 123 here. The sealed
+CI receipt preserves log hashes/provenance; no all-nine-feature-only claim. Checkpoint 96
+needs its own push/run. New 96 review is pending, not automatically cleared by 95.
+
+Active successor ownership continues; no current deadline. Preserved shutdown/checkpoint
+evidence and unrelated work remain. Readiness/publication false, final audit verdict null;
+no merge, deploy, production or editorial acceptance/promotion/publication authorized.

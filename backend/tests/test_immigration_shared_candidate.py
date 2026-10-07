@@ -18,6 +18,32 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_uscis_vehicle_permission_keeps_replacement_area_and_discretion(self):
+        action = getattr(self, 'hr1968_operational_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained USCIS operational provisions', 1)[1]
+        self.assertIn('up to five vehicles, for replacement only', text)
+        self.assertIn('areas where the General Services Administration does not provide vehicles for lease', text)
+        self.assertIn('permits the USCIS Director to authorize employees assigned to those areas', text)
+        self.assertIn('does not mandate commuting use', text)
+        self.assertIn('No purchase, disposal, commuting authorization or actual travel is inferred', text)
+
+    def test_hr1968_uscis_competition_and_report_qualification_do_not_become_universal_bans(self):
+        action = getattr(self, 'hr1968_operational_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The retained USCIS operational provisions', 1)[1]
+        self.assertIn('funds appropriated by this Act to process or approve a competition under OMB Circular A-76', text)
+        self.assertIn('including temporary or term employees', text)
+        for name in ['Immigration Information Officers', 'Immigration Service Analysts', 'Contact Representatives', 'Investigative Assistants', 'Immigration Services Officers']:
+            self.assertIn(name, text)
+        self.assertIn('does not become a ban on all contracting, all outsourcing', text)
+        self.assertIn('not the superseded 1999 circular', text)
+        self.assertIn('Unreviewed attachments, costing algorithms, referenced-memorandum applications', text)
+        self.assertIn('may not delegate authority to perform that act unless specifically authorized in the Act', text)
+        self.assertIn('separately bound ICE Director and CFO report actors remain distinct', text)
+
     def test_hr1968_sponsor_protection_keeps_funding_information_and_distinct_exceptions(self):
         action = getattr(self, 'hr1968_sponsor_action', None)
         if action is None:
