@@ -18,6 +18,39 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_state_grants_keep_current_jurisdiction_purposes_and_partners(self):
+        action = getattr(self, 'hr1968_state_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The current State/local trafficking law-enforcement grant program', 1)[1]
+        self.assertIn('old condition is not a current recipient or offense limitation', text)
+        self.assertIn('occur wholly or partly within the United States', text)
+        self.assertIn('committed in connection with sex trafficking or a severe form of trafficking', text)
+        self.assertIn('purchaser investigations/prosecutions prioritizing minor-victim cases', text)
+        self.assertIn('as appropriate designation of at least one severe-trafficking prosecutor', text)
+        self.assertIn('collaborates with social-service providers and relevant nongovernmental organizations', text)
+        self.assertIn('does not itself require every victim to collaborate with police', text)
+        refs = {b['source_id'] for b in action['claim_source_map']}
+        self.assertTrue({'govinfo:34usc20705-2024-state-local-law-enforcement-grants',
+                         'govinfo:pl109-164-sec204-historical-state-local-grants',
+                         'govinfo:pl113-4-sec1242-state-local-grant-amendments'} <= refs)
+
+    def test_hr1968_state_grants_keep_project_ceiling_savings_and_dated_objects(self):
+        action = getattr(self, 'hr1968_state_grant_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The current State/local trafficking law-enforcement grant program', 1)[1]
+        self.assertIn('Federal share cannot exceed 75 percent of the total costs of projects described in the application', text)
+        self.assertIn('not a minimum, a percent of the entire $88 million', text)
+        self.assertIn('Concurrent applications do not guarantee eligibility, awards, double funding', text)
+        self.assertIn('$10 million for each fiscal year 2014-2021', text)
+        self.assertIn('thirty months after March 7, 2013', text)
+        self.assertIn('not new H.R. 1968 appropriations, observed grants or automatic termination', text)
+        self.assertIn('explicit original note tracing redesignation to current 7102(11)', text)
+        self.assertIn('fund-use/medical-transfer conditions and exact 2101(d)-(e)', text)
+        self.assertIn('govinfo:22usc7102-2024-blue-campaign-definitions',
+                      {b['source_id'] for b in action['claim_source_map']})
+
     def test_hr1968_child_grants_keep_current_cohort_access_and_expertise(self):
         action = getattr(self, 'hr1968_child_grant_action', None)
         if action is None:
@@ -60,7 +93,10 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('explicit original note tracing reclassification to 34 USC 20301 et seq.', text)
         self.assertIn('grant criteria may require listed elements', text)
         self.assertIn('excluding a member convicted or accused of child abuse', text)
-        self.assertIn('Further center/fund-use/medical-transfer authorities remain ordinary research', action['limitations'][-1])
+        center_limits = [q for q in action['limitations']
+                         if q.startswith('Printed child-advocacy reference and explicit reclassification note')]
+        self.assertEqual(1, len(center_limits))
+        self.assertIn('Further center/fund-use/medical-transfer authorities remain ordinary research', center_limits[0])
         refs = {b['source_id'] for b in action['claim_source_map']}
         self.assertIn('govinfo:34usc20302-20304-material-center-context', refs)
 

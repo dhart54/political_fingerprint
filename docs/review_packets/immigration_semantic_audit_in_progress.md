@@ -6673,3 +6673,86 @@ promotion or publication. Continue current 20705 and material fund-use/medical-t
 authorities including exact 2101(d)-(e), further center authorities where applied,
 then State/migration/refugee, supplementary/other DHS, counterparts and ordinary queue.
 Draft PR198 remains authorized delivery boundary; merge requires separate authorization.
+
+
+### Successor checkpoint 107: current State/local trafficking law-enforcement grants
+
+Complete current 20705(a)-(f) and notes maps original 2005 section 204/former 42 USC
+14044c. Complete original section 204 and 2013 section 1242 preserve actual citizenship/
+LPR condition and its deletion, not a current recipient/offense limitation. US territorial
+nexus and connected-related-offense definition remain, not unrelated crimes worldwide.
+Complete program purposes keep victim-identification training, purchaser-case minor
+priority, purchaser/attempt education, trust/cooperation training and qualified prosecutor
+designation. No new offense, universal appointment, actual prosecution or guaranteed award.
+
+Mandatory agency/social-provider/relevant-NGO collaboration remains distinct from
+encouraging individual cooperation; nonexclusive experienced-provider example is not
+silently exclusive, and separate service-access clauses are not imported as 20705 text.
+Federal share is a ceiling of 75 percent of application-described project costs, not
+minimum/whole-$88-million allocation/other program match or combined automatic deduction.
+Concurrent 20702 applications do not guarantee eligibility or double awards. Current
+2014-2021 authorization, historical amounts/ranges and 2013-relative GAO report duty
+remain dated, without new appropriation/program expiration or observed report/grant.
+Printed old severe-definition reference and explicit current redesignation note preserved,
+reusing complete current definitions and CJS line without recapture/duplicate binding.
+Bounded current program/original-current mapping complete; fund/medical/center/package
+application authorities and all broader component/counterpart/ordinary work remain open.
+
+Three selected sources/three bindings/three original coordinates and one strict official
+capture registered. Original 2005/2013 whole captures reused only at identified new
+section extents; source glyphs/raw/full-text hashes/governed seals/extents reproduce.
+All prior 1,379 sources/39 other meanings/67 questions/frozen receipts, compact/choices/
+counting/eligibility/compiled graph and unrelated findings preserved. 144 final tests
+pass in 15.147 seconds, reference validator/seven semantic checks pass, seven generated
+files match separate raw-byte replay. Twelve new qualifier mutations fail once by assertion
+with zero errors. Full both-member explanations/unchanged compact/choices and diff inspected.
+Core 3ffc2b11fda9290a29401f6ec245ad63c9a169a970d34437737bfb57ea349b9c;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898
+unchanged. Tests/replay establish mechanical confidence, not semantic acceptance.
+
+Initial 144-test run in 16.084 seconds failed one old child-program guard because it
+assumed the qualification remained last after unrelated 20705 append. Qualification
+unchanged. Failed input/guard/result archived before scoping to the unique identified
+child-center limitation; exact phrase and uniqueness enforced. Four deletion/duplication/
+qualification/identity-loss mutations fail once with zero errors; unrelated append/reorder
+pass. Other 115 prior methods unchanged. Private verifier builder reflects initial state;
+final verifier was safely amended for this correction and should not be rebuilt blindly.
+One later read-only fund lookup used a wrong label; bounded original read succeeded,
+no unavailable-evidence or source-semantic claim arose from that search error.
+
+Final independent 105 new-increment source/mechanics has no new material finding:
+current child program, historical pilot/20702 distinction, full qualifiers/denominators,
+three bindings/sources/two captures/four extents match. Prior 113 tests and all 67 questions
+preserved; three extracted guards/26 independent mutations pass expected checks. Historical
+104 P3 separately retained. Final 106 independent recheck resolves it: both twenty-year
+offsets and fine death/estate balance/lien release separate; one shared meaning/guard
+change, other 115 methods and prior objects preserved. Both members four readable locations/
+core/compiler/packet/seals/proofs verify without stale active phrase. Guard rejects actual
+105 wording and ten qualifier removals. Owner-local archives remain owner evidence;
+no independent full pipeline/replay/test-suite rerun, legal application or domain/full-
+package acceptance. Separate 105/106 receipts preserve earlier historical pending status.
+
+Owner-read exact 105 run 37695133878 and 106 run 37695748777 terminal nine green each:
+five feature-pinned/three synthetic/one mixed. Full synthetic IDs recovered from raw logs:
+105 66a73752e6ac1994f64b8772579cfa44a45c4bd6;
+106 dbed6f21dbed9f6049da540c8f11d9c1dfa2d77f.
+Hosted candidate aggregates 271 each, distinct from owner 142 at those heads/144 here.
+All nine raw-log hashes/actual contexts sealed per head. Audit current CI points to 106,
+old 84/prior receipts preserved; new 107 needs its own pushed-head run.
+
+Accounting unchanged: 676 inventory/460 reviewed/40 interpreted/211 procedural/207
+excluded/two expressive, 216 ordinary unfinished/three partial packages/67 application
+questions. 37 episodes/80 observations/72 findings; 1,382 sources/979 bindings/363
+registered captures/261 extent objects/433 coordinates. Unique-action audit categories
+84 No Defect/three Minor/eleven Major/one Critical and historical findings unchanged.
+Questions 63/66/67 separate; no new legal decision or unavailable-evidence conversion.
+
+Dylan explicitly resumed after restart at 22:39 UTC. Fresh successful command at
+22:40:25 UTC on DESKTOP-1CQBHTJ verified actual existing .w/ib, branch, tracked clean,
+local/remote/draft 5a7bfca, main 7a8c6ee and preserved paused receipt. No competing task
+process found. Pause/terminal evidence archived before active marker/session update;
+no new deadline, checkout, task or production/acceptance/merge/deploy/publication action.
+Continue material fund-use/medical-transfer authorities/exact 2101(d)-(e), further center
+authorities where applied, then State/migration/refugee, supplementary/other DHS,
+counterparts, ordinary screenings and final package comparison. Draft PR198 remains
+authorized delivery boundary; merge requires separate authorization.
