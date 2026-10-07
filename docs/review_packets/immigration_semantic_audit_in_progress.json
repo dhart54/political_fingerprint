@@ -9744,10 +9744,90 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:68",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "68",
+        "legis-num": "H R 1156",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Mar-2025",
+        "action-time": "5:32 PM",
+        "vote-desc": "Pandemic Unemployment Fraud Enforcement Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete March 11, 2025 House EH and complete material existing 2024 bodies were compared for exact passage of H.R. 1156. Section 2 inserts a ten-year criminal-prosecution or civil-enforcement limitation for the expressly listed title 18 or title 31 violations or conspiracies concerning claims funded in whole or in part by PUA, FPUC/MEUC or PEUC. Each branch excludes cases whose applicable limitation already expired before enactment. This is not an assertion that every offense currently has a five-year period, every unemployment prosecution is covered, or any case is revived. Existing FPUC/MEUC and PEUC fraud predicates, repayment waivers requiring both absence of fault and equity/good conscience, three-year administrative deductions, fair hearing/finality and State review remain distinct from the new litigation limit. The existing PUA disaster-assistance relationship is redesignated, not substantively rewritten; no unreviewed CFR application is asserted. Section 3 rescinds $5 million of unobligated CARES 2118(a) balances, as added by ARPA 9032 and codified at 15 USC 9034, whose complete baseline covers fraud prevention, equitable access and timely unemployment-benefit payment. It does not rescind all such funding. Section 4 makes amendments effective on enactment. The unchanged CNMI qualified-alien benefit note is preserved as underlying eligibility context, not a new status condition enacted by this vote. This exact action changes enforcement timing and program-integrity funding, establishing no new Immigration & Border admission, removal, work-authorization or personal immigration/status eligibility rule. No underlying criminal elements, immigration consequence of a conviction, actual fraud/case/payment, enactment or motive is inferred. Prior Health issue membership is not inherited.",
+      "finding": "Complete exact enforcement-timing and unobligated-funding proposal supports non-counting Immigration exclusion; unchanged underlying status context and existing recovery protections remain distinct.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "daff3aa8d23b0f3226016b12aa7aa43b3f92f846a6ae23e92429fcc15c8495e1",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:68",
+          "url": "https://clerk.house.gov/evs/2025/roll068.xml",
+          "governed_bytes_sha256": "c98dfc69d1eaeef97c427c46a2df6ac234e5f68eda78bf7563a4df35d170b44d",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        },
+        {
+          "source_id": "govinfo:hr1156eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1156eh/html/BILLS-119hr1156eh.htm",
+          "governed_bytes_sha256": "63b6a7f3e00ed735afb6e5a56d43b3568a84fba486353cd5406dc02a37d5b29f",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        },
+        {
+          "source_id": "govinfo:15usc9021-2024-relationship-cnmi",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap116.htm",
+          "governed_bytes_sha256": "c1a06588570f46599e5362fccd2185e72359def74735c13e794f665f43107d2f",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        },
+        {
+          "source_id": "govinfo:15usc9023f-2024-fraud-overpayment",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap116.htm",
+          "governed_bytes_sha256": "c3c911cf9b2af702fa43e33e317c6b400540f543164f4c05260a827ee2748d5c",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        },
+        {
+          "source_id": "govinfo:15usc9025e-2024-fraud-overpayment",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap116.htm",
+          "governed_bytes_sha256": "ae0c793b68dfb7de2fe50dfb777fda9123112981489263c42d420b7d56d24bb0",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        },
+        {
+          "source_id": "govinfo:15usc9034-2024-fraud-funding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap116.htm",
+          "governed_bytes_sha256": "a9837a39c4e29945c8e946e4a4b73a7acc310d557de54721de67f5e9ecf3c557",
+          "reviewed_extent": "Exact Clerk binding, complete EH or complete source-mapped material 2024 body/note; no whole-chapter or unreviewed CFR application claimed"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 83,
+    "No Defect": 84,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -9809,7 +9889,7 @@
     "procedural_controls_reviewed": 15,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 1
+    "successor_new_exclusions_reviewed": 2
   },
   "checkpoint_validation": {
     "focused_tests": 127,
@@ -9818,7 +9898,7 @@
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "97 run37676760516 terminal nine green with five pinned/three synthetic/one mixed provenance; 98 needs own push/run",
+    "exact_head_ci": "99 pending own feature push; 98 terminal nine green with five pinned, three synthetic and one mixed context",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -9855,7 +9935,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "127 focused tests, reference validator, seven semantic checks, seven raw replay files/eight mutations. Exact EOIR account/fee inclusion/minimum/cap/comparable availability and205/209/505 controls bound; prior1354 sources/39 meanings/66 questions unchanged. Prior97 bounded closure distinct from pending98 scope.",
+    "focused_scope_note": "One exact House enforcement-timing and funding action screened; five complete material baseline coordinates, one original chapter acquisition. Prior 459 reviews, 1,355 sources, 40 meanings, 66 questions and three partial packages preserved. Seven raw output files replay.",
     "last_completed_exact_head_ci": {
       "head": "37b22470570c700dcb21345bcff7038811d4f42e",
       "run": 37652464826,
@@ -12834,8 +12914,29 @@
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_eoir_court_funding_review.json",
     "receipt_sha256": "4acf5585322197122f2f55b880fed948709472ec26ad09e97e5a125e9c3a51cd",
     "same_owner_primary_source_comparison": true,
-    "independent_component_semantic_review_pending": true,
+    "independent_component_semantic_review_pending": false,
     "complete_package_review": false,
-    "editorial_acceptance": false
+    "editorial_acceptance": false,
+    "bounded_independent_review_receipt": {
+      "receipt_ref": "docs/review_packets/immigration_eoir_checkpoint98_independent_review.json",
+      "receipt_sha256": "d223dd6a2807bbcc46b2b78b20064b8d44de27e71266027f540ae625ed470a9c",
+      "reviewed_head": "ab675ed928e886cf35ee6ae3d6f439f085d54651",
+      "limits": "No independent full generator, pipeline or test suite, legal application adjudication or whole-package acceptance. Bounded independent reports differ from owner-local replay and editorial acceptance."
+    }
+  },
+  "prior_head_ci_checkpoint98": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint98_ci.json",
+    "receipt_sha256": "37d50b7864fccf6cebaeef7f665b7dab54fe054ae2aeb71e14f16ac6a248177a",
+    "head": "ab675ed928e886cf35ee6ae3d6f439f085d54651",
+    "run": 37679333860
+  },
+  "ordinary_screening_checkpoint99": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint99.json",
+    "receipt_sha256": "604bbca6c071c9c8aee26cad82673c9d782d70435ce4efbf0634e53e308e0863",
+    "same_owner_primary_source_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 216,
+    "application_questions": 66
   }
 }

@@ -7269,3 +7269,81 @@ evidence remain; no current deadline. Next: remaining SCAAP/transportation/traff
 and State/migration/supplementary acts and other DHS/counterparts, plus ordinary screening.
 No package closure, merge/deploy/production or editorial acceptance/promotion/publication;
 readiness/publication false, final audit verdict null.
+
+
+### Successor checkpoint 99: exact pandemic-unemployment enforcement screening
+
+House 119/1/68, March 11, 2025 passage of H.R. 1156, is a source-grounded
+non-counting Immigration exclusion candidate. Foushee recorded Nay; Massie Yea.
+Complete EH section 2 inserts ten-year criminal-prosecution/civil-enforcement
+limits for listed title 18/title 31 violations or conspiracies concerning claims
+funded wholly or partly by the named PUA, FPUC/MEUC or PEUC programs. Each branch
+preserves the exception for limitations already expired before enactment. No
+universal five-to-ten-year assertion, all-offense coverage or revived case.
+Existing FPUC/MEUC and PEUC fraud predicates, both-condition repayment waivers,
+three-year administrative deductions, fair hearing/finality and State review remain
+distinct from the litigation limit. PUA's existing disaster-assistance relationship
+is redesignated without rewriting it; unreviewed CFR application is not asserted.
+
+Section 3 rescinds $5 million of unobligated CARES 2118(a) balances, added by ARPA
+9032 and codified at 15 USC 9034. Complete funding body retains fraud prevention,
+equitable access/timely payment, administrative/infrastructure/grant scope and grant
+conditions. This is not all program funding. Section 4 makes amendments effective
+on enactment. The unchanged CNMI qualified-alien benefit note is preserved as
+underlying eligibility context. This exact vote adds no Immigration & Border
+admission/removal/work-authorization/personal-status rule. No individual criminal
+elements, conviction's immigration consequence, actual fraud/case/payment, enacted
+outcome or motive inferred; existing Health issue membership is not inherited.
+
+One strict original official 2024 chapter acquisition and five canonical sources
+are added: reused exact EH plus four selected baseline objects with five coordinates.
+Full acquisition is not whole-chapter semantic review. Raw/full-text hashes and
+complete material witnesses reproduce without glyph repair. Incorrect guessed
+individual-section paths were rejected soft-404 discovery responses, not unavailable
+evidence or dispositions. Private anchor assumptions were corrected against actual
+headings before any screening was applied. No evidence or source semantics weakened.
+
+Accounting: 676 inventory, 460 reviewed, 40 interpreted, 211 procedural, 207 excluded,
+two expressive, 216 ordinary unfinished screenings; three partial packages and 66
+separate application questions unchanged. 37 episodes, 80 member observations,
+72 readable findings, 1,360 sources, 935 interpreted bindings, 347 captures, 239
+extent objects and 395 coordinates. Prior 459 reviews, 1,355 sources, all 40 meanings,
+questions, partial packages and historical receipts preserved. Unique-action same-
+owner audit now 84 No Defect, three Minor, eleven Major and one Critical. Distinct
+historical finding severity and separately bounded precision findings remain intact.
+
+127 focused candidate/IR tests pass in 12.851 seconds; seven semantic checks and
+IR reference validator pass. All seven generated files match separate raw-byte
+replay. Only the reproducibility proof changes; six semantic/presentation outputs,
+both members' detail/compact/choices, source-grounded shared meanings and compiled
+graph are unchanged. Core a0a498feeb52ffb3c84cd86521731e528b1130fcc39666b0081a2c5d831c8138;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Queue/accounting/hash/extent/source and prior-state integrity verified; final diff
+reviewed. Tests establish mechanical integrity, not semantic truth or acceptance.
+
+Final independent 98 source/propagation and mechanical review is clean within
+bounded scope. EOIR total/embedded transfer/minimum/cap/printed availability versus
+1103, complete CJS 205/209/505 exceptions/eight routes/thresholds/prior notice and
+qualified fee-account limits verify. Later 1301-1302 do not replace the EOIR amount.
+Full raw/text hashes, four extents/bindings, both-member/core/compiler/packet and
+prior-state preservation verify. Two isolated guards pass; seventeen separate
+wording-removal mutations fail by assertion with zero errors. No independent full
+generator/test suite or legal-application adjudication. New sealed receipt preserves
+this scope; frozen original 98 receipt remains historical, 99 screening awaits review.
+
+Owner-read exact 98 CI run 37679333860 is terminal nine green. Raw logs verify five
+feature-pinned, three synthetic-merge (a68120a54aeeec43cdcbbb261c4b3db182334072) and
+one mixed repair checkout. Hosted 256 differs from owner 127. Separate sealed CI
+records raw log hashes/context, without claiming all nine jobs test only feature
+bytes. New 99 needs its own pushed-head run.
+
+The October 7 20:07 UTC same-task restart was reconciled at 20:10:07 UTC in .w/ib:
+local/remote/PR exact ab675ed matched, no tracked edits or matching task-owned Python
+process, historical shutdown/terminal markers preserved and no current deadline.
+The interrupted web-call result was unavailable and no recovered evidence claimed.
+No new checkout/task registry, reset, stash or unrelated work change. Ownership
+continues through remaining DOJ State Criminal Alien Assistance/transportation/
+trafficking, State/migration/refugee/supplementary authorities, ordinary screenings
+and H.R. 1 exact-version component coverage. Questions 63 and 66 remain separate.
+Readiness/publication false, final verdict null; no merge/deploy/production or
+editorial acceptance/promotion/publication authorization.
