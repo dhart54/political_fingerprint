@@ -7850,3 +7850,61 @@ comparison. Unfinished ordinary research is not unavailable evidence. Same .w/ib
 explicit successor restart resume and no current shutdown boundary. Historical deadline/
 pause evidence preserved; no merge/deploy/production/editorial acceptance/promotion/
 publication. Draft PR198 remains the authorized delivery boundary.
+
+
+### Successor checkpoint 117: original availability and disclosure conditions
+
+Complete 501/502/505 clauses now bind all four original requirements Acts: PL113-235
+G 2015, PL115-31 H 2017, PL116-94 A 2020 and PL117-328 H 2023. Section 501 transfer
+authority keeps unexpended prior balances, corresponding current accounts, original
+purpose and original time; no new appropriation/mandatory transfer/reset. Section 502
+obligation availability keeps its express exception, division scope and dated reference
+chain, without declaring a common current expiry or overriding until-expended provisions.
+Section 505 keeps the covered-grantee/document/project trigger, whole-or-part Federal
+funding and Federal percentage/dollars plus non-governmental percentage/dollars. Non-
+governmental is not changed to non-Federal or a matching requirement. No actual balance,
+transfer, expiry, recipient compliance/misuse/motive or separate member stance is inferred.
+
+Four sources/bindings, twelve coordinates, zero new captures. Seven governed financing/
+medical/section 3/division witnesses reused. All full-original/raw/selected hashes/seals
+and three-piece exact joined extents verify. All four operative selected clause groups
+match after private notes/page-marker removal only; source glyphs/annotations/years/
+identities remain unchanged. Earlier needle-program version differences preserved.
+Other material conditions, substantive references and current application remain research.
+
+166 focused tests pass in 13.458 seconds; reference validator/seven semantic checks pass;
+seven generated files reproduce byte for byte. Two guards pass; 24 qualifier/binding
+mutations fail once each, zero errors. Prior 1,423 sources/39 other meanings/70 questions/
+138 methods/387 captures and manifest rows/older receipts/protected code preserved.
+Full both-member action/aggregate detail, unchanged compact and recorded choices inspected;
+counting/eligibility/compiled graph unchanged. Final diff reviewed; tests are mechanical
+evidence, not acceptance. Core 8bccaa0b81f6290f0e2d0417db64a4f4b8d926b8305abd14d884f283f0a06a42;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,427 sources/1,025 bindings/387 captures/306 extent objects/506 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two expressive;
+216 ordinary unfinished/three partial packages/70 questions. 37 episodes/80 observations/
+72 findings; historical severity unchanged, readiness/publication false and final verdict
+null. Frozen Q68/Q69/Q70 remain separate.
+
+Own exact 116 run 37710650910 is terminal nine green; owner-read nine raw log hashes,
+counts and actual checkouts sealed in docs/review_packets/immigration_delivery_checkpoint116_ci.json.
+Five feature-pinned/three synthetic/one mixed; synthetic d829b654231ca01b2881661aa0a93d0ec5149e29. Hosted candidate
+counts differ from owner 164 at 116/166 here. No retry; original 111 failure/single-job
+recovery preserved. 117 needs its own pushed-head CI. Bounded independent lanes through
+116 complete within recorded scopes, with separate source/propagation and mechanics/CI
+finals sealed in docs/review_packets/immigration_checkpoints115_116_independent_review_completion.json.
+117 review remains separate pending. No independent full replay/generator/legal application
+or editorial-acceptance claim.
+
+Next trace complete 503 publicity/lobbying conditions across all four Acts, preserving
+normal executive-legislative relationships, presentation exceptions, recipient/agent/
+salary-expense and governmental-process qualifications, covered-money branches and full
+consumer-product/tax wording. Follow named PPACA 4002 transfer authority: two private
+official original/versioned captures are ready at .tmp/pphf118_acquisition_outcomes.json,
+unregistered and not yet candidate-bound or application-reviewed. Preserve original 4002 and 10401 amendment
+identities/current 2024 Code separately; no unreviewed fund amount/application import.
+Continue other material program/HHS/general references, State/migration/refugee, other DHS/
+supplementary/counterparts, 216 screenings and final package comparison. Unfinished research
+is not unavailable evidence. Same .w/ib owner under successor authorization; no current
+shutdown boundary, historical deadline/pause evidence preserved. No merge/deploy/production/
+editorial acceptance/promotion/publication; draft PR198 remains the delivery boundary.

@@ -18,6 +18,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_health_availability_keeps_transfer_purpose_time_and_express_exception(self):
+        action = getattr(self, 'hr1968_availability_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced health-funding availability and disclosure conditions', 1)[1]
+        for qualification in [
+            'complete sections 501, 502 and 505 in each original requirements Act',
+            'within its own division unless expressly provided otherwise',
+            'transfer unexpended balances of prior appropriations to accounts corresponding to current appropriations',
+            'not a new appropriation, a mandatory transfer or permission to move every balance to any account',
+            'same purpose and the same periods of time for which they were originally appropriated',
+            'does not reset the funds\' life',
+            'available for obligation beyond the current fiscal year unless expressly so provided therein',
+            'express-exception predicate remains part of the condition',
+            'until-expended language and other express source availability provisions are retained',
+            'not converted here into a categorical current-grant expiry or a blanket override',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl113-235-divisionG-sec501-502-505-availability-disclosure',
+                         'govinfo:pl115-31-divisionH-sec501-502-505-availability-disclosure',
+                         'govinfo:pl116-94-divisionA-sec501-502-505-availability-disclosure',
+                         'govinfo:pl117-328-divisionH-sec501-502-505-availability-disclosure'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_health_disclosure_keeps_grantee_document_trigger_and_nongovernmental_measures(self):
+        action = getattr(self, 'hr1968_availability_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced health-funding availability and disclosure conditions', 1)[1]
+        for qualification in [
+            'all grantees receiving Federal funds included in the Act/division',
+            'funded in whole or in part with Federal money',
+            'statements, press releases, requests for proposals, bid solicitations and other such documents',
+            'the percentage of total project/program costs financed with Federal money',
+            'the dollar amount of Federal funds for the project/program',
+            'both the percentage and dollar amount of total costs financed by non-governmental sources',
+            'not silently changed to all non-Federal sources, every State/local contribution or an invented matching-fund requirement',
+            'No actual allocation, recipient compliance, undisclosed financing, misuse or motive is inferred',
+            'without assigning a separate balance-transfer/disclosure stance or four additional actions',
+            'All 70 separate application questions',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_needle_conditions_keep_original_section_and_version_difference(self):
         action = getattr(self, 'hr1968_needle_action', None)
         if action is None:
