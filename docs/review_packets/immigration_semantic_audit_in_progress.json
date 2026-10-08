@@ -11803,10 +11803,234 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:291",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "291",
+        "legis-num": "H RES 879",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "18-Nov-2025",
+        "action-time": "3:04 PM",
+        "vote-desc": "Providing for consideration of the joint resolutions S.J. Res. 80, H.J. Res. 130, and H.J. Res. 131; providing for consideration of the concurrent resolution H. Con. Res. 58; providing for consideration of the bills H.R. 1949, H.R. 3109, H.R. 5107, and H.R. 5214; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete November18,2025 H.Res.879 EH establishes consideration/waivers/debate/previous-question/recommittal or commitment for three named CRA resolutions and several bills, and separate adoption debate for H.Con.Res.58. Sections6/7 actually deem the committee substitutes adopted into the pending H.R.5107/H.R.5214 bills; they do not finally pass those bills. Section8 tables H.Res.581 ONLY upon transmission to the Senate of a message that the House has passed H.R.4405; it does not itself pass H.R.4405 or assert that the message occurred. Under established pending-text versus final-passage rules this exact adopted rule remains noncounting procedural context. Neither natural-resource disapproval, anti-socialism expression, DC detention policy nor an immigration component position is inferred from the rule vote. Underlying texts and subsequent votes remain independently reviewable.",
+      "finding": "Complete adoptedrule actually changes pendingtext/procedure; conditionalmessage/engrossment andseparatelater finalsubstantivechoices remain distinct. No impliedfinalpassage orcomponentimmigrationstance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "8db95767b1f04b91b3a87a5ef97a1a2125051b9f0cdf8d2a2c5750c375dd15f1",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:291",
+          "url": "https://clerk.house.gov/evs/2025/roll291.xml",
+          "governed_bytes_sha256": "839e53e921a2c24f1d85abdce915faf3a95517b510491e2d3cc6ef01cd88123c",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        },
+        {
+          "source_id": "govinfo:hres879eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres879eh/html/BILLS-119hres879eh.htm",
+          "governed_bytes_sha256": "8c0660cfd90e1cb881cfaf7441e05216133fcefc05436a054fd63afb91c115f5",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:318",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "318",
+        "legis-num": "H RES 936",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "10-Dec-2025",
+        "action-time": "3:24 PM",
+        "vote-desc": "Providing for consideration of the bills H.R. 3898, H.R. 3383, H.R. 3638, H.R. 3628, H.R. 3668, and S. 1071; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete December10,2025 H.Res.936 EH supplies structured Committee-of-the-Whole consideration for H.R.3898/H.R.3383/H.R.3638, actual pending-bill substitute adoption including Print119-15 for H.R.3383, report PartsA/B/C further amendments, and separate final-passage/recommittal. Sections4/5 separately govern H.R.3628/H.R.3668; section4 includes its reportPartD further amendment. Section6 adopts Print119-16 as the pending S.1071 substitute and preserves later final passage/commitment; the nominal underlying disinterment title does not establish the substitute policy meaning. Section7 permits explanatory material insertion by named committee chairs not later than December12,2025; section8 permits specified second-session pre-January6organizational/legislative dispensing and Journal approval. These are genuine procedural/pending-text instructions, not final enactment or an Immigration position. Established contract keeps the adopted rule noncounting; underlying S.1071 policy or other component meaning remains separate.",
+      "finding": "Complete adoptedrule actually changes pendingtext/procedure; conditionalmessage/engrossment andseparatelater finalsubstantivechoices remain distinct. No impliedfinalpassage orcomponentimmigrationstance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "9e090254ed489c9155a6910252f77e11faf7024fc23e21c6fc7b3c7646a2a854",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:318",
+          "url": "https://clerk.house.gov/evs/2025/roll318.xml",
+          "governed_bytes_sha256": "592641ab2fcc82edf808687362485c951b75132cd345f7b3931e806a8b6a4b4c",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        },
+        {
+          "source_id": "govinfo:hres936eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+          "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:338",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "338",
+        "legis-num": "H RES 951",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Dec-2025",
+        "action-time": "2:32 PM",
+        "vote-desc": "Providing for consideration of the bills (H.R. 4776) the SPEED Act; (H.R. 1366) the Mining Regulatory Clarity Act: (H.R. 845) the Pet and Livestock Protection Act; (H.R. 3616) the Reliable Power Act; (H.R. 3632) the Power Plant Reliability Act; and (H.R. 4371) the Kayla Hamilton Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete December16,2025 H.Res.951 EH provides Committee-of-the-Whole H.R.4776 consideration with actual committee-substitute adoption, ordered further amendments and report-back, followed by separate final passage/recommittal. Sections2-4 and6 actually adopt the specified committee substitutes into pending H.R.1366/H.R.845/H.R.3616/H.R.4371 and provide debate/waivers/previous-question/later final passage; section5 separately provides H.R.3632 consideration without an asserted substitute. The Kayla Hamilton/trafficking title or pending H.R.4371 substitute does not establish a member's separate child-trafficking/immigration stance or final passage at this rule vote. No adopted pending substitution is denied, and no component meaning is reconstructed from a parent title. Under existing rule-versus-final-action standards the exact adopted resolution is noncounting procedural context.",
+      "finding": "Complete adoptedrule actually changes pendingtext/procedure; conditionalmessage/engrossment andseparatelater finalsubstantivechoices remain distinct. No impliedfinalpassage orcomponentimmigrationstance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7605298dc4a6d70f33b8439bb1069b8d3c74974f9f699decbcfc1d7dcda398b7",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:338",
+          "url": "https://clerk.house.gov/evs/2025/roll338.xml",
+          "governed_bytes_sha256": "00b67bbf65c74005a8578a2bb6c793812b16daa4c42acc6ba223a3f069633de6",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        },
+        {
+          "source_id": "govinfo:hres951eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres951eh/html/BILLS-119hres951eh.htm",
+          "governed_bytes_sha256": "1b7b7b156721230036426fe1b95e1dafe022381349326352ec2dfdf822a0ebaa",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:141",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "141",
+        "legis-num": "H RES 1224",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "29-Apr-2026",
+        "action-time": "1:24 PM",
+        "vote-desc": "Providing for consideration of the bills H.R. 7567, H.R. 2616, S. 1318, and H.R. 1346; and providing for consideration of the concurrent resolution S. Con. Res. 33"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete April29,2026 H.Res.1224 EH governs H.R.7567 with Print119-22 AS MODIFIED by reportPartA, reportPartB further amendments and 20minute en-bloc debate, then report-back and separate final passage/recommittal. It separately adopts Print119-26 into pending H.R.2616, provides later S.Con.Res.33 adoption, adopts Print119-27 AS MODIFIED by reportPartC into pending S.1318, and adopts Print119-28 into pending H.R.1346, all preserving later substantive decisions. Section8 instructs the S.1318 House-amendment engrossment to add H.R.1919 AS PASSED BY THE HOUSE, with designation/cross-reference/technical authority; it is not a new S.1318 final passage or a policy meaning inherited from its nominal cemetery title. Section11 requires waiting for H.R.1346 disposition and adding its AS-PASSED text to H.R.7567 engrossment. Section9 expands suspension-motion consideration through the legislative day of May1,2026 with minority consultation. Actual modified substitutes and conditional engrossment instructions are preserved, not described as already realized final package passage/enactment. Exact adopted rule remains noncounting under established procedural contract, without component Immigration positions or budget meaning imported from later votes.",
+      "finding": "Complete adoptedrule actually changes pendingtext/procedure; conditionalmessage/engrossment andseparatelater finalsubstantivechoices remain distinct. No impliedfinalpassage orcomponentimmigrationstance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7482960bcaa29b630221491eec03486ba4a568184e6518358fc9d36877e03739",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:141",
+          "url": "https://clerk.house.gov/evs/2026/roll141.xml",
+          "governed_bytes_sha256": "e8d5f2cc08e69d4f45a10f3262b8df7c0d07d948123eeaf8ccbaed48a54c1af9",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051",
+          "reviewed_extent": "Complete exact adoptedEH rule andgovernedofficialClerk question/outcome/observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 104,
+    "No Defect": 108,
     "Minor": 4,
     "Major": 11,
     "Critical": 1
@@ -11865,19 +12089,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 23,
+    "procedural_controls_reviewed": 27,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 12
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 14.181,
+    "focused_runtime_seconds": 14.042,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "128terminalninegreen sealed;129originaleight success/normalizationcreatedbfailure after6and38tests preserved; onlyfailedjobretry authorized/requested,pending result;130needs ownpushed-headCI",
+    "exact_head_ci": "129terminalsuccessafteronefailedjobretry with8originalexecutions preserved;130ownterminal9success sealed;131needs ownpushed-headCI",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -11914,12 +12138,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Two qualified32/33candidate meanings and1399P3literalbranch correction. Prior41meanings/74findings/propositions/1474sources and478otherreviews exact;43meanings/76findings/currentcandidate.176tests14.181s/reference/sevenchecks/replay passed after completing auditbindings; initialfailure retained. No acceptance/generalontology.",
+    "focused_scope_note": "Fouradoptedrule contexts291/318/338/141; prior43meanings/76findings/sixoutputs/481reviews/1484sources/tests/70questions/3partialflags/qualifiedfentanyl/1399correction unchanged.129failedjobonlyretry passed;8oldtimestamps/steps preserved.130own9success sealed; candidate-only.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint128_ci.json",
-      "receipt_sha256": "947b8e00373409d9b8d8143012c5c2c44e013c3d471894486f8540bbabd07c2c",
-      "head": "d00e3b38990559bdfdd850d6156b8162af91a6ff",
-      "run": 37728881395,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint130_ci.json",
+      "receipt_sha256": "977d8592999dd42776a293a56ec99de840de289b2a937eca5fa805d9054ccc17",
+      "head": "db28db795d33e1db6ecf1bd4ac2e8b583559798f",
+      "run": 37731638554,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -15941,5 +16165,29 @@
   "independent_checkpoint128_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint128_independent_review.json",
     "receipt_sha256": "1a0f9a421c7a10026da54704095cb34e512dc1c6155cdf3223f995802f5282f1"
+  },
+  "ordinary_screening_checkpoint131": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint131.json",
+    "receipt_sha256": "347bb3fdbe3df5ef8f04d3a587f37c916e478a21ec10991dcdedb8175f2ce3d0",
+    "same_owner_primary_screenings": 4,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 191,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint130": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint130_ci.json",
+    "receipt_sha256": "977d8592999dd42776a293a56ec99de840de289b2a937eca5fa805d9054ccc17",
+    "head": "db28db795d33e1db6ecf1bd4ac2e8b583559798f",
+    "run": 37731638554,
+    "successful_jobs": 9
+  },
+  "checkpoint129_ci_recovery": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint129_ci_recovery.json",
+    "receipt_sha256": "b4a4c5b5a6e45df30893d7c788e6fcb077bb3f1ee4dfc6c78cc4488d69308057"
+  },
+  "independent_checkpoint129_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint129_independent_review.json",
+    "receipt_sha256": "0348fc44dc878b6130eccf3df184294daef5b7fe77726388b153310b10391354"
   }
 }

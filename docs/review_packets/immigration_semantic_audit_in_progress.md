@@ -8179,3 +8179,6 @@ Checkpoint129: three complete May13 EH expressions162/166/167 excluded;479review
 
 
 Checkpoint130: qualifiednew32/33meanings with statutoryADD/full1227scope;43meanings/481reviewed/195ordinary/76findings. Bothmemberobservations separated, no trajectory; prior41meanings/74findings and70questions/threepartialflags protected.1399P3literalthreebranch rationale corrected with frozen128receipt/sourceboundbefore-after; no disposition/meaning change.176tests14.181s/reference/sevenchecks/rawreplay pass; initialaudit-binding failures retained andresolved.128CI9successsealed;1298success/normalizationcreatedbfailure after6/38earlier tests preserved; one authorizedfailedjobretry requested,pending;130needs ownCI. See fentanyl_candidate_checkpoint130.json/disclosure_branch_correction_checkpoint130.json andlivingplan; candidate-only.
+
+
+Checkpoint131: fourcompleteadoptedrule contexts291/318/338/141;485reviewed/191ordinary.176tests14.042s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/130fentanyl-and-disclosure correction exact.129isolatedretrypassed with8originalexecutions preserved;130own9greenlogs sealed. See ordinary_screening_checkpoint131.json/livingplan; candidate-only,no131CIclaimed.
