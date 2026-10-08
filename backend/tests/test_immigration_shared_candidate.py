@@ -18,6 +18,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_health_transfer_keeps_annual_bounds_and_separate_source(self):
+        action = getattr(self, 'hr1968_health_financing_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The health-transfer financing context is separately bound', 1)[1]
+        for qualification in [
+            'annual amount equals the amount transferred under assessment subsection (d)',
+            '$5 million annual floor and $30 million annual ceiling',
+            'remains available until expended',
+            'not a new floor or ceiling for every partial-year health extension',
+            'authorized-and-appropriated Treasury funding introduction',
+            'distinct from the separately printed National Health Service Corps (b)(2) and construction funding',
+            'not silently repaired or summed into a new amount',
+            '$1,050,410,959 for January 1-March 31, 2025',
+            'whole 10503(b)(1) source for FY2015 and each subsequent fiscal year or period thereof',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:18usc3014h1-h4-2024-health-financing-conditions',
+                         'govinfo:42usc254b2b1-2024-chc-transfer-source',
+                         'govinfo:pl118-158-sec3101a-d-e-health-source-amendments'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_health_amendments_keep_exact_dates_and_condition_research_boundary(self):
+        action = getattr(self, 'hr1968_health_financing_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The health-transfer financing context is separately bound', 1)[1]
+        for qualification in [
+            '$2,135,835,616 for April 1-September 30, 2025',
+            "literal duplicate 'inserting and inserting' and trailing '; and'",
+            'not the assessment charged to each offender and not an observed transfer, award or service',
+            'eleven printed continuing-conditions authorities',
+            'PL117-328 requirements for funds for programs under PHSA sections 330-340',
+            'exact division B 2101(d) identity',
+            'Code references-in-text note describes the 3101(d) authority as section 101(d)',
+            'Both the editorial mismatch and actual operative witnesses are preserved',
+            'not full fund-health review',
+            'Q68 remains specifically about fund (e)',
+            'All 69 prior application questions remain unchanged',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertIn('govinfo:hr1968eh-sec2101a-d-e-health-financing', {b['source_id'] for b in action['claim_source_map']})
+
     def test_hr1968_regional_centers_keep_prior_attributes_proposal_and_selection(self):
         action = getattr(self, 'hr1968_regional_action', None)
         if action is None:

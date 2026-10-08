@@ -7525,3 +7525,72 @@ nine raw-log hashes and actual checkout/test contexts are sealed in
 docs/review_packets/immigration_delivery_checkpoint110_ci.json.
 Hosted aggregate differs from owner 151 then/153 here. Current CI field points to 110,
 preserving earlier receipts as historical; new 111 requires its own pushed-head run.
+
+
+### Successor checkpoint 112: health-transfer financing and exact references
+
+Complete current 3014(h)(1) retains transfer from PPACA 10503(b)(1) amounts for
+FY2015 and each subsequent fiscal year or period thereof, equal to the annual
+assessment-subsection (d) transfer within $5 million/$30 million annual bounds,
+available until expended. The CHC funding source retains the authorized-and-
+appropriated introduction, HHS community-health purpose, all dated (b)(1) clauses,
+availability and PPACA codification. Separate NHSC/construction appropriations
+are not imported. Printed overlapping periods/footnote remain without a new sum.
+
+Original PL118-158 3101(a)/(d)/(e) supplies the Jan-March 2025 appropriation/source
+rewrite and actual 3101(d) conditions identity. Exact voted EH 2101(a)/(d)/(e)
+adds $2,135,835,616 for April 1-September 30, 2025, repeats the PL117-328/PHSA 330-340
+requirements reference and adds division B 2101(d) to the continuing (h)(4) list.
+Complete original operative 3101(d) and conforming amendment are followed for
+literal identity; the Code editorial 101(d) mismatch remains preserved. Exact EH
+duplicate inserting/trailing conjunction remains. No actual transfer/award,
+individual coverage, full medical-cohort or incorporated-condition application.
+
+Four selected sources/bindings, eleven original coordinates and two captures are
+added; full registered 3014 and canonical exact EH originals are reused. PL117-328
+capture remains private/unregistered pending material-condition review. All prior
+1,400 sources, 39 other meanings, 69 questions, 372 manifest rows, older receipts and
+127 test methods remain unchanged. Both members carry identical shared detail;
+compact copy/recorded choices/counting/eligibility/compiled graph remain unchanged.
+
+155 focused tests pass in 13.440 seconds; IR reference validator and seven semantic
+checks pass. Separate replay matches all seven generated files byte for byte.
+Two guards pass and twenty qualification mutations fail once each with zero errors.
+Primary source/detail/compact/protected objects and final diff inspected. Passing
+tests/replay and bounded independent mechanics do not establish semantic truth.
+Core 289c8b515d4047f8b937a472999dc24ced803ee0b84f5a275a9ee5e4841ede3b;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,404 sources/1,002 bindings/374 captures/283 extent objects/466 coordinates.
+Queue remains 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/
+two expressive, 216 ordinary unfinished/three partial packages/69 application questions.
+37 episodes/80 observations/72 findings; historical severities/final verdict unchanged.
+
+Final independent mechanics 109-111 is clean within its bounded scope: extracted
+guards and 20/37/19 independent mutations, Q69 seven rejected cases and unrelated
+order/appends. Separate source reviews remain underway. No independent full
+pipeline/replay, domain/package acceptance, individual application or publication.
+Receipt: docs/review_packets/immigration_checkpoints109_111_independent_mechanics.json.
+
+Exact 111 run 37704760438 is terminal success after one explicitly authorized retry
+of job 113076362064 only. Original eight successful executions are reused with
+identical execution times/steps; job 113078494578 successfully executes normalization
+(13 passed) and lifecycle (20 passed) after initial disposable PostgreSQL startup
+failed before normalization and skipped lifecycle. Initial failure raw 76747-byte
+log SHA a5bb084e509b4cd8265fb3c77f09887156e8a57622af4fde74f5152d6249a0e8
+and original failure/skip metadata are preserved; retry raw 137224-byte log SHA
+ded1ccf21527432af838fde4a681a2083898ffce947b765e074a0ddb5c43b4d0.
+No broad rerun or workflow/production configuration change. Five feature-pinned,
+three synthetic and one mixed contexts retained; synthetic
+7be4c803e607b49eb63785dc6b606fbd9751a9ac. Hosted candidate 282 differs from owner 153
+at 111/155 here. Nine successful execution logs and both-attempt provenance sealed
+in docs/review_packets/immigration_delivery_checkpoint111_ci.json. Earlier CI
+receipts remain historical; 112 requires its own exact pushed-head run.
+
+Existing .w/ib ownership continues under explicit 22:39 restart resume; original
+pause/deadline evidence preserved and no current shutdown boundary introduced.
+Continue 3014(h)(2)-(3), eleven incorporated health-condition authorities/material
+PL117-328 conditions, then State/migration/refugee, supplementary/other DHS, exact
+counterparts, ordinary screenings and final package comparison. Q68 remains fund (e)
+only; Q69 literal reimbursement application remains unresolved. Readiness/publication
+false, final verdict null. No merge/deploy/production/editorial approval/promotion/
+publication. Draft PR198 remains the authorized delivery boundary.
