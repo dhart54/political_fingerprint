@@ -18,6 +18,50 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_needle_conditions_keep_original_section_and_version_difference(self):
+        action = getattr(self, 'hr1968_needle_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced needle-program conditions', 1)[1]
+        for qualification in [
+            'PL113-235 division G section 521 (2015)',
+            'PL115-31 division H section 520 (2017)',
+            'PL116-94 division A section 527 (2020)',
+            'PL117-328 division H section 526 (2023)',
+            'funds appropriated in its own Act/division',
+            'each complete needle-program clause is selected in its own operative Title V',
+            'bars use of covered appropriated division funds to carry out any program of distributing',
+            'sterile needles or syringes for hypodermic injection of any illegal drug',
+            'does not print the later purchase-only wording or the later qualified other-program-elements proviso',
+            'not retroactively inserted into this source object',
+            '2015 rule is materially different and is recorded separately',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl113-235-divisionG-sec521-needle-program-conditions',
+                         'govinfo:pl115-31-divisionH-sec520-needle-program-conditions',
+                         'govinfo:pl116-94-divisionA-sec527-needle-program-conditions',
+                         'govinfo:pl117-328-divisionH-sec526-needle-program-conditions'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_needle_conditions_keep_later_other_elements_proviso_complete(self):
+        action = getattr(self, 'hr1968_needle_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced needle-program conditions', 1)[1]
+        for qualification in [
+            'bar use of their covered appropriated division funds to purchase',
+            'program elements other than making those purchases',
+            'relevant State or local health department',
+            'in consultation with the Centers for Disease Control and Prevention',
+            'experiencing, or is at risk for, a significant increase in hepatitis infections or an HIV outbreak due to injection drug use',
+            'operates in accordance with State and local law',
+            'does not authorize the prohibited purchases',
+            'one version repeals or overrides another incorporated reference',
+            'full dated carry-forward application remains unfinished research',
+            'without assigning a separate needle-policy stance, motive or four additional legislative actions',
+            'All 70 separate application questions',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_healthcare_limits_keep_covered_funds_definition_and_complete_exceptions(self):
         action = getattr(self, 'hr1968_healthcare_action', None)
         if action is None:

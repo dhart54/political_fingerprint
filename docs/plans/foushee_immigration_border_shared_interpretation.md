@@ -7794,3 +7794,59 @@ supplementary/other DHS/counterparts, 216 ordinary screenings and final package 
 Same .w/ib owner under explicit 22:39 restart resume; original deadline/pause evidence
 preserved and no current shutdown boundary. No merge/deploy/production/editorial approval/
 promotion/publication. Draft PR198 remains the authorized delivery boundary.
+
+
+### Successor checkpoint 116: original needle-program version differences
+
+Four complete original clauses are bound at their actual identities: 2015 PL113-235
+G521, 2017 PL115-31 H520, 2020 PL116-94 A527 and 2023 PL117-328 H526. The 2015
+appropriated-division-funds rule concerns carrying out a sterile-needle/syringe
+distribution program for hypodermic injection of illegal drugs. Its later purchase-only
+wording/proviso is not retroactively inserted. The three later Acts restrict purchases
+and permit other program elements only under the complete relevant State/local health-
+department determination, CDC consultation, actual-or-risk/hepatitis-increase-or-HIV-
+outbreak/injection-drug-use predicates and State/local-law operation. The proviso does
+not authorize purchases. No actual determination, grant, recipient, private-program ban,
+immigration eligibility/violation or separate member needle-policy stance is inferred.
+
+Four sources/bindings/four coordinates; zero new captures. Seven governed financing,
+medical and section 3/division witnesses reused. All original hashes/seals/full joined
+extent coordinates verify. Later three clauses match after private notes/page-marker/
+section-label removal only; the 2015 operative rule differs. Original bytes/annotations/
+glyphs/dates/sections/division identities remain unchanged. The eleven-authority chain
+and additional exact EH Division B 2101(d) retain their dated periods and amendment
+scopes. No unreviewed cumulative/override/current individual application is declared.
+
+164 focused tests pass in 13.268 seconds, reference validator and seven semantic checks
+pass; seven generated files reproduce byte for byte. Two guards pass; 26 qualifier/binding
+mutations fail once each with zero errors. All prior 1,419 sources, 39 other meanings,
+70 questions, 136 methods, 387 capture/manifest rows, old receipts and protected code
+preserved. Full both-member action/aggregate detail, unchanged compact and recorded
+choices inspected. Counting/eligibility/compiled graph unchanged. Diff reviewed; tests
+are mechanical evidence, not semantic acceptance. Core
+fb4cb19c0acafe6fff329bebd7eb3ab555ef18a4bfb5fbac3888eb7094056dfb;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,423 sources/1,021 bindings/387 captures/302 extent objects/494 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two expressive;
+216 ordinary unfinished/three partial packages/70 separate questions. 37 episodes/80
+observations/72 findings; historical severity accounting unchanged. Readiness/publication
+false, final verdict null; Q68/Q69/Q70 remain separately unresolved.
+
+Own exact 115 run 37709963469 is terminal nine green, with nine owner-read execution
+logs/hashes/counts/actual checkout contexts sealed in
+docs/review_packets/immigration_delivery_checkpoint115_ci.json. Five feature-pinned,
+three synthetic and one mixed job; synthetic 8a6197ccb7bee82cce327f7a53c4df7888932520. Hosted candidate counts
+remain distinct from owner 162 at 115/164 here. No retry; prior 111 original failure/
+single-job recovery preserved. 116 requires its own pushed-head CI. Bounded independent
+lanes through 114 complete within recorded scopes; 115/116 remain separate pending review.
+
+Next review complete 501/502/505 availability/transfer/disclosure provisions across the
+same four original requirements Acts, then other material program/HHS/general conditions
+and their actual substantive references. Preserve original-purpose/period constraints,
+express availability exceptions, document trigger/recipient/funding scope and source-year
+differences; keep actual current application separately unfinished. Continue State/
+migration/refugee, supplementary/other DHS/counterparts, 216 screenings and final package
+comparison. Unfinished ordinary research is not unavailable evidence. Same .w/ib owner,
+explicit successor restart resume and no current shutdown boundary. Historical deadline/
+pause evidence preserved; no merge/deploy/production/editorial acceptance/promotion/
+publication. Draft PR198 remains the authorized delivery boundary.
