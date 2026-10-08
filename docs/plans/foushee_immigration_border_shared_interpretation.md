@@ -10282,3 +10282,69 @@ three synthetic-merge and one mixed repair. Decoded logs/checkouts sealed;
 syntheticSHA1ba6213bc17a061bf7c1adec64e41d52595e94a4. Hosted308/repair13of20 remain distinct
 from owner179 tests. Peer160/161 review unreceived;162 review pending. No
 editorial acceptance/publication/production/merge or retired controls.
+
+## Checkpoint163: five government-administration screenings
+
+House119/2/208/209/220/303/305 receive noncounting candidate exclusions.
+HR8466 concerns emergency financial controls for the named covered agencies,
+including DHS, with guidance, plans, risk assessment and review duties. Agency
+coverage does not supply an immigration-specific predicate. Guidance, plan,
+revision, reporting and after-action clocks remain separate; no additional funds
+authorized does not establish zero cost or actual fraud reductions. HR8428 keeps
+MAY programme establishment and SHALL specified-role completion commands literal,
+with separate appointment/effective/report clocks, certification and optional
+State/local/Tribal access. It creates no hiring/workauthorization eligibility.
+Named GAO/OMB/Treasury/NIST resource contents/versions are not characterized or
+certified; no whole-framework/individual identity or fraud conclusion.
+
+HR8464 preserves objective documented payment risk, narrow/minimum-duration
+actions, existing statutory eligibility/other-law conditions, tailored contest,
+qualified segmentation and release. Two-day order/notice clocks are separate;
+30day/seven-day payment commands require a no-elevated-risk/improper-loss
+determination, not automatic release for unresolved risk. Law-enforcement waiver,
+good-faith officer limits and nonfinality of eligibility/liability/wrongdoing
+remain. DNP privacy/other-law-required payment and officer-duty/relief baselines
+are captured; no actual payee fraud, citizenship, immunity or payment finding.
+
+Fresh passed HR4646 applies existing4712 protections to HUD-funded arrangements
+regardless of execution date. Complete material statute preserves reasonable-
+belief disclosures, named recipients, complaint/remedy conditions, intelligence/
+classified-information limits and native-language notification. No allworker/
+housing eligibility or actual misconduct/corruption/retaliation/remedy conclusion.
+Fresh passed HR9500 targets165(h5), qualified theft timing and refund rules,
+10percent additional-tax exception and analogousH(v) repayment. The material
+chain includes2024baseline and enacted11921section70109: h5expiry removed and
+State-declared disasters added effectiveafter2025. The bill is not described as
+repealing an already expired restriction. Other loss thresholds/insurance/basis,
+ordinary income, birth caps/TIN rules and allcurrentexceptions are not repealed
+or imported by inference. Deadline floors, qualifiedlookback exception, two-year
+processing, retroactive specifiedloss/distribution dates and special preenactment/
+pyrrhotite rules stay separate. No individual deduction/plan/refund guarantee,
+crime/damage-cause/taxresidency or immigration-status judgment.
+
+569/676 reviewed:44 interpreted,227 procedural,296 excluded,2 expressive;
+107 ordinary pending.1765 sources/582 registered captures/1108 interpreted
+bindings/524 extent objects/932 coordinates.40 episodes/88 observations/
+78 findings,70 questions/3packages unchanged. Audit188NoDefect/8Minor/11Major/
+1Critical retains history and final_verdict null. All priorholds/252/S1318/4090
+remain pending. Only payment220 is FousheeNay/MassieYea; four suspension-as-
+amended rows areYea/Yea. Labels do not establish component preferences or motives.
+
+14 verified fresh officialHTML raw/text captures,13 derivatives/16 intervals/
+21 complete named claim passages verified; existing bills/publiclaw parent reused
+exactly. No wholeparents/latestlaw/framework/individualapplication certification.
+179 focused tests pass in14.781s; seven semantic checks/reference/replay
+pass. All seven outputs match replay exactly; six semantic outputs unchanged.
+Final diff/audit guards follow. Scoped Windows environment retained without
+configuration/dependency/security/ACL changes. Private verifier numeric copying
+changed its path date and conflated18canonical/17manifest counts; both failures
+preceded resultwrites, scoped correction passed. Prior162private archive added
+and byte-verified, older161copy retained. No canonical correction/importer replay.
+The reusable named-parameter lesson is recorded in the operating workflow;
+owner evidence only, no newtiming/speedup/quality-equivalence claim.
+
+162CI37859028596/run648: nine successful attempt1jobs, five feature-pinned,
+three synthetic-merge and one mixed repair. Decoded logs/checkouts sealed;
+syntheticSHAb68b402ef62e1164bdc6b3986dce71c8238fee42; hosted308/repair13of20 distinct from
+owner179tests. Peer160-162unreceived/163pending, no invented certification or
+editorial acceptance. No publication/production/merge or retiredcontrols.

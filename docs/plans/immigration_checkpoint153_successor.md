@@ -297,3 +297,37 @@ replay pass, sixoutputs unchanged.19newcanonical/19captures/5freshHTMLrawtext/
 peer160/161unreceived/162pending; finaldiff/auditguards/delivery next. Allholds intact.
 
 Checkpoint162 finaldiff and two auditguards verified (0.971s); feature delivery ready.
+
+## Checkpoint163: five government-administration screenings
+
+Screen1192/208(HR8466 emergencycontrols),209(HR8428 training),220(HR8464
+paymentpause),303(HR4646 HUDcontractwhistleblowers),305(HR9500 taxlosses).
+Bind fullpassedEH stages, exact questions/memberlabels and material statutory
+scopes. NamedDHS coverage/generalbenefitadministration cannot itself establish
+an immigration-specificpredicate. Preserve MAYestablishment versus mandatory
+role-training commands, statutoryeligibility/otherlaw/payment protections,
+objective/documented/time-limited paymentrisk conditions and nonfinality of
+wrongdoing/eligibility. No factual fraud, corruption, misconduct or motive claim.
+
+HUDwhistleblower protection is existing4712 applied to namedfundedarrangements,
+notallfederalemployment orhousingeligibility. Taxrepeal targets165(h5), including
+the intervening11921section70109 permanent/state-disaster modification effective
+after2025; do not reuse an expired2024-only sunset. Bind theft/deduction/10percent
+additional-tax/analogousrepayment/refundlookback and qualifiedeffective dates,
+notindividualtaxstatus/refund guarantees. Scope only materialreferences, not
+completeGAO/NIST/OMBframeworks/alltaxlaw/currentagencyoperations/applications.
+
+Archive baseline, propose source-mappedcandidate exclusions only where safe,
+audit/generate/replay and run179focused/semantic/reference/finalguards/diffreview.
+Then featurecommit/push/update draftPR198. Expected12-14trackedfiles and unchanged
+44meanings/sixoutputs/70questions/3packages/252/S1318/4090/allholds. Include162CI
+and actualpeerreview with coherentdelivery only; no receipt-onlypush, routine
+timing, methodologychange or reservedpublication/production/merge gate.
+
+Checkpoint163 authored/validated:569reviews/107pending;179focused/7semantic/reference/
+replay pass, sixoutputs unchanged.18newcanonical/17captures/14freshHTMLrawtext/
+13derivatives/16intervals/21claims verify;162CI9green,peer160-162unreceived/163pending.
+Finaldiff/auditguards/delivery next. Named-helper-parameter lesson recorded from
+privateverification failures/correction, no source ormeaning correction/timingclaim.
+
+Checkpoint163 finaldiff and two auditguards verified (0.990s); feature delivery ready.

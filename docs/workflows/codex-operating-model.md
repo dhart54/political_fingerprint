@@ -326,6 +326,19 @@ measured; workflow speed never authorizes weaker source or publication gates.
   versions and use a new phase filename. Never rerun already-applied mutators or
   overwrite history to repair a resume point. Independent review of private guard
   code/probes was unavailable; this is an owner-tested workflow safeguard.
+- **Change named helper parameters, not digits globally (observed, checkpoint163).**
+  Copying a private verifier with numeric string replacement changed the date in
+  its data path and coupled two distinct append counts:18 canonical sources and
+  17 registered captures. Both failures occurred before result writing; scoped
+  corrections passed preservation/replay checks with the existing output guard
+  retained at result writing. When reusing private helper code, keep
+  paths/checkpoint IDs and each expected count explicit, and edit exact named
+  assignments/assertions rather than arbitrary digit substrings. Canonical,
+  manifest and private-pool counts may differ. Preserve independent per-action
+  checks and baseline prefix comparisons; this avoids a demonstrated copying
+  defect, not a measured speedup. If helper scope or source shape changes beyond
+  explicit parameters, write the small affected check anew rather than cloning
+  an already-applied mutator or forcing incompatible assumptions.
 - **Batch routine delivery (user-authorized experiment, October 8, 2026).** Small
   remote checkpoints repeated receipt, suite, replay, Git and PR work. Normally
   group 5-10 routine source-coherent screenings while errors remain low, with

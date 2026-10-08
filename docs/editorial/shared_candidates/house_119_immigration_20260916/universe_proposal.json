@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 291,
-      "source_unresolved": 112,
+      "exact_action_ineligible": 296,
+      "source_unresolved": 107,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 291,
-    "unresolved_boundary_cases": 112,
+    "exact_action_ineligible_actions": 296,
+    "unresolved_boundary_cases": 107,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -632,7 +632,10 @@
         "house:119:2:196",
         "house:119:2:199",
         "house:119:2:201",
+        "house:119:2:208",
+        "house:119:2:209",
         "house:119:2:216",
+        "house:119:2:220",
         "house:119:2:222",
         "house:119:2:223",
         "house:119:2:225",
@@ -674,7 +677,9 @@
         "house:119:2:294",
         "house:119:2:296",
         "house:119:2:297",
+        "house:119:2:303",
         "house:119:2:304",
+        "house:119:2:305",
         "house:119:2:306",
         "house:119:2:307",
         "house:119:2:311",
@@ -759,11 +764,8 @@
         "house:119:2:198",
         "house:119:2:205",
         "house:119:2:207",
-        "house:119:2:208",
-        "house:119:2:209",
         "house:119:2:217",
         "house:119:2:218",
-        "house:119:2:220",
         "house:119:2:221",
         "house:119:2:224",
         "house:119:2:228",
@@ -786,8 +788,6 @@
         "house:119:2:295",
         "house:119:2:301",
         "house:119:2:302",
-        "house:119:2:303",
-        "house:119:2:305",
         "house:119:2:308",
         "house:119:2:309",
         "house:119:2:310",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "342efef142de273781b8e73e2c5a5e0687bd4d10e3555b49817cfff13ef23327",
+  "universe_subject_sha256": "810282a617be487db577ca962a1392c8bd14c32ac9d1cbda98b0689b26d134f3",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -36571,8 +36571,8 @@
       "date": "2026-06-08",
       "measure": "bill_119_hr_8466",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "CompleteHR8466 createsqualified901(b) agency emergencyspendingcontrol guidance/plans/riskassessment/data-monitoring/reviews, not an immigration-specificfund ornewpayeeeligibility rule. NamedlistincludesDHS/State but commonfinancialmanagementobject doesnot inherit those agencies' immigrationmissions. OMBguidance180days/enactment with3yearreviews; agenciesplans1year/3yearrevisions; OMB15month/annualsubmission andafter-action180daysfrominitialfundobligation are separateclocks, not allfromenactment. RelevantGAOframeworks namedwithoutcertifyingwholecontents/updatedversions, actualrisks/loss/recovery/outcomes. No additionalfunds authorized is not zerocost/appropriation/actualfraudbenefit orcurrentagencyoperations finding; broadpayment/improperpayment definitions notallfraud orpersonalnationality predicates. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
       "source": {
         "source_id": "clerk:119:2:208",
         "url": "https://clerk.house.gov/evs/2026/roll208.xml",
@@ -36589,25 +36589,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "CompleteHR8466 createsqualified901(b) agency emergencyspendingcontrol guidance/plans/riskassessment/data-monitoring/reviews, not an immigration-specificfund ornewpayeeeligibility rule. NamedlistincludesDHS/State but commonfinancialmanagementobject doesnot inherit those agencies' immigrationmissions. OMBguidance180days/enactment with3yearreviews; agenciesplans1year/3yearrevisions; OMB15month/annualsubmission andafter-action180daysfrominitialfundobligation are separateclocks, not allfromenactment. RelevantGAOframeworks namedwithoutcertifyingwholecontents/updatedversions, actualrisks/loss/recovery/outcomes. No additionalfunds authorized is not zerocost/appropriation/actualfraudbenefit orcurrentagencyoperations finding; broadpayment/improperpayment definitions notallfraud orpersonalnationality predicates. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:208",
           "url": "https://clerk.house.gov/evs/2026/roll208.xml",
           "raw_sha256": "4ba10f9ad201cdd21ef341b4afe3fbc91bcbeab9ae53481e6671966ca1740c78",
-          "governed_bytes_sha256": "0e05720b0b725ba49815f9f0e434cac7dbb2fd8ba7da112f40e2413c045787f8",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0e05720b0b725ba49815f9f0e434cac7dbb2fd8ba7da112f40e2413c045787f8"
+        },
+        {
+          "source_id": "govinfo:hr8466eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8466eh/html/BILLS-119hr8466eh.htm",
+          "raw_sha256": "4e56d7e96f94da33737461f1112dfb2b6ff4a33cc2b6aa321bcd8e11c7377d5d",
+          "governed_bytes_sha256": "a2509078494863f4fe733cebf2023cfc4839aa4c7d30e1e0057af0d485acec01"
+        },
+        {
+          "source_id": "govinfo:31usc901b-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleI-chap9-sec901.htm",
+          "raw_sha256": "6b8512311429d11ec34cf7e38029f80bd81fc78d4b08bb13dfe406efc33706f1",
+          "governed_bytes_sha256": "1cf8ed887937793b469014eb4906be2d8b58bfd5d1cf527ec5a7dddc23e6f196"
+        },
+        {
+          "source_id": "govinfo:31usc3351-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapIV-sec3351.htm",
+          "raw_sha256": "891dadd95af1a36a418f63faaf9eee4971f61037e66ec008eb814c795edfa061",
+          "governed_bytes_sha256": "d49819a9412f7e1f568d59a3c3d776640b573bbb623e8433931c7709e8928aba"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "0b6254a8824d83e6bc31b07aeff141947bf8498b57749fb0f282c4305ef71d29"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:208",
@@ -36623,8 +36641,8 @@
       "date": "2026-06-08",
       "measure": "bill_119_hr_8428",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "CompleteHR8428 Treasury/OMB MAYestablish programme in consultationOPM while headsofcoveredagencies SHALLensure specifiedfinancial/oversightrole completion; bothliteralcommands retained, no silentlyrewrittenmandatoryestablishment orimplementationifneverestablished adjudication. Existingrole180daysfromeffective/dateappointment and2yearrefresh, effective180daysafterenactment/regulatorywindowaftereffective, and2yearafterenactmentreport are separateclocks. OPMcertification andoptionalnofeeState/local/Tribal training/technicalassistance concern administrators, not newhiring/workauthorization/recipientstatus eligibility. NamedGAO/OMB/Treasury/NIST/dataanalytics curriculum remainsreferencegrounded withoutwholeframework/currentversion/individualidentity orfraud conclusion. DNPmaterial(a/b) retainsqualifiedeligibility/data/publicnotice/privacy/paymentotherwiserequired boundaries; no immigrationdatabase orallbenefiteligibility inferred. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
       "source": {
         "source_id": "clerk:119:2:209",
         "url": "https://clerk.house.gov/evs/2026/roll209.xml",
@@ -36641,25 +36659,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "CompleteHR8428 Treasury/OMB MAYestablish programme in consultationOPM while headsofcoveredagencies SHALLensure specifiedfinancial/oversightrole completion; bothliteralcommands retained, no silentlyrewrittenmandatoryestablishment orimplementationifneverestablished adjudication. Existingrole180daysfromeffective/dateappointment and2yearrefresh, effective180daysafterenactment/regulatorywindowaftereffective, and2yearafterenactmentreport are separateclocks. OPMcertification andoptionalnofeeState/local/Tribal training/technicalassistance concern administrators, not newhiring/workauthorization/recipientstatus eligibility. NamedGAO/OMB/Treasury/NIST/dataanalytics curriculum remainsreferencegrounded withoutwholeframework/currentversion/individualidentity orfraud conclusion. DNPmaterial(a/b) retainsqualifiedeligibility/data/publicnotice/privacy/paymentotherwiserequired boundaries; no immigrationdatabase orallbenefiteligibility inferred. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:209",
           "url": "https://clerk.house.gov/evs/2026/roll209.xml",
           "raw_sha256": "f69a1a9cb509dbf0a55146d4a524fb4fa15631f433cbf9b0ffd913498063aa95",
-          "governed_bytes_sha256": "5ca23864c7da452b037cd908e5ee20f26fab7441504c027eb28e1678114ff505",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5ca23864c7da452b037cd908e5ee20f26fab7441504c027eb28e1678114ff505"
+        },
+        {
+          "source_id": "govinfo:hr8428eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8428eh/html/BILLS-119hr8428eh.htm",
+          "raw_sha256": "d2665e1d325706e6a709b283788a4a0f73bc0b40c896381fa0815976d5e6c44e",
+          "governed_bytes_sha256": "c91f9b5ad5f6a4111cb9d529fc2ba98efe2339c0dde81fadd85222a991a06c56"
+        },
+        {
+          "source_id": "govinfo:5usc4101-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartC-chap41-sec4101.htm",
+          "raw_sha256": "8a09d400e919c20ddd72b6661699a3e7fd28b9b4d1c58914dd8f604046889993",
+          "governed_bytes_sha256": "0a1f0885acd88d045e6119a2339dbde0ee2520ad68d94a5ef5bf3c1f514e81e1"
+        },
+        {
+          "source_id": "govinfo:31usc3354ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapIV-sec3354.htm",
+          "raw_sha256": "6093b0b6485434aae414b9aff6260f741db36cadb9765d8d0a5116c7dbe9c36e",
+          "governed_bytes_sha256": "e3750afd2458ff712992637b0a9b19727f196caa67d87811ff383fd17259be31"
+        },
+        {
+          "source_id": "govinfo:31usc3528ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap35-subchapIII-sec3528.htm",
+          "raw_sha256": "c4af088e4952921fd3b558960c72ea562656cda803415d659e1b85834403a706",
+          "governed_bytes_sha256": "c70093359bfa7ce65b1ae7504461e4176e9dbf35cbddd8490d3c8897f7b54597"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b1ae1e2f7dac0fd7028d92491d20d2d945ad37641ab94b4cc6dda884aafb7328"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:209",
@@ -37327,8 +37369,8 @@
       "date": "2026-06-10",
       "measure": "bill_119_hr_8464",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "CompleteHR8464 mandatesqualifiedprecertificationagencycorrectiveactions andTreasuryvoucherreturn/order uponDNPbasedriskdetermination, subjectstatutorilydefined/legallyestablishedprogrammeeligibility andexceptwhereotherwise requiredbylaw; objective/documentedindicator, narrowhighriskportion/minimumnecessaryduration, tailoredcontest andqualifiedroutinepaymentsegmentation retained. Treasuryorder2day andagencynotice2day clocks separate.30day/7dayaftercontest payment command requiresagencydeterminationthatnoelevatedrisk/improperfinanciallosspayment exists, not automaticreleaseforallunresolvedrisk orunconditionalseizure. Case-by-caselaw-enforcementwaiver,goodfaithofficerliabilitylimit/nonfinaleligibility-liability-wrongdoing statement, andnonsupersessionofauthorizingstatutes remain. Regs180day/annual,agencyappealresponse5days/report18monthannual/effective1year separate.3325/3527/3528changes addspecifiedpause/goodfaithcertificationduties/relief, notallimmunity. DNP/improperpayment objects commonfinance,notnewimmigration/nationality/admission/specificbenefit criterion. Anyapplicationtoexistingstatus-sensitiveprogrammes/actualfraud/dataaccuracy/paymentrecipient/security/legaloutcome remains unadjudicated. FousheeNay/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
       "source": {
         "source_id": "clerk:119:2:220",
         "url": "https://clerk.house.gov/evs/2026/roll220.xml",
@@ -37345,25 +37387,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "CompleteHR8464 mandatesqualifiedprecertificationagencycorrectiveactions andTreasuryvoucherreturn/order uponDNPbasedriskdetermination, subjectstatutorilydefined/legallyestablishedprogrammeeligibility andexceptwhereotherwise requiredbylaw; objective/documentedindicator, narrowhighriskportion/minimumnecessaryduration, tailoredcontest andqualifiedroutinepaymentsegmentation retained. Treasuryorder2day andagencynotice2day clocks separate.30day/7dayaftercontest payment command requiresagencydeterminationthatnoelevatedrisk/improperfinanciallosspayment exists, not automaticreleaseforallunresolvedrisk orunconditionalseizure. Case-by-caselaw-enforcementwaiver,goodfaithofficerliabilitylimit/nonfinaleligibility-liability-wrongdoing statement, andnonsupersessionofauthorizingstatutes remain. Regs180day/annual,agencyappealresponse5days/report18monthannual/effective1year separate.3325/3527/3528changes addspecifiedpause/goodfaithcertificationduties/relief, notallimmunity. DNP/improperpayment objects commonfinance,notnewimmigration/nationality/admission/specificbenefit criterion. Anyapplicationtoexistingstatus-sensitiveprogrammes/actualfraud/dataaccuracy/paymentrecipient/security/legaloutcome remains unadjudicated. FousheeNay/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:220",
           "url": "https://clerk.house.gov/evs/2026/roll220.xml",
           "raw_sha256": "7c30ad02bf146a77ffbe43fb66466ee18f5778b8f9e072299d72069575044428",
-          "governed_bytes_sha256": "738358ad6ae2e98c1a96b80a420b8f1c17c188cf4cd293f1e4b6f38aed440cd9",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "738358ad6ae2e98c1a96b80a420b8f1c17c188cf4cd293f1e4b6f38aed440cd9"
+        },
+        {
+          "source_id": "govinfo:hr8464eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8464eh/html/BILLS-119hr8464eh.htm",
+          "raw_sha256": "1d332a194e02322335a818e607afa920b0bb7ca957147d85079abe39caec281a",
+          "governed_bytes_sha256": "ff3e0c77da0e4f8d7bced495c329087418e80b8f1f6d339a8a4937bad0fa56b5"
+        },
+        {
+          "source_id": "govinfo:31usc3351-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapIV-sec3351.htm",
+          "raw_sha256": "891dadd95af1a36a418f63faaf9eee4971f61037e66ec008eb814c795edfa061",
+          "governed_bytes_sha256": "d49819a9412f7e1f568d59a3c3d776640b573bbb623e8433931c7709e8928aba"
+        },
+        {
+          "source_id": "govinfo:31usc3354ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapIV-sec3354.htm",
+          "raw_sha256": "6093b0b6485434aae414b9aff6260f741db36cadb9765d8d0a5116c7dbe9c36e",
+          "governed_bytes_sha256": "e3750afd2458ff712992637b0a9b19727f196caa67d87811ff383fd17259be31"
+        },
+        {
+          "source_id": "govinfo:31usc3325-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap33-subchapII-sec3325.htm",
+          "raw_sha256": "eea9293f83f8f8b37b48df383ceb668d69126254ac89952bbc3c140fb17e6125",
+          "governed_bytes_sha256": "996ee32c50df2efacbf38d498b00f44d5821cd44523f6447ca6eb12567d6005e"
+        },
+        {
+          "source_id": "govinfo:31usc3527ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap35-subchapIII-sec3527.htm",
+          "raw_sha256": "cbe13e34df378c9b734041f1e703803b26e601ba066a83f4a4d4118610234d66",
+          "governed_bytes_sha256": "147080a7871a5a2855e4e62100435afb7cf2e4a11d00f53300b060510aa2c84f"
+        },
+        {
+          "source_id": "govinfo:31usc3528ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIII-chap35-subchapIII-sec3528.htm",
+          "raw_sha256": "c4af088e4952921fd3b558960c72ea562656cda803415d659e1b85834403a706",
+          "governed_bytes_sha256": "c70093359bfa7ce65b1ae7504461e4176e9dbf35cbddd8490d3c8897f7b54597"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b371044ba2a48998f31f4f8521e8b89d77102c444d43642b05e351a3e0e258a6"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:220",
@@ -42289,8 +42367,8 @@
       "date": "2026-09-15",
       "measure": "H R 4646",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "FreshcompleteEH HR4646 appliesexisting4712 toHUD-fundedcontracts/subcontracts/grants/subgrants/personalservicescontracts regardlesswhenexecuted, not allFederalemployees/allhousingbenefits ornewservice/citizenship/admission rules. Complete4712 conditions preserveprotectedreasonablebeliefdisclosures/namedrecipients,qualifications/IGexceptions/complaintandremedyclocks/burdens/nonwaiver/ICandclassifiedinformation limits. Reprisal/abuse/violation are legalpredicates/allegations here, notfindings that anynamedperson committedcorruption/fraud/misconduct orguaranteedcomplaintremedy. Predominantnativelanguageofworkforce notice is communication, not nationality/immigrationeligibility. Individualcontractor/employment/HUDrecipient/currentlaw/application facts unadjudicated. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
       "source": {
         "source_id": "clerk:119:2:303",
         "url": "https://clerk.house.gov/evs/2026/roll303.xml",
@@ -42307,26 +42385,38 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "FreshcompleteEH HR4646 appliesexisting4712 toHUD-fundedcontracts/subcontracts/grants/subgrants/personalservicescontracts regardlesswhenexecuted, not allFederalemployees/allhousingbenefits ornewservice/citizenship/admission rules. Complete4712 conditions preserveprotectedreasonablebeliefdisclosures/namedrecipients,qualifications/IGexceptions/complaintandremedyclocks/burdens/nonwaiver/ICandclassifiedinformation limits. Reprisal/abuse/violation are legalpredicates/allegations here, notfindings that anynamedperson committedcorruption/fraud/misconduct orguaranteedcomplaintremedy. Predominantnativelanguageofworkforce notice is communication, not nationality/immigrationeligibility. Individualcontractor/employment/HUDrecipient/currentlaw/application facts unadjudicated. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:303",
           "url": "https://clerk.house.gov/evs/2026/roll303.xml",
           "raw_sha256": "af27d479041b4fcfdd85986388eb8abb4ce55d790f20d4ecfc4299d0b0aafe4e",
-          "governed_bytes_sha256": "a896ab5f3f1a6ec883dae2700e077b691acc10be09216c70f17626eea11a26bd",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a896ab5f3f1a6ec883dae2700e077b691acc10be09216c70f17626eea11a26bd"
+        },
+        {
+          "source_id": "primary:hr4646eh-full163",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4646eh/xhtml/BILLS-119hr4646eh.html",
+          "raw_sha256": "8e4588715df000b85feb625893dd25edb8f0d8a52186577b6b3bdeb531c72fa7",
+          "governed_bytes_sha256": "b7d88a400b355eda166809f26b1d4ad1580616c3f1f6c177ea03705636b786fe"
+        },
+        {
+          "source_id": "govinfo:41usc4712-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title41/html/USCODE-2024-title41-subtitleI-divsnC-chap47-sec4712.htm",
+          "raw_sha256": "3cd11ebcfe2b4cd5858d878c753983fc0ab8f78538f57352a8ba87329eae1eca",
+          "governed_bytes_sha256": "e2f34a09ed9b4bb05702c872d176596555901c11d8cfdf1307929e6beb1710a3"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1c864a0c52d68118b047bdc0e762397ccf4d64d81c0397f5f468557b4ae48824"
       }
     },
     {
@@ -42431,8 +42521,8 @@
       "date": "2026-09-15",
       "measure": "H R 9500",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "FreshcompleteEH HR9500 repealsONLY165(h5), addsqualifiedtheftoccurrence-year election versusdefaultdiscoveryyear, qualifiedrefunddeadlinefloor/6511(b2)nonapplication,10percentadditional-tax exception fordeductiblefraudtheft-relatedretirementdistributions andanalogousH(v) repaymentrules with1yearafterlossdiscovery substituted for3yearafterdistribution. It doesnotrepealalllossdeductionthresholds/basis/insuranceconditions, exemptallordinaryincome, imposebirth5000/TINrules onfraudvictims orguaranteeplanrepayment/refund.2024h5sunsetisnotcurrent2026base: enacted11921section70109removed2026expiry andaddedqualifiedState-declareddisasters,effectiveafter2025. Fullchainboundbeforeproposedh5repeal, no descriptionofalreadyexpiredrestriction.6511(a) floorisnotuniversaloneyearmaximum, b2lookbackremovedonlyqualifiedclaims, otherfilingrules notallrepealed. Two-yearclaimprocessingisnotapproval/refundguarantee. Generalafter2025losses,2021-2025specifiedfraud/pyrrhotiteprincipalresidence losses,after2020distributions,discovered-beforeenactment andpyrrhotitespecialrefundrules remainseparate. Fraud/deceit/misrepresentation definedbySecretary andpyrrhotitedamage are statutorypredicates, no modelcrime/cause/medical/economic inference. Taxloss/time/property/plan predicates notanimmigration-specific programme orchangedadmission/nationality/status rule; individualtaxresidency/deduction/plan/refund/current-law applications unadjudicated. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
       "source": {
         "source_id": "clerk:119:2:305",
         "url": "https://clerk.house.gov/evs/2026/roll305.xml",
@@ -42449,26 +42539,62 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "FreshcompleteEH HR9500 repealsONLY165(h5), addsqualifiedtheftoccurrence-year election versusdefaultdiscoveryyear, qualifiedrefunddeadlinefloor/6511(b2)nonapplication,10percentadditional-tax exception fordeductiblefraudtheft-relatedretirementdistributions andanalogousH(v) repaymentrules with1yearafterlossdiscovery substituted for3yearafterdistribution. It doesnotrepealalllossdeductionthresholds/basis/insuranceconditions, exemptallordinaryincome, imposebirth5000/TINrules onfraudvictims orguaranteeplanrepayment/refund.2024h5sunsetisnotcurrent2026base: enacted11921section70109removed2026expiry andaddedqualifiedState-declareddisasters,effectiveafter2025. Fullchainboundbeforeproposedh5repeal, no descriptionofalreadyexpiredrestriction.6511(a) floorisnotuniversaloneyearmaximum, b2lookbackremovedonlyqualifiedclaims, otherfilingrules notallrepealed. Two-yearclaimprocessingisnotapproval/refundguarantee. Generalafter2025losses,2021-2025specifiedfraud/pyrrhotiteprincipalresidence losses,after2020distributions,discovered-beforeenactment andpyrrhotitespecialrefundrules remainseparate. Fraud/deceit/misrepresentation definedbySecretary andpyrrhotitedamage are statutorypredicates, no modelcrime/cause/medical/economic inference. Taxloss/time/property/plan predicates notanimmigration-specific programme orchangedadmission/nationality/status rule; individualtaxresidency/deduction/plan/refund/current-law applications unadjudicated. FousheeYea/MassieYea are exactrecordedquestion labels, noteachcomponentpreferences/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved. No newsharedmeaning/methodology/applicationquestion/partialpackage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:305",
           "url": "https://clerk.house.gov/evs/2026/roll305.xml",
           "raw_sha256": "8b8c0ed8f89f58ec2b25737c1845218d3a036964edf4b370fa2658545bacbec3",
-          "governed_bytes_sha256": "72371cf57933f7e21f082f89648cf3e0794cf109fada5b21ea73f07826483b8a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "72371cf57933f7e21f082f89648cf3e0794cf109fada5b21ea73f07826483b8a"
+        },
+        {
+          "source_id": "primary:hr9500eh-full163",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9500eh/xhtml/BILLS-119hr9500eh.html",
+          "raw_sha256": "f6df6d09337ad8795a6ef53a539d8a8fc73976ccf019de594684376028016dfa",
+          "governed_bytes_sha256": "9e3dc417cc9a678be3a178a5333457ad63b871a701ff08df96cb3bd05c14b641"
+        },
+        {
+          "source_id": "govinfo:26usc165-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partVI-sec165.htm",
+          "raw_sha256": "a2d974aefc810e8e960cb47a93cc96fba6a47ba54c9b204be5db0b9eafdf60ff",
+          "governed_bytes_sha256": "3cb1d4f0c25d483a2859581992f55500cee748209d5136add45358d7ff7431eb"
+        },
+        {
+          "source_id": "govinfo:pl11921-section70109-operative163",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "2c626daa7bca96ae98f6bbeec95c781455184a862cbebcb6d5df79c3325d09f5"
+        },
+        {
+          "source_id": "govinfo:26usc72-t1-Hv-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partII-sec72.htm",
+          "raw_sha256": "eec9d33e0296f7cce4ae0b344c7817593b118b29c63dc7561a5bfc76bdb5488b",
+          "governed_bytes_sha256": "35c98d80f7994c022f3ccba000557cbbdaa9cf2b17e70269dda854988c7d826b"
+        },
+        {
+          "source_id": "govinfo:26usc6511ab-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap66-subchapB-sec6511.htm",
+          "raw_sha256": "ba47c7a724878ebec281b7d4f7f3269d6a8655a9aa187116ff5bf66581656aaf",
+          "governed_bytes_sha256": "098f1ec89e4b094cdc384c9ccfa12c662376e81577ca7325a7ce4e3a40502fa1"
+        },
+        {
+          "source_id": "govinfo:26usc121a-material163",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partIII-sec121.htm",
+          "raw_sha256": "f10aab746407f0baebe7f565ae7b4045934ace6020876138a136b51d368dcf46",
+          "governed_bytes_sha256": "96114f5986184d43dfb3d4677baccf86916b4e43e6742feea2e7f9af16f05199"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "4e7754a816ceb5211c82472074952452e523fd32db08585b81f9d85f54d08144"
       }
     },
     {
@@ -43114,11 +43240,8 @@
     "house:119:2:198",
     "house:119:2:205",
     "house:119:2:207",
-    "house:119:2:208",
-    "house:119:2:209",
     "house:119:2:217",
     "house:119:2:218",
-    "house:119:2:220",
     "house:119:2:221",
     "house:119:2:224",
     "house:119:2:228",
@@ -43141,8 +43264,6 @@
     "house:119:2:295",
     "house:119:2:301",
     "house:119:2:302",
-    "house:119:2:303",
-    "house:119:2:305",
     "house:119:2:308",
     "house:119:2:309",
     "house:119:2:310",
@@ -43165,6 +43286,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "f6fcc9db31ba1e118bf4506cd5a1ede01e213bcb48661a9bcd8a4496fb604169",
-  "membership_review_sha256": "21026430675033bc7b5abba8a5fbda9811a101e34461676bf39ea81d74070ab6"
+  "proposal_sha256": "afd66a6b215a7b595d567d1c217a5ee2380189e2307f8252e6b8d414e77c6a7c",
+  "membership_review_sha256": "c2b46a1f7f5f8078cb38c12661c6b688d4152f1690593a4e43342ca8b1b33c9e"
 }
