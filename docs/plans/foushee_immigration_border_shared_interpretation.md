@@ -9612,3 +9612,37 @@ distinctlocal179,repair13/20,no retry.146needsownCI/boundedreview. Allholds,
 70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139/143/145
 limits retained. Completeexisting146delivery,thenstopnewlargework12:12:21Z,
 wrap12:27:21Z,terminalCHECKPOINTby12:37:21Z,lastfilesystemaction. Goalunfinished.
+
+
+### Shutdown checkpoint147: incomplete goal preserved for explicit resumption
+
+Semantichead3e9364a(146)has518reviewed/158ordinarypending,44meanings/78findings,
+threepartialpackages/70reservedquestions,1586sources/459captures unchanged.
+146boundedindependentsource/domain/mechanicsfinalpass is recorded;fivefreshandtwo
+reusedraworiginalsmatch,13derivatives/22intervals/controls/closurelinks/145loghashes
+verify. Visualscope isRecord53-56/62-64,RH33-37/74,notwholeparentserialization.
+FreshClerk229/230/231identities/memberfieldsmatchbutrawXMLhashesdiffer;cause
+unestablished,allpriorparent/raw/accesslimits retained. Owner179tests/replay attributed.
+146statusnext-action erroneouslysaid145review/CIpending;147refreshes thatsentence,
+resealsactive146/auditreferences,preservesfullbeforearchive,andchangesno source,
+review rationale oroutput. ThisseparatemetadataMinor islocallycorrected,recheck
+pending;boundedsource/semanticreview remainscomplete. Noeditorialacceptance.
+
+146CI37775238855first-attemptninegreen,fivefeature/three synthetic/one mixed;
+synthetica8ffad6df25f19efe60d2bdf68c398602f528ef7,decodedlogs/checkouts/skips sealed,
+hosted308distinctlocal179,repair13/20,no retry.147is shutdown/resumemetadata only;
+observeitsownheadif timeallows,do notwaitpastterminalmarker deadline.
+
+Exactresumeartifact:docs/review_packets/immigration_shutdown_resume_20261008.json.
+Itpreservesall158pendingactions/officiallabels/sourcebindings,threefullpartial
+packageflags,70questions,canonicalraw/parsed/Gitblobrecoveryhashes,allresearchholds,
+helperAPPLIEDstates,validationenvironment andreservedgates. Nextboundedordinary
+lane is119/1/232-234(Report28-30),aftercompleteexactoperatives/materialregional
+commissionauthority;NorthernBordername isnotimmigrationmeaning. NW196citizens/
+residents/reprint hold andforestry25/223/280/283holds remain;no autoacceptance.
+
+Newlargeworkstopped12:12:21Z. Wrap nowinprogress;weeklyusage35percentused/65remaining
+observed12:23:23Z. Watcherdeadlines unchanged:wrapnolaterthan12:27:21Z,terminal
+CHECKPOINTmarkerby12:37:21Z,lastfilesystemaction;shutdown12:42:21Z. Goalunfinished,
+notSUCCESS. Aftermarker,no filesystemactions/tests/Git ortaskrestart. Resumeonly
+explicitly withfreshauthoritativewatcher controls;preserve ended-run evidence.
