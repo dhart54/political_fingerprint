@@ -73,10 +73,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 223,
+      "procedural_context": 226,
       "interpreted_substantive_directional": 43,
       "exact_action_ineligible": 217,
-      "source_unresolved": 191,
+      "source_unresolved": 188,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -89,10 +89,10 @@
     "substantive_eligible_actions": 43,
     "directional_substantive_actions": 43,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 223,
+    "procedural_context_actions": 226,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 217,
-    "unresolved_boundary_cases": 191,
+    "unresolved_boundary_cases": 188,
     "independent_episode_count": 39,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -286,6 +286,7 @@
         "house:119:2:117",
         "house:119:2:119",
         "house:119:2:122",
+        "house:119:2:123",
         "house:119:2:124",
         "house:119:2:130",
         "house:119:2:131",
@@ -307,6 +308,7 @@
         "house:119:2:187",
         "house:119:2:189",
         "house:119:2:194",
+        "house:119:2:195",
         "house:119:2:197",
         "house:119:2:200",
         "house:119:2:202",
@@ -322,6 +324,7 @@
         "house:119:2:230",
         "house:119:2:231",
         "house:119:2:236",
+        "house:119:2:237",
         "house:119:2:239",
         "house:119:2:246",
         "house:119:2:249",
@@ -705,7 +708,6 @@
         "house:119:2:89",
         "house:119:2:105",
         "house:119:2:110",
-        "house:119:2:123",
         "house:119:2:142",
         "house:119:2:143",
         "house:119:2:144",
@@ -730,7 +732,6 @@
         "house:119:2:191",
         "house:119:2:192",
         "house:119:2:193",
-        "house:119:2:195",
         "house:119:2:196",
         "house:119:2:198",
         "house:119:2:199",
@@ -752,7 +753,6 @@
         "house:119:2:228",
         "house:119:2:229",
         "house:119:2:232",
-        "house:119:2:237",
         "house:119:2:240",
         "house:119:2:241",
         "house:119:2:242",
@@ -1117,7 +1117,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "606c62958ae281ba2f5b3eb16aca6985c98293cff86b0a387c7116d9c2a27974",
+  "universe_subject_sha256": "f0a93da24d0b2fdb7ba05a64000f25eb5a1503bef86481ce0832de46bb9c7b71",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -30479,8 +30479,8 @@
       "date": "2026-04-17",
       "measure": "bill_119_hres_1175",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Exact failed amendment1 to H.Res.1175 was offered by Austin Scott. The captured April16legislative Record prints the complete replacement first section: consideration of H.R.8035, actual proposed deeming of Print119-25 as a pending-bill substitute, amended-bill considered-as-read/waivers, divided one-hour debate and one recommittal motion before separate final passage. Clerk April17clock roll123 and the Record's amendment-rejected result identify this choice; the later failed whole-rule124 is distinct. The amendment failed, so its substitute-deeming provision was not adopted; neither the RH base nor an EH of a different later rule is substituted as its exact body. This would alter a rule and pending text, not finally pass H.R.8035 or establish component Immigration/FISA support/opposition. Existing rule-amendment procedural contract keeps both recorded Nay observations noncounting. Captured exact Record extents are reviewed, not an asserted full-day Record or substantive Print119-25 policy reconstruction.",
       "source": {
         "source_id": "clerk:119:2:123",
         "url": "https://clerk.house.gov/evs/2026/roll123.xml",
@@ -30497,25 +30497,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Exact failed amendment1 to H.Res.1175 was offered by Austin Scott. The captured April16legislative Record prints the complete replacement first section: consideration of H.R.8035, actual proposed deeming of Print119-25 as a pending-bill substitute, amended-bill considered-as-read/waivers, divided one-hour debate and one recommittal motion before separate final passage. Clerk April17clock roll123 and the Record's amendment-rejected result identify this choice; the later failed whole-rule124 is distinct. The amendment failed, so its substitute-deeming provision was not adopted; neither the RH base nor an EH of a different later rule is substituted as its exact body. This would alter a rule and pending text, not finally pass H.R.8035 or establish component Immigration/FISA support/opposition. Existing rule-amendment procedural contract keeps both recorded Nay observations noncounting. Captured exact Record extents are reviewed, not an asserted full-day Record or substantive Print119-25 policy reconstruction.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:123",
           "url": "https://clerk.house.gov/evs/2026/roll123.xml",
           "raw_sha256": "25e006be70f81466e4692319e8aab5084c0044d9550d8852188e9cba1aa5ef21",
-          "governed_bytes_sha256": "909a17279ff27e193018c2fbd7dc134504a9eaf6d156bbfc80dfac2522d23919",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "909a17279ff27e193018c2fbd7dc134504a9eaf6d156bbfc80dfac2522d23919"
+        },
+        {
+          "source_id": "congressional-record:2026-04-16-hres1175",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/pdf/CREC-2026-04-16-house.pdf",
+          "raw_sha256": "9ff4f8654293ba98f7e65765798fc629b51951e295656ddfe79f69fbb7ed802a",
+          "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964"
+        },
+        {
+          "source_id": "govinfo:hres1175rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/html/BILLS-119hres1175rh.htm",
+          "raw_sha256": "733fa8df1db7c0fa95258644cc7f9abbf6dfd501eee83139ee42d7cce9f31c83",
+          "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1f3b8d1aefe77f02a928af7a22cd21b3046be2a451faed7205751496cc2aa574"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:123",
@@ -34473,8 +34485,8 @@
       "date": "2026-06-03",
       "measure": "H RES 1333",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete June3,2026 H.Res.1333 EH provides H.R.8646 Committee-of-the-Whole consideration, specified clause2/5(a)ruleXXI waivers, ordered report amendments, 20minute en-bloc debate and up to10pro-forma amendments EACH by chair/ranking minority or designees for debate, then report-back and separate final passage/recommittal. It actually adopts Print119-32 into pending H.R.7726, Print119-31 into pending H.R.7892 and the committee substitute into pending H.R.8872, preserving independent later final choices. The rule does not itself finally appropriate funds, enact TANF/child-care/student-aid requirements or establish an immigration-status eligibility preference. Actual pending adoption is retained; parent titles and underlying policy bodies are not imported into rule-vote meaning. Under established standards this exact adopted rule is noncounting procedural context.",
       "source": {
         "source_id": "clerk:119:2:195",
         "url": "https://clerk.house.gov/evs/2026/roll195.xml",
@@ -34492,25 +34504,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete June3,2026 H.Res.1333 EH provides H.R.8646 Committee-of-the-Whole consideration, specified clause2/5(a)ruleXXI waivers, ordered report amendments, 20minute en-bloc debate and up to10pro-forma amendments EACH by chair/ranking minority or designees for debate, then report-back and separate final passage/recommittal. It actually adopts Print119-32 into pending H.R.7726, Print119-31 into pending H.R.7892 and the committee substitute into pending H.R.8872, preserving independent later final choices. The rule does not itself finally appropriate funds, enact TANF/child-care/student-aid requirements or establish an immigration-status eligibility preference. Actual pending adoption is retained; parent titles and underlying policy bodies are not imported into rule-vote meaning. Under established standards this exact adopted rule is noncounting procedural context.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:195",
           "url": "https://clerk.house.gov/evs/2026/roll195.xml",
           "raw_sha256": "1c92f27d6172e66908b04530e9c599f24cdeaa484b4fa91efb21002fa62efc4d",
-          "governed_bytes_sha256": "1e15658fffb2b41b2e8cdfc9d4fdcace7612f3d66177b5340649096fec2617c9",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "1e15658fffb2b41b2e8cdfc9d4fdcace7612f3d66177b5340649096fec2617c9"
+        },
+        {
+          "source_id": "govinfo:hres1333eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1333eh/html/BILLS-119hres1333eh.htm",
+          "raw_sha256": "8b4a77c81a229cd897a2210b07a24150e62222f0001729fd02a9a05f4d2989d6",
+          "governed_bytes_sha256": "f01662cde9950fd237df4a535f0cda160925266b1d406695c9ee40ee1f220d50"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "bcf91718061328a7fa2a073474502691c7022246844ba815150e01d0e0ae7e36"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:195",
@@ -36843,8 +36861,8 @@
       "date": "2026-07-14",
       "measure": "bill_119_hres_1423",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete July14,2026 H.Res.1423 EH separately provides H.R.139 consideration, H.R.8595 structured Committee-of-the-Whole/reportPartA amendments and 20minute en-bloc debate with up to10pro-forma amendments EACH by chair/ranking minority or designees, followed by report-back and independent final passage/recommittal. Section7 actually adopts reportPartB amendment into pending H.R.9237; section8 adopts the committee substitute into pending H.R.1181, preserving later final choices. Section9 instructs H.R.8595 engrossment to add S.1383 AS PASSED BY THE HOUSE with designation/cross-reference/technical authority, not a new vote on S.1383 or realized appropriation enactment. This exact adopted rule remains noncounting procedural context, without component veterans/immigration/firearms/foreign-policy stance or inherited policy meaning. Actual pending substitutions and engrossment instructions are preserved, not denied or described as completed underlying passage.",
       "source": {
         "source_id": "clerk:119:2:237",
         "url": "https://clerk.house.gov/evs/2026/roll237.xml",
@@ -36861,25 +36879,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete July14,2026 H.Res.1423 EH separately provides H.R.139 consideration, H.R.8595 structured Committee-of-the-Whole/reportPartA amendments and 20minute en-bloc debate with up to10pro-forma amendments EACH by chair/ranking minority or designees, followed by report-back and independent final passage/recommittal. Section7 actually adopts reportPartB amendment into pending H.R.9237; section8 adopts the committee substitute into pending H.R.1181, preserving later final choices. Section9 instructs H.R.8595 engrossment to add S.1383 AS PASSED BY THE HOUSE with designation/cross-reference/technical authority, not a new vote on S.1383 or realized appropriation enactment. This exact adopted rule remains noncounting procedural context, without component veterans/immigration/firearms/foreign-policy stance or inherited policy meaning. Actual pending substitutions and engrossment instructions are preserved, not denied or described as completed underlying passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:237",
           "url": "https://clerk.house.gov/evs/2026/roll237.xml",
           "raw_sha256": "5692629bcc5f548414b4fb09cb492ade85d2cab2588afd2a47026e8dc3ec8f59",
-          "governed_bytes_sha256": "73088f8aaa17d6156fb1601ce4ea56e49f52db5eb923febbb489d8669d330db5",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "73088f8aaa17d6156fb1601ce4ea56e49f52db5eb923febbb489d8669d330db5"
+        },
+        {
+          "source_id": "govinfo:hres1423eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+          "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+          "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "023aa61ecceecc948bf66a0594d1edb5a0a52a4886ed6f5023fba833cfe8b7e5"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:237",
@@ -41302,7 +41326,6 @@
     "house:119:2:89",
     "house:119:2:105",
     "house:119:2:110",
-    "house:119:2:123",
     "house:119:2:142",
     "house:119:2:143",
     "house:119:2:144",
@@ -41327,7 +41350,6 @@
     "house:119:2:191",
     "house:119:2:192",
     "house:119:2:193",
-    "house:119:2:195",
     "house:119:2:196",
     "house:119:2:198",
     "house:119:2:199",
@@ -41349,7 +41371,6 @@
     "house:119:2:228",
     "house:119:2:229",
     "house:119:2:232",
-    "house:119:2:237",
     "house:119:2:240",
     "house:119:2:241",
     "house:119:2:242",
@@ -41406,6 +41427,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "b5e0379f30fc277718a9d0143876efefc98e2dc34a2d2986cb8b1a9757d55ed4",
-  "membership_review_sha256": "65a76ab791a8c6968253b17549ef7298af2b80e4fbc4f79eaf766216ed1b689c"
+  "proposal_sha256": "d8525a9be09ca06df872d031d704c1de0dff49fc43d935e1eb18bcc4d5817c1c",
+  "membership_review_sha256": "748249f2db696d4fb14cdcd3e68ca680b3e42b309fb9d941d6237283ee109ba4"
 }

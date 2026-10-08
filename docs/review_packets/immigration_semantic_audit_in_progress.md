@@ -8182,3 +8182,6 @@ Checkpoint130: qualifiednew32/33meanings with statutoryADD/full1227scope;43meani
 
 
 Checkpoint131: fourcompleteadoptedrule contexts291/318/338/141;485reviewed/191ordinary.176tests14.042s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/130fentanyl-and-disclosure correction exact.129isolatedretrypassed with8originalexecutions preserved;130own9greenlogs sealed. See ordinary_screening_checkpoint131.json/livingplan; candidate-only,no131CIclaimed.
+
+
+Checkpoint132: three procedures123/195/237;488reviewed/188ordinary. Common1182(C)official threshold restored explicitly in both32/33relative branches and qualifications, independent of recipient knowledge; historical130 frozen.177tests14.138s/reference/sevenchecks/rawreplay, four omission negatives and both stale-projection rejections pass. Counts/directions/76graph propositions unchanged;41othermeanings/74otherfindings/70questions/threepartialflags preserved.1399 independently cleared; newchapeau recheck pending.131own9green sealed;132 needs ownCI. See ordinary_screening_checkpoint132.json and trafficking_chapeau_correction_checkpoint132.json; candidate only.

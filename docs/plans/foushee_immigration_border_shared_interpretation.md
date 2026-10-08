@@ -8923,3 +8923,52 @@ materialreferences andremainingpackagechoices.747unaccepted;166/265frozen;indepe
 fentanyl/correctionreviews pending. Exactwatcherdeadline unchanged08:42:21.249EDT,
 wrap08:27:21/finalmarker08:37:21. Noacceptance/promotion/publication/merge/deploy/production/
 security/schema/configuration/destructive ornewmethodology/architecture action.
+
+
+### Local successor checkpoint 132: three procedures and the common trafficking chapeau
+
+House119/2/123 is Austin Scott's failed amendment1 to H.Res.1175. The complete
+captured floor body proposes the replacement first section and pending Print119-25
+adoption; it did not pass or adopt that substitution. RH base, amendment rejection,
+later failed124 and April16 legislative versus April17 clock dates remain distinct.
+Both recorded Nay observations are noncounting.195 H.Res.1333 EH preserves ordered/
+en-bloc/pro-forma appropriations procedure, separate final passage, actual pending
+119-32/119-31/committee substitutions and ten pro-forma amendments EACH.237 H.Res.1423
+EH preserves its similar procedure, actual pending reportPartB/committee amendments,
+and S.1383 AS-PASSED addition to H.R.8595 engrossment. No realized appropriation,
+beneficiary condition, inherited component stance or full-day Record review claimed.
+Two new exact Health EH registrations, plus existing RH/floor references; no captures
+or acquisitions. All three exact questions, outcomes and member labels verified.
+
+The incoming130 review independently clears1399's literal-three-branch P3 correction,
+but finds a new P3 in32/33. Existing1182(C)common consular-officer/AttorneyGeneral
+knowledge-or-reason-to-believe chapeau governs BOTH(i)/(ii). The recipient in(ii)
+separately must have known or reasonably should have known the benefit's illicit
+source. Both self-contained meanings and qualifications now explicitly retain the
+governmental threshold and independent recipient condition. Existing primary bytes,
+44bindings/15witnesses/five registrations and historical130 evidence remain unchanged.
+Two old NoDefect assessments are archived; current highest severity isMinor for each,
+one distinct issue. Source-bound before/after receipt preserves both meanings/digests.
+No new domain rule, disposition, member direction, episode or graph proposition.
+
+One requested source-bound regression adds four controlled omission negatives across
+two actions and detail/qualification surfaces, while retaining(i)'s original threshold
+in the bad(ii)detail.177 focused tests14.138s, reference validator and seven semantic
+checks pass. Seven raw replay files match; old projections for both members reject
+the corrected shared core, regenerated details/qualifications are inspected. All41
+other meanings/core objects and74other findings preserved; all76graph propositions
+and compiledIR unchanged. No independent correction recheck or editorial acceptance.
+
+676inventory/488reviewed/188ordinary unfinished;43interpreted/226procedural/217excluded/
+two expressive;1489sources/1088bindings/412captures/334extentobjects/548coordinates;
+39episodes/86observations/76findings. Prior485ledger reviews/1487sources, capturemanifest,
+70questions/three partial flags/frozen166/265 and historical130 receipts preserved.
+Audit assessments:109NoDefect/6Minor/11Major/1Critical; distinct issues1Critical/5Major/
+4Minor, no final full-corpus verdict.131ownCI37732693786 is terminal ninegreen with
+five feature-pinned/three synthetic/one mixed; decoded logs/checkouts/skips sealed,
+hosted305 distinct from owner176at131. No retry.132 needs its own pushed-head CI.
+
+Continue coherent ordinary batches and separate166ownJuneS331/forestry25charter/
+material package research.747 remains unaccepted; no automatic166 reversal. The
+watcher deadline remains08:42:21.249EDT, stop large units08:12:21, wrap08:27:21 and
+final marker by08:37:21. DraftPR198 only; all reserved gates remain unchanged.

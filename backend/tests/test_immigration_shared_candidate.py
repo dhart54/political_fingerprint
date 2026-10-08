@@ -2618,6 +2618,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 for sid, witness in evidence.items():
                     self.assertEqual(witness['governed_bytes_sha256'], sources[sid]['governed_bytes_sha256'])
 
+    def _assert_relative_trafficking_common_chapeau(self, action, source):
+        branch = source[source.index('(C) Controlled substance traffickers'):
+                        source.index('(D) Prostitution')]
+        chapeau = branch[:branch.index('(i)')]
+        self.assertIn('the consular officer or the Attorney General knows or has reason to believe', chapeau)
+        self.assertIn('(ii) is the spouse, son, or daughter', branch)
+        relative = re.search(r'Clause \(C\)\(ii\).*?(?=\nUnder |$)',
+                             action['meaning'], re.S)
+        self.assertIsNotNone(relative, 'The relative-benefit branch needs a self-contained explanation')
+        for role in ['consular officer', 'Attorney General']:
+            self.assertIn(role, relative.group())
+        self.assertRegex(relative.group(), r'know(?:s)? or ha(?:ve|s) reason to believe')
+        qualification = next(q for q in action['limitations'] if '(C)(ii)' in q)
+        for role in ['consular officer', 'Attorney General']:
+            self.assertIn(role, qualification)
+        self.assertRegex(qualification, r'know(?:s)? or ha(?:ve|s) reason to believe')
+        self.assertIn("recipient's own knowledge", qualification)
+
+    def test_relative_trafficking_branch_cannot_drop_the_common_official_threshold(self):
+        source = next(s['text'] for s in self.values[1]['sources']
+                      if s['source_id'] == 'govinfo:8usc1182a-2024-current-student-aid-reference')
+        for aid in ['house:119:1:32', 'house:119:1:33']:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+            with self.subTest(action=aid, surface='meaning and both-level qualification'):
+                self._assert_relative_trafficking_common_chapeau(action, source)
+            with self.subTest(action=aid, omission='relative-branch official threshold'):
+                bad = copy.deepcopy(action)
+                fragment = 'the consular officer or Attorney General must know or have reason to believe that '
+                self.assertEqual(bad['meaning'].count(fragment), 1)
+                bad['meaning'] = bad['meaning'].replace(fragment, '', 1)
+                # The earlier (i) threshold remains; it cannot repair the omission in (ii).
+                with self.assertRaises(AssertionError):
+                    self._assert_relative_trafficking_common_chapeau(bad, source)
+            with self.subTest(action=aid, omission='both-level qualification threshold'):
+                bad = copy.deepcopy(action)
+                index = next(i for i, q in enumerate(bad['limitations']) if '(C)(ii)' in q)
+                fragment = 'the consular officer or Attorney General to know or have reason to believe their conditions'
+                self.assertIn(fragment, bad['limitations'][index])
+                bad['limitations'][index] = bad['limitations'][index].replace(fragment, 'the listed conditions', 1)
+                with self.assertRaises(AssertionError):
+                    self._assert_relative_trafficking_common_chapeau(bad, source)
+
     def test_noncounting_audit_sample_binds_current_ledger_and_covers_risks(self):
         audit_path = DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json'
         audit = json.loads(audit_path.read_text(encoding='utf-8'))
