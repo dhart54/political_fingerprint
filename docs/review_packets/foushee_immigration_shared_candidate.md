@@ -9513,3 +9513,83 @@ counterpart coverage. Q68/Q69/Q70 and all70 application objects remain frozen.
 Same accountable .w/ib owner, no current deadline; original markers preserved.
 Draft PR198 remains authorized delivery boundary. No merge/deploy/production,
 editorial acceptance/promotion/publication or methodology/architecture change.
+
+
+### Successor checkpoint 124: original digital-asset rule disapproval screen
+
+House119/1/71 is March11,2025 H.J.Res.25 EH, On Passage. Complete exact proposal
+disapproves the specifically named TD10021 December30,2024 rule89FR106928 and
+proposes no force or effect. The original complete operative amendments, original
+summary/date/scope paragraphs and complete operative2024 section6045(a)-(h) were
+read. Trading-front-end functions, position to know/control/sufficient influence,
+specified other services, validation and qualified software/hardware/protocol
+exceptions and sale-specific examples establish business/service-based broker
+reporting. February28,2025 effectiveness and January1,2027 sales applicability are
+distinct. No new operative citizenship/status/presence, admission/removal or border
+predicate; customer reporting and distributed-ledger control are not immigration
+documentation/verification. Under existing exact-mechanism standards, retain a
+substantive rule-disapproval exclusion candidate. No procedural-vote substitution,
+title-only exclusion or blanket tax/digital-asset domain rule. Later repeal or
+July2024 TD10000 is not substituted for the named original rule. No actual tax
+savings, broker compliance or enacted outcome inferred. FousheeNay/MassieYea labels
+remain excluded without directional Immigration projections.
+
+Three canonical source additions: unchanged Health-governed EH and selected original
+rule operative/date/scope and6045 bodies. Two original captures, four coordinates;
+raw/text hashes, exact original extents and seals verify. The rule's250431-character
+full capture is preserved; only mapped material extents, not the whole preamble,
+all incorporated regulations/Code or individual legal/tax applications, were reviewed.
+176 focused tests pass in15.115seconds; reference validator and seven semantic checks
+pass. Seven files replay byte for byte. All41 meanings/six semantic and presentation
+outputs/compiled graph/74findings/member full-compact-choices, prior466 reviews/1454
+sources and test file preserved. Only generated proof changes. All70 question objects,
+three partial flags and historical finding counts exact. Candidate isolation and
+diff reviewed; tests provide mechanical evidence, not semantic acceptance.
+
+676 inventory/467 reviewed/41 interpreted/214 procedural/210 excluded/two expressive;
+209 ordinary unfinished/three partial packages/70 questions.1457 sources/1044
+interpreted bindings/402 original captures/329 extent objects/542 coordinates.
+38 episodes/82 observations/74 findings. Same-owner91 NoDefect/3Minor/11Major/1Critical.
+Core65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9;
+compiledf41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809.
+
+Fingerprint's exact122 review verifies EH/nine bindings/five coordinates/four capture
+hashes, bounded explicit noncitizen dual-resident overlap, alternative routes,
+tax-only consequence, separate wage test, reciprocity/deadlines and unchanged old
+meaning/output/review/question/compiler objects. Three new guards pass. Exact123
+review confirms complete House budget EH/632/633/641, fiscal/recommendation versus
+appropriation/HR1 boundaries, bothNay labels and unchanged41meanings/sixoutputs/tests/
+70questions. Senate action100 remains unresolved. Fresh Clerk bytes differ from
+historical while checked metadata/member rows agree. Separate bounded122/123 receipt
+records these lanes; no full independent suite/replay, private-archive observation,
+ontology expansion, editorial acceptance or full-corpus verdict.123 final CI/mechanics
+pending; owner run37718840090 still in progress at last read. Latest sealed122 nine
+green provenance retained, no123 success inferred.124 needs own pushed-head CI.
+
+Reserved decision for Fingerprint is sealed separately in
+fentanyl_domain_reservation_checkpoint124.json: whether chemical-class scheduling
+falls within the existing direct domain standard because INA criminal grounds
+incorporate802, despite no own INA or immigration-agency amendment. Recommendation
+provisionally favors exact-action exclusion with qualified downstream consequences;
+do not claim zero immigration effect or decide a new general criminal-law ontology.
+Alternative is a qualified candidate if existing standards count this incorporation,
+preserving independent conviction/admission/knowledge/timing/exceptions and exact
+choice. Safest interim path keeps32/33 pending during temporary-class/version and
+bounded domain/application reconciliation. Six primary witnesses include exact
+EH classification/penalty/time clauses, existing802(6),1182(a)(2),1227(a)(2)(B),
+and PartB2 joint HHS/AG overdose-certification amendment. Failed Trahan/designee
+amendment is not the committee DHS-firearms proposal or complete passage choice.
+Six private2024 acquisitions remain unregistered; capture is not full body review.
+No ordinary completion, unavailable-evidence claim, canonical meaning/binding or
+new counted legal/application question from this reservation; all70 remain exact.
+
+Safe parallel work: full117108-character forestry EH25 now read across all operative
+sections, including DHS representation, community language, institution/Tribal
+definitions, grant portal, wildfire technology, private/land-grant research, white
+oak charter/funding and casualty-family support. Material incorporated institutional/
+grant/funding/benefit references remain to trace before disposition; no keyword or
+title inference. Then other ordinary actions and remaining package/counterpart
+coverage. Do not recursively audit context-only references without material need.
+Same accountable .w/ib owner, no current deadline; old markers preserved. Draft
+PR198 is delivery boundary; no merge/deploy/production/editorial acceptance,
+promotion/publication or methodology/architecture change.

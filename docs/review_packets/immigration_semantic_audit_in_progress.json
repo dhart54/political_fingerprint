@@ -10735,10 +10735,78 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:71",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "71",
+        "legis-num": "H J RES 25",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "11-Mar-2025",
+        "action-time": "5:51 PM",
+        "vote-desc": "Providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Internal Revenue Service relating to “Gross Proceeds Reporting by Brokers That Regularly Provide Services Effectuating Digital Asset Sales”"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete March11,2025 H.J.Res.25 EH was read against exact Clerk house:119:1:71, On Passage. It proposes congressional disapproval and no force or effect for the specifically named December30,2024 rule89FR106928, TD10021. The original complete operative amendments to26CFR1.6045-0/1.6045-1, their original date/scope paragraphs and material2024 section6045 broker-return authority were reconstructed. The rule defines digital-asset middleman/effectuating services by trading-front-end activity, position to know and control/sufficient-influence tests; it preserves named other services, validation exclusions, conditional software/hardware exclusions and protocol-operator exceptions, with distinct examples and sale-specific treatment. Its new provisions apply to digital-asset sales on or after January1,2027; the original effective date is February28,2025. These dates are distinct. Existing6045(a)-(c) supplies business/broker/customer reporting and payee-statement duties; the new operative changes do not add a citizenship, immigration-status/presence, visa/admission/removal or border-administration predicate. Customer identity/information reporting and distributed-ledger control are not immigration-documentation or border verification mechanisms. Selected preamble expressly confines the regulations to federal tax law and does not incorporate other legal regimes; comments, foreign-market discussion and economic estimates are not operative immigration conditions. Under the established exact-mechanism boundary this substantive rule-disapproval action is an Immigration exact-action exclusion candidate, rather than a procedural rule vote or a personal-status tax-relief interpretation. No blanket exclusion of tax measures, all digital-asset reporting rules, actual customer/broker compliance, tax savings or enacted repeal outcome is inferred. Prior July2024 TD10000, later repeal and any later regulation are not substituted for this exact named rule. Complete original capture is preserved, but remaining preamble/all incorporated regulations/Code and individual applications are not claimed fully audited.",
+      "finding": "Exact substantive disapproval of TD10021 business/service-based broker reporting changes supplies no direct Immigration mechanism. Original rule and material authority reconstructed; no title-only or blanket tax exclusion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "2ccbb2b9a3a74be60ac7f57c29bb227f97235a2300e3234b30808f9056cc707b",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:71",
+          "url": "https://clerk.house.gov/evs/2025/roll071.xml",
+          "governed_bytes_sha256": "34fb6fc89f26544363281621151f33dfbc58cf3eb66b20aab20d076fdf2631b5",
+          "reviewed_extent": "Exact Clerk identity, complete EH, complete original operative amendments/date/scope, or selected complete6045 operative body. Original capture does not assert full remaining preamble/all incorporated regulatory review."
+        },
+        {
+          "source_id": "govinfo:hjres25eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres25eh/html/BILLS-119hjres25eh.htm",
+          "governed_bytes_sha256": "01cccede55906bb6c99ad74c19292892ef09e9015e9dc0c3c3298a7f068f593a",
+          "reviewed_extent": "Exact Clerk identity, complete EH, complete original operative amendments/date/scope, or selected complete6045 operative body. Original capture does not assert full remaining preamble/all incorporated regulatory review."
+        },
+        {
+          "source_id": "govinfo:fr202430496-operative-dates-scope124",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2024-12-30/html/2024-30496.htm",
+          "governed_bytes_sha256": "3ec51a5206d1406baf87faf7e3a96e835e93f4bc864dc2cce7e076998956803a",
+          "reviewed_extent": "Exact Clerk identity, complete EH, complete original operative amendments/date/scope, or selected complete6045 operative body. Original capture does not assert full remaining preamble/all incorporated regulatory review."
+        },
+        {
+          "source_id": "govinfo:26usc6045-2024-operative-brokers124",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap61-subchapA-partIII-subpartB-sec6045.htm",
+          "governed_bytes_sha256": "0eb371ea16bc507a9cdcf9d94090194ae54e1e416d1e4cf8bee73a35e87477c8",
+          "reviewed_extent": "Exact Clerk identity, complete EH, complete original operative amendments/date/scope, or selected complete6045 operative body. Original capture does not assert full remaining preamble/all incorporated regulatory review."
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 90,
+    "No Defect": 91,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10800,16 +10868,16 @@
     "procedural_controls_reviewed": 18,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 4
+    "successor_new_exclusions_reviewed": 5
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 17.653,
+    "focused_runtime_seconds": 15.115,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "122 run37717591771 terminal nine green;123 needs own push/run",
+    "exact_head_ci": "123 run37718840090 in progress at last owner read, source/procedural independent lane clean; latest fully sealed122 nine green retained.124 requires own push/run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -10846,7 +10914,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "One exact House budget procedural screen. All41 meanings/six semantic outputs/74 findings/prior465 reviews/1450sources/test file/70questions/three partial flags unchanged. Three new raw budget acquisitions and three operative coordinates. Seven-file raw replay. Independent121 bounded lanes cleared separately;123 and122 semantic review pending.",
+    "focused_scope_note": "One exact original-rule CRA exclusion; prior41 meanings/six outputs/74findings/466reviews/1454sources/test file/70questions/three partial flags preserved. Seven-file replay.122/123 independent bounded source/propagation reviews sealed;123 finalCI/mechanics pending. Fentanyl incorporation reservation supplies no completed screen or new canonical meaning/application question.",
     "last_completed_exact_head_ci": {
       "head": "191fe50e72034903442c4829d0308563b71c5311",
       "run": 37712146981,
@@ -14641,5 +14709,30 @@
     "head": "254acffcccea91a6027453bf52c5abd8a80fef7b",
     "bounded_lanes_pass": true,
     "full_corpus_acceptance": false
+  },
+  "ordinary_screening_checkpoint124": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint124.json",
+    "receipt_sha256": "776a52f6e475b9dc48553073bf144373aab1edf2170081fb7dcf8b12c41fa6d5",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 209,
+    "application_questions": 70
+  },
+  "independent_checkpoints122_123_bounded_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoints122_123_independent_review.json",
+    "receipt_sha256": "42d00ab4b30d9cbc3d03c35e289fe8694631dd3b95ff0ed2a829df3819fc8d85",
+    "source_propagation_pass": true,
+    "full_corpus_acceptance": false
+  },
+  "reserved_fentanyl_boundary124": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_domain_reservation_checkpoint124.json",
+    "receipt_sha256": "9e7d3b0cf95c52990f883719f50428f05163fdd38649e4cfdc75aaeafc82d2c2",
+    "action_ids": [
+      "house:119:1:32",
+      "house:119:1:33"
+    ],
+    "screenings_complete": false,
+    "new_application_questions": 0
   }
 }
