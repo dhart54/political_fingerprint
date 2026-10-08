@@ -8684,3 +8684,57 @@ No canonical source/binding/disposition/application-question or methodology chan
 Next direct action is the bounded original temporary-class comparison; other safe
 ordinary/forestry/package work remains executable. Historical reservation receipts
 remain preserved rather than rewritten as a granted final disposition.
+
+
+### Successor checkpoint127: three ordinary rule contexts and bounded fentanyl proposal
+
+House119/2/206 H.Res.518 EH and215 H.Res.1140 EH are noncounting rule contexts.
+Their Senate messages depend on separate passage, with one-week versus three-calendar-day
+deadlines. Failed124 H.Res.1175 retains RH base text: the floor Record prints and rejects
+the proposed substitute before the failed resolution vote. No failed substitute is deemed
+adopted and no procedural label supplies parent-bill direction. All three complete exact
+texts/bindings reviewed; four previously governed Health sources reused unchanged, zero
+new acquisitions.472reviewed/204ordinary unfinished;41interpreted/219procedural/210excluded/
+two expressive.1467sources/1044interpreted bindings/407captures/334extent objects/548coordinates.
+Three partial packages/70question objects,38episodes/82observations/74findings unchanged.
+176focused tests16.267s, reference validator/seven semantic checks pass; seven-file raw
+replay and all six semantic/presentation outputs unchanged. Prior469reviews/1463sources/
+41meanings/testfile preserved; final diff/candidate isolation reviewed. Tests are not truth.
+
+Fentanyl temporal comparison and two concrete proposed meanings are in
+fentanyl_temporal_comparison_checkpoint127.json. Fifteen source witnesses preserve original
+temporary control/correction, PL116-114 and latest pre-vote PL118-158 sec5105 March31,2025
+expiry, statutoryEH scope/forms/exemptions, exact failed32 global joint-certification condition
+and each express INA802 branch's independent conditions. No first-ever control, identical
+chemical set, automatic removal, certification result, retroactiveINA finding or component
+stance is asserted.32/33 remain pending and uncounted for Fingerprint's reserved domain
+routing. Proposed limited predicate-continuation route does not accept a general criminal-law
+ontology or747 precedent.166/S331 exclusion remains frozen pending ownJune2025baseline re-review.
+Five newly read/selected private originals remain unregistered; no new fentanyl canonical
+source, claim, capture, disposition or application question. Forestry25/23private originals
+and original incorporated charter remain separate unfinished work.
+
+Fingerprint126 bounded source/procedural and mechanics/CI lanes complete; no independent
+full replay/full-corpus/editorial acceptance. Provenance-label correction preserves historical
+CRLF736ac2ba... and prior receipt seal, adds exactGitLF
+7a8573702c285c6037b59367692f9956a8543e393757fca8fe4726ed7b010776, and verifies unchanged
+8998:9218 passage/hash.126 CI37723102305 ninegreen with owner-read rawlogs:5feature/3synthetic/
+1mixed, synthetic69b170ac9a86f0ce26536c1515015d668aee4e6b, hosted305 distinct from owner176.
+No retry;127 requires its own pushed-head CI. Core/compiled hashes remain checkpoint126 values.
+
+Throughput: measured108→126 span4h11m49;108→119 package span2h17m14 kept ordinarybacklog216,
+119→126 span1h54m35 closed9actions in7mostly-one-action batches. Focused successful tests
+106.853s plus failed126attempt16.726s do not explain elapsed cost. Private research, preparation/
+replay/receipts/delivery, tool failures/context recovery are not independently timed; CI overlapped
+work. No fabricated compute partition or independently verified four-minute baseline. Routine:
+batch3–5 coherent ordinary actions when safe, retaining per-action primary checks with one
+consolidated validation/delivery cycle; keep disputed boundaries/newmeanings separately reviewable.
+Stop reference expansion once the precise claim and material qualifications are supported.
+No healthyCI wait, new framework, weakened completeness or review gates. Batch timestamps
+are explicit preparation/delivery observations, not total research/model-compute measurements.
+
+Resume: continue next bounded ordinary batch while Fingerprint reviews32/33 proposal; re-review
+166 own version/baseline, preserve forestry25 charter/material sources and package150/151,
+180/182 next complete choices. Same .w/ib owner/currentdeadline none; original deadline and
+terminal evidence preserved. DraftPR198 boundary; no merge/deploy/production/editorial
+acceptance/promotion/publication/methodology or architecture change.

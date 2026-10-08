@@ -10969,10 +10969,184 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:206",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "206",
+        "legis-num": "H RES 518",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "4-Jun-2026",
+        "action-time": "6:15 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 2913) to authorize support for Ukraine, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete adopted June4,2026 H.Res.518 EH directs immediate consideration of H.R.2913, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Foreign Affairs debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than ONE WEEK AFTER PASSAGE. The message is conditional on separate passage, not an assertion that this rule vote itself passed H.R.2913. No deemed substantive amendment appears. This is noncounting procedural context under the established contract, not member direction on Ukraine support, a parent bill immigration component, visa/admission/removal policy or any realized effect. Foushee Yea and Massie Nay remain exact procedural observations.",
+      "finding": "Complete exact procedural question preserves actual proposed/adopted version, conditional message deadlines and rejected substitute; no inherited passage stance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "6f2598af5f53c420dc71bac30f3a4f366c1ecd66cdab77724b54b7f9d192a5d2",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:206",
+          "url": "https://clerk.house.gov/evs/2026/roll206.xml",
+          "governed_bytes_sha256": "613f76f9226ae82c9fa1c919093eee3f17cfa35622e189b5c06fa94a72d69777",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        },
+        {
+          "source_id": "govinfo:hres518eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres518eh/html/BILLS-119hres518eh.htm",
+          "governed_bytes_sha256": "13471765072080794f9bd94d264a5ddb43b117517a6077ba8c2077a25bdbfdc2",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:215",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "215",
+        "legis-num": "H RES 1140",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "9-Jun-2026",
+        "action-time": "5:30 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 5408) to accelerate workplace time-to-contract under the National Labor Relations Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete adopted June9,2026 H.Res.1140 EH directs immediate consideration of H.R.5408, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Education and Workforce debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than THREE CALENDAR DAYS AFTER PASSAGE. The message depends on separate passage and does not enact H.R.5408 through this rule vote. No deemed substantive amendment appears. Established noncounting procedural standards preserve Foushee Yea/Massie Nay without inferring a substantive collective-bargaining, immigration-status or parent-measure component stance.",
+      "finding": "Complete exact procedural question preserves actual proposed/adopted version, conditional message deadlines and rejected substitute; no inherited passage stance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "abefca81dc447dd2bdf11fe667d815359886961c55ace38a03c0ca9e6de3166a",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:215",
+          "url": "https://clerk.house.gov/evs/2026/roll215.xml",
+          "governed_bytes_sha256": "839edc3e073a716236126a0a45fac6c1454f9624eea27aabe18c8a71e0e6094a",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        },
+        {
+          "source_id": "govinfo:hres1140eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1140eh/html/BILLS-119hres1140eh.htm",
+          "governed_bytes_sha256": "685fc7781ca15059eb0ad2fcedf38ed19c348d1abab6d31507c7009b02ccd4e3",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:124",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "124",
+        "legis-num": "H RES 1175",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "17-Apr-2026",
+        "action-time": "2:07 AM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 8035) to amend the FISA Amendments Act of 2008 to extend the authorities of title VII of the Foreign Intelligence Surveillance Act of 1978 through October 20, 2027, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact April17,2026 roll124 is the failed resolution-adoption question on H.Res.1175. Complete RH and complete governed floor Record agree on the base H.R.8035 consideration rule: point-of-order waivers, considered-as-read treatment, ordered previous question, one-hour debate divided among the Judiciary and Intelligence chairs/ranking members, and one recommittal motion. The Record separately prints Austin Scott's proposed replacement adding deemed adoption of Rules Committee Print119-25, then states that the amendment was rejected before the resolution question and that the resolution was not agreed to at roll124. That failed substitute is not silently incorporated into the RH or treated as adopted; the separate roll123 is not relabeled here. H.Res.1175 adoption would only provide consideration procedure, not itself extend FISA authorities, enact a bill or supply Immigration direction. Both governed No observations remain noncounting procedural context. RH is the proposed base, not a fabricated adopted EH; failed rule and proposed substantive legislation remain distinct.",
+      "finding": "Complete exact procedural question preserves actual proposed/adopted version, conditional message deadlines and rejected substitute; no inherited passage stance.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "05e5389013c8a6a4a67a7f9d215a982b7edec038e57dfb2c1813f874da0cde54",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:124",
+          "url": "https://clerk.house.gov/evs/2026/roll124.xml",
+          "governed_bytes_sha256": "840ddcdcc1dd411e7b450f010feca24d888b741b1a1cee16897c3ce80965520b",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        },
+        {
+          "source_id": "govinfo:hres1175rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/html/BILLS-119hres1175rh.htm",
+          "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        },
+        {
+          "source_id": "congressional-record:2026-04-16-hres1175",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/pdf/CREC-2026-04-16-house.pdf",
+          "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964",
+          "reviewed_extent": "Complete governed exact procedural text and material floor binding"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 93,
+    "No Defect": 96,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -11031,19 +11205,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 20,
+    "procedural_controls_reviewed": 23,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 5
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 15.355,
+    "focused_runtime_seconds": 16.267,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "125 run37721837361 terminal nine green, bounded independent ordinary lanes through125 complete;126 needs own push/run",
+    "exact_head_ci": "126 terminal nine green with own raw logs/provenance;127 needs own pushed-head run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -11080,12 +11254,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "One exact adopted499/492 rule165 procedural screen; all41meanings/sixoutputs/74findings/prior468reviews/1461sources/test file/70questions/three partial flags preserved. Initial stale proof failure resolved by regeneration before rerun. Forestry23 private captures,32/33 pending,166/firearms265 frozen review targets. No acceptance.",
+    "focused_scope_note": "Three exact rule contexts batched; prior41 meanings/six outputs/74findings/469reviews/1463sources/tests/70questions/three partial flags preserved. Complete temporal comparison proposes32/33 without disposition; methodologyCRLF provenance scope qualified with exactGitLF hash. No acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint125_ci.json",
-      "receipt_sha256": "0e3dac39cae4eb694821d786694dcf080b7138cd9b84bb14683cf475e5bb9368",
-      "head": "48bb8cfc3874146a250a07c51d88a901691ecc7d",
-      "run": 37721837361,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint126_ci.json",
+      "receipt_sha256": "1eb935a5b6d466f42d455a2c4a584aefdb6000e25923ba6e1f4360c9e4847345",
+      "head": "1a17ebb770b97f47fd2d9d50012fb0f30a8da36d",
+      "run": 37723102305,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -14925,7 +15099,7 @@
   },
   "ordinary_screening_checkpoint126": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint126.json",
-    "receipt_sha256": "9d6088a2744b7b677fe67b1db0e19711fb5ec9ef1652c8b06b70f8c82494871d",
+    "receipt_sha256": "a16120babd9bd2a447059dd529f5640f4331e6a2f0734689111f74a5481b77b6",
     "same_owner_primary_screenings": 1,
     "new_interpretations": 0,
     "independent_review_pending": true,
@@ -14951,9 +15125,35 @@
   },
   "fentanyl_bounded_supervisory_direction_checkpoint126": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_supervisor_direction_checkpoint126.json",
-    "receipt_sha256": "a7f7aa9684f4c0f2cbeb2107acf7aba4ddceeb697db25086dd2b16b494d46259",
+    "receipt_sha256": "81010711f5d7cba30968edb4995ab521f0f14944d087f837444ed0fd91462cd0",
     "bounded_research_direction": true,
     "disposition_granted": false,
     "comparison747_candidate_not_accepted": true
+  },
+  "ordinary_screening_checkpoint127": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint127.json",
+    "receipt_sha256": "f2e501ae69348ed7339fd60bf10c6527c43f77fb1587afc569ee04e0b9e573f8",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 204,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint126": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint126_ci.json",
+    "receipt_sha256": "1eb935a5b6d466f42d455a2c4a584aefdb6000e25923ba6e1f4360c9e4847345",
+    "head": "1a17ebb770b97f47fd2d9d50012fb0f30a8da36d",
+    "run": 37723102305,
+    "successful_jobs": 9
+  },
+  "fentanyl_temporal_comparison_checkpoint127": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_temporal_comparison_checkpoint127.json",
+    "receipt_sha256": "c7cd32ca08ede46491cdbe57d599c66d061a92faf798bcfdda42ef88827c321f",
+    "new_dispositions": 0,
+    "supervisor_domain_routing_pending": true
+  },
+  "independent_checkpoint126_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint126_independent_review.json",
+    "receipt_sha256": "6aa515196348e74eb0730869722db833c51e279ed1c6f80ff391d673bdcda6e2"
   }
 }

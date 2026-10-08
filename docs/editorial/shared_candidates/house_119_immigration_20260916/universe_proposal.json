@@ -71,10 +71,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 216,
+      "procedural_context": 219,
       "interpreted_substantive_directional": 41,
       "exact_action_ineligible": 210,
-      "source_unresolved": 207,
+      "source_unresolved": 204,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -87,10 +87,10 @@
     "substantive_eligible_actions": 41,
     "directional_substantive_actions": 41,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 216,
+    "procedural_context_actions": 219,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 210,
-    "unresolved_boundary_cases": 207,
+    "unresolved_boundary_cases": 204,
     "independent_episode_count": 38,
     "multi_action_episode_count": 3,
     "mechanism_types": [
@@ -280,6 +280,7 @@
         "house:119:2:117",
         "house:119:2:119",
         "house:119:2:122",
+        "house:119:2:124",
         "house:119:2:130",
         "house:119:2:131",
         "house:119:2:133",
@@ -304,10 +305,12 @@
         "house:119:2:202",
         "house:119:2:203",
         "house:119:2:204",
+        "house:119:2:206",
         "house:119:2:210",
         "house:119:2:211",
         "house:119:2:212",
         "house:119:2:213",
+        "house:119:2:215",
         "house:119:2:219",
         "house:119:2:230",
         "house:119:2:231",
@@ -694,7 +697,6 @@
         "house:119:2:110",
         "house:119:2:121",
         "house:119:2:123",
-        "house:119:2:124",
         "house:119:2:132",
         "house:119:2:141",
         "house:119:2:142",
@@ -730,11 +732,9 @@
         "house:119:2:199",
         "house:119:2:201",
         "house:119:2:205",
-        "house:119:2:206",
         "house:119:2:207",
         "house:119:2:208",
         "house:119:2:209",
-        "house:119:2:215",
         "house:119:2:216",
         "house:119:2:217",
         "house:119:2:218",
@@ -1100,7 +1100,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "ce3a7bc237229ba49ebcf0ef3c83971514f0a48bf8af8980c845c80fcd1c88ab",
+  "universe_subject_sha256": "e05ce68bbce073d22bc0612cab6875d4faa2d268c0e6d1ab4884906253f5df83",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -30304,8 +30304,8 @@
       "date": "2026-04-17",
       "measure": "bill_119_hres_1175",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Exact April17,2026 roll124 is the failed resolution-adoption question on H.Res.1175. Complete RH and complete governed floor Record agree on the base H.R.8035 consideration rule: point-of-order waivers, considered-as-read treatment, ordered previous question, one-hour debate divided among the Judiciary and Intelligence chairs/ranking members, and one recommittal motion. The Record separately prints Austin Scott's proposed replacement adding deemed adoption of Rules Committee Print119-25, then states that the amendment was rejected before the resolution question and that the resolution was not agreed to at roll124. That failed substitute is not silently incorporated into the RH or treated as adopted; the separate roll123 is not relabeled here. H.Res.1175 adoption would only provide consideration procedure, not itself extend FISA authorities, enact a bill or supply Immigration direction. Both governed No observations remain noncounting procedural context. RH is the proposed base, not a fabricated adopted EH; failed rule and proposed substantive legislation remain distinct.",
       "source": {
         "source_id": "clerk:119:2:124",
         "url": "https://clerk.house.gov/evs/2026/roll124.xml",
@@ -30322,25 +30322,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Exact April17,2026 roll124 is the failed resolution-adoption question on H.Res.1175. Complete RH and complete governed floor Record agree on the base H.R.8035 consideration rule: point-of-order waivers, considered-as-read treatment, ordered previous question, one-hour debate divided among the Judiciary and Intelligence chairs/ranking members, and one recommittal motion. The Record separately prints Austin Scott's proposed replacement adding deemed adoption of Rules Committee Print119-25, then states that the amendment was rejected before the resolution question and that the resolution was not agreed to at roll124. That failed substitute is not silently incorporated into the RH or treated as adopted; the separate roll123 is not relabeled here. H.Res.1175 adoption would only provide consideration procedure, not itself extend FISA authorities, enact a bill or supply Immigration direction. Both governed No observations remain noncounting procedural context. RH is the proposed base, not a fabricated adopted EH; failed rule and proposed substantive legislation remain distinct.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:124",
           "url": "https://clerk.house.gov/evs/2026/roll124.xml",
           "raw_sha256": "c0f957fb016c8b8a84be3315dcb6fd3aaaf77771377474d69220c5a4de65695e",
-          "governed_bytes_sha256": "840ddcdcc1dd411e7b450f010feca24d888b741b1a1cee16897c3ce80965520b",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "840ddcdcc1dd411e7b450f010feca24d888b741b1a1cee16897c3ce80965520b"
+        },
+        {
+          "source_id": "govinfo:hres1175rh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1175rh/html/BILLS-119hres1175rh.htm",
+          "raw_sha256": "733fa8df1db7c0fa95258644cc7f9abbf6dfd501eee83139ee42d7cce9f31c83",
+          "governed_bytes_sha256": "5bcfbadb5d908409cc47ded3a989f7b6db51b60f467bb25976c6eb659d2ead6a"
+        },
+        {
+          "source_id": "congressional-record:2026-04-16-hres1175",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-16/pdf/CREC-2026-04-16-house.pdf",
+          "raw_sha256": "9ff4f8654293ba98f7e65765798fc629b51951e295656ddfe79f69fbb7ed802a",
+          "governed_bytes_sha256": "3f1544b3f9040bb296ef65c3fa7caee95e001efa4b4dd539df44141dd0dca964"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "05e5389013c8a6a4a67a7f9d215a982b7edec038e57dfb2c1813f874da0cde54"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:124",
@@ -34781,8 +34793,8 @@
       "date": "2026-06-04",
       "measure": "bill_119_hres_518",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete adopted June4,2026 H.Res.518 EH directs immediate consideration of H.R.2913, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Foreign Affairs debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than ONE WEEK AFTER PASSAGE. The message is conditional on separate passage, not an assertion that this rule vote itself passed H.R.2913. No deemed substantive amendment appears. This is noncounting procedural context under the established contract, not member direction on Ukraine support, a parent bill immigration component, visa/admission/removal policy or any realized effect. Foushee Yea and Massie Nay remain exact procedural observations.",
       "source": {
         "source_id": "clerk:119:2:206",
         "url": "https://clerk.house.gov/evs/2026/roll206.xml",
@@ -34799,25 +34811,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete adopted June4,2026 H.Res.518 EH directs immediate consideration of H.R.2913, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Foreign Affairs debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than ONE WEEK AFTER PASSAGE. The message is conditional on separate passage, not an assertion that this rule vote itself passed H.R.2913. No deemed substantive amendment appears. This is noncounting procedural context under the established contract, not member direction on Ukraine support, a parent bill immigration component, visa/admission/removal policy or any realized effect. Foushee Yea and Massie Nay remain exact procedural observations.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:206",
           "url": "https://clerk.house.gov/evs/2026/roll206.xml",
           "raw_sha256": "9fcef0b81252b11b4d48c6d39f99636883dad5b37d537ff0f23de08c5597b062",
-          "governed_bytes_sha256": "613f76f9226ae82c9fa1c919093eee3f17cfa35622e189b5c06fa94a72d69777",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "613f76f9226ae82c9fa1c919093eee3f17cfa35622e189b5c06fa94a72d69777"
+        },
+        {
+          "source_id": "govinfo:hres518eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres518eh/html/BILLS-119hres518eh.htm",
+          "raw_sha256": "d95cf892cde2b1dae14423b798023472aa2fda3c28d12078b3d9be624f74c9e0",
+          "governed_bytes_sha256": "13471765072080794f9bd94d264a5ddb43b117517a6077ba8c2077a25bdbfdc2"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6f2598af5f53c420dc71bac30f3a4f366c1ecd66cdab77724b54b7f9d192a5d2"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:206",
@@ -35351,8 +35369,8 @@
       "date": "2026-06-09",
       "measure": "bill_119_hres_1140",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Complete adopted June9,2026 H.Res.1140 EH directs immediate consideration of H.R.5408, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Education and Workforce debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than THREE CALENDAR DAYS AFTER PASSAGE. The message depends on separate passage and does not enact H.R.5408 through this rule vote. No deemed substantive amendment appears. Established noncounting procedural standards preserve Foushee Yea/Massie Nay without inferring a substantive collective-bargaining, immigration-status or parent-measure component stance.",
       "source": {
         "source_id": "clerk:119:2:215",
         "url": "https://clerk.house.gov/evs/2026/roll215.xml",
@@ -35369,25 +35387,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Complete adopted June9,2026 H.Res.1140 EH directs immediate consideration of H.R.5408, waives consideration/provision points of order, treats the bill as read, orders the previous question with one-hour divided Education and Workforce debate and one recommittal motion. Section2 makes rule XIX clause1(c) and rule XX clause8 inapplicable to that consideration; section3 directs a Clerk message to the Senate no later than THREE CALENDAR DAYS AFTER PASSAGE. The message depends on separate passage and does not enact H.R.5408 through this rule vote. No deemed substantive amendment appears. Established noncounting procedural standards preserve Foushee Yea/Massie Nay without inferring a substantive collective-bargaining, immigration-status or parent-measure component stance.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:215",
           "url": "https://clerk.house.gov/evs/2026/roll215.xml",
           "raw_sha256": "99b52a44217f7474fb99be72008019e8c566f9180d41c23973d0a1fb0813f22b",
-          "governed_bytes_sha256": "839edc3e073a716236126a0a45fac6c1454f9624eea27aabe18c8a71e0e6094a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "839edc3e073a716236126a0a45fac6c1454f9624eea27aabe18c8a71e0e6094a"
+        },
+        {
+          "source_id": "govinfo:hres1140eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1140eh/html/BILLS-119hres1140eh.htm",
+          "raw_sha256": "73ad4c60d6dc6656a3ed087d9b85e06ee3e02eb88cd790ae298dd1b09ee56eae",
+          "governed_bytes_sha256": "685fc7781ca15059eb0ad2fcedf38ed19c348d1abab6d31507c7009b02ccd4e3"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "abefca81dc447dd2bdf11fe667d815359886961c55ace38a03c0ca9e6de3166a"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:215",
@@ -41021,7 +41045,6 @@
     "house:119:2:110",
     "house:119:2:121",
     "house:119:2:123",
-    "house:119:2:124",
     "house:119:2:132",
     "house:119:2:141",
     "house:119:2:142",
@@ -41057,11 +41080,9 @@
     "house:119:2:199",
     "house:119:2:201",
     "house:119:2:205",
-    "house:119:2:206",
     "house:119:2:207",
     "house:119:2:208",
     "house:119:2:209",
-    "house:119:2:215",
     "house:119:2:216",
     "house:119:2:217",
     "house:119:2:218",
@@ -41133,6 +41154,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "848c2747d7d0bb15b9a61cf6f36f896a9ca75282ac02dc54f1da520af30571e5",
-  "membership_review_sha256": "988fe35faa7385f701279dd6414165c0b3acdf9320a618a06228750f7f92421d"
+  "proposal_sha256": "c5462fdc99637e95b7074f55b3e5a62d9c7e780d105fe68298020a9fa309e62b",
+  "membership_review_sha256": "bafc6075bcb10c86ed74563e4d5b93d4ae6eddb53c6e8dfd35b2f22844113704"
 }

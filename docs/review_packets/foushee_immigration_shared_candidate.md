@@ -9779,3 +9779,6 @@ No canonical source/binding/disposition/application-question or methodology chan
 Next direct action is the bounded original temporary-class comparison; other safe
 ordinary/forestry/package work remains executable. Historical reservation receipts
 remain preserved rather than rewritten as a granted final disposition.
+
+
+Checkpoint127: three batched exact rule contexts206/215/124;472reviewed/204ordinary unfinished.176tests16.267s/reference/sevensemantic/seven-file replay pass;41meanings/six outputs/74findings/70questions/three partial flags unchanged. Fentanyl fifteen-witness comparison/two proposed meanings remain outside canonical dispositions for reserved Fingerprint review.126CRLF label qualified with exactGitLF hash; own126CI ninegreen5feature/3synthetic/1mixed. See ordinary_screening_checkpoint127.json and fentanyl_temporal_comparison_checkpoint127.json for measured throughput, evidence and exact resume; no acceptance.
