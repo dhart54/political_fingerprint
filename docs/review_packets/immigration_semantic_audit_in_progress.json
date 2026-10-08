@@ -11367,10 +11367,178 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:162",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "162",
+        "legis-num": "H RES 1252",
+        "vote-question": "On Motion to Suspend the Rules and Agree",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "13-May-2026",
+        "action-time": "3:56 PM",
+        "vote-desc": "Resolution memorializing law enforcement officers killed in the line of duty"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete May13,2026 H.Res.1252 EH remembers and honors law-enforcement personnel, expresses support and condolences, recognizes needed equipment/training/resources, and recognizes sacrifice. The complete preamble includes363 commemorated names and Peace Officers Memorial Day/National Police Week history; these are attributed commemorative premises, not new findings about individuals. The operative five clauses do not appropriate funds, authorize a program, change officers' powers, impose immigration enforcement duties or change admission, asylum, removal, status or border administration. The general all-law-enforcement audience does not supply an exact immigration-policy expression merely because immigration officers may be included. No component immigration stance or actual funding/outcome follows. Under the existing exact-action boundary this is outside Immigration, rather than an Immigration expressive finding.",
+      "finding": "General commemoration/religious-freedom expression/foreign detention advocacy does not establish exact Immigration domain meaning. Complete operative clauses retained; no biographical/citizenship/parent-proposal transfer.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "ff250e7b562f2749b4f2cd15ce22c9c7c0e93e109c393473790dc40d9f679ae6",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:162",
+          "url": "https://clerk.house.gov/evs/2026/roll162.xml",
+          "governed_bytes_sha256": "ed85f45fb4b1cd707859109b66e53335abb82cde97efa73a0561498052ee06cf",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        },
+        {
+          "source_id": "govinfo:hres1252eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1252eh/html/BILLS-119hres1252eh.htm",
+          "governed_bytes_sha256": "b30742212d9e6612e6a9eb3e497f426c19a4d4a984dce253d14fa3ba3f444f4a",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:166",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "166",
+        "legis-num": "H RES 1251",
+        "vote-question": "On Motion to Suspend the Rules and Agree",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "13-May-2026",
+        "action-time": "6:40 PM",
+        "vote-desc": "Calling on elected officials and civil society leaders to counter antisemitism and educate the public on the contributions of the Jewish-American community"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete May13,2026 H.Res.1251 EH calls for countering antisemitism and public education on Jewish-American contributions, pledges safety/security/dignity, honors servicemembers, and commits to protecting religious freedom. Its five operative clauses include workplace, campuses, synagogues and home. The broad taking-all-possible-steps language supplies no specified immigration program, admission/asylum rule, citizenship/residence eligibility predicate or border/removal mechanism. A preamble reference to a Holocaust survivor who immigrated to the United States is biographical context, not an operative immigration choice. Historical, survey and incident assertions remain attributed resolution premises. Countering hatred and religious-freedom support are preserved without converting them into Immigration domain expression or an immigration stance; exact action is outside the domain.",
+      "finding": "General commemoration/religious-freedom expression/foreign detention advocacy does not establish exact Immigration domain meaning. Complete operative clauses retained; no biographical/citizenship/parent-proposal transfer.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "097788ce4f6e9761374140e1521d043fe1f22a76322845e0af85643c4f061b8b",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:166",
+          "url": "https://clerk.house.gov/evs/2026/roll166.xml",
+          "governed_bytes_sha256": "a4a9db7d177b732d4cdef1c49903656e1a21ede6703090ee5bc62f5dbcfe63c0",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        },
+        {
+          "source_id": "govinfo:hres1251eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1251eh/html/BILLS-119hres1251eh.htm",
+          "governed_bytes_sha256": "9f90763c10ca3d1aa7e26c80885727480aa24e7cb0d9fb05089dce7a01468833",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:167",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "167",
+        "legis-num": "H RES 1259",
+        "vote-question": "On Motion to Suspend the Rules and Agree",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "13-May-2026",
+        "action-time": "6:46 PM",
+        "vote-desc": "Expressing the sense of the House of Representatives that the President should prioritize securing the release of Pastor Jin Mingri, Pastor Gao Quanfu and his wife Pang Yu, Dr. Gulshan Abbas, and Jimmy Lai detained by the People’s Republic of China during future engagements with Chinese President Xi Jinping"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete May13,2026 H.Res.1259 EH calls for prioritizing humanitarian release of the named and other unjustly detained individuals during presidential engagements with China, including the anticipated May2026 summit; urges verifiable proof of life and access to independent counsel, family communication and medical care; and reaffirms political/religious freedom advocacy. The complete preamble references Chinese, American and British citizenship, family ties, and prior proposed diplomatic/accountability legislation, but the operative three clauses do not adopt that legislation, impose a visa restriction, require US admission, resettlement or asylum, confer a status/benefit, or change border/removal policy. Advocacy for release from foreign detention does not itself provide an Immigration mechanism or immigration-specific expression. Allegations, detention descriptions and anticipated engagements remain attributed context; no verified release or individual legal outcome is claimed. Exact action is outside Immigration.",
+      "finding": "General commemoration/religious-freedom expression/foreign detention advocacy does not establish exact Immigration domain meaning. Complete operative clauses retained; no biographical/citizenship/parent-proposal transfer.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "893d7d9ce8064871c6fafedb9b6fb6f22674ba44571c3c9d9d315891d84dd6cf",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:167",
+          "url": "https://clerk.house.gov/evs/2026/roll167.xml",
+          "governed_bytes_sha256": "04983b6447ae6b42cff1f45d1923f1cbf795a05e99bbd4287c5e29af92ec846e",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        },
+        {
+          "source_id": "govinfo:hres1259eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1259eh/html/BILLS-119hres1259eh.htm",
+          "governed_bytes_sha256": "881f1a129a86dabb5009c2d61bc8a8213d5f839202ebb1c7499b0284023e4584",
+          "reviewed_extent": "Complete exact EH and official Clerk suspension/adoption/member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 100,
+    "No Defect": 103,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -11432,16 +11600,16 @@
     "procedural_controls_reviewed": 23,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 9
+    "successor_new_exclusions_reviewed": 12
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 13.991,
+    "focused_runtime_seconds": 13.438,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "127 terminal nine green;128 needs own pushed-head CI",
+    "exact_head_ci": "127 terminal nine green sealed;128 run37728881395 in progress with seven success/two running at observation;129 needs own pushed-head CI",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -11478,7 +11646,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Recovered128 four exact EH exclusions, successor primary/source and preservation verification. All41meanings/six outputs/74findings/prior472reviews/1467sources/tests/70questions/three partial flags preserved.32/33 pending,166/265 frozen; candidate-only. Initial NODE_PATH and sandbox fixture failures preserved and resolved without product edits.",
+    "focused_scope_note": "Three complete exactEH May13 expressions excluded; prior476reviews/1471sources/41meanings/six outputs/74findings/tests/70questions/three partial flags unchanged.128CIhealthy async. Qualified32/33authoring route now permitted after statutory-addition and1227(a) scope corrections; no authoring or acceptance yet.",
     "last_completed_exact_head_ci": {
       "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint127_ci.json",
       "receipt_sha256": "332d93a8bbc80de18fcab6637b95b2ad64e42203d7d917cbd5f5e34127be3477",
@@ -15395,5 +15563,18 @@
     "head": "4891b9451660fd19a374f73fe5d531c98a48cd0c",
     "run": 37725564346,
     "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint129": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint129.json",
+    "receipt_sha256": "2a635fefeac666c5923b43552411d1153836a50865381dbdfbfc67c35dfdfec2",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 197,
+    "application_questions": 70
+  },
+  "independent_checkpoint127_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint127_independent_review.json",
+    "receipt_sha256": "982c1b17ceda802bc1e8280c854cc6d6b60f5974d6319bbc3b4cd352f6f87cc3"
   }
 }

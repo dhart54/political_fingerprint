@@ -9785,3 +9785,6 @@ Checkpoint127: three batched exact rule contexts206/215/124;472reviewed/204ordin
 
 
 Checkpoint128 local successor: recovered four exact EH exclusions305/121/132/233;476reviewed/200ordinary unfinished.176tests13.991s/reference/sevensemantic/seven-file preserved replay pass.41meanings/six outputs/74findings/70questions/three partial flags exact; Not Voting preserved.127 CI ninegreen5feature/3synthetic/1mixed with decoded log/hash provenance. Initial environment-only failures resolved and retained. See ordinary_screening_checkpoint128.json and living plan for evidence/resume; candidate only.
+
+
+Checkpoint129: three complete May13 EH expressions162/166/167 excluded;479reviewed/197ordinary unfinished.176tests13.438s/reference/sevensemantic/seven-file raw replay pass;41meanings/six outputs/74findings/70questions/three partial flags exact. Bounded independent127report recorded; qualified32/33authoring route requires two source corrections, no canonical disposition yet. See ordinary_screening_checkpoint129.json and living plan; candidate only.

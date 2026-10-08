@@ -8777,3 +8777,45 @@ Continue coherent3–5 ordinary batches with per-action complete exact-primary r
 and one consolidated validation/delivery, keeping novel/disputed meaning separate.
 No current deadline. DraftPR198 only; no merge/deploy/production/editorial acceptance/
 promotion/publication/security/schema/destructive/methodology/architecture changes.
+
+
+### Local successor checkpoint129: three May13 expression exclusions
+
+House119/2/162 H.Res.1252 EH commemorates law-enforcement officers, expresses support,
+recognizes equipment/training/resource needs and condolences; it does not fund or
+change immigration enforcement.166 H.Res.1251 EH calls for countering antisemitism,
+education, safety and religious freedom; the biographical immigration reference is
+not an operative Immigration choice.167 H.Res.1259 EH advocates humanitarian release,
+proof of life/counsel/family/medical access and freedom during engagements with China;
+it does not adopt earlier accountability proposals or change visas/admission/asylum.
+All three complete preambles/operative bodies read; attributed assertions remain
+premises. General audiences/family/citizenship references do not import a domain
+mechanism. Both members Yea on each exact suspension/adoption choice. Three exact
+Health sources reused unchanged; three registrations, zero new acquisitions.
+Report-incorporating H.Res.1498 remains pending for its material report, not screened.
+
+676inventory/479reviewed/197ordinary unfinished;41interpreted/219procedural/217excluded/
+two expressive.1474sources/1044interpreted bindings/407captures/334extent objects/
+548coordinates;38episodes/82observations/74findings.176tests13.438s/reference/seven
+semantic checks and seven-file raw replay pass. Prior476reviews/1471sources/41meanings/
+six outputs/tests/70questions/three partial flags exact. Candidate isolation and
+official identities checked. No new validation failure.127 ownCI ninegreen sealed;
+128CI37728881395 healthy async with seven success/two running at last read.129 needs
+own pushed-headCI. No healthyCI waiting or retry.
+
+Incoming bounded127 independent source/procedural/mechanics report passes; it is not
+independent full-suite/replay or editorial acceptance. All15fentanyl witnesses verify.
+Supervisor permits ordinary qualified32/33candidate authoring under existing standard,
+requiring33to ADD statutoryScheduleI coverage without the temporaryMarch31expiry,
+subject to its own definition/exceptions, with no repeal/replacement of temporaryh(30)
+claim; self-contained1227(a) in/admitted/removal-order scope and each branch's conditions
+must be included. Expanded shared qualifiers must be member-neutral. Clerk/proposal
+actually records32FousheeYea/MassieNay and33bothNay; earlier handoff shorthand saying
+bothNayon32is historical error, not authority. No32/33canonical disposition yet.
+747unaccepted;166/S331June comparison and265remain frozen. All70questions and forestry/
+material-package dependencies preserved. Next finish qualified32/33as separate new
+meaning unit with source and downstream review, then coherent3–5ordinary batches.
+
+Controlling watcher deadline:2026-10-08T08:42:21.2494439-04:00; stop large units08:12:21,
+wrap08:27:21, final marker by08:37:21. Marker absent during active work. Weekly remaining
+75% at04:44:52Z observation; no estimate. DraftPR198 only; all reserved gates retained.
