@@ -18,6 +18,73 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_medical_grants_keep_source_purpose_and_complete_authorities(self):
+        action = getattr(self, 'hr1968_medical_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The medical-grant and child-service objects are separately bound', 1)[1]
+        for qualification in [
+            'amounts transferred to the Fund under paragraph (1)',
+            'must use',
+            'award grants that may be used for health care or medical items or services',
+            'mandatory grant-award direction and permissive medical purpose',
+            'medical-spending bar except as provided in (h)(2)',
+            'sections 202, 203 and 204',
+            '2000 section 107(b)(2) and (f)',
+            'current 34 USC 20702/20703/20705',
+            'current 34 USC 20304(b)',
+            'not replaced with a universal common cohort or a new medical eligibility finding',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertIn('govinfo:18usc3014h2-h3-2024-medical-grants-child-minimum', {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_child_minimum_keeps_availability_literal_paragraph_and_cohort_boundaries(self):
+        action = getattr(self, 'hr1968_medical_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The medical-grant and child-service objects are separately bound', 1)[1]
+        for qualification in [
+            'literally addresses amounts in the Fund used under paragraph (1)',
+            'not less than $2 million',
+            'if such amounts are available in the Fund during the relevant fiscal year',
+            'under 214(b)',
+            'not silently changed to paragraph (2)',
+            "complete severe definition's sex and labor branches",
+            'under-18-at-the-time-of-offense condition',
+            'additional human-trafficking/child-pornography wording',
+            'this increment does not resolve every interaction into one universal victim cohort',
+            'automatically import the 20702 18-20 continuation cohort',
+            'new separately scoped application question 70 about the medical branch',
+            'Prior Q68 remains specifically the fund (e)(1)(B) programming reference and is unchanged',
+        ]:
+            self.assertIn(qualification, text)
+
+    def test_hr1968_medical_duplicate_reference_question_keeps_four_witnesses_and_separate_scope(self):
+        questions = getattr(self, 'medical_duplicate_questions', None)
+        if questions is None:
+            audit = json.loads((DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json').read_text(encoding='utf-8'))
+            questions = [q for q in audit['open_legal_interactions'] if q['scope'].startswith('Question 70:')]
+        self.assertEqual(1, len(questions))
+        question = questions[0]
+        self.assertIn('3014(h)(2)(B)', question['scope'])
+        self.assertIn('distinct from frozen Q68 fund (e)(1)(B) scope', question['scope'])
+        self.assertIn('before choosing a categorical medical-allocation target', question['recommendation'])
+        expected = {'govinfo:18usc3014h2-h3-2024-medical-grants-child-minimum',
+                    'govinfo:22usc7105f-2024-citizen-lpr-program-duplicate-notes',
+                    'govinfo:pl106-386-sec107f-historical-adjustment-directive',
+                    'govinfo:pl110-457-sec213a1-assistance-program-insertion'}
+        self.assertEqual(expected, set(question['source_ids']))
+        witnesses = question['primary_witnesses']
+        self.assertEqual(4, len(witnesses))
+        self.assertEqual(expected, {w['source_id'] for w in witnesses})
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        for witness in witnesses:
+            self.assertEqual(0, witness['start'])
+            self.assertEqual(len(bank[witness['source_id']]['text']), witness['total'])
+            self.assertEqual(witness['total'], witness['end'])
+            self.assertEqual(bank[witness['source_id']]['text'], witness['passage'])
+            self.assertEqual(digest(witness['passage']), witness['passage_sha256'])
+
     def test_hr1968_health_transfer_keeps_annual_bounds_and_separate_source(self):
         action = getattr(self, 'hr1968_health_financing_action', None)
         if action is None:
