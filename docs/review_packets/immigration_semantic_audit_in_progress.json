@@ -10298,10 +10298,122 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:31",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "31",
+        "legis-num": "H RES 93",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "5-Feb-2025",
+        "action-time": "4:57 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 27) to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete February 5, 2025 H.Res.93 EH was read against the exact Clerk rule-adoption identity. It supplies H.R.27 consideration, point-of-order waivers, a deemed adoption of the Rules report Part A amendment into the pending bill, one hour of debate, the separately offerable Part B amendment and one motion to recommit. The previous-question order reaches a separate final-passage step; this rule does not itself finally pass H.R.27. Under the established procedural/noncounting contract this exact rule-adoption action is procedural context. No support or opposition to fentanyl scheduling, research rules, an immigration consequence or either amendment is inferred from the recorded rule vote. The Part A and Part B policy text is not interpreted here; the exact amendment vote on roll32 and final passage on roll33 remain separate ordinary screenings.",
+      "finding": "Exact rule adopts pending text while retaining separate passage; existing procedural contract supports noncounting context without underlying policy inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "65286231d1a26d6641bfc8053fae367119f7f0fbbf739ccc25a253dc30b153b4",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:31",
+          "url": "https://clerk.house.gov/evs/2025/roll031.xml",
+          "governed_bytes_sha256": "6606478c82314abd8cf7ae9bc59ce3ecd4bf630ff4320d296b882f7ccd528f20",
+          "reviewed_extent": "Exact Clerk identity or complete exact EH rule; incorporated policy meanings not claimed"
+        },
+        {
+          "source_id": "govinfo:hres93eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres93eh/html/BILLS-119hres93eh.htm",
+          "governed_bytes_sha256": "98c4bc71432d78cd0fc375e116dad1addb7a4d92e884b03e58ec64d409c04dfe",
+          "reviewed_extent": "Exact Clerk identity or complete exact EH rule; incorporated policy meanings not claimed"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:76",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "76",
+        "legis-num": "H RES 242",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "25-Mar-2025",
+        "action-time": "2:26 PM",
+        "vote-desc": "Providing for consideration of the joint resolutions H. J. Res 24 and H. J. Res. 75; and providing for consideration of the bill H.R. 1048, and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete March 25, 2025 H.Res.242 EH was read against the exact Clerk rule-adoption identity. Sections1-2 separately provide consideration, waivers, one-hour debate and recommittal for H.J.Res.24 and H.J.Res.75. Section3 provides Committee-of-the-Whole consideration of H.R.1048, deems Rules Committee Print119-1 adopted as a substitute into the pending bill, supplies structured further-amendment procedures and reporting back to the House, and preserves separate final passage and one motion to recommit. The rule does not itself finally pass or concur in those measures. Under the established procedural/noncounting contract this exact rule-adoption action is procedural context. No component policy position, foreign-person visa consequence, immigration-status eligibility change or enacted outcome is inferred. No new interpretation of the print or later substantive votes is supplied; the existing exact H.R.1048 amendment screenings remain intact.",
+      "finding": "Exact rule adopts pending text while retaining separate passage; existing procedural contract supports noncounting context without underlying policy inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "075052faa8b4013e3dc370806e6e1285da64552138af5d6cff6da9b2e0600f0e",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:76",
+          "url": "https://clerk.house.gov/evs/2025/roll076.xml",
+          "governed_bytes_sha256": "5c2ea4eac161a33a2443c4e3d49f5d1ca7eab8ddf5bbe21070cbb6cd0073015f",
+          "reviewed_extent": "Exact Clerk identity or complete exact EH rule; incorporated policy meanings not claimed"
+        },
+        {
+          "source_id": "govinfo:hres242eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89",
+          "reviewed_extent": "Exact Clerk identity or complete exact EH rule; incorporated policy meanings not claimed"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 84,
+    "No Defect": 86,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10360,19 +10472,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 15,
+    "procedural_controls_reviewed": 17,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 2
   },
   "checkpoint_validation": {
     "focused_tests": 172,
-    "focused_runtime_seconds": 13.035,
+    "focused_runtime_seconds": 13.006,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "118 run 37712146981 terminal nine green with owner-read logs/actual checkout contexts sealed here. 119 requires its own pushed-head run.",
+    "exact_head_ci": "119 run37713776939 terminal nine green, five feature-pinned/three synthetic/one mixed;120 pending own feature push/run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -10409,7 +10521,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Final172 focused tests/reference/seven semantic checks/seven raw-byte replay files/34 transfer qualifier-binding negatives/two actual historical-source-label negatives pass. Source-backed CHC appropriations versus assessment-matched medical-transfer size correction; medical-transfer annual bounds explicit. One faulty prior118 assertion replaced, other142 prior methods unchanged. Prior171 pass and first172 one-availability-wording failure archived distinctly; old availability guard preserved, exact wording restored. Independent117/118 mechanical pass remains separate from P3 source defect and pending exact119 correction recheck. All source/queue/choice/eligibility/graph/70 question counts unchanged. Own118 CI sealed;119 own-head CI pending. Next bounded ordinary screenings plus material-health dependency triage; closure assessment in plan.",
+    "focused_scope_note": "Two exact rules screened; one governed source reused unchanged, no acquisition or interpreted binding. All40 meanings/six outputs/prior460reviews/70questions/three partial packages/test file preserved. Seven-file raw replay. P3source-label correction119 still awaits exact-head independent recheck.",
     "last_completed_exact_head_ci": {
       "head": "191fe50e72034903442c4829d0308563b71c5311",
       "run": 37712146981,
@@ -14121,5 +14233,20 @@
     "independent_correction_recheck_pending": true,
     "semantic_acceptance": false,
     "publication_authorized": false
+  },
+  "ordinary_screening_checkpoint120": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint120.json",
+    "receipt_sha256": "72db6e32aff6646b95e7515899ccd5939b1d4e6c0fbe3d616748a445ad82a5a0",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 214,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint119": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint119_ci.json",
+    "receipt_sha256": "b4ca4451b490c75710e9a81afd0853d4b61f783035873d8347fdd6a43175f4eb",
+    "head": "7d7a360d327e528d9c984ddd65676fd04c018218",
+    "run": 37713776939
   }
 }

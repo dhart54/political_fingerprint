@@ -8097,3 +8097,61 @@ two coherent increments primarily to ordinary screenings unless triage exposes a
 condition that would make a current claim unsafe. Then reassess using actions closed and
 material dependencies resolved, rather than number of citations acquired. This is routine
 prioritization under the existing methodology, not an approval gate or component closure.
+
+
+### Successor checkpoint 120: first ordinary rule screenings and bounded dependency triage
+
+House119/1/31 (February5 H.Res.93) and House119/1/76 (March25 H.Res.242)
+now have source-grounded, non-counting procedural candidate dispositions. Full
+exact EH rules preserve deemed amendments into pending bills, separate further
+amendment/debate/recommit and final-passage steps. Neither rule finally passes
+the underlying bills. No component policy, visa consequence or member position
+is imported. H.Res.93 PartA/PartB policy bodies and the separate roll32 amendment/
+roll33 final-passage choices remain pending; H.Res.242's print is not newly
+interpreted and existing H.R.1048 exact amendment reviews remain intact.
+
+One unchanged Health-governed H.Res.93 source is added; H.Res.242 EH already bound.
+Two complete operative rule witnesses and full-text review extents; zero captures,
+interpreted bindings, meanings or new questions. First-ten triage remains explicit:
+rolls15/25/32/33/50/71/73/74 are still pending. DOE/USDA1326 and IMPACT1534 both
+incorporate CHIPS research-security requirements; no title/keyword exclusion.
+Trace their material conditions. Failed Trahan amendment32 needs exact119-2
+PartB and insertion baseline, separately from final EH27. Tax-residence33 proposal
+and February25 House budget14 retain personal-status and version distinctions.
+
+Bounded four-Act508-510 scan identifies activity-specific embryo research,
+drug-legalization promotion with exceptions, and final unique-identifier standard
+limits with employer/provider and legislative-approval qualifications. It supplies
+no blanket patient-care prohibition, new claim/binding or component completion.
+Context-only reporting/reception/advisory/contractor extents remain bounded under
+the119 claim-dependent closure assessment; preserve all earlier evidence.
+
+172 focused candidate/IR tests pass in13.006seconds; reference validator and seven
+semantic checks pass. Seven generated JSON files reproduce byte for byte; only
+the reproducibility proof changes. Six semantic/presentation outputs, both members'
+full/compact/choice records, compiled graph, all40 shared meanings, prior460reviews,
+1437sources,70questions,three partial flags and test file remain unchanged. Source/
+claim/extent/accounting/seals verified and diff reviewed. Tests are mechanical
+evidence, not semantic acceptance. Core fd61bd31f8e93363a49df499939c97f515345771511298fc757f4657c1636c61;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+676inventory/462reviewed/40interpreted/213procedural/207excluded/two expressive;
+214 ordinary unfinished/three partial packages/70questions. 1438sources/1035interpreted
+bindings/389captures/316extentobjects/521coordinates. 37episodes/80observations/
+72findings preserved. Same-owner unique-action audit now86NoDefect/3Minor/11Major/
+1Critical; historical severity unchanged. No independent acceptance/final verdict.
+
+Owner-read exact119 run37713776939 passes nine jobs. Raw log hashes and counts
+sealed in docs/review_packets/immigration_delivery_checkpoint119_ci.json. Five
+feature-pinned, three synthetic-merge and one mixed repair checkout, synthetic
+6e31f9e96e1b5b14d51887f645ffd8dde63d2e99. Hosted301 differs from owner172.
+No retry or all-nine-feature-only claim.120 needs its own pushed-head CI. Inherited
+117/118 medical-source wording corrected119 remains pending exact-head independent
+recheck; passing119 CI does not clear that semantic review boundary.
+
+Next continue remaining eight first-ten actions, beginning exact Trahan amendment
+and shared CHIPS requirements. Follow only material claim dependencies; preserve
+tax-residence and House/Senate budget distinctions. Then remaining package claims,
+State/migration/refugee/DHS/supplementary/counterparts and ordinary queue. Same
+accountable .w/ib owner, no current deadline; original shutdown/pause evidence
+preserved. No production/merge/deploy/editorial acceptance/promotion/publication.
+Authorized delivery boundary remains draft PR198.

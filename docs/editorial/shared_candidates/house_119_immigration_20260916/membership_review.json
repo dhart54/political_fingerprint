@@ -19343,7 +19343,91 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:31",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "The complete February 5, 2025 H.Res.93 EH was read against the exact Clerk rule-adoption identity. It supplies H.R.27 consideration, point-of-order waivers, a deemed adoption of the Rules report Part A amendment into the pending bill, one hour of debate, the separately offerable Part B amendment and one motion to recommit. The previous-question order reaches a separate final-passage step; this rule does not itself finally pass H.R.27. Under the established procedural/noncounting contract this exact rule-adoption action is procedural context. No support or opposition to fentanyl scheduling, research rules, an immigration consequence or either amendment is inferred from the recorded rule vote. The Part A and Part B policy text is not interpreted here; the exact amendment vote on roll32 and final passage on roll33 remain separate ordinary screenings.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:31",
+          "url": "https://clerk.house.gov/evs/2025/roll031.xml",
+          "raw_sha256": "693fbd010eecd4c415792f4d99991a68c5eed9f0d2e64e933d18c754f7f69e1d",
+          "governed_bytes_sha256": "6606478c82314abd8cf7ae9bc59ce3ecd4bf630ff4320d296b882f7ccd528f20"
+        },
+        {
+          "source_id": "govinfo:hres93eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres93eh/html/BILLS-119hres93eh.htm",
+          "raw_sha256": "7afeb27dbbe6f4532e4c200d76b33bda8d4492ddb11f8b4b833a904439b3b393",
+          "governed_bytes_sha256": "98c4bc71432d78cd0fc375e116dad1addb7a4d92e884b03e58ec64d409c04dfe"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres93eh",
+          "locator": "Complete operative exact House rule through its final section, excluding attestation",
+          "passage": "Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 27) to amend the Controlled Substances Act with respect to the scheduling of fentanyl-related substances, and for other purposes. All points of order against consideration of the bill are waived. The amendment printed in part A of the report of the Committee on Rules accompanying this resolution shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; (2) the further amendment printed in part B of the report of the Committee on Rules, if offered by the Member designated in the report, which shall be in order without intervention of any point of order, shall be considered as read, shall be separately debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, and shall not be subject to a demand for division of the question; and (3) one motion to recommit. "
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hres93eh",
+          "start": 0,
+          "end": 1571,
+          "total": 1571,
+          "reviewed_scope": "Complete exact House EH, including date, pending-text adoption and separate final-passage procedures; no interpretation of incorporated policy bodies claimed"
+        }
+      ],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:76",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "The complete March 25, 2025 H.Res.242 EH was read against the exact Clerk rule-adoption identity. Sections1-2 separately provide consideration, waivers, one-hour debate and recommittal for H.J.Res.24 and H.J.Res.75. Section3 provides Committee-of-the-Whole consideration of H.R.1048, deems Rules Committee Print119-1 adopted as a substitute into the pending bill, supplies structured further-amendment procedures and reporting back to the House, and preserves separate final passage and one motion to recommit. The rule does not itself finally pass or concur in those measures. Under the established procedural/noncounting contract this exact rule-adoption action is procedural context. No component policy position, foreign-person visa consequence, immigration-status eligibility change or enacted outcome is inferred. No new interpretation of the print or later substantive votes is supplied; the existing exact H.R.1048 amendment screenings remain intact.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:76",
+          "url": "https://clerk.house.gov/evs/2025/roll076.xml",
+          "raw_sha256": "8ca1c1408b380d526c98f744f86a5f1839b2944feeeca8b459152a5a937c8e08",
+          "governed_bytes_sha256": "5c2ea4eac161a33a2443c4e3d49f5d1ca7eab8ddf5bbe21070cbb6cd0073015f"
+        },
+        {
+          "source_id": "govinfo:hres242eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+          "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
+          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres242eh",
+          "locator": "Complete operative exact House rule through its final section, excluding attestation",
+          "passage": "Resolved, That upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 24) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Department of Energy relating to ``Energy Conservation Program: Energy Conservation Standards for Walk-In Coolers and Walk-In Freezers''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 75) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Office of Energy Efficiency and Renewable Energy, Department of Energy relating to ``Energy Conservation Program: Energy Conservation Standards for Commercial Refrigerators, Freezers, and Refrigerator-Freezers''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 3. At any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 1048) to amend the Higher Education Act of 1965 to strengthen disclosure requirements relating to foreign gifts and contracts, to prohibit contracts between institutions of higher education and certain foreign entities and countries of concern, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Education and Workforce or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. In lieu of the amendment in the nature of a substitute recommended by the Committee on Education and Workforce now printed in the bill, an amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-1 shall be considered as adopted in the House and in the Committee of the Whole. The bill, as amended, shall be considered as the original bill for the purpose of further amendment under the five-minute rule and shall be considered as read. All points of order against provisions in the bill, as amended, are waived. No further amendment to the bill, as amended, shall be in order except those printed in the report of the Committee on Rules accompanying this resolution. Each such further amendment may be offered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. All points of order against such further amendments are waived. At the conclusion of consideration of the bill for amendment the Committee shall rise and report the bill, as amended, to the House with such further amendments as may have been adopted. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto to final passage without intervening motion except one motion to recommit. "
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hres242eh",
+          "start": 0,
+          "end": 4689,
+          "total": 4689,
+          "reviewed_scope": "Complete exact House EH, including date, pending-text adoption and separate final-passage procedures; no interpretation of incorporated policy bodies claimed"
+        }
+      ],
+      "episode_candidate_id": null
     }
   ],
-  "review_sha256": "5e43b37f7c2f85a4c0782e0c6cea8c2f18b8ef5cd8ee2b0f664c230955322465"
+  "review_sha256": "3094d9dcd8ebfe499c85c858eecf249d4f902f50650ae4db42011f57ff61726b"
 }
