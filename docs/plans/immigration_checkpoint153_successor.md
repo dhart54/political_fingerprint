@@ -87,3 +87,25 @@ is separate force-authorization work. All existing holds and reserved gates pers
 Checkpoint154 delivery/CI and parent bounded review complete. Checkpoint155 is
 authored and validated:534 reviews/142 ordinary pending,179tests/7checks/reference/
 replay pass; no semantic-output change. Final diff,155 commit/push/CI next.
+
+## Next bounded increment: checkpoint156
+
+Checkpoint155 is delivered as1c9ad2a; ownCI37841821260/review remain pending.
+Inspect Mace17 roll249 facilities andMills18 roll253 flags from their own complete
+operatives/recorded questions/Report; incorporate2801 definition and original
+PL11831section1052 only at material scope. Existing raw law/Record banks are
+reused, not reacquired. Expected six new canonical sources, two capture
+registrations, unchanged six semantic outputs;179 focused/7semantic checks.
+
+Checkpoint155 first-attempt9-job CI passed and decodedcheckout receipt sealed.
+Checkpoint156 authored/validated:536reviewed/140ordinarypending;179tests/7checks/
+reference/replay pass, sixsemanticoutputs unchanged. Final diff/commit/push/156CI
+next;155/156parentreviews pending. Earlierboundedreviews confer no acceptance.
+
+Parent155 bounded independent source/domain/mechanics pass is now actually
+received and recorded inimmigration_checkpoint155_parent_independent_review.json;
+owner tests/replay/recovery/private archives remain owner-attributed.156 independent
+review pending. Private156 verifier output filename was corrected after a before-write
+documentation failure;155 private result recovered from immutable155 receipt and
+pre156 archived inputs/outputs, with misdirected result retained and no independent
+original-private-byte-seal claim. Canonical inputs/semantics were unaffected.

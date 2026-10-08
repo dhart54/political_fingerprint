@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 261,
-      "source_unresolved": 142,
+      "exact_action_ineligible": 263,
+      "source_unresolved": 140,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 261,
-    "unresolved_boundary_cases": 142,
+    "exact_action_ineligible_actions": 263,
+    "unresolved_boundary_cases": 140,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -509,6 +509,8 @@
         "house:119:1:246",
         "house:119:1:247",
         "house:119:1:248",
+        "house:119:1:249",
+        "house:119:1:253",
         "house:119:1:266",
         "house:119:1:269",
         "house:119:1:270",
@@ -669,11 +671,9 @@
         "house:119:1:237",
         "house:119:1:239",
         "house:119:1:244",
-        "house:119:1:249",
         "house:119:1:250",
         "house:119:1:251",
         "house:119:1:252",
-        "house:119:1:253",
         "house:119:1:254",
         "house:119:1:255",
         "house:119:1:256",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "e3cfe4a27ea7c72342b15599344fb300a70d86554325ccc8162fbab43888a57c",
+  "universe_subject_sha256": "f3562607e9c2eaa38ae5c184a8c7f40ec7bb9091f7a5a6b09b86c158720cd47b",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17769,8 +17769,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace PartA17 (Clerk ordinal13, House119/1/249) adds a notwithstanding-other-law rule against accessing or using a SINGLE-SEX FACILITY ON A MILITARY INSTALLATION that does not correspond to the person's sex as defined. Preserve the actual qualified male/female reproductive-system definitions and biological-sex definition, without an added birth-certificate rule. The single-sex-space definition includes restroom/locker/changing rooms, not every base activity or installation entry. Exceptions are emergency medical personnel responding to a medical emergency and law-enforcement officers in active pursuit OR part of an active investigation; not every medical/official visit. Defense MAY waive case-by-case only upon the specified necessary-national-security determination, not an automatic exemption. Incorporated2801(c)(4) includes named domestic military activities and foreign-country activities under the qualified military/Defense operational-control criteria regardless of control duration. Chapter construction/project/committee/facility/cost/Secretary context and the chapter's CoastGuard/civilworks limitation are preserved separately; a definition reference does not silently import every chapter limitation as this proposal's jurisdiction ruling. The operative criterion concerns single-sex facility use, not nationality, visa/admission/removal/immigration status or work authorization. Foreign-location/control context and broad person wording do not establish a changed Immigration predicate. Individual facility jurisdiction, waiver, access/status or current-law application remains unadjudicated; no whole-base/country-entry prohibition, actual implementation, safety outcome or member motive. Complete own operative matches numberedReport after declared formatting normalization; own recorded vote agreed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:249",
         "url": "https://clerk.house.gov/evs/2025/roll249.xml",
@@ -17787,25 +17787,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace PartA17 (Clerk ordinal13, House119/1/249) adds a notwithstanding-other-law rule against accessing or using a SINGLE-SEX FACILITY ON A MILITARY INSTALLATION that does not correspond to the person's sex as defined. Preserve the actual qualified male/female reproductive-system definitions and biological-sex definition, without an added birth-certificate rule. The single-sex-space definition includes restroom/locker/changing rooms, not every base activity or installation entry. Exceptions are emergency medical personnel responding to a medical emergency and law-enforcement officers in active pursuit OR part of an active investigation; not every medical/official visit. Defense MAY waive case-by-case only upon the specified necessary-national-security determination, not an automatic exemption. Incorporated2801(c)(4) includes named domestic military activities and foreign-country activities under the qualified military/Defense operational-control criteria regardless of control duration. Chapter construction/project/committee/facility/cost/Secretary context and the chapter's CoastGuard/civilworks limitation are preserved separately; a definition reference does not silently import every chapter limitation as this proposal's jurisdiction ruling. The operative criterion concerns single-sex facility use, not nationality, visa/admission/removal/immigration status or work authorization. Foreign-location/control context and broad person wording do not establish a changed Immigration predicate. Individual facility jurisdiction, waiver, access/status or current-law application remains unadjudicated; no whole-base/country-entry prohibition, actual implementation, safety outcome or member motive. Complete own operative matches numberedReport after declared formatting normalization; own recorded vote agreed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:249",
           "url": "https://clerk.house.gov/evs/2025/roll249.xml",
           "raw_sha256": "ab0cf7467f44ef22d04a0778faa06dae43c03471176e21773075de44895585aa",
-          "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "dbd11a84e0f228cd5fe5655f283baf45c2f1923937f5f5de8cbd58c2d1a2f067"
+        },
+        {
+          "source_id": "congressional-record:3838-amend17-roll249-choice156",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "0e9d11696f06add1fdcadb34a84daded65f4387039a54018c840c5eb047d272c"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend17-operative156",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "1ae624bf416a1a44001d9ff6cb4d2fb2da9fb98126cdc2418abd32c6eb344082"
+        },
+        {
+          "source_id": "govinfo:10usc2801-2024-amendment-binding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2801.htm",
+          "raw_sha256": "1dbddfeacdeaf23e2e326e759d9ffd85e250c44e1ce39b70fdac2d59a6059962",
+          "governed_bytes_sha256": "b520c35c817faf41f8e7c7e2ff5fd837ed571a37096e201c679b2f93bb1ac743"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d9ed0c2dafbc367aa5456c595d3a8606d71718cb615829232fd23719f4e27487"
       },
       "historical_raw_hash_matches": true
     },
@@ -17957,8 +17975,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mills PartA18 (Clerk ordinal14, House119/1/253) supplies a literal1052(d)(1)(N) reference and proposed strike of subparagraph(N). The named original(N) is the approved-flag category for a flag approved at the discretion of the military chain of command OR senior civilian leadership, AS APPROPRIATE. Preserve the literal reference/strike syntax without silently changing its citation or resolving formal individual legal application. This is not repeal of all1052 or all commander authority: the general approved-flag rule, qualified non-endorsement display exclusions, separate residential-area exclusion and good-order/discipline reservation remain distinct. A-M categories remain exact, including another country's flag for an ally/partner OR official protocol, organizations of which theUS is a member, qualified ServiceAcademy/ROTC entities, contract-authorized retail/non-governmental advertising and religious/holiday flags IF otherwise authorized. Keep the broad defined Defense work/common/public-area list and its printed 'facility of other secure facility' wording; do not silently repair original text. No categorical all-foreign/all-pride/all-religious-flag ban or inferred endorsement is adjudicated. Referenced347 academy identity is reused at established scope. Flag approval/display categories and area exceptions do not supply changed personal immigration or citizenship criteria. Individual approved-display, contract, residence, legal-reference or actual policy implementation remains unadjudicated, with no member motive or claimed outcome. Complete own operative matches numberedReport after declared formatting normalization; own recorded vote agreed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:253",
         "url": "https://clerk.house.gov/evs/2025/roll253.xml",
@@ -17975,25 +17993,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mills PartA18 (Clerk ordinal14, House119/1/253) supplies a literal1052(d)(1)(N) reference and proposed strike of subparagraph(N). The named original(N) is the approved-flag category for a flag approved at the discretion of the military chain of command OR senior civilian leadership, AS APPROPRIATE. Preserve the literal reference/strike syntax without silently changing its citation or resolving formal individual legal application. This is not repeal of all1052 or all commander authority: the general approved-flag rule, qualified non-endorsement display exclusions, separate residential-area exclusion and good-order/discipline reservation remain distinct. A-M categories remain exact, including another country's flag for an ally/partner OR official protocol, organizations of which theUS is a member, qualified ServiceAcademy/ROTC entities, contract-authorized retail/non-governmental advertising and religious/holiday flags IF otherwise authorized. Keep the broad defined Defense work/common/public-area list and its printed 'facility of other secure facility' wording; do not silently repair original text. No categorical all-foreign/all-pride/all-religious-flag ban or inferred endorsement is adjudicated. Referenced347 academy identity is reused at established scope. Flag approval/display categories and area exceptions do not supply changed personal immigration or citizenship criteria. Individual approved-display, contract, residence, legal-reference or actual policy implementation remains unadjudicated, with no member motive or claimed outcome. Complete own operative matches numberedReport after declared formatting normalization; own recorded vote agreed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:253",
           "url": "https://clerk.house.gov/evs/2025/roll253.xml",
           "raw_sha256": "001bb2be0c28ede062f9f72851913dfaff32a3e3b092c9c1125ce6d995b87bc5",
-          "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "9e9cb404aa1894100479602975c422f1111b047fe167978d8ca7f9107f43f9c0"
+        },
+        {
+          "source_id": "congressional-record:3838-amend18-roll253-choice156",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "e4c3c11ecde21477ccae18fc39c9df8bec1f659f33079f9c95fa33b15f8ee91b"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend18-operative156",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "7525e3e31d2986cdfd45a515b88239acc4a5ee32c94bde1b0537518a4ea6ef5f"
+        },
+        {
+          "source_id": "govinfo:pl11831-section1052-flags156",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ31/html/PLAW-118publ31.htm",
+          "raw_sha256": "58989df390e0b8777abc1b739768d1e8c40b6b14bf35e19c0714477530b84a84",
+          "governed_bytes_sha256": "53ca05e15b8a3621fb2891bfe2d02ec8ac32339d4da06d5291c747e27ed52b2e"
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+          "governed_bytes_sha256": "4ca3f2d311ee22ffc9aeb9d5fd12ff890a7f5882a23660372d386d0a72180948"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "fc1ce9e17eb51afc25516cf99aceb48f8801e4e6ff1286575beb0437f13457b4"
       },
       "historical_raw_hash_matches": true
     },
@@ -42370,11 +42412,9 @@
     "house:119:1:237",
     "house:119:1:239",
     "house:119:1:244",
-    "house:119:1:249",
     "house:119:1:250",
     "house:119:1:251",
     "house:119:1:252",
-    "house:119:1:253",
     "house:119:1:254",
     "house:119:1:255",
     "house:119:1:256",
@@ -42511,6 +42551,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "c7989315a22a6b4d52d5a819663f866dd1c8265fed6d37bc8be395562a43f59d",
-  "membership_review_sha256": "42888ecebe7d2a271d8bf306051809d006f63ec3780ca9212e1ad0951b86d38c"
+  "proposal_sha256": "992ee6fdb0586af2bc3663cafcb904ae8a0c17b808935d5c1b065a687593ff4b",
+  "membership_review_sha256": "8cab7e83bd4e4600719630fe78fb7f339a3df3ed1ffb5310bcdb8164a6e8c25f"
 }

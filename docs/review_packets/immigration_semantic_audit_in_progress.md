@@ -1,8 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint155:44 meanings/534 reviews/142 ordinary pending.
-Two candidate exclusions; audit153NoDefect/8Minor/11Major/1Critical, final verdict null.
-Parent154boundedpass/154CI9green retained;155 independent review remains pending.
+Current candidate checkpoint156:44 meanings/536 reviews/140 ordinary pending.
+Two candidate exclusions; audit155NoDefect/8Minor/11Major/1Critical, final verdict null.
+155CI9green/parent bounded155pass retained;156 independent review pending.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8616,3 +8616,67 @@ Owner suites/replay/private archives remain owner-attributed; no fullcorpus
 acceptance. Prior150-153summaries/history/limits remain unchanged.155review and
 ownCIpending. Localfreshowner continuesexistingworktree; oldowner stays idle.
 No shutdown deadline/terminalmarker or publication/merge/production authority.
+
+## Checkpoint 156: military facilities and named flag approval
+
+Two agreed H.R.3838 amendments, MacePartA17/Clerkordinal13 (House119/1/249)
+andMillsPartA18/Clerkordinal14 (253), receive noncounting candidate exclusions.
+Facility-use restriction preserves actual qualified sex definitions, single-sex
+space/installation limits, emergency-medical and qualified law-enforcement
+exceptions, and Defense's conditional case-by-case national-security waiver.
+Captured2801 definition includes qualified foreign operational-control activity;
+construction/chapter limitations remain separate from individual jurisdiction.
+No whole-base/country-entry ban or individual Immigration criterion is inferred.
+
+Flag proposal retains literal1052(d)(1)(N)/strike wording and the named(N)
+military-chain/senior-civilian discretionary approval category. Original1052's
+otherA-M categories, non-endorsement display/residential exceptions, commander
+good-order reservation and Defense-area definition remain distinct. Ally/partner
+ORofficialprotocol flags, organization membership, qualified academy/ROTC,
+contract-authorized advertising and otherwise-authorized religious flags are not
+collapsed into blanket foreign/pride/religious bans. Original printed `facility
+of other secure facility` remains unrepaired. Formal reference/display/waiver/
+individual legal or Immigration application and actual policy outcomes remain
+unadjudicated. Debate/title assertions do not supply operative effect or motive.
+
+Own complete floor/Report operatives match after declared formatting normalization.
+Own recorded questions agreed after voiceayes;FousheeNo/MassieAye remain exact
+amendment observations, not whole-bill/component preferences or enactment.
+536/676 reviewed:44 interpreted,227procedural,263excluded,2expressive,
+140ordinarypending.1653sources/489captures/1108bindings/453extentobjects/
+794coordinates;40episodes/88observations/78findings/70questions/3packages
+unchanged. Audit155NoDefect/8Minor/11Major/1Critical retains history and
+finalverdictnull. Lebanese210may,207agreements,Report33/allpriorholds,
+qualified166/frozen265/unaccepted747 and all priorprovenance limits persist.
+
+Verified74pageRecordoriginal reused; new5page17/18/52/53/55 selected serialization
+and all5 material pages inspected. Existing completeReport bank retained; only
+17/18 meanings newly reviewed. Full originalPL11831 raw seal/serialization reused
+for complete1052 derivative; it matches existing Healthflags extent exactly.
+Original parent historicalelectricity scope remains unchanged, not upgraded to
+whole-Act meaning review. Five derivatives/nine intervals verify.2801 operative
+bank is reused at exact seal without fresh rawHTML recovery;347 canonical object
+unchanged. Notallparents/notes/currentincorporatedlaw/individual applications,
+freshnetwork retrieval or freshClerkXML certification.
+
+179focusedtests passed in19.015s;7semanticchecks/referencevalidation,
+preservation and seven-file rawreplay pass. Six semantic outputs and all prior
+534reviews/1647sources/487captures/questions/packages/holds remain exact.
+Established scopedTEMPNODEenvironment/escalated checks handle recordedWindows
+tempfileACL limits without configuration/ACL/dependency changes.
+
+155CI37841821260 firstattempt9green:5feature/3synthetic/1mixed;
+synthetic5d8e6cd010d8e98a2692d16cce429becd506bbdb. Decodedlogs/checkouts/skips
+sealed inimmigration_delivery_checkpoint155_ci.json;hosted308distinctlocal179,
+repair13of20,no retry.154parentboundedpass and150-153summaries remain retained;
+155/156independent reviews pending, no acceptance or fullcorpus verdict.
+Final156diff/auditguards/ownCI follow. Continue existinglocalfeature work;
+oldowner remains idle, no deadline/terminalmarker/production/publication authority.
+
+Parent155 bounded independent source/domain/mechanics pass is now actually
+received and recorded inimmigration_checkpoint155_parent_independent_review.json;
+owner tests/replay/recovery/private archives remain owner-attributed.156 independent
+review pending. Private156 verifier output filename was corrected after a before-write
+documentation failure;155 private result recovered from immutable155 receipt and
+pre156 archived inputs/outputs, with misdirected result retained and no independent
+original-private-byte-seal claim. Canonical inputs/semantics were unaffected.
