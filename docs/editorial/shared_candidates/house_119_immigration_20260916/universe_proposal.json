@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 252,
-      "source_unresolved": 151,
+      "exact_action_ineligible": 255,
+      "source_unresolved": 148,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 252,
-    "unresolved_boundary_cases": 151,
+    "exact_action_ineligible_actions": 255,
+    "unresolved_boundary_cases": 148,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -481,6 +481,9 @@
         "house:119:1:193",
         "house:119:1:196",
         "house:119:1:201",
+        "house:119:1:204",
+        "house:119:1:205",
+        "house:119:1:206",
         "house:119:1:213",
         "house:119:1:214",
         "house:119:1:215",
@@ -650,9 +653,6 @@
         "house:119:1:182",
         "house:119:1:199",
         "house:119:1:200",
-        "house:119:1:204",
-        "house:119:1:205",
-        "house:119:1:206",
         "house:119:1:207",
         "house:119:1:208",
         "house:119:1:209",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "c4736fdfd3061cad15003d89436a132fcfb942780ea5e5bb58d51e6b177e2819",
+  "universe_subject_sha256": "e4471d0e33e6533e6d28952379fe67285f1e483ef2f5ddb90cb7131880ae70a4",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -15026,8 +15026,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene PartA111 (Clerk ordinal10,roll204) strikes RHpage24 lines8-14, the entire OHDACA appropriation heading/body: $117,988,000 available throughSept30,2027 for the programs under10USC401,402,404,407,2557,2561. It removes that proposed account provision, not the six standing statutes, all existing/other resources or all humanitarian powers. Complete material operatives preserve authorized-military-operation/security/readiness determinations, SecretaryState approvals, nonduplication/basic-needs and military/paramilitary-recipient exclusions; incidental/minimal-other-fund qualifications; nongovernmental usable-supplies/need/distribution andspace-available transport; foreigndisaster/environment/48hour notifications; demining physical-activity limits,training/travel/equipment/costs andreports; andexcess nonlethal supply/State,DHSdomesticemergency,VAhomeless-veteran transfers. Worldwide2561humanitarian authority retains authorization/appropriation limits,ordinary>$5million notice/extraordinary48hour alternative,annual reporting,unauthorized-country15daynotice andliteral subsection(b)report-purpose reference. OHDACA title does not erase those domestic capabilities or imply the amendment changes all domestic aid. Foreignpersonnel travel costs andhuman relief purposes are not new visa/admission/status/nationality/removal/workauthorization criteria. Individual veteran/entry/aid/program/labor/contract application andactualtransport/assistance remain unadjudicated. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
       "source": {
         "source_id": "clerk:119:1:204",
         "url": "https://clerk.house.gov/evs/2025/roll204.xml",
@@ -15044,25 +15044,79 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene PartA111 (Clerk ordinal10,roll204) strikes RHpage24 lines8-14, the entire OHDACA appropriation heading/body: $117,988,000 available throughSept30,2027 for the programs under10USC401,402,404,407,2557,2561. It removes that proposed account provision, not the six standing statutes, all existing/other resources or all humanitarian powers. Complete material operatives preserve authorized-military-operation/security/readiness determinations, SecretaryState approvals, nonduplication/basic-needs and military/paramilitary-recipient exclusions; incidental/minimal-other-fund qualifications; nongovernmental usable-supplies/need/distribution andspace-available transport; foreigndisaster/environment/48hour notifications; demining physical-activity limits,training/travel/equipment/costs andreports; andexcess nonlethal supply/State,DHSdomesticemergency,VAhomeless-veteran transfers. Worldwide2561humanitarian authority retains authorization/appropriation limits,ordinary>$5million notice/extraordinary48hour alternative,annual reporting,unauthorized-country15daynotice andliteral subsection(b)report-purpose reference. OHDACA title does not erase those domestic capabilities or imply the amendment changes all domestic aid. Foreignpersonnel travel costs andhuman relief purposes are not new visa/admission/status/nationality/removal/workauthorization criteria. Individual veteran/entry/aid/program/labor/contract application andactualtransport/assistance remain unadjudicated. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:204",
           "url": "https://clerk.house.gov/evs/2025/roll204.xml",
           "raw_sha256": "61849f8d7c2e6501545ca81033e6aca004f12437a8f0b6fe52a104a17d376be5",
-          "governed_bytes_sha256": "d0388e26b8e8d26b6f803928a306a379e54823f6fec0e32de004cb650152bf8e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "d0388e26b8e8d26b6f803928a306a379e54823f6fec0e32de004cb650152bf8e"
+        },
+        {
+          "source_id": "congressional-record:4016-amend111-roll204-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "6d39ebd62d633e64ea4c755b4b3cebcc30597f6452072182eef36dc971a70147"
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend111-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "44c99807a86599685b37532da250a770d1765ca5587e84232b75530624a2dbd4"
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend111-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "52ebf67dd23a97d6172d6a10874f7ee20fe0054a21ff577430e46e49a7376841"
+        },
+        {
+          "source_id": "govinfo:10usc401-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "raw_sha256": "08340325e06a23e6b1baf535d90ad4af7f231ad37fada0922e60779ef2c1559c",
+          "governed_bytes_sha256": "387ac15459a3c2a80d8633dd43070988f22bfb22c23cdb6d8e43be34cc9d77d1"
+        },
+        {
+          "source_id": "govinfo:10usc402-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm",
+          "raw_sha256": "c8926b31c06d14cd61d316397d330ffc8b5cbae24b5e190e296dfff2ab0b78c8",
+          "governed_bytes_sha256": "060117dd25bbffc8e194e53ba6ad8ac9797aa24f1690bc003af3bcb5e1e8983f"
+        },
+        {
+          "source_id": "govinfo:10usc404-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm",
+          "raw_sha256": "2f0a64a4912722f9339dcd23e94a926c4b483eaf157ce81ad06555505c15f9da",
+          "governed_bytes_sha256": "40df146cbbf2b3fc742a0b46f763e1370a2236215141de05800fd0bd6b18a03f"
+        },
+        {
+          "source_id": "govinfo:10usc407-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm",
+          "raw_sha256": "34432abf78d7a41e2ec77427e9fc9c7f7a0d1036f0418924b3c4c9b8a03b57c4",
+          "governed_bytes_sha256": "65728bef20929cf6a65a6feb3064f9b7f0682884989470afe5a0aa422d976550"
+        },
+        {
+          "source_id": "govinfo:10usc2557-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm",
+          "raw_sha256": "c3e1d7c7d5d312ebc984b186b1adbf2b7aca441f904ec35c8c3ca17c12c0d8e8",
+          "governed_bytes_sha256": "73bc33ec85ebd3d975bb09bb5cb10837810ab4f08bfd34338df298956559ad0f"
+        },
+        {
+          "source_id": "govinfo:10usc2561-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm",
+          "raw_sha256": "8933cd4dba8c3c227cbc14c6f2228ead6e678efabf9c46b28d07a9d57b6ffe8e",
+          "governed_bytes_sha256": "6e15e860e7f1d1117a226b4bd1de937ea4e785fe0ab5956fa0133ae46a1045fe"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7486b07726bc6f2a8c34ec0a34bdaf128c38a3e37803f9ae7fc8ca7eb2205669"
       },
       "historical_raw_hash_matches": true
     },
@@ -15073,8 +15127,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene PartA112 (Clerk ordinal11,roll205) strikes complete RHsection8105 beginningpage112line23, including the $500million allocation from O&MDefenseWide forDSCA throughSept30,2027, TaiwanSecurityCooperationInitiative, SecretaryDefense/SecretaryState-concurrence authority fornewdefensearticles/services/militaryeducation/training,andquarterly congressional-defense reports. It is not a deletion of the entire O&Mappropriation, blanket ban on allTaiwan aid, permanent repeal ofPL118159sec1323 or conclusion about actualdefense capability/war/semiconductor outcomes. Complete1323 materialcontext preserves military/central-government-security andqualifiedcivilian-central-government recipients,defense/self-defense/oversight purposes,distinctassistance lists,notifications/inventory/AECA/TaiwanRelations conditions,non-hostilities-authorization rule andDec31,2029termination. The standingFY2025authorization maximum$300million is distinct from this proposedFY2026$500millionallocation; no comprehensive funding/current-eligibility resolution is implied. Recipientgovernment/force/institution geography andmilitaryeducation/training do not supply a changed personal immigration eligibility rule. No individualexport/travel/visa/contract decision orallincorporatedActeligibility certification. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
       "source": {
         "source_id": "clerk:119:1:205",
         "url": "https://clerk.house.gov/evs/2025/roll205.xml",
@@ -15091,25 +15145,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene PartA112 (Clerk ordinal11,roll205) strikes complete RHsection8105 beginningpage112line23, including the $500million allocation from O&MDefenseWide forDSCA throughSept30,2027, TaiwanSecurityCooperationInitiative, SecretaryDefense/SecretaryState-concurrence authority fornewdefensearticles/services/militaryeducation/training,andquarterly congressional-defense reports. It is not a deletion of the entire O&Mappropriation, blanket ban on allTaiwan aid, permanent repeal ofPL118159sec1323 or conclusion about actualdefense capability/war/semiconductor outcomes. Complete1323 materialcontext preserves military/central-government-security andqualifiedcivilian-central-government recipients,defense/self-defense/oversight purposes,distinctassistance lists,notifications/inventory/AECA/TaiwanRelations conditions,non-hostilities-authorization rule andDec31,2029termination. The standingFY2025authorization maximum$300million is distinct from this proposedFY2026$500millionallocation; no comprehensive funding/current-eligibility resolution is implied. Recipientgovernment/force/institution geography andmilitaryeducation/training do not supply a changed personal immigration eligibility rule. No individualexport/travel/visa/contract decision orallincorporatedActeligibility certification. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:205",
           "url": "https://clerk.house.gov/evs/2025/roll205.xml",
           "raw_sha256": "609b1443d127b24dbc5c60c9a029d6807bdc59711ef1dfc5121aecf867b75cd1",
-          "governed_bytes_sha256": "e5c57af0836d1b1c3497be6490f656ea5113413fc2ac8d18c68bdd217e2309d1",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "e5c57af0836d1b1c3497be6490f656ea5113413fc2ac8d18c68bdd217e2309d1"
+        },
+        {
+          "source_id": "congressional-record:4016-amend112-roll205-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "9c51e209e9ddc5b67809f3ea0e9d31968a90ec8a9fdb2110deb777e817eb5fff"
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend112-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "bf265a4407f298e643f3ff252d6b73b07bef6081aa75bf5bf4a0ddbcbbcd3096"
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend112-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "edcb83f79d2a92cc9833635363026f53b91381131bc71a3384f047def0bc0ba7"
+        },
+        {
+          "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "raw_sha256": "0a24dd8fe96c704051ccb9cf37586242bbc530e6e8088c7f7e8864a5da5572bd",
+          "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "797311f6696c64867ae13fc1c5ac150dd356a538de6a24c32122a8c5a5030027"
       },
       "historical_raw_hash_matches": true
     },
@@ -15120,8 +15198,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene PartA113 (Clerk ordinal12,roll206) inserts (reducedby$15million) after the RHpage42line16 $15million amount in a NOTLESSTHAN proviso. That would lower the specified minimum tozero, not reduce the totalDefenseHealth appropriation or impose an express prohibition on further HIVeducation funding. The complete targetaccount preserves $40,917,184,000 total,$1,795,621,000RDT&E anditsnot-less-than$700million medical-research direction,aswellas the qualifiedO&M/TRICARE/procurement allocations andelectronic-healthrecord reports/reviews. The HIVminimum remains a direction within RDT&E, notwithstandingotherlaw, forHIVpreventionEDUCATIONALactivities connected withUSmilitarytraining,exercises andhumanitarianassistance conductedPRIMARILYinAfricannations;it isnotallPEPFAR/HIVtreatment/drug-supply/foreign-country assistance orsolelyAfrican activity. Adjacentchemicalmunitions/counterdrugaccounts andunrelatedHIVworking-capital statutes are not imported. Country/health/medical-condition references anddebateimmigration/border rhetoric do not establish a changed personal admission,immigrationstatus,nationality,removal orworkauthorization condition. No individualhealth/medical/immigration eligibility orobserved illness/education/spending outcome. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
       "source": {
         "source_id": "clerk:119:1:206",
         "url": "https://clerk.house.gov/evs/2025/roll206.xml",
@@ -15138,25 +15216,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene PartA113 (Clerk ordinal12,roll206) inserts (reducedby$15million) after the RHpage42line16 $15million amount in a NOTLESSTHAN proviso. That would lower the specified minimum tozero, not reduce the totalDefenseHealth appropriation or impose an express prohibition on further HIVeducation funding. The complete targetaccount preserves $40,917,184,000 total,$1,795,621,000RDT&E anditsnot-less-than$700million medical-research direction,aswellas the qualifiedO&M/TRICARE/procurement allocations andelectronic-healthrecord reports/reviews. The HIVminimum remains a direction within RDT&E, notwithstandingotherlaw, forHIVpreventionEDUCATIONALactivities connected withUSmilitarytraining,exercises andhumanitarianassistance conductedPRIMARILYinAfricannations;it isnotallPEPFAR/HIVtreatment/drug-supply/foreign-country assistance orsolelyAfrican activity. Adjacentchemicalmunitions/counterdrugaccounts andunrelatedHIVworking-capital statutes are not imported. Country/health/medical-condition references anddebateimmigration/border rhetoric do not establish a changed personal admission,immigrationstatus,nationality,removal orworkauthorization condition. No individualhealth/medical/immigration eligibility orobserved illness/education/spending outcome. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:206",
           "url": "https://clerk.house.gov/evs/2025/roll206.xml",
           "raw_sha256": "0f8e2eca8903ce132dee7da05e6ffacc53697f2437508b98f8c06029fa38d892",
-          "governed_bytes_sha256": "03f1c34f4e247ab87228764975f68e7300148a0e4f7f207eb4ecea3b6a56ae01",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "03f1c34f4e247ab87228764975f68e7300148a0e4f7f207eb4ecea3b6a56ae01"
+        },
+        {
+          "source_id": "congressional-record:4016-amend113-roll206-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "06594fb9bcb46d79e5193b6f92e4cecce92bc08730067d8fc32cbf71a9822107"
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend113-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "324d22a10de6a24f6d1bf1fd7df874bff85e3d7658cbbe7fc64b84fd92f80bb0"
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend113-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "c74ee24f7c533a3154d8cf6abc0be783c4c877e7baff39cf61aaa28a89625cc5"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "0a8012ca582b8602964a70115e19cacf2950ecb23c3dcd7fbda3811b4e018b47"
       },
       "historical_raw_hash_matches": true
     },
@@ -42150,9 +42246,6 @@
     "house:119:1:182",
     "house:119:1:199",
     "house:119:1:200",
-    "house:119:1:204",
-    "house:119:1:205",
-    "house:119:1:206",
     "house:119:1:207",
     "house:119:1:208",
     "house:119:1:209",
@@ -42310,6 +42403,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "8bd40f9a35f0d15ed067d1dbf899cdad2a8059ae9019b431dd5de6792a5cc9f4",
-  "membership_review_sha256": "72cf6c258864d681b79dcb0e5a22a321923ca1d94be18cf3f66877868776d992"
+  "proposal_sha256": "2f1ed329b8fef2485f70a8bd4f061228cbf5099c1700da3b298b9d5ff22678b6",
+  "membership_review_sha256": "2149e6371eac8de213c1748ebcbe20450759cc2dc119918473667a6963e42d00"
 }

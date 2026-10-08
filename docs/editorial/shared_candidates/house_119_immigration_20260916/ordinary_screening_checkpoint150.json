@@ -451,7 +451,7 @@
   "editorially_accepted": false,
   "publication_authorized": false,
   "next_action": "Validate/deliver150 onlyto draftPR198 andcontinue nextsafe coherentordinarysource lane while independentreviews run. No shutdown deadline; all research/application gates retained.",
-  "receipt_sha256": "8b94cca364dc08efade336d66284f78f9e6c8ca4127716e8cfbe55c7bb2fe4e3",
+  "receipt_sha256": "c8b11d7ee15a3c084021e752785b5cc86304f9f5e38f75eff9bfb38b600144aa",
   "accounting": {
     "inventory": 676,
     "governed_reviews": 525,
@@ -534,7 +534,7 @@
     "ThisActOnly_funding_rule_vs_commission_scope_preserved": true,
     "candidate_publication_isolation_preserved": true,
     "final_diff_reviewed": true,
-    "exact_head_ci": "Checkpoint149 nine jobs succeeded on first attempt;150 own pushed-head run pending."
+    "exact_head_ci": "Checkpoint150 own first-attempt9green:5feature/3synthetic/1mixed;hosted308 andrepair13/20. Mechanics and149metadata recheck pass; final150source/compact semantic review pending. No acceptance."
   },
   "prior_exact_head_ci_receipt": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint149_ci.json",
@@ -546,14 +546,14 @@
   "independent149_review_closure": {
     "before_snapshot_archive": ".tmp/checkpoint150_before_drbc",
     "independent_review_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
-    "current_receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+    "current_receipt_sha256": "7795934a46e2741648ce6bfdb888d01c002a06da88e87d9f3c727caa8a2b375a",
     "source_review_complete": true,
-    "independent_metadata_recheck_pending": true,
+    "independent_metadata_recheck_pending": false,
     "reviews_sources_outputs_preserved": true
   },
   "RH_physical_page_metadata_correction": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint149_RH_page_count_correction_checkpoint150.json",
-    "receipt_sha256": "033e743753d9dc312439835502ca0787a3d0ba2ae37f3ebf07590028fc549864",
+    "receipt_sha256": "2effe2295753e159dccef3a51e4e77e369cb14cdb65596f7191c0a1e31b32685",
     "physical_pages": 76,
     "bill_text_ends_at_page": 74,
     "owner_correction_visual_pages": [
@@ -562,5 +562,12 @@
     ],
     "sources_intervals_exclusions_and_outputs_unchanged": true
   },
-  "active_shutdown_deadline": null
+  "active_shutdown_deadline": null,
+  "own_exact_head_ci_receipt": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint150_ci.json",
+    "receipt_sha256": "32325545bab3906df25314f2a99f79a009254ec6bc01b398ff10241ba544b1f8",
+    "head": "6920dff7da8619b28daaaa39b335543c860321ad",
+    "run": 37818422758,
+    "successful_jobs": 9
+  }
 }

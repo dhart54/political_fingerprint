@@ -14992,10 +14992,262 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:204",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "204",
+        "legis-num": "H R 4016",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "10",
+        "amendment-author": "Greene of Georgia Part A Amendment No. 111",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:10 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Greene PartA111 (Clerk ordinal10,roll204) strikes RHpage24 lines8-14, the entire OHDACA appropriation heading/body: $117,988,000 available throughSept30,2027 for the programs under10USC401,402,404,407,2557,2561. It removes that proposed account provision, not the six standing statutes, all existing/other resources or all humanitarian powers. Complete material operatives preserve authorized-military-operation/security/readiness determinations, SecretaryState approvals, nonduplication/basic-needs and military/paramilitary-recipient exclusions; incidental/minimal-other-fund qualifications; nongovernmental usable-supplies/need/distribution andspace-available transport; foreigndisaster/environment/48hour notifications; demining physical-activity limits,training/travel/equipment/costs andreports; andexcess nonlethal supply/State,DHSdomesticemergency,VAhomeless-veteran transfers. Worldwide2561humanitarian authority retains authorization/appropriation limits,ordinary>$5million notice/extraordinary48hour alternative,annual reporting,unauthorized-country15daynotice andliteral subsection(b)report-purpose reference. OHDACA title does not erase those domestic capabilities or imply the amendment changes all domestic aid. Foreignpersonnel travel costs andhuman relief purposes are not new visa/admission/status/nationality/removal/workauthorization criteria. Individual veteran/entry/aid/program/labor/contract application andactualtransport/assistance remain unadjudicated. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "finding": "OHDACAaccountstrike retains6program/domestic/other-fundinglimits;Taiwan8105strike distinctfromallO&M/permanentrepeal;HIVspecifiedminimumzero nottotalcut/spendingprohibition. Ownoperatives/report/RH/questions/failedresults/civil-legislativedayboundaries preserveNo/Ayelabels;no genericagency/country/person/border-rhetoric bridge.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7486b07726bc6f2a8c34ec0a34bdaf128c38a3e37803f9ae7fc8ca7eb2205669",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:204",
+          "url": "https://clerk.house.gov/evs/2025/roll204.xml",
+          "governed_bytes_sha256": "d0388e26b8e8d26b6f803928a306a379e54823f6fec0e32de004cb650152bf8e",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "congressional-record:4016-amend111-roll204-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "governed_bytes_sha256": "6d39ebd62d633e64ea4c755b4b3cebcc30597f6452072182eef36dc971a70147",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend111-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "governed_bytes_sha256": "44c99807a86599685b37532da250a770d1765ca5587e84232b75530624a2dbd4",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend111-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "governed_bytes_sha256": "52ebf67dd23a97d6172d6a10874f7ee20fe0054a21ff577430e46e49a7376841",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc401-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec401.htm",
+          "governed_bytes_sha256": "387ac15459a3c2a80d8633dd43070988f22bfb22c23cdb6d8e43be34cc9d77d1",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc402-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec402.htm",
+          "governed_bytes_sha256": "060117dd25bbffc8e194e53ba6ad8ac9797aa24f1690bc003af3bcb5e1e8983f",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc404-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec404.htm",
+          "governed_bytes_sha256": "40df146cbbf2b3fc742a0b46f763e1370a2236215141de05800fd0bd6b18a03f",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc407-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap20-sec407.htm",
+          "governed_bytes_sha256": "65728bef20929cf6a65a6feb3064f9b7f0682884989470afe5a0aa422d976550",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc2557-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2557.htm",
+          "governed_bytes_sha256": "73bc33ec85ebd3d975bb09bb5cb10837810ab4f08bfd34338df298956559ad0f",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:10usc2561-OHDACA-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap152-sec2561.htm",
+          "governed_bytes_sha256": "6e15e860e7f1d1117a226b4bd1de937ea4e785fe0ab5956fa0133ae46a1045fe",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:205",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "205",
+        "legis-num": "H R 4016",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "11",
+        "amendment-author": "Greene of Georgia Part A Amendment No. 112",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:13 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Greene PartA112 (Clerk ordinal11,roll205) strikes complete RHsection8105 beginningpage112line23, including the $500million allocation from O&MDefenseWide forDSCA throughSept30,2027, TaiwanSecurityCooperationInitiative, SecretaryDefense/SecretaryState-concurrence authority fornewdefensearticles/services/militaryeducation/training,andquarterly congressional-defense reports. It is not a deletion of the entire O&Mappropriation, blanket ban on allTaiwan aid, permanent repeal ofPL118159sec1323 or conclusion about actualdefense capability/war/semiconductor outcomes. Complete1323 materialcontext preserves military/central-government-security andqualifiedcivilian-central-government recipients,defense/self-defense/oversight purposes,distinctassistance lists,notifications/inventory/AECA/TaiwanRelations conditions,non-hostilities-authorization rule andDec31,2029termination. The standingFY2025authorization maximum$300million is distinct from this proposedFY2026$500millionallocation; no comprehensive funding/current-eligibility resolution is implied. Recipientgovernment/force/institution geography andmilitaryeducation/training do not supply a changed personal immigration eligibility rule. No individualexport/travel/visa/contract decision orallincorporatedActeligibility certification. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "finding": "OHDACAaccountstrike retains6program/domestic/other-fundinglimits;Taiwan8105strike distinctfromallO&M/permanentrepeal;HIVspecifiedminimumzero nottotalcut/spendingprohibition. Ownoperatives/report/RH/questions/failedresults/civil-legislativedayboundaries preserveNo/Ayelabels;no genericagency/country/person/border-rhetoric bridge.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "797311f6696c64867ae13fc1c5ac150dd356a538de6a24c32122a8c5a5030027",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:205",
+          "url": "https://clerk.house.gov/evs/2025/roll205.xml",
+          "governed_bytes_sha256": "e5c57af0836d1b1c3497be6490f656ea5113413fc2ac8d18c68bdd217e2309d1",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "congressional-record:4016-amend112-roll205-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "governed_bytes_sha256": "9c51e209e9ddc5b67809f3ea0e9d31968a90ec8a9fdb2110deb777e817eb5fff",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend112-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "governed_bytes_sha256": "bf265a4407f298e643f3ff252d6b73b07bef6081aa75bf5bf4a0ddbcbbcd3096",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend112-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "governed_bytes_sha256": "edcb83f79d2a92cc9833635363026f53b91381131bc71a3384f047def0bc0ba7",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:pl118159-sec1323-taiwan-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ159/html/PLAW-118publ159.htm",
+          "governed_bytes_sha256": "7481f585dd0d20103b0d37cb2beaf0a38c51d3ff91299d5954a9c3532265a1c3",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:206",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "206",
+        "legis-num": "H R 4016",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "12",
+        "amendment-author": "Greene of Georgia Part A Amendment No. 113",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:17 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Greene PartA113 (Clerk ordinal12,roll206) inserts (reducedby$15million) after the RHpage42line16 $15million amount in a NOTLESSTHAN proviso. That would lower the specified minimum tozero, not reduce the totalDefenseHealth appropriation or impose an express prohibition on further HIVeducation funding. The complete targetaccount preserves $40,917,184,000 total,$1,795,621,000RDT&E anditsnot-less-than$700million medical-research direction,aswellas the qualifiedO&M/TRICARE/procurement allocations andelectronic-healthrecord reports/reviews. The HIVminimum remains a direction within RDT&E, notwithstandingotherlaw, forHIVpreventionEDUCATIONALactivities connected withUSmilitarytraining,exercises andhumanitarianassistance conductedPRIMARILYinAfricannations;it isnotallPEPFAR/HIVtreatment/drug-supply/foreign-country assistance orsolelyAfrican activity. Adjacentchemicalmunitions/counterdrugaccounts andunrelatedHIVworking-capital statutes are not imported. Country/health/medical-condition references anddebateimmigration/border rhetoric do not establish a changed personal admission,immigrationstatus,nationality,removal orworkauthorization condition. No individualhealth/medical/immigration eligibility orobserved illness/education/spending outcome. Complete own floor operative equals its numbered RulesReport after formatting/line-hyphenation normalization, with RHpage/line binding. July17Record legislative-day header andJuly18after-midnight civilClerkdate are preserved;no identity conflict inferred. Allthree ownrecorded votesfailed after preliminaryvoicenoes. FousheeNo/MassieAye are exact observations on each amendment,notwholebillpassage/enactment/actualsavings/membermotive/componentpreferences. No generic agency/country/person/public-benefit or rhetoricalborder bridge. Ineligible under established functional standards;noncounting candidate only.",
+      "finding": "OHDACAaccountstrike retains6program/domestic/other-fundinglimits;Taiwan8105strike distinctfromallO&M/permanentrepeal;HIVspecifiedminimumzero nottotalcut/spendingprohibition. Ownoperatives/report/RH/questions/failedresults/civil-legislativedayboundaries preserveNo/Ayelabels;no genericagency/country/person/border-rhetoric bridge.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "0a8012ca582b8602964a70115e19cacf2950ecb23c3dcd7fbda3811b4e018b47",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:206",
+          "url": "https://clerk.house.gov/evs/2025/roll206.xml",
+          "governed_bytes_sha256": "03f1c34f4e247ab87228764975f68e7300148a0e4f7f207eb4ecea3b6a56ae01",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "congressional-record:4016-amend113-roll206-choice151",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "governed_bytes_sha256": "06594fb9bcb46d79e5193b6f92e4cecce92bc08730067d8fc32cbf71a9822107",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend113-operative151",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "governed_bytes_sha256": "324d22a10de6a24f6d1bf1fd7df874bff85e3d7658cbbe7fc64b84fd92f80bb0",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend113-target151",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "governed_bytes_sha256": "c74ee24f7c533a3154d8cf6abc0be783c4c877e7baff39cf61aaa28a89625cc5",
+          "reviewed_extent": "Completeexactoperative/ownchoice/Report/RHtarget andidentified6humanitarian/Taiwan1323operatives;notallparent/currentincorporatedindividualgrant/travel/medical/permitlaw."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 144,
+    "No Defect": 147,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -15057,17 +15309,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 48,
+    "successor_new_exclusions_reviewed": 51,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 18.612,
+    "focused_runtime_seconds": 16.045,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint149 nine jobs succeeded on first attempt;150 own pushed-head run pending.",
+    "exact_head_ci": "Checkpoint150 own first-attempt nine green;151 own pushed-head run pending.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -15104,12 +15356,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint150:twofailedDRBCThisAct-onlyfundingriders227-228,namedcomplete2021ruleversusCommissiongenerally,401/440/unadoptedproposal/SSA-adjacency/materialcompactconditions preserved.525reviews/151ordinarypending;1613sources/469captures/418extents/737coordinates.3originalwitnesses/6derivatives/22intervals/16materialPDFpages;179tests/7checks/reference/replay.149boundedsource/domain/mechanicsreviewcomplete;MinorP3RH76physical/74bill-textmetadata correctedwithbeforearchive,recheckpending,source/interval/exclusion/outputunchanged.149CI9green;150independentreviewpending.44meanings/78findings/70questions/3packages/allholds/provenancelimitsretained,nofinalverdict/acceptance.",
+    "focused_scope_note": "Checkpoint151:threefailedGreene111-113exactfundingoperations204-206. OHDACA117988000accountstrike/sixmaterialstatutes/domesticpowers;Taiwan8105allocation500million versus2025authorization300million;HIV15millionminimumzero,notwholeaccount/prohibition.528reviews/148ordinarypending;1629sources/479captures/434extents/759coordinates.10raworiginals/16derivatives/22intervals/12materialPDFpages;179tests/7checks/reference/sevenfilereplay.149paginationP3independentlyresolvedwithbeforehistory;150mechanics/CI9green,finalsource-summarypending.44meanings/78findings/70questions/3packages/allholds/limitsretained,nofinalverdict/acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint149_ci.json",
-      "receipt_sha256": "65b69b4920aac4c0a473eea71013a374767300c258f02e18c288aab707807efe",
-      "head": "b0f5b8c992d57c76bbf463753b446a54aec3bff3",
-      "run": 37815607275,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint150_ci.json",
+      "receipt_sha256": "32325545bab3906df25314f2a99f79a009254ec6bc01b398ff10241ba544b1f8",
+      "head": "6920dff7da8619b28daaaa39b335543c860321ad",
+      "run": 37818422758,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -19912,15 +20164,15 @@
   },
   "ordinary_screening_checkpoint149": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint149.json",
-    "receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+    "receipt_sha256": "7795934a46e2741648ce6bfdb888d01c002a06da88e87d9f3c727caa8a2b375a",
     "same_owner_primary_screenings": 2,
     "new_interpretations": 0,
     "independent_review_pending": false,
     "unfinished_ordinary": 153,
     "application_questions": 70,
-    "independent_metadata_recheck_pending": true,
+    "independent_metadata_recheck_pending": false,
     "independent_review_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
-    "independent_review_scope": "No source/domain/mechanical defect;oneMinorP3RHphysical-page description correctedlocally150,independentmetadatarecheckpending. Nine materialsemanticPDFpages,notentireparents;owner150additionallyinspectedphysicalRH75/76forpaginationcorrection;fullPDFserializationsreproduced,Clerkrawdrift/fullparentmetadata/owner-suite limits retained."
+    "independent_review_scope": "No source/domain/mechanical defect;oneMinorP3RHphysical-page description correctedlocally150,independentmetadatarecheckresolved151. Nine materialsemanticPDFpages,notentireparents;owner150additionallyinspectedphysicalRH75/76forpaginationcorrection;fullPDFserializationsreproduced,Clerkrawdrift/fullparentmetadata/owner-suite limits retained."
   },
   "prior_head_ci_checkpoint148": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
@@ -19934,20 +20186,20 @@
     "receipt_sha256": "eb6085e25f62349076741a12800943f53289ce1d025a0df9810d33cba80126a2",
     "before_snapshot_archive": ".tmp/checkpoint150_before_drbc",
     "before_receipt_sha256": "52020f67cfe416eac427dcbe19ba08472a265980939c113b02b231f98a871f3f",
-    "current_receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+    "current_receipt_sha256": "7795934a46e2741648ce6bfdb888d01c002a06da88e87d9f3c727caa8a2b375a",
     "reviews_sources_outputs_preserved": true
   },
   "checkpoint149_RH_page_count_correction_checkpoint150": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint149_RH_page_count_correction_checkpoint150.json",
-    "receipt_sha256": "033e743753d9dc312439835502ca0787a3d0ba2ae37f3ebf07590028fc549864",
+    "receipt_sha256": "2effe2295753e159dccef3a51e4e77e369cb14cdb65596f7191c0a1e31b32685",
     "severity": "Minor",
     "priority": "P3",
-    "independent_metadata_recheck_pending": true,
+    "independent_metadata_recheck_pending": false,
     "not_added_to_action_finding_counts": true
   },
   "ordinary_screening_checkpoint150": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint150.json",
-    "receipt_sha256": "8b94cca364dc08efade336d66284f78f9e6c8ca4127716e8cfbe55c7bb2fe4e3",
+    "receipt_sha256": "c8b11d7ee15a3c084021e752785b5cc86304f9f5e38f75eff9bfb38b600144aa",
     "same_owner_primary_screenings": 2,
     "new_interpretations": 0,
     "independent_review_pending": true,
@@ -19959,6 +20211,27 @@
     "receipt_sha256": "65b69b4920aac4c0a473eea71013a374767300c258f02e18c288aab707807efe",
     "head": "b0f5b8c992d57c76bbf463753b446a54aec3bff3",
     "run": 37815607275,
+    "successful_jobs": 9
+  },
+  "checkpoint149_metadata_review_closure_checkpoint151": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint149_metadata_review_closure_checkpoint151.json",
+    "receipt_sha256": "dd7bb074cfba0d74af71fcd2813b5b863ec616881c53207c810bd087d6c3b930",
+    "not_added_to_action_finding_counts": true
+  },
+  "ordinary_screening_checkpoint151": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint151.json",
+    "receipt_sha256": "54d700907f05355e42279bea979ff745e4c759a0a6a478d675fb892e7f333e96",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 148,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint150": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint150_ci.json",
+    "receipt_sha256": "32325545bab3906df25314f2a99f79a009254ec6bc01b398ff10241ba544b1f8",
+    "head": "6920dff7da8619b28daaaa39b335543c860321ad",
+    "run": 37818422758,
     "successful_jobs": 9
   }
 }

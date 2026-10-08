@@ -523,8 +523,8 @@
   "independent_review_pending": false,
   "editorially_accepted": false,
   "publication_authorized": false,
-  "next_action": "Continueauthorizedcandidatework;149boundedsource/domain/mechanicalreviewcomplete,physical-page wording locallycorrected150 andindependentmetadatarecheckpending. Noeditorialacceptance/shutdown deadline;allholds/limitsretained.",
-  "receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+  "next_action": "Continue authorized candidate work;149 bounded source/domain/mechanics review complete and RH physical-page metadata P3 independently resolved151. No editorial acceptance or shutdown deadline; all holds/limits retained.",
+  "receipt_sha256": "7795934a46e2741648ce6bfdb888d01c002a06da88e87d9f3c727caa8a2b375a",
   "accounting": {
     "inventory": 676,
     "governed_reviews": 523,
@@ -607,7 +607,7 @@
     "amend32_Perry_is_Roy_designee": true,
     "candidate_publication_isolation_preserved": true,
     "final_diff_reviewed": true,
-    "exact_head_ci": "Checkpoint149 own first-attempt9green:5feature/3synthetic/1mixed;decodedlogs/checkouts/skips sealed,notallfeature-only. Independent149boundedsource/domain/mechanics reviewpassed;MinorRHphysicalpagewordinglocallycorrected150,independentmetadatarecheckpending. Noacceptance."
+    "exact_head_ci": "Checkpoint149 own first-attempt9green:5feature/3synthetic/1mixed;decodedlogs/checkouts/skips sealed,notallfeature-only. Independent149boundedsource/domain/mechanics reviewpassed;MinorRHphysicalpagewordinglocallycorrected150,independentmetadatarecheckresolved151. Noacceptance."
   },
   "prior_exact_head_ci_receipt": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
@@ -624,15 +624,16 @@
   },
   "active_shutdown_deadline": null,
   "historical_RH_page_description_before_correction150": "NewfullRH74page/Record32page serializations captured;onlyidentifiedmaterialscopes andninepagesreviewed,notallparentmeaning/PDFvisualpages.",
-  "independent_metadata_recheck_pending": true,
+  "independent_metadata_recheck_pending": false,
   "independent_review_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
   "independent_review_sha256": "eb6085e25f62349076741a12800943f53289ce1d025a0df9810d33cba80126a2",
-  "independent_review_scope": "No source/domain/mechanical defect;oneMinorP3RHphysical-page description correctedlocally150,independentmetadatarecheckpending. Nine materialsemanticPDFpages,notentireparents;owner150additionallyinspectedphysicalRH75/76forpaginationcorrection;fullPDFserializationsreproduced,Clerkrawdrift/fullparentmetadata/owner-suite limits retained.",
+  "independent_review_scope": "No source/domain/mechanical defect;oneMinorP3RHphysical-page description correctedlocally150,independentmetadatarecheckresolved151. Nine materialsemanticPDFpages,notentireparents;owner150additionallyinspectedphysicalRH75/76forpaginationcorrection;fullPDFserializationsreproduced,Clerkrawdrift/fullparentmetadata/owner-suite limits retained.",
   "own_exact_head_ci_receipt": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint149_ci.json",
     "receipt_sha256": "65b69b4920aac4c0a473eea71013a374767300c258f02e18c288aab707807efe",
     "head": "b0f5b8c992d57c76bbf463753b446a54aec3bff3",
     "run": 37815607275,
     "successful_jobs": 9
-  }
+  },
+  "independent_metadata_recheck_closure_ref": "docs/review_packets/immigration_checkpoint149_metadata_review_closure_checkpoint151.json"
 }
