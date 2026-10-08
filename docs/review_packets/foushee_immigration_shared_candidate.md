@@ -9216,3 +9216,99 @@ State/migration/refugee/DHS/supplementary/counterparts and ordinary queue. Same
 accountable .w/ib owner, no current deadline; original shutdown/pause evidence
 preserved. No production/merge/deploy/editorial acceptance/promotion/publication.
 Authorized delivery boundary remains draft PR198.
+
+
+### Successor checkpoint 121: exact research proposals and incorporated security
+
+House119/1/73 (March24 H.R.1326) and House119/1/74 (March25 H.R.1534) are
+source-grounded non-counting Immigration exclusion candidates. Full exact EH
+proposals establish DOE/USDA research coordination and cement/concrete/asphalt
+research/demonstration/technical assistance. Both explicitly incorporate CHIPS
+research security. Complete original subtitleD sections10631-10638 and seven
+operative2024 Code bodies preserve personnel versus covered-individual restrictions,
+both malign-program definition branches, disclosure/certification/training,
+nonretroactivity, qualified international collaboration, contract/award remedies,
+privacy/evidence/rebuttal/appeal and nondiscrimination. Foreign-student advice,
+travel training and organization-designation references do not add a visa rule.
+The named-program listed-person/entity bar is not applied to all Federal programs.
+Uncodified10635 historical five-year funding study/briefing/report requirements
+remain separate; no enactment deadline restart or actual policy/list/award outcome.
+Original printed title10 versus codified title42 disclosure citations remain literal;
+no new legal application is adjudicated. IMPACT's ManufacturingUSA278s(d)-(e),
+institutional/rural definitions, award periods/renewal, matching requirements and
+waivers/preferences were also read at their exact extents. Research/workforce or
+overseas cooperation alone does not establish Immigration eligibility.
+
+Six canonical source additions: two unchanged governed EHs, three selected material
+objects and an unchanged governed rural-definition reuse. Four original acquisitions,
+nine new coordinates. Original full captures are not whole-Act semantic review.
+The exact119-2 PartB replacement was inspected and hash-listed privately: Pettersen
+or designee in report, Trahan as designee in governed H532 proceedings, joint HHS/
+AttorneyGeneral FederalRegister overdose-reduction certification. Failed roll32 is
+separate from final passage33. Its ordinary domain disposition remains pending
+the exact import/export mechanism and applicability comparison, not unavailable.
+Six first-ten actions15/25/32/33/50/71 remain pending with real source dependencies.
+
+Pre-commit source check found the first-match subtitle anchor selected its448-character
+TOC rather than the operative22607-character body. Full precorrection candidate,
+outputs/test/recipe/receipt are preserved privately. Explicit unique operative anchor
+now binds857555:880162 in the original1114099-character Act, all eight full sections.
+Initial172 pass in13.989seconds did not establish source completeness. First receipt
+check also caught expected five versus actual six sources: rural definition was a
+new canonical unchanged reuse. Corrected guard rejects the actual TOC witness with
+one assertion and zero errors. A private Manufacturing capture printer used a wrong
+heading after successfully saving raw/text/metadata; actual headings were read without
+refetching or rewriting originals. These preparation failures are not unavailable
+evidence; earlier committed state and all raw acquisitions remain unchanged.
+
+Final173 focused tests pass in14.935seconds; reference validator/seven semantic checks
+pass, all seven generated JSON files replay byte for byte. One new operative-body
+regression; all146 prior methods unchanged. All40 shared meanings/six semantic outputs,
+both members' detail/compact/choices, compiled graph, prior462 reviews/1438 sources,
+70 questions and three partial package flags preserved. Source/extent/claim/seal/raw
+hash/accounting integrity and final diff reviewed. Only proof changes in generated
+outputs. Mechanical validation does not prove semantic truth or acceptance.
+Core fd61bd31f8e93363a49df499939c97f515345771511298fc757f4657c1636c61;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+676 inventory/464 reviewed/40 interpreted/213 procedural/209 excluded/two expressive;
+212 ordinary unfinished/three partial packages/70 questions.1444 sources/1035 interpreted
+bindings/393 captures/319 extent objects/530 coordinates.37 episodes/80 observations/
+72 findings unchanged. Same-owner unique-action audit88 NoDefect/3Minor/11Major/1Critical;
+historical findings remain, final verdict null and readiness/publication false.
+
+Independent119 P3 funding-source recheck is resolved at7d7a360: CHC source, trafficking
+destination, assessment-based sizing and own annual bounds propagate; both historical
+phrases absent, both restoration negatives reject, prior source/qualifications/compact/
+choice/question/historical117/118 receipts intact. Bounded119 transfer component also
+clean: four bindings/eight coordinates/eleven reused witnesses, correct ends and all
+source-year/exception/trigger/threshold/notice distinctions; current application open.
+Independent120 complete EH source/output and priority review clean within scope.
+Fresh EH hashes verify; fresh Clerk raw bytes differ from historical hashes while
+metadata/member rows/totals agree. Never claim fresh Clerk raw-hash identity. New
+docs/review_packets/immigration_checkpoints119_120_independent_review.json records
+these separate scopes without rewriting historical receipts or accepting the corpus.
+121 exclusions remain pending independent review.
+
+Owner-read120 run37714594853 is terminal nine green, sealed with raw logs/hashes/counts
+and checkout provenance in immigration_delivery_checkpoint120_ci.json. Five feature-
+pinned/three synthetic/one mixed repair; synthetic10839f976348990ccbaab709570cf373f26ea554.
+Hosted301 differs from owner172 at120/173 here. No retry;121 needs own pushed-head CI.
+
+Next continue remaining six first-ten actions: tax residence, complete forestry,
+fentanyl exact import/export and amendment scope, February25 House budget versus later
+Senate version, original named CRA rule. Follow material claim dependencies and
+preserve literal/unresolved application questions. Then remaining package/State/
+migration/refugee/DHS/supplementary/counterpart coverage. Same accountable .w/ib owner,
+no current deadline; historical shutdown/pause evidence preserved. DraftPR198 boundary;
+no merge/deploy/production/editorial acceptance/promotion/publication.
+
+
+Final independent119/120 mechanical reports complete both bounded lanes.119 meaning
+reconstructs from component and two declared corrections;142 other prior methods
+unchanged, one prior literal corrected, two component guards/34 negatives and source-
+wording negatives verify. Pre-correction action hash reconstructs, but private archive
+was not independently observed.120 preserves old review objects,40 meanings,six
+outputs,test file,questions/partial flags/manifest; proof changes only source-capture
+hash. Both exact-head CI runs have nine green jobs with distinct checkout contexts.
+No independent full replay or acceptance; Clerk raw-byte caveat persists. Sealed
+119/120 supplemental receipt now includes this separate mechanical completion.

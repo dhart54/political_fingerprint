@@ -18,6 +18,22 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_research_security_witness_has_operating_body_not_table_of_contents(self):
+        source = getattr(self, 'research_subtitle_source', None)
+        if source is None:
+            source = next(s for s in self.values[1]['sources']
+                          if s['source_id'] == 'govinfo:pl117-167-subtitleD-research-security121')
+        text = source['text']
+        for section in range(10631, 10639):
+            self.assertEqual(text.count('SEC. ' + str(section) + '.'), 1)
+        self.assertIn('prohibit participation in any foreign talent recruitment program', text)
+        self.assertIn('shall not apply retroactively', text)
+        self.assertIn('preponderance of evidence', text)
+        self.assertIn('the 5-year period ending on the date of the enactment of this Act', text)
+        self.assertIn('does not target, stigmatize, or discriminate', text)
+        self.assertIn('(ix) having a conflict of interest or conflict of commitment', text)
+        self.assertIn('and (B) a program that is sponsored by', text)
+
     def test_hr1968_medical_transfer_keeps_chc_money_distinct_from_assessment_matching(self):
         action = getattr(self, 'hr1968_source_precision_action', None)
         if action is None:

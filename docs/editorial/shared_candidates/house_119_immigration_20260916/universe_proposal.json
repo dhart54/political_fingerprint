@@ -72,8 +72,8 @@
     "counts": {
       "procedural_context": 213,
       "interpreted_substantive_directional": 40,
-      "exact_action_ineligible": 207,
-      "source_unresolved": 214,
+      "exact_action_ineligible": 209,
+      "source_unresolved": 212,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -88,8 +88,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 213,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 207,
-    "unresolved_boundary_cases": 214,
+    "exact_action_ineligible_actions": 209,
+    "unresolved_boundary_cases": 212,
     "independent_episode_count": 37,
     "multi_action_episode_count": 3,
     "mechanism_types": [
@@ -399,6 +399,8 @@
         "house:119:1:64",
         "house:119:1:68",
         "house:119:1:72",
+        "house:119:1:73",
+        "house:119:1:74",
         "house:119:1:77",
         "house:119:1:78",
         "house:119:1:80",
@@ -580,8 +582,6 @@
         "house:119:1:33",
         "house:119:1:50",
         "house:119:1:71",
-        "house:119:1:73",
-        "house:119:1:74",
         "house:119:1:79",
         "house:119:1:100",
         "house:119:1:150",
@@ -1093,7 +1093,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "975555067f50b00e2edd5bb83f867e79b474824beee2e4ebcc58202b48da3e0c",
+  "universe_subject_sha256": "b928940d0e9d119a4aafc7b13d1f58c2322ef6368c209a538096cee1d9b87689",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -5652,8 +5652,8 @@
       "date": "2025-03-24",
       "measure": "bill_119_hr_1326",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete March24,2025 House EH was read for the exact suspension-and-passage action. H.R.1326 directs DOE/USDA cross-cutting research through an agreement with a competitive merit-reviewed process, identifies eligible institutional applications, collaborative focus areas/infrastructure/workforce, reimbursable interagency agreements and a two-year coordination report. Section2(f) expressly requires consistency with the CHIPS research-security subtitle; that material incorporation is traced rather than ignored. The complete original CHIPS division B title VI subtitle D and seven complete operative 2024 codified bodies were read. Federal-agency personnel participation restrictions and covered-individual malign-program restrictions remain distinct; the latter definition requires both the remuneration/obligation branch and the specified sponsorship branch. Disclosure, nonretroactive proposal/annual certifications, recipient training, qualified international-collaboration protections with listed-organization exceptions, contract/award interference-or-duplication remedies, privacy/evidence/rebuttal/appeal safeguards and race/ethnicity/national-origin nondiscrimination are retained. Named programs' listed-person/entity participation prohibition is not applied to every Federal program or every foreign person. The uncodified10635 five-year pre-enactment funding study and briefing/report requirements remain historical, not a newly restarted deadline. Foreign appointments, a foreign-student advice exception, international-travel training and the foreign-terrorist-organization definition do not themselves enact a new visa, admission, removal, work-authorization or personal immigration-status eligibility rule. Original10631(b)(2)'s printed title10 citation and current19231(b)(2)'s title42 disclosure citation are preserved without adjudicating a new legal-application requirement; no actual agency implementation or individual grant/list/status outcome is inferred. This is an interagency research and award-security mechanism, establishing no new Immigration & Border administration or personal immigration-status eligibility mechanism. No country-keyword, generic workforce reference or inherited Health membership supplies domain eligibility. No completed project or enacted outcome is asserted.",
       "source": {
         "source_id": "clerk:119:1:73",
         "url": "https://clerk.house.gov/evs/2025/roll073.xml",
@@ -5670,25 +5670,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete March24,2025 House EH was read for the exact suspension-and-passage action. H.R.1326 directs DOE/USDA cross-cutting research through an agreement with a competitive merit-reviewed process, identifies eligible institutional applications, collaborative focus areas/infrastructure/workforce, reimbursable interagency agreements and a two-year coordination report. Section2(f) expressly requires consistency with the CHIPS research-security subtitle; that material incorporation is traced rather than ignored. The complete original CHIPS division B title VI subtitle D and seven complete operative 2024 codified bodies were read. Federal-agency personnel participation restrictions and covered-individual malign-program restrictions remain distinct; the latter definition requires both the remuneration/obligation branch and the specified sponsorship branch. Disclosure, nonretroactive proposal/annual certifications, recipient training, qualified international-collaboration protections with listed-organization exceptions, contract/award interference-or-duplication remedies, privacy/evidence/rebuttal/appeal safeguards and race/ethnicity/national-origin nondiscrimination are retained. Named programs' listed-person/entity participation prohibition is not applied to every Federal program or every foreign person. The uncodified10635 five-year pre-enactment funding study and briefing/report requirements remain historical, not a newly restarted deadline. Foreign appointments, a foreign-student advice exception, international-travel training and the foreign-terrorist-organization definition do not themselves enact a new visa, admission, removal, work-authorization or personal immigration-status eligibility rule. Original10631(b)(2)'s printed title10 citation and current19231(b)(2)'s title42 disclosure citation are preserved without adjudicating a new legal-application requirement; no actual agency implementation or individual grant/list/status outcome is inferred. This is an interagency research and award-security mechanism, establishing no new Immigration & Border administration or personal immigration-status eligibility mechanism. No country-keyword, generic workforce reference or inherited Health membership supplies domain eligibility. No completed project or enacted outcome is asserted.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:73",
           "url": "https://clerk.house.gov/evs/2025/roll073.xml",
           "raw_sha256": "7c19acd20a2119c6856321f55e5c45f002d1178fe2c6ac7e5957934eb934b50f",
-          "governed_bytes_sha256": "f6d6dfb9e9e90da8708f9459d141a80083762509f931b887bcbe483c6ad47c30",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f6d6dfb9e9e90da8708f9459d141a80083762509f931b887bcbe483c6ad47c30"
+        },
+        {
+          "source_id": "govinfo:hr1326eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1326eh/html/BILLS-119hr1326eh.htm",
+          "raw_sha256": "c9afe7b1d675b6906723e23abc055287bdd5ed6ae82a384d0cbb46c7a8f1003b",
+          "governed_bytes_sha256": "07ea3a7eb8e6592f6499c3b89304c9592c153567057017f826c86b0b0bc014de"
+        },
+        {
+          "source_id": "govinfo:pl117-167-subtitleD-research-security121",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ167/html/PLAW-117publ167.htm",
+          "raw_sha256": "92fec394ce471eddaf306267366644bd70f27ecc385774b2bf0f5e2c0878db2d",
+          "governed_bytes_sha256": "78a49f495e7f6674eb8071ec71fe87a9ea40cbd4429604c258a020e8ceb1cd38"
+        },
+        {
+          "source_id": "govinfo:42usc19231-19237-2024-research-security121",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partC.htm",
+          "raw_sha256": "5fcbf8efad14d93e290026cf79c72cf534ecb88e14e660ffe70b3da8009a3f00",
+          "governed_bytes_sha256": "7f5ca276b57a95c13499a3156736b00c8aff3fbedc739de872e2a23a2bf0676b"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b14884c1a8969995eb2250e5e4d761bfc551f24eb9109accc675c4f06b6fb410"
       },
       "historical_raw_hash_matches": true
     },
@@ -5699,8 +5717,8 @@
       "date": "2025-03-25",
       "measure": "bill_119_hr_1534",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete March25,2025 House EH was read for exact suspension and passage. H.R.1534 adds a cement/concrete/asphalt research, development, demonstration, commercial-application and technical-assistance program, with institutional/entity eligibility, plans, selection/reporting/termination conditions, a seven-year sunset and an environmental-authority savings clause. The180-day program establishment trigger and later180-day strategic-plan trigger remain separate. Section40523(j)'s CHIPS consistency requirement and(h)(1)'s Manufacturing USA institute/financial-assistance references are traced. The complete original CHIPS division B title VI subtitle D and seven complete operative 2024 codified bodies were read. Federal-agency personnel participation restrictions and covered-individual malign-program restrictions remain distinct; the latter definition requires both the remuneration/obligation branch and the specified sponsorship branch. Disclosure, nonretroactive proposal/annual certifications, recipient training, qualified international-collaboration protections with listed-organization exceptions, contract/award interference-or-duplication remedies, privacy/evidence/rebuttal/appeal safeguards and race/ethnicity/national-origin nondiscrimination are retained. Named programs' listed-person/entity participation prohibition is not applied to every Federal program or every foreign person. The uncodified10635 five-year pre-enactment funding study and briefing/report requirements remain historical, not a newly restarted deadline. Foreign appointments, a foreign-student advice exception, international-travel training and the foreign-terrorist-organization definition do not themselves enact a new visa, admission, removal, work-authorization or personal immigration-status eligibility rule. Original10631(b)(2)'s printed title10 citation and current19231(b)(2)'s title42 disclosure citation are preserved without adjudicating a new legal-application requirement; no actual agency implementation or individual grant/list/status outcome is inferred. Complete278s(d)-(e) retain institutional scope, competitive merit review,5-7-year initial awards and qualified renewal, non-Federal support/matching requirements and express waivers/preferences. Institutional admissions and rural-location definitions are not new immigration admission rules. Manufacturing research workforce or overseas-retrofit/supply-chain cooperation does not establish an immigration or visa allocation. This exact action adds industrial research and assistance/security mechanisms, not a personal citizenship/immigration-status benefit condition or border-administration mandate. No actual award, designation, listing, compliance or enactment is inferred; prior Health membership is not inherited.",
       "source": {
         "source_id": "clerk:119:1:74",
         "url": "https://clerk.house.gov/evs/2025/roll074.xml",
@@ -5717,25 +5735,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete March25,2025 House EH was read for exact suspension and passage. H.R.1534 adds a cement/concrete/asphalt research, development, demonstration, commercial-application and technical-assistance program, with institutional/entity eligibility, plans, selection/reporting/termination conditions, a seven-year sunset and an environmental-authority savings clause. The180-day program establishment trigger and later180-day strategic-plan trigger remain separate. Section40523(j)'s CHIPS consistency requirement and(h)(1)'s Manufacturing USA institute/financial-assistance references are traced. The complete original CHIPS division B title VI subtitle D and seven complete operative 2024 codified bodies were read. Federal-agency personnel participation restrictions and covered-individual malign-program restrictions remain distinct; the latter definition requires both the remuneration/obligation branch and the specified sponsorship branch. Disclosure, nonretroactive proposal/annual certifications, recipient training, qualified international-collaboration protections with listed-organization exceptions, contract/award interference-or-duplication remedies, privacy/evidence/rebuttal/appeal safeguards and race/ethnicity/national-origin nondiscrimination are retained. Named programs' listed-person/entity participation prohibition is not applied to every Federal program or every foreign person. The uncodified10635 five-year pre-enactment funding study and briefing/report requirements remain historical, not a newly restarted deadline. Foreign appointments, a foreign-student advice exception, international-travel training and the foreign-terrorist-organization definition do not themselves enact a new visa, admission, removal, work-authorization or personal immigration-status eligibility rule. Original10631(b)(2)'s printed title10 citation and current19231(b)(2)'s title42 disclosure citation are preserved without adjudicating a new legal-application requirement; no actual agency implementation or individual grant/list/status outcome is inferred. Complete278s(d)-(e) retain institutional scope, competitive merit review,5-7-year initial awards and qualified renewal, non-Federal support/matching requirements and express waivers/preferences. Institutional admissions and rural-location definitions are not new immigration admission rules. Manufacturing research workforce or overseas-retrofit/supply-chain cooperation does not establish an immigration or visa allocation. This exact action adds industrial research and assistance/security mechanisms, not a personal citizenship/immigration-status benefit condition or border-administration mandate. No actual award, designation, listing, compliance or enactment is inferred; prior Health membership is not inherited.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:74",
           "url": "https://clerk.house.gov/evs/2025/roll074.xml",
           "raw_sha256": "90a42e29b27bcd53f235f7c93242b5a849045efd0d24bcc9a738f848ff543476",
-          "governed_bytes_sha256": "6981752ffde6aba90486f6aaef4e1be87c8bb467d4c31601ff94b9c501fb2730",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6981752ffde6aba90486f6aaef4e1be87c8bb467d4c31601ff94b9c501fb2730"
+        },
+        {
+          "source_id": "govinfo:hr1534eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1534eh/html/BILLS-119hr1534eh.htm",
+          "raw_sha256": "924243508025b5e8ceb2970e171ff165bb8a3340494964b5125e8f2cd62911a3",
+          "governed_bytes_sha256": "482fdc0d44e9735c58ed85e79497ef3a0f488dad36e3fcaa59b6c64933b99208"
+        },
+        {
+          "source_id": "govinfo:pl117-167-subtitleD-research-security121",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ167/html/PLAW-117publ167.htm",
+          "raw_sha256": "92fec394ce471eddaf306267366644bd70f27ecc385774b2bf0f5e2c0878db2d",
+          "governed_bytes_sha256": "78a49f495e7f6674eb8071ec71fe87a9ea40cbd4429604c258a020e8ceb1cd38"
+        },
+        {
+          "source_id": "govinfo:42usc19231-19237-2024-research-security121",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partC.htm",
+          "raw_sha256": "5fcbf8efad14d93e290026cf79c72cf534ecb88e14e660ffe70b3da8009a3f00",
+          "governed_bytes_sha256": "7f5ca276b57a95c13499a3156736b00c8aff3fbedc739de872e2a23a2bf0676b"
+        },
+        {
+          "source_id": "govinfo:15usc278sde-2024-manufacturing-support121",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap7-sec278s.htm",
+          "raw_sha256": "f30e3ceee7a8fad1f5336db989238f88575bd2008cd02002dd1745611f379441",
+          "governed_bytes_sha256": "7db338e5cc6bb5a508d7fcb710866406555557fde2c8f062f470344da92f751b"
+        },
+        {
+          "source_id": "govinfo:20usc1001-general-institution",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapI-partA-sec1001.htm",
+          "raw_sha256": "58b11868f544031e7cc3cbd41d01a5cb4ba591a1dc0db799cb17a63e7cd15ae6",
+          "governed_bytes_sha256": "603badac2ccc42c1a22bc8b7f888fa13e4d111db965032a8f5168baabbbf6baa"
+        },
+        {
+          "source_id": "govinfo:7usc1991-2024-rural-definitions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/pdf/USCODE-2024-title7-chap50-subchapIV-sec1991.pdf",
+          "raw_sha256": "ab991633f27601858ffadd42068681f53601137807f2ac379a83233bd23b06cf",
+          "governed_bytes_sha256": "0aad23fcf7194a67800f510b284daa1dda77e9c62e82349906a09fb7e9c79ef4"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8f49b6f0488d2fd1ad38a93b33afee60fc4fd9e4266c182ac1b44b0f4fcf8ea4"
       },
       "historical_raw_hash_matches": true
     },
@@ -40691,8 +40745,6 @@
     "house:119:1:33",
     "house:119:1:50",
     "house:119:1:71",
-    "house:119:1:73",
-    "house:119:1:74",
     "house:119:1:79",
     "house:119:1:100",
     "house:119:1:150",
@@ -40916,6 +40968,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "2e3331a9719c590c01fed32328206a24b44d88fa7b05ac81b37da453b786e56f",
-  "membership_review_sha256": "3094d9dcd8ebfe499c85c858eecf249d4f902f50650ae4db42011f57ff61726b"
+  "proposal_sha256": "42ae3a38612458fc35404af8f8690ef2261b351e8214f13b9fad1089e677d670",
+  "membership_review_sha256": "e0f3207d1e8e1246ad05857cdb0eb96aad2f00fbc202ca850239e93078291879"
 }
