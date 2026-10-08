@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 230,
-      "source_unresolved": 173,
+      "exact_action_ineligible": 233,
+      "source_unresolved": 170,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 230,
-    "unresolved_boundary_cases": 173,
+    "exact_action_ineligible_actions": 233,
+    "unresolved_boundary_cases": 170,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -503,6 +503,7 @@
         "house:119:1:286",
         "house:119:1:287",
         "house:119:1:292",
+        "house:119:1:297",
         "house:119:1:300",
         "house:119:1:301",
         "house:119:1:303",
@@ -523,6 +524,7 @@
         "house:119:1:336",
         "house:119:1:342",
         "house:119:1:345",
+        "house:119:1:346",
         "house:119:1:347",
         "house:119:2:8",
         "house:119:2:9",
@@ -582,6 +584,7 @@
         "house:119:2:184",
         "house:119:2:192",
         "house:119:2:199",
+        "house:119:2:222",
         "house:119:2:225",
         "house:119:2:226",
         "house:119:2:233",
@@ -676,7 +679,6 @@
         "house:119:1:294",
         "house:119:1:295",
         "house:119:1:296",
-        "house:119:1:297",
         "house:119:1:298",
         "house:119:1:299",
         "house:119:1:320",
@@ -687,7 +689,6 @@
         "house:119:1:330",
         "house:119:1:332",
         "house:119:1:334",
-        "house:119:1:346",
         "house:119:1:349",
         "house:119:1:351",
         "house:119:1:352",
@@ -755,7 +756,6 @@
         "house:119:2:218",
         "house:119:2:220",
         "house:119:2:221",
-        "house:119:2:222",
         "house:119:2:223",
         "house:119:2:224",
         "house:119:2:227",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "c4d112994b2d57dd383c41fbaeb6b20bdfc2f36c96870293ba29b3921509241d",
+  "universe_subject_sha256": "00ce90add710ad4775e5d9343ba24dff693302c3ecb8323c6ca11be40f482c41",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -19741,8 +19741,8 @@
       "date": "2025-11-18",
       "measure": "bill_119_hres_888",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
       "source": {
         "source_id": "clerk:119:1:297",
         "url": "https://clerk.house.gov/evs/2025/roll297.xml",
@@ -19759,25 +19759,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.Res.888 IH is bound to the actual Clerk-read floor text and roll297 adoption question,not merely its introduced title. The proposal would censure/condemn a Delegate,request an Ethics investigation and remove her from the specified Intelligence Committee. Printed operative clauses match; the Record distinguishes the earlier motion to refer from later adoption,and records that the resolution was NOT agreed to. No completed censure,committee removal,expulsion,loss of office or service change follows from this failed proposal. The preamble remains the proponent's allegations and characterization,not verified conduct,corruption,motive or character findings. Foreign/international associations and criminal terminology do not enact immigration admission,status,removal,benefits or border-person rules. The exact internal House disciplinary proposal is outside Immigration counting under existing functional standards. FousheeNay/MassieYea are observations on the failed whole proposal,not a personal character judgement or a stance on another measure.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:297",
           "url": "https://clerk.house.gov/evs/2025/roll297.xml",
           "raw_sha256": "f2ea5d1bef50f3792de75192189e435eb6f90741c6a29019fb47da56ab2d3589",
-          "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0cd3988d8f3de923335cc13072ad108a1f974866f165efd7cf3d13ccce27a534"
+        },
+        {
+          "source_id": "govinfo:hres888ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres888ih/html/BILLS-119hres888ih.htm",
+          "raw_sha256": "5ee6367ad49b76721200a066fc9691174f76abaa4cfbf580f55bd261ef7a2d4d",
+          "governed_bytes_sha256": "13fb19ab1c489ad7db9018ad459a1dd7a419b11be8baed2b3e3c67c7c51a6de9"
+        },
+        {
+          "source_id": "congressional-record:hres888-floor-choice-operative140",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+          "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+          "governed_bytes_sha256": "3887e7185a4757af18afd78caca8e544fbbd77fa28349c572517708d57d62c47"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "db1bd539b581fa73b4c600102043ced580e61102666efa608bf6034ec4f023b7"
       },
       "historical_raw_hash_matches": true
     },
@@ -22386,8 +22398,8 @@
       "date": "2025-12-17",
       "measure": "bill_119_hconres_64",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
       "source": {
         "source_id": "clerk:119:1:346",
         "url": "https://clerk.house.gov/evs/2025/roll346.xml",
@@ -22404,25 +22416,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.Con.Res.64 IH is bound to the considered-read full floor text and failed roll346 adoption,distinct from the separate H.Con.Res.61 question and debate. Under1544(c),the proposal directs removal of use of UnitedStatesArmedForces from hostilities within/against Venezuela unless explicitly authorized by war declaration or specific statutory force authorization. The materially referenced WarPowers scope retains its report-conditioned termination/removal framework and exceptions without resolving constitutional enforceability. This exact proposal does not print a new fixed withdrawal deadline or import the separate imminent-defense,regional-presence or intelligence exceptions stated in later86/89proposals. The House did not agree to64; no Senate concurrence,executed withdrawal,actual attack,force authorization or completed military/legal outcome is inferred. Armed-force removal is distinct from human immigration removal or migration administration; foreign-country/hostilities terminology supplies no additional Immigration rule. Ineligible under existing functional standards. Both recorded Yea votes are on this exact failed whole proposal,not a vote on61 or a broader policy trajectory.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:346",
           "url": "https://clerk.house.gov/evs/2025/roll346.xml",
           "raw_sha256": "e7a665f5385e0a4d6da15affde6bf744f682b20be5e57e7767959f9ce9b0dab9",
-          "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "729250973d21ce1239fd581ddc145aad73d6c3af8920604109b14c97a935dd0f"
+        },
+        {
+          "source_id": "govinfo:hconres64ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres64ih/html/BILLS-119hconres64ih.htm",
+          "raw_sha256": "1589636a0626540559515255aca9b553ead24ffbf3d295f1cd0313be01adbb15",
+          "governed_bytes_sha256": "587f0e8e276ac92ee3d4ff23ab08c9b8f05eafc2530adb4c3062aafe80ffd85e"
+        },
+        {
+          "source_id": "congressional-record:hconres64-floor-choice-operative140",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-17/pdf/CREC-2025-12-17-house.pdf",
+          "raw_sha256": "88456a7c613801c95439bbcf149fff6c1c2525e8f80f3d5bd608c586446c4591",
+          "governed_bytes_sha256": "e9b1f61a562d8946a7d49ea02a72621171db4efb133ca6842221f7c7008331e8"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a7b647d603516d4178bfa5001ec0541e0e28c10285a8f827b0fd663f236383fe"
       },
       "historical_raw_hash_matches": true
     },
@@ -36213,8 +36243,8 @@
       "date": "2026-06-11",
       "measure": "bill_119_hres_1335",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete adopted H.Res.1335 EH has three resolved clauses: condemnation of fraud,belief in governmentwide prevention reforms,and belief that Federal program eligibility/spending should be verified before payment. These are House expressions,not enactment of benefit eligibility,verification procedures,funding suspension or a new enforcement power. Preambular accounts,estimates,investigations and allegations remain attributed context,not established findings of personal wrongdoing or causality. The anecdote about two foreign nationals does not set an immigration-person rule; Minnesota's Department of Human Services is distinct from Federal HomelandSecurity. Referenced existing orders/programs/reports are not adopted,amended or independently verified as events by this resolution. The exact broad fraud expression does not establish substantive Immigration admission,status,removal,visa/nationality or benefit eligibility meaning. Outside Immigration counting under the existing functional boundary,without denying the resolution's expressive nature or importing general fraud/health programs as directional migration evidence. FousheeNay/MassieYea are whole-resolution observations,not a corruption claim or inferred member motive.",
       "source": {
         "source_id": "clerk:119:2:222",
         "url": "https://clerk.house.gov/evs/2026/roll222.xml",
@@ -36231,25 +36261,31 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete adopted H.Res.1335 EH has three resolved clauses: condemnation of fraud,belief in governmentwide prevention reforms,and belief that Federal program eligibility/spending should be verified before payment. These are House expressions,not enactment of benefit eligibility,verification procedures,funding suspension or a new enforcement power. Preambular accounts,estimates,investigations and allegations remain attributed context,not established findings of personal wrongdoing or causality. The anecdote about two foreign nationals does not set an immigration-person rule; Minnesota's Department of Human Services is distinct from Federal HomelandSecurity. Referenced existing orders/programs/reports are not adopted,amended or independently verified as events by this resolution. The exact broad fraud expression does not establish substantive Immigration admission,status,removal,visa/nationality or benefit eligibility meaning. Outside Immigration counting under the existing functional boundary,without denying the resolution's expressive nature or importing general fraud/health programs as directional migration evidence. FousheeNay/MassieYea are whole-resolution observations,not a corruption claim or inferred member motive.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:222",
           "url": "https://clerk.house.gov/evs/2026/roll222.xml",
           "raw_sha256": "b5651aa695afa22ced4de21fbc94ebaad39884b026958bb9eb89af68e9d6f32f",
-          "governed_bytes_sha256": "b705403e2d8cadd68860b015f6be752e24ccc678ac6b3abc58e56c11d71f55ff",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "b705403e2d8cadd68860b015f6be752e24ccc678ac6b3abc58e56c11d71f55ff"
+        },
+        {
+          "source_id": "govinfo:hres1335eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1335eh/html/BILLS-119hres1335eh.htm",
+          "raw_sha256": "71ff52f4ea7d2f50f339f7fe2d36e16820837eaf1ae76428c0270806d083ec1a",
+          "governed_bytes_sha256": "d0e9e745d6fa4bd4dfe173e949529b2492fa017e3007ce29739e1e573adb2264"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5e969fcb4b1baadfa9d91ee8f7d327cf2fc6ef1ea08e7b4949a383b3f8ebe328"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:222",
@@ -41622,7 +41658,6 @@
     "house:119:1:294",
     "house:119:1:295",
     "house:119:1:296",
-    "house:119:1:297",
     "house:119:1:298",
     "house:119:1:299",
     "house:119:1:320",
@@ -41633,7 +41668,6 @@
     "house:119:1:330",
     "house:119:1:332",
     "house:119:1:334",
-    "house:119:1:346",
     "house:119:1:349",
     "house:119:1:351",
     "house:119:1:352",
@@ -41701,7 +41735,6 @@
     "house:119:2:218",
     "house:119:2:220",
     "house:119:2:221",
-    "house:119:2:222",
     "house:119:2:223",
     "house:119:2:224",
     "house:119:2:227",
@@ -41756,6 +41789,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "046234e0e8921265a9ace44b0c388fb9f01a4f35b69fd11f7107783a5fd801e2",
-  "membership_review_sha256": "da99ee944c7ae04565d24f22854507b46c0965135562e56f1857b04264b83565"
+  "proposal_sha256": "b7a2e7e2fefb89da017bd9b5907376efe35ea2b6b4d49d6aa759531d352889c0",
+  "membership_review_sha256": "c3d126872a6b468788633309341ebd77084a5f2497afb9851b57ff15e200551e"
 }

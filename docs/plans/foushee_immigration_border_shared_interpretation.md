@@ -9290,3 +9290,55 @@ no retry.138 independent candidate review remains pending;139 needs its own CI.
 133 retrieval restrictions,qualified166,frozen265 and unaccepted747 remain unchanged.
 Continue bounded ordinary/material-package work under existing shutdown controls
 and reserved publication/production/merge/deployment gates.
+
+
+### Local successor checkpoint 140: failed proposals and broad House expression
+
+House119/1/297 H.Res.888 IH is tied to the actual Clerk-read resolution and failed
+adoption,not merely an introduced title. Complete printed operative clauses match;
+earlier referral and later counterfactual explanation are distinct. Proposed censure,
+investigation and committee removal are not completed sanctions,expulsion or service
+change. Preambular allegations are attributed source context,not personal wrongdoing,
+corruption,motive or character findings. No human immigration rule is enacted.
+
+346 H.Con.Res.64 IH matches the full considered-read floor body and failed adoption.
+It concerns ArmedForces use/withdrawal under1544(c),with its stated war/authorization
+condition,not human immigration removal. No completed withdrawal,Senate concurrence,
+fixed new deadline,actual attack or constitutional enforceability inferred. Separate61
+question and later86/89exceptions are not inherited. The first broad call-up selector
+found61; operative-text equality rejected it BEFORE candidate/private-pool mutation.
+Correct64selection and a wrong61controlled negative pass; initial helper preserved.
+
+House119/2/222 H.Res.1335 EH condemns fraud and expresses beliefs about prevention
+and prepayment verification. It does not legislate eligibility,spending suspension or
+new powers,adopt existing orders/reports,or establish preambular allegations/events.
+Two foreign nationals in an anecdote do not enact immigration-person criteria;
+MinnesotaHumanServices is distinct from FederalHomelandSecurity. Whole observations
+remain FousheeNay/MassieYea;297Nay/Yea and346Yea/Yea retained without broader inference.
+All three are outside Immigration counting under existing functional standards.
+
+506 reviewed/170 ordinary remain;44 interpreted/227 procedural/233 excluded/two
+expressive.1534 sources/426 captures/1108 interpreted bindings/349 extent objects/
+587 coordinates;40 episodes/88 observations/78 findings unchanged. Five cached-primary
+registrations,two floor derivatives/four exact intervals,zero new acquisitions.
+Prior503 reviews/1529 sources/426 captures/44 meanings/six semantic outputs/78 findings,
+70 questions and three partial flags exact.178 tests in14.171s,reference validator,
+seven checks and seven-file raw replay pass. Audit127NoDefect/6Minor/11Major/1Critical,
+historical severities/distinct finding counts preserved;no full-corpus verdict.
+
+Incoming138 bounded source/domain/mechanical pass is sealed with its actual limits.
+Entire47842-character mining-rule normalized text,digest and length match,but the
+historical raw hash was NOT reproduced. Two fresh responses differ in Cloudflare
+email-obfuscation attributes;this does NOT establish historical byte differences.
+Two full-parent metadata object seals remain independently unverified,despite
+original bytes,text digests and derivative intervals verifying. No freshClerk or
+reviewer full-suite rerun. Owner178tests/replay/dependency recovery remain attributed;
+nine137log hashes/lengths and seven CRLF output hashes verify independently. Forestry25
+remains pending,23private captures unregistered,and charter dependency is not declared
+unavailable. No editorial acceptance;133 retrieval restrictions preserved.
+
+139 CI37752134541 ninegreen,five feature-pinned/three synthetic/one mixed;decoded
+logs/checkouts/skips sealed,hosted307 distinct from local178,repair13/20,no retry.
+139/140 independent review remains pending;140 needs its own CI. Qualified166,
+frozen265,unaccepted747 and all reserved gates remain. Continue bounded ordinary,
+forestry and material-package work under unchanged shutdown controls.

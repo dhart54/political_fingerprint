@@ -1,9 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint139 has44 meanings/503 reviews/173 ordinary pending.
-Qualified S.331 roll166 has a bounded independent canonical-output pass; no final
-full-corpus verdict or editorial acceptance.138/139 ordinary reviews remain pending;
-forestry25 remains held.
+Current candidate checkpoint140 has44 meanings/506 reviews/170 ordinary pending.
+Qualified166 and138 bounded passes are recorded with actual provenance limits;
+139/140 review remains pending. Forestry25 held;no full-corpus verdict or acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8213,3 +8212,6 @@ Checkpoint138: exact court-location,whale-deadline and mining-permitting exclusi
 
 
 Checkpoint139: employee-conflict,qualified ESOP-valuation and coin-program exclusions225/314/182;503 reviewed/173 ordinary/1529 sources/426 captures. Literal2028 coin period,MassieNotVoting,conditional conflicts and IRS job-aid authority limit retained;complete vote-date CFR replaces partialPDF context. Seven originals/eight derivatives/nine reproduced pages and partial-boundary QA verify.178 tests in13.997s/reference/seven checks/raw replay pass;44 meanings/six semantic outputs/78 findings/70 questions/three partial flags unchanged.138 ownninegreen sealed,138/139 independent review pending;forestry25hold and133 restrictions retained. Candidate-only.
+
+
+Checkpoint140: failed disciplinary297/failed military346 and broad expressive fraud222 exclusions;506 reviewed/170 ordinary/1534 sources/426 captures. Printed floor operatives and outcomes bind;wrong61selector rejected before candidate mutation;no completed sanction,service change,withdrawal or truth of allegations. Two floor derivatives/four intervals,zero acquisitions.178 tests in14.171s/reference/seven checks/raw replay pass;44 meanings/six outputs/78 findings/70 questions/three flags unchanged.138 bounded pass recorded with mining raw-unreproduced/two parent-seal limits;139ninegreen sealed.139/140 review pending,forestry25hold and133restrictions retained;candidate-only.
