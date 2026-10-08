@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 250,
-      "source_unresolved": 153,
+      "exact_action_ineligible": 252,
+      "source_unresolved": 151,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 250,
-    "unresolved_boundary_cases": 153,
+    "exact_action_ineligible_actions": 252,
+    "unresolved_boundary_cases": 151,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -488,6 +488,8 @@
         "house:119:1:217",
         "house:119:1:219",
         "house:119:1:222",
+        "house:119:1:227",
+        "house:119:1:228",
         "house:119:1:229",
         "house:119:1:230",
         "house:119:1:231",
@@ -660,8 +662,6 @@
         "house:119:1:224",
         "house:119:1:225",
         "house:119:1:226",
-        "house:119:1:227",
-        "house:119:1:228",
         "house:119:1:237",
         "house:119:1:239",
         "house:119:1:244",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "b4dff787d19322570c7f596b15fdb84f84ea3d43fe9994e02bd14476fa1c9521",
+  "universe_subject_sha256": "c4736fdfd3061cad15003d89436a132fcfb942780ea5e5bb58d51e6b177e2819",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -16227,8 +16227,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Perry Report23 (Clerk ordinal4, roll227) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT to implement or enforce the complete named April21,2021 final rule,86FR20628. It is not a CRA resolution, general rule repeal, elimination of every source of implementation funds, automatic permit approval or a finding about state-law powers. The referenced publication adds the Basin HVHF prohibition and also changes unrelated401.35 project-review classifications and401.43 regulatory-fee provisions; a fracking-only description omits material scope. Complete published440 definitions preserve300000-or-more gallons of WATER across all well-completion stages, fresh/recycled, vertical/directional/horizontal, irrespective of additives, and hydrocarbon-bearing-rock/Basin limits. Published fee exceptions/asterisks remain qualified; unchanged omitted provisions are not invented. Withdrawn proposed water-export/wastewater-import/treatability provisions are not adopted by this2021 rule; later separate rules are not imported. Person includes natural persons and public/private entities; that broad water-project definition does not create immigration admission/status/nationality/removal/work-authorization criteria. Fluid migration and basin/political boundaries are physical/geographic context. The adjacent SSA rule and its three leading page4 footnotes are excluded from the governed DRBC scope. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
       "source": {
         "source_id": "clerk:119:1:227",
         "url": "https://clerk.house.gov/evs/2025/roll227.xml",
@@ -16245,25 +16245,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Perry Report23 (Clerk ordinal4, roll227) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT to implement or enforce the complete named April21,2021 final rule,86FR20628. It is not a CRA resolution, general rule repeal, elimination of every source of implementation funds, automatic permit approval or a finding about state-law powers. The referenced publication adds the Basin HVHF prohibition and also changes unrelated401.35 project-review classifications and401.43 regulatory-fee provisions; a fracking-only description omits material scope. Complete published440 definitions preserve300000-or-more gallons of WATER across all well-completion stages, fresh/recycled, vertical/directional/horizontal, irrespective of additives, and hydrocarbon-bearing-rock/Basin limits. Published fee exceptions/asterisks remain qualified; unchanged omitted provisions are not invented. Withdrawn proposed water-export/wastewater-import/treatability provisions are not adopted by this2021 rule; later separate rules are not imported. Person includes natural persons and public/private entities; that broad water-project definition does not create immigration admission/status/nationality/removal/work-authorization criteria. Fluid migration and basin/political boundaries are physical/geographic context. The adjacent SSA rule and its three leading page4 footnotes are excluded from the governed DRBC scope. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:227",
           "url": "https://clerk.house.gov/evs/2025/roll227.xml",
           "raw_sha256": "35a33c888efcef12dac2c06df2c49ec9b8fbbbb77fa0a3577ce3b6a471ae5457",
-          "governed_bytes_sha256": "84b974597356c2fc4ba2ed266031e8d6d1c01c29aac1b9cdd2c0418a0972e3d5",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "84b974597356c2fc4ba2ed266031e8d6d1c01c29aac1b9cdd2c0418a0972e3d5"
+        },
+        {
+          "source_id": "congressional-record:4553-amend23-roll227-choice150",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "781e9aa8b8ba6cfba0b3a20b7dd30d864fba0164f154b58b637b8b7bcbe2d1bb"
+        },
+        {
+          "source_id": "house-rules:119232-amend23-operative150",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "9fbc91eb0acb4cec290e798edfff56c043d9c7a7d778906ced8e1e976bb2d0ac"
+        },
+        {
+          "source_id": "federal-register:2021-07998-DRBC-only150",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2021-04-21/pdf/2021-07998.pdf",
+          "raw_sha256": "62124fc747e7aba6a6d6eaca9ec81d7ccae3820d4862e19726c6ddfcf818be39",
+          "governed_bytes_sha256": "a5634013f61f6c02b20c534e73fe4b4d4f92df926caf69ea44525a8241c6087b"
+        },
+        {
+          "source_id": "drbc:compact-material-water-budget-reservations150",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "raw_sha256": "7b0a20ba6c0e2c7578d345baf803d1e24b28fb00ed037f2e9b528d55c62d7a71",
+          "governed_bytes_sha256": "8e9bb9b270dd562bb7eed6209cbfd2a3c205353f052062a606f7ac988d7cb5db"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "85e2da24af111fc80e4fab39c530dafac80e7dcaec6f6f968aa9bc52c09e3772"
       },
       "historical_raw_hash_matches": true
     },
@@ -16274,8 +16298,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Perry Report24 (Clerk ordinal5, roll228) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT for the DRBC generally. It is broader than Report23s implementation/enforcement restriction on one named rule, but is not a dollar-specific appropriation deletion, complete ban on all State/private/other-federal resources, legal dissolution of the Commission or permanent compact repeal. Material compact definitions/functions, project referral/approval, substantial-water-impact/comprehensive-plan review, water supply/pollution/flood/watershed management, public/private financing and annual budgets establish the Commissions water-resource function. Federal reservations retain appropriation controls, project-authorization/state-only limits, existing withdrawal/navigation and national-emergency powers, qualified services, labor/contract conditions and other-agency/sovereign/statutory boundaries. Printed1961membership/repealed15.1d are historical; the editor note records later federal-member changes and is not a new amendment/current-all-law certification. Congressional and Court/decree limitations remain without adjudicating their application. This Act-only financial restriction does not change a human immigration eligibility criterion, create a new water-service entitlement or settle individual employment/contract/permit/citizenship status. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
       "source": {
         "source_id": "clerk:119:1:228",
         "url": "https://clerk.house.gov/evs/2025/roll228.xml",
@@ -16292,25 +16316,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Perry Report24 (Clerk ordinal5, roll228) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT for the DRBC generally. It is broader than Report23s implementation/enforcement restriction on one named rule, but is not a dollar-specific appropriation deletion, complete ban on all State/private/other-federal resources, legal dissolution of the Commission or permanent compact repeal. Material compact definitions/functions, project referral/approval, substantial-water-impact/comprehensive-plan review, water supply/pollution/flood/watershed management, public/private financing and annual budgets establish the Commissions water-resource function. Federal reservations retain appropriation controls, project-authorization/state-only limits, existing withdrawal/navigation and national-emergency powers, qualified services, labor/contract conditions and other-agency/sovereign/statutory boundaries. Printed1961membership/repealed15.1d are historical; the editor note records later federal-member changes and is not a new amendment/current-all-law certification. Congressional and Court/decree limitations remain without adjudicating their application. This Act-only financial restriction does not change a human immigration eligibility criterion, create a new water-service entitlement or settle individual employment/contract/permit/citizenship status. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:228",
           "url": "https://clerk.house.gov/evs/2025/roll228.xml",
           "raw_sha256": "63ffe49ae4fcc3c5f36228de5f68882d29df07c7d86dc03d0bad78ae2046a4f2",
-          "governed_bytes_sha256": "e6e0153b145045c428dab2d8a3d74a0191945a292b2c6b770dbd6a4c1e10e698",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "e6e0153b145045c428dab2d8a3d74a0191945a292b2c6b770dbd6a4c1e10e698"
+        },
+        {
+          "source_id": "congressional-record:4553-amend24-roll228-choice150",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "c29bbfb4ad1801203ed21ca2a6f9db107ba590ff20d2b6c52cd7f44b861cccdf"
+        },
+        {
+          "source_id": "house-rules:119232-amend24-operative150",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "73c056a4c2a11ff1235bc32bc941353f949d141e782308268f2d966f008fba1d"
+        },
+        {
+          "source_id": "drbc:compact-material-water-budget-reservations150",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "raw_sha256": "7b0a20ba6c0e2c7578d345baf803d1e24b28fb00ed037f2e9b528d55c62d7a71",
+          "governed_bytes_sha256": "8e9bb9b270dd562bb7eed6209cbfd2a3c205353f052062a606f7ac988d7cb5db"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "783bb9f3418c7669eea43db3a782411f8fcaea58577c9d33e7b0b7457b80ebf0"
       },
       "historical_raw_hash_matches": true
     },
@@ -42120,8 +42162,6 @@
     "house:119:1:224",
     "house:119:1:225",
     "house:119:1:226",
-    "house:119:1:227",
-    "house:119:1:228",
     "house:119:1:237",
     "house:119:1:239",
     "house:119:1:244",
@@ -42270,6 +42310,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "49497f86fa6d22ba756b10f0836f5339597278a2180e8355a4fd92db7e368a01",
-  "membership_review_sha256": "f06950acb889e009a1f82248c1ea7d1a26ba89cf2d47b3a1e8d9771a54dd2d97"
+  "proposal_sha256": "8bd40f9a35f0d15ed067d1dbf899cdad2a8059ae9019b431dd5de6792a5cc9f4",
+  "membership_review_sha256": "72cf6c258864d681b79dcb0e5a22a321923ca1d94be18cf3f66877868776d992"
 }

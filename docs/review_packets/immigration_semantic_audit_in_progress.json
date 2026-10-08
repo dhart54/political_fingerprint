@@ -14846,10 +14846,156 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:227",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "227",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "4",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 23",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "3-Sep-2025",
+        "action-time": "9:45 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Perry Report23 (Clerk ordinal4, roll227) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT to implement or enforce the complete named April21,2021 final rule,86FR20628. It is not a CRA resolution, general rule repeal, elimination of every source of implementation funds, automatic permit approval or a finding about state-law powers. The referenced publication adds the Basin HVHF prohibition and also changes unrelated401.35 project-review classifications and401.43 regulatory-fee provisions; a fracking-only description omits material scope. Complete published440 definitions preserve300000-or-more gallons of WATER across all well-completion stages, fresh/recycled, vertical/directional/horizontal, irrespective of additives, and hydrocarbon-bearing-rock/Basin limits. Published fee exceptions/asterisks remain qualified; unchanged omitted provisions are not invented. Withdrawn proposed water-export/wastewater-import/treatability provisions are not adopted by this2021 rule; later separate rules are not imported. Person includes natural persons and public/private entities; that broad water-project definition does not create immigration admission/status/nationality/removal/work-authorization criteria. Fluid migration and basin/political boundaries are physical/geographic context. The adjacent SSA rule and its three leading page4 footnotes are excluded from the governed DRBC scope. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
+      "finding": "ThisAct-onlyfundingridersdistinguishcomplete2021ruleimplementation/enforcement fromCommissiongenerally. Preservepublished401/440/unadoptedproposal/SSA-adjacency andmaterialcompactwater/budget/federalreservations;notgeneralrepeal/allfundingabolition/newhumanImmigrationrule.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "85e2da24af111fc80e4fab39c530dafac80e7dcaec6f6f968aa9bc52c09e3772",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:227",
+          "url": "https://clerk.house.gov/evs/2025/roll227.xml",
+          "governed_bytes_sha256": "84b974597356c2fc4ba2ed266031e8d6d1c01c29aac1b9cdd2c0418a0972e3d5",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "congressional-record:4553-amend23-roll227-choice150",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "governed_bytes_sha256": "781e9aa8b8ba6cfba0b3a20b7dd30d864fba0164f154b58b637b8b7bcbe2d1bb",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "house-rules:119232-amend23-operative150",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "9fbc91eb0acb4cec290e798edfff56c043d9c7a7d778906ced8e1e976bb2d0ac",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "federal-register:2021-07998-DRBC-only150",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2021-04-21/pdf/2021-07998.pdf",
+          "governed_bytes_sha256": "a5634013f61f6c02b20c534e73fe4b4d4f92df926caf69ea44525a8241c6087b",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "drbc:compact-material-water-budget-reservations150",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "governed_bytes_sha256": "8e9bb9b270dd562bb7eed6209cbfd2a3c205353f052062a606f7ac988d7cb5db",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:228",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "228",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "5",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 24",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "3-Sep-2025",
+        "action-time": "9:48 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Perry Report24 (Clerk ordinal5, roll228) proposes an end-of-bill rider prohibiting use of funds made available BY THIS ACT for the DRBC generally. It is broader than Report23s implementation/enforcement restriction on one named rule, but is not a dollar-specific appropriation deletion, complete ban on all State/private/other-federal resources, legal dissolution of the Commission or permanent compact repeal. Material compact definitions/functions, project referral/approval, substantial-water-impact/comprehensive-plan review, water supply/pollution/flood/watershed management, public/private financing and annual budgets establish the Commissions water-resource function. Federal reservations retain appropriation controls, project-authorization/state-only limits, existing withdrawal/navigation and national-emergency powers, qualified services, labor/contract conditions and other-agency/sovereign/statutory boundaries. Printed1961membership/repealed15.1d are historical; the editor note records later federal-member changes and is not a new amendment/current-all-law certification. Congressional and Court/decree limitations remain without adjudicating their application. This Act-only financial restriction does not change a human immigration eligibility criterion, create a new water-service entitlement or settle individual employment/contract/permit/citizenship status. Complete own floor operative equals its numbered Rules Report after formatting, line-hyphenation and empty-section-placeholder normalization; no substantive wording is removed. Both own recorded votes failed, controlling over earlier voice-aye announcements. Foushee No/Massie Aye remain observations on each exact amendment, not final bill passage, enactment, actual spending/savings, fracking/water/health outcomes, member motives or component preferences. Material reviewed scopes do not certify all parent pages, complete Comment-and-Response science, all current law/fees/cross-references, personal eligibility or any actual award/permit decision. No generic agency/public-benefit/country/person bridge. Ineligible under established functional standards; noncounting candidate only.",
+      "finding": "ThisAct-onlyfundingridersdistinguishcomplete2021ruleimplementation/enforcement fromCommissiongenerally. Preservepublished401/440/unadoptedproposal/SSA-adjacency andmaterialcompactwater/budget/federalreservations;notgeneralrepeal/allfundingabolition/newhumanImmigrationrule.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "783bb9f3418c7669eea43db3a782411f8fcaea58577c9d33e7b0b7457b80ebf0",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:228",
+          "url": "https://clerk.house.gov/evs/2025/roll228.xml",
+          "governed_bytes_sha256": "e6e0153b145045c428dab2d8a3d74a0191945a292b2c6b770dbd6a4c1e10e698",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "congressional-record:4553-amend24-roll228-choice150",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "governed_bytes_sha256": "c29bbfb4ad1801203ed21ca2a6f9db107ba590ff20d2b6c52cd7f44b861cccdf",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "house-rules:119232-amend24-operative150",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "73c056a4c2a11ff1235bc32bc941353f949d141e782308268f2d966f008fba1d",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        },
+        {
+          "source_id": "drbc:compact-material-water-budget-reservations150",
+          "url": "https://nj.gov/drbc/library/documents/compact.pdf",
+          "governed_bytes_sha256": "8e9bb9b270dd562bb7eed6209cbfd2a3c205353f052062a606f7ac988d7cb5db",
+          "reviewed_extent": "Completeexactrider/ownquestion/result/Report,wholeidentifiedDRBCruleexcludingSSAadjacency andnamedmaterialcompactintervals;notallparent/currentindividualpermit/contract/law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 142,
+    "No Defect": 144,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -14911,17 +15057,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 46,
+    "successor_new_exclusions_reviewed": 48,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.721,
+    "focused_runtime_seconds": 18.612,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint148 nine jobs succeeded on first attempt;149 own pushed-head run pending.",
+    "exact_head_ci": "Checkpoint149 nine jobs succeeded on first attempt;150 own pushed-head run pending.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -14958,12 +15104,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint149:failedGreatLakes235cut leaves2million/matchingSRA,failedEERE236zeroed1830milliontotal/includes223milliondirection/noSRA,actualRoydesignee/ownquestions/results.523reviews/153ordinarypending;1607sources/466captures/412extents/715coordinates.5raworiginalwitnesses,10derivatives/15intervals,9materialPDFpages,179tests/7checks/reference/rawreplay.148boundedreviewpassed,activeflags/limits/CIstatusclosedwithbeforearchive.149independentreviewpending;44meanings/78findings/70questions/3packages/allholdsunchanged,nofinalverdict/acceptance.",
+    "focused_scope_note": "Checkpoint150:twofailedDRBCThisAct-onlyfundingriders227-228,namedcomplete2021ruleversusCommissiongenerally,401/440/unadoptedproposal/SSA-adjacency/materialcompactconditions preserved.525reviews/151ordinarypending;1613sources/469captures/418extents/737coordinates.3originalwitnesses/6derivatives/22intervals/16materialPDFpages;179tests/7checks/reference/replay.149boundedsource/domain/mechanicsreviewcomplete;MinorP3RH76physical/74bill-textmetadata correctedwithbeforearchive,recheckpending,source/interval/exclusion/outputunchanged.149CI9green;150independentreviewpending.44meanings/78findings/70questions/3packages/allholds/provenancelimitsretained,nofinalverdict/acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
-      "receipt_sha256": "071d9769810428aa9bfa0c9ba27a70fc41bea35708259eaa4a6a373d23bd6ef6",
-      "head": "0abcb829e2e036cd33b27f3bd416daa4470bb0d2",
-      "run": 37812531558,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint149_ci.json",
+      "receipt_sha256": "65b69b4920aac4c0a473eea71013a374767300c258f02e18c288aab707807efe",
+      "head": "b0f5b8c992d57c76bbf463753b446a54aec3bff3",
+      "run": 37815607275,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -19766,18 +19912,53 @@
   },
   "ordinary_screening_checkpoint149": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint149.json",
-    "receipt_sha256": "52020f67cfe416eac427dcbe19ba08472a265980939c113b02b231f98a871f3f",
+    "receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
     "same_owner_primary_screenings": 2,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 153,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_metadata_recheck_pending": true,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
+    "independent_review_scope": "No source/domain/mechanical defect;oneMinorP3RHphysical-page description correctedlocally150,independentmetadatarecheckpending. Nine materialsemanticPDFpages,notentireparents;owner150additionallyinspectedphysicalRH75/76forpaginationcorrection;fullPDFserializationsreproduced,Clerkrawdrift/fullparentmetadata/owner-suite limits retained."
   },
   "prior_head_ci_checkpoint148": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
     "receipt_sha256": "071d9769810428aa9bfa0c9ba27a70fc41bea35708259eaa4a6a373d23bd6ef6",
     "head": "0abcb829e2e036cd33b27f3bd416daa4470bb0d2",
     "run": 37812531558,
+    "successful_jobs": 9
+  },
+  "independent_checkpoint149_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
+    "receipt_sha256": "eb6085e25f62349076741a12800943f53289ce1d025a0df9810d33cba80126a2",
+    "before_snapshot_archive": ".tmp/checkpoint150_before_drbc",
+    "before_receipt_sha256": "52020f67cfe416eac427dcbe19ba08472a265980939c113b02b231f98a871f3f",
+    "current_receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+    "reviews_sources_outputs_preserved": true
+  },
+  "checkpoint149_RH_page_count_correction_checkpoint150": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint149_RH_page_count_correction_checkpoint150.json",
+    "receipt_sha256": "033e743753d9dc312439835502ca0787a3d0ba2ae37f3ebf07590028fc549864",
+    "severity": "Minor",
+    "priority": "P3",
+    "independent_metadata_recheck_pending": true,
+    "not_added_to_action_finding_counts": true
+  },
+  "ordinary_screening_checkpoint150": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint150.json",
+    "receipt_sha256": "8b94cca364dc08efade336d66284f78f9e6c8ca4127716e8cfbe55c7bb2fe4e3",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 151,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint149": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint149_ci.json",
+    "receipt_sha256": "65b69b4920aac4c0a473eea71013a374767300c258f02e18c288aab707807efe",
+    "head": "b0f5b8c992d57c76bbf463753b446a54aec3bff3",
+    "run": 37815607275,
     "successful_jobs": 9
   }
 }

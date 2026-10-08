@@ -1,0 +1,42 @@
+{
+  "checkpoint": 150,
+  "affected_checkpoint": 149,
+  "severity": "Minor",
+  "priority": "P3",
+  "classification": "Metadata-onlyphysicalpagecount;separatefromaction/source-domainfindingcounts",
+  "before_receipt_sha256": "52020f67cfe416eac427dcbe19ba08472a265980939c113b02b231f98a871f3f",
+  "current_receipt_sha256": "3faa67021744367d0629fb2843f86a7692693a466871340e475cbf61416f68e5",
+  "before_snapshot_archive": ".tmp/checkpoint150_before_drbc",
+  "before_active_description": "NewfullRH74page/Record32page serializations captured;onlyidentifiedmaterialscopes andninepagesreviewed,notallparentmeaning/PDFvisualpages.",
+  "current_active_description": "Complete RH PDF, 76 physical pages with bill text ending on page 74; complete 32-page Record. Both full serializations are captured and independently reproduced. Only identified material scopes and nine semantic PDF pages reviewed; not all parent meaning or every PDF visual page.",
+  "verified": {
+    "physical_pages": 76,
+    "bill_text_ends_at_page": 74,
+    "production_footer_page": 75,
+    "rotated_back_cover_page": 76,
+    "full_text_characters": 106163,
+    "full_text_raw_sha256": "a3c6a1c35bb76491c21c5d68b34c59abacdad9e5dc34d794f6b18124594e3f28",
+    "all76pages_alreadycaptured": true,
+    "no_source_omission": true,
+    "source_text_intervals_two_exclusions_and_six_outputs_unchanged": true
+  },
+  "affected_markdown": [
+    {
+      "path": "docs/plans/foushee_immigration_border_shared_interpretation.md",
+      "before_archive": ".tmp/checkpoint150_before_drbc/foushee_immigration_border_shared_interpretation.md"
+    },
+    {
+      "path": "docs/review_packets/foushee_immigration_shared_candidate.md",
+      "before_archive": ".tmp/checkpoint150_before_drbc/foushee_immigration_shared_candidate.md"
+    },
+    {
+      "path": "docs/review_packets/immigration_semantic_audit_in_progress.md",
+      "before_archive": ".tmp/checkpoint150_before_drbc/immigration_semantic_audit_in_progress.md"
+    }
+  ],
+  "independent_review_ref": "docs/review_packets/immigration_checkpoint149_independent_review.json",
+  "independent_metadata_recheck_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "033e743753d9dc312439835502ca0787a3d0ba2ae37f3ebf07590028fc549864"
+}
