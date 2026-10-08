@@ -9008,3 +9008,48 @@ Continue bounded ordinary batches and separate166 own-June baseline,forestry25
 charter and material-package research. All70 questions and three partial packages
 remain. Watcher deadline08:42:21.249EDT,stop large08:12:21,wrap08:27:21,marker08:37:21;
 latest exposed weekly28%used/72%remaining. DraftPR198 only; reserved gates unchanged.
+
+
+### Local successor checkpoint 134: conservation and material statutory scope
+
+House119/2/192 H.R.7618 EH changes battlefield authorization periods/combined amounts
+and appropriation-conditioned historical-site studies. Removing308104(d)changes an
+authorization, not the independent50percent shares. The French and Indian/Mexican-
+American War study labels do not establish new immigration policy.296 H.R.4219 EH
+addresses ecosystem/non-native-organism threats with owner-request limits for adjacent
+lands/waters; wildlife-refuge/inspection/eradication terms are not human migration
+controls.297 H.R.3276 EH provides voluntary urban-bird conservation and grants, with
+covered versus eligible entities distinct and optional Foundation administration.
+Its3709(a)exception does not repeal(b)-(d); existing3702board citizenship stays board-
+only, without a new participant/recipient citizenship criterion. Foreign conservation
+activity and urban geography do not supply a human entry/status/removal mechanism.
+All three exact amended-passage questions/results and FousheeYea/MassieNay bind;
+all three remain outside Immigration counting under the existing functional standard.
+
+Three exact Health EH reuses plus three new scoped statutory captures give six new
+canonical registrations. Two official PDFs and one HTML original are preserved.
+pdfplumber0.11.9left/right-column extraction,17 exact operative intervals and thirteen
+rendered pages are verified.54subtitleIII only contributes308101-106operative text;
+16chapter57 only3701-3710operative text;23USC101only(a)(35)-(36). Headers/hyphenation/
+internal footnotes remain in the exact excerpts. OriginalPDFs/full captured chapter
+andHTML extracts are retained; no full79-pagePDF/allhistoricalnotes/fullEDGEmanual or
+comprehensive later-law application is claimed. An HTTP200GovInfo error page was
+identity-rejected and archived, never governed. A PDF captured-file raw-hash label was
+corrected before validation to actual Windows bytes; canonical and normalizedUTF8
+hashes are separately preserved. Three raw originals/17 intervals/source seals pass.
+
+494reviewed/182ordinary unfinished;43interpreted/226procedural/223excluded/two expressive;
+1505sources/1088interpretedbindings/415captures/337extentobjects/565coordinates;
+39episodes/86observations/76findings. Prior491reviews/1499sources/412captures, all43
+meanings/six semantic outputs/76findings/70questions/three partial flags/frozen166/265
+and132common-chapeau correction remain exact. Proof changes only its source hash.
+177focusedtests14.401s, reference validator,sevenchecks and seven-file raw replay pass.
+Audit115NoDefect/6Minor/11Major/1Critical; distinct issues unchanged, no final verdict.
+132CI37734690284 and133CI37735330764 each ninegreen,5feature/3synthetic/1mixed;
+decodedlogs/checkouts/skips sealed, hosted306 distinct from local177. No retries.
+134needs its own run; common-chapeau independent recheck stillpending, no acceptance.
+
+Continue coherent ordinary batches and separate166 own-June baseline/forestry25original
+charter/material packages. Watcher deadline08:42:21.249EDT,stop large08:12:21,wrap08:27:21,
+marker08:37:21; draftPR198only and all reserved gates remain. Finaldiff/seals checked
+before delivery. All70questions and threepartialpackages remain unfinished.

@@ -8188,3 +8188,6 @@ Checkpoint132: three procedures123/195/237;488reviewed/188ordinary. Common1182(C
 
 
 Checkpoint133: three exact DHS reporting/task-force/outreach exclusions286/287/300;491reviewed/185ordinary/1499sources.177tests14.315s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/132correction unchanged. Existing broad grants and literal termination reference preserved; no agency/title-only eligibility. Independent131 bounded pass recorded;132CI8green/repairpending at latestread. Candidate-only; see ordinary_screening_checkpoint133.json.
+
+
+Checkpoint134: three conservation exclusions192/296/297;494reviewed/182ordinary/1505sources/415captures. Scoped battlefield/Foundation/urban references verified against three originals,17 intervals and13 rendered pages; board citizenship remains board-only, matching/authorization distinct.177tests14.401s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/132correction unchanged.132/133ownninegreen sealed;134ownCI pending. Candidate-only; see ordinary_screening_checkpoint134.json.
