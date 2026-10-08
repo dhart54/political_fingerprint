@@ -169,3 +169,36 @@ exclusions;179focused/7semantic/reference/replay pass, sixsemanticoutputs unchan
 22newcanonical sources/12registrations/14derivatives/24intervals, eightunchanged
 2024Codewitnesses reused.157CI/review actualboundedpass retained;158 reviewpending.
 Finaldiff/auditguards/commit/push/PRupdate next, no waiting on hostedCI.
+
+## Checkpoint159: BLM rule-disapproval batch
+
+Checkpoint158 delivered atb7349e3; ownCI37849691730 and independent review
+proceed alongside research. Screen six source-coherent House119/1/224-226 and
+294-296 resolution passages: MilesCity, CentralYukon, NorthDakota, Buffalo,
+CoastalPlain and the April2022NPR-A decision. Reuse complete sealed EH/ES texts,
+material selected ROD/RMP pages and801(b)/(f)/(g) scope; source reuse is not
+another domain's conclusion. Keep exact issued dates, target/plan boundaries,
+Housepassage versus enactment and memberNay/Yea labels. CentralYukon's limited
+allotment recommendation is not a new citizenship/status eligibility rule;
+preserve Native/tribal land context without treating ancestry as immigration.
+Do not replace the2022IAP target with a2024regulation/current plan or infer
+allmining/lease/permit/individual-health/eligibility outcomes from disapproval.
+
+Expected about13-14 changed files, semantic tier, unchanged sixsemanticoutputs,
+179focused/7semantic/reference checks and seven-file deterministic replay at the
+coherent delivery boundary. Whole rawplans/maps/current-law applications are
+outside newly reviewed scope; retain provenance/selected-page limitations and
+existing holds.252 remains ordinarypending until direct-border evidence resolves
+its boundary. Save baseline/current private resume state and measure secondbatch
+phase durations without a separate optimization detour. No acceptance/publication.
+
+Checkpoint159 authored/validated:549reviewed/127ordinarypending, sixsource-coherent
+BLMdisapproval exclusions;179focused/7semantic/reference/replay pass, sixsemantic
+outputs unchanged.13canonical sources/13registeredreusecaptures/sixderivatives/
+31intervals, no freshrawPDF/image/current-law certification.158CI9green retained,
+158/159independentpasspending. Two measured batches preserved with quality limits.
+Finaldiff/auditguards/commit/push/PRupdate next;252 andallpriorholds retained.
+
+Completed158 parentboundedsource/domain/mechanics pass actually received and
+sealed with159; ownerprivatechecks/recovery/timings remain attributed, no general
+quality-equivalence/speedup/acceptance.159 reviewpending,252/allholds intact.

@@ -340,3 +340,11 @@ measured; workflow speed never authorizes weaker source or publication gates.
   size if audit defects rise, material source decisions couple actions, recovery
   becomes unreliable or final validation cannot isolate a failure. Never meet a
   quota by hiding unfinished work or dropping required evidence.
+  Initial measured batches 158/159 cover five/six screenings with one focused
+  suite and replay per batch: tests 15.039/15.863s, generation/replay 9.707/9.711s,
+  and observed CI idle wait zero. Partial reading/recipe-authoring intervals were
+  409.695/395.885s; separate shares and earlier preliminary work are unknown.
+  The 158 Git/PR phase was 95.992s including PR-body preparation. Independent
+  review remains a distinct quality check; these timings do not establish quality
+  equivalence, a precise overhead share, or a causal speedup. Canonical receipts
+  preserve the source qualifications and validation evidence for comparison.

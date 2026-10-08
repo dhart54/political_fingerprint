@@ -5,9 +5,9 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint158:543 reviewed/133 ordinary pending;44 meanings/78 findings.
-Five routine exact-action exclusions; all holds/70questions/3packages retained.
-157CI/reviewboundedpass retained;158ownCI/reviewpending, no acceptance.
+Latest candidate checkpoint159:549 reviewed/127 ordinary pending;44 meanings/78 findings.
+Six routine BLM exclusions; allholds/70questions/3packages and252pending retained.
+158CI/reviewboundedpass retained;159review/ownCIpending, no acceptance.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -10482,3 +10482,62 @@ Source/authoring durations overlap and preliminary work before measurement is
 unknown; generator/replay9.707s, focusedtests15.039s, noCIidlewait thisbatch.
 No speedup/quality-equivalence claim. Oldowner remains untouched, no deadline,
 merge/publication/promotion/production authority.
+
+## Checkpoint159: six named BLM rule disapprovals
+
+House119/1/224-226/294-296 receive noncounting Immigration candidate exclusions:
+MilesCity, CentralYukon, NorthDakota, Buffalo, CoastalPlain and April2022NPR-A.
+Complete preservedEH/ES resolutions bind exact named/issued-date targets and
+GAO opinion references; Housepassage is distinct from enactment/implementation.
+801(b)/(f)/(g) keeps disapproval/reissuance/later-law/no-intent limits, not broad
+CRAvalidity/current-law/individual judgments. Allsix FousheeNay/MassieYea labels
+remain exact observations, not wholeplan/component/motive/endorsement findings.
+
+Selected material decision pages establish resource/land-allocation/project-use
+boundaries. Coal-only amendment limits and existinglease terms persist; broad
+RMPs are not reduced tocoal-only. CentralYukon retains its limited recommended
+withdrawal revocations for NativeVietnam-era allotment selection in compliance
+withDingellAct, not actualgrants/new personaleligibility/housing. Native/tribal/
+subsistence/non-local context is not immigrationstatus. CoastalPlain keeps
+BLMoilgas/USFWSsurface/project-specific roles; NPR-A is namedApril2022decision,
+not2024regulation/currentplan. No automatic leases/permits, allmining/landlaw
+repeal, individualhealth/economic/causal/immigration application judgment.
+
+13unchanged source objects (sixresolutions/sixmaterialRODbanks/801scope) reused,
+sixnewderivatives/31exactintervals. Only governed selected page pieces read;
+whole rawplans/maps not newly reviewed. Coal mirroredprimary and earlier
+provenance limitations remain. No fresh network/rawPDF/image/current-law
+certification or another domain's conclusion reuse. Compact cumulative receipt
+references canonical records instead of repeating large passages; fulltyped
+claimpassages/extents remain in membership_review, no schema/contract change.
+
+549/676reviewed:44interpreted/227procedural/276excluded/2expressive,
+127ordinarypending.1692sources/515registeredcaptures/1108interpretedbindings/
+477extentobjects/857coordinates;40episodes/88observations/78findings/
+70questions/3packages unchanged. Audit168NoDefect/8Minor/11Major/1Critical
+retains history/finalverdictnull.252direct-border question stays ordinarypending;
+Lebanese210may/207agreements/Report33/allpriorholds and qualified166/frozen265/
+unaccepted747/application/provenance qualifications remain unchanged.
+
+179focusedtests passed in15.863s;7semanticchecks/reference,
+preservation/seven-file rawreplay pass; sixsemanticoutputs unchanged. Consistent
+established scopedTEMPTMPNODE/escalatedWindows validation, no configuration/
+ACL/dependency change. Importer ran once; subsequent inline audithelper setup
+hit quotingSyntaxError before helper/audit mutation, corrected via saved script
+without reapplying importer or altering claims. Finaldiff/auditguards follow.
+
+158CI37849691730 firstattempt9green;5feature/3synthetic/1mixed,
+syntheticec9f54d78bd43a95d0ca5c4a30087abc50d9e2d8, hosted308/repair13of20;
+decodedlogs/checkouts sealed. Completed parent158bounded independent source/
+domain/mechanics pass actually received, no new material finding. Owner suites/
+replay/privatearchives/guards/environmentrecovery/timings remain owner-attributed,
+2016report uncertified/Armyassertions attributed/252andholds pending.159 review
+pending; no generalquality-equivalence/speedup/editorialacceptance claim.
+
+Secondlargerbatch reading/recipeauthoring recorded395.885s with initial alternative
+triage included and separate shares unknown; generation/replay9.711s, focused
+tests15.863s, semantic/reference command2.353s, observedCIidlewaitzero.
+Firstbatch Git/PR95.992s includes bodypreparation; separate receipt/audit time
+unknown. Durable operatingnote records both measured batches and quality checks/
+reversalconditions; experiment remains provisional, no causal speedup or quality-
+equivalence inference. Existingowner/worktree/reservedgates retained.

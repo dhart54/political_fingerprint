@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 270,
-      "source_unresolved": 133,
+      "exact_action_ineligible": 276,
+      "source_unresolved": 127,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 270,
-    "unresolved_boundary_cases": 133,
+    "exact_action_ineligible_actions": 276,
+    "unresolved_boundary_cases": 127,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -493,6 +493,9 @@
         "house:119:1:217",
         "house:119:1:219",
         "house:119:1:222",
+        "house:119:1:224",
+        "house:119:1:225",
+        "house:119:1:226",
         "house:119:1:227",
         "house:119:1:228",
         "house:119:1:229",
@@ -531,6 +534,9 @@
         "house:119:1:286",
         "house:119:1:287",
         "house:119:1:292",
+        "house:119:1:294",
+        "house:119:1:295",
+        "house:119:1:296",
         "house:119:1:297",
         "house:119:1:300",
         "house:119:1:301",
@@ -672,9 +678,6 @@
         "house:119:1:210",
         "house:119:1:212",
         "house:119:1:218",
-        "house:119:1:224",
-        "house:119:1:225",
-        "house:119:1:226",
         "house:119:1:237",
         "house:119:1:239",
         "house:119:1:252",
@@ -685,9 +688,6 @@
         "house:119:1:281",
         "house:119:1:285",
         "house:119:1:289",
-        "house:119:1:294",
-        "house:119:1:295",
-        "house:119:1:296",
         "house:119:1:298",
         "house:119:1:299",
         "house:119:1:320",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "7fc9eb287179eaf3aea62152b668abde2a2922a63129d85a26d4542984e4eafb",
+  "universe_subject_sha256": "b4954dede78132131ddd6f7726808d35af1e3f85b9db6769554726f7e019e548",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -16203,8 +16203,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hjres_104",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The named November2024 MilesCity amendment makes BLM-administered coal unavailable for further leasing consideration, preserves existing lease development under terms, and expressly changes only coal allocation/MDMIN1 rather than other2015RMP resource decisions. It includes no implementation action. Disapproval is not an automatic new mine/lease/permit or repeal of allcoal/environmental rules. Geography/land availability, rather than a person's immigration status or direct border-entry/enforcement predicate, controls this exact target. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:224",
         "url": "https://clerk.house.gov/evs/2025/roll224.xml",
@@ -16221,25 +16221,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The named November2024 MilesCity amendment makes BLM-administered coal unavailable for further leasing consideration, preserves existing lease development under terms, and expressly changes only coal allocation/MDMIN1 rather than other2015RMP resource decisions. It includes no implementation action. Disapproval is not an automatic new mine/lease/permit or repeal of allcoal/environmental rules. Geography/land availability, rather than a person's immigration status or direct border-entry/enforcement predicate, controls this exact target. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:224",
           "url": "https://clerk.house.gov/evs/2025/roll224.xml",
           "raw_sha256": "ca81b6c1537e42cdd499b12534049afb3cc1fa1304d486110dd1770e607ef0e5",
-          "governed_bytes_sha256": "5b197e2fed5fc48850c04f00b54a56f9c020050e8b3ee064c3b7f170598c3133",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "5b197e2fed5fc48850c04f00b54a56f9c020050e8b3ee064c3b7f170598c3133"
+        },
+        {
+          "source_id": "govinfo:hjres104eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres104eh/html/BILLS-119hjres104eh.htm",
+          "raw_sha256": "c3a4293a451e3c0eddea0cb0933747b7041a311f2639ae79dbc3062626974cd4",
+          "governed_bytes_sha256": "82dd3da3b7e45c07501b168e4ca1427c77f8783323343459c1f824de63e0d33c"
+        },
+        {
+          "source_id": "blm:house-roll224-material-decision159",
+          "url": "https://dailymontanan.com/wp-content/uploads/2024/12/2024_MCFO-ROD_20241120_508.pdf",
+          "raw_sha256": "96792a70c54b6056ad74fbf1b11747e373307f22f8267ba6864a7fd585922d21",
+          "governed_bytes_sha256": "99f56a82811671223ac4ec6cd65cda05640583da391755f18d94b038aab9ce71"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ca61e6d165c18ee6d84d66f218f1f07dc88e87629575581d850d760a7ea0c9bc"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:224",
@@ -16255,8 +16273,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hjres_106",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The November2024 CentralYukon ROD adopts the RMP for BLM-managed lands, distinguishes the planning area from the decision area, and excludes otheragency/private/Native-corporation lands from the described plan decisions. The approvedAlternativeE retainsPLO5150 and recommends limited partial ANCSA17(d)(1) withdrawal revocations for AlaskaNativeVietnam-era allotment selection in compliance with the DingellAct. It is a land-availability recommendation, not actual revocation/grant/new personal allotment-eligibility criteria, automatic housing or an immigration admission/status rule. Preserve Native/tribal land and veteran context without inferring immigration status from ancestry or service. Land-use permits and military land boundaries remain qualified, not border inspection/enforcement. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:225",
         "url": "https://clerk.house.gov/evs/2025/roll225.xml",
@@ -16273,25 +16291,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The November2024 CentralYukon ROD adopts the RMP for BLM-managed lands, distinguishes the planning area from the decision area, and excludes otheragency/private/Native-corporation lands from the described plan decisions. The approvedAlternativeE retainsPLO5150 and recommends limited partial ANCSA17(d)(1) withdrawal revocations for AlaskaNativeVietnam-era allotment selection in compliance with the DingellAct. It is a land-availability recommendation, not actual revocation/grant/new personal allotment-eligibility criteria, automatic housing or an immigration admission/status rule. Preserve Native/tribal land and veteran context without inferring immigration status from ancestry or service. Land-use permits and military land boundaries remain qualified, not border inspection/enforcement. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:225",
           "url": "https://clerk.house.gov/evs/2025/roll225.xml",
           "raw_sha256": "a5ab40b7de91f68bb2e604a08ea456a5f45769328c6ee9ee7a26d155771ad5c3",
-          "governed_bytes_sha256": "4020dcc1f61b77fbe4175dafa11ebd7ff0f31bf99aa6a2a04160b1aa141a9360",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "4020dcc1f61b77fbe4175dafa11ebd7ff0f31bf99aa6a2a04160b1aa141a9360"
+        },
+        {
+          "source_id": "govinfo:hjres106eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres106eh/html/BILLS-119hjres106eh.htm",
+          "raw_sha256": "eb01f05e10c96a21a72589ee976fc7650c6b2ac57084cc1a44d0bc5bb2473d9e",
+          "governed_bytes_sha256": "98a4716d7633b8b1c5df98c8e6c0da3d3b0f5e9f3db71ec28c2759f471327b6a"
+        },
+        {
+          "source_id": "blm:house-roll225-material-decision159",
+          "url": "https://eplanning.blm.gov/public_projects/35315/200040776/20123105/251023085/CYRMP_ROD.pdf",
+          "raw_sha256": "bf2d6698c6f3c42f504bb8d7cfe68ca9eeda16ceeb790611db18afe00ecd590c",
+          "governed_bytes_sha256": "fed750f9374ec37d75bc251ff46dde41c15b91c0b9021df7fb1173aaf420f348"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "bcbaca744a3ab306dc73b8529e7095cebdd9d359d4d82bbff07e6d7e2d2b4ee4"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:225",
@@ -16307,8 +16343,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hjres_105",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The January2025 NorthDakota ROD selectsAlternativeD, not every alternative or onlycoal. Selected directions concern mineral/lease availability and conditions, drinking-water protection, recreation/river/resource designations and land tenure; lease exceptions and valid-existing-rights/project-specific conformity boundaries remain. Disapproval is not an automatic permit/newlease, repeal of allFLPMA/NEPA or a person's right to reside/immigrate. Spatial/land/resource-use allocations and project conditions do not create personal nationality/status/admission/removal or direct border-entry/enforcement criteria. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:226",
         "url": "https://clerk.house.gov/evs/2025/roll226.xml",
@@ -16325,25 +16361,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The January2025 NorthDakota ROD selectsAlternativeD, not every alternative or onlycoal. Selected directions concern mineral/lease availability and conditions, drinking-water protection, recreation/river/resource designations and land tenure; lease exceptions and valid-existing-rights/project-specific conformity boundaries remain. Disapproval is not an automatic permit/newlease, repeal of allFLPMA/NEPA or a person's right to reside/immigrate. Spatial/land/resource-use allocations and project conditions do not create personal nationality/status/admission/removal or direct border-entry/enforcement criteria. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:226",
           "url": "https://clerk.house.gov/evs/2025/roll226.xml",
           "raw_sha256": "0dcbe78e751a146bcfc83595a64beb79eb38712b2052c8a3be468019987328b1",
-          "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "316c117808a2b7ce960d94d65350ae7e29d16249a73567d36a0d95b575adfc24"
+        },
+        {
+          "source_id": "govinfo:hjres105eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres105eh/html/BILLS-119hjres105eh.htm",
+          "raw_sha256": "1f8ee0c553a29f206cc911e6e04b734c3942db3ec9d7bcc1cfe9904baaabcde5",
+          "governed_bytes_sha256": "0091bc481304e8bde8b1ef5a191c6d2e8518c160e0a2496d1fa7933015add9e7"
+        },
+        {
+          "source_id": "blm:house-roll226-material-decision159",
+          "url": "https://eplanning.blm.gov/public_projects/1505069/200366341/20126222/251026202/NDRMP_ROD_20250108_508.pdf",
+          "raw_sha256": "c6acd056db3ab36ea455436dc7f097647b4be7888cbfd7b36637b89b7de17678",
+          "governed_bytes_sha256": "6696b49580d2dd95443986fcc0e264ee455972c27fecb3b7667da329f9fe2ebc"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "30fc11d5bb449efcbffd93071a35d3c4295c76f43eca45a634e5d60338f9a4f3"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:226",
@@ -20269,8 +20323,8 @@
       "date": "2025-11-18",
       "measure": "bill_119_hjres_130",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The November2024 Buffalo amendment makes no federal coal available for future leasing consideration, allows existing leases under their terms, and expressly limits changes to BLM-coal allocation rather than other2015RMP resource decisions. Its health/economic/background statements are attributed context, not actual injury/savings/causal findings. Disapproval does not itself issue leases/miningpermits or abolish allresource/health regulation. This target changes land/coal availability, not personal immigration eligibility or direct border-entry/enforcement. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:294",
         "url": "https://clerk.house.gov/evs/2025/roll294.xml",
@@ -20287,25 +20341,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The November2024 Buffalo amendment makes no federal coal available for future leasing consideration, allows existing leases under their terms, and expressly limits changes to BLM-coal allocation rather than other2015RMP resource decisions. Its health/economic/background statements are attributed context, not actual injury/savings/causal findings. Disapproval does not itself issue leases/miningpermits or abolish allresource/health regulation. This target changes land/coal availability, not personal immigration eligibility or direct border-entry/enforcement. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:294",
           "url": "https://clerk.house.gov/evs/2025/roll294.xml",
           "raw_sha256": "f015bc588c1e16039af5efdd291fb4da27b19993f277319e4c4e69994030ca19",
-          "governed_bytes_sha256": "a6509700468c275bdc527c2f9016b9b2469c8c97f94e4896ee982bcfa3078c1d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a6509700468c275bdc527c2f9016b9b2469c8c97f94e4896ee982bcfa3078c1d"
+        },
+        {
+          "source_id": "govinfo:hjres130eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres130eh/html/BILLS-119hjres130eh.htm",
+          "raw_sha256": "b59f05ee513e0c2529652730b0f3c1036c6a6e0456d2ec6d93070ef47450ecd1",
+          "governed_bytes_sha256": "9d60cd49d1cac240d80eed18360e3abeb47bb73ee450fc7c7af67e595c01d771"
+        },
+        {
+          "source_id": "blm:house-roll294-material-decision159",
+          "url": "https://dailymontanan.com/wp-content/uploads/2024/12/BFO-RODRMPA_508.pdf",
+          "raw_sha256": "738e53e8c3c9cdc1aa5cf406c0bf72a249a17c9a7c057c3c5becf730683b906c",
+          "governed_bytes_sha256": "fdce5f62ab0117148d28f285956b9fbcc099ec1381fffb26474e9e3d2adcf70c"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "cc4a9ad84cda1871fbd9cd6263811086ecc3b92fe5646d89c0e88b1fbf404e39"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:294",
@@ -20321,8 +20393,8 @@
       "date": "2025-11-18",
       "measure": "bill_119_hjres_131",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The December2024 CoastalPlain ROD selectsAlternativeD2 land availability, lease stipulations and required operating procedures; it expressly does not authorize any particular on-the-ground exploration/development. Environmentaljustice/subsistence/tribal coordination and population references are resource/permit safeguards, not immigration-status categories. Preserve BLM-oilgas/USFWS-surface roles and subsequent project-specific decisions; no allArcticRefuge/allAlaska/alllease law repeal, automatic lease/permit, individual health effect, or citizenship/residence/admission/removal change follows merely from House disapproval. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:295",
         "url": "https://clerk.house.gov/evs/2025/roll295.xml",
@@ -20339,25 +20411,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The December2024 CoastalPlain ROD selectsAlternativeD2 land availability, lease stipulations and required operating procedures; it expressly does not authorize any particular on-the-ground exploration/development. Environmentaljustice/subsistence/tribal coordination and population references are resource/permit safeguards, not immigration-status categories. Preserve BLM-oilgas/USFWS-surface roles and subsequent project-specific decisions; no allArcticRefuge/allAlaska/alllease law repeal, automatic lease/permit, individual health effect, or citizenship/residence/admission/removal change follows merely from House disapproval. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:295",
           "url": "https://clerk.house.gov/evs/2025/roll295.xml",
           "raw_sha256": "c4ee549bb88b7ce9806dcd4c64b213d51a33cca8c914d4e11dccdad1485129c2",
-          "governed_bytes_sha256": "217d3118e820ca2b4b62ead554d04c35b667272941abd393e16e6e815a1c6857",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "217d3118e820ca2b4b62ead554d04c35b667272941abd393e16e6e815a1c6857"
+        },
+        {
+          "source_id": "govinfo:hjres131eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres131eh/html/BILLS-119hjres131eh.htm",
+          "raw_sha256": "ac495bf85c43ba402cd560585cb00203f58ebd86a3018865db73a90df0c7b3b2",
+          "governed_bytes_sha256": "f075d640f19008687268696e39dbaa7f7ceca3aa0fdf7be5660ff387175d85f9"
+        },
+        {
+          "source_id": "blm:house-roll295-material-decision159",
+          "url": "https://eplanning.blm.gov/public_projects/2015144/200492847/20124527/251024507/CoastalPlainSEIS_ROD_20241208_508.pdf",
+          "raw_sha256": "8159a3d49685afc196b3f6d6635d637b1d8003ed914e30c8925f0ba607eb3697",
+          "governed_bytes_sha256": "7dedc20b28b85dd3726002aa76317d8b320d278c60753045699d8752a94e260f"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "cbdf78961cff7e5ff6800592adb5f282571a150901c0d5eb48202c28aa712381"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:295",
@@ -20373,8 +20463,8 @@
       "date": "2025-11-18",
       "measure": "bill_119_sjres_80",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "This target is the April25,2022 NPR-AIAP/ROD, not the separate2024regulation or a later/current plan. It adoptsAlternativeA with clarifications/modifications, describes available/closed areas and qualified infrastructure, stipulation, special-area and river-management directions. Its NPRPA/FLPMA discussion distinguishes the narrower oilgas IAP from a generalmultiple-useRMP and makes no opening-to-coal/hardrock decision. Native/tribal/subsistence and non-subsistence travel context does not establish personal immigration-status eligibility or direct border-entry/inspection/enforcement. Disapproval is not automatic approval of allpipelines/leases/development, removal of all environmental law, or a finding about current/individual legal or health outcomes. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
       "source": {
         "source_id": "clerk:119:1:296",
         "url": "https://clerk.house.gov/evs/2025/roll296.xml",
@@ -20391,25 +20481,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "This target is the April25,2022 NPR-AIAP/ROD, not the separate2024regulation or a later/current plan. It adoptsAlternativeA with clarifications/modifications, describes available/closed areas and qualified infrastructure, stipulation, special-area and river-management directions. Its NPRPA/FLPMA discussion distinguishes the narrower oilgas IAP from a generalmultiple-useRMP and makes no opening-to-coal/hardrock decision. Native/tribal/subsistence and non-subsistence travel context does not establish personal immigration-status eligibility or direct border-entry/inspection/enforcement. Disapproval is not automatic approval of allpipelines/leases/development, removal of all environmental law, or a finding about current/individual legal or health outcomes. The complete resolution disapproves the exact named and dated BLM rule, with its specified GAO opinion reference, and would make that rule of no force/effect upon enactment. Reused801(b)/(f)/(g) preserves enacted-disapproval, substantially-same-rule reissuance restriction/later-law exception, and no intent inference from nonenactment; House passage alone is not enactment or actual implementation. No GAO deadline/CRA validity/constitutionality/current-law/individual project or allotment application is adjudicated. FousheeNay/MassieYea are exact recorded passage labels, not preferences on every component, motive, blanket mining opposition/support or endorsement. Member-neutral established functional-domain candidate exclusion only, noncounting/unapproved; another domain's analytical conclusions are not reused.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:296",
           "url": "https://clerk.house.gov/evs/2025/roll296.xml",
           "raw_sha256": "e680e3d48cdd68ddf73f301066c90be3e390cbb106d9d8653d5d13a8bace4c30",
-          "governed_bytes_sha256": "234cb7502de6aa6437b5abfbecbadc49d83b88aac1a29fdcf87ff1d66f45f864",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "234cb7502de6aa6437b5abfbecbadc49d83b88aac1a29fdcf87ff1d66f45f864"
+        },
+        {
+          "source_id": "govinfo:sjres80es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119sjres80es/html/BILLS-119sjres80es.htm",
+          "raw_sha256": "340a84689cf626d6012be38953cf28ff332209ba11504cb7ed558613d9c9b8ae",
+          "governed_bytes_sha256": "375d4e0de775aa9ce9ea7062d3328b29ebd9ccac94af2c029ac2ff761616b4dc"
+        },
+        {
+          "source_id": "blm:house-roll296-material-decision159",
+          "url": "https://eplanning.blm.gov/public_projects/117408/200284263/20058238/250064420/2022_NPRA_IAP_ROD_508.pdf",
+          "raw_sha256": "200ae755e165ddb0814b3331b661488b57784e541a06f6ed8cdd98dc696fa6a6",
+          "governed_bytes_sha256": "63ec8eef0d0b6b3428c7ff14f63151d7e6b6b35db77f2bb05a31551d81aa7106"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9a68e1b7a96b277e11fe6c8f72452535a8fe23c1fd422bee9197768588269ef2"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:1:296",
@@ -42562,9 +42670,6 @@
     "house:119:1:210",
     "house:119:1:212",
     "house:119:1:218",
-    "house:119:1:224",
-    "house:119:1:225",
-    "house:119:1:226",
     "house:119:1:237",
     "house:119:1:239",
     "house:119:1:252",
@@ -42575,9 +42680,6 @@
     "house:119:1:281",
     "house:119:1:285",
     "house:119:1:289",
-    "house:119:1:294",
-    "house:119:1:295",
-    "house:119:1:296",
     "house:119:1:298",
     "house:119:1:299",
     "house:119:1:320",
@@ -42700,6 +42802,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "8ea86f272fcab0981f391d97893931c67ffeaa190d6bb49e29157460bce6ee38",
-  "membership_review_sha256": "dbfa304633630e9b6c561587f9a03a2b079345e65532f89c0d53e347ff1df75f"
+  "proposal_sha256": "522262bc2a7633666e7bee5e0ac5682dc4d01465cc9ff5f959b2b8b8edbf54ea",
+  "membership_review_sha256": "03a02b7ff0e2eec4a7a372534cbaf3274d3f9822070894ee9b95b9d635c4d116"
 }
