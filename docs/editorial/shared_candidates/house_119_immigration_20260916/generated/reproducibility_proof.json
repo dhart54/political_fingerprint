@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "11b949f47f0a6efd0eae3afbbbeb7f9a4745001a7226eb4dad3e41eeb39c7fc5",
-  "source_capture_sha256": "fb2b074dbcbae6b9861fadbd6cf6b0abd478d50b914585cef7d8e5f92137fe8a",
-  "core_sha256": "65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9",
-  "compiled_sha256": "f41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809",
-  "readable_sha256": "22305374370909425e2977f4c05b637186aa79aba3b955e6c121602536422353",
+  "input_sha256": "80e637e59bb5c7e0f9a11f744821d7c113820e13d38e5e09d113967baa1ec06f",
+  "source_capture_sha256": "659cd45b2297ab9676370729790782ce7ee14e1e4628a3a702a509345d748faa",
+  "core_sha256": "1c4ed2ad9a261ccfac53112cff622a78b5579cd8440bc164ff9b71432dd0fc50",
+  "compiled_sha256": "def9d6c07fdbc95035d0bfbb43683c8819e40ab34c0d1374161ce4034879c6cd",
+  "readable_sha256": "f26a612d2f63e610d00dd7285d432a79814c1ce10546f3e13061b11bbdf1be6e",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -114,6 +114,46 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
           "source_id": "clerk:119:1:23"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:32",
+      "shared_sha256": "bca4054672f5c8deebe51fe4f1fb90683c7f8f684593213cf44e0120b47fb7cc",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding the joint published overdose-reduction certification condition to the Act and all its amendments",
+          "source_id": "clerk:119:1:32"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adding that certification condition; no whole-bill position or preferred alternative is established",
+          "source_id": "clerk:119:1:32"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:33",
+      "shared_sha256": "4e0dff83be0311d62422277049c4f343d2206a3aee897f132a82c3d33a50618f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.27 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:33"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.27 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:33"
         }
       ]
     },

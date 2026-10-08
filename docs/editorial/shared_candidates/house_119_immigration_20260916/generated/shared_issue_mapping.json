@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "41 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "43 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -79,6 +79,34 @@
         "stage_order": 10023
       },
       "mapping_sha256": "49e0914bd4613bc2eadffee49c86fb49ef5f0442449de6b409dc71ad9bcc5529"
+    },
+    {
+      "action_id": "house:119:1:32",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr27:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10032
+      },
+      "mapping_sha256": "90f7e299612e6fb88e3a066f7925cf6afd75065b029054b3324e915e654546ee"
+    },
+    {
+      "action_id": "house:119:1:33",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr27:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10033
+      },
+      "mapping_sha256": "017a32f2b31d859dfaba6c22e2b564018990e54cb97dd5b33e235dac24ca126e"
     },
     {
       "action_id": "house:119:1:42",
@@ -627,6 +655,15 @@
       "policy_family_id": null
     },
     {
+      "episode_id": "episode:hr27:119",
+      "action_ids": [
+        "house:119:1:32",
+        "house:119:1:33"
+      ],
+      "method_boundary_types": [],
+      "policy_family_id": null
+    },
+    {
       "episode_id": "episode:hr35:119",
       "action_ids": [
         "house:119:1:42"
@@ -899,5 +936,5 @@
   "trait_relationships": [],
   "shared_review_dependencies": [],
   "source_render_constraints": [],
-  "mapping_sha256": "a1b08ac101cb73f33b154b125e2d7471e70e57cff2065b0d7fa69cbd9e6bbbc9"
+  "mapping_sha256": "b2041ace6d8882a0b6579552135b359a72669bdff49e3fb96a93525841d9aed6"
 }

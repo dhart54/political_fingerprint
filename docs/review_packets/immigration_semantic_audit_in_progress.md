@@ -8176,3 +8176,6 @@ Checkpoint128 local successor: recovered four exact EH exclusions305/121/132/233
 
 
 Checkpoint129: three complete May13 EH expressions162/166/167 excluded;479reviewed/197ordinary unfinished.176tests13.438s/reference/sevensemantic/seven-file raw replay pass;41meanings/six outputs/74findings/70questions/three partial flags exact. Bounded independent127report recorded; qualified32/33authoring route requires two source corrections, no canonical disposition yet. See ordinary_screening_checkpoint129.json and living plan; candidate only.
+
+
+Checkpoint130: qualifiednew32/33meanings with statutoryADD/full1227scope;43meanings/481reviewed/195ordinary/76findings. Bothmemberobservations separated, no trajectory; prior41meanings/74findings and70questions/threepartialflags protected.1399P3literalthreebranch rationale corrected with frozen128receipt/sourceboundbefore-after; no disposition/meaning change.176tests14.181s/reference/sevenchecks/rawreplay pass; initialaudit-binding failures retained andresolved.128CI9successsealed;1298success/normalizationcreatedbfailure after6/38earlier tests preserved; one authorizedfailedjobretry requested,pending;130needs ownCI. See fentanyl_candidate_checkpoint130.json/disclosure_branch_correction_checkpoint130.json andlivingplan; candidate-only.

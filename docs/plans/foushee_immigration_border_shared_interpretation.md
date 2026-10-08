@@ -8819,3 +8819,65 @@ meaning unit with source and downstream review, then coherent3–5ordinary batch
 Controlling watcher deadline:2026-10-08T08:42:21.2494439-04:00; stop large units08:12:21,
 wrap08:27:21, final marker by08:37:21. Marker absent during active work. Weekly remaining
 75% at04:44:52Z observation; no estimate. DraftPR198 only; all reserved gates retained.
+
+
+### Local successor checkpoint130: qualified fentanyl predicate candidates and disclosure precision
+
+House119/1/32 is failed PartB2 global jointHHSSecretary/AttorneyGeneral FederalRegister
+certification condition on the Act AND all amendments, not passage or an actual
+overdose reduction.33 is wholeH.R.27EH passage with adoptedPartA corrections, ADDING
+statutoryScheduleI(e) coverage without temporaryMarch31expiry, under its own definition,
+forms andexceptions; no repeal/replacement oftemporaryh30. CompleteEH/report/rule/
+floor binding and original2018/2020control/correction/PL116114/latestpre-votePL118158
+extension trace the existing802(6)→SchedulesI-V predicate into identifiedINAgrounds.
+The two meanings are self-contained: visa/admission, conviction ORadmission, attempt/
+conspiracy, trafficking knowledge/reason-to-believe, separate relativefive-yearbenefit/
+knowledge tests, and1227(a)INANDADMITTED/removalUPONORDERscope with conviction-after-
+admission and singleown-use<=30gmarijuana exception. Existingbounded/discretionary
+waivers andnonimmigrant admission, separate drug-abuser/addict language, differing
+temporary/statutoryforms/FDA/AG/other-schedule exceptions retained. No chemical-set
+equality, individualstatus/legal/outcome finding, automaticremoval/retroactiveINA,
+first-evercontrol, lapse, health-effect or generalizedcriminal-law ontology.
+
+Qualifiedcandidate authoring is supervisor-authorized under writtenfunctional standard,
+not acceptance.747unaccepted;166ownJuneS331baseline and265frozen.32FousheeYea/MassieNay;
+33bothNay. Oneepisode with separateobservations and onenotable-choice per member; no
+trajectory/changeofbelief/component preference. All prior41meanings/coreobjects and
+74findings/propositions remain exact; sharednewmeaningdigests agree acrossmembers.
+Five previouslyprivate originals newly governed/registered, ten canonical sources,
+44claimbindings; ZERO new acquisitions. Material originalwitnesses/raw/texthashes and
+full1227intro verified. Fullsource capture is not whole-Code/individual application.
+Historical/liveClerk raw-byte distinctions retained; no overwrite or newidentityclaim.
+
+1399P3 rationale correction joins thisunit. LiteralEH lists clause9 insofarassexual
+harassment, clause18separately, ORsexualharassment/abuse cases, eachsubjecttotaxpayer
+payment; adjacenttotals andparagraph2ANYcomponentclassification preserved. Complete
+source/claim/memberbytes/disposition unchanged. Frozen128receipt andpriorNoDefect
+assessment preserved; source-boundbefore/after receipt added, no inventedmeaning/output.
+Currenthighest-severity assessment isMinor; independentcorrection recheck not claimed.
+No broadHouseRules audit. Derivedoutside-seed list adds32/33only; seedrecords unchanged.
+
+676inventory/481reviewed/195ordinaryunfinished;43interpreted/219procedural/217excluded/
+twoexpressive;1484sources/1088bindings/412captures/334extentobjects/548coordinates;
+39episodes/86observations/76findings.70questions/threepartialflags/166/265/frozen128/
+historical127proposals preserved.478otherpriorreviews exact, only1399rationale corrected.
+176tests14.181s/reference/sevensemantic checks pass; sevenfile rawreplay equal. Initial
+176run13.817s hadtwo correct audit-binding failures (newassessments absent/old1399hash),
+completed before unchangedtests passed. Privateverifier mechanical corrections recorded,
+no assertions weakened. Actualcompact/detail/qualifications andbothmemberchoices read.
+Candidate/public/persistence isolation preserved; all sevenoutputs regenerate normally.
+
+128ownCI37728881395 terminalninegreen:5feature/3synthetic/1mixed; syntheticca04e1a9f15f
+cbed8c9efe46f023dbab91240d92, hosted305distinct fromowner176. Decodedlogs/checkouts/skips
+sealed.129CI37729393672 eightgreen/repairfailure: disposablePostgresconnection closed
+atnormalizationcreatedb AFTER6repair/38coretests passed; laterlifecycle skipped.
+Failurelog/jobstatus/original receipt preserved; not candidateassertionfailure or
+releasePASS. Workflow probesinsidecontainersocket rather thanhostTCPreadiness.
+Incoming direction authorizes one isolatedfailedjobretry after this startup diagnosis;
+requested,pending result. No broad rerun/workflow/production change.130needs ownheadCI.
+
+Continue coherentordinary3–5batches andseparate166Juneversion/forestry25charter/material
+package work. Do not useS331 historicalexclusion or747candidate as automaticprecedent.
+Independentreview remains pending; no fullcorpusverdict/acceptance/publication. Current
+deadline08:42:21.249EDT, stoplarge08:12:21/wrap08:27:21/finalmarker08:37:21. Weeklyremaining
+74% atlatest exposed read; continue. DraftPR198 only; allreservedgates retained.

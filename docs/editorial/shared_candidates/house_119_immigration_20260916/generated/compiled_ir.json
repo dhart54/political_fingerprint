@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 41,
+        "eligible_substantive_actions": 43,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 41,
-        "resolved_eligible_actions": 41,
-        "directional_yes_no_positions": 41,
+        "in_service_eligible_actions": 43,
+        "resolved_eligible_actions": 43,
+        "directional_yes_no_positions": 43,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 38,
+        "complete_episodes": 39,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -46,6 +46,44 @@
               {
                 "action_id": "house:119:1:190",
                 "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:190:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:dbac429a6872b3da",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "mixed",
+            "evidence_action_ids": [
+              "house:119:1:32",
+              "house:119:1:33"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr27:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:1:32",
+                "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:32:candidate-v1",
+                "status": "Yea",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "support"
+              },
+              {
+                "action_id": "house:119:1:33",
+                "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:33:candidate-v1",
                 "status": "Nay",
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
@@ -809,6 +847,7 @@
         "presentation_ownership": {
           "other_notable_choices": [
             "prop:3e335a2413ee0d6d",
+            "prop:dbac429a6872b3da",
             "prop:7b396e7130a53470",
             "prop:63c9a9214977ee99",
             "prop:1221d8ef96b8d89a",
@@ -872,6 +911,8 @@
           "house:119:1:220",
           "house:119:1:23",
           "house:119:1:264",
+          "house:119:1:32",
+          "house:119:1:33",
           "house:119:1:340",
           "house:119:1:42",
           "house:119:1:6",
@@ -903,17 +944,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 41,
+        "eligible_substantive_actions": 43,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 41,
-        "resolved_eligible_actions": 41,
-        "directional_yes_no_positions": 39,
+        "in_service_eligible_actions": 43,
+        "resolved_eligible_actions": 43,
+        "directional_yes_no_positions": 41,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 38,
+        "complete_episodes": 39,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -944,6 +985,44 @@
               {
                 "action_id": "house:119:1:190",
                 "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:190:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              }
+            ],
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:50adc7387f8075f1",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:32",
+              "house:119:1:33"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr27:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "action_observations": [
+              {
+                "action_id": "house:119:1:32",
+                "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:32:candidate-v1",
+                "status": "Nay",
+                "service_status": "in_service",
+                "evidence_status": "official_record_resolved",
+                "direction": "opposition"
+              },
+              {
+                "action_id": "house:119:1:33",
+                "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:33:candidate-v1",
                 "status": "Nay",
                 "service_status": "in_service",
                 "evidence_status": "official_record_resolved",
@@ -1669,6 +1748,7 @@
         "presentation_ownership": {
           "other_notable_choices": [
             "prop:3e335a2413ee0d6d",
+            "prop:50adc7387f8075f1",
             "prop:299a30f6d60968cc",
             "prop:04efcea511ec7dbe",
             "prop:7b401ea0a7d3d888",
@@ -1749,6 +1829,8 @@
           "house:119:1:220",
           "house:119:1:23",
           "house:119:1:264",
+          "house:119:1:32",
+          "house:119:1:33",
           "house:119:1:340",
           "house:119:1:42",
           "house:119:1:6",
