@@ -18,6 +18,69 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_publicity_keeps_two_money_branches_and_presentation_exceptions(self):
+        action = getattr(self, 'hr1968_lobby_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced publicity/lobbying funding conditions', 1)[1]
+        for qualification in [
+            'complete section 503(a)-(c)',
+            'an appropriation contained in its Act/division or funds transferred pursuant to PPACA section 4002',
+            'Both covered-money branches remain explicit',
+            'normal and recognized executive-legislative relationships qualification',
+            'except in presentation to Congress or the State/local legislature itself',
+            'except in presentation to that executive branch itself',
+            'Legislative-body and State/local-executive presentation exceptions remain separate',
+            'not expanded here into every Federal regulatory communication or a universal ban on ordinary information',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl113-235-divisionG-sec503-publicity-lobbying',
+                         'govinfo:pl115-31-divisionH-sec503-publicity-lobbying',
+                         'govinfo:pl116-94-divisionA-sec503-publicity-lobbying',
+                         'govinfo:pl117-328-divisionH-sec503-publicity-lobbying',
+                         'govinfo:pl111-148-sec4002-10401b-pphf-transfer',
+                         'govinfo:42usc300u11-2024-pphf-transfer-identity'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_lobbying_keeps_recipient_process_and_consumer_product_scope(self):
+        action = getattr(self, 'hr1968_lobby_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced publicity/lobbying funding conditions', 1)[1]
+        for qualification in [
+            'salary or expenses of a grant or contract recipient, or an agent acting for that recipient',
+            'Both the recipient/agent and salary/expenses nexus remain',
+            'an agency or officer of a State, local or tribal government',
+            'policymaking and administrative processes within that government\'s executive branch',
+            'tribal-government process qualification is not dropped',
+            'proposed, pending or future Federal/State/local tax increases',
+            'requirements or restrictions on legal consumer products, including sale or marketing',
+            'including but not limited to advocacy or promotion of gun control',
+            'inclusion within the qualified covered-funding prohibitions',
+            'not only a gun-related clause, a ban on every person\'s policy discussion',
+            'No actual communication, salary charge, recipient conduct or violation is found',
+        ]:
+            self.assertIn(qualification, text)
+
+    def test_hr1968_named_lobbying_fund_keeps_original_amendment_and_current_identity_distinct(self):
+        action = getattr(self, 'hr1968_lobby_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced publicity/lobbying funding conditions', 1)[1]
+        for qualification in [
+            'Prevention and Public Health Fund',
+            'HHS\'s Office of the Secretary',
+            'increase funding over the fiscal year 2008 level',
+            'programs authorized by the Public Health Service Act',
+            'House and Senate Appropriations Committees',
+            'subject to subsection (c)',
+            'original same-Act 10401(b) substitutions',
+            'distinct 2024 Code identity at 42 USC 300u-11',
+            'not declared identical or applied to every earlier period/current grant',
+            'not silently substituted for the separate assessment-funded Domestic Trafficking Victims\' Fund health-transfer source, the CHC account or every PHS program',
+            'All 70 separate application questions',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_health_availability_keeps_transfer_purpose_time_and_express_exception(self):
         action = getattr(self, 'hr1968_availability_action', None)
         if action is None:

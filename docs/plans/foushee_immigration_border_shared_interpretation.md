@@ -7908,3 +7908,61 @@ supplementary/counterparts, 216 screenings and final package comparison. Unfinis
 is not unavailable evidence. Same .w/ib owner under successor authorization; no current
 shutdown boundary, historical deadline/pause evidence preserved. No merge/deploy/production/
 editorial acceptance/promotion/publication; draft PR198 remains the delivery boundary.
+
+
+### Successor checkpoint 118: publicity/lobbying and named fund-transfer identity
+
+Complete 503(a)-(c) now binds all four underlying requirements Acts, preserving both
+appropriation and PPACA 4002 transfer branches, normal executive-legislative relationships,
+legislative and State/local-executive presentation exceptions, recipient/agent salary-
+expense nexus and State/local/tribal governmental-process qualification. Complete tax/
+legal-consumer-product proposed/pending/future wording, sale/marketing context and the
+nonexclusive gun-control example remain within those funding restrictions. No universal
+communications ban, actual recipient conduct/violation or separate member policy stance.
+
+Named original 4002, same-Act 10401(b) amendments and distinct 2024 Code 300u-11 identity
+bind the Prevention and Public Health Fund's HHS/PHS-program/committee transfer pathways.
+Original/current funding schedules remain source-version evidence, not identical current
+or historical-period grant amounts. This fund is not substituted for the assessment-funded
+trafficking fund/CHC source. Full program/dated funding-chain/current application unfinished.
+
+Six sources/bindings/seven coordinates; two new privately acquired, selected-reviewed
+original registrations. Four complete 503 clauses match after private note/page-marker
+removal and only known executive- legislative word-wrap spacing normalization. Canonical
+original glyphs/annotations/page markers/spacing/years/divisions unchanged. All six
+raw/full-original/selected seals and exact joined extents verify; seven governed context
+witnesses reused. Capture registration does not claim whole-Act/PHS-program interpretation.
+
+169 focused tests pass in 13.002 seconds; reference validator/seven semantic checks pass;
+seven generated files reproduce byte for byte. Three guards pass; 36 qualifier/binding
+mutations fail once each with zero errors. Prior 1,427 sources/39 other meanings/70 questions/
+140 methods/387 capture and manifest rows/older receipts/protected code preserved. Full
+both-member action/aggregate detail, unchanged compact and recorded choices inspected;
+counting/eligibility/compiled graph unchanged. Diff reviewed; tests are mechanical evidence,
+not acceptance. Core 1c5f1792887da4d6cf1c4832a55a22ae6941598fe22a830d3abd15d2a444a803;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,433 sources/1,031 bindings/389 captures/312 extent objects/513 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two expressive;
+216 ordinary unfinished/three partial packages/70 questions. 37 episodes/80 observations/
+72 findings; historical severity unchanged, readiness/publication false and final verdict
+null. Frozen Q68/Q69/Q70 remain separate.
+
+Own exact 117 run 37711458010 is terminal nine green; nine owner-read raw log hashes,
+counts and actual checkouts sealed in docs/review_packets/immigration_delivery_checkpoint117_ci.json.
+Five feature-pinned/three synthetic/one mixed; synthetic 496bafa5a29b2b8ab13ff9eacfb3d3667d7d4584. Hosted candidate
+counts remain distinct from owner 166 at 117/169 here. No retry; original 111 failure/
+single-job recovery preserved. 118 needs its own pushed-head CI. Independent bounded lanes
+through 116 complete within recorded scopes; 117/118 remain separate pending review.
+
+Next review complete 512 transfer and 514(a)-(b) reprogramming conditions across the same
+four original requirements Acts. Private original selections ready in .tmp/admin119_selected_originals.json.
+Retain literal transfer-authority exceptions, covered-money/fiscal-year branches, all
+trigger activities, $500,000-or-10-percent whichever-less threshold, separate 15-day
+consultation/earlier-announcement and 10-day written-notification deadlines. Keep dates
+and legal application qualified; do not declare actual reprogramming/transfer or an
+automatic current-year substitution. Follow other material program/HHS/general authority
+references, State/migration/refugee, supplementary/other DHS/counterparts, 216 screenings
+and final package comparison. Unfinished research is not unavailable evidence. Same
+.w/ib owner under successor authorization, no current shutdown boundary; historical
+deadline/pause evidence preserved. No merge/deploy/production/editorial acceptance/
+promotion/publication; draft PR198 remains the authorized delivery boundary.
