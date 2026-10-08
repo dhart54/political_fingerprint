@@ -1,7 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint137 has44meanings/497reviews/179ordinary pending. Qualified
-S.331roll166requires independent canonical-output review; no final full-corpus verdict.
+Current candidate checkpoint138 has44 meanings/500 reviews/176 ordinary pending.
+Qualified S.331 roll166 has a bounded independent canonical-output pass; no final
+full-corpus verdict or editorial acceptance. Forestry25 remains held.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8205,3 +8206,6 @@ Checkpoint136: Iranmilitary-framework exclusions199/282andadoptedrule300procedur
 
 
 Checkpoint137: qualified166candidate applied under ownJuneSeptember30baseline;497reviewed/179ordinary unchanged,44meanings/40episodes/88observations/78findings. Prior43meanings/76findings/propositions/1508sources/416captures/70questions/threepartialflags/history exact;activefrozen wording removed.178tests14.196s/reference/sevenchecks/rawreplay pass;newJuneguard andsixCchapeau omissionnegatives. Old43-row projections remain valid subsets;fresh44-rowcoverage verified.136boundedpass/ownninegreen sealed;136next_action metadata corrected with history retained. Independent137review/CI pending;candidate-only.
+
+
+Checkpoint138: exact court-location,whale-deadline and mining-permitting exclusions285/291/294;500 reviewed/176 ordinary/1516 sources/419 captures.44 meanings,six semantic outputs,78 findings,70 questions and three partial flags unchanged.178 tests in13.986s/reference/seven checks/raw replay pass.137 bounded independent pass and nine green sealed;133 retrieval limits retained. Forestry25 research held,23 private captures preserved;no charter substitution or queue consumption. Candidate-only.

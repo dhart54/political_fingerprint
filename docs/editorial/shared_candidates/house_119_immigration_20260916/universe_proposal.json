@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 224,
-      "source_unresolved": 179,
+      "exact_action_ineligible": 227,
+      "source_unresolved": 176,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 224,
-    "unresolved_boundary_cases": 179,
+    "exact_action_ineligible_actions": 227,
+    "unresolved_boundary_cases": 176,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -609,6 +609,9 @@
         "house:119:2:275",
         "house:119:2:276",
         "house:119:2:282",
+        "house:119:2:285",
+        "house:119:2:291",
+        "house:119:2:294",
         "house:119:2:296",
         "house:119:2:297",
         "house:119:2:307"
@@ -773,12 +776,9 @@
         "house:119:2:281",
         "house:119:2:283",
         "house:119:2:284",
-        "house:119:2:285",
         "house:119:2:286",
-        "house:119:2:291",
         "house:119:2:292",
         "house:119:2:293",
-        "house:119:2:294",
         "house:119:2:295",
         "house:119:2:301",
         "house:119:2:302",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "b6fd7c82fa9cc30e591434f751e80f490138de65161cea8666ef1b8f3b608f98",
+  "universe_subject_sha256": "9d92c0b7b4a25092149d28120fd71cc7ad3bce0d7c1e0a4ca65e05cfad562d8b",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -39931,8 +39931,8 @@
       "date": "2026-08-31",
       "measure": "S 32",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete S.32 ES adds College Station to the places where court for the Houston Division of the Southern District of Texas shall be held, and El Centro to the places where court for the Southern District of California shall be held. The materially amended 28USC124(b)(2) and84(d) retain their division/district and county boundaries; their existing court-place sentences are reviewed in the complete operative section contexts. These exact insertions concern court locations, not immigration admission,status,removal,benefits or person-border administration. The California district includes Imperial and SanDiego counties, but geography and a general court's capacity to hear immigration-related cases do not establish a new immigration rule from this action. The Clerk records a successful suspension-and-pass motion, not enactment. No new court jurisdiction,changed county boundaries,visa/status condition,individual legal outcome or member motive is inferred. This exact action is outside Immigration counting under existing functional standards.",
       "source": {
         "source_id": "clerk:119:2:285",
         "url": "https://clerk.house.gov/evs/2026/roll285.xml",
@@ -39949,26 +39949,44 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete S.32 ES adds College Station to the places where court for the Houston Division of the Southern District of Texas shall be held, and El Centro to the places where court for the Southern District of California shall be held. The materially amended 28USC124(b)(2) and84(d) retain their division/district and county boundaries; their existing court-place sentences are reviewed in the complete operative section contexts. These exact insertions concern court locations, not immigration admission,status,removal,benefits or person-border administration. The California district includes Imperial and SanDiego counties, but geography and a general court's capacity to hear immigration-related cases do not establish a new immigration rule from this action. The Clerk records a successful suspension-and-pass motion, not enactment. No new court jurisdiction,changed county boundaries,visa/status condition,individual legal outcome or member motive is inferred. This exact action is outside Immigration counting under existing functional standards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:285",
           "url": "https://clerk.house.gov/evs/2026/roll285.xml",
           "raw_sha256": "150e419b187b61e104d457aef77eba9cd61714523635c9f121bb7e94b7a5b56a",
-          "governed_bytes_sha256": "963cd44a27a857d42195e6499fb1559e4546bb4917923bee65ca704ec4658814",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "963cd44a27a857d42195e6499fb1559e4546bb4917923bee65ca704ec4658814"
+        },
+        {
+          "source_id": "govinfo:s32es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s32es/html/BILLS-119s32es.htm",
+          "raw_sha256": "918b3787498cdd2c346e1a6d1c83c4e384ebe3932582066dee5aa6d7498f366f",
+          "governed_bytes_sha256": "dc78e37d36e40104487acbce19674feb28579c2923b01315d0f46e43a2fdfd0b"
+        },
+        {
+          "source_id": "govinfo:28usc124-2024-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap5-sec124.htm",
+          "raw_sha256": "cf76d8a6a0c0f0ad2e101bfa735a6a7b16eacb53ac313425bd9fd91a9acfe6dc",
+          "governed_bytes_sha256": "bbe650ecf25edc3822fa2274991de0b228a2f2a145488999837e4fb74dcf3662"
+        },
+        {
+          "source_id": "govinfo:28usc84-2024-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap5-sec84.htm",
+          "raw_sha256": "560caa4aac454d87727aa4ca154b5a6f178698a1d213030749632eb4ab3d98e2",
+          "governed_bytes_sha256": "a6b0e6a9d7122e81f21993607eba5885edeff0ee4a05183786dd62532c30f3cb"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ade5c74c375a9434d94e648888d54ed5df5e602eb0e5f95d25ec0b31f0ebc841"
       }
     },
     {
@@ -40225,8 +40243,8 @@
       "date": "2026-09-01",
       "measure": "H R 9436",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.9436 EH replaces2028 with2035 at EACH occurrence in divisionJJsection101 of PublicLaw117-328. The complete materially amended section contains four occurrences: the December31 endpoint for deeming the specified AtlanticLargeWhaleTakeReductionPlan final rule sufficient for MMPA/ESA compliance of American lobster and Jonah crab fishery authorizations; the additional-protection-measures implementation deadline; the new-regulations effective deadline; and the reporting-plans PotentialBiologicalRemoval target. Section101(b) expressly preserves the exception for an existing emergency rule or its extension/finalization in place at enactment of the parent Act. This narrowly amended section does not amend divisionJJtitleIIgrant authority or any separate immigration appropriations in the much larger parent law. Fishery authorizations and country-level mortality reporting concern whale conservation, not human admission,status,removal or migration benefits. House passage is not enactment; no approval of a particular fishing operation,unconditional compliance beyond the deeming provision,removal of the emergency exception or member motive is inferred. Ineligible under the existing exact-action functional boundary.",
       "source": {
         "source_id": "clerk:119:2:291",
         "url": "https://clerk.house.gov/evs/2026/roll291.xml",
@@ -40243,26 +40261,38 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.9436 EH replaces2028 with2035 at EACH occurrence in divisionJJsection101 of PublicLaw117-328. The complete materially amended section contains four occurrences: the December31 endpoint for deeming the specified AtlanticLargeWhaleTakeReductionPlan final rule sufficient for MMPA/ESA compliance of American lobster and Jonah crab fishery authorizations; the additional-protection-measures implementation deadline; the new-regulations effective deadline; and the reporting-plans PotentialBiologicalRemoval target. Section101(b) expressly preserves the exception for an existing emergency rule or its extension/finalization in place at enactment of the parent Act. This narrowly amended section does not amend divisionJJtitleIIgrant authority or any separate immigration appropriations in the much larger parent law. Fishery authorizations and country-level mortality reporting concern whale conservation, not human admission,status,removal or migration benefits. House passage is not enactment; no approval of a particular fishing operation,unconditional compliance beyond the deeming provision,removal of the emergency exception or member motive is inferred. Ineligible under the existing exact-action functional boundary.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:291",
           "url": "https://clerk.house.gov/evs/2026/roll291.xml",
           "raw_sha256": "be0de528472c350d9f93d300c4ea1391cd1c667c5cf0ffb2bd13844afd5fa736",
-          "governed_bytes_sha256": "f7a17f3ec0333cbc8d2a77b996078925790a9b744b576a1ffee0e22f5e4bcbad",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f7a17f3ec0333cbc8d2a77b996078925790a9b744b576a1ffee0e22f5e4bcbad"
+        },
+        {
+          "source_id": "govinfo:hr9436eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9436eh/html/BILLS-119hr9436eh.htm",
+          "raw_sha256": "fc0516d5016d472700e4a0198357c8eb8697496abe9b407eec68ca5a2d0605ad",
+          "governed_bytes_sha256": "43266747dfa730c67dcf5d3b243eef481e7599c5c562686ae45c8932ba212288"
+        },
+        {
+          "source_id": "govinfo:pl117-328-divJJ-sec101-operative138",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ328/html/PLAW-117publ328.htm",
+          "raw_sha256": "a5f090f4e688ffb6d8642a0752d5f05bd63e3e4a0564056f4ae6eba2389cd204",
+          "governed_bytes_sha256": "76404f43c31f76b4f7354d4eae9a9552606d44149bd7707d7dbb7e59d6fb0e68"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b77ecbcc1b0b33c0a3153b4bbe9a92a3bcc4cf35c5252dae2712c25e516ec3fc"
       }
     },
     {
@@ -40366,8 +40396,8 @@
       "date": "2026-09-02",
       "measure": "H R 1501",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.1501 EH adds mining and mineral processing to the statutory FAST-41 sector list and bars finalizing,implementing,administering or enforcing the specifically named September22,2023 proposed rule. Complete materially affected covered-project definition4370m(6) retains authorization/environmental-review requirements and four alternative qualifying routes,as well as the stated exclusions and carbon-capture inclusion. The objective route requires MORE THAN$200million,not the proposed-rule preamble's shorthand $200million or more. The exact proposed rule2023-20270would narrow mining-sector coverage to critical minerals while adding critical-mineral extraction,beneficiation,processing and recycling; its full preamble,analysis and proposed regulatory text were read. This Action bars that specified proposal,not all future rulemaking,and does not grant a mineral-rights claim,permit,visa,work authorization or project approval. Tribal sponsorship and DHS Council membership retain their environmental/infrastructure roles; neither the statutory sector insertion nor the prohibited proposed regulatory definitions alter human immigration admission,status,removal or benefits. No inference is made about citizenship requirements under separate mining-claim law,particular minerals/projects,economic/environmental outcomes or member motive. House passage is not enactment. This exact environmental-permitting action is outside Immigration counting under existing functional standards.",
       "source": {
         "source_id": "clerk:119:2:294",
         "url": "https://clerk.house.gov/evs/2026/roll294.xml",
@@ -40384,26 +40414,44 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.1501 EH adds mining and mineral processing to the statutory FAST-41 sector list and bars finalizing,implementing,administering or enforcing the specifically named September22,2023 proposed rule. Complete materially affected covered-project definition4370m(6) retains authorization/environmental-review requirements and four alternative qualifying routes,as well as the stated exclusions and carbon-capture inclusion. The objective route requires MORE THAN$200million,not the proposed-rule preamble's shorthand $200million or more. The exact proposed rule2023-20270would narrow mining-sector coverage to critical minerals while adding critical-mineral extraction,beneficiation,processing and recycling; its full preamble,analysis and proposed regulatory text were read. This Action bars that specified proposal,not all future rulemaking,and does not grant a mineral-rights claim,permit,visa,work authorization or project approval. Tribal sponsorship and DHS Council membership retain their environmental/infrastructure roles; neither the statutory sector insertion nor the prohibited proposed regulatory definitions alter human immigration admission,status,removal or benefits. No inference is made about citizenship requirements under separate mining-claim law,particular minerals/projects,economic/environmental outcomes or member motive. House passage is not enactment. This exact environmental-permitting action is outside Immigration counting under existing functional standards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:294",
           "url": "https://clerk.house.gov/evs/2026/roll294.xml",
           "raw_sha256": "68df95acf9664f005700c66485f51ee4718d6642391258bd4ec485493dd7416d",
-          "governed_bytes_sha256": "29fb5c8583508fd7f0c408edd0e5792575a1729969d0c5b35a610dbcda96322e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "29fb5c8583508fd7f0c408edd0e5792575a1729969d0c5b35a610dbcda96322e"
+        },
+        {
+          "source_id": "govinfo:hr1501eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1501eh/html/BILLS-119hr1501eh.htm",
+          "raw_sha256": "c3314497ac6d16c44c3ddad98aade149f41b9585e7e20f847b7b809854f2f454",
+          "governed_bytes_sha256": "8983d69f057e215aec387c2c1e0661f6740d9be3ab73795b25cce6964bbe6476"
+        },
+        {
+          "source_id": "govinfo:42usc4370m-2024-par6-operative138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapIV-sec4370m.htm",
+          "raw_sha256": "4c37ad4b8e67c51dec3fcb97e3420f2213b6554d5ad081541a846ec75cb62ea0",
+          "governed_bytes_sha256": "38c55ee69770891edd896a98051c687b800daec0c9bed1fcb5bf95611b17faec"
+        },
+        {
+          "source_id": "govinfo:fr2023-20270-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-22/html/2023-20270.htm",
+          "raw_sha256": "4cd636e871a716ec26d3556e935d955a0d74a62e7cf02f17cc6709bc075349b9",
+          "governed_bytes_sha256": "c3d1ab7b6e444c090e58450b9b723e8c085d4e6c3633d01aab002b4c83499ee3"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "20f0a462456a5ca3384beee13569fbb91b21d3d00a6f0bce5350a6397eadd302"
       }
     },
     {
@@ -41599,12 +41647,9 @@
     "house:119:2:281",
     "house:119:2:283",
     "house:119:2:284",
-    "house:119:2:285",
     "house:119:2:286",
-    "house:119:2:291",
     "house:119:2:292",
     "house:119:2:293",
-    "house:119:2:294",
     "house:119:2:295",
     "house:119:2:301",
     "house:119:2:302",
@@ -41636,6 +41681,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "8231595ed99c1843b6a262b029215c8c8d7abb4298e2f6ae9d95901fe6b799e9",
-  "membership_review_sha256": "dc23cde730afeab8b57c8ece3d45ef81129ab3266ad4fb0468ac1127a31a6bec"
+  "proposal_sha256": "3fff4ae94c35e074b9d3668420be4915d241a5bd3c2457e029aee5188b439bc0",
+  "membership_review_sha256": "33cdc7ddb37d880e9260cc5647281b2dd29a94ff4cec6152064869c7f08ef856"
 }

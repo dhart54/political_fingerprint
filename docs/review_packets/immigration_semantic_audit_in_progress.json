@@ -7055,7 +7055,7 @@
       "recorded_choices_unchanged": true,
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": true,
-      "correction_state": "qualified_canonical_candidate_locally_validated_independent_review_pending"
+      "correction_state": "qualified_canonical_candidate_bounded_independent_review_passed"
     }
   ],
   "noncounting_actions": [
@@ -12870,10 +12870,208 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:285",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "285",
+        "legis-num": "S 32",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "31-Aug-2026",
+        "action-time": "7:10 PM",
+        "vote-desc": "Local Access to Courts Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete S.32 ES adds College Station to the places where court for the Houston Division of the Southern District of Texas shall be held, and El Centro to the places where court for the Southern District of California shall be held. The materially amended 28USC124(b)(2) and84(d) retain their division/district and county boundaries; their existing court-place sentences are reviewed in the complete operative section contexts. These exact insertions concern court locations, not immigration admission,status,removal,benefits or person-border administration. The California district includes Imperial and SanDiego counties, but geography and a general court's capacity to hear immigration-related cases do not establish a new immigration rule from this action. The Clerk records a successful suspension-and-pass motion, not enactment. No new court jurisdiction,changed county boundaries,visa/status condition,individual legal outcome or member motive is inferred. This exact action is outside Immigration counting under existing functional standards.",
+      "finding": "Exact location insertions,complete whale-section deadline replacement and specified mining-permitting proposal remain outside human Immigration functional scope. Parent geography,agency,appropriation and separate mining law do not supply additional action meaning.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "ade5c74c375a9434d94e648888d54ed5df5e602eb0e5f95d25ec0b31f0ebc841",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:285",
+          "url": "https://clerk.house.gov/evs/2026/roll285.xml",
+          "governed_bytes_sha256": "963cd44a27a857d42195e6499fb1559e4546bb4917923bee65ca704ec4658814",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:s32es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s32es/html/BILLS-119s32es.htm",
+          "governed_bytes_sha256": "dc78e37d36e40104487acbce19674feb28579c2923b01315d0f46e43a2fdfd0b",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:28usc124-2024-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap5-sec124.htm",
+          "governed_bytes_sha256": "bbe650ecf25edc3822fa2274991de0b228a2f2a145488999837e4fb74dcf3662",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:28usc84-2024-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap5-sec84.htm",
+          "governed_bytes_sha256": "a6b0e6a9d7122e81f21993607eba5885edeff0ee4a05183786dd62532c30f3cb",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:291",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "291",
+        "legis-num": "H R 9436",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "1-Sep-2026",
+        "action-time": "6:00 PM",
+        "vote-desc": "To amend the Consolidated Appropriations Act, 2023 to extend the time period for which certain regulations concerning the North Atlantic right whale are effective"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete H.R.9436 EH replaces2028 with2035 at EACH occurrence in divisionJJsection101 of PublicLaw117-328. The complete materially amended section contains four occurrences: the December31 endpoint for deeming the specified AtlanticLargeWhaleTakeReductionPlan final rule sufficient for MMPA/ESA compliance of American lobster and Jonah crab fishery authorizations; the additional-protection-measures implementation deadline; the new-regulations effective deadline; and the reporting-plans PotentialBiologicalRemoval target. Section101(b) expressly preserves the exception for an existing emergency rule or its extension/finalization in place at enactment of the parent Act. This narrowly amended section does not amend divisionJJtitleIIgrant authority or any separate immigration appropriations in the much larger parent law. Fishery authorizations and country-level mortality reporting concern whale conservation, not human admission,status,removal or migration benefits. House passage is not enactment; no approval of a particular fishing operation,unconditional compliance beyond the deeming provision,removal of the emergency exception or member motive is inferred. Ineligible under the existing exact-action functional boundary.",
+      "finding": "Exact location insertions,complete whale-section deadline replacement and specified mining-permitting proposal remain outside human Immigration functional scope. Parent geography,agency,appropriation and separate mining law do not supply additional action meaning.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "b77ecbcc1b0b33c0a3153b4bbe9a92a3bcc4cf35c5252dae2712c25e516ec3fc",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:291",
+          "url": "https://clerk.house.gov/evs/2026/roll291.xml",
+          "governed_bytes_sha256": "f7a17f3ec0333cbc8d2a77b996078925790a9b744b576a1ffee0e22f5e4bcbad",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:hr9436eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr9436eh/html/BILLS-119hr9436eh.htm",
+          "governed_bytes_sha256": "43266747dfa730c67dcf5d3b243eef481e7599c5c562686ae45c8932ba212288",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:pl117-328-divJJ-sec101-operative138",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-117publ328/html/PLAW-117publ328.htm",
+          "governed_bytes_sha256": "76404f43c31f76b4f7354d4eae9a9552606d44149bd7707d7dbb7e59d6fb0e68",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:294",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "294",
+        "legis-num": "H R 1501",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "2-Sep-2026",
+        "action-time": "4:49 PM",
+        "vote-desc": "Protecting Domestic Mining Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete H.R.1501 EH adds mining and mineral processing to the statutory FAST-41 sector list and bars finalizing,implementing,administering or enforcing the specifically named September22,2023 proposed rule. Complete materially affected covered-project definition4370m(6) retains authorization/environmental-review requirements and four alternative qualifying routes,as well as the stated exclusions and carbon-capture inclusion. The objective route requires MORE THAN$200million,not the proposed-rule preamble's shorthand $200million or more. The exact proposed rule2023-20270would narrow mining-sector coverage to critical minerals while adding critical-mineral extraction,beneficiation,processing and recycling; its full preamble,analysis and proposed regulatory text were read. This Action bars that specified proposal,not all future rulemaking,and does not grant a mineral-rights claim,permit,visa,work authorization or project approval. Tribal sponsorship and DHS Council membership retain their environmental/infrastructure roles; neither the statutory sector insertion nor the prohibited proposed regulatory definitions alter human immigration admission,status,removal or benefits. No inference is made about citizenship requirements under separate mining-claim law,particular minerals/projects,economic/environmental outcomes or member motive. House passage is not enactment. This exact environmental-permitting action is outside Immigration counting under existing functional standards.",
+      "finding": "Exact location insertions,complete whale-section deadline replacement and specified mining-permitting proposal remain outside human Immigration functional scope. Parent geography,agency,appropriation and separate mining law do not supply additional action meaning.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "20f0a462456a5ca3384beee13569fbb91b21d3d00a6f0bce5350a6397eadd302",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:294",
+          "url": "https://clerk.house.gov/evs/2026/roll294.xml",
+          "governed_bytes_sha256": "29fb5c8583508fd7f0c408edd0e5792575a1729969d0c5b35a610dbcda96322e",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:hr1501eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1501eh/html/BILLS-119hr1501eh.htm",
+          "governed_bytes_sha256": "8983d69f057e215aec387c2c1e0661f6740d9be3ab73795b25cce6964bbe6476",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:42usc4370m-2024-par6-operative138",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap55-subchapIV-sec4370m.htm",
+          "governed_bytes_sha256": "38c55ee69770891edd896a98051c687b800daec0c9bed1fcb5bf95611b17faec",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        },
+        {
+          "source_id": "govinfo:fr2023-20270-complete138",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-09-22/html/2023-20270.htm",
+          "governed_bytes_sha256": "c3d1ab7b6e444c090e58450b9b723e8c085d4e6c3633d01aab002b4c83499ee3",
+          "reviewed_extent": "Complete exact ES/EH or specified FR rule; complete materially amended operative scopes. Full captured28USCsection notes retained outside reviewed operative interval; parent appropriation divisions not inherited."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 118,
+    "No Defect": 121,
     "Minor": 6,
     "Major": 11,
     "Critical": 1
@@ -12935,17 +13133,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 20,
+    "successor_new_exclusions_reviewed": 23,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 178,
-    "focused_runtime_seconds": 14.196,
+    "focused_runtime_seconds": 13.986,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "136ownninegreen sealed;137 requires its own pushed-head CI.",
+    "exact_head_ci": "137own nine green sealed;138 requires own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -12982,12 +13180,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Qualified166candidate reclassifies analready-reviewed exclusion;497reviews/179ordinary unchanged.44meanings/40episodes/88observations/78findings;allprior43meanings/76propositions/findings and1508sources/416captures/70questions/threeflags retained. No747/265automaticchange or acceptance. NewJuneguard andexpandedCchapeau controls pass.",
+    "focused_scope_note": "Three exact-action exclusions285/291/294;500reviews/176ordinary.44meanings/six semantic outputs/78findings unchanged.137bounded independent pass and nine green sealed;25forestry remains held,23private captures preserved without semantic registration or classification.70questions/threepartial flags unchanged;candidate-only.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint136_ci.json",
-      "receipt_sha256": "6ec5423e0768375bb8856875773eb35293ded7003210e250e9c9885e52b9e702",
-      "head": "24d4b26c7604c2b313df1dffdfcb9ab178eeaa94",
-      "run": 37740586148,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint137_ci.json",
+      "receipt_sha256": "9d15358f7b51e9ca3c119fbc46ca4f7339697076204a17441eb568acd94e5167",
+      "head": "80daf4d14c6536de226768f0f15721ece61f9795",
+      "run": 37746360944,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -17490,9 +17688,11 @@
   "s331_candidate_reclassification_checkpoint137": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_candidate_reclassification_checkpoint137.json",
     "receipt_sha256": "cc12f871ebb6809fe758c29aa04d16cb3c24cae86139128f5b6df6c5ef8489e8",
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "already_reviewed_action_reclassified": true,
-    "ordinary_pending_delta": 0
+    "ordinary_pending_delta": 0,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint137_independent_review.json",
+    "independent_review_scope": "Bounded independent canonical-source/rendered-member/mechanical pass; no fresh retrieval/full-suite rerun or acceptance."
   },
   "independent_checkpoint136_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint136_independent_review.json",
@@ -17504,5 +17704,31 @@
     "head": "24d4b26c7604c2b313df1dffdfcb9ab178eeaa94",
     "run": 37740586148,
     "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint138": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint138.json",
+    "receipt_sha256": "25278a8ffff7a8a51890c90e334407234bcf6f3901e4fc472e8a815c7142b05f",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 176,
+    "application_questions": 70
+  },
+  "independent_checkpoint137_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint137_independent_review.json",
+    "receipt_sha256": "19208985d62008f18fc7ce9581671acbb20b90d33e1a6bfe0d5984d81594489e"
+  },
+  "prior_head_ci_checkpoint137": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint137_ci.json",
+    "receipt_sha256": "9d15358f7b51e9ca3c119fbc46ca4f7339697076204a17441eb568acd94e5167",
+    "head": "80daf4d14c6536de226768f0f15721ece61f9795",
+    "run": 37746360944,
+    "successful_jobs": 9
+  },
+  "forestry_research_hold_checkpoint138": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/forestry_research_hold_checkpoint138.json",
+    "receipt_sha256": "d6e845ed66367534db18b6d4f5789db3a960dfe839c51ec5f52532455ad72ace",
+    "action_id": "house:119:1:25",
+    "no_ordinary_item_consumed": true
   }
 }

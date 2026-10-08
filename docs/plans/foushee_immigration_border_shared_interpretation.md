@@ -9196,3 +9196,48 @@ Continue bounded ordinary and forestry/materialpackage work. Current166is QUALIF
 CANDIDATE, not frozen; older frozen statements are dated historical checkpoints.
 Deadline08:42:21.249EDT,stoplarge08:12:21,wrap08:27:21,marker08:37:21;weekly30%used/70%
 remaining at latestread. DraftPR198only and all reservedgates unchanged.
+
+
+### Local successor checkpoint 138: court locations, whale deadlines and mining coverage
+
+House119/2/285 S.32 ES adds College Station and El Centro as court locations,
+with complete operative28USC124/84 section contexts. Geography and potential court
+caseload do not add an immigration rule.291 H.R.9436 EH replaces four2028 occurrences
+in complete divisionJJsection101 with2035, preserving the emergency-rule exception;
+adjacent grant authority and unrelated parent appropriations are not inherited.
+294 H.R.1501 EH adds mining/mineral processing sectors and bars the specific2023-20270
+proposed rule. Complete statutory qualifying routes/exclusions and entire proposed
+rule were read. The statute's MORE THAN$200million criterion controls over preamble
+shorthand. No automatic project permit,immigration outcome or separate mining-claim
+citizenship requirement is added. All three remain outside Immigration counting.
+Exact Clerk dates/questions/outcomes and both member labels are bound; successful
+House passage is distinct from enactment.
+
+500 reviewed/176 ordinary remain;44 interpreted/227 procedural/227 excluded/two expressive.
+1516 sources/419 captures/1108 interpreted bindings/339 extent objects/567 coordinates;
+40 episodes/88 observations/78 findings unchanged. All prior497 reviews,1508 sources,
+416 captures,44 meanings and six semantic outputs,70 questions and three partial flags
+are preserved. Three fresh public originals and two scoped derivatives verify against
+complete retained originals.178 tests in13.986s,reference validator,seven semantic
+checks and seven-file raw replay pass. Initial ajv lookup failure is retained privately;
+established NODE_PATH resolves it,with no product/configuration change. Audit121NoDefect/
+6Minor/11Major/1Critical preserves historical severities and distinct finding counts.
+
+Bounded137 independent canonical-source/rendered-member/mechanical review passes at
+80daf4d14c6536de226768f0f15721ece61f9795. Both full member findings,own June baseline,
+independent INA conditions,prior43 meanings/76 findings and all controlled negatives
+verify. No fresh retrieval/full-suite rerun or editorial acceptance is inferred.
+137 CI37746360944 has nine green:five feature-pinned,three synthetic,one mixed;decoded
+logs/checkouts/skips sealed,hosted307 distinct from local178,repair13/20,no retry.
+138 requires its own hosted run.133 retrieval restrictions remain preserved.
+
+Forestry25 remains pending: full117108-character H.R.471 EH was read,but exact
+March21,2023 WhiteOak charter/successor and further material-reference scopes still
+require review.23 prior private statutory captures and primary lookup originals are
+preserved,without collective review/registration or an unavailable-evidence claim.
+Current site mission,strategic plan and report434 do not replace the incorporated
+charter. No forestry review record or ordinary item is consumed by this research hold.
+
+Continue authorized bounded ordinary and package work.166 is a qualified independently
+reviewed candidate;265 remains frozen,747 unaccepted. No editorial acceptance,production
+write,publication,merge or deployment. Existing shutdown controls remain unchanged.
