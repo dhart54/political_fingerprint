@@ -15244,10 +15244,150 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:208",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "208",
+        "legis-num": "H R 4016",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "14",
+        "amendment-author": "Greene of Georgia Part A Amendment No. 115",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:23 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Greene PartA115 (Clerkordinal14,roll208) strikes complete RHsection8117,page118lines20-24. That provision permits up to $500million FROM thisAct O&MDefenseWide funds forDSCA to support the armedforces ofJordan. Up-to/may-use is a cap/permissivepurpose authority,not a guaranteed $500million payment,mandatoryminimum,independentadditionalappropriation ortotalO&M reduction. This exactstrike does notstrike section8104,allJordan-relatedresources/Stateaid,permanently repeal bilateralagreements,or ban all armedforces support underotherauthority/funds. The changedobject is use ofDepartmentDefensefunds forspecifiedforeignarmedforces,notpersonalvisa/admission/nationality/removal/immigrationstatus/workauthorization criteria. Border/fentanyl/veteran/debt/treaty assertions in debate are not operativechanges ormembermotive. No individualsecurity-assistance/travel/employment/contractlegalapplication oractualspending/savings/war/capabilityguarantee. Complete ownflooroperative equals numberedReport afterformatting/linehyphenation/emptysectionplaceholder-only normalization;no substantivewords dropped. Ownrecordedvote failed afterpreliminaryvoicenoes. FousheeNo/MassieAye remain exact amendmentobservations,notwholebillpassage/enactment/components/preferences. July17Recordlegislative-day andJuly18aftermidnightClerkcivil dates coexist. No genericcountry/agency/foreignperson/border-rhetoric bridge;establishedfunctionalstandard candidateexclusion,noncounting only.",
+      "finding": "ExactJordan8117up-to/permissivepurpose strike versusThisActonlyUkraineassistanceban;not8104/allJordanfunds/notUSAIonly orallActs. Ownfailedrecordedquestion/NoAyelabels/civil-legislative-day preserved;no genericcountry/agency/border-rhetoric bridge.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "b639a6b50ef5f2902ab2598391675989dcc01d4fd0037b9703cd990a1c66a250",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:208",
+          "url": "https://clerk.house.gov/evs/2025/roll208.xml",
+          "governed_bytes_sha256": "35b0a69ee85dda3e51c9740b12ae9b82ef4a9471431e2cd9573a839918186d1f",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4016-amend115-roll208-choice152",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "governed_bytes_sha256": "2506ebbe9306e8f45e2f4c5297628226c72e90ae65c698b6baaace0bbf0ac1e9",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend115-operative152",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "governed_bytes_sha256": "ea1172164afbaaa2d57a4a3834c5dcf258944ec33f9dc9d8d36aa84f9f220ccc",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend115-target152",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "governed_bytes_sha256": "73f3060111fd739308d67cec723e1be6152ab8aaeda0abaa3d27c53a1d6ddad5",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:209",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "209",
+        "legis-num": "H R 4016",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "15",
+        "amendment-author": "Greene of Georgia Part A Amendment No. 116",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "18-Jul-2025",
+        "action-time": "12:27 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Greene PartA116 (Clerkordinal15,roll209) adds a newsection before the billshorttitle: none ofthe funds madeavailable BYTHISACT may be used for ASSISTANCETO UKRAINE. Preserve that broadliteralassistance object;notnarrowed toUSAIonly,onlyweapons/combat/thewar,norbroadened toallActs/allUSorothercountryresources/allUkrainepersonsorpermanentrepeal. RHpage146finalshorttitle confirms insertionlocation;this isnotalreadyenactedRHtext. It regulates thisAct funds forassistance toUkraine,withno newpersonalvisa/admission/nationality/removal/immigrationstatus/workauthorization condition supplied. The fulloperative doesnotdefinehumaneligibility/immigrationpathways;no inferred refugee/relocation exclusion orindividualprogram/travel/entry application. DebateUSAIzero/foreignborders/alldeployments/amounts/corruption andnationality rhetoric donot establish enactedprogramfunding,operativepersonaleligibility,membermotiveoractualwar/security/economic outcomes. NotallUSAI/supplemental/permanentauthoritylaw is adjudicated. Complete ownflooroperative equals numberedReport afterformatting/linehyphenation/emptysectionplaceholder-only normalization;no substantivewords dropped. Ownrecordedvote failed afterpreliminaryvoicenoes. FousheeNo/MassieAye remain exact amendmentobservations,notwholebillpassage/enactment/components/preferences. July17Recordlegislative-day andJuly18aftermidnightClerkcivil dates coexist. No genericcountry/agency/foreignperson/border-rhetoric bridge;establishedfunctionalstandard candidateexclusion,noncounting only.",
+      "finding": "ExactJordan8117up-to/permissivepurpose strike versusThisActonlyUkraineassistanceban;not8104/allJordanfunds/notUSAIonly orallActs. Ownfailedrecordedquestion/NoAyelabels/civil-legislative-day preserved;no genericcountry/agency/border-rhetoric bridge.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "b8aee404ee36ad3c8bef153d3d6e2c2651e95cb8dfe14e2233436f00b394d350",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:209",
+          "url": "https://clerk.house.gov/evs/2025/roll209.xml",
+          "governed_bytes_sha256": "d4d4947f21de17458d9ad0356b1a2f4c5b953aed3f3afee79b10d37afa241bd4",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4016-amend116-roll209-choice152",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "governed_bytes_sha256": "873c827468d8b1d353ca4c5383e7c16ee318638b81101fc4ddf111a5524acde0",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119199-partA-amend116-operative152",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "governed_bytes_sha256": "628c62d343e88e563386b8d0191ec4084da7da777cf765b59fe6d6bded4a1586",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4016-rh-amend116-insertion-location152",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "governed_bytes_sha256": "3a65a28c290664a0620cd71e07a94cc8c9928518c6c5c97d9efaf993eadb059a",
+          "reviewed_extent": "Completeownoperative/question/report/RHtargetorinsertionlocation;notwholeparent/currentindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 147,
+    "No Defect": 149,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -15309,17 +15449,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 51,
+    "successor_new_exclusions_reviewed": 53,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 16.045,
+    "focused_runtime_seconds": 16.598,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint150 own first-attempt nine green;151 own pushed-head run pending.",
+    "exact_head_ci": "Checkpoint151 own first-attempt nine green;152 own pushed-head run pending.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -15356,12 +15496,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint151:threefailedGreene111-113exactfundingoperations204-206. OHDACA117988000accountstrike/sixmaterialstatutes/domesticpowers;Taiwan8105allocation500million versus2025authorization300million;HIV15millionminimumzero,notwholeaccount/prohibition.528reviews/148ordinarypending;1629sources/479captures/434extents/759coordinates.10raworiginals/16derivatives/22intervals/12materialPDFpages;179tests/7checks/reference/sevenfilereplay.149paginationP3independentlyresolvedwithbeforehistory;150mechanics/CI9green,finalsource-summarypending.44meanings/78findings/70questions/3packages/allholds/limitsretained,nofinalverdict/acceptance.",
+    "focused_scope_note": "Checkpoint152:twofailedGreene115-116 exactJordan8117cap/permissive-purpose strike andThisActonlyUkraineassistanceban208-209.530reviews/146ordinarypending;1635sources/480captures/440extents/769coordinates.1completeRH148physical/146bill-textparent serialization,6derivatives/10intervals/6materialPDFpages plus1adjacentcontrol.179tests/7checks/reference/replay;151CI9green.207threeagreementreferences remainresearchhold/notconsumed,notdeclaredunavailable.149paginationP3 resolved;150finalsource-summary/151/152independentreviews pending.44meanings/78findings/70questions/3packages/allpriorholds/limitsretained,nofinalverdict/acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint150_ci.json",
-      "receipt_sha256": "32325545bab3906df25314f2a99f79a009254ec6bc01b398ff10241ba544b1f8",
-      "head": "6920dff7da8619b28daaaa39b335543c860321ad",
-      "run": 37818422758,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint151_ci.json",
+      "receipt_sha256": "3a1e7236623d7896963be26ebad1c4c89af2bab470033d5759639b4e06684239",
+      "head": "021ed0a62f0a90a8f21af3f960969ec6d2797cf2",
+      "run": 37824360981,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -20220,7 +20360,7 @@
   },
   "ordinary_screening_checkpoint151": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint151.json",
-    "receipt_sha256": "54d700907f05355e42279bea979ff745e4c759a0a6a478d675fb892e7f333e96",
+    "receipt_sha256": "c96afd895873d4692f788b35a2e73bbf1281b84b26eb167052c144caecda3b47",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
     "independent_review_pending": true,
@@ -20232,6 +20372,28 @@
     "receipt_sha256": "32325545bab3906df25314f2a99f79a009254ec6bc01b398ff10241ba544b1f8",
     "head": "6920dff7da8619b28daaaa39b335543c860321ad",
     "run": 37818422758,
+    "successful_jobs": 9
+  },
+  "israeli_program_agreement_research_hold_checkpoint152": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/israeli_program_agreement_research_hold_checkpoint152.json",
+    "receipt_sha256": "12be3dc5c445ff20450ed63c7cac94407418cd23703323321fc6bce7909b908f",
+    "action_id": "house:119:1:207",
+    "consumes_ordinary_queue": false
+  },
+  "ordinary_screening_checkpoint152": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint152.json",
+    "receipt_sha256": "b8302cd9e04efeb8044efcfe4ea18f222fa9941bbf155555f2af0027eda8bb23",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 146,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint151": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint151_ci.json",
+    "receipt_sha256": "3a1e7236623d7896963be26ebad1c4c89af2bab470033d5759639b4e06684239",
+    "head": "021ed0a62f0a90a8f21af3f960969ec6d2797cf2",
+    "run": 37824360981,
     "successful_jobs": 9
   }
 }
