@@ -9842,3 +9842,6 @@ Checkpoint131: fourcompleteadoptedrule contexts291/318/338/141;485reviewed/191or
 
 
 Checkpoint132: three procedures123/195/237;488reviewed/188ordinary. Common1182(C)official threshold restored explicitly in both32/33relative branches and qualifications, independent of recipient knowledge; historical130 frozen.177tests14.138s/reference/sevenchecks/rawreplay, four omission negatives and both stale-projection rejections pass. Counts/directions/76graph propositions unchanged;41othermeanings/74otherfindings/70questions/threepartialflags preserved.1399 independently cleared; newchapeau recheck pending.131own9green sealed;132 needs ownCI. See ordinary_screening_checkpoint132.json and trafficking_chapeau_correction_checkpoint132.json; candidate only.
+
+
+Checkpoint133: three exact DHS reporting/task-force/outreach exclusions286/287/300;491reviewed/185ordinary/1499sources.177tests14.315s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/132correction unchanged. Existing broad grants and literal termination reference preserved; no agency/title-only eligibility. Independent131 bounded pass recorded;132CI8green/repairpending at latestread. Candidate-only; see ordinary_screening_checkpoint133.json.

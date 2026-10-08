@@ -8972,3 +8972,39 @@ Continue coherent ordinary batches and separate166ownJuneS331/forestry25charter/
 material package research.747 remains unaccepted; no automatic166 reversal. The
 watcher deadline remains08:42:21.249EDT, stop large units08:12:21, wrap08:27:21 and
 final marker by08:37:21. DraftPR198 only; all reserved gates remain unchanged.
+
+
+### Local successor checkpoint 133: DHS reporting and grant outreach
+
+Three complete exact passage texts are screened outside Immigration counting:
+House119/1/286 H.R.1608 vehicular-terrorism reporting,287 H.R.2659 PRC cyber-threat
+task force and300 H.R.4058 preparedness-grant outreach. Incorporated terrorism,
+cybersecurity/critical-infrastructure/intelligence definitions, captured NSM22
+sector-role pages4-6/16-17 and operative604/605/609 grant baselines were read at
+their governed scope. Agency identity, international actors, ports and territorial
+stakeholders do not add a migration/entry/status/removal mechanism to these actions.
+Existing broad grant uses are preserved, without claiming they can never touch
+immigration. The printed H.R.2659 termination reference remains literal; no end-date
+repair or full advisory/memorandum/administrative-chapter reconstruction is claimed.
+
+Three exact Health EHs and scoped primary references contribute ten new canonical
+source objects, zero captures/acquisitions. All three Clerk identities/questions/
+outcomes and FousheeYea/MassieNay observations bind; all remain noncounting.
+491 reviewed/185 ordinary unfinished;43 interpreted/226 procedural/220 excluded/two
+expressive;1499 sources/1088 interpreted bindings/412 captures/39 episodes/86
+observations/76 findings. Prior488 reviews/1489 sources, all43 meanings/six semantic
+outputs, all76 findings,70 questions/three partial flags/frozen166/265 and132 common
+chapeau correction remain exact. Proof changes only the source hash.
+
+177 focused tests in14.315s, reference validator,seven semantic checks and seven-file
+same-platform raw replay pass. Initial missing NODE_PATH and12 sandbox fixture ACL
+errors are preserved and resolved using the established validation environment,
+without product/configuration/ACL change. Final diff and seals are reviewed before
+delivery. Incoming131 bounded review is clean within scope; aggregate129 API snapshot
+hash stays owner-attested.132 ownCI currently8green with repair pending;133 requires
+its own run. Common-chapeau correction awaits independent recheck; no acceptance.
+
+Continue bounded ordinary batches and separate166 own-June baseline,forestry25
+charter and material-package research. All70 questions and three partial packages
+remain. Watcher deadline08:42:21.249EDT,stop large08:12:21,wrap08:27:21,marker08:37:21;
+latest exposed weekly28%used/72%remaining. DraftPR198 only; reserved gates unchanged.

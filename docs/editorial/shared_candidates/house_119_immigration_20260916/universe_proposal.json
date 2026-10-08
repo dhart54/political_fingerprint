@@ -75,8 +75,8 @@
     "counts": {
       "procedural_context": 226,
       "interpreted_substantive_directional": 43,
-      "exact_action_ineligible": 217,
-      "source_unresolved": 188,
+      "exact_action_ineligible": 220,
+      "source_unresolved": 185,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -91,8 +91,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 226,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 217,
-    "unresolved_boundary_cases": 188,
+    "exact_action_ineligible_actions": 220,
+    "unresolved_boundary_cases": 185,
     "independent_episode_count": 39,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -498,7 +498,10 @@
         "house:119:1:278",
         "house:119:1:279",
         "house:119:1:282",
+        "house:119:1:286",
+        "house:119:1:287",
         "house:119:1:292",
+        "house:119:1:300",
         "house:119:1:301",
         "house:119:1:303",
         "house:119:1:304",
@@ -656,8 +659,6 @@
         "house:119:1:262",
         "house:119:1:281",
         "house:119:1:285",
-        "house:119:1:286",
-        "house:119:1:287",
         "house:119:1:289",
         "house:119:1:294",
         "house:119:1:295",
@@ -665,7 +666,6 @@
         "house:119:1:297",
         "house:119:1:298",
         "house:119:1:299",
-        "house:119:1:300",
         "house:119:1:320",
         "house:119:1:325",
         "house:119:1:326",
@@ -1117,7 +1117,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "f0a93da24d0b2fdb7ba05a64000f25eb5a1503bef86481ce0832de46bb9c7b71",
+  "universe_subject_sha256": "7d6a179fc544f8ea751b25ebc0604576192246ebc9a4f0257595d766501badac",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -19078,8 +19078,8 @@
       "date": "2025-11-17",
       "measure": "bill_119_hr_1608",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.1608 EH requires a 180-day DHS/TSA/CISA vehicular-terrorism report, including domestic/international threats, locations, automotive technologies, stakeholder/law-enforcement coordination, countermeasure recommendations and privacy/civil-rights engagement; classified report, optional unclassified executive summary/publication and briefing within30days remain distinct. The incorporated6USC101(18)definition requires dangerous/destructive criminal activity with specified apparent purposes; it does not make this reporting action an immigration-status/entry/removal or border-person enforcement measure. Airports, seaports, international trends and DHS agency identity do not themselves supply that mechanism. This exact whole passage choice is outside Immigration eligibility under the established functional-mechanism standard; no realized report, countermeasure, new INA ground, particular perpetrator status, component preference or motive inferred.",
       "source": {
         "source_id": "clerk:119:1:286",
         "url": "https://clerk.house.gov/evs/2025/roll286.xml",
@@ -19096,25 +19096,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.1608 EH requires a 180-day DHS/TSA/CISA vehicular-terrorism report, including domestic/international threats, locations, automotive technologies, stakeholder/law-enforcement coordination, countermeasure recommendations and privacy/civil-rights engagement; classified report, optional unclassified executive summary/publication and briefing within30days remain distinct. The incorporated6USC101(18)definition requires dangerous/destructive criminal activity with specified apparent purposes; it does not make this reporting action an immigration-status/entry/removal or border-person enforcement measure. Airports, seaports, international trends and DHS agency identity do not themselves supply that mechanism. This exact whole passage choice is outside Immigration eligibility under the established functional-mechanism standard; no realized report, countermeasure, new INA ground, particular perpetrator status, component preference or motive inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:286",
           "url": "https://clerk.house.gov/evs/2025/roll286.xml",
           "raw_sha256": "290af7d1c2565ab5affdcca008b91d9971753906ab9cb56682398c7d77256bf7",
-          "governed_bytes_sha256": "68fdf781045d0639d8e1409583dfd3c641021034482b0bf2148a57099f909a30",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "68fdf781045d0639d8e1409583dfd3c641021034482b0bf2148a57099f909a30"
+        },
+        {
+          "source_id": "govinfo:hr1608eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1608eh/html/BILLS-119hr1608eh.htm",
+          "raw_sha256": "9bfb2781360233ccd41362f0cfe98c2b421f18b6c91daa7768842bf2dfe5d4cf",
+          "governed_bytes_sha256": "ebb72db7235c56867c1ac4b811d6bfa225a6781b4cb6d05f75a10f2a82ccb77b"
+        },
+        {
+          "source_id": "govinfo:6usc101-18-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-sec101.htm",
+          "raw_sha256": "65b87103d1abda4bd9aca8b417fe4d2459374831de2f7ad58796becaf1eb59ab",
+          "governed_bytes_sha256": "cbaa7ae2002190c55016f49b29450d746d2f4d225c8d05edac1e8de7539e9075"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "cf0501209b7e99a5fbaa283a4afe16891e3cca7a46eb7c5929449abbec1ab923"
       },
       "historical_raw_hash_matches": true
     },
@@ -19125,8 +19137,8 @@
       "date": "2025-11-17",
       "measure": "bill_119_hr_2659",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.2659 EH creates a CISA-chaired/FBI-vice-chaired joint task force for PRC state-sponsored cyber threats to critical infrastructure, with appropriate sector-agency representatives, existing-effort coordination, initial/annual reports, classified assessments/briefings, qualified information access and stated FACA/Paperwork Reduction Act exemptions. Incorporated650definitions concern information systems, incidents, the broad homeland-security enterprise and sector risk agencies;5195c(e)concerns physical/virtual systems and assets. Captured NSM22pages4-6/16-17 establish sector-risk coordination and designations, and3003(4)defines participating intelligence-community entities. These identify actors and cybersecurity/critical-infrastructure scope; PRC actor identity, ports/military mobility, DHS/intelligence participation and international coordination do not alter immigration admission/status/removal, migration benefits or border-person enforcement. Reporting recommendations for additional authorities are not enacted immigration authorities. The printed termination reference to subsection(h)(4) is retained without silently resolving it to another subsection or inferring an operative end date. No advisory content, generic administrative exemption, actual cyber incident or additional reference meaning is used to add an Immigration mechanism. Exact passage is ineligible under existing standards; no component preference or motive inferred.",
       "source": {
         "source_id": "clerk:119:1:287",
         "url": "https://clerk.house.gov/evs/2025/roll287.xml",
@@ -19143,25 +19155,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.2659 EH creates a CISA-chaired/FBI-vice-chaired joint task force for PRC state-sponsored cyber threats to critical infrastructure, with appropriate sector-agency representatives, existing-effort coordination, initial/annual reports, classified assessments/briefings, qualified information access and stated FACA/Paperwork Reduction Act exemptions. Incorporated650definitions concern information systems, incidents, the broad homeland-security enterprise and sector risk agencies;5195c(e)concerns physical/virtual systems and assets. Captured NSM22pages4-6/16-17 establish sector-risk coordination and designations, and3003(4)defines participating intelligence-community entities. These identify actors and cybersecurity/critical-infrastructure scope; PRC actor identity, ports/military mobility, DHS/intelligence participation and international coordination do not alter immigration admission/status/removal, migration benefits or border-person enforcement. Reporting recommendations for additional authorities are not enacted immigration authorities. The printed termination reference to subsection(h)(4) is retained without silently resolving it to another subsection or inferring an operative end date. No advisory content, generic administrative exemption, actual cyber incident or additional reference meaning is used to add an Immigration mechanism. Exact passage is ineligible under existing standards; no component preference or motive inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:287",
           "url": "https://clerk.house.gov/evs/2025/roll287.xml",
           "raw_sha256": "19de8148f0f083619499ade28d4cbeda5cf2964390c720facc91693e1e439a23",
-          "governed_bytes_sha256": "fb52e679a39230cbdcf349fac7da37c37478ed6b7fcb11bbbcc59d0c3a8edac8",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "fb52e679a39230cbdcf349fac7da37c37478ed6b7fcb11bbbcc59d0c3a8edac8"
+        },
+        {
+          "source_id": "govinfo:hr2659eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2659eh/html/BILLS-119hr2659eh.htm",
+          "raw_sha256": "482e0db0a5b5ace3d54d680784d6cacdcd8f918ba93417497932d2ecc02800ca",
+          "governed_bytes_sha256": "e278f7d6ef1700c1dc7ab15474cef72a1b7972685d71fb30d29915fc9ff05b11"
+        },
+        {
+          "source_id": "govinfo:6usc650-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXVIII-sec650.htm",
+          "raw_sha256": "89c61da71a03606b288dfd50c45e5ec99da91fed138bf74f0c2291038c6cf145",
+          "governed_bytes_sha256": "e1c2d70e1e36771507f5d8095afe956a3ec5b5e2a65af0621058476c52e68189"
+        },
+        {
+          "source_id": "govinfo:42usc5195c-e-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap68-subchapIV-B-sec5195c.htm",
+          "raw_sha256": "1b439982da0ee873532f67aa6c253df8dc4fd3ae6289c66c4ec6e50fb6284c23",
+          "governed_bytes_sha256": "3f42ee29ec79e517dc8f124b564ffc3fd5110422f734abacc056b6b623595eff"
+        },
+        {
+          "source_id": "govinfo:nsm22-srma-roles",
+          "url": "https://www.govinfo.gov/content/pkg/DCPD-202400358/pdf/DCPD-202400358.pdf",
+          "raw_sha256": "fe9cc348aab59d2fa9c8e304a3a719f5328dccd58060ef14ce0de3ab980185ad",
+          "governed_bytes_sha256": "27d2ab5cc5a0aa078bbe9cf0ba9eb5b4aa1a50f5c622548058be5a95d7a45edd"
+        },
+        {
+          "source_id": "govinfo:50usc3003-4-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap44-sec3003.htm",
+          "raw_sha256": "6dc2f830f969a9045a1a659da3d2adf6670efed15d23110d7d74fa4dfa23258a",
+          "governed_bytes_sha256": "667dcc363a799c87330c3e49087aa42d08a1ff26f2116654906de6297be6dcda"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d3dfa72e67b6d2a5c531cb8356a39ddded34073e23d07ec48e072ce97a00d3e6"
       },
       "historical_raw_hash_matches": true
     },
@@ -19766,8 +19808,8 @@
       "date": "2025-11-19",
       "measure": "bill_119_hr_4058",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.4058 EH adds ongoing outreach, engagement, education, technical assistance and support before/during/after Urban Area Security Initiative and State Homeland Security Grant awards, annual stakeholder surveys, summaries/feedback incorporation and other feedback mechanisms; separate two-year GAO review and three-year FEMA action report remain. Complete captured604/605baseline establishes terrorism-preparedness grants, geographic/governmental recipients and allocations;609allows qualified preparedness uses including agreed Federal-duty reimbursements and constrained multipurpose disaster preparedness. The exact new paragraphs/reporting do not change those existing uses, fund immigration enforcement, add migrant/status-based eligibility or enact border-person entry/custody/removal policy. No categorical claim that these broad grant programs can never touch immigration is made. DHS/FEMA identity and territorial stakeholders do not establish a new Immigration mechanism in this narrow action. Existing functional standard keeps exact whole passage ineligible; no realized outreach/report, broader program stance, component preference or motive inferred.",
       "source": {
         "source_id": "clerk:119:1:300",
         "url": "https://clerk.house.gov/evs/2025/roll300.xml",
@@ -19784,25 +19826,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.4058 EH adds ongoing outreach, engagement, education, technical assistance and support before/during/after Urban Area Security Initiative and State Homeland Security Grant awards, annual stakeholder surveys, summaries/feedback incorporation and other feedback mechanisms; separate two-year GAO review and three-year FEMA action report remain. Complete captured604/605baseline establishes terrorism-preparedness grants, geographic/governmental recipients and allocations;609allows qualified preparedness uses including agreed Federal-duty reimbursements and constrained multipurpose disaster preparedness. The exact new paragraphs/reporting do not change those existing uses, fund immigration enforcement, add migrant/status-based eligibility or enact border-person entry/custody/removal policy. No categorical claim that these broad grant programs can never touch immigration is made. DHS/FEMA identity and territorial stakeholders do not establish a new Immigration mechanism in this narrow action. Existing functional standard keeps exact whole passage ineligible; no realized outreach/report, broader program stance, component preference or motive inferred.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:300",
           "url": "https://clerk.house.gov/evs/2025/roll300.xml",
           "raw_sha256": "75efe5681c8d4d74a8c93a28d08d753b8a8f86b3ac81d553cbc978bfa974d60b",
-          "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "2acfa4b633f390c75c1ba0514f50ac8d07389d24cdfdded3f4a6462be5ebe610"
+        },
+        {
+          "source_id": "govinfo:hr4058eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4058eh/html/BILLS-119hr4058eh.htm",
+          "raw_sha256": "0a2bf3613c9ea058f7d4eec6329c7b2915ea2463c1303e73246564be630a3a23",
+          "governed_bytes_sha256": "0fb34f3d07428f81ac348c5b0ce397daed0e5eac173e843310fc5767b0c2dde8"
+        },
+        {
+          "source_id": "govinfo:6usc604-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXV-partA-sec604.htm",
+          "raw_sha256": "dbe2709be4eac3b9f35e75b0ec9c043a518726c8361f83b9d5a318b0611f2863",
+          "governed_bytes_sha256": "b7a30b734b5083204a4b2cf491fe34a041c6291581eb5b1f8de5e1f1c555fe70"
+        },
+        {
+          "source_id": "govinfo:6usc605-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXV-partA-sec605.htm",
+          "raw_sha256": "002c7e5f4b2e1dc12a22fc24948a1b3381e3b7f931826efc063daa1694f0d60d",
+          "governed_bytes_sha256": "c8a9f8b401cc9bd99b0b1edacc37aee798675017074576d2ab793c56bc93a432"
+        },
+        {
+          "source_id": "govinfo:6usc609-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title6/html/USCODE-2024-title6-chap1-subchapXV-partA-sec609.htm",
+          "raw_sha256": "6d796dd96043d38295303e326b9512cfffc4fb700e3de98debbbf6482a052767",
+          "governed_bytes_sha256": "0349458e35771818f6b2990048f05cb2378eac4c91891586ed9fd14fd9d26e1c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b9614af1b29d480c59607225c0b580bde94d9faa9b0245260133444acda1f652"
       },
       "historical_raw_hash_matches": true
     },
@@ -41274,8 +41340,6 @@
     "house:119:1:262",
     "house:119:1:281",
     "house:119:1:285",
-    "house:119:1:286",
-    "house:119:1:287",
     "house:119:1:289",
     "house:119:1:294",
     "house:119:1:295",
@@ -41283,7 +41347,6 @@
     "house:119:1:297",
     "house:119:1:298",
     "house:119:1:299",
-    "house:119:1:300",
     "house:119:1:320",
     "house:119:1:325",
     "house:119:1:326",
@@ -41427,6 +41490,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "d8525a9be09ca06df872d031d704c1de0dff49fc43d935e1eb18bcc4d5817c1c",
-  "membership_review_sha256": "748249f2db696d4fb14cdcd3e68ca680b3e42b309fb9d941d6237283ee109ba4"
+  "proposal_sha256": "33c1f9f0a457f534859445cefcc0b2086835c67733d5cf48b4dd27ae9a7f0ecf",
+  "membership_review_sha256": "397fbcdcb5e5fd2d63338fc756855147b259477c174760a6b48c626632230e58"
 }
