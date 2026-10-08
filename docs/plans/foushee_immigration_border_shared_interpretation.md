@@ -9568,3 +9568,47 @@ distinctlocal179,repair13/20,no retry.145needsownCI/boundedreview. Existingholds
 70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139limits
 remain. Weeklyusage34percentused/66remaining observed11:38:21Z;watcher unchanged.
 Continue boundedwork untilstoplarge12:12:21Z,wrap12:27:21Z,marker12:37:21Z,shutdown12:42:21Z.
+
+
+### Local successor checkpoint146: exact failed funding amendments
+
+House119/1/229/230/231 bind PerryReport25/26/27 to floorordinals6/7/8,own
+printedoperatives/questions/totals/recordedfailure,NoFoushee/AyeMassie. Each
+two-lineamendment reducesitsnamedRHdollarline and increasesSEC512SpendingReduction
+Account bythesameamount:350millionARPAEresearch,13millionATVMadministration,
+35millionTitle17administration. Admincuts are not allloanprincipal/credit/other
+fundingstreams orpermanentstatutoryrepeal. RetainedTitle17fees/offsets/separate
+150millionnuclearcredit/controls,ARPAE40millionproviso andfailedvoice-to-recorded
+stages remainliteral;noactualsavings,transfer,programmeabolition orpersonal
+immigration/loan/grant outcome. Material2024contexts arenotcomprehensiveSeptember
+2025law/currenteligibility assurance. Ownqualifiers narrowedtosourceboundscopes
+beforecandidateapply. Exactfunctionalexclusions,candidateonly.
+
+518reviews/158ordinary remain,44interpreted/227procedural/245excluded/twoexpressive;
+1586sources/459captures/1108bindings/391extents/655coordinates;40episodes/
+88observations/78findings. Fivefreshraworiginals,13derivatives/22intervals/13canonical
+registrations verify. Threelegacyrawhashes matchgovernedbankwitnesses;newwholeparent
+PDF/HTMLtextserialization notindependentlyreproduced. NamedRH33-37/74andRecord
+53-56/62-64pagesvisuallyinspected;nofullparent/reconciliation ofotheramendments.
+Guessed17013Codepatherrorrejected,officialchapter152capture/17013scope recovered.
+Prior515reviews/1573sources/454captures/44meanings/sixoutputs/78findings/70questions/
+threeflags unchanged.179tests in14.294s/reference/7checks/seven-file replaypass.
+Audit137NoDefect/8Minor/11Major/1Critical;history/separatemetadataMinor retained.
+
+144and145boundedindependentsource/domain/mechanicsreviews pass;activependingflags/
+sealsclosed withbeforearchives,source/rationale/outputhistory preserved.144five
+raw/fulltext/threePDFserializations/sixderivatives/nineintervals andsixpagevisual
+scope verify,notall177pages.145thirteenraw/fulltexts/twelve derivatives/15intervals,
+reusedES/OIGninerecommendations/Appendix2 andrelativephase deadlines verify;
+PDF35-36/40-47viewed,notwhole65pageReport orcompletesignedsettlements. FreshClerk
+304/284identities/memberrows/totalsmatch butrawXMLhashesdrift;causeunestablished
+andlimitretained. NW196threeprivateoriginals/citizens-residents/2004reprint hold
+remainpending. Owner179tests/replaysattributed,guards/negativespass,143/144CIlog
+hashesverify. Noeditorialacceptance orproduct/test/configurationchange.
+
+145CI37772455907 first-attemptninegreen,fivefeature/three synthetic/one mixed;
+syntheticd8d39878cc3f607b01127e433d57ec2ad6393147,decodedlogs/checkouts/skips sealed,hosted308
+distinctlocal179,repair13/20,no retry.146needsownCI/boundedreview. Allholds,
+70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139/143/145
+limits retained. Completeexisting146delivery,thenstopnewlargework12:12:21Z,
+wrap12:27:21Z,terminalCHECKPOINTby12:37:21Z,lastfilesystemaction. Goalunfinished.

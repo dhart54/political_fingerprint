@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 242,
-      "source_unresolved": 161,
+      "exact_action_ineligible": 245,
+      "source_unresolved": 158,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 242,
-    "unresolved_boundary_cases": 161,
+    "exact_action_ineligible_actions": 245,
+    "unresolved_boundary_cases": 158,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -488,6 +488,9 @@
         "house:119:1:217",
         "house:119:1:219",
         "house:119:1:222",
+        "house:119:1:229",
+        "house:119:1:230",
+        "house:119:1:231",
         "house:119:1:240",
         "house:119:1:241",
         "house:119:1:266",
@@ -654,9 +657,6 @@
         "house:119:1:226",
         "house:119:1:227",
         "house:119:1:228",
-        "house:119:1:229",
-        "house:119:1:230",
-        "house:119:1:231",
         "house:119:1:232",
         "house:119:1:233",
         "house:119:1:234",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "b94a4aae10057c86cacbf5fde84e11be82ab68a7735de29d352e01412abd1fa5",
+  "universe_subject_sha256": "8f333717a819d8237fffb49678a74472b5ad7e56fe48baba3a19d7c8e124f767",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -16321,8 +16321,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "ExactPerryprintedamendment25(Clerkfloorordinal6,roll229)proposes reducing the ARPA-E $350millionresearchappropriation line by$350,000,000 and increasing the separateSpendingReductionAccount bythe same$350,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheARPAE40millionprogram-directionproviso remainsliteraltext andisnotrewrittenbythe twoinsertions;noassureduniversalprogrammeabolition orresolutionofremainingprovisos inferred. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
       "source": {
         "source_id": "clerk:119:1:229",
         "url": "https://clerk.house.gov/evs/2025/roll229.xml",
@@ -16339,25 +16339,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "ExactPerryprintedamendment25(Clerkfloorordinal6,roll229)proposes reducing the ARPA-E $350millionresearchappropriation line by$350,000,000 and increasing the separateSpendingReductionAccount bythe same$350,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheARPAE40millionprogram-directionproviso remainsliteraltext andisnotrewrittenbythe twoinsertions;noassureduniversalprogrammeabolition orresolutionofremainingprovisos inferred. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:229",
           "url": "https://clerk.house.gov/evs/2025/roll229.xml",
           "raw_sha256": "54d8e4b72325202b0872b8e3f61901a6a26026e1cd1a02b1123bb034934af32c",
-          "governed_bytes_sha256": "de5de7f442eda788dfa653d0bb58ed2f936ca4046a8a23ba0dc8abb1726cad49",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "de5de7f442eda788dfa653d0bb58ed2f936ca4046a8a23ba0dc8abb1726cad49"
+        },
+        {
+          "source_id": "congressional-record:4553-amend25-roll229-choice146",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "019418cfe34d1f8de1db0749b0030e5fedd3ba7afa20bf37e0130a4003f18da0"
+        },
+        {
+          "source_id": "house-rules:119232-amend25-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "1a49db43cf25e363c396fce665086f54fbe70f9142355ceba56510a0af842d47"
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend25-account-SRA146",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "92b66daecc946b204d52248bed320bea8c233a1c767855eaa3dada07ab2c2b52"
+        },
+        {
+          "source_id": "govinfo:42usc16538-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXVII-sec16538.htm",
+          "raw_sha256": "329b681c3c882407eba89032f73e4e94b064feeaa364f73dd12d786e3803786e",
+          "governed_bytes_sha256": "d0ad6f8181057072da22dc3f5714224b727c920b797a0f2804b044cdaded18ee"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c1b8bd96e2afc6d37225ed48cc6734d1fbd634e296cf641cfeb3e6f36998641e"
       },
       "historical_raw_hash_matches": true
     },
@@ -16368,8 +16392,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "ExactPerryprintedamendment26(Clerkfloorordinal7,roll230)proposes reducing the ATVM $13millionadministrative-expense line by$13,000,000 and increasing the separateSpendingReductionAccount bythe same$13,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheATVMcut targetsadministrativeexpenses,notallloanprincipal,statutoryloan/facilityaward authority orotherfundingstreams. The2024programme includeseligibleindividuals/entities determinedbytheSecretary,manufacturing/engineeringlocation andconditionalrepayment/labor standards;noindividualimmigration/loanapplicationorcomprehensiveSeptember2025law assurance. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
       "source": {
         "source_id": "clerk:119:1:230",
         "url": "https://clerk.house.gov/evs/2025/roll230.xml",
@@ -16386,25 +16410,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "ExactPerryprintedamendment26(Clerkfloorordinal7,roll230)proposes reducing the ATVM $13millionadministrative-expense line by$13,000,000 and increasing the separateSpendingReductionAccount bythe same$13,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheATVMcut targetsadministrativeexpenses,notallloanprincipal,statutoryloan/facilityaward authority orotherfundingstreams. The2024programme includeseligibleindividuals/entities determinedbytheSecretary,manufacturing/engineeringlocation andconditionalrepayment/labor standards;noindividualimmigration/loanapplicationorcomprehensiveSeptember2025law assurance. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:230",
           "url": "https://clerk.house.gov/evs/2025/roll230.xml",
           "raw_sha256": "c549df4ec6da8db845a57720e147ed496b6f617289307829c0c52859d4d89e6a",
-          "governed_bytes_sha256": "55ce7ea20bfdde7f4be8e1cba6772967bbd2e3de16b844e8586eec2556402d9c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "55ce7ea20bfdde7f4be8e1cba6772967bbd2e3de16b844e8586eec2556402d9c"
+        },
+        {
+          "source_id": "congressional-record:4553-amend26-roll230-choice146",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "c2d8a610d453ad7213471922b1130d1b4ccc27ac1d9b22b38742c35897c5a40b"
+        },
+        {
+          "source_id": "house-rules:119232-amend26-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "d0912ac928f0167bf424ddc9edc2f3ba259bf565145ebdc5c7ca382f45f3b028"
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend26-account-SRA146",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "8b50729a7938a6d2e04141285a459173c645cf491611e469d2bc6d7890fc0cb0"
+        },
+        {
+          "source_id": "govinfo:42usc17013-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap152.htm",
+          "raw_sha256": "a39dc399c93a47db61fbbad3ae304505f725d539179b8beba16f26cf00c2f9c5",
+          "governed_bytes_sha256": "51228eff90cac161b35cdbb6fb811aa95948c04f6dafd81fe6372a14e2b24ff8"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "9ef0d17d45a0ec0c86be766523a73b6b86e9dfb39ba3e2dedacef8aa945e4b3f"
       },
       "historical_raw_hash_matches": true
     },
@@ -16415,8 +16463,8 @@
       "date": "2025-09-03",
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "ExactPerryprintedamendment27(Clerkfloorordinal8,roll231)proposes reducing the Title17 $35millionadministrative-expense appropriation line by$35,000,000 and increasing the separateSpendingReductionAccount bythe same$35,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheTitle17cut targetsadministrativeappropriation,notallloanprincipal/guaranteeauthority orotherfundingstreams. Retainedborrowerpayment/fee-offset/futureappropriation rules,separate150millionnuclearcredit amount,non-subordination/support exceptions andOMBcertification remaininRHcontext;no universalwholeaccountzero orprogrammeabolition inferred. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
       "source": {
         "source_id": "clerk:119:1:231",
         "url": "https://clerk.house.gov/evs/2025/roll231.xml",
@@ -16433,25 +16481,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "ExactPerryprintedamendment27(Clerkfloorordinal8,roll231)proposes reducing the Title17 $35millionadministrative-expense appropriation line by$35,000,000 and increasing the separateSpendingReductionAccount bythe same$35,000,000. Completeprintedtwo-lineoperative equals its ownRulesReport119232numberedtext,andtheRHpage/line/dollar target plusSEC512zero baseline bind the exactoperation. Recordedvote rejection controls over earlier voice-aye announcement;FousheeNo/MassieAye remainobservedlabels. Thisfailedamendment isnotfinalbillpassage,enactment,actualaccounttransfer,assureddeficitsavings or permanentrepeal ofanunderlyingprogram. Material2024programfunction/fee/identifiednuclearcontext isreviewedwithout claiming comprehensiveSeptember2025borrower/grant/law application. TheTitle17cut targetsadministrativeappropriation,notallloanprincipal/guaranteeauthority orotherfundingstreams. Retainedborrowerpayment/fee-offset/futureappropriation rules,separate150millionnuclearcredit amount,non-subordination/support exceptions andOMBcertification remaininRHcontext;no universalwholeaccountzero orprogrammeabolition inferred. Research/manufacturing/projectfinancefunction,USfacilitylocation,employment/recruitingauthority andforeigncompetition rhetoric do not supply anexacthumanimmigrationadmission/status/nationality/removal/workauthorization criterion. No individualloan/grant/immigration eligibility,outcome,componentpreference ormembermotive inferred;no genericpublicbenefit/country/person bridge. Ineligible underexistingfunctionalstandards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:231",
           "url": "https://clerk.house.gov/evs/2025/roll231.xml",
           "raw_sha256": "6f5951ee71dfd0f50f74adb729ecb62de4d0f71f3fc319372aa5241bc01e9c44",
-          "governed_bytes_sha256": "f04f3e2d1513421afe1173acc4f42b7725d1ee19c6e2c04075ee161b61a215b1",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f04f3e2d1513421afe1173acc4f42b7725d1ee19c6e2c04075ee161b61a215b1"
+        },
+        {
+          "source_id": "congressional-record:4553-amend27-roll231-choice146",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "raw_sha256": "99affeff4feef2bf717f7a3458761c61a580af6c5288f9335e3eb95823ff4b87",
+          "governed_bytes_sha256": "9a84a015e976d5992d4ab731fb69b45a81f3df227d936a5af992415bc2012ff9"
+        },
+        {
+          "source_id": "house-rules:119232-amend27-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "raw_sha256": "4850f68def66463f034f9c6a07337fc1f77756432db47111e9cabcd51e3e01f3",
+          "governed_bytes_sha256": "276449d06635ca181fa1e74a00e2d19cfdbd4fba866a47c4ff11745210ac25bf"
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend27-account-SRA146",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "raw_sha256": "fe72736f46d67dc4f19b5f8fddfefbdfd26cfce7c84c8a5145eac159ea14ce6d",
+          "governed_bytes_sha256": "a3e08c77ae90450e32aa3101444332a041c11a4255c81872b75bb0c9b0fe12b6"
+        },
+        {
+          "source_id": "govinfo:42usc16512-h-fees-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16512.htm",
+          "raw_sha256": "694f45151d80eec97c27565c2a34acc7d643d30b606beae8c26bcde1c7ef2bc1",
+          "governed_bytes_sha256": "1545c3c2044cac145d19b239157aca19ed2d17c8a35f1fa3cb46e3d43456a55b"
+        },
+        {
+          "source_id": "govinfo:42usc16513-b4-nuclear-operative146",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapXV-sec16513.htm",
+          "raw_sha256": "fa2e0071e6c4dcafb191325e55858cdcffdd81fd3f57fc654cedded0321aaecd",
+          "governed_bytes_sha256": "05e8bf2b3b373efa6589d782881b6cd6a620cf42188dc15cb6537039e2252159"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1a61f66090242469c5ef791c73d93a6d394927216568cbb3df281c464f819078"
       },
       "historical_raw_hash_matches": true
     },
@@ -41888,9 +41966,6 @@
     "house:119:1:226",
     "house:119:1:227",
     "house:119:1:228",
-    "house:119:1:229",
-    "house:119:1:230",
-    "house:119:1:231",
     "house:119:1:232",
     "house:119:1:233",
     "house:119:1:234",
@@ -42044,6 +42119,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "eda6a966d39d4b4ea7fb841e081fb14e1c351e6975dfe685a16132d72a741b14",
-  "membership_review_sha256": "014324a5563d773fd3065a33474683f9dc2590b80209b02c074629d7d24e5ecd"
+  "proposal_sha256": "60cf17bfbedc1569b13d93a19862cf872e7fcc2b85d0ee97ae3257ccc8bf76a5",
+  "membership_review_sha256": "4d79ef99bd46d9f47387a2a700a817c87c98aa0a15fbb5152e61ec0bbcd41617"
 }
