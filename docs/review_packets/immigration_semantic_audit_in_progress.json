@@ -15536,10 +15536,144 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:245",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "245",
+        "legis-num": "H R 3838",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "9",
+        "amendment-author": "Norman of South Carolina Part A Amendment No. 13",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Agreed to",
+        "action-date": "10-Sep-2025",
+        "action-time": "4:50 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Norman PartA13 (Clerk ordinal9, House119/1/245) adds three separate EFMP restrictions for minor dependent children: provision of gender-transition procedures including surgery or medication; referrals for the subsection(a) procedures; and approval THROUGH EFMP of a duty-station change for the purpose of providing access to those procedures. Preserve the through-program and purpose qualifications; not all military moves, all care, all family members or every international movement. Its1781c(d)(4)(I) reference identifies the named EFMP, with the unchanged new-supporting-medical/educational-information disenrollment condition and tracking requirement. Complete captured1781c(a)-(h) preserves Office/support/referral/assignment roles, military-needs/career-development qualifications, location both within/outside the continentalUS, assignment-stabilization/review/protection and support/services rules. A duty-station reassignment is distinct from visa/admission/removal/immigration-status/work-authorization eligibility; no such changed criterion is supplied. Medical/service/eligibility and current incorporated-law applications remain unadjudicated, including underlying Extended Care references. Initial printed H4177 callup says Report199-255; own recorded question, Clerk Norman13 identity and complete Report119-255 exact operative converge on119-255. Preserve the initial printed error as source qualification, rather than silently fixing captured words. Debate assertions do not define the operative procedures, outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "finding": "EFMP procedures/referrals/qualified duty-station changes or Defense form/survey information fields and required-response rules; own agreed amendment observations. Program/purpose and required-question distinctions retained; no new immigration predicate or individual application assertion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7c3711e6f98a00ec8b3e1b6f6fa9c4ae13a24cdab8277a3eb2f076167bd215ad",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:245",
+          "url": "https://clerk.house.gov/evs/2025/roll245.xml",
+          "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        },
+        {
+          "source_id": "congressional-record:3838-amend13-roll245-choice155",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "governed_bytes_sha256": "532242146c7ab00c52e7ca83f727ce36aa48eddac5e355ab4874d0899aaaa887",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend13-operative155",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "governed_bytes_sha256": "93ce317681b774e31e0e0606c48d7cdbb8d45b3350cd884c4df58db8f2d18871",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        },
+        {
+          "source_id": "govinfo:10usc1781c-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm",
+          "governed_bytes_sha256": "90dab046dc6d5ab8972bb9d30d0de439b3ab7155995974a3c59a0b2427267f83",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:248",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "248",
+        "legis-num": "H R 3838",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "12",
+        "amendment-author": "Mace of South Carolina Part A Amendment No. 16",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Agreed to",
+        "action-date": "10-Sep-2025",
+        "action-time": "5:00 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Mace PartA16 (Clerk ordinal12, House119/1/248) governs information collection conducted BY OR FOR the Secretary of Defense THROUGH a form or survey. It prohibits soliciting or obtaining gender-identity information and offering a sex/gender option other than male/female; separately it requires rejection of a non-male/female RESPONSE to a REQUIRED sex/gender question. Do not substitute automatic rejection of every form, optional question, entire person or all Federal/non-Defense information systems. Preserve its qualified reproductive-system male/female definitions, male-or-female gender definition excluding identity/experienced gender/expression/roles, gender-identity-not-sex/gender distinction and biological-sex definition. No added birth-certificate, citizenship or immigration-status predicate is inferred. The criterion regulates Defense information fields and specified responses, not visa/admission/removal/naturalization/work-authorization eligibility. Broad individual/person wording does not make every form an immigration form. Individual record collection, military/foreign-person status, legal application and actual implementation remain unadjudicated; no claimed outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "finding": "EFMP procedures/referrals/qualified duty-station changes or Defense form/survey information fields and required-response rules; own agreed amendment observations. Program/purpose and required-question distinctions retained; no new immigration predicate or individual application assertion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "d1176f12f6e1e16c17529c2e4e5bd465fa2f62dc82c5fba9255b1f5d371361a7",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:248",
+          "url": "https://clerk.house.gov/evs/2025/roll248.xml",
+          "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        },
+        {
+          "source_id": "congressional-record:3838-amend16-roll248-choice155",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend16-operative155",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "governed_bytes_sha256": "a4b38d57398239533674598c97734dcd92b7e6da2bc95b521906fa1305676334",
+          "reviewed_extent": "Entire named governed derivative or1781c(a)-(h) bank; material EFMP program/location context, not all raw/current incorporated law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 151,
+    "No Defect": 153,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -15601,17 +15735,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 55,
+    "successor_new_exclusions_reviewed": 57,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 16.651,
+    "focused_runtime_seconds": 19.647,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint153 head-associated run37828928256 nine successful; parent relay supplies5feature/3synthetic/1mixed provenance.154 needs own pushed-head run; no fabricated checkout-log receipt.",
+    "exact_head_ci": "154 first-attempt9green with decoded5feature/3synthetic/1mixed checkouts;155 needs own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -15648,12 +15782,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint154 two agreed Mace14/15 candidate exclusions246/247;532reviews/144ordinarypending,1642sources/485captures,44meanings/78findings/70questions/3packages unchanged. Four derivatives/eight intervals and six preserved originals checked; five material PDF pages plus49 adjacent control. Parent150-153 bounded independent summaries retained separately, including152captionP3 resolution153.154 independent review pending; final verdict null.",
+    "focused_scope_note": "Checkpoint155 two agreedNorman13 EFMP245/Mace16Defenseforms248 candidate exclusions.534reviews/142ordinarypending;1647sources/487captures/448extents/785coordinates.4derivatives/8intervals; new3-pageRecordselection from verified74pageoriginal and existing1781c operativebank, no fresh1781craw recovery.7materialPDFpages/1control;179tests/7checks/reference/replay.154CI9green and parentboundedpass retained;155reviewpending, allholds/70questions/3packages/44meanings/78findings/finalverdictnull preserved.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint151_ci.json",
-      "receipt_sha256": "3a1e7236623d7896963be26ebad1c4c89af2bab470033d5759639b4e06684239",
-      "head": "021ed0a62f0a90a8f21af3f960969ec6d2797cf2",
-      "run": 37824360981,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint154_ci.json",
+      "receipt_sha256": "1c04c479d1ba01eda3cc45dd43e76f720a4fd887cdd61f4d8e7922ae8b5d6fd5",
+      "head": "db7874d7fe9801209e5e557d2d229d25e8a03079",
+      "run": 37839845315,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -20559,13 +20693,39 @@
     "receipt_sha256": "3a7281ce1c97511db7c90d2a659de747b25ae0710a5307d120fa0046fc84e140",
     "same_owner_primary_screenings": 2,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 144,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_receipt": {
+      "receipt_ref": "docs/review_packets/immigration_checkpoint154_parent_independent_review.json",
+      "receipt_sha256": "68a84691261bd5b027e64b72e604d1a49cb8d512a7ac4c6ff9350618b97b1db5",
+      "scope": "Parent independent bounded154 source/domain/mechanics pass, no material defect; owner suites/replay/private archives remain owner-attributed, no acceptance."
+    }
   },
   "parent_independent_reviews150_153": {
     "receipt_ref": "docs/review_packets/immigration_checkpoints150_153_parent_independent_reviews.json",
     "receipt_sha256": "31d080f86d99204b4b4afdbc1c21fd79c45b7885f445acc2640f5eb86248e8df",
     "scope": "Parent-relayed independent bounded150-153 summaries; no new independent suite/private-archive claim or full-corpus acceptance."
+  },
+  "ordinary_screening_checkpoint155": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint155.json",
+    "receipt_sha256": "377453ae49709cc24e57d7ec1ec15ac0d6c7ce0478c60d3e5008ceb3a069324d",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 142,
+    "application_questions": 70
+  },
+  "parent_independent_checkpoint154": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint154_parent_independent_review.json",
+    "receipt_sha256": "68a84691261bd5b027e64b72e604d1a49cb8d512a7ac4c6ff9350618b97b1db5",
+    "scope": "Parent independent bounded154 source/domain/mechanics pass, no material defect; owner suites/replay/private archives remain owner-attributed, no acceptance."
+  },
+  "prior_head_ci_checkpoint154": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint154_ci.json",
+    "receipt_sha256": "1c04c479d1ba01eda3cc45dd43e76f720a4fd887cdd61f4d8e7922ae8b5d6fd5",
+    "head": "db7874d7fe9801209e5e557d2d229d25e8a03079",
+    "run": 37839845315,
+    "successful_jobs": 9
   }
 }

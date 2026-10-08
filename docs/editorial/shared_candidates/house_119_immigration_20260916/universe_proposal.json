@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 259,
-      "source_unresolved": 144,
+      "exact_action_ineligible": 261,
+      "source_unresolved": 142,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 259,
-    "unresolved_boundary_cases": 144,
+    "exact_action_ineligible_actions": 261,
+    "unresolved_boundary_cases": 142,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -505,8 +505,10 @@
         "house:119:1:236",
         "house:119:1:240",
         "house:119:1:241",
+        "house:119:1:245",
         "house:119:1:246",
         "house:119:1:247",
+        "house:119:1:248",
         "house:119:1:266",
         "house:119:1:269",
         "house:119:1:270",
@@ -667,8 +669,6 @@
         "house:119:1:237",
         "house:119:1:239",
         "house:119:1:244",
-        "house:119:1:245",
-        "house:119:1:248",
         "house:119:1:249",
         "house:119:1:250",
         "house:119:1:251",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "04c2ce3c6497b4b387ec436649ef5f9d5d1da30a7009203acce86321126efdfa",
+  "universe_subject_sha256": "e3cfe4a27ea7c72342b15599344fb300a70d86554325ccc8162fbab43888a57c",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17503,8 +17503,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Norman PartA13 (Clerk ordinal9, House119/1/245) adds three separate EFMP restrictions for minor dependent children: provision of gender-transition procedures including surgery or medication; referrals for the subsection(a) procedures; and approval THROUGH EFMP of a duty-station change for the purpose of providing access to those procedures. Preserve the through-program and purpose qualifications; not all military moves, all care, all family members or every international movement. Its1781c(d)(4)(I) reference identifies the named EFMP, with the unchanged new-supporting-medical/educational-information disenrollment condition and tracking requirement. Complete captured1781c(a)-(h) preserves Office/support/referral/assignment roles, military-needs/career-development qualifications, location both within/outside the continentalUS, assignment-stabilization/review/protection and support/services rules. A duty-station reassignment is distinct from visa/admission/removal/immigration-status/work-authorization eligibility; no such changed criterion is supplied. Medical/service/eligibility and current incorporated-law applications remain unadjudicated, including underlying Extended Care references. Initial printed H4177 callup says Report199-255; own recorded question, Clerk Norman13 identity and complete Report119-255 exact operative converge on119-255. Preserve the initial printed error as source qualification, rather than silently fixing captured words. Debate assertions do not define the operative procedures, outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:245",
         "url": "https://clerk.house.gov/evs/2025/roll245.xml",
@@ -17521,25 +17521,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Norman PartA13 (Clerk ordinal9, House119/1/245) adds three separate EFMP restrictions for minor dependent children: provision of gender-transition procedures including surgery or medication; referrals for the subsection(a) procedures; and approval THROUGH EFMP of a duty-station change for the purpose of providing access to those procedures. Preserve the through-program and purpose qualifications; not all military moves, all care, all family members or every international movement. Its1781c(d)(4)(I) reference identifies the named EFMP, with the unchanged new-supporting-medical/educational-information disenrollment condition and tracking requirement. Complete captured1781c(a)-(h) preserves Office/support/referral/assignment roles, military-needs/career-development qualifications, location both within/outside the continentalUS, assignment-stabilization/review/protection and support/services rules. A duty-station reassignment is distinct from visa/admission/removal/immigration-status/work-authorization eligibility; no such changed criterion is supplied. Medical/service/eligibility and current incorporated-law applications remain unadjudicated, including underlying Extended Care references. Initial printed H4177 callup says Report199-255; own recorded question, Clerk Norman13 identity and complete Report119-255 exact operative converge on119-255. Preserve the initial printed error as source qualification, rather than silently fixing captured words. Debate assertions do not define the operative procedures, outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:245",
           "url": "https://clerk.house.gov/evs/2025/roll245.xml",
           "raw_sha256": "442e3654488259e8642b5e8fee67216807501b0895d44b197151a0f9d887802b",
-          "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "05f72b1f718b3e0beca82ea743640a156d5594259d2b76f4545bec9ae0152d30"
+        },
+        {
+          "source_id": "congressional-record:3838-amend13-roll245-choice155",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "532242146c7ab00c52e7ca83f727ce36aa48eddac5e355ab4874d0899aaaa887"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend13-operative155",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "93ce317681b774e31e0e0606c48d7cdbb8d45b3350cd884c4df58db8f2d18871"
+        },
+        {
+          "source_id": "govinfo:10usc1781c-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap88-subchapI-sec1781c.htm",
+          "raw_sha256": "19288845b93443c5f1629a560e48a131aded1ddf6198ac59e15982a2b1bb5568",
+          "governed_bytes_sha256": "90dab046dc6d5ab8972bb9d30d0de439b3ab7155995974a3c59a0b2427267f83"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7c3711e6f98a00ec8b3e1b6f6fa9c4ae13a24cdab8277a3eb2f076167bd215ad"
       },
       "historical_raw_hash_matches": true
     },
@@ -17692,8 +17710,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace PartA16 (Clerk ordinal12, House119/1/248) governs information collection conducted BY OR FOR the Secretary of Defense THROUGH a form or survey. It prohibits soliciting or obtaining gender-identity information and offering a sex/gender option other than male/female; separately it requires rejection of a non-male/female RESPONSE to a REQUIRED sex/gender question. Do not substitute automatic rejection of every form, optional question, entire person or all Federal/non-Defense information systems. Preserve its qualified reproductive-system male/female definitions, male-or-female gender definition excluding identity/experienced gender/expression/roles, gender-identity-not-sex/gender distinction and biological-sex definition. No added birth-certificate, citizenship or immigration-status predicate is inferred. The criterion regulates Defense information fields and specified responses, not visa/admission/removal/naturalization/work-authorization eligibility. Broad individual/person wording does not make every form an immigration form. Individual record collection, military/foreign-person status, legal application and actual implementation remain unadjudicated; no claimed outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:248",
         "url": "https://clerk.house.gov/evs/2025/roll248.xml",
@@ -17710,25 +17728,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace PartA16 (Clerk ordinal12, House119/1/248) governs information collection conducted BY OR FOR the Secretary of Defense THROUGH a form or survey. It prohibits soliciting or obtaining gender-identity information and offering a sex/gender option other than male/female; separately it requires rejection of a non-male/female RESPONSE to a REQUIRED sex/gender question. Do not substitute automatic rejection of every form, optional question, entire person or all Federal/non-Defense information systems. Preserve its qualified reproductive-system male/female definitions, male-or-female gender definition excluding identity/experienced gender/expression/roles, gender-identity-not-sex/gender distinction and biological-sex definition. No added birth-certificate, citizenship or immigration-status predicate is inferred. The criterion regulates Defense information fields and specified responses, not visa/admission/removal/naturalization/work-authorization eligibility. Broad individual/person wording does not make every form an immigration form. Individual record collection, military/foreign-person status, legal application and actual implementation remain unadjudicated; no claimed outcomes or motive. Complete own operative matches numbered Report after declared formatting normalization; recorded vote agreed after preliminary voice ayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences or enactment. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:248",
           "url": "https://clerk.house.gov/evs/2025/roll248.xml",
           "raw_sha256": "da523c38f830fba3690e5165837833ce549c1ee1f85fe004de2d40f1089ed073",
-          "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "c1f10b433708ce026d813386a06e405a0949a5c04ea31ec9588088aaa206d5d5"
+        },
+        {
+          "source_id": "congressional-record:3838-amend16-roll248-choice155",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "d7076d030e3ca12bf879043e8e1497f22bbc5de79a43c86547335dd900e17b26"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend16-operative155",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "a4b38d57398239533674598c97734dcd92b7e6da2bc95b521906fa1305676334"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d1176f12f6e1e16c17529c2e4e5bd465fa2f62dc82c5fba9255b1f5d371361a7"
       },
       "historical_raw_hash_matches": true
     },
@@ -42340,8 +42370,6 @@
     "house:119:1:237",
     "house:119:1:239",
     "house:119:1:244",
-    "house:119:1:245",
-    "house:119:1:248",
     "house:119:1:249",
     "house:119:1:250",
     "house:119:1:251",
@@ -42483,6 +42511,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "928d081782464478883dd4b109d740adbfdc2652997f0896d88348076935c7ba",
-  "membership_review_sha256": "5022de9ecb9b80678ec3f7a0e4fca61c8682d3fd839b2f1428085fdd02e46a71"
+  "proposal_sha256": "c7989315a22a6b4d52d5a819663f866dd1c8265fed6d37bc8be395562a43f59d",
+  "membership_review_sha256": "42888ecebe7d2a271d8bf306051809d006f63ec3780ca9212e1ad0951b86d38c"
 }

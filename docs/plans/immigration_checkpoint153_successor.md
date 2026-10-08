@@ -42,7 +42,7 @@ Parent review summaries will be recorded only after actually received.
 - [x] Archive baseline, author source-mapped candidate screenings and regenerate.
 - [x] Validate queue/accounting/seals, preservation and seven-file replay;
   inspect source pages and final diff; run focused and semantic checks.
-- [ ] Record exact source/validation scope, commit/push only this branch, update
+- [x] Record exact source/validation scope, commit/push only this branch, update
   draft PR 198 and inspect all head-associated CI jobs.
 - [ ] Continue the next safe coherent unit; route genuinely reserved decisions.
 
@@ -63,10 +63,27 @@ receipt has been sealed. All seven existing replay files match current bytes.
 Validation results:179 focused tests (16.651s), separate301 candidate/corpus tests
 (58.338s),7 semantic checks and reference validation pass; seven-file replay and
 all prior records/sources/outputs preservation verified. Production writes:none.
-Final source/accounting/diff review passed; commit/push/154CI are next. The initial sandbox semantic run reproduced
+Checkpoint154 source/accounting/diff review passed and db7874d was pushed to
+draftPR198. Its CI37839845315 is being observed while the next exact unit is
+researched. Next:Norman13 EFMP245 and Mace16 Defense forms248. Meeks34 roll244
+is a separate force-authorization action, not amendment12. The initial sandbox semantic run reproduced
 the recorded tempfileACL failure; established escalated checks passed without
 changing configuration or ACLs.
 Rollback: preserve baseline inputs/outputs before authoring; correct only this
 increment, without resetting or overwriting unrelated work. No production rollback
 is needed because no production action is authorized. No implementation blocker
 is currently established; source conflicts remain isolated holds.
+
+## Next bounded increment: checkpoint155
+
+Reconstruct Norman13 EFMP245 and Mace16 Defense forms248 from existing raw/
+source banks and newly selected PDF pages; preserve the printed initial199-255
+callup header alongside correct own recorded119-255 identity, without silent
+normalization. Existing Code1781c operative serialization is reused with no new
+raw recovery claim. Expected five new canonical sources, two capture registrations,
+unchanged six semantic outputs and179 focused/7 semantic checks. Meeks34 roll244
+is separate force-authorization work. All existing holds and reserved gates persist.
+
+Checkpoint154 delivery/CI and parent bounded review complete. Checkpoint155 is
+authored and validated:534 reviews/142 ordinary pending,179tests/7checks/reference/
+replay pass; no semantic-output change. Final diff,155 commit/push/CI next.

@@ -9790,3 +9790,58 @@ exact. Initial sandbox semantic tests hit the recorded nativeWindows tempfileACL
 limitation; established escalated validation with scoped process environment passed,
 without ACL/config/dependency changes. Final diff review and154 headCI follow.
 No publication, acceptance, promotion, production, merge or deployment.
+
+## Checkpoint 155: EFMP paths and Defense information collection
+
+Two agreed amendments, House119/1/245 and248, are noncounting candidate exclusions:
+NormanPartA13/Clerkordinal9 restricts provision, referral and qualified duty-station
+changes THROUGH EFMP for minor dependent children; MacePartA16/Clerkordinal12
+restricts Defense gender-identity collection/options and non-male/female responses
+to REQUIRED sex/gender questions. Preserve program/purpose and question/response
+limits, actual definitions and all counterfactual qualifications. No all-moves,
+all-care/all-family, every-form/whole-person rejection, individual Immigration
+criterion or clinical/legal application is asserted.
+
+Complete captured1781c(a)-(h) and material Office/program/support/assignment
+context retain location within/outside continentalUS, military-needs/career
+qualifications and unchanged disenrollment/tracking conditions. Underlying
+ExtendedCare/current incorporated law and individual eligibility remain outside
+scope. Initial printed Norman callup H4177 says199-255; own recorded119-255
+question, Clerk13 identity and exact Reportoperative converge. Printed error is
+retained as source qualification, not normalized into different captured words.
+Own operatives match numberedReport after declared formatting normalization.
+Recorded votes agreed after voiceayes;FousheeNo/MassieAye are amendment
+observations, not enactment, whole-bill/component preference or motive.
+
+534/676 reviewed:44 interpreted,227procedural,261excluded,2expressive;
+142ordinarypending.1647sources/487captures/1108bindings/448extentobjects/
+785coordinates;40episodes/88observations/78findings/70questions/3packages
+remain exact. Audit153NoDefect/8Minor/11Major/1Critical retains history,
+finalverdictnull. Lebanese210may discrepancy,207agreements,Report33,all
+otherholds/qualified166/frozen265/unaccepted747 andprovenance limits persist.
+
+Verified74-page Recordoriginal reused; new3-page15/51/52 text selected with
+pypdf6.10.0, not a whole-parent serialization or network reacquisition. Initial
+column-interleaved pdfplumber snippets were discovery only and are not governed
+evidence. Existing9-pageRecord/fullReport bank retained; only13/16 meanings newly
+reviewed. Fourderivatives/eightintervals and7materialPDFpages11/12/15/49/50/51/52
+plus16adjacentcontrol inspected. Existing1781c operativebank/seal reused without
+fresh rawHTML recovery. Clerkmetadata/memberlabels reused, notfreshXML certification.
+Full parent/current/incorporated law and individual application are not certified.
+
+179focusedtests passed in19.647s;7semanticchecks/referencevalidation and
+seven-file rawreplay pass. Sixsemanticoutputs/allprior532reviews/1642sources/
+485captures andallquestions/packages/holds remain unchanged. The initial focused
+run omitted establishedNODE_PATH andfailedonlyAJVlookup; correct processpath
+restored andsuitepassed, withoutdependency/ACL/configchanges. Established
+escalated scopedTEMPenvironment handles recordedWindows temporary-directory limits.
+
+154CI37839845315 firstattempt9green:5feature/3synthetic/1mixed;
+synthetic2b1b3ac75cd79a94fa0f2f43e0248b3696d6b8fb. All9 decodedlogs/checkouts/
+skips sealed inimmigration_delivery_checkpoint154_ci.json;hosted308distinct
+local179/301,repair13of20,no retry. Parent154bounded independent source/domain/
+mechanicspass with no materialdefect is actually received and retained separately.
+Owner suites/replay/private archives remain owner-attributed; no fullcorpus
+acceptance. Prior150-153summaries/history/limits remain unchanged.155review and
+ownCIpending. Localfreshowner continuesexistingworktree; oldowner stays idle.
+No shutdown deadline/terminalmarker or publication/merge/production authority.
