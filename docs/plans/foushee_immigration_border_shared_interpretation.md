@@ -9342,3 +9342,56 @@ logs/checkouts/skips sealed,hosted307 distinct from local178,repair13/20,no retr
 139/140 independent review remains pending;140 needs its own CI. Qualified166,
 frozen265,unaccepted747 and all reserved gates remain. Continue bounded ordinary,
 forestry and material-package work under unchanged shutdown controls.
+
+
+### Local successor checkpoint 141: precise directive and independent War Powers branches
+
+Independent140review found twoP3 wording defects while mechanics/exclusion boundaries
+passed. Active297rationale now says the proposal would DIRECT the Committee on Ethics
+to conduct a FULL investigation,not merely request one. Failed adoption,no completed
+sanction/committee removal/expulsion/service change and no truth-of-allegations inference
+remain.346rationale separates1544(b)report-triggered termination,exceptions/qualified
+extension from1544(c)concurrent-resolution removal notwithstanding(b),under its stated
+conditions. Constitutional enforceability remains unresolved;no report trigger imported
+into(c). Dispositions and all source passages remain unchanged.
+
+Exact before/after reviewrecords/universe rows/audit assessments and original140receipt
+are preserved in the correction receipt and prior Git9619433. Original WindowsCRLF
+archive differs from GitLF only by newline normalization;both raw hashes/lengths and
+exactJSONidentity recorded. Initial strict-byte assertion stopped receipt completion;
+no source-content mismatch,repair or rollback. Active140rationales/next_action are resealed;
+139delivered review bookkeeping corrected. Original140validation remains historical.
+
+Two source-bound regression defects have one committed guard with three controlled
+negatives:weaker directive,merged branches,dropped notwithstanding.179focusedtests
+14.752s,reference validator,sevensemanticchecks and seven-file raw replay pass.
+ALLseven output files equal prior140bytes. Other504reviews/674rows,44meanings/78findings,
+1534sources/426captures/1108bindings/40episodes/88observations,70questions/threeflags exact.
+506reviewed/170ordinary unchanged;44interpreted/227procedural/233excluded/twoexpressive.
+Audit125NoDefect/8Minor/11Major/1Critical,distinct1Critical/5Major/6Minor retain history;
+the two former NoDefect assessments are preserved alongside corrected Minor findings.
+Bounded independent correction recheck and final140source review remain pending.
+
+139bounded source/domain/mechanics pass is sealed at8e39acc:seven originals/normalizations,
+eight derivatives/16coordinates,nine IRS page-text intervals and source-bank Gitblob
+ea545cbe8283ba2b0e716ba3029c0cd5f9619448 verify. Full parent metadata seals remain
+manifest-linked;not all nine images independently visually inspected. No freshClerk/
+full-suite rerun;owner tests/replay attributed.138raw-byte limits/133restrictions retained.
+140CI37755066372 first-attemptninegreen,fivefeature/three synthetic/one mixed;decoded
+logs/checkouts/skips sealed,hosted307 distinct from local178at140,repair13/20,no retry.
+141requires ownCI. Wrong61control remains private owner validation,not the new guard.
+
+Three further actions remain in source research:223S629conservation advances,283HR8884
+disability demonstrations and280HR7008stock/photoIDpackage. Eight private statutory/
+vote-date regulatory captures verify,but remain unregistered;no review record or queue
+item consumed. Current701.128already permits advances for any eligibleECPpractice;
+do not claim first-ever non-fencing advances. Payment-vs-cost denominators differ.
+1400.401other-program scope requires specific ineligibility/adoption;general1400.1
+listing alone does not prove a citizen/LPR criterion for ECP/EFRP. Disability waiver/
+benefit limits/current statutory context still require grounding. Complete7008contains
+voting photoID alongside stock restrictions;no title-only exclusion or identity-to-
+citizenship-proof inference. Research incomplete,not unavailable evidence or conflict.
+
+Continue bounded ordinary/material-source work within unchanged shutdown controls.
+Qualified166/frozen265/unaccepted747,forestry25hold and all reserved gates unchanged.
+Latest exposed weekly usage32%used/68%remaining;no full-corpus or editorial acceptance.

@@ -5,12 +5,12 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint140:506 reviewed,44 interpreted,227 procedural,233 excluded,
+Latest candidate checkpoint141:506 reviewed,44 interpreted,227 procedural,233 excluded,
 two expressive;170 ordinary screenings remain.40 episodes produce88 observations and
 78 findings(Foushee40/Massie38). Three partial package flags and70 legal/application
-questions remain. Qualified166 bounded canonical pass and138 bounded screening pass
-are recorded with provenance limits.139/140 review is pending;forestry25 held.
-No editorial acceptance. See checkpoint140 source-bound receipt below.
+questions remain.140P3directive/WarPowers precision corrections pass locally with
+history retained;bounded recheck/final source review pending.139bounded review is recorded
+with limits. Forestry25 and program/photoID research held. No editorial acceptance.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -9898,3 +9898,6 @@ Checkpoint139: employee-conflict,qualified ESOP-valuation and coin-program exclu
 
 
 Checkpoint140: failed disciplinary297/failed military346 and broad expressive fraud222 exclusions;506 reviewed/170 ordinary/1534 sources/426 captures. Printed floor operatives and outcomes bind;wrong61selector rejected before candidate mutation;no completed sanction,service change,withdrawal or truth of allegations. Two floor derivatives/four intervals,zero acquisitions.178 tests in14.171s/reference/seven checks/raw replay pass;44 meanings/six outputs/78 findings/70 questions/three flags unchanged.138 bounded pass recorded with mining raw-unreproduced/two parent-seal limits;139ninegreen sealed.139/140 review pending,forestry25hold and133restrictions retained;candidate-only.
+
+
+Checkpoint141: correct297direct/fullEthics investigation and346independent1544b/cmechanisms;sourcepassages/dispositions unchanged. Exactbefore/after/history andCRLF/GitLFprovenance retained;twoMinor findings retained.179tests in14.752s/threeprecisionnegatives/reference/sevenchecks/replay pass;allseven outputs/504otherreviews/674rows/44meanings/78findings/1534sources/426captures/70questions/threeflags exact.506reviewed/170ordinary unchanged.139boundedpass/140initialreview andownninegreen sealed;boundedcorrection recheck/final140source review pending. Threeprogram/photoID research holds,eightprivate captures unregistered;no queue consumption or unavailable finding. Candidate-only.

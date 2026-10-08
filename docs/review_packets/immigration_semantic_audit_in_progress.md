@@ -1,8 +1,9 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint140 has44 meanings/506 reviews/170 ordinary pending.
-Qualified166 and138 bounded passes are recorded with actual provenance limits;
-139/140 review remains pending. Forestry25 held;no full-corpus verdict or acceptance.
+Current candidate checkpoint141 has44 meanings/506 reviews/170 ordinary pending.
+Two140P3precision corrections retain historicalMinor findings and await bounded recheck;
+139bounded pass is recorded with limits. Forestry/program/photoID research held;
+no full-corpus verdict or editorial acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8215,3 +8216,6 @@ Checkpoint139: employee-conflict,qualified ESOP-valuation and coin-program exclu
 
 
 Checkpoint140: failed disciplinary297/failed military346 and broad expressive fraud222 exclusions;506 reviewed/170 ordinary/1534 sources/426 captures. Printed floor operatives and outcomes bind;wrong61selector rejected before candidate mutation;no completed sanction,service change,withdrawal or truth of allegations. Two floor derivatives/four intervals,zero acquisitions.178 tests in14.171s/reference/seven checks/raw replay pass;44 meanings/six outputs/78 findings/70 questions/three flags unchanged.138 bounded pass recorded with mining raw-unreproduced/two parent-seal limits;139ninegreen sealed.139/140 review pending,forestry25hold and133restrictions retained;candidate-only.
+
+
+Checkpoint141: correct297direct/fullEthics investigation and346independent1544b/cmechanisms;sourcepassages/dispositions unchanged. Exactbefore/after/history andCRLF/GitLFprovenance retained;twoMinor findings retained.179tests in14.752s/threeprecisionnegatives/reference/sevenchecks/replay pass;allseven outputs/504otherreviews/674rows/44meanings/78findings/1534sources/426captures/70questions/threeflags exact.506reviewed/170ordinary unchanged.139boundedpass/140initialreview andownninegreen sealed;boundedcorrection recheck/final140source review pending. Threeprogram/photoID research holds,eightprivate captures unregistered;no queue consumption or unavailable finding. Candidate-only.

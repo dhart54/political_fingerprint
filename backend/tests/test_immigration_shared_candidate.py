@@ -2707,6 +2707,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(receipt['accounting_deltas']['interpreted_actions'], 1)
         self.assertEqual(receipt['accounting_deltas']['excluded_actions'], -1)
 
+    def _assert_checkpoint140_precision(self, records, sources):
+        command = sources['govinfo:hres888ih']['text'][4765:4919]
+        self.assertIn('directs the Committee on Ethics to conduct a full investigation', command)
+        discipline = records['house:119:1:297']['rationale']
+        self.assertIn('direct the Committee on Ethics to conduct a full investigation', discipline)
+        self.assertIn('NOT agreed to', discipline)
+
+        framework = sources['govinfo:50usc1544-2024-operative']['text']
+        self.assertIn('after a report is submitted or is required to be submitted', framework)
+        self.assertIn('extended for not more than an additional thirty days', framework)
+        self.assertIn('Notwithstanding subsection (b), at any time', framework)
+        military = records['house:119:1:346']['rationale']
+        for fragment in ["section 1544(b)'s report-triggered termination",
+                         'exceptions and qualified extension',
+                         "section 1544(c)'s separate concurrent-resolution removal mechanism",
+                         'notwithstanding subsection (b) under its stated conditions',
+                         'constitutional enforceability is not resolved']:
+            self.assertIn(fragment, military)
+        self.assertNotIn('report-conditioned termination/removal framework', military)
+
+    def test_noncounting_precision_keeps_directive_and_independent_war_powers_branches(self):
+        records = {r['action_id']: r for r in self.values[3]['records']}
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        self._assert_checkpoint140_precision(records, sources)
+        mutations = [
+            ('house:119:1:297',
+             'direct the Committee on Ethics to conduct a full investigation',
+             'request an Ethics investigation'),
+            ('house:119:1:346',
+             "section 1544(c)'s separate concurrent-resolution removal mechanism",
+             'report-conditioned termination/removal framework'),
+            ('house:119:1:346',
+             'notwithstanding subsection (b) under its stated conditions',
+             'under subsection (b)')]
+        for aid, before, after in mutations:
+            with self.subTest(action=aid, omitted=before):
+                wrong = copy.deepcopy(records)
+                self.assertIn(before, wrong[aid]['rationale'])
+                wrong[aid]['rationale'] = wrong[aid]['rationale'].replace(before, after, 1)
+                with self.assertRaises(AssertionError):
+                    self._assert_checkpoint140_precision(wrong, sources)
+
     def test_noncounting_audit_sample_binds_current_ledger_and_covers_risks(self):
         audit_path = DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json'
         audit = json.loads(audit_path.read_text(encoding='utf-8'))
