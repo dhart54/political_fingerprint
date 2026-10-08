@@ -1,0 +1,103 @@
+{
+  "checkpoint": 153,
+  "affected_checkpoint": 152,
+  "classification": "Extraction metadata only; no source text, interval or exclusion change",
+  "user_authority": "Correct the two amendment115/116 extraction descriptions; preserve checkpoint151 parent history and update dependent hashes.",
+  "prior_commit": "319774a4df598616c7a4f0ae986c05d8303dfa37",
+  "before_archive": ".tmp/checkpoint153_before_extraction_metadata",
+  "changed_sources": [
+    {
+      "source_id": "house-rules:119199-partA-amend115-operative152",
+      "before_text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;rawretained. Completeparent captured,only exactPartA111-113operativesreviewed.",
+      "after_text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;rawretained. Complete parent captured at checkpoint151; this derivative reviews only the exact Part A amendment 115 operative at checkpoint152.",
+      "before_governed_bytes_sha256": "ea1172164afbaaa2d57a4a3834c5dcf258944ec33f9dc9d8d36aa84f9f220ccc",
+      "after_governed_bytes_sha256": "aab06b1005ce49920bbfc205e521ffc50bde5cfbe2bb7080fe18e9b11765faec",
+      "source_text_raw_sha256": "e8e03b3cf15bf0e6e040f3b6c0a69e7a5dd635796d6d2f82ff1f751abcde2ea0",
+      "source_text_extents": [
+        {
+          "start": 145751,
+          "end": 145914,
+          "total": 203221
+        }
+      ],
+      "source_text_intervals_and_raw_sha256_unchanged": true
+    },
+    {
+      "source_id": "house-rules:119199-partA-amend116-operative152",
+      "before_text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;rawretained. Completeparent captured,only exactPartA111-113operativesreviewed.",
+      "after_text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;rawretained. Complete parent captured at checkpoint151; this derivative reviews only the exact Part A amendment 116 operative at checkpoint152.",
+      "before_governed_bytes_sha256": "628c62d343e88e563386b8d0191ec4084da7da777cf765b59fe6d6bded4a1586",
+      "after_governed_bytes_sha256": "309783ef92eccd3cc9538b6619fbafd25bee474857682c0e135e7353eeb0ff42",
+      "source_text_raw_sha256": "b2a5471b2f7a1068d0ba258c47b8db577bb1d2e59dd737dd07d54b2296a0d472",
+      "source_text_extents": [
+        {
+          "start": 145925,
+          "end": 146199,
+          "total": 203221
+        }
+      ],
+      "source_text_intervals_and_raw_sha256_unchanged": true
+    }
+  ],
+  "preserved_parent": {
+    "source_id": "primary:report119199-full-captured151",
+    "text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;rawretained. Completeparent captured,only exactPartA111-113operativesreviewed.",
+    "governed_bytes_sha256": "5bd883eb4bb41036ccb477a200103170b0ae8b8f890f148dbf434559cc0549d5"
+  },
+  "affected_action_ids": [
+    "house:119:1:208",
+    "house:119:1:209"
+  ],
+  "new_semantic_interpretations": 0,
+  "new_exclusions": 0,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "active_shutdown_deadline": null,
+  "before_checkpoint152_receipt_sha256": "b8302cd9e04efeb8044efcfe4ea18f222fa9941bbf155555f2af0027eda8bb23",
+  "current_checkpoint152_receipt_sha256": "5909f12aff8865421cae525fdcdbde8c49fa743b5c361a6cc709d5c732da633f",
+  "checkpoint152_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint152.json",
+  "current_membership_review_sha256": "2404eaa5adc728bd585dafa036139f60a053bb97cff65b3046be4b9bda134bbd",
+  "current_universe_proposal_sha256": "7a16006158f58fa1281f3d712e63c410c56a1187813656d417022081ea65f9d9",
+  "current_source_capture_sha256": "e528a159cd51dd7646e1753daedf12269c12dad2583805e8d47bab950bcb4163",
+  "verification": {
+    "validation": {
+      "authority": "Mechanical integrity only; no semantic acceptance or publication",
+      "inventory_count": 676,
+      "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+      "governed_review_count": 530,
+      "unfinished_screenings": 146,
+      "queue_count": 146,
+      "disposition_counts": {
+        "procedural_context": 227,
+        "interpreted_substantive_directional": 44,
+        "exact_action_ineligible": 257,
+        "source_unresolved": 146,
+        "expressive_nonbinding_context": 2
+      },
+      "unfinished_component_reviews": 3
+    },
+    "changed_source_fields_only": [
+      "text_extraction_method",
+      "governed_bytes_sha256"
+    ],
+    "changed_source_ids": [
+      "house-rules:119199-partA-amend115-operative152",
+      "house-rules:119199-partA-amend116-operative152"
+    ],
+    "all_source_texts_intervals_exclusions_and_original_hashes_unchanged": true,
+    "parent151_and_every_other_source_object_identical": true,
+    "all_530_reviews_preserved_except_two_source_hash_references": true,
+    "all_audit_findings_counts_70questions_three_packages_and_holds_preserved": true,
+    "six_semantic_outputs_identical": true,
+    "seven_file_raw_replay": true
+  },
+  "targeted_validation": {
+    "audit_guards_passed": 3,
+    "audit_runtime_seconds": 1.037,
+    "seven_generated_files_raw_byte_identical_to_replay": true,
+    "six_semantic_outputs_raw_unchanged": true,
+    "final_diff_reviewed": true
+  },
+  "historical_checkpoint152_focused_suite": "179tests/7semanticchecks/referencevalidation belong to152 delivery;metadata correction runs3targetedauditguards andpreservation/replay checks,not a new179-test claim.",
+  "receipt_sha256": "4cf7cfa1f49eb49c66fec87100bde2cf2510efe3a06867058febd816df6f00cf"
+}
