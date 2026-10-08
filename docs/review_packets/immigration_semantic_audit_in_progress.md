@@ -1,8 +1,10 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current shutdowncheckpoint147 preserves146:44meanings/518reviews/158ordinarypending.
-146boundedsource/domain/mechanicsreview/CIpassed;statussentenceP3locallycorrected
-147/recheckpending. Allholds/limits retained,no fullverdict oracceptance.
+Current candidate checkpoint148:44 meanings/521 reviews/155 ordinary pending.
+Expired controls/markers retired; user-authorized continuation from147 has no shutdown
+deadline. Three new candidate exclusions;148 independent review pending.
+Audit140 NoDefect/8 Minor/11 Major/1 Critical; all holds and limits preserved.
+147 CI nine jobs passed. No full verdict or acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8427,3 +8429,17 @@ observed12:23:23Z. Watcherdeadlines unchanged:wrapnolaterthan12:27:21Z,terminal
 CHECKPOINTmarkerby12:37:21Z,lastfilesystemaction;shutdown12:42:21Z. Goalunfinished,
 notSUCCESS. Aftermarker,no filesystemactions/tests/Git ortaskrestart. Resumeonly
 explicitly withfreshauthoritativewatcher controls;preserve ended-run evidence.
+
+## Checkpoint 148: resumed regional funding review
+
+The user explicitly retired the expired Political Fingerprint shutdown controls and completion markers and resumed checkpoint147 without a shutdown deadline. Three exact controls were archived with matching SHA-256 hashes and removed from their active root/worktree paths. Other projects were untouched. Historical shutdown receipts remain preserved; their terminal-marker and fresh-deadline instructions are retired for this continuation.
+
+Three failed H.R.4553 Perry amendments (Report28-30, Clerk ordinals9-11, House119/1/232-234) receive candidate exact-action exclusions. Their complete two-line floor operatives match their own Rules Report text. RH account/SRA bindings establish proposed remaining amounts of $20million Northern Border, $2million Southwest Border and $250,000 Southeast Crescent; no account is zeroed. Report28 reduces $13,319,727, correcting the inaccurate handoff amount. The recorded rejections control over earlier voice announcements; Foushee No/Massie Aye remain exact observations. No actual transfer, savings, repeal, enactment or member motive is inferred.
+
+Material regional economic-development functions, grants/approval, named geography, matching/certification, qualified transfers, state-capacity and demonstration-health authorities remain source-bound. Foreign-business attraction, international-cooperation recommendations, outmigration metrics, geographic Border names and liaison-to-citizens context do not create a changed human immigration criterion in these dollar insertions. Northern Border's RH administrative-expense exception stays confined to that account; statutory authorization and less-than10million administrative rules remain distinct. No individual grant/health/immigration eligibility or comprehensive current-law conclusion is claimed.
+
+Accounting:676 inventory,521 reviewed,44 interpreted,227 procedural,248 excluded,2 expressive,155 ordinary pending;3 partial packages and70 application questions unchanged. Sources1597/captures461/interpreted bindings1108/extent objects402/coordinates700;40episodes/88observations/78findings unchanged. Audit140NoDefect/8Minor/11Major/1Critical;historical findings retained and final verdict remains null. All prior research holds, qualified166, frozen265, unaccepted747 and provenance/retrieval limits remain.
+
+179 focused tests passed in14.838s;7 semantic checks and reference validation passed. All7 generated files reproduce byte-for-byte in a separate replay;6 semantic outputs and all prior518reviews/1586sources/459captures/44meanings/78findings remain unchanged. Two official regional originals match bank raw hashes;11derivatives/45intervals and9 named material PDF pages were checked. Full-parent serialization, all incorporated individual-eligibility laws and all parent pages were not independently rereviewed. Independent148 source review remains pending.
+
+Checkpoint147 CI run37777308286 completed all9 jobs on first attempt:5 feature-pinned,3 synthetic-merge,1 mixed repair;synthetic57653b28c0c052b7f52a5c40033182d8f83585da. Decoded logs/checkouts/skips are sealed in immigration_delivery_checkpoint147_ci.json. Hosted308 is distinct from local179; no CI retry or editorial acceptance. Continue existing candidate work without a shutdown deadline; deliver validated commits only to draftPR198. Next ordinary lane235-236 requires its own exact operations and material authorities;237 Report33 discrepancy and all other holds remain pending.

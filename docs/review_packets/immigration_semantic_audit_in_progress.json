@@ -14430,10 +14430,256 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:232",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "232",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "9",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 28",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "3-Sep-2025",
+        "action-time": "10:00 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact Perry printed amendment 28 (Clerk floor ordinal 9, roll 232) would reduce the Northern Border Regional Commission appropriation line by $13,319,727, from RH $33,319,727 to $20,000,000, and increase the separate SEC512 Spending Reduction Account from $0 by the same $13,319,727. RH page 62, line 20, and page74 line5 bind the operation; its complete two-line floor operative equals its own Rules Report119232 numbered text after format normalization. This is a proposed account reduction leaving a positive amount, not zero funding, commission abolition, permanent authority repeal, actual transfer or assured deficit savings. Its own recorded rejection controls over the earlier voice-aye announcement; Foushee No and Massie Aye are observations on this exact failed amendment, not final bill passage or enactment. Material dated subtitleV operative and January2025 regional amendments establish State/local/Tribal/public/nonprofit economic and infrastructure grants, project approval and distressed-area criteria, cost-share limits, supplemental matching funds, qualified agency transfers, workforce/state-capacity and demonstration-health functions. International-cooperation recommendations, attracting businesses from outside the United States, outmigration metrics and the local-development-district liaison to citizens remain literal economic-development context; none supplies a changed human admission, immigration status, nationality, removal or work-authorization rule in this dollar amendment. Border in a commission name is geographic context. The RH Northern Border administrative-expense exception notwithstanding15751b is retained for that account only; neither Southern account inherits it, and the less-than10million statutory exception is preserved without making a new universal administrative allocation. The 40millionFY2025-2029 statutory authorization is distinct from these RH appropriations and no repeal is inferred. Matching/certification/construction-health standards, other-program eligibility and all incorporated hospital/higher-education/health/benefit definitions are not waived by these two dollar insertions; individual eligibility, coverage, grants, service delivery and immigration application are outside this review. No blanket assurance about all current law or every possible beneficiary, member motive, component preference or generic public-benefit/country/person bridge. Exact action ineligible under established functional standards; noncounting candidate only.",
+      "finding": "Exact regional-account dollar reductions retain positive balances and matching SRA inserts; complete floor/report/RH and material regional functions preserved. Failed amendments, geographic border names and economic-development foreign-business/outmigration/citizens context do not establish changed human immigration rules or actual fiscal/program outcomes.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "8a3ea61241823791a38c5fffc67bace42f73dc9e687295d869140113e295b1bb",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:232",
+          "url": "https://clerk.house.gov/evs/2025/roll232.xml",
+          "governed_bytes_sha256": "90121f42c70d70003559b54a7f96205dfca90c55cf4fff7fd632d93b498beb4e",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4553-amend28-roll232-choice148",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "governed_bytes_sha256": "6dd280664c702f34fd27b9fa9f9080fc23715194a026ef381688ebe0ab490446",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119232-amend28-operative148",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "c2bf9873efe351370011e91f94c3a223b3c9d15e16313ff109acc80774f71a9a",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend28-account-SRA148",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "governed_bytes_sha256": "7b028a98f594cbf571c8b9f4f60024b93320f9a7be3cbe159cd033182bbb8aee",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:40usc-regional-material-authority148",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "governed_bytes_sha256": "c4e46857207bf2526a69a40eae7e141134f61fa9bcc81acda1003375f873dafa",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:pl118272-regional2241-2250-material148",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "governed_bytes_sha256": "46892b0e89d2ff1469ca29023fb017d6097d0740b7a75b5bcdea28a1e5b00a07",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:233",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "233",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "10",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 29",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "3-Sep-2025",
+        "action-time": "10:05 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact Perry printed amendment 29 (Clerk floor ordinal 10, roll 233) would reduce the Southwest Border Regional Commission appropriation line by $2,063,381, from RH $4,063,381 to $2,000,000, and increase the separate SEC512 Spending Reduction Account from $0 by the same $2,063,381. RH page 63, line 9, and page74 line5 bind the operation; its complete two-line floor operative equals its own Rules Report119232 numbered text after format normalization. This is a proposed account reduction leaving a positive amount, not zero funding, commission abolition, permanent authority repeal, actual transfer or assured deficit savings. Its own recorded rejection controls over the earlier voice-aye announcement; Foushee No and Massie Aye are observations on this exact failed amendment, not final bill passage or enactment. Material dated subtitleV operative and January2025 regional amendments establish State/local/Tribal/public/nonprofit economic and infrastructure grants, project approval and distressed-area criteria, cost-share limits, supplemental matching funds, qualified agency transfers, workforce/state-capacity and demonstration-health functions. International-cooperation recommendations, attracting businesses from outside the United States, outmigration metrics and the local-development-district liaison to citizens remain literal economic-development context; none supplies a changed human admission, immigration status, nationality, removal or work-authorization rule in this dollar amendment. Border in a commission name is geographic context. The RH Northern Border administrative-expense exception notwithstanding15751b is retained for that account only; neither Southern account inherits it, and the less-than10million statutory exception is preserved without making a new universal administrative allocation. The 40millionFY2025-2029 statutory authorization is distinct from these RH appropriations and no repeal is inferred. Matching/certification/construction-health standards, other-program eligibility and all incorporated hospital/higher-education/health/benefit definitions are not waived by these two dollar insertions; individual eligibility, coverage, grants, service delivery and immigration application are outside this review. No blanket assurance about all current law or every possible beneficiary, member motive, component preference or generic public-benefit/country/person bridge. Exact action ineligible under established functional standards; noncounting candidate only.",
+      "finding": "Exact regional-account dollar reductions retain positive balances and matching SRA inserts; complete floor/report/RH and material regional functions preserved. Failed amendments, geographic border names and economic-development foreign-business/outmigration/citizens context do not establish changed human immigration rules or actual fiscal/program outcomes.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7f1222c7d1fc25b09207ced1da8ab3aeabec46270624fc3597f6dc02dd67ad4b",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:233",
+          "url": "https://clerk.house.gov/evs/2025/roll233.xml",
+          "governed_bytes_sha256": "476929c9bf1350c98f340c823f30fe921186ba2c0e48aedc5a5e84da17585356",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4553-amend29-roll233-choice148",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "governed_bytes_sha256": "1693120d3001f508da076409063a56592a510db66c891280cc93fe7a31044a79",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119232-amend29-operative148",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "135b8f7f78a2e599c4bfb7ea1af4e2033ae57bf9702d10274d118188c89dbed6",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend29-account-SRA148",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "governed_bytes_sha256": "b016c98912c336cec698b1310ee5deb37ce11b41f313353934fdb6e412f5cfc8",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:40usc-regional-material-authority148",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "governed_bytes_sha256": "c4e46857207bf2526a69a40eae7e141134f61fa9bcc81acda1003375f873dafa",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:pl118272-regional2241-2250-material148",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "governed_bytes_sha256": "46892b0e89d2ff1469ca29023fb017d6097d0740b7a75b5bcdea28a1e5b00a07",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:234",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "234",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "11",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 30",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "3-Sep-2025",
+        "action-time": "10:09 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact Perry printed amendment 30 (Clerk floor ordinal 11, roll 234) would reduce the Southeast Crescent Regional Commission appropriation line by $16,003,526, from RH $16,253,526 to $250,000, and increase the separate SEC512 Spending Reduction Account from $0 by the same $16,003,526. RH page 63, line 4, and page74 line5 bind the operation; its complete two-line floor operative equals its own Rules Report119232 numbered text after format normalization. This is a proposed account reduction leaving a positive amount, not zero funding, commission abolition, permanent authority repeal, actual transfer or assured deficit savings. Its own recorded rejection controls over the earlier voice-aye announcement; Foushee No and Massie Aye are observations on this exact failed amendment, not final bill passage or enactment. Material dated subtitleV operative and January2025 regional amendments establish State/local/Tribal/public/nonprofit economic and infrastructure grants, project approval and distressed-area criteria, cost-share limits, supplemental matching funds, qualified agency transfers, workforce/state-capacity and demonstration-health functions. International-cooperation recommendations, attracting businesses from outside the United States, outmigration metrics and the local-development-district liaison to citizens remain literal economic-development context; none supplies a changed human admission, immigration status, nationality, removal or work-authorization rule in this dollar amendment. Border in a commission name is geographic context. The RH Northern Border administrative-expense exception notwithstanding15751b is retained for that account only; neither Southern account inherits it, and the less-than10million statutory exception is preserved without making a new universal administrative allocation. The 40millionFY2025-2029 statutory authorization is distinct from these RH appropriations and no repeal is inferred. Matching/certification/construction-health standards, other-program eligibility and all incorporated hospital/higher-education/health/benefit definitions are not waived by these two dollar insertions; individual eligibility, coverage, grants, service delivery and immigration application are outside this review. No blanket assurance about all current law or every possible beneficiary, member motive, component preference or generic public-benefit/country/person bridge. Exact action ineligible under established functional standards; noncounting candidate only.",
+      "finding": "Exact regional-account dollar reductions retain positive balances and matching SRA inserts; complete floor/report/RH and material regional functions preserved. Failed amendments, geographic border names and economic-development foreign-business/outmigration/citizens context do not establish changed human immigration rules or actual fiscal/program outcomes.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "6c49a3724be3fe5d22e9bda2d8c5bbbed30bcc73b75791431bff887995003b67",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:234",
+          "url": "https://clerk.house.gov/evs/2025/roll234.xml",
+          "governed_bytes_sha256": "778cc4bc4e6911da3c981762477ad621775b6e6090f5d3ce44ccc49be707b619",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4553-amend30-roll234-choice148",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-03/pdf/CREC-2025-09-03-house.pdf",
+          "governed_bytes_sha256": "7089ce46f017fb1da575253c9dfd15c6a106029edf610cb0d467dda6c3462ccc",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119232-amend30-operative148",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "155c3427e3c627454d41ab0c51a6f028adcd515b0ca61b8ccff8637d0df7884f",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend30-account-SRA148",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "governed_bytes_sha256": "7a5985a8b11fcf7f405c5443df66c08ab625276b13c08cb82f9ef2900e2ee69e",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:40usc-regional-material-authority148",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "governed_bytes_sha256": "c4e46857207bf2526a69a40eae7e141134f61fa9bcc81acda1003375f873dafa",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:pl118272-regional2241-2250-material148",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ272/html/PLAW-118publ272.htm",
+          "governed_bytes_sha256": "46892b0e89d2ff1469ca29023fb017d6097d0740b7a75b5bcdea28a1e5b00a07",
+          "reviewed_extent": "Completeexacttwo-lineoperative/ownquestion/result/account-SRA;26identifiedCodeoperative sections andregionalPL2241-2250 only. Notallparent/currentlaw/incorporatedindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 137,
+    "No Defect": 140,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -14495,17 +14741,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 41,
+    "successor_new_exclusions_reviewed": 44,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.294,
+    "focused_runtime_seconds": 14.838,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "146own firstattemptninegreen,fivefeature/three synthetic/one mixed;hosted308distinctlocal179,repair13/20,no retry.147shutdownmetadata needsownheadobservation.",
+    "exact_head_ci": "Checkpoint147 nine jobs succeeded on first attempt;148 own pushed-head run pending.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -14542,12 +14788,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Threefailedenergyfundingamendments229/230/231;518reviews/158ordinary,1586sources/459captures/391extents/655coordinates.5raworiginals/13derivatives/22intervals;exactRulesReport/floor/RHaccount-SRApair binds350mresearch/13mATVMadmin/35mTitle17admin operations. Notwholeloan/repeal/actualsavings ornewimmigrationcriterion.44meanings/78findings/sixoutputs/70questions/threeflags preserved;179tests/7checks/reference/replaypass.144/145boundedreviews passed,activeflags/sealsclosed withbeforearchives. Fresh145Clerkrawdrift butidentity/member/totalsmatch limits retained.145CI9green/no retry,hosted308distinctlocal179/repair13/20.146review/CIpending;allresearchholds/provenanceaccesslimits retained.",
+    "focused_scope_note": "Checkpoint148: three failed regional funding amendments232-234, exact positive remaining amounts20million/2million/250000;521reviews/155ordinarypending,1597sources/461captures/402extents/700coordinates. Two matchingraw originals,11derivatives/45intervals,nine materialPDFpages. Prior44meanings/78findings/sixsemanticoutputs/70questions/threepartialpackages and all holds preserved. Independent148 review pending; no final verdict or editorial acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint146_ci.json",
-      "receipt_sha256": "a19a10d2a9faccd612155ee4650b0056282f5c5950a0b70075c4639ab2d64c63",
-      "head": "3e9364afd3c439c07f5242ae12b426be4b73d516",
-      "run": 37775238855,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint147_ci.json",
+      "receipt_sha256": "65d21fe9c045376c0e9f8d960d44d9e3cff568601998f69d6dbada10172d9d9f",
+      "head": "e80079a8c231005fa35810fd284583cdd7e4b34a",
+      "run": 37777308286,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -14760,7 +15006,8 @@
         "hosted_group_different_from_owner_269_aggregate": true
       }
     },
-    "shutdown_checkpoint_state": "Incompletegoal;518reviews/158ordinary/3packages/70questions.146boundedsource/mechanicsreviewpassed;statussentenceP3locallycorrected147,recheckpending.146ownCI9green;147metadata ownCIobservationpending. TerminalCHECKPOINTrequired,notSUCCESS;no workaftermarker."
+    "historical_shutdown_checkpoint_state_checkpoint147": "Incompletegoal;518reviews/158ordinary/3packages/70questions.146boundedsource/mechanicsreviewpassed;statussentenceP3locallycorrected147,recheckpending.146ownCI9green;147metadata ownCIobservationpending. TerminalCHECKPOINTrequired,notSUCCESS;no workaftermarker.",
+    "current_execution_state": "Resumed by explicit user authority from147, expired Political Fingerprint controls/markers archived and retired. No shutdown deadline or terminal marker applies."
   },
   "open_legal_interactions": [
     {
@@ -19313,5 +19560,28 @@
     "head": "3e9364afd3c439c07f5242ae12b426be4b73d516",
     "run": 37775238855,
     "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint148": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint148.json",
+    "receipt_sha256": "6fa0507ef7ee6a51e770361725baf629c6dbcb0a41f155f3c4699e0f9a024acd",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 155,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint147": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint147_ci.json",
+    "receipt_sha256": "65d21fe9c045376c0e9f8d960d44d9e3cff568601998f69d6dbada10172d9d9f",
+    "head": "e80079a8c231005fa35810fd284583cdd7e4b34a",
+    "run": 37777308286,
+    "successful_jobs": 9
+  },
+  "checkpoint147_resumption": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint147_resumption_20261008.json",
+    "receipt_sha256": "069105bcad6961652e5b075427a5d46bf700b26c288b9bd062f93b30aabd259d",
+    "expired_controls_retired": true,
+    "active_shutdown_deadline": null,
+    "other_projects_untouched": true
   }
 }
