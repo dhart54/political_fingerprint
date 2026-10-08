@@ -10661,10 +10661,84 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:50",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "50",
+        "legis-num": "H CON RES 14",
+        "vote-question": "On Agreeing to the Resolution, as Amended",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "25-Feb-2025",
+        "action-time": "8:19 PM",
+        "vote-desc": "Establishing the congressional budget for the United States Government for fiscal year 2025 and setting forth the appropriate budgetary levels for fiscal years 2026 through 2034"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete February25,2025 H.Con.Res.14 House EH was read against exact Clerk house:119:1:50, On Agreeing to the Resolution, as Amended. It sets congressional budget levels for FY2025 and FY2026-34 and supplies internal committee allocations, reconciliation instructions, conditional adjustments and enforcement/rulemaking procedures. Section2001 directs House committees to recommend changes in laws by March27,2025: Homeland Security may recommend a deficit increase of not more than $90billion and Judiciary not more than $110billion over FY2025-34; these are committee deficit limits, not appropriations of those sums or enactment of later H.R.1 border/status provisions. Separate debt-limit recommendations and the $2trillion cut-target adjustment retain their own estimate/certification predicates. Material2024 budget-process sections632,633 and641 distinguish budget resolutions/allocations and recommendations from subsequent implementing legislation and retain their own procedural qualifications. All22 functional categories, broad policy statements, SSA/USPS administrative-expense treatment and remaining budget-enforcement sections supply no new exact personal immigration-status or border-administration rule. Existing procedural/noncounting standards support procedural context for this exact budget-resolution action. No support/opposition to a future immigration component, enacted immigration outcome, actual spending cut or funding disbursement is inferred from member votes. The later Senate-amendment concurrence on house:119:1:100 and H.R.1 House145/EAS190 remain separate exact-action/version reviews, with existing partial-package flags unchanged.",
+      "finding": "Exact House budget resolution supplies internal fiscal/reconciliation procedures, not enacted future immigration policies or appropriations. Complete House version retained separately from later EAS concurrence.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "05be9f0f37244a192c11a07a56ae8f629adcfdbe6749d70f75c2e6119913f7ee",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:50",
+          "url": "https://clerk.house.gov/evs/2025/roll050.xml",
+          "governed_bytes_sha256": "2c9cb2c342de934c24035278a60ef5617a7bd6a12c0cc3e153265b4677f878f4",
+          "reviewed_extent": "Exact Clerk identity, complete House EH or complete selected operative budget-process body"
+        },
+        {
+          "source_id": "govinfo:hconres14eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres14eh/html/BILLS-119hconres14eh.htm",
+          "governed_bytes_sha256": "e21a3e5109f9a099f332c4a94f97e855bb845985c1b31be85e7aa1698281e18d",
+          "reviewed_extent": "Exact Clerk identity, complete House EH or complete selected operative budget-process body"
+        },
+        {
+          "source_id": "govinfo:2usc632-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec632.htm",
+          "governed_bytes_sha256": "7901fdab9dfb6b677ba069bbfd465314cb861a07ba8a92db16eb5076d53b5cbc",
+          "reviewed_extent": "Exact Clerk identity, complete House EH or complete selected operative budget-process body"
+        },
+        {
+          "source_id": "govinfo:2usc633-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec633.htm",
+          "governed_bytes_sha256": "7e9db1d10e4c412461d390b82d876d0a8f7381dec8716feec50dea8e5b85b38c",
+          "reviewed_extent": "Exact Clerk identity, complete House EH or complete selected operative budget-process body"
+        },
+        {
+          "source_id": "govinfo:2usc641-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec641.htm",
+          "governed_bytes_sha256": "880911623d77eab76df1cc19d02dc5a0a3abac13baebb611d5ec93c048f97a4a",
+          "reviewed_extent": "Exact Clerk identity, complete House EH or complete selected operative budget-process body"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 89,
+    "No Defect": 90,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10723,19 +10797,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 17,
+    "procedural_controls_reviewed": 18,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 4
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 16.579,
+    "focused_runtime_seconds": 17.653,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "121 run37715833941 terminal nine green;122 needs own feature push/run",
+    "exact_head_ci": "122 run37717591771 terminal nine green;123 needs own push/run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -10772,7 +10846,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "One new H.R.33 exact-passage personal-status overlap candidate; old40 meanings/core rows/72 findings/464 reviews/1444sources/147 tests preserved. Three new guards and eight controlled semantic negatives;70questions andthree partial packages unchanged. No independent acceptance.",
+    "focused_scope_note": "One exact House budget procedural screen. All41 meanings/six semantic outputs/74 findings/prior465 reviews/1450sources/test file/70questions/three partial flags unchanged. Three new raw budget acquisitions and three operative coordinates. Seven-file raw replay. Independent121 bounded lanes cleared separately;123 and122 semantic review pending.",
     "last_completed_exact_head_ci": {
       "head": "191fe50e72034903442c4829d0308563b71c5311",
       "run": 37712146981,
@@ -14545,5 +14619,27 @@
     "receipt_sha256": "855c9a6f9903381c28ac70a517fe821aadf1ea030f99db1869022a7fc8eaddb0",
     "head": "254acffcccea91a6027453bf52c5abd8a80fef7b",
     "run": 37715833941
+  },
+  "ordinary_screening_checkpoint123": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint123.json",
+    "receipt_sha256": "337c1d73a19e9eaa520651c170c0518f3eae83f7d39f1fb596d678045775cc94",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 210,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint122": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint122_ci.json",
+    "receipt_sha256": "bb0adecd8fb29fd1b6f047669bf24d4963b475cc6520515157630eee35896bf5",
+    "head": "6633a6644c4d0ed33abf0d806b3819ff4c0e2415",
+    "run": 37717591771
+  },
+  "independent_checkpoint121_bounded_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint121_independent_review.json",
+    "receipt_sha256": "6681a32afa926c3a7624b8fa788cc4b146a89c74e9ceb8f38ab37c01d7762567",
+    "head": "254acffcccea91a6027453bf52c5abd8a80fef7b",
+    "bounded_lanes_pass": true,
+    "full_corpus_acceptance": false
   }
 }

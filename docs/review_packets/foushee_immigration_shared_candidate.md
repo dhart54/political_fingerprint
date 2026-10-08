@@ -9438,3 +9438,78 @@ section107(f), Q68 fund and Q69 reimbursement applications remain separately fro
 Same accountable .w/ib owner; no current deadline; historical markers preserved.
 DraftPR198 remains delivery boundary. No merge/deploy/production/editorial acceptance/
 promotion/publication or methodology/architecture change.
+
+
+### Successor checkpoint 123: exact House budget-resolution procedural screen
+
+House119/1/50 is the February25,2025 H.Con.Res.14 EH action, On Agreeing to the
+Resolution, as Amended. Complete House EH and complete operative2024 budget-process
+sections632/633/641 support a noncounting procedural candidate. The resolution sets
+budget levels, internal allocations, reconciliation recommendations, conditional
+adjustments and enforcement/rulemaking procedures. March27 committee submission
+instructions retain FY2025-34 deficit limits: Homeland Security not more than
+$90billion and Judiciary not more than $110billion increase. These are neither
+appropriations of those amounts nor enactment of future H.R.1 immigration provisions.
+The separate debt-limit recommendation, $2trillion deficit-target adjustment and
+written CBO/JCT-based certification remain distinct. All22 functional categories,
+broad policy statements and remaining enforcement sections do not supply a new
+exact immigration-status or border-administration mechanism. Both governed Clerk
+member labels are Nay, retained without directional Immigration projection.
+
+House100 Senate-amendment concurrence remains a separate unresolved version; do not
+substitute EH for EAS or inherit later H.R.1 House145/EAS190 substantive meaning.
+Four canonical source additions: unchanged governed Health EH and three complete
+selected operative budget-process bodies. Three original2024 captures and three
+coordinates, strict raw/text hashes, source seals and original extents verified.
+Historical notes and entire incorporated Code are not claimed reviewed. A private
+diagnostic initially chose a TITLEIII end before the operative start and printed
+an empty span; corrected read uses the later SEC.3001 boundary. No source artifact
+or disposition used that diagnostic span; canonical witnesses enforce positive
+unique operative extents. No unavailable-evidence or conflict inference.
+
+176 focused tests pass in17.653seconds; reference validator and seven semantic
+checks pass. Seven generated files replay byte for byte. All41 authoring meanings,
+six semantic/presentation outputs, compiled graph,74 findings, both members' full/
+compact/choices, prior465 reviews/1450 sources and test file remain exact. Only
+generated reproducibility proof changes. All70 separate question objects, three
+partial-package flags and historical finding counts preserved. Candidate/publication
+isolation and final diff reviewed. Tests are mechanical evidence, not semantic truth.
+
+676 inventory/466 reviewed/41 interpreted/214 procedural/209 excluded/two expressive;
+210 ordinary unfinished/three partial packages/70questions.1454 sources/1044
+interpreted bindings/400 original captures/327 extent objects/538 coordinates.
+38 episodes/82 member observations/74 findings. Same-owner distinct-action audit
+90 NoDefect/3Minor/11Major/1Critical; no independent123 or full-corpus acceptance.
+Core65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9;
+compiledf41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809.
+
+Owner-read exact122 run37717591771 is terminal nine green. Sealed CI receipt retains
+five feature-pinned/three synthetic/one mixed checkout contexts and all raw-log
+hashes; synthetic5139084845c633fa318a216cfbb3ce41a8fb01ff. Hosted305 preparation
+tests differ from owner176. No retry;123 requires its own pushed-head run.
+Fingerprint's independent121 review at254acffcccea91a6027453bf52c5abd8a80fef7b
+clears bounded source/domain, propagation and mechanics lanes: complete original
+CHIPS subtitle/all8 sections including uncodified10635, seven Code bodies and
+ManufacturingUSA(d)-(e) support exact research exclusions73/74. Literal title10/
+current title42, separate180-day triggers and institutional admission preserved.
+Four acquisition hashes/nine coordinates verify. Old40 meanings/six outputs,
+prior462 reviews/1438 sources/389 captures/70questions/three partial flags preserved.
+Fresh Clerk raw bytes differ while checked metadata/member labels/totals agree.
+Isolated guard rejects reconstructed448-character TOC plus23 negatives; private
+pre-correction archive unobserved. No independent full-suite/replay or acceptance.
+Historical121/122 pending fields remain historical; new separate receipt records
+the bounded closure. Independent122 personal-status domain/application review pending.
+
+Next continue remaining first-ten25/32/33/71: full forestry, material temporary
+fentanyl-class and exact failed-amendment/import-export/INA baseline comparison,
+and the original named CRA rule. Six original2024 fentanyl acquisitions remain
+private/unregistered; no new disposition, canonical claim or unavailable-evidence
+assertion. Existing INA incorporation of802 requires care: scheduling may affect
+underlying drug qualification without itself awarding/removing status. Preserve
+independent conviction/admission/knowledge/timing/exceptions and route any genuinely
+reserved domain/application judgment while proceeding other safe ordinary work.
+Then remaining continuing/omnibus/NDAA/State/migration/refugee/DHS/supplementary/
+counterpart coverage. Q68/Q69/Q70 and all70 application objects remain frozen.
+Same accountable .w/ib owner, no current deadline; original markers preserved.
+Draft PR198 remains authorized delivery boundary. No merge/deploy/production,
+editorial acceptance/promotion/publication or methodology/architecture change.
