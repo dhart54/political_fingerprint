@@ -10803,10 +10803,102 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:100",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "100",
+        "legis-num": "H CON RES 14",
+        "vote-question": "On Motion to Concur in the Senate Amendment",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "10-Apr-2025",
+        "action-time": "11:08 AM",
+        "vote-desc": "Establishing the congressional budget for the United States Government for fiscal year 2025 and setting forth the appropriate budgetary levels for fiscal years 2026 through 2034"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The exact April10,2025 House motion to concur in the Senate amendment to H.Con.Res.14, house:119:1:100, was reconstructed from complete April5 EAS and governed Clerk identity, separately from February25 House EH roll50. The EAS replaces the text after the resolving clause and supplies congressional budget levels, internal committee allocations, recommendation instructions, conditional reserve adjustments and enforcement/rulemaking procedures. House recommendations are due May9 rather than the EH March27 date; House Homeland Security/Judiciary deficit-increase ceilings remain $90billion/$110billion over FY2025-34. Separate Senate May9 instructions include ceilings of $175billion each for Homeland Security and Governmental Affairs and Judiciary; those are recommendation ceilings, not enacted appropriations or later H.R.1 immigration provisions. House $4trillion debt-limit recommendation and Senate Finance May16 not-more-than-$5trillion recommendation remain distinct. Senate reserve adjustments retain compliance predicates and expressly except adjusted legislation from identified short-/long-term budget points of order. Complete original sections404,3101 and3201 preserve their own procedural qualifications, including repeal of404(e)'s old sunset, without construing them as immigration rights or outcomes. The House $2trillion cut-target adjustment retains written CBO/JCT-based certification. All20 functional categories, conditional Medicare/Medicaid/tax-baseline reserve clauses, administrative-expense treatment and House policy statements do not themselves amend personal immigration-status, admission/removal or border-administration rules. Complete operative2024 sections632/633/641/642 support the existing procedural/noncounting distinction. Both members' Nay labels remain noncounting Immigration context, without inference of opposition to future substantive provisions or realized appropriations, cuts or benefit changes. H.R.1 House145/EAS190 partial-package flags and all70 application questions remain unchanged.",
+      "finding": "Complete exact Senate-amendment budget concurrence and material procedural authorities support internal fiscal context; separate EAS dates/ceilings/exceptions, no inherited H.R.1 semantics.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "a44515d4dcd4230478f2853564c9b025a8b8266e95070f6d9ee2c8b54c898fdb",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:100",
+          "url": "https://clerk.house.gov/evs/2025/roll100.xml",
+          "governed_bytes_sha256": "515ae91c2a64f0f743bd9f3f11df596d6bddb0ac20e86dc32931b24e3fa60f40",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:hconres14eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres14eas/html/BILLS-119hconres14eas.htm",
+          "governed_bytes_sha256": "8baa00fe349f0cfc87c681b8885537ad65f5b7c61228228068b7db75d58aed6a",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:2usc632-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec632.htm",
+          "governed_bytes_sha256": "7901fdab9dfb6b677ba069bbfd465314cb861a07ba8a92db16eb5076d53b5cbc",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:2usc633-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec633.htm",
+          "governed_bytes_sha256": "7e9db1d10e4c412461d390b82d876d0a8f7381dec8716feec50dea8e5b85b38c",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:2usc641-2024-operative-budget123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec641.htm",
+          "governed_bytes_sha256": "880911623d77eab76df1cc19d02dc5a0a3abac13baebb611d5ec93c048f97a4a",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:2usc642-operative-budget125",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17A-subchapI-sec642.htm",
+          "governed_bytes_sha256": "9c5bd554ceb341b524697769f2afa473c08efb6118b039ea4b3ce47022593ee8",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:sconres13-111-enr-operative-budget125",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-111sconres13enr/html/BILLS-111sconres13enr.htm",
+          "governed_bytes_sha256": "d15e8356e952ec34dc866b2c73d6f956113d430873ac35df1c430dbe1a26609c",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        },
+        {
+          "source_id": "govinfo:sconres11-114-enr-operative-budget125",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-114sconres11enr/html/BILLS-114sconres11enr.htm",
+          "governed_bytes_sha256": "3d5d8e27f93749be82877e42c4a5f6634383ad079ebaa6e8c8c80aa8b5d78d33",
+          "reviewed_extent": "Exact Clerk identity, complete EAS or complete selected operative budget-process bodies"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 91,
+    "No Defect": 92,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10865,19 +10957,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 18,
+    "procedural_controls_reviewed": 19,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 5
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 15.115,
+    "focused_runtime_seconds": 14.21,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "123 run37718840090 in progress at last owner read, source/procedural independent lane clean; latest fully sealed122 nine green retained.124 requires own push/run.",
+    "exact_head_ci": "123/124 terminal nine green with sealed raw-log/provenance receipts;125 needs own push/run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -10914,22 +11006,13 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "One exact original-rule CRA exclusion; prior41 meanings/six outputs/74findings/466reviews/1454sources/test file/70questions/three partial flags preserved. Seven-file replay.122/123 independent bounded source/propagation reviews sealed;123 finalCI/mechanics pending. Fentanyl incorporation reservation supplies no completed screen or new canonical meaning/application question.",
+    "focused_scope_note": "Exact Senate EAS100 procedural screen. All41 meanings/six outputs/74findings/prior467reviews/1457sources/test file/70questions/three partial flags unchanged. Three original budget captures and four coordinates. Forestry13 private captures verified without disposition;25/32/33 remain pending. Independent bounded lanes through123 complete, no125 acceptance.",
     "last_completed_exact_head_ci": {
-      "head": "191fe50e72034903442c4829d0308563b71c5311",
-      "run": 37712146981,
-      "conclusion": "success",
-      "successful_jobs": 9,
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint118_ci.json",
-      "receipt_sha256": "d97e1cb46cef3ef9b520190223370ef5779ce852e7198553cf326158d10f1cb5",
-      "checkout_contexts": {
-        "feature_pinned_jobs": 5,
-        "synthetic_merge_jobs": 3,
-        "mixed_repair_jobs": 1
-      },
-      "synthetic_merge_sha": "3b8e4989f99e2b1be39495ef9d9eb65ebb81c935",
-      "semantic_acceptance": false,
-      "publication_authorized": false
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint124_ci.json",
+      "receipt_sha256": "e78e5f73c62042a458e2ff90d371917995263b1472103db06c7ccc66c5dcaee3",
+      "head": "6b6fe08faa918233615e69b001af3f784a246c8b",
+      "run": 37719982999,
+      "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
       "head": "1adc902e3700d2bd70d6e3950dda9c117fdde714",
@@ -14734,5 +14817,36 @@
     ],
     "screenings_complete": false,
     "new_application_questions": 0
+  },
+  "ordinary_screening_checkpoint125": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint125.json",
+    "receipt_sha256": "f7442b60755edfab763b5eae25fa0b4c93fe47656e9420e117c699c957930150",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 208,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint123_124": [
+    {
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint123_ci.json",
+      "receipt_sha256": "02865289d065d9fe86f872f893652042f9ee1f00222e2006a9d47b0905331d4e",
+      "head": "1cf9098d1cfcf185898022c7e2626378daa073f6",
+      "run": 37718840090,
+      "successful_jobs": 9
+    },
+    {
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint124_ci.json",
+      "receipt_sha256": "e78e5f73c62042a458e2ff90d371917995263b1472103db06c7ccc66c5dcaee3",
+      "head": "6b6fe08faa918233615e69b001af3f784a246c8b",
+      "run": 37719982999,
+      "successful_jobs": 9
+    }
+  ],
+  "independent_checkpoint122_123_final_mechanics": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoints122_123_final_mechanics_review.json",
+    "receipt_sha256": "a874c3f681e359aa0d410e615e5483e7a3dcca5da125a51a8299315f1f4fccbd",
+    "bounded_lanes_pass": true,
+    "full_corpus_acceptance": false
   }
 }

@@ -9593,3 +9593,86 @@ coverage. Do not recursively audit context-only references without material need
 Same accountable .w/ib owner, no current deadline; old markers preserved. Draft
 PR198 is delivery boundary; no merge/deploy/production/editorial acceptance,
 promotion/publication or methodology/architecture change.
+
+
+### Successor checkpoint 125: exact Senate budget concurrence; preserved forestry research
+
+House119/1/100 is the April10,2025 motion to concur in the Senate amendment to
+H.Con.Res.14. Complete April5 EAS replaces text after the resolving clause;
+February25 House EH roll50 is a separate version. Existing procedural standards
+support noncounting budget context. House committee submissions change from
+March27 to May9; House Homeland Security/Judiciary retain $90billion/$110billion
+FY2025-34 deficit-increase ceilings. Senate May9 recommendations independently
+include $175billion ceilings for each of Homeland Security and Governmental Affairs
+and Judiciary. These are instructions to recommend changes, not enacted
+appropriations or H.R.1 immigration provisions. House $4trillion and Senate Finance
+May16 not-more-than-$5trillion debt-limit recommendations remain distinct.
+
+Full20 functional categories, Senate reserve funds, both Houses' internal budget
+enforcement, administrative expenses and House policy statements read. Conditional
+tax-baseline and Medicare/Medicaid reserve clauses do not themselves enact tax
+extensions or personal benefit eligibility. House $2trillion cut-target adjustment
+requires its own written CBO/JCT-based certification. Original short-/long-term
+deficit point-of-order clauses read at exact extent: S.Con.Res.13(111)404 and
+S.Con.Res.11(114)3101/3201. The latter expressly repeals404(e)'s old sunset;
+no inference that the old printed2018 sunset still controls. EAS3001(b)(3)'s
+exceptions require the Senate chair's exercised adjustment authority. Operative
+2024 2USC632/633/641 reused unchanged and642 added, retaining own procedural
+qualifications. Neither member's Nay becomes Immigration support/opposition.
+
+Four canonical sources, three original acquisitions and four exact coordinates
+added. Unique operative anchors, positive extents, strict original raw/text hashes,
+governed source reuse, selected joins and all source seals verify. Only selected
+operative clauses of the older resolutions/Code were reviewed; no whole-resolution,
+whole-Code or historical application claim.176 focused tests pass in14.210seconds;
+reference validator and seven semantic checks pass. Seven generated files replay
+byte for byte. All41 meanings/six semantic and presentation outputs/74findings,
+prior467reviews/1457sources/test file/70question objects/three partial-package flags
+remain exact. Only generated proof changes. Candidate/publication isolation and final
+diff reviewed. Mechanical tests do not establish semantic truth.
+
+676 inventory/468 reviewed/41 interpreted/215 procedural/210 excluded/two expressive;
+208 ordinary unfinished/three partial packages/70 separate application questions.
+1461sources/1044 interpreted bindings/405 governed captures/332extent objects/
+546coordinates.38episodes/82member observations/74readable findings. Same-owner
+audit92 NoDefect/3Minor/11Major/1Critical; no independent125 or full-corpus acceptance.
+Core65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9;
+compiledf41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809.
+
+Separate sealed123/124 CI receipts record owner-read nine successful jobs each,
+five feature-pinned/three synthetic/one mixed checkout contexts and raw-log hashes.
+123 run37718840090 synthetic991d9289dbf2ad5ef9109b8694996b3c81f4352d;
+124 run37719982999 synthetic692c892855e3a2eef77ab5c2067c3116f0708ffe.
+Hosted305 preparation tests each differ from owner176. Neither run retried.
+125 needs its own pushed-head CI. Historical pending fields remain historical.
+Fingerprint's final122/123 mechanics report supplements the prior source/propagation
+receipt: old objects and exact increments verify, bounded lanes through123 complete.
+Three isolated122 guards reject24 parent-controlled mutations; owner122 executed
+eight distinct controlled negatives. No independent full176-test suite, byte replay,
+private-archive observation, full-corpus or editorial acceptance is claimed. Fresh
+Clerk raw-byte caveat and source qualifications persist. No fentanyl decision made.
+
+Parallel forestry25 remains source_unresolved. Complete117108-character H.R.471 EH
+read and13 original2024 material-reference acquisitions preserved privately, with
+hash metadata and bounded research receipt committed. None of those13 is counted
+as a new governed capture, canonical source, completed screen or interpretation.
+EH201 names performance grants under section662 but prints6USC761. The2024Code
+761 Compact grant body/section661 credit and762 Performance body/section662 credit
+were read separately; literal references retained without silently selecting intent.
+The uniform application portal does not itself erase underlying grant eligibility.
+Material funding, grant/benefit conditions and the incorporated March21,2023 White
+Oak charter or authenticated applicable successor remain to trace. Current website
+mission or strategic-plan copy is not a substitute for that incorporated charter.
+House maintenance-page HTTP200 and wholeTitle6 lookup were rejected as governed
+statutes; wrong paths/web-open failures do not establish unavailable evidence.
+
+Next continue forestry material sources and ordinary/package work. Fentanyl32/33
+remain unresolved under checkpoint124's bounded supervisor reservation: provisional
+exclusion with downstream INA qualifications versus conditional direct-domain
+candidate. No reserved methodology/application decision chosen; trace original
+temporary-class authorities safely while the supervisor evaluates the boundary.
+Preserve Q68/Q69/Q70 and all70 question objects, H.R.1 House145/EAS190 exact-version
+partial packages and historical checkpoint/deadline evidence. Same .w/ib owner,
+no competing mutator observed, no current deadline. Draft PR198 remains authorized
+delivery boundary. No merge, deploy, production, editorial acceptance/promotion/
+publication, methodology or architecture change.
