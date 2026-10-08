@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 281,
-      "source_unresolved": 122,
+      "exact_action_ineligible": 286,
+      "source_unresolved": 117,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 281,
-    "unresolved_boundary_cases": 122,
+    "exact_action_ineligible_actions": 286,
+    "unresolved_boundary_cases": 117,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -563,6 +563,7 @@
         "house:119:1:345",
         "house:119:1:346",
         "house:119:1:347",
+        "house:119:1:360",
         "house:119:2:8",
         "house:119:2:9",
         "house:119:2:12",
@@ -573,6 +574,7 @@
         "house:119:2:32",
         "house:119:2:33",
         "house:119:2:37",
+        "house:119:2:38",
         "house:119:2:47",
         "house:119:2:48",
         "house:119:2:49",
@@ -581,6 +583,7 @@
         "house:119:2:64",
         "house:119:2:67",
         "house:119:2:71",
+        "house:119:2:76",
         "house:119:2:78",
         "house:119:2:81",
         "house:119:2:84",
@@ -667,7 +670,9 @@
         "house:119:2:296",
         "house:119:2:297",
         "house:119:2:304",
+        "house:119:2:306",
         "house:119:2:307",
+        "house:119:2:311",
         "house:119:2:314"
       ],
       "source_unresolved": [
@@ -707,7 +712,6 @@
         "house:119:1:354",
         "house:119:1:356",
         "house:119:1:358",
-        "house:119:1:360",
         "house:119:1:362",
         "house:119:2:5",
         "house:119:2:6",
@@ -718,7 +722,6 @@
         "house:119:2:28",
         "house:119:2:29",
         "house:119:2:31",
-        "house:119:2:38",
         "house:119:2:40",
         "house:119:2:43",
         "house:119:2:44",
@@ -728,7 +731,6 @@
         "house:119:2:56",
         "house:119:2:57",
         "house:119:2:72",
-        "house:119:2:76",
         "house:119:2:89",
         "house:119:2:105",
         "house:119:2:110",
@@ -786,11 +788,9 @@
         "house:119:2:302",
         "house:119:2:303",
         "house:119:2:305",
-        "house:119:2:306",
         "house:119:2:308",
         "house:119:2:309",
         "house:119:2:310",
-        "house:119:2:311",
         "house:119:2:312",
         "house:119:2:313"
       ],
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "ba22a45855011904b4eb4a477af562bd7bcf85cbe9f6aaba460f22e1a34d0556",
+  "universe_subject_sha256": "4fcdfdfe66aecf5713402c9f025862306ca9f251876f0dfd841535c4af3d8c1a",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -23952,8 +23952,8 @@
       "date": "2025-12-18",
       "measure": "bill_119_hr_845",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete passed HR845 would require Interior within60days afterenactment to reissue exactly the Nov3,2020 gray-wolf rule85FR69778 and exempt that reissuance fromjudicialreview. Named rule summary/complete amendatoryinstructions remove the two graywolf entries, reserve17.40(d), and remove graywolf criticalhabitat, while the separately listed Mexicanwolf(C.l.baileyi) remains unaffected. Mexico is species range here, not human nationality or admission; no allwolves/allESA/allStatehunting-law repeal, actualreissuance/currentlisting/court outcome or independent biological/livestock/health/benefit assertion. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.No newsemantic interpretation or applicationquestion is generated.",
       "source": {
         "source_id": "clerk:119:1:360",
         "url": "https://clerk.house.gov/evs/2025/roll360.xml",
@@ -23970,25 +23970,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete passed HR845 would require Interior within60days afterenactment to reissue exactly the Nov3,2020 gray-wolf rule85FR69778 and exempt that reissuance fromjudicialreview. Named rule summary/complete amendatoryinstructions remove the two graywolf entries, reserve17.40(d), and remove graywolf criticalhabitat, while the separately listed Mexicanwolf(C.l.baileyi) remains unaffected. Mexico is species range here, not human nationality or admission; no allwolves/allESA/allStatehunting-law repeal, actualreissuance/currentlisting/court outcome or independent biological/livestock/health/benefit assertion. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.No newsemantic interpretation or applicationquestion is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:360",
           "url": "https://clerk.house.gov/evs/2025/roll360.xml",
           "raw_sha256": "1f59fecdf4853cf4abdf616637160f1442c17bdd3ef3d10f83d7c888368ee465",
-          "governed_bytes_sha256": "61f23523cd289b89ff822b095127d42c16a7b3811bf5faa9149818a47886e2ae",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "61f23523cd289b89ff822b095127d42c16a7b3811bf5faa9149818a47886e2ae"
+        },
+        {
+          "source_id": "govinfo:hr845eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr845eh/html/BILLS-119hr845eh.htm",
+          "raw_sha256": "8c18b5a88b4b1eafec705999136706738ab11b6a4a62cf38f4682d1182165e6c",
+          "governed_bytes_sha256": "069e60a4f0bfa4417b5142d117f167c9daa671cdd0758a34ddbc852a2a8fa976"
+        },
+        {
+          "source_id": "fws:wolf2020-summary",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2020-11-03/html/2020-24171.htm",
+          "raw_sha256": "7cbd0f2104a92689ecf66ef885606d12a9e56e34c07021d095727724e7fedfa0",
+          "governed_bytes_sha256": "1056dc5ff664345219b1f2951bde7177a68d9653b7c908b954325ff76e9b6e90"
+        },
+        {
+          "source_id": "fws:wolf2020-operative",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2020-11-03/html/2020-24171.htm",
+          "raw_sha256": "7cbd0f2104a92689ecf66ef885606d12a9e56e34c07021d095727724e7fedfa0",
+          "governed_bytes_sha256": "c663aeda1333f7f9d4c5d249647e3013b39ea517e6185539531155a01ae9d9bd"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "ff5db750cc0d41c4290ca9301f6cebb09bfd5da81536007831775a0732837b30"
       },
       "historical_raw_hash_matches": true
     },
@@ -26053,8 +26071,8 @@
       "date": "2026-01-21",
       "measure": "bill_119_hjres_140",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete passed HJ140 proposes CRA disapproval of exactly PLO7917/88FR6308Jan31,2023. Fulltextualorder withdraws approximately225504NationalForest acres in namedMNcounties under mineral/geothermal leasinglaws for20years, subjectvalidexistingrights; subsequently federally acquired nonFederal lands enter scope, currentnonFederalinterests unaffected. OtherNationalForestlaws/mineralmaterialdisposal remain, expiry/extensionreview retained. The source map is not reconstructed or certified. Tribal/cultural/1854cededterritory purpose is attributed, not a personalimmigrationstatus or treaty eligibility finding; no allmining/lease/privateproperty repeal, automaticpermit or actualenactment/environmental effect. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
       "source": {
         "source_id": "clerk:119:2:38",
         "url": "https://clerk.house.gov/evs/2026/roll038.xml",
@@ -26071,25 +26089,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete passed HJ140 proposes CRA disapproval of exactly PLO7917/88FR6308Jan31,2023. Fulltextualorder withdraws approximately225504NationalForest acres in namedMNcounties under mineral/geothermal leasinglaws for20years, subjectvalidexistingrights; subsequently federally acquired nonFederal lands enter scope, currentnonFederalinterests unaffected. OtherNationalForestlaws/mineralmaterialdisposal remain, expiry/extensionreview retained. The source map is not reconstructed or certified. Tribal/cultural/1854cededterritory purpose is attributed, not a personalimmigrationstatus or treaty eligibility finding; no allmining/lease/privateproperty repeal, automaticpermit or actualenactment/environmental effect. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:38",
           "url": "https://clerk.house.gov/evs/2026/roll038.xml",
           "raw_sha256": "78f5f6ee74b19b013a591a644219eedafb934a8e3c5c4622dad56801c60453cb",
-          "governed_bytes_sha256": "328f7d333097d02996700f2c57ba9e8a774e549458dc297ba32c0aea16ea4723",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "328f7d333097d02996700f2c57ba9e8a774e549458dc297ba32c0aea16ea4723"
+        },
+        {
+          "source_id": "govinfo:hjres140eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres140eh/html/BILLS-119hjres140eh.htm",
+          "raw_sha256": "5835bee3afcc89cdab0ea2c67e8c23bdc74763784d0c2953766180140ab6f47e",
+          "governed_bytes_sha256": "9b5c151e7efa4ac24df2f5d6f5899a218f2b7c54296d74c25dc85133914461db"
+        },
+        {
+          "source_id": "govinfo:plo7917-2023-operative-text",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-01-31/html/2023-01969.htm",
+          "raw_sha256": "95c6b1223f7bcb66d76a4966fa2d3735615055c3dfa82bdf1bdbd21991608ffc",
+          "governed_bytes_sha256": "ee8efbab125e2bae3c74bada101621f6bb94c21a8b2d29a06197cc4888dd391d"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b1bce65cc5db618848f3a61450d960a7c426707aaa9fbfeeef90a26d2cde7383"
       },
       "historical_raw_hash_matches": true
     },
@@ -28368,8 +28404,8 @@
       "date": "2026-02-24",
       "measure": "bill_119_hr_4626",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete passedHR4626 has HomeApplianceProtectionandAffordabilityAct shorttitle while Clerkcaption retains Don'tMessWithMyHomeAppliancesAct; retain version/titlevariation, never infermeaning fromcaption. Bill replaces6295(m1) periodicmandate with MAY notice, retains new2yearfinalrule/fiveyearmanufacture lag; petitions amendment/revocation require the four conjunctive criteria, grantnopresumption,180day revokerule OR no-revocation determination, and revoked standards considered ineffect for327. Replaces(o2/o3) with qualifiedtechnological/economic/conservation/testprocedures, quantitativeanalysis/comment/cost/performance/fuel/competition and2yearreview requirements. Three disclosure predicates are conjunctive: PRC/CCPties AND energyrestricting advocacy/studies AND Federalfundapplication/receipt, forSecretarymeetings in preceding5years. Undefined entity/ties does not establish individualChinese/noncitizen/admission/status, anallChinese-contactban, or independent ties finding. Productmanufacture/import regionalcriterion is goods/trade, not people admission. Technical water/definitions/tests/information/procedure/reference changes, deletion6317(c), prospective new/amendedtransformerstandards ban with preenactment standards preserved, and six performance choices/designrequirements for dishwashers/washers remain distinct; no allDOE/allState/allappliance ban oractualcost/savings/employment/health/environment predictions. Complete2024materialbaselines preserve anti-backsliding/qualifiedpreemption/representationrules; individualproduct/waiver/currentregulations/legalapplications unadjudicated. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.No newsemantic interpretation or applicationquestion is generated.",
       "source": {
         "source_id": "clerk:119:2:76",
         "url": "https://clerk.house.gov/evs/2026/roll076.xml",
@@ -28386,25 +28422,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete passedHR4626 has HomeApplianceProtectionandAffordabilityAct shorttitle while Clerkcaption retains Don'tMessWithMyHomeAppliancesAct; retain version/titlevariation, never infermeaning fromcaption. Bill replaces6295(m1) periodicmandate with MAY notice, retains new2yearfinalrule/fiveyearmanufacture lag; petitions amendment/revocation require the four conjunctive criteria, grantnopresumption,180day revokerule OR no-revocation determination, and revoked standards considered ineffect for327. Replaces(o2/o3) with qualifiedtechnological/economic/conservation/testprocedures, quantitativeanalysis/comment/cost/performance/fuel/competition and2yearreview requirements. Three disclosure predicates are conjunctive: PRC/CCPties AND energyrestricting advocacy/studies AND Federalfundapplication/receipt, forSecretarymeetings in preceding5years. Undefined entity/ties does not establish individualChinese/noncitizen/admission/status, anallChinese-contactban, or independent ties finding. Productmanufacture/import regionalcriterion is goods/trade, not people admission. Technical water/definitions/tests/information/procedure/reference changes, deletion6317(c), prospective new/amendedtransformerstandards ban with preenactment standards preserved, and six performance choices/designrequirements for dishwashers/washers remain distinct; no allDOE/allState/allappliance ban oractualcost/savings/employment/health/environment predictions. Complete2024materialbaselines preserve anti-backsliding/qualifiedpreemption/representationrules; individualproduct/waiver/currentregulations/legalapplications unadjudicated. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.No newsemantic interpretation or applicationquestion is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:76",
           "url": "https://clerk.house.gov/evs/2026/roll076.xml",
           "raw_sha256": "b29d9d017d11ddb0f06d619f868071abd44b2e605016050cb37a00f157fe2cda",
-          "governed_bytes_sha256": "fa7c8fabfed727732c54814d08f3565c5c5378d29878f51711c7c08fe40b2cee",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "fa7c8fabfed727732c54814d08f3565c5c5378d29878f51711c7c08fe40b2cee"
+        },
+        {
+          "source_id": "govinfo:hr4626eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4626eh/html/BILLS-119hr4626eh.htm",
+          "raw_sha256": "aeffd129fe15c39a964775e40a6cf95004a441213810c12984845ed4616ea537",
+          "governed_bytes_sha256": "71d7720fc5d45c16a1f0367559122800b6e5dddf17410f1a53a7ad3b3688d467"
+        },
+        {
+          "source_id": "govinfo:42usc6291-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6291.htm",
+          "raw_sha256": "5aba3334162384fa233dce94acde722ed325ce2a73d36958a85c60d746d6e587",
+          "governed_bytes_sha256": "93f114b6834828d18add27bf7db0b55ecf61afb6656860dac30c11370afece97"
+        },
+        {
+          "source_id": "govinfo:42usc6295-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6295.htm",
+          "raw_sha256": "d8abda9d6e76ae4d5506c9cd6317664ec2822f47a6fda5e8001ccb48678bfe53",
+          "governed_bytes_sha256": "16d7fbe515e25dcbdca2114ddc8ba0d635d15b551c2b447bd4f34073ba082f47"
+        },
+        {
+          "source_id": "govinfo:42usc6317ac-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-1-sec6317.htm",
+          "raw_sha256": "0daf758ea695bc49b354e18f6d38a33f8d54fdff21a35c06d6d435efdba6a11a",
+          "governed_bytes_sha256": "d2c84751a0310b3f62dfb3ab78012764c8ea38d556312b0497671142174762a7"
+        },
+        {
+          "source_id": "govinfo:42usc6293-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6293.htm",
+          "raw_sha256": "d282cf1bdc8157e52667e16bd02c1c86dc24ae58288fbe7fc61bcbefedd1402b",
+          "governed_bytes_sha256": "bfea4fb9ab1a46093609f948a2234d0aa6302560433159fe4d6e3313adbf8197"
+        },
+        {
+          "source_id": "govinfo:42usc6296d-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6296.htm",
+          "raw_sha256": "42973a0ddd8f98f4b0ed74c1633f1d5f506e02a9b7582deb29b3110e894dd593",
+          "governed_bytes_sha256": "f7dc47c65c91cd9d4b07086f18bda430237a1ebac76d30d3ba6fb010909b94df"
+        },
+        {
+          "source_id": "govinfo:42usc6297c-material161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap77-subchapIII-partA-sec6297.htm",
+          "raw_sha256": "0c2c5f6cdcfd4efe0a454e15f0f0d411cedb51c3c21dead7e8a8358853f644c4",
+          "governed_bytes_sha256": "92b71a8ca621f9c0d05fa31976b739c0e1993b893bfc3d8e90a5ee406ca12cb0"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "886b51304d7ba71cae407050b20608be626f93ccb0cc7899ae6ac6158c613589"
       },
       "historical_raw_hash_matches": false,
       "historical_source_identity": {
@@ -42286,8 +42364,8 @@
       "date": "2026-09-15",
       "measure": "H J RES 210",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete passedEH HJ210Sep15,2026 targets EPA AtBerth decision88FR72461Oct20,2023, not the earlierIH text as the passedwitness. The datednotice describes authorization for2020amendments governing auxiliaryengine/tankerboiler emissions atspecifiedCAports, phased vessel categories/qualifiedlimitedexceptions andUS/foreignflagoperators. Opacityrequirements were notrequested forauthorization; EPA takesnoaction/position on theirenforceability. Foreignflagvessels/ports are emissionprogram predicates, not personalnationality/admission/status/borderinspection orimmigration enforcement. House proposes disapproval/no-force-or-effect; EPA explicitly says actionisnotarulefor804(3) andCRAdoesnotapply. Preserve these actor/time/legal positions separately, without resolving CRA applicability, enacted cancellation, court outcome or reissuance restriction. Source DATESDec19,2023 versus judicialsectionJune20,2023 and202(e) versus209(e) citations remain literal/unadjudicated; no silent repair or deadline advice. The differing legalpositions do not block this candidate functional-domain exclusion: both sources identify the same nonroad-emission authorization object, and no actuallegal-effect proposition is accepted. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
       "source": {
         "source_id": "clerk:119:2:306",
         "url": "https://clerk.house.gov/evs/2026/roll306.xml",
@@ -42304,26 +42382,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete passedEH HJ210Sep15,2026 targets EPA AtBerth decision88FR72461Oct20,2023, not the earlierIH text as the passedwitness. The datednotice describes authorization for2020amendments governing auxiliaryengine/tankerboiler emissions atspecifiedCAports, phased vessel categories/qualifiedlimitedexceptions andUS/foreignflagoperators. Opacityrequirements were notrequested forauthorization; EPA takesnoaction/position on theirenforceability. Foreignflagvessels/ports are emissionprogram predicates, not personalnationality/admission/status/borderinspection orimmigration enforcement. House proposes disapproval/no-force-or-effect; EPA explicitly says actionisnotarulefor804(3) andCRAdoesnotapply. Preserve these actor/time/legal positions separately, without resolving CRA applicability, enacted cancellation, court outcome or reissuance restriction. Source DATESDec19,2023 versus judicialsectionJune20,2023 and202(e) versus209(e) citations remain literal/unadjudicated; no silent repair or deadline advice. The differing legalpositions do not block this candidate functional-domain exclusion: both sources identify the same nonroad-emission authorization object, and no actuallegal-effect proposition is accepted. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:306",
           "url": "https://clerk.house.gov/evs/2026/roll306.xml",
           "raw_sha256": "859a0001ab7de1072b65ed347c5990058d8e3ab78b32450435b2d6ba71653844",
-          "governed_bytes_sha256": "586e6b5e1cc9f8eabc23f42af2dad74eee16ce2e527d3ba51d7dcfd9a4a1aa8c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "586e6b5e1cc9f8eabc23f42af2dad74eee16ce2e527d3ba51d7dcfd9a4a1aa8c"
+        },
+        {
+          "source_id": "primary:hjres210eh-full161",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres210eh/xhtml/BILLS-119hjres210eh.html",
+          "raw_sha256": "440bc0202058905e5f07ec1e01bdabd20de5c30ea9fbaa6bd65c67a1639d1a27",
+          "governed_bytes_sha256": "d46ed9fa17f4850d50ac0fbbe31993bfbd4f5f6268588f4b9ab6eb5a71354679"
+        },
+        {
+          "source_id": "epa:atberth2023-material161",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2023-10-20/html/2023-23261.htm",
+          "raw_sha256": "757e95a0a803332e1c5aca5af27c01c03f327aca90c9a8784f7b31113e2ee0ac",
+          "governed_bytes_sha256": "cc6115cb3719610a7e248f692976d6872f0038f8c71655294a74b5f0ace5ef4b"
+        },
+        {
+          "source_id": "govinfo:42usc7543e-operative161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+          "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+          "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "99344853785e5466dec8355efe751c2899a705a6d4ac330c0ca22ce8c0449e1d"
       }
     },
     {
@@ -42533,8 +42635,8 @@
       "date": "2026-09-16",
       "measure": "H J RES 213",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete passedEH HJ213Sep16,2026 targets EPA harborcraft decision90FR1998Jan10,2025, not earlierIH aspassedtext. Notice describes partial authorization for2022CHCamendments, vesselcategories/engine-modelyear/emissionstandards/qualifiedextensions. EPA takesNOACTION on in-use short-run ferryZEAT and E3 in-useengine/vessel standards after feasibilityextensions where engine/DPFisnotfeasible andownercannotaffordreplacement, excludingcommercialfishingvessels; installedin-use VDECS provisions remain covered. Preserve partialgrant versus noaction, not denial/allCHC/allCalifornia/allships orcrewentry policy. EPA findings aboutcriteria/feasibility/protectiveness remain attributed, not empiricalconclusions. HouseproposedCRA disapproval/no-force-or-effect versusEPAexplicit non-rule/CRA-inapplicability position remain separatelyattributed and unadjudicated, not actualauthorizationcancellation/reissuance/court/deadline judgment. Both witnesses establish emissionauthorization rather than a personalimmigration/admission/status/directborder mechanism; unresolved legalapplicability does not establish or prevent this narrow domain boundary. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
       "source": {
         "source_id": "clerk:119:2:311",
         "url": "https://clerk.house.gov/evs/2026/roll311.xml",
@@ -42551,26 +42653,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete passedEH HJ213Sep16,2026 targets EPA harborcraft decision90FR1998Jan10,2025, not earlierIH aspassedtext. Notice describes partial authorization for2022CHCamendments, vesselcategories/engine-modelyear/emissionstandards/qualifiedextensions. EPA takesNOACTION on in-use short-run ferryZEAT and E3 in-useengine/vessel standards after feasibilityextensions where engine/DPFisnotfeasible andownercannotaffordreplacement, excludingcommercialfishingvessels; installedin-use VDECS provisions remain covered. Preserve partialgrant versus noaction, not denial/allCHC/allCalifornia/allships orcrewentry policy. EPA findings aboutcriteria/feasibility/protectiveness remain attributed, not empiricalconclusions. HouseproposedCRA disapproval/no-force-or-effect versusEPAexplicit non-rule/CRA-inapplicability position remain separatelyattributed and unadjudicated, not actualauthorizationcancellation/reissuance/court/deadline judgment. Both witnesses establish emissionauthorization rather than a personalimmigration/admission/status/directborder mechanism; unresolved legalapplicability does not establish or prevent this narrow domain boundary. Established member-neutral Immigration functional-domain candidate exclusion only, noncounting/unapproved. FousheeNay/MassieYea are exact recorded passage labels, not preferences for eachcomponent, motives, causality, enactment or individualapplications.801(b1/b2/f/g) consequences are qualified by enacted disapproval/applicability; passage alone is not enactment. No newsemantic interpretation or applicationquestion is generated.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:311",
           "url": "https://clerk.house.gov/evs/2026/roll311.xml",
           "raw_sha256": "8ff22ab712bc010f30916a3448e5aa001b6d032d25b0b6e32b37d4721a0c3f55",
-          "governed_bytes_sha256": "6055540a32ed1d6d876007fbd608781526688511ba6b35d197f1769de61ca2d9",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6055540a32ed1d6d876007fbd608781526688511ba6b35d197f1769de61ca2d9"
+        },
+        {
+          "source_id": "primary:hjres213eh-full161",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres213eh/xhtml/BILLS-119hjres213eh.html",
+          "raw_sha256": "5011ff2cf42c21db7e598ea1517a7c762aee5d710fd862c7ea6dca984596d935",
+          "governed_bytes_sha256": "ce51fde2c3b2aee1d7941938253a5120f0a3e82a903e9cb94ef21c17f66d1966"
+        },
+        {
+          "source_id": "epa:harbor2025-material161",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-01-10/html/2025-00465.htm",
+          "raw_sha256": "411a32d355fcf2c2bb90c145907c165da58b80b11c12d0d09111921612072fe9",
+          "governed_bytes_sha256": "29b7ed29f1f3bc120c48d7d31ea83a6896ef4118fc43c13973dfad7948f60fc3"
+        },
+        {
+          "source_id": "govinfo:42usc7543e-operative161",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7543.htm",
+          "raw_sha256": "12217975f8886d17b0cbbae9e27fd832f7801478b057b26ea24e75d7ae3c4b18",
+          "governed_bytes_sha256": "1bd56ddaf5af9817a7224a44288c9f458a25ccf8402ea65d72f7cb62cff3bc61"
+        },
+        {
+          "source_id": "govinfo:5usc801-2024-disapproval-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partI-chap8-sec801.htm",
+          "raw_sha256": "ca8151f3d733dc5aa0f13b3a51faa7747f629213fa4a28f26e84fd25b94ff00e",
+          "governed_bytes_sha256": "7b9268e5820b511c1586a6d78bc98a6786ccab402ea62693624de3d51d40fcfc"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "499e1a954766780103dccd34513d6f27db4e49470a3445205bdc55e07d20d147"
       }
     },
     {
@@ -42832,7 +42958,6 @@
     "house:119:1:354",
     "house:119:1:356",
     "house:119:1:358",
-    "house:119:1:360",
     "house:119:1:362",
     "house:119:2:5",
     "house:119:2:6",
@@ -42843,7 +42968,6 @@
     "house:119:2:28",
     "house:119:2:29",
     "house:119:2:31",
-    "house:119:2:38",
     "house:119:2:40",
     "house:119:2:43",
     "house:119:2:44",
@@ -42853,7 +42977,6 @@
     "house:119:2:56",
     "house:119:2:57",
     "house:119:2:72",
-    "house:119:2:76",
     "house:119:2:89",
     "house:119:2:105",
     "house:119:2:110",
@@ -42911,11 +43034,9 @@
     "house:119:2:302",
     "house:119:2:303",
     "house:119:2:305",
-    "house:119:2:306",
     "house:119:2:308",
     "house:119:2:309",
     "house:119:2:310",
-    "house:119:2:311",
     "house:119:2:312",
     "house:119:2:313"
   ],
@@ -42935,6 +43056,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "c4d44e1f3bfa5e48029b902babbeecda60a526f16997e6c6ab350d28a4ea0dbb",
-  "membership_review_sha256": "9cc5a0fdda57e87660b9e29019ac4bc41f53315ebdf0d3b23beb73472d9dd30f"
+  "proposal_sha256": "2b7c10ef5f273aac49b21b3663d36fbe119d7fd7c97947e0e3619164b6295202",
+  "membership_review_sha256": "31e54c8484219d2a4d5b957b95fe3357669471248d4a3bc69a6442a500429ab9"
 }

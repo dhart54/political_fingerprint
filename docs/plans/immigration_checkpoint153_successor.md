@@ -237,3 +237,32 @@ Checkpoint160 authored/validated:554reviewed/122ordinarypending;179focused/
 15PDFpages inspected; sourcequalifications andNVstatus retained.159CI/review
 actualboundedpass sealed. Finaldiff/auditguards/commit/push/PRupdate next;
 160reviewpending,252/S1318/allholds intact, routine timing retired.
+
+## Checkpoint161: regulatory source scope
+
+Screen five exact passage choices:1191/360(HR845 wolf),1192/38(HJ140
+land withdrawal),76(HR4626 appliance standards),306(HJ210 at-berth),311
+(HJ213 harbor craft). Bind the passed versions and only material referenced
+rule/Code passages. Reuse sealed witnesses without reusing another domain's
+conclusions. Preserve Mexican-wolf/valid-existing-rights/product-standard and
+partial-authorization exceptions. The EPA notices' attributed non-rule CRA
+position and the resolutions' proposed disapproval remain separate; legal
+applicability, enacted effects, deadlines and individual applications are not
+adjudicated. If a conflict prevents a safe domain disposition, keep that action
+pending and deliver the safely supported remainder without forcing a quota.
+
+Archive baseline, add exact source-mapped candidate reviews, update audit,
+generate and replay once, run focused/semantic/reference validation, inspect
+diff and final audit guards, then commit/push and update draftPR198. Include
+prior160CI/review only to the extent actually observed. Expected13-14 tracked
+files and the semantic validation tier; all44meanings/sixsemanticoutputs,
+70questions/3packages/252/S1318/otherholds remain unchanged. No routine timing
+instrumentation or publication/approval/production/merge/schema decision.
+
+Checkpoint161 authored/validated:559reviewed/117ordinarypending;179focused/7semantic/
+reference/replay pass, sixsemanticoutputs unchanged.17newcanonical/17registered
+captures/8freshHTMLrawtext/9derivatives/16intervals/21claimpassages verified.
+160CI9firstattemptgreen, peer160unreceived/161pending; finaldiff/auditguards/
+featurecommit/push/PRupdate next. Allholds/252/S1318/70questions/3packages retained.
+
+Checkpoint161 finaldiff and two auditguards verified (0.966s); feature delivery ready.

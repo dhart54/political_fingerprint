@@ -1,8 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint160:44 meanings/554 reviews/122 ordinary pending.
-Five candidate exclusions; audit173NoDefect/8Minor/11Major/1Critical, finalverdictnull.
-159CI/reviewboundedpass retained;160 independent review pending.
+Current candidate checkpoint161:44 meanings/559 reviews/117 ordinary pending.
+Five exclusions; audit178NoDefect/8Minor/11Major/1Critical, finalverdictnull.
+160CI9green;160reviewunreceived/161reviewpending.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8922,3 +8922,62 @@ wholeplan/current-law/individual certification. Ownersuites/replay/timings remai
 attributed;160 reviewpending, no editorialacceptance/generalqualityequivalence.
 Routine timing retired after two batches, prior measurements/durable lessons
 retained. Existingowner/worktree/retiredcontrols/reservedgates unchanged.
+
+## Checkpoint161: five regulatory screenings
+
+House119/1/360 and119/2/38/76/306/311 receive noncounting candidate
+Immigration-domain exclusions. HR845 requires reissuing the exact2020 wolf
+rule within60days of enactment and exempts that reissuance from judicial review;
+the Mexican-wolf exception and species-range meaning remain explicit. HJ140
+targets PLO7917: named MN lands/mineral-geothermal leasing, valid existing
+rights, nonFederal interests, other Forest laws and20year scope remain separate.
+The incorporated map is not reconstructed or certified. No allwildlife/mining/
+land-use repeal, automatic permit, current listing or empirical benefit finding.
+
+HR4626's passed shorttitle differs from its Clerk caption. Complete passed text
+and material2024Code witnesses establish product-standard procedures, not
+personal immigration criteria. MAY notice, two/fiveyear procedures, conjunctive
+petition predicates, revoked-standard preemption treatment, economic-analysis
+tasks, manufacture/import criteria, technical water changes, transformer ban
+with existing standards protected, and washer/dishwasher choices remain distinct.
+The meeting disclosure requires all three entity predicates: PRC/CCP ties,
+specified energy advocacy/studies, and Federal-fund application/receipt. No
+individual nationality/status finding or cost/employment/health prediction.
+
+HJ210/HJ213 use freshly captured passed EH stages, not the old IH witnesses.
+Targets are88FR72461Oct20,2023 at-berth and90FR1998Jan10,2025 harbor craft.
+At-berth opacity no-action, literalJan2,2027 phase date, conflicting printed
+Dec19/June20 review dates and202/209 citation variation remain unadjudicated.
+Harbor authorization is partial: in-use short-run-ferry ZEAT and qualified E3
+standards receive no action, commercial-fishing exception and in-use VDECS
+coverage remain. EPA's explicit non-rule/CRA-inapplicability positions and the
+House's proposed disapproval are separately attributed. Their differing legal
+positions do not obscure the shared nonroad-emission object. This bounded
+domain exclusion accepts no disputed actual legal-effect proposition; enactment,
+CRA applicability, court results, deadlines and individual applications remain
+unadjudicated. Foreign-flag vessels/ports are not personal admission predicates.
+
+559/676 reviewed:44 interpreted,227 procedural,286 excluded,2 expressive;
+117 ordinary pending.1728 sources/546 registered captures/1108 interpreted
+bindings/501 extent objects/901 coordinates.40 episodes/88 observations/
+78 findings,70 application questions and3 packages unchanged. Audit178NoDefect/
+8Minor/11Major/1Critical preserves history and final_verdict null.252 direct
+border, S1318FISA/CBDC and all earlier holds remain pending/unmodified.
+
+Eight fresh official HTML raw/text captures, nine derivatives/sixteen intervals
+and21 full named claim passages verified; reused governed witnesses match.
+No new PDF/image, entire technical notice/CARB regulation/latest-law/individual
+application certification.179 focused tests pass in14.708s, seven
+semantic checks and the reference validator pass. All seven generated files
+match replay byte for byte; six semantic outputs are unchanged. Final diff and
+audit guards follow. Scoped Windows environment retained without configuration,
+dependency, ACL or security changes. A private heading-selector error preceded
+all sourcepool/manifest/recipe/receipt writes; baseline bytes checked unchanged
+before correction, importer applied once. No routine timing instrumentation.
+
+160CI37855439985/run646: nine jobs succeed on attempt1; five feature-pinned,
+three synthetic-merge and one mixed repair context. Decoded log seals and
+checkout transitions verified; synthetic SHAce6b7d5f0cc640c91a65ef3c2d1c0790be45e4a9.
+Hosted308 and repair13of20 are distinct from owner179 focused tests.
+160 independent review not yet received;161 review pending. No editorial
+acceptance, publication, promotion, production, merge or retired controls.
