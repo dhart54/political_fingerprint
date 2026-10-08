@@ -9676,3 +9676,106 @@ partial packages and historical checkpoint/deadline evidence. Same .w/ib owner,
 no competing mutator observed, no current deadline. Draft PR198 remains authorized
 delivery boundary. No merge, deploy, production, editorial acceptance/promotion/
 publication, methodology or architecture change.
+
+
+### Successor checkpoint 126: adopted H.Res.499 rule and H.Res.492 correction direction
+
+Exact June11,2025 House119/1/165 H.Res.499 EH is noncounting procedural context.
+Complete1318-character adopted rule provides H.R.4 consideration, point-of-order
+waivers, considered-as-read/previous-question treatment, one-hour divided debate
+and one motion to recommit. Section2 excepts relevant June3 special-message bills/
+joint resolutions from ICA1017 consideration procedures; it does not repeal the
+whole Act or enact the proposed rescissions. Complete operative2024 2USC683/688
+distinguish proposed rescission/obligation release from committee/floor procedure.
+Section3 actually adopts H.Res.492. Complete adopted492EH and all20 Clerk-directed
+H.R.1 engrossment corrections retained; IH not substituted and actual correction
+effect not denied. Existing procedural standards do not convert this rule vote
+into direction on individual H.R.1 immigration components or H.R.4 passage.
+Foushee/Massie official No labels remain non-directional Immigration context.
+H.R.1 House145/EAS190 meanings, adopted-correction witnesses and partial flags exact.
+
+Two canonical operative statutory sources, two original captures/two coordinates;
+already governed499EH/492EH reused unchanged. Strict raw/text hashes, seals, unique
+operative anchors and exact source extents verify. Wrong683 structural path returned
+HTTP200 error page; rejected bytes preserved, correct subchapterII derived from
+official2024 title metadata. Full-title HTML header differs from granule header;
+identity guard corrected after readback without refetch. Metadata lookup is not a
+governed full-title review. No unavailable-evidence finding.
+
+176 focused tests pass in15.355seconds, reference validator and seven semantic
+checks pass. Seven generated files replay byte for byte. All41meanings/six outputs/
+74findings/prior468reviews/1461sources/test file/70question objects/three partial
+flags remain exact. Only generated proof changes. Initial176-test run16.726seconds
+had one stale-proof replay failure because it started before regeneration;
+regeneration/manifest completed before passing rerun, no assertion weakened.
+Private adapted verifier initially retained Clerk100 with No expectation; corrected
+explicit165 identity, canonical sources/labels untouched. Final diff and candidate/
+publication isolation reviewed; tests are not semantic truth.
+
+676 inventory/469 reviewed/41 interpreted/216 procedural/210 excluded/two expressive;
+207 ordinary unfinished/three partial packages/70questions.1463sources/1044interpreted
+bindings/407governed captures/334extent objects/548coordinates.38episodes/82member
+observations/74findings. Same-owner audit93 NoDefect/3Minor/11Major/1Critical; no126
+independent or full-corpus acceptance. Core65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9;
+compiledf41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809.
+
+125 CI37721837361 terminal nine green, owner reads all raw logs and checkout
+provenance: five feature/three synthetic/one mixed, synthetic
+da6077ed66200fa67054928587f88819fa478be0. Hosted305 preparation tests distinct from
+owner176. No retry;126 needs own pushed-head run. Fingerprint separately completes
+124/125 source/domain and mechanics/CI lanes.11 GovInfo hashes/13claims/eight extents
+verify, literal FR/Code/111/114 identities and EAS sunset repeal retained. Checked
+Clerk metadata/member rows/totals agree with continuing raw-byte drift caveat. Old
+objects/41meanings/six outputs/74findings/test file/70questions/three partial flags
+unchanged. No independent full replay, private-archive observation, domain-wide or
+editorial acceptance. Historical signed pending fields remain historical.
+
+Forestry25 remains pending. Ten additional private originals preserve exact
+3841(f) contributions account and complete NFWF3701-3709 operative bodies; total23
+private forestry acquisitions, zero new forestry governed captures/dispositions.
+Complete reused15USC2229/2229a fire programs read with their own eligible applicants,
+application/matching/maintenance/waiver/use/audit/sunset terms.3841(f) statutory
+requirements cannot be adjusted; matching/funding/duration safeguards retained.
+EH314 excepts3709(a), not the entire NFWF Act. Existing UScitizen NFWF Board-member
+condition acknowledged without claiming new grant-recipient status or citizenship
+award. Original incorporated White Oak charter and other material sources still
+pending. Private receipt records unique3841(f)7124:13191 witness rather than an
+inner(f) cross-reference; output truncation reread, no disposition based on gaps.
+
+Fingerprint's fentanyl review adds prior166/S.331 exclusion as a consistency target:
+same chemical-class mechanism lacks bound INA802 chain, whereas firearm-facility
+House119/2/265 expressly distinguishes unchanged INA921 definition. Both prior
+records/hashes frozen;166 is not decisive precedent and not silently changed.
+Absence of express INA amendment or earlier exclusion alone does not resolve the
+direct-mechanism standard.32/33 stay pending; no additional application question,
+canonical meaning, review disposition or acceptance. Supervisor compares exact
+incorporated predicates/temporal baseline while safe parallel work continues.
+
+Next exact remaining packages150/151 H.R.2483,180/182 H.R.3944 and ordinary screenings;
+retain forestry25 charter/material references and32/33 reservation separately.
+Complete58652-character H.R.2483 EH read privately; material references and exact
+amendment150 remain to reconstruct before any disposition. No title/keyword shortcut.
+All70application objects/Q68/Q69/Q70, three partial packages and original deadline/
+terminal evidence preserved. Same .w/ib owner, no current deadline. DraftPR198
+authorized boundary; no merge/deploy/production/editorial acceptance/promotion/
+publication/methodology or architecture change.
+
+
+Checkpoint126 subsequent bounded supervisor direction: proceed with conditional
+fentanyl research under the written existing functional-mechanism contract, without
+excluding32/33 simply because INA text is unchanged. No disposition/count/acceptance
+authorized yet. Compare February2025 original temporary-class scope/exemptions/order/
+correction/extensions/duration with exact EH change or continuation; preserve each
+INA branch's independent conviction/admission/knowledge/timing/exceptions. Failed
+roll32 global-certification amendment remains separate from whole passage33.
+H.R747/roll220 is a candidate_pending_external_semantic_review comparison, not an
+accepted ontology or automatic domain precedent. It supports investigating the
+bounded route; written methodology controls. Historical166 remains unchanged and
+requires its own version/baseline re-review. Exclusion remains available after
+completed evidence, or route any genuinely new generalized rule/product ambiguity
+to Fingerprint. Governing methodology passage, unchanged controlling sources and
+pending747 review seal are frozen in fentanyl_supervisor_direction_checkpoint126.json.
+No canonical source/binding/disposition/application-question or methodology change.
+Next direct action is the bounded original temporary-class comparison; other safe
+ordinary/forestry/package work remains executable. Historical reservation receipts
+remain preserved rather than rewritten as a granted final disposition.

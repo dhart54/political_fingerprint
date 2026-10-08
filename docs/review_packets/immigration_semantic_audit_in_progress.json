@@ -10895,10 +10895,84 @@
         }
       ],
       "correction_state": "local_checkpoint_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:165",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "165",
+        "legis-num": "H RES 499",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Passed",
+        "action-date": "11-Jun-2025",
+        "action-time": "4:49 PM",
+        "vote-desc": "Providing for consideration of the bill (H.R. 4) the Rescissions Act; and for other purposes"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Exact house:119:1:165 is June11,2025 On Agreeing to the Resolution, H.Res.499 EH, not passage of H.R.4 or H.R.1. Complete1318-character EH supplies H.R.4 consideration: waiver of consideration/provision points of order, considered-as-read treatment, ordered previous question, one-hour divided debate and one motion to recommit. Section2 makes Impoundment Control Act section1017 inapplicable to bills/joint resolutions introduced for the June3 special message; it does not itself enact the rescissions proposed in that message or repeal the entire Act. Complete operative2024 sections1012/1017 (2USC683/688) distinguish a proposed rescission and obligation-release framework from referral/discharge/floor-consideration procedures. Section3 expressly adopts H.Res.492, so its complete adopted EH and all20 actual Clerk-directed H.R.1 engrossment corrections are retained: this is a real correction direction, not an inference that nothing changes. Existing noncounting procedural standards do not turn this rule/correction adoption into member support/opposition to individual H.R.1 immigration components. H.Res492EH is reused unchanged, without substituting introduced IH, later Senate EAS or the eventual public law. Separate H.R.1 House145/EAS190 meanings and three partial-package flags remain unchanged and must retain their already governed corrected-version boundaries. Both members' governed official No labels remain procedural/non-directional Immigration context. No adopted-rule vote is treated as substantive H.R.4 passage, realized funding rescission, visa/status/admission/removal change or editorial acceptance.",
+      "finding": "Complete adopted rule499 and492 corrections retained as noncounting procedure; actual engrossment direction acknowledged without reinterpreting separate H.R1/H.R4 passage.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "a324f747ccbf7b37c5f4cf214cac108b20af0e13bf408fc209eb12114bb646a6",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:165",
+          "url": "https://clerk.house.gov/evs/2025/roll165.xml",
+          "governed_bytes_sha256": "0465aed91aed12493292e0d4f6100a53dd013f734db39199dbf3e74c04bdb48d",
+          "reviewed_extent": "Exact Clerk identity, complete adopted rule/correction resolution or complete selected operative impoundment-process body"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres499eh/html/BILLS-119hres499eh.htm",
+          "governed_bytes_sha256": "08fb1093b9e5c64f60059e9a2c2758ac612f1d78302e6557a9713432b881bd81",
+          "reviewed_extent": "Exact Clerk identity, complete adopted rule/correction resolution or complete selected operative impoundment-process body"
+        },
+        {
+          "source_id": "govinfo:hres492eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres492eh/html/BILLS-119hres492eh.htm",
+          "governed_bytes_sha256": "63cff86f4255ae7bdcf584d3333fdcb7d1d9b74be6ff65955c673d22c8d80e54",
+          "reviewed_extent": "Exact Clerk identity, complete adopted rule/correction resolution or complete selected operative impoundment-process body"
+        },
+        {
+          "source_id": "govinfo:2usc683-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec683.htm",
+          "governed_bytes_sha256": "01a07835f05984d326d3c6eeee1587a5a3b9f4d586e94f303ac3fed96bd79816",
+          "reviewed_extent": "Exact Clerk identity, complete adopted rule/correction resolution or complete selected operative impoundment-process body"
+        },
+        {
+          "source_id": "govinfo:2usc688-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec688.htm",
+          "governed_bytes_sha256": "c1f9ef79b30f523acde21b08d26ad092ca76dbb43f68f7ed8b635a061a503b0b",
+          "reviewed_extent": "Exact Clerk identity, complete adopted rule/correction resolution or complete selected operative impoundment-process body"
+        }
+      ],
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 92,
+    "No Defect": 93,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10957,19 +11031,19 @@
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
     "retained_exclusions_reviewed": 40,
-    "procedural_controls_reviewed": 19,
+    "procedural_controls_reviewed": 20,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
     "successor_new_exclusions_reviewed": 5
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 14.21,
+    "focused_runtime_seconds": 15.355,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "123/124 terminal nine green with sealed raw-log/provenance receipts;125 needs own push/run",
+    "exact_head_ci": "125 run37721837361 terminal nine green, bounded independent ordinary lanes through125 complete;126 needs own push/run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -11006,12 +11080,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Exact Senate EAS100 procedural screen. All41 meanings/six outputs/74findings/prior467reviews/1457sources/test file/70questions/three partial flags unchanged. Three original budget captures and four coordinates. Forestry13 private captures verified without disposition;25/32/33 remain pending. Independent bounded lanes through123 complete, no125 acceptance.",
+    "focused_scope_note": "One exact adopted499/492 rule165 procedural screen; all41meanings/sixoutputs/74findings/prior468reviews/1461sources/test file/70questions/three partial flags preserved. Initial stale proof failure resolved by regeneration before rerun. Forestry23 private captures,32/33 pending,166/firearms265 frozen review targets. No acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint124_ci.json",
-      "receipt_sha256": "e78e5f73c62042a458e2ff90d371917995263b1472103db06c7ccc66c5dcaee3",
-      "head": "6b6fe08faa918233615e69b001af3f784a246c8b",
-      "run": 37719982999,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint125_ci.json",
+      "receipt_sha256": "0e3dac39cae4eb694821d786694dcf080b7138cd9b84bb14683cf475e5bb9368",
+      "head": "48bb8cfc3874146a250a07c51d88a901691ecc7d",
+      "run": 37721837361,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -14848,5 +14922,38 @@
     "receipt_sha256": "a874c3f681e359aa0d410e615e5483e7a3dcca5da125a51a8299315f1f4fccbd",
     "bounded_lanes_pass": true,
     "full_corpus_acceptance": false
+  },
+  "ordinary_screening_checkpoint126": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint126.json",
+    "receipt_sha256": "9d6088a2744b7b677fe67b1db0e19711fb5ec9ef1652c8b06b70f8c82494871d",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 207,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint125": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint125_ci.json",
+    "receipt_sha256": "0e3dac39cae4eb694821d786694dcf080b7138cd9b84bb14683cf475e5bb9368",
+    "head": "48bb8cfc3874146a250a07c51d88a901691ecc7d",
+    "run": 37721837361,
+    "successful_jobs": 9
+  },
+  "fentanyl_boundary_followup_checkpoint126": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_boundary_followup_checkpoint126.json",
+    "receipt_sha256": "f9f3485a0d64b01921dc179fd5e0caf05039f87b4d5b5bc2e2ced1588e7cbf30"
+  },
+  "independent_checkpoint124_125_mechanics": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoints124_125_independent_mechanics_review.json",
+    "receipt_sha256": "66f9ac4fe74f4678f21e22f19cfb59a83e7b415254fd1b647f15bb5e025aea01",
+    "source_domain_review_pending": false,
+    "editorially_accepted": false
+  },
+  "fentanyl_bounded_supervisory_direction_checkpoint126": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/fentanyl_supervisor_direction_checkpoint126.json",
+    "receipt_sha256": "a7f7aa9684f4c0f2cbeb2107acf7aba4ddceeb697db25086dd2b16b494d46259",
+    "bounded_research_direction": true,
+    "disposition_granted": false,
+    "comparison747_candidate_not_accepted": true
   }
 }

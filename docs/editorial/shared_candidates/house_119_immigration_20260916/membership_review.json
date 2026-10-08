@@ -20145,7 +20145,103 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:165",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Exact house:119:1:165 is June11,2025 On Agreeing to the Resolution, H.Res.499 EH, not passage of H.R.4 or H.R.1. Complete1318-character EH supplies H.R.4 consideration: waiver of consideration/provision points of order, considered-as-read treatment, ordered previous question, one-hour divided debate and one motion to recommit. Section2 makes Impoundment Control Act section1017 inapplicable to bills/joint resolutions introduced for the June3 special message; it does not itself enact the rescissions proposed in that message or repeal the entire Act. Complete operative2024 sections1012/1017 (2USC683/688) distinguish a proposed rescission and obligation-release framework from referral/discharge/floor-consideration procedures. Section3 expressly adopts H.Res.492, so its complete adopted EH and all20 actual Clerk-directed H.R.1 engrossment corrections are retained: this is a real correction direction, not an inference that nothing changes. Existing noncounting procedural standards do not turn this rule/correction adoption into member support/opposition to individual H.R.1 immigration components. H.Res492EH is reused unchanged, without substituting introduced IH, later Senate EAS or the eventual public law. Separate H.R.1 House145/EAS190 meanings and three partial-package flags remain unchanged and must retain their already governed corrected-version boundaries. Both members' governed official No labels remain procedural/non-directional Immigration context. No adopted-rule vote is treated as substantive H.R.4 passage, realized funding rescission, visa/status/admission/removal change or editorial acceptance.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:165",
+          "url": "https://clerk.house.gov/evs/2025/roll165.xml",
+          "raw_sha256": "5f1c09940e37d0142c8cf1a89fb30376cae259bd2b19bd6a45b1e99366a78058",
+          "governed_bytes_sha256": "0465aed91aed12493292e0d4f6100a53dd013f734db39199dbf3e74c04bdb48d"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres499eh/html/BILLS-119hres499eh.htm",
+          "raw_sha256": "4663e8d99f942318160ab581c0371097fd082ab7b0574f26dbc2147695e3e1fc",
+          "governed_bytes_sha256": "08fb1093b9e5c64f60059e9a2c2758ac612f1d78302e6557a9713432b881bd81"
+        },
+        {
+          "source_id": "govinfo:hres492eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres492eh/html/BILLS-119hres492eh.htm",
+          "raw_sha256": "d779db2055b11bf516ecc91f73db18618654f6a7d75620efd9449e7cc8684e03",
+          "governed_bytes_sha256": "63cff86f4255ae7bdcf584d3333fdcb7d1d9b74be6ff65955c673d22c8d80e54"
+        },
+        {
+          "source_id": "govinfo:2usc683-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec683.htm",
+          "raw_sha256": "09d1b351ff6a5be656e7aec8774af27a95e160f28517e0db73e224fb18c25b31",
+          "governed_bytes_sha256": "01a07835f05984d326d3c6eeee1587a5a3b9f4d586e94f303ac3fed96bd79816"
+        },
+        {
+          "source_id": "govinfo:2usc688-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec688.htm",
+          "raw_sha256": "717ecebedffac6cab6ee5b3d46f4de28a99834c43a08bf89d69e1ef95a5b2627",
+          "governed_bytes_sha256": "c1f9ef79b30f523acde21b08d26ad092ca76dbb43f68f7ed8b635a061a503b0b"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:2usc683-2024-operative-rule126",
+          "locator": "Complete operative2024 impoundment process body; distinct proposal, obligation and consideration rules",
+          "passage": "(a) Transmittal of special message Whenever the President determines that all or part of any budget authority will not be required to carry out the full objectives or scope of programs for which it is provided or that such budget authority should be rescinded for fiscal policy or other reasons (including the termination of authorized projects or activities for which budget authority has been provided), or whenever all or part of budget authority provided for only one fiscal year is to be reserved from obligation for such fiscal year, the President shall transmit to both Houses of Congress a special message specifying— (1) the amount of budget authority which he proposes to be rescinded or which is to be so reserved; (2) any account, department, or establishment of the Government to which such budget authority is available for obligation, and the specific project or governmental functions involved; (3) the reasons why the budget authority should be rescinded or is to be so reserved; (4) to the maximum extent practicable, the estimated fiscal, economic, and budgetary effect of the proposed rescission or of the reservation; and (5) all facts, circumstances, and considerations relating to or bearing upon the proposed rescission or the reservation and the decision to effect the proposed rescission or the reservation, and to the maximum extent practicable, the estimated effect of the proposed rescission or the reservation upon the objects, purposes, and programs for which the budget authority is provided. (b) Requirement to make available for obligation Any amount of budget authority proposed to be rescinded or that is to be reserved as set forth in such special message shall be made available for obligation unless, within the prescribed 45-day period, the Congress has completed action on a rescission bill rescinding all or part of the amount proposed to be rescinded or that is to be reserved. Funds made available for obligation under this procedure may not be proposed for rescission again. "
+        },
+        {
+          "source_id": "govinfo:2usc688-2024-operative-rule126",
+          "locator": "Complete operative2024 impoundment process body; distinct proposal, obligation and consideration rules",
+          "passage": "(a) Referral Any rescission bill introduced with respect to a special message or impoundment resolution introduced with respect to a proposed deferral of budget authority shall be referred to the appropriate committee of the House of Representatives or the Senate, as the case may be. (b) Discharge of committee (1) If the committee to which a rescission bill or impoundment resolution has been referred has not reported it at the end of 25 calendar days of continuous session of the Congress after its introduction, it is in order to move either to discharge the committee from further consideration of the bill or resolution or to discharge the committee from further consideration of any other rescission bill with respect to the same special message or impoundment resolution with respect to the same proposed deferral, as the case may be, which has been referred to the committee. (2) A motion to discharge may be made only by an individual favoring the bill or resolution, may be made only if supported by one-fifth of the Members of the House involved (a quorum being present), and is highly privileged in the House and privileged in the Senate (except that it may not be made after the committee has reported a bill or resolution with respect to the same special message or the same proposed deferral, as the case may be); and debate thereon shall be limited to not more than 1 hour, the time to be divided in the House equally between those favoring and those opposing the bill or resolution, and to be divided in the Senate equally between, and controlled by, the majority leader and the minority leader or their designees. An amendment to the motion is not in order, and it is not in order to move to reconsider the vote by which the motion is agreed to or disagreed to. (c) Floor consideration in House (1) When the committee of the House of Representatives has reported, or has been discharged from further consideration of, a rescission bill or impoundment resolution, it shall at any time thereafter be in order (even though a previous motion to the same effect has been disagreed to) to move to proceed to the consideration of the bill or resolution. The motion shall be highly privileged and not debatable. An amendment to the motion shall not be in order, nor shall it be in order to move to reconsider the vote by which the motion is agreed to or disagreed to. (2) Debate on a rescission bill or impoundment resolution shall be limited to not more than 2 hours, which shall be divided equally between those favoring and those opposing the bill or resolution. A motion further to limit debate shall not be debatable. In the case of an impoundment resolution, no amendment to, or motion to recommit, the resolution shall be in order. It shall not be in order to move to reconsider the vote by which a rescission bill or impoundment resolution is agreed to or disagreed to. (3) Motions to postpone, made with respect to the consideration of a rescission bill or impoundment resolution, and motions to proceed to the consideration of other business, shall be decided without debate. (4) All appeals from the decisions of the Chair relating to the application of the Rules of the House of Representatives to the procedure relating to any rescission bill or impoundment resolution shall be decided without debate. (5) Except to the extent specifically provided in the preceding provisions of this subsection, consideration of any rescission bill or impoundment resolution and amendments thereto (or any conference report thereon) shall be governed by the Rules of the House of Representatives applicable to other bills and resolutions, amendments, and conference reports in similar circumstances. (d) Floor consideration in Senate (1) Debate in the Senate on any rescission bill or impoundment resolution, and all amendments thereto (in the case of a rescission bill) and debatable motions and appeals in connection therewith, shall be limited to not more than 10 hours. The time shall be equally divided between, and controlled by, the majority leader and the minority leader or their designees. (2) Debate in the Senate on any amendment to a rescission bill shall be limited to 2 hours, to be equally divided between, and controlled by, the mover and the manager of the bill. Debate on any amendment to an amendment, to such a bill, and debate on any debatable motion or appeal in connection with such a bill or an impoundment resolution shall be limited to 1 hour, to be equally divided between, and controlled by, the mover and the manager of the bill or resolution, except that in the event the manager of the bill or resolution is in favor of any such amendment, motion, or appeal, the time in opposition thereto, shall be controlled by the minority leader or his designee. No amendment that is not germane to the provisions of a rescission bill shall be received. Such leaders, or either of them, may, from the time under their control on the passage of a rescission bill or impoundment resolution, allot additional time to any Senator during the consideration of any amendment, debatable motion, or appeal. (3) A motion to further limit debate is not debatable. In the case of a rescission bill, a motion to recommit (except a motion to recommit with instructions to report back within a specified number of days, not to exceed 3, not counting any day on which the Senate is not in session) is not in order. Debate on any such motion to recommit shall be limited to one hour, to be equally divided between, and controlled by, the mover and the manager of the concurrent resolution. In the case of an impoundment resolution, no amendment or motion to recommit is in order. (4) The conference report on any rescission bill shall be in order in the Senate at any time after the third day (excluding Saturdays, Sundays, and legal holidays) following the day on which such a conference report is reported and is available to Members of the Senate. A motion to proceed to the consideration of the conference report may be made even though a previous motion to the same effect has been disagreed to. (5) During the consideration in the Senate of the conference report on any rescission bill, debate shall be limited to 2 hours to be equally divided between, and controlled by, the majority leader and minority leader or their designees. Debate on any debatable motion or appeal related to the conference report shall be limited to 30 minutes, to be equally divided between, and controlled by, the mover and the manager of the conference report. (6) Should the conference report be defeated, debate on any request for a new conference and the appointment of conferees shall be limited to one hour, to be equally divided between, and controlled by, the manager of the conference report and the minority leader or his designee, and should any motion be made to instruct the conferees before the conferees are named, debate on such motion shall be limited to 30 minutes, to be equally divided between, and controlled by, the mover and the manager of the conference report. Debate on any amendment to any such instructions shall be limited to 20 minutes, to be equally divided between, and controlled by, the mover and the manager of the conference report. In all cases when the manager of the conference report is in favor of any motion, appeal, or amendment, the time in opposition shall be under the control of the minority leader or his designee. (7) In any case in which there are amendments in disagreement, time on each amendment shall be limited to 30 minutes, to be equally divided between, and controlled by, the manager of the conference report and the minority leader or his designee. No amendment that is not germane to the provisions of such amendments shall be received. "
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "locator": "Complete exact adopted EH: special consideration and adoption of engrossment corrections, or all20 Clerk-directed corrections",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 499 Engrossed in House (EH)] <DOC> H. Res. 499 In the House of Representatives, U. S., June 11, 2025. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 4) to rescind certain budget authority proposed to be rescinded in special messages transmitted to the Congress by the President on June 3, 2025, in accordance with section 1012(a) of the Congressional Budget and Impoundment Control Act of 1974. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the Majority Leader and the Minority Leader or their respective designees; and (2) one motion to recommit. Sec. 2. The provisions of section 1017 of the Impoundment Control Act of 1974 shall not apply to a bill or joint resolution introduced with respect to the special message transmitted under section 1012 of that Act on June 3, 2025. Sec. 3. House Resolution 492 is hereby adopted. Attest: Clerk."
+        },
+        {
+          "source_id": "govinfo:hres492eh",
+          "locator": "Complete exact adopted EH: special consideration and adoption of engrossment corrections, or all20 Clerk-directed corrections",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 492 Engrossed in House (EH)] <DOC> H. Res. 492 In the House of Representatives, U. S., June 11, 2025. Resolved, That the Clerk of the House of Representatives shall, in the engrossment of the bill H.R. 1, make the following corrections: (1) In section 10004(a), strike ``(1) standard utility allowance.-- Section'' and insert ``Section''. (2) In section 10004(a), strike paragraph (2). (3) In section 10106, strike subsection (a). (4) In section 10106, strike ``(b) Bioenergy Program for Advanced Biofuels.--Section'' and insert ``Section''. (5) In paragraph (17) of section 20005, strike ``and intelligence''. (6) In section 20005, strike paragraph (21). (7) In section 20008(a), strike paragraph (8). (8) In paragraph (16) of section 20009, strike ``intelligence, surveillance,'' and insert ``surveillance''. (9) In paragraph (17) of section 20009, strike ``intelligence, surveillance,'' and insert ``surveillance''. (10) Strike section 20012. (11) In section 44124(a)(1), in the matter proposed to be added as new paragraph (6)(A)(i)(III) of section 1927(e) of the Social Security Act (42 U.S.C. 1396r-8(e)), strike ``(or any successor regulation)''. (12) In section 44124(a)(1), in the matter proposed to be added as new paragraph (6)(A)(i)(III) of section 1927(e) of the Social Security Act (42 U.S.C. 1396r-8(e)), strike ``, or any successor regulation''. (13) In section 44133, strike ``(or a successor regulation)'' each place it appears. (14) In section 44201, strike ``(or any successor regulation)'' each place it appears. (15) In section 44201, strike ``(or a successor regulation)'' each place it appears. (16) In section 44302(a), in the matter proposed to be added as new paragraph (10)(B)(i)(III)(bb) of section 1902(kk) of the Social Security Act (42 U.S.C. 1396a(kk)), strike ``(or any successor regulation)''. (17) In section 44305(a)(1), in the matter proposed to be added as new subsection (h)(1)(B)(i) of section 1860D-12 of the Social Security Act (42 U.S.C. 1395w-112), strike ``or a successor regulation'' each place it appears. (18) In section 80101(c)(1), in the matter proposed to be added as new paragraph (2) of section 17(a) of the Mineral Leasing Act (30 U.S.C. 226), strike such paragraph and insert the following: ``(2) Land use plans terms and conditions.--A lease issued by the Secretary under this section-- ``(A) shall include any terms and conditions of the land use plan that apply to the area of the lease; and ``(B) shall not require any stipulations or mitigation requirements not included in such land use plan.''. (19) Strike section 80131. (20) Strike section 112205. Attest: Clerk."
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:2usc683-2024-operative-rule126",
+          "start": 0,
+          "end": 2020,
+          "total": 2020,
+          "reviewed_scope": "Complete operative statutory body; historical notes/whole Code not reviewed"
+        },
+        {
+          "source_id": "govinfo:2usc688-2024-operative-rule126",
+          "start": 0,
+          "end": 7795,
+          "total": 7795,
+          "reviewed_scope": "Complete operative statutory body; historical notes/whole Code not reviewed"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "start": 0,
+          "end": 1318,
+          "total": 1318,
+          "reviewed_scope": "Complete adopted EH reused unchanged; H.Res492IH is not substituted"
+        },
+        {
+          "source_id": "govinfo:hres492eh",
+          "start": 0,
+          "end": 2719,
+          "total": 2719,
+          "reviewed_scope": "Complete adopted EH reused unchanged; H.Res492IH is not substituted"
+        }
+      ],
+      "episode_candidate_id": null
     }
   ],
-  "review_sha256": "c7dbcb851f86be55fc261abf254d7df5d7b2378a1b5a4ed483b044da08d9e207"
+  "review_sha256": "988fe35faa7385f701279dd6414165c0b3acdf9320a618a06228750f7f92421d"
 }

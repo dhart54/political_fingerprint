@@ -71,10 +71,10 @@
   },
   "accounting": {
     "counts": {
-      "procedural_context": 215,
+      "procedural_context": 216,
       "interpreted_substantive_directional": 41,
       "exact_action_ineligible": 210,
-      "source_unresolved": 208,
+      "source_unresolved": 207,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -87,10 +87,10 @@
     "substantive_eligible_actions": 41,
     "directional_substantive_actions": 41,
     "non_directional_substantive_actions": 0,
-    "procedural_context_actions": 215,
+    "procedural_context_actions": 216,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 210,
-    "unresolved_boundary_cases": 208,
+    "unresolved_boundary_cases": 207,
     "independent_episode_count": 38,
     "multi_action_episode_count": 3,
     "mechanism_types": [
@@ -167,6 +167,7 @@
         "house:119:1:160",
         "house:119:1:161",
         "house:119:1:164",
+        "house:119:1:165",
         "house:119:1:167",
         "house:119:1:169",
         "house:119:1:170",
@@ -587,7 +588,6 @@
         "house:119:1:79",
         "house:119:1:150",
         "house:119:1:151",
-        "house:119:1:165",
         "house:119:1:180",
         "house:119:1:182",
         "house:119:1:199",
@@ -1100,7 +1100,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "4df15adca28219a6fdb40f12aecec32ac911a81e93eba8fbb47d55ee7f4df0fb",
+  "universe_subject_sha256": "ce3a7bc237229ba49ebcf0ef3c83971514f0a48bf8af8980c845c80fcd1c88ab",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -11824,8 +11824,8 @@
       "date": "2025-06-11",
       "measure": "bill_119_hres_499",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "procedural_context",
+      "reason": "Exact house:119:1:165 is June11,2025 On Agreeing to the Resolution, H.Res.499 EH, not passage of H.R.4 or H.R.1. Complete1318-character EH supplies H.R.4 consideration: waiver of consideration/provision points of order, considered-as-read treatment, ordered previous question, one-hour divided debate and one motion to recommit. Section2 makes Impoundment Control Act section1017 inapplicable to bills/joint resolutions introduced for the June3 special message; it does not itself enact the rescissions proposed in that message or repeal the entire Act. Complete operative2024 sections1012/1017 (2USC683/688) distinguish a proposed rescission and obligation-release framework from referral/discharge/floor-consideration procedures. Section3 expressly adopts H.Res.492, so its complete adopted EH and all20 actual Clerk-directed H.R.1 engrossment corrections are retained: this is a real correction direction, not an inference that nothing changes. Existing noncounting procedural standards do not turn this rule/correction adoption into member support/opposition to individual H.R.1 immigration components. H.Res492EH is reused unchanged, without substituting introduced IH, later Senate EAS or the eventual public law. Separate H.R.1 House145/EAS190 meanings and three partial-package flags remain unchanged and must retain their already governed corrected-version boundaries. Both members' governed official No labels remain procedural/non-directional Immigration context. No adopted-rule vote is treated as substantive H.R.4 passage, realized funding rescission, visa/status/admission/removal change or editorial acceptance.",
       "source": {
         "source_id": "clerk:119:1:165",
         "url": "https://clerk.house.gov/evs/2025/roll165.xml",
@@ -11842,25 +11842,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "procedural_context",
+      "rationale": "Exact house:119:1:165 is June11,2025 On Agreeing to the Resolution, H.Res.499 EH, not passage of H.R.4 or H.R.1. Complete1318-character EH supplies H.R.4 consideration: waiver of consideration/provision points of order, considered-as-read treatment, ordered previous question, one-hour divided debate and one motion to recommit. Section2 makes Impoundment Control Act section1017 inapplicable to bills/joint resolutions introduced for the June3 special message; it does not itself enact the rescissions proposed in that message or repeal the entire Act. Complete operative2024 sections1012/1017 (2USC683/688) distinguish a proposed rescission and obligation-release framework from referral/discharge/floor-consideration procedures. Section3 expressly adopts H.Res.492, so its complete adopted EH and all20 actual Clerk-directed H.R.1 engrossment corrections are retained: this is a real correction direction, not an inference that nothing changes. Existing noncounting procedural standards do not turn this rule/correction adoption into member support/opposition to individual H.R.1 immigration components. H.Res492EH is reused unchanged, without substituting introduced IH, later Senate EAS or the eventual public law. Separate H.R.1 House145/EAS190 meanings and three partial-package flags remain unchanged and must retain their already governed corrected-version boundaries. Both members' governed official No labels remain procedural/non-directional Immigration context. No adopted-rule vote is treated as substantive H.R.4 passage, realized funding rescission, visa/status/admission/removal change or editorial acceptance.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:165",
           "url": "https://clerk.house.gov/evs/2025/roll165.xml",
           "raw_sha256": "5f1c09940e37d0142c8cf1a89fb30376cae259bd2b19bd6a45b1e99366a78058",
-          "governed_bytes_sha256": "0465aed91aed12493292e0d4f6100a53dd013f734db39199dbf3e74c04bdb48d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0465aed91aed12493292e0d4f6100a53dd013f734db39199dbf3e74c04bdb48d"
+        },
+        {
+          "source_id": "govinfo:hres499eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres499eh/html/BILLS-119hres499eh.htm",
+          "raw_sha256": "4663e8d99f942318160ab581c0371097fd082ab7b0574f26dbc2147695e3e1fc",
+          "governed_bytes_sha256": "08fb1093b9e5c64f60059e9a2c2758ac612f1d78302e6557a9713432b881bd81"
+        },
+        {
+          "source_id": "govinfo:hres492eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres492eh/html/BILLS-119hres492eh.htm",
+          "raw_sha256": "d779db2055b11bf516ecc91f73db18618654f6a7d75620efd9449e7cc8684e03",
+          "governed_bytes_sha256": "63cff86f4255ae7bdcf584d3333fdcb7d1d9b74be6ff65955c673d22c8d80e54"
+        },
+        {
+          "source_id": "govinfo:2usc683-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec683.htm",
+          "raw_sha256": "09d1b351ff6a5be656e7aec8774af27a95e160f28517e0db73e224fb18c25b31",
+          "governed_bytes_sha256": "01a07835f05984d326d3c6eeee1587a5a3b9f4d586e94f303ac3fed96bd79816"
+        },
+        {
+          "source_id": "govinfo:2usc688-2024-operative-rule126",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title2/html/USCODE-2024-title2-chap17B-subchapII-sec688.htm",
+          "raw_sha256": "717ecebedffac6cab6ee5b3d46f4de28a99834c43a08bf89d69e1ef95a5b2627",
+          "governed_bytes_sha256": "c1f9ef79b30f523acde21b08d26ad092ca76dbb43f68f7ed8b635a061a503b0b"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a324f747ccbf7b37c5f4cf214cac108b20af0e13bf408fc209eb12114bb646a6"
       },
       "historical_raw_hash_matches": true
     },
@@ -40891,7 +40915,6 @@
     "house:119:1:79",
     "house:119:1:150",
     "house:119:1:151",
-    "house:119:1:165",
     "house:119:1:180",
     "house:119:1:182",
     "house:119:1:199",
@@ -41110,6 +41133,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "0373cc44fae486321e96ca47971f77e1fc570f96691bd8af773db5679f591043",
-  "membership_review_sha256": "c7dbcb851f86be55fc261abf254d7df5d7b2378a1b5a4ed483b044da08d9e207"
+  "proposal_sha256": "848c2747d7d0bb15b9a61cf6f36f896a9ca75282ac02dc54f1da520af30571e5",
+  "membership_review_sha256": "988fe35faa7385f701279dd6414165c0b3acdf9320a618a06228750f7f92421d"
 }
