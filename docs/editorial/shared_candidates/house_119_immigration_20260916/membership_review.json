@@ -21663,7 +21663,187 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:2:199",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.Con.Res.86 EH is a proposed concurrent War Powers directive to remove United States Armed Forces from Iran hostilities unless specifically authorized by war declaration or congressional authorization. Its separate imminent-attack defense exception covers the United States, an ally or partner and expressly retains1544(b)requirements for such force use. Captured1544(a)-(c)preserves report/referral context, report-conditioned60-day termination, listed congressional/attack exceptions, qualified30-day extension and concurrent-resolution removal framework. House adoption does not establish Senate concurrence, constitutional/legal enforceability, a completed withdrawal, an actual imminent attack or satisfaction of those conditions. The exact operation concerns use of Armed Forces, not human immigration admission/status/removal, migration benefits or border-person administration; foreign-state/hostilities terminology supplies no additional Immigration mechanism. Ineligible under existing functional standards, without a member motive or wider policy preference inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:199",
+          "url": "https://clerk.house.gov/evs/2026/roll199.xml",
+          "raw_sha256": "266905018608af9809caf6112e71f7b0cd44c684e3b8e2683ee319dce9b42e8a",
+          "governed_bytes_sha256": "e5f26f7298670eac0f673599ea02aa253d4eb66a67ff26e194db56da5cf3edd1"
+        },
+        {
+          "source_id": "govinfo:hconres86eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres86eh/html/BILLS-119hconres86eh.htm",
+          "raw_sha256": "f3025323c7f01659200f59530a35d97bc33b6d024834a8a269429da9cee24683",
+          "governed_bytes_sha256": "b8bd34f3547d9d45fc2a656b255350d7d22e14f4231463455ca970ca6a0be806"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hconres86eh",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 86 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. CON. RES. 86 _______________________________________________________________________ CONCURRENT RESOLUTION Resolved by the House of Representatives (the Senate concurring), That, pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress directs the President to remove United States Armed Forces from hostilities against the Islamic Republic of Iran, other than those elements of the Armed Forces that may be necessary to defend the United States or an ally or partner of the United States from imminent attack provided that the President complies fully with the requirements of section 5(b) the War Powers Resolution (50 U.S.C. 1544(b)) with respect to any such use of the Armed Forces, unless explicitly authorized by a declaration of war or a specific congressional authorization for use of military force against Iran. Passed the House of Representatives June 3, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. CON. RES. 86 _______________________________________________________________________ CONCURRENT RESOLUTION Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hconres86eh",
+          "start": 0,
+          "end": 1353,
+          "total": 1353,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "start": 0,
+          "end": 2500,
+          "total": 2500,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        }
+      ],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:2:282",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "exact_action_ineligible",
+      "rationale": "Complete H.Con.Res.89 EH proposes removal of United States Armed Forces from Iran/government/military hostilities including potential combat/occupation ground forces, unless war or specific force authorization exists. Section1(b)separately preserves imminent-attack defense of the United States, its forces,diplomatic facilities or allied states, defensive regional troop presence and personnel not engaged in Iran hostilities. Section2preserves specified intelligence/counterintelligence/investigation collection/analysis and qualified coalition sharing; section3expressly does not authorize force, consistent with1547(a)(1). Captured1544and1547retain the conditional concurrent-resolution framework, limits on inferring force authority from laws/appropriations/treaties, relevant command/introduction context and constitutional-authority caveats. These are military-use/intelligence boundaries, not a new visa,nationality,status,entry,custody or migration-administration rule. No actual authorization, attack, withdrawal, unconditional end to all regional presence/intelligence, legal enforceability or member motive is inferred from House adoption. This exact action is outside Immigration counting under existing standards.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:282",
+          "url": "https://clerk.house.gov/evs/2026/roll282.xml",
+          "raw_sha256": "3bc8e86e67a5e60b7e164f19b94e72d3f778e859342a029d59387e575feddba0",
+          "governed_bytes_sha256": "82d0031016e99fdf05f461126c95cb86c8ca95e82a2b19cda577458df7c6ed55"
+        },
+        {
+          "source_id": "govinfo:hconres89eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres89eh/html/BILLS-119hconres89eh.htm",
+          "raw_sha256": "5a22324853eff03930959c9ed1d4fc72fc887fdb6a8f945779bcc66c0a19bd3e",
+          "governed_bytes_sha256": "c7d5db83929758ace60e1ff4eaf92b4b933caafa8a748748dbf917695757dc33"
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "raw_sha256": "4b6ef9a501cda8e495fd79fb4a7b7d4ce6bdb40b2bf506815aed77f336e5a09f",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367"
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1547.htm",
+          "raw_sha256": "61324bfe25a28d749bd81a64ac0dd2bfd38b82ec2fd7a7b34ea08fae58bf34d9",
+          "governed_bytes_sha256": "c9f724283b028e7ee075718b8ed3cc02eaa2c6c3030da2836dcd790672d835ee"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hconres89eh",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Con. Res. 89 Engrossed in House (EH)] <DOC> 119th CONGRESS 2d Session H. CON. RES. 89 _______________________________________________________________________ CONCURRENT RESOLUTION Resolved by the House of Representatives (the Senate concurring), SECTION 1. TERMINATION OF USE OF FORCE. (a) Termination.--Pursuant to section 5(c) of the War Powers Resolution (50 U.S.C. 1544(c)), Congress hereby directs the President to remove the use of United States Armed Forces from hostilities against the Islamic Republic of Iran or any part of its government or military, including potential ground forces in a combat role or used for occupation, unless explicitly authorized by a declaration of war or specific authorization for use of military force against Iran. (b) Rule of Construction.--Nothing in this section may be construed to-- (1) prevent the United States from defending itself, its Armed Forces, its diplomatic facilities, or allied states from imminent attack; (2) prevent the United States Armed Forces from maintaining a troop presence in the region for defensive purposes; or (3) force the removal of United States Armed Forces in the region who are not engaged in hostilities against Iran. SEC. 2. RULE OF CONSTRUCTION RELATING TO INTELLIGENCE SHARING. Nothing in this resolution may be construed to influence or disrupt any intelligence, counterintelligence, or investigative activities relating to threats in or emanating from Iran or surrounding countries conducted by, or in conjunction with, the United States Government involving-- (1) the collection of intelligence; (2) the analysis of intelligence; or (3) the sharing of intelligence between the United States and any coalition partner, if the President determines such sharing is appropriate and in the national security interests of the United States. SEC. 3. RULE OF CONSTRUCTION RELATING TO NONAUTHORIZATION OF THE USE OF MILITARY FORCE. Consistent with section 8(a)(1) of the War Powers Resolution (50 U.S.C. 1547(a)(1)), nothing in this concurrent resolution may be construed as authorizing the use of military force. Passed the House of Representatives July 23, 2026. Attest: Clerk. 119th CONGRESS 2d Session H. CON. RES. 89 _______________________________________________________________________ CONCURRENT RESOLUTION Directing the President, pursuant to section 5(c) of the War Powers Resolution, to remove United States Armed Forces from hostilities with Iran."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "§1544. Congressional action (a) Transmittal of report and referral to Congressional committees; joint request for convening Congress Each report submitted pursuant to section 1543(a)(1) of this title shall be transmitted to the Speaker of the House of Representatives and to the President pro tempore of the Senate on the same calendar day. Each report so transmitted shall be referred to the Committee on Foreign Affairs of the House of Representatives and to the Committee on Foreign Relations of the Senate for appropriate action. If, when the report is transmitted, the Congress has adjourned sine die or has adjourned for any period in excess of three calendar days, the Speaker of the House of Representatives and the President pro tempore of the Senate, if they deem it advisable (or if petitioned by at least 30 percent of the membership of their respective Houses) shall jointly request the President to convene Congress in order that it may consider the report and take appropriate action pursuant to this section. (b) Termination of use of United States Armed Forces; exceptions; extension period Within sixty calendar days after a report is submitted or is required to be submitted pursuant to section 1543(a)(1) of this title, whichever is earlier, the President shall terminate any use of United States Armed Forces with respect to which such report was submitted (or required to be submitted), unless the Congress (1) has declared war or has enacted a specific authorization for such use of United States Armed Forces, (2) has extended by law such sixty-day period, or (3) is physically unable to meet as a result of an armed attack upon the United States. Such sixty-day period shall be extended for not more than an additional thirty days if the President determines and certifies to the Congress in writing that unavoidable military necessity respecting the safety of United States Armed Forces requires the continued use of such armed forces in the course of bringing about a prompt removal of such forces. (c) Concurrent resolution for removal by President of United States Armed Forces Notwithstanding subsection (b), at any time that United States Armed Forces are engaged in hostilities outside the territory of the United States, its possessions and territories without a declaration of war or specific statutory authorization, such forces shall be removed by the President if the Congress so directs by concurrent resolution. (Pub. L. 93–148, §5, Nov. 7, 1973, 87 Stat. 556.)"
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "U.S.C. Title 50 - WAR AND NATIONAL DEFENSE 50 U.S.C. United States Code, 2024 Edition Title 50 - WAR AND NATIONAL DEFENSE CHAPTER 33 - WAR POWERS RESOLUTION Sec. 1547 - Interpretation of joint resolution From the U.S. Government Publishing Office, www.gpo.gov §1547. Interpretation of joint resolution (a) Inferences from any law or treaty Authority to introduce United States Armed Forces into hostilities or into situations wherein involvement in hostilities is clearly indicated by the circumstances shall not be inferred— (1) from any provision of law (whether or not in effect before November 7, 1973), including any provision contained in any appropriation Act, unless such provision specifically authorizes the introduction of United States Armed Forces into hostilities or into such situations and states that it is intended to constitute specific statutory authorization within the meaning of this chapter; or (2) from any treaty heretofore or hereafter ratified unless such treaty is implemented by legislation specifically authorizing the introduction of United States Armed Forces into hostilities or into such situations and stating that it is intended to constitute specific statutory authorization within the meaning of this chapter. (b) Joint headquarters operations of high-level military commands Nothing in this chapter shall be construed to require any further specific statutory authorization to permit members of United States Armed Forces to participate jointly with members of the armed forces of one or more foreign countries in the headquarters operations of high-level military commands which were established prior to November 7, 1973, and pursuant to the United Nations Charter or any treaty ratified by the United States prior to such date. (c) Introduction of United States Armed Forces For purposes of this chapter, the term \"introduction of United States Armed Forces\" includes the assignment of members of such armed forces to command, coordinate, participate in the movement of, or accompany the regular or irregular military forces of any foreign country or government when such military forces are engaged, or there exists an imminent threat that such forces will become engaged, in hostilities. (d) Constitutional authorities or existing treaties unaffected; construction against grant of Presidential authority respecting use of United States Armed Forces Nothing in this chapter— (1) is intended to alter the constitutional authority of the Congress or of the President, or the provisions of existing treaties; or (2) shall be construed as granting any authority to the President with respect to the introduction of United States Armed Forces into hostilities or into situations wherein involvement in hostilities is clearly indicated by the circumstances which authority he would not have had in the absence of this chapter. (Pub. L. 93–148, §8, Nov. 7, 1973, 87 Stat. 558.)"
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hconres89eh",
+          "start": 0,
+          "end": 2524,
+          "total": 2524,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "start": 0,
+          "end": 2500,
+          "total": 2500,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "start": 0,
+          "end": 2915,
+          "total": 2915,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        }
+      ],
+      "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:2:300",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "procedural_context",
+      "rationale": "Complete adopted H.Res.1530 EH actually adopts Print119-41 as the substitute in pending H.R.9576, then provides separate final passage/recommittal. Sections2-4provide H.R.10326 and H.J.Res.210/213 consideration,debatable final questions and one recommittal each, without asserting a substitute those sections do not print. Section5allows taking H.R.5334with Senate amendments from the Speaker table and considering ONE later motion to concur, with one-hour divided debate,ordered previous question and no intervening motion/demand for division. The rule does not itself deem concurrence in those Senate amendments. Pending Print adoption and later substantive/concurrence decisions remain distinct; tax/fraud/immigration,foreign-policy or harbor meanings are not inherited from parent descriptions. This exact adopted rule is noncounting procedural context under the existing contract. No completed passage/concurrence,enactment,appropriation or component member preference is inferred.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:2:300",
+          "url": "https://clerk.house.gov/evs/2026/roll300.xml",
+          "raw_sha256": "6d381a4930996a4ec38bc0787b7660cb3993d44219daed57ae2fb3c613742402",
+          "governed_bytes_sha256": "f05e545f3725562f8e38e6c6c8b5144feea8de181ba64e1b5dec03ae8c94f4d1"
+        },
+        {
+          "source_id": "govinfo:hres1530eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1530eh/html/BILLS-119hres1530eh.htm",
+          "raw_sha256": "f11e341fd3ac62d4bcda2383b4e607d861f0647f3361ecff883d3dedd14dbe63",
+          "governed_bytes_sha256": "ae0d66c1c58f809c4dcde0e295ad6ec971bb449f76f7331c4588404bca108bd4"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres1530eh",
+          "locator": "Complete exact EH or governed material WarPowers statutory extent; actual exceptions and separate legislative stages retained",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1530 Engrossed in House (EH)] <DOC> H. Res. 1530 In the House of Representatives, U. S., September 15, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 9576) to establish the National Fraud Enforcement Division of the Department of Justice. All points of order against consideration of the bill are waived. An amendment in the nature of a substitute consisting of the text of Rules Committee Print 119-41 shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 2. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 10326) to enhance information-sharing capabilities between Federal law enforcement and State agencies to detect, investigate, and prosecute fraud in certain Federal programs, and to protect individual privacy. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on the Judiciary or their respective designees; and (2) one motion to recommit. Sec. 3. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 210) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the Environmental Protection Agency relating to ``California State Nonroad Engine Pollution Control Standards; Ocean-Going Vessels At-Berth; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 4. Upon adoption of this resolution it shall be in order to consider in the House the joint resolution (H.J. Res. 213) providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule issued by the Environmental Protection Agency relating to the ``California State Nonroad Engine Pollution Control Standards; Commercial Harbor Craft Regulations; Notice of Decision''. All points of order against consideration of the joint resolution are waived. The joint resolution shall be considered as read. All points of order against provisions in the joint resolution are waived. The previous question shall be considered as ordered on the joint resolution and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 5. Upon adoption of this resolution it shall be in order to take from the Speaker's table the bill (H.R. 5334) to amend the Internal Revenue Code of 1986 to allow early childhood educators to take the educator expense deduction, and for other purposes, with the Senate amendments thereto, and to consider in the House, without intervention of any point of order, a single motion offered by the chair of the Committee on Foreign Affairs or his designee that the House concur in the Senate amendments. The Senate amendments and the motion shall be considered as read. The motion shall be debatable for one hour equally divided and controlled by the chair and ranking minority member of the Committee on Foreign Affairs or their respective designees. The previous question shall be considered as ordered on the motion to its adoption without intervening motion or demand for division of the question. Attest: Clerk."
+        }
+      ],
+      "reviewed_source_extents": [
+        {
+          "source_id": "govinfo:hres1530eh",
+          "start": 0,
+          "end": 4741,
+          "total": 4741,
+          "reviewed_scope": "Complete exact adopted rule/concurrent proposal or governed statutory context, not an executed military/legal outcome or underlying rule-policy body."
+        }
+      ],
+      "episode_candidate_id": null
     }
   ],
-  "review_sha256": "f4794ce4640c0c963479d7adbce5e6c3ed040f275180b2ef313f99a8e4431888"
+  "review_sha256": "1cb564d84d2bde3cf9e69cc1dda5b93e5cdf40bb0b5e98b5c7f317b1f38f8213"
 }

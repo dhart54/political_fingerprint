@@ -9851,3 +9851,6 @@ Checkpoint134: three conservation exclusions192/296/297;494reviewed/182ordinary/
 
 
 Checkpoint135: source-mapped166ownJuneS331proposal withSeptember30temporarybaseline; canonical166/265remainfrozen.15sources/20claims, sixprivateIRoutputs/replay andrealmembership-gate rejection pass; allcanonicalfiveinputs/sevenoutputs/43meanings/76findings/counts unchanged.177tests13.945s/reference/sevenchecks pass.132commonchapeau independently resolved in boundedscope;133sealed-source pass with explicit incomplete freshequivalence and stoppedretrieval route.134ownninegreen sealed;135ownCI pending. Candidate-only; see s331_june_candidate_checkpoint135.json and independent132/133receipts.
+
+
+Checkpoint136: Iranmilitary-framework exclusions199/282andadoptedrule300procedure;497reviewed/179ordinary/1508sources/416captures. Actual pending119-41substitute andlater5334motion retained,notdeemedconcurrence.177tests14.460s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/135proposal/132correction exact.134/135boundedpasses recorded;135ownninegreen sealed. Qualified166candidate application authorized nextboundary; already-reviewedreclassification must not consumeordinaryitem. Current166stillfrozen at136;candidate-only.

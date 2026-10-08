@@ -9106,3 +9106,43 @@ Continue coherent ordinary batches and forestry25originalcharter/materialpackage
 while separate166proposal review is pending. Deadline08:42:21.249EDT,stoplarge08:12:21,
 wrap08:27:21,marker08:37:21; latestweekly29%used/71%remaining. DraftPR198only; all
 acceptance/promotion/publication/merge/deploy/production and reserved gates unchanged.
+
+
+### Local successor checkpoint 136: military frameworks and adopted-rule procedure
+
+House119/2/199 H.Con.Res.86 EH and282 H.Con.Res.89 EH remain outside Immigration
+counting. Complete military-removal proposals preserve distinct imminent-defense,
+authorization,regional-presence/intelligence and nonauthorization exceptions; material
+1544/1547scope and constitutional-authority caveats are read. No Senateconcurrence,
+enforceability,actualattack/withdrawal or satisfaction of conditional deadlines is
+inferred.300 H.Res.1530 EH actually adopts Print119-41 into pending9576 but preserves
+later final choices. Section5permits ONE later Senate-amendment concurrence motion
+on5334; the rule does NOT itself deem concurrence. Both No/Aye observations remain
+procedural,without underlyingtax/fraud/harbor/component meaning imported.
+
+Three canonical EH registrations,one new exact GovInfoEH acquisition/raw5025bytes;
+full4741-character text/date/identity and source seals verified.497reviewed/179ordinary;
+43interpreted/227procedural/225excluded/two expressive;1508sources/1088bindings/416captures;
+337extentobjects/565coordinates/39episodes/86observations/76findings. Prior494reviews/
+1505sources/415captures,43meanings/six outputs/76findings/tests/70questions/threepartial
+flags/135proposal/132correction exact; proof changes onlysourcehash.177focusedtests
+14.460s,referencevalidator,sevenchecks and seven-file raw replay pass. Audit118NoDefect/
+6Minor/11Major/1Critical;distinctfindingcounts unchanged,no fullverdict.
+
+Incoming134/135bounded source/domain/mechanics passes are recorded with exact limits:
+13operative renderedpages distinct from14thcontext page;135privateIR/replay unobserved;
+14textualoriginals/20bindings/15references/JuneSeptember30baseline/memberpreview verify.
+135ownCI37738693013ninegreen,5feature/3synthetic/1mixed,decodedlogs/checkouts/skips sealed;
+hosted306distinct fromlocal177,repair13/20,no retry.136requires ownrun.133blockedfresh
+source limits remain;noalternatefetch. No independent full-suite/replay or acceptance.
+
+Supervisor permits qualified166candidate authoring under existing incorporated-
+predicate mechanism. Apply at NEXT coherentboundary with ownJunebaseline,whole-choice/
+INA/132conditions and historicalexclusion preserved.166isALREADYreviewed: reclassifying
+it must not consume another ordinaryitem. Activefrozen wording must be removed or
+historicized on change. Current166remains excluded at136;747unaccepted/265frozen;
+no generalizedcriminal-law ontology,publication or editorial acceptance.
+
+Continue to this qualified166candidate milestone,then bounded ordinary/forestry/
+materialpackage work. Deadline08:42:21.249EDT,stoplarge08:12:21,wrap08:27:21,marker08:37:21;
+draftPR198only and all reservedgates unchanged.70questions/threepackages remain.
