@@ -202,3 +202,38 @@ Finaldiff/auditguards/commit/push/PRupdate next;252 andallpriorholds retained.
 Completed158 parentboundedsource/domain/mechanics pass actually received and
 sealed with159; ownerprivatechecks/recovery/timings remain attributed, no general
 quality-equivalence/speedup/acceptance.159 reviewpending,252/allholds intact.
+
+## Checkpoint160: military funding/contract and VA reporting batch
+
+Checkpoint159 delivered atf373a77; its bounded independent source/domain/mechanics
+pass is actually received and will be preserved with this batch. Screen five
+source-coherent exact actions: House119/1/256-258 (NDAA PartA23-25),
+House119/2/174 (MilCon PartB50) and190 (HR1041passage). Recover the official
+Rules-linked1268pagePrint1198 material targets and missingRHaccount continuation;
+reuse unchanged laws/Code/banks with their original scopes intact. Keep literal
+Civil/Civic label difference, exact table units/row+account binding, Taiwan
+FY2026cap versus wholeinitiative, original/two-year/struck sunset chain, and
+conditional VA/NICS reporting/mental-classification versus firearm/status law.
+Massie190NotVoting is resolved nondirectional; do not invent absence or opposition.
+
+S1318's House substitute is FISA/CBDC rather than its original cemetery title;
+leave it ordinarypending for separate full material review.252directborder and
+all existing holds remain pending. No new methodology or semantic meanings are
+authorized by a caption, debate use-case, amount or source reuse. Propose bounded
+candidate exclusions only where existing exact functional-domain standards fit.
+
+Expected about13-14 tracked files, semantic tier, unchanged sixsemanticoutputs,
+179focused/7semantic/reference checks, seven-file deterministic replay and final
+diff/audit guards. Archive baseline before importing unique action recipes;
+claim all newly reviewed extents explicitly and preserve raw/text seals and
+source qualifications. No fresh certification of every incorporated/current law
+or individual programme/project/firearm/immigration application. Routine timing
+instrumentation retired after the two measured batches; retain their records.
+No publication/approval/production/merge/security/configuration action.
+
+Checkpoint160 authored/validated:554reviewed/122ordinarypending;179focused/
+7semantic/reference/replay pass, sixsemanticoutputs unchanged.19canonical sources/
+14registeredcaptures/15derivatives/28intervals, threeboundedfreshrawacquisitions,
+15PDFpages inspected; sourcequalifications andNVstatus retained.159CI/review
+actualboundedpass sealed. Finaldiff/auditguards/commit/push/PRupdate next;
+160reviewpending,252/S1318/allholds intact, routine timing retired.

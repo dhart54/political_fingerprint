@@ -10090,3 +10090,64 @@ Firstbatch Git/PR95.992s includes bodypreparation; separate receipt/audit time
 unknown. Durable operatingnote records both measured batches and quality checks/
 reversalconditions; experiment remains provisional, no causal speedup or quality-
 equivalence inference. Existingowner/worktree/reservedgates retained.
+
+## Checkpoint160: five military/VA screenings
+
+House119/1/256-258 and119/2/174/190 receive noncounting candidate exclusions.
+23 binds the unique4301/010OHDACAblock with thousands/FY2026Request100793/
+HouseAuthorized115317 and separate14524increase; Civiloperative/Report versus
+Civictable is retained, not silently repaired/legalemendation adjudicated.301
+authorization is not appropriation/allprogramme repeal.401/2561worldwide aid
+and debateSIVuse-case do not establish an immigration-specificfund predicate.
+24 removes the proposedPrint1313TaiwanFY2026up-to1bn addition/numbering,
+not enactedwhole1323initiative/FY2025cap/Ukraine/actualfunding.25 replaces
+1555(a)certificationtail for military-recruitment adcontracts/modifications with
+three ratings/opinions/service restrictions, keeps(b)notification and deletes(c).
+Originaloneyear/118159enacted1542twoyear/Print1541strike are separate;
+Print1542cyber and originalTitleXVI are excluded. No allnews/supplier ban or
+independentclinical/truth/censorship/motive/current-law judgment.
+
+Steube50 reduces NATO and increasesDefensewide by481832000. CompleteRH5-6/
+9-10headings preserve availability/transfers/planningnotification/unchanged55m
+proviso/USshare/collectivepurpose. Basefigures are not certifiedfloorbalances
+afterotheramendments.2806authority/conditions persist; no allNATOprogramme/
+resources repeal, domestic-only destination or actualspending/project guarantee.
+HR1041 separates conditionalSOLELYfiduciaryreporting prohibition, retrospective
+solebasis notification andVAmental-classification commands. Judicialdanger
+qualification andVAenactment/DOJreceipt30dayclocks persist, not allrecordremoval
+or allfirearmrights. Existing922alien/renunciation rules remain separate; no
+INAmedicaladmissibility/beneficiary/status eligibility judgment.
+
+ThreeNDAAobservations andSteubeNo/Aye remain exact;HR1041FousheeNay/
+MassieNotVoting is resolvednondirectional, notopposition/absence/reason/missing
+evidence. Four completeamendoperatives matchReport after declared formatting
+normalization;23/25voiceayes,24/50voicenoes distinct from recordedoutcomes.
+S1318HouseFISA/CBDCsubstitute notoriginalcemeterytitle remains ordinarypending
+for separatematerialreview;252directborder/allpriorholds/70questions/3packages
+retained. No otherdomain conclusions or new sharedmeanings.
+
+554/676reviewed:44interpreted/227procedural/281excluded/2expressive,
+122ordinarypending.1711sources/529registeredcaptures/1108interpretedbindings/
+492extentobjects/885coordinates;40episodes/88observations/78findings unchanged.
+Audit173NoDefect/8Minor/11Major/1Critical retains history/finalverdictnull.
+15derivatives/28intervals/fourrawtextparents verify. Threefreshrawacquisitions:
+1268pagePrintselected5,92pageRHselected4 (rawmatchesbank),2806HTML; verified
+74pageRecord reused withselected6. All15materialPDFpages inspected,57image
+reused. Existing laws/Code/Reports/May15Record reused with historical scopes;
+not allparents/projecttables/current-law/individualprogramme applications.
+
+179focusedtests passed in15.128s;7semanticchecks/reference,
+preservation/seven-file rawreplay pass, sixsemanticoutputs exact. Established
+Windowsenv, no dependency/config/security/ACL changes. Parserimport failure
+precededacquisition; standard-libraryHTMLParser used. Privateverifier keyword
+hyphen failedsyntax before checks/resultwrite; corrected and allchecks pass,
+no canonicalsource/claim/oldresult mutation. Finaldiff/auditguards follow.
+
+159CI37851417656 firstattempt9green:5feature/3synthetic/1mixed,
+synthetic1036a537ef6260ba00a48f294e6644cbd1e75910, hosted308/repair13of20;
+decodedlogs/checkouts sealed. Actual159boundedindependentgovernedtext/source/
+domain/mechanics pass retained, no new materialfinding; no freshPDF/image/
+wholeplan/current-law/individual certification. Ownersuites/replay/timings remain
+attributed;160 reviewpending, no editorialacceptance/generalqualityequivalence.
+Routine timing retired after two batches, prior measurements/durable lessons
+retained. Existingowner/worktree/retiredcontrols/reservedgates unchanged.
