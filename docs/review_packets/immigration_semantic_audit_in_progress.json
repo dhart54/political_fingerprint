@@ -13068,10 +13068,238 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:225",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "225",
+        "legis-num": "H R 7401",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "24-Jun-2026",
+        "action-time": "5:05 PM",
+        "vote-desc": "Small Business Lending Fraud Prevention Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete H.R.7401 EH imposes a written,to-the-employee's-knowledge conflicts certification before personal and substantial participation in SBA loan origination,review or approval,starting270days after enactment. Later-discovered prohibited conflicts trigger immediate supervisor disclosure and recusal; implementing regulations are due within180days. Material18USC208 retains its covered-person/financial-interest and knowledge predicates,waivers/exemptions and disclosure framework. Complete eCFR2635.502 dated to the June24,2026 vote retains covered relationships,reasonable-person appearance conditions,agency determination/authorization,recusal and irrelevant-consideration limits. A partial2025PDF ends midsection and is preserved only as context; complete dated XML governs the regulatory scope here. This action concerns employee conduct in loan administration; it does not amend borrower immigration eligibility,loan-amount standards,visa/work authorization or human admission/status/removal. A person's reputation,political/religious/moral views or a routine relationship is not automatically a prohibited conflict; no individual violation,loan denial,corruption finding or member motive is inferred. Ineligible for Immigration counting under existing exact-action functional standards.",
+      "finding": "Employee conflicts,qualified ESOP valuation and institutional coin surcharges retain their exact functional boundaries,exceptions,source authority limits and Massie Not Voting status. No automatic loan or immigration eligibility,legal valuation result or individual benefit entitlement.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7be5817b0e22d42d5c6dd5a006ac02a8f64fe9dd0b410aa2f8b629562d55d3d1",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:225",
+          "url": "https://clerk.house.gov/evs/2026/roll225.xml",
+          "governed_bytes_sha256": "61951ec89e67214ee0d6bfcfb60d850a7e3eae9e07489fed64bc0660c11d51bd",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:hr7401eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7401eh/html/BILLS-119hr7401eh.htm",
+          "governed_bytes_sha256": "8900996efadc3cd7cb66243604b4330b122614827d221c8bd8cbcb72b3ca2f70",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:18usc208-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap11-sec208.htm",
+          "governed_bytes_sha256": "e204bcf4f1fff3c7c7fb9090343a1268c844b8e68ff13f9e7732aff3c91fa4c5",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "ecfr:5cfr2635.502-asof20260624-complete139",
+          "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-06-24/title-5.xml?section=2635.502",
+          "governed_bytes_sha256": "b0cff9779f04753134eb2f0238cf45510ea6a4071d6842eff42757e21dee6bdf",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:314",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "314",
+        "legis-num": "S 2403",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Sep-2026",
+        "action-time": "7:05 PM",
+        "vote-desc": "Retire through Ownership Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete S.2403 ES restructures the adequate-consideration definition and permits an ESOP fiduciary's good-faith reliance on an independent expert/appraiser valuation using RevenueRuling59-60 principles and methodologies as amplified/modified by IRS from time to time. It expressly preserves section404fiduciary obligations,does not preclude notice-and-comment regulations,and does not expand the Secretary's adequate-consideration authority beyond the pre-enactment level. New determinations apply on/after enactment. Complete materially affected1002(18) and1107(d)(6) definition scopes and404fiduciary text are reviewed. The IRS-hosted AppendixA reproduces all nine printed pages of59-60,but the job aid itself expressly is not an official IRS position or authority for a legal position; that disclaimer remains. The historic reproduction is used to trace valuation methods,not to certify a complete current amplification history or approve an actual appraisal. No fixed valuation formula,blanket fiduciary immunity or repeal of foreign-asset indicia limits is inferred. This exact proposal concerns plan-asset valuation and fiduciary duties,not immigration admission,status,removal,work authorization or immigration-based participant eligibility. No automatic benefit entitlement,investment outcome or member motive is inferred. Excluded under the existing functional boundary;individual legal/valuation application would require applicable current ruling/regulatory history beyond this bounded screen.",
+      "finding": "Employee conflicts,qualified ESOP valuation and institutional coin surcharges retain their exact functional boundaries,exceptions,source authority limits and Massie Not Voting status. No automatic loan or immigration eligibility,legal valuation result or individual benefit entitlement.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "77ed41f8570f8082f3afa7bf0064e110a465d391c6f65f07cc71374ff19da550",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:314",
+          "url": "https://clerk.house.gov/evs/2026/roll314.xml",
+          "governed_bytes_sha256": "3381fcb4e0049155e74311348aa0910bd48e178ac2fbacf0adcb7416af5ee36d",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:s2403es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2403es/html/BILLS-119s2403es.htm",
+          "governed_bytes_sha256": "9e4ac364f4fe3bc274a7262b623d4d933befe04ca910c425ed35ecbdf8477567",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:29usc1002-par18-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm",
+          "governed_bytes_sha256": "170d7018ab781a26c9287f92b6e8f94183c05f24d32eeeb29e48fea19d5eb3ab",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:29usc1107-d6-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1107.htm",
+          "governed_bytes_sha256": "e125bace3d84ce72124585ffff9e5de0cd86e59361d7573b98dae82a655017df",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:29usc1104-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm",
+          "governed_bytes_sha256": "28112f7ab66b7fa1324f4a7a00be2af318d41769a50a92e9093d70c89b36f844",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "irs:rr59-60-reproduced-appendixA-operative139",
+          "url": "https://www.irs.gov/pub/irs-lbi/S%20Corporation%20Valuation%20Job%20Aid%20for%20IRS%20Valuation%20Professionals.pdf",
+          "governed_bytes_sha256": "782cdfe11cc9855f3082a3b76decbf3cfb8c4273d1def824518b9285244cc8b2",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:182",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "182",
+        "legis-num": "H R 1993",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "20-May-2026",
+        "action-time": "5:07 PM",
+        "vote-desc": "25th Anniversary of 9/11 Commemorative Coin Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Not Voting",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete H.R.1993 EH establishes a capped gold/silver commemorative-coin program with designs,consultation,sales,bulk/prepaid discounts and specified surcharges to support named Memorial/Museum operations and maintenance. Its issuance period is literally2028,not2026; the anniversary title does not replace that operative year. Material5103legal-tender,5112(m) coin-program restrictions and5134/5136Mint-fund/numismatic scopes retain cost recovery,private matching funds,audited statement,conditional payment/audit rules and annual program limits. The Museum payment is not an individual survivor/first-responder health,immigration or cash-benefit entitlement; historical findings about foreign attacks do not enact a border-person rule. The Act supplies no human admission,status,removal,visa/nationality or immigration eligibility condition. WestPoint mint location is a sense of Congress,distinct from binding coin specifications. No actual coin issuance,unconditional surcharge transfer,waiver of matching/cost-recovery conditions or broader eligibility rule is inferred from House passage. FousheeYea is a recorded whole-choice vote; MassieNotVoting is resolved non-directional and supplies neither support nor opposition or motive. Ineligible for Immigration counting under existing functional standards.",
+      "finding": "Employee conflicts,qualified ESOP valuation and institutional coin surcharges retain their exact functional boundaries,exceptions,source authority limits and Massie Not Voting status. No automatic loan or immigration eligibility,legal valuation result or individual benefit entitlement.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "84273d1ec35340e546dd54f709ff50e88eb8a1fb5262c0ce2cbc8dd5bd72116f",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:182",
+          "url": "https://clerk.house.gov/evs/2026/roll182.xml",
+          "governed_bytes_sha256": "88d88dee4265cbeb33df152de702f6553c37e259246bdd8d1d200867e55eeff0",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:hr1993eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1993eh/html/BILLS-119hr1993eh.htm",
+          "governed_bytes_sha256": "acdc8a4c8fa90a2deb012ca934e27c0bfbd57c9eeb31f89beceaf1558c1dfdbc",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:31usc5103-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapI-sec5103.htm",
+          "governed_bytes_sha256": "9d16c7e42e596b19923fe636f7dfcc87a8ba7c27e093bfddd1ebace0dfbe6886",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:31usc5112-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapII-sec5112.htm",
+          "governed_bytes_sha256": "e68aaabf2afcdc7351d402a04fdfb307ed7528115a13497d5d0d348bf3656f5f",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:31usc5134-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapIII-sec5134.htm",
+          "governed_bytes_sha256": "d623fb644cd996730ff474cd11fd899bb031e6524926965da133ff0935b89604",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        },
+        {
+          "source_id": "govinfo:31usc5136-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapIII-sec5136.htm",
+          "governed_bytes_sha256": "33e8cb51be23436026f4249c02e57330caac983769b4be9e8165213988a984bd",
+          "reviewed_extent": "Complete exact ES/EH,full dated eCFR502,governed operative statutory scopes and reproduced IRS AppendixA with explicit nonprecedential-job-aid limit. Partial annual PDF and error responses non-governing."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 121,
+    "No Defect": 124,
     "Minor": 6,
     "Major": 11,
     "Critical": 1
@@ -13133,17 +13361,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 23,
+    "successor_new_exclusions_reviewed": 26,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 178,
-    "focused_runtime_seconds": 13.986,
+    "focused_runtime_seconds": 13.997,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "137own nine green sealed;138 requires own pushed-head run.",
+    "exact_head_ci": "138own nine green sealed;139 requires own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -13180,12 +13408,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Three exact-action exclusions285/291/294;500reviews/176ordinary.44meanings/six semantic outputs/78findings unchanged.137bounded independent pass and nine green sealed;25forestry remains held,23private captures preserved without semantic registration or classification.70questions/threepartial flags unchanged;candidate-only.",
+    "focused_scope_note": "Three source-bound employee-conflict,qualified valuation and coin-program exclusions225/314/182;503 reviews/173 ordinary.44 meanings/six semantic outputs/78 findings unchanged.178 tests pass;seven originals/eight derivatives,complete dated eCFR,IRS disclaimer,nine reproduced pages and partialPDF boundary verify.70 questions/three partial flags/forestry25hold unchanged;138 independent review still pending.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint137_ci.json",
-      "receipt_sha256": "9d15358f7b51e9ca3c119fbc46ca4f7339697076204a17441eb568acd94e5167",
-      "head": "80daf4d14c6536de226768f0f15721ece61f9795",
-      "run": 37746360944,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint138_ci.json",
+      "receipt_sha256": "04a543dadbd5735874bf9f5e12a4311bf81f2c05815b24bf04b27eaff4b25cbe",
+      "head": "7fd471cf1b4b4f0b515a68a5195ec95f979cda96",
+      "run": 37749672923,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -17730,5 +17958,21 @@
     "receipt_sha256": "d6e845ed66367534db18b6d4f5789db3a960dfe839c51ec5f52532455ad72ace",
     "action_id": "house:119:1:25",
     "no_ordinary_item_consumed": true
+  },
+  "ordinary_screening_checkpoint139": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint139.json",
+    "receipt_sha256": "df85d45110e8f5fec95bb4563ee64924f12d5a3c53bf2780cb4450031e442afa",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 173,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint138": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint138_ci.json",
+    "receipt_sha256": "04a543dadbd5735874bf9f5e12a4311bf81f2c05815b24bf04b27eaff4b25cbe",
+    "head": "7fd471cf1b4b4f0b515a68a5195ec95f979cda96",
+    "run": 37749672923,
+    "successful_jobs": 9
   }
 }

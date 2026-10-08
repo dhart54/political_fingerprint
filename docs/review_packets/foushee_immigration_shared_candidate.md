@@ -5,12 +5,12 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint138:500 reviewed,44 interpreted,227 procedural,227 excluded,
-two expressive;176 ordinary screenings remain.40 episodes produce88 observations and
+Latest candidate checkpoint139:503 reviewed,44 interpreted,227 procedural,230 excluded,
+two expressive;173 ordinary screenings remain.40 episodes produce88 observations and
 78 findings(Foushee40/Massie38). Three partial package flags and70 legal/application
-questions remain. S.331 roll166 is a qualified candidate with a bounded independent
-canonical-output pass. Forestry25 is held for the exact charter and remaining material
-references. No editorial acceptance. See checkpoint138 receipts below.
+questions remain. Qualified S.331 roll166 has a bounded independent canonical pass;
+forestry25 remains held.138/139 ordinary candidate review is pending. No editorial
+acceptance. See checkpoint139 source-bound receipt below.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -9892,3 +9892,6 @@ Checkpoint137: qualified166candidate applied under ownJuneSeptember30baseline;49
 
 
 Checkpoint138: exact court-location,whale-deadline and mining-permitting exclusions285/291/294;500 reviewed/176 ordinary/1516 sources/419 captures.44 meanings,six semantic outputs,78 findings,70 questions and three partial flags unchanged.178 tests in13.986s/reference/seven checks/raw replay pass.137 bounded independent pass and nine green sealed;133 retrieval limits retained. Forestry25 research held,23 private captures preserved;no charter substitution or queue consumption. Candidate-only.
+
+
+Checkpoint139: employee-conflict,qualified ESOP-valuation and coin-program exclusions225/314/182;503 reviewed/173 ordinary/1529 sources/426 captures. Literal2028 coin period,MassieNotVoting,conditional conflicts and IRS job-aid authority limit retained;complete vote-date CFR replaces partialPDF context. Seven originals/eight derivatives/nine reproduced pages and partial-boundary QA verify.178 tests in13.997s/reference/seven checks/raw replay pass;44 meanings/six semantic outputs/78 findings/70 questions/three partial flags unchanged.138 ownninegreen sealed,138/139 independent review pending;forestry25hold and133 restrictions retained. Candidate-only.

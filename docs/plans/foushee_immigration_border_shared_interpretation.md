@@ -9241,3 +9241,52 @@ charter. No forestry review record or ordinary item is consumed by this research
 Continue authorized bounded ordinary and package work.166 is a qualified independently
 reviewed candidate;265 remains frozen,747 unaccepted. No editorial acceptance,production
 write,publication,merge or deployment. Existing shutdown controls remain unchanged.
+
+
+### Local successor checkpoint 139: employee conflicts, valuation and coin program
+
+House119/2/225 H.R.7401 EH adds employee loan-participation certification,
+knowledge-conditioned disclosure and recusal,with separate270-day implementation
+and180-day regulations. Complete18USC208 retains predicates/exemptions; complete
+eCFR2635.502 dated June24,2026 retains appearance determinations,authorization and
+recusal limits. Borrower immigration eligibility is not amended. The annual2025
+GovInfo PDF ends mid502(c)(2),visually confirmed and retained as partial context;
+full vote-date XML supplies the complete section. Initial HTTP200error and406
+compression-format response remain preserved,non-governing. API-required gzip
+delivery is decoded with original delivery bytes/hash retained.
+
+314 S.2403 ES allows qualified good-faith independent valuation reliance,while
+retaining section404fiduciary obligations,regulatory authority limits and effective
+determination date. Material adequate-consideration/ESOP definitions and fiduciary
+text were read. Nine IRS-hosted reproduced RevenueRuling59-60 AppendixA pages22-30
+were rendered/inspected,including the job aid's express disclaimer. It is not IRS
+job-aid legal authority,a current complete amplification history,blanket immunity,
+fixed formula or approval of an individual appraisal. The bill's ongoing IRS
+amplification qualifier is retained. Plan-asset valuation is not a human immigration
+eligibility rule; no actual entitlement or investment outcome is inferred.
+
+182 H.R.1993 EH creates a coin/surcharge program benefiting named Museum operations.
+Its operative issuance year is2028 despite the25th-anniversary title. Complete
+material legal-tender/Mint-fund and coin-program scopes retain matching,cost recovery,
+audit and program limits; WestPoint location is an expressive sense of Congress.
+No individual survivor/first-responder cash,health or immigration entitlement.
+FousheeYea and MassieNotVoting remain exact; the latter supplies no direction or motive.
+All three are ineligible under existing functional standards,with exact passage
+questions and as-amended stage retained; no enactment is inferred.
+
+503 reviewed/173 ordinary remain;44 interpreted/227 procedural/230 excluded/two
+expressive.1529 sources/426 captures/1108 interpreted bindings/347 extent objects/
+583 coordinates;40 episodes/88 observations/78 findings unchanged. Seven primary
+captures and eight derivatives verify against retained originals. All prior500
+reviews/1516 sources/419 captures/44 meanings/six semantic outputs/78 findings,
+70 questions and three partial flags remain exact.178 tests in13.997s,reference,
+seven semantic checks and seven-file raw replay pass. Audit124NoDefect/6Minor/
+11Major/1Critical retains historical severity and distinct finding counts.
+
+138 CI37749672923 has nine green:five feature-pinned,three synthetic,one mixed;
+decoded logs/checkouts/skips sealed,hosted307 distinct from local178,repair13/20,
+no retry.138 independent candidate review remains pending;139 needs its own CI.
+137 bounded canonical review is recorded,no editorial acceptance. Forestry25hold,
+133 retrieval restrictions,qualified166,frozen265 and unaccepted747 remain unchanged.
+Continue bounded ordinary/material-package work under existing shutdown controls
+and reserved publication/production/merge/deployment gates.

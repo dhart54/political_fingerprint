@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 227,
-      "source_unresolved": 176,
+      "exact_action_ineligible": 230,
+      "source_unresolved": 173,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 227,
-    "unresolved_boundary_cases": 176,
+    "exact_action_ineligible_actions": 230,
+    "unresolved_boundary_cases": 173,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -578,9 +578,11 @@
         "house:119:2:179",
         "house:119:2:180",
         "house:119:2:181",
+        "house:119:2:182",
         "house:119:2:184",
         "house:119:2:192",
         "house:119:2:199",
+        "house:119:2:225",
         "house:119:2:226",
         "house:119:2:233",
         "house:119:2:234",
@@ -614,7 +616,8 @@
         "house:119:2:294",
         "house:119:2:296",
         "house:119:2:297",
-        "house:119:2:307"
+        "house:119:2:307",
+        "house:119:2:314"
       ],
       "source_unresolved": [
         "house:119:1:25",
@@ -736,7 +739,6 @@
         "house:119:2:174",
         "house:119:2:175",
         "house:119:2:176",
-        "house:119:2:182",
         "house:119:2:188",
         "house:119:2:190",
         "house:119:2:191",
@@ -756,7 +758,6 @@
         "house:119:2:222",
         "house:119:2:223",
         "house:119:2:224",
-        "house:119:2:225",
         "house:119:2:227",
         "house:119:2:228",
         "house:119:2:229",
@@ -791,8 +792,7 @@
         "house:119:2:310",
         "house:119:2:311",
         "house:119:2:312",
-        "house:119:2:313",
-        "house:119:2:314"
+        "house:119:2:313"
       ],
       "expressive_nonbinding_context": [
         "house:119:2:102",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "9d92c0b7b4a25092149d28120fd71cc7ad3bce0d7c1e0a4ca65e05cfad562d8b",
+  "universe_subject_sha256": "c4d112994b2d57dd383c41fbaeb6b20bdfc2f36c96870293ba29b3921509241d",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -33934,8 +33934,8 @@
       "date": "2026-05-20",
       "measure": "bill_119_hr_1993",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.1993 EH establishes a capped gold/silver commemorative-coin program with designs,consultation,sales,bulk/prepaid discounts and specified surcharges to support named Memorial/Museum operations and maintenance. Its issuance period is literally2028,not2026; the anniversary title does not replace that operative year. Material5103legal-tender,5112(m) coin-program restrictions and5134/5136Mint-fund/numismatic scopes retain cost recovery,private matching funds,audited statement,conditional payment/audit rules and annual program limits. The Museum payment is not an individual survivor/first-responder health,immigration or cash-benefit entitlement; historical findings about foreign attacks do not enact a border-person rule. The Act supplies no human admission,status,removal,visa/nationality or immigration eligibility condition. WestPoint mint location is a sense of Congress,distinct from binding coin specifications. No actual coin issuance,unconditional surcharge transfer,waiver of matching/cost-recovery conditions or broader eligibility rule is inferred from House passage. FousheeYea is a recorded whole-choice vote; MassieNotVoting is resolved non-directional and supplies neither support nor opposition or motive. Ineligible for Immigration counting under existing functional standards.",
       "source": {
         "source_id": "clerk:119:2:182",
         "url": "https://clerk.house.gov/evs/2026/roll182.xml",
@@ -33952,25 +33952,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.1993 EH establishes a capped gold/silver commemorative-coin program with designs,consultation,sales,bulk/prepaid discounts and specified surcharges to support named Memorial/Museum operations and maintenance. Its issuance period is literally2028,not2026; the anniversary title does not replace that operative year. Material5103legal-tender,5112(m) coin-program restrictions and5134/5136Mint-fund/numismatic scopes retain cost recovery,private matching funds,audited statement,conditional payment/audit rules and annual program limits. The Museum payment is not an individual survivor/first-responder health,immigration or cash-benefit entitlement; historical findings about foreign attacks do not enact a border-person rule. The Act supplies no human admission,status,removal,visa/nationality or immigration eligibility condition. WestPoint mint location is a sense of Congress,distinct from binding coin specifications. No actual coin issuance,unconditional surcharge transfer,waiver of matching/cost-recovery conditions or broader eligibility rule is inferred from House passage. FousheeYea is a recorded whole-choice vote; MassieNotVoting is resolved non-directional and supplies neither support nor opposition or motive. Ineligible for Immigration counting under existing functional standards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:182",
           "url": "https://clerk.house.gov/evs/2026/roll182.xml",
           "raw_sha256": "239613df38df911c2fe34025cd1c4a5a3cebf803e7d3b08fea77d464677e206e",
-          "governed_bytes_sha256": "88d88dee4265cbeb33df152de702f6553c37e259246bdd8d1d200867e55eeff0",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "88d88dee4265cbeb33df152de702f6553c37e259246bdd8d1d200867e55eeff0"
+        },
+        {
+          "source_id": "govinfo:hr1993eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1993eh/html/BILLS-119hr1993eh.htm",
+          "raw_sha256": "154b0d714f0ebf38983be6df41fb43b69b4962d4c4443c45a4dbe931be6864cc",
+          "governed_bytes_sha256": "acdc8a4c8fa90a2deb012ca934e27c0bfbd57c9eeb31f89beceaf1558c1dfdbc"
+        },
+        {
+          "source_id": "govinfo:31usc5103-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapI-sec5103.htm",
+          "raw_sha256": "84f88b66ef876de209daadd1152ec44fb143cee2ee59ae5abeef3effd513f9ed",
+          "governed_bytes_sha256": "9d16c7e42e596b19923fe636f7dfcc87a8ba7c27e093bfddd1ebace0dfbe6886"
+        },
+        {
+          "source_id": "govinfo:31usc5112-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapII-sec5112.htm",
+          "raw_sha256": "ed393f43fd729a985f2b5d032755c0b443b09fafef6e19a279de208bd711f21c",
+          "governed_bytes_sha256": "e68aaabf2afcdc7351d402a04fdfb307ed7528115a13497d5d0d348bf3656f5f"
+        },
+        {
+          "source_id": "govinfo:31usc5134-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapIII-sec5134.htm",
+          "raw_sha256": "5acebcc69cfe16dfb0f4e5531adf78404a0a3063d15b4678795f125a9382bf1e",
+          "governed_bytes_sha256": "d623fb644cd996730ff474cd11fd899bb031e6524926965da133ff0935b89604"
+        },
+        {
+          "source_id": "govinfo:31usc5136-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap51-subchapIII-sec5136.htm",
+          "raw_sha256": "2b0874d1576064f31ef0f302d72516c6577bfb58618584e1a1bcd584a0307a15",
+          "governed_bytes_sha256": "33e8cb51be23436026f4249c02e57330caac983769b4be9e8165213988a984bd"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "84273d1ec35340e546dd54f709ff50e88eb8a1fb5262c0ce2cbc8dd5bd72116f"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:182",
@@ -36339,8 +36369,8 @@
       "date": "2026-06-24",
       "measure": "bill_119_hr_7401",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.7401 EH imposes a written,to-the-employee's-knowledge conflicts certification before personal and substantial participation in SBA loan origination,review or approval,starting270days after enactment. Later-discovered prohibited conflicts trigger immediate supervisor disclosure and recusal; implementing regulations are due within180days. Material18USC208 retains its covered-person/financial-interest and knowledge predicates,waivers/exemptions and disclosure framework. Complete eCFR2635.502 dated to the June24,2026 vote retains covered relationships,reasonable-person appearance conditions,agency determination/authorization,recusal and irrelevant-consideration limits. A partial2025PDF ends midsection and is preserved only as context; complete dated XML governs the regulatory scope here. This action concerns employee conduct in loan administration; it does not amend borrower immigration eligibility,loan-amount standards,visa/work authorization or human admission/status/removal. A person's reputation,political/religious/moral views or a routine relationship is not automatically a prohibited conflict; no individual violation,loan denial,corruption finding or member motive is inferred. Ineligible for Immigration counting under existing exact-action functional standards.",
       "source": {
         "source_id": "clerk:119:2:225",
         "url": "https://clerk.house.gov/evs/2026/roll225.xml",
@@ -36357,25 +36387,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.7401 EH imposes a written,to-the-employee's-knowledge conflicts certification before personal and substantial participation in SBA loan origination,review or approval,starting270days after enactment. Later-discovered prohibited conflicts trigger immediate supervisor disclosure and recusal; implementing regulations are due within180days. Material18USC208 retains its covered-person/financial-interest and knowledge predicates,waivers/exemptions and disclosure framework. Complete eCFR2635.502 dated to the June24,2026 vote retains covered relationships,reasonable-person appearance conditions,agency determination/authorization,recusal and irrelevant-consideration limits. A partial2025PDF ends midsection and is preserved only as context; complete dated XML governs the regulatory scope here. This action concerns employee conduct in loan administration; it does not amend borrower immigration eligibility,loan-amount standards,visa/work authorization or human admission/status/removal. A person's reputation,political/religious/moral views or a routine relationship is not automatically a prohibited conflict; no individual violation,loan denial,corruption finding or member motive is inferred. Ineligible for Immigration counting under existing exact-action functional standards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:225",
           "url": "https://clerk.house.gov/evs/2026/roll225.xml",
           "raw_sha256": "de87503bc17f11bde31c2514d1ba927c4565f0d13d82d7cd9c152ad8515f5167",
-          "governed_bytes_sha256": "61951ec89e67214ee0d6bfcfb60d850a7e3eae9e07489fed64bc0660c11d51bd",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "61951ec89e67214ee0d6bfcfb60d850a7e3eae9e07489fed64bc0660c11d51bd"
+        },
+        {
+          "source_id": "govinfo:hr7401eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7401eh/html/BILLS-119hr7401eh.htm",
+          "raw_sha256": "e36e93ed63bf0815e7e78916fcab4f817c2e78492125001bca3b922131b6424e",
+          "governed_bytes_sha256": "8900996efadc3cd7cb66243604b4330b122614827d221c8bd8cbcb72b3ca2f70"
+        },
+        {
+          "source_id": "govinfo:18usc208-2024-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap11-sec208.htm",
+          "raw_sha256": "5c4993e9ab871ee343f897d12da9cef9ceeb455780a32ba97bff541f1ec60c4c",
+          "governed_bytes_sha256": "e204bcf4f1fff3c7c7fb9090343a1268c844b8e68ff13f9e7732aff3c91fa4c5"
+        },
+        {
+          "source_id": "ecfr:5cfr2635.502-asof20260624-complete139",
+          "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-06-24/title-5.xml?section=2635.502",
+          "raw_sha256": "b2bf21b43b8f240d42f57e9be4a35ce9033e145afaf104323d92b57c39921560",
+          "governed_bytes_sha256": "b0cff9779f04753134eb2f0238cf45510ea6a4071d6842eff42757e21dee6bdf"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "7be5817b0e22d42d5c6dd5a006ac02a8f64fe9dd0b410aa2f8b629562d55d3d1"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:225",
@@ -41396,8 +41444,8 @@
       "date": "2026-09-16",
       "measure": "S 2403",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete S.2403 ES restructures the adequate-consideration definition and permits an ESOP fiduciary's good-faith reliance on an independent expert/appraiser valuation using RevenueRuling59-60 principles and methodologies as amplified/modified by IRS from time to time. It expressly preserves section404fiduciary obligations,does not preclude notice-and-comment regulations,and does not expand the Secretary's adequate-consideration authority beyond the pre-enactment level. New determinations apply on/after enactment. Complete materially affected1002(18) and1107(d)(6) definition scopes and404fiduciary text are reviewed. The IRS-hosted AppendixA reproduces all nine printed pages of59-60,but the job aid itself expressly is not an official IRS position or authority for a legal position; that disclaimer remains. The historic reproduction is used to trace valuation methods,not to certify a complete current amplification history or approve an actual appraisal. No fixed valuation formula,blanket fiduciary immunity or repeal of foreign-asset indicia limits is inferred. This exact proposal concerns plan-asset valuation and fiduciary duties,not immigration admission,status,removal,work authorization or immigration-based participant eligibility. No automatic benefit entitlement,investment outcome or member motive is inferred. Excluded under the existing functional boundary;individual legal/valuation application would require applicable current ruling/regulatory history beyond this bounded screen.",
       "source": {
         "source_id": "clerk:119:2:314",
         "url": "https://clerk.house.gov/evs/2026/roll314.xml",
@@ -41414,26 +41462,56 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete S.2403 ES restructures the adequate-consideration definition and permits an ESOP fiduciary's good-faith reliance on an independent expert/appraiser valuation using RevenueRuling59-60 principles and methodologies as amplified/modified by IRS from time to time. It expressly preserves section404fiduciary obligations,does not preclude notice-and-comment regulations,and does not expand the Secretary's adequate-consideration authority beyond the pre-enactment level. New determinations apply on/after enactment. Complete materially affected1002(18) and1107(d)(6) definition scopes and404fiduciary text are reviewed. The IRS-hosted AppendixA reproduces all nine printed pages of59-60,but the job aid itself expressly is not an official IRS position or authority for a legal position; that disclaimer remains. The historic reproduction is used to trace valuation methods,not to certify a complete current amplification history or approve an actual appraisal. No fixed valuation formula,blanket fiduciary immunity or repeal of foreign-asset indicia limits is inferred. This exact proposal concerns plan-asset valuation and fiduciary duties,not immigration admission,status,removal,work authorization or immigration-based participant eligibility. No automatic benefit entitlement,investment outcome or member motive is inferred. Excluded under the existing functional boundary;individual legal/valuation application would require applicable current ruling/regulatory history beyond this bounded screen.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:314",
           "url": "https://clerk.house.gov/evs/2026/roll314.xml",
           "raw_sha256": "162e33c2353018f0b80d7a4db7be0cd66cf535e6c6a3db04863f5c5b59578f21",
-          "governed_bytes_sha256": "3381fcb4e0049155e74311348aa0910bd48e178ac2fbacf0adcb7416af5ee36d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "3381fcb4e0049155e74311348aa0910bd48e178ac2fbacf0adcb7416af5ee36d"
+        },
+        {
+          "source_id": "govinfo:s2403es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s2403es/html/BILLS-119s2403es.htm",
+          "raw_sha256": "5c983a365046ea1cc2aa8c54c27bd36f1310387f7cf2193179a08282f600dcc7",
+          "governed_bytes_sha256": "9e4ac364f4fe3bc274a7262b623d4d933befe04ca910c425ed35ecbdf8477567"
+        },
+        {
+          "source_id": "govinfo:29usc1002-par18-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleA-sec1002.htm",
+          "raw_sha256": "b3b65e80cedad65289684897508a5e744f4954a725703c43075a34e61602aa41",
+          "governed_bytes_sha256": "170d7018ab781a26c9287f92b6e8f94183c05f24d32eeeb29e48fea19d5eb3ab"
+        },
+        {
+          "source_id": "govinfo:29usc1107-d6-operative139",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1107.htm",
+          "raw_sha256": "ddec6d6cc059ebbdc592f8c6d03bed83f7fb2a1a456548b19cfd6c5c3d954e57",
+          "governed_bytes_sha256": "e125bace3d84ce72124585ffff9e5de0cd86e59361d7573b98dae82a655017df"
+        },
+        {
+          "source_id": "govinfo:29usc1104-217-scope",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap18-subchapI-subtitleB-part4-sec1104.htm",
+          "raw_sha256": "4ea0c9cb66b3b585e1893080ed892715c1c15aac843ab5ad22a431b3fb07cdf5",
+          "governed_bytes_sha256": "28112f7ab66b7fa1324f4a7a00be2af318d41769a50a92e9093d70c89b36f844"
+        },
+        {
+          "source_id": "irs:rr59-60-reproduced-appendixA-operative139",
+          "url": "https://www.irs.gov/pub/irs-lbi/S%20Corporation%20Valuation%20Job%20Aid%20for%20IRS%20Valuation%20Professionals.pdf",
+          "raw_sha256": "b693af6075a61d5d11263fbefac362037cd7fa427decba0a183810d0421e7f75",
+          "governed_bytes_sha256": "782cdfe11cc9855f3082a3b76decbf3cfb8c4273d1def824518b9285244cc8b2"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "77ed41f8570f8082f3afa7bf0064e110a465d391c6f65f07cc71374ff19da550"
       }
     }
   ],
@@ -41607,7 +41685,6 @@
     "house:119:2:174",
     "house:119:2:175",
     "house:119:2:176",
-    "house:119:2:182",
     "house:119:2:188",
     "house:119:2:190",
     "house:119:2:191",
@@ -41627,7 +41704,6 @@
     "house:119:2:222",
     "house:119:2:223",
     "house:119:2:224",
-    "house:119:2:225",
     "house:119:2:227",
     "house:119:2:228",
     "house:119:2:229",
@@ -41662,8 +41738,7 @@
     "house:119:2:310",
     "house:119:2:311",
     "house:119:2:312",
-    "house:119:2:313",
-    "house:119:2:314"
+    "house:119:2:313"
   ],
   "cross_domain_boundary_review": {
     "state": "pending_independent_operative_review",
@@ -41681,6 +41756,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "3fff4ae94c35e074b9d3668420be4915d241a5bd3c2457e029aee5188b439bc0",
-  "membership_review_sha256": "33cdc7ddb37d880e9260cc5647281b2dd29a94ff4cec6152064869c7f08ef856"
+  "proposal_sha256": "046234e0e8921265a9ace44b0c388fb9f01a4f35b69fd11f7107783a5fd801e2",
+  "membership_review_sha256": "da99ee944c7ae04565d24f22854507b46c0965135562e56f1857b04264b83565"
 }
