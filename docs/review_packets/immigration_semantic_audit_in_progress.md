@@ -1,10 +1,10 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint148:44 meanings/521 reviews/155 ordinary pending.
-Expired controls/markers retired; user-authorized continuation from147 has no shutdown
-deadline. Three new candidate exclusions;148 independent review pending.
-Audit140 NoDefect/8 Minor/11 Major/1 Critical; all holds and limits preserved.
-147 CI nine jobs passed. No full verdict or acceptance.
+Current candidate checkpoint149:44 meanings/523 reviews/153 ordinary pending.
+Two candidate exclusions preserve positive GreatLakes balance versus EEREzero/subset/noSRA.
+148 bounded review/9CIjobs passed;149 independent review pending.
+Audit142 NoDefect/8 Minor/11 Major/1 Critical;all holds/limits retained.
+Continued authorized work has no shutdown deadline;no full verdict or acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8443,3 +8443,17 @@ Accounting:676 inventory,521 reviewed,44 interpreted,227 procedural,248 excluded
 179 focused tests passed in14.838s;7 semantic checks and reference validation passed. All7 generated files reproduce byte-for-byte in a separate replay;6 semantic outputs and all prior518reviews/1586sources/459captures/44meanings/78findings remain unchanged. Two official regional originals match bank raw hashes;11derivatives/45intervals and9 named material PDF pages were checked. Full-parent serialization, all incorporated individual-eligibility laws and all parent pages were not independently rereviewed. Independent148 source review remains pending.
 
 Checkpoint147 CI run37777308286 completed all9 jobs on first attempt:5 feature-pinned,3 synthetic-merge,1 mixed repair;synthetic57653b28c0c052b7f52a5c40033182d8f83585da. Decoded logs/checkouts/skips are sealed in immigration_delivery_checkpoint147_ci.json. Hosted308 is distinct from local179; no CI retry or editorial acceptance. Continue existing candidate work without a shutdown deadline; deliver validated commits only to draftPR198. Next ordinary lane235-236 requires its own exact operations and material authorities;237 Report33 discrepancy and all other holds remain pending.
+
+## Checkpoint 149: Great Lakes and EERE exact funding operations
+
+House119/1/235-236 receive two candidate exclusions after complete own floor/Report31-32 operatives, RH account targets and material functional authorities. Great Lakes would retain $2million after a $2,063,381 cut, with a matching SEC512 Spending Reduction Account increase. EERE would zero the RH $1.83billion total and its included $223million program-direction amount; the subset is not an additional appropriation or a $2.053billion total cut. Amendment32 has no SRA insertion. Perry explicitly offers Report32 as Roy's designee; this source-name distinction is resolved by the actual callup. Both recorded votes failed, preserving FousheeNo/MassieAye;31 preliminaryvoiceayes and32 preliminaryvoicenoes remain distinct stages. No actual transfer, savings, permanent authority repeal, office abolition, enactment, component preference or member motive is inferred.
+
+Material15734/1268a3 definitions bind Great Lakes geography, alongside unchanged26 regional operatives/conditions from148. Connecting channels to the Canadian Border and drainage basins remain geographic context. Complete7112 purpose/7133 functions bind energy-efficiency/renewable/research/conservation and international-energy coordination, preserving State foreign-policy primacy. The exact EERE account does not import adjacent Cybersecurity/Electricity funding or reprogramming provisos. Individual grant/health/energy/immigration eligibility, all incorporated/current law and all other funding streams remain outside scope; no generic country/person/public-benefit bridge.
+
+523 of676 actions reviewed:44 interpreted,227 procedural,250 excluded,2 expressive,153 ordinary pending. Three partial packages/70 application questions unchanged. Sources1607/captures466/interpretation bindings1108/extent objects412/coordinates715;40 episodes/88 observations/78 findings unchanged. Audit142NoDefect/8Minor/11Major/1Critical;historical findings retained,final verdict null. All research holds,Report33 discrepancy,qualified166/frozen265/unaccepted747 and prior provenance/access limits remain.
+
+179 focused tests passed in14.721s;7 semantic checks/reference validation passed. All7 generated files reproduce byte-for-byte;6 semantic outputs and all prior521reviews/1597sources/461captures/44meanings/78findings/70questions/3partialflags remain unchanged. Five captured original witnesses include new complete RH74page and Record32page serializations;RH raw146 reused with hash verification,Record/7133 freshraws match legacy banks. Only10 derivatives/15 intervals and9 material PDF pages were reviewed;not all parent meanings/pages,DOEOrganizationAct/water-law/incorporatedindividualeligibility. The earlier4pageRecord bank omitted amendment32's body,so complete32page capture supplies the exact operative. No historical legacy whole-parent serialization or fresh Clerk XML certification is inferred.149 independent review pending.
+
+148 bounded independent source/domain/mechanics review passes with no material defect. All11 derivatives/45intervals,2freshoriginals,26 namedCodeoperatives/regional2241-2250 and9 materialPDFpages verify. Independent reconstruction reproduces complete82620characterCodeparent/selected21884characterregional-lawbody;semantic review remains namedmaterialsections,notwholeAct/allincorporatedlaw. LegacyRecord/RHwhole-parent serialization andfreshClerkXML remain outside certification;owner179/replay/privatecontrolretirement attributed. Original148 receipt/audit preserved before active pending flag, parent-reproduction qualifier and CIstatus updates.
+
+148 CI37812531558 is first-attempt9green:5feature/3synthetic/1mixed;synthetic328797c16e4ece632212038b7ed7d7233b980a19. Decodedlogs/checkouts/skips sealed;hosted308 is distinct fromlocal179,repair13/20,no retry.149 requires own pushed-head CI. Continue existing authorized candidate research without a shutdown deadline or terminal completion marker. No routine checkpoint or pending review ends the goal. Next ordinary lane requires complete own operative/material sources;remaining227-228 funding cuts can be examined,while237 amount conflict and239 whole-package work remain pending. Push only validated increments to draftPR198;no editorial acceptance/publication/merge/production actions.

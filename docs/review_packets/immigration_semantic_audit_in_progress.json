@@ -14676,10 +14676,180 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:235",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "235",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "12",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 31",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "4-Sep-2025",
+        "action-time": "10:21 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "ExactPerryReport31(Clerkordinal12,roll235) wouldreduce theGreatLakesAuthority RHpage63line14 appropriation by$2,063,381 from$4,063,381 to$2,000,000 andincreaseSEC512SRApage74line5 from$0 bythesameamount. Apositive$2millionremains;neitherwholeAuthorityabolition norpermanentprogrammerepeal isestablished. NamedregionalCodefunctions andcomplete15734/1268a3geography preserveeconomic/infrastructureprojectgrants,conditions,costshares,distress/approval andqualifiedtransfers. Thedefinition includesidentifiedGreatLakesconnectingchannels totheCanadianBorder anddrainagebasin within eightnamedStates;geographyandinternationalwaterreferences do notchangepersonaladmission,status,nationality,removal orworkauthorization. Reused26Codeoperatives retainrelocation-assistanceprohibition,qualifiedforeign-businessattraction andcitizensliaisoncontext;thoseeconomicfunctions do not establishahumanimmigrationrule. NorthernBorderRHadministrativeexception isnotimportedintoGreatLakes;theexistingless-than10millionstatutoryrule remains withoutnewallocationclaim. Othergrant/hospital/health-law qualificationsare notwaivedbydollarinsertions;individualeligibility/service/grant/application/comprehensivecurrentlaw assurance isoutside scope. Completeownflooroperative equalsitsnumberedRulesReporttextafterformatnormalization,andRHpage/linebindsexactaccountoperation. Bothrecordedvotesfailed;31earliervoiceayes and32earliervoicenoes remainpreliminary stages. FousheeNo/MassieAye areexactobservations,notfinalbillpassage/enactment/actualaccounttransfer/assureddeficitsavings/membermotive/componentpreference. No genericpublicbenefit/country/personbridge. Exactactionineligible underestablishedfunctionalstandards;noncountingcandidateonly.",
+      "finding": "GreatLakespositive2millionandmatchingSRA versusEEREzeroed1830million/included223milliondirection/noSRA. Ownoperatives/questions/failures/designee andmaterialregional/DOEfunctions preserved;noactualpermanentrepeal/deficitsavings/newhumanimmigrationcriterion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "56eb7caf8be6fefe739d37210cb5cd1775bdfcbf12adc0f7fa80ed338ab1346e",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:235",
+          "url": "https://clerk.house.gov/evs/2025/roll235.xml",
+          "governed_bytes_sha256": "ba69a7489322495e76e6e26acfa01ee3f3dcb60e6f54d51aacba74b139fe6214",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4553-amend31-roll235-choice149",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "governed_bytes_sha256": "e911c4a8904f34ba286d1d20a623a3f71c03f1347c3ac2ef8513d0ca42565e6b",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119232-amend31-operative149",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "a68803cc6b66a8f4dc85ba3a3db6d5cdd07019c4aaec08a7a54e0bc8650e4ca5",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend31-account-SRA149",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "governed_bytes_sha256": "e5ba553fd43a4f45feaa94280783409d97074aa7caadfd95d494114949f53f97",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:40usc-regional-material-authority148",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "governed_bytes_sha256": "c4e46857207bf2526a69a40eae7e141134f61fa9bcc81acda1003375f873dafa",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:40usc15734-greatlakes-operative149",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleV.htm",
+          "governed_bytes_sha256": "79d2314b741bb57c33fcd5d3ddf98c210676ea635afb84433d54d723e0c8f069",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:33usc1268-a3-definitions149",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapI-sec1268.htm",
+          "governed_bytes_sha256": "079cf7ef93f53070e27f429a33ce2554aee6b992992b7218c3117a53f65318ef",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:236",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "236",
+        "legis-num": "H R 4553",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "13",
+        "amendment-author": "Perry of Pennsylvania Amendment No. 32",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "4-Sep-2025",
+        "action-time": "10:28 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "ExactReport32/Roy-or-designee(ClerkPerryordinal13,roll236) hasPerryexplicitlyactingasRoydesignee intheowncallup,notaconflictingauthoridentity. It wouldreduceRHpage26line13 EEREtotal$1,830,000,000 bythefull$1,830,000,000 andRHpage26line14 program-direction$223,000,000 bythefull$223,000,000. Thelatteris OFSUCHAMOUNT withSept30,2027availability,asubsetofthetotal ratherthanaseparateadditional$223millionappropriation. Bothprintedamountswouldbezero;nodouble-counted$2.053billioncut. ThisoperativehasNOmatchingSpendingReductionAccountincrease,unliketheGreatLakesamendment;nofabricatedSRAtransfer. CompleteEEREaccountretainsDOEOrganizationAct energy-efficiency/renewablespurpose andplant/equipment/property/facility acquisition/construction,withoutimportingadjacentCybersecurity/Electricityamounts/reprogrammingprovisos. Complete7112purpose/7133functions preserveenergyconservation,research/renewabletechnologies,internationalenergycoordination withStateforeign-policyprimacy,intergovernmental/consumer/publicparticipation andeducationcontext. They do notestablishachangedpersonalimmigrationadmission/status/nationality/removal/workauthorization rule inthisdollaroperation. Thefailedamendment isnotactualwhole-officeabolition,permanentunderlyinglawrepeal orrecissionofotherActs/prior/unobligated/otherfunding;debatersdefundcharacterizationandclaimsaboutChina/supplychains/regulations/energyoutcomes are notoperativeauthority. Noindividualgrant/energy/immigrationeligibility orcomprehensivecurrentlaw guarantee. Completeownflooroperative equalsitsnumberedRulesReporttextafterformatnormalization,andRHpage/linebindsexactaccountoperation. Bothrecordedvotesfailed;31earliervoiceayes and32earliervoicenoes remainpreliminary stages. FousheeNo/MassieAye areexactobservations,notfinalbillpassage/enactment/actualaccounttransfer/assureddeficitsavings/membermotive/componentpreference. No genericpublicbenefit/country/personbridge. Exactactionineligible underestablishedfunctionalstandards;noncountingcandidateonly.",
+      "finding": "GreatLakespositive2millionandmatchingSRA versusEEREzeroed1830million/included223milliondirection/noSRA. Ownoperatives/questions/failures/designee andmaterialregional/DOEfunctions preserved;noactualpermanentrepeal/deficitsavings/newhumanimmigrationcriterion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "1ffe66f3c8a9176164a8c5489233c1ce74383858be9e8a4482ec029ae13bbf86",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:236",
+          "url": "https://clerk.house.gov/evs/2025/roll236.xml",
+          "governed_bytes_sha256": "8d3b5ffe99fc19b8c3f4e1004f4ed55faa692b2e4360195e40e24d87d1ff5bfa",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "congressional-record:4553-amend32-roll236-choice149",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "governed_bytes_sha256": "a6a4875c27d9ccb5f2ced1c9ed1bd2bd64a1b194c3e61b6ea092ad9cbc26ac0c",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "house-rules:119232-amend32-operative149",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/html/CRPT-119hrpt232.htm",
+          "governed_bytes_sha256": "11bdfffcb96f1557e6bda92fa8a0199833d40480a47f8788d8df4ef873dcea1d",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:hr4553-rh-amend32-EERE-account149",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4553rh/pdf/BILLS-119hr4553rh.pdf",
+          "governed_bytes_sha256": "454a88565a2e266e209a1c6d50529bfd08c4bcace4f6a1a1587079d8b635a941",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:42usc7112-operative149",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapI-sec7112.htm",
+          "governed_bytes_sha256": "a1b623c80fd049c87c0219d9c9fb3a7d57b740018988178013b0999f08d64df9",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        },
+        {
+          "source_id": "govinfo:42usc7133-operative149",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap84-subchapII-sec7133.htm",
+          "governed_bytes_sha256": "7fe3e382a684bf051e6f1cb95cdd5b29354d72de4a8a5de12e432c87be2a4fe1",
+          "reviewed_extent": "Completeidentifiedtwo-lineoperative/ownquestion/result/account;namedregionalgeography/26regionaloperativeor7112/7133DOEfunctions. Notallparent/currentlaw/incorporatedindividualeligibility."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 140,
+    "No Defect": 142,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -14741,17 +14911,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 44,
+    "successor_new_exclusions_reviewed": 46,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.838,
+    "focused_runtime_seconds": 14.721,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint147 nine jobs succeeded on first attempt;148 own pushed-head run pending.",
+    "exact_head_ci": "Checkpoint148 nine jobs succeeded on first attempt;149 own pushed-head run pending.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -14788,12 +14958,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint148: three failed regional funding amendments232-234, exact positive remaining amounts20million/2million/250000;521reviews/155ordinarypending,1597sources/461captures/402extents/700coordinates. Two matchingraw originals,11derivatives/45intervals,nine materialPDFpages. Prior44meanings/78findings/sixsemanticoutputs/70questions/threepartialpackages and all holds preserved. Independent148 review pending; no final verdict or editorial acceptance.",
+    "focused_scope_note": "Checkpoint149:failedGreatLakes235cut leaves2million/matchingSRA,failedEERE236zeroed1830milliontotal/includes223milliondirection/noSRA,actualRoydesignee/ownquestions/results.523reviews/153ordinarypending;1607sources/466captures/412extents/715coordinates.5raworiginalwitnesses,10derivatives/15intervals,9materialPDFpages,179tests/7checks/reference/rawreplay.148boundedreviewpassed,activeflags/limits/CIstatusclosedwithbeforearchive.149independentreviewpending;44meanings/78findings/70questions/3packages/allholdsunchanged,nofinalverdict/acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint147_ci.json",
-      "receipt_sha256": "65d21fe9c045376c0e9f8d960d44d9e3cff568601998f69d6dbada10172d9d9f",
-      "head": "e80079a8c231005fa35810fd284583cdd7e4b34a",
-      "run": 37777308286,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
+      "receipt_sha256": "071d9769810428aa9bfa0c9ba27a70fc41bea35708259eaa4a6a373d23bd6ef6",
+      "head": "0abcb829e2e036cd33b27f3bd416daa4470bb0d2",
+      "run": 37812531558,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -19563,12 +19733,14 @@
   },
   "ordinary_screening_checkpoint148": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint148.json",
-    "receipt_sha256": "6fa0507ef7ee6a51e770361725baf629c6dbcb0a41f155f3c4699e0f9a024acd",
+    "receipt_sha256": "cf674f1ce3ca7d05234dd47a18b50ebdf85289f0095b6fcb0d5433dd5a97ee96",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 155,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint148_independent_review.json",
+    "independent_review_scope": "No materialsource/domain/mechanicaldefect inboundedreview. NineidentifiedmaterialPDFpageschecked,notallparentpages;owner179/replay/controlretirementattributed,legacy/freshClerk/allincorporatedlawlimitsretained."
   },
   "prior_head_ci_checkpoint147": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint147_ci.json",
@@ -19583,5 +19755,29 @@
     "expired_controls_retired": true,
     "active_shutdown_deadline": null,
     "other_projects_untouched": true
+  },
+  "independent_checkpoint148_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint148_independent_review.json",
+    "receipt_sha256": "6bcb6432674f592f67d0cce96ab8d111460a09f5815bf545ec6e57e0827757db",
+    "before_snapshot_archive": ".tmp/checkpoint149_before_energy",
+    "before_receipt_sha256": "6fa0507ef7ee6a51e770361725baf629c6dbcb0a41f155f3c4699e0f9a024acd",
+    "current_receipt_sha256": "cf674f1ce3ca7d05234dd47a18b50ebdf85289f0095b6fcb0d5433dd5a97ee96",
+    "reviews_sources_outputs_preserved": true
+  },
+  "ordinary_screening_checkpoint149": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint149.json",
+    "receipt_sha256": "52020f67cfe416eac427dcbe19ba08472a265980939c113b02b231f98a871f3f",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 153,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint148": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint148_ci.json",
+    "receipt_sha256": "071d9769810428aa9bfa0c9ba27a70fc41bea35708259eaa4a6a373d23bd6ef6",
+    "head": "0abcb829e2e036cd33b27f3bd416daa4470bb0d2",
+    "run": 37812531558,
+    "successful_jobs": 9
   }
 }
