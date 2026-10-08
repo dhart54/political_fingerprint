@@ -13772,10 +13772,250 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:85",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "85",
+        "legis-num": "H CON RES 38",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "5-Mar-2026",
+        "action-time": "4:37 PM",
+        "vote-desc": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from unauthorized hostilities in the Islamic Republic of Iran"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete38proposal would terminate use of USArmedForces from hostilities against Iran or any part of its government/military unless explicitly authorized by declaration of war or specific authorization for use of military force against Iran. It retains imminent-attack self-defense,collection/analysis/investigative intelligence activities and qualified coalition intelligence-sharing,and no new authorization for military force. The literal section3joint-resolution label is retained,not repaired to concurrent resolution. Findings concerning prior authorization are proposed findings,not independent proof of every factual/legal premise. Exact printedbody equals completeIH with formatting-only normalization,and each resumedquestion/roll/result binds its own failedHouseaction. Section1544(c)concurrent-resolution removal is separate from1544(b)report-triggered termination,notwithstanding(b);section1547non-inference/construction rules are retained where referenced. Constitutional enforceability and actual executive application remain unresolved,not established by this candidate screening. Neither failedmotion constitutes adoption,completedwithdrawal,securityevent or immigration outcome. The exact military-force/hostilities mechanism does not regulate human immigration admission,status,nationality,removal,benefit or workauthorization eligibility. Foreignlocation,displacement/border rhetoric and adjacentDHSappropriation debate cannot supply narroweroperative migration meaning. No componentpreference,membermotive or causaloutcome inferred;FousheeYea/MassieYea retained. Ineligible underexistingfunctionalstandards.",
+      "finding": "Threefailedmilitary-forceproposals preserve38self-defense/intelligence,noAUMF,84fromLebanon versus108anyhostilities/carveouts,ownquestions/results and1544b/cbranches. Humanimmigrationremoval/status meaning is not inferred from militarywithdrawal/adjacentDHSdebate.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "2ba4c7d9fcbfc23c9b91347f50b29754e21a832139da70bfe762f0a31e9c0bbf",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:85",
+          "url": "https://clerk.house.gov/evs/2026/roll085.xml",
+          "governed_bytes_sha256": "d42451b80d45695e2b836566b1c484db3270b93eaec4fc1d79977cbe2976c24a",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:hconres38ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres38ih/html/BILLS-119hconres38ih.htm",
+          "governed_bytes_sha256": "73481088126f4ba511051662feda97242df091da64ab0c15304e9a9a57fa87fb",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:2026-03-04-iran38",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-04/html/CREC-2026-03-04-pt1-PgH2395.htm",
+          "governed_bytes_sha256": "cfacebdbd15338d6fdb593d7cd34c9871b028acb0c9bf7cb299681d6d0014957",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:hconres38-roll85-choice144",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-03-05/pdf/CREC-2026-03-05-house.pdf",
+          "governed_bytes_sha256": "dc765d5b0723511f0f168257144dcb58a9ea602a2be39879264d5ddb024b5c84",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1547.htm",
+          "governed_bytes_sha256": "c9f724283b028e7ee075718b8ed3cc02eaa2c6c3030da2836dcd790672d835ee",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "nara:constitution-I8clause11-operative144",
+          "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+          "governed_bytes_sha256": "6c9944121a4f5c2d6052c5f5a4d1e6f8005c63b42913144cc1406de1693ae49f",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:201",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "201",
+        "legis-num": "H CON RES 84",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "4-Jun-2026",
+        "action-time": "4:43 PM",
+        "vote-desc": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from Lebanon"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete84proposal directs removal of USArmedForces FROM LEBANON within7days after adoption;it does not contain108's narrower any-hostilities scope or express security-cooperation/diplomatic-facility carveout. Do not substitute the later resolution,debate assurances or counterfactual interpretation. Exact printedbody equals completeIH with formatting-only normalization,and each resumedquestion/roll/result binds its own failedHouseaction. Section1544(c)concurrent-resolution removal is separate from1544(b)report-triggered termination,notwithstanding(b);section1547non-inference/construction rules are retained where referenced. Constitutional enforceability and actual executive application remain unresolved,not established by this candidate screening. Neither failedmotion constitutes adoption,completedwithdrawal,securityevent or immigration outcome. The exact military-force/hostilities mechanism does not regulate human immigration admission,status,nationality,removal,benefit or workauthorization eligibility. Foreignlocation,displacement/border rhetoric and adjacentDHSappropriation debate cannot supply narroweroperative migration meaning. No componentpreference,membermotive or causaloutcome inferred;FousheeYea/MassieYea retained. Ineligible underexistingfunctionalstandards.",
+      "finding": "Threefailedmilitary-forceproposals preserve38self-defense/intelligence,noAUMF,84fromLebanon versus108anyhostilities/carveouts,ownquestions/results and1544b/cbranches. Humanimmigrationremoval/status meaning is not inferred from militarywithdrawal/adjacentDHSdebate.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "b8b768b438f842d90d11b225d3c1cd372404a738c8e77cc0f673f5635f3921bb",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:201",
+          "url": "https://clerk.house.gov/evs/2026/roll201.xml",
+          "governed_bytes_sha256": "839a50814599d1fe16cbec89af941196713048816bb8c9bf5ed25a8096ddaa81",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:hconres84ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres84ih/html/BILLS-119hconres84ih.htm",
+          "governed_bytes_sha256": "42c4345abe15afacf7b23b83566d60044d647eb4f27e3aebcf67b5b79387bd6a",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:hconres84-complete-floor-body144",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-03/html/CREC-2026-06-03-pt1-PgH3814-2.htm",
+          "governed_bytes_sha256": "23127509911e035cdc8a346a14b8483b893c9d30367cef7779b7e9d2df42cae4",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:hconres84-roll201-choice144",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-04/pdf/CREC-2026-06-04-house.pdf",
+          "governed_bytes_sha256": "6e8b1a17ca7d95a75170553a5fcec27964845591ea4c5bc67ab724e4ce568740",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:232",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "232",
+        "legis-num": "H CON RES 108",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "30-Jun-2026",
+        "action-time": "2:26 PM",
+        "vote-desc": "Directing the President pursuant to section 5(c) of the War Powers Resolution to remove United States Armed Forces from hostilities in Lebanon"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete108proposal directs removal of USArmedForces from ANY HOSTILITIES IN LEBANON within7days after adoption,while expressly preserving security cooperation with LebaneseArmedForces and protection of diplomatic facilities. Its separate construction clause does not authorize military force. This narrower scope and express retained activities differ from84's removal fromLebanon. Exact printedbody equals completeIH with formatting-only normalization,and each resumedquestion/roll/result binds its own failedHouseaction. Section1544(c)concurrent-resolution removal is separate from1544(b)report-triggered termination,notwithstanding(b);section1547non-inference/construction rules are retained where referenced. Constitutional enforceability and actual executive application remain unresolved,not established by this candidate screening. Neither failedmotion constitutes adoption,completedwithdrawal,securityevent or immigration outcome. The exact military-force/hostilities mechanism does not regulate human immigration admission,status,nationality,removal,benefit or workauthorization eligibility. Foreignlocation,displacement/border rhetoric and adjacentDHSappropriation debate cannot supply narroweroperative migration meaning. No componentpreference,membermotive or causaloutcome inferred;FousheeYea/MassieYea retained. Ineligible underexistingfunctionalstandards.",
+      "finding": "Threefailedmilitary-forceproposals preserve38self-defense/intelligence,noAUMF,84fromLebanon versus108anyhostilities/carveouts,ownquestions/results and1544b/cbranches. Humanimmigrationremoval/status meaning is not inferred from militarywithdrawal/adjacentDHSdebate.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "d35e36e40793e537467f593bc4719e35b07fc6811f9f19758162db1d15780a86",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:232",
+          "url": "https://clerk.house.gov/evs/2026/roll232.xml",
+          "governed_bytes_sha256": "b453d55622dd9fa0cbabd99990c77788b3c48abe984f39eefc030caeacd40c55",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:hconres108ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres108ih/html/BILLS-119hconres108ih.htm",
+          "governed_bytes_sha256": "1f4ff4704652bb318584c6860be998f03d77abc91dd1da9fe74309c9db920555",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:hconres108-complete-floor-body144",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-29/html/CREC-2026-06-29-pt1-PgH4304.htm",
+          "governed_bytes_sha256": "f0d8f2d9526f457b41584bd43e0eeee318a7f0112125c9f6e56b6510dfca1d2c",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "congressional-record:hconres108-roll232-choice144",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-06-30/pdf/CREC-2026-06-30-house.pdf",
+          "governed_bytes_sha256": "b0a49c1e5e4496a1f761c48abd2416fd641a7882cdcfb669bf95814a6ca1f288",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:50usc1544-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1544.htm",
+          "governed_bytes_sha256": "432e9476b6b2455b3001471c9db44e0b85c63001e2ba884a15ad329d86174367",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        },
+        {
+          "source_id": "govinfo:50usc1547-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap33-sec1547.htm",
+          "governed_bytes_sha256": "c9f724283b028e7ee075718b8ed3cc02eaa2c6c3030da2836dcd790672d835ee",
+          "reviewed_extent": "CompleteIH/floorbody or namedresumedquestion/totals/result/materialWPR/constitutional scope. Parentdebate/imagepages/latercounterfactualstatements outside reviewed scope."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 129,
+    "No Defect": 132,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -13837,17 +14077,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 33,
+    "successor_new_exclusions_reviewed": 36,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.183,
+    "focused_runtime_seconds": 14.165,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "142own ninegreen sealed;143needs own pushed-head run.",
+    "exact_head_ci": "143own ninegreen sealed;144needs own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -13884,12 +14124,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Court293exact failedproposal screened;510reviews/166ordinary,1549sources/436captures,360extents/609coordinates.44meanings/78findings/sixoutputs/70questions/threeflags unchanged.179tests/reference/7semanticchecks/rawreplay pass.142independentbounded source/mechanics pass plus one metadataP3 corrected143 awaitingrecheck;140/141semanticcorrections remainresolved.142own ninegreen/no retries,hosted308 distinctlocal179.133/138/139limits andforestry/program/photoIDholds retained.",
+    "focused_scope_note": "ThreefailedWarPowersproposals85/201/232;513reviews/163ordinary,1559sources/441captures/366extents/618coordinates. Fiveoriginals/sixderivatives/nineintervals;threeIH/flooroperative equalities andownfailure/memberlabels verify. 38self-defense/intelligence/noAUMF,84fromLebanon versus108anyhostilities/expresscarveouts,1544b/cbranches retained.44meanings/78findings/sixoutputs/70questions/threeflags unchanged;179tests/7checks/reference/rawreplay pass.143ownninegreen/no retry,hosted308 distinctlocal179.143court/metadata and144screeningbounded reviews pending. Priorholds/133/138/139limits retained.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint142_ci.json",
-      "receipt_sha256": "450d4cd2a04454c58c28794d502db0e3e3ac4090849d18926995af02de242546",
-      "head": "befef12ff4280c7686afe409c183aa20adb687d8",
-      "run": 37766519325,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint143_ci.json",
+      "receipt_sha256": "f842947b4aadc642c0b8b32190e5176d6f98a690668609f1f30d63786995569e",
+      "head": "3c524b8a705d70749b024ff522f8eb4110376243",
+      "run": 37768974121,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -18555,6 +18795,22 @@
     "receipt_sha256": "450d4cd2a04454c58c28794d502db0e3e3ac4090849d18926995af02de242546",
     "head": "befef12ff4280c7686afe409c183aa20adb687d8",
     "run": 37766519325,
+    "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint144": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint144.json",
+    "receipt_sha256": "8936b69a63b439e6ab243e8fde84e0712bf7a3200dc01865942942b623e08930",
+    "same_owner_primary_screenings": 3,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 163,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint143": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint143_ci.json",
+    "receipt_sha256": "f842947b4aadc642c0b8b32190e5176d6f98a690668609f1f30d63786995569e",
+    "head": "3c524b8a705d70749b024ff522f8eb4110376243",
+    "run": 37768974121,
     "successful_jobs": 9
   }
 }

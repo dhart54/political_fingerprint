@@ -9480,3 +9480,37 @@ verify,hosted308distinctlocal179,repair13/20;no reruns.143needsownCI/screeningre
 Forestry25and223/280/283holds/70questions/threepackages remain unfinished;
 qualified166/frozen265/unaccepted747 unchanged. Continue under localwatcher
 stoplarge12:12:21Z,wrap12:27:21Z,marker12:37:21Z,shutdown12:42:21Z.
+
+
+### Local successor checkpoint144: three failed War Powers proposals
+
+House119/2/85(H.Con.Res.38),201(84),232(108) are exact-action exclusions under
+existing Immigration functional standards. Complete IH operatives equal their own
+printed floor bodies; three resumed questions/totals/results bind failed votes,
+with FousheeYea/MassieYea retained.38has imminent-attack self-defense,intelligence/
+investigation/qualified sharing and no new AUMF;literal section3joint-resolution
+label remains.84removes forces FROM LEBANON within7days after adoption;108narrows
+to ANY HOSTILITIES IN LEBANON with express security-cooperation/diplomatic-facility
+protection and noAUMF clauses. These are not interchangeable.1544(c) remains
+separate from report-triggered1544(b),notwithstanding(b);1547andArticleI8clause11
+material contexts read. Constitutional enforceability/executive application are
+unresolved;failed votes do not establish withdrawal,security or immigration outcomes.
+AdjacentDHSdebate/displacement rhetoric/latercounterfactualstatements excluded.
+
+Five raw originals captured,three dailyPDF parents(52/79/46pages) plus two complete
+HTMLarticles retained. Sixderivatives/nineintervals/10canonical registrations verify.
+Six rendered pages inspected;only named proceedings collectively reviewed. Embedded
+parent image pages were notOCR-transcribed;no whole177-page text/content assurance.
+513reviews/163ordinary remain,44interpreted/227procedural/240excluded/twoexpressive;
+1559sources/441captures/1108bindings/366extentobjects/618coordinates;40episodes/
+88observations/78findings. Prior510reviews/1549sources/436captures/44meanings/
+sixsemanticoutputs/78findings/70questions/threeflags unchanged.179tests in14.165s,
+reference/7semanticchecks/seven-file rawreplay pass. Audit132NoDefect/8Minor/11Major/
+1Critical;distinct1Critical/5Major/6Minor plus separate143metadataMinor retained.
+No fullverdict/acceptance.143court/metadata and144screening boundedreviews pending.
+
+143CI37768974121 first-attemptninegreen,fivefeature/three synthetic/one mixed;
+synthetic61bca372d38bffc393d18a55eea0e6600d0c5e55. Decodedlogs/checkouts/skips sealed;hosted308
+distinctlocal179,repair13/20,no retry.144needsownheadCI. Forestry25/223/280/283holds,
+70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139limits
+remain. Continue bounded work under unchanged watcher controls.
