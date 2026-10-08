@@ -6550,6 +6550,103 @@
         "archive_independent_limit": "Authoring plus eight unchanged entries reproduce; six uncommitted intermediate generated/audit archive files not remotely verified",
         "full_package_acceptance": false
       }
+    },
+    {
+      "action_id": "house:119:1:15",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "15",
+        "legis-num": "H R 33",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "15-Jan-2025",
+        "action-time": "4:41 PM",
+        "vote-desc": "To amend the Internal Revenue Code of 1986 to provide special rules for the taxation of certain residents of Taiwan with income from sources within the United States"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete January15 EH independently reconstructed: general Taiwan-tax-liability/non-USperson conjunction, noncitizen dual-resident/home/vital-interests/abode alternatives, tax-only year/portion treatment, independent wage-recipient route without new dual-treatment and employer/cost exclusions. Additional rate/income/REIT/real-property/inversion/REMIC/establishment/hybrid conditions remain qualified. No all-tax exemption or actual immigration-status change. Reciprocity and TitleII separate approval/confirmation/notice/publication/submission triggers retained; guidance/model reference is not actual treaty implementation. Material7701,871,897 and new1441/894/860C/7874 operative witnesses checked against direct claims; no whole-Code, corporate calculation or individual application claimed.",
+      "finding": "Defensible direct personal-status benefit/tax-treatment candidate under prior cross-case standards; detail/compact are bounded and source-mapped. Independent domain/application review remains pending, no automatic ontology acceptance.",
+      "correction": null,
+      "corrected_authoring_action_sha256": "a52377baccfa504b2c472af97ddb35bdc565f6e2f5bc3a26381e14ea15c2567c",
+      "primary_evidence": [
+        {
+          "source_id": "govinfo:hr33eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr33eh/html/BILLS-119hr33eh.htm",
+          "governed_bytes_sha256": "6bd794424c326b9607d6470eec053ddbed61cd1f6d58dd0ea6c350b64b104699",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc7701-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+          "governed_bytes_sha256": "649eb69db1f7b8dd45da669327945551760dddfb74948a2a4bc4a1957a2f1159",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc871-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartA-sec871.htm",
+          "governed_bytes_sha256": "310e938a180d76c1bc023c38ac8ca35c03c44011fa27591b165607715b5cc10e",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc897-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartD-sec897.htm",
+          "governed_bytes_sha256": "0ad078ace0814a529c61c3c59e190c02e6a44840cbe2f8f7aa89301b9af62985",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc7701a30-2024-taiwan-us-person122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+          "governed_bytes_sha256": "e1055d427f9857f40921752c288d3a2ef6b5a99d792b8f173c4a91f9f65f435b",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc1441-2024-taiwan-withholding122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap3-subchapA-sec1441.htm",
+          "governed_bytes_sha256": "e77d14786a1b30434ab04782540e840007ab04fc9c6e2314ea152d1aff4759db",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc894-2024-taiwan-hybrid122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartD-sec894.htm",
+          "governed_bytes_sha256": "f10fc32e85ecf8fae419ca83f81118b7f74e6fc226e505a55ac31c736b372033",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc860C-2024-taiwan-remic122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapM-partIV-sec860C.htm",
+          "governed_bytes_sha256": "46030f55983fac9dd3b8f7cc73d44b9950dcc11f04c85ee59451babaeeade35e",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        },
+        {
+          "source_id": "govinfo:26usc7874-2024-taiwan-inversion122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap80-subchapC-sec7874.htm",
+          "governed_bytes_sha256": "bf6db55eab5921cc0a187add6dd5420ac9ac7d509e0a942e5785dd3f970360ad",
+          "reviewed_extent": "Complete exact EH or material selected/reused operative baseline at preserved version; material personal/withholding/exception comparison only, not whole-Code/individual application."
+        }
+      ],
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": false,
+      "correction_state": "local_checkpoint_validated_candidate_only"
     }
   ],
   "noncounting_actions": [
@@ -10567,7 +10664,7 @@
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 88,
+    "No Defect": 89,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -10632,13 +10729,13 @@
     "successor_new_exclusions_reviewed": 4
   },
   "checkpoint_validation": {
-    "focused_tests": 173,
-    "focused_runtime_seconds": 14.935,
+    "focused_tests": 176,
+    "focused_runtime_seconds": 16.579,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "120 run37714594853 terminal nine green with five feature-pinned/three synthetic/one mixed checkouts;121 needs own feature push/run",
+    "exact_head_ci": "121 run37715833941 terminal nine green;122 needs own feature push/run",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -10675,7 +10772,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Two research/security candidate exclusions; six sources/four captures/nine new coordinates. Operative subtitle selection corrected before commit; actual TOC witness rejected. All40 meanings/six outputs/prior462reviews/146prior test methods/70questions/three partial packages preserved. Narrow119 P3 and component plus120 procedural independent reviews resolved within sealed scopes.",
+    "focused_scope_note": "One new H.R.33 exact-passage personal-status overlap candidate; old40 meanings/core rows/72 findings/464 reviews/1444sources/147 tests preserved. Three new guards and eight controlled semantic negatives;70questions andthree partial packages unchanged. No independent acceptance.",
     "last_completed_exact_head_ci": {
       "head": "191fe50e72034903442c4829d0308563b71c5311",
       "run": 37712146981,
@@ -14432,5 +14529,21 @@
     "receipt_sha256": "a520325cefdb55d83d83c02f9600b525aa0489d27f9a4b8a7fe07f382a4b09b7",
     "head": "1949555a486e9eccc53a39f8859c6ddde0cf7963",
     "run": 37714594853
+  },
+  "taiwan_tax_personal_status_checkpoint122": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/taiwan_tax_personal_status_checkpoint122.json",
+    "receipt_sha256": "8bc013e8a1ae515bb2a6703ef9ba6c99ea1f6470fc06142e783d67256d9d10a9",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 1,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 211,
+    "application_questions": 70,
+    "domain_application": "qualified direct personal-status overlap candidate; not blanket tax-residence ontology acceptance"
+  },
+  "prior_head_ci_checkpoint121": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint121_ci.json",
+    "receipt_sha256": "855c9a6f9903381c28ac70a517fe821aadf1ea030f99db1869022a7fc8eaddb0",
+    "head": "254acffcccea91a6027453bf52c5abd8a80fef7b",
+    "run": 37715833941
   }
 }

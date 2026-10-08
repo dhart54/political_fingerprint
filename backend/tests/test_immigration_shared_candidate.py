@@ -18,6 +18,82 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_taiwan_dual_resident_routes_keep_citizenship_and_tax_only_limits(self):
+        action = getattr(self, 'taiwan_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:15')
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:hr33eh')
+        start = source.index('``(3) Dual residents.')
+        end = source.index('``(4) Rules of special application.', start)
+        witness = source[start:end]
+        for phrase in ['is not a United States citizen',
+                       'described in subparagraph (B), (C), or (D)',
+                       'would be a qualified resident of Taiwan but for paragraph (1)(B)',
+                       'does not have a permanent home available to such individual in the United States',
+                       'center of vital interests under subparagraph (C)(ii) cannot be determined',
+                       'has a habitual abode in Taiwan and not the United States',
+                       "for purposes of computing such individual's United States income tax liability"]:
+            self.assertIn(phrase, witness)
+        for phrase in ['NOT A USCITIZEN', 'ONE of three routes',
+                       'The three routes are alternatives, not three cumulative requirements',
+                       'AND habitual abode in Taiwan AND NOT the US',
+                       'ONLY FOR COMPUTING', 'US INCOME-TAX LIABILITY',
+                       'does not itself revoke or confer LPR status']:
+            self.assertIn(phrase, action['meaning'])
+        self.assertIn('noncitizen dual residents', action['compact_description'])
+        self.assertIn('separate home, vital-interests or abode tests', action['compact_description'])
+        self.assertIn('would not change immigration status', action['compact_description'])
+
+    def test_taiwan_wage_relief_does_not_follow_automatically_from_dual_tax_residence(self):
+        action = getattr(self, 'taiwan_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:15')
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:hr33eh')
+        start = source.index('``(2) Qualified wages.')
+        end = source.index('``(b) Income Connected', start)
+        witness = source[start:end]
+        for phrase in ['determined without regard to subsection (c)(3)(E)',
+                       'regular component of a ship or aircraft operated in international traffic',
+                       'any employer other than a United States person',
+                       'not borne by a United States permanent establishment',
+                       'income derived as a student or trainee',
+                       'aggregate amount of gross receipts', 'do not exceed $30,000']:
+            self.assertIn(phrase, witness)
+        for phrase in ['ADDITIONAL recipient test',
+                       'Therefore(c)(3)(E)\'s income-tax nonresidence does not by itself satisfy the first wage route',
+                       'AND not be borne', 'student/trainee income',
+                       'annual aggregate gross receipts NOT EXCEEDING $30,000',
+                       'not a deduction or exclusion of the first $30,000 from unlimited receipts']:
+            self.assertIn(phrase, action['meaning'])
+
+    def test_taiwan_reciprocity_and_agreement_preserve_separate_conditions(self):
+        action = getattr(self, 'taiwan_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:15')
+        source = next(s['text'] for s in self.values[1]['sources'] if s['source_id'] == 'govinfo:hr33eh')
+        for phrase in ['shall not apply to any period unless the Secretary has determined',
+                       'that are reciprocal to the benefits',
+                       'which may be separate dates for taxes withheld at the source and other taxes',
+                       'at least 15 calendar days before commencing such negotiations',
+                       'at least 60 days before the day on which the President enters into the Agreement',
+                       'Not later than 270 days after the President enters into the Agreement',
+                       'approval legislation and implementing legislation pursuant to section 207']:
+            self.assertIn(phrase, source)
+        for phrase in ['NONE of new894A applies for a period unless Treasury determines',
+                       'dates MAY differ for source withholding and other taxes',
+                       'at least15calendar days BEFORE negotiations',
+                       'at least60days BEFORE entering the agreement',
+                       'separate270-day AFTER-entry triggers',
+                       'congressional approval/implementing legislation plus Taiwan approval/implementation confirmation',
+                       'distinct14percent qualified scholarship/fellowship baseline']:
+            self.assertIn(phrase, action['meaning'])
+        self.assertIn('reciprocal, qualified Taiwan tax relief', action['compact_description'])
+        claims = {c['source_id']: c['passage'] for c in action['claim_source_map']}
+        self.assertEqual(claims['govinfo:hr33eh'], source)
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        self.assertIn('a citizen or resident of the United States', claims['govinfo:26usc7701a30-2024-taiwan-us-person122'])
+        self.assertEqual(claims['govinfo:26usc1441-2024-taiwan-withholding122'], bank['govinfo:26usc1441-2024-taiwan-withholding122']['text'])
+
     def test_research_security_witness_has_operating_body_not_table_of_contents(self):
         source = getattr(self, 'research_subtitle_source', None)
         if source is None:

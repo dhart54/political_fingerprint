@@ -7734,3 +7734,95 @@ outputs,test file,questions/partial flags/manifest; proof changes only source-ca
 hash. Both exact-head CI runs have nine green jobs with distinct checkout contexts.
 No independent full replay or acceptance; Clerk raw-byte caveat persists. Sealed
 119/120 supplemental receipt now includes this separate mechanical completion.
+
+
+### Successor checkpoint 122: H.R.33 personal-status tax-relief candidate
+
+House119/1/15 is the January15,2025 H.R.33 EH passage choice. Complete exact EH
+and material personal/withholding/exception baselines support one qualified shared
+meaning under the existing direct personal-status overlap standards. General Taiwan
+tax liability and non-USperson qualification remain distinct from the separate
+noncitizen dual-resident route. The latter preserves three alternative home,
+vital-interests or habitual-abode tests, including the own conjunctions and no-US-
+abode requirement. Its nonresidence treatment applies only to US income-tax
+computation for the qualifying year/portion. Tax residence can involve LPR, presence
+or election; it is not synonymous with immigration status. No visa, nationality,
+admission, removal, work authorization or LPR revocation is inferred.
+
+Qualified wages retain an additional recipient test determined without the new
+dual-resident tax treatment, or qualifying international crew, plus employer,
+cost-bearer and income-category exclusions. Dual-resident tax nonresidence alone
+does not establish wage exemption. The separate entertainer/athlete threshold is
+annual aggregate gross receipts not exceeding $30,000, not an exclusion of the
+first $30,000 from unlimited receipts. Specified rates/income, existing exceptions,
+REIT/real-property/inversion/REMIC, establishment and hybrid-payment qualifications
+remain. The distinct14percent scholarship/fellowship withholding baseline is not
+silently replaced by universal10percent withholding. Entity/corporate provisions
+do not determine immigration status of owners/employees. No individual tax calculation,
+corporate ownership/application, whole incorporated-Code audit or actual savings.
+
+All894A relief requires Treasury reciprocal-benefits determination for the relevant
+period. Guidance dates may differ for withholding and other taxes; model-convention
+consistency is to the extent practical. TitleII negotiation follows reciprocity;
+entry into force requires congressional approval/implementing legislation and
+Taiwan confirmation. Distinct15-day before-negotiation notice,90-day initial and
+180-day subsequent briefings,60-day before-entry publication and270-day after-entry
+submission triggers remain. IRC consistency and separately repeated subsequent-
+agreement process are retained. No actual treaty, negotiation, reciprocity,
+administrative outcome or implicitly amended law is established by this House vote.
+
+One episode projects unchanged governed Clerk FousheeYea and MassieNay: support
+and opposition to the complete proposal, without separate component stance or motive.
+Both new findings' complete detail, compact, qualifications and status/direction were
+compared against primary text. Compact preserves reciprocal/qualified relief,
+noncitizen dual residents, alternative tests, income-tax treatment and no immigration-
+status change. Prior40 meanings/core action rows and all72 previous readable findings
+are unchanged. Seven canonical outputs regenerate and replay byte for byte; the new
+meaning appropriately changes aggregate graph/accounting and presentation outputs.
+
+Six canonical additions: unchanged Health-governed33EH and five selected material
+objects: complete7701(a)(30),1441(a)-(g),894(a)-(c),860C(a)-(e),7874(a)-(g).
+Existing7701(b),871 and897 operative witnesses are reused unchanged with material
+personal/withholding/exception comparison. Four original2024 acquisitions and five
+new original coordinates. Full acquisition is not whole-Code semantic review.
+Raw bytes, extracted text, original coordinates, seals, claims and manifest verify.
+First860C path omitted partIV and first7874 path omitted subchapterC; non-Code responses
+were rejected. Successful earlier captures were preserved, corrected hierarchy used,
+failed7874 raw retained privately. No unavailable-evidence or canonical conflict claim.
+
+176 focused tests pass in16.579seconds; reference validator and seven semantic checks
+pass. Three source-backed guards reject eight controlled distortions with exactly
+one assertion failure and no errors each. All147 prior test methods remain exact.
+First new-guard run expected 'separate' where actual safe claim said 'congressional';
+guard wording corrected without semantic change. First private verifier expected
+'oppose' instead of canonical 'opposition'; verifier corrected without output change.
+Tests establish mechanical contracts, not semantic truth or independent acceptance.
+Candidate public/persistence isolation and final diff reviewed.
+
+676 inventory/465 reviewed/41 interpreted/213 procedural/209 excluded/two expressive;
+211 ordinary unfinished/three partial packages/70 separate application questions.
+38 episodes/82 member observations/74 findings;1450 sources/1044 interpreted bindings/
+397 original captures/324 extent objects/535 coordinates. Same-owner distinct-action
+audit89 NoDefect/3Minor/11Major/1Critical; historical finding counts and all70 question
+objects remain unchanged. Full-record completion, final verdict and readiness remain
+false/null. No unreviewed source application or editorial/domain-methodology approval.
+Core65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9;
+compiledf41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809.
+
+Checkpoint121 own run37715833941 is terminal nine green, sealed with raw logs/hashes
+and checkout contexts in immigration_delivery_checkpoint121_ci.json. Five feature-
+pinned/three synthetic/one mixed; syntheticb364e44bb7649e64c61cbba4059865a5ef60516a.
+Hosted302 preparation tests differ from owner173 at121 and176 here; no retry.
+122 requires its own pushed-head run. Independent121 and122 review remain pending.
+
+Recommendation: retain this literal qualified personal-status candidate and tax-only
+boundary, then route independent domain/application review. A narrower mapping is an
+alternative only if authoritative review finds the established personal-benefit scope
+excludes this exact mechanism; do not generalize all tax residence into Immigration.
+Reserved fit labels remain review work rather than automatic user approval gates.
+Safe parallel work: remaining first-ten actions25/32/33/50/71, then material package/
+State/migration/refugee/DHS/supplementary/counterpart coverage. Q70 medical duplicate
+section107(f), Q68 fund and Q69 reimbursement applications remain separately frozen.
+Same accountable .w/ib owner; no current deadline; historical markers preserved.
+DraftPR198 remains delivery boundary. No merge/deploy/production/editorial acceptance/
+promotion/publication or methodology/architecture change.

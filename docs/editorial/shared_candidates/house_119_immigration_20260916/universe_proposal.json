@@ -19,6 +19,7 @@
   "interpretation_action_ids": [
     "house:119:1:6",
     "house:119:1:7",
+    "house:119:1:15",
     "house:119:1:17",
     "house:119:1:23",
     "house:119:1:42",
@@ -71,9 +72,9 @@
   "accounting": {
     "counts": {
       "procedural_context": 213,
-      "interpreted_substantive_directional": 40,
+      "interpreted_substantive_directional": 41,
       "exact_action_ineligible": 209,
-      "source_unresolved": 212,
+      "source_unresolved": 211,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -83,14 +84,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 40,
-    "directional_substantive_actions": 40,
+    "substantive_eligible_actions": 41,
+    "directional_substantive_actions": 41,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 213,
     "expressive_nonbinding_actions": 2,
     "exact_action_ineligible_actions": 209,
-    "unresolved_boundary_cases": 212,
-    "independent_episode_count": 37,
+    "unresolved_boundary_cases": 211,
+    "independent_episode_count": 38,
     "multi_action_episode_count": 3,
     "mechanism_types": [
       "concurrence",
@@ -99,8 +100,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 40,
-      "substantive_actions": 40,
+      "ready_substantive_actions": 41,
+      "substantive_actions": 41,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -325,6 +326,7 @@
       "interpreted_substantive_directional": [
         "house:119:1:6",
         "house:119:1:7",
+        "house:119:1:15",
         "house:119:1:17",
         "house:119:1:23",
         "house:119:1:42",
@@ -576,7 +578,6 @@
         "house:119:2:307"
       ],
       "source_unresolved": [
-        "house:119:1:15",
         "house:119:1:25",
         "house:119:1:32",
         "house:119:1:33",
@@ -808,6 +809,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:hr33:119",
+        "action_ids": [
+          "house:119:1:15"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr30:119",
         "action_ids": [
           "house:119:1:17"
@@ -835,6 +842,12 @@
         "episode_candidate_id": "episode:hr993:119",
         "action_ids": [
           "house:119:1:65"
+        ]
+      },
+      {
+        "episode_candidate_id": "episode:hr1968:119",
+        "action_ids": [
+          "house:119:1:70"
         ]
       },
       {
@@ -1013,12 +1026,6 @@
         "action_ids": [
           "house:119:2:214"
         ]
-      },
-      {
-        "episode_candidate_id": "episode:hr1968:119",
-        "action_ids": [
-          "house:119:1:70"
-        ]
       }
     ],
     "multi_action_episodes": [
@@ -1093,7 +1100,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "b928940d0e9d119a4aafc7b13d1f58c2322ef6368c209a538096cee1d9b87689",
+  "universe_subject_sha256": "4a08722f26ddd0f1cc1b6054aff3a4b9267f1e269c09d2ab2719e944450538d8",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -1870,8 +1877,8 @@
       "date": "2025-01-15",
       "measure": "bill_119_hr_33",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "The exact EH directly distinguishes UScitizens, USpersons and qualified noncitizen dual tax residents, incorporating7701 personal-residence routes including LPR/presence/election. Status itself affects personal tax-relief eligibility and bounded income-tax treatment, unlike entity geography or generic foreign-country tax references. Defensible qualified personal-status overlap candidate under existing cross-case review; no immigration award/revocation, blanket tax-status methodology or actual taxpayer outcome. Full operative proposal and material personal/withholding/exception baselines reconstructed; entity calculations and individual application not claimed.",
       "source": {
         "source_id": "clerk:119:1:15",
         "url": "https://clerk.house.gov/evs/2025/roll015.xml",
@@ -1879,7 +1886,7 @@
         "governed_bytes_sha256": "3862ee6b6f68330a396578636808a8557b1a874bd83a46ed43b9c45e3c7c4bd8",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr33:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_33",
       "member_action": "yea",
@@ -1888,25 +1895,79 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "The exact EH directly distinguishes UScitizens, USpersons and qualified noncitizen dual tax residents, incorporating7701 personal-residence routes including LPR/presence/election. Status itself affects personal tax-relief eligibility and bounded income-tax treatment, unlike entity geography or generic foreign-country tax references. Defensible qualified personal-status overlap candidate under existing cross-case review; no immigration award/revocation, blanket tax-status methodology or actual taxpayer outcome. Full operative proposal and material personal/withholding/exception baselines reconstructed; entity calculations and individual application not claimed.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:15",
           "url": "https://clerk.house.gov/evs/2025/roll015.xml",
           "raw_sha256": "db639c404b0c50404ea7e5b04efa759639686320abfd86342ca35dd6adc97f9d",
-          "governed_bytes_sha256": "3862ee6b6f68330a396578636808a8557b1a874bd83a46ed43b9c45e3c7c4bd8",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "3862ee6b6f68330a396578636808a8557b1a874bd83a46ed43b9c45e3c7c4bd8"
+        },
+        {
+          "source_id": "govinfo:hr33eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr33eh/html/BILLS-119hr33eh.htm",
+          "raw_sha256": "e0d794ac2f6b0bb77f0655e916471dd2bf08b7916ab0830cbfe25d48a3fb3f4d",
+          "governed_bytes_sha256": "6bd794424c326b9607d6470eec053ddbed61cd1f6d58dd0ea6c350b64b104699"
+        },
+        {
+          "source_id": "govinfo:26usc7701-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+          "raw_sha256": "3b6813827417be7d1c15c0c53337e2a73e9616d46d17a775950dc5813eca6afb",
+          "governed_bytes_sha256": "649eb69db1f7b8dd45da669327945551760dddfb74948a2a4bc4a1957a2f1159"
+        },
+        {
+          "source_id": "govinfo:26usc871-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartA-sec871.htm",
+          "raw_sha256": "f39560a00865c30830dfee3f9926e438584aad0a96199450a9a371278b1e4637",
+          "governed_bytes_sha256": "310e938a180d76c1bc023c38ac8ca35c03c44011fa27591b165607715b5cc10e"
+        },
+        {
+          "source_id": "govinfo:26usc897-2024-foreign-tax-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartD-sec897.htm",
+          "raw_sha256": "7a60503b0957868ec811d93eec9ca48da1052e88a9b6deb3bb657228d0745218",
+          "governed_bytes_sha256": "0ad078ace0814a529c61c3c59e190c02e6a44840cbe2f8f7aa89301b9af62985"
+        },
+        {
+          "source_id": "govinfo:26usc7701a30-2024-taiwan-us-person122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap79-sec7701.htm",
+          "raw_sha256": "3b6813827417be7d1c15c0c53337e2a73e9616d46d17a775950dc5813eca6afb",
+          "governed_bytes_sha256": "e1055d427f9857f40921752c288d3a2ef6b5a99d792b8f173c4a91f9f65f435b"
+        },
+        {
+          "source_id": "govinfo:26usc1441-2024-taiwan-withholding122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap3-subchapA-sec1441.htm",
+          "raw_sha256": "eb6444787417afe3141035df3a0faa6a2ff8854053baf781db3b9029c5a20b9d",
+          "governed_bytes_sha256": "e77d14786a1b30434ab04782540e840007ab04fc9c6e2314ea152d1aff4759db"
+        },
+        {
+          "source_id": "govinfo:26usc894-2024-taiwan-hybrid122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapN-partII-subpartD-sec894.htm",
+          "raw_sha256": "011175d9935c4aa3e1175a8c161ab95e2285fd42671e44fcdca24fbc3c6d2430",
+          "governed_bytes_sha256": "f10fc32e85ecf8fae419ca83f81118b7f74e6fc226e505a55ac31c736b372033"
+        },
+        {
+          "source_id": "govinfo:26usc860C-2024-taiwan-remic122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapM-partIV-sec860C.htm",
+          "raw_sha256": "b1e0e8816f02ba09f6aa18269e714d9f84c493564eb3f04aa9de296c8c015259",
+          "governed_bytes_sha256": "46030f55983fac9dd3b8f7cc73d44b9950dcc11f04c85ee59451babaeeade35e"
+        },
+        {
+          "source_id": "govinfo:26usc7874-2024-taiwan-inversion122",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleF-chap80-subchapC-sec7874.htm",
+          "raw_sha256": "8086253f24b1710e0d8ada95e08ba519704dacb2e38d4275eebe40b50debc427",
+          "governed_bytes_sha256": "bf6db55eab5921cc0a187add6dd5420ac9ac7d509e0a942e5785dd3f970360ad"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5b164e5c01b47cfef355c083609d431888b9a8be8b1a1c9fb80b12510738541b"
       },
       "historical_raw_hash_matches": true
     },
@@ -40699,6 +40760,7 @@
   "proposed_action_ids": [
     "house:119:1:6",
     "house:119:1:7",
+    "house:119:1:15",
     "house:119:1:17",
     "house:119:1:23",
     "house:119:1:42",
@@ -40739,7 +40801,6 @@
     "house:119:2:214"
   ],
   "unresolved_action_ids": [
-    "house:119:1:15",
     "house:119:1:25",
     "house:119:1:32",
     "house:119:1:33",
@@ -40968,6 +41029,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "42ae3a38612458fc35404af8f8690ef2261b351e8214f13b9fad1089e677d670",
-  "membership_review_sha256": "e0f3207d1e8e1246ad05857cdb0eb96aad2f00fbc202ca850239e93078291879"
+  "proposal_sha256": "a53b53ea53ad2c48ef83d7f977a680014c15e4bdd150798ecb815dbddbeb8865",
+  "membership_review_sha256": "6dd1389565231cd7a7645f5330b8527467d848b4f51756696bfbf6bb0946b84a"
 }

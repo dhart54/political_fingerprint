@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "fff7087cd854582b0c9fef8bbff4649dfd10d279711bffb1b5e802dd0be0fd3a",
-  "source_capture_sha256": "b8774a949d4cc9e7669328591e76ea7d459f51d17a9fbe873436b1c86d30a3b6",
-  "core_sha256": "fd61bd31f8e93363a49df499939c97f515345771511298fc757f4657c1636c61",
-  "compiled_sha256": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898",
-  "readable_sha256": "516614bf5057502046f872dc691b2751ede74df9759134a1e5ec7ee294fb4a2f",
+  "input_sha256": "11b949f47f0a6efd0eae3afbbbeb7f9a4745001a7226eb4dad3e41eeb39c7fc5",
+  "source_capture_sha256": "01cd540f590d7f88e3da5a5697260acd4a601ea5fce06ef522dabe1e7934889d",
+  "core_sha256": "65a6553698cc4d56a7dfd67d9654ab3b1e4326588ace90c55cfb04a0a84cf4a9",
+  "compiled_sha256": "f41f1d54d4afa8b872d8465ed40ad305cc03ed197d62df75c4bb0ac0fd78a809",
+  "readable_sha256": "22305374370909425e2977f4c05b637186aa79aba3b955e6c121602536422353",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -54,6 +54,26 @@
           "effect": "resolved_non_directional",
           "selected_meaning": null,
           "source_id": "clerk:119:1:7"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:15",
+      "shared_sha256": "da36de584fee1fc107bb44790cd8aae6b31ab7aef401ab62cb02d93fca5e0409",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R.33 reciprocal qualified tax-relief and tax-agreement proposal, including its noncitizen dual-resident income-tax rules",
+          "source_id": "clerk:119:1:15"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.33 proposal; no preferred alternative or motive is established",
+          "source_id": "clerk:119:1:15"
         }
       ]
     },

@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 40,
+        "eligible_substantive_actions": 41,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 40,
-        "resolved_eligible_actions": 40,
-        "directional_yes_no_positions": 40,
+        "in_service_eligible_actions": 41,
+        "resolved_eligible_actions": 41,
+        "directional_yes_no_positions": 41,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 37,
+        "complete_episodes": 38,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -182,6 +182,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr1503:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:0008b471dfa85fa2",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "support",
+            "evidence_action_ids": [
+              "house:119:1:15"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr33:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -795,6 +814,7 @@
             "prop:1221d8ef96b8d89a",
             "prop:3657b46370498990",
             "prop:8737f6e2148f0e3e",
+            "prop:0008b471dfa85fa2",
             "prop:d607deaa79c7b0f8",
             "prop:7a1ed641b3f0b711",
             "prop:3c41bc2a1db338d5",
@@ -837,6 +857,7 @@
           "house:119:1:116",
           "house:119:1:119",
           "house:119:1:145",
+          "house:119:1:15",
           "house:119:1:153",
           "house:119:1:156",
           "house:119:1:163",
@@ -882,17 +903,17 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 40,
+        "eligible_substantive_actions": 41,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 40,
-        "resolved_eligible_actions": 40,
-        "directional_yes_no_positions": 38,
+        "in_service_eligible_actions": 41,
+        "resolved_eligible_actions": 41,
+        "directional_yes_no_positions": 39,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 37,
+        "complete_episodes": 38,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1059,6 +1080,25 @@
             ],
             "evidence_episode_ids": [
               "episode:hr1503:119"
+            ],
+            "mechanism_or_trait_refs": [],
+            "presentation_target": "other_notable_choices",
+            "conclusion_relevance": "supporting",
+            "relationships": {
+              "supported_by": [],
+              "limited_by": []
+            }
+          },
+          {
+            "proposition_id": "prop:192337ac62ad28a9",
+            "semantic_role": "behavioral",
+            "proposition_type": "notable_choice",
+            "direction": "opposition",
+            "evidence_action_ids": [
+              "house:119:1:15"
+            ],
+            "evidence_episode_ids": [
+              "episode:hr33:119"
             ],
             "mechanism_or_trait_refs": [],
             "presentation_target": "other_notable_choices",
@@ -1634,6 +1674,7 @@
             "prop:7b401ea0a7d3d888",
             "prop:74a9a53d91141d9a",
             "prop:ac4fec0ba241d82e",
+            "prop:192337ac62ad28a9",
             "prop:f57181cd9a44ac71",
             "prop:28094c20b96a1108",
             "prop:b297a5214acf0270",
@@ -1693,6 +1734,7 @@
           "house:119:1:116",
           "house:119:1:119",
           "house:119:1:145",
+          "house:119:1:15",
           "house:119:1:153",
           "house:119:1:156",
           "house:119:1:163",
