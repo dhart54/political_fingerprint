@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 233,
-      "source_unresolved": 170,
+      "exact_action_ineligible": 236,
+      "source_unresolved": 167,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 233,
-    "unresolved_boundary_cases": 170,
+    "exact_action_ineligible_actions": 236,
+    "unresolved_boundary_cases": 167,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -584,13 +584,16 @@
         "house:119:2:184",
         "house:119:2:192",
         "house:119:2:199",
+        "house:119:2:216",
         "house:119:2:222",
         "house:119:2:225",
         "house:119:2:226",
+        "house:119:2:227",
         "house:119:2:233",
         "house:119:2:234",
         "house:119:2:235",
         "house:119:2:238",
+        "house:119:2:240",
         "house:119:2:248",
         "house:119:2:251",
         "house:119:2:252",
@@ -751,18 +754,15 @@
         "house:119:2:207",
         "house:119:2:208",
         "house:119:2:209",
-        "house:119:2:216",
         "house:119:2:217",
         "house:119:2:218",
         "house:119:2:220",
         "house:119:2:221",
         "house:119:2:223",
         "house:119:2:224",
-        "house:119:2:227",
         "house:119:2:228",
         "house:119:2:229",
         "house:119:2:232",
-        "house:119:2:240",
         "house:119:2:241",
         "house:119:2:242",
         "house:119:2:243",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "34a13bd6e5163aa8ff37facdff4ed0a32881532576a1c3b314da023c0c37944e",
+  "universe_subject_sha256": "02986d24a604181b7ee4f3c13235a0bf2c9bced65c718781fd1e05194222cf59",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -35931,8 +35931,8 @@
       "date": "2026-06-09",
       "measure": "bill_119_hr_5408",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.5408 EH changes initial collective-bargaining procedures,maintenance of current wages/hours/terms pending agreement,and continued employer bargaining absent the stated decertification election. Material NLRA158(d)/(g),159and152retain bargaining/representation definitions,coverage exclusions and healthcare notice context;NLRAemployee status is not immigration status. A new individual OR labor-organization representative may make a written bargaining request;meeting begins within10days or the agreed longer period. After90days or an agreed extension,either party MAY request mediation;the30-day mediation stage starts from that request or an agreed extension. Unresolved mediation then requires the prescribed3-person panel,14-day selection/fill process and majority decision binding2years unless amended by written party consent. These are conditional stages,not guaranteed universal contract within130days,mandatory mediation request or a predicted wage outcome. Healthcare notice cross-reference renaming does not add a patient public-benefit or immigration rule. The exact private-workplace representation/contract mechanism does not grant work authorization,immigration admission/status/removal or decide individual employment/remedy eligibility. GAOreporting and preambular characterizations remain part of the whole proposal without accepting research claims as motives/causality. Ineligible under existing functional standards;no component preference,actual contract/arbitration outcome or member motive inferred from House passage.",
       "source": {
         "source_id": "clerk:119:2:216",
         "url": "https://clerk.house.gov/evs/2026/roll216.xml",
@@ -35949,25 +35949,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.5408 EH changes initial collective-bargaining procedures,maintenance of current wages/hours/terms pending agreement,and continued employer bargaining absent the stated decertification election. Material NLRA158(d)/(g),159and152retain bargaining/representation definitions,coverage exclusions and healthcare notice context;NLRAemployee status is not immigration status. A new individual OR labor-organization representative may make a written bargaining request;meeting begins within10days or the agreed longer period. After90days or an agreed extension,either party MAY request mediation;the30-day mediation stage starts from that request or an agreed extension. Unresolved mediation then requires the prescribed3-person panel,14-day selection/fill process and majority decision binding2years unless amended by written party consent. These are conditional stages,not guaranteed universal contract within130days,mandatory mediation request or a predicted wage outcome. Healthcare notice cross-reference renaming does not add a patient public-benefit or immigration rule. The exact private-workplace representation/contract mechanism does not grant work authorization,immigration admission/status/removal or decide individual employment/remedy eligibility. GAOreporting and preambular characterizations remain part of the whole proposal without accepting research claims as motives/causality. Ineligible under existing functional standards;no component preference,actual contract/arbitration outcome or member motive inferred from House passage.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:216",
           "url": "https://clerk.house.gov/evs/2026/roll216.xml",
           "raw_sha256": "c91f3ef8462cba52f3ac73b2c988c5d5a5de6dd0715438912b76f1a9c90fb907",
-          "governed_bytes_sha256": "bd261e0bbc343b8ee51716ed7db1dcb5e2e3f9b0c59b6f7a93f81d917cab8d9b",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "bd261e0bbc343b8ee51716ed7db1dcb5e2e3f9b0c59b6f7a93f81d917cab8d9b"
+        },
+        {
+          "source_id": "govinfo:hr5408eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5408eh/html/BILLS-119hr5408eh.htm",
+          "raw_sha256": "2dd691dacd5d30e2b24ab40ae77270d295ba1960623a20c72b0cb9ea418002b8",
+          "governed_bytes_sha256": "c28b07076eced8dad53e355b2da1de9710baf76b94593a5e48d9c37adf5d1a54"
+        },
+        {
+          "source_id": "govinfo:29usc158-dg-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap7-subchapII-sec158.htm",
+          "raw_sha256": "301366f09dd7db03d342d5b712d700c1febca61198d742715b78de8a2ebadc61",
+          "governed_bytes_sha256": "21696f4a37460d9f68e417a23300486edaa61deba9f6c728b310e16aead123cf"
+        },
+        {
+          "source_id": "govinfo:29usc159-2024-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap7-subchapII-sec159.htm",
+          "raw_sha256": "b4ade25c3480814fa05088629e006f22f66563fc3701af64358d8c788a8f1d08",
+          "governed_bytes_sha256": "02c5bb49b4f9f67c7682afba28c7711dbe59a8dd0b84216c2c2ed010b9196637"
+        },
+        {
+          "source_id": "govinfo:29usc152-2024-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title29/html/USCODE-2024-title29-chap7-subchapII-sec152.htm",
+          "raw_sha256": "a7a581d718cf7b9e75e096927907df3547a96e3626c996fae9a5f36aa87a7bd3",
+          "governed_bytes_sha256": "f89556571a0200ce7a40ecf4a67bd34673f975f0cd0caeddff26c0bc512d336b"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "87f0a1d68ee99259aa56a606f5b6d92461c7126b904ad4e9d0dabc645c55f44f"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:216",
@@ -36539,8 +36563,8 @@
       "date": "2026-06-25",
       "measure": "bill_119_hr_2478",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete as-passed H.R.2478 EH creates an elective direct-at-fund account/contact and redemption-delay framework for registered open-end companies/transfer agents that elect into the stated requirements. Full materially amended80a-22operative section retains the ordinary seven-day redemption baseline and existing exceptions;open-end,company,redeemable-security and transfer-agent definitions identify financial roles,not immigration status. Proposed delay requires reasonable belief both that the requester is a specified adult and that exploitation has occurred,is occurring or has been attempted. Specified adult is age65or older,or age18or older with the stated reasonably believed impairment. The initial15business-day delay,conditional10business-day extension,notice exceptions/reasonable efforts,internal review,demand-deposit/documentation and competent-government extension remain distinct;there is no universal25-day maximum or proven wrongdoing assumption. Contact information must be requested,not guaranteed supplied. Individual security redemption and exploitation-review procedures are distinct from government migration benefits,admission/status/removal or a new visa/nationality eligibility rule. No actual exploitation,asset loss,redemption denial,immigration outcome or member motive is inferred. House suspension-and-pass as amended is not enactment. Ineligible under the existing exact-action functional boundary.",
       "source": {
         "source_id": "clerk:119:2:227",
         "url": "https://clerk.house.gov/evs/2026/roll227.xml",
@@ -36557,25 +36581,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete as-passed H.R.2478 EH creates an elective direct-at-fund account/contact and redemption-delay framework for registered open-end companies/transfer agents that elect into the stated requirements. Full materially amended80a-22operative section retains the ordinary seven-day redemption baseline and existing exceptions;open-end,company,redeemable-security and transfer-agent definitions identify financial roles,not immigration status. Proposed delay requires reasonable belief both that the requester is a specified adult and that exploitation has occurred,is occurring or has been attempted. Specified adult is age65or older,or age18or older with the stated reasonably believed impairment. The initial15business-day delay,conditional10business-day extension,notice exceptions/reasonable efforts,internal review,demand-deposit/documentation and competent-government extension remain distinct;there is no universal25-day maximum or proven wrongdoing assumption. Contact information must be requested,not guaranteed supplied. Individual security redemption and exploitation-review procedures are distinct from government migration benefits,admission/status/removal or a new visa/nationality eligibility rule. No actual exploitation,asset loss,redemption denial,immigration outcome or member motive is inferred. House suspension-and-pass as amended is not enactment. Ineligible under the existing exact-action functional boundary.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:227",
           "url": "https://clerk.house.gov/evs/2026/roll227.xml",
           "raw_sha256": "7e81ace74f03b1150e004219db02fc44fac4dca5bdafd11411f9cef26a0a40ec",
-          "governed_bytes_sha256": "2cd22b5ed2b0220c80b25b70d8e186d9a2cd829b37adecb61850143fd1f48e9e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "2cd22b5ed2b0220c80b25b70d8e186d9a2cd829b37adecb61850143fd1f48e9e"
+        },
+        {
+          "source_id": "govinfo:hr2478eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2478eh/html/BILLS-119hr2478eh.htm",
+          "raw_sha256": "cac69a7d120d8b7eceddb912a80dfc2ed06c59694c82e8609fd5a4bf46e226fd",
+          "governed_bytes_sha256": "e6e39640bcc4830b0d37bbd95de23a9e9f15e2aadbcd2f4ed5136e329b13b6ee"
+        },
+        {
+          "source_id": "govinfo:15usc80a22-2024-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-22.htm",
+          "raw_sha256": "f1f4dc5539d57eb59fbbe424f07d11459db586b862bb7d2be9060eb6fb5d92e6",
+          "governed_bytes_sha256": "e8403757e3efe8cbfa3564c5e5c2e94dc1b1f9b67261895660ccc190fcf7c8b7"
+        },
+        {
+          "source_id": "govinfo:15usc80a5-2024-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-5.htm",
+          "raw_sha256": "6f1bf8dd0f25b19252489c006d5e2083d0b02baf6c3cf295074c5c2c478074fc",
+          "governed_bytes_sha256": "6a8c1f76fd5ecefee5f096343ac89cb070d87ed0039155525f796808d2e57dbc"
+        },
+        {
+          "source_id": "govinfo:15usc80a2-company-redeemable-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-2.htm",
+          "raw_sha256": "7a5cb07035df83421e4863cb29f74f57ebbd3565f2cf67fff005d07819aefb81",
+          "governed_bytes_sha256": "5db15b38afdf21dfe1d18ac37df37ba0f286cb5405df6bbd80184fa45038001a"
+        },
+        {
+          "source_id": "govinfo:15usc78c-transfer-agent-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2B-sec78c.htm",
+          "raw_sha256": "b6730c5c897a72eb711bd564b5496918ff087209d4abaa7efb90f4e7fc61b035",
+          "governed_bytes_sha256": "9c9e13055c8984b11e4c2029b55850f2feed15a2896dcc82e19911f1696793d4"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d54201e8ac17ca6e4c04d742db17640fdef22bb930449f5b7d0786dbe790d1fa"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:227",
@@ -37294,8 +37348,8 @@
       "date": "2026-07-14",
       "measure": "bill_119_hr_1181",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Complete H.R.1181 EH bars payment-card networks from requiring and covered entities from assigning firearm-specific merchant category codes within its stated transaction/retailer definitions. It covers the separate antique-firearm definition as well as firearm,shotgun,rifle,semiautomatic-rifle,handgun and ammunition scopes;the921(a)(3)antique exclusion does not erase the Act's separately listed antique category. Seven exact referenced definitions were reviewed without changing921itself. AttorneyGeneral enforcement retains complaints,investigation,determination,written notice and30-day cure before a permitted Federal injunction;the Act creates no private right of action. State/local MCC preemption retains the express fraud,dispute,compliance,transaction-integrity,data-breach/cyber-risk exception. This is merchant transaction classification/enforcement,not firearm-buyer authorization,visa/work authorization or human immigration admission,status,removal/benefit eligibility. Physical US retailer location and the ISO's international name do not supply a migration-person mechanism. No actual violation,cure,injunction,crime/immigration outcome,unconditional privacy result or component/member motive is inferred from House passage. Ineligible under existing functional standards.",
       "source": {
         "source_id": "clerk:119:2:240",
         "url": "https://clerk.house.gov/evs/2026/roll240.xml",
@@ -37312,25 +37366,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Complete H.R.1181 EH bars payment-card networks from requiring and covered entities from assigning firearm-specific merchant category codes within its stated transaction/retailer definitions. It covers the separate antique-firearm definition as well as firearm,shotgun,rifle,semiautomatic-rifle,handgun and ammunition scopes;the921(a)(3)antique exclusion does not erase the Act's separately listed antique category. Seven exact referenced definitions were reviewed without changing921itself. AttorneyGeneral enforcement retains complaints,investigation,determination,written notice and30-day cure before a permitted Federal injunction;the Act creates no private right of action. State/local MCC preemption retains the express fraud,dispute,compliance,transaction-integrity,data-breach/cyber-risk exception. This is merchant transaction classification/enforcement,not firearm-buyer authorization,visa/work authorization or human immigration admission,status,removal/benefit eligibility. Physical US retailer location and the ISO's international name do not supply a migration-person mechanism. No actual violation,cure,injunction,crime/immigration outcome,unconditional privacy result or component/member motive is inferred from House passage. Ineligible under existing functional standards.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:240",
           "url": "https://clerk.house.gov/evs/2026/roll240.xml",
           "raw_sha256": "fe1c3b2b7a3ae809b952c7e8c31c2fb8227ec9d6aa986d05ab5c439518244a4f",
-          "governed_bytes_sha256": "8600fd34dfa4758417950ac270db91804fcd2d63d8ed017e39ddb54aa0d0b2a3",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "8600fd34dfa4758417950ac270db91804fcd2d63d8ed017e39ddb54aa0d0b2a3"
+        },
+        {
+          "source_id": "govinfo:hr1181eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1181eh/html/BILLS-119hr1181eh.htm",
+          "raw_sha256": "3052ffe7df14e150979b03976d8b8705aee078dd1a216c2b9cc0a387147f64ce",
+          "governed_bytes_sha256": "2c17a978b820a28d5a15aae9ebfdd05002800dbe06eb43675da7663606f0ca08"
+        },
+        {
+          "source_id": "govinfo:18usc921-mcc-definitions-operative142",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap44-sec921.htm",
+          "raw_sha256": "76b45e687a08b2583aaa1639594771fc687ce36f4d49035b30afb1af0e57529d",
+          "governed_bytes_sha256": "60e67514f08e474e9a70401e1cafef5df8e2c7ab729fe66f85b5622163b924c2"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a297b8fda3b6162e8ac8a1b44d37665d496644b5920145b24cb2ef5e937078c6"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:240",
@@ -41730,18 +41796,15 @@
     "house:119:2:207",
     "house:119:2:208",
     "house:119:2:209",
-    "house:119:2:216",
     "house:119:2:217",
     "house:119:2:218",
     "house:119:2:220",
     "house:119:2:221",
     "house:119:2:223",
     "house:119:2:224",
-    "house:119:2:227",
     "house:119:2:228",
     "house:119:2:229",
     "house:119:2:232",
-    "house:119:2:240",
     "house:119:2:241",
     "house:119:2:242",
     "house:119:2:243",
@@ -41789,6 +41852,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "8d2f2af7886cd78f37188e120a7187c942efeac60ad692722eb74984b928a81e",
-  "membership_review_sha256": "afdd2baa63ab782a6fba7788655bd02b929a25d6eb0324ed0781667116dd9e6a"
+  "proposal_sha256": "cb5713f510797124f684c55cf4573ae3f1f81a71bf55319b27c97018ddbd7205",
+  "membership_review_sha256": "5f9f426dfab0662d03950e79d3c27aa2b960f887245a4e7f51e30451282c15f0"
 }

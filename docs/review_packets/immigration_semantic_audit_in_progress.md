@@ -1,9 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint141 has44 meanings/506 reviews/170 ordinary pending.
-Two140P3precision corrections retain historicalMinor findings and await bounded recheck;
-139bounded pass is recorded with limits. Forestry/program/photoID research held;
-no full-corpus verdict or editorial acceptance.
+Current candidate checkpoint142 has44 meanings/509 reviews/167 ordinary pending.
+Both140P3precisions independently resolved at141 with historicalMinor findings retained;
+142review pending,forestry/program/photoID research held. No full-corpus verdict or acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8219,3 +8218,6 @@ Checkpoint140: failed disciplinary297/failed military346 and broad expressive fr
 
 
 Checkpoint141: correct297direct/fullEthics investigation and346independent1544b/cmechanisms;sourcepassages/dispositions unchanged. Exactbefore/after/history andCRLF/GitLFprovenance retained;twoMinor findings retained.179tests in14.752s/threeprecisionnegatives/reference/sevenchecks/replay pass;allseven outputs/504otherreviews/674rows/44meanings/78findings/1534sources/426captures/70questions/threeflags exact.506reviewed/170ordinary unchanged.139boundedpass/140initialreview andownninegreen sealed;boundedcorrection recheck/final140source review pending. Threeprogram/photoID research holds,eightprivate captures unregistered;no queue consumption or unavailable finding. Candidate-only.
+
+
+Checkpoint142: merchant-code240/securities-payment227/first-contract216 exclusions;509reviewed/167ordinary/1545sources/433captures. Staticweapon/financial/labor scopes and conditional stages retained;no immigration-person eligibility or individual outcome inferred. Sevenoriginals/eightderivatives/16intervals verify.179tests in14.824s/reference/sevenchecks/rawreplay pass;44meanings/sixoutputs/78findings/70questions/threeflags unchanged.141independenttwoP3closure andownninegreen recorded;activepending bookkeeping closed with history.142review/CIpending;forestry25andprogram/photoIDholds/133restrictions/provenance limits retained;candidate-only.

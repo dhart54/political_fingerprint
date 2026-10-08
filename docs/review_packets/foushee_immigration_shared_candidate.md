@@ -5,12 +5,12 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint141:506 reviewed,44 interpreted,227 procedural,233 excluded,
-two expressive;170 ordinary screenings remain.40 episodes produce88 observations and
+Latest candidate checkpoint142:509 reviewed,44 interpreted,227 procedural,236 excluded,
+two expressive;167 ordinary screenings remain.40 episodes produce88 observations and
 78 findings(Foushee40/Massie38). Three partial package flags and70 legal/application
-questions remain.140P3directive/WarPowers precision corrections pass locally with
-history retained;bounded recheck/final source review pending.139bounded review is recorded
-with limits. Forestry25 and program/photoID research held. No editorial acceptance.
+questions remain. Both140P3precisions independently resolved at141;history retained.
+142screening review is pending. Forestry25 and program/photoID research held.
+No editorial acceptance. See checkpoint142 source-bound receipt below.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -9901,3 +9901,6 @@ Checkpoint140: failed disciplinary297/failed military346 and broad expressive fr
 
 
 Checkpoint141: correct297direct/fullEthics investigation and346independent1544b/cmechanisms;sourcepassages/dispositions unchanged. Exactbefore/after/history andCRLF/GitLFprovenance retained;twoMinor findings retained.179tests in14.752s/threeprecisionnegatives/reference/sevenchecks/replay pass;allseven outputs/504otherreviews/674rows/44meanings/78findings/1534sources/426captures/70questions/threeflags exact.506reviewed/170ordinary unchanged.139boundedpass/140initialreview andownninegreen sealed;boundedcorrection recheck/final140source review pending. Threeprogram/photoID research holds,eightprivate captures unregistered;no queue consumption or unavailable finding. Candidate-only.
+
+
+Checkpoint142: merchant-code240/securities-payment227/first-contract216 exclusions;509reviewed/167ordinary/1545sources/433captures. Staticweapon/financial/labor scopes and conditional stages retained;no immigration-person eligibility or individual outcome inferred. Sevenoriginals/eightderivatives/16intervals verify.179tests in14.824s/reference/sevenchecks/rawreplay pass;44meanings/sixoutputs/78findings/70questions/threeflags unchanged.141independenttwoP3closure andownninegreen recorded;activepending bookkeeping closed with history.142review/CIpending;forestry25andprogram/photoIDholds/133restrictions/provenance limits retained;candidate-only.

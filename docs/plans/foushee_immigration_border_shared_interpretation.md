@@ -9395,3 +9395,48 @@ citizenship-proof inference. Research incomplete,not unavailable evidence or con
 Continue bounded ordinary/material-source work within unchanged shutdown controls.
 Qualified166/frozen265/unaccepted747,forestry25hold and all reserved gates unchanged.
 Latest exposed weekly usage32%used/68%remaining;no full-corpus or editorial acceptance.
+
+
+### Local successor checkpoint 142: merchant codes, financial payment timing and contracts
+
+House119/2/240 H.R.1181 EH governs firearm-specific merchant codes/enforcement,
+with fraud/compliance exception and no private action. Seven static921definitions
+do not amend921or firearm-buyer/immigration eligibility;the Act separately includes
+antiques even though921(a)(3)excludes them.227 H.R.2478 EH creates an elective
+direct-at-fund contact/payment-on-redemption timing framework,with reasonable-belief,
+age/impairment,notice/review/demand-deposit conditions.15business-day/conditional10-day
+and competent-government extensions remain distinct,not a universal25-day maximum
+or proven exploitation.216 H.R.5408 EH has conditional10-day bargaining,90-day
+optional mediation request,30-day mediation,14-day panel selection and2-year binding
+decision stages,with agreed extensions;no universal130-day contract guarantee.
+Private representation/employee status and healthcare notice cross-reference do
+not grant human immigration/work authorization or decide individual remedies.
+Complete exact EH/material operative contexts read;whole observations/stages retained.
+
+509reviewed/167ordinary remain;44interpreted/227procedural/236excluded/twoexpressive.
+1545sources/433captures/1108interpretedbindings/357extentobjects/603coordinates;
+40episodes/88observations/78findings unchanged. Seven fresh complete captures are
+retained with only named material scopes collectively reviewed;11canonical registrations,
+eight derivatives/16exactintervals verify. Label-bound transfer-agent start avoids an
+earlier25Ecross-reference/paragraph24;no parent-text repair. Prior506reviews/1534sources/
+426captures/44meanings/sixsemanticoutputs/78findings,70questions/threeflags exact.
+179tests in14.824s,reference,sevenchecks and seven-file raw replay pass. Audit128NoDefect/
+8Minor/11Major/1Critical,distinct1Critical/5Major/6Minor preserves history;no fullverdict.
+
+Both140P3findings are independently resolved at141c3b01ce:source/membership/universe/
+audit propagation,original140evidence/before-after/P3history/CRLF-GitLFseals verify.
+Newguard/threecontrollednegatives,two actual140rationale rejection checks,two prior
+auditguards pass independently. Other504reviews/674rows/allsevenoutputs and sources/
+captures/44meanings/78findings/questions/threepackages exact. No newresearch/fresh
+retrieval/full-suite rerun or editorial acceptance. Final140source verdict boundedpass.
+Active140/141pending bookkeeping is closed with before snapshots/seals retained;
+141after-audit cases remain explicitly historical snapshots and Minor findings remain.
+
+141CI37761782368 first-attemptninegreen,fivefeature/three synthetic/one mixed;
+synthetic4e7a9c783e137a1cbe2f5f08bdf7cd7c29b013d5,decodedlogs/checkouts/skips sealed,
+hosted308distinct from local179at141,repair13/20,no retry. LongerM14Hstep succeeded;
+terminalsuccess supersedes earlier eight-green/running snapshot.142needs ownCI and
+bounded independent screening review.133access and138/139provenance limits retained.
+Forestry25and223/283/280program/photoIDholds/eightunregistered privatecaptures unchanged;
+qualified166/frozen265/unaccepted747 and all reservedgates remain. Continue bounded
+ordinary/material-source work under unchanged shutdown controls.
