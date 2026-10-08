@@ -7657,3 +7657,75 @@ counterparts, 216 ordinary screenings and final whole-package comparison. Same .
 owner under explicit 22:39 restart resume; original pause/deadline evidence preserved,
 no current shutdown boundary. No merge/deploy/production/editorial approval/promotion/
 publication. Draft PR198 remains the authorized delivery boundary.
+
+
+### Successor checkpoint 114: eleven original health-conditions references
+
+All eleven current 3014(h)(4) reference identities are followed to complete original
+application/conforming clauses at exact selected extents. The chain identifies
+four actual requirements Acts, with source scopes retained:
+
+| Original authority | Requirements Act | Printed application scope |
+| --- | --- | --- |
+| PL114-10 221(c) | PL113-235 | FY2016 and FY2017 |
+| PL115-123 50901(e) | PL115-31 | FY2018 or FY2019 |
+| PL116-136 3831(d) | PL116-94 | FY2020 and Oct 1-Nov 30, 2020 |
+| PL116-159 2101(d) | PL116-94 | Oct 1 through Dec 11, 2020 |
+| PL116-215 1201(d) | PL116-94 | Dec 11-18, 2020 |
+| PL116-260 BB 301(d) | PL116-94 | FY2021-2023 |
+| PL118-15 2321(d) | PL117-328 | Section's amendment appropriations |
+| PL118-22 201(d) | PL117-328 | Section's amendment appropriations |
+| PL118-35 101(d) | PL117-328 | Section's amendment appropriations |
+| PL118-42 G 101(d) | PL117-328 | Section's amendment appropriations |
+| PL118-158 3101(d) | PL117-328 | Section's amendment appropriations |
+
+Every application clause retains PHSA 330-340 program-fund context. Current continuing
+direction remains alongside dated original scopes; no expiry, erased date, new
+appropriation total, unrestricted medical use or universal/current individual rider
+application is inferred. December 11 touching/overlap and whole-section 3831/2101 versus
+subsection reference forms remain literal. Historical replacement/conforming and
+punctuation-repair directives do not create extra retired current authorities.
+Original 3101 division-G clarification and exact EH additional division B 2101(d) remain
+distinct from the current 2024 eleven-list baseline. Underlying requirements unfinished.
+
+Ten new selected sources/bindings/member references/coordinates and nine captures;
+registered 11842/118158 originals reused. New full 116260 supplies BB health context
+beyond earlier DHS-only capture without changing its governed extent. No whole-act
+review claimed. Four requirements Acts' material health-program/HHS/general rules
+remain executable research; private 117328 remains unregistered pending that review.
+
+160 focused tests pass in 13.027 seconds, reference/seven semantic checks pass, seven
+files replay byte for byte, two guards pass/twenty qualifier mutations fail once each
+with zero errors. Prior 1,405 sources/39 other meanings/70 questions/132 test methods/
+374 manifest rows/older receipts/protected code, both compact copy/recorded choices,
+counting/eligibility and compiled graph unchanged. Raw/full-text/governed hashes,
+ten complete extents, eleven-row chain and both-member/detail/compact propagation
+inspected. Final diff reviewed; tests are mechanical evidence, not semantic truth.
+Core 010bce4cba4fe11c01c8e083d53aa4d20d117ae46cf30a1aa0e4f5dcf31c989b;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,415 sources/1,013 bindings/383 captures/294 extent objects/478 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two
+expressive; 216 ordinary unfinished, three partial packages, 70 separate questions.
+37 episodes/80 observations/72 findings; historical severities unchanged; readiness/
+publication false, final verdict null. Q68/Q69/Q70 remain separate and unresolved.
+
+New final independent source 109/110 and both 112 scopes are clean: full source/
+propagation/raw/seal/qualification checks and bounded guards. 112 mechanics preserves
+127 prior methods; 24 independent mutations fail, distinct from owner 155/full replay.
+Supervisor reports both bounded lanes through 112 complete; supplied detailed scopes
+are sealed in docs/review_packets/immigration_checkpoints109_110_112_independent_review_completion.json.
+No independent full pipeline/replay/generator, owner-private archives, legal/individual
+application, package/domain acceptance or publication. 113/114 remain separately pending.
+
+Own exact 113 run 37707335237 terminal nine green; five feature-pinned/three synthetic/
+one mixed, synthetic 97eee670150d008d54e695cc8dc78e6399fc1e13. Hosted aggregate 287 differs from owner 158 at 113/160
+here. Nine owner-read logs/actual checkouts/counts/hashes sealed in
+docs/review_packets/immigration_delivery_checkpoint113_ci.json. No retry needed;
+earlier 111 failure/single-job recovery preserved unchanged. 114 requires own pushed-head CI.
+
+Continue material requirements in PL113-235, PL115-31, PL116-94 and PL117-328 at exact
+program/HHS/general scope before any full conditions application. Then State/migration/
+refugee, supplementary/other DHS/counterparts, 216 ordinary screenings and whole-package
+comparison. Same .w/ib owner under explicit 22:39 restart resume, original deadline/
+pause evidence preserved and no current shutdown boundary. No merge/deploy/production/
+editorial approval/promotion/publication. Draft PR198 is the authorized delivery boundary.

@@ -18,6 +18,48 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_health_reference_chain_keeps_four_requirements_acts_and_dated_scopes(self):
+        action = getattr(self, 'hr1968_health_chain_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The complete eleven-reference health-conditions chain', 1)[1]
+        for qualification in [
+            "continuing direction remains alongside each source's printed fiscal-year, period or amendment-appropriation scope",
+            'FY2016 and FY2017 subject to PL113-235 requirements',
+            'FY2018 or FY2019 amounts and PL115-31 requirements',
+            'four subsequent selected application clauses name PL116-94 requirements',
+            'FY2020 and October 1-November 30, 2020',
+            'October 1 through December 11, 2020',
+            'December 11-18, 2020',
+            'division BB 301(d) retains FY2021-2023',
+            'five later original application clauses point to PL117-328 requirements',
+            'no additional fiscal-year restriction is inserted into these (d) clauses',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl114-10-sec221-health-conditions-reference',
+                         'govinfo:pl115-123-sec50901-health-conditions-reference',
+                         'govinfo:pl116-260-divisionBB-sec301-health-conditions-reference',
+                         'govinfo:pl118-42-divisionG-sec101-health-conditions-reference'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_health_reference_chain_keeps_baseline_eh_and_unfinished_requirements(self):
+        action = getattr(self, 'hr1968_health_chain_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The complete eleven-reference health-conditions chain', 1)[1]
+        for qualification in [
+            'historical replacement directive is not an additional current h4 authority',
+            'printed touching/overlapping December 11 boundaries',
+            'whole-section versus subsection reference forms are preserved',
+            "earlier unqualified 'Consolidated Appropriations Act, 2024' name",
+            'division-G clarification',
+            'EH addition is distinct from the eleven-authority current-2024 baseline list',
+            'four actual underlying requirements Acts, PL113-235, PL115-31, PL116-94 and PL117-328',
+            'remain executable research',
+            "without expanding that old governed source's extent",
+            'all 70 application questions remain unchanged',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_medical_grants_keep_source_purpose_and_complete_authorities(self):
         action = getattr(self, 'hr1968_medical_action', None)
         if action is None:
