@@ -9053,3 +9053,56 @@ Continue coherent ordinary batches and separate166 own-June baseline/forestry25o
 charter/material packages. Watcher deadline08:42:21.249EDT,stop large08:12:21,wrap08:27:21,
 marker08:37:21; draftPR198only and all reserved gates remain. Finaldiff/seals checked
 before delivery. All70questions and threepartialpackages remain unfinished.
+
+
+### Local successor checkpoint 135: own-June S.331 proposal and bounded review closure
+
+Roll166 remains frozen as exact_action_ineligible. A separate source-mapped authoring
+proposal now compares complete S.331 ES with its June12,2025 baseline. PublicLaw119-4,
+enacted March15,section3105 replaces March31 with September30,2025, effective as if
+included in PublicLaw116-114. Existing temporary control therefore continues at the
+June question; proposed statutory coverage has no such temporary endpoint but retains
+its own definition/forms/exceptions. No temporary-order repeal/replacement,first-ever
+class control,identical chemical-set or July-public-law baseline is inferred.
+
+The proposal preserves source802-to-Schedules-to-INA conditions, BOTH governmental
+trafficking thresholds independently of recipient knowledge, offense/admission versus
+conviction distinctions, waivers, admitted-alien/removal-order scope and whole-bill
+research/technical/rulemaking/penalty/applicability provisions. H.Res.489section4and
+Clerk bind the June whole passage; no February rule/report/certification passages are
+carried into its operative claims.15 existing source objects/20 claims,zero acquisitions
+or canonical registrations. The DOJInspectorGeneral research report is separately
+stated. FousheeYea/MassieNay preview derives from their exact recorded observations;
+separate S.331 episode, no cross-bill trajectory or component stance.
+
+The existing IR preparation API compiles six private preview outputs; same-platform
+raw replay matches and both members' detail/qualifications are inspected. The REAL
+canonical membership gate rejects this unaccepted166proposal. All five canonical
+inputs/seven generated outputs remain raw-byte exact;43meanings/76findings/494reviews/
+182ordinary/1505sources/415captures/70questions/threepartialpackages unchanged. The
+proposal is routed for separate review before any166change; no fresh S.331/Clerkraw
+equivalence or full JuneRecord acquisition is claimed. ExistingES/Clerk/adoptedrule
+and dated witnesses bind this bounded research proposal.265and747 remain frozen/
+unaccepted; no new architecture or general criminal-law domain rule.
+
+Incoming132recheck independently resolves the common-chapeau P3 in its bounded scope,
+including both qualification levels, member details, before/after/seals, four omission
+negatives and rejection of actual131actions/observations. Historical Minor finding/
+assessments and130evidence remain.132ordinary source pass records123/237Clerkrawmatches,
+195rawdrift with matchingmetadata/totals, and the independently read123adoption bridge
+atPDFH2953/page27 absent from the governed excerpt.133bounded sealed-source semantic/
+mechanical review passes:14cachedsourceobjects/11extents match pinnedHealth. Fresh1608
+rawmatches;286/287Clerkmetadata/memberrows/totals verify with rawdrift. Remaining
+primary freshraw andClerk300 were NOT independently verified. That worker stopped
+after two approval-review retrieval rejections; noalternatefetch/orphanprocess or
+corruption claim. No independent full-suite/replay or editorial acceptance inferred.
+
+177focusedtests13.945s,referencevalidator andsevensemanticchecks pass.134ownCI37736999886
+hasninegreen,5feature/3synthetic/1mixed,decodedlogs/checkouts/skips sealed; hosted306
+distinct fromlocal177,no retry.135requires ownrun. Audit115NoDefect/6Minor/11Major/
+1Critical and distinctfindingcounts remain historical; no finaldomain verdict.
+
+Continue coherent ordinary batches and forestry25originalcharter/materialpackages
+while separate166proposal review is pending. Deadline08:42:21.249EDT,stoplarge08:12:21,
+wrap08:27:21,marker08:37:21; latestweekly29%used/71%remaining. DraftPR198only; all
+acceptance/promotion/publication/merge/deploy/production and reserved gates unchanged.

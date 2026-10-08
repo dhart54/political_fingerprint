@@ -8191,3 +8191,6 @@ Checkpoint133: three exact DHS reporting/task-force/outreach exclusions286/287/3
 
 
 Checkpoint134: three conservation exclusions192/296/297;494reviewed/182ordinary/1505sources/415captures. Scoped battlefield/Foundation/urban references verified against three originals,17 intervals and13 rendered pages; board citizenship remains board-only, matching/authorization distinct.177tests14.401s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/132correction unchanged.132/133ownninegreen sealed;134ownCI pending. Candidate-only; see ordinary_screening_checkpoint134.json.
+
+
+Checkpoint135: source-mapped166ownJuneS331proposal withSeptember30temporarybaseline; canonical166/265remainfrozen.15sources/20claims, sixprivateIRoutputs/replay andrealmembership-gate rejection pass; allcanonicalfiveinputs/sevenoutputs/43meanings/76findings/counts unchanged.177tests13.945s/reference/sevenchecks pass.132commonchapeau independently resolved in boundedscope;133sealed-source pass with explicit incomplete freshequivalence and stoppedretrieval route.134ownninegreen sealed;135ownCI pending. Candidate-only; see s331_june_candidate_checkpoint135.json and independent132/133receipts.

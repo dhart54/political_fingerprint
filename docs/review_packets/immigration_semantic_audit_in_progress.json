@@ -6781,8 +6781,9 @@
       ],
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
-      "correction_state": "locally_corrected_validated_candidate_only_independent_recheck_pending",
-      "before_authoring_action_sha256": "edd1e84eaf28b60bd2571e6ced7e03e78d0a675edde486f6ac9d036dbc494a4b"
+      "correction_state": "independently_resolved_bounded_recheck_candidate_only",
+      "before_authoring_action_sha256": "edd1e84eaf28b60bd2571e6ced7e03e78d0a675edde486f6ac9d036dbc494a4b",
+      "independent_correction_review_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json"
     },
     {
       "action_id": "house:119:1:33",
@@ -6915,8 +6916,9 @@
       ],
       "membership_and_direction_reversed": false,
       "episode_reaggregation_required": false,
-      "correction_state": "locally_corrected_validated_candidate_only_independent_recheck_pending",
-      "before_authoring_action_sha256": "265e9df88a9018d80c52f0d014d36db757119e250e0277a5070750477a971acb"
+      "correction_state": "independently_resolved_bounded_recheck_candidate_only",
+      "before_authoring_action_sha256": "265e9df88a9018d80c52f0d014d36db757119e250e0277a5070750477a971acb",
+      "independent_correction_review_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json"
     }
   ],
   "noncounting_actions": [
@@ -12676,12 +12678,12 @@
   },
   "checkpoint_validation": {
     "focused_tests": 177,
-    "focused_runtime_seconds": 14.401,
+    "focused_runtime_seconds": 13.945,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "132and133 own nine green with decoded logs/checkout provenance sealed;134 requires own pushed-head run.",
+    "exact_head_ci": "134ownninegreen source/log receipt sealed;135 requires own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -12718,12 +12720,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Three conservation screens; six canonical registrations/three primary acquisitions/17 source coordinates. Existing Foundation board citizenship stays board-only; battlefield authorization/matching and dated statutory scope retained.43 meanings/six outputs/76 findings/70 questions/three partial packages/132 correction unchanged. Candidate-only.",
+    "focused_scope_note": "Own-June S331candidate proposal only,166stillfrozen. Canonical43meanings/sevenoutputs/source/ledger/inputbytes unchanged.132commonchapeau independently resolved in bounded scope;133bounded semantic/mechanical pass with freshraw limits. No editorial acceptance.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint133_ci.json",
-      "receipt_sha256": "5300178c0daa5f539373f7263119c97f72e67400eff80df0058c8abb13a0da48",
-      "head": "3c550f5825102851aa52c041c95fca9889c14954",
-      "run": 37735330764,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint134_ci.json",
+      "receipt_sha256": "dcd5e09bfd76f459d79e65927c05dd30fb688f631072a767bd3043f55b316f6b",
+      "head": "4e8af264f2dde5e1a57a8812bb5ea7c35c1c49c7",
+      "run": 37736999886,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -17046,16 +17048,21 @@
     "finding_id": "IB-AUDIT-TRAFFICKING-COMMON-CHAPEAU",
     "dispositions_counts_directions_unchanged": true,
     "focused_omission_regression_pending": false,
-    "focused_omission_regression_passed": true
+    "focused_omission_regression_passed": true,
+    "independent_bounded_recheck_resolved": true,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json",
+    "historical_finding_preserved": true
   },
   "ordinary_screening_checkpoint132": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint132.json",
     "receipt_sha256": "70ff793ea412621a4fbc01c5ce4d51c94acd0c6c820f046bd573c034f5e25552",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 188,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_scope": "Bounded exact source/semantic/mechanical pass;freshraw limits recorded separately.",
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json"
   },
   "independent_checkpoint130_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint130_independent_review.json",
@@ -17073,9 +17080,11 @@
     "receipt_sha256": "cb2aec710ca83381a944df1c40b2b2bae87b40d30bd512e60e8e7dd4658fc4bf",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 185,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_scope": "Bounded exact source/semantic/mechanical pass;freshraw limits recorded separately.",
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint133_independent_review.json"
   },
   "independent_checkpoint131_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint131_independent_review.json",
@@ -17103,5 +17112,27 @@
     "head": "3c550f5825102851aa52c041c95fca9889c14954",
     "run": 37735330764,
     "successful_jobs": 9
+  },
+  "independent_checkpoint132_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json",
+    "receipt_sha256": "96e9036428fa8ed92a73496cc6e4a29e86bfa4de855fe5d63fc789e6eb17c106"
+  },
+  "independent_checkpoint133_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint133_independent_review.json",
+    "receipt_sha256": "6fd17cb20c142bc4c005a49c2d33680d19cf0dfa292072ad308937dff9855059"
+  },
+  "prior_head_ci_checkpoint134": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint134_ci.json",
+    "receipt_sha256": "dcd5e09bfd76f459d79e65927c05dd30fb688f631072a767bd3043f55b316f6b",
+    "head": "4e8af264f2dde5e1a57a8812bb5ea7c35c1c49c7",
+    "run": 37736999886,
+    "successful_jobs": 9
+  },
+  "s331_june_candidate_checkpoint135": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_june_candidate_checkpoint135.json",
+    "receipt_sha256": "429b828532996392fcfc9acb6c5881af361874b0121f45ba64d8fcc5415c2b5c",
+    "canonical_disposition_changed": false,
+    "independent_review_pending": true,
+    "canonical_membership_gate_rejects_unaccepted_candidate": true
   }
 }
