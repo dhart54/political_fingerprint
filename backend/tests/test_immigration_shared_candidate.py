@@ -18,6 +18,80 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_medical_transfer_keeps_chc_money_distinct_from_assessment_matching(self):
+        action = getattr(self, 'hr1968_source_precision_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        bank = {s['source_id']: s for s in self.values[1]['sources']}
+        source = bank['govinfo:18usc3014h1-h4-2024-health-financing-conditions']['text']
+        for qualification in [
+            'From amounts appropriated under section 10503(b)(1)',
+            'equal to the amount transferred under subsection (d)',
+            'not be less than $5,000,000 or more than $30,000,000',
+            'shall remain available until expended',
+        ]:
+            self.assertIn(qualification, source)
+        self.assertNotIn("assessment-funded medical transfer's", action['meaning'])
+        self.assertNotIn("assessment-funded Domestic Trafficking Victims' Fund health-transfer source", action['meaning'])
+        self.assertIn("medical transfer from CHC appropriations under PPACA 10503(b)(1) into the Domestic Trafficking Victims' Fund", action['meaning'])
+        self.assertIn('health-transfer source in CHC appropriations under PPACA 10503(b)(1)', action['meaning'])
+        self.assertIn("sized by matching the assessment transfer subject to the medical transfer's own annual $5 million-$30 million bounds", action['meaning'])
+        self.assertTrue({'govinfo:18usc3014h1-h4-2024-health-financing-conditions',
+                         'govinfo:42usc254b2b1-2024-chc-transfer-source',
+                         'govinfo:hr1968eh-sec2101a-d-e-health-financing'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_transfer_reprogramming_keeps_authority_money_and_source_years(self):
+        action = getattr(self, 'hr1968_transfer_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced transfer and reprogramming controls', 1)[1]
+        for qualification in [
+            'a transfer made by, or transfer authority provided in, that Act or any other appropriation Act',
+            'Both an enacted transfer and provided transfer authority remain within the exception',
+            'corresponding-account/original-purpose/original-period constraints',
+            'three covered-funding branches',
+            'previous-appropriations funds for agencies funded by that Act',
+            'Treasury-account funds derived from fee collections available to those agencies',
+            'original printed fiscal years are 2015, 2017, 2020 and 2023 respectively, in both subsections',
+            'does not erase those years, declare that every earlier period is now 2025',
+            'All 70 separate application questions',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl113-235-divisionG-sec512-514-transfer-reprogramming',
+                         'govinfo:pl115-31-divisionH-sec512-514-transfer-reprogramming',
+                         'govinfo:pl116-94-divisionA-sec512-514-transfer-reprogramming',
+                         'govinfo:pl117-328-divisionH-sec512-514-transfer-reprogramming'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_reprogramming_keeps_independent_triggers_thresholds_and_deadlines(self):
+        action = getattr(self, 'hr1968_transfer_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced transfer and reprogramming controls', 1)[1]
+        for qualification in [
+            'creates new programs',
+            'eliminates a program, project or activity',
+            'increases funds or personnel by any means for a project or activity whose funds have been denied or restricted',
+            'relocates offices or employees',
+            'reorganizes or renames offices',
+            'reorganizes programs or activities',
+            'contracts out or privatizes functions or activities presently performed by Federal employees',
+            'All seven triggers remain',
+            'separate subsection (b) monetary/percentage threshold is not imported into (a)',
+            'in excess of $500,000 or 10 percent, whichever is less',
+            'including construction projects',
+            'augments existing programs/projects',
+            'reduces by 10 percent funding for an existing program/project/activity or numbers of personnel by 10 percent',
+            'arises from general personnel-reduction savings that would change existing programs/activities/projects as approved by Congress',
+            'All three branches and the distinct personnel and funding reductions remain',
+            'In excess of is not changed to at least',
+            '15 days in advance of the reprogramming or an announcement of intent relating to it, whichever occurs earlier',
+            'written notification to those Committees 10 days in advance of the reprogramming',
+            'no new requirement to obtain committee approval is invented',
+            'No actual consultation, announcement, notification, compliance or violation is inferred',
+            'without a separate transfer/reprogramming policy stance or four additional legislative actions',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_publicity_keeps_two_money_branches_and_presentation_exceptions(self):
         action = getattr(self, 'hr1968_lobby_action', None)
         if action is None:
@@ -76,7 +150,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             'original same-Act 10401(b) substitutions',
             'distinct 2024 Code identity at 42 USC 300u-11',
             'not declared identical or applied to every earlier period/current grant',
-            'not silently substituted for the separate assessment-funded Domestic Trafficking Victims\' Fund health-transfer source, the CHC account or every PHS program',
+            'not silently substituted for the separate health-transfer source in CHC appropriations under PPACA 10503(b)(1), whose transfer into the Domestic Trafficking Victims\' Fund is sized by matching the assessment transfer subject to the medical transfer\'s own annual $5 million-$30 million bounds, or for every PHS program',
             'All 70 separate application questions',
         ]:
             self.assertIn(qualification, text)

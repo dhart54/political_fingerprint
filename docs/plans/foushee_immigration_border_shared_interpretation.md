@@ -7966,3 +7966,134 @@ and final package comparison. Unfinished research is not unavailable evidence. S
 .w/ib owner under successor authorization, no current shutdown boundary; historical
 deadline/pause evidence preserved. No merge/deploy/production/editorial acceptance/
 promotion/publication; draft PR198 remains the authorized delivery boundary.
+
+
+### Successor checkpoint 119: transfer and reprogramming controls
+
+Complete 512/514(a)-(b) now binds four original requirements Acts. Section 512 retains
+the enacted-transfer/provided-authority exception in this or any other appropriation
+Act. Original balance purpose/time remains; no free-standing power or actual transfer.
+Section 514 keeps current-Act, prior-available agency/source-fiscal-year and fee-derived
+money branches; original 2015/2017/2020/2023 tokens remain twice per source. All seven
+structural triggers stay distinct from the three thresholded branches. In excess of
+$500,000 or 10 percent, whichever less, distinct funding/personnel reductions and
+construction context remain. Both subsections retain 15-day consultation before actual
+reprogramming or earlier intent announcement and separate 10-day written notification.
+No committee approval, actual compliance/violation or separate member stance invented.
+
+Four sources/bindings/eight exact original coordinates; zero new captures. Eleven
+governed financing/medical/division/availability witnesses reused. Full original raw/
+text/selected seals and joined extents verify. Complete 512 text matches; complete 514
+structure matches after private annotation/page-marker removal and checked source-year
+substitution only. Original dates/glyphs/annotations/identities remain unchanged. No
+current-year substitution or full other-transfer/current-grant application is declared.
+
+172 focused tests pass in 13.035 seconds; reference validator/seven semantic checks pass;
+seven generated files reproduce byte for byte. Three new guards pass; 34 transfer qualifier/binding mutations and both actual historical
+source-label negatives fail once each with zero errors. Prior 1,433 sources/39 meanings/70 questions/
+142 prior methods plus one corrected faulty assertion/389 capture and manifest rows/old receipts/protected code preserved. Full
+both-member action/aggregate detail, unchanged compact and choices inspected; counting/
+eligibility/compiled graph unchanged. Diff reviewed; tests are mechanical evidence,
+not acceptance. Core fd61bd31f8e93363a49df499939c97f515345771511298fc757f4657c1636c61;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,437 sources/1,035 bindings/389 captures/316 extent objects/521 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two expressive;
+216 ordinary unfinished/three partial packages/70 questions. 37 episodes/80 observations/
+72 findings; historical severity unchanged, readiness/publication false, final verdict
+null and frozen Q68/Q69/Q70 remain separate.
+
+Own exact 118 run 37712146981 is terminal nine green; nine owner-read raw log hashes,
+counts and checkouts sealed in docs/review_packets/immigration_delivery_checkpoint118_ci.json.
+Five feature-pinned/three synthetic/one mixed; synthetic 3b8e4989f99e2b1be39495ef9d9eb65ebb81c935. Hosted candidate
+counts differ from owner 169 at 118/172 here. No retry; original 111 failure/recovery
+preserved. 119 needs its own pushed-head CI. Independent bounded lanes through 116
+complete within recorded scopes. Final117/118 reviews separately record a P3 source-label
+defect and mechanical pass; see docs/review_packets/immigration_checkpoints117_118_independent_review.json.
+The corrected119 exact head requires bounded independent recheck; no semantic clearance
+from prior propagated bytes/hashes or passing tests.
+
+Next execute a bounded tranche of ordinary screenings from the structured 216-action
+queue, alongside a targeted remaining-health scope pass that identifies material claim
+dependencies before tracing further incorporated authorities. The plan's checkpoint 119
+bottleneck/closure assessment defines the allocation and unchanged completion standards.
+Private 516/517 and section 4 selections remain inspected context; no automatic full
+budget/table/reporting expansion without a material claim dependency. Preserve all
+version differences and unfinished component flags; ordinary research is not unavailable
+evidence. Continue remaining State/migration/refugee/other DHS/supplementary/counterpart
+work and final package comparison. Same .w/ib owner
+under successor authorization, no current shutdown boundary; historical deadline/pause
+evidence preserved. No merge/deploy/production/editorial acceptance/promotion/publication;
+draft PR198 remains the authorized delivery boundary.
+
+
+Bounded P3 correction at119: inherited117/118 medical-transfer labels now state that
+CHC appropriations under PPACA10503(b)(1) fund the transfer into the trafficking fund;
+assessment transfer determines its size, with the medical transfer's own annual bounds.
+Three already-bound primary witnesses support the change; no source/binding/capture,
+queue/direction/eligibility/choice/graph or question-count change. Historical117/118
+commits/receipts and full precorrection119 snapshot remain preserved. The earlier171 pass
+did not clear the semantic defect. The first corrected172 rerun had one existing
+availability wording failure; that guard stayed unchanged and the explicit qualification
+was restored. Final validation supersedes both; test snapshot timing/reconstruction
+evidence is preserved privately. Correction receipt:
+docs/editorial/shared_candidates/house_119_immigration_20260916/hr1968_health_transfer_source_precision_review.json.
+
+
+### Checkpoint 119 bottleneck and claim-dependent closure allocation
+
+The ordinary queue remains at 216 and all three package reviews remain partial while
+checkpoints 112-119 have deepened the incorporated health-source chain. That work improved
+the precision of the selected financing, medical/child-service and qualified funding
+context, but source/extent growth has not itself closed an action or package. The next
+unit of work should advance accounting as well as resolve material dependencies.
+
+The remaining health work materially necessary for the selected Immigration meaning is
+a targeted scope audit of the four requirements Acts' applicable HHS/program/general
+clauses: identify provisions that could change a claimed trafficking/medical recipient,
+permitted service or use of the covered funds, amount/availability, transfer path or
+retained safeguard. Trace a further authority when its operative rule is needed to
+establish or qualify one of those claims. Preserve the literal eleven-reference chain,
+additional exact EH authority, source-year/amendment periods, mandatory-grant versus
+permissive-medical distinction and separate Q68/Q69/Q70 application boundaries. Known
+unreviewed 508-510 clauses concern embryo research, drug-legalization advocacy and final
+individual health identifiers; their specific object/scope must be identified before
+deciding whether a clinical-use statement depends on fetal-research, scheduling or
+identifier authorities. They cannot become an unqualified patient-care prohibition.
+Other unreviewed HHS/program conditions still require this dependency triage; this list
+does not certify them irrelevant or complete.
+
+Context can remain explicitly bounded when no proposed Immigration claim depends on its
+application. Examples include official receptions, scientific-advisory appointments,
+the qualified contractor/veterans reporting route in 511, operating-plan/award
+reports in 516/517, and the full budgets/explanatory-statement tables used to test actual
+allocation differences. Here no actual contract, allocation deviation, reporting result,
+award, compliance finding or current deadline is claimed. The 516/517/section 4 originals
+are inspected privately and show source-year, aggregation and House-versus-Senate
+statement differences; preserve them, but defer automatic candidate expansion or full
+historical-table acquisition. Likewise, the named PPHF transfer identity does not require
+interpreting every PHS program unless a particular program eligibility/use claim is
+made. Previously committed source bindings and bounded qualifications are retained.
+
+The evidence-based stopping criterion for this package component is a source-mapped
+coverage audit showing that every substantive Immigration mechanism in the exact voted
+package has a defensible disposition/meaning, and that every identified dependency
+which could change those meanings has been followed at its operative extent/version.
+All claimed cohorts, money, duration, exceptions, safeguards and choice limits must
+survive the primary-source/full-and-compact comparison. Genuine legal/product questions
+remain separately routed with a safe bounded representation; an unresolved material
+source dependency remains ordinary unfinished work. Remaining State/migration/refugee,
+supplementary/other DHS and applicable counterpart components cannot be silently omitted.
+Only that coverage/accounting evidence, with the established focused/byte/independent
+review gates, can support changing a component-completeness flag. This assessment
+changes no eligibility/counting/readiness/publication rule; all three components remain
+partial and full-record completion still requires the full governed queue and gates.
+
+Recommended execution: deliver 119, then begin up to ten earliest ordinary exact-action
+screenings, taking clear procedural/ineligible controls and source-supported substantive
+candidates through the existing deterministic pipeline. Alternate that work with at most
+one bounded health dependency-triage increment, recording for each remaining reference
+the existing claim it qualifies or its explicit context-only scope. Allocate the next
+two coherent increments primarily to ordinary screenings unless triage exposes a source
+condition that would make a current claim unsafe. Then reassess using actions closed and
+material dependencies resolved, rather than number of citations acquired. This is routine
+prioritization under the existing methodology, not an approval gate or component closure.
