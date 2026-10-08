@@ -11143,10 +11143,234 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:305",
+      "audit_state": "successor_same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "305",
+        "legis-num": "H CON RES 58",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "21-Nov-2025",
+        "action-time": "10:58 AM",
+        "vote-desc": "Denouncing the horrors of socialism"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Not Voting",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete November21,2025 H.Con.Res.58 EH denounces socialism in all forms and opposes implementation of socialist policies in the United States. Historical/political preamble assertions, including Cuba exiling millions, are attributed resolution premises, not independently established population facts or a US admission/refugee/removal/border-policy choice. No US immigration mechanism or beneficiary/status predicate is changed or specifically proposed by the operative expression. Existing exact-action standards do not turn a foreign exile reference into domain eligibility. The resolution is outside the Immigration universe even though generally expressive; no Immigration expressive finding, politician ideology or inferred motive follows. Foushee Nay and Massie Not Voting remain exact observations; Not Voting is resolved non-directional and never recoded as opposition.",
+      "finding": "Complete exact EH expression/internal disclosure action does not independently change an Immigration mechanism. Referenced policies/preamble assertions are not imported as operative meaning. Both Not Voting observations remain non-directional.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "7f5cc006d8ee06ad6d48fafff2327960cdd9d2700fb673a2cff6bfde4c848ddf",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:305",
+          "url": "https://clerk.house.gov/evs/2025/roll305.xml",
+          "governed_bytes_sha256": "1be3e8f1beab005a2270f18512be940cda1f1d5827b530a74ffc70122a68cf5b",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        },
+        {
+          "source_id": "govinfo:hconres58eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres58eh/html/BILLS-119hconres58eh.htm",
+          "governed_bytes_sha256": "11b849716a72300e0b9ca520ad438d348fb9574bbf29daa1ce9b36e28634f37e",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:121",
+      "audit_state": "successor_same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "121",
+        "legis-num": "H RES 1156",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "16-Apr-2026",
+        "action-time": "2:29 PM",
+        "vote-desc": "Expressing support for tax policies that support working families"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete April16,2026 H.Res.1156 EH expresses support for tax policies supporting working families and recognizes asserted tax relief from the Working Families Tax Cuts. Its preamble lists claimed rates/refunds/tips/overtime/vehicle/senior/child/adoption/education/health effects; those claims are not adopted as verified economic outcomes. The operative resolution does not amend tax law, a citizenship/residence/status eligibility test, INA or a border mechanism. Referencing Public Law119-21 and a child credit does not re-enact that law or import the narrower personal-status predicates of separate H.R.1 actions. General domestic-family tax praise supplies no independent Immigration exact-action meaning under the existing boundary. Noncounting exact-action exclusion preserves Foushee Nay/Massie Yea without new component direction, outcome or motive.",
+      "finding": "Complete exact EH expression/internal disclosure action does not independently change an Immigration mechanism. Referenced policies/preamble assertions are not imported as operative meaning. Both Not Voting observations remain non-directional.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "dfab4b2b0afc336da15514a340fb4dd7b5aaf629cf17ecabada3b8a26b37d5a2",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:121:continuation-recapture",
+          "url": "https://clerk.house.gov/evs/2026/roll121.xml",
+          "governed_bytes_sha256": "186a0b53ac2a9a17713b7e643266d0b37e25a7fd5d2b98e0e8a0521d304ef5a7",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        },
+        {
+          "source_id": "govinfo:hres1156eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1156eh/html/BILLS-119hres1156eh.htm",
+          "governed_bytes_sha256": "4591d7e25dd37e391d4c13d934079fc784f1e857bcc51f9366c5fc5c6c3c58da",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:132",
+      "audit_state": "successor_same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "132",
+        "legis-num": "H RES 1182",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "22-Apr-2026",
+        "action-time": "4:39 PM",
+        "vote-desc": "Expressing support for rural communities across the United States as stewards of the environment, major suppliers of the United States energy resources, critical providers of food production and manufacturing capacity, and drivers of national economic stability, and recognizing the work of the House of Representatives"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Not Voting",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete April22,2026 H.Res.1182 EH states that the House, through energy/health/manufacturing/broadband policies, has demonstrated support for US prosperity and especially rural communities. The preamble attributes prior legislation and asserted effects, including fentanyl analogues, Medicaid/CHIP, Public Laws119-21/119-75, foreign pollution and demographic shifts. This resolution does not adopt, amend or extend the referenced laws, re-enact drug scheduling, change an incorporated INA drug predicate, or itself alter personal immigration/benefit eligibility. Operative generalized rural-policy recognition is outside the Immigration exact-action boundary; no parent-measure transfer, verified economic/health outcome or implication that every referenced policy is independently ineligible. The separate pending fentanyl routing is preserved. Foushee Not Voting is resolved non-directional, Massie Yea remains a noncounting observation; no immigration stance or motive inferred.",
+      "finding": "Complete exact EH expression/internal disclosure action does not independently change an Immigration mechanism. Referenced policies/preamble assertions are not imported as operative meaning. Both Not Voting observations remain non-directional.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "0f1e7cdc5d1034b99961cfbe61e5e8b5710558200d0795212a88d85d2c052522",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:132",
+          "url": "https://clerk.house.gov/evs/2026/roll132.xml",
+          "governed_bytes_sha256": "a0bbb8bbc0b261755ef96ee2e6d21063621aa7b74f517cad52fe9b9c7423acb1",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        },
+        {
+          "source_id": "govinfo:hres1182eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1182eh/html/BILLS-119hres1182eh.htm",
+          "governed_bytes_sha256": "4deadbd3c672375f03051793fe91a77fabb516eec95b976668e47b775a654c52",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:233",
+      "audit_state": "successor_same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "233",
+        "legis-num": "H RES 1399",
+        "vote-question": "On Agreeing to the Resolution",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "30-Jun-2026",
+        "action-time": "5:46 PM",
+        "vote-desc": "Directing the Committee on Ethics to preserve and publicly release records relating to monetary settlements involving acts of sexual harassment"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete June30,2026 H.Res.1399 EH directs House Ethics and Congressional Workplace Rights to make specified taxpayer-settlement information public within60days of adoption. Its consolidated named Member/Delegate/ResidentCommissioner list is limited to the specified sexual-harassment/abuse matters resulting in taxpayer payment, with adjacent totals. Separate aggregate categories cover other Member matters, employee sexual misconduct and employee other matters. Paragraph2 classifies a matter as involving sexual misconduct if ANY component did so, regardless of other claim/category labels. Referenced House ruleXXIII clauses9/18 are confined by the printed harassment filter; this action does not amend those standards, create a benefit award, establish personal misconduct findings or alter immigration status/admission/removal/border policy. Internal records/disclosure requirements supply no independent Immigration mechanism. Both Yea observations remain noncounting; no individual allegation, corruption, motive or actual disclosure outcome is asserted.",
+      "finding": "Complete exact EH expression/internal disclosure action does not independently change an Immigration mechanism. Referenced policies/preamble assertions are not imported as operative meaning. Both Not Voting observations remain non-directional.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "898474002a77f65572f9e2815a3ff2d27289bd2c774f6195137b58d4db4d126e",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:233",
+          "url": "https://clerk.house.gov/evs/2026/roll233.xml",
+          "governed_bytes_sha256": "0d745625e13b8b4bb913202927d100aa36ebfa031cf752de40b8ce086813aafc",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        },
+        {
+          "source_id": "govinfo:hres1399eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1399eh/html/BILLS-119hres1399eh.htm",
+          "governed_bytes_sha256": "c7ffbbc87930f16b3b473f82a3e7468556393d9e04740f52422be2225d0a209f",
+          "reviewed_extent": "Complete exact EH text or governed official Clerk question and member observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 96,
+    "No Defect": 100,
     "Minor": 3,
     "Major": 11,
     "Critical": 1
@@ -11208,16 +11432,16 @@
     "procedural_controls_reviewed": 23,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 5
+    "successor_new_exclusions_reviewed": 9
   },
   "checkpoint_validation": {
     "focused_tests": 176,
-    "focused_runtime_seconds": 16.267,
+    "focused_runtime_seconds": 13.991,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "126 terminal nine green with own raw logs/provenance;127 needs own pushed-head run",
+    "exact_head_ci": "127 terminal nine green;128 needs own pushed-head CI",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -11254,12 +11478,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Three exact rule contexts batched; prior41 meanings/six outputs/74findings/469reviews/1463sources/tests/70questions/three partial flags preserved. Complete temporal comparison proposes32/33 without disposition; methodologyCRLF provenance scope qualified with exactGitLF hash. No acceptance.",
+    "focused_scope_note": "Recovered128 four exact EH exclusions, successor primary/source and preservation verification. All41meanings/six outputs/74findings/prior472reviews/1467sources/tests/70questions/three partial flags preserved.32/33 pending,166/265 frozen; candidate-only. Initial NODE_PATH and sandbox fixture failures preserved and resolved without product edits.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint126_ci.json",
-      "receipt_sha256": "1eb935a5b6d466f42d455a2c4a584aefdb6000e25923ba6e1f4360c9e4847345",
-      "head": "1a17ebb770b97f47fd2d9d50012fb0f30a8da36d",
-      "run": 37723102305,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint127_ci.json",
+      "receipt_sha256": "332d93a8bbc80de18fcab6637b95b2ad64e42203d7d917cbd5f5e34127be3477",
+      "head": "4891b9451660fd19a374f73fe5d531c98a48cd0c",
+      "run": 37725564346,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -15155,5 +15379,21 @@
   "independent_checkpoint126_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint126_independent_review.json",
     "receipt_sha256": "6aa515196348e74eb0730869722db833c51e279ed1c6f80ff391d673bdcda6e2"
+  },
+  "ordinary_screening_checkpoint128": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint128.json",
+    "receipt_sha256": "6b01cfb354b20f52fc1253065fee8df87e3d16826c4883be37ace837600d7d13",
+    "same_owner_primary_screenings": 4,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 200,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint127": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint127_ci.json",
+    "receipt_sha256": "332d93a8bbc80de18fcab6637b95b2ad64e42203d7d917cbd5f5e34127be3477",
+    "head": "4891b9451660fd19a374f73fe5d531c98a48cd0c",
+    "run": 37725564346,
+    "successful_jobs": 9
   }
 }

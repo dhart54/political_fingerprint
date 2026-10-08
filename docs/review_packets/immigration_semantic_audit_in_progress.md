@@ -8170,3 +8170,6 @@ remain preserved rather than rewritten as a granted final disposition.
 
 
 Checkpoint127: three batched exact rule contexts206/215/124;472reviewed/204ordinary unfinished.176tests16.267s/reference/sevensemantic/seven-file replay pass;41meanings/six outputs/74findings/70questions/three partial flags unchanged. Fentanyl fifteen-witness comparison/two proposed meanings remain outside canonical dispositions for reserved Fingerprint review.126CRLF label qualified with exactGitLF hash; own126CI ninegreen5feature/3synthetic/1mixed. See ordinary_screening_checkpoint127.json and fentanyl_temporal_comparison_checkpoint127.json for measured throughput, evidence and exact resume; no acceptance.
+
+
+Checkpoint128 local successor: recovered four exact EH exclusions305/121/132/233;476reviewed/200ordinary unfinished.176tests13.991s/reference/sevensemantic/seven-file preserved replay pass.41meanings/six outputs/74findings/70questions/three partial flags exact; Not Voting preserved.127 CI ninegreen5feature/3synthetic/1mixed with decoded log/hash provenance. Initial environment-only failures resolved and retained. See ordinary_screening_checkpoint128.json and living plan for evidence/resume; candidate only.

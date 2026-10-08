@@ -8738,3 +8738,42 @@ Resume: continue next bounded ordinary batch while Fingerprint reviews32/33 prop
 180/182 next complete choices. Same .w/ib owner/currentdeadline none; original deadline and
 terminal evidence preserved. DraftPR198 boundary; no merge/deploy/production/editorial
 acceptance/promotion/publication/methodology or architecture change.
+
+
+### Local successor checkpoint 128: recovered four exact EH exclusions
+
+The local project owner resumed the preserved `.w/ib` after Dylan confirmed sidebar
+placement. Recovery files/snapshots/embedded seals verified before any mutation;
+the old durable task stays stopped. The already-applied128 helper was not rerun.
+Successor primary reconstruction agrees with four candidate exclusions: House119/1/305
+H.Con.Res.58 EH expresses anti-socialism views; House119/2/121 H.Res.1156 EH expresses
+family-tax support;132 H.Res.1182 EH expresses rural-policy recognition;233 H.Res.1399
+EH directs specified internal settlement disclosures, preserving60days/taxpayer-payment
+filters/any-component classification. Premises and prior policy references do not
+change a US immigration mechanism. Historical/policy premises are attributed, not
+adopted as outcomes. Foushee132 and Massie305 Not Voting stay resolved non-directional.
+Complete four previously governed Health EH sources reused unchanged; four new
+Immigration source registrations, zero new acquisitions/capture coordinates.
+
+676inventory/476reviewed/200ordinary unfinished;41interpreted/219procedural/214excluded/
+two expressive.1471sources/1044interpreted bindings/407captures/334extent objects/
+548coordinates;38episodes/82observations/74findings. All prior472reviews/1467sources/
+41meanings, six semantic/presentation outputs, testfile,70question objects and three
+partial flags remain exact. Seven canonical files equal preserved128 replay bytes;
+only proof source-capture hash changes.176tests13.991s/reference/sevensemantic checks
+pass. Initial176-test run13.709s failed only missing established NODE_PATH; restored.
+Pipeline sandbox fixture errors persisted with workspace TEMP, then same command
+passed outside sandbox without product/test/ACL edits. Failures retained in receipt.
+127 own CI37725564346 terminal ninegreen: five feature-pinned/three synthetic/one
+mixed; synthetic83a37feb919728d07575fca10099a13ea5965955. Decoded connector logs,
+checkout transitions, hosted305 and skip scope read and sealed; no retry.128 needs
+its own pushed-head CI.127 exact GitLF methodology qualification rechecked.
+
+This is candidate-quality successor verification, not independent editorial
+acceptance or full-corpus audit.32/33 remain pending and uncounted for reserved
+domain routing;747 unaccepted,166/265 frozen. Forestry25/23private originals and
+charter/material references, H.R.2483 and H.R.3944 exact package choices remain work.
+Continue coherent3–5 ordinary batches with per-action complete exact-primary reads
+and one consolidated validation/delivery, keeping novel/disputed meaning separate.
+No current deadline. DraftPR198 only; no merge/deploy/production/editorial acceptance/
+promotion/publication/security/schema/destructive/methodology/architecture changes.
