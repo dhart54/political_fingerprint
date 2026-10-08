@@ -5,9 +5,9 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint161:559 reviewed/117 ordinary pending;44 meanings/78 findings.
-Five regulatory candidate exclusions; allholds/70questions/3packages/252/S1318 retained.
-160CI9green;160 review unreceived/161 review pending, no acceptance.
+Latest candidate checkpoint162:564 reviewed/112 ordinary pending;44 meanings/78 findings.
+Five land/resource exclusions; allholds/70questions/3packages/252/S1318/4090pending.
+161CI9green;peer160/161unreceived/162pending, no acceptance.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -10661,3 +10661,75 @@ checkout transitions verified; synthetic SHAce6b7d5f0cc640c91a65ef3c2d1c0790be45
 Hosted308 and repair13of20 are distinct from owner179 focused tests.
 160 independent review not yet received;161 review pending. No editorial
 acceptance, publication, promotion, production, merge or retired controls.
+
+## Checkpoint162: five land/resource screenings
+
+House119/1/334/358 and119/2/164/196/223 receive noncounting candidate
+Immigration-domain exclusions. HR3668 changes FERC coordination for defined
+gas-project authorizations, including sole lead agency, participating-agency
+procedures and legally necessary supplemental-review exception. It removes401
+certification for defined authorizations while preserving qualified proposed
+water conditions; no allwaterlaw repeal or automatic permit. Deadlines retain
+Federal-law and concurrent-review exceptions. Remote approval requires later
+onsite verification; personnel-security consultation is not a personal
+immigration-status predicate. Commodity import/export and national-origin rules
+retain their natural-gas referent. FousheeNay/MassieNay remain exact labels.
+
+HR1366 permits reasonably necessary additional millsites under approved plans,
+at most5acres each, without mineral rights or patenting. Closed/withdrawn lands,
+existing claims, regulation and savings clauses remain explicit.30USC22's
+citizen/declared-intention baseline stays unchanged; the bill does not grant
+citizenship, admission or individualized claimant eligibility. The new fee-funded
+account is limited to qualified1245 reclamation with allocation/transfer and
+settlement-obligation exclusions, not an immigration-specific fee or benefit.
+No current fee/patent/individual claim or empirical outcome adjudication.
+
+HR1346's whole passed text includes qualified fuel-waiver/RFS/refinery-credit/
+exemption/label-storage commands. Its75,000barrel company definition differs
+from the refinery baseline.2028 termination/reduction/reallocation provisions,
+permanent loss after threshold, qualified2016-2018 credits, conjunctive at-risk
+conditions/attestation/public disclosure, calendar-year duration and energy-
+equivalent cap remain distinct. The reference to enactment of the Farm, Food,
+and National Security Act2026 stays literal; no silent rename, actual trigger,
+individual relief or price/environment/health prediction. Mining/fuel Nay/Yea
+labels concern the recorded passage choices, not every component preference.
+
+HR2860 defines Commission composition, Washington residency/employment limits,
+Tribal representation/consultation, limited NOAA liaison, advisory duties,
+reporting/cooperation and seven-year sunset. Canadian-border geography and
+recognized-Tribal-government definitions are not personal admission/status.
+No Commission regulation/implementation power is inferred. OriginalTitleIV is
+captured;1998Report contents/oldmembership are not reconstructed or certified.
+S629 binds unchanged SenateMarch24 ES to HouseJune23 suspension-and-pass,
+separate from HR2860's suspension-as-amended EH. ECP replacement75percent
+versus repair/restoration50percent advances,180day returns, qualified wildfire
+expansion and EFRP up-to75percent advance preserve their separate predicates
+and existing forest/treecover/costshare limits. No actual disaster cause,
+funding/payment guarantee or individual programme eligibility. Both conservation
+rows are FousheeYea/MassieNay; no motive or vote recommendation.
+
+564/676 reviewed:44 interpreted,227 procedural,291 excluded,2 expressive;
+112 ordinary pending.1747 sources/565 registered captures/1108 interpreted
+bindings/511 extent objects/916 coordinates.40 episodes/88 observations/
+78 findings,70 questions and3 packages unchanged. Audit183NoDefect/8Minor/
+11Major/1Critical preserves history and final_verdict null. All priorholds,
+252directborder and S1318FISA/CBDC remain pending.4090 also stays ordinary
+pending: captured mappingcitation311 versus discovered40201/31l remains
+unrepaired/unadjudicated, no exclusion or new meaning authored for that action.
+
+Five verified fresh officialHTML raw/text captures, ten derivatives/fifteen
+intervals and19 full named claim passages verified; reused governed witnesses
+match. Two wrong Codepaths returnedHTTP200PageNotFound and were isolated as
+non-evidence before importing; correct5131chapter45 used. No freshPDF/image,
+wholeparent/latestlaw/1998Report/individual project, claimant or refinery
+certification.179 focused tests pass in14.819s; seven semantic
+checks/reference/replay pass. Seven outputs match replay exactly and six
+semantic outputs are unchanged. Final diff and audit guards follow. Established
+Windows environment retained; no security/configuration/ACL/dependency changes,
+no importer replay or routine timing instrumentation.
+
+161CI37857838982/run647: all nine jobs pass on attempt1, five feature-pinned,
+three synthetic-merge and one mixed repair. Decoded logs/checkouts sealed;
+syntheticSHA1ba6213bc17a061bf7c1adec64e41d52595e94a4. Hosted308/repair13of20 remain distinct
+from owner179 tests. Peer160/161 review unreceived;162 review pending. No
+editorial acceptance/publication/production/merge or retired controls.

@@ -17516,10 +17516,374 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:334",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "334",
+        "legis-num": "H R 3668",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Dec-2025",
+        "action-time": "10:33 AM",
+        "vote-desc": "Improving Interagency Coordination for Pipeline Reviews Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR3668 would make FERC the soleNEPAlead for qualifiedNaturalGasAct3/7authorizations/certificates, withlaw-limiteddeference/participatingagency30/45/60dayprocedures/nonparticipatingcommentlimits and a legallynecessary/newinformation exception for supplementalreview. It removes401certification for definedauthorizations while States/interstateagency can propose waterconditions subjectFERCnecessity; no allCWA/Stateauthority repeal.90daypostNEPA schedule hasFederal-lawexception, concurrentreview impairmentnotice and5dayfailure notification, not automaticapproval. Remote-data conditionalapproval requires lateronsiteverification; optionalapplicant-fundedthirdpartyreviews, publictracking andTSAconsultation include pipelinepersonnelsecurity but do not create a nationality/status/admission test. Complete717b commodityimport/export/nationalorigin rules concern naturalgas, not personalentry;717f and717n qualifiedprojectreview baselines remain distinct. No actualpermit/safety/speed/economic/environment prediction orindividualproject/currentlawjudgment. ExactFousheeNay/MassieNay labels andpassed/suspension stages retained, notpreferences foreachcomponent/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved; no newsharedmeaning/question/partialpackage ormethodology.",
+      "finding": "Exact passed land/resource mechanisms and material baselines. Existing mining citizenship/declaration criteria unchanged; land entry/goods import/Commission residency/Canadian geography preserve own referents. Pipeline water exceptions, fuel/refinery predicates and distinct conservation advances retained, no individuallegal/economic/environment/application inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "fd556ceb51eb65f6c5151362ecc09aeeb359a51dabb9230d3fef095d51322dc2",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:334",
+          "url": "https://clerk.house.gov/evs/2025/roll334.xml",
+          "governed_bytes_sha256": "db3cbe4ea6aa372207d602c6739b8d7a7bfdeccc538d6258d9a15004faf0f1af",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:hr3668eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr3668eh/html/BILLS-119hr3668eh.htm",
+          "governed_bytes_sha256": "a84b897eadda50034e795330830c34f4d4c941ffc798ce5904297446d6b4ea4d",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:15usc717n-abc-material162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717n.htm",
+          "governed_bytes_sha256": "e5b9f2c6a8f380083531698c737b4d8387ad8264d48436709ccfd659cf877906",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:15usc717b-ad-material162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717b.htm",
+          "governed_bytes_sha256": "b1ae7e8c172888c8a12ccc285382e2400c7f111ed71966b4aeb38b95637ca7bf",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:15usc717f-ce-material162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap15B-sec717f.htm",
+          "governed_bytes_sha256": "8f71732e5519121b5e56320009a9fdd3193af55152be53a281cc9f734980fa46",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:33usc1341-a1d-material162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title33/html/USCODE-2024-title33-chap26-subchapIV-sec1341.htm",
+          "governed_bytes_sha256": "8a99be261f2b9be3960d593c9406711b41f58d93f5b102b936a30fac41aa2f6a",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:358",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "358",
+        "legis-num": "H R 1366",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "18-Dec-2025",
+        "action-time": "2:45 PM",
+        "vote-desc": "Mining Regulatory Clarity Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR1366 adds30USC42(c) multiplemillsite locations reasonablynecessary to claimoperations under approvedplans, withinpubliclandsopen tolocation; eachsinglemillsite atmost5acres, no conveyedmineralrights/patenting/automaticapproval. Plan/Operations/Operator/Person predicates describe miningactivities andentities, not immigrationentry. Savings retainexistingclaimrights/validity, withdrawn/closedland limits/Federalregulation/extinguishedrights and11842section404nonmodification, not allpublicland oralllegalbarrier removal. Explicit30USC22 baseline limits mining exploration/purchase toUScitizens anddeclared-intention persons; thisbill doesnotamend thatstatuscriterion, grant citizenship/naturalization/admission, or establishindividualclaimanteligibility. Generalresourceoperations expansion for existingproprietors is not an immigration-specific programme. NewTreasuryfund receives specifiedadditionalmillsite maintenancefees and expenditureswithoutfurtherappropriations onlyforqualified1245hardrockreclamation;50/50StateTribal/Federallandallocation/authorizedtransfer/settlementobligationexclusion remain.28fclericalchanges/feeconditions notnewimmigrationfees. No allclaim/proprietoreligibility/patentmoratorium/latestfee/application adjudication orempiricalenvironmentalbenefit. ExactFousheeNay/MassieYea labels andpassed/suspension stages retained, notpreferences foreachcomponent/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved; no newsharedmeaning/question/partialpackage ormethodology.",
+      "finding": "Exact passed land/resource mechanisms and material baselines. Existing mining citizenship/declaration criteria unchanged; land entry/goods import/Commission residency/Canadian geography preserve own referents. Pipeline water exceptions, fuel/refinery predicates and distinct conservation advances retained, no individuallegal/economic/environment/application inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "c95741f8b7d1f0928d95a88bda2ac733c77afe37ca4d4ff3f32a75fddc1ebf49",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:358",
+          "url": "https://clerk.house.gov/evs/2025/roll358.xml",
+          "governed_bytes_sha256": "1804d793bc2bf3542736823e3c4aa52c2c17ec6996e4b51aad088edbe7c06baa",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:hr1366eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1366eh/html/BILLS-119hr1366eh.htm",
+          "governed_bytes_sha256": "80038e4b4182a69b29c3e173a916107f277caaefab74cb5a1af5b4d485373c07",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:30usc22-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec22.htm",
+          "governed_bytes_sha256": "7ba076635df5962f897b307f11ef5243306ab17ea4a88748394898cf88418f77",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:30usc42-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec42.htm",
+          "governed_bytes_sha256": "dcd3cad57a9c8fe431c5b744e6af83e7653ddedfdd79e8469090dbb2d533d7f6",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:30usc28f-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap2-sec28f.htm",
+          "governed_bytes_sha256": "91badbc51021487dc2ee97899baacca6da1bdeee5e8349f476d9da29dbf340e7",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:30usc1245-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title30/html/USCODE-2024-title30-chap25-subchapIV-sec1245.htm",
+          "governed_bytes_sha256": "1a21664e338378d0964d478b5ed36cbec03416b941f65f276f4cd406a0ed65d9",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:43cfr3809-5-operations-person162",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title43-vol2/pdf/CFR-2025-title43-vol2-sec3809-5.pdf",
+          "governed_bytes_sha256": "1544bd989935fbbaa59a8425d1704891527bcf3bd24b56028cdd76c2ae9784fd",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:164",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "164",
+        "legis-num": "H R 1346",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "13-May-2026",
+        "action-time": "6:26 PM",
+        "vote-desc": "Nationwide Consumer and Fuel Retailer Choice Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR1346 passedtext goesbeyondethanol:titleonlychoice not enough. It expands10percent to10-15percent fuelwaiver, conditionalcommerce andapplicableRVPrequirements; sourceexpressly keys certainState-notification rules to enactmentofFarmFoodNationalSecurityAct2026, notsilently renamed to thisbill or treated alreadyenacted.2025aggregatecompanyfuelproduction75000barrel/day definition differsfromexistingper-refinerycrude-throughput definition.2028smallrefineryextensiontermination/petitioncutoffs/savings, company75percentobligationreduction/permanentlossafterproductionthreshold, qualified2016-2018creditreturn/EMTS, no2028onwardreallocation and18monthlabel/storage rulemaking remain distinct. At-riskqualifyingrefinery exemption requires conjunctiverisk/costsolecause/unchangedownership+officerattestation, publicdisclosure/90daydecision, onlynecessarycalendar-yearrelief andenergy-equivalent150milliongallon2028cap withlaterproportionaladjustments; qualifiedreceivedextension OR10000barrelthroughputplusproductionwindow alternatives preserved. No allrefinery/RFS repeal/automaticexemption/guaranteedcredit/physicalfuelvolume/personalbenefit oractualprice/health/envjobsprediction. Fuelimports/companyownership/UScommerce predicates notpersonalimmigrationstatus oradmission; individualcredits/refineries/courtremedies/latestregulations/crossAct-enactment applicability unadjudicated. ExactFousheeNay/MassieYea labels andpassed/suspension stages retained, notpreferences foreachcomponent/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved; no newsharedmeaning/question/partialpackage ormethodology.",
+      "finding": "Exact passed land/resource mechanisms and material baselines. Existing mining citizenship/declaration criteria unchanged; land entry/goods import/Commission residency/Canadian geography preserve own referents. Pipeline water exceptions, fuel/refinery predicates and distinct conservation advances retained, no individuallegal/economic/environment/application inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "5ebee6c349aac4aac906a73b57f882f4592e467c574d55ac607f17387f46479e",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:164",
+          "url": "https://clerk.house.gov/evs/2026/roll164.xml",
+          "governed_bytes_sha256": "6264e6d8d963c8d61ef7f9f3f777e65d5adfbdaa9bf5781499f4bafb7d12eeac",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:hr1346eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1346eh/html/BILLS-119hr1346eh.htm",
+          "governed_bytes_sha256": "1ebc3d7846984fdece9d8cab922211df39d8ddca2e735a1b7e939006a09609f7",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:42usc7545-material162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7545.htm",
+          "governed_bytes_sha256": "a2888e246f6811eefd2c2e5ac5e26c64cc5fda50d7a35137a81ae013c9e6c906",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:196",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "196",
+        "legis-num": "H R 2860",
+        "vote-question": "On Motion to Suspend the Rules and Pass, as Amended",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "3-Jun-2026",
+        "action-time": "4:54 PM",
+        "vote-desc": "Northwest Straits Marine Conservation Initiative Reauthorization Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "CompleteHR2860 changesoriginalTitleIV403-405 andadds406sunset while retains402commissionestablishment. New14member composition includes7countyrepresentatives,2InteriorTribalinterestappointments,PugetSound and4WAresident/non-government-employed members (highereducationexception), withqualifiedadditionalcommitteemembers. Residency is commissionservicequalification, not immigrationstatus. NOAAemployee liaison/nonvotingmeetingrole/limitedduties, cooperativeagreements, marineconservationadvice/data/reportbenchmarks and7yearafterenactmentsunset remainqualified. NoCommissionauthority to issueregulations/implementFederallaw, and Tribalconsultation/treatyright safeguards persist. Canadianborder definesmarinegeography/forumwithGovernmentCanada, notpersonalbordercontrol/admission or internationaltreatychange. Complete5131publication baseline identifiesrecognizedTribalgovernments, no individualizedTribal/ancestry/immigrationstatus finding. Original1998Report remainsreferencedinbaseline but itscontents/oldmemberqualifications uncharacterized; no reconstruction/alloriginalprogramme or actualconservation/funding guarantee. ExactFousheeYea/MassieNay labels andpassed/suspension stages retained, notpreferences foreachcomponent/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved; no newsharedmeaning/question/partialpackage ormethodology.",
+      "finding": "Exact passed land/resource mechanisms and material baselines. Existing mining citizenship/declaration criteria unchanged; land entry/goods import/Commission residency/Canadian geography preserve own referents. Pipeline water exceptions, fuel/refinery predicates and distinct conservation advances retained, no individuallegal/economic/environment/application inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "9d3e13012ccd6a2c8472d45688d6f46f53d0172fefe122b6adffa08203251990",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:196",
+          "url": "https://clerk.house.gov/evs/2026/roll196.xml",
+          "governed_bytes_sha256": "4405e2f4c06d566ef25c372b7de5899a6ee3468cd65a50982328d6c013438a60",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:hr2860eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2860eh/html/BILLS-119hr2860eh.htm",
+          "governed_bytes_sha256": "4743c2b61f947252c09b52ce370355ee301b595499b6f340a60e80392b02f16a",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:pl105384-titleIV-original162",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-105publ384/html/PLAW-105publ384.htm",
+          "governed_bytes_sha256": "a44f7a2d91075bfb1a870db9cc6a7572fe47d06a4ee6a4372edc75444b1b50a2",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:25usc5131-operative162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/html/USCODE-2024-title25-chap45-sec5131.htm",
+          "governed_bytes_sha256": "0b376ce5b1dbcc4dd85736c3bc82304a0cc2aed8fa053f887b0d211f526e52bf",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:223",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "223",
+        "legis-num": "S 629",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "23-Jun-2026",
+        "action-time": "6:58 PM",
+        "vote-desc": "Emergency Conservation Program Improvement Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "S629SenateMarch24,2026ES is the complete Senatepassedversion before HouseJune23 unamended suspension-and-pass question, not an invented HouseamendedEH orwholepreviousActs. Wouldexpand2201advanceoption beyondfencing toSecretarydeterminedimmediatefarmland/conservationstructure repair/replacement/restoration: replacement75percent versusrepair/restoration50percentcost beforework, notallpayments75percent; returnperiod60to180days withreasonabletimeframe. Wildfiredefinitions include nonnatural ignition when damagespreadduetonaturalcauses, and FederalGovernment-caused fires, noteverymanmadeaccident/causefinding.2206privateforest emergencyrestoration gets upto75percentadvance and180dayreturn, alongsideexistingtreecover/qualifiedemergencymeasure/overallcostshare/authorization constraints. No actualdisaster causality/blame/appropriation/paymentapproval orapplicationeligibility finding. Agriculturalproducer/privateforestownership/disasterland predicates not a personalimmigration/admission/status or immigration-specificfund criterion; currentUSDA/allincorporatedregulatoryeligibility unadjudicated. ExactFousheeYea/MassieNay labels andpassed/suspension stages retained, notpreferences foreachcomponent/enactment/motive/causality. Establishedmember-neutral functional-domain candidate exclusion, noncounting/unapproved; no newsharedmeaning/question/partialpackage ormethodology.",
+      "finding": "Exact passed land/resource mechanisms and material baselines. Existing mining citizenship/declaration criteria unchanged; land entry/goods import/Commission residency/Canadian geography preserve own referents. Pipeline water exceptions, fuel/refinery predicates and distinct conservation advances retained, no individuallegal/economic/environment/application inference.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "d6d3d41c5d3a3456dd13879f2cf12b081f25847bfc72ff822fda390b9e9e1adc",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:223",
+          "url": "https://clerk.house.gov/evs/2026/roll223.xml",
+          "governed_bytes_sha256": "33fa3432329e81333e8897c33d6bab2b64d57c879688c0ed6a0fbad0e9f6cf3a",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:s629es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s629es/html/BILLS-119s629es.htm",
+          "governed_bytes_sha256": "f87f484584e7a73b9dcd89aebc0b81ca7d6498488840c17fbe1012d86b3e5ccb",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:16usc2201-operative162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2201.htm",
+          "governed_bytes_sha256": "fbed9ec7f26bf140d6566bef92e4187c430801fb10db190e0dbce11077c76f5b",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        },
+        {
+          "source_id": "govinfo:16usc2206-operative162",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap42-sec2206.htm",
+          "governed_bytes_sha256": "affc521ab3be02e14b587c7788eba9b018caec19193ef71d9e914ab23c77c771",
+          "reviewed_extent": "Complete exactEH/unchangedES or namedmaterialCode/originalTitleIV/regulatorydefinition. Literal crossActenactment/citizenship qualifications retained; notallparents/latestlaw/1998Report/individualapplications, freshHTMLclaims bounded."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 178,
+    "No Defect": 183,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -17581,17 +17945,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 82,
+    "successor_new_exclusions_reviewed": 87,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.708,
+    "focused_runtime_seconds": 14.819,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "160 first-attempt9green;5feature/3synthetic/1mixed decodedcontexts.161 needs own pushed-head run.",
+    "exact_head_ci": "161 first-attempt9green;5feature/3synthetic/1mixed decodedcontexts.162 needs own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -17628,12 +17992,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint161 five exactpassed regulatory exclusions:1191/360 and1192/38/76/306/311.559reviews/117ordinarypending;1728sources/546captures/501extents/901coordinates.8freshofficialHTMLraw/text captures/9derivatives/16intervals/21completeclaimpassages verify. WolfMexicanexception/landexistingrights/productandpartialemissionqualifications retained. EPA nonrule/HouseproposedCRA positions unadjudicated, no actuallegal-effect claim or current-law/application certification.179focused/7semantic/reference/replay pass;160CI9firstattemptgreen,160reviewunreceived/161pending.44meanings/78findings/70questions/3packages/allholds/finalnull unchanged.",
+    "focused_scope_note": "Checkpoint162 five exact land/resource exclusions:1191/334/358,1192/164/196/223.564reviews/112ordinarypending;1747sources/565captures/511extents/916coordinates.5freshHTMLrawtext/10derivatives/15intervals/19completeclaims verify. Existingminingcitizens/declaredintention unchanged, pipelinewaterlimits/fuelrefinery/crossActenactment/marinecommission/conservationadvance qualifiers retained.2soft404non-evidence isolated;4090/252/S1318pending.179focused/7semantic/reference/replay pass;161CI9firstattemptgreen,peer160/161unreceived/162pending.44meanings/78findings/70questions/3packages/allholds/finalnull unchanged.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint160_ci.json",
-      "receipt_sha256": "946bd7198593556ea75193513656b32622d64c353defbd98c450dd0ef5cf2927",
-      "head": "24ffceda8dbce5087a2b3d82af8d1fe9f80ac00f",
-      "run": 37855439985,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint161_ci.json",
+      "receipt_sha256": "16de9eb4456e32a9fbd087700b5333d518d4326f66f138864d54047e35f9c376",
+      "head": "14c25df07f45d9a4b212c21334b0ed5bfb63d927",
+      "run": 37857838982,
       "successful_jobs": 9,
       "attempt": 1
     },
@@ -17850,11 +18214,12 @@
     "historical_shutdown_checkpoint_state_checkpoint147": "Incompletegoal;518reviews/158ordinary/3packages/70questions.146boundedsource/mechanicsreviewpassed;statussentenceP3locallycorrected147,recheckpending.146ownCI9green;147metadata ownCIobservationpending. TerminalCHECKPOINTrequired,notSUCCESS;no workaftermarker.",
     "current_execution_state": "Resumed by explicit user authority from147, expired Political Fingerprint controls/markers archived and retired. No shutdown deadline or terminal marker applies.",
     "final_audit_guard_tests": 2,
-    "final_audit_guard_runtime_seconds": 0.966,
+    "final_audit_guard_runtime_seconds": 0.971,
     "final_checkpoint158_diff_reviewed": true,
     "final_checkpoint159_diff_reviewed": true,
     "final_checkpoint160_diff_reviewed": true,
-    "final_checkpoint161_diff_reviewed": true
+    "final_checkpoint161_diff_reviewed": true,
+    "final_checkpoint162_diff_reviewed": true
   },
   "open_legal_interactions": [
     {
@@ -22711,6 +23076,23 @@
     "receipt_sha256": "946bd7198593556ea75193513656b32622d64c353defbd98c450dd0ef5cf2927",
     "head": "24ffceda8dbce5087a2b3d82af8d1fe9f80ac00f",
     "run": 37855439985,
+    "successful_jobs": 9,
+    "attempt": 1
+  },
+  "ordinary_screening_checkpoint162": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint162.json",
+    "receipt_sha256": "11720ca68955f4c90ad7f5bbdb9b9ce35cb1d1c762ef610d46bb49aa18ab49d4",
+    "same_owner_primary_screenings": 5,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 112,
+    "application_questions": 70
+  },
+  "prior_head_ci_checkpoint161": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint161_ci.json",
+    "receipt_sha256": "16de9eb4456e32a9fbd087700b5333d518d4326f66f138864d54047e35f9c376",
+    "head": "14c25df07f45d9a4b212c21334b0ed5bfb63d927",
+    "run": 37857838982,
     "successful_jobs": 9,
     "attempt": 1
   }

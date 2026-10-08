@@ -266,3 +266,34 @@ captures/8freshHTMLrawtext/9derivatives/16intervals/21claimpassages verified.
 featurecommit/push/PRupdate next. Allholds/252/S1318/70questions/3packages retained.
 
 Checkpoint161 finaldiff and two auditguards verified (0.966s); feature delivery ready.
+
+## Checkpoint162: five land/resource screenings
+
+Screen1191/334(HR3668 pipeline) and358(HR1366 millsites),1192/164(HR1346
+fuel),196(HR2860 marinecommission),223(S629 conservationpayments). Read exact
+EH/unchangedES stages and material Code/oldstatute scopes, preserving different
+passage versus suspension questions and exact Nay/Yea labels. Citizenship/
+declared-intention mining baseline stays explicit and unchanged; land entry,
+goods import, Canadian-border geography and Commission residency/Tribal roles
+must not become personal admission/status propositions. Preserve product/company
+qualification, water-review exceptions and source-enactment references literally.
+
+HR4090/1192:55 remains ordinarypending: its captured mappingcitation prints311,
+while discovered40201 sources cite31l. Do not silently repair or adjudicate that
+unreviewed action. Two initial Code URL responses were HTTP200 PageNotFound;
+retain privately as non-evidence, use verified correct5131chapter45 witness.
+No exhaustive current-law/1998Report/individualproject/funding/programme detour.
+
+Archive baseline, source-map boundedcandidate exclusions only where supported,
+update audit, generate/replay, run179focused/semantic/reference checks and final
+diff/audit guards, then featurecommit/push/PR198update. Expect12-14 trackedfiles,
+unchanged44meanings/sixoutputs/70questions/3packages/252/S1318/allholds. Prior161CI
+and actual peerreview may be incorporated with this coherent delivery; no
+receipt-only push, routine timing, newmethodology or reserved publication gates.
+
+Checkpoint162 authored/validated:564reviews/112pending;179focused/7semantic/reference/
+replay pass, sixoutputs unchanged.19newcanonical/19captures/5freshHTMLrawtext/
+10derivatives/15intervals/19claims verify;2soft404non-evidence isolated.161CI9green,
+peer160/161unreceived/162pending; finaldiff/auditguards/delivery next. Allholds intact.
+
+Checkpoint162 finaldiff and two auditguards verified (0.971s); feature delivery ready.
