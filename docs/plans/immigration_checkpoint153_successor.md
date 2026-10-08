@@ -134,3 +134,38 @@ to worktree.tmp, refuses changed-existing results and preserves exact existing
 bytes on matchingJSON rechecks (including nativeCRLF). Four bounded probe checks
 pass. Guard is used by current157 verifier and inherited by later recipes; old
 historical helpers/results are not rewritten. No semantic conclusions change.
+
+## Checkpoint 158: coherent routine screening batch
+
+Checkpoint157 is delivered at8b74c04; own first-attempt CI has nine green jobs.
+User direction now separates frequent private recovery saves from remote delivery:
+normally5-10 source-coherent routine screenings, with smaller separately reviewable
+units for new interpretations, material corrections or genuinely ambiguous boundaries.
+The batch size is not a quota. Immediate exact-source/disposition checks remain;
+focused suites, generation/replay, cumulative receipts and delivery run once per batch.
+
+Review House119/1/244,250-251,259-260 where material evidence supports safe exclusion:
+Meeks34 force-authorization repeal; Smith7 radar/wind certification and oversight;
+Patronis9 vehicle-energy changes; Biggs29 species-law exclusions; Rose253
+Army financial oversight. Reuse verified unchanged Code witnesses and Record raw
+bytes. Newly acquired September9 Record supplies own7/9 offers; private11
+research is retained outside this batch. September10
+supplies own recorded outcomes and other offers. Do not combine originals under
+one raw seal or infer personal Immigration criteria from property entry/agency names.
+Scope is five routine exclusions if supported, no new shared meanings or methodology.
+Hold an ambiguous action independently rather than stall unrelated safe work.
+
+Archive baseline inputs/outputs and preserve per-action exact identity, scope,
+source intervals and member labels. Expected about13-14 tracked files, semantic
+validation tier, unchanged six semantic outputs and seven-file deterministic replay.
+Inspect each material source and final diff;179 focused tests/7 semantic checks and
+reference validation remain delivery gates. No production/publication/merge action.
+Record rough phase times privately; consolidate proven reusable workflow lessons in
+docs/workflows/codex-operating-model.md, with quality invariants and rollback conditions.
+
+Checkpoint158 authored/validated:543reviewed/133ordinarypending, five routine
+exclusions;179focused/7semantic/reference/replay pass, sixsemanticoutputs unchanged.
+252protectedproperty/directborder domain question is isolated ordinarypending.
+22newcanonical sources/12registrations/14derivatives/24intervals, eightunchanged
+2024Codewitnesses reused.157CI/review actualboundedpass retained;158 reviewpending.
+Finaldiff/auditguards/commit/push/PRupdate next, no waiting on hostedCI.

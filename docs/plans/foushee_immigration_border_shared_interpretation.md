@@ -9972,3 +9972,62 @@ to worktree.tmp, refuses changed-existing results and preserves exact existing
 bytes on matchingJSON rechecks (including nativeCRLF). Four bounded probe checks
 pass. Guard is used by current157 verifier and inherited by later recipes; old
 historical helpers/results are not rewritten. No semantic conclusions change.
+
+## Checkpoint158: five routine NDAA screenings
+
+House119/1/244,250,251,259,260 receive candidate noncounting exclusions.
+Meeks34 repeals only the named1991/2002Iraq force resolutions, not allforce
+authority/2001AUMF or personal Immigration rules. Smith7 separates Defense's
+90day written certification from DOTInspectorGeneral study/report; the literal
+2016report reference is preserved without technical/content claims after failed
+verified retrieval. Patronis9 removes exact2911(e)(4)/(10) with redesignations
+and whole2922g, including qualifiedpre2035preference/separate2035requirements,
+not an EVban/allenergy policy or savings guarantee. Biggs29 preserves critical-
+habitat/consultation and qualifiedsection9species-operation branches, Sikes
+definitions, broadDefense-deemednecessaryduties and overseasotheragency personnel
+context; speciesimport/export is not entry ofpeople. Rose253 proposes aone-year
+Defense oversight report with ten topics and publicwebsiteavailability; statutory
+name/plea/amount assertions are attributed, with no individual guilt/corruption/
+ethnicity/motive/current-law or program-eligibility inference.
+
+All five complete operatives match their exact numberedReport after declared
+formatting normalization, including exact cross-page pieces for29/253. Biggs
+initialH4194prints119-225; ownrecordedquestion/Clerk/Report119255 converges and
+sourcewords remain unrepaired. Sept9offers7/9 and Sept10recordedquestions are
+separate originals/rawseals/date stages. Preliminaryvoiceayes precede respective
+recordedresults;244/260FousheeAye/MassieAye,250/251/259No/Aye.251overallPresent1
+stays nondirectional/separate.252protectedproperty remains ordinarypending for
+material direct-border domain analysis; no unavailable-evidence designation or
+new interpretation/application question. All earlier rows/holds remain unchanged.
+
+543/676reviewed:44interpreted/227procedural/270excluded/2expressive,
+133ordinarypending.1679sources/502registeredcaptures/1108interpretedbindings/
+471extentobjects/826coordinates;40episodes/88observations/78findings/
+70questions/3packages unchanged.14derivatives/24intervals and8reused2024Code
+witnesses verify. Sept9raw270pages selected224/226; Sept10verified74pageraw
+selected12pages; PL1021/107243raw2/6pages. All14selectedRecord/8lawpages
+inspected, existing53/55images reused, not wholeRecord/parent/current-law review.
+PL1021QoX extraction artifact and historical recitals retained, no word repair.
+
+179focusedtests passed in15.039s;7semanticchecks/referencevalidation,
+preservation and7file rawreplay pass; sixsemanticoutputs unchanged. Separate
+initialsemantic-tier invocation omitted knownTEMP/escalation settings and failed
+12Windows tempACL tests; failedlog retained, only affectedtier rerun with the
+established scopedTEMPTMPNODE environment passed. No security/ACL/configuration/
+dependency changes. Finaldiff/auditguards and own158headCI follow.
+
+157CI37847065303 firstattempt9green,5feature/3synthetic/1mixed;
+synthetic1a351d2edd44156f9c6307cb384740b505561f73,hosted308/repair13of20.
+Decodedlogs/checkouts sealed; parent157boundedsource/domain/mechanics pass
+actually received and preserved, no private-archive/guard/probe certification
+or acceptance.158 independentreview pending. ExistingLebanese210may/207agreements,
+Report33/allholds/qualified166/frozen265/unaccepted747/provenance limits persist.
+
+User-authorized cadence now5-10routine source-coherent actions per delivery,
+not a quota; immediate per-action material checks/private saves and required
+batchvalidation/independentreview/reservedgates remain. Proven reuse/guard lessons
+and provisionalbatchexperiment live in docs/workflows/codex-operating-model.md.
+Source/authoring durations overlap and preliminary work before measurement is
+unknown; generator/replay9.707s, focusedtests15.039s, noCIidlewait thisbatch.
+No speedup/quality-equivalence claim. Oldowner remains untouched, no deadline,
+merge/publication/promotion/production authority.

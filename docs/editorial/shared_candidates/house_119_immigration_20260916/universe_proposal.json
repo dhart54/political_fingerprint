@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 265,
-      "source_unresolved": 138,
+      "exact_action_ineligible": 270,
+      "source_unresolved": 133,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 265,
-    "unresolved_boundary_cases": 138,
+    "exact_action_ineligible_actions": 270,
+    "unresolved_boundary_cases": 133,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -505,14 +505,19 @@
         "house:119:1:236",
         "house:119:1:240",
         "house:119:1:241",
+        "house:119:1:244",
         "house:119:1:245",
         "house:119:1:246",
         "house:119:1:247",
         "house:119:1:248",
         "house:119:1:249",
+        "house:119:1:250",
+        "house:119:1:251",
         "house:119:1:253",
         "house:119:1:254",
         "house:119:1:255",
+        "house:119:1:259",
+        "house:119:1:260",
         "house:119:1:266",
         "house:119:1:269",
         "house:119:1:270",
@@ -672,15 +677,10 @@
         "house:119:1:226",
         "house:119:1:237",
         "house:119:1:239",
-        "house:119:1:244",
-        "house:119:1:250",
-        "house:119:1:251",
         "house:119:1:252",
         "house:119:1:256",
         "house:119:1:257",
         "house:119:1:258",
-        "house:119:1:259",
-        "house:119:1:260",
         "house:119:1:262",
         "house:119:1:281",
         "house:119:1:285",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "1a0422564ab8178c7ffd5deac40c6131de05ff925f0bf5c8679278885b283e7a",
+  "universe_subject_sha256": "7fc9eb287179eaf3aea62152b668abde2a2922a63129d85a26d4542984e4eafb",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17456,8 +17456,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Meeks PartA34 repeals only the two named Iraq military-force resolutions, PL102-1 (1991) and PL107-243 (2002). Their statutory bodies authorize Armed Forces use with specified determinations, War Powers requirements and reporting. Repeal proposal is not repeal of all military authority, the2001AUMF, all War Powers requirements, Iraq immigration restrictions or an actual end to operations. Recitals naming nations/citizens/detentions are historical legislative characterizations, not changed U.S. admission/removal/status rules. Existing laws and amendment operate on use-of-force authority and reports, not direct border entry/inspection/enforcement or other exact Immigration mechanisms. PDF102-1 extraction includes literal QoX artifact where image reads subsection(b); preserved serialization is not repaired. Individual current-law/force-legality/resolutions/security/refugee applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeAye/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
       "source": {
         "source_id": "clerk:119:1:244",
         "url": "https://clerk.house.gov/evs/2025/roll244.xml",
@@ -17474,25 +17474,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Meeks PartA34 repeals only the two named Iraq military-force resolutions, PL102-1 (1991) and PL107-243 (2002). Their statutory bodies authorize Armed Forces use with specified determinations, War Powers requirements and reporting. Repeal proposal is not repeal of all military authority, the2001AUMF, all War Powers requirements, Iraq immigration restrictions or an actual end to operations. Recitals naming nations/citizens/detentions are historical legislative characterizations, not changed U.S. admission/removal/status rules. Existing laws and amendment operate on use-of-force authority and reports, not direct border entry/inspection/enforcement or other exact Immigration mechanisms. PDF102-1 extraction includes literal QoX artifact where image reads subsection(b); preserved serialization is not repaired. Individual current-law/force-legality/resolutions/security/refugee applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeAye/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:244",
           "url": "https://clerk.house.gov/evs/2025/roll244.xml",
           "raw_sha256": "46108b5f62559ed4e5e92011f377a45a09303e7abac675a13ffff38bbc28fb41",
-          "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "887c2e268c1bf59caf8c3ff7f523afc584c5cdedb02d39316bd28b73a73a964e"
+        },
+        {
+          "source_id": "congressional-record:3838-amend34-roll244-choice158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "0b21abe5005d6bd495931e00b17f3fd8b563bcdd1e103065333be1103119468f"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend34-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "d930ef9221be4084a38b17ed385fb81f8ba038d49622d66c9fbfc8c9552f4eb9"
+        },
+        {
+          "source_id": "govinfo:pl102-1-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/STATUTE-105/pdf/STATUTE-105-Pg3.pdf",
+          "raw_sha256": "b3242d264a1678ad0e9b1fd351cdb15f4db1341e8a0442396e79456432782d38",
+          "governed_bytes_sha256": "a73f0161eaab5c8a8b324df8040c96d452f15cf1ad395a5379b4cd40c503fb17"
+        },
+        {
+          "source_id": "govinfo:pl107-243-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-107publ243/pdf/PLAW-107publ243.pdf",
+          "raw_sha256": "16f448c91fb711f7c89f6ceeede61c39659bc57fadb11f474cf78e43bafd2e2f",
+          "governed_bytes_sha256": "208cd15117cccb9e340ba6bfe8cbd5cd7212a8050a484689eedfad0494b16dcd"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "2d59b8034800c47f14e33a81b2a7de5b9fce05d8a43a2de5b6bddd2a24336c99"
       },
       "historical_raw_hash_matches": true
     },
@@ -17834,8 +17858,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Smith PartA7 would require Defense or designee written certification within90days after enactment about radar/FAA aviation capabilities for NorthAtlantic/MidAtlantic offshorewind projects. It separately directs the DOT InspectorGeneral study and report toCongress: radar/sonar, flightpaths, approval/Clearinghouse consultation and applications, CoastGuard maritime safety/lifesaving, low-level military airspace and sufficiency/achievability/realism of strategies in the named2016 Report. No90day deadline is supplied for that separate report. Preserve the two agencies/tasks and geography; no actual radar harm/safety finding, permitting ban, approval outcome or personal travel/Immigration/border-enforcement criterion. The named2016 object is retained; attempted official retrieval failed TLS verification, no failed response is evidence, no contents/strategy fact or substitute2016DOEstrategy asserted. Exact duty wording suffices for bounded domain exclusion without certifying all technical/current-law/individual aviation applications. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Failed is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
       "source": {
         "source_id": "clerk:119:1:250",
         "url": "https://clerk.house.gov/evs/2025/roll250.xml",
@@ -17852,25 +17876,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Smith PartA7 would require Defense or designee written certification within90days after enactment about radar/FAA aviation capabilities for NorthAtlantic/MidAtlantic offshorewind projects. It separately directs the DOT InspectorGeneral study and report toCongress: radar/sonar, flightpaths, approval/Clearinghouse consultation and applications, CoastGuard maritime safety/lifesaving, low-level military airspace and sufficiency/achievability/realism of strategies in the named2016 Report. No90day deadline is supplied for that separate report. Preserve the two agencies/tasks and geography; no actual radar harm/safety finding, permitting ban, approval outcome or personal travel/Immigration/border-enforcement criterion. The named2016 object is retained; attempted official retrieval failed TLS verification, no failed response is evidence, no contents/strategy fact or substitute2016DOEstrategy asserted. Exact duty wording suffices for bounded domain exclusion without certifying all technical/current-law/individual aviation applications. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Failed is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:250",
           "url": "https://clerk.house.gov/evs/2025/roll250.xml",
           "raw_sha256": "15bd3bbd5953dcaa15064f033b7b822fd454f333dae2c20ad80c98f3b4bc45cd",
-          "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "0e277133a9b9cb096117cea563b569db389f5d3f7190a25c94a5ae0f0a21df92"
+        },
+        {
+          "source_id": "congressional-record:3838-amend7-offer158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+          "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+          "governed_bytes_sha256": "53ae70c67ffe5e7e5964435aa847c467a57714e7494d08aca970a9a00a31a2d7"
+        },
+        {
+          "source_id": "congressional-record:3838-amend7-roll250-choice158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "5fa31ec4e7480944cea34c78c05615cac5e4e2fe4cba60d11f22903703e8c79b"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend7-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "f4e7d55274b89f829c58d933d8f67178a867c9a2be65547429d5c9c92bd586d6"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "cb3a9e5ccb586e4b0f2ea894cd41f05be84886dd8a55b7907e4d8349b8c88215"
       },
       "historical_raw_hash_matches": true
     },
@@ -17881,8 +17923,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Patronis PartA9 strikes10USC2911(e)(4) and(10), redesignates old5-9 to4-8 and old11-15 to9-13, and strikes the whole2922g section. Preserve exact paragraph numbering and remaining energy considerations, not all energy goals or a new EV ban. The2024 baseline(e)(4) considers alternative fuels/hybrid drive and(e)(10) electric/hybrid/high-efficiency fleets.2922g contains a preOctober1,2035 qualified electric/hybrid leasing/procurement preference, combat-tactical exception, alternative-technology conditions, and a separate2035 covered-nontactical requirement with exceptions/nondelegable waiver and definitions. Repeal is broader than preference only but not all electric procurement/individual vehicle permissions/spending savings. These Defense procurement/energy rules supply no changed personal immigration criteria or direct border entry/inspection/enforcement, even if vehicles are used near a border. Reused operative2024 witnesses do not certify all intervening amendments or individual/current-law applications. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved. Roll251 overallPresent1 remains nondirectional and separate from the two member observations.",
       "source": {
         "source_id": "clerk:119:1:251",
         "url": "https://clerk.house.gov/evs/2025/roll251.xml",
@@ -17899,25 +17941,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Patronis PartA9 strikes10USC2911(e)(4) and(10), redesignates old5-9 to4-8 and old11-15 to9-13, and strikes the whole2922g section. Preserve exact paragraph numbering and remaining energy considerations, not all energy goals or a new EV ban. The2024 baseline(e)(4) considers alternative fuels/hybrid drive and(e)(10) electric/hybrid/high-efficiency fleets.2922g contains a preOctober1,2035 qualified electric/hybrid leasing/procurement preference, combat-tactical exception, alternative-technology conditions, and a separate2035 covered-nontactical requirement with exceptions/nondelegable waiver and definitions. Repeal is broader than preference only but not all electric procurement/individual vehicle permissions/spending savings. These Defense procurement/energy rules supply no changed personal immigration criteria or direct border entry/inspection/enforcement, even if vehicles are used near a border. Reused operative2024 witnesses do not certify all intervening amendments or individual/current-law applications. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved. Roll251 overallPresent1 remains nondirectional and separate from the two member observations.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:251",
           "url": "https://clerk.house.gov/evs/2025/roll251.xml",
           "raw_sha256": "39414b11212f9c62cbd619bb411e356bc720025f2e2270738c98be7a761868aa",
-          "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "fa8843f8a5cd854bf467bbe0d13c8751be652b3db6dce76cce66e62931a50cec"
+        },
+        {
+          "source_id": "congressional-record:3838-amend9-offer158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-09/pdf/CREC-2025-09-09-house.pdf",
+          "raw_sha256": "030b768e539c59483931204586dc5a2af00305c6c53436577e32d8ef669f9708",
+          "governed_bytes_sha256": "f578b8480defb20d395d7cd1fd26ae7904f2644d7968be3f93ef53fb77d8834a"
+        },
+        {
+          "source_id": "congressional-record:3838-amend9-roll251-choice158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "d8ede397c3402ea13179711d9d1d67d3364a3679902dc270939bb48bc3b4e4c0"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend9-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "0c3df9847c44d2c2581b294136715c50db5730c1a83f70636b3802379dbcebcb"
+        },
+        {
+          "source_id": "govinfo:10usc2911-2024-amendment-binding",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapI-sec2911.htm",
+          "raw_sha256": "71b6851f207263b2e3a0cfc84b19e79e60ca7ea55431a182e94a9279c4697b13",
+          "governed_bytes_sha256": "727e02ec58f2bd281658ad0c13cc378f3d67e6b2cca3cca860ee513f5f3642c5"
+        },
+        {
+          "source_id": "govinfo:10usc2922g-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap173-subchapII-sec2922g.htm",
+          "raw_sha256": "1b2a6f1c604cf309406a7237fe04d683277f1a45ebf7cbc8dc7161c182650a47",
+          "governed_bytes_sha256": "dcccb49fc099aea9f2fa7160beb8d003fb3065dbaf92a7800998f7f8b7dab6be"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a846a9783a19c56f4674faa4bef6cbc275aa078cd72d7d70b3733d135b5fe5df"
       },
       "historical_raw_hash_matches": true
     },
@@ -18305,8 +18377,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Biggs PartA29 replaces ESA4(a)(3)(B): critical-habitat exclusions for Sikes-defined military/StateNationalGuard installations or portions, plus otherDefense-designated areas including contractor use when Defense makes and submits the specified written necessity determination to Interior. It removes the specified7(a)(2) consultation requirement for described areas regardless of integrated-resource-plan status; not allESA duties/allconsultations/alllands. It separately appends ESA10(k) exemptions from section9 for the qualified taking/import/export/damaging/removal and incidental injury/mortality of species during defined national-defense-related operations. Preserve separate actor/operation restrictions and the incidental-harm branch regardless of installation; broad anyDefense-deemednecessary duty and overseas otheragency/provisionalauthority personnel definition retained, not onlyuniformedtraining/U.S.bases. Species import/export is not admission of people, personnel definition is employment/Defense-support context not immigration status, and the exact ESA effects do not establish direct border entry/inspection/enforcement or other Immigration mechanisms. Reused1533(a)(3)/1536(a)/1538/1539/670/670a operative witnesses preserve baseline consultation/plan/section9 context and Sikes definition exclusions, not allcurrentcode/allpermits/individualenvironmental or immigration adjudication. Initial H4194 printed119-225 retained; own recorded question/Clerk/numberedReport119255 converge without repairing words. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Failed is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
       "source": {
         "source_id": "clerk:119:1:259",
         "url": "https://clerk.house.gov/evs/2025/roll259.xml",
@@ -18323,25 +18395,73 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Biggs PartA29 replaces ESA4(a)(3)(B): critical-habitat exclusions for Sikes-defined military/StateNationalGuard installations or portions, plus otherDefense-designated areas including contractor use when Defense makes and submits the specified written necessity determination to Interior. It removes the specified7(a)(2) consultation requirement for described areas regardless of integrated-resource-plan status; not allESA duties/allconsultations/alllands. It separately appends ESA10(k) exemptions from section9 for the qualified taking/import/export/damaging/removal and incidental injury/mortality of species during defined national-defense-related operations. Preserve separate actor/operation restrictions and the incidental-harm branch regardless of installation; broad anyDefense-deemednecessary duty and overseas otheragency/provisionalauthority personnel definition retained, not onlyuniformedtraining/U.S.bases. Species import/export is not admission of people, personnel definition is employment/Defense-support context not immigration status, and the exact ESA effects do not establish direct border entry/inspection/enforcement or other Immigration mechanisms. Reused1533(a)(3)/1536(a)/1538/1539/670/670a operative witnesses preserve baseline consultation/plan/section9 context and Sikes definition exclusions, not allcurrentcode/allpermits/individualenvironmental or immigration adjudication. Initial H4194 printed119-225 retained; own recorded question/Clerk/numberedReport119255 converge without repairing words. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Failed is distinct from preliminary voiceayes and enactment; FousheeNo/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:259",
           "url": "https://clerk.house.gov/evs/2025/roll259.xml",
           "raw_sha256": "ab8287b33366b469bc1fa0835c5e0ea6192d09d32ad7837f6ba2295961244c2a",
-          "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "d14ec2bef9685a05c2084dcef15a32a9ad99db63e9d946024363a99ea1403c7b"
+        },
+        {
+          "source_id": "congressional-record:3838-amend29-roll259-choice158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "93524e01847f101ec2e1a403b9b553a4ed6be138d429426597ca18c3d9cbfc28"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend29-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "cc13557c68e72d665790db6bf2e3db2fdb7b84f395aa9da8dab13a244989747e"
+        },
+        {
+          "source_id": "govinfo:16usc1533-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1533.htm",
+          "raw_sha256": "44dcc7a470c103b5e8dbc877a4f884298f7f3a3c394fa2faf50e401bb7c4ebae",
+          "governed_bytes_sha256": "c3bd4bd1a102e15e46a44da6544b2fc4123b4745468c50a2ed4c7a27c51ec2c3"
+        },
+        {
+          "source_id": "govinfo:16usc1536-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1536.htm",
+          "raw_sha256": "3e35e0a190dbeb32b38f0406e067ab98a7ae8c6055fef4134e5786bd7fe67667",
+          "governed_bytes_sha256": "b4f7e58c85080d35beadeff2e5f80954d152b59ba2ea020f84725aa30fc4ef9c"
+        },
+        {
+          "source_id": "govinfo:16usc1538-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1538.htm",
+          "raw_sha256": "82a4e3dbfa6c9df9eaa4f13b5e23d932dc85b7912e804f7992b0d0c4a79095fd",
+          "governed_bytes_sha256": "a3cf53638527906bb99a282b5b9112dfbf545ce8dceb7947f7426c53d87a6b47"
+        },
+        {
+          "source_id": "govinfo:16usc1539-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap35-sec1539.htm",
+          "raw_sha256": "a34d795608b3cda84f76ebfa8bea426b3bd076756e15d34de0b2a99745e0fccd",
+          "governed_bytes_sha256": "f6db842310cc9430f0c7878f63221f67e5586c55d36a37910d0cb6a17efb02be"
+        },
+        {
+          "source_id": "govinfo:16usc670-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670.htm",
+          "raw_sha256": "84c7a0ee3becf49f4c75203a8c7c9f59547b014f324df598e0fc1711e3933389",
+          "governed_bytes_sha256": "2655cbdde006d36354f4f72a4a372c9a0945a23c24d99c494726a716774e6c94"
+        },
+        {
+          "source_id": "govinfo:16usc670a-2024-ndaa-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title16/html/USCODE-2024-title16-chap5C-subchapI-sec670a.htm",
+          "raw_sha256": "8c96b2271aa9273e4f5963a59e5ecd80a702f8f18758988062b3a78188414d04",
+          "governed_bytes_sha256": "be2a0d571c2c062633bb0a294bb0b502f0aa837f0c2cf83a587f6c5931baedb7"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "b71ce77a5b964d74501e3cdac3451a43dd82edc75bc2dd61247b9f1739ef988d"
       },
       "historical_raw_hash_matches": true
     },
@@ -18352,8 +18472,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Rose PartA253 would require Defense withinoneyear after enactment to report to both ArmedServicesCommittees on the legislatively described Armyemployee/4-HMilitaryPartnershipGrant scheme; ten reporting topics cover supervision, funds/accountability, managers/entities, missed warnings/whistleblower concerns, policies asofenactment, recommendations, disciplinary/adminactions, made/planned financial-oversight changes, effects and otherDefense-relevant information. Defense must make the report publicly available on an appropriateDefensewebsite. Named indictment/plea/amount/fraud assertions remain attributed to proposed statutory text, not independent guilt/corruption/motive/causality/actual-loss findings. No ethnicity/nationality/status inferred from a name. This oversight/public-report duty does not change programbeneficiary or personal immigration eligibility or direct border entry/inspection/enforcement. Individual legal/current-law/program/supervision applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeAye/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
       "source": {
         "source_id": "clerk:119:1:260",
         "url": "https://clerk.house.gov/evs/2025/roll260.xml",
@@ -18370,25 +18490,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Rose PartA253 would require Defense withinoneyear after enactment to report to both ArmedServicesCommittees on the legislatively described Armyemployee/4-HMilitaryPartnershipGrant scheme; ten reporting topics cover supervision, funds/accountability, managers/entities, missed warnings/whistleblower concerns, policies asofenactment, recommendations, disciplinary/adminactions, made/planned financial-oversight changes, effects and otherDefense-relevant information. Defense must make the report publicly available on an appropriateDefensewebsite. Named indictment/plea/amount/fraud assertions remain attributed to proposed statutory text, not independent guilt/corruption/motive/causality/actual-loss findings. No ethnicity/nationality/status inferred from a name. This oversight/public-report duty does not change programbeneficiary or personal immigration eligibility or direct border entry/inspection/enforcement. Individual legal/current-law/program/supervision applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization. Own recorded Agreed to is distinct from preliminary voiceayes and enactment; FousheeAye/MassieAye remain exact amendment observations, not wholebill/component preferences or motive. Established functional-domain candidate exclusion only; noncounting/unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:260",
           "url": "https://clerk.house.gov/evs/2025/roll260.xml",
           "raw_sha256": "5ed827ff45ebff54516efc1d978c93b281848acb764e34bc47ec6b86cc3b0c3a",
-          "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "4163ed2d72f2928fa89206469ee6aff642693d7b5be4d6c22dd518f94bd42a5a"
+        },
+        {
+          "source_id": "congressional-record:3838-amend253-roll260-choice158",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "d688e798ce24e190385bc71373de0a136c236d334b7765588572ce552add58ac"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend253-operative158",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "468b5551477d61bff601b0b6a86b1c02116545ddc6ecbeb4e31c80bca26d6d32"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a636f950a2625c5aac89e10e631687229e7d5d62e1655e9f95581b71b4a29267"
       },
       "historical_raw_hash_matches": true
     },
@@ -42435,15 +42567,10 @@
     "house:119:1:226",
     "house:119:1:237",
     "house:119:1:239",
-    "house:119:1:244",
-    "house:119:1:250",
-    "house:119:1:251",
     "house:119:1:252",
     "house:119:1:256",
     "house:119:1:257",
     "house:119:1:258",
-    "house:119:1:259",
-    "house:119:1:260",
     "house:119:1:262",
     "house:119:1:281",
     "house:119:1:285",
@@ -42573,6 +42700,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "952ac4bfab8ec7fe2e117b2effaace50b7188ba4d28ec29212a53923d357047a",
-  "membership_review_sha256": "2d8055c5d03e4778bc46719198a358b0963c0d4c138ebfdeecac42daf420283f"
+  "proposal_sha256": "8ea86f272fcab0981f391d97893931c67ffeaa190d6bb49e29157460bce6ee38",
+  "membership_review_sha256": "dbfa304633630e9b6c561587f9a03a2b079345e65532f89c0d53e347ff1df75f"
 }
