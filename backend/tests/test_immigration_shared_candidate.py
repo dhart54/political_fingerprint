@@ -2639,7 +2639,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
     def test_relative_trafficking_branch_cannot_drop_the_common_official_threshold(self):
         source = next(s['text'] for s in self.values[1]['sources']
                       if s['source_id'] == 'govinfo:8usc1182a-2024-current-student-aid-reference')
-        for aid in ['house:119:1:32', 'house:119:1:33']:
+        for aid in ['house:119:1:32', 'house:119:1:33', 'house:119:1:166']:
             action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
             with self.subTest(action=aid, surface='meaning and both-level qualification'):
                 self._assert_relative_trafficking_common_chapeau(action, source)
@@ -2659,6 +2659,53 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                 bad['limitations'][index] = bad['limitations'][index].replace(fragment, 'the listed conditions', 1)
                 with self.assertRaises(AssertionError):
                     self._assert_relative_trafficking_common_chapeau(bad, source)
+
+    def test_s331_uses_its_june_extension_without_consuming_an_ordinary_item(self):
+        aid = 'house:119:1:166'
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == aid)
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        law = sources['govinfo:pl119-4']['text']
+        start = law.index('SEC. 3105.')
+        extension = law[start:law.index('SEC. 3106.', start)]
+        self.assertIn('striking ``March 31, 2025', extension)
+        self.assertIn('inserting ``September 30, 2025', extension)
+        self.assertIn('Mar. 15, 2025', law[:450])
+        self.assertEqual(action['source_id'], 'govinfo:s331es')
+        self.assertEqual(sources[action['source_id']]['text_version'], 'ES')
+        self.assertEqual(action['stage'], 'final_passage')
+        self.assertIn(extension, [c['passage'] for c in action['claim_source_map']])
+        self.assertNotIn('govinfo:hr27eh', action['additional_source_ids'])
+        self.assertNotIn('govinfo:hres93eh', action['additional_source_ids'])
+
+        def assert_june_baseline(candidate):
+            for surface in [candidate['compact_description'], candidate['meaning'],
+                            candidate['limitations'][1]]:
+                self.assertIn('september30,2025', re.sub(r'\s+', '', surface).lower())
+            self.assertFalse(any('Current166exclusion' in q for q in candidate['limitations']))
+
+        assert_june_baseline(action)
+        wrong = copy.deepcopy(action)
+        for key in ['compact_description', 'meaning']:
+            wrong[key] = re.sub(r'September\s*30,\s*2025', 'March 31, 2025', wrong[key])
+        wrong['limitations'][1] = re.sub(r'September\s*30,\s*2025', 'March 31, 2025',
+                                         wrong['limitations'][1])
+        with self.assertRaises(AssertionError):
+            assert_june_baseline(wrong)
+
+        receipt = json.loads((DATA / 's331_candidate_reclassification_checkpoint137.json')
+                             .read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        before = receipt['before_review_record']
+        after = receipt['corrected_review_record']
+        self.assertEqual(before['action_id'], after['action_id'])
+        self.assertEqual(before['disposition'], 'exact_action_ineligible')
+        self.assertEqual(after['disposition'], 'interpreted_substantive_directional')
+        self.assertEqual(receipt['before_review_record_sha256'], digest(before))
+        self.assertEqual(receipt['corrected_review_record_sha256'], digest(after))
+        self.assertEqual(receipt['accounting_deltas']['governed_reviews'], 0)
+        self.assertEqual(receipt['accounting_deltas']['ordinary_pending'], 0)
+        self.assertEqual(receipt['accounting_deltas']['interpreted_actions'], 1)
+        self.assertEqual(receipt['accounting_deltas']['excluded_actions'], -1)
 
     def test_noncounting_audit_sample_binds_current_ledger_and_covers_risks(self):
         audit_path = DATA.parents[2] / 'review_packets' / 'immigration_semantic_audit_in_progress.json'

@@ -9146,3 +9146,53 @@ no generalizedcriminal-law ontology,publication or editorial acceptance.
 Continue to this qualified166candidate milestone,then bounded ordinary/forestry/
 materialpackage work. Deadline08:42:21.249EDT,stoplarge08:12:21,wrap08:27:21,marker08:37:21;
 draftPR198only and all reservedgates unchanged.70questions/threepackages remain.
+
+
+### Local successor checkpoint 137: qualified S.331 canonical candidate
+
+The permitted roll166candidate now replaces its already-reviewed exclusion under
+the existing functional incorporated-predicate rule. Complete S.331 ES is compared
+with June12,2025 temporary control through September30 under PublicLaw119-4section3105,
+not February's March31 endpoint or laterJulyenactment. Proposed statutory coverage
+ADDS under its own forms/definition/exceptions; no temporaryh30repeal/replacement,
+first-evercontrol,identicalchemicalset or universal substance/person outcome.
+
+The whole-choice research/technical/rulemaking/penalty/applicability scope remains.
+Independent INA conditions retain offense/admission versus conviction, BOTH governmental
+trafficking thresholds and separate recipientknowledge,benefit/timing,waivers,and the
+IN/ADMITTED/removal-UPON-ORDER framework. FousheeYea/MassieNay project deterministically
+to one notable-choice proposition each in a separate S.331 episode. No component
+stance,preferredalternative,cross-bill trajectory or belief-change inference. Historical
+166exclusion/before-row/audit assessment,135proposal and136direction are preserved.
+Only the obsolete frozen-current sentence is removed from active qualification prose.
+
+497governed reviews and179ordinary pending are UNCHANGED: this was reclassification,
+not another pending screen.44interpreted/227procedural/224excluded/twoexpressive;
+1508sources/416captures unchanged;1108interpretedbindings,40episodes,88observations,
+78findings(Foushee40/Massie38). Allprior43meanings/coreobjects/76propositions/findings,
+other496reviewrecords,676inventory,all179pending IDs,70questions/threepartialflags,
+132correction/265freeze/747nonacceptance and32historicalseed records remain exact.
+The derived outside-seed addition list only adds166. Count-qualification text is
+synchronized to44; its prior stale40label is historical metadata, not a new scope.
+
+One source-bound Junebaseline/reclassification guard rejects the February endpoint;
+the existing common-chapeau guard now covers32/33/166 with six omission negatives.
+178focusedtests14.196s,referencevalidator andsevensemanticchecks pass. Seven raw replay
+files match. The projection contract permits unchanged43-row subsets: old projections
+remain valid for those rows; regenerated projections correctly cover44each. Both member
+detail/qualification/choice objects are inspected and all prior finding objects match.
+No projection-validation rule was weakened or changed.
+
+136independent bounded source/mechanics pass and ownCI37740586148ninegreen are sealed
+with5feature/3synthetic/1mixed checkout,decodedlogs/skips,hosted306/repair13and20,zero
+retry. No freshClerk/full-suite verification inferred. Its stale active next_action
+is corrected to canonical137review/ordinarywork, with originalbytes/seal retained;
+semanticreview/accounting at136remain unchanged. Audit118NoDefect/6Minor/11Major/
+1Critical and distinctfindingcounts remain historical;166moves from currentnoncounting
+to substantive assessment without incrementing assessment count.137output still needs
+independent review and its own CI; no editorial/full-domain acceptance.
+
+Continue bounded ordinary and forestry/materialpackage work. Current166is QUALIFIED
+CANDIDATE, not frozen; older frozen statements are dated historical checkpoints.
+Deadline08:42:21.249EDT,stoplarge08:12:21,wrap08:27:21,marker08:37:21;weekly30%used/70%
+remaining at latestread. DraftPR198only and all reservedgates unchanged.

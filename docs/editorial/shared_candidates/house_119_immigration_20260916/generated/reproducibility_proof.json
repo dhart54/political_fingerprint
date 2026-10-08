@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "17fc0dfde4fa134569677ecd8adf721ef6d65b284aa3ad7b1fe66e48f2d98378",
+  "input_sha256": "8f8308763c506d3b5f0d7e8337669f2b43c8ad876c172423a7c59caa06b1fba8",
   "source_capture_sha256": "ba288676a94e43391f5e31d68c75c788e0ce2401b26285c2c3ba87eed18850ae",
-  "core_sha256": "d298623478b62a18b8cc23294d51455ec4b7695e31d2bca0aad3071bd957c33a",
-  "compiled_sha256": "def9d6c07fdbc95035d0bfbb43683c8819e40ab34c0d1374161ce4034879c6cd",
-  "readable_sha256": "e591ac8a77122e9aaac42923c8a4f133153eda868a2d92c43a04fd16670296c3",
+  "core_sha256": "74f5b8c24b83811f90561777991d3bd06ff10153349497296a5f1497dadf86fc",
+  "compiled_sha256": "a4067137ecfa215594e65973fad8c0823e122be41d63b8ef36821435edf5fffb",
+  "readable_sha256": "36831b0768c3de71f2030ad8604ec4b1555f3742afa09468e97e54f85844a407",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -374,6 +374,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of H.R.884 with its D.C. noncitizen-voting prohibition and local-law repeal/restoration",
           "source_id": "clerk:119:1:163"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:166",
+      "shared_sha256": "8f2641b3090c8fd3f68eabd20176ca1109b69a71d4f2a3a21ab2dc3b379f38da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete source-qualified S.331 proposal",
+          "source_id": "clerk:119:1:166"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete S.331 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:166"
         }
       ]
     },

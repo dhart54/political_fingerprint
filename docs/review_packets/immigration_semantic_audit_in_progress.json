@@ -6919,6 +6919,143 @@
       "correction_state": "independently_resolved_bounded_recheck_candidate_only",
       "before_authoring_action_sha256": "265e9df88a9018d80c52f0d014d36db757119e250e0277a5070750477a971acb",
       "independent_correction_review_ref": "docs/review_packets/immigration_checkpoint132_independent_review.json"
+    },
+    {
+      "action_id": "house:119:1:166",
+      "audit_state": "same_owner_primary_reconstructed_qualified_candidate_compared",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "166",
+        "legis-num": "S 331",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "12-Jun-2025",
+        "action-time": "3:34 PM",
+        "vote-desc": "HALT Fentanyl Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Source-qualified S.331 ES whole-passage candidate under the existing incorporated-predicate functional standard and explicit supervisor direction. OwnJune12,2025baseline includes PublicLaw119-4section3105temporarycontrol throughSeptember30,2025; proposed statutory coverage ADDS under its own definition/forms/exceptions without that expiry, not temporaryh30repeal/replacement or first-ever control. Express802-to-Schedules-to-INA conditions retain offense/admission/conviction and BOTH governmental trafficking thresholds independently of recipient knowledge, relativebenefit/timing, admitted-alien/removal-order scope and qualified waivers. WholeES research/technical/rulemaking/penalty/applicability provisions remain; no component preference, cross-bill trajectory, particular substance/individual outcome, July-law baseline substitution,747acceptance or generalized criminal-law rule. This reclassifies one already-reviewed action without consuming an ordinary pending item. Historical exclusion/proposal retained; this canonical candidate still requires independent review and is not editorially accepted.",
+      "finding": "Existing functional incorporated-predicate qualifiedcandidate route now explicitly permitted after ownJune source review; temporarySeptember30baseline and whole-choice/INA qualifiers preserved. No new general criminal-law rule or acceptance.",
+      "correction": "Reclassify the already-reviewed166as qualified canonical candidate; preserve historical exclusion and135proposal. Ordinaryqueue unchanged.",
+      "before_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
+      "corrected_review_record_sha256": "177ca7259558c9870ad4158503e248021a851eb19a68c4d25fece197a9b3794f",
+      "corrected_authoring_action_sha256": "2cc60f5b5b4d066449898320b6efb844d02368719ca0436dc52ee93e214f2078",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:166",
+          "url": "https://clerk.house.gov/evs/2025/roll166.xml",
+          "governed_bytes_sha256": "dfdab4d507d7a3d6bb23b142fb2c4a16b415c812c603f17a3ed3a8752777d44a",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:s331es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm",
+          "governed_bytes_sha256": "c67c5d2b5bf4cbf0b92588b6b8957c8b41c82ba7eb7a999fcde3df9777b640ea",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:21usc802-2024-controlled",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm",
+          "governed_bytes_sha256": "040b0634c60a88673ee3e33dda5ffa3d44d1c5699ad8f0e07b88257d40f140b9",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:8usc1182a-2024-current-student-aid-reference",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "f6d6891406f54e266dc2adcea68d990639fa09e2520433a89af631ffe730b1ce",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:8usc1227-operative-2024-screening",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "governed_bytes_sha256": "acc681689a05c03d7ee78392335e4dd215fd98343a2c7c163b019f5567d832a6",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:8usc1182h-2024-criminal-waiver",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "6c058bf3e5b1458a72260ba0826eecc01b1673b973e1ffc287abb0e806b0fe6a",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:8usc1182d3-2024-temporary-exemptions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "governed_bytes_sha256": "f975d12d2e09b0d3b98634b31cb1739f5d7de456bdc808238d2115752a4b52be",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:pl118-158-complete-original",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ158/html/PLAW-118publ158.htm",
+          "governed_bytes_sha256": "d869499df06efa538e62650f86248502b77556d587b6092221128b1e62b8fcad",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:fr201802319-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2018-02-06/html/2018-02319.htm",
+          "governed_bytes_sha256": "85ebd4f0f908f6b2a4c19aca345bd9e238d9b39b2eb7bf7a532c410cfbc2d510",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:fr202006984-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2020-04-10/html/2020-06984.htm",
+          "governed_bytes_sha256": "cb9470fd70ee86a5e1722d9210a883a733b905aaa4865bddbbc5c87f6c97ea2f",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:pl116114-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ114/html/PLAW-116publ114.htm",
+          "governed_bytes_sha256": "836aa6a1b294bde901fcb7fdfcef33722b5486cb755546a16b243e1a2a734572",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:21usc811-2024-complete123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partB-sec811.htm",
+          "governed_bytes_sha256": "af6e13140be4988bdcdc05f467045d2b77b6cbdead6404170c5f36058b79f1f9",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:21usc812-2024-complete123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partB-sec812.htm",
+          "governed_bytes_sha256": "a308b5f3a46f1463b3f4d66572700f1dc00db5cdf196d9bce74e5d2fcf807b6f",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        },
+        {
+          "source_id": "govinfo:hres489eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
+          "reviewed_extent": "Exact completeES/Clerk/rule or identified source-mapped dated temporal/INA conditions; no fresh/full-Code/individual-application claim."
+        }
+      ],
+      "membership_reclassified": true,
+      "recorded_choices_unchanged": true,
+      "membership_and_direction_reversed": false,
+      "episode_reaggregation_required": true,
+      "correction_state": "qualified_canonical_candidate_locally_validated_independent_review_pending"
     }
   ],
   "noncounting_actions": [
@@ -8553,68 +8690,6 @@
         }
       ],
       "correction_state": "checkpoint_validated"
-    },
-    {
-      "action_id": "house:119:1:166",
-      "audit_state": "primary_reconstructed_candidate_compared",
-      "reviewed_disposition": "exact_action_ineligible",
-      "current_disposition": "exact_action_ineligible",
-      "severity": "No Defect",
-      "finding_id": null,
-      "exact_identity": {
-        "majority": "R",
-        "congress": "119",
-        "session": "1st",
-        "chamber": "U.S. House of Representatives",
-        "rollcall-num": "166",
-        "legis-num": "S 331",
-        "vote-question": "On Passage",
-        "vote-type": "YEA-AND-NAY",
-        "vote-result": "Passed",
-        "action-date": "12-Jun-2025",
-        "action-time": "3:34 PM",
-        "vote-desc": "HALT Fentanyl Act"
-      },
-      "recorded_member_observations": {
-        "F000477": {
-          "official_label": "Yea",
-          "name": "Foushee",
-          "party": "D",
-          "state": "NC"
-        },
-        "M001184": {
-          "official_label": "Nay",
-          "name": "Massie",
-          "party": "R",
-          "state": "KY"
-        }
-      },
-      "primary_reconstruction": "CompleteS331ES schedules fentanyl-relatedsubstances/research/criminaldrugpenalty/regulation and goodsimport/export mechanisms. ExistingcollateralINAconsequences are not claimed absent; proposalhasno independentlychanged immigration-person mechanism. This criterion differs from747explicitperson-scope change to an existingqualifiedvisasanctionmenu.",
-      "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
-      "correction": null,
-      "before_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
-      "corrected_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
-      "primary_evidence": [
-        {
-          "source_id": "clerk:119:1:166",
-          "url": "https://clerk.house.gov/evs/2025/roll166.xml",
-          "governed_bytes_sha256": "dfdab4d507d7a3d6bb23b142fb2c4a16b415c812c603f17a3ed3a8752777d44a",
-          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
-        },
-        {
-          "source_id": "govinfo:s331es",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm",
-          "governed_bytes_sha256": "c67c5d2b5bf4cbf0b92588b6b8957c8b41c82ba7eb7a999fcde3df9777b640ea",
-          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
-        },
-        {
-          "source_id": "govinfo:hres489eh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
-          "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
-          "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
-        }
-      ],
-      "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
     },
     {
       "action_id": "house:119:1:185",
@@ -12856,20 +12931,21 @@
   "assessment_counting_rule": "One highest-severity assessment per distinct action; corrected-meaning re-review is recorded separately and does not erase historical finding.",
   "sample_coverage": {
     "original_exclusions_reviewed": 41,
-    "retained_exclusions_reviewed": 40,
+    "retained_exclusions_reviewed": 39,
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 20
+    "successor_new_exclusions_reviewed": 20,
+    "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
-    "focused_tests": 177,
-    "focused_runtime_seconds": 14.46,
+    "focused_tests": 178,
+    "focused_runtime_seconds": 14.196,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "135ownninegreen sealed;136requires own pushed-head run.",
+    "exact_head_ci": "136ownninegreen sealed;137 requires its own pushed-head CI.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -12906,12 +12982,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "TwoIranmilitary-framework exclusions199/282andadoptedrule300procedure;43meanings/sixoutputs/76findings unchanged. Own166candidate qualification authorized for nextboundary,reclassification must not consume ordinaryqueue item. Historical135proposal and132correction retained;candidate-only.",
+    "focused_scope_note": "Qualified166candidate reclassifies analready-reviewed exclusion;497reviews/179ordinary unchanged.44meanings/40episodes/88observations/78findings;allprior43meanings/76propositions/findings and1508sources/416captures/70questions/threeflags retained. No747/265automaticchange or acceptance. NewJuneguard andexpandedCchapeau controls pass.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint135_ci.json",
-      "receipt_sha256": "fd7e770092a5dae10b497069eb39cda299009684c97b78b199470a97eab9e57c",
-      "head": "c36fe3698bfafe1ae006a2a513ace9570dfdcb74",
-      "run": 37738693013,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint136_ci.json",
+      "receipt_sha256": "6ec5423e0768375bb8856875773eb35293ded7003210e250e9c9885e52b9e702",
+      "head": "24d4b26c7604c2b313df1dffdfcb9ab178eeaa94",
+      "run": 37740586148,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -17323,12 +17399,14 @@
   },
   "ordinary_screening_checkpoint136": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint136.json",
-    "receipt_sha256": "e7e4863df0a43faebb4d139f3b1284ccc8130f5e116b29fd9fa4f928ae0c982f",
+    "receipt_sha256": "9f03ae238edab985fcb24d1bc7b9b0fb8d3bcb1eb04fe621d9aaddbf6e11cd0a",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 179,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint136_independent_review.json",
+    "independent_review_scope": "Bounded semantic/mechanical source pass; no freshClerkbytes/full-suite rerun."
   },
   "independent_checkpoint134_135_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint134_135_independent_review.json",
@@ -17338,13 +17416,93 @@
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_supervisor_direction_checkpoint136.json",
     "receipt_sha256": "cd79b06436f5d70dcb96e2aeab03d6ae09ead155313c5b41596e65d0406a0856",
     "candidate_authoring_permitted": true,
-    "canonical_application_pending": true
+    "canonical_application_pending": false
   },
   "prior_head_ci_checkpoint135": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint135_ci.json",
     "receipt_sha256": "fd7e770092a5dae10b497069eb39cda299009684c97b78b199470a97eab9e57c",
     "head": "c36fe3698bfafe1ae006a2a513ace9570dfdcb74",
     "run": 37738693013,
+    "successful_jobs": 9
+  },
+  "checkpoint137_historical_s331_exclusion_assessment": {
+    "action_id": "house:119:1:166",
+    "audit_state": "primary_reconstructed_candidate_compared",
+    "reviewed_disposition": "exact_action_ineligible",
+    "current_disposition": "exact_action_ineligible",
+    "severity": "No Defect",
+    "finding_id": null,
+    "exact_identity": {
+      "majority": "R",
+      "congress": "119",
+      "session": "1st",
+      "chamber": "U.S. House of Representatives",
+      "rollcall-num": "166",
+      "legis-num": "S 331",
+      "vote-question": "On Passage",
+      "vote-type": "YEA-AND-NAY",
+      "vote-result": "Passed",
+      "action-date": "12-Jun-2025",
+      "action-time": "3:34 PM",
+      "vote-desc": "HALT Fentanyl Act"
+    },
+    "recorded_member_observations": {
+      "F000477": {
+        "official_label": "Yea",
+        "name": "Foushee",
+        "party": "D",
+        "state": "NC"
+      },
+      "M001184": {
+        "official_label": "Nay",
+        "name": "Massie",
+        "party": "R",
+        "state": "KY"
+      }
+    },
+    "primary_reconstruction": "CompleteS331ES schedules fentanyl-relatedsubstances/research/criminaldrugpenalty/regulation and goodsimport/export mechanisms. ExistingcollateralINAconsequences are not claimed absent; proposalhasno independentlychanged immigration-person mechanism. This criterion differs from747explicitperson-scope change to an existingqualifiedvisasanctionmenu.",
+    "finding": "No defect found in bounded exact-action domain/procedure screening; wider discovery/audit remain open.",
+    "correction": null,
+    "before_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
+    "corrected_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f",
+    "primary_evidence": [
+      {
+        "source_id": "clerk:119:1:166",
+        "url": "https://clerk.house.gov/evs/2025/roll166.xml",
+        "governed_bytes_sha256": "dfdab4d507d7a3d6bb23b142fb2c4a16b415c812c603f17a3ed3a8752777d44a",
+        "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+      },
+      {
+        "source_id": "govinfo:s331es",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119s331es/html/BILLS-119s331es.htm",
+        "governed_bytes_sha256": "c67c5d2b5bf4cbf0b92588b6b8957c8b41c82ba7eb7a999fcde3df9777b640ea",
+        "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+      },
+      {
+        "source_id": "govinfo:hres489eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
+        "governed_bytes_sha256": "fc79186325ae8bc1b216f2a74a03bdab01105f938fdeb64bfc3651a8220c5aea",
+        "reviewed_extent": "Complete exact text and material deemed/adopted or amendment/procedural witnesses, with preamble-versus-operative/functional-domain boundaries retained"
+      }
+    ],
+    "correction_state": "validated_204_focused_tests_7_semantic_checks_7_byte_identical_outputs; current_exact_head_CI_follows_push"
+  },
+  "s331_candidate_reclassification_checkpoint137": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/s331_candidate_reclassification_checkpoint137.json",
+    "receipt_sha256": "cc12f871ebb6809fe758c29aa04d16cb3c24cae86139128f5b6df6c5ef8489e8",
+    "independent_review_pending": true,
+    "already_reviewed_action_reclassified": true,
+    "ordinary_pending_delta": 0
+  },
+  "independent_checkpoint136_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint136_independent_review.json",
+    "receipt_sha256": "68b8b39e68533e9ba95aaaca4c3b02d50793339ca13e424e0fbd895f5a99e379"
+  },
+  "prior_head_ci_checkpoint136": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint136_ci.json",
+    "receipt_sha256": "6ec5423e0768375bb8856875773eb35293ded7003210e250e9c9885e52b9e702",
+    "head": "24d4b26c7604c2b313df1dffdfcb9ab178eeaa94",
+    "run": 37740586148,
     "successful_jobs": 9
   }
 }

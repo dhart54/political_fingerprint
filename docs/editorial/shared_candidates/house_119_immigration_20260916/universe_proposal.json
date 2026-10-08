@@ -35,6 +35,7 @@
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
+    "house:119:1:166",
     "house:119:1:168",
     "house:119:1:171",
     "house:119:1:172",
@@ -74,8 +75,8 @@
   "accounting": {
     "counts": {
       "procedural_context": 227,
-      "interpreted_substantive_directional": 43,
-      "exact_action_ineligible": 225,
+      "interpreted_substantive_directional": 44,
+      "exact_action_ineligible": 224,
       "source_unresolved": 179,
       "expressive_nonbinding_context": 2
     },
@@ -86,14 +87,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 43,
-    "directional_substantive_actions": 43,
+    "substantive_eligible_actions": 44,
+    "directional_substantive_actions": 44,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 225,
+    "exact_action_ineligible_actions": 224,
     "unresolved_boundary_cases": 179,
-    "independent_episode_count": 39,
+    "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
       "amendment",
@@ -103,8 +104,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 43,
-      "substantive_actions": 43,
+      "ready_substantive_actions": 44,
+      "substantive_actions": 44,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -359,6 +360,7 @@
         "house:119:1:153",
         "house:119:1:156",
         "house:119:1:163",
+        "house:119:1:166",
         "house:119:1:168",
         "house:119:1:171",
         "house:119:1:172",
@@ -470,7 +472,6 @@
         "house:119:1:158",
         "house:119:1:159",
         "house:119:1:162",
-        "house:119:1:166",
         "house:119:1:173",
         "house:119:1:174",
         "house:119:1:179",
@@ -904,6 +905,12 @@
         ]
       },
       {
+        "episode_candidate_id": "episode:s331:119",
+        "action_ids": [
+          "house:119:1:166"
+        ]
+      },
+      {
         "episode_candidate_id": "episode:hr4:119",
         "action_ids": [
           "house:119:1:168",
@@ -1113,11 +1120,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "40 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "44 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "00d1a3da5675844b98aa60752e5a113eb607ec0800865deaccc1c291d85c7a07",
+  "universe_subject_sha256": "b6fd7c82fa9cc30e591434f751e80f490138de65161cea8666ef1b8f3b608f98",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -12092,8 +12099,8 @@
       "date": "2025-06-12",
       "measure": "bill_119_s_331",
       "question": "On Passage",
-      "disposition": "exact_action_ineligible",
-      "reason": "Complete S331ES schedules the defined fentanyl-related class, modifies controlled-substance research registration/sites/inspection/manufacturing procedures, technical dispensing references, drug-production/distribution and GOODS-import/export criminal penalties, rulemaking and prospective/retained-analogue treatment. It does not independently add or change an INA-person admission/status/removal, migration-administration or border-person enforcement mechanism. Possible collateral consequences under other existing drug laws are not described as absent; neither those possible consequences nor drug/import terminology alone makes this exact choice an immigration interpretation.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Source-qualified S.331 ES whole-passage candidate under the existing incorporated-predicate functional standard and explicit supervisor direction. OwnJune12,2025baseline includes PublicLaw119-4section3105temporarycontrol throughSeptember30,2025; proposed statutory coverage ADDS under its own definition/forms/exceptions without that expiry, not temporaryh30repeal/replacement or first-ever control. Express802-to-Schedules-to-INA conditions retain offense/admission/conviction and BOTH governmental trafficking thresholds independently of recipient knowledge, relativebenefit/timing, admitted-alien/removal-order scope and qualified waivers. WholeES research/technical/rulemaking/penalty/applicability provisions remain; no component preference, cross-bill trajectory, particular substance/individual outcome, July-law baseline substitution,747acceptance or generalized criminal-law rule. This reclassifies one already-reviewed action without consuming an ordinary pending item. Historical exclusion/proposal retained; this canonical candidate still requires independent review and is not editorially accepted.",
       "source": {
         "source_id": "clerk:119:1:166",
         "url": "https://clerk.house.gov/evs/2025/roll166.xml",
@@ -12101,7 +12108,7 @@
         "governed_bytes_sha256": "dfdab4d507d7a3d6bb23b142fb2c4a16b415c812c603f17a3ed3a8752777d44a",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:s331:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_s_331",
       "member_action": "yea",
@@ -12110,8 +12117,8 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "exact_action_ineligible",
-      "rationale": "Complete S331ES schedules the defined fentanyl-related class, modifies controlled-substance research registration/sites/inspection/manufacturing procedures, technical dispensing references, drug-production/distribution and GOODS-import/export criminal penalties, rulemaking and prospective/retained-analogue treatment. It does not independently add or change an INA-person admission/status/removal, migration-administration or border-person enforcement mechanism. Possible collateral consequences under other existing drug laws are not described as absent; neither those possible consequences nor drug/import terminology alone makes this exact choice an immigration interpretation.",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Source-qualified S.331 ES whole-passage candidate under the existing incorporated-predicate functional standard and explicit supervisor direction. OwnJune12,2025baseline includes PublicLaw119-4section3105temporarycontrol throughSeptember30,2025; proposed statutory coverage ADDS under its own definition/forms/exceptions without that expiry, not temporaryh30repeal/replacement or first-ever control. Express802-to-Schedules-to-INA conditions retain offense/admission/conviction and BOTH governmental trafficking thresholds independently of recipient knowledge, relativebenefit/timing, admitted-alien/removal-order scope and qualified waivers. WholeES research/technical/rulemaking/penalty/applicability provisions remain; no component preference, cross-bill trajectory, particular substance/individual outcome, July-law baseline substitution,747acceptance or generalized criminal-law rule. This reclassifies one already-reviewed action without consuming an ordinary pending item. Historical exclusion/proposal retained; this canonical candidate still requires independent review and is not editorially accepted.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -12127,6 +12134,78 @@
           "governed_bytes_sha256": "c67c5d2b5bf4cbf0b92588b6b8957c8b41c82ba7eb7a999fcde3df9777b640ea"
         },
         {
+          "source_id": "govinfo:21usc802-2024-controlled",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partA-sec802.htm",
+          "raw_sha256": "1a3a364739a322c7a9ec4739b433333386c3468155e2d9579e71aa4201cd204c",
+          "governed_bytes_sha256": "040b0634c60a88673ee3e33dda5ffa3d44d1c5699ad8f0e07b88257d40f140b9"
+        },
+        {
+          "source_id": "govinfo:8usc1182a-2024-current-student-aid-reference",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "f6d6891406f54e266dc2adcea68d990639fa09e2520433a89af631ffe730b1ce"
+        },
+        {
+          "source_id": "govinfo:8usc1227-operative-2024-screening",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partIV-sec1227.htm",
+          "raw_sha256": "8c16a211d709069d46e2cc1008b1db4f7d513ad4095a3417658bc92d44f00a11",
+          "governed_bytes_sha256": "acc681689a05c03d7ee78392335e4dd215fd98343a2c7c163b019f5567d832a6"
+        },
+        {
+          "source_id": "govinfo:8usc1182h-2024-criminal-waiver",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "6c058bf3e5b1458a72260ba0826eecc01b1673b973e1ffc287abb0e806b0fe6a"
+        },
+        {
+          "source_id": "govinfo:8usc1182d3-2024-temporary-exemptions",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title8/html/USCODE-2024-title8-chap12-subchapII-partII-sec1182.htm",
+          "raw_sha256": "70c91aca26a6389ae6b0b8ca40e4d95bc039d1e1710ce6361ae77cbf5c511e84",
+          "governed_bytes_sha256": "f975d12d2e09b0d3b98634b31cb1739f5d7de456bdc808238d2115752a4b52be"
+        },
+        {
+          "source_id": "govinfo:pl118-158-complete-original",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-118publ158/html/PLAW-118publ158.htm",
+          "raw_sha256": "1e83b0cbba8f1fc6257c0871b2de63720ea35b1f25856a979d212f4b76eefe54",
+          "governed_bytes_sha256": "d869499df06efa538e62650f86248502b77556d587b6092221128b1e62b8fcad"
+        },
+        {
+          "source_id": "govinfo:fr201802319-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2018-02-06/html/2018-02319.htm",
+          "raw_sha256": "554a1770658818d74dd9e5bf9922536c38e474f42c34c1a32496a572851c90a8",
+          "governed_bytes_sha256": "85ebd4f0f908f6b2a4c19aca345bd9e238d9b39b2eb7bf7a532c410cfbc2d510"
+        },
+        {
+          "source_id": "govinfo:fr202006984-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2020-04-10/html/2020-06984.htm",
+          "raw_sha256": "6f0a7cfbec1896c79246efb7302f1d6a37eadaa49f084549cd13101db075b19b",
+          "governed_bytes_sha256": "cb9470fd70ee86a5e1722d9210a883a733b905aaa4865bddbbc5c87f6c97ea2f"
+        },
+        {
+          "source_id": "govinfo:pl116114-complete127",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-116publ114/html/PLAW-116publ114.htm",
+          "raw_sha256": "b7550475619a1f5f28cf490893db72be9e9af60242958b8cde81111fa53f933f",
+          "governed_bytes_sha256": "836aa6a1b294bde901fcb7fdfcef33722b5486cb755546a16b243e1a2a734572"
+        },
+        {
+          "source_id": "govinfo:21usc811-2024-complete123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partB-sec811.htm",
+          "raw_sha256": "fefd58a953372f3ac46741700fa6d8d1e1b716898b3685eaf744dfbc443b6def",
+          "governed_bytes_sha256": "af6e13140be4988bdcdc05f467045d2b77b6cbdead6404170c5f36058b79f1f9"
+        },
+        {
+          "source_id": "govinfo:21usc812-2024-complete123",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title21/html/USCODE-2024-title21-chap13-subchapI-partB-sec812.htm",
+          "raw_sha256": "1fac5c9dc86bf8cbae43d6b00252825d0d51b7cd5ec6d8cf84d96a5cec571a64",
+          "governed_bytes_sha256": "a308b5f3a46f1463b3f4d66572700f1dc00db5cdf196d9bce74e5d2fcf807b6f"
+        },
+        {
+          "source_id": "govinfo:pl119-4",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ4/html/PLAW-119publ4.htm",
+          "raw_sha256": "fda2d01ea333cbce2209eb2df6042682947a2248843fb3ce81b7338fab4e1cfc",
+          "governed_bytes_sha256": "0ac8bc6a4a4d87900acc01f3f3ff8a0e3770b04b28e27d0fec3784f9ec35eeb9"
+        },
+        {
           "source_id": "govinfo:hres489eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres489eh/html/BILLS-119hres489eh.htm",
           "raw_sha256": "c677dc09189eb2c1827968311e2d56213b26f3ea41a4b3664465b82b87938654",
@@ -12140,7 +12219,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "5bfd839265bc068604e55ba5ded3fa0be22a14d530a0fc09e8da532fd9bb190f"
+        "shared_review_record_sha256": "177ca7259558c9870ad4158503e248021a851eb19a68c4d25fece197a9b3794f"
       },
       "historical_raw_hash_matches": true
     },
@@ -41333,6 +41412,7 @@
     "house:119:1:153",
     "house:119:1:156",
     "house:119:1:163",
+    "house:119:1:166",
     "house:119:1:168",
     "house:119:1:171",
     "house:119:1:172",
@@ -41556,6 +41636,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "4ee3b802e1bdccbbef6a408f8432f74b1f999ac89a1452caf999a17bc1cf4fa3",
-  "membership_review_sha256": "1cb564d84d2bde3cf9e69cc1dda5b93e5cdf40bb0b5e98b5c7f317b1f38f8213"
+  "proposal_sha256": "8231595ed99c1843b6a262b029215c8c8d7abb4298e2f6ae9d95901fe6b799e9",
+  "membership_review_sha256": "dc23cde730afeab8b57c8ece3d45ef81129ab3266ad4fb0468ac1127a31a6bec"
 }

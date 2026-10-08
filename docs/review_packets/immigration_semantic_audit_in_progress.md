@@ -1,12 +1,17 @@
 # Immigration & Border internal semantic audit — in progress
 
+Current candidate checkpoint137 has44meanings/497reviews/179ordinary pending. Qualified
+S.331roll166requires independent canonical-output review; no final full-corpus verdict.
+The opening narrative records the earlier baseline audit; latest checkpoint entries
+and the machine-readable audit control current scope and review state.
+
 This is a separate primary-evidence reconstruction and candidate-comparison pass
 against checkpoint `375705ef07e14b30179a6bbf72d9035c83db43ea`. The accountable
 implementation owner performs this pass; it is not a second human/model review.
 Candidate text and passing tests are not semantic authority. No final full-corpus
 audit verdict, acceptance, promotion or publication is conferred.
 
-All twenty-seven currently authored meanings have been compared with primary evidence.
+All twenty-seven then-authored meanings have been compared with primary evidence.
 The sample also covers twenty-five originally excluded actions, of which twenty-four
 remain excluded; eight procedural controls; and the sole expressive control.
 The machine-readable case evidence, identity, member observations, governed
@@ -8197,3 +8202,6 @@ Checkpoint135: source-mapped166ownJuneS331proposal withSeptember30temporarybasel
 
 
 Checkpoint136: Iranmilitary-framework exclusions199/282andadoptedrule300procedure;497reviewed/179ordinary/1508sources/416captures. Actual pending119-41substitute andlater5334motion retained,notdeemedconcurrence.177tests14.460s/reference/sevenchecks/rawreplay pass;43meanings/sixoutputs/76findings/70questions/threepartialflags/135proposal/132correction exact.134/135boundedpasses recorded;135ownninegreen sealed. Qualified166candidate application authorized nextboundary; already-reviewedreclassification must not consumeordinaryitem. Current166stillfrozen at136;candidate-only.
+
+
+Checkpoint137: qualified166candidate applied under ownJuneSeptember30baseline;497reviewed/179ordinary unchanged,44meanings/40episodes/88observations/78findings. Prior43meanings/76findings/propositions/1508sources/416captures/70questions/threepartialflags/history exact;activefrozen wording removed.178tests14.196s/reference/sevenchecks/rawreplay pass;newJuneguard andsixCchapeau omissionnegatives. Old43-row projections remain valid subsets;fresh44-rowcoverage verified.136boundedpass/ownninegreen sealed;136next_action metadata corrected with history retained. Independent137review/CI pending;candidate-only.
