@@ -18,6 +18,51 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_hr1968_healthcare_limits_keep_covered_funds_definition_and_complete_exceptions(self):
+        action = getattr(self, 'hr1968_healthcare_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced health-care funding conditions', 1)[1]
+        for qualification in [
+            "referring only to that division's provisions, except as expressly provided otherwise",
+            'bars expenditure of both funds appropriated',
+            'both funds appropriated in the relevant Act/division and funds in any trust fund to which funds are appropriated',
+            "managed-care provider or organization's package of services under a contract or other arrangement",
+            'both exceptions',
+            'pregnancy resulting from rape or incest',
+            'physical disorder, injury or illness',
+            'a physician certifies would place the woman in danger of death unless an abortion is performed',
+            'Neither exception is dropped, expanded to every health concern, limited to only one offense or presumed satisfied by an individual trafficking-victim label',
+            'No actual expenditure, provider contract, individual service, coverage determination or violation is found',
+        ]:
+            self.assertIn(qualification, text)
+        self.assertTrue({'govinfo:pl113-235-divisionG-sec3-506-507-healthcare-conditions',
+                         'govinfo:pl115-31-divisionH-sec3-506-507-healthcare-conditions',
+                         'govinfo:pl116-94-divisionA-sec3-506-507-healthcare-conditions',
+                         'govinfo:pl117-328-divisionH-sec3-506-507-healthcare-conditions'} <= {b['source_id'] for b in action['claim_source_map']})
+
+    def test_hr1968_healthcare_limits_keep_nonfederal_reservations_conditional_entity_and_version_bounds(self):
+        action = getattr(self, 'hr1968_healthcare_action', None)
+        if action is None:
+            action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:1:70')
+        text = action['meaning'].split('The materially referenced health-care funding conditions', 1)[1]
+        for qualification in [
+            "express exception for a State's or locality's Medicaid matching contribution",
+            "managed-care providers' ability to offer abortion coverage",
+            'State/local ability to contract separately with a provider',
+            'conditions availability of funds',
+            'to a Federal agency/program or State/local government',
+            'subjects an institutional or individual health-care entity to discrimination',
+            'does not provide, pay for, cover or refer for abortions',
+            'All four listed refusal grounds remain',
+            'physicians and other health professionals, hospitals, provider-sponsored organizations, HMOs, health-insurance plans',
+            'other health-care facilities/organizations/plans',
+            'does not merge the Acts into one unqualified version, create four independent member actions or decide all dated carry-forward applications',
+            'without attributing a separate abortion position or intent from this package vote',
+            'All 70 separate application questions',
+        ]:
+            self.assertIn(qualification, text)
+
     def test_hr1968_health_reference_chain_keeps_four_requirements_acts_and_dated_scopes(self):
         action = getattr(self, 'hr1968_health_chain_action', None)
         if action is None:

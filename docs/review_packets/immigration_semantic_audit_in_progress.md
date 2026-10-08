@@ -7272,3 +7272,68 @@ refugee, supplementary/other DHS/counterparts, 216 ordinary screenings and whole
 comparison. Same .w/ib owner under explicit 22:39 restart resume, original deadline/
 pause evidence preserved and no current shutdown boundary. No merge/deploy/production/
 editorial approval/promotion/publication. Draft PR198 is the authorized delivery boundary.
+
+
+### Successor checkpoint 115: complete qualified health-care conditions
+
+The four actual requirements Acts now bind complete section 3/division context and
+506-507 clauses: PL113-235 G 2015, PL115-31 H 2017, PL116-94 A 2020, PL117-328 H 2023.
+Section 3 makes this-Act references division-only unless expressly otherwise provided.
+Both covered appropriation and receiving-trust-fund scope, defined managed-care
+health-benefits package, direct expenditure and coverage limits remain distinct.
+The final candidate explicitly states that the covered funds cannot be spent for abortion
+or the specified coverage, followed by complete exceptions. The earlier core/validation
+snapshot is preserved privately; its captured test file already contained the added
+predicate, as the timing note records. A separate reconstructed earlier guard file and
+the final 162-test/23-mutation pass distinguish the executed versions.
+Rape/incest and full physician-certified physical-condition/danger-of-death exceptions
+are retained. No exception presumed from trafficking status or dropped into shorthand.
+
+State/local/private-fund expenditure and separate provider/State coverage reservations
+retain Medicaid-matching contribution exceptions. The conditional funding-to-Federal-
+agency/program/State/local-government discrimination predicate, all four refusal grounds
+(provide/pay/cover/refer), and complete health-care-entity definition remain. No universal
+private-spending ban, individual status/coverage/violation/motive or separate package-
+derived abortion stance. Dates/versions and continuing/source fiscal scopes preserved;
+other material program/HHS/general requirements remain executable research.
+
+Four sources/bindings/member references/twelve coordinates and four capture registrations:
+three private 115 originals and previously acquired private 112 PL117-328. Review is only
+complete selected clauses/context; no whole-Act or whole-conditions application. All raw/
+full/governed hashes and exact joined extents verify. Private annotation/page-marker-only
+comparison confirms matching complete 506-507 and section 3 operative text across versions;
+canonical original glyphs, notes, page markers and distinct division/year identities remain.
+
+162 focused tests pass in 13.913 seconds; reference/seven semantic checks pass; seven
+outputs reproduce byte for byte. Two guards pass; 23 qualifier mutations fail once each
+with zero errors. Prior 1,415 sources/39 other meanings/70 questions/134 methods/383 manifest
+rows/older receipts/protected code preserved. Both-member full detail/compact/projection
+and source-bound primary comparison inspected; choices/counting/eligibility/compiled graph
+unchanged. Final diff reviewed. Tests/comparisons are mechanical evidence, not acceptance.
+Core 20dffd72e836d386b677bb486e5c169601c3ba83540044544bce18a7e0946daa;
+compiled f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898.
+Totals: 1,419 sources/1,017 bindings/387 captures/298 extent objects/490 coordinates.
+Queue: 676 inventory/460 reviewed/40 interpreted/211 procedural/207 excluded/two expressive;
+216 ordinary unfinished/three partial packages/70 separate questions. 37 episodes/80
+observations/72 findings; historical severity accounting unchanged. Readiness/publication
+false, final verdict null; Q68/Q69/Q70 remain separately unresolved.
+
+Own exact 114 run 37708324921 is terminal nine green; five feature-pinned/three synthetic/
+one mixed; synthetic 7cd3a735be91d056c677aece3e8e3d525517b780. Hosted candidate 289 differs from owner 160 at 114/162
+here. Nine owner-read execution logs/hashes/actual checkouts/counts sealed in
+docs/review_packets/immigration_delivery_checkpoint114_ci.json. No retry; prior 111
+initial failure/single-job recovery preserved. 115 requires its own pushed-head CI.
+Both bounded independent source/propagation and mechanics/CI lanes through 114 are complete,
+with no new material finding; exact scopes and limits are sealed in
+docs/review_packets/immigration_checkpoints113_114_independent_review_completion.json.
+No independent full generator/test suite or application/acceptance claim. 115 remains
+separate pending independent review.
+
+Continue remaining material program/HHS/general conditions across the four requirements
+Acts, at exact program/scope/version. Follow required substantive authority references,
+preserve availability/dates/exceptions and reserve actual unsupported application choices
+separately; unfinished research is not unavailable evidence. Then State/migration/refugee,
+supplementary/other DHS/counterparts, 216 ordinary screenings and final package comparison.
+Same .w/ib owner under explicit 22:39 restart resume; original deadline/pause evidence
+preserved and no current shutdown boundary. No merge/deploy/production/editorial approval/
+promotion/publication. Draft PR198 remains the authorized delivery boundary.
