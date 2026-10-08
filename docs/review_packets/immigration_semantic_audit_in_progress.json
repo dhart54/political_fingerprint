@@ -13698,10 +13698,84 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:293",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "293",
+        "legis-num": "H J RES 1",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Failed",
+        "action-date": "2-Sep-2026",
+        "action-time": "4:34 PM",
+        "vote-desc": "Proposing an amendment to the Constitution of the United States to require that the Supreme Court of the United States be composed of nine justices"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "The complete H.J.Res.1 proposed constitutional article fixes Supreme Court composition at nine justices: one chief justice and eight associate justices. The printed suspension motion/body matches the complete IH operative text with formatting-only normalization; resumed roll293 and announced failure bind the actual September2,2026 House action. The proposal requires two-thirds of each House concurring and ratification by legislatures of three-fourths of the States within seven years after submission. It was rejected on this House motion,not adopted,submitted for ratification or made part of the Constitution. Material ArticleIIIsection1/ArticleV and2024Code28section1 provide judicial-organization/amendment context;the statutory one-chief/eight-associate composition and six-justice quorum are not themselves amendments by this failed vote. The exact mechanism concerns Court composition and constitutional amendment procedure,not immigration admission,status,nationality,removal,benefit or work authorization eligibility. Immigration/birthright-citizenship or other policy remarks in surrounding debate cannot supply narrower operative immigration meaning or predicted Court decisions. No actual membership change,judicial outcome,constitutional ratification,component preference or member motive is inferred. Ineligible under the existing functional exact-action boundary;FousheeNay and MassieYea remain distinct observed votes.",
+      "finding": "Failed court-composition constitutional proposal remains judicial organization;three-fourths State legislatures/seven-year condition and actual failure preserved. Surrounding immigration debate cannot establish operative domain meaning.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "73e00c0add302552dc87453611e646a177f1d3c054e47d8f6f57e3ec036666e4",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:293",
+          "url": "https://clerk.house.gov/evs/2026/roll293.xml",
+          "governed_bytes_sha256": "1bf468a17eec3c845c5bed1a31015051b3bd2ed0a1cf7b26cf19b04fe57e69e0",
+          "reviewed_extent": "CompleteIH or named printedmotion/body,question/totals,result and materialcourt/amendment operative scope;not whole54page record,parentnotes or allConstitution."
+        },
+        {
+          "source_id": "govinfo:hjres1ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres1ih/html/BILLS-119hjres1ih.htm",
+          "governed_bytes_sha256": "eaeb254fe6e173cf541ea0871ef3289ebf8570d0bf9233a0f8f21be0dc97b6f2",
+          "reviewed_extent": "CompleteIH or named printedmotion/body,question/totals,result and materialcourt/amendment operative scope;not whole54page record,parentnotes or allConstitution."
+        },
+        {
+          "source_id": "congressional-record:hjres1-floor-choice-operative143",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-02/pdf/CREC-2026-09-02-house.pdf",
+          "governed_bytes_sha256": "fb6fca4be5699fdd041414086c75df5944c853269eb1625acef8d06a84e4542a",
+          "reviewed_extent": "CompleteIH or named printedmotion/body,question/totals,result and materialcourt/amendment operative scope;not whole54page record,parentnotes or allConstitution."
+        },
+        {
+          "source_id": "govinfo:28usc1-operative143",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap1-sec1.htm",
+          "governed_bytes_sha256": "21c5cda92d52ba63e2d6b1dc8d8f335bf25aec888588a39f98bf4fb25e7d241e",
+          "reviewed_extent": "CompleteIH or named printedmotion/body,question/totals,result and materialcourt/amendment operative scope;not whole54page record,parentnotes or allConstitution."
+        },
+        {
+          "source_id": "nara:constitution-III1-V-operative143",
+          "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+          "governed_bytes_sha256": "436abdc657be42574f14101e86f2309222fb156723db3db030fb7f289fe448be",
+          "reviewed_extent": "CompleteIH or named printedmotion/body,question/totals,result and materialcourt/amendment operative scope;not whole54page record,parentnotes or allConstitution."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 128,
+    "No Defect": 129,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -13763,17 +13837,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 32,
+    "successor_new_exclusions_reviewed": 33,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.824,
+    "focused_runtime_seconds": 14.183,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "141own nine green sealed;142needs own pushed-head run.",
+    "exact_head_ci": "142own ninegreen sealed;143needs own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -13810,12 +13884,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Threefinancial/labor exclusions240/227/216;509reviews/167ordinary.1545sources/433captures/357extents/603coordinates;44meanings/78findings/sixsemanticoutputs/70questions/threeflags unchanged.179tests/reference/sevenchecks/rawreplay pass.141twoP3independently resolved,history retained;activeclosure/bookkeeping updated with before snapshots.141CI308distinctlocal179,ninegreen/no retry. Forestry25/223/283/280holds unchanged.",
+    "focused_scope_note": "Court293exact failedproposal screened;510reviews/166ordinary,1549sources/436captures,360extents/609coordinates.44meanings/78findings/sixoutputs/70questions/threeflags unchanged.179tests/reference/7semanticchecks/rawreplay pass.142independentbounded source/mechanics pass plus one metadataP3 corrected143 awaitingrecheck;140/141semanticcorrections remainresolved.142own ninegreen/no retries,hosted308 distinctlocal179.133/138/139limits andforestry/program/photoIDholds retained.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint141_ci.json",
-      "receipt_sha256": "e411690cf83c6b91d3363274f713523193d1b44e01e38ee216363581241a9413",
-      "head": "c3b01ce707e581bc7950b72de017788fa8066fd8",
-      "run": 37761782368,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint142_ci.json",
+      "receipt_sha256": "450d4cd2a04454c58c28794d502db0e3e3ac4090849d18926995af02de242546",
+      "head": "befef12ff4280c7686afe409c183aa20adb687d8",
+      "run": 37766519325,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -18383,7 +18457,7 @@
   },
   "ordinary_screening_checkpoint140": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint140.json",
-    "receipt_sha256": "ca473cfbc679da68febf61f8493707a8e42e5453cf07cc88d2328273323c2978",
+    "receipt_sha256": "759bba5cfe9c79bbe8661f0caaae6e669ed2064bb0a5a79838a9e0b0cf8208b6",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
     "independent_review_pending": false,
@@ -18406,7 +18480,7 @@
   "checkpoint140_precision_correction_checkpoint141": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint140_precision_correction_checkpoint141.json",
     "independent_recheck_pending": false,
-    "receipt_sha256": "e4004fd47875755aed5e3951c5ff272a7ecf54646a934f3895c79ad0a1e98ef6",
+    "receipt_sha256": "b81c1cad2d186dfd006fc1621364dafe2a3dc1b572cbf5ba8510951ddf5b75d5",
     "independent_review_ref": "docs/review_packets/immigration_checkpoint141_independent_review.json",
     "independent_review_scope": "BothP3resolved,boundedcontrols/preservation pass;no newresearch/fresh retrieval/full-suite rerun or acceptance."
   },
@@ -18438,9 +18512,11 @@
     "receipt_sha256": "1d9e8ae8a4e888c765b5980dc9ba7dd41be1df85aaa505a87db22d095b87f23a",
     "same_owner_primary_screenings": 3,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 167,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint142_independent_review.json",
+    "independent_review_scope": "Threeboundedsource/domain/mechanics slices passed;localized140pendingflag P3 corrected143 and awaiting bounded recheck."
   },
   "independent_checkpoint141_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint141_independent_review.json",
@@ -18451,6 +18527,34 @@
     "receipt_sha256": "e411690cf83c6b91d3363274f713523193d1b44e01e38ee216363581241a9413",
     "head": "c3b01ce707e581bc7950b72de017788fa8066fd8",
     "run": 37761782368,
+    "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint143": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint143.json",
+    "receipt_sha256": "df00f95ded132f8fd4c5d66f83af41fa0405b8a8663235325a309afb83bb6110",
+    "same_owner_primary_screenings": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 166,
+    "application_questions": 70
+  },
+  "independent_checkpoint142_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint142_independent_review.json",
+    "receipt_sha256": "ff976cf75c6a2c361bca05c862695aa8c2161db5b08fbf11eac367aa8b5a57fd"
+  },
+  "checkpoint140_pending_flag_correction_checkpoint143": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint140_pending_flag_correction_checkpoint143.json",
+    "receipt_sha256": "01098c21bcb432279fac4ca1759757722ff1286d356b2b873c48c9e4efbf5782",
+    "severity": "Minor",
+    "priority": "P3",
+    "independent_recheck_pending": true,
+    "counting_rule": "Receiptmetadata finding,not another actionassessment;historicalaction counts and six distinct semanticMinor findings unchanged."
+  },
+  "prior_head_ci_checkpoint142": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint142_ci.json",
+    "receipt_sha256": "450d4cd2a04454c58c28794d502db0e3e3ac4090849d18926995af02de242546",
+    "head": "befef12ff4280c7686afe409c183aa20adb687d8",
+    "run": 37766519325,
     "successful_jobs": 9
   }
 }

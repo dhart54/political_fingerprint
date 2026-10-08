@@ -9440,3 +9440,43 @@ bounded independent screening review.133access and138/139provenance limits retai
 Forestry25and223/283/280program/photoIDholds/eightunregistered privatecaptures unchanged;
 qualified166/frozen265/unaccepted747 and all reservedgates remain. Continue bounded
 ordinary/material-source work under unchanged shutdown controls.
+
+
+### Local successor checkpoint143: failed Court-composition proposal and receipt status
+
+House119/2/293 H.J.Res.1 failed suspension motion is screened outside Immigration
+under existing exact-action functional rules. CompleteIH matches printedoperativebody
+with formatting-only normalization. PDFpages17/33/34(H5443/H5459/H5460) inspected;
+three-column extraction fixes initialinterleaving. Full54-page capture retained but
+only namedmotion/body,question/totals/result intervals collectivelyreviewed. Onechief/
+eightassociatejustices,twothirdseachHouse,threefourthsStatelegislatures/sevenyears
+remain proposalconditions;failure is not adoption,submission or ratification.2024
+28USC1composition/quorum and completeArticleIII1/ArticleV context read. Surrounding
+immigrationremarks cannot establish exactoperative meaning or predicteddecisions.
+FousheeNay/MassieYea retained,no membership/outcome/motive inference.
+
+510reviews/166ordinary remain,44interpreted/227procedural/237excluded/twoexpressive;
+1549sources/436captures/1108interpretedbindings/360extents/609coordinates. Three
+newraworiginals,three derivatives/sixintervals/fourcanonicalregistrations verify;
+prior509reviews/1545sources/433captures/44meanings/sixoutputs/78findings/70questions/
+threeflags unchanged.179tests in14.183s,reference/7semanticchecks/seven-file replay
+pass. Initial unrequested third replaymember rejected and corrected;NODE_PATH/
+sandboxtemp failures recovered under established environment;initiallogs retained.
+No new compiler/testimplementation or acceptance. Audit129NoDefect/8Minor/11Major/
+1Critical;distinctsemantic1Critical/5Major/6Minor historicalcounts preserved.
+
+142befef12 boundedindependent three source/domain/mechanics slices pass,sevennew
+originals/reused921,eightderivatives/16intervals,priorobjects/holds/guards verify.
+Owner179tests/replay attributed;parentmetadata and133/138/139limits retained.
+One localized receiptmetadataP3 found:active140top-levelpendingflag stilltrue despite
+resolvednextaction/nestedstatus/audit. Setfalse,rebindactive141closure/auditseals;
+completebefore140/141receipts preserved in143correctionreceipt. No substantive
+reopening,two earlierprecisionP3remainindependentlyresolved and history retained.
+This metadatafinding is separate from actionassessment counts;boundedrecheckpending.
+
+142CI37766519325 first-attemptninegreen,fivefeature/three synthetic/one mixed;
+syntheticccbeda9a668fdd6526ee09fa18191a89139ec3da. Decodedlogs/seals/checkouts/skips
+verify,hosted308distinctlocal179,repair13/20;no reruns.143needsownCI/screeningreview.
+Forestry25and223/280/283holds/70questions/threepackages remain unfinished;
+qualified166/frozen265/unaccepted747 unchanged. Continue under localwatcher
+stoplarge12:12:21Z,wrap12:27:21Z,marker12:37:21Z,shutdown12:42:21Z.

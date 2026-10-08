@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 236,
-      "source_unresolved": 167,
+      "exact_action_ineligible": 237,
+      "source_unresolved": 166,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 236,
-    "unresolved_boundary_cases": 167,
+    "exact_action_ineligible_actions": 237,
+    "unresolved_boundary_cases": 166,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -619,6 +619,7 @@
         "house:119:2:282",
         "house:119:2:285",
         "house:119:2:291",
+        "house:119:2:293",
         "house:119:2:294",
         "house:119:2:296",
         "house:119:2:297",
@@ -779,7 +780,6 @@
         "house:119:2:284",
         "house:119:2:286",
         "house:119:2:292",
-        "house:119:2:293",
         "house:119:2:295",
         "house:119:2:301",
         "house:119:2:302",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "02986d24a604181b7ee4f3c13235a0bf2c9bced65c718781fd1e05194222cf59",
+  "universe_subject_sha256": "87652e657c35ab12eed2e102cd8372d15fa82b52af7195c30d70f17be651cde3",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -40499,8 +40499,8 @@
       "date": "2026-09-02",
       "measure": "H J RES 1",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The complete H.J.Res.1 proposed constitutional article fixes Supreme Court composition at nine justices: one chief justice and eight associate justices. The printed suspension motion/body matches the complete IH operative text with formatting-only normalization; resumed roll293 and announced failure bind the actual September2,2026 House action. The proposal requires two-thirds of each House concurring and ratification by legislatures of three-fourths of the States within seven years after submission. It was rejected on this House motion,not adopted,submitted for ratification or made part of the Constitution. Material ArticleIIIsection1/ArticleV and2024Code28section1 provide judicial-organization/amendment context;the statutory one-chief/eight-associate composition and six-justice quorum are not themselves amendments by this failed vote. The exact mechanism concerns Court composition and constitutional amendment procedure,not immigration admission,status,nationality,removal,benefit or work authorization eligibility. Immigration/birthright-citizenship or other policy remarks in surrounding debate cannot supply narrower operative immigration meaning or predicted Court decisions. No actual membership change,judicial outcome,constitutional ratification,component preference or member motive is inferred. Ineligible under the existing functional exact-action boundary;FousheeNay and MassieYea remain distinct observed votes.",
       "source": {
         "source_id": "clerk:119:2:293",
         "url": "https://clerk.house.gov/evs/2026/roll293.xml",
@@ -40517,26 +40517,50 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The complete H.J.Res.1 proposed constitutional article fixes Supreme Court composition at nine justices: one chief justice and eight associate justices. The printed suspension motion/body matches the complete IH operative text with formatting-only normalization; resumed roll293 and announced failure bind the actual September2,2026 House action. The proposal requires two-thirds of each House concurring and ratification by legislatures of three-fourths of the States within seven years after submission. It was rejected on this House motion,not adopted,submitted for ratification or made part of the Constitution. Material ArticleIIIsection1/ArticleV and2024Code28section1 provide judicial-organization/amendment context;the statutory one-chief/eight-associate composition and six-justice quorum are not themselves amendments by this failed vote. The exact mechanism concerns Court composition and constitutional amendment procedure,not immigration admission,status,nationality,removal,benefit or work authorization eligibility. Immigration/birthright-citizenship or other policy remarks in surrounding debate cannot supply narrower operative immigration meaning or predicted Court decisions. No actual membership change,judicial outcome,constitutional ratification,component preference or member motive is inferred. Ineligible under the existing functional exact-action boundary;FousheeNay and MassieYea remain distinct observed votes.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:293",
           "url": "https://clerk.house.gov/evs/2026/roll293.xml",
           "raw_sha256": "75019df15f4d41bce21f30cf53d82af68b82307f48e0694443307e1c820c3012",
-          "governed_bytes_sha256": "1bf468a17eec3c845c5bed1a31015051b3bd2ed0a1cf7b26cf19b04fe57e69e0",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "1bf468a17eec3c845c5bed1a31015051b3bd2ed0a1cf7b26cf19b04fe57e69e0"
+        },
+        {
+          "source_id": "govinfo:hjres1ih",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hjres1ih/html/BILLS-119hjres1ih.htm",
+          "raw_sha256": "3b6919cfa445c878654dab8e60c5f621f8cbdf28896df1ab1c7b8d08fa105d9e",
+          "governed_bytes_sha256": "eaeb254fe6e173cf541ea0871ef3289ebf8570d0bf9233a0f8f21be0dc97b6f2"
+        },
+        {
+          "source_id": "congressional-record:hjres1-floor-choice-operative143",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-02/pdf/CREC-2026-09-02-house.pdf",
+          "raw_sha256": "a219d1c621d143f2d8f9b1573f0d8c2d895e42934d050e0b6529cbd2be6c560e",
+          "governed_bytes_sha256": "fb6fca4be5699fdd041414086c75df5944c853269eb1625acef8d06a84e4542a"
+        },
+        {
+          "source_id": "govinfo:28usc1-operative143",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/html/USCODE-2024-title28-partI-chap1-sec1.htm",
+          "raw_sha256": "3eac40ece272e43a38de17bcaf27044f9dc29391480a896d9052d8a474ab812a",
+          "governed_bytes_sha256": "21c5cda92d52ba63e2d6b1dc8d8f335bf25aec888588a39f98bf4fb25e7d241e"
+        },
+        {
+          "source_id": "nara:constitution-III1-V-operative143",
+          "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+          "raw_sha256": "6d97a08e1295d3da8bb9640b189f7190899478ba6c036ed3b989e4327eba5acd",
+          "governed_bytes_sha256": "436abdc657be42574f14101e86f2309222fb156723db3db030fb7f289fe448be"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "73e00c0add302552dc87453611e646a177f1d3c054e47d8f6f57e3ec036666e4"
       }
     },
     {
@@ -41821,7 +41845,6 @@
     "house:119:2:284",
     "house:119:2:286",
     "house:119:2:292",
-    "house:119:2:293",
     "house:119:2:295",
     "house:119:2:301",
     "house:119:2:302",
@@ -41852,6 +41875,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "cb5713f510797124f684c55cf4573ae3f1f81a71bf55319b27c97018ddbd7205",
-  "membership_review_sha256": "5f9f426dfab0662d03950e79d3c27aa2b960f887245a4e7f51e30451282c15f0"
+  "proposal_sha256": "64ce4b4cc0309d881ffab3f9ca8a66b6e0931e98ba78ec6f947730f82170a03d",
+  "membership_review_sha256": "f47d31fa83b9c54781bac67f12cbd669438d1231d8205617e8acab72b05b6d4b"
 }
