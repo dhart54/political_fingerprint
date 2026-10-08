@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 263,
-      "source_unresolved": 140,
+      "exact_action_ineligible": 265,
+      "source_unresolved": 138,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 263,
-    "unresolved_boundary_cases": 140,
+    "exact_action_ineligible_actions": 265,
+    "unresolved_boundary_cases": 138,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -511,6 +511,8 @@
         "house:119:1:248",
         "house:119:1:249",
         "house:119:1:253",
+        "house:119:1:254",
+        "house:119:1:255",
         "house:119:1:266",
         "house:119:1:269",
         "house:119:1:270",
@@ -674,8 +676,6 @@
         "house:119:1:250",
         "house:119:1:251",
         "house:119:1:252",
-        "house:119:1:254",
-        "house:119:1:255",
         "house:119:1:256",
         "house:119:1:257",
         "house:119:1:258",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "f3562607e9c2eaa38ae5c184a8c7f40ec7bb9091f7a5a6b09b86c158720cd47b",
+  "universe_subject_sha256": "1a0422564ab8178c7ffd5deac40c6131de05ff925f0bf5c8679278885b283e7a",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -18046,8 +18046,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene offers Davidson PartA20 as his express designee (Clerk ordinal15, House119/1/254). The exact funding prohibition covers funds AUTHORIZED TO BE APPROPRIATED BY THIS ACT OR OTHERWISE MADE AVAILABLE FOR FISCAL YEAR2026 FOR DEFENSE, and bars OBLIGATION OR EXPENDITURE for four named activities: research, development, procurement or promotion of CELL CULTURED MEAT. Preserve both fund branches and the literal FY2026/Defense qualification, not only thisAct funds, all Federal funds, all future years or all food purchases/consumption. Authorization is not appropriation or guaranteed spending/savings. Do not invent a legal meat/ingredient/drug definition, clinical/food-safety judgment or actual effect on products/people. The proposed criterion concerns Defense-funded activities and the named food object, not personal nationality, visa/admission/removal/immigration status or work authorization. Foreign research/contract/worker/food contexts and debate are not changed Immigration criteria. Individual procurement/research/eligibility, current-law and actual implementation applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization; recorded votes failed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences, enactment or motive.254 overall Present1 remains a nondirectional resolved status, not an observed-member support/opposition. Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:254",
         "url": "https://clerk.house.gov/evs/2025/roll254.xml",
@@ -18064,25 +18064,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene offers Davidson PartA20 as his express designee (Clerk ordinal15, House119/1/254). The exact funding prohibition covers funds AUTHORIZED TO BE APPROPRIATED BY THIS ACT OR OTHERWISE MADE AVAILABLE FOR FISCAL YEAR2026 FOR DEFENSE, and bars OBLIGATION OR EXPENDITURE for four named activities: research, development, procurement or promotion of CELL CULTURED MEAT. Preserve both fund branches and the literal FY2026/Defense qualification, not only thisAct funds, all Federal funds, all future years or all food purchases/consumption. Authorization is not appropriation or guaranteed spending/savings. Do not invent a legal meat/ingredient/drug definition, clinical/food-safety judgment or actual effect on products/people. The proposed criterion concerns Defense-funded activities and the named food object, not personal nationality, visa/admission/removal/immigration status or work authorization. Foreign research/contract/worker/food contexts and debate are not changed Immigration criteria. Individual procurement/research/eligibility, current-law and actual implementation applications remain unadjudicated. Complete own operative matches numberedReport after declared formatting normalization; recorded votes failed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences, enactment or motive.254 overall Present1 remains a nondirectional resolved status, not an observed-member support/opposition. Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:254",
           "url": "https://clerk.house.gov/evs/2025/roll254.xml",
           "raw_sha256": "659e8295cdfb90173b6b8ae8bc80bed5f9f37a53ecd05fe837b1c6c4fb84a147",
-          "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "e1d1e898d3a3c9542859735dcd46d693fc0b8ff92f03abdc10337ca1259996af"
+        },
+        {
+          "source_id": "congressional-record:3838-amend20-roll254-choice157",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "8e049700a8fd657ec82636f0d708aeae4e65e7dda3cc93703b8e2e8b1257e1b0"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend20-operative157",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "e6327da19f24246cac59eea5cad9c0e1e1bcf39eceeb856158d92d88b01dcc0c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "a3080bd554de4a1c4c6c263e2d7d15919b70c991aa8f984f4ab12cfd765586ac"
       },
       "historical_raw_hash_matches": true
     },
@@ -18093,8 +18105,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene PartA22 (Clerk ordinal17, House119/1/255) adds a literal prohibition on funds MADE AVAILABLE BY THIS ACT being used for ASSISTANCE TO UKRAINE. Preserve the broad assistance object and thisAct-only denominator; not USAI-only/weapons/combat-only, allActs/allresources/allUkrainepersons or permanent repeal of aid authorities. H.R.3838's authorization stage is not an enacted appropriation or actual funding guarantee. Country/assistance wording supplies no changed personal visa/admission/nationality/removal/immigration-status/work-authorization criterion, and does not adjudicate individual refugee/relocation/entry/travel/program/contract applications. Initial H4188 callup prints 'part1'; own recorded question saysPartA, Clerk identity and exact numbered Reportoperative converge. Retain the printed header qualification without rewriting source words. The literal funding object, rather than adjacent Baltic initiative/debate/border rhetoric or member motive, controls this candidate exclusion. Complete own operative matches numberedReport after declared formatting normalization; recorded votes failed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences, enactment or motive.Established functional-domain candidate exclusion only, noncounting and unapproved.",
       "source": {
         "source_id": "clerk:119:1:255",
         "url": "https://clerk.house.gov/evs/2025/roll255.xml",
@@ -18111,25 +18123,37 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene PartA22 (Clerk ordinal17, House119/1/255) adds a literal prohibition on funds MADE AVAILABLE BY THIS ACT being used for ASSISTANCE TO UKRAINE. Preserve the broad assistance object and thisAct-only denominator; not USAI-only/weapons/combat-only, allActs/allresources/allUkrainepersons or permanent repeal of aid authorities. H.R.3838's authorization stage is not an enacted appropriation or actual funding guarantee. Country/assistance wording supplies no changed personal visa/admission/nationality/removal/immigration-status/work-authorization criterion, and does not adjudicate individual refugee/relocation/entry/travel/program/contract applications. Initial H4188 callup prints 'part1'; own recorded question saysPartA, Clerk identity and exact numbered Reportoperative converge. Retain the printed header qualification without rewriting source words. The literal funding object, rather than adjacent Baltic initiative/debate/border rhetoric or member motive, controls this candidate exclusion. Complete own operative matches numberedReport after declared formatting normalization; recorded votes failed after preliminary voiceayes. FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component preferences, enactment or motive.Established functional-domain candidate exclusion only, noncounting and unapproved.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:255",
           "url": "https://clerk.house.gov/evs/2025/roll255.xml",
           "raw_sha256": "acf637dc40597b42a7eeab00644d1a947c475bdb4833e66256a50991958edef8",
-          "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "d83c3d8587493cfa0152539db54f1bbf2e3dbffbaa7f72ed324cc12089cacd9a"
+        },
+        {
+          "source_id": "congressional-record:3838-amend22-roll255-choice157",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "51b4668fbc90f8664e11e29b7def6f95731c7e755f66de0933d14c25b4d856b7"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend22-operative157",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "703b620f20fad12ff303826e4689b8e3ea6db4f555c287d2ab45f6b348722f44"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "1e647851272e0b16a49cf6400684f6990f4557f80849385c8737e4f4f7acbc2e"
       },
       "historical_raw_hash_matches": true
     },
@@ -42415,8 +42439,6 @@
     "house:119:1:250",
     "house:119:1:251",
     "house:119:1:252",
-    "house:119:1:254",
-    "house:119:1:255",
     "house:119:1:256",
     "house:119:1:257",
     "house:119:1:258",
@@ -42551,6 +42573,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "992ee6fdb0586af2bc3663cafcb904ae8a0c17b808935d5c1b065a687593ff4b",
-  "membership_review_sha256": "8cab7e83bd4e4600719630fe78fb7f339a3df3ed1ffb5310bcdb8164a6e8c25f"
+  "proposal_sha256": "952ac4bfab8ec7fe2e117b2effaace50b7188ba4d28ec29212a53923d357047a",
+  "membership_review_sha256": "2d8055c5d03e4778bc46719198a358b0963c0d4c138ebfdeecac42daf420283f"
 }

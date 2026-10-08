@@ -1,8 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint156:44 meanings/536 reviews/140 ordinary pending.
-Two candidate exclusions; audit155NoDefect/8Minor/11Major/1Critical, final verdict null.
-155CI9green/parent bounded155pass retained;156 independent review pending.
+Current candidate checkpoint157:44 meanings/538 reviews/138 ordinary pending.
+Two candidate exclusions; audit157NoDefect/8Minor/11Major/1Critical, final verdict null.
+156CI9green/parent bounded156pass retained;157 independent review pending.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8680,3 +8680,66 @@ review pending. Private156 verifier output filename was corrected after a before
 documentation failure;155 private result recovered from immutable155 receipt and
 pre156 archived inputs/outputs, with misdirected result retained and no independent
 original-private-byte-seal claim. Canonical inputs/semantics were unaffected.
+
+## Checkpoint 157: cell-cultured-meat funds and Ukraine assistance
+
+Two failed Greene-offered H.R.3838 amendments, House119/1/254-255, receive
+noncounting candidate exclusions. PartA20/Clerkordinal15 is Davidson's amendment
+offered by Greene as expressly identified designee; preserve actual sponsor versus
+offeror. It restricts obligation/expenditure for research/development/procurement/
+promotion of CELL CULTURED MEAT using funds AUTHORIZED TO BE APPROPRIATED BY
+THIS ACT OR OTHERWISE MADE AVAILABLE FOR FY2026 FOR DEFENSE. Keep both literal
+branches; no thisAct-only/allFederal/allfuture funds, allfood/consumption/drug
+definition or actual appropriation/spending/savings/clinical/food-safety guarantee.
+
+PartA22/Clerkordinal17 prohibits thisAct funds for ASSISTANCE TO UKRAINE,
+notUSAI-only/weapons-only/allActs/allresources/allUkrainepersons/permanent repeal.
+Authorization stage is distinct from enacted appropriation or actual assistance.
+Neither operative supplies changed personal Immigration criteria; individual
+refugee/travel/entry/program/contract/current-law application remains unadjudicated.
+Initial H4188 callup prints `part1`; ownPartAquestion/Clerk/Report binding converges
+without rewriting captured words. NumberedReport lookup uses whole-number
+boundaries, not120/220 suffix matches. Complete operatives match after declared
+formatting normalization; recordedvotes failed AFTER preliminaryvoiceayes.
+FousheeNo/MassieAye remain exact amendment observations, not whole-bill/component
+preferences/enactment/motive.254overallPresent1 stays nondirectional; an extraneous
+254status sentence was removed from255rationale before audit/tests, with before
+objects retained and no text/interval/count/disposition change.
+
+538/676reviewed:44interpreted/227procedural/265excluded/2expressive,
+138ordinarypending.1657sources/490captures/1108bindings/457extentobjects/
+802coordinates;40episodes/88observations/78findings/70questions/3packages
+remain unchanged. Audit157NoDefect/8Minor/11Major/1Critical retains history,
+finalverdictnull. Lebanese210may,207agreements,Report33/allpriorholds,
+qualified166/frozen265/unaccepted747 and prior provenance/access limits persist.
+
+Verified74pageRecordoriginal reused; selected20/22/55/56/57 serialization contains
+40773characters only. All5 materialPDFpages inspected, with existingcompleteReport
+bank retained. Fourderivatives/eightintervals verify; only20/22 meanings newly
+reviewed, not wholeparent/visual/currentincorporated-law review or fresh network
+capture. OfficialClerk pages corroborate reusedlabels without freshXML certification.
+No causal/economic/security/clinical outcome or individual legal application.
+
+179focusedtests passed in16.340s;7semanticchecks/referencevalidation,
+preservation and seven-file rawreplay pass. Sixsemanticoutputs/allprior536reviews/
+1653sources/489captures/questions/packages/holds remain exact. Established
+scopedTEMPNODE/escalated local validation handles recordedWindows tempACL limits,
+withoutconfig/ACL/dependency change.
+
+156CI37843994340 firstattempt9green:5feature/3synthetic/1mixed;
+syntheticd511784871ac5ec78d8a3d10a8f18438b1176cbe. All decodedlogs/checkouts/skips
+sealed inimmigration_delivery_checkpoint156_ci.json;hosted308distinctlocal179,
+repair13of20,no retry. Parent150-155 bounded reviews remain retained;156/157
+reviews pending, no acceptance/fullcorpus verdict. Final157diff/auditguards/ownCI
+follow. Continue existinglocalfeature work, oldowner idle, no deadline/terminalmarker
+or production/publication/merge authority.
+
+Parent156 bounded independent source/domain/mechanics pass is now actually
+received and recorded inimmigration_checkpoint156_parent_independent_review.json,
+with unavailable full-parent metadata and uncertified original private155 bytes/
+restoration limits retained.157 review remains pending. Requested private workflow
+guard now checks receipt/checkpoint/output filename before writing, limits output
+to worktree.tmp, refuses changed-existing results and preserves exact existing
+bytes on matchingJSON rechecks (including nativeCRLF). Four bounded probe checks
+pass. Guard is used by current157 verifier and inherited by later recipes; old
+historical helpers/results are not rewritten. No semantic conclusions change.

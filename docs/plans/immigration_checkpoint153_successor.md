@@ -109,3 +109,28 @@ review pending. Private156 verifier output filename was corrected after a before
 documentation failure;155 private result recovered from immutable155 receipt and
 pre156 archived inputs/outputs, with misdirected result retained and no independent
 original-private-byte-seal claim. Canonical inputs/semantics were unaffected.
+
+## Next bounded increment: checkpoint157
+
+Checkpoint156 delivered as6f3756d; ownCI37843994340/review pending. Bind
+Greene-offered Davidson20 roll254 andGreene22 roll255 from complete own
+operatives/recorded failures/Report. Actual20 callup explicitly resolves designee;
+22 initial printedpart1 is retained alongside correct ownPartAquestion, without
+repair. Distinguish authorization/otherwise-FY2026Defense branches and thisAct-only
+Ukraine assistance. Expected four new canonical sources/one selected Record
+capture, unchanged six semantic outputs;179focused/7semantic validation.
+
+Checkpoint156 first-attempt9-job CI passed and decodedcheckout receipt sealed.
+Checkpoint157 authored/validated:538reviewed/138ordinarypending;179tests/7checks/
+reference/replay pass, sixsemanticoutputs unchanged. Final diff/commit/push/157CI
+next;156/157parentreviews pending. Earlierboundedreviews confer no acceptance.
+
+Parent156 bounded independent source/domain/mechanics pass is now actually
+received and recorded inimmigration_checkpoint156_parent_independent_review.json,
+with unavailable full-parent metadata and uncertified original private155 bytes/
+restoration limits retained.157 review remains pending. Requested private workflow
+guard now checks receipt/checkpoint/output filename before writing, limits output
+to worktree.tmp, refuses changed-existing results and preserves exact existing
+bytes on matchingJSON rechecks (including nativeCRLF). Four bounded probe checks
+pass. Guard is used by current157 verifier and inherited by later recipes; old
+historical helpers/results are not rewritten. No semantic conclusions change.
