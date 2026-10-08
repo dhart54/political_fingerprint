@@ -1,9 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint152:44 meanings/530 reviews/146 ordinary pending.
-Two exactfunding exclusions;207 researchhold remains unreviewed.151 nine CI jobs pass.
-150 finalsource-summary and151/152 reviews pending. Audit149NoDefect/8Minor/11Major/1Critical.
-All priorholds/limits retained; no shutdown deadline or final verdict.
+Current candidate checkpoint154:44 meanings/532 reviews/144 ordinary pending.
+Two candidate exclusions; audit151NoDefect/8Minor/11Major/1Critical, final verdict null.
+Parent150-153 bounded reviews retained separately;154 independent review pending.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8500,3 +8499,65 @@ Owncompleteflooroperatives match numberedReport afterformatting/linehyphenation/
 House119/1/207 PartA114 remainsunreviewed inordinaryqueue. Its completeRH8067strike names three procurement/co-production agreements. Two boundedofficial-domain searchbatches foundstatutory/programreferences/historicalbriefings without fullnamedagreementtexts;notproof ofpublicunavailability/classification/currentversions. This newresearchhold consumesnoqueue row andaddsnoactionfinding/meaning. Otherfiveholds/70questions/3partialpackages retainexistingstatus.
 
 151CI37824360981 first-attempt9green:5feature/3synthetic/1mixed;synthetic22d64d2eb2bb04263e8c386eee7e02b482f3586c. Decodedlogs/checkouts/skips sealed;hosted308distinctlocal179,repair13/20,no retry.149paginationP3 independentlyresolved withoriginalhistory retained.150mechanics pass butfinalsource/compactsemantic summary stillpending;151/152independentreviews pending. Humanreview-message relayauthority remainsrecorded;existingreviewer follow-up failedwithpatherror,withoutnewtask/checkout/repair. No fullreviewclearance/acceptance. Continue existingcandidate objectivewithoutshutdown deadline/terminalmarker;pushonlyvalidatedincrements todraftPR198,allreservedgates remain.
+
+## Checkpoint 154: fresh local successor, TRICARE and academy athletics
+
+The new local owner `01a11d1e-9c42-7582-b8ce-6d5c8c7211f6` continues in the
+existing `.w/ib` from checkpoint153. The old implementation chat stays idle.
+All prior author/apply/document helpers are already applied; a new bounded recipe
+uses the preserved153 research, without rerunning old mutators or reacquiring it.
+Checkpoint147 controls/history remain historical; no deadline or terminal marker.
+
+Two agreed Mace amendments, House119/1/246-247 (H.R.3838, PartA14-15,
+Clerk ordinals10-11), receive noncounting candidate exclusions under the
+established functional-domain standard. The treatment amendment retains the
+literal1076 care reference, defined treatment and three exceptions, including
+the first two exceptions' `such minor` language, and the no-new-entitlement rule.
+It adds1077(b)(4) and removes only `that could result in sterilization` from
+1079(a)(20), preserving under18 and gender-dysphoria-medical-intervention predicates.
+No all-patient/all-TRICARE, surgery-only or individual entitlement/exception result
+is asserted. The athletics amendment retains its actual qualified reproductive-
+system definitions and rule for designated female athletic programs/activities.
+Section347(d)'s three academies and the distinct foreign-student, regulation,
+reimbursement, appointment and exchange contexts are retained; no new immigration
+or citizenship predicate, individual participation or entry result is supplied.
+
+Own complete floor/Report operatives agree after declared formatting normalization.
+Recorded votes agreed after preliminary voice ayes; FousheeNo/MassieAye are exact
+amendment observations, not whole-bill/component preferences or enactment. Debate
+does not supply operative meaning or motive. Individual medical/legal/foreign-cadet
+applications and exhaustive current incorporated law remain outside this review.
+
+532/676 reviewed:44 interpreted,227 procedural,259 excluded,2 expressive;
+144 ordinary pending.1642 sources/485 captures/1108 interpreted bindings/
+444 extent objects/777 coordinates.40 episodes/88 observations/78 findings,
+70 application questions and3 partial packages remain unchanged. Audit151NoDefect/
+8Minor/11Major/1Critical retains historical findings and final verdict null.
+Lebanese210 printed `may` discrepancy,207 agreement hold, Report33 discrepancy,
+all earlier holds, qualified166/frozen265/unaccepted747 and provenance limits persist.
+
+Six original raw/normalized-text seals verified from private153 acquisitions;
+five new capture registrations, with347 already registered. Complete Report119-255
+serialization is retained but only14/15 meanings reviewed. Record governed text is
+nine selected pages, not the full PDF text; five material pages12/13/14/50/51
+and49 adjacent control were inspected. Four new derivatives/eight intervals verify.
+Code1076/1077 operative captures and1079(a)-only capture are distinct from complete
+347 capture and from all incorporated/current law. Clerk governed labels reused
+and official pages corroborated, without fresh rawXML replacement/certification.
+
+Parent retained independent150-153 summaries are now actually received and preserved
+in `immigration_checkpoints150_153_parent_independent_reviews.json`.150/151 bounded
+reviews pass;152 substance passes with two captionP3 findings independently
+resolved153. Their exact heads, five-feature/three-synthetic/one-mixed CI contexts,
+hosted308/repair13-of20 and review limits are retained.179-test/replay and153's
+three audit guards remain owner-attributed; no independent private-archive/full-suite
+or full-corpus acceptance claim. Old receipts are not rewritten. Earlier133 blocked
+retrieval,138/139 metadata qualifications,143NARA drift and145/146Clerk drift persist.
+
+Validation:179 focused tests, the separate301-test candidate/corpus run,7 canonical
+semantic checks and reference validation pass. Seven generated files match a fresh
+replay; six semantic outputs and all prior530reviews/1635sources/480captures remain
+exact. Initial sandbox semantic tests hit the recorded nativeWindows tempfileACL
+limitation; established escalated validation with scoped process environment passed,
+without ACL/config/dependency changes. Final diff review and154 headCI follow.
+No publication, acceptance, promotion, production, merge or deployment.

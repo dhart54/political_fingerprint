@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 257,
-      "source_unresolved": 146,
+      "exact_action_ineligible": 259,
+      "source_unresolved": 144,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 257,
-    "unresolved_boundary_cases": 146,
+    "exact_action_ineligible_actions": 259,
+    "unresolved_boundary_cases": 144,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -505,6 +505,8 @@
         "house:119:1:236",
         "house:119:1:240",
         "house:119:1:241",
+        "house:119:1:246",
+        "house:119:1:247",
         "house:119:1:266",
         "house:119:1:269",
         "house:119:1:270",
@@ -666,8 +668,6 @@
         "house:119:1:239",
         "house:119:1:244",
         "house:119:1:245",
-        "house:119:1:246",
-        "house:119:1:247",
         "house:119:1:248",
         "house:119:1:249",
         "house:119:1:250",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "f52f89f5e6cdc67605316d08c89677779839fe3546d5bcadd4c14db6ad7456ee",
+  "universe_subject_sha256": "04c2ce3c6497b4b387ec436649ef5f9d5d1da30a7009203acce86321126efdfa",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -17550,8 +17550,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace Part A amendment14 (Clerk ordinal10, House119/1/246) adds a new1076g addressing medical care under1076 with respect to armed-forces members and their dependents and forbidding Defense to furnish defined gender-related medical treatment, subject to three exceptions. Preserve the literal1076 dependent-care reference, rather than silently substituting1074 or certifying coverage for every TRICARE beneficiary. The first two exceptions retain their printed 'such minor' wording and genetic/biochemical or ambiguous-sex predicates; the third concerns infection, injury, disease or disorder caused or exacerbated by gender-related treatment. No adult/minor application is adjudicated. Defined treatment is tied to its stated purpose and includes the listed surgery, hormones and puberty-blocker categories; it is not simply all care, surgery only, or only minors. Preserve all female/male/gender/sex definitions and their counterfactual qualifications, without adding a birth-certificate test. The no-new-entitlement rule remains exact. The conforming1077(b)(4) adds the specified prohibited treatment;1079(a)(20) deletes only 'that could result in sterilization', retaining the under18 and gender-dysphoria-medical-intervention conditions. The2024 operative1076/1077 and1079(a) baselines remain distinct from new amendment text and from all current incorporated law. The changed criterion concerns medical treatment and purpose, not personal nationality, visa/admission/removal, immigration status or work authorization. Foreign/dependent contexts do not create an operative immigration predicate. Individual medical/legal eligibility, exception scope, care outcomes, implementation and clinical claims remain unadjudicated. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
       "source": {
         "source_id": "clerk:119:1:246",
         "url": "https://clerk.house.gov/evs/2025/roll246.xml",
@@ -17568,25 +17568,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace Part A amendment14 (Clerk ordinal10, House119/1/246) adds a new1076g addressing medical care under1076 with respect to armed-forces members and their dependents and forbidding Defense to furnish defined gender-related medical treatment, subject to three exceptions. Preserve the literal1076 dependent-care reference, rather than silently substituting1074 or certifying coverage for every TRICARE beneficiary. The first two exceptions retain their printed 'such minor' wording and genetic/biochemical or ambiguous-sex predicates; the third concerns infection, injury, disease or disorder caused or exacerbated by gender-related treatment. No adult/minor application is adjudicated. Defined treatment is tied to its stated purpose and includes the listed surgery, hormones and puberty-blocker categories; it is not simply all care, surgery only, or only minors. Preserve all female/male/gender/sex definitions and their counterfactual qualifications, without adding a birth-certificate test. The no-new-entitlement rule remains exact. The conforming1077(b)(4) adds the specified prohibited treatment;1079(a)(20) deletes only 'that could result in sterilization', retaining the under18 and gender-dysphoria-medical-intervention conditions. The2024 operative1076/1077 and1079(a) baselines remain distinct from new amendment text and from all current incorporated law. The changed criterion concerns medical treatment and purpose, not personal nationality, visa/admission/removal, immigration status or work authorization. Foreign/dependent contexts do not create an operative immigration predicate. Individual medical/legal eligibility, exception scope, care outcomes, implementation and clinical claims remain unadjudicated. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:246",
           "url": "https://clerk.house.gov/evs/2025/roll246.xml",
           "raw_sha256": "fe287f371950a64e7f4b9eb060f65a5e8855d2de35b90a86454de273fff48c37",
-          "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097"
+        },
+        {
+          "source_id": "congressional-record:3838-amend14-roll246-choice154",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "4e14d66e43aaee9fe2f152c32a879cd1fe88d2106539dda592750f4085c0ca2c"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend14-operative154",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "29682b0c7a0ce1cf5aaabad2137a58cca5a10660d3a3cc61218ff139bc8e8e37"
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "raw_sha256": "ecb7a37f849b2568b36a9ea4da871f81aca50bdb96f23145e38cca9cfcf1f928",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3"
+        },
+        {
+          "source_id": "govinfo:10usc1077-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm",
+          "raw_sha256": "b65d1182fe7c9226c2f231c304d6e7f470d3f5c39f4739ae71e8e3a950341af3",
+          "governed_bytes_sha256": "8778803653b029eb4bbf8ede359381acc08e0c1ffafdab5c878a0f4c609a66ef"
+        },
+        {
+          "source_id": "govinfo:10usc1079-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm",
+          "raw_sha256": "23cfda2bc13333b492856ffedf20a94663278a9770bf7342c7704912a98c6022",
+          "governed_bytes_sha256": "85cfc87d5feb12abe55d8a67830f04d506323d5ff81d30af7e65e78795ae7466"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "eac627bc7212f9c4f601a104eea9afbdcc95e4adafdd35797cc459a2453f90c2"
       },
       "historical_raw_hash_matches": true
     },
@@ -17597,8 +17627,8 @@
       "date": "2025-09-10",
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Mace Part A amendment15 (Clerk ordinal11, House119/1/247) adds a prohibition on a Service Academy Superintendent allowing a cadet or midshipman who is male under this amendment's qualified reproductive-system definition to participate in an athletic program or activity designated exclusively for female cadets or midshipmen. Preserve its actual male/female definitions, including developmental/genetic-anomaly and historical-accident qualifications; do not replace them with an unexpressed sex-at-birth test. The incorporated347(d) identifies the United States Military Academy, Naval Academy and Air Force Academy, not all military or civilian colleges. The complete2024 section347 capture separately preserves foreign-country instruction/selection, the80-person limit and qualified academy-regulation treatment, national-service priority, reimbursement/waiver, no automatic US armed-forces appointment, semester exchange/one-for-one/100-person and expense restrictions, reciprocal support and distinct short attendance. Those are unchanged contextual authorities, not new immigration or citizenship criteria in this athletic rule. No foreign cadet's individual participation, regulation exception, academy admission, visa/entry/travel or appointment application is adjudicated. The operative changes designated athletics eligibility; it does not prohibit all activities, establish member motive, exclude all foreign students or repeal347 pathways. Established functional-domain standard supports a noncounting candidate exclusion. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
       "source": {
         "source_id": "clerk:119:1:247",
         "url": "https://clerk.house.gov/evs/2025/roll247.xml",
@@ -17615,25 +17645,43 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Mace Part A amendment15 (Clerk ordinal11, House119/1/247) adds a prohibition on a Service Academy Superintendent allowing a cadet or midshipman who is male under this amendment's qualified reproductive-system definition to participate in an athletic program or activity designated exclusively for female cadets or midshipmen. Preserve its actual male/female definitions, including developmental/genetic-anomaly and historical-accident qualifications; do not replace them with an unexpressed sex-at-birth test. The incorporated347(d) identifies the United States Military Academy, Naval Academy and Air Force Academy, not all military or civilian colleges. The complete2024 section347 capture separately preserves foreign-country instruction/selection, the80-person limit and qualified academy-regulation treatment, national-service priority, reimbursement/waiver, no automatic US armed-forces appointment, semester exchange/one-for-one/100-person and expense restrictions, reciprocal support and distinct short attendance. Those are unchanged contextual authorities, not new immigration or citizenship criteria in this athletic rule. No foreign cadet's individual participation, regulation exception, academy admission, visa/entry/travel or appointment application is adjudicated. The operative changes designated athletics eligibility; it does not prohibit all activities, establish member motive, exclude all foreign students or repeal347 pathways. Established functional-domain standard supports a noncounting candidate exclusion. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:247",
           "url": "https://clerk.house.gov/evs/2025/roll247.xml",
           "raw_sha256": "9a25e3757192daa377ed5eeb1155a72ba15494d06dbbba45dbd8a5688ad5a3b1",
-          "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d"
+        },
+        {
+          "source_id": "congressional-record:3838-amend15-roll247-choice154",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "raw_sha256": "252662be27b01354178ad5056744866f7ebf95f136cd94da64e5dc5d67d8489e",
+          "governed_bytes_sha256": "4258cc43be8819045307fe57a0621cb48cdc876a69ee8954c236210c1b0bb963"
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend15-operative154",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "f1f2ce59b0ab20eec96764e476f5aa1cd351ba5793913fca09e8f9e012d42820"
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "raw_sha256": "087b66c9f163081db86dada1594cbb255629d1d5eae7d55e326df1f6140278d9",
+          "governed_bytes_sha256": "4ca3f2d311ee22ffc9aeb9d5fd12ff890a7f5882a23660372d386d0a72180948"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "8c8911ab162af8155e00ad0fffe415eb8790b260d8fe331c17c219e3b0447fda"
       },
       "historical_raw_hash_matches": true
     },
@@ -42293,8 +42341,6 @@
     "house:119:1:239",
     "house:119:1:244",
     "house:119:1:245",
-    "house:119:1:246",
-    "house:119:1:247",
     "house:119:1:248",
     "house:119:1:249",
     "house:119:1:250",
@@ -42437,6 +42483,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "7a16006158f58fa1281f3d712e63c410c56a1187813656d417022081ea65f9d9",
-  "membership_review_sha256": "2404eaa5adc728bd585dafa036139f60a053bb97cff65b3046be4b9bda134bbd"
+  "proposal_sha256": "928d081782464478883dd4b109d740adbfdc2652997f0896d88348076935c7ba",
+  "membership_review_sha256": "5022de9ecb9b80678ec3f7a0e4fca61c8682d3fd839b2f1428085fdd02e46a71"
 }

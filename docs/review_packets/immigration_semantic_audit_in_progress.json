@@ -15384,10 +15384,162 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:246",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "246",
+        "legis-num": "H R 3838",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "10",
+        "amendment-author": "Mace of South Carolina Part A Amendment No. 14",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Agreed to",
+        "action-date": "10-Sep-2025",
+        "action-time": "4:54 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Mace Part A amendment14 (Clerk ordinal10, House119/1/246) adds a new1076g addressing medical care under1076 with respect to armed-forces members and their dependents and forbidding Defense to furnish defined gender-related medical treatment, subject to three exceptions. Preserve the literal1076 dependent-care reference, rather than silently substituting1074 or certifying coverage for every TRICARE beneficiary. The first two exceptions retain their printed 'such minor' wording and genetic/biochemical or ambiguous-sex predicates; the third concerns infection, injury, disease or disorder caused or exacerbated by gender-related treatment. No adult/minor application is adjudicated. Defined treatment is tied to its stated purpose and includes the listed surgery, hormones and puberty-blocker categories; it is not simply all care, surgery only, or only minors. Preserve all female/male/gender/sex definitions and their counterfactual qualifications, without adding a birth-certificate test. The no-new-entitlement rule remains exact. The conforming1077(b)(4) adds the specified prohibited treatment;1079(a)(20) deletes only 'that could result in sterilization', retaining the under18 and gender-dysphoria-medical-intervention conditions. The2024 operative1076/1077 and1079(a) baselines remain distinct from new amendment text and from all current incorporated law. The changed criterion concerns medical treatment and purpose, not personal nationality, visa/admission/removal, immigration status or work authorization. Foreign/dependent contexts do not create an operative immigration predicate. Individual medical/legal eligibility, exception scope, care outcomes, implementation and clinical claims remain unadjudicated. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
+      "finding": "Defined medical-treatment restriction or designated academy-athletics criterion; own agreed amendment observations. Literal care/exception references and qualified347 context retained; no new immigration predicate or individual application assertion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "eac627bc7212f9c4f601a104eea9afbdcc95e4adafdd35797cc459a2453f90c2",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:246",
+          "url": "https://clerk.house.gov/evs/2025/roll246.xml",
+          "governed_bytes_sha256": "149140bf1596605f2ac2479282506dd2793db1684ac235f79771e74a336aa097",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "congressional-record:3838-amend14-roll246-choice154",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "governed_bytes_sha256": "4e14d66e43aaee9fe2f152c32a879cd1fe88d2106539dda592750f4085c0ca2c",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend14-operative154",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "governed_bytes_sha256": "29682b0c7a0ce1cf5aaabad2137a58cca5a10660d3a3cc61218ff139bc8e8e37",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "govinfo:10usc1076-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1076.htm",
+          "governed_bytes_sha256": "ce86035f2ffff2b24232c223f80186cafc1eb5ccf187f4cb2e2a9c441ae736e3",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "govinfo:10usc1077-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1077.htm",
+          "governed_bytes_sha256": "8778803653b029eb4bbf8ede359381acc08e0c1ffafdab5c878a0f4c609a66ef",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "govinfo:10usc1079-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap55-sec1079.htm",
+          "governed_bytes_sha256": "85cfc87d5feb12abe55d8a67830f04d506323d5ff81d30af7e65e78795ae7466",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:1:247",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "247",
+        "legis-num": "H R 3838",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "11",
+        "amendment-author": "Mace of South Carolina Part A Amendment No. 15",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Agreed to",
+        "action-date": "10-Sep-2025",
+        "action-time": "4:57 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Mace Part A amendment15 (Clerk ordinal11, House119/1/247) adds a prohibition on a Service Academy Superintendent allowing a cadet or midshipman who is male under this amendment's qualified reproductive-system definition to participate in an athletic program or activity designated exclusively for female cadets or midshipmen. Preserve its actual male/female definitions, including developmental/genetic-anomaly and historical-accident qualifications; do not replace them with an unexpressed sex-at-birth test. The incorporated347(d) identifies the United States Military Academy, Naval Academy and Air Force Academy, not all military or civilian colleges. The complete2024 section347 capture separately preserves foreign-country instruction/selection, the80-person limit and qualified academy-regulation treatment, national-service priority, reimbursement/waiver, no automatic US armed-forces appointment, semester exchange/one-for-one/100-person and expense restrictions, reciprocal support and distinct short attendance. Those are unchanged contextual authorities, not new immigration or citizenship criteria in this athletic rule. No foreign cadet's individual participation, regulation exception, academy admission, visa/entry/travel or appointment application is adjudicated. The operative changes designated athletics eligibility; it does not prohibit all activities, establish member motive, exclude all foreign students or repeal347 pathways. Established functional-domain standard supports a noncounting candidate exclusion. Complete own floor and numbered Report operatives match after the declared formatting-only comparison. Recorded votes agreed after preliminary voice ayes; Foushee No and Massie Aye remain exact amendment observations, without whole-bill/component preference or enactment inference. Debate is not operative authority. Candidate exclusion only, no semantic acceptance or individual/current-law certification.",
+      "finding": "Defined medical-treatment restriction or designated academy-athletics criterion; own agreed amendment observations. Literal care/exception references and qualified347 context retained; no new immigration predicate or individual application assertion.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "8c8911ab162af8155e00ad0fffe415eb8790b260d8fe331c17c219e3b0447fda",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:1:247",
+          "url": "https://clerk.house.gov/evs/2025/roll247.xml",
+          "governed_bytes_sha256": "6cb7c2b9ccaf6f59e4712a9fc18183cf82710d69eb8634e250911ab835bb956d",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "congressional-record:3838-amend15-roll247-choice154",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-10/pdf/CREC-2025-09-10-house.pdf",
+          "governed_bytes_sha256": "4258cc43be8819045307fe57a0621cb48cdc876a69ee8954c236210c1b0bb963",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "house-rules:119255-partA-amend15-operative154",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "governed_bytes_sha256": "f1f2ce59b0ab20eec96764e476f5aa1cd351ba5793913fca09e8f9e012d42820",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        },
+        {
+          "source_id": "govinfo:10usc347-2024-complete",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partI-chap16-subchapV-sec347.htm",
+          "governed_bytes_sha256": "4ca3f2d311ee22ffc9aeb9d5fd12ff890a7f5882a23660372d386d0a72180948",
+          "reviewed_extent": "Entire named governed extent;1079(a) only, selected Record and exact Report derivatives; material347 context, not all incorporated/current law."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 149,
+    "No Defect": 151,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -15449,17 +15601,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 53,
+    "successor_new_exclusions_reviewed": 55,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 16.598,
+    "focused_runtime_seconds": 16.651,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "Checkpoint151 own first-attempt nine green;152 own pushed-head run pending.",
+    "exact_head_ci": "Checkpoint153 head-associated run37828928256 nine successful; parent relay supplies5feature/3synthetic/1mixed provenance.154 needs own pushed-head run; no fabricated checkout-log receipt.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -15496,7 +15648,7 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "Checkpoint152:twofailedGreene115-116 exactJordan8117cap/permissive-purpose strike andThisActonlyUkraineassistanceban208-209.530reviews/146ordinarypending;1635sources/480captures/440extents/769coordinates.1completeRH148physical/146bill-textparent serialization,6derivatives/10intervals/6materialPDFpages plus1adjacentcontrol.179tests/7checks/reference/replay;151CI9green.207threeagreementreferences remainresearchhold/notconsumed,notdeclaredunavailable.149paginationP3 resolved;150finalsource-summary/151/152independentreviews pending.44meanings/78findings/70questions/3packages/allpriorholds/limitsretained,nofinalverdict/acceptance.",
+    "focused_scope_note": "Checkpoint154 two agreed Mace14/15 candidate exclusions246/247;532reviews/144ordinarypending,1642sources/485captures,44meanings/78findings/70questions/3packages unchanged. Four derivatives/eight intervals and six preserved originals checked; five material PDF pages plus49 adjacent control. Parent150-153 bounded independent summaries retained separately, including152captionP3 resolution153.154 independent review pending; final verdict null.",
     "last_completed_exact_head_ci": {
       "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint151_ci.json",
       "receipt_sha256": "3a1e7236623d7896963be26ebad1c4c89af2bab470033d5759639b4e06684239",
@@ -20401,5 +20553,19 @@
     "receipt_sha256": "4cf7cfa1f49eb49c66fec87100bde2cf2510efe3a06867058febd816df6f00cf",
     "metadata_only": true,
     "action_finding_counts_unchanged": true
+  },
+  "ordinary_screening_checkpoint154": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint154.json",
+    "receipt_sha256": "3a7281ce1c97511db7c90d2a659de747b25ae0710a5307d120fa0046fc84e140",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 144,
+    "application_questions": 70
+  },
+  "parent_independent_reviews150_153": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoints150_153_parent_independent_reviews.json",
+    "receipt_sha256": "31d080f86d99204b4b4afdbc1c21fd79c45b7885f445acc2640f5eb86248e8df",
+    "scope": "Parent-relayed independent bounded150-153 summaries; no new independent suite/private-archive claim or full-corpus acceptance."
   }
 }
