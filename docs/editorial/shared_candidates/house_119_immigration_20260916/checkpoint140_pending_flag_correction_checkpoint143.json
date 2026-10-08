@@ -1,6 +1,6 @@
 {
   "checkpoint": 143,
-  "review_state": "candidate_only_local_bookkeeping_P3_corrected",
+  "review_state": "candidate_only_bounded_independent_bookkeeping_P3_recheck_passed",
   "finding": "Top-level140pendingflag remained true after boundedsource/precisionclosure;setfalse. No substantive reopening.",
   "source_independent_review_ref": "docs/review_packets/immigration_checkpoint142_independent_review.json",
   "source_independent_review_sha256": "ff976cf75c6a2c361bca05c862695aa8c2161db5b08fbf11eac367aa8b5a57fd",
@@ -1728,8 +1728,16 @@
   "changed_140_reviews": 0,
   "changed_141_precision_rationales": 0,
   "historical_snapshots_preserved": true,
-  "independent_recheck_pending": true,
+  "independent_recheck_pending": false,
   "editorially_accepted": false,
   "publication_authorized": false,
-  "receipt_sha256": "01098c21bcb432279fac4ca1759757722ff1286d356b2b873c48c9e4efbf5782"
+  "receipt_sha256": "c92b0ddd19ebe779df1415c11755597de363f6e78dd283a22b43871871ebf484",
+  "independent_review_ref": "docs/review_packets/immigration_checkpoint143_independent_review.json",
+  "independent_review_sha256": "a0057bdbc11bebb7e60771ff87ded5ac94f3d9a8f4eb3f5916202a98525a1d67",
+  "closure_at145": {
+    "before_correction_receipt_sha256": "01098c21bcb432279fac4ca1759757722ff1286d356b2b873c48c9e4efbf5782",
+    "before_snapshot_archive": ".tmp/checkpoint145_before_programs",
+    "complete_original140_141snapshots_retained": true,
+    "source_precision_rationales_unchanged": true
+  }
 }

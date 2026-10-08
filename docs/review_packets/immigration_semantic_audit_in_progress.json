@@ -14012,10 +14012,194 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:304",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "304",
+        "legis-num": "H R 2140",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "15-Sep-2026",
+        "action-time": "10:11 PM",
+        "vote-desc": "Diesel Emissions Reduction Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete H.R.2140 EH changes the diesel-program authorization endpoint in42USC16137(a)from2024to2029. Material16131-16137operative program context retains the100million-dollar annual authorization,availability until expended,one-percent management/oversight cap,national70percent/state30percent allocations,qualifiedentity/vehicle technology/application priorities and regulatory-funding limits. Authorization is not actual appropriation,award or assured emissions/health outcome. State/territory allocations,eligibleagencies/nonprofits/qualifiedfleetowners and foreigntechnology outreach concern pollution-reduction program resources,not human immigration admission,status,nationality,removal,public-benefit personal eligibility or workauthorization. Internationalmarkets,ports or publichealth context cannot supply an immigration-person mechanism. This exact date extension does not change the retained human-status rules or decide individualgrant/immigration eligibility. No component preference,membermotive or causaloutcome inferred;FousheeYea/MassieNay preserved. Ineligible underexisting functional standards;House passage isnot enactment.",
+      "finding": "Dieselauthorization endpoint/retainedentityandtechnology program versusBOPninerecommendation/analysis/punishment standards. No actualfunding,outcomes,criminalconviction,automaticcivilcommitment orimmigration-person criteria inferred. BOP90dayimplementation andadditionalincompletereport obligations remain distinct.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "2aeb4e050e3879f130ac59c5edd81876e97468d5f54732f17679c082a3a952f0",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:304",
+          "url": "https://clerk.house.gov/evs/2026/roll304.xml",
+          "governed_bytes_sha256": "a6d38f4e234fc5c8c4168b6c06df9c305bb421f450a5ace0316ee6b3da77fd48",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "primary:hr2140eh-captured145",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2140eh/html/BILLS-119hr2140eh.htm",
+          "governed_bytes_sha256": "575c337a8b26b09539c6a01d47d8e1a7a49aa1e5f890bb80330766073ccc58b6",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16131-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16131.htm",
+          "governed_bytes_sha256": "8063fd0e7f21e56a3b87ff2df6b6f2519873e676f84d67f2a68f636330a5cd3c",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16132-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16132.htm",
+          "governed_bytes_sha256": "380d5910a65f34569607f249b3baa0d55f2a4854db42d47544bd7aafbbafe39c",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16133-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16133.htm",
+          "governed_bytes_sha256": "37147ba92b44445104d46e36f08686d494a4409a724cb8067b32023b66e82bd7",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16134-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16134.htm",
+          "governed_bytes_sha256": "d8b4801b5870947d4ac4bcc7d3a5284ab778ef82e6f01ef07e8c0cd301d2f08d",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16135-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16135.htm",
+          "governed_bytes_sha256": "c69f30d16a923435b446997abfb830c379ed5e08a66985c5947fc4a7371cf1b3",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16136-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16136.htm",
+          "governed_bytes_sha256": "fe97fb1bb4dd691e61cfac9356bbe75344ed991969dfaf80b3ef599d9c38d249",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:16137-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap149-subchapVII-partF-sec16137.htm",
+          "governed_bytes_sha256": "4582ed1bdf9d8b291047ead6ec0a3bea9c01ff5ed594b20f093b94ea50290649",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:284",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "284",
+        "legis-num": "S 307",
+        "vote-question": "On Motion to Suspend the Rules and Pass",
+        "vote-type": "2/3 YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "31-Aug-2026",
+        "action-time": "6:56 PM",
+        "vote-desc": "Prison Staff Safety Enhancement Act"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Complete S.307 ES,passed by the House on suspension without an amended-text question,directs BOP implementation of each of nine2023OIGrecommendations within90days; if incomplete by that deadline,a report explaining gaps/timeline is additionally required;requires laterIGdata/analysis and AGnationalstandards for prevention,reduction and punishment of inmate-on-staff sexualharassment/assault. IGanalysis deadline is one year AFTER fullimplementation,not simply enactment;AGrulemaking is one year AFTER receivinganalysis. FY2022-2025incident data and five-year priorpunishment analysis remain distinct. Borrowed4051correctionalofficer/prisoner/vulnerableperson definitions and920(b)/(c)/(d)acts retain materialrape/sexualact/contact/consent context without textualamendment of920or an inference that allBOPpersons become subject to court-martial jurisdiction. Fullninerecommendations andOIGAppendix2summary include discipline,prosecution referrals,mentalhealth/civilcommitment consideration,staffnotifications/training and conditionalfacilitymeasures. Recommendations5/6require assessment/appropriatecorrectiveactions,not automatic adoption of every completecivilsettlement clause or provenimplementation;complete signedsettlements were not independentlyreviewed. Material4247/4248retain certification,hearing/counsel/evidence standards,state assumption,treatment/discharge/conditionalrevocation andhabeas protections;referral is notautomatic commitment,conviction oralien removal. Proposedfindings/OIGevaluations are attributed,not independentfact/motive claims. The exact mechanism is Federalpenal-workplace safety/discipline andagencyanalysis/rulemaking,not a statedimmigrationadmission/status/nationality/removal/benefit/workauthorization rule or change toINAcriminalpredicates. It doesnot turncivilimmigrationdetention intoFederalpenal custody or decide anindividualcriminal,civilcommitment orimmigrationoutcome. Possiblefutureapplication remainsunresolved;no genericcriminal bridge inferred. FousheeYea/MassieYea retained. Ineligible underexisting functional standards;Housepassage notenactment.",
+      "finding": "Dieselauthorization endpoint/retainedentityandtechnology program versusBOPninerecommendation/analysis/punishment standards. No actualfunding,outcomes,criminalconviction,automaticcivilcommitment orimmigration-person criteria inferred. BOP90dayimplementation andadditionalincompletereport obligations remain distinct.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "cab7df4c5a1cf1de5b7eff61e2076c41dacceb06a4e84a348d7dbdc268f28dc4",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:284",
+          "url": "https://clerk.house.gov/evs/2026/roll284.xml",
+          "governed_bytes_sha256": "fb12d4ef9bb8f4e19fb7b91ef5b30fee6f2084aaf5a20a5b46aded0ff29856e2",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:s307es",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119s307es/html/BILLS-119s307es.htm",
+          "governed_bytes_sha256": "0000997ca95795804f4811e0df603c35b55bbb9d53093a85effda9c19fd94f4f",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:18usc4051-officer-prisoner-vulnerable-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partIII-chap303-sec4051.htm",
+          "governed_bytes_sha256": "f73674733c64e618a38adec4a282aa5a532d1cde17570cce609a4f169b7245bb",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:10usc920-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partII-chap47-subchapX-sec920.htm",
+          "governed_bytes_sha256": "b5720877131a9b07cf92942a57f0397dbb25e8f48fd1c6d6230c6b7e0d2cc740",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "oig:23-034-nine-recommendations-appendix2-operative145",
+          "url": "https://oig.justice.gov/sites/default/files/reports/23-034.pdf",
+          "governed_bytes_sha256": "54f9a92641e45d0e2f9f390f57f5742e59e870806a7c6dcd4e2712a6d0f719bf",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:18usc4247-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partIII-chap313-sec4247.htm",
+          "governed_bytes_sha256": "ff36adbe4ac95b346541d71fee0249ce13b88885cbdf3a62446798c7d7533e85",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        },
+        {
+          "source_id": "govinfo:18usc4248-operative145",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partIII-chap313-sec4248.htm",
+          "governed_bytes_sha256": "b589da2188f0a4efd924e494e46947b8497c093ed4211c5d8747de73e977a885",
+          "reviewed_extent": "CompleteEH/ES or namedmaterialoperativeprogram/definition/civilcommitment/ninerecommendations andpublishedAppendix2summary. NotallOIGreport/parentnotes or complete signedsettlements."
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 132,
+    "No Defect": 134,
     "Minor": 8,
     "Major": 11,
     "Critical": 1
@@ -14077,17 +14261,17 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 36,
+    "successor_new_exclusions_reviewed": 38,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
     "focused_tests": 179,
-    "focused_runtime_seconds": 14.165,
+    "focused_runtime_seconds": 14.193,
     "canonical_semantic_checks": 7,
     "seven_generated_outputs_byte_identical": true,
     "public_and_persistence_entrypoints_fail_closed": true,
     "baseline_protected_paths_unchanged": true,
-    "exact_head_ci": "143own ninegreen sealed;144needs own pushed-head run.",
+    "exact_head_ci": "144own ninegreen sealed;145needs own pushed-head run.",
     "final_full_corpus_audit_verdict": null,
     "previous_exact_head_ci": {
       "head": "f869e2f527b1e88e0db506a6a18b91a9ed5fbc00",
@@ -14124,12 +14308,12 @@
       "status": "completed_success_all_nine_jobs",
       "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37501536160"
     },
-    "focused_scope_note": "ThreefailedWarPowersproposals85/201/232;513reviews/163ordinary,1559sources/441captures/366extents/618coordinates. Fiveoriginals/sixderivatives/nineintervals;threeIH/flooroperative equalities andownfailure/memberlabels verify. 38self-defense/intelligence/noAUMF,84fromLebanon versus108anyhostilities/expresscarveouts,1544b/cbranches retained.44meanings/78findings/sixoutputs/70questions/threeflags unchanged;179tests/7checks/reference/rawreplay pass.143ownninegreen/no retry,hosted308 distinctlocal179.143court/metadata and144screeningbounded reviews pending. Priorholds/133/138/139limits retained.",
+    "focused_scope_note": "Diesel304andBOP284exclusions;515reviews/161ordinary,1573sources/454captures/378extents/633coordinates. Thirteenraws/twelvederivatives/fifteenintervals,wholeexactEH/ES andnamedmaterialprogram/definition/ninerecommendation/correctiveactions/civilcommitment scopes verify. Mandatoryimplementation versusadditionalreport andrelativephase timings retained. NW196oldcitizens/newresidents plus2004reprintprovenance remainpending,threeunregisteredprivate originals.44meanings/78findings/sixoutputs/70questions/threeflags unchanged;179tests/7checks/reference/rawreplaypass.143boundedcourt/metadatareview passed,NARAraw/fullpagehashdiff withexactmaterialintervalmatch limit preserved.144ownninegreen/no retry,hosted308distinctlocal179.145review/CIpending;priorholds/133/138/139limits retained.",
     "last_completed_exact_head_ci": {
-      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint143_ci.json",
-      "receipt_sha256": "f842947b4aadc642c0b8b32190e5176d6f98a690668609f1f30d63786995569e",
-      "head": "3c524b8a705d70749b024ff522f8eb4110376243",
-      "run": 37768974121,
+      "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint144_ci.json",
+      "receipt_sha256": "a92a5d8071c19a38e1a627be7c6d76415baf11dedb7f224345c1697a18cf2185",
+      "head": "1600b00da7f36340c663912138b811ce0dce42a1",
+      "run": 37770168933,
       "successful_jobs": 9
     },
     "prior_correction45_exact_head_ci": {
@@ -18771,12 +18955,14 @@
   },
   "ordinary_screening_checkpoint143": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint143.json",
-    "receipt_sha256": "df00f95ded132f8fd4c5d66f83af41fa0405b8a8663235325a309afb83bb6110",
+    "receipt_sha256": "815c733c853a105e37475d7884153239434397fe9efa54029cecb26dddc2a79d",
     "same_owner_primary_screenings": 1,
     "new_interpretations": 0,
-    "independent_review_pending": true,
+    "independent_review_pending": false,
     "unfinished_ordinary": 166,
-    "application_questions": 70
+    "application_questions": 70,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint143_independent_review.json",
+    "independent_review_scope": "Boundedexactcourt/source/domain/mechanics andmetadataP3pass;NARAfreshraw/fullpagehashdrift withtwo materialintervalsmatching;ownerfullsuite/replayattributed."
   },
   "independent_checkpoint142_review": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint142_independent_review.json",
@@ -18784,11 +18970,12 @@
   },
   "checkpoint140_pending_flag_correction_checkpoint143": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint140_pending_flag_correction_checkpoint143.json",
-    "receipt_sha256": "01098c21bcb432279fac4ca1759757722ff1286d356b2b873c48c9e4efbf5782",
+    "receipt_sha256": "c92b0ddd19ebe779df1415c11755597de363f6e78dd283a22b43871871ebf484",
     "severity": "Minor",
     "priority": "P3",
-    "independent_recheck_pending": true,
-    "counting_rule": "Receiptmetadata finding,not another actionassessment;historicalaction counts and six distinct semanticMinor findings unchanged."
+    "independent_recheck_pending": false,
+    "counting_rule": "Receiptmetadata finding,not another actionassessment;historicalaction counts and six distinct semanticMinor findings unchanged.",
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint143_independent_review.json"
   },
   "prior_head_ci_checkpoint142": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint142_ci.json",
@@ -18811,6 +18998,32 @@
     "receipt_sha256": "f842947b4aadc642c0b8b32190e5176d6f98a690668609f1f30d63786995569e",
     "head": "3c524b8a705d70749b024ff522f8eb4110376243",
     "run": 37768974121,
+    "successful_jobs": 9
+  },
+  "ordinary_screening_checkpoint145": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint145.json",
+    "receipt_sha256": "b924a996a4efefb5a7bd57b8ff35c8e588c9e8ca98f432d0922815fd6eea6b5a",
+    "same_owner_primary_screenings": 2,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 161,
+    "application_questions": 70
+  },
+  "independent_checkpoint143_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint143_independent_review.json",
+    "receipt_sha256": "a0057bdbc11bebb7e60771ff87ded5ac94f3d9a8f4eb3f5916202a98525a1d67"
+  },
+  "northwest_straits_membership_research_hold_checkpoint145": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/northwest_straits_membership_research_hold_checkpoint145.json",
+    "receipt_sha256": "9dd7c6abe1139d3c49bcff2fcbc3562a4765c82bbfb0aed207ce22c493e6d7cd",
+    "governed_review_added": false,
+    "queue_consumed": false
+  },
+  "prior_head_ci_checkpoint144": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint144_ci.json",
+    "receipt_sha256": "a92a5d8071c19a38e1a627be7c6d76415baf11dedb7f224345c1697a18cf2185",
+    "head": "1600b00da7f36340c663912138b811ce0dce42a1",
+    "run": 37770168933,
     "successful_jobs": 9
   }
 }

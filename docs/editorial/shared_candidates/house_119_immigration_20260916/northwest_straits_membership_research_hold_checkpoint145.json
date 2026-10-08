@@ -1,0 +1,76 @@
+{
+  "checkpoint": 145,
+  "action_id": "house:119:2:196",
+  "measure": "H.R.2860",
+  "review_state": "pending_material_membership_application_review",
+  "governed_review_added": false,
+  "queue_consumed": false,
+  "canonical_sources_registered": 0,
+  "capture_manifest_entries_added": 0,
+  "private_primary_acquisitions": [
+    {
+      "key": "25usc5131",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title25/html/USCODE-2024-title25-chap45-sec5131.htm",
+      "status": 200,
+      "raw_path": ".tmp/envprison-25usc5131-original145.html",
+      "raw_bytes": 2361,
+      "raw_sha256": "16d22284f7ef08e0df6ca0bbb83f20a8dd90f7d7f9e708399ae2e00c1b396d38",
+      "text_path": ".tmp/envprison-25usc5131-full145.txt",
+      "full_text_sha256": "32eee4e0c4ae229ffe899402b3d9d926a251d0c2e10d8aa6e63acb15087a96b7",
+      "full_text_length": 948,
+      "text_extraction_method": "StrictUTF8 HTMLdata nodes joined,whitespace normalized;raw retained.",
+      "rejected_error_page": false
+    },
+    {
+      "key": "pl105384",
+      "url": "https://www.govinfo.gov/content/pkg/STATUTE-112/pdf/STATUTE-112-Pg3451.pdf",
+      "status": 200,
+      "raw_path": ".tmp/envprison-pl105384-original145.pdf",
+      "raw_bytes": 1393071,
+      "raw_sha256": "8e22afa3afd2a9f31191069c5a9266758a0ef0ed59031202464f42d236a7e500",
+      "pdf_magic": true,
+      "text_path": ".tmp/envprison-pl105384-full145.txt",
+      "full_text_sha256": "71b0f08c410a27006943ffdb4e0a271b5ee3bb6a1532bdf797fd27f0d7c382fd",
+      "full_text_length": 21560,
+      "text_extraction_method": "pdfplumber extractedtext inpageorder;originalbytes retained. Only namedmaterialscopes reviewed,not wholeparentcontent.",
+      "pdf_pages": 9
+    },
+    {
+      "key": "nw1998report",
+      "url": "https://nwstraits.org/media/1258/nwsc-1998-mm_report.pdf",
+      "status": 200,
+      "raw_path": ".tmp/envprison-nw1998report-original145.pdf",
+      "raw_bytes": 338998,
+      "raw_sha256": "eb199ef6a26a2b0b0469f7340ae7281ba8dea1f04757ea81e0cf3f6d6d115825",
+      "pdf_magic": true,
+      "text_path": ".tmp/envprison-nw1998report-full145.txt",
+      "full_text_sha256": "9473ae27e274967459c54139b6cd184031f32ee3b6d9d126ad5d19557cb1be65",
+      "full_text_length": 31081,
+      "text_extraction_method": "pdfplumber extractedtext inpageorder;originalbytes retained. Only namedmaterialscopes reviewed,not wholeparentcontent.",
+      "pdf_pages": 12
+    }
+  ],
+  "exact_EH_source_id": "govinfo:hr2860eh",
+  "exact_EH_complete_read_characters": 10926,
+  "material_scopes_read": [
+    "CompleteEH",
+    "OriginalPL105384TitleIV printed3458-3459",
+    "2024Code25USC5131operative",
+    "Commission-hosted twelvepage ReporttoConvenors datedAugust20,1998,reprintedApril2004;all extractedpages read,selectedpages visuallyinspected"
+  ],
+  "membership_difference": "Oldincorporatedreport page8 says remainingGovernorappointees citizensoftheStateofWashington;newEH404(a)(1)(J)four appointees residents ofStateWashington andnotgovernmentemployed,excludinghighereducation. Do noteraseorinterpretstatecitizenshipasfederalnaturalizationwithoutgrounding;functionalapplication remains pending.",
+  "copy_limit": "Reportcopy is reprinted4/04 and includes post1998ExecutiveSummary legislativeclaims. Notcertified as immutableoriginalAugust20copy;reportrecommendations/summary are not enactedlaw or provenecosystemresults.",
+  "retained_boundaries": [
+    "Namedtriballist defined as mostrecentatenactment,not a fixed2026personalnationality list",
+    "FourteenbaselineCommissionmembers plusconditionaladditionalMRCmembers,not universalfixed14",
+    "NOAA liaisonlimited/nonvoting andnotallCommissionduties",
+    "NoauthoritytoissueregulationsorimplementFederallaw",
+    "Tribalrights/consultation andCanadaforum are not themselves immigrationadmission rules",
+    "Seven-yearsunset measuredfromenactment,not asofvote",
+    "Forestry25 exactMarch2023Charter hold is unrelated andnotclosedby this1998report"
+  ],
+  "next_action": "GroundtheoldcitizensofState/newresidents membershipdifference and report-copy provenance through establishedfunctionalstandards before screening;no title-only exclusion,newmethodologyacceptance or unavailable-source finding.",
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "9dd7c6abe1139d3c49bcff2fcbc3562a4765c82bbfb0aed207ce22c493e6d7cd"
+}

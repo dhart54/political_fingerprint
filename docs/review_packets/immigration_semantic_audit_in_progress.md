@@ -1,8 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint144:44 meanings/513 reviews/163 ordinary pending.
-143court/metadata and144screening boundedreviews pending;earlier140semanticP3
-remainresolved. Researchholds retained;no fullverdict or acceptance.
+Current candidate checkpoint145:44 meanings/515 reviews/161 ordinary pending.
+143court/metadata boundedreview passed;NARAprovenancelimit retained.145review
+pending,NW196membership held;no fullverdict or acceptance.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -8295,3 +8295,57 @@ synthetic61bca372d38bffc393d18a55eea0e6600d0c5e55. Decodedlogs/checkouts/skips s
 distinctlocal179,repair13/20,no retry.144needsownheadCI. Forestry25/223/280/283holds,
 70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139limits
 remain. Continue bounded work under unchanged watcher controls.
+
+
+### Local successor checkpoint145: diesel resources, BOP standards and a held commission case
+
+House119/2/304 H.R.2140 EH extends the diesel-program authorization endpoint2024
+to2029;100million annualauthorization/availability/oversight cap andmaterial16131-
+16137program context remain. Authorization is not appropriation,award or assured
+health/emissions outcome.284 S.307 ES mandates BOPninerecommendationimplementation
+within90days plusanadditionalincompletereport,not animplementationescape. IGanalysis
+is dueoneyear AFTERfullimplementation;AGstandardsoneyear AFTERanalysisreceived.
+Borrowed4051officer/prisoner/vulnerable definitions and920conduct/consent context
+do nottextuallyamend criminalstatutes or makeallBOPinmates subjectto court-martial
+jurisdiction. CompleteOIGninerecommendations andAppendix2summary,civilcommitment
+4247/4248contexts retain assessment/conditionalactions,hearings/counsel/proof,
+stateassumption,treatment/discharge/revocation/habeas boundaries. Publishedsummary
+is not anindependentread ofcompletesignedsettlements. No actualimplementation,
+conviction,automaticcommitment orimmigration-person eligibility/outcome inferred.
+Both exactactions are ineligible underexistingfunctionalstandards;wholevotes retained.
+
+196 H.R.2860 remainspending:oldincorporatedReportpage8 says Governorappointees
+"citizensoftheStateofWashington";newEHsaysfour"residents" withgovernmentemployment
+limitation/highereducation exception. Do noteraseorinterpretthis asfederalnaturalization
+withoutgrounding. Threeprivateoriginals(25USC5131,originalPL105384,Commissionhosted
+Reportdated1998/reprinted4/04) remainunregistered. TwelveReporttextpagesread,selected
+PDFpagesinspected;reprint/post1998executivesummary legalclaims are notimmutable
+originalcopyproof/enactedlaw. Prospective tribal-listatenactment,conditionalextra
+members,limited/nonvotingNOAAliaison,Tribalrights/Canadaforum,noregulationauthority
+andseven-yearenactmentsunset retained. Forestry25Charterhold remainsunrelated.
+
+515reviews/161ordinary remain,44interpreted/227procedural/242excluded/twoexpressive;
+1573sources/454captures/1108bindings/378extents/633coordinates;40episodes/88observations/
+78findings. Thirteenraws/twelvederivatives/15intervals/14canonical registrations verify;
+prior513reviews/1559sources/441captures/44meanings/sixoutputs/78findings/70questions/
+threeflags unchanged.179tests in14.193s/reference/7checks/seven-file replaypass.
+SeveninitialPartGHTTP200errorresponses rejected,correctPartFestablished fromprimary
+contents,validsourcesrecovered;allattempts retained. Audit134NoDefect/8Minor/11Major/
+1Critical,distinctsemantic1Critical/5Major/6Minor and143metadataMinor history retained.
+
+1433c524b8boundedindependentcourt/source/mechanics andmetadataP3review passed.
+Active140falseflag/dependent141seals/completesnapshots/rationales,IHequality/failed
+212-206question/conditions,only293screened,three derivatives/sixintervals/priorobjects
+verify. ExactPDFraw/full426929characterdigest reproduced withrecoveredserialization;
+independentvisualonly17/33/34. FreshNARAraw/fullpagehashes differ,buttwoexact
+constitutionalintervalsmatch;causeunestablished/provenancelimit retained. Owner179
+tests/replay/recovery attributed,guards/negatives pass,142loghashes verify.143receipt/
+metadatarecheckpending flags closed andactive referencesresealed;priorcomplete
+140/141snapshots preserved,sourceprecisionrationales unchanged. Noeditorialacceptance.
+
+144CI37770168933 first-attemptninegreen,fivefeature/three synthetic/one mixed;
+synthetic895f77b96ab1f1badc98a2fe5bfc7c9e748e8fb0. Decodedlogs/checkouts/skips sealed,hosted308
+distinctlocal179,repair13/20,no retry.145needsownCI/boundedreview. Existingholds,
+70questions/threepackages,qualified166/frozen265/unaccepted747 and133/138/139limits
+remain. Weeklyusage34percentused/66remaining observed11:38:21Z;watcher unchanged.
+Continue boundedwork untilstoplarge12:12:21Z,wrap12:27:21Z,marker12:37:21Z,shutdown12:42:21Z.
