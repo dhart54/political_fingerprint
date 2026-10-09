@@ -1390,3 +1390,58 @@ actual phase/endpoints retained in the 182 validation/private timing receipts.
 No manual CI retry, configuration, production, approval or publication change.
 Continue executable source work within the candidate envelope while new CI and
 independent review are reconciled; checkpoints remain resume points.
+
+
+## Checkpoint 183: held childcare source qualification
+
+Continuing owner; no routine handoff or writer release. Base is 182 at
+919c38a4650f254a30d969defe90c971afb06d7d. The existing held 198 State-plan
+eligibility-documentation/verification operator now has a specific dated HHS
+program-classification source chain: complete III/IV of the 1998 and 2025
+Federal Register notices expressly include CCDF. The later notice distinguishes
+benefit definition from verification and says it does not formally revise the
+1998 verification aspects at that time. It does revise classification
+interpretation; historical wording is not asserted as complete current law.
+
+The qualified candidate connects the new general plan-description operator with
+retained status-governed public-benefit context, referencing the existing Health
+candidate core and digests once. The schema-native held issue mapping has no
+new family/trait or member-specific meaning. Exact child/beneficiary, provider,
+service-exemption and current HHS/court application remain pending. Three ACF
+PDF/page requests returned empty 202 responses; the eligibility page returned
+403. All four are private rejected attempts, not evidence. No universal parent
+citizenship check, new status category, mandatory individual query, all-provider
+verification or inevitable withholding outcome is inferred. Nonprofit-provider
+verification exemption differs from benefit eligibility; fraud/payment/provider
+and State thresholds and printed defects remain separate. Full 9858c and 1766
+baselines are still not certified as read. The existing hold remains; no
+additional completion credit or compiled proposition is created.
+
+Only 198's pending rationale/reason changes. 602 reviews, 74 pending (57 ordinary,
+17 researched holds), 47 compiled meanings / 80 propositions, 70 questions and
+three partial packages remain. Two exact notice derivatives are added: 2,075
+sources / 964 registrations. Ten literal claims, two raw-parent text replays,
+two exact derivative replays, own bill identity, native mapping validation,
+198 focused tests and seven semantic checks pass. Six semantic products remain unchanged and all seven generated files byte-replay;
+all 23 Health/canonical-corpus/
+182candidate-core files and all 602 membership records are preserved.
+
+Independent 181 review closed at 22:13:21 UTC, with only three source-binding P2
+findings already repaired in 182. Correct museum text independently supports
+188 exclusion conditional on the active repair; 250 passes 116 source checks.
+All 34 preservation checks and seven byte replays pass. Its interrupted 1,405s
+review is separate from owner research. New 182 independent review remains
+pending, as does the held 183 qualification.
+
+182 CI run 37997440200 passed all nine jobs on the first attempt: nine fresh
+executions, no carried successes, five feature / three synthetic / one mixed
+context verified from actual logs including the detached feature switch. This
+closes hosted coverage at that head; 181/180 historical limitations remain
+preserved. No manual retry, image/credential/configuration or production change.
+
+Performance remains FAIL at the prior comparable 781.087s average. Held-source
+research creates no new routine average, benchmark round or silent scaling.
+Actual 183 source/validation/delivery intervals and lookup limits are retained
+in private timing and validation receipts. Continue executable candidate source
+work while CI and independent review are reconciled; checkpoints are resume
+points rather than routine approval gates.
