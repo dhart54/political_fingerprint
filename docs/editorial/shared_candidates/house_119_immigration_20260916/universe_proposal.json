@@ -1147,7 +1147,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "47e3840bb9e6bb9a08302623e71ca52977e05503ff8868802dcb16ff680a56ac",
+  "universe_subject_sha256": "ef22eaace939feb140c812dc7717649be19dd7a7c4d16cf249cff09ca709d5c5",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -40384,7 +40384,7 @@
       "measure": "bill_119_hr_8595",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Pending complete whole-package and incorporated-authority comparison. H.Res.1423 section 9 appends House-passed S.1383 text as Division B; the actual EH includes citizenship verification, DHS investigation of whether to initiate removal, and naturalization notification alongside consular and refugee appropriations. The whole package, adopted amendments and precise incorporated statutory scopes remain to be reconciled. No inherited Health membership, duplicate shared-action meaning, completed screening, component stance or enactment inference.",
       "source": {
         "source_id": "clerk:119:2:247",
         "url": "https://clerk.house.gov/evs/2026/roll247.xml",
@@ -40402,8 +40402,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Pending complete whole-package and incorporated-authority comparison. H.Res.1423 section 9 appends House-passed S.1383 text as Division B; the actual EH includes citizenship verification, DHS investigation of whether to initiate removal, and naturalization notification alongside consular and refugee appropriations. The whole package, adopted amendments and precise incorporated statutory scopes remain to be reconciled. No inherited Health membership, duplicate shared-action meaning, completed screening, component stance or enactment inference.",
+      "unresolved_reason": "pending_whole_engrossed_package_and_incorporated_authorities",
       "sources": [
         {
           "source_id": "clerk:119:2:247",
@@ -40411,13 +40411,37 @@
           "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
           "governed_bytes_sha256": "2dd04bb4fdaad0c40063c0390b27d5f8dbafa13c28f8b0bd6ea2e84677487843",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hres1423eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+          "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+          "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
+        },
+        {
+          "source_id": "govinfo:hr8595eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+          "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+          "governed_bytes_sha256": "81a3a7ac3c83ab74e78497d700ceca1e79c417d11b50f03d3cbb3011cf031792"
+        },
+        {
+          "source_id": "state:divisionB-save177",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+          "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+          "governed_bytes_sha256": "04cb724af0abdb1f1cd4408736abc80cf24554134fcec001d35dd7e800006d2f"
+        },
+        {
+          "source_id": "state:passage247-final-stage177",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+          "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+          "governed_bytes_sha256": "d89d4095f33a789153b57b601432de314868634ba5d0ff4b9455de3b90aca242"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false
       },
@@ -44630,6 +44654,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "5f63c93af103a5db2201a18449fea90d4fbe75940492c3029fc7cf448272934c",
+  "proposal_sha256": "daefe75c585bba62ee05978eedb6a839f4a85ffa0ad1af8a5c36fffa3a5e560a",
   "membership_review_sha256": "e8b5f37fee9bf5c70f440978396c6b2da5aee3589c096de32dbbc23556a8aa7d"
 }

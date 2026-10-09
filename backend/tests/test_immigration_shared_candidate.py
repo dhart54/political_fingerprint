@@ -18,6 +18,34 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_state_passage_pending_package_keeps_engrossed_division_and_prior_hold(self):
+        receipt = json.loads((DATA / 'state_passage_source_boundaries_checkpoint177.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        case = receipt['still_pending_candidate_cases'][0]
+        self.assertEqual(case['action_id'], 'house:119:2:247')
+        self.assertFalse(case['completed_screening'])
+        self.assertFalse(case['exact_chain_completed'])
+        row = next(x for x in self.values[2]['candidate_dispositions'] if x['action_id'] == case['action_id'])
+        self.assertEqual(row['disposition'], 'source_unresolved')
+        self.assertEqual(case['current_pending_row_sha256'], digest(row))
+        self.assertNotIn(case['action_id'], {x['action_id'] for x in self.values[0]['actions']})
+        self.assertEqual(receipt['existing_shared_core_reference']['action_core_sha256'],
+                         '42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1')
+        sources = {x['source_id']: x for x in self.values[1]['sources']}
+        full = sources['govinfo:hr8595eh']['text']
+        body = sources['state:divisionB-save177']
+        interval = body['source_text_extents'][0]
+        self.assertEqual(body['text'], full[interval['start']:interval['end']])
+        self.assertIn('investigation to determine whether to initiate removal proceedings', body['text'])
+        self.assertIn('Duty of Secretary of Homeland Security To Notify Election Officials of Naturalization', body['text'])
+        self.assertIn('Exception for Absent Uniformed Services Voters', body['text'])
+        for claim in case['claim_source_map']:
+            self.assertIn(claim['passage'], sources[claim['source_id']]['text'])
+        self.assertFalse(receipt['actual_source_reading']['complete_read'])
+        self.assertEqual(receipt['actual_source_reading']['unread_intervals'], [{'start': 108000, 'end': 301371}])
+        self.assertFalse(receipt['editorially_accepted'])
+        self.assertFalse(receipt['publication_authorized'])
+
     def test_jordan_constraint_survives_mapping_compiler_and_presentation(self):
         core, mapping, projections, inputs, result = self.products
         action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:244')

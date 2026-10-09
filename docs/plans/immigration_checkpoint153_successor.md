@@ -988,3 +988,64 @@ for the remaining State episode. The three provisional cases remain bounded
 source/domain holds; they do not halt unrelated supported work. No acceptance,
 merge, deployment, publication, production, runtime/schema/security/config or
 methodology change, and no further special benchmark or resource scaling.
+
+
+## Checkpoint 177: State passage combined-package source boundary
+
+H.R.8595 final passage 247 remains pending with zero completed-screening credit.
+The actual H.Res.1423 section 9 adds House-passed S.1383 text to the engrossment;
+EH Division B includes documentary citizenship and photo identification, DHS
+citizenship/status verification, investigation of whether to initiate removal
+proceedings after the specified unlawful-registration determination, and
+naturalization notification. Alternative proof/name-discrepancy processes,
+notice, absent-uniformed-service and provisional-ballot exceptions remain.
+Printed cross-reference anomalies and the October 1, 2025 guidance date are
+preserved. A combined-package vote cannot establish separate component stances.
+
+The whole EH neutral capture matches fresh PC raw bytes and normalized text;
+the full rule and Clerk 247 bytes match their current governed captures. The older
+Clerk inventory hash remains distinct and untouched. Both members
+have recorded Nay choices; passage totals are 217/209/5. Literal Record pages
+57–58 show report-back with adopted amendments, en-gros agreement, engrossment,
+the failed bare recommittal 246 and passage 247. Fresh PDF bytes, literal text
+and rendered pages are checked. The older 167 bounded Record capture stopped
+before the passage page and cannot supply the missing stage by inference.
+
+Three canonical sources and four registrations bind the full neutral EH, its
+complete operative Division B and the own final-stage extent. The already stored
+Health shared-core action identity/digest is recorded as a reference: it is not
+duplicated or silently revised, and Health membership is not inherited. Existing
+47 meanings, both member projections and all 80 propositions remain exact, as do
+79/83 holds, three State amendment holds and all prior pending rows except 247.
+Counts remain 597 reviewed / 79 pending, 70 questions / three partial packages;
+1,961 sources / 842 registrations. Six semantic products are byte-identical;
+only the reproducibility proof changes and all seven outputs replay.
+
+The reading receipt expressly records EH 0–108,000 and 301,371–333,636 as read;
+193,371 intervening Division A characters remain unread at this checkpoint.
+Full actual-package reading, adopted-amendment comparison and material consular,
+refugee, verification and removal authority chains still require reconciliation.
+This is source-progress evidence, not a completed screen, accepted interpretation,
+new graph, full-record claim or authority to publish.
+
+191 focused tests pass in 17.313 seconds; seven semantic checks and reference
+cases pass. Two literal extents, four raw captures, four new registration objects,
+747 historical Git blobs and prior source/capture/membership/seed objects are
+verified. Private checks were corrected for capture-object precedence, scoped
+historical registrations and existing Windows Git line-ending filters; failed
+helpers are preserved. No repository validator or contract was changed.
+
+The bounded independent 176 review reports no blocking defect, 33 preservation
+checks, the changed regression and seven byte-exact replays. All three historical
+Code operative views match official raw hashes; 241/243/245 remain pending and
+no final domain classification is endorsed. Nine first-attempt 176 CI jobs are
+verified in five feature / three synthetic / one mixed contexts with conditional
+skips disclosed. Owner CI/log endpoint is 2,250.976 seconds, including overlapping
+177 research. No comparable average or overlap subtraction is claimed. Prior
+174 functional benchmark remains FAIL near 13 minutes per completed screen;
+no new special benchmark round, scaling or pass claim.
+
+Continue the bounded final-passage source chain within the existing authorized
+feature branch. Checkpoints remain resume points rather than approval gates.
+Native desktop placement is handled separately by the parent; this sole local
+writer stays on the PC and existing worktree without migration or duplication.

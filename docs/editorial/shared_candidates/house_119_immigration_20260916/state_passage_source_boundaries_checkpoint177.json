@@ -1,0 +1,422 @@
+{
+  "checkpoint": 177,
+  "base_head": "9d23bbee6712f2b20df744199c80d47c8b0f212e",
+  "review_state": "source_qualified_whole_package_candidate_still_pending",
+  "attempted_action_ids": [
+    "house:119:2:247"
+  ],
+  "completed_action_ids": [],
+  "still_pending_candidate_cases": [
+    {
+      "action_id": "house:119:2:247",
+      "disposition": "source_unresolved",
+      "completed_screening": false,
+      "review_recommendation": "continue_bounded_whole_package_source_and_authority_reconciliation",
+      "candidate_meaning": "Pending complete whole-package and incorporated-authority comparison. H.Res.1423 section 9 appends House-passed S.1383 text as Division B; the actual EH includes citizenship verification, DHS investigation of whether to initiate removal, and naturalization notification alongside consular and refugee appropriations. The whole package, adopted amendments and precise incorporated statutory scopes remain to be reconciled. No inherited Health membership, duplicate shared-action meaning, completed screening, component stance or enactment inference.",
+      "review_questions": [
+        "Reconcile remaining DivisionA clauses and material consular/refugee, citizenship-verification and removal cross-references before final action meaning and Immigration mapping.",
+        "Compare House-passed S.1383 with literal appended DivisionB and actual adopted amendments, not merely report amendments made in order.",
+        "Reference and preserve the existing issue-neutral action core before any additional issue mapping; do not duplicate or silently modify its meaning."
+      ],
+      "prior_pending_row": {
+        "action_id": "house:119:2:247",
+        "session": 2,
+        "roll": 247,
+        "date": "2026-07-15",
+        "measure": "bill_119_hr_8595",
+        "question": "On Passage",
+        "disposition": "source_unresolved",
+        "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "source": {
+          "source_id": "clerk:119:2:247",
+          "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+          "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+          "governed_bytes_sha256": "2dd04bb4fdaad0c40063c0390b27d5f8dbafa13c28f8b0bd6ea2e84677487843",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_8595",
+        "member_action": "nay",
+        "house_action_stage": "On Passage",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "source_unresolved",
+        "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "unresolved_reason": "pending_research",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:247",
+            "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+            "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+            "governed_bytes_sha256": "2dd04bb4fdaad0c40063c0390b27d5f8dbafa13c28f8b0bd6ea2e84677487843",
+            "verification": "unchanged_governed_source_reuse"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "historical_clerk_source_identity": {
+          "source_id": "clerk:119:2:247",
+          "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+          "raw_sha256": "4a16f52be03df1c7ad35705a5f106a77bf46968312d59c4c1b07993fad01f0aa",
+          "verification": "historical_source_identity_not_recaptured_this_increment"
+        }
+      },
+      "current_pending_row_sha256": "fbc8a9cbb6e5b59bbd04c3b69190fc750a77f88f75ef06269d3212a79c6c62e0",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "247",
+        "legis-num": "H R 8595",
+        "vote-question": "On Passage",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Passed",
+        "action-date": "15-Jul-2026",
+        "action-time": "5:11 PM",
+        "vote-desc": "National Security, Department of State, and Related Programs Appropriations Act, 2027"
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Nay",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Nay",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "sources": [
+        {
+          "source_id": "clerk:119:2:247",
+          "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+          "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+          "governed_bytes_sha256": "2dd04bb4fdaad0c40063c0390b27d5f8dbafa13c28f8b0bd6ea2e84677487843",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hres1423eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+          "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+          "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
+        },
+        {
+          "source_id": "govinfo:hr8595eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+          "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+          "governed_bytes_sha256": "81a3a7ac3c83ab74e78497d700ceca1e79c417d11b50f03d3cbb3011cf031792"
+        },
+        {
+          "source_id": "state:divisionB-save177",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+          "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+          "governed_bytes_sha256": "04cb724af0abdb1f1cd4408736abc80cf24554134fcec001d35dd7e800006d2f"
+        },
+        {
+          "source_id": "state:passage247-final-stage177",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+          "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+          "governed_bytes_sha256": "d89d4095f33a789153b57b601432de314868634ba5d0ff4b9455de3b90aca242"
+        }
+      ],
+      "claim_source_map": [
+        {
+          "source_id": "govinfo:hres1423eh",
+          "locator": "Complete rule; sections2-6 and9 distinguish actual package mechanics",
+          "passage": "[Congressional Bills 119th Congress] [From the U.S. Government Publishing Office] [H. Res. 1423 Engrossed in House (EH)] <DOC> H. Res. 1423 In the House of Representatives, U. S., July 14, 2026. Resolved, That upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 139) to make daylight savings time permanent, and for other purposes. All points of order against consideration of the bill are waived. The bill shall be considered as read. All points of order against provisions in the bill are waived. The previous question shall be considered as ordered on the bill and on any amendment thereto to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Energy and Commerce or their respective designees; and (2) one motion to recommit. Sec. 2. At any time after adoption of this resolution the Speaker may, pursuant to clause 2(b) of rule XVIII, declare the House resolved into the Committee of the Whole House on the state of the Union for consideration of the bill (H.R. 8595) making appropriations for national security, Department of State, and related programs for the fiscal year ending September 30, 2027, and for other purposes. The first reading of the bill shall be dispensed with. All points of order against consideration of the bill are waived. General debate shall be confined to the bill and shall not exceed one hour equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees. After general debate the bill shall be considered for amendment under the five-minute rule. The bill shall be considered as read. Points of order against provisions in the bill for failure to comply with clause 2 or clause 5(a) of rule XXI are waived. Sec. 3. (a) No amendment to H.R. 8595 shall be in order except those printed in part A of the report of the Committee on Rules accompanying this resolution, amendments en bloc described in section 4 of this resolution, and pro forma amendments described in section 5 of this resolution. (b) Each amendment printed in part A of the report of the Committee on Rules shall be considered only in the order printed in the report, may be offered only by a Member designated in the report, shall be considered as read, shall be debatable for the time specified in the report equally divided and controlled by the proponent and an opponent, shall not be subject to amendment except as provided by section 5 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. (c) All points of order against amendments printed in part A of the report of the Committee on Rules or against amendments en bloc described in section 4 of this resolution are waived. Sec. 4. It shall be in order at any time for the chair of the Committee on Appropriations or his designee to offer amendments en bloc consisting of amendments printed in part A of the report of the Committee on Rules accompanying this resolution not earlier disposed of. Amendments en bloc offered pursuant to this section shall be considered as read, shall be debatable for 20 minutes equally divided and controlled by the chair and ranking minority member of the Committee on Appropriations or their respective designees, shall not be subject to amendment except as provided by section 5 of this resolution, and shall not be subject to a demand for division of the question in the House or in the Committee of the Whole. Sec. 5. During consideration of H.R. 8595 for amendment, the chair and ranking minority member of the Committee on Appropriations or their respective designees may offer up to 10 pro forma amendments each at any point for the purpose of debate. Sec. 6. At the conclusion of consideration of H.R. 8595 for amendment the Committee shall rise and report the bill to the House with such amendments as may have been adopted. The previous question shall be considered as ordered on the bill and amendments thereto to final passage without intervening motion except one motion to recommit. Sec. 7. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 9237) to amend titles 10 and 38, United States Code, and other Federal laws, to improve benefits for veterans and the administration of the Department of Veterans Affairs. All points of order against consideration of the bill are waived. The amendment printed in part B of the report of the Committee on Rules accompanying this resolution shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Veterans' Affairs or their respective designees; and (2) one motion to recommit. Sec. 8. Upon adoption of this resolution it shall be in order to consider in the House the bill (H.R. 1181) to prohibit payment card networks and covered entities from requiring the use of or assigning merchant category codes that distinguish a firearms retailer from general-merchandise retailer or sporting- goods retailer, and for other purposes. All points of order against consideration of the bill are waived. The amendment in the nature of a substitute recommended by the Committee on Financial Services now printed in the bill shall be considered as adopted. The bill, as amended, shall be considered as read. All points of order against provisions in the bill, as amended, are waived. The previous question shall be considered as ordered on the bill, as amended, and on any further amendment thereto, to final passage without intervening motion except: (1) one hour of debate equally divided and controlled by the chair and ranking minority member of the Committee on Financial Services or their respective designees; and (2) one motion to recommit. Sec. 9. In the engrossment of H.R. 8595, the Clerk shall-- (a) add the text of S. 1383, as passed by the House, as new matter at the end of H.R. 8595; (b) assign appropriate designations to provisions within the engrossment; (c) conform cross-references and provisions for short titles within the engrossment; and (d) be authorized to make technical corrections, to include corrections in spelling, punctuation, page and line numbering, section numbering, and insertion of appropriate headings within the engrossment. Attest: Clerk."
+        },
+        {
+          "source_id": "state:divisionB-save177",
+          "locator": "Complete literal appended DivisionB, including alternatives and exceptions",
+          "passage": "DIVISION B--SAFEGUARD AMERICAN VOTER ELIGIBILITY ACT SEC. 101. SHORT TITLE. This division may be cited as the ``Safeguard American Voter Eligibility Act'' or the ``SAVE America Act''. SEC. 102. ENSURING ONLY CITIZENS ARE REGISTERED TO VOTE IN ELECTIONS FOR FEDERAL OFFICE. (a) Definition of Documentary Proof of United States Citizenship.-- Section 3 of the National Voter Registration Act of 1993 (52 U.S.C. 20502) is amended-- (1) by striking ``As used'' and inserting ``(a) In General.--As used''; and (2) by adding at the end the following: ``(b) Documentary Proof of United States Citizenship.--As used in this Act, the term `documentary proof of United States citizenship' means, with respect to an applicant for voter registration, any of the following: ``(1) A form of identification issued consistent with the requirements of the REAL ID Act of 2005 that indicates the applicant is a citizen of the United States. ``(2) A valid United States passport. ``(3) The applicant's official United States military identification card, together with a United States military record of service showing that the applicant's place of birth was in the United States. ``(4) A valid government-issued photo identification card issued by a Federal, State or Tribal government showing that the applicant's place of birth was in the United States. ``(5) A valid government-issued photo identification card issued by a Federal, State or Tribal government other than an identification described in paragraphs (1) through (4), but only if presented together with one or more of the following: ``(A) A certified birth certificate issued by a State, a unit of local government in a State, or a Tribal government which-- ``(i) was issued by the State, unit of local government, or Tribal government in which the applicant was born; ``(ii) was filed with the office responsible for keeping vital records in the State; ``(iii) includes the full name, date of birth, and place of birth of the applicant; ``(iv) lists the full names of one or both of the parents of the applicant; ``(v) has the signature of an individual who is authorized to sign birth certificates on behalf of the State, unit of local government, or Tribal government in which the applicant was born; ``(vi) includes the date that the certificate was filed with the office responsible for keeping vital records in the State; and ``(vii) has the seal of the State, unit of local government, or Tribal government that issued the birth certificate. ``(B) An extract from a United States hospital Record of Birth created at the time of the applicant's birth which indicates that the applicant's place of birth was in the United States. ``(C) A final adoption decree showing the applicant's name and that the applicant's place of birth was in the United States. ``(D) A Consular Report of Birth Abroad of a citizen of the United States or a certification of the applicant's Report of Birth of a United States citizen issued by the Secretary of State. ``(E) A Naturalization Certificate or Certificate of Citizenship issued by the Secretary of Homeland Security or any other document or method of proof of United States citizenship issued by the Federal government pursuant to the Immigration and Nationality Act. ``(F) An American Indian Card issued by the Department of Homeland Security with the classification `KIC'.''. (b) Application of Requirements.--Section 4 of the National Voter Registration Act of 1993 (52 U.S.C. 20503) is amended by striking subsection (b) and inserting the following: ``(b) Requiring Applicants To Present Documentary Proof of United States Citizenship.--Under any method of voter registration in a State, the State shall not accept and process an application to register to vote in an election for Federal office unless the applicant presents documentary proof of United States citizenship with the application.''. (c) Registration With Application for Motor Vehicle Driver's License.--Section 5 of the National Voter Registration Act of 1993 (52 U.S.C. 20504) is amended-- (1) in subsection (a)(1), by striking ``Each State motor vehicle driver's license application'' and inserting ``Subject to the requirements under section 8(j), each State motor vehicle driver's license application''; (2) in subsection (c)(1), by striking ``Each State shall include'' and inserting ``Subject to the requirements under section 8(j), each State shall include''; (3) in subsection (c)(2)(B)-- (A) in clause (i), by striking ``and'' at the end; (B) in clause (ii), by adding ``and'' at the end; and (C) by adding at the end the following new clause: ``(iii) verify that the applicant is a citizen of the United States;''; (4) in subsection (c)(2)(C)(i), by striking ``(including citizenship)'' and inserting ``, including the requirement that the applicant provides documentary proof of United States citizenship''; and (5) in subsection (c)(2)(D)(iii), by striking ``; and'' and inserting the following: ``, other than as evidence in a criminal proceeding or immigration proceeding brought against an applicant who knowingly attempts to register to vote and knowingly makes a false declaration under penalty of perjury that the applicant meets the eligibility requirements to register to vote in an election for Federal office; and''. (d) Requiring Documentary Proof of United States Citizenship With National Mail Voter Registration Form.--Section 6 of the National Voter Registration Act of 1993 (52 U.S.C. 20505) is amended-- (1) in subsection (a)(1)-- (A) by striking ``Each State shall accept and use'' and inserting ``Subject to the requirements under section 8(j), each State shall accept and use''; and (B) by striking ``Federal Election Commission'' and inserting ``Election Assistance Commission''; (2) in subsection (b), by adding at the end the following: ``The chief State election official of a State shall take such steps as may be necessary to ensure that residents of the State are aware of the requirement to provide documentary proof of United States citizenship to register to vote in elections for Federal office in the State.''; (3) in subsection (c)(1)-- (A) in subparagraph (A), by striking ``and'' at the end; (B) in subparagraph (B) by striking the period at the end and inserting ``; and''; and (C) by adding at the end the following new subparagraph: ``(C) the person did not provide documentary proof of United States citizenship when registering to vote.''; and (4) by adding at the end the following new subsection: ``(e) Ensuring Proof of United States Citizenship.-- ``(1) Presenting proof of united states citizenship to election official.--An applicant who submits the mail voter registration application form prescribed by the Election Assistance Commission pursuant to section 9(a)(2) or a form described in paragraph (1) or (2) of subsection (a) shall not be registered to vote in an election for Federal office unless-- ``(A) the applicant presents documentary proof of United States citizenship in person to the office of the appropriate election official not later than the deadline provided by State law for the receipt of a completed voter registration application for the election; or ``(B) in the case of a State which permits an individual to register to vote in an election for Federal office at a polling place on the day of the election and on any day when voting, including early voting, is permitted for the election, the applicant presents documentary proof of United States citizenship to the appropriate election official at the polling place not later than the date of the election. ``(2) Notification of requirement.--Upon receiving an otherwise completed mail voter registration application form prescribed by the Election Assistance Commission pursuant to section 9(a)(2) or a form described in paragraph (1) or (2) of subsection (a), the appropriate election official shall transmit a notice to the applicant of the requirement to present documentary proof of United States citizenship under this subsection, and shall include in the notice instructions to enable the applicant to meet the requirement. ``(3) Accessibility.--Each State shall, in consultation with the Election Assistance Commission, ensure that reasonable accommodations are made to allow an individual with a disability who submits the mail voter registration application form prescribed by the Election Assistance Commission pursuant to section 9(a)(2) or a form described in paragraph (1) or (2) of subsection (a) to present documentary proof of United States citizenship to the appropriate election official.''. (e) Requirements for Voter Registration Agencies.--Section 7 of the National Voter Registration Act of 1993 (52 U.S.C. 20506) is amended-- (1) in subsection (a)-- (A) in paragraph (4)(A), by adding at the end the following new clause: ``(iv) Receipt of documentary proof of United States citizenship of each applicant to register to vote in elections for Federal office in the State.''; and (B) in paragraph (6)-- (i) in subparagraph (A)(i)(I), by striking ``(including citizenship)'' and inserting ``, including the requirement that the applicant provides documentary proof of United States citizenship''; (ii) by redesignating subparagraphs (B) and (C) as subparagraphs (C) and (D), respectively; and (iii) by inserting after subparagraph (A) the following new subparagraph: ``(B) ask the applicant the question, `Are you a citizen of the United States?' and if the applicant answers in the affirmative require documentary proof of United States citizenship prior to providing the form under subparagraph (C);''; and (2) in subsection (c)(1), by inserting ``who are citizens of the United States'' after ``for persons''. (f) Requirements With Respect to Administration of Voter Registration.--Section 8 of the National Voter Registration Act of 1993 (52 U.S.C. 20507) is amended-- (1) in subsection (a)-- (A) by striking ``In the administration of voter registration'' and inserting ``Subject to the requirements of subsection (j), in the administration of voter registration''; and (B) in paragraph (3)-- (i) in subparagraph (B), by striking ``or'' at the end; and (ii) by adding at the end the following new subparagraphs: ``(D) based on documentary proof or verified information that the registrant is not a United States citizen; or ``(E) the registration otherwise fails to comply with applicable State law;''; (2) by redesignating subsection (j) as subsection (l); and (3) by inserting after subsection (i) the following new subsections: ``(j) Ensuring Only Citizens Are Registered to Vote.-- ``(1) In general.--Notwithstanding any other provision of this Act, a State may not register an individual to vote in elections for Federal office held in the State unless, at the time the individual applies to register to vote, the individual provides documentary proof of United States citizenship. ``(2) Requirement in cases of name discrepancies in documentation.--Notwithstanding any other provision of law, a State shall accept and process an application to register to vote in an election for Federal office if the applicant-- ``(A) presents with the application documentation that would constitute documentary proof of United States citizenship, except that the name on the documentation is not the name of the applicant; and ``(B) provides, through a process established by the State (which shall be subject to any relevant guidance adopted by the Election Assistance Commission)-- ``(i) additional documentation as necessary to establish that the name on the documentation is a previous name of the applicant; or ``(ii) an affidavit signed by the applicant attesting that the name on the documentation is a previous name of the applicant. ``(3) Additional processes in certain cases.-- ``(A) Process for those without documentary proof.-- ``(i) In general.--Subject to any relevant guidance adopted by the Election Assistance Commission, each State shall establish a process under which an applicant who cannot provide documentary proof of United States citizenship under paragraph (1) may, if the applicant signs an attestation under penalty of perjury that the applicant is a citizen of the United States and eligible to vote in elections for Federal office, submit such other evidence to the appropriate State or local official demonstrating that the applicant is a citizen of the United States and such official shall make a determination as to whether the applicant has sufficiently established United States citizenship for purposes of registering to vote in elections for Federal office in the State. ``(ii) Affidavit requirement.--If a State or local official makes a determination under clause (i) that an applicant has sufficiently established United States citizenship for purposes of registering to vote in elections for Federal office in the State, such determination shall be accompanied by an affidavit developed under clause (iii) signed by the official swearing or affirming the applicant sufficiently established United States citizenship for purposes of registering to vote. ``(iii) Development of affidavit by the election assistance commission.--The Election Assistance Commission shall develop a uniform affidavit for use by State and local officials under clause (ii), which shall-- ``(I) include an explanation of the minimum standards required for a State or local official to register an applicant who cannot provide documentary proof of United States citizenship to vote in elections for Federal office in the State; and ``(II) require the official to explain the basis for registering such applicant to vote in such elections. ``(B) Process in case of certain discrepancies in documentation.--Subject to any relevant guidance adopted by the Election Assistance Commission, each State shall establish a process under which an applicant can provide such additional documentation to the appropriate election official of the State as may be necessary to establish that the applicant is a citizen of the United States in the event of a discrepancy with respect to the applicant's documentary proof of United States citizenship. ``(4) State requirements.--Not later than 30 days after the date of the enactment of this subsection: ``(A) Each State shall take affirmative steps, on an ongoing basis, to ensure that only United States citizens are registered to vote under the provisions of this Act, and such affirmative steps shall include the establishment of a program described in subparagraphs (B) and (C). ``(B) Each State shall submit the complete, official list of individuals registered as eligible voters for Federal office in the State to the Department of Homeland Security for comparison through the Systematic Alien Verification for Entitlements (`SAVE') system for the purposes of identifying individuals who are not citizens of the United States and taking the necessary steps to remove such individuals who are not citizens from the official list, after notice is given to such individuals and such individuals are given the opportunity to provide documentary proof of United States citizenship, but a State with a memorandum of agreement for such purposes with the Department of Homeland Security on the date of the enactment of this subsection may comply with this subparagraph by carrying out such purposes under the memorandum. ``(C) Each State may utilize such other sources of data available to the State for the purposes of identifying individuals who are not citizens of the United States and removing such individuals from the official list of eligible voters for Federal office in the State, including (but not limited to) the following: ``(i) State agencies that supply State identification cards or driver's licenses where the agency confirms the United States citizenship status of applicants. ``(ii) Other sources, including databases and information provided pursuant to an agreement with the Commissioner of Social Security under section 205(r)(9) of the Social Security Act, which can be used to confirm United States citizenship status, except that any such information provided by the Commissioner may not be the sole grounds for the removal of an individual from the official list of eligible voters for elections for Federal office in a State. ``(5) Availability of information.-- ``(A) In general.--At the request of a State election official (including a request related to a process established by a State under paragraph (3)(A) or (3)(B)), any head of a Federal department or agency possessing information relevant to determining the eligibility of an individual to vote in elections for Federal office shall, not later than 24 hours after receipt of such request, provide the official with such information as may be necessary to enable the official to verify that an applicant for voter registration in elections for Federal office held in the State or a registrant on the official list of eligible voters in elections for Federal office held in the State is a citizen of the United States, which shall include providing the official with such batched information as may be requested by the official. ``(B) Use of save system.--The Secretary of Homeland Security may respond to a request received under paragraph (1) by using the system for the verification of immigration status under the applicable provisions of section 1137 of the Social Security Act (42 U.S.C. 1320b-7), as established pursuant to section 121(c) of the Immigration Reform and Control Act of 1986 (Public Law 99-603). ``(C) Sharing of information.--The heads of Federal departments and agencies shall share information with each other with respect to an individual who is the subject of a request received under paragraph (A) in order to enable them to respond to the request. ``(D) Investigation for purposes of removal.--The Secretary of Homeland Security shall conduct an investigation to determine whether to initiate removal proceedings under section 239 of the Immigration and Nationality Act (8 U.S.C. 1229) if it is determined pursuant to subparagraph (A) or (B) that an alien (as such term is defined in section 101 of the Immigration and Nationality Act (8 U.S.C. 1101)) is unlawfully registered to vote in elections for Federal office. ``(E) Prohibiting fees.--The head of a Federal department or agency may not charge a fee for responding to a State's request under paragraph (A). ``(k) Removal of Noncitizens From Registration Rolls.--A State shall remove an individual who is not a citizen of the United States from the official list of eligible voters for elections for Federal office held in the State at any time upon receipt of documentation or verified information that a registrant is not a United States citizen.''. (g) Clarification of Authority of State To Remove Noncitizens From Official List of Eligible Voters.-- (1) In general.--Section 8(a)(4) of the National Voter Registration Act of 1993 (52 U.S.C. 20507(a)(4)) is amended-- (A) by striking ``or'' at the end of subparagraph (A); (B) by adding ``or'' at the end of subparagraph (B); and (C) by adding at the end the following new subparagraph: ``(C) documentary proof or verified information that the registrant is not a United States citizen;''. (2) Conforming amendment.--Section 8(c)(2)(B)(i) of such Act (52 U.S.C. 20507(c)(2)(B)(i)) is amended by striking ``(4)(A)'' and inserting ``(4)(A) or (C)''. (h) Requirements With Respect to Federal Mail Voter Registration Form.-- (1) Contents of mail voter registration form.--Section 9(b) of such Act (52 U.S.C. 20508(b)) is amended-- (A) in paragraph (2)(A), by striking ``(including citizenship)'' and inserting ``(including an explanation of what is required to present documentary proof of United States citizenship)''; (B) in paragraph (3), by striking ``and'' at the end; (C) in paragraph (4), by striking the period at the end and inserting ``; and''; and (D) by adding at the end the following new paragraph: ``(5) shall include a section, for use only by a State or local election official, to record the type of document the applicant presented as documentary proof of United States citizenship, including the date of issuance, the date of expiration (if any), the office which issued the document, and any unique identification number associated with the document.''. (2) Information on mail voter registration form.--Section 9(b)(4) of such Act (52 U.S.C. 20508(b)(4)) is amended-- (A) by redesignating clauses (i) through (iii) as subparagraphs (A) through (C), respectively; and (B) in subparagraph (C) (as so redesignated and as amended by paragraph (1)(C)), by striking ``; and'' and inserting the following: ``, other than as evidence in a criminal proceeding or immigration proceeding brought against an applicant who attempts to register to vote and makes a false declaration under penalty of perjury that the applicant meets the eligibility requirements to register to vote in an election for Federal office; and''. (i) Private Right of Action.--Section 11(b)(1) of the National Voter Registration Act of 1993 (52 U.S.C. 20510(b)(1)) is amended by striking ``a violation of this Act'' and inserting ``a violation of this Act, including the act of an election official who registers an applicant to vote in an election for Federal office who fails to present documentary proof of United States citizenship,''. (j) Criminal Penalties.--Section 12(2) of such Act (52 U.S.C. 20511(2)) is amended-- (1) by striking ``or'' at the end of subparagraph (A); (2) by redesignating subparagraph (B) as subparagraph (D); and (3) by inserting after subparagraph (A) the following new subparagraphs: ``(B) in the case of an officer or employee of the executive branch, providing material assistance to a noncitizen in attempting to register to vote or vote in an election for Federal office; ``(C) registering an applicant to vote in an election for Federal office who fails to present documentary proof of United States citizenship; or''. (k) Special Rule for States Not Requiring Voter Registration.-- Section 4 of the National Voter Registration Act of 1993 (52 U.S.C. 20503), as amended by subsection (b), is amended by adding at the end the following: ``(c) Special Rule for States Not Requiring Voter Registration.--In the case of a State or jurisdiction that does not require voter registration as a requirement to vote in an election for Federal office on or after the date of the enactment of this subsection, the State or jurisdiction shall be deemed to meet the requirements of this Act if the State or jurisdiction establishes a system for confirming the citizenship of individuals voting in an election for Federal office prior to the first day for voting with respect to such election and provides such confirmation of citizenship status for each eligible voter to election officials at the polling places during the voting period.''. (l) Election Assistance Commission Guidance.--Not later than 10 days after the date of the enactment of this Act, the Election Assistance Commission shall adopt and transmit to the chief State election official of each State guidance with respect to the implementation of the requirements under the National Voter Registration Act of 1993 (52 U.S.C. 20501 et seq.), as amended by this section. (m) Inapplicability of Paperwork Reduction Act.--Subchapter I of chapter 35 of title 44 (commonly referred to as the ``Paperwork Reduction Act'') shall not apply with respect to the development or modification of voter registration materials under the National Voter Registration Act of 1993 (52 U.S.C. 20501 et seq.), as amended by this section, including the development or modification of any voter registration application forms. (n) Duty of Secretary of Homeland Security To Notify Election Officials of Naturalization.--Upon receiving information that an individual has become a naturalized citizen of the United States, the Secretary of Homeland Security shall promptly provide notice of such information to the appropriate chief election official of the State in which such individual is domiciled. (o) Rule of Construction Regarding Provisional Ballots.--Nothing in this section or in any amendment made by this section may be construed to supercede, restrict, or otherwise affect the ability of an individual to cast a provisional ballot in an election for Federal office or to have the ballot counted in the election if the individual is verified as a citizen of the United States pursuant to section 8(j) of the National Voter Registration Act of 1993 (as added by subsection (f)). (p) Rule of Construction Regarding Effect on State Exemptions From Other Federal Laws.--Nothing in this section or in any amendment made by this section may be construed to affect the exemption of a State from any requirement of any Federal law other than the National Voter Registration Act of 1993 (52 U.S.C. 20501 et seq.). (q) Exception for Absent Uniformed Services Voters.--The requirements in this section shall not apply with respect to an applicant who is an absent uniformed services voter, as defined in section 107(1) of the Uniformed and Overseas Citizens Absentee Voting Act (52 U.S.C. 20310(1)). (r) Effective Date.--This section and the amendments made by this section shall take effect on the date of the enactment of this section, and shall apply with respect to applications for voter registration which are submitted on or after such date. SEC. 103. REQUIRING VOTERS TO PROVIDE PHOTO IDENTIFICATION. (a) Requirement to Provide Photo Identification as Condition of Casting Ballot.-- (1) In general.--Title III of the Help America Vote Act of 2002 (52 U.S.C. 21081 et seq.) is amended by inserting after section 303 the following new section: ``SEC. 303A. PHOTO IDENTIFICATION REQUIREMENTS. ``(a) Provision of Identification Required as Condition of Casting Ballot.-- ``(1) Individuals voting in person.-- ``(A) Requirement to provide identification.-- Notwithstanding any other provision of law and except as provided in subparagraph (B), the appropriate State or local election official may not provide a ballot for an election for Federal office to an individual who desires to vote in person unless the individual presents to the official a valid physical photo identification. ``(B) Availability of provisional ballot.-- ``(i) In general.--If an individual does not present the identification required under subparagraph (A), the individual shall be permitted to cast a provisional ballot with respect to the election under section 302(a), except that the appropriate State or local election official may not make a determination under section 302(a)(4) that the individual is eligible under State law to vote in the election unless, not later than 3 days after casting the provisional ballot, the individual presents to the official-- ``(I) the identification required under subparagraph (A); or ``(II) an affidavit developed and made available to the individual by the State attesting that the individual does not possess the identification required under subparagraph (A) because the individual has a religious objection to being photographed. ``(ii) No effect on other provisional balloting rules.--Nothing in clause (i) may be construed to apply to the casting of a provisional ballot pursuant to section 302(a) or any State law for reasons other than the failure to present the identification required under subparagraph (A). ``(2) Individuals voting other than in person.-- ``(A) In general.--Notwithstanding any other provision of law and except as provided in subparagraph (B), the appropriate State or local election official may not accept any ballot for an election for Federal office provided by an individual who votes other than in person unless the individual submits with the ballot-- ``(i) a copy of a valid photo identification; or ``(ii) the last four digits of the individual's Social Security number and an affidavit developed and made available to the individual by the State attesting that the individual is unable to obtain a copy of a valid photo identification after making reasonable efforts to obtain such a copy. ``(B) Exceptions.--Subparagraph (A) does not apply with respect to a ballot provided by-- ``(i) an absent uniformed services voter, as defined in section 107(1) of the Uniformed and Overseas Citizens Absentee Voting Act (52 U.S.C. 20310(1)); or ``(ii) an individual provided the right to vote otherwise than in person under section 3(b)(2)(B)(ii) of the Voting Accessibility for the Elderly and Handicapped Act (52 U.S.C. 20102(b)(2)(B)(ii)). ``(b) Providing Public Access to Digital Imaging Devices.--With respect to each State, the appropriate State or local government official of the State shall ensure, to the extent practicable, public access to a digital imaging device, which shall include a printer, copier, image scanner, or multifunction machine, at State and local government buildings in the State, including courts, libraries, and police stations, for the purpose of allowing individuals to use such a device at no cost to the individual to make a copy of a valid photo identification. ``(c) Valid Photo Identifications Described.--For purposes of this section, a `valid photo identification' means, with respect to an individual who seeks to vote in a State, any of the following: ``(1) A valid State-issued motor vehicle driver's license that includes a photo of the individual and an expiration date. ``(2) A valid State-issued identification card that includes a photo of the individual and an expiration date issued by a State motor vehicle authority. ``(3) A valid United States passport for the individual. ``(4) A valid military identification for the individual. ``(5) A valid identification document issued by a Tribal government that includes a photo of the individual and an expiration date. ``(d) Notification of Identification Requirement to Applicants for Voter Registration.-- ``(1) In general.--Each State shall ensure that, at the time an individual applies to register to vote in elections for Federal office in the State, the appropriate State or local election official notifies the individual of the photo identification requirements of this section. ``(2) Special rule for individuals applying to register to vote online.--Each State shall ensure that, in the case of an individual who applies to register to vote in elections for Federal office in the State online, the online voter registration system notifies the individual of the photo identification requirements of this section before the individual completes the online registration process. ``(e) Effective Date.--This section shall take effect on the date of the enactment of this section, and shall apply with respect to elections for Federal office held on or after such date.''. (2) Clerical amendment.--The table of contents of such Act is amended by inserting after the item relating to section 303 the following new item: ``Sec. 303A. Photo identification requirements.''. (b) Conforming Amendment Relating to Voluntary Guidance by Election Assistance Commission.--Section 311(b) of such Act (52 U.S.C. 21101(b)) is amended-- (1) by striking ``and'' at the end of paragraph (2); (2) by striking the period at the end of paragraph (3) and inserting ``; and''; and (3) by adding at the end the following new paragraph: ``(4) in the case of the recommendations with respect to section 303A, October 1, 2025.''. (c) Conforming Amendment Relating to Enforcement.--Section 401 of such Act (52 U.S.C. 21111) is amended by striking ``sections 301, 302, 303, and 304'' and inserting ``subtitle A of title III''. (d) Effective Date.--This section and the amendments made by this section shall take effect on the date of the enactment of this section, and shall apply with respect to elections for Federal office held on or after such date. "
+        },
+        {
+          "source_id": "state:passage247-final-stage177",
+          "locator": "Complete own report-back, recommittal and final recorded stage",
+          "passage": "The Acting CHAIR. There being no \nfurther amendment, under the rule, the \ncommittee rises. \nAccordingly, the Committee rose; \nand the Speaker pro tempore (Mr. K\nEN-\nNEDY of Utah) having assumed the \nchair, Mrs. C AMMACK, Acting Chair of \nthe Committee of the Whole House on \nthe state of the Union, reported that \nthat Committee, having had under con-\nsideration the bill (H.R. 8595) making \nappropriations for national security, \nDepartment of State, and related pro-\ngrams for the fiscal year ending Sep-\ntember 30, 2027, and for other purposes, \nand, pursuant to House Resolution 1423, \nshe reported the bill back to the House \nwith sundry amendments adopted in \nthe Committee of the Whole. \nThe SPEAKER pro tempore. Under \nHouse Resolution 1423, the previous \nquestion is ordered. \nIs a separate vote demanded on any \namendment reported from the Com-\nmittee of the Whole? If not, the Chair \nwill put them en gros. \nThe question is on the amendments. \nThe amendments were agreed to. \nThe SPEAKER pro tempore. The \nquestion is on the engrossment and \nthird reading of the bill. \nThe bill was ordered to be engrossed \nand read a third time, and was read the \nthird time. \nMOTION TO RECOMMIT \nMr. AMO. Mr. Speaker, I have a mo-\ntion to recommit at the desk. \nThe SPEAKER pro tempore. The \nClerk will report the motion to recom-\nmit. \nThe Clerk read as follows: \nMr. Amo of Rhode Island moves to recom-\nmit the bill H.R. 8595 to the Committee on \nAppropriations. \nThe SPEAKER pro tempore. Pursu-\nant to clause 2(b) of rule XIX, the pre-\nvious question is ordered on the motion \nto recommit. \nThe question is on the motion to re-\ncommit. \nThe question was taken; and the \nSpeaker pro tempore announced that \nthe noes appeared to have it. \nMr. AMO. Mr. Speaker, on that I de-\nmand the yeas and nays. \nThe yeas and nays were ordered. \nThe SPEAKER pro tempore. Pursu-\nant to clause 9 of rule XX, the Chair \nwill reduce to 5 minutes the minimum \ntime for any electronic vote on the \nquestion of passage. \nThis is a 5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 209, nays \n216, not voting 6, as follows: \n[Roll No. 246] \nYEAS—209 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavis (IL) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGolden (ME) \nGoldman (NY) \nGomez \nGonzalez, V. \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMatsui \nMcBath \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMejia \nMenefee \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nNAYS—216 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBacon \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nFulcher \nFuller \nVerDate Sep 11 2014 05:17 Jul 16, 2026 Jkt 069060 PO 00000 Frm 00057 Fmt 4634 Sfmt 0634 E:\\CR\\FM\\A15JY7.025 H15JYPT1jwatson on DSKGBHNXB4PROD with HOUSE\n\nPDF page 58\nCONGRESSIONAL RECORD — HOUSEH4528 July 15, 2026 \nGallagher \nGarbarino \nGill (TX) \nGimenez \nGoldman (TX) \nGooden \nGosar \nGraves \nGriffith \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (OH) \nJoyce (PA) \nKean \nKelly (MS) \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMalliotakis \nMaloy \nMann \nMassie \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMeuser \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMills \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nMurphy \nNehls \nNewhouse \nNorman \nNunn (IA) \nObernolte \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nWomack \nYakym \nZinke \nNOT VOTING—6 \nDavis (NC) \nDingell \nMackenzie \nNadler \nPerry \nSmith (NE) \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (Mrs. \nCAMMACK) (during the vote). There are \n2 minutes remaining. \nb 1658 \nSo the motion to recommit was re-\njected. \nThe result of the vote was announced \nas above recorded. \nThe SPEAKER pro tempore. The \nquestion is on the passage of the bill. \nPursuant to clause 10 of rule XX, the \nyeas and nays are ordered. \nThe SPEAKER pro tempore. This is a \n5-minute vote. \nThe vote was taken by electronic de-\nvice, and there were—yeas 217, nays \n209, not voting 5, as follows: \n[Roll No. 247] \nYEAS—217 \nAderholt \nAlford \nAllen \nAmodei (NV) \nArrington \nBabin \nBacon \nBaird \nBalderson \nBarr \nBarrett \nBaumgartner \nBean (FL) \nBegich \nBentz \nBergman \nBice \nBiggs (AZ) \nBiggs (SC) \nBilirakis \nBoebert \nBost \nBrecheen \nBresnahan \nBuchanan \nBurchett \nBurlison \nCalvert \nCammack \nCarey \nCarter (GA) \nCarter (TX) \nCiscomani \nCline \nCloud \nClyde \nCole \nCollins \nComer \nCrane \nCrank \nCrawford \nCrenshaw \nDavidson \nDe La Cruz \nDesJarlais \nDiaz-Balart \nDonalds \nDowning \nDunn (FL) \nEdwards \nEllzey \nEmmer \nEstes \nEvans (CO) \nEzell \nFallon \nFedorchak \nFeenstra \nFine \nFinstad \nFischbach \nFitzgerald \nFitzpatrick \nFleischmann \nFlood \nFong \nFoxx \nFranklin, Scott \nFry \nFulcher \nFuller \nGallagher \nGarbarino \nGill (TX) \nGimenez \nGolden (ME) \nGoldman (TX) \nGooden \nGosar \nGraves \nGriffith \nGrothman \nGuest \nGuthrie \nHageman \nHamadeh (AZ) \nHaridopolos \nHarrigan \nHarris (MD) \nHarris (NC) \nHarshbarger \nHern (OK) \nHiggins (LA) \nHill (AR) \nHinson \nHouchin \nHudson \nHuizenga \nHunt \nHurd (CO) \nIssa \nJack \nJackson (TX) \nJames \nJohnson (LA) \nJohnson (SD) \nJordan \nJoyce (OH) \nJoyce (PA) \nKean \nKelly (MS) \nKelly (PA) \nKennedy (UT) \nKiggans (VA) \nKiley (CA) \nKim \nKnott \nKustoff \nLaHood \nLaLota \nLangworthy \nLatta \nLawler \nLee (FL) \nLetlow \nLoudermilk \nLucas \nLuna \nLuttrell \nMace \nMalliotakis \nMaloy \nMann \nMast \nMcCaul \nMcClain \nMcClintock \nMcCormick \nMcDowell \nMcGuire \nMessmer \nMeuser \nMiller (IL) \nMiller (OH) \nMiller (WV) \nMiller-Meeks \nMills \nMoolenaar \nMoore (AL) \nMoore (NC) \nMoore (UT) \nMoore (WV) \nMoran \nMurphy \nNehls \nNewhouse \nNorman \nNunn (IA) \nObernolte \nOgles \nOnder \nOwens \nPalmer \nPatronis \nPfluger \nReschenthaler \nRogers (AL) \nRogers (KY) \nRose \nRouzer \nRoy \nRulli \nRutherford \nSalazar \nScalise \nSchmidt \nSchweikert \nScott, Austin \nSelf \nSessions \nShreve \nSimpson \nSmith (MO) \nSmith (NE) \nSmith (NJ) \nSmucker \nSpartz \nStauber \nStefanik \nSteil \nSteube \nStrong \nStutzman \nTaylor \nTenney \nThompson (PA) \nTiffany \nTimmons \nTurner (OH) \nValadao \nVan Drew \nVan Duyne \nVan Epps \nVan Orden \nWagner \nWalberg \nWeber (TX) \nWebster (FL) \nWesterman \nWied \nWilliams (TX) \nWilson (SC) \nWittman \nWomack \nYakym \nZinke \nNAYS—209 \nAdams \nAguilar \nAmo \nAnsari \nAuchincloss \nBalint \nBarraga´n \nBeatty \nBell \nBera \nBeyer \nBishop \nBonamici \nBoyle (PA) \nBrown \nBrownley \nBudzinski \nBynum \nCarbajal \nCarson \nCarter (LA) \nCasar \nCase \nCasten \nCastor (FL) \nCastro (TX) \nChu \nCisneros \nClark (MA) \nClarke (NY) \nCleaver \nClyburn \nCohen \nConaway \nCorrea \nCosta \nCourtney \nCraig \nCrockett \nCrow \nCuellar \nDavids (KS) \nDavis (IL) \nDean (PA) \nDeGette \nDeLauro \nDelBene \nDeluzio \nDeSaulnier \nDexter \nDoggett \nElfreth \nEscobar \nEspaillat \nEvans (PA) \nFields \nFigures \nFletcher \nFoster \nFoushee \nFrankel, Lois \nFriedman \nFrost \nGaramendi \nGarcia (CA) \nGarcı´a (IL) \nGarcia (TX) \nGillen \nGoldman (NY) \nGomez \nGonzalez, V. \nGoodlander \nGottheimer \nGray \nGreen, Al (TX) \nGrijalva \nHarder (CA) \nHayes \nHimes \nHorsford \nHoulahan \nHoyer \nHoyle (OR) \nHuffman \nIvey \nJackson (IL) \nJacobs \nJayapal \nJeffries \nJohnson (GA) \nJohnson (TX) \nKamlager-Dove \nKaptur \nKeating \nKelly (IL) \nKennedy (NY) \nKhanna \nKrishnamoorthi \nLandsman \nLarsen (WA) \nLarson (CT) \nLatimer \nLee (NV) \nLee (PA) \nLeger Fernandez \nLevin \nLiccardo \nLieu \nLofgren \nLynch \nMagaziner \nMannion \nMassie \nMatsui \nMcBath \nMcBride \nMcClain Delaney \nMcClellan \nMcCollum \nMcDonald Rivet \nMcGarvey \nMcGovern \nMcIver \nMeeks \nMejia \nMenefee \nMenendez \nMeng \nMfume \nMin \nMoore (WI) \nMorelle \nMorrison \nMoskowitz \nMoulton \nMrvan \nMullin \nNeal \nNeguse \nNorcross \nOcasio-Cortez \nOlszewski \nOmar \nPallone \nPanetta \nPappas \nPelosi \nPerez \nPeters \nPettersen \nPingree \nPocan \nPou \nPressley \nQuigley \nRamirez \nRandall \nRaskin \nRiley (NY) \nRivas \nRoss \nRuiz \nRyan \nSalinas \nSa´nchez \nScanlon \nSchakowsky \nSchneider \nScholten \nSchrier \nScott (VA) \nSewell \nSherman \nSimon \nSmith (WA) \nSorensen \nSoto \nStansbury \nStanton \nStevens \nStrickland \nSubramanyam \nSuozzi \nSykes \nTakano \nThanedar \nThompson (CA) \nThompson (MS) \nTitus \nTlaib \nTokuda \nTonko \nTorres (CA) \nTorres (NY) \nTrahan \nTran \nUnderwood \nVargas \nVasquez \nVeasey \nVela´zquez \nVindman \nWalkinshaw \nWasserman \nSchultz \nWaters \nWatson Coleman \nWhitesides \nWilliams (GA) \nWilson (FL) \nNOT VOTING—5 \nDavis (NC) \nDingell \nMackenzie \nNadler \nPerry \nANNOUNCEMENT BY THE SPEAKER PRO TEMPORE  \nThe SPEAKER pro tempore (during \nthe vote). There are 2 minutes remain-\ning. \nb 1711 \nSo the bill was passed. \nThe result of the vote was announced \nas above recorded. \nA motion to reconsider was laid on \nthe table. \nf \n"
+        }
+      ],
+      "independent_review_pending": true,
+      "editorially_accepted": false,
+      "exact_chain_completed": false
+    }
+  ],
+  "new_canonical_sources": [
+    "govinfo:hr8595eh",
+    "state:divisionB-save177",
+    "state:passage247-final-stage177"
+  ],
+  "new_capture_registrations": [
+    "govinfo:hr8595eh",
+    "state:divisionB-save177",
+    "state:passage247-final-stage177",
+    "primary:state-finalstage-pages177"
+  ],
+  "source_derivatives": [
+    {
+      "source_id": "state:divisionB-save177",
+      "original_source_id": "govinfo:hr8595eh",
+      "intervals": [
+        {
+          "start": 301371,
+          "end": 333297,
+          "total": 333636
+        }
+      ],
+      "original_governed_bytes_sha256": "81a3a7ac3c83ab74e78497d700ceca1e79c417d11b50f03d3cbb3011cf031792"
+    },
+    {
+      "source_id": "state:passage247-final-stage177",
+      "original_source_id": "primary:state-finalstage-pages177",
+      "intervals": [
+        {
+          "start": 3254,
+          "end": 14837,
+          "total": 16293
+        }
+      ],
+      "original_governed_bytes_sha256": "a5f60fae908af92a0961a031c54b2f0f428662696ff40a18d1739a2592f3b2e5"
+    }
+  ],
+  "primary_acquisitions": [
+    {
+      "source_id": "govinfo:hres1423eh",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+      "raw_path": ".tmp\\hres1423-original177.html",
+      "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+      "historical_raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+      "historical_raw_identical": true,
+      "captured_utc": "2026-10-09T18:48:32.750457+00:00"
+    },
+    {
+      "source_id": "clerk:119:2:247",
+      "url": "https://clerk.house.gov/evs/2026/roll247.xml",
+      "raw_path": ".tmp\\clerk247-original177.xml",
+      "raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+      "historical_raw_sha256": "edf6dd86982bebc2283d43a3f41149789121160112327b939263ac82fd65e441",
+      "historical_raw_identical": true,
+      "captured_utc": "2026-10-09T18:48:33.183159+00:00"
+    },
+    {
+      "source_id": "congressional-record:2026-07-15-8595",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+      "raw_path": ".tmp\\state-record-original177.pdf",
+      "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+      "historical_raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+      "historical_raw_identical": true,
+      "captured_utc": "2026-10-09T18:48:33.460732+00:00"
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595eh/html/BILLS-119hr8595eh.htm",
+      "raw_path": ".tmp\\hr8595eh-original177.html",
+      "raw_sha256": "8ed28e4638a79be043fe118e4e9a6dfa35feb3f6664e9a5876d6d83521d87e02",
+      "historical_raw_identical": true,
+      "historical_full_text_identical": true,
+      "source_capture_reused_from": "docs/editorial/shared_candidates/house_119_health_20260916",
+      "other_domain_meanings_or_membership_reused": false,
+      "text_length": 333636
+    }
+  ],
+  "rendered_source_pages": [
+    {
+      "path": ".tmp\\state-record177-57.png",
+      "raw_sha256": "947aa4e9afddded4543a8ecf1713ff73652f7c60d7bddfff8e32ad9ad80db242",
+      "visually_inspected": true
+    },
+    {
+      "path": ".tmp\\state-record177-58.png",
+      "raw_sha256": "6c2560439294662727b01fd71c28f8e52fecd1cc056493192afa937729953f31",
+      "visually_inspected": true
+    }
+  ],
+  "actual_source_reading": {
+    "source_id": "govinfo:hr8595eh",
+    "total_characters": 333636,
+    "text_sha256": "b00be57a1411d9b2c1c7095980d7de110172776fb06d05d4ca7035bdaafaf942",
+    "complete_read": false,
+    "read_intervals": [
+      {
+        "start": 0,
+        "end": 36000,
+        "text_sha256": "df5b74f5a770a839ac53f958f07e3cddedccbba203f819e3b03ba33f40145556",
+        "untruncated": true
+      },
+      {
+        "start": 36000,
+        "end": 72000,
+        "text_sha256": "4c746ad83be640d9b6af958fd5a8b2ff7aea3ecbaf580725bd719b2eaaeda529",
+        "untruncated": true
+      },
+      {
+        "start": 72000,
+        "end": 108000,
+        "text_sha256": "7b39b108fd40ced891e1f81e94f86cf6115fb0655dcac121400febac0e6b9e8b",
+        "untruncated": true
+      },
+      {
+        "start": 301371,
+        "end": 333636,
+        "text_sha256": "7b5a5bc70f486e5fc5dd3f611785dafd42148d375d142fd447370dd8745bc433",
+        "untruncated": true
+      }
+    ],
+    "notes": [
+      {
+        "range": [
+          0,
+          36000
+        ],
+        "material": "DivisionAappropriations; direct533mConsularBorderSecurityaccount inclpassport/visa wait purposes andqualifiedfee collection. Full647mexchange/Fulbright minimum retained. Repatriation loan/cost cap anddiplomaticemergencytransfer. Broad diplomatic/military/foreignnationalcommander exception/IBWCwatercommission context notautomaticallyImmigration. IsraeliArabScholars/NED programmecontext qualifiers retained. IHA5bqualification/refugeeIsrael6.5mminimum begins nearend; remainder notyetread."
+      },
+      {
+        "prior_failed_read": "First helper omittedHealthneutralcapture; KeyError beforebodyread. First28500dump truncated; reread0-36000in two boundedsegments, no gap claim."
+      },
+      {
+        "range": [
+          36000,
+          72000
+        ],
+        "material": "ERMA100m retained under2601(c), excess-cap transfer exception; NSIP, Democracy, Peace Corps, MCC, security aid, institutions and loan conditions broader context.7001-7006 complete;7007 direct Cuba/NorthKorea/Iran funding starts at72000, remainder unread."
+      },
+      {
+        "range": [
+          72000,
+          108000
+        ],
+        "material": "Transfer, audit, availability, country and programme notifications with emergency exception reviewed. Initial combined tool output truncated72000-90000; entire interval independently reread untruncated."
+      },
+      {
+        "range": [
+          301371,
+          333636
+        ],
+        "material": "Complete DivisionB citizenship/documentary verification, alternative attestation/name-discrepancy paths, DHS SAVE/list exchange and investigation whether to initiate removal, naturalization notification, proof/photo ID/provisional-ballot exceptions and effective-date text reviewed. Printed paragraph(A)/(1) cross-references and October1,2025 guidance date preserved. RemainingDivisionA108000-301371 not claimed read."
+      }
+    ],
+    "updated_utc": "2026-10-09T18:52:13.887804+00:00",
+    "unread_intervals": [
+      {
+        "start": 108000,
+        "end": 301371
+      }
+    ]
+  },
+  "existing_shared_core_reference": {
+    "path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+    "action_id": "house:119:2:247",
+    "action_core_sha256": "42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1",
+    "reference_only": true,
+    "existing_meaning_rewritten": false,
+    "Immigration_membership_inherited": false
+  },
+  "source_and_application_limits": [
+    "Only House passage of the combined package is established, not enactment or independent component preference. Both governed member observations are Nay.",
+    "Direct independent consular/refugee headings and appended DHS/removal/naturalization mechanisms require exact programme/statutory scope checks. No final Immigration membership is claimed.",
+    "Appended DivisionB is read in full with alternative proof, notice, uniformed-service and provisional-ballot exceptions. Printed cross-reference/date anomalies retained, not silently repaired.",
+    "Whole 333,636-character EH capture is raw/text-equivalent to the historical neutral capture. Only 0–108,000 and 301,371–333,636 read; remaining Division A not claimed read.",
+    "Existing Health shared-core identity/digest recorded as reference only. No duplicate or altered action meaning, inherited issue mapping, new graph or hold release.",
+    "No new completed screening; existing 47 meanings / 80 propositions / 70 questions / three partial packages and 241/243/245/79/83 holds preserved."
+  ],
+  "counts": {
+    "authority": "Mechanical integrity only; no semantic acceptance or publication",
+    "inventory_count": 676,
+    "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+    "governed_review_count": 597,
+    "unfinished_screenings": 79,
+    "queue_count": 79,
+    "disposition_counts": {
+      "procedural_context": 228,
+      "interpreted_substantive_directional": 47,
+      "exact_action_ineligible": 320,
+      "source_unresolved": 79,
+      "expressive_nonbinding_context": 2
+    },
+    "unfinished_component_reviews": 3
+  },
+  "meanings_unchanged": 47,
+  "propositions_unchanged": 80,
+  "application_questions_unchanged": 70,
+  "partial_packages_unchanged": 3,
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "special_benchmark_round": false,
+  "prior176_CI_receipt_ref": "docs/review_packets/immigration_delivery_checkpoint176_ci.json",
+  "prior176_owner_CI_seconds": 2250.975948,
+  "lightweight_actual_timing": {
+    "checkpoint": 177,
+    "base_head": "9d23bbee6712f2b20df744199c80d47c8b0f212e",
+    "started_utc": "2026-10-09T18:36:48.002343+00:00",
+    "scope": "H.R.8595 final passage247: full actual House package and source-bound independent consular/refugee appropriations; retain241/243/245holds",
+    "attempted_action_ids": [
+      "house:119:2:247"
+    ],
+    "selection_basis": "Close meaningful authored244State episode coverage using member-neutral exact source reuse; no other-domain interpretation borrowed",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "source_research_overlaps176CI": true,
+    "no_overlap_subtraction_or_average_claim": true,
+    "local_validation_completed_utc": "2026-10-09T18:59:01.172905+00:00",
+    "local_end_to_end_seconds": 1333.170562,
+    "completed_screenings": 0,
+    "held_source_cases": 1,
+    "targeted_tests": 191,
+    "targeted_seconds": 17.313,
+    "performance_average_established": false,
+    "delivery_scope": "Material combined-package source discovery; final passage247 remains pending, whole chain unfinished"
+  },
+  "receipt_sha256": "091480538f1cf3509425ceed9725242a958ca57a9b015d325eb7962914bac0b2",
+  "prior176_independent_review_receipt_ref": "docs/review_packets/immigration_checkpoint176_parent_bounded_review.json",
+  "validation": {
+    "focused_tests": 191,
+    "runtime_seconds": 17.313,
+    "semantic_checks": 7,
+    "reference_cases": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "mechanical": {
+      "canonical_sources": 1961,
+      "capture_registrations": 842,
+      "new_capture_registration_objects_verified": 4,
+      "unique_source_seals_verified": 2362,
+      "new_derivatives_verified": 2,
+      "primary_raw_acquisitions_verified": 4,
+      "historical_blobs_preserved": 747,
+      "generated_files_replayed": 7,
+      "unchanged_generated_files": [
+        "compiled_ir.json",
+        "compiler_input.json",
+        "member_projections.json",
+        "readable_candidates.json",
+        "shared_action_core.json",
+        "shared_issue_mapping.json"
+      ],
+      "all47meaning_and_member_projection_objects_exact": true,
+      "all80propositions_byte_exact": true,
+      "unchanged_pending_rows_except247": true,
+      "existing_Health_core_unchanged": true,
+      "no_new_meaning_or_completed_screening": true
+    },
+    "final_diff_reviewed": true,
+    "private_verifier_corrections": [
+      "Initial merged-source lookup shadowed an original capture with enriched canonical metadata; new registration checks now bind the original captured objects.",
+      "Historical private-capture omissions are not reconciled here; all prior registrations/pool entries remain exact, all four new registrations are matched exactly.",
+      "Git historical object preservation uses existing git hash-object --path line-ending filters on Windows; private byte comparison against git show was incorrect. Failed helpers retained. Repository validators unchanged."
+    ]
+  }
+}
