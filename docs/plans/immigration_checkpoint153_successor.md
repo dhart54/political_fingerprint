@@ -1142,3 +1142,67 @@ explicit literal Crane A4 adoption and EH8002 passages are now mapped. The two
 focused regressions were rerun after this small correction; prior semantics and
 all source conflicts are unchanged. The first178 feature head remains recorded
 as delivery history; final-head CI is verified separately.
+
+
+## Checkpoint 179 — disclosure/date screenings and pending-ledger triage
+
+Two source-mapped candidate exclusions complete House 119/1/289 and 119/2/11.
+The Epstein disclosure bill expressly includes immigration documentation among
+case travel records; disclosure does not establish changed admission, removal,
+status eligibility or border administration. Its privacy, statutory CSAM,
+classification and temporary investigation qualifications remain. H.R. 1834
+extends only the enhanced credit formula and income-ceiling dates through 2028.
+The dated lawful-presence rules and July 2025 immigration-eligibility, verification
+and repayment amendments are preserved. The official January 8 HTML Record
+expressly corrects the erroneously printed original omnibus; the actual deemed
+McGovern substitute and EH agree. Exact stage sequences and fresh Clerk labels
+and totals verify. Four fresh Clerk raw hashes differ; canonical aliases remain
+unchanged because their normalized metadata, two members and party totals agree.
+
+The fixed five attempts include three unfinished chains, without replacements or
+completion credit: 298 needs remaining criminal/weapon/trafficking references and
+exact substitute-stage comparison; 299 needs the full D.C. Law 24-345 repeal,
+restored-law and subtitle exceptions; 332 needs the foreign-service/exclusion and
+affected-agreement chain. Full EH witnesses were read; full law, uncompleted
+authorities and held-case recorded stages are not claimed reviewed. Existing
+Health meaning/core objects and every prior Immigration meaning are preserved.
+
+The ledger changes from 597 reviews/79 pending to 599/77. Before this increment,
+79 pending covered 66 measures: 69 ordinary unscreened, three authoritative
+conflicts, five other source chains, one blocked primary route and one historical
+reconstruction. Now 64 ordinary unscreened and 13 researched holds remain. Three
+partial packages and 70 questions preserved for independent candidate review
+are separate integration/application work, not 73 new missing-source cases.
+Prioritize complete available domestic-administration chains, then isolated
+cross-domain actions, then remaining material coverage in the partial packages.
+
+Passage 247 stays held. Live official Record HTML repeats A7/A17 reductions only;
+Rules summaries and the index do not provide a specific correction. The Report
+A7 word “first” and both dollar amounts on RH page 22 line 15 remain unresolved
+against the actual Record. Retaining the hold is recommended. A specific official
+correction could enable replay; choosing a new precedence rule is reserved source
+governance outside this milestone. No target, net cut or paired transfer is chosen,
+and the hold does not stop the rest of the queue. Full correction-route parents
+are not claimed human-read. Two mistaken November 18 granules remain private
+and rejected; the complete correct offered bill and rendered H4733 vote verify.
+
+The parent’s completed independent 178 review and nine first-attempt CI jobs are
+recorded in bounded receipts. Independent review verified 32 preservation, 77
+authority and 59 amendment checks, two regressions and seven byte replays. It
+confirms qualified research and remaining conflicts; it grants no acceptance.
+The public start-to-final-job interval was 2,845.489 seconds across both commits
+and CI cycles, separate from the owner’s CI/log/refinement endpoints.
+
+No special benchmark round or scaling. The prior functional benchmark remains
+FAIL at 781.087 seconds per completed screen. Lightweight 179 timing includes
+ledger profiling and correction-route work as well as all five attempts and
+validation/delivery overhead; no new comparable routine average is inferred.
+Candidate feature only; independent 179 review remains pending.
+
+Local validation passes: 192 focused tests in 17.772 seconds, seven semantic
+checks and IR references. Fourteen literal claims, six exact derivatives,
+17 raw-capture hashes, five Clerk reconciliations and two source sequences
+verify. All 597 prior reviews, 1,970 prior sources, 853 prior registrations,
+13 Health files and six semantic products remain unchanged; seven generated
+files replay byte for byte. The reviewed diff changes only the five selected
+action rows and the declared receipts/source registrations.

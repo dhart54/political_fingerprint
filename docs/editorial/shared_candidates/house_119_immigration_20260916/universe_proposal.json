@@ -79,8 +79,8 @@
     "counts": {
       "procedural_context": 228,
       "interpreted_substantive_directional": 47,
-      "exact_action_ineligible": 320,
-      "source_unresolved": 79,
+      "exact_action_ineligible": 322,
+      "source_unresolved": 77,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -95,8 +95,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 228,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 320,
-    "unresolved_boundary_cases": 79,
+    "exact_action_ineligible_actions": 322,
+    "unresolved_boundary_cases": 77,
     "independent_episode_count": 42,
     "multi_action_episode_count": 5,
     "mechanism_types": [
@@ -545,6 +545,7 @@
         "house:119:1:282",
         "house:119:1:286",
         "house:119:1:287",
+        "house:119:1:289",
         "house:119:1:292",
         "house:119:1:294",
         "house:119:1:295",
@@ -586,6 +587,7 @@
         "house:119:1:360",
         "house:119:2:8",
         "house:119:2:9",
+        "house:119:2:11",
         "house:119:2:12",
         "house:119:2:14",
         "house:119:2:15",
@@ -731,7 +733,6 @@
         "house:119:1:262",
         "house:119:1:281",
         "house:119:1:285",
-        "house:119:1:289",
         "house:119:1:298",
         "house:119:1:299",
         "house:119:1:320",
@@ -742,7 +743,6 @@
         "house:119:2:5",
         "house:119:2:6",
         "house:119:2:7",
-        "house:119:2:11",
         "house:119:2:27",
         "house:119:2:28",
         "house:119:2:44",
@@ -1147,7 +1147,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "c4a3c9d67f718efe3ee67cc6974cd436958f78821c6337e807312651fc1e3cf8",
+  "universe_subject_sha256": "675877839af679ae434d7aa362a31c4d0ec590194a99344b5640bd53c9bd2392",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -20436,8 +20436,8 @@
       "date": "2025-11-18",
       "measure": "bill_119_hr_4405",
       "question": "On Motion to Suspend the Rules and Pass",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R. 4405 requires qualified searchable/downloadable public disclosure of specified DOJ/FBI Epstein-related records within 30 days and a subsequent congressional report. Section 2(a)(3) expressly includes customs or immigration documentation within aircraft/vessel/vehicle travel records; this explicit scope is preserved. The operative changes disclosure of those identified case files, not admission, removal, asylum, citizenship, immigration-status eligibility or direct border administration. Foreign dignitaries are named in the prohibited withholding grounds, not assigned an immigration qualification. Victim privacy, statutory CSAM, temporary active-investigation, death/injury-image and properly classified-information qualifications, redaction justifications, maximum possible declassification, unclassified summaries and reporting remain. Sections 2256/2252/2252A are the referenced material/depiction definitions and prohibitions, not a newly enacted trafficking or personal-status regime. Do not infer that a named person committed misconduct or that every record must be released unredacted. Own suspension vote follows question, voice ayes with two-thirds announced, Raskin recorded-vote demand/order and 427-1, 5 Not Voting passage. This bounded disclosure action is a proposed functional Immigration exclusion. Candidate only, noncounting and unapproved. No motive, ideology, character, corruption, causality, endorsement, voting recommendation, enactment or individual-application inference.",
       "source": {
         "source_id": "clerk:119:1:289",
         "url": "https://clerk.house.gov/evs/2025/roll289.xml",
@@ -20454,25 +20454,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R. 4405 requires qualified searchable/downloadable public disclosure of specified DOJ/FBI Epstein-related records within 30 days and a subsequent congressional report. Section 2(a)(3) expressly includes customs or immigration documentation within aircraft/vessel/vehicle travel records; this explicit scope is preserved. The operative changes disclosure of those identified case files, not admission, removal, asylum, citizenship, immigration-status eligibility or direct border administration. Foreign dignitaries are named in the prohibited withholding grounds, not assigned an immigration qualification. Victim privacy, statutory CSAM, temporary active-investigation, death/injury-image and properly classified-information qualifications, redaction justifications, maximum possible declassification, unclassified summaries and reporting remain. Sections 2256/2252/2252A are the referenced material/depiction definitions and prohibitions, not a newly enacted trafficking or personal-status regime. Do not infer that a named person committed misconduct or that every record must be released unredacted. Own suspension vote follows question, voice ayes with two-thirds announced, Raskin recorded-vote demand/order and 427-1, 5 Not Voting passage. This bounded disclosure action is a proposed functional Immigration exclusion. Candidate only, noncounting and unapproved. No motive, ideology, character, corruption, causality, endorsement, voting recommendation, enactment or individual-application inference.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:289",
           "url": "https://clerk.house.gov/evs/2025/roll289.xml",
           "raw_sha256": "c053d5280ea8d5ad67cb6d13c0b6d5b0951c41c2a2e1afd0b82a61e9c6126ee2",
-          "governed_bytes_sha256": "4e6cad9717daa09c5ee70ce5a0263ad556712c76f634c217ccbaa2b211fb29d9",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "4e6cad9717daa09c5ee70ce5a0263ad556712c76f634c217ccbaa2b211fb29d9"
+        },
+        {
+          "source_id": "govinfo:hr4405eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4405eh/html/BILLS-119hr4405eh.htm",
+          "raw_sha256": "25b1d2929ac247121a54438e24b4f478f01ae7684a78576a07f1aef438f3af8c",
+          "governed_bytes_sha256": "9fd06eeb497ac83471618feb4f60385b2b7607261482320bc2b1dfd78d8c635d"
+        },
+        {
+          "source_id": "immigration:roll289-offered179",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/html/CREC-2025-11-18-pt1-PgH4725-2.htm",
+          "raw_sha256": "c829ad2b0e8e0187ae770deb08d1ea8c76fef316b43b7755ba6e52ab63eef28c",
+          "governed_bytes_sha256": "bc745e3dd261f114ed0dcb9ebfd0179f529fb81ca6c788e827c12f5a9af42fa6"
+        },
+        {
+          "source_id": "immigration:roll289-recorded179",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-18/pdf/CREC-2025-11-18-house.pdf",
+          "raw_sha256": "deecb5d1c9406ec3244bd225e9ae553ce533e5f43e5fcbcc8170789f7756c371",
+          "governed_bytes_sha256": "29cc590f10b9f0aa2c614db51de8499329de5988e66e2867aad4424bffa925b2"
+        },
+        {
+          "source_id": "govinfo:18usc2256-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2256.htm",
+          "raw_sha256": "ba9b038dc5088f21d313bcfdc67bbec8e2556cc72840d49aa49ac0536bd3616f",
+          "governed_bytes_sha256": "0d7412dcfa10520bd5e2f18a5d83ec9b216f13ec1b54a608e1915c7cecad307d"
+        },
+        {
+          "source_id": "govinfo:18usc2252-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252.htm",
+          "raw_sha256": "7286d66b777321766b13c46ddeef7990d9a69f7c931392612e88183513e5d585",
+          "governed_bytes_sha256": "00f9b87e23403d3fb554bc25ff764a5f142512a599f37b1c24bf0e650c62729f"
+        },
+        {
+          "source_id": "govinfo:18usc2252A-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap110-sec2252A.htm",
+          "raw_sha256": "8a263ac34bbf6fdc5480ec6aff6b758dd5981d61858984595adabca4a91248aa",
+          "governed_bytes_sha256": "27fe75d1be088996e3b8aae4c755860074ae8f942a3da3219dc06112ae31fbb1"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "561f5ef150f539125aa4d715077c8ccac88240cfc969156eed95991a78e41050"
       },
       "historical_raw_hash_matches": true
     },
@@ -20952,7 +20988,7 @@
       "measure": "bill_119_hr_5214",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Complete EH detention/bond operative and dated 1321/1325/1331 baseline read. Actual criminal-offense framework and potentially material trafficking/firearm cross-references require remaining 1322/1324, firearm authorities, Rule 46 and exact RH/deemed-substitute/stage comparison. Printed 1832/4(a-1) versus4504(a)(1) and this section 23-1322 defects remain literal. No Immigration disposition or inherited Health mapping yet.",
       "source": {
         "source_id": "clerk:119:1:298",
         "url": "https://clerk.house.gov/evs/2025/roll298.xml",
@@ -20970,8 +21006,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Complete EH detention/bond operative and dated 1321/1325/1331 baseline read. Actual criminal-offense framework and potentially material trafficking/firearm cross-references require remaining 1322/1324, firearm authorities, Rule 46 and exact RH/deemed-substitute/stage comparison. Printed 1832/4(a-1) versus4504(a)(1) and this section 23-1322 defects remain literal. No Immigration disposition or inherited Health mapping yet.",
+      "unresolved_reason": "pending_material_incorporated_source_and_domain_chain",
       "sources": [
         {
           "source_id": "clerk:119:1:298",
@@ -20979,13 +21015,37 @@
           "raw_sha256": "a9ae200372594e6f9c228a951f34fe662ba9a25cb321a27b56e8b584ef9cd7e9",
           "governed_bytes_sha256": "56f1fc546f888bde2c385e81bbaa70faf6ef9e63a37b92c64186c6349461d476",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hr5214eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5214eh/html/BILLS-119hr5214eh.htm",
+          "raw_sha256": "48de0b6d60c35e60eef84e81cd163c1dbf9ec5062ccda79530a53809748546a8",
+          "governed_bytes_sha256": "50f64c3e054a984b492b5af719652c1bc1a208652c197a0901353651655af60f"
+        },
+        {
+          "source_id": "dc-council:code-23-1321-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1321.html",
+          "raw_sha256": "be972d7e08e6d0cdf7cda1eb92a0f2d2c6fc87f45b2ddcf22b09f74f3f5296fb",
+          "governed_bytes_sha256": "a7868bcaa9d44a0a4f9bb3ab0047fd15ccf0f283112070ff0c35858d62cd8606"
+        },
+        {
+          "source_id": "dc-council:code-23-1325-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1325.html",
+          "raw_sha256": "9d7bb922aad3c2dff0084d15772aa122bd203a0bfc23db6842be16fca88d1688",
+          "governed_bytes_sha256": "14139ea5c32adec7d4a3630a08946307917f27d3f68a34165288d607be9209a6"
+        },
+        {
+          "source_id": "dc-council:code-23-1331-20251113-operative",
+          "url": "https://raw.githubusercontent.com/DCCouncil/law-html/88a738d1a240ebd405e0d5fcb9e0e66a01804b5a/us/dc/council/code/sections/23-1331.html",
+          "raw_sha256": "fee338b0383d540b991f5a1750c414eae3cfd6e15d07fb54fd0c45cfe5587b73",
+          "governed_bytes_sha256": "c9ca4a4f7f59748d98945c17214be6e59d05d53eae76555a3aa7a8fb4253869b"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false
       },
@@ -20999,7 +21059,7 @@
       "measure": "bill_119_hr_5107",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Complete EH repeals D.C. Law 24-345 and restores law as if it had not been enacted, except title I subtitles S and A. Full 112,109-character incorporated law and pre-law restoration/exception chain have not been read in this increment; RH-to-EH and exact stage binding still require comparison. No generic policing exclusion, inherited Health membership or complete baseline review claimed.",
       "source": {
         "source_id": "clerk:119:1:299",
         "url": "https://clerk.house.gov/evs/2025/roll299.xml",
@@ -21017,8 +21077,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Complete EH repeals D.C. Law 24-345 and restores law as if it had not been enacted, except title I subtitles S and A. Full 112,109-character incorporated law and pre-law restoration/exception chain have not been read in this increment; RH-to-EH and exact stage binding still require comparison. No generic policing exclusion, inherited Health membership or complete baseline review claimed.",
+      "unresolved_reason": "pending_material_incorporated_source_and_domain_chain",
       "sources": [
         {
           "source_id": "clerk:119:1:299",
@@ -21026,13 +21086,19 @@
           "raw_sha256": "1d2f685b06de6af58b7b9aef7c07c1b4f78ffc368eb9a9a939adf077e0e7445a",
           "governed_bytes_sha256": "ac005bcf035803933d2e9245ea33cac1ef066594c502f49cb1e000b40c026e5b",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hr5107eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr5107eh/html/BILLS-119hr5107eh.htm",
+          "raw_sha256": "553e430a35817da6410e32d6bf9d7753fc770c041556f50d26ec615b48d8508d",
+          "governed_bytes_sha256": "d10868eeba6326c02499053a7c6a267503052541086faaa6e6e4e32f5e4f767f"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false
       },
@@ -22920,7 +22986,7 @@
       "measure": "bill_119_hr_2550",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Complete EH and EO 14251 read. The bill nullifies the order, bars implementation funds and restores March 26 collective-bargaining agreements for their terms. EO names USCIS/ICE/ORR and foreign-service subdivisions. Complete dated 5 U.S.C. 7103 includes alien/noncitizen outside U.S. employee exclusion; retain this personal qualification without deriving domain eligibility from agency names. Material 22 U.S.C. 4103/Foreign Service/exclusion/affected-agreement and exact recorded-stage chain remain unfinished; no inclusion or exclusion yet.",
       "source": {
         "source_id": "clerk:119:1:332",
         "url": "https://clerk.house.gov/evs/2025/roll332.xml",
@@ -22938,8 +23004,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Complete EH and EO 14251 read. The bill nullifies the order, bars implementation funds and restores March 26 collective-bargaining agreements for their terms. EO names USCIS/ICE/ORR and foreign-service subdivisions. Complete dated 5 U.S.C. 7103 includes alien/noncitizen outside U.S. employee exclusion; retain this personal qualification without deriving domain eligibility from agency names. Material 22 U.S.C. 4103/Foreign Service/exclusion/affected-agreement and exact recorded-stage chain remain unfinished; no inclusion or exclusion yet.",
+      "unresolved_reason": "pending_material_incorporated_source_and_domain_chain",
       "sources": [
         {
           "source_id": "clerk:119:1:332",
@@ -22947,13 +23013,31 @@
           "raw_sha256": "89fc5eb8c661f0a9e9e4941ab16558113df28a4fd72bf003fa4a923121f0e71c",
           "governed_bytes_sha256": "3f2693e031dc1943a60e85994111393ec95265e6d1a3fedb276aca106934174e",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hr2550eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2550eh/html/BILLS-119hr2550eh.htm",
+          "raw_sha256": "f6a900a52c4f2a2a599c760fef1de91a4d94c31f2c67ac0ed06812a35c821fee",
+          "governed_bytes_sha256": "d65bd10625d81816d5d43f194d0765f298ffd3a54117afee1f03ec5b7e134f7a"
+        },
+        {
+          "source_id": "federal-register:eo14251-20250327",
+          "url": "https://www.govinfo.gov/content/pkg/FR-2025-04-03/html/2025-05836.htm",
+          "raw_sha256": "4852df435166d6164bbc331d8218cc9ceeb9f3ecede99b987f4b671278254528",
+          "governed_bytes_sha256": "12c4a767860052c27424cf40be708d3bc9890d93cd2d1560a95819f84c61f8cd"
+        },
+        {
+          "source_id": "govinfo:5usc7103-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-partIII-subpartF-chap71-subchapI-sec7103.htm",
+          "raw_sha256": "8fa86e714b1023a7f13a48de1aa5fd557557c2e1e17fa06cc022bed728aefcb5",
+          "governed_bytes_sha256": "cc92fce355479b1bfc0192440f10cb4c9c7761efb1ca0cec2822687ede783235"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false
       },
@@ -25298,8 +25382,8 @@
       "date": "2026-01-08",
       "measure": "bill_119_hr_1834",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "H.R. 1834 EH extends only 36B(b)(3)(A)(iii) enhanced contribution-table and(c)(1)(E) income-ceiling-exception dates through 2028, effective for taxable years after December 31, 2025. The unchanged program has personal lawful-presence qualifications, expressly retained in the dated 36B(c)/(e) baseline. July 2025 PL 119-21 sections 71301-71305 separately narrow eligible-alien qualifications from 2027, repeal the below-poverty alien-status/Medicaid-ineligibility rule from 2026, add verification from 2028, limit specified special enrollment and change excess-credit recapture; this extension does not repeal or postpone those provisions. A general contribution-formula/income-date extension is not itself a change to personal immigration/status qualification or border rules. Proposed functional Immigration exclusion concerns this exact date action, not a claim that the underlying program has no immigration criteria or that every applicant qualifies. H.Res. 780 and the actual floor declaration bind McGovern’s November 12 substitute; official January 8 HTML explicitly corrects the erroneously printed original omnibus text. The corrected operative, submitted substitute and EH contain the same two date extensions. Own final vote follows engrossment/third reading, passage question, voice noes, Neal yeas/nays demand/order and 230-196, 5 Not Voting passage, separate from discharge/rule votes. Health shared-core identity is preserved; no Health membership or meaning is regenerated. Candidate only, noncounting and unapproved. No motive, ideology, character, corruption, causality, endorsement, voting recommendation, enactment or individual-application inference.",
       "source": {
         "source_id": "clerk:119:2:11",
         "url": "https://clerk.house.gov/evs/2026/roll011.xml",
@@ -25316,25 +25400,73 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "H.R. 1834 EH extends only 36B(b)(3)(A)(iii) enhanced contribution-table and(c)(1)(E) income-ceiling-exception dates through 2028, effective for taxable years after December 31, 2025. The unchanged program has personal lawful-presence qualifications, expressly retained in the dated 36B(c)/(e) baseline. July 2025 PL 119-21 sections 71301-71305 separately narrow eligible-alien qualifications from 2027, repeal the below-poverty alien-status/Medicaid-ineligibility rule from 2026, add verification from 2028, limit specified special enrollment and change excess-credit recapture; this extension does not repeal or postpone those provisions. A general contribution-formula/income-date extension is not itself a change to personal immigration/status qualification or border rules. Proposed functional Immigration exclusion concerns this exact date action, not a claim that the underlying program has no immigration criteria or that every applicant qualifies. H.Res. 780 and the actual floor declaration bind McGovern’s November 12 substitute; official January 8 HTML explicitly corrects the erroneously printed original omnibus text. The corrected operative, submitted substitute and EH contain the same two date extensions. Own final vote follows engrossment/third reading, passage question, voice noes, Neal yeas/nays demand/order and 230-196, 5 Not Voting passage, separate from discharge/rule votes. Health shared-core identity is preserved; no Health membership or meaning is regenerated. Candidate only, noncounting and unapproved. No motive, ideology, character, corruption, causality, endorsement, voting recommendation, enactment or individual-application inference.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:11",
           "url": "https://clerk.house.gov/evs/2026/roll011.xml",
           "raw_sha256": "a9b1e0ef7f18944b0b26b013ff442e57611cba9c59a57cdc3a1c3ceb7b5beb7b",
-          "governed_bytes_sha256": "4e6e78ebb83941c66d8fd5cae13d975e077406a3c1d1b34e1c3dafea2fdf034d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "4e6e78ebb83941c66d8fd5cae13d975e077406a3c1d1b34e1c3dafea2fdf034d"
+        },
+        {
+          "source_id": "govinfo:hr1834eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1834eh/html/BILLS-119hr1834eh.htm",
+          "raw_sha256": "da963879f55fac3db10d22b720c34f1d19d60a9bd1272cac83c19717ca0a6d9b",
+          "governed_bytes_sha256": "d81a0271292ee51710f48160489e3e283431a43f01ec17c70902280a5de30788"
+        },
+        {
+          "source_id": "immigration:roll11-corrected-operative179",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/html/CREC-2026-01-08-pt1-PgH213.htm",
+          "raw_sha256": "e386a693f2f4dbb6ae712ccafc5a6c11507e97e2869b05a56c72bd1c21b693da",
+          "governed_bytes_sha256": "bc652264e53d378a0a1f918ce78099570b24d43b261d07fa262100b0eb530ac2"
+        },
+        {
+          "source_id": "immigration:roll11-recorded179",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-08/html/CREC-2026-01-08-pt1-PgH213.htm",
+          "raw_sha256": "e386a693f2f4dbb6ae712ccafc5a6c11507e97e2869b05a56c72bd1c21b693da",
+          "governed_bytes_sha256": "b3794cff5230b987dea776380fb9519f0dd12eed2df36b9b11dd94e65144a878"
+        },
+        {
+          "source_id": "immigration:hr1834-McGovern-substitute179",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-11-12/pdf/CREC-2025-11-12-house.pdf",
+          "raw_sha256": "d2d4f9715ef27c644131a401048781fa24f0593773cef738f5df5aafe35428aa",
+          "governed_bytes_sha256": "9eafd49e62d294481d226dfb45a73c84a5bf3a8b1e33bce816d2df57a4e76976"
+        },
+        {
+          "source_id": "govinfo:hres780eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres780eh/html/BILLS-119hres780eh.htm",
+          "raw_sha256": "2f01db9ce85ebd8e5b7489348459552ed9846439d96f0a607678664ca4726a5f",
+          "governed_bytes_sha256": "3d92c09bbb4c9e7b6a075060846e0368036d248348364170dc0f1b644ed67fdd"
+        },
+        {
+          "source_id": "immigration:36B-b3Aiii-dated-formula179",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+          "raw_sha256": "1f653271e597bfa8716491651ee2a47d339d98e2f15f716412e94cc091bc191b",
+          "governed_bytes_sha256": "71302951725f0d6c37ea92e2ca40baac0116549154756cfb47510fd4ac77a9f4"
+        },
+        {
+          "source_id": "govinfo:26usc36Bace-2024-aca-credit",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapA-partIV-subpartC-sec36B.htm",
+          "raw_sha256": "1f653271e597bfa8716491651ee2a47d339d98e2f15f716412e94cc091bc191b",
+          "governed_bytes_sha256": "4d531f7639711c5d94e718f4d7be1c5fc86368807e796fb940a6c2c8a1eb8bcb"
+        },
+        {
+          "source_id": "govinfo:pl119-21-sections71301-71305",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ21/html/PLAW-119publ21.htm",
+          "raw_sha256": "84000b07c382db50ead04ce65b70983e2dcd699a931d80cd3d2edac584e9004d",
+          "governed_bytes_sha256": "a7ed7e748b37b0657b4f23a3bf8801815a2e2fd9d25b340f34f9a8a8a09d5363"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "c688cf1218afec2880e84d4b2063afde1b57d2c9a0c6997de61d9cf6e55a49aa"
       },
       "historical_raw_hash_matches": true
     },
@@ -44620,7 +44752,6 @@
     "house:119:1:262",
     "house:119:1:281",
     "house:119:1:285",
-    "house:119:1:289",
     "house:119:1:298",
     "house:119:1:299",
     "house:119:1:320",
@@ -44631,7 +44762,6 @@
     "house:119:2:5",
     "house:119:2:6",
     "house:119:2:7",
-    "house:119:2:11",
     "house:119:2:27",
     "house:119:2:28",
     "house:119:2:44",
@@ -44702,6 +44832,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "4a3af47ca3515708f184dbc0b9845d60b008371e0f3696b334f673041b3e17a2",
-  "membership_review_sha256": "e8b5f37fee9bf5c70f440978396c6b2da5aee3589c096de32dbbc23556a8aa7d"
+  "proposal_sha256": "9d71768a1086b2f8c6d025150d91510476754e230d98882762f750fe06280a92",
+  "membership_review_sha256": "3d4d095eaa64e582c7dc3fc945b1022713d3cb363472648c3aec47216b13fa8e"
 }
