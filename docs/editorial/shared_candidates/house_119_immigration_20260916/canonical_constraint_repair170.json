@@ -1,0 +1,96 @@
+{
+  "checkpoint": 170,
+  "kind": "material_canonical_boundary_repair",
+  "base_head": "904a7f2c1082ca18cb24c623bbf99c8d385c430c",
+  "action_id": "house:119:2:244",
+  "review_state": "candidate_pending_external_semantic_review",
+  "intent": "Preserve ERMA-only Immigration attribution and the reserved section2601(f)/Jordan application through the established typed contract",
+  "change": "Action-scoped authoring constraint and Immigration-only candidate-generator pass-through; no common adapter/compiler/schema/runtime interpretation change",
+  "constraint": [
+    {
+      "action_ids": [
+        "house:119:2:244"
+      ],
+      "constraint_id": "source:house119-session2-roll244-immigration-attribution",
+      "detail": "Limit Immigration & Border attribution to the explicit $50 million reduction to the United States Emergency Refugee and Migration Assistance Fund (ERMA), compared with the proposed $100 million appropriation. Preserve the Jordan funding prohibition and all eight named reductions as one combined amendment choice; a member vote does not establish separate component positions or Immigration meaning for every foreign-assistance account. Reserve application of the Jordan prohibition in light of 22 USC2601(f); do not conclude that either restriction automatically overrides the other. This application reservation does not make the independent literal ERMA reduction contingent or block the whole-choice behavioral finding.",
+      "semantic_effect": "bounds_cross_domain_attribution"
+    }
+  ],
+  "preservation": {
+    "original169_audit_assessment": "immigration_semantic_audit_in_progress.json#checkpoint170_historical_244_assessment",
+    "original169_receipts_unchanged": true,
+    "whole_choice_meanings_sources_member_choices_unchanged": true,
+    "all_compiled_member_objects_unchanged": true,
+    "core_member_projection_readable_bytes_unchanged": true,
+    "counts": {
+      "reviewed": 589,
+      "pending": 87,
+      "meanings": 45,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "validation": {
+    "focused_tests": 188,
+    "focused_seconds": 16.836,
+    "semantic_checks": 7,
+    "ir_references": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "generated_replay_files": 7,
+    "replay_byte_identical": true,
+    "scope_leak_probes": [
+      "unrelated243",
+      "empty_scope",
+      "244_plus243"
+    ],
+    "invalid_effect_rejected": true,
+    "blocking_effect_mutation_suppresses244_only": true,
+    "presentation_source_note_retains_action_scope": true,
+    "diff_reviewed": true,
+    "private_verification_corrections": [
+      "Initial mutation-test field name corrected from non_proposition_actions to non_proposition_reasons before188-test passing run",
+      "Initial preservation helper assumed equal40 findings per member; corrected to unchanged full member objects and80 total; failed helper preserved",
+      "Local apply_patch could not traverse worktree reparse point; normal approved Windows native file operations used; no automatic approval rejection"
+    ]
+  },
+  "timing": {
+    "resume_reconciled_utc": "2026-10-09T15:08:47.365067+00:00",
+    "validation_and_diff_observed_utc": "2026-10-09T15:13:40.716564+00:00",
+    "observed_repair_seconds": 293.351497,
+    "initial_instruction_reconciliation_and_contract_reading_not_separately_timed": true,
+    "shutdown_utc": "2026-10-09T03:25:50.693314+00:00",
+    "powered_off_pause_excluded": true,
+    "new_screenings_attempted": 0,
+    "new_screenings_completed": 0,
+    "requested_material_repairs": 1,
+    "routine_average": "not applicable: no completed screening in repair increment",
+    "delivery_and_CI": "Subsequent actual observations stored privately and in PR; include in next coherent receipt"
+  },
+  "unfinished_batch": {
+    "selected_before_shutdown": [
+      79,
+      150,
+      180,
+      207,
+      210,
+      237,
+      252,
+      326
+    ],
+    "completed": 0,
+    "private_baseline": ".tmp/checkpoint170_before",
+    "timing": ".tmp/checkpoint170_timing.json",
+    "research_preserved": true,
+    "continue_without_routine_approval_gate": true
+  },
+  "reuse_efficiency": "Reused exact shutdown baseline and governed sources; no new acquisition; one final focused suite and semantic/reference gate, one generation plus isolated replay. This repair does not establish faster screening throughput.",
+  "independent_correction_review_pending": true,
+  "editorially_accepted": false,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "30c61c78ea861f8f0250e326c2e164b9f8b0e76b63b89017dd95fb8485a65e5e"
+}

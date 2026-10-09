@@ -146,9 +146,32 @@ def _bind_concurrence(proposed, sources, congress, clerk):
         raise ValueError("deemed concurrence Senate amendment follows the House choice")
     return True
 
+def _action_source_constraints(authoring):
+    """Carry explicitly authored action boundaries without interpreting prose."""
+    constraints = []
+    ids = {"candidate-episode-hold"}
+    for action in authoring["actions"]:
+        rows = action.get("source_render_constraints", [])
+        if not isinstance(rows, list):
+            raise ValueError("action source constraints must be a list")
+        for row in rows:
+            if (not isinstance(row, dict)
+                    or set(row) != {"action_ids", "constraint_id", "detail", "semantic_effect"}
+                    or row["action_ids"] != [action["action_id"]]
+                    or any(not isinstance(row[k], str) or not row[k].strip()
+                           for k in ["constraint_id", "detail", "semantic_effect"])):
+                raise ValueError("source constraint must bind its own exact action")
+            if row["constraint_id"] in ids:
+                raise ValueError("duplicate action source constraint identity")
+            ids.add(row["constraint_id"])
+            constraints.append(copy.deepcopy(row))
+    return constraints
+
+
 def prepare(authoring, capture, member_ids):
     if authoring.get("domain_id") != "IMMIGRATION_BORDER":
         raise ValueError("Immigration candidate adapter cannot prepare another domain")
+    action_constraints = _action_source_constraints(authoring)
     sources = {s["source_id"]: s for s in capture["sources"]}
     for proposed in authoring["actions"]:
         # Reject known incompatible ordinary bill stages before the common
@@ -169,6 +192,11 @@ def prepare(authoring, capture, member_ids):
     ordinary["blocked_episode_ids"] = [e for e in ordinary["blocked_episode_ids"] if e in ordinary_episodes]
     core, mapping, projections, inputs, result = common.prepare(ordinary, capture, member_ids)
     if not additions:
+        if action_constraints:
+            mapping["source_render_constraints"].extend(action_constraints)
+            mapping["mapping_sha256"] = sealed_digest(mapping, "mapping_sha256")
+            inputs = adapt_to_semantic_ir_input(ROOT, core, mapping, projections)
+            result = run_editorial_pipeline(inputs)
         return core, mapping, projections, inputs, result
     sources = {s["source_id"]: s for s in capture["sources"]}
     for proposed in additions:
@@ -244,6 +272,7 @@ def prepare(authoring, capture, member_ids):
     blocked = [a for e in mapping["episodes"] if e["episode_id"] in authoring["blocked_episode_ids"] for a in e["action_ids"]]
     mapping["source_render_constraints"] = ([{"action_ids": blocked, "constraint_id": "candidate-episode-hold",
         "detail": authoring["blocked_reason"], "semantic_effect": "blocks_behavioral_propositions"}] if blocked else [])
+    mapping["source_render_constraints"].extend(action_constraints)
     mapping["mapping_sha256"] = sealed_digest(mapping, "mapping_sha256")
     for projection in projections:
         rows = []

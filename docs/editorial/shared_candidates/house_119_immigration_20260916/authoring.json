@@ -8287,7 +8287,17 @@
       "choice_meanings": {
         "Yea": "supported adopting the combined Jordan funding prohibition and all eight specified account reductions, including the $50 million emergency refugee and migration fund reduction, subject to the stated application limits",
         "Nay": "opposed adopting that combined amendment; this does not establish a separate position on each account, country or program"
-      }
+      },
+      "source_render_constraints": [
+        {
+          "action_ids": [
+            "house:119:2:244"
+          ],
+          "constraint_id": "source:house119-session2-roll244-immigration-attribution",
+          "detail": "Limit Immigration & Border attribution to the explicit $50 million reduction to the United States Emergency Refugee and Migration Assistance Fund (ERMA), compared with the proposed $100 million appropriation. Preserve the Jordan funding prohibition and all eight named reductions as one combined amendment choice; a member vote does not establish separate component positions or Immigration meaning for every foreign-assistance account. Reserve application of the Jordan prohibition in light of 22 USC2601(f); do not conclude that either restriction automatically overrides the other. This application reservation does not make the independent literal ERMA reduction contingent or block the whole-choice behavioral finding.",
+          "semantic_effect": "bounds_cross_domain_attribution"
+        }
+      ]
     }
   ],
   "blocked_episode_ids": [],

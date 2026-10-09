@@ -18,6 +18,70 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                       for name in ['authoring', 'sources', 'universe_proposal', 'membership_review']]
         cls.products = prepare(cls.values[0], cls.values[1], ['F000477', 'M001184'])
 
+    def test_jordan_constraint_survives_mapping_compiler_and_presentation(self):
+        core, mapping, projections, inputs, result = self.products
+        action = next(a for a in self.values[0]['actions'] if a['action_id'] == 'house:119:2:244')
+        expected = action['source_render_constraints']
+        self.assertEqual(len(expected), 1)
+        boundary = expected[0]
+        self.assertEqual(boundary['action_ids'], ['house:119:2:244'])
+        self.assertEqual(boundary['semantic_effect'], 'bounds_cross_domain_attribution')
+        self.assertIn('United States Emergency Refugee and Migration Assistance Fund (ERMA)', boundary['detail'])
+        self.assertIn('22 USC2601(f)', boundary['detail'])
+        self.assertIn('Reserve application', boundary['detail'])
+        self.assertIn('does not establish separate component positions', boundary['detail'])
+        for rows in [mapping['source_render_constraints'],
+                     inputs['shared_semantics']['source_render_constraints'],
+                     result.compiled_ir['source_render_constraints'],
+                     result.review_payload['source_render_constraints'],
+                     result.presentation_payload['source_render_constraints']]:
+            self.assertEqual(rows, expected)
+        from backend.app.editorial_presentations.compiler import source_constraint_boundaries
+        target = source_constraint_boundaries(expected)[0]
+        self.assertEqual(target['presentation_target'], 'source_note')
+        self.assertEqual(target['action_ids'], ['house:119:2:244'])
+        self.assertIsNone(result.public_presentation_artifact)
+        self.assertIsNone(result.persistence_proposal)
+
+    def test_jordan_constraint_preserves_every_meaning_choice_and_behavior(self):
+        baseline = copy.deepcopy(self.values[0])
+        action = next(a for a in baseline['actions'] if a['action_id'] == 'house:119:2:244')
+        action.pop('source_render_constraints')
+        before = prepare(baseline, self.values[1], ['F000477', 'M001184'])
+        self.assertEqual(before[0], self.products[0])
+        self.assertEqual(before[2], self.products[2])
+        self.assertEqual(before[-1].compiled_ir['members'], self.products[-1].compiled_ir['members'])
+        self.assertEqual(before[-1].compiled_ir['source_render_constraints'], [])
+        self.assertNotEqual(before[1]['mapping_sha256'], self.products[1]['mapping_sha256'])
+
+    def test_jordan_constraint_rejects_scope_leak_and_invalid_effect(self):
+        from backend.app.semantic_ir.compiler import SemanticCompilerInputError
+        for scope in [['house:119:2:243'], [], ['house:119:2:244', 'house:119:2:243']]:
+            authoring = copy.deepcopy(self.values[0])
+            action = next(a for a in authoring['actions'] if a['action_id'] == 'house:119:2:244')
+            action['source_render_constraints'][0]['action_ids'] = scope
+            with self.subTest(scope=scope), self.assertRaisesRegex(ValueError, 'own exact action'):
+                prepare(authoring, self.values[1], ['F000477', 'M001184'])
+        authoring = copy.deepcopy(self.values[0])
+        action = next(a for a in authoring['actions'] if a['action_id'] == 'house:119:2:244')
+        action['source_render_constraints'][0]['semantic_effect'] = 'unrecognized_effect'
+        with self.assertRaisesRegex(SemanticCompilerInputError, 'invalid semantic effect'):
+            prepare(authoring, self.values[1], ['F000477', 'M001184'])
+
+    def test_jordan_behavior_depends_on_typed_effect_not_constraint_prose(self):
+        inputs = copy.deepcopy(self.products[3])
+        inputs['shared_semantics']['source_render_constraints'][0]['semantic_effect'] = 'blocks_behavioral_propositions'
+        blocked = run_editorial_pipeline(inputs).compiled_ir
+        for before, after in zip(self.products[-1].compiled_ir['members'], blocked['members']):
+            kept = [p for p in before['proposition_graph']['propositions']
+                    if 'house:119:2:244' not in p['evidence_action_ids']]
+            self.assertEqual(after['proposition_graph']['propositions'], kept)
+            self.assertTrue(any('house:119:2:244' in p['evidence_action_ids']
+                                for p in before['proposition_graph']['propositions']))
+            self.assertTrue(any(row['action_id'] == 'house:119:2:244'
+                                and row['reason_code'] == 'source_constraint_blocks_behavioral_proposition'
+                                for row in after['action_accounting']['non_proposition_reasons']))
+
     def test_taiwan_dual_resident_routes_keep_citizenship_and_tax_only_limits(self):
         action = getattr(self, 'taiwan_action', None)
         if action is None:

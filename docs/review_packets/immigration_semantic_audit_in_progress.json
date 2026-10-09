@@ -7097,7 +7097,7 @@
       "correction": "Create qualified canonical candidate, independent review pending; no acceptance/publication.",
       "before_universe_row_sha256": "d1f2c0994dfa6611a608dcd5d463a8afd39959668e329b2991c83e40d6128d1b",
       "corrected_review_record_sha256": "46113936885b4d7f7493e14583f71f58bf4ec62169c067a26361f42b8d7bf49b",
-      "corrected_authoring_action_sha256": "e4744eb7418394ddd43f6beaa4b7636ee9f0ad24d0dd7d91a01febffe2ef42ae",
+      "corrected_authoring_action_sha256": "1301abd27275a0716aad753910fe56c8fed2aa86e76ef9f8604536e215379136",
       "primary_evidence": [
         {
           "source_id": "clerk:119:2:244",
@@ -7156,7 +7156,15 @@
       ],
       "membership_reclassified": true,
       "recorded_choices_unchanged": true,
-      "correction_state": "qualified_candidate_applied_validation_pending_independent_review_required"
+      "correction_state": "qualified_candidate_applied_validation_pending_independent_review_required",
+      "constraint_correction170": {
+        "reported_severity": "P2",
+        "scope": "Existing nonblocking typed boundary missing from canonical propagation; source meaning and whole-choice directions unchanged",
+        "validation_state": "focused_semantic_replay_preservation_passed_independent_review_pending",
+        "original_169_assessment_preserved": true,
+        "editorial_acceptance_conferred": false,
+        "receipt_sha256": "30c61c78ea861f8f0250e326c2e164b9f8b0e76b63b89017dd95fb8485a65e5e"
+      }
     }
   ],
   "noncounting_actions": [
@@ -26218,5 +26226,106 @@
     "new_capture_registrations": 23,
     "independent_review_pending": true,
     "editorially_accepted": false
+  },
+  "checkpoint170_historical_244_assessment": {
+    "action_id": "house:119:2:244",
+    "audit_state": "same_owner_primary_reconstructed_qualified_candidate_compared",
+    "severity": "No Defect",
+    "finding_id": null,
+    "exact_identity": {
+      "majority": "R",
+      "congress": "119",
+      "session": "2nd",
+      "committee": "U.S. House of Representatives",
+      "rollcall-num": "244",
+      "legis-num": "H R 8595",
+      "vote-question": "On Agreeing to the Amendment",
+      "amendment-num": "6",
+      "amendment-author": "Massie of Kentucky Part A Amendment No. 9",
+      "vote-type": "RECORDED VOTE",
+      "vote-result": "Failed",
+      "action-date": "15-Jul-2026",
+      "action-time": "4:46 PM",
+      "vote-desc": null
+    },
+    "recorded_member_observations": {
+      "F000477": {
+        "official_label": "No",
+        "name": "Foushee",
+        "party": "D",
+        "state": "NC"
+      },
+      "M001184": {
+        "official_label": "Aye",
+        "name": "Massie",
+        "party": "R",
+        "state": "KY"
+      }
+    },
+    "primary_reconstruction": "Qualified whole-amendment candidate: the literal $50 million reduction to the United States Emergency Refugee and Migration Assistance Fund is an independent exact Immigration & Border funding mechanism under existing standards. Preserve the Jordan prohibition and all eight cuts, reported $100 million emergency-fund baseline, availability/cap/transfer/urgent-needs conditions, literal fifth account and Global Health target. Section2601(f)/country-ban application remains separately qualified; no actual refugee/admission/spending result or component preference. Exact initial voice noes/demand/postponement and resumed recorded rejection are bound. Candidate only, independent review pending; not editorial acceptance or whole-passage247 closure.",
+    "finding": "Direct emergency refugee funding cut supports exact domain mechanism; whole eight-cut amendment retained, qualified country legal interaction not resolved.",
+    "correction": "Create qualified canonical candidate, independent review pending; no acceptance/publication.",
+    "before_universe_row_sha256": "d1f2c0994dfa6611a608dcd5d463a8afd39959668e329b2991c83e40d6128d1b",
+    "corrected_review_record_sha256": "46113936885b4d7f7493e14583f71f58bf4ec62169c067a26361f42b8d7bf49b",
+    "corrected_authoring_action_sha256": "e4744eb7418394ddd43f6beaa4b7636ee9f0ad24d0dd7d91a01febffe2ef42ae",
+    "primary_evidence": [
+      {
+        "source_id": "clerk:119:2:244",
+        "url": "https://clerk.house.gov/evs/2026/roll244.xml",
+        "governed_bytes_sha256": "f9cc81dd1b2ced9a41a35016f740c98558585372a826a418a1d1caa1b7c1d9de",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:roll244-initial169",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+        "governed_bytes_sha256": "ab003dec7b5ee78316c7660a1be6f7c213e7cea4d0b9bb05cf5c8a8f8f997d9e",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:roll244-recorded169",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+        "governed_bytes_sha256": "a8d1a807c8331cbfabe4973c0565c1ea92f92143cef76acef4a5e9400f19e6c8",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:roll244-report169",
+        "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+        "governed_bytes_sha256": "52e08d44ecf1027be93290119bced466d839edbc486825c972e297faac6f8e93",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:rh-refugee169",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/pdf/BILLS-119hr8595rh.pdf",
+        "governed_bytes_sha256": "4e440d3ad1dfd8de079acd19736c7bf9200cdb2dd7838733fbbe18152bbf68e9",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:rh-othercuts169",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/pdf/BILLS-119hr8595rh.pdf",
+        "governed_bytes_sha256": "834a983c49b4d4902ff89bbba688b096ddc53318192c7fe83788deeab1e6de18",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "state:rh-countries169",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/pdf/BILLS-119hr8595rh.pdf",
+        "governed_bytes_sha256": "2a57e1c7e01ac7d6a68e641e53b786e57f4abab91a452e706f2ef5c0943a0549",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "govinfo:22usc2601-2024-refugees",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap36-sec2601.htm",
+        "governed_bytes_sha256": "213604f91bbc421f95971ab959f2f2d0b51560096f7c5a34e775cf679623c393",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      },
+      {
+        "source_id": "govinfo:hres1423eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+        "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c",
+        "reviewed_extent": "Named exact operative/stage/material witness only; not whole State bill, exhaustive current law or individual application"
+      }
+    ],
+    "membership_reclassified": true,
+    "recorded_choices_unchanged": true,
+    "correction_state": "qualified_candidate_applied_validation_pending_independent_review_required"
   }
 }

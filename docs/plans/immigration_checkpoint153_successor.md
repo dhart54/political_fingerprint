@@ -660,3 +660,23 @@ invented.
 
 Candidate feature-branch bounds remain: no merge, publication, editorial
 acceptance, production, schema/security/config or methodology changes.
+
+
+## Checkpoint170 resumed canonical boundary repair
+
+The user explicitly resumed on the same Windows PC. Local/remote904a7f2 and all23
+shutdown hashes reconciled; the shutdown handoff remains historical. Action244's
+existing source meaning is now bounded by an action-scoped, nonblocking
+`bounds_cross_domain_attribution` constraint. The Immigration candidate generator
+passes this authored boundary through the established shared adapter/compiler.
+ERMA supplies the Immigration attribution; section2601(f)/Jordan application
+remains reserved. Whole-choice findings, all80 propositions and member choices
+remain exact; original169 receipts and audit assessment remain preserved.
+
+188focused tests(16.836s),7semantic checks, reference/schema checks and seven-file
+byte replay pass. Source/core/projection/readable bytes and unaffected records
+are preserved. No new screening is completed by this repair;589reviewed/87pending
+and the eight frozen amendment cases remain. Receipt records observed repair
+time and explicitly unmeasured initial resume reading; powered-off pause is
+excluded. Next: bounded repair commit/push/CI, then continue frozen source review.
+No editorial acceptance, publication, merge, deployment or production authority.
