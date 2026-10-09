@@ -20983,10 +20983,244 @@
         }
       ],
       "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:26",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "26",
+        "legis-num": "H R 7006",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "1",
+        "amendment-author": "Roy of Texas Amendment No. 1",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "14-Jan-2026",
+        "action-time": "5:15 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Roy amendment1 adds two separate FY2026 obligation/expenditure caps of $46,241,924, one for the D.C. Circuit and one for the D.C. District Court, and prohibits this Act funds for salaries/expenses of the staff of Judges Boasberg and Boardman. It does not itself change judicial orders, immigration law, removal/admission/status eligibility or court jurisdiction; named-judge debate and claimed motives are not operative meaning. Do not claim judges own salaries cut, a proved20percent baseline, court dissolution or constitutional validity. This exact institutional court-funding choice is outside the functional Immigration domain. Own recorded rejection163-257,1Present,16NotVoting follows voice ayes, Hoyer demand and postponement. Candidate only, noncounting and unapproved; no inferred motives, ideology, character, corruption, causality, endorsement or voting recommendation. Clerk labels govern member observations; no methodology or publication change.",
+      "finding": "Own operative/stages and bounded material source/domain checked; candidate only, independent review pending.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "e8b0fae711dab0b7063081302c2e5bbd891ff0ebd03f7aa8ea74a48b56ce1aad",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:26",
+          "url": "https://clerk.house.gov/evs/2026/roll026.xml",
+          "governed_bytes_sha256": "0231dfab7420319b55eacece206706113763801fa6124ce6878505531b2514f5",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll26-initial174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "governed_bytes_sha256": "83c0448ee59a07fdbea085f642856823e4bd88c66b40e97dcda95a84cd061a19",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll26-recorded174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-14/pdf/CREC-2026-01-14-house.pdf",
+          "governed_bytes_sha256": "ca5baffae90c745269311ce0b20bfb4e972c994b942c061fb3c494af856fc2b1",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll26-report174",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt445/html/CRPT-119hrpt445.htm",
+          "governed_bytes_sha256": "63755f86cd1cad3a91381b65d3a211aa2b443cfea5c48c4e86e3d11176b67df8",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "govinfo:hres992eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres992eh/html/BILLS-119hres992eh.htm",
+          "governed_bytes_sha256": "0cde268b28deea2b8dd3d4b35e66b44a7defdbe8a32257be184a6cb4481c18cf",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:40",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "procedural_context",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "chamber": "U.S. House of Representatives",
+        "rollcall-num": "40",
+        "legis-num": "H RES 1014",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "1",
+        "amendment-author": "Foxx of North Carolina Amendment",
+        "vote-type": "YEA-AND-NAY",
+        "vote-result": "Agreed to",
+        "action-date": "22-Jan-2026",
+        "action-time": "11:14 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Yea",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Yea",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Foxx whole rule amendment replaces section2 with H.R.7147consideration, waivers/read-as-amended/debate/recommit procedure and deemed adoption of newsection7. Section7 expressly adds repeal of PL119-37divisionCtitleIIsection213 and amendments made by that section; the complete exact section213 retains Senate-data definitions, official/personal/campaign scope, notification rules and qualified target-investigation delay, civil cause of action/remedies/defenses/construction and limited retroactivity. This substantive deeming is acknowledged; it is not a final vote passing DHS appropriations or an Immigration proposition. The repealed mechanism concerns Senate data/legal process, not personal immigration/status/admission or direct border rules. Existing procedural/noncounting rule contract retained. McGovern tariff alternative printed after the actual Foxx text is not the offered amendment. Own adoption follows voice ayes, McGovern yeas/nays demand/order and427-0,4NotVoting agreement; roll39previous-question vote is separate. Candidate only, noncounting and unapproved; no inferred motives, ideology, character, corruption, causality, endorsement or voting recommendation. Clerk labels govern member observations; no methodology or publication change.",
+      "finding": "Own operative/stages and bounded material source/domain checked; candidate only, independent review pending.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "fed21818581b8bcaf9cde3fcabca95d5d4b2af16915d62794e0a72b25a154937",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:40",
+          "url": "https://clerk.house.gov/evs/2026/roll040.xml",
+          "governed_bytes_sha256": "5de5bb545c25b9e99991a2ff5a427728fe4a0538cd093dae7e5571ba672504fa",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll40-operative174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "governed_bytes_sha256": "a3dfa99df91fdf8698024841ed90a71f6e539799913772d5f1e6bffb95870652",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll40-recorded174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "governed_bytes_sha256": "de4269fd095ab086d2910f3e990bd761cbc2d3a9821d852b717f3833d340f2a7",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "govinfo:pl11937-divisionc-titleii-section213-complete174",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-119publ37/html/PLAW-119publ37.htm",
+          "governed_bytes_sha256": "4c5d4a9ffe8112746c0a2f28be70016f8b51cffc4a7bd3c413de8e5b4823a492",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "govinfo:hres1014eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+          "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
+    },
+    {
+      "action_id": "house:119:2:43",
+      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+      "reviewed_disposition": "source_unresolved",
+      "current_disposition": "exact_action_ineligible",
+      "severity": "No Defect",
+      "finding_id": null,
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "2nd",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "43",
+        "legis-num": "H R 7148",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "1",
+        "amendment-author": "Massie of Kentucky Part B Amendment No. 1",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "22-Jan-2026",
+        "action-time": "4:47 PM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "No",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "Aye",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "primary_reconstruction": "Massie PartB1 adds section195 barring funds made available by this Act from implementing IIJAsection24220. Complete dated24220note retains advanced impaired-driving prevention-system alternatives, new/passenger-vehicle scope, Secretary/NHTSA standard setting, manufacturer compliance timing, practicability/objective-safety qualifications, extensions and annual/ten-year congressional reporting. This is a bounded vehicle-safety implementation funding restriction, not repeal of24220, a ban on all vehicle-control technology or a finding that a current final rule is operative. No person immigration-status/admission/citizenship or direct-border mechanism appears in the exact action. Own recorded rejection164-268,4NotVoting follows voice ayes, Massie demand and postponement. Candidate only, noncounting and unapproved; no inferred motives, ideology, character, corruption, causality, endorsement or voting recommendation. Clerk labels govern member observations; no methodology or publication change.",
+      "finding": "Own operative/stages and bounded material source/domain checked; candidate only, independent review pending.",
+      "correction": null,
+      "before_review_record_sha256": null,
+      "corrected_review_record_sha256": "8caa16579feb7d29f4b7777725dab43159206e4e1ce55d55e7836ae4b134eb5f",
+      "primary_evidence": [
+        {
+          "source_id": "clerk:119:2:43",
+          "url": "https://clerk.house.gov/evs/2026/roll043.xml",
+          "governed_bytes_sha256": "f10fe01a3e0bc5f8f91cd31a23cde57490b527a60f7f6dc1148d3c9ac6d5c916",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll43-initial174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "governed_bytes_sha256": "c2b1c53d5c676fab7c1085892effcdc4d46f770bf33b24cb1cdd9a2b25484da3",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll43-recorded174",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-01-22/pdf/CREC-2026-01-22-house.pdf",
+          "governed_bytes_sha256": "47d8eaebbe91402c53ac189b67ab56c731da7e4ce73df6bb8d98b523278b10ce",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "immigration:session2-roll43-report174",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt462/html/CRPT-119hrpt462.htm",
+          "governed_bytes_sha256": "22b846499c665adf030673c9333930b6d3cda8363233b1b9ab28a934ec82eb1f",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "govinfo:49usc30111-24220-complete174",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleVI-partA-chap301-subchapII-sec30111.htm",
+          "governed_bytes_sha256": "bb854de41777d9e96c13dc6da485f40953c7f1212b242e3e2211e3477632988b",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        },
+        {
+          "source_id": "govinfo:hres1014eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1014eh/html/BILLS-119hres1014eh.htm",
+          "governed_bytes_sha256": "76e661a5ec2f43164b2f3a1f2dc42bf276ad415f9d67846b8811db2b4f0142de",
+          "reviewed_extent": "Entire named bounded witness; Clerk owns observations"
+        }
+      ],
+      "correction_state": "local_batch_validated_candidate_only"
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 207,
+    "No Defect": 210,
     "Minor": 13,
     "Major": 13,
     "Critical": 1
@@ -21048,7 +21282,7 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 116,
+    "successor_new_exclusions_reviewed": 118,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
@@ -21343,7 +21577,11 @@
     "checkpoint172_focused_tests": 188,
     "checkpoint172_semantic_checks": 7,
     "checkpoint172_full_replay_files": 7,
-    "checkpoint172_preservation_checked": true
+    "checkpoint172_preservation_checked": true,
+    "checkpoint174_focused_tests": 190,
+    "checkpoint174_semantic_checks": 7,
+    "checkpoint174_full_replay_files": 7,
+    "checkpoint174_preservation_checked": true
   },
   "open_legal_interactions": [
     {
@@ -26905,6 +27143,134 @@
       ],
       "correction_state": "restored_pending_same_episode_material_review173",
       "completed_screening": false
+    },
+    {
+      "action_id": "house:119:2:27",
+      "correction_state": "pending_material_chain174",
+      "reason": "Complete own Crane operative deletes IHpages205line20-206line7 NEDgrant and318line11-320line21 entire7032democracy program section, including its appropriations, availability/beneficiary/definition/foreign-interference and civil-society/journalist protection clauses. It is broader than NEDfunding alone. Printed targets recovered, but material4412beneficiary authority and7032incorporated explanatory-program chain/domain review unfinished. Preserve pending; no all-democracy funding ban or generic foreign-aid exclusion inferred.",
+      "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint174.json",
+      "primary_evidence": [
+        "immigration:session2-roll27-initial174",
+        "immigration:session2-roll27-recorded174",
+        "immigration:session2-roll27-report174",
+        "govinfo:hr7006ih-material-pages174",
+        "govinfo:hres992eh"
+      ],
+      "completed_screening": false,
+      "prior_pending_row": {
+        "action_id": "house:119:2:27",
+        "session": 2,
+        "roll": 27,
+        "date": "2026-01-14",
+        "measure": "bill_119_hr_7006",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "source_unresolved",
+        "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "source": {
+          "source_id": "clerk:119:2:27",
+          "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+          "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+          "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_7006",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "source_unresolved",
+        "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "unresolved_reason": "pending_research",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:27",
+            "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+            "raw_sha256": "81e071847f5970b1c0967ae6ad80b5dccd1b1fc2276bf5748e1f17b3f0f67796",
+            "governed_bytes_sha256": "78327790113350f090e0277d044786413001d318babbc9a917396f31d281bfab",
+            "verification": "unchanged_governed_source_reuse"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "historical_clerk_source_identity": {
+          "source_id": "clerk:119:2:27",
+          "url": "https://clerk.house.gov/evs/2026/roll027.xml",
+          "raw_sha256": "76e5442b0c2b4f4d946fdb34cb2804a31b4687fab47bc10dbea73f62f263a712",
+          "verification": "historical_source_identity_not_recaptured_this_increment"
+        }
+      }
+    },
+    {
+      "action_id": "house:119:2:44",
+      "correction_state": "pending_material_chain174",
+      "reason": "Norman PartB2 inserts an exception for Community Project Funding/Congressionally Directed Spending specified inDivisionB into the page3line1 explanatory-statement-effect clause. Own actual operative/report/stages and IHpages1-3 binding recovered; PartAprior rule modifications retained. This is an incorporation-effect exception, not automatically a freestanding prohibition rescinding all project appropriations. All qualified DivisionB funding/project tables, related direct appropriation directives and functional Immigration chain remain unfinished; retain pending without relying on debate descriptions.",
+      "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint174.json",
+      "primary_evidence": [
+        "immigration:session2-roll44-initial174",
+        "immigration:session2-roll44-recorded174",
+        "immigration:session2-roll44-report174",
+        "govinfo:hr7148ih-material-pages174",
+        "govinfo:hrpt119-462-operative-amendments",
+        "govinfo:hres1014eh"
+      ],
+      "completed_screening": false,
+      "prior_pending_row": {
+        "action_id": "house:119:2:44",
+        "session": 2,
+        "roll": 44,
+        "date": "2026-01-22",
+        "measure": "bill_119_hr_7148",
+        "question": "On Agreeing to the Amendment",
+        "disposition": "source_unresolved",
+        "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "source": {
+          "source_id": "clerk:119:2:44",
+          "url": "https://clerk.house.gov/evs/2026/roll044.xml",
+          "raw_sha256": "59c155c30ce9586d9d672feb43d344c557e2c1ed0594d830b0dbe19e282fa2de",
+          "governed_bytes_sha256": "4d1c0eb39f237068b221e7ad05e82e485a739ba31b05f54c945519de6a5e8eda",
+          "verification": "unchanged_governed_source_reuse"
+        },
+        "episode_candidate_id": null,
+        "after_historical_july23_boundary": false,
+        "bill_ref": "bill_119_hr_7148",
+        "member_action": "nay",
+        "house_action_stage": "On Agreeing to the Amendment",
+        "official_policy_area": null,
+        "recall_reasons": [
+          "complete_official_roll_discovery"
+        ],
+        "issue_boundary_status": "source_unresolved",
+        "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+        "unresolved_reason": "pending_research",
+        "sources": [
+          {
+            "source_id": "clerk:119:2:44",
+            "url": "https://clerk.house.gov/evs/2026/roll044.xml",
+            "raw_sha256": "59c155c30ce9586d9d672feb43d344c557e2c1ed0594d830b0dbe19e282fa2de",
+            "governed_bytes_sha256": "4d1c0eb39f237068b221e7ad05e82e485a739ba31b05f54c945519de6a5e8eda",
+            "verification": "unchanged_governed_source_reuse"
+          }
+        ],
+        "exact_action_source_binding": null,
+        "public_action_sha256": null,
+        "review_progress": {
+          "substantive_review_performed": false,
+          "exact_action_binding_unresolved": false,
+          "required_evidence_unavailable": false,
+          "authoritative_source_conflict": false
+        },
+        "historical_raw_hash_matches": true
+      }
     }
   ],
   "prior_head_ci_checkpoint164": {
@@ -27221,5 +27587,20 @@
     "prior79and83assessments_preserved": true,
     "independent_review_pending": true,
     "editorially_accepted": false
+  },
+  "ordinary_screening_checkpoint174": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint174.json",
+    "receipt_sha256": "d6c301da90719aa583f98e9af72c2bab121717c8e37d4a37d90c14542f1d1418",
+    "same_owner_primary_screenings": 3,
+    "functional_exclusions": 2,
+    "procedural_context": 1,
+    "new_interpretations": 0,
+    "independent_review_pending": true,
+    "unfinished_ordinary": 80,
+    "application_questions": 70,
+    "pending_reconstruction_action_ids": [
+      "house:119:2:27",
+      "house:119:2:44"
+    ]
   }
 }

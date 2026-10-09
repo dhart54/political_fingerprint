@@ -774,7 +774,7 @@ No merge, deployment, publication, production write or methodology change.
 All sixty replaced Print 119-1 pages are now read and bound literally, including
 all seven foreign-source limbs, country attribution and the translator rule.
 Actual prior Ogles 1/2 operatives and agreements modify only pages 57-58 concern
-definitions; they leave that qualification unchanged. Scott 79's complete whole
+definitions; they leave the translator-qualification text unchanged while changing related concern-country/entity contract and waiver scope. Scott 79's complete whole
 substitute retains specified English translation duties while omitting the
 proposed donor/same-country personal translator qualification. The bounded
 candidate preserves citizenship/residence, trust-territory/protectorate, agency
@@ -828,3 +828,51 @@ and process adjustment with zero routine benchmark samples; it is not another
 routine completion denominator. Next: exact 173 delivery / CI and independent review,
 then the bounded comparable screening sample using the early preflight. No
 editorial acceptance, publication, merge, deployment or production authority.
+
+
+## Checkpoint 174: fixed January amendment benchmark
+
+The fixed five attempts are session 2 rolls 26, 27, 40, 43 and 44, selected
+from Clerk labels before substantive research, without easier replacements.
+26 court/staff funding and 43 impaired-driving-standard implementation funding
+are two bounded functional Immigration exclusion candidates. 40 is procedural
+context with its substantive deemed Senate-data repeal expressly preserved;
+it is not a final DHS appropriation vote. Own source sequences and Clerk
+labels are retained.
+
+27 deletes both the NED grant and the entire section 7032 democracy-program
+provisions, including civil-society/journalist protection. Material authority
+and incorporated program review remain unfinished. 44 amends the explanatory
+statement effect clause; its exception is not automatically a standalone
+project-funding prohibition. All qualified Division B project and directive
+mechanics remain unfinished. Both fixed attempts are structurally complex
+holds with zero completion credit.
+
+Counts: 596 reviewed / 80 pending; 46 meanings / 80 propositions; 70 application
+questions and three partial packages. 1,950 sources / 825 registrations. All
+new choices are noncounting, unapproved candidates. 190 focused tests pass
+(17.094 seconds), seven semantic checks and accepted/held-out references pass.
+The initial suite ran before proof regeneration and detected a stale hash;
+regeneration and final suite correct it without validator changes. Seven files
+replay; six semantic outputs remain byte-identical. Eight raw captures,
+18 literal derivative witnesses, five material images, all existing sources,
+reviews, authoring, members, audit prefixes and 337 historical blobs are verified.
+Only the fixed five universe rows change.
+
+The clock starts at 17:13:38.708446 UTC after 173 delivery closure; zero overlap.
+Two functional exclusions and one procedural screen are reported separately:
+three completions / five attempts is not five comparable routine completions.
+Acquisition, source/domain review, corrections, tests/replay/delivery/CI overhead
+remain in the measured endpoint. No guessed overhead subtraction, four-minute
+claim or silent scaling. Independent 174 review and the full endpoint follow.
+
+173 independent candidate review passes with no blocking semantic finding;
+the passage 83 hold and all 80 propositions remain. Corrected 173 CI evidence
+shows ONLY the failed receipt-repair job actually reran, 17:03:54–17:08:16 UTC,
+with 13 normalization and 20 M15B passes. Eight relabeled attempt 2 API entries
+retain identical original timestamps and byte-identical logs. The earlier
+claim of nine actual reruns was incorrect; preserved historical records and
+new execution-identity checks explain the correction. Initial disposable
+PostgreSQL setup failure remains preserved. All nine required jobs have
+successful evidence; no additional rerun. No acceptance, merge, deployment,
+publication, production or methodology change.
