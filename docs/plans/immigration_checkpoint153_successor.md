@@ -1206,3 +1206,68 @@ verify. All 597 prior reviews, 1,970 prior sources, 853 prior registrations,
 13 Health files and six semantic products remain unchanged; seven generated
 files replay byte for byte. The reviewed diff changes only the five selected
 action rows and the declared receipts/source registrations.
+
+
+## Checkpoint 180 - labor exclusion and qualified D.C. findings
+
+One candidate functional exclusion completes House 119/1/332, H.R. 2550. The
+March 27 order and March 26 agreement restoration have distinct scopes. USCIS,
+ICE, ORR and Foreign Service employers are explicit, but personal nationality
+and immigration qualifications in dated 5 U.S.C. 7103 and 22 U.S.C. 4102/4103
+remain. The complete dated EO12171 antecedent and later EO14343 are distinguished;
+no blanket erasure of independent exclusions or particular agreement
+enforceability is asserted. The literal floor sequence preserves voice noes
+before Garcia's demand/order and recorded passage.
+
+Two schema-native qualified issue-mapping proposals route 298 and 299 against
+their existing shared-core identity, meaning reference and digest. No second
+shared meaning, executable proposition, counting or new methodology is created.
+298's retained original dangerous-crime limb includes the original felony of
+trafficking-related passport/immigration-document confiscation, with its exact
+knowledge, unlawful-authority, restricted movement and labor-maintenance limits.
+Statistical visa-fraud/unlawful-entry categories do not create new offenses.
+The generic criminal detention mechanism is not INA detention or an alien-only
+rule. Cash-only claims and printed cross-reference repairs are excluded.
+
+299's complete incorporated law includes subtitle G section 111(c)(1), replacing
+a citizen-only MPD applicant criterion with citizen, national or lawful permanent
+resident wording. The whole repeal/restoration would reverse that expansion,
+subject to its A/S exceptions and independent authorities. Dated 5-107.04
+corroborates the criterion. Broader complaint terminology and all later-law
+individual implementation are not exhaustively reconstructed; the qualification
+is narrowly source-mapped. Law 13-160 XML is a history stub, not a full original
+statute witness. Both proposals remain unresolved for shared-core augmentation
+and domain application review before compiler use. Exact reported/engrossed
+operatives agree; rule and actual adopted-substitute declarations bind both.
+
+All three own initial/recorded stage sequences are verified. Source PDFs H4806
+and H5801 and adjacent outcome pages were visually inspected. Initial render
+filenames were off by one PDF page and were explicitly corrected; all captures
+remain preserved. Complete D.C. Laws 24-345 and 18-239 were read. Unread complete
+PDF/Code parents and current individual application are not claimed reviewed.
+Wrong-URL404/PageNotFound captures are private rejected attempts.
+
+Counts become 600 reviewed/76 pending: 64 ordinary unscreened plus 12 researched
+holds. 47 meanings, 80 propositions, 70 application questions and 3 partial packages
+remain.247 stays parked for a specific correction or separately authorized
+governance decision; other queue research continues without a routine approval
+checkpoint. No special benchmark round or silent scaling: prior functional
+benchmark FAIL remains 781.087 seconds per completion. This source-intensive
+increment records actual elapsed phases without inventing a routine average.
+
+The parent supports both 179 exclusions without material source/domain defects:
+33 preservation checks and seven replays pass. Prior 179 CI records nine first
+attempt jobs in actual 5/3/1 contexts. 1,621.845 seconds spans two completed and three
+held attempts, not a comparable benchmark pass. Candidate feature only, no
+editorial acceptance, merge, publication, production or deployment.
+
+Local validation: 192 focused tests pass in 17.168 seconds; seven semantic checks
+and the IR reference cases pass. Nineteen literal claims, seventeen exact
+derivatives, twenty-three raw hashes, two PDF and twenty-one HTML/XML extraction
+replays verify. Replays include rejected private captures as byte checks only.
+All 599 prior reviews, 1,989 canonical sources, 874 registrations, 949 private
+aliases and 13 Health files are preserved. Six semantic products remain identical,
+and all seven generated files replay byte for byte. Only the three declared
+action rows change. Two qualified proposals reuse the existing action identities
+and digests and remain outside compiled output. Local validation elapsed endpoint
+is recorded privately; no comparable routine average is inferred.

@@ -1,0 +1,249 @@
+{
+  "checkpoint": 180,
+  "base_head": "f98878d6f15bf535c00ba767c91de5ab8c3d15a5",
+  "candidate_receipt_sha256": "93e7f0cbd8fda1e68159a5d67ee1588352b4723fb1a8f4f680d3050b6248346b",
+  "qualified_issue_mapping_sha256": "db0706d829e32b29dd452133d8d2892a2c4ccf7269a5c8a8570b4a44df164327",
+  "schema_native_mapping_valid": true,
+  "focused_tests": {
+    "passed": 192,
+    "seconds": 17.168
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": "12 accepted,4 accepted-held,4 held mechanical references; no candidate acceptance",
+  "prior_canonical_sources_preserved": 1989,
+  "prior_capture_registrations_preserved": 874,
+  "prior_reviews_preserved": 599,
+  "private_capture_aliases_preserved": 949,
+  "health_files_preserved": 13,
+  "changed_action_ids": [
+    "house:119:1:298",
+    "house:119:1:299",
+    "house:119:1:332"
+  ],
+  "shared_core_references_reused": 2,
+  "no_new_shared_meanings": true,
+  "typed_qualified_candidate_actions_held": 2,
+  "literal_claims": 19,
+  "exact_derivative_replays": 17,
+  "raw_replays": {
+    "checks": [
+      {
+        "key": "22usc4103",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "5usc7103complete",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "record1119",
+        "raw_sha256_verified": true,
+        "full_captured_PDF_extraction_equal": true
+      },
+      {
+        "key": "record1211",
+        "raw_sha256_verified": true,
+        "full_captured_PDF_extraction_equal": true
+      },
+      {
+        "key": "5usc7103correct",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "DCLaw18-239xml",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "22usc4102",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1831",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1832",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1833",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1834",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1835",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1836",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1837",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1838",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1839",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1840",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1841",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dccode22-1842",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "eo14343",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "dc5-107.04",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "law24-345fresh",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      },
+      {
+        "key": "law13-160",
+        "raw_sha256_verified": true,
+        "full_captured_HTML_XML_extraction_equal": true
+      }
+    ],
+    "raw_hashes": 23,
+    "PDF_replays": 2,
+    "HTML_XML_replays": 21,
+    "not_human_read_certification": true
+  },
+  "Clerk_reconciliations": [
+    {
+      "action_id": "house:119:1:298",
+      "prior179_fresh_metadata_members_totals_equal": true,
+      "canonical_alias_unchanged": true,
+      "official_labels": {
+        "F000477": "Nay",
+        "M001184": "Yea"
+      }
+    },
+    {
+      "action_id": "house:119:1:299",
+      "prior179_fresh_metadata_members_totals_equal": true,
+      "canonical_alias_unchanged": true,
+      "official_labels": {
+        "F000477": "Nay",
+        "M001184": "Yea"
+      }
+    },
+    {
+      "action_id": "house:119:1:332",
+      "prior179_fresh_metadata_members_totals_equal": true,
+      "canonical_alias_unchanged": true,
+      "official_labels": {
+        "F000477": "Yea",
+        "M001184": "Nay"
+      }
+    }
+  ],
+  "source_sequence_checks": 3,
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "byte_exact_generated_replays": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "reproducibility_proof.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "application_questions_preserved": 70,
+  "partial_packages_preserved": 3,
+  "parked247_preserved": true,
+  "shutdown_file_preserved": true,
+  "current_sources": 2017,
+  "current_registrations": 905,
+  "counts": {
+    "reviewed": 600,
+    "pending": 76,
+    "ordinary_unscreened": 64,
+    "researched_holds": 12,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "timing": {
+    "checkpoint": 180,
+    "base_head": "f98878d6f15bf535c00ba767c91de5ab8c3d15a5",
+    "started_utc": "2026-10-09T20:27:51.521701+00:00",
+    "scope": "Continue298/332exact chains before299repeal/restoration",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "no_overlap_subtraction": true,
+    "source_review_and_authoring_utc": "2026-10-09T20:46:15.481001+00:00",
+    "source_review_and_authoring_seconds": 1103.9593,
+    "attempted_action_ids": [
+      "house:119:1:298",
+      "house:119:1:332",
+      "house:119:1:299"
+    ],
+    "completed_action_ids": [
+      "house:119:1:332"
+    ],
+    "qualified_held_actions": 2,
+    "local_validation_utc": "2026-10-09T20:51:46.431860+00:00",
+    "local_validation_endpoint_seconds": 1434.910159,
+    "focused_tests": 192,
+    "focused_tests_seconds": 17.168,
+    "semantic_checks": 7,
+    "IR_reference_cases": "12 accepted,4 accepted-held,4 held mechanical references; no candidate acceptance",
+    "invocation_corrections": [
+      "Private author boundary failed before writes due bill-comma versus bill-space; corrected exact literal boundary.",
+      "Semantic pipeline first invocation omitted established NODE_PATH; rerun with correct environment passed."
+    ],
+    "no_routine_average_inferred": true
+  },
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "308c01b1a6e6e81fe28aabfcd97e5c905bf254e89228cceac62d2572391bb4ac"
+}
