@@ -5,9 +5,9 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint164:574 reviewed/102 ordinary pending;44 meanings/78 findings.
-Five investment/retirement exclusions;326/252/S1318/4090/allholds/70questions/3packages pending.
-163CI9green;peer160-163unreceived/164pending, no acceptance.
+Latest candidate checkpoint165:578 reviewed/98 ordinary pending;44 meanings/78 findings.
+Five SPEED/PERMIT exclusions;196/326/252/S1318/4090/allholds/70questions/3packages pending.
+Correction164 independently source/preservation reviewed and nine CI jobs green;165peer/CI pending.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -10859,3 +10859,49 @@ certification/acceptance/publication/production/merge authority or retiredcontro
 No newroutine timing/speedup/quality-equivalence claim.
 
 Successor correction validated: 573 reviewed/103 pending, 44 meanings/78 findings/70 questions/three partial packages unchanged.183 focused tests, seven semantic checks/reference validation and seven-file byte replay pass; six semantic outputs and all governed sources unchanged. Original160/162/163/164 receipts remain byte-exact. Checkpoint164 CI37864344399 nine green: five feature600fde10, three synthetic e66290000414e4fddc02de6f855c559b1cebc5d8, one mixed repair; hosted308 and13/20 distinct from owner checks. Parent163/164 bounded review retained with whole164source transport/private-acquisition limits; four correction independent rechecks pending. New chronology checker failed before candidate writes on numeric printed hyphen; numeric duration preservation corrected and negative tests pass. Restored196 removed from current noncounting sample into pending reconstruction with full historical assessment. No acceptance/publication/production/merge.
+
+## Checkpoint165: inherited SPEED and PERMIT continuation
+
+Five candidate exclusions: House119/1/352 Clyde1,353 Roy5 as Perry designee,
+354 Roy6,356 SPEED passage,330 PERMIT passage. Three full own floor operatives
+match numbered Report119410 after declared formatting-only normalization;
+RH printed5/23/26 supplies exact pretargets. Initial voice ayes/Huffman demand/
+actual postponement and resumed recorded rejection remain distinct. Passage
+questions proceed directly through voice ayes and ordered yeas/nays; no invented
+postponement. Clerk ordinals2/3 differ from Report5/6, retained explicitly.
+
+Clyde excludes aesthetic/recreational/emotional interests unaccompanied by
+material physical/property harm from proposed direct-harm standing. Roy5 adds
+agency jurisdiction by law alongside causal/proximate environmental effects.
+Roy6 contains both significant-effect definition and impact-statement trigger,
+not only wording. Full passed SPEED sections1-4 retains qualified procedures,
+exceptions, review/appeal clocks and ongoing administrative-correction exception
+adopted through H.Res953/Report4. Rejected amendments1/5/6 do not enter passage.
+Full PERMIT sections1-26 retains distinct CleanWaterAct permit/certification/
+State/mitigation/pilot conditions. US-Mexico IBWC funding concerns water works,
+qualified nonFederal entities, Treasury/appropriation conditions and5million
+annual credit/reimbursement cap. Incorporated19237(2) countrydefinition only;
+neighboring individual/entity/recruitment/terrorism definitions not imported.
+No human-status/admission/removal criterion or border migration enforcement
+inferred from general environmental procedures or crossborder water geography.
+No actual harms/permits/costs/benefits/enactment/individual applications claimed.
+
+578/676 reviewed,98 pending:44 meanings/305 exclusions/227 procedural/2expressive.
+1817 sources/636 captures;29 newcanonical/35 registered captures,32 claims,
+15 derivatives/23 intervals;4 inherited raw captures and preserved Dec11 raw
+page30 revalidated.15 material PDF images inspected across predecessor/successor,
+including additional successor page17.183 focused tests,7semantic/reference pass;
+seven generated files byte-identical to replay, six semantic outputs unchanged.
+Prior records/sources/manifest/privatepool/audit history/allholds/196pending/
+70questions/3packages preserved. Owner checks are separate from independent
+165 review and its future CI. Inherited labor before restart is unknown; restart
+elapsed is separately recorded, excluded from the fresh five-action benchmark.
+
+Correction d4a0f523 independently source/preservation reviewed: all four changes
+supported,570 unaffected records exact, eight source-anchor checks reproduced,
+52 mechanical checks. Source bank/authoring/outputs/proof/captures/prior receipts
+unchanged. CorrectionCI37865651931 nine-success:5feature/3synthetic
+78d39b45c6ff4c1d95d7e94c6fb7b7e31e68f51b/1mixed. Hosted308/benchmark639/repair13of20
+observed independently, owner183/7/replay separate. Helper tests are synthetic;
+normalized-empty-anchor rejection is nonblocking maintenance deferred outside
+165 and fresh timing. No acceptance/publication/production/merge authority.
