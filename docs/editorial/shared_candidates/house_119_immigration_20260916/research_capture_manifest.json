@@ -1,6 +1,6 @@
 {
   "authority": "Local provisional full captures; no automatic exact-action eligibility, interpretation or canonical replay dependency",
-  "source_count": 973,
+  "source_count": 977,
   "sources": [
     {
       "source_id": "congressional-record:2026-01-22-dhs-narrative-pages309-332",
@@ -7785,6 +7785,38 @@
       "governed_bytes_sha256": "83c8dde9d6ebf3a23accd71cfedb472899f7fec7758dab5db258a3b50f5eb23b",
       "text_sha256": "d13d9175a276b5ed6e808e14a62aed47095f74dc2ebe03e8a896c561bd11787d",
       "text_length": 4901
+    },
+    {
+      "source_id": "govinfo:45cfr98-20-2025-187",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol1/pdf/CFR-2025-title45-vol1-sec98-20.pdf",
+      "raw_sha256": "3fa5af3dea9ee3dd925653b09ddd83bb353e2169887e0638d32f6147cf53ce7a",
+      "governed_bytes_sha256": "ecb1163607ce2d65895b5818c58cebbc04e1b38328771a73c1c4f9f7b2d68bd0",
+      "text_sha256": "897102a36528207a22f1981879ea381ba9c5d667aedc1e8dba47cfae6617e918",
+      "text_length": 3103
+    },
+    {
+      "source_id": "govinfo:45cfr98-68-2025-187",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol1/pdf/CFR-2025-title45-vol1-sec98-68.pdf",
+      "raw_sha256": "313e9badb474325221bda0050a083db9cd86edd8b2b037fdd243d618b51f1507",
+      "governed_bytes_sha256": "abb4c3c12fdf0ac49d88675fef3acacd511fd64add445e6903894053840cdaec",
+      "text_sha256": "1f4d81b2f05ed2085ff4498425c94ed743b02032caf8963b29cdba2e872c6d5a",
+      "text_length": 2064
+    },
+    {
+      "source_id": "ecfr:45cfr98-20-version-history187",
+      "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-45.json?part=98&section=98.20",
+      "raw_sha256": "abc529ac2d16defba7402b4044ce92d7b8293100d4ffac83158bae3c7ae5c151",
+      "governed_bytes_sha256": "b193da4524203e6fa7627df736678b4708d986d704d9a1c34f4c41aceb3f6e1c",
+      "text_sha256": "0b124bbd4ac6b16b49c7b9abd9b8e642942bc7272543d734135e620048a761d5",
+      "text_length": 676
+    },
+    {
+      "source_id": "ecfr:45cfr98-68-version-history187",
+      "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-45.json?part=98&section=98.68",
+      "raw_sha256": "d366e545d015893083520cb67bf951250385a20a97667ecef82dc3d54cf77b0e",
+      "governed_bytes_sha256": "b2fe03f1ed52a2d457a5eeba0299ac331989f26b3f16cb52998400aea3f37fdb",
+      "text_sha256": "25ee7f62408cde14b73f796a1bedd57f823f22b75e8a2359a615dcac48254593",
+      "text_length": 391
     }
   ],
   "rejected_responses_are_not_evidence": true

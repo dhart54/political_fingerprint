@@ -1627,3 +1627,65 @@ included in that interval. Initial metadata selection is untimed; actual later
 endpoints include predecessor CI/review reconciliation without subtraction. No
 new average or zero-completion denominator is inferred. Continue coherent
 candidate source work without a routine approval gate or writer release.
+
+
+## Checkpoint 187: held childcare pre-vote regulatory baseline
+
+The same local owner continues from checkpoint 186 at
+0b23e524d0f18a221665d77da68d3a4bf6cded0e. House 119/2/198 remains held.
+Complete own 45 CFR 98.20 and 98.68 sections from the 2025 annual edition are
+captured, replayed and visually checked, including the second-page 98.68(c)(2)
+continuation. Adjacent sections are excluded from operative reading. For the
+cited PRWORA verification requirements, 98.20(c) makes the child the relevant
+beneficiary and bars conditioning covered child eligibility on parent status
+or provision of parent-status information. This does not imply a universal
+SSN/documentation ban, provider exemption or conclusion about every service.
+
+Section 98.68 already requires plan descriptions of internal controls while
+maintaining continuity, fraud identification/investigation/recovery, sanctions
+and child eligibility documentation/verification at determination/redetermination.
+Record matching and database links are possible identification methods. Required
+provider payment and the family-circumstance change improper-payment boundary
+between redeterminations are retained. The new statutory clause W sits alongside
+analogous existing operational regulatory requirements. It does not establish
+that verification was absent, require a parent citizenship test, or establish
+that the statutory addition has no legal effect.
+
+The pre-vote annual edition is dated October 1, 2025, with a March 30, 2026
+production footer. Official section histories report latest amendments of
+December 30, 2016; the latest issue for 98.20 is September 9, 2017 and for 98.68 is
+December 30, 2016. Requested June 3, 2026 XML snapshots and explicit XML Accept
+format retries returned HTTP 406. No dated XML snapshot was obtained; no retry
+is planned and unavailable responses are not evidence. Annual text plus reported
+history indexes qualifies the baseline. Exhaustive court/agency/current State,
+tribal and provider-service application remains unreviewed. No blocked ACF route
+was retried. Full-parent and current-application holds remain.
+
+The new held mapping references the existing Health 198 candidate core and digests
+once. Historical 183/185 mappings and receipts, FISA 184 and vessel 186 artifacts
+are unchanged. Four new sources and registrations make 2, 087 sources and 977
+registrations. Only 198's pending rationale/reason changes; all 603 membership
+records are unchanged. Counts remain 603 reviewed/73 pending: 56 ordinary actions
+and 17 researched holds. There are 47 compiled meanings, 80 propositions, 70 questions
+and 3 partial packages. No new shared meaning, proposition, compiler application,
+eligibility/counting/alignment, editorial acceptance or publication.
+Independent 187 review remains pending.
+
+Validation: 203 focused tests in 18.211 seconds, 7 semantic checks, mechanical IR
+references, 18 literal claims, 4 raw-parent replays, 4 derivatives, own-bill identity
+and native held mapping pass. All 32 frozen artifact blobs are preserved.
+Six semantic products are unchanged; only proof inventory metadata changes and
+all 7 files byte-replay. The private verifier's two split-word anchors were
+corrected to match the existing normalizer. Source bytes and runtime code are
+unchanged.
+
+Exact 186 CI run 38002170285 has 9 fresh first-attempt successes: 5 feature,
+3 synthetic and 1 mixed checkout contexts. There are no manual retries or carried
+successes. Its receipt is folded into this substantive source increment.
+Independent 186 review remains pending. The owner 186 CI/PR endpoint includes
+187 research overlap without subtraction. Performance remains FAIL at the prior
+comparable 781.087 seconds per completion. This held increment supplies zero
+completions and no throughput denominator, new benchmark average or silent
+scaling. The initial reviewer lead predates the 187 timer; source/authoring, local
+validation and delivery endpoints retain actual overhead. Continue coherent
+candidate source work without a routine approval gate or writer release.
