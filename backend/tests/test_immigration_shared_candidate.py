@@ -27,7 +27,8 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertFalse(case['exact_chain_completed'])
         row = next(x for x in self.values[2]['candidate_dispositions'] if x['action_id'] == case['action_id'])
         self.assertEqual(row['disposition'], 'source_unresolved')
-        self.assertEqual(case['current_pending_row_sha256'], digest(row))
+        later = json.loads((DATA / 'state_passage_qualified_research_checkpoint178.json').read_text(encoding='utf-8'))
+        self.assertEqual(case['current_pending_row_sha256'], digest(later['prior_pending_row']))
         self.assertNotIn(case['action_id'], {x['action_id'] for x in self.values[0]['actions']})
         self.assertEqual(receipt['existing_shared_core_reference']['action_core_sha256'],
                          '42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1')
@@ -43,6 +44,40 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertIn(claim['passage'], sources[claim['source_id']]['text'])
         self.assertFalse(receipt['actual_source_reading']['complete_read'])
         self.assertEqual(receipt['actual_source_reading']['unread_intervals'], [{'start': 108000, 'end': 301371}])
+        self.assertFalse(receipt['editorially_accepted'])
+        self.assertFalse(receipt['publication_authorized'])
+
+    def test_state_operator_conflict_preserves_pending_and_historical_reading(self):
+        receipt = json.loads((DATA / 'state_passage_qualified_research_checkpoint178.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        row = next(x for x in self.values[2]['candidate_dispositions'] if x['action_id'] == 'house:119:2:247')
+        self.assertEqual(row['disposition'], 'source_unresolved')
+        self.assertEqual(receipt['current_pending_row_sha256'], digest(row))
+        self.assertTrue(row['review_progress']['authoritative_source_conflict'])
+        self.assertFalse(receipt['completed_screening'])
+        self.assertTrue(receipt['whole_EH_reading']['complete_read'])
+        self.assertEqual(receipt['whole_EH_reading']['unread_intervals'], [])
+        old = json.loads((DATA / 'state_passage_source_boundaries_checkpoint177.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['historical177_receipt_sha256'], old['receipt_sha256'])
+        self.assertFalse(old['actual_source_reading']['complete_read'])
+        self.assertEqual(old['actual_source_reading']['unread_intervals'], [{'start': 108000, 'end': 301371}])
+        self.assertEqual({x['conflict_id'] for x in receipt['blocking_source_conflicts']},
+                         {'state-enbloc-A7-178', 'state-enbloc-A17-178'})
+        sources = {x['source_id']: x for x in self.values[1]['sources']}
+        floor = sources['state:floor-enbloc-page45-178']['text']
+        for number in (7, 17):
+            start = floor.index(f'AMENDMENT NO. {number} OFFERED')
+            end = floor.index('AMENDMENT NO.', start + 20)
+            self.assertNotIn('increased by', floor[start:end])
+        for conflict in receipt['blocking_source_conflicts']:
+            self.assertTrue(conflict['rendered_Record_verified'])
+            self.assertTrue(conflict['no_precedence_rule_applied'])
+        for item in receipt['candidate_research_observations'] + receipt['blocking_source_conflicts']:
+            for claim in item['claim_source_map']:
+                self.assertIn(claim['passage'], sources[claim['source_id']]['text'])
+        self.assertEqual(receipt['existing_shared_core_reference']['action_core_sha256'],
+                         '42dc696c8101a52b0f95bd74c8aab08ae71fa4b5ff8de532c4056e4522b429d1')
+        self.assertNotIn('house:119:2:247', {x['action_id'] for x in self.values[0]['actions']})
         self.assertFalse(receipt['editorially_accepted'])
         self.assertFalse(receipt['publication_authorized'])
 

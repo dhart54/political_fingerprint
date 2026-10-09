@@ -1049,3 +1049,90 @@ Continue the bounded final-passage source chain within the existing authorized
 feature branch. Checkpoints remain resume points rather than approval gates.
 Native desktop placement is handled separately by the parent; this sole local
 writer stays on the PC and existing worktree without migration or duplication.
+
+
+## Checkpoint 178: source-qualified passage research and actual operator conflict
+
+The full 333,636-character engrossed H.R.8595 has now been read. Ten literal
+intervals cover the entire text without gaps. This later completion does not
+rewrite checkpoint 177: that immutable receipt still records 193,371 unread
+Division A characters. Its regression now binds its former pending-row digest to
+the complete prior-row snapshot retained in 178 rather than the advanced row.
+
+Ten qualified research observations bind consular fee availability versus prior
+balance rescissions, IHA/ERMA limits and conditions, official/family entry
+restrictions and waivers, the Gaza title III funding bar, migration executive-order
+funding conditions, Cuban medical-programme reporting/entry chains, qualified
+passport-library authority, SAVE citizenship/naturalization and investigation
+provisions, and actual adopted-amendment mechanics. Historical Code/Executive
+Order wording remains qualified; purpose allegations are attributed statements.
+The original IRCA 121(c)(1) administrative noncriminal immigration-enforcement
+restriction and appended investigation provision coexist in the research record.
+No legal precedence ruling, automatic removal, component preference, real-world
+programme finding, implementation or enactment is inferred.
+
+The House-passed S.1383 body is word-equivalent to appended Division B after exactly
+four technical changes: the three outer section numbers and This Act to This
+division in the short-title sentence. Printed dates and cross-reference defects
+remain. Fresh RH raw bytes and normalized whole text match the neutral prior
+capture; the entire DivisionA RH-to-EH word diff and complete selected amendment
+target pages were checked. Full RH and entire public-law/report human reading
+are not claimed. Complete PL 117103 DivisionK 7069(e) and Report Part A 1-29 are bound
+as literal derivatives with full parent captures retained privately.
+
+A material source conflict blocks completion. Actual Record H 4515/PDF 45 prints
+A 7 as a reduction only (also without its dollar sign) and A 17 as a reduction only.
+The official Rules report and EH print reductions followed by equal increases.
+RH 22 line 15 identifies the State Inspector General account and RH 34 line 17 the
+INCLE account. Rendered Record text confirms both differing operators. The
+complete surrounding page/rule sequence establishes en-bloc agreement; rule 5
+permits pro forma debate and does not itself establish a correcting increase.
+No source priority, net cut, unchanged amount or clerical correction is invented.
+Route both exact conflicts to shared-corpus source review. The candidate remains
+pending with zero completed-screening credit under the existing source-conflict
+boundary. No adjacent Health core correction is automatically applied.
+
+Record 52-53 supplies actual adopted A 27/A 28 texts, agreements and rise/recess/
+resumption, without borrowing the earlier selected capture's omitted pages.
+A 27 raises Nigeria conditional withholding 50-to 100; A 28 carries paired USCIRF
+amount operators. Nine en-bloc amendments plus A 4/A 27/A 28 voice agreements are
+distinct from the five failed recorded amendments and the final combined-package
+vote. Crane's printed 22 U.S.C. 2347(b) reference is preserved literally. Its Report,
+floor and EH operative clause agree; debate scope cannot silently rewrite it.
+
+Nine canonical sources and eleven registrations are added: 1,970 sources/853
+registrations. 34 literal claim mappings, two derivatives, eight official raw
+captures, four PDF witness replays and seven full normalized HTML replays verify.
+Ten complete EH reading intervals, 765 historical Git blobs and all prior source,
+manifest/capture prefixes are preserved. Seven generated outputs replay; six
+semantic products are byte-identical. All 47 meanings/member projections and 80
+propositions, 79/83 holds, 241/243/245 cases, 70 questions and three partial packages
+remain. Counts remain 597 reviewed/79 pending. Only passage 247's pending research
+row advances to disclose authoritative-source conflict. The existing issue-neutral
+Health core digest/reference is unchanged; no duplicate meaning or inherited
+mapping. The ordinary Immigration constructor would create a different snapshot
+meaning reference; no runtime/schema change or unsupported cross-domain import
+is introduced here.
+
+192 focused tests pass in 17.226 seconds; seven semantic checks and reference
+cases pass. Failed exploratory helpers are retained. Whole bill-reading phase
+was 270.324 seconds. This complex held case has no functional completion or
+comparable cycle-average claim. Elapsed local time includes ongoing work;
+no overlap subtraction, cherry-picking, special benchmark round or scaling.
+Prior 174 functional benchmark remains FAIL near 13 minutes. Git/CI endpoints will
+be recorded privately after delivery; independent 178 review remains pending.
+
+The parent independent 177 review found no blocking correction, with 31 preservation
+checks, 31 source checks, the new regression and seven byte-exact replays. Its
+bounded limit remains: the original private final-stage object was unavailable to
+that reviewer, although raw PDF/text/derivative replay independently. This owner
+can now reconstruct that original object seal from the preserved private pool and
+replay its exact PDF text; this is a later check, not a retroactive review claim.
+CI 177 has nine first-attempt successes in five feature/three synthetic/one mixed
+contexts, conditional skips retained. Canonical 177 history remains immutable.
+
+Reserved decision: reconcile the two authoritative printed operators through an
+exact source correction or an established governed precedence rule. Until then,
+passage 247 stays pending; application review and safe shared-core reuse remain
+explicit downstream work. No merge, acceptance, promotion, publication,
+production, schema, security, configuration or deployment authorization exists.

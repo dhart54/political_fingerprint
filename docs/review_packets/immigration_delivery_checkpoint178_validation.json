@@ -1,0 +1,218 @@
+{
+  "checkpoint": 178,
+  "base_head": "548a8ed91de7a9bf48f7521955be302176f9cf73",
+  "candidate_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_passage_qualified_research_checkpoint178.json",
+  "candidate_receipt_sha256": "83d4755e4f96f98dc528cba36586e0d78f89451183dc05159fd6d16d3ceac798",
+  "validation": {
+    "focused_tests": 192,
+    "runtime_seconds": 17.226,
+    "semantic_checks": 7,
+    "reference_cases": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "mechanical": {
+      "canonical_sources": 1970,
+      "capture_registrations": 853,
+      "new_registration_objects_verified": 11,
+      "unique_source_seals_verified": 2373,
+      "literal_derivatives_verified": 2,
+      "primary_raw_acquisitions_verified": 8,
+      "source_mapped_literal_claims_verified": 34,
+      "whole_EH_read_intervals_verified": 10,
+      "historical_blobs_preserved": 765,
+      "generated_files_replayed": 7,
+      "unchanged_generated_files": [
+        "compiled_ir.json",
+        "compiler_input.json",
+        "member_projections.json",
+        "readable_candidates.json",
+        "shared_action_core.json",
+        "shared_issue_mapping.json"
+      ],
+      "all47meaning_and_member_projection_objects_exact": true,
+      "all80propositions_byte_exact": true,
+      "unchanged_pending_rows_except247": true,
+      "prior177_receipt_unchanged": true,
+      "prior177_private_parent_object_reconstructed_by_owner": true,
+      "independent177_original_seal_limitation_preserved": true,
+      "existing_Health_core_and_all_Health_artifacts_unchanged": true,
+      "neutral_RH_exact_copy_only": true,
+      "no_completed_screening_or_duplicate_meaning": true
+    },
+    "full_source_replays": {
+      "PDF_full_witnesses_replayed": 4,
+      "HTML_full_normalized_witnesses_replayed": 7,
+      "RH_fresh_raw_and_whole_text_match": true,
+      "acquisition": {
+        "source_id": "govinfo:hr8595rh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/html/BILLS-119hr8595rh.htm",
+        "raw_path": ".tmp\\hr8595rh-original178.html",
+        "raw_sha256": "ba3fb55c5f1d27c5718854301c32e6035eac3f99d2f4c85810ef20ed4b4f746b",
+        "whole_normalized_text_identical": true,
+        "full_human_read_claimed": false
+      }
+    },
+    "final_diff_reviewed": true,
+    "historical_test_binding": "Checkpoint177 regression now checks its pending-row digest against the complete immutable prior-row snapshot stored in178, rather than the advanced current row. Its original incomplete reading and receipt are unchanged.",
+    "private_exploration_limits": [
+      "First SAVE comparison expected an absent Passed-the-House footer and stopped; corrected comparison uses actual Attest boundary. Failed helper preserved.",
+      "First RH page lookup assumed a cover offset and stopped before body reading; verified printed-page labels corrected the offset. Failed helper preserved.",
+      "Historical bounded Rules report is intrinsically partial. Fresh full capture supplies complete PartA1-29 without rewriting the old witness.",
+      "Record44-46 combined output truncated part of page45; complete page45 independently reread and rendered. No complete76-page Record reading claim."
+    ]
+  },
+  "blocking_source_conflicts": [
+    {
+      "conflict_id": "state-enbloc-A7-178",
+      "action_id": "house:119:2:247",
+      "classification": "blocking",
+      "status": "unresolved_authoritative_source_conflict",
+      "target": "RH22line15: State Office of Inspector General",
+      "Record_operator": "Reduction only; no equal increase printed. A7 also lacks the printed dollar sign.",
+      "Report_and_EH_operator": "Reduction followed by equal increase",
+      "claim_source_map": [
+        {
+          "source_id": "state:floor-enbloc-page45-178",
+          "locator": "H4515 actual offered A7",
+          "passage": "AMENDMENT NO. 7 OFFERED BY MRS . KIM OF \nCALIFORNIA \nPage 22, line 15, after the dollar amount, \ninsert ‘‘(reduced by 2,000,000)’’. \n",
+          "source_text_extent": {
+            "start": 363,
+            "end": 496,
+            "total": 7992
+          }
+        },
+        {
+          "source_id": "govinfo:hrpt119749-partA178",
+          "locator": "Report Part A7",
+          "passage": "7. An Amendment To Be Offered by Representative Kim of California or a Designee, Debatable for 10 Minutes Page 22, line 15, after the first dollar amount, insert ``(reduced by $2,000,000) (increased by 2,000,000)''. ",
+          "source_text_extent": {
+            "start": 1720,
+            "end": 1936,
+            "total": 7903
+          }
+        },
+        {
+          "source_id": "govinfo:hr8595eh",
+          "locator": "Actual EH target account",
+          "passage": "REIGN ASSISTANCE offices of inspector general For necessary expenses of the Office of Inspector General of the Department of State, as established by section 402(a)(1) of title 5, United States Code, $123,550,000 (reduced by $2,000,000) (increased by $2,000,000), of which $18,533,000 may remain available until September 30, 2028: Provided, That funds appropriated under this paragraph are made available notwithstanding section 209(a)(1) of the Foreign Service Act of 1980 (22 U.S.C. 3929(a)(1)), as it relates to post inspections. In addition, for",
+          "source_text_extent": {
+            "start": 25747,
+            "end": 26297,
+            "total": 333636
+          }
+        }
+      ],
+      "rendered_Record_verified": true,
+      "no_precedence_rule_applied": true,
+      "review_question": "Resolve the materially differing printed operators through authoritative correction or an established governed source-precedence rule. Do not infer a net cut, an unchanged amount, or a clerical correction across witnesses."
+    },
+    {
+      "conflict_id": "state-enbloc-A17-178",
+      "action_id": "house:119:2:247",
+      "classification": "blocking",
+      "status": "unresolved_authoritative_source_conflict",
+      "target": "RH34line17: International Narcotics Control and Law Enforcement",
+      "Record_operator": "Reduction only; no equal increase printed.",
+      "Report_and_EH_operator": "Reduction followed by equal increase",
+      "claim_source_map": [
+        {
+          "source_id": "state:floor-enbloc-page45-178",
+          "locator": "H4515 actual offered A17",
+          "passage": "AMENDMENT NO. 17 OFFERED BY MS . PLASKETT \nOF VIRGIN ISLANDS \nPage 34, line 17, after the dollar amount in-\nsert ‘‘(reduced by $1,000,000)’’. \n",
+          "source_text_extent": {
+            "start": 496,
+            "end": 639,
+            "total": 7992
+          }
+        },
+        {
+          "source_id": "govinfo:hrpt119749-partA178",
+          "locator": "Report Part A17",
+          "passage": "17. An Amendment To Be Offered by Representative Plaskett of Virgin Islands or a Designee, Debatable for 10 Minutes Page 34, line 17, after the dollar amount insert ``(reduced by $1,000,000) (increased by $1,000,000)''. ",
+          "source_text_extent": {
+            "start": 4838,
+            "end": 5058,
+            "total": 7903
+          }
+        },
+        {
+          "source_id": "govinfo:hr8595eh",
+          "locator": "Actual EH target account",
+          "passage": "TLE IV INTERNATIONAL SECURITY ASSISTANCE Department of State international narcotics control and law enforcement For necessary expenses to carry out section 481 of the Foreign Assistance Act of 1961, $1,664,204,000 (reduced by $1,000,000) (increased by $1,000,000), to remain available until September 30, 2028: Provided, That the Department of State may use the authority of section 608 of the Foreign Assistance Act of 1961, without regard to its restrictions, to receive excess property from an agency of the United States Government for the purpo",
+          "source_text_extent": {
+            "start": 41690,
+            "end": 42240,
+            "total": 333636
+          }
+        }
+      ],
+      "rendered_Record_verified": true,
+      "no_precedence_rule_applied": true,
+      "review_question": "Resolve the materially differing printed operators through authoritative correction or an established governed source-precedence rule. Do not infer a net cut, an unchanged amount, or a clerical correction across witnesses."
+    }
+  ],
+  "review_routes": [
+    {
+      "route": "shared_corpus_source_conflict_review",
+      "scope": [
+        "state-enbloc-A7-178",
+        "state-enbloc-A17-178"
+      ],
+      "required_decision": "Authoritative correction or governed precedence sufficient to reconcile actual adopted operators; no such rule applied"
+    },
+    {
+      "route": "shared_corpus_source_qualified_application_review",
+      "scope": [
+        "SAVE-investigation-qualified-coexistence"
+      ],
+      "required_decision": "Preserve both provisions; review application before asserting enforcement interaction"
+    },
+    {
+      "route": "existing_shared_core_reuse",
+      "scope": [
+        "house:119:2:247"
+      ],
+      "required_decision": "Bind additional independently supported issue mapping to unchanged existing core; current Immigration constructor would generate a domain-snapshot meaning ref and new digest. No adapter/runtime change, second meaning or core rewrite made."
+    }
+  ],
+  "source_limits": [
+    "Whole 333636-character EH read; prior 177 unread 193371 receipt remains immutable.",
+    "Complete Part A 1-29 read, not complete 62194-character report. Complete Public Law 117-103, Division K, section 7069(e) read, not entire public law.",
+    "Complete EO 14165/14218 and historical 214 capture read; order purposes attributed, no current enforceability certification.",
+    "Full RH-to-EH word diff and selected printed targets read; full 302844-character RH not claimed human-read.",
+    "All source observations remain qualified research candidates; no compiled replacement for existing shared meaning.",
+    "Two materially differing actual Record operators confirmed visually. Source priority and a clerical correction are not invented.",
+    "Whole-package Nay remains distinct from every component; no enactment, outcome, intent, inherited domain mapping or acceptance inference."
+  ],
+  "timing": {
+    "checkpoint": 178,
+    "base_head": "548a8ed91de7a9bf48f7521955be302176f9cf73",
+    "started_utc": "2026-10-09T19:01:47.511346+00:00",
+    "scope": "Substantive whole-package247 candidate research; actual A7/A17 source conflicts require review",
+    "attempted_action_ids": [
+      "house:119:2:247"
+    ],
+    "source_research_overlaps177CI": true,
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "no_overlap_subtraction_or_average_claim": true,
+    "full_EH_reading_completed_utc": "2026-10-09T19:06:17.835710+00:00",
+    "full_EH_reading_phase_seconds": 270.324364,
+    "completed_screenings": 0,
+    "local_validation_completed_utc": "2026-10-09T19:31:31.167522+00:00",
+    "local_end_to_end_seconds": 1783.656176,
+    "held_source_cases": 1,
+    "blocking_operator_conflicts": 2,
+    "targeted_tests": 192,
+    "targeted_seconds": 17.226,
+    "performance_average_established": false,
+    "functional_benchmark_result_unchanged": "FAIL; previous174 average approximately13minutes; no extra benchmark round"
+  },
+  "completed_screenings": 0,
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "5457b0a709ea7747d7604721edcf9432761ef2f01a51addc7d2f9ef00b85bbc8"
+}
