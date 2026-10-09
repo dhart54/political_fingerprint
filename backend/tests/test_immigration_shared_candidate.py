@@ -35,7 +35,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                      result.compiled_ir['source_render_constraints'],
                      result.review_payload['source_render_constraints'],
                      result.presentation_payload['source_render_constraints']]:
-            self.assertEqual(rows, expected)
+            self.assertEqual([r for r in rows if r['constraint_id'] == boundary['constraint_id']], expected)
         from backend.app.editorial_presentations.compiler import source_constraint_boundaries
         target = source_constraint_boundaries(expected)[0]
         self.assertEqual(target['presentation_target'], 'source_note')
@@ -51,7 +51,9 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(before[0], self.products[0])
         self.assertEqual(before[2], self.products[2])
         self.assertEqual(before[-1].compiled_ir['members'], self.products[-1].compiled_ir['members'])
-        self.assertEqual(before[-1].compiled_ir['source_render_constraints'], [])
+        self.assertEqual(before[-1].compiled_ir['source_render_constraints'],
+                         [r for r in self.products[-1].compiled_ir['source_render_constraints']
+                          if r['constraint_id'] != 'source:house119-session2-roll244-immigration-attribution'])
         self.assertNotEqual(before[1]['mapping_sha256'], self.products[1]['mapping_sha256'])
 
     def test_jordan_constraint_rejects_scope_leak_and_invalid_effect(self):
@@ -70,7 +72,9 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
 
     def test_jordan_behavior_depends_on_typed_effect_not_constraint_prose(self):
         inputs = copy.deepcopy(self.products[3])
-        inputs['shared_semantics']['source_render_constraints'][0]['semantic_effect'] = 'blocks_behavioral_propositions'
+        boundary = next(r for r in inputs['shared_semantics']['source_render_constraints']
+                        if r['constraint_id'] == 'source:house119-session2-roll244-immigration-attribution')
+        boundary['semantic_effect'] = 'blocks_behavioral_propositions'
         blocked = run_editorial_pipeline(inputs).compiled_ir
         for before, after in zip(self.products[-1].compiled_ir['members'], blocked['members']):
             kept = [p for p in before['proposition_graph']['propositions']
@@ -81,6 +85,62 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             self.assertTrue(any(row['action_id'] == 'house:119:2:244'
                                 and row['reason_code'] == 'source_constraint_blocks_behavioral_proposition'
                                 for row in after['action_accounting']['non_proposition_reasons']))
+
+    def test_scott_episode_hold_blocks_only_its_behavior_and_survives_delivery(self):
+        aid = 'house:119:1:79'
+        result = self.products[-1]
+        for rows in [self.products[1]['source_render_constraints'],
+                     self.products[3]['shared_semantics']['source_render_constraints'],
+                     result.compiled_ir['source_render_constraints'],
+                     result.review_payload['source_render_constraints'],
+                     result.presentation_payload['source_render_constraints']]:
+            hold = next(r for r in rows if r['constraint_id'] == 'candidate-episode-hold')
+            self.assertEqual(hold['action_ids'], [aid])
+            self.assertEqual(hold['semantic_effect'], 'blocks_behavioral_propositions')
+        inputs = copy.deepcopy(self.products[3])
+        inputs['shared_semantics']['source_render_constraints'] = [
+            r for r in inputs['shared_semantics']['source_render_constraints']
+            if r['constraint_id'] != 'candidate-episode-hold']
+        released = run_editorial_pipeline(inputs).compiled_ir
+        for held, unheld in zip(result.compiled_ir['members'], released['members']):
+            self.assertFalse(any(aid in p['evidence_action_ids']
+                                 for p in held['proposition_graph']['propositions']))
+            self.assertTrue(any(r['action_id'] == aid
+                                and r['reason_code'] == 'source_constraint_blocks_behavioral_proposition'
+                                for r in held['action_accounting']['non_proposition_reasons']))
+            self.assertTrue(any(aid in p['evidence_action_ids']
+                                for p in unheld['proposition_graph']['propositions']))
+            self.assertEqual([p for p in unheld['proposition_graph']['propositions']
+                              if aid not in p['evidence_action_ids']],
+                             held['proposition_graph']['propositions'])
+        self.assertIsNone(result.public_presentation_artifact)
+        self.assertIsNone(result.persistence_proposal)
+
+    def test_scott_candidate_preserves_replaced_baseline_and_pending_passage_history(self):
+        receipt = json.loads((DATA / 'translator_qualification_candidate173.json').read_text(encoding='utf-8'))
+        self.assertEqual(receipt['receipt_sha256'], sealed_digest(receipt, 'receipt_sha256'))
+        self.assertEqual(receipt['baseline']['complete_pages_read'], list(range(1, 61)))
+        actions = {a['action_id']: a for a in self.values[0]['actions']}
+        candidate = actions['house:119:1:79']
+        self.assertEqual(receipt['candidate_action_sha256'], digest(candidate))
+        claims = {c['source_id']: c['passage'] for c in candidate['claim_source_map']}
+        sources = {s['source_id']: s for s in self.values[1]['sources']}
+        sid = receipt['baseline']['source_id']
+        self.assertEqual(claims[sid], sources[sid]['text'])
+        self.assertEqual(receipt['baseline']['text_sha256'], digest(claims[sid]))
+        self.assertIn('all seven foreign-source limbs', candidate['meaning'].lower())
+        self.assertIn('trust territory or protectorate', candidate['meaning'])
+        self.assertIn('English translation', candidate['meaning'])
+        prior = claims[receipt['baseline']['prior_modification_source_id']]
+        self.assertEqual(prior.count('The amendment was agreed to.'), 2)
+        pending = next(r for r in self.values[2]['candidate_dispositions']
+                       if r['action_id'] == 'house:119:1:83')
+        self.assertEqual(pending['disposition'], 'source_unresolved')
+        self.assertFalse(pending['review_progress']['substantive_review_performed'])
+        self.assertFalse(any(r['action_id'] == pending['action_id'] for r in self.values[3]['records']))
+        self.assertEqual(receipt['prior83_membership_review_record']['disposition'], 'exact_action_ineligible')
+        self.assertEqual(receipt['restored83_row_sha256'], digest(pending))
+        self.assertIn('by a person that is not--', receipt['passage_material_excerpt']['passage'])
 
     def test_taiwan_dual_resident_routes_keep_citizenship_and_tax_only_limits(self):
         action = getattr(self, 'taiwan_action', None)

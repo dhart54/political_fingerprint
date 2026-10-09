@@ -7434,40 +7434,6 @@
       "episode_candidate_id": null
     },
     {
-      "action_id": "house:119:1:83",
-      "domain_id": "IMMIGRATION_BORDER",
-      "review_state": "candidate_pending_external_semantic_review",
-      "disposition": "exact_action_ineligible",
-      "rationale": "Complete exact H.R.1048 EH governs higher-education foreign-gift/contract/investment disclosures, specified foreign-entity contracts/waivers, research conflict policies, databases and institutional enforcement/financial-aid participation consequences. Foreign-source nationality and country-of-citizenship/residence reporting identify external financial influence; they do not grant/revoke citizenship or immigration status, govern visa/admission/work authorization, or change INA terrorist-designation/admission law. ExistingINA219designation is referenced for affiliation reporting only; student admission refers to education. DHS is one report recipient, not a new immigration adjudicator. Full58,000-character exact package independently reviewed, not classified from title or another domain's conclusions.",
-      "substantive_review_performed": true,
-      "exact_action_binding_unresolved": false,
-      "required_evidence_unavailable": false,
-      "authoritative_source_conflict": false,
-      "sources": [
-        {
-          "source_id": "clerk:119:1:83",
-          "url": "https://clerk.house.gov/evs/2025/roll083.xml",
-          "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
-          "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3"
-        },
-        {
-          "source_id": "govinfo:hr1048eh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
-          "raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
-          "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42"
-        },
-        {
-          "source_id": "govinfo:hres242eh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
-          "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
-          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
-        }
-      ],
-      "claim_source_map": [],
-      "reviewed_source_extents": [],
-      "episode_candidate_id": null
-    },
-    {
       "action_id": "house:119:1:80",
       "domain_id": "IMMIGRATION_BORDER",
       "review_state": "candidate_pending_external_semantic_review",
@@ -31959,7 +31925,70 @@
         }
       ],
       "episode_candidate_id": null
+    },
+    {
+      "action_id": "house:119:1:79",
+      "domain_id": "IMMIGRATION_BORDER",
+      "review_state": "candidate_pending_external_semantic_review",
+      "disposition": "interpreted_substantive_directional",
+      "rationale": "Bounded candidate under the existing direct personal-qualification criterion, grounded in complete replaced Print and actual Scott substitute: omit proposed donor/same-country translator qualification whose foreign-source and attributable-country predicates involve citizenship/nationality and principal-residence fallback. Preserve all source/agency limbs, retained translation duties and whole replacement. Prior Ogles1/2 unchanged qualification verified. Exact initial/noes/demand/postponement/resumption/rejection and both Clerk labels bind. Novel qualification application and passage83review remain pending; typed episode hold prevents behavioral propositions. No approval/publication or individual legal outcome.",
+      "substantive_review_performed": true,
+      "exact_action_binding_unresolved": false,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false,
+      "sources": [
+        {
+          "source_id": "clerk:119:1:79",
+          "url": "https://clerk.house.gov/evs/2025/roll079.xml",
+          "raw_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
+          "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66"
+        },
+        {
+          "source_id": "immigration:roll79-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+          "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+          "governed_bytes_sha256": "6301e883649b5b9bd73d46d08eb29d21c6ab9dfc161bc93efdf20da1f793a019"
+        },
+        {
+          "source_id": "immigration:roll79-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
+          "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+          "governed_bytes_sha256": "c8624cf67a702d4eca46f303037a686c61b5bd9809ec3ef3df8373bfd0a08103"
+        },
+        {
+          "source_id": "immigration:roll79-report171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
+          "raw_sha256": "c2b5ad47c4e36b86a5944aef60ca113eb4955a314caff0072fe0308afd9d9617",
+          "governed_bytes_sha256": "c0d34feba2127b184af26afd3eb7f0febc905b226235368c23eff45c873ba7cc"
+        },
+        {
+          "source_id": "house-rules:rcp1191-full-baseline173",
+          "url": "https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf",
+          "raw_sha256": "7f39ccff3de9ad5daf431e2dd65933e8b16b170e5e8609a130d8e466087903b0",
+          "governed_bytes_sha256": "447d189f8c375ec715bbf80d979cbe18c4283b0f68a75658f6d50f6b2776cfc6"
+        },
+        {
+          "source_id": "immigration:hr1048-prior-ogles173",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+          "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+          "governed_bytes_sha256": "22a5a45af0c29d9d491295c031b623d75b1bf72e07c9f2a1f50a29804eb6a484"
+        },
+        {
+          "source_id": "govinfo:hrpt38",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
+          "raw_sha256": "c2b5ad47c4e36b86a5944aef60ca113eb4955a314caff0072fe0308afd9d9617",
+          "governed_bytes_sha256": "25f58db5e6dd9d218552bb7e941e291db7532304797aca0b7f7a27c64dcef99d"
+        },
+        {
+          "source_id": "govinfo:hres242eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+          "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
+          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
+        }
+      ],
+      "claim_source_map_ref": "authoring.json#action_id=house:119:1:79",
+      "episode_candidate_id": "episode:hr1048:119"
     }
   ],
-  "review_sha256": "96fe5e71526a8d68eedfc4aafd0191ccf9bca90bca75264b9aff8fe44fe82337"
+  "review_sha256": "32c6b327059f8a4d091475c11e1c2d47e647a5d5df53ffe77f11983b41fc8186"
 }

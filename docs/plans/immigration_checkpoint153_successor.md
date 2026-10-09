@@ -767,3 +767,64 @@ Do not claim a pass or four-minute full cycle, count restored/held attempts
 as completions, or silently expand a failing benchmark. Checkpoint 172 is
 a bounded material correction with zero new screenings, separately timed.
 No merge, deployment, publication, production write or methodology change.
+
+
+## Checkpoint 173: source-mapped translator candidate, episode held
+
+All sixty replaced Print 119-1 pages are now read and bound literally, including
+all seven foreign-source limbs, country attribution and the translator rule.
+Actual prior Ogles 1/2 operatives and agreements modify only pages 57-58 concern
+definitions; they leave that qualification unchanged. Scott 79's complete whole
+substitute retains specified English translation duties while omitting the
+proposed donor/same-country personal translator qualification. The bounded
+candidate preserves citizenship/residence, trust-territory/protectorate, agency
+and whole-choice limits. It claims no current-law repeal, universal translator
+qualification, individual legal result or separate component preference.
+
+The same qualification is directly present in passage 83's already governed EH.
+Its prior whole-bill exclusion is a blocking same-episode omission: restore 83
+pending and preserve the old review, universe and audit verbatim in the receipt.
+79 is a canonical candidate under existing standards; the H.R.1048 authored
+episode has a typed behavioral hold until passage/package review and independent
+candidate review are resolved. Both members' review routes are blocked, public
+presentation and persistence remain absent, and all prior 80 propositions are
+exactly preserved. No automatic inclusion of 83 or wider-corpus reconciliation. Compiler episode
+completeness counts describe authored inputs only; the hold certifies no complete
+real-world episode or issue record.
+
+Counts remain 593 reviewed / 83 pending: 79 candidate adds one and 83 restoration removes
+one. There are 46 candidate meanings, 80 propositions, 70 unchanged application
+questions and three partial packages; 1,932 sources / 796 capture registrations.
+All prior 45 core actions and both sets of 45 member projection objects are exact.
+All earlier sources/captures/private pool, 170 historical research Git blobs and
+171/172 receipts are preserved. Seven generated files replay byte-for-byte.
+190 focused tests pass (16.690 seconds), seven semantic checks and accepted/held-out
+references pass. Four additional material PDF images are inspected. Three old
+Jordan regression assumptions were scoped by constraint identity so unrelated
+new holds do not change their intended test; two new typed-hold/history guards
+verify only 79 is withheld. The initial failed run and failed private locator/
+chronological-prefix helper remain preserved; no validator weakening.
+
+The leading avoidable rework is late material-baseline/canonical-boundary
+checking: 170 required 433.455 seconds to Git delivery and 172 required 476.511 seconds,
+or 1,068.466 seconds through owner CI, with zero routine screenings. A small
+private reversible preflight now checks verified-original replaced pages for
+personal-qualification leads before an exclusion decision. Its first actual
+79 run covers 60 pages in 0.166 seconds and surfaces pages 10/15/17 early. It makes no
+eligibility or direction decision; full material, prior-amendment and domain
+review remain required. Sixty-page replacement and qualified agency/country
+mechanics are structural work, retained. Phase-complete causal attribution and
+cycle speed-up are not established. Exact capture reuse and one shared final
+validation/replay remain the next bounded batch approach, without scaling or
+weakening a failed result.
+
+Parent 172 bounded recheck passed 35 checks / 1,930 source seals / three fragments, with
+six unchanged semantic outputs and preserved 171 history; no new correction.
+Nine first-attempt 172 CI jobs verified: five feature, three synthetic, one mixed.
+171 benchmark remains FAIL: four independently supported completions average
+727.212 seconds resumed-only through owner CI, or 710.485 seconds even after the
+entire known 170 delivery overlap is removed. 173 is inherited material correction
+and process adjustment with zero routine benchmark samples; it is not another
+routine completion denominator. Next: exact 173 delivery / CI and independent review,
+then the bounded comparable screening sample using the early preflight. No
+editorial acceptance, publication, merge, deployment or production authority.

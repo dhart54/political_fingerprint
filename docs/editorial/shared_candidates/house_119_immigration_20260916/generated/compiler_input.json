@@ -73,6 +73,12 @@
           "status": "Nay"
         },
         {
+          "action_id": "house:119:1:79",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
           "action_id": "house:119:1:102",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -344,6 +350,12 @@
         },
         {
           "action_id": "house:119:1:70",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:79",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
@@ -948,6 +960,32 @@
         ],
         "structural_metadata": {
           "stage_order": 10070
+        }
+      },
+      {
+        "action_id": "house:119:1:79",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:79:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "Scott amendment No.3 to H.R.1048 would replace Rules Committee Print119-1 page1 line1 through page60 line6 with a different foreign-gift and contract disclosure regime. H.Res.242 made that Print the House baseline; earlier Ogles amendments1 and2 were agreed to and alter only the foreign-country/entity-of-concern definitions on pages57-58. They do not alter the translator qualification on page10 or its country/foreign-source definitions on pages15-18. The replaced proposed section117(c) requires non-English gift/contract information disclosed under117, or requested during a117D(a)(1) investigation, to be translated by a person who is neither the donating/contracting foreign source nor any other foreign source from that source's attributable country. Proposed117(f)(2) attributes a natural person's country by citizenship, or principal residence if citizenship is unknown; a legal entity is attributed by incorporation, or principal business if incorporation is unknown. Proposed117(f)(4)(D) defines the natural-person foreign-source limb as a person who is not a citizen or national of the United States or a trust territory or protectorate thereof. All seven foreign-source limbs remain material: foreign governments, foreign-law entities, substantial foreign control, that qualified natural-person limb, international organizations, the cited FARA agent category and agents of any preceding category, including stated affiliates and benefit entities. Citizenship alone therefore does not exhaust foreign-source coverage or decide a particular translator's qualification. The substitute retains English translation requirements under its117(b)(4)(B) and117(c), but does not carry forward the Print's donor/same-attributable-country translator qualification. This is removal of a proposed personal qualification linked to citizenship/nationality and attributable-country criteria, within the whole replacement choice. It is not repeal of an enacted translator rule, a new visa, border-entry or work-authorization rule, or proof that every noncitizen would qualify. Exact individual agency, affiliation, donor and attributable-country application is not determined. The same replacement also changes the broader institutional regime: $100,000 annual or $250,000 over three-calendar-year gift/contract thresholds, July31 reporting, ownership/control disclosures, four-year/termination/State-period records, qualified true-copy/translation duties, restricted-gift reporting, public databases/privacy and outside-person restrictions, accuracy and cure, qualified sanctions/compliance officers, student-payment/IP/clinical-trial exceptions, foundation coverage, and negotiated rulemaking with effectiveness tied to issued regulations. It does not insert the Print's proposed117A contract-ban/waiver,117B faculty/staff reporting,117C investment reporting or117D enforcement regime. This whole-choice context does not make every institutional provision an Immigration mechanism. The source's duplicated purpose phrase is preserved, not repaired. The initial question on March25 produced voice noes, followed by Scott's recorded-vote demand and postponement. Resumed March27 proceedings ordered a recorded vote and rejected the amendment,199 ayes to214 noes with23 not voting. Rejection did not enact this replacement. A vote on the whole substitute does not establish a separate preference about translators, donors, individual citizenship groups or any other component. Candidate only; the same episode's passage review remains pending and behavioral propositions are held.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1048:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:79",
+          "immigration:roll79-initial171",
+          "immigration:roll79-recorded171",
+          "immigration:roll79-report171",
+          "house-rules:rcp1191-full-baseline173",
+          "immigration:hr1048-prior-ogles173",
+          "govinfo:hrpt38",
+          "govinfo:hres242eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 10079
         }
       },
       {
@@ -2292,6 +2330,14 @@
         "policy_family_id": null
       },
       {
+        "episode_id": "episode:hr1048:119",
+        "action_ids": [
+          "house:119:1:79"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
         "episode_id": "episode:hr22:119",
         "action_ids": [
           "house:119:1:102"
@@ -2549,10 +2595,26 @@
     "source_render_constraints": [
       {
         "action_ids": [
+          "house:119:1:79"
+        ],
+        "constraint_id": "candidate-episode-hold",
+        "detail": "Hold H.R.1048 authored episode: passage83qualification/domain and exact package review is pending after the same material personal qualification was found in its prior excluded EH witness. Scott79is a source-mapped candidate only, pending independent review; no whole-substitute component preference or individual application claim.",
+        "semantic_effect": "blocks_behavioral_propositions"
+      },
+      {
+        "action_ids": [
           "house:119:2:244"
         ],
         "constraint_id": "source:house119-session2-roll244-immigration-attribution",
         "detail": "Limit Immigration & Border attribution to the explicit $50 million reduction to the United States Emergency Refugee and Migration Assistance Fund (ERMA), compared with the proposed $100 million appropriation. Preserve the Jordan funding prohibition and all eight named reductions as one combined amendment choice; a member vote does not establish separate component positions or Immigration meaning for every foreign-assistance account. Reserve application of the Jordan prohibition in light of 22 USC2601(f); do not conclude that either restriction automatically overrides the other. This application reservation does not make the independent literal ERMA reduction contingent or block the whole-choice behavioral finding.",
+        "semantic_effect": "bounds_cross_domain_attribution"
+      },
+      {
+        "action_ids": [
+          "house:119:1:79"
+        ],
+        "constraint_id": "source:house119-session1-roll79-immigration-attribution",
+        "detail": "Limit Immigration attribution to the removed proposed personal translator qualification and its complete donor/country/citizenship/foreign-source chain. Preserve the whole substitute and baseline, all source limbs and retained English translation duties. No current-law repeal, universal translator eligibility or component preference. Agency and individual country application remain reserved; episode held pending passage83review.",
         "semantic_effect": "bounds_cross_domain_attribution"
       }
     ],

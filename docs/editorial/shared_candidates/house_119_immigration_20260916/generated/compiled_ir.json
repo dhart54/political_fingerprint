@@ -5,17 +5,17 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 45,
+        "eligible_substantive_actions": 46,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 45,
-        "resolved_eligible_actions": 45,
-        "directional_yes_no_positions": 45,
+        "in_service_eligible_actions": 46,
+        "resolved_eligible_actions": 46,
+        "directional_yes_no_positions": 46,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 41,
+        "complete_episodes": 42,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -978,25 +978,31 @@
           "house:119:2:94",
           "house:119:2:96"
         ],
-        "non_proposition_reasons": []
+        "non_proposition_reasons": [
+          {
+            "action_id": "house:119:1:79",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          }
+        ]
       },
-      "review_route": "human_exception_required"
+      "review_route": "blocked"
     },
     {
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 45,
+        "eligible_substantive_actions": 46,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 45,
-        "resolved_eligible_actions": 45,
-        "directional_yes_no_positions": 43,
+        "in_service_eligible_actions": 46,
+        "resolved_eligible_actions": 46,
+        "directional_yes_no_positions": 44,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
         "unresolved_service_actions": 0,
         "outside_service_actions": 0,
-        "complete_episodes": 41,
+        "complete_episodes": 42,
         "partial_episodes": 0
       },
       "proposition_graph": {
@@ -1943,22 +1949,43 @@
             "detail": "The action is explicitly excluded from behavioral evidence."
           },
           {
+            "action_id": "house:119:1:79",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
             "action_id": "house:119:2:169",
             "reason_code": "non_directional_status",
             "detail": "The action is explicitly excluded from behavioral evidence."
           }
         ]
       },
-      "review_route": "human_exception_required"
+      "review_route": "blocked"
     }
   ],
   "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:1:79"
+      ],
+      "constraint_id": "candidate-episode-hold",
+      "detail": "Hold H.R.1048 authored episode: passage83qualification/domain and exact package review is pending after the same material personal qualification was found in its prior excluded EH witness. Scott79is a source-mapped candidate only, pending independent review; no whole-substitute component preference or individual application claim.",
+      "semantic_effect": "blocks_behavioral_propositions"
+    },
     {
       "action_ids": [
         "house:119:2:244"
       ],
       "constraint_id": "source:house119-session2-roll244-immigration-attribution",
       "detail": "Limit Immigration & Border attribution to the explicit $50 million reduction to the United States Emergency Refugee and Migration Assistance Fund (ERMA), compared with the proposed $100 million appropriation. Preserve the Jordan funding prohibition and all eight named reductions as one combined amendment choice; a member vote does not establish separate component positions or Immigration meaning for every foreign-assistance account. Reserve application of the Jordan prohibition in light of 22 USC2601(f); do not conclude that either restriction automatically overrides the other. This application reservation does not make the independent literal ERMA reduction contingent or block the whole-choice behavioral finding.",
+      "semantic_effect": "bounds_cross_domain_attribution"
+    },
+    {
+      "action_ids": [
+        "house:119:1:79"
+      ],
+      "constraint_id": "source:house119-session1-roll79-immigration-attribution",
+      "detail": "Limit Immigration attribution to the removed proposed personal translator qualification and its complete donor/country/citizenship/foreign-source chain. Preserve the whole substitute and baseline, all source limbs and retained English translation duties. No current-law repeal, universal translator eligibility or component preference. Agency and individual country application remain reserved; episode held pending passage83review.",
       "semantic_effect": "bounds_cross_domain_attribution"
     }
   ]

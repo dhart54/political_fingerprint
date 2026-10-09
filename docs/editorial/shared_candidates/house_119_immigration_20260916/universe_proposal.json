@@ -61,7 +61,8 @@
     "house:119:2:120",
     "house:119:2:169",
     "house:119:2:214",
-    "house:119:2:244"
+    "house:119:2:244",
+    "house:119:1:79"
   ],
   "interpretation_action_set_cutoff": "2026-09-16",
   "inclusion_rule": "Membership requires an exact operative Immigration & Border mechanism: status/presence, admission, visas/asylum/refugees/parole, removal, detention/release, naturalization/citizenship, immigration documentation/verification/adjudication, direct border entry/inspection/enforcement, immigration-specific standards/cooperation, or eligibility directly governed by immigration status. Titles, policy labels, rhetoric, keywords and other-domain interpretations are leads only. Procedural/expressive controls remain noncounting.",
@@ -76,8 +77,8 @@
   "accounting": {
     "counts": {
       "procedural_context": 227,
-      "interpreted_substantive_directional": 45,
-      "exact_action_ineligible": 319,
+      "interpreted_substantive_directional": 46,
+      "exact_action_ineligible": 318,
       "source_unresolved": 83,
       "expressive_nonbinding_context": 2
     },
@@ -88,14 +89,14 @@
       "Independent operative screening is incomplete."
     ],
     "total_candidate_actions": 676,
-    "substantive_eligible_actions": 45,
-    "directional_substantive_actions": 45,
+    "substantive_eligible_actions": 46,
+    "directional_substantive_actions": 46,
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 319,
+    "exact_action_ineligible_actions": 318,
     "unresolved_boundary_cases": 83,
-    "independent_episode_count": 41,
+    "independent_episode_count": 42,
     "multi_action_episode_count": 4,
     "mechanism_types": [
       "amendment",
@@ -105,8 +106,8 @@
     ],
     "official_source_readiness": {
       "state": "partial_candidate_inputs_only",
-      "ready_substantive_actions": 45,
-      "substantive_actions": 45,
+      "ready_substantive_actions": 46,
+      "substantive_actions": 46,
       "complete_issue_membership_established": false
     },
     "material_source_gaps": [
@@ -354,6 +355,7 @@
         "house:119:1:63",
         "house:119:1:65",
         "house:119:1:70",
+        "house:119:1:79",
         "house:119:1:102",
         "house:119:1:116",
         "house:119:1:119",
@@ -432,7 +434,6 @@
         "house:119:1:80",
         "house:119:1:81",
         "house:119:1:82",
-        "house:119:1:83",
         "house:119:1:84",
         "house:119:1:85",
         "house:119:1:88",
@@ -712,7 +713,7 @@
       ],
       "source_unresolved": [
         "house:119:1:25",
-        "house:119:1:79",
+        "house:119:1:83",
         "house:119:1:151",
         "house:119:1:182",
         "house:119:1:199",
@@ -1050,6 +1051,12 @@
         "action_ids": [
           "house:119:2:244"
         ]
+      },
+      {
+        "episode_candidate_id": "episode:hr1048:119",
+        "action_ids": [
+          "house:119:1:79"
+        ]
       }
     ],
     "multi_action_episodes": [
@@ -1127,11 +1134,11 @@
         "legal_application_questions": "Separate queue now includes one bounded G102-105 printed-date/general-continuance question; no personal eligibility or FY2025 quota application accepted."
       }
     ],
-    "interpreted_action_count_qualification": "45 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
+    "interpreted_action_count_qualification": "46 interpreted exact actions establish candidate whole-action directional meanings. This count does not certify exhaustive component review of multi-domain packages; three selected-clause package limits and remaining executable work are explicit below."
   },
-  "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
+  "episode_completeness": "Explicit authored proposal episodes only; H.R.1048is held for pending passage83review. Wider episode coverage is not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "65b5931703e915dc95c28ffedbe366624a5aac01b10011e98b44822beb23b0c4",
+  "universe_subject_sha256": "8140862b4dc0b11128e913f903f6fe847e0f1342efc3c6c4a37b9de6c4ac7c8f",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -6319,8 +6326,8 @@
       "date": "2025-03-27",
       "measure": "bill_119_hr_1048",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Restored pending after parent171P2. Scott amendment3 replaces Print119-1page1line1 through page60line6. Deleted117(c) restricts required translators to persons other than the donor/contracting foreign source or another foreign source from its attributable country;117(f)(2) attributes a natural person country by citizenship/principal-residence fallback, and117(f)(4)(D) contains the non-U.S.-citizen/non-national natural-person limb including trust territory/protectorate wording. These material personal qualification predicates were omitted from the171exclusion and its bound Print evidence. Complete actual replaced baseline, earlier Ogles57-58changes and functional Immigration-domain review remain pending. Do not automatically include or dismiss this as disclosure fields; no individual eligibility or current-law effect inferred.",
+      "disposition": "interpreted_substantive_directional",
+      "reason": "Bounded candidate under the existing direct personal-qualification criterion, grounded in complete replaced Print and actual Scott substitute: omit proposed donor/same-country translator qualification whose foreign-source and attributable-country predicates involve citizenship/nationality and principal-residence fallback. Preserve all source/agency limbs, retained translation duties and whole replacement. Prior Ogles1/2 unchanged qualification verified. Exact initial/noes/demand/postponement/resumption/rejection and both Clerk labels bind. Novel qualification application and passage83review remain pending; typed episode hold prevents behavioral propositions. No approval/publication or individual legal outcome.",
       "source": {
         "source_id": "clerk:119:1:79",
         "url": "https://clerk.house.gov/evs/2025/roll079.xml",
@@ -6328,7 +6335,7 @@
         "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66",
         "verification": "unchanged_governed_source_reuse"
       },
-      "episode_candidate_id": null,
+      "episode_candidate_id": "episode:hr1048:119",
       "after_historical_july23_boundary": false,
       "bill_ref": "bill_119_hr_1048",
       "member_action": "yea",
@@ -6337,9 +6344,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Restored pending after parent171P2. Scott amendment3 replaces Print119-1page1line1 through page60line6. Deleted117(c) restricts required translators to persons other than the donor/contracting foreign source or another foreign source from its attributable country;117(f)(2) attributes a natural person country by citizenship/principal-residence fallback, and117(f)(4)(D) contains the non-U.S.-citizen/non-national natural-person limb including trust territory/protectorate wording. These material personal qualification predicates were omitted from the171exclusion and its bound Print evidence. Complete actual replaced baseline, earlier Ogles57-58changes and functional Immigration-domain review remain pending. Do not automatically include or dismiss this as disclosure fields; no individual eligibility or current-law effect inferred.",
-      "unresolved_reason": "pending_material_replaced_baseline_and_domain_review",
+      "issue_boundary_status": "interpreted_substantive_directional",
+      "rationale": "Bounded candidate under the existing direct personal-qualification criterion, grounded in complete replaced Print and actual Scott substitute: omit proposed donor/same-country translator qualification whose foreign-source and attributable-country predicates involve citizenship/nationality and principal-residence fallback. Preserve all source/agency limbs, retained translation duties and whole replacement. Prior Ogles1/2 unchanged qualification verified. Exact initial/noes/demand/postponement/resumption/rejection and both Clerk labels bind. Novel qualification application and passage83review remain pending; typed episode hold prevents behavioral propositions. No approval/publication or individual legal outcome.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:79",
@@ -6366,25 +6373,38 @@
           "governed_bytes_sha256": "c0d34feba2127b184af26afd3eb7f0febc905b226235368c23eff45c873ba7cc"
         },
         {
+          "source_id": "house-rules:rcp1191-full-baseline173",
+          "url": "https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf",
+          "raw_sha256": "7f39ccff3de9ad5daf431e2dd65933e8b16b170e5e8609a130d8e466087903b0",
+          "governed_bytes_sha256": "447d189f8c375ec715bbf80d979cbe18c4283b0f68a75658f6d50f6b2776cfc6"
+        },
+        {
+          "source_id": "immigration:hr1048-prior-ogles173",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+          "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+          "governed_bytes_sha256": "22a5a45af0c29d9d491295c031b623d75b1bf72e07c9f2a1f50a29804eb6a484"
+        },
+        {
+          "source_id": "govinfo:hrpt38",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
+          "raw_sha256": "c2b5ad47c4e36b86a5944aef60ca113eb4955a314caff0072fe0308afd9d9617",
+          "governed_bytes_sha256": "25f58db5e6dd9d218552bb7e941e291db7532304797aca0b7f7a27c64dcef99d"
+        },
+        {
           "source_id": "govinfo:hres242eh",
           "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
           "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
           "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
-        },
-        {
-          "source_id": "house-rules:rcp1191-translator-qualification172",
-          "url": "https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf",
-          "raw_sha256": "7f39ccff3de9ad5daf431e2dd65933e8b16b170e5e8609a130d8e466087903b0",
-          "governed_bytes_sha256": "4992f0847c03bb557198fd5f77d2a8efba349f6ad164b3e76145d45e0167b359"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
-        "exact_action_binding_unresolved": true,
+        "substantive_review_performed": true,
+        "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5d07f0ec6046f370f9055a9fd5153c791d3c6f1db8fdb27571f9ae5b550cb458"
       },
       "historical_raw_hash_matches": true
     },
@@ -6608,8 +6628,8 @@
       "date": "2025-03-27",
       "measure": "bill_119_hr_1048",
       "question": "On Passage",
-      "disposition": "exact_action_ineligible",
-      "reason": "Complete exact H.R.1048 EH governs higher-education foreign-gift/contract/investment disclosures, specified foreign-entity contracts/waivers, research conflict policies, databases and institutional enforcement/financial-aid participation consequences. Foreign-source nationality and country-of-citizenship/residence reporting identify external financial influence; they do not grant/revoke citizenship or immigration status, govern visa/admission/work authorization, or change INA terrorist-designation/admission law. ExistingINA219designation is referenced for affiliation reporting only; student admission refers to education. DHS is one report recipient, not a new immigration adjudicator. Full58,000-character exact package independently reviewed, not classified from title or another domain's conclusions.",
+      "disposition": "source_unresolved",
+      "reason": "Same-episode blocking material omission exposed by79baseline review: exact H.R.1048EH117(c) contains the donor/same-attributable-country translator qualification, not merely donor/reporting fields. Preserve the prior full-EH exclusion and audit as historical; restore passage83pending for complete exact qualification/domain and vote-time package review under existing standards. No automatic inclusion or acceptance;79episode behavioral propositions remain held.",
       "source": {
         "source_id": "clerk:119:1:83",
         "url": "https://clerk.house.gov/evs/2025/roll083.xml",
@@ -6626,9 +6646,9 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "exact_action_ineligible",
-      "rationale": "Complete exact H.R.1048 EH governs higher-education foreign-gift/contract/investment disclosures, specified foreign-entity contracts/waivers, research conflict policies, databases and institutional enforcement/financial-aid participation consequences. Foreign-source nationality and country-of-citizenship/residence reporting identify external financial influence; they do not grant/revoke citizenship or immigration status, govern visa/admission/work authorization, or change INA terrorist-designation/admission law. ExistingINA219designation is referenced for affiliation reporting only; student admission refers to education. DHS is one report recipient, not a new immigration adjudicator. Full58,000-character exact package independently reviewed, not classified from title or another domain's conclusions.",
-      "unresolved_reason": null,
+      "issue_boundary_status": "source_unresolved",
+      "rationale": "Same-episode blocking material omission exposed by79baseline review: exact H.R.1048EH117(c) contains the donor/same-attributable-country translator qualification, not merely donor/reporting fields. Preserve the prior full-EH exclusion and audit as historical; restore passage83pending for complete exact qualification/domain and vote-time package review under existing standards. No automatic inclusion or acceptance;79episode behavioral propositions remain held.",
+      "unresolved_reason": "pending_same_episode_translator_qualification_and_exact_package_review",
       "sources": [
         {
           "source_id": "clerk:119:1:83",
@@ -6652,11 +6672,10 @@
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": true,
-        "exact_action_binding_unresolved": false,
+        "substantive_review_performed": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "3843ef13f7ac78b5a3df5b6f1ad8104924a3971c60ed1cbbcf85dac9834419bb"
+        "authoritative_source_conflict": false
       },
       "historical_raw_hash_matches": true
     },
@@ -44284,11 +44303,12 @@
     "house:119:2:120",
     "house:119:2:169",
     "house:119:2:214",
-    "house:119:2:244"
+    "house:119:2:244",
+    "house:119:1:79"
   ],
   "unresolved_action_ids": [
     "house:119:1:25",
-    "house:119:1:79",
+    "house:119:1:83",
     "house:119:1:151",
     "house:119:1:182",
     "house:119:1:199",
@@ -44387,6 +44407,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "21a773ee85303bb8b46a95782a271d01827736bc19b9de271d63544c56917c5d",
-  "membership_review_sha256": "96fe5e71526a8d68eedfc4aafd0191ccf9bca90bca75264b9aff8fe44fe82337"
+  "proposal_sha256": "d583b6b1c99b2e5706c5b816636be0d62338f06605b70d78d9927a0e543453fb",
+  "membership_review_sha256": "32c6b327059f8a4d091475c11e1c2d47e647a5d5df53ffe77f11983b41fc8186"
 }
