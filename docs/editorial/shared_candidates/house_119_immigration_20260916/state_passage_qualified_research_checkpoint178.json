@@ -413,7 +413,7 @@
     {
       "observation_id": "adopted-amendments-and-funding-conditions",
       "state": "source_qualified_research_candidate_pending_review",
-      "meaning": "Actual floor witnesses establish the nine en-bloc agreements plus amendments 4, 27 and 28 voice agreements. EH reflects NGO-exception deletion, Mexico 30% to 50% and Nigeria 50% to 100% changes, trafficking minimum increase, military-training clause and other printed paired account operators.",
+      "meaning": "Actual floor witnesses establish agreement on the single nine-amendment en-bloc offer plus separate voice agreements on amendments 4, 27 and 28. EH reflects NGO-exception deletion, Mexico 30% to 50% and Nigeria 50% to 100% changes, trafficking minimum increase, military-training clause and other printed paired account operators.",
       "limitations": [
         "Amendments 7 and 17 materially conflict as routed above. Report availability alone is not adoption. amendments 1, 6, 8, 9 and 20 failed recorded votes remain distinct; no independent member choice is inferred from voice votes. Nigeria conditions include displacement support and safe return/resettlement; aid conditions do not alone establish U.S. entry rules. Crane operative citation remains literally 22 U.S.C. 2347(b), not silently rewritten to 2347b."
       ],
@@ -475,6 +475,26 @@
           "source_text_extent": {
             "start": 266142,
             "end": 272541,
+            "total": 333636
+          }
+        },
+        {
+          "source_id": "primary:state-record-167",
+          "locator": "Actual A4 question, agreement and A5 not-offered boundary; preserved primary serialization",
+          "passage": "The Acting CHAIR. The question is \non the amendment offered by the gen-\ntleman from Arizona (Mr. C\nRANE). \nThe amendment was agreed to. \nThe Acting CHAIR. The Chair under-\nstands that amendment No. 5 will not \nbe offered. \n",
+          "source_text_extent": {
+            "start": 18650,
+            "end": 18873,
+            "total": 106778
+          }
+        },
+        {
+          "source_id": "govinfo:hr8595eh",
+          "locator": "Complete actual EH8002 and short-title boundary; printed citation retained",
+          "passage": "Sec. 8002. None of the funds appropriated or otherwise made available by this Act may be used to furnish military education and training absent reimbursement pursuant to 22 U.S.C. 2347(b). This division may be cited as the ``National Security, Department of State, and Related Programs Appropriations Act, 2027''. ",
+          "source_text_extent": {
+            "start": 301057,
+            "end": 301371,
             "total": 333636
           }
         }
@@ -1008,7 +1028,7 @@
     "functional_benchmark_result_unchanged": "FAIL; previous174 average approximately13minutes; no extra benchmark round"
   },
   "special_benchmark_round": false,
-  "receipt_sha256": "83d4755e4f96f98dc528cba36586e0d78f89451183dc05159fd6d16d3ceac798",
+  "receipt_sha256": "3fbebc75cf3f98c52c55dfcc851ef98e2b3f1f82abcb7681dcaf3340bd8cfdf0",
   "validation": {
     "focused_tests": 192,
     "runtime_seconds": 17.226,
@@ -1025,7 +1045,7 @@
       "unique_source_seals_verified": 2373,
       "literal_derivatives_verified": 2,
       "primary_raw_acquisitions_verified": 8,
-      "source_mapped_literal_claims_verified": 34,
+      "source_mapped_literal_claims_verified": 36,
       "whole_EH_read_intervals_verified": 10,
       "historical_blobs_preserved": 765,
       "generated_files_replayed": 7,
@@ -1067,6 +1087,7 @@
       "First RH page lookup assumed a cover offset and stopped before body reading; verified printed-page labels corrected the offset. Failed helper preserved.",
       "Historical bounded Rules report is intrinsically partial. Fresh full capture supplies complete PartA1-29 without rewriting the old witness.",
       "Record44-46 combined output truncated part of page45; complete page45 independently reread and rendered. No complete76-page Record reading claim."
-    ]
+    ],
+    "final_precision_correction": "Single en-bloc agreement covers nine amendments; explicit literal Crane A4 adoption and EH8002 mappings added. No source, count, shared meaning or compiled proposition changes."
   }
 }

@@ -1101,7 +1101,7 @@ vote. Crane's printed 22 U.S.C. 2347(b) reference is preserved literally. Its Re
 floor and EH operative clause agree; debate scope cannot silently rewrite it.
 
 Nine canonical sources and eleven registrations are added: 1,970 sources/853
-registrations. 34 literal claim mappings, two derivatives, eight official raw
+registrations. 36 literal claim mappings, two derivatives, eight official raw
 captures, four PDF witness replays and seven full normalized HTML replays verify.
 Ten complete EH reading intervals, 765 historical Git blobs and all prior source,
 manifest/capture prefixes are preserved. Seven generated outputs replay; six
@@ -1136,3 +1136,9 @@ exact source correction or an established governed precedence rule. Until then,
 passage 247 stays pending; application review and safe shared-core reuse remain
 explicit downstream work. No merge, acceptance, promotion, publication,
 production, schema, security, configuration or deployment authorization exists.
+
+Final precision correction: one en-bloc agreement covered the nine amendments;
+explicit literal Crane A4 adoption and EH8002 passages are now mapped. The two
+focused regressions were rerun after this small correction; prior semantics and
+all source conflicts are unchanged. The first178 feature head remains recorded
+as delivery history; final-head CI is verified separately.
