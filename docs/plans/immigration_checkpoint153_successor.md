@@ -1557,3 +1557,73 @@ special benchmark round or scaling. Initial source selection/lead lookup is
 untimed; actual source/authoring, local validation and delivery endpoints are
 retained with tests and delivery overhead. Continue executable candidate source
 work while new CI and independent review are reconciled; no routine handoff.
+
+
+## Checkpoint 186: vessel/property exact-action screening and bounded follow-ups
+
+The same owner continues from 185 at 3ddec3f126e73f4c58052d2c1d32229897198d39.
+House 119/2/105 asks passage of the complete H.R.7084 committee substitute
+adopted under H.Res.1131 section 4. The complete offered body is 3,931 characters
+and agrees with the EH operator in alphanumeric comparison, with original
+punctuation/source text preserved. Complete dated 70022 operative and full rule
+are reused. Own recorded sequence is 4,901 characters: passage question, voice
+ayes, Larsen demand, order and 247-164 passage with 20 Not Voting. Foushee Nay
+and Massie Yea match unchanged Clerk raw bytes, metadata and all party totals.
+Printed H2783/H2787 source pages are visually checked; the full 11-page House
+PDF is captured/replayed but not certified as human-read.
+
+The exact operator adds a designated foreign-property port-transit vessel class
+under retained foreign-vessel/arrival-notice limits, not migrant admission,
+visas, asylum, removal or an immigration-status-governed benefit. The at-transit
+conditions, discretionary designation, printed arbitration qualification in the
+B branch, mandatory removal upon presidential determination, and new exceptions
+referencing the whole redesigned b(1) class are retained. Existing safety-based
+provisional entry and international passage rights remain separate. United
+States person remains literal property-ownership text; no citizen-only definition,
+actual expropriation, designation inventory, sanction application, enactment,
+motive or component endorsement is inferred. Candidate functional exclusion is
+noncounting and awaits independent domain review. Coast Guard migration debate
+and adjacent DHS rule business do not provide changed-action meaning.
+
+One member-neutral membership record is added; all 602 prior records remain
+unchanged. Counts are 603 reviewed / 73 pending (56 ordinary, 17 researched holds),
+47 compiled meanings / 80 propositions, 70 questions and three partial packages.
+Four canonical sources are added: two reused Health sources and two new exact
+floor derivatives. Five registrations include the already-governed rule's new
+registration. Sources are 2,083; registrations 973. Private derived aliases add
+two; old aliases and one rejected wrong-subchapter response remain preserved.
+No second shared meaning, new proposition, compiler use or acceptance.
+
+Independent 183/184 review closed 22:46:09 UTC after 425 reviewer seconds,
+closing all three FISA precision findings with 53 passages, 51 preservation
+checks, seven replays and 15 reviewer tests. Independent 185 review closed
+22:54:07 UTC after 281 reviewer seconds, with no new material defect, four
+derivatives, 14 claims, 37 preservation checks and seven replays. Childcare is
+supported only while held. Full-parent reading/current application and the dated
+45 CFR 98.20(c)/98.68 child-versus-parent/operational-plan baseline remain needed;
+blocked ACF routes will not be retried. These bounded outcomes confer no editorial
+acceptance, publication or compiler release. 184/185 CI receipts record nine fresh
+first-attempt green jobs each, actual five feature/three synthetic/one mixed.
+
+The nonblocking FISA test gap is folded here: an isolated mutation removes only
+the explicit monthly-submission/expanded-waiver linkage from each of the three
+active artifact copies, preserving the independent finding/exception anchors.
+The strengthened guard rejects it. Source prose and all FISA digests are unchanged.
+This is not a standalone receipt/test-only checkpoint.
+
+Validation: 203 focused tests in 17.670 seconds, seven semantic checks, mechanical
+IR references, five literal claims, four raw-parent text replays, two exact
+derivatives, own bill identity, floor/EH operator agreement and exact chronology
+pass. All 31 frozen Health/canonical/FISA/childcare artifact blobs are preserved.
+Six semantic products are unchanged; only proof inventory metadata changes and
+all seven generated files byte-replay. Independent 186 review remains pending.
+
+Performance FAIL remains the previous comparable 781.087 seconds per completion.
+This is one ordinary screening with a requested small material regression repair,
+not a fresh benchmark round or scaling. Its source/authoring phase took
+653.278 seconds before validation/delivery, already above the 600-second ceiling.
+Review-application-path discovery and the safely corrected helper failures are
+included in that interval. Initial metadata selection is untimed; actual later
+endpoints include predecessor CI/review reconciliation without subtraction. No
+new average or zero-completion denominator is inferred. Continue coherent
+candidate source work without a routine approval gate or writer release.

@@ -63,7 +63,28 @@ class SourceSequenceTests(unittest.TestCase):
         finding = next(action for action in receipt['qualified_held_findings'] if action['action_id'] == 'house:119:2:142')
         qualification = next(action for action in mapping['action_mappings'] if action['action_id'] == 'house:119:2:142')['structural_metadata']['candidate_exact_qualification']
         for meaning in [core['actions'][0]['candidate_exact_action_meaning'], finding['candidate_observation'], qualification]:
-            require_source_sequence(meaning, receipt['source_qualification_anchors'])
+            require_source_sequence(meaning, ['The monthly submission clause (D)(iv) is within the expanded FISC waiver range'] + receipt['source_qualification_anchors'])
+
+    def test_isolated_monthly_submission_waiver_linkage_deletion_rejected(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        receipt = json.loads((root / 'docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_precision_correction_checkpoint184.json').read_text())
+        core = json.loads((root / receipt['active_candidate_core_path']).read_text())
+        mapping = json.loads((root / receipt['active_candidate_issue_mapping_path']).read_text())
+        finding = next(action for action in receipt['qualified_held_findings'] if action['action_id'] == 'house:119:2:142')
+        qualification = next(action for action in mapping['action_mappings'] if action['action_id'] == 'house:119:2:142')['structural_metadata']['candidate_exact_qualification']
+        linkage = 'The monthly submission clause (D)(iv) is within the expanded FISC waiver range'
+        for meaning in [core['actions'][0]['candidate_exact_action_meaning'], finding['candidate_observation'], qualification]:
+            with self.subTest(meaning=meaning):
+                start = meaning.index(linkage)
+                end = meaning.index(' The FISC waiver applies only', start)
+                mutated = meaning[:start] + meaning[end:]
+                # Finding/exception anchors survive this isolated deletion;
+                # they cannot verify the missing monthly-submission linkage.
+                require_source_sequence(mutated, receipt['source_qualification_anchors'])
+                with self.assertRaises(ValueError):
+                    require_source_sequence(mutated, [linkage] + receipt['source_qualification_anchors'])
 
     def test_prior_fisa_candidate_without_material_waiver_rejected(self):
         import json
