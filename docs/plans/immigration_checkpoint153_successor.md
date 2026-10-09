@@ -680,3 +680,50 @@ and the eight frozen amendment cases remain. Receipt records observed repair
 time and explicitly unmeasured initial resume reading; powered-off pause is
 excluded. Next: bounded repair commit/push/CI, then continue frozen source review.
 No editorial acceptance, publication, merge, deployment or production authority.
+
+
+## Checkpoint 171: five exclusions, three source holds
+
+The frozen session 1 amendment batch attempted rolls 79, 150, 180, 207, 210,
+237, 252 and 326. Five bounded functional Immigration exclusion candidates
+are complete: Scott's foreign-gift disclosure substitute, Pettersen's complete
+CMS budget-neutrality guidance, Carter's seven-amendment military/VA en bloc,
+Greene's entire Israeli-program earmark deletion, and Waters/Garcia's foreign
+client KYC/AML requirement. Whole choices, qualified definitions and funding
+mechanics, actual voice/demand/postponement/resumption and Clerk labels remain.
+No donor/client guilt, parent-title eligibility or debate-only project meaning.
+
+210 retains the Report may/floor missing-may discrepancy. 237 retains the
+$50,000 Report/floor reduction discrepancy; the meeting image is not a proved
+formal correction. 252 retains the protected-property/National Defense Area
+and direct-border source-chain question. These three attempts remain pending
+and receive zero completion credit. Original pending rows and all source
+versions are preserved. A fresh exact December 10 own-stage witness recovers
+page 16 absent from the old selected Health source; that historical witness
+is unchanged and broader Health reconciliation is a follow-up. Failed source
+fetches and private helper locators remain in .tmp; none supplies authority.
+
+Counts: 594 reviewed, 82 pending, 45 meanings, 80 propositions, 70 application
+questions, three partial packages. 1,929 sources and 791 capture registrations.
+All six semantic outputs are byte-identical to checkpoint 170. Seven-output
+replay, source seals and 20 derivative extents, prior source/capture/member/
+audit prefixes and 168 historical Git blob identities pass. 188 focused tests
+(16.502 seconds), seven semantic checks and accepted/held-out references pass.
+33 selected material PDF pages inspected; no full-current-law certification.
+
+Parent bounded independent review closes checkpoint 170's inherited 169
+action 244 P2. Its four regressions, 16 additional probes and five-output replay
+remain distinct from owner 188 tests/seven-output replay. Nine first-attempt
+170 CI jobs verified in their actual feature/synthetic checkout contexts.
+This is candidate review, not editorial acceptance or publication authority.
+
+The sealed 171 receipt records the frozen attempt set and honest timing. The
+observed pre-shutdown interval includes handoff; powered-off pause is excluded.
+The resumed clock overlaps final 170 delivery and that overlap is disclosed.
+The conservative observed total already exceeds ten minutes per completed
+screening; resumed-only Git/CI endpoints must be reported separately. Held
+attempts do not inflate the denominator. Do not silently scale this failing
+result or claim four-minute full cycles; acquisition/receipt/locator overhead
+needs improvement without removing source/domain checks or final validation.
+Independent 171 review remains pending. No merge, deployment, publication,
+production write, semantic acceptance or methodology change.

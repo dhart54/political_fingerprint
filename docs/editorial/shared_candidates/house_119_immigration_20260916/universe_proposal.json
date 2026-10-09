@@ -77,8 +77,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 45,
-      "exact_action_ineligible": 315,
-      "source_unresolved": 87,
+      "exact_action_ineligible": 320,
+      "source_unresolved": 82,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -93,8 +93,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 315,
-    "unresolved_boundary_cases": 87,
+    "exact_action_ineligible_actions": 320,
+    "unresolved_boundary_cases": 82,
     "independent_episode_count": 41,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -429,6 +429,7 @@
         "house:119:1:74",
         "house:119:1:77",
         "house:119:1:78",
+        "house:119:1:79",
         "house:119:1:80",
         "house:119:1:81",
         "house:119:1:82",
@@ -469,6 +470,7 @@
         "house:119:1:143",
         "house:119:1:146",
         "house:119:1:147",
+        "house:119:1:150",
         "house:119:1:155",
         "house:119:1:157",
         "house:119:1:158",
@@ -477,6 +479,7 @@
         "house:119:1:173",
         "house:119:1:174",
         "house:119:1:179",
+        "house:119:1:180",
         "house:119:1:185",
         "house:119:1:191",
         "house:119:1:192",
@@ -486,6 +489,7 @@
         "house:119:1:204",
         "house:119:1:205",
         "house:119:1:206",
+        "house:119:1:207",
         "house:119:1:208",
         "house:119:1:209",
         "house:119:1:213",
@@ -560,6 +564,7 @@
         "house:119:1:323",
         "house:119:1:324",
         "house:119:1:325",
+        "house:119:1:326",
         "house:119:1:327",
         "house:119:1:328",
         "house:119:1:330",
@@ -708,14 +713,10 @@
       ],
       "source_unresolved": [
         "house:119:1:25",
-        "house:119:1:79",
-        "house:119:1:150",
         "house:119:1:151",
-        "house:119:1:180",
         "house:119:1:182",
         "house:119:1:199",
         "house:119:1:200",
-        "house:119:1:207",
         "house:119:1:210",
         "house:119:1:212",
         "house:119:1:218",
@@ -729,7 +730,6 @@
         "house:119:1:298",
         "house:119:1:299",
         "house:119:1:320",
-        "house:119:1:326",
         "house:119:1:332",
         "house:119:1:349",
         "house:119:1:351",
@@ -1131,7 +1131,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "0ab07f7de5055b0f5facf31d22b7821c8f4cd88f5e03e6c6434137cb2e867c43",
+  "universe_subject_sha256": "bd979053f66917c0f62819633f4ac9d852210433fd34e1f5976b0fa6cea4b76d",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -6319,8 +6319,8 @@
       "date": "2025-03-27",
       "measure": "bill_119_hr_1048",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Scott amendment3 replaces the specified Print119-1 text with a complete HEA foreign-gift/contract disclosure and compliance regime. It specifies $100,000 annual/$250,000 three-calendar-year reporting thresholds, annual July31 timing, foreign ownership/control reporting, records and true-copy/translation requirements, public-access and privacy limits, accuracy/cure and qualified enforcement, individual non-agent student-payment exclusions, research-risk exceptions, foundation coverage and rulemaking/effectiveness. Foreign-source citizenship and country fields identify covered funding/disclosures; reported restricted-gift conditions concerning student selection/admission do not themselves create a personal immigration-status or admission rule. The literal repeated purpose wording is preserved, not repaired. This is institutional financial transparency/compliance rather than human admission, immigration status, citizenship eligibility or a direct border mechanism. No broader parent-title prohibitions, donor guilt, present legal applicability or actual educational/security outcomes inferred. Initial own proceedings March25, resumed recorded rejection March27:199-214,23Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
       "source": {
         "source_id": "clerk:119:1:79",
         "url": "https://clerk.house.gov/evs/2025/roll079.xml",
@@ -6337,25 +6337,49 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Scott amendment3 replaces the specified Print119-1 text with a complete HEA foreign-gift/contract disclosure and compliance regime. It specifies $100,000 annual/$250,000 three-calendar-year reporting thresholds, annual July31 timing, foreign ownership/control reporting, records and true-copy/translation requirements, public-access and privacy limits, accuracy/cure and qualified enforcement, individual non-agent student-payment exclusions, research-risk exceptions, foundation coverage and rulemaking/effectiveness. Foreign-source citizenship and country fields identify covered funding/disclosures; reported restricted-gift conditions concerning student selection/admission do not themselves create a personal immigration-status or admission rule. The literal repeated purpose wording is preserved, not repaired. This is institutional financial transparency/compliance rather than human admission, immigration status, citizenship eligibility or a direct border mechanism. No broader parent-title prohibitions, donor guilt, present legal applicability or actual educational/security outcomes inferred. Initial own proceedings March25, resumed recorded rejection March27:199-214,23Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:79",
           "url": "https://clerk.house.gov/evs/2025/roll079.xml",
           "raw_sha256": "66adc268d659363b5f0f76e27503ca1a4e11a7b0c1947ecf8d95348192c3b5ea",
-          "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66"
+        },
+        {
+          "source_id": "immigration:roll79-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+          "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+          "governed_bytes_sha256": "6301e883649b5b9bd73d46d08eb29d21c6ab9dfc161bc93efdf20da1f793a019"
+        },
+        {
+          "source_id": "immigration:roll79-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
+          "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+          "governed_bytes_sha256": "c8624cf67a702d4eca46f303037a686c61b5bd9809ec3ef3df8373bfd0a08103"
+        },
+        {
+          "source_id": "immigration:roll79-report171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
+          "raw_sha256": "c2b5ad47c4e36b86a5944aef60ca113eb4955a314caff0072fe0308afd9d9617",
+          "governed_bytes_sha256": "c0d34feba2127b184af26afd3eb7f0febc905b226235368c23eff45c873ba7cc"
+        },
+        {
+          "source_id": "govinfo:hres242eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+          "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
+          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "f2443f3abe491de1904f2e144a29c437fe81e9483185ebbc538a86bae68bb5b3"
       },
       "historical_raw_hash_matches": true
     },
@@ -11172,8 +11196,8 @@
       "date": "2025-06-04",
       "measure": "H R 2483",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Pettersen PartA3 gives the entire CMS August22,2024 SMD24-003 guidance for budget neutrality of section1115(a) Medicaid demonstrations the force and effect of law. The complete letter and dated1315(a) authority retain case-specific waiver/expenditure conditions; without-waiver/with-waiver limits, per-capita/aggregate methods, hypothetical limits, 3percent HRSN/15percent infrastructure boundaries, DSH diversion, savings rollovers, rebasing, monitoring/corrective plans and return of excess funds. These are expenditure-budget methods for approved demonstrations; the amendment does not create immigration-status, admission, citizenship or status-governed personal benefit eligibility. No repeal of other eligibility law, guaranteed waiver approval or actual health/cost effects inferred. Actual own June4 recorded vote tied213-213,12Not Voting, and was rejected. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
       "source": {
         "source_id": "clerk:119:1:150",
         "url": "https://clerk.house.gov/evs/2025/roll150.xml",
@@ -11191,25 +11215,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Pettersen PartA3 gives the entire CMS August22,2024 SMD24-003 guidance for budget neutrality of section1115(a) Medicaid demonstrations the force and effect of law. The complete letter and dated1315(a) authority retain case-specific waiver/expenditure conditions; without-waiver/with-waiver limits, per-capita/aggregate methods, hypothetical limits, 3percent HRSN/15percent infrastructure boundaries, DSH diversion, savings rollovers, rebasing, monitoring/corrective plans and return of excess funds. These are expenditure-budget methods for approved demonstrations; the amendment does not create immigration-status, admission, citizenship or status-governed personal benefit eligibility. No repeal of other eligibility law, guaranteed waiver approval or actual health/cost effects inferred. Actual own June4 recorded vote tied213-213,12Not Voting, and was rejected. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:150",
           "url": "https://clerk.house.gov/evs/2025/roll150.xml",
           "raw_sha256": "0d8ec08c30c91abbc8ee1f1013a68bb867d7f905eef4bd718aea9eac19addac7",
-          "governed_bytes_sha256": "6b5bdb5a3c576a97b7418ca18eeee5ea73d87d2818c8d9f99239eb5b8d4d6451",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "6b5bdb5a3c576a97b7418ca18eeee5ea73d87d2818c8d9f99239eb5b8d4d6451"
+        },
+        {
+          "source_id": "immigration:roll150-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+          "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+          "governed_bytes_sha256": "b4554f389a1a07a3ed06fe20e789ecd081f1dd1ccf6999ed66ace92a04ee8d89"
+        },
+        {
+          "source_id": "immigration:roll150-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-04/pdf/CREC-2025-06-04-house.pdf",
+          "raw_sha256": "2670e526fcb4b1d437603294c978176b7ccfa8c12cfd494bb17cdfdd774dccae",
+          "governed_bytes_sha256": "7cc847c3857a26ffc9f508afd901414aaee70bc2cab4423b2de48c603cfb4190"
+        },
+        {
+          "source_id": "immigration:roll150-report171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt130/html/CRPT-119hrpt130.htm",
+          "raw_sha256": "e400873251d6b9864dfd79b961b15682a13ef2b3535a9fcfaf49bf1c808e1f86",
+          "governed_bytes_sha256": "60ae68942d9d65be0fa55e182d8032c0ba1e523805f34c001870d156e16a7648"
+        },
+        {
+          "source_id": "cms:smd24003",
+          "url": "https://www.medicaid.gov/federal-policy-guidance/downloads/smd24003.pdf",
+          "raw_sha256": "b9eb2e7077fbd4cfdc5d81cab35bab18d47f5bc220d65a01f6ed9b6188b590a8",
+          "governed_bytes_sha256": "61ac79661105bbac75226bcc8823ff8dd040b457d06f8c330b928f4cade6dbc9"
+        },
+        {
+          "source_id": "govinfo:42usc1315a-operative171",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapXI-partA-sec1315.htm",
+          "raw_sha256": "7b57e71712d2fb4f1267ab247eedfb1e2c78711ec4d1b711642696cd658a30b7",
+          "governed_bytes_sha256": "3bb61af13056905e7f3cfc3dd986ee1474406dce8aee4dc500efcff2675ff18c"
+        },
+        {
+          "source_id": "govinfo:hres458eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres458eh/html/BILLS-119hres458eh.htm",
+          "raw_sha256": "f24174bcef854f89c5bb8cad4fbda9d18918c2df603d5101d49a438b5b3fe392",
+          "governed_bytes_sha256": "3dd0a670cdb3ac2820afe38836dc86f06ec1a9a9b4e29479a76de452ade511d7"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "657b657f2050394773106263950813ceb761753deebbc471e32afd079f828152"
       }
     },
     {
@@ -12980,8 +13040,8 @@
       "date": "2025-06-25",
       "measure": "bill_119_hr_3944",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Carter en-bloc2 combines all seven Report167 amendments1/14/15/19/25/28/32 in one choice. Arrington1 adds $4.1million to the Air Force military-construction appropriation and separately its planning ceiling, reducing NATO Security Investment by $4.1million; the ceiling change is not a second $4.1million appropriation. Houchin14 reduces VBA general operating expenses by $5million and increases Medical Services by $5million. Five paired same-heading reductions/increases have zero net amount: unaccompanied housing $1million, Navy/Marine construction $1million, Medical Community Care $1million, Medical Services $1million and Army National Guard construction $55million. Whole actual target funding paragraphs/provisos and bounded NATO/veteran-support authority retained. Debate project descriptions and references to foreign nationals at bases do not add a binding project earmark or a personal immigration/admission/citizenship-status mechanism to those operative edits. Existing medical priorities and qualified authorities are context, not changed eligibility criteria. Actual initial composition/question and resumed219-206,13Not Voting agreement preserved. Reported530RH is rule context only, with actual offered procedure bound by the Record. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
       "source": {
         "source_id": "clerk:119:1:180",
         "url": "https://clerk.house.gov/evs/2025/roll180.xml",
@@ -12998,25 +13058,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Carter en-bloc2 combines all seven Report167 amendments1/14/15/19/25/28/32 in one choice. Arrington1 adds $4.1million to the Air Force military-construction appropriation and separately its planning ceiling, reducing NATO Security Investment by $4.1million; the ceiling change is not a second $4.1million appropriation. Houchin14 reduces VBA general operating expenses by $5million and increases Medical Services by $5million. Five paired same-heading reductions/increases have zero net amount: unaccompanied housing $1million, Navy/Marine construction $1million, Medical Community Care $1million, Medical Services $1million and Army National Guard construction $55million. Whole actual target funding paragraphs/provisos and bounded NATO/veteran-support authority retained. Debate project descriptions and references to foreign nationals at bases do not add a binding project earmark or a personal immigration/admission/citizenship-status mechanism to those operative edits. Existing medical priorities and qualified authorities are context, not changed eligibility criteria. Actual initial composition/question and resumed219-206,13Not Voting agreement preserved. Reported530RH is rule context only, with actual offered procedure bound by the Record. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:180",
           "url": "https://clerk.house.gov/evs/2025/roll180.xml",
           "raw_sha256": "f304776fa9f02d895e39a302d065ce348269acd1e0ec3984014ab8b0083629a2",
-          "governed_bytes_sha256": "a8dbad133b18ab93a861dc4e6a5ddcd4730d7277a2b251f4a424114b66cbe28f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a8dbad133b18ab93a861dc4e6a5ddcd4730d7277a2b251f4a424114b66cbe28f"
+        },
+        {
+          "source_id": "immigration:roll180-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf",
+          "raw_sha256": "f7408fc92908be3ddc2138b091a1849cf386677eabc81ac3f05c97db4afb3710",
+          "governed_bytes_sha256": "92a89fe6309218461926ba1aa1cacae4c3022291e983ac791bc2cdb1114abf69"
+        },
+        {
+          "source_id": "immigration:roll180-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-06-25/pdf/CREC-2025-06-25-house.pdf",
+          "raw_sha256": "f7408fc92908be3ddc2138b091a1849cf386677eabc81ac3f05c97db4afb3710",
+          "governed_bytes_sha256": "a5043992e770d92eb0ef56875a77317450fbebb1aae5160a89026c7b45af45b1"
+        },
+        {
+          "source_id": "immigration:roll180-report171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt167/html/CRPT-119hrpt167.htm",
+          "raw_sha256": "fe6f146f4cfca304a510c5d8cfbadd26ff41df2285e47b8d171a8856c382572f",
+          "governed_bytes_sha256": "f5946fe819b2037a6a5ee59568a075eb59b17424e98cdb191a187c26a98a280d"
+        },
+        {
+          "source_id": "house-rules:mlva-seven-target-pages171",
+          "url": "https://docs.house.gov/billsthisweek/20250623/mlva-rcp_xml.pdf",
+          "raw_sha256": "b7e738561c2da621d263483d8186ac24db8bf6ea4b174300d28c884133e24e80",
+          "governed_bytes_sha256": "a804331e34c0863a5e341d0c5f8a6c9f9f2635f9f600f41261c3af09c2faa3ac"
+        },
+        {
+          "source_id": "govinfo:10usc2806-operative160",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partIV-chap169-subchapI-sec2806.htm",
+          "raw_sha256": "fbad701c06f963b02890d6edef5e2caca3fc7d9b98e242884dda7e44e4de57c9",
+          "governed_bytes_sha256": "dfcf1477ec4a5839dd87d83eabfd5bd4d94690d41bbc934079d42c1f333ea320"
+        },
+        {
+          "source_id": "govinfo:38usc3104-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title38/html/USCODE-2024-title38-partIII-chap31-sec3104.htm",
+          "raw_sha256": "35141128c9be9963dcf902d7f98d7cf5a4190001eac2e303482f1fbe1ee6f02e",
+          "governed_bytes_sha256": "3abe5d9d040d15021c980a79b9505052242a206c9d4b2f8b6dd0617742ca7329"
+        },
+        {
+          "source_id": "govinfo:hres530rh-hr3944-context171",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres530rh/html/BILLS-119hres530rh.htm",
+          "raw_sha256": "b8567aed3011944df1e167b992f1ff634d10a91015524769bdd472a536ba671a",
+          "governed_bytes_sha256": "e76d7631cf4539d79b4d95835740ccf6913905dd3773f858b5b9f69d9020023f"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "763e59a495a248bf4aff01342eede767730779c9b2d14a9f679688818fb8e14b"
       },
       "historical_raw_hash_matches": true
     },
@@ -15270,8 +15372,8 @@
       "date": "2025-07-18",
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Greene PartA114 deletes complete RHsection8067, which directs $500million within Procurement Defense-Wide and RDT&E Defense-Wide to Israeli Cooperative Programs. Complete $60million Iron Dome, $127million SRBMD, $40million qualified SRBMD co-production, $100million upper-tier/Arrow3 and $173million Arrow improvements suballocations retained with agreement/law conditions. Removing this earmark/directive is not an automatic $500million account-total reduction, a ban on all Israeli assistance or repeal of all defense programs. The missile-program allocation contains no human immigration/admission/status or direct border mechanism; country names and geopolitical debate do not create one. Initial proceedings are in the July17 legislative-day Record; actual Clerk recorded vote July18 at12:20AM rejected6-422,9Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
       "source": {
         "source_id": "clerk:119:1:207",
         "url": "https://clerk.house.gov/evs/2025/roll207.xml",
@@ -15288,25 +15390,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Greene PartA114 deletes complete RHsection8067, which directs $500million within Procurement Defense-Wide and RDT&E Defense-Wide to Israeli Cooperative Programs. Complete $60million Iron Dome, $127million SRBMD, $40million qualified SRBMD co-production, $100million upper-tier/Arrow3 and $173million Arrow improvements suballocations retained with agreement/law conditions. Removing this earmark/directive is not an automatic $500million account-total reduction, a ban on all Israeli assistance or repeal of all defense programs. The missile-program allocation contains no human immigration/admission/status or direct border mechanism; country names and geopolitical debate do not create one. Initial proceedings are in the July17 legislative-day Record; actual Clerk recorded vote July18 at12:20AM rejected6-422,9Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:207",
           "url": "https://clerk.house.gov/evs/2025/roll207.xml",
           "raw_sha256": "0109fb4b75187dff14d9b6c8a818afea333bf18775e1a1245cf3e3f670ae5792",
-          "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "58cf4c11bf6ad9dab124785feb41059b8a00694b71a724d23557fcf4a7ade8e7"
+        },
+        {
+          "source_id": "immigration:roll207-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "c1cf0d23f6975dc9a3a5cfab311c7be08d4698f67cf5c75a78ddafa136ab1745"
+        },
+        {
+          "source_id": "immigration:roll207-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "bb3e05b8b9ca07c365eb1a4efe0b05c280004a7d5b1cbeca18bc060bdae36b18"
+        },
+        {
+          "source_id": "immigration:roll207-report171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "18c5afd3728d901b017029dd3c91bf708704c38c84b522ff6ad78ff8c2f535e5"
+        },
+        {
+          "source_id": "govinfo:hr4016rh-section8067-complete171",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4016rh/pdf/BILLS-119hr4016rh.pdf",
+          "raw_sha256": "dc555cb320d43b358387f1d5d3f8a9ee0a34a611b1c3cf0072988e9779b1c50f",
+          "governed_bytes_sha256": "99c223f19b5e318c0798a3b16895aa64835ce3e44a7e52faf62ce2c769ef9c79"
+        },
+        {
+          "source_id": "govinfo:hres580eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres580eh/html/BILLS-119hres580eh.htm",
+          "raw_sha256": "ef1f3755fc337f548fbfee0f07392219fb6cdc14b28c5a1ac2b3298099ca9269",
+          "governed_bytes_sha256": "c05e5ab80d545ef9f49f551dde83c7a0e7cdd393874be766db8c9c1ba16a7006"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "3f940e6d61b6966f0497e0b95919cd49f0f25171bcc360d81fc19b55e62a45aa"
       },
       "historical_raw_hash_matches": true
     },
@@ -15448,7 +15580,7 @@
       "measure": "bill_119_hr_4016",
       "question": "On Agreeing to the Amendment",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Report277 says may be used; actual July17 floor operative says be used without may. Preserve both literal texts and keep the inherited modal discrepancy unresolved. Broader material assistance/qualified authority and Immigration functional scope remain incomplete; no automatic ban interpretation or exclusion.",
       "source": {
         "source_id": "clerk:119:1:210",
         "url": "https://clerk.house.gov/evs/2025/roll210.xml",
@@ -15466,8 +15598,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Report277 says may be used; actual July17 floor operative says be used without may. Preserve both literal texts and keep the inherited modal discrepancy unresolved. Broader material assistance/qualified authority and Immigration functional scope remain incomplete; no automatic ban interpretation or exclusion.",
+      "unresolved_reason": "authoritative_operative_discrepancy",
       "sources": [
         {
           "source_id": "clerk:119:1:210",
@@ -15475,15 +15607,27 @@
           "raw_sha256": "f9785f154a6f14da671ff38a579b3c916f693dc650cc67b480cc091c4f6d0aba",
           "governed_bytes_sha256": "3ad7f0ad95b79047d55cbe260aab84a3b9d812e12aafaa4ac5d3ec2d906a95c3",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "immigration:roll210-report-modal-hold171",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt199/html/CRPT-119hrpt199.htm",
+          "raw_sha256": "87f588bae4285776fdeaf9636b51de9736e2cf59042984d90bd913bfeea41c88",
+          "governed_bytes_sha256": "d18b2c50a3b5da8b888f3880b38df2a61d48cbe1cffb2a23a16cdb1b4b44d839"
+        },
+        {
+          "source_id": "immigration:roll210-floor-modal-hold171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-07-17/pdf/CREC-2025-07-17-house.pdf",
+          "raw_sha256": "24c3b4df14fc1b37bba8fa988199caed007e27b2ed249eec3720e93cfa2a5b12",
+          "governed_bytes_sha256": "f2821e4361239c837fcec5187d2d3115a470d3889ed23c746fe2654ec27fdb8b"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": true
       },
       "historical_raw_hash_matches": true
     },
@@ -17167,7 +17311,7 @@
       "measure": "bill_119_hr_4553",
       "question": "On Agreeing to the Amendment",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Report119-232 amendment33 lists the page40line6 reduction as $1,114,784,219.49; the floor Record gives $1,114,734,219.49, a $50,000 difference. Rules meeting image agrees with the floor number but has blank report/resolution identifiers and is not established as a formal correction. Preserve all versions; source authority and all material targets remain unresolved.",
       "source": {
         "source_id": "clerk:119:1:237",
         "url": "https://clerk.house.gov/evs/2025/roll237.xml",
@@ -17185,8 +17329,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Report119-232 amendment33 lists the page40line6 reduction as $1,114,784,219.49; the floor Record gives $1,114,734,219.49, a $50,000 difference. Rules meeting image agrees with the floor number but has blank report/resolution identifiers and is not established as a formal correction. Preserve all versions; source authority and all material targets remain unresolved.",
+      "unresolved_reason": "authoritative_operative_discrepancy",
       "sources": [
         {
           "source_id": "clerk:119:1:237",
@@ -17194,15 +17338,33 @@
           "raw_sha256": "8d4c0a844d5cfb544b751f4e6d46eb91356c969833bd4298a62d37a5a76c4eb4",
           "governed_bytes_sha256": "26cb6732c91827e7cd9beab44246723608dff7aedc1e7291821b07f1e160d60e",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hrpt119-232-amend33-conflict",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt232/pdf/CRPT-119hrpt232.pdf",
+          "raw_sha256": "83d3e47812f0239213a7172628f8aa56ef942bf2cdcc30f90ca1e682bdb6abf8",
+          "governed_bytes_sha256": "d0889830dc677ca7b18b44f3d04ce64eb43ec54e6afc55174eb1cbe60ab17adc"
+        },
+        {
+          "source_id": "congressional-record:2025-09-04-amend33",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-09-04/pdf/CREC-2025-09-04-house.pdf",
+          "raw_sha256": "53317281db8f4d33bbae3bb30e1a831ab6efa1e0646ee6cfae554694925c499d",
+          "governed_bytes_sha256": "58be5e3465d4d13f9571e098972e426af2a538505ae5356712d52d1c4abc8849"
+        },
+        {
+          "source_id": "house-rules:4553-amend33-meeting-image",
+          "url": "https://docs.house.gov/meetings/RU/RU00/20250902/117805/HMTG-119-RU00-20250902-SD002.pdf",
+          "raw_sha256": "a7509ea3f125739cd5f8ef994ee4b698b06b0ee01bcd901988638d7bf15104b0",
+          "governed_bytes_sha256": "a554085310430c91658f99973ee8e723c85495172ac1e1bfcc356084748aa459"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": true
       },
       "historical_raw_hash_matches": true
     },
@@ -18062,7 +18224,7 @@
       "measure": "bill_119_hr_3838",
       "question": "On Agreeing to the Amendment",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Wilson PartA11 expands protected military property/trespass penalties and National Defense Area security regulations, with two-year/general-intent provisions and qualified regulation/real-property definitions. Entire own operative and dated18USC1382/50USC797 read; actual stage and direct-border/designated-area application chain remain incomplete. Do not automatically exclude as generic crime or use parent NDAA meaning as narrow action eligibility.",
       "source": {
         "source_id": "clerk:119:1:252",
         "url": "https://clerk.house.gov/evs/2025/roll252.xml",
@@ -18080,8 +18242,8 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Wilson PartA11 expands protected military property/trespass penalties and National Defense Area security regulations, with two-year/general-intent provisions and qualified regulation/real-property definitions. Entire own operative and dated18USC1382/50USC797 read; actual stage and direct-border/designated-area application chain remain incomplete. Do not automatically exclude as generic crime or use parent NDAA meaning as narrow action eligibility.",
+      "unresolved_reason": "pending_exact_stage_and_direct_border_source_chain",
       "sources": [
         {
           "source_id": "clerk:119:1:252",
@@ -18089,13 +18251,31 @@
           "raw_sha256": "157e7e6e23459e9d5a10bb169cd5329d7d4334a13b66867e2b1637e20d6b97b4",
           "governed_bytes_sha256": "dba4ff791c3e45aa5584e3b3910abfb601c8f43f1a01e8288950cd05e9fde390",
           "verification": "unchanged_governed_source_reuse"
+        },
+        {
+          "source_id": "govinfo:hrpt119-255-amend11",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt255/html/CRPT-119hrpt255.htm",
+          "raw_sha256": "382aa7c2171dd45a1af4a47ba55b3f7f66251cae4b2f07c3eddc9bf91566f757",
+          "governed_bytes_sha256": "4e4a6fb44eaee83ecdd5d29d3e8962dc2bc95ea543f7564d03573dc5ce332a0c"
+        },
+        {
+          "source_id": "govinfo:18usc1382-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap67-sec1382.htm",
+          "raw_sha256": "3e08389c079ddf408637fa132878dccf36cd1b2072afcf199207b58e321e1de5",
+          "governed_bytes_sha256": "bccd38e1a12370b07e54b655c90ab1ca84815716347c49620eb91cbf2b8c02c1"
+        },
+        {
+          "source_id": "govinfo:50usc797-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap23-subchapI-sec797.htm",
+          "raw_sha256": "9aaf9b0989b88063798504996b1740ddd2ee0afec67828d27e543ca97adaf008",
+          "governed_bytes_sha256": "6ca5b089eea9175096f1effd316f74bef258f5176a3977c971e67ade5980a6a8"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
         "substantive_review_performed": false,
-        "exact_action_binding_unresolved": false,
+        "exact_action_binding_unresolved": true,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false
       },
@@ -22190,8 +22370,8 @@
       "date": "2025-12-11",
       "measure": "bill_119_hr_3383",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Waters offered Garcia PartB3 as authorized designee, adding a Treasury rulemaking requirement for each investment adviser and hedge fund to comply with KYC/AML requirements under31USCchapter53subchapterII for foreign clients to the same extent as financial institutions. Hedge-fund definition incorporates Investment Company Act3(c)(1)/(7) exclusions; those exact bounded predicates and dated5311purpose/5312definitions/5318(h)program/5318(l)identity requirements are retained. This imposes financial diligence/reporting, not human immigration admission, removal or citizenship/status eligibility. The amendment does not define foreign client as every noncitizen, deem clients guilty or establish existing FinCEN-rule effectiveness. Entire own December10 operative plus its actual question/noes/Waters demand/postponement recovered from preserved original, including page16 omitted by the old selected Health witness; old witness remains historical. December11 recorded rejection211-219,8Not Voting retained. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
       "source": {
         "source_id": "clerk:119:1:326",
         "url": "https://clerk.house.gov/evs/2025/roll326.xml",
@@ -22208,25 +22388,85 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Waters offered Garcia PartB3 as authorized designee, adding a Treasury rulemaking requirement for each investment adviser and hedge fund to comply with KYC/AML requirements under31USCchapter53subchapterII for foreign clients to the same extent as financial institutions. Hedge-fund definition incorporates Investment Company Act3(c)(1)/(7) exclusions; those exact bounded predicates and dated5311purpose/5312definitions/5318(h)program/5318(l)identity requirements are retained. This imposes financial diligence/reporting, not human immigration admission, removal or citizenship/status eligibility. The amendment does not define foreign client as every noncitizen, deem clients guilty or establish existing FinCEN-rule effectiveness. Entire own December10 operative plus its actual question/noes/Waters demand/postponement recovered from preserved original, including page16 omitted by the old selected Health witness; old witness remains historical. December11 recorded rejection211-219,8Not Voting retained. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:1:326",
           "url": "https://clerk.house.gov/evs/2025/roll326.xml",
           "raw_sha256": "94ba199c90ddc18ac7487b2d021df1c36f2fda9c371a32bf1fe55d16b841b746",
-          "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "c07f84af9bca2c8e69574f504c5479f1ea489b97f8182e41d73cc088a0bea1af"
+        },
+        {
+          "source_id": "immigration:roll326-initial171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-10/pdf/CREC-2025-12-10-pt1-PgH5534.pdf",
+          "raw_sha256": "eea4165e033e09880adbcad3931480888d7dc7dfb4fc214425bf8b9806b9c138",
+          "governed_bytes_sha256": "df3076979f45fa9512d4f17ecf831339053fe7724283e5bba98cab8b0f5f5cf8"
+        },
+        {
+          "source_id": "immigration:roll326-recorded171",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-12-11/pdf/CREC-2025-12-11-house.pdf",
+          "raw_sha256": "1c17a44797d835aee320d2b3227756e7a47448a61ea012590c93a201e58590c0",
+          "governed_bytes_sha256": "b74434d003c78f09aed592457cc1770a9579ef49c5aab83ad0e60afc5d26329b"
+        },
+        {
+          "source_id": "govinfo:hrpt119-399-partb-amend3",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt399/html/CRPT-119hrpt399.htm",
+          "raw_sha256": "d9da2c4b40b5c85bdc42f0346113e816663cf7cd6d53c5687b764dcb52153b30",
+          "governed_bytes_sha256": "13e09cbf71d1ebd54466b776d6f9efd2afb40780551991c4257c9e9ea821ae7d"
+        },
+        {
+          "source_id": "govinfo:15usc80a3-c1-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-3.htm",
+          "raw_sha256": "ed168c11fa5cda849f854c7fc93f5ad7ed2c80a92ddc867c1e38652bb4824fe7",
+          "governed_bytes_sha256": "faa668d90bc363d19f00664b165e849ba4b285bce3fea233474fc38d06c83245"
+        },
+        {
+          "source_id": "govinfo:15usc80a3-c7-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title15/html/USCODE-2024-title15-chap2D-subchapI-sec80a-3.htm",
+          "raw_sha256": "ed168c11fa5cda849f854c7fc93f5ad7ed2c80a92ddc867c1e38652bb4824fe7",
+          "governed_bytes_sha256": "3d5462e02b8093bdb9b65adb9629f3cb4b5c846e615258222c2258662d031d0c"
+        },
+        {
+          "source_id": "govinfo:31usc5311-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5311.htm",
+          "raw_sha256": "7ed185557dc712650f6753e7b5469a42b0305b0cfc08121002f7ebf7ebfab9e4",
+          "governed_bytes_sha256": "cebb5ee71d48186df74d5323af17e28174da7a16af0fe5c9ecc28deb0d5b9ba7"
+        },
+        {
+          "source_id": "govinfo:31usc5312-2024-operative",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5312.htm",
+          "raw_sha256": "e8af03b10d8851adf0571e65dd93c0824b782897d101b8d4b78cd86f789d8fff",
+          "governed_bytes_sha256": "9faa80a3cb0e0b36fa1e8e36348e62b2483e39fdfcc80928fffd3b24354886f1"
+        },
+        {
+          "source_id": "govinfo:31usc5318-h-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5318.htm",
+          "raw_sha256": "5813fe6002b6ad197266943f0d2525615aeea59412c3880768da167c4b6bfba4",
+          "governed_bytes_sha256": "1ba6efae2260a01adfca517edefa875c22ec678bbdb01a06e43386ef43aa13ec"
+        },
+        {
+          "source_id": "govinfo:31usc5318-l-2024",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title31/html/USCODE-2024-title31-subtitleIV-chap53-subchapII-sec5318.htm",
+          "raw_sha256": "5813fe6002b6ad197266943f0d2525615aeea59412c3880768da167c4b6bfba4",
+          "governed_bytes_sha256": "e08ed2e46586bf45a2665e79ef412ad9ece2a28d466ca9ec3166abd38ed8bbac"
+        },
+        {
+          "source_id": "govinfo:hres936eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres936eh/html/BILLS-119hres936eh.htm",
+          "raw_sha256": "c002d5f2530ef12fb99cbf32c249a93813b446d5ed04f55bd8e154c3023dfc73",
+          "governed_bytes_sha256": "6c43552c8dc5d16fa8a01d546f427f80c9672aef06bbe5b34068f98372b598c8"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "d28b9678b436aa3d682df12eea457cb4183f4ab3f8504c3892636114563776a7"
       },
       "historical_raw_hash_matches": true
     },
@@ -44043,14 +44283,10 @@
   ],
   "unresolved_action_ids": [
     "house:119:1:25",
-    "house:119:1:79",
-    "house:119:1:150",
     "house:119:1:151",
-    "house:119:1:180",
     "house:119:1:182",
     "house:119:1:199",
     "house:119:1:200",
-    "house:119:1:207",
     "house:119:1:210",
     "house:119:1:212",
     "house:119:1:218",
@@ -44064,7 +44300,6 @@
     "house:119:1:298",
     "house:119:1:299",
     "house:119:1:320",
-    "house:119:1:326",
     "house:119:1:332",
     "house:119:1:349",
     "house:119:1:351",
@@ -44146,6 +44381,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "945728be96439e29cfa8973f308c53c846ca14d60450c5ce5282be6984aba3e7",
-  "membership_review_sha256": "6387a5d8e150a88622c58f88f7bb89d729625389d22bf0d98dbd046ac25dc8d8"
+  "proposal_sha256": "6a34bfdbdeaeddf81a09a4af9b9f1139da740583c28b33b5e4a17981b3e39f00",
+  "membership_review_sha256": "43073f4777d0054c8af6153abcd6cd3494b0ddef5254ae994e102f2ffa22d44f"
 }
