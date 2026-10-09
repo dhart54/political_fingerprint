@@ -1,0 +1,42 @@
+{
+  "review_state": "bounded_independent_checkpoint167_review_relay",
+  "source_thread": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "head": "4d9c4ed5c773d44fbc82f13a37faa14f5c58830c",
+  "verdict": "All five completed exclusions (149, 150, 151, 152, 242) supported, with a narrow net-change attribution correction on 150. Held 241 has an incorrect operative binding; Fine 242 has a selected-parent provenance limitation. Bounded review complete; source repairs require recheck. No full-corpus or editorial clearance.",
+  "mechanics": "588 reviewed/88 pending, 1,868 sources/714 captures, all prior records/history and six semantic outputs preserved; 44 meanings, 78 findings, 70 questions, three partial packages and pending 196 unchanged.",
+  "utility": "Five whitespace-anchor helper tests independently pass, including six first/later blank-anchor subcases.",
+  "owner_validation_attribution": "184focused tests, seven semantic checks and full replay owner-attributed, not independently rerun.",
+  "findings": [
+    {
+      "action_id": "house:119:2:150",
+      "severity": "Minor",
+      "finding": "Print page 431 already contains the exact technological-barrier goal B. Net amendment changes are the precision-agriculture definition, sustainable-agriculture goal, redesignation and conjunctions; the parent B revision is retained.",
+      "correction_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_agarda_attribution_correction168.json"
+    },
+    {
+      "action_id": "house:119:2:241",
+      "severity": "Major",
+      "finding": "Held interval [496,1487) binds en-bloc amendments 17/18/21/24/25/26/29. Correct Boebert Part A1 interval is [4358,4791) in the same 106,778-character parent: 433 characters, canonical JSON-string digest 21f2bd72e81766c80ee30744bed55cc1b427f3828e1c48091615c1930eb2a09d. Repair establishes only the operative; stages, account and domain remain pending.",
+      "correction_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_source_bindings_correction168.json"
+    },
+    {
+      "action_id": "house:119:2:242",
+      "severity": "Provenance limitation",
+      "finding": "Complete 144-character Fine operative and raw Report hash supported. The selected 13,002-character parent and original [6256,6400) interval were not independently reproducible before documentation; fresh full serialization has 62,194 characters. Owner reproduction requires independent recheck; no new offsets may substitute for original coordinates.",
+      "correction_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/checkpoint167_source_bindings_correction168.json"
+    }
+  ],
+  "ci": {
+    "run": 37872376837,
+    "successful_jobs": 9,
+    "feature_pinned_jobs": 5,
+    "synthetic_merge_jobs": 3,
+    "mixed_repair_jobs": 1,
+    "owner_checkout_log_verification_separate": true
+  },
+  "authority": "Bounded source/mechanics review only; no editorial acceptance, methodology/product approval, publication or production authority.",
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "correction168_recheck_pending": true,
+  "receipt_sha256": "5c8e3a9d8fd28ac4257442946379ed660c5ad126889d095509ddb3a9c03ce3ef"
+}

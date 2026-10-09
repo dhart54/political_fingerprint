@@ -539,3 +539,64 @@ independent source/editorial acceptance. New167 CI and independent source review
 pending until observed. Continue safe ordinary work; no routine checkpoint stop,
 new deadline, retired-owner contact, merge/deployment/publication/production,
 methodology/product change or final issue verdict.
+
+## Checkpoint 168: bounded source repairs and historical reconstruction
+
+The parent's completed bounded 167 review supports all five exclusions, with
+three specific follow-ups. This is not editorial acceptance or a full-corpus
+pass. All five helper tests independently pass; 184 focused tests, seven semantic
+checks and full replay remain owner-attributed. Parent verdict and separate CI
+receipt are now recorded. CI 37872376837 attempt 1 had eight successes and a
+DockerHub connection-reset failure before normalized-storage tests. Attempt 2
+has nine successes with actual checkout logs verified: five feature jobs, three
+synthetic-merge jobs at 5d6a7ee8988412049e8cf75475962ba35e8c15b7, one mixed repair
+job. Preserve the failed attempt; do not describe it as first-attempt green.
+
+Action 150's narrower amendment retains technological-barrier goal B already
+printed on controlling Print 119-22 page 431. Its net changes are the precision
+agriculture definition, new sustainable-agriculture goal, redesignation and
+conjunctions. Rationale corrected with original record and audit assessment
+archived; sources, claims, extents, recorded labels and exclusion unchanged.
+
+Fine 242's 144-character operative remains supported. A fresh official Report
+749 HTML capture matches the original raw hash. Its 62,194-character serialization
+recreates the original 13,002-character selected parent exactly from [0,4500)
+and [21000,29500), joined by two LF characters. Materialized both parents and the
+recipe; original derivative [6256,6400) and seal unchanged. No new offsets
+substituted and no full-Report semantic certification.
+
+Held 241's previous witness bound amendments 17/18/21/24/25/26/29 through a prefix
+locator. Preserved that object and historical 167 receipt as superseded evidence.
+New sealed witness uses exact [4358,4791) in the same 106,778-character parent:
+433 characters, actual Boebert Part A1 introduction and full operative striking
+the Fulbright minimum earmark. Raw UTF-8 and canonical JSON-string hashes remain
+distinct. Corrected own binding does not close stages, account or domain research.
+The other three held own headers and original intervals verified separately.
+
+HR 2860's historical report recovered from the Commission repository. The cover
+is dated August 20, 1998, but the back says Reprinted 4/04, metadata dates are
+2000/2004, and the summary refers retrospectively to late-1998 funding. Complete
+membership paragraphs retain the remaining Governor appointees' State-citizen
+phrase, appointments and MRC qualifications. Compare with actual EH residents
+criterion without restoring the old exclusion or automatically including. On-file
+original/edition equivalence and personal-citizenship meaning still need source
+and domain review. Committee narrative supports the historical reference, but
+literal 105-483 footnotes and shorthand do not replace PL 105-384 or actual EH.
+Twelve report pages and the actual Boebert operative page visually inspected.
+
+Zero new completed screenings: 588 reviewed/88 pending; 44 meanings, 78 findings,
+70 application questions, three partial packages and six semantic outputs
+unchanged. Eight canonical sources and ten captures added: 1,876/724 total.
+Four fresh raw acquisitions, exact derivative/parent reproduction, all prior
+source/capture/private-pool prefixes, non-target rows, original receipts and
+archived audit history verified. 184 focused tests, seven semantic checks,
+reference validation and seven-file replay pass. Initial subject-seal and literal
+comparison/hash-convention assumptions were corrected without weakening gates
+or repairing source words; failed helpers and logs retained.
+
+This batch is historical reconstruction plus three inherited repairs, outside
+the frozen five-action benchmark. Keep gross lightweight start-to-delivery time;
+zero new screenings supplies no completed-screening average. Continue safe
+research at ordinary cadence. Correction recheck and new-head CI remain pending;
+no routine approval stop or deadline, editorial acceptance, merge, deployment,
+publication, production, new methodology/product decision or retired-owner contact.
