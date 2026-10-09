@@ -1445,3 +1445,62 @@ Actual 183 source/validation/delivery intervals and lookup limits are retained
 in private timing and validation receipts. Continue executable candidate source
 work while CI and independent review are reconciled; checkpoints are resume
 points rather than routine approval gates.
+
+
+## Checkpoint 184: coherent FISA precision correction
+
+Continuing owner; no routine handoff or writer release. Base is 183 at
+0c43b292c793f6b0aa5050f63c78fb3c2a20f9a7. Independent 182 source/structural lanes
+close all three inherited 181 wrong-witness findings and report one new P2 plus
+two related P3 precision/source findings. They are folded together here.
+
+The monthly submission clause D(iv) is included in the expanded FISC waiver
+range. Existing D(v) waiver becomes D(vi), with covered requirements expanded
+from D(i)-(iv) to D(i)-(v), including new monthly submissions and redesignated
+storage controls. A Court finding that querying procedures include measures
+reasonably expected to result in similar compliance outcomes is required;
+then it may waive one or more covered requirements. This is not a generic
+discretionary exemption. The separately added E civil-liberties review/referral
+text is not expressly waived by that range; operation when submissions are
+waived remains qualified. Attorney prior approval retains A(ii)'s reasonable-
+belief exception for a query that could assist mitigating/eliminating a threat
+to life or serious bodily harm. Similar notification/criminal-query exceptions
+are distinct and were not substituted for A(ii).
+
+Existing complete dated 1881 source now binds its explicit 1801-definition
+import, except as specifically provided in the subchapter, into all three
+142/155/221 candidate source sets. Citizenship/LPR/entity statements remain
+qualified, with no unauthorized-immigrant equivalence. Existing 155/221 shared
+core digests remain untouched. The single active proposed142meaning is source-
+corrected to v2; no additional active shared meaning or compiled proposition.
+
+The original proposed core and mapping are copied as historical artifacts in
+house_119_source_review_checkpoint184_history. Original 182 receipt and all source
+aliases remain frozen. Active proposed core, held mapping, new 184 research packet
+and 142 pending rationale/seals are reconciled. All three remain held and outside
+the compiler. No source/capture/pool/authoring/membership/disposition change:
+602 reviewed / 74 pending (57 ordinary, 17 researched holds), 47 compiled meanings /
+80 propositions, 70 questions, three partial packages; 2,075 sources/964 registrations.
+
+Validation: 202 final focused tests in 17.811s, seven semantic checks, 53 literal
+claim checks, native core/held mapping validation and seven independent generated
+byte replays pass. All seven generated files are unchanged, as are all 602
+membership records and22 Health/canonical-corpus files. Regression tests cover the
+historical missing waiver, generic discretion, unconditional approval wording and
+all active core/review/mapping definitions bindings. Existing verified sources
+are reused; no new raw acquisition or inflated parent-reading claim.
+
+The independent 182 lanes report 11 fresh statute/rule hashes, 49 literal claims,
+50 preservation/structural checks and 7 byte-replays. Its overall final review is
+not inferred complete from lane messages; independent 184 recheck remains pending.
+183 CI run 37998464614 passes all 9 first-attempt jobs, 9 fresh/no carried successes,
+with actual 5 feature/3 synthetic/1 mixed contexts. No manual retry/configuration or
+production change. Held 183 HHS beneficiary/provider qualification remains pending.
+
+Performance FAIL remains 781.087s per prior comparable completion. 184 is one
+coherent inherited-review correction, not a routine benchmark round; no new
+average or scaling. Initial review/source lookup and separate authoring endpoint
+were not timed. Actual joint correction/local-validation and later delivery
+endpoints are retained; 183 CI verification overlap is included without subtraction.
+Continue executable candidate source work while new CI and review are reconciled;
+checkpoints remain resume points rather than routine approval gates.

@@ -52,3 +52,51 @@ class SourceSequenceTests(unittest.TestCase):
         for roll, bill in [(142, 'S.1318'), (188, 'H.R.1329'), (198, 'H.R.7726')]:
             with self.subTest(roll=roll), self.assertRaises(ValueError):
                 require_exact_bill_operative(by_id[f'immigration:roll{roll}-operative181']['text'], bill)
+
+    def test_fisa_candidate_retains_conditional_waiver_and_approval_exception(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        receipt = json.loads((root / 'docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_precision_correction_checkpoint184.json').read_text())
+        core = json.loads((root / receipt['active_candidate_core_path']).read_text())
+        mapping = json.loads((root / receipt['active_candidate_issue_mapping_path']).read_text())
+        finding = next(action for action in receipt['qualified_held_findings'] if action['action_id'] == 'house:119:2:142')
+        qualification = next(action for action in mapping['action_mappings'] if action['action_id'] == 'house:119:2:142')['structural_metadata']['candidate_exact_qualification']
+        for meaning in [core['actions'][0]['candidate_exact_action_meaning'], finding['candidate_observation'], qualification]:
+            require_source_sequence(meaning, receipt['source_qualification_anchors'])
+
+    def test_prior_fisa_candidate_without_material_waiver_rejected(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        prior = json.loads((root / 'docs/editorial/shared_candidates/house_119_source_review_checkpoint184_history/prior_shared_action_core_proposal182.json').read_text())
+        with self.assertRaises(ValueError):
+            require_source_sequence(prior['actions'][0]['candidate_exact_action_meaning'], ['FISC waiver applies only', 'finding', 'similar compliance outcomes'])
+
+    def test_generic_waiver_or_unconditional_prior_approval_rejected(self):
+        anchors = ['FISC waiver applies only', 'finding', 'measures reasonably expected to result in similar compliance outcomes', 'without prior approval', 'reasonable belief', 'mitigating or eliminating a threat to life or serious bodily harm']
+        incomplete = [
+            'The FISC may waive submissions at its discretion; attorney approval always required.',
+            'FISC waiver applies only upon a finding of measures reasonably expected to result in similar compliance outcomes; attorney approval always required.',
+        ]
+        for meaning in incomplete:
+            with self.subTest(meaning=meaning), self.assertRaises(ValueError):
+                require_source_sequence(meaning, anchors)
+
+    def test_definitions_import_bridge_bound_to_all_held_fisa_actions(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        receipt = json.loads((root / 'docs/editorial/shared_candidates/house_119_immigration_20260916/fisa_precision_correction_checkpoint184.json').read_text())
+        required = 'govinfo:50usc1881-services181'
+        for action in receipt['qualified_held_findings']:
+            with self.subTest(action=action['action_id']):
+                self.assertIn(required, action['source_ids'])
+                self.assertIn(required, {claim['source_id'] for claim in action['claim_source_map']})
+        core = json.loads((root / receipt['active_candidate_core_path']).read_text())['actions'][0]
+        self.assertIn(required, {source['source_id'] for source in core['operative_meaning_source_identities']})
+        self.assertIn(required, core['semantic_ir_source_ids'])
+        mapping = json.loads((root / receipt['active_candidate_issue_mapping_path']).read_text())
+        for action in mapping['action_mappings']:
+            with self.subTest(mapping=action['action_id']):
+                self.assertIn(required, action['structural_metadata']['source_ids'])
