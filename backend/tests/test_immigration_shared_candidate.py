@@ -145,7 +145,17 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertEqual(receipt['prior83_membership_review_record']['disposition'], 'exact_action_ineligible')
         self.assertEqual(receipt['restored83_row_sha256'], digest(pending))
         passage = actions[pending['action_id']]
-        self.assertEqual(package['candidate_action_sha256'], digest(passage))
+        precision = json.loads((DATA / 'state_source_boundaries_checkpoint176.json').read_text(encoding='utf-8'))['prose_precision_correction']
+        self.assertEqual(package['candidate_action_sha256'], precision['prior_authoring_action_sha256'])
+        self.assertEqual(precision['prior_authoring_action_sha256'], digest(precision['prior_authoring_action']))
+        self.assertEqual(precision['corrected_authoring_action_sha256'], digest(passage))
+        self.assertEqual(passage['meaning'], precision['prior_authoring_action']['meaning'].replace(
+            precision['before_phrase'], precision['after_phrase']))
+        self.assertIn('investigation of possible violations', passage['meaning'])
+        self.assertIn('noncompliance triggers the Secretary', passage['meaning'])
+        self.assertIn('noncompliance requires a civil action', passage['meaning'])
+        literal = precision['literal_source_extent']
+        self.assertEqual(literal['passage'], sources[precision['source_id']]['text'][literal['start']:literal['end']])
         boundary = passage['source_render_constraints'][0]
         self.assertEqual(boundary['action_ids'], [passage['action_id']])
         self.assertEqual(boundary['semantic_effect'], 'bounds_cross_domain_attribution')

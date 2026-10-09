@@ -929,3 +929,62 @@ Next: exact-head feature delivery/CI and independent paired candidate review,
 then continue coherent pending source research. Holds remain until independent
 review and applicable integration gates. No acceptance, merge, deployment,
 publication, production, runtime/schema/security/config or methodology change.
+
+
+## Checkpoint 176: State source boundaries and enforcement precision
+
+The same-episode H.R.8595 pending amendments 241, 243 and 245 are retained as
+provisional source-qualified candidates, with zero completed-screening credit.
+Three complete historical operative sources (22 USC 2454/2455/2456) clarify
+scholarship Board/grant routes and the distinct currency-exchange route containing
+visa/permanent-residence assurances. The latter cannot establish the Fulbright
+funding earmark's mechanism. Exact programme-to-beneficiary/domain comparison
+remains pending; neither automatic inclusion nor exclusion is accepted.
+
+243 retains its whole Israel prohibition and separate FMF reduction alongside
+the explicit refugee-resettlement minimum and 2601(f) country-restriction exception.
+Unlike 244, it has no independent literal refugee-account cut resolving membership.
+245 remains pending bare-United-Nations institutional/contribution scope. Primary
+UN-statute captures returned 403 or non-PDF HTML; responses are privately preserved,
+not registered as evidence. Baseline affiliate language cannot broaden the exact
+amendment. No precedence or legal institutional-equivalence ruling is invented.
+
+The parent 175 nonblocking prose note is source-verified and folded into this work:
+117D(a)(1) investigates possible violations, while apparent knowing/willful
+noncompliance governs referral and 117D(a)(2) civil action. Authoring is corrected
+and derived products regenerated. Old 175 action/receipt history is immutable;
+new provenance records the exact prior/after phrase and source interval. No
+support, eligibility, choice, source, stage, limitations or hold changes. Prior
+46 other authoring/core meanings remain exact, all 47 member status/service/choice
+and source identities remain exact, and compiled IR is byte-identical with all
+80 propositions and both 79/83 holds retained. Counts remain 597 reviewed / 79 pending,
+47 meanings / 70 questions / 3 partials; 1,958 sources / 838 registrations. Only three pending
+universe rows advance. No raw-count or editorial-clearance claim.
+
+190 targeted tests pass in 17.118 seconds; seven semantic checks and reference
+cases pass. Seven outputs replay; three literal new operative views and raw
+HTML captures replay, all prior sources/reviews/capture pool/seed/history are
+preserved. A private expected-diff check was corrected: issue-neutral meaning
+reference remains stable, only 83 meaning/core digest changes. No validator change.
+
+Parent 174 bounded review supports exclusions 26/43, procedural 40 and held 27/44:
+18 extents / 24 preservation checks / six unchanged outputs / nine CI successes. Keep
+43 this-Act scope Division D-limited under section 3; retain 44's literal page 3 line 1
+locator versus IH Act on line 2 discrepancy. Independent review interruption
+17:42:25–18:16:46 UTC is 2,061 seconds of review wall-time, not owner research;
+actual review-completion timestamp was not supplied.
+
+Parent 175 bounded review has no blocking defect and only the corrected precision:
+34preservation checks / six tests/13probes/seven replays, all source chronology and
+qualifications supported. Fresh Clerk 83 raw bytes differ, while identity/outcome/
+totals/member labels agree; historical-byte equivalence is not claimed. 175 CI
+37971201592 has nine first-attempt successes with five feature/three synthetic/
+one mixed contexts and conditional milestones disclosed as skipped. Owner CI/log
+endpoint 2,007.292 seconds includes overlapping 176 source research; no subtraction,
+comparable average or benchmark pass. No acceptance or hold release.
+
+Next: exact-head 176 feature delivery/CI, then coherent final-passage package research
+for the remaining State episode. The three provisional cases remain bounded
+source/domain holds; they do not halt unrelated supported work. No acceptance,
+merge, deployment, publication, production, runtime/schema/security/config or
+methodology change, and no further special benchmark or resource scaling.
