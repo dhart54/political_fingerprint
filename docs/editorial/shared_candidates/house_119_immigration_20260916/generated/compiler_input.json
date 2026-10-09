@@ -269,6 +269,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:2:244",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
         }
       ]
     },
@@ -536,6 +542,12 @@
         },
         {
           "action_id": "house:119:2:214",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
+        },
+        {
+          "action_id": "house:119:2:244",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Yea"
@@ -2168,6 +2180,33 @@
         "structural_metadata": {
           "stage_order": 20214
         }
+      },
+      {
+        "action_id": "house:119:2:244",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:2:244:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "The exact Part A amendment No. 9 to H.R.8595 combines a prohibition on obligating or expending any funds made available under this Act for Jordan with eight separate reductions to amounts otherwise made available by this Act: Foreign Military Financing Program, $475 million; National Security Investment Programs, $500 million; Global Health Programs, $845.1 million; Security Sector Programs, $50 million; the literal printed account Funds Appropriated to the President International Military Education and Training, $50 million; Nonproliferation, anti-terrorism, demining, and related programs, $29.9 million; United States Emergency Refugee and Migration Assistance Fund, $50 million; and Democracy Fund, $100 million. These are named account reductions, not a finding that each amount is already a Jordan-specific allocation. The reported bill proposes $100 million for the emergency refugee and migration fund under 22 USC2601(c), available until expended, with an express exception to the statutory unobligated-balance cap and qualified authority to transfer excess-cap amounts to International Humanitarian Assistance. The amendment would reduce that proposed emergency-fund appropriation by $50 million; it would not repeal the fund or its governing authority. Section2601(c) concerns unexpected urgent refugee and migration needs that the President determines important to the national interest, with the statutory funding and committee-information conditions retained. Independent Immigration membership follows this explicit refugee/migration appropriation reduction, without treating every foreign-assistance or military account as an immigration mechanism. The country-wide prohibition and all seven other reductions remain part of the same exact choice. The printed Global Health reduction and the literal military-education account wording are retained, rather than replaced with the reported bill's differently stated Jordan budget-support allocations. The reported bill separately provides qualified Jordan support, including additional National Security and Foreign Military Financing minimums; those provisions are not substituted for the amendment's account list. Section2601(f) allows its refugee and migration assistance notwithstanding foreign-country restrictions; the interaction of that provision with the new Jordan prohibition is reserved for application review. It does not erase or make contingent the independent literal emergency-fund reduction. The initial question produced voice noes, followed by the proponent's recorded-vote demand and postponement; resumed proceedings ordered a recorded vote. The House rejected this amendment, 6 ayes to 421 noes, with 10 not voting. The vote therefore did not enact these cuts. No actual spending, refugee admission, recipient eligibility or displacement outcome is inferred.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr8595:119",
+        "legislative_stage": "amendment",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:2:244",
+          "state:roll244-initial169",
+          "state:roll244-recorded169",
+          "state:roll244-report169",
+          "state:rh-refugee169",
+          "state:rh-othercuts169",
+          "state:rh-countries169",
+          "govinfo:22usc2601-2024-refugees",
+          "govinfo:hres1423eh"
+        ],
+        "structural_metadata": {
+          "stage_order": 20244
+        }
       }
     ],
     "episodes": [
@@ -2491,6 +2530,14 @@
         "episode_id": "episode:s2:119",
         "action_ids": [
           "house:119:2:214"
+        ],
+        "method_boundary_types": [],
+        "policy_family_id": null
+      },
+      {
+        "episode_id": "episode:hr8595:119",
+        "action_ids": [
+          "house:119:2:244"
         ],
         "method_boundary_types": [],
         "policy_family_id": null

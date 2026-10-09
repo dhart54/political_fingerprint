@@ -600,3 +600,63 @@ zero new screenings supplies no completed-screening average. Continue safe
 research at ordinary cadence. Correction recheck and new-head CI remain pending;
 no routine approval stop or deadline, editorial acceptance, merge, deployment,
 publication, production, new methodology/product decision or retired-owner contact.
+
+
+## Checkpoint 169: refugee-fund candidate and held funding proposals
+
+Research covered the four held H.R.8595 amendments together. Action 244 is one
+completed candidate screening: Rules Part A9 / Clerk amendment 6 combines the
+Jordan prohibition with eight account cuts, including $50 million from the
+proposed $100 million emergency refugee and migration fund appropriation.
+All eight literal targets, cap/transfer/availability and national-interest
+conditions remain. The 22 USC 2601(f) country-restriction application question
+is reserved. No separate component preference, actual spending or admission,
+enactment, editorial acceptance, or whole-passage 247 closure is inferred.
+
+Actions 241, 243 and 245 remain pending with source-mapped candidate proposals.
+241 has the full exchange account and dated 2024 program authorities; its
+proposed functional exclusion needs independent domain review. 243 has the
+explicit refugee-resettlement-in-Israel minimum and country-ban interaction.
+245 retains the bare United Nations versus expressly affiliated-entity scope
+question. Pending proposals are not counted as completed screenings.
+
+Parent bounded review reproduces checkpoint 168's three inherited corrections.
+It found the MRC paragraph truncated. The new witness extends [15205,16840) to
+[15205,17198), keeps [20077,21561), and preserves the old source and receipt.
+All 358 added characters through "upland watersheds" are bound. Action 196
+still requires original-on-file edition and personal-citizenship review.
+
+Current accounting: 589 reviewed / 87 pending; 45 candidate meanings and 80
+compiled propositions; 70 application questions and three partial packages.
+There are 1,896 sources / 747 capture registrations, with 20 canonical additions,
+23 registrations and two fresh Code captures. Primary PDFs were explicitly
+reused. Eighteen material PDF pages were inspected. The prior 44 meanings,
+member observations, 78 propositions, all 70 questions, all prior source/capture
+prefixes and 164 historical research Git blob identities remain preserved.
+
+Validation passes: 184 focused tests in 17.700 seconds; seven semantic checks
+and reference cases; extraction replay of 39 RH pages and two fresh HTML
+parents; seven generated files byte-identical to isolated replay; two final
+audit guards in 1.117 seconds. Source seals and extents pass. No validators
+changed. Candidate and research review remains pending; final verdict is null.
+
+Checkpoint 168 CI has nine successful first-attempt jobs, with actual feature
+and synthetic checkouts verified from logs. The checkpoint 167 addendum proves
+only repair ran afresh: eight successes retained identical timestamps and
+log bytes despite new attempt-2 API IDs. The original DockerHub failure before
+normalized-storage pytest is retained. Historical sealed receipts are qualified
+by the explicit addendum, rather than rewritten.
+
+Measured timing is committed in state_funding_source_reconstruction169.json.
+Checkpoint 168 began at 02:01:23.484793 UTC and delivery was verified at
+02:30:35.989134 UTC: 29m12.504s, with zero completed screenings. Checkpoint 169
+began at 02:31:18.274503 UTC. Validation/documentation was observed at
+02:58:40.457128 UTC: 27m22.183s, one completed screening / four attempted cases.
+This complex batch exceeds 10 minutes per completed screening. It is separate
+from the frozen routine benchmark's 7m29 average through parent review closure.
+No silent scaling follows from this result. Git/PR/remote delivery and subsequent
+CI are later overhead; no individual phase duration or owner idle time is
+invented.
+
+Candidate feature-branch bounds remain: no merge, publication, editorial
+acceptance, production, schema/security/config or methodology changes.

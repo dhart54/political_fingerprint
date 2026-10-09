@@ -10,11 +10,11 @@
     "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
     "scripts/prepare_immigration_shared_candidate.py": "874d9b7c8577c54e802e93ecf3274dab4af23dc66d6eae1ef06bbe325fc82faa"
   },
-  "input_sha256": "8f8308763c506d3b5f0d7e8337669f2b43c8ad876c172423a7c59caa06b1fba8",
-  "source_capture_sha256": "48106a3000367c15086f5122072c7fa945c31b4ec65823d772db0b338cecbbfc",
-  "core_sha256": "74f5b8c24b83811f90561777991d3bd06ff10153349497296a5f1497dadf86fc",
-  "compiled_sha256": "a4067137ecfa215594e65973fad8c0823e122be41d63b8ef36821435edf5fffb",
-  "readable_sha256": "36831b0768c3de71f2030ad8604ec4b1555f3742afa09468e97e54f85844a407",
+  "input_sha256": "82f0418cd8be40833f25104dec94c52700f7e98adf23522909e20c6cbe247e61",
+  "source_capture_sha256": "061dfd09400fe9fdfd1561e6291b985ba2552a41c5d1bd5e1bf22d0fb93866d3",
+  "core_sha256": "f44dd991374ecae3f55e645a4e8e4c5e95cbae2716aa3e8b0461e11b8491a06b",
+  "compiled_sha256": "c11c1e1b317c374f1e671f0fd0438554fa9af97e05222b0798f8faee10322fde",
+  "readable_sha256": "f875424966480cd8a3e8f9ae0b9dd98cd23db035ab5a7335ca1b6bddc20961d1",
   "identical_replay": true,
   "real_member_reuse": [
     {
@@ -894,6 +894,26 @@
           "effect": "supports_exact_choice",
           "selected_meaning": "supported passage of S.2 with its complete qualified immigration and other border/DHS appropriations package",
           "source_id": "clerk:119:2:214"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:244",
+      "shared_sha256": "e5a889aab9771db9ec2f36cfb79508cea95c69b702c218fd51baaa786d69106b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting that combined amendment; this does not establish a separate position on each account, country or program",
+          "source_id": "clerk:119:2:244"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting the combined Jordan funding prohibition and all eight specified account reductions, including the $50 million emergency refugee and migration fund reduction, subject to the stated application limits",
+          "source_id": "clerk:119:2:244"
         }
       ]
     }
