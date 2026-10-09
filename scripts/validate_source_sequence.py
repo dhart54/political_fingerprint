@@ -24,3 +24,26 @@ def require_source_sequence(text: str, anchors: list[str]) -> list[int]:
         positions.append(position)
         cursor = position + len(anchor)
     return positions
+
+
+def require_exact_bill_operative(text: str, bill: str) -> str:
+    """Check the declared offered bill identity, without granting semantic clearance.
+
+    A source must contain one offered-text declaration, immediately followed by
+    the expected bill and enacting clause. References elsewhere cannot bind it.
+    Callers still verify adoption, completeness, stage and substantive meaning.
+    """
+    normalized = normalized_source_text(text)
+    compact = lambda value: re.sub(r'\s+', '', value).upper()
+    expected = compact(bill)
+    if not re.fullmatch(r'(?:S\.|H\.R\.)[1-9][0-9]*', expected):
+        raise ValueError('explicit Senate or House bill identity required')
+    declaration = r'The text of the bill(?:, as amended,)? is as follows:'
+    starts = list(re.finditer(declaration, normalized))
+    if len(starts) != 1:
+        raise ValueError('exactly one offered bill text declaration required')
+    body = normalized[starts[0].end():].lstrip()
+    identity = re.match(r'((?:S\.|H\.\s*R\.)\s*[1-9][0-9]*)\s+Be it enacted by', body)
+    if identity is None or compact(identity[1]) != expected:
+        raise ValueError('offered operative bill identity differs from exact action')
+    return expected
