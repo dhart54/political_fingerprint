@@ -5,9 +5,9 @@ from exact baseline `862b290cceea8af7d6c1c800d1ecdfa52386a490`. The cutoff remai
 September16,2026:676 House119 actions, ordered identity digest
 `e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25`.
 
-Latest candidate checkpoint165:578 reviewed/98 ordinary pending;44 meanings/78 findings.
-Five SPEED/PERMIT exclusions;196/326/252/S1318/4090/allholds/70questions/3packages pending.
-Correction164 independently source/preservation reviewed and nine CI jobs green;165peer/CI pending.
+Latest candidate checkpoint166:583 reviewed/93 ordinary pending;44 meanings/78 findings.
+Five frozenFarmamendments plus separate165PERMITrationale repair;196/allholds/70questions/3packages pending.
+165CI9green and boundedpeerreview;165wordingrecheck/166peer/CI pending. Freshbenchmark measured; expansionpausedafterdelivery.
 The following progress narrative preserves earlier checkpoints as historical context.
 
 Historical early ledger:277 reviewed (20 interpreted,178procedural,78excluded,1expressive
@@ -10905,3 +10905,62 @@ unchanged. CorrectionCI37865651931 nine-success:5feature/3synthetic
 observed independently, owner183/7/replay separate. Helper tests are synthetic;
 normalized-empty-anchor rejection is nonblocking maintenance deferred outside
 165 and fresh timing. No acceptance/publication/production/merge authority.
+
+## Checkpoint166: five fresh farm amendments and measured successor workflow
+
+Sample frozen after the clock began: first five inventory-ordered pending own
+amendments in the first remaining same-bill block with at least five such actions,
+H.R.7567 rolls119/2/144-148 (PartB2/8/20/22/28). No case substituted or omitted.
+This is a comparable routine-amendment sample, not a claim about the full pending
+inventory, complex packages or population quality. Raw phase timeline and final
+actual Git/PR/CI/review timing are preserved privately; primary average is full
+batch elapsed from before selection/research through final delivery divided by5.
+CI/independent review latency is separate and also included in total latency.
+Average over600seconds/action fails, target240seconds/action. Expansion pauses
+after this benchmark; no silent scaling. Shared-source/suite/delivery overhead
+is retained rather than treated as five independently timed serial test runs.
+
+Bentz renewable-biomass categories concern materials/landtenure, not human
+immigration status. Literal clauseiv/newvi and section101/cited6512 discrepancies
+remain in source; actual6511interface definition and cited6512heading separately
+bound, no legalemendation/individualfuel application decided. Crawford adds hot
+rotisseriechicken food exception, not allhotfood or household-status eligibility.
+Grothman report is120days AFTER ALL demonstrationprojects conclude, not after
+enactment or an immediate food ban. Grothman as Hageman designee nullifies named
+livestock eartag rule and prohibits substantiallysimilar rules, not allanimal
+traceability/APHIS authority/human identification. Luna strikes allthree actual
+Print10205/10206/10207, with qualified national-label/liability/Stateauthority/
+localban/registered-use permitting effects. Existing bilingualSpanishlabels and
+farmworkeraccess are not personal immigration eligibility. ManagerPartA does not
+modify Print732-734; fullFarmBillpassage meaning is not inherited by amendments.
+
+Five full floor/numberedReport operatives compare with declared formatting-only
+normalization; Bentz blanksection12ll/12__ placeholder handled only in comparison.
+April29initial voiceayes2/8/20, noes22/28, demands and actualpostponement distinguished
+from resumedApril30recordedoutcomes. Recorded Clerklabels retained; later stated
+intentions do not substitute for observed votes.18materialPDFpages inspected,
+11freshrawacquisitions(3PDF/8HTML),27newcanonical/39captures,28claims,
+25derivatives/38intervals.583/676 reviewed,93pending;44meanings/78findings/
+70questions/3partialpackages unchanged.1844sources/675captures.183focused,
+7semantic/reference validation, ten explicit source-order checks, five operative
+comparisons and seven-file byte replay pass; six semanticoutputs unchanged.
+Allpriorrecords/sources/captures/privatepool/audit history/holds preserved apart
+from explicitly separated inherited165330 rationale correction below.
+
+Independent165review: fourSPEED exclusions supported, PERMIT exclusion/passage
+supported;66mechanicalchecks passed, whole165canonicalfiles recovered via verified
+exactSHArawdownload matchingGitblobIDs. Prior573records/1788sources/601captures exact.
+165CI37866887024 nine-success:5feature77462125/3synthetic
+8c79d9e0ed7083ea115ae6135b5c993aa51ae5e7/1mixed; owner and hosted checks separate.
+PERMIT compressed required recharge duties with voluntaryStatepilot. Active330
+rationale now distinguishes section24requiredidentification/permitting/reports,
+section25voluntaryStatepilot/agriculturalparticipation and its jurisdiction savings,
+with section5FERCauthorization scope retained. Sources/claims/extents/disposition/
+labels unchanged; original165receipt remains historicalbyteexact and fullprior
+record/audit assessment archived in a new correctionreceipt. Independent recheck
+pending. Separate66.302-second correction interval remains inside gross benchmark
+elapsed; nohiddenclock reset. Audit198NoDefect/12Minor/12Major/1Critical, finalnull.
+Read-only source locators and rawUTF8-versuscanonicalJSON/GitEOL assumptions failed
+then corrected without weakening checks; originalprivatehelpers retained and all
+time included. No sourceword repair, acceptedquality/speedup/causality claim,
+merge/deployment/publication/production or method/product authority.
