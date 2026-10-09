@@ -1,8 +1,8 @@
 # Immigration & Border internal semantic audit — in progress
 
-Current candidate checkpoint163:44 meanings/569 reviews/107 ordinary pending.
-Five exclusions; audit188NoDefect/8Minor/11Major/1Critical, finalverdictnull.
-162CI9green;peer160-162unreceived/163pending.
+Current candidate checkpoint164:44 meanings/574 reviews/102 ordinary pending.
+Five exclusions; audit193NoDefect/8Minor/11Major/1Critical, finalverdictnull.
+163CI9green;peer160-163unreceived/164pending.
 The opening narrative records the earlier baseline audit; latest checkpoint entries
 and the machine-readable audit control current scope and review state.
 
@@ -9119,3 +9119,61 @@ three synthetic-merge and one mixed repair. Decoded logs/checkouts sealed;
 syntheticSHAb68b402ef62e1164bdc6b3986dce71c8238fee42; hosted308/repair13of20 distinct from
 owner179tests. Peer160-162unreceived/163pending, no invented certification or
 editorial acceptance. No publication/production/merge or retiredcontrols.
+
+## Checkpoint164: five investment and retirement screenings
+
+House119/1/325/327/328 and119/2/29/31 receive noncounting candidate exclusions.
+SelfPartB1 strikes complete RulePrint11915section307 multi-class issuer ownership/
+voting-power disclosures. This is corporate governance, not personal admission/
+citizenship or U.S. election rights. The correct pretarget is Print63-64; old
+selected Record15/18 contains SelfPartB2 and partialNo5. Its historical bytes and
+caption remain unchanged. Complete WatersPartB5 TitleIV covers fee definitions,
+qualified disclosure/prohibition/reporting/quartile-meter/projection commands,
+intermediaries and exchanges/ATS. SEC-MAY adviser prohibition differs from
+mandatory company/broker duties. Statutory financial comparisons/projections
+are tasks, not our predictions, politician rankings or actual abuse findings.
+Literal paragraph/entity-reference/costsassociate artifacts remain uncorrected.
+
+Fullpassed HR3383 is66005-character INVESTAct2025 with three Titles, not solely
+the Clerk's closed-end investment caption. Allcapitalformation/accreditation/
+fund/issuer/electronic-delivery/senior-taskforce provisions were read, with
+material financial definitions/thresholds/exceptions and no assertion every
+wealth route is new versus delegatedRegD. U.S.assets/over65/financialcredentials/
+corporatevoting predicates do not establish immigration-status eligibility.
+HuizengaPartA1 adds GAO4003 study for allthree specified arrangement predicates;
+Report/floor/EH literal2(46) differs from newsection3definition46, retained without
+legal emendation. Fullpassed HR2988 has fourDivisions plus4003. Qualified pecuniary/
+nonpecuniary/participant/default duties, proxy limits and hypothetical notice
+tasks remain separate; nationalorigin is explicit for plan-provider selection,
+not relabeled citizenship/admission. Enactment/Jan2026/Jan2027 clocks are distinct;
+no claim these candidate bills are already enacted or individual investments,
+returns, fees, fraud, provider eligibility or immigration applications decided.
+
+18 material PDF pages inspected; four bounded fresh reacquisitions match preserved
+original rawhashes. Dec10 selected14/15/18-22, Dec11 selected26-29, Jan15 selected
+7/8/9/11 and Print1/63/64. Fournew CodeHTML raw/text captures; material29usc1002/
+1104 and80a3 baselines reused exactly, not allcurrentlaw/wholeparents certified.
+Three complete ownoperative/Report comparisons pass after declared formatting
+normalization only. Private comparisons first truncated at a page boundary, then
+removed too many header lines; failed before review/receipt/import writes. Exact
+one-line header/footer handling retains real clauses and yields fullNo5 equality
+at26068normalizedcharacters. No repaired source words or canonical correction.
+
+574/676 reviewed:44 interpreted,227 procedural,301 excluded,2 expressive;
+102 ordinary pending.1788 sources/601 captures/1108 interpreted bindings/
+538 extent objects/956 coordinates.40episodes/88observations/78findings and
+70questions/3packages unchanged. Audit193NoDefect/8Minor/11Major/1Critical;
+prior history/final_verdict null preserved.25 complete named claims and
+14 derivatives/24 intervals verified.326 foreign-clientKYC/AML remains ordinary
+pending for its own materialBSA review;252/S1318/4090/allpriorholds unchanged.
+Exact Foushee/Massie labels remain No/Aye325, Aye/No327, No/Aye328, Yea/Yea29,
+Nay/Yea31; labels do not establish component preferences or motives.
+
+179 focused tests in14.844s, seven semantic checks/reference/replay pass.
+Seven generated files match replay; six semantic files unchanged. Finaldiff/
+audit guards follow.163CI37860576646/run649: nine successful attempt1jobs,
+five feature-pinned/three synthetic-merge/one mixed; decodedcheckout/logseals
+inspected, syntheticSHA0901d4ee267f88415b4246930ca6f684064c398a. Hosted308/repair13of20
+distinct from owner179tests. Peer160-163unreceived/164pending, no invented peer
+certification/acceptance/publication/production/merge authority or retiredcontrols.
+No newroutine timing/speedup/quality-equivalence claim.

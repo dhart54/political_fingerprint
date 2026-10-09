@@ -331,3 +331,31 @@ Finaldiff/auditguards/delivery next. Named-helper-parameter lesson recorded from
 privateverification failures/correction, no source ormeaning correction/timingclaim.
 
 Checkpoint163 finaldiff and two auditguards verified (0.990s); feature delivery ready.
+
+## Checkpoint164: investor/retirement source scope
+
+Screen1191/325(Self1),327(Waters5),328(HR3383 passage),1192/29(Huizenga)
+and31(HR2988 passage). Keep326 foreign-clientKYC/AML ordinarypending for separate
+material BSA scope review; no forcedsixquota. Use actualSelf1 strike307, not the
+different Self2 FTE clause already in the historical Dec10 excerpt. Verified
+same-original Record bytes supply missingSelf1, fullNo5body and passageoutcome.
+Bind ownquestions/voice/postponed/recorded stages, numberedReports, exactRulePrint
+307target and fullpassedEHs. HR3383 is the expandedINVESTtext, not only its old
+Clerkcaption/closed-endfund clause. Preserve No5legal-predicate/entity-reference
+artifacts and GAOsection2(46) citation versus proposedsection3definition literally.
+No legalemendation, fee/misconduct/return prediction or personalstatus finding.
+
+Read only material securities/ERISA definitions/targets needed for the bounded
+functional-domain disposition; no exhaustive currentlaw/individualinvestment or
+framework detour. National-origin serviceprovider nondiscrimination is explicit
+in retirementfiduciaryselection, not silently renamed citizenship/admission.
+Use exact-source reuses without earlierdomain conclusions. Inspect materialPDF
+pages, archivebaseline, candidateauthor/audit/generate/replay and run focused/
+semantic/reference/finalguards/diffreview. Then authorizedfeaturecommit/push/
+draftPR198update; retain163CI/actualreviews with coherentdelivery only. Expected
+13-15trackedfiles/semantic tier, unchanged44meanings/sixoutputs/70questions/
+3packages/252/S1318/4090/allholds; no routine timing or reservedpublication gate.
+
+Checkpoint164 authored/validated:574reviews/102pending;179focused/7semantic/reference/replay pass; sixoutputs unchanged.23newcanonical/19captures/8rawacquisitions(4sameoriginalPDFreacquisitions)/14derivatives/24intervals/25claims/18PDFimages/3operativecomparisons verify.163CI9green;peer160-163unreceived/164pending. Finaldiff/auditguards/delivery next;326BSA isolatedpending.
+
+Checkpoint164 finaldiff and two auditguards verified (0.968s); feature delivery ready.
