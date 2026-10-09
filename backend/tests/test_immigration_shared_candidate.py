@@ -87,7 +87,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                                 for row in after['action_accounting']['non_proposition_reasons']))
 
     def test_scott_episode_hold_blocks_only_its_behavior_and_survives_delivery(self):
-        aid = 'house:119:1:79'
+        aids = ['house:119:1:79', 'house:119:1:83']
         result = self.products[-1]
         for rows in [self.products[1]['source_render_constraints'],
                      self.products[3]['shared_semantics']['source_render_constraints'],
@@ -95,7 +95,7 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
                      result.review_payload['source_render_constraints'],
                      result.presentation_payload['source_render_constraints']]:
             hold = next(r for r in rows if r['constraint_id'] == 'candidate-episode-hold')
-            self.assertEqual(hold['action_ids'], [aid])
+            self.assertEqual(hold['action_ids'], aids)
             self.assertEqual(hold['semantic_effect'], 'blocks_behavioral_propositions')
         inputs = copy.deepcopy(self.products[3])
         inputs['shared_semantics']['source_render_constraints'] = [
@@ -103,15 +103,16 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
             if r['constraint_id'] != 'candidate-episode-hold']
         released = run_editorial_pipeline(inputs).compiled_ir
         for held, unheld in zip(result.compiled_ir['members'], released['members']):
-            self.assertFalse(any(aid in p['evidence_action_ids']
-                                 for p in held['proposition_graph']['propositions']))
-            self.assertTrue(any(r['action_id'] == aid
-                                and r['reason_code'] == 'source_constraint_blocks_behavioral_proposition'
-                                for r in held['action_accounting']['non_proposition_reasons']))
-            self.assertTrue(any(aid in p['evidence_action_ids']
-                                for p in unheld['proposition_graph']['propositions']))
+            for aid in aids:
+                self.assertFalse(any(aid in p['evidence_action_ids']
+                                     for p in held['proposition_graph']['propositions']))
+                self.assertTrue(any(r['action_id'] == aid
+                                    and r['reason_code'] == 'source_constraint_blocks_behavioral_proposition'
+                                    for r in held['action_accounting']['non_proposition_reasons']))
+                self.assertTrue(any(aid in p['evidence_action_ids']
+                                    for p in unheld['proposition_graph']['propositions']))
             self.assertEqual([p for p in unheld['proposition_graph']['propositions']
-                              if aid not in p['evidence_action_ids']],
+                              if not set(aids).intersection(p['evidence_action_ids'])],
                              held['proposition_graph']['propositions'])
         self.assertIsNone(result.public_presentation_artifact)
         self.assertIsNone(result.persistence_proposal)
@@ -133,13 +134,23 @@ class ImmigrationCandidateIntegrityTests(unittest.TestCase):
         self.assertIn('English translation', candidate['meaning'])
         prior = claims[receipt['baseline']['prior_modification_source_id']]
         self.assertEqual(prior.count('The amendment was agreed to.'), 2)
-        pending = next(r for r in self.values[2]['candidate_dispositions']
-                       if r['action_id'] == 'house:119:1:83')
+        package = json.loads((DATA / 'passage_package_candidate175.json').read_text(encoding='utf-8'))
+        self.assertEqual(package['receipt_sha256'], sealed_digest(package, 'receipt_sha256'))
+        pending = package['prior83_pending_row']
         self.assertEqual(pending['disposition'], 'source_unresolved')
         self.assertFalse(pending['review_progress']['substantive_review_performed'])
-        self.assertFalse(any(r['action_id'] == pending['action_id'] for r in self.values[3]['records']))
+        current = next(r for r in self.values[2]['candidate_dispositions']
+                       if r['action_id'] == pending['action_id'])
+        self.assertEqual(current['disposition'], 'interpreted_substantive_directional')
         self.assertEqual(receipt['prior83_membership_review_record']['disposition'], 'exact_action_ineligible')
         self.assertEqual(receipt['restored83_row_sha256'], digest(pending))
+        passage = actions[pending['action_id']]
+        self.assertEqual(package['candidate_action_sha256'], digest(passage))
+        boundary = passage['source_render_constraints'][0]
+        self.assertEqual(boundary['action_ids'], [passage['action_id']])
+        self.assertEqual(boundary['semantic_effect'], 'bounds_cross_domain_attribution')
+        self.assertIn('all foreign-source/agency limbs', boundary['detail'])
+        self.assertEqual(package['held_authored_action_ids'], ['house:119:1:79', 'house:119:1:83'])
         self.assertIn('by a person that is not--', receipt['passage_material_excerpt']['passage'])
 
     def test_taiwan_dual_resident_routes_keep_citizenship_and_tax_only_limits(self):

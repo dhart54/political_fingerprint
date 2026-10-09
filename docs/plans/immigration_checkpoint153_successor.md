@@ -876,3 +876,56 @@ new execution-identity checks explain the correction. Initial disposable
 PostgreSQL setup failure remains preserved. All nine required jobs have
 successful evidence; no additional rerun. No acceptance, merge, deployment,
 publication, production or methodology change.
+
+
+## Checkpoint 175: paired H.R.1048 source-coherent candidate
+
+Passage 83 is reconstructed as a bounded candidate for the proposed personal
+translator qualification under existing standards. Entire EH read and fresh
+raw/text replayed; complete Print 119-1 and adopted Ogles 1/2 bind the actual
+package. Rejected Scott 3, Self 4, Tlaib 5/6 and not-offered Williams 7 remain
+distinct. Exact report-back, en-gros agreement, engrossment, third reading,
+passage question, voice ayes, Scott demand, order and electronic result remain.
+House passage is not enactment. Citizenship alone does not exhaust foreign-source
+coverage or decide individual translator eligibility. All seven limbs and
+qualified historical FARA/international-organization definitions remain;
+individual agency, country, concern-list and guidance applications are reserved.
+Broader institutional contracts, investments and enforcement do not independently
+establish Immigration attribution or separate component preferences.
+
+The typed episode hold covers both authored 79 and 83 for independent
+candidate/package review. All prior 46 authoring/core actions and member
+projections are exact. Both proposition graphs are unchanged: 80 total,
+41 Foushee and 39 Massie. Two authored actions do not certify real-world/full-record
+episode completeness or editorial acceptance. Counts: 597 reviewed / 79 pending;
+47 candidate meanings; 70 application questions; three partial packages;
+1,955 sources / 832 registrations. Only passage 83 universe row changes.
+All historical 173 restoration evidence remains preserved.
+
+190 targeted tests pass in 17.106 seconds; seven semantic checks and reference
+cases pass. Seven outputs replay; 340 historical blobs, five literal new views,
+six evidence raw captures and two original Record images are verified. One 404
+HTML capture is privately preserved and never registered as evidence. Compiler
+stage shorthand and member names in shared prose were safely corrected using
+the established contracts; no validator or methodology was weakened.
+
+A tool wait reported an interruption and its session disappeared; no matching
+validation process remained. Parent confirmed no human stop. Partial output
+is preserved; required final suite safely reran. Cause remains unknown. A later
+exec-server transport disconnected before process creation, then recovered on
+the next read-only check; the failed documentation command did not run. Actual
+elapsed time includes interruptions and corrections. This is one material package
+increment, not a fresh comparable benchmark; no guessed subtraction or target claim.
+
+174 owner CI completed with nine first-attempt successes and verified contexts.
+Functional average 780.243 seconds through owner CI/log verification, 781.087
+through final PR: FAIL against 600 seconds. Mixed completions include procedural
+work; five comparable functional completions were not obtained. Independent
+174 review remains pending. No further special benchmark rounds or scaling.
+Initial ledger had eight amendment choices with known holds and 72 other choices;
+74 generic pending reasons cannot establish that most were genuinely complex.
+
+Next: exact-head feature delivery/CI and independent paired candidate review,
+then continue coherent pending source research. Holds remain until independent
+review and applicable integration gates. No acceptance, merge, deployment,
+publication, production, runtime/schema/security/config or methodology change.

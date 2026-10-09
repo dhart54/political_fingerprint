@@ -3,7 +3,7 @@
   "artifact_id": "candidate:IMMIGRATION_BORDER:house119-immigration-through-2026-09-16",
   "domain_id": "IMMIGRATION_BORDER",
   "scope_boundaries": [
-    "46 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
+    "47 explicitly listed Immigration & Border candidate inputs in a fixed676-action September16,2026 inventory. Wider membership/source/episode research remains incomplete; no full-issue, acceptance or public claim."
   ],
   "authoritative_for_new_editorial_work": false,
   "review_state": "candidate_pending_external_semantic_review",
@@ -177,6 +177,20 @@
         "stage_order": 10079
       },
       "mapping_sha256": "093fa578ffe787e289feb7e7baed10040db8f5738a6d2e2ee4822eb649b76520"
+    },
+    {
+      "action_id": "house:119:1:83",
+      "eligibility": {
+        "decision": "proposed",
+        "parent_context_used": false
+      },
+      "episode_id": "episode:hr1048:119",
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "stage_order": 10083
+      },
+      "mapping_sha256": "7f70a21f4edcd767c99b00186a48ed4f9a44d699c4e22d42d3642c5069c9a0b3"
     },
     {
       "action_id": "house:119:1:102",
@@ -740,7 +754,8 @@
     {
       "episode_id": "episode:hr1048:119",
       "action_ids": [
-        "house:119:1:79"
+        "house:119:1:79",
+        "house:119:1:83"
       ],
       "method_boundary_types": [],
       "policy_family_id": null
@@ -1004,10 +1019,11 @@
   "source_render_constraints": [
     {
       "action_ids": [
-        "house:119:1:79"
+        "house:119:1:79",
+        "house:119:1:83"
       ],
       "constraint_id": "candidate-episode-hold",
-      "detail": "Hold H.R.1048 authored episode: passage83qualification/domain and exact package review is pending after the same material personal qualification was found in its prior excluded EH witness. Scott79is a source-mapped candidate only, pending independent review; no whole-substitute component preference or individual application claim.",
+      "detail": "Hold the paired H.R.1048 authored 79/83 episode for independent candidate/package review. Passage 83 exact qualification and vote-time package are reconstructed as a candidate, not editorially accepted; no component preference, individual legal application or new behavioral proposition.",
       "semantic_effect": "blocks_behavioral_propositions"
     },
     {
@@ -1025,7 +1041,15 @@
       "constraint_id": "source:house119-session1-roll79-immigration-attribution",
       "detail": "Limit Immigration attribution to the removed proposed personal translator qualification and its complete donor/country/citizenship/foreign-source chain. Preserve the whole substitute and baseline, all source limbs and retained English translation duties. No current-law repeal, universal translator eligibility or component preference. Agency and individual country application remain reserved; episode held pending passage83review.",
       "semantic_effect": "bounds_cross_domain_attribution"
+    },
+    {
+      "action_ids": [
+        "house:119:1:83"
+      ],
+      "constraint_id": "source:house119-session1-roll83-immigration-attribution",
+      "detail": "Limit Immigration attribution to the proposed qualified personal translator condition with complete donor/country/citizenship and all foreign-source/agency limbs. Preserve whole package, prior adopted modifications and exact final-passage sequence. No enactment, blanket translator eligibility, current-law or individual designation/application claim; no separate component preference. Hold paired 79/83 episode for independent candidate/package review.",
+      "semantic_effect": "bounds_cross_domain_attribution"
     }
   ],
-  "mapping_sha256": "0807725bdcf7aa2d9636577053979ae7c0eef0b7b18c10f3036234400de6f40f"
+  "mapping_sha256": "aa4d40729d67148c1c940657e9a3fa584723af6d18bb278407ff6aefe82eac96"
 }

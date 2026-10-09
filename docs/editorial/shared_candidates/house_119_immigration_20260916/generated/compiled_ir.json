@@ -5,11 +5,11 @@
       "member_id": "F000477",
       "party": "D",
       "coverage": {
-        "eligible_substantive_actions": 46,
+        "eligible_substantive_actions": 47,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 46,
-        "resolved_eligible_actions": 46,
-        "directional_yes_no_positions": 46,
+        "in_service_eligible_actions": 47,
+        "resolved_eligible_actions": 47,
+        "directional_yes_no_positions": 47,
         "present_actions": 0,
         "not_voting_actions": 0,
         "missing_evidence_actions": 0,
@@ -983,6 +983,11 @@
             "action_id": "house:119:1:79",
             "reason_code": "source_constraint_blocks_behavioral_proposition",
             "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
+            "action_id": "house:119:1:83",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
           }
         ]
       },
@@ -992,11 +997,11 @@
       "member_id": "M001184",
       "party": "R",
       "coverage": {
-        "eligible_substantive_actions": 46,
+        "eligible_substantive_actions": 47,
         "context_only_control_actions": 0,
-        "in_service_eligible_actions": 46,
-        "resolved_eligible_actions": 46,
-        "directional_yes_no_positions": 44,
+        "in_service_eligible_actions": 47,
+        "resolved_eligible_actions": 47,
+        "directional_yes_no_positions": 45,
         "present_actions": 1,
         "not_voting_actions": 1,
         "missing_evidence_actions": 0,
@@ -1954,6 +1959,11 @@
             "detail": "The action is explicitly excluded from behavioral evidence."
           },
           {
+            "action_id": "house:119:1:83",
+            "reason_code": "source_constraint_blocks_behavioral_proposition",
+            "detail": "The action is explicitly excluded from behavioral evidence."
+          },
+          {
             "action_id": "house:119:2:169",
             "reason_code": "non_directional_status",
             "detail": "The action is explicitly excluded from behavioral evidence."
@@ -1966,10 +1976,11 @@
   "source_render_constraints": [
     {
       "action_ids": [
-        "house:119:1:79"
+        "house:119:1:79",
+        "house:119:1:83"
       ],
       "constraint_id": "candidate-episode-hold",
-      "detail": "Hold H.R.1048 authored episode: passage83qualification/domain and exact package review is pending after the same material personal qualification was found in its prior excluded EH witness. Scott79is a source-mapped candidate only, pending independent review; no whole-substitute component preference or individual application claim.",
+      "detail": "Hold the paired H.R.1048 authored 79/83 episode for independent candidate/package review. Passage 83 exact qualification and vote-time package are reconstructed as a candidate, not editorially accepted; no component preference, individual legal application or new behavioral proposition.",
       "semantic_effect": "blocks_behavioral_propositions"
     },
     {
@@ -1986,6 +1997,14 @@
       ],
       "constraint_id": "source:house119-session1-roll79-immigration-attribution",
       "detail": "Limit Immigration attribution to the removed proposed personal translator qualification and its complete donor/country/citizenship/foreign-source chain. Preserve the whole substitute and baseline, all source limbs and retained English translation duties. No current-law repeal, universal translator eligibility or component preference. Agency and individual country application remain reserved; episode held pending passage83review.",
+      "semantic_effect": "bounds_cross_domain_attribution"
+    },
+    {
+      "action_ids": [
+        "house:119:1:83"
+      ],
+      "constraint_id": "source:house119-session1-roll83-immigration-attribution",
+      "detail": "Limit Immigration attribution to the proposed qualified personal translator condition with complete donor/country/citizenship and all foreign-source/agency limbs. Preserve whole package, prior adopted modifications and exact final-passage sequence. No enactment, blanket translator eligibility, current-law or individual designation/application claim; no separate component preference. Hold paired 79/83 episode for independent candidate/package review.",
       "semantic_effect": "bounds_cross_domain_attribution"
     }
   ]

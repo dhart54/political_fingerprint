@@ -79,6 +79,12 @@
           "status": "Yea"
         },
         {
+          "action_id": "house:119:1:83",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Nay"
+        },
+        {
           "action_id": "house:119:1:102",
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
@@ -359,6 +365,12 @@
           "evidence_status": "official_record_resolved",
           "service_status": "in_service",
           "status": "Nay"
+        },
+        {
+          "action_id": "house:119:1:83",
+          "evidence_status": "official_record_resolved",
+          "service_status": "in_service",
+          "status": "Yea"
         },
         {
           "action_id": "house:119:1:102",
@@ -986,6 +998,36 @@
         ],
         "structural_metadata": {
           "stage_order": 10079
+        }
+      },
+      {
+        "action_id": "house:119:1:83",
+        "action_meaning_ref": "house119-immigration-through-2026-09-16:house:119:1:83:candidate-v1",
+        "eligibility": {
+          "decision": "proposed",
+          "domain": "IMMIGRATION_BORDER",
+          "exact_action_basis": "Passage of H.R.1048 would adopt the House-considered foreign gift, contract, covered-individual and investment reporting package, including proposed section 117(c): non-English gift/contract information disclosed under 117 or requested during a 117D(a)(1) investigation must be translated into English by a person who is neither the donating/contracting foreign source nor any other foreign source from an attributable country of that donor or contracting source. Section 117(f)(2) attributes a natural person's country by citizenship, or principal residence if citizenship is unknown; a legal entity by incorporation, or principal business if incorporation is unknown. Section 117(f)(4)(D) covers a natural person who is not a citizen or national of the United States or a trust territory or protectorate thereof. The complete foreign-source definition also covers foreign governments, foreign-law entities, substantial foreign control, international organizations within the cited 22 USC 288 definition, agents of foreign principals within the cited FARA definition, and agents of any preceding category, including stated affiliates and benefit entities. The historical FARA definition retains its activity/control predicates and qualified press exception; its printed Expect 1 wording is preserved. Citizenship alone therefore neither exhausts foreign-source coverage nor determines an individual translator's qualification. The donor exclusion applies independently of the other same-attributable-country foreign-source exclusion. This is a proposed personal translator qualification linked to citizenship/nationality and attributable-country criteria, within a whole final-passage choice. It does not establish a new visa, admission, border-entry, work-authorization or blanket noncitizen exclusion, and House passage does not establish enactment or implementation. Individual donor, citizenship, residence, control, agency, affiliation and designated-organization applications are reserved. The entire package context is retained: ordinary foreign gifts/contracts of at least $50,000 aggregate or indeterminate value; concern-country/entity gifts and contracts at any value; July 31 annual disclosures, ownership/control and substantially controlled/affiliated entity reporting; original-copy and retention duties; restricted-gift descriptions, qualified student-payment and intellectual-property exceptions; qualified natural-person privacy, public databases and unredacted interagency sharing. Proposed 117A bars institutional contracts with concern countries/entities subject to the specified one-year, renewal, consultation, notice, existing-contract and later-designation waiver/termination mechanics. Proposed 117B imposes qualified covered-individual gift/contract disclosure, institutional databases and research-risk plans. Proposed 117C applies specified concern investments to qualifying private institutions with large assets/investment totals, including its attribution/valuation/pooled-investment qualifications. Proposed 117D provides knowing/willful investigation and civil enforcement, differentiated escalating fines, waiver sanctions, compliance-officer and assistance requirements; specified repeated judgments affect institutional Title IV eligibility. These surrounding institutional, concern-definition and enforcement provisions are not automatically Immigration mechanisms, and do not establish that any individual foreign source belongs to a concern category. Actual list membership, covered-individual guidance application and individual legal outcomes are reserved. H.Res. 242 established Print 119-1 as the actual baseline. Ogles 1/2 were agreed to; they expand concern-country territory coverage and replace concern-entity definitions with 42 USC 19221(a) and the specified NDAA lists. They leave the translator-qualification text unchanged while changing related contract/waiver scope. Scott 3's whole substitute, Self 4's $1 threshold and Tlaib 5/6's proposed concern expansions were rejected on recorded votes 79–82; the Chair stated Williams 7 would not be offered. None is inferred adopted merely because a report made it in order. The final report-back and en-gros agreement, engrossment and third reading precede the own passage question. Voice ayes preceded Scott's yeas-and-nays demand, the order and electronic vote. Passage 83 succeeded, 241 yeas to 169 nays with 20 not voting; reconsideration was laid on the table. Stated intentions do not replace recorded observations. A whole-package vote does not establish a separate preference on translators or any component. Candidate only; the authored 79/83 episode remains held for independent candidate/package review, with no new behavioral propositions or full-record clearance.",
+          "parent_context_used": false
+        },
+        "episode_id": "episode:hr1048:119",
+        "legislative_stage": "final_passage",
+        "policy_trait_refs": [],
+        "source_ids": [
+          "clerk:119:1:83",
+          "immigration:roll83-passage175",
+          "govinfo:hr1048eh",
+          "house-rules:rcp1191-full-baseline173",
+          "immigration:hr1048-prior-ogles173",
+          "immigration:hr1048-package-initial175",
+          "immigration:hr1048-package-recorded175",
+          "govinfo:hres242eh",
+          "govinfo:42usc19221-a-2024",
+          "govinfo:10usc4872-f2-2024",
+          "govinfo:fara611-operative2024-175",
+          "govinfo:io288-operative2024-175"
+        ],
+        "structural_metadata": {
+          "stage_order": 10083
         }
       },
       {
@@ -2332,7 +2374,8 @@
       {
         "episode_id": "episode:hr1048:119",
         "action_ids": [
-          "house:119:1:79"
+          "house:119:1:79",
+          "house:119:1:83"
         ],
         "method_boundary_types": [],
         "policy_family_id": null
@@ -2595,10 +2638,11 @@
     "source_render_constraints": [
       {
         "action_ids": [
-          "house:119:1:79"
+          "house:119:1:79",
+          "house:119:1:83"
         ],
         "constraint_id": "candidate-episode-hold",
-        "detail": "Hold H.R.1048 authored episode: passage83qualification/domain and exact package review is pending after the same material personal qualification was found in its prior excluded EH witness. Scott79is a source-mapped candidate only, pending independent review; no whole-substitute component preference or individual application claim.",
+        "detail": "Hold the paired H.R.1048 authored 79/83 episode for independent candidate/package review. Passage 83 exact qualification and vote-time package are reconstructed as a candidate, not editorially accepted; no component preference, individual legal application or new behavioral proposition.",
         "semantic_effect": "blocks_behavioral_propositions"
       },
       {
@@ -2615,6 +2659,14 @@
         ],
         "constraint_id": "source:house119-session1-roll79-immigration-attribution",
         "detail": "Limit Immigration attribution to the removed proposed personal translator qualification and its complete donor/country/citizenship/foreign-source chain. Preserve the whole substitute and baseline, all source limbs and retained English translation duties. No current-law repeal, universal translator eligibility or component preference. Agency and individual country application remain reserved; episode held pending passage83review.",
+        "semantic_effect": "bounds_cross_domain_attribution"
+      },
+      {
+        "action_ids": [
+          "house:119:1:83"
+        ],
+        "constraint_id": "source:house119-session1-roll83-immigration-attribution",
+        "detail": "Limit Immigration attribution to the proposed qualified personal translator condition with complete donor/country/citizenship and all foreign-source/agency limbs. Preserve whole package, prior adopted modifications and exact final-passage sequence. No enactment, blanket translator eligibility, current-law or individual designation/application claim; no separate component preference. Hold paired 79/83 episode for independent candidate/package review.",
         "semantic_effect": "bounds_cross_domain_attribution"
       }
     ],
