@@ -1,0 +1,69 @@
+{
+  "authority": "Same-owner source-grounded selected visa-integrity/I-94 candidate extension; no independent acceptance, package closure or application resolution",
+  "prior_checkpoint": "ced5073953694d7d120664d05402709e45729b70",
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "81c9b5362cbd403e45ff3010808b1bc0ee7cb70c3fb2b771cb6fd2aa494f047a",
+    "house:119:1:190": "c5cd7206203595af478276ff1a9430dc2b9840c4add0f629aa85341b73475fef"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "f1b667435bbfd6d3a477f792af1c33ba7d0f17f303a0de0dab14ee65a708085f",
+    "house:119:1:190": "93e5cce6b3fcad12e121874cebeb6c28d7907e1e640dcc7b2c10da77cf47d27b"
+  },
+  "action_claim_bindings": {
+    "house:119:1:145": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version 70008-70009: issuance/I-94 application predicates, all initial/CPI/disposition/no-waiver and reimbursement clauses",
+        "passage_sha256": "fa72e791684fbfedf47a8dad2174004fff1b75daef4a8d4463d398009a9f65f8",
+        "passage_length": 3979
+      },
+      {
+        "source_id": "govinfo:8usc1101-2024-nonimmigrant-visa-definition",
+        "locator": "Complete exact pre-vote nonimmigrant-visa definition or complete Land Border Inspection Fee Account subsection, including appropriations-refund distinction",
+        "passage_sha256": "ac9a6519ee6fcc1d9221339d1ce4fa31ef4e1431bafafe0fa97de83775bf5111",
+        "passage_length": 155
+      },
+      {
+        "source_id": "govinfo:8usc1356q-2024-land-border-account",
+        "locator": "Complete exact pre-vote nonimmigrant-visa definition or complete Land Border Inspection Fee Account subsection, including appropriations-refund distinction",
+        "passage_sha256": "091bf94bc437f2567d344b1d260bb48121de5edd863b369e168b58aff47d9bd1",
+        "passage_length": 3143
+      }
+    ],
+    "house:119:1:190": [
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact-version 100007-100008: issuance/I-94 application predicates, all initial/CPI/disposition/no-waiver and reimbursement clauses",
+        "passage_sha256": "47b54a7392422adbefbb30de38f5ec89d5fafe1aa63565ab80aa0d2218e0db2b",
+        "passage_length": 4214
+      },
+      {
+        "source_id": "govinfo:8usc1101-2024-nonimmigrant-visa-definition",
+        "locator": "Complete exact pre-vote nonimmigrant-visa definition or complete Land Border Inspection Fee Account subsection, including appropriations-refund distinction",
+        "passage_sha256": "ac9a6519ee6fcc1d9221339d1ce4fa31ef4e1431bafafe0fa97de83775bf5111",
+        "passage_length": 155
+      },
+      {
+        "source_id": "govinfo:8usc1356q-2024-land-border-account",
+        "locator": "Complete exact pre-vote nonimmigrant-visa definition or complete Land Border Inspection Fee Account subsection, including appropriations-refund distinction",
+        "passage_sha256": "091bf94bc437f2567d344b1d260bb48121de5edd863b369e168b58aff47d9bd1",
+        "passage_length": 3143
+      }
+    ]
+  },
+  "house_eh_comparisons": {
+    "70008": {
+      "floor_passage_sha256": "fa72e791684fbfedf47a8dad2174004fff1b75daef4a8d4463d398009a9f65f8",
+      "eh_comparison_sha256": "86c83036c2859a0b480fca9eb273b2cefdd77246151e8a391c2819be849a9d54",
+      "comparison": "Identical after joining the sole Arrival/ Departure layout split; original floor passage remains unchanged and controlling"
+    }
+  },
+  "refund_predicate_matrix": {
+    "House70008": "MAY after visa validity expires AND demonstrated [nonuse OR (after-admission compliance AND departure <=5 days after authorized-stay date) OR filed extension/change/adjustment within validity]",
+    "Senate100007": "MAY after visa validity expires AND after-admission compliance AND [(no extension request during validity AND departure <=5 days after last day of \"such period\") OR granted nonimmigrant extension/LPR adjustment during validity]"
+  },
+  "unresolved_literal": "Senate100007(b)(2)(A) \"such period\"; exact text retained, no five-day general grace period inferred",
+  "scope": "House70008-9/Senate100007-8 and complete material visa/account baselines; other fee/benefit/tax/funding work remains",
+  "publication_authorized": false,
+  "receipt_sha256": "a64591f047c8df1e2aa17d5298ad87ea52413a38d8a66686b7ca84f68fe0a429"
+}

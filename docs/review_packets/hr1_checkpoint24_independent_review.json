@@ -1,0 +1,49 @@
+{
+  "authority": "Bounded independent selected-clause review conveyed by Fingerprint supervisor; not editorial acceptance, full-package/domain audit or publication",
+  "reviewed_commit": "c10bc2546bb3c51cae7d983be0a2fc6201858260",
+  "detached_extract_commit": "8439dbd2a28ca04f9d140592550b94fc5a52cdb0",
+  "scope": [
+    "House145 retained floor60001/manager60004/70101/70001-2/70010/70023",
+    "Senate190 EAS90001/90003/100001-2/100009/100018",
+    "2024 material279(g)(2)/1158(d)(3)/1356(m)/(n) baseline paragraphs",
+    "Both members compact/detail/qualifications, shared authoring/maps and exact detached blob-bound excerpts"
+  ],
+  "findings": [
+    {
+      "finding_id": "IB-HR1-REIMBURSEMENT-DATE-QUALIFIER",
+      "severity": "Minor",
+      "action_id": "house:119:1:145",
+      "location": "authoring.json actions[house:119:1:145].limitations[2]",
+      "affected_members": [
+        "F000477",
+        "M001184"
+      ],
+      "defect": "Post-January21,2021 costs differs from inclusive date condition on actions, not costs date.",
+      "operative_passage": {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "60004: exact manager-added State reimbursement conditions",
+        "passage": "SEC. 60004. STATE BORDER SECURITY REIMBURSEMENT. (a) In General.--In addition to amounts otherwise available, there is appropriated to the Secretary of Homeland Security, for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, $12,000,000,000, to remain available until September 30, 2029, to carry out this section. (b) Use of Funds.--The Secretary of Homeland Security shall use amounts made available under subsection (a) to make grants to States for costs associated with actions taken on or after January 21, 2021, to assist the Federal border security missions to enforce the immigration laws, including through detention and removal, and to combat the unlawful entry of persons and contraband. (c) Application.--The Secretary of Homeland Security shall develop a process for States to submit a grant application, together with satisfactory evidence of costs incurred, to seek reimbursement for any expenses described in subsection (b). (d) Prohibition.--The Secretary of Homeland Security may not make a grant for reimbursement under this section to a State if such State has received such reimbursement under any other grant program of the Department of Homeland Security. "
+      },
+      "corrected_qualification": "All listed appropriations are additional fiscal2025 amounts with September30,2029 availability. The State reimbursement provision requires costs associated with actions taken on or after January21,2021 and satisfactory evidence of costs incurred and bars specified duplicate DHS reimbursement. Availability is not actual spending, awards, detention or removal.",
+      "corrected_authoring_action_sha256": "8f16af9783fe872e6c79e6d237886ee01196fa2150b0ad37fa570bc2adb29809",
+      "fix_state": "Corrected and regenerated in linked feature checkpoint;222focusedtests,7semanticchecks and7byte-identicaloutputs pass. Later EAD expansion is outside this independent review scope.",
+      "fix_commit": "e7b2c9c061be1e56643830e2e9d75de79b28b3e0"
+    }
+  ],
+  "retained_clause_result": "No Critical/Major defect identified within reviewed scope. Other retained amounts, periods, applicability, rounding, permissions and qualifications match primary evidence. Twenty-second legal/application question preserved. No component-position or trajectory inference found.",
+  "mechanical_result": "No blocking mechanical defect or weakened candidate gate; component closure gap reported and bounded completion guard added with two negative tests.",
+  "source_map_verification": {
+    "claim_passages": 25,
+    "passage_lengths_and_json_string_sha256_recomputed": true,
+    "source_blob_ids_match_detached_metadata": true,
+    "member_meanings_and_maps_match_shared_authoring": true
+  },
+  "limitations": [
+    "Reviewer did not independently re-fetch complete oversized original bytes; exact-commit/blob-bound extracts were used.",
+    "Selected-clause review only; omitted H.R.1 components remain executable work.",
+    "No legal-enforceability adjudication, acceptance, promotion, publication or full-corpus PASS."
+  ],
+  "review_delivery": "Trusted supervisor task message during authorized continuation on2026-10-06",
+  "final_full_corpus_verdict": null,
+  "receipt_sha256": "c67fa31388cb842d19fd5dbbcb6cc5d1c0e676f4d799edd66dc50004758f9cf9"
+}

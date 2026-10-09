@@ -1,0 +1,249 @@
+{
+  "checkpoint": 182,
+  "base_head": "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d",
+  "candidate_receipt_sha256": "c21f167df6ed253a67fdfa58fc6f081acc90a0083331bcf741d20d80c092b260",
+  "focused_tests": {
+    "passed": 198,
+    "seconds": 18.227,
+    "log": ".tmp/tests182-final.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "semantic_acceptance": false
+  },
+  "preservation": {
+    "literal_claim_checks": 57,
+    "source_derivatives": 19,
+    "source_identity_checks": 7,
+    "superseded_witnesses": 3,
+    "prior_sources": 2053,
+    "prior_registrations": 942,
+    "prior_private_aliases": 998,
+    "all602_prior_reviews_preserved_except_explicit188_binding_repair": true,
+    "changed_universe_rows": [
+      "house:119:2:142",
+      "house:119:2:155",
+      "house:119:2:188",
+      "house:119:2:221"
+    ],
+    "current_sources": 2073,
+    "current_capture_registrations": 962,
+    "preserved_health_and_canonical_corpus_files": 22,
+    "unchanged_semantic_products": [
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+      "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json"
+    ],
+    "new_issue_neutral_candidate_core_validated": true,
+    "compiled_core_unchanged": true,
+    "no_counting_changes": true,
+    "counts": {
+      "reviewed": 602,
+      "pending": 74,
+      "ordinary_unscreened": 57,
+      "researched_holds": 17,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    }
+  },
+  "raw_replays": [
+    {
+      "key": "pl11984",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 2517
+    },
+    {
+      "key": "pl11987",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 1385
+    },
+    {
+      "key": "pl11849",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 90691
+    },
+    {
+      "key": "pl110261",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 121638
+    },
+    {
+      "key": "hr9238ih",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "hr9238rh",
+      "raw_hash_verified": true,
+      "rejected_response": true,
+      "governed_as_evidence": false
+    },
+    {
+      "key": "clerk:119:2:155",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 6269
+    },
+    {
+      "key": "clerk:119:2:221",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 5983
+    },
+    {
+      "key": "record0430",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 345922
+    },
+    {
+      "key": "record0611",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 244796
+    },
+    {
+      "key": "50usc3029",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 3697
+    },
+    {
+      "key": "50usc3033",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 53056
+    },
+    {
+      "key": "50usc1881h",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 2568
+    },
+    {
+      "key": "record0610",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 260647
+    },
+    {
+      "key": "hr9238cdh",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": false,
+      "text_length": 1919
+    },
+    {
+      "key": "record0429",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 1603550
+    },
+    {
+      "key": "record0521",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 470035
+    },
+    {
+      "key": "record0603",
+      "raw_hash_verified": true,
+      "exact_text_replay": true,
+      "PDF": true,
+      "text_length": 468232
+    }
+  ],
+  "raw_hashes": 18,
+  "accepted_exact_text_replays": 16,
+  "PDF_parent_replays": 6,
+  "rejected_response_byte_checks_only": 2,
+  "exact_source_sequence_checks": 2,
+  "literal_claim_checks": 57,
+  "source_identity_checks": 7,
+  "old_wrong_action_regression_subcases": 3,
+  "source_derivative_checks": 19,
+  "unchanged_semantic_products": 6,
+  "byte_exact_generated_replays": 7,
+  "new_issue_neutral_candidate_core_meanings": 1,
+  "compiled_meanings_unchanged": 47,
+  "compiled_propositions_unchanged": 80,
+  "no_counting_changes": true,
+  "held_actions": [
+    142,
+    155,
+    198,
+    221
+  ],
+  "source_repairs": [
+    142,
+    188,
+    198
+  ],
+  "existing_155_221_cores_preserved": true,
+  "counts": {
+    "reviewed": 602,
+    "pending": 74,
+    "ordinary_unscreened": 57,
+    "researched_holds": 17,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "timing": {
+    "checkpoint": 182,
+    "base_head": "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d",
+    "started_utc": "2026-10-09T21:39:13.107203+00:00",
+    "attempted_action_ids": [
+      "house:119:2:142",
+      "house:119:2:155",
+      "house:119:2:221"
+    ],
+    "scope": "Coherent FISA TitleVII sunset and retained travel-vetting chain, including correction/completion of181 held finding; no special benchmark round.",
+    "measurement_limitations": "Preceding queue inventory/source-lead lookup not timed; no routine benchmark average or reconstructed per-action phases. Inherited181source-selection corrections and validation refinements are included in this whole-increment interval; no comparable routine average is reconstructed.",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "source_review_and_authoring_utc": "2026-10-09T22:00:13.190616+00:00",
+    "source_review_and_authoring_seconds": 1260.083413,
+    "completed_functional_screenings": 0,
+    "routine_average_inferred": false,
+    "inherited_corrections_included": [
+      142,
+      188,
+      198
+    ],
+    "local_validation_utc": "2026-10-09T22:06:05.695692+00:00",
+    "local_validation_endpoint_seconds": 1612.588489
+  },
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "d1a40f90d28fee48623e487ddaf306d596730476e541fed0cf24a4247c1c0af3"
+}

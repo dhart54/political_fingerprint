@@ -1,0 +1,32 @@
+{
+  "authority": "Bounded independent source-first CBP review supplied by Fingerprint supervisor",
+  "reviewed_commit": "b94b833e62af1d7e0afd85dd90146345670ab548",
+  "result": "Major FLETC actor-scope defect; no additional material defect in checked funding and restrictions",
+  "findings": [
+    {
+      "finding_id": "IB-HR1-FLETC-TRAINING-ACTOR-SCOPE",
+      "severity": "Major",
+      "action_id": "house:119:1:190",
+      "problem": "Senate meaning omits law-enforcement restriction for federal personnel and State/local agencies; qualification retains federal restriction but omits it for State/local agencies"
+    }
+  ],
+  "verified_scope": [
+    "Checked funding accounts, amounts, floor/ceiling and dates",
+    "Coordinator restrictions, tower testing/acceptance/geographic/authority/definition scope",
+    "Referenced biometric and UAC boundaries, border-support reimbursement and question 45 reservation",
+    "CBP receipt digest matches",
+    "Two of ten binding instances had prior independent verification"
+  ],
+  "limitations": [
+    "Other eight CBP binding instances not independently recomputed",
+    "Full checkpoint 53 member propagation and replay not independently verified",
+    "Saved-snapshot reapplication is documented owner provenance, not independently reproduced",
+    "No application or package acceptance"
+  ],
+  "correction_receipt": "docs/editorial/shared_candidates/house_119_immigration_20260916/hr1_fletc_training_actor_scope_correction.json",
+  "correction_recheck_pending": true,
+  "independent_source": "Trusted Fingerprint supervisor delegation, 2026-10-06",
+  "full_corpus_verdict": null,
+  "publication_authorized": false,
+  "receipt_sha256": "86b25ce75099ab5d0526f930f10694b94633669083fa6e261d2da79227e58469"
+}

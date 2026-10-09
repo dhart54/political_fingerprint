@@ -1,0 +1,104 @@
+{
+  "authority": "Candidate-only selected sponsor/removal-fee reconstruction; not legal application resolution/independent acceptance/fullpackage closure",
+  "prior_checkpoint": "a15f6981217be5dc79223ede84a964c71d5281ac",
+  "prior_authoring_action_sha256": {
+    "house:119:1:145": "2100290669c832120c75b4f729cd29b2a6bd55028be979501ff048a1a48ecf22",
+    "house:119:1:190": "f6b94cc449ac2149cdae5f4b4919951d1c88a5218e6a0d72914b92af84cde098"
+  },
+  "current_authoring_action_sha256": {
+    "house:119:1:145": "7507e070430645bc8027550be45ae2de77e37b318724bc4c05177ff6c35f635f",
+    "house:119:1:190": "9dd63887c55455bdc19786925b18d373203e6c6123342d233fb2403065ee16ab"
+  },
+  "action_claim_bindings": {
+    "house:119:1:145": [
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version sponsor/in-absentia/apprehension operative sections70007 through70007; applicability, time, amount, exceptions and proceeds",
+        "passage_sha256": "7c1d19783f398ad115464e6a90d7909e0d1978d927e6e4e14adcf287839c89e9",
+        "passage_length": 3095
+      },
+      {
+        "source_id": "congressional-record:2025-05-21-hr1-as-amended",
+        "locator": "Complete exact-version sponsor/in-absentia/apprehension operative sections70020 through70022; applicability, time, amount, exceptions and proceeds",
+        "passage_sha256": "f5a1780734e1d875fec623c432ab9437aa4506b3245a765cbe62d5f4772d6d85",
+        "passage_length": 5318
+      },
+      {
+        "source_id": "govinfo:8usc1229ab5e-2024-hr1-absentia",
+        "locator": "Complete pre-vote1229a(b)(5) and(e) notice/order/rescission/stay and definitions; no unrelated history",
+        "passage_sha256": "a7253d163fd590810e690d079105982e6cd1e37321d415dff8080bb95bba8fd1",
+        "passage_length": 3089
+      },
+      {
+        "source_id": "govinfo:8usc1229-2024-operative",
+        "locator": "Complete retained notice/address/hearing-change operative baseline; not judicial application or outcome",
+        "passage_sha256": "c84227d8642eb245708e661ba3e6616b48fa7833d188e4fdb516381fcb0e5e9c",
+        "passage_length": 6012
+      },
+      {
+        "source_id": "govinfo:8usc1232-2024-care-placement",
+        "locator": "Complete1232(c) operative protected-placement/suitability/home-study/counsel baseline; fee text not first vetting",
+        "passage_sha256": "acf2f1802229f33627557e42efcedc0feb3212ebf6fbb76059f15ffb79ca093a",
+        "passage_length": 10450
+      }
+    ],
+    "house:119:1:190": [
+      {
+        "source_id": "govinfo:hr1eas",
+        "locator": "Complete exact-version sponsor/in-absentia/apprehension operative sections100016 through100017; applicability, time, amount, exceptions and proceeds",
+        "passage_sha256": "b2647f105585f7d4f0012af989339c4aec058a4f646f9870d6e0436d469b2cfa",
+        "passage_length": 4320
+      },
+      {
+        "source_id": "govinfo:8usc1229ab5e-2024-hr1-absentia",
+        "locator": "Complete pre-vote1229a(b)(5) and(e) notice/order/rescission/stay and definitions; no unrelated history",
+        "passage_sha256": "a7253d163fd590810e690d079105982e6cd1e37321d415dff8080bb95bba8fd1",
+        "passage_length": 3089
+      },
+      {
+        "source_id": "govinfo:8usc1229-2024-operative",
+        "locator": "Complete retained notice/address/hearing-change operative baseline; not judicial application or outcome",
+        "passage_sha256": "c84227d8642eb245708e661ba3e6616b48fa7833d188e4fdb516381fcb0e5e9c",
+        "passage_length": 6012
+      },
+      {
+        "source_id": "govinfo:hr1eas-selected-printing-witness",
+        "locator": "Complete exact EAS PDF pages792/826-828: confirm suchparole antecedent and100017c/d conflict without correcting it",
+        "passage_sha256": "ab79ca63cfa368a262fc71e6b82a391b88cc4813b14c2910cd02ce95bbbd2c11",
+        "passage_length": 4599
+      }
+    ]
+  },
+  "house_eh_comparisons": {
+    "70007": {
+      "floor_passage_sha256": "7c1d19783f398ad115464e6a90d7909e0d1978d927e6e4e14adcf287839c89e9",
+      "eh_comparison_sha256": "7c1d19783f398ad115464e6a90d7909e0d1978d927e6e4e14adcf287839c89e9",
+      "comparison": "Identical after removing explicit RecordH2284pagination only; floor controls"
+    },
+    "70020": {
+      "floor_passage_sha256": "f5a1780734e1d875fec623c432ab9437aa4506b3245a765cbe62d5f4772d6d85",
+      "eh_comparison_sha256": "662afb489b703276743a4ad3830d3aac808c6534b9836370aa100c52dcbc117b",
+      "comparison": "Identical after removing explicit RecordH2284pagination only; floor controls"
+    }
+  },
+  "eas_pdf_printing_verification": {
+    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1eas/pdf/BILLS-119hr1eas.pdf",
+    "raw_sha256": "4093bdc58acda5da3c425339a504495afa16b5242ead24bb0c0388327ab897d0",
+    "governed_bytes_sha256": "1cbdcd515c81fd4abc5b8a00508f62c928865d54fdb8ef71052592009d53cf3d",
+    "source_pdf_pages": [
+      792,
+      826,
+      827,
+      828
+    ],
+    "total_pdf_pages": 870,
+    "visual_inspection_pages": [
+      792,
+      827,
+      828
+    ]
+  },
+  "version_scope": "Original vote-time floor controls House; July1EAS controls Senate. Later corrected EH comparison of retained clauses only. FullPDF not fully reviewed.",
+  "publication_authorized": false,
+  "receipt_sha256": "0badb3bc2fd09fa3652fd30f6fcb2e545fba7837db50530ce40f68ec310cbaea"
+}

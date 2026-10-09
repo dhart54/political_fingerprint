@@ -1,0 +1,70 @@
+{
+  "checkpoint": 181,
+  "historical_head": "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d",
+  "review_state": "independent_bounded_review_complete_with_material_corrections",
+  "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "received_via": "User delegation final review message",
+  "closed_utc": "2026-10-09T22:13:21Z",
+  "wall_seconds": 1405,
+  "wall_time_includes_interruption": true,
+  "owner_research_time": false,
+  "material_findings": [
+    {
+      "priority": "P2",
+      "action_id": "house:119:2:142",
+      "category": "wrong_action_operative_binding",
+      "resolved_locally_in_checkpoint182": true,
+      "independent182_repair_review_pending": true
+    },
+    {
+      "priority": "P2",
+      "action_id": "house:119:2:188",
+      "category": "wrong_action_operative_binding",
+      "resolved_locally_in_checkpoint182": true,
+      "independent182_repair_review_pending": true
+    },
+    {
+      "priority": "P2",
+      "action_id": "house:119:2:198",
+      "category": "wrong_action_operative_binding",
+      "resolved_locally_in_checkpoint182": true,
+      "independent182_repair_review_pending": true
+    }
+  ],
+  "domain_verdicts": [
+    {
+      "action_id": "house:119:2:188",
+      "verdict": "Correct full museum text independently supports functional exclusion conditional on active source repair",
+      "four_PartB_edits_and_five_baselines_reviewed": true,
+      "passage_and_NotVoting_observations_sound": true
+    },
+    {
+      "action_id": "house:119:2:250",
+      "verdict": "Independent source review passes",
+      "source_checks": 116
+    },
+    {
+      "action_id": "house:119:2:142",
+      "verdict": "Held; wrong floor witness superseded; remaining baselines/application not closed"
+    },
+    {
+      "action_id": "house:119:2:198",
+      "verdict": "Held; correctEH/baselines support cautious analysis; wrongfloor witness superseded"
+    }
+  ],
+  "preservation_checks_passed": 34,
+  "byte_exact_generated_replays": 7,
+  "historical_counts_condition": "602reviewed/74pending conditional on188active repair;601/75 if restoredpending instead.182local repair preserves602/74.",
+  "historical_CI": {
+    "run": 37994328732,
+    "fresh_successes": 6,
+    "failed_before_checkout": 3,
+    "full_coverage": false
+  },
+  "inherited180_failed_mixed_context_omission_qualified": true,
+  "new182_qualified_FISA_proposals_under_review": true,
+  "no_additional_material181_findings": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "3ec29c7aae34d4e2a159e5a8b6001154b9891d1521f5261149d4046fad73889e"
+}

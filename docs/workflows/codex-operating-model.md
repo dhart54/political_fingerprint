@@ -299,3 +299,65 @@ A milestone is complete when:
 
 Planning, file generation, and passing tests are not completion when the intended
 product result remains unfinished.
+
+## Reusable efficiency lessons
+
+Keep this section small. Record an observed bottleneck, evidence, applicability,
+quality checks and a reversal condition. Experiments remain provisional until
+measured; workflow speed never authorizes weaker source or publication gates.
+
+- **Reuse unchanged witnesses (observed, Immigration checkpoints 154-158).**
+  Repeated acquisition/extraction and rendering added work when sealed original
+  bytes and material-page images already existed. Exact bank reuse supplied eight
+  incorporated 2024 Code witnesses in 158 without eight new network acquisitions;
+  images for pages 53 and 55 of the same original were reused. Apply only when raw/text/governed seals,
+  version and reviewed scope match. Source reuse is not conclusion reuse: check
+  every exact action, material reference, date/stage and claim interval. New raw
+  drift, intervening law material to the claim, extraction defects or inadequate
+  scope require a new qualified witness and material-page review. Preserve old
+  objects; never upgrade historical captions into whole-parent certification.
+- **Fail before private output writes (observed, checkpoints 156-157).** A copied
+  verifier overwrote a differently numbered private result in 156. Its correction
+  and recovery were recorded without asserting original-private-byte identity.
+  The 157 guard checks receipt/checkpoint/filename/path agreement, refuses changed
+  existing results and keeps exact existing bytes for equivalent-JSON rechecks;
+  four owner-attributed negative/no-write probes passed. Use these checks in new
+  recovery helpers before mutation. On mismatch stop that write, preserve both
+  versions and use a new phase filename. Never rerun already-applied mutators or
+  overwrite history to repair a resume point. Independent review of private guard
+  code/probes was unavailable; this is an owner-tested workflow safeguard.
+- **Change named helper parameters, not digits globally (observed, checkpoint163).**
+  Copying a private verifier with numeric string replacement changed the date in
+  its data path and coupled two distinct append counts:18 canonical sources and
+  17 registered captures. Both failures occurred before result writing; scoped
+  corrections passed preservation/replay checks with the existing output guard
+  retained at result writing. When reusing private helper code, keep
+  paths/checkpoint IDs and each expected count explicit, and edit exact named
+  assignments/assertions rather than arbitrary digit substrings. Canonical,
+  manifest and private-pool counts may differ. Preserve independent per-action
+  checks and baseline prefix comparisons; this avoids a demonstrated copying
+  defect, not a measured speedup. If helper scope or source shape changes beyond
+  explicit parameters, write the small affected check anew rather than cloning
+  an already-applied mutator or forcing incompatible assumptions.
+- **Batch routine delivery (user-authorized experiment, October 8, 2026).** Small
+  remote checkpoints repeated receipt, suite, replay, Git and PR work. Normally
+  group 5-10 routine source-coherent screenings while errors remain low, with
+  frequent private saves and immediate per-action source/disposition checks.
+  Validate/replay/review/deliver once per coherent batch. New interpretations,
+  material corrections and ambiguous boundaries remain separately reviewable;
+  one held action need not stall unrelated safe work. Checkpoints 154 to 157 took
+  59m7s for six reviews; 155-157 focused tests totaled 55.002s. Other historical phase times are
+  unknown; hosted CI elapsed time is not blocked local time. Measure rough phases
+  for the next two larger batches and preserve independent audit coverage and all
+  final gates. No speedup or quality equivalence is established yet. Reduce batch
+  size if audit defects rise, material source decisions couple actions, recovery
+  becomes unreliable or final validation cannot isolate a failure. Never meet a
+  quota by hiding unfinished work or dropping required evidence.
+  Initial measured batches 158/159 cover five/six screenings with one focused
+  suite and replay per batch: tests 15.039/15.863s, generation/replay 9.707/9.711s,
+  and observed CI idle wait zero. Partial reading/recipe-authoring intervals were
+  409.695/395.885s; separate shares and earlier preliminary work are unknown.
+  The 158 Git/PR phase was 95.992s including PR-body preparation. Independent
+  review remains a distinct quality check; these timings do not establish quality
+  equivalence, a precise overhead share, or a causal speedup. Canonical receipts
+  preserve the source qualifications and validation evidence for comparison.

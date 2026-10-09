@@ -1,0 +1,1012 @@
+{
+  "authority": "candidate proof only; no acceptance, historical authorized update or publication claimed",
+  "rule_files_sha256": {
+    "scripts/prepare_shared_domain_candidate.py": "acad448d612df797d0cdde3b9d488ca69edcbef5495a0c5cadd01ee8ba0e8b58",
+    "backend/app/semantic_ir/shared_corpus.py": "7545c6ecbf5b8e2b6cff0c3ef3fdd8db0154697432c2bf51e4afe70c4332d2bd",
+    "backend/app/semantic_ir/compiler.py": "2aa50555277df05c8fac07240d059740fd97850559116c6dda1fb35f7f7751aa",
+    "backend/app/semantic_ir/pipeline.py": "c7cbf3f0995f140f306f97fcad5f7a3134e10d26cbe2659954e409eefdaa6fe8",
+    "backend/app/semantic_ir/adapters.py": "3ed952202466a4cbf30a54521f6c742659ad6760d67e1d8b7b94b94153b618f0",
+    "backend/app/semantic_ir/validation.py": "173372ffaab4dd84fb8e970d83e1e80b7d939a4c8603a22492ad8d6423d4c9a7",
+    "docs/semantic_ir/shared_legislative_corpus_v1.schema.json": "d681e7e8180934b65596ce3a0c3fc1d7b1b66e75b0a7c6396cd4529345636730",
+    "scripts/prepare_immigration_shared_candidate.py": "0267756505693bda5c2f6dbf836818e1b41d267bd4e37176905f5cb0f509eae9"
+  },
+  "input_sha256": "76b5492ecfec52e389f9364b08bebce020382ede4a3eb1104332c1a8810b2087",
+  "source_capture_sha256": "17726f6e38f9824d96dc6632a84c387e78f076869f228bc8446c1a3b7f55b51c",
+  "core_sha256": "5f4cd005dde59c1e746b503e3208aca27a3e55594aa9c8397c5583dcc54e79c5",
+  "compiled_sha256": "d01bee22f2175687be2bca2caab0ad6961b82b061d8ea6f86df32ee0bff0d8a0",
+  "readable_sha256": "c5a761fbf209ce885d8649cb6254c755509cee0dc432ac986110fa8247de4526",
+  "identical_replay": true,
+  "real_member_reuse": [
+    {
+      "action_id": "house:119:1:6",
+      "shared_sha256": "443bf87d28a2e932316446d41b217faa149d95631c0f98f902d92fb154b1c339",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.29 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:6"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.29 with its specified custody/detainer expansion and State enforcement-standing provisions",
+          "source_id": "clerk:119:1:6"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:7",
+      "shared_sha256": "c54a2a16cf5a54b62a959603d579b1c454877d5abed5fa4404d88ea5e190f03b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.23 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:7"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Present",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:1:7"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:15",
+      "shared_sha256": "da36de584fee1fc107bb44790cd8aae6b31ab7aef401ab62cb02d93fca5e0409",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R.33 reciprocal qualified tax-relief and tax-agreement proposal, including its noncitizen dual-resident income-tax rules",
+          "source_id": "clerk:119:1:15"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.33 proposal; no preferred alternative or motive is established",
+          "source_id": "clerk:119:1:15"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:17",
+      "shared_sha256": "e3a0d4c8597417d0930c6dae7dd0dd81cdb0abed5349be1cc97d39137bd25d41",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.30 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:17"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.30 with its additional inadmissibility and sex-offense deportability grounds and expanded domestic-violence definition",
+          "source_id": "clerk:119:1:17"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:23",
+      "shared_sha256": "b3af5be4e7a8a22ca435a402650d2a9220f54a12e33d4bc29b3021cb0d89160f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of S.5 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:23"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of S.5 with its specified custody/detainer expansion and State enforcement-standing provisions",
+          "source_id": "clerk:119:1:23"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:32",
+      "shared_sha256": "f6ddd2f0f6bedc80ac6a62ca95447ad71cf5cd3f40d6ae770207bf7f5c65cc07",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adding the joint published overdose-reduction certification condition to the Act and all its amendments",
+          "source_id": "clerk:119:1:32"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adding that certification condition; no whole-bill position or preferred alternative is established",
+          "source_id": "clerk:119:1:32"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:33",
+      "shared_sha256": "e16f2dd164005e89467bbf8c53c9e47d72b19a9d8278d542fe85db8c315c6b89",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.27 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:33"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.27 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:33"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:42",
+      "shared_sha256": "0deb51bbe9156dbebee937a1141b21cdb065e0ea30a9737b5e561b5bad9fd0ba",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.35 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:42"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.35 with its specified vehicle-flight offense and immigration inadmissibility, deportability and relief-bar provisions",
+          "source_id": "clerk:119:1:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:63",
+      "shared_sha256": "f8badc6f217a9316c43f56089f353fb95ad7301737697c7d8a2f6e9386db899b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.495 to add annual implementation reports on the existing cross-border-tunnel strategic plan",
+          "source_id": "clerk:119:1:63"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.495 to add annual implementation reports on the existing cross-border-tunnel strategic plan",
+          "source_id": "clerk:119:1:63"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:65",
+      "shared_sha256": "c4136feec65fdb759d8d32fb6a8407ddf58281acd6427e693ef4bb2f3570519d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
+          "source_id": "clerk:119:1:65"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported suspending the rules and passing H.R.993 with its border-technology planning, innovation-team authority and procedures/reporting",
+          "source_id": "clerk:119:1:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:70",
+      "shared_sha256": "d21de44c43b9d07a70a5ef9baf07a277b9545fa6e4e9cb99215808a81230e3d1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete H.R. 1968 package; no separate position on a funding account, safeguard, refugee, adjustment or other component, or preferred alternative, is established",
+          "source_id": "clerk:119:1:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete H.R. 1968 package; no separate position on a funding account, safeguard, refugee, adjustment or other component, or preferred alternative, is established",
+          "source_id": "clerk:119:1:70"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:79",
+      "shared_sha256": "93cd4faf151f909c67b290863f15d9cca0926031ea76bfd32401eb448f0cd1ae",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting the whole replacement disclosure regime, which omits the proposed donor/same-country translator qualification while retaining specified English translation duties; no separate component preference inferred",
+          "source_id": "clerk:119:1:79"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting that whole replacement; no separate preference about translators, donors or citizenship groups inferred",
+          "source_id": "clerk:119:1:79"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:83",
+      "shared_sha256": "2a2b57b5cbeb766398ef4b736604efd579790522e02f60b36f261929b911eaf1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that whole package; no separate component preference or individual immigration outcome inferred",
+          "source_id": "clerk:119:1:83"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole House package, including the proposed qualified donor/same-attributable-country translator condition; no separate component preference inferred",
+          "source_id": "clerk:119:1:83"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:102",
+      "shared_sha256": "9e1f5c5a315b4deb6c8196e0291c41dbb0a4a57f56634736d70bf13961f91e03",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.22 with those provisions; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:102"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.22 with its complete qualified citizenship-proof, verification and related election/immigration provisions",
+          "source_id": "clerk:119:1:102"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:116",
+      "shared_sha256": "5da20908e260f112c028953e0e5cdb54eb897d1b1b70b2ba5c2a7bb9e0021e21",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.36 as a whole with its source-qualified provisions",
+          "source_id": "clerk:119:1:116"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.36 as a whole; no preferred alternative is established",
+          "source_id": "clerk:119:1:116"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:119",
+      "shared_sha256": "71b1f5602bb57fe7b04a44395fd2de523f54331c6a3359ebbc46eb47da6d0f8d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1503 as a whole with its source-qualified provisions",
+          "source_id": "clerk:119:1:119"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1503 as a whole; no preferred alternative is established",
+          "source_id": "clerk:119:1:119"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:145",
+      "shared_sha256": "e117257f36b461c2e5a97560825b6bfcd0a7565aa4b64adcd68a812f87f2b58f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete House proposal; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:145"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of that complete House proposal; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:145"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:153",
+      "shared_sha256": "c44d03ebe83438ab4a207b4f7bc08865707004c965beba2cff5791b36624b4d5",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2931 with those requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:153"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2931 with its immigration-policy-conditioned SBA office relocation and noncompliance requirements",
+          "source_id": "clerk:119:1:153"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:156",
+      "shared_sha256": "88498cdc99f4b04480a323781d7aa9bdc2184b1ed403109c3e9681cb8cc2ad5b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2966 with those requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:156"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2966 imposing its specified statutory status/ownership documentation and loan-ineligibility requirements",
+          "source_id": "clerk:119:1:156"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:163",
+      "shared_sha256": "9927080fdec787ad32882c26d4f452489881fcef8982b8bb1da400d6ce2cf4c2",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.884 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:163"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.884 with its D.C. noncitizen-voting prohibition and local-law repeal/restoration",
+          "source_id": "clerk:119:1:163"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:166",
+      "shared_sha256": "8f2641b3090c8fd3f68eabd20176ca1109b69a71d4f2a3a21ab2dc3b379f38da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete source-qualified S.331 proposal",
+          "source_id": "clerk:119:1:166"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete S.331 proposal; no component preference or preferred alternative is established",
+          "source_id": "clerk:119:1:166"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:168",
+      "shared_sha256": "a7d6bede91bc43b7ce3a8d45a42c243ca6b7bc1e78a7a798db2fd5365d8b4681",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R.4 EH rescission package; no preferred alternative is established",
+          "source_id": "clerk:119:1:168"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R.4 EH rescission package",
+          "source_id": "clerk:119:1:168"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:171",
+      "shared_sha256": "07574523e432f9067533d2c0625f5224bde6f6de76902496e6eaf7da094b4e19",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.2056 with those prohibitions; no preferred alternative is established",
+          "source_id": "clerk:119:1:171"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.2056 prohibiting the specified D.C. immigration-information and lawful DHS-request restrictions",
+          "source_id": "clerk:119:1:171"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:172",
+      "shared_sha256": "1ac09125638c643818171a8bf8f198f06f2bc0f3d77a7418239946ba3ca5f5fa",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1998 as a whole with its source-qualified provisions",
+          "source_id": "clerk:119:1:172"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1998 as a whole; no preferred alternative is established",
+          "source_id": "clerk:119:1:172"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:183",
+      "shared_sha256": "dd21e41e4a513b8c2e30b3ab7c3befc370549ca9395fc7f038d82bf77ba1c53f",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.875 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:183"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.875 with its additional intoxicated/impaired-driving inadmissibility and conviction-based deportability grounds",
+          "source_id": "clerk:119:1:183"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:184",
+      "shared_sha256": "aac2753743a66bbe4a46c9e19dc3eec91b37583cfaa1c8dc68b8f3784f172d60",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.275 with those reporting requirements; no preferred alternative is established",
+          "source_id": "clerk:119:1:184"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.275 with its specified monthly and initial historical-period DHS encounter-reporting requirements",
+          "source_id": "clerk:119:1:184"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:190",
+      "shared_sha256": "a067b4651058705c559819a18d54919bf1634c04e9e2cd2c91a1cce3d81101da",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that complete Senate replacement; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:190"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed concurrence in that complete Senate replacement; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:1:190"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:203",
+      "shared_sha256": "99eb0a9071568f9038989e90f43852e0b65ea33292db28effbb1b714d54ecb2a",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed the direct H.R.4 Senate-amendment concurrence and its complete package; no preferred alternative is established",
+          "source_id": "clerk:119:1:203"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported the direct H.R.4 Senate-amendment concurrence and its complete rescission package",
+          "source_id": "clerk:119:1:203"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:220",
+      "shared_sha256": "b091a004a53c107db7aec4d2f11813954243fc8505cf25dc832ac0df98dea565",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.747 as a whole with its source-qualified provisions",
+          "source_id": "clerk:119:1:220"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.747 as a whole with its source-qualified provisions",
+          "source_id": "clerk:119:1:220"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:264",
+      "shared_sha256": "61422deb67c15b97a683be55c252d3c2fb3dfacb8525119321e9f08e41b58db1",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.3486 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:264"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.3486 with its specified entry/reentry penalty increases and qualified mandatory-minimum provisions",
+          "source_id": "clerk:119:1:264"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:1:340",
+      "shared_sha256": "6a68bad87446412c478e27e80c593cd1f4cfb9169aa5531dbe47fdb206be0cac",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.4371 as a whole with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:1:340"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.4371 as a whole with its child-placement, sponsor and household-information provisions",
+          "source_id": "clerk:119:1:340"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:13",
+      "shared_sha256": "05a7491d413a6877e39ed4038958cb019f6623bca8fe4a7bf7628ebc47e86048",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 2683 remote-access control and congressional-information proposal, with its defined status/recipient and risk conditions",
+          "source_id": "clerk:119:2:13"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 2683 proposal; no preferred alternative or motive is established",
+          "source_id": "clerk:119:2:13"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:42",
+      "shared_sha256": "9238e7e5f73c10ff03cc79303fe8a57eda93b35f406003b7f29dd3c476cb649c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:42"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7147 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:42"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:65",
+      "shared_sha256": "93e7be516b6001446f36fb302fda36344b33adf10e200cf13c45a8bbcc0b7120",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.J.Res.72 terminating the specified EO 14193 emergency subject to the statutory savings",
+          "source_id": "clerk:119:2:65"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.J.Res.72 terminating the specified EO 14193 emergency subject to the statutory savings",
+          "source_id": "clerk:119:2:65"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:69",
+      "shared_sha256": "84153432577300ec20288f060d8620c16be7573d1428da8cc7553aff070af3bd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete S. 1383 House replacement; no preferred alternative or motive is established",
+          "source_id": "clerk:119:2:69"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete S. 1383 House SAVE America replacement, including citizenship-verification and qualified photo-ID rules",
+          "source_id": "clerk:119:2:69"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:70",
+      "shared_sha256": "ee09ba0e4e64d6aec89c2c2617d28ef0c909175d26af16a3e0fe833cf67e5d9d",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 2189 EH package; no preferred alternative is established",
+          "source_id": "clerk:119:2:70"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 2189 EH qualified-device classification and tax package",
+          "source_id": "clerk:119:2:70"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:82",
+      "shared_sha256": "6a21b7cad25815212dd0ac990e77e682498332206573661f5c2dcf7904b70610",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 6472 EH territorial-national tuition and fee protection proposal",
+          "source_id": "clerk:119:2:82"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 6472 EH proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:82"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:87",
+      "shared_sha256": "68b68677dc11bc91ce79f7b843e8857779a3b77fb097dac3e669ac667a9a5a21",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 7744 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:87"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact H.R. 7744 annual DHS funding proposal",
+          "source_id": "clerk:119:2:87"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:94",
+      "shared_sha256": "e85d0b56f0aacee5e348a3771cff29f25f3402050a6d9b7f1f8bb2a799013bfd",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1958 with those provisions; no preferred alternative is established",
+          "source_id": "clerk:119:2:94"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1958 with its specified-offense inadmissibility/deportability grounds and express broad immigration-relief bar",
+          "source_id": "clerk:119:2:94"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:96",
+      "shared_sha256": "fd8b3ef6eda3672e14e3f499b30e70cf1a1463f477588586aa053b0493e23714",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.4638 with those grounds; no preferred alternative is established",
+          "source_id": "clerk:119:2:96"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.4638 with its additional conviction/admission-based immigration grounds for the specified federal police-animal offense",
+          "source_id": "clerk:119:2:96"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:101",
+      "shared_sha256": "f7232adbc37f55323ada862497f938b79a721ffae487e31d21a916ee7aef5efe",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 5103 EH proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:101"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the complete H.R. 5103 EH DC commission and beautification proposal",
+          "source_id": "clerk:119:2:101"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:104",
+      "shared_sha256": "791df9770515cda9550ebe3d675cc3da5babc1f223952cb3424d6f11fe3e9c28",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the whole exact H.R. 8029 annual DHS funding proposal; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:104"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of the whole exact H.R. 8029 annual DHS funding proposal",
+          "source_id": "clerk:119:2:104"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:108",
+      "shared_sha256": "0d47b3048cffcb711b6284872861f2301d384ef5dc217077f4257c948061c8d7",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adoption of that complete continuing-resolution replacement; no preferred funding or immigration alternative is established",
+          "source_id": "clerk:119:2:108"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adoption of the complete H.R. 7147 House continuing-resolution replacement in Rules Committee Print 119-21",
+          "source_id": "clerk:119:2:108"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:120",
+      "shared_sha256": "f4e2ee2359c8a8f04554248e05e124dc7aadbc7b285918eee4b862324642b612",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of H.R.1689 requiring the specified Haiti TPS designation through its fixed statutory endpoint",
+          "source_id": "clerk:119:2:120"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of H.R.1689 with that designation mandate; no preferred alternative is established",
+          "source_id": "clerk:119:2:120"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:169",
+      "shared_sha256": "ae86db6cb92b5ef0a381b66ac528e74fb338e29f4c91ae37de939e37de71b1d4",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of the complete H.R. 6260 EH insurance-definition proposal; no preferred alternative is established",
+          "source_id": "clerk:119:2:169"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Not Voting",
+          "effect": "resolved_non_directional",
+          "selected_meaning": null,
+          "source_id": "clerk:119:2:169"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:214",
+      "shared_sha256": "171ede2232ab7f1ae7d6d9ea80202ad647fb4d014a860aee080fa5720fcbcb2c",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed passage of S.2 with that package; no preferred alternative or separate component position is established",
+          "source_id": "clerk:119:2:214"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported passage of S.2 with its complete qualified immigration and other border/DHS appropriations package",
+          "source_id": "clerk:119:2:214"
+        }
+      ]
+    },
+    {
+      "action_id": "house:119:2:244",
+      "shared_sha256": "e5a889aab9771db9ec2f36cfb79508cea95c69b702c218fd51baaa786d69106b",
+      "choices": [
+        {
+          "member_id": "F000477",
+          "status": "Nay",
+          "effect": "opposes_exact_choice",
+          "selected_meaning": "opposed adopting that combined amendment; this does not establish a separate position on each account, country or program",
+          "source_id": "clerk:119:2:244"
+        },
+        {
+          "member_id": "M001184",
+          "status": "Yea",
+          "effect": "supports_exact_choice",
+          "selected_meaning": "supported adopting the combined Jordan funding prohibition and all eight specified account reductions, including the $50 million emergency refugee and migration fund reduction, subject to the stated application limits",
+          "source_id": "clerk:119:2:244"
+        }
+      ]
+    }
+  ],
+  "differing_real_choices_exercised": true,
+  "controlled_raw_update": {
+    "interpretation_unchanged": true,
+    "cutoff_unchanged": "2026-09-16"
+  },
+  "controlled_new_interpretation_input": {
+    "action_id": "house:119:1:6",
+    "requires_explicit_authoring_change": true,
+    "acceptance_conferred": false
+  },
+  "controlled_shared_correction": {
+    "impact": {
+      "changed_action_ids": [
+        "house:119:1:6"
+      ],
+      "affected_projections": [
+        {
+          "member_id": "F000477",
+          "action_ids": [
+            "house:119:1:6"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "action_ids": [
+            "house:119:1:6"
+          ]
+        }
+      ],
+      "affected_findings": [
+        {
+          "member_id": "F000477",
+          "proposition_ids": [
+            "prop:304f815e9ad8fc84"
+          ]
+        },
+        {
+          "member_id": "M001184",
+          "proposition_ids": [
+            "prop:f3439d6ae6e0b949"
+          ]
+        }
+      ],
+      "acceptance_conferred": false
+    },
+    "stale_projections_rejected": [
+      "F000477",
+      "M001184"
+    ],
+    "historical_core_unchanged": true
+  }
+}

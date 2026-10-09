@@ -1,0 +1,63 @@
+{
+  "checkpoint": 182,
+  "historical_head": "919c38a4650f254a30d969defe90c971afb06d7d",
+  "source_thread_id": "01a1119d-9871-7262-b3e5-9e8afa16b0fc",
+  "received_via": "User delegation source and structural review messages",
+  "review_state": "bounded_lanes_complete_with_pending_candidate_precision_corrections",
+  "overall_final_review_complete": false,
+  "inherited181_findings_closed": [
+    142,
+    188,
+    198
+  ],
+  "corrected_source_scopes_active_references_history_verified": true,
+  "identity_guard_rejects_all_three_historical_wrong_captures": true,
+  "material_candidate_precision_findings": [
+    {
+      "priority": "P2",
+      "action_id": "house:119:2:142",
+      "finding": "New monthly submission omitted expanded conditional FISC waiver",
+      "resolved_locally_in_checkpoint184": true,
+      "independent184_recheck_pending": true
+    },
+    {
+      "priority": "P3",
+      "action_id": "house:119:2:142",
+      "finding": "Attorney prior-approval description omitted unchanged threat-to-life/serious-bodily-harm exception",
+      "resolved_locally_in_checkpoint184": true,
+      "independent184_recheck_pending": true
+    },
+    {
+      "priority": "P3",
+      "action_ids": [
+        "house:119:2:142",
+        "house:119:2:155",
+        "house:119:2:221"
+      ],
+      "finding": "Missing1881(a)1801definition-import source binding",
+      "substantive_citizenship_LPR_statement_correct": true,
+      "resolved_locally_in_checkpoint184": true,
+      "independent184_recheck_pending": true
+    }
+  ],
+  "fresh_statutory_and_rule_hashes_matched": 11,
+  "literal_claim_passages_verified": 49,
+  "correct142operative_characters": 9956,
+  "independent_preservation_and_structural_checks": 50,
+  "byte_exact_generated_replays": 7,
+  "CI": {
+    "run": 37997440200,
+    "attempt": 1,
+    "fresh_successes": 9,
+    "contexts": {
+      "feature": 5,
+      "synthetic": 3,
+      "mixed": 1
+    }
+  },
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "compiler_release_authorized": false,
+  "methodology_change_authorized": false,
+  "receipt_sha256": "cef3b621aacf793ba0aaa7aeda09b7547080731a78de70f5b829d1da41865c79"
+}

@@ -1,0 +1,80 @@
+{
+  "checkpoint": 177,
+  "base_head": "9d23bbee6712f2b20df744199c80d47c8b0f212e",
+  "candidate_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/state_passage_source_boundaries_checkpoint177.json",
+  "candidate_receipt_sha256": "091480538f1cf3509425ceed9725242a958ca57a9b015d325eb7962914bac0b2",
+  "validation": {
+    "focused_tests": 191,
+    "runtime_seconds": 17.313,
+    "semantic_checks": 7,
+    "reference_cases": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "mechanical": {
+      "canonical_sources": 1961,
+      "capture_registrations": 842,
+      "new_capture_registration_objects_verified": 4,
+      "unique_source_seals_verified": 2362,
+      "new_derivatives_verified": 2,
+      "primary_raw_acquisitions_verified": 4,
+      "historical_blobs_preserved": 747,
+      "generated_files_replayed": 7,
+      "unchanged_generated_files": [
+        "compiled_ir.json",
+        "compiler_input.json",
+        "member_projections.json",
+        "readable_candidates.json",
+        "shared_action_core.json",
+        "shared_issue_mapping.json"
+      ],
+      "all47meaning_and_member_projection_objects_exact": true,
+      "all80propositions_byte_exact": true,
+      "unchanged_pending_rows_except247": true,
+      "existing_Health_core_unchanged": true,
+      "no_new_meaning_or_completed_screening": true
+    },
+    "final_diff_reviewed": true,
+    "private_verifier_corrections": [
+      "Initial merged-source lookup shadowed an original capture with enriched canonical metadata; new registration checks now bind the original captured objects.",
+      "Historical private-capture omissions are not reconciled here; all prior registrations/pool entries remain exact, all four new registrations are matched exactly.",
+      "Git historical object preservation uses existing git hash-object --path line-ending filters on Windows; private byte comparison against git show was incorrect. Failed helpers retained. Repository validators unchanged."
+    ]
+  },
+  "source_limits": [
+    "Only House passage of the combined package is established, not enactment or independent component preference. Both governed member observations are Nay.",
+    "Direct independent consular/refugee headings and appended DHS/removal/naturalization mechanisms require exact programme/statutory scope checks. No final Immigration membership is claimed.",
+    "Appended DivisionB is read in full with alternative proof, notice, uniformed-service and provisional-ballot exceptions. Printed cross-reference/date anomalies retained, not silently repaired.",
+    "Whole 333,636-character EH capture is raw/text-equivalent to the historical neutral capture. Only 0–108,000 and 301,371–333,636 read; remaining Division A not claimed read.",
+    "Existing Health shared-core identity/digest recorded as reference only. No duplicate or altered action meaning, inherited issue mapping, new graph or hold release.",
+    "No new completed screening; existing 47 meanings / 80 propositions / 70 questions / three partial packages and 241/243/245/79/83 holds preserved."
+  ],
+  "timing": {
+    "checkpoint": 177,
+    "base_head": "9d23bbee6712f2b20df744199c80d47c8b0f212e",
+    "started_utc": "2026-10-09T18:36:48.002343+00:00",
+    "scope": "H.R.8595 final passage247: full actual House package and source-bound independent consular/refugee appropriations; retain241/243/245holds",
+    "attempted_action_ids": [
+      "house:119:2:247"
+    ],
+    "selection_basis": "Close meaningful authored244State episode coverage using member-neutral exact source reuse; no other-domain interpretation borrowed",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "source_research_overlaps176CI": true,
+    "no_overlap_subtraction_or_average_claim": true,
+    "local_validation_completed_utc": "2026-10-09T18:59:01.172905+00:00",
+    "local_end_to_end_seconds": 1333.170562,
+    "completed_screenings": 0,
+    "held_source_cases": 1,
+    "targeted_tests": 191,
+    "targeted_seconds": 17.313,
+    "performance_average_established": false,
+    "delivery_scope": "Material combined-package source discovery; final passage247 remains pending, whole chain unfinished"
+  },
+  "completed_screenings": 0,
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "a956e9820ab8cecfa64f3c7c3f98221aea76244dda4a9f8c795f1b167afc9612"
+}

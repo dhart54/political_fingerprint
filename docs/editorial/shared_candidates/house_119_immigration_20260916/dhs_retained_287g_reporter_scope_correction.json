@@ -1,0 +1,186 @@
+{
+  "checkpoint": 85,
+  "review_state": "candidate_pending_external_semantic_review",
+  "prior_checkpoint": "37b22470570c700dcb21345bcff7038811d4f42e",
+  "finding_id": "IB-DHS-RETAINED-287G-REPORTER-AND-FIELDS",
+  "severity": "Major",
+  "state": "corrected_candidate_pending_independent_recheck",
+  "changes": [
+    {
+      "action_id": "house:119:2:42",
+      "before_action_sha256": "706b86a09708b546e28afa00a94879311563b8e29a449e520d00a17898218f51",
+      "corrected_action_sha256": "3b2f25250f65004fe66d5017b08f99bd96010a9bf884601fba71f2e7cc1b6e62",
+      "before_sentence": "The accompanying IG 287(g) report covers participation, training, criminality/nationality, removals, outreach and future plans.",
+      "corrected_sentence": "The retained 2020 section 217 report is submitted by the ICE Director, not the Inspector General. It requires participating jurisdictions' community outreach, counts of individuals placed in removal proceedings, state/local officers' performance data including nationality and criminality, and future agreement-expansion plans. The complete retained report's enumerated fields do not include training. This retained report is distinct from the current Act's section 217 budget plan."
+    },
+    {
+      "action_id": "house:119:2:87",
+      "before_action_sha256": "097331e495e091376dcf946cfcc011fbbb605a0f80a24e6deb1d4490dc659521",
+      "corrected_action_sha256": "cc992ac1c81600e78680ba7e19baae4dd12e615c07ae49172cbe95a30eec4c14",
+      "before_sentence": "The accompanying IG 287(g) report covers participation, training, criminality/nationality, removals, outreach and future plans.",
+      "corrected_sentence": "The retained 2020 section 217 report is submitted by the ICE Director, not the Inspector General. It requires participating jurisdictions' community outreach, counts of individuals placed in removal proceedings, state/local officers' performance data including nationality and criminality, and future agreement-expansion plans. The complete retained report's enumerated fields do not include training. This retained report is distinct from the current Act's section 217 budget plan."
+    },
+    {
+      "action_id": "house:119:2:104",
+      "before_action_sha256": "e033b5bc2e07e4b25f2caa521e5a4e84f7bfd01c3bfaa1645e342565692ab29b",
+      "corrected_action_sha256": "508aaa087fb4327c19ddc401bc0d10cc402688e6db34d1551c7ea1edbba2ce38",
+      "before_sentence": "The accompanying IG 287(g) report covers participation, training, criminality/nationality, removals, outreach and future plans.",
+      "corrected_sentence": "The retained 2020 section 217 report is submitted by the ICE Director, not the Inspector General. It requires participating jurisdictions' community outreach, counts of individuals placed in removal proceedings, state/local officers' performance data including nationality and criminality, and future agreement-expansion plans. The complete retained report's enumerated fields do not include training. This retained report is distinct from the current Act's section 217 budget plan."
+    }
+  ],
+  "outer_incorporation_witnesses": [
+    {
+      "action_id": "house:119:2:42",
+      "source_id": "govinfo:hr7147ih-immigration-complete",
+      "start": 36236,
+      "end": 36418,
+      "total": 122516,
+      "passage": "Sec. 216. The terms and conditions of sections 216 and 217 of the Department of Homeland Security Appropriations Act, 2020 (division D of Public Law 116-93) shall apply to this Act. ",
+      "passage_sha256": "edc23ca5e5c66660ac20f32f3b2ed038d60e4eda981bf85ff5fa8ac26d550bef"
+    },
+    {
+      "action_id": "house:119:2:87",
+      "source_id": "govinfo:hr7744eh",
+      "start": 36864,
+      "end": 37046,
+      "total": 124850,
+      "passage": "Sec. 216. The terms and conditions of sections 216 and 217 of the Department of Homeland Security Appropriations Act, 2020 (division D of Public Law 116-93) shall apply to this Act. ",
+      "passage_sha256": "edc23ca5e5c66660ac20f32f3b2ed038d60e4eda981bf85ff5fa8ac26d550bef"
+    },
+    {
+      "action_id": "house:119:2:104",
+      "source_id": "govinfo:hr8029eh",
+      "start": 36838,
+      "end": 37020,
+      "total": 124825,
+      "passage": "Sec. 216. The terms and conditions of sections 216 and 217 of the Department of Homeland Security Appropriations Act, 2020 (division D of Public Law 116-93) shall apply to this Act. ",
+      "passage_sha256": "edc23ca5e5c66660ac20f32f3b2ed038d60e4eda981bf85ff5fa8ac26d550bef"
+    }
+  ],
+  "retained_report_witness": {
+    "source_id": "govinfo:pl116-93-dhs216-217",
+    "start": 1499,
+    "end": 2757,
+    "total": 6088,
+    "passage": "Sec. 217. <<NOTE: Public information. Web posting. Reports.>> Not later than 45 days after the date of enactment of this Act, the Director of U.S. Immigration and Customs Enforcement shall submit to the Committees on Appropriations of the Senate and the House of Representatives, and make available on a publicly accessible website, a report describing agreements pursuant to section 287(g) of the Immigration and Nationality Act (8 U.S.C. 1357(g)) which shall include -- (1) detailed information relating to the community outreach activities of each participating jurisdiction pursuant to such agreement, including the membership and activities of any community-based steering committee established by such jurisdiction; (2) the number of individuals placed into removal proceedings pursuant to each such agreement; (3) <<NOTE: Data.>> data on the performance of the officers or employees of a State or political subdivision thereof under each such agreement, including the nationality and level of criminality of the individuals described in paragraph (2); and (4) information relating to any future plans to increase the number of such agreements or expand the scope of such agreements through the introduction of new operations pursuant to such section. ",
+    "passage_sha256": "57e4a4197294e072d69e147c55e448232adec9ad19a2a2de476a0ad7ac3f68ac"
+  },
+  "preservation_receipt": {
+    "checkpoint": 84,
+    "head": "37b22470570c700dcb21345bcff7038811d4f42e",
+    "scope": "Pre-correction exact local artifacts for retained287(g) reporter/field attribution defect in42/87/104; no reset/stash/deletion",
+    "files": [
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/authoring.json",
+        "sha256": "f2e065a37d6b0e910da274f0c182a433b2991373da1c914a41ec6a452b177923",
+        "bytes": 8751259
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/sources.json",
+        "sha256": "7368bf7b1ec9fc8547d5f024c6c7f258d60055be2ae34eb1e1db155234e71a05",
+        "bytes": 10335342
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/membership_review.json",
+        "sha256": "4786b9082f08424cbbe10529bd5b5b98a30ef2e8c6aadae0c82ae485f452b31f",
+        "bytes": 1315620
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/universe_proposal.json",
+        "sha256": "84e00cdaa66cfcafde122b94bba6019ab95b3e905f3f085dc384e549eaec6078",
+        "bytes": 2234309
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiled_ir.json",
+        "sha256": "3491089a515682d34842c1df550604a1387a78ed06fa2bd3958a0505b0716a74",
+        "bytes": 61457
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/compiler_input.json",
+        "sha256": "e2549361b715af5a4ed9e84194879b148715ab8701dec92a00b44b5826454e76",
+        "bytes": 631391
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/member_projections.json",
+        "sha256": "77ee7fabb3129604c675b2af785837e05cb02be73670a63d5ddaf08bc62b5ea7",
+        "bytes": 71477
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/readable_candidates.json",
+        "sha256": "fbcf1ee7cce7e832461b24f6b23a4805085038be5a988f886deaf842e195c05e",
+        "bytes": 19344669
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/reproducibility_proof.json",
+        "sha256": "cea4e4f074eeb03980bcf40992fbf445e2ad0ed3e11ef3dee280696ade26cf27",
+        "bytes": 34978
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_action_core.json",
+        "sha256": "90fc5babf7dd6613f3bcecc4cd50d502316370c082b4f065d8eb0d57de7350dd",
+        "bytes": 9752249
+      },
+      {
+        "path": "docs/editorial/shared_candidates/house_119_immigration_20260916/generated/shared_issue_mapping.json",
+        "sha256": "a8c1036972faf392c0b575f193b3ce8ca17c7dece295800bea70bfc53ea8969e",
+        "bytes": 25052
+      },
+      {
+        "path": "docs/review_packets/immigration_semantic_audit_in_progress.json",
+        "sha256": "12f1ed6478cac6f3f4f59e3074710f55ef10fcd6012d14072a68c7bf588cf529",
+        "bytes": 868232
+      }
+    ]
+  },
+  "protected_boundary": "Only the retained2020 report actor/fields change. Current-Act217 budget reporting and IG agreement-material-violation role stay distinct; no direction, membership, accounting, source bytes or production/publication change.",
+  "new_source_count": 0,
+  "new_acquisition_count": 0,
+  "total_captures": 339,
+  "application_questions_unchanged": 63,
+  "full_issue_closed": false,
+  "independent_recheck_required": true,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "next_action": "Independent bounded source-to-candidate correction recheck; remaining H.R.1968 DHS source work can proceed in parallel. Newly verified historical CFR source remains private pending next increment.",
+  "receipt_sha256": "3a94745371a0dd9b6dd0fed15d5129d6f21b84a9fd91727de8179a43dd34a677",
+  "validation": {
+    "focused_tests": 107,
+    "focused_scope": "81 candidate and26 Semantic IR tests; bounded correction, no new full six-module aggregate claim.",
+    "focused_runtime_seconds": 11.989,
+    "semantic_ir_reference_checks": {
+      "accepted_references": 12,
+      "accepted_held_out_references": 4,
+      "held_out": 4
+    },
+    "editorial_pipeline_semantic_checks": 7,
+    "seven_raw_generated_json_files_byte_identical_to_separate_replay": true,
+    "controlled_mutations": [
+      {
+        "name": "Inspector General substituted for ICE Director",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "Training-report field invented",
+        "assertion_failures": 1,
+        "errors": 0
+      },
+      {
+        "name": "Retained report collapsed into budget plan",
+        "assertion_failures": 1,
+        "errors": 0
+      }
+    ],
+    "three_exact_sentence_replacements_only": true,
+    "all_37_other_meanings_sources_ledgers_63_questions_and_frozen_82_84_receipts_preserved": true,
+    "twelve_archived_byte_hashes_and_four_complete_source_witnesses_verified": true,
+    "both_member_corrected_detail_and_unchanged_compact_observations_inspected": true,
+    "compiled_proposition_graph_unchanged": true,
+    "final_diff_reviewed": true,
+    "hosted_ci": "Pending correction85 feature push; previous exact37b2247 run37652464826 nine jobs succeeded with preserved checkout provenance."
+  },
+  "output_hashes": {
+    "core": "c60bbc52bab7237fd5a865a16900f1dabae677fd99343e5646381c9ef844223d",
+    "compiled": "f08d26b9ef2948c69b5b21d0f4cce4da223584256e2a341fe6851c4d112dc898"
+  }
+}

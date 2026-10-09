@@ -1,0 +1,60 @@
+{
+  "authority": "Record of bounded independent semantic and mechanical findings supplied by supervising Fingerprint; implementation owner transcribed without expanding verification scope",
+  "reviewed_commit": "d29f608c47ad2f7f94d0bb8b2b0ba3ab7f82f37a",
+  "semantic_review": {
+    "result": "One Major reported; no additional material defect within checked scope",
+    "finding": {
+      "finding_id": "IB-HR1-REIMBURSEMENT-TRANSPORT-GEOGRAPHY",
+      "severity": "Major",
+      "action_id": "house:119:1:190",
+      "surfaces": [
+        "Detailed meaning",
+        "Qualification"
+      ],
+      "defect": "Paragraph 100055(b)(6) transport omitted within the United States",
+      "required_repair": "Restore the domestic transport limit alongside the paragraph (1) person category and related destination purposes"
+    },
+    "checked_other_scope": [
+      "Voting exceptions",
+      "Distinct funding accounts",
+      "Other purpose conditions",
+      "Fund ceiling and availability",
+      "Inclusive activity date",
+      "Grant discretion",
+      "Prior repairs retained"
+    ],
+    "receipt_digest_verified": true,
+    "binding_hashes_independently_recomputed": 0,
+    "new_binding_instances_not_recomputed": 5,
+    "reused_binding_instances_not_recomputed": 1
+  },
+  "mechanical_review": {
+    "result": "No mechanical blocker within checked exact checkpoint 56 scope",
+    "exact_head_ci": {
+      "run": 37543398935,
+      "head": "d29f608c47ad2f7f94d0bb8b2b0ba3ab7f82f37a",
+      "all_nine_jobs_successful": true
+    },
+    "changed_candidate_document_paths": 13,
+    "protected_code_test_schema_paths_unchanged": true,
+    "sources_captures_compiled_ir_and_mapping_unchanged": true,
+    "binding_receipt_structure_checked": {
+      "new": 5,
+      "reused": 1,
+      "raw_binding_hash_recomputation": false
+    },
+    "partial_accounting_honest": true,
+    "owner_aggregate_and_replay_independently_rerun": false
+  },
+  "limitations": [
+    "Full member outputs not independently verified",
+    "Byte replay not independently reproduced",
+    "Individual legal application excluded",
+    "Complete package/domain acceptance excluded",
+    "Checkpoint 58 correction requires its own bounded independent recheck",
+    "No editorial acceptance, promotion or publication"
+  ],
+  "full_corpus_verdict": null,
+  "publication_authorized": false,
+  "receipt_sha256": "4c79e5b18505a590a080fdba8d81fafeb7f856bc158ff194f220bcde51a6a153"
+}

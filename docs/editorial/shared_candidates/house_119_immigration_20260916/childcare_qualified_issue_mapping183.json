@@ -1,0 +1,93 @@
+{
+  "schema_version": "shared_issue_mapping_v1",
+  "artifact_id": "shared-issue-mapping:IMMIGRATION_BORDER:house:119:qualified183:v1",
+  "domain_id": "IMMIGRATION_BORDER",
+  "scope_boundaries": [
+    "Exact198plan-description/source-qualified relationship only, held for core and domain review.",
+    "No new shared meaning, family/trait, compilation,counting,acceptance or publication."
+  ],
+  "authoritative_for_new_editorial_work": false,
+  "historical_inputs_rewritten": false,
+  "review_state": "candidate_pending_external_semantic_review",
+  "semantic_ir_case_scope": {
+    "action_ids": [
+      "house:119:2:198"
+    ],
+    "compiled": false,
+    "behavioral_propositions_created": 0
+  },
+  "action_mappings": [
+    {
+      "action_id": "house:119:2:198",
+      "eligibility": {
+        "decision": "source_unresolved_pending_qualified_shared_core_review",
+        "parent_context_used": false
+      },
+      "episode_id": null,
+      "policy_family_refs": [],
+      "policy_trait_refs": [],
+      "structural_metadata": {
+        "action_id": "house:119:2:198",
+        "candidate_domain_decision": "eligible_candidate_pending_qualified_shared_core_augmentation_review",
+        "candidate_mechanism": "New CCDF State-plan eligibility-documentation/verification description with explicitly sourced retained status-governed public-benefit context.",
+        "candidate_exact_qualification": "The exact H.R.7726 Print119-32 substitute adds State-plan descriptions of eligibility documentation/verification, fraud controls/investigation/recovery and client/provider sanctions. Dated HHS notices expressly identify CCDF as a program providing Federal public benefits; the2025notice retains that listing, distinguishes definition from verification and does not formally revise1998verification requirements. Read together with dated8US1642verification and nonprofit-charitable-provider exemption, this supplies a specific program/status-verification candidate relationship for the new general eligibility-description operator. It does not make every CCDF service status-restricted or impose a new citizenship requirement on parents. The requested source qualification requires shared-core and Immigration application review before any eligibility/counting change.",
+        "limitations": [
+          "Existing Health candidate shared core is referenced once; its meaning/digests remain unchanged, unapproved and not a second Immigration meaning.",
+          "The bill adds a plan description, not an express new citizenship/category test or mandatory documentation request for every individual.",
+          "The1998notice is dated historical interpretation; the2025notice revises classification interpretation while expressly leaving verification aspects formally unrevised at that time. No full current implementation or court/application clearance.",
+          "Three specific ACF PDF/page requests returned zero-byte202responses and the eligibility page403; unavailable1998/2008beneficiary/provider instructions are not evidence. Precise primary-beneficiary, provider and service-exemption application remains pending.",
+          "Nonprofit-charitable-provider exemption from8US1642verification differs from benefit eligibility; no all-provider verification obligation or voluntary-query mandate inferred.",
+          "Only complete1998III/IV and2025III/IV read; other notice sections/entire captured parents not certified; no reliance on secondary advice or campaign rhetoric.",
+          "May-to-shall makes additional appropriate sanctions mandatory while retaining the statutory range of sanctions; no inevitable withholding or immigration enforcement sanction.",
+          "Final exhausted/waived-appeals fraud findings, permanent provider debarment, State improper-payment thresholds, suspected fraud and other improper payments remain separate; literal9858lg/659J/high-risk references are not repaired.",
+          "Full9858cplan and1766parent remain unread; the remaining child-food/provider baseline and exactHHS/status chain require source review; no hold release, compiler application, alignment or publication."
+        ],
+        "source_ids": [
+          "immigration:roll198-operative-corrected182",
+          "immigration:roll198-recorded181",
+          "govinfo:hr7726eh",
+          "govinfo:42usc9858g-operative181",
+          "govinfo:42usc9858h-operative181",
+          "govinfo:42usc9858i-operative181",
+          "govinfo:42usc9858n-2024-childcare",
+          "govinfo:8usc1642-services181",
+          "govinfo:hhs-fr1998-ccdf-III-IV-183",
+          "govinfo:hhs-fr2025-ccdf-III-IV-183"
+        ],
+        "shared_core_reference": {
+          "action_id": "house:119:2:198",
+          "action_meaning_ref": "house119-through-2026-09-16:house:119:2:198:candidate-v1",
+          "action_core_sha256": "ee36a3279d5424a837efe5251202b1e5c050cc2963e0b6e45ce93155103b8702",
+          "governed_source_identity_sha256": "85780f9886363c406df64eee0b932333877f7bc0b443de699f68c1fb1e834663"
+        },
+        "shared_core_artifact_id": "shared-action-core:house:119:v3",
+        "shared_core_path": "docs/editorial/shared_candidates/house_119_health_20260916/generated/shared_action_core.json",
+        "source_qualification_review_reference": "childcare_qualified_research_checkpoint183.json#house:119:2:198"
+      },
+      "mapping_sha256": "d3900787908c6ed998a1c98a67e588642b257906f837ba2809f5d1e622027546"
+    }
+  ],
+  "episodes": [],
+  "policy_families": [],
+  "policy_traits": [],
+  "trait_relationships": [],
+  "shared_review_dependencies": [
+    {
+      "artifact_id": "shared-action-core:house:119:v3",
+      "content_subject_sha256": "ee36a3279d5424a837efe5251202b1e5c050cc2963e0b6e45ce93155103b8702",
+      "dependency_id": "qualified183:house:119:2:198",
+      "review_route": "Existing candidate core source augmentation plus specific HHS/beneficiary/provider and Immigration application review before compiler use"
+    }
+  ],
+  "source_render_constraints": [
+    {
+      "action_ids": [
+        "house:119:2:198"
+      ],
+      "constraint_id": "noncounting-qualified183:house:119:2:198",
+      "detail": "General plan-description operator and status-governed program context remain qualified; no individual eligibility conclusion.",
+      "semantic_effect": "No support/opposition,alignment,eligibility promotion,counting or publication before review."
+    }
+  ],
+  "mapping_sha256": "0b405135e9a2d0c159a0d8d7f15bc7d428f7d8949462ac880698416a99271422"
+}

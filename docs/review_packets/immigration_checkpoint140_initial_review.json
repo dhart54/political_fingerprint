@@ -1,0 +1,52 @@
+{
+  "checkpoint": 140,
+  "head": "96194331d1a8a9f57c3ef5cce2a0ecca26bc73b9",
+  "source_of_report": "Incoming initial bounded independent source/mechanical review with two P3 findings;final source review to follow",
+  "mechanical_and_exclusion_boundaries": "Pass within bounded review:506 reviewed/170 pending;prior503reviews/1529sources/426captures/44meanings/78findings/sixoutputs/tests/questions/partial packages preserved. Five registrations,two parent seals/four extents verify. Two existing guards pass;all139log hashes reproduce.",
+  "findings": [
+    {
+      "finding_id": "IB-AUDIT-888-INVESTIGATION-DIRECTIVE",
+      "severity": "Minor",
+      "priority": "P3",
+      "source_id": "govinfo:hres888ih",
+      "source_start": 4765,
+      "source_end": 4919,
+      "source_total": 5170,
+      "finding": "Section1(2)DIRECTS a full investigation;active rationale must not weaken to request.",
+      "locally_corrected_at141": true
+    },
+    {
+      "finding_id": "IB-AUDIT-1544-TERMINATION-REMOVAL",
+      "severity": "Minor",
+      "priority": "P3",
+      "source_id": "govinfo:50usc1544-2024-operative",
+      "source_start": 1025,
+      "source_end": 2450,
+      "source_total": 2500,
+      "finding": "1544(b)report-triggered termination/exceptions/qualified extension distinct from(c)concurrent-resolution removal notwithstanding(b);conditions/enforceability retained.",
+      "locally_corrected_at141": true
+    }
+  ],
+  "ci": {
+    "run": 37755066372,
+    "successful_jobs": 9,
+    "first_attempt": true,
+    "feature_pinned_jobs": 5,
+    "synthetic_jobs": 3,
+    "mixed_jobs": 1,
+    "hosted_preparation_tests": 307,
+    "repair_counts": [
+      13,
+      20
+    ]
+  },
+  "limits": [
+    "Final source review and bounded correction recheck pending",
+    "Wrong61check remains owner-reported private validation,not a newly committed test",
+    "No independent full-suite rerun or editorial acceptance",
+    "133restrictions and138/139provenance limits retained"
+  ],
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "945a4a60257829f68c8e18ea9bbbcf7a42513b1f7062a7c763b6dab1ccd58319"
+}

@@ -1,0 +1,35 @@
+{
+  "checkpoint": "80 acquisition-ledger follow-up",
+  "prior_checkpoint": "d95d6fee8d03cea43b2374101cd6a09497d9455c",
+  "finding": "The new baseline was source-bound and recorded in checkpoint 80, but its acquisition row was not appended to the durable manifest. The manifest remained 335 while the saved pool and receipt correctly reported 336.",
+  "correction": "Append the single existing captured source to the durable manifest. Verify unchanged first 335 rows; no recapture, source rewrite or interpretation change.",
+  "new_source_id": "govinfo:43usc1613-2024-complete",
+  "new_manifest_row": {
+    "source_id": "govinfo:43usc1613-2024-complete",
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title43/html/USCODE-2024-title43-chap33-sec1613.htm",
+    "raw_sha256": "a63bd318453f9d7b9a2ab685dbf1932dffb2f061f5dbd9cb9ac6974b82475244",
+    "governed_bytes_sha256": "9cffc5b74a3fa2c8155f6c02cc56829075a2af8aa945755ef95fe693b5cffbc3",
+    "text_sha256": "c1eec1b7d89955b36efaa693295ae11884de64b166e4cfa275a06b1125923e64",
+    "text_length": 34707
+  },
+  "prior_manifest_rows_byte_equivalent_as_json": true,
+  "canonical_meanings_unchanged": true,
+  "original_screening_receipt_preserved": true,
+  "production_eligible": false,
+  "publication_authorized": false,
+  "receipt_sha256": "d93ccf63848c9ca75acc1e521caabe78e56a8aae295215a7fb93102cfb030670",
+  "validation": {
+    "candidate_tests": 76,
+    "candidate_runtime_seconds": 12.19,
+    "controlled_missing_capture_mutation_assertion_failures": 1,
+    "controlled_mutation_errors": 0,
+    "seven_generated_replay_files_still_byte_identical": true,
+    "previous_full_aggregate": {
+      "checkpoint": 80,
+      "tests": 264,
+      "seconds": 42.646,
+      "semantic_checks": 7
+    },
+    "full_aggregate_not_repeated_for_manifest_append": true
+  }
+}

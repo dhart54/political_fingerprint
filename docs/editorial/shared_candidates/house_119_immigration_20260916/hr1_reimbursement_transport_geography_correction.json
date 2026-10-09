@@ -1,0 +1,676 @@
+{
+  "authority": "Same-owner source-grounded repair of independently reported Major, with explicit clause-condition review; no editorial acceptance",
+  "finding_id": "IB-HR1-REIMBURSEMENT-TRANSPORT-GEOGRAPHY",
+  "severity": "Major",
+  "reviewed_checkpoint56": "d29f608c47ad2f7f94d0bb8b2b0ba3ab7f82f37a",
+  "prior_checkpoint": "acc4edef8c14238bb14254db78ab797e5a9c3404",
+  "prior_checkpoint57_committed_unpushed": true,
+  "action_id": "house:119:1:190",
+  "prior_authoring_action_sha256": "dc91fa0f26918ce44a9de72e7e642b0ef5cb28c7520195bd79f37d3e5132bdb6",
+  "after_surgical_major_repair_action_sha256": "f7a2c9de787f52571150f0216a54caf21119f84010eefb14a8f158999b7330d6",
+  "current_authoring_action_sha256": "d7352857c6aab5f9b56e1e306baa3fa8777927124ca82625250e479480e7ee81",
+  "prior_qualification_sha256": "fc6a49661096268e211807cd5180fc2bfb6038afe96cecf8ae203396cd2eee8b",
+  "current_qualification_sha256": "77fcdeecddfc17659f959b2f70507c6778fe84aa1466c3ce52b9411bd897b4af",
+  "major_repairs": [
+    {
+      "field": "meaning",
+      "before": "Paragraph (6) transport expressly refers to paragraph (1) persons and related apprehension/detention/prosecution locations.",
+      "after": "Paragraph (6) funds transporting aliens described in paragraph (1) within the United States to locations related to their apprehension, detention and prosecution.",
+      "before_sha256": "77726e97ab21a65b0d90b0a1e784ae29a733da6b4991eaf31df7ce14f4f29db8",
+      "after_sha256": "20821da2ac3c8816edb657118d5c36d979fd3bfac049859f073e5321eef3444f"
+    },
+    {
+      "field": "qualification",
+      "before": "(6) refers to (1).",
+      "after": "Paragraph (6) funds transporting aliens described in paragraph (1) within the United States to locations related to their apprehension, detention and prosecution.",
+      "before_sha256": "b85f732b65afb1afe5e5463bc2e25f397e368c7c7e817c4b8b042dd328a1db72",
+      "after_sha256": "20821da2ac3c8816edb657118d5c36d979fd3bfac049859f073e5321eef3444f"
+    }
+  ],
+  "source_fragment_refinements": [
+    {
+      "field": "meaning",
+      "before": "Senate 100055 separately establishes the named Bridging Immigration-related Deficits Experienced Nationwide Reimbursement Fund within DOJ. The AG shall use its amounts for grants to eligible States, State agencies and local-government units pursuant to their existing statutory authorities, for the complete listed purposes. Locating/apprehending under paragraph (1) requires both a crime under federal, State or local law and unlawful U.S. presence. Paragraph (7) vehicle/logistics/transport/other support is provided by a State agency to law-enforcement agencies for locating/apprehending persons with that same crime-plus-unlawful-presence pair. Paragraph (6) funds transporting aliens described in paragraph (1) within the United States to locations related to their apprehension, detention and prosecution. The pair is not imported into every other purpose, and unlawful presence alone is not treated as the required additional crime. Other listed purposes are domestic investigative-information collection/analysis against gang or other criminal activity; investigating/prosecuting crimes committed by aliens within the United States and domestic drug/human-trafficking crimes; court operations related to prosecution of crimes committed by aliens or drug and human trafficking crimes, without a repeated within-the-United-States phrase in that separate paragraph; and temporary criminal detention of aliens. Temporary criminal detention is not generic civil-immigration detention. Existing-authority wording does not itself grant new State arrest/removal powers or determine any individual crime/status. ",
+      "after": "Senate 100055 separately establishes the Bridging Immigration-related Deficits Experienced Nationwide (BIDEN) Reimbursement Fund within the Department of Justice. The Attorney General shall use the Fund amounts for grants to eligible States, State agencies, and units of local government, pursuant to their existing statutory authorities. The paragraph 1 purpose is locating and apprehending aliens who have committed a crime under Federal, State, or local law, in addition to being unlawfully present in the United States. The paragraph 2 purpose is collection and analysis of law enforcement investigative information within the United States to counter gang or other criminal activity. The paragraph 3 purpose is investigating and prosecuting crimes committed by aliens within the United States and drug and human trafficking crimes committed within the United States. The paragraph 4 purpose is court operations related to the prosecution of crimes committed by aliens and drug and human trafficking crimes. The paragraph 5 purpose is temporary criminal detention of aliens. The paragraph 6 purpose is transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens. The paragraph 7 purpose is vehicle maintenance, logistics, transportation, and other support provided to law enforcement agencies by a State agency to enhance the ability to locate and apprehend aliens who have committed crimes under Federal, State, or local law, in addition to being unlawfully present in the United States. Paragraphs (1) and (7) retain their own additional-crime and unlawful-presence requirements; paragraph (6) retains the paragraph (1) person category, its domestic transport limit and its destination purposes. Those requirements are not imported into the other purposes. Temporary criminal detention is distinct from civil immigration detention. Court paragraph (4) prints no separate within-the-United-States phrase; no neighboring location condition is borrowed. Listed conjunctions report the source categories, not a determination that a particular grant must fund both crime categories. Existing statutory authorities do not create new State arrest/removal powers or establish actual crime/status/expense eligibility. ",
+      "before_sha256": "746ceaa1f8e993aa8348eb8f4b9d02c11c295662973d68668b2509573e696d16",
+      "after_sha256": "42cb12e27603fed685baf2686c383af5f028cac61e1fb2ddc7ef877594ea3c6d",
+      "reason": "Source-to-prose clause check: complete actor/authority and each purpose with own geographic/boolean scope. Purpose(4) reports its printed and-list rather than interpreting an individual grant co-occurrence requirement."
+    },
+    {
+      "field": "qualification",
+      "before": "Separate 100055 DOJ fund grants to named eligible States/agencies/local units pursuant to existing statutory authorities. Both additional crime and unlawful presence are required for paragraph (1) locating/apprehending and (7) State-agency support; Paragraph (6) funds transporting aliens described in paragraph (1) within the United States to locations related to their apprehension, detention and prosecution. Those predicates are not spread to every other listed purpose. Investigative-information collection and the listed investigation/prosecution purposes retain their printed within-the-United-States scope. Court operations retain their separate listed prosecution purposes without a borrowed geographic phrase. Temporary criminal detention remains distinct from civil immigration detention or new local powers. ",
+      "after": "Separate 100055 DOJ Fund. The Attorney General shall use the Fund amounts for grants to eligible States, State agencies, and units of local government, pursuant to their existing statutory authorities. The paragraph 1 purpose is locating and apprehending aliens who have committed a crime under Federal, State, or local law, in addition to being unlawfully present in the United States. The paragraph 2 purpose is collection and analysis of law enforcement investigative information within the United States to counter gang or other criminal activity. The paragraph 3 purpose is investigating and prosecuting crimes committed by aliens within the United States and drug and human trafficking crimes committed within the United States. The paragraph 4 purpose is court operations related to the prosecution of crimes committed by aliens and drug and human trafficking crimes. The paragraph 5 purpose is temporary criminal detention of aliens. The paragraph 6 purpose is transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens. The paragraph 7 purpose is vehicle maintenance, logistics, transportation, and other support provided to law enforcement agencies by a State agency to enhance the ability to locate and apprehend aliens who have committed crimes under Federal, State, or local law, in addition to being unlawfully present in the United States. Paragraphs (1) and (7) retain their own additional-crime and unlawful-presence requirements; paragraph (6) retains the paragraph (1) person category, its domestic transport limit and its destination purposes. Those requirements are not imported into the other purposes. Temporary criminal detention is distinct from civil immigration detention. Court paragraph (4) prints no separate within-the-United-States phrase; no neighboring location condition is borrowed. Listed conjunctions report the source categories, not a determination that a particular grant must fund both crime categories. Existing statutory authorities do not create new State arrest/removal powers or establish actual crime/status/expense eligibility. ",
+      "before_sha256": "ce0dc6ee24f17e1432ff5a11805a6ef8ff921736b5e0fa9039514fb0405fbbf9",
+      "after_sha256": "d8066168a6b1e7d407e796c93399d0878e38a47b500b08d9c5efc241c5da4645",
+      "reason": "Each operative purpose and own source-specific condition is explicit in qualification as well as meaning; no geographic borrowing or individual classifier."
+    },
+    {
+      "field": "meaning",
+      "before": "not to exceed $3.5 billion",
+      "after": "not to exceed $3,500,000,000 ($3.5 billion)",
+      "before_sha256": "a14f2e01c1d26101baddc55107fbc02cf988a7913ec208d28c8fd1c5d02b67df",
+      "after_sha256": "aa9840315f55f8045db6a0065bcaf799fcad26b9bbf54b3bccb2d3f8656386bf",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "qualification",
+      "before": "not to exceed $3.5 billion",
+      "after": "not to exceed $3,500,000,000 ($3.5 billion)",
+      "before_sha256": "a14f2e01c1d26101baddc55107fbc02cf988a7913ec208d28c8fd1c5d02b67df",
+      "after_sha256": "aa9840315f55f8045db6a0065bcaf799fcad26b9bbf54b3bccb2d3f8656386bf",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "qualification",
+      "before": "qualified documented expenses",
+      "after": "qualified and documented expenses",
+      "before_sha256": "778fc40e23893d6c64cdd0b79346168e66904dc3f1b598702e30a6214ad91967",
+      "after_sha256": "23cb61c12acf6d42e995dc2cd4e5e0cfa2a5f187fc5bdbe74a01a77dd9258921",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "meaning",
+      "before": "The AG may provide grants to State agencies and local-government units for their completed, ongoing or new activities determined eligible that occurred on or after January 20, 2021.",
+      "after": "The Attorney General may provide grants to State agencies and units of local government for their expenditures for completed, ongoing, or new activities determined to be eligible for such grant funding that occurred on or after January 20, 2021.",
+      "before_sha256": "e52a7542d67e4c3f127e82f4d3dd41cd2add45031a7ca94a4b2a6989cb089feb",
+      "after_sha256": "4a27d61355b758778b3e6000e7dcaaa364fcc4f0d8162dbad078011a7c60afe2",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "qualification",
+      "before": "AG may grant State-agency/local expenditures for eligible completed/ongoing/new activities on or after January 20, 2021; distribution to more than one State is required.",
+      "after": "The Attorney General may provide grants to State agencies and units of local government for their expenditures for completed, ongoing, or new activities determined to be eligible for such grant funding that occurred on or after January 20, 2021. Amounts made available under this section shall be distributed to more than 1 State.",
+      "before_sha256": "03572f3d41ebafe693548f65e470d735ce42743b6ca671c75653932194802c9b",
+      "after_sha256": "e1bca690cfa6d62ac9cb97ccb5b271029b725799a385ae7446f33df54f08dacd",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "meaning",
+      "before": "Amounts under this section shall be distributed to more than one State.",
+      "after": "Amounts made available under this section shall be distributed to more than 1 State.",
+      "before_sha256": "82b460571114280c9e4cfe0c1752be3c3a1d2179dc565a8d3d17f67d55278428",
+      "after_sha256": "fe3193ca81a80d2c4b5a470a7559d6722a6b7b855d02553e2d79bf1bbd058d23",
+      "reason": "Source-to-prose fragment clarity, same actor/ceiling/qualified-expense/activity-time/discretion/distribution condition; no new funding semantics."
+    },
+    {
+      "field": "meaning",
+      "before": "pursuant to their existing statutory authorities.",
+      "after": "pursuant to their existing statutory authorities, for any of the following purposes.",
+      "before_sha256": "75fa65d8d1f7fb1da4fd9786dcb6fc29605b103429dfd256ad81093a1246cc8a",
+      "after_sha256": "1be01e5408207e87df04da6f970fb8362fd3484976666be4994a782ff1097a1a",
+      "reason": "Common source clause permits any listed purpose; preserve literal quantifier before interpreting lists as universal requirements."
+    },
+    {
+      "field": "qualification",
+      "before": "pursuant to their existing statutory authorities.",
+      "after": "pursuant to their existing statutory authorities, for any of the following purposes.",
+      "before_sha256": "75fa65d8d1f7fb1da4fd9786dcb6fc29605b103429dfd256ad81093a1246cc8a",
+      "after_sha256": "1be01e5408207e87df04da6f970fb8362fd3484976666be4994a782ff1097a1a",
+      "reason": "Common source clause permits any listed purpose; preserve literal quantifier before interpreting lists as universal requirements."
+    }
+  ],
+  "primary_witness": {
+    "source_id": "govinfo:hr1eas",
+    "passage": "(6) Transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens. ",
+    "passage_sha256": "4a5f79a5d4f78e5414f0ad658b18dbf19fdca0d6084f3c98ed6d5d1198030915"
+  },
+  "source_to_prose_check": {
+    "authority": "Same-owner check before next new component, using existing claim map and receipt fields; no new semantic architecture",
+    "covered_clause_count": 10,
+    "purpose_conditions": [
+      {
+        "clause_id": "100055(b)(1)",
+        "source_passage": "(1) Locating and apprehending aliens who have committed a crime under Federal, State, or local law, in addition to being unlawfully present in the United States. ",
+        "passage_sha256": "f2999f6cda533ec13c92cc3461e4d59bd0eacba42ab121143782179a008f32b7",
+        "meaning_clause": "The paragraph 1 purpose is locating and apprehending aliens who have committed a crime under Federal, State, or local law, in addition to being unlawfully present in the United States.",
+        "qualification_clause": "The paragraph 1 purpose is locating and apprehending aliens who have committed a crime under Federal, State, or local law, in addition to being unlawfully present in the United States.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Locating and apprehending"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "aliens who have committed a crime under Federal, State, or local law"
+            ]
+          },
+          "location": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "unlawfully present in the United States"
+            ],
+            "scope": "Unlawful-presence condition of target aliens, not a new location limit on every funded activity."
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "in addition to being unlawfully present in the United States"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(2)",
+        "source_passage": "(2) Collection and analysis of law enforcement investigative information within the United States to counter gang or other criminal activity. ",
+        "passage_sha256": "2750edb942398f7a190ed38b1402b3245c23c7ccb2c563fdd542e587884d0288",
+        "meaning_clause": "The paragraph 2 purpose is collection and analysis of law enforcement investigative information within the United States to counter gang or other criminal activity.",
+        "qualification_clause": "The paragraph 2 purpose is collection and analysis of law enforcement investigative information within the United States to counter gang or other criminal activity.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Collection and analysis"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "law enforcement investigative information",
+              "gang or other criminal activity"
+            ]
+          },
+          "location": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "within the United States"
+            ]
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "gang or other criminal activity"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(3)",
+        "source_passage": "(3) Investigating and prosecuting-- (A) crimes committed by aliens within the United States; and (B) drug and human trafficking crimes committed within the United States. ",
+        "passage_sha256": "66949edfa724d310f10ceaadb5259856b8832e8e0f0042a22e18a0fbf6afe45b",
+        "meaning_clause": "The paragraph 3 purpose is investigating and prosecuting crimes committed by aliens within the United States and drug and human trafficking crimes committed within the United States.",
+        "qualification_clause": "The paragraph 3 purpose is investigating and prosecuting crimes committed by aliens within the United States and drug and human trafficking crimes committed within the United States.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Investigating and prosecuting"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "crimes committed by aliens within the United States",
+              "drug and human trafficking crimes committed within the United States"
+            ]
+          },
+          "location": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "within the United States"
+            ]
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "and"
+            ],
+            "source_join_witness": "; and (B)",
+            "prose_join_witness": "crimes committed by aliens within the United States and drug and human trafficking crimes committed within the United States",
+            "preserved_operator": "and",
+            "scope": "Lists two source categories; no individual grant co-occurrence classifier"
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(4)",
+        "source_passage": "(4) Court operations related to the prosecution of-- (A) crimes committed by aliens; and (B) drug and human trafficking crimes. ",
+        "passage_sha256": "3eddb2d33f77517bfd376168472c053e4d868f4bdc1496e46e0927955c179c82",
+        "meaning_clause": "The paragraph 4 purpose is court operations related to the prosecution of crimes committed by aliens and drug and human trafficking crimes.",
+        "qualification_clause": "The paragraph 4 purpose is court operations related to the prosecution of crimes committed by aliens and drug and human trafficking crimes.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Court operations related to the prosecution"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "crimes committed by aliens",
+              "drug and human trafficking crimes"
+            ]
+          },
+          "location": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred.",
+            "absence_check": "No within-the-United-States phrase borrowed into this own purpose sentence."
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "and"
+            ],
+            "source_join_witness": "; and (B)",
+            "prose_join_witness": "crimes committed by aliens and drug and human trafficking crimes",
+            "preserved_operator": "and",
+            "scope": "Lists two source categories; no individual grant co-occurrence classifier"
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(5)",
+        "source_passage": "(5) Temporary criminal detention of aliens. ",
+        "passage_sha256": "0bd4b97f03e36a9f261739b74ae2f68ee45d1a827e98b54148128558399bb985",
+        "meaning_clause": "The paragraph 5 purpose is temporary criminal detention of aliens.",
+        "qualification_clause": "The paragraph 5 purpose is temporary criminal detention of aliens.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "detention"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "aliens"
+            ]
+          },
+          "location": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred.",
+            "absence_check": "No within-the-United-States phrase borrowed into this own purpose sentence."
+          },
+          "time": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Temporary"
+            ]
+          },
+          "boolean_structure": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(6)",
+        "source_passage": "(6) Transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens. ",
+        "passage_sha256": "4a5f79a5d4f78e5414f0ad658b18dbf19fdca0d6084f3c98ed6d5d1198030915",
+        "meaning_clause": "The paragraph 6 purpose is transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens.",
+        "qualification_clause": "The paragraph 6 purpose is transporting aliens described in paragraph (1) within the United States to locations related to the apprehension, detention, and prosecution of such aliens.",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Transporting"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "aliens described in paragraph (1)",
+              "locations related to the apprehension, detention, and prosecution of such aliens"
+            ]
+          },
+          "location": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "within the United States"
+            ]
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "detention, and prosecution"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(b)(7)",
+        "source_passage": "(7) Vehicle maintenance, logistics, transportation, and other support provided to law enforcement agencies by a State agency to enhance the ability to locate and apprehend aliens who have committed crimes under Federal, State, or local law, in addition to being unlawfully present in the United States. ",
+        "passage_sha256": "a753822ce3a46e64bafd4c2f053bad531c5d8a55f39640bc736bc7eef2a75a40",
+        "meaning_clause": "The paragraph 7 purpose is vehicle maintenance, logistics, transportation, and other support provided to law enforcement agencies by a State agency to enhance the ability to locate and apprehend aliens who have committed crimes under Federal, State, or local law, in addition to being unlawfully present in the United States.",
+        "qualification_clause": "The paragraph 7 purpose is vehicle maintenance, logistics, transportation, and other support provided to law enforcement agencies by a State agency to enhance the ability to locate and apprehend aliens who have committed crimes under Federal, State, or local law, in addition to being unlawfully present in the United States.",
+        "conditions": {
+          "actor": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "a State agency"
+            ]
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "Vehicle maintenance, logistics, transportation, and other support",
+              "locate and apprehend"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "law enforcement agencies",
+              "aliens who have committed crimes under Federal, State, or local law"
+            ]
+          },
+          "location": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "unlawfully present in the United States"
+            ],
+            "scope": "Unlawful-presence condition of target aliens, not a new location limit on every funded activity."
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "in addition to being unlawfully present in the United States"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional purpose-specific condition printed in this dimension; common actor/authority, appropriation and grant discretion checked separately. No neighbor condition or individual determination inferred."
+          }
+        }
+      }
+    ],
+    "common_conditions": [
+      {
+        "clause_id": "100055(b)-common-grantees-authority",
+        "source_passage": "(b) Use of Funds.--The Attorney General shall use amounts appropriated or otherwise made available for the Fund for grants to eligible States, State agencies, and units of local government, pursuant to their existing statutory authorities, for any of the following purposes: ",
+        "fragments": [
+          "The Attorney General shall use",
+          "eligible States, State agencies, and units of local government",
+          "pursuant to their existing statutory authorities",
+          "for any of the following purposes"
+        ],
+        "passage_sha256": "1cbe8899e48bd96883e01fc681cd8232188a87a9a77b467228751be4eb7a112c",
+        "status": "retained_verbatim_condition_fragments_in_meaning_and_qualification",
+        "conditions": {
+          "actor": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "The Attorney General",
+              "eligible States, State agencies, and units of local government"
+            ]
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "shall use"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "grants"
+            ]
+          },
+          "location": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "time": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "pursuant to their existing statutory authorities",
+              "for any of the following purposes"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(c)-appropriation",
+        "source_passage": "(c) Appropriation.--In addition to amounts otherwise available for the purposes described in subsection (b), there is appropriated to the Attorney General for fiscal year 2025, out of any money in the Treasury not otherwise appropriated, not to exceed $3,500,000,000, to remain available until September 30, 2028, for the Fund for qualified and documented expenses that achieve any such purpose. ",
+        "fragments": [
+          "fiscal year 2025",
+          "not to exceed $3,500,000,000",
+          "September 30, 2028",
+          "qualified and documented expenses"
+        ],
+        "passage_sha256": "8f8eaeff0cbb8e5ed8c47072df27ec89ec20531afaec0f9e883a544dc508e1c8",
+        "status": "retained_verbatim_condition_fragments_in_meaning_and_qualification",
+        "conditions": {
+          "actor": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "action": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "not to exceed $3,500,000,000",
+              "qualified and documented expenses"
+            ]
+          },
+          "location": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "time": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "fiscal year 2025",
+              "September 30, 2028"
+            ]
+          },
+          "boolean_structure": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "discretion": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          }
+        }
+      },
+      {
+        "clause_id": "100055(d)-eligible-activity-discretion-distribution",
+        "source_passage": "(d) Grant Eligibility of Completed, Ongoing, or New Activities.-- The Attorney General may provide grants under this section to State agencies and units of local government for expenditures made by State agencies or units of local government for completed, ongoing, or new activities determined to be eligible for such grant funding that occurred on or after January 20, 2021. Amounts made available under this section shall be distributed to more than 1 State. ",
+        "fragments": [
+          "The Attorney General may provide grants",
+          "State agencies and units of local government",
+          "completed, ongoing, or new activities determined to be eligible",
+          "on or after January 20, 2021",
+          "shall be distributed to more than 1 State"
+        ],
+        "passage_sha256": "3b143426c2bf465d699da30b0e460a0b48a901508c7653a606cfd2c46e3a4303",
+        "status": "retained_verbatim_condition_fragments_in_meaning_and_qualification",
+        "conditions": {
+          "actor": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "The Attorney General",
+              "State agencies and units of local government"
+            ]
+          },
+          "action": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "may provide grants",
+              "shall be distributed"
+            ]
+          },
+          "object": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "completed, ongoing, or new activities determined to be eligible",
+              "more than 1 State"
+            ]
+          },
+          "location": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "time": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "on or after January 20, 2021"
+            ]
+          },
+          "boolean_structure": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "completed, ongoing, or new",
+              "on or after January 20, 2021"
+            ]
+          },
+          "exception": {
+            "status": "explicitly_outside_bounded_claim",
+            "reason": "No additional condition in this dimension asserted beyond exact source/account/authority fragments checked here and full owning witness. Treasury-balance, individual award, timing or powers are not inferred."
+          },
+          "discretion": {
+            "status": "retained_verbatim_in_meaning_and_qualification",
+            "source_fragments": [
+              "may provide grants"
+            ]
+          }
+        }
+      }
+    ],
+    "comparison_normalizations": "Case and whitespace only; no agency/number/location substitutions. Listed and/or words retained without creating an individual grant co-occurrence classifier.",
+    "limits": "Proves checked source fragments survive each own prose clause. No new individual expense/legal application, complete corpus acceptance or independent semantic verdict."
+  },
+  "unchanged": "All 38 other actions including House, all 1,291 sources, 758 bindings, 268 captures, compact copy, choices, membership, universe and 48 application questions unchanged. Committed checkpoint 57 preserved without reset, amendment or stash.",
+  "publication_authorized": false,
+  "receipt_sha256": "16bc1a1f4fbb8f19927eba5659b0175d898f313ad87c905d8e519e0ce3f7da06",
+  "validation": {
+    "aggregate_tests": 232,
+    "aggregate_runtime_seconds": 41.533,
+    "candidate_tests_in_aggregate": 43,
+    "semantic_checks": 7,
+    "generated_json_files_byte_identical": 7,
+    "actual_checkpoint56_negative_regression": {
+      "assertion_failures": 1,
+      "errors": 0
+    },
+    "exact_prior_candidate_reconstruction": true,
+    "ten_clause_source_to_prose_check": true,
+    "both_member_propagation": true,
+    "frozen_checkpoint57_receipts_preserved": true,
+    "independent_recheck_pending": true
+  }
+}

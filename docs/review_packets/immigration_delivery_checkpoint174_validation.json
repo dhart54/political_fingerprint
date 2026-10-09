@@ -1,0 +1,122 @@
+{
+  "checkpoint": 174,
+  "base_head": "ae25348bccd0e32846590affcb21167b6c77675f",
+  "candidate_receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint174.json",
+  "candidate_receipt_sha256": "d6c301da90719aa583f98e9af72c2bab121717c8e37d4a37d90c14542f1d1418",
+  "validation": {
+    "focused_tests": 190,
+    "focused_runtime_seconds": 17.094,
+    "initial_failed_suite": {
+      "tests": 190,
+      "runtime_seconds": 16.879,
+      "failures": 1,
+      "reason": "Suite started before output generation; stale reproducibility-proof hash found; regenerated and replayed before final pass"
+    },
+    "semantic_checks": 7,
+    "reference_cases": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "mechanical_preservation_and_replay": {
+      "validation": {
+        "authority": "Mechanical integrity only; no semantic acceptance or publication",
+        "inventory_count": 676,
+        "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+        "governed_review_count": 596,
+        "unfinished_screenings": 80,
+        "queue_count": 80,
+        "disposition_counts": {
+          "procedural_context": 228,
+          "interpreted_substantive_directional": 46,
+          "exact_action_ineligible": 320,
+          "source_unresolved": 80,
+          "expressive_nonbinding_context": 2
+        },
+        "unfinished_component_reviews": 3
+      },
+      "all_authoring_meanings_core_member_projections_proposition_graphs_unchanged": true,
+      "six_semantic_outputs_byte_unchanged": [
+        "compiled_ir.json",
+        "compiler_input.json",
+        "member_projections.json",
+        "readable_candidates.json",
+        "shared_action_core.json",
+        "shared_issue_mapping.json"
+      ],
+      "seven_output_replay": true,
+      "prior_reviews_sources_captures_pool_audit_history_preserved": true,
+      "source_seals": 1950,
+      "capture_registrations": 825,
+      "raw_primary_captures_verified": 8,
+      "literal_derivative_extents_verified": 18,
+      "material_images": 5,
+      "history_blobs_preserved": 337,
+      "only_fixed5universe_rows_changed": true,
+      "CI173_one_actual_rerun_verified": true
+    },
+    "final_diff_reviewed": true,
+    "validator_or_methodology_changes": false
+  },
+  "benchmark": {
+    "checkpoint": 174,
+    "base_head": "ae25348bccd0e32846590affcb21167b6c77675f",
+    "started_utc": "2026-10-09T17:13:38.708446+00:00",
+    "attempted_action_ids": [
+      "house:119:2:26",
+      "house:119:2:27",
+      "house:119:2:40",
+      "house:119:2:43",
+      "house:119:2:44"
+    ],
+    "selection_basis": "All five remaining January2026 recorded amendment choices in inventory order: financial/State appropriations amendments26/27, rule1014amendment40, consolidated-appropriations amendments43/44. Selected from Clerk labels only, before substantive source research; two legislative dates, shared official Record/rule/report groups. No easy-case replacement.",
+    "selection_receipt_ref": ".tmp/benchmark174_proposal.json",
+    "failure_threshold_seconds": 600,
+    "target_seconds": 240,
+    "prior173delivery_closed_utc": "2026-10-09T17:12:18.257693+00:00",
+    "prior_delivery_overlap_seconds": 0,
+    "phase_measurements": [
+      {
+        "phase": "freeze_and_preimage",
+        "elapsed_seconds": 0.08972409999114461
+      },
+      {
+        "phase": "capture_exact_sources_material_review_visual_and_recipe",
+        "wall_seconds": 748.624951,
+        "includes_context_compaction_and_private_locator_corrections": true
+      },
+      {
+        "phase": "candidate_application_audit_CI173_description_correction_generation_validation_and_replay",
+        "wall_seconds": 264.578432,
+        "focused_final_suite_seconds": 17.094,
+        "initial_suite_seconds": 16.879,
+        "initial_suite_failure": "Ran before generated proof refresh; replay integrity detected stale hash; corrected by regeneration, no validator edits"
+      }
+    ],
+    "completed_screenings": 3,
+    "held_attempts": 2,
+    "classification_pending": false,
+    "benchmark_begun": true,
+    "complexity_limit": "Comparable exact-amendment stage; routine complexity not established from labels. Whole replacements/enblocs/material imported authority may be structurally complex and must be separately reported without replacing the frozen attempt. Holds receive no completion credit.",
+    "source_review_completed_utc": "2026-10-09T17:26:07.333397+00:00",
+    "local_validation_completed_utc": "2026-10-09T17:30:31.911829+00:00",
+    "local_end_to_end_seconds": 1013.203383,
+    "local_mixed_completion_average_seconds": 337.734461,
+    "local_functional_completion_average_seconds": 506.6016915,
+    "completed_functional_exclusions": 2,
+    "completed_procedural_context": 1,
+    "independent_review_pending": true,
+    "full_delivery_endpoint_pending": true,
+    "five_routine_completion_sample_established": false
+  },
+  "source_limits": [
+    "All5own operatives/stages read and sealed; only named material statutory/target extents reviewed; no fullparent/currentlaw certification.",
+    "27deleted7032program scope and44incorporation/project list remain held; retained fixed sample, no easier replacements, no completion credit.",
+    "No wholebill substitute exclusion proposed; early personal-qualification baseline checks applied to actual deleted/incorporated target pages; full unresolved material chain preserved.",
+    "Private failed/wrong large locators preserved and corrected, no source wording repair."
+  ],
+  "independent_review_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "4ba1496d829de918274232bc105f9b9193d35d636f21f4bd2f74ec2c3dc7190b"
+}

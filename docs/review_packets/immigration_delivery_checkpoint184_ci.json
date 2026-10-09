@@ -1,0 +1,267 @@
+{
+  "checkpoint": 184,
+  "head": "3238d2036ff732e858173daf8c6765a2cfcfe030",
+  "run": 37999847685,
+  "run_attempt": 1,
+  "conclusion": "success",
+  "successful_jobs": 9,
+  "failed_jobs": [],
+  "jobs": [
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:33:48.1031710Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979448,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:34:06Z",
+      "checkout_log_shas": [
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "922835c82ed72976d56d216cd8558d069af317b9acf8ecc557f792240134f2af",
+      "log_bytes": 63508,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:57.6599753Z 15 passed, 1 warning in 0.49s",
+        "2026-10-09T22:33:58.0849362Z 10 passed in 0.22s",
+        "2026-10-09T22:33:58.4671828Z 3 passed in 0.21s",
+        "2026-10-09T22:34:02.9976250Z 96 passed in 2.87s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:33:46.5486525Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979684,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:33:55Z",
+      "checkout_log_shas": [
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "3058ca914198860ff548d4944fb222f9058531cb9dae22801bd9f4982c063caa",
+      "log_bytes": 44204,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:53.4095201Z 29 passed, 40 subtests passed in 0.44s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:36:25.0308581Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception",
+        "2026-10-09T22:38:57.4142380Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979733,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:39:40Z",
+      "checkout_log_shas": [
+        "4667ed146366db3fa1b15546cad1452b086421e5",
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "e5df275bec609f885dc8b826bfb7c431e0bc9ba2026a18c315f0044b5233670d",
+      "log_bytes": 137582,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:34:06.2097106Z 6 passed in 1.70s",
+        "2026-10-09T22:36:24.5331942Z 38 passed, 1 warning in 137.21s (0:02:17)",
+        "2026-10-09T22:38:56.6476638Z 13 passed in 135.50s (0:02:15)",
+        "2026-10-09T22:39:37.7559021Z 20 passed in 38.17s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114054979741,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:23Z",
+      "completed_at": "2026-10-09T22:33:53Z",
+      "checkout_log_shas": [
+        "4667ed146366db3fa1b15546cad1452b086421e5"
+      ],
+      "log_sha256": "b56539033404be94663cc01ea30604951be87041c5ce751c6db16389537f7962",
+      "log_bytes": 28410,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:50.2054842Z ============================== 87 passed in 1.38s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114054979787,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:37:34Z",
+      "checkout_log_shas": [
+        "4667ed146366db3fa1b15546cad1452b086421e5"
+      ],
+      "log_sha256": "33bab48655001de9eba3941c13ef2225d8dc1d1b58f891c87348847788b5fb95",
+      "log_bytes": 1505126,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:56.6291174Z 15 passed in 0.59s",
+        "2026-10-09T22:33:58.2503828Z 19 passed in 1.19s",
+        "2026-10-09T22:34:01.3632090Z 27 passed in 2.64s",
+        "2026-10-09T22:37:32.4216483Z 639 passed, 1 warning in 76.59s (0:01:16)"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:33:47.3474170Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979834,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:23Z",
+      "completed_at": "2026-10-09T22:33:54Z",
+      "checkout_log_shas": [
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "d9b2b6dfecf7eceb0896c4ca535014bec3c6cf6663d4ffaf47cfcf1cfa041f19",
+      "log_bytes": 44391,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:51.3237720Z 22 passed, 55 subtests passed in 0.31s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [],
+      "job_id": 114054979846,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:23Z",
+      "completed_at": "2026-10-09T22:35:44Z",
+      "checkout_log_shas": [
+        "4667ed146366db3fa1b15546cad1452b086421e5"
+      ],
+      "log_sha256": "d58f6d8d2818844e990b9953083fb4589cba17657bbfffd7b6a7f8c3a19e1fb7",
+      "log_bytes": 180800,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:34:43.5423721Z 23 passed, 1 warning in 15.32s",
+        "2026-10-09T22:34:47.5846940Z 58 passed, 1 warning in 3.76s",
+        "2026-10-09T22:34:50.5683561Z 1 passed in 1.59s",
+        "2026-10-09T22:34:55.2416526Z 1 passed, 1 warning in 3.30s",
+        "2026-10-09T22:34:59.5493892Z 1 passed in 2.92s",
+        "2026-10-09T22:35:03.8763223Z 2 passed in 2.95s",
+        "2026-10-09T22:35:06.8546940Z 14 passed in 1.60s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:33:46.5509037Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979916,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:33:53Z",
+      "checkout_log_shas": [
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "ec5e3727a49c554fe57c3005e84f649a3bdf94b9c52de63cfc81cb795c803366",
+      "log_bytes": 43458,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:33:51.1878612Z 18 passed, 34 subtests passed in 0.70s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "observed_feature_head_positions": [
+        "2026-10-09T22:34:02.9888520Z HEAD is now at 3238d203 Preserve conditional FISA waiver and query approval exception"
+      ],
+      "job_id": 114054979984,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T22:33:22Z",
+      "completed_at": "2026-10-09T22:37:16Z",
+      "checkout_log_shas": [
+        "3238d2036ff732e858173daf8c6765a2cfcfe030"
+      ],
+      "log_sha256": "afca41647993d2f552d22dbf98b848391e5459f8a6804107948683031062ff8c",
+      "log_bytes": 137829,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T22:34:28.2230782Z 95 passed, 1 warning in 1.97s",
+        "2026-10-09T22:35:47.7138073Z 316 passed in 78.51s (0:01:18)",
+        "2026-10-09T22:35:51.8621214Z 1 passed in 2.88s",
+        "2026-10-09T22:35:53.5659712Z 74 passed, 1 warning in 1.37s",
+        "2026-10-09T22:36:29.4665700Z   2 passed (10.5s)",
+        "2026-10-09T22:37:02.8919782Z   23 passed (14.7s)",
+        "2026-10-09T22:37:03.3813951Z 15 passed in 0.15s",
+        "2026-10-09T22:37:10.4784189Z   1 passed (6.1s)",
+        "2026-10-09T22:37:13.4440473Z 25 passed in 2.60s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37999847685",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "successful_checkout_contexts_verified": [
+    "m14g-exact-head",
+    "m14f-exact-head",
+    "receipt-evidence-repair-postgres",
+    "amendment-evidence-contracts",
+    "foushee-full-record-benchmark",
+    "m14e-exact-head",
+    "publication-activation-postgres",
+    "m14d-exact-head",
+    "m14h-exact-head"
+  ],
+  "synthetic_merge_sha": "4667ed146366db3fa1b15546cad1452b086421e5",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [],
+  "remaining_gate": null,
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "291b79fec7524e75cc4c7d09b4cf8e5f84c3f26e5829f4fb09e66d6849fa26b0"
+}

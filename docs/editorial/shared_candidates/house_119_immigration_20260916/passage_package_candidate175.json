@@ -1,0 +1,625 @@
+{
+  "checkpoint": 175,
+  "base_head": "9cb6930443fd13d7316bfbcd69ca5b9bf837e2de",
+  "review_state": "candidate_pending_external_semantic_review",
+  "candidate_action_id": "house:119:1:83",
+  "candidate_action_sha256": "7bb021a42ae80ac85275a9a5ff90480e8c6624a8b61a6801b81d64b018045886",
+  "current_review_record": {
+    "action_id": "house:119:1:83",
+    "domain_id": "IMMIGRATION_BORDER",
+    "review_state": "candidate_pending_external_semantic_review",
+    "disposition": "interpreted_substantive_directional",
+    "rationale": "Source-mapped whole final-passage candidate under the existing direct personal-qualification standard: proposed 117(c) donor/same-attributable-country translator condition with complete 117(f) citizenship/residence/trust-territory/foreign-source predicates and historical agency/international-organization qualifications. Entire EH read and fresh raw/text replayed; actual Print baseline, adopted Ogles changes, rejected 3–6 and not-offered 7bind the package. Own question/voice ayes/Scott demand/order/electronic result/passed and Clerk labels verified. Limit Immigration attribution to this personal condition; surrounding institutional/concern mechanisms and individual applications reserved. Both 79 and 83 remain under typed episode hold for independent candidate/package review; unapproved, no behavioral proposition or publication.",
+    "substantive_review_performed": true,
+    "exact_action_binding_unresolved": false,
+    "required_evidence_unavailable": false,
+    "authoritative_source_conflict": false,
+    "sources": [
+      {
+        "source_id": "clerk:119:1:83",
+        "url": "https://clerk.house.gov/evs/2025/roll083.xml",
+        "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+        "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3"
+      },
+      {
+        "source_id": "immigration:roll83-passage175",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
+        "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+        "governed_bytes_sha256": "0365432ff9aa6a301e88cb504484869ce8f70e5161de07f3517ffbbdaf5393e6"
+      },
+      {
+        "source_id": "govinfo:hr1048eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+        "raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
+        "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42"
+      },
+      {
+        "source_id": "house-rules:rcp1191-full-baseline173",
+        "url": "https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf",
+        "raw_sha256": "7f39ccff3de9ad5daf431e2dd65933e8b16b170e5e8609a130d8e466087903b0",
+        "governed_bytes_sha256": "447d189f8c375ec715bbf80d979cbe18c4283b0f68a75658f6d50f6b2776cfc6"
+      },
+      {
+        "source_id": "immigration:hr1048-prior-ogles173",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+        "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+        "governed_bytes_sha256": "22a5a45af0c29d9d491295c031b623d75b1bf72e07c9f2a1f50a29804eb6a484"
+      },
+      {
+        "source_id": "immigration:hr1048-package-initial175",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+        "raw_sha256": "5dbac4769a73f79db325bede4b79fc4cfd36e05bb2180cd704d86cd87bea43fe",
+        "governed_bytes_sha256": "b33a0673b9fc7fe7d256107f922cb5a4139d0d658a3ba413af28d8c707671539"
+      },
+      {
+        "source_id": "immigration:hr1048-package-recorded175",
+        "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
+        "raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+        "governed_bytes_sha256": "cf039956d23fd52fed2ed08ac292ac24c18fff3ff1aaebeb8bdb3f9d63d0c5b8"
+      },
+      {
+        "source_id": "govinfo:hres242eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+        "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
+        "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
+      },
+      {
+        "source_id": "govinfo:42usc19221-a-2024",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap163-subchapVI-partB-sec19221.htm",
+        "raw_sha256": "9110c4c8cf8957124a98b621e563273ca97a824fe01b9dbd2f2c20ac70bbaa58",
+        "governed_bytes_sha256": "116cdadb96a2bfbbf57f6e5fdf5714612fc020fecc18a5412ee0486b20c54dc7"
+      },
+      {
+        "source_id": "govinfo:10usc4872-f2-2024",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleA-partV-subpartI-chap385-subchapIII-sec4872.htm",
+        "raw_sha256": "2765677d90e12aa1d50f3f6375c80f8b55f3c9d46fe31983ed58625874707104",
+        "governed_bytes_sha256": "d2bbc541203d80de6e7518ae377625b8333008cbfdeeff15c6ee0432abcce411"
+      },
+      {
+        "source_id": "govinfo:fara611-operative2024-175",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap11-subchapII-sec611.htm",
+        "raw_sha256": "9c0bc56874ccbe1dfa7203b3980a4edbf911c14c4bfbf9fa1de2b72054564b0f",
+        "governed_bytes_sha256": "ce8ab25e2a3d9b924cfcc81208de3db2fa1e713116da35a2072d4fb13681267a"
+      },
+      {
+        "source_id": "govinfo:io288-operative2024-175",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title22/html/USCODE-2024-title22-chap7-subchapXVIII-sec288.htm",
+        "raw_sha256": "71a47055c018e39ace873c08b8050e11b05cb916c0c0310cee8d410f3346cba3",
+        "governed_bytes_sha256": "96285159ffe2e6b95543875d69c6314cad92aa46470a341125f778e39150310d"
+      }
+    ],
+    "claim_source_map_ref": "authoring.json#action_id=house:119:1:83",
+    "episode_candidate_id": "episode:hr1048:119"
+  },
+  "prior83_pending_row": {
+    "action_id": "house:119:1:83",
+    "session": 1,
+    "roll": 83,
+    "date": "2025-03-27",
+    "measure": "bill_119_hr_1048",
+    "question": "On Passage",
+    "disposition": "source_unresolved",
+    "reason": "Same-episode blocking material omission exposed by79baseline review: exact H.R.1048EH117(c) contains the donor/same-attributable-country translator qualification, not merely donor/reporting fields. Preserve the prior full-EH exclusion and audit as historical; restore passage83pending for complete exact qualification/domain and vote-time package review under existing standards. No automatic inclusion or acceptance;79episode behavioral propositions remain held.",
+    "source": {
+      "source_id": "clerk:119:1:83",
+      "url": "https://clerk.house.gov/evs/2025/roll083.xml",
+      "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+      "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3",
+      "verification": "unchanged_governed_source_reuse"
+    },
+    "episode_candidate_id": null,
+    "after_historical_july23_boundary": false,
+    "bill_ref": "bill_119_hr_1048",
+    "member_action": "nay",
+    "house_action_stage": "On Passage",
+    "official_policy_area": null,
+    "recall_reasons": [
+      "complete_official_roll_discovery"
+    ],
+    "issue_boundary_status": "source_unresolved",
+    "rationale": "Same-episode blocking material omission exposed by79baseline review: exact H.R.1048EH117(c) contains the donor/same-attributable-country translator qualification, not merely donor/reporting fields. Preserve the prior full-EH exclusion and audit as historical; restore passage83pending for complete exact qualification/domain and vote-time package review under existing standards. No automatic inclusion or acceptance;79episode behavioral propositions remain held.",
+    "unresolved_reason": "pending_same_episode_translator_qualification_and_exact_package_review",
+    "sources": [
+      {
+        "source_id": "clerk:119:1:83",
+        "url": "https://clerk.house.gov/evs/2025/roll083.xml",
+        "raw_sha256": "434b06c94b97a4a728f2561fd0457dbaaaec24522a2c927483dbbe052747f33a",
+        "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3"
+      },
+      {
+        "source_id": "govinfo:hr1048eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+        "raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
+        "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42"
+      },
+      {
+        "source_id": "govinfo:hres242eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+        "raw_sha256": "a98e3383c0efbc75dc948a2b6718cff9b265029e94d67c2a691b4da0c93baa28",
+        "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89"
+      }
+    ],
+    "exact_action_source_binding": null,
+    "public_action_sha256": null,
+    "review_progress": {
+      "substantive_review_performed": false,
+      "exact_action_binding_unresolved": true,
+      "required_evidence_unavailable": false,
+      "authoritative_source_conflict": false
+    },
+    "historical_raw_hash_matches": true
+  },
+  "prior83_pending_audit": {
+    "action_id": "house:119:1:83",
+    "audit_state": "same_owner_material_omission_restored_pending",
+    "reviewed_disposition": "exact_action_ineligible",
+    "current_disposition": "source_unresolved",
+    "severity": "Major",
+    "priority": "P2",
+    "finding_id": "immigration173-roll83-translator-qualification",
+    "finding": "Same-episode blocking material omission exposed by79baseline review: exact H.R.1048EH117(c) contains the donor/same-attributable-country translator qualification, not merely donor/reporting fields. Preserve the prior full-EH exclusion and audit as historical; restore passage83pending for complete exact qualification/domain and vote-time package review under existing standards. No automatic inclusion or acceptance;79episode behavioral propositions remain held.",
+    "exact_identity": {
+      "majority": "R",
+      "congress": "119",
+      "session": "1st",
+      "chamber": "U.S. House of Representatives",
+      "rollcall-num": "83",
+      "legis-num": "H R 1048",
+      "vote-question": "On Passage",
+      "vote-type": "YEA-AND-NAY",
+      "vote-result": "Passed",
+      "action-date": "27-Mar-2025",
+      "action-time": "10:52 AM",
+      "vote-desc": "DETERRENT Act"
+    },
+    "recorded_member_observations": {
+      "F000477": {
+        "official_label": "Nay",
+        "name": "Foushee",
+        "party": "D",
+        "state": "NC"
+      },
+      "M001184": {
+        "official_label": "Yea",
+        "name": "Massie",
+        "party": "R",
+        "state": "KY"
+      }
+    },
+    "before_review_record_sha256": "3843ef13f7ac78b5a3df5b6f1ad8104924a3971c60ed1cbbcf85dac9834419bb",
+    "corrected_review_record_sha256": null,
+    "primary_evidence": [
+      {
+        "source_id": "clerk:119:1:83",
+        "url": "https://clerk.house.gov/evs/2025/roll083.xml",
+        "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3",
+        "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+      },
+      {
+        "source_id": "govinfo:hr1048eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+        "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42",
+        "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+      },
+      {
+        "source_id": "govinfo:hres242eh",
+        "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+        "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89",
+        "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+      }
+    ],
+    "historical_assessments": [
+      {
+        "action_id": "house:119:1:83",
+        "audit_state": "primary_reconstructed_candidate_compared",
+        "reviewed_disposition": "exact_action_ineligible",
+        "current_disposition": "exact_action_ineligible",
+        "severity": "No Defect",
+        "finding_id": null,
+        "exact_identity": {
+          "majority": "R",
+          "congress": "119",
+          "session": "1st",
+          "chamber": "U.S. House of Representatives",
+          "rollcall-num": "83",
+          "legis-num": "H R 1048",
+          "vote-question": "On Passage",
+          "vote-type": "YEA-AND-NAY",
+          "vote-result": "Passed",
+          "action-date": "27-Mar-2025",
+          "action-time": "10:52 AM",
+          "vote-desc": "DETERRENT Act"
+        },
+        "recorded_member_observations": {
+          "F000477": {
+            "official_label": "Nay",
+            "name": "Foushee",
+            "party": "D",
+            "state": "NC"
+          },
+          "M001184": {
+            "official_label": "Yea",
+            "name": "Massie",
+            "party": "R",
+            "state": "KY"
+          }
+        },
+        "primary_reconstruction": "Complete57840-character HR1048EH independently read. University foreign-finance disclosures/country/citizenship attribution, contract restrictions, research conflicts, institutional financial-aid enforcement and investment reports do not alter citizenship/INA status, visas/admission/work authorization. INA219is only an existing designation reference for affiliation reporting, not a new designation/immigration consequence. Educational studentadmission is not border admission; DHSreportrecipient does not make financial records immigration adjudication. Exact wholebill exclusion supported.",
+        "finding": "Exact financial-disclosure mechanism and amendment boundary support exclusion; foreign-person/INA references do not create an immigration consequence.",
+        "correction": null,
+        "before_review_record_sha256": "3843ef13f7ac78b5a3df5b6f1ad8104924a3971c60ed1cbbcf85dac9834419bb",
+        "corrected_review_record_sha256": "3843ef13f7ac78b5a3df5b6f1ad8104924a3971c60ed1cbbcf85dac9834419bb",
+        "primary_evidence": [
+          {
+            "source_id": "clerk:119:1:83",
+            "url": "https://clerk.house.gov/evs/2025/roll083.xml",
+            "governed_bytes_sha256": "2c54e588ef593dbed98cb9e9678db9112c13e017cbd633baea911c7a4d0d9ff3",
+            "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+          },
+          {
+            "source_id": "govinfo:hr1048eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+            "governed_bytes_sha256": "08f233c1c7a71e8a8956d09d870289208215dd42933d1a78d3a3f16bf89e6f42",
+            "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+          },
+          {
+            "source_id": "govinfo:hres242eh",
+            "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+            "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89",
+            "reviewed_extent": "Complete exact operative bill/amendment; material Rules-print insertion and adopted consideration rule, recorded identity/outcome; governed witnesses bound in ledger"
+          }
+        ],
+        "correction_state": "checkpoint_validated"
+      }
+    ],
+    "correction_state": "restored_pending_same_episode_material_review173",
+    "completed_screening": false
+  },
+  "prior173_history_preserved": true,
+  "existing79authoring_byte_content_unchanged": true,
+  "full_EH_read": true,
+  "EH_fresh_capture_literal_replay": {
+    "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr1048eh/html/BILLS-119hr1048eh.htm",
+    "raw_path": ".tmp/hr1048eh-original175.html",
+    "raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
+    "governed_prior_raw_sha256": "ac1a332715b35d59dcf9c89eca1ef3c8cc48e86d1ff0c570ad8e1ec3edba0cdb",
+    "raw_bytes_identical": true,
+    "exact_prior_text_replayed": true,
+    "text_length": 57840
+  },
+  "new_sources": [
+    "immigration:hr1048-package-initial175",
+    "immigration:hr1048-package-recorded175",
+    "immigration:roll83-passage175",
+    "govinfo:fara611-operative2024-175",
+    "govinfo:io288-operative2024-175"
+  ],
+  "new_capture_registrations": [
+    "primary:fara611-2024-175",
+    "primary:io288-2024-175",
+    "immigration:hr1048-package-initial175",
+    "immigration:hr1048-package-recorded175",
+    "immigration:roll83-passage175",
+    "govinfo:fara611-operative2024-175",
+    "govinfo:io288-operative2024-175"
+  ],
+  "derivative_sources": [
+    {
+      "source_id": "immigration:hr1048-package-initial175",
+      "original_source_id": "primary:march25171",
+      "original_governed_bytes_sha256": "f50abca719760e6c09c64d2509509282548d22cae5f31de21903a9d11e0464cc",
+      "intervals": [
+        {
+          "start": 315961,
+          "end": 316315,
+          "total": 477260
+        },
+        {
+          "start": 319110,
+          "end": 319524,
+          "total": 477260
+        },
+        {
+          "start": 319524,
+          "end": 320335,
+          "total": 477260
+        },
+        {
+          "start": 328186,
+          "end": 328597,
+          "total": 477260
+        },
+        {
+          "start": 328597,
+          "end": 329704,
+          "total": 477260
+        },
+        {
+          "start": 338077,
+          "end": 338576,
+          "total": 477260
+        }
+      ]
+    },
+    {
+      "source_id": "immigration:hr1048-package-recorded175",
+      "original_source_id": "congressional-record:2025-03-27",
+      "original_governed_bytes_sha256": "f4d1ea36fd8a155cac99712e9f08c4f568eb4d62f8fa4c32a74b3635995b56c4",
+      "intervals": [
+        {
+          "start": 8134,
+          "end": 8400,
+          "total": 40298
+        },
+        {
+          "start": 12955,
+          "end": 13043,
+          "total": 40298
+        },
+        {
+          "start": 13445,
+          "end": 13710,
+          "total": 40298
+        },
+        {
+          "start": 18309,
+          "end": 18397,
+          "total": 40298
+        },
+        {
+          "start": 18805,
+          "end": 19069,
+          "total": 40298
+        },
+        {
+          "start": 23461,
+          "end": 23549,
+          "total": 40298
+        },
+        {
+          "start": 24162,
+          "end": 24451,
+          "total": 40298
+        },
+        {
+          "start": 28869,
+          "end": 28957,
+          "total": 40298
+        }
+      ]
+    },
+    {
+      "source_id": "immigration:roll83-passage175",
+      "original_source_id": "congressional-record:2025-03-27",
+      "original_governed_bytes_sha256": "f4d1ea36fd8a155cac99712e9f08c4f568eb4d62f8fa4c32a74b3635995b56c4",
+      "intervals": [
+        {
+          "start": 28959,
+          "end": 30715,
+          "total": 40298
+        },
+        {
+          "start": 35287,
+          "end": 35418,
+          "total": 40298
+        }
+      ]
+    },
+    {
+      "source_id": "govinfo:fara611-operative2024-175",
+      "original_source_id": "primary:fara611-2024-175",
+      "original_governed_bytes_sha256": "e0b0f820b7d95f3cf89fd2f7ae2e80ba1e763d11530b054a0b8fd05b292ed415",
+      "intervals": [
+        {
+          "start": 334,
+          "end": 8680,
+          "total": 19690
+        }
+      ]
+    },
+    {
+      "source_id": "govinfo:io288-operative2024-175",
+      "original_source_id": "primary:io288-2024-175",
+      "original_governed_bytes_sha256": "e975f03ed740f8c0548053df374bdc3b9266367a104ad3af1f2ba32d327fc7b4",
+      "intervals": [
+        {
+          "start": 463,
+          "end": 1971,
+          "total": 15568
+        }
+      ]
+    }
+  ],
+  "source_reuses": [
+    "govinfo:hr1048eh",
+    "house-rules:rcp1191-full-baseline173",
+    "immigration:hr1048-prior-ogles173",
+    "govinfo:hres242eh",
+    "govinfo:42usc19221-a-2024",
+    "govinfo:10usc4872-f2-2024"
+  ],
+  "pdf_rendered_pages_inspected": [
+    {
+      "image": ".tmp/pdf175/record-11.png",
+      "image_sha256": "0739b7e7a87edb11592de51d39be702729c070919f13fefa34948eff9ff92daf",
+      "pdf_page": 11,
+      "source_raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+      "visually_inspected": true
+    },
+    {
+      "image": ".tmp/pdf175/record-12.png",
+      "image_sha256": "783beb0bd4b60340c9b0b27ea4b10c5c5a15ed50a71fe4c998342e4c83adb319",
+      "pdf_page": 12,
+      "source_raw_sha256": "3f25391effba5f01288409697788597dc8ec8909cf718bed19b639654c6c7e09",
+      "visually_inspected": true
+    }
+  ],
+  "source_and_application_limits": [
+    "Immigration attribution is limited to the proposed personal translator qualification, including both donor and same-attributable-country exclusions, citizenship/residence and trust-territory/protectorate scope, all seven foreign-source limbs and incorporated agency qualifications. Country reporting fields alone are insufficient.",
+    "Whole final-passage package retained, including actual prior Ogles changes, rejected 3–6 and not-offered 7. No separate component preference, inferred motive, ideology, actual institutional/security outcome or voting recommendation.",
+    "Proposed qualification is not enacted/current law or a blanket immigration permission or exclusion. Individual citizenship/country, donor, control, agency, affiliation, international-organization, concern-list and covered-individual guidance applications remain reserved. Institutional contract restrictions, investment/enforcement and Title IV institution eligibility are not personal immigration status.",
+    "Historical2024Code operative definitions establish named incorporated categories only; no current-law certification, complete designation-list/application research or all foreign-finance Immigration attribution. Printed source defects are preserved.",
+    "Typed candidate-episode-hold covers both authored 79 and 83 actions until independent candidate/package review; no editorial acceptance, publication, persistence or behavioral proposition. Two authored choices do not establish all real-world episode or full issue completeness."
+  ],
+  "held_episode_id": "episode:hr1048:119",
+  "held_authored_action_ids": [
+    "house:119:1:79",
+    "house:119:1:83"
+  ],
+  "package_outcomes": {
+    "adopted": [
+      1,
+      2
+    ],
+    "rejected": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "not_offered": [
+      7
+    ],
+    "final_passage": {
+      "yea": 241,
+      "nay": 169,
+      "not_voting": 20
+    }
+  },
+  "whole_episode_clearance": false,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "independent_review_pending": true,
+  "lightweight_actual_work_timing": {
+    "checkpoint": 175,
+    "base_head": "9cb6930443fd13d7316bfbcd69ca5b9bf837e2de",
+    "source_coherent_increment": "H.R.1048 passage83 exact package/translator qualification and existing held79episode coverage",
+    "started_utc": "2026-10-09T17:43:07.479823+00:00",
+    "special_benchmark_round": false,
+    "parallel_agents": false,
+    "pre_read_ledger_selection_seconds_not_separately_timed": true,
+    "source_review_completed_utc": "2026-10-09T17:55:28.037444+00:00",
+    "source_review_elapsed_seconds": 740.557621,
+    "local_validation_completed_utc": "2026-10-09T18:07:08.513109+00:00",
+    "local_end_to_end_seconds": 1441.033286,
+    "interruption_reconciliation": {
+      "checkpoint": 175,
+      "reconciled_utc": "2026-10-09T18:04:27.701685+00:00",
+      "matching_validation_processes_found": 0,
+      "prior_exec_session": 69339,
+      "prior_wait_tool_result": "aborted by user after2.6seconds; later poll Unknown process id69339",
+      "trusted_parent_clarification": "No user stop or new approval gate issued; continue existing work",
+      "cause": "Unknown tool/session interruption; not evidence of a human stop",
+      "preserved_partial_output": "Two successful generation outputs,190-test progress dots through108tests; no final suite completion confirmed",
+      "previous_verified_receipt_sha256": "a7bd2cb3134af0a2afd0687aed2cf5bfc60e2418dc7bb0e349b983e972d7f585",
+      "duplicate_candidate_authoring": false,
+      "rerun_reason": "No running process and missing final targeted-test result after member-neutrality correction"
+    },
+    "final_focused_runtime_seconds": 17.106,
+    "ordinary_work_observation": true,
+    "comparable_benchmark_average_established": false,
+    "transient_environment_error": "CreateProcess rejected: exec-server transport disconnected; next read-only command recovered, failed documentation command never started",
+    "phase_measurements": [
+      {
+        "phase": "complete_EH_capture_replay_incorporated_definitions_actual_package_reconstruction_and_candidate_authoring",
+        "wall_seconds": 740.557621
+      },
+      {
+        "phase": "generation_tests_safe_corrections_preservation_replay_and_interruption_reconciliation",
+        "wall_seconds": 700.475665,
+        "includes_unknown_tool_interruption": true
+      }
+    ]
+  },
+  "special_benchmark_round": false,
+  "current_counts": {
+    "authority": "Mechanical integrity only; no semantic acceptance or publication",
+    "inventory_count": 676,
+    "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+    "governed_review_count": 597,
+    "unfinished_screenings": 79,
+    "queue_count": 79,
+    "disposition_counts": {
+      "procedural_context": 228,
+      "interpreted_substantive_directional": 47,
+      "exact_action_ineligible": 320,
+      "source_unresolved": 79,
+      "expressive_nonbinding_context": 2
+    },
+    "unfinished_component_reviews": 3
+  },
+  "meanings": 47,
+  "application_questions_unchanged": 70,
+  "partial_packages_unchanged": 3,
+  "propositions_expected_unchanged": 80,
+  "rejected_raw_acquisitions": [
+    {
+      "key": "covered6605",
+      "reason": "GovInfo page-not-found HTML; preserved privately, never registered or used as evidence"
+    }
+  ],
+  "receipt_sha256": "8bcbc0eba8df37cf4416c1169ea0c0cf878daff640e3b807d4b76715d0ab4622",
+  "safe_in_scope_corrections": [
+    "Compiler rejected passage shorthand; corrected to established final_passage enum without validator changes",
+    "Final member-neutrality test rejected member names in shared meaning; removed sentence, retaining member observations in projection/audit evidence only"
+  ],
+  "validation": {
+    "focused_tests": 190,
+    "focused_runtime_seconds": 17.106,
+    "semantic_checks": 7,
+    "reference_cases": {
+      "accepted": 12,
+      "accepted_held_out": 4,
+      "held_out": 4
+    },
+    "mechanical_preservation_and_replay": {
+      "validation": {
+        "authority": "Mechanical integrity only; no semantic acceptance or publication",
+        "inventory_count": 676,
+        "ordered_action_ids_sha256": "e1a0ecb12b1697b6c5bbc43147ea66d155ed1e10b543efb18eaa05d677be5d25",
+        "governed_review_count": 597,
+        "unfinished_screenings": 79,
+        "queue_count": 79,
+        "disposition_counts": {
+          "procedural_context": 228,
+          "interpreted_substantive_directional": 47,
+          "exact_action_ineligible": 320,
+          "source_unresolved": 79,
+          "expressive_nonbinding_context": 2
+        },
+        "unfinished_component_reviews": 3
+      },
+      "all46prior_authoring_and_shared_core_actions_unchanged": true,
+      "all46prior_member_projection_objects_preserved": true,
+      "both_member_proposition_graphs_exact_unchanged": true,
+      "propositions": 80,
+      "held_actions": [
+        "house:119:1:79",
+        "house:119:1:83"
+      ],
+      "source_seals": 1955,
+      "capture_registrations": 832,
+      "literal_derivative_views": 5,
+      "raw_evidence_captures_verified": 6,
+      "rejected404raw_preserved": 1,
+      "rejected404notregistered": true,
+      "material_images": 2,
+      "seven_output_replay": true,
+      "prior_reviews_sources_pool_audit_and_pending_history_preserved": true,
+      "only83universe_row_changed": true,
+      "history_blobs_preserved": 340,
+      "CI174nine_exact_context_jobs_verified": true
+    },
+    "initial_stage_generation_rejection": "passage shorthand rejected; corrected to existing final_passage enum",
+    "intermediate_suite_failure": {
+      "tests": 190,
+      "runtime_seconds": 16.939,
+      "failures": 1,
+      "reason": "Member names accidentally present in shared action prose; removed from shared meaning, retained only in projections/audit; validator unchanged"
+    },
+    "interrupted_suite_completion_unconfirmed": true,
+    "resumed_suite_completed": true,
+    "final_diff_reviewed": true,
+    "validator_or_methodology_changes": false
+  }
+}

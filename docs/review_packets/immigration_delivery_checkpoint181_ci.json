@@ -1,0 +1,379 @@
+{
+  "checkpoint": 181,
+  "head": "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d",
+  "run": 37994328732,
+  "run_attempt": 1,
+  "conclusion": "failure",
+  "successful_jobs": 6,
+  "failed_jobs": [
+    {
+      "job_id": 114036354888,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:36:01Z",
+      "checkout_log_shas": [],
+      "log_sha256": "c51c75954f5871ebabb94bc9c5fe8b65b8190512183acaaa8148d1a27c4df64f",
+      "log_bytes": 5041,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Create dedicated disposable database",
+        "Prove exact repair apply, idempotency, drift guard, and rollback",
+        "Prove source-verified M15A.2 core repair and public invariants",
+        "Prove normalized storage at actual production cardinality",
+        "Prove actual green M15B persistence and owned V2R lifecycle"
+      ],
+      "Docker_pull_rate_limit": true
+    },
+    {
+      "job_id": 114036354945,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:42Z",
+      "checkout_log_shas": [],
+      "log_sha256": "dc4771b1ec85add5a34bc92b367770e8e3ea857fbb3085afe1d7c3ea77d9d257",
+      "log_bytes": 4990,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Run actions/setup-node@v4",
+        "Install M14H validation dependencies",
+        "Prove exact M14H package and unchanged V2/migration contracts",
+        "Validate shared candidate preparation at exact head",
+        "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+        "Run accepted M14G and public-receipt regressions",
+        "Run release-tier editorial, frontend, and persistence validation",
+        "Verify Record at a Glance source bindings and both frontend routes",
+        "Validate M15B comparison semantics and governed limitation rendering",
+        "Prove reusable V2R exact-key replacement and offline M15B readiness"
+      ],
+      "Docker_pull_rate_limit": true
+    },
+    {
+      "job_id": 114036355066,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:35:41Z",
+      "checkout_log_shas": [],
+      "log_sha256": "013e94c75f17b2a4416cacdecf9d8ecdf18f85ac780f986d8a52ec4835d7d6b0",
+      "log_bytes": 6404,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Prepare reconciled disposable editorial baseline",
+        "Run publication activation PostgreSQL suite without skips",
+        "Run row-contract and owned-lifecycle fault tests",
+        "Prove M11N authority closure, exact graph, idempotency, drift, and rollback",
+        "Prove M12N preparation graph, isolation, idempotency, drift, and rollback",
+        "Prove M13N-R Education lifecycle, idempotency, drift, and rollback",
+        "Prove governed M13N candidate lifecycle and exact public projections",
+        "Prove V2 stable authority with fresh read-only execution evidence",
+        "Build fresh disposable backup evidence",
+        "Run authoritative owned-lifecycle real-Uvicorn proof"
+      ],
+      "Docker_pull_rate_limit": true
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": 114036354612,
+      "name": "m14e-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:42Z",
+      "checkout_log_shas": [
+        "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d"
+      ],
+      "log_sha256": "7756cd791c0091636d5d9377590283935f24e1a405a1c72e39b50b6225b31249",
+      "log_bytes": 44400,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:39.9759860Z 22 passed, 55 subtests passed in 0.29s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14E milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036354847,
+      "name": "m14f-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:40Z",
+      "checkout_log_shas": [
+        "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d"
+      ],
+      "log_sha256": "47865219595efd5d2980bce0277515f8b9c21658c2af350372a773eba5eb2ba2",
+      "log_bytes": 44212,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:38.9723210Z 29 passed, 40 subtests passed in 0.36s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14F milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036354853,
+      "name": "m14g-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:56Z",
+      "checkout_log_shas": [
+        "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d"
+      ],
+      "log_sha256": "9955adda23ce5f0a7711d4237eadea693b6cdaf00f50d6870e83704bee927f4d",
+      "log_bytes": 63328,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:48.1570436Z 15 passed, 1 warning in 0.57s",
+        "2026-10-09T21:35:48.7610827Z 10 passed in 0.25s",
+        "2026-10-09T21:35:49.2699200Z 3 passed in 0.29s",
+        "2026-10-09T21:35:54.6370605Z 96 passed in 3.26s"
+      ],
+      "skipped_steps": [
+        "Enforce milestone-local M14G closure scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036354888,
+      "name": "receipt-evidence-repair-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:36:01Z",
+      "checkout_log_shas": [],
+      "log_sha256": "c51c75954f5871ebabb94bc9c5fe8b65b8190512183acaaa8148d1a27c4df64f",
+      "log_bytes": 5041,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Create dedicated disposable database",
+        "Prove exact repair apply, idempotency, drift guard, and rollback",
+        "Prove source-verified M15A.2 core repair and public invariants",
+        "Prove normalized storage at actual production cardinality",
+        "Prove actual green M15B persistence and owned V2R lifecycle"
+      ],
+      "Docker_pull_rate_limit": true
+    },
+    {
+      "job_id": 114036354902,
+      "name": "m14d-exact-head",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:35:40Z",
+      "checkout_log_shas": [
+        "0e92ef956f0cbfc570a5aa8fe97bbe6d14c81f0d"
+      ],
+      "log_sha256": "31d33110966890fd269b5fbf25165a37b87ba42d500a7673bc42347243c2ba42",
+      "log_bytes": 43157,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:37.8256529Z 18 passed, 34 subtests passed in 0.60s"
+      ],
+      "skipped_steps": [
+        "Prove exact M14D milestone scope"
+      ],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036354932,
+      "name": "amendment-evidence-contracts",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:42Z",
+      "checkout_log_shas": [
+        "ebe7af07e2f8093dab92c346836fa564fc365170"
+      ],
+      "log_sha256": "a36830907747dacdf638c0a60ce30166149f19d10b843b825647ced11f6ce189",
+      "log_bytes": 28411,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:40.6199807Z ============================== 87 passed in 1.09s =============================="
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036354945,
+      "name": "m14h-exact-head",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:10Z",
+      "completed_at": "2026-10-09T21:35:42Z",
+      "checkout_log_shas": [],
+      "log_sha256": "dc4771b1ec85add5a34bc92b367770e8e3ea857fbb3085afe1d7c3ea77d9d257",
+      "log_bytes": 4990,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Run actions/setup-node@v4",
+        "Install M14H validation dependencies",
+        "Prove exact M14H package and unchanged V2/migration contracts",
+        "Validate shared candidate preparation at exact head",
+        "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+        "Run accepted M14G and public-receipt regressions",
+        "Run release-tier editorial, frontend, and persistence validation",
+        "Verify Record at a Glance source bindings and both frontend routes",
+        "Validate M15B comparison semantics and governed limitation rendering",
+        "Prove reusable V2R exact-key replacement and offline M15B readiness"
+      ],
+      "Docker_pull_rate_limit": true
+    },
+    {
+      "job_id": 114036354967,
+      "name": "foushee-full-record-benchmark",
+      "run_attempt": 1,
+      "conclusion": "success",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:38:29Z",
+      "checkout_log_shas": [
+        "ebe7af07e2f8093dab92c346836fa564fc365170"
+      ],
+      "log_sha256": "a743bc6b0cc8c9a04b3b5e94f62e8b0f4111cbc6482e7326373745547357891c",
+      "log_bytes": 1504808,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [
+        "2026-10-09T21:35:41.4716755Z 15 passed in 0.39s",
+        "2026-10-09T21:35:42.6776471Z 19 passed in 0.87s",
+        "2026-10-09T21:35:45.0869784Z 27 passed in 2.03s",
+        "2026-10-09T21:38:26.6635454Z 639 passed, 1 warning in 59.09s"
+      ],
+      "skipped_steps": [],
+      "Docker_pull_rate_limit": false
+    },
+    {
+      "job_id": 114036355066,
+      "name": "publication-activation-postgres",
+      "run_attempt": 1,
+      "conclusion": "failure",
+      "started_at": "2026-10-09T21:35:11Z",
+      "completed_at": "2026-10-09T21:35:41Z",
+      "checkout_log_shas": [],
+      "log_sha256": "013e94c75f17b2a4416cacdecf9d8ecdf18f85ac780f986d8a52ec4835d7d6b0",
+      "log_bytes": 6404,
+      "log_encoding": "PC gh API decoded log response bytes, not GitHub archive bytes",
+      "pytest_counts": [],
+      "skipped_steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Prepare reconciled disposable editorial baseline",
+        "Run publication activation PostgreSQL suite without skips",
+        "Run row-contract and owned-lifecycle fault tests",
+        "Prove M11N authority closure, exact graph, idempotency, drift, and rollback",
+        "Prove M12N preparation graph, isolation, idempotency, drift, and rollback",
+        "Prove M13N-R Education lifecycle, idempotency, drift, and rollback",
+        "Prove governed M13N candidate lifecycle and exact public projections",
+        "Prove V2 stable authority with fresh read-only execution evidence",
+        "Build fresh disposable backup evidence",
+        "Run authoritative owned-lifecycle real-Uvicorn proof"
+      ],
+      "Docker_pull_rate_limit": true
+    }
+  ],
+  "url": "https://github.com/dhart54/political_fingerprint/actions/runs/37994328732",
+  "actual_job_executions": 9,
+  "carried_successes": 0,
+  "expected_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "observed_successful_checkout_contexts": {
+    "feature": 4,
+    "synthetic": 2,
+    "mixed": 0
+  },
+  "successful_checkout_contexts_verified": [
+    "m14e-exact-head",
+    "m14f-exact-head",
+    "m14g-exact-head",
+    "m14d-exact-head",
+    "amendment-evidence-contracts",
+    "foushee-full-record-benchmark"
+  ],
+  "synthetic_merge_sha": "ebe7af07e2f8093dab92c346836fa564fc365170",
+  "no_manual_retry": true,
+  "unrun_hosted_checks": [
+    {
+      "job": "receipt-evidence-repair-postgres",
+      "steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Create dedicated disposable database",
+        "Prove exact repair apply, idempotency, drift guard, and rollback",
+        "Prove source-verified M15A.2 core repair and public invariants",
+        "Prove normalized storage at actual production cardinality",
+        "Prove actual green M15B persistence and owned V2R lifecycle"
+      ]
+    },
+    {
+      "job": "m14h-exact-head",
+      "steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Run actions/setup-node@v4",
+        "Install M14H validation dependencies",
+        "Prove exact M14H package and unchanged V2/migration contracts",
+        "Validate shared candidate preparation at exact head",
+        "Prove disposable M14H apply, idempotency, faults, rollback, and public selector",
+        "Run accepted M14G and public-receipt regressions",
+        "Run release-tier editorial, frontend, and persistence validation",
+        "Verify Record at a Glance source bindings and both frontend routes",
+        "Validate M15B comparison semantics and governed limitation rendering",
+        "Prove reusable V2R exact-key replacement and offline M15B readiness"
+      ]
+    },
+    {
+      "job": "publication-activation-postgres",
+      "steps": [
+        "Run actions/checkout@v4",
+        "Run actions/setup-python@v5",
+        "Install backend dependencies",
+        "Prepare reconciled disposable editorial baseline",
+        "Run publication activation PostgreSQL suite without skips",
+        "Run row-contract and owned-lifecycle fault tests",
+        "Prove M11N authority closure, exact graph, idempotency, drift, and rollback",
+        "Prove M12N preparation graph, isolation, idempotency, drift, and rollback",
+        "Prove M13N-R Education lifecycle, idempotency, drift, and rollback",
+        "Prove governed M13N candidate lifecycle and exact public projections",
+        "Prove V2 stable authority with fresh read-only execution evidence",
+        "Build fresh disposable backup evidence",
+        "Run authoritative owned-lifecycle real-Uvicorn proof"
+      ]
+    }
+  ],
+  "remaining_gate": "Hosted runtime coverage incomplete",
+  "semantic_acceptance": false,
+  "publication_authorized": false,
+  "receipt_sha256": "a85e343c7e1dccfe991b47a2063c487df31bde803aa8e33d3fdb0fdd2933b1f2"
+}
