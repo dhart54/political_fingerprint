@@ -76,8 +76,8 @@
     "counts": {
       "procedural_context": 227,
       "interpreted_substantive_directional": 44,
-      "exact_action_ineligible": 310,
-      "source_unresolved": 93,
+      "exact_action_ineligible": 315,
+      "source_unresolved": 88,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -92,8 +92,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 227,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 310,
-    "unresolved_boundary_cases": 93,
+    "exact_action_ineligible_actions": 315,
+    "unresolved_boundary_cases": 88,
     "independent_episode_count": 40,
     "multi_action_episode_count": 4,
     "mechanism_types": [
@@ -625,6 +625,10 @@
         "house:119:2:146",
         "house:119:2:147",
         "house:119:2:148",
+        "house:119:2:149",
+        "house:119:2:150",
+        "house:119:2:151",
+        "house:119:2:152",
         "house:119:2:156",
         "house:119:2:162",
         "house:119:2:164",
@@ -661,6 +665,7 @@
         "house:119:2:235",
         "house:119:2:238",
         "house:119:2:240",
+        "house:119:2:242",
         "house:119:2:248",
         "house:119:2:251",
         "house:119:2:252",
@@ -748,10 +753,6 @@
         "house:119:2:110",
         "house:119:2:142",
         "house:119:2:143",
-        "house:119:2:149",
-        "house:119:2:150",
-        "house:119:2:151",
-        "house:119:2:152",
         "house:119:2:154",
         "house:119:2:155",
         "house:119:2:157",
@@ -771,7 +772,6 @@
         "house:119:2:228",
         "house:119:2:229",
         "house:119:2:241",
-        "house:119:2:242",
         "house:119:2:243",
         "house:119:2:244",
         "house:119:2:245",
@@ -1124,7 +1124,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; wider episode coverage is not yet established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "7e924384754dee4b077630d9c049e2d4e87443a35aad78233173f359dbfcc2e5",
+  "universe_subject_sha256": "b7ff4bb5e730f99bb6325e305f6ba6d42b6275482a94bd067164cbd8c071b300",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -33664,8 +33664,8 @@
       "date": "2026-04-30",
       "measure": "bill_119_hr_7567",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Moore Part B 36 would exempt the specified proposed greyhound penalties for conduct occurring in West Virginia at a commercial greyhound racing track active on enactment. Complete Print section 12008 retained: interstate/foreign movement of greyhounds, wagering and related animal conduct, investigations, penalties, definitions, October 1, 2027 applicability and State-law/horseracing savings. This is an exception to the specified penalties, not repeal of the underlying prohibitions or investigation authority, not an immigration-status exception. Both operative and target literally refer to paragraphs 1 through 5 while the printed target lists four predicates; preserve that discrepancy without legal emendation or individual liability judgment. Animal movement in foreign commerce does not establish movement/admission of people. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
       "source": {
         "source_id": "clerk:119:2:149",
         "url": "https://clerk.house.gov/evs/2026/roll149.xml",
@@ -33682,25 +33682,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Moore Part B 36 would exempt the specified proposed greyhound penalties for conduct occurring in West Virginia at a commercial greyhound racing track active on enactment. Complete Print section 12008 retained: interstate/foreign movement of greyhounds, wagering and related animal conduct, investigations, penalties, definitions, October 1, 2027 applicability and State-law/horseracing savings. This is an exception to the specified penalties, not repeal of the underlying prohibitions or investigation authority, not an immigration-status exception. Both operative and target literally refer to paragraphs 1 through 5 while the printed target lists four predicates; preserve that discrepancy without legal emendation or individual liability judgment. Animal movement in foreign commerce does not establish movement/admission of people. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:149",
           "url": "https://clerk.house.gov/evs/2026/roll149.xml",
           "raw_sha256": "098501f7064ddb2c0d4d096568bc3d20c8b8334da99c701fed130fb74501ffc2",
-          "governed_bytes_sha256": "f02dbbe67e88e982462eeb2dadc0e0cd31a067a2b5de35eb45f02a6c77c7c344",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f02dbbe67e88e982462eeb2dadc0e0cd31a067a2b5de35eb45f02a6c77c7c344"
+        },
+        {
+          "source_id": "congressional-record:own149-operative-voice167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "0ff79a3aa7db2bd43bdfdead9d440c1b2848d6567995c359969e09accc44da78"
+        },
+        {
+          "source_id": "congressional-record:own149-recorded167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "21edcda1bedc6bfadc4518a8223ada4f98f21809907b728c3bc83c8f8ed7da27"
+        },
+        {
+          "source_id": "house-rules:119628-partB36-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "c3c40343df60bf3db4c2ef869df44cef1bc288d994564718ba511bcbf6b553ab"
+        },
+        {
+          "source_id": "rules:print11922-greyhound-pretarget167",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h7567_xml.pdf",
+          "raw_sha256": "c58eb77bd880facc45e4a5e3b498d37dc5850c1f8d1a22ba02c3c5bd3593326f",
+          "governed_bytes_sha256": "a1a43b886697396486c90689cb0e87683674fef065747162348a6678b91928d9"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "house-rules:119628-partA-manager166",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "82a6557085f6da720d75753858d60d296ca60d0d0942f8e2178b0a41866212ef"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "974db774828067646d10ba4861393f776b39b647d091c62048c41241c4d986a6"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:149",
@@ -33716,8 +33752,8 @@
       "date": "2026-04-30",
       "measure": "bill_119_hr_7567",
       "question": "On Agreeing to the Amendment, as Modified",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Scholten offered Neguse Part B 39 as designee. The printed operative was modified by unanimous consent to replace every Page 430 reference with Page 431; the modification and actual as-modified question are separately bound. The amendment adds a precision-agriculture definition, replaces the AGARDA technological-barrier goal and adds voluntary sustainable-agriculture resilience goals addressing weather, drought/soil water, carbon storage, energy/biofuels, conservation and precision technology. Complete actual page 431 targets, existing AGARDA definitions/goals and cited sustainable-agriculture definition read. These are research/program goals and agricultural inputs, not changes to human immigration status, admission, citizenship or status-governed eligibility. Broader parent-bill eligible-entity edits are not this amendment, and actual project success or individual grant qualification is not inferred. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice noes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
       "source": {
         "source_id": "clerk:119:2:150",
         "url": "https://clerk.house.gov/evs/2026/roll150.xml",
@@ -33734,25 +33770,73 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Scholten offered Neguse Part B 39 as designee. The printed operative was modified by unanimous consent to replace every Page 430 reference with Page 431; the modification and actual as-modified question are separately bound. The amendment adds a precision-agriculture definition, replaces the AGARDA technological-barrier goal and adds voluntary sustainable-agriculture resilience goals addressing weather, drought/soil water, carbon storage, energy/biofuels, conservation and precision technology. Complete actual page 431 targets, existing AGARDA definitions/goals and cited sustainable-agriculture definition read. These are research/program goals and agricultural inputs, not changes to human immigration status, admission, citizenship or status-governed eligibility. Broader parent-bill eligible-entity edits are not this amendment, and actual project success or individual grant qualification is not inferred. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice noes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:150",
           "url": "https://clerk.house.gov/evs/2026/roll150.xml",
           "raw_sha256": "68b864a45989148b4f810a6b52dd227554de577d6c60ce98792c405cea7a0634",
-          "governed_bytes_sha256": "a3b57c5273cb7001fa86ba62ecdf83e873d990d48ae611c9bff0927cff58eb8e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "a3b57c5273cb7001fa86ba62ecdf83e873d990d48ae611c9bff0927cff58eb8e"
+        },
+        {
+          "source_id": "congressional-record:own150-operative-voice167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "78f43285760768a567b0d0366ec9dd53b2326b7dd940ba62b2a921573581a3c3"
+        },
+        {
+          "source_id": "congressional-record:own150-recorded167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "4a7d56116d2c3e1a58aa72569cc39cb51d0769ca2e31b366572f6556e0cb4203"
+        },
+        {
+          "source_id": "house-rules:119628-partB39-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "3638006c7d6a3c02f9fc2d8044a636f701c374be92d61b41b84dd2c22759b63f"
+        },
+        {
+          "source_id": "rules:print11922-p431-target167",
+          "url": "https://rules.house.gov/sites/evo-subsites/republicans-rules.house.gov/files/documents/rcp_h7567_xml.pdf",
+          "raw_sha256": "c58eb77bd880facc45e4a5e3b498d37dc5850c1f8d1a22ba02c3c5bd3593326f",
+          "governed_bytes_sha256": "fb7db6bd618a83ecab647a9006aa9051bf7f9040c664c26fcb3937acca52c3b3"
+        },
+        {
+          "source_id": "govinfo:7usc3319k-definitions-goals167",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap64-subchapX-sec3319k.htm",
+          "raw_sha256": "a562145c717746e6622e0837a525f00864f4a3c7169285eb81aafa11ea818df2",
+          "governed_bytes_sha256": "c08fa5ecb8eb8437a8f3980dbc0aeedce93c79fd27ef7c7a310672bc9dc9d4d6"
+        },
+        {
+          "source_id": "govinfo:7usc3103-sustainable167",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap64-subchapI-sec3103.htm",
+          "raw_sha256": "a570878dba112bd8408a523b895d62c327756dc90a2d523371394abd5a41a87a",
+          "governed_bytes_sha256": "c5954cf9baf79e8dcd944fd335142ed694fae0390edc674cb5a60913d8ec18cd"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
+        },
+        {
+          "source_id": "house-rules:119628-partA-manager166",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "82a6557085f6da720d75753858d60d296ca60d0d0942f8e2178b0a41866212ef"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "82aac3ede1b202af8d8f060e7f0fdd59b72e94ab9e5ee831c269c0ac6ac0fb90"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:150",
@@ -33768,8 +33852,8 @@
       "date": "2026-04-30",
       "measure": "bill_119_hr_7567",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Self Part B 47 adds soda to the SNAP food-definition exclusions and defines it as a carbonated beverage containing more than 1 gram of added sugar, artificial sweetener, or flavoring per serving; the section takes effect 180 days after enactment. Existing (k)(1) distinguishes eligible food purchases from recipient eligibility. This changes the specified food definition, not household immigration/citizenship eligibility, not all beverages, and not an immediate effect or a verified nutrition/health/cost outcome. The more-than-1-gram formulation and alternative ingredients remain literal; no proposed regulatory interpretation or medical effect inferred. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
       "source": {
         "source_id": "clerk:119:2:151",
         "url": "https://clerk.house.gov/evs/2026/roll151.xml",
@@ -33786,25 +33870,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Self Part B 47 adds soda to the SNAP food-definition exclusions and defines it as a carbonated beverage containing more than 1 gram of added sugar, artificial sweetener, or flavoring per serving; the section takes effect 180 days after enactment. Existing (k)(1) distinguishes eligible food purchases from recipient eligibility. This changes the specified food definition, not household immigration/citizenship eligibility, not all beverages, and not an immediate effect or a verified nutrition/health/cost outcome. The more-than-1-gram formulation and alternative ingredients remain literal; no proposed regulatory interpretation or medical effect inferred. Initial proceedings are in the April 29 legislative-day Record, including after-midnight continuations; own recorded outcomes are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:151",
           "url": "https://clerk.house.gov/evs/2026/roll151.xml",
           "raw_sha256": "1e2cb6d0cbe14a1bc49e41ee47536c385217fb04eae79931233ef4a5bac7888d",
-          "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "08695333aa6a1e9484731aa2cba84d9eebd543f59e75df3ae8fb796a1cd2548f"
+        },
+        {
+          "source_id": "congressional-record:own151-operative-voice167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-29/pdf/CREC-2026-04-29-house.pdf",
+          "raw_sha256": "f99fa308a28cfb825ee9f73b186a4a5bfa12938237a4747f6b5f883f54280003",
+          "governed_bytes_sha256": "d17633089c8808c486be64ea1dfb0a6f2f34409b2b2241964e816c3ed1e22738"
+        },
+        {
+          "source_id": "congressional-record:own151-recorded167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "b60e5d83efb5f6fed1a531b8922f60dd93970a5f39a42b21846ad6f0432eed16"
+        },
+        {
+          "source_id": "house-rules:119628-partB47-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "a394ffac4f766bf9329c8a063feef5cadc76bba03a192a157577d54c035feef8"
+        },
+        {
+          "source_id": "govinfo:7usc2012-k1-food167",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap51-sec2012.htm",
+          "raw_sha256": "1fa4675438e9e1e90c22ff1cb1af0246686367fbc96edcb0eac64b80e407559c",
+          "governed_bytes_sha256": "8794e63e2dc77ca75a1ff1fe3d3759c1bc01f7bc66f80e600b05b0103864c400"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "238254f8667010509fce052adb53f79ab1dece9f1086c89fcef4383d8da56d30"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:151",
@@ -33820,8 +33934,8 @@
       "date": "2026-04-30",
       "measure": "bill_119_hr_7567",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Spartz Part B 49 adds an exemption from Clean Air Act 213 standards for new or in-use agricultural tractors as defined in 29 CFR 1928.51, or self-propelled agricultural equipment used to spray, fertilize or harvest the cited covered commodities. Complete material 7547(a-d), the tractor definition and 9011(6) including seed cotton reviewed. The tractor definition excludes self-propelled implements; the separate second amendment branch is retained rather than erased by that exclusion. This is a defined equipment/emission-standards exception, not repeal of all Clean Air Act requirements or a personal immigration/admission/employment-status criterion. No individual equipment classification, current regulatory application, emissions/cost/health result or sponsor motive inferred. Initial and resumed recorded proceedings are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
       "source": {
         "source_id": "clerk:119:2:152",
         "url": "https://clerk.house.gov/evs/2026/roll152.xml",
@@ -33838,25 +33952,67 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Spartz Part B 49 adds an exemption from Clean Air Act 213 standards for new or in-use agricultural tractors as defined in 29 CFR 1928.51, or self-propelled agricultural equipment used to spray, fertilize or harvest the cited covered commodities. Complete material 7547(a-d), the tractor definition and 9011(6) including seed cotton reviewed. The tractor definition excludes self-propelled implements; the separate second amendment branch is retained rather than erased by that exclusion. This is a defined equipment/emission-standards exception, not repeal of all Clean Air Act requirements or a personal immigration/admission/employment-status criterion. No individual equipment classification, current regulatory application, emissions/cost/health result or sponsor motive inferred. Initial and resumed recorded proceedings are in the April 30 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:152",
           "url": "https://clerk.house.gov/evs/2026/roll152.xml",
           "raw_sha256": "d2559105b7c75b42c3fc7b2dccf102cd5cd0e64480131531d611ef881cf8fe3c",
-          "governed_bytes_sha256": "57ac0ed9f86e64a8828d3edc2fe71089573755278466c55ae5c568f36ea4e85e",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "57ac0ed9f86e64a8828d3edc2fe71089573755278466c55ae5c568f36ea4e85e"
+        },
+        {
+          "source_id": "congressional-record:own152-operative-voice167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "c1987a83064a0630e2166b83799843b89fe18d2a86998f8e46522f0ce39ed863"
+        },
+        {
+          "source_id": "congressional-record:own152-recorded167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-04-30/pdf/CREC-2026-04-30-house.pdf",
+          "raw_sha256": "892dd5245b68abc2bc2e5de61dbd511caf4130e0e446f891fe80fab7ef6ee831",
+          "governed_bytes_sha256": "fac9a281cda808fd6f486e3bd3f90c304df2f2dd6a4a0849e51f72b68829651d"
+        },
+        {
+          "source_id": "house-rules:119628-partB49-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt628/html/CRPT-119hrpt628.htm",
+          "raw_sha256": "a5f68821de43a78afb506666176e1d100f874c149cc205083f8af096da964445",
+          "governed_bytes_sha256": "985eca96eccb130949e626fb5cb32ec6f3066a80468994a1e0b8ada06d15c438"
+        },
+        {
+          "source_id": "govinfo:42usc7547-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap85-subchapII-partA-sec7547.htm",
+          "raw_sha256": "c35518c05d0f5e1c8c07c6b6db0b236945fb3ed287042477e71a087f525b5a5d",
+          "governed_bytes_sha256": "14dd5361fcd2ad6eb393b25d52c5bee8b97afb5b3a3992acc9f1c67aab4789dc"
+        },
+        {
+          "source_id": "govinfo:29cfr192851-tractor-definition167",
+          "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title29-vol8/pdf/CFR-2025-title29-vol8-sec1928-51.pdf",
+          "raw_sha256": "af5812925ad51f9ea5c4ad94ede7f4f971d3946ea02c314d38134ff9170895e8",
+          "governed_bytes_sha256": "d849db37479c6dc471883e239b6553fd465bc17c2f530d1fdbc5996b23c3f125"
+        },
+        {
+          "source_id": "govinfo:7usc9011-6-commodity167",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title7/html/USCODE-2024-title7-chap115-subchapI-sec9011.htm",
+          "raw_sha256": "6428c475b2b1982257aa098bd65679695b40fc93260f01cf4b36af1d1290b972",
+          "governed_bytes_sha256": "6b90bdaa0b71a342c58ebf2458dbbea484c3144398d72df2f883a6f649a7700d"
+        },
+        {
+          "source_id": "govinfo:hres1224eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1224eh/html/BILLS-119hres1224eh.htm",
+          "raw_sha256": "3daa6fe7528accf1b37a2da11ae463c4a3aa1d0319993b65c604d1e01d6650c7",
+          "governed_bytes_sha256": "498a4e7b5a9b923cb26768b8aecad4984d9e696dfa5bd343a9216e2b7dd61051"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "3ff6d112d11140aedc6b0ab6f550d5fe2951a49f3bcebdc684e9e21be1890ee4"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:152",
@@ -39263,8 +39419,8 @@
       "date": "2026-07-15",
       "measure": "bill_119_hr_8595",
       "question": "On Agreeing to the Amendment",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Fine Part A 6 strikes exact RH page 42 lines 6–10: the Global Environment Facility heading and $139,575,000 payment by Treasury to the International Bank for Reconstruction and Development as trustee, available until expended. The exact amount and payee come from the actual target rather than the rounded $140 million debate claim. The deletion concerns this environmental-facility appropriation, not all international assistance, refugee/migration funding, immigration status/admission or recipient citizenship criteria. Border-related debate does not supply a narrower Immigration mechanism absent from the operative and target; no actual savings, project outcome or allegations about recipients adopted. Initial and resumed recorded proceedings are in the July 15 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
       "source": {
         "source_id": "clerk:119:2:242",
         "url": "https://clerk.house.gov/evs/2026/roll242.xml",
@@ -39281,25 +39437,55 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Fine Part A 6 strikes exact RH page 42 lines 6–10: the Global Environment Facility heading and $139,575,000 payment by Treasury to the International Bank for Reconstruction and Development as trustee, available until expended. The exact amount and payee come from the actual target rather than the rounded $140 million debate claim. The deletion concerns this environmental-facility appropriation, not all international assistance, refugee/migration funding, immigration status/admission or recipient citizenship criteria. Border-related debate does not supply a narrower Immigration mechanism absent from the operative and target; no actual savings, project outcome or allegations about recipients adopted. Initial and resumed recorded proceedings are in the July 15 Record. Initial voice ayes and actual recorded demand/postponement remain distinct from the resumed recorded order and outcome. Recorded Clerk member labels govern; later stated intentions do not replace them. Established functional Immigration-domain candidate exclusion, noncounting and unapproved; no whole-parent meaning, new ontology/methodology, motive, ideology, character, causality, corruption, endorsement or voting recommendation.",
+      "unresolved_reason": null,
       "sources": [
         {
           "source_id": "clerk:119:2:242",
           "url": "https://clerk.house.gov/evs/2026/roll242.xml",
           "raw_sha256": "bd41016a6223691c7bb29a383d3f012c0c6055248e4fab559d1122f3976b3855",
-          "governed_bytes_sha256": "007c5838414c4fd98c8dc5551cdbba7af2e86fbdf1e9a5a8082cea5cae6cee99",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "007c5838414c4fd98c8dc5551cdbba7af2e86fbdf1e9a5a8082cea5cae6cee99"
+        },
+        {
+          "source_id": "congressional-record:own242-operative-voice167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+          "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+          "governed_bytes_sha256": "2017d0b452fcd796f585b7d0f51160f85f1100746cf707335fdf90a515c7c71b"
+        },
+        {
+          "source_id": "congressional-record:own242-recorded167",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-15/pdf/CREC-2026-07-15-house.pdf",
+          "raw_sha256": "f3d4dfbea43fb28ec6709160b68a7bd61a6afdd41016449d1678b8bf19f6f408",
+          "governed_bytes_sha256": "493482d2debda422d7783e9d6adbaf372c07a2c6cfe3ea70b46674957bb46ef2"
+        },
+        {
+          "source_id": "house-rules:119749-partA6-operative167",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt749/html/CRPT-119hrpt749.htm",
+          "raw_sha256": "7d38f033da963fb4b583dafef140fff695fc7c0d2a15cf11c481f20b1b6a22c1",
+          "governed_bytes_sha256": "66e296ad47f99ab03630aae27a6b214d24c5c587f7edcb4a8b1ab320d37608b5"
+        },
+        {
+          "source_id": "govinfo:hr8595rh-p42-GEF167",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8595rh/pdf/BILLS-119hr8595rh.pdf",
+          "raw_sha256": "ae5910b42901d070333270a51850ace53e0ca3b2a20a4d1980b9cf00bb21d314",
+          "governed_bytes_sha256": "8c2120dd92a606a0c7cddd4e5b72e235d539194e43dfeba0a38594a449d2d189"
+        },
+        {
+          "source_id": "govinfo:hres1423eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1423eh/html/BILLS-119hres1423eh.htm",
+          "raw_sha256": "7e136bbbf7ca4e58ca91bd3b4cdf2a303c3580ff62d4bc66b24d2dbc798d4e3e",
+          "governed_bytes_sha256": "6a1ad0235bd8aede4cd79a7748db956c2e94c4bfc9f8ca2ccf9819876113073c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "5f72b2296f3408d873fe1cd34d45fe4cafc5f8ff010163b231c29393b7b1ba80"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:242",
@@ -43719,10 +43905,6 @@
     "house:119:2:110",
     "house:119:2:142",
     "house:119:2:143",
-    "house:119:2:149",
-    "house:119:2:150",
-    "house:119:2:151",
-    "house:119:2:152",
     "house:119:2:154",
     "house:119:2:155",
     "house:119:2:157",
@@ -43742,7 +43924,6 @@
     "house:119:2:228",
     "house:119:2:229",
     "house:119:2:241",
-    "house:119:2:242",
     "house:119:2:243",
     "house:119:2:244",
     "house:119:2:245",
@@ -43781,6 +43962,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "28486b5cad4a3e5ece090f75747178827ab901b2f0408d0a3a8e81e0c2cab61e",
-  "membership_review_sha256": "188e77450050bd339ae7ea33a77d9dc34cbe33f0d20cdbd10d9b80d87feb1582"
+  "proposal_sha256": "ad6eddc29b4ec01b64f008065c5b97105f2847adddb2c7d080e6e11b13fa99fa",
+  "membership_review_sha256": "f8e08f8d4635fcb51118c96228acba063145c57ee96bf8453aa341656632d4f4"
 }

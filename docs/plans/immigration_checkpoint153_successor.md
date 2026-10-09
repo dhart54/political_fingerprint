@@ -470,3 +470,72 @@ Read-only source locators and rawUTF8-versuscanonicalJSON/GitEOL assumptions fai
 then corrected without weakening checks; originalprivatehelpers retained and all
 time included. No sourceword repair, acceptedquality/speedup/causality claim,
 merge/deployment/publication/production or method/product authority.
+
+## Benchmark closure and checkpoint167 continuation
+
+The parent independently closed the frozen five-action166 review from
+01:20:07 through01:29:23UTC on2026-10-09. All five exclusions and inherited165
+PERMIT qualifier repair are supported; no blocking defect. All1844 seals,
+prior1817sources/636captures,583/93 accounting and six semantic outputs verified.
+Initial proceedings are in the April29 legislative-day Record, including
+past-midnight continuation. The independently fresh ear-tag HTML differs in raw
+hash while full normalized text and both governed intervals match; no historical
+raw-byte equivalence or cause of drift is certified. Nine166 CI jobs independently
+verified:5feature/3synthetic096093c6f3d2445e5657217eafaf287a1f32a52a/1mixed,
+terminal success01:16:02UTC. Owner and hosted checks remain separately reported.
+
+Full origin-through-independent-review closure2243.674seconds /5 =448.7348seconds
+(7m29) per action, including66.302-second inherited repair, Git/PR delivery,
+CI observation/reporting and independent review. Earlier delivery endpoint
+1072.976seconds/5=3m35; owner CI/log observation endpoint1604.298seconds/5=5m21.
+The sample passes the user's average-over10minutes failure bound;4minutes is the
+target, achieved only at the delivery endpoint here. No causal speedup, model/tier
+or whole-population equivalence, editorial acceptance or publication claim.
+Expansion gate is released. Detailed benchmark timing stops; lightweight batch
+start/delivery retained and sustained average above10minutes remains a concern.
+The closure is recorded with the next coherent research delivery, not a
+receipt-only push. Historical166 receipt stays byte-preserved.
+
+Checkpoint167 attempted nine actions: the five pending State appropriation
+amendments241-245, followed by four remaining farm amendments149-152. Completed
+candidate exclusions149/150/151/152/242. Four State funding cases remain explicitly
+pending:241 deletes a Fulbright minimum earmark,243 combines whole-Act Israel
+funding prohibition with FMF reduction,244 combines Jordan prohibition with eight
+account cuts including explicit$50million Emergency Refugee and Migration
+Assistance Fund reduction,245 prohibits whole-Act UN funding. These are not
+silently dropped, automatically excluded or treated as a new routine benchmark.
+Their exact own operatives are preserved in governed pending witnesses; material
+funding/domain chains and typed candidate meanings remain to be completed.
+
+Moore36 concerns a specified greyhound penalty exception, not repeal of underlying
+prohibitions/investigations; literal1-5/four-predicate discrepancy preserved.
+Scholten as Neguse designee39 was modified by unanimous consent from Page430 to
+Page431 each time; complete modified action, actual target and agricultural
+research goals/definitions bound. Self47 food definition excludes literal soda
+formula180days after enactment, not household status. Spartz49 has two separate
+equipment categories, including self-propelled commodity equipment even though
+the cited tractor definition excludes self-propelled implements; no all-CAA repeal.
+Fine6 deletes exact$139,575,000 GEF trustee appropriation RH42lines6-10, not all
+foreign/refugee assistance or rounded debate claims. Own initial voice/demand/
+actual postponement and resumed recorded outcomes bound; Clerk labels govern.
+
+588/676 reviewed,88pending;44meanings/78findings/70questions/3partialpackages
+unchanged.1868sources/714captures;24canonical sources,39capture registrations,
+31claims,28derivatives/39intervals; six fresh raw acquisitions(3PDF/3HTML),21material
+PDFpages inspected. Five full numbered operatives compare after declared
+formatting-only normalization, with Scholten modification separately controlling.
+184focused tests/7semantic/reference validation, ten source-order checks and
+seven-file byte replay pass. Six semantic outputs and all prior records,
+source/capture prefixes, non-target rows, audit history, historical checkpoints,
+restored196 and holds preserved. No full parents/current-law/individual application
+certification. Failed locators/URL assumptions, missing scoped dependency path and
+capture-versus-canonical checker overlay corrected without changing source words
+or weakening checks; all private originals retained.
+
+Separate small maintenance: require_source_sequence rejects anchors that normalize
+to empty, tested with spaces, tab/newline and NBSP both first and later in the
+anchor list. Five helper tests pass; this is synthetic utility coverage, not
+independent source/editorial acceptance. New167 CI and independent source review
+pending until observed. Continue safe ordinary work; no routine checkpoint stop,
+new deadline, retired-owner contact, merge/deployment/publication/production,
+methodology/product change or final issue verdict.

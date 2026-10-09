@@ -16,6 +16,8 @@ def require_source_sequence(text: str, anchors: list[str]) -> list[int]:
     positions, cursor = [], 0
     for anchor in anchors:
         anchor = normalized_source_text(anchor)
+        if not anchor:
+            raise ValueError('nonempty explicit source anchors required')
         position = text.find(anchor, cursor)
         if position < 0:
             raise ValueError(f'missing or out-of-order source anchor: {anchor}')
