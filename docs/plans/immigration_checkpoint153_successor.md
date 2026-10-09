@@ -1504,3 +1504,56 @@ were not timed. Actual joint correction/local-validation and later delivery
 endpoints are retained; 183 CI verification overlap is included without subtraction.
 Continue executable candidate source work while new CI and review are reconciled;
 checkpoints remain resume points rather than routine approval gates.
+
+
+## Checkpoint 185: bounded childcare baseline qualification
+
+The same local owner continues source work from 184 at
+3238d2036ff732e858173daf8c6765a2cfcfe030. Held House 119/2/198 now has
+bounded source qualifications for CCDF eligibility continuity and child-food
+provider participation. The full adopted Print 119-32 operator was re-read:
+section 3 appends plan clause W; sections 4/7 separately govern permanent
+provider debarment following the specified final fraud determinations, with
+review/appeal exhaustion or waiver. They do not add an individual citizenship
+category. Existing printed 9858lg/659J/high-risk defects remain literal.
+
+Complete dated 9858c(c)(2)(N)-(V) preserves child eligibility continuity,
+redetermination and provider payment protections and establishes the last
+existing plan clause V. Complete dated 1766(a), (d)(5) and (e) separately govern
+institutional eligibility/licensing, corrective action, suspension, termination,
+disqualification and hearings. The complete dated 8 USC 1615 source, including
+its PRWORA reference, preserves the distinction between the school lunch/
+breakfast provision in (a) and the other-program provision in (b). PRWORA neither
+prohibits nor requires States to provide the latter covered benefits to persons
+who are not citizens or qualified aliens; this is not blanket individual
+eligibility, a new status exclusion, or a CCDF exemption. HHS CCDF notices cannot
+supply a child-food immigration condition. Full 1766/9858c parents and exhaustive
+current State/Federal implementation remain uncertified.
+
+The new held issue mapping references the existing Health candidate core and
+digests once. Its old 183 mapping/receipt remain unchanged historical source
+qualification. The current beneficiary/provider/service-exemption and HHS/court
+application hold remains. No new shared meaning, proposition, family/trait,
+compiler application, eligibility promotion, counting or publication.
+
+Four new governed source aliases/registrations reuse two verified old raw
+parents and one new official PC capture. Sources are 2,079; registrations 968.
+Counts remain 602 reviewed / 74 pending (57 ordinary, 17 researched holds),
+47 compiled meanings / 80 propositions, 70 questions and three partial packages.
+Only 198's pending rationale/reason changes; all 602 membership records remain
+unchanged. All 29 Health/canonical-corpus/current FISA and historical childcare
+artifact blobs are preserved. Six semantic products remain unchanged; the only
+generated change is proof inventory metadata and all seven files byte-replay.
+
+Validation: 202 focused tests in 17.477 seconds, seven semantic checks,
+mechanical IR references, 14 literal claim checks, three raw-parent text replays,
+four exact derivatives, own-bill identity and native held-mapping validation pass.
+No previously unavailable ACF response is promoted to evidence. Independent 185
+review remains pending; no editorial acceptance or compiler release.
+
+Performance remains FAIL at the earlier comparable 781.087 seconds per functional
+completion. This held baseline research is not a new comparable routine sample,
+special benchmark round or scaling. Initial source selection/lead lookup is
+untimed; actual source/authoring, local validation and delivery endpoints are
+retained with tests and delivery overhead. Continue executable candidate source
+work while new CI and independent review are reconciled; no routine handoff.
