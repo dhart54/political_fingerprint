@@ -1,0 +1,42 @@
+{
+  "checkpoint_reviewed": 180,
+  "feature_head": "b52fddb7bf59284d69cb0dafbc9ebf140c144243",
+  "reviewer": "Parent independent bounded reviewer; trusted delegation",
+  "review_state": "supported_candidate_findings_without_editorial_acceptance",
+  "review_started_utc": "2026-10-09T20:54:55Z",
+  "review_closed_utc": "2026-10-09T21:02:58Z",
+  "elapsed_seconds": 483,
+  "preservation_and_schema_checks": 40,
+  "independent_byte_replays": 7,
+  "material_source_or_domain_corrections": 0,
+  "candidate_exclusion_supported": [
+    "house:119:1:332"
+  ],
+  "qualified_proposals_supported_only_as_held": [
+    "house:119:1:298",
+    "house:119:1:299"
+  ],
+  "compiler_application_authorized": false,
+  "hold_release_authorized": false,
+  "counts": {
+    "reviewed": 600,
+    "pending": 76,
+    "meanings": 47,
+    "propositions": 80
+  },
+  "source_qualifications": [
+    "Fresh Rule46 raw verification unavailable after non-PDF response.",
+    "Clerk298/332 historical raw bytes differ; governed metadata/member labels/totals agree.",
+    "Parent reproduced complete406730-character November19 PDF canonical JSON-string digest; no remaining floor-source mismatch."
+  ],
+  "CI": {
+    "run": 37989914678,
+    "conclusion": "incomplete_after_two_DockerHub_pull_limit_attempts",
+    "carried_successes": 6,
+    "failed_retry_jobs_before_checkout": 3,
+    "important_hosted_checks_unexecuted": true
+  },
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "976fcc9e7acdfd6e4252a7b32f8507c7f92a45d12417334b7bb25748088ef078"
+}

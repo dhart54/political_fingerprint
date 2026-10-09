@@ -1271,3 +1271,59 @@ and all seven generated files replay byte for byte. Only the three declared
 action rows change. Two qualified proposals reuse the existing action identities
 and digests and remain outside compiled output. Local validation elapsed endpoint
 is recorded privately; no comparable routine average is inferred.
+
+
+## Checkpoint 181 - museum and cancer proposals; three exact-source holds
+
+The fixed five attempted actions are House 119/1/320 and 119/2/142, 188, 198, 250.
+Candidate functional exclusions complete 188 and 250. 188 binds the actual
+substitute modified by Report 119-653, not the unmodified reported bill. It
+changes museum site, mission and representation; the geographic Reserve and
+changed definitions do not establish a status-based eligibility mechanism.
+The literal report self-reference remains; recorded passage failed.
+
+250 covers both EARLY and SCREENS provisions, including all changed/deleted
+program baselines and the complete deleted waiver demonstration. Freely
+associated countries/tribes are grant jurisdictions, distinct from individual
+status eligibility. The 2012 waiver sunset is preserved without certifying a
+current waiver inventory. Unchanged low-income/tribal/grant conditions and
+dated qualified-alien restrictions remain; no current individual entitlement
+or later HHS implementation is certified. Authorizations are not appropriations.
+Massie is Not Voting on both 188 and 250, resolved and non-directional.
+
+320 remains held: its old VA title differs from the adopted eight-division FY 2026 NDAA.
+The 3,491,744-character EAH is captured, not wholly read. Limited Health care
+meaning cannot establish Immigration coverage. 142 remains held against a
+specific Title VII extension/travel-vetting chain, with the 2026 PL 119-84 sunset
+and other material baselines pending. The actual floor FISA substitute under
+H.Res. 1224 section 7 is distinct from separately House-passed H.R. 1919 appended by
+the Clerk under section 8 during engrossment. US-person includes LPRs and
+qualified entities; non-US person is not unauthorized immigrant.
+
+198 remains held for exact program-specific status-verification sources.
+Its new State-plan eligibility-documentation language requires that chain,
+while general provider fraud cannot establish immigration eligibility.
+Its may-to-shall operator makes additional appropriate sanctions mandatory,
+preserving choices broader than an inevitable withholding result. Provider
+debarment, State payment thresholds, suspicion/final fraud findings and
+printed cross-reference defects remain separate. Most 9858c and the complete
+1766 capture are not claimed read; HHS application remains pending.
+
+Only these five ledger rows change. Counts become 602 reviewed/74 pending:
+59 ordinary unscreened and 15 researched holds. 47 meanings/80 propositions,
+70 application questions and 3 partial packages remain. No new shared meaning,
+compiler application, counting, eligibility promotion or publication. All
+five own voice/demand/order/recorded sequences are verified. Five fresh Clerk
+metadata/member/party totals agree; 198/250 raw bytes differ, canonical aliases
+remain. Complete PDF parents and rejected wrong-URL responses are not reading
+or evidence credit. Prior benchmark FAIL remains; this complex fixed sample
+has two completions and three holds, no invented routine average.
+
+Parent 180 review reports 40 preservation/schema checks and 7 independent replays,
+no material corrections, 332 supported and 298/299 supported only as held.
+Its 483 seconds is retained separately. 180 CI remains incomplete after two
+DockerHub-limited attempts: six carried successes, three failed retries before
+checkout, important hosted stages unexecuted. Initial publication/repair jobs
+ran some earlier tests before later image-pull failures; those do not certify
+their unexecuted later stages. No immediate retry/configuration/credential
+change is made. Source work continues within the existing candidate envelope.

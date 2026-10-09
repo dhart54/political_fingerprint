@@ -28075,5 +28075,34 @@
   "prior_head_ci_checkpoint179": {
     "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint179_ci.json",
     "receipt_sha256": "976e07e4f4ad2215fda9c28138993243f89856ebb781f4ee99404378f9ab5c66"
+  },
+  "services_qualified_checkpoint181": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/services_qualified_research_checkpoint181.json",
+    "receipt_sha256": "6d4ea4a170a03892ec0b40447f71730cc2acb6e32b96eb2e839de3b752ac2568",
+    "completed_screenings": 2,
+    "qualified_held_actions": 3,
+    "counts": {
+      "reviewed": 602,
+      "pending": 74,
+      "ordinary_unscreened": 59,
+      "researched_holds": 15,
+      "meanings": 47,
+      "propositions": 80,
+      "application_questions": 70,
+      "partial_packages": 3
+    },
+    "independent_review_pending": true,
+    "publication_authorized": false
+  },
+  "independent_checkpoint180_bounded_review": {
+    "receipt_ref": "docs/review_packets/immigration_checkpoint180_parent_bounded_review.json",
+    "receipt_sha256": "976fcc9e7acdfd6e4252a7b32f8507c7f92a45d12417334b7bb25748088ef078",
+    "no_acceptance": true
+  },
+  "prior_head_ci_checkpoint180": {
+    "receipt_ref": "docs/review_packets/immigration_delivery_checkpoint180_ci.json",
+    "receipt_sha256": "9eb98f26cd3ced7f99ea33b08ab86f8c4dd1a66c27a5dacb12d1dd43d28568c7",
+    "incomplete": true,
+    "no_further_immediate_retry": true
   }
 }
