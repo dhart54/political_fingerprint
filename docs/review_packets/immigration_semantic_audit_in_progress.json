@@ -20443,82 +20443,6 @@
       "correction_state": "local_batch_validated_candidate_only"
     },
     {
-      "action_id": "house:119:1:79",
-      "audit_state": "same_owner_primary_reconstructed_candidate_compared",
-      "reviewed_disposition": "source_unresolved",
-      "current_disposition": "exact_action_ineligible",
-      "severity": "No Defect",
-      "finding_id": null,
-      "exact_identity": {
-        "majority": "R",
-        "congress": "119",
-        "session": "1st",
-        "committee": "U.S. House of Representatives",
-        "rollcall-num": "79",
-        "legis-num": "H R 1048",
-        "vote-question": "On Agreeing to the Amendment",
-        "amendment-num": "3",
-        "amendment-author": "Scott of Virginia Amendment No. 3",
-        "vote-type": "RECORDED VOTE",
-        "vote-result": "Failed",
-        "action-date": "27-Mar-2025",
-        "action-time": "10:30 AM",
-        "vote-desc": null
-      },
-      "recorded_member_observations": {
-        "F000477": {
-          "official_label": "Aye",
-          "name": "Foushee",
-          "party": "D",
-          "state": "NC"
-        },
-        "M001184": {
-          "official_label": "No",
-          "name": "Massie",
-          "party": "R",
-          "state": "KY"
-        }
-      },
-      "primary_reconstruction": "Scott amendment3 replaces the specified Print119-1 text with a complete HEA foreign-gift/contract disclosure and compliance regime. It specifies $100,000 annual/$250,000 three-calendar-year reporting thresholds, annual July31 timing, foreign ownership/control reporting, records and true-copy/translation requirements, public-access and privacy limits, accuracy/cure and qualified enforcement, individual non-agent student-payment exclusions, research-risk exceptions, foundation coverage and rulemaking/effectiveness. Foreign-source citizenship and country fields identify covered funding/disclosures; reported restricted-gift conditions concerning student selection/admission do not themselves create a personal immigration-status or admission rule. The literal repeated purpose wording is preserved, not repaired. This is institutional financial transparency/compliance rather than human admission, immigration status, citizenship eligibility or a direct border mechanism. No broader parent-title prohibitions, donor guilt, present legal applicability or actual educational/security outcomes inferred. Initial own proceedings March25, resumed recorded rejection March27:199-214,23Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
-      "finding": "Complete own operative/stages and bounded material targets/guidance reconstructed for functional Immigration exclusion; candidate only, independent review pending.",
-      "correction": null,
-      "before_review_record_sha256": null,
-      "corrected_review_record_sha256": "f2443f3abe491de1904f2e144a29c437fe81e9483185ebbc538a86bae68bb5b3",
-      "primary_evidence": [
-        {
-          "source_id": "clerk:119:1:79",
-          "url": "https://clerk.house.gov/evs/2025/roll079.xml",
-          "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66",
-          "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
-        },
-        {
-          "source_id": "immigration:roll79-initial171",
-          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
-          "governed_bytes_sha256": "6301e883649b5b9bd73d46d08eb29d21c6ab9dfc161bc93efdf20da1f793a019",
-          "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
-        },
-        {
-          "source_id": "immigration:roll79-recorded171",
-          "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
-          "governed_bytes_sha256": "c8624cf67a702d4eca46f303037a686c61b5bd9809ec3ef3df8373bfd0a08103",
-          "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
-        },
-        {
-          "source_id": "immigration:roll79-report171",
-          "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
-          "governed_bytes_sha256": "c0d34feba2127b184af26afd3eb7f0febc905b226235368c23eff45c873ba7cc",
-          "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
-        },
-        {
-          "source_id": "govinfo:hres242eh",
-          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
-          "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89",
-          "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
-        }
-      ],
-      "correction_state": "local_batch_validated_candidate_only"
-    },
-    {
       "action_id": "house:119:1:150",
       "audit_state": "same_owner_primary_reconstructed_candidate_compared",
       "reviewed_disposition": "source_unresolved",
@@ -20896,9 +20820,9 @@
     }
   ],
   "action_assessment_counts": {
-    "No Defect": 208,
+    "No Defect": 207,
     "Minor": 13,
-    "Major": 12,
+    "Major": 13,
     "Critical": 1
   },
   "distinct_finding_counts": {
@@ -20958,7 +20882,7 @@
     "procedural_controls_reviewed": 31,
     "expressive_controls_reviewed": 2,
     "all_current_expressive_controls_reviewed": true,
-    "successor_new_exclusions_reviewed": 117,
+    "successor_new_exclusions_reviewed": 116,
     "qualified_original_exclusion_reclassifications": 1
   },
   "checkpoint_validation": {
@@ -21249,7 +21173,11 @@
     "checkpoint171_semantic_checks": 7,
     "checkpoint171_full_replay_files": 7,
     "checkpoint171_preservation_checked": true,
-    "checkpoint171_final_audit_tests": 2
+    "checkpoint171_final_audit_tests": 2,
+    "checkpoint172_focused_tests": 188,
+    "checkpoint172_semantic_checks": 7,
+    "checkpoint172_full_replay_files": 7,
+    "checkpoint172_preservation_checked": true
   },
   "open_legal_interactions": [
     {
@@ -26685,6 +26613,137 @@
         },
         "historical_raw_hash_matches": true
       }
+    },
+    {
+      "action_id": "house:119:1:79",
+      "audit_state": "parent_independent_material_omission_restored_pending",
+      "reviewed_disposition": "exact_action_ineligible",
+      "current_disposition": "source_unresolved",
+      "severity": "Major",
+      "priority": "P2",
+      "finding_id": "immigration171-roll79-replaced-translator-qualification",
+      "exact_identity": {
+        "majority": "R",
+        "congress": "119",
+        "session": "1st",
+        "committee": "U.S. House of Representatives",
+        "rollcall-num": "79",
+        "legis-num": "H R 1048",
+        "vote-question": "On Agreeing to the Amendment",
+        "amendment-num": "3",
+        "amendment-author": "Scott of Virginia Amendment No. 3",
+        "vote-type": "RECORDED VOTE",
+        "vote-result": "Failed",
+        "action-date": "27-Mar-2025",
+        "action-time": "10:30 AM",
+        "vote-desc": null
+      },
+      "recorded_member_observations": {
+        "F000477": {
+          "official_label": "Aye",
+          "name": "Foushee",
+          "party": "D",
+          "state": "NC"
+        },
+        "M001184": {
+          "official_label": "No",
+          "name": "Massie",
+          "party": "R",
+          "state": "KY"
+        }
+      },
+      "finding": "Restored pending after parent171P2. Scott amendment3 replaces Print119-1page1line1 through page60line6. Deleted117(c) restricts required translators to persons other than the donor/contracting foreign source or another foreign source from its attributable country;117(f)(2) attributes a natural person country by citizenship/principal-residence fallback, and117(f)(4)(D) contains the non-U.S.-citizen/non-national natural-person limb including trust territory/protectorate wording. These material personal qualification predicates were omitted from the171exclusion and its bound Print evidence. Complete actual replaced baseline, earlier Ogles57-58changes and functional Immigration-domain review remain pending. Do not automatically include or dismiss this as disclosure fields; no individual eligibility or current-law effect inferred.",
+      "correction": "Remove premature completed exclusion; preserve original receipt/review/audit and route pending exact replaced-baseline/domain review",
+      "before_review_record_sha256": "f2443f3abe491de1904f2e144a29c437fe81e9483185ebbc538a86bae68bb5b3",
+      "corrected_review_record_sha256": null,
+      "primary_evidence": [
+        {
+          "source_id": "house-rules:rcp1191-translator-qualification172",
+          "url": "https://docs.house.gov/billsthisweek/20250324/RCP_H1048_xml.pdf",
+          "governed_bytes_sha256": "4992f0847c03bb557198fd5f77d2a8efba349f6ad164b3e76145d45e0167b359",
+          "reviewed_extent": "Exact selected Print117(c),117(f)(2),117(f)(4)(D) witnesses only; full replaced baseline remains pending"
+        }
+      ],
+      "correction_state": "restored_pending_source_and_domain_review172",
+      "historical_assessments": [
+        {
+          "action_id": "house:119:1:79",
+          "audit_state": "same_owner_primary_reconstructed_candidate_compared",
+          "reviewed_disposition": "source_unresolved",
+          "current_disposition": "exact_action_ineligible",
+          "severity": "No Defect",
+          "finding_id": null,
+          "exact_identity": {
+            "majority": "R",
+            "congress": "119",
+            "session": "1st",
+            "committee": "U.S. House of Representatives",
+            "rollcall-num": "79",
+            "legis-num": "H R 1048",
+            "vote-question": "On Agreeing to the Amendment",
+            "amendment-num": "3",
+            "amendment-author": "Scott of Virginia Amendment No. 3",
+            "vote-type": "RECORDED VOTE",
+            "vote-result": "Failed",
+            "action-date": "27-Mar-2025",
+            "action-time": "10:30 AM",
+            "vote-desc": null
+          },
+          "recorded_member_observations": {
+            "F000477": {
+              "official_label": "Aye",
+              "name": "Foushee",
+              "party": "D",
+              "state": "NC"
+            },
+            "M001184": {
+              "official_label": "No",
+              "name": "Massie",
+              "party": "R",
+              "state": "KY"
+            }
+          },
+          "primary_reconstruction": "Scott amendment3 replaces the specified Print119-1 text with a complete HEA foreign-gift/contract disclosure and compliance regime. It specifies $100,000 annual/$250,000 three-calendar-year reporting thresholds, annual July31 timing, foreign ownership/control reporting, records and true-copy/translation requirements, public-access and privacy limits, accuracy/cure and qualified enforcement, individual non-agent student-payment exclusions, research-risk exceptions, foundation coverage and rulemaking/effectiveness. Foreign-source citizenship and country fields identify covered funding/disclosures; reported restricted-gift conditions concerning student selection/admission do not themselves create a personal immigration-status or admission rule. The literal repeated purpose wording is preserved, not repaired. This is institutional financial transparency/compliance rather than human admission, immigration status, citizenship eligibility or a direct border mechanism. No broader parent-title prohibitions, donor guilt, present legal applicability or actual educational/security outcomes inferred. Initial own proceedings March25, resumed recorded rejection March27:199-214,23Not Voting. Initial question, voice result, recorded demand and postponement precede the separate resumed recorded order and outcome. Clerk recorded member labels govern; later stated intentions do not replace them. Established functional Immigration-domain exclusion candidate, noncounting and unapproved. No inferred motive, ideology, character, corruption, causality, endorsement or voting recommendation; no methodology change or publication.",
+          "finding": "Complete own operative/stages and bounded material targets/guidance reconstructed for functional Immigration exclusion; candidate only, independent review pending.",
+          "correction": null,
+          "before_review_record_sha256": null,
+          "corrected_review_record_sha256": "f2443f3abe491de1904f2e144a29c437fe81e9483185ebbc538a86bae68bb5b3",
+          "primary_evidence": [
+            {
+              "source_id": "clerk:119:1:79",
+              "url": "https://clerk.house.gov/evs/2025/roll079.xml",
+              "governed_bytes_sha256": "b8fc6eb1cd175c2453d0a9d9b303c9a0aa56d1d83063dabdd2a54c8313c16f66",
+              "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
+            },
+            {
+              "source_id": "immigration:roll79-initial171",
+              "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/pdf/CREC-2025-03-25-house.pdf",
+              "governed_bytes_sha256": "6301e883649b5b9bd73d46d08eb29d21c6ab9dfc161bc93efdf20da1f793a019",
+              "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
+            },
+            {
+              "source_id": "immigration:roll79-recorded171",
+              "url": "https://www.govinfo.gov/content/pkg/CREC-2025-03-27/pdf/CREC-2025-03-27-house.pdf",
+              "governed_bytes_sha256": "c8624cf67a702d4eca46f303037a686c61b5bd9809ec3ef3df8373bfd0a08103",
+              "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
+            },
+            {
+              "source_id": "immigration:roll79-report171",
+              "url": "https://www.govinfo.gov/content/pkg/CRPT-119hrpt38/html/CRPT-119hrpt38.htm",
+              "governed_bytes_sha256": "c0d34feba2127b184af26afd3eb7f0febc905b226235368c23eff45c873ba7cc",
+              "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
+            },
+            {
+              "source_id": "govinfo:hres242eh",
+              "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres242eh/html/BILLS-119hres242eh.htm",
+              "governed_bytes_sha256": "ba2287c3b5ca9f247dbb566ccef191b8d5e438e35c39b6bdf213359510734c89",
+              "reviewed_extent": "Entire named bounded witness only; Clerk owns observations"
+            }
+          ],
+          "correction_state": "local_batch_validated_candidate_only"
+        }
+      ],
+      "completed_screening": false
     }
   ],
   "prior_head_ci_checkpoint164": {
@@ -26964,21 +27023,33 @@
   "ordinary_screening_checkpoint171": {
     "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/ordinary_screening_checkpoint171.json",
     "receipt_sha256": "9423e376a5f2f09ab8c260c01498e47e3e72f3df72770139ddb5fe09f7930c09",
-    "same_owner_primary_screenings": 5,
+    "same_owner_primary_screenings": 4,
     "new_interpretations": 0,
-    "independent_review_pending": true,
-    "unfinished_ordinary": 82,
+    "independent_review_pending": false,
+    "unfinished_ordinary": 83,
     "application_questions": 70,
     "pending_reconstruction_action_ids": [
       "house:119:1:210",
       "house:119:1:237",
       "house:119:1:252"
-    ]
+    ],
+    "corrected_denominator_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/translator_qualification_pending_restoration172.json",
+    "original_five_denominator_receipt_historical": true,
+    "independent_review_ref": "docs/review_packets/immigration_checkpoint171_parent_bounded_review.json",
+    "supported_completed_screenings": 4
   },
   "checkpoint170_independent_closure171": {
     "receipt_ref": "docs/review_packets/immigration_checkpoint170_parent_bounded_review.json",
     "receipt_sha256": "486117d0a3125347f7156bc37ebf69b8ab754a8cca63e71fdcde8506ed7fd56a",
     "inherited169_action244_P2_closed": true,
     "editorially_accepted": false
+  },
+  "translator_qualification_restoration172": {
+    "receipt_ref": "docs/editorial/shared_candidates/house_119_immigration_20260916/translator_qualification_pending_restoration172.json",
+    "receipt_sha256": "8807e35c23ec01635ba3d5ee757cc4725333dd4fa8420361d5b8805e3a5d0b0e",
+    "action_id": "house:119:1:79",
+    "completed_screenings": 0,
+    "disposition": "source_unresolved",
+    "independent_correction_recheck_pending": true
   }
 }

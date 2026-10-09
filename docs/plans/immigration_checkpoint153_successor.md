@@ -727,3 +727,43 @@ result or claim four-minute full cycles; acquisition/receipt/locator overhead
 needs improvement without removing source/domain checks or final validation.
 Independent 171 review remains pending. No merge, deployment, publication,
 production write, semantic acceptance or methodology change.
+
+
+## Checkpoint 172: restore Scott translator-qualification case pending
+
+Parent final bounded 171 review found one P2: action 79's substitute deletes
+a material personal qualification in the actual replaced Print baseline.
+Print 117(c), page 10 lines 4-15, restricts required translators by donor/
+contracting foreign-source identity and attributable country. 117(f)(2),
+page 15 lines 4-13, uses citizenship/principal-residence fallback;
+117(f)(4)(D), page 17 lines 18-20, supplies the qualified natural-person
+foreign-source limb. These predicates were omitted from the exclusion and
+its bound baseline evidence. Three original PDF pages and three literal
+fragments are captured, visually inspected and sealed. Full pages 1-60
+replacement, earlier Ogles pages 57-58 changes and domain review remain
+pending; no automatic inclusion or disclosure-only dismissal.
+
+79 is restored to source_unresolved and removed from current completed
+membership reviews. The original 171 receipt, review row, universe row and
+audit assessment remain historical. Other four exclusion records and all
+prior sources/captures/history are unchanged. Parent independently supports
+150, 180, 207 and 326; all 20 prior extents and six semantic outputs replay.
+The final parent review and exact-head nine-job 171 CI are delivered together
+with this correction. No full-corpus clearance or editorial acceptance.
+
+Current counts: 593 reviewed / 83 pending; 45 meanings / 80 propositions;
+70 application questions / three partial packages; 1,930 sources / 793
+capture registrations. Six semantic outputs remain byte-identical; seven
+generated files replay. 188 focused tests (16.704 seconds), seven semantic
+checks, accepted/held-out references and preservation checks pass.
+
+Correcting the 171 denominator from five to four supported completions
+yields 727.212 seconds (12m07s) per completion through the resumed-only owner
+CI endpoint. This exceeds the ten-minute failure threshold even before this
+zero-screening repair or remaining review/delivery overhead. The conservative
+pre-shutdown-plus-resumed interval is 942.012 seconds (15m42s); its handoff
+qualification remains. Original timing claims are preserved as history.
+Do not claim a pass or four-minute full cycle, count restored/held attempts
+as completions, or silently expand a failing benchmark. Checkpoint 172 is
+a bounded material correction with zero new screenings, separately timed.
+No merge, deployment, publication, production write or methodology change.
