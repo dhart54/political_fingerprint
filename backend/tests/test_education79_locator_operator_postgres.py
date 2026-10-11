@@ -30,6 +30,9 @@ def test_candidate_bounded_persistence_capture_drift_idempotency_and_failed_tran
         conn.rollback()
         conn.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
         baseline = operator.capture_preflight(conn, bundle, fixture_url=DSN)
+        assert conn.execute('SHOW lock_timeout').fetchone()['lock_timeout'] == '5s'
+        assert conn.execute('SHOW statement_timeout').fetchone()['statement_timeout'] in ('1min', '60s')
+        assert baseline['captured_at_utc'] == baseline['observed_started_at_utc']
         binding = {f'{s}_submanifest_sha256': runtime()[f'{s}_deployment']['submanifest_sha256'] for s in ('backend', 'frontend')}
         with pytest.raises(StoreSafetyError, match='IDs'):
             operator.resolve_ids(conn, bundle, binding, fixture_url=DSN)
@@ -68,7 +71,8 @@ def test_candidate_bounded_persistence_capture_drift_idempotency_and_failed_tran
                  'preflight': baseline, 'persistence': result, 'id_capture_write_set': ws,
                  'idempotent_repeat': repeat, 'before': before, 'after_persistence': public(conn),
                  'registry_unchanged': True, 'failed_transaction_rollback': True,
-                 'synthetic_default_rejected': True}
+                 'synthetic_default_rejected': True, 'execution_limits': operator.LIMITS,
+                 'observation_window_preserved': True, 'transaction_wait_limits_verified': True}
         if folder := os.getenv('EDUCATION79_OPERATOR_PROOF_DIR'):
             path = Path(folder);path.mkdir(parents=True, exist_ok=True)
             (path / 'operator-proof.json').write_text(json.dumps(proof, sort_keys=True, indent=2) + '\n', encoding='utf-8')

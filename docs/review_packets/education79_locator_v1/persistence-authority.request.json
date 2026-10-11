@@ -15,6 +15,13 @@
     "candidate_approval_binding": null,
     "decision": "persist_exact_education79_locator_immutable_graph",
     "decision_recorded_at_utc": null,
+    "execution_limits": {
+      "connect_timeout_seconds": 10,
+      "lock_timeout_seconds": 5,
+      "observation_budget_seconds": 120,
+      "preflight_freshness_seconds": 1800,
+      "statement_timeout_seconds": 60
+    },
     "mutation_caps": {
       "artifacts": 3,
       "batches": 1,
@@ -26,7 +33,8 @@
     "reviewer": null,
     "rollback_policy": "rollback_failed_transaction; retain_committed_inert_graph; registry_unchanged",
     "source_commit_sha": null,
-    "stable_preflight_sha256": null
+    "stable_preflight_sha256": null,
+    "tls_identity_mode": "verify-full"
   },
-  "subject_sha256": "86d39872936ea81722baa65b2c6c28fc9f79c0f5cb35bb6ca343b639b04760f0"
+  "subject_sha256": "7fb4c72c978e58205c4700738b47faef459bc6204354e0ab9a42e26979e609fe"
 }

@@ -55,13 +55,32 @@ activation. No real positive decision is created by this packet or its templates
 target, exact clean reviewed head and exact bundle digest. It uses the existing
 immutable insert/ownership contract. A separate accepted/sealed persistence
 authority binds the candidate approval, exact source head, target, fresh stable
-baseline, mutation caps and rollback policy. Production defaults reject every
-synthetic candidate, authority and preflight object before mutation.
+baseline, mutation caps, execution limits, verified TLS identity and rollback
+policy. Production defaults reject every synthetic candidate, authority and
+preflight object before mutation.
+
+Connection routing rejects inherited PGHOSTADDR, PGSERVICE, PGSERVICEFILE and
+PGOPTIONS before opening a connection. The operator requires sslmode=verify-full
+and verifies the actual connected host, user, database, port and encrypted TLS
+mode before SQL. sslmode=require is rejected. Verified client trust readiness is
+a separate release prerequisite; this candidate does not change the approved
+secret, production configuration or certificate store. See the PostgreSQL
+[TLS contract](https://www.postgresql.org/docs/current/libpq-ssl.html) and
+[connection environment options](https://www.postgresql.org/docs/current/libpq-envars.html).
 
 Preflight runs repeatable-read READ ONLY and records the complete prior registry
 row, old graph eligibility, normalized schema fingerprint, full public-table
 checksums/counts, and absent-or-exact-owned candidate graph. Evidence has its own
-digest and a 30-minute freshness bound. Persistence locks the exact registry row,
+digest and an observation start/completion window. Capture is rejected after
+120 seconds; the unchanged 30-minute freshness bound starts at the earliest
+observation time, never at the end of a slow scan. Client connection timeout is
+10 seconds; transaction-local lock and statement timeouts are 5 and 60 seconds.
+The operation budget is 120 seconds and is checked throughout streamed scans.
+Persistence rechecks sealed preflight freshness after locks/scans immediately
+before insertion and after protected-state verification before commit. Stale or
+slow work aborts; no cap or freshness extension is available.
+
+Persistence locks the exact registry row,
 checks that baseline again, inserts through the existing store in its owned
 serializable transaction, and verifies actual counts plus all protected prior
 rows/tables. Failures abort the transaction. Exact repeat is zero-write idempotent;

@@ -31,16 +31,37 @@ Interpretation principles and the existing V2R contracts remain authoritative.
 - [x] Prepare pending decision templates, exact caps, ID-capture and activation
   authority requirements, paired card/registry rollback and source-access limits.
 - [x] Verify negative gates locally; actual lifecycle requires hosted PostgreSQL.
-- [ ] Obtain exact-head hosted operator fixture proof and review the final diff.
-- [ ] Deliver a separate draft PR with unresolved reserved decisions stated.
+- [x] Obtain original exact-head hosted operator fixture proof and review the final diff.
+- [x] Deliver separate draft PR213 with unresolved reserved decisions stated.
+- [x] Correct the two independent P2 review findings: inherited routing/actual
+  connection identity and unbounded waits/stale preflight after locks/scans.
+- [ ] Obtain corrected exact-head hosted proof and renewed independent review.
 
 ## Validation and discoveries
 
-Local preparation/operator/filter checks: 114 passed; dedicated PostgreSQL lifecycle explicitly
+Original local preparation/operator/filter checks: 114 passed; dedicated PostgreSQL lifecycle explicitly
 skipped because local Docker Linux daemon is unavailable. The new CI job has its
 own PostgreSQL17 service and fresh named DB, avoiding shared fixture writes.
 The operator itself exposes no disposable/synthetic CLI option. In-memory fake
 authority used by tests is visibly synthetic; production defaults reject it.
+
+Original head 3873538 has positive dedicated hosted proof (run 38168994780,
+artifact 11713390562, 23 operator cases). Ordinary backend CI at that head passed
+eight jobs and failed M14H's ordinary header navigation test. The early initial
+focus race is independently reproduced and fixed in separate draft PR214; it is
+not weakened or hidden in this operator branch.
+
+The corrected operator rejects inherited PGHOSTADDR/PGSERVICE/PGSERVICEFILE/
+PGOPTIONS before connection, requires verify-full TLS and checks the actual
+connected tuple before SQL. Connection/lock/statement waits are bounded at
+10/5/60 seconds, observation/operation budgets at 120 seconds, and preflight age
+remains 1800 seconds measured from its recorded observation start. Freshness is
+rechecked immediately before insertion. Fake connectors and synthetic clocks
+exercise these failures without any remote database connection. Certificate
+trust readiness remains a later release prerequisite; no secrets/configuration
+were changed. Corrected local preparation/operator tests: 68 passed, one dedicated
+PostgreSQL lifecycle skipped explicitly; no local Docker Linux daemon. Corrected
+exact-head hosted proof and review are pending.
 
 No real positive approval exists. Candidate content SHA remains
 `dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698`.
