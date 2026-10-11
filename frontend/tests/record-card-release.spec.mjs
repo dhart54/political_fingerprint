@@ -28,6 +28,30 @@ async function liveInterfaceResponses(page) {
   });
 }
 
+async function holdInitialIssueFocus(page) {
+  await page.addInitScript(() => {
+    const scroll = Element.prototype.scrollIntoView;
+    const frame = window.requestAnimationFrame.bind(window);
+    let hold = false;
+    window.initialFocusEvents = [];
+    const record = (event, target) => window.initialFocusEvents.push({ event, target: target?.slice(0, 80), time: performance.now() });
+    window.addEventListener("keydown", (event) => record(`keydown:${event.key}`, document.activeElement?.textContent));
+    window.addEventListener("focusin", (event) => record("focusin", event.target?.id || event.target?.textContent));
+    Element.prototype.scrollIntoView = function (...args) {
+      if (this.id === "issue-summary") { hold = true; record("initial-scroll", this.id); }
+      return scroll.apply(this, args);
+    };
+    window.requestAnimationFrame = (callback) => {
+      if (!hold) return frame(callback);
+      hold = false;
+      return frame((time) => {
+        record("focus-frame-held");
+        window.releaseInitialIssueFocus = () => { record("release-initial-focus"); callback(time); };
+      });
+    };
+  });
+}
+
 for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
   const routePath = surface === "ordinary" ? "/" : "/review/record-card";
   const landing = `${routePath}?representative=leg_valerie_p_foushee&scope=119`;
@@ -254,6 +278,32 @@ for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
     });
     await expect(heading).toBeFocused();
     await expect(page).toHaveURL(/#vote-record$/);
+  });
+
+  for (const interaction of ["Tab", "header focus"]) test(`initial issue landing preserves early ${interaction}`, async ({ page }, testInfo) => {
+    await holdInitialIssueFocus(page);
+    await page.goto(`${routePath}?representative=leg_valerie_p_foushee&scope=119&issue=ENVIRONMENT_ENERGY`);
+    await expect.poll(() => page.evaluate(() => typeof window.releaseInitialIssueFocus)).toBe("function");
+    if (interaction === "Tab") await page.keyboard.press("Tab");
+    else await page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true }).focus();
+    expect(await page.evaluate(() => {
+      window.earlyInteractionFocus = document.activeElement;
+      return document.activeElement !== document.body;
+    })).toBe(true);
+    await page.evaluate(() => window.releaseInitialIssueFocus());
+    await testInfo.attach("early-focus-observation", { contentType: "application/json", body: JSON.stringify(await page.evaluate(() => ({
+      expectedText: window.earlyInteractionFocus?.textContent,
+      activeId: document.activeElement?.id,
+      activeText: document.activeElement?.textContent,
+      hash: location.hash,
+      events: window.initialFocusEvents,
+    }))) });
+    expect(await page.evaluate(() => document.activeElement === window.earlyInteractionFocus)).toBe(true);
+    if (interaction === "header focus") {
+      await page.keyboard.press("Enter");
+      await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
+      await expect(page).toHaveURL(/#vote-record$/);
+    }
   });
 
   test("header anchors preserve full reviewed and receipts-only issue routes", async ({ page }) => {
