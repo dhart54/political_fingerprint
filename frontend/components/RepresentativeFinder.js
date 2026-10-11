@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   fetchLegislatorSearch,
   fetchZipLookup,
 } from "../lib/api";
+import { classifyZipLookupState } from "../lib/zipLookupState.mjs";
 
 export default function RepresentativeFinder({
   compact = false,
@@ -14,6 +15,13 @@ export default function RepresentativeFinder({
 }) {
   const [zip, setZip] = useState("");
   const [name, setName] = useState("");
+  // ZIP and name submissions share one sequence, including invalid submissions.
+  // The API need not support cancellation for obsolete responses to be ignored.
+  const requestSequence = useRef(0);
+  const nameInput = useRef(null);
+  useEffect(() => () => {
+    requestSequence.current += 1;
+  }, []);
   const [state, setState] = useState({
     status: "idle",
     mode: null,
@@ -23,6 +31,7 @@ export default function RepresentativeFinder({
 
   async function searchZip(event) {
     event.preventDefault();
+    const request = ++requestSequence.current;
     if (!/^\d{5}$/.test(zip)) {
       setState({
         status: "error",
@@ -40,6 +49,8 @@ export default function RepresentativeFinder({
     });
     try {
       const payload = await fetchZipLookup({ zipCode: zip });
+      if (request !== requestSequence.current) return;
+      const lookup = classifyZipLookupState(payload);
       const results = [
         ...(payload?.house_rep ? [payload.house_rep] : []),
         ...(payload?.senators || []),
@@ -48,11 +59,22 @@ export default function RepresentativeFinder({
         status: "ready",
         mode: "zip",
         results,
-        message: results.length
-          ? `Found ${results.length} federal ${results.length === 1 ? "representative" : "representatives"} for ${zip}.`
-          : `No representative record is available for ${zip}.`,
+        lookup,
+        message: `ZIP ${zip}: ${lookup.title}`,
       });
-    } catch {
+    } catch (error) {
+      if (request !== requestSequence.current) return;
+      if (error.message.includes("status 404")) {
+        const lookup = classifyZipLookupState(null);
+        setState({
+          status: "ready",
+          mode: "zip",
+          results: [],
+          lookup,
+          message: `ZIP ${zip}: ${lookup.title}`,
+        });
+        return;
+      }
       setState({
         status: "error",
         mode: "zip",
@@ -64,6 +86,7 @@ export default function RepresentativeFinder({
 
   async function searchName(event) {
     event.preventDefault();
+    const request = ++requestSequence.current;
     const query = name.trim();
     if (query.length < 2) {
       setState({
@@ -82,6 +105,7 @@ export default function RepresentativeFinder({
     });
     try {
       const payload = await fetchLegislatorSearch({ query });
+      if (request !== requestSequence.current) return;
       const results = (payload?.results || []).slice(0, 12);
       setState({
         status: "ready",
@@ -92,6 +116,7 @@ export default function RepresentativeFinder({
           : `No representatives matched “${query}.”`,
       });
     } catch {
+      if (request !== requestSequence.current) return;
       setState({
         status: "error",
         mode: "name",
@@ -99,6 +124,16 @@ export default function RepresentativeFinder({
         message: "Name search is unavailable right now. Please try again.",
       });
     }
+  }
+
+  function dismiss() {
+    requestSequence.current += 1;
+    onCancel?.();
+  }
+
+  function select(representative) {
+    requestSequence.current += 1;
+    onSelect(representative);
   }
 
   return (
@@ -125,7 +160,7 @@ export default function RepresentativeFinder({
           </p>
         </div>
         {onCancel ? (
-          <button className="secondary-button shrink-0" onClick={onCancel} type="button">
+          <button className="secondary-button shrink-0" onClick={dismiss} type="button">
             Close
           </button>
         ) : null}
@@ -164,6 +199,7 @@ export default function RepresentativeFinder({
               id="pass-a-name"
               onChange={(event) => setName(event.target.value)}
               placeholder="Representative name"
+              ref={nameInput}
               value={name}
             />
             <button className="primary-button" type="submit">
@@ -173,40 +209,71 @@ export default function RepresentativeFinder({
         </form>
       </div>
 
-      <p
+      <div
         aria-live="polite"
+        aria-atomic="true"
         className={`mt-4 text-sm leading-6 ${
           state.status === "error" ? "text-rose-800" : "text-stone-600"
         }`}
         role={state.status === "error" ? "alert" : "status"}
+        data-lookup-state={state.lookup?.state}
       >
-        {state.message}
-      </p>
+        <p className={state.lookup ? "font-semibold text-stone-900" : ""}>{state.message}</p>
+        {state.lookup ? (
+          <div className={`mt-2 rounded-xl border p-3 ${
+            state.lookup.severity === "warning"
+              ? "border-amber-200 bg-amber-50 text-amber-950"
+              : "border-stone-200 bg-stone-50 text-stone-700"
+          }`}>
+            <p>{state.lookup.message}</p>
+            {state.lookup.caveats.map((caveat) => <p className="mt-2" key={caveat}>{caveat}</p>)}
+          </div>
+        ) : null}
+      </div>
+
+      {state.lookup ? (
+        <button
+          className="mt-2 min-h-11 text-sm font-semibold text-teal-900 underline"
+          onClick={() => nameInput.current?.focus()}
+          type="button"
+        >
+          Search by representative name
+        </button>
+      ) : null}
 
       {state.results.length ? (
-        <div
-          aria-label="Representative search results"
-          className="mt-3 grid max-h-[22rem] gap-2 overflow-y-auto pr-1 sm:grid-cols-2"
-          role="list"
-        >
-          {state.results.map((representative) => (
-            <div key={representative.id} role="listitem">
-              <button
-                aria-label={`Select ${representative.name_display}, ${formatOffice(representative)}`}
-                className="group min-h-20 w-full rounded-xl border border-stone-200 bg-white p-3 text-left transition hover:border-teal-700 focus-visible:border-teal-800"
-                onClick={() => onSelect(representative)}
-                type="button"
-              >
-                <span className="block text-base font-semibold text-stone-950 group-hover:text-teal-900">
-                  {representative.name_display}
-                </span>
-                <span className="mt-1 block text-sm leading-5 text-stone-600">
-                  {formatOffice(representative)}
-                </span>
-              </button>
-            </div>
-          ))}
-        </div>
+        <>
+          {state.mode === "zip" ? (
+            <p className="mt-3 text-sm leading-6 text-stone-700" id="zip-record-inspection">
+              Choose a loaded record to inspect. This ZIP result is not a confirmed address match.
+            </p>
+          ) : null}
+          <div
+            aria-label="Representative search results"
+            className="mt-3 grid max-h-[22rem] gap-2 overflow-y-auto pr-1 sm:grid-cols-2"
+            role="list"
+          >
+            {state.results.map((representative) => (
+              <div key={representative.id} role="listitem">
+                <button
+                  aria-label={`Select ${representative.name_display}, ${formatOffice(representative)}`}
+                  aria-describedby={state.mode === "zip" ? "zip-record-inspection" : undefined}
+                  className="group min-h-20 w-full rounded-xl border border-stone-200 bg-white p-3 text-left transition hover:border-teal-700 focus-visible:border-teal-800"
+                  onClick={() => select(representative)}
+                  type="button"
+                >
+                  <span className="block text-base font-semibold text-stone-950 group-hover:text-teal-900">
+                    {representative.name_display}
+                  </span>
+                  <span className="mt-1 block text-sm leading-5 text-stone-600">
+                    {formatOffice(representative)}
+                  </span>
+                  {state.mode === "zip" ? <span className="mt-2 block text-xs font-semibold text-teal-900">Inspect loaded record</span> : null}
+                </button>
+              </div>
+            ))}
+          </div>
+        </>
       ) : null}
     </section>
   );
@@ -214,7 +281,7 @@ export default function RepresentativeFinder({
 
 function formatOffice(representative) {
   const chamber = representative.chamber === "senate" ? "U.S. Senate" : "U.S. House";
-  const place = representative.district
+  const place = representative.chamber !== "senate" && representative.district
     ? `${representative.state} district ${String(representative.district).replace(/^0/, "")}`
     : `${representative.state}, statewide`;
   return `${chamber} · ${place} · ${formatParty(representative.party)}`;
