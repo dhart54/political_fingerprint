@@ -2259,3 +2259,62 @@ and validation phases are retained, with Git/CI/report overhead to follow.
 Candidate branch only; no merge/deploy/publication/editorial acceptance/compiler
 or hold release/production/configuration/methodology changes. Resume point, no
 routine approval gate or new deadline. Sole implementation ownership retained.
+
+
+Checkpoint 196 screens the fixed five most recent ordinary pending actions before
+the completed September15–16 cohort, in chronological roll order. 281 H.Con.Res.113
+budget adoption and295 H.R.4795 institutional funding/academic conditions receive
+candidate functional Immigration exclusions. 283 H.R.8884 broad disability-benefit
+waivers,286 H.R.6500 whole Senate continuing-appropriations replacement, and292
+H.Res.1498 incorporating the unread Ethics Report remain researched noncounting
+holds. Two completions; three holds, not component completion or editorial approval.
+Counts613 reviewed/63 pending,34 ordinary/29 holds;47 meanings/80 propositions/
+70 questions/3partial. Material current-source chains and the adopted Report remain
+unfinished. Whole five governed EH/EAS texts and declared historical baseline
+scopes are read; daily Record/statutory parents are not claimed as wholly read.
+
+All five operative bodies mechanically match exact own floor text under declared
+formatting comparison. Budget floor enacting-style wrapper differs from concurrent
+EH wrapper; both remain literal, no repair/legal-punctuation equivalence. Budget
+initial yeas/nays order is automatic under ruleXX10 without voice/demand;295 has a
+direct recorded vote without postponement/resumption. Other three retain distinct
+initial voice/member-demand/order/postponement and resumed recorded choices.
+Clerk metadata/party/two-member records are immutable reuses, not fresh XML or
+whole-other-member comparison. No title/agency/parent domain inference or stance.
+
+Independent195 supports all three exclusions and both holds, closes both194 P3s,
+and verifies46 preservation/124 correction checks, seven replays and nine fresh CI
+jobs. Its three new P3s are corrected here:302 Treasury INCLUDING OCC/FinCEN;
+312 full incremental UPGRADE costs including termination OR ceasing purchase,
+financial assurances OR contributions, requests-to-enter OR enters contracts/other
+agreements, one-or-more qualifying facilities AND100MW aggregate single site,
+consideration OR hearing within1year and completion AND determination within2;
+308115 waiver reporting precedes ISSUING, with consolidation/form and duty-report
+exception preserving113 requirements. Six/six/five active copies and necessary
+bindings change;302/312 exclusions and308hold unchanged. Prior195 screening and
+validation receipts archived exact Git-normalized bytes. Independent recheck pending.
+Lightweight literal-predicate authoring pass covers all five new and three corrected
+actions: actors, including/only, modal, AND/OR, trigger, dates, exceptions. It adds no
+acquisition round, broad test gate, methodology decision or whole-source substitute.
+
+205focused tests(28.231s),7semantic checks,IR references and7exact replays pass.
+36literal claims,8predicate passages,5HTML parent replays(4fresh,1reused1094),
+4freshPDF replays,26literal derivatives,5governed proposal reuses without fresh raw
+claim,5Clerk metadata/two-member reuses,135frozen blobs and bothuntracked notes pass.
+609prior memberships exact,2authorized rationale-only corrections,2new candidates;
+6semantic products exact,proof source digest only.31new immutable registrations
+produce2247sources/1137captures. Prior sources/captures/private aliases preserved.
+
+195CI38156306150 passed9first-attempt executions:5feature/3synthetic/1mixed.
+Actual synthetic parentsf494324f03514291e7f767b5f8a857515fe656a0 and58f9caf match
+bounded direct-main observations, separately qualified from PR/run metadata;
+no broad current-main integration claim.196review and exact-head CI pending.
+Performance remains prior comparable FAIL781.087sec(600ceiling/240target).
+Source/read/authoring endpoint1078.188sec; local validation/preparation endpoint
+1598.403sec includes inherited195 repairs,
+complex holds, failed private helper shapes/headings and truncated-output recovery.
+This mixed five-attempt aggregate is not a new routine mean or reset. Acquisition,
+validation and later Git/CI/report overhead retained; holds are not completions.
+Candidate bounds and sole writer ownership persist; resume point, no routine approval
+handoff/new deadline/merge/deploy/editorial acceptance/publication/hold or compiler
+release/production/schema/security/configuration/methodology changes.

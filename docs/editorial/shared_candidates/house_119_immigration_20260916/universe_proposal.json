@@ -79,8 +79,8 @@
     "counts": {
       "procedural_context": 228,
       "interpreted_substantive_directional": 47,
-      "exact_action_ineligible": 334,
-      "source_unresolved": 65,
+      "exact_action_ineligible": 336,
+      "source_unresolved": 63,
       "expressive_nonbinding_context": 2
     },
     "domain_id": "IMMIGRATION_BORDER",
@@ -95,8 +95,8 @@
     "non_directional_substantive_actions": 0,
     "procedural_context_actions": 228,
     "expressive_nonbinding_actions": 2,
-    "exact_action_ineligible_actions": 334,
-    "unresolved_boundary_cases": 65,
+    "exact_action_ineligible_actions": 336,
+    "unresolved_boundary_cases": 63,
     "independent_episode_count": 42,
     "multi_action_episode_count": 5,
     "mechanism_types": [
@@ -710,12 +710,14 @@
         "house:119:2:274",
         "house:119:2:275",
         "house:119:2:276",
+        "house:119:2:281",
         "house:119:2:282",
         "house:119:2:284",
         "house:119:2:285",
         "house:119:2:291",
         "house:119:2:293",
         "house:119:2:294",
+        "house:119:2:295",
         "house:119:2:296",
         "house:119:2:297",
         "house:119:2:301",
@@ -788,11 +790,9 @@
         "house:119:2:272",
         "house:119:2:278",
         "house:119:2:280",
-        "house:119:2:281",
         "house:119:2:283",
         "house:119:2:286",
         "house:119:2:292",
-        "house:119:2:295",
         "house:119:2:308",
         "house:119:2:310",
         "house:119:2:313"
@@ -1147,7 +1147,7 @@
   },
   "episode_completeness": "Explicit authored proposal episodes only; paired H.R.1048 79/83candidate is held for independent package review. Wider real-world episode coverage and issue completeness are not established.",
   "approval_receipt": null,
-  "universe_subject_sha256": "d85c392c0ebdf83d98232a8c6ca49172b8dc454615ece8f7bdfc7395a8cb441a",
+  "universe_subject_sha256": "1a1811bfe0bd5f8d6d553a771e994fc4d9d59802e675596bcbdbc6d7a4e9cdbd",
   "candidate_dispositions": [
     {
       "action_id": "house:119:1:1",
@@ -43634,8 +43634,8 @@
       "date": "2026-07-22",
       "measure": "bill_119_hconres_113",
       "question": "On Agreeing to the Resolution",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "The whole exact House adoption of H.Con.Res.113 sets recommended budget aggregates and functional levels for FY2027-2036, four committee reconciliation instructions due September11,2026, and qualified House Budget-chair allocation/reserve/emergency/other-adjustment and rulemaking procedures. Its functional totals and prospective adjustments for benefit administration, disaster relief and other activities are not exact new Immigration admission, removal, status/documentation or border operators. General Administration-of-Justice, International-Affairs and Social-Security categories cannot establish a narrower Immigration mechanism. Candidate functional exclusion of this budgeting/process choice, not an assertion that later implementing legislation or immigrants cannot be affected; no fiscal outcome, appropriation execution, component stance, enactment or editorial acceptance inferred. Whole EH read. The own floor deems RCP11937 adopted; full section1-to-end operative body matches EH under declared formatting comparison. The floor literally prints an enacting-style introductory wrapper while EH has the concurrent-resolution wrapper; both are preserved, body comparison does not repair or equate them or establish legal punctuation equivalence. Exact vote remains adoption of a concurrent resolution, not bill passage. Initial question is followed by automatic yeas/nays order under ruleXX10 and postponement, without inventing a voice result or member demand; later resumed adoption216-214 with1NotVoting. Pending independent domain review and noncounting.",
       "source": {
         "source_id": "clerk:119:2:281",
         "url": "https://clerk.house.gov/evs/2026/roll281.xml",
@@ -43652,25 +43652,61 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "The whole exact House adoption of H.Con.Res.113 sets recommended budget aggregates and functional levels for FY2027-2036, four committee reconciliation instructions due September11,2026, and qualified House Budget-chair allocation/reserve/emergency/other-adjustment and rulemaking procedures. Its functional totals and prospective adjustments for benefit administration, disaster relief and other activities are not exact new Immigration admission, removal, status/documentation or border operators. General Administration-of-Justice, International-Affairs and Social-Security categories cannot establish a narrower Immigration mechanism. Candidate functional exclusion of this budgeting/process choice, not an assertion that later implementing legislation or immigrants cannot be affected; no fiscal outcome, appropriation execution, component stance, enactment or editorial acceptance inferred. Whole EH read. The own floor deems RCP11937 adopted; full section1-to-end operative body matches EH under declared formatting comparison. The floor literally prints an enacting-style introductory wrapper while EH has the concurrent-resolution wrapper; both are preserved, body comparison does not repair or equate them or establish legal punctuation equivalence. Exact vote remains adoption of a concurrent resolution, not bill passage. Initial question is followed by automatic yeas/nays order under ruleXX10 and postponement, without inventing a voice result or member demand; later resumed adoption216-214 with1NotVoting. Pending independent domain review and noncounting.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "govinfo:hconres113eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hconres113eh/html/BILLS-119hconres113eh.htm",
+          "raw_sha256": "016b1869974a4a483717f2e6cca4431a89735792bff19a4b774948bc84e68f91",
+          "governed_bytes_sha256": "000e890b281364b6781c5e14fa3ff1df777ca765d2ccd88b6d13afff2d9a6a58"
+        },
+        {
+          "source_id": "immigration:roll281-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "ff985c9de046b9c58ff2e5ac142b08e56b95504aa089858535346ba450b429c9"
+        },
+        {
+          "source_id": "immigration:roll281-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "25dcb5d01afa61407c69d3d488e2b0d4c28da7b3b83ccb5e56b2eafc2c377831"
+        },
+        {
+          "source_id": "immigration:roll281-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "4cffeb6ed6ee756a9fc7b931ada33ce3283aadad66a4f42a1468e6171d01f99e"
+        },
+        {
+          "source_id": "immigration:roll281-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "610bdb3f97e6107e659138520533639ed6bb5e0e93a5b3f604a714fb80d8cd22"
+        },
+        {
+          "source_id": "immigration:roll281-deemed-RCP11937-adopted196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-22/pdf/CREC-2026-07-22-house.pdf",
+          "raw_sha256": "aac1c2892edd7a148cc12da78a83de3721aab7c1b436950f813c50556fa1b6b3",
+          "governed_bytes_sha256": "23bb998f669c45bc743a03c3301568717320896f65baf7c54a7ee0ca4e6c0771"
+        },
         {
           "source_id": "clerk:119:2:281",
           "url": "https://clerk.house.gov/evs/2026/roll281.xml",
           "raw_sha256": "41547348e64728b2fe1da765fdb6b6be7b6ce47d3ea86693a91c6c5ac5a05f80",
-          "governed_bytes_sha256": "cd84ee41252251404c0c6f441b1498d9281ba74ed49bb0f42adfda42cfe61c3c",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "cd84ee41252251404c0c6f441b1498d9281ba74ed49bb0f42adfda42cfe61c3c"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "832a4033b95280a2000a12d762c440733d509cf698f5075628ccc1956faa9bc7"
       },
       "historical_clerk_source_identity": {
         "source_id": "clerk:119:2:281",
@@ -43757,7 +43793,7 @@
       "measure": "H R 8884",
       "question": "On Passage",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Whole H.R.8884 EH and exact own floor proposal match under declared formatting comparison. The proposal extends initiation authority to December31,2030 and project operation to December31,2031; in434(c) it changes the initiation cutoff to December31,2030 and notice period90 to120 days, adds evaluation metrics to the report, rewrites401(k) to distinguish administrative funds and benefit Trust Funds, adds protection against reducing total income because of participation, makes a technical correction and strikes434(f), effective January1,2027. Whole historical434 operative body including broad benefit-waiver authority is read, along with literal401(k). The Commissioner may waive TitleII benefit requirements and related1320b19 requirements, and the Secretary may upon request waive TitleXVIII benefit requirements insofar as necessary for evaluation; voluntary consent/revocation and statistical-result requirements remain in434(e). Material current-law chain and bounded application to immigration-related benefit requirements remain unfinished; do not exclude from a work/disability title or automatically include from broad benefit context. Keep researched source_unresolved noncounting hold, no shared meaning, individual eligibility ruling, waiver implementation, benefit outcome or component stance. Own initial voice ayes, Chu demand/order/postponement and resumed passage232-188 with11NotVoting are distinct; stated hypothetical intentions excluded.",
       "source": {
         "source_id": "clerk:119:2:283",
         "url": "https://clerk.house.gov/evs/2026/roll283.xml",
@@ -43776,15 +43812,56 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Whole H.R.8884 EH and exact own floor proposal match under declared formatting comparison. The proposal extends initiation authority to December31,2030 and project operation to December31,2031; in434(c) it changes the initiation cutoff to December31,2030 and notice period90 to120 days, adds evaluation metrics to the report, rewrites401(k) to distinguish administrative funds and benefit Trust Funds, adds protection against reducing total income because of participation, makes a technical correction and strikes434(f), effective January1,2027. Whole historical434 operative body including broad benefit-waiver authority is read, along with literal401(k). The Commissioner may waive TitleII benefit requirements and related1320b19 requirements, and the Secretary may upon request waive TitleXVIII benefit requirements insofar as necessary for evaluation; voluntary consent/revocation and statistical-result requirements remain in434(e). Material current-law chain and bounded application to immigration-related benefit requirements remain unfinished; do not exclude from a work/disability title or automatically include from broad benefit context. Keep researched source_unresolved noncounting hold, no shared meaning, individual eligibility ruling, waiver implementation, benefit outcome or component stance. Own initial voice ayes, Chu demand/order/postponement and resumed passage232-188 with11NotVoting are distinct; stated hypothetical intentions excluded.",
+      "unresolved_reason": "pending_disability_demonstration_waiver_Immigration_chain196",
       "sources": [
+        {
+          "source_id": "govinfo:hr8884eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr8884eh/html/BILLS-119hr8884eh.htm",
+          "raw_sha256": "19b5a7e317a197dd4eb101c4a31847c958f135f158a20954d4dc807a63a72422",
+          "governed_bytes_sha256": "edea62c6729adc0cee029d86679926e0ce55297c9de12d6df23eb3622e55a147"
+        },
+        {
+          "source_id": "govinfo:usc434-declared196",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec434.htm",
+          "raw_sha256": "48c95a8c6ce15f5a6f82324465685e7c2956975c5f4387629b70e00b06b72570",
+          "governed_bytes_sha256": "a1d8af03cb10f1543bad962d481c9c1b07ff040a94d0fc94e8fd0d8615f83149"
+        },
+        {
+          "source_id": "govinfo:usc401-declared196",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title42/html/USCODE-2024-title42-chap7-subchapII-sec401.htm",
+          "raw_sha256": "da3c5883326f953fc5d104443b539e7c5adf7b6001a7b8fec2e67449a40782ab",
+          "governed_bytes_sha256": "425da8d2f85733b81fba4c74d1fd2435f1b460ea630db65d1aeca46fc16414bc"
+        },
+        {
+          "source_id": "immigration:roll283-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-23/pdf/CREC-2026-07-23-house.pdf",
+          "raw_sha256": "d8d5d02c97206eabdf9329379e7ce889100ef226aad1887529daef105895e6e6",
+          "governed_bytes_sha256": "afef7e9e7e90242a9981f4a2d78af24ccca057e9e4f4c342e3def3b0e5d7d9a1"
+        },
+        {
+          "source_id": "immigration:roll283-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-23/pdf/CREC-2026-07-23-house.pdf",
+          "raw_sha256": "d8d5d02c97206eabdf9329379e7ce889100ef226aad1887529daef105895e6e6",
+          "governed_bytes_sha256": "39e8e13a53da590bd1d1c5f1505989f3d8b506e2f6bf4a96d8b25de495b610de"
+        },
+        {
+          "source_id": "immigration:roll283-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-23/pdf/CREC-2026-07-23-house.pdf",
+          "raw_sha256": "d8d5d02c97206eabdf9329379e7ce889100ef226aad1887529daef105895e6e6",
+          "governed_bytes_sha256": "35ba4fbc5c78b376da7420ff7ff1123251e7f4fbddb744155951917d2c9a2b88"
+        },
+        {
+          "source_id": "immigration:roll283-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-07-23/pdf/CREC-2026-07-23-house.pdf",
+          "raw_sha256": "d8d5d02c97206eabdf9329379e7ce889100ef226aad1887529daef105895e6e6",
+          "governed_bytes_sha256": "d8c7494ef1613ab27b788ab2f21f9d6fa6039ee47f7e916f6d4c34ff8f31d3d8"
+        },
         {
           "source_id": "clerk:119:2:283",
           "url": "https://clerk.house.gov/evs/2026/roll283.xml",
           "raw_sha256": "a01817dc8413dd3d8fe331600fbe1b9c7b9e44c7e26257e87760a1d10c932f81",
-          "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "f9939d8dddc151c37b6e19fd362468b5d3156c3dcc32b7eb48ff778146b2f9cc"
         }
       ],
       "exact_action_source_binding": null,
@@ -43952,7 +44029,7 @@
       "measure": "H R 6500",
       "question": "On Motion to Suspend the Rules and Concur in the Senate Amendments",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
       "source": {
         "source_id": "clerk:119:2:286",
         "url": "https://clerk.house.gov/evs/2026/roll286.xml",
@@ -43970,15 +44047,44 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Exact House choice is suspension and concurrence in the Senate amendments to H.R.6500, not a vote only on the original AGOA title. Whole64,001-character EAS read and full own floor reproduction matches under declared formatting comparison. It replaces everything after the enacting clause with Continuing Appropriations and Extensions Act2027, changes the title, and contains four divisions; division references stay division-specific unless expressly provided. DivisionA continues twelve specified FY2026 appropriations sources at qualified rates/authority/conditions with named exceptions, no-new-project and limited-funding rules and the section106 earliest-of termination alternatives, one of which is December11,2026. DivisionB includes AGOA/customs extensions, joint-task-force sunset substitution in2013 and Western-Hemisphere passport-fee authority substitution in2017; these precise imports may bear on Immigration but do not establish the whole adopted package meaning or stance without the material source chain. Homeland-Security funding imports and relevant appropriations/authorization/current-integration application remain research. DivisionsC/D surface-transportation and VA extensions retained as whole-choice context, no isolated component stance or automatic Immigration exclusion/inclusion. Keep researched source_unresolved noncounting hold; no funding outcome, individual passport/benefit determination, enactment, new shared meaning or editorial acceptance. Initial voice ayes, Cole demand/order/postponement precede resumed concurrence370-48 with14NotVoting.",
+      "unresolved_reason": "pending_whole_continuing_appropriations_imports_Immigration_chain196",
       "sources": [
+        {
+          "source_id": "govinfo:hr6500eas",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr6500eas/html/BILLS-119hr6500eas.htm",
+          "raw_sha256": "828941bae852dc7b3e9fe362cb59be251a4483f42b5f42d2beba15e0a5abc149",
+          "governed_bytes_sha256": "fc5916bbc9b78b7dee3feac7b42bf325886b4b0dbb1d2c26e65b21b57ae3e3ca"
+        },
+        {
+          "source_id": "immigration:roll286-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "de8bac59eee1cc3f50d1771cbda60eb616d83704760a26d214875358c0778153"
+        },
+        {
+          "source_id": "immigration:roll286-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "2b15ff879c1ff87d7584c619fd15856ddf7cf86362a52139bcdc92e4e04f8059"
+        },
+        {
+          "source_id": "immigration:roll286-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "6791b9de65c38089ae8da118a27b2b8d89c7110e16c1ea35024a76a9a414bf88"
+        },
+        {
+          "source_id": "immigration:roll286-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "458ea81a58abe406536c022f01c8a89c247cd5166b6cac6e75075e8d5a0ebd65"
+        },
         {
           "source_id": "clerk:119:2:286",
           "url": "https://clerk.house.gov/evs/2026/roll286.xml",
           "raw_sha256": "65aec5da8a8d26f236942d55358ddf798e6e0c5ead81bf9c31f723db86db651a",
-          "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "dd937bdc17f4cbb5753729496469e5dda26a566f5d557fa76a0c9d3448a146b6"
         }
       ],
       "exact_action_source_binding": null,
@@ -44258,7 +44364,7 @@
       "measure": "H RES 1498",
       "question": "On Agreeing to the Resolution",
       "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "reason": "Whole H.Res.1498 EH and exact own resolution reproduction match under declared formatting comparison. Its four operative directives adopt the named July22,2026 Committee-on-Ethics Report, censure Representative Edwards, require his appearance in the well and provide public reading by the Speaker. Censure is not rewritten as expulsion, criminal guilt or an Immigration removal action; no motive, character, corruption, individual factual allegation or service-status change inferred. The incorporated Report itself has not been acquired/read in this batch; floor debate and title do not substitute for its complete adopted contents. Keep researched source_unresolved noncounting hold pending exact report and bounded Immigration screening, without claiming source absence, disposition reversal or component completion. Own initial resolution question, voice ayes, Edwards demand/order/postponement and resumed adoption413-2 with17NotVoting retained; subsequent censure pronouncement is not an additional member vote.",
       "source": {
         "source_id": "clerk:119:2:292",
         "url": "https://clerk.house.gov/evs/2026/roll292.xml",
@@ -44276,15 +44382,44 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "rationale": "Whole H.Res.1498 EH and exact own resolution reproduction match under declared formatting comparison. Its four operative directives adopt the named July22,2026 Committee-on-Ethics Report, censure Representative Edwards, require his appearance in the well and provide public reading by the Speaker. Censure is not rewritten as expulsion, criminal guilt or an Immigration removal action; no motive, character, corruption, individual factual allegation or service-status change inferred. The incorporated Report itself has not been acquired/read in this batch; floor debate and title do not substitute for its complete adopted contents. Keep researched source_unresolved noncounting hold pending exact report and bounded Immigration screening, without claiming source absence, disposition reversal or component completion. Own initial resolution question, voice ayes, Edwards demand/order/postponement and resumed adoption413-2 with17NotVoting retained; subsequent censure pronouncement is not an additional member vote.",
+      "unresolved_reason": "pending_adopted_Ethics_report_and_exact_Immigration_screening196",
       "sources": [
+        {
+          "source_id": "govinfo:hres1498eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hres1498eh/html/BILLS-119hres1498eh.htm",
+          "raw_sha256": "90b4de50cce894bf6800c3cac0153578dca14ac341c84f41de456c8ea1b6cb87",
+          "governed_bytes_sha256": "fd730c214941267f5d01da26cbd97e4446d95c7d6d94c094e9e3cce24ff79f09"
+        },
+        {
+          "source_id": "immigration:roll292-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "f90db6650d68bab41136b46fec6bdf1d466f75a90348a92c4f01d5e68588fd2e"
+        },
+        {
+          "source_id": "immigration:roll292-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "3bc0717a18b92e820103c33cb033a61aa32b285e1afc6ac52d1ff2576d9fec34"
+        },
+        {
+          "source_id": "immigration:roll292-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "310bd344b6ef3e8906e229e8d3e6c434773dffc2ee71397a2678d47707b01c8e"
+        },
+        {
+          "source_id": "immigration:roll292-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-01/pdf/CREC-2026-09-01-house.pdf",
+          "raw_sha256": "4d84cd7d1244dee885a0785b4fb311124aef6d43e3d4aeed11bcea2f18b8319f",
+          "governed_bytes_sha256": "88dcb1f3f725981a1980cd906c2d4af0be59cf05f61245e242d9d1f1957c709a"
+        },
         {
           "source_id": "clerk:119:2:292",
           "url": "https://clerk.house.gov/evs/2026/roll292.xml",
           "raw_sha256": "3ac398aa106b2da1d11118cd1de2c1daa8f85e702e1fcffebacd38a807a1892b",
-          "governed_bytes_sha256": "dbc42fe1a7998dccd6f2953828d8466d610b950c1df9e3dcb6d27cabf0cfc534",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "dbc42fe1a7998dccd6f2953828d8466d610b950c1df9e3dcb6d27cabf0cfc534"
         }
       ],
       "exact_action_source_binding": null,
@@ -44440,8 +44575,8 @@
       "date": "2026-09-03",
       "measure": "H R 4795",
       "question": "On Passage",
-      "disposition": "source_unresolved",
-      "reason": "Pending independent Immigration exact-action screening; no inherited Health membership.",
+      "disposition": "exact_action_ineligible",
+      "reason": "Whole H.R.4795 EH and exact own floor proposal match under declared formatting comparison. The proposal adds an institutional program-participation condition against a defined nonexpressive commercial boycott of a major strategic partner: a country described by PL113296 section4 or an entity licensed/regulated by or organized under its laws. The defined action requires intent to limit commercial relations AND lack of a valid business reason, and excludes actions described in regulations providing the50US4842(a)(2) exceptions. Literal historical4842(a) read, including individual immigration/passport-compliance exception; this is not a certificate of complete current regulations or individual application. PL113296 section4 identifies Israel in a sense-of-Congress declaration. New TitleVI institutional certification is due July31 each qualifying calendar year, covering the period through the following July31; missing certification makes the institution ineligible for any TitleVI funds in the first fiscal year beginning after that July31, including prior-year grants. Certification requires permitting students AND faculty in both directions to participate in specified academic programs under the same terms as comparable programs in other foreign countries or with other foreign institutions. Separate639A sense of Congress remains nonbinding. Historical1094(a) intro confirms initial/continuing institutional program agreements with its stated exception; new institutional funding/academic-opportunity conditions do not amend an individual visa/admission/immigration-status category or mandate border entry. Candidate functional Immigration exclusion, not a claim immigrants or academic travel cannot be affected, a boycott/guilt finding, actual compliance/enforcement or enacted outcome. Initial passage question precedes voice ayes, Scott demand/order and the same direct recorded vote237-169 with27NotVoting; no postponement or resumed-business stage invented. Pending independent domain review and noncounting.",
       "source": {
         "source_id": "clerk:119:2:295",
         "url": "https://clerk.house.gov/evs/2026/roll295.xml",
@@ -44458,26 +44593,74 @@
       "recall_reasons": [
         "complete_official_roll_discovery"
       ],
-      "issue_boundary_status": "source_unresolved",
-      "rationale": "Pending independent Immigration exact-action screening; no inherited Health membership.",
-      "unresolved_reason": "pending_research",
+      "issue_boundary_status": "exact_action_ineligible",
+      "rationale": "Whole H.R.4795 EH and exact own floor proposal match under declared formatting comparison. The proposal adds an institutional program-participation condition against a defined nonexpressive commercial boycott of a major strategic partner: a country described by PL113296 section4 or an entity licensed/regulated by or organized under its laws. The defined action requires intent to limit commercial relations AND lack of a valid business reason, and excludes actions described in regulations providing the50US4842(a)(2) exceptions. Literal historical4842(a) read, including individual immigration/passport-compliance exception; this is not a certificate of complete current regulations or individual application. PL113296 section4 identifies Israel in a sense-of-Congress declaration. New TitleVI institutional certification is due July31 each qualifying calendar year, covering the period through the following July31; missing certification makes the institution ineligible for any TitleVI funds in the first fiscal year beginning after that July31, including prior-year grants. Certification requires permitting students AND faculty in both directions to participate in specified academic programs under the same terms as comparable programs in other foreign countries or with other foreign institutions. Separate639A sense of Congress remains nonbinding. Historical1094(a) intro confirms initial/continuing institutional program agreements with its stated exception; new institutional funding/academic-opportunity conditions do not amend an individual visa/admission/immigration-status category or mandate border entry. Candidate functional Immigration exclusion, not a claim immigrants or academic travel cannot be affected, a boycott/guilt finding, actual compliance/enforcement or enacted outcome. Initial passage question precedes voice ayes, Scott demand/order and the same direct recorded vote237-169 with27NotVoting; no postponement or resumed-business stage invented. Pending independent domain review and noncounting.",
+      "unresolved_reason": null,
       "sources": [
+        {
+          "source_id": "govinfo:hr4795eh",
+          "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr4795eh/html/BILLS-119hr4795eh.htm",
+          "raw_sha256": "d01577c55ac27ac956f98adcdf7c437274c7818b76e6eb006c14ba845d1799f4",
+          "governed_bytes_sha256": "1c87d604f2639fb08adc922d29c38d56318f45e584f78d894c3c370a29a62fa9"
+        },
+        {
+          "source_id": "govinfo:pl113296-declared196",
+          "url": "https://www.govinfo.gov/content/pkg/PLAW-113publ296/html/PLAW-113publ296.htm",
+          "raw_sha256": "904a4178066aea60ff8ae20460f74ced000e044f8414bec2af2bbad0168abb8c",
+          "governed_bytes_sha256": "46e6046cfaa1e5f1ce15b2b818e4fff7db6338f111b788b2eb6a14db2dcc0501"
+        },
+        {
+          "source_id": "govinfo:usc50chapter58-declared196",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title50/html/USCODE-2024-title50-chap58.htm",
+          "raw_sha256": "26a4a9f643a3b645b4ccd2d4e471b0591dd41964fb6540cca7573e1f02bcf462",
+          "governed_bytes_sha256": "165ba11829ee536df730df14f8d9b2c2117b6508d7e85c28372bcac756bf717e"
+        },
+        {
+          "source_id": "govinfo:usc1094-declared196",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title20/html/USCODE-2024-title20-chap28-subchapIV-partG-sec1094.htm",
+          "raw_sha256": "cdd8d42fff6c79e9693c43bc7f8b0c564b593938802d19b09012c267400d6b7f",
+          "governed_bytes_sha256": "77a2b5acb31557b6a3ceeaceafb7ed9ba9006ce85cbb42ec88c53d02fbae8db4"
+        },
+        {
+          "source_id": "immigration:roll295-identity196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-03/pdf/CREC-2026-09-03-house.pdf",
+          "raw_sha256": "5f91edf864b02bc97bb0f0f54bc2475de4bdfe379ddd51d0d6257d89416572e5",
+          "governed_bytes_sha256": "0cdddfe64e450dc27ce5a02696f1cb93c63f6144c93e366178593d42923c2c43"
+        },
+        {
+          "source_id": "immigration:roll295-floor-complete196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-03/pdf/CREC-2026-09-03-house.pdf",
+          "raw_sha256": "5f91edf864b02bc97bb0f0f54bc2475de4bdfe379ddd51d0d6257d89416572e5",
+          "governed_bytes_sha256": "fcde49b9b4826f05bfd0c8dc26987b4154543a820ed027b5f38296887aed6382"
+        },
+        {
+          "source_id": "immigration:roll295-initial196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-03/pdf/CREC-2026-09-03-house.pdf",
+          "raw_sha256": "5f91edf864b02bc97bb0f0f54bc2475de4bdfe379ddd51d0d6257d89416572e5",
+          "governed_bytes_sha256": "56dd8c4a295705faa03a755498112fd98fadbdf63a4ab34bc5daa152ab4791d2"
+        },
+        {
+          "source_id": "immigration:roll295-recorded196",
+          "url": "https://www.govinfo.gov/content/pkg/CREC-2026-09-03/pdf/CREC-2026-09-03-house.pdf",
+          "raw_sha256": "5f91edf864b02bc97bb0f0f54bc2475de4bdfe379ddd51d0d6257d89416572e5",
+          "governed_bytes_sha256": "fcb11db43cfdb255e7bd343fb85491d85c726dab24f08fdb25e57c46c9a348a2"
+        },
         {
           "source_id": "clerk:119:2:295",
           "url": "https://clerk.house.gov/evs/2026/roll295.xml",
           "raw_sha256": "5cffca0cd6ba09d9f1b36aa0da360597ccde114e5467f8e1d05a0401a50cf5ac",
-          "governed_bytes_sha256": "44b910a7d66e2ab1013d929953dcfaa09cf236bfe6cf6eb8d7a4ec2706d2046d",
-          "verification": "unchanged_governed_source_reuse"
+          "governed_bytes_sha256": "44b910a7d66e2ab1013d929953dcfaa09cf236bfe6cf6eb8d7a4ec2706d2046d"
         }
       ],
       "exact_action_source_binding": null,
       "public_action_sha256": null,
       "historical_raw_hash_matches": true,
       "review_progress": {
-        "substantive_review_performed": false,
+        "substantive_review_performed": true,
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
-        "authoritative_source_conflict": false
+        "authoritative_source_conflict": false,
+        "shared_review_record_sha256": "6169b4f5de54262ca8e350bca9289867ec5bc160be384aec04d7e64645383751"
       }
     },
     {
@@ -44830,7 +45013,7 @@
       "measure": "H R 8278",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
       "disposition": "exact_action_ineligible",
-      "reason": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury through OCC/FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
+      "reason": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury, including OCC and FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
       "source": {
         "source_id": "clerk:119:2:302",
         "url": "https://clerk.house.gov/evs/2026/roll302.xml",
@@ -44848,7 +45031,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "exact_action_ineligible",
-      "rationale": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury through OCC/FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
+      "rationale": "Complete H.R.8278 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice requires covered agencies to assess supervisory technologies and procurement within180 days, including available real-time supervision, infrastructure, market-risk data and data security, and jointly report18 months after completing assessments and every5 years thereafter with qualified security protections. Covered agencies are Treasury, including OCC and FinCEN, Federal Reserve, CFPB, FDIC, FHFA and NCUA. Procurement streamlining opportunities remain within existing agency authority. Congressional findings are attributed legislative findings, not verified outcomes. Financial supervision/Bank Secrecy Act context does not itself create an immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no claim immigrants cannot be affected or that an agency actually acquires new powers/technology; pending independent domain review and noncounting.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -44896,7 +45079,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "a7f0bb78e14fbad07af491965cd9ab0dfe89739b4a45a4e8b35716f29c5943f6"
+        "shared_review_record_sha256": "0857c83d063d84f802ab56658ad8ab8cf4fa25518a203666e1e950e0019c3e8d"
       }
     },
     {
@@ -45274,7 +45457,7 @@
       "measure": "H R 5334",
       "question": "On Motion to Concur in the Senate Amendments",
       "disposition": "source_unresolved",
-      "reason": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, pre-imposition waiver115, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
+      "reason": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, section115 presidential waiver with written national-interest certification and explanatory reporting before issuing a waiver, qualified by its report-consolidation/form provisions and section115(b)(4) duty-rate report exception preserving section113(b) written determination and section113(g)(1) report requirements, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
       "source": {
         "source_id": "clerk:119:2:308",
         "url": "https://clerk.house.gov/evs/2026/roll308.xml",
@@ -45292,7 +45475,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "source_unresolved",
-      "rationale": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, pre-imposition waiver115, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
+      "rationale": "The exact choice is concurrence in Senate amendments to H.R.5334 under H.Res.1530, not a fresh vote solely on its educator-deduction title. Whole original House EH and Senate EAS are read. EAS strikes original section1, supplies DivisionA Russia/Iran sanctions and a DivisionB heading leaving original educator deduction section2; it also amends the title. Section102(e)(2) proposes visa/admission/parole/INA-benefit ineligibility and existing-visa revocation for covered aliens;103(a)(1)(C),108(b) and111(b) incorporate that consequence, with114 exceptions, section115 presidential waiver with written national-interest certification and explanatory reporting before issuing a waiver, qualified by its report-consolidation/form provisions and section115(b)(4) duty-rate report exception preserving section113(b) written determination and section113(g)(1) report requirements, termination117/congressional review and203 five-year sunset except201 Iran-extension provision. These are source-grounded potential Immigration operators, not title/agency inference, automatic domain inclusion or whole-package component stance. Complete EAS/floor comparison differs only in mechanically located blank-placeholder glyph letters at this stage, with exact literal differences retained for later verification. Material incorporation/current-law chain and full bounded Immigration application remain unfinished; retain researched source_unresolved noncounting hold, no new shared meaning or editorial acceptance. Recorded concurrence262-159 with12NotVoting; both Foushee and Massie Nay.",
       "unresolved_reason": "pending_whole_sanctions_Immigration_source_chain195",
       "sources": [
         {
@@ -45610,7 +45793,7 @@
       "measure": "H R 9340",
       "question": "On Motion to Suspend the Rules and Pass, as Amended",
       "disposition": "exact_action_ineligible",
-      "reason": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "reason": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard: a rate charged or entered into by an electric utility for electric service to a large-load customer shall be designed to recover from that customer the full incremental cost of generation, transmission or distribution upgrades necessary to serve its load, including when the customer terminates a contract or other agreement or otherwise ceases purchasing electricity. Before such an upgrade the utility shall require financial assurances or contributions to cover its cost. A qualifying large-load customer is a nonresidential electric consumer that, on or after enactment, requests to enter into or enters into an electric-energy contract or other agreement for one or more facilities that require energy primarily for information-technology infrastructure and related data-storage/computational systems and have aggregate peak demand of at least 100MW at a single site or campus. Each State regulatory authority for utilities over which it has ratemaking authority and each nonregulated electric utility must commence consideration or set a hearing date within one year, then complete consideration and make a determination within two years, subject to the three specified prior-State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
       "source": {
         "source_id": "clerk:119:2:312",
         "url": "https://clerk.house.gov/evs/2026/roll312.xml",
@@ -45628,7 +45811,7 @@
         "complete_official_roll_discovery"
       ],
       "issue_boundary_status": "exact_action_ineligible",
-      "rationale": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard for full incremental electric-service upgrade costs attributable to a defined nonresidential IT large-load customer with aggregate peak demand of at least100MW at a single site/campus, including termination costs and pre-upgrade financial assurances under a new or modified contract on/after enactment. It requires commencement of consideration within1 year and determination within2 years, with three specified prior State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
+      "rationale": "Complete H.R.9340 EH and exact own floor proposal agree under declared formatting comparison. The whole suspension-as-amended choice adds a PURPA standard: a rate charged or entered into by an electric utility for electric service to a large-load customer shall be designed to recover from that customer the full incremental cost of generation, transmission or distribution upgrades necessary to serve its load, including when the customer terminates a contract or other agreement or otherwise ceases purchasing electricity. Before such an upgrade the utility shall require financial assurances or contributions to cover its cost. A qualifying large-load customer is a nonresidential electric consumer that, on or after enactment, requests to enter into or enters into an electric-energy contract or other agreement for one or more facilities that require energy primarily for information-technology infrastructure and related data-storage/computational systems and have aggregate peak demand of at least 100MW at a single site or campus. Each State regulatory authority for utilities over which it has ratemaking authority and each nonregulated electric utility must commence consideration or set a hearing date within one year, then complete consideration and make a determination within two years, subject to the three specified prior-State-action exceptions and conforming timing references. Historical16US2621(a)-(c) preserves consideration, hearing/written determination and the possibility of declining implementation; this is not universal automatic adoption or guaranteed cost savings. Historical2622 body and2634 read in declared scope, not all current intervening law or every utility application. Exact utility ratemaking/cost-allocation mechanism has no immigration admission, removal, status/documentation or border operator. Candidate functional exclusion, no immigrant-impact absence, individual utility liability, enactment or component-stance inference; pending independent domain review and noncounting.",
       "unresolved_reason": null,
       "sources": [
         {
@@ -45694,7 +45877,7 @@
         "exact_action_binding_unresolved": false,
         "required_evidence_unavailable": false,
         "authoritative_source_conflict": false,
-        "shared_review_record_sha256": "8f226e1a236ad078ce16bd65dcab6e7f6e850afce731cdfa014b6944b11afde2"
+        "shared_review_record_sha256": "71ac70ecc3a6676dfc130cc6b4d4c9069cb5804646d78d8e22c73169a9115d14"
       }
     },
     {
@@ -45956,11 +46139,9 @@
     "house:119:2:272",
     "house:119:2:278",
     "house:119:2:280",
-    "house:119:2:281",
     "house:119:2:283",
     "house:119:2:286",
     "house:119:2:292",
-    "house:119:2:295",
     "house:119:2:308",
     "house:119:2:310",
     "house:119:2:313"
@@ -45981,6 +46162,6 @@
   "production_writes": false,
   "full_issue_universe_closed": false,
   "action_interpretation_authority_basis": "Explicit current user milestone; candidate-only shared authoring; no acceptance or publication authority.",
-  "proposal_sha256": "226341f20387a2a384b8aac302a42a95b1676b92327c9c06da0a46d955e00a9f",
-  "membership_review_sha256": "5ee60056ee81688ff316849332af757a62c7cfa21ff1f387985978caff30d35f"
+  "proposal_sha256": "0eaa81132ee573359be3e7d8acbc462966b291065fd284c16e1d3513f8ed700b",
+  "membership_review_sha256": "511718aab0262d04907018cbbfa3d35267032895756e90eaf41b22504faf3868"
 }
