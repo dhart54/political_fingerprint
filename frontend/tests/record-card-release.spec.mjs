@@ -185,6 +185,7 @@ for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
       await page.goto(`${routePath}?representative=leg_valerie_p_foushee&scope=${scope}`);
       await page.locator(`#${entry.id}`).click();
       await expect(page.getByTestId("card-finding-detail")).toBeVisible();
+      await expect(page.locator("#finding-detail-heading")).toBeFocused();
       await expect(page.locator("#vote-record")).toHaveCount(0);
       const before = new URL(page.url());
       const headerLink = page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true });
@@ -213,6 +214,46 @@ for (const surface of ["ordinary", "review"]) test.describe(surface, () => {
         await expect(page.getByRole("heading", { name: "Vote record", exact: true })).toBeFocused();
       }
     }
+  });
+
+  test("header navigation keeps focus when initial issue focus is delayed", async ({ page }) => {
+    // Hold the frame after the initial summary scroll, then release it after
+    // keyboard navigation. This exercises the browser race without sleeps.
+    await page.addInitScript(() => {
+      const scrollIntoView = Element.prototype.scrollIntoView;
+      const requestFrame = window.requestAnimationFrame.bind(window);
+      let holdNextFrame = false;
+      Element.prototype.scrollIntoView = function (...args) {
+        if (this.id === "issue-summary") holdNextFrame = true;
+        return scrollIntoView.apply(this, args);
+      };
+      window.requestAnimationFrame = (callback) => {
+        if (!holdNextFrame) return requestFrame(callback);
+        holdNextFrame = false;
+        return requestFrame((time) => {
+          window.releaseInitialIssueFocus = () => callback(time);
+        });
+      };
+    });
+    await page.goto(`${routePath}?representative=leg_valerie_p_foushee&scope=119&issue=ENVIRONMENT_ENERGY`);
+    await expect(page.locator("#vote-record")).toContainText("recorded");
+    await expect.poll(() => page.evaluate(() => typeof window.releaseInitialIssueFocus)).toBe("function");
+    const link = page.getByRole("navigation", { name: "Selected issue sections" }).getByRole("link", { name: "Vote record", exact: true });
+    await link.focus();
+    await page.keyboard.press("Enter");
+    const heading = page.getByRole("heading", { name: "Vote record", exact: true });
+    await expect(heading).toBeFocused();
+    await page.evaluate(() => window.releaseInitialIssueFocus());
+    await test.info().attach("focus-after-delayed-initial-frame", {
+      body: JSON.stringify(await page.evaluate(() => ({
+        hash: window.location.hash,
+        activeId: document.activeElement?.id,
+        activeText: document.activeElement?.textContent,
+      }))),
+      contentType: "application/json",
+    });
+    await expect(heading).toBeFocused();
+    await expect(page).toHaveURL(/#vote-record$/);
   });
 
   test("header anchors preserve full reviewed and receipts-only issue routes", async ({ page }) => {
