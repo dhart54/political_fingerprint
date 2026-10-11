@@ -1917,3 +1917,96 @@ Evidence: addiction_program_baseline_qualification_checkpoint190.json receipt
 2397a5d084cf78edd7ab6a76157025a33d4d3010d5df3f980982a8cc3e30a34d; exact 189 CI receipt; audit;
 unchanged 189 source/action witness receipt. The implementation owner continues
 bounded coherent research after delivery.
+
+
+## Checkpoint 191: July financial-package source qualification
+
+The sole Windows implementation owner continues in .w/ib on DESKTOP-1CQBHTJ,
+branch codex/foushee-immigration-border-shared, from 2a9797fd360d37c0d7fdb67fa0af4efca7b54366.
+This checkpoint is a resume point, without an ownership transfer or approval gate.
+
+House 1/199 H.R. 3633 and 1/200 S. 1582 remain unresolved and noncounting.
+The owner reads the complete 252-page July Rules Committee Print 119-6 and the
+133,704-character Senate engrossed GENIUS text. Own House identities, initial
+passage sequences and later recorded resumptions are independently captured.
+The July print must be read with adopted Report 119-199 Part B: floor sections
+106(c), 405(a)-(b) and 409 confirm all seven edits despite offsets in printed
+line references. Unoffered Sherman Part C and the September H.Res. 707
+engrossment addition remain excluded. The current EH is not substituted as the
+whole July voted package. The old 18-page witness replays exactly with its
+original single-space join; the new whole-parent extraction uses double LF.
+
+The digital-asset package preserves qualified personal self-custody and peer
+transactions for a United States individual, with fiduciary/custodial exceptions
+and sanctions/enforcement savings. That term is not guessed to mean citizen,
+resident, lawful status or everybody. Financial customer-ID, foreign supervision,
+insolvency and registration mechanisms retain their own scope; expedited agency
+hiring retains referenced rules. S. 1582 defines person to include individuals
+and organizations and has specified formation/domicile/foreign-regime conditions.
+Its United States person secondary-trading waiver retains financial/remediation
+criteria, distinct security/intelligence/law-enforcement exceptions and reporting.
+The AML/sanctions certification's INA section 219 reference identifies designated
+organizations; it does not itself import alien admission or removal consequences.
+Financial approval revocation remains distinct from immigration removal.
+Material individual-access/status terminology, incorporation and bounded
+Immigration application remain review work. No automatic fit/exclusion, universal
+eligibility, component member stance, new meaning/proposition or acceptance.
+
+Each initial passage question precedes voice ayes, demand, order and postponement:
+Craig for 199 and Waters for 200. Later recorded passage results are 294-134 with
+four Not Voting and 308-122 with two Not Voting. Foushee is Nay on both; Massie
+is Not Voting on both, resolved and non-directional. Perry's hypothetical stated
+intention and adjacent roll 201 are excluded. Fresh Clerk raw bytes drift, while
+all governed metadata, party totals and the two member records match. No all-other-
+member comparison or altered governed raw identity is claimed. Printed pages
+251, H3449 and H3450 are visually checked. Poppler emits ligature-name warnings
+for Record rendering; visual checks and literal extraction qualifications remain.
+The entire daily Record and entire House Report are not wholly owner-read.
+
+Fifteen source registrations add ten literal derivatives and five immutable
+source reuses. Inventory is 2,131 sources and 1,021 captures. All 606 membership
+records, 113 frozen Git blobs, old sources/registrations/private aliases and the
+unrelated untracked 170 shutdown note are preserved. Existing Health cores and
+refs are reused unchanged; six semantic products stay byte-identical and proof
+metadata alone updates its source-capture digest. Accounting remains 606 reviewed
+and 70 pending: 49 ordinary pending and 21 researched holds; 47 meanings,
+80 propositions, 70 application questions and three partial packages. Other
+holds, including 247, 151, 349, FISA and childcare, remain unchanged.
+
+Final validation passes 203 tests in 25.097 seconds, seven semantic checks,
+mechanical IR reference validation, 19 literal claims, six raw captures and seven
+byte-exact generated replays. Diff review corrects two new uncommitted witness
+starts to whole paragraphs, retaining a private prior journal and all correction
+and repeated-test time. Existing committed source rows are never changed.
+Independent 191 review and exact hosted 191 CI remain pending at this receipt.
+
+Independent 190 review closes without a blocker at 2a9797f: seven derivatives,
+six raw parents, 16 claims, 41 preservation checks and seven byte replays pass.
+Housing caps/windows/waiver/individual limits and loan/CAREER/expired-and-new FASD
+qualifications are supported. Action 151 remains held with zero completions.
+Reviewer close 02:58:44.817 UTC takes 411.817 seconds, separately attributed.
+The owner's 203 tests and private receipt remain owner-attributed. Committed 189
+CI matches all nine retained logs. Exact 190 CI 38105786140 has nine first-attempt
+successes, actual 5 feature / 3 synthetic / 1 mixed, with four conditional guards
+skipped. Actual synthetic parent and direct main-ref reads match, while PR/run
+snapshots report a different base. This disagreement is preserved explicitly:
+actual parent/direct ref govern exact checkout evidence, without a broad current-
+main integration claim. Prior final PR/CI endpoint 1,643.439 seconds includes
+191 research/report overlap and is not added to this timer.
+
+Performance remains FAIL at the prior comparable 781.087 seconds, above the
+600-second ceiling and 240-second target. These two held attempts supply zero
+completed screenings and no new comparable average. Initial source/authoring endpoint
+1309.384 seconds and local-validation/report
+endpoint 1622.434 seconds retain all source
+reading, output/context recovery, helper/tool failures, boundary corrections,
+prior CI/report overlap, tests, rendered checks and reporting. No special new
+benchmark, silent scale increase, editorial/compiler/hold release, publication,
+production/schema/security/configuration write, merge or deployment.
+
+Evidence: financial_package_source_qualification_checkpoint191.json receipt
+fa0111e46419dfb8d21a45cdbd161513f5ecf539a320b6cc8d8793c5b5bcd183; delivery 191 validation 2030f66363519218d6252771ca982f92e60d1c39d5e473174e6101380e76bd54;
+received 190 review 85b5f123f962e3f05b3c36e004ba934c6e42766a7bb0c42ca38aeb61f8209f12; exact 190 CI and base qualification.
+The owner continues coherent bounded candidate research after delivery.
+
+The new witness-bound correction endpoint is 1498.680 seconds, based on the PC candidate receipt last-write timestamp after correction; it remains inside the local endpoint, not an added duration.
