@@ -180,19 +180,26 @@ export default function RepresentativeExperience({
     if (window.location.hash) {
       return;
     }
-    window.requestAnimationFrame(() => {
+    let focusFrame;
+    const scrollFrame = window.requestAnimationFrame(() => {
+      if (window.location.hash || movedBeforeInitialLanding.current) return;
       document.getElementById("issue-summary")?.scrollIntoView({
         behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
           ? "auto"
           : "smooth",
         block: "start",
       });
-      window.requestAnimationFrame(() => {
+      focusFrame = window.requestAnimationFrame(() => {
+        if (window.location.hash || movedBeforeInitialLanding.current) return;
         document.getElementById("selected-issue-heading")?.focus({
           preventScroll: true,
         });
       });
     });
+    return () => {
+      window.cancelAnimationFrame(scrollFrame);
+      if (focusFrame !== undefined) window.cancelAnimationFrame(focusFrame);
+    };
   }, [directIssueLanding, selectedRow, state.status]);
 
   function selectIssue(issue) {
