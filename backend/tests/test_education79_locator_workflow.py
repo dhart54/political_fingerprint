@@ -30,6 +30,8 @@ def matches(path, patterns):
     'backend/requirements.txt', 'backend/migrations/0012_editorial_artifacts.sql',
     'backend/migrations/staged/normalize_vote_storage.sql',
     'backend/scripts/disposable_database_url.py',
+    'backend/scripts/education79_locator_operator.py',
+    'backend/scripts/green_vote_storage.py',
     'backend/scripts/m15b_persistence_preparation.py',
     'backend/scripts/foushee_m15a2_core_repair.py',
     'backend/scripts/foushee_justice_receipt_evidence_repair.py',
