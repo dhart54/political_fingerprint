@@ -1,0 +1,105 @@
+{
+  "project_id": "yalpfkaxkxebwolhorha",
+  "transaction_read_only": true,
+  "observation_only_not_execution_preflight": true,
+  "root_artifact_id": 245,
+  "relationships": [
+    {
+      "relationship_type": "uses_source_manifest",
+      "ordinal": 0,
+      "metadata_jsonb": {
+        "replacement_bundle_id": "foushee_education_workforce_m14h_replacement_v1-ac922506"
+      },
+      "artifact_id": 246,
+      "artifact_type": "source_manifest",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-source-manifest",
+      "artifact_version": 1,
+      "content_sha256": "af4fbdc800fa5eaae71f5d08b3f3e2ae6e6fd8bc91524298a3cc411f21736f1c",
+      "payload_jsonb": {
+        "source_files": [
+          {
+            "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/site_integration_candidate.json",
+            "file_sha256": "7022fff0cbd8e54acab095401c2810b93359c3a55d8a5a03eba86e4e6d14d2c6"
+          },
+          {
+            "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/human_site_integration_authority.json",
+            "file_sha256": "5bdcba1112a7a8a9445d17fe1d9372212bc52d30a472f6f3fa83a8b6ea9f5f80"
+          },
+          {
+            "path": "docs/editorial/site_integration_candidates/f000477_education_workforce_m14g_v1/accepted_site_integration.json",
+            "file_sha256": "55d79a9f4a63541e5cad32b43cf8d9c604096cc7317e6e7f1698e4becf8e2d20"
+          },
+          {
+            "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json",
+            "file_sha256": "f8fd154573b3485925c5411281816acec00aad0ebe5b5035630c20099aec094f"
+          },
+          {
+            "path": "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/human_public_wording_prominence_authority.json",
+            "file_sha256": "aa72f4013bc9fb8242fad3f288d4d150d153ecbf8f51b403c485c8df1ad694fb"
+          },
+          {
+            "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json",
+            "file_sha256": "ed6a69db5d1372730b1eeb885efcf0eb2e14f0f2259395d5641cad848d3c33cf"
+          },
+          {
+            "path": "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/human_behavioral_candidate_authority.json",
+            "file_sha256": "4f5d15742c9413c006b19cefd8e727a8f9aaf7593e5f8011c3330a9f9bc743f4"
+          },
+          {
+            "path": "docs/editorial/shared_corpora/house_119_v2/shared_action_core.json",
+            "file_sha256": "5eb4ce6a7226918f1f43d76a06e92dce46088d79a5643aa0773c2eb1bcf81a93"
+          },
+          {
+            "path": "docs/editorial/shared_corpora/house_119_v2/member_projections/f000477.json",
+            "file_sha256": "b953741949bee513d915ccba22086e78029daac2f3de6e23a4183fd18da4bb50"
+          },
+          {
+            "path": "docs/editorial/shared_corpora/house_119_v2/promotion_manifest.json",
+            "file_sha256": "ac1711994b99cdf5572f384c5f9eda023b085574a7ff4e68540988a784bcaa9b"
+          }
+        ],
+        "schema_version": "editorial_publication_source_manifest_v1",
+        "complete_required_sources": true,
+        "reviewed_candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0",
+        "accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b"
+      }
+    },
+    {
+      "relationship_type": "has_validation",
+      "ordinal": 0,
+      "metadata_jsonb": {
+        "replacement_bundle_id": "foushee_education_workforce_m14h_replacement_v1-ac922506"
+      },
+      "artifact_id": 247,
+      "artifact_type": "standardization_validation_result",
+      "natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1:publication-validation",
+      "artifact_version": 1,
+      "content_sha256": "81357113ec54f475c55af7b78e6a1785b04cae082f2e67bac5bb09ac86aa9870",
+      "payload_jsonb": {
+        "current": true,
+        "accounting": {
+          "findings": 3,
+          "reviewed_actions": 17,
+          "reviewed_episodes": 16,
+          "main_takeaway_actions": 4,
+          "main_takeaway_episodes": 3,
+          "finding_supporting_actions": 6,
+          "accepted_public_wording_items": 4,
+          "main_takeaway_linked_findings": 2,
+          "retained_limitation_instances": 7
+        },
+        "successful": true,
+        "schema_version": "editorial_publication_validation_v1",
+        "blocking_findings": 0,
+        "semantic_bindings": {
+          "hr1005": "Not Voting / resolved_non_directional",
+          "hr1048": "one episode / two actions / Mixed",
+          "hr5408": "exact rich V2 meaning",
+          "reviewed_candidate_subject_sha256": "92d491a97ff675d60896d64fe3cb9e5d9e87ffc684f19f151a13f01b99ab05d0",
+          "accepted_site_integration_subject_sha256": "854c184469dc9338820cb3274418c8b16b2289497b3fd551aebccd46531c070b"
+        },
+        "production_activation_authorized": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "artifact_type": "issue_public_presentation",
+      "artifact_version": 1,
+      "content_sha256": "dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698",
+      "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1",
+      "payload_file": "candidate-projection.json"
+    },
+    {
+      "artifact_type": "source_manifest",
+      "artifact_version": 1,
+      "content_sha256": "705045ad350cf8d52da973ffb8a4612e49e364f83664d084218bddfd0d379d31",
+      "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:source",
+      "payload_file": "candidate-source-manifest.json"
+    },
+    {
+      "artifact_type": "standardization_validation_result",
+      "artifact_version": 1,
+      "content_sha256": "4e59a9bbb1173cf33043f6a585fcf864b3ffbccde4e9eb2dcd3e81c4b50c99cf",
+      "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:validation",
+      "payload_file": "candidate-validation.json"
+    }
+  ],
+  "candidate": {
+    "artifact_version": 1,
+    "content_sha256": "dde91335f2a125463024275930e173afb562df0746fe00c394452d7759bcb698",
+    "natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1",
+    "source_manifest_sha256": "705045ad350cf8d52da973ffb8a4612e49e364f83664d084218bddfd0d379d31",
+    "supersedes_artifact_id": 245
+  },
+  "existing_authority_must_not_be_reused": true,
+  "expected_old": {
+    "artifact_id": 245,
+    "artifact_version": 1,
+    "content_sha256": "76d06a43beb51c164a199c576c3d0aa539b6c05da2f8e4eff8fe54845547e4ec",
+    "natural_key": "site-integration-candidate:f000477:education_workforce:m14g:v1"
+  },
+  "later_activation_caps": {
+    "artifact_inserts": 0,
+    "batch_inserts": 0,
+    "deletes": 0,
+    "other_updates": 0,
+    "registry_updates": 1,
+    "relationship_inserts": 0
+  },
+  "later_persistence_caps": {
+    "artifacts": 3,
+    "batches": 1,
+    "deletes": 0,
+    "other_updates": 0,
+    "registry_updates": 0,
+    "relationships": 2
+  },
+  "production_eligible_now": false,
+  "production_execution_authorized": false,
+  "production_target_identity_sha256": "e000a8b0d5745d9865e465267f7925e184b7075470c9ce481c46a9cf3523e7f7",
+  "proposed_review_status": "human_approval_pending",
+  "registry_key": {
+    "issue_id": "EDUCATION_WORKFORCE",
+    "member_bioguide_id": "F000477"
+  },
+  "relationships": [
+    {
+      "child_natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:source",
+      "metadata_jsonb": {
+        "activation_bundle_id": "public-issue-presentation:f000477:education_workforce:record-locator:v1"
+      },
+      "ordinal": 0,
+      "relationship_type": "uses_source_manifest"
+    },
+    {
+      "child_natural_key": "public-issue-presentation:f000477:education_workforce:record-locator:v1:validation",
+      "metadata_jsonb": {
+        "activation_bundle_id": "public-issue-presentation:f000477:education_workforce:record-locator:v1"
+      },
+      "ordinal": 0,
+      "relationship_type": "has_validation"
+    }
+  ],
+  "schema_version": "education79_locator_persistence_preparation_v1",
+  "unresolved": [
+    "explicit locator/persistence approval",
+    "real newly persisted IDs",
+    "sealed exact V2R write set and activation authority",
+    "fresh execution evidence",
+    "coordinated frontend card source rebind"
+  ]
+}
