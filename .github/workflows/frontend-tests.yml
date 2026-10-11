@@ -7,6 +7,9 @@ on:
       - ".github/workflows/frontend-tests.yml"
       # Checked-in inputs consumed by frontend units and fixture-backed browsers.
       - "docs/review_packets/record_at_a_glance_v1/**"
+      - "docs/review_packets/record_across_congresses_frontend_copy_guardrails.json"
+      - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
+      - "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json"
       - "docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-live.json.gz"
       - "docs/reviews/m15b_interpretive_trust/**"
       - "docs/editorial/full_record_reviews/site_integration_candidates/f000477_national_security_foreign_119_v1/**"
@@ -20,6 +23,9 @@ on:
       - "frontend/**"
       - ".github/workflows/frontend-tests.yml"
       - "docs/review_packets/record_at_a_glance_v1/**"
+      - "docs/review_packets/record_across_congresses_frontend_copy_guardrails.json"
+      - "docs/editorial/analytical_candidates/f000477_education_workforce_m14d_v1/accepted_behavioral_findings.json"
+      - "docs/editorial/public_wording_candidates/f000477_education_workforce_m14f_v1/accepted_public_copy.json"
       - "docs/editorial/publication_replacements/m15b_green_activation_execution/after-justice-live.json.gz"
       - "docs/reviews/m15b_interpretive_trust/**"
       - "docs/editorial/full_record_reviews/site_integration_candidates/f000477_national_security_foreign_119_v1/**"
@@ -31,7 +37,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: frontend-tests-${{ github.head_ref || github.ref }}
+  group: frontend-tests-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
