@@ -1,0 +1,98 @@
+{
+  "checkpoint": 190,
+  "base_head": "494c0274c925e2dc1f412f8760c97f0c499c5361",
+  "candidate_receipt_sha256": "5e1aa53b6afd532101e35de274537c06adf07c147689802937a4245d9273f5ed",
+  "focused_tests": {
+    "passed": 203,
+    "seconds": 20.799,
+    "log": ".tmp/tests190-final.log"
+  },
+  "semantic_checks": 7,
+  "IR_reference_cases": {
+    "accepted": 12,
+    "accepted_held_out": 4,
+    "held_out": 4,
+    "new_acceptance": false
+  },
+  "preservation": {
+    "changed_universe_rows": [
+      "house:119:1:151"
+    ],
+    "preserved_membership_records": 606,
+    "unchanged_authoring_and_membership": true,
+    "unchanged_accounting_and_hold_set": true,
+    "literal_claim_checks": 16,
+    "raw_parent_replays": 6,
+    "new_exact_derivatives": 7,
+    "old_sources_and_registrations_preserved": true,
+    "frozen_git_blobs": 112,
+    "existing_shared_core_unchanged": true,
+    "prior189_CI_receipt_preserved": true
+  },
+  "byte_exact_generated_replays": 7,
+  "unchanged_semantic_products": [
+    "compiled_ir.json",
+    "compiler_input.json",
+    "member_projections.json",
+    "readable_candidates.json",
+    "shared_action_core.json",
+    "shared_issue_mapping.json"
+  ],
+  "source_count": 2116,
+  "registrations": 1006,
+  "counts": {
+    "reviewed": 606,
+    "pending": 70,
+    "ordinary_unscreened": 51,
+    "researched_holds": 19,
+    "meanings": 47,
+    "propositions": 80,
+    "application_questions": 70,
+    "partial_packages": 3
+  },
+  "attempted_actions": 1,
+  "completed_screenings": 0,
+  "held_actions": 1,
+  "timing": {
+    "checkpoint": 190,
+    "base_head": "494c0274c925e2dc1f412f8760c97f0c499c5361",
+    "started_utc": "2026-10-11T02:18:09.261549+00:00",
+    "research_scope": "Material addiction-service/recovery-housing/individual workforce benefit baselines for held151; retain held349 domain/core review",
+    "attempted_action_ids": [
+      "house:119:1:151"
+    ],
+    "special_benchmark_round": false,
+    "prior_comparable_performance": "FAIL781.087seconds",
+    "one_time_resume_excluded": false,
+    "predecessor189_CI_and_report_overlap_retained": true,
+    "source_and_authoring_completed_utc": "2026-10-11T02:31:51.605242+00:00",
+    "source_and_authoring_endpoint_seconds": 822.343693,
+    "attempted_actions": 1,
+    "completed_screenings": 0,
+    "held_actions": 1,
+    "source_acquisition_corrections_and_reading_overhead_retained": true,
+    "local_validation_completed_utc": "2026-10-11T02:34:57.259125+00:00",
+    "local_validation_endpoint_seconds": 1007.997576,
+    "focused_validation_and_replay_complete": true,
+    "prose_readability_refinement_completed_utc": "2026-10-11T02:36:33.793088+00:00",
+    "prose_readability_refinement_endpoint_seconds": 1104.531539,
+    "source_passages_and_compiled_semantics_unchanged_by_refinement": true
+  },
+  "prior189_CI_receipt_sha256": "f84c69d9c25b167a76dad2ce49564c9610d48aa4a08bc54c9e0b4298aa74ad1b",
+  "prior189_CI_successful_first_attempt_jobs": 9,
+  "prior189_CI_checkout_contexts": {
+    "feature": 5,
+    "synthetic": 3,
+    "mixed": 1
+  },
+  "prior189_CI_owner_endpoint": 1958.504505,
+  "performance_status": "FAIL at prior comparable781.087seconds; this held material-baseline qualification produces no completion denominator or new comparable average",
+  "independent190_review_pending": true,
+  "hosted190_CI_pending": true,
+  "editorially_accepted": false,
+  "publication_authorized": false,
+  "receipt_sha256": "2397a5d084cf78edd7ab6a76157025a33d4d3010d5df3f980982a8cc3e30a34d",
+  "bounded_checkpoint189_review_receipt_sha256": "8034e9a2b0c4d8562c1e26cd9eb58b80086682b1fba101377d75d66455ad6ad8",
+  "independent189_review_pending": false,
+  "prior189_CI_integration_qualification": "Four conditional guards skipped; synthetic checkout uses older base than live PR. No present current-main integration certificate."
+}

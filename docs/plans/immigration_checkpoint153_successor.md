@@ -1825,3 +1825,95 @@ included. Pre-shutdown metadata has a separate 30.534742 s upper bound. This mix
 batch is not a fresh special benchmark, comparable average or permission to scale.
 Continue bounded candidate work without a routine approval gate, merge, acceptance,
 publication, production, schema/security/configuration change or deployment.
+
+
+## Checkpoint 190: addiction-program baseline qualification
+
+The same sole implementation owner continues on DESKTOP-1CQBHTJ in `.w/ib`,
+branch `codex/foushee-immigration-border-shared`, from
+494c0274c925e2dc1f412f8760c97f0c499c5361. Checkpoints introduce no ownership transfer
+or routine approval gate.
+
+House 1/151 H.R. 2483 remains unresolved and noncounting. Seven literal derivatives
+bound complete 2024 loan section 295h and CAREER section 290ee-8, omitted expired
+FASD Part O, original 2018 section 8071(a)-(g), complete 2020 HUD notice II.D-E and
+II.K-M, and the complete 2021 updated notice. Six raw parents replay. The exact EH,
+own declaration/engrossment/passage witnesses and Health core from checkpoint 189
+remain unchanged. The existing core digest is
+35a881daf1f37ade6301364ad93c9fa8be7ef0d5d96a94f7205b4698361167ea.
+
+The housing edit removes only the Secretary's technical-assistance subsection (f)
+two-year window, keeping its 2% cap. Waiver subsection (e), its exceptions/notices
+and the individual two-year/permanent-housing limit are distinct. The 2020 grantee
+3% allowance is separate. All twelve housing-use branches and the qualified
+limited-clientele/income objective are bounded. The 2021 notice applies rules to
+existing/future RHP allocations at their applicability dates; its waivers do not
+cover separately used CDBG funds. Printed pages 75368/75369 are visually checked.
+The whole 2020 notice, entire 2018 law and project-specific eligibility are not
+certified.
+
+Loan authorization section 204 changes only subsection (j). Additional criteria,
+full-time service, loan/payment and same-service double-benefit limits remain.
+Migrant health center identifies a worksite, not an immigrant borrower cohort.
+The HRSA program page returned 403 once and was not retried; other authoritative
+routes/application remain research. Old FASD Part O no longer applied seven years
+after all Task Force appointments on May 17, 2000 and is omitted in the 2024 Code.
+Exact section 104 replaces that part with its new institutional/service text;
+expired eligibility is not imported as live law or called repeal. Complete CAREER
+grant rules and the new qualified 5% transport use are separately bounded. The
+1998 HHS notice is context only; no automatic classification of the later loan
+program or post-vote 2025 notice application is inferred.
+
+Remaining work is material whole-package program/provider/beneficiary conditions,
+loan additional criteria/status application, project/funding conditions and bounded
+Immigration review. This candidate qualification supplies no domain clearance,
+completed screening, new meaning or application question. Existing 247, 349, FISA,
+childcare and other holds remain unchanged. All 606 membership records, 112 frozen
+Git blobs, old sources/registrations and the unrelated untracked 170 shutdown note
+are preserved. Only action 151's hold rationale and source list change.
+
+Validation: 203 focused tests in 20.799s, 7 semantic checks, mechanical IR reference
+validation, 16 literal claims, 6 raw-parent replays and 7 byte-exact generated-file
+replays. Six semantic products are unchanged; proof metadata updates only its
+source-capture digest. Inventory: 2116 sources / 1006 registrations; 606 reviewed /
+70 pending (51 ordinary / 19 researched holds), 47 meanings / 80 propositions,
+70 questions and 3 partial packages. Independent 190 review and hosted CI remain
+pending at the local receipt.
+
+Exact 189 CI is folded with this substantive qualification: run 38104560198,
+9 fresh first-attempt successes, 5 feature / 3 synthetic / 1 mixed checkout contexts,
+receipt f84c69d9c25b167a76dad2ce49564c9610d48aa4a08bc54c9e0b4298aa74ad1b.
+Its final observed PR/CI endpoint of 1958.505s includes overlapping 190 research;
+do not sum overlapping timers or treat that endpoint as a comparable average.
+
+Performance remains FAIL at the prior comparable average of 781.087s, above the
+600s ceiling and 240s target. This qualification has one held attempt and zero
+completions, so it produces no new comparable average. Cumulative endpoints:
+source/authoring 822.344s, local validation/report 1007.998s, readability refinement
+1104.532s. Source-route/parser/digest corrections,
+repeated source output, predecessor CI/PR, tests and reporting overhead remain
+included. Git/remote and hosted CI endpoints follow privately. No special benchmark,
+silent scaling, merge, editorial acceptance, hold release, publication,
+production/schema/security/configuration write or deployment is authorized.
+
+Bounded independent checkpoint 189 review arrived before this substantive delivery.
+It closes with no blocking finding at 494c027: both 351/362 exclusions supported,
+151/349 held, failed amendments excluded and conjunctive HRA/prior-rule limits
+preserved. All 44 preservation/mechanics checks and 7 byte replays passed; counts
+606/70, 47/80, 70 questions / 3 packages and 2109 sources / 999 captures verified.
+Four Clerk raw drifts preserve governed metadata/member/party totals. The reviewer
+observed HRA raw drift with exact full normalized parent (1123261 characters) and
+excerpt (13320 characters). Existing canonical bytes are not replaced. CI has
+9 fresh first-attempt successes, but four conditional guards skipped and the
+synthetic base was older than the live PR. No current-main integration claim.
+The 203 tests remain owner-attributed. Review closed 2026-10-11T02:35:41.467Z after
+739.467 reviewer seconds including missing cloud audit-cache recovery. Reviewer
+seconds are separate from owner timing. No editorial acceptance, correction,
+compiler release, hold release or performance pass. Receipt
+8034e9a2b0c4d8562c1e26cd9eb58b80086682b1fba101377d75d66455ad6ad8. Independent 190 review remains pending.
+
+Evidence: addiction_program_baseline_qualification_checkpoint190.json receipt
+5e1aa53b6afd532101e35de274537c06adf07c147689802937a4245d9273f5ed; delivery 190 validation
+2397a5d084cf78edd7ab6a76157025a33d4d3010d5df3f980982a8cc3e30a34d; exact 189 CI receipt; audit;
+unchanged 189 source/action witness receipt. The implementation owner continues
+bounded coherent research after delivery.

@@ -1,0 +1,88 @@
+{
+  "checkpoint": 190,
+  "reviewed_checkpoint": 189,
+  "reviewed_head": "494c0274c925e2dc1f412f8760c97f0c499c5361",
+  "provenance": "Parent delegation received in this sole Windows writer task; bounded independent review summary, not an invented raw review transcript or owner test run",
+  "outcome": "no_blocking_finding",
+  "review_closed_utc": "2026-10-11T02:35:41.467Z",
+  "reviewer_seconds": 739.467,
+  "reviewer_time_includes_missing_cloud_audit_cache_recovery": true,
+  "preservation_and_mechanics_checks": 44,
+  "byte_exact_generated_replays": 7,
+  "supported_candidate_exclusions": [
+    "house:119:1:351",
+    "house:119:1:362"
+  ],
+  "preserved_holds": [
+    "house:119:1:151",
+    "house:119:1:349"
+  ],
+  "failed_amendments_excluded": true,
+  "conjunctive_HRA_class_and_prior_rule_limits_preserved": true,
+  "verified_counts": {
+    "reviewed": 606,
+    "pending": 70,
+    "meanings": 47,
+    "propositions": 80,
+    "questions": 70,
+    "partial_packages": 3,
+    "sources": 2109,
+    "captures": 999
+  },
+  "Clerk_raw_drifts": 4,
+  "governed_Clerk_metadata_members_and_party_totals_preserved": true,
+  "HRA_reviewer_replay": {
+    "raw_bytes_drift": true,
+    "full_normalized_parent_chars": 1123261,
+    "bounded_excerpt_chars": 13320,
+    "normalized_parent_and_excerpt_equal": true,
+    "new_canonical_capture_authorized": false
+  },
+  "CI": {
+    "run": 38104560198,
+    "receipt_sha256": "f84c69d9c25b167a76dad2ce49564c9610d48aa4a08bc54c9e0b4298aa74ad1b",
+    "fresh_first_attempt_successes": 9,
+    "checkout_contexts": {
+      "feature": 5,
+      "synthetic": 3,
+      "mixed": 1
+    },
+    "conditional_guards_skipped": [
+      {
+        "job": "m14e-exact-head",
+        "steps": [
+          "Prove exact M14E milestone scope"
+        ]
+      },
+      {
+        "job": "m14g-exact-head",
+        "steps": [
+          "Enforce milestone-local M14G closure scope"
+        ]
+      },
+      {
+        "job": "m14f-exact-head",
+        "steps": [
+          "Prove exact M14F milestone scope"
+        ]
+      },
+      {
+        "job": "m14d-exact-head",
+        "steps": [
+          "Prove exact M14D milestone scope"
+        ]
+      }
+    ],
+    "synthetic_merge_sha": "4589917e84bdaa139990c9092ce674f398b4ca68",
+    "synthetic_base_older_than_live_PR": "reported_by_parent_review",
+    "present_integration_with_current_main_claim": false
+  },
+  "focused203_tests_attribution": "Windows implementation owner; not independently rerun by this reviewer",
+  "no_correction_or_hold_release": true,
+  "independent190_review_pending": true,
+  "editorial_acceptance": false,
+  "compiler_release": false,
+  "performance_pass": false,
+  "publication_authorized": false,
+  "receipt_sha256": "8034e9a2b0c4d8562c1e26cd9eb58b80086682b1fba101377d75d66455ad6ad8"
+}
