@@ -146,22 +146,29 @@ export default function RepresentativeExperience({
       movedBeforeInitialLanding.current = true;
     };
     const movementKeys = new Set([
-      "ArrowDown", "ArrowUp", "End", "Home", "PageDown", "PageUp", " ",
+      "ArrowDown", "ArrowUp", "End", "Home", "PageDown", "PageUp", " ", "Tab",
     ]);
     const markKeyboardMove = (event) => {
       if (movementKeys.has(event.key)) {
         markMoved();
       }
     };
+    const markControlFocus = (event) => {
+      if (event.target instanceof Element && event.target.closest(
+        'a[href], button, input, select, textarea, [contenteditable="true"], [tabindex]:not([tabindex="-1"])',
+      )) markMoved();
+    };
     window.addEventListener("wheel", markMoved, { passive: true });
     window.addEventListener("touchmove", markMoved, { passive: true });
     window.addEventListener("pointerdown", markMoved, { passive: true });
     window.addEventListener("keydown", markKeyboardMove);
+    window.addEventListener("focusin", markControlFocus);
     return () => {
       window.removeEventListener("wheel", markMoved);
       window.removeEventListener("touchmove", markMoved);
       window.removeEventListener("pointerdown", markMoved);
       window.removeEventListener("keydown", markKeyboardMove);
+      window.removeEventListener("focusin", markControlFocus);
     };
   }, [directIssueLanding]);
 
