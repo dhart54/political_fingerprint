@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -17,6 +18,8 @@ from app.editorial_presentations.education_workforce_m14g_integration_candidate 
     merge_m14g_preview_evidence,
     select_m14g_preview,
     validate_m14g_candidate,
+    _receipt_rows,
+    _source_url,
 )
 from app.main import app
 
@@ -45,6 +48,62 @@ LEDGER_PATH = (
 
 def candidate() -> dict:
     return json.loads(CANDIDATE_PATH.read_text(encoding="utf-8"))
+
+
+SOURCE_CATALOG_PATH = (
+    ROOT / "docs/editorial/interpretability_candidates/house_119_v1"
+    / "education_workforce_m14c_v1/source_catalog.json"
+)
+
+
+def test_governed_record_locator_preparation_changes_only_exact_projection_urls() -> None:
+    core = json.loads(CORE_PATH.read_text(encoding="utf-8"))
+    member = json.loads(MEMBER_PROJECTION_PATH.read_text(encoding="utf-8"))
+    ledger = json.loads(LEDGER_PATH.read_text(encoding="utf-8"))["subject"][
+        "accepted_episode_disposition_ledger"
+    ]
+    catalog = json.loads(SOURCE_CATALOG_PATH.read_text(encoding="utf-8"))
+    inputs_before = copy.deepcopy((core, member, ledger, catalog))
+    frozen_bytes = CANDIDATE_PATH.read_bytes()
+    baseline = _receipt_rows(ledger, core, member)
+    assert baseline == candidate()["subject"]["receipt_projections"]
+    source = next(row for row in catalog["sources"] if row["action_id"] == "house:119:1:79")
+    governed_bytes = (ROOT / source["raw_provenance"]["governed_local_path"]).read_bytes()
+    assert hashlib.sha256(governed_bytes).hexdigest() == source["raw_provenance"]["sha256"]
+    assert source["source_url"] == (
+        "https://www.govinfo.gov/content/pkg/CREC-2025-03-25/html/"
+        "CREC-2025-03-25-pt1-PgH1241.htm"
+    )
+    prepared = _receipt_rows(ledger, core, member, source_catalog=catalog)
+    expected = copy.deepcopy(baseline)
+    row = next(row for row in expected if row["canonical_action_id"] == "house:119:1:79")
+    assert row["source_basis"][0]["url"] == "https://www.govinfo.gov/app/details/CREC-2025-03-25-pt1-PgH1241"
+    row["source_basis"][0]["url"] = source["source_url"]
+    row["governed_receipt_projection"]["action_meaning_sources"][0]["url"] = source["source_url"]
+    assert prepared == expected
+    assert (core, member, ledger, catalog) == inputs_before
+    assert CANDIDATE_PATH.read_bytes() == frozen_bytes
+
+
+@pytest.mark.parametrize("mutation", ["hash", "type", "duplicate", "missing", "url"])
+def test_governed_record_locator_preparation_rejects_conflicting_identity(mutation) -> None:
+    core = json.loads(CORE_PATH.read_text(encoding="utf-8"))
+    action = next(row for row in core["actions"] if row["action_id"] == "house:119:1:79")
+    identity = action["operative_meaning_source_identities"][0]
+    catalog = json.loads(SOURCE_CATALOG_PATH.read_text(encoding="utf-8"))
+    source = next(row for row in catalog["sources"] if row["source_id"] == identity["source_id"])
+    if mutation == "hash":
+        source["raw_provenance"]["sha256"] = "0" * 64
+    elif mutation == "type":
+        source["source_type"] = "congress_gov_bill_text"
+    elif mutation == "duplicate":
+        catalog["sources"].append(copy.deepcopy(source))
+    elif mutation == "missing":
+        catalog["sources"].remove(source)
+    elif mutation == "url":
+        source["source_url"] = "https://www.govinfo.gov/app/details/another-record"
+    with pytest.raises(EducationWorkforceM14GError, match="governed source locator"):
+        _source_url(identity, action_date=action["action_date"], source_catalog=catalog)
 
 
 def education(payload: dict) -> dict:

@@ -109,7 +109,12 @@ def _display_identity(identity: str, action_id: str) -> str:
     return f"{prefix} {match.group(2)}"
 
 
-def _source_url(identity: dict[str, Any], *, action_date: str) -> str | None:
+def _source_url(
+    identity: dict[str, Any],
+    *,
+    action_date: str,
+    source_catalog: dict[str, Any] | None = None,
+) -> str | None:
     source_id = identity["source_id"]
     source_type = identity["source_type"]
     if source_type == "house_clerk_roll_call":
@@ -123,6 +128,29 @@ def _source_url(identity: dict[str, Any], *, action_date: str) -> str | None:
             f"BILLS-{congress}{kind}{number}{version}.xml"
         )
     if source_type == "congressional_record":
+        # Opt-in preparation preserves the exact governed locator. Frozen packages
+        # keep their historical projection until a separate publication revision.
+        if source_catalog is not None:
+            sources = [
+                row for row in source_catalog.get("sources", [])
+                if row.get("source_id") == source_id
+            ]
+            _require(len(sources) == 1, "governed source locator is missing or duplicated")
+            source = sources[0]
+            source_sha = source.get("raw_provenance", {}).get("sha256")
+            _require(
+                source.get("source_type") == source_type
+                and source_sha
+                and source_sha == identity.get("governed_bytes_sha256")
+                and source_sha == identity.get("raw_sha256"),
+                "governed source locator identity or bytes differ",
+            )
+            url = source.get("source_url")
+            _require(
+                isinstance(url, str) and url.startswith("https://www.govinfo.gov/content/pkg/"),
+                "governed source locator is not an exact GovInfo content URL",
+            )
+            return url
         package = source_id.split(":", 2)[1]
         return f"https://www.govinfo.gov/app/details/{package}"
     governed_locators = {
@@ -156,11 +184,15 @@ def _source_label(identity: dict[str, Any], *, fallback: str) -> str:
 
 
 def _source_links(
-    identities: list[dict[str, Any]], *, action_date: str, label: str
+    identities: list[dict[str, Any]],
+    *,
+    action_date: str,
+    label: str,
+    source_catalog: dict[str, Any] | None = None,
 ) -> list[dict[str, str]]:
     links = []
     for identity in identities:
-        url = _source_url(identity, action_date=action_date)
+        url = _source_url(identity, action_date=action_date, source_catalog=source_catalog)
         if url:
             source_label = _source_label(identity, fallback=label)
             links.append(
@@ -173,6 +205,8 @@ def _receipt_rows(
     ledger: list[dict[str, Any]],
     core: dict[str, Any],
     member_projection: dict[str, Any],
+    *,
+    source_catalog: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     episode_by_action = {
         action_id: episode["episode_id"]
@@ -202,6 +236,7 @@ def _receipt_rows(
             action_core["operative_meaning_source_identities"],
             action_date=action_core["action_date"],
             label="Official action meaning source",
+            source_catalog=source_catalog if action_id == "house:119:1:79" else None,
         )
         member_action = projection["official_status"]
         meaning = action_core["accepted_exact_action_meaning"]
