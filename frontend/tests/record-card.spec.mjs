@@ -6,6 +6,21 @@ const landing = "/review/record-card?representative=leg_valerie_p_foushee&scope=
 const candidate = JSON.parse(fs.readFileSync(path.resolve("../docs/review_packets/record_at_a_glance_v1/candidate.json"), "utf8"));
 test.beforeEach(async ({ page }) => { await page.emulateMedia({ reducedMotion: "reduce" }); });
 
+test("reviewed Environment receipts label accepted passage types and retain exact official sources", async ({ page }) => {
+  for (const scope of ["119", "all"]) for (const roll of [112, 114]) {
+    await page.goto(`/review/record-card?representative=leg_valerie_p_foushee&scope=${scope}&issue=ENVIRONMENT_ENERGY#action-receipt-house-119-1-${roll}`);
+    const receipt = page.locator(`[data-canonical-action-id="house:119:1:${roll}"]`);
+    const button = receipt.getByRole("button");
+    await expect(button).toBeFocused();
+    await expect(button).toContainText(`Roll ${roll}`);
+    await expect(button).toContainText("Final passage or suspension passage");
+    await expect(button).not.toContainText(/Roll \d+.*Rule/);
+    await expect(receipt.getByRole("link", { name: "Official vote" })).toHaveAttribute("href", `https://clerk.house.gov/evs/2025/roll${roll}.xml`);
+    await expect(receipt.locator(".vote-pill").first()).toHaveText("Nay");
+    await expect(receipt.locator("[data-action-status]")).toHaveCount(0);
+  }
+});
+
 test("complete candidate, lazy ledgers, specific finding, receipts, history, refresh and return", async ({ page }) => {
   const requests = [];
   page.on("request", (request) => { if (request.url().includes("resource=evidence")) requests.push(request.url()); });
